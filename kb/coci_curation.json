@@ -1,8 +1,8 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-06-25T15:20:53Z",
-  "count": 28406,
+  "_synced_at": "2026-06-26T09:54:26Z",
+  "count": 28514,
   "curations": {
     "AERO M10BA": {
       "merge_into": "AERO Z1001",
@@ -4698,6 +4698,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ARTF M1003": {
+      "unified_title": "Introduction to African Art",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:40:12.723047+00:00"
+    },
     "ARTF M10AB": {
       "merge_into": "ARTS Z1069",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -4732,6 +4737,11 @@
       "unified_title": "History of African American Art (Past to Present)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:43:21.598674+00:00"
+    },
+    "ARTH M1003": {
+      "merge_into": "ARTF M1003",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:40:12.723047+00:00"
     },
     "ARTH M1005": {
       "unified_title": "History of American Art",
@@ -4813,6 +4823,11 @@
       "merge_into": "ARTH Z1001",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTH M10AU": {
+      "merge_into": "ARTF M1003",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:32:36.181218+00:00"
     },
     "ARTH M10AY": {
       "merge_into": "ARTS M1074",
@@ -5099,6 +5114,16 @@
       "merge_into": "ARTH M1002",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:43:21.598674+00:00"
+    },
+    "ARTS M1070": {
+      "merge_into": "ARTF M1003",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:40:12.723047+00:00"
+    },
+    "ARTS M1071": {
+      "merge_into": "ARTF M1003",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:40:12.723047+00:00"
     },
     "ARTS M1072": {
       "merge_into": "ARTS M1482",
@@ -46793,19 +46818,26 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "DANC M1035": {
-      "unified_title": "Beginning African-Haitian Dance",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "DANC M1042",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:31:31.777995+00:00",
+      "unified_title": "Beginning African-Haitian Dance"
+    },
+    "DANC M1036": {
+      "merge_into": "DANC M1042",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:31:31.777995+00:00"
     },
     "DANC M1037": {
-      "unified_title": "Intermediate African-Haitian Dance",
-      "reviewed_by": "automerge-titlelane-v1@bot",
+      "unified_title": "Introduction to African-Caribbean Dance",
+      "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "DANC M1042": {
-      "unified_title": "African-Caribbean Dance 1",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "DANC M1037",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:43:35.355018+00:00",
+      "unified_title": "Introduction to African Dance"
     },
     "DANC M1043": {
       "unified_title": "Afro-Cuban/Brazilian Drum and Dance Ensemble/Production 1",
@@ -47263,6 +47295,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "DANC M10HO": {
+      "merge_into": "DANC M1037",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:31:31.777995+00:00"
+    },
     "DANC M10HP": {
       "merge_into": "DANC M1042",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -47272,6 +47309,11 @@
       "merge_into": "DANC Z1001",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "DANC M10HV": {
+      "merge_into": "DANC M1037",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:34:37.052175+00:00"
     },
     "DANC M10HW": {
       "merge_into": "DANC M1181",
@@ -47293,6 +47335,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "DANC M10IA": {
+      "merge_dismissed": "DANC M10IA|DANC M11FG",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:35:21.05724+00:00"
+    },
     "DANC M10IB": {
       "merge_into": "DANC Z1053",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -47307,6 +47354,11 @@
       "merge_into": "DANC Z1023",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "DANC M10IF": {
+      "merge_into": "DANC M1037",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:31:31.777995+00:00"
     },
     "DANC M10IG": {
       "merge_into": "DANC Z1106",
@@ -49595,14 +49647,16 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "DANC Z1001": {
-      "unified_title": "African Dance and Drumming 1",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "DANC M1042",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:31:31.777995+00:00",
+      "unified_title": "African Dance and Drumming 1"
     },
     "DANC Z1002": {
-      "unified_title": "West African Folkloric Dance 1",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "DANC M1042",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:31:31.777995+00:00",
+      "unified_title": "West African Folkloric Dance 1"
     },
     "DANC Z1003": {
       "unified_title": "Pilates Apparatus 1",
@@ -59134,10 +59188,32 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "ENGL M1051": {
+      "merge_into": "ENGL M1054",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:28:25.123982+00:00"
+    },
+    "ENGL M1053": {
+      "unified_title": "African American Literature - Honors",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:44:16.614685+00:00"
+    },
+    "ENGL M1054": {
+      "merge_into": "ENGL M1113",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:46:44.884486+00:00",
+      "unified_title": "Introduction to African American Literature"
+    },
     "ENGL M1056": {
-      "unified_title": "African-American Literature (1930-Present)",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "ENGL M1054",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:28:25.123982+00:00",
+      "unified_title": "African-American Literature (1930-Present)"
+    },
+    "ENGL M1057": {
+      "merge_into": "ENGL M1054",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:28:25.123982+00:00"
     },
     "ENGL M1067": {
       "merge_into": "ENGL M1337",
@@ -59369,10 +59445,40 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M10GZ": {
+      "merge_into": "ENGL M1196",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:19:00.309386+00:00"
+    },
+    "ENGL M10HA": {
+      "merge_into": "ENGL M1196",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:19:00.309386+00:00"
+    },
     "ENGL M10HB": {
       "merge_into": "ENGL M1196",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ENGL M10HC": {
+      "merge_into": "ENGL M1249",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:23:58.478086+00:00"
+    },
+    "ENGL M10HD": {
+      "merge_into": "ENGL M1249",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:23:58.478086+00:00"
+    },
+    "ENGL M10HE": {
+      "merge_into": "ENGL M1249",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:23:58.478086+00:00"
+    },
+    "ENGL M10HF": {
+      "merge_into": "ENGL M1249",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:23:58.478086+00:00"
     },
     "ENGL M10HH": {
       "merge_into": "ENGL M1201",
@@ -59399,6 +59505,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M10HS": {
+      "merge_into": "ENGL M1249",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:23:58.478086+00:00"
+    },
     "ENGL M10HW": {
       "merge_into": "ENGL M1126",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -59424,10 +59535,30 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M10IG": {
+      "merge_into": "ENGL M1113",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:46:44.884486+00:00"
+    },
     "ENGL M10IH": {
       "merge_into": "HUMA M1015",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ENGL M10II": {
+      "merge_into": "ENGL M1113",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:28:25.123982+00:00"
+    },
+    "ENGL M10IJ": {
+      "merge_into": "ENGL M1113",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:28:25.123982+00:00"
+    },
+    "ENGL M10IL": {
+      "merge_into": "ENGL M1113",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:28:25.123982+00:00"
     },
     "ENGL M10IN": {
       "merge_into": "ENGL Z1017",
@@ -59648,6 +59779,11 @@
       "merge_into": "ENGL Z1027",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ENGL M10NX": {
+      "merge_into": "ENGL M1258",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:22:01.54349+00:00"
     },
     "ENGL M10NZ": {
       "merge_into": "HUMA M1039",
@@ -59919,6 +60055,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M10TX": {
+      "merge_into": "ENGL 100",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:53:27.847699+00:00"
+    },
     "ENGL M10UC": {
       "merge_into": "ENGL M1374",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -59948,6 +60089,11 @@
       "merge_into": "ENGL M1218",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ENGL M10UP": {
+      "merge_into": "ENGL M1258",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:22:01.54349+00:00"
     },
     "ENGL M10UT": {
       "merge_into": "ENGL Z1041",
@@ -59999,6 +60145,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M10VP": {
+      "merge_into": "ENGL M1250",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:13:37.714491+00:00"
+    },
     "ENGL M10VY": {
       "merge_into": "ENGL M1185",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -60028,6 +60179,11 @@
       "merge_into": "ENGL M1194",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:51:24.261811+00:00"
+    },
+    "ENGL M10WI": {
+      "merge_into": "ENGL M1196",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:19:00.309386+00:00"
     },
     "ENGL M10WJ": {
       "merge_into": "ENGL M1374",
@@ -60266,6 +60422,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M1113": {
+      "unified_title": "Introduction to African American Literature",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:46:44.884486+00:00"
+    },
     "ENGL M1114": {
       "unified_title": "Bridge to English",
       "reviewed_by": "automerge-v1@bot",
@@ -60301,6 +60462,11 @@
       "unified_title": "Native American Mythology and Literature",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ENGL M1143": {
+      "merge_into": "ENGL 100",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:53:27.847699+00:00"
     },
     "ENGL M1146": {
       "unified_title": "College Composition Skills and Support",
@@ -60352,6 +60518,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M1167": {
+      "merge_into": "ENGL 100",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:53:27.847699+00:00"
+    },
+    "ENGL M1169": {
+      "merge_into": "ENGL 100",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:53:27.847699+00:00"
+    },
     "ENGL M1172": {
       "unified_title": "Composition and Reading",
       "reviewed_by": "automerge-v1@bot",
@@ -60387,6 +60563,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M1186": {
+      "unified_title": "Introduction to Fiction Writing",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:25:37.468666+00:00"
+    },
     "ENGL M1192": {
       "merge_into": "ENGL M1196",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -60404,8 +60585,8 @@
       "unified_title": "Creative Writing: Introduction to Poetry"
     },
     "ENGL M1196": {
-      "unified_title": "Advanced Creative Writing: Creative Nonfiction 3",
-      "reviewed_by": "automerge-titlelane-v1@bot",
+      "unified_title": "Creative Writing Nonfiction (Adv)",
+      "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ENGL M1197": {
@@ -60449,6 +60630,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M11BA": {
+      "merge_into": "ENGL M1252",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:20:20.187034+00:00"
+    },
     "ENGL M11BD": {
       "merge_into": "ENGL M1243",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -60469,6 +60655,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M11BK": {
+      "merge_into": "ENGL M1258",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:22:01.54349+00:00"
+    },
+    "ENGL M11BO": {
+      "merge_into": "ENGL M1186",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:22:01.54349+00:00"
+    },
     "ENGL M11BP": {
       "merge_into": "ENGL M1250",
       "reviewed_by": "map@rccd.edu",
@@ -60484,6 +60680,16 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:51:46.671761+00:00"
     },
+    "ENGL M11BS": {
+      "merge_into": "ENGL M1252",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:20:20.187034+00:00"
+    },
+    "ENGL M11BT": {
+      "merge_into": "ENGL M1252",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:20:20.187034+00:00"
+    },
     "ENGL M11BU": {
       "merge_into": "ENGL Z1055",
       "reviewed_by": "automerge-v1@bot",
@@ -60493,6 +60699,31 @@
       "merge_into": "ENGL Z1055",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ENGL M11BW": {
+      "merge_into": "ENGL M1258",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:22:01.54349+00:00"
+    },
+    "ENGL M11BZ": {
+      "merge_into": "ENGL M1252",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:20:20.187034+00:00"
+    },
+    "ENGL M11CA": {
+      "merge_into": "ENGL M1252",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:20:20.187034+00:00"
+    },
+    "ENGL M11CB": {
+      "merge_into": "ENGL M1186",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:22:01.54349+00:00"
+    },
+    "ENGL M11CC": {
+      "merge_into": "ENGL M1258",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:22:01.54349+00:00"
     },
     "ENGL M11CD": {
       "merge_into": "ENGL M1260",
@@ -61040,9 +61271,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ENGL M1219": {
-      "unified_title": "Science Fiction and Dystopian Literature",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "ENGL M1252",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:20:20.187034+00:00",
+      "unified_title": "Science Fiction and Dystopian Literature"
     },
     "ENGL M1220": {
       "unified_title": "English Support Seminar: Revising and Editing",
@@ -61075,25 +61307,81 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ENGL M1243": {
-      "unified_title": "Introduction to Science Fiction and Fantasy",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "ENGL M1252",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:20:20.187034+00:00",
+      "unified_title": "Introduction to Science Fiction and Fantasy"
+    },
+    "ENGL M1244": {
+      "merge_into": "ENGL M1258",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:22:01.54349+00:00"
+    },
+    "ENGL M1245": {
+      "merge_into": "ENGL M1258",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:22:01.54349+00:00"
+    },
+    "ENGL M1247": {
+      "merge_into": "ENGL M1258",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:22:01.54349+00:00"
     },
     "ENGL M1248": {
       "merge_into": "ENGL M1250",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-25T14:51:50.315572+00:00"
     },
+    "ENGL M1249": {
+      "unified_title": "Fiction Writing (Adv)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:23:58.478086+00:00"
+    },
     "ENGL M1250": {
-      "unified_title": "Fiction Writing 2",
+      "unified_title": "Creative Writing Fiction (Int)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-16T19:53:26.028148+00:00"
+    },
+    "ENGL M1251": {
+      "merge_into": "ENGL M1258",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:22:01.54349+00:00"
+    },
+    "ENGL M1252": {
+      "unified_title": "Introduction to Science Fiction",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:20:20.187034+00:00"
+    },
+    "ENGL M1253": {
+      "merge_into": "ENGL M1258",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:22:01.54349+00:00"
     },
     "ENGL M1254": {
       "merge_into": "ENGL M1250",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-16T19:53:26.028148+00:00",
       "unified_title": "Introduction to Fiction Writing"
+    },
+    "ENGL M1255": {
+      "merge_into": "ENGL M1249",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:23:58.478086+00:00"
+    },
+    "ENGL M1256": {
+      "merge_into": "ENGL M1258",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:22:01.54349+00:00"
+    },
+    "ENGL M1257": {
+      "merge_into": "ENGL M1252",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:20:20.187034+00:00"
+    },
+    "ENGL M1258": {
+      "unified_title": "Introduction to Fiction",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:22:01.54349+00:00"
     },
     "ENGL M1259": {
       "unified_title": "Fiction Workshop (the Writer, Producer, Director)",
@@ -61750,9 +62038,10 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "ENGL Z1042": {
-      "unified_title": "Creative Writing: Introduction to the Craft of Fiction",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "ENGL M1186",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:25:37.468666+00:00",
+      "unified_title": "Creative Writing: Introduction to the Craft of Fiction"
     },
     "ENGL Z1043": {
       "unified_title": "The Craft of Writing Poetry: Intermediate",
@@ -61815,9 +62104,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ENGL Z1055": {
-      "unified_title": "Literature of Science Fiction",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "ENGL M1252",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:20:20.187034+00:00",
+      "unified_title": "Literature of Science Fiction"
     },
     "ENGL Z1056": {
       "unified_title": "International Film Masterpieces",
@@ -64696,6 +64986,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ESOL M1206": {
+      "merge_into": "ENGL 100",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:53:27.847699+00:00"
+    },
     "ESOL M1208": {
       "unified_title": "College Ready Skills for English Language Learners",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -66937,9 +67232,11 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ETHS M1001": {
-      "unified_title": "History of the African American 1619-1877",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_dismissed": "ETHS M1001|ETHS M1006|HIST M1065|HIST M1067|HIST M10AJ|SOCS M1006",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:36:02.259174+00:00",
+      "merge_into": "ETHS M1009",
+      "unified_title": "History of the African American 1619-1877"
     },
     "ETHS M1003": {
       "unified_title": "Chicana/O History: 1848-Present, A Survey",
@@ -66965,6 +67262,11 @@
       "unified_title": "African American Perspective History of the US After 1865",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ETHS M1009": {
+      "unified_title": "History of African Americans in the U.S. (Pre-Colonial – 1865)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:36:02.259174+00:00"
     },
     "ETHS M1012": {
       "unified_title": "History of the U.S. from 1877 to Present Honors",
@@ -67039,14 +67341,20 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ETHS M1035": {
-      "unified_title": "Introduction to Black and African American Studies",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "ETHS M1060",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:36:59.888949+00:00",
+      "unified_title": "Introduction to Black and African American Studies"
     },
     "ETHS M1037": {
       "merge_into": "HIST M1052",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ETHS M1041": {
+      "merge_into": "ETHS M1065",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:32:36.181218+00:00"
     },
     "ETHS M1042": {
       "merge_into": "ETHS M1052",
@@ -67063,10 +67371,26 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ETHS M1045": {
+      "merge_dismissed": "ETHS M1045|ETHS M1078|ETHS M1105|ETHS M1106",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:45:12.982689+00:00"
+    },
     "ETHS M1047": {
       "unified_title": "Social Psychology of African American Male/Female Relationships",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ETHS M1048": {
+      "merge_into": "ENGL M1053",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:44:16.614685+00:00",
+      "unified_title": "African American History - Honors"
+    },
+    "ETHS M1049": {
+      "merge_into": "ETHS M1065",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:32:36.181218+00:00"
     },
     "ETHS M1051": {
       "merge_into": "ETHS M1052",
@@ -67078,10 +67402,46 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ETHS M1053": {
+      "merge_into": "ETHS M1065",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:32:36.181218+00:00"
+    },
     "ETHS M1055": {
-      "unified_title": "An Introduction to African American Studies",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "ETHS M1060",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:36:59.888949+00:00",
+      "unified_title": "An Introduction to African American Studies"
+    },
+    "ETHS M1059": {
+      "merge_dismissed": "ETHS M1059|ETHS M1083",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:44:40.227317+00:00"
+    },
+    "ETHS M1060": {
+      "unified_title": "African American Studies",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:36:59.888949+00:00"
+    },
+    "ETHS M1062": {
+      "unified_title": "Psychology of African Americans",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:40:51.045344+00:00"
+    },
+    "ETHS M1063": {
+      "unified_title": "Sociology of African Americans",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:41:15.207901+00:00"
+    },
+    "ETHS M1064": {
+      "merge_into": "ETHS M1065",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:32:36.181218+00:00"
+    },
+    "ETHS M1065": {
+      "unified_title": "Introduction to African History",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:32:36.181218+00:00"
     },
     "ETHS M1071": {
       "unified_title": "United States Relations with Mexico and Latin America",
@@ -67273,10 +67633,20 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ETHS M10CP": {
+      "merge_into": "ENGL M1113",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:46:44.884486+00:00"
+    },
     "ETHS M10CU": {
       "merge_into": "ETHS Z1007",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ETHS M10CV": {
+      "merge_into": "ENGL M1113",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:46:44.884486+00:00"
     },
     "ETHS M10CX": {
       "merge_into": "ETHS M1035",
@@ -67293,6 +67663,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "ETHS M10DA": {
+      "merge_into": "ETHS M1048",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:41:47.021449+00:00"
+    },
     "ETHS M10DB": {
       "merge_into": "ETHS M1090",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -67308,10 +67683,35 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ETHS M10DR": {
+      "merge_into": "ENGL M1054",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:28:25.123982+00:00"
+    },
+    "ETHS M10DS": {
+      "merge_into": "ENGL M1053",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:44:16.614685+00:00"
+    },
+    "ETHS M10DT": {
+      "merge_into": "HIST M1064",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:38:39.449582+00:00"
+    },
     "ETHS M10DU": {
       "merge_into": "HIST M1052",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ETHS M10DW": {
+      "merge_into": "ENGL M1053",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:44:16.614685+00:00"
+    },
+    "ETHS M10DX": {
+      "merge_into": "ENGL M1113",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:28:25.123982+00:00"
     },
     "ETHS M10DY": {
       "merge_into": "ETHS M1055",
@@ -78559,9 +78959,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "FLRU M1002": {
-      "unified_title": "Russian 1",
+      "merge_dismissed": "FLRU M1002|FLRU M1007|FLRU M10BG|FLRU Z1003|FLRU Z1004",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "reviewed_at": "2026-06-25T19:24:15.055512+00:00",
+      "unified_title": "Russian (Beg)"
     },
     "FLRU M1003": {
       "unified_title": "Continuation of Intermediate Conversational Russian",
@@ -78977,6 +79378,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "FLSP M10AG": {
+      "merge_into": "SPAN 100",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:55:12.41108+00:00"
+    },
     "FLSP M10AJ": {
       "merge_into": "FLSP M1042",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -79061,6 +79467,11 @@
       "merge_into": "FLSP Z1011",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FLSP M10CC": {
+      "merge_into": "SPAN 100",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:55:12.41108+00:00"
     },
     "FLSP M10CD": {
       "merge_into": "FLSP Z1021",
@@ -79542,6 +79953,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "FLSP M9001": {
+      "merge_into": "SPAN 100",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:55:12.41108+00:00"
+    },
     "FLSP M9003": {
       "unified_title": "Translating in Spanish in the School Environment",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -79561,6 +79977,11 @@
       "merge_into": "IDST Z9002",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FLSP M90AC": {
+      "merge_into": "SPAN 100",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:55:12.41108+00:00"
     },
     "FLSP M90AD": {
       "merge_into": "IDST Z9006",
@@ -79713,14 +80134,16 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "FLSP Z1022": {
-      "unified_title": "Elementary Spanish IA",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "SPAN 100",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:55:12.41108+00:00",
+      "unified_title": "Elementary Spanish IA"
     },
     "FLSP Z1023": {
-      "unified_title": "Elementary Spanish IB",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "SPAN 100",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:55:12.41108+00:00",
+      "unified_title": "Elementary Spanish IB"
     },
     "FLSP Z1024": {
       "unified_title": "Medical Interpretation English-Spanish",
@@ -82683,10 +83106,21 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "HIST M1065": {
-      "unified_title": "History of the African American",
+    "HIST M1064": {
+      "unified_title": "History of African Americans in United States",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-12T21:55:08.545576+00:00"
+      "reviewed_at": "2026-06-25T20:38:39.449582+00:00"
+    },
+    "HIST M1065": {
+      "merge_into": "ETHS M1065",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:32:36.181218+00:00",
+      "unified_title": "History of the African American"
+    },
+    "HIST M1067": {
+      "merge_into": "ETHS M1065",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:32:36.181218+00:00"
     },
     "HIST M1068": {
       "merge_into": "HIST M1026",
@@ -83363,6 +83797,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HIST M10JH": {
+      "merge_into": "ETHS M1065",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:32:36.181218+00:00"
+    },
     "HIST M10JI": {
       "merge_into": "HIST M1065",
       "reviewed_by": "map@rccd.edu",
@@ -83382,6 +83821,26 @@
       "merge_into": "HIST Z1024",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HIST M10JM": {
+      "merge_into": "HIST M1064",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:38:39.449582+00:00"
+    },
+    "HIST M10JN": {
+      "merge_into": "ETHS M1065",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:32:36.181218+00:00"
+    },
+    "HIST M10JO": {
+      "merge_into": "ETHS M1065",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:32:36.181218+00:00"
+    },
+    "HIST M10JQ": {
+      "merge_into": "ETHS M1065",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:32:36.181218+00:00"
     },
     "HIST M10JS": {
       "merge_into": "ETHS M1237",
@@ -84416,14 +84875,16 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "HIST Z1012": {
-      "unified_title": "African-American History Since 1876",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "HIST M1042",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:42:27.378428+00:00",
+      "unified_title": "African-American History Since 1876"
     },
     "HIST Z1013": {
-      "unified_title": "The African American in the United States from 1877 to the Present",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "HIST M1042",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:42:27.378428+00:00",
+      "unified_title": "The African American in the United States from 1877 to the Present"
     },
     "HIST Z1014": {
       "unified_title": "The African American in the United States to 1877",
@@ -89299,9 +89760,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "HUMA M1015": {
-      "unified_title": "Black Voices: Introduction to African American Literature",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "ENGL M1054",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:28:25.123982+00:00",
+      "unified_title": "Black Voices: Introduction to African American Literature"
     },
     "HUMA M1018": {
       "unified_title": "Honors Arts and Ideas: Ancient World Through the Late Medieval Period",
@@ -89382,6 +89844,11 @@
       "merge_into": "HUMA M1070",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HUMA M1075": {
+      "merge_into": "ENGL M1258",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:22:01.54349+00:00"
     },
     "HUMA M1084": {
       "unified_title": "Introduction to Religious Studies Honors",
@@ -89477,6 +89944,11 @@
       "merge_into": "COMM M1072",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HUMA M10BT": {
+      "merge_into": "ENGL M1249",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:23:58.478086+00:00"
     },
     "HUMA M10BU": {
       "merge_into": "HUMA Z1003",
@@ -89698,6 +90170,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HUMA M10IB": {
+      "merge_into": "ENGL M1186",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:25:37.468666+00:00"
+    },
     "HUMA M10IC": {
       "merge_into": "ENGL M1298",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -89792,6 +90269,11 @@
       "merge_into": "HUMA M1004",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HUMA M10KV": {
+      "merge_into": "ENGL M1186",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:22:01.54349+00:00"
     },
     "HUMA M10KW": {
       "merge_into": "FIMS M1056",
@@ -89953,6 +90435,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "HUMA M9004": {
+      "merge_into": "ENGL M1258",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:22:01.54349+00:00"
+    },
     "HUMA M9005": {
       "merge_into": "ENGL M9032",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -89967,6 +90454,11 @@
       "merge_into": "ENGL M9034",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HUMA M90AR": {
+      "merge_into": "ENGL M1186",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:22:01.54349+00:00"
     },
     "HUMA M90AX": {
       "merge_into": "ENGL M9032",
@@ -96985,7 +97477,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE M1013": {
-      "unified_title": "Weight Training",
+      "unified_title": "Weight Training (Beg)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
     },
@@ -99288,6 +99780,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M11MG": {
+      "merge_into": "KINE M1013",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:51:42.855979+00:00"
+    },
     "KINE M11MH": {
       "merge_into": "KINE M1013",
       "reviewed_by": "map@rccd.edu",
@@ -99342,6 +99839,11 @@
       "merge_into": "KINE M1360",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M11NY": {
+      "merge_into": "KINE M1013",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:51:42.855979+00:00"
     },
     "KINE M11NZ": {
       "merge_into": "KINE Z1106",
@@ -99527,6 +100029,11 @@
       "merge_into": "KINE Z1194",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M11QV": {
+      "merge_into": "KINE M1013",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:51:42.855979+00:00"
     },
     "KINE M11QW": {
       "merge_into": "KINE M1350",
@@ -102132,6 +102639,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "KINE M13JY": {
+      "merge_into": "KINE M1013",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:51:42.855979+00:00"
+    },
     "KINE M13KC": {
       "merge_into": "KINE M1608",
       "reviewed_by": "automerge-v1@bot",
@@ -102662,6 +103174,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M13US": {
+      "merge_into": "KINE M1013",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:51:42.855979+00:00"
+    },
     "KINE M13UZ": {
       "merge_into": "KINE Z1184",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -102957,6 +103474,11 @@
       "merge_into": "KINE M1418",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "KINE M1423": {
+      "merge_into": "KINE M1013",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:51:42.855979+00:00"
     },
     "KINE M1425": {
       "merge_into": "KINE M1426",
@@ -104035,6 +104557,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M1855": {
+      "merge_into": "KINE M1013",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:51:42.855979+00:00"
+    },
     "KINE M1862": {
       "unified_title": "Sport and the United States Society",
       "reviewed_by": "automerge-v1@bot",
@@ -104064,6 +104591,11 @@
       "unified_title": "Intermediate Table Tennis",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M1885": {
+      "merge_into": "KINE M1013",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:51:42.855979+00:00"
     },
     "KINE M1890": {
       "unified_title": "Out-Of-Season Intercollegiate Women's Wrestling & PE",
@@ -128555,6 +129087,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "PSYC M1018": {
+      "merge_into": "ETHS M1062",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:40:51.045344+00:00"
+    },
     "PSYC M1020": {
       "unified_title": "Psychological/Social Aspects of Aging,Death,and Dying",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -128707,6 +129244,16 @@
       "merge_into": "PSYC Z1003",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "PSYC M10BH": {
+      "merge_into": "ETHS M1062",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:40:51.045344+00:00"
+    },
+    "PSYC M10BI": {
+      "merge_into": "ETHS M1062",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:40:51.045344+00:00"
     },
     "PSYC M10BL": {
       "merge_into": "PSYC M1020",
@@ -134753,6 +135300,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "SOCS M1005": {
+      "merge_into": "ETHS M1060",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:36:59.888949+00:00"
+    },
+    "SOCS M1006": {
+      "merge_into": "ETHS M1065",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:32:36.181218+00:00"
+    },
     "SOCS M1010": {
       "merge_into": "ETHS M1239",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -134863,6 +135420,11 @@
       "merge_into": "SOCS Z1001",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "SOCS M10AW": {
+      "merge_into": "ETHS M1063",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:41:15.207901+00:00"
     },
     "SOCS M10AZ": {
       "merge_into": "ETHS Z1010",

@@ -1,23 +1,23 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-06-25T15:20:46.964Z",
+ "_as_of": "2026-06-26T09:54:17.249Z",
  "credit_recommendations": {
-  "total": "11,789",
+  "total": "12,527",
   "ccc": "1,304",
-  "local": "10,485",
+  "local": "11,223",
   "by_type": [
-   "Standardized Assessment: 5,968",
-   "Industry Certification: 3,579",
+   "Standardized Assessment: 6,705",
+   "Industry Certification: 3,580",
    "Credit By Exam: 1,654",
    "Portfolio Review: 384",
    "Military: 116"
   ]
  },
  "map_exhibits": {
-  "total": "2,530",
+  "total": "2,596",
   "ccc": "132",
-  "local": "2,398",
-  "originating_colleges": "75"
+  "local": "2,464",
+  "originating_colleges": "87"
  },
  "statewide_exhibits": {
   "total": "132",
@@ -118,14 +118,14 @@
     "could_adopt": 12
    }
   ],
+  "could_adopt_total": 116,
   "in_progress": [
    "HVAC — faculty currently meeting"
-  ],
-  "could_adopt_total": 116
+  ]
  },
  "articulating_colleges": {
   "total": "102",
-  "originating": "75",
+  "originating": "87",
   "adopting_ccc": "62"
  },
  "veteran_sprint": {
