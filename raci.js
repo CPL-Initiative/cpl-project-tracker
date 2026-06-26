@@ -34,7 +34,7 @@
   ];
 
   var state = { members: [], raci: {}, items: [], sess: null, view: "matrix", loaded: false,
-    mfilter: { activity: "all", q: "" } };
+    mfilter: { scope: "all", q: "" }, _subByAct: {} };
 
   // ─── DOM helper ────────────────────────────────────────────────────────────
   function el(tag, attrs, kids) {
@@ -83,19 +83,72 @@
   }
 
   // ─── Load ──────────────────────────────────────────────────────────────────
+  // The workplan is a 3-tier tree: Activity → sub-activity → project/work item.
+  // `activity_kpis` gives the official sub-activity ids (drive the filter +
+  // styling); `projects` is the full 34-item set whose DOTTED ids encode the
+  // nesting (4.1 → 4.1.1; 3.1 → 3.1.2a). A project with no numbered sub-activity
+  // parent (the 5.x items) nests directly under its Activity. Every node is its
+  // own RACI row; non-Activity rows keep item_type "project" so existing
+  // assignments survive (the sub-activity vs project distinction is visual).
   function buildItems() {
-    var items = [];
-    var projByAct = {};
-    var projects = (window.CPL_DATA && window.CPL_DATA.projects) || [];
-    projects.forEach(function (p) {
-      var m = /Activity\s*(\d)/.exec(p.activity || "");
-      var a = m ? m[1] : (String(p.id).split(".")[0]);
-      (projByAct[a] = projByAct[a] || []).push(p);
+    var data = window.CPL_DATA || {};
+    var rawProjects = data.projects || [];
+    var akpis = data.activity_kpis || [];
+
+    // Official sub-activities, in workplan order, grouped by Activity number.
+    var subIds = {}, subByAct = {};
+    akpis.forEach(function (g) {
+      var anum = String(g.activity_id || "").replace(/[^0-9]/g, "") || "?";
+      (g.kpis || []).forEach(function (k) {
+        var id = String(k.id);
+        if (subIds[id]) return;
+        subIds[id] = true;
+        (subByAct[anum] = subByAct[anum] || []).push({ id: id, name: k.name || "" });
+      });
     });
+    state._subByAct = subByAct;
+
+    var projs = rawProjects.map(function (p) {
+      var m = /Activity\s*(\d)/.exec(p.activity || "");
+      return { id: String(p.id), name: p.name || "", anum: m ? m[1] : String(p.id).split(".")[0] };
+    });
+    var projIds = projs.map(function (p) { return p.id; });
+
+    // Parent = the longest OTHER project id that is a non-digit-boundary prefix
+    // (so "4.1" parents "4.1.1" but not "4.10"; "3.1.2" parents "3.1.2a").
+    function idParent(pid) {
+      var best = "";
+      projIds.forEach(function (cand) {
+        if (cand === pid || pid.indexOf(cand) !== 0) return;
+        var nx = pid.charAt(cand.length);
+        if (nx && /[^0-9]/.test(nx) && cand.length > best.length) best = cand;
+      });
+      return best;
+    }
+    var childrenOf = {};
+    projs.forEach(function (p) {
+      var ip = idParent(p.id);
+      var pkey = ip ? ("project:" + ip) : ("activity:" + p.anum);
+      (childrenOf[pkey] = childrenOf[pkey] || []).push(p);
+    });
+    function sortKids(arr) {
+      return (arr || []).sort(function (a, b) {
+        return a.id.localeCompare(b.id, undefined, { numeric: true });
+      });
+    }
+
+    var items = [];
+    function emitProject(p, depth, ancestors) {
+      var key = "project:" + p.id;
+      items.push({ type: "project", id: p.id, name: p.name, activity: p.anum,
+        isActivity: false, isSub: !!subIds[p.id], depth: depth, key: key, ancestors: ancestors });
+      sortKids(childrenOf[key]).forEach(function (c) { emitProject(c, depth + 1, ancestors.concat([key])); });
+    }
     ACTIVITIES.forEach(function (act) {
-      items.push({ type: "activity", id: act.id, name: act.name, activity: act.id, isActivity: true });
-      (projByAct[act.id] || []).sort(function (x, y) { return String(x.id).localeCompare(String(y.id), undefined, { numeric: true }); })
-        .forEach(function (p) { items.push({ type: "project", id: String(p.id), name: p.name || "", activity: act.id }); });
+      var akey = "activity:" + act.id;
+      items.push({ type: "activity", id: act.id, name: act.name, activity: act.id,
+        isActivity: true, isSub: false, depth: 0, key: akey, ancestors: [] });
+      sortKids(childrenOf[akey]).forEach(function (c) { emitProject(c, 1, [akey]); });
     });
     return items;
   }
@@ -192,31 +245,44 @@
   // ─── Render ────────────────────────────────────────────────────────────────
   function chip(name) { return el("span", { "class": "raci-chip" }, [name]); }
 
-  // Items visible under the current Activity dropdown + search box. The matrix
-  // keeps an Activity's header row whenever the Activity itself matches OR any of
-  // its projects match, so a project hit always shows its parent for context.
+  // Items visible under the current scope (All / an Activity / a sub-activity) +
+  // search box. Scope encodes the tree slice: "all" | "act:<n>" | "sub:<id>".
+  // A search keeps every match PLUS its ancestor chain, so the hierarchy stays
+  // intact (a deep project hit still shows its sub-activity + Activity header).
   function visibleMatrixItems() {
-    var act = state.mfilter.activity;
+    var scope = state.mfilter.scope || "all";
     var q = (state.mfilter.q || "").trim().toLowerCase();
-    if (act === "all" && !q) return state.items;
-    var out = [];
-    ACTIVITIES.forEach(function (a) {
-      if (act !== "all" && a.id !== act) return;
-      var header = null, projs = [];
-      state.items.forEach(function (it) {
-        if (it.activity !== a.id) return;
-        if (it.isActivity) header = it; else projs.push(it);
+    var items = state.items;
+
+    // 1. Scope → inScope key set (null = everything).
+    var inScope = null;
+    if (scope.indexOf("act:") === 0) {
+      var an = scope.slice(4); inScope = {};
+      items.forEach(function (it) { if (it.activity === an) inScope[it.key] = true; });
+    } else if (scope.indexOf("sub:") === 0) {
+      var subKey = "project:" + scope.slice(4); inScope = {};
+      items.forEach(function (it) {
+        if (it.key === subKey || it.ancestors.indexOf(subKey) >= 0) inScope[it.key] = true;
       });
-      if (!header) return;
-      var matchAct = !q || ("activity " + a.id + " " + a.name).toLowerCase().indexOf(q) >= 0;
-      var kept = (!q || matchAct) ? projs : projs.filter(function (p) {
-        return (p.id + " " + (p.name || "")).toLowerCase().indexOf(q) >= 0;
-      });
-      if (q && !matchAct && !kept.length) return; // nothing in this group
-      out.push(header);
-      kept.forEach(function (p) { out.push(p); });
+      var subItem = items.filter(function (it) { return it.key === subKey; })[0];
+      if (subItem) subItem.ancestors.forEach(function (k) { inScope[k] = true; }); // Activity header for context
+    }
+
+    // 2. Query → keep matches + their ancestors (within scope).
+    var keep = {};
+    items.forEach(function (it) {
+      if (inScope && !inScope[it.key]) return;
+      if (q) {
+        if ((it.id + " " + it.name).toLowerCase().indexOf(q) >= 0) {
+          keep[it.key] = true;
+          it.ancestors.forEach(function (k) { keep[k] = true; });
+        }
+      } else {
+        keep[it.key] = true;
+      }
     });
-    return out;
+
+    return items.filter(function (it) { return keep[it.key]; });
   }
 
   function fillMatrixTable(holder) {
@@ -229,11 +295,14 @@
     var items = visibleMatrixItems();
     items.forEach(function (item) {
       var rc = raciFor(item);
-      var tr = el("tr", { "class": item.isActivity ? "raci-row-act" : "raci-row-proj",
-        "data-raci-key": item.type + ":" + item.id }, []);
-      tr.appendChild(el("td", { "class": "raci-item-cell" }, [
+      var rowCls = item.isActivity ? "raci-row-act" : (item.isSub ? "raci-row-sub" : "raci-row-proj");
+      var tr = el("tr", { "class": rowCls, "data-raci-key": item.type + ":" + item.id,
+        "data-depth": String(item.depth) }, []);
+      tr.appendChild(el("td", { "class": "raci-item-cell",
+        style: "padding-left:" + (0.6 + item.depth * 1.15) + "rem;" }, [
         el("span", { "class": "raci-item-id" }, [item.isActivity ? "Activity " + item.id : item.id]),
-        el("span", { "class": "raci-item-name" }, [item.name])]));
+        el("span", { "class": "raci-item-name" }, [item.name]),
+        item.isSub ? el("span", { "class": "raci-tier-tag", title: "Workplan sub-activity" }, ["sub-activity"]) : null]));
       ROLES.forEach(function (role) {
         var cell = el("td", { "class": "raci-cell" + (canEdit ? " raci-cell-edit" : ""),
           title: canEdit ? "Click to assign " + role.label : "" }, []);
@@ -249,33 +318,40 @@
       el("td", { colspan: String(ROLES.length + 1), "class": "raci-empty", style: "padding:.8rem .6rem;" },
         ["No Activities or Projects match this filter."])]));
     holder.appendChild(tbl);
-    var nProj = items.filter(function (i) { return !i.isActivity; }).length;
+    var nShown = items.filter(function (i) { return !i.isActivity; }).length;
     var total = state.items.filter(function (i) { return !i.isActivity; }).length;
     holder.appendChild(el("div", { "class": "raci-count" }, [
-      (state.mfilter.activity === "all" && !state.mfilter.q)
-        ? total + " projects across 4 Activities"
-        : "Showing " + nProj + " of " + total + " projects"]));
+      (state.mfilter.scope === "all" && !state.mfilter.q)
+        ? total + " sub-activities & projects across 4 Activities"
+        : "Showing " + nShown + " of " + total + " sub-activities & projects"]));
   }
 
   function renderMatrix() {
     var wrap = el("div", { "class": "raci-matrix-wrap" }, []);
     var holder = el("div", { "class": "raci-table-holder" }, []);
 
-    // Filter bar: Activity dropdown + search box (matrix view only).
-    var sel = el("select", { "class": "raci-in raci-filter-sel", title: "Filter by workplan Activity" },
-      [el("option", { value: "all" }, ["All Activities"])].concat(
+    // Filter bar: a hierarchical scope dropdown (Activity → its sub-activities)
+    // + search box (matrix view only). optgroups group each Activity's
+    // sub-activities under it; "▸ All of Activity N" selects the whole subtree.
+    var sel = el("select", { "class": "raci-in raci-filter-sel",
+      title: "Filter to an Activity or one of its sub-activities" },
+      [el("option", { value: "all" }, ["All Activities & sub-activities"])].concat(
         ACTIVITIES.map(function (a) {
-          return el("option", { value: a.id }, ["Activity " + a.id + " — " + a.name]);
+          var subs = (state._subByAct[a.id] || []).map(function (s) {
+            return el("option", { value: "sub:" + s.id }, [s.id + "  " + s.name]);
+          });
+          return el("optgroup", { label: "Activity " + a.id + " — " + a.name },
+            [el("option", { value: "act:" + a.id }, ["▸ All of Activity " + a.id])].concat(subs));
         })));
-    sel.value = state.mfilter.activity;
-    sel.addEventListener("change", function () { state.mfilter.activity = sel.value; fillMatrixTable(holder); });
+    sel.value = state.mfilter.scope;
+    sel.addEventListener("change", function () { state.mfilter.scope = sel.value; fillMatrixTable(holder); });
     var search = el("input", { type: "search", "class": "raci-in raci-filter-q",
-      placeholder: "Find an Activity or Project…" });
+      placeholder: "Find an Activity, sub-activity, or project…" });
     search.value = state.mfilter.q;
     search.addEventListener("input", function () { state.mfilter.q = search.value; fillMatrixTable(holder); });
     var clear = el("button", { "class": "raci-btn raci-filter-clear", title: "Clear filters" }, ["Clear"]);
     clear.addEventListener("click", function () {
-      state.mfilter.activity = "all"; state.mfilter.q = "";
+      state.mfilter.scope = "all"; state.mfilter.q = "";
       sel.value = "all"; search.value = ""; fillMatrixTable(holder);
     });
     wrap.appendChild(el("div", { "class": "raci-filter-bar" }, [sel, search, clear]));
@@ -393,7 +469,7 @@
   function focusItem(type, id) {
     // Make the row reachable: matrix view, filters cleared, then re-render.
     state.view = "matrix";
-    state.mfilter = { activity: "all", q: "" };
+    state.mfilter = { scope: "all", q: "" };
     render();
     var sel = '[data-raci-key="' + type + ":" + (id || "").replace(/"/g, "") + '"]';
     var row = document.querySelector(sel);
@@ -476,6 +552,13 @@
       ".raci-table td{padding:.45rem .6rem;border-top:1px solid var(--border,#eee);vertical-align:top;}" +
       ".raci-row-act{background:var(--surface-2,#f4f7fb);}" +
       ".raci-row-act .raci-item-id{background:var(--gold-accent,#B8860B);color:var(--navy-primary,#0A2240);}" +
+      ".raci-row-act .raci-item-name{font-weight:700;}" +
+      ".raci-row-sub{background:var(--surface-1,#fafcff);}" +
+      ".raci-row-sub .raci-item-id{background:var(--navy-secondary,#1c3d5a);}" +
+      ".raci-row-sub .raci-item-name{font-weight:600;}" +
+      ".raci-row-proj .raci-item-id{background:var(--surface-2,#eef3f9);color:var(--navy-secondary,#1c3d5a);border:1px solid var(--border,#d4dde7);}" +
+      ".raci-row-proj .raci-item-name{color:var(--text-faint,#555);}" +
+      ".raci-tier-tag{display:inline-block;margin-left:.45rem;font-size:.62rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--navy-secondary,#1c3d5a);background:var(--surface-2,#eef3f9);border-radius:3px;padding:.02rem .3rem;vertical-align:middle;}" +
       ".raci-item-cell{line-height:1.25;}" +
       ".raci-item-id{display:inline-block;font-weight:700;font-size:.72rem;background:var(--navy-secondary,#1c3d5a);color:#fff;border-radius:4px;padding:.05rem .35rem;margin-right:.4rem;}" +
       ".raci-item-name{color:var(--text-strong,#222);}" +
