@@ -340,6 +340,17 @@ const RACI_ROWS = [
   check("update deep-link consumes the sessionStorage key",
     dl.window.sessionStorage.getItem("cpl_update_focus") === null);
 
+  // ── (n) Per-item nudge (Phase 2): email the item's R/A people, card + link ──
+  // 1.1 has R: Crystal Nasio (email) → a per-row 📣 should appear (signed-in).
+  check("signed-in: per-item 📣 on a row with an R/A member", !!sdoc.querySelector('[data-raci-key="project:1.1"] .raci-itemnudge-btn'));
+  // 5.1 has no RACI → no per-item 📣.
+  check("no per-item 📣 on a row without R/A", !sdoc.querySelector('[data-raci-key="project:5.1"] .raci-itemnudge-btn'));
+  const inHref = signed.window.CPL_RACI_TAB._itemNudgeHref({ type: "project", id: "1.1", key: "project:1.1", name: "MAP Platform Development", isActivity: false });
+  const inDec = decodeURIComponent(inHref);
+  check("item-nudge href targets the item's R member", /^mailto:/.test(inHref) && /crystal\.nasio@rccd\.edu/.test(inDec));
+  check("item-nudge body quotes the card + the composer deep-link",
+    /MAP Platform Development/.test(inDec) && /update=project/.test(inDec) && /#raci/.test(inDec));
+
   let failed = 0;
   for (const [name, ok] of results) {
     console.log((ok ? "PASS" : "FAIL") + "  " + name);
