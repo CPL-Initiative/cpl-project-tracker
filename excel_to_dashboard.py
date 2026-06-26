@@ -1479,10 +1479,24 @@ def derive_core_activity_ids(projects):
     return ids
 
 
+def _activity_num_from_workplan(activity_text):
+    """Return the activity number ('1'..'4') parsed from a project's
+    `workplan_activity` text (e.g. "Activity 4: Sprints, Projects & Partnerships"
+    → "4"). This is the AUTHORITATIVE grouping key: it folds the legacy ID-prefix
+    artifacts (the `5.x` ids whose workplan_activity correctly re-homes them to
+    Activities 1-4 — e.g. `5.1 AI-Ready California` → Activity 4) so no phantom
+    "Activity 5" is ever manufactured from a project id. Returns None when the
+    text carries no "Activity N" token (caller falls back to the id prefix)."""
+    if not activity_text:
+        return None
+    m = re.match(r'\s*Activity\s*(\d+)', str(activity_text))
+    return m.group(1) if m else None
+
+
 def build_activity_kpis(projects, activities=None):
     """
     Build activity-level KPI cards from the core sub-activities, grouped by
-    Activity 1-5 for the dashboard. The core id list is AUTO-DERIVED from the
+    Activity 1-4 for the dashboard. The core id list is AUTO-DERIVED from the
     live Project List (see derive_core_activity_ids) so it stays correct as
     projects change.
 
@@ -1573,7 +1587,12 @@ def build_activity_kpis(projects, activities=None):
         p = proj_map.get(pid)
         if not p:
             continue
-        act_num = pid.split(".")[0]
+        # Group by the project's workplan_activity (the authoritative spine),
+        # NOT the id prefix — so legacy `5.x` ids land in their true Activity
+        # (e.g. `5.1` → Activity 4) and no phantom "Activity 5" is manufactured.
+        # The synthetic 4.1 sprint composite carries no `activity`, so it falls
+        # back to its id prefix ("4").
+        act_num = _activity_num_from_workplan(p.get("activity")) or pid.split(".")[0]
         if act_num not in groups:
             groups[act_num] = {
                 "activity_id": f"Activity {act_num}",
@@ -1770,6 +1789,8 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
         html += f'            <div class="activity-group">\n'
         html += (f'            <div class="activity-group-header">\n'
                  f'                <h3><span style="color:#888;font-weight:600;">{act_id}:</span> {html_escape(act_name)}</h3>\n'
+                 f'                <a href="#workplan-goals" class="act-targets-link" title="Annual + 2030 targets live on the Annual Workplan Goals tab" '
+                 f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Targets &#8599; Annual Workplan Goals</a>\n'
                  f'            </div>\n')
         # Activity progress bar with goal + annual targets
         html += (f'            <div style="padding:0 0.5rem 0.6rem 0.5rem;">\n'
