@@ -1,9 +1,9 @@
 ---
 title: COBI Activities/Projects — ownership, nudges & reporting (lessons)
 date: 2026-06-26
-tags: [lessons, raci, nudges, activities-projects, annual-report, session-75, session-76]
-artifacts: [raci.js, nudges/build_nudges.py, raci/supabase_raci.sql, excel_to_dashboard.py]
-related: ["[[CLAUDE]]", "[[docs/session_76_handoff]]", "[[docs/session_77_handoff]]"]
+tags: [lessons, raci, nudges, activities-projects, annual-report, update-composer, session-75, session-76, session-77]
+artifacts: [raci.js, annual_report.js, nudges/build_nudges.py, raci/supabase_raci.sql, excel_to_dashboard.py]
+related: ["[[CLAUDE]]", "[[docs/session_77_handoff]]", "[[docs/session_78_handoff]]"]
 ---
 
 # COBI Activities/Projects — ownership, nudges & reporting
@@ -162,6 +162,64 @@ shared it). Pattern that worked — **dual-publish**:
   recreate it (origin/main hasn't moved).
 - The vault is `samueltlee/cplbrain` (lowercase in the API); public KB is `CPL-Initiative/cpl-knowledge-base`.
 
-### Where we are now
+### Where we are now (pre-Session-77)
 RACI tab: filter + per-card deep-links + 3-tier matrix all live. Carry-overs #2/#3/#5 still
 decision-gated (nudge channel, lead emails, update_log). Public KB #15 awaiting Sam's review/merge.
+
+---
+
+## 2026-06-26 — Session 77 (StarPort): Copy-RACI, the nudge accountability loop, the braindump→CC→card composer
+
+A hyperglide sprint with Sam live-testing throughout — **8 PRs #556–#562, all merged + live.**
+
+### What shipped
+- **Copy-RACI (#556):** `⧉ copy` on a populated matrix row → modal (source R/A/C/I preview + filterable
+  target checklist + select-all) → `Promise.all(saveRaci)` to each target. v1 = replace.
+- **Annual Report tab (#557):** `annual_report.js` (lazy, static) assembles a 6-section report from live
+  `CPL_DATA` (Exec Summary · Vision 2030 & Goals · Activity Progress · Statewide Impact · Spotlights ·
+  Looking Ahead); editable + live markdown preview + ✨AI polish (reuses `CPL_REPORT_PROXY_URL`) + ⬇Word
+  (`docx.min.js`) + 🖨Print.
+- **Check-all/clear-all + manual team nudge (#558):** directory nudge-column master checkbox; a 📣
+  filter-bar button drafting a mailto to opted-in members.
+- **🐛 THE save-persistence fix (#559):** `raci.js` validated the JWT *format* but never *refreshed* it →
+  after the ~1h access-token TTL every write 401'd **silently** while the UI said "Signed in," and the
+  optimistic state made it look saved. Supabase showed only ONE `item_raci` row had landed (`activity:1`,
+  pre-expiry). Fix: `sbWrite` is **refresh-gated** (`ensureFresh()` renews via the `refresh_token` —
+  mirrors `unified_courses.js`), drops a dead session, `saveRaci` **rolls back** optimistic state on
+  failure. → KB note `methodology-refresh-token-before-write.md`. Same PR: **nudge accountability** —
+  `team_members += last_nudged_at/last_response_at`, directory **Last-nudged + Status** columns (✓
+  responded / ⏳ awaiting Nd, overdue ≥7d), email asks for a reply "even if no activity."
+- **Update composer — Phase 1 (#560):** per-row 📝 → braindump box → ✨"Let CC write it up" (proxy polish,
+  invent-nothing) → Save → appends new **`item_updates`** table (public read, reviewer insert,
+  **immutable**; keyed `(item_type,item_id)`). Deep-link consumer: `?update=<key>#raci` OR
+  `sessionStorage.cpl_update_focus` opens the composer.
+- **Per-item nudge — Phase 2 (#561):** per-row 📣 emails THAT item's R/A people, **quoting the card** +
+  a **direct link to its composer**.
+- **📝 on every card — Phase 3 (#562):** generator emits a 📝 Update deep-link on each Activity header +
+  Project card; retired the old `✎ Update` button. Dispatched the daily workflow to publish.
+
+### The loop, end to end (LIVE)
+**📣 per-item nudge → email quotes the card + links to the composer → recipient braindumps → CC writes it
+up → saves to `item_updates` → reachable from every card**, with directory accountability tracking.
+Round-trip = **link-to-form** (Sam's locked choice), NOT reply-parsing — *"the email is the doorbell,
+COBI is the room."*
+
+### Lessons / gotchas
+- **Refresh the token before EVERY write.** A format-valid-but-expired JWT 401s silently; optimistic UI
+  hides it as a phantom save. *Diagnosis tell:* the DB has far fewer rows than the user "saved" → suspect
+  auth, not the write. Canonicalized in the KB note.
+- **Confirm-before-build on the round-trip paid off.** Sam dismissed the first decision prompt, then
+  reasoned his own way to *exactly* the link-to-form design. A crisp recommendation + short pause beats
+  barreling ahead when the user is actively reasoning.
+- **One deep-link consumer, many uses:** `consumePendingFocus` now serves RACI-row focus, the 📝 composer,
+  and the per-item nudge link — via `sessionStorage` + `cpl-tab-activated`. Zero new module.
+- **Pre-existing `update_log` collision:** a vestigial project-only `update_log` blocked
+  `create table if not exists update_log`. Named the new one **`item_updates`**, left the old untouched.
+- **Accidental commit on `main`** once — moved to the feature branch + `force-with-lease` (Rule 5). Caught
+  via the PR's wrong head-SHA/file-count on fetch.
+
+### Where we are now
+The update loop is fully live. **Autonomous polish next:** surface the posted `item_updates` *on* the card
+face + in the Annual Report (today cards still show `projects.latest_update`; the Report uses creation-era
+`CPL_DATA`) — makes the Annual Report self-freshening. **Decision-gated:** the 3 lead emails for
+`allowed_reviewers`. Standing lanes unchanged.

@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-26 (Session 76 — SkyTrek: Team & RACI filter + deep-links #550, CI-poll-via-MCP learning #552, the 3-tier RACI matrix #553; + the Veterans Sprint & Military Base dp plans dual-published to the vault + public KB; NEW kb-note methodology-tree-from-dotted-ids-stable-keys)
+updated: 2026-06-26 (Session 77 — StarPort: the RACI update loop end-to-end, 8 PRs #556–#562 — Copy-RACI, Annual Report tab, the save-persistence token-refresh fix + nudge accountability, the 📝 braindump→CC composer + `item_updates`, per-item 📣 nudge, 📝 on every card; NEW kb-note methodology-refresh-token-before-write)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -133,6 +133,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Reference — Common-Course level convention (Beg/Int/Adv; the §55050 classifier — ranges/words/ordinals win, bare numbers are a curator-overridable hint; the Levels filter + chip)](kb-notes/reference-course-level-convention.md) | reference | published | 2026-06-25 | 2026-06-25 |
 | [Reference — Statewide Collaborative (CCC) credit recommendations are not housed at one college (system-wide standards; access via your OWN college's landing page)](kb-notes/reference-statewide-credit-recommendations.md) | reference | published | 2026-06-25 | 2026-06-25 |
 | [Methodology — Build a hierarchy from dotted ids without migrating stored keys (id-prefix parenting; re-tier visually, keep the persisted key stable)](kb-notes/methodology-tree-from-dotted-ids-stable-keys.md) | methodology | published | 2026-06-26 | 2026-06-26 |
+| [Methodology — Refresh the access token before every write (don't trust a format-valid JWT; the silent-401 phantom-save trap)](kb-notes/methodology-refresh-token-before-write.md) | methodology | published | 2026-06-26 | 2026-06-26 (Session 77 — StarPort) |
 | [Playbook — A standalone public page on the COBI Pages site (sits-alone subdir, live data via `../live_metrics.json`, non-tab nav anchor, print-to-PDF)](kb-notes/playbook-standalone-public-page.md) | playbook | published | 2026-06-25 | 2026-06-25 (Session 74 — the Fact Sheet) |
 
 ---
@@ -250,6 +251,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 74 → 75 | SkyBlaster: the public CPL Fact Sheet — standalone live page (`fact-sheet/`) #537 + Statewide Exhibits section & KPI-count reconciliation #540 → Fact-Sheet follow-ups (live-wire the snapshot tier; tech-landscape → live HTML) + the standing lanes | [`session_75_handoff.md`](session_75_handoff.md) |
 | 75 → 76 | SkyMaster: the COBI ownership + nudge + report layer — workplan-alignment regroup #545, Team & RACI tab + registry #546, nudge toggle + test modes #547, editable Directory cells #548; Annual Report draft delivered (not a tab yet) → the RACI carry-overs (matrix filter, nudge SEND channel, `allowed_reviewers`, per-card RACI links, `update_log`, Report tab) | [`session_76_handoff.md`](session_76_handoff.md) |
 | 76 → 77 | SkyTrek: Team & RACI — matrix **filter** + per-card **`👥 RACI` deep-links** #550, the **CI-poll-via-MCP** learning → CLAUDE.md #552, and the **3-tier matrix** (Activity → sub-activity → project, hierarchical filter) #553; PLUS the **Veterans Sprint + Military Base dp plans** added to the vault (CPLBrain #10/#11) and a scrubbed public-KB mirror (draft PR #15, awaiting Sam) → the decision-gated RACI carry-overs (nudge channel, lead emails, `update_log`) + the Annual Report tab + the standing lanes | [`session_77_handoff.md`](session_77_handoff.md) |
+| 77 → 78 | StarPort: the RACI update loop end-to-end (8 PRs #556–#562) — Copy-RACI #556, Annual Report tab #557, check-all/clear-all + manual nudge #558, **the save-persistence token-refresh fix** + nudge accountability #559, the 📝 braindump→CC composer + `item_updates` #560, per-item 📣 nudge #561, 📝 on every card #562 → surface `item_updates` on the card face + Annual Report (self-freshening); the 3 lead emails; standing lanes | [`session_78_handoff.md`](session_78_handoff.md) |
 
 ---
 

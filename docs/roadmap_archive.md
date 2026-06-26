@@ -1681,3 +1681,25 @@ each default to the worklist's behavior, so adopting the editor regressed neithe
 bug the move surfaced: the seed member's `k` must be its id_system (§10 axis), not the display
 `kind`. Full story:
 [`docs/ccr_merge_workspace_lessons.md`](docs/ccr_merge_workspace_lessons.md).
+
+### Session 72 — StarLander: the post-consolidation polish pass (2026-06-24/25)
+
+Sam's hands-on review of the now-shared merge workspace — **13 PRs #520–#532, all merged**; because
+the editor is shared, each editor-internal change landed once and BOTH surfaces (✨ worklist +
+per-row ⚇ dialog) inherited it. **Wave 1/2 (#520–#525):** Cons↔Aggr slider floor 0.40→0.00 + the
+opt-in **Confirm no-op fix** (disabled-until-≥2-checked); ⌕ override moved up under the title +
+verbose copy → ⓘ tooltips; "Add more" → search-into-candidate-list; the **per-row ⚇ Merge opens the
+docked sidebar** (single-course mode, `setBandFilter`); and the **Tight↔Loose candidate-looseness
+slider** (the control Sam expected the strength bar to be). **Wave 3 (#527–#531) — 9 refinements:**
+sidebar Prev/Next pager · worklist **Discipline filter** · **CCR table syncs to the sidebar's
+current course** (`state.focusId` floats it + subject neighbors to top) · candidate slider defaults
+**Loose** + persists (`cplCandLoosen.v1`) + auto-surfaces · editor keyword box **eliminated** (one
+top Search box) · multi-term **comma=OR** search w/ ghost text · "Merge into existing" chip → section
+note · the **Title-5 §55050 level convention** in `courseBands()` (ranges/words/ordinals classify;
+bare numbers a curator-overridable hint). **Wave 4 (#532):** kept the human labels **Beg/Int/Adv**
+(tried L1/L2/L3, reverted — internal keys stay `beg/int/adv`, no data churn). **Wave 5 (#534):**
+**DECOUPLED the worklist from the CCR table filters** (dropped the "Match the CCR table filters"
+checkbox — `applyCcr` now false; `rowPassesCcr` gates on it) so a **keyword surfaces ALL matching
+courses** (cap 25→100, no longer CCR-gated); a **single-course RENAME** (★-checked + edited title →
+"✓ Save" via `doRename()`); and **header Prev/Next** (‹ ›). 81→**88 green**. Full story:
+`docs/ccr_merge_workspace_lessons.md`; KB note `docs/kb-notes/reference-course-level-convention.md`.
