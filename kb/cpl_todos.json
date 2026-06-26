@@ -1,9 +1,21 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-25 (Session 74 · SkyBlaster — the public CPL Fact Sheet shipped, PRs #537/#540 LIVE; plus Session 73's CPL Assistant response-logic tuning, live on cpl-chat v17)",
- "_session": 74,
- "_status": "SESSION 74 — SkyBlaster built the public CPL Fact Sheet end-to-end and it's LIVE: a standalone, shareable page at cpl-initiative.github.io/cpl-project-tracker/fact-sheet/ that recreates the journalist Fact Sheet, pulls the headline KPIs live from live_metrics.json, and prints to a clean PDF — it 'sits alone' (no COBI nav) so consultants can be linked to it without reaching the internal tabs, opened from the 📄 CPL Fact Sheet link in the left nav rail. It also got the full COBI KPI grid, 'The CPL Bump' (CAEL/WICHE), and a Statewide Exhibits section (132 exhibits / 12 program areas, expandable) that reconciles the two cards' statewide credit-rec counts (1,304 articulation rows vs 1,101 distinct recs vs 1,298 adoptions). ALSO live from Session 73: the CPL Assistant's three response-logic tweaks (statewide framing, course-list answers, multi-turn follow-up) + fixed college landing-page links. NEXT (Fable): live-wire the Fact Sheet's snapshot KPI tier (in progress), then the standing lanes — M-ID renumber, TMC acceptance engine, CPL-Assistant CCR/CER recommender ETL.",
+ "_as_of": "2026-06-26 (Session 76 · SkyTrek — Team & RACI navigation: matrix filter + per-card deep-links, PR #550 merged + dispatched)",
+ "_session": 76,
+ "_status": "SESSION 76 — SkyTrek finished two Team & RACI carry-overs from SkyMaster's ownership/nudge build (PR #550, merged + dispatched live). (1) The RACI Matrix now has a FILTER BAR — an 'All Activities / Activity 1–4' dropdown + a search box — so you can jump to one Activity's people instead of scanning all 34 rows. (2) Every Activity header and Project card now has a 👥 RACI link that jumps straight into the Team & RACI tab and flashes that item's row. The remaining RACI work needs a few calls from you: how nudges actually SEND (Outlook drafts vs a Teams webhook), the 3 project-lead emails to let them self-update, and whether to build the update-log (you'd parked that decision earlier). NEXT for Fable beyond RACI: the standing lanes still open — Fact-Sheet snapshot live-wire, M-ID renumber, TMC acceptance engine, CPL-Assistant CCR/CER recommender ETL.",
  "items": [
+  {
+   "id": "sam-raci-nav-live",
+   "who": "sam",
+   "tab": "raci",
+   "text": "NEW (live now): the Team & RACI tab is easier to navigate. (1) The matrix has a filter bar at the top — pick an Activity or type to find a Project, and the table narrows instantly. (2) On the Activities & Projects tab, each Activity header and each project card now has a 👥 RACI link — click it to jump here and the matching row lights up gold. Try a few and tell me if the jump lands where you expect."
+  },
+  {
+   "id": "sam-raci-decisions",
+   "who": "sam",
+   "tab": "raci",
+   "text": "To keep the ownership/nudge loop moving I need three calls: (a) how should the weekly update NUDGES actually send — you forward the generated per-lead emails from Outlook (works today, zero setup), or we wire a Teams 'Power Automate' webhook? (b) the email addresses for Crystal Nasio, Terence Nelson, and Calvin/Gloria so I can let them self-update (and add your own slee@cccco.edu via the editable Email cell). (c) do you want the 'update log' history table built now, or keep just the latest-update field? (You'd parked that one before.)"
+  },
   {
    "id": "sam-factsheet-live",
    "who": "sam",

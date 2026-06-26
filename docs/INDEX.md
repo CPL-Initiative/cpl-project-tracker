@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-25 (Session 74 — SkyBlaster: the public CPL Fact Sheet — standalone live page `fact-sheet/` recreating the journalist PDF (#537) + the Statewide Exhibits section & 1,304-vs-1,101 KPI reconciliation (#540); NEW kb-note playbook-standalone-public-page + NEW lessons doc fact_sheet_lessons)
+updated: 2026-06-26 (Session 76 — SkyTrek: Team & RACI navigation — matrix Activity/search filter + per-card 👥 RACI deep-links, PR #550 merged + cron-dispatched; raci.js added to the File Inventory + Tab Layout in CLAUDE.md)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -247,6 +247,8 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 71 → 72 | (Session 71) the CCR merge-workspace EPIC, completed in full — #511 scope, #512 PR-1 (extract shared `buildMergeEditor`), #513 PR-2a (hoist to init scope), #514 PR-2b (per-row dialog adopts it, in-row ★ model), #515 lessons, #516 PR-3 (dock the worklist as a right-hand panel), #518 PR-4 (live CCR↔worklist re-filter) → the standing lanes: unverified-M-ID renumber re-mint, TMC acceptance engine, CPL-Assistant recommender ETL | [`session_72_handoff.md`](session_72_handoff.md) |
 | 72 → 73 | StarLander: the post-consolidation merge-workspace polish pass — 14 PRs #520–#534 (decouple worklist from CCR filters, keyword-surfaces-all, single-course rename→Save, header Prev/Next) → the standing lanes | [`session_73_handoff.md`](session_73_handoff.md) |
 | 74 → 75 | SkyBlaster: the public CPL Fact Sheet — standalone live page (`fact-sheet/`) #537 + Statewide Exhibits section & KPI-count reconciliation #540 → Fact-Sheet follow-ups (live-wire the snapshot tier; tech-landscape → live HTML) + the standing lanes | [`session_75_handoff.md`](session_75_handoff.md) |
+| 75 → 76 | SkyMaster: the COBI ownership + nudge + report layer — workplan-alignment regroup #545, Team & RACI tab + registry #546, nudge toggle + test modes #547, editable Directory cells #548; Annual Report draft delivered (not a tab yet) → the RACI carry-overs (matrix filter, nudge SEND channel, `allowed_reviewers`, per-card RACI links, `update_log`, Report tab) | [`session_76_handoff.md`](session_76_handoff.md) |
+| 76 → 77 | SkyTrek: Team & RACI navigation — matrix Activity/search **filter** + per-card **`👥 RACI` deep-links** (one PR #550, merged + cron-dispatched; 89/89 tests) → the decision-gated carry-overs (nudge channel, lead emails, `update_log`) + the Annual Report tab + the standing lanes | [`session_77_handoff.md`](session_77_handoff.md) |
 
 ---
 
