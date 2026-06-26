@@ -229,7 +229,8 @@
     var items = visibleMatrixItems();
     items.forEach(function (item) {
       var rc = raciFor(item);
-      var tr = el("tr", { "class": item.isActivity ? "raci-row-act" : "raci-row-proj" }, []);
+      var tr = el("tr", { "class": item.isActivity ? "raci-row-act" : "raci-row-proj",
+        "data-raci-key": item.type + ":" + item.id }, []);
       tr.appendChild(el("td", { "class": "raci-item-cell" }, [
         el("span", { "class": "raci-item-id" }, [item.isActivity ? "Activity " + item.id : item.id]),
         el("span", { "class": "raci-item-name" }, [item.name])]));
@@ -372,6 +373,38 @@
       .catch(function () { cb.checked = !want; cb.disabled = false; alert("Could not save — are you a signed-in reviewer?"); });
   }
 
+  // ─── Deep-link focus (per-card "RACI" link on Activities & Projects) ────────
+  // A card sets sessionStorage['cpl_raci_focus'] = "project:5.1" / "activity:4"
+  // then navigates to #raci. We consume it on every tab activation (the
+  // cpl-tab-activated listener) AND at the end of the first boot render (the
+  // cold deep-link case, where the activation event fired before this script
+  // loaded), then scroll the matrix to that row and flash it.
+  var FOCUS_KEY = "cpl_raci_focus";
+  function consumePendingFocus() {
+    if (!state.loaded) return; // leave the key for boot's render callback
+    var f = null;
+    try { f = sessionStorage.getItem(FOCUS_KEY); } catch (e) {}
+    if (!f) return;
+    try { sessionStorage.removeItem(FOCUS_KEY); } catch (e) {}
+    var i = f.indexOf(":");
+    if (i < 0) return;
+    focusItem(f.slice(0, i), f.slice(i + 1));
+  }
+  function focusItem(type, id) {
+    // Make the row reachable: matrix view, filters cleared, then re-render.
+    state.view = "matrix";
+    state.mfilter = { activity: "all", q: "" };
+    render();
+    var sel = '[data-raci-key="' + type + ":" + (id || "").replace(/"/g, "") + '"]';
+    var row = document.querySelector(sel);
+    if (!row) return;
+    if (typeof row.scrollIntoView === "function") {
+      try { row.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) {}
+    }
+    row.classList.add("raci-row-focus");
+    setTimeout(function () { row.classList.remove("raci-row-focus"); }, 2600);
+  }
+
   function render() {
     ensureCss();
     var root = document.getElementById("raci-root");
@@ -455,6 +488,8 @@
       ".raci-filter-q{flex:1 1 200px;min-width:160px;}" +
       ".raci-filter-clear{padding:.35rem .6rem;}" +
       ".raci-count{margin-top:.45rem;color:var(--text-faint,#777);font-size:.78rem;}" +
+      ".raci-row-focus td{background:var(--gold-soft,#fbf3d9)!important;box-shadow:inset 3px 0 0 var(--gold-accent,#B8860B);animation:raciFocusFade 2.6s ease-out;}" +
+      "@keyframes raciFocusFade{0%{background:var(--gold-accent,#B8860B);}30%{background:var(--gold-soft,#fbf3d9);}100%{background:transparent;}}" +
       ".raci-legend{margin-top:.5rem;color:var(--text-faint,#777);font-size:.78rem;}" +
       ".raci-dir-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;color:#555;font-size:.85rem;}" +
       ".raci-dir-n{font-weight:600;color:var(--text-strong,#222);}.raci-dir-r{color:#555;}.raci-dir-e a{color:var(--accent-link,#1c5d99);}" +
@@ -479,12 +514,18 @@
     document.head.appendChild(el("style", { id: "raci-css", html: css }));
   }
 
+  // Re-check the focus key on every navigation to #raci (handles the case where
+  // the tab was already booted, so onActivate's once-only boot won't re-fire).
+  window.addEventListener("cpl-tab-activated", function (e) {
+    if (e && e.detail && e.detail.tab === "raci") consumePendingFocus();
+  });
+
   // ─── Boot ──────────────────────────────────────────────────────────────────
   function boot() {
     var root = document.getElementById("raci-root");
     if (root) root.innerHTML = '<p style="color:#888;padding:1rem;">Loading Team & RACI…</p>';
-    load(render);
+    load(function () { render(); consumePendingFocus(); });
   }
 
-  window.CPL_RACI_TAB = { boot: boot, render: render };
+  window.CPL_RACI_TAB = { boot: boot, render: render, focusItem: focusItem };
 })();

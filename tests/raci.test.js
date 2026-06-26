@@ -107,6 +107,23 @@ const RACI_ROWS = [
     if (clr) clr.click();
   }
 
+  // (g) per-card deep-link focus (Session 76 — SkyTrek). A card sets
+  // sessionStorage cpl_raci_focus then navigates to #raci; a cpl-tab-activated
+  // event must consume it, switch to the matrix, and flash the target row.
+  check("matrix rows carry a data-raci-key", !!doc.querySelector('[data-raci-key="project:3.2"]'));
+  dom.window.sessionStorage.setItem("cpl_raci_focus", "project:3.2");
+  dom.window.dispatchEvent(new dom.window.CustomEvent("cpl-tab-activated", { detail: { tab: "raci" } }));
+  check("deep-link focus flashes the target row",
+    !!doc.querySelector('[data-raci-key="project:3.2"].raci-row-focus'));
+  check("deep-link focus consumes the sessionStorage key",
+    dom.window.sessionStorage.getItem("cpl_raci_focus") === null);
+  check("a non-raci tab activation is ignored", (function () {
+    dom.window.sessionStorage.setItem("cpl_raci_focus", "activity:1");
+    dom.window.dispatchEvent(new dom.window.CustomEvent("cpl-tab-activated", { detail: { tab: "budget" } }));
+    return dom.window.sessionStorage.getItem("cpl_raci_focus") === "activity:1";
+  })());
+  dom.window.sessionStorage.removeItem("cpl_raci_focus");
+
   // (e) directory view: switch via the toggle, assert members + the
   // "Nudge for Updates" opt-in column render.
   const toggles = doc.querySelectorAll(".raci-tg");
