@@ -2,85 +2,75 @@
 title: Session 77 handoff — you are Session 77
 created: 2026-06-26
 updated: 2026-06-26
-tags: [handoff, session-77, raci, nudges, activities-projects, annual-report]
+tags: [handoff, session-77, raci, nudges, activities-projects, annual-report, veterans-sprint]
 obsidian-folder: cpl-project-tracker
 related:
   - "[[CLAUDE]]"
   - "[[docs/cobi_raci_nudge_lessons]]"
-  - "[[docs/session_76_handoff]]"
 ---
 
 # You are Session 77
 
-Session 76 (**SkyTrek**) cleared the two Team & RACI **navigation** carry-overs from
-SkyMaster's ownership/nudge build. One PR (#550) shipped, merged, and the daily workflow
-was dispatched to publish the regenerated card HTML. Read
-`docs/cobi_raci_nudge_lessons.md` (the 2026-06-26 §) first, then this.
+Session 76 (**SkyTrek**) finished the Team & RACI **navigation + hierarchy** work and dual-published
+two strategic plans. Read `docs/cobi_raci_nudge_lessons.md` (the two 2026-06-26 sections) first, then
+this. Everything below shipped to `main` (tracker) / merged (vault); one public-KB PR awaits Sam.
 
-## What shipped (PR #550 — merged + cron-dispatched)
+## What shipped (Session 76)
 
-| Carry-over | What |
-|---|---|
-| **#1 — matrix filter** | A filter bar above the RACI matrix: **All Activities / Activity 1–4** dropdown + a **search box** (Activity or Project name/id) + **Clear** + a `Showing N of M projects` count. Project hits keep their parent Activity header for context; the table refreshes **in place** so the search box keeps focus. Matrix-only; Directory untouched. `raci.js` only. |
-| **#4 — per-card deep-link** | Each project card → a `👥 RACI` button; each Activity header → a `👥 RACI` link. Click sets `sessionStorage['cpl_raci_focus']="project:<id>"\|"activity:<n>"` then navigates `#raci`. `raci.js` consumes it on **every** `cpl-tab-activated` for `raci` **and** at first-boot render, switches to matrix view, clears the filter, scrolls + flashes the row (gold pulse). Generator emits the links (`_render_single_project_card` + `render_activity_kpis_html`) — **code-only**, published by the dispatch. |
+| PR | Repo | What |
+|---|---|---|
+| **#550** | tracker | RACI matrix **Activity/search filter** + per-card **`👥 RACI` deep-links** (cards set `sessionStorage['cpl_raci_focus']` → `#raci`; consumer flashes the row). |
+| **#552** | tracker | The **CI-poll-via-MCP** learning elevated into CLAUDE.md's CI-gate section (sandbox `curl`/`GH_TOKEN` has no GitHub access — poll via `pull_request_read`/`actions_list`, never curl). |
+| **#553** | tracker | The **3-tier RACI matrix**: Activity → sub-activity → project/work item, built from `window.CPL_DATA` (`activity_kpis` ids + `projects`' dotted-id nesting), each row RACI-able; hierarchical `<optgroup>` scope filter; **no RACI-key migration** (rows stay `item_type:"project"`). 38 rows, 30 jsdom checks, suite 89/89. **Live on merge** (raci.js is static — no regen). |
+| **#10, #11** | CPLBrain (vault) | **Veterans Sprint plan** + **Military Base CPL Demonstration plan** (full, names + RACI + tables), cross-linked, in PROJECT-OVERVIEW → Plans, session note written. |
+| **#15** | cpl-knowledge-base | **Scrubbed public mirrors** of both plans (`overview/`). **DRAFT — left for Sam:** per `CURATION.md` the human review IS the sensitivity audit, so the session does NOT self-merge the public KB. |
 
-`tests/raci.test.js` = **24 checks** (15 base + 5 filter + 4 deep-link). Full suite **89/89**.
+## How the RACI tab works now (so you don't re-derive it)
+- `raci.js` is **static + lazy** (no Rule-4 HTML mirror; only nav/pane/boot are mirrored). It reads
+  `window.CPL_DATA` — no generator change needed for matrix content.
+- **3-tier tree** via `buildItems()`: `activity_kpis` = the official **sub-activity** ids (drive the
+  `sub-activity` tag + filter); `projects`' **dotted ids** encode nesting (`idParent` = longest
+  non-digit-boundary id prefix; `4.1`→`4.1.1`, `3.1.2`→`3.1.2a`; `5.x` → directly under their Activity).
+- **Stable keys:** non-Activity rows keep `item_type:"project"` → existing RACI assignments survive.
+  The sub/project split is visual + filter-only. Don't change item_type (see the KB note below).
+- Scope filter: `all` / `act:N` / `sub:ID`; search keeps a match + its `ancestors` chain.
 
-## Key gotchas learned this session (save yourself the time)
+## Carry-over (priority order)
 
-- **`onActivate` fires its callback ONCE** (`tabs.js` ~269). A deep-link click after the tab
-  was already booted will NOT re-run `boot()`. Robust deep-link consume = a module-level
-  `cpl-tab-activated` listener in the consumer JS, re-checking the focus key each time, **plus**
-  a consume at first-boot render for the cold case. `hashchange→activate` fires the event every
-  time (~249), so a plain `href="#raci"` is enough.
-- **The sandbox's `GH_TOKEN`/`curl` has NO GitHub access** (`api.github.com` → *"GitHub access
-  is not enabled for this session"*). Only the **MCP `github` server** reaches it. A `Monitor`
-  that curls the GitHub API to watch CI **silently times out**. Poll CI via the MCP
-  `actions_list` tool and parse its saved tool-result file with python (it's too big to read
-  inline).
-- **Merge mechanics:** `mergeable_state: unstable` = mergeable on green (required TruffleHog
-  passed, only the non-required JS-tests check still running). The auto-merge tool refuses
-  `unstable`, so squash-merge manually via `merge_pull_request {merge_method:"squash"}`. After
-  merging a code-only generator change, **dispatch `daily-dashboard.yml`** (`actions_run_trigger`
-  `{method:"run_workflow"}`) to publish the regenerated HTML same-hour.
+**DECISION-GATED — ask Sam, don't guess:**
+1. **Nudge SEND channel (#2)** — `nudges/build_nudges.py` only drafts today. Pick: Outlook (zero infra),
+   Teams Power Automate webhook (`TEAMS_NUDGE_WEBHOOK`), or Graph `sendMail`. (In the To-Do feed.)
+2. **3 leads → `allowed_reviewers` (#3)** — needs the actual emails (Crystal Nasio, Terence Nelson,
+   Calvin/Gloria) + Sam's go; Sam also to add his own `slee@cccco.edu` via the editable Email cell.
+3. **`update_log` (#5/P1)** — ⚠ product-gated: §11 records Sam **parked** the Update-Log decision
+   (2026-06-01). Don't build without his explicit go. **#6 (Annual Report tab) depends on it** for fresh content.
 
-## Carry-over (priority order) — the remaining RACI/report wave
+**AUTONOMOUS (no decision):**
+4. **Annual Report TAB (#6/P5)** — capstone; draft structure delivered (Session 75). Reuse
+   `report_generator.js` (✨AI draft) + `college_report_generator.js` `buildDocx` (⬇Word). Blocked on #5 for *fresh* content but the shell can be built.
+5. **Activity-4 sub-lanes (#7)** — now partly subsumed by the 3-tier matrix idea; revisit whether the
+   Activities & Projects *cards* should also group by sub-activity. Pure refactor.
 
-**DECISION-GATED (ask Sam, don't guess):**
-1. **Nudge SEND channel (#2)** — today `nudges/build_nudges.py` only generates drafts. Pick:
-   (a) Sam forwards the per-lead emails from Outlook (zero infra), (b) a Teams **Power Automate**
-   webhook (`TEAMS_NUDGE_WEBHOOK` secret), or (c) Graph `sendMail` (Entra app + admin consent).
-   Plus a weekly `.github/workflows/cpl-nudges.yml` cron (OFF until a secret exists). The
-   sam-raci-decisions To-Do item already asks for his call.
-2. **3 leads → `allowed_reviewers` (#3)** — needs the actual emails (Crystal Nasio, Terence
-   Nelson, Calvin/Gloria) + Sam's go. Sam also to add his own `slee@cccco.edu` via the editable
-   Email cell.
-3. **`update_log` (#5/P1)** — ⚠ **product-gated:** CLAUDE.md §11 records Sam **dismissed/parked**
-   the Update-Log decision (2026-06-01). Do NOT build it without his explicit go. It's the
-   foundation for fresh reports (today's activities/projects haven't been updated since
-   ~2026-04-08), and **#6 (Annual Report tab) depends on it.**
+**Public KB #15** — follow through: when Sam reviews, mark ready + merge (or apply his scrub edits).
 
-**AUTONOMOUS (no decision needed):**
-4. **Annual Report TAB (#6/P5)** — the capstone, but blocked on #5 for *fresh* content. The
-   draft structure is delivered (Exec Summary · Vision 2030 & 3 Goals · Activity Progress · Statewide
-   Impact · Spotlights · Looking Ahead). Reuse `report_generator.js`'s Claude proxy for ✨AI draft
-   + `college_report_generator.js` `buildDocx` for ⬇Word.
-5. **Activity 4 sub-lanes (#7)** — collapsed Sprints/Targeted Projects/Partnerships/Enabling;
-   extract a shared activity-card renderer. Pure refactor, no decision.
-
-## Standing lanes (beyond RACI — from earlier handoffs, still open)
-- **Fact-Sheet snapshot live-wire** + the tech-landscape diagram → live HTML (`docs/fact_sheet_lessons.md`).
-- **Unverified-M-ID renumber re-mint** — when the merge wave settles, NOT per-merge
-  (`docs/unverified_mid_renumber_scope.md`; dry-run, Sam's go, Supabase re-key).
-- **TMC Phase-2 acceptance engine** in `tmc_builder.js` (`docs/kb-notes/tmc-co-review-scope.md`).
-- **CPL-Assistant CCR/CER recommender ETL** (`docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md`).
+## Standing lanes (beyond RACI — still open)
+- Fact-Sheet snapshot live-wire + tech-landscape → live HTML (`docs/fact_sheet_lessons.md`).
+- Unverified-M-ID renumber re-mint (`docs/unverified_mid_renumber_scope.md`) — dry-run, Sam's go.
+- TMC Phase-2 acceptance engine (`docs/kb-notes/tmc-co-review-scope.md`).
+- CPL-Assistant CCR/CER recommender ETL (`docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md`).
 
 ## Patterns that worked
-- **Two tightly-coupled features sharing one file → one PR** (filter + deep-link both in `raci.js`).
-  Avoids a guaranteed rebase conflict between two open PRs on the same file.
-- **Code-only generator PR + post-merge cron dispatch** to publish artifacts (artifact policy).
-- **Commit the test** — every `raci.js` change added jsdom checks that guard the *behavior*
-  (focus consume, empty state), run by the non-required `js-tests` CI.
+- **Static-asset feature = live on merge** (raci.js); no cron dispatch needed. Generator-touching
+  features still use the code-only-PR + post-merge dispatch.
+- **Dual-publish** internal docs: full → vault (direct merge, names intact); scrubbed → public KB
+  (draft PR, human review = sensitivity audit, manifest row for provenance). Never self-merge the public KB.
+- **Poll CI via MCP `github` tools, not curl** (a curl Monitor silently times out — no GitHub access).
+- After a squash-merge with auto-delete-branch ON, the feature branch is gone on origin → plain
+  `git push -u origin <branch>` recreates it (force-with-lease fails "stale info").
+
+## New KB note this session
+`docs/kb-notes/methodology-tree-from-dotted-ids-stable-keys.md` — build a tree from dotted ids by
+id-prefix parenting; re-tier the UI visually but keep the persisted key stable (no data migration).
 
 ## A moniker for you
-SkyTrek kept the Sky streak. Claim your own or carry it forward (SkyForge, SkyAnchor, SkyVault…).
+SkyTrek kept the Sky streak (and made Mr. Spock proud 🖖). Claim your own or carry it forward.

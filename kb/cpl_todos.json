@@ -1,14 +1,20 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-26 (Session 76 · SkyTrek — Team & RACI navigation: matrix filter + per-card deep-links, PR #550 merged + dispatched)",
+ "_as_of": "2026-06-26 (Session 76 · SkyTrek — the 3-tier RACI matrix + filter + deep-links live; Veterans Sprint & Military Base plans added to the KB)",
  "_session": 76,
- "_status": "SESSION 76 — SkyTrek finished two Team & RACI carry-overs from SkyMaster's ownership/nudge build (PR #550, merged + dispatched live). (1) The RACI Matrix now has a FILTER BAR — an 'All Activities / Activity 1–4' dropdown + a search box — so you can jump to one Activity's people instead of scanning all 34 rows. (2) Every Activity header and Project card now has a 👥 RACI link that jumps straight into the Team & RACI tab and flashes that item's row. The remaining RACI work needs a few calls from you: how nudges actually SEND (Outlook drafts vs a Teams webhook), the 3 project-lead emails to let them self-update, and whether to build the update-log (you'd parked that decision earlier). NEXT for Fable beyond RACI: the standing lanes still open — Fact-Sheet snapshot live-wire, M-ID renumber, TMC acceptance engine, CPL-Assistant CCR/CER recommender ETL.",
+ "_status": "SESSION 76 — SkyTrek leveled up the Team & RACI tab and added the Veterans plans to the KB. RACI now: (1) a hierarchical filter — pick an Activity OR one of its sub-activities; (2) per-card 👥 RACI deep-links from every Activity header + project card; (3) the matrix is now a 3-TIER tree — Activity → sub-activity → project/work item (so 4.1 Sprints nests 4.1.4 29 Palms Demo + 4.1.1 Veteran Sprint), each with its OWN RACI. Also: the Veterans Sprint plan AND its Military Base demonstration plan are now in the vault (full) + drafted as scrubbed public-KB pages (awaiting your review). Remaining RACI work needs three calls from you (nudge send channel, the 3 lead emails, update-log decision). NEXT for Fable: the Annual Report tab + the standing lanes (Fact-Sheet snapshot, M-ID renumber, TMC engine, CPL-Assistant ETL).",
  "items": [
   {
-   "id": "sam-raci-nav-live",
+   "id": "sam-raci-3tier-live",
    "who": "sam",
    "tab": "raci",
-   "text": "NEW (live now): the Team & RACI tab is easier to navigate. (1) The matrix has a filter bar at the top — pick an Activity or type to find a Project, and the table narrows instantly. (2) On the Activities & Projects tab, each Activity header and each project card now has a 👥 RACI link — click it to jump here and the matching row lights up gold. Try a few and tell me if the jump lands where you expect."
+   "text": "NEW (live now): the RACI Matrix is a 3-tier tree — Activity → sub-activity → project — each row independently RACI-able, indented and tagged. The filter dropdown is now hierarchical: pick an Activity, or expand to one of its sub-activities (e.g. just '4.1 Sprints' and its child projects). Per-card 👥 RACI links jump straight here and flash the row. Have a click around and tell me if the nesting + filter match how you think about the workplan."
+  },
+  {
+   "id": "sam-vet-plans-kb",
+   "who": "sam",
+   "tab": "raci",
+   "text": "Added to the KB: the Veterans Sprint plan AND its Military Base CPL Demonstration (29 Palms / Copper Mountain) plan — full versions in your CPLBrain vault (names + RACI intact, cross-linked, under the CPL Initiative project's Plans). I also drafted SCRUBBED public-facing versions for the public Knowledge Base (cpl-knowledge-base PR #15) — names/rosters removed, dashboard banner added. That public PR is waiting on YOUR review/merge (your review is the sensitivity check). Eyeball the two overview/ pages when you can."
   },
   {
    "id": "sam-raci-decisions",

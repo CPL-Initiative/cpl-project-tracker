@@ -111,3 +111,57 @@ Get Sam's calls to unblock the next wave: (a) nudge **send channel** (Outlook dr
 Teams Power Automate webhook / Graph sendMail); (b) the 3 lead **emails** for `allowed_reviewers`
 (#3); (c) confirm the **`update_log`** product direction (#5) before #6. Then #7 (Activity-4
 sub-lanes) is a pure refactor that needs no decision.
+
+## 2026-06-26 (cont.) — Session 76 (SkyTrek), part 2
+
+### The 3-tier RACI matrix (PR #553, merged + live)
+Sam: *"add the subactivities to the activity filter and include the projects … a RACI for each,
+all under the higher-level Activity."* The matrix went from a **flat** Activity→project list to a
+**3-tier tree: Activity → sub-activity → project/work item**, each row independently RACI-able.
+- **Data is already client-side** — no generator change. `window.CPL_DATA.activity_kpis` supplies
+  the **official sub-activity ids** (drive the filter + the `sub-activity` tag); `…projects` is the
+  full 34-item set whose **dotted ids encode the nesting**. `buildItems()` builds the tree by
+  **id-prefix parenting**: a project's parent = the longest OTHER project id that is a
+  *non-digit-boundary* prefix (`4.1`→`4.1.1`; `3.1.2`→`3.1.2a`; but `4.1`≠parent of `4.10`). A
+  project with no numbered sub-activity parent (the `5.x` items) nests directly under its Activity
+  (from the `activity` field). Real data → 38 rows, up to 4 levels deep (`3.1`→`3.1.2`→`3.1.2a`).
+- **No RACI-key migration (the load-bearing decision).** Non-Activity rows KEEP `item_type:"project"`
+  — so any assignments already made on `project:4.1` etc. survive. The sub-activity↔project
+  distinction is **visual** (depth indent + a `sub-activity` tag + tier styling) and **drives the
+  filter**, NOT the stored key. Changing the item_type would have orphaned live RACI rows.
+- **Hierarchical filter** — the Activity dropdown became `<optgroup>`s (one per Activity → "▸ All of
+  Activity N" + its sub-activities). Scope = `all` / `act:N` / `sub:ID`. A `sub:` scope shows that
+  sub + its descendant projects + the Activity header for context. Each item carries an `ancestors`
+  key array (computed in the depth-first emit); **search keeps every match PLUS its ancestor chain**
+  so the tree never renders an orphaned deep row.
+- **Test-scoping gotcha:** the dropdown `<option>` labels now contain sub-activity names, so a
+  `doc.body.innerHTML` assertion false-matches "MAP Platform" via the dropdown. Scope content
+  assertions to the **matrix table** (`.raci-table`), not the whole body. (30 jsdom checks, suite 89/89.)
+- Beautiful tie-in: `4.1 Sprints → 4.1.4 29 Palms Demo / 4.1.1 Veteran Sprint` now nest under 4.1,
+  mirroring the two plans added this session (below).
+
+### Cross-repo: the Veterans Sprint + Military Base plans (vault + public KB)
+Sam asked to add the **Veterans Sprint plan** and then its embedded **Military Base CPL Demonstration
+Project plan** (29 Palms / Copper Mountain) "to the KB." Locked decisions: **Both** stores, **convert
+faithfully** (the dp plan wasn't in any cloned repo, so its format was inferred then confirmed when Sam
+shared it). Pattern that worked — **dual-publish**:
+- **Vault (full):** `CPLBrain/04-projects/cpl-initiative/{veterans-sprint-plan-2026-06-26, military-base-cpl-demonstration-plan-2026-03-06}.md`
+  — every section + table + names + RACI intact; cross-linked both ways; in PROJECT-OVERVIEW → Plans;
+  session note `07-session-notes/2026-06-26-veterans-sprint-plan.md`. Merged: CPLBrain #10, #11.
+- **Public KB (scrubbed rewrite):** `cpl-knowledge-base/overview/{veterans-sprint-plan, military-base-cpl-demonstration}.md`
+  — per `CURATION.md` metrics + held-private rules: **dropped all personnel/RACI names + per-college
+  rosters + current-count tables**, added the dashboard banner, kept the replicable model + milestone
+  dates + statutory funding + safe-to-cite research findings (49%/27% grad, 17.5 units, $32.5B). A
+  **manifest row per plan** (`rewrite`) in the vault for provenance. **Draft PR #15 — left for Sam:
+  per CURATION.md, the human review IS the sensitivity audit, so the session does NOT self-merge the
+  public KB.** (Vault PRs the session merges — additive private content Sam supplied.)
+
+### Gotchas (new)
+- After a squash-merge with **"Automatically delete head branches"** ON, the feature branch is gone on
+  origin; `git push --force-with-lease` then fails "stale info." Just `git push -u origin <branch>` to
+  recreate it (origin/main hasn't moved).
+- The vault is `samueltlee/cplbrain` (lowercase in the API); public KB is `CPL-Initiative/cpl-knowledge-base`.
+
+### Where we are now
+RACI tab: filter + per-card deep-links + 3-tier matrix all live. Carry-overs #2/#3/#5 still
+decision-gated (nudge channel, lead emails, update_log). Public KB #15 awaiting Sam's review/merge.
