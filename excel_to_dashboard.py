@@ -1789,8 +1789,13 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
         html += f'            <div class="activity-group">\n'
         html += (f'            <div class="activity-group-header">\n'
                  f'                <h3><span style="color:#888;font-weight:600;">{act_id}:</span> {html_escape(act_name)}</h3>\n'
+                 f'                <span style="display:inline-flex;gap:0.8rem;align-items:center;white-space:nowrap;">\n'
+                 f'                <a href="#raci" class="act-raci-link" title="Who\'s Responsible / Accountable / Consulted / Informed for this Activity — open Team &amp; RACI" '
+                 f'onclick="try{{sessionStorage.setItem(\'cpl_raci_focus\',\'activity:{act_num}\')}}catch(e){{}}" '
+                 f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">&#128101; RACI</a>\n'
                  f'                <a href="#workplan-goals" class="act-targets-link" title="Annual + 2030 targets live on the Annual Workplan Goals tab" '
                  f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Targets &#8599; Annual Workplan Goals</a>\n'
+                 f'                </span>\n'
                  f'            </div>\n')
         # Activity progress bar with goal + annual targets
         html += (f'            <div style="padding:0 0.5rem 0.6rem 0.5rem;">\n'
@@ -2582,6 +2587,15 @@ def _render_single_project_card(p, update_log=None, attachments=None,
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"
                     title="Open SharePoint folder — use Upload or drag &amp; drop to add files">
                     <span style="font-size:0.85rem;">&#128206;</span> Attach{_att_badge(attachments, project_id=pid)}</a>
+                <a href="#raci" class="raci-link"
+                    onclick="try{{sessionStorage.setItem('cpl_raci_focus','project:{html_escape(str(pid), quote=True)}')}}catch(e){{}}"
+                    style="display:inline-flex;align-items:center;gap:0.3rem;
+                    font-size:0.75rem;color:var(--navy-secondary);text-decoration:none;font-weight:600;
+                    padding:0.3rem 0.6rem;border:1px solid #ddd;border-radius:4px;
+                    background:#fafafa;cursor:pointer;transition:background 0.2s;"
+                    onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"
+                    title="Who's Responsible / Accountable / Consulted / Informed — open Team &amp; RACI">
+                    <span style="font-size:0.85rem;">&#128101;</span> RACI</a>
             </div>
         </div>
 '''

@@ -33,7 +33,8 @@
     { id: "4", name: "Coordinate Sprints, Projects & Partnerships" }
   ];
 
-  var state = { members: [], raci: {}, items: [], sess: null, view: "matrix", loaded: false };
+  var state = { members: [], raci: {}, items: [], sess: null, view: "matrix", loaded: false,
+    mfilter: { activity: "all", q: "" } };
 
   // ─── DOM helper ────────────────────────────────────────────────────────────
   function el(tag, attrs, kids) {
@@ -191,16 +192,45 @@
   // ─── Render ────────────────────────────────────────────────────────────────
   function chip(name) { return el("span", { "class": "raci-chip" }, [name]); }
 
-  function renderMatrix() {
+  // Items visible under the current Activity dropdown + search box. The matrix
+  // keeps an Activity's header row whenever the Activity itself matches OR any of
+  // its projects match, so a project hit always shows its parent for context.
+  function visibleMatrixItems() {
+    var act = state.mfilter.activity;
+    var q = (state.mfilter.q || "").trim().toLowerCase();
+    if (act === "all" && !q) return state.items;
+    var out = [];
+    ACTIVITIES.forEach(function (a) {
+      if (act !== "all" && a.id !== act) return;
+      var header = null, projs = [];
+      state.items.forEach(function (it) {
+        if (it.activity !== a.id) return;
+        if (it.isActivity) header = it; else projs.push(it);
+      });
+      if (!header) return;
+      var matchAct = !q || ("activity " + a.id + " " + a.name).toLowerCase().indexOf(q) >= 0;
+      var kept = (!q || matchAct) ? projs : projs.filter(function (p) {
+        return (p.id + " " + (p.name || "")).toLowerCase().indexOf(q) >= 0;
+      });
+      if (q && !matchAct && !kept.length) return; // nothing in this group
+      out.push(header);
+      kept.forEach(function (p) { out.push(p); });
+    });
+    return out;
+  }
+
+  function fillMatrixTable(holder) {
     var canEdit = !!state.sess;
-    var wrap = el("div", { "class": "raci-matrix-wrap" }, []);
+    holder.innerHTML = "";
     var tbl = el("table", { "class": "raci-table" }, []);
     var head = el("tr", {}, [el("th", { "class": "raci-th-item" }, ["Activity / Project"])].concat(
       ROLES.map(function (r) { return el("th", { title: r.label + " — " + r.desc }, [r.k + " · " + r.label]); })));
     tbl.appendChild(head);
-    state.items.forEach(function (item) {
+    var items = visibleMatrixItems();
+    items.forEach(function (item) {
       var rc = raciFor(item);
-      var tr = el("tr", { "class": item.isActivity ? "raci-row-act" : "raci-row-proj" }, []);
+      var tr = el("tr", { "class": item.isActivity ? "raci-row-act" : "raci-row-proj",
+        "data-raci-key": item.type + ":" + item.id }, []);
       tr.appendChild(el("td", { "class": "raci-item-cell" }, [
         el("span", { "class": "raci-item-id" }, [item.isActivity ? "Activity " + item.id : item.id]),
         el("span", { "class": "raci-item-name" }, [item.name])]));
@@ -215,7 +245,43 @@
       });
       tbl.appendChild(tr);
     });
-    wrap.appendChild(tbl);
+    if (!items.length) tbl.appendChild(el("tr", {}, [
+      el("td", { colspan: String(ROLES.length + 1), "class": "raci-empty", style: "padding:.8rem .6rem;" },
+        ["No Activities or Projects match this filter."])]));
+    holder.appendChild(tbl);
+    var nProj = items.filter(function (i) { return !i.isActivity; }).length;
+    var total = state.items.filter(function (i) { return !i.isActivity; }).length;
+    holder.appendChild(el("div", { "class": "raci-count" }, [
+      (state.mfilter.activity === "all" && !state.mfilter.q)
+        ? total + " projects across 4 Activities"
+        : "Showing " + nProj + " of " + total + " projects"]));
+  }
+
+  function renderMatrix() {
+    var wrap = el("div", { "class": "raci-matrix-wrap" }, []);
+    var holder = el("div", { "class": "raci-table-holder" }, []);
+
+    // Filter bar: Activity dropdown + search box (matrix view only).
+    var sel = el("select", { "class": "raci-in raci-filter-sel", title: "Filter by workplan Activity" },
+      [el("option", { value: "all" }, ["All Activities"])].concat(
+        ACTIVITIES.map(function (a) {
+          return el("option", { value: a.id }, ["Activity " + a.id + " — " + a.name]);
+        })));
+    sel.value = state.mfilter.activity;
+    sel.addEventListener("change", function () { state.mfilter.activity = sel.value; fillMatrixTable(holder); });
+    var search = el("input", { type: "search", "class": "raci-in raci-filter-q",
+      placeholder: "Find an Activity or Project…" });
+    search.value = state.mfilter.q;
+    search.addEventListener("input", function () { state.mfilter.q = search.value; fillMatrixTable(holder); });
+    var clear = el("button", { "class": "raci-btn raci-filter-clear", title: "Clear filters" }, ["Clear"]);
+    clear.addEventListener("click", function () {
+      state.mfilter.activity = "all"; state.mfilter.q = "";
+      sel.value = "all"; search.value = ""; fillMatrixTable(holder);
+    });
+    wrap.appendChild(el("div", { "class": "raci-filter-bar" }, [sel, search, clear]));
+
+    fillMatrixTable(holder);
+    wrap.appendChild(holder);
     return wrap;
   }
 
@@ -307,6 +373,38 @@
       .catch(function () { cb.checked = !want; cb.disabled = false; alert("Could not save — are you a signed-in reviewer?"); });
   }
 
+  // ─── Deep-link focus (per-card "RACI" link on Activities & Projects) ────────
+  // A card sets sessionStorage['cpl_raci_focus'] = "project:5.1" / "activity:4"
+  // then navigates to #raci. We consume it on every tab activation (the
+  // cpl-tab-activated listener) AND at the end of the first boot render (the
+  // cold deep-link case, where the activation event fired before this script
+  // loaded), then scroll the matrix to that row and flash it.
+  var FOCUS_KEY = "cpl_raci_focus";
+  function consumePendingFocus() {
+    if (!state.loaded) return; // leave the key for boot's render callback
+    var f = null;
+    try { f = sessionStorage.getItem(FOCUS_KEY); } catch (e) {}
+    if (!f) return;
+    try { sessionStorage.removeItem(FOCUS_KEY); } catch (e) {}
+    var i = f.indexOf(":");
+    if (i < 0) return;
+    focusItem(f.slice(0, i), f.slice(i + 1));
+  }
+  function focusItem(type, id) {
+    // Make the row reachable: matrix view, filters cleared, then re-render.
+    state.view = "matrix";
+    state.mfilter = { activity: "all", q: "" };
+    render();
+    var sel = '[data-raci-key="' + type + ":" + (id || "").replace(/"/g, "") + '"]';
+    var row = document.querySelector(sel);
+    if (!row) return;
+    if (typeof row.scrollIntoView === "function") {
+      try { row.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) {}
+    }
+    row.classList.add("raci-row-focus");
+    setTimeout(function () { row.classList.remove("raci-row-focus"); }, 2600);
+  }
+
   function render() {
     ensureCss();
     var root = document.getElementById("raci-root");
@@ -385,6 +483,13 @@
       ".raci-cell-edit{cursor:pointer;}.raci-cell-edit:hover{background:var(--surface-2,#eef3f9);}" +
       ".raci-chip{display:inline-block;background:var(--surface-2,#eef3f9);border:1px solid var(--border,#d4dde7);color:var(--navy-secondary,#1c3d5a);border-radius:11px;padding:.05rem .5rem;margin:.1rem .2rem .1rem 0;font-size:.75rem;font-weight:600;}" +
       ".raci-empty{color:var(--text-faint,#aaa);font-size:.78rem;}" +
+      ".raci-filter-bar{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.7rem;}" +
+      ".raci-filter-sel{max-width:340px;}" +
+      ".raci-filter-q{flex:1 1 200px;min-width:160px;}" +
+      ".raci-filter-clear{padding:.35rem .6rem;}" +
+      ".raci-count{margin-top:.45rem;color:var(--text-faint,#777);font-size:.78rem;}" +
+      ".raci-row-focus td{background:var(--gold-soft,#fbf3d9)!important;box-shadow:inset 3px 0 0 var(--gold-accent,#B8860B);animation:raciFocusFade 2.6s ease-out;}" +
+      "@keyframes raciFocusFade{0%{background:var(--gold-accent,#B8860B);}30%{background:var(--gold-soft,#fbf3d9);}100%{background:transparent;}}" +
       ".raci-legend{margin-top:.5rem;color:var(--text-faint,#777);font-size:.78rem;}" +
       ".raci-dir-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;color:#555;font-size:.85rem;}" +
       ".raci-dir-n{font-weight:600;color:var(--text-strong,#222);}.raci-dir-r{color:#555;}.raci-dir-e a{color:var(--accent-link,#1c5d99);}" +
@@ -409,12 +514,18 @@
     document.head.appendChild(el("style", { id: "raci-css", html: css }));
   }
 
+  // Re-check the focus key on every navigation to #raci (handles the case where
+  // the tab was already booted, so onActivate's once-only boot won't re-fire).
+  window.addEventListener("cpl-tab-activated", function (e) {
+    if (e && e.detail && e.detail.tab === "raci") consumePendingFocus();
+  });
+
   // ─── Boot ──────────────────────────────────────────────────────────────────
   function boot() {
     var root = document.getElementById("raci-root");
     if (root) root.innerHTML = '<p style="color:#888;padding:1rem;">Loading Team & RACI…</p>';
-    load(render);
+    load(function () { render(); consumePendingFocus(); });
   }
 
-  window.CPL_RACI_TAB = { boot: boot, render: render };
+  window.CPL_RACI_TAB = { boot: boot, render: render, focusItem: focusItem };
 })();

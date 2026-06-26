@@ -81,6 +81,49 @@ const RACI_ROWS = [
   check("RACI chip rendered for an assigned member", /raci-chip/.test(doc.body.innerHTML)
     && /Crystal Nasio/.test(doc.body.innerHTML));
 
+  // (f) matrix Activity/search filter (Session 76 — SkyTrek).
+  const fsel = doc.querySelector(".raci-filter-sel");
+  const fq = doc.querySelector(".raci-filter-q");
+  check("matrix filter bar present (Activity dropdown + search)", !!fsel && !!fq);
+  if (fsel) {
+    // Filter to Activity 1 → only Activity 1's header + its projects show.
+    fsel.value = "1";
+    fsel.dispatchEvent(new dom.window.Event("change"));
+    check("Activity filter narrows to one Activity header",
+      doc.querySelectorAll(".raci-row-act").length === 1);
+    check("Activity-1 filter keeps its project (MAP Platform)",
+      /MAP Platform/.test(doc.body.innerHTML) && !/CPL Units Transcription/.test(doc.body.innerHTML));
+    // Back to all, then search by project name.
+    fsel.value = "all"; fsel.dispatchEvent(new dom.window.Event("change"));
+    fq.value = "transcription"; fq.dispatchEvent(new dom.window.Event("input"));
+    check("search surfaces the matching project + its Activity header",
+      /CPL Units Transcription/.test(doc.body.innerHTML) && !/MAP Platform/.test(doc.body.innerHTML));
+    check("a no-match search shows the empty-state row", (function () {
+      fq.value = "zzzznomatch"; fq.dispatchEvent(new dom.window.Event("input"));
+      return /No Activities or Projects match/.test(doc.body.innerHTML);
+    })());
+    // Reset for the directory-view checks below.
+    const clr = doc.querySelector(".raci-filter-clear");
+    if (clr) clr.click();
+  }
+
+  // (g) per-card deep-link focus (Session 76 — SkyTrek). A card sets
+  // sessionStorage cpl_raci_focus then navigates to #raci; a cpl-tab-activated
+  // event must consume it, switch to the matrix, and flash the target row.
+  check("matrix rows carry a data-raci-key", !!doc.querySelector('[data-raci-key="project:3.2"]'));
+  dom.window.sessionStorage.setItem("cpl_raci_focus", "project:3.2");
+  dom.window.dispatchEvent(new dom.window.CustomEvent("cpl-tab-activated", { detail: { tab: "raci" } }));
+  check("deep-link focus flashes the target row",
+    !!doc.querySelector('[data-raci-key="project:3.2"].raci-row-focus'));
+  check("deep-link focus consumes the sessionStorage key",
+    dom.window.sessionStorage.getItem("cpl_raci_focus") === null);
+  check("a non-raci tab activation is ignored", (function () {
+    dom.window.sessionStorage.setItem("cpl_raci_focus", "activity:1");
+    dom.window.dispatchEvent(new dom.window.CustomEvent("cpl-tab-activated", { detail: { tab: "budget" } }));
+    return dom.window.sessionStorage.getItem("cpl_raci_focus") === "activity:1";
+  })());
+  dom.window.sessionStorage.removeItem("cpl_raci_focus");
+
   // (e) directory view: switch via the toggle, assert members + the
   // "Nudge for Updates" opt-in column render.
   const toggles = doc.querySelectorAll(".raci-tg");
