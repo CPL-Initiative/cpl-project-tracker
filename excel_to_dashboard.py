@@ -1793,6 +1793,9 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                  f'                <a href="#raci" class="act-raci-link" title="Who\'s Responsible / Accountable / Consulted / Informed for this Activity — open Team &amp; RACI" '
                  f'onclick="try{{sessionStorage.setItem(\'cpl_raci_focus\',\'activity:{act_num}\')}}catch(e){{}}" '
                  f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">&#128101; RACI</a>\n'
+                 f'                <a href="#raci" class="act-update-link" title="Braindump a quick status update for this Activity — CC writes it up and saves it" '
+                 f'onclick="try{{sessionStorage.setItem(\'cpl_update_focus\',\'activity:{act_num}\')}}catch(e){{}}" '
+                 f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">&#128221; Update</a>\n'
                  f'                <a href="#workplan-goals" class="act-targets-link" title="Annual + 2030 targets live on the Annual Workplan Goals tab" '
                  f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Targets &#8599; Annual Workplan Goals</a>\n'
                  f'                </span>\n'
@@ -2570,14 +2573,6 @@ def _render_single_project_card(p, update_log=None, attachments=None,
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="#" class="proj-update-btn" data-pid="{html_escape(str(pid), quote=True)}"
-                    style="display:inline-flex;align-items:center;gap:0.3rem;
-                    font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
-                    padding:0.3rem 0.6rem;border:1px solid var(--cobalt);border-radius:4px;
-                    background:var(--cobalt);cursor:pointer;transition:background 0.2s;"
-                    onmouseover="this.style.background='#003B8E'" onmouseout="this.style.background='var(--cobalt)'"
-                    title="Add or edit this project's Latest Update (sign in to edit)">
-                    <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="{html_escape(str(pid) + ' ' + str(p.get('name', '')), quote=True)}"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
@@ -2596,6 +2591,15 @@ def _render_single_project_card(p, update_log=None, attachments=None,
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"
                     title="Who's Responsible / Accountable / Consulted / Informed — open Team &amp; RACI">
                     <span style="font-size:0.85rem;">&#128101;</span> RACI</a>
+                <a href="#raci" class="update-link"
+                    onclick="try{{sessionStorage.setItem('cpl_update_focus','project:{html_escape(str(pid), quote=True)}')}}catch(e){{}}"
+                    style="display:inline-flex;align-items:center;gap:0.3rem;
+                    font-size:0.75rem;color:var(--navy-secondary);text-decoration:none;font-weight:600;
+                    padding:0.3rem 0.6rem;border:1px solid #ddd;border-radius:4px;
+                    background:#fafafa;cursor:pointer;transition:background 0.2s;"
+                    onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"
+                    title="Braindump a quick status update — CC writes it up and saves it to this card">
+                    <span style="font-size:0.85rem;">&#128221;</span> Update</a>
             </div>
         </div>
 '''
