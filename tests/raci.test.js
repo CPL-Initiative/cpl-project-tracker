@@ -54,14 +54,24 @@ function makeDom(members, raciRows, opts) {
   };
   w.fetch = function (url, init) {
     const method = (init && init.method) || "GET";
+    // Token refresh endpoint — return a renewed session.
+    if (/\/auth\/v1\/token\?grant_type=refresh_token/.test(url)) {
+      dom._refreshes = (dom._refreshes || 0) + 1;
+      return Promise.resolve({ ok: true, status: 200, json: function () {
+        return Promise.resolve({ access_token: "new.aaa.bbb", refresh_token: "r2", expires_in: 3600 }); } });
+    }
     if (method !== "GET") {
       let parsed = null; try { parsed = JSON.parse((init && init.body) || "null"); } catch (e) {}
-      dom._writes.push({ url: url, method: method, body: parsed });
+      const auth = (init && init.headers && init.headers.Authorization) || "";
+      dom._writes.push({ url: url, method: method, body: parsed, auth: auth });
       return Promise.resolve({ ok: true, status: 200, json: function () { return Promise.resolve([]); } });
     }
+    // Deep-copy so each jsdom instance owns its rows (the same MEMBERS/RACI_ROWS
+    // arrays are passed to several doms; without a copy, one dom's optimistic
+    // mutation — e.g. clear-all setting nudge=false — would leak into the others).
     let body = [];
-    if (/team_members/.test(url)) body = members;
-    else if (/item_raci/.test(url)) body = raciRows;
+    if (/team_members/.test(url)) body = JSON.parse(JSON.stringify(members || []));
+    else if (/item_raci/.test(url)) body = JSON.parse(JSON.stringify(raciRows || []));
     return Promise.resolve({ ok: true, status: 200, json: function () { return Promise.resolve(body); } });
   };
   w.eval(SRC);
@@ -240,6 +250,62 @@ const RACI_ROWS = [
     await new Promise((r) => setTimeout(r, 30));
     const clears = sdir._writes.filter((x) => /team_members/.test(x.url) && x.method === "PATCH" && x.body && x.body.nudge === false);
     check("clear-all PATCHes every member's nudge to false", clears.length === 2);
+  }
+
+  // ── (k) Nudge accountability: last_nudged_at stamp + response status ──
+  // Firing the nudge stamps last_nudged_at on the recipients.
+  try { sdoc.querySelector(".raci-filter-nudge").click(); } catch (e) {}
+  await new Promise((r) => setTimeout(r, 30));
+  const stamps = signed._writes.filter((x) => /team_members/.test(x.url) && x.method === "PATCH" && x.body && x.body.last_nudged_at);
+  check("firing the nudge stamps last_nudged_at on recipients", stamps.length >= 1);
+
+  // Directory status columns: overdue (nudged, no response) vs responded (✓).
+  const DAY = 86400000;
+  const MEMBERS_TS = [
+    { id: 11, name: "Quiet Quentin", email: "q@x.edu", role: "Lead",
+      last_nudged_at: new Date(Date.now() - 10 * DAY).toISOString() },                 // overdue
+    { id: 12, name: "Responsive Rita", email: "r@x.edu", role: "Lead",
+      last_nudged_at: new Date(Date.now() - 3 * DAY).toISOString(),
+      last_response_at: new Date(Date.now() - 1 * DAY).toISOString() },                // responded
+  ];
+  const sts = makeDom(MEMBERS_TS, [], { session: { access_token: "aaa.bbb.ccc" } });
+  sts.window.CPL_RACI_TAB.boot();
+  await new Promise((r) => setTimeout(r, 30));
+  const tdoc = sts.window.document;
+  let tTog = null;
+  tdoc.querySelectorAll(".raci-tg").forEach(function (b) { if (/Directory/.test(b.textContent)) tTog = b; });
+  if (tTog) tTog.click();
+  check("directory has Last-nudged + Status columns",
+    /Last nudged/.test(tdoc.body.textContent) && /Status/.test(tdoc.body.textContent));
+  const statusCells = tdoc.querySelectorAll(".raci-status-cell");
+  check("overdue member (nudged 10d, no response) flagged", !!tdoc.querySelector(".raci-st-overdue"));
+  check("responded member shows ✓", !!tdoc.querySelector(".raci-st-ok") && /responded/.test(tdoc.body.textContent));
+  // Clicking the overdue member's status cell records a response (PATCH last_response_at).
+  if (statusCells.length) {
+    statusCells[0].click();
+    await new Promise((r) => setTimeout(r, 30));
+    const resp = sts._writes.filter((x) => /team_members/.test(x.url) && x.method === "PATCH" && x.body && x.body.last_response_at);
+    check("clicking Status records a response (PATCH last_response_at)", resp.length >= 1);
+  }
+
+  // ── (l) Expired-token auto-refresh on write (the "saves don't persist" bug) ──
+  // A session whose access token is expired but carries a refresh_token must
+  // renew before a write, so the save lands with a fresh Bearer (not a dead 401).
+  const expired = makeDom(MEMBERS_TS, [],
+    { session: { access_token: "old.aa.bb", refresh_token: "r1", email: "map@rccd.edu", exp: Date.now() - 1000 } });
+  expired.window.CPL_RACI_TAB.boot();
+  await new Promise((r) => setTimeout(r, 30));
+  const edoc = expired.window.document;
+  let eTog = null;
+  edoc.querySelectorAll(".raci-tg").forEach(function (b) { if (/Directory/.test(b.textContent)) eTog = b; });
+  if (eTog) eTog.click();
+  const eStatus = edoc.querySelector(".raci-status-cell");
+  if (eStatus) {
+    eStatus.click();
+    await new Promise((r) => setTimeout(r, 40));
+    check("expired token triggers a refresh before the write", (expired._refreshes || 0) >= 1);
+    const fresh = expired._writes.filter((x) => /team_members/.test(x.url) && x.method === "PATCH" && x.auth === "Bearer new.aaa.bbb");
+    check("the write lands with the refreshed Bearer token", fresh.length >= 1);
   }
 
   let failed = 0;

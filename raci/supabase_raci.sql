@@ -23,6 +23,8 @@ create table if not exists public.team_members (
   org         text not null default 'MAP',          -- tenant/division (forward-compat)
   active      boolean not null default true,
   nudge       boolean not null default true,        -- per-member update-nudge opt-in (Team & RACI toggle)
+  last_nudged_at   timestamptz,                      -- when a nudge was last fired at this member (StarPort, 2026-06-26)
+  last_response_at timestamptz,                      -- when this member last recorded a response (✓ in the directory)
   sort_order  int,
   created_at  timestamptz not null default now(),
   updated_at  timestamptz not null default now()
