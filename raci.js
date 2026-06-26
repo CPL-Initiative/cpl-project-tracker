@@ -219,6 +219,50 @@
     return wrap;
   }
 
+  function patchMember(m, field, value) {
+    var body = {}; body[field] = (value === "" ? null : value);
+    return sbWrite("PATCH", "team_members?id=eq." + encodeURIComponent(m.id), body, "return=minimal");
+  }
+
+  // A click-to-edit Team Directory cell (name / role / email). Read-only for
+  // anonymous viewers; a signed-in reviewer clicks to edit, Enter/blur saves
+  // (optimistic, rolls back on failure), Esc cancels.
+  function editCell(m, field, cls) {
+    var td = el("td", { "class": cls || "" }, []);
+    function show() {
+      td.innerHTML = "";
+      var v = m[field];
+      if (field === "email" && v && !state.sess) td.appendChild(el("a", { href: "mailto:" + v }, [v]));
+      else if (v) td.appendChild(document.createTextNode(v));
+      else td.appendChild(el("span", { "class": "raci-empty" }, [state.sess ? "+ add" : "—"]));
+      if (state.sess) { td.classList.add("raci-edit-cell"); td.title = "Click to edit"; }
+    }
+    function edit() {
+      if (!state.sess || td.querySelector("input")) return;
+      td.innerHTML = "";
+      var inp = el("input", { type: field === "email" ? "email" : "text", "class": "raci-in raci-cell-in" });
+      inp.value = m[field] || "";
+      td.appendChild(inp); inp.focus(); inp.select();
+      var done = false;
+      function save() {
+        if (done) return; done = true;
+        var nv = inp.value.trim();
+        if (nv === (m[field] || "")) { show(); return; }
+        var old = m[field]; m[field] = nv; show();
+        patchMember(m, field, nv).then(function (r) { if (!r.ok) throw new Error(); })
+          .catch(function () { m[field] = old; show(); alert("Could not save — are you a signed-in reviewer?"); });
+      }
+      inp.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") { e.preventDefault(); save(); }
+        else if (e.key === "Escape") { done = true; show(); }
+      });
+      inp.addEventListener("blur", save);
+    }
+    show();
+    if (state.sess) td.addEventListener("click", function () { edit(); });
+    return td;
+  }
+
   function renderDirectory() {
     var canEdit = !!state.sess;
     var tbl = el("table", { "class": "raci-table raci-dir" }, [
@@ -231,10 +275,9 @@
       cb.title = !m.email ? "Add an email before enabling nudges" : (canEdit ? "" : "Sign in to change");
       if (canEdit && m.email) cb.addEventListener("change", function () { toggleNudge(m, cb); });
       tbl.appendChild(el("tr", { "class": on ? "" : "raci-row-muted" }, [
-        el("td", { "class": "raci-dir-n" }, [m.name]),
-        el("td", { "class": "raci-dir-r" }, [m.role || "—"]),
-        el("td", { "class": "raci-dir-e" }, [m.email
-          ? el("a", { href: "mailto:" + m.email }, [m.email]) : el("span", { "class": "raci-empty" }, ["—"])]),
+        editCell(m, "name", "raci-dir-n"),
+        editCell(m, "role", "raci-dir-r"),
+        editCell(m, "email", "raci-dir-e"),
         el("td", { "class": "raci-nudge-cell" }, [cb])]));
     });
     var nudgeOn = state.members.filter(function (m) { return m.nudge !== false && m.email; }).length;
@@ -348,6 +391,8 @@
       ".raci-th-nudge{text-align:center;white-space:nowrap;}.raci-nudge-cell{text-align:center;}" +
       ".raci-nudge-cb{width:16px;height:16px;cursor:pointer;accent-color:var(--navy-primary,#0A2240);}" +
       ".raci-row-muted{opacity:.5;}.raci-row-muted .raci-dir-n{font-weight:500;}" +
+      ".raci-edit-cell{cursor:text;border-radius:4px;}.raci-edit-cell:hover{background:var(--surface-2,#eef3f9);outline:1px dashed var(--border,#cdd7e1);}" +
+      ".raci-cell-in{width:100%;box-sizing:border-box;}" +
       ".raci-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:10000;display:flex;align-items:flex-start;justify-content:center;padding:4vh 1rem;overflow:auto;}" +
       ".raci-modal{background:#fff;border-radius:10px;max-width:480px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,.25);}" +
       ".raci-modal-h{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.8rem 1rem;background:var(--navy-primary,#0A2240);color:#fff;border-radius:10px 10px 0 0;font-size:.92rem;}" +
