@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-26T17:37:26.155Z",
+  "scraped_at": "2026-06-26T22:48:06.925Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -548,13 +548,13 @@
         },
         {
           "college": "Moorpark College",
-          "students": 126,
+          "students": 127,
           "units": 14,
-          "avgUnits": 0.1111111111111111,
+          "avgUnits": 0.11023622047244094,
           "transcriptionRate": 28.6,
-          "avgTranscribed": 0.031746031746031744,
+          "avgTranscribed": 0.031496062992125984,
           "criteriaMetCount": 1,
-          "militaryStudents": 122,
+          "militaryStudents": 123,
           "nonMilitaryStudents": 4,
           "apprenticeStudents": 0,
           "savings": 18100,
@@ -1072,6 +1072,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Pasadena City College",
+          "students": 133,
+          "units": 238,
+          "avgUnits": 1.7894736842105263,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 132,
+          "nonMilitaryStudents": 1,
+          "apprenticeStudents": 0,
+          "savings": 411740,
+          "yearImpact": 1443946,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Barstow Community College",
           "students": 129,
           "units": 381,
@@ -1099,21 +1114,6 @@
           "apprenticeStudents": 0,
           "savings": 622800,
           "yearImpact": 2184120,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Pasadena City College",
-          "students": 122,
-          "units": 238,
-          "avgUnits": 1.9508196721311475,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 121,
-          "nonMilitaryStudents": 1,
-          "apprenticeStudents": 0,
-          "savings": 411740,
-          "yearImpact": 1443946,
           "transcribedUnits": 0
         },
         {
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "48,132",
+      "value": "48,144",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,826"
+          "value": "24,838"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 48132,
+    "Students": 48144,
     "Units": 230263.65000000002,
     "TranscribedUnits": 99469.95,
     "Savings": 320978990.25,
     "YearImpact": 1298398225.3999999,
-    "MilitaryStudents": 24826,
+    "MilitaryStudents": 24838,
     "NonMilitaryStudents": 23382,
     "AprenticeStudents": 753,
-    "AverageUnits": 4.784003365744204,
-    "TranscribedAverage": 2.0666074545001245
+    "AverageUnits": 4.78281094217348,
+    "TranscribedAverage": 2.0660923479561317
   }
 }
