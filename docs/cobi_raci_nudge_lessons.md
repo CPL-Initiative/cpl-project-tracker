@@ -223,3 +223,45 @@ The update loop is fully live. **Autonomous polish next:** surface the posted `i
 face + in the Annual Report (today cards still show `projects.latest_update`; the Report uses creation-era
 `CPL_DATA`) — makes the Annual Report self-freshening. **Decision-gated:** the 3 lead emails for
 `allowed_reviewers`. Standing lanes unchanged.
+
+---
+
+## 2026-06-26 — Session 78 (SkyMap): posted updates on the card face
+
+A tight one-PR follow-on (**#564**, merged + live) that closed the first half of Session-77 carryover #4
+— surfacing the `item_updates` a curator posts via the RACI 📝 composer onto the Activity / sub-activity /
+project **cards** themselves (until now they showed there only inside the RACI tab).
+
+### What shipped
+- **📝 + 👥 on sub-activity cards.** The deep-links were on the Activity header (`activity:N`) and the
+  Projects-Grid cards (`project:<id>`) but NOT the `activity-kpi` sub-activity cards (1.1/1.2/…). Added both.
+  Key insight: a sub-activity **IS** a `project:<id>` RACI row (the ids 1.1–5.1 are in both
+  `CPL_DATA.activity_kpis` and `CPL_DATA.projects`), so the composer + focus already worked — only the
+  card affordance was missing.
+- **`card_updates.js` — a read-only live overlay.** The generator stamps a hidden
+  `<div class="cpl-live-update" data-update-key="activity:N|project:<id>">` hook on every card + marks the
+  creation-era "Latest Update" line `.cpl-static-update`. The overlay fetches `item_updates` (anon read,
+  newest-first), reduces to the newest row per key, fills each matching hook with **body + date + author**,
+  and **hides the static line in that same card** (`closest('.activity-kpi-card,.project-card,.activity-group')`).
+  Runs on load + re-applies on `cpl-tab-activated`.
+
+### Lessons / gotchas
+- **Live-overlay > generator-bake for live data on regenerated cards.** The cron *could* read `item_updates`
+  (it has `SUPABASE_SERVICE_KEY`) and bake the text in, but a static JS overlay wins: one file covers both
+  HTMLs (no Rule-4 mirror), it's live the instant a curator posts (no waiting for the next cron), and it
+  stays read-only. The generator's only job is to stamp a stable **`data-update-key` hook** = the exact
+  `item_type:item_id` the writer used. Canonicalized in the KB note.
+- **One key, two surfaces.** Reusing the RACI key (`project:1.1`) for the card hook means the card overlay,
+  the RACI matrix, the deep-link focus, and the nudge email all address the same row with one string — no
+  new id space. The sub-activity-vs-project distinction stays purely visual (handoff S76 decision held).
+- **Escape the body.** `item_updates.body` is reviewer-written but still untrusted on a public page — the
+  overlay HTML-escapes before injecting (guarded by a test that feeds an `<img onerror>` payload).
+- **Code-only + post-merge dispatch** (the #562 pattern) — the hooks live in regenerated sections, so the
+  PR shipped generator + JS + script-tags only; dispatched `daily-dashboard.yml` after merge to publish.
+
+### Where we are now
+The card face now self-freshens from `item_updates`. **The mirror half is still open:** `annual_report.js`
+assembles from creation-era `CPL_DATA` — fold the latest `item_updates` per item into the Activity-Progress
++ Spotlight sections so the Annual Report self-freshens too (carryover #4, second half). **Decision-gated**
+still: the 3 lead emails for `allowed_reviewers` (only `map@rccd.edu` can post until then). Standing lanes
+unchanged.

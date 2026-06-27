@@ -1703,3 +1703,21 @@ checkbox — `applyCcr` now false; `rowPassesCcr` gates on it) so a **keyword su
 courses** (cap 25→100, no longer CCR-gated); a **single-course RENAME** (★-checked + edited title →
 "✓ Save" via `doRename()`); and **header Prev/Next** (‹ ›). 81→**88 green**. Full story:
 `docs/ccr_merge_workspace_lessons.md`; KB note `docs/kb-notes/reference-course-level-convention.md`.
+
+### Session 74 — SkyBlaster: the public CPL Fact Sheet (2026-06-25)
+
+A self-contained product sprint with Sam in the loop. Built **`fact-sheet/`** — a
+**standalone, public** page (own HTML/CSS/JS, NO COBI nav, the `kb-portal/` pattern
+minus auth) that recreates the Feb-2026 journalist Fact Sheet PDF, served by Pages at
+`…/fact-sheet/`, and a **`📄 CPL Fact Sheet ↗`** launch link in the COBI nav rail (a
+non-tab `<a class="cpl-tab">`, no `data-tab` → `tabs.js` ignores it; both HTMLs, Rule 4).
+`factsheet.js` binds the 6 headline KPIs (+ breakdowns + Veteran-Sprint figures) from
+`../live_metrics.json` (baked values = fallback); the exhibit/recommendation KPI cards +
+Statewide Exhibits counts are a labeled MAP Custom Reporting Module **snapshot**. Cambria
+prose / Calibri data; print CSS (0.4in) → "Save as PDF" is the export. Reconciled the two
+KPI cards' statewide credit-rec counts (**1,304** CCC articulation rows = **1,298**
+adoptions + 6; **1,101** = distinct recs) and added a **Statewide Exhibits** section (132
+exhibits / 12 program areas, expandable per-sector lists from
+`kb/statewide_exhibit_categories.json`). **PRs #537 + #540, both merged + LIVE.** Full
+story: [`docs/fact_sheet_lessons.md`](docs/fact_sheet_lessons.md); reusable pattern:
+[`docs/kb-notes/playbook-standalone-public-page.md`](docs/kb-notes/playbook-standalone-public-page.md).

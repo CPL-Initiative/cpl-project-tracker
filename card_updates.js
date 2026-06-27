@@ -98,12 +98,17 @@
     var scope = root || document;
     var hooks = scope.querySelectorAll(".cpl-live-update[data-update-key]");
     Array.prototype.forEach.call(hooks, function (hook) {
-      if (hook.getAttribute("data-filled") === "1") return;
       var u = _latest[hook.getAttribute("data-update-key")];
       if (!u) return;
+      // Idempotent re-render: a fresh fetch may carry a NEWER body than what's
+      // shown, so always reflect _latest (don't skip a previously-filled hook —
+      // that was the "posted update never appears without a reload" bug). Stamp
+      // the shown created_at so a no-op re-run doesn't thrash the DOM.
+      if (hook.getAttribute("data-shown") === String(u.created_at || "")) return;
       hook.innerHTML = blockHtml(u);
       hook.style.display = "";
       hook.setAttribute("data-filled", "1");
+      hook.setAttribute("data-shown", String(u.created_at || ""));
       // Hide the creation-era static "Latest Update" line in the same card so the
       // live one is the single current update.
       var card = (hook.closest && hook.closest(".activity-kpi-card, .project-card, .activity-group")) || hook.parentNode;
@@ -125,13 +130,20 @@
       .catch(function () { return []; });
   }
 
-  var _loading = false;
+  // _loading is a TRUE in-flight guard — it must be cleared when the fetch
+  // settles, or every later run() (tab re-activation, a just-posted update) is
+  // permanently short-circuited to a stale re-apply and never refetches. If a
+  // run is requested while one is in flight, remember to run again after.
+  var _loading = false, _again = false;
   function run() {
-    if (_loading) { applyTo(); return; }
-    _loading = true;
+    if (_loading) { _again = true; applyTo(); return; }
+    _loading = true; _again = false;
     fetchUpdates().then(function (rows) {
       _latest = latestByKey(rows);
       applyTo();
+    }).then(null, function () {}).then(function () {
+      _loading = false;
+      if (_again) run();
     });
   }
 
@@ -151,6 +163,9 @@
         var tab = e && e.detail && e.detail.tab;
         if (tab === "activities-projects" || tab === "dashboard" || tab == null) run();
       });
+      // The RACI composer fires this right after a successful save, so a posted
+      // update lands on the card immediately — no tab round-trip or reload.
+      window.addEventListener("cpl-item-updated", function () { run(); });
     }
   }
 
