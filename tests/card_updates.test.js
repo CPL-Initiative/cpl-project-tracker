@@ -127,6 +127,27 @@ const ROWS = [
   check("cpl-item-updated triggers a refetch (not a stale re-apply)", probe._fetches > fetchesBefore);
   check("a newly posted update refreshes the already-filled hook", /Even newer 1\.1/.test(hook11.innerHTML));
 
+  // (g) EDIT — same row (same created_at), edited body + edited_at must repaint
+  // the hook (the created_at-keyed guard would have skipped it).
+  probe._rows = [
+    { id: 7, item_type: "project", item_id: "1.1", body: "Edited 1.1 body", author: "map@rccd.edu", created_at: "2026-06-27T09:00:00Z", edited_at: "2026-06-27T10:00:00Z" }
+  ].concat(ROWS);
+  probe.window.dispatchEvent(new probe.window.CustomEvent("cpl-item-updated", {}));
+  await new Promise((r) => setTimeout(r, 30));
+  check("an edited update repaints the hook (new body)", /Edited 1\.1 body/.test(hook11.innerHTML));
+  check("an edited update shows the 'edited' marker", /edited/.test(hook11.innerHTML));
+
+  // (h) DELETE — the last update for a key is removed → the hook reverts (hidden,
+  // not data-filled) and the creation-era static line re-appears.
+  probe._rows = ROWS.filter(function (r) { return !(r.item_type === "project" && r.item_id === "1.1"); });
+  probe.window.dispatchEvent(new probe.window.CustomEvent("cpl-item-updated", {}));
+  await new Promise((r) => setTimeout(r, 30));
+  check("deleting the last update hides + un-fills the hook", hook11.style.display === "none" && !hook11.getAttribute("data-filled"));
+  check("deleting the last update re-shows the static line", (function () {
+    const s = doc.querySelector(".activity-kpi-card .cpl-static-update");
+    return s && s.style.display !== "none";
+  })());
+
   // ── report ──
   let failed = 0;
   results.forEach(function (r) {

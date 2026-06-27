@@ -72,6 +72,7 @@ function makeDom(members, raciRows, opts) {
     let body = [];
     if (/team_members/.test(url)) body = JSON.parse(JSON.stringify(members || []));
     else if (/item_raci/.test(url)) body = JSON.parse(JSON.stringify(raciRows || []));
+    else if (/item_updates/.test(url)) body = JSON.parse(JSON.stringify(opts.updates || []));
     return Promise.resolve({ ok: true, status: 200, json: function () { return Promise.resolve(body); } });
   };
   w.eval(SRC);
@@ -355,6 +356,49 @@ const RACI_ROWS = [
   check("item-nudge href targets the item's R member", /^mailto:/.test(inHref) && /crystal\.nasio@rccd\.edu/.test(inDec));
   check("item-nudge body quotes the card + the composer deep-link",
     /MAP Platform Development/.test(inDec) && /update=project/.test(inDec) && /#raci/.test(inDec));
+
+  // ── (o) Edit / delete a prior update (SkyMap, 2026-06-27) ──
+  const UPD = [{ id: 42, item_type: "project", item_id: "1.1", body: "delete me",
+    author: "map@rccd.edu", created_at: new Date().toISOString() }];
+  const ed = makeDom(MEMBERS, RACI_ROWS, { session: { access_token: "aaa.bbb.ccc" }, updates: UPD });
+  ed.window.confirm = function () { return true; };
+  ed.window.CPL_RACI_TAB.boot();
+  await new Promise((r) => setTimeout(r, 30));
+  const eddoc = ed.window.document;
+  eddoc.querySelector('[data-raci-key="project:1.1"] .raci-upd-btn').click();
+  const editB = Array.from(eddoc.querySelectorAll(".raci-upd-act")).filter((b) => /Edit/.test(b.textContent))[0];
+  check("reviewer: a prior update shows ✏️ Edit + 🗑 Delete",
+    !!editB && !!Array.from(eddoc.querySelectorAll(".raci-upd-act")).filter((b) => /Delete/.test(b.textContent))[0]);
+  if (editB) {
+    editB.click();
+    const eta = eddoc.querySelector(".raci-upd-entry .raci-upd-ta");
+    check("edit opens an inline textarea seeded with the body", !!eta && eta.value === "delete me");
+    if (eta) {
+      eta.value = "corrected body";
+      const sv = Array.from(eddoc.querySelectorAll(".raci-btn-go")).filter((b) => b.textContent.trim() === "Save")[0];
+      if (sv) {
+        sv.click();
+        await new Promise((r) => setTimeout(r, 30));
+        const patched = ed._writes.filter((x) => /item_updates\?id=eq\.42/.test(x.url) && x.method === "PATCH" && x.body && x.body.body === "corrected body");
+        check("Edit PATCHes item_updates?id=eq.42 with the new body + edited_at",
+          patched.length === 1 && !!patched[0].body.edited_at);
+      }
+    }
+  }
+  const delB = Array.from(eddoc.querySelectorAll(".raci-upd-act")).filter((b) => /Delete/.test(b.textContent))[0];
+  if (delB) {
+    delB.click();
+    await new Promise((r) => setTimeout(r, 30));
+    const deleted = ed._writes.filter((x) => /item_updates\?id=eq\.42/.test(x.url) && x.method === "DELETE");
+    check("Delete issues a DELETE for that update id", deleted.length === 1);
+  }
+  // Anon viewer can read history but gets NO edit/delete affordance.
+  const anonU = makeDom(MEMBERS, RACI_ROWS, { updates: UPD });
+  anonU.window.CPL_RACI_TAB.boot();
+  await new Promise((r) => setTimeout(r, 30));
+  anonU.window.sessionStorage.setItem("cpl_update_focus", "project:1.1");
+  anonU.window.dispatchEvent(new anonU.window.CustomEvent("cpl-tab-activated", { detail: { tab: "raci" } }));
+  check("anon viewer gets NO edit/delete affordance", !anonU.window.document.querySelector(".raci-upd-act"));
 
   let failed = 0;
   for (const [name, ok] of results) {

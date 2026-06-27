@@ -265,3 +265,27 @@ assembles from creation-era `CPL_DATA` — fold the latest `item_updates` per it
 + Spotlight sections so the Annual Report self-freshens too (carryover #4, second half). **Decision-gated**
 still: the 3 lead emails for `allowed_reviewers` (only `map@rccd.edu` can post until then). Standing lanes
 unchanged.
+
+### 2026-06-27 addendum (SkyMap) — edit + delete prior updates
+
+Sam posted a "Test" update to verify the loop, then wanted to remove it. `item_updates` was
+**append-only by design** (reviewer INSERT, no UPDATE/DELETE — "immutable history"). He asked for
+edit + delete, so we lifted the immutability:
+- **Schema:** added a nullable `edited_at` + reviewer-gated `iu_update` / `iu_delete` RLS policies
+  (`is_allowed_reviewer()`, mirroring `iu_insert`). Additive migration `item_updates_edit_delete`,
+  applied live + committed to `raci/supabase_raci.sql`.
+- **Composer:** each history row now carries **✏️ Edit** (inline textarea → `PATCH …?id=eq.<id>`
+  `{body, edited_at}`) and **🗑 Delete** (`confirm()` → `DELETE …?id=eq.<id>`) for signed-in reviewers;
+  both refresh-gated via `sbWrite`. An edited row shows "· edited".
+- **The card-revert gotcha:** deleting the *last* update for a key leaves the card's live hook showing
+  a now-gone update. `card_updates.js applyTo` now handles `_latest[key] === undefined` on a
+  previously-filled hook → clears + hides the hook and **re-shows the creation-era `.cpl-static-update`
+  line**. And the idempotency key moved from `created_at` to `id@(edited_at||created_at)` so an **edit**
+  (same created_at, new edited_at) repaints. Both guarded by tests.
+- Edit/delete fire `cpl-item-updated`, so the card reflects the change immediately (same event the
+  Session-78 refetch fix added). Authoritative `id` comes from the `select=*` load + the POST
+  `return=representation`; the affordances no-op when a just-posted row lacks an `id` (rare).
+
+Decision note: we chose a **hard delete** (Sam wants the entry gone), not a soft-delete tombstone —
+the table isn't an audit-of-record, and the `raw` braindump column already preserves provenance for
+kept rows.

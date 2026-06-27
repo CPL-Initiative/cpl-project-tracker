@@ -1,14 +1,14 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-26 (Session 78 · SkyMap — the updates you post on the RACI tab now show ON the Activity/Project cards too, with a timestamp)",
+ "_as_of": "2026-06-27 (Session 78 · SkyMap — posted updates show ON the cards; and you can now EDIT or DELETE a prior update from the 📝 composer)",
  "_session": 78,
- "_status": "SESSION 78 — SkyMap, a short snappy follow-on to StarPort. Closed half of the big polish item: an update you post via a 📝 card link (or the RACI composer) now appears ON the card face itself — newest one, with a date + who wrote it — not just inside the RACI tab. Also added the 📝 Update + 👥 RACI links to every SUB-ACTIVITY card (1.1, 1.2, …) so they match the project cards. NEXT for Fable: the other half — fold those same posted updates into the Annual Report so it self-freshens. Still need the 3 lead emails from you so your team can post their own updates.",
+ "_status": "SESSION 78 — SkyMap. The updates you post via a 📝 card link (or the RACI composer) now appear ON the card face — newest one, with a date + author — not just in the RACI tab; the 📝 Update + 👥 RACI links are on the sub-activity cards (1.1, 1.2, …) too. AND (per your ask) every prior update in the composer now has ✏️ Edit + 🗑 Delete — so you can clean up that 'Test' entry; deleting the last update reverts the card to its original note. NEXT for Fable: fold the posted updates into the Annual Report so it self-freshens. Still need the 3 lead emails so your team can post their own.",
  "items": [
   {
    "id": "sam-try-card-updates",
    "who": "sam",
    "tab": "activities-projects",
-   "text": "TRY IT (live now): the test update you posted to 1.1 now shows up ON the card, not just in the RACI tab — look for the 'Latest Update' line with a timestamp + author. Post a 📝 update on any Activity or Project card and watch it land on the card face. The 📝 Update + 👥 RACI links are now on the sub-activity cards (1.1–1.4 etc.) too, matching the project cards."
+   "text": "TRY IT (live now): a 📝 update you post shows up ON the card, not just in the RACI tab — look for the 'Latest Update' line with a timestamp + author. The 📝 Update + 👥 RACI links are on the sub-activity cards (1.1–1.4 etc.) too. NEW: open the 📝 composer on any item and each prior update now has ✏️ Edit + 🗑 Delete — go delete that 'Test' entry you made; if you remove the last update, the card falls back to its original note."
   },
   {
    "id": "sam-try-item-nudge",

@@ -409,6 +409,21 @@
       return r.json().catch(function () { return [row]; });
     });
   }
+  // Edit / delete a prior update (reviewer-gated by iu_update / iu_delete RLS).
+  // Both refresh-gated via sbWrite so a stale token doesn't silently 401.
+  function patchUpdate(u, body) {
+    return sbWrite("PATCH", "item_updates?id=eq." + encodeURIComponent(u.id),
+      { body: body, edited_at: new Date().toISOString() }, "return=minimal").then(function (r) {
+      if (!r.ok) throw new Error("edit failed (" + r.status + ")");
+      return r;
+    });
+  }
+  function deleteUpdate(u) {
+    return sbWrite("DELETE", "item_updates?id=eq." + encodeURIComponent(u.id), undefined, "return=minimal").then(function (r) {
+      if (!r.ok) throw new Error("delete failed (" + r.status + ")");
+      return r;
+    });
+  }
   // The composer: anyone can VIEW the summary + update history; a signed-in
   // reviewer can braindump → ✨ have CC write it up → Save (appends item_updates).
   function openUpdate(item) {
@@ -420,9 +435,53 @@
       var ups = updatesFor(item);
       if (!ups.length) { hist.appendChild(el("div", { "class": "raci-empty" }, ["No updates recorded yet."])); return; }
       ups.forEach(function (u) {
-        hist.appendChild(el("div", { "class": "raci-upd-entry" }, [
-          el("div", { "class": "raci-upd-body" }, [u.body || ""]),
-          el("div", { "class": "raci-upd-meta" }, [(u.author || "—") + " · " + relTime(u.created_at)])]));
+        var entry = el("div", { "class": "raci-upd-entry" }, []);
+        var metaTxt = (u.author || "—") + " · " + relTime(u.created_at) + (u.edited_at ? " · edited" : "");
+        entry.appendChild(el("div", { "class": "raci-upd-body" }, [u.body || ""]));
+        entry.appendChild(el("div", { "class": "raci-upd-meta" }, [metaTxt]));
+        // Reviewers can edit/delete a prior update (e.g. removing a test entry).
+        // u.id is the row PK — absent only on a just-posted row whose representation
+        // didn't return (rare); skip the affordances then.
+        if (canEdit && u.id != null) {
+          var editBtn = el("button", { "class": "raci-upd-act", title: "Edit this update" }, ["✏️ Edit"]);
+          var delBtn = el("button", { "class": "raci-upd-act raci-upd-del", title: "Delete this update" }, ["🗑 Delete"]);
+          entry.appendChild(el("div", { "class": "raci-upd-acts" }, [editBtn, delBtn]));
+          editBtn.addEventListener("click", function () {
+            var ta = el("textarea", { "class": "raci-in raci-upd-ta", rows: "3" }, []);
+            ta.value = u.body || "";
+            var emsg = el("div", { "class": "raci-modal-msg" }, []);
+            var saveB = el("button", { "class": "raci-btn raci-btn-go" }, ["Save"]);
+            var cancelB = el("button", { "class": "raci-btn" }, ["Cancel"]);
+            entry.innerHTML = "";
+            entry.appendChild(ta);
+            entry.appendChild(el("div", { "class": "raci-upd-acts" }, [saveB, cancelB]));
+            entry.appendChild(emsg);
+            ta.focus();
+            cancelB.addEventListener("click", paintHist);
+            saveB.addEventListener("click", function () {
+              var text = ta.value.trim();
+              if (!text) { emsg.textContent = "Nothing to save."; return; }
+              if (text === (u.body || "")) { paintHist(); return; }
+              emsg.textContent = "Saving…"; saveB.disabled = true;
+              patchUpdate(u, text).then(function () {
+                u.body = text; u.edited_at = new Date().toISOString();
+                paintHist(); render();
+                try { window.dispatchEvent(new CustomEvent("cpl-item-updated", { detail: { key: item.type + ":" + item.id } })); } catch (e) {}
+              }).catch(function (e) { emsg.textContent = e.message || "Edit failed — are you a signed-in reviewer?"; saveB.disabled = false; });
+            });
+          });
+          delBtn.addEventListener("click", function () {
+            if (typeof window !== "undefined" && window.confirm && !window.confirm("Delete this update? This can't be undone.")) return;
+            delBtn.disabled = true;
+            deleteUpdate(u).then(function () {
+              var arr = state.updates[item.type + ":" + item.id] || [];
+              var ix = arr.indexOf(u); if (ix >= 0) arr.splice(ix, 1);
+              paintHist(); render();
+              try { window.dispatchEvent(new CustomEvent("cpl-item-updated", { detail: { key: item.type + ":" + item.id } })); } catch (e) {}
+            }).catch(function (e) { delBtn.disabled = false; alert(e.message || "Delete failed — are you a signed-in reviewer?"); });
+          });
+        }
+        hist.appendChild(entry);
       });
     }
     paintHist();
@@ -1081,6 +1140,10 @@
       ".raci-upd-entry{border-left:3px solid var(--gold-accent,#B8860B);padding:.2rem .5rem;background:var(--surface-2,#f8fafc);border-radius:0 5px 5px 0;}" +
       ".raci-upd-body{font-size:.85rem;color:var(--text-strong,#222);}" +
       ".raci-upd-meta{font-size:.72rem;color:var(--text-faint,#999);margin-top:.15rem;}" +
+      ".raci-upd-acts{display:flex;gap:.4rem;margin-top:.3rem;}" +
+      ".raci-upd-act{font-size:.68rem;font-weight:600;color:var(--text-faint,#777);background:none;border:1px solid var(--border,#d4dde7);border-radius:4px;padding:.08rem .4rem;cursor:pointer;}" +
+      ".raci-upd-act:hover{background:var(--surface-2,#eef3f9);color:var(--navy-secondary,#1c3d5a);}" +
+      ".raci-upd-del:hover{background:#fdecec;color:#b3261e;border-color:#e9b9b4;}" +
       ".raci-upd-ta{width:100%;box-sizing:border-box;font-family:inherit;font-size:.85rem;}" +
       ".raci-upd-actions{display:flex;gap:.5rem;margin:.3rem 0;}" +
       ".raci-itemnudge-btn{margin-left:.3rem;font-size:.66rem;background:none;border:1px solid transparent;border-radius:4px;padding:.04rem .3rem;cursor:pointer;vertical-align:middle;}" +

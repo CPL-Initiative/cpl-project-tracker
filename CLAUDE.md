@@ -1017,10 +1017,13 @@ JSON) and Saves/Resumes to Supabase `tmc_submissions`.
   uplifting-themes analysis). Never add a public read path; the payload shape
   (`painting`, `reflection` — nothing identifying) is pinned by
   `tests/first_light.test.js`.
-- **`item_updates`** (added Session 77): the append-only Update Log behind the RACI tab's 📝 braindump→CC
+- **`item_updates`** (added Session 77): the Update Log behind the RACI tab's 📝 braindump→CC
   composer. One row per status update on an Activity/sub-activity/project, keyed `(item_type, item_id)`
-  like `item_raci`. Anon SELECT + **reviewer-gated** INSERT (`is_allowed_reviewer()`), **no update/delete**
-  (immutable history). The single live source for both activity AND project card updates. Schema:
+  like `item_raci`. Anon SELECT + **reviewer-gated** INSERT/UPDATE/DELETE (`is_allowed_reviewer()`).
+  Was append-only/immutable; **reviewers gained EDIT + DELETE 2026-06-27 (SkyMap)** so a test/mistaken
+  entry can be removed and a posted update corrected (an edit stamps `edited_at`; the composer history shows
+  ✏️/🗑 per row, and deleting the last update reverts the card to its creation-era line). The single live
+  source for both activity AND project card updates. Schema:
   `raci/supabase_raci.sql`. (A pre-existing project-only `update_log` table — id/project_id/update_text —
   is unrelated/vestigial; left untouched.) `team_members` also gained `last_nudged_at` + `last_response_at`
   (nudge accountability).

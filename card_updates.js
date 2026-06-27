@@ -78,6 +78,7 @@
     var meta = [];
     if (u.author) meta.push(escapeHtml(u.author));
     if (when) meta.push(when + (rel ? " · " + rel : ""));
+    if (u.edited_at) meta.push("edited");
     return (
       '<div style="font-size:0.75rem;color:#444;line-height:1.4;margin-bottom:0.3rem;">' +
         '<span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary,#1b3a5c);color:#fff;' +
@@ -98,20 +99,36 @@
     var scope = root || document;
     var hooks = scope.querySelectorAll(".cpl-live-update[data-update-key]");
     Array.prototype.forEach.call(hooks, function (hook) {
+      var card = (hook.closest && hook.closest(".activity-kpi-card, .project-card, .activity-group")) || hook.parentNode;
       var u = _latest[hook.getAttribute("data-update-key")];
-      if (!u) return;
-      // Idempotent re-render: a fresh fetch may carry a NEWER body than what's
-      // shown, so always reflect _latest (don't skip a previously-filled hook —
-      // that was the "posted update never appears without a reload" bug). Stamp
-      // the shown created_at so a no-op re-run doesn't thrash the DOM.
-      if (hook.getAttribute("data-shown") === String(u.created_at || "")) return;
+      if (!u) {
+        // No live update for this key. If we'd previously filled it (the curator
+        // just DELETED the last update), revert: clear the hook and re-show the
+        // creation-era static line.
+        if (hook.getAttribute("data-filled") === "1") {
+          hook.innerHTML = "";
+          hook.style.display = "none";
+          hook.removeAttribute("data-filled");
+          hook.removeAttribute("data-shown");
+          if (card) {
+            Array.prototype.forEach.call(card.querySelectorAll(".cpl-static-update"), function (s) {
+              s.style.display = "";
+            });
+          }
+        }
+        return;
+      }
+      // Idempotent re-render keyed on (id, edited_at|created_at): a fresh fetch may
+      // carry a NEWER post OR an EDIT of the shown one (same created_at, new
+      // edited_at) — both must repaint; a true no-op must not thrash the DOM.
+      var sig = String(u.id || "") + "@" + String(u.edited_at || u.created_at || "");
+      if (hook.getAttribute("data-shown") === sig) return;
       hook.innerHTML = blockHtml(u);
       hook.style.display = "";
       hook.setAttribute("data-filled", "1");
-      hook.setAttribute("data-shown", String(u.created_at || ""));
+      hook.setAttribute("data-shown", sig);
       // Hide the creation-era static "Latest Update" line in the same card so the
       // live one is the single current update.
-      var card = (hook.closest && hook.closest(".activity-kpi-card, .project-card, .activity-group")) || hook.parentNode;
       if (card) {
         Array.prototype.forEach.call(card.querySelectorAll(".cpl-static-update"), function (s) {
           s.style.display = "none";
@@ -123,7 +140,7 @@
   function fetchUpdates() {
     return fetch(
       SUPABASE_URL +
-        "/rest/v1/item_updates?select=item_type,item_id,body,author,created_at&order=created_at.desc",
+        "/rest/v1/item_updates?select=id,item_type,item_id,body,author,created_at,edited_at&order=created_at.desc",
       { headers: { apikey: SUPABASE_ANON } }
     )
       .then(function (r) { return r.ok ? r.json() : []; })
