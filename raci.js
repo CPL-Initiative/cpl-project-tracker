@@ -974,9 +974,19 @@
   // and link straight to its update composer (?update=<key>#raci → openUpdate).
   function itemNudgeRecipients(item) {
     var rc = raciFor(item), seen = {}, out = [];
+    // Honor the Team Directory "Nudge for Updates" opt-out: a member a reviewer
+    // has unchecked (nudge === false) is never emailed — by the team blast OR a
+    // per-item nudge. Recipients not in the directory default to included.
+    var optedOut = {};
+    (state.members || []).forEach(function (m) {
+      if (m && m.email && m.nudge === false) optedOut[m.email.toLowerCase()] = 1;
+    });
     ["R", "A"].forEach(function (k) {
       (rc[k] || []).forEach(function (m) {
-        var e = m && m.email; if (e && !seen[e.toLowerCase()]) { seen[e.toLowerCase()] = 1; out.push(m); }
+        var e = m && m.email; if (!e) return;
+        var lc = e.toLowerCase();
+        if (optedOut[lc] || seen[lc]) return;
+        seen[lc] = 1; out.push(m);
       });
     });
     return out;
@@ -1006,7 +1016,7 @@
   }
   function openItemNudge(item) {
     var href = buildItemNudgeHref(item);
-    if (!href) { alert("No Responsible/Accountable member with an email on this item — assign someone (with an email) first."); return; }
+    if (!href) { alert("No one to nudge on this item — its Responsible/Accountable people either have no email or are opted out of nudges in the Team Directory."); return; }
     stampItemNudged(item);
     window.location.href = href;
   }
