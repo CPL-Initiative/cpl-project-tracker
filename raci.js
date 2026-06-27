@@ -233,6 +233,12 @@
         // Roll back the optimistic state on failure so the UI reflects reality
         // (don't leave a change that didn't persist looking saved).
         if (!r.ok) { state.raci[key] = prev; throw new Error("save failed (" + r.status + ")"); }
+        // Tell the card overlay (card_raci.js) to refresh the Lead + hover roster
+        // immediately — no tab round-trip needed.
+        try {
+          if (typeof window !== "undefined" && window.dispatchEvent)
+            window.dispatchEvent(new CustomEvent("cpl-raci-updated", { detail: { key: key } }));
+        } catch (e) {}
       });
   }
 
@@ -361,6 +367,12 @@
     var kp = null;
     (d.activity_kpis || []).forEach(function (g) { (g.kpis || []).forEach(function (k) { if (String(k.id) === item.id) kp = k; }); });
     var pr = (d.projects || []).filter(function (p) { return String(p.id) === item.id; })[0];
+    // Lead comes from the RACI Responsible (then Accountable) — the single source
+    // of truth — NOT the abandoned projects.lead. Fall back to projects.lead only
+    // when the item has no RACI row yet, so nothing reads blank.
+    var rc = raciFor(item);
+    var leadList = names(rc.R || []);
+    if (!leadList.length) leadList = names(rc.A || []);
     return {
       name: (kp && kp.name) || (pr && pr.name) || item.name,
       desc: (pr && pr.desc) || "",
@@ -368,7 +380,7 @@
       metric: kp && kp.metric ? (kp.metric + (kp.unit ? " " + kp.unit : "")) : "",
       update: (kp && kp.update) || "",
       update_date: (kp && kp.update_date) || "",
-      lead: (pr && pr.lead) || ""
+      lead: leadList.length ? leadList.join(", ") : ((pr && pr.lead) || "")
     };
   }
   // The summary text that doubles as the email body (Phase 2) + composer header.

@@ -1790,7 +1790,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
         html += (f'            <div class="activity-group-header">\n'
                  f'                <h3><span style="color:#888;font-weight:600;">{act_id}:</span> {html_escape(act_name)}</h3>\n'
                  f'                <span style="display:inline-flex;gap:0.8rem;align-items:center;white-space:nowrap;">\n'
-                 f'                <a href="#raci" class="act-raci-link" title="Who\'s Responsible / Accountable / Consulted / Informed for this Activity — open Team &amp; RACI" '
+                 f'                <a href="#raci" class="act-raci-link" data-raci-key="activity:{act_num}" title="Who\'s Responsible / Accountable / Consulted / Informed for this Activity — hover for the roster, click to open Team &amp; RACI" '
                  f'onclick="try{{sessionStorage.setItem(\'cpl_raci_focus\',\'activity:{act_num}\')}}catch(e){{}}" '
                  f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">&#128101; RACI</a>\n'
                  f'                <a href="#raci" class="act-update-link" title="Braindump a quick status update for this Activity — CC writes it up and saves it" '
@@ -1800,6 +1800,12 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                  f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Targets &#8599; Annual Workplan Goals</a>\n'
                  f'                </span>\n'
                  f'            </div>\n')
+        # Activity Lead — driven LIVE from the RACI Responsible by card_raci.js
+        # (keyed `activity:N`); hidden until the overlay fills it (the activity
+        # has no creation-era lead of its own).
+        html += (f'            <div class="cpl-raci-lead-row" style="display:none;padding:0 0.5rem 0.4rem 0.5rem;font-size:0.74rem;color:#555;">'
+                 f'<strong>Lead:</strong> <span class="cpl-raci-lead" data-raci-key="activity:{act_num}" '
+                 f'title="Responsible (from the Team &amp; RACI matrix)">&mdash;</span></div>\n')
         # Activity progress bar with goal + annual targets
         html += (f'            <div style="padding:0 0.5rem 0.6rem 0.5rem;">\n'
                  f'                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.25rem;">\n'
@@ -1870,6 +1876,14 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                          f'style="margin:0;font-size:0.7rem;padding:0.15rem 0.5rem;">{html_escape(status_raw)}</span>\n'
                          f'                </div>\n')
                 html += f'                <div class="akpi-name">{html_escape(str(kpi["name"]))}</div>\n'
+
+                # Sub-activity Lead — driven LIVE from the RACI Responsible by
+                # card_raci.js (keyed `project:<id>`, the same key its RACI row
+                # uses); hidden until the overlay fills it.
+                html += (f'                <div class="cpl-raci-lead-row" style="display:none;font-size:0.7rem;color:#555;margin:-0.1rem 0 0.3rem 0;">'
+                         f'<strong>Lead:</strong> <span class="cpl-raci-lead" '
+                         f'data-raci-key="project:{html_escape(str(kpi["id"]), quote=True)}" '
+                         f'title="Responsible (from the Team &amp; RACI matrix)">&mdash;</span></div>\n')
 
                 # 2030 Goal & Stretch subtitle
                 g2930 = kpi.get("goal_2930", "")
@@ -2059,11 +2073,11 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                          f' title="Open SharePoint folder — use Upload or drag &amp; drop to add files">'
                          f'<span style="font-size:0.8rem;">&#128206;</span> Attach'
                          f'{_att_badge(attachments, act_num)}</a>'
-                         f'<a href="#raci" class="raci-link" '
+                         f'<a href="#raci" class="raci-link" data-raci-key="project:{kpi_pid_q}" '
                          f'onclick="try{{sessionStorage.setItem(\'cpl_raci_focus\',\'project:{kpi_pid_q}\')}}catch(e){{}}" '
                          f'style="{btn_style}color:var(--navy-secondary);background:#fafafa;"'
                          f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'"'
-                         f' title="Who\'s Responsible / Accountable / Consulted / Informed — open Team &amp; RACI">'
+                         f' title="Who\'s Responsible / Accountable / Consulted / Informed — hover for the roster, click to open Team &amp; RACI">'
                          f'<span style="font-size:0.8rem;">&#128101;</span> RACI</a>'
                          f'<a href="#raci" class="update-link" '
                          f'onclick="try{{sessionStorage.setItem(\'cpl_update_focus\',\'project:{kpi_pid_q}\')}}catch(e){{}}" '
@@ -2580,7 +2594,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
                 </div>
             </div>
             <div style="{_row}">
-                <strong>Lead:</strong> {_ed("lead", lead, lead)}
+                <strong>Lead:</strong> <span class="cpl-raci-lead" data-raci-key="project:{html_escape(str(pid), quote=True)}" title="Responsible (from the Team &amp; RACI matrix)">{html_escape(str(lead)) if lead else "&mdash;"}</span>
             </div>
             <div style="{_row}">
                 <strong>Team:</strong> {_ed("team", team, team)}
@@ -2620,14 +2634,14 @@ def _render_single_project_card(p, update_log=None, attachments=None,
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"
                     title="Open SharePoint folder — use Upload or drag &amp; drop to add files">
                     <span style="font-size:0.85rem;">&#128206;</span> Attach{_att_badge(attachments, project_id=pid)}</a>
-                <a href="#raci" class="raci-link"
+                <a href="#raci" class="raci-link" data-raci-key="project:{html_escape(str(pid), quote=True)}"
                     onclick="try{{sessionStorage.setItem('cpl_raci_focus','project:{html_escape(str(pid), quote=True)}')}}catch(e){{}}"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:var(--navy-secondary);text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #ddd;border-radius:4px;
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"
-                    title="Who's Responsible / Accountable / Consulted / Informed — open Team &amp; RACI">
+                    title="Who's Responsible / Accountable / Consulted / Informed — hover for the roster, click to open Team &amp; RACI">
                     <span style="font-size:0.85rem;">&#128101;</span> RACI</a>
                 <a href="#raci" class="update-link"
                     onclick="try{{sessionStorage.setItem('cpl_update_focus','project:{html_escape(str(pid), quote=True)}')}}catch(e){{}}"
