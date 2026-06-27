@@ -2281,6 +2281,9 @@
 
 
 
+
+
+
 /* ═══ MAP Articulation Analysis Cards ═══ */
 /* ─── Budget inline editor (budget_editor.js) ─── */
 .budget-auth-widget { display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center;
@@ -2767,7 +2770,7 @@
             </div>
           </div>
         </span>
-        <div class="last-updated">Last Updated: June 26, 2026 at 4:40 PM PT</div>
+        <div class="last-updated">Last Updated: June 26, 2026 at 5:06 PM PT</div>
         <button id="refreshBtn" class="cobi-util-link" title="Re-scrape live MAP data and regenerate the dashboard now" onclick="if(!confirm('⚠️ Manual Pipeline Run\n\nThis will re-scrape live data from the MAP CPL Dashboard, regenerate all charts and KPIs, and overwrite today\'s deployed dashboard.\n\nThe process typically takes 3-5 minutes.\n\nContinue?'))return;var b=this;b.disabled=true;b.textContent='⏳ Pipeline triggered — updating...';fetch('https://cpl-proxy.slee-548.workers.dev/trigger?secret=CPL_SCRAPE_2026',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:'CPL_SCRAPE_2026'})}).then(function(r){return r.json()}).then(function(d){if(d.success){b.textContent='✅ Pipeline running — page will refresh in 5 min';setTimeout(function(){location.reload()},300000)}else{b.textContent='❌ '+( d.error||'Unknown error');b.disabled=false}}).catch(function(e){b.textContent='❌ '+e.message;b.disabled=false})">&#x21bb; Manually Refresh COBI</button>
       </div>
     </div>
@@ -2824,7 +2827,7 @@
     <div class="kpi-section-wrapper" id="kpiSectionWrapper">
         <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('kpiSectionWrapper');w.classList.toggle('collapsed');})()"> 
             <span class="kpi-section-title">KPI Metrics</span>
-            <span class="kpi-section-updated">Live data refreshed Jun 26, 2026 · 4:40 PM PT</span>
+            <span class="kpi-section-updated">Live data refreshed Jun 26, 2026 · 5:06 PM PT</span>
             <span class="kpi-toggle-arrow">&#9650;</span>
         </div>
     <div class="kpi-section">
@@ -2984,7 +2987,7 @@
           <span style="font-size:0.55rem;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;color:var(--gold-accent);border:1px solid var(--gold-accent);border-radius:2px;padding:0.04rem 0.25rem;white-space:nowrap;">Leading</span>
           <span style="font-size:0.55rem;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;color:var(--cobalt-on-dark);border:1px solid var(--cobalt-on-dark);border-radius:2px;padding:0.04rem 0.25rem;white-space:nowrap;">Advancing</span>
           <span style="font-size:0.55rem;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;color:rgba(255,255,255,0.3);border:1px solid rgba(255,255,255,0.3);border-radius:2px;padding:0.04rem 0.25rem;white-space:nowrap;">Inactive</span>
-          <span style="font-size:0.64rem;color:rgba(255,255,255,0.28);">As of 2026-06-26</span>
+          <span style="font-size:0.64rem;color:rgba(255,255,255,0.28);">As of 2026-06-27</span>
         </div>
       </div>
 
@@ -3236,7 +3239,7 @@
 <div class="kpi-section-wrapper" id="cplAnalyticsWrapper">
     <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('cplAnalyticsWrapper');w.classList.toggle('collapsed');})()">
         <span class="kpi-section-title">CPL Analytics</span>
-        <span class="kpi-section-updated">Source: MAP Custom Reporting · Generated 2026-06-26T23:39:40</span>
+        <span class="kpi-section-updated">Source: MAP Custom Reporting · Generated 2026-06-27T00:05:59</span>
         <span class="kpi-toggle-arrow">&#9650;</span>
     </div>
     <div class="cpl-analytics-body" id="exhibitAnalysisSection">
@@ -5543,7 +5546,7 @@
         <!-- Projects Grid -->
         <h2 style="margin-bottom:1.5rem;">Projects <span id="projectCount" style="font-size:0.9rem;color:#888;">(34)</span></h2>
         <div id="projectsGrid">
-<p style="color:#888;font-size:0.75rem;margin:0 0 1rem 0;">Project data as of 2026-06-26</p>        <div class="goal-header" data-goal-key="Goal 1" style="margin:1.5rem 0 0.75rem 0;padding:0.75rem 1rem;background:linear-gradient(135deg,var(--navy-secondary) 0%,var(--navy-primary) 100%);border-radius:8px;">
+<p style="color:#888;font-size:0.75rem;margin:0 0 1rem 0;">Project data as of 2026-06-27</p>        <div class="goal-header" data-goal-key="Goal 1" style="margin:1.5rem 0 0.75rem 0;padding:0.75rem 1rem;background:linear-gradient(135deg,var(--navy-secondary) 0%,var(--navy-primary) 100%);border-radius:8px;">
             <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.3rem;">
                 <span style="color:var(--gold-accent);font-weight:700;font-size:1rem;white-space:nowrap;">Goal 1</span>
                 <span style="color:#fff;font-size:0.95rem;font-weight:600;">Expand Equitable CPL Access & Boost Student Success</span>
@@ -8777,6 +8780,7 @@
 
 
 
+
         </div>
         <!-- /main-container for Dashboard tab -->
 
@@ -8795,7 +8799,7 @@
         <!-- Budget Section -->
     <div class="budget-section" style="background-color:#fafafa;padding:2rem;border-radius:8px;margin-bottom:2rem;">
         <h2>CPL Budget & Expenditure Plan</h2>
-        <p style="color:#888;font-size:0.75rem;margin:0 0 1.25rem 0;">Budget data as of 2026-06-26</p>
+        <p style="color:#888;font-size:0.75rem;margin:0 0 1.25rem 0;">Budget data as of 2026-06-27</p>
 <div class="budget-funding-overview" id="budget-funding">
         <h3>CPL 5-Year Funding Plan</h3>
         <p style="font-size:1.3rem;font-weight:bold;color:var(--navy-primary);margin-bottom:1.5rem;">$88.9M Total Allocation</p>
@@ -10948,8 +10952,8 @@
         <!-- DATA-START (auto-replaced by excel_to_dashboard.py — do not edit manually) -->
     <script>
     window.CPL_DATA = {
-  "last_updated": "June 26, 2026 at 4:40 PM PT",
-  "data_as_of": "June 26, 2026 at 4:40 PM PT",
+  "last_updated": "June 26, 2026 at 5:06 PM PT",
+  "data_as_of": "June 26, 2026 at 5:06 PM PT",
   "kpis": {
     "cumulative_students": {
       "value": "48,144",
@@ -11134,7 +11138,7 @@
       ],
       "live": true
     },
-    "_live_updated": "2026-06-26T23:40:16.291Z",
+    "_live_updated": "2026-06-27T00:06:33.914Z",
     "map_exhibits": {
       "value": "2,596",
       "label": "MAP Exhibits",
@@ -11217,7 +11221,7 @@
       ],
       "live": true
     },
-    "_exhibit_updated": "2026-06-26T23:39:40",
+    "_exhibit_updated": "2026-06-27T00:05:59",
     "_exhibit_source": "CustomReport_latest.json",
     "_exhibit_datasets": [
       "View_ArticulatedMAPExhibits_APIDataset",
