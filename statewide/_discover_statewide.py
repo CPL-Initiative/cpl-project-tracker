@@ -1,137 +1,121 @@
 #!/usr/bin/env python3
 """Discovery probe for the public Statewide CPL page (map.rccd.edu/statewidecpl).
 
-WHY: the agent sandbox can't reach map.rccd.edu (egress 403), but a GitHub
-Actions runner can. The page is a SPA, so a plain fetch returns only the shell —
-this probe fetches the shell, pulls its JS bundles, and greps them for the
-backing data API + any PDF link pattern, printing everything to the run log
-(which Claude reads back via the GitHub MCP). Commits nothing.
+WHY: the agent sandbox can't reach map.rccd.edu (egress 403). A plain runner
+fetch only gets a 202 bot-challenge interstitial (the page is a JS SPA behind a
+WAF), so this uses a real headless Chromium (Playwright) to RENDER the page, then:
+  - captures every XHR/fetch response (the backing data API + its JSON), and
+  - scrapes the rendered DOM for exhibit names, PDF links, and credit-rec text.
+Everything is printed to the run log (Claude reads it back via the GitHub MCP) so
+we can write a real scraper that bakes each statewide exhibit's PDF link + credit
+recs (C-ID / title / units) into the public Fact Sheet. Commits nothing.
 
-Goal: find (a) the API endpoint the page calls for the exhibit list + each
-exhibit's PDF URL + credit recommendations (C-ID / title / units), so we can
-write a real runner scraper that bakes that into the public Fact Sheet.
-
-Run: Actions -> "Discover statewide CPL data (manual)" -> Run workflow.
+Run: Actions -> "Discover statewide CPL data (manual)" -> Run workflow
+(or push to the feature branch).
 """
 import json
 import re
 import sys
-import urllib.request
-import urllib.error
 
 PAGE = "https://map.rccd.edu/statewidecpl/"
-UA = "Mozilla/5.0 (compatible; CPL-FactSheet-Discovery/1.0)"
-
-
-def get(url, data=None, method=None, headers=None):
-    h = {"User-Agent": UA, "Accept": "*/*"}
-    if headers:
-        h.update(headers)
-    req = urllib.request.Request(url, data=data, method=method or ("POST" if data else "GET"), headers=h)
-    with urllib.request.urlopen(req, timeout=60) as r:
-        return r.status, r.read().decode("utf-8", "replace")
 
 
 def banner(t):
-    print("\n" + "=" * 70 + "\n" + t + "\n" + "=" * 70)
+    print("\n" + "=" * 70 + "\n" + t + "\n" + "=" * 70, flush=True)
 
 
 def main():
-    banner("1. Fetch the SPA shell: " + PAGE)
-    try:
-        status, html = get(PAGE)
-    except Exception as e:
-        print("FETCH FAILED:", repr(e))
-        return 1
-    print("HTTP", status, "· bytes", len(html))
+    from playwright.sync_api import sync_playwright
 
-    # Script + link bundles (Vite/Angular/React builds list them in the shell).
-    srcs = re.findall(r'<script[^>]+src=["\']([^"\']+)["\']', html, re.I)
-    srcs += re.findall(r'<link[^>]+href=["\']([^"\']+\.js)["\']', html, re.I)
+    captured = []  # {url, status, ctype, body_snippet, json_shape}
 
-    def absolutize(u):
-        if u.startswith("http"):
-            return u
-        if u.startswith("//"):
-            return "https:" + u
-        if u.startswith("/"):
-            return "https://map.rccd.edu" + u
-        return PAGE + u.lstrip("./")
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        ctx = browser.new_context(
+            user_agent=("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                        "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"))
+        page = ctx.new_page()
 
-    bundles = [absolutize(s) for s in dict.fromkeys(srcs)]
-    print("script/js bundles found:", len(bundles))
-    for b in bundles:
-        print("  -", b)
-
-    # Inline hints in the shell itself.
-    banner("2. Inline hints in the shell HTML")
-    for pat in [r"https?://[\w.-]*azurewebsites\.net[^\s\"'<>]*", r'[^\s"\'<>]+\.pdf',
-                r"/api/[\w/.-]+", r"statewide[\w/.-]*"]:
-        hits = sorted(set(re.findall(pat, html, re.I)))[:15]
-        if hits:
-            print("  pattern", pat, "->")
-            for h in hits:
-                print("      ", h)
-
-    # Grep each JS bundle for API endpoints + pdf/recommendation hints.
-    banner("3. Grep JS bundles for API endpoints + pdf/rec hints")
-    api_candidates = set()
-    pdf_hints = set()
-    for b in bundles:
-        try:
-            st, js = get(b)
-        except Exception as e:
-            print("  (skip", b, "->", repr(e), ")")
-            continue
-        for u in re.findall(r"https?://[\w.-]*azurewebsites\.net[^\s\"'<>`)]*", js, re.I):
-            api_candidates.add(u)
-        for u in re.findall(r'["\'`](/api/[\w/.-]+)["\'`]', js):
-            api_candidates.add(u)
-        for u in re.findall(r"[\w/.-]+\.pdf", js, re.I):
-            pdf_hints.add(u)
-        # endpoint-ish string literals naming statewide/exhibit/recommendation
-        for u in re.findall(r'["\'`]([\w./-]*(?:statewide|exhibit|recommend|GetData|getReport)[\w./-]*)["\'`]', js, re.I):
-            if 2 < len(u) < 120:
-                api_candidates.add(u)
-    print("API/endpoint candidates:")
-    for u in sorted(api_candidates):
-        print("   ", u)
-    print("PDF-ish strings:")
-    for u in sorted(pdf_hints)[:30]:
-        print("   ", u)
-
-    # Try the obvious Azure data endpoints (best-effort; print a small sample).
-    banner("4. Probe likely data endpoints (POST {} and GET)")
-    guesses = [u for u in api_candidates if "azurewebsites.net" in u and "/api/" in u]
-    # Add structural guesses based on the sibling landing-page API shape.
-    guesses += [
-        "https://mapwebapinew.azurewebsites.net/api/StatewideCPL/GetData",
-        "https://mapwebapinew.azurewebsites.net/api/Statewide/GetData",
-        "https://mapwebapinew.azurewebsites.net/api/StatewideExhibits/GetData",
-    ]
-    for g in list(dict.fromkeys(guesses)):
-        for method in ("POST", "GET"):
+        def on_response(resp):
             try:
-                st, body = get(g, data=b"{}" if method == "POST" else None, method=method,
-                               headers={"Content-Type": "application/json"})
-                snippet = body[:600].replace("\n", " ")
-                print(f"  [{method} {st}] {g}\n      {snippet}")
-                if st == 200 and len(body) > 50:
-                    # Show top-level keys / first record shape.
+                url = resp.url
+                ct = (resp.headers or {}).get("content-type", "")
+                if "/api/" in url or "json" in ct.lower() or url.endswith(".json"):
+                    rec = {"url": url, "status": resp.status, "ctype": ct}
                     try:
-                        j = json.loads(body)
-                        if isinstance(j, list) and j:
-                            print("      -> list of", len(j), "first record keys:",
-                                  list(j[0].keys()) if isinstance(j[0], dict) else type(j[0]).__name__)
-                        elif isinstance(j, dict):
-                            print("      -> dict keys:", list(j.keys())[:20])
-                    except Exception:
-                        pass
-            except urllib.error.HTTPError as e:
-                print(f"  [{method} HTTP {e.code}] {g}")
-            except Exception as e:
-                print(f"  [{method} ERR] {g} -> {repr(e)[:80]}")
-    banner("DONE — paste the API endpoint + a sample record back to build the scraper")
+                        body = resp.text()
+                        rec["len"] = len(body)
+                        try:
+                            j = json.loads(body)
+                            if isinstance(j, list):
+                                rec["shape"] = "list[%d]" % len(j)
+                                rec["first_keys"] = list(j[0].keys()) if j and isinstance(j[0], dict) else None
+                                rec["sample"] = json.dumps(j[0], ensure_ascii=False)[:900] if j else ""
+                            elif isinstance(j, dict):
+                                rec["shape"] = "dict"
+                                rec["keys"] = list(j.keys())[:25]
+                                rec["sample"] = json.dumps(j, ensure_ascii=False)[:900]
+                        except Exception:
+                            rec["sample"] = body[:300]
+                    except Exception as e:
+                        rec["body_err"] = repr(e)[:80]
+                    captured.append(rec)
+            except Exception:
+                pass
+
+        page.on("response", on_response)
+
+        banner("1. Render the SPA (headless Chromium): " + PAGE)
+        try:
+            page.goto(PAGE, wait_until="networkidle", timeout=90000)
+        except Exception as e:
+            print("goto warning:", repr(e)[:120])
+        try:
+            page.wait_for_timeout(6000)
+        except Exception:
+            pass
+        title = page.title()
+        html = page.content()
+        print("rendered title:", repr(title), "· DOM bytes:", len(html), flush=True)
+
+        banner("2. Captured API / JSON responses")
+        if not captured:
+            print("  (none captured)")
+        for r in captured:
+            print("  -", r.get("status"), r.get("url"))
+            print("      ctype:", r.get("ctype"), "len:", r.get("len"), "shape:", r.get("shape"))
+            if r.get("first_keys"):
+                print("      first_keys:", r["first_keys"])
+            if r.get("keys"):
+                print("      keys:", r["keys"])
+            if r.get("sample"):
+                print("      sample:", r["sample"][:900])
+
+        banner("3. PDF links in the rendered DOM")
+        pdfs = page.eval_on_selector_all(
+            "a[href]", "els => els.map(e => [e.getAttribute('href'), (e.textContent||'').trim()])")
+        pdf_links = [(h, t) for (h, t) in pdfs if h and ".pdf" in h.lower()]
+        print("  total <a>:", len(pdfs), "· pdf links:", len(pdf_links))
+        for h, t in pdf_links[:40]:
+            print("      PDF:", h, "  <=", t[:70])
+        # Any href pattern at all (first 30 distinct) so we see the link scheme.
+        distinct = []
+        seen = set()
+        for h, t in pdfs:
+            base = re.sub(r"[0-9]+", "#", h or "")
+            if base not in seen:
+                seen.add(base)
+                distinct.append((h, t))
+        print("  distinct href patterns (sample):")
+        for h, t in distinct[:30]:
+            print("      ", h, "  <=", t[:50])
+
+        banner("4. Rendered DOM text sample (to see exhibit + rec layout)")
+        text = page.eval_on_selector("body", "el => el.innerText") if page.query_selector("body") else ""
+        print(text[:2500])
+
+        browser.close()
+    banner("DONE")
     return 0
 
 

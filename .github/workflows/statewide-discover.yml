@@ -27,5 +27,10 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
+      - name: Install Playwright + Chromium
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright
+          python -m playwright install --with-deps chromium
       - name: Probe map.rccd.edu/statewidecpl for its data API + PDF links
         run: python statewide/_discover_statewide.py
