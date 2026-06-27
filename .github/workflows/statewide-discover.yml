@@ -1,0 +1,31 @@
+# Manual discovery probe for the public Statewide CPL page.
+#
+# Why: the agent sandbox can't reach map.rccd.edu (egress 403), but a runner can.
+# This fetches the SPA + its JS bundles and prints the backing data API + PDF link
+# structure to the run log (Claude reads it back via the GitHub MCP) so we can
+# write a real scraper that bakes each statewide exhibit's PDF link + credit recs
+# (C-ID / title / units) into the public Fact Sheet. Commits nothing.
+#
+# Run it: Actions -> "Discover statewide CPL data (manual)" -> Run workflow.
+name: Discover statewide CPL data (manual)
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'statewide/_discover_statewide.py'
+      - '.github/workflows/statewide-discover.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Probe map.rccd.edu/statewidecpl for its data API + PDF links
+        run: python statewide/_discover_statewide.py
