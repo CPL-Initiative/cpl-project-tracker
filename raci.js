@@ -34,7 +34,44 @@
   ];
 
   var state = { members: [], raci: {}, items: [], sess: null, view: "matrix", loaded: false,
-    mfilter: { scope: "all", q: "" }, _subByAct: {} };
+    mfilter: { scope: "all", q: "" }, _subByAct: {},
+    // Click-to-sort state for the two tables. col=null → natural order (matrix =
+    // the 3-tier tree; directory = sort_order,name). dir: 1 asc, -1 desc.
+    msort: { col: null, dir: 1 }, dsort: { col: null, dir: 1 } };
+
+  // ─── Sort helpers (shared by the matrix + directory click-to-sort) ─────────
+  // Natural compare so "1.2" < "1.10" and "Activity 2" sorts sensibly.
+  function natCmp(a, b) {
+    a = (a == null ? "" : String(a)); b = (b == null ? "" : String(b));
+    return a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" });
+  }
+  // Empties always sort last regardless of direction; otherwise natCmp * dir.
+  function cmpVals(a, b, dir) {
+    var ae = a == null || a === "", be = b == null || b === "";
+    if (ae && be) return 0;
+    if (ae) return 1;
+    if (be) return -1;
+    return natCmp(a, b) * dir;
+  }
+  // A clickable <th> that toggles the given sort state's column/direction and
+  // re-renders. Shows a ▲/▼ caret on the active column.
+  function sortableTh(label, col, sortState, onChange, attrs) {
+    var active = sortState.col === col;
+    var caret = active ? (sortState.dir > 0 ? " ▲" : " ▼") : "";
+    var a = attrs || {};
+    a["class"] = (a["class"] ? a["class"] + " " : "") + "raci-th-sort" + (active ? " raci-th-active" : "");
+    a.title = (a.title ? a.title + " — " : "") + "Click to sort";
+    a.role = "button"; a.tabindex = "0";
+    var th = el("th", a, [label + caret]);
+    function go() {
+      if (sortState.col === col) sortState.dir = -sortState.dir;
+      else { sortState.col = col; sortState.dir = 1; }
+      onChange();
+    }
+    th.addEventListener("click", go);
+    th.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+    return th;
+  }
 
   // ─── DOM helper ────────────────────────────────────────────────────────────
   function el(tag, attrs, kids) {
@@ -630,17 +667,34 @@
     var canEdit = !!state.sess;
     holder.innerHTML = "";
     var tbl = el("table", { "class": "raci-table" }, []);
-    var head = el("tr", {}, [el("th", { "class": "raci-th-item" }, ["Activity / Project"])].concat(
-      ROLES.map(function (r) { return el("th", { title: r.label + " — " + r.desc }, [r.k + " · " + r.label]); })));
+    var rerun = function () { fillMatrixTable(holder); };
+    var head = el("tr", {}, [
+      sortableTh("Activity / Project", "item", state.msort, rerun, { "class": "raci-th-item" })
+    ].concat(
+      ROLES.map(function (r) {
+        return sortableTh(r.k + " · " + r.label, r.k, state.msort, rerun, { title: r.label + " — " + r.desc });
+      })));
     tbl.appendChild(head);
     var items = visibleMatrixItems();
+    // When a column sort is active, FLATTEN the tree into a flat sorted list
+    // (each row carries its full id, so it stays self-describing without the
+    // nesting). col=null keeps the 3-tier tree order.
+    var sorted = state.msort.col != null;
+    if (sorted) {
+      var c = state.msort.col, dir = state.msort.dir;
+      items = items.slice().sort(function (a, b) {
+        if (c === "item") return cmpVals(a.id, b.id, dir) || (a.isActivity ? -1 : 1);
+        var an = names(raciFor(a)[c]).join(", "), bn = names(raciFor(b)[c]).join(", ");
+        return cmpVals(an, bn, dir) || natCmp(a.id, b.id);
+      });
+    }
     items.forEach(function (item) {
       var rc = raciFor(item);
       var rowCls = item.isActivity ? "raci-row-act" : (item.isSub ? "raci-row-sub" : "raci-row-proj");
       var tr = el("tr", { "class": rowCls, "data-raci-key": item.type + ":" + item.id,
         "data-depth": String(item.depth) }, []);
       var itemCell = el("td", { "class": "raci-item-cell",
-        style: "padding-left:" + (0.6 + item.depth * 1.15) + "rem;" }, [
+        style: "padding-left:" + (0.6 + (sorted ? 0 : item.depth * 1.15)) + "rem;" }, [
         el("span", { "class": "raci-item-id" }, [item.isActivity ? "Activity " + item.id : item.id]),
         el("span", { "class": "raci-item-name" }, [item.name]),
         item.isSub ? el("span", { "class": "raci-tier-tag", title: "Workplan sub-activity" }, ["sub-activity"]) : null]);
@@ -687,10 +741,20 @@
     holder.appendChild(tbl);
     var nShown = items.filter(function (i) { return !i.isActivity; }).length;
     var total = state.items.filter(function (i) { return !i.isActivity; }).length;
-    holder.appendChild(el("div", { "class": "raci-count" }, [
+    var countKids = [
       (state.mfilter.scope === "all" && !state.mfilter.q)
         ? total + " sub-activities & projects across 4 Activities"
-        : "Showing " + nShown + " of " + total + " sub-activities & projects"]));
+        : "Showing " + nShown + " of " + total + " sub-activities & projects"];
+    // When a sort is active the tree is flattened — offer a one-click way back.
+    if (sorted) {
+      var reset = el("button", { "class": "raci-tree-reset",
+        title: "Clear the column sort and restore the Activity → sub-activity → project tree" },
+        ["⤺ tree view"]);
+      reset.addEventListener("click", function () { state.msort.col = null; state.msort.dir = 1; fillMatrixTable(holder); });
+      countKids.push(el("span", { "class": "raci-sort-note" }, [" · sorted by column — "]));
+      countKids.push(reset);
+    }
+    holder.appendChild(el("div", { "class": "raci-count" }, countKids));
   }
 
   function renderMatrix() {
@@ -796,11 +860,24 @@
         canEdit ? el("label", { "class": "raci-nudge-all-lbl", title: "Check all / clear all" },
           [allCb, el("span", {}, ["all"])]) : null])]);
     var tbl = el("table", { "class": "raci-table raci-dir" }, [
-      el("tr", {}, [el("th", {}, ["Name"]), el("th", {}, ["Role / title"]), el("th", {}, ["Email"]),
+      el("tr", {}, [
+        sortableTh("Name", "name", state.dsort, render),
+        sortableTh("Role / title", "role", state.dsort, render),
+        sortableTh("Email", "email", state.dsort, render),
         nudgeTh,
-        el("th", { "class": "raci-th-nudge", title: "When this member was last nudged" }, ["Last nudged"]),
-        el("th", { "class": "raci-th-nudge", title: "Whether a response has been recorded since the last nudge" }, ["Status"])])]);
-    state.members.forEach(function (m) {
+        sortableTh("Last nudged", "nudged", state.dsort, render, { "class": "raci-th-nudge", title: "When this member was last nudged" }),
+        sortableTh("Status", "status", state.dsort, render, { "class": "raci-th-nudge", title: "Whether a response has been recorded since the last nudge" })])]);
+    // Sort a COPY (never mutate state.members order — the matrix + saves rely on it).
+    var dmembers = state.members.slice();
+    if (state.dsort.col) {
+      var dc = state.dsort.col, ddir = state.dsort.dir;
+      dmembers.sort(function (a, b) {
+        if (dc === "nudged") return cmpVals(a.last_nudged_at, b.last_nudged_at, ddir) || natCmp(a.name, b.name);
+        if (dc === "status") return cmpVals(statusRank(a), statusRank(b), ddir) || natCmp(a.name, b.name);
+        return cmpVals(a[dc], b[dc], ddir) || natCmp(a.name, b.name);
+      });
+    }
+    dmembers.forEach(function (m) {
       var on = m.nudge !== false; // default true
       var cb = el("input", { type: "checkbox", "class": "raci-nudge-cb" });
       cb.checked = on; cb.disabled = !canEdit || !m.email;
@@ -947,6 +1024,19 @@
   }
   // Response status for a member: responded (✓) when last_response_at is at or
   // after the last nudge; otherwise awaiting (overdue ≥7d), or — if never nudged.
+  // Sort key for the directory "Status" column: responded (1) → awaiting (2,
+  // overdue first within awaiting) → never-nudged (3). String-keyed for cmpVals.
+  function statusRank(m) {
+    var nud = m.last_nudged_at ? new Date(m.last_nudged_at).getTime() : 0;
+    var resp = m.last_response_at ? new Date(m.last_response_at).getTime() : 0;
+    if (nud && resp >= nud) return "1";
+    if (nud) {
+      var days = Math.floor((Date.now() - nud) / 86400000);
+      // Larger overdue first → invert days into the key.
+      return "2_" + String(1e9 - days).padStart(12, "0");
+    }
+    return "3";
+  }
   function nudgeStatus(m) {
     var nud = m.last_nudged_at ? new Date(m.last_nudged_at).getTime() : 0;
     var resp = m.last_response_at ? new Date(m.last_response_at).getTime() : 0;
@@ -1103,6 +1193,11 @@
       ".raci-btn-go{background:var(--navy-primary,#0A2240);color:#fff;border-color:var(--navy-primary,#0A2240);}" +
       ".raci-table{width:100%;border-collapse:collapse;font-size:.84rem;background:#fff;border:1px solid var(--border,#e6e6e6);border-radius:8px;overflow:hidden;}" +
       ".raci-table th{background:var(--navy-primary,#0A2240);color:#fff;font-weight:600;text-align:left;padding:.5rem .6rem;font-size:.78rem;}" +
+      ".raci-th-sort{cursor:pointer;user-select:none;}.raci-th-sort:hover{background:var(--navy-secondary,#1b3a5c);}" +
+      ".raci-th-active{background:var(--navy-secondary,#1b3a5c);}" +
+      ".raci-tree-reset{background:none;border:1px solid var(--border,#ccc);border-radius:4px;color:var(--accent-link,#1b6ec2);" +
+      "cursor:pointer;font-size:.72rem;padding:.1rem .4rem;margin-left:.15rem;}.raci-tree-reset:hover{background:var(--surface-muted,#f0f0f0);}" +
+      ".raci-sort-note{color:var(--text-faint,#777);}" +
       ".raci-th-item{min-width:240px;}" +
       ".raci-table td{padding:.45rem .6rem;border-top:1px solid var(--border,#eee);vertical-align:top;}" +
       ".raci-row-act{background:var(--surface-2,#f4f7fb);}" +
