@@ -63,11 +63,13 @@ create policy ir_write on public.item_raci for all
   using (is_allowed_reviewer()) with check (is_allowed_reviewer());
 
 -- ─────────────────────────────────────────────────────────────────────────
--- item_updates — the append-only Update Log (StarPort, 2026-06-26).
+-- item_updates — the Update Log (StarPort, 2026-06-26).
 -- One row per status update on an Activity/sub-activity/project; written by the
 -- RACI tab's 📝 braindump→CC-polish composer. The single live source for card
 -- updates (both activities AND projects — keyed like item_raci). Public read,
--- reviewer-gated insert, NO update/delete (immutable history).
+-- reviewer-gated insert/update/delete. (Was append-only/immutable; reviewers
+-- gained EDIT + DELETE on 2026-06-27 — SkyMap — so a test/mistaken entry can be
+-- removed and a posted update corrected; an edit stamps edited_at.)
 -- (A pre-existing project-only `update_log` table is unrelated/vestigial.)
 -- ─────────────────────────────────────────────────────────────────────────
 create table if not exists public.item_updates (
@@ -78,8 +80,11 @@ create table if not exists public.item_updates (
   raw         text,                   -- the original braindump, kept for provenance (optional)
   author      text,                   -- reviewer email who posted it
   scope       text not null default 'cpl-initiative',
-  created_at  timestamptz not null default now()
+  created_at  timestamptz not null default now(),
+  edited_at   timestamptz             -- set when a reviewer edits the body (null = never edited)
 );
+-- Backfill column for an already-created table (additive, idempotent).
+alter table public.item_updates add column if not exists edited_at timestamptz;
 create index if not exists item_updates_item_idx on public.item_updates (item_type, item_id, created_at desc);
 
 alter table public.item_updates enable row level security;
@@ -87,3 +92,10 @@ drop policy if exists iu_select on public.item_updates;
 create policy iu_select on public.item_updates for select using (true);
 drop policy if exists iu_insert on public.item_updates;
 create policy iu_insert on public.item_updates for insert with check (is_allowed_reviewer());
+-- Reviewer-gated EDIT + DELETE (added 2026-06-27, SkyMap).
+drop policy if exists iu_update on public.item_updates;
+create policy iu_update on public.item_updates for update
+  using (is_allowed_reviewer()) with check (is_allowed_reviewer());
+drop policy if exists iu_delete on public.item_updates;
+create policy iu_delete on public.item_updates for delete
+  using (is_allowed_reviewer());
