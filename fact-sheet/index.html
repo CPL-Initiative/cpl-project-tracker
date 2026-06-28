@@ -17,11 +17,12 @@
 <div class="actionbar no-print">
   <div class="wrap">
     <span class="ab-title">California CPL Fact Sheet</span>
-    <span id="live-chip" class="live-chip" title="Headline progress figures are pulled live from the MAP CPL Dashboard each time this page loads.">
-      <span class="dot"></span><span id="live-chip-text">Live data</span>
+    <span id="live-chip" class="live-chip" role="status" aria-live="polite" title="Headline progress figures are pulled live from the MAP CPL Dashboard each time this page loads.">
+      <span class="dot" aria-hidden="true"></span><span id="live-chip-text">Live data</span>
     </span>
     <button class="btn no-print" id="btn-collapse-all" type="button" title="Collapse or expand all sections">⊟ Collapse all</button>
-    <button class="btn no-print" id="btn-curate" type="button" title="Sign in to edit this fact sheet">✎ Curate</button>
+    <button class="btn no-print" id="btn-curate" type="button" aria-pressed="false" title="Sign in to edit this fact sheet">✎ Curate</button>
+    <button class="btn no-print" id="btn-word" type="button" title="Download this fact sheet as a Word document">⬇ Word</button>
     <button class="btn btn-primary" id="btn-print" type="button" title="Print or save this fact sheet as a PDF">🖨 Print / Save PDF</button>
   </div>
 </div>
@@ -77,8 +78,8 @@
       benefit a student had to discover into an invitation the system extends. Through the MAP platform, colleges
       publish their CPL opportunities openly and reach out to working adults, veterans, and apprentices to claim the
       credit they have already earned, instead of re-taking what they already know.</p>
-    <p>This work advances the goals of <strong>Vision 2030</strong> and the <strong>2025 California Master Plan for
-      Career Education</strong> — widening access, accelerating completion, and connecting learning to careers — and
+    <p>This work advances the goals of <strong>Vision 2030</strong> and the <strong><a href="https://map.rccd.edu/wp-content/uploads/2025/07/2025-CA-Master-Plan-for-Career-Education.pdf" target="_blank" rel="noopener">2025 California Master Plan for
+      Career Education</a></strong> — widening access, accelerating completion, and connecting learning to careers — and
       it is built to last. The MAP team embeds AI assistance from the outset under the Chancellor's Office's
       <strong>HUMANS principles</strong> (human agency and accountability, transparency, privacy, bias mitigation,
       inclusive design, and careful evaluation of partners), so technology accelerates the work while faculty
@@ -104,10 +105,10 @@
 
     <div class="cols-2">
       <div class="card">
-        <h4 style="margin-top:0">CPL Types <span style="font-weight:400;color:var(--muted)">— recognized under California Title&nbsp;5 §55050</span></h4>
+        <h4 style="margin-top:0">CPL Types <span style="font-weight:400;color:var(--muted)">— recognized under California <a href="https://www.law.cornell.edu/regulations/california/5-CCR-55050" target="_blank" rel="noopener">Title&nbsp;5 §55050</a></span></h4>
         <ul class="tightlist">
           <li>Credit by examination (including high school articulation)</li>
-          <li>Joint Services Transcripts (military training and service)</li>
+          <li><a href="https://jst.doded.mil/" target="_blank" rel="noopener">Joint Services Transcripts</a> (military training and service)</li>
           <li>Student-created portfolios documenting skills and experience</li>
           <li>Industry certifications and professional licenses</li>
           <li>Standardized assessments (AP, CLEP, IB exams)</li>
@@ -159,7 +160,7 @@
     <ul class="tightlist">
       <li>Only <strong>1 in 4</strong> veterans believe they received the college credit they deserve for military training</li>
       <li><strong>25%</strong> of surveyed veterans report running out of military benefits before completing a credential — CPL can bridge this gap, enabling veterans to reach up to a master's degree at no additional cost</li>
-      <li><strong>$14,653–$26,115</strong> in educational benefits preserved per student (≈15 units of CPL), with up to <strong>36 months</strong> of Post-9/11 GI&nbsp;Bill eligibility stretched further toward higher degrees</li>
+      <li><strong>$14,653–$26,115</strong> in educational benefits preserved per student (≈15 units of CPL), with up to <strong>36 months</strong> of <a href="https://www.va.gov/education/about-gi-bill-benefits/post-9-11/" target="_blank" rel="noopener">Post-9/11 GI&nbsp;Bill</a> eligibility stretched further toward higher degrees</li>
       <li>CPL reduces loan burden, preserves GI&nbsp;Bill and Pell benefits, and accelerates time to degree for working learners</li>
     </ul>
     <div class="note">CPL also increases college funding through the Student-Centered Funding Formula: students who
@@ -484,9 +485,9 @@
     <h2>Funding history &amp; current allocations</h2>
 
     <h3>2017–2022 · Design — building MAP and a scalable CPL strategy</h3>
-    <p>Initial investment at Norco College soon expanded to all Riverside Community College District (RCCD)
-      colleges (RCC, NC, MVC), nine additional Inland Empire / Desert Regional Consortium colleges, and Saddleback
-      College — a total of <strong>$807K</strong> in seed funding to scale and beta-test the platform.</p>
+    <p>Initial investment at <a href="https://www.norcocollege.edu/" target="_blank" rel="noopener">Norco College</a> soon expanded to all Riverside Community College District (RCCD)
+      colleges (RCC, NC, MVC), nine additional Inland Empire / Desert Regional Consortium colleges, and <a href="https://www.saddleback.edu/" target="_blank" rel="noopener">Saddleback
+      College</a> — a total of <strong>$807K</strong> in seed funding to scale and beta-test the platform.</p>
     <ul class="tightlist">
       <li><strong>Phase 1 — Seed funding &amp; beta testing ($807K):</strong> $79K (Cervantes / CA Latino Legislative Caucus 1) + $788,225 across four consecutive IEDRC projects</li>
       <li><strong>Phase 2 — Rapid expansion beyond 76 colleges ($7M):</strong> $2M (Caucus 2, 2021–23) · $2M (Caucus 3, 2022–24) · $3M (Calvert FIPSE grant, 2023–25)</li>
@@ -505,16 +506,17 @@
     <h3>CPL infrastructure &amp; initiative funding sources</h3>
     <div class="tbl-wrap">
       <table class="data">
+        <caption class="sr-only">CPL infrastructure and initiative funding sources, fiscal years 2025-26 through 2029-30, in dollars.</caption>
         <thead>
-          <tr><th>Funding source</th><th class="num">2025-26 Budget</th><th class="num">2026-27</th><th class="num">2027-28</th><th class="num">2028-29</th><th class="num">2029-30</th><th class="num">Total</th></tr>
+          <tr><th scope="col">Funding source</th><th scope="col" class="num">2025-26 Budget</th><th scope="col" class="num">2026-27</th><th scope="col" class="num">2027-28</th><th scope="col" class="num">2028-29</th><th scope="col" class="num">2029-30</th><th scope="col" class="num">Total</th></tr>
         </thead>
         <tbody>
-          <tr><td>Scale MAP CPL statewide — one-time $6M Prop 98 (CO Admin)</td><td class="num">6,000,000</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">6,000,000</td></tr>
-          <tr><td>CPL Operations — ongoing $5M Prop 98</td><td class="num">5,000,000</td><td class="num">5,000,000</td><td class="num">5,000,000</td><td class="num">5,000,000</td><td class="num">5,000,000</td><td class="num">25,000,000</td></tr>
-          <tr><td>CPL Infrastructure &amp; Scaling — one-time $15M Prop 98 (2025–2028)</td><td class="num">2,179,615</td><td class="num">5,954,764</td><td class="num">2,100,000</td><td class="num">2,665,621</td><td class="num">2,100,000</td><td class="num">15,000,000</td></tr>
-          <tr><td>CPL Operations — ongoing $2M Prop 98 (Gov. proposed)</td><td class="num">—</td><td class="num">2,000,000</td><td class="num">2,000,000</td><td class="num">2,000,000</td><td class="num">2,000,000</td><td class="num">8,000,000</td></tr>
-          <tr><td>CPL Local Implementation Support — one-time $35M Prop 98 (2026–2028, Gov. proposed)</td><td class="num">—</td><td class="num">15,000,000</td><td class="num">15,000,000</td><td class="num">5,000,000</td><td class="num">—</td><td class="num">35,000,000</td></tr>
-          <tr class="total"><td>Total</td><td class="num">13,179,615</td><td class="num">27,954,764</td><td class="num">24,100,000</td><td class="num">14,665,621</td><td class="num">9,100,000</td><td class="num">89,000,000</td></tr>
+          <tr><th scope="row">Scale MAP CPL statewide — one-time $6M Prop 98 (CO Admin)</th><td class="num">6,000,000</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">6,000,000</td></tr>
+          <tr><th scope="row">CPL Operations — ongoing $5M Prop 98</th><td class="num">5,000,000</td><td class="num">5,000,000</td><td class="num">5,000,000</td><td class="num">5,000,000</td><td class="num">5,000,000</td><td class="num">25,000,000</td></tr>
+          <tr><th scope="row">CPL Infrastructure &amp; Scaling — one-time $15M Prop 98 (2025–2028)</th><td class="num">2,179,615</td><td class="num">5,954,764</td><td class="num">2,100,000</td><td class="num">2,665,621</td><td class="num">2,100,000</td><td class="num">15,000,000</td></tr>
+          <tr><th scope="row">CPL Operations — ongoing $2M Prop 98 (Gov. proposed)</th><td class="num">—</td><td class="num">2,000,000</td><td class="num">2,000,000</td><td class="num">2,000,000</td><td class="num">2,000,000</td><td class="num">8,000,000</td></tr>
+          <tr><th scope="row">CPL Local Implementation Support — one-time $35M Prop 98 (2026–2028, Gov. proposed)</th><td class="num">—</td><td class="num">15,000,000</td><td class="num">15,000,000</td><td class="num">5,000,000</td><td class="num">—</td><td class="num">35,000,000</td></tr>
+          <tr class="total"><th scope="row">Total</th><td class="num">13,179,615</td><td class="num">27,954,764</td><td class="num">24,100,000</td><td class="num">14,665,621</td><td class="num">9,100,000</td><td class="num">89,000,000</td></tr>
         </tbody>
       </table>
     </div>
@@ -577,7 +579,7 @@
     <ul class="tightlist">
       <li><strong>Phase 1 (2025–2026)</strong> — systemwide course credit for Basic Training (stretch goal: 4–6 credits for all enrolled veterans). <em>Example:</em> rather than waiving CSU GE Area E from a DD-214, award local course credit from JST recommendations — e.g. 1 unit KIN&nbsp;001, 1 unit KIN&nbsp;002, 3 units HES&nbsp;100.</li>
       <li><strong>Phase 2</strong> — articulate JST credit recommendations per veteran using AI to produce preliminary recommendations, reviewed by statewide Academic Senate faculty, then provided to colleges for awarding and transcribing.</li>
-      <li><strong>Phase 3 (2026–2028)</strong> — a demonstration project between Twentynine Palms and Copper Mountain College: upload JSTs for all enrolled military students, award Basic Training CPL, and develop faculty-reviewed pathways for the 42 Military Occupational Specialties trained at MCAGCC — a scalable model targeted for replication across all 34 California military bases by March 2027.</li>
+      <li><strong>Phase 3 (2026–2028)</strong> — a demonstration project between Twentynine Palms and <a href="https://www.cmccd.edu/" target="_blank" rel="noopener">Copper Mountain College</a>: upload JSTs for all enrolled military students, award Basic Training CPL, and develop faculty-reviewed pathways for the 42 Military Occupational Specialties trained at <a href="https://www.29palms.marines.mil/" target="_blank" rel="noopener">MCAGCC</a> — a scalable model targeted for replication across all 34 California military bases by March 2027.</li>
     </ul>
     <h4>Veteran Sprint — current outcomes <span style="font-weight:400;color:var(--muted)" data-bind="as_of_inline2">(live)</span></h4>
     <div class="stat-grid">
@@ -601,8 +603,8 @@
       <li>Enhance the MAP platform with AI-assist tools for apprenticeship CPL, degree-progress reporting, and outreach — and add apprentices alongside veterans and working learners on the MAP CPL Dashboard</li>
     </ul>
     <div class="note">In January 2026, <strong>$1.4M</strong> was designated to develop AI-assist CPL tools for apprentices
-      in the construction trades and IBEW electricians at two pilot colleges — Santiago Canyon College and Norco
-      College — for completion by June 2026, with potential scaling to all colleges and registered apprenticeship
+      in the construction trades and IBEW electricians at two pilot colleges — <a href="https://www.sccollege.edu/" target="_blank" rel="noopener">Santiago Canyon College</a> and <a href="https://www.norcocollege.edu/" target="_blank" rel="noopener">Norco
+      College</a> — for completion by June 2026, with potential scaling to all colleges and registered apprenticeship
       trades.</div>
 
     <h3>Noncredit and Non-College CPL Landing Pages project</h3>
@@ -613,7 +615,7 @@
       they are working on — empowering students to upload their credentials and request review at any college.</p>
     <figure>
       <img src="./img/calbright-landing.png" alt="Screenshot of the Calbright College CPL Landing Page beta, showing industry credentials students earn at Calbright that have been articulated by colleges across the system, with clickable college options.">
-      <figcaption><strong>Calbright College</strong> serves as the pilot — its beta CPL Landing Page displays the industry
+      <figcaption><strong><a href="https://www.calbright.edu/" target="_blank" rel="noopener">Calbright College</a></strong> serves as the pilot — its beta CPL Landing Page displays the industry
         credentials students earn at Calbright that colleges across the system have articulated. Students click a listed
         college to reach that college's CPL Landing Page for next steps. The project will scale in 2026 to programs such as
         CDCR (Rising Scholars), EMS Corps, Futuro Health, and noncredit campuses (NOCE, SDCCE).</figcaption>
@@ -628,7 +630,7 @@
       section; an AI-assisted module embedded in the CPL Student Plan is in development to expand the catalog in 2026.</p>
     <figure>
       <img src="./img/student-rocio.jpg" alt="Rocio Garcia stands outdoors in front of greenery, beside her testimonial: Credit for Prior Learning has been instrumental in saving me both time and money, significantly impacting my educational journey and career advancement. By earning CPL credits, I was able to complete my bachelor's degree in a shorter period, which not only accelerated my educational timeline but also resulted in financial savings. CPL has been a pivotal factor in helping me further my career as an educator, and I am now currently enrolled in a Master's program. Thank you! Rocio G.">
-      <figcaption><strong>Rocio Garcia</strong> is now a full-time, tenure-track professor at West LA College. She received
+      <figcaption><strong>Rocio Garcia</strong> is now a full-time, tenure-track professor at <a href="https://www.wlac.edu/" target="_blank" rel="noopener">West LA College</a>. She received
         <strong>16 units</strong> for her Registered Dental Hygienist certification, completing a BS in Dental Hygiene a
         semester early — meeting the minimum qualifications for her position and beginning to earn sooner. She is now
         completing an MS in Education.</figcaption>
@@ -646,18 +648,18 @@
     <div class="cols-2">
       <div class="card"><h4 style="margin-top:0">ASCCC Pathways to Credit <span style="font-weight:400;color:var(--muted)">($1.063M · Jun 2025–Jun 2028)</span></h4>
         <p style="margin:0;font-size:.92rem">Convene discipline-faculty statewide workgroups to create 1,000 statewide credit recommendations across 25 disciplines (planned to extend to 40); assign college CPL liaisons; create/adopt/adapt statewide recommendations; and revise &amp; validate AI-assist common-course crosswalks for 1,000 courses.</p></div>
-      <div class="card"><h4 style="margin-top:0">WestEd — Skills Inventory <span style="font-weight:400;color:var(--muted)">(Projects 1 &amp; 2, 2025–2027)</span></h4>
+      <div class="card"><h4 style="margin-top:0"><a href="https://www.wested.org/" target="_blank" rel="noopener">WestEd</a> — Skills Inventory <span style="font-weight:400;color:var(--muted)">(Projects 1 &amp; 2, 2025–2027)</span></h4>
         <p style="margin:0;font-size:.92rem">Credential Prioritization Dashboard, Credential Registry planning, student CPL lifecycle mapping, and the NFN Essential Skills pilot.</p></div>
-      <div class="card"><h4 style="margin-top:0">Credential Engine — CTDL &amp; interoperability</h4>
+      <div class="card"><h4 style="margin-top:0"><a href="https://credentialengine.org/" target="_blank" rel="noopener">Credential Engine</a> — CTDL &amp; interoperability</h4>
         <p style="margin:0;font-size:.92rem">Project 1 (Jul–Dec 2025): credential transparency across systems; pilot CTDL publishing of CPL data for 5 colleges; foundation for a skills taxonomy aligned to Advance CTE. Project 2 (Mar 2026–Feb 2027): bi-directional integration with CA MAP and onboarding authoritative publishers into the Credential Registry.</p></div>
       <div class="card"><h4 style="margin-top:0">CCC Foundation — AI Skills Matching <span style="font-weight:400;color:var(--muted)">(Jan 2025–Oct 2026)</span></h4>
         <p style="margin:0;font-size:.92rem">Identify high-value certs and CCC programs leading to in-demand careers; create an AI-enabled match of 107 industry certs to CCC courses for faculty review and adoption across the system.</p></div>
       <div class="card"><h4 style="margin-top:0">Behavioral Health CPL <span style="font-weight:400;color:var(--muted)">(Mar 2026–Jun 2028)</span></h4>
-        <p style="margin:0;font-size:.92rem">Demonstrate how third-party training providers integrate with CCC pathways through CPL to help adult learners advance healthcare careers (with Futuro Health) — CPL for behavioral-health programs, recruitment, landing pages, and reporting.</p></div>
+        <p style="margin:0;font-size:.92rem">Demonstrate how third-party training providers integrate with CCC pathways through CPL to help adult learners advance healthcare careers (with <a href="https://futurohealth.org/" target="_blank" rel="noopener">Futuro Health</a>) — CPL for behavioral-health programs, recruitment, landing pages, and reporting.</p></div>
       <div class="card"><h4 style="margin-top:0">N2N Lightleap AI &amp; EMS Corps</h4>
         <p style="margin:0;font-size:.92rem"><strong>N2N Lightleap AI</strong> uses AI to match construction &amp; electrician apprenticeship learning to courses at Santiago Canyon and Norco for CPL. <strong>EMS Corps</strong> — a 5-month EMT licensing program for youth (18–24) facing barriers, with an 85% success rate, expanding to 13 sites — develops CPL for credit and noncredit EMT cohorts and opens opportunities for 500+ noncredit graduates.</p></div>
     </div>
-    <p style="margin-top:14px;font-size:.92rem;color:var(--muted)"><strong>Other formal &amp; informal partnerships:</strong> LAUNCH (apprenticeship CPL), IEPI/PRT, LWDA (employment data, WDB, DAS, CWDB, ETP, CalHR, EDD), Regional Strong Workforce Consortia, the CO Digital Center (Credential Registry, Career Passport, AI Fellows), CA Dept. of Education (Advance CTE), Cradle to Career (C2C), Futuro Health, CAEL, and the American Council on Education (ACE Military Guide).</p>
+    <p style="margin-top:14px;font-size:.92rem;color:var(--muted)"><strong>Other formal &amp; informal partnerships:</strong> LAUNCH (apprenticeship CPL), IEPI/PRT, LWDA (employment data, WDB, DAS, CWDB, ETP, CalHR, EDD), Regional Strong Workforce Consortia, the CO Digital Center (Credential Registry, Career Passport, AI Fellows), CA Dept. of Education (Advance CTE), Cradle to Career (C2C), Futuro Health, CAEL, and the <a href="https://militaryguide.acenet.edu/" target="_blank" rel="noopener">American Council on Education (ACE Military Guide)</a>.</p>
   </section>
 
   <!-- ── Legislation ───────────────────────────────────────────────────── -->
@@ -666,11 +668,11 @@
     <p>CPL in California is governed by Title&nbsp;5 of the California Code of Regulations (§55050–55052.5) and
       reinforced by recent legislation and statewide planning documents.</p>
     <ul class="tightlist">
-      <li><strong>Assembly Bill 123 (2025):</strong> chaptered legislation advancing CPL implementation across the CCC system — <a href="https://map.rccd.edu/wp-content/uploads/2025/07/07292025-AB-123-Chaptered-Version.pdf" target="_blank" rel="noopener">read full text</a></li>
-      <li><strong>Vision 2030 (July 2025 edition):</strong> the CCC system's flagship strategic plan, with CPL as a central pillar — <a href="https://map.rccd.edu/wp-content/uploads/2025/07/vision-2030-report.pdf" target="_blank" rel="noopener">download report</a></li>
-      <li><strong>Vision 2030 CPL Workplan:</strong> the detailed implementation roadmap — <a href="https://map.rccd.edu/wp-content/uploads/2025/07/credit-for-prior-learning-workplan.pdf" target="_blank" rel="noopener">download workplan</a></li>
-      <li><strong>2025 California Master Plan for Career Education:</strong> statewide workforce-education plan integrating CPL — <a href="https://map.rccd.edu/wp-content/uploads/2025/07/2025-CA-Master-Plan-for-Career-Education.pdf" target="_blank" rel="noopener">download plan</a></li>
-      <li><strong>ASCCC Pathways to Credit:</strong> Academic Senate guidance on CPL — <a href="https://www.asccc.org/pathways-credit" target="_blank" rel="noopener">view resource</a></li>
+      <li><strong>Assembly Bill 123 (2025):</strong> chaptered legislation advancing CPL implementation across the CCC system — <a href="https://map.rccd.edu/wp-content/uploads/2025/07/07292025-AB-123-Chaptered-Version.pdf" target="_blank" rel="noopener aria-label="Read the full text of Assembly Bill 123 (2025) (PDF)">read full text</a></li>
+      <li><strong>Vision 2030 (July 2025 edition):</strong> the CCC system's flagship strategic plan, with CPL as a central pillar — <a href="https://map.rccd.edu/wp-content/uploads/2025/07/vision-2030-report.pdf" target="_blank" rel="noopener aria-label="Download the Vision 2030 (July 2025) report (PDF)">download report</a></li>
+      <li><strong>Vision 2030 CPL Workplan:</strong> the detailed implementation roadmap — <a href="https://map.rccd.edu/wp-content/uploads/2025/07/credit-for-prior-learning-workplan.pdf" target="_blank" rel="noopener aria-label="Download the Vision 2030 CPL Workplan (PDF)">download workplan</a></li>
+      <li><strong>2025 California Master Plan for Career Education:</strong> statewide workforce-education plan integrating CPL — <a href="https://map.rccd.edu/wp-content/uploads/2025/07/2025-CA-Master-Plan-for-Career-Education.pdf" target="_blank" rel="noopener aria-label="Download the 2025 California Master Plan for Career Education (PDF)">download plan</a></li>
+      <li><strong>ASCCC Pathways to Credit:</strong> Academic Senate guidance on CPL — <a href="https://www.asccc.org/pathways-credit" target="_blank" rel="noopener aria-label="View ASCCC Pathways to Credit guidance">view resource</a></li>
     </ul>
   </section>
 
@@ -770,7 +772,7 @@
       <div class="card">
         <h4 style="margin-top:0">Key online resources</h4>
         <p style="margin:0">MAP Website: <a href="https://map.rccd.edu" target="_blank" rel="noopener">map.rccd.edu</a><br>
-          CPL Dashboard: <a href="https://cpldashboardcccco.azurewebsites.net/insights/dashboard" target="_blank" rel="noopener">Live data →</a><br>
+          CPL Dashboard: <a href="https://cpldashboardcccco.azurewebsites.net/insights/dashboard" target="_blank" rel="noopener aria-label="Open the MAP CPL Dashboard — live data">Live data →</a><br>
           MAP Support: <a href="mailto:map@rccd.edu">map@rccd.edu</a></p>
       </div>
     </div>
@@ -795,5 +797,6 @@
 <script src="./statewide_recs.js"></script>
 <script src="./statewide_recs_render.js"></script>
 <script src="./factsheet_edit.js"></script>
+<script src="./factsheet_word.js"></script>
 </body>
 </html>

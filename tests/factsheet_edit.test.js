@@ -63,14 +63,31 @@ check("exposes CPL_FACTSHEET_EDIT API", API && typeof API.collectBlocks === "fun
 const blocks = API ? API.blocks() : [];
 check("collected some editable blocks", blocks.length > 5);
 
-// (c) excluded sections never produce a keyed block
-const EXCLUDED = ["statewide-exhibits", "progress", "contents"];
-check("no blocks in excluded sections (#statewide-exhibits/#progress/#contents)",
+// (c) hands-off sections (#statewide-exhibits owned by statewide_recs_render.js,
+// #contents = chrome) never produce a keyed block. #progress is NO LONGER excluded.
+const EXCLUDED = ["statewide-exhibits", "contents"];
+check("no blocks in hands-off sections (#statewide-exhibits/#contents)",
   blocks.every((b) => EXCLUDED.indexOf(b.sectionId) === -1));
 
-// (c) no [data-bind] box is editable (the live Veteran-Sprint stats etc.)
-check("no block contains a live [data-bind] element",
-  blocks.every((b) => !b.el.hasAttribute("data-bind") && !b.el.querySelector("[data-bind]")));
+// (c-new) the #progress KPI cards ARE collected now — as MOVE-ONLY live blocks
+// (moveable + deletable, never text-editable).
+const kpis = blocks.filter((b) => b.sectionId === "progress" && b.el.classList.contains("kpi"));
+check("#progress KPI cards are collected (≥7)", kpis.length >= 7);
+check("#progress KPI cards are move-only: noEdit + movable + live, not editable",
+  kpis.length > 0 && kpis.every((b) => b.noEdit && b.movable && b.live && !API.canEditHtml(b)));
+
+// (c-new) the live Veteran-Sprint stats (#initiatives) ARE collected AND editable
+// (Sam's explicit ask — distinct from the KPI carve-out).
+const vss = blocks.filter((b) =>
+  b.sectionId === "initiatives" && b.el.classList.contains("stat") && b.el.querySelector("[data-bind]"));
+check("Veteran-Sprint live stats are collected (≥1)", vss.length >= 1);
+check("Veteran-Sprint stats are editable + moveable live boxes (not noEdit)",
+  vss.length > 0 && vss.every((b) => API.canEditHtml(b) && b.live && !b.noEdit && b.movable));
+
+// (c-new) the #funding budget table is a HIDE-ONLY block (isTable, not editable, not moveable)
+const tbl = blocks.find((b) => b.sectionId === "funding" && b.isTable);
+check("the #funding budget table is collected as a hide-only block",
+  !!tbl && !API.canEditHtml(tbl) && !tbl.movable && /\|tbl\|/.test(tbl.key));
 
 // every block element actually got a data-fsk stamp, unique
 const keys = blocks.map((b) => b.key);

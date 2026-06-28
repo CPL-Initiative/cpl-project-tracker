@@ -1,33 +1,39 @@
 /* ===========================================================================
    CPL Fact Sheet — "Curate" editable overlay (standalone)
    ---------------------------------------------------------------------------
-   Lets an allowed reviewer edit the text of any content box on the public Fact
-   Sheet — and hide a box entirely (e.g. retire the JST upload card) — without a
-   code change. The baked HTML in index.html is ALWAYS the fallback: an empty
-   overrides table = the page exactly as authored.
+   Lets an allowed reviewer edit / hide / add / delete / reorder content boxes
+   (and images) on the public Fact Sheet — without a code change. The baked HTML
+   in index.html is ALWAYS the fallback: an empty overrides table = the page
+   exactly as authored.
 
-   How it works
-   ------------
-   • Every editable "box" is given a STABLE key at load by walking the DOM
-     (`data-fsk`), derived from its section id + a slug of its baked text. Keys
-     are computed BEFORE any override is applied, so they don't drift when a box
-     is edited. → index.html needs NO per-box markup (tiny, collision-safe diff).
-   • On load (for EVERY visitor, signed in or not) we read public.factsheet_overrides
-     (anon) and overlay any { html, hidden } onto matching boxes.
-   • A signed-in reviewer (shared `cpl_sb` magic-link session + is_allowed_reviewer()
-     RLS, same gate as the RACI / CCR / TMC tabs) gets a ✎ Curate mode: click a
-     box → a docked editor (raw-HTML textarea) → Save / Hide / Reset-to-original.
+   Section policy
+   --------------
+   • EXCLUDE_SECTIONS  — hands off entirely:
+       #statewide-exhibits  — the Statewide CRs section (owned by statewide_recs_render.js)
+       #contents            — the table of contents (chrome)
+   • MOVE_ONLY_SECTIONS — boxes are MOVEABLE + DELETABLE but NOT text-editable:
+       #progress            — the live, data-bound headline KPI grid. Editing a
+                              live number makes no sense, but a reviewer can
+                              reorder the cards / hide one.
+   • everything else      — full edit + move + hide/delete + ＋Add box (per grid)
+       This now INCLUDES the live Veteran-Sprint outcome stats: a reviewer can
+       edit them (an edit replaces the live binding with static text) and move /
+       add boxes around them.
+   • data tables (#funding's budget table) — HIDE-ONLY (a single ✕ to hide it),
+       since it mirrors the Budget tab and isn't hand-edited here.
 
-   EXCLUDED from editing (deliberate):
-     • #statewide-exhibits  — the Statewide CRs section (owned elsewhere)
-     • #progress            — the live, data-bound headline KPI grid
-     • #contents            — the table of contents (chrome)
-     • any element containing/being [data-bind] — live metric, never hand-edit
+   Stable keys
+   -----------
+   Every box gets a STABLE key at load by walking the DOM (`data-fsk`), derived
+   from its section id + a slug of its STATIC text — text inside [data-bind] live
+   elements is excluded, so a KPI / Vet-Sprint key doesn't churn when the daily
+   metric value changes. Keys are computed BEFORE any override is applied, so they
+   don't drift when a box is edited. → index.html needs NO per-box markup.
 
    Trust model: override `html` is injected as innerHTML for all visitors, but
    ONLY allowed reviewers can write it (RLS via is_allowed_reviewer()) — the same
    reviewer-trust boundary as item_updates / curator notes. The anon key can read,
-   never write.
+   never write. All reviewer HTML is allowlist-sanitized before display.
    =========================================================================== */
 (function () {
   'use strict';
@@ -37,14 +43,17 @@
   var REST = SUPABASE_URL + '/rest/v1';
   var PAGE = 'fact-sheet';
 
-  // Sections whose boxes are NOT editable here.
-  var EXCLUDE_SECTIONS = { 'statewide-exhibits': 1, 'progress': 1, 'contents': 1 };
+  // Sections hands-off entirely.
+  var EXCLUDE_SECTIONS = { 'statewide-exhibits': 1, 'contents': 1 };
+  // Sections whose boxes are moveable + deletable but NOT text-editable.
+  var MOVE_ONLY_SECTIONS = { 'progress': 1 };
   // The "box" units a reviewer can edit (outermost wins; section-level p/ul/ol
-  // added separately below).
-  var BOX_SEL = '.card, .res, .stat, .note, .person, .strategy, figcaption';
+  // added separately below). `.kpi` is included so the KPI cards become move/
+  // delete blocks (MOVE_ONLY_SECTIONS keeps them non-editable).
+  var BOX_SEL = '.card, .res, .stat, .kpi, .note, .person, .strategy, figcaption';
 
   var API = {
-    _blocks: [],          // [{ el, key, sectionId, baked, label }]
+    _blocks: [],          // [{ el, key, sectionId, baked, label, live, noEdit, isTable, movable, gridSig, added }]
     _byEl: null,          // Map el -> block
     _overrides: {},       // key -> { html, hidden }
     _curating: false,
@@ -52,39 +61,58 @@
     _editing: null        // block currently open in the dock
   };
 
-  // ── Add / delete / reorder boxes (Phase 1) ─────────────────────────────────
-  // Net-new boxes a reviewer inserts (e.g. more Resources cards) + a section's
-  // drag order ride the SAME factsheet_overrides table via reserved key
-  // namespaces — no schema migration:
-  //   added box    "<sectionId>|add|<kind>|<token>"  (html = the box's innerHTML)
-  //   box order    "<sectionId>|__order"             (html = JSON array of keys)
-  // Both are skipped by applyBlock (they match no baked element) and handled by
-  // materializeAdded() / applyOrder() instead. ✕ = delete an added box, or hide
-  // a baked one (which lives in index.html and can't be truly removed).
+  // ── Grids: a box's parent flex/grid container ──────────────────────────────
+  // A box inside one of these is "grid-managed" (draggable + part of the saved
+  // order + its grid gets a ＋Add box button). A box whose parent is the <section>
+  // itself is a section-level box (editable + hideable, but not in any grid order).
+  var GRID_CONTAINER_SEL = '.cols-2, .stat-grid, .res-grid, .team-grid, .kpi-grid';
+  var GRID_BOX_SEL_ANY = '.res, .card, .stat, .note, .person, .strategy, .kpi';
+  function gridContainers(sec) {
+    var out = [], els = sec ? sec.querySelectorAll(GRID_CONTAINER_SEL) : [];
+    for (var i = 0; i < els.length; i++) out.push(els[i]);
+    return out;
+  }
+  function closestGrid(el, sec) {
+    var g = el && el.closest && el.closest(GRID_CONTAINER_SEL);
+    return (g && sec && sec.contains(g)) ? g : null;
+  }
+  function gridForSig(sec, sig) {
+    var m = /^g(\d+)$/.exec(sig || '');
+    if (!m) return null;
+    return gridContainers(sec)[+m[1]] || null;
+  }
+  function firstBoxIn(grid) { return grid && grid.querySelector ? grid.querySelector(GRID_BOX_SEL_ANY) : null; }
+  // A block a reviewer can open in the text editor: not a move-only KPI, not a
+  // table (hide-only), not an image (its own bar).
+  function canEditHtml(bl) { return !!bl && !bl.noEdit && !bl.isTable && !isImgBlock(bl); }
+
+  // ── Add / delete / reorder boxes ───────────────────────────────────────────
+  // Net-new boxes a reviewer inserts + a section's drag order ride the SAME
+  // factsheet_overrides table via reserved key namespaces — no schema migration:
+  //   added box    "<sectionId>|add|<kind>|<gridSig>|<token>"  (html = its innerHTML)
+  //   box order    "<sectionId>|__order"                       (html = JSON array of keys)
+  // The <gridSig> ("g0","g1",…) records WHICH grid in the section the box belongs
+  // to, so a section with several grids (e.g. #what-is-cpl: the cols-2 cards AND
+  // the CPL-Bump stat-grid) materializes each added box into the right grid. An
+  // older "<sectionId>|add|<kind>|<token>" key (no gridSig) falls back to grid 0.
   var GRID_KINDS = ['res', 'card', 'stat', 'note', 'person', 'strategy'];
-  var GRID_SEL = '.res, .card, .stat, .note, .person, .strategy';
   var _addCounter = 0;
   function isAddedKey(k) { return /\|add\|/.test(k || ''); }
   function isOrderKey(k) { return /\|__order$/.test(k || ''); }
   function genToken() { return 'b' + Date.now().toString(36) + (_addCounter++).toString(36); }
   function primaryKind(el) {
     for (var i = 0; i < GRID_KINDS.length; i++)
-      if (el.classList && el.classList.contains(GRID_KINDS[i])) return GRID_KINDS[i];
+      if (el && el.classList && el.classList.contains(GRID_KINDS[i])) return GRID_KINDS[i];
     return 'res';
   }
-  function boxTemplate(sec) { return sec.querySelector(GRID_SEL); }
-  function boxContainer(sec) {
-    var sib = sec.querySelector(GRID_SEL);
-    if (sib && sib.parentElement) return sib.parentElement;
-    return sec.querySelector('.res-grid, .card-grid, .stat-grid, .grid') || sec;
-  }
+  function boxContainer(sec) { return gridContainers(sec)[0] || sec; }
   // Clone a section's representative box and swap its visible text for sample
   // placeholders, so a new box always matches that section's exact format.
   function sampleInner(tpl) {
     var clone = tpl.cloneNode(true);
-    // The template is a LIVE box — in curate mode it carries ✕ chrome; strip any
+    // The template is a LIVE box — in curate mode it carries chrome; strip any
     // copied chrome so the new box's saved HTML is clean content only.
-    var chrome = clone.querySelectorAll ? clone.querySelectorAll('.fs-del, .fs-add') : [];
+    var chrome = clone.querySelectorAll ? clone.querySelectorAll('.fs-del, .fs-add, .fs-add-img, .fs-imgbar') : [];
     for (var d = 0; d < chrome.length; d++) {
       if (chrome[d].remove) chrome[d].remove();
       else if (chrome[d].parentNode) chrome[d].parentNode.removeChild(chrome[d]);
@@ -103,7 +131,7 @@
     return clone.innerHTML;
   }
 
-  // ── Images (Phase 2): a reviewer-managed <figure> layer ────────────────────
+  // ── Images: a reviewer-managed <figure> layer ──────────────────────────────
   // Bytes go to the PUBLIC Supabase Storage bucket 'factsheet-images' (writes
   // gated by is_allowed_reviewer()); the override stores the URL. A reviewer-added
   // figure rides the SAME factsheet_overrides table keyed "<sectionId>|img|<token>"
@@ -210,7 +238,19 @@
   function slug(s) {
     return norm(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 48);
   }
-  function blockSig(el) { return slug((el.textContent || '').slice(0, 80)) || 'blk'; }
+  // Text of the box EXCLUDING any [data-bind] live values, so the stable key
+  // doesn't churn when the daily metric value changes (KPI cards / Vet-Sprint
+  // stats key off their static label/caption, not the live number).
+  function stableText(el) {
+    if (!el) return '';
+    if (el.hasAttribute && el.hasAttribute('data-bind')) return '';
+    if (!el.querySelector || !el.querySelector('[data-bind]')) return el.textContent || '';
+    var clone = el.cloneNode(true);
+    var live = clone.querySelectorAll ? clone.querySelectorAll('[data-bind]') : [];
+    for (var i = 0; i < live.length; i++) { if (live[i].parentNode) live[i].parentNode.removeChild(live[i]); }
+    return clone.textContent || '';
+  }
+  function blockSig(el) { return slug((stableText(el) || '').slice(0, 80)) || 'blk'; }
 
   function isLive(el) {
     if (el.hasAttribute && el.hasAttribute('data-bind')) return true;
@@ -218,7 +258,8 @@
   }
 
   // Walk every non-excluded main > section and collect its outermost editable
-  // boxes. Pure of side effects except stamping data-fsk + caching baked HTML.
+  // boxes (+ the budget table as a hide-only block, + image figures). Pure of
+  // side effects except stamping data-fsk + caching baked HTML.
   function collectBlocks() {
     var blocks = [], counts = {};
     var secs = document.querySelectorAll('main > section');
@@ -227,6 +268,8 @@
       var sid = sec.id || ('sec' + i);
       if (EXCLUDE_SECTIONS[sid]) continue;
       if (sec.classList && sec.classList.contains('no-print')) continue;
+      var moveOnly = !!MOVE_ONLY_SECTIONS[sid];
+      var grids = gridContainers(sec);
 
       // Candidate boxes + section-level prose/lists.
       var cand = [], seen = [];
@@ -245,25 +288,46 @@
 
       for (var c = 0; c < outer.length; c++) {
         var el = outer[c];
-        if (isLive(el)) continue;
         // A figcaption inside a <figure> is managed AS PART OF its figure (image
         // block below), not as a separate text box — avoids overlapping overrides.
         if (el.tagName === 'FIGCAPTION' && el.closest && el.closest('figure')) continue;
-        // A reviewer-added box keeps its stable add-key (set at materialize time),
-        // so it isn't re-keyed by text slug and survives edits like a baked box.
+        var grid = closestGrid(el, sec);
+        var key;
         var pre = el.getAttribute('data-fsk');
         if (pre && isAddedKey(pre)) {
-          blocks.push({ el: el, key: pre, sectionId: sid, baked: el.innerHTML,
-            label: norm(el.textContent || '').slice(0, 46), added: true });
-          continue;
+          // A reviewer-added box keeps its stable add-key (set at materialize
+          // time), so it isn't re-keyed by text slug and survives edits.
+          key = pre;
+        } else {
+          var txt = norm(el.textContent || '');
+          if (!txt) continue;
+          var base = sid + '|' + blockSig(el);
+          var n = (counts[base] = (counts[base] || 0) + 1);
+          key = n > 1 ? base + '~' + n : base;
+          el.setAttribute('data-fsk', key);
         }
-        var txt = norm(el.textContent || '');
-        if (!txt) continue;
-        var base = sid + '|' + blockSig(el);
-        var n = (counts[base] = (counts[base] || 0) + 1);
-        var key = n > 1 ? base + '~' + n : base;
-        el.setAttribute('data-fsk', key);
-        blocks.push({ el: el, key: key, sectionId: sid, baked: el.innerHTML, label: txt.slice(0, 46) });
+        blocks.push({
+          el: el, key: key, sectionId: sid, baked: el.innerHTML,
+          label: norm(el.textContent || '').slice(0, 46),
+          live: isLive(el), noEdit: moveOnly, isTable: false,
+          movable: !!grid, gridSig: grid ? 'g' + grids.indexOf(grid) : null,
+          added: isAddedKey(key)
+        });
+      }
+
+      // Data tables (the #funding budget table) — HIDE-ONLY blocks. The whole
+      // .tbl-wrap (scroll frame) hides as a unit.
+      var tables = sec.querySelectorAll('table.data');
+      for (var t = 0; t < tables.length; t++) {
+        var wrap = (tables[t].closest && tables[t].closest('.tbl-wrap')) || tables[t];
+        if (isLive(wrap)) continue;
+        var th = tables[t].querySelector('th');
+        var tbase = sid + '|tbl|' + (slug(th ? th.textContent : '') || 'table');
+        var tn = (counts[tbase] = (counts[tbase] || 0) + 1);
+        var tkey = tn > 1 ? tbase + '~' + tn : tbase;
+        wrap.setAttribute('data-fsk', tkey);
+        blocks.push({ el: wrap, key: tkey, sectionId: sid, baked: wrap.innerHTML,
+          label: 'table', live: false, noEdit: true, isTable: true, movable: false, gridSig: null });
       }
 
       // Image layer: each <figure> is its own image block (resize/replace/hide).
@@ -377,18 +441,23 @@
     } catch (e) { return ''; }
   }
 
-  // Apply one block's current override state (idempotent: restores baked first).
+  // Apply one block's current override state (idempotent).
+  //  • editable static box   — restore baked when no html override; inject sanitized html when present.
+  //  • editable LIVE box      — when no html override, leave innerHTML alone (preserve the data binding);
+  //                             when an html override exists, it wins (the box goes static).
+  //  • move-only / table block — never touch innerHTML; just toggle the hidden class.
   function applyBlock(bl) {
     var ov = API._overrides[bl.key];
     bl.el.classList.remove('fs-ov-hidden');
-    if (!ov) { if (bl.el.innerHTML !== bl.baked) bl.el.innerHTML = bl.baked; return; }
-    if (ov.html != null && ov.html !== '') {
-      var clean = sanitize(ov.html);
-      if (bl.el.innerHTML !== clean) bl.el.innerHTML = clean;
-    } else if (bl.el.innerHTML !== bl.baked) {
-      bl.el.innerHTML = bl.baked;
+    if (canEditHtml(bl)) {
+      if (ov && ov.html != null && ov.html !== '') {
+        var clean = sanitize(ov.html);
+        if (bl.el.innerHTML !== clean) bl.el.innerHTML = clean;
+      } else if (!bl.live) {
+        if (bl.el.innerHTML !== bl.baked) bl.el.innerHTML = bl.baked;
+      }
     }
-    if (ov.hidden) bl.el.classList.add('fs-ov-hidden');
+    if (ov && ov.hidden) bl.el.classList.add('fs-ov-hidden');
   }
   function applyOverrides() { for (var i = 0; i < API._blocks.length; i++) applyBlock(API._blocks[i]); }
 
@@ -415,13 +484,14 @@
     });
   }
 
-  // ─── Added boxes + drag order (Phase 1) ────────────────────────────────────
+  // ─── Added boxes + drag order ──────────────────────────────────────────────
   // Insert each reviewer-added box into its section from its override row. Runs
   // after fetch, before the re-collect, so collectBlocks() then adopts them.
   function materializeAdded(map) {
     Object.keys(map).forEach(function (key) {
-      var sid = key.split('|')[0];
-      if (EXCLUDE_SECTIONS[sid]) return;
+      var parts = key.split('|');
+      var sid = parts[0];
+      if (EXCLUDE_SECTIONS[sid] || MOVE_ONLY_SECTIONS[sid]) return;
       var sec = document.getElementById(sid);
       if (!sec || sec.querySelector('[data-fsk="' + key + '"]')) return;   // already present
       // Reviewer-added image figure.
@@ -434,15 +504,19 @@
         return;
       }
       if (!isAddedKey(key)) return;
-      var kind = key.split('|')[2] || 'res';                           // <sid>|add|<kind>|<token>
+      var kind = parts[2] || 'res';                                    // <sid>|add|<kind>|<gridSig>|<token>
+      var gsig = /^g\d+$/.test(parts[3] || '') ? parts[3] : null;      // (absent in the older 4-part key)
+      var grid = gridForSig(sec, gsig) || boxContainer(sec);
       var box = document.createElement('div');
       box.className = kind;
       box.setAttribute('data-fsk', key);
       box.innerHTML = sanitize((map[key] && map[key].html) || '');
-      boxContainer(sec).appendChild(box);
+      grid.appendChild(box);
     });
   }
-  // Reorder a section's boxes to the saved order, within their shared container.
+  // Reorder a section's grid boxes to the saved order. Appends each box to ITS
+  // OWN parent in the saved sequence, so a section with several grids keeps each
+  // grid's boxes within that grid (a box never jumps grids).
   function applyOrder(map) {
     Object.keys(map).forEach(function (key) {
       if (!isOrderKey(key)) return;
@@ -458,18 +532,21 @@
       });
     });
   }
-  // Persist the current DOM order of a section's boxes (after a drag / add /
-  // delete). Scoped to the BOX CONTAINER (the grid), so a section-level intro
-  // <p> that lives outside the grid is never pulled into the order (and so never
-  // displaced below the grid on the next load).
+  // Persist the current DOM order of a section's GRID boxes (after a drag / add /
+  // delete). Scoped to the grid containers, so a section-level intro <p> that
+  // lives outside any grid is never pulled into the order. One order key per
+  // section; applyOrder re-homes each box to its own parent.
   function persistOrder(sid) {
     var sec = document.getElementById(sid);
     if (!sec) return Promise.resolve();
-    var boxes = boxContainer(sec).querySelectorAll('[data-fsk]'), keys = [];
-    for (var i = 0; i < boxes.length; i++) {
-      var k = boxes[i].getAttribute('data-fsk');
-      if (k && !isOrderKey(k)) keys.push(k);
-    }
+    var conts = gridContainers(sec), keys = [];
+    conts.forEach(function (cont) {
+      var kids = cont.children;
+      for (var i = 0; i < kids.length; i++) {
+        var k = kids[i].getAttribute && kids[i].getAttribute('data-fsk');
+        if (k && !isOrderKey(k)) keys.push(k);
+      }
+    });
     var ok = sid + '|__order', payload = JSON.stringify(keys);
     API._overrides[ok] = { html: payload, hidden: false };
     return saveOverride(ok, { html: payload }).catch(function () {});
@@ -495,31 +572,55 @@
     updateButton();
   }
 
-  // Per-box curate chrome: a ✕ (delete added / hide baked) + drag handle. The ✕
-  // is appended INSIDE the box, so it's added AFTER any innerHTML write (never
-  // persisted — saves read the editor textarea / override map, not live innerHTML).
+  // A ✕ button (delete an added box / image, or hide a baked one / table).
+  function mkDel(title, onClick) {
+    var x = document.createElement('button');
+    x.type = 'button'; x.className = 'fs-del no-print'; x.textContent = '✕'; x.title = title;
+    x.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); onClick(); });
+    return x;
+  }
+
+  // Per-box curate chrome: a ✕ + (for grid boxes) the drag handle. The ✕ is
+  // appended INSIDE the box AFTER any innerHTML write (never persisted — saves
+  // read the editor textarea / override map, not live innerHTML).
   function decorateBox(bl) {
     if (!bl || !bl.el) return;
     if (isImgBlock(bl)) return decorateImg(bl);     // image blocks get the image bar
-    bl.el.classList.add('fs-editable');
-    bl.el.setAttribute('draggable', 'true');
+    if (bl.isTable) return decorateTable(bl);       // tables get a single hide ✕
+    bl.el.classList.add('fs-curatable');
+    if (canEditHtml(bl)) bl.el.classList.add('fs-editable');
+    if (bl.movable) { bl.el.setAttribute('draggable', 'true'); bl.el.classList.add('fs-movable'); }
     if (!bl.el.querySelector('.fs-del')) {
-      var x = document.createElement('button');
-      x.type = 'button'; x.className = 'fs-del no-print'; x.textContent = '✕';
-      x.title = isAddedKey(bl.key) ? 'Delete this box' : 'Hide this box';
-      x.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); deleteBox(bl); });
-      bl.el.appendChild(x);
+      bl.el.appendChild(mkDel(isAddedKey(bl.key) ? 'Delete this box' : 'Hide this box',
+        function () { deleteBox(bl); }));
     }
+  }
+  // The budget/data table: a single hide ✕, no drag, no text editor.
+  function decorateTable(bl) {
+    if (!bl || !bl.el) return;
+    bl.el.classList.add('fs-curatable', 'fs-tableblock');
+    if (!bl.el.querySelector('.fs-del'))
+      bl.el.appendChild(mkDel('Hide this table', function () { deleteBox(bl); }));
   }
   function undecorateBox(bl) {
     if (!bl || !bl.el) return;
-    bl.el.classList.remove('fs-editable', 'fs-imgblock');
+    bl.el.classList.remove('fs-editable', 'fs-curatable', 'fs-movable', 'fs-imgblock', 'fs-tableblock');
     bl.el.removeAttribute('draggable');
     var bar = bl.el.querySelector('.fs-imgbar'); if (bar) bar.remove();
     var x = bl.el.querySelector('.fs-del'); if (x) x.remove();
   }
 
-  // ✕ on a box/image: delete an added one (true removal), or hide a baked one.
+  // Toggle a baked box / KPI / table hidden=true|false (the move-only un-hide path).
+  function toggleHidden(bl, hidden) {
+    return saveOverride(bl.key, { hidden: hidden }).then(function () {
+      var ov = API._overrides[bl.key] || {};
+      API._overrides[bl.key] = { html: ('html' in ov ? ov.html : null), hidden: hidden };
+      applyBlock(bl);
+      if (API._curating) decorateBox(bl);
+    }).catch(function () { window.alert('Update failed — are you a signed-in reviewer?'); });
+  }
+
+  // ✕ on a box/image/table: delete an added one (true removal), or hide a baked one.
   function deleteBox(bl) {
     if (!bl) return;
     if (isAddedKey(bl.key) || isImgKey(bl.key)) {
@@ -534,30 +635,31 @@
         persistOrder(sid);
       }).catch(function () { window.alert('Delete failed — are you a signed-in reviewer?'); });
     } else {
-      saveOverride(bl.key, { hidden: true }).then(function () {
-        var ov = API._overrides[bl.key] || {};
-        API._overrides[bl.key] = { html: ('html' in ov ? ov.html : null), hidden: true };
-        applyBlock(bl);
-        if (API._curating) decorateBox(bl);
-      }).catch(function () { window.alert('Hide failed — are you a signed-in reviewer?'); });
+      toggleHidden(bl, true);
     }
   }
 
-  // ＋ Add box: clone the section's representative box with sample text, insert,
+  // ＋ Add box: clone the grid's representative box with sample text, insert,
   // persist, and open it in the editor.
-  function addBox(sid) {
+  function addBox(sid, gridEl) {
     var sec = document.getElementById(sid); if (!sec) return;
-    if (EXCLUDE_SECTIONS[sid]) return;
-    var tpl = boxTemplate(sec);
-    if (!tpl) { window.alert('No box in this section to model a new one on.'); return; }
+    if (EXCLUDE_SECTIONS[sid] || MOVE_ONLY_SECTIONS[sid]) return;
+    var grids = gridContainers(sec);
+    gridEl = gridEl || grids[0];
+    if (!gridEl) { window.alert('No grid in this section to add a box to.'); return; }
+    var tpl = firstBoxIn(gridEl);
+    if (!tpl) { window.alert('No box in this grid to model a new one on.'); return; }
     var kind = primaryKind(tpl);
-    var key = sid + '|add|' + kind + '|' + genToken();
+    var gsig = 'g' + Math.max(0, grids.indexOf(gridEl));
+    var key = sid + '|add|' + kind + '|' + gsig + '|' + genToken();
     var box = document.createElement('div');
     box.className = kind; box.setAttribute('data-fsk', key);
     box.innerHTML = sampleInner(tpl);
-    boxContainer(sec).appendChild(box);
+    var addBtn = gridEl.querySelector('.fs-add');
+    if (addBtn) gridEl.insertBefore(box, addBtn); else gridEl.appendChild(box);
     var bl = { el: box, key: key, sectionId: sid, baked: box.innerHTML,
-      label: norm(box.textContent).slice(0, 46), added: true };
+      label: norm(box.textContent).slice(0, 46), added: true, live: false, noEdit: false,
+      isTable: false, movable: true, gridSig: gsig };
     API._blocks.push(bl); if (API._byEl) API._byEl.set(box, bl);
     var inner = box.innerHTML;                       // sample HTML, no ✕ chrome yet
     API._overrides[key] = { html: inner, hidden: false };
@@ -567,24 +669,22 @@
     return bl;
   }
 
-  // Per-section curate affordances: ＋ Add box (grid sections only) + 🖼 Add image
-  // (any editable section). The image button appends a row at the section's end.
+  // Per-grid ＋Add box (one per grid container) + per-section 🖼 Add image.
   function renderAddButtons() {
     var secs = document.querySelectorAll('main > section');
     for (var i = 0; i < secs.length; i++) {
       var sec = secs[i], sid = sec.id || '';
-      if (EXCLUDE_SECTIONS[sid]) continue;
+      if (EXCLUDE_SECTIONS[sid] || MOVE_ONLY_SECTIONS[sid]) continue;
       if (sec.classList && sec.classList.contains('no-print')) continue;
-      if (boxTemplate(sec)) {
-        var cont = boxContainer(sec);
-        if (!cont.querySelector('.fs-add')) {
-          var btn = document.createElement('button');
-          btn.type = 'button'; btn.className = 'fs-add no-print'; btn.textContent = '＋ Add box';
-          (function (id) { btn.addEventListener('click', function (e) { e.preventDefault(); addBox(id); }); })(sid);
-          cont.appendChild(btn);
-        }
-      }
-      if (!sec.querySelector(':scope > .fs-add-img') && !sec.querySelector('.fs-add-img')) {
+      var grids = gridContainers(sec);
+      grids.forEach(function (cont) {
+        if (cont.querySelector('.fs-add')) return;
+        var btn = document.createElement('button');
+        btn.type = 'button'; btn.className = 'fs-add no-print'; btn.textContent = '＋ Add box';
+        btn.addEventListener('click', function (e) { e.preventDefault(); addBox(sid, cont); });
+        cont.appendChild(btn);
+      });
+      if (!sec.querySelector('.fs-add-img')) {
         var ib = document.createElement('button');
         ib.type = 'button'; ib.className = 'fs-add-img no-print'; ib.textContent = '🖼 Add image';
         (function (id) { ib.addEventListener('click', function (e) { e.preventDefault(); addImage(id); }); })(sid);
@@ -597,7 +697,7 @@
     for (var i = 0; i < adds.length; i++) if (adds[i].parentNode) adds[i].parentNode.removeChild(adds[i]);
   }
 
-  // ── Image management (Phase 2): upload to Storage, add / resize / replace ───
+  // ── Image management: upload to Storage, add / resize / replace ─────────────
   function uploadImage(file) {
     return ensureFresh().then(function (s) {
       if (!s) { signIn(); return Promise.reject(new Error('no-session')); }
@@ -675,7 +775,7 @@
   // the figure but stripped by figureInner() before persisting.
   function decorateImg(bl) {
     if (!bl || !bl.el) return;
-    bl.el.classList.add('fs-editable', 'fs-imgblock');
+    bl.el.classList.add('fs-curatable', 'fs-imgblock');
     if (bl.el.querySelector('.fs-imgbar')) return;
     var bar = document.createElement('div'); bar.className = 'fs-imgbar no-print';
     IMG_WIDTHS.forEach(function (w) {
@@ -686,9 +786,7 @@
     var rep = document.createElement('button'); rep.type = 'button'; rep.className = 'fs-imgrep'; rep.textContent = '⤢ Replace';
     rep.title = 'Replace this image'; rep.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); replaceImg(bl); });
     bar.appendChild(rep);
-    var x = document.createElement('button'); x.type = 'button'; x.className = 'fs-del'; x.textContent = '✕';
-    x.title = isImgKey(bl.key) ? 'Delete this image' : 'Hide this image';
-    x.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); deleteBox(bl); });
+    var x = mkDel(isImgKey(bl.key) ? 'Delete this image' : 'Hide this image', function () { deleteBox(bl); });
     bar.appendChild(x);
     bl.el.appendChild(bar);
   }
@@ -698,7 +796,7 @@
   function onDragStart(e) {
     if (!API._curating) return;
     var el = e.target.closest && e.target.closest('[data-fsk]');
-    if (!el) return;
+    if (!el || el.getAttribute('draggable') !== 'true') return;
     _dragEl = el; el.classList.add('fs-dragging');
     if (e.dataTransfer) { e.dataTransfer.effectAllowed = 'move';
       try { e.dataTransfer.setData('text/plain', el.getAttribute('data-fsk') || ''); } catch (x) {} }
@@ -765,7 +863,7 @@
   }
 
   function editBlock(bl) {
-    if (!bl) return;
+    if (!bl || !canEditHtml(bl)) return;
     ensureDock();
     API._editing = bl;
     var ov = API._overrides[bl.key] || {};
@@ -823,24 +921,36 @@
     busy(true);
     deleteOverride(bl.key).then(function () {
       delete API._overrides[bl.key];
-      applyBlock(bl);
+      // Explicit revert (live boxes too) — applyBlock leaves live innerHTML alone.
+      if (bl.el.innerHTML !== bl.baked) bl.el.innerHTML = bl.baked;
+      bl.el.classList.remove('fs-ov-hidden');
       if (API._curating) decorateBox(bl);
       busy(false); closeDock();
     }).catch(fail);
   }
 
   // One delegated, capture-phase click handler: in curate mode, clicking a box
-  // opens the editor (and is suppressed from navigating any link inside it).
+  // opens the editor (and is suppressed from navigating any link inside it). A
+  // move-only / table block opens no editor — a click on its ghosted (hidden)
+  // state un-hides it.
   function onDocClick(e) {
     if (!API._curating) return;
     var t = e.target;
     if (t.closest && t.closest('.fs-dock')) return;       // clicks inside the editor
     if (t.id === 'btn-curate' || (t.closest && t.closest('#btn-curate'))) return;
     if (t.closest && t.closest('.fs-imgbar')) return;     // image bar buttons handle themselves
+    if (t.closest && t.closest('.fs-add, .fs-add-img')) return; // add buttons handle themselves
     var el = t.closest && t.closest('[data-fsk]');
     if (!el) return;
     var bl = blockByEl(el);
-    if (bl && isImgBlock(bl)) { e.preventDefault(); e.stopPropagation(); return; } // image controls are inline
+    if (!bl) return;
+    if (isImgBlock(bl)) { e.preventDefault(); e.stopPropagation(); return; }   // image controls are inline
+    if (!canEditHtml(bl)) {                                 // KPI / table: no editor
+      e.preventDefault(); e.stopPropagation();
+      var ov = API._overrides[bl.key];
+      if (ov && ov.hidden) toggleHidden(bl, false);        // click the ghost → restore
+      return;
+    }
     e.preventDefault(); e.stopPropagation();
     editBlock(bl);
   }
@@ -849,8 +959,8 @@
   function updateButton() {
     var btn = document.getElementById('btn-curate');
     if (!btn) return;
-    if (API._curating) { btn.textContent = '✓ Done'; btn.title = 'Finish editing'; btn.classList.add('on'); }
-    else { btn.textContent = '✎ Curate'; btn.classList.remove('on');
+    if (API._curating) { btn.textContent = '✓ Done'; btn.title = 'Finish editing'; btn.classList.add('on'); btn.setAttribute('aria-pressed', 'true'); }
+    else { btn.textContent = '✎ Curate'; btn.classList.remove('on'); btn.setAttribute('aria-pressed', 'false');
            btn.title = isReviewer() ? 'Edit boxes on this page' : 'Sign in to edit this fact sheet'; }
   }
   function wireButton() {
@@ -868,14 +978,30 @@
     if (document.getElementById('fs-edit-css')) return;
     var css =
       '#btn-curate.on{background:var(--seal-blue);color:#fff;border-color:var(--seal-blue);}' +
-      'body.fs-curating [data-fsk].fs-editable{position:relative;cursor:pointer;border-radius:6px;' +
-        'transition:outline-color .12s,background .12s;}' +
-      'body.fs-curating [data-fsk].fs-editable{outline:1px dashed var(--border-strong);outline-offset:3px;}' +
+      // Base curate affordance — every reviewer-managed box (editable, KPI, table).
+      'body.fs-curating [data-fsk].fs-curatable{position:relative;border-radius:6px;' +
+        'outline:1px dashed var(--border-strong);outline-offset:3px;transition:outline-color .12s,background .12s;}' +
+      'body.fs-curating [data-fsk].fs-movable[draggable="true"]{cursor:grab;}' +
+      // Editable boxes: click to edit + a ✎ hover badge.
+      'body.fs-curating [data-fsk].fs-editable{cursor:pointer;}' +
       'body.fs-curating [data-fsk].fs-editable:hover{outline:2px solid var(--cobalt);background:rgba(0,71,171,.05);}' +
       'body.fs-curating [data-fsk].fs-editable::after{content:"\\270E edit";position:absolute;top:-9px;right:6px;' +
         'font:600 11px var(--font-data);background:var(--cobalt);color:#fff;padding:1px 6px;border-radius:6px;' +
         'opacity:0;transition:opacity .12s;pointer-events:none;z-index:2;}' +
       'body.fs-curating [data-fsk].fs-editable:hover::after{opacity:1;}' +
+      // Move-only (KPI) boxes: a move/remove hint instead of "edit".
+      'body.fs-curating [data-fsk].fs-curatable.fs-movable:not(.fs-editable):hover{outline:2px solid var(--mustard-text);background:rgba(139,104,0,.05);}' +
+      'body.fs-curating [data-fsk].fs-curatable.fs-movable:not(.fs-editable)::after{content:"\\21C5 move \\00b7 \\2715 remove";position:absolute;top:-9px;right:6px;' +
+        'font:600 11px var(--font-data);background:var(--mustard-text);color:#fff;padding:1px 6px;border-radius:6px;' +
+        'opacity:0;transition:opacity .12s;pointer-events:none;z-index:2;}' +
+      'body.fs-curating [data-fsk].fs-curatable.fs-movable:not(.fs-editable):hover::after{opacity:1;}' +
+      // Table block: a hide hint; allow its ✕ to escape the scroll frame.
+      'body.fs-curating [data-fsk].fs-tableblock{overflow:visible;}' +
+      'body.fs-curating [data-fsk].fs-tableblock:hover{outline:2px solid var(--crimson);}' +
+      'body.fs-curating [data-fsk].fs-tableblock::after{content:"\\2715 hide table";position:absolute;top:-9px;left:6px;' +
+        'font:600 11px var(--font-data);background:var(--crimson);color:#fff;padding:1px 6px;border-radius:6px;' +
+        'opacity:0;transition:opacity .12s;pointer-events:none;z-index:2;}' +
+      'body.fs-curating [data-fsk].fs-tableblock:hover::after{opacity:1;}' +
       'body.fs-curating [data-fsk].fs-target{outline:2px solid var(--mustard-fill) !important;}' +
       '.fs-ov-hidden{display:none !important;}' +
       'body.fs-curating .fs-ov-hidden{display:revert !important;opacity:.45;outline:2px dashed var(--crimson);}' +
@@ -904,7 +1030,7 @@
         'text-align:center;padding:0;border-radius:50%;border:1px solid var(--crimson);' +
         'background:var(--surface,#fff);color:var(--crimson);font:700 12px var(--font-data);' +
         'cursor:pointer;z-index:3;display:none;}' +
-      'body.fs-curating [data-fsk].fs-editable:hover>.fs-del,body.fs-curating .fs-del:hover{display:block;}' +
+      'body.fs-curating [data-fsk].fs-curatable:hover>.fs-del,body.fs-curating .fs-del:hover{display:block;}' +
       '.fs-del:hover{background:var(--crimson);color:#fff;}' +
       '.fs-add{grid-column:1 / -1;justify-self:start;display:inline-flex;align-items:center;gap:6px;' +
         'margin:10px 0 0;padding:7px 14px;border:1px dashed var(--cobalt);border-radius:var(--radius-sm);' +
@@ -924,12 +1050,11 @@
       '.fs-imgbar .fs-del{position:static;width:auto;height:auto;border-radius:5px;border:1px solid rgba(255,255,255,.35);' +
         'background:transparent;color:#fff;font:700 12px var(--font-data);padding:2px 7px;}' +
       '.fs-imgbar .fs-del:hover{background:var(--crimson,#b3261e);}' +
-      'body.fs-curating [data-fsk][draggable="true"]{cursor:grab;}' +
       'body.fs-curating [data-fsk].fs-dragging{opacity:.4;outline:2px dashed var(--cobalt) !important;}' +
       '@media print{#btn-curate,.fs-dock,.fs-del,.fs-add,.fs-add-img,.fs-imgbar{display:none !important;}' +
         'body.fs-curating [data-fsk]::after{display:none !important;}' +
         'body.fs-curating .fs-ov-hidden{display:none !important;}' +
-        'body.fs-curating [data-fsk].fs-editable{outline:none !important;}}';
+        'body.fs-curating [data-fsk].fs-curatable{outline:none !important;}}';
     var st = document.createElement('style');
     st.id = 'fs-edit-css';
     st.appendChild(document.createTextNode(css));
@@ -964,28 +1089,33 @@
     collectBlocks: collectBlocks,
     applyOverrides: applyOverrides,
     blockSig: blockSig,
+    stableText: stableText,
     blocks: function () { return API._blocks; },
     overrides: function () { return API._overrides; },
     setOverrides: function (m) { API._overrides = m || {}; },
     boot: boot,
     EXCLUDE_SECTIONS: EXCLUDE_SECTIONS,
-    // Phase 1 — add/delete/reorder boxes:
+    MOVE_ONLY_SECTIONS: MOVE_ONLY_SECTIONS,
+    // section / grid model:
+    gridContainers: gridContainers,
+    canEditHtml: canEditHtml,
+    // add/delete/reorder boxes:
     materializeAdded: materializeAdded,
     applyOrder: applyOrder,
     persistOrder: persistOrder,
     addBox: addBox,
     deleteBox: deleteBox,
+    toggleHidden: toggleHidden,
     setCurating: setCurating,
     blockByEl: blockByEl,
     sampleInner: sampleInner,
     isAddedKey: isAddedKey,
     isOrderKey: isOrderKey,
-    // Phase 2 — images:
+    // images:
     sanitize: sanitize,
     safeImgSrc: safeImgSrc,
     decorateImg: decorateImg,
     setImgWidth: setImgWidth,
-    deleteBox: deleteBox,
     figureInner: figureInner,
     isImgKey: isImgKey,
     isImgBlock: isImgBlock,

@@ -112,6 +112,26 @@
     var c = det.querySelector('summary .sw-col[data-col="' + col + '"]');
     if (c && val != null) c.textContent = num(val);
   }
+  // The statewide grid is a CSS pseudo-table — a screen reader reading a <summary>
+  // hears bare numbers with no column meaning. Give each <summary> a full-sentence
+  // aria-label built from its current cell values (WCAG 1.3.1). Re-run after the
+  // live snapshot updates the cells so the spoken label never goes stale.
+  function colText(det, col) {
+    var c = det.querySelector('summary .sw-col[data-col="' + col + '"]');
+    return c ? (c.textContent || '').trim() : '';
+  }
+  function labelSectors() {
+    var dets = document.querySelectorAll('details[data-sector]');
+    for (var i = 0; i < dets.length; i++) {
+      var det = dets[i], summary = det.querySelector('summary');
+      if (!summary) continue;
+      var secEl = summary.querySelector('.sw-sec');
+      var name = secEl ? (secEl.textContent || '').trim() : (det.getAttribute('data-sector') || 'Program area');
+      summary.setAttribute('aria-label', name + ': ' + colText(det, 'ex') + ' statewide exhibits, ' +
+        colText(det, 'rec') + ' credit recommendations, ' + colText(det, 'adopt') + ' adoptions, ' +
+        colText(det, 'could') + ' colleges could adopt');
+    }
+  }
   function setTCol(tot, col, val) {
     var c = tot.querySelector('.sw-col[data-tcol="' + col + '"]');
     if (c && val != null) c.textContent = num(val);
@@ -156,6 +176,7 @@
           }
           var tot = $('.sw-total');
           if (tot) { setTCol(tot, 'ex', te); setTCol(tot, 'rec', tr); setTCol(tot, 'adopt', ta); }
+          labelSectors();   // refresh the per-sector screen-reader labels with live values
         }
       })
       .catch(function (err) {
@@ -224,6 +245,7 @@
     wirePrint();
     setupPrintExpand();
     setupCollapse();
+    labelSectors();   // baked-value labels first; loadSnapshot() refreshes them live
     loadSnapshot();
 
     fetch(METRICS_URL, { cache: 'no-store' })
