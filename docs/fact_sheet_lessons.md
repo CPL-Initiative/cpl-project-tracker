@@ -167,3 +167,60 @@ the concurrent Statewide-CRs PR**. Pattern write-up:
    drop `#statewide-exhibits`/`#progress` from the exclusion list.
 4. **CLAUDE.md memory refresh** (the `fact-sheet/` §2 row + §8 table list) — held to
    the next checkpoint to avoid racing the sibling session on the shared file.
+
+### 2026-06-28 (StarBender, Session 79) — statewide credit recs from our own data
+
+Sam: under each Statewide CPL exhibit on the Fact Sheet, show its credit
+recommendations (C-ID / title / units) in a default-collapsed wedge — eye-catching
+for sector audiences. First instinct was to scrape the PDFs on `map@rccd.edu/statewide`;
+Sam redirected: **"You should have the CRs in our COBI dataset so you don't have to
+scrape them."** That changed everything.
+
+**The hard part was identifying the ONE authoritative exhibit.** Our EACR groups by
+unified credential `(unified_title, issuing_agency, cpl_type)`, which **inflated** the
+rec list — POST Basic Academy showed 42 recs vs the canonical ~10. Sam's hypothesis,
+confirmed: *"In MAP we make a statewide exhibit that other colleges adopt or adapt
+from… but perhaps they also tag their adapted exhibit with CCC Collab, which leads to
+the confusion."* So the unified grouping folds the published exhibit **and** every
+college's CCC-tagged adaptation together.
+
+**The signal (durable):** the authoritative statewide exhibit is the raw MAP row whose
+**`Collaborative Type == "CCC"`** — a lead college hosts it (Lassen for POST,
+Saddleback for Real Estate). Adopting colleges tag adaptations differently. Filtering
+to raw `CCC` rows isolates the canonical exhibit → POST's exact 10 AJ recs
+(AJ 110/120/122/124/140/160/200/220 + the two GE rows). Found via a **runner probe**
+(`statewide/_probe_exhibit_authority.py`) since the agent sandbox can't reach the MAP
+API — the runner-as-proxy pattern again. Captured as a KB note:
+`docs/kb-notes/reference-authoritative-statewide-exhibit-signal.md`.
+
+**The pipeline (PR #571, merged):**
+- **Producer** (`excel_to_dashboard.py` / `_build_statewide_adoption`): additive
+  `authoritative_recs` per exhibit = recs from `collab == "CCC"` rows ONLY, deduped by
+  recommendation text, C-ID carried/backfilled. The existing `credit_recs` (all collab
+  rows, EACR's source) is **untouched** — no EACR regression.
+- **Builder** (`fact-sheet/_build_statewide_recs.py`): reads `statewide_data.js`, emits
+  `window.CPL_STATEWIDE_RECS = {exhibit_title → [{t,u,cid}]}` from `authoritative_recs`,
+  normalizing phrasing variants (intro→introduction, admin→administration) so dup
+  phrasings collapse. Logs the **no-CCC list** — statewide credentials with no
+  CCC-tagged exhibit show nothing (caveat (a), Sam-approved: "fix in MAP"). Live today
+  it's 3 (DLPT-Russian, HRCM 001, NCCER CORE); EMT now has a CCC exhibit so it dropped off.
+- **Workflow:** builder runs after the generator; `fact-sheet/statewide_recs.js` joins
+  the daily `git add` list → refreshes with the cron. Verified after dispatch: 129
+  exhibits / 329 recs; POST = the canonical 10.
+- **Tests:** `tests/statewide_recs_test.py` (12) — CCC-only, dedup, units split,
+  C-ID backfill, no-CCC fallback.
+
+**Lessons:**
+- **Don't choose between C-ID and non-C-ID recs.** Sam: "many CRs don't have C-IDs, but
+  when they do, they show up as the CR on the PDF." So show **all** recs; badge the
+  C-ID when present. The PDF is the spec — match its behavior.
+- **Many sources of one truth → find the discriminating column, don't dedup by
+  similarity.** The over-merge wasn't a fuzzy-matching problem; it was a *provenance*
+  problem solvable with one exact filter (`collab == "CCC"`). Probe the raw columns
+  before reaching for normalization.
+- **Code-only PR + the consumer held.** This PR ships the data pipeline only; the
+  live Fact Sheet is unchanged. The **consumer wedge** (the `<details>` under each
+  exhibit `<li>` in `fact-sheet/index.html`) was held until a concurrent
+  editable-Fact-Sheet session's PR landed — which it did (#570) — so it's now
+  unblocked for the next session: rebase + add it as a minimal additive overlay
+  (the `card_raci.js` pattern).
