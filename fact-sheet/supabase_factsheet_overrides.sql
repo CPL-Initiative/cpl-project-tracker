@@ -16,6 +16,16 @@
 -- write.
 --
 -- `page` is forward-compat: more standalone Curate-able pages can share the table.
+--
+-- Phase 1 (add/delete/reorder boxes) rides this SAME table via reserved block_key
+-- namespaces — no schema change:
+--   "<sectionId>|add|<kind>|<token>"  a reviewer-ADDED box (html = its inner HTML;
+--                                     materialized into the DOM on load; ✕ deletes it)
+--   "<sectionId>|__order"             a section's drag order (html = JSON array of keys)
+-- Both are still public-read / reviewer-write under the policies below; the html
+-- of an added box is sanitized (allowlist) before render, the __order html is
+-- parsed as JSON (never injected). A baked box's ✕ just sets hidden=true (it lives
+-- in index.html and can't be truly removed).
 -- ─────────────────────────────────────────────────────────────────────────
 create table if not exists public.factsheet_overrides (
   block_key   text primary key,                       -- stable per-box key (page-scoped)
