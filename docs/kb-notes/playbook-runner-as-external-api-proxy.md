@@ -1,13 +1,14 @@
 ---
 title: Runner-as-proxy for an external API the agent sandbox can't reach
 created: 2026-06-19
-updated: 2026-06-19
+updated: 2026-06-28
 tags: [playbook, ci, sourcing, sandbox, github-actions]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
   - "[[CLAUDE]]"
   - "[[docs/first_light_lessons]]"
+  - "[[docs/fact_sheet_lessons]]"
   - "[[docs/kb-notes/reference-public-domain-art-sourcing]]"
 artifacts:
   - tools/source_first_light_art.mjs
@@ -15,6 +16,8 @@ artifacts:
   - .github/workflows/first-light-art.yml
   - tools/art_categories.json
   - tools/art_extra_files.json
+  - tools/source_cpl_stories.mjs
+  - .github/workflows/cpl-stories.yml
 ---
 
 # Runner-as-proxy for an external API the agent sandbox can't reach
@@ -85,6 +88,35 @@ Gate the expensive job: re-source only when the sourcing *inputs* changed
 **verify-only**. And `concurrency: cancel-in-progress: true` lets a new push
 supersede a slow in-flight run (a sequential crawl was ~20 min; bounded
 concurrency cut it ~6×).
+
+### Escalate to a headless BROWSER when the host is bot-protected (Session 81)
+
+The runner has open internet, but that's not enough when the *host* gates
+automated clients. `map.rccd.edu/cplstories/` sits behind **SiteGround
+anti-bot**: a plain runner `curl` gets `HTTP 202` with an `sg-captcha:
+challenge` header (a ~183-byte JS-challenge stub), and the WP REST API is gated
+too — the runner reaches the host but never sees the page. The fix is a **real
+browser** on the runner: **Playwright Chromium** executes the JS challenge,
+which auto-resolves and reloads to the real DOM (`tools/source_cpl_stories.mjs`
+→ `.github/workflows/cpl-stories.yml`). Same proxy shape (push = dry-run that
+prints to the Actions log; cron/dispatch = `--apply` that commits the artifact
+back), but the fetch verb is a browser, not `fetch()`.
+
+Two hard-won details:
+- **The challenge is INTERMITTENT.** It passed once, then served a harder "Robot
+  Challenge Screen" on the next run. Don't trust a single `goto` — **retry +
+  `waitForFunction(() => document.querySelectorAll('.card').length > 5)`**: poll
+  for the real content selector (the cards only render *past* the challenge), and
+  reload between attempts (the challenge auto-resolves on reload).
+- **Fail by keeping the last-good data.** On total challenge failure the apply
+  path **exits 0 without writing**, so the committed artifact (the last good
+  source) survives rather than being clobbered by a challenge stub. A
+  bot-protected source *will* occasionally win — degrade to stale, never to
+  garbage.
+
+This is the same playbook (runner reaches what the sandbox can't, commits back),
+extended one rung: when the obstacle is bot-protection rather than an egress
+allowlist, swap the stdlib `fetch` for a headless browser on the same runner.
 
 ## How we got here
 

@@ -1,18 +1,20 @@
 ---
 title: Curate-editable overlay for a standalone static page
 created: 2026-06-28
-updated: 2026-06-28
+updated: 2026-06-28 (Session 81 — boxes/images extension)
 tags: [playbook, supabase, auth, fact-sheet, curation]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
   - "[[CLAUDE]]"
   - "[[playbook-standalone-public-page]]"
+  - "[[methodology-reserved-key-namespaces-on-overrides-table]]"
   - "[[methodology-refresh-token-before-write]]"
   - "[[methodology-live-overlay-onto-generated-cards]]"
 artifacts:
   - fact-sheet/factsheet_edit.js
   - fact-sheet/supabase_factsheet_overrides.sql
+  - fact-sheet/supabase_factsheet_images.sql
   - tests/factsheet_edit.test.js
 ---
 
@@ -106,9 +108,24 @@ setter). Flag it explicitly; don't assume it's set.
 - **Hidden-while-curating must still hide in print.** A reviewer mid-curate sees
   hidden boxes as a dimmed placeholder; add a print rule so they don't print.
 
+## Extending it beyond edit/hide (Session 81 — boxes & images)
+
+The same overlay grew to let a reviewer **add** a box, **drag-reorder** boxes, and
+**add / resize / delete images** — all on the **unchanged** `factsheet_overrides`
+table, by minting **reserved key namespaces** the consumer materializes instead of
+matching to a baked element (`<sid>|add|<kind>|<token>`, `<sid>|__order`,
+`<sid>|img|<token>`, baked figures `<sid>|fig|<basename>`). Image *bytes* go in a
+public-read / reviewer-write Supabase **Storage bucket** (`factsheet-images`,
+`supabase_factsheet_images.sql`); the override stores the public URL. The pattern
+(match vs. materialize vs. parse, the two delete semantics, the `<img>` host
+allowlist) is its own note: [[methodology-reserved-key-namespaces-on-overrides-table]].
+`index.html` stayed untouched across both phases (the overlay injects all chrome).
+
 ## Result
 
 `fact-sheet/index.html` diff = a Curate button + a script tag + the one requested
 box removal. All edit logic lives in `fact-sheet/factsheet_edit.js`; the data lives
-in `public.factsheet_overrides`. 26 jsdom checks guard the keys, exclusions,
-overlay, and sanitizer. Zero overlap with the concurrent Statewide-CRs work.
+in `public.factsheet_overrides` (+ the `factsheet-images` Storage bucket for image
+bytes). 31 + 28 + 25 jsdom checks across the three phases guard the keys,
+exclusions, overlay, sanitizer, the reserved namespaces, and the image layer. Zero
+overlap with the concurrent Statewide-CRs work.

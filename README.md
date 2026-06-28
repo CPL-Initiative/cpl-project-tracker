@@ -165,8 +165,11 @@ The whole ecosystem, end-to-end:
    that recreates the journalist Fact Sheet, pulls the headline KPIs live from
    `live_metrics.json`, and prints to a clean PDF. It **"sits alone"** (no
    dashboard nav) so it can be shared publicly without exposing the internal
-   tabs; a "📄 CPL Fact Sheet" link in the left nav rail opens it. Built
-   Session 74 — see [`docs/fact_sheet_lessons.md`](docs/fact_sheet_lessons.md).
+   tabs; a "📄 CPL Fact Sheet" link in the left nav rail opens it. It carries a
+   rotating "My CPL Stories" section and is **reviewer-Curate-editable** in place
+   (sign in to edit/add/reorder boxes + manage images; edits show for every
+   visitor, the baked page is the fallback). Built Session 74 — see
+   [`docs/fact_sheet_lessons.md`](docs/fact_sheet_lessons.md).
 
 ---
 
