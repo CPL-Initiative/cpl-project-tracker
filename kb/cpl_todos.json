@@ -1,50 +1,38 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-28 · Session 81 (StarFarout) · Fact Sheet Curate arc landed: a signed-in reviewer can now ADD / delete / drag-reorder boxes AND add / resize / replace / delete images on the public Fact Sheet, plus a rotating 'My CPL Stories' section — on top of this session's per-row + per-card 📣 nudges",
+ "_as_of": "2026-06-28 · Session 81/82 (StarFarout) · the three carryover items shipped: the Fact Sheet now shows each statewide exhibit's authoritative credit recs, the Annual Report self-freshens from posted updates, and the 4 CPL Initiative leads can now edit",
  "_session": 81,
- "_status": "Two things shipped this session. (1) On the public CPL Fact Sheet, signed-in Curate now does a lot more than edit text: you can ＋ ADD a new box (it copies the section's format with sample text), ✕ DELETE a box, DRAG to reorder, and on images you can 🖼 add (upload), resize (S/M/L/Full), ⤢ replace, or ✕ delete — and there's a new rotating 'My CPL Stories' section pulling 4 random student stories from the MAP site. (2) On the RACI tab, every Activity/project card and every matrix row has its own 📣 nudge, and the bulk button is now '📣 Nudge All'. Still open: the Fact Sheet 'consumer wedge' (show each statewide exhibit's authoritative credit recs under it) is the next big build; the Annual Report doesn't yet self-freshen from posted item-updates; three teammate lead emails (Crystal, Terence, Calvin) still need Sam's go-ahead to edit (today only map@rccd.edu can save; everyone SEES edits); and one one-time Supabase toggle (add the Fact Sheet URL to the Auth redirect list) is needed so direct sign-in from the Fact Sheet completes on the page.",
+ "_status": "Three things just landed (all live on the next deploy): (1) on the public CPL Fact Sheet, each statewide exhibit now has a small '▸ N statewide credit recs' toggle showing the course title / units / C-ID it earns; (2) the Annual Report draft now folds in the newest posted status updates (the same ones on the Activity/project cards), not just creation-era text; (3) Crystal Nasio, Terence Nelson, Calvin Gloria, and Sam (slee@cccco.edu) were added as reviewers, so they can now sign in and edit the CCR / RACI / TMC / Fact Sheet — not just map@rccd.edu. One small one-time toggle is still on Sam: add the Fact Sheet URL to the Supabase Auth redirect list so direct sign-in from that page completes. The remaining engineering lanes (M-ID renumber, the TMC acceptance engine, the CPL-Assistant recommender ETL) are unchanged.",
  "items": [
   {
    "id": "try-card-row-nudge",
    "who": "sam",
    "tab": "raci",
-   "text": "Try the new 📣 nudge: every Activity/project card and every RACI row now has its own 📣 to nudge just that one item; the filter-bar bulk button is now '📣 Nudge All' (emails all opted-in members)."
-  },
-  {
-   "id": "lead-emails",
-   "who": "sam",
-   "tab": "raci",
-   "text": "Give the go-ahead on adding three teammate lead emails as reviewers (Crystal Nasio, Terence Nelson, Calvin Gloria) so they can edit too — right now only map@rccd.edu can save."
+   "text": "Try the 📣 nudge: every Activity/project card and every RACI row has its own 📣 to nudge just that one item; the filter-bar bulk button is '📣 Nudge All' (emails all opted-in members)."
   },
   {
    "id": "annual-report-eyeball",
    "who": "sam",
    "tab": "annual-report",
-   "text": "Skim the Annual Report draft — it auto-assembles from live data; tweak any section in place, then ✨AI-polish / ⬇Word / 🖨Print."
+   "text": "Skim the Annual Report draft — it auto-assembles from live data AND now folds in the latest posted status updates; tweak any section in place, then ✨AI-polish / ⬇Word / 🖨Print."
   },
   {
    "id": "factsheet-curate",
    "who": "sam",
    "tab": "dashboard",
-   "text": "On the public CPL Fact Sheet, sign in and ✎ Curate: edit/hide any box, ＋ add a new box (e.g. more Resources cards), drag to reorder, and add/resize/replace/delete images. Your edits show for every visitor (the baked page is the fallback). One-time: ask Sam to add the Fact Sheet URL to the Supabase Auth redirect list so direct sign-in completes on the page."
+   "text": "On the public CPL Fact Sheet, sign in and ✎ Curate: edit/hide any box, ＋ add a new box, drag to reorder, and add/resize/replace/delete images. Each statewide exhibit now also shows its credit recs. Your edits show for every visitor."
+  },
+  {
+   "id": "factsheet-auth-redirect",
+   "who": "sam",
+   "tab": "dashboard",
+   "text": "One-time: add the Fact Sheet URL (or …/cpl-project-tracker/**) to the Supabase Auth → Redirect URLs list so a direct magic-link sign-in from the Fact Sheet lands back on that page (today it completes on the dashboard tab)."
   },
   {
    "id": "vet-plans-kb-15",
    "who": "sam",
    "tab": "knowledge-base",
    "text": "Review and merge public Knowledge Base PR #15 (Veterans plans) when you have a moment — it's been waiting on your sign-off."
-  },
-  {
-   "id": "factsheet-wedge",
-   "who": "fable",
-   "tab": "dashboard",
-   "text": "Build the Fact Sheet consumer wedge: render the authoritative statewide credit recs (C-ID / title / units) as a collapsible list under each statewide exhibit. Additive, read-only, with a test."
-  },
-  {
-   "id": "annual-report-fresh",
-   "who": "fable",
-   "tab": "annual-report",
-   "text": "Make the Annual Report self-freshen: fold the newest posted item-updates into the Activity-Progress and Spotlights sections (the cards already do this; the Report doesn't yet)."
   },
   {
    "id": "mid-renumber",

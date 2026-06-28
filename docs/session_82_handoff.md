@@ -31,16 +31,15 @@ After the nudges, Sam pivoted to the public Fact Sheet: "be able to add or delet
 
 ## The carryover you own (priority order)
 
-**AUTONOMOUS (merge on green, no Sam gate):**
+**✅ SHIPPED this session (Sam: "All 3") — #580 / #581 / #582:**
 
-1. **Fact Sheet consumer wedge — TOP.** Render `window.CPL_STATEWIDE_RECS` (`fact-sheet/statewide_recs.js`, 129 exhibits, LIVE daily-cron artifact) as a **default-collapsed `<details>`** under each statewide exhibit `<li>` (`.sw-list li` in `fact-sheet/index.html`), showing C-ID / title / units per rec. Additive, read-only, **escape all untrusted text**, commit a jsdom test. The producer/builder are already shipped (StarBender, #571) — this is purely the render. The editable-Fact-Sheet PR (#570) that previously blocked this is merged, so editing **excludes** `#statewide-exhibits` — your `<details>` is in that excluded region, no overlap. See `docs/fact_sheet_lessons.md` (2026-06-28).
-2. **Annual Report self-freshening.** Fold the newest `item_updates` per item into `annual_report.js` (Activity-Progress + Spotlights sections). Cards already self-freshen via `card_updates.js`; the Annual Report does not yet — close that gap so the capstone draft reflects posted updates. `item_updates` is anon-readable (the `card_updates.js` read path is the template).
+1. ✅ **Fact Sheet consumer wedge (#580).** `fact-sheet/statewide_recs_render.js` surfaces each exhibit's authoritative statewide credit recs (course title — units, + C-ID) as a collapsible "N statewide credit recs" toggle under each `<li>`. Exact-title join, **verified 129/129 keys match a real `<li>` before shipping**; read-only, escaped, idempotent; `#statewide-exhibits` is Curate-excluded so no overlap. Also loaded `statewide_recs.js` (the data file wasn't wired in). Test: `tests/statewide_recs_render.test.js` (22).
+2. ✅ **Annual Report self-freshening (#581).** `annual_report.js` folds the newest `item_updates` (keyed `activity:N` / `project:<id>`, reusing the `card_updates.js` read) into Activity Progress + Spotlights — render-first / freshen-after, guarded by `state.userEdited`. Test grew 29 → 36.
+3. ✅ **Reviewer access (#582 + live Supabase).** Crystal Nasio / Terence Nelson / Calvin Gloria / `slee@cccco.edu` added to `allowed_reviewers` (live + committed seed). They can now sign in and edit CCR / RACI / TMC / Fact Sheet.
 
-**DECISION-GATED (ask Sam before acting):**
+**STILL ON SAM (one-time):** add the Fact Sheet URL (or `…/cpl-project-tracker/**`) to Supabase **Auth → Redirect URLs** so a *direct* magic-link sign-in from the Fact Sheet completes on that page (today it lands on the dashboard tab).
 
-3. **The 3 lead emails for `allowed_reviewers`** — Crystal Nasio / Terence Nelson / Calvin Gloria, plus Sam's own `slee@cccco.edu`. Until added, only `map@rccd.edu` can write (everyone SEES edits — public read is open). Confirm the exact addresses with Sam, then insert into Supabase `allowed_reviewers`.
-
-**STANDING LANES (pick up if the above clears):**
+**STANDING LANES (next priority):**
 
 4. Unverified-M-ID renumber re-mint — `docs/unverified_mid_renumber_scope.md` (follow the Rule 7 playbook: dry-run → alias map → re-key promotions → atomic land in the 06:17 cron window).
 5. TMC Phase-2 acceptance engine — `docs/kb-notes/tmc-co-review-scope.md`.
