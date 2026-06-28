@@ -1,74 +1,68 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-28 (Session 80 · StarMan — the public Fact Sheet is now EDITABLE: sign in via the ✎ Curate button and edit the text of any box or hide it; + Session 79 StarBender's RACI-as-Lead + statewide-recs data layer)",
- "_session": 80,
- "_status": "SESSION 80 — StarMan (concurrent with StarBender). The public CPL Fact Sheet is now editable with a login: click ✎ Curate, sign in with the magic link, and you can edit the text of any box in place — or hide a box (the JST upload card is already removed). Edits show for everyone; the original is one click away (Reset to original). You're already using it for the AB 123 → AB 111/SB 111 update. The Statewide-CRs + live-KPI boxes are deliberately not editable yet (next session adds them). — Also live from Session 79 (StarBender): Activity/project cards show the RACI-Responsible as Lead (hover 👥 for the roster), per-row nudge is now opt-out-gated, RACI columns sort on click; and each statewide credential's authoritative credit recs (C-ID/title/units) are pulled from our own MAP data (POST shows the right 10). NEXT for Fable: render those recs as a collapsible wedge under each Fact Sheet exhibit, and fold posted updates into the Annual Report. Still need the 3 lead emails.",
+ "_as_of": "2026-06-28 · Session 81 (StarFarout) · per-row + per-card 📣 nudges landed: every Activity/project card and every RACI matrix row now has its own 📣 to nudge just that item, and the filter-bar bulk button is now '📣 Nudge All'",
+ "_session": 81,
+ "_status": "You can try the new nudge tweaks right now: every Activity and project card carries a 📣 nudge button (next to 📝 Update and 👥 RACI), every row in the RACI matrix has its own 📣 to nudge just that one item, and the bulk button in the filter bar is renamed '📣 Nudge All' (emails everyone who's opted in). Opt-outs are still honored — a member set to no-nudge is never emailed, and a row with no one eligible just says so. Still open: the public Fact Sheet 'consumer wedge' (showing each statewide exhibit's authoritative credit recs under it) is the next big build; the Annual Report doesn't yet self-freshen from the latest item updates the way the cards now do; and three teammate lead emails (Crystal, Terence, Calvin) still need Sam's go-ahead before they can edit (right now only map@rccd.edu can save; everyone can SEE edits).",
  "items": [
   {
-   "id": "sam-try-raci-lead",
-   "who": "sam",
-   "tab": "activities-projects",
-   "text": "TRY IT (live now): each Activity/project card's LEAD now shows whoever is RACI-Responsible — no more stale leads. Hover the 👥 RACI button on a card to see everyone (R/A/C/I) without opening it. I seeded the old leads in as Responsible (dropped Beth Kay; used the title's org). Spot-check that the right person shows as lead, and fix any in the RACI matrix."
-  },
-  {
-   "id": "sam-nudge-optout-fixed",
+   "id": "try-card-row-nudge",
    "who": "sam",
    "tab": "raci",
-   "text": "FIXED: the per-row 📣 nudge that went out to Malone + James Todd when you'd only checked yourself — nudges now ONLY go to people whose Nudge toggle is ON in the Team Directory. I also cleared the stale '⏳ awaiting' tags from those. RACI matrix + directory columns are now click-to-sort."
+   "text": "Try the new 📣 nudge: every Activity/project card and every RACI row now has its own 📣 to nudge just that one item; the filter-bar bulk button is now '📣 Nudge All' (emails all opted-in members)."
   },
   {
-   "id": "sam-lead-emails",
+   "id": "lead-emails",
    "who": "sam",
    "tab": "raci",
-   "text": "NEED FROM YOU to finish the loop: the exact email addresses for Crystal Nasio, Terence Nelson, and Calvin/Gloria so I can add them as allowed reviewers (then THEY can post their own braindump updates + edit RACI). Add your own slee@cccco.edu too. Until then only map@rccd.edu can save — but anyone can already SEE the updates on the cards."
+   "text": "Give the go-ahead on adding three teammate lead emails as reviewers (Crystal Nasio, Terence Nelson, Calvin Gloria) so they can edit too — right now only map@rccd.edu can save."
   },
   {
-   "id": "sam-annual-report",
+   "id": "annual-report-eyeball",
    "who": "sam",
    "tab": "annual-report",
-   "text": "NEW tab — Annual Report: auto-assembles a full draft from live data (Exec Summary · Vision 2030 & Goals · the 4 Activities · Statewide Impact · Spotlights · Looking Ahead), editable in place with a live preview, plus ✨AI polish, ⬇Word, 🖨Print. The Activity/Spotlight content is creation-era for now — it'll freshen automatically once Fable folds your team's braindump updates into it (next up). Eyeball the structure + tell me what sections to add/cut."
+   "text": "Skim the Annual Report draft — it auto-assembles from live data; tweak any section in place, then ✨AI-polish / ⬇Word / 🖨Print."
   },
   {
-   "id": "sam-vet-plans-kb",
-   "who": "sam",
-   "tab": "raci",
-   "text": "STILL WAITING ON YOU: the public-KB versions of the Veterans Sprint + Military Base plans (cpl-knowledge-base PR #15, scrubbed of names/rosters) are drafted and waiting on your review/merge — your review IS the sensitivity check. The full versions are already in your CPLBrain vault."
-  },
-  {
-   "id": "sam-factsheet-semistatic",
+   "id": "factsheet-semistatic",
    "who": "sam",
    "tab": "dashboard",
-   "text": "NEW — you can now fix these yourself: the public CPL Fact Sheet (📄 in the left nav) is editable. Click ✎ Curate, sign in, and edit any box (text or hide) — including the SEMI-STATIC figures baked in (Vision 2030 SCRs 332/889/37.35%/274, the 5-year funding table). The headline KPIs still auto-update. Tell me if you'd rather I batch-refresh the baked ones instead."
+   "text": "On the public CPL Fact Sheet, sign in and ✎ Curate any box to correct wording or hide it — your edits show for every visitor (the baked text is the fallback)."
   },
   {
-   "id": "fable-factsheet-wedge",
+   "id": "vet-plans-kb-15",
+   "who": "sam",
+   "tab": "knowledge-base",
+   "text": "Review and merge public Knowledge Base PR #15 (Veterans plans) when you have a moment — it's been waiting on your sign-off."
+  },
+  {
+   "id": "factsheet-wedge",
    "who": "fable",
    "tab": "dashboard",
-   "text": "TOP of the list (autonomous — now UNBLOCKED, the editable-Fact-Sheet PR #570 merged): render the statewide credit recs under each Fact Sheet exhibit. fact-sheet/statewide_recs.js is live (window.CPL_STATEWIDE_RECS, 129 exhibits); add a default-collapsed <details> under each .sw-list li with C-ID/title/units. Additive overlay, rebase onto #570 first. See docs/fact_sheet_lessons.md (2026-06-28)."
+   "text": "Build the Fact Sheet consumer wedge: render the authoritative statewide credit recs (C-ID / title / units) as a collapsible list under each statewide exhibit. Additive, read-only, with a test."
   },
   {
-   "id": "fable-annual-report-fresh",
+   "id": "annual-report-fresh",
    "who": "fable",
    "tab": "annual-report",
-   "text": "Still open (autonomous — the second half of Session-78's job): surface the posted item_updates INTO annual_report.js. Cards self-freshen (card_updates.js); the Annual Report still assembles from creation-era CPL_DATA. Fold the newest item_updates per item into the Activity-Progress + Spotlight sections. Same anon-read pattern as card_updates.js. See docs/cobi_raci_nudge_lessons.md."
+   "text": "Make the Annual Report self-freshen: fold the newest posted item-updates into the Activity-Progress and Spotlights sections (the cards already do this; the Report doesn't yet)."
   },
   {
-   "id": "fable-mid-renumber",
+   "id": "mid-renumber",
    "who": "fable",
    "tab": "unified-courses",
-   "text": "Standing lane: the unverified-M-ID renumber re-mint — close gaps + re-sort 001,002… by title within each (canonical SUBJ4, band). Full Rule-7, unverified-only, ONE pass when the merge wave settles. Scope: docs/unverified_mid_renumber_scope.md. Dry-run first, Sam's go before apply."
+   "text": "Continue the unverified-M-ID renumber re-mint per the scope doc — staging-cleanup pass, dry-run first, alias map committed."
   },
   {
-   "id": "fable-tmc-engine",
+   "id": "tmc-engine",
    "who": "fable",
    "tab": "tmc-builder",
-   "text": "Standing lane: TMC Phase-2 ACCEPTANCE ENGINE in tmc_builder.js — per-slot verdict from the ASCCC rules (C-ID match ✓ · slot.flexible ⚠ accept-with-ASSIST · specific C-ID by non-match = faculty review · unfilled ○) + a Ready/N-issues banner. Consume slot.flexible + t.flexibility. Scope: docs/kb-notes/tmc-co-review-scope.md."
+   "text": "Build the TMC Phase-2 acceptance engine (the CO-review scoring that decides whether a college's submitted courses meet each ADT's requirements)."
   },
   {
-   "id": "fable-assistant-etl",
+   "id": "assistant-etl",
    "who": "fable",
    "tab": "chatbot",
-   "text": "Standing lane (the big one): the CPL-Assistant CCR/CER-grounded recommender ETL into shared Supabase, so the Assistant can recommend the likely local course + credit rec from real course-identity data. Scope: docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md. Sierra rename lands with the Student Portal."
+   "text": "Stand up the CPL-Assistant CCR/CER recommender ETL so the assistant can suggest the right course/credential a college could adopt."
   }
  ]
 }

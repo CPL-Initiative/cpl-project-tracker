@@ -333,3 +333,25 @@ adjacent polish items. Five threads, all merged + live:
   sorting a tree means choosing flatten-vs-stay — we flatten and offer one-click
   back, rather than sort-within-parent (which reads as "nothing happened" on a
   small matrix).
+
+### 2026-06-28 (StarFarout, Session 81) — 📣 nudge everywhere: separating affordance visibility from action eligibility
+
+One merged PR (#574, squash to `main`; `daily-dashboard.yml` dispatched post-merge to publish the card buttons). Branch `claude/raci-activity-nudge-feature-v8j4ns`. Three tweaks Sam asked for, framed as "tweak the RACI and Activity cards."
+
+### What shipped
+- **Per-row 📣 nudge on EVERY RACI matrix row** (`raci.js`) — dropped the old `itemNudgeRecipients(item).length` gate to a plain `if (canEdit)`, so the 📣 shows on every Activity / sub-activity / project row when a reviewer is signed in (nudge just one item). The Team Directory **opt-out is still enforced inside `itemNudgeRecipients`** (`nudge===false` members never emailed); `openItemNudge` alerts gracefully when a row has no one eligible yet.
+- **Bulk button renamed** — filter-bar "📣 Nudge for updates" → **"📣 Nudge All"** (`raci.js`); tooltip now says it emails ALL opted-in members and points to a row's 📣 for a single item.
+- **📣 nudge button on EVERY card** (`excel_to_dashboard.py` generator) — on Activity headers, sub-activity (activity-kpi) cards, and Projects-Grid cards, next to the existing 📝 Update / 👥 RACI links. Each sets `sessionStorage['cpl_nudge_focus'] = "activity:N" | "project:<id>"` then deep-links `#raci`. New `consumePendingFocus()` branch (`NUDGE_KEY = "cpl_nudge_focus"`) resolves the item, focuses its row, opens its per-item nudge — mirrors the existing 📝 (`cpl_update_focus`) / 👥 (`cpl_raci_focus`) pattern exactly. Local regen: 4 Activity + 57 project buttons (61), and `CPL_Dashboard.html === index.html` (Rule 4 holds).
+
+### Lessons / gotchas
+- **Separate affordance VISIBILITY from action ELIGIBILITY.** Show the 📣 affordance consistently on every row/card; enforce the opt-out / no-eligible-recipient case in the **data layer** (`itemNudgeRecipients` → `buildItemNudgeHref` returns `null`), and let the action **alert gracefully** when there's no one to act on. **Test eligibility in the recipient/href layer, NOT button visibility** — hence the rewritten `raci_nudge_optout.test.js` asserts a `null` nudge href for an all-opted-out row (not a hidden button). Builds on Session 79's "filter a notification's AUDIENCE by the consent layer, not the role layer." New KB note: `docs/kb-notes/methodology-affordance-visibility-vs-action-eligibility.md` (methodology).
+- **Tests** (jsdom, `npm test` — 96/96 files pass): `raci.test.js` updated (📣 now on a row with no R/A; opt-out asserted via null href); `raci_nudge_optout.test.js` rewritten (button on every signed-in row; opt-out → null href, mailto targets the opted-in member); new `raci_card_nudge.test.js` (per-card deep-link consumer + "Nudge All" rename + anon behaviour — no bulk/per-row 📣 signed out, deep-link still routes). New exports on `window.CPL_RACI_TAB`: `_openItemNudge`, `_consume`, `_itemByKey`.
+- **Artifact policy** — code-only PR (no regenerated HTML), per the #562/#564 precedent: card hooks live in regenerated sections, so dispatch the workflow after merge. The `raci.js` per-row nudge + "Nudge All" rename are live on merge; card buttons go live on the regen.
+- **Pipeline untouched** — this is the RACI/nudge workstream, so the `#tab-pipeline` viz is intentionally NOT refreshed this checkpoint.
+
+### Where we are now
+Carryover (Session 82), unchanged from the prior handoff:
+1. **(AUTONOMOUS, top) Fact Sheet consumer wedge** — render `window.CPL_STATEWIDE_RECS` (`fact-sheet/statewide_recs.js`, 129 exhibits, live) as a default-collapsed `<details>` under each statewide exhibit `<li>` (`.sw-list li` in `fact-sheet/index.html`), C-ID/title/units. Additive, read-only, escape untrusted text, commit a test. See `docs/fact_sheet_lessons.md` (2026-06-28).
+2. **(AUTONOMOUS) Annual Report self-freshening** — fold the newest `item_updates` per item into `annual_report.js` (Activity-Progress + Spotlights); cards already self-freshen via `card_updates.js`, the Report doesn't yet.
+3. **(DECISION-GATED — ask Sam)** the 3 lead emails for `allowed_reviewers`: Crystal Nasio / Terence Nelson / Calvin Gloria + Sam's own slee@cccco.edu. Until then only map@rccd.edu can write (everyone SEES edits).
+4. **(STANDING LANES)** unverified-M-ID renumber re-mint (`docs/unverified_mid_renumber_scope.md`); TMC Phase-2 acceptance engine (`docs/kb-notes/tmc-co-review-scope.md`); CPL-Assistant CCR/CER recommender ETL (`docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md`). Public KB PR #15 (Veterans plans) still awaiting Sam's review/merge.

@@ -1754,3 +1754,26 @@ card's creation-era `.cpl-static-update` line** so there's one current "Latest U
 [`methodology-live-overlay-onto-generated-cards.md`](kb-notes/methodology-live-overlay-onto-generated-cards.md).
 Tests: `tests/card_updates.test.js` (17). Full story:
 [`cobi_raci_nudge_lessons.md`](cobi_raci_nudge_lessons.md) (Session 78).
+
+## Archived session narratives (Session 79) — moved 2026-06-28 (Session 81)
+
+### Session 79 — StarBender: RACI becomes the card's source of truth + statewide Fact Sheet recs (2026-06-28)
+
+Two threads, Sam live-testing throughout — **6 PRs #567–#571, all merged + live.** **(1) RACI-driven
+cards** (#567–#570): the card **Lead** now derives from the RACI **Responsible** (was the stale
+`projects.lead`) via a new read-only overlay **`card_raci.js`** (the `card_updates.js` pattern) + a **hover
+roster** on the 👥 button; the 27 remaining `projects.lead` values **seeded** into `item_raci` as
+Responsible (Beth Kay dropped; titles' embedded orgs kept); **nudge made opt-OUT-gated**
+(`itemNudgeRecipients()` drops `nudge===false` — fixed wrongful nudges to unchecked members) + cleared the
+stale ⏳awaiting tags; **sortable matrix/directory columns** (tree flattens on sort, `⤺ tree view`
+restores). **(2) Statewide Fact Sheet recs** (#571): each statewide credential's authoritative credit recs
+(C-ID/title/units) surfaced from **our own MAP dataset, no scraping**. The key insight (a runner probe
+found it): the **one authoritative statewide exhibit is the raw row with `Collaborative Type == "CCC"`** —
+adopting colleges tag their *adaptations* CCC too, which had inflated POST Basic Academy to 42 recs vs the
+canonical **10**. Producer adds an additive `authoritative_recs` (CCC-only); builder
+`fact-sheet/_build_statewide_recs.py` → `fact-sheet/statewide_recs.js` (daily cron); 129 exhibits/329 recs
+live, no-CCC list = 3 (DLPT-Russian, HRCM 001, NCCER CORE — fix in MAP). New KB note:
+[`reference-authoritative-statewide-exhibit-signal.md`](kb-notes/reference-authoritative-statewide-exhibit-signal.md).
+Tests: `card_raci`/`raci_sortable`/`raci_nudge_optout`/`statewide_recs_test` (51). Full stories:
+[`cobi_raci_nudge_lessons.md`](cobi_raci_nudge_lessons.md) + [`fact_sheet_lessons.md`](fact_sheet_lessons.md)
+(both 2026-06-28).
