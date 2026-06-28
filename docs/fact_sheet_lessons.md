@@ -305,3 +305,38 @@ random from `window.CPL_STORIES` + a "See all CPL Success Stories ↗" link.
 - **jsdom test note:** the renderer (like `factsheet_edit`) auto-boots on `DOMContentLoaded`, which has
   already fired under `runScripts:"outside-only"` — the test calls `CPL_STORIES_RENDER.render()` directly.
   Test `tests/cpl_stories_render.test.js` (18): 4-of-N random, escaping, https-only, pathway, empty-hides.
+
+## 2026-06-28 — Session 81 (StarFarout): Curate Phase 2 — images (add / delete / resize)
+
+The agreed follow-up to Phase-1 boxes: a reviewer can **add** an image (upload), **✕ delete** it, and
+**resize the frame** — via a **Supabase Storage** bucket (Sam's call). All in `factsheet_edit.js`.
+
+### Storage
+- New **public** bucket `factsheet-images` (5 MB cap, raster MIME only); writes gated by
+  `is_allowed_reviewer()` — same reviewer boundary as `factsheet_overrides`. Schema-of-record:
+  `fact-sheet/supabase_factsheet_images.sql` (applied live via the Supabase MCP). Uploads `POST` to
+  `/storage/v1/object/factsheet-images/<file>` with the reviewer JWT; the override stores the **public URL**.
+
+### The image layer (parallel to boxes, same override table)
+- Each `<figure>` is its own **image block**: baked figures get a stable `"<sid>|fig|<img-basename>"` key;
+  reviewer-added figures get `"<sid>|img|<token>"` (materialized like added boxes). Resize = the `<img width>`
+  attribute (the frame follows); replace = re-upload + swap `src`; ✕ = hide (baked) / delete (added).
+- **Inline control bar** (`.fs-imgbar`: S/M/L/Full · ⤢ Replace · ✕) on hover — not a dock. The bar is
+  appended INSIDE the figure, so `figureInner()` strips `.fs-imgbar`/`.fs-del` before persisting (the
+  Phase-1 sampleInner lesson again). `onDocClick` ignores image blocks (controls are inline, no text dock).
+
+### Gotchas
+- **In-figure `<figcaption>` must NOT also be a separate text box.** Phase 1 made figcaption editable
+  (it's in `BOX_SEL`); if the figure ALSO becomes a block, you get two overlapping overrides on nested
+  elements — a figure-innerHTML override clobbers the caption's separate override. Fix: `collectBlocks`
+  **skips a `<figcaption>` inside a `<figure>`** and manages the whole figure as one image block.
+- **`<img>` on a public innerHTML path = expand the allowlist carefully.** Added `IMG`/`FIGURE` to
+  `ALLOW_TAGS` + `src/alt/width` to `ALLOW_ATTR`, but `src` is **host-allowlisted** (`safeImgSrc`: our
+  Storage bucket / `*.supabase.co/storage/.../public/` / `map.rccd.edu` / `./img/`) — **no `data:`**, no
+  foreign host — and `width` is coerced to a number ≤ 900. An out-of-allowlist `<img>` is dropped whole.
+- **`isAddedKey` ≠ `isImgKey`.** Added images use `|img|` keys, not `|add|`; `deleteBox` had to treat
+  `isImgKey` as "added" (true delete) too, or it would only hide them.
+
+Code-only; `index.html` untouched (figures are baked; the overlay injects all chrome). Tests:
+`tests/factsheet_edit_images.test.js` (25) — sanitizer allowlist, figure-as-image-block, caption-not-a-box,
+curate bar, resize-persists-without-chrome, hide-vs-delete, `|img|` materialize. Full suite 99/99.
