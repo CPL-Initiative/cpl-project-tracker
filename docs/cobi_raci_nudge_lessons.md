@@ -355,3 +355,33 @@ Carryover (Session 82), unchanged from the prior handoff:
 2. **(AUTONOMOUS) Annual Report self-freshening** — fold the newest `item_updates` per item into `annual_report.js` (Activity-Progress + Spotlights); cards already self-freshen via `card_updates.js`, the Report doesn't yet.
 3. **(DECISION-GATED — ask Sam)** the 3 lead emails for `allowed_reviewers`: Crystal Nasio / Terence Nelson / Calvin Gloria + Sam's own slee@cccco.edu. Until then only map@rccd.edu can write (everyone SEES edits).
 4. **(STANDING LANES)** unverified-M-ID renumber re-mint (`docs/unverified_mid_renumber_scope.md`); TMC Phase-2 acceptance engine (`docs/kb-notes/tmc-co-review-scope.md`); CPL-Assistant CCR/CER recommender ETL (`docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md`). Public KB PR #15 (Veterans plans) still awaiting Sam's review/merge.
+
+---
+
+## 2026-06-28 — Session 82 (StarFarout cont.): Annual Report self-freshening
+
+The Activity-Progress + Spotlights sections of the Annual Report (`annual_report.js`) now fold in the
+newest posted `item_updates` per item — the same source the Activity/project CARDS use
+(`card_updates.js`), keyed `activity:N` / `project:<id>`. A live update **replaces** a sub-activity's
+creation-era "update" text (with an "(updated <date>)" marker) and is **appended** under a project
+spotlight as a "**Latest update** (<date>): …" line; an `activity:N` update folds in under its heading.
+
+### What made it clean / the trap avoided
+- **The existing 29-check test calls `boot()` then synchronously inspects the DOM**, so `boot()` MUST keep
+  rendering synchronously. The fold is therefore **render-first, freshen-after**: `boot()` paints the
+  creation-era draft immediately, then `ensureUpdates()` (an anon Supabase read, cached, never-rejects)
+  resolves and — **only if the curator hasn't started typing** (`state.userEdited`) — re-assembles with the
+  updates folded in. In jsdom `fetch` is undefined → `fetchUpdates()` resolves `[]` → the fold is a no-op →
+  every original check stays green (and Node exits before the microtask runs anyway).
+- **`userEdited` guard** — the async refresh must never silently rebuild over edits. Set it in the textarea
+  `input` handler; the refresh bails if it's true (or the AI polish is busy, or there are no updates).
+- **Markdown emphasis is limited to `**bold**`** here (`mdInline`), so the freshness marker is plain
+  `(updated <date>)`, not `_italic_` — an inline `_…_` would render literal underscores in both the preview
+  and the `.docx`.
+- **Reused, not re-invented:** `latestByKey` + the `item_updates` select mirror `card_updates.js` so the
+  Report and the cards read the *same* newest update. Test hook `_setUpdates(map)` + `_latestByKey` let the
+  fold be tested without a network.
+
+Tests: `tests/annual_report.test.js` grew 29 → **36** (baseline creation-era text; live update replaces it
++ carries the date marker; activity-level fold; spotlight fold; `_latestByKey` newest-per-key; empty-updates
+fallback). Full suite **100/100**. Code-only, static asset — live on the next Pages deploy.

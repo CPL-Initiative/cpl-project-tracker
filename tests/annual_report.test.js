@@ -138,6 +138,31 @@ function makeDom(data, proxy) {
   check("no-data boot does not throw", !threw3);
   check("no-data renders a graceful message", /still loading|Dashboard tab/.test(dom3.window.document.body.textContent));
 
+  // (h) self-freshening: posted item_updates fold into Activity Progress + Spotlights.
+  const Tf = makeDom(DATA).window.CPL_ANNUAL_REPORT;
+  // Baseline: with no updates, the creation-era text is present.
+  check("baseline keeps creation-era sub-activity text", /Veteran Sprint underway/.test(Tf._assemble(DATA)));
+  Tf._setUpdates({
+    "project:4.1":   { id: 1, item_type: "project", item_id: "4.1",   body: "Sprint hit 80% completion this quarter.", created_at: "2026-06-20T00:00:00Z" },
+    "project:4.1.1": { id: 2, item_type: "project", item_id: "4.1.1", body: "42 JST evaluations completed.",          created_at: "2026-06-22T00:00:00Z" },
+    "activity:1":    { id: 3, item_type: "activity", item_id: "1",     body: "Platform v2 shipped.",                   created_at: "2026-06-25T00:00:00Z" },
+  });
+  const mdf = Tf._assemble(DATA);
+  check("live sub-activity update REPLACES the creation-era text",
+    /Sprint hit 80% completion/.test(mdf) && !/Veteran Sprint underway/.test(mdf));
+  check("live update carries an (updated <date>) marker", /\(updated .+?\)/.test(mdf));
+  check("activity-level update folds in under the heading", /Platform v2 shipped/.test(mdf));
+  check("spotlight folds the live project update", /42 JST evaluations completed/.test(mdf));
+  // _latestByKey reduces newest-per-key
+  const lk = Tf._latestByKey([
+    { item_type: "project", item_id: "X", body: "old", created_at: "2026-01-01T00:00:00Z" },
+    { item_type: "project", item_id: "X", body: "new", created_at: "2026-06-01T00:00:00Z" },
+  ]);
+  check("_latestByKey keeps the newest row per key", lk["project:X"] && lk["project:X"].body === "new");
+  // A sub-activity with no live update keeps falling back to creation-era text.
+  Tf._setUpdates({});
+  check("empty updates → creation-era fallback intact", /Veteran Sprint underway/.test(Tf._assemble(DATA)));
+
   let failed = 0;
   for (const [name, ok] of results) {
     console.log((ok ? "PASS" : "FAIL") + "  " + name);
