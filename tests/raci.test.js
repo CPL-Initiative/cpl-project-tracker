@@ -349,8 +349,13 @@ const RACI_ROWS = [
   // ── (n) Per-item nudge (Phase 2): email the item's R/A people, card + link ──
   // 1.1 has R: Crystal Nasio (email) → a per-row 📣 should appear (signed-in).
   check("signed-in: per-item 📣 on a row with an R/A member", !!sdoc.querySelector('[data-raci-key="project:1.1"] .raci-itemnudge-btn'));
-  // 5.1 has no RACI → no per-item 📣.
-  check("no per-item 📣 on a row without R/A", !sdoc.querySelector('[data-raci-key="project:5.1"] .raci-itemnudge-btn'));
+  // The 📣 now appears on EVERY row when signed in (StarFarout) — so a reviewer
+  // can nudge just one item. 5.1 has no RACI yet, but still shows the button
+  // (clicking it alerts that there's no one to nudge until R/A is assigned).
+  check("signed-in: per-item 📣 ALSO on a row without R/A yet", !!sdoc.querySelector('[data-raci-key="project:5.1"] .raci-itemnudge-btn'));
+  // The opt-out/empty filtering lives in the href, not button visibility: a row
+  // with no R/A produces no recipients → null href.
+  check("item-nudge href is null on a row with no R/A", signed.window.CPL_RACI_TAB._itemNudgeHref({ type: "project", id: "5.1", key: "project:5.1", name: "x", isActivity: false }) === null);
   const inHref = signed.window.CPL_RACI_TAB._itemNudgeHref({ type: "project", id: "1.1", key: "project:1.1", name: "MAP Platform Development", isActivity: false });
   const inDec = decodeURIComponent(inHref);
   check("item-nudge href targets the item's R member", /^mailto:/.test(inHref) && /crystal\.nasio@rccd\.edu/.test(inDec));

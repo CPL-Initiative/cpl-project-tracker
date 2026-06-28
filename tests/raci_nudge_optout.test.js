@@ -2,8 +2,13 @@
 //
 // Guard: a member a reviewer has unchecked in the Team Directory ("Nudge for
 // Updates" → nudge:false) is NOT a per-item nudge recipient, even when they are
-// the item's Responsible/Accountable. So the per-item 📣 button is suppressed on
-// a row whose only R/A people are all opted out, and shown when ≥1 is opted in.
+// the item's Responsible/Accountable.
+//
+// Since StarFarout (Session 81) the per-row 📣 button shows on EVERY row when
+// signed in (so a reviewer can nudge just one item), so the opt-out is enforced
+// in the RECIPIENT/href layer, not button visibility: a row whose only R/A
+// people are all opted out yields a NULL nudge href (no one to email), and one
+// with ≥1 opted-in person yields a mailto targeting that person.
 //
 // Run from repo root: `npm test` (or `node tests/raci_nudge_optout.test.js`).
 const fs = require("fs");
@@ -51,9 +56,9 @@ const MEMBERS = [
   { id: "m2", name: "Ivy In", email: "ivy@x.edu", role: "Lead", nudge: true },        // opted in
 ];
 const RACI_ROWS = [
-  // 1.1's only R/A person is opted out → no per-item nudge button.
+  // 1.1's only R/A person is opted out → no recipients → null href.
   { item_type: "project", item_id: "1.1", raci: { R: [{ name: "Olive Opt", email: "olive@x.edu" }], A: [], C: [], I: [] } },
-  // 2.1's R is opted in → per-item nudge button present.
+  // 2.1's R is opted in → href targets Ivy.
   { item_type: "project", item_id: "2.1", raci: { R: [{ name: "Ivy In", email: "ivy@x.edu" }], A: [], C: [], I: [] } },
 ];
 
@@ -69,20 +74,27 @@ const RACI_ROWS = [
     const tr = doc.querySelector('[data-raci-key="' + key + '"]');
     return tr ? tr.querySelector(".raci-itemnudge-btn") : null;
   }
+  function hrefFor(key) { return T._itemNudgeHref(T._itemByKey(key)); }
 
-  check("signed-in reviewer sees per-item nudge on an opted-IN row (2.1)", !!nudgeBtnFor("project:2.1"));
-  check("per-item nudge SUPPRESSED when the only R/A is opted out (1.1)", !nudgeBtnFor("project:1.1"));
+  // Button visibility: now on EVERY row when signed in (both opted-in + opted-out).
+  check("signed-in reviewer sees per-item 📣 on the opted-IN row (2.1)", !!nudgeBtnFor("project:2.1"));
+  check("signed-in reviewer ALSO sees per-item 📣 on the opted-OUT row (1.1)", !!nudgeBtnFor("project:1.1"));
 
-  // Flip Olive back on → re-render → 1.1's button appears (the opt-out is the gate).
-  const m1 = dom.window;
-  // Simulate re-check by mutating the member + re-rendering via boot's API.
-  // (No direct setter; re-fetch with nudge:true.)
+  // Opt-out enforced in the recipient/href layer, not button visibility.
+  check("opted-OUT-only row yields a NULL nudge href (no one to email)", hrefFor("project:1.1") === null);
+  const inHref = hrefFor("project:2.1");
+  check("opted-IN row yields a mailto targeting the opted-in member",
+    /^mailto:/.test(inHref || "") && /ivy@x\.edu/.test(decodeURIComponent(inHref || "")));
+
+  // Re-checking the opted-out member restores them as a recipient (href non-null).
   const MEMBERS2 = [{ id: "m1", name: "Olive Opt", email: "olive@x.edu", role: "Lead", nudge: true }, MEMBERS[1]];
   const dom2 = makeDom(MEMBERS2, RACI_ROWS, SESSION);
-  dom2.window.CPL_RACI_TAB.boot();
+  const T2 = dom2.window.CPL_RACI_TAB;
+  T2.boot();
   await new Promise((r) => setTimeout(r, 40));
-  const tr2 = dom2.window.document.querySelector('[data-raci-key="project:1.1"]');
-  check("re-checking the member restores the per-item nudge (1.1)", !!(tr2 && tr2.querySelector(".raci-itemnudge-btn")));
+  const reHref = T2._itemNudgeHref(T2._itemByKey("project:1.1"));
+  check("re-checking the member restores it as a per-item nudge recipient (1.1)",
+    /^mailto:/.test(reHref || "") && /olive@x\.edu/.test(decodeURIComponent(reHref || "")));
 
   let failed = 0;
   results.forEach(function (r) { console.log((r[1] ? "PASS " : "FAIL ") + r[0]); if (!r[1]) failed++; });

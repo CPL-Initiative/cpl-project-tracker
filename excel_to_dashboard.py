@@ -1796,6 +1796,9 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                  f'                <a href="#raci" class="act-update-link" title="Braindump a quick status update for this Activity — CC writes it up and saves it" '
                  f'onclick="try{{sessionStorage.setItem(\'cpl_update_focus\',\'activity:{act_num}\')}}catch(e){{}}" '
                  f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">&#128221; Update</a>\n'
+                 f'                <a href="#raci" class="act-nudge-link" title="Nudge this Activity\'s Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)" '
+                 f'onclick="try{{sessionStorage.setItem(\'cpl_nudge_focus\',\'activity:{act_num}\')}}catch(e){{}}" '
+                 f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">&#128227; Nudge</a>\n'
                  f'                <a href="#workplan-goals" class="act-targets-link" title="Annual + 2030 targets live on the Annual Workplan Goals tab" '
                  f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Targets &#8599; Annual Workplan Goals</a>\n'
                  f'                </span>\n'
@@ -2084,7 +2087,13 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                          f'style="{btn_style}color:var(--navy-secondary);background:#fafafa;"'
                          f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'"'
                          f' title="Braindump a quick status update — CC writes it up and saves it to this card">'
-                         f'<span style="font-size:0.8rem;">&#128221;</span> Update</a>\n')
+                         f'<span style="font-size:0.8rem;">&#128221;</span> Update</a>'
+                         f'<a href="#raci" class="nudge-link" '
+                         f'onclick="try{{sessionStorage.setItem(\'cpl_nudge_focus\',\'project:{kpi_pid_q}\')}}catch(e){{}}" '
+                         f'style="{btn_style}color:var(--navy-secondary);background:#fafafa;"'
+                         f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'"'
+                         f' title="Nudge this item\'s Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)">'
+                         f'<span style="font-size:0.8rem;">&#128227;</span> Nudge</a>\n')
 
                 html += '            </div>\n'  # close activity-kpi-card
 
@@ -2652,6 +2661,15 @@ def _render_single_project_card(p, update_log=None, attachments=None,
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"
                     title="Braindump a quick status update — CC writes it up and saves it to this card">
                     <span style="font-size:0.85rem;">&#128221;</span> Update</a>
+                <a href="#raci" class="nudge-link"
+                    onclick="try{{sessionStorage.setItem('cpl_nudge_focus','project:{html_escape(str(pid), quote=True)}')}}catch(e){{}}"
+                    style="display:inline-flex;align-items:center;gap:0.3rem;
+                    font-size:0.75rem;color:var(--navy-secondary);text-decoration:none;font-weight:600;
+                    padding:0.3rem 0.6rem;border:1px solid #ddd;border-radius:4px;
+                    background:#fafafa;cursor:pointer;transition:background 0.2s;"
+                    onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"
+                    title="Nudge this item's Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)">
+                    <span style="font-size:0.85rem;">&#128227;</span> Nudge</a>
             </div>
         </div>
 '''
