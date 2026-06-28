@@ -17,18 +17,36 @@ const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 const browser = await chromium.launch();
 const ctx = await browser.newContext({ userAgent: UA, viewport: { width: 1366, height: 2400 } });
 const page = await ctx.newPage();
-await page.goto(URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
-await page.waitForTimeout(9000);                                   // SiteGround JS challenge → reload
-try { await page.waitForLoadState('networkidle', { timeout: 30000 }); } catch {}
-await page.waitForTimeout(2000);
 
-const title = await page.title();
-const html = await page.content();
-if (/sg-captcha|captcha-challenge/i.test(html) || !/Success Stories/i.test(title)) {
-  console.error('CHALLENGE NOT PASSED — title=' + title + ' bytes=' + html.length);
-  await browser.close();
-  process.exit(2);
+// SiteGround's anti-bot is INTERMITTENT — sometimes a JS challenge that
+// auto-resolves + reloads to the real page, sometimes a harder "Robot Challenge
+// Screen." Retry: reload and wait for the actual story cards (.card) to render,
+// which only happens past the challenge.
+async function reachContent() {
+  for (let attempt = 1; attempt <= 6; attempt++) {
+    try {
+      await page.goto(URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
+      await page.waitForFunction(
+        () => /Success Stories/i.test(document.title) && document.querySelectorAll('.card').length > 5,
+        { timeout: 35000 });
+      return true;
+    } catch (e) {
+      const t = await page.title().catch(() => '?');
+      console.error('attempt ' + attempt + ': content not reached (title=' + t + ')');
+      await page.waitForTimeout(4000 + attempt * 1500);
+    }
+  }
+  return false;
 }
+
+if (!(await reachContent())) {
+  console.error('CHALLENGE NOT PASSED after retries — title=' + (await page.title().catch(() => '?')));
+  await browser.close();
+  // Non-fatal: the caller keeps the existing committed dataset rather than
+  // overwriting it. Dry-runs (push) can be re-triggered if this happens.
+  process.exit(APPLY ? 0 : 3);
+}
+const title = await page.title();
 
 const stories = await page.evaluate(() => {
   const clean = (s) => (s || '').replace(/\s+/g, ' ').trim();
