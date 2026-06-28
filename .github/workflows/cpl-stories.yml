@@ -39,11 +39,13 @@ jobs:
       - name: Commit if changed (apply runs only)
         if: github.event_name != 'push'
         run: |
-          if git diff --quiet -- fact-sheet/cpl_stories.js; then
+          # git add FIRST — a brand-new untracked cpl_stories.js isn't seen by
+          # `git diff` (only `--cached` after staging), so stage then check.
+          git add fact-sheet/cpl_stories.js
+          if git diff --cached --quiet; then
             echo "No change to fact-sheet/cpl_stories.js"; exit 0
           fi
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add fact-sheet/cpl_stories.js
           git commit -m "Refresh CPL Stories dataset (cpl_stories.js)"
           git push
