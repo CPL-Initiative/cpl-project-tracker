@@ -103,6 +103,20 @@
     return clone.innerHTML;
   }
 
+  // ── Images (Phase 2): a reviewer-managed <figure> layer ────────────────────
+  // Bytes go to the PUBLIC Supabase Storage bucket 'factsheet-images' (writes
+  // gated by is_allowed_reviewer()); the override stores the URL. A reviewer-added
+  // figure rides the SAME factsheet_overrides table keyed "<sectionId>|img|<token>"
+  // (html = its inner HTML); a baked <figure> gets a stable "<sectionId>|fig|<sig>"
+  // key for resize/replace/hide. Resize = the <img width> attribute (frame follows).
+  var IMG_BUCKET = 'factsheet-images';
+  var IMG_PUBLIC = SUPABASE_URL + '/storage/v1/object/public/' + IMG_BUCKET + '/';
+  var IMG_WIDTHS = [['S', 220], ['M', 360], ['L', 540], ['Full', 0]];
+  var IMG_MIME = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp', 'image/gif': 'gif' };
+  function isImgKey(k) { return /\|img\|/.test(k || ''); }
+  function isFigKey(k) { return /\|fig\|/.test(k || ''); }
+  function isImgBlock(bl) { return !!(bl && (bl.isImg || isImgKey(bl.key) || isFigKey(bl.key))); }
+
   // ─── JWT helpers ───────────────────────────────────────────────────────────
   function b64urlJson(seg) {
     try { return JSON.parse(atob(seg.replace(/-/g, '+').replace(/_/g, '/'))); } catch (e) { return null; }
@@ -232,6 +246,9 @@
       for (var c = 0; c < outer.length; c++) {
         var el = outer[c];
         if (isLive(el)) continue;
+        // A figcaption inside a <figure> is managed AS PART OF its figure (image
+        // block below), not as a separate text box — avoids overlapping overrides.
+        if (el.tagName === 'FIGCAPTION' && el.closest && el.closest('figure')) continue;
         // A reviewer-added box keeps its stable add-key (set at materialize time),
         // so it isn't re-keyed by text slug and survives edits like a baked box.
         var pre = el.getAttribute('data-fsk');
@@ -247,6 +264,28 @@
         var key = n > 1 ? base + '~' + n : base;
         el.setAttribute('data-fsk', key);
         blocks.push({ el: el, key: key, sectionId: sid, baked: el.innerHTML, label: txt.slice(0, 46) });
+      }
+
+      // Image layer: each <figure> is its own image block (resize/replace/hide).
+      // Added figures keep their |img| add-key; baked ones get a stable |fig| key
+      // from the image basename so it survives reloads.
+      var figs = sec.querySelectorAll('figure');
+      for (var f = 0; f < figs.length; f++) {
+        var fg = figs[f];
+        if (isLive(fg)) continue;
+        var fpre = fg.getAttribute('data-fsk');
+        var fkey;
+        if (fpre && isImgKey(fpre)) { fkey = fpre; }
+        else {
+          var fim = fg.querySelector('img');
+          var fbase = fim ? slug(((fim.getAttribute('src') || '').split('/').pop() || '').slice(0, 40)) : '';
+          var fb = sid + '|fig|' + (fbase || blockSig(fg));
+          var fn = (counts[fb] = (counts[fb] || 0) + 1);
+          fkey = fn > 1 ? fb + '~' + fn : fb;
+        }
+        fg.setAttribute('data-fsk', fkey);
+        blocks.push({ el: fg, key: fkey, sectionId: sid, baked: fg.innerHTML,
+          label: 'image', isImg: true, added: isImgKey(fkey) });
       }
     }
     return blocks;
@@ -287,13 +326,26 @@
   // (links, bold/italic, lists, the .res-desc / res-title divs+spans).
   var XHTML_NS = 'http://www.w3.org/1999/xhtml';
   var ALLOW_TAGS = { A: 1, ABBR: 1, B: 1, BLOCKQUOTE: 1, BR: 1, CODE: 1, DIV: 1, EM: 1,
-    FIGCAPTION: 1, H3: 1, H4: 1, H5: 1, H6: 1, I: 1, LI: 1, OL: 1, P: 1, SMALL: 1, SPAN: 1,
-    STRONG: 1, SUB: 1, SUP: 1, U: 1, UL: 1 };
-  var ALLOW_ATTR = { href: 1, target: 1, rel: 1, title: 1, 'class': 1, lang: 1, dir: 1 };
+    FIGCAPTION: 1, FIGURE: 1, H3: 1, H4: 1, H5: 1, H6: 1, I: 1, IMG: 1, LI: 1, OL: 1, P: 1,
+    SMALL: 1, SPAN: 1, STRONG: 1, SUB: 1, SUP: 1, U: 1, UL: 1 };
+  var ALLOW_ATTR = { href: 1, target: 1, rel: 1, title: 1, 'class': 1, lang: 1, dir: 1,
+    src: 1, alt: 1, width: 1, loading: 1, referrerpolicy: 1 };
   function safeUrl(v) {
     v = String(v || '');
     if (/^\s*(javascript|vbscript|data):/i.test(v)) return false;
     return /^\s*(https?:|mailto:|tel:|#|\/|\.|[\w.\-]+(\/|$))/i.test(v) || v.indexOf(':') === -1;
+  }
+  // <img src> allowlist on the PUBLIC render path (reviewer-write only, but still
+  // injected for everyone): our Storage bucket, the Supabase public-object path,
+  // map.rccd.edu (existing baked story photos), and same-origin ./img/. NO data:.
+  function safeImgSrc(v) {
+    v = String(v || '');
+    if (/^\s*data:/i.test(v)) return false;
+    if (v.indexOf(IMG_PUBLIC) === 0) return true;
+    if (/^https:\/\/[a-z0-9-]+\.supabase\.co\/storage\/v1\/object\/public\//i.test(v)) return true;
+    if (/^https:\/\/([a-z0-9-]+\.)*map\.rccd\.edu\//i.test(v)) return true;
+    if (/^(\.\/|\/)?img\//i.test(v)) return true;
+    return false;
   }
   function sanitize(html) {
     try {
@@ -307,13 +359,19 @@
         if ((node.namespaceURI && node.namespaceURI !== XHTML_NS) || !ALLOW_TAGS[tag]) {
           node.remove(); continue;                            // SVG/MathML/unknown → remove subtree
         }
+        // <img> must carry an allowlisted https src, else the whole element goes.
+        if (tag === 'IMG' && !safeImgSrc(node.getAttribute('src'))) { node.remove(); continue; }
         var attrs = Array.prototype.slice.call(node.attributes);
         for (var a = 0; a < attrs.length; a++) {
           var nm = attrs[a].name.toLowerCase();
           if (!ALLOW_ATTR[nm]) { node.removeAttribute(attrs[a].name); continue; }
           if (nm === 'href' && !safeUrl(attrs[a].value)) node.removeAttribute(attrs[a].name);
+          if (nm === 'src' && tag !== 'IMG') node.removeAttribute(attrs[a].name);   // src only on <img>
+          if (nm === 'width') { var w = parseInt(attrs[a].value, 10);
+            if (!(w > 0 && w <= 900)) node.removeAttribute(attrs[a].name); else node.setAttribute('width', String(w)); }
         }
         if (tag === 'A' && node.getAttribute('target')) node.setAttribute('rel', 'noopener noreferrer');
+        if (tag === 'IMG') { node.setAttribute('loading', 'lazy'); node.setAttribute('referrerpolicy', 'no-referrer'); }
       }
       return tpl.innerHTML;
     } catch (e) { return ''; }
@@ -362,13 +420,21 @@
   // after fetch, before the re-collect, so collectBlocks() then adopts them.
   function materializeAdded(map) {
     Object.keys(map).forEach(function (key) {
-      if (!isAddedKey(key)) return;
-      var parts = key.split('|');                 // [sid, 'add', kind, token]
-      var sid = parts[0], kind = parts[2] || 'res';
+      var sid = key.split('|')[0];
       if (EXCLUDE_SECTIONS[sid]) return;
       var sec = document.getElementById(sid);
-      if (!sec) return;
-      if (sec.querySelector('[data-fsk="' + key + '"]')) return;   // already present
+      if (!sec || sec.querySelector('[data-fsk="' + key + '"]')) return;   // already present
+      // Reviewer-added image figure.
+      if (isImgKey(key)) {
+        var fig = document.createElement('figure');
+        fig.className = 'cpl-img-added';
+        fig.setAttribute('data-fsk', key);
+        fig.innerHTML = sanitize((map[key] && map[key].html) || '');
+        if (fig.querySelector('img')) sec.appendChild(fig);            // append at section end
+        return;
+      }
+      if (!isAddedKey(key)) return;
+      var kind = key.split('|')[2] || 'res';                           // <sid>|add|<kind>|<token>
       var box = document.createElement('div');
       box.className = kind;
       box.setAttribute('data-fsk', key);
@@ -434,6 +500,7 @@
   // persisted — saves read the editor textarea / override map, not live innerHTML).
   function decorateBox(bl) {
     if (!bl || !bl.el) return;
+    if (isImgBlock(bl)) return decorateImg(bl);     // image blocks get the image bar
     bl.el.classList.add('fs-editable');
     bl.el.setAttribute('draggable', 'true');
     if (!bl.el.querySelector('.fs-del')) {
@@ -446,16 +513,17 @@
   }
   function undecorateBox(bl) {
     if (!bl || !bl.el) return;
-    bl.el.classList.remove('fs-editable');
+    bl.el.classList.remove('fs-editable', 'fs-imgblock');
     bl.el.removeAttribute('draggable');
+    var bar = bl.el.querySelector('.fs-imgbar'); if (bar) bar.remove();
     var x = bl.el.querySelector('.fs-del'); if (x) x.remove();
   }
 
-  // ✕ on a box: delete an added box (true removal), or hide a baked one.
+  // ✕ on a box/image: delete an added one (true removal), or hide a baked one.
   function deleteBox(bl) {
     if (!bl) return;
-    if (isAddedKey(bl.key)) {
-      if (!window.confirm('Delete this box? It will be removed from the page for everyone.')) return;
+    if (isAddedKey(bl.key) || isImgKey(bl.key)) {
+      if (!window.confirm('Delete this ' + (isImgBlock(bl) ? 'image' : 'box') + '? It will be removed from the page for everyone.')) return;
       deleteOverride(bl.key).then(function () {
         delete API._overrides[bl.key];
         var sid = bl.sectionId, el = bl.el;
@@ -499,25 +567,130 @@
     return bl;
   }
 
-  // A ＋ Add box affordance per editable grid-box section (Resources etc.).
+  // Per-section curate affordances: ＋ Add box (grid sections only) + 🖼 Add image
+  // (any editable section). The image button appends a row at the section's end.
   function renderAddButtons() {
     var secs = document.querySelectorAll('main > section');
     for (var i = 0; i < secs.length; i++) {
       var sec = secs[i], sid = sec.id || '';
       if (EXCLUDE_SECTIONS[sid]) continue;
       if (sec.classList && sec.classList.contains('no-print')) continue;
-      if (!boxTemplate(sec)) continue;               // only sections with grid boxes
-      var cont = boxContainer(sec);
-      if (cont.querySelector('.fs-add')) continue;
-      var btn = document.createElement('button');
-      btn.type = 'button'; btn.className = 'fs-add no-print'; btn.textContent = '＋ Add box';
-      (function (id) { btn.addEventListener('click', function (e) { e.preventDefault(); addBox(id); }); })(sid);
-      cont.appendChild(btn);
+      if (boxTemplate(sec)) {
+        var cont = boxContainer(sec);
+        if (!cont.querySelector('.fs-add')) {
+          var btn = document.createElement('button');
+          btn.type = 'button'; btn.className = 'fs-add no-print'; btn.textContent = '＋ Add box';
+          (function (id) { btn.addEventListener('click', function (e) { e.preventDefault(); addBox(id); }); })(sid);
+          cont.appendChild(btn);
+        }
+      }
+      if (!sec.querySelector(':scope > .fs-add-img') && !sec.querySelector('.fs-add-img')) {
+        var ib = document.createElement('button');
+        ib.type = 'button'; ib.className = 'fs-add-img no-print'; ib.textContent = '🖼 Add image';
+        (function (id) { ib.addEventListener('click', function (e) { e.preventDefault(); addImage(id); }); })(sid);
+        sec.appendChild(ib);
+      }
     }
   }
   function clearAddButtons() {
-    var adds = document.querySelectorAll('.fs-add');
+    var adds = document.querySelectorAll('.fs-add, .fs-add-img');
     for (var i = 0; i < adds.length; i++) if (adds[i].parentNode) adds[i].parentNode.removeChild(adds[i]);
+  }
+
+  // ── Image management (Phase 2): upload to Storage, add / resize / replace ───
+  function uploadImage(file) {
+    return ensureFresh().then(function (s) {
+      if (!s) { signIn(); return Promise.reject(new Error('no-session')); }
+      if (!file || !IMG_MIME[file.type]) { window.alert('Pick a PNG, JPG, WEBP, or GIF image.'); return Promise.reject(new Error('bad-type')); }
+      if (file.size > 5 * 1024 * 1024) { window.alert('Image is over 5 MB — please use a smaller file.'); return Promise.reject(new Error('too-big')); }
+      var path = 'fs-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 8) + '.' + IMG_MIME[file.type];
+      return fetch(SUPABASE_URL + '/storage/v1/object/' + IMG_BUCKET + '/' + encodeURIComponent(path), {
+        method: 'POST',
+        headers: { apikey: SUPABASE_ANON, Authorization: 'Bearer ' + s.access_token, 'Content-Type': file.type },
+        body: file
+      }).then(function (r) { if (!r.ok) throw new Error('upload HTTP ' + r.status); return IMG_PUBLIC + path; });
+    });
+  }
+  function pickImageFile() {
+    return new Promise(function (resolve) {
+      var inp = document.createElement('input');
+      inp.type = 'file'; inp.accept = 'image/png,image/jpeg,image/webp,image/gif'; inp.style.display = 'none';
+      inp.addEventListener('change', function () { var f = inp.files && inp.files[0]; if (inp.parentNode) inp.remove(); resolve(f); });
+      document.body.appendChild(inp); inp.click();
+    });
+  }
+  // A figure's inner HTML with curate chrome stripped (for persisting).
+  function figureInner(fig) {
+    var c = fig.cloneNode(true);
+    var chrome = c.querySelectorAll ? c.querySelectorAll('.fs-imgbar, .fs-del, .fs-add, .fs-add-img') : [];
+    for (var i = 0; i < chrome.length; i++) { if (chrome[i].remove) chrome[i].remove(); }
+    return c.innerHTML;
+  }
+  function saveFigure(bl) {
+    var html = figureInner(bl.el);
+    var hidden = !!(API._overrides[bl.key] && API._overrides[bl.key].hidden);
+    API._overrides[bl.key] = { html: html, hidden: hidden };
+    return saveOverride(bl.key, { html: html, hidden: hidden });
+  }
+  function setImgWidth(bl, w) {
+    var img = bl.el.querySelector('img'); if (!img) return;
+    if (w > 0) img.setAttribute('width', String(w)); else img.removeAttribute('width');
+    saveFigure(bl).then(function () { if (API._curating) decorateImg(bl); })
+      .catch(function () { window.alert('Resize failed — are you a signed-in reviewer?'); });
+  }
+  function replaceImg(bl) {
+    pickImageFile().then(function (file) {
+      if (!file) return;
+      uploadImage(file).then(function (url) {
+        var img = bl.el.querySelector('img');
+        if (!img) { img = document.createElement('img'); bl.el.insertBefore(img, bl.el.firstChild); }
+        img.setAttribute('src', url);
+        if (!img.getAttribute('alt')) img.setAttribute('alt', 'CPL Fact Sheet image');
+        saveFigure(bl).then(function () { if (API._curating) decorateImg(bl); });
+      }).catch(function () {});
+    });
+  }
+  function addImage(sid) {
+    var sec = document.getElementById(sid); if (!sec || EXCLUDE_SECTIONS[sid]) return;
+    pickImageFile().then(function (file) {
+      if (!file) return;
+      uploadImage(file).then(function (url) {
+        var key = sid + '|img|' + genToken();
+        var fig = document.createElement('figure');
+        fig.className = 'cpl-img-added'; fig.setAttribute('data-fsk', key);
+        var img = document.createElement('img');
+        img.setAttribute('src', url); img.setAttribute('alt', 'CPL Fact Sheet image'); img.setAttribute('width', '360');
+        fig.appendChild(img);
+        sec.appendChild(fig);
+        var bl = { el: fig, key: key, sectionId: sid, baked: fig.innerHTML, label: 'image', isImg: true, added: true };
+        API._blocks.push(bl); if (API._byEl) API._byEl.set(fig, bl);
+        var inner = figureInner(fig);
+        API._overrides[key] = { html: inner, hidden: false };
+        saveOverride(key, { html: inner, hidden: false });
+        if (API._curating) decorateImg(bl);
+      }).catch(function () {});
+    });
+  }
+  // Image curate chrome: a size bar (S/M/L/Full) + ⤢ Replace + ✕. Appended INSIDE
+  // the figure but stripped by figureInner() before persisting.
+  function decorateImg(bl) {
+    if (!bl || !bl.el) return;
+    bl.el.classList.add('fs-editable', 'fs-imgblock');
+    if (bl.el.querySelector('.fs-imgbar')) return;
+    var bar = document.createElement('div'); bar.className = 'fs-imgbar no-print';
+    IMG_WIDTHS.forEach(function (w) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'fs-imgw'; b.textContent = w[0];
+      b.title = 'Resize to ' + w[0]; (function (px) { b.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); setImgWidth(bl, px); }); })(w[1]);
+      bar.appendChild(b);
+    });
+    var rep = document.createElement('button'); rep.type = 'button'; rep.className = 'fs-imgrep'; rep.textContent = '⤢ Replace';
+    rep.title = 'Replace this image'; rep.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); replaceImg(bl); });
+    bar.appendChild(rep);
+    var x = document.createElement('button'); x.type = 'button'; x.className = 'fs-del'; x.textContent = '✕';
+    x.title = isImgKey(bl.key) ? 'Delete this image' : 'Hide this image';
+    x.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); deleteBox(bl); });
+    bar.appendChild(x);
+    bl.el.appendChild(bar);
   }
 
   // ─── Drag-to-reorder (within a section's container) ────────────────────────
@@ -663,10 +836,13 @@
     var t = e.target;
     if (t.closest && t.closest('.fs-dock')) return;       // clicks inside the editor
     if (t.id === 'btn-curate' || (t.closest && t.closest('#btn-curate'))) return;
+    if (t.closest && t.closest('.fs-imgbar')) return;     // image bar buttons handle themselves
     var el = t.closest && t.closest('[data-fsk]');
     if (!el) return;
+    var bl = blockByEl(el);
+    if (bl && isImgBlock(bl)) { e.preventDefault(); e.stopPropagation(); return; } // image controls are inline
     e.preventDefault(); e.stopPropagation();
-    editBlock(blockByEl(el));
+    editBlock(bl);
   }
 
   // ─── Curate button ─────────────────────────────────────────────────────────
@@ -734,9 +910,23 @@
         'margin:10px 0 0;padding:7px 14px;border:1px dashed var(--cobalt);border-radius:var(--radius-sm);' +
         'background:rgba(0,71,171,.06);color:var(--cobalt);font:600 13px var(--font-data);cursor:pointer;}' +
       '.fs-add:hover{background:var(--cobalt);color:#fff;}' +
+      '.fs-add-img{display:inline-flex;align-items:center;gap:6px;margin:10px 8px 0 0;padding:7px 14px;' +
+        'border:1px dashed var(--seal-blue,#0a2240);border-radius:var(--radius-sm);background:rgba(10,34,64,.05);' +
+        'color:var(--seal-blue,#0a2240);font:600 13px var(--font-data);cursor:pointer;}' +
+      '.fs-add-img:hover{background:var(--seal-blue,#0a2240);color:#fff;}' +
+      'body.fs-curating [data-fsk].fs-imgblock{position:relative;display:inline-block;}' +
+      '.fs-imgbar{position:absolute;top:6px;right:6px;display:none;gap:4px;align-items:center;' +
+        'background:rgba(28,28,26,.82);border-radius:7px;padding:3px 5px;z-index:3;}' +
+      'body.fs-curating [data-fsk].fs-imgblock:hover>.fs-imgbar,.fs-imgbar:hover{display:inline-flex;}' +
+      '.fs-imgbar button{font:600 11px var(--font-data);color:#fff;background:transparent;border:1px solid rgba(255,255,255,.35);' +
+        'border-radius:5px;padding:2px 7px;cursor:pointer;line-height:1.3;}' +
+      '.fs-imgbar button:hover{background:rgba(255,255,255,.18);}' +
+      '.fs-imgbar .fs-del{position:static;width:auto;height:auto;border-radius:5px;border:1px solid rgba(255,255,255,.35);' +
+        'background:transparent;color:#fff;font:700 12px var(--font-data);padding:2px 7px;}' +
+      '.fs-imgbar .fs-del:hover{background:var(--crimson,#b3261e);}' +
       'body.fs-curating [data-fsk][draggable="true"]{cursor:grab;}' +
       'body.fs-curating [data-fsk].fs-dragging{opacity:.4;outline:2px dashed var(--cobalt) !important;}' +
-      '@media print{#btn-curate,.fs-dock,.fs-del,.fs-add{display:none !important;}' +
+      '@media print{#btn-curate,.fs-dock,.fs-del,.fs-add,.fs-add-img,.fs-imgbar{display:none !important;}' +
         'body.fs-curating [data-fsk]::after{display:none !important;}' +
         'body.fs-curating .fs-ov-hidden{display:none !important;}' +
         'body.fs-curating [data-fsk].fs-editable{outline:none !important;}}';
@@ -789,7 +979,17 @@
     blockByEl: blockByEl,
     sampleInner: sampleInner,
     isAddedKey: isAddedKey,
-    isOrderKey: isOrderKey
+    isOrderKey: isOrderKey,
+    // Phase 2 — images:
+    sanitize: sanitize,
+    safeImgSrc: safeImgSrc,
+    decorateImg: decorateImg,
+    setImgWidth: setImgWidth,
+    deleteBox: deleteBox,
+    figureInner: figureInner,
+    isImgKey: isImgKey,
+    isImgBlock: isImgBlock,
+    IMG_PUBLIC: IMG_PUBLIC
   };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
