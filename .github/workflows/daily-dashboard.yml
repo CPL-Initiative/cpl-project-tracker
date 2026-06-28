@@ -160,6 +160,12 @@ jobs:
       - name: Run credential rename dry-run
         run: python3 kb/_cred_rename_dryrun.py || echo "Credential rename dry-run failed — non-fatal"
 
+      # Build the public Fact Sheet's statewide credit-rec data from the freshly
+      # regenerated statewide_data.js (authoritative CCC-tagged recs only). Logs
+      # any statewide credential lacking a CCC exhibit. Non-fatal.
+      - name: Build statewide credit recs (Fact Sheet)
+        run: python3 fact-sheet/_build_statewide_recs.py || echo "statewide recs build failed (non-fatal; prior artifact kept)"
+
       # ── Step 5: Prepare GitHub Pages entry point ─────────────────
       - name: Copy dashboard to index.html
         run: cp CPL_Dashboard.html index.html
@@ -172,6 +178,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add index.html CPL_Dashboard.html CPL_Data.js \
                   live_metrics.json kpi_history.json statewide_data.js \
+                  fact-sheet/statewide_recs.js \
                   fact_sheet_metrics.json \
                   statewide_prescriptive.js \
                   college_activity.js college_activity_template.html \

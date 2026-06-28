@@ -5006,7 +5006,15 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
         "raw_titles": set(),  # for the consumer's "also entered as…" disclosure
         "confidence_titles": [],  # per-row for modal
         "quality_flags": set(),  # any constituent flag rolls up
-        "credit_recs": [],  # list of {course, credit} dicts (deduped)
+        "credit_recs": [],  # list of {course, credit} dicts (deduped) — ALL collab rows (EACR)
+        # Authoritative statewide recs: ONLY rows tagged Collaborative Type == "CCC"
+        # (the single MAP-published statewide exhibit — a lead college hosts it,
+        # e.g. Lassen for POST), deduped by the recommendation TEXT (the local
+        # Course code varies per articulating college) with the C-ID when present.
+        # Adopting colleges' adaptations (Collab '' / 'Industry') are excluded so
+        # the Fact Sheet shows the canonical ~10, not the per-college union. The
+        # credit_recs field above is left untouched so the EACR view is unaffected.
+        "authoritative_recs": [],  # list of {credit, cid} from CCC rows only
         "training_agency": "",  # set on first classified row
         "confidence_issuer": 0.0,
         "is_classified": False,
@@ -5064,6 +5072,14 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
             rec_key = (course, credit)
             if rec_key not in {(r["course"], r["credit"]) for r in e["credit_recs"]}:
                 e["credit_recs"].append({"course": course, "credit": credit})
+        # Authoritative statewide recs — only the CCC-tagged (MAP-published) rows,
+        # deduped by recommendation text, C-ID backfilled.
+        if credit and collab == "CCC":
+            ar = next((r for r in e["authoritative_recs"] if r["credit"] == credit), None)
+            if ar is None:
+                e["authoritative_recs"].append({"credit": credit, "cid": cid})
+            elif cid and not ar["cid"]:
+                ar["cid"] = cid
 
     # ── Compute potential + assemble output rows ──
     from collections import Counter as _Counter
@@ -5145,6 +5161,7 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
             "potential_names": sorted(new_colleges),
             "total_addressable": len(adopters) + len(new_colleges),
             "credit_recs": e["credit_recs"],
+            "authoritative_recs": e["authoritative_recs"],
         })
 
     # Sort: exhibits with most potential first, then by adopters descending
