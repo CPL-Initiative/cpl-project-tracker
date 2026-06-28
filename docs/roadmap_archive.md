@@ -1777,3 +1777,22 @@ live, no-CCC list = 3 (DLPT-Russian, HRCM 001, NCCER CORE — fix in MAP). New K
 Tests: `card_raci`/`raci_sortable`/`raci_nudge_optout`/`statewide_recs_test` (51). Full stories:
 [`cobi_raci_nudge_lessons.md`](cobi_raci_nudge_lessons.md) + [`fact_sheet_lessons.md`](fact_sheet_lessons.md)
 (both 2026-06-28).
+
+## Archived session narrative (Session 80) — moved 2026-06-28 (Session 82)
+
+### Session 80 — StarMan: the public Fact Sheet becomes Curate-editable (2026-06-28)
+
+Concurrent with StarBender (79), Sam live-testing — **1 PR #570, merged + live; he was editing within
+minutes.** The standalone public **Fact Sheet** is now editable in place by a signed-in reviewer (the shared
+`cpl_sb` magic-link + `is_allowed_reviewer()` gate, same as CCR/RACI/TMC). New standalone
+**`fact-sheet/factsheet_edit.js`** — a content-agnostic Supabase **overlay**: it walks the DOM at load,
+assigns each editable box a **stable key** (`sectionId|slug(baked text)`, stamped `data-fsk` — so
+`index.html` needs no per-box markup, a tiny diff), reads `public.factsheet_overrides` (anon) and overlays
+`{html,hidden}` for every visitor; a reviewer gets **✎ Curate** mode (click a box → docked raw-HTML editor →
+Save/Hide/Reset-to-original). Self-contained magic-link auth (mints `cpl_sb` from the hash),
+refresh-before-write, **allowlist** sanitizer (hardened after a security review closed the foreign-content
+mXSS class). `index.html` diff = button + script tag + JST-card removal → **zero overlap** with StarBender's
+Statewide-CRs region (editing **excludes** `#statewide-exhibits`/`#progress`/`[data-bind]`). New table
+`factsheet_overrides` (public read, reviewer write). 31 jsdom tests. New KB note:
+[`playbook-curate-editable-standalone-page.md`](kb-notes/playbook-curate-editable-standalone-page.md).
+Full story: [`fact_sheet_lessons.md`](fact_sheet_lessons.md) (2026-06-28).

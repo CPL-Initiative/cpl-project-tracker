@@ -368,3 +368,84 @@ a C-ID badge when known).
 
 Tests: `tests/statewide_recs_render.test.js` (22) — match/no-match, de-dupe count, C-ID badge, unit
 pluralization, toggle, idempotency, escaping. Full suite 100/100. Code-only (`index.html` gains 2 script tags).
+
+## 2026-06-28 — Session 82 (SkyFlyer): editable everywhere + WCAG 2.1 AA + Word export
+
+Sam's "a few more fact sheet changes" — one PR (#584). Two asks: (1) make the *remaining* boxes
+Curate-able with the right capability per section, and (2) a spin-through for completeness / links /
+accessibility / PDF + Word. I kicked off a 6-agent **audit workflow** (completeness, link opportunities,
+WCAG 2.1 AA, print/Word, and an editor section/grid map) that ran in the background while I built the
+editor changes — then applied its verified findings. That pattern (fan-out audit → build in parallel →
+apply verified results) was the right shape for a "spin through everything" ask.
+
+### The editor: capability lanes per section (`factsheet_edit.js`)
+The old overlay had ONE rule — a box is editable unless it's in an excluded section or contains
+`[data-bind]`. Sam's asks needed **three** lanes, so the block model grew per-block flags
+(`live`, `noEdit`, `isTable`, `movable`, `gridSig`) and a derived `canEditHtml(bl)`:
+
+- **`MOVE_ONLY_SECTIONS = {progress:1}`** — the KPI grid. Collected now (removed from
+  `EXCLUDE_SECTIONS`), but boxes are **move + delete only**: draggable + ✕, never the text editor.
+  Un-hide is "click the ghosted (hidden) box" since there's no dock to toggle from. Sam was explicit:
+  KPIs "don't need to be editable--just moveable and deleteable."
+- **Veteran-Sprint stats are EDITABLE even though they're live.** Sam asked for it explicitly (distinct
+  from the KPI carve-out). The danger — an overlay clobbering a live binding — is handled in
+  **`applyBlock`**: for an editable LIVE box with **no** html override, *leave `innerHTML` alone* (the
+  data binding wins); only an explicit html override replaces it (box goes static). So an un-edited
+  Vet-Sprint box still shows the daily number; an edited one shows the reviewer's text.
+- **Budget table = hide-only.** Collected `table.data`'s `.tbl-wrap` as an `isTable` block: a single ✕,
+  no drag, no editor. (Sam assumed it's Budget-tab-sourced — it's actually baked, but hide-only is the
+  right affordance either way.) `overflow:visible` during curate so the ✕ escapes the scroll frame.
+
+### Per-GRID Add box — the real structural fix
+`#what-is-cpl` has TWO grids (the `.cols-2` CPL-Types/Modes cards AND the CPL-Bump `.stat-grid`);
+`#vision-goals` has two `.stat-grid`s, `#teams` three `.team-grid`s. The old `addBox(sid)` modeled the
+new box on the *first* grid box and appended to the *first* container — so the CPL Bump grid could never
+get its own Add box. Fix: enumerate grid containers (`GRID_CONTAINER_SEL`), render **one ＋Add box per
+grid**, and encode the target grid in the add-key: **`<sid>|add|<kind>|gN|<token>`** (`gN` = index among
+the section's grids). `materializeAdded` parses `gN` and re-inserts into the right container; an older
+4-segment key (no `gN`) falls back to grid 0 (back-compat). **Order stays ONE key per section**
+(`<sid>|__order`) — `applyOrder` appends each box to *its own parent*, so a section with several grids
+keeps each grid's boxes within that grid without per-grid order keys (a box never jumps grids).
+
+### Stable keys must exclude live (`[data-bind]`) text
+The big trap: KPI/Vet-Sprint box text contains the daily metric value. Keying off full text would make
+the `data-fsk` key **churn every day** when the number changes → saved hides/orders/edits orphaned.
+Fix: `blockSig` now uses `stableText(el)` = the box's text with `[data-bind]` subtrees removed, so a KPI
+keys off its label ("Cumulative CPL Students…"), not "48,029…". Boxes with no data-bind are unchanged
+(stableText == textContent) so no existing key migrated. New KB note:
+`methodology-stable-dom-keys-exclude-live-text.md`.
+
+### Spin-through
+- **~15 embedded links** (colleges, JST, GI Bill, Title 5 §55050, Master Plan, WestEd, Credential Engine,
+  Futuro Health, ACE, Calbright, West LA, MCAGCC) — a verify-the-URL agent ran before I applied them
+  (kept/fixed/dropped), so no guessed deep links shipped.
+- **WCAG 2.1 AA**: `--faint` #87877F→#69695F and `--mustard-text` #8B6800→#7A5B00 (small-text contrast
+  1.4.3); `:focus-visible` rings on buttons/`<summary>`/TOC (2.4.7); `role=status aria-live=polite` on the
+  live chip (4.1.3); a `labelSectors()` pass in `factsheet.js` that gives each statewide `<summary>` a
+  full-sentence `aria-label` built from its cell values — and re-runs after the live update so it never
+  goes stale (1.3.1 on a CSS pseudo-table that a screen reader otherwise hears as bare numbers); funding
+  table `th scope`+`<caption>`; link-purpose `aria-label`s; larger TOC targets; `prefers-reduced-motion`;
+  a `.sr-only` utility. (The page advertises "WCAG 2.1 AA" in its own workplan-metrics card, so it should
+  meet it.)
+- **Print**: forced `print-color-adjust:exact` on the load-bearing fills — the **navy `thead th` was
+  printing white-on-white** (invisible header) without it; revealed link URLs in reference contexts
+  (legislation/resources/lede/footer) not just `.res-title`; `break-inside:auto` on sections so long ones
+  flow; single-column statewide lists; a CSS belt that opens `<details>` on paper even if the JS didn't run.
+- **`factsheet_word.js`** — new `⬇ Word` export. Chose the audit's recommended **DOM-to-`.doc`** (mso-HTML
+  Blob) over docx@8: the content already lives in the rendered DOM (incl. live data + Curate overrides),
+  so cloning `<main>` captures exactly what the visitor sees, with zero dependencies — true to the
+  standalone ethos. Statewide grid → real `<table>` (Word renders tables well, CSS grid poorly). New KB
+  note: `playbook-standalone-dom-to-word-export.md`.
+
+### Surfaced, not auto-changed
+The completeness agent flagged internal-consistency items I deliberately did **NOT** hardcode-edit on a
+public doc (they're live/snapshot data or Sam's domain facts): Statewide KPI "12 program areas" vs 13
+listed rows (incl. an "Other Statewide" catch-all); the deduped could-adopt total (116) reading oddly
+next to per-area rows summing to 454 (the footnote explains it); "30,000" Phase-1 JST goal vs "34,000+"
+veterans-in-system phrasing; baked KPI fallback breakdowns not all summing. All Curate-editable now if
+Sam wants to reword. **Lesson: on a public doc with a live data layer, surface number inconsistencies to
+the owner — don't silently "fix" figures you didn't author.**
+
+Tests: `tests/factsheet_edit.test.js` (35, updated for the new policy — #progress now collected,
+data-bind boxes now keyed), `tests/factsheet_edit_sections.test.js` (19, new — the three lanes +
+per-grid add), `tests/factsheet_word.test.js` (19, new). Full suite **102 files green**.
