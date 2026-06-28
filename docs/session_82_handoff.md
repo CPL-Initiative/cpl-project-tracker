@@ -19,6 +19,16 @@ One merged PR — **#574** (squash-merged to `main`; code-only per the #562/#564
 
 New exported helpers on `window.CPL_RACI_TAB`: `_openItemNudge`, `_consume`, `_itemByKey(key)`. Suite **96/96** files green (`tests/raci.test.js` updated, `raci_nudge_optout.test.js` rewritten, `raci_card_nudge.test.js` new). New KB note: `docs/kb-notes/methodology-affordance-visibility-vs-action-eligibility.md`. The M-ID pipeline did NOT move — `#tab-pipeline` intentionally untouched this checkpoint.
 
+## Also shipped (Session 81 cont.) — the Fact Sheet Curate arc, 3 more merged PRs
+
+After the nudges, Sam pivoted to the public Fact Sheet: "be able to add or delete anywhere there are boxes or images." All landed on `fact-sheet/` (standalone — goes live on the next Pages deploy, no daily-cron dispatch):
+
+1. **#576 — Curate boxes** (`fact-sheet/factsheet_edit.js`): ＋ **add** a box (clones the section's representative box → sample text, so a new box always matches the section format), **✕ delete** (added box = true delete, baked box = hide), **drag-reorder**.
+2. **#578 — Curate images**: 🖼 **add** (upload), **S/M/L/Full resize**, **⤢ replace**, **✕ delete**. Image *bytes* go in a new public-read / reviewer-write Supabase **Storage bucket `factsheet-images`** (`fact-sheet/supabase_factsheet_images.sql`); the override stores the URL.
+3. **#577 — "My CPL Stories" section**: 4 random story cards from `map.rccd.edu/cplstories/` + a "See all ↗" link, sourced by **headless Chromium on a runner** (`tools/source_cpl_stories.mjs` + `.github/workflows/cpl-stories.yml`) — the site is SiteGround-bot-protected, so a `curl` gets a CAPTCHA stub; Playwright passes the JS challenge.
+
+**The crux to carry forward:** boxes + images both ride the **unchanged `factsheet_overrides` table** via **reserved key namespaces** (`|add|`, `|__order`, `|img|`, `|fig|`) the overlay *materializes* — no schema migration, and `index.html` stayed untouched (the overlay injects all chrome). New KB note: `docs/kb-notes/methodology-reserved-key-namespaces-on-overrides-table.md`; full story in `docs/fact_sheet_lessons.md` (the three 2026-06-28 StarFarout sections). Suite **99/99**. So the Curate surface is now full: text edit / hide / add / delete / reorder boxes + images. **One-time Sam toggle still pending** (from #570): add the Fact Sheet URL (or `…/cpl-project-tracker/**`) to Supabase **Auth → Redirect URLs** so *direct* magic-link sign-in from the Fact Sheet completes on the page.
+
 ## The carryover you own (priority order)
 
 **AUTONOMOUS (merge on green, no Sam gate):**
