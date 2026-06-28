@@ -52,24 +52,33 @@ const stories = await page.evaluate(() => {
   const clean = (s) => (s || '').replace(/\s+/g, ' ').trim();
   const out = [];
   document.querySelectorAll('.cpl-stories .card, .card').forEach((card) => {
-    const h = card.querySelector('h2, h3, .card-header');
+    // Name: the <h2>/<h3> only (NOT .card-header, which also holds the badge).
+    const h = card.querySelector('h2, h3');
     const name = clean(h && h.textContent);
     const img = card.querySelector('img');
-    const src = img && (img.currentSrc || img.src) || '';
-    const content = card.querySelector('.card-content');
-    const footer = card.querySelector('.card-footer');
-    // Quote = the card body minus the name heading.
-    let quote = clean(content && content.textContent);
-    if (!quote) {
-      const c = card.cloneNode(true);
-      c.querySelectorAll('h2,h3,.card-header,.card-footer,img,style,script').forEach((n) => n.remove());
-      quote = clean(c.textContent);
-    }
-    const meta = clean(footer && footer.textContent);
-    // Keep only real story cards: a name + (a photo or a quote).
-    if (name && name.length <= 40 && (src || quote)) out.push({ name, img: src, quote, meta });
+    const src = (img && (img.currentSrc || img.src)) || '';
+    const content = card.querySelector('.card-content') || card;
+    let body = clean(content.textContent);
+    // Strip the leading name + badge + credits + pathway so we keep the story.
+    if (name && body.indexOf(name) === 0) body = body.slice(name.length).trim();
+    body = body
+      .replace(/^[✓✔]\s*/i, '')
+      .replace(/^\d+\s*Credits?\s*(Received|Offered)\s*/i, '')
+      .replace(/^[✓✔]?\s*(Industry Certification|Portfolio|Military\/JST(\s*Upload)?|Credit By Exam|Credit by Exam)\s*/i, '')
+      .replace(/^\d+\s*Credits?\s*(Received|Offered)\s*/i, '')
+      .trim();
+    // The "X → Y" pathway line (career → outcome), if present.
+    const pm = body.match(/^([^.“"]{3,60}?\s*→\s*[^.“"]{3,60}?)(?=[A-Z“"]|$)/);
+    const pathway = pm ? clean(pm[1]) : '';
+    if (pathway) body = body.slice(pathway.length).trim();
+    // Prefer the smart-quoted testimonial; else a short description blurb.
+    const qm = body.match(/[“"]([^”"]{12,400})[”"]/);
+    const quote = qm ? clean(qm[1]) : clean(body).slice(0, 220);
+    const meta = clean((card.querySelector('.card-footer') || {}).textContent || '');
+    // Keep only real story cards: a short name + (a photo or some text).
+    if (name && name.length <= 32 && (src || quote)) out.push({ name, img: src, pathway, quote, meta });
   });
-  // De-dupe by name (some themes duplicate a card for mobile/desktop).
+  // De-dupe by name (themes sometimes duplicate a card for mobile/desktop).
   const seen = {}, uniq = [];
   for (const s of out) { const k = s.name.toLowerCase(); if (seen[k]) continue; seen[k] = 1; uniq.push(s); }
   return uniq;
