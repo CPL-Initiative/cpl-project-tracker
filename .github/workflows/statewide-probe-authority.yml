@@ -1,0 +1,30 @@
+# Manual probe: identify the AUTHORITATIVE statewide exhibit in MAP's data.
+#
+# The agent sandbox can't reach the MAP API (egress 403), but a runner can. This
+# pulls View_ArticulatedMAPExhibits and prints, per sample credential, each
+# ExhibitID's distinguishing columns (College/Articulation College/Version/etc.)
+# + its recs to the run log so we can find the combo that marks the one
+# authoritative (MAP-published) statewide exhibit. Curriculum data only, no PII.
+# Commits nothing.
+name: Probe statewide exhibit authority (manual)
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'statewide/_probe_exhibit_authority.py'
+      - '.github/workflows/statewide-probe-authority.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Pull exhibit dataset + analyze authority signal
+        run: python statewide/_probe_exhibit_authority.py
