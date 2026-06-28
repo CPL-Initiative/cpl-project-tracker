@@ -17,15 +17,24 @@
  * var(--token) CSS (no Rule-4 mirror; only the nav button + pane + boot are
  * mirrored in both HTMLs).
  *
- * Content note: until the append-only update_log lands (handoff #5), the
- * per-Activity "update" text reflects creation-era progress (~2026-04). The
- * shell is data-driven, so it freshens automatically once that lands.
+ * Self-freshening (Session 82): the Activity Progress + Spotlights sections fold
+ * in the newest posted status update per item from the Supabase `item_updates`
+ * table (the same source the Activity/project CARDS use via card_updates.js,
+ * keyed `activity:N` / `project:<id>`). A live update REPLACES the creation-era
+ * "update" text for a sub-activity and is appended under a spotlight. Read-only,
+ * anon — fetched once after the first synchronous render and folded in if the
+ * user hasn't started editing.
  */
 (function () {
   "use strict";
 
   var PROXY_URL = window.CPL_REPORT_PROXY_URL || "";
   var CLAUDE_MODEL = "claude-sonnet-4-5-20250929";
+
+  // Supabase (anon, read-only) — mirrors card_updates.js. Used to fold the newest
+  // item_updates into the Activity Progress + Spotlights sections.
+  var SUPABASE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co";
+  var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
 
   // ─── DOM helper ────────────────────────────────────────────────────────────
   function el(tag, attrs, kids) {
@@ -44,6 +53,46 @@
     return n;
   }
   function esc(s) { return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+
+  // ─── Live item_updates (self-freshening) ───────────────────────────────────
+  // Newest row per `item_type:item_id` key, tolerant of unordered input (mirrors
+  // card_updates.js so the report + the cards read the same update).
+  function latestByKey(rows) {
+    var out = {};
+    (rows || []).forEach(function (r) {
+      if (!r || r.item_type == null || r.item_id == null) return;
+      var k = r.item_type + ":" + r.item_id;
+      var cur = out[k];
+      if (!cur || new Date(r.created_at).getTime() > new Date(cur.created_at).getTime()) out[k] = r;
+    });
+    return out;
+  }
+  function fmtDate(iso) {
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return "";
+    try { return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }); }
+    catch (e) { return d.toISOString().slice(0, 10); }
+  }
+
+  var _updates = null, _updatesLoaded = false, _updatesPromise = null;
+  function updateFor(key) { return (_updates && _updates[key]) || null; }
+
+  function fetchUpdates() {
+    if (typeof fetch !== "function") return Promise.resolve([]);
+    return fetch(
+      SUPABASE_URL + "/rest/v1/item_updates?select=id,item_type,item_id,body,author,created_at,edited_at&order=created_at.desc",
+      { headers: { apikey: SUPABASE_ANON } }
+    ).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; });
+  }
+  // Resolve (and cache) the latest-update map. Never rejects.
+  function ensureUpdates() {
+    if (_updatesLoaded) return Promise.resolve(_updates);
+    if (_updatesPromise) return _updatesPromise;
+    _updatesPromise = fetchUpdates().then(function (rows) {
+      _updates = latestByKey(rows); _updatesLoaded = true; return _updates;
+    }, function () { _updates = {}; _updatesLoaded = true; return _updates; });
+    return _updatesPromise;
+  }
 
   // ─── Data → markdown section builders ──────────────────────────────────────
   function kpi(d, key) { return (d.kpis && d.kpis[key]) || null; }
@@ -104,6 +153,13 @@
     out.push("Work proceeded across the four workplan Activities:");
     acts.forEach(function (a) {
       out.push("### " + (a.activity_name || a.activity_id || "Activity"));
+      // Activity-level live update, keyed `activity:N` (N = the activity number
+      // the generator stamps; derive it from the id/name).
+      var actNum = (String(a.activity_id || a.activity_name || "").match(/\d+/) || [])[0];
+      var actUpd = actNum && updateFor("activity:" + actNum);
+      if (actUpd && actUpd.body) {
+        out.push("**Latest update** (" + fmtDate(actUpd.created_at) + "): " + actUpd.body);
+      }
       var subs = a.kpis || [];
       if (!subs.length) { out.push("_No sub-activities recorded._"); return; }
       subs.forEach(function (s) {
@@ -112,7 +168,12 @@
         if (s.status) tail.push(s.status);
         if (typeof s.pct === "number") tail.push(s.pct + "%");
         var bullet = "- " + head + (tail.length ? " (" + tail.join(", ") + ")" : "");
-        if (s.update) bullet += " — " + s.update;
+        // A live posted update (keyed `project:<id>`) REPLACES the creation-era
+        // update text; fall back to the creation-era text when none exists.
+        var live = s.id != null ? updateFor("project:" + s.id) : null;
+        var upd = live && live.body ? live.body : s.update;
+        if (upd) bullet += " — " + upd;
+        if (live && live.created_at) bullet += " (updated " + fmtDate(live.created_at) + ")";
         out.push(bullet);
       });
     });
@@ -158,6 +219,9 @@
     function fmt(p, fallbackTitle, fallbackBody) {
       if (!p) return "### " + fallbackTitle + "\n\n" + fallbackBody;
       var body = p.desc || "";
+      // Append the newest posted update for this project (keyed `project:<id>`).
+      var live = p.id != null ? updateFor("project:" + p.id) : null;
+      if (live && live.body) body += "\n\n**Latest update** (" + fmtDate(live.created_at) + "): " + live.body;
       var meta = [];
       if (p.lead) meta.push("Lead: " + p.lead);
       if (p.budget) meta.push("Budget: " + p.budget);
@@ -224,7 +288,9 @@
   }
 
   // ─── State ─────────────────────────────────────────────────────────────────
-  var state = { md: "", busy: false };
+  // userEdited gates the async live-update refresh: once the curator types, we
+  // never silently rebuild over their edits.
+  var state = { md: "", busy: false, userEdited: false };
 
   // ─── Claude proxy (AI polish) ──────────────────────────────────────────────
   function callClaude(prompt) {
@@ -343,7 +409,7 @@
     // Editor + live preview (two columns; stacks on narrow screens).
     var ta = el("textarea", { "class": "car-edit", spellcheck: "false" }, []);
     ta.value = state.md;
-    ta.addEventListener("input", function () { state.md = ta.value; syncPreview(wrap); });
+    ta.addEventListener("input", function () { state.userEdited = true; state.md = ta.value; syncPreview(wrap); });
     var preview = el("div", { "class": "car-preview", html: mdToHtml(state.md) }, []);
     wrap.appendChild(el("div", { "class": "car-cols" }, [
       el("div", { "class": "car-col-edit" }, [el("div", { "class": "car-col-h" }, ["Edit"]), ta]),
@@ -430,9 +496,18 @@
     if (root && !root.querySelector(".car-wrap")) {
       root.innerHTML = '<p style="color:#888;padding:1rem;">Building the Annual Report draft…</p>';
     }
+    // First paint is synchronous (creation-era). Once the live item_updates land,
+    // re-assemble with them folded in — unless the curator has started editing.
     render();
+    ensureUpdates().then(function () {
+      if (state.userEdited || state.busy || !_updates || !Object.keys(_updates).length) return;
+      state.md = "";   // force a re-assemble that now sees _updates
+      render();
+    });
   }
 
   window.CPL_ANNUAL_REPORT = { boot: boot, render: render,
-    _assemble: assembleMarkdown, _mdToHtml: mdToHtml };
+    _assemble: assembleMarkdown, _mdToHtml: mdToHtml,
+    _latestByKey: latestByKey,
+    _setUpdates: function (m) { _updates = m || {}; _updatesLoaded = true; } };
 })();
