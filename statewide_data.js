@@ -270,7 +270,8 @@ window.CPL_STATEWIDE = {
           "course": "EDUC 200",
           "credit": "2 hours in Introduction to Elementary Classroom Teaching"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-CBEA2-1-001",
@@ -831,7 +832,8 @@ window.CPL_STATEWIDE = {
           "course": "RCCD GE-A RCCD GE Area 3",
           "credit": "5 hours in ELEMENTARY SPANISH"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-CBEA-1-001",
@@ -1145,7 +1147,8 @@ window.CPL_STATEWIDE = {
           "course": "MOA 182",
           "credit": "3 hours in Medical Terminology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CIBL3-1-001|MAPSAS-CIBL4-1-001|MAPSAS-CIBL5-1-001|MAPSAS-CIBL6-1-001|MAPSAS-CIBL7-1-001",
@@ -1322,7 +1325,8 @@ window.CPL_STATEWIDE = {
           "course": "BUAD 6",
           "credit": "3 hours in Business Law I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOA-HDTT-1-001",
@@ -1507,7 +1511,8 @@ window.CPL_STATEWIDE = {
           "course": "HMDT 098",
           "credit": "4 hours in Heavy/Medium Duty Truck Work Experience"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-E1AR-1-001",
@@ -1655,7 +1660,8 @@ window.CPL_STATEWIDE = {
           "course": "ENGL C1000",
           "credit": "3 hours in Academic Reading and Writing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-E1RW-1-001",
@@ -1803,7 +1809,8 @@ window.CPL_STATEWIDE = {
           "course": "ELIC 100",
           "credit": "5 hours in Intensive Reading, Writing, and Reasoning for English Language Learners"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-EC(1-1-001",
@@ -1951,7 +1958,8 @@ window.CPL_STATEWIDE = {
           "course": "ENGL C1000",
           "credit": "3 hours in Academic Reading and Writing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOO-IMT--1-001",
@@ -2099,7 +2107,8 @@ window.CPL_STATEWIDE = {
           "course": "ENGL C1000",
           "credit": "4 hours in Academic Reading and Writing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-ELAC-1-001",
@@ -2247,7 +2256,8 @@ window.CPL_STATEWIDE = {
           "course": "ENGL C1000",
           "credit": "3 hours in Academic Reading and Writing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-CBEM-1-001",
@@ -2552,7 +2562,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJUS 140",
           "credit": "3 hours in Criminal Investigation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-1M1C-1-001",
@@ -2699,7 +2710,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 108",
           "credit": "4 hours in Introduction to Probability and Statistics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-M1S--1-001",
@@ -2846,7 +2858,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 128",
           "credit": "3 hours in Business Statistics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAP-M1S--1-001",
@@ -2993,7 +3006,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 128",
           "credit": "3 hours in Business Statistics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-M1S-1-1-001",
@@ -3140,7 +3154,8 @@ window.CPL_STATEWIDE = {
           "course": "STAT C1000",
           "credit": "4 hours in Introduction to Statistics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAP-M1S-1-1-001",
@@ -3287,7 +3302,8 @@ window.CPL_STATEWIDE = {
           "course": "STAT C1000",
           "credit": "4 hours in Introduction to Statistics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-ITSS-1-001",
@@ -3434,7 +3450,8 @@ window.CPL_STATEWIDE = {
           "course": "STAT C1000",
           "credit": "4 hours in Introduction to Statistics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-SA-1-001",
@@ -3581,7 +3598,8 @@ window.CPL_STATEWIDE = {
           "course": "STAT C1000",
           "credit": "3 hours in Introduction to Statistics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CECC-1-001",
@@ -3733,7 +3751,8 @@ window.CPL_STATEWIDE = {
           "course": "ENGL C1000",
           "credit": "4 hours in Academic Reading and Writing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CCC-1-001|MAPSAS-CCC1-1-001|MAPSAS-CCC2-1-001",
@@ -3891,7 +3910,8 @@ window.CPL_STATEWIDE = {
           "course": "ENGL C1000",
           "credit": "4 hours in Academic Reading and Writing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ACPC-1-001",
@@ -4049,7 +4069,8 @@ window.CPL_STATEWIDE = {
           "course": "CDE 7",
           "credit": "3 hours in CHILD GROWTH AND DEVELOPMENT"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-CGAD-1-001|MAPPRA-PFCG-1-001",
@@ -4197,7 +4218,8 @@ window.CPL_STATEWIDE = {
           "course": "CLDV 01",
           "credit": "3 hours in Child Growth and Development"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-P1TP-1-001",
@@ -4343,7 +4365,8 @@ window.CPL_STATEWIDE = {
           "course": "PSYC C1000",
           "credit": "3 hours in Introduction to Psychology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-P1P--1-001",
@@ -4489,7 +4512,8 @@ window.CPL_STATEWIDE = {
           "course": "PSYC C1000",
           "credit": "3 hours in Introduction to Psychology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-ICD(-1-001|MAPCXH-ICD(1-1-001|MAPCXH-ICD(2-1-001",
@@ -4639,7 +4663,8 @@ window.CPL_STATEWIDE = {
           "course": "CDEV 107",
           "credit": "3 hours in Child Growth and Development (DS1)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-CALH-1-001",
@@ -4785,7 +4810,8 @@ window.CPL_STATEWIDE = {
           "course": "CD 005",
           "credit": "3 hours in Child Development"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-BLB0-1-001",
@@ -4931,7 +4957,8 @@ window.CPL_STATEWIDE = {
           "course": "BUMA 020A",
           "credit": "3 hours in Business Law"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-DPP0-1-001",
@@ -5077,7 +5104,8 @@ window.CPL_STATEWIDE = {
           "course": "PSY 003",
           "credit": "3 hours in Developmental Psychology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-IEOC-1-001",
@@ -5227,7 +5255,8 @@ window.CPL_STATEWIDE = {
           "course": "EDUC 114",
           "credit": "1 hour in Tutoring Reading in Elementary Schools"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-PAWH-1-001",
@@ -5373,7 +5402,8 @@ window.CPL_STATEWIDE = {
           "course": "PSYC C1000",
           "credit": "3 hours in Introduction to Psychology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CCPA-1-001",
@@ -5519,7 +5549,8 @@ window.CPL_STATEWIDE = {
           "course": "BUS 186",
           "credit": "4 hours in Financial Accounting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CHG&2-1-001",
@@ -5665,7 +5696,8 @@ window.CPL_STATEWIDE = {
           "course": "PSYCH 003",
           "credit": "3 hours in Developmental Psychology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-RDH(-1-001",
@@ -5831,7 +5863,8 @@ window.CPL_STATEWIDE = {
           "course": "NS 208",
           "credit": "3 hours in PHARMACOLOGY"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ITP(-1-001|MAPCxS-ITPP1-1-001",
@@ -5979,7 +6012,8 @@ window.CPL_STATEWIDE = {
           "course": "PSYC C1000",
           "credit": "3 hours in Introduction to Psychology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-PA1-1-001",
@@ -6125,7 +6159,8 @@ window.CPL_STATEWIDE = {
           "course": "PSYC C1000",
           "credit": "3 hours in Introduction to Psychology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-M1TD-1-001",
@@ -6274,7 +6309,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 193",
           "credit": "3 hours in Ordinary Differential Equations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-H1OT-1-001",
@@ -6419,7 +6455,8 @@ window.CPL_STATEWIDE = {
           "course": "HIST 102",
           "credit": "3 hours in History of the United States Since 1865"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-MFES1-1-001",
@@ -6564,7 +6601,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 016",
           "credit": "3 hours in Mathematics for Elementary School Teachers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-HSA-1-001",
@@ -6713,7 +6751,8 @@ window.CPL_STATEWIDE = {
           "course": "HIST C1002",
           "credit": "3 hours in United States History since 1865"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEH-ITB2-1-001|MAPCXS-ITB1-1-001|MAPCxS-ITBB-1-001",
@@ -6872,7 +6911,8 @@ window.CPL_STATEWIDE = {
           "course": "BUS 10",
           "credit": "3 hours in Introduction to Business"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CEFA-1-001|MAPSAS-CFA1-1-001|MAPSAS-CFA2-1-001|MAPSAS-CFA3-1-001|MAPSAS-CFAC-1-001|MAPSAS-CFAS-1-001|MAPSAS-CPOA-1-001|MAPSAS-CPOA1-1-001",
@@ -7052,7 +7092,8 @@ window.CPL_STATEWIDE = {
           "course": "ACCT 2",
           "credit": "4 hours in Financial Accounting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEA13-1-001|MAPCXS-CBEF-1-001|MAPCxS-FAA0-1-001",
@@ -7210,7 +7251,8 @@ window.CPL_STATEWIDE = {
           "course": "ACCT 001",
           "credit": "4.5 hours in Financial Accounting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEM-1-001|MAPCXS-M1FC-1-001",
@@ -7361,7 +7403,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 1",
           "credit": "5 hours in Calculus I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-M1TC-1-001",
@@ -7505,7 +7548,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 173",
           "credit": "4 hours in Calculus Third Course"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-M1DE-1-001",
@@ -7649,7 +7693,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 193",
           "credit": "3 hours in Ordinary Differential Equations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-EC&I-1-001",
@@ -7793,7 +7838,8 @@ window.CPL_STATEWIDE = {
           "course": "ENGL 102",
           "credit": "3 hours in Advanced Composition & Introduction to Literature"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-PC(1-1-001",
@@ -7937,7 +7983,8 @@ window.CPL_STATEWIDE = {
           "course": "POLS C1000",
           "credit": "3 hours in American Government and Politics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-AGAP-1-001",
@@ -8081,7 +8128,8 @@ window.CPL_STATEWIDE = {
           "course": "POLS C1000",
           "credit": "3 hours in American Government and Politics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-HSP0-1-001",
@@ -8225,7 +8273,8 @@ window.CPL_STATEWIDE = {
           "course": "PSY 012",
           "credit": "3 hours in Human Sexuality"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-AUGA1-1-001",
@@ -8369,7 +8418,8 @@ window.CPL_STATEWIDE = {
           "course": "POLS C1000",
           "credit": "3 hours in American Government and Politics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEM14-1-001",
@@ -8513,7 +8563,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 073",
           "credit": "5 hours in Multivariable Calculus"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEM15-1-001",
@@ -8657,7 +8708,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 078",
           "credit": "4 hours in Differential Equations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEM16-1-001",
@@ -8801,7 +8853,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 079",
           "credit": "3 hours in Linear Algebra"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CEPO1-1-001|MAPSAS-CEPO5-1-001|MAPSAS-CPOM1-1-001|MAPSAS-CPOM2-1-001|MAPSAS-CPOM57-1-001|MAPSAS-CPOM76-1-001|MAPSAS-CPOM8-1-001|MAPSAS-CPOM81-1-001",
@@ -8996,7 +9049,8 @@ window.CPL_STATEWIDE = {
           "course": "BUAD 91",
           "credit": "3 hours in Principles of Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-POIT-1-001",
@@ -9141,7 +9195,8 @@ window.CPL_STATEWIDE = {
           "course": "CHIL 176",
           "credit": "3 hours in Principles of Infant-Toddler Caregiving"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-OAA-1-001",
@@ -9286,7 +9341,8 @@ window.CPL_STATEWIDE = {
           "course": "CHIL 160",
           "credit": "2 hours in Observation and Assessment of Children"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-OAII-1-001",
@@ -9431,7 +9487,8 @@ window.CPL_STATEWIDE = {
           "course": "CHIL 161",
           "credit": "2 hours in Observations and Issues in Child Development"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-CDCP-1-001|MAPCBEN-CDCP1-1-001|MAPCBEN-CDCP2-1-001|MAPCBEN-CDCP3-1-001",
@@ -9591,7 +9648,8 @@ window.CPL_STATEWIDE = {
           "course": "CHIL 291D",
           "credit": "1 hour in Child Development Center Practicum"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEM1-1-001|MAPCXS-M1SC-1-001",
@@ -9741,7 +9799,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 2",
           "credit": "5 hours in Calculus II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-M1A-1-1-001|MAPCxS-LAM0-1-001",
@@ -9891,7 +9950,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 002B",
           "credit": "4 hours in Linear Algebra"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEM7-1-001|MAPCxS-MAA0-1-001",
@@ -10041,7 +10101,8 @@ window.CPL_STATEWIDE = {
           "course": "ACCT 002",
           "credit": "3.5 hours in Managerial Accounting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-MC-1-001|MAPCxS-MCM0-1-001",
@@ -10191,7 +10252,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 002A",
           "credit": "5 hours in Multivariate Calculus"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-M1M--1-001",
@@ -10334,7 +10396,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 130",
           "credit": "3 hours in Finite Mathematics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-C1\tO-1-001",
@@ -10477,7 +10540,8 @@ window.CPL_STATEWIDE = {
           "course": "COMM C1000",
           "credit": "3 hours in Introduction to Public Speaking"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAP-H1OU-1-001",
@@ -10620,7 +10684,8 @@ window.CPL_STATEWIDE = {
           "course": "HIST 101",
           "credit": "3 hours in History of the United States to 1877"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-H1OU-1-001",
@@ -10763,7 +10828,8 @@ window.CPL_STATEWIDE = {
           "course": "HIST 101",
           "credit": "3 hours in History of the United States to 1877"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-CC(1-1-001",
@@ -10906,7 +10972,8 @@ window.CPL_STATEWIDE = {
           "course": "COMM C1000",
           "credit": "3 hours in Introduction to Public Speaking"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-HA-1-001",
@@ -11049,7 +11116,8 @@ window.CPL_STATEWIDE = {
           "course": "BIO 4",
           "credit": "4 hours in Human Anatomy"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-CAA-1-001",
@@ -11192,7 +11260,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 211",
           "credit": "4 hours in Analytic Geometry and Calculus I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-CBSA-1-001",
@@ -11335,7 +11404,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 211",
           "credit": "4 hours in Analytic Geometry and Calculus I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CAFL1-1-001",
@@ -11478,7 +11548,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 010",
           "credit": "4 hours in College Algebra for Liberal Arts"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRO-CCPR-1-001",
@@ -11621,7 +11692,8 @@ window.CPL_STATEWIDE = {
           "course": "COMM C1000",
           "credit": "3 hours in Introduction to Public Speaking"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CEIS-1-001|MAPSAS-CEIS3-1-001|MAPSAS-CIS2-1-001|MAPSAS-CISA-1-001|MAPSAS-CISA1-1-001|MAPSAS-CISA2-1-001|MAPSAS-CISA3-1-001",
@@ -11810,7 +11882,8 @@ window.CPL_STATEWIDE = {
           "course": "CS 3",
           "credit": "3 hours in Introduction to Computer Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CHOT-1-001|MAPSAS-CHOT2-1-001|MAPSAS-CHOT8-1-001",
@@ -11972,7 +12045,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 4",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CHOT1-1-001|MAPSAS-CHOT3-1-001|MAPSAS-CHOT9-1-001",
@@ -12134,7 +12208,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 4",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-M1FB-1-001",
@@ -12276,7 +12351,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 138",
           "credit": "3 hours in Calculus for Business & Social Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAP-M1FC-1-001",
@@ -12418,7 +12494,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 171",
           "credit": "4 hours in Calculus: First Course"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAP-M1SC-1-001",
@@ -12560,7 +12637,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 172",
           "credit": "4 hours in Calculus Second Course"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-P1T--1-001",
@@ -12702,7 +12780,8 @@ window.CPL_STATEWIDE = {
           "course": "POLSC 130",
           "credit": "3 hours in Political Theory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-M1FC-1-001",
@@ -12844,7 +12923,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 171",
           "credit": "4 hours in Calculus: First Course"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-H1CS-1-001",
@@ -12986,7 +13066,8 @@ window.CPL_STATEWIDE = {
           "course": "HIST 105",
           "credit": "3 hours in Western Civilization Since 1648"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-CBA-1-001",
@@ -13128,7 +13209,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 212",
           "credit": "4 hours in Analytic Geometry and Calculus II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-E-MA1-1-001",
@@ -13270,7 +13352,8 @@ window.CPL_STATEWIDE = {
           "course": "ECON 201",
           "credit": "3 hours in Principles of Macroeconomics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-HOWC1-1-001",
@@ -13412,7 +13495,8 @@ window.CPL_STATEWIDE = {
           "course": "HIST 003",
           "credit": "3 hours in History of World Civilizations - I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-HEA-1-001",
@@ -13554,7 +13638,8 @@ window.CPL_STATEWIDE = {
           "course": "HIST 102",
           "credit": "3 hours in Western Civilization Since 1650"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-HWMA-1-001",
@@ -13700,7 +13785,8 @@ window.CPL_STATEWIDE = {
           "course": "HIST 104",
           "credit": "3 hours in World History Since 1500"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-CITC-1-001",
@@ -13842,7 +13928,8 @@ window.CPL_STATEWIDE = {
           "course": "CLDDV 107",
           "credit": "3 hours in Introduction to Curriculum"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEM11-1-001",
@@ -13984,7 +14071,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 062",
           "credit": "3 hours in Calculus for Business and Social Science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEM12-1-001",
@@ -14126,7 +14214,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 071",
           "credit": "5 hours in Calculus I With Analytic Geometry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEM13-1-001",
@@ -14268,7 +14357,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 072",
           "credit": "5 hours in Calculus II With Analytic Geometry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-AMF-1-001",
@@ -14414,7 +14504,8 @@ window.CPL_STATEWIDE = {
           "course": "ACC 1B",
           "credit": "1.5 hours in Advanced Metal Framing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CP1-1-001|MAPICI-CPC1-1-001",
@@ -14561,6 +14652,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "CIS 095B",
           "credit": "4 hours in Project Planning and Control - A Practicum"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in IT Project Management",
+          "cid": ""
         }
       ]
     },
@@ -14764,7 +14861,8 @@ window.CPL_STATEWIDE = {
           "course": "ACC 1B",
           "credit": "1.5 hours in Advanced Metal Framing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ACDA-1-001",
@@ -15022,7 +15120,8 @@ window.CPL_STATEWIDE = {
           "course": "ACC 1B",
           "credit": "1.5 hours in Advanced Metal Framing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ACDC-1-001",
@@ -15280,7 +15379,8 @@ window.CPL_STATEWIDE = {
           "course": "ACC 1B",
           "credit": "1.5 hours in Advanced Metal Framing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-JCCD-1-001",
@@ -15506,7 +15606,8 @@ window.CPL_STATEWIDE = {
           "course": "ACC 1B",
           "credit": "1.5 hours in Advanced Metal Framing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-JCAC-1-001",
@@ -15732,7 +15833,8 @@ window.CPL_STATEWIDE = {
           "course": "ACC 1B",
           "credit": "1.5 hours in Advanced Metal Framing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-S1\tT-1-001",
@@ -15873,7 +15975,8 @@ window.CPL_STATEWIDE = {
           "course": "SOCIO 101",
           "credit": "3 hours in Introduction to Sociology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-S1TS-1-001",
@@ -16014,7 +16117,8 @@ window.CPL_STATEWIDE = {
           "course": "SOCIO 101",
           "credit": "3 hours in Introduction to Sociology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-C1IC-1-001",
@@ -16155,7 +16259,8 @@ window.CPL_STATEWIDE = {
           "course": "COMM 103",
           "credit": "3 hours in Interpersonal Communication"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-ITKK-1-001",
@@ -16296,7 +16401,8 @@ window.CPL_STATEWIDE = {
           "course": "KIN 001",
           "credit": "3 hours in Introduction to Kinesiology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-P&TM-1-001",
@@ -16437,7 +16543,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 012",
           "credit": "6 hours in Precalculus & Trigonometry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-ACSA-1-001|MAPSAP-C2SA-1-001|MAPSAP-C2TP-1-001|MAPSAS-ACS-1-1-001|MAPSAS-ACS1-1-001|MAPSAS-ACSA-1-001|MAPSAS-ACSA1-1-001|MAPSAS-ACSA3-1-001|MAPSAS-ACSA5-1-001|MAPSAS-ACSA8-1-001|MAPSAS-AECS1-1-001|MAPSAS-AECS2-1-001",
@@ -16654,7 +16761,8 @@ window.CPL_STATEWIDE = {
           "course": "Elective Units",
           "credit": "4.5 hours in Foothill College Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-M1-C-1-001|MAPCxS-TM0C-1-001",
@@ -16801,7 +16909,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 005",
           "credit": "4 hours in Trigonometry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-ITAB-1-001",
@@ -16941,7 +17050,8 @@ window.CPL_STATEWIDE = {
           "course": "ACCT 151A",
           "credit": "4 hours in Introduction to Accounting: Bookkeeping Concepts"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-PTAW-1-001",
@@ -17081,7 +17191,8 @@ window.CPL_STATEWIDE = {
           "course": "ACCT 155",
           "credit": "4 hours in Payroll Tax Accounting with Accounting Software"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-Q-1-001",
@@ -17221,7 +17332,8 @@ window.CPL_STATEWIDE = {
           "course": "ACCT 163",
           "credit": "3 hours in Using QuickBooks"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-M1-1-001",
@@ -17361,7 +17473,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 102",
           "credit": "4 hours in College Algebra for STEM"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-M0C-1-001",
@@ -17501,7 +17614,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 095",
           "credit": "4 hours in Intermediate Algebra"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-M1-C1-1-001",
@@ -17641,7 +17755,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 162",
           "credit": "4 hours in Precalculus"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-M1A--1-001",
@@ -17781,7 +17896,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 111",
           "credit": "3 hours in College Algebra"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-B1BP-1-001",
@@ -17921,7 +18037,8 @@ window.CPL_STATEWIDE = {
           "course": "BIO 101",
           "credit": "4 hours in Biological Principles"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-C1IT1-1-001",
@@ -18061,7 +18178,8 @@ window.CPL_STATEWIDE = {
           "course": "COMM 102",
           "credit": "3 hours in Introduction to Human Communication"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBE--1-001",
@@ -18201,7 +18319,8 @@ window.CPL_STATEWIDE = {
           "course": "ACCT 50",
           "credit": "3 hours in General Accounting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBE-1-1-001",
@@ -18341,7 +18460,8 @@ window.CPL_STATEWIDE = {
           "course": "ACCT 3",
           "credit": "3 hours in Computerized Accounting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ICQC-1-001",
@@ -18481,7 +18601,8 @@ window.CPL_STATEWIDE = {
           "course": "ACCT 3",
           "credit": "3 hours in Computerized Accounting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBED-1-001",
@@ -18621,7 +18742,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH V90",
           "credit": "1 hour in Directed Studies in Mathematics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEI1-1-001",
@@ -18761,7 +18883,8 @@ window.CPL_STATEWIDE = {
           "course": "ACCT V03",
           "credit": "3 hours in Introduction to Accounting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ESWA-1-001",
@@ -18901,7 +19024,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH V43",
           "credit": "4 hours in Elementary Statistics with Applications for Health Care Professionals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-AQ-1-001",
@@ -19041,7 +19165,8 @@ window.CPL_STATEWIDE = {
           "course": "Accounting (ACCTG) 030",
           "credit": "3 hours in QuickBooks"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-E-MA-1-001",
@@ -19181,7 +19306,8 @@ window.CPL_STATEWIDE = {
           "course": "ECON 202",
           "credit": "3 hours in Principles of Microeconomics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CAFS-1-001",
@@ -19321,7 +19447,8 @@ window.CPL_STATEWIDE = {
           "course": "BUAC 010",
           "credit": "3 hours in Computer Accounting for Small Businesses"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-BB0C-1-001",
@@ -19461,7 +19588,8 @@ window.CPL_STATEWIDE = {
           "course": "BUAC 066",
           "credit": "3 hours in Bookkeeping"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-HOWC-1-001",
@@ -19601,7 +19729,8 @@ window.CPL_STATEWIDE = {
           "course": "HIST 004",
           "credit": "3 hours in History of World Civilizations - II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-PA-1-001",
@@ -19741,7 +19870,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 110",
           "credit": "4 hours in Pre-Calculus"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-SBAC-1-001",
@@ -19881,7 +20011,8 @@ window.CPL_STATEWIDE = {
           "course": "ACC 023",
           "credit": "3 hours in Small Business Accounting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-FFSC-1-001",
@@ -20021,7 +20152,8 @@ window.CPL_STATEWIDE = {
           "course": "ACC 033",
           "credit": "1.5 hours in Forecasting Financial Statements Using Excel"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-BFP-1-001",
@@ -20161,7 +20293,8 @@ window.CPL_STATEWIDE = {
           "course": "ACC 034",
           "credit": "1.5 hours in Business Financial Planning Using Excel"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-PABT-1-001",
@@ -20301,7 +20434,8 @@ window.CPL_STATEWIDE = {
           "course": "ACC 052",
           "credit": "3 hours in Payroll and Business Tax Accounting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-QOSC-1-001",
@@ -20441,7 +20575,8 @@ window.CPL_STATEWIDE = {
           "course": "ACC 061",
           "credit": "3 hours in QuickBooks: Online Software"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A1II-1-001",
@@ -20581,7 +20716,8 @@ window.CPL_STATEWIDE = {
           "course": "ACCTG 15",
           "credit": "3 hours in Individual Income Taxes"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A1TO-1-001",
@@ -20721,7 +20857,8 @@ window.CPL_STATEWIDE = {
           "course": "ACCTG 16",
           "credit": "3 hours in Taxation of Corporations, Partnerships, Estates and Trusts"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-AP26-1-001",
@@ -20861,7 +20998,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 187",
           "credit": "4 hours in Pre-Calculus II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-AP27-1-001",
@@ -21001,7 +21139,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 100",
           "credit": "4 hours in Pre-Calculus"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEA19-1-001",
@@ -21141,7 +21280,8 @@ window.CPL_STATEWIDE = {
           "course": "ACCTG 022",
           "credit": "4 hours in Payroll Accounting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEA20-1-001",
@@ -21281,7 +21421,8 @@ window.CPL_STATEWIDE = {
           "course": "ACCTG 030",
           "credit": "3 hours in QuickBooks"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEM8-1-001",
@@ -21421,7 +21562,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 021",
           "credit": "4 hours in Precalculus Algebra"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEM9-1-001",
@@ -21561,7 +21703,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 022",
           "credit": "3 hours in Trigonometry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEM10-1-001",
@@ -21701,7 +21844,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 025",
           "credit": "6 hours in Precalculus Algebra and Trigonometry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRP-ITMA-1-001",
@@ -21841,7 +21985,8 @@ window.CPL_STATEWIDE = {
           "course": "ACCT 102",
           "credit": "4 hours in Managerial Accounting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-M1-C-1-001|MAPCXS-M1A--1-001",
@@ -21987,7 +22132,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 111",
           "credit": "3 hours in College Algebra"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IELA1-1-001",
@@ -22131,7 +22277,8 @@ window.CPL_STATEWIDE = {
           "course": "COMM 8",
           "credit": "3 hours in Elective Course Credits"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IELA3-1-001",
@@ -22275,7 +22422,8 @@ window.CPL_STATEWIDE = {
           "course": "COMM 8",
           "credit": "3 hours in Elective Course Credits"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-HB&A-1-001|MAPCXO-BA-1-001",
@@ -22425,7 +22573,8 @@ window.CPL_STATEWIDE = {
           "course": "BIOL 115",
           "credit": "4 hours in Introductory Topics in Biology: Cells to Ecosystems (formerly Topics in Biology)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-TOIC-1-001|MAPCxS-TA1--1-001",
@@ -22571,7 +22720,8 @@ window.CPL_STATEWIDE = {
           "course": "ACC 051A",
           "credit": "4 hours in Taxation of Individuals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-TOBE-1-001|MAPCxS-TAI-4-1-001",
@@ -22717,7 +22867,8 @@ window.CPL_STATEWIDE = {
           "course": "ACC 051B",
           "credit": "3 hours in Taxation of Business Entities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CCA-14-1-001|MAPSAS-CCA-5-1-001",
@@ -22862,7 +23013,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 3",
           "credit": "3 hours in Trigonometry with Applications"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CPOM1-1-001",
@@ -23005,7 +23157,8 @@ window.CPL_STATEWIDE = {
           "course": "CPL 1",
           "credit": "3 hours in Elective Course Credits"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CPM-1-001",
@@ -23148,7 +23301,8 @@ window.CPL_STATEWIDE = {
           "course": "CPL 1",
           "credit": "3 hours in Elective Course Credits"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CCM-1-001|MAPSAS-CCM1-1-001|MAPSAS-CCM2-1-001|MAPSAS-CCM3-1-001|MAPSAS-CECM-1-001",
@@ -23322,7 +23476,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "3 hours in Mathematical Concepts & Quantitative Reasoning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CT+C-1-001|MAPICI-CT1-1-001|MAPICI-CTC-1-001|MAPICS-CTC-1-001",
@@ -23494,6 +23649,16 @@ window.CPL_STATEWIDE = {
           "course": "COMS 101",
           "credit": "3 hours in Computer Information Systems"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Computer Information Systems",
+          "cid": ""
+        },
+        {
+          "credit": "4 hours in Intro to IT Concepts and Applications",
+          "cid": ""
+        }
       ]
     },
     {
@@ -23654,7 +23819,8 @@ window.CPL_STATEWIDE = {
           "course": "CIT 021",
           "credit": "4 hours in Word Processing: Comprehensive Microsoft Word"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-ASA-2-1-001|MAPSAS-ASA-1-1-001|MAPSAS-ASA3-1-001",
@@ -23811,7 +23977,8 @@ window.CPL_STATEWIDE = {
           "course": "ART 12",
           "credit": "4 hours in 3D Design: Concepts, Theory, and Practice"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IEEA-1-001|MAPSAS-IELA-1-001",
@@ -23961,7 +24128,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IEEA1-1-001|MAPSAS-IELA2-1-001",
@@ -24111,7 +24279,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ACPP-1-001|MAPICI-CPP(1-1-001",
@@ -24253,7 +24422,8 @@ window.CPL_STATEWIDE = {
           "course": "ACC 62",
           "credit": "3 hours in Payroll Accounting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-AP1F-1-001",
@@ -24393,7 +24563,8 @@ window.CPL_STATEWIDE = {
           "course": "ACC 62",
           "credit": "3 hours in Payroll Accounting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-AFPC-1-001|MAPICI-FPC-1-001",
@@ -24535,7 +24706,8 @@ window.CPL_STATEWIDE = {
           "course": "ACC 62",
           "credit": "3 hours in Payroll Accounting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-IQOC-1-001",
@@ -24675,7 +24847,8 @@ window.CPL_STATEWIDE = {
           "course": "ACC 65",
           "credit": "3 hours in QuickBooks Accounting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-H&RB-1-001",
@@ -24815,7 +24988,8 @@ window.CPL_STATEWIDE = {
           "course": "ACC 67",
           "credit": "4 hours in U.S. and California Income Tax Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-IRS(-1-001",
@@ -24955,7 +25129,8 @@ window.CPL_STATEWIDE = {
           "course": "ACC 67",
           "credit": "4 hours in U.S. and California Income Tax Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-CAMA-1-001",
@@ -25095,7 +25270,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 116",
           "credit": "3 hours in College and Matrix Algebra"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-RT-1-001",
@@ -25242,7 +25418,8 @@ window.CPL_STATEWIDE = {
           "course": "KIN 167",
           "credit": "1 hour in WEIGHT TRAINING"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-M1A--1-001",
@@ -25380,7 +25557,8 @@ window.CPL_STATEWIDE = {
           "course": "MUSG 101",
           "credit": "3 hours in Music Appreciation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CEPO2-1-001|MAPSAS-CEPO6-1-001|MAPSAS-CPOM10-1-001|MAPSAS-CPOM3-1-001|MAPSAS-CPOM4-1-001|MAPSAS-CPOM58-1-001|MAPSAS-CPOM77-1-001|MAPSAS-CPOM82-1-001",
@@ -25569,7 +25747,8 @@ window.CPL_STATEWIDE = {
           "course": "BUAD 77",
           "credit": "3 hours in Principles of Marketing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-C1-S-1-001|MAPICI-MOSE-1-001|MAPICI-O2(T1-1-001",
@@ -25722,7 +25901,8 @@ window.CPL_STATEWIDE = {
           "course": "CIT 114",
           "credit": "3 hours in Spreadsheets: Excel"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CEFL1-1-001|MAPSAS-CFLI1-1-001|MAPSAS-CFLI2-1-001|MAPSAS-CFLI27-1-001|MAPSAS-CFLI4-1-001|MAPSAS-CFLI6-1-001",
@@ -25903,7 +26083,8 @@ window.CPL_STATEWIDE = {
           "course": "FREN 02",
           "credit": "5 hours in Elementary French II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CEGL-1-001|MAPSAS-CGLI1-1-001|MAPSAS-CGLI2-1-001|MAPSAS-CGLI27-1-001|MAPSAS-CGLI4-1-001|MAPSAS-CGLI6-1-001",
@@ -26084,7 +26265,8 @@ window.CPL_STATEWIDE = {
           "course": "GERN 02",
           "credit": "4 hours in Elementary German II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-ASA-1-1-001|MAPSAS-ASA--1-001|MAPSAS-ASA2-1-001|MAPSAS-ASA21-1-001",
@@ -26241,7 +26423,8 @@ window.CPL_STATEWIDE = {
           "course": "GE 3 Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IELA4-1-001|MAPSAS-ILAL-1-001|MAPSAS-ILAL8-1-001",
@@ -26396,7 +26579,8 @@ window.CPL_STATEWIDE = {
           "course": "GE 3 Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-ITM1-1-001",
@@ -26548,7 +26732,8 @@ window.CPL_STATEWIDE = {
           "course": "M/SVN 060",
           "credit": "3 hours in Introduction to Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AS1-1-001|MAPSAS-AES5-1-001",
@@ -26697,7 +26882,8 @@ window.CPL_STATEWIDE = {
           "course": "CSU Units",
           "credit": "3 hours in CSU Semester Units Earned toward CSU Admission"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-AITC-1-001",
@@ -26834,7 +27020,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJU 234",
           "credit": "3 hours in Introduction to Crime"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CS3-1-001|MAPICI-CSC1-1-001",
@@ -27018,6 +27205,12 @@ window.CPL_STATEWIDE = {
           "course": "CIS 055",
           "credit": "3 hours in Systems and Network Administration"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Systems and Network Administration",
+          "cid": "ITIS 155"
+        }
       ]
     },
     {
@@ -27179,7 +27372,8 @@ window.CPL_STATEWIDE = {
           "course": "GE 2",
           "credit": "3 hours in Area 2 - Mathematical Concepts and Quantitative Reasoning (3-5 units)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CP20-1-001|MAPSAS-CP22-1-001|MAPSAS-CP25-1-001|MAPSAS-CP26-1-001|MAPSAS-CP7-1-001",
@@ -27339,7 +27533,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area D2",
           "credit": "3 hours in Communication and Analytical Thinking"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CEIB-1-001|MAPSAS-CIBL-1-001|MAPSAS-CIBL1-1-001|MAPSAS-CIBL2-1-001",
@@ -27500,7 +27695,8 @@ window.CPL_STATEWIDE = {
           "course": "COMM 8",
           "credit": "3 hours in Elective Course Credits"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CEIT-1-001|MAPSAS-CITE-1-001|MAPSAS-CITE1-1-001|MAPSAS-CITE2-1-001",
@@ -27665,7 +27861,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 4B",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEH-ITBS-1-001",
@@ -27801,7 +27998,8 @@ window.CPL_STATEWIDE = {
           "course": "BIOLOGY 003",
           "credit": "4 hours in INTRODUCTION TO BIOLOGY"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-B1B--1-001",
@@ -27937,7 +28135,8 @@ window.CPL_STATEWIDE = {
           "course": "BIO 111",
           "credit": "4 hours in General Biology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPON-SMC-1-001",
@@ -28073,7 +28272,8 @@ window.CPL_STATEWIDE = {
           "course": "BIO 212",
           "credit": "3 hours in Human Biology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CCSI-1-001",
@@ -28213,7 +28413,8 @@ window.CPL_STATEWIDE = {
           "course": "ADM JUS 111",
           "credit": "3 hours in Advanced Forensic Science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CFJC-1-001|MAPICI-CFJA-1-001",
@@ -28416,7 +28617,8 @@ window.CPL_STATEWIDE = {
           "course": "KINS B21FD",
           "credit": "1 hour in Fitness and Conditioning for Fire Fighters"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-C&HR-1-001",
@@ -28551,7 +28753,8 @@ window.CPL_STATEWIDE = {
           "course": "CRIM 05",
           "credit": "3 hours in Community and Human Relations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-AJ2C-1-001",
@@ -28686,7 +28889,8 @@ window.CPL_STATEWIDE = {
           "course": "ADM JUS 002",
           "credit": "3 hours in CONCEPTS OF CRIMINAL LAW"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-AJ01-1-001",
@@ -28821,7 +29025,8 @@ window.CPL_STATEWIDE = {
           "course": "ADM JUS 067",
           "credit": "3 hours in COMMUNITY RELATIONS I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-A2OC-1-001",
@@ -28956,7 +29161,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJU 203",
           "credit": "3 hours in Concepts of Criminal Law"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2OC-1-001",
@@ -29091,7 +29297,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJU 203",
           "credit": "3 hours in Concepts of Criminal Law"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2-J-1-001",
@@ -29226,7 +29433,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJU 232",
           "credit": "3 hours in Juvenile Justice Procedures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-CATJ-1-001",
@@ -29361,7 +29569,8 @@ window.CPL_STATEWIDE = {
           "course": "AJ 160 C",
           "credit": "3 hours in Community and the Justice System"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-FH-L-1-001|MAPCXH-FUSD1-1-001",
@@ -29498,7 +29707,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 1",
           "credit": "3 hours in Introduction to the Criminal Justice System"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ITTC-1-001",
@@ -29633,7 +29843,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 1",
           "credit": "3 hours in Introduction to the Criminal Justice System"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-AITA-1-001",
@@ -29768,7 +29979,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJU 201",
           "credit": "3 hours in Introduction to Administration of Justice"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CATJ1-1-001",
@@ -29903,7 +30115,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 4",
           "credit": "3 hours in Community and the Justice System"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-JP-1-001",
@@ -30038,7 +30251,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 6",
           "credit": "3 hours in Juvenile Procedures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-OW-1-001",
@@ -30173,7 +30387,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD 50",
           "credit": "2 hours in Oxyacetylene Welding"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-BEAW-1-001",
@@ -30308,7 +30523,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD 51",
           "credit": "2 hours in Basic Elec Arc Welding"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-PRAC-1-001",
@@ -30443,7 +30659,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD 60",
           "credit": "3 hours in Print Reading and Computations for Welders"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-BAW-1-001",
@@ -30578,7 +30795,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD 70A",
           "credit": "3 hours in Beginning Arc Welding"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-IAW-1-001",
@@ -30713,7 +30931,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD 70B",
           "credit": "3 hours in Intermediate Arc Welding"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-CFW-1-001",
@@ -30848,7 +31067,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD 70C",
           "credit": "3 hours in Certification for Welders"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-AWCA-1-001",
@@ -30983,7 +31203,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD 91",
           "credit": "3 hours in Automotive Welding, Cutting and Modification"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AGAP1-1-001|MAPSAS-A-UG-1-001|MAPSAS-AE-U-1-001|MAPSAS-AEUG-1-001|MAPSAS-AEUG1-1-001|MAPSAS-AGAP1-1-001|MAPSAS-AP(U1-1-001|MAPSAS-AUG&-1-001|MAPSAS-AUG&1-1-001|MAPSAS-AUG&2-1-001|MAPSAS-AUGA-1-001|MAPSAS-AUSG-1-001|MAPSAS-AUSG1-1-001",
@@ -31202,7 +31423,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "4.5 hours in SOCIAL AND BEHAVIORAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-ASA--1-001|MAPSAS-AESA3-1-001|MAPSAS-AESA6-1-001|MAPSAS-ASA-2-1-001|MAPSAS-ASA-5-1-001|MAPSAS-ASAD-1-001",
@@ -31377,7 +31599,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 8",
           "credit": "3 hours in Participatory Arts"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2OC-1-001|MAPCXS-COCL-1-001",
@@ -31518,7 +31741,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 2",
           "credit": "3 hours in Concepts of Criminal Law"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-A2AO-1-001",
@@ -31657,7 +31881,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJU 204",
           "credit": "3 hours in Legal Aspects of Evidence"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-JLAP-1-001",
@@ -31796,7 +32021,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 010",
           "credit": "3 hours in Juvenile Law and Procedures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-SFLE-1-001",
@@ -31930,7 +32156,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 111",
           "credit": "3 hours in Self Defense for Law Enforcement"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CJWC-1-001",
@@ -32064,7 +32291,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 7",
           "credit": "3 hours in Criminal Justice Written Communications"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-AJ4C-1-001",
@@ -32198,7 +32426,8 @@ window.CPL_STATEWIDE = {
           "course": "ADM JUS 004",
           "credit": "3 hours in PRINCIPLES AND PROCEDURES OF THE JUSTICE SYSTEM"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-AJ6C-1-001",
@@ -32332,7 +32561,8 @@ window.CPL_STATEWIDE = {
           "course": "ADM JUS 006",
           "credit": "3 hours in PATROL PROCEDURES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-AJ0-1-001",
@@ -32466,7 +32696,8 @@ window.CPL_STATEWIDE = {
           "course": "ADM JUS 049",
           "credit": "3 hours in NARCOTICS AND VICE CONTROL"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-AJ1C2-1-001",
@@ -32600,7 +32831,8 @@ window.CPL_STATEWIDE = {
           "course": "ADM JUS 160",
           "credit": "3 hours in POLICE ORGANIZATION AND ADMINISTRATION"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2OJ-1-001",
@@ -32734,7 +32966,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJU 202",
           "credit": "3 hours in Principles/Procedures of Justice System"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-A2OJ-1-001",
@@ -32868,7 +33101,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJU 202",
           "credit": "3 hours in Principles/Procedures of Justice System"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2OJ-1-001",
@@ -33002,7 +33236,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJU 202",
           "credit": "3 hours in Principles/Procedures of Justice System"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-A2P--1-001",
@@ -33136,7 +33371,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJU 213",
           "credit": "3 hours in Patrol Procedures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2P--1-001",
@@ -33270,7 +33506,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJU 213",
           "credit": "3 hours in Patrol Procedures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2A--1-001",
@@ -33404,7 +33641,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJU 217",
           "credit": "3 hours in Substance Abuse"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-A3IC-1-001",
@@ -33538,7 +33776,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJU 310",
           "credit": "3 hours in Communications in Criminal Justice"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-S12--1-001",
@@ -33672,7 +33911,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 102",
           "credit": "5 hours in Spanish 2"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-A2T1-1-001",
@@ -33806,7 +34046,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJU 222",
           "credit": "3 hours in Profiling Terrorism"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2T--1-001",
@@ -33940,7 +34181,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJU 222",
           "credit": "3 hours in Profiling Terrorism"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2FT-1-001",
@@ -34074,7 +34316,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJU 219",
           "credit": "3 hours in Corrections Firearms Training"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2TF-1-001",
@@ -34208,7 +34451,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJU 215",
           "credit": "3 hours in Introduction to Firearms"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2A--1-001",
@@ -34342,7 +34586,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJU 217",
           "credit": "3 hours in Substance Abuse"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2VC-1-001",
@@ -34476,7 +34721,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJU 243",
           "credit": "3 hours in Domestic Violence Crisis Intervention"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A3IC-1-001",
@@ -34610,7 +34856,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJU 310",
           "credit": "3 hours in Communications in Criminal Justice"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2AF-1-001",
@@ -34744,7 +34991,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJU 216",
           "credit": "3 hours in Advanced Firearms and Range Application"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRP-CBPA-1-001",
@@ -34878,7 +35126,8 @@ window.CPL_STATEWIDE = {
           "course": "AJ 54",
           "credit": "3 hours in Investigative Reporting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEJ1-1-001",
@@ -35012,7 +35261,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ V06",
           "credit": "3 hours in Criminal Justice Report Writing and Courtroom Procedures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-AOJ6-1-001",
@@ -35146,7 +35396,8 @@ window.CPL_STATEWIDE = {
           "course": "ADMJ 68",
           "credit": "3 hours in Criminal Justice Report Writing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-AOJ8-1-001",
@@ -35280,7 +35531,8 @@ window.CPL_STATEWIDE = {
           "course": "ADMJ 85",
           "credit": "3 hours in P.C. 832 Arrest and Control Certification"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-PAPO-1-001",
@@ -35414,7 +35666,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJ 2",
           "credit": "3 hours in Principles and Procedures of the Justice System"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CLA3-1-001",
@@ -35548,7 +35801,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJ 3",
           "credit": "3 hours in Concepts of Criminal Law"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CEA4-1-001",
@@ -35682,7 +35936,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJ 4",
           "credit": "3 hours in Legal Aspects of Evidence"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-IAIA-1-001",
@@ -35816,7 +36071,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJ 24",
           "credit": "3 hours in Interviewing & Interrogation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-SI-1-001",
@@ -35950,7 +36206,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 102",
           "credit": "4.5 hours in Spanish II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-C2CC-1-001",
@@ -36084,7 +36341,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 230 C",
           "credit": "4 hours in Cisco Networking 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CCP-1-001",
@@ -36218,7 +36476,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 3",
           "credit": "3 hours in Criminal Court Process"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CBPA-1-001",
@@ -36352,7 +36611,8 @@ window.CPL_STATEWIDE = {
           "course": "ADM JUS 111",
           "credit": "3 hours in Advanced Forensic Science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFE(-1-001",
@@ -36486,7 +36746,8 @@ window.CPL_STATEWIDE = {
           "course": "ADM JUS 111",
           "credit": "3 hours in Advanced Forensic Science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CLPE-1-001",
@@ -36620,7 +36881,8 @@ window.CPL_STATEWIDE = {
           "course": "ADM JUS 111",
           "credit": "3 hours in Advanced Forensic Science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFP(-1-001",
@@ -36754,7 +37016,8 @@ window.CPL_STATEWIDE = {
           "course": "ADM JUS 250",
           "credit": "4 hours in Forensic Photography"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBE-5-1-001",
@@ -36888,7 +37151,8 @@ window.CPL_STATEWIDE = {
           "course": "ADM JUS 001",
           "credit": "3 hours in Introduction To Administration Of Justice"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEC2-1-001",
@@ -37022,7 +37286,8 @@ window.CPL_STATEWIDE = {
           "course": "CHEM 001B",
           "credit": "5 hours in General Chemistry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-E(CO-1-001|MAPICI-ECEH-1-001|MAPICI-ECEH1-1-001|MAPICS-CEHC-1-001",
@@ -37177,7 +37442,8 @@ window.CPL_STATEWIDE = {
           "course": "CMPET 325",
           "credit": "3 hours in Certified Ethical Hacker Certification Prep"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-A12-1-001",
@@ -37320,7 +37586,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJUS 160",
           "credit": "3 hours in Community Relations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-AJ1C-1-001|MAPCxS-ITAO1-1-001",
@@ -37465,7 +37732,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJ 1",
           "credit": "3 hours in Introduction to the Administration of Justice"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CRA5-1-001",
@@ -37608,7 +37876,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 011",
           "credit": "3 hours in Community Relations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CIA1-1-001",
@@ -37751,7 +38020,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 051",
           "credit": "3 hours in Criminal Investigation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2P--1-001|MAPCXS-CBEP1-1-001",
@@ -37891,7 +38161,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ V07",
           "credit": "3 hours in Patrol Procedures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-C1CC-1-001",
@@ -38024,7 +38295,8 @@ window.CPL_STATEWIDE = {
           "course": "CHEM 143",
           "credit": "4 hours in Introductory College Chemistry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAP-C1CC-1-001",
@@ -38157,7 +38429,8 @@ window.CPL_STATEWIDE = {
           "course": "CHEM 143",
           "credit": "4 hours in Introductory College Chemistry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-CCC-1-001",
@@ -38290,7 +38563,8 @@ window.CPL_STATEWIDE = {
           "course": "CHEM 143",
           "credit": "4 hours in Introductory College Chemistry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-AHA-1-001",
@@ -38427,7 +38701,8 @@ window.CPL_STATEWIDE = {
           "course": "ART 102",
           "credit": "3 hours in Art History: Renaissance to 21st Century (formerly Art History: Renaissance to 20th Century Art)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-CA-1-001",
@@ -38560,7 +38835,8 @@ window.CPL_STATEWIDE = {
           "course": "CHEM 100",
           "credit": "4 hours in Introduction to Chemistry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CL-1-001|MAPICI-CL1-1-001|MAPICI-CL2-1-001|MAPICI-CL4-1-001|MAPICI-CLC-1-001",
@@ -38773,6 +39049,16 @@ window.CPL_STATEWIDE = {
         {
           "course": "CIS 030",
           "credit": "3 hours in Introduction to Linux Operating System"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Systems and Network Administration",
+          "cid": ""
+        },
+        {
+          "credit": "4 hours in UNIX/LINUX Fundamentals",
+          "cid": ""
         }
       ]
     },
@@ -39035,7 +39321,8 @@ window.CPL_STATEWIDE = {
           "course": "HIST 017A",
           "credit": "4 hours in HISTORY OF THE UNITED STATES TO 1815"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-AP(O-1-001|MAPSAH-AP3-1-001|MAPSAS-A-P4-1-001|MAPSAS-A:P1-1-001|MAPSAS-AEP4-1-001|MAPSAS-AEP6-1-001|MAPSAS-AP(O-1-001|MAPSAS-AP(O1-1-001|MAPSAS-AP1-1-001|MAPSAS-AP12-1-001|MAPSAS-AP19-1-001|MAPSAS-AP4-1-001",
@@ -39244,7 +39531,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 260",
           "credit": "5 hours in PRECALCULUS"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-FLET-1-001",
@@ -39428,7 +39716,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJUS 140",
           "credit": "3 hours in Criminal Investigation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2AO-1-001|MAPCXS-AJ3C-1-001|MAPCXS-LAOE1-1-001",
@@ -39583,7 +39872,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 5",
           "credit": "3 hours in Legal Aspects of Evidence"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-AJ5X-1-001",
@@ -39730,7 +40020,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJUS 140",
           "credit": "3 hours in CRIMINAL INVESTIGATION"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2R--1-001",
@@ -39877,7 +40168,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJUS 160",
           "credit": "3 hours in Community Relations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-A2R--1-001",
@@ -40024,7 +40316,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJUS 160",
           "credit": "3 hours in Community Relations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2TC-1-001",
@@ -40171,7 +40464,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJUS 200",
           "credit": "3 hours in Introduction to Corrections"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-FHSC1-1-001",
@@ -40318,7 +40612,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJUS 200",
           "credit": "3 hours in Introduction to Corrections"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-P8T--1-001",
@@ -40473,7 +40768,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 058",
           "credit": "3 hours in Introduction to Corrections"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CCNA5-1-001",
@@ -40610,7 +40906,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 072",
           "credit": "4 hours in Local Area Networks"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-KCFD-1-001",
@@ -40742,7 +41039,8 @@ window.CPL_STATEWIDE = {
           "course": "KINS B21FD",
           "credit": "1 hour in Fitness and Conditioning for Fire Fighters"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-SCBE-1-001",
@@ -40874,7 +41172,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 001A",
           "credit": "5 hours in Elementary Spanish 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-S11--1-001",
@@ -41006,7 +41305,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 101",
           "credit": "5 hours in Spanish 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAP-S1-S-1-001",
@@ -41138,7 +41438,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 101",
           "credit": "5 hours in Spanish 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-S11--1-001|MAPCXS-S12-1-001",
@@ -41272,7 +41573,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 101",
           "credit": "5 hours in Spanish 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEE-1-001",
@@ -41404,7 +41706,8 @@ window.CPL_STATEWIDE = {
           "course": "ESL 120A",
           "credit": "3 hours in Intermediate Grammar for Reading and Writing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEE1-1-001",
@@ -41536,7 +41839,8 @@ window.CPL_STATEWIDE = {
           "course": "ESL 120B",
           "credit": "3 hours in High-Intermediate Grammar for Reading and Writing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEE2-1-001",
@@ -41668,7 +41972,8 @@ window.CPL_STATEWIDE = {
           "course": "ESL 121A",
           "credit": "6 hours in Intermediate Reading and Writing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEE3-1-001",
@@ -41800,7 +42105,8 @@ window.CPL_STATEWIDE = {
           "course": "ESL 121B",
           "credit": "6 hours in High-Intermediate Reading and Writing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEE4-1-001",
@@ -41932,7 +42238,8 @@ window.CPL_STATEWIDE = {
           "course": "ESL 130A",
           "credit": "3 hours in Beginning Grammar for Reading and Writing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEE5-1-001",
@@ -42064,7 +42371,8 @@ window.CPL_STATEWIDE = {
           "course": "ESL 130B",
           "credit": "3 hours in High-Beginning Grammar for Reading and Writing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEE6-1-001",
@@ -42196,7 +42504,8 @@ window.CPL_STATEWIDE = {
           "course": "ESL 131A",
           "credit": "6 hours in Beginning Reading and Writing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEE7-1-001",
@@ -42328,7 +42637,8 @@ window.CPL_STATEWIDE = {
           "course": "ESL 131B",
           "credit": "6 hours in High-Beginning Reading and Writing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-S1SI-1-001",
@@ -42460,7 +42770,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 101",
           "credit": "4.5 hours in Spanish I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXM-MBT--1-001",
@@ -42604,7 +42915,8 @@ window.CPL_STATEWIDE = {
           "course": "KINE 151",
           "credit": "1.5 hours in Weight Training"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-HARW-1-001",
@@ -42736,7 +43048,8 @@ window.CPL_STATEWIDE = {
           "course": "ESL 107 C",
           "credit": "5 hours in High-Intermediate Academic Reading/Writing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-ECTA-1-001",
@@ -42868,7 +43181,8 @@ window.CPL_STATEWIDE = {
           "course": "ESL 108 C",
           "credit": "5 hours in Exploring Culture through Academic Discourse I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-ARAW-1-001",
@@ -43000,7 +43314,8 @@ window.CPL_STATEWIDE = {
           "course": "ESL 109 C",
           "credit": "5 hours in Exploring Culture through Academic Discourse II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-AAR&-1-001",
@@ -43132,7 +43447,8 @@ window.CPL_STATEWIDE = {
           "course": "ESL 108 C",
           "credit": "5 hours in Exploring Culture through Academic Discourse I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBES4-1-001",
@@ -43264,7 +43580,8 @@ window.CPL_STATEWIDE = {
           "course": "ART V02B",
           "credit": "3 hours in Introduction to the History of Western Art II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-CBE(-1-001",
@@ -43396,7 +43713,8 @@ window.CPL_STATEWIDE = {
           "course": "ESL 108 C",
           "credit": "5 hours in Exploring Culture through Academic Discourse I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-SOAF-1-001|MAPCXS-SOAF1-1-001|MAPCXS-SOAF2-1-001",
@@ -43530,7 +43848,8 @@ window.CPL_STATEWIDE = {
           "course": "ARTH 5",
           "credit": "3 hours in Survey of Western Art from Renaissance to Contemporary"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-P2A-1-001",
@@ -43662,7 +43981,8 @@ window.CPL_STATEWIDE = {
           "course": "PHY 102",
           "credit": "4 hours in Basic Electricity and Modern Physics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CSWW5-1-001",
@@ -43794,7 +44114,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN B1",
           "credit": "4 hours in Elementary Spanish I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:T-1-001|MAPSAS-CT(T-1-001|MAPSAS-CT1-1-001|MAPSAS-CT10-1-001|MAPSAS-CT11-1-001|MAPSAS-CT12-1-001|MAPSAS-CT13-1-001|MAPSAS-CT2-1-001|MAPSAS-CT3-1-001|MAPSAS-CT4-1-001|MAPSAS-CT5-1-001|MAPSAS-CT6-1-001|MAPSAS-CT7-1-001|MAPSAS-CT8-1-001|MAPSAS-CT9-1-001",
@@ -44008,7 +44329,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-2",
           "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-ACSP-1-001|MAPSAS-A-CS-1-001|MAPSAS-ACS--1-001|MAPSAS-ACSP-1-001|MAPSAS-ACSP1-1-001|MAPSAS-ACSP2-1-001|MAPSAS-ACSP4-1-001|MAPSAS-AECS-1-001|MAPSAS-AECS4-1-001",
@@ -44203,7 +44525,8 @@ window.CPL_STATEWIDE = {
           "course": "Elective Units",
           "credit": "4.5 hours in Foothill College Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-AJ02-1-001",
@@ -44350,7 +44673,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJUS 200",
           "credit": "3 hours in INTRODUCTION TO CORRECTIONS"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICG-DOVP-1-001",
@@ -44525,7 +44849,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJUS 140",
           "credit": "3 hours in Criminal Investigation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-B2ME-1-001|MAPICI-MOSE1-1-001|MAPICI-O2(T2-1-001",
@@ -44671,7 +44996,8 @@ window.CPL_STATEWIDE = {
           "course": "BIT 262",
           "credit": "1 hour in Advanced Microsoft Excel"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-MOSO-1-001|MAPICI-O3(T-1-001",
@@ -44811,7 +45137,8 @@ window.CPL_STATEWIDE = {
           "course": "BIT 316",
           "credit": "1 hour in Introduction to Microsoft Outlook"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEC-1-001|MAPCxS-CAA0-1-001",
@@ -44949,7 +45276,8 @@ window.CPL_STATEWIDE = {
           "course": "ANTH 002",
           "credit": "3 hours in Cultural Anthropology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-AS3D-1-001",
@@ -45080,7 +45408,8 @@ window.CPL_STATEWIDE = {
           "course": "ART 122",
           "credit": "3 hours in 3D Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-P1A-1-001",
@@ -45211,7 +45540,8 @@ window.CPL_STATEWIDE = {
           "course": "PHY 101",
           "credit": "4 hours in Basic Physics: Energy and Motion"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AMT-1-001|MAPSAS-AE-M4-1-001|MAPSAS-AEMT-1-001|MAPSAS-AEMT1-1-001|MAPSAS-AEMT2-1-001|MAPSAS-AEMT3-1-001|MAPSAS-AEMT4-1-001|MAPSAS-AMT-1-001|MAPSAS-AMT1-1-001|MAPSAS-AMT2-1-001|MAPSAS-AMT3-1-001|MAPSAS-AMT4-1-001|MAPSAS-AMT5-1-001|MAPSAS-AMT7-1-001",
@@ -45436,7 +45766,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS 003A",
           "credit": "5 hours in THEORY & MUSICIANSHIP I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CCC3-1-001|MAPICI-CCC4-1-001|MAPICI-CCCC-1-001|MAPICI-CCNA-1-001|MAPICI-CCNA1-1-001|MAPICI-CCNA2-1-001|MAPICI-CCNA3-1-001|MAPICI-CCNA4-1-001|MAPICS-CCNA-1-001",
@@ -45707,6 +46038,24 @@ window.CPL_STATEWIDE = {
           "course": "MICROTK 079",
           "credit": "3 hours in CISCO NETWORKING ACADEMY - SEMESTER III"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "4 hours in Network Fundamentals (Network+)",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Computer Network Fundamentals",
+          "cid": "ITIS 150"
+        },
+        {
+          "credit": "3 hours in Switching, Routing and Wireless Essentials",
+          "cid": "ITIS 151"
+        },
+        {
+          "credit": "3 hours in Network Security and Automation",
+          "cid": ""
+        }
       ]
     },
     {
@@ -45864,7 +46213,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 7",
           "credit": "3 hours in Criminal Investigation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CESL1-1-001|MAPSAS-CSLI1-1-001|MAPSAS-CSLI2-1-001|MAPSAS-CSLI27-1-001|MAPSAS-CSLI4-1-001|MAPSAS-CSLI8-1-001",
@@ -46030,7 +46380,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 02",
           "credit": "5 hours in Elementary Spanish II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAP-P1H&-1-001|MAPSAP-P1MO-1-001|MAPSAP-P1PM-1-001",
@@ -46172,7 +46523,8 @@ window.CPL_STATEWIDE = {
           "course": "PHYS 143",
           "credit": "4 hours in Electricity, Magnetism, Optics, Atomic and Nuclear Structure"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-MTA-1-001",
@@ -46306,7 +46658,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS 104",
           "credit": "3 hours in Music Theory II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-BMT-1-001|MAPMM-BMT1-1-001|MAPMM-BMT2-1-001|MAPMM-CFBM-1-001",
@@ -46597,6 +46950,20 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 7",
           "credit": "4 hours in Lifelong Learning"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Principles of Health Education",
+          "cid": "HIST 150"
+        },
+        {
+          "credit": "1 hour in Weight Training I",
+          "cid": ""
+        },
+        {
+          "credit": "1 hour in Advanced Strength Training",
+          "cid": ""
+        }
       ]
     },
     {
@@ -46812,7 +47179,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "9 hours in ARTS AND HUMANITIES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ITC-1-001|MAPCXS-ITC1-1-001|MAPCxS-ITCA-1-001",
@@ -46975,7 +47343,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 51",
           "credit": "3 hours in Introduction to Corrections"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-M1T1-1-001",
@@ -47104,7 +47473,8 @@ window.CPL_STATEWIDE = {
           "course": "MUST 121",
           "credit": "3 hours in Music Theory 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-C-AP-1-001|MAPICI-CCA-1-001|MAPICI-SCAA-1-003|MAPICI-SOC--1-001",
@@ -47390,7 +47760,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 6",
           "credit": "3 hours in Juvenile Procedures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-CDOC-1-001",
@@ -47557,7 +47928,8 @@ window.CPL_STATEWIDE = {
           "course": "ADJUS 200",
           "credit": "3 hours in Introduction to Corrections"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-APB(-1-001|MAPSAS-A-PB-1-001|MAPSAS-APB-1-001|MAPSAS-APB1-1-001|MAPSAS-APB2-1-001|MAPSAS-APB3-1-001|MAPSAS-APB4-1-001",
@@ -47731,7 +48103,8 @@ window.CPL_STATEWIDE = {
           "course": "PHYS 6",
           "credit": "1 hour in The Ideas of Physics Laboratory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-A-P2-1-001|MAPSAS-A:P2-1-001|MAPSAS-AE-P1-1-001|MAPSAS-AEP21-1-001|MAPSAS-AEP22-1-001",
@@ -47903,7 +48276,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 5",
           "credit": "4 hours in Natural Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBES2-1-001|MAPCxS-ISIS-1-001",
@@ -48045,7 +48419,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 2A",
           "credit": "4 hours in Intermediate Spanish I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-S1C-1-001|MAPCXS-S2-1-001",
@@ -48175,7 +48550,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 102",
           "credit": "5 hours in College Spanish II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-1S1C-1-001",
@@ -48303,7 +48679,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 157",
           "credit": "4 hours in Spanish for Heritage Speakers I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-S1C2-1-001",
@@ -48431,7 +48808,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 158",
           "credit": "4 hours in Spanish for Heritage Speakers II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-S1-C-1-001|MAPCXS-S3-1-001",
@@ -48561,7 +48939,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 103",
           "credit": "4 hours in College Spanish III"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-S1FS-1-001",
@@ -48689,7 +49068,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 109",
           "credit": "5 hours in Spanish for Spanish Speakers 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-P1PM-1-001",
@@ -48817,7 +49197,8 @@ window.CPL_STATEWIDE = {
           "course": "PHYS 101",
           "credit": "4 hours in General Physics: Mechanics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-AMHS2-1-001",
@@ -48945,7 +49326,8 @@ window.CPL_STATEWIDE = {
           "course": "BUS 10",
           "credit": "3 hours in Introduction to Business"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-SHSB2-1-001",
@@ -49073,7 +49455,8 @@ window.CPL_STATEWIDE = {
           "course": "BUS 10",
           "credit": "3 hours in Introduction to Business"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-CHSB1-1-001",
@@ -49201,7 +49584,8 @@ window.CPL_STATEWIDE = {
           "course": "BUS 10",
           "credit": "3 hours in Introduction to Business"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOH-BHST-1-001",
@@ -49329,7 +49713,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSI 100",
           "credit": "3 hours in Introduction to Business"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CSL(-1-001",
@@ -49457,7 +49842,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 102",
           "credit": "5 hours in College Spanish II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CECE-1-001|MAPSAS-CEEL-1-001|MAPSAS-CEL(-1-001|MAPSAS-CEL-1-001|MAPSAS-CEL1-1-001|MAPSAS-CEL10-1-001|MAPSAS-CEL11-1-001|MAPSAS-CEL12-1-001|MAPSAS-CEL13-1-001|MAPSAS-CEL14-1-001|MAPSAS-CEL15-1-001|MAPSAS-CEL16-1-001|MAPSAS-CEL17-1-001|MAPSAS-CEL2-1-001|MAPSAS-CEL3-1-001|MAPSAS-CEL4-1-001|MAPSAS-CEL5-1-001|MAPSAS-CEL6-1-001|MAPSAS-CEL7-1-001|MAPSAS-CEL8-1-001|MAPSAS-CEL9-1-001",
@@ -49692,7 +50078,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAM-SDLP-1-001|MAPSAM-SDLP1-1-001|MAPSAM-SDLP2-1-001|MAPSAM-SDLP3-1-001|MAPSAM-SDLP4-1-001|MAPSAM-SDLP5-1-001",
@@ -49882,6 +50269,28 @@ window.CPL_STATEWIDE = {
           "course": "RCCD GE-A RCCD GE Area 3",
           "credit": "4 hours in Spanish for Heritage Speakers II"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "4 hours in Elementary Spanish 1",
+          "cid": ""
+        },
+        {
+          "credit": "4 hours in Elementary Spanish I",
+          "cid": "SPAN 100"
+        },
+        {
+          "credit": "4 hours in Elementary Spanish II",
+          "cid": ""
+        },
+        {
+          "credit": "4 hours in Spanish for Heritage Speakers I",
+          "cid": ""
+        },
+        {
+          "credit": "4 hours in Spanish for Heritage Speakers II",
+          "cid": ""
+        }
       ]
     },
     {
@@ -50009,7 +50418,8 @@ window.CPL_STATEWIDE = {
           "course": "MUSA 121",
           "credit": "1 hour in Class Piano 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-O2(T-1-001",
@@ -50136,7 +50546,8 @@ window.CPL_STATEWIDE = {
           "course": "BIT 231",
           "credit": "3 hours in Intermediate Word Processing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-S13--1-001",
@@ -50263,7 +50674,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 103",
           "credit": "5 hours in Spanish 3"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-S1FS1-1-001",
@@ -50390,7 +50802,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 110",
           "credit": "5 hours in Spanish for Spanish Speakers 2"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-S1FS-1-001",
@@ -50517,7 +50930,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 110",
           "credit": "5 hours in Spanish for Spanish Speakers 2"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAP-P1P--1-001",
@@ -50644,7 +51058,8 @@ window.CPL_STATEWIDE = {
           "course": "PHYS 165",
           "credit": "4 hours in Introductory Physics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEM2-1-001",
@@ -50771,7 +51186,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS 10A",
           "credit": "4 hours in Music Theory and Musicianship 3"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEM3-1-001",
@@ -50898,7 +51314,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS 21A",
           "credit": "1 hour in Beginning Piano"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBES3-1-001",
@@ -51025,7 +51442,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 1B",
           "credit": "5 hours in Elementary Spanish"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEK-1-001",
@@ -51152,7 +51570,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS V24A",
           "credit": "2 hours in Keyboards I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-ACAM-1-001",
@@ -51279,7 +51698,8 @@ window.CPL_STATEWIDE = {
           "course": "COMS 101",
           "credit": "3 hours in Computer Information Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-IS-1-001",
@@ -51406,7 +51826,8 @@ window.CPL_STATEWIDE = {
           "course": "Spanish (SPAN) 002A",
           "credit": "5 hours in Intermediate Spanish 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-APB0-1-001",
@@ -51533,7 +51954,8 @@ window.CPL_STATEWIDE = {
           "course": "BUAA 001",
           "credit": "3 hours in Administrative Professional"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-PCAM-1-001",
@@ -51660,7 +52082,8 @@ window.CPL_STATEWIDE = {
           "course": "COMPSCI 1",
           "credit": "3 hours in Programming Concepts and Methodology I (C++)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CMOS-1-001",
@@ -51787,7 +52210,8 @@ window.CPL_STATEWIDE = {
           "course": "BUS 018",
           "credit": "3 hours in Introducation to Excel"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-MOS(-1-001",
@@ -51914,7 +52338,8 @@ window.CPL_STATEWIDE = {
           "course": "BUS 035A",
           "credit": "1.5 hours in Microsoft Word"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-MOS(1-1-001",
@@ -52041,7 +52466,8 @@ window.CPL_STATEWIDE = {
           "course": "BUS 035B",
           "credit": "1.5 hours in Microsoft Excel"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-MOS(2-1-001",
@@ -52168,7 +52594,8 @@ window.CPL_STATEWIDE = {
           "course": "BUS 035C",
           "credit": "1.5 hours in Microsoft Powerpoint"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CS(O-1-001",
@@ -52295,7 +52722,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 1",
           "credit": "5 hours in Elementary Spanish I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-COSA-1-001",
@@ -52486,6 +52914,24 @@ window.CPL_STATEWIDE = {
           "course": "ADJUS 200",
           "credit": "3 hours in Introduction to Corrections"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Introduction to Corrections",
+          "cid": "AJ 200"
+        },
+        {
+          "credit": "3 hours in Control and Supervision in Corrections OR Control and Supervision of Inmates",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Legal Aspects of Corrections",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Interview and Interrogation",
+          "cid": ""
+        }
       ]
     },
     {
@@ -52646,6 +53092,12 @@ window.CPL_STATEWIDE = {
           "course": "CIS 064",
           "credit": "3 hours in Intro to Cybersecurity: Ethical Hacking"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Introduction to Cybersecurity: Ethical Hacking",
+          "cid": ""
+        }
       ]
     },
     {
@@ -52798,7 +53250,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 001",
           "credit": "5 hours in Elementary Spanish I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-A-P1-1-001|MAPSAS-A-P11-1-001|MAPSAS-A:P11-1-001|MAPSAS-AE-P-1-001|MAPSAS-AEP11-1-001|MAPSAS-AEP12-1-001|MAPSAS-AEP13-1-001",
@@ -52976,7 +53429,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 5",
           "credit": "4 hours in Natural Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-BSC-1-001",
@@ -53102,7 +53556,8 @@ window.CPL_STATEWIDE = {
           "course": "CABT 102",
           "credit": "1 hour in Basic Spreadsheet Calculations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-CAD-1-001",
@@ -53228,7 +53683,8 @@ window.CPL_STATEWIDE = {
           "course": "CABT 130AD",
           "credit": "1 hour in Creating Accessible Documents"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-BBCT-1-001",
@@ -53354,7 +53810,8 @@ window.CPL_STATEWIDE = {
           "course": "CABT 155",
           "credit": "1 hour in Basic Business Communication Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-BCK-1-001",
@@ -53480,7 +53937,8 @@ window.CPL_STATEWIDE = {
           "course": "CABT 210",
           "credit": "0.5 hours in Basic Computer Keyboarding"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-K-1-001",
@@ -53606,7 +54064,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSC 109",
           "credit": "1 hour in Keyboarding for Computers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-O2(T3-1-001",
@@ -53732,7 +54191,8 @@ window.CPL_STATEWIDE = {
           "course": "BIT 270",
           "credit": "1 hour in Introduction to Microsoft Access"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-O3(C-1-001",
@@ -53858,7 +54318,8 @@ window.CPL_STATEWIDE = {
           "course": "BIT 301",
           "credit": "1 hour in Beginning Keyboarding"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-O3(T-1-001",
@@ -53984,7 +54445,8 @@ window.CPL_STATEWIDE = {
           "course": "BIT 302",
           "credit": "1 hour in Beginning Document Processing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-O3(C-1-001",
@@ -54110,7 +54572,8 @@ window.CPL_STATEWIDE = {
           "course": "BIT 315",
           "credit": "2 hours in Workplace Preparation and Internship"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-O3(T1-1-001",
@@ -54236,7 +54699,8 @@ window.CPL_STATEWIDE = {
           "course": "BIT 317",
           "credit": "1 hour in Introduction to Adobe Acrobat"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-O3(C1-1-001",
@@ -54362,7 +54826,8 @@ window.CPL_STATEWIDE = {
           "course": "BIT 353",
           "credit": "1 hour in Introduction to Computers and Windows"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-O3(C2-1-001",
@@ -54488,7 +54953,8 @@ window.CPL_STATEWIDE = {
           "course": "BIT 375",
           "credit": "1 hour in 10-Key on the Computer"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-B3OT-1-001",
@@ -54614,7 +55080,8 @@ window.CPL_STATEWIDE = {
           "course": "BIT 375",
           "credit": "1 hour in 10-Key on the Computer"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A1AW-1-001",
@@ -54740,7 +55207,8 @@ window.CPL_STATEWIDE = {
           "course": "ANTHR 110",
           "credit": "4 hours in Biological Anthropology with Laboratory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-O2(T-1-001",
@@ -54866,7 +55334,8 @@ window.CPL_STATEWIDE = {
           "course": "BIT 250",
           "credit": "1 hour in Introduction to Microsoft Word"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-O2(T1-1-001",
@@ -54992,7 +55461,8 @@ window.CPL_STATEWIDE = {
           "course": "BIT 260",
           "credit": "1 hour in Introduction to Microsoft Excel"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-O2(T2-1-001",
@@ -55118,7 +55588,8 @@ window.CPL_STATEWIDE = {
           "course": "BIT 270",
           "credit": "1 hour in Introduction to Microsoft Access"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-CBEC-1-001",
@@ -55244,7 +55715,8 @@ window.CPL_STATEWIDE = {
           "course": "BT 3",
           "credit": "1.5 hours in Computer Basics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-P2-1-001",
@@ -55370,7 +55842,8 @@ window.CPL_STATEWIDE = {
           "course": "BT 3",
           "credit": "1.5 hours in Computer Basics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-MO-1-001",
@@ -55496,7 +55969,8 @@ window.CPL_STATEWIDE = {
           "course": "BT 3",
           "credit": "1.5 hours in Computer Basics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-SC-1-001",
@@ -55622,7 +56096,8 @@ window.CPL_STATEWIDE = {
           "course": "BT 3",
           "credit": "1.5 hours in Computer Basics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DF-1-001",
@@ -55748,7 +56223,8 @@ window.CPL_STATEWIDE = {
           "course": "BT 12",
           "credit": "1.5 hours in Data Entry Using Quickbooks"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-DF-1-001",
@@ -55874,7 +56350,8 @@ window.CPL_STATEWIDE = {
           "course": "BT 12",
           "credit": "1.5 hours in Data Entry Using Quickbooks"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-CBES-1-001",
@@ -56000,7 +56477,8 @@ window.CPL_STATEWIDE = {
           "course": "BT 18",
           "credit": "2 hours in Spreadsheet Fundamentals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEI2-1-001",
@@ -56126,7 +56604,8 @@ window.CPL_STATEWIDE = {
           "course": "ANTH V03",
           "credit": "3 hours in Introduction to Archaeology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEK1-1-001",
@@ -56252,7 +56731,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS V24B",
           "credit": "2 hours in Keyboards II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEK2-1-001",
@@ -56378,7 +56858,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS V24C",
           "credit": "2 hours in Keyboards III"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-AAIT-1-001",
@@ -56504,7 +56985,8 @@ window.CPL_STATEWIDE = {
           "course": "ANTH 003",
           "credit": "3 hours in Archaeology: An Introduction to Prehistory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-ITPA-1-001",
@@ -56630,7 +57112,8 @@ window.CPL_STATEWIDE = {
           "course": "ANTH 001",
           "credit": "3 hours in Introduction to Physical Anthropology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-BCK-1-001",
@@ -56756,7 +57239,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSTEC 40A",
           "credit": "3 hours in Beginning Computer Keyboarding"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CKSA-1-001",
@@ -56882,7 +57366,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSTEC 40B",
           "credit": "3 hours in Computer Keyboarding: Speed and Accuracy Development"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-FOEF-1-001",
@@ -57008,7 +57493,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSTEC 455",
           "credit": "3 hours in Fundamentals of English for Business"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-PTS-1-001",
@@ -57134,7 +57620,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSTEC 460",
           "credit": "3 hours in Proofreading: Text-Editing Skills"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-MOW--1-001",
@@ -57260,7 +57747,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSTEC 60A",
           "credit": "3 hours in Microsoft Office Word - Specialist"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-MOW-1-1-001",
@@ -57386,7 +57874,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSTEC 60B",
           "credit": "3 hours in Microsoft Office Word - Expert"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-MOP-1-001",
@@ -57512,7 +58001,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSTEC 61",
           "credit": "1.5 hours in Microsoft Office PowerPoint"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-MOO-1-001",
@@ -57638,7 +58128,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSTEC 62",
           "credit": "1.5 hours in Microsoft Office Outlook"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-MOE--1-001",
@@ -57764,7 +58255,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSTEC 63",
           "credit": "3 hours in Microsoft Office Excel - Comprehensive"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-MOA-1-001",
@@ -57890,7 +58382,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSTEC 64",
           "credit": "3 hours in Microsoft Office Access-Comprehensive"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEB-1-001",
@@ -58016,7 +58509,8 @@ window.CPL_STATEWIDE = {
           "course": "BIS 012",
           "credit": "2 hours in Business Document Production"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CBIC1-1-001|MAPICI-CCNC-1-001|MAPICI-CN(-1-001|MAPICI-CN+-1-001|MAPICI-CN1-1-001|MAPICI-CNC-1-001|MAPICI-CNFC-1-001",
@@ -58270,6 +58764,12 @@ window.CPL_STATEWIDE = {
           "course": "CIS 053",
           "credit": "3 hours in Computer Network Fundamentals"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Networking Fundamentals",
+          "cid": "ITIS 150"
+        }
       ]
     },
     {
@@ -58467,6 +58967,24 @@ window.CPL_STATEWIDE = {
           "course": "ADJUS 200",
           "credit": "3 hours in Introduction to Corrections"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Introduction to Corrections",
+          "cid": "AJ 200"
+        },
+        {
+          "credit": "3 hours in Control and Supervision in Corrections OR Control and Supervision of Inmates",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Legal Aspects of Corrections",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Interview & Interrogation",
+          "cid": ""
+        }
       ]
     },
     {
@@ -58618,7 +59136,8 @@ window.CPL_STATEWIDE = {
           "course": "MUSIC 101",
           "credit": "3 hours in Music Theory and Culture I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-FOM-1-001|MAPCXS-MFOM-1-001",
@@ -58752,7 +59271,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS 3",
           "credit": "4 hours in Fundamentals of Music"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-BME-1-001",
@@ -58879,7 +59399,8 @@ window.CPL_STATEWIDE = {
           "course": "CBTE 140",
           "credit": "2 hours in Beginning Microsoft Excel"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-BMW-1-001",
@@ -59006,7 +59527,8 @@ window.CPL_STATEWIDE = {
           "course": "CBTE 120",
           "credit": "2 hours in Beginning Microsoft Word"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-BMA-1-001",
@@ -59133,7 +59655,8 @@ window.CPL_STATEWIDE = {
           "course": "CBTE 152",
           "credit": "2 hours in Beginning Microsoft Access"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-MTI-3-1-001|MAPCXS-MTI1-1-001",
@@ -59270,7 +59793,8 @@ window.CPL_STATEWIDE = {
           "course": "MUSIC 102",
           "credit": "3 hours in Music Theory and Culture II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBES1-1-001",
@@ -59397,7 +59921,8 @@ window.CPL_STATEWIDE = {
           "course": "SPA 2",
           "credit": "5 hours in Spanish 2"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-UMW-1-001|MAPCXS-UMW-1-001",
@@ -59529,7 +60054,8 @@ window.CPL_STATEWIDE = {
           "course": "CAP 070",
           "credit": "1 hour in Using MS Windows"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-IMW-1-001",
@@ -59655,7 +60181,8 @@ window.CPL_STATEWIDE = {
           "course": "CBTE 122",
           "credit": "3 hours in Intermediate Microsoft Word"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-MI-1-001|MAPCXS-MI4-1-001",
@@ -59786,7 +60313,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS M02AL",
           "credit": "1 hour in Musicianship I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-C1-M2-1-001|MAPICI-O2(T4-1-001",
@@ -59918,7 +60446,8 @@ window.CPL_STATEWIDE = {
           "course": "CIT 118",
           "credit": "3 hours in Microsoft PowerPoint"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOA-C1-1-001",
@@ -60048,7 +60577,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS  070A",
           "credit": "3 hours in Computer Information Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-CIS-1-001",
@@ -60178,7 +60708,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS  070A",
           "credit": "3 hours in Computer Information Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-CBPM-1-001",
@@ -60303,7 +60834,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS 19",
           "credit": "3 hours in Studies in Music Composition"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEM5-1-001",
@@ -60428,7 +60960,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS 21B",
           "credit": "1 hour in Intermediate Piano"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-ITAA-1-001",
@@ -60553,7 +61086,8 @@ window.CPL_STATEWIDE = {
           "course": "ART 010",
           "credit": "3 hours in Introduction to Art"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-ALPC-1-001",
@@ -60678,7 +61212,8 @@ window.CPL_STATEWIDE = {
           "course": "CS  087",
           "credit": "3 hours in Assembler Language Programming"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "CPLICI-CA-1-001|MAPICI-CA(-1-001|MAPICI-CA-1-001|MAPICI-CA1-1-001|MAPICI-CA3-1-001|MAPICI-CA4-1-001|MAPICI-CA5-1-001|MAPICI-CAC-1-001|MAPICI-CAC1-1-001|MAPICI-CAC2-1-001|MAPICI-CAC4-1-001|MAPICI-CAFC-1-001|MAPICS-I8-1-001",
@@ -60938,6 +61473,12 @@ window.CPL_STATEWIDE = {
           "course": "CIS 040",
           "credit": "4 hours in Information and Communication Technology Essentials"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Information and Communication Technology Essentials",
+          "cid": "ITIS 110"
+        }
       ]
     },
     {
@@ -61079,7 +61620,8 @@ window.CPL_STATEWIDE = {
           "course": "HS 061",
           "credit": "3 hours in Medical Terminology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-MOSW-1-001",
@@ -61205,7 +61747,8 @@ window.CPL_STATEWIDE = {
           "course": "CAT 80",
           "credit": "3 hours in Word for Windows"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ICBP-1-001",
@@ -61331,7 +61874,8 @@ window.CPL_STATEWIDE = {
           "course": "ACC 55",
           "credit": "3 hours in Applied Accounting/Bookkeeping"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-AAE-1-001",
@@ -61457,7 +62001,8 @@ window.CPL_STATEWIDE = {
           "course": "CAT 3",
           "credit": "3 hours in Computer Applications for Business"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-BM-1-001",
@@ -61583,7 +62128,8 @@ window.CPL_STATEWIDE = {
           "course": "MUSI 150A",
           "credit": "3 hours in Basic Musicianship"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-DBOC-1-001",
@@ -61720,7 +62266,8 @@ window.CPL_STATEWIDE = {
           "course": "KIN 13",
           "credit": "0.5 hours in BASIC LIFE SUPPORT FOR THE HEALTHCARE PROVIDER"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-ETI-1-001",
@@ -61844,7 +62391,8 @@ window.CPL_STATEWIDE = {
           "course": "MUSI 269A",
           "credit": "1 hour in Ear Training III"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-MI1-1-001",
@@ -61968,7 +62516,8 @@ window.CPL_STATEWIDE = {
           "course": "MUSIC 217-2",
           "credit": "1 hour in Musicianship II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-MI2-1-001",
@@ -62092,7 +62641,8 @@ window.CPL_STATEWIDE = {
           "course": "MUSIC 217-3",
           "credit": "1 hour in Musicianship III"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-MI3-1-001",
@@ -62216,7 +62766,8 @@ window.CPL_STATEWIDE = {
           "course": "MUSIC 217-4",
           "credit": "1 hour in Musicianship IV"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-EPI-1-001",
@@ -62340,7 +62891,8 @@ window.CPL_STATEWIDE = {
           "course": "MUSIC 321",
           "credit": "2 hours in Elementary Piano I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-M11--1-001",
@@ -62464,7 +63016,8 @@ window.CPL_STATEWIDE = {
           "course": "MUSA 141",
           "credit": "1 hour in Guitar 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-M24--1-001",
@@ -62588,7 +63141,8 @@ window.CPL_STATEWIDE = {
           "course": "MUSIC 216-4",
           "credit": "3 hours in Music Theory IV"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEV-1-001",
@@ -62712,7 +63266,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS V13A",
           "credit": "2 hours in Voice Technique I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEV1-1-001",
@@ -62836,7 +63391,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS V13B",
           "credit": "2 hours in Voice Technique II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEV2-1-001",
@@ -62960,7 +63516,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS V13C",
           "credit": "2 hours in Voice Development I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEV3-1-001",
@@ -63084,7 +63641,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS V13D",
           "credit": "2 hours in Voice Development II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEK3-1-001",
@@ -63208,7 +63766,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS V24D",
           "credit": "2 hours in Keyboards IV"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEG-1-001",
@@ -63332,7 +63891,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS V36A",
           "credit": "2 hours in Guitar I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEG1-1-001",
@@ -63456,7 +64016,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS V36B",
           "credit": "2 hours in Guitar II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEG2-1-001",
@@ -63580,7 +64141,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS V36C",
           "credit": "2 hours in Guitar III"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEG3-1-001",
@@ -63704,7 +64266,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS V36D",
           "credit": "2 hours in Guitar IV"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-POMB-1-001",
@@ -63828,7 +64391,8 @@ window.CPL_STATEWIDE = {
           "course": "BUMA 001",
           "credit": "3 hours in Principles of Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CGG0-1-001",
@@ -63952,7 +64516,8 @@ window.CPL_STATEWIDE = {
           "course": "GEOG  002",
           "credit": "3 hours in Cultural Geography"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-MSI--1-001",
@@ -64076,7 +64641,8 @@ window.CPL_STATEWIDE = {
           "course": "MUSIC 121",
           "credit": "1 hour in Music Skills I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-MSI-1-1-001",
@@ -64200,7 +64766,8 @@ window.CPL_STATEWIDE = {
           "course": "MUSIC 122",
           "credit": "1 hour in Music Skills II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-MSI-2-1-001",
@@ -64324,7 +64891,8 @@ window.CPL_STATEWIDE = {
           "course": "MUSIC 123",
           "credit": "1 hour in Music Skills III"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-HGA-1-001",
@@ -64448,7 +65016,8 @@ window.CPL_STATEWIDE = {
           "course": "GEOG 102",
           "credit": "3 hours in Cultural Geography"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-PG-1-001",
@@ -64572,7 +65141,8 @@ window.CPL_STATEWIDE = {
           "course": "GEOG 4",
           "credit": "3 hours in Physical Geography"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-H2-1-001",
@@ -64696,7 +65266,8 @@ window.CPL_STATEWIDE = {
           "course": "MUSIC 23",
           "credit": "3 hours in Hip-Hop"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-BG-1-001",
@@ -64820,7 +65391,8 @@ window.CPL_STATEWIDE = {
           "course": "MUSIC 40",
           "credit": "1 hour in Beginning Guitar"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CEMT1-1-001",
@@ -64956,7 +65528,8 @@ window.CPL_STATEWIDE = {
           "course": "KIN 13",
           "credit": "0.5 hours in BASIC LIFE SUPPORT FOR THE HEALTHCARE PROVIDER"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-M23--1-001|MAPCXS-MTI-4-1-001",
@@ -65086,7 +65659,8 @@ window.CPL_STATEWIDE = {
           "course": "MUSIC 103",
           "credit": "3 hours in Music Theory and Culture III"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-PPMI-1-001",
@@ -65209,7 +65783,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 095H",
           "credit": "4 hours in Business and Requirement Analysis"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-PMP(2-1-001",
@@ -65332,7 +65907,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 095L",
           "credit": "4 hours in Portfolio Management - A Practicum"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-RMP(-1-001",
@@ -65455,7 +66031,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 095C",
           "credit": "4 hours in Risk Assessment and Mitigation - A Practicum"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-PMP(1-1-002",
@@ -65578,7 +66155,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 095K",
           "credit": "4 hours in Program Management - A Practicum"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CAIP-1-001",
@@ -65701,7 +66279,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 095E",
           "credit": "4 hours in CAPM and PMP Exam Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-PMP(3-1-001",
@@ -65824,7 +66403,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 095E",
           "credit": "4 hours in CAPM and PMP Exam Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOH-LHST-1-001",
@@ -65947,7 +66527,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSI 148",
           "credit": "3 hours in Leadership for Effective Organizations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-DSM0-1-001",
@@ -66070,7 +66651,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 004",
           "credit": "3 hours in Discrete Structures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-QMP-1-001",
@@ -66193,7 +66775,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSMGT 48",
           "credit": "3 hours in Quality Management Principles"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CC(A-1-001|MAPICI-CCC(-1-001|MAPICI-CCC2-1-001|MAPICS-CCAC-1-001",
@@ -66346,6 +66929,12 @@ window.CPL_STATEWIDE = {
           "course": "CMPET 324",
           "credit": "3 hours in CompTIA CyberDefense Analyst Certification Prep"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Cybersecurity Analysis",
+          "cid": ""
+        }
       ]
     },
     {
@@ -66475,7 +67064,8 @@ window.CPL_STATEWIDE = {
           "course": "GEOG 1",
           "credit": "3 hours in World Regional Geography"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-SAOA-1-001",
@@ -66597,7 +67187,8 @@ window.CPL_STATEWIDE = {
           "course": "BUS 88",
           "credit": "3 hours in Starting and Operating a New Small  Business"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-AMHS1-1-001",
@@ -66719,7 +67310,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSMGT 45",
           "credit": "3 hours in Small Business Ownership and Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-SHSB-1-001",
@@ -66841,7 +67433,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSMGT 45",
           "credit": "3 hours in Small Business Ownership and Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-SBOA-1-001",
@@ -66963,7 +67556,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSMGT 45",
           "credit": "3 hours in Small Business Ownership and Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:HG-1-001|MAPSAS-CEHG-1-001|MAPSAS-CEHG1-1-001|MAPSAS-CHGA-1-001|MAPSAS-CHGA1-1-001|MAPSAS-CHGA10-1-001|MAPSAS-CHGA11-1-001|MAPSAS-CHGA12-1-001|MAPSAS-CHGA13-1-001|MAPSAS-CHGA15-1-001|MAPSAS-CHGA16-1-001|MAPSAS-CHGA17-1-001|MAPSAS-CHGA18-1-001|MAPSAS-CHGA19-1-001|MAPSAS-CHGA2-1-001|MAPSAS-CHGA20-1-001|MAPSAS-CHGA21-1-001|MAPSAS-CHGA22-1-001|MAPSAS-CHGA23-1-001|MAPSAS-CHGA24-1-001|MAPSAS-CHGA25-1-001|MAPSAS-CHGA26-1-001|MAPSAS-CHGA27-1-001|MAPSAS-CHGA28-1-001|MAPSAS-CHGA29-1-001|MAPSAS-CHGA3-1-001|MAPSAS-CHGA30-1-001|MAPSAS-CHGA31-1-001|MAPSAS-CHGA4-1-001|MAPSAS-CHGA5-1-001|MAPSAS-CHGA6-1-001|MAPSAS-CHGA8-1-001",
@@ -67246,7 +67840,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-4",
           "credit": "3 hours in Social Science and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-ACSA1-1-001|MAPSAS-ACSA2-1-001|MAPSAS-ACSA4-1-001|MAPSAS-ACSA6-1-001|MAPSAS-ACSA9-1-001|MAPSAS-AECS3-1-001|MAPSAS-AECS5-1-001",
@@ -67416,7 +68011,8 @@ window.CPL_STATEWIDE = {
           "course": "Elective Units",
           "credit": "4.5 hours in Foothill College Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-MGMB-1-001",
@@ -67539,7 +68135,8 @@ window.CPL_STATEWIDE = {
           "course": "BUS 22",
           "credit": "3 hours in Management Communications"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEH-ITE1-1-001",
@@ -67661,7 +68258,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSE 129",
           "credit": "3 hours in Introduction to Entrepreneurship"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ITCI-1-001|MAPCXS-ITCI1-1-001",
@@ -67789,7 +68387,8 @@ window.CPL_STATEWIDE = {
           "course": "ITIS 10",
           "credit": "3 hours in Introduction to Computer Information Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-AITP-1-001",
@@ -67910,7 +68509,8 @@ window.CPL_STATEWIDE = {
           "course": "COMS 215",
           "credit": "3 hours in Programming Concepts and Methodology 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CPIC1-1-001",
@@ -68031,7 +68631,8 @@ window.CPL_STATEWIDE = {
           "course": "CS  089",
           "credit": "3 hours in C++ Programming I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-GLP0-1-001",
@@ -68152,7 +68753,8 @@ window.CPL_STATEWIDE = {
           "course": "PHIL 010",
           "credit": "3 hours in General Logic"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-ITLP-1-001",
@@ -68273,7 +68875,8 @@ window.CPL_STATEWIDE = {
           "course": "PHIL 010",
           "credit": "3 hours in General Logic"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ITDS-1-001",
@@ -68394,7 +68997,8 @@ window.CPL_STATEWIDE = {
           "course": "COMPSCI 10",
           "credit": "3 hours in Introduction to Data Science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFFA1-1-001|MAPICI-DO1C-1-001|MAPICI-F3AD-1-001",
@@ -68545,7 +69149,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 116",
           "credit": "1.5 hours in Fire Apparatus Driver/Operator 1B Pump Operations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-EE&S-1-001|MAPICI-EEC-1-001",
@@ -68669,7 +69274,8 @@ window.CPL_STATEWIDE = {
           "course": "ENP 50",
           "credit": "3 hours in Introduction to Entrepreneurship"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-C–CP-1-001",
@@ -68790,7 +69396,8 @@ window.CPL_STATEWIDE = {
           "course": "CSC 5",
           "credit": "4 hours in Program Logic Using C++"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-C–CC2-1-001",
@@ -68911,7 +69518,8 @@ window.CPL_STATEWIDE = {
           "course": "CSC 5",
           "credit": "4 hours in Program Logic Using C++"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-C–CC3-1-001",
@@ -69032,7 +69640,8 @@ window.CPL_STATEWIDE = {
           "course": "CSC 5",
           "credit": "4 hours in Program Logic Using C++"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-AOAO-1-001|MAPCXS-AOAO1-1-001|MAPCXS-CBEA17-1-001",
@@ -69155,7 +69764,8 @@ window.CPL_STATEWIDE = {
           "course": "ARTH 7",
           "credit": "3 hours in Arts of Africa, Oceania, and Indigenous North America"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-CSAT-1-001",
@@ -69275,7 +69885,8 @@ window.CPL_STATEWIDE = {
           "course": "ELEC 12",
           "credit": "2 hours in Computer Simulation and Troubleshooting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-CS1-1-001",
@@ -69395,7 +70006,8 @@ window.CPL_STATEWIDE = {
           "course": "ELEC 53",
           "credit": "4 hours in Communications Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-MC-1-001",
@@ -69515,7 +70127,8 @@ window.CPL_STATEWIDE = {
           "course": "ELEC 55",
           "credit": "4 hours in Microwave Communications"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-ASMA-1-001",
@@ -69635,7 +70248,8 @@ window.CPL_STATEWIDE = {
           "course": "ELEC 62",
           "credit": "2 hours in Advanced Surface Mount Assembly and Rework"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-CRFT-1-001",
@@ -69755,7 +70369,8 @@ window.CPL_STATEWIDE = {
           "course": "TECH 60",
           "credit": "2 hours in Customer Relations for the Technician"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:CA1-1-001|MAPSAS-CCA-10-1-001|MAPSAS-CCA-11-1-001|MAPSAS-CCA-12-1-001|MAPSAS-CCA-13-1-001|MAPSAS-CCA-15-1-001|MAPSAS-CCA-2-1-001|MAPSAS-CCA-3-1-001|MAPSAS-CCA-4-1-001|MAPSAS-CCA-7-1-001|MAPSAS-CCA-8-1-001|MAPSAS-CCA-9-1-001|MAPSAS-CCAT-1-001|MAPSAS-CCA–-1-001|MAPSAS-CCA–1-1-001|MAPSAS-CCA–2-1-001|MAPSAS-CCA–4-1-001|MAPSAS-CCA–5-1-001|MAPSAS-CCA–6-1-001|MAPSAS-CCA–7-1-001|MAPSAS-CCA–8-1-001|MAPSAS-CCA–9-1-001|MAPSAS-CECA2-1-001",
@@ -69990,7 +70605,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 2",
           "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEI-EMTC-1-001|MAPCXH-EMT(1-1-001|MAPCXH-EMT(2-1-001|MAPCXN-CECB-1-001|MAPCXS-E3MT-1-001|MAPCXS-E3MT1-1-001|MAPCXS-EMT1-1-001|MAPCXS-EMTB-1-001|MAPCXS-EMTB1-1-001|MAPCXS-EMTP-1-001",
@@ -70181,7 +70797,8 @@ window.CPL_STATEWIDE = {
           "course": "EMT 405",
           "credit": "3 hours in Emergency Medical Technician Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-PC-1-001|MAPICI-CP/P-1-001|MAPICI-CPL-1-001|MAPICI-KCET-1-001|MAPICI-PC1-1-001|MAPICI-PC2-1-001|MAPICI-PC3-1-001|MAPICI-PL1-1-001|MAPICI-PL2-1-001|MAPICI-PN(-1-001|MAPICI-PN2-1-001|MAPICI-SETP-1-001",
@@ -70697,6 +71314,12 @@ window.CPL_STATEWIDE = {
           "course": "EMTP 101",
           "credit": "11.5 hours in Paramedic Field Internship"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "10 hours in Paramedic Field Internship",
+          "cid": ""
+        }
       ]
     },
     {
@@ -70815,7 +71438,8 @@ window.CPL_STATEWIDE = {
           "course": "CS  089A",
           "credit": "3 hours in C++ Programming II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-WSTP-1-001",
@@ -70941,7 +71565,8 @@ window.CPL_STATEWIDE = {
           "course": "WST 150",
           "credit": "3 hours in Water Treatment I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-W0&W-1-001",
@@ -71059,7 +71684,8 @@ window.CPL_STATEWIDE = {
           "course": "WST 145",
           "credit": "3 hours in Backflow Prevention Devices"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ACCP-1-001|MAPICI-ACCP1-1-001|MAPICI-ACP1-1-001|MAPICI-AWS(-1-001|MAPICI-AWS(1-1-001|MAPICI-AWS(2-1-001",
@@ -71230,6 +71856,12 @@ window.CPL_STATEWIDE = {
           "course": "CIS 023A",
           "credit": "2 hours in Introduction to Amazon Web Services"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Cloud Computing and Virtualization",
+          "cid": ""
+        }
       ]
     },
     {
@@ -71354,7 +71986,8 @@ window.CPL_STATEWIDE = {
           "course": "EMT 14",
           "credit": "3 hours in First Aid, CPR and AED"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-BLS(-1-001",
@@ -71477,7 +72110,8 @@ window.CPL_STATEWIDE = {
           "course": "KIN 13",
           "credit": "0.5 hours in BASIC LIFE SUPPORT FOR THE HEALTHCARE PROVIDER"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CS(-1-001|MAPICI-CS1-1-001|MAPICI-CSC-1-001|MAPICI-CSFC-1-001",
@@ -71684,6 +72318,12 @@ window.CPL_STATEWIDE = {
           "course": "CIS 060",
           "credit": "3 hours in Information Systems Security"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Introduction Information Systems Security",
+          "cid": "ITIS 160"
+        }
       ]
     },
     {
@@ -71827,6 +72467,12 @@ window.CPL_STATEWIDE = {
           "course": "CIS 064E",
           "credit": "4 hours in Fundamentals of Large Scale Cloud Computing"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Cloud Computing and Virtualization",
+          "cid": ""
+        }
       ]
     },
     {
@@ -71943,7 +72589,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSAD 210",
           "credit": "3 hours in Business Communication"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-B2C--1-001",
@@ -72059,7 +72706,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSAD 210",
           "credit": "3 hours in Business Communication"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-B2BC-1-001",
@@ -72175,7 +72823,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSAD 210",
           "credit": "3 hours in Business Communication"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-V1TE-1-001",
@@ -72291,7 +72940,8 @@ window.CPL_STATEWIDE = {
           "course": "THEA 152",
           "credit": "3 hours in Tour Ensemble"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEW-1-001",
@@ -72407,7 +73057,8 @@ window.CPL_STATEWIDE = {
           "course": "ANTH V09",
           "credit": "3 hours in World Prehistory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-AOTA-1-001|MAPCXS-CBEA18-1-001",
@@ -72525,7 +73176,8 @@ window.CPL_STATEWIDE = {
           "course": "ARTH 9",
           "credit": "3 hours in Art of the Ancient Americas"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CEHO1-1-001|MAPSAS-CEHU1-1-001|MAPSAS-CHUI1-1-001|MAPSAS-CHUI3-1-001|MAPSAS-CHUS11-1-001|MAPSAS-CHUS15-1-001|MAPSAS-CHUS17-1-001|MAPSAS-CHUS19-1-001|MAPSAS-CHUS2-1-001|MAPSAS-CHUS21-1-001|MAPSAS-CHUS23-1-001|MAPSAS-CHUS25-1-001|MAPSAS-CHUS27-1-001|MAPSAS-CHUS29-1-001|MAPSAS-CHUS31-1-001|MAPSAS-CHUS33-1-001|MAPSAS-CHUS35-1-001|MAPSAS-CHUS37-1-001|MAPSAS-CHUS39-1-001|MAPSAS-CHUS41-1-001|MAPSAS-CHUS43-1-001|MAPSAS-CHUS45-1-001|MAPSAS-CHUS47-1-001|MAPSAS-CHUS49-1-001|MAPSAS-CHUS5-1-001|MAPSAS-CHUS51-1-001|MAPSAS-CHUS53-1-001|MAPSAS-CHUS57-1-001|MAPSAS-CHUS59-1-001|MAPSAS-CHUS61-1-001|MAPSAS-CHUS7-1-001",
@@ -72786,7 +73438,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-4",
           "credit": "3 hours in Social Science and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-NF(-1-001|MAPCxS-CNSN-1-001",
@@ -72908,7 +73561,8 @@ window.CPL_STATEWIDE = {
           "course": "CS  003",
           "credit": "3 hours in Computer Network Specialist/Comp TIA Net+ Training"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-BC-1-001",
@@ -73028,7 +73682,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSAD 210",
           "credit": "3 hours in Business Communication"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-G1G-1-1-001",
@@ -73143,7 +73798,8 @@ window.CPL_STATEWIDE = {
           "course": "GEOL 166",
           "credit": "4 hours in Historical Geology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-AAWL-1-001",
@@ -73258,7 +73914,8 @@ window.CPL_STATEWIDE = {
           "course": "AOJ 001",
           "credit": "3 hours in Introduction to Criminology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-PGL-1-001",
@@ -73373,7 +74030,8 @@ window.CPL_STATEWIDE = {
           "course": "GEOG 4L",
           "credit": "1 hour in Physical Geography Laboratory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOA-SAHS-1-001",
@@ -73516,7 +74174,8 @@ window.CPL_STATEWIDE = {
           "course": "HUMSV 098",
           "credit": "4 hours in Human Services Work Experience"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-RA4P2-1-001",
@@ -73635,7 +74294,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.09",
           "credit": "2 hours in IW - GEN Rigging"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-RA4P3-1-001",
@@ -73754,7 +74414,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.63",
           "credit": "2 hours in IW - Structural Lead Hazard"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-RA4P6-1-001",
@@ -73873,7 +74534,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.56",
           "credit": "2 hours in IW - Trade Science/Ironworker History"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-SA4P2-1-001",
@@ -73992,7 +74654,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.09",
           "credit": "2 hours in IW - GEN Rigging"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-SA4P3-1-001",
@@ -74111,7 +74774,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.63",
           "credit": "2 hours in IW - Structural Lead Hazard"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-SA4P7-1-001",
@@ -74230,7 +74894,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 41.04",
           "credit": "2.5 hours in IW - Architectural lll"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:HU-1-001|MAPSAS-CEHO-1-001|MAPSAS-CEHU-1-001|MAPSAS-CHUI-1-001|MAPSAS-CHUI2-1-001|MAPSAS-CHUS1-1-001|MAPSAS-CHUS10-1-001|MAPSAS-CHUS14-1-001|MAPSAS-CHUS16-1-001|MAPSAS-CHUS18-1-001|MAPSAS-CHUS20-1-001|MAPSAS-CHUS22-1-001|MAPSAS-CHUS24-1-001|MAPSAS-CHUS26-1-001|MAPSAS-CHUS28-1-001|MAPSAS-CHUS3-1-001|MAPSAS-CHUS30-1-001|MAPSAS-CHUS32-1-001|MAPSAS-CHUS34-1-001|MAPSAS-CHUS36-1-001|MAPSAS-CHUS38-1-001|MAPSAS-CHUS4-1-001|MAPSAS-CHUS40-1-001|MAPSAS-CHUS42-1-001|MAPSAS-CHUS44-1-001|MAPSAS-CHUS46-1-001|MAPSAS-CHUS48-1-001|MAPSAS-CHUS50-1-001|MAPSAS-CHUS52-1-001|MAPSAS-CHUS56-1-001|MAPSAS-CHUS58-1-001|MAPSAS-CHUS6-1-001|MAPSAS-CHUS60-1-001",
@@ -74502,7 +75167,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-4",
           "credit": "3 hours in Social Science and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-EDG-1-001",
@@ -74616,7 +75282,8 @@ window.CPL_STATEWIDE = {
           "course": "ENGR 2",
           "credit": "3 hours in Engineering Design Graphics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-V1RA-1-001",
@@ -74730,7 +75397,8 @@ window.CPL_STATEWIDE = {
           "course": "THEA 150A",
           "credit": "2 hours in Rehearsal and Performance in Production"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-V2MP-1-001",
@@ -74844,7 +75512,8 @@ window.CPL_STATEWIDE = {
           "course": "THEA 255",
           "credit": "3 hours in Motion Picture Performance Production"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEA16-1-001",
@@ -74958,7 +75627,8 @@ window.CPL_STATEWIDE = {
           "course": "ART V01",
           "credit": "3 hours in Art Appreciation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOO-LVN(-1-001",
@@ -75120,7 +75790,8 @@ window.CPL_STATEWIDE = {
           "course": "NRN 120C",
           "credit": "3 hours in Concepts of Nursing: Commonly Occurring Alterations: Clinical"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-ITPP-1-001",
@@ -75234,7 +75905,8 @@ window.CPL_STATEWIDE = {
           "course": "PHIL 006",
           "credit": "3 hours in Introduction to Philosophy"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-RWP0-1-001",
@@ -75348,7 +76020,8 @@ window.CPL_STATEWIDE = {
           "course": "PHIL 012",
           "credit": "3 hours in Religions World"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-THAT-1-001",
@@ -75462,7 +76135,8 @@ window.CPL_STATEWIDE = {
           "course": "THEATRE 4",
           "credit": "3 hours in Theatre History: Ancient to 1700"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-TH1-1-001",
@@ -75576,7 +76250,8 @@ window.CPL_STATEWIDE = {
           "course": "THEATRE 5",
           "credit": "3 hours in Theatre History: 1700-present"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CEFL-1-001|MAPSAS-CFLI-1-001|MAPSAS-CFLI10-1-001|MAPSAS-CFLI11-1-001|MAPSAS-CFLI12-1-001|MAPSAS-CFLI14-1-001|MAPSAS-CFLI15-1-001|MAPSAS-CFLI16-1-001|MAPSAS-CFLI17-1-001|MAPSAS-CFLI19-1-001|MAPSAS-CFLI20-1-001|MAPSAS-CFLI21-1-001|MAPSAS-CFLI22-1-001|MAPSAS-CFLI23-1-001|MAPSAS-CFLI24-1-001|MAPSAS-CFLI25-1-001|MAPSAS-CFLI26-1-001|MAPSAS-CFLI28-1-001|MAPSAS-CFLI29-1-001|MAPSAS-CFLI3-1-001|MAPSAS-CFLI30-1-001|MAPSAS-CFLI31-1-001|MAPSAS-CFLI33-1-001|MAPSAS-CFLI34-1-001|MAPSAS-CFLI36-1-001|MAPSAS-CFLI38-1-001|MAPSAS-CFLI5-1-001|MAPSAS-CFLI7-1-001|MAPSAS-CFLI8-1-001",
@@ -75835,7 +76510,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-C2SA1-1-001",
@@ -75948,7 +76624,8 @@ window.CPL_STATEWIDE = {
           "course": "CSCI 271",
           "credit": "3 hours in Problem Solving and Programming 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CA11-1-001|MAPCXS-CA12-1-001|MAPCXS-CA13-1-001",
@@ -76063,7 +76740,8 @@ window.CPL_STATEWIDE = {
           "course": "ARTH 19",
           "credit": "3 hours in Contemporary Art: 1945-Present"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:GL-1-001|MAPSAS-CEGL1-1-001|MAPSAS-CGLI-1-001|MAPSAS-CGLI10-1-001|MAPSAS-CGLI11-1-001|MAPSAS-CGLI12-1-001|MAPSAS-CGLI13-1-001|MAPSAS-CGLI15-1-001|MAPSAS-CGLI16-1-001|MAPSAS-CGLI17-1-001|MAPSAS-CGLI19-1-001|MAPSAS-CGLI20-1-001|MAPSAS-CGLI21-1-001|MAPSAS-CGLI22-1-001|MAPSAS-CGLI23-1-001|MAPSAS-CGLI24-1-001|MAPSAS-CGLI25-1-001|MAPSAS-CGLI26-1-001|MAPSAS-CGLI28-1-001|MAPSAS-CGLI29-1-001|MAPSAS-CGLI3-1-001|MAPSAS-CGLI30-1-001|MAPSAS-CGLI31-1-001|MAPSAS-CGLI33-1-001|MAPSAS-CGLI34-1-001|MAPSAS-CGLI36-1-001|MAPSAS-CGLI38-1-001|MAPSAS-CGLI5-1-001|MAPSAS-CGLI7-1-001|MAPSAS-CGLI8-1-001",
@@ -76315,7 +76993,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-E1MB-1-001|MAPICA-EMT(-1-001|MAPICA-EMTR-1-001|MAPICI-CECO-1-001|MAPICI-CNRE-1-001|MAPICI-E1MA-1-001|MAPICI-E1MA1-1-001|MAPICI-E3MT-1-001|MAPICI-E3MT1-1-001|MAPICI-EMT(1-1-001|MAPICI-EMT(2-1-001|MAPICI-EMT1-1-001|MAPICI-EMT11-1-001|MAPICI-EMT2-1-001|MAPICI-EMT3-1-001|MAPICI-EMT4-1-001|MAPICI-EMT5-1-001|MAPICI-EMTH-1-001|MAPICI-EMTN-1-001|MAPICI-NREC-1-001|MAPICN-(9EM-1-001",
@@ -76658,6 +77337,20 @@ window.CPL_STATEWIDE = {
           "course": "FT 183L",
           "credit": "2 hours in Emergency Medical Technician Lab"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)",
+          "cid": ""
+        },
+        {
+          "credit": "6 hours in Emergency Medical Technician - National Registry",
+          "cid": ""
+        },
+        {
+          "credit": "7 hours in Emergency Medical Technician - National Registry",
+          "cid": ""
+        }
       ]
     },
     {
@@ -76770,7 +77463,8 @@ window.CPL_STATEWIDE = {
           "course": "NURS 161",
           "credit": "5 hours in Beginning Medical Surgical Nursing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-N1-1-001",
@@ -76882,7 +77576,8 @@ window.CPL_STATEWIDE = {
           "course": "NURS 150",
           "credit": "4 hours in Foundations of Nursing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEA-0-1-001",
@@ -76994,7 +77689,8 @@ window.CPL_STATEWIDE = {
           "course": "NURS 160",
           "credit": "4 hours in Nursing Care of the Childbearing Family and Newborn"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-N1C-1-001",
@@ -77106,7 +77802,8 @@ window.CPL_STATEWIDE = {
           "course": "NURS 151",
           "credit": "5 hours in Introduction to Medical Surgical Nursing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-PPF-1-001",
@@ -77218,7 +77915,8 @@ window.CPL_STATEWIDE = {
           "course": "CSIS 9",
           "credit": "3 hours in Programming Fundamentals: Python"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-N2PP-1-001",
@@ -77330,7 +78028,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSE 270",
           "credit": "2 hours in Nursing Process: Pharmacology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-N2PF-1-001",
@@ -77442,7 +78141,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSE 271",
           "credit": "7 hours in Nursing Process: Fundamentals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-N2PG-1-001",
@@ -77554,7 +78254,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSE 272",
           "credit": "1 hour in Nursing Process: Geriatrics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-N2PM-1-001",
@@ -77666,7 +78367,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSE 273",
           "credit": "6 hours in Nursing Process: Maternal-Child"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-C1C--1-001",
@@ -77778,7 +78480,8 @@ window.CPL_STATEWIDE = {
           "course": "CHEM 142",
           "credit": "3 hours in Pre-General Chemistry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAP-C1C--1-001",
@@ -77890,7 +78593,8 @@ window.CPL_STATEWIDE = {
           "course": "CHEM 142",
           "credit": "3 hours in Pre-General Chemistry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-G1G--1-001",
@@ -78002,7 +78706,8 @@ window.CPL_STATEWIDE = {
           "course": "GEOG 105",
           "credit": "3 hours in Economic Geography"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-N2PF-1-001",
@@ -78114,7 +78819,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSE 271",
           "credit": "7 hours in Nursing Process: Fundamentals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-N2PM1-1-001|MAPPRA-NPMH-1-001",
@@ -78228,7 +78934,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSE 274",
           "credit": "3 hours in Nursing Process: Mental Health"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-N2PM-1-001",
@@ -78340,7 +79047,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSE 273",
           "credit": "6 hours in Nursing Process: Maternal-Child"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-C1C--1-001",
@@ -78452,7 +79160,8 @@ window.CPL_STATEWIDE = {
           "course": "CHEM 142",
           "credit": "3 hours in Pre-General Chemistry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-N1FN-1-001",
@@ -78564,7 +79273,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSE 115",
           "credit": "1 hour in Introduction for Nursing Majors"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-N2NP-1-001",
@@ -78676,7 +79386,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSE 270",
           "credit": "2 hours in Nursing Process: Pharmacology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-N2NP1-1-001",
@@ -78792,7 +79503,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSE 274",
           "credit": "3 hours in Nursing Process: Mental Health"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-N2NP2-1-001",
@@ -78904,7 +79616,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSE 272",
           "credit": "1 hour in Nursing Process: Geriatrics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-MNC--1-001",
@@ -79016,7 +79729,8 @@ window.CPL_STATEWIDE = {
           "course": "NURS 153",
           "credit": "4 hours in Maternal/Newborn Nursing Care"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-PNC--1-001",
@@ -79128,7 +79842,8 @@ window.CPL_STATEWIDE = {
           "course": "NURS 155",
           "credit": "3 hours in Pediatric Nursing Care"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-N4-A-1-001",
@@ -79240,7 +79955,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSING 400",
           "credit": "5 hours in Adult Health Care I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-N4-P-1-001",
@@ -79352,7 +80068,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSING 402",
           "credit": "1 hour in Pharmacology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-N4-A1-1-001",
@@ -79464,7 +80181,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSING 403",
           "credit": "5 hours in Adult Health Care II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-N4-M-1-001",
@@ -79576,7 +80294,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSING 404",
           "credit": "4 hours in Maternal and Newborn Health Care"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-N4-P1-1-001",
@@ -79688,7 +80407,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSING 405",
           "credit": "4 hours in Psychiatric Health Care"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-N4-A2-1-001",
@@ -79800,7 +80520,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSING 406",
           "credit": "5 hours in Adult Health Care III"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-N4-G-1-001",
@@ -79912,7 +80633,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSING 407",
           "credit": "3 hours in Geriatric Health Care"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-N4-P2-1-001",
@@ -80024,7 +80746,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSING 408",
           "credit": "1 hour in Psychological Aspects of Health Care"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-N4-A3-1-001",
@@ -80136,7 +80859,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSING 414",
           "credit": "5 hours in Adult Health Care IV"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-N4-P3-1-001",
@@ -80248,7 +80972,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSING 415",
           "credit": "4 hours in Pediatric Health Care"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-N4-H-1-001",
@@ -80360,7 +81085,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSING 441",
           "credit": "1 hour in History, Trends and Issues of Nursing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-N4-R-1-001",
@@ -80472,7 +81198,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSING 442",
           "credit": "1 hour in Role Transition to RN"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEF4-1-001",
@@ -80584,7 +81311,8 @@ window.CPL_STATEWIDE = {
           "course": "NS V10",
           "credit": "9 hours in Foundations of Nursing Practice"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEP2-1-001",
@@ -80696,7 +81424,8 @@ window.CPL_STATEWIDE = {
           "course": "NS V20",
           "credit": "9 hours in Patient-Centered Care I and Family-Centered Care of Children"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEP3-1-001|MAPCXS-CBEP4-1-001",
@@ -80814,7 +81543,8 @@ window.CPL_STATEWIDE = {
           "course": "NS V31",
           "credit": "9 hours in Patient-Centered Care II and Maternal Newborn and Mental Health Nursing: 30-UO"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEP5-1-001|MAPCXS-CBEP6-1-001",
@@ -80932,7 +81662,8 @@ window.CPL_STATEWIDE = {
           "course": "NS V41",
           "credit": "9 hours in Patient-Centered Care III and Transition to Professional Practice: 30-UO"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-MN-1-001",
@@ -81044,7 +81775,8 @@ window.CPL_STATEWIDE = {
           "course": "NURADN 29",
           "credit": "2 hours in Maternal-Newborn Nursing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-GNH0-1-001",
@@ -81156,7 +81888,8 @@ window.CPL_STATEWIDE = {
           "course": "HS 013",
           "credit": "3 hours in General Nutrition"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-NP1-1-001",
@@ -81268,7 +82001,8 @@ window.CPL_STATEWIDE = {
           "course": "NURADN 15",
           "credit": "7.5 hours in Nursing Process 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-TIN-1-001",
@@ -81380,7 +82114,8 @@ window.CPL_STATEWIDE = {
           "course": "NURADN 3",
           "credit": "1.5 hours in Transition in Nursing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-NP3-1-001",
@@ -81492,7 +82227,8 @@ window.CPL_STATEWIDE = {
           "course": "NURADN 35",
           "credit": "7.5 hours in Nursing Process 3"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-FN-1-001",
@@ -81604,7 +82340,8 @@ window.CPL_STATEWIDE = {
           "course": "NURADN 39",
           "credit": "2 hours in Family-Child Nursing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-TINL-1-001",
@@ -81716,7 +82453,8 @@ window.CPL_STATEWIDE = {
           "course": "NURADN 3L",
           "credit": "0.5 hours in Transition in Nursing Laboratory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-NP4-1-001",
@@ -81828,7 +82566,8 @@ window.CPL_STATEWIDE = {
           "course": "NURADN 47",
           "credit": "7.5 hours in Nursing Process 4"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CNS1-1-001",
@@ -81940,7 +82679,8 @@ window.CPL_STATEWIDE = {
           "course": "NURADN 6",
           "credit": "1.5 hours in Clinical Nursing Skills"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOA-NAP-1-001",
@@ -82084,7 +82824,8 @@ window.CPL_STATEWIDE = {
           "course": "NURS 260",
           "credit": "4 hours in Mental Health Nursing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-NP2-1-001",
@@ -82196,7 +82937,8 @@ window.CPL_STATEWIDE = {
           "course": "NURADN 28",
           "credit": "7.5 hours in Nursing Process 2"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CENA-1-001",
@@ -82308,7 +83050,8 @@ window.CPL_STATEWIDE = {
           "course": "NURADN 482",
           "credit": "1 hour in Cooperative Education: Nursing A.D.N"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:AA-1-001|MAPSAS-CA&I-1-001|MAPSAS-CA&I2-1-001|MAPSAS-CA&I3-1-001|MAPSAS-CA&I4-1-001|MAPSAS-CAAI-1-001|MAPSAS-CAAI1-1-001|MAPSAS-CAAI10-1-001|MAPSAS-CAAI11-1-001|MAPSAS-CAAI12-1-001|MAPSAS-CAAI13-1-001|MAPSAS-CAAI14-1-001|MAPSAS-CAAI15-1-001|MAPSAS-CAAI16-1-001|MAPSAS-CAAI17-1-001|MAPSAS-CAAI18-1-001|MAPSAS-CAAI19-1-001|MAPSAS-CAAI2-1-001|MAPSAS-CAAI20-1-001|MAPSAS-CAAI21-1-001|MAPSAS-CAAI22-1-001|MAPSAS-CAAI23-1-001|MAPSAS-CAAI24-1-001|MAPSAS-CAAI25-1-001|MAPSAS-CAAI26-1-001|MAPSAS-CAAI27-1-001|MAPSAS-CAAI28-1-001|MAPSAS-CAAI29-1-001|MAPSAS-CAAI3-1-001|MAPSAS-CAAI30-1-001|MAPSAS-CAAI31-1-001|MAPSAS-CAAI4-1-001|MAPSAS-CAAI5-1-001|MAPSAS-CAAI7-1-001|MAPSAS-CAAI8-1-001|MAPSAS-CAIL-1-001|MAPSAS-CEAA-1-001|MAPSAS-CEAA1-1-001|MAPSAS-CEAA2-1-001",
@@ -82575,7 +83318,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area C",
           "credit": "3 hours in Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CEP(-1-001|MAPSAS-CEP1-1-001|MAPSAS-CP-1-001|MAPSAS-CP1-1-001|MAPSAS-CP10-1-001|MAPSAS-CP11-1-001|MAPSAS-CP12-1-001|MAPSAS-CP13-1-001|MAPSAS-CP14-1-001|MAPSAS-CP15-1-001|MAPSAS-CP16-1-001|MAPSAS-CP17-1-001|MAPSAS-CP18-1-001|MAPSAS-CP19-1-001|MAPSAS-CP2-1-001|MAPSAS-CP21-1-001|MAPSAS-CP23-1-001|MAPSAS-CP24-1-001|MAPSAS-CP27-1-001|MAPSAS-CP28-1-001|MAPSAS-CP29-1-001|MAPSAS-CP3-1-001|MAPSAS-CP30-1-001|MAPSAS-CP31-1-001|MAPSAS-CP32-1-001|MAPSAS-CP33-1-001|MAPSAS-CP34-1-001|MAPSAS-CP35-1-001|MAPSAS-CP36-1-001|MAPSAS-CP37-1-001|MAPSAS-CP5-1-001|MAPSAS-CP6-1-001|MAPSAS-CP8-1-001|MAPSAS-CP9-1-001",
@@ -82847,7 +83591,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-2",
           "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-C–CC1-1-001",
@@ -82959,7 +83704,8 @@ window.CPL_STATEWIDE = {
           "course": "CSC 17A",
           "credit": "3 hours in C++ Programming: Objects"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-LVN(-1-001|MAPICI-NF-L-1-001",
@@ -83097,7 +83843,8 @@ window.CPL_STATEWIDE = {
           "course": "NURSING 415",
           "credit": "4 hours in Pediatric Health Care"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-MHN-1-001|MAPCXS-MHN1-1-001",
@@ -83215,7 +83962,8 @@ window.CPL_STATEWIDE = {
           "course": "NURADN 49",
           "credit": "2 hours in Mental Health Nursing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-CA-1-001|MAPCXI-CA1-1-001|MAPCXI-CA2-1-001|MAPCxS-MSTC-1-001",
@@ -83343,7 +84091,8 @@ window.CPL_STATEWIDE = {
           "course": "CS  001",
           "credit": "3 hours in Microcomputer Specialist/A+ Training"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-LPIL-1-001",
@@ -83454,7 +84203,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 21A",
           "credit": "3 hours in Linux Operating System Admin"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEH-FFHL-1-001",
@@ -83565,7 +84315,8 @@ window.CPL_STATEWIDE = {
           "course": "NUTR 160",
           "credit": "3 hours in Foods for Healthy Lifestyles"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOJ-COC-1-001",
@@ -83680,7 +84431,8 @@ window.CPL_STATEWIDE = {
           "course": "ASHS 289A",
           "credit": "5 hours in FIELDWORK: ADDICTION STUDIES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-CA(-1-001|MAPCXH-CA-G-1-001",
@@ -83793,7 +84545,8 @@ window.CPL_STATEWIDE = {
           "course": "CULN 110",
           "credit": "2 hours in Food Safety and Sanitation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-V2SF-1-001",
@@ -83904,7 +84657,8 @@ window.CPL_STATEWIDE = {
           "course": "CULN 110",
           "credit": "2 hours in Food Safety and Sanitation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-V2IT-1-001",
@@ -84015,7 +84769,8 @@ window.CPL_STATEWIDE = {
           "course": "CULN 140",
           "credit": "3 hours in Introduction to Baking & Pastry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-ICA(-1-001|MAPCXH-ICA(1-1-001",
@@ -84127,7 +84882,8 @@ window.CPL_STATEWIDE = {
           "course": "CULN 110",
           "credit": "2 hours in Food Safety and Sanitation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-WHGR-1-001",
@@ -84238,7 +84994,8 @@ window.CPL_STATEWIDE = {
           "course": "HLTH 13",
           "credit": "3 hours in Nutrition and Life Fitness"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-GCCA-1-001",
@@ -84349,7 +85106,8 @@ window.CPL_STATEWIDE = {
           "course": "GEOG 2",
           "credit": "3 hours in Global Climate Change: An Introduction to Weather and Climate"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-PCS-1-001",
@@ -84460,7 +85218,8 @@ window.CPL_STATEWIDE = {
           "course": "CNET 50",
           "credit": "4 hours in Personal Computer (PC) Servicing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-CN-1-001",
@@ -84571,7 +85330,8 @@ window.CPL_STATEWIDE = {
           "course": "CNET 56",
           "credit": "4 hours in Computer Networks"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-SS-1-001",
@@ -84682,7 +85442,8 @@ window.CPL_STATEWIDE = {
           "course": "CNET 58",
           "credit": "4 hours in Server Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-ACP-1-001",
@@ -84793,7 +85554,8 @@ window.CPL_STATEWIDE = {
           "course": "CNET 60",
           "credit": "2 hours in A+ Certification Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-NCP-1-001",
@@ -84904,7 +85666,8 @@ window.CPL_STATEWIDE = {
           "course": "CNET 62",
           "credit": "2 hours in Network+ Certification Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-SCP-1-001",
@@ -85015,7 +85778,8 @@ window.CPL_STATEWIDE = {
           "course": "CNET 64",
           "credit": "2 hours in Server+ Certification Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-SCP1-1-001",
@@ -85126,7 +85890,8 @@ window.CPL_STATEWIDE = {
           "course": "CNET 66",
           "credit": "2 hours in Security+ Certification Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:SL-1-001|MAPSAS-CESL-1-001|MAPSAS-CESL2-1-001|MAPSAS-CSLI-1-001|MAPSAS-CSLI10-1-001|MAPSAS-CSLI11-1-001|MAPSAS-CSLI12-1-001|MAPSAS-CSLI13-1-001|MAPSAS-CSLI14-1-001|MAPSAS-CSLI15-1-001|MAPSAS-CSLI16-1-001|MAPSAS-CSLI17-1-001|MAPSAS-CSLI19-1-001|MAPSAS-CSLI20-1-001|MAPSAS-CSLI21-1-001|MAPSAS-CSLI22-1-001|MAPSAS-CSLI23-1-001|MAPSAS-CSLI24-1-001|MAPSAS-CSLI25-1-001|MAPSAS-CSLI26-1-001|MAPSAS-CSLI28-1-001|MAPSAS-CSLI29-1-001|MAPSAS-CSLI3-1-001|MAPSAS-CSLI30-1-001|MAPSAS-CSLI31-1-001|MAPSAS-CSLI33-1-001|MAPSAS-CSLI36-1-001|MAPSAS-CSLI38-1-001|MAPSAS-CSLI39-1-001|MAPSAS-CSLI5-1-001|MAPSAS-CSLI6-1-001|MAPSAS-CSLI9-1-001",
@@ -85401,7 +86166,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CBIC2-1-001|MAPICI-CBIR1-1-001",
@@ -85517,7 +86283,8 @@ window.CPL_STATEWIDE = {
           "course": "CS 41",
           "credit": "3 hours in Red Hat Linux Administration I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-CHSC-1-001",
@@ -85627,7 +86394,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 1",
           "credit": "3 hours in Introduction to Computer Information Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-MMEE-1-001",
@@ -85737,7 +86505,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 124",
           "credit": "3 hours in DATA ANALYTICS (ADVANCED EXCEL AND ACCCESS)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-MAA1-1-001",
@@ -85847,7 +86616,8 @@ window.CPL_STATEWIDE = {
           "course": "ITIS 474",
           "credit": "3 hours in Microsoft Azure Administrator"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:B-1-001|MAPSAS-CB-1-001|MAPSAS-CB1-1-001|MAPSAS-CB10-1-001|MAPSAS-CB11-1-001|MAPSAS-CB12-1-001|MAPSAS-CB13-1-001|MAPSAS-CB14-1-001|MAPSAS-CB15-1-001|MAPSAS-CB16-1-001|MAPSAS-CB17-1-001|MAPSAS-CB18-1-001|MAPSAS-CB19-1-001|MAPSAS-CB2-1-001|MAPSAS-CB20-1-001|MAPSAS-CB21-1-001|MAPSAS-CB22-1-001|MAPSAS-CB23-1-001|MAPSAS-CB24-1-001|MAPSAS-CB25-1-001|MAPSAS-CB26-1-001|MAPSAS-CB27-1-001|MAPSAS-CB28-1-001|MAPSAS-CB29-1-001|MAPSAS-CB3-1-001|MAPSAS-CB30-1-001|MAPSAS-CB31-1-001|MAPSAS-CB32-1-001|MAPSAS-CB33-1-001|MAPSAS-CB34-1-001|MAPSAS-CB35-1-001|MAPSAS-CB36-1-001|MAPSAS-CB37-1-001|MAPSAS-CB38-1-001|MAPSAS-CB4-1-001|MAPSAS-CB6-1-001|MAPSAS-CB7-1-001|MAPSAS-CB8-1-001|MAPSAS-CB9-1-001|MAPSAS-CEB(-1-001|MAPSAS-CEB2-1-001",
@@ -86138,7 +86908,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-5",
           "credit": "3 hours in Natural Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:PO1-1-001|MAPSAS-CEPO3-1-001|MAPSAS-CEPO7-1-001|MAPSAS-CPOM11-1-001|MAPSAS-CPOM12-1-001|MAPSAS-CPOM16-1-001|MAPSAS-CPOM18-1-001|MAPSAS-CPOM20-1-001|MAPSAS-CPOM22-1-001|MAPSAS-CPOM24-1-001|MAPSAS-CPOM28-1-001|MAPSAS-CPOM30-1-001|MAPSAS-CPOM33-1-001|MAPSAS-CPOM35-1-001|MAPSAS-CPOM37-1-001|MAPSAS-CPOM39-1-001|MAPSAS-CPOM41-1-001|MAPSAS-CPOM43-1-001|MAPSAS-CPOM45-1-001|MAPSAS-CPOM47-1-001|MAPSAS-CPOM49-1-001|MAPSAS-CPOM51-1-001|MAPSAS-CPOM53-1-001|MAPSAS-CPOM55-1-001|MAPSAS-CPOM59-1-001|MAPSAS-CPOM6-1-001|MAPSAS-CPOM61-1-001|MAPSAS-CPOM63-1-001|MAPSAS-CPOM65-1-001|MAPSAS-CPOM67-1-001|MAPSAS-CPOM69-1-001|MAPSAS-CPOM71-1-001|MAPSAS-CPOM74-1-001|MAPSAS-CPOM78-1-001|MAPSAS-CPOM83-1-001|MAPSAS-CPOM85-1-001|MAPSAS-CPOM87-1-001|MAPSAS-CPOM89-1-001",
@@ -86394,7 +87165,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-4",
           "credit": "3 hours in Social Science and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-MIAA-1-001",
@@ -86503,7 +87275,8 @@ window.CPL_STATEWIDE = {
           "course": "GEOG 12",
           "credit": "2 hours in Map Interpretation and Analysis"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-FGM-1-001",
@@ -86620,7 +87393,8 @@ window.CPL_STATEWIDE = {
           "course": "GEOG 16C",
           "credit": "2 hours in Field Geography: Mountains"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-EG-1-001",
@@ -86729,7 +87503,8 @@ window.CPL_STATEWIDE = {
           "course": "GEOG 6",
           "credit": "3 hours in Environmental Geography"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CEMT2-1-001",
@@ -86842,7 +87617,8 @@ window.CPL_STATEWIDE = {
           "course": "EMT 12",
           "credit": "0.5 hours in Basic Life Support for Healthcare Providers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:AL-1-001|MAPSAS-CAL-1-001|MAPSAS-CAL1-1-001|MAPSAS-CAL10-1-001|MAPSAS-CAL11-1-001|MAPSAS-CAL12-1-001|MAPSAS-CAL13-1-001|MAPSAS-CAL14-1-001|MAPSAS-CAL15-1-001|MAPSAS-CAL16-1-001|MAPSAS-CAL17-1-001|MAPSAS-CAL18-1-001|MAPSAS-CAL19-1-001|MAPSAS-CAL2-1-001|MAPSAS-CAL20-1-001|MAPSAS-CAL21-1-001|MAPSAS-CAL22-1-001|MAPSAS-CAL23-1-001|MAPSAS-CAL24-1-001|MAPSAS-CAL25-1-001|MAPSAS-CAL26-1-001|MAPSAS-CAL27-1-001|MAPSAS-CAL28-1-001|MAPSAS-CAL29-1-001|MAPSAS-CAL3-1-001|MAPSAS-CAL30-1-001|MAPSAS-CAL31-1-001|MAPSAS-CAL32-1-001|MAPSAS-CAL33-1-001|MAPSAS-CAL34-1-001|MAPSAS-CAL35-1-001|MAPSAS-CAL36-1-001|MAPSAS-CAL37-1-001|MAPSAS-CAL38-1-001|MAPSAS-CAL4-1-001|MAPSAS-CAL5-1-001|MAPSAS-CAL6-1-001|MAPSAS-CAL7-1-001|MAPSAS-CAL8-1-001|MAPSAS-CAL9-1-001|MAPSAS-CEAL-1-001|MAPSAS-CEAL1-1-001|MAPSAS-CEAL2-1-001",
@@ -87127,7 +87903,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:IP-1-001|MAPSAS-CEIP-1-001|MAPSAS-CEIP1-1-001|MAPSAS-CIP-1-001|MAPSAS-CIP1-1-001|MAPSAS-CIP11-1-001|MAPSAS-CIP12-1-001|MAPSAS-CIP13-1-001|MAPSAS-CIP14-1-001|MAPSAS-CIP15-1-001|MAPSAS-CIP16-1-001|MAPSAS-CIP17-1-001|MAPSAS-CIP18-1-001|MAPSAS-CIP19-1-001|MAPSAS-CIP2-1-001|MAPSAS-CIP20-1-001|MAPSAS-CIP21-1-001|MAPSAS-CIP22-1-001|MAPSAS-CIP23-1-001|MAPSAS-CIP24-1-001|MAPSAS-CIP25-1-001|MAPSAS-CIP26-1-001|MAPSAS-CIP27-1-001|MAPSAS-CIP28-1-001|MAPSAS-CIP29-1-001|MAPSAS-CIP30-1-001|MAPSAS-CIP31-1-001|MAPSAS-CIP32-1-001|MAPSAS-CIP33-1-001|MAPSAS-CIP34-1-001|MAPSAS-CIP35-1-001|MAPSAS-CIP36-1-001|MAPSAS-CIP37-1-001|MAPSAS-CIP4-1-001|MAPSAS-CIP5-1-001|MAPSAS-CIP6-1-001|MAPSAS-CIP7-1-001|MAPSAS-CIP8-1-001|MAPSAS-CIP9-1-001|MAPSAS-CITP-1-001",
@@ -87387,7 +88164,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-4",
           "credit": "3 hours in Social Science and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:WC-1-001|MAPSAS-CEWC1-1-001|MAPSAS-CEWC3-1-001|MAPSAS-CWCI1-1-001|MAPSAS-CWCI13-1-001|MAPSAS-CWCI15-1-001|MAPSAS-CWCI17-1-001|MAPSAS-CWCI19-1-001|MAPSAS-CWCI21-1-001|MAPSAS-CWCI23-1-001|MAPSAS-CWCI27-1-001|MAPSAS-CWCI29-1-001|MAPSAS-CWCI31-1-001|MAPSAS-CWCI33-1-001|MAPSAS-CWCI35-1-001|MAPSAS-CWCI37-1-001|MAPSAS-CWCI39-1-001|MAPSAS-CWCI4-1-001|MAPSAS-CWCI41-1-001|MAPSAS-CWCI43-1-001|MAPSAS-CWCI45-1-001|MAPSAS-CWCI47-1-001|MAPSAS-CWCI49-1-001|MAPSAS-CWCI51-1-001|MAPSAS-CWCI53-1-001|MAPSAS-CWCI55-1-001|MAPSAS-CWCI57-1-001|MAPSAS-CWCI59-1-001|MAPSAS-CWCI6-1-001|MAPSAS-CWCI63-1-001|MAPSAS-CWCI65-1-001|MAPSAS-CWCI67-1-001|MAPSAS-CWCI69-1-001|MAPSAS-CWCI71-1-001|MAPSAS-CWCI75-1-001|MAPSAS-CWCI77-1-001|MAPSAS-CWCI79-1-001|MAPSAS-CWCI81-1-001|MAPSAS-CWCI83-1-001|MAPSAS-CWCI9-1-001",
@@ -87673,7 +88451,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-4",
           "credit": "3 hours in Social Science and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOA-ATAP-1-001",
@@ -87845,7 +88624,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 090L",
           "credit": "1 hour in Engine Repair - Laboratory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:WC1-1-001|MAPSAS-C:WC2-1-001|MAPSAS-CEWC-1-001|MAPSAS-CEWC2-1-001|MAPSAS-CWCI-1-001|MAPSAS-CWCI12-1-001|MAPSAS-CWCI14-1-001|MAPSAS-CWCI16-1-001|MAPSAS-CWCI18-1-001|MAPSAS-CWCI2-1-001|MAPSAS-CWCI20-1-001|MAPSAS-CWCI22-1-001|MAPSAS-CWCI26-1-001|MAPSAS-CWCI28-1-001|MAPSAS-CWCI3-1-001|MAPSAS-CWCI30-1-001|MAPSAS-CWCI32-1-001|MAPSAS-CWCI34-1-001|MAPSAS-CWCI36-1-001|MAPSAS-CWCI38-1-001|MAPSAS-CWCI40-1-001|MAPSAS-CWCI42-1-001|MAPSAS-CWCI44-1-001|MAPSAS-CWCI46-1-001|MAPSAS-CWCI48-1-001|MAPSAS-CWCI5-1-001|MAPSAS-CWCI50-1-001|MAPSAS-CWCI52-1-001|MAPSAS-CWCI54-1-001|MAPSAS-CWCI56-1-001|MAPSAS-CWCI58-1-001|MAPSAS-CWCI62-1-001|MAPSAS-CWCI64-1-001|MAPSAS-CWCI66-1-001|MAPSAS-CWCI68-1-001|MAPSAS-CWCI7-1-001|MAPSAS-CWCI70-1-001|MAPSAS-CWCI72-1-001|MAPSAS-CWCI74-1-001|MAPSAS-CWCI76-1-001|MAPSAS-CWCI78-1-001|MAPSAS-CWCI8-1-001|MAPSAS-CWCI80-1-001|MAPSAS-CWCI82-1-001",
@@ -88168,7 +88948,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-4",
           "credit": "3 hours in Social Science and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ITCN-1-001",
@@ -88275,7 +89056,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 50",
           "credit": "3 hours in Introduction to Computer Networks"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:C1-1-001|MAPSAS-CC-1-001|MAPSAS-CC12-1-001|MAPSAS-CC14-1-001|MAPSAS-CC16-1-001|MAPSAS-CC18-1-001|MAPSAS-CC2-1-001|MAPSAS-CC20-1-001|MAPSAS-CC22-1-001|MAPSAS-CC24-1-001|MAPSAS-CC26-1-001|MAPSAS-CC28-1-001|MAPSAS-CC29-1-001|MAPSAS-CC31-1-001|MAPSAS-CC33-1-001|MAPSAS-CC35-1-001|MAPSAS-CC37-1-001|MAPSAS-CC39-1-001|MAPSAS-CC4-1-001|MAPSAS-CC41-1-001|MAPSAS-CC44-1-001|MAPSAS-CC45-1-001|MAPSAS-CC47-1-001|MAPSAS-CC49-1-001|MAPSAS-CC51-1-001|MAPSAS-CC53-1-001|MAPSAS-CC55-1-001|MAPSAS-CC57-1-001|MAPSAS-CC59-1-001|MAPSAS-CC6-1-001|MAPSAS-CC61-1-001|MAPSAS-CC62-1-001|MAPSAS-CC64-1-001|MAPSAS-CC66-1-001|MAPSAS-CC68-1-001|MAPSAS-CC70-1-001|MAPSAS-CC72-1-001|MAPSAS-CC74-1-001|MAPSAS-CC76-1-001|MAPSAS-CC78-1-001|MAPSAS-CC8-1-001|MAPSAS-CEC(-1-001|MAPSAS-CEC1-1-001|MAPSAS-CEC3-1-001",
@@ -88595,7 +89377,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-2",
           "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:IS-1-001|MAPSAS-CEIS1-1-001|MAPSAS-CEIS2-1-001|MAPSAS-CIS1-1-001|MAPSAS-CIS10-1-001|MAPSAS-CIS11-1-001|MAPSAS-CIS12-1-001|MAPSAS-CIS13-1-001|MAPSAS-CIS14-1-001|MAPSAS-CIS15-1-001|MAPSAS-CIS16-1-001|MAPSAS-CIS17-1-001|MAPSAS-CIS18-1-001|MAPSAS-CIS19-1-001|MAPSAS-CIS20-1-001|MAPSAS-CIS21-1-001|MAPSAS-CIS22-1-001|MAPSAS-CIS23-1-001|MAPSAS-CIS24-1-001|MAPSAS-CIS25-1-001|MAPSAS-CIS26-1-001|MAPSAS-CIS27-1-001|MAPSAS-CIS28-1-001|MAPSAS-CIS29-1-001|MAPSAS-CIS3-1-001|MAPSAS-CIS30-1-001|MAPSAS-CIS31-1-001|MAPSAS-CIS32-1-001|MAPSAS-CIS33-1-001|MAPSAS-CIS34-1-001|MAPSAS-CIS35-1-001|MAPSAS-CIS36-1-001|MAPSAS-CIS37-1-001|MAPSAS-CIS38-1-001|MAPSAS-CIS4-1-001|MAPSAS-CIS6-1-001|MAPSAS-CIS7-1-001|MAPSAS-CIS8-1-001|MAPSAS-CIS9-1-001|MAPSAS-CITS-1-001",
@@ -88863,7 +89646,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-4",
           "credit": "3 hours in Social Science and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:C-1-001|MAPSAS-CC1-1-001|MAPSAS-CC13-1-001|MAPSAS-CC15-1-001|MAPSAS-CC17-1-001|MAPSAS-CC19-1-001|MAPSAS-CC21-1-001|MAPSAS-CC23-1-001|MAPSAS-CC25-1-001|MAPSAS-CC27-1-001|MAPSAS-CC3-1-001|MAPSAS-CC30-1-001|MAPSAS-CC32-1-001|MAPSAS-CC34-1-001|MAPSAS-CC36-1-001|MAPSAS-CC38-1-001|MAPSAS-CC40-1-001|MAPSAS-CC42-1-001|MAPSAS-CC43-1-001|MAPSAS-CC46-1-001|MAPSAS-CC48-1-001|MAPSAS-CC5-1-001|MAPSAS-CC50-1-001|MAPSAS-CC52-1-001|MAPSAS-CC54-1-001|MAPSAS-CC56-1-001|MAPSAS-CC58-1-001|MAPSAS-CC60-1-001|MAPSAS-CC63-1-001|MAPSAS-CC65-1-001|MAPSAS-CC67-1-001|MAPSAS-CC69-1-001|MAPSAS-CC7-1-001|MAPSAS-CC71-1-001|MAPSAS-CC73-1-001|MAPSAS-CC75-1-001|MAPSAS-CC77-1-001|MAPSAS-CC79-1-001|MAPSAS-CC9-1-001|MAPSAS-CEC(1-1-001",
@@ -89153,7 +89937,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-5",
           "credit": "3 hours in Natural Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-C2LP-1-001",
@@ -89259,7 +90044,8 @@ window.CPL_STATEWIDE = {
           "course": "CSCI 273",
           "credit": "3 hours in Assembly Language Programming"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-ASDP-1-001",
@@ -89365,7 +90151,8 @@ window.CPL_STATEWIDE = {
           "course": "ART 108",
           "credit": "3 hours in Beginning Drawing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:AG-1-001|MAPSAS-CAG-1-001|MAPSAS-CAG1-1-001|MAPSAS-CAG10-1-001|MAPSAS-CAG11-1-001|MAPSAS-CAG12-1-001|MAPSAS-CAG13-1-001|MAPSAS-CAG14-1-001|MAPSAS-CAG15-1-001|MAPSAS-CAG16-1-001|MAPSAS-CAG17-1-001|MAPSAS-CAG18-1-001|MAPSAS-CAG19-1-001|MAPSAS-CAG2-1-001|MAPSAS-CAG20-1-001|MAPSAS-CAG21-1-001|MAPSAS-CAG22-1-001|MAPSAS-CAG23-1-001|MAPSAS-CAG24-1-001|MAPSAS-CAG25-1-001|MAPSAS-CAG26-1-001|MAPSAS-CAG27-1-001|MAPSAS-CAG28-1-001|MAPSAS-CAG29-1-001|MAPSAS-CAG3-1-001|MAPSAS-CAG30-1-001|MAPSAS-CAG31-1-001|MAPSAS-CAG32-1-001|MAPSAS-CAG33-1-001|MAPSAS-CAG34-1-001|MAPSAS-CAG35-1-001|MAPSAS-CAG36-1-001|MAPSAS-CAG37-1-001|MAPSAS-CAG38-1-001|MAPSAS-CAG39-1-001|MAPSAS-CAG4-1-001|MAPSAS-CAG5-1-001|MAPSAS-CAG6-1-001|MAPSAS-CAG7-1-001|MAPSAS-CAG8-1-001|MAPSAS-CAG9-1-001|MAPSAS-CEAG-1-001|MAPSAS-CEAG1-1-001|MAPSAS-CEAG2-1-001",
@@ -89644,7 +90431,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-4",
           "credit": "3 hours in Social Science and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:PO-1-001|MAPSAS-CEPO-1-001|MAPSAS-CEPO4-1-001|MAPSAS-CPOM-1-001|MAPSAS-CPOM15-1-001|MAPSAS-CPOM17-1-001|MAPSAS-CPOM19-1-001|MAPSAS-CPOM21-1-001|MAPSAS-CPOM23-1-001|MAPSAS-CPOM27-1-001|MAPSAS-CPOM29-1-001|MAPSAS-CPOM31-1-001|MAPSAS-CPOM32-1-001|MAPSAS-CPOM34-1-001|MAPSAS-CPOM36-1-001|MAPSAS-CPOM38-1-001|MAPSAS-CPOM40-1-001|MAPSAS-CPOM42-1-001|MAPSAS-CPOM44-1-001|MAPSAS-CPOM46-1-001|MAPSAS-CPOM48-1-001|MAPSAS-CPOM5-1-001|MAPSAS-CPOM50-1-001|MAPSAS-CPOM52-1-001|MAPSAS-CPOM54-1-001|MAPSAS-CPOM56-1-001|MAPSAS-CPOM60-1-001|MAPSAS-CPOM62-1-001|MAPSAS-CPOM64-1-001|MAPSAS-CPOM66-1-001|MAPSAS-CPOM68-1-001|MAPSAS-CPOM7-1-001|MAPSAS-CPOM70-1-001|MAPSAS-CPOM73-1-001|MAPSAS-CPOM75-1-001|MAPSAS-CPOM79-1-001|MAPSAS-CPOM80-1-001|MAPSAS-CPOM84-1-001|MAPSAS-CPOM86-1-001|MAPSAS-CPOM88-1-001|MAPSAS-CPOM9-1-001",
@@ -89920,7 +90708,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-4",
           "credit": "3 hours in Social Science and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:CA-1-001|MAPSAS-CCA-1-001|MAPSAS-CCA1-1-001|MAPSAS-CCA10-1-001|MAPSAS-CCA12-1-001|MAPSAS-CCA14-1-001|MAPSAS-CCA16-1-001|MAPSAS-CCA17-1-001|MAPSAS-CCA19-1-001|MAPSAS-CCA2-1-001|MAPSAS-CCA20-1-001|MAPSAS-CCA21-1-001|MAPSAS-CCA22-1-001|MAPSAS-CCA23-1-001|MAPSAS-CCA24-1-001|MAPSAS-CCA25-1-001|MAPSAS-CCA26-1-001|MAPSAS-CCA28-1-001|MAPSAS-CCA3-1-001|MAPSAS-CCA30-1-001|MAPSAS-CCA31-1-001|MAPSAS-CCA32-1-001|MAPSAS-CCA33-1-001|MAPSAS-CCA34-1-001|MAPSAS-CCA35-1-001|MAPSAS-CCA37-1-001|MAPSAS-CCA38-1-001|MAPSAS-CCA39-1-001|MAPSAS-CCA4-1-001|MAPSAS-CCA40-1-001|MAPSAS-CCA42-1-001|MAPSAS-CCA43-1-001|MAPSAS-CCA44-1-001|MAPSAS-CCA5-1-001|MAPSAS-CCA6-1-001|MAPSAS-CCA7-1-001|MAPSAS-CCA8-1-001|MAPSAS-CCA9-1-001|MAPSAS-CECA-1-001|MAPSAS-CECA1-1-001",
@@ -90216,7 +91005,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-2",
           "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAI-CSC-1-001",
@@ -90325,7 +91115,8 @@ window.CPL_STATEWIDE = {
           "course": "CCT 160",
           "credit": "3 hours in Introduction Information Systems Security"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CCCA-1-001",
@@ -90433,6 +91224,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "CTIS 19",
           "credit": "3 hours in Cybersecurity Operations- CCNA CyberOps"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Cybersecurity Operations- CCNA CyberOps",
+          "cid": "ITIS 166"
         }
       ]
     },
@@ -90549,7 +91346,8 @@ window.CPL_STATEWIDE = {
           "course": "CMPET 312",
           "credit": "2.5 hours in IT Support Fundamentals 2"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ACPV-1-001|MAPICS-P6-1-001",
@@ -90660,7 +91458,8 @@ window.CPL_STATEWIDE = {
           "course": "PHOT 60A",
           "credit": "3 hours in Beginning Photoshop"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-AMTT-1-001",
@@ -90764,7 +91563,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 065",
           "credit": "5 hours in Electrical Systems Diagnosis and Repair"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-EARS-1-001",
@@ -90868,7 +91668,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 156G",
           "credit": "4 hours in Engine and Related Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-BESF-1-001",
@@ -90972,7 +91773,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 161G",
           "credit": "4 hours in Basic Electricity and Electrical Systems Fundamentals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-EP-1-001",
@@ -91076,7 +91878,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 165G",
           "credit": "4 hours in Engine Performance"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-BSDA-1-001",
@@ -91180,7 +91983,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 186",
           "credit": "4 hours in BAR Specified Diagnostic, Repair, and Level 2 Inspection Training"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASE(4-1-001",
@@ -91284,7 +92088,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 062B",
           "credit": "9 hours in Advanced Wheel Alignment"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-GA-1-001",
@@ -91404,7 +92209,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 66",
           "credit": "3 hours in Automotive Parts and Service Advising"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-A0-A-1-001",
@@ -91508,7 +92314,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 065",
           "credit": "4 hours in Electrical Systems Diagnosis and Repair"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASE(7-1-001",
@@ -91612,7 +92419,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO B3",
           "credit": "4 hours in Fundamentals of Automotive Management and Services"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASEA-1-001",
@@ -91716,7 +92524,8 @@ window.CPL_STATEWIDE = {
           "course": "AUSER 101",
           "credit": "5 hours in Automotive Fundamentals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASEA1-1-001",
@@ -91820,7 +92629,8 @@ window.CPL_STATEWIDE = {
           "course": "AUSER 207",
           "credit": "2.5 hours in Hybrid, Plug-in Hybrid and Electric Vehicle"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASEA2-1-001",
@@ -91924,7 +92734,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTORTK 113",
           "credit": "3 hours in DRIVE TRAIN COMPONENTS PRINCIPLES AND PRACTICES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A3AS-1-001",
@@ -92028,7 +92839,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTEC 311",
           "credit": "4 hours in Basic Automotive Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A3AS1-1-001",
@@ -92132,7 +92944,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTEC 311",
           "credit": "4 hours in Basic Automotive Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEA1-1-001",
@@ -92236,7 +93049,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO A2",
           "credit": "4 hours in Automatic Transmission Transaxle"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEA2-1-001",
@@ -92340,7 +93154,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO A3",
           "credit": "4 hours in Manual Drive Train and Axles"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEA3-1-001",
@@ -92444,7 +93259,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO A4",
           "credit": "4 hours in Suspension and Steering"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEA4-1-001",
@@ -92548,7 +93364,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO A5",
           "credit": "4 hours in Brakes"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEA6-1-001",
@@ -92652,7 +93469,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO A7",
           "credit": "4 hours in Automotive Heating and Air Conditioning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEA7-1-001",
@@ -92756,7 +93574,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO A8",
           "credit": "5 hours in Engine Performance"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEA8-1-001",
@@ -92860,7 +93679,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO A9",
           "credit": "4 hours in Light Vehicle Diesel Engines"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASE(9-1-001",
@@ -92964,7 +93784,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO B36",
           "credit": "4 hours in Light Duty Diesel Performance"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEA10-1-001",
@@ -93068,7 +93889,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO L1",
           "credit": "5 hours in Advanced Engine Performance"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASEL-1-001",
@@ -93172,7 +93994,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO L1L2",
           "credit": "5.5 hours in Smog Level One and Level Two"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CBIC-1-001",
@@ -93276,7 +94099,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO SDR",
           "credit": "5 hours in Specified Diagnostic and Repair"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-AGAA-1-001",
@@ -93380,7 +94204,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 54",
           "credit": "4 hours in Automotive Basic Skills"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-SIAR-1-001",
@@ -93484,7 +94309,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 55",
           "credit": "5 hours in Automotive Emissions Level 1 and 2 Training"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-AMLR-1-001|MAPCXH-AMLR1-1-001|MAPCXH-AMLR3-1-001",
@@ -93596,7 +94422,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 102",
           "credit": "3 units in Introduction to Automotive"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-ATMI-1-001",
@@ -93700,7 +94527,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 102",
           "credit": "3 units in Introduction to Automotive"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-ATI--1-001",
@@ -93804,7 +94632,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 102",
           "credit": "3 hours in Introduction to Automotive"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-AST0-1-001",
@@ -93908,7 +94737,8 @@ window.CPL_STATEWIDE = {
           "course": "A S T 020",
           "credit": "4 hours in Advanced Engine Diagnostics and Performance"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEA12-1-001",
@@ -94012,7 +94842,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 102",
           "credit": "3.5 hours in Automotive Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-CHSA-1-001",
@@ -94116,7 +94947,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTOTEC 10",
           "credit": "4 hours in Service and Repair"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-SHSA-1-001",
@@ -94220,7 +95052,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTOTEC 15",
           "credit": "2 hours in Auto Electricity and Electronics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-UHSA-1-001",
@@ -94324,7 +95157,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTOTEC 10",
           "credit": "4 hours in Service and Repair"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-V6IT-1-001",
@@ -94428,7 +95262,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 102",
           "credit": "3 hours in Introduction to Automotive"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-V6ER-1-001",
@@ -94532,7 +95367,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 111",
           "credit": "5 hours in Engine Repair"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-V6A&-1-001",
@@ -94636,7 +95472,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 112",
           "credit": "4.5 hours in Automatic Transmissions and Transaxles"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASEG-1-001",
@@ -94740,7 +95577,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 102",
           "credit": "3.5 hours in Automotive Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASE4-1-001",
@@ -94844,7 +95682,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 105",
           "credit": "3 hours in Suspension, Steering, and Alignment"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASE5-1-001",
@@ -94948,7 +95787,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 106",
           "credit": "2.5 hours in Automotive Brake Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASEL1-1-001",
@@ -95052,7 +95892,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 118",
           "credit": "2.5 hours in Fuel Systems/Emission Controls"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASE8-1-001",
@@ -95156,7 +95997,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 119",
           "credit": "2.5 hours in Introduction to Engine Performance"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASE2-1-001",
@@ -95260,7 +96102,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 120",
           "credit": "2.5 hours in Automatic Transmission Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASE3-1-001",
@@ -95364,7 +96207,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 121",
           "credit": "2 hours in Manual Transmission and Drivetrain Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASE7-1-001",
@@ -95468,7 +96312,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 135",
           "credit": "2 hours in Air Conditioning Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASE6-1-001",
@@ -95572,7 +96417,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 170",
           "credit": "3 hours in Electrical Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASE1-1-001",
@@ -95676,7 +96522,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 171",
           "credit": "3 hours in Engine Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ACAT-1-001",
@@ -95804,7 +96651,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTORTK 144",
           "credit": "3 hours in California State Bureau Of Automotive Repair Smog Inspector"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ACAA-1-001",
@@ -95908,7 +96756,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTORTK 123",
           "credit": "3 hours in FUEL & EMISSIONS SYSTEMS THEORY, INSPECTION & REPAIR"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ACAA-1-001",
@@ -96012,7 +96861,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTORTK 123",
           "credit": "3 hours in FUEL & EMISSIONS SYSTEMS THEORY, INSPECTION & REPAIR"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ACAA1-1-001",
@@ -96116,7 +96966,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTORTK 113",
           "credit": "3 hours in DRIVE TRAIN COMPONENTS PRINCIPLES AND PRACTICES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ACAA1-1-001",
@@ -96220,7 +97071,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTORTK 113",
           "credit": "3 hours in DRIVE TRAIN COMPONENTS PRINCIPLES AND PRACTICES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ACAA2-1-001",
@@ -96324,7 +97176,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTORTK 114",
           "credit": "3 hours in STEERING,SUSPENSION,BRAKES,PRINCIPLES AND PRACTICES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ACAA2-1-001",
@@ -96428,7 +97281,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTORTK 114",
           "credit": "3 hours in STEERING,SUSPENSION,BRAKES,PRINCIPLES AND PRACTICES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ACAA3-1-001",
@@ -96532,7 +97386,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTORTK 135",
           "credit": "3 hours in COMPUTER CONTROL AND FUEL INJECTION"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ACAA3-1-001",
@@ -96636,7 +97491,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTORTK 135",
           "credit": "3 hours in COMPUTER CONTROL AND FUEL INJECTION"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ATEF-1-001|MAPICI-ATEF1-1-001",
@@ -96750,7 +97606,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 116",
           "credit": "5 hours in Electrical Fundamentals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASE(14-1-001",
@@ -96854,7 +97711,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 53",
           "credit": "7 hours in Automatic & Manual Transmission"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASE(15-1-001",
@@ -96958,7 +97816,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 55",
           "credit": "7 hours in Engine Performance and Drivability"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A4-1-001",
@@ -97098,7 +97957,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 093B",
           "credit": "4 hours in Light/Medium Duty Diesel Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBES6-1-001",
@@ -97202,7 +98062,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTOTEC 10",
           "credit": "4 hours in Service and Repair"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-AEAE-1-001",
@@ -97306,7 +98167,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTOTEC 15",
           "credit": "2 hours in Auto Electricity and Electronics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-EPIA-1-001",
@@ -97410,7 +98272,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 029",
           "credit": "4 hours in Engine Performance II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-POAT-1-001",
@@ -97514,7 +98377,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 004",
           "credit": "4 hours in Principles of Automotive Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-AESI-1-001",
@@ -97618,7 +98482,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 020",
           "credit": "4 hours in Automotive Electrical Systems I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-MT&T-1-001",
@@ -97722,7 +98587,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 065",
           "credit": "4 hours in Manual Transmissions & Transaxles"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-EPIA1-1-001",
@@ -97826,7 +98692,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 018",
           "credit": "4 hours in Engine Performance I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-BAAC-1-001",
@@ -97930,7 +98797,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTOTEC 416",
           "credit": "2 hours in Basic Automotive Air Conditioning Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-B3-1-001",
@@ -98034,7 +98902,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTOTEC 417",
           "credit": "4 hours in Brakes"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-FIAE-1-001",
@@ -98138,7 +99007,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTOTEC 422",
           "credit": "5 hours in Fuel, Ignition, and Emission Control Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-EMSA-1-001",
@@ -98242,7 +99112,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTOTEC 423",
           "credit": "4 hours in Engine Management Systems and Drivability"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-EOAS-1-001",
@@ -98346,7 +99217,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTOTEC 427",
           "credit": "5 hours in Engine Operation and Service"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-AAES-1-001",
@@ -98450,7 +99322,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTOTEC 429",
           "credit": "4 hours in Advanced Automotive Electrical Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-MAAT-1-001",
@@ -98554,7 +99427,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTOTEC 432",
           "credit": "5 hours in Manual and Automatic Transmissions, Transaxles and Drive Trains"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A6C-1-001",
@@ -98658,7 +99532,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 200",
           "credit": "3 hours in Introduction to Automotive Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A6C1-1-001",
@@ -98762,7 +99637,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 201",
           "credit": "1 hour in Automotive Lubrication Service"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A6C2-1-001",
@@ -98866,7 +99742,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 202",
           "credit": "1 hour in Automotive Tire Service"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A6C3-1-001",
@@ -98970,7 +99847,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 203",
           "credit": "1 hour in Automotive Brake Inspection"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A6C4-1-001",
@@ -99074,7 +99952,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 211",
           "credit": "3 hours in Automotive Engine Repair"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A6C5-1-001",
@@ -99178,7 +100057,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 212",
           "credit": "3 hours in Automotive Automatic Transmission"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A6C6-1-001",
@@ -99282,7 +100162,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 213",
           "credit": "3 hours in Automotive Manual Transmission"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A6C7-1-001",
@@ -99386,7 +100267,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 214",
           "credit": "3 hours in Automotive Wheel Alignment"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A6C8-1-001",
@@ -99490,7 +100372,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 215",
           "credit": "3 hours in Automotive Brake Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A61-1-001",
@@ -99594,7 +100477,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 216",
           "credit": "3 hours in Automotive Electrical Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A6C9-1-001",
@@ -99698,7 +100582,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 217",
           "credit": "3 hours in Automotive Air Conditioning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A6C10-1-001",
@@ -99802,7 +100687,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 218",
           "credit": "3 hours in Automotive Fuel Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A6C11-1-001",
@@ -99906,7 +100792,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 219",
           "credit": "3 hours in Automotive Light DIesel Engines"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A6ES-1-001",
@@ -100010,7 +100897,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 060A",
           "credit": "4.5 hours in Electrical Schematic Diagnosis"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A6AE-1-001",
@@ -100114,7 +101002,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 060B",
           "credit": "4.5 hours in Automotive Electronics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A6AS-1-001",
@@ -100218,7 +101107,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 062A",
           "credit": "9 hours in Automotive Suspension, Steering and Alignment"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A6WA-1-001",
@@ -100322,7 +101212,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 062B",
           "credit": "9 hours in Wheel Alignment, Chassis Dynamics, ADAS"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A6BS-1-001",
@@ -100426,7 +101317,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 061A",
           "credit": "4.5 hours in Automotive Brake Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A6CB-1-001",
@@ -100530,7 +101422,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 061B",
           "credit": "4.5 hours in Electronically Controlled Brake Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A6IA-1-001",
@@ -100634,7 +101527,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 060D",
           "credit": "4.5 hours in Ignition Analysis and Oscilloscope Diagnosis"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A6AF-1-001",
@@ -100738,7 +101632,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 060E",
           "credit": "4.5 hours in Automotive Fuel Injection"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A6ND-1-001",
@@ -100842,7 +101737,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 060F",
           "credit": "4.5 hours in No-Start Diagnosis"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A6AS1-1-001",
@@ -100946,7 +101842,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 060G",
           "credit": "4.5 hours in Advanced Scan Tool Diagnosis"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A6AD-1-001",
@@ -101050,7 +101947,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 060H",
           "credit": "4.5 hours in Advanced Drivability and Onboard Diagnostics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A6AL-1-001",
@@ -101154,7 +102052,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 060J",
           "credit": "4.5 hours in Advanced Lab Scope and Waveform Diagnosis"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEA21-1-001",
@@ -101258,7 +102157,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 102",
           "credit": "3.5 hours in Automotive Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEA22-1-001",
@@ -101362,7 +102262,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 106",
           "credit": "2 hours in Automotive Brake Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEA23-1-001",
@@ -101466,7 +102367,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 117",
           "credit": "1.5 hours in Automotive Principles"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEA24-1-001",
@@ -101570,7 +102472,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 118",
           "credit": "2.5 hours in Fuel Systems/Emission Controls"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEA25-1-001",
@@ -101674,7 +102577,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 171",
           "credit": "2.5 hours in Engine Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEA26-1-001",
@@ -101778,7 +102682,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 204",
           "credit": "2.5 hours in Driver Assist Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASE61-1-001",
@@ -101882,7 +102787,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 216",
           "credit": "5 hours in Electrical Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-MCAA1-1-001",
@@ -102000,6 +102906,12 @@ window.CPL_STATEWIDE = {
           "course": "CIS 107",
           "credit": "3 hours in Cloud Operations and Management"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Cloud Operations and Management",
+          "cid": ""
+        }
       ]
     },
     {
@@ -102110,7 +103022,8 @@ window.CPL_STATEWIDE = {
           "course": "AT 110 C",
           "credit": "4 hours in Introduction to Automotive Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-ABS-1-001|MAPCxS-ABSA-1-001",
@@ -102220,7 +103133,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 036",
           "credit": "4 hours in Automotive Brake Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-SAS-1-001|MAPCXS-SASS-1-001",
@@ -102330,7 +103244,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTOTEC 418",
           "credit": "4 hours in Suspension and Steering Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ACA+-1-001|MAPCXS-CBEA5-1-001",
@@ -102440,7 +103355,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTORTK 122",
           "credit": "3 hours in ELECTRICAL/ELECTRONIC SYSTEMS THEORY, INSPECTION & REPAIR"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-A1A--1-001",
@@ -102543,7 +103459,8 @@ window.CPL_STATEWIDE = {
           "course": "ANAT 125",
           "credit": "4 hours in Human Anatomy"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-A1HA-1-001",
@@ -102646,7 +103563,8 @@ window.CPL_STATEWIDE = {
           "course": "ANAT 125",
           "credit": "4 hours in Human Anatomy"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-JCAC5-1-001",
@@ -102821,7 +103739,8 @@ window.CPL_STATEWIDE = {
           "course": "AIN 043",
           "credit": "1.5 hours in Tool Equipment Applications"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-JCAC6-1-001",
@@ -102996,7 +103915,8 @@ window.CPL_STATEWIDE = {
           "course": "AIN 043",
           "credit": "1.5 hours in Tool Equipment Applications"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:NS-1-001|MAPSAS-CENS-1-001|MAPSAS-CENS1-1-001|MAPSAS-CNS-1-001|MAPSAS-CNS1-1-001|MAPSAS-CNS10-1-001|MAPSAS-CNS11-1-001|MAPSAS-CNS12-1-001|MAPSAS-CNS13-1-001|MAPSAS-CNS14-1-001|MAPSAS-CNS15-1-001|MAPSAS-CNS16-1-001|MAPSAS-CNS17-1-001|MAPSAS-CNS18-1-001|MAPSAS-CNS19-1-001|MAPSAS-CNS2-1-001|MAPSAS-CNS20-1-001|MAPSAS-CNS21-1-001|MAPSAS-CNS22-1-001|MAPSAS-CNS23-1-001|MAPSAS-CNS24-1-001|MAPSAS-CNS25-1-001|MAPSAS-CNS26-1-001|MAPSAS-CNS27-1-001|MAPSAS-CNS28-1-001|MAPSAS-CNS29-1-001|MAPSAS-CNS3-1-001|MAPSAS-CNS30-1-001|MAPSAS-CNS31-1-001|MAPSAS-CNS32-1-001|MAPSAS-CNS33-1-001|MAPSAS-CNS34-1-001|MAPSAS-CNS35-1-001|MAPSAS-CNS36-1-001|MAPSAS-CNS5-1-001|MAPSAS-CNS6-1-001|MAPSAS-CNS7-1-001|MAPSAS-CNS8-1-001|MAPSAS-CNS9-1-001",
@@ -103275,7 +104195,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-5",
           "credit": "3 hours in Natural Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-ADE-1-001|MAPSAS-AD(O-1-001|MAPSAS-AD(S-1-001|MAPSAS-AD-1-001|MAPSAS-AE-S3-1-001",
@@ -103410,7 +104331,8 @@ window.CPL_STATEWIDE = {
           "course": "Elective Units",
           "credit": "4.5 hours in Foothill College Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEH-EARS-1-001|MAPCXS-CBEA-1-001",
@@ -103524,7 +104446,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 53",
           "credit": "4 hours in Engine Repair"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-C2IS-1-001",
@@ -103631,7 +104554,8 @@ window.CPL_STATEWIDE = {
           "course": "CSCI 220",
           "credit": "3 hours in Computer Information Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-A1TC-1-001",
@@ -103733,7 +104657,8 @@ window.CPL_STATEWIDE = {
           "course": "ART 102",
           "credit": "3 hours in Introduction to Computer Graphics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEK4-1-001",
@@ -103835,7 +104760,8 @@ window.CPL_STATEWIDE = {
           "course": "KINS 025",
           "credit": "3 hours in First Aid, CPR & AED"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:H1-1-001|MAPSAS-CEH(-1-001|MAPSAS-CEH1-1-001|MAPSAS-CH1-1-001|MAPSAS-CH10-1-001|MAPSAS-CH11-1-001|MAPSAS-CH12-1-001|MAPSAS-CH13-1-001|MAPSAS-CH14-1-001|MAPSAS-CH15-1-001|MAPSAS-CH16-1-001|MAPSAS-CH17-1-001|MAPSAS-CH18-1-001|MAPSAS-CH19-1-001|MAPSAS-CH2-1-001|MAPSAS-CH20-1-001|MAPSAS-CH21-1-001|MAPSAS-CH22-1-001|MAPSAS-CH23-1-001|MAPSAS-CH24-1-001|MAPSAS-CH25-1-001|MAPSAS-CH26-1-001|MAPSAS-CH27-1-001|MAPSAS-CH28-1-001|MAPSAS-CH29-1-001|MAPSAS-CH3-1-001|MAPSAS-CH30-1-001|MAPSAS-CH31-1-001|MAPSAS-CH32-1-001|MAPSAS-CH33-1-001|MAPSAS-CH34-1-001|MAPSAS-CH35-1-001|MAPSAS-CH36-1-001|MAPSAS-CH37-1-001|MAPSAS-CH38-1-001|MAPSAS-CH39-1-001|MAPSAS-CH4-1-001|MAPSAS-CH6-1-001|MAPSAS-CH7-1-001|MAPSAS-CH8-1-001|MAPSAS-CH9-1-001",
@@ -104108,7 +105034,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A1-C-1-001|MAPICI-CP2-1-001|MAPICI-CPAS-1-001|MAPICI-CPBP-1-001|MAPICI-P-BL-1-001|MAPICI-P-PO-1-001|MAPICI-P-PO1-1-001|MAPICI-P-PO2-1-001|MAPICI-PAEF-1-001|MAPICI-PAPF-1-001|MAPICI-PCCP-1-001|MAPICI-POBT-1-001|MAPICI-POST-1-002|MAPICI-POST1-1-001|MAPICI-POST2-1-001",
@@ -105011,6 +105938,48 @@ window.CPL_STATEWIDE = {
           "course": "CJ 001",
           "credit": "3 hours in Introduction to Criminal Justice"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Intro to Administration of Justice",
+          "cid": "AJ 110"
+        },
+        {
+          "credit": "3 hours in Criminal Law",
+          "cid": "AJ 120"
+        },
+        {
+          "credit": "3 hours in Criminal Procedures",
+          "cid": "AJ 122"
+        },
+        {
+          "credit": "3 hours in Community Relations",
+          "cid": "AJ 160"
+        },
+        {
+          "credit": "3 hours in Criminal Evidence",
+          "cid": "AJ 124"
+        },
+        {
+          "credit": "3 hours in Introduction to Corrections",
+          "cid": "AJ 200"
+        },
+        {
+          "credit": "3 hours in Juvenile Law and Procedures",
+          "cid": "AJ 220"
+        },
+        {
+          "credit": "3 hours in Criminal Investigation",
+          "cid": "AJ 140"
+        },
+        {
+          "credit": "3 hours in Introduction to Policing (Elective Course)",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Physical Training and Health Education (CSU GE Area E)",
+          "cid": "AJ 110"
+        }
       ]
     },
     {
@@ -105129,6 +106098,12 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 010",
           "credit": "3 hours in Introduction To Automotive Technology"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Introduction to Automotive Technology",
+          "cid": ""
+        }
       ]
     },
     {
@@ -105230,7 +106205,8 @@ window.CPL_STATEWIDE = {
           "course": "BUS 50",
           "credit": "3 hours in Advertising for Small Business"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-S4-1-001",
@@ -105331,7 +106307,8 @@ window.CPL_STATEWIDE = {
           "course": "THEATRE 30",
           "credit": "3 hours in Stagecraft"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-MP-1-001|MAPCXS-MP-1-001|MAPCxS-MB0C-1-001",
@@ -105444,7 +106421,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSMKT 40",
           "credit": "3 hours in Marketing Principles"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "CPLICI-CFHC-1-001",
@@ -105544,7 +106522,8 @@ window.CPL_STATEWIDE = {
           "course": "EMT 12",
           "credit": "0.5 hours in Basic Life Support for Healthcare Providers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-MCAF-1-001",
@@ -105648,7 +106627,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 471NC",
           "credit": "0 hours in MCSE CERTIFICATION EXAM PREP I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-MCAA-1-001",
@@ -105752,7 +106732,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 473NC",
           "credit": "0 hours in MCSE CERTIFICATION EXAM PREP III"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-E3BE-1-001",
@@ -105852,7 +106833,8 @@ window.CPL_STATEWIDE = {
           "course": "EMS 380",
           "credit": "3 hours in Basic ECG Interp Intro to Cardiac Care"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-NS-1-001",
@@ -105952,7 +106934,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 195 C",
           "credit": "3 hours in Network Security"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-IACF-1-001",
@@ -106052,7 +107035,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 190 C",
           "credit": "4 hours in IT & Cybersecurity Fundamentals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-IACF-1-001",
@@ -106152,7 +107136,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 190 C",
           "credit": "4 hours in IT & Cybersecurity Fundamentals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-CIAS-1-001",
@@ -106252,7 +107237,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 257 C",
           "credit": "4 hours in Cloud Implementation and Security"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-TP-T-1-001",
@@ -106364,7 +107350,8 @@ window.CPL_STATEWIDE = {
           "course": "THEATRE 52D",
           "credit": "4 hours in Theatre Practicum - Technical Theatre in Production"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-F1C-1-001|MAPICA-F1C1-1-001|MAPICG-FF1C-1-001|MAPICI-F1A-1-001|MAPICI-F1OF-1-001|MAPICI-FC1A-1-001|MAPICI-FF1C-1-001|MAPICI-FFI2-1-001|MAPICI-FPO1-1-001",
@@ -106722,6 +107709,32 @@ window.CPL_STATEWIDE = {
           "course": "BFFA 063B",
           "credit": "9 hours in Basic Fire Fighter I Academy (Part 2)"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Fire Behavior and Combustion",
+          "cid": "FIRE 140 X"
+        },
+        {
+          "credit": "3 hours in Building Construction for Fire Protection",
+          "cid": "FIRE 130 X"
+        },
+        {
+          "credit": "3 hours in Principles of Emergency Services",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in CSU GE E – Lifelong Understanding and Self-Development",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Fire Protection Organization",
+          "cid": "FIRE 100 X"
+        },
+        {
+          "credit": "3 hours in CSU-GE Area E or Native GE Area Equivalent",
+          "cid": ""
+        }
       ]
     },
     {
@@ -106823,7 +107836,8 @@ window.CPL_STATEWIDE = {
           "course": "MKT 20",
           "credit": "3 hours in Principles of Marketing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-P1HP-1-001",
@@ -106922,7 +107936,8 @@ window.CPL_STATEWIDE = {
           "course": "PHYSO 101",
           "credit": "4 hours in Introductory Human Physiology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-REER-1-001",
@@ -107021,7 +108036,8 @@ window.CPL_STATEWIDE = {
           "course": "REAL 082",
           "credit": "3 hours in Real Estate Economics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-POAR-1-001",
@@ -107120,7 +108136,8 @@ window.CPL_STATEWIDE = {
           "course": "REAL 086",
           "credit": "3 hours in Principles of Appraising"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-PDAH-1-001",
@@ -107219,7 +108236,8 @@ window.CPL_STATEWIDE = {
           "course": "PSYCH 118",
           "credit": "3 hours in Drugs and Human Behavior"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-AC(A8-1-001|MAPICI-ASE(1-1-001|MAPICI-ASE(26-1-001|MAPICI-ASE(36-1-001|MAPICI-ASE(8-1-001",
@@ -107363,7 +108381,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 219",
           "credit": "3 hours in Automotive Light DIesel Engines"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-REFR-1-001",
@@ -107466,7 +108485,8 @@ window.CPL_STATEWIDE = {
           "course": "REAL 085",
           "credit": "3 hours in Real Estate Finance"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CBA-1-001",
@@ -107576,7 +108596,8 @@ window.CPL_STATEWIDE = {
           "course": "REAL ES 040",
           "credit": "3 hours in RESIDENTIAL REPORT WRITING AND CASE STUDIES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-R3EP2-1-001",
@@ -107674,7 +108695,8 @@ window.CPL_STATEWIDE = {
           "course": "RLES 392",
           "credit": "3 hours in Basic Escrow Procedures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-R3EP-1-001",
@@ -107772,7 +108794,8 @@ window.CPL_STATEWIDE = {
           "course": "RLES 381",
           "credit": "3 hours in Real Estate Practice"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-RA4P-1-001",
@@ -107874,7 +108897,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.50",
           "credit": "2 hours in IW - Mixed Base - Reinforcing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-LAOR-1-001",
@@ -107981,7 +109005,8 @@ window.CPL_STATEWIDE = {
           "course": "RE 102 F",
           "credit": "3 hours in Legal Aspects of Real Estate"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICG-REAT-1-001",
@@ -108091,7 +109116,8 @@ window.CPL_STATEWIDE = {
           "course": "REAL ES 043",
           "credit": "2.5 hours in REAL ESTATE APPRAISAL: RESIDENTIAL COST APPROACH"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-R1RE-1-001|MAPICI-R3EP-1-001",
@@ -108195,7 +109221,8 @@ window.CPL_STATEWIDE = {
           "course": "REALES 1",
           "credit": "3 hours in Real Estate Principles"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-R3EP1-1-001|MAPICI-R3RE-1-001",
@@ -108299,7 +109326,8 @@ window.CPL_STATEWIDE = {
           "course": "REALES 3",
           "credit": "3 hours in Real Estate Practice"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-AWSF-1-001",
@@ -108404,7 +109432,8 @@ window.CPL_STATEWIDE = {
           "course": "WEL 85B",
           "credit": "3 hours in AWS/LA City Welding II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-AWSS-1-001",
@@ -108509,7 +109538,8 @@ window.CPL_STATEWIDE = {
           "course": "WEL 85A",
           "credit": "3 hours in AWS/LA City Welding I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-W0C-1-001",
@@ -108606,7 +109636,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD 046",
           "credit": "4 hours in Shielded Metal Arc Welding - Intermediate"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-W0C1-1-001",
@@ -108703,7 +109734,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD 045",
           "credit": "3 hours in Shielded Metal Arc Welding - Beginning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-WC-1-001",
@@ -108816,7 +109848,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD 280A",
           "credit": "3 hours in STRUCTURAL STEEL WELDING CERTIFICATION"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-W2\t&-1-001",
@@ -108913,7 +109946,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD 200",
           "credit": "3 hours in Arc & Gas Welding"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-W2\t&-1-001",
@@ -109010,7 +110044,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD 200",
           "credit": "3 hours in Arc & Gas Welding"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ADDA-1-001",
@@ -109107,7 +110142,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD 50A",
           "credit": "3 hours in Introduction to Welding"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-PAB(-1-001",
@@ -109204,7 +110240,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD 58A",
           "credit": "3 hours in Basic Pipe Welding - Shielded Metal Arc Welding"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-PAB(1-1-001",
@@ -109301,7 +110338,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD 58B",
           "credit": "3 hours in Basic Pipe Welding - Gas Metal Arc Welding and Flux Cored Arc Weldin"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-PAB(2-1-001",
@@ -109398,7 +110436,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD 58C",
           "credit": "3 hours in Basic Pipe Welding - Gas Tungsten Arc Welding"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-HS&S-1-001",
@@ -109495,7 +110534,8 @@ window.CPL_STATEWIDE = {
           "course": "HUMSR 147",
           "credit": "3 hours in Field Studies & Seminar I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-W2&G-1-001",
@@ -109592,7 +110632,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD 200",
           "credit": "3 hours in Arc & Gas Welding"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-V1IT-1-001",
@@ -109689,7 +110730,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD 101",
           "credit": "3 hours in Introduction to Welding"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOH-WT1H-1-001",
@@ -109786,7 +110828,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD 100",
           "credit": "3 hours in Welding Theory & Practice 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOH-WT2H-1-001",
@@ -109883,7 +110926,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD 101",
           "credit": "3 hours in WELDING THEORY & PRACTICE 2"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-IMB-1-001",
@@ -109980,7 +111024,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.5",
           "credit": "2 hours in IW - Mixed Base - Reinforcing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-RI-1-001",
@@ -110077,7 +111122,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.12",
           "credit": "2 hours in IW - Reinforcing Iron l"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-II-1-001",
@@ -110174,7 +111220,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 41.03",
           "credit": "1 hour in IW - Reinforcing ll"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-I1-1-001",
@@ -110271,7 +111318,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.22",
           "credit": "2 hours in IW - Cranes"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-IWI-1-001",
@@ -110368,7 +111416,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.10",
           "credit": "2.5 hours in Welding l - Reinforcing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-WI-1-001",
@@ -110465,7 +111514,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.11",
           "credit": "2.5 hours in Welding ll- Reinforcing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-ID-1-001",
@@ -110562,7 +111612,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.53",
           "credit": "2 hours in IW - Detailing/Reinforcing Iron"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-IPTI-1-001",
@@ -110659,7 +111710,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.15",
           "credit": "2 hours in IW - Post Tension l"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-IPTI1-1-001",
@@ -110756,7 +111808,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 41.07",
           "credit": "2.5 hours in Post - Tension ll"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-PTI-1-001",
@@ -110853,7 +111906,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 41.08",
           "credit": "2 hours in IW - Post - Tension lll"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-FT-1-001",
@@ -110950,7 +112004,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.55",
           "credit": "2 hours in IWS - Reinforcing Foreman Training"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-E&R-1-001",
@@ -111047,7 +112102,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 41.09",
           "credit": "1.5 hours in OSHA 30/Extension Review"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-SSI-1-001",
@@ -111144,7 +112200,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.21",
           "credit": "2.5 hours in Structural Steel l"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-ISSI-1-001",
@@ -111241,7 +112298,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 41.06",
           "credit": "2 hours in IW - Structural Steel ll"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-IWI1-1-001",
@@ -111338,7 +112396,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.05",
           "credit": "2.5 hours in IW- Welding lll"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-SAOI-1-001",
@@ -111435,7 +112494,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.60",
           "credit": "2.5 hours in Structural Arch Orn l"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-IAI-1-001",
@@ -111532,7 +112592,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 41.05",
           "credit": "2.5 hours in IW - Architectural ll"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-IAI1-1-001",
@@ -111629,7 +112690,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 41.04",
           "credit": "2.5 hours in IW - Architectural lll"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-CFAW-1-001",
@@ -111726,7 +112788,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD 80",
           "credit": "3 hours in Construction Fabrication and Welding"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-PATW-1-001",
@@ -111823,7 +112886,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD 81",
           "credit": "3 hours in Pipe and Tube Welding"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-RA4P1-1-001",
@@ -111924,7 +112988,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 41.03",
           "credit": "1 hour in IW - Reinforcing ll"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-RA4P4-1-001",
@@ -112025,7 +113090,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.11",
           "credit": "2.5 hours in Welding ll- Reinforcing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-RA4P5-1-001",
@@ -112126,7 +113192,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 41.07",
           "credit": "2.5 hours in Post - Tension ll"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-RA4P7-1-001",
@@ -112227,7 +113294,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.55",
           "credit": "2 hours in IWS - Reinforcing Foreman Training"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-SA4P1-1-001",
@@ -112328,7 +113396,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 41.06",
           "credit": "2 hours in IW - Structural Steel ll"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-SA4P4-1-001",
@@ -112429,7 +113498,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.11",
           "credit": "2.5 hours in Welding ll- Reinforcing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-SA4P5-1-001",
@@ -112530,7 +113600,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 41.05",
           "credit": "2.5 hours in IW - Architectural ll"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CFEC-1-001|MAPICI-CFE-1-001",
@@ -112769,6 +113840,28 @@ window.CPL_STATEWIDE = {
           "course": "FT 4",
           "credit": "3 hours in Building Construction for Fire  Protection"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "7 hours in Emergency Medical Technician - National Registry",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Fire Protection Organization",
+          "cid": "FIRE 100 X"
+        },
+        {
+          "credit": "3 hours in Fire Behavior and Combustion",
+          "cid": "FIRE 140 X"
+        },
+        {
+          "credit": "3 hours in Building Construction for Fire Protection",
+          "cid": "FIRE 130 X"
+        },
+        {
+          "credit": "3 hours in Local AA/AS Area E",
+          "cid": ""
+        }
       ]
     },
     {
@@ -112925,6 +114018,12 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 014B",
           "credit": "4 hours in Advanced Engine Management"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Advanced Engine Performance",
+          "cid": ""
+        }
       ]
     },
     {
@@ -113023,7 +114122,8 @@ window.CPL_STATEWIDE = {
           "course": "RLE 85",
           "credit": "3 hours in Real Estate Economics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-RESA-1-001",
@@ -113121,7 +114221,8 @@ window.CPL_STATEWIDE = {
           "course": "RLE 84",
           "credit": "3 hours in Real Estate Appraisal"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CBM-1-001",
@@ -113247,6 +114348,20 @@ window.CPL_STATEWIDE = {
           "course": "REAL ES 009",
           "credit": "3 hours in REAL ESTATE APPRAISAL I"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in REAL ESTATE FINANCE",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in LEGAL ASPECTS OF REAL ESTATE",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in REAL ESTATE APPRAISAL I",
+          "cid": ""
+        }
       ]
     },
     {
@@ -113357,6 +114472,20 @@ window.CPL_STATEWIDE = {
         {
           "course": "WELD 225",
           "credit": "3-4 hour in Advanced Gas Metal Arc Welding (GMAW)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Gas Metal Arc Welding (GMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hour in Advanced Gas Metal Arc Welding (GMAW)",
+          "cid": ""
         }
       ]
     },
@@ -113469,6 +114598,16 @@ window.CPL_STATEWIDE = {
           "course": "WELD 132",
           "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        }
       ]
     },
     {
@@ -113571,6 +114710,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "WELD 125",
           "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)",
+          "cid": ""
         }
       ]
     },
@@ -113678,6 +114823,16 @@ window.CPL_STATEWIDE = {
         {
           "course": "WELD 225",
           "credit": "3-4 hours in Advanced Gas Metal Arc Welding (GMAW)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Gas Metal Arc Welding (GMAW)",
+          "cid": ""
         }
       ]
     },
@@ -113794,6 +114949,20 @@ window.CPL_STATEWIDE = {
           "course": "WELD 232",
           "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced to Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        }
       ]
     },
     {
@@ -113894,6 +115063,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "WELD 132",
           "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
         }
       ]
     },
@@ -113999,6 +115174,16 @@ window.CPL_STATEWIDE = {
         {
           "course": "WELD 225",
           "credit": "3-4 hours in Advanced Gas Metal Arc Welding (GMAW)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Gas Metal Arc Welding (GMAW)",
+          "cid": ""
         }
       ]
     },
@@ -114109,6 +115294,16 @@ window.CPL_STATEWIDE = {
           "course": "WELD 132",
           "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        }
       ]
     },
     {
@@ -114205,7 +115400,8 @@ window.CPL_STATEWIDE = {
           "course": "ART 120",
           "credit": "3 hours in Basic Drawing 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-P–CA-1-001",
@@ -114301,7 +115497,8 @@ window.CPL_STATEWIDE = {
           "course": "CS 119",
           "credit": "3 hours in PROGRAMMING IN PYTHON"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CS1B-1-001",
@@ -114397,7 +115594,8 @@ window.CPL_STATEWIDE = {
           "course": "CS 111B",
           "credit": "4 hours in Programming Fundamentals: Java"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-VBPI-1-001",
@@ -114493,7 +115691,8 @@ window.CPL_STATEWIDE = {
           "course": "CS  086",
           "credit": "3 hours in Visual Basic Programming I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ITCP-1-001",
@@ -114589,7 +115788,8 @@ window.CPL_STATEWIDE = {
           "course": "ITIS 30",
           "credit": "3 hours in Introduction to Computer Programming"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-WPDA-1-001",
@@ -114685,7 +115885,8 @@ window.CPL_STATEWIDE = {
           "course": "ITIS 82",
           "credit": "3 hours in Web Page Development and Publishing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-A2AA-1-001|MAPSAS-A2AA1-1-001|MAPSAS-A2AA2-1-001|MAPSAS-AP(21-1-001",
@@ -114807,7 +116008,8 @@ window.CPL_STATEWIDE = {
           "course": "Elective Units",
           "credit": "4.5 hours in Foothill College Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-RESP-1-001",
@@ -114913,7 +116115,8 @@ window.CPL_STATEWIDE = {
           "course": "R E 181",
           "credit": "3 hours in Real Estate Principles"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-NWL1-1-001",
@@ -115041,6 +116244,20 @@ window.CPL_STATEWIDE = {
         {
           "course": "WELD B53B",
           "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "2 hours in Thermal Cutting Processes",
+          "cid": ""
         }
       ]
     },
@@ -115219,6 +116436,44 @@ window.CPL_STATEWIDE = {
           "course": "WELD 132",
           "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Welding",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Printreading and Welding Symbols Interpretation",
+          "cid": ""
+        },
+        {
+          "credit": "2 hours in Thermal Cutting Processes",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
+          "cid": ""
+        }
       ]
     },
     {
@@ -115334,6 +116589,16 @@ window.CPL_STATEWIDE = {
           "course": "WELD B74A",
           "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
+          "cid": ""
+        }
       ]
     },
     {
@@ -115448,6 +116713,16 @@ window.CPL_STATEWIDE = {
         {
           "course": "WELD B74A",
           "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
+          "cid": ""
         }
       ]
     },
@@ -115571,6 +116846,16 @@ window.CPL_STATEWIDE = {
         {
           "course": "WELD B53B",
           "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)",
+          "cid": ""
         }
       ]
     },
@@ -115773,6 +117058,64 @@ window.CPL_STATEWIDE = {
           "course": "WELD 132",
           "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Welding",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Printreading and Welding Symbols Interpretation",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Basic Pipe Shielded Metal Arc Welding (SMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Basic Pipe Gas Metal Arc Welding (GMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Basic Pipe Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        },
+        {
+          "credit": "2 hours in Thermal Cutting Processes",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Gas Metal Arc Welding (GMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
+          "cid": ""
+        }
       ]
     },
     {
@@ -115974,6 +117317,64 @@ window.CPL_STATEWIDE = {
           "course": "WELD 132",
           "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Welding",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Printreading and Welding Symbols Interpretation",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Basic Pipe Shielded Metal Arc Welding (SMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Basic Pipe Gas Metal Arc Welding (GMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Basic Pipe Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        },
+        {
+          "credit": "2 hours in Thermal Cutting Processes",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Gas Metal Arc Welding (GMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
+          "cid": ""
+        }
       ]
     },
     {
@@ -116086,6 +117487,16 @@ window.CPL_STATEWIDE = {
         {
           "course": "WELD B74A",
           "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
+          "cid": ""
         }
       ]
     },
@@ -116200,6 +117611,16 @@ window.CPL_STATEWIDE = {
           "course": "WELD B74A",
           "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
+          "cid": ""
+        }
       ]
     },
     {
@@ -116313,7 +117734,8 @@ window.CPL_STATEWIDE = {
           "course": "WELD B74A",
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CO2C1-1-001",
@@ -116436,6 +117858,40 @@ window.CPL_STATEWIDE = {
           "course": "FIPT 345",
           "credit": "0.5 hours in Instructor I: Instructional Methodology"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "0.5 hours in Hazardous Materials Incident Commander",
+          "cid": ""
+        },
+        {
+          "credit": "0.5 hours in Intermediate Wildland Fire Behavior S-290",
+          "cid": ""
+        },
+        {
+          "credit": "0.5 hours in Company Officer 2A: Human Resource Management for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "0.5 hours in Company Officer 2B: General Administration Functions for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "0.5 hours in Company Officer 2C: Fire Investigation and Inspection for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "0.5 hours in Company Officer 2D: All Risk Command Operations for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "0.5 hours in Company Officer 2E: Wildland Incident Operations for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "0.5 hours in Instructor I: Instructional Methodology",
+          "cid": ""
+        }
       ]
     },
     {
@@ -116531,7 +117987,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSI 144",
           "credit": "3 hours in Introduction to Entrepreneurship"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-FOB--1-001|MAPCXH-FOB-1-1-001",
@@ -116628,7 +118085,8 @@ window.CPL_STATEWIDE = {
           "course": "BUS 100",
           "credit": "3 hours in Fundamentals of Business"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FI1C1-1-001",
@@ -116739,7 +118197,8 @@ window.CPL_STATEWIDE = {
           "course": "FOT 130C",
           "credit": "1 hour in Fire Inspector 1C: Field Inspection"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FI2(-1-001",
@@ -116846,7 +118305,8 @@ window.CPL_STATEWIDE = {
           "course": "FTC 105",
           "credit": "3 hours in Building Construction for Fire Protection"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "CPLICI-ASEG-1-001|MAPICI-AC(G-1-001|MAPICI-ASE(-1-001|MAPICI-ASE(38-1-001|MAPICI-ASE(39-1-001|MAPICI-ASE(5-1-001",
@@ -117019,6 +118479,12 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 102",
           "credit": "3 hours in Introduction to Automotive"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Quick Service",
+          "cid": ""
+        }
       ]
     },
     {
@@ -117137,7 +118603,8 @@ window.CPL_STATEWIDE = {
           "course": "RE 410",
           "credit": "3 hours in Real Estate Principles"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-LC(D1-1-001|MAPICI-LCCW-1-001",
@@ -117259,6 +118726,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "WELD B74A",
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)",
+          "cid": ""
         }
       ]
     },
@@ -117387,6 +118860,16 @@ window.CPL_STATEWIDE = {
           "course": "WELD A201",
           "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)",
+          "cid": ""
+        }
       ]
     },
     {
@@ -117514,6 +118997,24 @@ window.CPL_STATEWIDE = {
           "course": "WELD B74A",
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 - 4 hours in Introduction to Flux Cored Arc Welding  (FCAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advance Flux Cored Arc Welding",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advance Flux Cored Arc Weliding (FCAW)",
+          "cid": ""
+        }
       ]
     },
     {
@@ -117639,6 +119140,16 @@ window.CPL_STATEWIDE = {
           "course": "WELD A201",
           "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)",
+          "cid": ""
+        }
       ]
     },
     {
@@ -117735,7 +119246,8 @@ window.CPL_STATEWIDE = {
           "course": "CISC 179",
           "credit": "4 hours in Python Programming"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-E1C-2-1-001",
@@ -117829,7 +119341,8 @@ window.CPL_STATEWIDE = {
           "course": "ENSCI 108",
           "credit": "3 hours in Environmental Conservation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-E1C--1-001",
@@ -117923,7 +119436,8 @@ window.CPL_STATEWIDE = {
           "course": "ENSCI 108",
           "credit": "3 hours in Environmental Conservation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-PFB0-1-001",
@@ -118017,7 +119531,8 @@ window.CPL_STATEWIDE = {
           "course": "BUMA 012",
           "credit": "3 hours in Personal Finance"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-ITES-1-001",
@@ -118111,7 +119626,8 @@ window.CPL_STATEWIDE = {
           "course": "ENV 001",
           "credit": "3 hours in Introduction to Environmental Science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-FPEA-1-001",
@@ -118205,7 +119721,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE  003",
           "credit": "3 hours in Fire Protection Equipment and Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-J2-C-1-001",
@@ -118299,7 +119816,8 @@ window.CPL_STATEWIDE = {
           "course": "JOURN 021",
           "credit": "3 hours in Newswriting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-SC1-1-001",
@@ -118393,7 +119911,8 @@ window.CPL_STATEWIDE = {
           "course": "THEATRE 40",
           "credit": "3 hours in Stage Costuming"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-TM1-1-001",
@@ -118487,7 +120006,8 @@ window.CPL_STATEWIDE = {
           "course": "THEATRE 42",
           "credit": "3 hours in Theatrical Makeup"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FOIC-1-001",
@@ -118593,7 +120113,8 @@ window.CPL_STATEWIDE = {
           "course": "FOT 150D",
           "credit": "1 hour in Company Officer 2D: All-Risk Command Operations for Company Officers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FCO3-1-001",
@@ -118699,7 +120220,8 @@ window.CPL_STATEWIDE = {
           "course": "FOT 273C",
           "credit": "1 hour in Chief Fire Officer 3C: General Administration Functions"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FTRE-1-001",
@@ -118817,7 +120339,8 @@ window.CPL_STATEWIDE = {
           "course": "REAL ES 005",
           "credit": "3 hours in Legal Aspects of Real Estate"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-R3AO-1-001|MAPICI-RESL-1-001",
@@ -118929,7 +120452,8 @@ window.CPL_STATEWIDE = {
           "course": "RLES 382",
           "credit": "3 hours in Legal Aspects of Real Estate"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-R3\tE-1-001|MAPICI-RESR-1-001",
@@ -119041,7 +120565,8 @@ window.CPL_STATEWIDE = {
           "course": "RLES 384",
           "credit": "3 hours in Real Estate Finance"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-LC(D-1-001|MAPICI-LCCW2-1-001",
@@ -119180,6 +120705,16 @@ window.CPL_STATEWIDE = {
           "course": "WELD A201",
           "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)",
+          "cid": ""
+        }
       ]
     },
     {
@@ -119311,6 +120846,16 @@ window.CPL_STATEWIDE = {
           "course": "WELD A201",
           "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)",
+          "cid": ""
+        }
       ]
     },
     {
@@ -119413,7 +120958,8 @@ window.CPL_STATEWIDE = {
           "course": "Art (ART) 012",
           "credit": "3 hours in Two-Dimensional Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-AESA2-1-001|MAPSAS-AESA5-1-001",
@@ -119515,7 +121061,8 @@ window.CPL_STATEWIDE = {
           "course": "Art (ART) 013",
           "credit": "3 hours in Three-Dimensional Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-SF(-1-001|MAPCXI-CS-1-001|MAPCxS-CSS/-1-001",
@@ -119622,7 +121169,8 @@ window.CPL_STATEWIDE = {
           "course": "CS  004",
           "credit": "3 hours in Computer Security Specialist/ Security Training"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-I7SS-1-001",
@@ -119725,6 +121273,12 @@ window.CPL_STATEWIDE = {
           "course": "FIR 167",
           "credit": "3 hours in Wildland 101 (Wildland Fire Behavior)"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Wildland 101 (Wildland Fire Behavior)",
+          "cid": ""
+        }
       ]
     },
     {
@@ -119823,7 +121377,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE 106",
           "credit": "0.75 hours in Fire Department Testing Procedures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-SFTL-1-001",
@@ -119916,7 +121471,8 @@ window.CPL_STATEWIDE = {
           "course": "FIPT 322F",
           "credit": "0.5 hours in Low Angle Rope Rescue Operational"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FFTA-1-001",
@@ -120009,7 +121565,8 @@ window.CPL_STATEWIDE = {
           "course": "FIPT 107",
           "credit": "3 hours in Fire Fighting Tactics and Strategy"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-DO1A-1-001",
@@ -120102,7 +121659,8 @@ window.CPL_STATEWIDE = {
           "course": "FIPT 111",
           "credit": "3 hours in Fire Apparatus and Equipment"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-SSOF-1-001",
@@ -120195,7 +121753,8 @@ window.CPL_STATEWIDE = {
           "course": "FIPT 311A",
           "credit": "0.5 hours in Swiftwater Rescue Technician I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-SFI12-1-001",
@@ -120288,7 +121847,8 @@ window.CPL_STATEWIDE = {
           "course": "FIPT 351D",
           "credit": "0.2 hours in Fire Inspector 1D: Field Inspection - California Specific"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-SSSS-1-001",
@@ -120380,6 +121940,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "F SC 55",
           "credit": "3 hours in Wildland 103 (Wildland Fire Behavior)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Wildland 103 (Wildland Fire Behavior)",
+          "cid": ""
         }
       ]
     },
@@ -120482,6 +122048,16 @@ window.CPL_STATEWIDE = {
           "course": "F SC 55",
           "credit": "3 hours in Wildland 105 (Wildland Fire Behavior)"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Wildland 102 (Wildland Fire Behavior)",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Wildland 105 (Wildland Fire Behavior)",
+          "cid": ""
+        }
       ]
     },
     {
@@ -120574,6 +122150,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "F SC 55",
           "credit": "3 hours in Wildland 104 (Wildland Fire Behavior)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Wildland 104 (Wildland Fire Behavior)",
+          "cid": ""
         }
       ]
     },
@@ -120678,7 +122260,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 064E",
           "credit": "4 hours in Fundamentals of Large Scale Cloud Computing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-AWS(3-1-001|MAPICI-AWS(4-1-001|MAPICI-AWS(5-1-001",
@@ -120781,7 +122364,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 064E",
           "credit": "4 hours in Fundamentals of Large Scale Cloud Computing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FPEA1-1-001",
@@ -120874,7 +122458,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE 33",
           "credit": "3 hours in Fire Protect Equipment and Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FPT1-1-001",
@@ -120967,7 +122552,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE 32",
           "credit": "3 hours in Fire Prevention Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CCI1-1-001",
@@ -121059,6 +122645,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "F SC 55",
           "credit": "3 hours in Wildland 101 (Wildland Fire Behavior)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Wildland 101 (Wildland Fire Behavior)",
+          "cid": ""
         }
       ]
     },
@@ -121153,6 +122745,12 @@ window.CPL_STATEWIDE = {
           "course": "F SC 55",
           "credit": "3 hours in Wildland 103 (Wildland Fire Behavior)"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Wildland 103 (Wildland Fire Behavior)",
+          "cid": ""
+        }
       ]
     },
     {
@@ -121246,7 +122844,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 323XABC",
           "credit": "0.5 hours in Fire Service In-Service Training/Command & Control"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ELIT-1-001",
@@ -121339,7 +122938,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 324XABC",
           "credit": "0.5 hours in Fire Service In-Service Training/Administration"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ITWF-1-001",
@@ -121432,7 +123032,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 323XABC",
           "credit": "0.5 hours in Fire Service In-Service Training/Command & Control"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-F3SC-1-001|MAPCXS-FSCD-1-001",
@@ -121527,7 +123128,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 308",
           "credit": "3 hours in Fire Science Career Devopment Promotions"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-SCCO-1-001",
@@ -121620,7 +123222,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 307",
           "credit": "3 hours in Fire Science Tactics & Strategy"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-SF2+-1-001",
@@ -121713,7 +123316,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 301",
           "credit": "3 hours in Principles of Emergency Services"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-SFOO-1-001",
@@ -121806,7 +123410,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 302",
           "credit": "3 hours in Fire Prevention"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-F3SC-1-001",
@@ -121899,7 +123504,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 308",
           "credit": "3 hours in Fire Science Career Devopment Promotions"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-F3SI-1-001|MAPCXS-F3SI1-1-001|MAPCXS-F3SI2-1-001|MAPCXS-F3SI20-1-001",
@@ -121998,7 +123604,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 321XABC",
           "credit": "0.5 hours in Fire Service In-Service Training/EMS"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-F3SI-1-001|MAPICI-F3SI1-1-001|MAPICI-F3SI2-1-001|MAPICI-F3SI3-1-001",
@@ -122097,7 +123704,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 321XABC",
           "credit": "0.5 hours in Fire Service In-Service Training/EMS"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-F3SI3-1-001|MAPCXS-F3SI4-1-001|MAPCXS-F3SI5-1-001|MAPCXS-F3SI6-1-001",
@@ -122196,7 +123804,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 322XABC",
           "credit": "0.5 hours in Fire Service In-Service Training/Special Operations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-F3SI4-1-001|MAPICI-F3SI5-1-001|MAPICI-F3SI6-1-001|MAPICI-F3SI7-1-001",
@@ -122295,7 +123904,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 322XABC",
           "credit": "0.5 hours in Fire Service In-Service Training/Special Operations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-F3SI10-1-001|MAPCXS-F3SI7-1-001|MAPCXS-F3SI8-1-001|MAPCXS-F3SI9-1-001",
@@ -122398,7 +124008,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 323XABC",
           "credit": "0.5 hours in Fire Service In-Service Training/Command & Control"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-F3SI10-1-001|MAPICI-F3SI19-1-001|MAPICI-F3SI8-1-001|MAPICI-F3SI9-1-001",
@@ -122501,7 +124112,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 323XABC",
           "credit": "2 hours in Fire Service In-Service Training/Command & Control"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-F3SI11-1-001|MAPCXS-F3SI12-1-001|MAPCXS-F3SI13-1-001|MAPCXS-F3SI14-1-001",
@@ -122600,7 +124212,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 324XABC",
           "credit": "0.5 hours in Fire Service In-Service Training/Administration"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-F3-F-1-001|MAPICI-F3SI11-1-001|MAPICI-F3SI12-1-001|MAPICI-F3SI13-1-001|MAPICI-F3SI14-1-001",
@@ -122709,7 +124322,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 324XABC",
           "credit": "2 hours in Fire Service In-Service Training/Administration"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-F3SI15-1-001|MAPCXS-F3SI16-1-001|MAPCXS-F3SI17-1-001|MAPCXS-F3SI18-1-001",
@@ -122808,7 +124422,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 325XABC",
           "credit": "0.5 hours in Fire Service In-Service Training/Operations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-F3SI15-1-001|MAPICI-F3SI16-1-001|MAPICI-F3SI17-1-001|MAPICI-F3SI18-1-001",
@@ -122907,7 +124522,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 325XABC",
           "credit": "0.5 hours in Fire Service In-Service Training/Operations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-F3FP-1-001",
@@ -123000,7 +124616,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 303",
           "credit": "3 hours in Fire Protection Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-F3FP1-1-001",
@@ -123093,7 +124710,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 302",
           "credit": "3 hours in Fire Prevention"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-F3OE-1-001",
@@ -123186,7 +124804,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 301",
           "credit": "3 hours in Principles of Emergency Services"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-F3P--1-001",
@@ -123279,7 +124898,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 302",
           "credit": "3 hours in Fire Prevention"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-F3PS-1-001",
@@ -123372,7 +124992,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 303",
           "credit": "3 hours in Fire Protection Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-F3ST-1-001",
@@ -123465,7 +125086,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 307",
           "credit": "3 hours in Fire Science Tactics & Strategy"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-F3OE-1-001",
@@ -123558,7 +125180,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 301",
           "credit": "3 hours in Principles of Emergency Services"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOA-F3SI-1-001",
@@ -123651,7 +125274,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 324XABC",
           "credit": "2 hours in Fire Service In-Service Training/Administration"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-F3SI-1-001",
@@ -123744,7 +125368,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 324XABC",
           "credit": "1 hour in Fire Service In-Service Training/Administration"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-F3SI1-1-001",
@@ -123837,7 +125462,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 322XABC",
           "credit": "2 hours in Fire Service In-Service Training/Special Operations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-F3FS-1-001|MAPPRA-F3FS1-1-001",
@@ -123936,7 +125562,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 323XABC",
           "credit": "0.5 hours in Fire Service In-Service Training/Command & Control"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-F3FI-1-001",
@@ -124029,7 +125656,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 376",
           "credit": "2 hours in Fire Instructional Methodology 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-FHSF-1-001",
@@ -124122,7 +125750,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRETEC 12",
           "credit": "3 hours in Occupational Safety and Health for Emergency Services"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-BPSS-1-001",
@@ -124215,7 +125844,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE 111",
           "credit": "1 hour in Basic Power Saw Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-NF2-1-001",
@@ -124308,7 +125938,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE B2",
           "credit": "3 hours in Principles of Fire and Emergency Services Safety and Survival"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-NFI2-1-001",
@@ -124401,7 +126032,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE B52O",
           "credit": "2.5 hours in Instructor 1-Instructor Methodology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-NHMT-1-001",
@@ -124506,7 +126138,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE B70F",
           "credit": "2.5 hours in Hazardous Materials Tech/Spec 1C: Incident Considerations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-NFO2-1-001",
@@ -124611,7 +126244,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE B52D",
           "credit": "2.5 hours in Company Officer 2D"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FFI1-1-001",
@@ -124704,7 +126338,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 090",
           "credit": "7.5 hours in Pre-Service Academy"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFTI-1-001",
@@ -124797,7 +126432,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 224",
           "credit": "2 hours in Instructor 1: Instructional Methodology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFRS1-1-001",
@@ -124890,7 +126526,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 174",
           "credit": "2 hours in Rescue Systems 2: Advanced Rescue Skills"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-S&FR-1-001",
@@ -124983,7 +126620,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 110",
           "credit": "0.5 hours in River and Flood Water Rescue Operations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFFI-1-001",
@@ -125076,7 +126714,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 241",
           "credit": "2 hours in Fire Investigation 1A: Fire Origin and Cause Determination"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFFP-1-001|MAPICI-CFFP3-1-001",
@@ -125174,7 +126813,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 258",
           "credit": "1.25 hours in Fire Inspector 1B: Fire and Life Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFCF-1-001",
@@ -125267,7 +126907,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 252",
           "credit": "1.25 hours in Chief Fire Officer 3A: Human Resource Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFCF1-1-001",
@@ -125360,7 +127001,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 253",
           "credit": "1 hour in Chief Officer 3B: Budget and Fiscal Responsibilities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-BFIA-1-001",
@@ -125453,7 +127095,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 090",
           "credit": "7.5 hours in Pre-Service Academy"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFEL-1-001",
@@ -125546,7 +127189,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 081",
           "credit": "0.25 hours in Ethical Leadership For Instructors"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-SFTI-1-001",
@@ -125639,7 +127283,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 159",
           "credit": "0.75 hours in IS-200 Basic Incident Command System (ICS)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFFP1-1-001",
@@ -125732,7 +127377,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 240",
           "credit": "1.5 hours in Fire Prevention 1:Fire and Life Safety Inspections For Company Officer"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFTR-1-001",
@@ -125825,7 +127471,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 156",
           "credit": "0.5 hours in Trench Rescue Technician"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFI2-1-001",
@@ -125918,7 +127565,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 226",
           "credit": "2 hours in Instructor II: Instructional Development"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFLA-1-001",
@@ -126011,7 +127659,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 175",
           "credit": "0.5 hours in Low Angle Rope Rescue Operational"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFFP2-1-001",
@@ -126104,7 +127753,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 259",
           "credit": "1.25 hours in Fire Inspector 1C: Field Inspection"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFCS-1-001",
@@ -126197,7 +127847,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 166",
           "credit": "0.25 hours in Confined Space Rescue Awareness"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFAE-1-001",
@@ -126290,7 +127941,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 106",
           "credit": "0.5 hours in Auto Extrication"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFFM-1-001",
@@ -126383,7 +128035,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 245",
           "credit": "2 hours in Company Officer 2A: Human Resource Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-AS2D-1-001",
@@ -126476,7 +128129,8 @@ window.CPL_STATEWIDE = {
           "course": "ART 120",
           "credit": "3 hours in 2D Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FS3C-1-001",
@@ -126569,7 +128223,8 @@ window.CPL_STATEWIDE = {
           "course": "F SC 34A",
           "credit": "2 hours in Fire Investigation 1A: Basic Fire Investigation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FS3C1-1-001",
@@ -126662,7 +128317,8 @@ window.CPL_STATEWIDE = {
           "course": "F SC 34B",
           "credit": "2 hours in Fire Investigation 1B: Evidence and Documentation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FS3C2-1-001",
@@ -126755,7 +128411,8 @@ window.CPL_STATEWIDE = {
           "course": "F SC 34C",
           "credit": "2 hours in Fire Investigation 1C: Preparation for Legal Proceedings"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-BVRO-1-001",
@@ -126856,7 +128513,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRETEC 9",
           "credit": "3 hours in Principles of Fire and Emergency Services Safety & Survival"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFRR-1-001",
@@ -126949,7 +128607,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 277",
           "credit": "1 hour in Rope Rescue Technician/High Angle Rescue"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFCS1-1-001",
@@ -127042,7 +128701,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 165",
           "credit": "1 hour in Confined Space Rescue Technician"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFFC-1-001",
@@ -127135,7 +128795,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 123",
           "credit": "0.25 hours in Fire Control 3B: Structural Firefighting in Live-Fire Simulators"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFFF-1-001",
@@ -127228,7 +128889,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 120",
           "credit": "0.5 hours in Firefighter Survival"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFOW-1-001",
@@ -127321,7 +128983,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 276",
           "credit": "0.5 hours in Open Water Rescuer--Basic"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-FU-F2-1-001",
@@ -127414,7 +129077,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRETEC 5",
           "credit": "3 hours in Fire Prevention"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-HMOF-1-001",
@@ -127507,7 +129171,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE  006",
           "credit": "3 hours in Hazardous Materials Operations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-FH&W-1-001",
@@ -127600,7 +129265,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE  058",
           "credit": "3 hours in Fire Hydraulics & Water Supply"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-OSAH-1-001",
@@ -127693,7 +129359,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRETEC 12",
           "credit": "3 hours in Occupational Safety and Health for Emergency Services"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFRA-1-001",
@@ -127786,7 +129453,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRETEC 12",
           "credit": "3 hours in Occupational Safety and Health for Emergency Services"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFCF2-1-001",
@@ -127879,7 +129547,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 254",
           "credit": "1.25 hours in Chief Fire Officer 3C: General Administration Functions"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFCF3-1-001",
@@ -127972,7 +129641,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 256",
           "credit": "1.25 hours in Chief Fire Officer 3D: Emergency Service Delivery Responsibilities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFCO-1-001",
@@ -128065,7 +129735,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 245",
           "credit": "2 hours in Company Officer 2A: Human Resource Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFCO1-1-001",
@@ -128158,7 +129829,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 246",
           "credit": "1 hour in Company Officer 2B: General Administrative Functions"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFCO2-1-001",
@@ -128251,7 +129923,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 248",
           "credit": "2 hours in Company Officer 2D: All-Risk Command Operations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFIA-1-001",
@@ -128344,7 +130017,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 163",
           "credit": "0.75 hours in I-400 Advanced Incident Command System (ICS)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-UHSI-1-001",
@@ -128437,7 +130111,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 159",
           "credit": "0.75 hours in IS-200 Basic Incident Command System (ICS)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-LAOE-1-001",
@@ -128530,7 +130205,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRETEC 11",
           "credit": "3 hours in Legal Aspects of Emergency Services"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-SAT-1-001",
@@ -128623,7 +130299,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRETEC 7",
           "credit": "3 hours in Strategies and Tactics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFFC1-1-001",
@@ -128716,7 +130393,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 124",
           "credit": "0.25 hours in Fire Control 3A: Structural Firefighting in Acquired Structures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FI2(1-1-001",
@@ -128809,7 +130487,8 @@ window.CPL_STATEWIDE = {
           "course": "FOT 206",
           "credit": "1 hour in Instructor II: Instructional Development"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CREL-1-001|MAPICI-CRES-1-001|MAPICI-DRES-1-001|MAPICI-DRES1-1-001",
@@ -128985,6 +130664,20 @@ window.CPL_STATEWIDE = {
           "course": "REST 84",
           "credit": "3 hours in Real Estate Practice"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Additional Elective Units",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Real Estate Principles",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Real Estate Practice",
+          "cid": ""
+        }
       ]
     },
     {
@@ -129093,6 +130786,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "FIRE 0004",
           "credit": "3 hours in Fire Protection Systems"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Fire Protection Systems",
+          "cid": "FIRE 120 X"
         }
       ]
     },
@@ -129205,7 +130904,8 @@ window.CPL_STATEWIDE = {
           "course": "Elective Units",
           "credit": "4.5 hours in Foothill College Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-C1-M-1-001|MAPICI-C1-M1-1-001|MAPICI-C1-M3-1-001|MAPICI-M3-M-1-001",
@@ -129318,7 +131018,8 @@ window.CPL_STATEWIDE = {
           "course": "MDAST 321",
           "credit": "3 hours in Medical Terminology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ACSA-1-001|MAPICI-ACSA3-1-001",
@@ -129421,6 +131122,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "CIS 023D",
           "credit": "2 hours in AWS SysOps Administrator"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Cloud Operations and Management",
+          "cid": ""
         }
       ]
     },
@@ -129532,7 +131239,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 224",
           "credit": "2 hours in Instructor 1: Instructional Methodology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-F3P--1-001|MAPCXS-FP1-1-001|MAPCXS-FPCB-1-001|MAPCxS-FPF0-1-001",
@@ -129640,7 +131348,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRETEC 5",
           "credit": "3 hours in Fire Prevention"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FAE(1-1-001",
@@ -129766,7 +131475,8 @@ window.CPL_STATEWIDE = {
           "course": "FIR 105",
           "credit": "3 hours in Fire Behavior and Combustion"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-KCFD1-1-001",
@@ -129863,7 +131573,8 @@ window.CPL_STATEWIDE = {
           "course": "FIR 101",
           "credit": "3 hours in Fire Protection Organization"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-FPO-1-001",
@@ -129960,7 +131671,8 @@ window.CPL_STATEWIDE = {
           "course": "FIR 101",
           "credit": "3 hours in Fire Protection Organization"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-F3OF-1-001|MAPICI-POFA-1-001",
@@ -130059,7 +131771,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 306",
           "credit": "3 hours in Principles of Fire and Emergency Services Safety and Survival"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-F3ST-1-001|MAPCXS-FST&-1-001|MAPCxS-FSAT-1-001",
@@ -130160,7 +131873,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE  008",
           "credit": "3 hours in Firefighting Strategies and Tactics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-F3PS-1-001|MAPCXS-FPS1-1-001|MAPCXS-FPSC-1-001",
@@ -130261,7 +131975,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRETEC 3",
           "credit": "3 hours in Fire Protection Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-F3OE-1-001|MAPCXS-POES1-1-001|MAPCXS-POES2-1-001",
@@ -130362,7 +132077,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRETEC 1",
           "credit": "3 hours in Principles of Emergency Services"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-SCCF-1-001",
@@ -130463,7 +132179,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 304",
           "credit": "3 hours in Building Construction for Fire Protection"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFRS-1-001|MAPICI-F3S1-1-001",
@@ -130562,7 +132279,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 173",
           "credit": "2 hours in Rescue Systems 1: Basic Rescue Skills"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-PFE-1-001",
@@ -130683,7 +132401,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE 007",
           "credit": "3 hours in Principles of Fire & Emergency Services Safety & Survival"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-FS0A-1-001",
@@ -130780,7 +132499,8 @@ window.CPL_STATEWIDE = {
           "course": "FIR 101",
           "credit": "3 hours in Fire Protection Organization"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-FT-A1-1-001|MAPCXH-FT-L1-1-001",
@@ -130879,7 +132599,8 @@ window.CPL_STATEWIDE = {
           "course": "FIR 101",
           "credit": "3 hours in Fire Protection Organization"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-FHSF1-1-001",
@@ -130976,7 +132697,8 @@ window.CPL_STATEWIDE = {
           "course": "FIR 105",
           "credit": "3 hours in Fire Behavior and Combustion"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-FSI&-1-001",
@@ -131073,7 +132795,8 @@ window.CPL_STATEWIDE = {
           "course": "FIR 101",
           "credit": "3 hours in Fire Protection Organization"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-NF1-1-001",
@@ -131186,7 +132909,8 @@ window.CPL_STATEWIDE = {
           "course": "FIR 105",
           "credit": "3 hours in Fire Behavior and Combustion"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-FAAE1-1-001|MAPCxS-FAAE-1-001",
@@ -131285,7 +133009,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRETEC 6",
           "credit": "3 hours in Fire Apparatus and Equipment"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-FRT1-1-001",
@@ -131377,7 +133102,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS 31A",
           "credit": "1.5 hours in Fundamental Recording Techniques I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-OSAH-1-001|MAPPRA-OSAH1-1-001",
@@ -131474,7 +133200,8 @@ window.CPL_STATEWIDE = {
           "course": "ELE 55",
           "credit": "1 hour in Occupational Safety and Health Administration (OSHA) Standards for General Industry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-DIWA-1-001",
@@ -131566,7 +133293,8 @@ window.CPL_STATEWIDE = {
           "course": "GDS 062",
           "credit": "3 hours in Digital Illustration with Adobe Illustrator"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ITAP-1-001",
@@ -131658,7 +133386,8 @@ window.CPL_STATEWIDE = {
           "course": "GDS 064",
           "credit": "3 hours in Introduction to Adobe Photoshop"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-PPSC-1-001",
@@ -131750,7 +133479,8 @@ window.CPL_STATEWIDE = {
           "course": "GDS 084",
           "credit": "3 hours in Portfolio Production Studio"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CREB-1-001|MAPICI-DREB-1-001|MAPICI-DREB1-1-001",
@@ -131936,6 +133666,24 @@ window.CPL_STATEWIDE = {
           "course": "REAL ES 007",
           "credit": "3 hours in Real Estate Finance"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Real Estate Finance",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Real Estate Appraisal 1",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Real Estate Practice",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Legal Aspects of Real Estate",
+          "cid": ""
+        }
       ]
     },
     {
@@ -132054,6 +133802,16 @@ window.CPL_STATEWIDE = {
           "course": "FIRE 104",
           "credit": "3 hours in Building Construction for Fire Protection"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Building Construction for Fire Protection",
+          "cid": "FIRE 130 X"
+        },
+        {
+          "credit": "3 hours in Fire Protection Organization",
+          "cid": "FIRE 100 X"
+        }
       ]
     },
     {
@@ -132161,7 +133919,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRETEC 9",
           "credit": "3 hours in Principles of Fire and Emergency Services Safety & Survival"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-F3BC-1-001",
@@ -132262,7 +134021,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE 004",
           "credit": "3 hours in Building Construction for Fire Protection"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-GDI-1-001|MAPCXS-HSA-2-1-001|MAPCXS-HSA-4-1-001",
@@ -132362,7 +134122,8 @@ window.CPL_STATEWIDE = {
           "course": "MAD 116 C",
           "credit": "3 hours in Graphic Design I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-10-1-001|MAPCBES-1CA2-1-001|MAPCBES-30-1-001|MAPCBES-42-1-001|MAPCBES-C-1-001|MAPCXS-CA0-1-001",
@@ -132483,7 +134244,8 @@ window.CPL_STATEWIDE = {
           "course": "CULART 041",
           "credit": "6 hours in Desserts and Pastries"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEJ-1-001|MAPCXS-CBEP-1-001",
@@ -132580,7 +134342,8 @@ window.CPL_STATEWIDE = {
           "course": "PHTO 72",
           "credit": "3 hours in Introduction to Photojournalism"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-CBPJ-1-001|MAPPRA-CBPP-1-001",
@@ -132677,7 +134440,8 @@ window.CPL_STATEWIDE = {
           "course": "PHTO 72",
           "credit": "3 hours in Introduction to Photojournalism"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-CBPJ1-1-001",
@@ -132768,7 +134532,8 @@ window.CPL_STATEWIDE = {
           "course": "JAMS 23",
           "credit": "3 hours in Multimedia Reporting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FI1D-1-001",
@@ -132877,6 +134642,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "FIRE B52S",
           "credit": "0.2 hours in Fire Inspector 1D"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "0.2 hours in Fire Inspector 1D",
+          "cid": ""
         }
       ]
     },
@@ -132994,7 +134765,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE  001",
           "credit": "3 hours in Fire Protection Organizations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-F3BA-1-001|MAPCXS-FBAC-1-001|MAPCXS-FBAC2-1-001|MAPCxS-FBAC1-1-001",
@@ -133110,7 +134882,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRETEC 2",
           "credit": "3 hours in Fire Behavior and Combustion"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-BCFF-1-001|MAPCXS-BCFF2-1-001|MAPCXS-F3CF-1-001|MAPCxS-BCFF1-1-001",
@@ -133226,7 +134999,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRETEC 4",
           "credit": "3 hours in Building Construction for Fire Protection"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-F3BA-1-001|MAPPRI-FBAC-1-001",
@@ -133333,7 +135107,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 305",
           "credit": "3 hours in Fire Behavior and Combustion"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEH-TAAP-1-001",
@@ -133425,7 +135200,8 @@ window.CPL_STATEWIDE = {
           "course": "EDUC 200",
           "credit": "2 hours in Teaching as a Profession"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEH-FEFP-1-001",
@@ -133517,7 +135293,8 @@ window.CPL_STATEWIDE = {
           "course": "EDUC 203",
           "credit": "1 hour in Field Experience for Prospective Teachers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-A11(-1-001",
@@ -133607,7 +135384,8 @@ window.CPL_STATEWIDE = {
           "course": "ART 148",
           "credit": "3 hours in Painting 1 (in Oil)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-RM-1-001",
@@ -133697,7 +135475,8 @@ window.CPL_STATEWIDE = {
           "course": "HRC 125 C",
           "credit": "3 hours in Restaurant Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CEHC-1-001",
@@ -133787,7 +135566,8 @@ window.CPL_STATEWIDE = {
           "course": "CS  005",
           "credit": "3 hours in Certified Ethical Hacker"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-BCFF-1-001|MAPICI-BCFF1-1-001|MAPICI-F3CF-1-001",
@@ -133900,7 +135680,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 304",
           "credit": "3 hours in Building Construction for Fire Protection"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-C3IS-1-001|MAPICI-CCC5-1-001|MAPICI-GISP-1-001|MAPICI-GISP1-1-001|MAPICS-GISP-1-001",
@@ -134008,7 +135789,8 @@ window.CPL_STATEWIDE = {
           "course": "Computer Information Systems (CIS) 142",
           "credit": "2 hours in Operating Systems and Becoming a Power User"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-FRT2-1-001",
@@ -134097,7 +135879,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS 31B",
           "credit": "1.5 hours in Fundamental Recording Techniques II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-MMAB-1-001",
@@ -134186,7 +135969,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS 56M",
           "credit": "1 hour in Mexican Mariachi and Banda Ensemble"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-DMP1-1-001",
@@ -134275,7 +136059,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS 57A",
           "credit": "1.5 hours in Music Production I: Digital Music Production and MIDI"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-GAP1-1-001",
@@ -134364,7 +136149,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS 59A",
           "credit": "1.5 hours in Game Audio Production I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-GAP2-1-001",
@@ -134453,7 +136239,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS 59B",
           "credit": "1.5 hours in Game Audio Production II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-CC1-1-001",
@@ -134542,7 +136329,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 133A",
           "credit": "1 hour in Cybersecurity Competitions 1A"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-CC2A-1-001",
@@ -134631,7 +136419,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 134A",
           "credit": "1 hour in Cybersecurity Competitions 2A"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-CC1B-1-001",
@@ -134720,7 +136509,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 133B",
           "credit": "1 hour in Cybersecurity Competitions 1B"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-CC2B-1-001",
@@ -134809,7 +136599,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 134B",
           "credit": "1 hour in Cybersecurity Competitions 2B"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-CC3A-1-001",
@@ -134898,7 +136689,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 135A",
           "credit": "1 hour in Cybersecurity Competitions 3A"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-CC3B-1-001",
@@ -134987,7 +136779,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 135B",
           "credit": "1 hour in Cybersecurity Competitions 3B"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CM-1-001",
@@ -135076,7 +136869,8 @@ window.CPL_STATEWIDE = {
           "course": "CNSE M06",
           "credit": "4 hours in Cisco Fundamentals of IT Essentials: PC Hardware & Software"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-PACP-1-001",
@@ -135165,7 +136959,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 095G",
           "credit": "4 hours in Agile Project Management - A Practicum"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-MCSA-1-001",
@@ -135254,7 +137049,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 170F",
           "credit": "4.5 hours in Windows Administration"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-E(CO1-1-001",
@@ -135343,7 +137139,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 108.",
           "credit": "4.5 hours in Personal Computer Security Basics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-MTRA-1-001",
@@ -135432,7 +137229,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS 99",
           "credit": "2 hours in Music Internships/Work Experience"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-C3FC-1-001|MAPICS-AFC-1-001",
@@ -135523,7 +137321,8 @@ window.CPL_STATEWIDE = {
           "course": "CMPET 316",
           "credit": "1 hour in Arduino Fundamentals Certification Prep"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICS-MEA(-1-001",
@@ -135612,7 +137411,8 @@ window.CPL_STATEWIDE = {
           "course": "CMPET 326",
           "credit": "3 hours in Microsoft Windows Client (MD-100/101) Certification Prep"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-C3SF-1-001",
@@ -135701,7 +137501,8 @@ window.CPL_STATEWIDE = {
           "course": "CMPET 311",
           "credit": "2.5 hours in IT Support Fundamentals 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CBIR-1-001",
@@ -135790,7 +137591,8 @@ window.CPL_STATEWIDE = {
           "course": "CNT 56",
           "credit": "3 hours in MCSA II Networking with Windows Server"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CBIT-1-001",
@@ -135879,7 +137681,8 @@ window.CPL_STATEWIDE = {
           "course": "CNT 68",
           "credit": "3 hours in Digital Forensics Fundamentals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-CBPM1-1-001",
@@ -135968,7 +137771,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS 25",
           "credit": "2 hours in Teaching Beginning Piano"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-CBPM2-1-001",
@@ -136057,7 +137861,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS 35",
           "credit": "3 hours in Introduction to Music Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-CBPM3-1-001",
@@ -136146,7 +137951,8 @@ window.CPL_STATEWIDE = {
           "course": "MUS 27",
           "credit": "2 hours in Teaching Intermediate Piano"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-M1-I1-1-001",
@@ -136235,7 +138041,8 @@ window.CPL_STATEWIDE = {
           "course": "MUSIC 165",
           "credit": "3 hours in Introduction to Recording Arts"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-AGDM-1-001",
@@ -136324,7 +138131,8 @@ window.CPL_STATEWIDE = {
           "course": "ARTGD 63",
           "credit": "4 hours in Introduction to Graphic Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ITNS-1-001",
@@ -136413,7 +138221,8 @@ window.CPL_STATEWIDE = {
           "course": "CNSE M82",
           "credit": "3 hours in Introduction to Network Security"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICP-FICG-1-001",
@@ -136502,7 +138311,8 @@ window.CPL_STATEWIDE = {
           "course": "CMPR 123",
           "credit": "0.5 hours in Introduction to IT and Cybersecurity"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-AODA-1-001",
@@ -136591,7 +138401,8 @@ window.CPL_STATEWIDE = {
           "course": "MUSIC 20",
           "credit": "3 hours in Applications of Digital Audio Workstations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ITTL-1-001",
@@ -136680,7 +138491,8 @@ window.CPL_STATEWIDE = {
           "course": "ITIS 55",
           "credit": "3 hours in Introduction to the Linux Operating System"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-DFF-1-001",
@@ -136769,7 +138581,8 @@ window.CPL_STATEWIDE = {
           "course": "ITIS 65",
           "credit": "4 hours in Digital Forensics Fundamentals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CJFO-1-001",
@@ -137032,6 +138845,40 @@ window.CPL_STATEWIDE = {
           "course": "FIRE 235",
           "credit": "2 hours in Instructional Methodology"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "1 hour in General Administration Functions for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "2 hours in Fire Investigation and Inspection for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "2 hours in All Risk Command Operations for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "2 hours in Wildland Incident Operations for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "2 hours in Instructional Methodology",
+          "cid": ""
+        },
+        {
+          "credit": "2 hours in Intermediate Fire Behavior",
+          "cid": "FIRE 140 X"
+        },
+        {
+          "credit": "2 hours in Human Resource Management for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "1 hour in Hazardous Materials Incident Commander",
+          "cid": ""
+        }
       ]
     },
     {
@@ -137162,6 +139009,12 @@ window.CPL_STATEWIDE = {
           "course": "FIRETEC 422",
           "credit": "1.5 hours in Fire Inspector 1C: Field Inspection"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": ".5 hours in Fire Inspector 1C",
+          "cid": ""
+        }
       ]
     },
     {
@@ -137286,6 +139139,12 @@ window.CPL_STATEWIDE = {
           "course": "FIRETEC 421",
           "credit": "2 hours in Fire Inspector 1B: Fire and Life Safety"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "0.5 hours in Fire Inspector 1B",
+          "cid": ""
+        }
       ]
     },
     {
@@ -137381,7 +139240,8 @@ window.CPL_STATEWIDE = {
           "course": "MUSIC 161",
           "credit": "3 hours in Introduction to Music Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ANSI-1-001",
@@ -137469,7 +139329,8 @@ window.CPL_STATEWIDE = {
           "course": "CAHM 64",
           "credit": "2 hours in Sanitation and Hygiene"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-SAS-1-001",
@@ -137557,7 +139418,8 @@ window.CPL_STATEWIDE = {
           "course": "HRC 120 C",
           "credit": "2 hours in Sanitation and Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "CPLICI-ASE8-1-001|MAPICI-AC(A7-1-001|MAPICI-ASE(22-1-001|MAPICI-ASE(35-1-001|MAPICI-EPAA-1-001",
@@ -137744,6 +139606,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "AUTO 218",
           "credit": "3 hours in Automotive Fuel Systems"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 or 4 hours in Engine Performance",
+          "cid": ""
         }
       ]
     },
@@ -138064,6 +139932,108 @@ window.CPL_STATEWIDE = {
           "course": "FIRE 235",
           "credit": "1.5 hours in Instructional Methodology"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in All Risk Command Operations for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Wildland Incident Operations for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "1.5 hours in Instructional Methodology",
+          "cid": ""
+        },
+        {
+          "credit": "2 hours in Intermediate Fire Behavior",
+          "cid": "FIRE 140 X"
+        },
+        {
+          "credit": "3 hours in Human Resource Management for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in General Administration Functions for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Fire Investigation and Inspection for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "1 hour in Hazardous Materials Incident Commander",
+          "cid": ""
+        },
+        {
+          "credit": "0.5 hours in Hazardous Materials Incident Commander",
+          "cid": ""
+        },
+        {
+          "credit": "0.5 hours in Intermediate Wildland Fire Behavior S-290",
+          "cid": ""
+        },
+        {
+          "credit": "2 hours in Human Resource Management for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "0.5 hours in Company Officer 2A: Human Resource Management for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "1 hour in General Administration Functions for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "0.5 hours in Company Officer 2B: General Administration Functions for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "2 hours in Fire Investigation and Inspection for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "0.5 hours in Company Officer 2C: Fire Investigation and Inspection for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "2 hours in All Risk Command Operations for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "0.5 hours in Company Officer 2D: All Risk Command Operations for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "2 hours in Wildland Incident Operations for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "0.5 hours in Company Officer 2E: Wildland Incident Operations for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "2 hours in Instructional Methodology",
+          "cid": ""
+        },
+        {
+          "credit": "0.5 hours in Instructor I: Instructional Methodology",
+          "cid": ""
+        },
+        {
+          "credit": "9.0 hours in Regional Firefighter I Academy",
+          "cid": ""
+        },
+        {
+          "credit": "1.5 hours in Firefighter I Academy Skills Review and Certification",
+          "cid": ""
+        },
+        {
+          "credit": "13.0 hours in San Diego City Basic Firefighter I Academy",
+          "cid": ""
+        }
       ]
     },
     {
@@ -138274,6 +140244,20 @@ window.CPL_STATEWIDE = {
           "course": "FIRE B6",
           "credit": "3 hours in Fire Protection Equipment and Systems"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Fire Protection Systems",
+          "cid": "FIRE 120 X"
+        },
+        {
+          "credit": "3 hours in Fire Prevention Technology",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Fire Prevention",
+          "cid": ""
+        }
       ]
     },
     {
@@ -138414,6 +140398,12 @@ window.CPL_STATEWIDE = {
           "course": "FOT 130A",
           "credit": "1.5 hours in Fire Inspector 1A: Duties and Administration"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "0.5 hours in Fire Inspector 1A: Inspection and Code Enforcement",
+          "cid": ""
+        }
       ]
     },
     {
@@ -138501,7 +140491,8 @@ window.CPL_STATEWIDE = {
           "course": "RTVF 124",
           "credit": "3 hours in Single Camera Production"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-D3-C-1-001",
@@ -138588,7 +140579,8 @@ window.CPL_STATEWIDE = {
           "course": "DANCEST 301",
           "credit": "1 hour in Choreography I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-D1-M-1-001",
@@ -138675,7 +140667,8 @@ window.CPL_STATEWIDE = {
           "course": "DANCETQ 141",
           "credit": "1 hour in Modern Dance Techniques I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-D3-C1-1-001",
@@ -138762,7 +140755,8 @@ window.CPL_STATEWIDE = {
           "course": "DANCEST 302",
           "credit": "1 hour in Choreography II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-D1-M1-1-001|MAPCXS-HSA-1-1-001",
@@ -138851,7 +140845,8 @@ window.CPL_STATEWIDE = {
           "course": "DANCETQ 142",
           "credit": "1 hour in Modern Dance Techniques II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-HSA--1-001",
@@ -138938,7 +140933,8 @@ window.CPL_STATEWIDE = {
           "course": "DANCETQ 141",
           "credit": "1 hour in Modern Dance Techniques I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-V3IT2-1-001",
@@ -139025,7 +141021,8 @@ window.CPL_STATEWIDE = {
           "course": "DM 171",
           "credit": "1.5 hours in Drone Pilot Training"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEM6-1-001",
@@ -139112,7 +141109,8 @@ window.CPL_STATEWIDE = {
           "course": "DANC V40D",
           "credit": "2 hours in Mexican Folklorico IV"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBED1-1-001",
@@ -139199,7 +141197,8 @@ window.CPL_STATEWIDE = {
           "course": "DANC V27A",
           "credit": "2 hours in Street Dance I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBED2-1-001",
@@ -139286,7 +141285,8 @@ window.CPL_STATEWIDE = {
           "course": "DANC V27B",
           "credit": "2 hours in Street Dance II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBED3-1-001",
@@ -139373,7 +141373,8 @@ window.CPL_STATEWIDE = {
           "course": "DANC V27C",
           "credit": "2 hours in Street Dance III"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBED5-1-001",
@@ -139460,7 +141461,8 @@ window.CPL_STATEWIDE = {
           "course": "DANC V27D",
           "credit": "2 hours in Street Dance IV"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEF2-1-001",
@@ -139547,7 +141549,8 @@ window.CPL_STATEWIDE = {
           "course": "DANC V40A",
           "credit": "2 hours in Mexican Folklorico I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBE-2-1-001",
@@ -139634,7 +141637,8 @@ window.CPL_STATEWIDE = {
           "course": "DANC V40C",
           "credit": "2 hours in Mexican Folklorico III"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEF3-1-001",
@@ -139721,7 +141725,8 @@ window.CPL_STATEWIDE = {
           "course": "DANC V40C",
           "credit": "2 hours in Mexican Folklorico III"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-ESA-1-001",
@@ -139812,7 +141817,8 @@ window.CPL_STATEWIDE = {
           "course": "ENVS 102",
           "credit": "1 hour in Environmental Science Laboratory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-DDRA-1-001",
@@ -139899,7 +141905,8 @@ window.CPL_STATEWIDE = {
           "course": "DANCE 183",
           "credit": "2 hours in Dance Rehearsal & Performance 3"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-ITVE-1-001",
@@ -139986,7 +141993,8 @@ window.CPL_STATEWIDE = {
           "course": "DM 112",
           "credit": "3 hours in Introduction to Video Editing and Postproduction"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-PAD-1-001",
@@ -140073,7 +142081,8 @@ window.CPL_STATEWIDE = {
           "course": "DM 150",
           "credit": "3 hours in Producing and Directing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "CPLICI-ASE3-1-001|MAPICI-AC(A3-1-001|MAPICI-ASE(18-1-001|MAPICI-ASE(30-1-001|MAPICI-MDTA-1-001",
@@ -140269,6 +142278,12 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 213",
           "credit": "3 hours in Automotive Manual Transmission"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems",
+          "cid": ""
+        }
       ]
     },
     {
@@ -140403,6 +142418,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "FIRE 234",
           "credit": "2 hours in Wildland Incident Operations for Company Officers"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "2 hours in Wildland Incident Operations for Company Officers",
+          "cid": ""
         }
       ]
     },
@@ -140542,6 +142563,16 @@ window.CPL_STATEWIDE = {
           "course": "FST 115",
           "credit": "1.5 hours in Fire Apparatus Driver/Operator 1A: Emergency Vehicle Operations"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Fire Apparatus and Equipment",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Fire Service Hydraulics",
+          "cid": ""
+        }
       ]
     },
     {
@@ -140629,7 +142660,8 @@ window.CPL_STATEWIDE = {
           "course": "DRAM 123",
           "credit": "3 hours in Beginning Stagecraft"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-CA0-1-001",
@@ -140715,7 +142747,8 @@ window.CPL_STATEWIDE = {
           "course": "CULART 040",
           "credit": "6 hours in Introduction to Baking"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-H1-1-001",
@@ -140801,7 +142834,8 @@ window.CPL_STATEWIDE = {
           "course": "HOSP 100",
           "credit": "3 hours in Introduction to Hospitality and Customer Service"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-C0-A-1-001",
@@ -140887,7 +142921,8 @@ window.CPL_STATEWIDE = {
           "course": "CULART 043",
           "credit": "6 hours in Advanced Desserts and Pastry/Chocolate/Sugar"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-ITDP-1-001",
@@ -140973,7 +143008,8 @@ window.CPL_STATEWIDE = {
           "course": "PHOT 143",
           "credit": "3 hours in Introduction to Digital Photography"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-PEL-1-001",
@@ -141059,7 +143095,8 @@ window.CPL_STATEWIDE = {
           "course": "PHOT 180",
           "credit": "3 hours in Photo Editing: Lightroom"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEH-ADP-1-001",
@@ -141145,7 +143182,8 @@ window.CPL_STATEWIDE = {
           "course": "PHOT 243",
           "credit": "3 hours in Advanced Digital Photography"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-S1-1-001",
@@ -141231,7 +143269,8 @@ window.CPL_STATEWIDE = {
           "course": "CACM 102",
           "credit": "2 hours in Sanitation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-OOF-1-001",
@@ -141317,7 +143356,8 @@ window.CPL_STATEWIDE = {
           "course": "CACM 103",
           "credit": "1 hour in Organization of Food"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-TOFP-1-001",
@@ -141403,7 +143443,8 @@ window.CPL_STATEWIDE = {
           "course": "CACM 106",
           "credit": "2.5 hours in Theory of Food Principles"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-FOBT-1-001",
@@ -141489,7 +143530,8 @@ window.CPL_STATEWIDE = {
           "course": "CACM 160",
           "credit": "3 hours in Fundamental of Baking Theory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-GMI-1-001",
@@ -141575,7 +143617,8 @@ window.CPL_STATEWIDE = {
           "course": "CACM 206B",
           "credit": "1 hour in Garde Manger II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-BAP1-1-001",
@@ -141661,7 +143704,8 @@ window.CPL_STATEWIDE = {
           "course": "CACM 212",
           "credit": "3 hours in Baking and Pastry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-A1DP-1-001",
@@ -141747,7 +143791,8 @@ window.CPL_STATEWIDE = {
           "course": "ART 173",
           "credit": "3 hours in Basic Digital Photography"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-C2E--1-001",
@@ -141833,7 +143878,8 @@ window.CPL_STATEWIDE = {
           "course": "CSCI 240",
           "credit": "4 hours in Networking Essentials"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-A1BD-1-001",
@@ -141919,7 +143965,8 @@ window.CPL_STATEWIDE = {
           "course": "ART 173",
           "credit": "3 hours in Basic Digital Photography"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-C2NE-1-001",
@@ -142005,7 +144052,8 @@ window.CPL_STATEWIDE = {
           "course": "CSCI 240",
           "credit": "4 hours in Networking Essentials"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ITB&-1-001",
@@ -142091,7 +144139,8 @@ window.CPL_STATEWIDE = {
           "course": "HCTM 111",
           "credit": "3 hours in Introduction to Baking & Pastry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-GMIP-1-001",
@@ -142177,7 +144226,8 @@ window.CPL_STATEWIDE = {
           "course": "HCTM 112",
           "credit": "3 hours in Garde Manger"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CI1G-1-001",
@@ -142263,7 +144313,8 @@ window.CPL_STATEWIDE = {
           "course": "HCTM 190",
           "credit": "3 hours in Culinary Internship 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ACGO-1-001",
@@ -142349,7 +144400,8 @@ window.CPL_STATEWIDE = {
           "course": "HCTM 250",
           "credit": "11 hours in Advanced Culinary"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CI2G-1-001",
@@ -142435,7 +144487,8 @@ window.CPL_STATEWIDE = {
           "course": "HCTM 290",
           "credit": "3 hours in Culinary Internship 2"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-HSA-3-1-001",
@@ -142521,7 +144574,8 @@ window.CPL_STATEWIDE = {
           "course": "TECTHTR 342",
           "credit": "2 hours in Technical Stage Production"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-CFI-1-001",
@@ -142607,7 +144661,8 @@ window.CPL_STATEWIDE = {
           "course": "HRC 135 C",
           "credit": "3 hours in Culinary Fundamentals I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-V1TT-1-001",
@@ -142693,7 +144748,8 @@ window.CPL_STATEWIDE = {
           "course": "THEA 150B",
           "credit": "2 hours in Technical Theatre in Production"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CEC0-1-001",
@@ -142779,7 +144835,8 @@ window.CPL_STATEWIDE = {
           "course": "CULN 001A",
           "credit": "3 hours in Culinary Essentials"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-EBAM-1-001",
@@ -142865,7 +144922,8 @@ window.CPL_STATEWIDE = {
           "course": "CULN 002B",
           "credit": "3 hours in Essential Baking and Meat, Poultry & Seafood Cooking Methods"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-VLAO-1-001",
@@ -142951,7 +145009,8 @@ window.CPL_STATEWIDE = {
           "course": "CULN 001B",
           "credit": "3 hours in Vegetables, Legumes, and Other Starches"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-DPBF-1-001",
@@ -143037,7 +145096,8 @@ window.CPL_STATEWIDE = {
           "course": "CULN 002A",
           "credit": "3 hours in Dairy Products, Breakfast Foods, Salads, and Appetizers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-C6FH-1-001",
@@ -143123,7 +145183,8 @@ window.CPL_STATEWIDE = {
           "course": "CART  060",
           "credit": "2 hours in Sanitation and Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-RE-1-001",
@@ -143209,7 +145270,8 @@ window.CPL_STATEWIDE = {
           "course": "CART  040",
           "credit": "3 hours in Culinary Fundamentals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-C4LC-1-001",
@@ -143295,7 +145357,8 @@ window.CPL_STATEWIDE = {
           "course": "CART  041",
           "credit": "3 hours in Culinary Production and Operations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-C4CE-1-001",
@@ -143381,7 +145444,8 @@ window.CPL_STATEWIDE = {
           "course": "CART  042",
           "credit": "3 hours in Catering and Production Cooking"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-C2BE-1-001",
@@ -143467,7 +145531,8 @@ window.CPL_STATEWIDE = {
           "course": "CART  020",
           "credit": "3 hours in Introduction to Baking"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CFOH-1-001",
@@ -143553,7 +145618,8 @@ window.CPL_STATEWIDE = {
           "course": "CLN ART 120",
           "credit": "4 hours in Front of House/Dining Services"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-TD1-1-001",
@@ -143639,7 +145705,8 @@ window.CPL_STATEWIDE = {
           "course": "THEATRE 32",
           "credit": "3 hours in Theatre Design-Lighting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-CMPP-1-001",
@@ -143725,7 +145792,8 @@ window.CPL_STATEWIDE = {
           "course": "CLN ART 235",
           "credit": "4 hours in Menu Planning and Purchasing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "CPLICI-ASE7-1-001|MAPICI-AAC-1-001|MAPICI-AC(A6-1-001|MAPICI-ASE(34-1-001|MAPICI-CCSA-1-001",
@@ -143917,6 +145985,12 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 018",
           "credit": "4 hours in Automotive Heating, Ventilation & Air Conditioning"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning",
+          "cid": ""
+        }
       ]
     },
     {
@@ -144046,6 +146120,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "FIRE 230",
           "credit": "2 hours in Human Resource Management for Company Officers"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "2 hours in Human Resource Management for Company Officers",
+          "cid": ""
         }
       ]
     },
@@ -144177,6 +146257,12 @@ window.CPL_STATEWIDE = {
           "course": "FIRE 232",
           "credit": "3 hours in Fire Investigation and Inspection for Company Officers"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Fire Investigation and Inspection for Company Officers",
+          "cid": ""
+        }
       ]
     },
     {
@@ -144307,6 +146393,12 @@ window.CPL_STATEWIDE = {
           "course": "FIRE 233",
           "credit": "2 hours in All Risk Command Operations for Company Officers"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "2 hours in All Risk Command Operations for Company Officers",
+          "cid": ""
+        }
       ]
     },
     {
@@ -144411,7 +146503,8 @@ window.CPL_STATEWIDE = {
           "course": "CUL 003",
           "credit": "2 hours in Sanitation and Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-C0-1-001",
@@ -144501,7 +146594,8 @@ window.CPL_STATEWIDE = {
           "course": "HOSP 110",
           "credit": "2 hours in Sanitation and Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-PFPI-1-001",
@@ -144586,7 +146680,8 @@ window.CPL_STATEWIDE = {
           "course": "AP 46A",
           "credit": "3 hours in Photoshop for Photography I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-PFP2-1-001",
@@ -144671,7 +146766,8 @@ window.CPL_STATEWIDE = {
           "course": "AP 46B",
           "credit": "3 hours in Photoshop for Photography II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-PFP3-1-001",
@@ -144756,7 +146852,8 @@ window.CPL_STATEWIDE = {
           "course": "AP 46C",
           "credit": "3 hours in Photoshop for Photography III"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-SPP-1-001",
@@ -144841,7 +146938,8 @@ window.CPL_STATEWIDE = {
           "course": "AP 57",
           "credit": "3 hours in Portrait Photography"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-VST-1-001",
@@ -144926,7 +147024,8 @@ window.CPL_STATEWIDE = {
           "course": "AP 26A",
           "credit": "3 hours in Visual Storytelling"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-A1L--1-001",
@@ -145011,7 +147110,8 @@ window.CPL_STATEWIDE = {
           "course": "ART 193",
           "credit": "3 hours in Photographic Lighting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-P0-I-1-001",
@@ -145096,7 +147196,8 @@ window.CPL_STATEWIDE = {
           "course": "PHOTO 009",
           "credit": "3 hours in Introduction to Cameras and Composition"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-YC-1-001",
@@ -145181,7 +147282,8 @@ window.CPL_STATEWIDE = {
           "course": "PE 29",
           "credit": "1 hour in Yoga"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-PTC-1-001",
@@ -145266,7 +147368,8 @@ window.CPL_STATEWIDE = {
           "course": "PE 15",
           "credit": "1 hour in Weight Training"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-AFD-1-001",
@@ -145351,7 +147454,8 @@ window.CPL_STATEWIDE = {
           "course": "KIN 201 C",
           "credit": "3 hours in Athletic Fitness Development"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-J-1-001|MAPMM-M1-1-001",
@@ -145441,7 +147545,8 @@ window.CPL_STATEWIDE = {
           "course": "PE 6",
           "credit": "1 hour in Fitness and Health"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-VWJR-1-001",
@@ -145526,7 +147631,8 @@ window.CPL_STATEWIDE = {
           "course": "KINE 068",
           "credit": "1 hour in Jogging, Powerwalking, & Running"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICS-POCP-1-001",
@@ -145611,7 +147717,8 @@ window.CPL_STATEWIDE = {
           "course": "PHOT 102C",
           "credit": "2 hours in Phase One - Capture One"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICS-DP-1-001",
@@ -145696,7 +147803,8 @@ window.CPL_STATEWIDE = {
           "course": "PHOT 102D",
           "credit": "2 hours in Beginning Drone Piloting and Imaging"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-MBT-1-001",
@@ -145781,7 +147889,8 @@ window.CPL_STATEWIDE = {
           "course": "KNES 053.",
           "credit": "5 hours in Health and Fitness"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "CPLICI-ASE2-1-001|MAPICI-AC(A1-1-001|MAPICI-ASE(17-1-001|MAPICI-ASE(28-1-001|MAPICI-ASE(29-1-001|MAPICI-ATAA-1-001",
@@ -145987,6 +148096,16 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 162",
           "credit": "3 hours in Auto Transmissions and Transaxles"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Automatic Transmissions and Transaxles",
+          "cid": "AUTO 120 X"
+        },
+        {
+          "credit": "3 hours in Auto Transmissions and Transaxles",
+          "cid": ""
+        }
       ]
     },
     {
@@ -146116,6 +148235,12 @@ window.CPL_STATEWIDE = {
           "course": "FIRE 231",
           "credit": "1 hour in General Administration Functions for Company Officers"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "1 hour in General Administration Functions for Company Officers",
+          "cid": ""
+        }
       ]
     },
     {
@@ -146206,7 +148331,8 @@ window.CPL_STATEWIDE = {
           "course": "DRAFT 43",
           "credit": "3 hours in Advanced CAD Modeling and Applications"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-ITHM-1-001",
@@ -146290,7 +148416,8 @@ window.CPL_STATEWIDE = {
           "course": "HOSP 001",
           "credit": "3 hours in Introduction to Hospitality Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ITH-1-001",
@@ -146374,7 +148501,8 @@ window.CPL_STATEWIDE = {
           "course": "HOSP M100",
           "credit": "3 hours in Introduction to Hospitality"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-HCC1-1-001",
@@ -146458,7 +148586,8 @@ window.CPL_STATEWIDE = {
           "course": "HOSP M120",
           "credit": "3 hours in Hospitality Cost Control"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "CPLICI-ASE1-1-001|MAPICI-AC(A-1-001|MAPICI-ASE(12-1-001|MAPICI-ASE(16-1-001|MAPICI-ASE(27-1-001",
@@ -146677,6 +148806,16 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 211",
           "credit": "3 hours in Automotive Engine Repair"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Engine Repair",
+          "cid": ""
+        },
+        {
+          "credit": "4 hours in Engine Repair",
+          "cid": ""
+        }
       ]
     },
     {
@@ -146888,6 +149027,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "AUTO 214",
           "credit": "3 hours in Automotive Wheel Alignment"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Automotive Suspension and Steering Systems",
+          "cid": "AUTO 140 X"
         }
       ]
     },
@@ -147115,6 +149260,12 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 215",
           "credit": "3 hours in Automotive Brake Systems"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Automotive Braking Systems",
+          "cid": "AUTO 150 X"
+        }
       ]
     },
     {
@@ -147217,7 +149368,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-HCC-1-001|MAPCxS-HCCH-1-001",
@@ -147307,7 +149459,8 @@ window.CPL_STATEWIDE = {
           "course": "HOSP M120",
           "credit": "3 hours in Hospitality Cost Control"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-SACF-1-001",
@@ -147390,7 +149543,8 @@ window.CPL_STATEWIDE = {
           "course": "KIN M21",
           "credit": "3 hours in Strength and Conditioning for Performance"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICN-BFFY-1-001",
@@ -147473,7 +149627,8 @@ window.CPL_STATEWIDE = {
           "course": "HORT 2",
           "credit": "4 hours in Soil Science and Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOO-S(1C-1-001",
@@ -147556,7 +149711,8 @@ window.CPL_STATEWIDE = {
           "course": "KIN 121 C",
           "credit": "1 hour in Self Defense"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOO-BCW(-1-001",
@@ -147639,7 +149795,8 @@ window.CPL_STATEWIDE = {
           "course": "KIN 145 C",
           "credit": "1 hour in Boot Camp Workout"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-HS&G-1-001",
@@ -147722,7 +149879,8 @@ window.CPL_STATEWIDE = {
           "course": "HOSP M170",
           "credit": "3 hours in Hospitality Supervision and Guest Relations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-EM-1-001",
@@ -147805,7 +149963,8 @@ window.CPL_STATEWIDE = {
           "course": "HOSP M200",
           "credit": "3 hours in Introduction to Event Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-HS&G-1-001",
@@ -147888,7 +150047,8 @@ window.CPL_STATEWIDE = {
           "course": "HOSP M170",
           "credit": "3 hours in Hospitality Supervision and Guest Relations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-EM1-1-001",
@@ -147971,7 +150131,8 @@ window.CPL_STATEWIDE = {
           "course": "HOSP M200",
           "credit": "3 hours in Introduction to Event Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "CPLICI-ASE6-1-001|MAPICI-AC(A5-1-001|MAPICI-ACA+-1-001|MAPICI-ASE(21-1-001|MAPICI-ASE(33-1-001|MAPICI-ASEA3-1-001|MAPICI-BEAE-1-001",
@@ -148191,6 +150352,12 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 116",
           "credit": "5 hours in Electrical Fundamentals"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 or 4 hours in Electrical/Electronic Systems",
+          "cid": ""
+        }
       ]
     },
     {
@@ -148291,7 +150458,8 @@ window.CPL_STATEWIDE = {
           "course": "PREAPP 121",
           "credit": "3.5 hours in MC3 Pre-Apprenticeship Essentials"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-PNLI-1-001",
@@ -148374,7 +150542,8 @@ window.CPL_STATEWIDE = {
           "course": "EXSC 284",
           "credit": "2 hours in Fitness and Sports Nutrition"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ACOS-1-001",
@@ -148457,7 +150626,8 @@ window.CPL_STATEWIDE = {
           "course": "EXSC 286",
           "credit": "2 hours in Exercise for Special Populations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-HCCA-1-001",
@@ -148540,7 +150710,8 @@ window.CPL_STATEWIDE = {
           "course": "EXSC 286",
           "credit": "1.75 hours in Techniques of Exercise Leadership"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CSAC-1-001",
@@ -148623,7 +150794,8 @@ window.CPL_STATEWIDE = {
           "course": "EXSC 282",
           "credit": "2 hours in Techniques of Weight Training"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-EPAC-1-001",
@@ -148706,7 +150878,8 @@ window.CPL_STATEWIDE = {
           "course": "EXSC 280",
           "credit": "2 hours in Applied Exercise Physiology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ACMA-1-001",
@@ -148871,7 +151044,8 @@ window.CPL_STATEWIDE = {
           "course": "AMW 051",
           "credit": "1.5 hours in Solar Installer Level 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ACMC-1-001",
@@ -149036,7 +151210,8 @@ window.CPL_STATEWIDE = {
           "course": "AMW 051",
           "credit": "1.5 hours in Solar Installer Level 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-SI1-1-001|MAPPRA-SI2-1-001",
@@ -149121,7 +151296,8 @@ window.CPL_STATEWIDE = {
           "course": "ENE 42",
           "credit": "3 hours in SolidWorks I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEH-HAAP-1-001",
@@ -149201,7 +151377,8 @@ window.CPL_STATEWIDE = {
           "course": "MEDA 55",
           "credit": "3 hours in Fundamentals Human Anatomy and Physiology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-C2TP-1-001",
@@ -149281,7 +151458,8 @@ window.CPL_STATEWIDE = {
           "course": "CSCI 270",
           "credit": "3 hours in Introduction to Programming"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-H1MR-1-001",
@@ -149361,7 +151539,8 @@ window.CPL_STATEWIDE = {
           "course": "HE 101",
           "credit": "3 hours in Emergency Medical Response; CPR PRO/Healthcare Provider"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-H1MR-1-001",
@@ -149441,7 +151620,8 @@ window.CPL_STATEWIDE = {
           "course": "HE 101",
           "credit": "3 hours in Emergency Medical Response; CPR PRO/Healthcare Provider"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-H1FA-1-001",
@@ -149521,7 +151701,8 @@ window.CPL_STATEWIDE = {
           "course": "HE 100",
           "credit": "3 hours in Standard First Aid/CPR/AED"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-H1FA-1-001",
@@ -149601,7 +151782,8 @@ window.CPL_STATEWIDE = {
           "course": "HE 100",
           "credit": "3 hours in Standard First Aid/CPR/AED"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICP-M3MA-1-001",
@@ -149681,7 +151863,8 @@ window.CPL_STATEWIDE = {
           "course": "MDAST 322",
           "credit": "3.5 hours in Medical Assisting Administrative Procedures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-M3-M1-1-001",
@@ -149761,7 +151944,8 @@ window.CPL_STATEWIDE = {
           "course": "MDAST 323",
           "credit": "3 hours in Medical Assisting Clinical Procedures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-M3-I-1-001",
@@ -149841,7 +152025,8 @@ window.CPL_STATEWIDE = {
           "course": "MDAST 324",
           "credit": "4 hours in Introduction to Disease and Pharmacology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-M3-M2-1-001",
@@ -149921,7 +152106,8 @@ window.CPL_STATEWIDE = {
           "course": "MDAST 325",
           "credit": "3 hours in Medical Assisting Laboratory Procedures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-M3MA-1-001",
@@ -150001,7 +152187,8 @@ window.CPL_STATEWIDE = {
           "course": "MDAST 326",
           "credit": "7 hours in Medical Assisting Practicum"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ET1--1-001",
@@ -150081,7 +152268,8 @@ window.CPL_STATEWIDE = {
           "course": "EGD TEK 101",
           "credit": "3 hours in Engineering Graphics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-RCHS-1-001",
@@ -150161,7 +152349,8 @@ window.CPL_STATEWIDE = {
           "course": "DRAFT 43",
           "credit": "3 hours in Advanced CAD Modeling and Applications"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-AE&D1-1-001|MAPCXH-AE&D2-1-001",
@@ -150243,7 +152432,8 @@ window.CPL_STATEWIDE = {
           "course": "MNFG 103",
           "credit": "3 hours in Solidworks Beginning Solid Modeling"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOH-TDHS-1-001",
@@ -150323,7 +152513,8 @@ window.CPL_STATEWIDE = {
           "course": "DDGT 110",
           "credit": "3 hours in Technical Drawing Fundamentals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOH-MTHS-1-001",
@@ -150403,7 +152594,8 @@ window.CPL_STATEWIDE = {
           "course": "HEOC 171",
           "credit": "3 hours in Medical Terminology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXM-MBT-1-1-001",
@@ -150483,7 +152675,8 @@ window.CPL_STATEWIDE = {
           "course": "HELH 100",
           "credit": "3 hours in Community First Aid & Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-CJU--1-001",
@@ -150563,7 +152756,8 @@ window.CPL_STATEWIDE = {
           "course": "DRAFT 43",
           "credit": "3 hours in Advanced CAD Modeling and Applications"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-ITCD-1-001",
@@ -150643,7 +152837,8 @@ window.CPL_STATEWIDE = {
           "course": "CADD 001",
           "credit": "3 hours in Introduction to Computer-Aided Design and Drafting Fundamentals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-ICDA-1-001",
@@ -150723,7 +152918,8 @@ window.CPL_STATEWIDE = {
           "course": "CADD 002",
           "credit": "3 hours in Intermediate Computer-Aided Design and Drafting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-ACDA-1-001",
@@ -150803,7 +152999,8 @@ window.CPL_STATEWIDE = {
           "course": "CADD 003",
           "credit": "3 hours in Advanced Computer-Aided Design and Drafting, Rendering & Animation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-3CDA-1-001",
@@ -150883,7 +153080,8 @@ window.CPL_STATEWIDE = {
           "course": "CADD 004",
           "credit": "3 hours in 3-Dimensional Computer-Aided Design and Drafting & 3-Dimensional Printing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-SMS-1-001",
@@ -150962,7 +153160,8 @@ window.CPL_STATEWIDE = {
           "course": "DM 57",
           "credit": "1.5 hours in Self-Promotion Through Social Media"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-C2DA-1-001",
@@ -151041,7 +153240,8 @@ window.CPL_STATEWIDE = {
           "course": "CMPGR 213",
           "credit": "3 hours in Digital Drawing and Painting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-C2DA-1-001",
@@ -151120,7 +153320,8 @@ window.CPL_STATEWIDE = {
           "course": "CMPGR 213",
           "credit": "3 hours in Digital Drawing and Painting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-C2P--1-001",
@@ -151199,7 +153400,8 @@ window.CPL_STATEWIDE = {
           "course": "CMPGR 235",
           "credit": "3 hours in Beginning Photoshop"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-C2P--1-001",
@@ -151278,7 +153480,8 @@ window.CPL_STATEWIDE = {
           "course": "CMPGR 235",
           "credit": "3 hours in Beginning Photoshop"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-C2AE-1-001",
@@ -151357,7 +153560,8 @@ window.CPL_STATEWIDE = {
           "course": "CMPGR 284",
           "credit": "3 hours in Beginning After Effects"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-C2AE-1-001",
@@ -151436,7 +153640,8 @@ window.CPL_STATEWIDE = {
           "course": "CMPGR 284",
           "credit": "3 hours in Beginning After Effects"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-C2PG-1-001",
@@ -151515,7 +153720,8 @@ window.CPL_STATEWIDE = {
           "course": "CMPGR 215",
           "credit": "3 hours in Business Presentation Graphics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-C2P--1-001",
@@ -151594,7 +153800,8 @@ window.CPL_STATEWIDE = {
           "course": "CMPGR 235",
           "credit": "3 hours in Beginning Photoshop"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-AOGD-1-001|MAPCXH-AOGD1-1-001",
@@ -151675,7 +153882,8 @@ window.CPL_STATEWIDE = {
           "course": "DM 195",
           "credit": "3 hours in Introduction to Digital Media Arts"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-V3IT-1-001",
@@ -151754,7 +153962,8 @@ window.CPL_STATEWIDE = {
           "course": "DM 195",
           "credit": "3 hours in Introduction to Digital Media Arts"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-WPIC-1-001",
@@ -151833,7 +154042,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS  082C",
           "credit": "3 hours in Web Publishing I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-HAWH-1-001",
@@ -151912,7 +154122,8 @@ window.CPL_STATEWIDE = {
           "course": "HS 005",
           "credit": "3 hours in Medical Terminology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-ITWD-1-001",
@@ -151990,7 +154201,8 @@ window.CPL_STATEWIDE = {
           "course": "DM 20",
           "credit": "4 hours in Introduction to Web Design and Development"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-IWDD-1-001",
@@ -152068,7 +154280,8 @@ window.CPL_STATEWIDE = {
           "course": "DM 21",
           "credit": "4 hours in Intermediate Web Design and Development"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-ITUD-1-001",
@@ -152146,7 +154359,8 @@ window.CPL_STATEWIDE = {
           "course": "DM 22",
           "credit": "4 hours in Introduction to UI/UX Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-WDUW-1-001",
@@ -152224,7 +154438,8 @@ window.CPL_STATEWIDE = {
           "course": "DM 56",
           "credit": "1.5 hours in Web Design Using WordPress"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-HAC--1-001",
@@ -152302,7 +154517,8 @@ window.CPL_STATEWIDE = {
           "course": "WEBD 152",
           "credit": "3 hours in Beginning Web Development: HyperText Markup Language (HTML) and Cascading Style Sheets (CSS)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-CUC-1-001",
@@ -152380,7 +154596,8 @@ window.CPL_STATEWIDE = {
           "course": "WEBD 154",
           "credit": "3 hours in Creating User-Centered Content"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-IHAC-1-001",
@@ -152458,7 +154675,8 @@ window.CPL_STATEWIDE = {
           "course": "WEBD 168",
           "credit": "3 hours in Intermediate HTML (HyperText Markup Language) and CSS (Cascading Style Sheets) for Web Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-M1-1-001",
@@ -152536,7 +154754,8 @@ window.CPL_STATEWIDE = {
           "course": "WEBD 169",
           "credit": "3 hours in Website Development Using Open Source Content Management Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-A2CB13-1-001",
@@ -152614,7 +154833,8 @@ window.CPL_STATEWIDE = {
           "course": "ASHS 280",
           "credit": "3 hours in COUNSELING SKILLS, LAW AND ETHICS"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-V3WD-1-001",
@@ -152692,7 +154912,8 @@ window.CPL_STATEWIDE = {
           "course": "DM 164",
           "credit": "3 hours in Web Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOA-CAFP-1-001",
@@ -152773,7 +154994,8 @@ window.CPL_STATEWIDE = {
           "course": "HCTM 110",
           "credit": "3 hours in Culinary Production and Operations for Hospitality Professionals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-ITCA-1-001",
@@ -152851,7 +155073,8 @@ window.CPL_STATEWIDE = {
           "course": "CISC 150",
           "credit": "3 hours in Introduction to Computer and Information Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-CAM-1-001",
@@ -152927,7 +155150,8 @@ window.CPL_STATEWIDE = {
           "course": "MAN 35",
           "credit": "5 hours in Computer Aided Manufacturing-Mastercam"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-GMSA-1-001",
@@ -153003,7 +155227,8 @@ window.CPL_STATEWIDE = {
           "course": "MAN 36",
           "credit": "4 hours in General machine shop and theory of machining"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-CMSA-1-001",
@@ -153079,7 +155304,8 @@ window.CPL_STATEWIDE = {
           "course": "MAN 56",
           "credit": "4 hours in CNC Machine Set-Up and Operation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-CPW-1-001",
@@ -153155,7 +155381,8 @@ window.CPL_STATEWIDE = {
           "course": "MAN 57",
           "credit": "3 hours in CNC Program Writing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEH-ITME-1-001",
@@ -153231,7 +155458,8 @@ window.CPL_STATEWIDE = {
           "course": "MFET 101",
           "credit": "3 hours in Introduction to Manufacturing Engineering Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-IGR-1-001",
@@ -153307,7 +155535,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.09",
           "credit": "2 hours in IW - GEN Rigging"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-ILH-1-001",
@@ -153383,7 +155612,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.63",
           "credit": "2 hours in IW - Structural Lead Hazard"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-IH-1-001",
@@ -153459,7 +155689,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.56",
           "credit": "2 hours in IW - Trade Science/Ironworker History"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-ISPC-1-001",
@@ -153535,7 +155766,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.61",
           "credit": "2 hours in IW - Structural Precast Concrete/Qualified Rigger"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-MBEI-1-001",
@@ -153611,7 +155843,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.26",
           "credit": "2.5 hours in Metal Building Erection /Foreman Training"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-PRAS-1-001",
@@ -153687,7 +155920,8 @@ window.CPL_STATEWIDE = {
           "course": "MFG 140",
           "credit": "3 hours in Print Reading and Shop Practice"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-ITMP-1-001",
@@ -153763,7 +155997,8 @@ window.CPL_STATEWIDE = {
           "course": "MFG 160",
           "credit": "3 hours in Introduction to Mechanical Principles"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-SA4P6-1-001",
@@ -153843,7 +156078,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.56",
           "credit": "2 hours in IW - Trade Science/Ironworker History"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AS2-1-001|MAPSAS-A-S1-1-001|MAPSAS-A:S1-1-001|MAPSAS-AE-S2-1-001|MAPSAS-AES12-1-001|MAPSAS-AES2-1-001|MAPSAS-AES4-1-001|MAPSAS-AES6-1-001|MAPSAS-AS1-1-001|MAPSAS-AS10-1-001|MAPSAS-AS12-1-001|MAPSAS-AS2-1-001|MAPSAS-AS3-1-001|MAPSAS-AS4-1-001|MAPSAS-AS5-1-001|MAPSAS-AS6-1-001|MAPSAS-AS7-1-001",
@@ -154083,7 +156319,8 @@ window.CPL_STATEWIDE = {
           "course": "STAT C1000",
           "credit": "5 hours in Introduction to Statistics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-R1-1-001",
@@ -154158,7 +156395,8 @@ window.CPL_STATEWIDE = {
           "course": "ARCH 107",
           "credit": "3 hours in Revit"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A1C-1-001",
@@ -154233,7 +156471,8 @@ window.CPL_STATEWIDE = {
           "course": "ARC 161",
           "credit": "2 hours in INTRODUCTION TO COMPUTER-AIDED ARCHITECTURAL DESIGN"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A1-A-1-001|MAPCXS-A1C1-1-001",
@@ -154310,7 +156549,8 @@ window.CPL_STATEWIDE = {
           "course": "ARC 172",
           "credit": "3 hours in Architectural Drawing I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2-S-1-001",
@@ -154385,7 +156625,8 @@ window.CPL_STATEWIDE = {
           "course": "ARC 291",
           "credit": "3 hours in Strength of Architectural Materials I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEH-1-001",
@@ -154460,7 +156701,8 @@ window.CPL_STATEWIDE = {
           "course": "ARC 130",
           "credit": "2 hours in History of Architecture I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-PHOA-1-001",
@@ -154535,7 +156777,8 @@ window.CPL_STATEWIDE = {
           "course": "ARC 130",
           "credit": "2 hours in History of Architecture I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEA15-1-001",
@@ -154610,7 +156853,8 @@ window.CPL_STATEWIDE = {
           "course": "ASL V01",
           "credit": "4 hours in Elementary American Sign Language I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ACFA-1-001",
@@ -154685,7 +156929,8 @@ window.CPL_STATEWIDE = {
           "course": "ARC 21",
           "credit": "3 hours in Design Communication 2"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ACFR-1-001",
@@ -154760,7 +157005,8 @@ window.CPL_STATEWIDE = {
           "course": "ARC 31",
           "credit": "3 hours in Design Communication 3"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-IASL-1-001",
@@ -154835,7 +157081,8 @@ window.CPL_STATEWIDE = {
           "course": "ASL 003",
           "credit": "4 hours in Intermediate American Sign Language I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-IASL1-1-001",
@@ -154910,7 +157157,8 @@ window.CPL_STATEWIDE = {
           "course": "ASL 004",
           "credit": "4 hours in Intermediate American Sign Language II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-EASL1-1-001",
@@ -154985,7 +157233,8 @@ window.CPL_STATEWIDE = {
           "course": "ASL 001",
           "credit": "5 hours in Elementary American Sign Language I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEE9-1-001|MAPCxS-EASL-1-001",
@@ -155066,7 +157315,8 @@ window.CPL_STATEWIDE = {
           "course": "ASL 002",
           "credit": "5 hours in Elementary American Sign Language II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-UID-1-001",
@@ -155140,7 +157390,8 @@ window.CPL_STATEWIDE = {
           "course": "ECE 133",
           "credit": "1 hour in Understanding Infant Development"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-UTD-1-001",
@@ -155214,7 +157465,8 @@ window.CPL_STATEWIDE = {
           "course": "ECE 134",
           "credit": "2 hours in Understanding Toddler Development"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-ICP-1-001",
@@ -155288,7 +157540,8 @@ window.CPL_STATEWIDE = {
           "course": "CLDV 30L",
           "credit": "3 hours in Infant/Toddler Practicum"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-I&TD-1-001",
@@ -155362,7 +157615,8 @@ window.CPL_STATEWIDE = {
           "course": "CLDV 30",
           "credit": "3 hours in Infant and Toddler Development"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICN-PDC-1-001",
@@ -155436,7 +157690,8 @@ window.CPL_STATEWIDE = {
           "course": "HORT 176",
           "credit": "3 hours in Permaculture Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICN-BFDY-1-001",
@@ -155510,7 +157765,8 @@ window.CPL_STATEWIDE = {
           "course": "HORT 99",
           "credit": "2 hours in Horticulture Internships/Work Experience"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-SASG-1-001",
@@ -155584,7 +157840,8 @@ window.CPL_STATEWIDE = {
           "course": "HCTM 100",
           "credit": "2 hours in Sanitation and Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-HSA-6-1-001",
@@ -155658,7 +157915,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 101",
           "credit": "3 hours in Introduction to Computers and Their Uses"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOH-SASH-1-001",
@@ -155732,7 +157990,8 @@ window.CPL_STATEWIDE = {
           "course": "HCTM 100",
           "credit": "2 hours in Sanitation and Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEC1-1-001",
@@ -155806,7 +158065,8 @@ window.CPL_STATEWIDE = {
           "course": "ASL 21",
           "credit": "2 hours in Classifiers/Depicting Verbs"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-RLC-1-001|MAPICI-RLC1-1-001",
@@ -155885,7 +158145,8 @@ window.CPL_STATEWIDE = {
           "course": "Computer Information Systems (CIS) 158",
           "credit": "3 hours in Unix System Administration"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-GC-1-001",
@@ -155959,7 +158220,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 065",
           "credit": "3 hours in Computer Forensics Fundamentals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-SSAE-1-001",
@@ -156033,7 +158295,8 @@ window.CPL_STATEWIDE = {
           "course": "CUL 15",
           "credit": "3 hours in Sanitation, Safety, and Equipment Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-FON-1-001",
@@ -156107,7 +158370,8 @@ window.CPL_STATEWIDE = {
           "course": "NURVN 403",
           "credit": "3 hours in Fundamentals of Nursing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-FONL-1-001",
@@ -156181,7 +158445,8 @@ window.CPL_STATEWIDE = {
           "course": "NURVN 403L",
           "credit": "2 hours in Fundamentals of Nursing Laboratory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-BMSN-1-001",
@@ -156255,7 +158520,8 @@ window.CPL_STATEWIDE = {
           "course": "NURVN 405",
           "credit": "4 hours in Beginning Medical Surgical Nursing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-BMSN1-1-001",
@@ -156329,7 +158595,8 @@ window.CPL_STATEWIDE = {
           "course": "NURVN 405L",
           "credit": "3 hours in Beginning Medical Surgical Nursing Laboratory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-BNSS-1-001",
@@ -156403,7 +158670,8 @@ window.CPL_STATEWIDE = {
           "course": "NURVN 407A",
           "credit": "1 hour in Beginning Nursing Skills/Clinical Simulation Laboratory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-INSS-1-001",
@@ -156477,7 +158745,8 @@ window.CPL_STATEWIDE = {
           "course": "NURVN 407B",
           "credit": "1 hour in Intermediate Nursing Skills/Clinical Simulation Laboratory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ANSS-1-001",
@@ -156551,7 +158820,8 @@ window.CPL_STATEWIDE = {
           "course": "NURVN 407C",
           "credit": "1 hour in Advanced Nursing Skills/Clinical Simulation Laboratory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-IMSN-1-001",
@@ -156625,7 +158895,8 @@ window.CPL_STATEWIDE = {
           "course": "NURVN 409",
           "credit": "4 hours in Intermediate Medical Surgical Nursing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-IMSN1-1-001",
@@ -156699,7 +158970,8 @@ window.CPL_STATEWIDE = {
           "course": "NURVN 409L",
           "credit": "3 hours in Intermediate Medical Surgical Nursing Laboratory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-AMSN-1-001",
@@ -156773,7 +159045,8 @@ window.CPL_STATEWIDE = {
           "course": "NURVN 411",
           "credit": "7 hours in Advanced Medical Surgical Nursing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-AMSN1-1-001",
@@ -156847,7 +159120,8 @@ window.CPL_STATEWIDE = {
           "course": "NURVN 411L",
           "credit": "3 hours in Advanced Medical Surgical Nursing Laboratory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-LFTV-1-001",
@@ -156921,7 +159195,8 @@ window.CPL_STATEWIDE = {
           "course": "NURVN 413",
           "credit": "3 hours in Leadership for the Vocational Nurse"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-LFTV1-1-001",
@@ -156995,7 +159270,8 @@ window.CPL_STATEWIDE = {
           "course": "NURVN 413L",
           "credit": "2 hours in Leadership for the Vocational Nurse Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ACNA-1-001",
@@ -157069,7 +159345,8 @@ window.CPL_STATEWIDE = {
           "course": "NURVN 414",
           "credit": "6 hours in Acute Care Nursing Assistant: Vocational Nursing Foundations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-GPA--1-001",
@@ -157143,7 +159420,8 @@ window.CPL_STATEWIDE = {
           "course": "NURVN 415A",
           "credit": "1 hour in Growth and Development: Psychology Adult-Geriatric"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-GADO-1-001",
@@ -157217,7 +159495,8 @@ window.CPL_STATEWIDE = {
           "course": "NURVN 415B",
           "credit": "1 hour in Growth and Development of the Child"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CTAT-1-001",
@@ -157291,7 +159570,8 @@ window.CPL_STATEWIDE = {
           "course": "NURVN 417A",
           "credit": "1 hour in Critical Thinking and the Nursing Process I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CTAT1-1-001",
@@ -157365,7 +159645,8 @@ window.CPL_STATEWIDE = {
           "course": "NURVN 417B",
           "credit": "1 hour in Critical Thinking and the Nursing Process II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-MACH-1-001",
@@ -157439,7 +159720,8 @@ window.CPL_STATEWIDE = {
           "course": "NURVN 421",
           "credit": "4 hours in Maternal and Child Health Nursing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-MACH1-1-001",
@@ -157513,7 +159795,8 @@ window.CPL_STATEWIDE = {
           "course": "NURVN 421L",
           "credit": "2 hours in Maternal and Child Health Nursing Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-BMP-1-001",
@@ -157588,7 +159871,8 @@ window.CPL_STATEWIDE = {
           "course": "CBTE 127",
           "credit": "2 hours in Beginning Microsoft PowerPoint"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEH-ITCS-1-001|MAPCxS-ITCS-1-001",
@@ -157668,7 +159952,8 @@ window.CPL_STATEWIDE = {
           "course": "CS  073",
           "credit": "3 hours in Introduction to Computer Science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-CAM-1-001",
@@ -157741,7 +160026,8 @@ window.CPL_STATEWIDE = {
           "course": "CABT 162AM",
           "credit": "1 hour in Creating Accessible Media"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEH-LP-1-001",
@@ -157814,7 +160100,8 @@ window.CPL_STATEWIDE = {
           "course": "PARA 100",
           "credit": "3 hours in Legal Procedures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-PCLO-1-001",
@@ -157887,7 +160174,8 @@ window.CPL_STATEWIDE = {
           "course": "PARA 120",
           "credit": "4 hours in Computers in the Law Office"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-C2CL-1-001",
@@ -157960,7 +160248,8 @@ window.CPL_STATEWIDE = {
           "course": "CSCI 200",
           "credit": "3 hours in Technical Computer Literacy"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-C2CL1-1-001",
@@ -158033,7 +160322,8 @@ window.CPL_STATEWIDE = {
           "course": "CSCI 201",
           "credit": "3 hours in General Computer Literacy"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-C2TU-1-001",
@@ -158106,7 +160396,8 @@ window.CPL_STATEWIDE = {
           "course": "CSCI 210",
           "credit": "3 hours in Introduction to UNIX/Linux System and Programming"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-C2SO-1-001",
@@ -158179,7 +160470,8 @@ window.CPL_STATEWIDE = {
           "course": "CSCI 213",
           "credit": "3 hours in Windows Server OS"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-C2WV-1-001",
@@ -158252,7 +160544,8 @@ window.CPL_STATEWIDE = {
           "course": "CSCI 221",
           "credit": "3 hours in Programming With Visual BASIC"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-C2S--1-001",
@@ -158325,7 +160618,8 @@ window.CPL_STATEWIDE = {
           "course": "CSCI 223",
           "credit": "3 hours in Spreadsheet Software"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-C2MS-1-001",
@@ -158398,7 +160692,8 @@ window.CPL_STATEWIDE = {
           "course": "CSCI 230",
           "credit": "3 hours in Database Management Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-C2PW-1-001",
@@ -158471,7 +160766,8 @@ window.CPL_STATEWIDE = {
           "course": "CSCI 231",
           "credit": "3 hours in Database Programming with SQL"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-C2SA-1-001",
@@ -158544,7 +160840,8 @@ window.CPL_STATEWIDE = {
           "course": "CSCI 232",
           "credit": "3 hours in Database Server Administration"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-C2S-1-1-001",
@@ -158617,7 +160914,8 @@ window.CPL_STATEWIDE = {
           "course": "CSCI 242",
           "credit": "3 hours in Directory Services"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-C2IC-1-001",
@@ -158690,7 +160988,8 @@ window.CPL_STATEWIDE = {
           "course": "CSCI 295",
           "credit": "1 hour in Internship in Computer Science Discussion"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-C2IC-1-001",
@@ -158763,7 +161062,8 @@ window.CPL_STATEWIDE = {
           "course": "CSCI 296ABC",
           "credit": "3 hours in Internship in Computer Science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-C2DS-1-001",
@@ -158836,7 +161136,8 @@ window.CPL_STATEWIDE = {
           "course": "CSCI 232",
           "credit": "3 hours in Database Server Administration"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBAF-1-001",
@@ -158909,7 +161210,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS  070A",
           "credit": "3 hours in Computer Business Apps for Windows"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-EIC0-1-001",
@@ -158982,7 +161284,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS  072D",
           "credit": "3 hours in Excel I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-EIC01-1-001",
@@ -159055,7 +161358,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS  074",
           "credit": "3 hours in Excel II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ITFA-1-001|MAPCXI-ITRM-1-001",
@@ -159129,7 +161433,8 @@ window.CPL_STATEWIDE = {
           "course": "HOSP M130",
           "credit": "3 hours in Introduction to Food and Beverage Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ITFA-1-001",
@@ -159202,7 +161507,8 @@ window.CPL_STATEWIDE = {
           "course": "HOSP M130",
           "credit": "3 hours in Introduction to Food and Beverage Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEI4-1-001",
@@ -159275,7 +161581,8 @@ window.CPL_STATEWIDE = {
           "course": "PLEG 101 F",
           "credit": "3 hours in Introduction to Paralegal Studies"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEI5-1-001",
@@ -159348,7 +161655,8 @@ window.CPL_STATEWIDE = {
           "course": "PLEG 104 F",
           "credit": "3 hours in Introduction to Legal Research and Terminology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-A:UH-1-001|MAPSAS-A:UH1-1-001|MAPSAS-AUH3-1-001",
@@ -159513,7 +161821,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3B",
           "credit": "3 hours in Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-WAWA-1-001",
@@ -159585,7 +161894,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS  082H",
           "credit": "3 hours in Web-Based Animation with Animate"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AHE-1-001|MAPSAS-A-EH-1-001|MAPSAS-A-EH1-1-001|MAPSAS-A:EH-1-001|MAPSAS-A:EH1-1-001|MAPSAS-AEEH-1-001|MAPSAS-AEEH1-1-001|MAPSAS-AEH(-1-001|MAPSAS-AEH-1-001|MAPSAS-AEH1-1-001|MAPSAS-AEH10-1-001|MAPSAS-AEH2-1-001|MAPSAS-AEH3-1-001|MAPSAS-AEH4-1-001|MAPSAS-AEH5-1-001|MAPSAS-AEH6-1-001|MAPSAS-AEH9-1-001|MAPSAS-AH-E-1-001|MAPSAS-AHE-1-001|MAPSAS-AP(E1-1-001",
@@ -159881,7 +162191,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-IH(R-1-001|MAPSAH-IH(R1-1-001|MAPSAS-I:HH-1-001|MAPSAS-I:HH1-1-001|MAPSAS-IEH(-1-001|MAPSAS-IEH(1-1-001|MAPSAS-IEH(2-1-001|MAPSAS-IH(R-1-001|MAPSAS-IH(R1-1-001|MAPSAS-IH1-1-001|MAPSAS-IH2-1-001|MAPSAS-IHAR-1-001|MAPSAS-IHAR1-1-001",
@@ -160106,7 +162417,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "4 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-BDE-1-001",
@@ -160176,7 +162488,8 @@ window.CPL_STATEWIDE = {
           "course": "ELDT 124",
           "credit": "4 hours in Basic DC Electronics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-BDL-1-001",
@@ -160246,7 +162559,8 @@ window.CPL_STATEWIDE = {
           "course": "ELDT 124L",
           "credit": "1 hour in Basic DC Laboratory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-SDL-1-001",
@@ -160316,7 +162630,8 @@ window.CPL_STATEWIDE = {
           "course": "ELDT 143L",
           "credit": "1.5 hours in Semiconductor Devices Laboratory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEH-ITB1-1-001",
@@ -160386,7 +162701,8 @@ window.CPL_STATEWIDE = {
           "course": "BIOL 131",
           "credit": "4 hours in Introduction to Biotechnology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEH-ABI-1-001",
@@ -160456,7 +162772,8 @@ window.CPL_STATEWIDE = {
           "course": "BIOL 132",
           "credit": "4 hours in Applied Biotechnology I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-SD1-1-001",
@@ -160526,7 +162843,8 @@ window.CPL_STATEWIDE = {
           "course": "ELDT 143",
           "credit": "3 hours in Semiconductor Devices"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-E2OE-1-001",
@@ -160596,7 +162914,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 208",
           "credit": "3 hours in Fundamentals of Electricity and Electronics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-E2PA-1-001",
@@ -160666,7 +162985,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 212",
           "credit": "3 hours in Digital Principles and Circuits"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-E2PA-1-001",
@@ -160736,7 +163056,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 212",
           "credit": "3 hours in Digital Principles and Circuits"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-E2PA-1-001",
@@ -160806,7 +163127,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 212",
           "credit": "3 hours in Digital Principles and Circuits"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-E2DA-1-001",
@@ -160876,7 +163198,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 221",
           "credit": "3 hours in Instrumentation Devices and Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-E2DA-1-001",
@@ -160946,7 +163269,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 221",
           "credit": "3 hours in Instrumentation Devices and Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-E2DA-1-001",
@@ -161016,7 +163340,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 221",
           "credit": "3 hours in Instrumentation Devices and Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-E2&I-1-001",
@@ -161086,7 +163411,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 229",
           "credit": "4 hours in Commercial & Industrial Wiring"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-E2&I-1-001",
@@ -161156,7 +163482,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 229",
           "credit": "4 hours in Commercial & Industrial Wiring"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-E2TP-1-001",
@@ -161226,7 +163553,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 232",
           "credit": "3 hours in Introduction to Programmable Logic Controllers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-E2TP-1-001",
@@ -161296,7 +163624,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 232",
           "credit": "3 hours in Introduction to Programmable Logic Controllers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-E2TP-1-001",
@@ -161366,7 +163695,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 232",
           "credit": "3 hours in Introduction to Programmable Logic Controllers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-E2TP1-1-001",
@@ -161436,7 +163766,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 234",
           "credit": "3 hours in Introduction to PACS: Programmable Automation Controllers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-E2TP1-1-001",
@@ -161506,7 +163837,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 234",
           "credit": "3 hours in Introduction to PACS: Programmable Automation Controllers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-E2TP1-1-001",
@@ -161576,7 +163908,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 234",
           "credit": "3 hours in Introduction to PACS: Programmable Automation Controllers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-E2T--1-001",
@@ -161646,7 +163979,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 265",
           "credit": "2 hours in Troubleshooting Techniques"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRP-E2T--1-001",
@@ -161716,7 +164050,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 265",
           "credit": "2 hours in Troubleshooting Techniques"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-E2T--1-001",
@@ -161786,7 +164121,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 265",
           "credit": "2 hours in Troubleshooting Techniques"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-NCFC2-1-001",
@@ -161856,7 +164192,8 @@ window.CPL_STATEWIDE = {
           "course": "CON 60",
           "credit": "3 hours in Introduction to Construction"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-E2CA-1-001",
@@ -161926,7 +164263,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 226",
           "credit": "3 hours in Motors, Controls, and Controllers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-E2OE-1-001",
@@ -161996,7 +164334,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 208",
           "credit": "3 hours in Fundamentals of Electricity and Electronics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ITPC-1-001",
@@ -162066,7 +164405,8 @@ window.CPL_STATEWIDE = {
           "course": "HCTM 110",
           "credit": "3 hours in Culinary Production and Operations for Hospitality Professionals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-V7&7-1-001",
@@ -162140,7 +164480,8 @@ window.CPL_STATEWIDE = {
           "course": "BIOL 190L",
           "credit": "1 hour in Introductory Biotech Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-CL-1-001",
@@ -162210,7 +164551,8 @@ window.CPL_STATEWIDE = {
           "course": "MICROTK 165",
           "credit": "3 hours in LINUX SURVIVAL COURSE"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ISC-1-001",
@@ -162280,7 +164622,8 @@ window.CPL_STATEWIDE = {
           "course": "ETNTLGY 150",
           "credit": "3 hours in SOLDERING SURFACE MOUNT TECHNOLOGY"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ISC-1-001",
@@ -162350,7 +164693,8 @@ window.CPL_STATEWIDE = {
           "course": "ETNTLGY 150",
           "credit": "3 hours in SOLDERING SURFACE MOUNT TECHNOLOGY"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-MOSC-1-001",
@@ -162420,7 +164764,8 @@ window.CPL_STATEWIDE = {
           "course": "ETNTLGY 254",
           "credit": "3 hours in COMPUTER APPLICATIONS FOR ELECTRONICS TECHNOLOGY"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-FOAC-1-001|MAPCXI-FOAC1-1-001",
@@ -162495,7 +164840,8 @@ window.CPL_STATEWIDE = {
           "course": "ETNTLGY 253",
           "credit": "3 hours in FIBER OPTICS"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FOAC-1-001|MAPICI-FOAC1-1-001",
@@ -162570,7 +164916,8 @@ window.CPL_STATEWIDE = {
           "course": "ETNTLGY 252",
           "credit": "3 hours in NETWORK CABLING SPECIALIST"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-BHA&-1-001",
@@ -162644,7 +164991,8 @@ window.CPL_STATEWIDE = {
           "course": "BIOL 190L",
           "credit": "1 hour in Introductory Biotech Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-HB&H-1-001",
@@ -162718,7 +165066,8 @@ window.CPL_STATEWIDE = {
           "course": "BIOL 190L",
           "credit": "1 hour in Introductory Biotech Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-PR-D-1-001",
@@ -162800,7 +165149,8 @@ window.CPL_STATEWIDE = {
           "course": "ELECTR 116",
           "credit": "1 hour in Alternating Current Circuit Laboratory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CIC-1-001|MAPICI-CIC1-1-001",
@@ -162875,7 +165225,8 @@ window.CPL_STATEWIDE = {
           "course": "Computer Information Systems (CIS) 062C",
           "credit": "2 hours in A+ Core PC Operating Systems Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-POS-1-001",
@@ -162945,7 +165296,8 @@ window.CPL_STATEWIDE = {
           "course": "CNET 52",
           "credit": "4 hours in PC Operating Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-PT-1-001",
@@ -163015,7 +165367,8 @@ window.CPL_STATEWIDE = {
           "course": "CNET 54",
           "credit": "4 hours in PC Troubleshooting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-FGRO-1-001",
@@ -163085,7 +165438,8 @@ window.CPL_STATEWIDE = {
           "course": "ELEC 76",
           "credit": "2 hours in FCC General Radiotelephone Operator License Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-IPH1-1-001|MAPSAS-I:PH1-1-001|MAPSAS-IEPH1-1-001|MAPSAS-IEPH3-1-001|MAPSAS-IPH1-1-001|MAPSAS-IPH2-1-001|MAPSAS-IPH4-1-001|MAPSAS-IPH7-1-001",
@@ -163285,7 +165639,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "4 hours in SOCIAL AND BEHAVIORAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "CPLICI-TC-1-001",
@@ -163354,7 +165709,8 @@ window.CPL_STATEWIDE = {
           "course": "EMTP 124",
           "credit": "2 hours in Trauma Certification"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-NROE-1-001",
@@ -163451,7 +165807,8 @@ window.CPL_STATEWIDE = {
           "course": "EMTC B17",
           "credit": "10 hours in Paramedic Field Internship"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-C1CB-1-001",
@@ -163520,7 +165877,8 @@ window.CPL_STATEWIDE = {
           "course": "CNSTR 101A",
           "credit": "2 hours in Tools, Materials, and Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-C1IC-1-001",
@@ -163589,7 +165947,8 @@ window.CPL_STATEWIDE = {
           "course": "CNSTR 117",
           "credit": "1 hour in OSHA Construction Safety Standards"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-F11--1-001",
@@ -163658,7 +166017,8 @@ window.CPL_STATEWIDE = {
           "course": "FREN 101",
           "credit": "5 hours in French 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAA-FOI-1-001",
@@ -163727,7 +166087,8 @@ window.CPL_STATEWIDE = {
           "course": "APCL 100",
           "credit": "2.5 hours in Forklift Orientation Initial"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAA-FOC-1-001",
@@ -163796,7 +166157,8 @@ window.CPL_STATEWIDE = {
           "course": "APCL 101",
           "credit": "4.5 hours in Fundamentals of Construction"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAA-HWRI-1-001",
@@ -163865,7 +166227,8 @@ window.CPL_STATEWIDE = {
           "course": "APCL 102",
           "credit": "2.5 hours in Hazardous Waste Removal Initial"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAA-SC-1-001",
@@ -163934,7 +166297,8 @@ window.CPL_STATEWIDE = {
           "course": "APCL 103",
           "credit": "2.5 hours in Safety Certification"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAA-AWPI-1-001",
@@ -164003,7 +166367,8 @@ window.CPL_STATEWIDE = {
           "course": "APCL 104",
           "credit": "1 hour in Aerial Work Platform Initial"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAA-RAS-1-001",
@@ -164072,7 +166437,8 @@ window.CPL_STATEWIDE = {
           "course": "APCL 105",
           "credit": "2.5 hours in Rigging and Signaling"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAA-SSLO-1-001",
@@ -164141,7 +166507,8 @@ window.CPL_STATEWIDE = {
           "course": "APCL 106",
           "credit": "2.5 hours in Skid Steer Loader Orientation Initial"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAA-CT-1-001",
@@ -164210,7 +166577,8 @@ window.CPL_STATEWIDE = {
           "course": "APCL 109",
           "credit": "1.5 hours in Blueprint Reading Orientation, Basic"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAA-CSA-1-001",
@@ -164279,7 +166647,8 @@ window.CPL_STATEWIDE = {
           "course": "APCL 110",
           "credit": "0.5 hours in Confined Space Awareness"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAA-FACA-1-001",
@@ -164348,7 +166717,8 @@ window.CPL_STATEWIDE = {
           "course": "APCL 111",
           "credit": "0.5 hours in First Aid, CPR and AED"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAA-FC-1-001",
@@ -164417,7 +166787,8 @@ window.CPL_STATEWIDE = {
           "course": "APCL 112",
           "credit": "0.5 hours in Flagging Certification"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAA-TC-1-001",
@@ -164486,7 +166857,8 @@ window.CPL_STATEWIDE = {
           "course": "APCL 113",
           "credit": "0.5 hours in Traffic Control"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAA-O1HN-1-001",
@@ -164555,7 +166927,8 @@ window.CPL_STATEWIDE = {
           "course": "APCL 114",
           "credit": "1 hour in OSHA 10 Hour Norcal"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAA-O3HN-1-001",
@@ -164624,7 +166997,8 @@ window.CPL_STATEWIDE = {
           "course": "APCL 115",
           "credit": "2 hours in OSHA 30 Hour Norcal"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAA-TCT-1-001",
@@ -164693,7 +167067,8 @@ window.CPL_STATEWIDE = {
           "course": "APCL 113",
           "credit": "0.5 hours in Traffic Control"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-SPAL-1-001",
@@ -164762,7 +167137,8 @@ window.CPL_STATEWIDE = {
           "course": "CNST 020",
           "credit": "2 hours in Site Preparation and Layout"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ETCO-1-001",
@@ -164831,7 +167207,8 @@ window.CPL_STATEWIDE = {
           "course": "ELEVA 100",
           "credit": "4 hours in Elevator New Hire Program"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ETCR-1-001",
@@ -164900,7 +167277,8 @@ window.CPL_STATEWIDE = {
           "course": "ELEVA 101",
           "credit": "3 hours in Elevator Trade Skills"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ETCR1-1-001",
@@ -164969,7 +167347,8 @@ window.CPL_STATEWIDE = {
           "course": "ELEVA 102",
           "credit": "3 hours in Elevator Hoistway Structures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ETCR2-1-001",
@@ -165038,7 +167417,8 @@ window.CPL_STATEWIDE = {
           "course": "ELEVA 103",
           "credit": "4 hours in Elevator Electrical Fundamentals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ETCR3-1-001",
@@ -165107,7 +167487,8 @@ window.CPL_STATEWIDE = {
           "course": "ELEVA 104",
           "credit": "3 hours in Elevator Electrical Theory and Application"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ETCR4-1-001",
@@ -165176,7 +167557,8 @@ window.CPL_STATEWIDE = {
           "course": "ELEVA 105",
           "credit": "4 hours in Elevator Installation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ETCR5-1-001",
@@ -165245,7 +167627,8 @@ window.CPL_STATEWIDE = {
           "course": "ELEVA 106",
           "credit": "4 hours in Elevator Solid State Electronics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ETCR6-1-001",
@@ -165314,7 +167697,8 @@ window.CPL_STATEWIDE = {
           "course": "ELEVA 107",
           "credit": "3 hours in Elevator Power and Logic"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ETCR7-1-001",
@@ -165383,7 +167767,8 @@ window.CPL_STATEWIDE = {
           "course": "ELEVA 108",
           "credit": "4 hours in Advanced Topics in Elevators"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ETCW-1-001",
@@ -165452,7 +167837,8 @@ window.CPL_STATEWIDE = {
           "course": "ELEVA 298",
           "credit": "0.5 hours in Work Experience in Elevator Apprenticeship"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CFL(-1-001",
@@ -165521,7 +167907,8 @@ window.CPL_STATEWIDE = {
           "course": "FRENCH 102",
           "credit": "5 hours in College French II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AELA1-1-001|MAPSAH-AELA3-1-001|MAPSAS-A-EL-1-001|MAPSAS-A-EL2-1-001|MAPSAS-A:EL1-1-001|MAPSAS-A:EL2-1-001|MAPSAS-AE-E-1-001|MAPSAS-AE-L1-1-001|MAPSAS-AE-L2-1-001|MAPSAS-AEE--1-001|MAPSAS-AEEL-1-001|MAPSAS-AEEL2-1-001|MAPSAS-AEEL4-1-001|MAPSAS-AEEL6-1-001|MAPSAS-AEL&-1-001|MAPSAS-AEL&1-1-001|MAPSAS-AEL2-1-001|MAPSAS-AEL4-1-001|MAPSAS-AELA-1-001|MAPSAS-AELA12-1-001|MAPSAS-AELA2-1-001|MAPSAS-AELA3-1-001|MAPSAS-AELA5-1-001|MAPSAS-AELA7-1-001|MAPSAS-AELC-1-001|MAPSAS-AP(E-1-001",
@@ -165784,7 +168171,8 @@ window.CPL_STATEWIDE = {
           "course": "E.S.L. 110",
           "credit": "4 hours in College Composition for Non-Native Speakers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AELA-1-001|MAPSAH-AELA2-1-001|MAPSAH-AELA4-1-001|MAPSAH-AELA5-1-001|MAPSAS-A-EL1-1-001|MAPSAS-A-EL3-1-001|MAPSAS-A:EL-1-001|MAPSAS-A:E–-1-001|MAPSAS-AE-L-1-001|MAPSAS-AE-L3-1-001|MAPSAS-AEEL1-1-001|MAPSAS-AEEL3-1-001|MAPSAS-AEEL5-1-001|MAPSAS-AEEL7-1-001|MAPSAS-AEL&2-1-001|MAPSAS-AEL3-1-001|MAPSAS-AEL5-1-001|MAPSAS-AELA1-1-001|MAPSAS-AELA13-1-001|MAPSAS-AELA4-1-001|MAPSAS-AELA6-1-001|MAPSAS-AELA8-1-001|MAPSAS-AELA9-1-001|MAPSAS-EL&C-1-001",
@@ -166078,7 +168466,8 @@ window.CPL_STATEWIDE = {
           "course": "E.S.L. 110",
           "credit": "4 hours in College Composition for Non-Native Speakers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AHWW-1-001|MAPSAH-WHE-1-001|MAPSAS-A-WH-1-001|MAPSAS-A-WH1-1-001|MAPSAS-A:WH-1-001|MAPSAS-A:WH1-1-001|MAPSAS-A:WH2-1-001|MAPSAS-A:WH3-1-001|MAPSAS-AE-W-1-001|MAPSAS-AEWH-1-001|MAPSAS-AEWH1-1-001|MAPSAS-AEWH2-1-001|MAPSAS-AEWH3-1-001|MAPSAS-AEWH4-1-001|MAPSAS-AEWH5-1-001|MAPSAS-AEWH6-1-001|MAPSAS-AH-W-1-001|MAPSAS-AHWH-1-001|MAPSAS-AP(W-1-001|MAPSAS-AWH1-1-001|MAPSAS-AWH2-1-001|MAPSAS-AWH3-1-001|MAPSAS-AWH4-1-001|MAPSAS-AWHM-1-001|MAPSAS-AWHM1-1-001|MAPSAS-AWHM2-1-001|MAPSAS-AWHM3-1-001|MAPSAS-AWHM4-1-001|MAPSAS-AWHM5-1-001|MAPSAS-AWHM6-1-001|MAPSAS-AWHM7-1-001",
@@ -166422,7 +168811,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-ACB1-1-001|MAPSAH-ACBE-1-001|MAPSAH-ACBS-1-001|MAPSAP-AECA-1-001|MAPSAS-A-CB-1-001|MAPSAS-A:CB-1-001|MAPSAS-ACB(-1-001|MAPSAS-ACB(1-1-001|MAPSAS-ACB(2-1-001|MAPSAS-ACB1-1-001|MAPSAS-ACB2-1-001|MAPSAS-ACB3-1-001|MAPSAS-ACB4-1-001|MAPSAS-ACB5-1-001|MAPSAS-ACBA-1-001|MAPSAS-ACBA1-1-001|MAPSAS-ACBS1-1-001|MAPSAS-ACBS2-1-001|MAPSAS-ACBS3-1-001|MAPSAS-AECB-1-001|MAPSAS-AECB1-1-001|MAPSAS-AECB2-1-001|MAPSAS-AECB3-1-001|MAPSAS-AECB4-1-001|MAPSAS-AECB5-1-001|MAPSAS-AM-C-1-001|MAPSAS-AM-C1-1-001|MAPSAS-WAEC1-1-001",
@@ -166766,7 +169156,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "3 hours in Mathematical Concepts and Quantitative Thinking"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AAH1-1-001|MAPSAH-AAHE-1-001|MAPSAS-A-AH-1-001|MAPSAS-A:AH-1-001|MAPSAS-AAH(-1-001|MAPSAS-AAH-1-001|MAPSAS-AAH1-1-001|MAPSAS-AAH10-1-001|MAPSAS-AAH12-1-001|MAPSAS-AAH13-1-001|MAPSAS-AAH2-1-001|MAPSAS-AAH3-1-001|MAPSAS-AAH4-1-001|MAPSAS-AAH7-1-001|MAPSAS-AAH8-1-001|MAPSAS-AEAH-1-001|MAPSAS-AEAH1-1-001|MAPSAS-AEAH2-1-001|MAPSAS-AEAH3-1-001|MAPSAS-WAEA-1-001",
@@ -167056,7 +169447,8 @@ window.CPL_STATEWIDE = {
           "course": "ART 002A",
           "credit": "4.5 hours in HISTORY OF ART: HISTORY OF WESTERN ART FROM PREHISTORY THROUGH EARLY CHRISTIANITY"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AP4-1-001|MAPSAH-AP5-1-001|MAPSAH-PC-I-1-001|MAPSAP-P1TP-1-001|MAPSAS-A-P3-1-001|MAPSAS-A:P-1-001|MAPSAS-AE-P4-1-001|MAPSAS-AEP3-1-001|MAPSAS-AEP5-1-001|MAPSAS-AP-1-001|MAPSAS-AP10-1-001|MAPSAS-AP13-1-001|MAPSAS-AP14-1-001|MAPSAS-AP20-1-001|MAPSAS-AP28-1-001|MAPSAS-AP3-1-001|MAPSAS-AP5-1-001|MAPSAS-AP6-1-001|MAPSAS-AP7-1-001|MAPSAS-AP8-1-001|MAPSAS-CGAD-1-001",
@@ -167280,7 +169672,8 @@ window.CPL_STATEWIDE = {
           "course": "PSYC C1000",
           "credit": "5 hours in Introduction to Psychology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-IBH-1-001|MAPSAI-IEBH-1-001|MAPSAS-I:BH-1-001|MAPSAS-IBH-1-001|MAPSAS-IBH1-1-001|MAPSAS-IBH2-1-001|MAPSAS-IBH3-1-001|MAPSAS-IEBH-1-001|MAPSAS-IEBH1-1-001",
@@ -167480,7 +169873,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 5",
           "credit": "4 hours in NATURAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-IPH-1-001|MAPSAS-I:PH-1-001|MAPSAS-IEPH-1-001|MAPSAS-IEPH2-1-001|MAPSAS-IPH-1-001|MAPSAS-IPH3-1-001|MAPSAS-IPH5-1-001|MAPSAS-IPH6-1-001",
@@ -167674,7 +170068,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 5",
           "credit": "4 hours in NATURAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-UDFL-1-001",
@@ -167742,7 +170137,8 @@ window.CPL_STATEWIDE = {
           "course": "EDUC 100",
           "credit": "1 hour in Universal Design for Learning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-SFT-1-001",
@@ -167810,7 +170206,8 @@ window.CPL_STATEWIDE = {
           "course": "EDUC 101STEM",
           "credit": "1 hour in STEM Field Teaching"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-H1L--1-001",
@@ -167878,7 +170275,8 @@ window.CPL_STATEWIDE = {
           "course": "HE 110",
           "credit": "3 hours in Healthful Living"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CL1-1-001",
@@ -167946,7 +170344,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 53",
           "credit": "3 hours in Correctional Law"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CIAC-1-001",
@@ -168014,7 +170413,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 56",
           "credit": "3 hours in Correctional Interviewing and Counseling"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CAD-1-001",
@@ -168082,7 +170482,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 55",
           "credit": "3 hours in Crime and Delinquency"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-SEAT-1-001",
@@ -168150,7 +170551,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 58",
           "credit": "3 hours in Social Equity and the Criminal Justice System"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-VIA-1-001",
@@ -168218,7 +170620,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 10",
           "credit": "3 hours in Violence in America"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAA-ACA-1-001|MAPSAH-ACA1-1-001|MAPSAH-ACAE-1-001|MAPSAH-ACAE1-1-001|MAPSAS-A:CA-1-001|MAPSAS-ACA(-1-001|MAPSAS-ACA(1-1-001|MAPSAS-ACA1-1-001|MAPSAS-ACA2-1-001|MAPSAS-ACA3-1-001|MAPSAS-ACA4-1-001|MAPSAS-ACA5-1-001|MAPSAS-ACA6-1-001|MAPSAS-ACA8-1-001|MAPSAS-ACA9-1-001|MAPSAS-ACAO-1-001|MAPSAS-ACBA2-1-001|MAPSAS-AECA-1-001|MAPSAS-AECA1-1-001|MAPSAS-AECA2-1-001|MAPSAS-AECA3-1-001|MAPSAS-AECA4-1-001|MAPSAS-AECA5-1-001|MAPSAS-AM-C2-1-001|MAPSAS-WAEC-1-001",
@@ -168514,7 +170917,8 @@ window.CPL_STATEWIDE = {
           "course": "MATH 101A",
           "credit": "5 hours in Calculus With Analytic Geometry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AEM-1-001|MAPSAH-AME-1-001|MAPSAS-A-M1-1-001|MAPSAS-A:M-1-001|MAPSAS-AE-M1-1-001|MAPSAS-AE-M2-1-001|MAPSAS-AEM1-1-001|MAPSAS-AEM3-1-001|MAPSAS-AEM5-1-001|MAPSAS-AM10-1-001|MAPSAS-AM14-1-001|MAPSAS-AM16-1-001|MAPSAS-AM2-1-001|MAPSAS-AM3-1-001|MAPSAS-AM5-1-001|MAPSAS-AM6-1-001|MAPSAS-AM7-1-001",
@@ -168765,7 +171169,8 @@ window.CPL_STATEWIDE = {
           "course": "BA 102A",
           "credit": "3 hours in Principles of Economics-Macroeconomics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-3HIM-1-001|MAPSAH-AEM1-1-001|MAPSAS-A-M-1-001|MAPSAS-A:M1-1-001|MAPSAS-AE-M-1-001|MAPSAS-AE-M3-1-001|MAPSAS-AEM-1-001|MAPSAS-AEM2-1-001|MAPSAS-AEM4-1-001|MAPSAS-AEM6-1-001|MAPSAS-AM1-1-001|MAPSAS-AM11-1-001|MAPSAS-AM15-1-001|MAPSAS-AM17-1-001|MAPSAS-AM4-1-001|MAPSAS-AM8-1-001|MAPSAS-AM9-1-001|MAPSAS-AP(M-1-001",
@@ -169013,7 +171418,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "4 hours in SOCIAL AND BEHAVIORAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ABM-1-001",
@@ -169082,7 +171488,8 @@ window.CPL_STATEWIDE = {
           "course": "MAG 44",
           "credit": "3 hours in Principles of Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFFT-1-001",
@@ -169151,7 +171558,8 @@ window.CPL_STATEWIDE = {
           "course": "MAG 44",
           "credit": "3 hours in Principles of Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-MCMM-1-001",
@@ -169220,7 +171628,8 @@ window.CPL_STATEWIDE = {
           "course": "MAG 44",
           "credit": "3 hours in Principles of Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-WDCW-1-001",
@@ -169289,7 +171698,8 @@ window.CPL_STATEWIDE = {
           "course": "MAG 44",
           "credit": "3 hours in Principles of Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-WDCW1-1-001",
@@ -169358,7 +171768,8 @@ window.CPL_STATEWIDE = {
           "course": "MAG 44",
           "credit": "3 hours in Principles of Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFFT1-1-001",
@@ -169427,7 +171838,8 @@ window.CPL_STATEWIDE = {
           "course": "MAG 51",
           "credit": "3 hours in Elements of Supervision"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-DGSM-1-001",
@@ -169496,7 +171908,8 @@ window.CPL_STATEWIDE = {
           "course": "MAG 51",
           "credit": "3 hours in Elements of Supervision"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-MCMM1-1-001",
@@ -169565,7 +171978,8 @@ window.CPL_STATEWIDE = {
           "course": "MAG 51",
           "credit": "3 hours in Elements of Supervision"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFFT2-1-001",
@@ -169634,7 +172048,8 @@ window.CPL_STATEWIDE = {
           "course": "MAG 53",
           "credit": "3 hours in Human Relations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFFT3-1-001",
@@ -169703,7 +172118,8 @@ window.CPL_STATEWIDE = {
           "course": "MAG 56",
           "credit": "3 hours in HRM: Human Resources Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-MCMB-1-001",
@@ -169772,7 +172188,8 @@ window.CPL_STATEWIDE = {
           "course": "MAG 56",
           "credit": "3 hours in HRM: Human Resources Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-MCMB1-1-001",
@@ -169841,7 +172258,8 @@ window.CPL_STATEWIDE = {
           "course": "MAG 56",
           "credit": "3 hours in HRM: Human Resources Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-MCMO-1-001",
@@ -169910,7 +172328,8 @@ window.CPL_STATEWIDE = {
           "course": "MAG 56",
           "credit": "3 hours in HRM: Human Resources Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-WDCW2-1-001",
@@ -169979,7 +172398,8 @@ window.CPL_STATEWIDE = {
           "course": "MAG 56",
           "credit": "3 hours in HRM: Human Resources Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ACSA1-1-001|MAPICI-ACSA2-1-001",
@@ -170065,7 +172485,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 023C",
           "credit": "2 hours in Architecting Using AWS Cloud Services"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-PAP1-1-001|MAPCxS-PAPA-1-001",
@@ -170139,7 +172560,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 57",
           "credit": "3 hours in Probation and Parole"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-ITNE-1-001",
@@ -170206,7 +172628,8 @@ window.CPL_STATEWIDE = {
           "course": "RTVF 153",
           "credit": "3 hours in Introduction to Nonlinear Editing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-DVI-1-001",
@@ -170273,7 +172696,8 @@ window.CPL_STATEWIDE = {
           "course": "MULT 123",
           "credit": "3 hours in Digital Video I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-FUSD-1-001|MAPCXH-SHSC-1-001",
@@ -170342,7 +172766,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 9",
           "credit": "3 hours in Crime Scene Management and Forensic Evidence"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-HSA-10-1-001|MAPCXS-HSA-8-1-001|MAPCXS-HSA-9-1-001",
@@ -170413,7 +172838,8 @@ window.CPL_STATEWIDE = {
           "course": "MEDIART 101",
           "credit": "3 hours in Introduction to Digital Film Production"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRO-ITDM-1-001",
@@ -170480,7 +172906,8 @@ window.CPL_STATEWIDE = {
           "course": "Digital Media Arts (DMA) 001",
           "credit": "3 hours in Introduction to Digital Media Arts"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-EMRE-1-001",
@@ -170547,7 +172974,8 @@ window.CPL_STATEWIDE = {
           "course": "EMR  001",
           "credit": "3 hours in Emergency Medical Responder"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CSMA-1-001",
@@ -170614,7 +173042,8 @@ window.CPL_STATEWIDE = {
           "course": "CJ 9",
           "credit": "3 hours in Crime Scene Management and Forensic Evidence"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-JCAC1-1-001",
@@ -170769,7 +173198,8 @@ window.CPL_STATEWIDE = {
           "course": "AMW 047",
           "credit": "1.5 hours in Steam Turbine"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-JCAC2-1-001",
@@ -170924,7 +173354,8 @@ window.CPL_STATEWIDE = {
           "course": "AMW 047",
           "credit": "1.5 hours in Steam Turbine"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AC1-1-001|MAPSAH-ACE-1-001|MAPSAS-A-C1-1-001|MAPSAS-A:C1-1-001|MAPSAS-AC(O-1-001|MAPSAS-AC(O1-1-001|MAPSAS-AC1-1-001|MAPSAS-AC12-1-001|MAPSAS-AC13-1-001|MAPSAS-AC2-1-001|MAPSAS-AC3-1-001|MAPSAS-AC4-1-001|MAPSAS-AC5-1-001|MAPSAS-AC6-1-001|MAPSAS-AC7-1-001|MAPSAS-AC8-1-001|MAPSAS-AE-C-1-001|MAPSAS-AEC(-1-001|MAPSAS-AEC1-1-001",
@@ -171199,7 +173630,8 @@ window.CPL_STATEWIDE = {
           "course": "CHEM 102",
           "credit": "4 hours in Preparation for General Chemistry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AB(1-1-001|MAPSAH-AB(11-1-001|MAPSAH-AEB-1-001|MAPSAP-B1\tB-1-001|MAPSAS-A:B-1-001|MAPSAS-AB-1-001|MAPSAS-AB1-1-001|MAPSAS-AB10-1-001|MAPSAS-AB13-1-001|MAPSAS-AB14-1-001|MAPSAS-AB2-1-001|MAPSAS-AB3-1-001|MAPSAS-AB4-1-001|MAPSAS-AB5-1-001|MAPSAS-AB6-1-001|MAPSAS-AB8-1-001|MAPSAS-AB9-1-001|MAPSAS-AEB-1-001|MAPSAS-AEB1-1-001|MAPSAS-AEB2-1-001|MAPSAS-AEB3-1-001|MAPSAS-APE-2-1-001|MAPSAS-WAEB-1-001",
@@ -171499,7 +173931,8 @@ window.CPL_STATEWIDE = {
           "course": "BIOL 130",
           "credit": "4 hours in Essential Biology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AGAP-1-001|MAPSAS-A-CG-1-001|MAPSAS-A:CG-1-001|MAPSAS-ACG&-1-001|MAPSAS-ACG&1-1-001|MAPSAS-ACGA-1-001|MAPSAS-ACGA1-1-001|MAPSAS-ACGA2-1-001|MAPSAS-ACGA3-1-001|MAPSAS-ACGA4-1-001|MAPSAS-ACGA5-1-001|MAPSAS-ACGP-1-001|MAPSAS-AECG-1-001|MAPSAS-AECG1-1-001|MAPSAS-AECG2-1-001|MAPSAS-AGAP-1-001",
@@ -171730,7 +174163,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "4.5 hours in SOCIAL AND BEHAVIORAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AGH-1-001|MAPSAS-A-HG-1-001|MAPSAS-A:HG-1-001|MAPSAS-AEHG-1-001|MAPSAS-AEHG1-1-001|MAPSAS-AHG(-1-001|MAPSAS-AHG-1-001|MAPSAS-AHG1-1-001|MAPSAS-AHG2-1-001|MAPSAS-AHG3-1-001|MAPSAS-AHG4-1-001|MAPSAS-AHG5-1-001|MAPSAS-AHG6-1-001|MAPSAS-AHG8-1-001|MAPSAS-AP(H-1-001",
@@ -171962,7 +174396,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "4.5 hours in SOCIAL AND BEHAVIORAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-ICH-1-001|MAPSAS-I:CH-1-001|MAPSAS-ICH-1-001|MAPSAS-ICH1-1-001|MAPSAS-ICH2-1-001|MAPSAS-ICH3-1-001|MAPSAS-IEC(-1-001|MAPSAS-IECH-1-001|MAPSAS-IECH1-1-001",
@@ -172161,7 +174596,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 5",
           "credit": "4 hours in NATURAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-ITH-1-001|MAPSAS-I:TH-1-001|MAPSAS-IETH-1-001|MAPSAS-IETH1-1-001|MAPSAS-ITH-1-001|MAPSAS-ITH1-1-001|MAPSAS-ITH2-1-001|MAPSAS-ITH3-1-001",
@@ -172354,7 +174790,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "4 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CFFP-1-001",
@@ -172428,6 +174865,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "HLHSCI 151",
           "credit": "8 hours in Emergency Medical Technician"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "8 hours in Emergency Medical Technician",
+          "cid": ""
         }
       ]
     },
@@ -172511,6 +174954,20 @@ window.CPL_STATEWIDE = {
         {
           "course": "CNST 060",
           "credit": "3-5 hours in Rough Plumbing"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-5 hours in Rough Plumbing",
+          "cid": ""
+        },
+        {
+          "credit": "3-5 hours in Construction Law",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Introduction to Construction Safety",
+          "cid": ""
         }
       ]
     },
@@ -172610,7 +175067,8 @@ window.CPL_STATEWIDE = {
           "course": "ALD HTH 053",
           "credit": "3.5 hours in EMERGENCY CARE TECHNICIAN"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEA-C2-1-001",
@@ -172676,7 +175134,8 @@ window.CPL_STATEWIDE = {
           "course": "CINE 24",
           "credit": "4 hours in Basic Film Production"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-ITVG-1-001",
@@ -172742,7 +175201,8 @@ window.CPL_STATEWIDE = {
           "course": "MULT 120",
           "credit": "3 hours in Introduction to Video Game Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICP-GEC-1-001",
@@ -172820,7 +175280,8 @@ window.CPL_STATEWIDE = {
           "course": "CEM 175R",
           "credit": "3 hours in 2014 National Electrical Code (NEC) Residential"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-E3RW-1-001",
@@ -172886,7 +175347,8 @@ window.CPL_STATEWIDE = {
           "course": "EMS 350",
           "credit": "3.5 hours in Emergency Medical Responder (EMR) / Healthcare Provider CPR"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-E3RW-1-001",
@@ -172952,7 +175414,8 @@ window.CPL_STATEWIDE = {
           "course": "EMS 350",
           "credit": "3.5 hours in Emergency Medical Responder (EMR) / Healthcare Provider CPR"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-E3EM-1-001|MAPMM-E3EM1-1-001",
@@ -173024,7 +175487,8 @@ window.CPL_STATEWIDE = {
           "course": "EMS 390",
           "credit": "8 hours in Emergency Medical Technician 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-E3E1-1-001",
@@ -173090,7 +175554,8 @@ window.CPL_STATEWIDE = {
           "course": "EMS 391",
           "credit": "1.5 hours in EMT 1- Refresher Course"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-FHSE-1-001",
@@ -173156,7 +175621,8 @@ window.CPL_STATEWIDE = {
           "course": "EMT 405",
           "credit": "3 hours in Emergency Medical Technician Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-FHSE1-1-001",
@@ -173222,7 +175688,8 @@ window.CPL_STATEWIDE = {
           "course": "EMT 405",
           "credit": "3 hours in Emergency Medical Technician Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICG-FI2F-1-001",
@@ -173288,7 +175755,8 @@ window.CPL_STATEWIDE = {
           "course": "FOT 136",
           "credit": "1 hour in Fire Inspector 2A: Fire Prevention Administration"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICG-FI2F1-1-001",
@@ -173354,7 +175822,8 @@ window.CPL_STATEWIDE = {
           "course": "FOT 137",
           "credit": "1.5 hours in Fire Inspector 2B: Fire and Life Safety Requirements"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICG-FI2I-1-001",
@@ -173420,7 +175889,8 @@ window.CPL_STATEWIDE = {
           "course": "FOT 138",
           "credit": "1 hour in Fire Inspector 2C: Inspecting Fire & Life Safety Systems and Equip."
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICG-FI2H-1-001",
@@ -173486,7 +175956,8 @@ window.CPL_STATEWIDE = {
           "course": "FOT 139",
           "credit": "2 hours in Fire Inspector 2D: Hazardous Materials, Operations, and Processes"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXG-FI2F-1-001",
@@ -173552,7 +176023,8 @@ window.CPL_STATEWIDE = {
           "course": "FOT 136",
           "credit": "1 hour in Fire Inspector 2A: Fire Prevention Administration"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXG-FI2F1-1-001",
@@ -173618,7 +176090,8 @@ window.CPL_STATEWIDE = {
           "course": "FOT 137",
           "credit": "1.5 hours in Fire Inspector 2B: Fire and Life Safety Requirements"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXG-FI2I-1-001",
@@ -173684,7 +176157,8 @@ window.CPL_STATEWIDE = {
           "course": "FOT 138",
           "credit": "1 hour in Fire Inspector 2C: Inspecting Fire & Life Safety Systems and Equip."
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXG-FI2H-1-001",
@@ -173750,7 +176224,8 @@ window.CPL_STATEWIDE = {
           "course": "FOT 139",
           "credit": "2 hours in Fire Inspector 2D: Hazardous Materials, Operations, and Processes"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICG-I3II-1-001",
@@ -173816,7 +176291,8 @@ window.CPL_STATEWIDE = {
           "course": "FOT 032",
           "credit": "0.5 hours in ICS-300 Intermediate ICS"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICG-I4AI-1-001",
@@ -173882,7 +176358,8 @@ window.CPL_STATEWIDE = {
           "course": "FOT 033",
           "credit": "0.5 hours in ICS-400 Incident Command"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICG-FI1B-1-001",
@@ -173952,7 +176429,8 @@ window.CPL_STATEWIDE = {
           "course": "FOT 044",
           "credit": "1.5 hours in Fire Investigation 1A: Fire Origin and Cause Determination"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ICEM-1-001",
@@ -174022,7 +176500,8 @@ window.CPL_STATEWIDE = {
           "course": "EMT 405",
           "credit": "3 hours in Emergency Medical Technician Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-BVR-5-1-001",
@@ -174088,7 +176567,8 @@ window.CPL_STATEWIDE = {
           "course": "EMT 405",
           "credit": "3 hours in Emergency Medical Technician Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-FU-F-1-001",
@@ -174154,7 +176634,8 @@ window.CPL_STATEWIDE = {
           "course": "EMT 405",
           "credit": "3 hours in Emergency Medical Technician Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-FU-F1-1-001",
@@ -174220,7 +176701,8 @@ window.CPL_STATEWIDE = {
           "course": "EMT 405",
           "credit": "3 hours in Emergency Medical Technician Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-FU-H-1-001",
@@ -174286,7 +176768,8 @@ window.CPL_STATEWIDE = {
           "course": "EMT 405",
           "credit": "3 hours in Emergency Medical Technician Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-L4L--1-001",
@@ -174352,7 +176835,8 @@ window.CPL_STATEWIDE = {
           "course": "EMT 405",
           "credit": "3 hours in Emergency Medical Technician Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRG-FSSA-1-001",
@@ -174418,7 +176902,8 @@ window.CPL_STATEWIDE = {
           "course": "FAC 007",
           "credit": "2 hours in Strength and Conditioning for the Fire Service"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRG-FSPF-1-001",
@@ -174484,7 +176969,8 @@ window.CPL_STATEWIDE = {
           "course": "FAC 008",
           "credit": "0.1 hours in Biddle Physical Ability Test (PAT)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CSFM3-1-001",
@@ -174550,7 +177036,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRETEC 423",
           "credit": "1 hour in Fire Inspector 1D: Field Inspection-California"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ITPM-1-001",
@@ -174616,7 +177103,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSMGT 466",
           "credit": "3 hours in Introduction to Project Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-POS-1-001",
@@ -174682,7 +177170,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSMGT 480",
           "credit": "3 hours in Principles of Supervision"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-FI1D-1-001",
@@ -174748,7 +177237,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRETEC 420",
           "credit": "2 hours in Fire Inspector 1A: Duties and Administration"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-FI1F-1-001",
@@ -174814,7 +177304,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRETEC 421",
           "credit": "2 hours in Fire Inspector 1B: Fire and Life Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-FI1F1-1-001",
@@ -174880,7 +177371,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRETEC 422",
           "credit": "1.5 hours in Fire Inspector 1C: Field Inspection"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-FI1F2-1-001",
@@ -174946,7 +177438,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRETEC 423",
           "credit": "1 hour in Fire Inspector 1D: Field Inspection-California"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-HRM-1-001",
@@ -175012,7 +177505,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSMGT 42",
           "credit": "3 hours in Human Resource Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FF1H-1-001",
@@ -175078,7 +177572,8 @@ window.CPL_STATEWIDE = {
           "course": "FAC 060B",
           "credit": "1 hour in Firefighter 1B - Hazardous Materials / WMD"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXO-F3DF-1-001",
@@ -175144,7 +177639,8 @@ window.CPL_STATEWIDE = {
           "course": "FILM 31",
           "credit": "3 hours in Introduction To Digital Filmmaking"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ECAS-1-001",
@@ -175210,7 +177706,8 @@ window.CPL_STATEWIDE = {
           "course": "EMT 405",
           "credit": "3 hours in Emergency Medical Technician Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AL1-1-001|MAPSAH-ALLO-1-001|MAPSAS-A-L-1-001|MAPSAS-A:L-1-001|MAPSAS-AEL1-1-001|MAPSAS-AL-V-1-001|MAPSAS-AL-V1-1-001|MAPSAS-AL1-1-001|MAPSAS-AL2-1-001|MAPSAS-AL3-1-001|MAPSAS-AL4-1-001|MAPSAS-AL5-1-001|MAPSAS-AL7-1-001|MAPSAS-AL8-1-001|MAPSAS-ALV-1-001|MAPSAS-ALV1-1-001",
@@ -175444,7 +177941,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-IEH-1-001|MAPSAS-I:EH-1-001|MAPSAS-IEEH-1-001|MAPSAS-IEEH1-1-001|MAPSAS-IEEH2-1-001|MAPSAS-IEH1-1-001|MAPSAS-IEH2-1-001|MAPSAS-IEH3-1-001|MAPSAS-IEH4-1-001",
@@ -175641,7 +178139,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "4 hours in SOCIAL AND BEHAVIORAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-IGH-1-001|MAPSAS-I:GH-1-001|MAPSAS-IEGH-1-001|MAPSAS-IEGH1-1-001|MAPSAS-IEGH2-1-001|MAPSAS-IGH-1-001|MAPSAS-IGH1-1-001|MAPSAS-IGH2-1-001|MAPSAS-IGH3-1-001",
@@ -175832,7 +178331,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "4 hours in SOCIAL AND BEHAVIORAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FAC(-1-001",
@@ -175897,7 +178397,8 @@ window.CPL_STATEWIDE = {
           "course": "FIT S3A",
           "credit": "1.5 hours in Phy Cond-Basic Fire Acdmy Stud"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-F3\tF-1-001",
@@ -175962,7 +178463,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 318",
           "credit": "8 hours in Basic Firefighter 1 Academy"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-F3\tF-1-001",
@@ -176027,7 +178529,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 318",
           "credit": "8 hours in Basic Firefighter 1 Academy"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-F31A-1-001",
@@ -176092,7 +178595,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 317",
           "credit": "4 hours in Firefighter 1 Academy Physical Training"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-F3F1-1-001",
@@ -176157,7 +178661,8 @@ window.CPL_STATEWIDE = {
           "course": "FTECH 319",
           "credit": "9 hours in Advanced Firefighter 1 Academy"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-MC-S-1-001",
@@ -176222,7 +178727,8 @@ window.CPL_STATEWIDE = {
           "course": "MA 051A",
           "credit": "3 hours in Beginning Medical Terminology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-MC-O-1-001",
@@ -176287,7 +178793,8 @@ window.CPL_STATEWIDE = {
           "course": "MA 051A",
           "credit": "3 hours in Beginning Medical Terminology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-MC-C-1-001",
@@ -176352,7 +178859,8 @@ window.CPL_STATEWIDE = {
           "course": "MA 051A",
           "credit": "3 hours in Beginning Medical Terminology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-MC-E-1-001",
@@ -176417,7 +178925,8 @@ window.CPL_STATEWIDE = {
           "course": "MA 051A",
           "credit": "3 hours in Beginning Medical Terminology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-IPC(-1-001|MAPCXH-IPC(1-1-001|MAPCXH-IPC(2-1-001|MAPCXH-IPC(3-1-001|MAPCXH-IPC(4-1-001|MAPCXH-IPC(5-1-001|MAPCXH-IPC(6-1-001",
@@ -176493,7 +179002,8 @@ window.CPL_STATEWIDE = {
           "course": "MA 051A",
           "credit": "3 hours in Beginning Medical Terminology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-MC-V-1-001",
@@ -176558,7 +179068,8 @@ window.CPL_STATEWIDE = {
           "course": "MA 051A",
           "credit": "3 hours in Beginning Medical Terminology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-ITCP-1-001",
@@ -176623,7 +179134,8 @@ window.CPL_STATEWIDE = {
           "course": "MFG 250",
           "credit": "3 hours in Introduction to CNC Programming"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-CO-1-001",
@@ -176688,7 +179200,8 @@ window.CPL_STATEWIDE = {
           "course": "MFG 260",
           "credit": "3 hours in CNC Operation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRN-MIBA-1-001",
@@ -176753,7 +179266,8 @@ window.CPL_STATEWIDE = {
           "course": "MA 054",
           "credit": "3 hours in Medical Insurance Billing and Coding"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-ASLL1-1-001|MAPSAS-A-SL1-1-001|MAPSAS-A-SL3-1-001|MAPSAS-A:SL2-1-001|MAPSAS-A:SL3-1-001|MAPSAS-AE-S1-1-001|MAPSAS-AESL-1-001|MAPSAS-AESL3-1-001|MAPSAS-AESL6-1-001|MAPSAS-AS-A1-1-001|MAPSAS-ASL(-1-001|MAPSAS-ASL3-1-001|MAPSAS-ASL4-1-001|MAPSAS-ASL7-1-001|MAPSAS-ASLA16-1-001|MAPSAS-ASLA18-1-001|MAPSAS-ASLA2-1-001|MAPSAS-ASLA3-1-001|MAPSAS-ASLA5-1-001|MAPSAS-ASLA8-1-001|MAPSAS-ASLC1-1-001",
@@ -177017,7 +179531,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEH-ITMA-1-001",
@@ -177082,7 +179597,8 @@ window.CPL_STATEWIDE = {
           "course": "GISG 110",
           "credit": "3 hours in Introduction to Mapping and Geographic Information Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-G0-I-1-001|MAPCXS-G0-I2-1-001|MAPCXS-ITGI-1-001",
@@ -177159,7 +179675,8 @@ window.CPL_STATEWIDE = {
           "course": "GEOG 55",
           "credit": "2 hours in Introduction to Geographic Information Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-IBP-1-001",
@@ -177223,7 +179740,8 @@ window.CPL_STATEWIDE = {
           "course": "HORT 140A",
           "credit": "1 hour in Introductory Berry Production"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-IBP2-1-001",
@@ -177287,7 +179805,8 @@ window.CPL_STATEWIDE = {
           "course": "HORT 140B",
           "credit": "1 hour in Intermediate Berry Production"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEH-BPT-1-001",
@@ -177351,7 +179870,8 @@ window.CPL_STATEWIDE = {
           "course": "MACT 140",
           "credit": "4 hours in Machine Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-M2TM-1-001|MAPPRA-M2TM1-1-001",
@@ -177421,7 +179941,8 @@ window.CPL_STATEWIDE = {
           "course": "MACH 200E",
           "credit": "5 hours in Introduction to Manual Machining"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-M2TC-1-001",
@@ -177485,7 +180006,8 @@ window.CPL_STATEWIDE = {
           "course": "MACH 205",
           "credit": "2 hours in Intro to CNC Machining"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-M2TC-1-001",
@@ -177549,7 +180071,8 @@ window.CPL_STATEWIDE = {
           "course": "MACH 205",
           "credit": "2 hours in Intro to CNC Machining"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-M2LP-1-001",
@@ -177613,7 +180136,8 @@ window.CPL_STATEWIDE = {
           "course": "MACH 206",
           "credit": "3 hours in CNC Lathe Programming"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-M2MP-1-001",
@@ -177677,7 +180201,8 @@ window.CPL_STATEWIDE = {
           "course": "MACH 207",
           "credit": "3 hours in CNC Mill Programming"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-M3TP-1-001",
@@ -177741,7 +180266,8 @@ window.CPL_STATEWIDE = {
           "course": "MACH 357",
           "credit": "2 hours in Machine Trades Print Reading"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-M3MT-1-001",
@@ -177805,7 +180331,8 @@ window.CPL_STATEWIDE = {
           "course": "MACH 395B",
           "credit": "2 hours in Advanced Mach Tool Technology Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-G0-I1-1-001|MAPCXS-G0-I3-1-001",
@@ -177875,7 +180402,8 @@ window.CPL_STATEWIDE = {
           "course": "GIS 037",
           "credit": "2 hours in Introduction to Global Positioning Systems (GPS)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-PS7-1-1-001",
@@ -177939,7 +180467,8 @@ window.CPL_STATEWIDE = {
           "course": "PLNT SC 714",
           "credit": "3 hours in Principles of Horticulture"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-PS8--1-001",
@@ -178003,7 +180532,8 @@ window.CPL_STATEWIDE = {
           "course": "PLNT SC 827",
           "credit": "3 hours in Sustainable Gardening for Landscapes (Horticulture)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-LIAM-1-001",
@@ -178067,7 +180597,8 @@ window.CPL_STATEWIDE = {
           "course": "PLNT SC 812",
           "credit": "3 hours in Landscape Installation and Maintenance I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-VBMC-1-001",
@@ -178131,7 +180662,8 @@ window.CPL_STATEWIDE = {
           "course": "MNFG 158",
           "credit": "3 hours in Basic Machining Concepts and Operations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-AGYC-1-001|MAPCXI-AGYC1-1-001",
@@ -178200,7 +180732,8 @@ window.CPL_STATEWIDE = {
           "course": "MSCNC 124",
           "credit": "3 hours in PRINT INTERPRETATION AND INSPECTION (BLUEPRINT II)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-AGYC-1-001|MAPICI-AGYC1-1-001",
@@ -178269,7 +180802,8 @@ window.CPL_STATEWIDE = {
           "course": "MSCNC 124",
           "credit": "3 hours in PRINT INTERPRETATION AND INSPECTION (BLUEPRINT II)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-AGYC-1-001|MAPPRI-AGYC1-1-001",
@@ -178338,7 +180872,8 @@ window.CPL_STATEWIDE = {
           "course": "MSCNC 124",
           "credit": "3 hours in PRINT INTERPRETATION AND INSPECTION (BLUEPRINT II)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-AGYC-1-001|MAPMM-AGYC1-1-001",
@@ -178407,7 +180942,8 @@ window.CPL_STATEWIDE = {
           "course": "MSCNC 124",
           "credit": "3 hours in PRINT INTERPRETATION AND INSPECTION (BLUEPRINT II)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-HM&L-1-001",
@@ -178471,7 +181007,8 @@ window.CPL_STATEWIDE = {
           "course": "MSCNC 122A",
           "credit": "4 hours in TECHNOLOGY AND APPLICATION OF MACHINING IIA"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-HM&L1-1-001",
@@ -178535,7 +181072,8 @@ window.CPL_STATEWIDE = {
           "course": "MSCNC 122A",
           "credit": "4 hours in TECHNOLOGY AND APPLICATION OF MACHINING IIA"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-HM&L-1-001",
@@ -178599,7 +181137,8 @@ window.CPL_STATEWIDE = {
           "course": "MSCNC 122A",
           "credit": "4 hours in TECHNOLOGY AND APPLICATION OF MACHINING IIA"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-HM&L-1-001",
@@ -178663,7 +181202,8 @@ window.CPL_STATEWIDE = {
           "course": "MSCNC 122A",
           "credit": "4 hours in TECHNOLOGY AND APPLICATION OF MACHINING IIA"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-MCC+-1-001|MAPCXI-MCC+1-1-001",
@@ -178732,7 +181272,8 @@ window.CPL_STATEWIDE = {
           "course": "MSCNC 122B",
           "credit": "1 hour in TECHNOLOGY AND APPLICATION OF MACHINING IIB"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-MCC+-1-001",
@@ -178796,7 +181337,8 @@ window.CPL_STATEWIDE = {
           "course": "MSCNC 112B",
           "credit": "1 hour in TECHNOLOGY AND APPLICATION OF MACHINING (CAD) IB"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-MDAM-1-001|MAPCXI-MDAM1-1-001|MAPCXI-MDAM2-1-001",
@@ -178870,7 +181412,8 @@ window.CPL_STATEWIDE = {
           "course": "MSCNC 121",
           "credit": "2 hours in PRINCIPLES OF MACHINE TOOLS II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-MDAM-1-001|MAPICI-MDAM1-1-001|MAPICI-MDAM2-1-001",
@@ -178944,7 +181487,8 @@ window.CPL_STATEWIDE = {
           "course": "MSCNC 121",
           "credit": "2 hours in PRINCIPLES OF MACHINE TOOLS II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-MDAM-1-001|MAPPRI-MDAM1-1-001|MAPPRI-MDAM2-1-001",
@@ -179018,7 +181562,8 @@ window.CPL_STATEWIDE = {
           "course": "MSCNC 121",
           "credit": "2 hours in PRINCIPLES OF MACHINE TOOLS II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-MDAM-1-001|MAPMM-MDAM1-1-001|MAPMM-MDAM2-1-001",
@@ -179092,7 +181637,8 @@ window.CPL_STATEWIDE = {
           "course": "MSCNC 121",
           "credit": "2 hours in PRINCIPLES OF MACHINE TOOLS II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-PLTO-1-001|MAPCXI-PLTO1-1-001",
@@ -179157,7 +181703,8 @@ window.CPL_STATEWIDE = {
           "course": "MSCNC 115",
           "credit": "3 hours in BASIC APPLIED MATHEMATICAL CALCULATIONS"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-PLTO-1-001|MAPICI-PLTO1-1-001|MAPICI-PLTO2-1-001",
@@ -179227,7 +181774,8 @@ window.CPL_STATEWIDE = {
           "course": "MSCNC 125",
           "credit": "3 hours in INTERMEDIATE APPLIED MATHEMATICAL CALCULATIONS"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-PLTO-1-001|MAPPRI-PLTO1-1-001",
@@ -179296,7 +181844,8 @@ window.CPL_STATEWIDE = {
           "course": "MSCNC 125",
           "credit": "3 hours in INTERMEDIATE APPLIED MATHEMATICAL CALCULATIONS"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-PLTO-1-001|MAPMM-PLTO1-1-001",
@@ -179365,7 +181914,8 @@ window.CPL_STATEWIDE = {
           "course": "MSCNC 125",
           "credit": "3 hours in INTERMEDIATE APPLIED MATHEMATICAL CALCULATIONS"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEI-1-001",
@@ -179429,7 +181979,8 @@ window.CPL_STATEWIDE = {
           "course": "POSC N101A",
           "credit": "0 hours in Orientation for P.O.S.T. Regular and Modular Academy"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AS(O-1-001|MAPSAH-ASLA-1-001|MAPSAH-ASLL-1-001|MAPSAS-A-SL-1-001|MAPSAS-A-SL2-1-001|MAPSAS-A:SL-1-001|MAPSAS-A:SL1-1-001|MAPSAS-AE-S-1-001|MAPSAS-AESA-1-001|MAPSAS-AESL1-1-001|MAPSAS-AESL2-1-001|MAPSAS-AESL4-1-001|MAPSAS-AESL5-1-001|MAPSAS-AS-A-1-001|MAPSAS-ASL&-1-001|MAPSAS-ASL1-1-001|MAPSAS-ASL2-1-001|MAPSAS-ASL5-1-001|MAPSAS-ASL6-1-001|MAPSAS-ASLA-1-001|MAPSAS-ASLA1-1-001|MAPSAS-ASLA15-1-001|MAPSAS-ASLA17-1-001|MAPSAS-ASLA4-1-001|MAPSAS-ASLA6-1-001|MAPSAS-ASLA7-1-001|MAPSAS-ASLC-1-001",
@@ -179753,7 +182304,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 101A",
           "credit": "5 hours in Elementary Spanish"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-APC(-1-001|MAPSAS-A-PC1-1-001|MAPSAS-A:PC-1-001|MAPSAS-AE-P3-1-001|MAPSAS-AEPC-1-001|MAPSAS-AEPC1-1-001|MAPSAS-AEPC4-1-001|MAPSAS-APC(1-1-001|MAPSAS-APC--1-001|MAPSAS-APC-1-1-001|MAPSAS-APCE-1-001|MAPSAS-APCE1-1-001|MAPSAS-APCE2-1-001|MAPSAS-APCE3-1-001|MAPSAS-APCE5-1-001|MAPSAS-APCE6-1-001|MAPSAS-APCE7-1-001",
@@ -180021,7 +182573,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 5",
           "credit": "3 hours in Natural Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2OA-1-001",
@@ -180084,7 +182637,8 @@ window.CPL_STATEWIDE = {
           "course": "AGEC 210",
           "credit": "3 hours in Elements of Agricultural Economics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-A2OA-1-001",
@@ -180147,7 +182701,8 @@ window.CPL_STATEWIDE = {
           "course": "AGEC 210",
           "credit": "3 hours in Elements of Agricultural Economics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2CA-1-001",
@@ -180210,7 +182765,8 @@ window.CPL_STATEWIDE = {
           "course": "AGEC 225",
           "credit": "3 hours in Agriculture Computer Applications"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOA-R-1-001",
@@ -180273,7 +182829,8 @@ window.CPL_STATEWIDE = {
           "course": "PH 97C",
           "credit": "3 hours in Public Health Career Experience Internship"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-PHCE-1-001",
@@ -180348,7 +182905,8 @@ window.CPL_STATEWIDE = {
           "course": "PH 97D",
           "credit": "4 hours in Public Health Career Experience Internship"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AP1P-1-001|MAPSAS-AEP1-1-001|MAPSAS-AP11-1-001|MAPSAS-AP18-1-001|MAPSAS-AP1A-1-001|MAPSAS-AP1A1-1-001|MAPSAS-AP1A2-1-001|MAPSAS-AP1A3-1-001|MAPSAS-AP1S-1-001",
@@ -180549,7 +183107,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 5",
           "credit": "5 hours in NATURAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AP2P-1-001|MAPSAS-AEP2-1-001|MAPSAS-AEP23-1-001|MAPSAS-AP21-1-001|MAPSAS-AP22-1-001|MAPSAS-AP24-1-001|MAPSAS-AP25-1-001|MAPSAS-AP2A-1-001|MAPSAS-AP2A1-1-001|MAPSAS-AP2A2-1-001|MAPSAS-AP2A3-1-001|MAPSAS-AP2M-1-001",
@@ -180762,7 +183321,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 5",
           "credit": "3 hours in Natural Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-APC(1-1-001|MAPSAS-A-PC-1-001|MAPSAS-A:PC1-1-001|MAPSAS-AE-P2-1-001|MAPSAS-AEPC2-1-001|MAPSAS-AEPC3-1-001|MAPSAS-AEPC5-1-001|MAPSAS-AP3M-1-001|MAPSAS-APC(-1-001|MAPSAS-APC(2-1-001|MAPSAS-APC-2-1-001|MAPSAS-APCM-1-001|MAPSAS-APCM1-1-001|MAPSAS-APCM3-1-001|MAPSAS-APCM4-1-001|MAPSAS-APCM5-1-001|MAPSAS-APM-1-001|MAPSAS-PCM-1-001",
@@ -181028,7 +183588,8 @@ window.CPL_STATEWIDE = {
           "course": "PHYS 140",
           "credit": "4 hours in Mechanics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-ITCH-1-001",
@@ -181090,7 +183651,8 @@ window.CPL_STATEWIDE = {
           "course": "HS 130",
           "credit": "4 hours in Introduction to Community Health Work"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-CHWS-1-001",
@@ -181152,7 +183714,8 @@ window.CPL_STATEWIDE = {
           "course": "HS 131",
           "credit": "4 hours in Community Health Worker Skills"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-E1W--1-001",
@@ -181214,7 +183777,8 @@ window.CPL_STATEWIDE = {
           "course": "ENSCI 110",
           "credit": "3 hours in California Water"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-E1W--1-001",
@@ -181276,7 +183840,8 @@ window.CPL_STATEWIDE = {
           "course": "ENSCI 110",
           "credit": "3 hours in California Water"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-BCPC-1-001",
@@ -181338,7 +183903,8 @@ window.CPL_STATEWIDE = {
           "course": "CNST 010",
           "credit": "3 hours in Basic Construction Principles"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-O1A1-1-001",
@@ -181399,6 +183965,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "CNST 010",
           "credit": "1-3 hours in Introduction to Construction Safety"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "1-3 hours in Introduction to Construction Safety",
+          "cid": ""
         }
       ]
     },
@@ -181461,6 +184033,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "CNST 010",
           "credit": "1-3 hours in Introduction to Construction Safety"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "1-3 hours in Introduction to Construction Safety",
+          "cid": ""
         }
       ]
     },
@@ -181535,6 +184113,20 @@ window.CPL_STATEWIDE = {
         {
           "course": "CNST 010",
           "credit": "3-5 hours in Construction Law"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-5 hours in Rough Electrical",
+          "cid": ""
+        },
+        {
+          "credit": "3-5 hours in Construction Law",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Introduction to Construction Safety",
+          "cid": ""
         }
       ]
     },
@@ -181617,6 +184209,28 @@ window.CPL_STATEWIDE = {
         {
           "course": "CNST 010",
           "credit": "3-5 hours in Construction Law"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-5 hours in Introduction to Residential Construction (Lecture)",
+          "cid": ""
+        },
+        {
+          "credit": "3-5 hours in Residential Finishes",
+          "cid": ""
+        },
+        {
+          "credit": "3-5 hours in Introduction to Residential Construction Lab",
+          "cid": ""
+        },
+        {
+          "credit": "3-5 hours in Construction Law",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Introduction to Construction Safety",
+          "cid": ""
         }
       ]
     },
@@ -181708,6 +184322,36 @@ window.CPL_STATEWIDE = {
           "course": "CNST 010",
           "credit": "3-5 hours in Construction Law"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-5 hours in Introduction to Residential Construction (Lecture)",
+          "cid": ""
+        },
+        {
+          "credit": "3-5 hours in Introduction to Residential Construction Lab",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Introduction to Construction Estimating",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Construction Drawing/Blueprint Reading (Lecture)",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Construction Drawing/Blueprint Reading Lab",
+          "cid": ""
+        },
+        {
+          "credit": "3-5 hours in Construction Law",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Introduction to Construction Safety",
+          "cid": ""
+        }
       ]
     },
     {
@@ -181797,6 +184441,36 @@ window.CPL_STATEWIDE = {
         {
           "course": "CNST 010",
           "credit": "3-5 hours in Construction Law"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-5 hours in Introduction to Residential Construction (Lecture)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Construction Drawing/Blueprint Reading",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Introduction to Construction Estimating",
+          "cid": ""
+        },
+        {
+          "credit": "3-5 hours in Construction Law",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Construction Planning and Scheduling",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Construction Business Practice",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Introduction to Construction Safety",
+          "cid": ""
         }
       ]
     },
@@ -181888,6 +184562,36 @@ window.CPL_STATEWIDE = {
           "course": "CNST 010",
           "credit": "3-5 hours in Construction Law"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-5 hours in Introduction to Residential Construction (Lecture)",
+          "cid": ""
+        },
+        {
+          "credit": "3-5 hours in Residential Finishes (Lecture)",
+          "cid": ""
+        },
+        {
+          "credit": "3-5 hours in Finish Carpentry (Lecture)",
+          "cid": ""
+        },
+        {
+          "credit": "3-5 hours in Introduction to Residential Construction Lab",
+          "cid": ""
+        },
+        {
+          "credit": "3-5 hours in Construction Law",
+          "cid": ""
+        },
+        {
+          "credit": "3-5 hours in Residential Finishes Lab",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Introduction to Construction Safety",
+          "cid": ""
+        }
       ]
     },
     {
@@ -181958,6 +184662,20 @@ window.CPL_STATEWIDE = {
           "course": "CNST 010",
           "credit": "1-3 hours in Introduction to Construction Safety"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "1-5 hours in Rough Electrical",
+          "cid": ""
+        },
+        {
+          "credit": "2-4 hour in Electives/Work Experience - Construction",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Introduction to Construction Safety",
+          "cid": ""
+        }
       ]
     },
     {
@@ -182023,6 +184741,16 @@ window.CPL_STATEWIDE = {
         {
           "course": "CNST 010",
           "credit": "1-3 hours in Introduction to Construction Safety"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "2-4 hour in Electives/Work Experience - Construction",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Introduction to Construction Safety",
+          "cid": ""
         }
       ]
     },
@@ -182093,6 +184821,16 @@ window.CPL_STATEWIDE = {
         {
           "course": "CNST 010",
           "credit": "3-5 hours in Construction Law"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-5 hours in Construction Law",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Introduction to Construction Safety",
+          "cid": ""
         }
       ]
     },
@@ -182168,6 +184906,20 @@ window.CPL_STATEWIDE = {
           "course": "CNST 010",
           "credit": "3-5 hours in Construction Law"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-5 hours in Rough Electrical",
+          "cid": ""
+        },
+        {
+          "credit": "3-5 hours in Construction Law",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Introduction to Construction Safety",
+          "cid": ""
+        }
       ]
     },
     {
@@ -182237,6 +184989,16 @@ window.CPL_STATEWIDE = {
         {
           "course": "CNST 010",
           "credit": "3-5 hours in Construction Law"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-5 hours in Construction Law",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Introduction to Construction Safety",
+          "cid": ""
         }
       ]
     },
@@ -182328,6 +185090,40 @@ window.CPL_STATEWIDE = {
           "course": "CNST 010",
           "credit": "1-3 hours in Introduction to Construction Safety"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-5 hours in Introduction to Residential Construction (Lecture)",
+          "cid": ""
+        },
+        {
+          "credit": "3-5 hours in Residential Finishes (Lecture)",
+          "cid": ""
+        },
+        {
+          "credit": "3-5 hours in Finish Carpentry (Lecture)",
+          "cid": ""
+        },
+        {
+          "credit": "3-5 hours in Introduction to Residential Construction Lab",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Construction Drawing/Blueprint Reading (Lecture)",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Construction Drawing/Blueprint Reading Lab",
+          "cid": ""
+        },
+        {
+          "credit": "3-5 hours in Residential Finishes Lab",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Introduction to Construction Safety",
+          "cid": ""
+        }
       ]
     },
     {
@@ -182418,6 +185214,36 @@ window.CPL_STATEWIDE = {
           "course": "CNST 010",
           "credit": "3-5 hours in Construction Law"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-5 hours in Introduction to Residential Construction",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Construction Drawing/Blueprint Reading",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Introduction to Construction Estimating",
+          "cid": ""
+        },
+        {
+          "credit": "3-5 hours in Construction Law",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Construction Planning and Scheduling",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Construction Business Practice",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Introduction to Construction Safety",
+          "cid": ""
+        }
       ]
     },
     {
@@ -182504,6 +185330,32 @@ window.CPL_STATEWIDE = {
           "course": "CNST 010",
           "credit": "3-5 hours in Construction Law"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-5 hours in Residential Finishes",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Construction Drawing/Blueprint Reading",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Introduction to Construction Estimating",
+          "cid": ""
+        },
+        {
+          "credit": "3-5 hours in Construction Law",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Construction Business Practice",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Introduction to Construction Safety",
+          "cid": ""
+        }
       ]
     },
     {
@@ -182574,6 +185426,20 @@ window.CPL_STATEWIDE = {
           "course": "CEM 99",
           "credit": "2-4 hours in Electives/Work Experience - Construction"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "1-5 hours in Rough Electrical",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Introduction to Construction Safety",
+          "cid": ""
+        },
+        {
+          "credit": "2-4 hours in Electives/Work Experience - Construction",
+          "cid": ""
+        }
       ]
     },
     {
@@ -182639,7 +185505,8 @@ window.CPL_STATEWIDE = {
           "course": "DEN AST 007",
           "credit": "1.0 hours in DEN AST 007 - Infection Control for the Dental Setting - Units : 1.0"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-DAO-1-001",
@@ -182700,7 +185567,8 @@ window.CPL_STATEWIDE = {
           "course": "DEN AST 001",
           "credit": "2 hours in Orientation to Dental Assisting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-CFPA-1-001",
@@ -182761,7 +185629,8 @@ window.CPL_STATEWIDE = {
           "course": "CEM 151",
           "credit": "3 hours in Construction Fundamentals: Principles and Practices"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-CFLP-1-001",
@@ -182822,7 +185691,8 @@ window.CPL_STATEWIDE = {
           "course": "CEM 151L",
           "credit": "1 hour in Construction Fundamentals: Principles and Practices Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-BR-1-001",
@@ -182883,7 +185753,8 @@ window.CPL_STATEWIDE = {
           "course": "CEM 155",
           "credit": "3 hours in Blueprint Reading"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-RDAL1-1-001",
@@ -182992,7 +185863,8 @@ window.CPL_STATEWIDE = {
           "course": "DEN AST 912",
           "credit": "1.5 hours in Cooperative Education - Dental Assisting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-RF-1-001",
@@ -183053,7 +185925,8 @@ window.CPL_STATEWIDE = {
           "course": "CEM 177",
           "credit": "3 hours in Fundamentals of Residential Framing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-RCFE-1-001",
@@ -183114,7 +185987,8 @@ window.CPL_STATEWIDE = {
           "course": "CEM 178A",
           "credit": "3 hours in Residential Construction Skills 1: \"Front End\""
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CA2U-1-001|MAPICA-CA4U-1-001|MAPICA-CA6U-1-001",
@@ -183179,7 +186053,8 @@ window.CPL_STATEWIDE = {
           "course": "CEM 99",
           "credit": "2 hours in CEM Internships/Work Experience"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-PSDA-1-001",
@@ -183240,7 +186115,8 @@ window.CPL_STATEWIDE = {
           "course": "CEM 162PS",
           "credit": "2 hours in Passive Solar Design and Construction"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-BL1-1-001",
@@ -183389,7 +186265,8 @@ window.CPL_STATEWIDE = {
           "course": "COSM 50R",
           "credit": "1 hour in Written Preparation for Barbering State Board Exam"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CL3-1-001",
@@ -183546,7 +186423,8 @@ window.CPL_STATEWIDE = {
           "course": "COSM 50R",
           "credit": "1 hour in Written Preparation for Barbering State Board Exam"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-BDS-1-001",
@@ -183607,7 +186485,8 @@ window.CPL_STATEWIDE = {
           "course": "DENTAL 405",
           "credit": "3 hours in Basic Dental Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ICID-1-001",
@@ -183668,7 +186547,8 @@ window.CPL_STATEWIDE = {
           "course": "DENTAL 435",
           "credit": "2 hours in Infection Control in Dentistry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-OR-1-001|MAPCXS-OR1-1-001",
@@ -183734,7 +186614,8 @@ window.CPL_STATEWIDE = {
           "course": "DENTAL 693",
           "credit": "0 hours in Oral Radiology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-DOP-1-001",
@@ -183795,7 +186676,8 @@ window.CPL_STATEWIDE = {
           "course": "DENTAL 455",
           "credit": "2 hours in Dental Office Procedures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-US-1-001",
@@ -183856,7 +186738,8 @@ window.CPL_STATEWIDE = {
           "course": "DENTAL 692",
           "credit": "0 hours in Ultrasonic Scaling"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CA1-1-001",
@@ -183929,6 +186812,24 @@ window.CPL_STATEWIDE = {
           "course": "CEM 151FC",
           "credit": "2-3 hours in Residential Finishes (Lecture)"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "2-3 hours in Finish Carpentry (Lecture)",
+          "cid": ""
+        },
+        {
+          "credit": "2-3 hours in Residential Finishes Lab",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Electives/Work Experience - Construction",
+          "cid": ""
+        },
+        {
+          "credit": "2-3 hours in Residential Finishes (Lecture)",
+          "cid": ""
+        }
       ]
     },
     {
@@ -183989,6 +186890,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "CEM 99",
           "credit": "1-2 hours in Work Experience - Construction"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "1-2 hours in Work Experience - Construction",
+          "cid": ""
         }
       ]
     },
@@ -184051,6 +186958,12 @@ window.CPL_STATEWIDE = {
           "course": "CEM 99",
           "credit": "3-8 hours in Electives/Work Experience - Construction"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-8 hours in Electives/Work Experience - Construction",
+          "cid": ""
+        }
       ]
     },
     {
@@ -184111,6 +187024,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "CEM 99",
           "credit": "1 hour in Electives/Work Experience - Construction"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "1 hour in Electives/Work Experience - Construction",
+          "cid": ""
         }
       ]
     },
@@ -184173,6 +187092,12 @@ window.CPL_STATEWIDE = {
           "course": "CEM 99",
           "credit": "1.5 hours in Electives/Work Experience - Construction"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "1.5 hours in Electives/Work Experience - Construction",
+          "cid": ""
+        }
       ]
     },
     {
@@ -184233,6 +187158,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "CEM 99",
           "credit": "2-4 hour in Electives/Work Experience - Construction"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "2-4 hour in Electives/Work Experience - Construction",
+          "cid": ""
         }
       ]
     },
@@ -184295,6 +187226,12 @@ window.CPL_STATEWIDE = {
           "course": "CEM 151EL",
           "credit": "3 hours in Rough Electrical"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Rough Electrical",
+          "cid": ""
+        }
       ]
     },
     {
@@ -184355,6 +187292,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "CEM 99",
           "credit": "1 hour in Electives/Work Experience - Construction"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "1 hour in Electives/Work Experience - Construction",
+          "cid": ""
         }
       ]
     },
@@ -184421,6 +187364,16 @@ window.CPL_STATEWIDE = {
           "course": "CEM 151EL",
           "credit": "4 hours in Rough Electrical"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "1 hour in Electives/Work Experience - Construction",
+          "cid": ""
+        },
+        {
+          "credit": "4 hours in Rough Electrical",
+          "cid": ""
+        }
       ]
     },
     {
@@ -184481,6 +187434,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "CEM 99",
           "credit": "1 hour in Electives/Work Experience - Construction"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "1 hour in Electives/Work Experience - Construction",
+          "cid": ""
         }
       ]
     },
@@ -184543,6 +187502,12 @@ window.CPL_STATEWIDE = {
           "course": "CEM 99",
           "credit": "1-2.5 hours in Electives/Work Experience - Construction"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "1-2.5 hours in Electives/Work Experience - Construction",
+          "cid": ""
+        }
       ]
     },
     {
@@ -184603,6 +187568,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "CEM 99",
           "credit": "1-2 hours in Electives/Work Experience - Construction"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "1-2 hours in Electives/Work Experience - Construction",
+          "cid": ""
         }
       ]
     },
@@ -184669,6 +187640,16 @@ window.CPL_STATEWIDE = {
           "course": "CEM 164C",
           "credit": "3 hours in California Residential Building Codes"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in International Residential Building Code",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in California Residential Building Codes",
+          "cid": ""
+        }
       ]
     },
     {
@@ -184729,6 +187710,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "CEM 99",
           "credit": "2-4 hours in Electives/Work Experience - Construction"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "2-4 hours in Electives/Work Experience - Construction",
+          "cid": ""
         }
       ]
     },
@@ -184791,6 +187778,12 @@ window.CPL_STATEWIDE = {
           "course": "CEM 99",
           "credit": "1.5-3 hours in Electives/Work Experience - Construction"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "1.5-3 hours in Electives/Work Experience - Construction",
+          "cid": ""
+        }
       ]
     },
     {
@@ -184852,6 +187845,12 @@ window.CPL_STATEWIDE = {
           "course": "CEM 99",
           "credit": "3-5 hours in Electives/Work Experience - Construction"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-5 hours in Electives/Work Experience - Construction",
+          "cid": ""
+        }
       ]
     },
     {
@@ -184912,6 +187911,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "CEM 99",
           "credit": "3.5-5 hours in Electives/Work Experience - Construction"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3.5-5 hours in Electives/Work Experience - Construction",
+          "cid": ""
         }
       ]
     },
@@ -184978,6 +187983,16 @@ window.CPL_STATEWIDE = {
           "course": "CEM 99",
           "credit": "2-4 hours in Electives/Work Experience - Construction"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Rough Electrical",
+          "cid": ""
+        },
+        {
+          "credit": "2-4 hours in Electives/Work Experience - Construction",
+          "cid": ""
+        }
       ]
     },
     {
@@ -185043,6 +188058,16 @@ window.CPL_STATEWIDE = {
           "course": "CEM 99",
           "credit": "3-5 hours in Electives/Work Experience - Construction"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "4 hours in Rough Electrical",
+          "cid": ""
+        },
+        {
+          "credit": "3-5 hours in Electives/Work Experience - Construction",
+          "cid": ""
+        }
       ]
     },
     {
@@ -185104,6 +188129,12 @@ window.CPL_STATEWIDE = {
           "course": "CEM 99",
           "credit": "2 hours in Electives/Work Experience - Construction"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "2 hours in Electives/Work Experience - Construction",
+          "cid": ""
+        }
       ]
     },
     {
@@ -185164,6 +188195,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "CEM 99",
           "credit": "1-2 hours in Electives/Work Experience - Construction"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "1-2 hours in Electives/Work Experience - Construction",
+          "cid": ""
         }
       ]
     },
@@ -185230,6 +188267,16 @@ window.CPL_STATEWIDE = {
           "course": "CEM 164C",
           "credit": "3 hours in California Residential Building Codes"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in International Residential Building Code",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in California Residential Building Codes",
+          "cid": ""
+        }
       ]
     },
     {
@@ -185295,6 +188342,16 @@ window.CPL_STATEWIDE = {
           "course": "CEM 164C",
           "credit": "3 hours in California Residential Building Codes"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in International Residential Building Code",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in California Residential Building Codes",
+          "cid": ""
+        }
       ]
     },
     {
@@ -185356,6 +188413,12 @@ window.CPL_STATEWIDE = {
           "course": "CEM 99",
           "credit": "1 hour in Electives/Work Experience - Construction"
         }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "1 hour in Electives/Work Experience - Construction",
+          "cid": ""
+        }
       ]
     },
     {
@@ -185416,6 +188479,12 @@ window.CPL_STATEWIDE = {
         {
           "course": "CEM 99",
           "credit": "1-2 hours in Electives/Work Experience - Construction"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "1-2 hours in Electives/Work Experience - Construction",
+          "cid": ""
         }
       ]
     },
@@ -185513,7 +188582,8 @@ window.CPL_STATEWIDE = {
           "course": "ELE 409",
           "credit": "3.5 hours in Electrician Specialty Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-CA2-1-001",
@@ -185573,7 +188643,8 @@ window.CPL_STATEWIDE = {
           "course": "CULART 201",
           "credit": "3 hours in Management of Human Resources in Hospitality"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-SACS-1-001",
@@ -185657,7 +188728,8 @@ window.CPL_STATEWIDE = {
           "course": "ELE 499",
           "credit": "1 hour in Electrician Apprenticeship Work Experience"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-IBEW1-1-001",
@@ -185721,7 +188793,8 @@ window.CPL_STATEWIDE = {
           "course": "ELC 401",
           "credit": "3.5 hours in Introduction to Electrical Theory, Basic Math Concepts, and the National Electric Code"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-IBEW2-1-001",
@@ -185785,7 +188858,8 @@ window.CPL_STATEWIDE = {
           "course": "ELC 403",
           "credit": "3.5 hours in AC Circuit Concepts, Applied Electronics, and National Electric Code Applications"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-IBEW3-1-001",
@@ -185849,7 +188923,8 @@ window.CPL_STATEWIDE = {
           "course": "ELC 405",
           "credit": "3.5 hours in Electrician Blueprint Reading with Code Applications for National Electrical Code (NEC)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-IBEW4-1-001",
@@ -185913,7 +188988,8 @@ window.CPL_STATEWIDE = {
           "course": "ELE 407",
           "credit": "3.5 hours in Motor Control Principles, Generators and Power Supplies, with National Electric Code (NEC)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-IBEW5-1-001",
@@ -185977,7 +189053,8 @@ window.CPL_STATEWIDE = {
           "course": "ELE 409",
           "credit": "3.5 hours in Electrician Specialty Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-EG-1-001",
@@ -186037,7 +189114,8 @@ window.CPL_STATEWIDE = {
           "course": "ENE 41",
           "credit": "3 hours in Engineering Graphics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-E2W--1-001",
@@ -186097,7 +189175,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 225",
           "credit": "3 hours in Residential Wiring"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-E2W--1-001",
@@ -186157,7 +189236,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 225",
           "credit": "3 hours in Residential Wiring"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-E3S--1-001",
@@ -186217,7 +189297,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 320",
           "credit": "1 hour in Electrical Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-E3S--1-001",
@@ -186277,7 +189358,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 320",
           "credit": "1 hour in Electrical Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-E3M--1-001",
@@ -186337,7 +189419,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 322",
           "credit": "3 hours in Technical Measurements"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-E3M--1-001",
@@ -186397,7 +189480,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 322",
           "credit": "3 hours in Technical Measurements"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-E2RF-1-001",
@@ -186457,7 +189541,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 230",
           "credit": "2 hours in Blueprint Reading for Electricians"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-E3S--1-001",
@@ -186517,7 +189602,8 @@ window.CPL_STATEWIDE = {
           "course": "ELTEC 320",
           "credit": "1 hour in Electrical Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-EM-1-001",
@@ -186577,7 +189663,8 @@ window.CPL_STATEWIDE = {
           "course": "HRC 232 C",
           "credit": "3 hours in Event Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICN-PCII-1-001",
@@ -186637,7 +189724,8 @@ window.CPL_STATEWIDE = {
           "course": "RT 50A",
           "credit": "2 hours in Patient Care in Imaging Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRN-RP-1-001",
@@ -186697,7 +189785,8 @@ window.CPL_STATEWIDE = {
           "course": "RT 52",
           "credit": "2 hours in Radiation Physics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICN-PORP-1-001",
@@ -186757,7 +189846,8 @@ window.CPL_STATEWIDE = {
           "course": "RT 62",
           "credit": "2 hours in Principles of Radiation Protection"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICN-PORI-1-001|MAPICN-PORI1-1-001",
@@ -186818,7 +189908,8 @@ window.CPL_STATEWIDE = {
           "course": "RT 60",
           "credit": "2 hours in Principles of Radiographic Imaging"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-IBEW-1-001",
@@ -186882,7 +189973,8 @@ window.CPL_STATEWIDE = {
           "course": "ELC 401",
           "credit": "3.5 hours in Introduction to Electrical Theory, Basic Math Concepts, and the National Electric Code"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-IBEW1-1-001",
@@ -186946,7 +190038,8 @@ window.CPL_STATEWIDE = {
           "course": "ELC 403",
           "credit": "3.5 hours in AC Circuit Concepts, Applied Electronics, and National Electric Code Applications"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-IBEW2-1-001",
@@ -187010,7 +190103,8 @@ window.CPL_STATEWIDE = {
           "course": "ELC 405",
           "credit": "3.5 hours in Electrician Blueprint Reading with Code Applications for National Electrical Code (NEC)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-IBEW3-1-001",
@@ -187074,7 +190168,8 @@ window.CPL_STATEWIDE = {
           "course": "ELC 407",
           "credit": "3.5 hours in Motor Control Principles, Generators and Power Supplies, with National Electric Code (NEC)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-IBEW4-1-001",
@@ -187138,7 +190233,8 @@ window.CPL_STATEWIDE = {
           "course": "ELC 409",
           "credit": "3.5 hours in Electrician Specialty Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-SETC-1-001",
@@ -187198,7 +190294,8 @@ window.CPL_STATEWIDE = {
           "course": "ELECT 110",
           "credit": "5 hours in Elect Apprenticeship I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-SETC1-1-001",
@@ -187258,7 +190355,8 @@ window.CPL_STATEWIDE = {
           "course": "ELECT 111",
           "credit": "3 hours in Electrical Apprenticeship II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-SETC2-1-001",
@@ -187318,7 +190416,8 @@ window.CPL_STATEWIDE = {
           "course": "ELECT 120",
           "credit": "3 hours in Elect Apprenticeship III"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-SETC3-1-001",
@@ -187378,7 +190477,8 @@ window.CPL_STATEWIDE = {
           "course": "ELECT 121",
           "credit": "3 hours in Electrical Apprenticeship IV"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-SETC4-1-001",
@@ -187438,7 +190538,8 @@ window.CPL_STATEWIDE = {
           "course": "ELECT 130",
           "credit": "3 hours in Electrical Apprenticeship V"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-SETC5-1-001",
@@ -187498,7 +190599,8 @@ window.CPL_STATEWIDE = {
           "course": "ELECT 131",
           "credit": "3 hours in Electrical Apprenticeship VI"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-SETC6-1-001",
@@ -187558,7 +190660,8 @@ window.CPL_STATEWIDE = {
           "course": "ELECT 140",
           "credit": "3 hours in Electrical Apprenticeship VII"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-SETC7-1-001",
@@ -187618,7 +190721,8 @@ window.CPL_STATEWIDE = {
           "course": "ELECT 141",
           "credit": "3 hours in Electrical Apprenticeship VIII"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-SETC8-1-001",
@@ -187678,7 +190782,8 @@ window.CPL_STATEWIDE = {
           "course": "ELECT 150",
           "credit": "3 hours in Electrical Apprenticeship IX"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-SETC9-1-001",
@@ -187738,7 +190843,8 @@ window.CPL_STATEWIDE = {
           "course": "ELECT 151",
           "credit": "3 hours in Electrical Apprenticeship X"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-SETC10-1-001",
@@ -187798,7 +190904,8 @@ window.CPL_STATEWIDE = {
           "course": "ELECT 298",
           "credit": "0.5 hours in Work Experience in Electricians Apprenticeship"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-FSMS-1-001",
@@ -187858,7 +190965,8 @@ window.CPL_STATEWIDE = {
           "course": "NF 11",
           "credit": "3 hours in Food Service Management Supervision"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-ITVC-1-001",
@@ -187917,7 +191025,8 @@ window.CPL_STATEWIDE = {
           "course": "MULT 100",
           "credit": "3 hours in Introduction to Visual Communication"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-ITA-1-001",
@@ -187976,7 +191085,8 @@ window.CPL_STATEWIDE = {
           "course": "ETECH 24",
           "credit": "3 hours in Introduction to AutoCAD"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-AA1-1-001|MAPPRA-AA2-1-001",
@@ -188036,7 +191146,8 @@ window.CPL_STATEWIDE = {
           "course": "ETECH 41",
           "credit": "3 hours in Advanced AutoCAD"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-SBHS-1-001",
@@ -188095,7 +191206,8 @@ window.CPL_STATEWIDE = {
           "course": "EGTECH 12",
           "credit": "4 hours in Principles of Engineering"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-SGHS-1-001|MAPCXH-UUSD1-1-001",
@@ -188156,7 +191268,8 @@ window.CPL_STATEWIDE = {
           "course": "EGTECH 12",
           "credit": "4 hours in Principles of Engineering"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-BVR-3-1-001|MAPCXH-BVR-4-1-001|MAPCXH-SBHS1-1-001|MAPCXH-SGHS1-1-001|MAPCXH-UUSD-1-001",
@@ -188222,7 +191335,8 @@ window.CPL_STATEWIDE = {
           "course": "EGTECH 10",
           "credit": "4 hours in Introduction to Engineering Design/Graphics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ED1-1-001",
@@ -188281,7 +191395,8 @@ window.CPL_STATEWIDE = {
           "course": "ENGR M04",
           "credit": "3 hours in Engineering Design/CAD"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ICAS-1-001|MAPICA-ICAS1-1-001",
@@ -188341,7 +191456,8 @@ window.CPL_STATEWIDE = {
           "course": "ETECH 131",
           "credit": "3 hours in Intermediate Creo and Solidworks"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ITEC-1-001",
@@ -188400,7 +191516,8 @@ window.CPL_STATEWIDE = {
           "course": "ETECH 31",
           "credit": "3 hours in Introduction to Electronic Circuit and Schematic Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-AA-1-001",
@@ -188459,7 +191576,8 @@ window.CPL_STATEWIDE = {
           "course": "ETECH 41",
           "credit": "3 hours in Advanced AutoCAD"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ADPA1-1-001",
@@ -188518,7 +191636,8 @@ window.CPL_STATEWIDE = {
           "course": "ETECH 61",
           "credit": "3 hours in Architecture/Green Design: Planning and Construction"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ADIU-1-001",
@@ -188577,7 +191696,8 @@ window.CPL_STATEWIDE = {
           "course": "ETECH 62",
           "credit": "3 hours in Architecture/Green Design: Implementation using AutoCAD"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-BASD-1-001",
@@ -188636,7 +191756,8 @@ window.CPL_STATEWIDE = {
           "course": "ETECH 75",
           "credit": "3 hours in BIM and Sustainable Design Strategies I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ITCA-1-001",
@@ -188695,7 +191816,8 @@ window.CPL_STATEWIDE = {
           "course": "ETECH 130",
           "credit": "3 hours in Introduction to Creo and Solidworks"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-3A-1-001",
@@ -188754,7 +191876,8 @@ window.CPL_STATEWIDE = {
           "course": "ETECH 40",
           "credit": "3 hours in 3D Animation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ADPA2-1-001",
@@ -188813,7 +191936,8 @@ window.CPL_STATEWIDE = {
           "course": "ETECH 60",
           "credit": "3 hours in Architecture/Green Design: Principles and Practices"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-I3A-1-001",
@@ -188872,7 +191996,8 @@ window.CPL_STATEWIDE = {
           "course": "ETECH 43",
           "credit": "3 hours in Intermediate 3D Animation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-ICAS-1-001",
@@ -188931,7 +192056,8 @@ window.CPL_STATEWIDE = {
           "course": "ETECH 131",
           "credit": "3 hours in Intermediate Creo and Solidworks"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-3A-1-001",
@@ -188990,7 +192116,8 @@ window.CPL_STATEWIDE = {
           "course": "ETECH 40",
           "credit": "3 hours in 3D Animation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-I3A-1-001",
@@ -189049,7 +192176,8 @@ window.CPL_STATEWIDE = {
           "course": "ETECH 43",
           "credit": "3 hours in Intermediate 3D Animation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRH-KCAP-1-001",
@@ -189108,7 +192236,8 @@ window.CPL_STATEWIDE = {
           "course": "KIN 106",
           "credit": "3 hours in Care and Prevention of Athletic Injuries"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A-0A-1-001",
@@ -189167,7 +192296,8 @@ window.CPL_STATEWIDE = {
           "course": "AGBUS 024",
           "credit": "3 hours in Agricultural Accounting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-EPOE-1-001",
@@ -189226,7 +192356,8 @@ window.CPL_STATEWIDE = {
           "course": "EGTECH 12",
           "credit": "4 hours in Principles of Engineering"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-SGHS2-1-001",
@@ -189285,7 +192416,8 @@ window.CPL_STATEWIDE = {
           "course": "EGTECH 12",
           "credit": "4 hours in Principles of Engineering"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-SGHS3-1-001",
@@ -189344,7 +192476,8 @@ window.CPL_STATEWIDE = {
           "course": "EGTECH 10",
           "credit": "4 hours in Introduction to Engineering Design/Graphics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-SBHS2-1-001",
@@ -189403,7 +192536,8 @@ window.CPL_STATEWIDE = {
           "course": "EGTECH 10",
           "credit": "4 hours in Introduction to Engineering Design/Graphics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-F1CB-1-001",
@@ -189461,7 +192595,8 @@ window.CPL_STATEWIDE = {
           "course": "FMT 100",
           "credit": "3.5 hours in Introduction to Facilities Maintenance"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-EJ-1-001|MAPCXS-EJ0-1-001",
@@ -189525,7 +192660,8 @@ window.CPL_STATEWIDE = {
           "course": "JPNS 01A",
           "credit": "2.5 hours in Elementary Japanese"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A1IA-1-001",
@@ -189583,7 +192719,8 @@ window.CPL_STATEWIDE = {
           "course": "AG 101",
           "credit": "2 hours in Leadership in Agriculture B"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A1IA-1-001",
@@ -189641,7 +192778,8 @@ window.CPL_STATEWIDE = {
           "course": "AG 101",
           "credit": "2 hours in Leadership in Agriculture B"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A1TA-1-001",
@@ -189699,7 +192837,8 @@ window.CPL_STATEWIDE = {
           "course": "AG 120",
           "credit": "2 hours in Introduction to Agriculture Education"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A1TA-1-001",
@@ -189757,7 +192896,8 @@ window.CPL_STATEWIDE = {
           "course": "AG 120",
           "credit": "2 hours in Introduction to Agriculture Education"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A1EE-1-001",
@@ -189815,7 +192955,8 @@ window.CPL_STATEWIDE = {
           "course": "AG 130",
           "credit": "2 hours in Agriculture Education Early Field Experience"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A1EE2-1-001",
@@ -189873,7 +193014,8 @@ window.CPL_STATEWIDE = {
           "course": "AG 130",
           "credit": "2 hours in Agriculture Education Early Field Experience"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2TA-1-001",
@@ -189931,7 +193073,8 @@ window.CPL_STATEWIDE = {
           "course": "AGEC 220",
           "credit": "3 hours in Introduction to Agribusiness Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A1EA-1-001",
@@ -189989,7 +193132,8 @@ window.CPL_STATEWIDE = {
           "course": "AGGE 146",
           "credit": "3 hours in Agriculture, Environment and Society"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A1PS-1-001",
@@ -190047,7 +193191,8 @@ window.CPL_STATEWIDE = {
           "course": "AGGE 150",
           "credit": "3 hours in Sustainable Production Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A3OA-1-001",
@@ -190105,7 +193250,8 @@ window.CPL_STATEWIDE = {
           "course": "AGGE 320",
           "credit": "1 hour in Evaluation of Agricultural Products"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2TA1-1-001",
@@ -190163,7 +193309,8 @@ window.CPL_STATEWIDE = {
           "course": "ANSC 200",
           "credit": "3 hours in Introduction to Animal Science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-A2TA-1-001",
@@ -190221,7 +193368,8 @@ window.CPL_STATEWIDE = {
           "course": "ANSC 200",
           "credit": "3 hours in Introduction to Animal Science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2TA-1-001",
@@ -190279,7 +193427,8 @@ window.CPL_STATEWIDE = {
           "course": "ANSC 200",
           "credit": "3 hours in Introduction to Animal Science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-A2WE-1-001",
@@ -190337,7 +193486,8 @@ window.CPL_STATEWIDE = {
           "course": "AG 259D",
           "credit": "4 hours in Agricultural Work Experience"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2WE-1-001",
@@ -190395,7 +193545,8 @@ window.CPL_STATEWIDE = {
           "course": "AG 259A",
           "credit": "1 hour in Agricultural Work Experience"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CSIL-1-001",
@@ -190453,7 +193604,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 054D",
           "credit": "4 hours in Smog Check Inspector Training, Level 1 & 2"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CSRL-1-001",
@@ -190511,7 +193663,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 054E",
           "credit": "3 hours in Smog Check Diagnostic & Repair Technician Training"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-AWC--1-001",
@@ -190569,7 +193722,8 @@ window.CPL_STATEWIDE = {
           "course": "MM 054",
           "credit": "3 hours in Welding Fundamentals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-HAWH1-1-001",
@@ -190627,7 +193781,8 @@ window.CPL_STATEWIDE = {
           "course": "HS 061",
           "credit": "6 hours in Nurse Assistant Training"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-LFAC-1-001",
@@ -190685,7 +193840,8 @@ window.CPL_STATEWIDE = {
           "course": "HS 061",
           "credit": "6 hours in Nurse Assistant Training"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A-0T-1-001",
@@ -190743,7 +193899,8 @@ window.CPL_STATEWIDE = {
           "course": "AG 014",
           "credit": "3 hours in Tractor Operations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-CBE--1-001",
@@ -190801,7 +193958,8 @@ window.CPL_STATEWIDE = {
           "course": "PTEC 010",
           "credit": "3 hours in Introduction to Process Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-AL-1-001|MAPICI-ASE(10-1-001|MAPICI-ASE(25-1-001|MAPICI-ASE(3-1-001|MAPICI-ITCA-1-001",
@@ -190902,7 +194060,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 043A",
           "credit": "3 hours in Intro to Hybrid, Electric & Fuel-Cell Vehicle Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-E2D--1-001",
@@ -190959,7 +194118,8 @@ window.CPL_STATEWIDE = {
           "course": "EHS 215",
           "credit": "3 hours in Landscape Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-E2D--1-001",
@@ -191016,7 +194176,8 @@ window.CPL_STATEWIDE = {
           "course": "EHS 215",
           "credit": "3 hours in Landscape Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A3CR-1-001",
@@ -191073,7 +194234,8 @@ window.CPL_STATEWIDE = {
           "course": "AUBDY 301",
           "credit": "4 hours in Automotive Collision Repair 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A3CR-1-001",
@@ -191130,7 +194292,8 @@ window.CPL_STATEWIDE = {
           "course": "AUBDY 301",
           "credit": "4 hours in Automotive Collision Repair 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEA11-1-001",
@@ -191187,7 +194350,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO L3",
           "credit": "4 hours in Light Duty Hybrid Electrical Vehicles"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-LDIC-1-001",
@@ -191244,7 +194408,8 @@ window.CPL_STATEWIDE = {
           "course": "Early Childhood Education (ECE) 017",
           "credit": "2 hours in Literacy Development in Children"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ICSN-1-001",
@@ -191301,7 +194466,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTOCOR 142",
           "credit": "9 hours in Advanced Collision Repair, Estimating, Refinish"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ICSN-1-001",
@@ -191358,7 +194524,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTOCOR 142",
           "credit": "9 hours in Advanced Collision Repair, Estimating, Refinish"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-IC+R3-1-001|MAPCXI-IC+R4-1-001|MAPCXI-IC+R5-1-001|MAPCXI-ICS+-1-001",
@@ -191431,7 +194598,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTOCOR 226",
           "credit": "3 hours in AUTOMOTIVE COLLISION REPAIR I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-IC+R3-1-001|MAPICI-IC+R4-1-001|MAPICI-IC+R5-1-001|MAPICI-ICS+-1-001",
@@ -191504,7 +194672,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTOCOR 226",
           "credit": "3 hours in AUTOMOTIVE COLLISION REPAIR I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-IC+R-1-001",
@@ -191561,7 +194730,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTOCOR 149",
           "credit": "3 hours in ESTIMATING BODY DAMAGE"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-IC+R-1-001",
@@ -191618,7 +194788,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTOCOR 149",
           "credit": "3 hours in ESTIMATING BODY DAMAGE"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-IC+R1-1-001|MAPCXI-IC+R2-1-001",
@@ -191680,7 +194851,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTOCOR 227",
           "credit": "3 hours in AUTO BODY AND FENDER II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-IC+R1-1-001|MAPICI-IC+R2-1-001",
@@ -191742,7 +194914,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTOCOR 227",
           "credit": "3 hours in AUTO BODY AND FENDER II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-LGA-1-001",
@@ -191799,7 +194972,8 @@ window.CPL_STATEWIDE = {
           "course": "IARC 55",
           "credit": "3 hours in Sustainable Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEF5-1-001",
@@ -191856,7 +195030,8 @@ window.CPL_STATEWIDE = {
           "course": "ASL 22",
           "credit": "2 hours in Fingerspelling/Numbers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-ITHA-1-001",
@@ -191913,7 +195088,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 028",
           "credit": "3 hours in Introduction to Hybrid and Electric Vehicle Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASE(37-1-001",
@@ -191978,7 +195154,8 @@ window.CPL_STATEWIDE = {
           "course": "AUTO 292",
           "credit": "3 hours in Heavy Duty Alternative Fuels"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ITID-1-001",
@@ -192035,7 +195212,8 @@ window.CPL_STATEWIDE = {
           "course": "ID 10",
           "credit": "3 hours in Introduction to Interior Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ADFI-1-001",
@@ -192092,7 +195270,8 @@ window.CPL_STATEWIDE = {
           "course": "ID 15",
           "credit": "3 hours in Architectural Drafting for Interior Designers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-L2TT-1-001",
@@ -192148,7 +195327,8 @@ window.CPL_STATEWIDE = {
           "course": "LOGST 203",
           "credit": "3 hours in Introduction to Transportation Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-L2TT-1-001",
@@ -192204,7 +195384,8 @@ window.CPL_STATEWIDE = {
           "course": "LOGST 203",
           "credit": "3 hours in Introduction to Transportation Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-L2TT-1-001",
@@ -192260,7 +195441,8 @@ window.CPL_STATEWIDE = {
           "course": "LOGST 203",
           "credit": "3 hours in Introduction to Transportation Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-L2TW-1-001",
@@ -192316,7 +195498,8 @@ window.CPL_STATEWIDE = {
           "course": "LOGST 205",
           "credit": "3 hours in Introduction to Warehouse Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-L2TW1-1-001",
@@ -192372,7 +195555,8 @@ window.CPL_STATEWIDE = {
           "course": "LOGST 205",
           "credit": "3 hours in Introduction to Warehouse Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-L2TW2-1-001",
@@ -192428,7 +195612,8 @@ window.CPL_STATEWIDE = {
           "course": "LOGST 205",
           "credit": "3 hours in Introduction to Warehouse Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-L2TP-1-001",
@@ -192484,7 +195669,8 @@ window.CPL_STATEWIDE = {
           "course": "LOGST 206",
           "credit": "3 hours in Introduction to Purchasing and Contracting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-L2TP-1-001",
@@ -192540,7 +195726,8 @@ window.CPL_STATEWIDE = {
           "course": "LOGST 206",
           "credit": "3 hours in Introduction to Purchasing and Contracting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-L2TP-1-001",
@@ -192596,7 +195783,8 @@ window.CPL_STATEWIDE = {
           "course": "LOGST 206",
           "credit": "3 hours in Introduction to Purchasing and Contracting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-L2TC-1-001",
@@ -192652,7 +195840,8 @@ window.CPL_STATEWIDE = {
           "course": "LOGST 207",
           "credit": "3 hours in Introduction to Customer Service"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-L2TC-1-001",
@@ -192708,7 +195897,8 @@ window.CPL_STATEWIDE = {
           "course": "LOGST 207",
           "credit": "3 hours in Introduction to Customer Service"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-L2TC-1-001",
@@ -192764,7 +195954,8 @@ window.CPL_STATEWIDE = {
           "course": "LOGST 207",
           "credit": "3 hours in Introduction to Customer Service"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-L2IT-1-001",
@@ -192820,7 +196011,8 @@ window.CPL_STATEWIDE = {
           "course": "LOGST 202",
           "credit": "3 hours in Introduction to Supply Chain Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-AVHS-1-001|MAPCXH-AVHS1-1-001",
@@ -192882,7 +196074,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSMGT 13",
           "credit": "3 hours in Supply Chain Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-CHSB-1-001",
@@ -192938,7 +196131,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSMGT 436",
           "credit": "3 hours in Introduction to Logistics Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-JHHB-1-001|MAPCXH-JHHS-1-001",
@@ -192999,7 +196193,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSMGT 14",
           "credit": "3 hours in Transportation Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-JHH--1-001|MAPCXH-JHH-1-1-001",
@@ -193057,7 +196252,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSMGT 14",
           "credit": "3 hours in Transportation Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-BVR--1-001",
@@ -193113,7 +196309,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSMGT 436",
           "credit": "3 hours in Introduction to Logistics Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-SAAD-1-001",
@@ -193169,7 +196366,8 @@ window.CPL_STATEWIDE = {
           "course": "CS  080",
           "credit": "3 hours in Systems Analysis and Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-BAH0-1-001",
@@ -193225,7 +196423,8 @@ window.CPL_STATEWIDE = {
           "course": "HS 081",
           "credit": "2 hours in Basic Arrhythmias"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-SCM-1-001",
@@ -193281,7 +196480,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSMGT 13",
           "credit": "3 hours in Supply Chain Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-WMAM-1-001",
@@ -193337,7 +196537,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSMGT 430",
           "credit": "3 hours in Warehouse Management and Material Handling"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ITLM-1-001",
@@ -193393,7 +196594,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSMGT 436",
           "credit": "3 hours in Introduction to Logistics Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-TM2-1-001",
@@ -193449,7 +196651,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSMGT 14",
           "credit": "3 hours in Transportation Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-BP&C-1-001",
@@ -193508,7 +196711,8 @@ window.CPL_STATEWIDE = {
           "course": "IET 422",
           "credit": "2 hours in OSHA Safety Training"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A1IV-1-001",
@@ -193563,7 +196767,8 @@ window.CPL_STATEWIDE = {
           "course": "ACCTG 19A",
           "credit": "1 hour in IRS Volunteer Income Tax Assistance (VITA) Program - Tax Preparer"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-MCWA-1-001",
@@ -193641,7 +196846,8 @@ window.CPL_STATEWIDE = {
           "course": "AVIM 121A",
           "credit": "1.5 hours in Applied Basic D.C. Electronics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-SCBP-1-001",
@@ -193695,7 +196901,8 @@ window.CPL_STATEWIDE = {
           "course": "CEM 162",
           "credit": "3 hours in Sustainable Construction, Building Performance, and the Environment"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-MOSA-1-001",
@@ -193749,7 +196956,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 62",
           "credit": "3 hours in MS Access DBMS: Comprehensive"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FCM-2-1-001",
@@ -193831,7 +197039,8 @@ window.CPL_STATEWIDE = {
           "course": "AMT 80",
           "credit": "6.5 hours in Aviation Maintenance Powerplant C"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-GECS-1-001",
@@ -193885,7 +197094,8 @@ window.CPL_STATEWIDE = {
           "course": "CEM 162SP",
           "credit": "3 hours in Solar Photovoltaic Design and Installation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CIWT-1-001",
@@ -193939,7 +197149,8 @@ window.CPL_STATEWIDE = {
           "course": "WTEC 049",
           "credit": "3 hours in Calculations in Water/Wastewater Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ITHM-1-001",
@@ -193993,7 +197204,8 @@ window.CPL_STATEWIDE = {
           "course": "HOSP M140",
           "credit": "3 hours in Introduction to Hotel Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ITHM-1-001",
@@ -194047,7 +197259,8 @@ window.CPL_STATEWIDE = {
           "course": "HOSP M140",
           "credit": "3 hours in Introduction to Hotel Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-W0-S-1-001",
@@ -194100,7 +197313,8 @@ window.CPL_STATEWIDE = {
           "course": "WST 061",
           "credit": "3 hours in Water Distribution I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-W0-S1-1-001",
@@ -194153,7 +197367,8 @@ window.CPL_STATEWIDE = {
           "course": "WST 071",
           "credit": "3 hours in Water Treatment I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-W0-W-1-001",
@@ -194206,7 +197421,8 @@ window.CPL_STATEWIDE = {
           "course": "WST 081",
           "credit": "3 hours in Wastewater Collection I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-W0-W1-1-001",
@@ -194259,7 +197475,8 @@ window.CPL_STATEWIDE = {
           "course": "WST 082",
           "credit": "3 hours in Wastewater Collection II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ATTT-1-001",
@@ -194312,7 +197529,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 132",
           "credit": "11 hours in Heavy Duty Transmissions, Brakes, and Suspension"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ATTT-1-001",
@@ -194365,7 +197583,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 132",
           "credit": "11 hours in Heavy Duty Transmissions, Brakes, and Suspension"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ACAO-1-001",
@@ -194418,7 +197637,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 301",
           "credit": "3 hours in INTRODUCTION TO ALTERNATIVE FUELS & HYBRID  VEHICLE TECHNOLO"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ALTS-1-001",
@@ -194471,7 +197691,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 142A",
           "credit": "4 hours in DIESEL ENGINE OVERHAUL"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ATTT1-1-001",
@@ -194524,7 +197745,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 122",
           "credit": "12 hours in DIESEL FUEL SYSTEMS AND ELECTRIC COMPONENT THEORY"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ACAO-1-001",
@@ -194577,7 +197799,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 301",
           "credit": "3 hours in INTRODUCTION TO ALTERNATIVE FUELS & HYBRID  VEHICLE TECHNOLO"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ALTS-1-001",
@@ -194630,7 +197853,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 142A",
           "credit": "4 hours in DIESEL ENGINE OVERHAUL"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ATTT1-1-001",
@@ -194683,7 +197907,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 122",
           "credit": "12 hours in DIESEL FUEL SYSTEMS AND ELECTRIC COMPONENT THEORY"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ATTT2-1-001",
@@ -194736,7 +197961,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 112",
           "credit": "12 hours in DIESEL ENGINE FUNDAMENTALS"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ATTT2-1-001",
@@ -194789,7 +198015,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 112",
           "credit": "12 hours in DIESEL ENGINE FUNDAMENTALS"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ATT+-1-001|MAPCXI-ATT+1-1-001",
@@ -194847,7 +198074,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 122A",
           "credit": "4 hours in DIESEL FUEL SYSTEMS AND ELECTRIC COMPONENT THEORY"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-V6IT-1-001",
@@ -194900,7 +198128,8 @@ window.CPL_STATEWIDE = {
           "course": "DETT 181",
           "credit": "5 hours in Introduction to Preventative Maintenance Inspection"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-ALTS-1-001",
@@ -194953,7 +198182,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 142A",
           "credit": "4 hours in DIESEL ENGINE OVERHAUL"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ATT+-1-001|MAPICI-ATT+1-1-001",
@@ -195011,7 +198241,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 122A",
           "credit": "4 hours in DIESEL FUEL SYSTEMS AND ELECTRIC COMPONENT THEORY"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ATTS-1-001",
@@ -195064,7 +198295,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 132A",
           "credit": "4 hours in HEAVY DUTY DRIVE TRAIN FUNDAMENTALS"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ATTS-1-001",
@@ -195117,7 +198349,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 132A",
           "credit": "4 hours in HEAVY DUTY DRIVE TRAIN FUNDAMENTALS"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ATTS1-1-001",
@@ -195170,7 +198403,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 132B",
           "credit": "4 hours in Air Brake Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ATTS1-1-001",
@@ -195223,7 +198457,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 132A",
           "credit": "4 hours in HEAVY DUTY DRIVE TRAIN FUNDAMENTALS"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ATTS2-1-001",
@@ -195276,7 +198511,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 132C",
           "credit": "4 hours in Heavy Duty Suspension and Steering Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ATTS2-1-001",
@@ -195329,7 +198565,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 132C",
           "credit": "4 hours in Heavy Duty Suspension and Steering Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ATT+2-1-001",
@@ -195382,7 +198619,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 122B",
           "credit": "4 hours in DIESEL FUEL SYSTEMS AND ELECTRIC COMPONENT THEORY"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ATT+2-1-001",
@@ -195435,7 +198673,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 122B",
           "credit": "4 hours in DIESEL FUEL SYSTEMS AND ELECTRIC COMPONENT THEORY"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ATLC-1-001",
@@ -195488,7 +198727,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 142B",
           "credit": "4 hours in Electronic Engine Controls"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ATLC-1-001",
@@ -195541,7 +198781,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 142B",
           "credit": "4 hours in Electronic Engine Controls"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-ATT+-1-001",
@@ -195594,7 +198835,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 122B",
           "credit": "4 hours in DIESEL FUEL SYSTEMS AND ELECTRIC COMPONENT THEORY"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ATTS3-1-001",
@@ -195647,7 +198889,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 112C",
           "credit": "4 hours in Heavy Duty Electrical Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ATTS3-1-001",
@@ -195700,7 +198943,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 112C",
           "credit": "4 hours in Heavy Duty Electrical Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-AT+R-1-001",
@@ -195753,7 +198997,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 112A",
           "credit": "4 hours in DIESEL ENGINE FUNDAMENTALS"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-ATTM-1-001",
@@ -195806,7 +199051,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 122C",
           "credit": "4 hours in Heavy Duty Heating, Ventilation, and Air Conditioning (HVAC)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ATTM-1-001",
@@ -195859,7 +199105,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 122C",
           "credit": "4 hours in Heavy Duty Heating, Ventilation, and Air Conditioning (HVAC)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-CCTC-1-001",
@@ -195912,7 +199159,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 142C",
           "credit": "4 hours in Heavy Duty Emissions Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CCTC-1-001",
@@ -195965,7 +199213,8 @@ window.CPL_STATEWIDE = {
           "course": "DIESLTK 142C",
           "credit": "4 hours in Heavy Duty Emissions Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEI3-1-001",
@@ -196018,7 +199267,8 @@ window.CPL_STATEWIDE = {
           "course": "DM V11",
           "credit": "4 hours in Introduction to Heavy-Duty Diesel Repair"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEF1-1-001",
@@ -196071,7 +199321,8 @@ window.CPL_STATEWIDE = {
           "course": "DM V28",
           "credit": "4 hours in Diesel Fuel Management Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-W0-W2-1-001",
@@ -196124,7 +199375,8 @@ window.CPL_STATEWIDE = {
           "course": "WST 072",
           "credit": "3 hours in Water Treatment II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBED6-1-001",
@@ -196177,7 +199429,8 @@ window.CPL_STATEWIDE = {
           "course": "DM V26",
           "credit": "4 hours in Diesel Engines"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-W0-I-1-001",
@@ -196230,7 +199483,8 @@ window.CPL_STATEWIDE = {
           "course": "WST 034",
           "credit": "3 hours in Introduction to Water Resource Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEW1-1-001",
@@ -196283,7 +199537,8 @@ window.CPL_STATEWIDE = {
           "course": "WWT 100",
           "credit": "3 hours in Calculations in Water-Wastewater Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEW2-1-001",
@@ -196336,7 +199591,8 @@ window.CPL_STATEWIDE = {
           "course": "WWT 102",
           "credit": "3 hours in Introduction to Electrical and Instrumentation Processes"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEW3-1-001",
@@ -196389,7 +199645,8 @@ window.CPL_STATEWIDE = {
           "course": "WWT 103",
           "credit": "3 hours in Basic Plant Operations - Water Treatment"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEW4-1-001",
@@ -196442,7 +199699,8 @@ window.CPL_STATEWIDE = {
           "course": "WWT 104",
           "credit": "3 hours in Basic Plant Operations - Wastewater Treatment"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEW5-1-001",
@@ -196495,7 +199753,8 @@ window.CPL_STATEWIDE = {
           "course": "WWT 105",
           "credit": "3 hours in Water Distribution Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBEW6-1-001",
@@ -196548,7 +199807,8 @@ window.CPL_STATEWIDE = {
           "course": "WWT 106",
           "credit": "3 hours in Wastewater Collection Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASE81-1-001",
@@ -196601,7 +199861,8 @@ window.CPL_STATEWIDE = {
           "course": "DETT 181",
           "credit": "5 hours in Introduction to Preventative Maintenance Inspection"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-HSA-7-1-001",
@@ -196653,7 +199914,8 @@ window.CPL_STATEWIDE = {
           "course": "ART 201",
           "credit": "3 hours in Drawing I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-VBS-1-001",
@@ -196705,7 +199967,8 @@ window.CPL_STATEWIDE = {
           "course": "FDM 105A",
           "credit": "3 hours in Beginning Sewing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOH-FHST-1-001",
@@ -196757,7 +200020,8 @@ window.CPL_STATEWIDE = {
           "course": "FILM 101",
           "credit": "3 hours in Introduction to Film Production"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-PR-B-1-001",
@@ -196821,7 +200085,8 @@ window.CPL_STATEWIDE = {
           "course": "AERO 051L",
           "credit": "2 hours in Gen Lab/Materials and Servicing Airframe and Powerplant Tech"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FRA-1-001",
@@ -196873,7 +200138,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 150",
           "credit": "1 hour in Hazardous Materials First Responder Operational Level"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFHM-1-001",
@@ -196925,7 +200191,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 266",
           "credit": "0.25 hours in HazMat Emergency Response:First Responder Operations-Decontamination"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ACDA-1-001",
@@ -196977,7 +200244,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 023B",
           "credit": "2 hours in Developing Using AWS Cloud Services"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-S4SM-1-001",
@@ -197029,7 +200297,8 @@ window.CPL_STATEWIDE = {
           "course": "SMM 4",
           "credit": "3 hours in Sustainable Materials Management and Zero Waste in Business"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-S2CA-1-001",
@@ -197081,7 +200350,8 @@ window.CPL_STATEWIDE = {
           "course": "SMM 2",
           "credit": "3 hours in Culture and Zero Waste"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-F1SA-1-001|MAPICI-FAAA-1-001|MAPICI-FCM--1-001|MAPICI-FMCW-1-001",
@@ -197333,7 +200603,8 @@ window.CPL_STATEWIDE = {
           "course": "AMT 50",
           "credit": "6.5 hours in Aviation Maintenance Airframe C"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FAAP-1-001|MAPICI-FCM-1-1-001|MAPICI-FMWP-1-001|MAPICI-FP1S-1-001",
@@ -197593,7 +200864,8 @@ window.CPL_STATEWIDE = {
           "course": "AMT 80",
           "credit": "6.5 hours in Aviation Maintenance Powerplant C"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-I0-1-002|MAPICI-I0-F-1-001",
@@ -197645,7 +200917,8 @@ window.CPL_STATEWIDE = {
           "course": "INSPEC 012",
           "credit": "3 hours in Fundamentals of Construction Inspection: Wood, Steel, Masonry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-I0-A-1-001",
@@ -197696,7 +200969,8 @@ window.CPL_STATEWIDE = {
           "course": "INSPEC 013",
           "credit": "3 hours in Advanced Construction Inspection: International Building Code (IBC)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-I0-N-1-001",
@@ -197747,7 +201021,8 @@ window.CPL_STATEWIDE = {
           "course": "INSPEC 026",
           "credit": "3 hours in Non-Structural Plan Review"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-I0-C1-1-001",
@@ -197798,7 +201073,8 @@ window.CPL_STATEWIDE = {
           "course": "INSPEC 028",
           "credit": "3 hours in California Residential Code"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-I0-A1-1-001",
@@ -197849,7 +201125,8 @@ window.CPL_STATEWIDE = {
           "course": "INSPEC 030",
           "credit": "3 hours in Aspects of Building and Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-I0-A-1-001",
@@ -197900,7 +201177,8 @@ window.CPL_STATEWIDE = {
           "course": "INSPEC 015",
           "credit": "3 hours in Advanced Construction Inspection: Uniform Plumbing Code (UPC)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-I0-A-1-001",
@@ -197951,7 +201229,8 @@ window.CPL_STATEWIDE = {
           "course": "INSPEC 013",
           "credit": "3 hours in Advanced Construction Inspection: International Building Code (IBC)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-I0-N-1-001",
@@ -198002,7 +201281,8 @@ window.CPL_STATEWIDE = {
           "course": "INSPEC 026",
           "credit": "3 hours in Non-Structural Plan Review"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-I0-S-1-001",
@@ -198053,7 +201333,8 @@ window.CPL_STATEWIDE = {
           "course": "INSPEC 027",
           "credit": "3 hours in Structural Plan Review"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-P0-P3-1-001",
@@ -198104,7 +201385,8 @@ window.CPL_STATEWIDE = {
           "course": "PHT 074",
           "credit": "2 hours in Pharmacy Seminar"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-P0-P4-1-001",
@@ -198155,7 +201437,8 @@ window.CPL_STATEWIDE = {
           "course": "PHT 072",
           "credit": "5 hours in Pharmacy Clinical Experience"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-VITP-1-001",
@@ -198206,7 +201489,8 @@ window.CPL_STATEWIDE = {
           "course": "PHAR 048",
           "credit": "2 hours in Introduction to Pharmacy Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOH-AHST-1-001",
@@ -198257,7 +201541,8 @@ window.CPL_STATEWIDE = {
           "course": "ASTR 110",
           "credit": "3 hours in Descriptive Astronomy"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-AIPE-1-001",
@@ -198308,7 +201593,8 @@ window.CPL_STATEWIDE = {
           "course": "AI 1",
           "credit": "3 hours in Artificial Intelligence: Prompt Engineering and AI Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-I0-C-1-001",
@@ -198359,7 +201645,8 @@ window.CPL_STATEWIDE = {
           "course": "INSPEC 017",
           "credit": "3 hours in California State Energy Regulations for Residential Buildings"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBES5-1-001",
@@ -198410,7 +201697,8 @@ window.CPL_STATEWIDE = {
           "course": "ASTRON 26",
           "credit": "3 hours in Stars and Galaxies"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEL-1-001",
@@ -198461,7 +201749,8 @@ window.CPL_STATEWIDE = {
           "course": "ASTRON 27",
           "credit": "3 hours in Life in the Universe"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEL1-1-001",
@@ -198512,7 +201801,8 @@ window.CPL_STATEWIDE = {
           "course": "ASTRON 27L",
           "credit": "1 hour in Life in the Universe Laboratory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEP7-1-001",
@@ -198563,7 +201853,8 @@ window.CPL_STATEWIDE = {
           "course": "ASTRON 35",
           "credit": "4 hours in Planets and the Solar System With Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-I0-C1-1-001",
@@ -198614,7 +201905,8 @@ window.CPL_STATEWIDE = {
           "course": "INSPEC 029",
           "credit": "3 hours in Community Relations for Building Personnel"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOA-PTAP-1-001",
@@ -198689,7 +201981,8 @@ window.CPL_STATEWIDE = {
           "course": "PHT 074",
           "credit": "2 hours in Pharmacy Seminar"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CBI1-1-001",
@@ -198743,6 +202036,16 @@ window.CPL_STATEWIDE = {
         {
           "course": "CEM 167A",
           "credit": "3 hours in International Building Code II Non-Structural"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in International Building Code I Structural",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in International Building Code II Non-Structural",
+          "cid": ""
         }
       ]
     },
@@ -198803,7 +202106,8 @@ window.CPL_STATEWIDE = {
           "course": "INSPEC 030",
           "credit": "3 hours in Aspects of Building and Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-BPE-1-001",
@@ -198857,6 +202161,16 @@ window.CPL_STATEWIDE = {
         {
           "course": "CEM 167A",
           "credit": "3 hours in International Building Code II Non-Structural"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in International Building Code I Structural",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in International Building Code II Non-Structural",
+          "cid": ""
         }
       ]
     },
@@ -198912,6 +202226,16 @@ window.CPL_STATEWIDE = {
         {
           "course": "CEM 167A",
           "credit": "3 hours in International Building Code II Non-Structural"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in International Building Code I Structural",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in International Building Code II Non-Structural",
+          "cid": ""
         }
       ]
     },
@@ -199146,7 +202470,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 5",
           "credit": "3 hours in Natural Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEH-DM-1-001",
@@ -199197,7 +202522,8 @@ window.CPL_STATEWIDE = {
           "course": "ARTG 125",
           "credit": "3 hours in Digital Media"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ODS(-1-001",
@@ -199247,7 +202573,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 064B",
           "credit": "4.5 hours in Introduction to SQL"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ODP(-1-001",
@@ -199297,7 +202624,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 064C",
           "credit": "4.5 hours in Introduction to PL/SQL"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-C1F1-1-001",
@@ -199347,7 +202675,8 @@ window.CPL_STATEWIDE = {
           "course": "COLSK 100",
           "credit": "3 hours in Foundation for First Year College Success"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-DV-1-001",
@@ -199397,7 +202726,8 @@ window.CPL_STATEWIDE = {
           "course": "CIS 172 C",
           "credit": "3 hours in Data Visualization"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FT1-1-001",
@@ -199447,7 +202777,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE 255",
           "credit": "1.5 hours in Wildland Fire Fighting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CFSI-1-001",
@@ -199497,7 +202828,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 272",
           "credit": "1.75 hours in S-290: Intermediate Wildland Fire Behavior"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-WFC-1-001",
@@ -199547,7 +202879,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRETEC 10",
           "credit": "3 hours in Wildland Fire Control"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-NWCG-1-001",
@@ -199597,7 +202930,8 @@ window.CPL_STATEWIDE = {
           "course": "FST 148",
           "credit": "0.25 hours in S-190: Introduction to Wildland Fire Behavior"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-SDSA-1-001",
@@ -199647,7 +202981,8 @@ window.CPL_STATEWIDE = {
           "course": "FAC 079A",
           "credit": "1 hour in S-339 Division/Group Supervisor- ALL RISK"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-NIAI-1-001",
@@ -199697,7 +203032,8 @@ window.CPL_STATEWIDE = {
           "course": "FOT 150E",
           "credit": "1.5 hours in Company Officer 2E: Wildland Incident Operations for Company"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-ACI-1-001",
@@ -199746,7 +203082,8 @@ window.CPL_STATEWIDE = {
           "course": "FASH 130",
           "credit": "3 hours in Apparel Construction I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-ACIL-1-001",
@@ -199795,7 +203132,8 @@ window.CPL_STATEWIDE = {
           "course": "FASH 130L",
           "credit": "1 hour in Apparel Construction I Laboratory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2S--1-001",
@@ -199844,7 +203182,8 @@ window.CPL_STATEWIDE = {
           "course": "ANSC 230",
           "credit": "3 hours in Poultry Science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-A2S--1-001",
@@ -199893,7 +203232,8 @@ window.CPL_STATEWIDE = {
           "course": "ANSC 230",
           "credit": "3 hours in Poultry Science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2S--1-001",
@@ -199942,7 +203282,8 @@ window.CPL_STATEWIDE = {
           "course": "ANSC 230",
           "credit": "3 hours in Poultry Science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A5TV-1-001",
@@ -199991,7 +203332,8 @@ window.CPL_STATEWIDE = {
           "course": "ANSC 55",
           "credit": "3 hours in Introduction to Veterinary Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-A5TV-1-001",
@@ -200040,7 +203382,8 @@ window.CPL_STATEWIDE = {
           "course": "ANSC 55",
           "credit": "3 hours in Introduction to Veterinary Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A5TV-1-001",
@@ -200089,7 +203432,8 @@ window.CPL_STATEWIDE = {
           "course": "ANSC 55",
           "credit": "3 hours in Introduction to Veterinary Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-BWF-1-001",
@@ -200138,7 +203482,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE 190",
           "credit": "6 hours in Basic Wildland Firefighter"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-WFC-1-001",
@@ -200187,7 +203532,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE 7",
           "credit": "3 hours in Wildland Fire Control"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-WFC-1-001",
@@ -200236,7 +203582,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE 112",
           "credit": "0.5 hours in Wildland Fire Chainsaws"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-TCBF-1-001",
@@ -200285,7 +203632,8 @@ window.CPL_STATEWIDE = {
           "course": "NUTR 071A",
           "credit": "2 hours in Rotations in Supervised Practice, Level A"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-WFBF-1-001",
@@ -200334,7 +203682,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE  WFT 101",
           "credit": "3 hours in Wildland Fire Behavior"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-WFS&-1-001",
@@ -200383,7 +203732,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE  WFT 102",
           "credit": "3 hours in Wildland Firefighter Safety & Survival"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-WFOF-1-001",
@@ -200432,7 +203782,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE  WFT 103",
           "credit": "3 hours in Wildland Fire Operations"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-WFIP-1-001",
@@ -200481,7 +203832,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE  WFT 104",
           "credit": "3 hours in Wildland Fire Investigation, Prevention, and Public Information"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-WFLF-1-001",
@@ -200530,7 +203882,8 @@ window.CPL_STATEWIDE = {
           "course": "FIRE  WFT 105",
           "credit": "3 hours in Wildland Fire Logistics, Finance, and Planning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-AH-1-001",
@@ -200579,7 +203932,8 @@ window.CPL_STATEWIDE = {
           "course": "ANSC 258",
           "credit": "3 hours in Horsemanship"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-ITM-1-001",
@@ -200628,7 +203982,8 @@ window.CPL_STATEWIDE = {
           "course": "ELEC 10",
           "credit": "2 hours in Intro to Mechatronics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-SODF-1-001",
@@ -200676,7 +204031,8 @@ window.CPL_STATEWIDE = {
           "course": "ART 95A",
           "credit": "3 hours in Survey of Digital Fabrication for Studio Arts"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-BDFF-1-001",
@@ -200724,7 +204080,8 @@ window.CPL_STATEWIDE = {
           "course": "ART 95B",
           "credit": "3 hours in Beginning Digital Fabrication for Studio Arts"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2TM-1-001",
@@ -200772,7 +204129,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 200",
           "credit": "3 hours in Introduction to Mechanical Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2TM-1-001",
@@ -200820,7 +204178,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 200",
           "credit": "3 hours in Introduction to Mechanical Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2W--1-001",
@@ -200868,7 +204227,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 210",
           "credit": "3 hours in Agricultural Welding"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2W--1-001",
@@ -200916,7 +204276,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 210",
           "credit": "3 hours in Agricultural Welding"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2AW-1-001",
@@ -200964,7 +204325,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 211",
           "credit": "3 hours in Advanced Agricultural Welding"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2AW-1-001",
@@ -201012,7 +204374,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 211",
           "credit": "3 hours in Advanced Agricultural Welding"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2SD-1-001",
@@ -201060,7 +204423,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 212",
           "credit": "3 hours in Mechanical Systems Design & Evaluation 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2SD1-1-001",
@@ -201108,7 +204472,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 213",
           "credit": "3 hours in Mechanical Systems Design & Evaluation 2"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2SA-1-001",
@@ -201156,7 +204521,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 214",
           "credit": "1 hour in Equipment Service and Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2SA-1-001",
@@ -201204,7 +204570,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 214",
           "credit": "1 hour in Equipment Service and Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2M--1-001",
@@ -201252,7 +204619,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 215",
           "credit": "3 hours in Machinery Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2D&-1-001",
@@ -201300,7 +204668,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 221",
           "credit": "3 hours in Equipment Diagnosis & Repair"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2AD-1-001",
@@ -201348,7 +204717,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 235",
           "credit": "3 hours in Irrigation and Drainage"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2AD-1-001",
@@ -201396,7 +204766,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 235",
           "credit": "3 hours in Irrigation and Drainage"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2IA-1-001",
@@ -201444,7 +204815,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 236",
           "credit": "3 hours in Advanced Irrigation and Drainage"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2WP-1-001",
@@ -201492,7 +204864,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 237",
           "credit": "3 hours in Irrigation Wells, Pumps, and Drive Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2WP-1-001",
@@ -201540,7 +204913,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 237",
           "credit": "3 hours in Irrigation Wells, Pumps, and Drive Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2SD2-1-001",
@@ -201588,7 +204962,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 238",
           "credit": "3 hours in Irrigation System Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2SI-1-001",
@@ -201636,7 +205011,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 239",
           "credit": "3 hours in Irrigation System Installation and Maintenance"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2AT-1-001",
@@ -201684,7 +205060,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 240",
           "credit": "3 hours in Truck and Tractor Power Trains"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2EP-1-001",
@@ -201732,7 +205109,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 241",
           "credit": "3 hours in Diesel Engine Principles"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2EP-1-001",
@@ -201780,7 +205158,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 241",
           "credit": "3 hours in Diesel Engine Principles"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2EO1-1-001",
@@ -201828,7 +205207,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 242",
           "credit": "3 hours in Diesel Engine Overhaul"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2ME-1-001",
@@ -201876,7 +205256,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 243",
           "credit": "3 hours in Heavy Machinery Electrical Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2EF-1-001",
@@ -201924,7 +205305,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 245",
           "credit": "3 hours in Diesel Engine Fuel Systems & Diagnosis"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2CA1-1-001",
@@ -201972,7 +205354,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 251",
           "credit": "3 hours in Farm Construction and Materials"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2-C-1-001",
@@ -202020,7 +205403,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 262",
           "credit": "3 hours in Hydraulics/Pneumatics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2-I-1-001",
@@ -202068,7 +205452,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 262",
           "credit": "3 hours in Hydraulics/Pneumatics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2MH-1-001",
@@ -202116,7 +205501,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 280",
           "credit": "3 hours in Mobile Machinery Hydraulic Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2OP-1-001",
@@ -202164,7 +205550,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 289",
           "credit": "3 hours in Principles of Power Mechanics/Small Engines"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A5FM-1-001",
@@ -202212,7 +205599,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 50",
           "credit": "3 hours in Preparation for Mechanical Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A5FM-1-001",
@@ -202260,7 +205648,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 50",
           "credit": "3 hours in Preparation for Mechanical Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-A2IA-1-001",
@@ -202308,7 +205697,8 @@ window.CPL_STATEWIDE = {
           "course": "AG 200",
           "credit": "2 hours in Supervision In Agriculture Equipment Operation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-A2AA-1-001",
@@ -202356,7 +205746,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 211",
           "credit": "3 hours in Advanced Agricultural Welding"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXN-VITT-1-001",
@@ -202404,7 +205795,8 @@ window.CPL_STATEWIDE = {
           "course": "FDM 100",
           "credit": "3 hours in Introduction to the Fashion Industry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-IFDM-1-001",
@@ -202452,7 +205844,8 @@ window.CPL_STATEWIDE = {
           "course": "FDM 100",
           "credit": "3 hours in Introduction to the Fashion Industry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-PARA-1-001",
@@ -202500,7 +205893,8 @@ window.CPL_STATEWIDE = {
           "course": "AMT 29A",
           "credit": "12 hours in Powerplant: Aircraft Reciprocating and Turbine Engines"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-PARA1-1-001",
@@ -202548,7 +205942,8 @@ window.CPL_STATEWIDE = {
           "course": "AMT 29B",
           "credit": "7.5 hours in Powerplant: Aircraft Reciprocating and Turbine Engines Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ASPA-1-001|MAPCXS-ASPA1-1-001|MAPCXS-ASPA2-1-001",
@@ -202598,7 +205993,8 @@ window.CPL_STATEWIDE = {
           "course": "AMT 39B",
           "credit": "7.5 hours in Airframe Structures: Primary and Secondary Systems Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-HF-1-001",
@@ -202646,7 +206042,8 @@ window.CPL_STATEWIDE = {
           "course": "IETELMT 430",
           "credit": "2 hours in Hydraulic Fundamentals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ECOH-1-001",
@@ -202694,7 +206091,8 @@ window.CPL_STATEWIDE = {
           "course": "IETELMT 432",
           "credit": "2 hours in Electrical Control of Hydraulic Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-PF1-1-001",
@@ -202742,7 +206140,8 @@ window.CPL_STATEWIDE = {
           "course": "IETELMT 436",
           "credit": "2 hours in Pneumatics Fundamentals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ECOP-1-001",
@@ -202790,7 +206189,8 @@ window.CPL_STATEWIDE = {
           "course": "IETELMT 438",
           "credit": "2 hours in Electrical Control of Pneumatic Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-JCAC7-1-001",
@@ -202934,7 +206334,8 @@ window.CPL_STATEWIDE = {
           "course": "ACPD 023",
           "credit": "1.5 hours in Tool Equipment Applications"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-JCAC8-1-001",
@@ -203078,7 +206479,8 @@ window.CPL_STATEWIDE = {
           "course": "ACPD 023",
           "credit": "1.5 hours in Tool Equipment Applications"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-PHAW-1-001",
@@ -203125,7 +206527,8 @@ window.CPL_STATEWIDE = {
           "course": "HED M07",
           "credit": "3 hours in Personal Health and Wellness"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-H1AN-1-001",
@@ -203172,7 +206575,8 @@ window.CPL_STATEWIDE = {
           "course": "HE 118",
           "credit": "3 hours in Exercise and Nutrition for Healthy Living"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-H1EO-1-001",
@@ -203219,7 +206623,8 @@ window.CPL_STATEWIDE = {
           "course": "HE 105",
           "credit": "3 hours in Exploration of Health Professions"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-H1EO-1-001",
@@ -203266,7 +206671,8 @@ window.CPL_STATEWIDE = {
           "course": "HE 105",
           "credit": "3 hours in Exploration of Health Professions"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-FL-1-001",
@@ -203313,7 +206719,8 @@ window.CPL_STATEWIDE = {
           "course": "ETNTLGY 161",
           "credit": "3 hours in F.C.C. RADIO OPERATOR LICENSE"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FL-1-001",
@@ -203360,7 +206767,8 @@ window.CPL_STATEWIDE = {
           "course": "ETNTLGY 161",
           "credit": "3 hours in F.C.C. RADIO OPERATOR LICENSE"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CFEC-1-001",
@@ -203407,7 +206815,8 @@ window.CPL_STATEWIDE = {
           "course": "CNST 050",
           "credit": "3 hours in Construction Framing Essentials"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-FCC0-1-001",
@@ -203454,7 +206863,8 @@ window.CPL_STATEWIDE = {
           "course": "CNST 080",
           "credit": "3 hours in Finish Carpentry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-PACH-1-001",
@@ -203501,7 +206911,8 @@ window.CPL_STATEWIDE = {
           "course": "HS 001",
           "credit": "3 hours in Personal and Community Health"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-JCAC3-1-001",
@@ -203620,7 +207031,8 @@ window.CPL_STATEWIDE = {
           "course": "AMF 030",
           "credit": "2.5 hours in Crew Lead Customer Service Training"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-JCAC4-1-001",
@@ -203739,7 +207151,8 @@ window.CPL_STATEWIDE = {
           "course": "AMF 030",
           "credit": "2.5 hours in Crew Lead Customer Service Training"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-CAC-1-001",
@@ -203785,7 +207198,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 461A",
           "credit": "1.5 hours in Acoustical Ceilings"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-SAG-1-001",
@@ -203831,7 +207245,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 462",
           "credit": "1.5 hours in Standard Acoustical Grids"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-SC-1-001",
@@ -203877,7 +207292,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 463",
           "credit": "1.5 hours in Suspended Ceilings"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-AS-1-001",
@@ -203923,7 +207339,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 464",
           "credit": "1.5 hours in Acoustical Soffits"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-CS-1-001",
@@ -203969,7 +207386,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 466",
           "credit": "1.5 hours in Concealed/Glue-Up/Staple-Up"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-DAST-1-001",
@@ -204015,7 +207433,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 467",
           "credit": "1.5 hours in Designer and Specialty Trims"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-MPAS-1-001",
@@ -204061,7 +207480,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 468",
           "credit": "1.5 hours in Metal Pan and Security Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-O-PT-1-001",
@@ -204107,7 +207527,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 471A",
           "credit": "2 hours in Orientation-Power Tools Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-SAHC-1-001",
@@ -204153,7 +207574,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 471B",
           "credit": "2 hours in Safety Health Cert - Scaffold"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-TA-F-1-001",
@@ -204199,7 +207621,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 471C",
           "credit": "1.5 hours in Tool Eqmt App - Fall Protect"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-PR-S-1-001",
@@ -204245,7 +207668,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 474A",
           "credit": "2 hours in Print Reading - Specifications"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-DAAC-1-001",
@@ -204291,7 +207715,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 479A",
           "credit": "1.5 hours in Drywall and Acoustical"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-AACL-1-001",
@@ -204337,7 +207762,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 461B",
           "credit": "1.5 hours in Adv Acoustical Ceiling Layout"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-AACI-1-001",
@@ -204383,7 +207809,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 461C",
           "credit": "1.5 hours in AACI"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-PP-1-001",
@@ -204429,7 +207856,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 465",
           "credit": "1.5 hours in Prefab/Sound Panels"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-BMF-1-001",
@@ -204475,7 +207903,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 472A",
           "credit": "1.5 hours in Basic Metal Framing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-FCAA-1-001",
@@ -204521,7 +207950,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 473C",
           "credit": "1.5 hours in Framing Curves and Arches"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-DADF-1-001",
@@ -204567,7 +207997,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 483",
           "credit": "1.5 hours in Door&Door Frames(Layout&Frame)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-PR-S1-1-001",
@@ -204613,7 +208044,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 404C",
           "credit": "2 hours in Print Reading - Symbols"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-O-HT-1-001",
@@ -204659,7 +208091,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 421A",
           "credit": "2 hours in Orientation-Hand Tools Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-BOFA-1-001",
@@ -204705,7 +208138,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 421B",
           "credit": "2 hours in Safety Health-Hnd&Pwr Tls App"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-TA-E-1-001",
@@ -204751,7 +208185,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 421E",
           "credit": "1.5 hours in Tool Eqmnt App - ER Resp Pro"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-FAF-1-001",
@@ -204797,7 +208232,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 425A",
           "credit": "1.5 hours in Foundations and Flatwork"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-BOFA1-1-001",
@@ -204843,7 +208279,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 426A",
           "credit": "1.5 hours in Tilt-Up Panel Construction"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-WF-1-001",
@@ -204889,7 +208326,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 426B",
           "credit": "1.5 hours in Wall Forming"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-GF-1-001",
@@ -204935,7 +208373,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 426C",
           "credit": "1.5 hours in Gang Forms/Columns"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-A1-1-001",
@@ -204981,7 +208420,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 426D",
           "credit": "1.5 hours in Abutments"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-BADF-1-001",
@@ -205027,7 +208467,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 427C",
           "credit": "1.5 hours in Beam and Deck Forming"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-SARF-1-001",
@@ -205073,7 +208514,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 427D",
           "credit": "1.5 hours in Stairs and Ramp Forming"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-BC-1-001",
@@ -205119,7 +208561,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 428A",
           "credit": "1.5 hours in Bridge Construction"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-BWF-1-001",
@@ -205165,7 +208608,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 421C",
           "credit": "1.5 hours in Basic Wall Framing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-CFF-1-001",
@@ -205211,7 +208655,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 422A",
           "credit": "1.5 hours in Commercial Floor Framing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-BRF-1-001",
@@ -205257,7 +208702,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 423B",
           "credit": "1.5 hours in Basic Roof Framing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-BCF-1-001",
@@ -205303,7 +208749,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 424A",
           "credit": "1.5 hours in Basic Commercial Framing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-TL-1-001",
@@ -205349,7 +208796,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 424D",
           "credit": "2 hours in Transit Level/Laser"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-APR--1-001",
@@ -205395,7 +208843,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 425D",
           "credit": "1.5 hours in Ad Print Reading-Digital Plng"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-BF-1-001",
@@ -205441,7 +208890,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 428E",
           "credit": "1 hour in Bridge Falsework"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-R-1-001",
@@ -205487,7 +208937,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 429A",
           "credit": "1.5 hours in Rigging"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-SIL1-1-001",
@@ -205533,7 +208984,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 429C",
           "credit": "1 hour in Solar Installer Level 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-WTF-1-001",
@@ -205579,7 +209031,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 495",
           "credit": "1.5 hours in Water Treatment Facilities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-DIT-1-001",
@@ -205625,7 +209078,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 477A",
           "credit": "1.5 hours in Drywall Installation/Finish"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-WWF-1-001",
@@ -205671,7 +209125,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 478C",
           "credit": "1.5 hours in Wet Wall Finishes"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-CASF-1-001",
@@ -205717,7 +209172,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 478D",
           "credit": "1.5 hours in Ceiling and Soffit Finishing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-SFP-1-001",
@@ -205763,7 +209219,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 482B",
           "credit": "1 hour in S/B Firestop/Fireproofing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-DTAT-1-001",
@@ -205809,7 +209266,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 482C",
           "credit": "1.5 hours in Decorative Trims and Textures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-FCAS-1-001",
@@ -205855,7 +209313,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 473A",
           "credit": "1.5 hours in Framing Ceilings and Soffits"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-FSC-1-001",
@@ -205901,7 +209360,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 473B",
           "credit": "1.5 hours in Framing Suspended Ceilings"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-LGWA-1-001",
@@ -205947,7 +209407,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 475A",
           "credit": "1.5 hours in Light Gage Welding AWS - A"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-LGWL-1-001",
@@ -205993,7 +209454,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 475B",
           "credit": "1.5 hours in Light Gage Welding LAC"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-LGWA1-1-001",
@@ -206039,7 +209501,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 475C",
           "credit": "1.5 hours in Light Gage Welding AWS - B"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-DA-P-1-001",
@@ -206085,7 +209548,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 479C",
           "credit": "1.5 hours in Drywall App - Prod Drywal Hang"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-FL-1-001",
@@ -206131,7 +209595,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 489",
           "credit": "1.5 hours in Freeform Lathing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-CMAA-1-001",
@@ -206177,7 +209642,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 433A",
           "credit": "1.5 hours in Cabinet Millwork and Assembly"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-CI-1-001",
@@ -206223,7 +209689,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 433B",
           "credit": "1.5 hours in Cabinet Installation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-SCAL-1-001",
@@ -206269,7 +209736,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 433C",
           "credit": "1.5 hours in Show Case / Loose Store"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-MAT-1-001",
@@ -206315,7 +209783,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 433D",
           "credit": "1.5 hours in Molding and Trims"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-PL-1-001",
@@ -206361,7 +209830,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 434A",
           "credit": "1.5 hours in Plastic Laminates"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-SASS-1-001",
@@ -206407,7 +209877,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 434B",
           "credit": "1.5 hours in Solid and Stone Surfaces"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-ST-1-001",
@@ -206453,7 +209924,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 434C",
           "credit": "1.5 hours in Stair Trim"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-DADH-1-001",
@@ -206499,7 +209971,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 434D",
           "credit": "1.5 hours in Doors and Door Hardware"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-EAES-1-001",
@@ -206545,7 +210018,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 435C",
           "credit": "1.5 hours in Exit and Electrical Security"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-BS-1-001",
@@ -206591,7 +210065,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 422B",
           "credit": "1.5 hours in Basic Stairs"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-EFD-1-001",
@@ -206637,7 +210112,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 422D",
           "credit": "1.5 hours in Exterior Finish Details"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-ACF-1-001",
@@ -206683,7 +210159,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 424B",
           "credit": "1.5 hours in Advanced Commercial Framing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-AS1-1-001",
@@ -206729,7 +210206,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 425C",
           "credit": "1.5 hours in Advanced Stairs"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-ARF-1-001",
@@ -206775,7 +210253,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 423C",
           "credit": "1.5 hours in Advanced Roof Framing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRP-PR-1-001",
@@ -206821,7 +210300,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 424C",
           "credit": "1.5 hours in Panelized Roofing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-SF1-1-001",
@@ -206867,7 +210347,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 402B",
           "credit": "1 hour in Slabs/Interior-Exterior"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-TI-1-001",
@@ -206913,7 +210394,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 403A",
           "credit": "1 hour in Tilt-Up Introduction"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-LABS-1-001",
@@ -206959,7 +210441,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 404A",
           "credit": "1.5 hours in Lift&Bracing Safety-Lift Awar"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-WFAB-1-001",
@@ -207005,7 +210488,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 405A",
           "credit": "1.5 hours in Wall-Column Forms"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-SFAR-1-001",
@@ -207051,7 +210535,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 405C",
           "credit": "1.5 hours in Specialized Forms and Rigging"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-PWF-1-001",
@@ -207097,7 +210582,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 404B",
           "credit": "1.5 hours in Poured-in-Place Wall Forms"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-SWAG-1-001",
@@ -207143,7 +210629,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 405B",
           "credit": "1.5 hours in Site Work/Curb and Gutter"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-CRF-1-001",
@@ -207189,7 +210676,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 422E",
           "credit": "1.5 hours in Commercial Roof Framing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-O0-F-1-001",
@@ -207235,7 +210723,8 @@ window.CPL_STATEWIDE = {
           "course": "OSHA 030",
           "credit": "2 hours in Federal OSHA Outreach: Construction Industry Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2OS-1-001",
@@ -207281,7 +210770,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 216",
           "credit": "3 hours in Agriculture Occupational Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2OS-1-001",
@@ -207327,7 +210817,8 @@ window.CPL_STATEWIDE = {
           "course": "AGM 216",
           "credit": "3 hours in Agriculture Occupational Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ACAI-1-001",
@@ -207445,7 +210936,8 @@ window.CPL_STATEWIDE = {
           "course": "ACA 083",
           "credit": "1.5 hours in Door and Door Frames"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ACAI1-1-001",
@@ -207563,7 +211055,8 @@ window.CPL_STATEWIDE = {
           "course": "ACA 083",
           "credit": "1.5 hours in Door and Door Frames"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ACTA-1-001",
@@ -207673,7 +211166,8 @@ window.CPL_STATEWIDE = {
           "course": "ACA 029A",
           "credit": "1.5 hours in Rigging"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-ACTA1-1-001",
@@ -207783,7 +211277,8 @@ window.CPL_STATEWIDE = {
           "course": "ACA 029A",
           "credit": "1.5 hours in Rigging"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-OOFG-1-001",
@@ -207829,7 +211324,8 @@ window.CPL_STATEWIDE = {
           "course": "IET 422",
           "credit": "3 hours in Occupational Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-TDP-1-001",
@@ -207875,7 +211371,8 @@ window.CPL_STATEWIDE = {
           "course": "TD 101",
           "credit": "3 hours in Commercial Driver Learner’s Permit Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-CCC-1-001|MAPCXI-CCC1-1-001|MAPCXI-CCCC-1-001",
@@ -207932,7 +211429,8 @@ window.CPL_STATEWIDE = {
           "course": "MICROTK 079",
           "credit": "3 hours in CISCO NETWORKING ACADEMY - SEMESTER III"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-CCCC-1-001",
@@ -207978,7 +211476,8 @@ window.CPL_STATEWIDE = {
           "course": "MICROTK 077",
           "credit": "3 hours in CISCO NETWORKING ACADEMY - SEMESTER I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXI-CCSO-1-001",
@@ -208024,7 +211523,8 @@ window.CPL_STATEWIDE = {
           "course": "MICROTK 080",
           "credit": "3 hours in CISCO NETWORKING ACADEMY - SEMESTER IV"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-CCSO-1-001",
@@ -208070,7 +211570,8 @@ window.CPL_STATEWIDE = {
           "course": "MICROTK 080",
           "credit": "3 hours in CISCO NETWORKING ACADEMY - SEMESTER IV"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-O0-F1-1-001",
@@ -208116,7 +211617,8 @@ window.CPL_STATEWIDE = {
           "course": "OSHA 035",
           "credit": "2 hours in Federal OSHA Outreach: General Industry Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-OST-1-001",
@@ -208162,7 +211664,8 @@ window.CPL_STATEWIDE = {
           "course": "IET 422",
           "credit": "2 hours in OSHA Safety Training"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC-1-001",
@@ -208212,7 +211715,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 190",
           "credit": "1.5 hours in Introduction to Welding and Cutting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC1-1-001",
@@ -208262,7 +211766,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 190",
           "credit": "1.5 hours in Introduction to Welding and Cutting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC2-1-001",
@@ -208312,7 +211817,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 261",
           "credit": "1.5 hours in Welded Frame and Mobile Tower Scaffold"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC3-1-001",
@@ -208362,7 +211868,8 @@ window.CPL_STATEWIDE = {
           "course": "DRLTH 298",
           "credit": "0.5 hours in Work Experience Drywall/Lathing Apprenticeship"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC4-1-001",
@@ -208408,7 +211915,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 101",
           "credit": "1.5 hours in Introduction to Apprenticeship II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC5-1-001",
@@ -208454,7 +211962,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 103",
           "credit": "0.5 hours in OSHA 10-hour Construction Training Course"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC6-1-001",
@@ -208500,7 +212009,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 105",
           "credit": "0.5 hours in CPR for Carpenters Apprentices"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC7-1-001",
@@ -208546,7 +212056,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 107",
           "credit": "1.5 hours in Rigging"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC8-1-001",
@@ -208592,7 +212103,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 107",
           "credit": "1.5 hours in Rigging"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC9-1-001",
@@ -208638,7 +212150,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 107",
           "credit": "1.5 hours in Rigging"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC10-1-001",
@@ -208684,7 +212197,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 108",
           "credit": "1.5 hours in Modular System Installer Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC11-1-001",
@@ -208730,7 +212244,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 109",
           "credit": "1.5 hours in Introduction to Office Modular Systems Installation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC12-1-001",
@@ -208776,7 +212291,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 110",
           "credit": "1.5 hours in Foundations and Floors"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC13-1-001",
@@ -208822,7 +212338,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 111",
           "credit": "1.5 hours in Tool and Equipment Applications"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC14-1-001",
@@ -208868,7 +212385,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 112",
           "credit": "1.5 hours in Structural Framing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC15-1-001",
@@ -208914,7 +212432,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 114",
           "credit": "1.5 hours in Form Detailing, Construction & Erection"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC16-1-001",
@@ -208960,7 +212479,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 115",
           "credit": "1.5 hours in Floor to Ceiling Wall System Construction"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC17-1-001",
@@ -209006,7 +212526,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 120",
           "credit": "1.5 hours in Exterior Finish"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC18-1-001",
@@ -209052,7 +212573,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 122",
           "credit": "1.5 hours in Interior Finish"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC19-1-001",
@@ -209098,7 +212620,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 124",
           "credit": "1.5 hours in Commercial Door Hardware"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC20-1-001",
@@ -209144,7 +212667,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 125",
           "credit": "1.5 hours in Drapery, Window Coverings, and Fine Furnishings"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC21-1-001",
@@ -209190,7 +212714,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 130",
           "credit": "1.5 hours in Layout/Leveling Construction Site Practice"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC22-1-001",
@@ -209236,7 +212761,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 130",
           "credit": "1.5 hours in Layout/Leveling Construction Site Practice"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC23-1-001",
@@ -209282,7 +212808,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 131",
           "credit": "1.5 hours in Introduction to Working Drawings, Construction Math and Fire Stop Installation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC24-1-001",
@@ -209328,7 +212855,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 132",
           "credit": "1.5 hours in Residential Blueprint Reading and Forklift Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC25-1-001",
@@ -209374,7 +212902,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 133",
           "credit": "1.5 hours in Residential Insulation and Weatherization"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC26-1-001",
@@ -209420,7 +212949,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 134",
           "credit": "1.5 hours in Commercial Blueprint Reading and Mobile Tower Scaffolds"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC27-1-001",
@@ -209466,7 +212996,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 135",
           "credit": "1.5 hours in Commercial and Industrial Insulation and Aerial Lift"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC28-1-001",
@@ -209512,7 +213043,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 136",
           "credit": "1.5 hours in Energy Conservation Codes and Standards"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC29-1-001",
@@ -209558,7 +213090,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 137",
           "credit": "1.5 hours in Modular Systems Construction and Quality Control I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC30-1-001",
@@ -209604,7 +213137,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 138",
           "credit": "1.5 hours in Modular System Construction and Quality Control II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC31-1-001",
@@ -209650,7 +213184,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 140",
           "credit": "1.5 hours in Interior Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC32-1-001",
@@ -209696,7 +213231,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 140",
           "credit": "1.5 hours in Interior Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC33-1-001",
@@ -209742,7 +213278,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 141",
           "credit": "1.5 hours in Suspended Framing Ceiling Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC34-1-001",
@@ -209788,7 +213325,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 142",
           "credit": "1.5 hours in Engineered Structural Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC35-1-001",
@@ -209834,7 +213372,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 144",
           "credit": "1.5 hours in Introduction to Grid Ceiling Installation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC36-1-001",
@@ -209880,7 +213419,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 145",
           "credit": "1.5 hours in Specialty Ceiling Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC37-1-001",
@@ -209926,7 +213466,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 146",
           "credit": "1.5 hours in Integrated Ceilings and Special Techniques"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC38-1-001",
@@ -209972,7 +213513,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 147",
           "credit": "1.5 hours in Advanced Grid Ceilings"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC39-1-001",
@@ -210018,7 +213560,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 148",
           "credit": "1.5 hours in Access Floor Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC40-1-001",
@@ -210064,7 +213607,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 150",
           "credit": "1.5 hours in Concrete - Precast and Prestressed"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC41-1-001",
@@ -210110,7 +213654,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 155",
           "credit": "1.5 hours in Commercial Concrete"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC42-1-001",
@@ -210156,7 +213701,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 160",
           "credit": "1.5 hours in Blueprint Reading-Residential"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC43-1-001",
@@ -210202,7 +213748,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 160",
           "credit": "1.5 hours in Blueprint Reading-Residential"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC44-1-001",
@@ -210248,7 +213795,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 160",
           "credit": "1.5 hours in Blueprint Reading-Residential"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC45-1-001",
@@ -210294,7 +213842,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 160",
           "credit": "1.5 hours in Blueprint Reading-Residential"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC46-1-001",
@@ -210340,7 +213889,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 162",
           "credit": "1.5 hours in Blueprint Reading-Commercial"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC47-1-001",
@@ -210386,7 +213936,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 162",
           "credit": "1.5 hours in Blueprint Reading-Commercial"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC48-1-001",
@@ -210432,7 +213983,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 163",
           "credit": "1.5 hours in Print Reading Measurement and Layout"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC49-1-001",
@@ -210478,7 +214030,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 164",
           "credit": "1.5 hours in Acoustical Blueprint Reading"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC50-1-001",
@@ -210524,7 +214077,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 170",
           "credit": "1.5 hours in Roof Framing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC51-1-001",
@@ -210570,7 +214124,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 180",
           "credit": "1.5 hours in Stair Building"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC52-1-001",
@@ -210616,7 +214171,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 181",
           "credit": "1.5 hours in Tools of the Trade and Installation of Hardwood Floors"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC53-1-001",
@@ -210662,7 +214218,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 182",
           "credit": "1.5 hours in Finishing and Repairing Floors"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC54-1-001",
@@ -210708,7 +214265,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 190",
           "credit": "1.5 hours in Introduction to Welding and Cutting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC55-1-001",
@@ -210754,7 +214312,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 190",
           "credit": "1.5 hours in Introduction to Welding and Cutting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC56-1-001",
@@ -210800,7 +214359,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 210",
           "credit": "1.5 hours in The Acoustical Apprentice, Safety, and the Trade"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC57-1-001",
@@ -210846,7 +214406,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 211",
           "credit": "1.5 hours in Introduction to Acoustical Apprenticeship II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC58-1-001",
@@ -210892,7 +214453,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 212",
           "credit": "1.5 hours in Infection Control Risk Assessment and Hospital Code for Acoustical Installers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC59-1-001",
@@ -210938,7 +214500,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 215",
           "credit": "1 hour in Specialty Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC60-1-001",
@@ -210984,7 +214547,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 220",
           "credit": "1.5 hours in Millwright Safety and Tool Skills"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC61-1-001",
@@ -211030,7 +214594,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 221",
           "credit": "1.5 hours in The Millwright Apprentice, the Trade, and 16 Hour Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC62-1-001",
@@ -211076,7 +214641,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 222",
           "credit": "1.5 hours in Millwright Math Applications"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC63-1-001",
@@ -211122,7 +214688,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 223",
           "credit": "1.5 hours in Cutting and Welding I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC64-1-001",
@@ -211168,7 +214735,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 224",
           "credit": "1.5 hours in Materials of Construction"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC65-1-001",
@@ -211214,7 +214782,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 225",
           "credit": "1.5 hours in Layout Procedures for Millwrights"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC66-1-001",
@@ -211260,7 +214829,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 226",
           "credit": "1.5 hours in Precision Optical Instruments"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC67-1-001",
@@ -211306,7 +214876,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 227",
           "credit": "1.5 hours in Blueprint Reading and Aerial Lift"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC68-1-001",
@@ -211352,7 +214923,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 228",
           "credit": "1.5 hours in Millwright Rigging"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC69-1-001",
@@ -211398,7 +214970,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 229",
           "credit": "1.5 hours in Welding II SMAW"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC70-1-001",
@@ -211444,7 +215017,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 230",
           "credit": "1.5 hours in Monorails"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC71-1-001",
@@ -211490,7 +215064,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 231",
           "credit": "1.5 hours in Conveyors for Millwrights"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC72-1-001",
@@ -211536,7 +215111,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 232",
           "credit": "1.5 hours in Machinery Installation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC73-1-001",
@@ -211582,7 +215158,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 233",
           "credit": "1.5 hours in Machinery Maintenance for Millwrights"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC74-1-001",
@@ -211628,7 +215205,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 234",
           "credit": "1.5 hours in Precision Tools for Millwrights"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC75-1-001",
@@ -211674,7 +215252,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 235",
           "credit": "1.5 hours in Turbines"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC76-1-001",
@@ -211720,7 +215299,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 236",
           "credit": "1.5 hours in Cutting and Welding III"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC77-1-001",
@@ -211766,7 +215346,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 240",
           "credit": "1.5 hours in Worker Safety and Tool Skills for Pile Drivers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC78-1-001",
@@ -211812,7 +215393,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 241",
           "credit": "2 hours in Pile Driver Math Applications"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC79-1-001",
@@ -211858,7 +215440,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 242",
           "credit": "1.5 hours in Pile Driver Rigging"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC80-1-001",
@@ -211904,7 +215487,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 243",
           "credit": "1.5 hours in Form Detailing, Construction, and Erection for Pile Drivers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC81-1-001",
@@ -211950,7 +215534,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 244",
           "credit": "1.5 hours in Welding I: Introduction to SMAW"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC82-1-001",
@@ -211996,7 +215581,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 245",
           "credit": "1.5 hours in Introduction to Land and Water Pile Driving"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC83-1-001",
@@ -212042,7 +215628,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 246",
           "credit": "1.5 hours in Welding II SMAW"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC84-1-001",
@@ -212088,7 +215675,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 247",
           "credit": "1.5 hours in Advanced Pile Driving Land and Water"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC85-1-001",
@@ -212134,7 +215722,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 248",
           "credit": "1.5 hours in Wharfage and Marine Structures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC86-1-001",
@@ -212180,7 +215769,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 249",
           "credit": "1.5 hours in Welding III: Advanced SMAW"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC87-1-001",
@@ -212226,7 +215816,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 250",
           "credit": "1.5 hours in Introduction to Structural Blueprints and Layout Instruments"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC88-1-001",
@@ -212272,7 +215863,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 251",
           "credit": "1.5 hours in Advanced Structural Blueprints and Bridge Building"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC89-1-001",
@@ -212318,7 +215910,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 252",
           "credit": "1.5 hours in Falsework, Shoring, and Heavy Timber Framing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC90-1-001",
@@ -212364,7 +215957,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 253",
           "credit": "1.5 hours in Advanced Formwork"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC91-1-001",
@@ -212410,7 +216004,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 254",
           "credit": "1.5 hours in Welding III FCAW"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC92-1-001",
@@ -212456,7 +216051,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 255",
           "credit": "1.5 hours in Welding IV FCAW Pipe"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC93-1-001",
@@ -212502,7 +216098,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 256",
           "credit": "1.5 hours in Welding VI: FCAW 4G Certification"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC94-1-001",
@@ -212548,7 +216145,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 260",
           "credit": "1.5 hours in Introduction to Scaffolds and Confined Space"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC95-1-001",
@@ -212594,7 +216192,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 261",
           "credit": "1.5 hours in Welded Frame and Mobile Tower Scaffold"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC96-1-001",
@@ -212640,7 +216239,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 262",
           "credit": "1.5 hours in System Scaffold"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC97-1-001",
@@ -212686,7 +216286,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 263",
           "credit": "1.5 hours in Hazard Awareness for Scaffold Erectors"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC98-1-001",
@@ -212732,7 +216333,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 264",
           "credit": "1 hour in Suspended Scaffolds and Shoring Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC99-1-001",
@@ -212778,7 +216380,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 265",
           "credit": "1 hour in Tube and Clamp Scaffold"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC100-1-001",
@@ -212824,7 +216427,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 266",
           "credit": "1.5 hours in Blueprint Reading for Scaffold Erectors"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC101-1-001",
@@ -212870,7 +216474,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 268",
           "credit": "1.5 hours in Welding II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC102-1-001",
@@ -212916,7 +216521,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 270",
           "credit": "1.5 hours in Mill Cabinet Safety and Tool Skills"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC103-1-001",
@@ -212962,7 +216568,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 271",
           "credit": "1.5 hours in The Mill Cabinet Apprentice and the Trade"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC104-1-001",
@@ -213008,7 +216615,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 272",
           "credit": "1.5 hours in Math for the Mill Cabinet Trade"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC105-1-001",
@@ -213054,7 +216662,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 273",
           "credit": "1.5 hours in Basic Cabinet Making"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC106-1-001",
@@ -213100,7 +216709,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 274",
           "credit": "1.5 hours in Basic Blueprint Reading Mill Cabinet"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC107-1-001",
@@ -213146,7 +216756,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 275",
           "credit": "1.5 hours in Machinery Maintenance for Mill Cabinet"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC108-1-001",
@@ -213192,7 +216803,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 276",
           "credit": "1.5 hours in Cabinet Hardware Installation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC109-1-001",
@@ -213238,7 +216850,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 277",
           "credit": "1.5 hours in Sanding, Stains, and Finish Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC110-1-001",
@@ -213284,7 +216897,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 278",
           "credit": "1.5 hours in Advanced Machinery Operation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC111-1-001",
@@ -213330,7 +216944,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 279",
           "credit": "1.5 hours in Advanced Blueprint Reading for Mill Cabinet"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC112-1-001",
@@ -213376,7 +216991,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 280",
           "credit": "1.5 hours in Advanced Cabinet Making"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC113-1-001",
@@ -213422,7 +217038,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 281",
           "credit": "1.5 hours in Veneers, Laminate, and Finishing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC114-1-001",
@@ -213468,7 +217085,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 282",
           "credit": "1.5 hours in CAD Basics for Mill Cabinetry"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC115-1-001",
@@ -213514,7 +217132,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 283",
           "credit": "1.5 hours in Introduction to CNC"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC116-1-001",
@@ -213560,7 +217179,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 284",
           "credit": "1.5 hours in Solid Surface Material, Fabrication, and Installation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC117-1-001",
@@ -213606,7 +217226,8 @@ window.CPL_STATEWIDE = {
           "course": "CARPT 285",
           "credit": "1.5 hours in Advanced Project for Mill Cabinet"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBE0-1-001",
@@ -213652,7 +217273,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 031",
           "credit": "4 hours in Introduction to Translation and Interpreting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBES7-1-001",
@@ -213698,7 +217320,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 032",
           "credit": "3 hours in Spanish Grammar and Composition"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CBES8-1-001",
@@ -213744,7 +217367,8 @@ window.CPL_STATEWIDE = {
           "course": "SPAN 033",
           "credit": "3 hours in Spanish/English LInguistics Analysis"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-SOAE-1-001",
@@ -213789,7 +217413,8 @@ window.CPL_STATEWIDE = {
           "course": "BUS 89",
           "credit": "3 hours in Starting and Operating an eCommerce Business"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-BO-1-001",
@@ -213854,7 +217479,8 @@ window.CPL_STATEWIDE = {
           "course": "BOAP 106",
           "credit": "1 hour in Professional Practicum (Line Training)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-PFC0-1-001",
@@ -213899,7 +217525,8 @@ window.CPL_STATEWIDE = {
           "course": "CNST 060",
           "credit": "3 hours in Plumbing Fundamentals"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-E&ET-1-001",
@@ -213944,7 +217571,8 @@ window.CPL_STATEWIDE = {
           "course": "E/ET 223",
           "credit": "2 hours in CAL-OSHA 30-Hour Construction Industry Training for Electrical & Electronics Technology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-SSSC-1-001",
@@ -213989,7 +217617,8 @@ window.CPL_STATEWIDE = {
           "course": "IET 411",
           "credit": "3 hours in Programmable Logic Controllers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-MPC-1-001",
@@ -214034,7 +217663,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSTEC 410",
           "credit": "3 hours in MS Publisher Comprehensive"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-FARM-1-001",
@@ -214079,7 +217709,8 @@ window.CPL_STATEWIDE = {
           "course": "BUSTEC 50",
           "credit": "3 hours in Filing and Records Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ITE1-1-001",
@@ -214124,7 +217755,8 @@ window.CPL_STATEWIDE = {
           "course": "IET 401A",
           "credit": "2.5 hours in Introduction to Electricity"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-IBC-1-001",
@@ -214169,7 +217801,8 @@ window.CPL_STATEWIDE = {
           "course": "IET 401B",
           "credit": "2.5 hours in Industrial Basic Controls"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-EMAC-1-001",
@@ -214214,7 +217847,8 @@ window.CPL_STATEWIDE = {
           "course": "IET 403A",
           "credit": "2.5 hours in Electrical Motors and Controls I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-EMAC1-1-001",
@@ -214259,7 +217893,8 @@ window.CPL_STATEWIDE = {
           "course": "IET 403B",
           "credit": "2.5 hours in Electrical Motors and Controls II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-PLC-1-001",
@@ -214304,7 +217939,8 @@ window.CPL_STATEWIDE = {
           "course": "IET 411",
           "credit": "3 hours in Programmable Logic Controllers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AFLL-1-001|MAPSAS-A-FL-1-001|MAPSAS-A:FL-1-001|MAPSAS-AEFL-1-001|MAPSAS-AEFL1-1-001|MAPSAS-AF-L-1-001|MAPSAS-AFL1-1-001|MAPSAS-AFL3-1-001|MAPSAS-AFL4-1-001|MAPSAS-AFL5-1-001|MAPSAS-AFLA-1-001|MAPSAS-AFLA1-1-001|MAPSAS-AFLA2-1-001|MAPSAS-AFLA3-1-001|MAPSAS-AFLA4-1-001|MAPSAS-AFLA6-1-001|MAPSAS-AFLA7-1-001|MAPSAS-AFLC-1-001",
@@ -214532,7 +218168,8 @@ window.CPL_STATEWIDE = {
           "course": "FREN 101A",
           "credit": "5 hours in Elementary French"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FRP(-1-001|MAPICI-FRPC-1-001",
@@ -214583,7 +218220,8 @@ window.CPL_STATEWIDE = {
           "course": "CMPET 317",
           "credit": "2 hours in Remote Pilot (Drone) FAA Certification Prep"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FHPC-1-001",
@@ -214627,7 +218265,8 @@ window.CPL_STATEWIDE = {
           "course": "AVIA 151",
           "credit": "3 hours in Helicopter Ground School"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FCPC-1-001",
@@ -214671,7 +218310,8 @@ window.CPL_STATEWIDE = {
           "course": "AVIA 201",
           "credit": "3 hours in Commercial Pilot Ground School"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FFIC-1-001",
@@ -214723,7 +218363,8 @@ window.CPL_STATEWIDE = {
           "course": "AVIA 211L",
           "credit": "1.0 hours in Basic Visual Flight Instructor Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FFI--1-001",
@@ -214771,7 +218412,8 @@ window.CPL_STATEWIDE = {
           "course": "AVIA 216L",
           "credit": "1.0 hours in Advanced Instrument Flight Instructor Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-SW-1-001",
@@ -214815,7 +218457,8 @@ window.CPL_STATEWIDE = {
           "course": "CAHM 132",
           "credit": "2 hours in Spanish Wines"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-IW-1-001",
@@ -214859,7 +218502,8 @@ window.CPL_STATEWIDE = {
           "course": "CAHM 134",
           "credit": "3 hours in Italian Wines"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-FW-1-001",
@@ -214903,7 +218547,8 @@ window.CPL_STATEWIDE = {
           "course": "CAHM 136",
           "credit": "3 hours in French Wines"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-CW-1-001",
@@ -214947,7 +218592,8 @@ window.CPL_STATEWIDE = {
           "course": "CAHM 179",
           "credit": "3 hours in California Wines"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A0-P-1-001|MAPICI-A0-P3-1-001",
@@ -214993,7 +218639,8 @@ window.CPL_STATEWIDE = {
           "course": "AERO 022",
           "credit": "6 hours in Private Pilot Ground School"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2EO2-1-001",
@@ -215037,7 +218684,8 @@ window.CPL_STATEWIDE = {
           "course": "ANSC 252",
           "credit": "3 hours in Veterinary Equipment, Operation, Instrumentation and Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2LP-1-001",
@@ -215081,7 +218729,8 @@ window.CPL_STATEWIDE = {
           "course": "ANSC 253",
           "credit": "1 hour in Veterinary Laboratory Procedures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2FV-1-001",
@@ -215125,7 +218774,8 @@ window.CPL_STATEWIDE = {
           "course": "ANSC 255",
           "credit": "3 hours in Preparation for Veterinary Surgical and Dental Assistance"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2A&-1-001",
@@ -215169,7 +218819,8 @@ window.CPL_STATEWIDE = {
           "course": "ANSC 256",
           "credit": "1 hour in Veterinary Assistance & Nursing: Emergency Procedures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2A&1-1-001",
@@ -215213,7 +218864,8 @@ window.CPL_STATEWIDE = {
           "course": "ANSC 257",
           "credit": "2 hours in Veterinary Assistance and Nursing: Animal Handling"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2MO-1-001",
@@ -215257,7 +218909,8 @@ window.CPL_STATEWIDE = {
           "course": "ANSC 254",
           "credit": "2 hours in Veterinary Medical Office Procedures"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-F1-1-001",
@@ -215301,7 +218954,8 @@ window.CPL_STATEWIDE = {
           "course": "FLGHT 101",
           "credit": "4 hours in Private Pilot 1 Ground School"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A0-I-1-001",
@@ -215345,7 +218999,8 @@ window.CPL_STATEWIDE = {
           "course": "AERO 040",
           "credit": "4 hours in Instrument Ground School"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-UB-1-001",
@@ -215389,7 +219044,8 @@ window.CPL_STATEWIDE = {
           "course": "ATC 160 C",
           "credit": "3 hours in UAS Drone Basic"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-PP-1-001",
@@ -215433,7 +219089,8 @@ window.CPL_STATEWIDE = {
           "course": "ATC 132 C",
           "credit": "4 hours in Private Pilot"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-AAE-1-001",
@@ -215477,7 +219134,8 @@ window.CPL_STATEWIDE = {
           "course": "ATC 144 C",
           "credit": "3 hours in Aircraft and Engines"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-F11-1-001",
@@ -215521,7 +219179,8 @@ window.CPL_STATEWIDE = {
           "course": "FLGHT 101",
           "credit": "4 hours in Private Pilot 1 Ground School"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-F12-1-001",
@@ -215565,7 +219224,8 @@ window.CPL_STATEWIDE = {
           "course": "FLGHT 105",
           "credit": "1 hour in Private Pilot 1 Flight Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-F13-1-001",
@@ -215609,7 +219269,8 @@ window.CPL_STATEWIDE = {
           "course": "FLGHT 106",
           "credit": "1.5 hours in Private Pilot 2 Flight Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-F14-1-001",
@@ -215653,7 +219314,8 @@ window.CPL_STATEWIDE = {
           "course": "FLGHT 107",
           "credit": "0.5 hours in Private Pilot 1 Simulation Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-F15-1-001",
@@ -215697,7 +219359,8 @@ window.CPL_STATEWIDE = {
           "course": "FLGHT 108",
           "credit": "4 hours in Private Pilot 2 Ground School"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-F16-1-001",
@@ -215741,7 +219404,8 @@ window.CPL_STATEWIDE = {
           "course": "FLGHT 109",
           "credit": "0.5 hours in  Private Pilot 2 Simulation Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-F17-1-001",
@@ -215785,7 +219449,8 @@ window.CPL_STATEWIDE = {
           "course": "FLGHT 125",
           "credit": "2.5 hours in Commercial Pilot 1 Flight Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-F18-1-001",
@@ -215829,7 +219494,8 @@ window.CPL_STATEWIDE = {
           "course": "FLGHT 111",
           "credit": "5 hours in Instrument Rating Ground School"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-F110-1-001",
@@ -215873,7 +219539,8 @@ window.CPL_STATEWIDE = {
           "course": "FLGHT 115",
           "credit": "2 hours in Instrument Rating Flight Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-F111-1-001",
@@ -215917,7 +219584,8 @@ window.CPL_STATEWIDE = {
           "course": "FLGHT 117",
           "credit": "0.5 hours in Instrument Rating Simulation Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-F112-1-001",
@@ -215961,7 +219629,8 @@ window.CPL_STATEWIDE = {
           "course": "FLGHT 121",
           "credit": "5 hours in Commercial Pilot Ground School"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-F113-1-001",
@@ -216005,7 +219674,8 @@ window.CPL_STATEWIDE = {
           "course": "FLGHT 126",
           "credit": "2.5 hours in Commercial Pilot 2 Flight Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-F114-1-001",
@@ -216049,7 +219719,8 @@ window.CPL_STATEWIDE = {
           "course": "FLGHT 131",
           "credit": "5 hours in Flight Instructor Ground School"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-F115-1-001",
@@ -216093,7 +219764,8 @@ window.CPL_STATEWIDE = {
           "course": "FLGHT 135",
           "credit": "1.5 hours in Flight Instructor Flight Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-F116-1-001",
@@ -216137,7 +219809,8 @@ window.CPL_STATEWIDE = {
           "course": "FLGHT 104",
           "credit": "1 hour in Remote Pilot Ground School for small Unmanned Aircraft Systems (sUAS)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-SFA-1-001",
@@ -216217,7 +219890,8 @@ window.CPL_STATEWIDE = {
           "course": "APSF 9710",
           "credit": "3 hours in Sprinkler Fitter Apprenticeship X"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-W&SE-1-001",
@@ -216265,7 +219939,8 @@ window.CPL_STATEWIDE = {
           "course": "CAHM 74",
           "credit": "3 hours in World Wines"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-W&SE1-1-001",
@@ -216349,7 +220024,8 @@ window.CPL_STATEWIDE = {
           "course": "CAHM 179",
           "credit": "3 hours in California Wines"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-W&SE2-1-001",
@@ -216433,7 +220109,8 @@ window.CPL_STATEWIDE = {
           "course": "CAHM 179",
           "credit": "3 hours in California Wines"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A0-P1-1-001|MAPICI-A0-P2-1-001|MAPICI-FPPC-1-001",
@@ -216493,7 +220170,8 @@ window.CPL_STATEWIDE = {
           "course": "AERO 022L",
           "credit": "3 hours in Private Pilot Flight Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A0-I1-1-001|MAPICI-A0-I2-1-001|MAPICI-FIR-1-001",
@@ -216561,7 +220239,8 @@ window.CPL_STATEWIDE = {
           "course": "AERO 041L",
           "credit": "3 hours in Instrument Pilot Flight Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-E2OF-1-001",
@@ -216604,7 +220283,8 @@ window.CPL_STATEWIDE = {
           "course": "EHS 280",
           "credit": "3 hours in Principles of Floral Art and Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-E2OF-1-001",
@@ -216647,7 +220327,8 @@ window.CPL_STATEWIDE = {
           "course": "EHS 280",
           "credit": "3 hours in Principles of Floral Art and Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-E2OF-1-001",
@@ -216690,7 +220371,8 @@ window.CPL_STATEWIDE = {
           "course": "EHS 280",
           "credit": "3 hours in Principles of Floral Art and Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-E2FD-1-001",
@@ -216733,7 +220415,8 @@ window.CPL_STATEWIDE = {
           "course": "EHS 281",
           "credit": "3 hours in Advanced Floral Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-E2FD-1-001",
@@ -216776,7 +220459,8 @@ window.CPL_STATEWIDE = {
           "course": "EHS 281",
           "credit": "3 hours in Advanced Floral Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-E2FD-1-001",
@@ -216819,7 +220503,8 @@ window.CPL_STATEWIDE = {
           "course": "EHS 281",
           "credit": "3 hours in Advanced Floral Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-PS7--1-001",
@@ -216862,7 +220547,8 @@ window.CPL_STATEWIDE = {
           "course": "PLNT SC 701",
           "credit": "2 hours in Floral Design and Practices I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-FACA-1-001",
@@ -216905,7 +220591,8 @@ window.CPL_STATEWIDE = {
           "course": "KIN 235 C",
           "credit": "3 hours in First Aid, CPR and Emergencies"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-CTT3-1-001",
@@ -216947,7 +220634,8 @@ window.CPL_STATEWIDE = {
           "course": "CE 295 C",
           "credit": "3 hours in CE Teacher Training 3: Practicum"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AJLA-1-001|MAPSAS-A-JL-1-001|MAPSAS-A:JL-1-001|MAPSAS-AEJL-1-001|MAPSAS-AEJL1-1-001|MAPSAS-AJ-L-1-001|MAPSAS-AJLA-1-001|MAPSAS-AJLA1-1-001|MAPSAS-AJLA2-1-001|MAPSAS-AJLA3-1-001|MAPSAS-AJLA4-1-001|MAPSAS-AJLA5-1-001|MAPSAS-AJLA7-1-001|MAPSAS-AJLC-1-001|MAPSAS-AJLC1-1-001",
@@ -217163,7 +220851,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-HSR(-1-001",
@@ -217204,7 +220893,8 @@ window.CPL_STATEWIDE = {
           "course": "HLS 4",
           "credit": "3 hours in Recovery in Homeland Security"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-TSA(-1-001",
@@ -217245,7 +220935,8 @@ window.CPL_STATEWIDE = {
           "course": "HLS 1",
           "credit": "3 hours in Intro to Homeland Security"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-NBCO-1-001",
@@ -217342,7 +221033,8 @@ window.CPL_STATEWIDE = {
           "course": "OTA 130",
           "credit": "1 hour in Level I Fieldwork Part B"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-S3MA-1-001",
@@ -217383,7 +221075,8 @@ window.CPL_STATEWIDE = {
           "course": "SM 331",
           "credit": "3 hours in Sheet Metal and Installation 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-HP(-1-001",
@@ -217440,7 +221133,8 @@ window.CPL_STATEWIDE = {
           "course": "HLS 4",
           "credit": "3 hours in Recovery in Emergencies, Disasters and Homeland Security Incidents"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-CEI-1-001",
@@ -217481,7 +221175,8 @@ window.CPL_STATEWIDE = {
           "course": "DMS 237 C",
           "credit": "11 hours in Clinical Education IV"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-HSM-1-001",
@@ -217522,7 +221217,8 @@ window.CPL_STATEWIDE = {
           "course": "Air Conditioning (AIRC) 145",
           "credit": "2 hours in Sheet Metal Principles"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-FO-1-001",
@@ -217563,7 +221259,8 @@ window.CPL_STATEWIDE = {
           "course": "IWAP 40.07",
           "credit": "4 hours in FIW - Orientation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-BEAD-1-001",
@@ -217604,7 +221301,8 @@ window.CPL_STATEWIDE = {
           "course": "NURADN 404",
           "credit": "2 hours in Basic ECG and Dysrhythmia Interpretation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-PFN-1-001",
@@ -217645,7 +221343,8 @@ window.CPL_STATEWIDE = {
           "course": "NURADN 403",
           "credit": "3 hours in Pathophysiology for Nursing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-BP-1-001",
@@ -217686,7 +221385,8 @@ window.CPL_STATEWIDE = {
           "course": "NURADN 428",
           "credit": "3 hours in Basic Pharmacology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-BAP-1-001",
@@ -217726,7 +221426,8 @@ window.CPL_STATEWIDE = {
           "course": "JOURN 35",
           "credit": "3 hours in Broadcasting and Podcasting"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEH-TTNF-1-001",
@@ -217766,7 +221467,8 @@ window.CPL_STATEWIDE = {
           "course": "RTVF 146",
           "credit": "3 hours in The TV News Field Report"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-IWTC-1-001",
@@ -217806,7 +221508,8 @@ window.CPL_STATEWIDE = {
           "course": "IW 100",
           "credit": "2 hours in Orientation and History of the Trade"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-IWTC1-1-001",
@@ -217846,7 +221549,8 @@ window.CPL_STATEWIDE = {
           "course": "IW 101",
           "credit": "2 hours in OSHA 30 for Ironworkers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-IWTC2-1-001",
@@ -217886,7 +221590,8 @@ window.CPL_STATEWIDE = {
           "course": "IW 110",
           "credit": "1.5 hours in Mixed Base"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-IWTC3-1-001",
@@ -217926,7 +221631,8 @@ window.CPL_STATEWIDE = {
           "course": "IW 120",
           "credit": "1.5 hours in Rigging"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-IWTC4-1-001",
@@ -217966,7 +221672,8 @@ window.CPL_STATEWIDE = {
           "course": "IW 130",
           "credit": "1.5 hours in Reinforcing I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-IWTC5-1-001",
@@ -218006,7 +221713,8 @@ window.CPL_STATEWIDE = {
           "course": "IW 131",
           "credit": "1.5 hours in Reinforcing II/Post Tension"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-IWTC6-1-001",
@@ -218046,7 +221754,8 @@ window.CPL_STATEWIDE = {
           "course": "IW 140",
           "credit": "1.5 hours in Precast Concrete and Metal Buildings"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-IWTC7-1-001",
@@ -218086,7 +221795,8 @@ window.CPL_STATEWIDE = {
           "course": "IW 150",
           "credit": "1.5 hours in Welding I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-IWTC8-1-001",
@@ -218126,7 +221836,8 @@ window.CPL_STATEWIDE = {
           "course": "IW 151",
           "credit": "1.5 hours in Welding II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-IWTC9-1-001",
@@ -218166,7 +221877,8 @@ window.CPL_STATEWIDE = {
           "course": "IW 152",
           "credit": "1.5 hours in Welding III"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-IWTC10-1-001",
@@ -218206,7 +221918,8 @@ window.CPL_STATEWIDE = {
           "course": "IW 160",
           "credit": "2 hours in Lead Hazard"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-IWTC11-1-001",
@@ -218246,7 +221959,8 @@ window.CPL_STATEWIDE = {
           "course": "IW 170",
           "credit": "1.5 hours in Structural I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-IWTC12-1-001",
@@ -218286,7 +222000,8 @@ window.CPL_STATEWIDE = {
           "course": "IW 171",
           "credit": "1.5 hours in Structural II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-IWTC13-1-001",
@@ -218326,7 +222041,8 @@ window.CPL_STATEWIDE = {
           "course": "IW 180",
           "credit": "1.5 hours in Architectural/Ornamental I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-IWTC14-1-001",
@@ -218366,7 +222082,8 @@ window.CPL_STATEWIDE = {
           "course": "IW 183",
           "credit": "3 hours in The History of Ironworkers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-IWTC15-1-001",
@@ -218406,7 +222123,8 @@ window.CPL_STATEWIDE = {
           "course": "IW 186",
           "credit": "1.5 hours in Architectural/Ornamental II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-IWTC16-1-001",
@@ -218446,7 +222164,8 @@ window.CPL_STATEWIDE = {
           "course": "IW 298",
           "credit": "0.5 hours in Work Experience in Ironworkers Apprenticeship"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P-1-001",
@@ -218486,7 +222205,8 @@ window.CPL_STATEWIDE = {
           "course": "SHME 100",
           "credit": "3.5 hours in Sheet Metal Apprenticeship I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P1-1-001",
@@ -218526,7 +222246,8 @@ window.CPL_STATEWIDE = {
           "course": "SHME 101",
           "credit": "3.5 hours in Sheet Metal Apprenticeship II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P2-1-001",
@@ -218566,7 +222287,8 @@ window.CPL_STATEWIDE = {
           "course": "SHME 110",
           "credit": "3.5 hours in Sheet Metal Apprenticeship III"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P3-1-001",
@@ -218606,7 +222328,8 @@ window.CPL_STATEWIDE = {
           "course": "SHME 111",
           "credit": "3.5 hours in Sheet Metal Apprenticeship IV"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P4-1-001",
@@ -218646,7 +222369,8 @@ window.CPL_STATEWIDE = {
           "course": "SHME 120",
           "credit": "3.5 hours in Sheet Metal Apprenticeship V"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P5-1-001",
@@ -218686,7 +222410,8 @@ window.CPL_STATEWIDE = {
           "course": "SHME 121",
           "credit": "3.5 hours in Sheet Metal Apprenticeship VI"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P6-1-001",
@@ -218726,7 +222451,8 @@ window.CPL_STATEWIDE = {
           "course": "SHME 130",
           "credit": "3.5 hours in Sheet Metal Apprenticeship VII"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P7-1-001",
@@ -218766,7 +222492,8 @@ window.CPL_STATEWIDE = {
           "course": "SHME 131",
           "credit": "3.5 hours in Sheet Metal Apprenticeship VIII"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P8-1-001",
@@ -218806,7 +222533,8 @@ window.CPL_STATEWIDE = {
           "course": "SHME 140",
           "credit": "3.5 hours in Sheet Metal Apprenticeship IX"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P9-1-001",
@@ -218846,7 +222574,8 @@ window.CPL_STATEWIDE = {
           "course": "SHME 141",
           "credit": "3.5 hours in Sheet Metal Apprenticeship X"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P10-1-001",
@@ -218886,7 +222615,8 @@ window.CPL_STATEWIDE = {
           "course": "SHME 150",
           "credit": "3.5 hours in Sheet Metal Welding I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P11-1-001",
@@ -218926,7 +222656,8 @@ window.CPL_STATEWIDE = {
           "course": "SHME 151",
           "credit": "3.5 hours in Sheet Metal Welding II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P12-1-001",
@@ -218966,7 +222697,8 @@ window.CPL_STATEWIDE = {
           "course": "SMTEC 100",
           "credit": "2.5 hours in Sheet Metal Service Technician Apprenticeship I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P13-1-001",
@@ -219006,7 +222738,8 @@ window.CPL_STATEWIDE = {
           "course": "SMTEC 101",
           "credit": "2.5 hours in Sheet Metal Service Technician Apprenticeship II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P14-1-001",
@@ -219046,7 +222779,8 @@ window.CPL_STATEWIDE = {
           "course": "SMTEC 110",
           "credit": "2.5 hours in Sheet Metal Service Technician Apprenticeship III"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P15-1-001",
@@ -219086,7 +222820,8 @@ window.CPL_STATEWIDE = {
           "course": "SMTEC 111",
           "credit": "2.5 hours in Sheet Metal Service Technician Apprenticeship IV"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P16-1-001",
@@ -219126,7 +222861,8 @@ window.CPL_STATEWIDE = {
           "course": "SMTEC 120",
           "credit": "2.5 hours in Sheet Metal Service Technician Apprenticeship V"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P17-1-001",
@@ -219166,7 +222902,8 @@ window.CPL_STATEWIDE = {
           "course": "SMTEC 121",
           "credit": "2.5 hours in Sheet Metal Service Technician Apprenticeship VI"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P18-1-001",
@@ -219206,7 +222943,8 @@ window.CPL_STATEWIDE = {
           "course": "SMTEC 130",
           "credit": "2.5 hours in Sheet Metal Service Technician Apprenticeship VII"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P19-1-001",
@@ -219246,7 +222984,8 @@ window.CPL_STATEWIDE = {
           "course": "SMTEC 131",
           "credit": "2.5 hours in Sheet Metal Service Technician Apprenticeship VIII"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P20-1-001",
@@ -219286,7 +223025,8 @@ window.CPL_STATEWIDE = {
           "course": "SMTEC 140",
           "credit": "2.5 hours in Sheet Metal Service Technician Apprenticeship IX"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P21-1-001",
@@ -219326,7 +223066,8 @@ window.CPL_STATEWIDE = {
           "course": "SMTEC 141",
           "credit": "2.5 hours in Sheet Metal Serv Tech Appr X"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-UL3P22-1-001",
@@ -219366,7 +223107,8 @@ window.CPL_STATEWIDE = {
           "course": "SHME 298",
           "credit": "0.5 hours in Work Experience in Sheet Metal Apprenticeship"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-APR–-1-001",
@@ -219405,7 +223147,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 474B",
           "credit": "2 hours in Ad Print Reading-Digital App"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-BHF-1-001",
@@ -219444,7 +223187,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 476A",
           "credit": "1.5 hours in Basic Hand Finishing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-AFT-1-001",
@@ -219483,7 +223227,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 476B",
           "credit": "1.5 hours in Automatic Finishing Tools"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-AHF-1-001",
@@ -219522,7 +223267,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 477B",
           "credit": "1.5 hours in Advanced Hand Finishing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-AAFT-1-001",
@@ -219561,7 +223307,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 477C",
           "credit": "1.5 hours in Adv Automatic Finishing Tools"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-BL-1-001",
@@ -219600,7 +223347,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 472B",
           "credit": "1.5 hours in Basic Lathing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-AMAT-1-001",
@@ -219639,7 +223387,8 @@ window.CPL_STATEWIDE = {
           "course": "CRP 474C",
           "credit": "1 hour in Air, Moisture,Thermal Barriers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-CHSB2-1-001",
@@ -219678,7 +223427,8 @@ window.CPL_STATEWIDE = {
           "course": "BIOL 424",
           "credit": "3 hours in Anatomy and Physiology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-CRAA-1-001",
@@ -219717,7 +223467,8 @@ window.CPL_STATEWIDE = {
           "course": "BIOL 424",
           "credit": "3 hours in Anatomy and Physiology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC118-1-001",
@@ -219756,7 +223507,8 @@ window.CPL_STATEWIDE = {
           "course": "DRLTH 100",
           "credit": "1.5 hours in Introduction to Apprenticeship I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC119-1-001",
@@ -219795,7 +223547,8 @@ window.CPL_STATEWIDE = {
           "course": "DRLTH 102",
           "credit": "1.5 hours in Basic Applications"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC120-1-001",
@@ -219834,7 +223587,8 @@ window.CPL_STATEWIDE = {
           "course": "DRLTH 103",
           "credit": "1.5 hours in Drywall Lathing Trade Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC121-1-001",
@@ -219873,7 +223627,8 @@ window.CPL_STATEWIDE = {
           "course": "DRLTH 105",
           "credit": "2 hours in Mathematics for Drywall/Lathers"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC122-1-001",
@@ -219912,7 +223667,8 @@ window.CPL_STATEWIDE = {
           "course": "DRLTH 110",
           "credit": "1.5 hours in Residential Metal Framing"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC123-1-001",
@@ -219951,7 +223707,8 @@ window.CPL_STATEWIDE = {
           "course": "DRLTH 112",
           "credit": "1.5 hours in Doors, Windows, Exterior Systems/Building Documents"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC124-1-001",
@@ -219990,7 +223747,8 @@ window.CPL_STATEWIDE = {
           "course": "DRLTH 120",
           "credit": "1.5 hours in Blueprint Reading I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC125-1-001",
@@ -220029,7 +223787,8 @@ window.CPL_STATEWIDE = {
           "course": "DRLTH 121",
           "credit": "1.5 hours in Blueprint Reading II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC126-1-001",
@@ -220068,7 +223827,8 @@ window.CPL_STATEWIDE = {
           "course": "DRLTH 122",
           "credit": "1.5 hours in Blueprint Reading III"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC127-1-001",
@@ -220107,7 +223867,8 @@ window.CPL_STATEWIDE = {
           "course": "DRLTH 130",
           "credit": "1.5 hours in Welding I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC128-1-001",
@@ -220146,7 +223907,8 @@ window.CPL_STATEWIDE = {
           "course": "DRLTH 131",
           "credit": "1.5 hours in Welding II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC129-1-001",
@@ -220185,7 +223947,8 @@ window.CPL_STATEWIDE = {
           "course": "DRLTH 140",
           "credit": "1.5 hours in Exterior/Advanced Fire Control System and Partitions"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC130-1-001",
@@ -220224,7 +223987,8 @@ window.CPL_STATEWIDE = {
           "course": "DRLTH 142",
           "credit": "1.5 hours in Exterior Systems and Trims"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC131-1-001",
@@ -220263,7 +224027,8 @@ window.CPL_STATEWIDE = {
           "course": "DRLTH 150",
           "credit": "1.5 hours in Interior Metal Lathing System, Sound Control"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC132-1-001",
@@ -220302,7 +224067,8 @@ window.CPL_STATEWIDE = {
           "course": "DRLTH 160",
           "credit": "1.5 hours in Ceilings, Shaft Protection and Demountable Partitions"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC133-1-001",
@@ -220341,7 +224107,8 @@ window.CPL_STATEWIDE = {
           "course": "DRLTH 162",
           "credit": "1.5 hours in Arches, Furring and Advanced Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-CTCC134-1-001",
@@ -220380,7 +224147,8 @@ window.CPL_STATEWIDE = {
           "course": "DRLTH 170",
           "credit": "1.5 hours in Advanced Construction Techniques"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-AAP-1-001",
@@ -220419,7 +224187,8 @@ window.CPL_STATEWIDE = {
           "course": "BIOL 424",
           "credit": "3 hours in Anatomy and Physiology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AILA-1-001|MAPSAS-A-IL-1-001|MAPSAS-A:IL-1-001|MAPSAS-AEIL-1-001|MAPSAS-AI-L-1-001|MAPSAS-AIL&-1-001|MAPSAS-AILA-1-001|MAPSAS-AILA1-1-001|MAPSAS-AILA2-1-001|MAPSAS-AILA3-1-001|MAPSAS-AILA4-1-001|MAPSAS-AILA6-1-001|MAPSAS-AILC-1-001|MAPSAS-AILC1-1-001",
@@ -220626,7 +224395,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-P1D-1-001",
@@ -220664,7 +224434,8 @@ window.CPL_STATEWIDE = {
           "course": "PEC 164",
           "credit": "1 hour in Self Defense"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-P1D--1-001",
@@ -220702,7 +224473,8 @@ window.CPL_STATEWIDE = {
           "course": "PEC 164",
           "credit": "1 hour in Self Defense"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-P1FF-1-001",
@@ -220740,7 +224512,8 @@ window.CPL_STATEWIDE = {
           "course": "PEC 140",
           "credit": "1 hour in Exercise for Fitness"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-P1EF-1-001",
@@ -220778,7 +224551,8 @@ window.CPL_STATEWIDE = {
           "course": "PEC 140",
           "credit": "1 hour in Exercise for Fitness"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-FSEI-1-001",
@@ -220816,7 +224590,8 @@ window.CPL_STATEWIDE = {
           "course": "MORT 236 C",
           "credit": "4 hours in Funeral Service Ethics and Laws II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-FSEL-1-001",
@@ -220854,7 +224629,8 @@ window.CPL_STATEWIDE = {
           "course": "MORT 234 C",
           "credit": "4 hours in Funeral Service Ethics and Laws I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-FSAI-1-001",
@@ -220892,7 +224668,8 @@ window.CPL_STATEWIDE = {
           "course": "MORT 204 C",
           "credit": "4 hours in Funeral Service Administration II"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-FST1-1-001",
@@ -220930,7 +224707,8 @@ window.CPL_STATEWIDE = {
           "course": "MORT 248 C",
           "credit": "6 hours in Funeral Service Thanatology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-FST-1-001",
@@ -220968,7 +224746,8 @@ window.CPL_STATEWIDE = {
           "course": "MORT 248 C",
           "credit": "6 hours in Funeral Service Thanatology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FSE4-1-001",
@@ -221006,7 +224785,8 @@ window.CPL_STATEWIDE = {
           "course": "MORT 492 C",
           "credit": "4 hours in Funeral Service Externship"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CE(4-1-001",
@@ -221044,7 +224824,8 @@ window.CPL_STATEWIDE = {
           "course": "MORT 482 C",
           "credit": "4 hours in Clinical Embalming Externship"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-AGLL-1-001|MAPSAS-A-GL-1-001|MAPSAS-A:GL-1-001|MAPSAS-AEGL-1-001|MAPSAS-AG-&-1-001|MAPSAS-AGL&-1-001|MAPSAS-AGL-1-001|MAPSAS-AGL1-1-001|MAPSAS-AGL2-1-001|MAPSAS-AGL3-1-001|MAPSAS-AGL4-1-001|MAPSAS-AGLA-1-001|MAPSAS-AGLA1-1-001|MAPSAS-AGLA3-1-001|MAPSAS-AGLA4-1-001|MAPSAS-AGLC-1-001",
@@ -221254,7 +225035,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-AWE-1-001",
@@ -221293,7 +225075,8 @@ window.CPL_STATEWIDE = {
           "course": "APP 450",
           "credit": "4 hours in Apprenticeship Work Experience"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-VCBE-1-001",
@@ -221330,7 +225113,8 @@ window.CPL_STATEWIDE = {
           "course": "VIET 001A",
           "credit": "5 hours in Elementary Vietnamese 1"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-R1R--1-001",
@@ -221367,7 +225151,8 @@ window.CPL_STATEWIDE = {
           "course": "READ 184",
           "credit": "3 hours in Critical Reading"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-R4C--1-001",
@@ -221404,7 +225189,8 @@ window.CPL_STATEWIDE = {
           "course": "READ 40",
           "credit": "3 hours in Reading Comprehension"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-R8R--1-001",
@@ -221441,7 +225227,8 @@ window.CPL_STATEWIDE = {
           "course": "READ 82",
           "credit": "3 hours in College Reading - Comprehension"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-M1-P-1-001",
@@ -221478,7 +225265,8 @@ window.CPL_STATEWIDE = {
           "course": "MICRO 101",
           "credit": "4 hours in Microbiology"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-PS&S-1-001",
@@ -221515,7 +225303,8 @@ window.CPL_STATEWIDE = {
           "course": "ATC 274 C",
           "credit": "3 hours in Passenger Services and Safety"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-CRM-1-001",
@@ -221552,7 +225341,8 @@ window.CPL_STATEWIDE = {
           "course": "ATC 256 C",
           "credit": "3 hours in Crew Resource Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOH-WEHS-1-001",
@@ -221589,7 +225379,8 @@ window.CPL_STATEWIDE = {
           "course": "WOEX 100",
           "credit": "3 hours in Work Experience"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAA-B1YE-1-001",
@@ -221626,7 +225417,8 @@ window.CPL_STATEWIDE = {
           "course": "APMT 51",
           "credit": "4 hours in Boatworks 101 Yacht Electrical Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAA-B1YP-1-001",
@@ -221663,7 +225455,8 @@ window.CPL_STATEWIDE = {
           "course": "APMT 52",
           "credit": "4 hours in Boatworks 101 Yacht Propulsion Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAA-OWE--1-001",
@@ -221700,7 +225493,8 @@ window.CPL_STATEWIDE = {
           "course": "APMT 94",
           "credit": "8 hours in Occupational Work Experience - Marine Technology Apprenticeship"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-AOJ-1-001",
@@ -221737,7 +225531,8 @@ window.CPL_STATEWIDE = {
           "course": "ADMJ 72",
           "credit": "8 hours in Police Work Experience"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-FSVC-1-001",
@@ -221774,7 +225569,8 @@ window.CPL_STATEWIDE = {
           "course": "VIE 001",
           "credit": "5 hours in First Semester Vietnamese (Elementary Level)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-ACLA-1-001|MAPSAS-A-CL-1-001|MAPSAS-A:CL-1-001|MAPSAS-AC-L-1-001|MAPSAS-ACL&-1-001|MAPSAS-ACL&1-1-001|MAPSAS-ACLA-1-001|MAPSAS-ACLA1-1-001|MAPSAS-ACLA2-1-001|MAPSAS-ACLA3-1-001|MAPSAS-ACLA4-1-001|MAPSAS-ACLA5-1-001|MAPSAS-ACLA7-1-001|MAPSAS-ACLC-1-001|MAPSAS-AECL-1-001",
@@ -221990,7 +225786,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-IMH--1-001|MAPSAS-I:MA-1-001|MAPSAS-IEMA-1-001|MAPSAS-IMA&-1-001|MAPSAS-IMAA-1-001",
@@ -222125,7 +225922,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "4 hours in MATHEMATICAL CONCEPTS & QUANITATIVE REASONING"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-IMHA-1-001|MAPSAS-I:MA1-1-001|MAPSAS-IEMA1-1-001|MAPSAS-IMA&1-1-001|MAPSAS-IMAA1-1-001",
@@ -222260,7 +226058,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "4 hours in MATHEMATICAL CONCEPTS & QUANITATIVE REASONING"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-A:UG-1-001|MAPSAS-AUGP-1-001",
@@ -222377,7 +226176,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-ILAL4-1-001",
@@ -222488,7 +226288,8 @@ window.CPL_STATEWIDE = {
           "course": "Cal-GETC Area 3B",
           "credit": "3 hours in Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-ILAL5-1-001",
@@ -222599,7 +226400,8 @@ window.CPL_STATEWIDE = {
           "course": "Cal-GETC Area 3B",
           "credit": "3 hours in Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-ILAL6-1-001",
@@ -222710,7 +226512,8 @@ window.CPL_STATEWIDE = {
           "course": "Cal-GETC Area 3B",
           "credit": "3 hours in Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-ILAL7-1-001",
@@ -222821,7 +226624,8 @@ window.CPL_STATEWIDE = {
           "course": "Cal-GETC Area 3B",
           "credit": "3 hours in Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-ILAL-1-001|MAPSAS-I:LA-1-001|MAPSAS-ILAL10-1-001|MAPSAS-ILAL12-1-001|MAPSAS-ILAL2-1-001",
@@ -222882,7 +226686,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "4 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-ILAL1-1-001|MAPSAS-I:LA1-1-001|MAPSAS-ILAL11-1-001|MAPSAS-ILAL13-1-001|MAPSAS-ILAL3-1-001",
@@ -222943,7 +226748,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "4 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CSAW-1-001|MAPSAS-CSAW1-1-001|MAPSAS-CSAW2-1-001|MAPSAS-CSAW3-1-001",
@@ -222987,7 +226793,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CCA13-1-001|MAPSAS-CCA18-1-001|MAPSAS-CCA27-1-001|MAPSAS-CCA29-1-001",
@@ -223035,7 +226842,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 2",
           "credit": "3 hours in Mathematics"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-AL-L-1-001|MAPSAS-ALL-1-001|MAPSAS-ALL1-1-001",
@@ -223083,7 +226891,8 @@ window.CPL_STATEWIDE = {
           "course": "GE 3 Area 3",
           "credit": "8 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-A-CB1-1-001|MAPSAS-A:CB1-1-001|MAPSAS-ACBS-1-001",
@@ -223135,7 +226944,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-ILB(-1-001|MAPSAH-ILB(1-1-001|MAPSAS-ILB(-1-001|MAPSAS-ILB1-1-001",
@@ -223189,7 +226999,8 @@ window.CPL_STATEWIDE = {
           "course": "GE 3 Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CSWW20-1-001|MAPSAS-CSWW23-1-001|MAPSAS-CSWW8-1-001",
@@ -223235,7 +227046,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-AFL2-1-001|MAPSAS-AFL7-1-001",
@@ -223275,7 +227087,8 @@ window.CPL_STATEWIDE = {
           "course": "GE 3 Area 3",
           "credit": "4 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-ILAL1-1-001|MAPSAS-ILAL9-1-001",
@@ -223315,7 +227128,8 @@ window.CPL_STATEWIDE = {
           "course": "GE 3 Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-D:AO-1-001|MAPSAS-DAOT-1-001",
@@ -223356,7 +227170,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-D:A-1-001|MAPSAS-DA1-1-001",
@@ -223397,7 +227212,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 5",
           "credit": "3 hours in Natural Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-D:EI-1-001|MAPSAS-DEIA-1-001",
@@ -223438,7 +227254,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-D:FO-1-001|MAPSAS-DFOC-1-001",
@@ -223479,7 +227296,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-D:IT-1-001|MAPSAS-DITB-1-001",
@@ -223520,7 +227338,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-D:IT1-1-001|MAPSAS-DITL-1-001",
@@ -223561,7 +227380,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-D:IT2-1-001|MAPSAS-DITW-1-001",
@@ -223602,7 +227422,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-D:LD-1-001|MAPSAS-DLDP-1-001",
@@ -223643,7 +227464,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-D:PO-1-001|MAPSAS-DPOP-1-001",
@@ -223684,7 +227506,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 5",
           "credit": "3 hours in Natural Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-D:PO2-1-001|MAPSAS-DPOP1-1-001",
@@ -223725,7 +227548,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 1B",
           "credit": "3 hours in Oral Communication and Critical Thinking"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-D:PO1-1-001|MAPSAS-DPOS-1-001",
@@ -223766,7 +227590,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:SW-1-001|MAPSAS-CESW1-1-001",
@@ -223807,7 +227632,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "8 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CHUS12-1-001|MAPSAS-CHUS54-1-001",
@@ -223851,7 +227677,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "3 hours in SOCIAL AND BEHAVIORAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CHUS13-1-001|MAPSAS-CHUS55-1-001",
@@ -223895,7 +227722,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "3 hours in SOCIAL AND BEHAVIORAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CHGA14-1-001|MAPSAS-CHGA7-1-001",
@@ -223935,7 +227763,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CGLL-1-001|MAPSAS-CGLL2-1-001",
@@ -223975,7 +227804,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in ARTS AND HUMANITIES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CSLL-1-001|MAPSAS-CSLL2-1-001",
@@ -224015,7 +227845,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in ARTS AND HUMANITIES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CFLI13-1-001|MAPSAS-CFLI32-1-001",
@@ -224055,7 +227886,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "3 hours in ARTS AND HUMANITIES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CCA15-1-001|MAPSAS-CCA41-1-001",
@@ -224095,7 +227927,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "3 hours in MATHEMATICAL CONCEPTS ANDQUANTITATIVE REASONING"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CHUI4-1-001|MAPSAS-CHUI6-1-001",
@@ -224135,7 +227968,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CHUI5-1-001|MAPSAS-CHUI7-1-001",
@@ -224175,7 +228009,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CHG&3-1-001|MAPSAS-CHG&4-1-001",
@@ -224211,7 +228046,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "3 hours in Social & Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CGLL1-1-001|MAPSAS-CGLL3-1-001",
@@ -224251,7 +228087,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in ARTS AND HUMANITIES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CSLL1-1-001|MAPSAS-CSLL3-1-001",
@@ -224291,7 +228128,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in ARTS AND HUMANITIES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CSSA-1-001|MAPSAS-CSSA1-1-001",
@@ -224331,7 +228169,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 4",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBES-H0C-1-001",
@@ -224365,7 +228204,8 @@ window.CPL_STATEWIDE = {
           "course": "HVAC/R 007",
           "credit": "3 hours in Welding for HVAC/R"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-BRAA-1-001",
@@ -224399,7 +228239,8 @@ window.CPL_STATEWIDE = {
           "course": "AIRE 100",
           "credit": "4 hours in Basic Refrigeration & AC Theory"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-BRAA1-1-001",
@@ -224433,7 +228274,8 @@ window.CPL_STATEWIDE = {
           "course": "AIRE 103",
           "credit": "2 hours in Basic Refrigeration & AC Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEH-ITHA-1-001",
@@ -224467,7 +228309,8 @@ window.CPL_STATEWIDE = {
           "course": "HOSP 101",
           "credit": "3 hours in Introduction to Hospitality & Tourism"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CNA(-1-001",
@@ -224501,7 +228344,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE Area 7",
           "credit": "3 hours in Lifelong Learning and Self Development"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-EHI-1-001",
@@ -224535,7 +228379,8 @@ window.CPL_STATEWIDE = {
           "course": "HMNG 01",
           "credit": "5 hours in Elementary Hmong I"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-EHI1-1-001",
@@ -224569,7 +228414,8 @@ window.CPL_STATEWIDE = {
           "course": "HMNG 02",
           "credit": "5 hours in Elementary Hmong"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-A2M-1-1-001",
@@ -224603,7 +228449,8 @@ window.CPL_STATEWIDE = {
           "course": "ANSC 228",
           "credit": "3 hours in Dairy Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-A2M--1-001",
@@ -224637,7 +228484,8 @@ window.CPL_STATEWIDE = {
           "course": "ANSC 228",
           "credit": "3 hours in Dairy Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-A2M--1-001",
@@ -224671,7 +228519,8 @@ window.CPL_STATEWIDE = {
           "course": "ANSC 228",
           "credit": "3 hours in Dairy Management"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CESS-1-001",
@@ -224705,7 +228554,8 @@ window.CPL_STATEWIDE = {
           "course": "RCCD GE-A 4",
           "credit": "3 hours in Area 4: Social and Behavioral Sciences (3 units)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPMM-A1BP-1-001",
@@ -224739,7 +228589,8 @@ window.CPL_STATEWIDE = {
           "course": "ART 170",
           "credit": "3 hours in Basic Photography"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ES6C-1-001",
@@ -224773,7 +228624,8 @@ window.CPL_STATEWIDE = {
           "course": "Air Conditioning (AIRC) 133",
           "credit": "2 hours in Refrigerant Recovery Certification Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ACP-1-001",
@@ -224807,7 +228659,8 @@ window.CPL_STATEWIDE = {
           "course": "AIRC 121",
           "credit": "4 hours in Air Conditioning Principles"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-RP-1-001",
@@ -224841,7 +228694,8 @@ window.CPL_STATEWIDE = {
           "course": "AIRC 122",
           "credit": "4 hours in Refrigeration Principles"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-HSA-5-1-001",
@@ -224875,7 +228729,8 @@ window.CPL_STATEWIDE = {
           "course": "ART 501",
           "credit": "3 hours in Beginning Two-Dimensional Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IEKB-1-001",
@@ -224913,7 +228768,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-RC&R-1-001",
@@ -224947,7 +228803,8 @@ window.CPL_STATEWIDE = {
           "course": "AC/R 036 C",
           "credit": "1 hour in Refrigerant Certification Training"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-HP-1-001",
@@ -224981,7 +228838,8 @@ window.CPL_STATEWIDE = {
           "course": "AC/R 230 C",
           "credit": "2 hours in Heat Pumps"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-CR1-1-001",
@@ -225015,7 +228873,8 @@ window.CPL_STATEWIDE = {
           "course": "AC/R 210 C",
           "credit": "3 hours in Commercial Refrigeration"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-IAC-1-001",
@@ -225049,7 +228908,8 @@ window.CPL_STATEWIDE = {
           "course": "AIRC 131",
           "credit": "4.5 hours in Intermediate Air Conditioning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-RS-1-001",
@@ -225083,7 +228943,8 @@ window.CPL_STATEWIDE = {
           "course": "Air Conditioning (AIRC) 132",
           "credit": "4.5 hours in Refrigeration Service"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-ES6C-1-001",
@@ -225117,7 +228978,8 @@ window.CPL_STATEWIDE = {
           "course": "Air Conditioning (AIRC) 133",
           "credit": "2 hours in Refrigerant Recovery Certification Preparation"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-HHAA-1-001",
@@ -225151,7 +229013,8 @@ window.CPL_STATEWIDE = {
           "course": "AIRC 141",
           "credit": "3 hours in Hydronics and Air Distribution"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-ILA(-1-001",
@@ -225185,7 +229048,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 3B",
           "credit": "3 hours in 3B. Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAH-ILA(1-1-001",
@@ -225219,7 +229083,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 3B",
           "credit": "3 hours in 3B. Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CSWW1-1-001|MAPSAS-CSWW2-1-001",
@@ -225259,7 +229124,8 @@ window.CPL_STATEWIDE = {
           "course": "CSU Units",
           "credit": "6 hours in CSU Semester Units Earned toward CSU Admission"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CPOM-1-001",
@@ -225293,7 +229159,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 4",
           "credit": "3 hours in Social & Behavioral science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CPOM2-1-001",
@@ -225327,7 +229194,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 4",
           "credit": "3 hours in Social & Behavioral science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CWCI1-1-001",
@@ -225361,7 +229229,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 4",
           "credit": "3 hours in Social & Behavioral science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAA-B1YC-1-001",
@@ -225395,7 +229264,8 @@ window.CPL_STATEWIDE = {
           "course": "APMT 53",
           "credit": "0.5 hours in Boatworks 101 Yacht Craftsmanship Lab"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DAHO-1-001",
@@ -225429,7 +229299,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Group D",
           "credit": "3 hours in Social Science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DBEA-1-001",
@@ -225463,7 +229334,8 @@ window.CPL_STATEWIDE = {
           "course": "CPL Units",
           "credit": "3 hours in Major/Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DBM-1-001",
@@ -225497,7 +229369,8 @@ window.CPL_STATEWIDE = {
           "course": "CPL Units",
           "credit": "3 hours in Major/Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DCAI-1-001",
@@ -225531,7 +229404,8 @@ window.CPL_STATEWIDE = {
           "course": "CPL Units",
           "credit": "3 hours in Major/Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DCJ-1-001",
@@ -225565,7 +229439,8 @@ window.CPL_STATEWIDE = {
           "course": "CPL Units",
           "credit": "3 hours in Major/Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DES-1-001",
@@ -225599,7 +229474,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Group B",
           "credit": "3 hours in Natural Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DFOE-1-001",
@@ -225633,7 +229509,8 @@ window.CPL_STATEWIDE = {
           "course": "CPL Units",
           "credit": "3 hours in Major/Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DFOC1-1-001",
@@ -225667,7 +229544,8 @@ window.CPL_STATEWIDE = {
           "course": "CPL Units",
           "credit": "3 hours in Major/Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DFOC2-1-001",
@@ -225701,7 +229579,8 @@ window.CPL_STATEWIDE = {
           "course": "CPL Units",
           "credit": "3 hours in Major/Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DGA-1-001",
@@ -225735,7 +229614,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Group D",
           "credit": "3 hours in Social Science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DHAH-1-001",
@@ -225769,7 +229649,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Group E",
           "credit": "3 hours in Self Development"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DHTY-1-001",
@@ -225803,7 +229684,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Group E",
           "credit": "3 hours in Self Development"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DHOT-1-001",
@@ -225837,7 +229719,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Group D",
           "credit": "3 hours in Social Science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DHRM-1-001",
@@ -225871,7 +229754,8 @@ window.CPL_STATEWIDE = {
           "course": "CPL Units",
           "credit": "3 hours in Major/Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DITG-1-001",
@@ -225905,7 +229789,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Group D",
           "credit": "3 hours in Social Science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DMIS-1-001",
@@ -225939,7 +229824,8 @@ window.CPL_STATEWIDE = {
           "course": "CPL Units",
           "credit": "3 hours in Major/Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DMFL-1-001",
@@ -225973,7 +229859,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Group A3",
           "credit": "3 hours in Math"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DMAB-1-001",
@@ -226007,7 +229894,8 @@ window.CPL_STATEWIDE = {
           "course": "CPL Units",
           "credit": "3 hours in Major/Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DOB-1-001",
@@ -226041,7 +229929,8 @@ window.CPL_STATEWIDE = {
           "course": "CPL Units",
           "credit": "3 hours in Major/Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DPF-1-001",
@@ -226075,7 +229964,8 @@ window.CPL_STATEWIDE = {
           "course": "CPL Units",
           "credit": "3 hours in Major/Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DPOA-1-001",
@@ -226109,7 +229999,8 @@ window.CPL_STATEWIDE = {
           "course": "CPL Units",
           "credit": "3 hours in Major/Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DPOF-1-001",
@@ -226143,7 +230034,8 @@ window.CPL_STATEWIDE = {
           "course": "CPL Units",
           "credit": "3 hours in Major/Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DPOS1-1-001",
@@ -226177,7 +230069,8 @@ window.CPL_STATEWIDE = {
           "course": "CPL Units",
           "credit": "3 hours in Major/Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DSA-1-001",
@@ -226211,7 +230104,8 @@ window.CPL_STATEWIDE = {
           "course": "CPL Units",
           "credit": "3 hours in Major/Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DTW-1-001",
@@ -226245,7 +230139,8 @@ window.CPL_STATEWIDE = {
           "course": "CPL Units",
           "credit": "3 hours in Major/Elective Units"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-DTCW-1-001",
@@ -226279,7 +230174,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Group D",
           "credit": "3 hours in Social Science"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPOO-GHTS-1-001",
@@ -226313,7 +230209,8 @@ window.CPL_STATEWIDE = {
           "course": "AC/R 115 C",
           "credit": "3 hours in Gas Heat Transfer Systems"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CESW-1-001",
@@ -226347,7 +230244,8 @@ window.CPL_STATEWIDE = {
           "course": "CPL 1",
           "credit": "6 hours in Elective Course Credits"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IEFA-1-001",
@@ -226381,7 +230279,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IEFA1-1-001",
@@ -226415,7 +230314,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IEGA-1-001",
@@ -226449,7 +230349,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IEGA1-1-001",
@@ -226483,7 +230384,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IEGA2-1-001",
@@ -226517,7 +230419,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IEGA3-1-001",
@@ -226551,7 +230454,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IEHA-1-001",
@@ -226585,7 +230489,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IEHA1-1-001",
@@ -226619,7 +230524,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IEIA-1-001",
@@ -226653,7 +230559,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IEIA1-1-001",
@@ -226687,7 +230594,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IEJA-1-001",
@@ -226721,7 +230629,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IELA5-1-001",
@@ -226755,7 +230664,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IELA6-1-001",
@@ -226789,7 +230699,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IESA-1-001",
@@ -226823,7 +230734,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IESA1-1-001",
@@ -226857,7 +230769,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IESB-1-001",
@@ -226891,7 +230804,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-DPA0-1-001",
@@ -226925,7 +230839,8 @@ window.CPL_STATEWIDE = {
           "course": "ART 031",
           "credit": "3 hours in Digital Photography"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-C:P1-1-001",
@@ -226959,7 +230874,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CAG(-1-001",
@@ -226993,7 +230909,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "4 hours in SOCIAL AND BEHAVIORAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CAL(-1-001",
@@ -227027,7 +230944,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "4 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CA&I1-1-001",
@@ -227061,7 +230979,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "4 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CB5-1-001",
@@ -227095,7 +231014,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 5",
           "credit": "4 hours in NATURAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CC10-1-001",
@@ -227129,7 +231049,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "4 hours in MATHEMATICAL CONCEPTS & QUANITATIVE REASONING"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CC11-1-001",
@@ -227163,7 +231084,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 5",
           "credit": "4 hours in NATURAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CCA(-1-001",
@@ -227197,7 +231119,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "4 hours in MATHEMATICAL CONCEPTS & QUANITATIVE REASONING"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CCAT1-1-001",
@@ -227231,7 +231154,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "4 hours in MATHEMATICAL CONCEPTS & QUANITATIVE REASONING"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CFLI9-1-001",
@@ -227265,7 +231189,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "4 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CGLI9-1-001",
@@ -227299,7 +231224,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "4 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CHUS8-1-001",
@@ -227333,7 +231259,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "4 hours in SOCIAL AND BEHAVIORAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CHUS9-1-001",
@@ -227367,7 +231294,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "4 hours in SOCIAL AND BEHAVIORAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CHG&-1-001",
@@ -227401,7 +231329,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "4 hours in SOCIAL AND BEHAVIORAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CH5-1-001",
@@ -227435,7 +231364,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "4 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CIP3-1-001",
@@ -227469,7 +231399,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "4 hours in SOCIAL AND BEHAVIORAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CIS5-1-001",
@@ -227503,7 +231434,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "4 hours in SOCIAL AND BEHAVIORAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CNS4-1-001",
@@ -227537,7 +231469,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 5",
           "credit": "4 hours in NATURAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CP4-1-001",
@@ -227571,7 +231504,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "4 hours in MATHEMATICAL CONCEPTS & QUANITATIVE REASONING"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CPOM13-1-001",
@@ -227605,7 +231539,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "4 hours in SOCIAL AND BEHAVIORAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CPOM14-1-001",
@@ -227639,7 +231574,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "4 hours in SOCIAL AND BEHAVIORAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CSLI7-1-001",
@@ -227673,7 +231609,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "4 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CSWW4-1-001",
@@ -227707,7 +231644,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "4 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CWCI10-1-001",
@@ -227741,7 +231679,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "4 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CWCI11-1-001",
@@ -227775,7 +231714,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "4 hours in SOCIAL AND BEHAVIORAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-LVN(1-1-001",
@@ -227809,7 +231749,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 7",
           "credit": "3 hours in Lifelong Learning and Self Development"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-POSA-1-001",
@@ -227843,7 +231784,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 7",
           "credit": "3 hours in Lifelong Learning and Self Development"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-CNA(1-1-001",
@@ -227877,7 +231819,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 7",
           "credit": "3 hours in Lifelong Learning and Self Development"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-EMT(3-1-001",
@@ -227911,7 +231854,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 7",
           "credit": "3 hours in Lifelong Learning and Self Development"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FF1(-1-001",
@@ -227945,7 +231889,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 7",
           "credit": "3 hours in Lifelong Learning and Self Development"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-FF2(-1-001",
@@ -227979,7 +231924,8 @@ window.CPL_STATEWIDE = {
           "course": "LACCD GE 7",
           "credit": "3 hours in Lifelong Learning and Self Development"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-AP110-1-001",
@@ -228013,7 +231959,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 5",
           "credit": "3 hours in Natural Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-ASA-3-1-001",
@@ -228047,7 +231994,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 8",
           "credit": "3 hours in Participatory Arts"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-ASA-4-1-001",
@@ -228081,7 +232029,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 8",
           "credit": "3 hours in Participatory Arts"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-AWH--1-001",
@@ -228115,7 +232064,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-AAH(1-1-001",
@@ -228149,7 +232099,8 @@ window.CPL_STATEWIDE = {
           "course": "AP Credit ARH",
           "credit": "6 hours in Art History"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-A2AA3-1-001",
@@ -228183,7 +232134,8 @@ window.CPL_STATEWIDE = {
           "course": "AP Credit ART2D",
           "credit": "3 hours in 2-D Art and Design"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CCAT2-1-001",
@@ -228217,7 +232169,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CPC-1-001",
@@ -228251,7 +232204,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CAAI6-1-001",
@@ -228285,7 +232239,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CF–L-1-001",
@@ -228319,7 +232274,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CG–L-1-001",
@@ -228353,7 +232309,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CS-L-1-001",
@@ -228387,7 +232344,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CFLL-1-001",
@@ -228421,7 +232379,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CCA—-1-001",
@@ -228455,7 +232414,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CAAI9-1-001",
@@ -228489,7 +232449,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area C",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CCA11-1-001",
@@ -228523,7 +232484,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A2",
           "credit": "3 hours in Oral Communication and Critical Thinking"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CF[L-1-001",
@@ -228557,7 +232519,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area C",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CGLI14-1-001",
@@ -228591,7 +232554,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area C",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CHG&1-1-001",
@@ -228625,7 +232589,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area E",
           "credit": "3 hours in Lifelong Learning and Self Development"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CIP10-1-001",
@@ -228659,7 +232624,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area D",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CITS1-1-001",
@@ -228693,7 +232659,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area D",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CPOM25-1-001",
@@ -228727,7 +232694,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area D",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CPOM26-1-001",
@@ -228761,7 +232729,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area D",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CS[L-1-001",
@@ -228795,7 +232764,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area C",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CWCI24-1-001",
@@ -228833,7 +232803,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area D",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CWCI25-1-001",
@@ -228867,7 +232838,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area D",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CHGA9-1-001",
@@ -228901,7 +232873,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CCA-6-1-001",
@@ -228935,7 +232908,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CGI-1-001",
@@ -228969,7 +232943,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 3",
           "credit": "9 hours in ARTS & HUMANITIES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CITP1-1-001",
@@ -229003,7 +232978,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "3 hours in Social & Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CITS2-1-001",
@@ -229037,7 +233013,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "3 hours in Social & Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CFLI18-1-001",
@@ -229071,7 +233048,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area C2",
           "credit": "3 hours in Humanities (Literature, Philosophy, Languages other than English)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CGLI18-1-001",
@@ -229105,7 +233083,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area C2",
           "credit": "3 hours in Humanities (Literature, Philosophy, Languages other than English)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CSLI18-1-001",
@@ -229139,7 +233118,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area C2",
           "credit": "3 hours in Humanities (Literature, Philosophy, Languages other than English)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CSWW12-1-001",
@@ -229173,7 +233153,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area C2",
           "credit": "3 hours in Humanities (Literature, Philosophy, Languages other than English)"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CCA–3-1-001",
@@ -229207,7 +233188,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "3 hours in Mathematical Concepts and Quanitative Reasoning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CUSI-1-001",
@@ -229241,7 +233223,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 4",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CUSI1-1-001",
@@ -229275,7 +233258,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 4",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CGL(-1-001",
@@ -229309,7 +233293,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3A",
           "credit": "3 hours in Arts & Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CFL2-1-001",
@@ -229343,7 +233328,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CHOT4-1-001",
@@ -229377,7 +233363,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 4",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CHOT5-1-001",
@@ -229411,7 +233398,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 4",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CSWW17-1-001",
@@ -229445,7 +233433,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 3",
           "credit": "9 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CFLL1-1-001",
@@ -229479,7 +233468,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in ARTS AND HUMANITIES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CFLL2-1-001",
@@ -229513,7 +233503,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in ARTS AND HUMANITIES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CFLL3-1-001",
@@ -229547,7 +233538,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area C",
           "credit": "9 hours in Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CGLL4-1-001",
@@ -229581,7 +233573,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area C",
           "credit": "9 hours in Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CHOT6-1-001",
@@ -229615,7 +233608,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area B",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CHOT7-1-001",
@@ -229649,7 +233643,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area B",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CSWW19-1-001",
@@ -229683,7 +233678,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area C",
           "credit": "3 hours in Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CSLL4-1-001",
@@ -229717,7 +233713,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area C",
           "credit": "9 hours in Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CWCI60-1-001",
@@ -229755,7 +233752,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area C",
           "credit": "3 hours in Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CWCI61-1-001",
@@ -229789,7 +233787,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area B",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CEL(1-1-001",
@@ -229823,7 +233822,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CT(I-1-001",
@@ -229857,7 +233857,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CCA36-1-001",
@@ -229891,7 +233892,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CFL21-1-001",
@@ -229925,7 +233927,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CGL2-1-001",
@@ -229959,7 +233962,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CSL2-1-001",
@@ -229993,7 +233997,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CC(O-1-001",
@@ -230027,7 +234032,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "3 hours in Mathematical Concepts & Quantitative Reasoning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CEL(2-1-001",
@@ -230061,7 +234067,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in Arts & Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CITE3-1-001",
@@ -230095,7 +234102,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "3 hours in Social & Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CT(F-1-001",
@@ -230129,7 +234137,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "3 hours in Mathematical Concepts & Quantitative Reasoning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CGLI32-1-001",
@@ -230163,7 +234172,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "3 hours in ARTS AND HUMANITIES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CPOM72-1-001",
@@ -230197,7 +234207,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in SOCIAL AND BEHAVIORAL SCIENCES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CSLI32-1-001",
@@ -230231,7 +234242,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 4",
           "credit": "3 hours in ARTS AND HUMANITIES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CF(O-1-001",
@@ -230265,7 +234277,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CG(O-1-001",
@@ -230299,7 +234312,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CWCI73-1-001",
@@ -230337,7 +234351,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE 4",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CFLI35-1-001",
@@ -230371,7 +234386,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "9 hours in ARTS AND HUMANITIES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CGLI35-1-001",
@@ -230405,7 +234421,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "9 hours in ARTS AND HUMANITIES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CSLI34-1-001",
@@ -230439,7 +234456,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "12 hours in ARTS AND HUMANITIES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CSLI35-1-001",
@@ -230473,7 +234491,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "9 hours in ARTS AND HUMANITIES"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CFLI37-1-001",
@@ -230507,7 +234526,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CGLI37-1-001",
@@ -230541,7 +234561,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "9 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CSLI37-1-001",
@@ -230575,7 +234596,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 3",
           "credit": "9 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CT(T1-1-001",
@@ -230609,7 +234631,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area 2",
           "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CA&I5-1-001",
@@ -230643,7 +234666,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CCAT3-1-001",
@@ -230677,7 +234701,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-2",
           "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-CSWW25-1-001",
@@ -230711,7 +234736,8 @@ window.CPL_STATEWIDE = {
           "course": "Local GE Area A-3",
           "credit": "3 hours in Arts and Humanities"
         }
-      ]
+      ],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCBEN-PP-1-001",
@@ -230738,7 +234764,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRN-CCAH-1-001",
@@ -230765,7 +234792,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRN-CCD-1-001",
@@ -230792,7 +234820,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRN-CCTA-1-001",
@@ -230819,7 +234848,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICN-BE((-1-002",
@@ -230846,7 +234876,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-A1+-1-001",
@@ -230873,7 +234904,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-A11-1-001",
@@ -230900,7 +234932,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-A13-1-001",
@@ -230927,7 +234960,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-AJ1C1-1-001",
@@ -230954,7 +234988,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-NCFC-1-001",
@@ -230981,7 +235016,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAM-RDLP-1-001|MAPSAM-RDLP1-1-001|MAPSAM-RDLP4-1-001|MAPSAM-RDLP5-1-001",
@@ -231014,7 +235050,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-N2PP-1-001",
@@ -231041,7 +235078,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-N2PA-1-001",
@@ -231068,7 +235106,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICP-M3-I-1-001",
@@ -231095,7 +235134,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBEA9-1-001",
@@ -231122,7 +235162,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASAI-1-001",
@@ -231149,7 +235190,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-H0-1-001",
@@ -231176,7 +235218,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXA-C0-1-001",
@@ -231203,7 +235246,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-FHSC-1-001",
@@ -231230,7 +235274,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-IICN-1-001",
@@ -231257,7 +235302,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CP-B-1-001",
@@ -231284,7 +235330,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CBED4-1-001",
@@ -231311,7 +235358,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRI-PR-P-1-001",
@@ -231338,7 +235386,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXS-CT1B-1-001",
@@ -231365,7 +235414,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAA-WE-L-1-001",
@@ -231392,7 +235442,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-FLI-1-001",
@@ -231419,7 +235470,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPSAS-IEAA-1-001",
@@ -231446,7 +235498,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-G1-1-001",
@@ -231473,7 +235526,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-G5-1-001",
@@ -231500,7 +235554,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCxS-CATJ-1-001",
@@ -231527,7 +235582,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-HFA-1-001",
@@ -231554,7 +235610,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-P71-1-001",
@@ -231581,7 +235638,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-P5-1-001",
@@ -231608,7 +235666,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-P6-1-001",
@@ -231635,7 +235694,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-P72-1-001",
@@ -231662,7 +235722,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-P2-1-001",
@@ -231689,7 +235750,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRS-P73-1-001",
@@ -231716,7 +235778,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-H6-1-001",
@@ -231743,7 +235806,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-H61-1-001",
@@ -231770,7 +235834,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-H9-1-001",
@@ -231797,7 +235862,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-H91-1-001",
@@ -231824,7 +235890,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-H92-1-001",
@@ -231851,7 +235918,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-PIEO-1-001",
@@ -231878,7 +235946,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPCXH-AVPA-1-001",
@@ -231905,7 +235974,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-WFT-1-001",
@@ -231932,7 +236002,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-ASEM-1-001",
@@ -231959,7 +236030,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-NCC--1-001",
@@ -231986,7 +236058,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-ITE-1-001",
@@ -232013,7 +236086,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-ED-1-001",
@@ -232040,7 +236114,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRP-AI-1-001",
@@ -232067,7 +236142,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-SISM-1-001",
@@ -232094,7 +236170,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-SASM-1-001",
@@ -232121,7 +236198,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-BMBR-1-001",
@@ -232148,7 +236226,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPPRA-IATC-1-001",
@@ -232175,7 +236254,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICA-SA4P-1-001",
@@ -232202,7 +236282,8 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": []
+      "credit_recs": [],
+      "authoritative_recs": []
     }
   ],
   "analysis": {
@@ -233880,6 +237961,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-06-27T21:42:14",
+  "generated_at": "2026-06-28T00:14:52",
   "total_credit_recs": 12527
 };
