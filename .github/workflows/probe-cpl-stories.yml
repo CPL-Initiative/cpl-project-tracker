@@ -1,8 +1,8 @@
 name: Probe CPL Stories page
-# Runner-as-proxy probe: the agent sandbox can't reach map.rccd.edu, but a CI
-# runner can. Discover how https://map.rccd.edu/cplstories/ structures its "My CPL
-# Story" windows so we can source 4 random ones for the Fact Sheet. Read the log;
-# this workflow is deleted once the real builder lands.
+# Runner-as-proxy probe: the agent sandbox can't reach map.rccd.edu, and a plain
+# curl gets a SiteGround CAPTCHA challenge. Real Chromium (Playwright) passes the
+# JS challenge — load the page + dump the rendered structure to the log so we can
+# write the real extractor. Throwaway; deleted once the builder lands.
 on:
   push:
     branches: [claude/factsheet-cpl-stories]
@@ -11,36 +11,14 @@ jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
-      - name: Probe the stories page + WP REST API
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Playwright + Chromium
         run: |
-          set +e
-          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
-          echo "============ HTTP headers ============"
-          curl -sSIL -A "$UA" --max-time 40 https://map.rccd.edu/cplstories/ | head -40
-          echo "============ fetch page ============"
-          curl -sSL -A "$UA" --max-time 60 https://map.rccd.edu/cplstories/ -o page.html
-          echo "bytes:"; wc -c page.html
-          echo "============ <title> + og:title ============"
-          grep -oiE '<title>[^<]*</title>' page.html | head -2
-          grep -oiE '<meta property="og:[^"]+"[^>]*>' page.html | head -10
-          echo "============ iframes / video embeds ============"
-          grep -oiE '<iframe[^>]*src="[^"]*"' page.html | head -25
-          grep -oiE '(youtube|vimeo|wistia|spotlightr|videodelivery)[^"'\'' ]*' page.html | sort -u | head -25
-          echo "============ candidate card/container classes ============"
-          grep -oiE 'class="[^"]*(story|stories|card|tile|elementor-post|elementor-widget|wp-block|swiper|slide|testimonial)[^"]*"' page.html \
-            | sort | uniq -c | sort -rn | head -40
-          echo "============ headings (likely story titles) ============"
-          grep -oiE '<h[1-4][^>]*>[^<]{3,90}</h[1-4]>' page.html | head -30
-          echo "============ links that look like individual stories ============"
-          grep -oiE 'href="https://map.rccd.edu/[^"]*(story|stories|cpl-story)[^"]*"' page.html | sort -u | head -30
-          echo "============ images (story thumbnails?) ============"
-          grep -oiE '<img[^>]*src="[^"]*"' page.html | grep -ivE '(logo|icon|spacer|svg)' | head -25
-          echo "============ WP REST: types ============"
-          curl -sSL -A "$UA" --max-time 40 "https://map.rccd.edu/wp-json/wp/v2/types" -o types.json
-          echo "bytes:"; wc -c types.json
-          python3 -c "import json;d=json.load(open('types.json'));print('\n'.join(sorted(d.keys())))" 2>/dev/null | head -40
-          echo "============ WP REST: search posts for 'story' ============"
-          curl -sSL -A "$UA" --max-time 40 "https://map.rccd.edu/wp-json/wp/v2/search?search=cpl%20story&per_page=10" \
-            -o search.json
-          python3 -c "import json;d=json.load(open('search.json'));[print(x.get('title'),'::',x.get('subtype'),'::',x.get('url')) for x in (d if isinstance(d,list) else [])][:10]" 2>/dev/null | head -20
-          echo "============ done ============"
+          npm init -y >/dev/null 2>&1
+          npm i playwright@1.47.2 >/dev/null 2>&1
+          npx playwright install --with-deps chromium
+      - name: Probe (headless Chromium)
+        run: node tools/probe_cpl_stories.mjs
