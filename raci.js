@@ -716,8 +716,12 @@
         ["📝" + (nUp ? " " + nUp : "")]);
       (function (it) { upBtn.addEventListener("click", function (e) { e.stopPropagation(); openUpdate(it); }); })(item);
       itemCell.appendChild(upBtn);
-      // 📣 per-item nudge — emails this item's R/A people the card + composer link.
-      if (canEdit && itemNudgeRecipients(item).length) {
+      // 📣 per-item nudge — on EVERY row when signed in, so a reviewer can nudge
+      // just this one item's Responsible/Accountable people (emails the card + a
+      // composer link). The Directory opt-out still applies inside
+      // itemNudgeRecipients (opted-out members are never emailed); openItemNudge
+      // alerts gracefully when a row has no one eligible to nudge yet.
+      if (canEdit) {
         var inBtn = el("button", { "class": "raci-itemnudge-btn",
           title: "Nudge this item's Responsible/Accountable people — emails the card + a link to update it" }, ["📣"]);
         (function (it) { inBtn.addEventListener("click", function (e) { e.stopPropagation(); openItemNudge(it); }); })(item);
@@ -789,8 +793,8 @@
     var nudgeBtn = null;
     if (state.sess) {
       nudgeBtn = el("button", { "class": "raci-btn raci-filter-nudge",
-        title: "Email the opted-in team members for status updates (opens your mail app — nothing is auto-sent)" },
-        ["📣 Nudge for updates"]);
+        title: "Email ALL opted-in team members for status updates (opens your mail app — nothing is auto-sent). Use a row's 📣 to nudge just that one item." },
+        ["📣 Nudge All"]);
       nudgeBtn.addEventListener("click", openNudge);
     }
     wrap.appendChild(el("div", { "class": "raci-filter-bar" }, [sel, search, clear, nudgeBtn]));
@@ -1094,6 +1098,7 @@
   // loaded), then scroll the matrix to that row and flash it.
   var FOCUS_KEY = "cpl_raci_focus";
   var UPDATE_KEY = "cpl_update_focus";
+  var NUDGE_KEY = "cpl_nudge_focus";
   function consumePendingFocus() {
     if (!state.loaded) return; // leave the key for boot's render callback
     // (a) Update deep-link — the nudge email links to a specific item's update
@@ -1111,6 +1116,16 @@
     if (u && u.indexOf(":") > 0) {
       var it = state.items.filter(function (x) { return x.key === u; })[0];
       if (it) { focusItem(it.type, it.id); openUpdate(it); return; }
+    }
+    // (a2) Nudge deep-link — the per-card 📣 Nudge button. Focus the row, then
+    // open its per-item nudge (drafts the email to its Responsible/Accountable
+    // people). Set by the Activity / sub-activity / project cards via
+    // sessionStorage cpl_nudge_focus = "activity:N" | "project:<id>".
+    var nd = null;
+    try { nd = sessionStorage.getItem(NUDGE_KEY); if (nd) sessionStorage.removeItem(NUDGE_KEY); } catch (e) {}
+    if (nd && nd.indexOf(":") > 0) {
+      var ni = state.items.filter(function (x) { return x.key === nd; })[0];
+      if (ni) { focusItem(ni.type, ni.id); openItemNudge(ni); return; }
     }
     // (b) RACI row focus (per-card 👥 RACI link).
     var f = null;
@@ -1310,5 +1325,6 @@
 
   window.CPL_RACI_TAB = { boot: boot, render: render, focusItem: focusItem,
     _nudgeHref: buildNudgeHref, _openUpdate: openUpdate, _itemSummary: itemSummaryText,
-    _itemNudgeHref: buildItemNudgeHref };
+    _itemNudgeHref: buildItemNudgeHref, _openItemNudge: openItemNudge, _consume: consumePendingFocus,
+    _itemByKey: function (k) { return state.items.filter(function (x) { return x.key === k; })[0] || null; } };
 })();
