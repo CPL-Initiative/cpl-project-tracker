@@ -340,3 +340,31 @@ The agreed follow-up to Phase-1 boxes: a reviewer can **add** an image (upload),
 Code-only; `index.html` untouched (figures are baked; the overlay injects all chrome). Tests:
 `tests/factsheet_edit_images.test.js` (25) — sanitizer allowlist, figure-as-image-block, caption-not-a-box,
 curate bar, resize-persists-without-chrome, hide-vs-delete, `|img|` materialize. Full suite 99/99.
+
+## 2026-06-28 — Session 82 (StarFarout cont.): the statewide-exhibits "consumer wedge"
+
+The producer half (StarBender, Session 79) built `statewide_recs.js` = `window.CPL_STATEWIDE_RECS`,
+keyed by exhibit title → `[{t:course title, u:units, cid:C-ID}]` (recs collected from raw
+`Collaborative Type == "CCC"` rows only — the authoritative statewide signal). This is the **consumer**:
+`fact-sheet/statewide_recs_render.js` surfaces each exhibit's recs under its `<li>` in
+`#statewide-exhibits` as a small collapsible "N statewide credit recs" toggle (course title — units, with
+a C-ID badge when known).
+
+### What made it clean
+- **Exact-title join, verified against real data first.** The data keys ARE the authored `<li>` texts, so
+  the match is a normalized (trim/collapse-ws/lowercase) title lookup — no fuzzy matching. Before writing
+  the test I checked the real `statewide_recs.js` against the real `index.html`: **129/129 keys matched an
+  `<li>` (100%); 129 of 132 exhibits get a wedge** (the 3 without have no statewide rec). Always confirm a
+  title-join's real hit-rate before shipping a join-based feature — a silent 0% is the failure mode.
+- **No overlap with Curate.** `#statewide-exhibits` is on `factsheet_edit.js`'s exclusion list, so the
+  wedge (read-only DOM mutation) never collides with an edit override. Two independent overlays, one section.
+- **`statewide_recs.js` wasn't loaded yet** — the producer committed the data file but nothing consumed it.
+  Added BOTH `<script>` tags (data before renderer) to `index.html`.
+- **Self-contained + idempotent + escaped + print-open.** Mirrors `cpl_stories_render.js`: own CSS via
+  `var(--token)` fallbacks, all text escaped, a `data-sw-rec` marker so re-running never double-appends, and
+  a `@media print` rule that force-shows every rec list (collapsed-on-screen detail is irrelevant on paper).
+- **Capture the `<li>` title BEFORE appending** the wedge span (the li's text node is the key); de-dupe recs
+  by `(title, units, cid)` since the source repeats a course across adopting colleges.
+
+Tests: `tests/statewide_recs_render.test.js` (22) — match/no-match, de-dupe count, C-ID badge, unit
+pluralization, toggle, idempotency, escaping. Full suite 100/100. Code-only (`index.html` gains 2 script tags).
