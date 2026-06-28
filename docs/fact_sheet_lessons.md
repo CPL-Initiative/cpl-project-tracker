@@ -224,3 +224,43 @@ API — the runner-as-proxy pattern again. Captured as a KB note:
   editable-Fact-Sheet session's PR landed — which it did (#570) — so it's now
   unblocked for the next session: rebase + add it as a minimal additive overlay
   (the `card_raci.js` pattern).
+
+## 2026-06-28 — Session 81 (StarFarout): Curate boxes — add / ✕ delete / drag-reorder
+
+Sam wanted the Curate overlay to do more than edit/hide existing boxes: **add** new boxes
+(e.g. more Resources cards, pre-filled with sample text in the section's format), **✕ delete**,
+and **drag to reorder**. Built as **Phase 1 (boxes)**; images (paste/delete/resize) are the
+agreed Phase 2 via a Supabase Storage bucket.
+
+### What shipped (`fact-sheet/factsheet_edit.js`, single file + tests)
+- **Add** (`addBox`) — a ＋ Add box button per editable grid section (curate mode). It **clones the
+  section's representative box** (first `.res`/`.card`/…) and swaps its visible text for placeholders,
+  so a new box **always matches the section's exact format** with zero hardcoded per-section HTML.
+- **✕ delete** — one affordance, honest semantics: an **added** box is truly deleted (its override
+  row removed); a **baked** box (lives in `index.html`, can't be removed) is **hidden** (`hidden:true`).
+- **Drag-reorder** — within a section's box container; the order is saved + replayed for every visitor.
+
+### How it rides the existing table (no schema migration)
+Reserved `block_key` namespaces in `factsheet_overrides`: an added box is `"<sectionId>|add|<kind>|<token>"`
+(`html` = its inner HTML; **materialized** into the DOM on load, then adopted as a normal block),
+and a section's order is `"<sectionId>|__order"` (`html` = a JSON array of keys, **parsed not injected**).
+`applyBlock` skips both (they match no baked element).
+
+### Gotchas worth keeping
+- **Keep the sync baked-collect.** The existing tests read `blocks()` immediately after `boot()`, so
+  `collectBlocks()` must stay synchronous. Added-box materialization happens in the post-fetch `.then`,
+  then a **re-collect** adopts them (an `isAddedKey` branch in `collectBlocks` preserves their stable key
+  instead of re-slugging by text).
+- **Cloning a LIVE template copies the curate chrome.** In curate mode every box (incl. the clone source)
+  carries a ✕ button — so `sampleInner` must strip `.fs-del`/`.fs-add` from the clone, or the ✕ lands in
+  the *persisted* HTML. (Caught by a test asserting the saved html has no `fs-del`.)
+- **Scope the order to the box CONTAINER, not the whole section.** A section-level intro `<p>` is a keyed
+  block too; if it's pulled into the order array, `applyOrder`'s `appendChild` shoves it *below* the grid
+  on reload. `persistOrder` gathers `boxContainer(sec).querySelectorAll('[data-fsk]')` only. (Guarded.)
+- The ✕ is appended *inside* the box, so it's re-applied after any innerHTML write (edit/hide/reset) and
+  excluded from saves (saves read the editor textarea / override map, never live innerHTML).
+
+Tests: `tests/factsheet_edit_boxes.test.js` (28) — add/materialize/delete/reorder/curate-chrome/exclusions;
+the original `tests/factsheet_edit.test.js` (31) still green. Code-only; `index.html` untouched (the overlay
+injects all chrome). Next: **Phase 2 images** (paste → Supabase Storage bucket → URL; `<img>` allowlist with
+a host check; resize via width presets first, drag-handle later).
