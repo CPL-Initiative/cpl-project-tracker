@@ -1738,3 +1738,19 @@ links to the composer); and **📝 on every Activity/Project card** (#562 — ge
 old `✎ Update` button; dispatched the daily workflow). Round-trip = **link-to-form**, no mailbox. New KB
 note: [`methodology-refresh-token-before-write.md`](kb-notes/methodology-refresh-token-before-write.md).
 Full story: [`cobi_raci_nudge_lessons.md`](cobi_raci_nudge_lessons.md) (Session 77).
+
+### Session 78 — SkyMap: posted updates surface on the card face (2026-06-26)
+
+A short, snappy follow-on to StarPort — **1 PR #564, merged + live** — closing Session-77 carryover #4
+(the first half). Two RACI-update tweaks Sam flagged: **(1) the 📝 Update + 👥 RACI deep-links now render
+on every SUB-ACTIVITY card** (the `activity-kpi` cards 1.1/1.2/…), not just the Activity header + Project
+cards — each sub-activity is its own RACI row keyed `project:<id>`, so the composer/focus already worked
+there. **(2) posted `item_updates` now show ON the card face** via a new read-only overlay
+**`card_updates.js`**: the generator stamps a hidden `<div class="cpl-live-update" data-update-key="…">`
+hook (keyed `activity:N`/`project:<id>`) on every Activity/sub-activity/project card; the overlay fetches
+the newest `item_updates` row per key (anon read), fills it with **body + date + author**, and **hides that
+card's creation-era `.cpl-static-update` line** so there's one current "Latest Update." Code-only PR
+(hooks/links are regenerated sections) → dispatched the daily workflow post-merge. New KB note:
+[`methodology-live-overlay-onto-generated-cards.md`](kb-notes/methodology-live-overlay-onto-generated-cards.md).
+Tests: `tests/card_updates.test.js` (17). Full story:
+[`cobi_raci_nudge_lessons.md`](cobi_raci_nudge_lessons.md) (Session 78).

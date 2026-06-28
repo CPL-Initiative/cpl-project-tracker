@@ -503,7 +503,7 @@ scraping proved unreliable.
 | `docx.min.js` | Local copy of docx@8.0.4 UMD build (do **not** switch to CDN) |
 | `fetch_custom_report.py` | Fetches CustomReport JSON from the MAP API |
 | `cpl_news.js` | **CPL News** tab renderer (`window.CPL_NEWS_TAB`). Lazy-loaded on first `#cpl-news` open; injects own `var(--token)` CSS; reads `public.cpl_news` LIVE (anon) — CA-first, scope/source/search filters, suggest-a-story, reviewer feature/hide. Static — NOT a daily-cron artifact (the feed is the live table, not a committed file). Fed by the **`cpl-news-harvest`** Supabase Edge Function (`chatbox/supabase/functions/cpl-news-harvest/index.ts`) invoked by **`.github/workflows/cpl-news.yml`** (cron 13:17 UTC). Schema: `news/supabase_cpl_news.sql`. Docs: `docs/cpl_news_lessons.md` + `docs/kb-notes/playbook-cpl-news-aggregation.md`. Added Session 67 (Skywatch, PR #481). |
-| `fact-sheet/` | **Public CPL Fact Sheet** — a self-contained, **standalone** page (`index.html` + `factsheet.css` + `factsheet.js` + `img/`) recreating the Feb-2026 journalist Fact Sheet PDF, served publicly by Pages at `…/cpl-project-tracker/fact-sheet/`. "Sits alone" (NO COBI nav) so it's shareable without exposing the internal tabs — the `kb-portal/` pattern, minus the auth gate. `factsheet.js` binds the 6 headline KPIs (+ Military/Workforce/Apprentice breakdowns + Veteran-Sprint figures) from `../live_metrics.json` on load (baked values = graceful fallback); the 5 exhibit/recommendation KPI cards + the Statewide Exhibits per-sector counts are a **labeled MAP Custom Reporting Module snapshot** (not live). Cambria prose / Calibri data; print CSS at 0.4in → browser "Save as PDF" is the export (opens `<details>` for print). Launched from COBI by a **non-tab** `📄 CPL Fact Sheet ↗` anchor in the nav rail (`<a class="cpl-tab cpl-tab-external">`, no `data-tab` so `tabs.js` ignores it; mirrored in BOTH HTMLs, Rule 4). Statewide exhibit lists come from `kb/statewide_exhibit_categories.json`. Static — NOT a daily-cron artifact. Added Session 74 (SkyBlaster), PRs #537/#540. Docs: `docs/fact_sheet_lessons.md` + `docs/kb-notes/playbook-standalone-public-page.md`. |
+| `fact-sheet/` | **Public CPL Fact Sheet** — a self-contained, **standalone** page (`index.html` + `factsheet.css` + `factsheet.js` + `img/`) recreating the Feb-2026 journalist Fact Sheet PDF, served publicly by Pages at `…/cpl-project-tracker/fact-sheet/`. "Sits alone" (NO COBI nav) so it's shareable without exposing the internal tabs — the `kb-portal/` pattern, minus the auth gate. `factsheet.js` binds the 6 headline KPIs (+ Military/Workforce/Apprentice breakdowns + Veteran-Sprint figures) from `../live_metrics.json` on load (baked values = graceful fallback); the 5 exhibit/recommendation KPI cards + the Statewide Exhibits per-sector counts are a **labeled MAP Custom Reporting Module snapshot** (not live). Cambria prose / Calibri data; print CSS at 0.4in → browser "Save as PDF" is the export (opens `<details>` for print). Launched from COBI by a **non-tab** `📄 CPL Fact Sheet ↗` anchor in the nav rail (`<a class="cpl-tab cpl-tab-external">`, no `data-tab` so `tabs.js` ignores it; mirrored in BOTH HTMLs, Rule 4). Statewide exhibit lists come from `kb/statewide_exhibit_categories.json`. Static — NOT a daily-cron artifact. Added Session 74 (SkyBlaster), PRs #537/#540. **Session 80 (StarMan) made it Curate-editable** (PR #570): standalone **`factsheet_edit.js`** overlays reviewer edits (text + hide/show) onto any box, keyed by DOM-walked stable `data-fsk` keys (no per-box HTML markup), from `public.factsheet_overrides` (anon read, `is_allowed_reviewer()` write); ✎ Curate button + magic-link `cpl_sb` session + **allowlist**-sanitized HTML; the JST upload card was removed. Editing **excludes** `#statewide-exhibits`/`#progress`/`[data-bind]`. Docs: `docs/fact_sheet_lessons.md` + `docs/kb-notes/playbook-standalone-public-page.md` + `docs/kb-notes/playbook-curate-editable-standalone-page.md`. |
 | `raci.js` | **Team & RACI** tab renderer (`window.CPL_RACI_TAB`, `#raci`). Lazy-loaded on first `#raci` open; injects own `var(--token)` CSS. A **RACI Matrix** (4 Activities + their projects × R/A/C/I, click a cell → member-picker) + an editable **Team Directory** + per-member **Nudge for Updates** toggle. Public reads of Supabase `team_members` + `item_raci` (anon); writes gated by the shared `cpl_sb` magic-link reviewer session + `is_allowed_reviewer()`. **Session 76 (SkyTrek) made the matrix a 3-tier tree** — `buildItems()` nests **Activity → sub-activity → project/work item** from `window.CPL_DATA` (`activity_kpis` = the official sub-activity ids; `projects`' **dotted ids** encode the nesting via id-prefix parenting, `4.1`→`4.1.1`, `3.1.2`→`3.1.2a`; `5.x` with no numbered parent nest under their Activity). 38 rows, depth-indented + tier-styled (`sub-activity` tag). Each row independently RACI-able; **non-Activity rows keep `item_type:"project"`** so no key migration / no lost assignments. Nav: a **hierarchical scope filter** (`<optgroup>` per Activity → "▸ All of Activity N" + its sub-activities; scope `all`/`act:N`/`sub:ID`, ancestor-preserving search) + per-card **`👥 RACI` deep-links** (cards set `sessionStorage['cpl_raci_focus']` then navigate `#raci`; consumer flashes the row — every `<tr>` carries `data-raci-key`). Static — NOT a daily-cron artifact; only the nav button + pane + boot are mirrored in BOTH HTMLs (Rule 4). Schema: `raci/supabase_raci.sql`. Tests: `tests/raci.test.js` (64 checks). Docs: `docs/cobi_raci_nudge_lessons.md`. Added Session 75 (SkyMaster), PRs #546–#548; nav + 3-tier PRs #550/#553 (Session 76). **Session 77 (StarPort) added** (PRs #556–#562): **Copy-RACI** (`⧉ copy` a row's R/A/C/I to others), the **token-refresh-on-write fix** (`ensureFresh()` renews the magic-link access token before every `sbWrite` — a format-valid-but-expired JWT was 401-ing saves silently; `saveRaci` rolls back optimistic state on failure — `docs/kb-notes/methodology-refresh-token-before-write.md`), the **nudge accountability layer** (`team_members += last_nudged_at/last_response_at`; directory Last-nudged + ✓responded/⏳awaiting columns; manual team 📣 + check-all/clear-all), the **per-item 📣 nudge** (emails a row's R/A people, quotes the card + a deep-link to its composer), and the **📝 update composer** (braindump → ✨"Let CC write it up" via the report proxy → appends `item_updates`; deep-link consumer `?update=<key>#raci` / `sessionStorage.cpl_update_focus`; the 📝 link is emitted on every Activity/Project card by the generator). **Session 79 (StarBender) made RACI the card's source of truth** (PRs #567–#571): the card **Lead** now derives from the RACI **Responsible** (not the old `projects.lead`) via the new `card_raci.js` overlay + a hover roster on the 👥 button; the 27 remaining `projects.lead` values were **seeded** into `item_raci` as Responsible (Beth Kay dropped — left the org; titles' embedded orgs kept over seed placeholders); `cplItem()` lead now resolves `raciFor → R→A→pr.lead` + `saveRaci` fires `cpl-raci-updated`; **nudge is now opt-OUT-gated** (`itemNudgeRecipients()` drops `nudge===false` members — fixed wrongful nudges firing for unchecked members); **sortable matrix + directory columns** (click-to-sort; the tree flattens on sort with a `⤺ tree view` restore). Tests: `tests/card_raci.test.js` (23), `tests/raci_sortable.test.js` (13), `tests/raci_nudge_optout.test.js` (3). |
 | `card_raci.js` | **Live card-Lead + RACI-roster overlay** (added Session 79, StarBender). Static, read-only, anon-Supabase (the `card_updates.js` pattern): the generator stamps a `<span class="cpl-raci-lead" data-raci-key="activity:N\|project:<id>">` (seeded with the old `projects.lead` as fallback) + a `data-raci-key` on each 👥 RACI affordance; the overlay fetches `item_raci` and (1) rewrites each card's **Lead** to the resolved **Responsible → Accountable → old-lead**, (2) builds a **hover roster** tooltip (R/A/C/I names) on the 👥 button. Listens to `cpl-tab-activated` + `cpl-raci-updated`. Exports `leadNames`/`byKey`/`rosterHtml`/`roleNames`/`escapeHtml`. STATIC, NOT a daily-cron artifact; `<script>`-loaded in BOTH HTMLs (Rule 4). Tests: `tests/card_raci.test.js` (23). Docs: `docs/cobi_raci_nudge_lessons.md`. |
 | `card_updates.js` | **Live card-update overlay** (`window.CPL_CARD_UPDATES`, added Session 78). Read-only: fetches the newest `item_updates` row per `item_type:item_id` (anon Supabase read) and overlays it — body + timestamp + author — onto each Activity / sub-activity / project card via a generator-stamped `<div class="cpl-live-update" data-update-key="activity:N|project:<id>">` hook, hiding that card's creation-era `.cpl-static-update` line when a live update exists. Closes the gap where a 📝 update posted on the RACI tab showed there but not on the card face. Runs on load + on `cpl-tab-activated` (activities-projects/dashboard). STATIC, no auth, NOT a daily-cron artifact; `<script>`-loaded in BOTH HTMLs (Rule 4). The hooks + the sub-activity cards' 📝/👥 deep-links are emitted by `excel_to_dashboard.py` (regenerated sections). Tests: `tests/card_updates.test.js`. Docs: `docs/cobi_raci_nudge_lessons.md`. |
@@ -1028,6 +1028,13 @@ JSON) and Saves/Resumes to Supabase `tmc_submissions`.
   `raci/supabase_raci.sql`. (A pre-existing project-only `update_log` table — id/project_id/update_text —
   is unrelated/vestigial; left untouched.) `team_members` also gained `last_nudged_at` + `last_response_at`
   (nudge accountability).
+- **`factsheet_overrides`** (added Session 80): the Curate-editable overlay behind the standalone public
+  **Fact Sheet** (`fact-sheet/factsheet_edit.js`). One row per editable box, keyed by the page's stable
+  `block_key` → `{html, hidden, edited_by/at}` (+ `page` for forward-compat). Anon SELECT (the overlay is
+  applied for every visitor); **reviewer-gated** write via `is_allowed_reviewer()` (same gate as
+  `item_raci`/`item_updates`). The baked HTML in `index.html` is always the fallback — empty table = the
+  page as authored. Reviewer HTML is allowlist-sanitized on the public render path. Schema:
+  `fact-sheet/supabase_factsheet_overrides.sql`.
 - Separate from live metrics scraping; handles project-level data storage.
 
 ### 9. EACR Exhibit Identity — current state and future direction
@@ -1928,23 +1935,9 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full story:
 > [`docs/cobi_raci_nudge_lessons.md`](docs/cobi_raci_nudge_lessons.md).
 
-### Session 78 — SkyMap: posted updates surface on the card face (2026-06-26)
-
-A short, snappy follow-on to StarPort — **1 PR #564, merged + live** — closing Session-77 carryover #4
-(the first half). Two RACI-update tweaks Sam flagged: **(1) the 📝 Update + 👥 RACI deep-links now render
-on every SUB-ACTIVITY card** (the `activity-kpi` cards 1.1/1.2/…), not just the Activity header + Project
-cards — each sub-activity is its own RACI row keyed `project:<id>`, so the composer/focus already worked
-there. **(2) posted `item_updates` now show ON the card face** via a new read-only overlay
-**`card_updates.js`**: the generator stamps a hidden `<div class="cpl-live-update" data-update-key="…">`
-hook (keyed `activity:N`/`project:<id>`) on every Activity/sub-activity/project card; the overlay fetches
-the newest `item_updates` row per key (anon read), fills it with **body + date + author**, and **hides that
-card's creation-era `.cpl-static-update` line** so there's one current "Latest Update." Code-only PR
-(hooks/links are regenerated sections) → dispatched the daily workflow post-merge. New KB note:
-[`methodology-live-overlay-onto-generated-cards.md`](docs/kb-notes/methodology-live-overlay-onto-generated-cards.md).
-Tests: `tests/card_updates.test.js` (17). Full story:
-[`docs/cobi_raci_nudge_lessons.md`](docs/cobi_raci_nudge_lessons.md) (Session 78). **NEXT:
-[`docs/session_79_handoff.md`](docs/session_79_handoff.md)** — the Annual Report half of the same carryover
-(surface `item_updates` into `annual_report.js`); the 3 lead emails; the standing lanes.
+> **Session 78 narrative (SkyMap — posted `item_updates` surface on the card face via the read-only
+> `card_updates.js` overlay, PR #564) archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md).
+> Full story: [`docs/cobi_raci_nudge_lessons.md`](docs/cobi_raci_nudge_lessons.md) (Session 78).
 
 ### Session 79 — StarBender: RACI becomes the card's source of truth + statewide Fact Sheet recs (2026-06-28)
 
@@ -1969,6 +1962,26 @@ Tests: `card_raci`/`raci_sortable`/`raci_nudge_optout`/`statewide_recs_test` (51
 **consumer wedge** (now UNBLOCKED: the concurrent editable-Fact-Sheet PR #570 merged) renders
 `CPL_STATEWIDE_RECS` under each exhibit `<li>`; Annual Report self-freshening (#1 carryover, still open);
 the 3 lead emails; the standing lanes.
+
+### Session 80 — StarMan: the public Fact Sheet becomes Curate-editable (2026-06-28)
+
+Concurrent with StarBender (79), Sam live-testing — **1 PR #570, merged + live; he was editing within
+minutes.** The standalone public **Fact Sheet** is now editable in place by a signed-in reviewer (the shared
+`cpl_sb` magic-link + `is_allowed_reviewer()` gate, same as CCR/RACI/TMC). New standalone
+**`fact-sheet/factsheet_edit.js`** — a content-agnostic Supabase **overlay**: it walks the DOM at load,
+assigns each editable box a **stable key** (`sectionId|slug(baked text)`, stamped `data-fsk` — so
+`index.html` needs no per-box markup, a tiny diff), reads `public.factsheet_overrides` (anon) and overlays
+`{html,hidden}` for every visitor; a reviewer gets **✎ Curate** mode (click a box → docked raw-HTML editor →
+Save/Hide/Reset-to-original). Self-contained magic-link auth (mints `cpl_sb` from the hash),
+refresh-before-write, **allowlist** sanitizer (hardened after a security review closed the foreign-content
+mXSS class). `index.html` diff = button + script tag + JST-card removal → **zero overlap** with StarBender's
+Statewide-CRs region (editing **excludes** `#statewide-exhibits`/`#progress`/`[data-bind]`). New table
+`factsheet_overrides` (public read, reviewer write). 31 jsdom tests. New KB note:
+[`playbook-curate-editable-standalone-page.md`](docs/kb-notes/playbook-curate-editable-standalone-page.md).
+Full story: [`docs/fact_sheet_lessons.md`](docs/fact_sheet_lessons.md) (2026-06-28). **NEXT:
+[`docs/session_81_handoff.md`](docs/session_81_handoff.md)** — the Fact Sheet **consumer wedge** (StarBender's
+`CPL_STATEWIDE_RECS`, still top of the list); make `#statewide-exhibits`/`#progress` Curate-editable now #572
+landed; Annual Report self-freshening; the 3 lead emails; the standing lanes.
 
 ---
 

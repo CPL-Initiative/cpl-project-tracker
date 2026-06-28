@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-28 (Session 79 · StarBender — cards now show the RACI Responsible as Lead + hover the 👥 button for the roster; statewide credit recs live on the Fact Sheet data layer)",
- "_session": 79,
- "_status": "SESSION 79 — StarBender. (1) The Activity/project cards now show whoever is RACI-Responsible as the Lead (no more stale leads), and hovering the 👥 RACI button shows everyone on that card. I seeded the old leads in as Responsible (dropped Beth Kay). The per-row nudge now only emails people whose Nudge toggle is ON — that fixed the nudges that went out to folks you hadn't checked. RACI columns sort on click. (2) Behind the public Fact Sheet, each statewide credential now has its authoritative credit recs (C-ID/title/units) pulled from our own MAP data — POST shows the right 10 now. NEXT for Fable: render those recs as a collapsible wedge under each Fact Sheet exhibit (now unblocked), and fold posted updates into the Annual Report. Still need the 3 lead emails.",
+ "_as_of": "2026-06-28 (Session 80 · StarMan — the public Fact Sheet is now EDITABLE: sign in via the ✎ Curate button and edit the text of any box or hide it; + Session 79 StarBender's RACI-as-Lead + statewide-recs data layer)",
+ "_session": 80,
+ "_status": "SESSION 80 — StarMan (concurrent with StarBender). The public CPL Fact Sheet is now editable with a login: click ✎ Curate, sign in with the magic link, and you can edit the text of any box in place — or hide a box (the JST upload card is already removed). Edits show for everyone; the original is one click away (Reset to original). You're already using it for the AB 123 → AB 111/SB 111 update. The Statewide-CRs + live-KPI boxes are deliberately not editable yet (next session adds them). — Also live from Session 79 (StarBender): Activity/project cards show the RACI-Responsible as Lead (hover 👥 for the roster), per-row nudge is now opt-out-gated, RACI columns sort on click; and each statewide credential's authoritative credit recs (C-ID/title/units) are pulled from our own MAP data (POST shows the right 10). NEXT for Fable: render those recs as a collapsible wedge under each Fact Sheet exhibit, and fold posted updates into the Annual Report. Still need the 3 lead emails.",
  "items": [
   {
    "id": "sam-try-raci-lead",
@@ -38,7 +38,7 @@
    "id": "sam-factsheet-semistatic",
    "who": "sam",
    "tab": "dashboard",
-   "text": "When you have a moment: the public CPL Fact Sheet (📄 in the left nav) has a few SEMI-STATIC figures baked in (Vision 2030 SCRs 332/889/37.35%/274, the 5-year funding table). The headline KPIs auto-update; tell me any baked ones that have moved so I refresh them."
+   "text": "NEW — you can now fix these yourself: the public CPL Fact Sheet (📄 in the left nav) is editable. Click ✎ Curate, sign in, and edit any box (text or hide) — including the SEMI-STATIC figures baked in (Vision 2030 SCRs 332/889/37.35%/274, the 5-year funding table). The headline KPIs still auto-update. Tell me if you'd rather I batch-refresh the baked ones instead."
   },
   {
    "id": "fable-factsheet-wedge",
