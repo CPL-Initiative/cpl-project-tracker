@@ -1,32 +1,38 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-28 · Session 81/82 (StarFarout) · the three carryover items shipped: the Fact Sheet now shows each statewide exhibit's authoritative credit recs, the Annual Report self-freshens from posted updates, and the 4 CPL Initiative leads can now edit",
- "_session": 81,
- "_status": "Three things just landed (all live on the next deploy): (1) on the public CPL Fact Sheet, each statewide exhibit now has a small '▸ N statewide credit recs' toggle showing the course title / units / C-ID it earns; (2) the Annual Report draft now folds in the newest posted status updates (the same ones on the Activity/project cards), not just creation-era text; (3) Crystal Nasio, Terence Nelson, Calvin Gloria, and Sam (slee@cccco.edu) were added as reviewers, so they can now sign in and edit the CCR / RACI / TMC / Fact Sheet — not just map@rccd.edu. One small one-time toggle is still on Sam: add the Fact Sheet URL to the Supabase Auth redirect list so direct sign-in from that page completes. The remaining engineering lanes (M-ID renumber, the TMC acceptance engine, the CPL-Assistant recommender ETL) are unchanged.",
+ "_as_of": "2026-06-28 · Session 82 (SkyFlyer) · the public Fact Sheet is now editable everywhere it has boxes/images, meets WCAG 2.1 AA, and exports a Word doc as well as a PDF",
+ "_session": 82,
+ "_status": "Just shipped (live on the next Pages deploy, PR #584): the public CPL Fact Sheet is now fully Curate-able — the Veteran-Sprint boxes are editable/moveable with an Add box, the KPI cards can be reordered and hidden (but not text-edited, since they're live data), the budget table can be hidden, and every grid section has its own ＋Add box. Plus ~15 new embedded links, an accessibility pass (it now meets the WCAG 2.1 AA it advertises), print fixes (the navy funding-table header was printing white-on-white — fixed), and a new ⬇ Word button next to Print/PDF. A few number-consistency items on the Fact Sheet were SURFACED, not silently changed (they're live/snapshot data) — see the item below. The standing engineering lanes (M-ID renumber, TMC acceptance engine, CPL-Assistant recommender ETL) are unchanged and next up.",
  "items": [
   {
-   "id": "try-card-row-nudge",
-   "who": "sam",
-   "tab": "raci",
-   "text": "Try the 📣 nudge: every Activity/project card and every RACI row has its own 📣 to nudge just that one item; the filter-bar bulk button is '📣 Nudge All' (emails all opted-in members)."
-  },
-  {
-   "id": "annual-report-eyeball",
-   "who": "sam",
-   "tab": "annual-report",
-   "text": "Skim the Annual Report draft — it auto-assembles from live data AND now folds in the latest posted status updates; tweak any section in place, then ✨AI-polish / ⬇Word / 🖨Print."
-  },
-  {
-   "id": "factsheet-curate",
+   "id": "factsheet-curate-everywhere",
    "who": "sam",
    "tab": "dashboard",
-   "text": "On the public CPL Fact Sheet, sign in and ✎ Curate: edit/hide any box, ＋ add a new box, drag to reorder, and add/resize/replace/delete images. Each statewide exhibit now also shows its credit recs. Your edits show for every visitor."
+   "text": "On the public CPL Fact Sheet, sign in and ✎ Curate: now you can edit/move/add/delete boxes in the Vet Sprint & CPL Bump sections too, reorder & hide the KPI cards, hide the budget table, and every grid has its own ＋Add box. Try the new ⬇ Word button (next to Print) — it exports a Word doc with your edits + live numbers."
+  },
+  {
+   "id": "factsheet-data-items",
+   "who": "sam",
+   "tab": "dashboard",
+   "text": "3 small number-consistency items on the Fact Sheet I flagged but did NOT change (they're live/snapshot data or your call): Statewide says '12 program areas' but 13 rows are listed (incl. an 'Other Statewide' catch-all); the could-adopt total 116 (deduped) sits oddly next to per-area rows summing to 454; and '30,000' (Phase-1 JST goal) vs '34,000+' (vets in system). Say the word and I'll reconcile any."
   },
   {
    "id": "factsheet-auth-redirect",
    "who": "sam",
    "tab": "dashboard",
    "text": "One-time: add the Fact Sheet URL (or …/cpl-project-tracker/**) to the Supabase Auth → Redirect URLs list so a direct magic-link sign-in from the Fact Sheet lands back on that page (today it completes on the dashboard tab)."
+  },
+  {
+   "id": "outlook-edge-chrome",
+   "who": "sam",
+   "tab": "dashboard",
+   "text": "Magic links opening in Edge instead of Chrome: in classic Outlook, File → Options → Advanced → Link handling → set 'Open hyperlinks from Outlook in' to Default Browser; and make Chrome the Windows default (Settings → Apps → Default apps → Chrome → Set default)."
+  },
+  {
+   "id": "annual-report-eyeball",
+   "who": "sam",
+   "tab": "annual-report",
+   "text": "Skim the Annual Report draft — it auto-assembles from live data AND folds in the latest posted status updates; tweak any section in place, then ✨AI-polish / ⬇Word / 🖨Print."
   },
   {
    "id": "vet-plans-kb-15",
