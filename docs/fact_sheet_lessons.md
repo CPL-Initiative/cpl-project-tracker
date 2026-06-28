@@ -115,3 +115,55 @@ Deliverable = **`fact-sheet/`** — a sibling-of-`kb-portal/` standalone page:
    sharper than the preserved screenshot).
 3. **Semi-static figures** — Sam to confirm/refresh the Vision 2030 workplan SCRs
    (332/889/37.35%/274) and the funding table when they move.
+
+---
+
+## 2026-06-28 — "Curate" editable overlay (sign-in to edit any box)
+
+Sam asked to make the Fact Sheet **editable with a login to Curate** (motivated by
+two concrete edits: retire the JST upload resource card, and update the AB 123 box
+for the just-passed 2026 bills AB 111 & SB 111). A **second session was concurrently
+editing the Statewide CRs region of the same page**, so the edit had to land with a
+near-zero footprint in the shared HTML.
+
+**What shipped:**
+
+- **`fact-sheet/factsheet_edit.js`** (new, standalone) — a content-agnostic
+  Supabase **overlay**. On load it walks the DOM, assigns each editable "box" a
+  **stable key** (`sectionId|slug(baked text)`, stamped `data-fsk`), reads
+  `public.factsheet_overrides` (anon), and overlays `{ html, hidden }` for every
+  visitor. A signed-in reviewer (shared `cpl_sb` magic-link + `is_allowed_reviewer()`
+  RLS, the CCR/RACI/TMC gate) gets a **✎ Curate** mode: click a box → a docked
+  raw-HTML editor → **Save / Hide / Reset-to-original**. Reuses the
+  refresh-token-before-write guard; sanitizes reviewer HTML on the public render
+  path (strips scripts/handlers/dangerous URLs — keeps links/bold/lists).
+- **`public.factsheet_overrides`** (new table, applied via MCP) — `block_key` PK,
+  `page` (forward-compat), `html`, `hidden`, `edited_by/at`. Public SELECT,
+  reviewer-gated write. Schema committed at `fact-sheet/supabase_factsheet_overrides.sql`.
+- **`fact-sheet/index.html`** — only **three** surgical, collision-safe changes: a
+  `#btn-curate` button in the action bar, the `factsheet_edit.js` script tag, and
+  **removed the JST upload resource card** (Sam's ask).
+- **Excluded from editing** (in JS, so no HTML touched): `#statewide-exhibits` (the
+  other session's lane), `#progress` (live data-bound KPIs), `#contents`, and any
+  `[data-bind]` box.
+- **Tests:** `tests/factsheet_edit.test.js` (26 checks — keys/stability/exclusions/
+  overlay/sanitizer + static wiring). Full suite green.
+
+**Why DOM-walked keys (not hand-stamped `data-edit-key`):** editability is entirely
+JS-driven, so `index.html` carries no per-box markup → tiny diff → **no overlap with
+the concurrent Statewide-CRs PR**. Pattern write-up:
+[`docs/kb-notes/playbook-curate-editable-standalone-page.md`](kb-notes/playbook-curate-editable-standalone-page.md).
+
+**Carryover:**
+
+1. **One-time Supabase toggle (Sam):** add the Fact Sheet URL (or a
+   `…/cpl-project-tracker/**` wildcard) to **Auth → URL Configuration → Redirect
+   URLs** so *direct* magic-link sign-in from the Fact Sheet completes on the page.
+   Until then the link falls back to the dashboard (Site URL) in a separate tab,
+   where the Fact Sheet can't read the session.
+2. **AB 123 box:** Sam edits it live (AB 111 & SB 111) once Curate is on — that's
+   the feature's first real use.
+3. **Statewide CRs editability:** after the sibling PR merges, a quick follow-up can
+   drop `#statewide-exhibits`/`#progress` from the exclusion list.
+4. **CLAUDE.md memory refresh** (the `fact-sheet/` §2 row + §8 table list) — held to
+   the next checkpoint to avoid racing the sibling session on the shared file.
