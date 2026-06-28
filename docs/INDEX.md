@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-26 (Session 78 — SkyMap: posted `item_updates` now surface ON the Activity/sub-activity/project card face + 📝/👥 deep-links on sub-activity cards, PR #564 — new read-only overlay `card_updates.js`; NEW kb-note methodology-live-overlay-onto-generated-cards)
+updated: 2026-06-28 (Session 79 — StarBender: RACI becomes the card's source of truth — Lead from the RACI Responsible + hover roster via new `card_raci.js`, lead-seeding, nudge opt-out fix, sortable RACI columns (PRs #567–#570); + statewide Fact Sheet credit recs from our own MAP data, authoritative `Collaborative Type == "CCC"` only (PR #571); NEW kb-note reference-authoritative-statewide-exhibit-signal)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -135,6 +135,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Methodology — Build a hierarchy from dotted ids without migrating stored keys (id-prefix parenting; re-tier visually, keep the persisted key stable)](kb-notes/methodology-tree-from-dotted-ids-stable-keys.md) | methodology | published | 2026-06-26 | 2026-06-26 |
 | [Methodology — Refresh the access token before every write (don't trust a format-valid JWT; the silent-401 phantom-save trap)](kb-notes/methodology-refresh-token-before-write.md) | methodology | published | 2026-06-26 | 2026-06-26 (Session 77 — StarPort) |
 | [Methodology — Overlay live data onto generated cards via a stamped data-key hook (generator stamps the hook, a static read-only JS overlay fills it)](kb-notes/methodology-live-overlay-onto-generated-cards.md) | methodology | published | 2026-06-26 | 2026-06-26 (Session 78 — SkyMap) |
+| [Reference — The authoritative statewide MAP exhibit is the raw row with `Collaborative Type == "CCC"` (adopt/adapt copies tag CCC too → unified grouping over-counts; filter the raw column, don't dedup)](kb-notes/reference-authoritative-statewide-exhibit-signal.md) | reference | published | 2026-06-28 | 2026-06-28 (Session 79 — StarBender) |
 | [Playbook — A standalone public page on the COBI Pages site (sits-alone subdir, live data via `../live_metrics.json`, non-tab nav anchor, print-to-PDF)](kb-notes/playbook-standalone-public-page.md) | playbook | published | 2026-06-25 | 2026-06-25 (Session 74 — the Fact Sheet) |
 
 ---
@@ -255,6 +256,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 76 → 77 | SkyTrek: Team & RACI — matrix **filter** + per-card **`👥 RACI` deep-links** #550, the **CI-poll-via-MCP** learning → CLAUDE.md #552, and the **3-tier matrix** (Activity → sub-activity → project, hierarchical filter) #553; PLUS the **Veterans Sprint + Military Base dp plans** added to the vault (CPLBrain #10/#11) and a scrubbed public-KB mirror (draft PR #15, awaiting Sam) → the decision-gated RACI carry-overs (nudge channel, lead emails, `update_log`) + the Annual Report tab + the standing lanes | [`session_77_handoff.md`](session_77_handoff.md) |
 | 77 → 78 | StarPort: the RACI update loop end-to-end (8 PRs #556–#562) — Copy-RACI #556, Annual Report tab #557, check-all/clear-all + manual nudge #558, **the save-persistence token-refresh fix** + nudge accountability #559, the 📝 braindump→CC composer + `item_updates` #560, per-item 📣 nudge #561, 📝 on every card #562 → surface `item_updates` on the card face + Annual Report (self-freshening); the 3 lead emails; standing lanes | [`session_78_handoff.md`](session_78_handoff.md) |
 | 78 → 79 | SkyMap: posted updates surface ON the card face (PR #564) — 📝/👥 deep-links on sub-activity cards + the read-only `card_updates.js` overlay (newest `item_updates` per `activity:N`/`project:<id>` key → card, hides the creation-era line); NEW kb-note `methodology-live-overlay-onto-generated-cards` → the Annual Report half of the same carryover (fold `item_updates` into `annual_report.js`); the 3 lead emails; standing lanes | [`session_79_handoff.md`](session_79_handoff.md) |
+| 79 → 80 | StarBender: RACI becomes the card's source of truth (PRs #567–#570) — card Lead from the RACI Responsible + hover roster (`card_raci.js`), lead-seeding (Beth Kay dropped), nudge opt-out fix, sortable RACI/directory columns; + statewide Fact Sheet credit recs from our MAP data, authoritative `Collaborative Type == "CCC"` only (PR #571), NEW kb-note `reference-authoritative-statewide-exhibit-signal` → the Fact Sheet **consumer wedge** (now unblocked, #570 merged) + Annual Report self-freshening; the 3 lead emails; standing lanes | [`session_80_handoff.md`](session_80_handoff.md) |
 
 ---
 

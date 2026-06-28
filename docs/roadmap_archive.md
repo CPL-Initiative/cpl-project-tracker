@@ -1721,3 +1721,20 @@ exhibits / 12 program areas, expandable per-sector lists from
 `kb/statewide_exhibit_categories.json`). **PRs #537 + #540, both merged + LIVE.** Full
 story: [`docs/fact_sheet_lessons.md`](docs/fact_sheet_lessons.md); reusable pattern:
 [`docs/kb-notes/playbook-standalone-public-page.md`](docs/kb-notes/playbook-standalone-public-page.md).
+
+### Session 77 — StarPort: the RACI update loop, end to end (2026-06-26)
+
+A hyperglide sprint, Sam live-testing throughout — **8 PRs #556–#562, all merged + live.** Built the
+full *"nudge → braindump → CC writes it up → card"* loop on the Team & RACI tab, and fixed a real
+save-persistence bug along the way. Headlines: **Copy-RACI** (#556 — `⧉ copy` a row's R/A/C/I to others);
+**Annual Report tab** (#557 — `annual_report.js`, 6-section draft from live `CPL_DATA` + ✨AI/⬇Word/🖨Print);
+**check-all/clear-all + manual 📣 team nudge** (#558); **🐛 the save-persistence fix** (#559 — `raci.js`
+never refreshed the magic-link token, so writes 401'd silently after ~1h; `sbWrite` is now refresh-gated +
+`saveRaci` rolls back on failure — plus the **nudge accountability layer**: `last_nudged_at`/
+`last_response_at` + directory Last-nudged/✓responded/⏳awaiting columns); the **📝 update composer**
+(#560 — braindump → CC polish → new immutable `item_updates` table; deep-link consumer
+`?update=<key>#raci`); the **per-item 📣 nudge** (#561 — emails a row's R/A people, quotes the card +
+links to the composer); and **📝 on every Activity/Project card** (#562 — generator deep-link; retired the
+old `✎ Update` button; dispatched the daily workflow). Round-trip = **link-to-form**, no mailbox. New KB
+note: [`methodology-refresh-token-before-write.md`](kb-notes/methodology-refresh-token-before-write.md).
+Full story: [`cobi_raci_nudge_lessons.md`](cobi_raci_nudge_lessons.md) (Session 77).

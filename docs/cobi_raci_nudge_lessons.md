@@ -289,3 +289,47 @@ edit + delete, so we lifted the immutability:
 Decision note: we chose a **hard delete** (Sam wants the entry gone), not a soft-delete tombstone —
 the table isn't an audit-of-record, and the `raw` braindump column already preserves provenance for
 kept rows.
+
+### 2026-06-28 (StarBender, Session 79) — RACI becomes the card's source of truth
+
+Sam was testing the update loop on sub-activity 1.1 and caught that the card said
+**lead = Terence Nelson** while the RACI **Responsible = Malone Dunlavy**. Two
+sources of truth for "who owns this." We made RACI the single one and added a few
+adjacent polish items. Five threads, all merged + live:
+
+- **Card Lead now derives from RACI (`card_raci.js`, NEW).** A static, read-only,
+  anon-Supabase overlay (the `card_updates.js` pattern): the generator stamps a
+  `<span class="cpl-raci-lead" data-raci-key="project:<id>|activity:N">` on every
+  Activity / sub-activity / project card (seeded with the OLD `projects.lead` text
+  as graceful fallback); the overlay fetches `item_raci`, resolves each card's
+  **Responsible → Accountable → old lead** and rewrites the span. **Lesson:** the
+  precedence matters — R is "does the work" (the right card lead); fall back to A
+  only when R is empty, and to the creation-era lead only when the row is
+  un-RACI'd. One file, both HTMLs, no Rule-4 mirror beyond the `<script>` tag.
+- **Hover roster.** Sam: "on hover over the RACI button, show the members so folks
+  don't have to open the card." `card_raci.js` builds a `rosterHtml` tooltip
+  (R/A/C/I names grouped) on the 👥 RACI affordance, reusing the same `item_raci`
+  fetch. Exports (`leadNames`/`byKey`/`rosterHtml`/`roleNames`) are unit-tested
+  (`tests/card_raci.test.js`, 23).
+- **Lead seeding — "Seed all."** The 27 remaining `projects.lead` values were
+  migrated into `item_raci` as **Responsible** so the matrix isn't blank where a
+  card historically had a lead. Two cleanups Sam called mid-seed: **drop Beth Kay**
+  (no longer with the org) and **use the titles' embedded orgs** rather than the
+  seeded org placeholders (ASCCC / RP Group / CO MIS / MAP Team). Lesson: seed
+  from the richest existing field, but let the human prune as it lands — the seed
+  is a starting point, not the truth.
+- **Nudge opt-out bug (real bug, real fix).** Sam had only himself checked, yet 3
+  nudges fired (him, Malone, James Todd). Root cause: the per-item nudge built its
+  recipient list from the **RACI R/A membership**, ignoring the Team Directory's
+  per-member **Nudge** toggle. Fix: `itemNudgeRecipients()` now drops any member
+  with `nudge === false` — **the nudge is opt-OUT-gated, the directory toggle wins.**
+  Then cleared the stale "⏳ awaiting" tags those wrongful nudges had stamped.
+  `tests/raci_nudge_optout.test.js` (3) guards it. Lesson: a notification's
+  audience must be filtered by the *consent* layer, not just the *role* layer.
+- **Sortable matrix + directory columns.** Click a header to sort. The RACI matrix
+  is a 3-tier tree, so sorting **flattens** it (a `⤺ tree view` chip restores the
+  hierarchy); the directory sorts a copy. Helpers `natCmp`/`cmpVals`/`sortableTh`/
+  `statusRank` + `state.msort/dsort`; `tests/raci_sortable.test.js` (13). Lesson:
+  sorting a tree means choosing flatten-vs-stay — we flatten and offer one-click
+  back, rather than sort-within-parent (which reads as "nothing happened" on a
+  small matrix).
