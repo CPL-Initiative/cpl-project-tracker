@@ -50,6 +50,9 @@ const title = await page.title();
 
 const stories = await page.evaluate(() => {
   const clean = (s) => (s || '').replace(/\s+/g, ' ').trim();
+  const isBadge = (l) => /^[✓✔]/.test(l)
+    || /^\d+\s*Credits?\s*(Received|Offered)\b/i.test(l)
+    || /^[✓✔]?\s*(Industry Certification|Portfolio|Military\/JST(\s*Upload)?|Credit By Exam|Credit by Exam)\s*$/i.test(l);
   const out = [];
   document.querySelectorAll('.cpl-stories .card, .card').forEach((card) => {
     // Name: the <h2>/<h3> only (NOT .card-header, which also holds the badge).
@@ -58,25 +61,22 @@ const stories = await page.evaluate(() => {
     const img = card.querySelector('img');
     const src = (img && (img.currentSrc || img.src)) || '';
     const content = card.querySelector('.card-content') || card;
-    let body = clean(content.textContent);
-    // Strip the leading name + badge + credits + pathway so we keep the story.
-    if (name && body.indexOf(name) === 0) body = body.slice(name.length).trim();
-    body = body
-      .replace(/^[✓✔]\s*/i, '')
-      .replace(/^\d+\s*Credits?\s*(Received|Offered)\s*/i, '')
-      .replace(/^[✓✔]?\s*(Industry Certification|Portfolio|Military\/JST(\s*Upload)?|Credit By Exam|Credit by Exam)\s*/i, '')
-      .replace(/^\d+\s*Credits?\s*(Received|Offered)\s*/i, '')
-      .trim();
-    // The "X → Y" pathway line (career → outcome), if present.
-    const pm = body.match(/^([^.“"]{3,60}?\s*→\s*[^.“"]{3,60}?)(?=[A-Z“"]|$)/);
-    const pathway = pm ? clean(pm[1]) : '';
-    if (pathway) body = body.slice(pathway.length).trim();
-    // Prefer the smart-quoted testimonial; else a short description blurb.
-    const qm = body.match(/[“"]([^”"]{12,400})[”"]/);
-    const quote = qm ? clean(qm[1]) : clean(body).slice(0, 220);
+    // innerText preserves line breaks BETWEEN block elements; textContent mashes
+    // them ("JusticeRandy"). Split into clean lines, drop the name + badge lines.
+    const lines = String(content.innerText || content.textContent || '')
+      .split('\n').map((l) => clean(l)).filter(Boolean)
+      .filter((l) => l !== name && !isBadge(l));
+    // career → outcome pathway line, if present.
+    const pathway = lines.find((l) => /→|➔|»/.test(l)) || '';
+    // Prefer the quoted testimonial; else the longest descriptive (non-pathway) line.
+    let quote = '';
+    for (const l of lines) { const m = l.match(/[“"](.{12,400}?)[”"]/); if (m) { quote = clean(m[1]); break; } }
+    if (!quote) {
+      quote = (lines.filter((l) => l !== pathway && !/→|➔|»/.test(l))
+        .sort((a, b) => b.length - a.length)[0] || '').slice(0, 220);
+    }
     const meta = clean((card.querySelector('.card-footer') || {}).textContent || '');
-    // Keep only real story cards: a short name + (a photo or some text).
-    if (name && name.length <= 32 && (src || quote)) out.push({ name, img: src, pathway, quote, meta });
+    if (name && name.length <= 32 && (src || quote)) out.push({ name, img: src, pathway: clean(pathway), quote, meta });
   });
   // De-dupe by name (themes sometimes duplicate a card for mobile/desktop).
   const seen = {}, uniq = [];
