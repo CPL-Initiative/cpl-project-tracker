@@ -1,0 +1,106 @@
+// Source the "My CPL Story" cards from map.rccd.edu/cplstories/ via real Chromium
+// (the page is SiteGround-bot-protected; a plain curl gets a CAPTCHA challenge, a
+// headless browser passes the JS challenge). Runner-as-proxy: the agent sandbox
+// can't reach map.rccd.edu, so this runs on a GitHub Actions runner.
+//
+//   node tools/source_cpl_stories.mjs           # dry-run: extract + print, no write
+//   node tools/source_cpl_stories.mjs --apply    # also write fact-sheet/cpl_stories.js
+//
+// The Fact Sheet's #cpl-stories section picks 4 at random from window.CPL_STORIES.
+import { chromium } from 'playwright';
+import { writeFileSync } from 'node:fs';
+
+const URL = 'https://map.rccd.edu/cplstories/';
+const APPLY = process.argv.includes('--apply');
+const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36';
+
+const browser = await chromium.launch();
+const ctx = await browser.newContext({ userAgent: UA, viewport: { width: 1366, height: 2400 } });
+const page = await ctx.newPage();
+
+// SiteGround's anti-bot is INTERMITTENT — sometimes a JS challenge that
+// auto-resolves + reloads to the real page, sometimes a harder "Robot Challenge
+// Screen." Retry: reload and wait for the actual story cards (.card) to render,
+// which only happens past the challenge.
+async function reachContent() {
+  for (let attempt = 1; attempt <= 6; attempt++) {
+    try {
+      await page.goto(URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
+      await page.waitForFunction(
+        () => /Success Stories/i.test(document.title) && document.querySelectorAll('.card').length > 5,
+        { timeout: 35000 });
+      return true;
+    } catch (e) {
+      const t = await page.title().catch(() => '?');
+      console.error('attempt ' + attempt + ': content not reached (title=' + t + ')');
+      await page.waitForTimeout(4000 + attempt * 1500);
+    }
+  }
+  return false;
+}
+
+if (!(await reachContent())) {
+  console.error('CHALLENGE NOT PASSED after retries — title=' + (await page.title().catch(() => '?')));
+  await browser.close();
+  // Non-fatal: the caller keeps the existing committed dataset rather than
+  // overwriting it. Dry-runs (push) can be re-triggered if this happens.
+  process.exit(APPLY ? 0 : 3);
+}
+const title = await page.title();
+
+const stories = await page.evaluate(() => {
+  const clean = (s) => (s || '').replace(/\s+/g, ' ').trim();
+  const isBadge = (l) => /^[✓✔]/.test(l)
+    || /^\d+\s*Credits?\s*(Received|Offered)\b/i.test(l)
+    || /^[✓✔]?\s*(Industry Certification|Portfolio|Military\/JST(\s*Upload)?|Credit By Exam|Credit by Exam)\s*$/i.test(l);
+  const out = [];
+  document.querySelectorAll('.cpl-stories .card, .card').forEach((card) => {
+    // Name: the <h2>/<h3> only (NOT .card-header, which also holds the badge).
+    const h = card.querySelector('h2, h3');
+    const name = clean(h && h.textContent);
+    const img = card.querySelector('img');
+    const src = (img && (img.currentSrc || img.src)) || '';
+    const content = card.querySelector('.card-content') || card;
+    // innerText preserves line breaks BETWEEN block elements; textContent mashes
+    // them ("JusticeRandy"). Split into clean lines, drop the name + badge lines.
+    const lines = String(content.innerText || content.textContent || '')
+      .split('\n').map((l) => clean(l)).filter(Boolean)
+      .filter((l) => l !== name && !isBadge(l));
+    // career → outcome pathway line, if present.
+    const pathway = lines.find((l) => /→|➔|»/.test(l)) || '';
+    // Prefer the quoted testimonial; else the longest descriptive (non-pathway) line.
+    let quote = '';
+    for (const l of lines) { const m = l.match(/[“"](.{12,400}?)[”"]/); if (m) { quote = clean(m[1]); break; } }
+    if (!quote) {
+      quote = (lines.filter((l) => l !== pathway && !/→|➔|»/.test(l))
+        .sort((a, b) => b.length - a.length)[0] || '').slice(0, 220);
+    }
+    const meta = clean((card.querySelector('.card-footer') || {}).textContent || '');
+    if (name && name.length <= 32 && (src || quote)) out.push({ name, img: src, pathway: clean(pathway), quote, meta });
+  });
+  // De-dupe by name (themes sometimes duplicate a card for mobile/desktop).
+  const seen = {}, uniq = [];
+  for (const s of out) { const k = s.name.toLowerCase(); if (seen[k]) continue; seen[k] = 1; uniq.push(s); }
+  return uniq;
+});
+
+console.log('TITLE :', title);
+console.log('COUNT :', stories.length);
+console.log('===STORIES_JSON===');
+console.log(JSON.stringify(stories));
+console.log('===END===');
+console.log('SAMPLE:', JSON.stringify(stories.slice(0, 3), null, 2));
+
+if (APPLY) {
+  const payload = {
+    _about: 'My CPL Story cards sourced from https://map.rccd.edu/cplstories/ (headless, runner-as-proxy). The Fact Sheet #cpl-stories section picks 4 at random. Built by tools/source_cpl_stories.mjs.',
+    source: URL,
+    count: stories.length,
+    stories,
+  };
+  const js = '/* AUTO-GENERATED by tools/source_cpl_stories.mjs — do not hand-edit. */\n'
+    + 'window.CPL_STORIES = ' + JSON.stringify(payload, null, 1) + ';\n';
+  writeFileSync('fact-sheet/cpl_stories.js', js);
+  console.log('WROTE fact-sheet/cpl_stories.js (' + stories.length + ' stories)');
+}
+await browser.close();

@@ -264,3 +264,44 @@ Tests: `tests/factsheet_edit_boxes.test.js` (28) — add/materialize/delete/reor
 the original `tests/factsheet_edit.test.js` (31) still green. Code-only; `index.html` untouched (the overlay
 injects all chrome). Next: **Phase 2 images** (paste → Supabase Storage bucket → URL; `<img>` allowlist with
 a host check; resize via width presets first, drag-handle later).
+
+## 2026-06-28 — Session 81 (StarFarout): the "My CPL Stories" section (4 random, headless-sourced)
+
+Sam: add a section highlighting **4 random** "My CPL Story" windows from
+https://map.rccd.edu/cplstories/ + a link to the MAP site. Built into the existing
+`#stories` section (keeps the Rocio feature): a `.cpl-stories-grid` that picks 4 at
+random from `window.CPL_STORIES` + a "See all CPL Success Stories ↗" link.
+
+### Sourcing — the runner-as-proxy, escalated to a headless browser
+- `map.rccd.edu` is **SiteGround-bot-protected**: a plain runner `curl` gets `HTTP 202
+  sg-captcha: challenge` (a 183-byte stub), not the page. The WP REST API is gated too.
+- **Real Chromium (Playwright) on a runner passes the JS challenge.** `tools/source_cpl_stories.mjs`
+  loads the page headless and extracts the `.card` story windows → `fact-sheet/cpl_stories.js`.
+  Workflow `.github/workflows/cpl-stories.yml`: **push = dry-run** (extract + print, verify in the
+  Actions log), **weekly cron + dispatch = `--apply`** (regenerate + commit). The client picks 4 random.
+- **The challenge is INTERMITTENT** — it passed cleanly once, then served a harder "Robot Challenge
+  Screen" (33 KB) on the next run. Fix: **retry + `waitForFunction(() => …querySelectorAll('.card').length > 5)`**
+  — reload until the real story cards render (the challenge auto-resolves on a reload). On total failure
+  the apply path **exits 0 without writing**, so the cron keeps the last-good committed dataset rather
+  than clobbering it with a challenge stub.
+
+### Extraction gotchas
+- **Name from the `<h2>` only** — `card.querySelector('h2,h3,.card-header')` returns the **`.card-header`
+  parent first** (document order), which includes the badge ("Brody✓ Industry Certification"). Query the
+  `<h2>` directly for the clean name.
+- **Quote = the smart-quoted “…” testimonial**, with a description-blurb fallback; strip the leading
+  name + badge + credits + the "career → outcome" pathway from the body first. A `pathway` field feeds a
+  small italic line on the card.
+- Photos are `https://staging2.map.rccd.edu/…` (the live page references staging image URLs); kept as-is
+  with `referrerpolicy="no-referrer"`. These are already-public, Sam-owned student stories, re-surfaced on
+  the (also public, same-org) Fact Sheet — no new PII exposure.
+
+### Renderer / Curate interaction
+- `fact-sheet/cpl_stories_render.js` — read-only, **escapes** all external text, **https-only** photos
+  (`safeImg`), hides the whole block if there's no data (graceful — intro + featured story + link remain).
+- The dynamic cards use a **non-`.card` class** (`.cpl-story-card`) and live inside a nested `<div>`, so the
+  Phase-1 Curate overlay (which collects `.card`/`.res`/… + direct section `<p>/<ul>/<ol>`) **never touches
+  them** — no `EXCLUDE_SECTIONS` change needed. Verified: the `factsheet_edit` suites stay green.
+- **jsdom test note:** the renderer (like `factsheet_edit`) auto-boots on `DOMContentLoaded`, which has
+  already fired under `runScripts:"outside-only"` — the test calls `CPL_STORIES_RENDER.render()` directly.
+  Test `tests/cpl_stories_render.test.js` (18): 4-of-N random, escaping, https-only, pathway, empty-hides.

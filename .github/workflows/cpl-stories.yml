@@ -1,0 +1,51 @@
+name: Source CPL Stories
+# Runner-as-proxy: the agent sandbox can't reach map.rccd.edu, and the page is
+# SiteGround-bot-protected (a plain curl gets a CAPTCHA challenge). Real Chromium
+# (Playwright) passes the JS challenge. Extract the "My CPL Story" cards →
+# fact-sheet/cpl_stories.js (the Fact Sheet #cpl-stories section picks 4 at random).
+#
+#   push to this workflow's branch / PR  → DRY-RUN (extract + print, no commit)
+#   weekly cron + manual dispatch        → --apply (regenerate + commit)
+on:
+  push:
+    paths:
+      - 'tools/source_cpl_stories.mjs'
+      - '.github/workflows/cpl-stories.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '23 7 * * 1'        # Mondays 07:23 UTC
+permissions:
+  contents: write
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Playwright + Chromium
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm i playwright@1.47.2 >/dev/null 2>&1
+          npx playwright install --with-deps chromium
+      - name: Decide mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then echo "apply=" >> "$GITHUB_OUTPUT";
+          else echo "apply=--apply" >> "$GITHUB_OUTPUT"; fi
+      - name: Source the stories
+        run: node tools/source_cpl_stories.mjs ${{ steps.mode.outputs.apply }}
+      - name: Commit if changed (apply runs only)
+        if: github.event_name != 'push'
+        run: |
+          # git add FIRST — a brand-new untracked cpl_stories.js isn't seen by
+          # `git diff` (only `--cached` after staging), so stage then check.
+          git add fact-sheet/cpl_stories.js
+          if git diff --cached --quiet; then
+            echo "No change to fact-sheet/cpl_stories.js"; exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "Refresh CPL Stories dataset (cpl_stories.js)"
+          git push
