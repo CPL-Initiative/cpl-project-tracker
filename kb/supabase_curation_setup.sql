@@ -18,9 +18,16 @@ create table if not exists public.allowed_reviewers (
   added_at  timestamptz not null default now()
 );
 
--- EDIT: add a row per reviewer. Seeded with the project lead.
+-- EDIT: add a row per reviewer. Seeded with the project mailbox; the CPL
+-- Initiative leads were added 2026-06-28 (Session 82) so they can curate the CCR /
+-- RACI / TMC / Fact Sheet surfaces themselves (is_allowed_reviewer() gates every
+-- write; match is case-insensitive on the magic-link email).
 insert into public.allowed_reviewers (email) values
-  ('map@rccd.edu')
+  ('map@rccd.edu'),         -- project mailbox
+  ('slee@cccco.edu'),       -- Samuel Lee — Senior Advisor to the Chancellor for CPL
+  ('crystal.nasio@rccd.edu'),  -- Crystal Nasio — Executive Advisor, Operations & CPL Engagement
+  ('terence.nelson@rccd.edu'), -- Terence Nelson — Executive Director, Pathways & Partnerships
+  ('calvin.gloria@rccd.edu')   -- Calvin Gloria — Manager, Training & Military CPL
 on conflict (email) do nothing;
 
 -- 2) Curation edits (one row per course_id + field; saves upsert) -----------
