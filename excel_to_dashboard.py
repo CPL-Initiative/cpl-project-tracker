@@ -1713,6 +1713,105 @@ def _att_badge(attachments, act_num=None, project_id=None):
             f'{count}</span>')
 
 
+# ── Computed progress (actual vs the Goal/Stretch ladder) ────────────────────
+# The card's progress bar was the manually-entered percent_complete, which drifts
+# from the actuals on the ladder (Sam, 2026-06-29: "should be 100% — actual 8 =
+# the stretch of 8"). These compute progress from the current value ÷ the CURRENT
+# FISCAL-YEAR cumulative target, so the bar reads "on pace this year". A blue
+# (Goal) + gold (Stretch) pair replaces the single bar when the data supports it;
+# otherwise the manual % bar is kept (the simplest no-regression fallback).
+_FY_SUFFIXES = ["2526", "2627", "2728", "2829", "2930"]
+_FY_START_TO_SUFFIX = {2025: "2526", 2026: "2627", 2027: "2728", 2028: "2829", 2029: "2930"}
+
+
+def _current_fy_suffix():
+    """CCC fiscal year (Jul 1–Jun 30) → ladder column suffix. 2026-06 → '2526';
+    2026-07 → '2627'. Clamped to the ladder's 2025-26 … 2029-30 range."""
+    now = _now_pt()
+    fy_start = now.year if now.month >= 7 else now.year - 1
+    fy_start = max(2025, min(2029, fy_start))
+    return _FY_START_TO_SUFFIX[fy_start]
+
+
+def _fy_label(suffix):
+    return f"20{suffix[:2]}-{suffix[2:]}"
+
+
+def _parse_metric_num(s):
+    """Parse a displayed metric/ladder value ('43,630', '8', '85%', '') to a
+    float, or None if it isn't a plain number."""
+    if s is None:
+        return None
+    t = str(s).strip().replace(",", "").replace("%", "").replace("$", "")
+    if t == "" or t in ("—", "-", "N/A", "n/a", "TBD"):
+        return None
+    try:
+        return float(t)
+    except ValueError:
+        return None
+
+
+def _ladder_target(vals_by_suffix, suffix):
+    """The current-FY cumulative target; if that column is blank, fall back to the
+    most recent non-blank target ≤ current FY, then the nearest later one. Returns
+    a positive float or None."""
+    v = _parse_metric_num(vals_by_suffix.get(suffix))
+    if v is not None and v > 0:
+        return v
+    idx = _FY_SUFFIXES.index(suffix)
+    order = list(range(idx, -1, -1)) + list(range(idx + 1, len(_FY_SUFFIXES)))
+    for i in order:
+        v = _parse_metric_num(vals_by_suffix.get(_FY_SUFFIXES[i]))
+        if v is not None and v > 0:
+            return v
+    return None
+
+
+def _compute_dual_progress(metric, goals_by_suffix, stretches_by_suffix, suffix=None):
+    """Return {goal_pct, stretch_pct, fy_label} (pcts are true values, may exceed
+    100) or None when it can't be computed (no numeric actual, or no positive
+    target on either ladder). Caller renders the manual % bar when None."""
+    actual = _parse_metric_num(metric)
+    if actual is None:
+        return None
+    suffix = suffix or _current_fy_suffix()
+    goal_t = _ladder_target(goals_by_suffix, suffix)
+    stretch_t = _ladder_target(stretches_by_suffix, suffix)
+    if not goal_t and not stretch_t:
+        return None
+    out = {"fy_label": _fy_label(suffix)}
+    out["goal_pct"] = int(round(actual / goal_t * 100)) if goal_t else None
+    out["stretch_pct"] = int(round(actual / stretch_t * 100)) if stretch_t else None
+    return out
+
+
+def _dual_progress_html(prog):
+    """Render the blue (Goal) + gold (Stretch) computed-progress bars."""
+    def _bar(label, pct, fill_color):
+        if pct is None:
+            return ""
+        met = pct >= 100
+        label_color = "var(--green-progress)" if met else fill_color
+        width = max(0, min(100, pct))
+        return (
+            f'                    <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">\n'
+            f'                        <span style="color:{fill_color};font-weight:600;">{label}{" ✓" if met else ""}</span>\n'
+            f'                        <span style="font-weight:700;color:{label_color};">{pct}%</span>\n'
+            f'                    </div>\n'
+            f'                    <div style="height:5px;background:#e8e8e8;border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">\n'
+            f'                        <div style="height:100%;width:{width}%;background:{"var(--green-progress)" if met else fill_color};border-radius:3px;"></div>\n'
+            f'                    </div>\n'
+        )
+    return (
+        f'                <div class="akpi-progress" style="margin-top:0.5rem;">\n'
+        f'                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" '
+        f'title="Cumulative actual ÷ the {prog["fy_label"]} cumulative target">Progress vs {prog["fy_label"]} target</div>\n'
+        + _bar("Goal", prog.get("goal_pct"), "var(--cobalt)")
+        + _bar("Stretch", prog.get("stretch_pct"), "var(--gold-accent)")
+        + f'                </div>\n'
+    )
+
+
 def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None, attachments=None):
     """
     Generate static HTML for the 19 activity-level KPI cards section.
@@ -1948,7 +2047,20 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                     html += ('                <div style="font-size:0.55rem;color:#999;'
                              'font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>\n')
 
-                # Progress bar with percentage label
+                # Progress — computed from the actual vs the current fiscal-year
+                # Goal/Stretch ladder (blue Goal bar + gold Stretch bar). Falls
+                # back to the manual percent_complete bar when the value isn't
+                # numeric or the ladder has no positive target (Sam, 2026-06-29).
+                _goals_by = {"2526": g2526, "2627": g2627, "2728": g2728, "2829": g2829, "2930": g2930_v}
+                _stretches_by = {"2526": s2526, "2627": s2627, "2728": s2728, "2829": s2829, "2930": s2930}
+                _prog = _compute_dual_progress(kpi.get("metric"), _goals_by, _stretches_by)
+                if _prog is not None:
+                    html += _dual_progress_html(_prog)
+                    continue_manual_bar = False
+                else:
+                    continue_manual_bar = True
+
+                # Manual percent_complete bar (fallback only).
                 pct = kpi.get("pct", 0)
                 if pct >= 75:
                     pbar_color = plabel_color = "var(--green-progress)"
@@ -1958,7 +2070,8 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                     pbar_color = plabel_color = "var(--cobalt)"
                 else:
                     pbar_color = plabel_color = "#888"
-                html += (f'                <div class="akpi-progress" style="margin-top:0.5rem;">\n'
+                if continue_manual_bar:
+                    html += (f'                <div class="akpi-progress" style="margin-top:0.5rem;">\n'
                          f'                    <div style="display:flex;justify-content:space-between;font-size:0.7rem;margin-bottom:0.15rem;">\n'
                          f'                        <span style="color:#666;">Progress</span>\n'
                          f'                        <span style="font-weight:700;color:{plabel_color};">{pct}%</span>\n'

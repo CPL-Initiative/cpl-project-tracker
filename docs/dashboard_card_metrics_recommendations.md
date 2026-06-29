@@ -2,7 +2,7 @@
 title: Dashboard card metrics — consistency recommendations (Sam's recommend list)
 date: 2026-06-29
 session: 84 (SkyScribe)
-status: recommendation (not yet built)
+status: item 2 BUILT (Session 84) · item 1 still recommended
 tags: [cobi, dashboard, kpi, progress-bar, recommendation]
 artifacts:
   - excel_to_dashboard.py
@@ -41,7 +41,26 @@ the historical manual value so the divergence is explained rather than looking
 wrong. *Caveat:* only those 5 projects have a live headline equivalent; the rest
 have project-specific metrics that stay manual.
 
-## 2. Progress bar should reflect the goal/stretch ladder (+ dual blue/gold bars)
+## 2. Progress bar should reflect the goal/stretch ladder (+ dual blue/gold bars) — ✅ BUILT (Session 84)
+
+**Shipped:** the Activity KPI cards now compute **Goal (blue/`--cobalt`) + Stretch
+(gold/`--gold-accent`) bars** from `current value ÷ the current fiscal-year
+cumulative target` (FY = Jul 1 boundary; `_current_fy_suffix` / `_compute_dual_progress`
+/ `_dual_progress_html` in `excel_to_dashboard.py`). 1.1 now reads **Goal 200% ✓ /
+Stretch 100% ✓** (actual 8 vs the 2025-26 goal 4 / stretch 8) — matching Sam's
+expectation. ≥100% shows a ✓ + greens. **Decision taken:** current-fiscal-year
+target (Sam's "on pace this year" read); swapping to cumulative-to-2030 is a
+one-line denominator change. **Fallback (the "won't work" cases):** a card whose
+value isn't numeric, or that has no positive ladder target, keeps the existing
+manual `percent_complete` bar (no regression). **Left as-is on purpose:** the
+project-GRID cards' bar (replacing it would remove the click-to-edit
+`percent_complete` affordance) and the Activity-GROUP aggregate "% avg toward 2030"
+bar (a separate average). Tests: `kb/_test_progress_bars.py` (19). *Original
+recommendation below for reference.*
+
+---
+
+
 
 **Observed (project 1.1, "MAP Platform Development"):** 2030 Goal 25, Stretch 50,
 current actual **8**; the 2025-26 STRETCH = 8 (met) — yet the **Progress bar shows a
