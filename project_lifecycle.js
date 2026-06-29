@@ -252,6 +252,29 @@
     if (card) { card.removeAttribute("data-lifecycle"); card.style.display = ""; }
   }
 
+  // The Annual Workplan Goals table (a SEPARATE tab/surface from the grid) also
+  // lists each project. The generator drops a tabled project's rows on the next
+  // regen, but until then this hides them live so a tabled project doesn't linger
+  // there (Sam, Session 84 follow-up). In render_annual_goals_table_html the
+  // sub-activity name cell carries data-pid on its .wpg-assoc-cell and spans 3
+  // rows (Goal/Current/Stretch); the grouped render uses data-aid on the ladder
+  // cells. Hide both shapes. `table ...` scoping avoids the grid's own data-pid.
+  function esc4q(s) { return (window.CSS && CSS.escape) ? CSS.escape(s) : String(s); }
+  function nextTr(row) { var n = row.nextElementSibling; while (n && n.tagName !== "TR") n = n.nextElementSibling; return n; }
+  function setGoalsRowsHidden(pid, hidden) {
+    var q = esc4q(pid);
+    Array.prototype.forEach.call(document.querySelectorAll('table [data-pid="' + q + '"]'), function (a) {
+      var nameCell = a.closest && a.closest("td[rowspan]");
+      if (!nameCell) return;                                  // not a goals-table name cell
+      var span = parseInt(nameCell.getAttribute("rowspan"), 10) || 1;
+      var row = a.closest("tr");
+      for (var i = 0; i < span && row; i++) { row.style.display = hidden ? "none" : ""; row = nextTr(row); }
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-aid="' + q + '"]'), function (c) {
+      var tr = c.closest && c.closest("tr"); if (tr) tr.style.display = hidden ? "none" : "";
+    });
+  }
+
   // ── Reconcile drift between the baked HTML and the live overlay ───────────────
   var _overlay = {};
   function reconcile() {
@@ -264,12 +287,13 @@
       else if (card) card.setAttribute("data-lifecycle", meta.state); // keep state in sync
       if (!entryFor(pid)) addEntry(pid, name, meta);
       else entryFor(pid).innerHTML = entryHtml(pid, name, meta); // keep reason/date fresh
+      setGoalsRowsHidden(pid, true);                  // also drop it from the Annual Goals table
     });
     // 2. Anything baked as tabled but NO LONGER in the overlay → restore it.
     var baked = gridEl() ? gridEl().querySelectorAll(".project-card[data-lifecycle]") : [];
     Array.prototype.forEach.call(baked, function (card) {
       var pid = card.getAttribute("data-pid");
-      if (pid && !_overlay[pid]) showCard(pid);
+      if (pid && !_overlay[pid]) { showCard(pid); setGoalsRowsHidden(pid, false); }
     });
     Array.prototype.forEach.call(document.querySelectorAll(".tabled-card[data-pid]"), function (e) {
       var pid = e.getAttribute("data-pid");
@@ -298,7 +322,10 @@
     Array.prototype.forEach.call(grid.querySelectorAll(".project-card"), function (card) {
       var has = card.querySelector(".plc-ctl-row");
       if (card.getAttribute("data-lifecycle")) { if (has) has.remove(); return; }
-      if (!authed) { if (has) has.remove(); return; }
+      // The 🗄 control shows for EVERYONE (affordance-visibility vs action-
+      // eligibility) so the team-phrase / reviewer unlock is reachable from the
+      // card — a not-signed-in click opens the unlock in the popup. (Fixes the
+      // chicken-and-egg where the unlock was buried behind an authed-only button.)
       if (has) return;
       var row = el("div", { "class": "plc-ctl-row" });
       var btn = el("button", { "class": "plc-table-btn", "type": "button",

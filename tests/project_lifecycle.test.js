@@ -48,6 +48,17 @@ function makeDom(overlayRows) {
           '<div class="tabled-card" data-pid="9.9" data-lifecycle="tabled"><span class="tabled-name">Old Pilot <span>9.9</span></span>' +
             '<button class="tabled-restore" data-pid="9.9" style="display:none;">♻ Restore to active</button></div>' +
         '</div></details>' +
+      // the Annual Workplan Goals table (a SEPARATE surface) — 3 rows per project,
+      // the name cell carries data-pid + rowspan=3. 5.1 (in overlay) must get
+      // hidden; 9.9 (baked tabled, NOT in overlay) must be un-hidden on restore.
+      '<table id="goals"><tbody>' +
+        '<tr class="g51 gr"><td rowspan="3"><div class="wpg-assoc-cell" data-pid="5.1">x</div></td><td>Goal</td></tr>' +
+        '<tr class="g51 gr"><td>Current</td></tr>' +
+        '<tr class="g51 gr"><td>Stretch</td></tr>' +
+        '<tr class="g99 gr" style="display:none;"><td rowspan="3"><div class="wpg-assoc-cell" data-pid="9.9">y</div></td><td>Goal</td></tr>' +
+        '<tr class="g99 gr" style="display:none;"><td>Current</td></tr>' +
+        '<tr class="g99 gr" style="display:none;"><td>Stretch</td></tr>' +
+      '</tbody></table>' +
       "</body></html>",
     { runScripts: "outside-only", url: "https://cpl-initiative.github.io/cpl-project-tracker/" });
   const w = dom.window;
@@ -113,15 +124,22 @@ const OVERLAY = [
   check("baked-tabled 9.9 (not in overlay) is un-hidden", card99 && !card99.getAttribute("data-lifecycle") && card99.style.display !== "none");
   check("9.9's stale collapsed entry is removed", !doc.querySelector('.tabled-card[data-pid="9.9"]'));
 
-  // (f) auth gating of the controls.
-  check("signed out: no 🗄 Table control on active cards", doc.querySelectorAll(".plc-table-btn").length === 0);
+  // (e2) Annual Goals table reconciliation — the tabled 5.1 rowspan block is
+  // hidden live; the restored 9.9 block (baked tabled, not in overlay) un-hidden.
+  check("goals table: tabled 5.1's 3 rows are hidden", Array.prototype.every.call(doc.querySelectorAll(".g51"), function (r) { return r.style.display === "none"; }));
+  check("goals table: restored 9.9's 3 rows are un-hidden", Array.prototype.every.call(doc.querySelectorAll(".g99"), function (r) { return r.style.display !== "none"; }));
+
+  // (f) the 🗄 control is ALWAYS visible (affordance-visibility vs eligibility) so
+  // the team-phrase / reviewer unlock is reachable from the card even signed out.
+  check("signed out: 🗄 Table control IS shown on active cards", doc.querySelectorAll(".plc-table-btn").length >= 1);
+  check("signed out: 🗄 control on the active 1.1 card", !!doc.querySelector('.project-card[data-pid="1.1"] .plc-table-btn'));
+  check("signed out: no 🗄 control on the hidden/tabled 5.1 card", !doc.querySelector('.project-card[data-pid="5.1"] .plc-table-btn'));
   check("signed out: Restore buttons hidden", Array.prototype.every.call(doc.querySelectorAll(".tabled-restore"), function (b) { return b.style.display === "none"; }));
 
-  // Provide a team phrase → controls light up.
+  // Provide a team phrase → Restore lights up too.
   w.localStorage.setItem("cpl_team_pass", "cpl-team-2026");
   API.mountControls();
-  check("with team phrase: 🗄 control appears on the active 1.1 card", !!doc.querySelector('.project-card[data-pid="1.1"] .plc-table-btn'));
-  check("with team phrase: no 🗄 control on the hidden/tabled card", !doc.querySelector('.project-card[data-pid="5.1"] .plc-table-btn'));
+  check("with team phrase: 🗄 control still on the active 1.1 card", !!doc.querySelector('.project-card[data-pid="1.1"] .plc-table-btn'));
   check("with team phrase: Restore buttons shown", Array.prototype.some.call(doc.querySelectorAll(".tabled-restore"), function (b) { return b.style.display !== "none"; }));
 
   // (g) reconcile is idempotent (no throw, no duplicate entries).

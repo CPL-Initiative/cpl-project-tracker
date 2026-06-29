@@ -1,0 +1,133 @@
+name: Deploy Pages (lean)
+
+# Custom GitHub Pages deploy for this STATIC dashboard. Replaces the default
+# "Deploy from a branch" Jekyll build (which ground through the whole ~553MB repo
+# on every push). Repo Settings → Pages → Source MUST be set to "GitHub Actions"
+# for this to be the active deployer.
+#
+# What it publishes: the whole repo MINUS internal-only data the browser never
+# fetches (~200MB of kb/ staging + provenance + dry-run alias maps + build
+# inputs). The served-file ASSERTION below fails the build loudly if a known
+# browser-served path is ever missing from _site, so an over-aggressive exclude
+# can never silently ship a broken site.
+#
+# Triggers (all three are load-bearing):
+#   • push to main      — human merges / PR merges (they use a real token → DO fire)
+#   • workflow_run       — the daily cron pushes with GITHUB_TOKEN, which by design
+#                          does NOT fire push workflows; so we also redeploy when
+#                          "Daily CPL Dashboard" completes.
+#   • workflow_dispatch  — manual.
+on:
+  push:
+    branches: [main]
+  workflow_run:
+    workflows: ["Daily CPL Dashboard"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Serialize deploys; let an in-progress one finish (don't cancel a live deploy).
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Assemble lean site
+        run: |
+          set -euo pipefail
+          mkdir -p _site
+          # Export only COMMITTED files (git archive omits .git, node_modules, and
+          # everything gitignored — e.g. *.full.json, CustomReport_latest.json).
+          git archive --format=tar HEAD | tar -x -C _site
+          # Drop internal-only paths the browser never fetches (verified by the
+          # served-path audit — docs/pages_lean_deploy_scope.md). The served-file
+          # ASSERTION step below fails the build if any of these removed a served
+          # asset, so an over-aggressive prune can never silently ship a broken site.
+          rm -rf _site/docs _site/tests _site/prototype _site/tools _site/archive \
+                 _site/chatbox _site/funding _site/reflections _site/nudges _site/news \
+                 _site/scripts _site/.github _site/tmc/source_data
+          rm -f  _site/*.xlsx _site/*.bak
+          # Big kb/ staging + curated anchors + lexicons — generator INPUTS, baked
+          # into the served unified_courses_*.js, never fetched live.
+          rm -f  _site/kb/coci_minted_courses.json _site/kb/coci_minted_memberships.json \
+                 _site/kb/coci_minted_singletons.json _site/kb/cid_articulation_joins.json \
+                 _site/kb/promotions.json _site/kb/coci_unified_courses.json \
+                 _site/kb/common_courses.json _site/kb/course_crosswalk.json \
+                 _site/kb/discipline_inference.json
+          rm -f  _site/kb/reference/*.xlsx
+          # Audit provenance — only the slim latest.json summaries are served.
+          rm -f  _site/kb/row_audit/*.md _site/kb/row_audit/*.full.json _site/kb/exhibit_audit/*.md
+          # Re-mint / fold / dry-run / apply output dirs (alias maps, collisions) — never served.
+          rm -rf _site/kb/*_out _site/kb/*_dryrun _site/kb/*_apply _site/kb/subj4_* _site/kb/*_fold
+          # GitHub Pages must skip Jekyll for a static site (the repo also ships a
+          # root .nojekyll; this is belt + braces).
+          touch _site/.nojekyll
+          echo "Assembled _site: $(du -sh _site | cut -f1) ($(find _site -type f | wc -l) files)"
+
+      - name: Assert every browser-served path is present
+        run: |
+          set -euo pipefail
+          # If any of these is missing, an exclude was too aggressive — FAIL the
+          # deploy rather than ship a site that 404s a lazy-loaded asset.
+          must=(
+            "_site/index.html"
+            "_site/CPL_Dashboard.html"
+            "_site/.nojekyll"
+            "_site/CPL_Data.js"
+            "_site/live_metrics.json"
+            "_site/kpi_history.json"
+            "_site/project_lifecycle.js"
+            "_site/unified_courses_data.js"
+            "_site/unified_courses_details.js"
+            "_site/unified_courses_standalone.js"
+            "_site/unified_courses_members.js"
+            "_site/tmc_college_courses.js"
+            "_site/statewide_data.js"
+            "_site/cpl_funding_data.js"
+            "_site/fact-sheet/index.html"
+            "_site/kb-portal/index.html"
+            "_site/kb/cpl_todos.json"
+            "_site/kb/liftoff_plan.json"
+            "_site/kb/project_lifecycle.json"
+            "_site/kb/coci_articulations.json"
+            "_site/kb/coci_curation.json"
+            "_site/kb/row_audit/latest.json"
+            "_site/kb/reference/cid_descriptors.json"
+            "_site/kb/reference/ccn_courses.json"
+          )
+          missing=0
+          for p in "${must[@]}"; do
+            if [ ! -e "$p" ]; then echo "::error::served file MISSING from _site: $p"; missing=1; fi
+          done
+          # Sanity: the root carries dozens of served *.js — a near-empty count
+          # means the copy itself broke.
+          jscount=$(find _site -maxdepth 1 -name '*.js' | wc -l)
+          if [ "$jscount" -lt 30 ]; then echo "::error::only $jscount root *.js in _site (expected 30+)"; missing=1; fi
+          # Served subdirs must be non-empty.
+          for d in exports reports tmc/source_pdfs; do
+            if [ -z "$(ls -A _site/$d 2>/dev/null)" ]; then echo "::error::served dir empty/missing: _site/$d"; missing=1; fi
+          done
+          if [ "$missing" -ne 0 ]; then echo "Served-path assertion FAILED — not deploying."; exit 1; fi
+          echo "Served-path assertion passed ($jscount root *.js)."
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
