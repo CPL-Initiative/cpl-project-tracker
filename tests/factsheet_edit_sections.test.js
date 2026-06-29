@@ -139,6 +139,51 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
       ) && tbl.el.classList.contains("fs-ov-hidden"));
   }
 
+  // ── (g) the ✕ button FIRES through a real click (capture handler must not swallow it) ──
+  // Regression guard: onDocClick is a capture-phase document handler. It must let
+  // clicks on .fs-del reach the button's own deleteBox listener — otherwise the ✕
+  // silently does nothing on a move-only KPI / table, and opens the editor (not
+  // delete) on an editable box. Earlier tests call deleteBox() directly, so they
+  // could not catch this; here we dispatch the actual DOM click.
+  function clickEl(w, el) {
+    el.dispatchEvent(new w.MouseEvent("click", { bubbles: true, cancelable: true, view: w }));
+  }
+  {
+    const { w, API, writes } = loadDom(); await tick(); await tick();
+    API.setCurating(true);
+    // KPI move-only: ✕ click hides it.
+    const kpi = API.blocks().filter((b) => b.sectionId === "progress" && b.el.classList.contains("kpi"))[0];
+    clickEl(w, kpi.el.querySelector(".fs-del"));
+    await tick(); await tick();
+    check("clicking a KPI ✕ HIDES it (capture handler lets the ✕ fire)",
+      kpi.el.classList.contains("fs-ov-hidden") && writes.some((x) => x.method === "POST" && /"hidden":true/.test(x.body || "")));
+
+    // Editable baked box: ✕ click HIDES it (does NOT open the editor).
+    const ed = API.blocks().filter((b) => b.sectionId === "resources" && !b.added && API.canEditHtml(b))[0];
+    clickEl(w, ed.el.querySelector(".fs-del"));
+    await tick(); await tick();
+    check("clicking an editable box ✕ HIDES it (not open-the-editor)",
+      ed.el.classList.contains("fs-ov-hidden"));
+
+    // Table hide-only: ✕ click hides the wrapper.
+    const tbl = API.blocks().filter((b) => b.sectionId === "funding" && b.isTable)[0];
+    clickEl(w, tbl.el.querySelector(".fs-del"));
+    await tick(); await tick();
+    check("clicking the budget-table ✕ HIDES it", tbl.el.classList.contains("fs-ov-hidden"));
+  }
+  {
+    // Added box: ✕ click DELETES it (true removal) — added boxes are editable, so
+    // this also proves the editable-box ✕ no longer opens the editor instead.
+    const { w, API } = loadDom(); await tick(); await tick();
+    API.setCurating(true);
+    const added = API.addBox("resources"); await tick();
+    const key = added.key;
+    clickEl(w, added.el.querySelector(".fs-del"));
+    await tick(); await tick();
+    check("clicking an ADDED box ✕ DELETES it (removed from the DOM)",
+      !w.document.querySelector('[data-fsk="' + key + '"]'));
+  }
+
   let failed = 0;
   results.forEach(function (r) { console.log((r[1] ? "PASS " : "FAIL ") + r[0]); if (!r[1]) failed++; });
   console.log("\n" + (failed ? failed + " FAILED" : "All " + results.length + " checks passed"));

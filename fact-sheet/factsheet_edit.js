@@ -99,6 +99,12 @@
   var _addCounter = 0;
   function isAddedKey(k) { return /\|add\|/.test(k || ''); }
   function isOrderKey(k) { return /\|__order$/.test(k || ''); }
+  // Whole-section drag order — a reserved PAGE-level key (a single token, NOT a
+  // "<sid>|__order" box-order key), so isOrderKey / isAddedKey / isImgKey /
+  // materializeAdded all ignore it. html = JSON array of section ids, top→bottom.
+  // Only applySectionOrder / persistSectionOrder touch it (see the section-reorder
+  // block). It's re-applied for EVERY visitor on load; dragging is reviewer-only.
+  var SECTION_ORDER_KEY = '__section_order__';
   function genToken() { return 'b' + Date.now().toString(36) + (_addCounter++).toString(36); }
   function primaryKind(el) {
     for (var i = 0; i < GRID_KINDS.length; i++)
@@ -564,9 +570,11 @@
     if (API._curating) {
       for (var i = 0; i < API._blocks.length; i++) decorateBox(API._blocks[i]);
       renderAddButtons();
+      renderSectionHandles();
     } else {
       for (var j = 0; j < API._blocks.length; j++) { undecorateBox(API._blocks[j]); API._blocks[j].el.classList.remove('fs-target'); }
       clearAddButtons();
+      clearSectionHandles();
       closeDock();
     }
     updateButton();
@@ -819,6 +827,103 @@
     if (sid) persistOrder(sid);
   }
 
+  // ─── Whole-section drag-to-reorder ─────────────────────────────────────────
+  // A reviewer can reorder the page's top-level <section>s (e.g. move the Vision
+  // 2030 section above the KPI grid). Each reorderable section gets a draggable
+  // handle in curate mode; the new order persists to SECTION_ORDER_KEY and is
+  // re-applied for EVERY visitor on load. Chrome sections (.no-print, e.g. the
+  // table of contents) are PINNED — never draggable, always keep their place.
+  // Parallel to the box drag handlers above and mutually exclusive with them:
+  // each guards on its own drag state (_dragSec vs _dragEl), so only one fires.
+  function mainEl() { return document.querySelector('main'); }
+  function eachSection(fn) {
+    var main = mainEl(); if (!main) return;
+    var kids = main.children;
+    for (var i = 0; i < kids.length; i++) if (kids[i].tagName === 'SECTION') fn(kids[i], i);
+  }
+  function isReorderableSection(sec) {
+    return !!(sec && sec.tagName === 'SECTION' && sec.id &&
+      sec.parentElement && sec.parentElement.tagName === 'MAIN' &&
+      !(sec.classList && sec.classList.contains('no-print')));
+  }
+  function reorderableSectionIds() {
+    var ids = []; eachSection(function (sec) { if (isReorderableSection(sec)) ids.push(sec.id); });
+    return ids;
+  }
+  // Inject the per-section drag handle (curate mode only).
+  function renderSectionHandles() {
+    eachSection(function (sec) {
+      if (!isReorderableSection(sec) || sec.querySelector('.fs-sec-handle')) return;
+      sec.classList.add('fs-sec-reorder');
+      var h2 = sec.querySelector('h2');
+      var label = norm(h2 ? h2.textContent : sec.id).slice(0, 60) || sec.id;
+      var h = document.createElement('div');
+      h.className = 'fs-sec-handle no-print';
+      h.setAttribute('draggable', 'true');
+      h.setAttribute('role', 'button');
+      h.setAttribute('tabindex', '0');
+      h.setAttribute('title', 'Drag to reorder this section');
+      h.setAttribute('aria-label', 'Drag to reorder the “' + label + '” section');
+      h.innerHTML = '⠿ <span>Move section</span>';
+      sec.insertBefore(h, sec.firstChild);
+    });
+  }
+  function clearSectionHandles() {
+    var hs = document.querySelectorAll('.fs-sec-handle');
+    for (var i = 0; i < hs.length; i++) if (hs[i].parentNode) hs[i].parentNode.removeChild(hs[i]);
+    var rs = document.querySelectorAll('.fs-sec-reorder');
+    for (var j = 0; j < rs.length; j++) rs[j].classList.remove('fs-sec-reorder');
+  }
+  // Reorder <main>'s sections to the saved sequence (append each in order). A
+  // pinned chrome section not in the list keeps its place — so the TOC stays on
+  // top while the content sections fold in beneath it.
+  function applySectionOrder(map) {
+    var rec = map && map[SECTION_ORDER_KEY];
+    if (!rec || rec.html == null) return;
+    var order; try { order = JSON.parse(rec.html || '[]'); } catch (e) { return; }
+    if (!Array.isArray(order) || !order.length) return;
+    var main = mainEl(); if (!main) return;
+    order.forEach(function (sid) {
+      var sec = document.getElementById(sid);
+      if (sec && isReorderableSection(sec) && sec.parentElement === main) main.appendChild(sec);
+    });
+  }
+  // Persist the current top-level section order (after a drag). One page-level key.
+  function persistSectionOrder() {
+    var payload = JSON.stringify(reorderableSectionIds());
+    API._overrides[SECTION_ORDER_KEY] = { html: payload, hidden: false };
+    return saveOverride(SECTION_ORDER_KEY, { html: payload }).catch(function () {});
+  }
+
+  var _dragSec = null;
+  function onSecDragStart(e) {
+    if (!API._curating) return;
+    var h = e.target.closest && e.target.closest('.fs-sec-handle');
+    if (!h) return;                                       // not a section-handle drag → leave to box handler
+    var sec = h.closest && h.closest('section');
+    if (!sec || !isReorderableSection(sec)) return;
+    _dragSec = sec; sec.classList.add('fs-sec-dragging');
+    if (e.dataTransfer) { e.dataTransfer.effectAllowed = 'move';
+      try { e.dataTransfer.setData('text/plain', sec.id || ''); } catch (x) {} }
+  }
+  function onSecDragOver(e) {
+    if (!API._curating || !_dragSec) return;
+    var sec = e.target.closest && e.target.closest('section');
+    if (!sec || sec === _dragSec || !isReorderableSection(sec)) return;
+    if (sec.parentElement !== _dragSec.parentElement) return;
+    e.preventDefault();
+    var r = sec.getBoundingClientRect();
+    var after = (e.clientY - r.top) > r.height / 2;
+    sec.parentElement.insertBefore(_dragSec, after ? sec.nextSibling : sec);
+  }
+  function onSecDrop(e) { if (API._curating && _dragSec) e.preventDefault(); }
+  function onSecDragEnd() {
+    if (!_dragSec) return;
+    _dragSec.classList.remove('fs-sec-dragging');
+    _dragSec = null;
+    persistSectionOrder();
+  }
+
   var dock = null, dEls = null;
   function ensureDock() {
     if (dock) return;
@@ -938,6 +1043,13 @@
     var t = e.target;
     if (t.closest && t.closest('.fs-dock')) return;       // clicks inside the editor
     if (t.id === 'btn-curate' || (t.closest && t.closest('#btn-curate'))) return;
+    // The ✕ delete/hide button runs its OWN click handler (deleteBox). Let it
+    // through: otherwise this capture-phase handler stops propagation before the
+    // button's bubble-phase listener fires, so the ✕ silently does nothing on a
+    // move-only KPI / table (and opens the editor on an editable box). Image ✕s
+    // live inside .fs-imgbar, already excluded below — this covers the rest.
+    if (t.closest && t.closest('.fs-del')) return;
+    if (t.closest && t.closest('.fs-sec-handle')) return; // section drag handle — not a box click
     if (t.closest && t.closest('.fs-imgbar')) return;     // image bar buttons handle themselves
     if (t.closest && t.closest('.fs-add, .fs-add-img')) return; // add buttons handle themselves
     var el = t.closest && t.closest('[data-fsk]');
@@ -1051,7 +1163,20 @@
         'background:transparent;color:#fff;font:700 12px var(--font-data);padding:2px 7px;}' +
       '.fs-imgbar .fs-del:hover{background:var(--crimson,#b3261e);}' +
       'body.fs-curating [data-fsk].fs-dragging{opacity:.4;outline:2px dashed var(--cobalt) !important;}' +
-      '@media print{#btn-curate,.fs-dock,.fs-del,.fs-add,.fs-add-img,.fs-imgbar{display:none !important;}' +
+      // Whole-section drag handle (curate mode). Floats above the section's top-left
+      // corner; the section's own 38px top margin gives it room (no overlap above).
+      'body.fs-curating main>section.fs-sec-reorder{position:relative;}' +
+      '.fs-sec-handle{position:absolute;top:-13px;left:10px;z-index:5;display:inline-flex;align-items:center;gap:5px;' +
+        'padding:2px 10px;border-radius:8px;cursor:grab;border:1px solid var(--cobalt);background:var(--surface);' +
+        'color:var(--cobalt);font:700 11px var(--font-data);box-shadow:0 1px 5px rgba(28,28,26,.14);' +
+        '-webkit-user-select:none;user-select:none;}' +
+      '.fs-sec-handle:hover{background:var(--cobalt);color:#fff;}' +
+      '.fs-sec-handle:active{cursor:grabbing;}' +
+      // Keep the handle visible even when its section is collapsed (the collapse
+      // rule hides every non-h2 child) so a collapsed page is the easiest to reorder.
+      'body.fs-curating main>section.collapsed>.fs-sec-handle{display:inline-flex !important;}' +
+      'body.fs-curating main>section.fs-sec-dragging{opacity:.5;outline:2px dashed var(--cobalt) !important;outline-offset:6px;}' +
+      '@media print{#btn-curate,.fs-dock,.fs-del,.fs-add,.fs-add-img,.fs-imgbar,.fs-sec-handle{display:none !important;}' +
         'body.fs-curating [data-fsk]::after{display:none !important;}' +
         'body.fs-curating .fs-ov-hidden{display:none !important;}' +
         'body.fs-curating [data-fsk].fs-curatable{outline:none !important;}}';
@@ -1072,13 +1197,20 @@
     document.addEventListener('dragover', onDragOver, false);
     document.addEventListener('drop', onDrop, false);
     document.addEventListener('dragend', onDragEnd, false);
+    // Section-level drag-reorder — parallel handlers, guarded on _dragSec so they
+    // never cross-fire with the box handlers above (which guard on _dragEl).
+    document.addEventListener('dragstart', onSecDragStart, false);
+    document.addEventListener('dragover', onSecDragOver, false);
+    document.addEventListener('drop', onSecDrop, false);
+    document.addEventListener('dragend', onSecDragEnd, false);
     wireButton();
     fetchOverrides().then(function (map) {
       API._overrides = map;
       materializeAdded(map);            // insert reviewer-added boxes into the DOM
       API._blocks = collectBlocks();    // re-collect so they get blocks (add-keys kept)
       indexBlocks();
-      applyOrder(map);                  // honor the saved drag order
+      applyOrder(map);                  // honor the saved box drag order (within grids)
+      applySectionOrder(map);           // honor the saved SECTION drag order (within main)
       applyOverrides();                 // overlay html/hidden onto every block
       if (API._justAuthed) setCurating(true);
     });
@@ -1103,6 +1235,14 @@
     materializeAdded: materializeAdded,
     applyOrder: applyOrder,
     persistOrder: persistOrder,
+    // section reorder:
+    reorderableSectionIds: reorderableSectionIds,
+    isReorderableSection: isReorderableSection,
+    renderSectionHandles: renderSectionHandles,
+    clearSectionHandles: clearSectionHandles,
+    applySectionOrder: applySectionOrder,
+    persistSectionOrder: persistSectionOrder,
+    SECTION_ORDER_KEY: SECTION_ORDER_KEY,
     addBox: addBox,
     deleteBox: deleteBox,
     toggleHidden: toggleHidden,
