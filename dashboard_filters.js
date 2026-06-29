@@ -170,6 +170,9 @@ function applyFilters() {
     var visible = 0;
     for (var i = 0; i < cards.length; i++) {
         var card = cards[i];
+        // Tabled/archived projects (project_lifecycle overlay) stay hidden and
+        // out of the count — they live in the "Tabled & Archived" section.
+        if (card.getAttribute('data-lifecycle')) { card.style.display = 'none'; continue; }
         var activity = card.getAttribute('data-activity') || '';
         var v2030 = card.getAttribute('data-v2030') || '';
         var goal = card.getAttribute('data-goal') || '';
