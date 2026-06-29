@@ -93,3 +93,50 @@ Append a dated section each checkpoint.
   + the team-phrase's mirrored auth helpers) → required a11y CI → the DSA paperwork.
 - Standing engineering lanes (unchanged): unverified-M-ID renumber, TMC Phase-2
   acceptance engine, CPL-Assistant CCR/CER recommender ETL.
+
+## 2026-06-29 (cont.) — team-phrase hardening (Sam live-testing with Malone)
+
+The gate shipped, then Sam + Malone exercised it live and surfaced four follow-ups
+(PRs #595–#598, all merged + live; static JS).
+
+### What broke / what we learned
+- **The 401 trap (#595).** Malone entered the phrase but every save still 401'd. A
+  team-phrase session has **no user token**, so `headersFor` sent `Authorization:
+  "Bearer "` (empty) — and **PostgREST rejects a malformed/empty JWT with 401 at the
+  auth layer, BEFORE RLS (`team_pass_ok()`) ever runs.** The tell: an RLS *denial*
+  is **403**; a **401** means the request never reached the policy. Fix: send the
+  **anon key** as the bearer when there's no user token (the Supabase-idiomatic anon
+  write), never an empty `Bearer `. The server policies were already correct — this
+  was 100% client-side. Mirrored the same fix into `mission_control.js` (#597).
+- **The "phrase box isn't showing" report (Sam).** Expected — once *any* phrase is
+  in `localStorage` the composer opens in edit mode (canEdit true), so the entry box
+  steps aside. The real gap was a **wrong** phrase: stored client-side (the browser
+  can't tell right from wrong), unlocked-looking, but every save 401s with no way to
+  re-enter. → led to validation (#598).
+- **Validate the unreadable secret via the gate's own RPC (#598).** The client can't
+  read `team_access.secret` (RLS hides it), but `team_pass_ok()` is anon-granted, so
+  on unlock we **POST `rpc/team_pass_ok`** with the typed phrase as the `x-team-pass`
+  header and store it **only if it returns true**. No new exposure — it's the same
+  right/wrong signal a write already gives. A save that 401/403s on a *rotated*
+  phrase drops the stale one + reopens the entry box.
+- **Reviewer-only "⚙ Manage team phrase" admin (#598).** A magic-link reviewer (NOT
+  a team-phrase user) can view/rotate the secret via new reviewer-only
+  `ta_select`/`ta_update` RLS — anon still has **no** policy, so the public can't
+  read it. SECURITY DEFINER `team_pass_ok`/`team_pass_check` bypass RLS regardless.
+
+### Also this session — popups open in place (#596, `card_actions.js`)
+Sam: "none of this should direct the user to RACI, rather to the Activity and
+Project tab." A globally-loaded interceptor cancels the card links' `#raci`
+navigation, lazy-loads `raci.js` (idempotent `CPL_TABS.loadScript`), and opens the
+composer/nudge **in place**; the nudge email lands on `#activities-projects`. No
+generator change — it reads the item key from the link's existing inline `onclick`,
+so it works on already-deployed cards. Full story in `cobi_raci_nudge_lessons.md`.
+
+### Current state / next
+- All shipped + green (107 test files). Live header path still **unverified from the
+  sandbox** — Sam to confirm a save sticks + try the Manage-phrase admin after deploy.
+- The shared phrase is **single-secret, no per-person audit** — fine for a small team
+  on reversible no-PII edits; the **magic-link path stays** for when per-person
+  accountability matters (Sam: "we'll do the magic-link path later as this matures").
+- KB note `methodology-server-enforced-shared-password-gate` updated with the
+  empty-Bearer pitfall + the validate-via-gate-RPC + reviewer-manage patterns.

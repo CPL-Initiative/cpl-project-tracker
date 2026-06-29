@@ -385,3 +385,33 @@ spotlight as a "**Latest update** (<date>): …" line; an `activity:N` update fo
 Tests: `tests/annual_report.test.js` grew 29 → **36** (baseline creation-era text; live update replaces it
 + carries the date marker; activity-level fold; spotlight fold; `_latestByKey` newest-per-key; empty-updates
 fallback). Full suite **100/100**. Code-only, static asset — live on the next Pages deploy.
+
+## 2026-06-29 — Session 83 (StarNova): card Update/Nudge popups open IN PLACE (no #raci redirect)
+
+Sam (after the team-phrase gate shipped): "none of this should direct the user to RACI, rather to the
+Activity and Project tab." The card **📝 Update** / **📣 Nudge** affordances used to stash a key in
+`sessionStorage` + navigate to `#raci`, where `raci.js` read it and opened the popup. Now they open right
+there. **PR #596.**
+
+- **New `card_actions.js`** (globally loaded, static, self-contained): a **delegated click interceptor** on
+  `.update-link`/`.act-update-link`/`.nudge-link`/`.act-nudge-link` that `preventDefault()`s the `#raci`
+  navigation, lazy-loads `raci.js` (idempotent `CPL_TABS.loadScript`), and calls new
+  `raci.js` `openCardUpdate`/`openCardNudge` (which `ensureCss()` + `load()` if the tab was never opened,
+  then open the existing composer/nudge modal — the modal `showModal`s onto `document.body`, so it works on
+  any tab). It also consumes the nudge-email `?update=`/`?nudge=` deep-link on **any** tab at boot + strips
+  the param; the per-item nudge email now lands on **`#activities-projects`** (was `#raci`).
+- **No generator change.** The interceptor reads the item key from the link's **existing inline `onclick`**
+  (`/cpl_(?:update|nudge)_focus'\s*,\s*'([^']+)'/`), so it works on the already-deployed cards without a
+  regen; the `href="#raci"` stays as a graceful no-JS fallback. It also clears the stale `sessionStorage`
+  focus so a later manual `#raci` visit doesn't replay a card click as a phantom focus-open.
+
+**Lesson — to trigger a lazy tab's popup from elsewhere, intercept globally + lazy-load on demand.** A
+self-contained globally-loaded module (the `card_updates.js` pattern) is the right home for "open X's UI from
+anywhere"; reuse the tab shell's idempotent `CPL_TABS.loadScript` rather than hand-rolling a loader, and
+expose thin `openCardX(key)` entry points on the lazy module that self-heal their own data/CSS load.
+
+**Also this session — the team-phrase 401 fix + validation + reviewer admin (#595/#597/#598)** live mostly in
+`docs/mission_control_lessons.md` (the team-phrase home). The one RACI-card-relevant bit: the empty-`Bearer `
+401 (PostgREST rejects a malformed JWT before RLS — 401, not the 403 an RLS denial gives) is why a
+phrase-unlocked **save** failed; the fix is to send the anon key as the bearer, never `Bearer ` with no
+token. Tests: `card_actions.test.js` (15), `raci_team_pass.test.js` 14 → **22**; suite **107/107**.

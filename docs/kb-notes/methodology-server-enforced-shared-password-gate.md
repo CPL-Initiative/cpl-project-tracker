@@ -1,6 +1,7 @@
 ---
 title: Methodology — Server-enforced shared-password edit gate (no per-user accounts)
 date: 2026-06-29
+updated: 2026-06-29 (empty-Bearer 401 pitfall · validate-via-gate-RPC · reviewer-manage admin)
 tags: [methodology, auth, supabase, rls, security, raci, session-83]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -94,6 +95,59 @@ the write-header builder (attach `x-team-pass`) and the session loader
 implementation; the test (`tests/raci_team_pass.test.js`) asserts the header is
 attached for a phrase session and a real Bearer token for a magic-link session
 (no regression).
+
+## Pitfall: never send an empty `Bearer ` (it 401s before RLS)
+
+A phrase/anon session has no user JWT. If the client sends `Authorization:
+"Bearer "` (empty token), **PostgREST rejects the malformed JWT at the auth layer
+with `401` — before your RLS policy (and `team_pass_ok()`) ever runs.** So the
+phrase gate "doesn't work" even though it's correct. Fall back to the **anon key**
+as the bearer when there's no user token (the Supabase-idiomatic anon write):
+
+```js
+var token = (s && s.access_token) || SUPABASE_ANON;   // NEVER "" → "Bearer "
+var h = { apikey: SUPABASE_ANON, Authorization: "Bearer " + token };
+if (s && s.teamPass) h["x-team-pass"] = s.teamPass;
+```
+
+**Diagnostic tell:** a *wrong-credential RLS rejection* returns **403**; an
+**401** means the request never reached the policy → look at the auth header, not
+the policy. (This bug cost a real "I entered the phrase and it still 401s" report.)
+
+## Validate the phrase on entry — call the gate function as an RPC
+
+The client can't read the secret (that's the point), so it can't check a typed
+phrase locally — a wrong phrase would get stored and only fail (401) on the first
+*write*, with no obvious recovery. Fix: the gate function (`team_pass_ok()`) is
+already granted to `anon`, so **call it as an RPC** with the candidate phrase and
+store the phrase only if it returns `true`:
+
+```js
+fetch(URL + "/rest/v1/rpc/team_pass_ok", { method:"POST",
+  headers:{ apikey:ANON, Authorization:"Bearer "+ANON, "x-team-pass":phrase },
+  body:"{}" }).then(r => r.json())   // → true | false
+```
+
+No new exposure — it's the **same right/wrong signal a write already gives**
+(the function was anon-callable as the gate). A write that 401/403s later means
+the phrase was *rotated*; drop the stale phrase client-side and re-prompt.
+
+## A reviewer can manage the secret (RLS asymmetry)
+
+Give trusted *identity* users (magic-link reviewers) a UI to view/rotate the
+phrase by adding **reviewer-only** policies to the secret table — without ever
+giving `anon` a read path:
+
+```sql
+create policy ta_select on public.team_access for select using (is_allowed_reviewer());
+create policy ta_update on public.team_access for update
+  using (is_allowed_reviewer()) with check (is_allowed_reviewer());
+```
+
+`is_allowed_reviewer()` is false for anon, and there's no `using (true)` policy,
+so the public still can't read the secret — only signed-in reviewers can. The
+SECURITY DEFINER `team_pass_ok`/`team_pass_check` bypass RLS regardless, so the
+phrase gate keeps working for everyone.
 
 ## Verify after deploy
 
