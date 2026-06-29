@@ -23,6 +23,9 @@ check("raci.js defines TEAM_PASS_KEY", /TEAM_PASS_KEY\s*=\s*"cpl_team_pass"/.tes
 check("raci.js sends the x-team-pass header", /x-team-pass/.test(SRC));
 check("raci.js has the phrase-unlock UI", /Unlock editing/.test(SRC) && /team phrase/i.test(SRC));
 check("raci.js no longer forces an email magic-link to edit", !/Sign in to edit/.test(SRC));
+// The update composer offers the team phrase IN PLACE (email-link visitor unlocks
+// without leaving the popup) — not a dead "sign in elsewhere" message.
+check("update composer offers the team phrase in place", /unlockBox\(/.test(SRC) && !/Sign in \(CCCCO MAP\) to add an update/.test(SRC));
 
 const SQL = fs.readFileSync("raci/supabase_raci.sql", "utf8");
 check("schema documents team_access + the server gate", /team_access/.test(SQL) && /team_pass_ok/.test(SQL));
@@ -41,6 +44,12 @@ check("module exposes the test hooks", !!API && typeof API._headersFor === "func
 const hTeam = API._headersFor({ teamPass: "secret-phrase" });
 check("team-phrase session attaches x-team-pass", hTeam["x-team-pass"] === "secret-phrase");
 check("team-phrase session still carries the anon apikey", !!hTeam.apikey);
+// The 401 bug: a phrase session has no user token, so it MUST fall back to the
+// anon key as the bearer — an empty "Bearer " 401s at PostgREST's auth layer
+// before team_pass_ok() ever runs.
+check("team-phrase session sends the anon key as bearer (never an empty Bearer)",
+  hTeam.Authorization && hTeam.Authorization !== "Bearer " && /^Bearer .+/.test(hTeam.Authorization));
+check("team-phrase bearer matches the anon apikey", hTeam.Authorization === "Bearer " + hTeam.apikey);
 
 // a real magic-link session sends its Bearer token and NO x-team-pass (no regression).
 const hSess = API._headersFor({ access_token: "jwt.aa.bb" });
