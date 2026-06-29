@@ -156,6 +156,31 @@
     try { var p = localStorage.getItem(TEAM_PASS_KEY); if (p) return { teamPass: p, email: "(team)" }; } catch (e) {}
     return null;
   }
+  function unlockWithPhrase(p) {
+    p = (p || "").trim();
+    if (!p) return false;
+    try { localStorage.setItem(TEAM_PASS_KEY, p); } catch (e) {}
+    state.sess = teamSession();
+    return !!state.sess;
+  }
+  // A compact "unlock editing with the team phrase" control, reusable inside any
+  // popup so a visitor who arrives from a nudge email can unlock IN PLACE without
+  // navigating to the RACI tab and back (Sam, 2026-06-29). `afterUnlock` runs once
+  // the phrase is stored (typically: re-open the same modal in edit mode).
+  function unlockBox(blurb, afterUnlock) {
+    var inp = el("input", { type: "password", placeholder: "team phrase", "class": "raci-in" });
+    var st = el("span", { "class": "raci-auth-msg" }, []);
+    var btn = el("button", { "class": "raci-btn raci-btn-go" }, ["🔓 Unlock editing"]);
+    function go() {
+      if (!unlockWithPhrase(inp.value)) { st.textContent = "Enter the team phrase."; return; }
+      if (afterUnlock) afterUnlock();
+    }
+    btn.addEventListener("click", go);
+    inp.addEventListener("keydown", function (e) { if (e.key === "Enter") go(); });
+    return el("div", { "class": "raci-unlock" }, [
+      el("div", { "class": "raci-modal-sub" }, [blurb || "Enter the team phrase to edit — no sign-in needed."]),
+      inp, el("div", { "class": "raci-unlock-row" }, [btn]), st]);
+  }
 
   // ─── Supabase REST ─────────────────────────────────────────────────────────
   function sbGet(path) {
@@ -166,7 +191,12 @@
   // silently 401s a save. A null session (refresh failed) surfaces as a 401 the
   // caller reports — no silent optimistic "save".
   function headersFor(s, prefer) {
-    var token = (s && s.access_token) || "";
+    // A real magic-link session sends its user JWT; a team-phrase (or anonymous)
+    // session has NO user token — so fall back to the anon key as the bearer, NOT
+    // an empty "Bearer " (PostgREST rejects a malformed/empty JWT with 401 at the
+    // auth layer BEFORE RLS runs, which is why a phrase-unlocked save 401'd even
+    // though team_pass_ok() would have authorized it — Sam/Malone, 2026-06-29).
+    var token = (s && s.access_token) || SUPABASE_ANON;
     var h = { apikey: SUPABASE_ANON, "Content-Type": "application/json", Authorization: "Bearer " + token };
     if (s && s.teamPass) h["x-team-pass"] = s.teamPass;   // shared-phrase gate → RLS team_pass_ok()
     if (prefer) h.Prefer = prefer;
@@ -595,8 +625,15 @@
         ta, el("div", { "class": "raci-upd-actions" }, [polish]), msg);
       showModal("Update — " + (item.isActivity ? "Activity " + item.id : item.id) + "  " + c.name, body, [save]);
     } else {
+      // Not unlocked yet — offer the team phrase right here so an email-link
+      // visitor can unlock and post without leaving the popup (re-opens in edit
+      // mode on success). Magic-link sign-in stays available on the RACI tab.
+      var unlock = unlockBox("Enter the team phrase to add an update — no sign-in needed.", function () {
+        if (document.getElementById("raci-root")) render();
+        openUpdate(item);
+      });
       showModal("Update — " + (item.isActivity ? "Activity " + item.id : item.id) + "  " + c.name,
-        body.concat([el("div", { "class": "raci-modal-sub" }, ["Sign in (CCCCO MAP) to add an update."])]), []);
+        body.concat([unlock]), []);
     }
   }
 
@@ -1206,10 +1243,7 @@
       var st = el("span", { "class": "raci-auth-msg" }, []);
       var btn = el("button", { "class": "raci-btn raci-btn-go" }, ["🔓 Unlock editing"]);
       function tryUnlock() {
-        var p = (inp.value || "").trim();
-        if (!p) { st.textContent = "Enter the team phrase."; return; }
-        try { localStorage.setItem(TEAM_PASS_KEY, p); } catch (e) {}
-        state.sess = teamSession();
+        if (!unlockWithPhrase(inp.value)) { st.textContent = "Enter the team phrase."; return; }
         load(render);   // wrong phrase surfaces as a clear error on the first save
       }
       btn.addEventListener("click", tryUnlock);
@@ -1311,6 +1345,8 @@
       ".raci-modal-b{padding:1rem;max-height:60vh;overflow:auto;}.raci-modal-sub{color:#666;font-size:.82rem;margin-bottom:.6rem;}" +
       ".raci-modal-f{display:flex;gap:.5rem;justify-content:flex-end;padding:.7rem 1rem;border-top:1px solid var(--border,#eee);}" +
       ".raci-modal-msg{font-size:.82rem;color:#A33;margin-top:.5rem;min-height:1em;}" +
+      ".raci-unlock{margin-top:.4rem;padding-top:.6rem;border-top:1px solid var(--border,#eee);}" +
+      ".raci-unlock-row{margin:.5rem 0 .2rem;}" +
       ".raci-pick-list{display:flex;flex-direction:column;gap:.1rem;}" +
       ".raci-pick{display:flex;align-items:center;gap:.5rem;padding:.3rem .35rem;border-radius:5px;cursor:pointer;}" +
       ".raci-pick:hover{background:var(--surface-2,#f4f7fb);}" +
