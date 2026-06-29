@@ -41,6 +41,20 @@ related:
 > research, but each is flagged for confirmation with counsel / procurement /
 > the vendor. Treat dollar figures and legal deadlines as "verify," not "decided."
 
+> **✅ STATUS UPDATE (2026-06-29) — the "Priority Zero" PII item below is RESOLVED.**
+> After this doc was drafted, the student-PII exposure was confirmed remediated.
+> The raw `CustomReport_latest.json` is gitignored and absent from the working tree
+> (forward-stop), and the git history was **deliberately rewritten with the old
+> branches deleted** (confirmed by Sam). Live verification on `main` (2026-06-29):
+> the file is **not referenced anywhere in `main`'s commit history**, 404s at `main`,
+> and the repo has **0 forks** (so no fork network retains old blobs). Residual risk
+> is now low and self-resolving (GitHub garbage-collects unreachable blobs; an
+> optional one-line note to GitHub Support force-expires any cached view). **The
+> remaining work is preventive, not remedial:** keep the forward-stop as a *required
+> CI guard* so it can never recur (it's a NOW task in Mission Control). Read the
+> "Priority Zero / OPEN incident" language below as *the guardrail that keeps this
+> closed*, not as an open breach.
+
 ---
 
 ## 0. Table of contents
@@ -76,8 +90,8 @@ building everywhere it already does.
 
 **The three things that MUST happen first — and most are NOT engineering:**
 
-1. **Close the student-PII incident. It is OPEN, not handled.** First+last names on
-   ~48,419 rows, StudentIDs on ~30k, and **BirthDates on 22,791** are still in the
+1. **Close the student-PII incident. ✅ RESOLVED — verified clean on `main`, 2026-06-29 (see the status note up top); the steps below are now the *guardrail that keeps it closed*, not open remediation.** First+last names on
+   ~48,419 rows, StudentIDs on ~30k, and **BirthDates on 22,791** were committed to the
    *public* GitHub git history and are re-cloned by anyone who clones the repo. The
    forward-stop (gitignore + `rm --cached` + stopping the fetch, PR #227) is real
    but does **not** close it. Two parallel tracks: **(a)** a Cal. Civ. Code §1798.29
