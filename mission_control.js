@@ -54,6 +54,14 @@
     } catch (e) {}
     return null;
   }
+  // Shared "team phrase" edit gate — mirrors raci.js so unlocking the Team & RACI
+  // tab also unlocks Mission Control (it lives in the same tab). The phrase is the
+  // x-team-pass header the liftoff_state RLS validates via team_pass_ok().
+  function teamSession() {
+    try { var p = localStorage.getItem("cpl_team_pass"); if (p) return { teamPass: p, email: "(team)" }; } catch (e) {}
+    return null;
+  }
+  function anySession() { return getSession() || teamSession(); }
   function refreshToken(rt) {
     return fetch(SUPABASE_URL + "/auth/v1/token?grant_type=refresh_token", {
       method: "POST", headers: { apikey: SUPABASE_ANON, "Content-Type": "application/json" },
@@ -82,12 +90,19 @@
     return fetch(SUPABASE_URL + "/rest/v1/" + path, { headers: { apikey: SUPABASE_ANON } })
       .then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; });
   }
+  function headersFor(s, prefer) {
+    // A team-phrase (or anon) session has no user token — fall back to the anon
+    // key as the bearer, NOT an empty "Bearer " (PostgREST 401s a malformed JWT
+    // at the auth layer before RLS runs — the same bug fixed in raci.js).
+    var token = (s && s.access_token) || SUPABASE_ANON;
+    var headers = { apikey: SUPABASE_ANON, "Content-Type": "application/json", Authorization: "Bearer " + token };
+    if (s && s.teamPass) headers["x-team-pass"] = s.teamPass;   // shared-phrase gate → RLS team_pass_ok()
+    if (prefer) headers.Prefer = prefer;
+    return headers;
+  }
   function sbWrite(method, path, body, prefer) {
     return ensureFresh().then(function (s) {
-      var token = (s && s.access_token) || "";
-      var headers = { apikey: SUPABASE_ANON, "Content-Type": "application/json", Authorization: "Bearer " + token };
-      if (prefer) headers.Prefer = prefer;
-      return fetch(SUPABASE_URL + "/rest/v1/" + path, { method: method, headers: headers, body: JSON.stringify(body) });
+      return fetch(SUPABASE_URL + "/rest/v1/" + path, { method: method, headers: headersFor(s, prefer), body: JSON.stringify(body) });
     });
   }
 
@@ -300,7 +315,7 @@
 
   // ─── Persistence (optimistic + rollback) ───────────────────────────────────
   function upsert(row) {
-    var s = getSession();
+    var s = anySession();
     row.updated_by = (s && s.email) || null;
     row.updated_at = new Date().toISOString();
     return sbWrite("POST", "liftoff_state", row, "resolution=merge-duplicates,return=minimal")
@@ -356,7 +371,7 @@
     ensureCss();
     var host = ensureHost();
     if (!host) return;
-    state.sess = getSession();
+    state.sess = anySession();
     if (!host.getAttribute("data-loading")) {
       host.setAttribute("data-loading", "1");
       host.appendChild(mk(document, "p", { class: "mc-empty", text: "Loading Mission Control…" }));
@@ -365,7 +380,7 @@
       if (!plan) { host.innerHTML = ""; return; }
       loadOverlay().then(function (rows) {
         cache.overlay = overlayMapFromRows(rows);
-        state.sess = getSession();
+        state.sess = anySession();
         render();
       });
     });
@@ -453,6 +468,7 @@
     run: run, render: render, buildSection: buildSection,
     taskState: taskState, phaseStats: phaseStats, statusMeta: statusMeta,
     overlayMap: overlayMapFromRows, _findNode: findNode, _decisionChosen: decisionChosen,
-    _setCache: function (p, o) { cache.plan = p; cache.overlay = o || {}; }
+    _setCache: function (p, o) { cache.plan = p; cache.overlay = o || {}; },
+    _headersFor: headersFor, _teamSession: teamSession, _anySession: anySession
   };
 })();
