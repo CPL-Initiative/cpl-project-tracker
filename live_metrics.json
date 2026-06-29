@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-28T14:20:11.381Z",
+  "scraped_at": "2026-06-29T11:26:01.920Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -78,13 +78,13 @@
         },
         {
           "college": "Norco College",
-          "students": 736,
+          "students": 737,
           "units": 5448,
-          "avgUnits": 7.4021739130434785,
+          "avgUnits": 7.3921302578019,
           "transcriptionRate": 61.2,
-          "avgTranscribed": 4.529891304347826,
+          "avgTranscribed": 4.523744911804613,
           "criteriaMetCount": 5,
-          "militaryStudents": 490,
+          "militaryStudents": 491,
           "nonMilitaryStudents": 252,
           "apprenticeStudents": 93,
           "savings": 10326940,
@@ -773,14 +773,14 @@
         },
         {
           "college": "Santa Ana College",
-          "students": 458,
+          "students": 459,
           "units": 1831.1999999999998,
-          "avgUnits": 3.9982532751091697,
+          "avgUnits": 3.9895424836601303,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
           "militaryStudents": 350,
-          "nonMilitaryStudents": 107,
+          "nonMilitaryStudents": 108,
           "apprenticeStudents": 7,
           "savings": 2911218.5,
           "yearImpact": 10847781.6,
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "48,144",
+      "value": "48,146",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,838"
+          "value": "24,839"
         },
         {
           "label": "Workforce/Other",
-          "value": "23,382"
+          "value": "23,383"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 48144,
+    "Students": 48146,
     "Units": 230333.65000000002,
     "TranscribedUnits": 99469.95,
     "Savings": 321100090.25,
     "YearImpact": 1298822915.3999999,
-    "MilitaryStudents": 24838,
-    "NonMilitaryStudents": 23382,
+    "MilitaryStudents": 24839,
+    "NonMilitaryStudents": 23383,
     "AprenticeStudents": 753,
-    "AverageUnits": 4.784264913592557,
-    "TranscribedAverage": 2.0660923479561317
+    "AverageUnits": 4.784066173721597,
+    "TranscribedAverage": 2.0660065218294354
   }
 }
