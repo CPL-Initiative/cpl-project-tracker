@@ -1,56 +1,44 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-29 (later) · Session 83 (StarNova) · the shared team-phrase editing is now solid — saves work, a wrong phrase is caught on entry, the card Update/Nudge popups open in place, and reviewers can manage the phrase",
- "_session": 83,
- "_status": "Hardened the new shared team-phrase editing after you + Malone live-tested it. Fixed: Malone's 401-on-save (the phrase now actually saves); a wrong phrase is now rejected the moment you type it (instead of silently failing later); the card 📝 Update / 📣 Nudge buttons now open the popup right on the Activities & Projects tab instead of jumping you to the RACI tab; and there's a new reviewer-only ⚙ Manage team phrase panel to see/change the phrase. Mission Control honors the same phrase. All live. Standing engineering lanes (M-ID renumber, TMC acceptance engine, Assistant ETL) unchanged. The per-person magic-link login stays available for later, when the team matures.",
+ "_as_of": "2026-06-29 (later still) · Session 84 (SkyScribe) · you can now Table/Archive a project and it cleanly disappears everywhere; the Pages site is fixed + 65% leaner; and the Activity progress bars now compute from your goal/stretch targets",
+ "_session": 84,
+ "_status": "A productive run as the team started updating things. (1) You can now Table or Archive a project (the 🗄 button on any Activity/Project card, or unlock with the team phrase) — it drops out of the active grid, the Annual Workplan targets, the Activity cards, AND the RACI matrix, and lands in a collapsed 'Tabled & Archived' section you can ♻ Restore from. (2) The GitHub Pages build that was stuck is fixed, and the published site is now ~65% smaller/faster. (3) The Activity card progress bars now compute Goal (blue) + Stretch (gold) from your actual-vs-target instead of a hand-typed %. (4) You flagged that the Annual Workplan 'Current' numbers don't match the KPI cards and that titles should be editable there — I scoped that (you chose: live-pull for the KPI-mapped ones, manual-editable for the rest; single source for titles); Fable builds it next session.",
  "items": [
   {
-   "id": "team-phrase-verify",
+   "id": "soft-delete-confirm",
    "who": "sam",
-   "tab": "raci",
-   "text": "Quick confirm now that it's hardened: on Team & RACI, unlock with the phrase (cpl-team-2026), post an update or set a RACI cell, reload — it should stick (the 401 is fixed). Then, signed in as a reviewer, try the new ⚙ Manage team phrase button to view/change the phrase. Have Malone confirm a save works on his side too."
+   "tab": "activities-projects",
+   "text": "Confirm the new soft-delete end to end: on an Activity/Project card click 🗄 Table / Archive (or unlock with the team phrase), give a reason — it should vanish from the grid, the Annual Workplan targets, the Activity cards and the RACI matrix, and appear in the 'Tabled & Archived' section at the bottom. Then ♻ Restore it. (5.1 AI-Ready CA is already tabled as your test.)"
   },
   {
-   "id": "mission-control",
-   "who": "sam",
-   "tab": "raci",
-   "text": "Scroll below the RACI matrix to the 🚀 Mission Control board (collapsible). Review the 'Lift Off' plan with Malone — owners + the 3 decision branch points (owner accounts / auto-merge policy / GitHub tier). It's editable live once you unlock."
-  },
-  {
-   "id": "strategy-doc",
-   "who": "sam",
-   "tab": "raci",
-   "text": "When you have time, skim docs/co_platform_strategy.md — the long-term plan to scale COBI + the CPL KB into a governed, CO-wide platform. Ends with a scorecard against all ~14 of your asks."
-  },
-  {
-   "id": "factsheet-curate-everywhere",
+   "id": "progress-bars-eyeball",
    "who": "sam",
    "tab": "dashboard",
-   "text": "On the public CPL Fact Sheet, sign in and ✎ Curate: edit/move/add/delete boxes (incl. Vet Sprint & CPL Bump), reorder & hide the KPI cards, hide the budget table; every grid has its own ＋Add box. Try the ⬇ Word button next to Print."
+   "text": "Glance at the Activity Metrics cards — the progress bar is now two bars: blue = Goal, gold = Stretch, computed from actual ÷ this fiscal year's target (a ✓ when met). Tell me if you'd rather they track the 2030 target instead of the current year — it's a one-line change."
   },
   {
-   "id": "factsheet-data-items",
+   "id": "annual-workplan-direction",
    "who": "sam",
-   "tab": "dashboard",
-   "text": "3 small number-consistency items on the Fact Sheet I flagged but did NOT change (live/snapshot data or your call): '12 program areas' vs 13 rows; could-adopt 116 (deduped) vs per-area rows summing to 454; '30,000' (Phase-1 JST goal) vs '34,000+' vets. Say the word and I'll reconcile any."
-  },
-  {
-   "id": "factsheet-auth-redirect",
-   "who": "sam",
-   "tab": "dashboard",
-   "text": "One-time: add the Fact Sheet URL (or …/cpl-project-tracker/**) to the Supabase Auth → Redirect URLs list so a direct magic-link sign-in from the Fact Sheet lands back on that page."
-  },
-  {
-   "id": "annual-report-eyeball",
-   "who": "sam",
-   "tab": "annual-report",
-   "text": "Skim the Annual Report draft — it auto-assembles from live data + the latest posted status updates; tweak any section in place, then ✨AI-polish / ⬇Word / 🖨Print."
+   "tab": "workplan-goals",
+   "text": "FYI / your decisions are locked: the Annual Workplan 'Current' numbers will be wired so the KPI-mapped ones pull live (matching the KPI cards) and the rest become editable right in this tab; and titles will be editable here as the single source of truth. Fable builds it next session (docs/annual_workplan_authoritative_scope.md). Flag anything you'd change."
   },
   {
    "id": "vet-plans-kb-15",
    "who": "sam",
    "tab": "knowledge-base",
-   "text": "Review and merge public Knowledge Base PR #15 (Veterans plans) when you have a moment — it's been waiting on your sign-off."
+   "text": "Review and merge public Knowledge Base PR #15 (Veterans plans) when you have a moment — it's waiting on your sign-off."
+  },
+  {
+   "id": "factsheet-auth-redirect",
+   "who": "sam",
+   "tab": "dashboard",
+   "text": "One-time: add the Fact Sheet URL (or …/cpl-project-tracker/**) to the Supabase Auth → Redirect URLs list so a magic-link sign-in from the Fact Sheet lands back on that page."
+  },
+  {
+   "id": "annual-workplan-build",
+   "who": "fable",
+   "tab": "workplan-goals",
+   "text": "PRIORITY: build the Annual Workplan authoritative-source work per docs/annual_workplan_authoritative_scope.md — hybrid 'Current' (live for the 5 pid_to_kpi_key-mapped sub-activities, new workplan_goals.current column + a CURRENT-row editor for the rest) + single-source editable titles (projects.name). Verify the 3.2 KPI mapping (eligible vs transcripted units)."
   },
   {
    "id": "mid-renumber",

@@ -111,3 +111,37 @@ script; `indexOverlay` drops malformed rows; `entryHtml` escapes name+reason
 (XSS) + carries the badge/Restore; `reconcile` hides an overlay card (incl. a
 card-less pid) and restores a baked-tabled card no longer in the overlay; the
 controls are auth-gated. Full suite: **108 files green**.
+
+---
+
+## 2026-06-29 (Session 84 checkpoint wrap) — wired across all surfaces + the deploy lane
+
+(a) **What's been learned.** A soft-delete only feels "done" when the entity
+disappears from *every* surface. The project fanned out further than the grid:
+the **RACI matrix** and **Activity Metrics cards** both read
+`CPL_DATA.activity_kpis` (built by `build_activity_kpis()` from the *full*
+project list), so the `CPL_DATA.projects` exclusion didn't reach them. Fix:
+feed `build_activity_kpis()` **active-only** projects (baked) + `raci.js`
+`buildItems()` filters by the overlay (live). Headline KPIs come from live
+metrics, not `activity_kpis`, so they're untouched. Same lesson as the goals
+table — enumerate *all* consumers of the shared data structure, not just the
+obvious one.
+
+(b) **Current state.** Tabling a project now removes it from: the grid card, the
+Annual Workplan targets table, the Activity Metrics cards, AND the RACI matrix —
+live (client overlays + `raci.js` filter) and baked (generator). Reversible via
+♻ Restore. The team-phrase/reviewer write path was confirmed live (Sam tabled
+5.1 "Not considering this project at this time" + it persisted). Tests: 28
+(`project_lifecycle`) + 7 (`raci_tabled`); suite 109 green.
+
+(c) **Deploy lane (same session).** The Pages deploy was hung (Jekyll over 553 MB);
+`.nojekyll` unstuck it, then a custom lean `pages.yml` (`git archive` + prune +
+served-path assertion) cut the published site to ~192 MB. **Load-bearing insight:**
+a cron commit made with `GITHUB_TOKEN` does **not** self-trigger a `push` workflow,
+so the Pages deploy needs a **`workflow_run`** trigger on "Daily CPL Dashboard" —
+else the daily regen silently leaves a stale site. Verified the `workflow_run`
+→ deploy path green. KB note: `playbook-lean-custom-github-pages-deploy.md`.
+
+(d) **Next step.** The Annual Workplan tab as the authoritative source — hybrid
+Current (live for the `pid_to_kpi_key` 5, manual-editable otherwise) + editable
+single-source titles. Scoped + locked: `docs/annual_workplan_authoritative_scope.md`.
