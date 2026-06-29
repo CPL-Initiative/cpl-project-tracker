@@ -44,6 +44,12 @@ const PLAN = JSON.parse(fs.readFileSync("kb/liftoff_plan.json", "utf8"));
     PLAN.phases.some((p) => p.nodes.some((n) => n.type === "decision")));
 })();
 
+(function forwardOnly() {
+  const ids = [];
+  PLAN.phases.forEach((p) => p.nodes.forEach((n) => ids.push(n.id)));
+  check("plan is forward-only (no PII / breach nodes)", !ids.some((id) => /^pii|^breach|^d-breach$/.test(id)));
+})();
+
 const SRC = fs.readFileSync("mission_control.js", "utf8");
 
 function makeDom(hash, fetchImpl) {
@@ -84,11 +90,11 @@ function makeDom(hash, fetchImpl) {
   // (d) phaseStats — NOW phase has the done pii-purge; choosing a fork raises active count.
   const now = PLAN.phases[0];
   const base = API.phaseStats(now, PLAN, {});
-  check("phaseStats counts a done task", base.done >= 1);
+  check("no tasks done by default (forward plan, no PII items)", base.done === 0);
   const withRccd = API.phaseStats(now, PLAN, chooseRccd);
   check("choosing a fork activates more tasks (active count rises)", withRccd.active > base.active);
   // overlay status 'done' on an active task counts toward done.
-  const ovlDone = Object.assign({ "pii-ci-guard": { id: "pii-ci-guard", status: "done" } }, {});
+  const ovlDone = { "a11y-ci": { id: "a11y-ci", status: "done" } };
   check("an overlay 'done' status increments done", API.phaseStats(now, PLAN, ovlDone).done === base.done + 1);
 
   // (g) failure mode — a needs pointing at a missing decision must not throw.
@@ -98,7 +104,9 @@ function makeDom(hash, fetchImpl) {
 
   // (e) buildSection — signed-OUT is read-only.
   const outSec = API.buildSection(doc, PLAN, {}, { signedIn: false });
-  check("buildSection renders a section with 3 phase <details>", outSec.querySelectorAll("details.mc-phase").length === 3);
+  check("buildSection outer is a collapsible <details> with a summary", outSec.tagName === "DETAILS" && !!outSec.querySelector("summary.mc-sumhead"));
+  check("the collapsible block is open by default", outSec.hasAttribute("open"));
+  check("buildSection renders 3 phase <details>", outSec.querySelectorAll("details.mc-phase").length === 3);
   check("signed-out: no status <select>", outSec.querySelectorAll("select.mc-status-sel").length === 0);
   check("signed-out: no Choose buttons", outSec.querySelectorAll("button.mc-choose").length === 0);
   check("renders decision cards", outSec.querySelectorAll(".mc-decision").length >= 1);
@@ -126,7 +134,7 @@ function makeDom(hash, fetchImpl) {
   await new Promise((r) => setTimeout(r, 40));
   const mdoc = mdom.window.document;
   const host = mdoc.getElementById("mission-control-root");
-  check("mount injects #mission-control-root above #raci-root", !!host && host.nextElementSibling && host.nextElementSibling.id === "raci-root");
+  check("mount injects #mission-control-root BELOW #raci-root", !!host && host.previousElementSibling && host.previousElementSibling.id === "raci-root");
   check("mounted section renders the Mission Control header", !!host && /Mission Control/.test(host.textContent));
   check("mounted CSS injected once (#mc-css)", !!mdoc.getElementById("mc-css"));
 

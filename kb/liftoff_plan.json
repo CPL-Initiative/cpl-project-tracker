@@ -2,31 +2,22 @@
   "_mission": "Lift Off",
   "_surface": "Mission Control",
   "_as_of": "2026-06-29",
-  "_status": "Pre-flight — strategy approved; student-PII exposure verified resolved; kickoff with Malone pending. v1 DRAFT — react freely; Claude keeps this current via PRs, Sam + Malone own status + decisions.",
-  "_about": "The tracked program behind docs/co_platform_strategy.md. Two node kinds: 'task' (owner/status/lane/gate) and 'decision' (a fork — choosing an option activates that branch's tasks and archives the others; the choice + rationale becomes the human-owned decision log). Rendered in the Team & RACI tab as the 'Lift Off' initiative once wired; until then this file is the record.",
+  "_status": "Forward plan — strategy approved; de-personalizing the stack (institution-owned accounts) and hardening it for a team. v1; Claude keeps it current via PRs, Sam + Malone own status + decisions.",
+  "_about": "The tracked program behind docs/co_platform_strategy.md, mounted as a collapsible block BELOW the RACI functions in the Team & RACI tab. Two node kinds: 'task' (owner/status/lane/gate) and 'decision' (a fork — choosing an option activates that branch's tasks and archives the others; the choice + rationale becomes the human-owned decision log). Forward-looking only: the prior student-PII work was handled some time ago and is intentionally out of scope here.",
   "_legend": {
     "status": ["not_started", "in_progress", "blocked", "pending_decision", "done", "skipped"],
-    "owner": ["Sam", "Malone", "Claude", "CO", "Counsel", "RCCD-IT"],
-    "lane": ["governance", "accounts", "auth", "data", "a11y", "architecture", "kb", "integration", "team", "procurement"]
+    "owner": ["Sam", "Malone", "Claude", "CO", "RCCD-IT"],
+    "lane": ["accounts", "auth", "data", "a11y", "architecture", "kb", "integration", "team", "governance", "procurement"]
   },
   "phases": [
     {
       "id": "now",
-      "label": "NOW (0–90d) — Govern + de-risk",
-      "gate": "PII verified-closed · stack institution-owned + secrets rotated · required PII + a11y CI green · cobi-auth.js shipped. Do NOT onboard CO users or start divisional lanes until these hold.",
+      "label": "NOW (0–90d) — De-personalize + harden",
+      "gate": "Stack institution-owned + secrets rotated · auth consolidated (cobi-auth.js) · required a11y CI green · DSA drafting started. Do NOT onboard CO users or start divisional lanes until these hold.",
       "nodes": [
-        { "type": "task", "id": "pii-purge", "lane": "governance", "title": "Student-PII history exposure closed", "owner": "Sam", "status": "done", "done_at": "2026-06-29", "note": "History rewritten + old branches deleted (Sam). Verified live 2026-06-29: not referenced in main history, 404s at main, 0 forks." },
-        { "type": "decision", "id": "d-breach", "lane": "governance", "title": "Breach notifiability (§1798.29)", "owner": "Counsel", "question": "Does the prior public exposure require notification, even though it is now remediated?", "chosen": null, "options": [
-          { "id": "document", "label": "Document a no-notify determination (recommended posture to default to)", "recommended": true, "summary": "Exposure now remediated; counsel documents the rationale either way.", "activates": ["breach-document"], "archives": ["breach-notify"] },
-          { "id": "notify", "label": "Notify affected individuals + CA AG", "recommended": false, "summary": "Required only if counsel rules the exposure notifiable.", "activates": ["breach-notify"], "archives": ["breach-document"] }
-        ] },
-        { "type": "task", "id": "breach-document", "lane": "governance", "title": "Counsel documents the breach determination + rationale (a decision-log entry; store privately, never the public KB)", "owner": "Counsel", "status": "pending_decision", "needs": "d-breach" },
-        { "type": "task", "id": "breach-notify", "lane": "governance", "title": "Run the notification process (only if counsel rules 'notify')", "owner": "Counsel", "status": "pending_decision", "needs": "d-breach" },
-        { "type": "task", "id": "pii-ci-guard", "lane": "governance", "title": "Make the forward-stop a REQUIRED CI guard (PII-column schema check, alongside TruffleHog) so a student-PII column can never be re-committed", "owner": "Malone", "status": "not_started" },
-
         { "type": "decision", "id": "d-ownership", "lane": "accounts", "title": "Ownership regime: RCCD vs CCCCO", "owner": "CO", "question": "Who owns COBI's institutional accounts?", "chosen": null, "options": [
-          { "id": "rccd", "label": "RCCD-owned now (recommended)", "recommended": true, "summary": "Faster (RCCD IT can create identities); FERPA + §1798.29 + CCC InfoSec baseline. Structured so a later hand-up to CCCCO is a 2nd transfer, not a rebuild.", "activates": ["owner-identity", "transfer-supabase", "transfer-github", "cloudflare-org", "anthropic-org"], "archives": ["engage-cccco-cdt"] },
-          { "id": "cccco", "label": "CCCCO-owned", "recommended": false, "summary": "The long-term destination; heavier (IPA / SAM / SIMM / NIST 800-53 / AB 434 biennial cert).", "activates": ["engage-cccco-cdt", "owner-identity", "transfer-supabase", "transfer-github", "cloudflare-org", "anthropic-org"], "archives": [] }
+          { "id": "rccd", "label": "RCCD-owned now (recommended)", "recommended": true, "summary": "Faster (RCCD IT can create identities). Structured so a later hand-up to CCCCO is a 2nd transfer, not a rebuild.", "activates": ["owner-identity", "transfer-supabase", "transfer-github", "cloudflare-org", "anthropic-org"], "archives": ["engage-cccco-cdt"] },
+          { "id": "cccco", "label": "CCCCO-owned", "recommended": false, "summary": "The long-term destination; heavier (IPA / SAM / SIMM / NIST 800-53 / AB 434).", "activates": ["engage-cccco-cdt", "owner-identity", "transfer-supabase", "transfer-github", "cloudflare-org", "anthropic-org"], "archives": [] }
         ] },
         { "type": "task", "id": "owner-identity", "lane": "accounts", "title": "Create the institutional role-mailbox owner identity (e.g. cobi-admin@rccd.edu) + a shared password vault — the dependency under every transfer", "owner": "Sam", "status": "pending_decision", "needs": "d-ownership" },
         { "type": "task", "id": "rotate-keys", "lane": "accounts", "title": "Rotate ANTHROPIC_API_KEY + SCRAPE_SECRET onto org-owned keys (any key ever on a personal account is compromised)", "owner": "Malone", "status": "not_started" },
@@ -35,17 +26,17 @@
         { "type": "task", "id": "transfer-supabase", "lane": "accounts", "title": "Transfer BOTH Supabase projects (Work Plan + cpl-budget-support) out of the personal LiveOak org — decouple Supabase login from the personal GitHub identity FIRST (lockout risk); keep US region", "owner": "Sam", "status": "pending_decision", "needs": "d-ownership", "blocked_by": ["owner-identity"] },
         { "type": "task", "id": "transfer-github", "lane": "accounts", "title": "Move CPLBrain's institutional content into an org repo (vault becomes a mirror, not the owner); plan the GHEC transfer", "owner": "Sam", "status": "pending_decision", "needs": "d-ownership", "blocked_by": ["owner-identity"] },
         { "type": "task", "id": "engage-cccco-cdt", "lane": "accounts", "title": "Engage CCCCO/CDT on state ownership + the security-control framework (StateRAMP / Cal-Secure)", "owner": "CO", "status": "pending_decision", "needs": "d-ownership" },
-        { "type": "task", "id": "secret-scanning", "lane": "governance", "title": "Turn on GitHub org secret scanning + push protection (buyable on Team; ~1 active committer = cheap)", "owner": "Malone", "status": "not_started" },
+        { "type": "task", "id": "secret-scanning", "lane": "governance", "title": "Turn on GitHub org secret scanning + push protection (blocks committed API keys / credentials; ~1 active committer = cheap)", "owner": "Malone", "status": "not_started" },
 
         { "type": "decision", "id": "d-automerge", "lane": "governance", "title": "Auto-merge policy once it's a team", "owner": "Sam", "question": "How tight should AI-PR merging be once Malone joins?", "chosen": null, "options": [
-          { "id": "gated", "label": "Gate the high-stakes ~20%, auto-merge the rest (recommended)", "recommended": true, "summary": "Human review required on schema/RLS/auth, re-mints, PII paths, cpl-chat, daily-cron, public-KB publishing; everything else stays auto-merge-on-green.", "activates": ["codeowners"], "archives": ["codeowners-all"] },
-          { "id": "keep", "label": "Keep auto-merge everything", "recommended": false, "summary": "A governance defect at CO scale.", "activates": [], "archives": ["codeowners", "codeowners-all"] },
+          { "id": "gated", "label": "Gate the high-stakes ~20%, auto-merge the rest (recommended)", "recommended": true, "summary": "Human review required on schema/RLS/auth, re-mints, cpl-chat, daily-cron, public-KB publishing; everything else stays auto-merge-on-green.", "activates": ["codeowners"], "archives": ["codeowners-all"] },
+          { "id": "keep", "label": "Keep auto-merge everything", "recommended": false, "summary": "A governance gap at CO scale.", "activates": [], "archives": ["codeowners", "codeowners-all"] },
           { "id": "all", "label": "Require human review on everything", "recommended": false, "summary": "Kills the velocity that makes this team work.", "activates": ["codeowners-all"], "archives": ["codeowners"] }
         ] },
-        { "type": "task", "id": "codeowners", "lane": "governance", "title": "Add CODEOWNERS + 'require 1 review' on the gated paths (schema/RLS/auth, re-mint scripts, PII paths, cpl-chat, workflow files); add the one-line auto-merge tightening to CLAUDE.md", "owner": "Malone", "status": "pending_decision", "needs": "d-automerge" },
+        { "type": "task", "id": "codeowners", "lane": "governance", "title": "Add CODEOWNERS + 'require 1 review' on the gated paths (schema/RLS/auth, re-mint scripts, cpl-chat, workflow files); add the one-line auto-merge tightening to CLAUDE.md", "owner": "Malone", "status": "pending_decision", "needs": "d-automerge" },
         { "type": "task", "id": "codeowners-all", "lane": "governance", "title": "Require review on every PR (only if 'review everything' is chosen)", "owner": "Malone", "status": "pending_decision", "needs": "d-automerge" },
 
-        { "type": "task", "id": "cobi-auth", "lane": "auth", "title": "Consolidate the ~8–12× drifted magic-link auth into one cobi-auth.js (the precondition for SSO + for Malone to own it)", "owner": "Claude", "status": "not_started" },
+        { "type": "task", "id": "cobi-auth", "lane": "auth", "title": "Consolidate the ~8–12× drifted magic-link auth into one cobi-auth.js (the precondition for SSO + for Malone to own it; also absorbs mission_control.js's mirrored helpers)", "owner": "Claude", "status": "not_started" },
         { "type": "task", "id": "a11y-ci", "lane": "a11y", "title": "Required a11y CI gate (axe-core/pa11y + check_contrast --live) with an axe BASELINE so it fails only NEW violations; gate the daily cron ('violations → no publish')", "owner": "Claude", "status": "not_started" },
         { "type": "task", "id": "evict-artifacts", "lane": "architecture", "title": "Evict the ~180 MB of generated artifacts from the daily git commit (rebuild on demand / data branch / object storage); shrink .git", "owner": "Malone", "status": "not_started" },
         { "type": "task", "id": "pages-staging", "lane": "architecture", "title": "Cloudflare Pages staging + PR previews; decouple the data cron from prod-HTML deploys", "owner": "Malone", "status": "not_started" },
@@ -58,7 +49,6 @@
       "id": "next",
       "label": "NEXT (3–9mo) — Foundation everything CO-scale needs",
       "gate": "GHEC + Supabase Team live with SSO/audit · ABAC RLS for reviewers · a sanctioned aggregate-KPI source replacing the scrape · AI evals + observability running · a NAMED executive sponsor + a written charter for the CO mandate.",
-      "_note": "v1 outline — fleshed out once the NOW gate is in sight.",
       "nodes": [
         { "type": "task", "id": "tier-claude", "lane": "accounts", "title": "Claude Team Premium seats for Sam + Malone (the bridge) → start the Enterprise conversation", "owner": "Sam", "status": "not_started" },
         { "type": "decision", "id": "d-github-tier", "lane": "accounts", "title": "GitHub tier + identity model", "owner": "Sam", "question": "How do we get SSO/SCIM/audit (Enterprise-only)?", "chosen": null, "options": [
@@ -69,7 +59,7 @@
         { "type": "task", "id": "supabase-team", "lane": "accounts", "title": "Upgrade Supabase to Team (~$599/mo) + PITR (skip HIPAA — FERPA ≠ PHI); pin US region", "owner": "Sam", "status": "not_started" },
         { "type": "task", "id": "entra-sso", "lane": "auth", "title": "Entra SSO alongside magic-link; migrate the reviewer cohort by verified email; begin ABAC RLS (app-role + group claims) replacing binary is_allowed_reviewer()", "owner": "Malone", "status": "not_started" },
         { "type": "task", "id": "de-scrape-kpi", "lane": "integration", "title": "Retire the potential-savings scrape to Data Mart / DataVista where the data is already public/aggregate; sanctioned service credential + egress allowlist for the rest; aggregate-only payloads (no student fields)", "owner": "Sam", "status": "not_started" },
-        { "type": "task", "id": "ai-evals", "lane": "governance", "title": "AI safety (MISSING from the original ask — table stakes): self-hosted Langfuse observability + a regression eval suite for cpl-chat's 4 modes + a PII-output guardrail; runtime spend capped + separate from dev seats", "owner": "Claude", "status": "not_started" },
+        { "type": "task", "id": "ai-evals", "lane": "governance", "title": "AI safety (table stakes): self-hosted Langfuse observability + a regression eval suite for cpl-chat's 4 modes + a PII-output guardrail; runtime spend capped + separate from dev seats", "owner": "Claude", "status": "not_started" },
         { "type": "task", "id": "astro-begin", "lane": "architecture", "title": "Begin the Astro-islands migration (most-edited tabs first); excel_to_dashboard.py becomes a JSON data producer (deletes the idempotency-cruft bug class)", "owner": "Claude", "status": "not_started" },
         { "type": "task", "id": "data-classification", "lane": "governance", "title": "4-tier data classification + a living data-inventory register; RLS hardening (Security Advisors, column-level privileges); raise small-cell suppression <5 → <10; vendor/DPA register (HUMANS principle 6)", "owner": "Malone", "status": "not_started" },
         { "type": "task", "id": "sponsor-charter", "lane": "team", "title": "Secure a NAMED CO executive sponsor + a written charter (gates all divisional/CO-scale work)", "owner": "Sam", "status": "not_started" }
@@ -79,7 +69,6 @@
       "id": "later",
       "label": "LATER (9–18mo) — Scale-out (gated on Next + a CO mandate)",
       "gate": "Each prior gate held · ownership decision executed (RCCD→CCCCO as a 2nd transfer if applicable) · state security framework confirmed.",
-      "_note": "v1 outline.",
       "nodes": [
         { "type": "task", "id": "api-first", "lane": "integration", "title": "Versioned api_v1_* read views behind a Cloudflare gateway (keys + rate-limit at the edge)", "owner": "Claude", "status": "not_started" },
         { "type": "task", "id": "wp-twoway", "lane": "integration", "title": "WP REST two-way: replace the /cplstories/ Chromium scrape with a JSON pull; COBI→WP push via Edge Function/webhook (kills the stale mapfyCollegeUrls blob); Entra as the shared IdP", "owner": "Claude", "status": "not_started" },
