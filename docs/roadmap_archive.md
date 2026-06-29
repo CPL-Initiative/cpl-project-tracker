@@ -1796,3 +1796,37 @@ Statewide-CRs region (editing **excludes** `#statewide-exhibits`/`#progress`/`[d
 `factsheet_overrides` (public read, reviewer write). 31 jsdom tests. New KB note:
 [`playbook-curate-editable-standalone-page.md`](kb-notes/playbook-curate-editable-standalone-page.md).
 Full story: [`fact_sheet_lessons.md`](fact_sheet_lessons.md) (2026-06-28).
+
+## Archived session narrative (Session 81) — moved 2026-06-29 (Session 83)
+
+### Session 81 — StarFarout: per-row + per-card nudges + "Nudge All" (2026-06-28)
+
+A focused RACI/nudge tweak pass Sam asked for ("tweak the RACI and Activity cards") — **1 PR #574,
+squash-merged + `daily-dashboard.yml` dispatched post-merge to publish the card buttons.** Three changes:
+**(1)** the per-item 📣 nudge now shows on EVERY matrix row when signed in (gate dropped from
+`itemNudgeRecipients(item).length` → `canEdit` so any one item can be nudged; opt-out still enforced in
+`itemNudgeRecipients`, empty-recipient case alerts gracefully); **(2)** the bulk button renamed
+**"📣 Nudge for updates" → "📣 Nudge All"** (tooltip now points to a row's 📣 for a single item); **(3)** a
+📣 Nudge button on every Activity / sub-activity / project **card** (generator emits a `cpl_nudge_focus`
+deep-link beside the existing 📝/👥 — verified 4 Activity + 57 project = 61, `CPL_Dashboard.html` ===
+`index.html`), consumed by a new `consumePendingFocus` `NUDGE_KEY` branch → `openItemNudge`. Durable lesson —
+**separate affordance VISIBILITY from action ELIGIBILITY** (show the affordance everywhere; enforce
+opt-out / no-recipient in the DATA/href layer; test eligibility there, not button presence) — new KB note
+[`docs/kb-notes/methodology-affordance-visibility-vs-action-eligibility.md`](kb-notes/methodology-affordance-visibility-vs-action-eligibility.md);
+builds on Session 79's audience-by-consent lesson. Code-only PR per the #562/#564 precedent. Tests 96/96
+(`raci_card_nudge.test.js` new, `raci_nudge_optout.test.js` rewritten, `raci.test.js` updated). Full story:
+[`docs/cobi_raci_nudge_lessons.md`](cobi_raci_nudge_lessons.md) (2026-06-28).
+
+**Then (same session) — the Fact Sheet Curate arc, 3 merged PRs.** Sam: "be able to add or delete anywhere
+there are boxes or images" on the public Fact Sheet. **#576** boxes — ＋ add (clones the section's box →
+sample text, so a new box always matches the format) / ✕ delete (added = real delete, baked = hide) /
+drag-reorder. **#578** images — 🖼 add (upload) / S·M·L·Full resize / ⤢ replace / ✕ delete, bytes in a
+public-read·reviewer-write **`factsheet-images`** Storage bucket, the override storing the URL. Both ride the
+**unchanged `factsheet_overrides` table** via **reserved key namespaces** (`|add|`/`|__order`/`|img|`/`|fig|`)
+the overlay *materializes* — no schema migration; `index.html` untouched (the overlay injects all chrome).
+**#577** a rotating **"My CPL Stories"** section (4 random) — sourced from the SiteGround-bot-protected
+`map.rccd.edu/cplstories/` by **headless Chromium on a runner** (the runner-as-proxy escalated past a JS
+challenge with retry + a `.card`-count `waitForFunction`, last-good on failure). Tests 99/99. New KB note:
+`docs/kb-notes/methodology-reserved-key-namespaces-on-overrides-table.md`; full story in
+[`docs/fact_sheet_lessons.md`](fact_sheet_lessons.md) (the three 2026-06-28 StarFarout sections). The
+M-ID pipeline did NOT move — `#tab-pipeline` intentionally untouched this checkpoint.
