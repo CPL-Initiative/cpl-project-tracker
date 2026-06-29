@@ -509,6 +509,7 @@ scraping proved unreliable.
 | `card_raci.js` | **Live card-Lead + RACI-roster overlay** (added Session 79, StarBender). Static, read-only, anon-Supabase (the `card_updates.js` pattern): the generator stamps a `<span class="cpl-raci-lead" data-raci-key="activity:N\|project:<id>">` (seeded with the old `projects.lead` as fallback) + a `data-raci-key` on each 👥 RACI affordance; the overlay fetches `item_raci` and (1) rewrites each card's **Lead** to the resolved **Responsible → Accountable → old-lead**, (2) builds a **hover roster** tooltip (R/A/C/I names) on the 👥 button. Listens to `cpl-tab-activated` + `cpl-raci-updated`. Exports `leadNames`/`byKey`/`rosterHtml`/`roleNames`/`escapeHtml`. STATIC, NOT a daily-cron artifact; `<script>`-loaded in BOTH HTMLs (Rule 4). Tests: `tests/card_raci.test.js` (23). Docs: `docs/cobi_raci_nudge_lessons.md`. |
 | `card_updates.js` | **Live card-update overlay** (`window.CPL_CARD_UPDATES`, added Session 78). Read-only: fetches the newest `item_updates` row per `item_type:item_id` (anon Supabase read) and overlays it — body + timestamp + author — onto each Activity / sub-activity / project card via a generator-stamped `<div class="cpl-live-update" data-update-key="activity:N|project:<id>">` hook, hiding that card's creation-era `.cpl-static-update` line when a live update exists. Closes the gap where a 📝 update posted on the RACI tab showed there but not on the card face. Runs on load + on `cpl-tab-activated` (activities-projects/dashboard). STATIC, no auth, NOT a daily-cron artifact; `<script>`-loaded in BOTH HTMLs (Rule 4). The hooks + the sub-activity cards' 📝/👥 deep-links are emitted by `excel_to_dashboard.py` (regenerated sections). Tests: `tests/card_updates.test.js`. Docs: `docs/cobi_raci_nudge_lessons.md`. |
 | `annual_report.js` | **Annual Report tab** renderer (`window.CPL_ANNUAL_REPORT`, `#annual-report`). Lazy-loaded on first open; injects own `var(--token)` CSS. Assembles a 6-section report draft from live `window.CPL_DATA` each open — Exec Summary · Vision 2030 & Goals · Activity Progress (the 4) · Statewide Impact · Spotlights (Veteran Sprint / Military Base) · Looking Ahead — EDITABLE in place (textarea) with a live markdown preview; toolbar = ↻ Rebuild from data · ✨ AI polish (reuses `CPL_REPORT_PROXY_URL`; disabled if unset) · ⬇ Word (`docx.min.js`) · 🖨 Print. Content is creation-era until `item_updates` is surfaced into it (next). Static — NOT a daily-cron artifact. Tests: `tests/annual_report.test.js` (29). Added Session 77 (StarPort), PR #557. Docs: `docs/cobi_raci_nudge_lessons.md`. |
+| `mission_control.js` | **Mission Control** — the "Lift Off" program tracker (`window.CPL_MISSION_CONTROL`, added Session 83). A self-contained **read-only-by-default overlay** (the `card_updates.js` pattern) that renders `kb/liftoff_plan.json` ⊕ a Supabase `liftoff_state` overlay as a **collapsible `<details>` block mounted BELOW the RACI functions** in the Team & RACI tab (mounts on `cpl-tab-activated` when `tab==='raci'`; inserts `#mission-control-root` after `#raci-root`; injects own `var(--token)` CSS; never touches `raci.js`). The plan is **phases (Now/Next/Later) of `task` + `decision` nodes** — a `decision` FORKS the work (an option `activates` its branch tasks + `archives` the others; the choice doubles as the human decision log). Anonymous = read-only; a signed-in/team-phrase user sets task status (`setStatus`) + picks decision branches (`setChoice`) — optimistic write + rollback, upsert to `liftoff_state`. **Forward-only** (PII-incident items dropped — handled long ago). Static — NOT a daily-cron artifact; nav/boot mirrored in BOTH HTMLs (Rule 4). Schema: `mission/supabase_liftoff_state.sql`. Tests: `tests/mission_control.test.js` (32). Docs: `docs/mission_control_lessons.md` + `docs/co_platform_strategy.md`. |
 
 ### 3. Cloudflare Worker (cpl-proxy)
 
@@ -1046,6 +1047,26 @@ JSON) and Saves/Resumes to Supabase `tmc_submissions`.
   public URL). **Public read**, writes gated by `is_allowed_reviewer()` (same
   reviewer boundary as `factsheet_overrides`), 5 MB cap, raster MIME only. Schema:
   `fact-sheet/supabase_factsheet_images.sql` (applied live via the Supabase MCP).
+- **`liftoff_state`** (added Session 83): the **Mission Control** overlay store
+  (`mission_control.js`). One row per plan node id → `{status, chosen, note,
+  updated_by, updated_at}`, overlaying the committed `kb/liftoff_plan.json` (the
+  plan is the static fallback; an empty table = the plan as authored). Anon SELECT
+  (the board renders for every viewer); writes gated by `is_allowed_reviewer() OR
+  team_pass_ok()` (the shared team-phrase gate below). Schema:
+  `mission/supabase_liftoff_state.sql` (applied live via the Supabase MCP).
+- **`team_access`** + the **shared team-phrase gate** (added Session 83): a
+  **lower-stakes alternative to per-person magic-link login** for editing the
+  Team & RACI surface. `team_access(id, secret)` holds one shared phrase — RLS on,
+  **NO anon policies** so the client can't read it; only the SECURITY DEFINER funcs
+  see it. **`team_pass_ok()`** reads the **`x-team-pass` request header** (sent by
+  `raci.js`/`mission_control.js` on writes when the phrase is unlocked) and compares
+  via the revoked-from-public `team_pass_check(p)`. The `item_raci` / `team_members`
+  / `item_updates` / `liftoff_state` write policies are widened to
+  `is_allowed_reviewer() OR team_pass_ok()` — so the public anon key **alone** still
+  can't write, and magic-link reviewers keep working. Server-enforced (the phrase is
+  validated inside Postgres, not client-side). Rotate with `update public.team_access
+  set secret='…' where id='raci';` (temp value `cpl-team-2026`). Schema documented in
+  `raci/supabase_raci.sql`; pattern: `docs/kb-notes/methodology-server-enforced-shared-password-gate.md`.
 - Separate from live metrics scraping; handles project-level data storage.
 
 ### 9. EACR Exhibit Identity — current state and future direction
@@ -1958,40 +1979,11 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > → [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full story:
 > [`docs/fact_sheet_lessons.md`](docs/fact_sheet_lessons.md) (Session 80).
 
-### Session 81 — StarFarout: per-row + per-card nudges + "Nudge All" (2026-06-28)
-
-A focused RACI/nudge tweak pass Sam asked for ("tweak the RACI and Activity cards") — **1 PR #574,
-squash-merged + `daily-dashboard.yml` dispatched post-merge to publish the card buttons.** Three changes:
-**(1)** the per-item 📣 nudge now shows on EVERY matrix row when signed in (gate dropped from
-`itemNudgeRecipients(item).length` → `canEdit` so any one item can be nudged; opt-out still enforced in
-`itemNudgeRecipients`, empty-recipient case alerts gracefully); **(2)** the bulk button renamed
-**"📣 Nudge for updates" → "📣 Nudge All"** (tooltip now points to a row's 📣 for a single item); **(3)** a
-📣 Nudge button on every Activity / sub-activity / project **card** (generator emits a `cpl_nudge_focus`
-deep-link beside the existing 📝/👥 — verified 4 Activity + 57 project = 61, `CPL_Dashboard.html` ===
-`index.html`), consumed by a new `consumePendingFocus` `NUDGE_KEY` branch → `openItemNudge`. Durable lesson —
-**separate affordance VISIBILITY from action ELIGIBILITY** (show the affordance everywhere; enforce
-opt-out / no-recipient in the DATA/href layer; test eligibility there, not button presence) — new KB note
-[`docs/kb-notes/methodology-affordance-visibility-vs-action-eligibility.md`](docs/kb-notes/methodology-affordance-visibility-vs-action-eligibility.md);
-builds on Session 79's audience-by-consent lesson. Code-only PR per the #562/#564 precedent. Tests 96/96
-(`raci_card_nudge.test.js` new, `raci_nudge_optout.test.js` rewritten, `raci.test.js` updated). Full story:
-[`docs/cobi_raci_nudge_lessons.md`](docs/cobi_raci_nudge_lessons.md) (2026-06-28).
-
-**Then (same session) — the Fact Sheet Curate arc, 3 merged PRs.** Sam: "be able to add or delete anywhere
-there are boxes or images" on the public Fact Sheet. **#576** boxes — ＋ add (clones the section's box →
-sample text, so a new box always matches the format) / ✕ delete (added = real delete, baked = hide) /
-drag-reorder. **#578** images — 🖼 add (upload) / S·M·L·Full resize / ⤢ replace / ✕ delete, bytes in a
-public-read·reviewer-write **`factsheet-images`** Storage bucket, the override storing the URL. Both ride the
-**unchanged `factsheet_overrides` table** via **reserved key namespaces** (`|add|`/`|__order`/`|img|`/`|fig|`)
-the overlay *materializes* — no schema migration; `index.html` untouched (the overlay injects all chrome).
-**#577** a rotating **"My CPL Stories"** section (4 random) — sourced from the SiteGround-bot-protected
-`map.rccd.edu/cplstories/` by **headless Chromium on a runner** (the runner-as-proxy escalated past a JS
-challenge with retry + a `.card`-count `waitForFunction`, last-good on failure). Tests 99/99. New KB note:
-`docs/kb-notes/methodology-reserved-key-namespaces-on-overrides-table.md`; full story in
-[`docs/fact_sheet_lessons.md`](docs/fact_sheet_lessons.md) (the three 2026-06-28 StarFarout sections). The
-M-ID pipeline did NOT move — `#tab-pipeline` intentionally untouched this checkpoint. **NEXT:
-[`docs/session_82_handoff.md`](docs/session_82_handoff.md)** — the Fact Sheet consumer wedge (render
-`CPL_STATEWIDE_RECS` under each exhibit `<li>`); Annual Report self-freshening; the 3 lead emails; the
-standing lanes.
+> **Session 81 narrative (StarFarout — per-row + per-card nudges + "Nudge All" #574; then the Fact Sheet
+> Curate arc: add/delete/reorder boxes #576, "My CPL Stories" headless-sourced #577, image add/resize/replace/delete
+> via the `factsheet-images` bucket #578 — all on the unchanged `factsheet_overrides` table via reserved key
+> namespaces) archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full stories:
+> [`docs/cobi_raci_nudge_lessons.md`](docs/cobi_raci_nudge_lessons.md) + [`docs/fact_sheet_lessons.md`](docs/fact_sheet_lessons.md).
 
 ### Session 82 — SkyFlyer: Fact Sheet editable-everywhere + a11y + Word export (2026-06-28)
 
@@ -2021,6 +2013,56 @@ story: [`docs/fact_sheet_lessons.md`](docs/fact_sheet_lessons.md) (2026-06-28). 
 [`docs/session_83_handoff.md`](docs/session_83_handoff.md)** — the standing queue (unverified-M-ID renumber,
 TMC acceptance engine, CPL-Assistant recommender ETL) + the 3 surfaced data items if Sam wants them
 reconciled.
+
+### Session 83 — StarNova: CO-platform strategy → Mission Control → team-phrase gate (2026-06-29)
+
+Sam's "epic quest": recommend a long-term plan to move COBI + the CPL KB into a governed, team-based,
+CO-wide structure (with Director-of-Tech "Malone"), then build a tracker for the lift and drop the per-person
+login wall on team edits. **4 merged PRs.**
+
+**(1) `docs/co_platform_strategy.md` (#586, corrected #588)** — the "plan of attack." Built by a
+**12-agent workflow** (5 web-research threads → 6 design sections → synthesis), grounded in the **verified**
+current state (GitHub owner = Sam's personal `samueltlee`; `CPL-Initiative` org has 0 teams; Supabase =
+personal `LiveOak`/Pro; Cloudflare Worker + Anthropic key on personal accounts → the platform is owned by
+*individuals*, not the institution). Covers the operating model (**AI proposes, a named human disposes**), a
+Now/Next/Later roadmap + a parallel procurement track, account migration off personal logins, knowledge lanes
+(CPL · CCC Baccalaureate · Apprenticeships · Internships · MIS · Student Services), integration/API
+(de-scrape behind data-sharing agreements), governance/security/accessibility/HUMANS, decisions only humans
+make, candid pushback, and a scorecard against all ~14 asks. The PII ask was a no-op — **verified clean on
+`main`** (audit's "pending" was stale; Sam had already purged history).
+
+**(2) `kb/liftoff_plan.json` ("Lift Off") (#588, forward-only #592)** — the program-tracker data: phases
+(Now/Next/Later) of **`task` + `decision` nodes**. A `decision` FORKS the work — an option `activates` its
+branch tasks and `archives` the others; the choice doubles as the human decision log. **Forward-only** (31
+tasks, 3 decisions; PII-incident nodes dropped per Sam — handled long ago).
+
+**(3) `mission_control.js` ("Mission Control") (#590, #592)** — a self-contained static overlay (the
+`card_updates.js`/`first_light.js` pattern) that renders the plan ⊕ a Supabase `liftoff_state` overlay as a
+**collapsible `<details>` block mounted BELOW the RACI functions** in Team & RACI (mounts on
+`cpl-tab-activated`; inserts `#mission-control-root` after `#raci-root`; **didn't change one line of
+`raci.js`** → its 70-check suite stayed green). Anon = read-only; signed-in/team-phrase = set task status +
+pick decision branches (optimistic write + rollback).
+
+**(4) the RACI shared "team phrase" gate (#593)** — replaced the per-person magic-link *requirement* with a
+shared phrase so the team can update/nudge without each signing in. **Server-enforced** (the differentiator,
+not client-side theater on a public-anon-key surface): `team_access` (RLS on, **no anon policies** → not
+client-readable) + **`team_pass_ok()`** reads the **`x-team-pass`** request header and widens the
+`item_raci`/`team_members`/`item_updates`/`liftoff_state` write policies to `is_allowed_reviewer() OR
+team_pass_ok()` — magic-link reviewers still work. Client used a **pseudo-session** (`state.sess =
+{teamPass}`) so every existing `canEdit`/`state.sess` guard passed unchanged; only `sbWrite`'s header +
+`load()`'s fallback changed. Temp phrase `cpl-team-2026` (Sam to rotate). **⚠ The live header path is
+unverified from the sandbox** (Supabase egress-blocked) — Sam to confirm a save persists after deploy.
+
+Durable lessons: **the build IS the operating model** (each artifact demonstrates AI-proposes/human-disposes);
+the **decision-fork tracker model**; **server-enforced shared password without per-user accounts** (new KB
+note [`docs/kb-notes/methodology-server-enforced-shared-password-gate.md`](docs/kb-notes/methodology-server-enforced-shared-password-gate.md));
+**repo-private ≠ site-private** (a Sam Q — Pages stays public to URL-holders; site-gating needs an app gate
+or Enterprise, and Pages-from-private needs a paid plan). Tests: `mission_control.test.js` (32),
+`raci_team_pass.test.js` (14), raci 70/70 → **103 files green**. Full story:
+[`docs/mission_control_lessons.md`](docs/mission_control_lessons.md). **NEXT:
+[`docs/session_84_handoff.md`](docs/session_84_handoff.md)** — confirm the team phrase works live + gut-check
+the Lift Off plan with Malone, then the strategy's NOW lane (institution-owned GitHub/Supabase, `cobi-auth.js`
+consolidation, required a11y CI, the DSA paperwork) + the standing engineering lanes.
 
 ---
 

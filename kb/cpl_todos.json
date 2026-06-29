@@ -1,32 +1,44 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-28 · Session 82 (SkyFlyer) · the public Fact Sheet is now editable everywhere it has boxes/images, meets WCAG 2.1 AA, and exports a Word doc as well as a PDF",
- "_session": 82,
- "_status": "Just shipped (live on the next Pages deploy, PR #584): the public CPL Fact Sheet is now fully Curate-able — the Veteran-Sprint boxes are editable/moveable with an Add box, the KPI cards can be reordered and hidden (but not text-edited, since they're live data), the budget table can be hidden, and every grid section has its own ＋Add box. Plus ~15 new embedded links, an accessibility pass (it now meets the WCAG 2.1 AA it advertises), print fixes (the navy funding-table header was printing white-on-white — fixed), and a new ⬇ Word button next to Print/PDF. A few number-consistency items on the Fact Sheet were SURFACED, not silently changed (they're live/snapshot data) — see the item below. The standing engineering lanes (M-ID renumber, TMC acceptance engine, CPL-Assistant recommender ETL) are unchanged and next up.",
+ "_as_of": "2026-06-29 · Session 83 (StarNova) · COBI got a long-term scaling strategy doc, a Mission Control program tracker, and a shared team-phrase so the team can edit without per-person login",
+ "_session": 83,
+ "_status": "Just shipped: a 'plan of attack' for scaling COBI + the CPL KB into a governed, CO-wide platform (docs/co_platform_strategy.md); a Mission Control board inside the Team & RACI tab (collapsible, below the RACI matrix) that tracks the 'Lift Off' mission as task + decision-branch nodes; and a shared 'team phrase' edit gate so the team can update/nudge the RACI matrix & members WITHOUT each person signing in (magic-link still works too). The phrase is a temporary 'cpl-team-2026' — rotate when ready. NEXT: gut-check the Lift Off plan with Malone, then start the NOW lane (move COBI off personal accounts onto institution-owned GitHub/Supabase). Standing engineering lanes (M-ID renumber, TMC acceptance engine, Assistant ETL) unchanged.",
  "items": [
+  {
+   "id": "mission-control",
+   "who": "sam",
+   "tab": "raci",
+   "text": "Open Team & RACI → scroll below the matrix to the new 🚀 Mission Control board (it's collapsible). It tracks the 'Lift Off' mission as task + decision-branch nodes. Review it with Malone: are the owners right, and the 3 decision points (owner accounts / auto-merge policy / GitHub tier) framed the way you'd choose? Edit it live once you unlock editing."
+  },
+  {
+   "id": "team-phrase",
+   "who": "sam",
+   "tab": "raci",
+   "text": "Editing the RACI matrix, members, updates & nudges no longer needs a per-person login — there's a shared '🔓 Unlock editing' phrase (temporary: cpl-team-2026). PLEASE confirm it works for you: unlock, edit a cell, reload, see it stick. To change the phrase later, tell me and I'll rotate it (one DB line). Magic-link sign-in still works too."
+  },
+  {
+   "id": "strategy-doc",
+   "who": "sam",
+   "tab": "raci",
+   "text": "Skim docs/co_platform_strategy.md — the long-term plan to scale COBI + the CPL KB into a governed, team-based, CO-wide platform (operating model, account migration off personal logins, knowledge lanes, real APIs vs scraping, governance/accessibility/HUMANS). It ends with a scorecard against all ~14 of your asks. All pushback included, as requested."
+  },
   {
    "id": "factsheet-curate-everywhere",
    "who": "sam",
    "tab": "dashboard",
-   "text": "On the public CPL Fact Sheet, sign in and ✎ Curate: now you can edit/move/add/delete boxes in the Vet Sprint & CPL Bump sections too, reorder & hide the KPI cards, hide the budget table, and every grid has its own ＋Add box. Try the new ⬇ Word button (next to Print) — it exports a Word doc with your edits + live numbers."
+   "text": "On the public CPL Fact Sheet, sign in and ✎ Curate: you can edit/move/add/delete boxes in the Vet Sprint & CPL Bump sections, reorder & hide the KPI cards, hide the budget table, and every grid has its own ＋Add box. Try the ⬇ Word button (next to Print) — it exports a Word doc with your edits + live numbers."
   },
   {
    "id": "factsheet-data-items",
    "who": "sam",
    "tab": "dashboard",
-   "text": "3 small number-consistency items on the Fact Sheet I flagged but did NOT change (they're live/snapshot data or your call): Statewide says '12 program areas' but 13 rows are listed (incl. an 'Other Statewide' catch-all); the could-adopt total 116 (deduped) sits oddly next to per-area rows summing to 454; and '30,000' (Phase-1 JST goal) vs '34,000+' (vets in system). Say the word and I'll reconcile any."
+   "text": "3 small number-consistency items on the Fact Sheet I flagged but did NOT change (live/snapshot data or your call): '12 program areas' but 13 rows listed (incl. an 'Other Statewide' catch-all); could-adopt 116 (deduped) next to per-area rows summing to 454; and '30,000' (Phase-1 JST goal) vs '34,000+' (vets in system). Say the word and I'll reconcile any."
   },
   {
    "id": "factsheet-auth-redirect",
    "who": "sam",
    "tab": "dashboard",
    "text": "One-time: add the Fact Sheet URL (or …/cpl-project-tracker/**) to the Supabase Auth → Redirect URLs list so a direct magic-link sign-in from the Fact Sheet lands back on that page (today it completes on the dashboard tab)."
-  },
-  {
-   "id": "outlook-edge-chrome",
-   "who": "sam",
-   "tab": "dashboard",
-   "text": "Magic links opening in Edge instead of Chrome: in classic Outlook, File → Options → Advanced → Link handling → set 'Open hyperlinks from Outlook in' to Default Browser; and make Chrome the Windows default (Settings → Apps → Default apps → Chrome → Set default)."
   },
   {
    "id": "annual-report-eyeball",
