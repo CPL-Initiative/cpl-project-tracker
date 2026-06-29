@@ -10668,7 +10668,12 @@ def main():
     # "Contributes to:" chip line + the shared assoc_editor.js editor anchor.
     assoc_records_by_project = build_assoc_records_by_project(wpg_assocs)
 
-    activity_kpis   = build_activity_kpis(projects, activities=activities)
+    # Tabled/archived projects are excluded so they drop from the Activity Metrics
+    # sub-activity cards AND the RACI matrix (which reads CPL_DATA.activity_kpis for
+    # its sub-activity rows) — Sam, Session 84. Headline KPIs come from live metrics,
+    # not this, so they're unaffected.
+    activity_kpis   = build_activity_kpis(
+        [p for p in projects if p["id"] not in inactive_pids], activities=activities)
 
     # ── KPI tunable parameters ──
     # Excel-retirement P2: KPI_PARAMETERS_DEFAULTS overlaid with any
