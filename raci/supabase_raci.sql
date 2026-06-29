@@ -99,3 +99,51 @@ create policy iu_update on public.item_updates for update
 drop policy if exists iu_delete on public.item_updates;
 create policy iu_delete on public.item_updates for delete
   using (is_allowed_reviewer());
+
+-- ─────────────────────────────────────────────────────────────────────────
+-- Shared "team phrase" edit gate (StarNova, 2026-06-29). A lower-stakes
+-- alternative to per-person magic-link login: one shared phrase unlocks editing
+-- of the RACI matrix / members / updates / nudges. Server-enforced — the phrase
+-- is validated INSIDE Postgres (RLS), so the public anon key alone can't write.
+-- Magic-link reviewers still work (the policies accept reviewer OR phrase).
+--
+--   • team_access   — holds the phrase. RLS on, NO anon policies → not readable
+--                     by clients; only the SECURITY DEFINER funcs (running as
+--                     owner) can read it. Set/rotate the phrase with:
+--                       update public.team_access set secret = 'your phrase' where id = 'raci';
+--   • team_pass_check(p) — comparator (revoked from public so it can't be a
+--                     brute-force oracle); used for testing + internally.
+--   • team_pass_ok()    — reads the `x-team-pass` request header (sent by
+--                     raci.js sbWrite when the phrase is unlocked) and compares.
+-- Applied live via the Supabase MCP; this file is the schema of record.
+-- ─────────────────────────────────────────────────────────────────────────
+create table if not exists public.team_access (
+  id          text primary key,
+  secret      text not null,
+  updated_at  timestamptz not null default now()
+);
+alter table public.team_access enable row level security;   -- (no anon policies on purpose)
+insert into public.team_access (id, secret)
+  values ('raci', 'cpl-team-2026')   -- TEMPORARY — rotate via the UPDATE above
+  on conflict (id) do nothing;
+
+create or replace function public.team_pass_check(p text)
+  returns boolean language sql security definer stable set search_path = public as $$
+  select exists (select 1 from public.team_access where id = 'raci' and secret = p);
+$$;
+revoke all on function public.team_pass_check(text) from public;
+
+create or replace function public.team_pass_ok()
+  returns boolean language plpgsql security definer stable set search_path = public as $$
+  declare hdr text;
+  begin
+    hdr := nullif(current_setting('request.headers', true)::json ->> 'x-team-pass', '');
+    if hdr is null then return false; end if;
+    return public.team_pass_check(hdr);
+  end;
+$$;
+grant execute on function public.team_pass_ok() to anon, authenticated;
+
+-- The tm_write / ir_write / iu_insert / iu_update / iu_delete policies above are
+-- widened to `is_allowed_reviewer() OR team_pass_ok()` by the
+-- raci_shared_team_phrase_gate migration (kept inline there for the live apply).
