@@ -243,7 +243,11 @@
   // assignments survive (the sub-activity vs project distinction is visual).
   function buildItems() {
     var data = window.CPL_DATA || {};
-    var rawProjects = data.projects || [];
+    // Drop tabled/archived projects (project_lifecycle overlay) so a soft-deleted
+    // project leaves the RACI matrix live, before the next regen bakes it out of
+    // CPL_DATA (Sam, Session 84). state.tabled is filled by load().
+    var tabled = state.tabled || {};
+    var rawProjects = (data.projects || []).filter(function (p) { return !tabled[String(p.id)]; });
     var akpis = data.activity_kpis || [];
 
     // Official sub-activities, in workplan order, grouped by Activity number.
@@ -307,11 +311,18 @@
     state.sess = getSession() || teamSession();
     state.items = buildItems();
     Promise.all([sbGet("team_members?select=*&order=sort_order,name"), sbGet("item_raci?select=*"),
-      sbGet("item_updates?select=*&order=created_at.desc")])
+      sbGet("item_updates?select=*&order=created_at.desc"),
+      sbGet("project_lifecycle?select=project_id,state")])
       .then(function (res) {
         state.members = res[0] || [];
         state.raci = {};
         (res[1] || []).forEach(function (r) { state.raci[r.item_type + ":" + r.item_id] = r.raci || {}; });
+        // Tabled/archived projects → exclude from the matrix (Session 84).
+        state.tabled = {};
+        (res[3] || []).forEach(function (r) {
+          if (r && r.project_id != null && (r.state === "tabled" || r.state === "archived")) state.tabled[String(r.project_id)] = true;
+        });
+        state.items = buildItems();  // rebuild now that the tabled set is known
         // Group the update log by item key (newest first — the query is ordered).
         state.updates = {};
         (res[2] || []).forEach(function (u) {
@@ -1486,5 +1497,6 @@
     _nudgeHref: buildNudgeHref, _openUpdate: openUpdate, _itemSummary: itemSummaryText,
     _itemNudgeHref: buildItemNudgeHref, _openItemNudge: openItemNudge, _consume: consumePendingFocus,
     _headersFor: headersFor, _teamSession: teamSession,
+    _buildItems: buildItems, _setTabled: function (m) { state.tabled = m || {}; },
     _itemByKey: function (k) { return state.items.filter(function (x) { return x.key === k; })[0] || null; } };
 })();

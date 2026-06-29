@@ -275,6 +275,21 @@
     });
   }
 
+  // The Workplan Activity Metrics section renders a sub-activity KPI card per
+  // project. Hide a tabled project's card there too (the generator drops it from
+  // activity_kpis on the next regen; this is the live, pre-regen reconcile). The
+  // card is found via its card_updates.js hook, scoped to .activity-kpi-card so
+  // the project-grid card (same hook) is not touched.
+  function setActivityCardHidden(pid, hidden) {
+    var q = esc4q(pid);
+    Array.prototype.forEach.call(
+      document.querySelectorAll('.cpl-live-update[data-update-key="project:' + q + '"]'),
+      function (h) {
+        var card = h.closest && h.closest(".activity-kpi-card");
+        if (card) card.style.display = hidden ? "none" : "";
+      });
+  }
+
   // ── Reconcile drift between the baked HTML and the live overlay ───────────────
   var _overlay = {};
   function reconcile() {
@@ -288,12 +303,13 @@
       if (!entryFor(pid)) addEntry(pid, name, meta);
       else entryFor(pid).innerHTML = entryHtml(pid, name, meta); // keep reason/date fresh
       setGoalsRowsHidden(pid, true);                  // also drop it from the Annual Goals table
+      setActivityCardHidden(pid, true);               // and the Workplan Activity Metrics card
     });
     // 2. Anything baked as tabled but NO LONGER in the overlay → restore it.
     var baked = gridEl() ? gridEl().querySelectorAll(".project-card[data-lifecycle]") : [];
     Array.prototype.forEach.call(baked, function (card) {
       var pid = card.getAttribute("data-pid");
-      if (pid && !_overlay[pid]) { showCard(pid); setGoalsRowsHidden(pid, false); }
+      if (pid && !_overlay[pid]) { showCard(pid); setGoalsRowsHidden(pid, false); setActivityCardHidden(pid, false); }
     });
     Array.prototype.forEach.call(document.querySelectorAll(".tabled-card[data-pid]"), function (e) {
       var pid = e.getAttribute("data-pid");
