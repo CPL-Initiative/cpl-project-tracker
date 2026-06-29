@@ -27,7 +27,11 @@ check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
 check("mission_control.js included in CPL_Dashboard.html", /<script src="mission_control\.js"><\/script>/.test(cpl));
 check("mission_control.js included in index.html", /<script src="mission_control\.js"><\/script>/.test(idx));
 check("schema-of-record file exists", fs.existsSync("mission/supabase_liftoff_state.sql"));
-check("schema gates writes on is_allowed_reviewer()", /is_allowed_reviewer\(\)/.test(fs.readFileSync("mission/supabase_liftoff_state.sql", "utf8")));
+const MCSQL = fs.readFileSync("mission/supabase_liftoff_state.sql", "utf8");
+check("schema gates writes on is_allowed_reviewer()", /is_allowed_reviewer\(\)/.test(MCSQL));
+check("schema widens liftoff_state writes to the shared team phrase", /team_pass_ok\(\)/.test(MCSQL));
+const MCSRC = fs.readFileSync("mission_control.js", "utf8");
+check("mission_control.js reads the team phrase + sends x-team-pass", /cpl_team_pass/.test(MCSRC) && /x-team-pass/.test(MCSRC));
 
 const PLAN = JSON.parse(fs.readFileSync("kb/liftoff_plan.json", "utf8"));
 (function validatePlanRefs() {
@@ -71,6 +75,19 @@ function makeDom(hash, fetchImpl) {
   const API = pdom.window.CPL_MISSION_CONTROL;
   const doc = pdom.window.document;
   check("module exposes CPL_MISSION_CONTROL", !!API && typeof API.buildSection === "function" && typeof API.taskState === "function");
+
+  // ── Team-phrase auth: the same shared phrase that unlocks the RACI tab also
+  // unlocks Mission Control (it lives in the same tab), via the x-team-pass header.
+  const hTeam = API._headersFor({ teamPass: "secret" });
+  check("team-phrase write attaches x-team-pass", hTeam["x-team-pass"] === "secret");
+  check("team-phrase write sends the anon key as bearer (never an empty Bearer)",
+    hTeam.Authorization === "Bearer " + hTeam.apikey && hTeam.Authorization !== "Bearer ");
+  const hSess = API._headersFor({ access_token: "jj.aa.bb" });
+  check("magic-link write sends its Bearer token + no x-team-pass",
+    hSess.Authorization === "Bearer jj.aa.bb" && !("x-team-pass" in hSess));
+  try { pdom.window.localStorage.setItem("cpl_team_pass", "open-sesame"); } catch (e) {}
+  check("teamSession() reflects the stored phrase", API._teamSession() && API._teamSession().teamPass === "open-sesame");
+  try { pdom.window.localStorage.removeItem("cpl_team_pass"); } catch (e) {}
 
   // (c) the branch model — drive taskState with overlay choices.
   const ownerTask = API._findNode(PLAN, "owner-identity");        // needs: d-ownership, activated by both options

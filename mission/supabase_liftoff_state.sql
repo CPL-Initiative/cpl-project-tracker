@@ -4,12 +4,15 @@
 -- status + decision choices), keyed by the plan node id. Render = file ⊕ overlay
 -- (the factsheet_overrides / item_updates pattern).
 --
--- Anon SELECT (the overlay is applied for every visitor); writes gated by the
--- shared is_allowed_reviewer() reviewer boundary (same gate as item_raci /
--- item_updates / factsheet_overrides). Empty table = the plan as authored.
+-- Anon SELECT (the overlay is applied for every visitor); writes gated by
+-- is_allowed_reviewer() OR team_pass_ok() — the shared "team phrase" gate, so a
+-- team member who unlocked the Team & RACI tab can also move Mission Control
+-- (same boundary as item_raci / item_updates; the public anon key alone still
+-- can't write). Empty table = the plan as authored.
 --
 -- Applied live via the Supabase MCP (project hvuwhnbuahrtptokpqfh); this file is
--- the schema of record.
+-- the schema of record. The team-phrase widening landed via the
+-- liftoff_state_team_phrase_gate migration (StarNova, 2026-06-29).
 
 create table if not exists public.liftoff_state (
   id          text primary key,            -- a kb/liftoff_plan.json node id (task or decision)
@@ -27,11 +30,12 @@ drop policy if exists liftoff_state_read on public.liftoff_state;
 create policy liftoff_state_read on public.liftoff_state
   for select using (true);
 
--- Reviewer-gated writes (same boundary as the rest of the curate surfaces).
+-- Reviewer-OR-team-phrase-gated writes (mirrors item_raci / item_updates).
 drop policy if exists liftoff_state_insert on public.liftoff_state;
 create policy liftoff_state_insert on public.liftoff_state
-  for insert with check (is_allowed_reviewer());
+  for insert with check (is_allowed_reviewer() or team_pass_ok());
 
 drop policy if exists liftoff_state_update on public.liftoff_state;
 create policy liftoff_state_update on public.liftoff_state
-  for update using (is_allowed_reviewer()) with check (is_allowed_reviewer());
+  for update using (is_allowed_reviewer() or team_pass_ok())
+  with check (is_allowed_reviewer() or team_pass_ok());
