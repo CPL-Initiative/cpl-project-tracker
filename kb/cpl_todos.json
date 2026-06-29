@@ -1,50 +1,50 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-29 · Session 83 (StarNova) · COBI got a long-term scaling strategy doc, a Mission Control program tracker, and a shared team-phrase so the team can edit without per-person login",
+ "_as_of": "2026-06-29 (later) · Session 83 (StarNova) · the shared team-phrase editing is now solid — saves work, a wrong phrase is caught on entry, the card Update/Nudge popups open in place, and reviewers can manage the phrase",
  "_session": 83,
- "_status": "Just shipped: a 'plan of attack' for scaling COBI + the CPL KB into a governed, CO-wide platform (docs/co_platform_strategy.md); a Mission Control board inside the Team & RACI tab (collapsible, below the RACI matrix) that tracks the 'Lift Off' mission as task + decision-branch nodes; and a shared 'team phrase' edit gate so the team can update/nudge the RACI matrix & members WITHOUT each person signing in (magic-link still works too). The phrase is a temporary 'cpl-team-2026' — rotate when ready. NEXT: gut-check the Lift Off plan with Malone, then start the NOW lane (move COBI off personal accounts onto institution-owned GitHub/Supabase). Standing engineering lanes (M-ID renumber, TMC acceptance engine, Assistant ETL) unchanged.",
+ "_status": "Hardened the new shared team-phrase editing after you + Malone live-tested it. Fixed: Malone's 401-on-save (the phrase now actually saves); a wrong phrase is now rejected the moment you type it (instead of silently failing later); the card 📝 Update / 📣 Nudge buttons now open the popup right on the Activities & Projects tab instead of jumping you to the RACI tab; and there's a new reviewer-only ⚙ Manage team phrase panel to see/change the phrase. Mission Control honors the same phrase. All live. Standing engineering lanes (M-ID renumber, TMC acceptance engine, Assistant ETL) unchanged. The per-person magic-link login stays available for later, when the team matures.",
  "items": [
+  {
+   "id": "team-phrase-verify",
+   "who": "sam",
+   "tab": "raci",
+   "text": "Quick confirm now that it's hardened: on Team & RACI, unlock with the phrase (cpl-team-2026), post an update or set a RACI cell, reload — it should stick (the 401 is fixed). Then, signed in as a reviewer, try the new ⚙ Manage team phrase button to view/change the phrase. Have Malone confirm a save works on his side too."
+  },
   {
    "id": "mission-control",
    "who": "sam",
    "tab": "raci",
-   "text": "Open Team & RACI → scroll below the matrix to the new 🚀 Mission Control board (it's collapsible). It tracks the 'Lift Off' mission as task + decision-branch nodes. Review it with Malone: are the owners right, and the 3 decision points (owner accounts / auto-merge policy / GitHub tier) framed the way you'd choose? Edit it live once you unlock editing."
-  },
-  {
-   "id": "team-phrase",
-   "who": "sam",
-   "tab": "raci",
-   "text": "Editing the RACI matrix, members, updates & nudges no longer needs a per-person login — there's a shared '🔓 Unlock editing' phrase (temporary: cpl-team-2026). PLEASE confirm it works for you: unlock, edit a cell, reload, see it stick. To change the phrase later, tell me and I'll rotate it (one DB line). Magic-link sign-in still works too."
+   "text": "Scroll below the RACI matrix to the 🚀 Mission Control board (collapsible). Review the 'Lift Off' plan with Malone — owners + the 3 decision branch points (owner accounts / auto-merge policy / GitHub tier). It's editable live once you unlock."
   },
   {
    "id": "strategy-doc",
    "who": "sam",
    "tab": "raci",
-   "text": "Skim docs/co_platform_strategy.md — the long-term plan to scale COBI + the CPL KB into a governed, team-based, CO-wide platform (operating model, account migration off personal logins, knowledge lanes, real APIs vs scraping, governance/accessibility/HUMANS). It ends with a scorecard against all ~14 of your asks. All pushback included, as requested."
+   "text": "When you have time, skim docs/co_platform_strategy.md — the long-term plan to scale COBI + the CPL KB into a governed, CO-wide platform. Ends with a scorecard against all ~14 of your asks."
   },
   {
    "id": "factsheet-curate-everywhere",
    "who": "sam",
    "tab": "dashboard",
-   "text": "On the public CPL Fact Sheet, sign in and ✎ Curate: you can edit/move/add/delete boxes in the Vet Sprint & CPL Bump sections, reorder & hide the KPI cards, hide the budget table, and every grid has its own ＋Add box. Try the ⬇ Word button (next to Print) — it exports a Word doc with your edits + live numbers."
+   "text": "On the public CPL Fact Sheet, sign in and ✎ Curate: edit/move/add/delete boxes (incl. Vet Sprint & CPL Bump), reorder & hide the KPI cards, hide the budget table; every grid has its own ＋Add box. Try the ⬇ Word button next to Print."
   },
   {
    "id": "factsheet-data-items",
    "who": "sam",
    "tab": "dashboard",
-   "text": "3 small number-consistency items on the Fact Sheet I flagged but did NOT change (live/snapshot data or your call): '12 program areas' but 13 rows listed (incl. an 'Other Statewide' catch-all); could-adopt 116 (deduped) next to per-area rows summing to 454; and '30,000' (Phase-1 JST goal) vs '34,000+' (vets in system). Say the word and I'll reconcile any."
+   "text": "3 small number-consistency items on the Fact Sheet I flagged but did NOT change (live/snapshot data or your call): '12 program areas' vs 13 rows; could-adopt 116 (deduped) vs per-area rows summing to 454; '30,000' (Phase-1 JST goal) vs '34,000+' vets. Say the word and I'll reconcile any."
   },
   {
    "id": "factsheet-auth-redirect",
    "who": "sam",
    "tab": "dashboard",
-   "text": "One-time: add the Fact Sheet URL (or …/cpl-project-tracker/**) to the Supabase Auth → Redirect URLs list so a direct magic-link sign-in from the Fact Sheet lands back on that page (today it completes on the dashboard tab)."
+   "text": "One-time: add the Fact Sheet URL (or …/cpl-project-tracker/**) to the Supabase Auth → Redirect URLs list so a direct magic-link sign-in from the Fact Sheet lands back on that page."
   },
   {
    "id": "annual-report-eyeball",
    "who": "sam",
    "tab": "annual-report",
-   "text": "Skim the Annual Report draft — it auto-assembles from live data AND folds in the latest posted status updates; tweak any section in place, then ✨AI-polish / ⬇Word / 🖨Print."
+   "text": "Skim the Annual Report draft — it auto-assembles from live data + the latest posted status updates; tweak any section in place, then ✨AI-polish / ⬇Word / 🖨Print."
   },
   {
    "id": "vet-plans-kb-15",
