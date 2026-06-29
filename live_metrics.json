@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-29T13:17:03.543Z",
+  "scraped_at": "2026-06-29T16:14:59.397Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -1178,13 +1178,13 @@
         },
         {
           "college": "Copper Mountain College",
-          "students": 77,
+          "students": 79,
           "units": 273,
-          "avgUnits": 3.5454545454545454,
+          "avgUnits": 3.4556962025316458,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 76,
+          "militaryStudents": 78,
           "nonMilitaryStudents": 1,
           "apprenticeStudents": 0,
           "savings": 472290,
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "48,146",
+      "value": "48,148",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,839"
+          "value": "24,841"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 48146,
+    "Students": 48148,
     "Units": 230333.65000000002,
     "TranscribedUnits": 99469.95,
     "Savings": 321100090.25,
     "YearImpact": 1298822915.3999999,
-    "MilitaryStudents": 24839,
+    "MilitaryStudents": 24841,
     "NonMilitaryStudents": 23383,
     "AprenticeStudents": 753,
-    "AverageUnits": 4.784066173721597,
-    "TranscribedAverage": 2.0660065218294354
+    "AverageUnits": 4.783867450361386,
+    "TranscribedAverage": 2.0659207028329316
   }
 }
