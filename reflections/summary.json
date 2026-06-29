@@ -1,9 +1,9 @@
 {
-  "generated": "2026-06-22",
-  "total_reflections": 3,
-  "active_days": 3,
+  "generated": "2026-06-29",
+  "total_reflections": 8,
+  "active_days": 8,
   "first_day": "2026-06-12",
-  "latest_day": "2026-06-22",
+  "latest_day": "2026-06-29",
   "top_paintings": [
     {
       "painting": "California Poppy Field",
@@ -15,6 +15,26 @@
     },
     {
       "painting": "Headwaters of the San Joaquin",
+      "count": 1
+    },
+    {
+      "painting": "Sunflowers",
+      "count": 1
+    },
+    {
+      "painting": "Nocturne in Blue and Silver",
+      "count": 1
+    },
+    {
+      "painting": "Mount San Antonio",
+      "count": 1
+    },
+    {
+      "painting": "In Without Knocking",
+      "count": 1
+    },
+    {
+      "painting": "Oranges and Poppies",
       "count": 1
     }
   ],
