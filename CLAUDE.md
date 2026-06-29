@@ -2011,34 +2011,9 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > namespaces) archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full stories:
 > [`docs/cobi_raci_nudge_lessons.md`](docs/cobi_raci_nudge_lessons.md) + [`docs/fact_sheet_lessons.md`](docs/fact_sheet_lessons.md).
 
-### Session 82 — SkyFlyer: Fact Sheet editable-everywhere + a11y + Word export (2026-06-28)
-
-Sam: "a few more fact sheet changes" — **1 PR #584, squash-merged + live on the next Pages deploy** (the Fact
-Sheet is standalone, NOT a daily-cron artifact). Two asks. **(1) Make the rest of the Fact Sheet
-Curate-able** (`fact-sheet/factsheet_edit.js`): the **Veteran-Sprint** outcome stats (previously skipped —
-they carry `[data-bind]`) are now **editable + moveable + ＋Add box** via a **live-aware `applyBlock`** (an
-un-edited live box keeps its data binding; an edit makes it static); the **`#progress` KPI cards** are now
-collected as **move + delete only** (drag-reorder + hide/un-hide-via-the-ghost, never overwrite a live
-figure — `MOVE_ONLY_SECTIONS`); the **`#funding` budget table** is a **hide-only** block; and **＋Add box is
-now per-GRID** (a section with several grids — `#what-is-cpl`'s CPL-Bump `.stat-grid` vs its `.cols-2`,
-`#vision-goals` ×2, `#teams` ×3 — gets one Add box per grid, added boxes carry a `gN` grid signature so they
-materialize into the right grid). **Stable keys now exclude `[data-bind]` text** so KPI/Vet-Sprint keys don't
-churn when the daily metric changes (new KB note). **(2) Spin-through QA**: ~15 embedded links; a **WCAG 2.1
-AA** pass (darker `--faint`/`--mustard-text`, `:focus-visible`, `role=status` live chip, screen-reader
-labels on the statewide pseudo-table, table `th scope`+`<caption>`, link-purpose `aria-label`s,
-reduced-motion, `.sr-only`); **print fixes** (the navy budget header no longer prints white-on-white; URLs
-revealed in reference contexts); and a **new `⬇ Word` export** (`factsheet_word.js`, dependency-free
-DOM-to-`.doc` reflecting live data + Curate overrides — new KB note). All on the **unchanged
-`factsheet_overrides` table** (no schema change). **Surfaced, not auto-changed** (live/snapshot data + Sam's
-domain facts, all now Curate-editable): Statewide "12 program areas" vs 13 rows; could-adopt 116 (deduped) vs
-454 summed; 30,000 vs 34,000+ vets. Tests: `factsheet_edit` (35, updated), `factsheet_edit_sections` (19,
-new), `factsheet_word` (19, new); full suite **102 files green**. New KB notes:
-[`methodology-stable-dom-keys-exclude-live-text.md`](docs/kb-notes/methodology-stable-dom-keys-exclude-live-text.md),
-[`playbook-standalone-dom-to-word-export.md`](docs/kb-notes/playbook-standalone-dom-to-word-export.md). Full
-story: [`docs/fact_sheet_lessons.md`](docs/fact_sheet_lessons.md) (2026-06-28). **NEXT:
-[`docs/session_83_handoff.md`](docs/session_83_handoff.md)** — the standing queue (unverified-M-ID renumber,
-TMC acceptance engine, CPL-Assistant recommender ETL) + the 3 surfaced data items if Sam wants them
-reconciled.
+> **Session 82 narrative (SkyFlyer — Fact Sheet editable-everywhere + a11y + ⬇ Word export, PR #584) archived**
+> → full story in [`docs/fact_sheet_lessons.md`](docs/fact_sheet_lessons.md) (2026-06-28 sections); KB notes
+> `methodology-stable-dom-keys-exclude-live-text.md` + `playbook-standalone-dom-to-word-export.md`.
 
 ### Session 83 — StarNova: CO-platform strategy → Mission Control → team-phrase gate (2026-06-29)
 
@@ -2108,6 +2083,34 @@ right/wrong signal a write gives, no new exposure). Tests: `card_actions.test.js
 [`docs/session_84_handoff.md`](docs/session_84_handoff.md)** — confirm the team phrase works live + gut-check
 the Lift Off plan with Malone, then the strategy's NOW lane (institution-owned GitHub/Supabase, `cobi-auth.js`
 consolidation, required a11y CI, the DSA paperwork) + the standing engineering lanes.
+
+### Session 84 — SkyScribe: project soft-delete · lean Pages · computed progress bars (2026-06-29)
+
+Started "refine COBI a bit more"; the team using the dashboard surfaced a run of needs. **6 merged PRs.**
+- **Project soft-delete (#600)** — a reviewer / team-phrase user can **Table** (pause) or **Archive** (close)
+  a project; it leaves the live priority surfaces and moves to a collapsed **"Tabled & Archived"** section,
+  reversible (♻ Restore). New Supabase **`project_lifecycle`** overlay (absence of a row = active; write gated
+  `is_allowed_reviewer() OR team_pass_ok()`) + the committed `kb/project_lifecycle.json` ledger (the "noted in
+  the KB" record) + static `project_lifecycle.js` (the `card_updates.js` overlay pattern). **Wired across ALL
+  surfaces** (#605): the generator excludes tabled from the grid, `CPL_DATA.projects`, the Annual Workplan
+  tables, AND `build_activity_kpis` (so they drop from the Activity Metrics cards + the RACI matrix); the
+  client live-hides each surface pre-regen (`raci.js` filters `buildItems` by the overlay).
+- **Pages deploy fixed + leaned** — Sam's Jekyll build was hung on the 553 MB repo; **`.nojekyll` (#601)**
+  unstuck it, then a **custom lean `pages.yml` (#602)** (`git archive` → prune internal-only `kb/` staging /
+  alias maps / build inputs → assert every served path survives → upload + deploy) cut the published site to
+  **~192 MB (−65%)**, validated 0 served files dropped. Sam switched Settings → Pages → Source to "GitHub
+  Actions"; triggers = push + **`workflow_run` on "Daily CPL Dashboard"** (the cron's `GITHUB_TOKEN` push
+  doesn't self-trigger) + dispatch — all three verified green.
+- **Computed progress bars (#604)** — the Activity KPI card bar now computes **Goal (blue) + Stretch (gold)**
+  from `current ÷ current-fiscal-year target` (was the manual `percent_complete`); manual fallback where no
+  numeric/ladder. 1.1 reads Goal 200% ✓ / Stretch 100% ✓.
+- **Scoped, build next session:** the Annual Workplan tab as the **authoritative source** — hybrid Current
+  (live for the 5 `pid_to_kpi_key`-mapped, manual-editable for the rest) + editable titles (single
+  `projects.name` store). Decisions locked → [`docs/annual_workplan_authoritative_scope.md`](docs/annual_workplan_authoritative_scope.md).
+
+Suite **109 files green**. Full story: [`docs/project_lifecycle_lessons.md`](docs/project_lifecycle_lessons.md)
++ [`docs/pages_lean_deploy_scope.md`](docs/pages_lean_deploy_scope.md). M-ID pipeline did NOT move
+(`#tab-pipeline` untouched). **NEXT: [`docs/session_85_handoff.md`](docs/session_85_handoff.md).**
 
 ---
 
