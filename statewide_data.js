@@ -35535,6 +35535,153 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPSAS-ASLA14-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ASLA14-1-001"
+      ],
+      "title": "AP Spanish Literature and Culture (Score 5)",
+      "unified_title": "AP Spanish Literature and Culture (Score 5)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Spanish Literature and Culture (Score 5)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "College of the Canyons"
+      ],
+      "potential": 99,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 100,
+      "credit_recs": [
+        {
+          "course": "SPAN 101",
+          "credit": "5 hours in Elementary Spanish I"
+        },
+        {
+          "course": "SPAN 102",
+          "credit": "5 hours in Elementary Spanish II"
+        },
+        {
+          "course": "SPAN 201",
+          "credit": "5 hours in Intermediate Spanish I"
+        },
+        {
+          "course": "SPAN 202",
+          "credit": "5 hours in Intermediate Spanish II"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPCxS-PAPO-1-001",
       "exhibit_ids": [
         "MAPCxS-PAPO-1-001"
@@ -48280,6 +48427,214 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPSAM-SDLP-1-001|MAPSAM-SDLP1-1-001|MAPSAM-SDLP2-1-001|MAPSAM-SDLP3-1-001|MAPSAM-SDLP4-1-001|MAPSAM-SDLP5-1-001",
+      "exhibit_ids": [
+        "MAPSAM-SDLP-1-001",
+        "MAPSAM-SDLP1-1-001",
+        "MAPSAM-SDLP2-1-001",
+        "MAPSAM-SDLP3-1-001",
+        "MAPSAM-SDLP4-1-001",
+        "MAPSAM-SDLP5-1-001"
+      ],
+      "title": "Defense Language Proficiency Test (DLPT) — Spanish",
+      "unified_title": "Defense Language Proficiency Test (DLPT) — Spanish",
+      "is_classified": true,
+      "issuing_agency": "Defense Language Institute Foreign Language Center (DLIFLC)",
+      "training_agency": "",
+      "confidence_title": 0.9,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Spanish Defense Language Proficiency Test (DLPT) Score 1",
+        "Spanish Defense Language Proficiency Test (DLPT) Score 1+",
+        "Spanish Defense Language Proficiency Test (DLPT) Score 2",
+        "Spanish Defense Language Proficiency Test (DLPT) Score 2+ (Heritage Speakers)",
+        "Spanish Defense Language Proficiency Test (DLPT) Score 3 (Heritage Speakers)",
+        "Spanish Defense Language Proficiency Test (DLPT) Scores 0+ to 1"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 5,
+      "adopter_names": [
+        "Bakersfield College",
+        "Copper Mountain College",
+        "Norco College",
+        "Solano Community College",
+        "Woodland Community College"
+      ],
+      "potential": 93,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College"
+      ],
+      "total_addressable": 98,
+      "credit_recs": [
+        {
+          "course": "SPAN 1",
+          "credit": "4 hours in Elementary Spanish 1"
+        },
+        {
+          "course": "RCCD GE-A RCCD GE Area 3",
+          "credit": "4 hours in Elementary Spanish 1"
+        },
+        {
+          "course": "SPAN 001",
+          "credit": "4 hours in Elementary Spanish I"
+        },
+        {
+          "course": "SPAN 002",
+          "credit": "4 hours in Elementary Spanish II"
+        },
+        {
+          "course": "SPAN 1",
+          "credit": "4 hours in Elementary Spanish I"
+        },
+        {
+          "course": "SPAN 2",
+          "credit": "4 hours in Elementary Spanish II"
+        },
+        {
+          "course": "SPAN B1",
+          "credit": "4 hours in Elementary Spanish I"
+        },
+        {
+          "course": "RCCD GE-A RCCD GE Area 3",
+          "credit": "4 hours in Elementary Spanish I"
+        },
+        {
+          "course": "RCCD GE-A RCCD GE Area 3",
+          "credit": "4 hours in Elementary Spanish II"
+        },
+        {
+          "course": "SPAN 20A",
+          "credit": "4 hours in Spanish for Heritage Speakers I"
+        },
+        {
+          "course": "RCCD GE-A RCCD GE Area 3",
+          "credit": "4 hours in Spanish for Heritage Speakers I"
+        },
+        {
+          "course": "RCCD GE-A RCCD GE Area 3",
+          "credit": "4 hours in Spanish for Heritage Speakers II"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "4 hours in Elementary Spanish 1",
+          "cid": ""
+        },
+        {
+          "credit": "4 hours in Elementary Spanish I",
+          "cid": "SPAN 100"
+        },
+        {
+          "credit": "4 hours in Elementary Spanish II",
+          "cid": ""
+        },
+        {
+          "credit": "4 hours in Spanish for Heritage Speakers I",
+          "cid": ""
+        },
+        {
+          "credit": "4 hours in Spanish for Heritage Speakers II",
+          "cid": ""
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPCXS-CBES2-1-001|MAPCxS-ISIS-1-001",
       "exhibit_ids": [
         "MAPCXS-CBES2-1-001",
@@ -50080,218 +50435,6 @@ window.CPL_STATEWIDE = {
         }
       ],
       "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPSAM-SDLP-1-001|MAPSAM-SDLP1-1-001|MAPSAM-SDLP2-1-001|MAPSAM-SDLP3-1-001|MAPSAM-SDLP4-1-001|MAPSAM-SDLP5-1-001",
-      "exhibit_ids": [
-        "MAPSAM-SDLP-1-001",
-        "MAPSAM-SDLP1-1-001",
-        "MAPSAM-SDLP2-1-001",
-        "MAPSAM-SDLP3-1-001",
-        "MAPSAM-SDLP4-1-001",
-        "MAPSAM-SDLP5-1-001"
-      ],
-      "title": "Defense Language Proficiency Test (DLPT) — Spanish",
-      "unified_title": "Defense Language Proficiency Test (DLPT) — Spanish",
-      "is_classified": true,
-      "issuing_agency": "Defense Language Institute Foreign Language Center (DLIFLC)",
-      "training_agency": "",
-      "confidence_title": 0.9,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Spanish Defense Language Proficiency Test (DLPT) Score 1",
-        "Spanish Defense Language Proficiency Test (DLPT) Score 1+",
-        "Spanish Defense Language Proficiency Test (DLPT) Score 2",
-        "Spanish Defense Language Proficiency Test (DLPT) Score 2+ (Heritage Speakers)",
-        "Spanish Defense Language Proficiency Test (DLPT) Score 3 (Heritage Speakers)",
-        "Spanish Defense Language Proficiency Test (DLPT) Scores 0+ to 1"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Foreign Languages",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 6,
-      "adopter_names": [
-        "Bakersfield College",
-        "College of the Canyons",
-        "Copper Mountain College",
-        "Norco College",
-        "Solano Community College",
-        "Woodland Community College"
-      ],
-      "potential": 92,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "West Los Angeles College",
-        "West Valley College"
-      ],
-      "total_addressable": 98,
-      "credit_recs": [
-        {
-          "course": "SPAN 1",
-          "credit": "4 hours in Elementary Spanish 1"
-        },
-        {
-          "course": "RCCD GE-A RCCD GE Area 3",
-          "credit": "4 hours in Elementary Spanish 1"
-        },
-        {
-          "course": "SPAN 001",
-          "credit": "4 hours in Elementary Spanish I"
-        },
-        {
-          "course": "SPAN 002",
-          "credit": "4 hours in Elementary Spanish II"
-        },
-        {
-          "course": "SPAN 1",
-          "credit": "4 hours in Elementary Spanish I"
-        },
-        {
-          "course": "SPAN 2",
-          "credit": "4 hours in Elementary Spanish II"
-        },
-        {
-          "course": "SPAN B1",
-          "credit": "4 hours in Elementary Spanish I"
-        },
-        {
-          "course": "SPAN 101",
-          "credit": "4 hours in Elementary Spanish I"
-        },
-        {
-          "course": "RCCD GE-A RCCD GE Area 3",
-          "credit": "4 hours in Elementary Spanish I"
-        },
-        {
-          "course": "RCCD GE-A RCCD GE Area 3",
-          "credit": "4 hours in Elementary Spanish II"
-        },
-        {
-          "course": "SPAN 20A",
-          "credit": "4 hours in Spanish for Heritage Speakers I"
-        },
-        {
-          "course": "RCCD GE-A RCCD GE Area 3",
-          "credit": "4 hours in Spanish for Heritage Speakers I"
-        },
-        {
-          "course": "RCCD GE-A RCCD GE Area 3",
-          "credit": "4 hours in Spanish for Heritage Speakers II"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "4 hours in Elementary Spanish 1",
-          "cid": ""
-        },
-        {
-          "credit": "4 hours in Elementary Spanish I",
-          "cid": "SPAN 100"
-        },
-        {
-          "credit": "4 hours in Elementary Spanish II",
-          "cid": ""
-        },
-        {
-          "credit": "4 hours in Spanish for Heritage Speakers I",
-          "cid": ""
-        },
-        {
-          "credit": "4 hours in Spanish for Heritage Speakers II",
-          "cid": ""
-        }
-      ]
     },
     {
       "exhibit_id": "MAPCXS-M1S1-1-001",
@@ -174794,87 +174937,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CFFP-1-001",
-      "exhibit_ids": [
-        "MAPICA-CFFP-1-001"
-      ],
-      "title": "Paramedic Journeyperson Certificate",
-      "unified_title": "Paramedic Journeyperson Certificate",
-      "is_classified": true,
-      "issuing_agency": "California Joint Apprenticeship Committee (Cal-JAC)",
-      "training_agency": "",
-      "confidence_title": 0.9,
-      "confidence_issuer": 0.95,
-      "quality_flag": "",
-      "raw_titles": [
-        "Cal-JAC Paramedic Journeyperson Certificate"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Health",
-      "sector": "Health",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 2,
-      "adopter_names": [
-        "Chaffey College",
-        "College of the Canyons"
-      ],
-      "potential": 31,
-      "potential_names": [
-        "Barstow Community College",
-        "Cabrillo College",
-        "Chabot College",
-        "City College of San Francisco",
-        "College of Marin",
-        "College of the Desert",
-        "Columbia College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "East Los Angeles College",
-        "Foothill College",
-        "Las Positas College",
-        "Los Angeles Harbor College",
-        "Los Angeles Southwest College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "Shasta College",
-        "Sierra College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "Woodland Community College"
-      ],
-      "total_addressable": 33,
-      "credit_recs": [
-        {
-          "course": "EMT 11",
-          "credit": "8 hours in Emergency Medical Technician"
-        },
-        {
-          "course": "EMT 405",
-          "credit": "8 hours in Emergency Medical Technician"
-        },
-        {
-          "course": "HLHSCI 151",
-          "credit": "8 hours in Emergency Medical Technician"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "8 hours in Emergency Medical Technician",
-          "cid": ""
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPICI-CPC2-1-001",
       "exhibit_ids": [
         "MAPICI-CPC2-1-001"
@@ -175069,6 +175131,82 @@ window.CPL_STATEWIDE = {
         }
       ],
       "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CFFP-1-001",
+      "exhibit_ids": [
+        "MAPICA-CFFP-1-001"
+      ],
+      "title": "Paramedic Journeyperson Certificate",
+      "unified_title": "Paramedic Journeyperson Certificate",
+      "is_classified": true,
+      "issuing_agency": "California Joint Apprenticeship Committee (Cal-JAC)",
+      "training_agency": "",
+      "confidence_title": 0.9,
+      "confidence_issuer": 0.95,
+      "quality_flag": "",
+      "raw_titles": [
+        "Cal-JAC Paramedic Journeyperson Certificate"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Health",
+      "sector": "Health",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 1,
+      "adopter_names": [
+        "Chaffey College"
+      ],
+      "potential": 31,
+      "potential_names": [
+        "Barstow Community College",
+        "Cabrillo College",
+        "Chabot College",
+        "City College of San Francisco",
+        "College of Marin",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "East Los Angeles College",
+        "Foothill College",
+        "Las Positas College",
+        "Los Angeles Harbor College",
+        "Los Angeles Southwest College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 32,
+      "credit_recs": [
+        {
+          "course": "EMT 11",
+          "credit": "8 hours in Emergency Medical Technician"
+        },
+        {
+          "course": "EMT 405",
+          "credit": "8 hours in Emergency Medical Technician"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "8 hours in Emergency Medical Technician",
+          "cid": ""
+        }
+      ]
     },
     {
       "exhibit_id": "MAPCBEA-C2-1-001",
@@ -182230,10 +182368,6 @@ window.CPL_STATEWIDE = {
         },
         {
           "course": "SPAN B1",
-          "credit": "4 hours in Elementary Spanish I"
-        },
-        {
-          "course": "SPAN 101",
           "credit": "4 hours in Elementary Spanish I"
         },
         {
@@ -217371,6 +217505,53 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPICA-MPC1-1-001",
+      "exhibit_ids": [
+        "MAPICA-MPC1-1-001"
+      ],
+      "title": "MC3 Pre-Apprenticeship Core 120",
+      "unified_title": "MC3 Pre-Apprenticeship Core 120",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "MC3 Pre-Apprenticeship Core 120"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 11,
+      "potential_names": [
+        "American River College",
+        "College of the Redwoods",
+        "Laney College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Norco College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College"
+      ],
+      "total_addressable": 12,
+      "credit_recs": [
+        {
+          "course": "CNST B1",
+          "credit": "3 hours in Introduction to Construction"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPCBEN-SOAE-1-001",
       "exhibit_ids": [
         "MAPCBEN-SOAE-1-001"
@@ -217938,6 +218119,106 @@ window.CPL_STATEWIDE = {
         {
           "course": "IET 411",
           "credit": "3 hours in Programmable Logic Controllers"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-MP1-1-001",
+      "exhibit_ids": [
+        "MAPICA-MP1-1-001"
+      ],
+      "title": "MC3 Pre-Apprenticeship Essentials 121",
+      "unified_title": "MC3 Pre-Apprenticeship Essentials 121",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "MC3 Pre-Apprenticeship Essentials 121"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 10,
+      "potential_names": [
+        "Chabot College",
+        "College of the Canyons",
+        "Cuyamaca College",
+        "Las Positas College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Napa Valley College",
+        "Palomar College",
+        "Southwestern College",
+        "Taft College"
+      ],
+      "total_addressable": 11,
+      "credit_recs": [
+        {
+          "course": "OSRM B50",
+          "credit": "1 hour in General Industrial Safety"
+        },
+        {
+          "course": "OSRM B56",
+          "credit": "0.5 hours in Forklift Training"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-MP3-1-001",
+      "exhibit_ids": [
+        "MAPICA-MP3-1-001"
+      ],
+      "title": "MC3 Pre-Apprenticeship Essentials 321",
+      "unified_title": "MC3 Pre-Apprenticeship Essentials 321",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "MC3 Pre-Apprenticeship Essentials 321"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 10,
+      "potential_names": [
+        "Chabot College",
+        "College of the Canyons",
+        "Cuyamaca College",
+        "Las Positas College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Napa Valley College",
+        "Palomar College",
+        "Southwestern College",
+        "Taft College"
+      ],
+      "total_addressable": 11,
+      "credit_recs": [
+        {
+          "course": "OSRM B50NC",
+          "credit": "0 hours in General Industrial Safety"
+        },
+        {
+          "course": "OSRM B56NC",
+          "credit": "0 hours in Forklift Training"
         }
       ],
       "authoritative_recs": []
@@ -236398,12 +236679,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Bakersfield College",
-        "credit_recs": 254,
-        "exhibits": 141,
+        "credit_recs": 259,
+        "exhibits": 144,
         "disciplines": 10,
         "ccc_collaborative": 90,
-        "industry_certs": 153,
-        "pct": 2.0
+        "industry_certs": 158,
+        "pct": 2.1
       },
       {
         "college": "Moreno Valley College",
@@ -236955,21 +237236,21 @@ window.CPL_STATEWIDE = {
         "pct": 0.5
       },
       {
-        "college": "College of the Canyons",
-        "credit_recs": 57,
-        "exhibits": 50,
-        "disciplines": 4,
-        "ccc_collaborative": 4,
-        "industry_certs": 1,
-        "pct": 0.5
-      },
-      {
         "college": "Fresno City College",
         "credit_recs": 56,
         "exhibits": 47,
         "disciplines": 4,
         "ccc_collaborative": 2,
         "industry_certs": 2,
+        "pct": 0.4
+      },
+      {
+        "college": "College of the Canyons",
+        "credit_recs": 56,
+        "exhibits": 46,
+        "disciplines": 3,
+        "ccc_collaborative": 0,
+        "industry_certs": 0,
         "pct": 0.4
       },
       {
@@ -237219,9 +237500,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 2204,
-        "exhibits": 1055,
-        "courses": 1160,
+        "credit_recs": 2209,
+        "exhibits": 1058,
+        "courses": 1165,
         "colleges": 52,
         "ccc_collaborative": 499,
         "pct": 17.6
@@ -237255,11 +237536,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Health",
-        "credit_recs": 423,
+        "credit_recs": 422,
         "exhibits": 195,
-        "courses": 274,
-        "colleges": 45,
-        "ccc_collaborative": 32,
+        "courses": 273,
+        "colleges": 44,
+        "ccc_collaborative": 31,
         "pct": 3.4
       },
       {
@@ -237274,10 +237555,10 @@ window.CPL_STATEWIDE = {
       {
         "discipline": "Foreign Languages",
         "credit_recs": 238,
-        "exhibits": 110,
+        "exhibits": 111,
         "courses": 111,
         "colleges": 29,
-        "ccc_collaborative": 26,
+        "ccc_collaborative": 23,
         "pct": 1.9
       },
       {
@@ -237420,15 +237701,15 @@ window.CPL_STATEWIDE = {
       {
         "cpl_type": "Standardized Assessment",
         "credit_recs": 6705,
-        "exhibits": 2059,
+        "exhibits": 2060,
         "colleges": 85,
         "pct": 53.5
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3580,
-        "exhibits": 1173,
-        "colleges": 79,
+        "credit_recs": 3584,
+        "exhibits": 1176,
+        "colleges": 78,
         "pct": 28.6
       },
       {
@@ -237463,8 +237744,8 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 7744,
-        "exhibits": 2761,
+        "credit_recs": 7747,
+        "exhibits": 2762,
         "colleges": 91,
         "pct": 61.8
       },
@@ -237477,9 +237758,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1455,
-        "exhibits": 582,
-        "colleges": 43,
+        "credit_recs": 1459,
+        "exhibits": 585,
+        "colleges": 42,
         "pct": 11.6
       },
       {
@@ -237498,9 +237779,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Military training (M)",
-        "credit_recs": 161,
+        "credit_recs": 158,
         "exhibits": 65,
-        "colleges": 34,
+        "colleges": 33,
         "pct": 1.3
       },
       {
@@ -237535,17 +237816,17 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 10998,
-        "exhibits": 4605,
+        "credit_recs": 11006,
+        "exhibits": 4609,
         "colleges": 99,
         "disciplines": 23,
         "pct": 87.8
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1304,
+        "credit_recs": 1300,
         "exhibits": 163,
-        "colleges": 63,
+        "colleges": 62,
         "disciplines": 9,
         "pct": 10.4
       },
@@ -237961,6 +238242,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-06-29T16:14:23",
-  "total_credit_recs": 12527
+  "generated_at": "2026-06-29T23:17:26",
+  "total_credit_recs": 12531
 };
