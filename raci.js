@@ -156,24 +156,49 @@
     try { var p = localStorage.getItem(TEAM_PASS_KEY); if (p) return { teamPass: p, email: "(team)" }; } catch (e) {}
     return null;
   }
+  // Validate a candidate phrase SERVER-SIDE before trusting it: call the
+  // team_pass_ok() RPC (anon-granted; reads the x-team-pass header and compares
+  // against team_access inside Postgres). Returns Promise<bool>. This is why a
+  // wrong phrase never gets stored — the browser can't read the secret, so it
+  // asks the server "is this right?" the same way a write would (Sam, 2026-06-29).
+  function verifyPhrase(p) {
+    return fetch(SUPABASE_URL + "/rest/v1/rpc/team_pass_ok", {
+      method: "POST",
+      headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON,
+        "Content-Type": "application/json", "x-team-pass": p },
+      body: "{}"
+    }).then(function (r) { return r.ok ? r.json() : false; })
+      .then(function (v) { return v === true; }).catch(function () { return false; });
+  }
+  // Resolves to true only if the phrase is real; stores it + sets the session then.
   function unlockWithPhrase(p) {
     p = (p || "").trim();
-    if (!p) return false;
-    try { localStorage.setItem(TEAM_PASS_KEY, p); } catch (e) {}
-    state.sess = teamSession();
-    return !!state.sess;
+    if (!p) return Promise.resolve(false);
+    return verifyPhrase(p).then(function (ok) {
+      if (!ok) return false;
+      try { localStorage.setItem(TEAM_PASS_KEY, p); } catch (e) {}
+      state.sess = teamSession();
+      return !!state.sess;
+    });
   }
   // A compact "unlock editing with the team phrase" control, reusable inside any
   // popup so a visitor who arrives from a nudge email can unlock IN PLACE without
   // navigating to the RACI tab and back (Sam, 2026-06-29). `afterUnlock` runs once
-  // the phrase is stored (typically: re-open the same modal in edit mode).
+  // the phrase is verified + stored (typically: re-open the same modal in edit mode).
   function unlockBox(blurb, afterUnlock) {
     var inp = el("input", { type: "password", placeholder: "team phrase", "class": "raci-in" });
     var st = el("span", { "class": "raci-auth-msg" }, []);
     var btn = el("button", { "class": "raci-btn raci-btn-go" }, ["🔓 Unlock editing"]);
     function go() {
-      if (!unlockWithPhrase(inp.value)) { st.textContent = "Enter the team phrase."; return; }
-      if (afterUnlock) afterUnlock();
+      var p = (inp.value || "").trim();
+      if (!p) { st.textContent = "Enter the team phrase."; return; }
+      st.textContent = "Checking…"; btn.disabled = true;
+      unlockWithPhrase(p).then(function (ok) {
+        btn.disabled = false;
+        if (!ok) { st.textContent = "That phrase doesn't match — try again, or ask a reviewer for the current one."; return; }
+        st.textContent = "";
+        if (afterUnlock) afterUnlock();
+      });
     }
     btn.addEventListener("click", go);
     inp.addEventListener("keydown", function (e) { if (e.key === "Enter") go(); });
@@ -618,7 +643,18 @@
           // Let the Activity/Project card overlay (card_updates.js) refresh so the
           // just-posted update appears on the card face without a reload.
           try { window.dispatchEvent(new CustomEvent("cpl-item-updated", { detail: { key: k } })); } catch (e) {}
-        }).catch(function (e) { msg.textContent = e.message; save.disabled = false; });
+        }).catch(function (e) {
+          save.disabled = false;
+          // A 401/403 on a team-phrase session means the phrase was rotated since
+          // this browser stored it — drop the stale phrase + reopen so the entry
+          // box returns (the validated unlock won't re-store a bad one).
+          if (state.sess && state.sess.teamPass && /\b40[13]\b/.test(e.message || "")) {
+            try { localStorage.removeItem(TEAM_PASS_KEY); } catch (x) {}
+            state.sess = getSession(); render(); openUpdate(item);
+            return;
+          }
+          msg.textContent = e.message;
+        });
       });
       body.push(el("div", { "class": "raci-upd-h" }, ["Add an update"]),
         el("div", { "class": "raci-modal-sub" }, ["Reviewers only — braindump, let CC polish, then save."]),
@@ -1258,14 +1294,24 @@
     if (state.sess) {
       var who = state.sess.teamPass ? "team phrase" : (state.sess.email || "(no email)");
       w.appendChild(el("span", {}, ["✓ Editing unlocked (", who, ")"]));
+      // A magic-link reviewer (not a team-phrase user) can see + rotate the phrase.
+      if (!state.sess.teamPass) {
+        w.appendChild(el("button", { "class": "raci-btn", title: "View or change the shared team phrase", onclick: openPhraseAdmin }, ["⚙ Manage team phrase"]));
+      }
       w.appendChild(el("button", { "class": "raci-btn", onclick: function () { signOut(); load(render); } }, ["Lock"]));
     } else {
       var inp = el("input", { type: "password", placeholder: "team phrase", "class": "raci-in" });
       var st = el("span", { "class": "raci-auth-msg" }, []);
       var btn = el("button", { "class": "raci-btn raci-btn-go" }, ["🔓 Unlock editing"]);
       function tryUnlock() {
-        if (!unlockWithPhrase(inp.value)) { st.textContent = "Enter the team phrase."; return; }
-        load(render);   // wrong phrase surfaces as a clear error on the first save
+        var p = (inp.value || "").trim();
+        if (!p) { st.textContent = "Enter the team phrase."; return; }
+        st.textContent = "Checking…"; btn.disabled = true;
+        unlockWithPhrase(p).then(function (ok) {
+          btn.disabled = false;
+          if (!ok) { st.textContent = "That phrase doesn't match — ask a reviewer for the current one."; return; }
+          load(render);
+        });
       }
       btn.addEventListener("click", tryUnlock);
       inp.addEventListener("keydown", function (e) { if (e.key === "Enter") tryUnlock(); });
@@ -1273,6 +1319,41 @@
       w.appendChild(inp); w.appendChild(btn); w.appendChild(st);
     }
     return w;
+  }
+  // Reviewer-only admin: view + change the shared team phrase. Reads/writes
+  // team_access (gated by is_allowed_reviewer() RLS, so the public can't see it).
+  function openPhraseAdmin() {
+    if (!state.sess || state.sess.teamPass) { alert("Sign in as a reviewer to manage the team phrase."); return; }
+    var inp = el("input", { type: "text", "class": "raci-in", placeholder: "loading…" });
+    inp.disabled = true;
+    var msg = el("div", { "class": "raci-modal-msg" }, ["Loading the current phrase…"]);
+    var save = el("button", { "class": "raci-btn raci-btn-go" }, ["Save phrase"]);
+    // Fetch the current phrase (reviewer-gated read — refresh the token first).
+    ensureFresh().then(function (s) {
+      return fetch(SUPABASE_URL + "/rest/v1/team_access?id=eq.raci&select=secret", { headers: headersFor(s) });
+    }).then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("read " + r.status)); })
+      .then(function (rows) {
+        var cur = (rows && rows[0] && rows[0].secret) || "";
+        inp.value = cur; inp.disabled = false; inp.placeholder = "team phrase";
+        msg.textContent = "Anyone you share this with can edit. Changing it means the team re-enters the new phrase.";
+      })
+      .catch(function () { msg.textContent = "Couldn't load the phrase — are you a signed-in reviewer?"; });
+    save.addEventListener("click", function () {
+      var v = (inp.value || "").trim();
+      if (!v) { msg.textContent = "The phrase can't be empty."; return; }
+      msg.textContent = "Saving…"; save.disabled = true;
+      sbWrite("PATCH", "team_access?id=eq.raci", { secret: v, updated_at: new Date().toISOString() }, "return=minimal")
+        .then(function (r) {
+          if (!r.ok) throw new Error("save failed (" + r.status + ")");
+          // Keep the editor's own stored phrase (if any) in sync so they aren't locked out.
+          try { if (localStorage.getItem(TEAM_PASS_KEY)) localStorage.setItem(TEAM_PASS_KEY, v); } catch (e) {}
+          msg.textContent = "✓ Saved. Share the new phrase with the team."; save.disabled = false;
+        })
+        .catch(function (e) { msg.textContent = e.message; save.disabled = false; });
+    });
+    showModal("Manage team phrase", [
+      el("div", { "class": "raci-modal-sub" }, ["The shared phrase that unlocks editing of the RACI matrix, members, updates, nudges, and Mission Control. Reviewers only."]),
+      inp, msg], [save]);
   }
 
   // ─── CSS (var(--token), injected once) ─────────────────────────────────────

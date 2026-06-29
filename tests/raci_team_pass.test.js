@@ -26,10 +26,21 @@ check("raci.js no longer forces an email magic-link to edit", !/Sign in to edit/
 // The update composer offers the team phrase IN PLACE (email-link visitor unlocks
 // without leaving the popup) — not a dead "sign in elsewhere" message.
 check("update composer offers the team phrase in place", /unlockBox\(/.test(SRC) && !/Sign in \(CCCCO MAP\) to add an update/.test(SRC));
+// The phrase is VALIDATED server-side on entry (call the team_pass_ok RPC) so a
+// wrong phrase is rejected, never stored.
+check("phrase is verified via the team_pass_ok RPC before storing",
+  /rpc\/team_pass_ok/.test(SRC) && /function verifyPhrase/.test(SRC) && /verifyPhrase\(/.test(SRC));
+check("a wrong phrase is surfaced, not silently stored", /doesn't match/.test(SRC));
+// A reviewer-only admin can view + change the shared phrase.
+check("reviewer-only Manage-team-phrase admin exists", /Manage team phrase/.test(SRC) && /function openPhraseAdmin/.test(SRC));
+check("the admin is gated to magic-link reviewers (not team-phrase users)", /!state\.sess\.teamPass/.test(SRC));
 
 const SQL = fs.readFileSync("raci/supabase_raci.sql", "utf8");
 check("schema documents team_access + the server gate", /team_access/.test(SQL) && /team_pass_ok/.test(SQL));
 check("schema reads the x-team-pass header server-side", /request\.headers.*x-team-pass|x-team-pass/.test(SQL));
+check("schema gives reviewers read+update on team_access (anon still blocked)",
+  /ta_select on public\.team_access for select using \(is_allowed_reviewer\(\)\)/.test(SQL) &&
+  /ta_update on public\.team_access for update/.test(SQL));
 
 // ── Part B — behavior, loaded into jsdom ──
 const dom = new JSDOM("<!doctype html><html><head></head><body></body></html>",

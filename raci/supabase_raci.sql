@@ -122,10 +122,21 @@ create table if not exists public.team_access (
   secret      text not null,
   updated_at  timestamptz not null default now()
 );
-alter table public.team_access enable row level security;   -- (no anon policies on purpose)
+alter table public.team_access enable row level security;   -- (no ANON policies on purpose)
 insert into public.team_access (id, secret)
-  values ('raci', 'cpl-team-2026')   -- TEMPORARY — rotate via the UPDATE above
+  values ('raci', 'cpl-team-2026')   -- TEMPORARY — rotate via the UPDATE above / the admin UI
   on conflict (id) do nothing;
+
+-- Reviewer-only manage policies (StarNova, 2026-06-29 — team_access_reviewer_manage
+-- migration): a magic-link reviewer can READ + UPDATE the phrase from the RACI tab's
+-- "⚙ Manage team phrase" admin. The anon role still has NO policy here, so the secret
+-- stays unreadable to non-reviewer clients; team_pass_ok()/team_pass_check() are
+-- SECURITY DEFINER and bypass RLS regardless.
+drop policy if exists ta_select on public.team_access;
+create policy ta_select on public.team_access for select using (is_allowed_reviewer());
+drop policy if exists ta_update on public.team_access;
+create policy ta_update on public.team_access for update
+  using (is_allowed_reviewer()) with check (is_allowed_reviewer());
 
 create or replace function public.team_pass_check(p text)
   returns boolean language sql security definer stable set search_path = public as $$
@@ -143,6 +154,9 @@ create or replace function public.team_pass_ok()
   end;
 $$;
 grant execute on function public.team_pass_ok() to anon, authenticated;
+-- team_pass_ok() is also called as an RPC (POST /rest/v1/rpc/team_pass_ok with the
+-- x-team-pass header) by raci.js to VALIDATE a phrase before storing it, so a wrong
+-- phrase is rejected on entry instead of silently 401ing on the first save.
 
 -- The tm_write / ir_write / iu_insert / iu_update / iu_delete policies above are
 -- widened to `is_allowed_reviewer() OR team_pass_ok()` by the
