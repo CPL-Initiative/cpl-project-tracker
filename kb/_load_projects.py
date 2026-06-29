@@ -42,6 +42,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 SNAPSHOT_PATH = HERE / "projects_snapshot.json"
+LIFECYCLE_PATH = HERE / "project_lifecycle.json"
 
 SUPABASE_URL = os.environ.get(
     "SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co"
@@ -138,3 +139,103 @@ def load_projects_full() -> tuple[list[dict], str, str]:
         rows, fetched_at = _read_snapshot()
         print(f"[projects] Loaded {len(rows)} projects from snapshot (as of {fetched_at}).")
         return rows, fetched_at, "snapshot"
+
+
+# ── Project lifecycle overlay (soft-delete: Tabled / Archived) ────────────────
+# A small overlay on top of public.projects: one row per project a reviewer has
+# Tabled (paused) or Archived (done/cancelled). Absence of a row = active. The
+# generator uses it to drop a project from the live priority surfaces and render
+# it in a collapsed "Tabled & Archived" section instead. Resilient + never
+# fatal: on any failure the generator simply sees an empty overlay (all projects
+# active), and the committed kb/project_lifecycle.json is BOTH the offline
+# fallback AND the "noted in the KB" ledger that syncs into the Obsidian vault.
+_LIFECYCLE_COLUMNS = "project_id,state,reason,updated_by,updated_at"
+
+
+def _fetch_lifecycle_supabase() -> list[dict]:
+    if not SUPABASE_KEY:
+        raise RuntimeError("SUPABASE_SERVICE_KEY not set")
+    endpoint = (
+        f"{SUPABASE_URL}/rest/v1/project_lifecycle"
+        f"?select={_LIFECYCLE_COLUMNS}&order=project_id"
+    )
+    req = urllib.request.Request(
+        endpoint,
+        headers={
+            "apikey": SUPABASE_KEY,
+            "Authorization": f"Bearer {SUPABASE_KEY}",
+            "Accept": "application/json",
+        },
+    )
+    with urllib.request.urlopen(req, timeout=30) as r:
+        rows = json.load(r)
+    if not isinstance(rows, list):
+        raise RuntimeError("project_lifecycle returned a non-list payload")
+    return rows
+
+
+def _write_lifecycle_ledger(rows: list[dict], fetched_at: str) -> None:
+    ledger = {
+        "_about": (
+            "Committed ledger of public.project_lifecycle — projects that have "
+            "been Tabled (paused) or Archived (done/cancelled). Written by "
+            "kb/_load_projects.py after a successful Supabase fetch (the daily "
+            "cron commits it). It is BOTH the offline fallback for the dashboard "
+            "regen AND the durable 'noted in the KB' record that syncs into the "
+            "Obsidian vault, so a removed project never reads as an active "
+            "priority. Empty `rows` = every project is active."
+        ),
+        "_fetched_at": fetched_at,
+        "_source_table": "public.project_lifecycle",
+        "row_count": len(rows),
+        "rows": rows,
+    }
+    LIFECYCLE_PATH.write_text(
+        json.dumps(ledger, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+
+
+def _read_lifecycle_ledger() -> list[dict]:
+    if not LIFECYCLE_PATH.exists():
+        return []
+    try:
+        data = json.loads(LIFECYCLE_PATH.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return []
+    rows = data.get("rows") if isinstance(data, dict) else None
+    return rows or []
+
+
+def load_project_lifecycle() -> dict[str, dict]:
+    """Return {project_id: {state, reason, updated_by, updated_at}} for every
+    Tabled/Archived project. Tries Supabase first (service key) and, on success,
+    refreshes the committed kb/project_lifecycle.json ledger; on any failure
+    (no key, outage) falls back to that committed ledger; if neither is
+    available, returns {} (every project active). Never raises — a missing
+    overlay must never break the daily regen.
+    """
+    try:
+        rows = _fetch_lifecycle_supabase()
+        fetched_at = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        _write_lifecycle_ledger(rows, fetched_at)
+        print(f"[lifecycle] Loaded {len(rows)} tabled/archived project(s) from Supabase.")
+    except Exception as e:
+        rows = _read_lifecycle_ledger()
+        print(
+            f"[lifecycle] Supabase fetch unavailable ({e}); using committed ledger "
+            f"({len(rows)} tabled/archived project(s))."
+        )
+    out = {}
+    for r in rows:
+        pid = r.get("project_id")
+        state = r.get("state")
+        if not pid or state not in ("tabled", "archived"):
+            continue
+        out[str(pid)] = {
+            "state": state,
+            "reason": r.get("reason") or "",
+            "updated_by": r.get("updated_by") or "",
+            "updated_at": r.get("updated_at") or "",
+        }
+    return out

@@ -2399,7 +2399,8 @@ def render_workplan_goals_html(
 def _render_single_project_card(p, update_log=None, attachments=None,
                                 assoc_records_by_project=None,
                                 activity_options_json=None,
-                                sb_activity_labels=None):
+                                sb_activity_labels=None,
+                                lifecycle_state=None):
     """Render a single project card HTML string with full notes history.
 
     assoc_records_by_project / activity_options_json / sb_activity_labels
@@ -2589,7 +2590,17 @@ def _render_single_project_card(p, update_log=None, attachments=None,
             cell_style="font-size:0.72rem;color:#666;font-weight:400;margin:0.15rem 0 0.6rem 0;",
         )
 
-    return f'''        <div class="project-card" data-pid="{html_escape(str(pid), quote=True)}" data-activity="{html_escape(str(activity), quote=True)}" data-v2030="{html_escape(str(v2030), quote=True)}" data-goal="{html_escape(str(goal), quote=True)}" data-status="{html_escape(str(status), quote=True)}" data-lead="{html_escape(str(lead), quote=True)}">
+    # Tabled / Archived projects (project_lifecycle overlay) render as a HIDDEN
+    # full card in the grid — data-lifecycle marks them so dashboard_filters.js +
+    # the project count skip them, and project_lifecycle.js can un-hide one on a
+    # live Restore. The visible representation lives in the collapsed
+    # "Tabled & Archived" section (render_tabled_archived_section).
+    lifecycle_attr = ""
+    if lifecycle_state in ("tabled", "archived"):
+        lifecycle_attr = (
+            f' data-lifecycle="{lifecycle_state}" style="display:none;"'
+        )
+    return f'''        <div class="project-card" data-pid="{html_escape(str(pid), quote=True)}" data-activity="{html_escape(str(activity), quote=True)}" data-v2030="{html_escape(str(v2030), quote=True)}" data-goal="{html_escape(str(goal), quote=True)}" data-status="{html_escape(str(status), quote=True)}" data-lead="{html_escape(str(lead), quote=True)}"{lifecycle_attr}>
             <div class="project-name">{_ed("name", name, name)}</div>
 {('            ' + assoc_line + chr(10)) if assoc_line else ''}            <div class="project-desc">{_ed("description", desc, desc, multiline=True)}</div>
             <span class="status-badge status-{css_class}">{_ed("status", status, status)}</span>
@@ -2678,7 +2689,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
 def render_projects_grid_html(projects, update_log=None, attachments=None,
                               data_source_stamp=None,
                               assoc_records_by_project=None,
-                              activities=None):
+                              activities=None, lifecycle=None):
     """
     Generate static HTML for the projects grid with cards,
     grouped under Goal headers (Goal 1, Goal 2, Goal 3).
@@ -2748,6 +2759,12 @@ def render_projects_grid_html(projects, update_log=None, attachments=None,
         )
     for goal_key in sorted_goals:
         goal_projects = goal_groups[goal_key]
+        # Header counts reflect ACTIVE projects only (tabled/archived render as
+        # hidden cards in the grid + appear in the collapsed section instead).
+        n_active = len([
+            gp for gp in goal_projects
+            if (lifecycle or {}).get(gp["id"], {}).get("state") not in ("tabled", "archived")
+        ])
         goal_info = CPL_GOALS.get(goal_key, {})
         goal_title = goal_info.get("title", "")
         goal_target = goal_info.get("target", "")
@@ -2772,7 +2789,7 @@ def render_projects_grid_html(projects, update_log=None, attachments=None,
                      f'                <span style="color:var(--gold-accent);font-weight:700;font-size:1rem;white-space:nowrap;">{goal_key}</span>\n'
                      f'                <span style="color:#fff;font-size:0.95rem;font-weight:600;">{goal_title}</span>\n'
                      f'                <span style="color:rgba(255,255,255,0.5);font-size:0.8rem;margin-left:auto;white-space:nowrap;">'
-                     f'{len(goal_projects)} projects</span>\n'
+                     f'{n_active} projects</span>\n'
                      f'            </div>\n'
                      f'            <div style="color:rgba(255,255,255,0.75);font-size:0.78rem;line-height:1.3;">{goal_target}</div>\n'
                      f'            {bullets_html}\n'
@@ -2781,7 +2798,7 @@ def render_projects_grid_html(projects, update_log=None, attachments=None,
         else:
             html += (f'        <div class="goal-header" data-goal-key="Other" style="margin:1.5rem 0 0.75rem 0;padding:0.6rem 1rem;'
                      f'background:#888;border-radius:8px;color:#fff;font-weight:700;">\n'
-                     f'            Other Projects ({len(goal_projects)})\n'
+                     f'            Other Projects ({n_active})\n'
                      f'        </div>\n')
 
         # Project cards grid for this goal
@@ -2792,10 +2809,94 @@ def render_projects_grid_html(projects, update_log=None, attachments=None,
                 assoc_records_by_project=assoc_records_by_project,
                 activity_options_json=activity_options_json,
                 sb_activity_labels=sb_activity_labels,
+                lifecycle_state=(lifecycle or {}).get(p["id"], {}).get("state"),
             )
         html += '        </div>\n'
 
     return html
+
+
+def render_tabled_archived_section(inactive_projects, lifecycle):
+    """Collapsed "Tabled & Archived" section listing every soft-deleted project
+    with its state, reason, and date — the auditable, reversible record of a
+    removed project (Sam, Session 84). `inactive_projects` are the project dicts
+    whose id is in `lifecycle`; each renders a compact card with a (JS-wired,
+    reviewer/team-phrase-gated) ♻ Restore control. Returns "" when none.
+
+    project_lifecycle.js injects the richer CSS + shows the Restore button when
+    signed in; the inline styles here keep it presentable with JS disabled."""
+    if not inactive_projects:
+        return ""
+
+    def _badge(state):
+        if state == "archived":
+            return ('<span class="tabled-badge" data-state="archived" '
+                    'style="background:#6b7280;color:#fff;font-size:0.6rem;font-weight:700;'
+                    'padding:0.1rem 0.4rem;border-radius:3px;text-transform:uppercase;'
+                    'letter-spacing:0.03em;">Archived</span>')
+        return ('<span class="tabled-badge" data-state="tabled" '
+                'style="background:var(--gold-accent,#E3B341);color:#3a2e00;font-size:0.6rem;'
+                'font-weight:700;padding:0.1rem 0.4rem;border-radius:3px;text-transform:uppercase;'
+                'letter-spacing:0.03em;">Tabled</span>')
+
+    # Newest removals first.
+    rows = sorted(
+        inactive_projects,
+        key=lambda p: lifecycle.get(p["id"], {}).get("updated_at", ""),
+        reverse=True,
+    )
+    cards = ""
+    for p in rows:
+        meta = lifecycle.get(p["id"], {})
+        state = meta.get("state", "tabled")
+        reason = (meta.get("reason") or "").strip()
+        by = (meta.get("updated_by") or "").strip()
+        when = (meta.get("updated_at") or "")[:10]
+        meta_bits = []
+        if when:
+            meta_bits.append("Since " + when)
+        if by:
+            meta_bits.append(html_escape(by))
+        meta_line = " · ".join(meta_bits)
+        reason_html = (
+            f'<div class="tabled-reason" style="font-size:0.78rem;color:#444;'
+            f'margin:0.3rem 0;line-height:1.4;">{html_escape(reason)}</div>'
+            if reason else ''
+        )
+        cards += (
+            f'            <div class="tabled-card" data-pid="{html_escape(str(p["id"]), quote=True)}" '
+            f'data-lifecycle="{html_escape(state, quote=True)}" '
+            f'style="border:1px solid #e3e3e3;border-radius:8px;padding:0.7rem 0.9rem;background:#fafafa;">\n'
+            f'                <div class="tabled-card-head" style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">\n'
+            f'                    {_badge(state)}\n'
+            f'                    <span class="tabled-name" style="font-weight:600;color:var(--navy-primary,#16324f);">'
+            f'{html_escape(str(p.get("name", "")))}'
+            f' <span style="color:#999;font-weight:400;font-size:0.75rem;">{html_escape(str(p["id"]))}</span></span>\n'
+            f'                </div>\n'
+            f'{reason_html}'
+            f'                <div class="tabled-meta" style="font-size:0.68rem;color:#888;font-style:italic;">{meta_line}</div>\n'
+            f'                <button type="button" class="tabled-restore" data-pid="{html_escape(str(p["id"]), quote=True)}" '
+            f'style="display:none;margin-top:0.5rem;font-size:0.72rem;background:transparent;border:1px solid #ccc;'
+            f'border-radius:4px;padding:0.25rem 0.6rem;cursor:pointer;color:var(--text-strong,#1a1a1a);">♻ Restore to active</button>\n'
+            f'            </div>\n'
+        )
+
+    return (
+        '\n        <details class="tabled-archived-wrap" '
+        'style="margin-top:1.5rem;border:1px solid #e3e3e3;border-radius:10px;padding:0.5rem 1rem;background:#fff;">\n'
+        '            <summary class="tabled-archived-summary" '
+        'style="cursor:pointer;font-weight:700;color:var(--navy-primary,#16324f);font-size:0.95rem;list-style:none;">'
+        f'🗄 Tabled &amp; Archived <span class="tabled-archived-count" style="color:#888;font-weight:400;font-size:0.85rem;">({len(rows)})</span></summary>\n'
+        '            <div class="tabled-archived-note" '
+        'style="font-size:0.76rem;color:#666;margin:0.5rem 0 0.8rem 0;line-height:1.4;">'
+        'Paused or closed projects — kept for the record but excluded from active priorities, '
+        'reports, and the RACI matrix. Sign in (or unlock with the team phrase) to Restore one.</div>\n'
+        '            <div class="tabled-archived-grid" '
+        'style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0.7rem;">\n'
+        + cards +
+        '            </div>\n'
+        '        </details>\n'
+    )
 
 
 def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=None, config_overrides=None):
@@ -10404,6 +10505,26 @@ def main():
     # "Update" deep-link it fed was removed in Excel-retirement P1).
     # Behavior-preserving — see kb/_test_projects_parity.py.
     projects, projects_fetched_at, projects_source = load_projects(wb)
+    # Project lifecycle overlay (soft-delete: Tabled / Archived). {id: {state,
+    # reason, updated_by, updated_at}}. Non-active projects are dropped from the
+    # live priority surfaces (grid cards, CPL_DATA.projects → RACI / Annual
+    # Report / custom reports, the Annual Workplan Goals table) and rendered in a
+    # collapsed "Tabled & Archived" section instead. Never fatal — an empty
+    # overlay means every project is active.
+    try:
+        from kb._load_projects import load_project_lifecycle as _load_lifecycle
+    except ImportError:
+        sys.path.insert(0, os.path.join(os.path.dirname(__file__), "kb"))
+        from _load_projects import load_project_lifecycle as _load_lifecycle
+    try:
+        project_lifecycle = _load_lifecycle()
+    except Exception as _le:
+        print(f"  Project lifecycle overlay unavailable ({_le}); all projects active.")
+        project_lifecycle = {}
+    inactive_pids = set(project_lifecycle.keys())
+    if inactive_pids:
+        print(f"  Project lifecycle: {len(inactive_pids)} tabled/archived "
+              f"({', '.join(sorted(inactive_pids))}) → excluded from live surfaces.")
     config_overrides = read_config_overrides()
     update_log      = read_update_log(wb)
     budget, budget_fetched_at, budget_source = load_budget(wb)
@@ -10576,8 +10697,11 @@ def main():
                 },
             ],
         },
-        "projects": projects,
-        "workplan_goals": workplan_goals,
+        # Tabled/archived projects are excluded from CPL_DATA so every JS
+        # consumer (RACI matrix buildItems, Annual Report, custom report
+        # generator) drops them — "not mentioned in anything" (Sam, Session 84).
+        "projects": [p for p in projects if p["id"] not in inactive_pids],
+        "workplan_goals": [g for g in workplan_goals if g.get("id") not in inactive_pids],
     }
 
     js_content = (
@@ -11070,7 +11194,7 @@ def main():
 
             # ── Inject the Annual Workplan Goals section before Projects Grid ──
             workplan_goals_html = render_workplan_goals_html(
-                workplan_goals,
+                [g for g in workplan_goals if g.get("id") not in inactive_pids],
                 data_source_stamp=wpg_fetched_at,
                 activities=activities,
             )
@@ -11113,9 +11237,23 @@ def main():
                     projects, update_log, attachments=attachments,
                     data_source_stamp=projects_fetched_at,
                     assoc_records_by_project=assoc_records_by_project,
-                    activities=activities,
+                    activities=activities, lifecycle=project_lifecycle,
                 )
-                project_count = len([p for p in projects if not p["id"].startswith("D.")])
+                # Active project count excludes D.* helper rows AND tabled/archived.
+                project_count = len([
+                    p for p in projects
+                    if not p["id"].startswith("D.") and p["id"] not in inactive_pids
+                ])
+                # Collapsed "Tabled & Archived" section (sibling of #projectsGrid so
+                # the filters/count ignore it). Built from the soft-deleted project
+                # dicts + their lifecycle metadata.
+                inactive_projects = [
+                    p for p in projects
+                    if p["id"] in inactive_pids and not p["id"].startswith("D.")
+                ]
+                tabled_archived_html = render_tabled_archived_section(
+                    inactive_projects, project_lifecycle
+                )
                 # Workplan Progress chart now lives inside the Workplan Activity
                 # Metrics section (so it collapses with it). The Projects Grid
                 # is just the project cards now.
@@ -11125,6 +11263,7 @@ def main():
                     '        <div id="projectsGrid">\n'
                     + proj_cards_html +
                     '        </div>\n'
+                    + tabled_archived_html +
                     '        <!-- End Projects Grid -->\n'
                 )
                 html = html[:proj_grid_start] + new_proj_section + html[proj_grid_end_consumes:]
@@ -11273,7 +11412,9 @@ def main():
             # that's the workplan-goals tab pane). Falls back to inserting
             # before Vision 2030 Section only on a fresh template.
             if annual_goals:
-                goals_table_html = render_annual_goals_table_html(annual_goals, activities=activities)
+                goals_table_html = render_annual_goals_table_html(
+                    [g for g in annual_goals if g.get("id") not in inactive_pids],
+                    activities=activities)
                 ag_start = html.find('<!-- Annual Workplan Goals -->')
                 ag_end = html.find('<!-- End Annual Workplan Goals -->')
                 if ag_start != -1 and ag_end != -1:
