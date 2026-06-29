@@ -143,7 +143,19 @@
       body: JSON.stringify({ email: email, create_user: true })
     });
   }
-  function signOut() { sessionStorage.removeItem("cpl_sb"); }
+  function signOut() { try { sessionStorage.removeItem("cpl_sb"); localStorage.removeItem(TEAM_PASS_KEY); } catch (e) {} }
+
+  // Shared "team phrase" edit gate — a lower-stakes alternative to per-person
+  // magic-link login (Sam's call, 2026-06-29). When set, a pseudo-session
+  // {teamPass} unlocks editing exactly like a real session (so every existing
+  // state.sess/canEdit check passes unchanged); sbWrite attaches the phrase as
+  // the x-team-pass header, which the RACI tables' RLS validates server-side via
+  // team_pass_ok() (set the phrase in Supabase public.team_access; never in code).
+  var TEAM_PASS_KEY = "cpl_team_pass";
+  function teamSession() {
+    try { var p = localStorage.getItem(TEAM_PASS_KEY); if (p) return { teamPass: p, email: "(team)" }; } catch (e) {}
+    return null;
+  }
 
   // ─── Supabase REST ─────────────────────────────────────────────────────────
   function sbGet(path) {
@@ -153,13 +165,16 @@
   // Refresh-gated write: renews the access token first so a stale token never
   // silently 401s a save. A null session (refresh failed) surfaces as a 401 the
   // caller reports — no silent optimistic "save".
+  function headersFor(s, prefer) {
+    var token = (s && s.access_token) || "";
+    var h = { apikey: SUPABASE_ANON, "Content-Type": "application/json", Authorization: "Bearer " + token };
+    if (s && s.teamPass) h["x-team-pass"] = s.teamPass;   // shared-phrase gate → RLS team_pass_ok()
+    if (prefer) h.Prefer = prefer;
+    return h;
+  }
   function sbWrite(method, path, body, prefer) {
     return ensureFresh().then(function (s) {
-      var token = (s && s.access_token) || "";
-      var headers = { apikey: SUPABASE_ANON, "Content-Type": "application/json",
-        Authorization: "Bearer " + token };
-      if (prefer) headers.Prefer = prefer;
-      return fetch(SUPABASE_URL + "/rest/v1/" + path, { method: method, headers: headers, body: JSON.stringify(body) });
+      return fetch(SUPABASE_URL + "/rest/v1/" + path, { method: method, headers: headersFor(s, prefer), body: JSON.stringify(body) });
     });
   }
 
@@ -234,7 +249,7 @@
     return items;
   }
   function load(cb) {
-    state.sess = getSession();
+    state.sess = getSession() || teamSession();
     state.items = buildItems();
     Promise.all([sbGet("team_members?select=*&order=sort_order,name"), sbGet("item_raci?select=*"),
       sbGet("item_updates?select=*&order=created_at.desc")])
@@ -1183,18 +1198,23 @@
   function renderAuth() {
     var w = el("div", { "class": "raci-auth" }, []);
     if (state.sess) {
-      w.appendChild(el("span", {}, ["Signed in: ", el("strong", {}, [state.sess.email || "(no email)"])]));
-      w.appendChild(el("button", { "class": "raci-btn", onclick: function () { signOut(); load(render); } }, ["Sign out"]));
+      var who = state.sess.teamPass ? "team phrase" : (state.sess.email || "(no email)");
+      w.appendChild(el("span", {}, ["✓ Editing unlocked (", who, ")"]));
+      w.appendChild(el("button", { "class": "raci-btn", onclick: function () { signOut(); load(render); } }, ["Lock"]));
     } else {
-      var inp = el("input", { type: "email", placeholder: "you@cccco.edu", "class": "raci-in" });
+      var inp = el("input", { type: "password", placeholder: "team phrase", "class": "raci-in" });
       var st = el("span", { "class": "raci-auth-msg" }, []);
-      var btn = el("button", { "class": "raci-btn raci-btn-go" }, ["Sign in to edit"]);
-      btn.addEventListener("click", function () {
-        var e = (inp.value || "").trim();
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) { st.textContent = "Enter a valid email."; return; }
-        st.textContent = "Sending magic link…";
-        signIn(e).then(function (r) { st.textContent = r.ok ? "✉ Link sent — check your inbox." : "Sign-in error (" + r.status + ")."; });
-      });
+      var btn = el("button", { "class": "raci-btn raci-btn-go" }, ["🔓 Unlock editing"]);
+      function tryUnlock() {
+        var p = (inp.value || "").trim();
+        if (!p) { st.textContent = "Enter the team phrase."; return; }
+        try { localStorage.setItem(TEAM_PASS_KEY, p); } catch (e) {}
+        state.sess = teamSession();
+        load(render);   // wrong phrase surfaces as a clear error on the first save
+      }
+      btn.addEventListener("click", tryUnlock);
+      inp.addEventListener("keydown", function (e) { if (e.key === "Enter") tryUnlock(); });
+      w.appendChild(el("span", { "class": "raci-auth-lbl" }, ["Team phrase to edit: "]));
       w.appendChild(inp); w.appendChild(btn); w.appendChild(st);
     }
     return w;
@@ -1326,5 +1346,6 @@
   window.CPL_RACI_TAB = { boot: boot, render: render, focusItem: focusItem,
     _nudgeHref: buildNudgeHref, _openUpdate: openUpdate, _itemSummary: itemSummaryText,
     _itemNudgeHref: buildItemNudgeHref, _openItemNudge: openItemNudge, _consume: consumePendingFocus,
+    _headersFor: headersFor, _teamSession: teamSession,
     _itemByKey: function (k) { return state.items.filter(function (x) { return x.key === k; })[0] || null; } };
 })();
