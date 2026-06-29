@@ -359,8 +359,10 @@ const RACI_ROWS = [
   const inHref = signed.window.CPL_RACI_TAB._itemNudgeHref({ type: "project", id: "1.1", key: "project:1.1", name: "MAP Platform Development", isActivity: false });
   const inDec = decodeURIComponent(inHref);
   check("item-nudge href targets the item's R member", /^mailto:/.test(inHref) && /crystal\.nasio@rccd\.edu/.test(inDec));
+  // The deep-link lands on the Activities & Projects tab (card_actions.js opens
+  // the composer in place there) — NOT #raci (Sam, 2026-06-29).
   check("item-nudge body quotes the card + the composer deep-link",
-    /MAP Platform Development/.test(inDec) && /update=project/.test(inDec) && /#raci/.test(inDec));
+    /MAP Platform Development/.test(inDec) && /update=project/.test(inDec) && /#activities-projects/.test(inDec));
 
   // ── (o) Edit / delete a prior update (SkyMap, 2026-06-27) ──
   const UPD = [{ id: 42, item_type: "project", item_id: "1.1", body: "delete me",

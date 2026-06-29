@@ -1052,7 +1052,9 @@
     if (!recips.length) return null;
     var emails = recips.map(function (m) { return m.email; }).join(",");
     var c = cplItem(item);
-    var link = location.origin + location.pathname + "?update=" + encodeURIComponent(item.key) + "#raci";
+    // Land on the Activities & Projects tab (NOT #raci) — card_actions.js reads the
+    // ?update= param there and opens the composer in place (Sam, 2026-06-29).
+    var link = location.origin + location.pathname + "?update=" + encodeURIComponent(item.key) + "#activities-projects";
     var subject = "CPL update request — " + (item.isActivity ? "Activity " + item.id : item.id) + " " + c.name;
     var body = "Hi,\n\nQuick status check on your CPL workplan item:\n\n" + itemSummaryText(item)
       + "\n\nPlease share a few details — even \"no activity this period\" is helpful. "
@@ -1076,6 +1078,25 @@
     stampItemNudged(item);
     window.location.href = href;
   }
+
+  // ─── In-place card actions (no redirect to the RACI tab) ───────────────────
+  // The Activity / Project cards' 📝 Update + 📣 Nudge affordances open the popup
+  // RIGHT THERE on the Activities & Projects tab instead of bouncing to #raci
+  // (Sam, 2026-06-29). card_actions.js intercepts the card-link clicks (and the
+  // nudge-email ?update= deep-link) and calls these. We ensure the data + CSS are
+  // loaded first (this script is lazy — the RACI tab may never have been opened),
+  // then open the existing composer / nudge modal. The same phrase-unlock box the
+  // composer grew lets the user edit without leaving the tab.
+  function withItem(key, fn) {
+    function go() {
+      ensureCss();
+      var it = (state.items || []).filter(function (x) { return x.key === key; })[0];
+      if (it) fn(it); else alert("Couldn't find that workplan item — try the Team & RACI tab.");
+    }
+    if (state.loaded) go(); else load(go);
+  }
+  function openCardUpdate(key) { withItem(key, openUpdate); }
+  function openCardNudge(key) { withItem(key, openItemNudge); }
   // Relative time for the directory's nudge-status columns.
   function relTime(iso) {
     if (!iso) return "";
@@ -1380,6 +1401,7 @@
   }
 
   window.CPL_RACI_TAB = { boot: boot, render: render, focusItem: focusItem,
+    openCardUpdate: openCardUpdate, openCardNudge: openCardNudge,
     _nudgeHref: buildNudgeHref, _openUpdate: openUpdate, _itemSummary: itemSummaryText,
     _itemNudgeHref: buildItemNudgeHref, _openItemNudge: openItemNudge, _consume: consumePendingFocus,
     _headersFor: headersFor, _teamSession: teamSession,
