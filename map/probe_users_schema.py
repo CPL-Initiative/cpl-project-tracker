@@ -162,55 +162,104 @@ GUESS_COLUMNS = [
 ]
 
 
-def _accepted_name(ds, col):
-    """If the server ACCEPTED `col`, return its canonical (server-echoed)
-    spelling; else None. Prefers the echoed columnName, falls back to the
-    row-dict keys, then to the row width (no echo + width≥2 → accepted, returns
-    the candidate's own spelling). An unknown column is dropped or 500s, so a
-    returned name is a real field."""
-    if ds is None:
-        return None
-    for e in (ds.get("columnName") or []):
-        if str(e).lower() == col.lower():
-            return str(e)
-    cv = ds.get("columnValue")
-    if isinstance(cv, list) and cv:
-        if isinstance(cv[0], dict):
-            for k in cv[0]:
-                if str(k).lower() == col.lower():
-                    return str(k)
-        elif isinstance(cv[0], (list, tuple)) and len(cv[0]) >= 2:
-            return col                      # no echo; accept the candidate spelling
-    return None
+# Garbage column names used to CALIBRATE the "unknown column" response. The MAP
+# report API returns 2-wide rows even for a column it doesn't recognize (the
+# structural width/echo heuristic over-accepts — every candidate "passed", run
+# #1), so we instead inspect the VALUES: a REAL column carries its own data; a
+# FAKE one is null / empty / a copy of the anchor. The sentinels reveal exactly
+# what "fake" looks like on this server so the threshold is data-driven.
+SENTINEL_COLUMNS = ["ZqxNotAColumn1", "FakeFieldQwerty2", "NoSuchColumn3"]
+
+
+def _column_signature(view, anchor, col):
+    """PII-SAFE value signature of `col` when requested alongside `anchor`.
+    Returns counts only — never a raw value. Keys: http, code, n, nonnull,
+    distinct, copies_anchor, width, echoed."""
+    r = _try(view, [anchor, col])
+    sig = {"http": r["http"], "code": None, "n": 0, "nonnull": 0,
+           "distinct": 0, "copies_anchor": 0, "width": 0, "echoed": False}
+    ds = r.get("ds")
+    if r["http"] != 200 or ds is None:
+        return sig
+    sig["code"] = ds.get("responseCode")
+    sig["echoed"] = any(str(e).lower() == col.lower()
+                        for e in (ds.get("columnName") or []))
+    cv = ds.get("columnValue") or []
+    if cv and isinstance(cv[0], (list, tuple)):
+        sig["width"] = len(cv[0])
+    elif cv and isinstance(cv[0], dict):
+        sig["width"] = len(cv[0])
+    rows = _rows(ds, [anchor, col])
+    sig["n"] = len(rows)
+    seen = set()
+    for row in rows:
+        a, c = row.get(anchor), row.get(col)
+        if c not in (None, ""):
+            sig["nonnull"] += 1
+            seen.add(str(c))
+            if str(c) == str(a):
+                sig["copies_anchor"] += 1
+    sig["distinct"] = len(seen)
+    return sig
+
+
+def _looks_real(sig, fake):
+    """A column is REAL when it carries its own data: a meaningful non-null
+    share, more than one distinct value, and it isn't just echoing the anchor —
+    AND its signature beats the calibrated FAKE baseline (so if the server
+    returns identical shapes for known-garbage, nothing is falsely accepted)."""
+    n = sig["n"] or 1
+    nonnull_share = sig["nonnull"] / n
+    copy_share = sig["copies_anchor"] / n
+    if sig["http"] != 200 or sig["nonnull"] == 0:
+        return False
+    if sig["distinct"] <= 1 or copy_share >= 0.9:
+        return False
+    if nonnull_share < 0.25:
+        return False
+    # Must clear the fake baseline (the best a known-garbage column achieved).
+    return sig["nonnull"] > fake["nonnull"] and sig["distinct"] > fake["distinct"]
 
 
 def _confirm_columns(view, anchor, candidates):
-    """Guess-and-confirm the field list: probe each candidate column alongside a
-    known-good anchor and keep the ones the API accepts, recording the server's
-    canonical spelling. Case variants are all tried (in case MAP is
-    case-sensitive) but the output is deduped by canonical name. Returns the
-    ordered confirmed list (anchor first). One POST per candidate — fine for a
-    dispatch."""
-    print(f"  → guess-and-confirm: {len(candidates)} candidate columns "
-          f"(anchor={anchor!r}) …")
+    """Confirm the real field list by VALUE SIGNATURE (run #2 method). Calibrate
+    the 'unknown column' response with garbage sentinels, then keep each
+    candidate whose values clearly beat that baseline. Prints a PII-safe per-
+    candidate line (counts only). Returns the ordered confirmed list (anchor
+    first)."""
+    print(f"  → value-signature confirm: {len(candidates)} candidates "
+          f"(anchor={anchor!r}); calibrating with {len(SENTINEL_COLUMNS)} sentinels …")
+    fake = {"nonnull": 0, "distinct": 0}
+    for s in SENTINEL_COLUMNS:
+        sg = _column_signature(view, anchor, s)
+        fake["nonnull"] = max(fake["nonnull"], sg["nonnull"])
+        fake["distinct"] = max(fake["distinct"], sg["distinct"])
+        print(f"    · sentinel {s}: http={sg['http']} code={sg['code']!r} "
+              f"width={sg['width']} nonnull={sg['nonnull']}/{sg['n']} "
+              f"distinct={sg['distinct']} copies={sg['copies_anchor']} echo={sg['echoed']}")
+    print(f"    fake baseline → nonnull≤{fake['nonnull']}, distinct≤{fake['distinct']}")
+    if fake["nonnull"] > 0:
+        print("    ⚠ garbage columns returned data — the server pads unknown "
+              "columns; value-signature may be unreliable. Inspect the lines below "
+              "/ fall back to the MAP Builder UI.")
+
     confirmed = [anchor]
     have = {anchor.lower()}
     tried = set()
     for c in candidates:
-        if c in tried:
+        if c in tried or c.lower() in have:
             continue
         tried.add(c)
-        if c.lower() in have:
-            continue
-        r = _try(view, [anchor, c])
-        if r["http"] != 200:
-            continue                        # 500/4xx → unknown column rejected
-        name = _accepted_name(r["ds"], c)
-        if name and name.lower() not in have:
-            confirmed.append(name)
-            have.add(name.lower())
-            print(f"    ✓ {name}")
-    print(f"  → confirmed {len(confirmed)} field(s): {confirmed}")
+        sig = _column_signature(view, anchor, c)
+        real = _looks_real(sig, fake)
+        mark = "✓" if real else "·"
+        print(f"    {mark} {c}: http={sig['http']} code={sig['code']!r} "
+              f"width={sig['width']} nonnull={sig['nonnull']}/{sig['n']} "
+              f"distinct={sig['distinct']} copies={sig['copies_anchor']} echo={sig['echoed']}")
+        if real:
+            confirmed.append(c)
+            have.add(c.lower())
+    print(f"  → confirmed {len(confirmed)} field(s) by value signature: {confirmed}")
     return confirmed
 
 
