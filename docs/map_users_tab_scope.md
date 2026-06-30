@@ -31,6 +31,48 @@ automate a nudge process to the colleges to periodically update their users."*
 | | (b) The raw `CustomReport_latest.json` is **gitignored + never committed** (transient; fetched → aggregated → discarded, PR #227). So even when it *was* fetched it never entered a committed dataset. |
 | **Re-enabling** | One small edit (add the `View_CollegeUsersRoles_APIDataset` block + its `columnName` list to `REQUEST_PAYLOAD`) — the MAP endpoint already returns it. **No MAP credential needed** (see §1a). |
 
+## 1b. FIELD SCHEMA CAPTURED (probe runs #5-#7, 2026-06-30, StarMax) — value-signature method
+
+The `_APIDataset` views have **no self-describe mode** (a no-`columnName` request
+500s), and the report API **pads unknown columns into 2-wide rows** (so a
+structural guess-and-confirm over-accepts — run #5 "passed" all 57 candidates).
+The reliable method is **value signature**: a REAL column returns
+`responseCode='000'` + actual values; a FAKE one returns `responseCode='400'` +
+0 rows. Calibrated with 3 garbage sentinels (all `400`/0), the probe cleanly
+separated the real fields. MAP column names are **case-SENSITIVE** (`UserName` ✓
+vs `Username` ✗).
+
+### `View_CollegeUsersRoles_APIDataset` — 7 fields · 2,741 rows (SOLVED)
+
+| Field | Notes | P1 use |
+|---|---|---|
+| `College` | college name, 128 distinct | display + join |
+| `CollegeId` | 128 distinct, len 1-3 | join key |
+| `FirstName` | **PII**, 1,407 distinct | reviewer-gated |
+| `LastName` | **PII**, 1,901 distinct | reviewer-gated |
+| `Email` | **PII**, 2,435 distinct (len 12-47) | reviewer-gated; **stable per-user key** (pk) |
+| `RoleName` | **7 values** (non-PII vocab): *Ambassador, Articulation Officer, CALVET, Faculty, Implementation, Initiator, Student Intake Aide* | **public role-mix aggregate** |
+| `UserName` | **PII**, 2,739 distinct (login) | reviewer-gated |
+
+P1 `columnName` = exactly these 7 (case-sensitive). The stable key is `Email`
+(or `(CollegeId, Email)` since a person can appear at >1 college). **No
+last-login / timestamp field exists** in the view → "stale" (open Q3) must be
+tracked by OUR `synced_at` / a "last confirmed" timestamp, not a MAP field.
+Public surface = per-college **counts + the 7-way RoleName mix**; names/emails/
+username are reviewer-/team-phrase-gated (Sam's "aggregates only", §5 Q2).
+
+### `View_CollegeContacts_APIDataset` — WIDE role-columns · 121 rows (1/college)
+
+Different shape from the Users view: **one column per contact ROLE**, value = that
+person's name. `College` (121 distinct) + **`CEO`** (71/121) confirmed; `President`,
+`Dean`, `VPInstruction`, `VPStudentServices`, `CollegeContact`, `CPLCoordinator`,
+`ArticulationOfficer` did NOT match — the real role-column spellings differ.
+**P3 BLOCKER:** the nudge targets Sam named (**College Contact · VP Instruction ·
+VP Student Services**, §5 Q4) are role-columns here under unknown spellings →
+get the exact column list from the **MAP Custom Report Builder UI** (category
+"College Contacts"). The Users-view `RoleName` vocab is MAP *platform* roles, NOT
+org titles, so the nudge targets are NOT sourceable from the Users view.
+
 ## 1a. P0 PROBE RESULT (dispatch #4, 2026-06-30) — view names + reachability CONFIRMED
 
 The `map-users-schema-probe.yml` dispatch (run #4, `View_*_APIDataset` + seed-column
@@ -114,27 +156,45 @@ Building blocks already in the repo to reuse:
 | **P2 — COBI "MAP Users" tab** | Static lazy renderer (the `raci.js`/`cpl_news.js` pattern): per-college roster, role, last-updated, a "stale / needs refresh" signal. Reviewer/team-phrase-gated for any PII. | not started |
 | **P3 — College nudge** | Reuse the RACI nudge: periodic "refresh your MAP users" email per college (to the AO / CPL Coordinator already in `View_CollegeContacts`), with `last_nudged_at`/`last_response_at` accountability. | not started |
 
-## 5. Open questions (for Sam / next session)
+## 5. Open questions — Sam's decisions (2026-06-30, Session 87 / StarMax)
 
-1. **The 11 field names** (and the stable per-user key — email? a MAP user-id field?).
-   The no-column self-describe mode 500s, so P0 couldn't enumerate them. **Get them
-   from the MAP Custom Report Builder UI** (category #9 "College Users & Roles" +
-   "College Contacts") **or** extend the probe with a **guess-and-confirm** pass (name
-   likely columns; keep the ones the response echoes back with values). ← do this first.
-2. **What may the anon (logged-out) role see?** Recommend: per-college *counts*
-   + role mix only; **names/emails reviewer-gated**. (Confirm.)
+1. **The field names** (and the stable per-user key — email? a MAP user-id field?).
+   The no-column self-describe mode 500s, so the structural guess-and-confirm
+   over-accepted (the API pads unknown columns into 2-wide rows). **Resolution:**
+   a **value-signature** probe pass (calibrate the unknown-column shape with
+   garbage sentinels, keep candidates whose values beat that baseline). Fold the
+   confirmed list back here + into P1's `columnName`. If the server pads even
+   garbage with data, fall back to the **MAP Builder UI** field list. ← in progress.
+2. **What may the anon (logged-out) role see?** → **Aggregates only** (Sam): per-
+   college **counts + role mix** are public; **names/emails are reviewer- /
+   team-phrase-gated**. Mirrors the CER student-count privacy ADR. Drives the P1
+   RLS: a public aggregate read path (counts), a gated roster read path (PII).
 3. **"Stale" definition** — does the view carry a last-login / last-updated field
-   we can flag on, or do we track our own "last confirmed" timestamp?
-4. **Who gets the nudge** per college — the AO, the CPL Coordinator, both? (Both
-   are in **`View_CollegeContacts_APIDataset`** — 121 rows, reachable, already probed.)
-5. **Cadence** of the refresh nudge (quarterly?).
+   we can flag on, or do we track our own "last confirmed" timestamp? (Pending the
+   field list — the probe checks for `LastLogin*` / `*Date` columns.)
+4. **Who gets the nudge** per college → **College Contact + VP of Instruction +
+   VP of Student Services** (Sam — NOT the AO/Coordinator framing). These role
+   labels must be matched in **`View_CollegeContacts_APIDataset`** (P3 maps the
+   role/title field to these three).
+5. **Cadence** of the refresh nudge → **each semester** (twice a year, fall +
+   spring); a reviewer can still nudge any college manually anytime.
 
 ## 6. Next concrete step
 
-P0 is **done** (§1a): the real view names + row counts + unauthenticated reachability
-are confirmed. **Next = capture the field list** (Q1 — Builder UI or a guess-and-confirm
-probe), then build **P1**: a Supabase `public.map_college_users` table + a runner sync
-that fetches `View_CollegeUsersRoles_APIDataset` **with an explicit `columnName`** and
-upserts via the **Supabase** service key (no MAP credential needed). Then P2 (the gated
-COBI tab) and P3 (reuse the RACI nudge over `View_CollegeContacts_APIDataset`). Nothing
-so far commits or exposes PII.
+P0 (view names/reachability) **and** the **Users-view field schema** (§1b) are **DONE**.
+**Next = build P1** with the now-known 7-column `columnName`:
+1. Supabase **`public.map_college_users`** — pk `(college_id, email)`; columns
+   college, college_id, first_name, last_name, email, role_name, username,
+   synced_at. RLS = **anon can read aggregates only** (a SECURITY DEFINER
+   `map_users_summary()` RPC returning per-college counts + the 7-way RoleName
+   mix — never raw rows), **roster rows gated** `is_allowed_reviewer() OR
+   team_pass_ok()` (Sam's §5 Q2). No MAP-field "stale" → track `synced_at`.
+2. **`map/sync_map_users.py`** + **`.github/workflows/map-users-sync.yml`** —
+   runner fetches the 7 columns from `View_CollegeUsersRoles_APIDataset` and
+   upserts via the **Supabase service key** (the `cpl-landing-pages.yml` /
+   curation-sync template). Dispatch first; semester cron later (§5 Q5). **Never
+   commits/prints PII.**
+Then **P2** (the gated COBI tab — `raci.js`/`cpl_news.js` lazy-renderer pattern)
+and **P3** (the nudge — reuse the RACI engine; **BLOCKED** on the Contacts-view
+role-column spellings for College Contact / VP Instruction / VP Student Services,
+§1b — get them from the MAP Builder UI). Nothing committed so far exposes PII.
