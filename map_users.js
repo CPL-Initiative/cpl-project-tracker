@@ -166,17 +166,23 @@
     }).filter(function (x) { return x.email && String(x.email).indexOf("@") > 0; });
   }
   function nudgeRecipients(c) { return nudgeRoster(c).map(function (x) { return x.email; }); }
-  function buildNudgeMailto(college, picks) {
+  function buildNudgeMailto(college, picks, landingUrl) {
     var to = (picks || []).map(function (p) { return p.email; }).filter(Boolean).join(",");
     var who = (picks || []).map(function (p) { return p.label + (p.name ? ": " + p.name : ""); }).join("\n");
     var subject = "Action requested: refresh your MAP college users — " + college;
+    // Link the college straight to their MAP CPL dashboard when we have it
+    // (joined from the same landing-page URLs the CPL Assistant uses); from
+    // there a signed-in admin updates their users.
+    var goLine = landingUrl
+      ? "Open your MAP CPL Dashboard to review and update your users:\n" + landingUrl + "\n\n"
+      : "You can manage users in the MAP CPL Dashboard.\n\n";
     var body = "Hello " + college + " team,\n\n"
       + "As part of the statewide CPL (Credit for Prior Learning) effort, please take a few "
       + "minutes to review and update your institution's user list in the MAP platform so the "
       + "right staff have access and the roster stays current.\n\n"
       + (who ? who + "\n\n" : "")
-      + "You can manage users in the MAP CPL Dashboard. Thank you for keeping your college's "
-      + "CPL team up to date.\n\n— The CPL Initiative team";
+      + goLine
+      + "Thank you for keeping your college's CPL team up to date.\n\n— The CPL Initiative team";
     return "mailto:" + encodeURIComponent(to)
       + "?subject=" + encodeURIComponent(subject)
       + "&body=" + encodeURIComponent(body);
@@ -209,7 +215,7 @@
   }
   function openNudge(college) {
     return loadContacts(college).then(function (c) {
-      showNudgePicker(college, nudgeRoster(c));
+      showNudgePicker(college, nudgeRoster(c), (c && c.landing_page_url) || "");
     }).catch(function () {
       alert("Could not load this college's contacts. Sign in on the Team & RACI tab "
         + "(reviewer or team phrase) and try again.");
@@ -217,7 +223,7 @@
   }
   // The confirm/uncheck dialog. All present recipients start CHECKED; the draft
   // opens only after the user clicks "Open email draft".
-  function showNudgePicker(college, roster) {
+  function showNudgePicker(college, roster, landingUrl) {
     var old = document.getElementById("mapu-picker");
     if (old) old.parentNode.removeChild(old);
     var ov = document.createElement("div");
@@ -231,11 +237,16 @@
         }).join("")
       : '<div class="mapu-gate">No contact emails are on file for this college — you can open a '
         + "blank draft and add recipients manually.</div>";
+    var mapLine = landingUrl
+      ? '<p class="mapu-pick-note">The email links them to <a href="' + esc(landingUrl)
+        + '" target="_blank" rel="noopener">their MAP CPL Dashboard ↗</a> so they can log in and update their users.</p>'
+      : "";
     ov.innerHTML = '<div class="mapu-picker" role="dialog" aria-label="Nudge recipients">'
       + "<h3>Nudge " + esc(college) + "</h3>"
       + '<p class="mapu-pick-note">This opens a pre-filled <b>draft</b> in your email app — '
       + "<b>nothing is sent</b> until you review it and click Send there. Uncheck anyone you don’t want to email.</p>"
       + '<div class="mapu-pick-list">' + list + "</div>"
+      + mapLine
       + '<div class="mapu-pick-actions">'
       + '<button class="mapu-rosterbtn" data-pick-cancel>Cancel</button>'
       + '<button class="mapu-rosterbtn mapu-pick-go" data-pick-go>✉ Open email draft</button>'
@@ -249,7 +260,7 @@
       ov.querySelectorAll("[data-pick]").forEach(function (cb) {
         if (cb.checked) picks.push(roster[parseInt(cb.getAttribute("data-pick"), 10)]);
       });
-      try { window.location.href = buildNudgeMailto(college, picks); } catch (e) {}
+      try { window.location.href = buildNudgeMailto(college, picks, landingUrl); } catch (e) {}
       recordNudge(college);
       close();
       var root = document.getElementById("map-users-root");
