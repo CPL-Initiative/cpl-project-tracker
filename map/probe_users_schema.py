@@ -159,6 +159,14 @@ GUESS_COLUMNS = [
     "LastLogin", "LastLoginDate", "LastLoginDateTime", "CreatedDate",
     "CreatedDateTime", "ModifiedDate", "UpdatedDate", "LastUpdated",
     "DateCreated", "DateModified", "LastModified",
+    # contact-view specific (run #2 found View_CollegeContacts uses different
+    # names than the Users view — only "College" matched). MAP is case-SENSITIVE
+    # (UserName ✓ vs Username ✗), so spellings matter.
+    "ContactEmail", "ContactFirstName", "ContactLastName", "ContactPhone",
+    "ContactTitle", "PrimaryContact", "ContactPerson", "PersonName",
+    "RoleTitle", "RoleDescription", "ContactRoleName", "EmailId", "PhoneNo",
+    "CollegeContact", "VPInstruction", "VPStudentServices", "CPLCoordinator",
+    "ArticulationOfficer", "CEO", "President", "Dean",
 ]
 
 
@@ -368,9 +376,12 @@ def _analyze(view, columns, ds1):
         lens = [len(str(v)) for v in nonnull]
         lo, hi = (min(lens), max(lens)) if lens else (0, 0)
         distinct = {str(v) for v in nonnull}
-        looks_pii = (any(h in f.lower() for h in PII_NAME_HINT)
-                     or any("@" in str(v) for v in nonnull[:200]))
-        if len(distinct) <= MAX_ENUM and not looks_pii:
+        # A field with ≤ MAX_ENUM distinct values across thousands of rows is a
+        # CATEGORY (role / status / type), not personal data — safe to print even
+        # if its name contains a PII hint (e.g. "RoleName"). Emails are the one
+        # low-cardinality-looking trap, so always mask anything with an '@'.
+        has_at = any("@" in str(v) for v in nonnull[:500])
+        if len(distinct) <= MAX_ENUM and not has_at:
             tail = "values=" + json.dumps(sorted(distinct), ensure_ascii=False)
         else:
             tail = f"distinct≈{len(distinct)} (MASKED — high-cardinality or PII)"
