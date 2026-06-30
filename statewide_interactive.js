@@ -217,65 +217,65 @@
     + '.sw-gallery-sum::-webkit-details-marker{display:none;}'
     + '.sw-gallery-sum::before{content:"▸";display:inline-block;margin-right:0.4rem;color:var(--text-strong);transition:transform 0.15s ease;}'
     + '.sw-gallery-sec[open]>.sw-gallery-sum::before{transform:rotate(90deg);}'
-    + '.sw-gallery-tag{font-size:0.62rem;background:rgba(227,179,65,0.22);color:#8B6800;padding:1px 5px;border-radius:3px;margin-left:0.35rem;font-weight:600;}'
+    + '.sw-gallery-tag{font-size:0.62rem;background:rgba(227,179,65,0.22);color:var(--mustard-text);padding:1px 5px;border-radius:3px;margin-left:0.35rem;font-weight:600;}'
     // Page-level filter bar — lifted out of the v1 card so search + filters sit
     // above the whole gallery and apply to every view (not repeated per card).
     + '.sw-filterbar{margin-bottom:0.6rem;}'
     + '.sw-filterbar .sw-toolbar{border-bottom:none;}'
-    + '.sw-filterbar-hint{font-size:0.64rem;color:rgba(255,255,255,0.5);padding:0 0.8rem 0.6rem;font-style:italic;}'
+    + '.sw-filterbar-hint{font-size:0.64rem;color:var(--text-muted);padding:0 0.8rem 0.6rem;font-style:italic;}'
     // Dark navy card so the v2 credential view's white/grey text is readable —
     // it renders on the light dashboard page, and (unlike the v1 table, which
     // sits inside .sw-interactive) cv-body was transparent → text was invisible.
-    + '.cv-body{padding:0.8rem 0.9rem 1rem;background:rgba(10,34,64,0.9);border:1px solid rgba(227,179,65,0.25);border-radius:10px;}'
-    + '.cv-note{font-size:0.66rem;color:rgba(255,255,255,0.5);padding:0.4rem 0;font-style:italic;}'
-    + '.cv-credential{border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:0.6rem 0.8rem;margin-bottom:0.55rem;background:rgba(255,255,255,0.02);}'
-    + '.cv-title{font-size:0.9rem;font-weight:700;color:#fff;margin-bottom:0.15rem;}'
-    + '.cv-issuer{font-size:0.72rem;font-weight:400;color:rgba(255,255,255,0.55);}'
+    + '.cv-body{padding:0.8rem 0.9rem 1rem;background:var(--surface-opaque);border:1px solid rgba(227,179,65,0.25);border-radius:10px;box-shadow:0 8px 30px rgba(20,20,30,0.08);}'
+    + '.cv-note{font-size:0.66rem;color:var(--text-muted);padding:0.4rem 0;font-style:italic;}'
+    + '.cv-credential{border:1px solid var(--border);border-radius:6px;padding:0.6rem 0.8rem;margin-bottom:0.55rem;background:var(--surface-subtle);}'
+    + '.cv-title{font-size:0.9rem;font-weight:700;color:var(--text-strong);margin-bottom:0.15rem;}'
+    + '.cv-issuer{font-size:0.72rem;font-weight:400;color:var(--text-muted);}'
     + '.cv-standard{border-left:3px solid #E3B341;padding:0.2rem 0 0.2rem 0.6rem;margin:0.3rem 0;}'
-    + '.cv-others{margin-top:0.45rem;border-top:1px dashed rgba(255,255,255,0.1);padding-top:0.4rem;}'
-    + '.cv-others-label{font-size:0.66rem;font-weight:600;color:rgba(255,255,255,0.6);margin-bottom:0.2rem;}'
-    + '.cv-variant{padding:0.15rem 0 0.15rem 0.6rem;border-left:2px solid rgba(255,255,255,0.12);margin:0.25rem 0;}'
-    + '.cv-meta{font-size:0.66rem;color:rgba(255,255,255,0.62);}'
+    + '.cv-others{margin-top:0.45rem;border-top:1px dashed var(--border);padding-top:0.4rem;}'
+    + '.cv-others-label{font-size:0.66rem;font-weight:600;color:var(--text-muted);margin-bottom:0.2rem;}'
+    + '.cv-variant{padding:0.15rem 0 0.15rem 0.6rem;border-left:2px solid var(--border);margin:0.25rem 0;}'
+    + '.cv-meta{font-size:0.66rem;color:var(--text-muted);}'
     + '.cv-badge{font-size:0.6rem;padding:1px 5px;border-radius:3px;font-weight:600;white-space:nowrap;}'
-    + '.cv-ccc{background:rgba(76,175,120,0.2);color:#89A67F;}'
-    + '.cv-synth{background:rgba(227,179,65,0.18);color:#E3B341;}'
-    + '.cv-local{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.72);}'
+    + '.cv-ccc{background:rgba(76,175,120,0.2);color:var(--hunter);}'
+    + '.cv-synth{background:rgba(227,179,65,0.18);color:var(--mustard-text);}'
+    + '.cv-local{background:var(--surface-subtle);color:var(--text-body);}'
     // Prescriptive adoption layer (PR-4) — green "adopt" accent.
     + '.cv-rx{margin-top:0.45rem;border-top:1px dashed rgba(127,208,160,0.28);padding-top:0.35rem;}'
-    + '.cv-rx>summary{cursor:pointer;font-size:0.7rem;font-weight:600;color:#89A67F;list-style:none;}'
+    + '.cv-rx>summary{cursor:pointer;font-size:0.7rem;font-weight:600;color:var(--hunter);list-style:none;}'
     + '.cv-rx>summary::-webkit-details-marker{display:none;}'
     + '.cv-rx>summary::before{content:"▸";display:inline-block;margin-right:0.35rem;transition:transform 0.15s ease;}'
     + '.cv-rx[open]>summary::before{transform:rotate(90deg);}'
     + '.cv-rx-body{padding:0.3rem 0 0.2rem 0.6rem;}'
-    + '.cv-rx-hint{font-size:0.6rem;color:rgba(255,255,255,0.45);font-style:italic;margin-bottom:0.3rem;}'
-    + '.cv-rx-row{font-size:0.68rem;color:rgba(255,255,255,0.78);padding:0.12rem 0;line-height:1.35;}'
-    + '.cv-rx-college{font-weight:600;color:#fff;}'
-    + '.cv-rx-arrow{color:#89A67F;margin:0 0.2rem;}'
-    + '.cv-rx-course{color:#7DA1D4;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;}'
-    + '.cv-rx-note{font-size:0.62rem;color:rgba(227,179,65,0.85);font-style:italic;margin-top:0.3rem;}'
+    + '.cv-rx-hint{font-size:0.6rem;color:var(--text-muted);font-style:italic;margin-bottom:0.3rem;}'
+    + '.cv-rx-row{font-size:0.68rem;color:var(--text-body);padding:0.12rem 0;line-height:1.35;}'
+    + '.cv-rx-college{font-weight:600;color:var(--text-strong);}'
+    + '.cv-rx-arrow{color:var(--hunter);margin:0 0.2rem;}'
+    + '.cv-rx-course{color:var(--cobalt);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;}'
+    + '.cv-rx-note{font-size:0.62rem;color:var(--mustard-text);font-style:italic;margin-top:0.3rem;}'
     // Student view (v3) — seeker lens. Renders inside the same dark .cv-body.
-    + '.sv-banner{font-size:0.72rem;color:#cfe0f0;background:rgba(125,161,212,0.12);border-left:3px solid #7DA1D4;padding:0.45rem 0.7rem;border-radius:4px;margin-bottom:0.6rem;}'
-    + '.sv-banner-tip{color:rgba(255,255,255,0.72);border-left-color:#E3B341;background:rgba(227,179,65,0.1);}'
-    + '.sv-banner b{color:#fff;}'
-    + '.sv-award{font-size:0.74rem;color:#E3B341;font-weight:600;margin:0.1rem 0 0.4rem;}'
-    + '.sv-award b{color:#ffdd88;}'
-    + '.sv-status{font-size:0.7rem;line-height:1.55;padding:0.15rem 0;color:rgba(255,255,255,0.85);}'
-    + '.sv-yes b{color:#89A67F;}'
-    + '.sv-maybe b{color:#e8cf8a;}'
-    + '.sv-prog b{color:rgba(255,255,255,0.7);}'
-    + '.sv-none{color:rgba(255,255,255,0.6);font-style:italic;}'
-    + '.sv-cta{font-style:italic;color:rgba(255,255,255,0.5);font-size:0.64rem;}'
-    + '.sv-teaches{font-size:0.64rem;color:rgba(255,255,255,0.6);}'
+    + '.sv-banner{font-size:0.72rem;color:var(--cobalt);background:rgba(125,161,212,0.12);border-left:3px solid var(--cobalt);padding:0.45rem 0.7rem;border-radius:4px;margin-bottom:0.6rem;}'
+    + '.sv-banner-tip{color:var(--text-body);border-left-color:#E3B341;background:rgba(227,179,65,0.1);}'
+    + '.sv-banner b{color:var(--text-strong);}'
+    + '.sv-award{font-size:0.74rem;color:var(--mustard-text);font-weight:600;margin:0.1rem 0 0.4rem;}'
+    + '.sv-award b{color:var(--mustard-text);}'
+    + '.sv-status{font-size:0.7rem;line-height:1.55;padding:0.15rem 0;color:var(--text-body);}'
+    + '.sv-yes b{color:var(--hunter);}'
+    + '.sv-maybe b{color:var(--mustard-text);}'
+    + '.sv-prog b{color:var(--text-muted);}'
+    + '.sv-none{color:var(--text-muted);font-style:italic;}'
+    + '.sv-cta{font-style:italic;color:var(--text-muted);font-size:0.64rem;}'
+    + '.sv-teaches{font-size:0.64rem;color:var(--text-muted);}'
     + '.sv-chip{font-size:0.62rem;padding:1px 6px;border-radius:3px;margin:0 1px;white-space:nowrap;display:inline-block;}'
-    + '.sv-chip-yes{background:rgba(76,175,120,0.25);color:#9be3bb;}'
-    + '.sv-chip-maybe{background:rgba(227,179,65,0.22);color:#e8cf8a;}'
-    + '.sv-chip-prog{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);}'
-    + '.sv-chip-sw{background:rgba(125,161,212,0.16);color:#bcd4ea;}'
-    + '.sv-sw{font-size:0.66rem;color:rgba(255,255,255,0.72);margin-top:0.4rem;border-top:1px dashed rgba(255,255,255,0.1);padding-top:0.35rem;}'
-    + '.sv-sw-label{font-weight:600;color:rgba(255,255,255,0.82);}'
-    + '.sv-sw-none{font-style:italic;color:rgba(255,255,255,0.5);}'
-    + '.sv-pres-hint{font-size:0.64rem;color:rgba(227,179,65,0.85);font-style:italic;margin-top:0.25rem;}'
-    + '.sv-more{font-size:0.6rem;color:rgba(255,255,255,0.45);}'
+    + '.sv-chip-yes{background:rgba(76,175,120,0.25);color:var(--hunter);}'
+    + '.sv-chip-maybe{background:rgba(227,179,65,0.22);color:var(--mustard-text);}'
+    + '.sv-chip-prog{background:var(--surface-subtle);color:var(--text-body);}'
+    + '.sv-chip-sw{background:rgba(125,161,212,0.16);color:var(--cobalt);}'
+    + '.sv-sw{font-size:0.66rem;color:var(--text-body);margin-top:0.4rem;border-top:1px dashed var(--border);padding-top:0.35rem;}'
+    + '.sv-sw-label{font-weight:600;color:var(--text-body);}'
+    + '.sv-sw-none{font-style:italic;color:var(--text-muted);}'
+    + '.sv-pres-hint{font-size:0.64rem;color:var(--mustard-text);font-style:italic;margin-top:0.25rem;}'
+    + '.sv-more{font-size:0.6rem;color:var(--text-muted);}'
     + '.sv-unclass{opacity:0.6;}'
     + '</style>';
 
@@ -583,7 +583,7 @@
       + '</div>';
 
     html += '<div class="sw-action-bar">';
-    html += '<label style="font-size:0.72rem;color:rgba(255,255,255,0.7);cursor:pointer;display:flex;align-items:center;gap:0.3rem;">' +
+    html += '<label style="font-size:0.72rem;color:var(--text-body);cursor:pointer;display:flex;align-items:center;gap:0.3rem;">' +
       '<input type="checkbox" class="sw-chk" id="sw-select-all" /> Select All</label>';
     html += '<button class="sw-action-btn primary" id="sw-gen-report">Generate Word Report</button>';
     html += '<button class="sw-action-btn" id="sw-export-excel">Export Excel</button>';
@@ -737,10 +737,10 @@
     var headline = "";
     if (ta.award) {
       headline =
-        '<div style="font-size:0.66rem;color:#E3B341;font-weight:600;margin:0.15rem 0 0.05rem;">' +
+        '<div style="font-size:0.66rem;color:var(--mustard-text);font-weight:600;margin:0.15rem 0 0.05rem;">' +
           '💡 Typical CPL: ' + ta.award.text +
         '</div>' +
-        '<div style="font-size:0.57rem;color:rgba(255,255,255,0.45);font-style:italic;margin-bottom:0.15rem;">' +
+        '<div style="font-size:0.57rem;color:var(--text-muted);font-style:italic;margin-bottom:0.15rem;">' +
           'a student earns one college’s mapping below — not the sum' +
         '</div>';
     }
@@ -861,7 +861,7 @@
         '<td>' + esc(e.cpl_type || "") + '</td>' +
         '<td>' + esc(e.discipline || "") + '</td>' +
         '<td class="exhibit-cell-num">' + (e.adopters || 0) + '</td>' +
-        '<td class="exhibit-cell-num" style="color:#E3B341;font-weight:600;">' + (e.potential || 0) + '</td>' +
+        '<td class="exhibit-cell-num" style="color:var(--mustard-text);font-weight:600;">' + (e.potential || 0) + '</td>' +
         '<td class="sw-college-list">' + adopterTags + '</td>' +
         '<td class="sw-college-list">' + potentialTags + '</td>' +
         '<td class="sw-flag-cell">' + flagCell + '</td></tr>');
@@ -903,13 +903,13 @@
 
     if (start > 0) {
       html.push('<button class="sw-page-btn" data-page="0">1</button>');
-      if (start > 1) html.push('<span style="color:rgba(255,255,255,0.3);padding:0 4px;">…</span>');
+      if (start > 1) html.push('<span style="color:var(--text-muted);padding:0 4px;">…</span>');
     }
     for (var i = start; i < end; i++) {
       html.push('<button class="sw-page-btn' + (i === state.page ? ' active' : '') + '" data-page="' + i + '">' + (i + 1) + '</button>');
     }
     if (end < totalPages) {
-      if (end < totalPages - 1) html.push('<span style="color:rgba(255,255,255,0.3);padding:0 4px;">…</span>');
+      if (end < totalPages - 1) html.push('<span style="color:var(--text-muted);padding:0 4px;">…</span>');
       html.push('<button class="sw-page-btn" data-page="' + (totalPages - 1) + '">' + totalPages + '</button>');
     }
 
