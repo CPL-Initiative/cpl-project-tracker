@@ -496,6 +496,7 @@ scraping proved unreliable.
 | `tmc_ge_patterns.js` | The **GE Breadth patterns** (`window.CPL_TMC_GE_PATTERNS`) for the full-ADT companion panel (Session 60): **Cal-GETC** (the single statewide ADT GE pattern as of Fall 2025, AB 928; primary) + legacy **IGETC** and **CSU GE Breadth**. Each modeled as `sections[].slots[]` like a TMC but `ge:true`+`noncid:true` (college-certified GE areas, no C-ID auto-match; `units` = per-course minimum). **DRAFT** — encoded from public ASCCC/CCC standards (CCCCO Breadth Form PDFs bot-block the agent env), verify against the official forms. Lazy-loaded by `tmc_builder.js`. Static — NOT a daily-cron artifact. |
 | `dashboard_filters.js` | Client-side filter/search/sort logic |
 | `kpi_reorder.js` | Login-free drag-to-reorder for the headline KPI grid (`.kpi-section`): per-browser order in localStorage (`cplKpiOrder.v1`), cards re-matched by label text across daily regens, new cards re-enter at default position, ↺ reset affordance. Static — NOT a daily-cron artifact. |
+| `kpi_cards.js` | **KPI card shelf** (added Session 86): per-browser **HIDE** + **centered title row** + per-card **COLLAPSE** for the headline KPI grid — the `kpi_reorder.js` pattern. At runtime it wraps each `.kpi-card`'s `.kpi-number`+`.kpi-label` into a centered `.kc-head` and the rest into a collapsible `.kc-body`; cards open **collapsed (top half only)**, click a card's head to expand, per-card × hides (→ a "Hidden (N)" restore tray), and an **Expand-all/Collapse-all** toolbar flips them all. Scopes to `.kpi-section > .kpi-card` ONLY (the full-width KPI-Trends + College-Activity panels are left alone). State in localStorage (`cplKpiCards.v1`), re-matched by `.kpi-label` across daily regens, injects own CSS, coexists with `kpi_reorder.js` (controls ride a drag; clicks stopPropagation). `<script>` in BOTH HTMLs (Rule 4). Static — NOT a daily-cron artifact. Tests: `tests/kpi_cards.test.js`. Docs: `docs/cobi_lessons.md` (S86). |
 | `first_light.js` | **First Light** — the once-a-day plein air greeting (added Session 48): date-seeded painting-of-the-day modal with **local-day rotation** (no day-to-day repeats, Session 62; **89-painting gallery, Session 65**; grayscale→color reveal **(mono:true B&W prints skip the no-op fade via `.cplfl-mono` — load-bearing since 2026-06-23; a build guard fails any un-flagged B&W)**, read-aloud via browser `speechSynthesis`, hand-written alt text), opt-out + once-per-day localStorage guards, a **hidden reviewer almanac** (type `almanac` anywhere → ‹ Prev/Next › the full catalog with a counter; a review pass never consumes the daily greeting — the private QA tool, NOT a public browse-all), runtime-injected "Today's painting" header chip (regen-proof), an anonymous reflection box POSTing `{painting, reflection}` to Supabase `cpl_reflections` (anon WRITE-ONLY RLS; the weekly **musings digest** reads them server-side via `reflections/build_reflections_digest.py` → output bound for the private `cpl-knowledge-base` vault, NOT this repo), and — since the Session-49 retheme — the **ghosted painting layer** behind the whole page (`.cplfl-bg`: today's pick grayscaled at 14% opacity, painterly fallback, honors the opt-out + `prefers-reduced-transparency`/`contrast`). Manifest = **89** verified-PD paintings, built by the **runner-as-Commons-proxy** pipeline — `tools/source_first_light_art.mjs` (sources exact PD filenames from the Commons API on a CI runner, since the agent sandbox can't reach Wikimedia) → `tools/build_first_light_manifest.mjs` (assembles from the curated `tools/first_light_selection.json`; no hand-typed filenames) → `.github/workflows/first-light-art.yml` (push-triggered source + image-liveness verify). Categories in `tools/art_categories.json`; iconic works via the append-only `tools/art_extra_files.json`. Sourcing rules: `docs/kb-notes/reference-public-domain-art-sourcing.md`; pipeline: `docs/kb-notes/playbook-runner-as-external-api-proxy.md` + `docs/first_light_lessons.md`. Static — NOT a daily-cron artifact. Theme spec/prototype: `prototype/first_light_theme_v1.html` (**v1.6 — GLASS-QUIET chips graduated**, Sam-blessed 2026-06-12; solid family archived in the Chip Studio) + `prototype/check_contrast.py` (whose `--live` mode lints the live `:root` in CI — the retheme SHIPPED Session 49, PRs #407/#408/#410). Tests: `tests/first_light*.test.js`. |
 | `cobi_brand.js` | **COBI brand layer** (added Session 65): the masthead personality for *COBI — Chancellor's Office Business Intelligence* (a light Kobe homage). STATIC, regen-proof (the `first_light.js` pattern — injects own CSS + runtime DOM): a **rotating Mamba subtitle** (random per load), an **8→24** jersey wink on the wordmark, **Mamba Day** (Aug 24 → purple & gold). The `<h1>`/`<title>` emit `COBI` from the generator (decoupled from `proj_title` so Word reports keep their name); tagline + `#cobi-mamba` slot + nav label are static in BOTH HTMLs (Rule 4). Tests: `tests/cobi_brand.test.js`. Docs: `docs/cobi_lessons.md`. |
 | `cpl_todos.js` | The 📋 To-Do button on every tab (added Session 47): renders `kb/cpl_todos.json` as a For-Sam / For-Fable daily checklist with a "where we are" status line; per-browser check-offs (`cplTodos.v1`, keyed by the feed's `_as_of` so each refresh starts fresh); per-tab badge + nav chips for other tabs' items. Feed refreshed at every Rule-8 checkpoint. Static — NOT a daily-cron artifact. |
@@ -769,7 +770,7 @@ detailed in §7c):
 | `implementation-funding` | Implementation Funding | CPL Implementation Funding model (DRAFT-chipped) — 2026-30 one-time pools, 3 priorities (shares-first, rev2 workbook), 119 colleges' potential allocations, a **what-if sandbox** (pools/shares/targets editable, per-browser, Reset-to-workbook), and **P2/P3 actuals vs target** from the daily `cpl_funding_performance.js` (P1 = deliberate incentive gap). Shell static; renders from `cpl_funding.js` + `cpl_funding_data.js` (lazy; data static, actuals cron). **Built 2026-06-11, PRs #352–#368** — `docs/cpl_funding_lessons.md` + `docs/cpl_funding_handoff.md`. |
 | `vision-2030` | Vision 2030 | Vision 2030 Alignment cards with live progress |
 | `annual-report` | Annual Report | Capstone — assembles a 6-section CPL Annual Report draft from live `CPL_DATA` (Exec Summary · Vision 2030 & Goals · Activity Progress · Statewide Impact · Spotlights · Looking Ahead), editable + live preview + ✨AI polish / ⬇Word / 🖨Print. Renderer `annual_report.js` (static, lazy). **Added Session 77 (StarPort), PR #557.** |
-| `knowledge-base` | Knowledge Base | Sign-in-gated **KB Portal** — an `<iframe src="kb-portal/">` (like Letters) over the public CPL Knowledge Base: a magic-link-gated reader + a **New-doc composer** (draft/upload → Claude polish → tokenless GitHub commit). The bundle's own Supabase auth is the gate. **Added Session 63, PRs #464/#465/#467/#468.** Docs: `docs/kb_portal_lessons.md`. |
+| `knowledge-base` | Knowledge Base | Sign-in-gated **KB Portal** — an `<iframe src="kb-portal/">` (like Letters) over the public CPL Knowledge Base: a magic-link-gated reader + a **New-doc composer** (draft/upload → Claude polish → tokenless GitHub commit). The bundle's own Supabase auth is the gate. **Added Session 63, PRs #464/#465/#467/#468.** **Session 86 added shared-team-phrase access** (PR #610) — an alternative to the magic link: the SAME `cpl_team_pass` as the Team & RACI tab, validated server-side against the MAIN project's `team_pass_ok()` RPC (carries over via same-origin localStorage; unlocks the reader + the composer). `kb-portal/config.js` (`TEAM_SUPABASE_*` consts) + `app.js`. Docs: `docs/kb_portal_lessons.md` + `docs/cobi_lessons.md` (S86). |
 | `cpl-news` | CPL News | **Auto-curated** CPL news feed (CA-first, then national; + adjacent systems Career Passport / CA Master Plan / workforce-upskilling + CA budget items). Live-reads `public.cpl_news` (filled daily by the `cpl-news-harvest` Edge Function); filters, suggest-a-story (the path closed socials enter), reviewer feature/hide. Renderer `cpl_news.js` (static, lazy). **Added Session 67 (Skywatch), PR #481.** Docs: `docs/cpl_news_lessons.md`. |
 | `raci` | Team & RACI | Ownership spine for the workplan — a **3-tier RACI Matrix** (Activity → sub-activity → project/work item, each RACI-able × R/A/C/I) + an editable **Team Directory** + per-member update-**nudge** toggle, over Supabase `team_members` + `item_raci` (public read, reviewer write). Matrix has a **hierarchical scope filter** (Activity / sub-activity optgroups) + per-card **`👥 RACI` deep-links** (Session 76). Renderer `raci.js` (static, lazy). **Added Session 75 (SkyMaster), PRs #546–#548; nav PR #550 + 3-tier PR #553 (Session 76).** Docs: `docs/cobi_raci_nudge_lessons.md`. |
 
@@ -2029,33 +2030,9 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > [`docs/mission_control_lessons.md`](docs/mission_control_lessons.md) +
 > [`docs/cobi_raci_nudge_lessons.md`](docs/cobi_raci_nudge_lessons.md).
 
-### Session 84 — SkyScribe: project soft-delete · lean Pages · computed progress bars (2026-06-29)
-
-Started "refine COBI a bit more"; the team using the dashboard surfaced a run of needs. **6 merged PRs.**
-- **Project soft-delete (#600)** — a reviewer / team-phrase user can **Table** (pause) or **Archive** (close)
-  a project; it leaves the live priority surfaces and moves to a collapsed **"Tabled & Archived"** section,
-  reversible (♻ Restore). New Supabase **`project_lifecycle`** overlay (absence of a row = active; write gated
-  `is_allowed_reviewer() OR team_pass_ok()`) + the committed `kb/project_lifecycle.json` ledger (the "noted in
-  the KB" record) + static `project_lifecycle.js` (the `card_updates.js` overlay pattern). **Wired across ALL
-  surfaces** (#605): the generator excludes tabled from the grid, `CPL_DATA.projects`, the Annual Workplan
-  tables, AND `build_activity_kpis` (so they drop from the Activity Metrics cards + the RACI matrix); the
-  client live-hides each surface pre-regen (`raci.js` filters `buildItems` by the overlay).
-- **Pages deploy fixed + leaned** — Sam's Jekyll build was hung on the 553 MB repo; **`.nojekyll` (#601)**
-  unstuck it, then a **custom lean `pages.yml` (#602)** (`git archive` → prune internal-only `kb/` staging /
-  alias maps / build inputs → assert every served path survives → upload + deploy) cut the published site to
-  **~192 MB (−65%)**, validated 0 served files dropped. Sam switched Settings → Pages → Source to "GitHub
-  Actions"; triggers = push + **`workflow_run` on "Daily CPL Dashboard"** (the cron's `GITHUB_TOKEN` push
-  doesn't self-trigger) + dispatch — all three verified green.
-- **Computed progress bars (#604)** — the Activity KPI card bar now computes **Goal (blue) + Stretch (gold)**
-  from `current ÷ current-fiscal-year target` (was the manual `percent_complete`); manual fallback where no
-  numeric/ladder. 1.1 reads Goal 200% ✓ / Stretch 100% ✓.
-- **Scoped, build next session:** the Annual Workplan tab as the **authoritative source** — hybrid Current
-  (live for the 5 `pid_to_kpi_key`-mapped, manual-editable for the rest) + editable titles (single
-  `projects.name` store). Decisions locked → [`docs/annual_workplan_authoritative_scope.md`](docs/annual_workplan_authoritative_scope.md).
-
-Suite **109 files green**. Full story: [`docs/project_lifecycle_lessons.md`](docs/project_lifecycle_lessons.md)
-+ [`docs/pages_lean_deploy_scope.md`](docs/pages_lean_deploy_scope.md). M-ID pipeline did NOT move
-(`#tab-pipeline` untouched). **NEXT: [`docs/session_85_handoff.md`](docs/session_85_handoff.md).**
+> **Session 84 narrative (SkyScribe — project soft-delete `project_lifecycle` #600/#605; lean Pages deploy
+> `.nojekyll`/`pages.yml` #601/#602; computed Goal+Stretch progress bars #604) archived** →
+> [`docs/roadmap_archive.md`](docs/roadmap_archive.md).
 
 ### Session 85 — SkyLight: Annual Workplan tab = authoritative source (2026-06-30)
 
@@ -2078,6 +2055,28 @@ published by the post-merge `daily-dashboard.yml` dispatch). Two pieces:
   [`docs/kb-notes/methodology-live-vs-manual-hybrid-column.md`](docs/kb-notes/methodology-live-vs-manual-hybrid-column.md).
   Full story: [`docs/annual_workplan_authoritative_lessons.md`](docs/annual_workplan_authoritative_lessons.md).
   **NEXT: [`docs/session_86_handoff.md`](docs/session_86_handoff.md).**
+
+### Session 86 — SkyGuy: KPI-card shelf · card-metric live sync · update-popup · KB team-phrase (2026-06-30)
+
+Sam's six COBI refinements (PR #610, code-only → post-merge dispatch publishes the HTML):
+- **KPI cards: hide + centered metric + collapse** — new static **`kpi_cards.js`** (the regen-safe
+  `kpi_reorder.js` pattern, NOT a generator change): at runtime wraps each `.kpi-card`'s metric+label into a
+  centered `.kc-head` + the rest into a collapsible `.kc-body`; cards open **collapsed (top half only)**, per-card
+  × hides (→ "Hidden (N)" restore tray), Expand-all/Collapse-all toolbar; per-browser `localStorage`, scopes to
+  `.kpi-section > .kpi-card`, coexists with `kpi_reorder.js`. `<script>` in BOTH HTMLs (Rule 4).
+- **Activity-card big number = live KPI** (#5) — new post-pass `apply_live_activity_current()` (after the merges
+  + `apply_live_workplan_current`) drives each Activity Metrics sub-activity card's `metric` from the live
+  headline KPI (the 5 `PID_TO_KPI_KEY` rows) or an explicit `workplan_goals.current` (unmapped), mirroring the
+  Session-85 hybrid; `current_manual_explicit` stamp gates the override (un-set cards unchanged). 3.1 43,630 →
+  live 48,158; `_parse_metric_num` now handles `k`/`M`/`B`/`$`.
+- **RACI Update popup** (#4) — was ALREADY show-all + edit/delete-any (incl. team-phrase); added a live
+  `Updates (N)` count + taller viewport + fresh-save id backfill, and a test that guards it.
+- **KB tab team-phrase** (#6) — the KB portal (a separate Supabase project) now unlocks + curates via the shared
+  `cpl_team_pass` (validated server-side against the MAIN project's `team_pass_ok()` RPC; carries over from the
+  Team & RACI tab via same-origin localStorage). Pure `KBComposer.teamPassRequest` keeps it unit-tested.
+
+112 JS test files + Python tests green; generator EXIT 0. Full story:
+[`docs/cobi_lessons.md`](docs/cobi_lessons.md) (S86). **NEXT: [`docs/session_87_handoff.md`](docs/session_87_handoff.md).**
 
 ---
 

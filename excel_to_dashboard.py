@@ -1797,15 +1797,22 @@ def _fy_label(suffix):
 
 
 def _parse_metric_num(s):
-    """Parse a displayed metric/ladder value ('43,630', '8', '85%', '') to a
-    float, or None if it isn't a plain number."""
+    """Parse a displayed metric/ladder value ('43,630', '8', '85%', '$269M',
+    '100k', '') to a float, or None if it isn't a plain number. Recognizes a
+    trailing k/M/B magnitude suffix (case-insensitive) so abbreviated live KPI
+    display strings still parse for the computed progress bars (without this,
+    '100k'/'$269M' parsed to None and silently disabled the bar)."""
     if s is None:
         return None
     t = str(s).strip().replace(",", "").replace("%", "").replace("$", "")
     if t == "" or t in ("—", "-", "N/A", "n/a", "TBD"):
         return None
+    mult = 1.0
+    if t and t[-1] in "kKmMbB":
+        mult = {"k": 1e3, "m": 1e6, "b": 1e9}[t[-1].lower()]
+        t = t[:-1].strip()
     try:
-        return float(t)
+        return float(t) * mult
     except ValueError:
         return None
 
@@ -9769,6 +9776,52 @@ def apply_live_workplan_current(annual_goals, kpis, live_data=None):
     print(f"  Annual Workplan: {n_live} sub-activities synced to live KPI values")
 
 
+def apply_live_activity_current(activity_kpis, annual_goals, kpis, live_data=None):
+    """Wire the Activity Metrics sub-activity card's big number ('metric') to the
+    SAME authoritative Current the Annual Workplan tab shows (Session 86), so the
+    card == headline KPI == Annual Workplan by construction instead of the stale
+    Excel kpi_metric (e.g. 3.1 was 43,630 vs the live 48,158). Mutates the
+    activity_kpis entries in place. Two authoritative sources:
+      • Mapped sub-activities (PID_TO_KPI_KEY) → the live MERGED headline KPI value
+        (verbatim display string, e.g. '48,158'), stamped metric_source='live'.
+      • Unmapped sub-activities that carry an EXPLICIT workplan_goals.current →
+        that manual value, so editing Current on the Annual Workplan tab updates
+        the card too; stamped metric_source='workplan'. Percentage ladders are
+        skipped (their Current isn't a card-style count).
+    A sub-activity with no live mapping and no explicit manual Current keeps its
+    existing kpi_metric (no regression). The 4.1 sprint composite (a synthetic
+    count) is never in PID_TO_KPI_KEY nor annual_goals, so it is left untouched.
+    Runs AFTER merge_live_metrics + merge_exhibit_metrics + apply_live_workplan_current."""
+    if not activity_kpis:
+        return
+    ag_by_id = {r.get("id"): r for r in (annual_goals or [])}
+    as_of = ""
+    if live_data and live_data.get("scraped_at"):
+        as_of = str(live_data["scraped_at"])[:10]
+    n_live = n_manual = 0
+    for group in activity_kpis:
+        for kpi in group.get("kpis", []):
+            aid = kpi.get("id")
+            key = PID_TO_KPI_KEY.get(aid)
+            if key:
+                merged = (kpis or {}).get(key)
+                val = merged.get("value") if isinstance(merged, dict) else None
+                if val not in (None, ""):
+                    kpi["metric"] = str(val)
+                    kpi["metric_source"] = "live"
+                    kpi["metric_as_of"] = as_of
+                    n_live += 1
+                    continue
+            row = ag_by_id.get(aid)
+            if row and not key and row.get("current_manual_explicit") and not row.get("is_percentage"):
+                num = _parse_metric_num((row.get("current") or {}).get("total"))
+                if num is not None:
+                    kpi["metric"] = fmt_number(num)
+                    kpi["metric_source"] = "workplan"
+                    n_manual += 1
+    print(f"  Activity cards: {n_live} synced to live KPI, {n_manual} to manual workplan Current")
+
+
 def build_workplan_goals_from_supabase(
     supabase_rows, associations, projects, live_data=None
 ):
@@ -9924,6 +9977,11 @@ def build_workplan_goals_from_supabase(
         #    legacy Excel kpi_metric for back-compat / pre-column snapshots).
         current_kpi_key = PID_TO_KPI_KEY.get(aid)
         current_manual = _row_current(data.get("GOAL"), data.get("STRETCH"))
+        # Did this Current come from an EXPLICIT workplan_goals.current (vs the
+        # Excel kpi_metric fallback)? The activity-card live-sync (Session 86)
+        # only mirrors an explicit manual Current onto the card, so an un-set
+        # sub-activity keeps its existing kpi_metric (no surprise overrides).
+        current_manual_explicit = current_manual is not None
         if current_manual is None:
             excel_project = proj_map.get(aid, {})
             current_metric_raw = excel_project.get("kpi_metric", 0)
@@ -9972,6 +10030,7 @@ def build_workplan_goals_from_supabase(
             # KPI merges. current_kpi_key drives that post-pass + gates the
             # renderer (live = read-only badge, manual = editable + ✎).
             "current_source": "manual",
+            "current_manual_explicit": current_manual_explicit,
             "current_kpi_key": current_kpi_key,
         })
 
@@ -10878,6 +10937,14 @@ def main():
     # the Annual Workplan table == the headline card by construction. Unmapped
     # sub-activities keep their manual Current. Must run after both merges.
     apply_live_workplan_current(annual_goals, kpis, live_data)
+
+    # Session 86 — wire the Activity Metrics sub-activity cards' big number to the
+    # same authoritative Current (live headline KPI for the PID_TO_KPI_KEY-mapped
+    # sub-activities; explicit manual workplan_goals.current otherwise) so the
+    # cards stop drifting from the headline + Annual Workplan. Mutates
+    # activity_kpis in place; must run after both merges + the workplan sync and
+    # before render_activity_kpis_html.
+    apply_live_activity_current(activity_kpis, annual_goals, kpis, live_data)
 
     # Log daily snapshot and render trends + activity cards
     kpi_history = log_daily_snapshot(live_data, exhibit_data)

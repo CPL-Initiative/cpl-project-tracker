@@ -1,8 +1,8 @@
 ---
 title: COBI — the masthead rename and the Mamba brand layer
 created: 2026-06-19
-updated: 2026-06-22
-tags: [lessons, cobi, branding, masthead, ui, easter-egg]
+updated: 2026-06-30
+tags: [lessons, cobi, branding, masthead, ui, easter-egg, kpi-cards]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
 related:
@@ -10,8 +10,10 @@ related:
   - "[[docs/first_light_lessons]]"
 artifacts:
   - cobi_brand.js
+  - kpi_cards.js
   - excel_to_dashboard.py
   - tests/cobi_brand.test.js
+  - tests/kpi_cards.test.js
 ---
 
 # COBI — the masthead rename + the Mamba brand layer
@@ -114,3 +116,54 @@ real tokens/fonts) → locked a **single-row "app bar"**, then ported it regen-s
   commit, squash-merge, **dispatch the daily workflow** to publish the populated header.
 - The seal `<img>` onerror-hides, so "merge now" (seal-less, fills in later) is a safe
   fallback if Sam prefers.
+
+## Session 86 (2026-06-30, SkyGuy) — six COBI refinements (PR #610)
+
+Sam's list of six refinements. Five shipped as code; one was already built and got
+clarity polish. Patterns worth keeping:
+
+1. **KPI cards: hide + centered title row + per-card collapse — a NEW static
+   `kpi_cards.js`, NOT a generator change.** The headline KPI card markup is
+   regenerated daily, so the regen-safe move (the `kpi_reorder.js` pattern) is a
+   runtime overlay: on load, wrap each `.kpi-number` + `.kpi-label` into a centered
+   `.kc-head` and the rest into a collapsible `.kc-body`, inject controls + CSS, and
+   re-match cards by `.kpi-label` text across regens. Per-browser `localStorage`, no
+   auth, no generator/HTML edit beyond the one `<script>` tag (mirrored, Rule 4).
+   **Scope to `.kpi-section > .kpi-card`** — the grid also holds two full-width
+   non-`.kpi-card` panels (KPI Trends, College Activity) that must be left alone.
+   **Coexists with `kpi_reorder.js`:** controls live INSIDE the card so they ride a
+   drag; `stopPropagation` on control clicks + a head-click toggle (a drag suppresses
+   the click) keep both working. Default = collapsed ("only the top half shows").
+2. **Activity-card big number → live KPI: a post-pass, never inline.** Same lesson
+   Session 85 learned for the Annual Workplan: `build_activity_kpis()` runs BEFORE
+   `merge_live_metrics`, so the live value isn't available there. `apply_live_activity_current()`
+   mutates `activity_kpis` AFTER the merges + `apply_live_workplan_current()`,
+   mirroring the workplan hybrid (mapped → live verbatim string; unmapped+explicit
+   `workplan_goals.current` → that). Stamp a `current_manual_explicit` flag in the
+   build so the post-pass only overrides an explicitly-set manual Current (un-set
+   cards keep their `kpi_metric` — zero regression). Real regen: 3.1 43,630 → 48,158.
+   Pitfall fixed: `_parse_metric_num` didn't handle `k`/`M`/`B` → `"100k"`/`"$269M"`
+   live strings parsed to `None` and silently disabled the computed progress bar.
+3. **"Already built" is a real outcome — verify before building.** The RACI Update
+   popup already showed the full history (no `.limit()`) with per-row ✏️/🗑 for any
+   entry, incl. team-phrase reviewers (`canEdit = !!state.sess`, and a team-phrase
+   session IS a `state.sess`). The right move was clarity (a live `Updates (N)` count)
+   + robustness (re-fetch on a missing-id fresh save) + a test that GUARDS the
+   show-all/edit-any behavior — not a rebuild. Likely source of the user's confusion:
+   the read-only `card_updates.js` card-FACE overlay shows only the newest update by
+   design; the full list is one click away in the popup.
+4. **Reuse the server-enforced team-phrase gate cross-bundle via shared same-origin
+   localStorage.** The KB portal is a SEPARATE Supabase project with its own
+   magic-link auth, but it's served same-origin as the dashboard, so the team phrase
+   stored under `cpl_team_pass` (by `raci.js`) is readable there. kb-portal validates
+   it against the MAIN project's `team_pass_ok()` RPC (the secret never leaves
+   Postgres), then unlocks the portal + composer WITHOUT a Supabase session — the
+   composer's only "write" is a tokenless GitHub deep-link, so unlocking it for
+   team-phrase users is pure UX. The pure request builder (`KBComposer.teamPassRequest`)
+   keeps the URL/header contract unit-tested even though `app.js` (esm.sh imports)
+   can't be eval'd in Node.
+
+**Delivery:** code-only PR (#610) — restore the regenerated HTMLs to `main`,
+re-apply only the `<script>` tag, let the post-merge `daily-dashboard.yml` dispatch
+publish the activity-card change. 112 JS test files + Python tests green; generator
+EXIT 0.

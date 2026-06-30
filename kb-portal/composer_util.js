@@ -196,6 +196,26 @@
     return [{ type: "text", text: textParts.join("") }].concat(blocks);
   }
 
+  // Shape the server-side team-phrase check — the team_pass_ok() RPC on the main
+  // dashboard's Supabase project (the SAME gate raci.js / mission_control.js use).
+  // The phrase rides ONLY in the x-team-pass header (never the URL/body, so it is
+  // not logged); the server compares it against public.team_access inside Postgres
+  // and returns a boolean. The actual fetch + portal-unlock lives in app.js; this
+  // pure builder keeps the URL/header contract unit-testable.
+  function teamPassRequest(url, anon, phrase) {
+    return {
+      url: String(url || "").replace(/\/+$/, "") + "/rest/v1/rpc/team_pass_ok",
+      method: "POST",
+      headers: {
+        apikey: anon,
+        Authorization: "Bearer " + anon,
+        "Content-Type": "application/json",
+        "x-team-pass": String(phrase == null ? "" : phrase).trim()
+      },
+      body: "{}"
+    };
+  }
+
   root.KBComposer = {
     slugify: slugify,
     todayISO: todayISO,
@@ -209,6 +229,7 @@
     fileKind: fileKind,
     imageMediaType: imageMediaType,
     extractTextCap: extractTextCap,
-    buildPolishContent: buildPolishContent
+    buildPolishContent: buildPolishContent,
+    teamPassRequest: teamPassRequest
   };
 })(typeof window !== "undefined" ? window : globalThis);

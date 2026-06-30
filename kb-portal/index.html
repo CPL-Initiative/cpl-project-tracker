@@ -61,6 +61,25 @@
       <a href="https://cpl-initiative.github.io/cpl-project-tracker/" target="_blank" rel="noopener">CPL Project Dashboard</a>.
     </p>
   </div>
+
+  <div class="card">
+    <h2>Or use the team phrase</h2>
+    <p class="muted">Know the shared CPL team phrase? Enter it to read and add
+       documents without a personal sign-in. It's the same phrase that unlocks
+       editing on the COBI <strong>Team &amp; RACI</strong> tab — unlock it in
+       either place and it carries over.</p>
+    <form id="team-form" autocomplete="off">
+      <div class="field">
+        <label for="team-phrase">Team phrase</label>
+        <input type="password" id="team-phrase" name="team-phrase"
+               placeholder="team phrase" autocomplete="off">
+      </div>
+      <div class="actions">
+        <button type="submit" class="btn btn-primary" id="btn-team">🔓 Unlock with team phrase</button>
+      </div>
+    </form>
+    <div id="team-msg" class="status-banner info" style="display:none;margin-top:14px"></div>
+  </div>
 </main>
 
 <!-- ───────────────────────── Portal / reader view ─────────────────── -->

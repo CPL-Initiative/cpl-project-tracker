@@ -16,6 +16,7 @@ import {
   SUPABASE_URL, SUPABASE_ANON, RAW_BASE, TREE_API,
   SECTIONS, TOP_LEVEL_DOCS, FALLBACK_TREE,
   REPO_OWNER, REPO_NAME, WRITE_BRANCH, PROXY_URL, POLISH_MODEL,
+  TEAM_SUPABASE_URL, TEAM_SUPABASE_ANON, TEAM_PASS_KEY,
 } from "./config.js";
 
 const sb = createClient(SUPABASE_URL, SUPABASE_ANON, {
@@ -28,16 +29,48 @@ const show = (view) => {
 };
 
 // ───────────────────────────── Auth ─────────────────────────────
+// Two ways in: a per-person magic-link sign-in (Supabase, allowlisted), OR the
+// shared CPL team phrase (validated server-side against the dashboard's
+// team_pass_ok() RPC). The team phrase is the SAME one that unlocks editing on
+// the COBI Team & RACI tab; since kb-portal is served same-origin, an unlock done
+// there carries over here via shared localStorage (no re-entry needed).
+let teamUnlocked = false;
+
 async function init() {
+  // Team-phrase carry-over: trust a stored phrase only after the server confirms
+  // it (a rotated/garbage phrase is dropped so we never get stuck unlocked-broken).
+  teamUnlocked = await maybeTeamUnlock();
   const { data: { session } } = await sb.auth.getSession();
   render(session);
   sb.auth.onAuthStateChange((_evt, s) => render(s));
 }
 
+// Validate a phrase SERVER-SIDE (the browser can't read the secret — it asks
+// Postgres "is this right?"). Returns Promise<bool>. Uses the pure request
+// builder so the URL/header contract stays unit-tested.
+function verifyPhrase(phrase) {
+  if (!phrase || !String(phrase).trim()) return Promise.resolve(false);
+  const req = window.KBComposer.teamPassRequest(TEAM_SUPABASE_URL, TEAM_SUPABASE_ANON, phrase);
+  return fetch(req.url, { method: req.method, headers: req.headers, body: req.body })
+    .then((r) => (r.ok ? r.json() : false))
+    .then((v) => v === true)
+    .catch(() => false);
+}
+
+async function maybeTeamUnlock() {
+  let phrase = "";
+  try { phrase = localStorage.getItem(TEAM_PASS_KEY) || ""; } catch (e) {}
+  if (!phrase) return false;
+  const ok = await verifyPhrase(phrase);
+  if (!ok) { try { localStorage.removeItem(TEAM_PASS_KEY); } catch (e) {} }
+  return ok;
+}
+
 function render(session) {
-  if (session?.user) {
+  const signedIn = !!session?.user;
+  if (signedIn || teamUnlocked) {
     $("session-box").style.display = "";
-    $("session-email").textContent = session.user.email ?? "";
+    $("session-email").textContent = signedIn ? (session.user.email ?? "") : "Team access";
     show("portal");
     ensureNav();
     routeFromHash();
@@ -69,8 +102,41 @@ $("login-form").addEventListener("submit", async (e) => {
   $("btn-send").disabled = false;
 });
 
+// Team-phrase unlock — an alternative to the magic link. On success, store the
+// phrase in the SHARED (same-origin) localStorage key so it also unlocks the
+// COBI Team & RACI tab, then render the portal (no Supabase session needed).
+const teamForm = $("team-form");
+if (teamForm) {
+  teamForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const phrase = $("team-phrase").value.trim();
+    const msg = $("team-msg");
+    const btn = $("btn-team");
+    if (!phrase) return;
+    btn.disabled = true;
+    msg.style.display = "none";
+    const ok = await verifyPhrase(phrase);
+    if (ok) {
+      try { localStorage.setItem(TEAM_PASS_KEY, phrase); } catch (err) {}
+      teamUnlocked = true;
+      $("team-phrase").value = "";
+      render(null);
+    } else {
+      msg.textContent = "That team phrase doesn't match. Check with the MAP team.";
+      msg.className = "status-banner error";
+      msg.style.display = "";
+      btn.disabled = false;
+    }
+  });
+}
+
 $("btn-signout").addEventListener("click", async () => {
+  // Clear BOTH gates: end the magic-link session and drop the shared team phrase
+  // (mirrors raci.js signOut — "sign out" locks team access everywhere).
+  teamUnlocked = false;
+  try { localStorage.removeItem(TEAM_PASS_KEY); } catch (e) {}
   await sb.auth.signOut();
+  render(null);
   location.hash = "";
 });
 

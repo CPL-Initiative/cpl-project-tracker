@@ -1,26 +1,32 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-30 · Session 85 (SkyLight) · the Annual Workplan tab is now the authoritative source: the KPI-mapped 'Current' numbers pull live (matching the headline cards), the rest are editable right in the tab, and sub-activity titles are editable there as the single source of truth",
- "_session": 85,
- "_status": "Built the Annual Workplan authoritative-source work you scoped. (1) The 'Current' column no longer drifts from the KPI cards: the 5 KPI-mapped sub-activities (3.1 students, 3.2 transcribed units, 2.1 credit recs, 3.3 colleges, 4.1.1 veteran sprint) now show the LIVE headline value read-only with a 'live · as of' badge — so they match the cards by construction. I also fixed 3.2's mapping (it was pointed at eligible units; it's transcription). (2) Every OTHER sub-activity's 'Current' is now editable right in the Annual Workplan tab (sign in, click the green Current cell). (3) Sub-activity TITLES are editable there too, saving to the one title store the cards use. This goes live the moment the daily publish runs after the PR merges.",
+ "_as_of": "2026-06-30 · Session 86 (SkyGuy) · six COBI refinements: KPI cards can be hidden / centered / collapsed; the Activity card big numbers now match the live KPIs; the card Update popup shows all entries with edit+delete; and the Knowledge Base tab can be unlocked with the shared team phrase",
+ "_session": 86,
+ "_status": "Built your six COBI refinements (PR #610). (1-3) KPI cards: hover a headline card for an × to HIDE it (restore from the 'Hidden' button), the big number is now centered in the card's title row, and each card COLLAPSES to just that title row by default — click a card to expand it, or use 'Expand all / Collapse all' on the tab. All per-browser, no sign-in. (4) The Activity/Project card 'Update' popup already showed every update with Edit/Delete on each — I made that unmistakable (a live 'Updates (N)' count + a taller list). (5) The Activity card big number now matches the live KPI cards (3.1 was 43,630, now reads the live 48,158) and the Annual Workplan Current. (6) The Knowledge Base tab can now be opened AND its New-doc composer used with the shared team phrase — same phrase as the Team & RACI tab — instead of a personal magic-link login. Goes fully live after the next daily publish.",
  "items": [
   {
-   "id": "soft-delete-confirm",
-   "who": "sam",
-   "tab": "activities-projects",
-   "text": "Confirm the new soft-delete end to end: on an Activity/Project card click 🗄 Table / Archive (or unlock with the team phrase), give a reason — it should vanish from the grid, the Annual Workplan targets, the Activity cards and the RACI matrix, and appear in the 'Tabled & Archived' section at the bottom. Then ♻ Restore it. (5.1 AI-Ready CA is already tabled as your test.)"
-  },
-  {
-   "id": "progress-bars-eyeball",
+   "id": "kpi-cards-confirm",
    "who": "sam",
    "tab": "dashboard",
-   "text": "Glance at the Activity Metrics cards — the progress bar is now two bars: blue = Goal, gold = Stretch, computed from actual ÷ this fiscal year's target (a ✓ when met). Tell me if you'd rather they track the 2030 target instead of the current year — it's a one-line change."
+   "text": "Try the new KPI card controls on the Dashboard: hover a headline card → × hides it (restore from the 'Hidden (N)' button), the big number sits centered in the title row, and cards open collapsed (only the top half) — click a card to expand, or 'Expand all / Collapse all' at the top right of the grid. It's per-browser (no sign-in). Tell me if you want a different default (e.g. open expanded)."
   },
   {
-   "id": "annual-workplan-confirm",
+   "id": "card-metric-sync-confirm",
    "who": "sam",
-   "tab": "workplan-goals",
-   "text": "Confirm the new Annual Workplan tab live: the 5 KPI-mapped 'Current' rows should match the headline KPI cards exactly (with a 'live · as of' badge, read-only); every other 'Current' cell should be click-to-edit once you sign in; and a sub-activity title should be click-to-edit too (it saves to the one title store the cards use). Flag anything off. (Goes live after the next daily publish.)"
+   "tab": "activities-projects",
+   "text": "Check the Activity Metrics cards: the big number for the 5 KPI-mapped sub-activities (3.1 students, 3.2 transcribed units, 2.1 credit recs, 3.3 colleges) now matches the headline KPI cards exactly (3.1 should read ~48,158, not the old 43,630), and the Goal/Stretch bars recompute from it. Others mirror the Annual Workplan 'Current' if you've set one. Flag any that still look off."
+  },
+  {
+   "id": "kb-teamphrase-confirm",
+   "who": "sam",
+   "tab": "knowledge-base",
+   "text": "On the Knowledge Base tab, you can now click 'Unlock with team phrase' (the same phrase as Team & RACI) instead of a magic-link email — it opens the reader AND the ✍️ New doc composer. Unlocking it on either tab carries over to the other. Confirm it works for whoever you want curating the KB."
+  },
+  {
+   "id": "update-popup-confirm",
+   "who": "sam",
+   "tab": "activities-projects",
+   "text": "Open a card's 📝 Update popup: it shows ALL updates (header now reads 'Updates (N)'), and every entry has ✏️ Edit / 🗑 Delete (works with the team phrase too). If you were only seeing one update on the card FACE, that's the by-design summary — the full list is in the popup."
   },
   {
    "id": "vet-plans-kb-15",

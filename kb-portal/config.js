@@ -40,6 +40,21 @@ export const WRITE_BRANCH = "main";
 export const PROXY_URL    = "https://cpl-proxy.slee-548.workers.dev";
 export const POLISH_MODEL = "claude-sonnet-4-5-20250929";
 
+// ── Team-phrase access (shared with the COBI dashboard) ──────────────────────
+// As an alternative to a per-person magic-link sign-in, anyone who knows the
+// shared CPL team phrase can unlock the portal + the New-doc composer. The phrase
+// is validated SERVER-SIDE against the MAIN dashboard's Supabase project — the
+// team_pass_ok() RPC reads the x-team-pass header and compares it against
+// public.team_access inside Postgres (the phrase never lives in code), the same
+// gate raci.js / mission_control.js use. The publishable (anon) key below is the
+// one already public in the dashboard's unified_courses.js; it grants nothing on
+// its own. Because kb-portal is served same-origin as the dashboard, a team
+// unlock done on the Team & RACI tab is already in shared localStorage under
+// TEAM_PASS_KEY and carries over here automatically (no re-entry needed).
+export const TEAM_SUPABASE_URL  = "https://hvuwhnbuahrtptokpqfh.supabase.co";
+export const TEAM_SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
+export const TEAM_PASS_KEY      = "cpl_team_pass";
+
 // Who may sign in (display/UX only — the real gate is enforced in Supabase:
 // signups disabled + only these users provisioned). map@rccd.edu is intentionally
 // NOT here, since that inbox has access to private CPLBrain content.
