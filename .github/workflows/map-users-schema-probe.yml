@@ -1,0 +1,36 @@
+name: MAP Users schema probe (one-off, PII-safe)
+
+# Captures the SCHEMA of MAP "College Users & Roles" (View_CollegeUsersRoles) so
+# we can design a gated COBI MAP-Users management tab + a college-nudge flow.
+#
+# WHY A RUNNER: the Azure MAP Custom Report API is egress-blocked from the agent
+# sandbox (runner-as-proxy pattern, same as cpl-landing-pages.yml).
+#
+# PII-SAFE BY DESIGN: map/probe_users_schema.py prints ONLY field names, counts,
+# types, length ranges, and the distinct values of LOW-cardinality NON-PII fields
+# (roles/statuses). Raw names/emails/phones are never printed; nothing is written
+# to disk or committed. This does NOT re-add the view to the daily fetch — it's a
+# controlled one-off (Sam-approved, Session 87) and can be deleted after capture.
+#
+# Trigger: workflow_dispatch only.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Probe View_CollegeUsersRoles schema (no PII, no commit)
+        env:
+          MAP_API_KEY: ${{ secrets.MAP_API_KEY }}
+          MAP_API_AUTH_HEADER: ${{ secrets.MAP_API_AUTH_HEADER }}
+          MAP_API_AUTH_SCHEME: ${{ secrets.MAP_API_AUTH_SCHEME }}
+        run: python3 map/probe_users_schema.py
