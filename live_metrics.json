@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-30T17:37:10.933Z",
+  "scraped_at": "2026-06-30T23:33:19.626Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -48,14 +48,14 @@
         },
         {
           "college": "Moreno Valley College",
-          "students": 1525,
+          "students": 1551,
           "units": 9896.5,
-          "avgUnits": 6.489508196721311,
+          "avgUnits": 6.3807221147646676,
           "transcriptionRate": 90.6,
-          "avgTranscribed": 5.881311475409836,
+          "avgTranscribed": 5.7827208252740165,
           "criteriaMetCount": 5,
           "militaryStudents": 953,
-          "nonMilitaryStudents": 588,
+          "nonMilitaryStudents": 614,
           "apprenticeStudents": 0,
           "savings": 15180355,
           "yearImpact": 59104148,
@@ -198,13 +198,13 @@
         },
         {
           "college": "Bakersfield College",
-          "students": 584,
+          "students": 587,
           "units": 8293,
-          "avgUnits": 14.200342465753424,
+          "avgUnits": 14.127768313458262,
           "transcriptionRate": 11.4,
-          "avgTranscribed": 1.6172945205479452,
+          "avgTranscribed": 1.6090289608177173,
           "criteriaMetCount": 3,
-          "militaryStudents": 538,
+          "militaryStudents": 541,
           "nonMilitaryStudents": 54,
           "apprenticeStudents": 0,
           "savings": 15285012.5,
@@ -458,13 +458,13 @@
         },
         {
           "college": "Clovis Community College",
-          "students": 185,
+          "students": 187,
           "units": 1093,
-          "avgUnits": 5.908108108108108,
+          "avgUnits": 5.8449197860962565,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
-          "militaryStudents": 185,
+          "militaryStudents": 187,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 1890890,
@@ -1238,13 +1238,13 @@
         },
         {
           "college": "Napa Valley College",
-          "students": 47,
+          "students": 48,
           "units": 27,
-          "avgUnits": 0.574468085106383,
+          "avgUnits": 0.5625,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 47,
+          "militaryStudents": 48,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 46710,
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "48,187",
+      "value": "48,219",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,875"
+          "value": "24,881"
         },
         {
           "label": "Workforce/Other",
-          "value": "23,388"
+          "value": "23,414"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 48187,
+    "Students": 48219,
     "Units": 230440.65000000002,
     "TranscribedUnits": 99534.95,
     "Savings": 321229590.25,
     "YearImpact": 1299390447.3999999,
-    "MilitaryStudents": 24875,
-    "NonMilitaryStudents": 23388,
+    "MilitaryStudents": 24881,
+    "NonMilitaryStudents": 23414,
     "AprenticeStudents": 753,
-    "AverageUnits": 4.782216157884907,
-    "TranscribedAverage": 2.065597567808745
+    "AverageUnits": 4.779042493622846,
+    "TranscribedAverage": 2.064226757087455
   }
 }
