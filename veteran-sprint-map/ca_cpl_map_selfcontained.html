@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>California Community Colleges &amp; Military Installations — Credit for Prior Learning</title>
+<style>
+  :root{
+    --navy:#1F355E; --co-blue:#0066BA; --dk-blue:#003B71;
+    --crimson:#B22234; --gold:#D4A843;
+    --ink:#1d2733; --muted:#5b6776; --line:#e2e8f0; --panel:#ffffff; --bg:#eef2f7;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+  #app{display:flex;flex-direction:column;height:100vh;width:100%}
+  header{padding:10px 16px;background:linear-gradient(90deg,var(--navy),var(--dk-blue));color:#fff;flex:0 0 auto}
+  header h1{margin:0;font-size:18px;font-weight:800;letter-spacing:.2px}
+  header .sub{font-size:12.5px;color:#cde0f5;margin-top:2px}
+  header .sub b{color:#fff}
+  #main{flex:1 1 auto;display:flex;min-height:0}
+  #stage{position:relative;flex:1 1 auto;min-width:0;background:
+      radial-gradient(circle at 30% 20%, #f6f9fc, #e7eef6)}
+  svg{width:100%;height:100%;display:block;cursor:grab}
+  svg.grabbing{cursor:grabbing}
+  .ca-boundary{fill:#dfe9f4;stroke:var(--dk-blue);stroke-width:2;vector-effect:non-scaling-stroke}
+  .pair-line{stroke:var(--gold);stroke-width:3.5;opacity:.92;vector-effect:non-scaling-stroke;stroke-linecap:round}
+  .pair-line.dim{opacity:.18}
+  .mk{cursor:pointer}
+  .mk .hit{fill:transparent}
+  .col-dot{fill:var(--navy);stroke:#fff;stroke-width:1.4}
+  .col-dot.key{fill:var(--gold);stroke:var(--navy);stroke-width:1.6}
+  .mk.sel .col-dot{fill:var(--co-blue);stroke:#fff;stroke-width:2.4}
+  .mk.dim{opacity:.18}
+  .mk.hot .col-dot{fill:var(--co-blue)}
+  .base-star{fill:var(--crimson);stroke:#fff;stroke-width:1}
+  .mk.sel .base-star{fill:#7d1018;stroke:var(--gold);stroke-width:1.8}
+  .mk.hot .base-star{fill:#7d1018}
+  /* controls */
+  .ctl{position:absolute;display:flex;gap:6px;align-items:center;z-index:5}
+  .ctl.tl{top:12px;left:12px;flex-direction:column;align-items:flex-start}
+  .ctl.tr{top:12px;right:12px;flex-direction:column;align-items:flex-end}
+  .ctl.bl{bottom:14px;left:12px}
+  .card{background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:10px;
+        box-shadow:0 2px 10px rgba(15,30,60,.12);padding:8px 10px}
+  .btn{border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:7px;
+       padding:5px 9px;font-size:12.5px;font-weight:600;cursor:pointer;white-space:nowrap}
+  .btn:hover{background:#f1f6fc;border-color:var(--co-blue)}
+  .btn.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .zoombtns .btn{font-size:16px;font-weight:800;width:34px;height:34px;padding:0;line-height:1}
+  .regions{display:flex;gap:6px;flex-wrap:wrap;max-width:60vw}
+  .legend{font-size:12px;line-height:1.7}
+  .legend .row{display:flex;align-items:center;gap:7px}
+  .swatch{width:14px;height:14px;border-radius:50%;display:inline-block;flex:0 0 auto}
+  .star-swatch{color:var(--crimson);font-size:15px;line-height:1}
+  .line-swatch{width:18px;height:0;border-top:3.5px solid var(--gold);display:inline-block}
+  .toggle{display:flex;align-items:center;gap:6px;font-size:12.5px;cursor:pointer;user-select:none}
+  .toggle input{accent-color:var(--co-blue)}
+  /* side panel */
+  #side{flex:0 0 340px;max-width:42vw;background:var(--panel);border-left:1px solid var(--line);
+        display:flex;flex-direction:column;min-height:0}
+  #side .tabs{display:flex;border-bottom:1px solid var(--line);flex:0 0 auto}
+  #side .tab{flex:1;padding:9px 6px;text-align:center;font-size:12.5px;font-weight:700;color:var(--muted);
+             cursor:pointer;background:#f7fafd;border:none;border-bottom:3px solid transparent}
+  #side .tab.on{color:var(--navy);background:#fff;border-bottom-color:var(--co-blue)}
+  #side .body{flex:1 1 auto;overflow:auto;padding:12px 14px}
+  .search{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:8px;font-size:13px;margin-bottom:8px}
+  .detail h2{margin:0 0 2px;font-size:16px;color:var(--navy)}
+  .detail .kicker{font-size:11px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--co-blue)}
+  .detail .blurb{font-size:12.5px;color:var(--muted);margin:8px 0}
+  .detail .vet{font-size:13px;color:var(--navy);background:#fff4d6;border:1px solid #e8cf86;
+        border-radius:8px;padding:6px 9px;margin:8px 0}
+  #vet-stat b{color:#ffe2a6}
+  .cta{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;padding:8px 12px;
+       border-radius:8px;font-weight:700;font-size:13px;margin:4px 0 10px}
+  .cta:hover{background:var(--co-blue)}
+  .pill{display:inline-block;background:#fff4d6;color:#7a5a06;border:1px solid #e8cf86;border-radius:999px;
+        padding:1px 8px;font-size:11px;font-weight:700;margin-left:6px;vertical-align:middle}
+  .nearlist{list-style:none;margin:8px 0 0;padding:0}
+  .nearlist li{padding:7px 8px;border:1px solid var(--line);border-radius:8px;margin-bottom:6px;background:#fbfdff}
+  .nearlist li a{color:var(--navy);font-weight:700;text-decoration:none;font-size:13px}
+  .nearlist li a:hover{color:var(--co-blue);text-decoration:underline}
+  .nearlist .meta{font-size:11.5px;color:var(--muted);margin-top:2px;display:flex;justify-content:space-between;gap:8px}
+  .nearlist .demo{color:#7a5a06;font-weight:700}
+  .dirlist{list-style:none;margin:0;padding:0}
+  .dirlist li{padding:6px 6px;border-bottom:1px solid var(--line);font-size:13px;cursor:pointer;display:flex;
+              justify-content:space-between;align-items:center;gap:8px}
+  .dirlist li:hover{background:#f1f6fc}
+  .dirlist li .nm{color:var(--navy);font-weight:600}
+  .dirlist li .lnk{color:var(--co-blue);text-decoration:none;font-size:11.5px;font-weight:700;flex:0 0 auto}
+  .hint{font-size:12px;color:var(--muted);margin:0 0 10px}
+  .empty{color:var(--muted);font-size:13px;padding:14px 4px}
+  footer{flex:0 0 auto;font-size:11px;color:var(--muted);padding:5px 14px;background:#fff;border-top:1px solid var(--line)}
+  /* floating tooltip */
+  #tip{position:fixed;z-index:50;pointer-events:none;background:#fff;border:1px solid var(--line);
+       border-radius:8px;box-shadow:0 4px 14px rgba(15,30,60,.2);padding:7px 9px;max-width:240px;
+       font-size:12px;display:none}
+  #tip .t{font-weight:800;color:var(--navy)}
+  #tip .c{color:var(--co-blue);font-weight:700;font-size:11px}
+  #tip .b{color:var(--muted);margin-top:3px}
+  @media (max-width:760px){
+    #side{flex-basis:0;display:none}
+    .regions{max-width:80vw}
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>California Community Colleges &amp; Military Installations</h1>
+    <div class="sub"><b>Credit for Prior Learning</b> &mdash; turning military training into college credit &nbsp;•&nbsp;
+      <b>115</b> colleges &nbsp;•&nbsp; <b>44</b> installations<span id="vet-stat"></span> &nbsp;•&nbsp; CPL Initiative / Veteran Sprint</div>
+  </header>
+
+  <div id="main">
+    <div id="stage">
+      <svg id="map" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+        <g id="viewport">
+          <path id="boundary" class="ca-boundary"></path>
+          <g id="g-pairs"></g>
+          <g id="g-colleges"></g>
+          <g id="g-bases"></g>
+        </g>
+      </svg>
+
+      <div class="ctl tl">
+        <div class="card legend">
+          <div class="row"><span class="swatch" style="background:var(--navy)"></span> Community College</div>
+          <div class="row"><span class="swatch" style="background:var(--gold);border:1.5px solid var(--navy)"></span> Demo-project college</div>
+          <div class="row"><span class="star-swatch">&#9733;</span> Military installation</div>
+          <div class="row"><span class="line-swatch"></span> Demonstration pairing</div>
+        </div>
+        <div class="card" style="display:flex;flex-direction:column;gap:5px">
+          <label class="toggle"><input type="checkbox" id="t-col" checked> Colleges</label>
+          <label class="toggle"><input type="checkbox" id="t-base" checked> Bases</label>
+          <label class="toggle"><input type="checkbox" id="t-pair" checked> Pairings</label>
+        </div>
+      </div>
+
+      <div class="ctl tr zoombtns">
+        <button class="btn" id="zin" title="Zoom in">+</button>
+        <button class="btn" id="zout" title="Zoom out">&minus;</button>
+        <button class="btn" id="zreset" title="Reset view" style="font-size:12px;font-weight:700">Reset</button>
+      </div>
+
+      <div class="ctl bl card regions" id="regions"></div>
+    </div>
+
+    <aside id="side">
+      <div class="tabs">
+        <button class="tab on" data-tab="detail">Details</button>
+        <button class="tab" data-tab="colleges">Colleges</button>
+        <button class="tab" data-tab="bases">Bases</button>
+      </div>
+      <div class="body" id="panel-detail">
+        <p class="hint">Click any <b>installation ★</b> to see the community colleges best positioned to partner
+          with it on Credit for Prior Learning &mdash; or click a <b>college ●</b> to open its CPL landing page.</p>
+        <div id="detail"></div>
+      </div>
+      <div class="body" id="panel-colleges" style="display:none">
+        <input class="search" id="search-col" placeholder="Search 115 colleges…" autocomplete="off"/>
+        <ul class="dirlist" id="list-col"></ul>
+      </div>
+      <div class="body" id="panel-bases" style="display:none">
+        <input class="search" id="search-base" placeholder="Search 44 installations…" autocomplete="off"/>
+        <ul class="dirlist" id="list-base"></ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer>Coordinates are campus/installation-level (illustrative). Gold lines = the three demonstration-project pairings
+    (Fort Irwin&ndash;Barstow, MCAGCC Twentynine Palms&ndash;Copper Mountain, Camp Pendleton&ndash;Palomar).
+    Source: CPL Initiative / MAP, CCCCO. Self-contained — no internet required.</footer>
+</div>
+
+<div id="tip"></div>
+
+<script>
+const DATA = {"colleges": [{"n": "Allan Hancock College", "la": 34.9514, "lo": -120.4357, "x": 395.26, "y": 835.81, "u": "https://cpldashboardcccco.azurewebsites.net/allan", "k": 0, "m": 133}, {"n": "American River College", "la": 38.6492, "lo": -121.3611, "x": 311.87, "y": 417.45, "u": "https://cpldashboardcccco.azurewebsites.net/AMEC", "k": 0, "m": 44}, {"n": "Antelope Valley College", "la": 34.68, "lo": -118.179, "x": 598.63, "y": 866.52, "u": "https://cpldashboardcccco.azurewebsites.net/AVC", "k": 0, "m": 266}, {"n": "Bakersfield College", "la": 35.403, "lo": -118.946, "x": 529.51, "y": 784.72, "u": "https://cpldashboardcccco.azurewebsites.net/Bakersfieldcollege", "k": 0, "m": 538}, {"n": "Barstow College", "la": 34.847, "lo": -117.029, "x": 702.26, "y": 847.62, "u": "https://cpldashboardcccco.azurewebsites.net/BC", "k": 1, "m": 129}, {"n": "Berkeley City College", "la": 37.869, "lo": -122.268, "x": 230.14, "y": 505.72, "u": "https://cpldashboardcccco.azurewebsites.net/BERC", "k": 0, "m": 17}, {"n": "Butte College", "la": 39.647, "lo": -121.69, "x": 282.23, "y": 304.57, "u": "https://cpldashboardcccco.azurewebsites.net/BUTC", "k": 0, "m": 10}, {"n": "Cabrillo College", "la": 36.987, "lo": -121.887, "x": 264.47, "y": 605.51, "u": "https://cpldashboardcccco.azurewebsites.net/CABC", "k": 0, "m": 179}, {"n": "Cañada College", "la": 37.452, "lo": -122.264, "x": 230.5, "y": 552.9, "u": "https://cpldashboardcccco.azurewebsites.net/CA%C3%91C", "k": 0, "m": 30}, {"n": "Cerritos College", "la": 33.887, "lo": -118.101, "x": 605.66, "y": 956.23, "u": "https://cpldashboardcccco.azurewebsites.net/www.cerritos.edu", "k": 0, "m": 167}, {"n": "Cerro Coso Community College", "la": 35.623, "lo": -117.642, "x": 647.02, "y": 759.83, "u": "https://cpldashboardcccco.azurewebsites.net/CCCC", "k": 0, "m": 151}, {"n": "Chabot College", "la": 37.638, "lo": -122.068, "x": 248.16, "y": 531.86, "u": "https://cpldashboardcccco.azurewebsites.net/CHAC", "k": 0, "m": 15}, {"n": "Chaffey College", "la": 34.139, "lo": -117.564, "x": 654.05, "y": 927.72, "u": "https://cpldashboardcccco.azurewebsites.net/CHC", "k": 0, "m": 302}, {"n": "Citrus College", "la": 34.138, "lo": -117.887, "x": 624.94, "y": 927.84, "u": "https://cpldashboardcccco.azurewebsites.net/CITR", "k": 0, "m": 204}, {"n": "City College of San Francisco", "la": 37.725, "lo": -122.452, "x": 213.56, "y": 522.02, "u": "https://cpldashboardcccco.azurewebsites.net/CITC", "k": 0, "m": 1066}, {"n": "Clovis Community College", "la": 36.877, "lo": -119.706, "x": 461.02, "y": 617.96, "u": "https://cpldashboardcccco.azurewebsites.net/CLOC", "k": 0, "m": 185}, {"n": "Coalinga College", "la": 36.149, "lo": -120.358, "x": 402.26, "y": 700.32, "u": "https://cpldashboardcccco.azurewebsites.net/COAL", "k": 0, "m": 2}, {"n": "Coastline Community College", "la": 33.711, "lo": -117.956, "x": 618.72, "y": 976.15, "u": "https://cpldashboardcccco.azurewebsites.net/COAC", "k": 0, "m": 898}, {"n": "College of Alameda", "la": 37.779, "lo": -122.279, "x": 229.15, "y": 515.91, "u": "https://cpldashboardcccco.azurewebsites.net/COA", "k": 0, "m": 14}, {"n": "College of Marin", "la": 37.952, "lo": -122.547, "x": 205.0, "y": 496.33, "u": "https://cpldashboardcccco.azurewebsites.net/COM", "k": 0, "m": 0}, {"n": "College of San Mateo", "la": 37.534, "lo": -122.332, "x": 224.37, "y": 543.62, "u": "https://cpldashboardcccco.azurewebsites.net/M", "k": 0, "m": 182}, {"n": "College of the Canyons", "la": 34.404, "lo": -118.526, "x": 567.36, "y": 897.74, "u": "https://cpldashboardcccco.azurewebsites.net/Collegeofthecanyons", "k": 0, "m": 0}, {"n": "College of the Desert", "la": 33.74, "lo": -116.364, "x": 762.19, "y": 972.87, "u": "https://cpldashboardcccco.azurewebsites.net/COD", "k": 0, "m": 348}, {"n": "College of the Redwoods", "la": 40.69, "lo": -124.198, "x": 56.21, "y": 186.57, "u": "https://cpldashboardcccco.azurewebsites.net/COR", "k": 0, "m": 33}, {"n": "College of the Sequoias", "la": 36.329, "lo": -119.303, "x": 497.34, "y": 679.95, "u": "https://cpldashboardcccco.azurewebsites.net/sequoias", "k": 0, "m": 174}, {"n": "College of the Siskiyous", "la": 41.429, "lo": -122.387, "x": 219.42, "y": 102.96, "u": "https://cpldashboardcccco.azurewebsites.net/COSY", "k": 0, "m": 0}, {"n": "Columbia College", "la": 38.036, "lo": -120.392, "x": 399.2, "y": 486.83, "u": "https://cpldashboardcccco.azurewebsites.net/CC", "k": 0, "m": 21}, {"n": "Compton Community College", "la": 33.887, "lo": -118.221, "x": 594.84, "y": 956.23, "u": "https://cpldashboardcccco.azurewebsites.net/COMC", "k": 0, "m": 21}, {"n": "Contra Costa College", "la": 37.962, "lo": -122.343, "x": 223.38, "y": 495.2, "u": "https://cpldashboardcccco.azurewebsites.net/CONC", "k": 0, "m": 1}, {"n": "Copper Mountain College", "la": 34.134, "lo": -116.312, "x": 766.87, "y": 928.29, "u": "https://cpldashboardcccco.azurewebsites.net/CMC", "k": 1, "m": 78}, {"n": "Cosumnes River College", "la": 38.463, "lo": -121.45, "x": 303.85, "y": 438.52, "u": "https://cpldashboardcccco.azurewebsites.net/COSC", "k": 0, "m": 0}, {"n": "Crafton Hills College", "la": 34.042, "lo": -117.068, "x": 698.75, "y": 938.7, "u": "https://cpldashboardcccco.azurewebsites.net/CRAFC", "k": 0, "m": 20}, {"n": "Cuesta College", "la": 35.305, "lo": -120.734, "x": 368.38, "y": 795.81, "u": "https://cpldashboardcccco.azurewebsites.net/CUEC", "k": 0, "m": 150}, {"n": "Cuyamaca College", "la": 32.743, "lo": -116.943, "x": 710.01, "y": 1085.66, "u": "https://cpldashboardcccco.azurewebsites.net/CUYC", "k": 0, "m": 94}, {"n": "Cypress College", "la": 33.85, "lo": -118.027, "x": 612.32, "y": 960.42, "u": "https://cpldashboardcccco.azurewebsites.net/CYPC", "k": 0, "m": 388}, {"n": "De Anza College", "la": 37.319, "lo": -122.045, "x": 250.24, "y": 567.95, "u": "https://cpldashboardcccco.azurewebsites.net/DEAC", "k": 0, "m": 978}, {"n": "Diablo Valley College", "la": 37.97, "lo": -122.068, "x": 248.16, "y": 494.3, "u": "https://cpldashboardcccco.azurewebsites.net/DIAC", "k": 0, "m": 173}, {"n": "East Los Angeles College", "la": 34.042, "lo": -118.15, "x": 601.24, "y": 938.7, "u": "https://cpldashboardcccco.azurewebsites.net/elac.edu", "k": 0, "m": 227}, {"n": "El Camino College", "la": 33.887, "lo": -118.329, "x": 585.11, "y": 956.23, "u": "https://cpldashboardcccco.azurewebsites.net/EL%20C", "k": 0, "m": 461}, {"n": "Evergreen Valley College", "la": 37.316, "lo": -121.8, "x": 272.31, "y": 568.29, "u": "https://cpldashboardcccco.azurewebsites.net/EVEC", "k": 0, "m": 112}, {"n": "Feather River College", "la": 39.929, "lo": -120.954, "x": 348.55, "y": 272.66, "u": "https://cpldashboardcccco.azurewebsites.net/FEAC", "k": 0, "m": 9}, {"n": "Folsom Lake College", "la": 38.676, "lo": -121.108, "x": 334.67, "y": 414.42, "u": "https://cpldashboardcccco.azurewebsites.net/FLC", "k": 0, "m": 0}, {"n": "Foothill College", "la": 37.361, "lo": -122.13, "x": 242.58, "y": 563.2, "u": "https://cpldashboardcccco.azurewebsites.net/FOOC", "k": 0, "m": 76}, {"n": "Fresno City College", "la": 36.768, "lo": -119.8, "x": 452.55, "y": 630.29, "u": "https://cpldashboardcccco.azurewebsites.net/FREC", "k": 0, "m": 467}, {"n": "Fullerton College", "la": 33.877, "lo": -117.927, "x": 621.34, "y": 957.37, "u": "https://cpldashboardcccco.azurewebsites.net/FULC", "k": 0, "m": 560}, {"n": "Gavilan College", "la": 36.987, "lo": -121.556, "x": 294.3, "y": 605.51, "u": "https://cpldashboardcccco.azurewebsites.net/GAVC", "k": 0, "m": 46}, {"n": "Glendale Community College", "la": 34.153, "lo": -118.233, "x": 593.76, "y": 926.14, "u": "https://cpldashboardcccco.azurewebsites.net/GLEC", "k": 0, "m": 213}, {"n": "Golden West College", "la": 33.718, "lo": -118.003, "x": 614.49, "y": 975.35, "u": "https://cpldashboardcccco.azurewebsites.net/GOLC", "k": 0, "m": 99}, {"n": "Grossmont College", "la": 32.816, "lo": -116.971, "x": 707.49, "y": 1077.4, "u": "https://cpldashboardcccco.azurewebsites.net/GROC", "k": 0, "m": 1}, {"n": "Hartnell College", "la": 36.677, "lo": -121.661, "x": 284.84, "y": 640.58, "u": "https://cpldashboardcccco.azurewebsites.net/HARC", "k": 0, "m": 39}, {"n": "Imperial Valley College", "la": 32.819, "lo": -115.447, "x": 844.83, "y": 1077.06, "u": "https://cpldashboardcccco.azurewebsites.net/IMPC", "k": 0, "m": 1}, {"n": "Irvine Valley College", "la": 33.672, "lo": -117.753, "x": 637.02, "y": 980.56, "u": "https://cpldashboardcccco.azurewebsites.net/IRVC", "k": 0, "m": 122}, {"n": "Lake Tahoe Community College", "la": 38.922, "lo": -119.987, "x": 435.7, "y": 386.59, "u": "https://cpldashboardcccco.azurewebsites.net/LAKC", "k": 0, "m": 0}, {"n": "Laney College", "la": 37.795, "lo": -122.262, "x": 230.68, "y": 514.1, "u": "https://cpldashboardcccco.azurewebsites.net/Laney", "k": 0, "m": 49}, {"n": "Las Positas College", "la": 37.696, "lo": -121.756, "x": 276.28, "y": 525.3, "u": "https://cpldashboardcccco.azurewebsites.net/LPCC", "k": 0, "m": 21}, {"n": "Lassen College", "la": 40.431, "lo": -120.636, "x": 377.21, "y": 215.87, "u": "https://cpldashboardcccco.azurewebsites.net/LCC", "k": 0, "m": 140}, {"n": "Lemoore College", "la": 36.301, "lo": -119.85, "x": 448.04, "y": 683.12, "u": "https://cpldashboardcccco.azurewebsites.net/LECC", "k": 0, "m": 31}, {"n": "Long Beach City College", "la": 33.803, "lo": -118.139, "x": 602.23, "y": 965.74, "u": "https://cpldashboardcccco.azurewebsites.net/LBCC", "k": 0, "m": 808}, {"n": "Los Angeles City College", "la": 34.089, "lo": -118.294, "x": 588.26, "y": 933.38, "u": "https://cpldashboardcccco.azurewebsites.net/CLAC", "k": 0, "m": 150}, {"n": "Los Angeles Harbor College", "la": 33.791, "lo": -118.292, "x": 588.44, "y": 967.1, "u": "https://cpldashboardcccco.azurewebsites.net/HLAC", "k": 0, "m": 135}, {"n": "Los Angeles Mission College", "la": 34.279, "lo": -118.453, "x": 573.93, "y": 911.88, "u": "https://cpldashboardcccco.azurewebsites.net/MLAC", "k": 0, "m": 152}, {"n": "Los Angeles Pierce College", "la": 34.184, "lo": -118.576, "x": 562.85, "y": 922.63, "u": "https://cpldashboardcccco.azurewebsites.net/LAPC", "k": 0, "m": 113}, {"n": "Los Angeles Southwest College", "la": 33.923, "lo": -118.292, "x": 588.44, "y": 952.16, "u": "https://cpldashboardcccco.azurewebsites.net/SLAC", "k": 0, "m": 0}, {"n": "Los Angeles Trade-Tech College", "la": 34.033, "lo": -118.271, "x": 590.34, "y": 939.72, "u": "https://cpldashboardcccco.azurewebsites.net/TLAC", "k": 0, "m": 59}, {"n": "Los Angeles Valley College", "la": 34.172, "lo": -118.417, "x": 577.18, "y": 923.99, "u": "https://cpldashboardcccco.azurewebsites.net/LAVC", "k": 0, "m": 358}, {"n": "Los Medanos College", "la": 38.001, "lo": -121.883, "x": 264.83, "y": 490.79, "u": "https://cpldashboardcccco.azurewebsites.net/losmedanos", "k": 0, "m": 229}, {"n": "Madera College", "la": 36.961, "lo": -120.084, "x": 426.95, "y": 608.45, "u": "https://cpldashboardcccco.azurewebsites.net/MCC", "k": 0, "m": 44}, {"n": "Mendocino College", "la": 39.186, "lo": -123.199, "x": 146.24, "y": 356.72, "u": "https://cpldashboardcccco.azurewebsites.net/MENC", "k": 0, "m": 8}, {"n": "Merced College", "la": 37.327, "lo": -120.429, "x": 395.86, "y": 567.04, "u": "https://cpldashboardcccco.azurewebsites.net/MC", "k": 0, "m": 269}, {"n": "Merritt College", "la": 37.779, "lo": -122.164, "x": 239.51, "y": 515.91, "u": "https://cpldashboardcccco.azurewebsites.net/Merritt", "k": 0, "m": 12}, {"n": "MiraCosta College", "la": 33.19, "lo": -117.287, "x": 679.01, "y": 1035.09, "u": "https://cpldashboardcccco.azurewebsites.net/MIRC", "k": 0, "m": 2}, {"n": "Mission College", "la": 37.389, "lo": -121.976, "x": 256.45, "y": 560.03, "u": "https://cpldashboardcccco.azurewebsites.net/MISC", "k": 0, "m": 146}, {"n": "Modesto Junior College", "la": 37.639, "lo": -121.003, "x": 344.14, "y": 531.75, "u": "https://cpldashboardcccco.azurewebsites.net/MJC", "k": 0, "m": 141}, {"n": "Monterey Peninsula College", "la": 36.594, "lo": -121.908, "x": 262.58, "y": 649.97, "u": "https://cpldashboardcccco.azurewebsites.net/MPC", "k": 0, "m": 136}, {"n": "Moorpark College", "la": 34.29, "lo": -118.854, "x": 537.8, "y": 910.64, "u": "https://cpldashboardcccco.azurewebsites.net/MoorparkCollege", "k": 0, "m": 123}, {"n": "Moreno Valley College", "la": 33.908, "lo": -117.224, "x": 684.69, "y": 953.86, "u": "https://cpldashboardcccco.azurewebsites.net/morenovalley", "k": 0, "m": 953}, {"n": "Mt. San Antonio College", "la": 34.048, "lo": -117.843, "x": 628.91, "y": 938.02, "u": "https://cpldashboardcccco.azurewebsites.net/MT.C", "k": 0, "m": 733}, {"n": "Mt. San Jacinto College", "la": 33.798, "lo": -117.049, "x": 700.46, "y": 966.3, "u": "https://cpldashboardcccco.azurewebsites.net/m.sjc", "k": 0, "m": 535}, {"n": "Napa Valley College", "la": 38.252, "lo": -122.279, "x": 229.15, "y": 462.39, "u": "https://cpldashboardcccco.azurewebsites.net/NAPC", "k": 0, "m": 47}, {"n": "Norco College", "la": 33.921, "lo": -117.536, "x": 656.57, "y": 952.39, "u": "https://cpldashboardcccco.azurewebsites.net/norcocollege", "k": 0, "m": 491}, {"n": "Ohlone College", "la": 37.516, "lo": -121.918, "x": 261.68, "y": 545.66, "u": "https://cpldashboardcccco.azurewebsites.net/OHLC", "k": 0, "m": 10}, {"n": "Orange Coast College", "la": 33.671, "lo": -117.909, "x": 622.96, "y": 980.67, "u": "https://cpldashboardcccco.azurewebsites.net/ORAC", "k": 0, "m": 1}, {"n": "Oxnard College", "la": 34.173, "lo": -119.169, "x": 509.41, "y": 923.88, "u": "https://cpldashboardcccco.azurewebsites.net/OXNC", "k": 0, "m": 148}, {"n": "Palo Verde College", "la": 33.619, "lo": -114.599, "x": 921.24, "y": 986.55, "u": "https://cpldashboardcccco.azurewebsites.net/PVC", "k": 0, "m": 9}, {"n": "Palomar College", "la": 33.147, "lo": -117.174, "x": 689.19, "y": 1039.96, "u": "https://cpldashboardcccco.azurewebsites.net/PAL", "k": 1, "m": 1}, {"n": "Pasadena City College", "la": 34.145, "lo": -118.117, "x": 604.21, "y": 927.04, "u": "https://cpldashboardcccco.azurewebsites.net/PCC", "k": 0, "m": 132}, {"n": "Porterville College", "la": 36.066, "lo": -119.009, "x": 523.83, "y": 709.71, "u": "https://cpldashboardcccco.azurewebsites.net/PORC", "k": 0, "m": 25}, {"n": "Reedley College", "la": 36.609, "lo": -119.44, "x": 484.99, "y": 648.28, "u": "https://cpldashboardcccco.azurewebsites.net/REEC", "k": 0, "m": 114}, {"n": "Rio Hondo College", "la": 33.987, "lo": -118.033, "x": 611.78, "y": 944.92, "u": "https://cpldashboardcccco.azurewebsites.net/RIOC", "k": 0, "m": 0}, {"n": "Riverside City College", "la": 33.965, "lo": -117.396, "x": 669.19, "y": 947.41, "u": "https://cpldashboardcccco.azurewebsites.net/RCC", "k": 0, "m": 733}, {"n": "Sacramento City College", "la": 38.543, "lo": -121.494, "x": 299.89, "y": 429.47, "u": "https://cpldashboardcccco.azurewebsites.net/SACC", "k": 0, "m": 65}, {"n": "Saddleback College", "la": 33.598, "lo": -117.662, "x": 645.22, "y": 988.93, "u": "https://cpldashboardcccco.azurewebsites.net/Saddleback", "k": 0, "m": 59}, {"n": "San Bernardino Valley College", "la": 34.09, "lo": -117.3, "x": 677.84, "y": 933.27, "u": "https://cpldashboardcccco.azurewebsites.net/sanbernardino", "k": 0, "m": 207}, {"n": "San Diego City College", "la": 32.718, "lo": -117.153, "x": 691.09, "y": 1088.49, "u": "https://cpldashboardcccco.azurewebsites.net/sandiegocity", "k": 0, "m": 1354}, {"n": "San Diego Mesa College", "la": 32.8, "lo": -117.184, "x": 688.29, "y": 1079.21, "u": "https://cpldashboardcccco.azurewebsites.net/SDMESA", "k": 0, "m": 1460}, {"n": "San Diego Miramar College", "la": 32.9, "lo": -117.142, "x": 692.08, "y": 1067.9, "u": "https://cpldashboardcccco.azurewebsites.net/SDMIRA", "k": 0, "m": 1522}, {"n": "San Joaquin Delta College", "la": 37.987, "lo": -121.321, "x": 315.48, "y": 492.37, "u": "https://cpldashboardcccco.azurewebsites.net/SJDC", "k": 0, "m": 494}, {"n": "San Jose City College", "la": 37.314, "lo": -121.917, "x": 261.77, "y": 568.51, "u": "https://cpldashboardcccco.azurewebsites.net/SJCC", "k": 0, "m": 122}, {"n": "Santa Ana College", "la": 33.766, "lo": -117.883, "x": 625.3, "y": 969.92, "u": "https://cpldashboardcccco.azurewebsites.net/SAC", "k": 0, "m": 351}, {"n": "Santa Barbara City College", "la": 34.406, "lo": -119.694, "x": 462.1, "y": 897.52, "u": "https://cpldashboardcccco.azurewebsites.net/SBCC", "k": 0, "m": 86}, {"n": "Santa Monica College", "la": 34.018, "lo": -118.469, "x": 572.49, "y": 941.41, "u": "https://cpldashboardcccco.azurewebsites.net/SMC", "k": 0, "m": 2}, {"n": "Santa Rosa Junior College", "la": 38.456, "lo": -122.718, "x": 189.59, "y": 439.31, "u": "https://cpldashboardcccco.azurewebsites.net/SRJC", "k": 0, "m": 430}, {"n": "Santiago Canyon College", "la": 33.8, "lo": -117.77, "x": 635.48, "y": 966.08, "u": "https://cpldashboardcccco.azurewebsites.net/SCC", "k": 0, "m": 110}, {"n": "Shasta College", "la": 40.624, "lo": -122.311, "x": 226.26, "y": 194.03, "u": "https://cpldashboardcccco.azurewebsites.net/shasta", "k": 0, "m": 176}, {"n": "Sierra College", "la": 38.79, "lo": -121.211, "x": 325.39, "y": 401.53, "u": "https://cpldashboardcccco.azurewebsites.net/SIEC", "k": 0, "m": 339}, {"n": "Skyline College", "la": 37.627, "lo": -122.469, "x": 212.03, "y": 533.1, "u": "https://cpldashboardcccco.azurewebsites.net/SKYC", "k": 0, "m": 105}, {"n": "Solano Community College", "la": 38.235, "lo": -121.976, "x": 256.45, "y": 464.32, "u": "https://cpldashboardcccco.azurewebsites.net/SOLC", "k": 0, "m": 83}, {"n": "Southwestern College", "la": 32.636, "lo": -117.008, "x": 704.15, "y": 1097.77, "u": "https://cpldashboardcccco.azurewebsites.net/SOUC", "k": 0, "m": 722}, {"n": "Taft College", "la": 35.141, "lo": -119.456, "x": 483.55, "y": 814.36, "u": "https://cpldashboardcccco.azurewebsites.net/TAFC", "k": 0, "m": 10}, {"n": "Ventura College", "la": 34.279, "lo": -119.23, "x": 503.91, "y": 911.88, "u": "https://cpldashboardcccco.azurewebsites.net/VENC", "k": 0, "m": 154}, {"n": "Victor Valley College", "la": 34.556, "lo": -117.326, "x": 675.5, "y": 880.55, "u": "https://cpldashboardcccco.azurewebsites.net/VVC", "k": 0, "m": 322}, {"n": "West Los Angeles College", "la": 34.003, "lo": -118.392, "x": 579.43, "y": 943.11, "u": "https://cpldashboardcccco.azurewebsites.net/WLAC", "k": 0, "m": 95}, {"n": "West Valley College", "la": 37.258, "lo": -122.009, "x": 253.48, "y": 574.85, "u": "https://cpldashboardcccco.azurewebsites.net/WVC", "k": 0, "m": 56}, {"n": "Woodland Community College", "la": 38.662, "lo": -121.746, "x": 277.18, "y": 416.01, "u": "https://cpldashboardcccco.azurewebsites.net/WOOC", "k": 0, "m": 8}, {"n": "Yuba College", "la": 39.129, "lo": -121.623, "x": 288.26, "y": 363.17, "u": "https://cpldashboardcccco.azurewebsites.net/YUC", "k": 0, "m": 0}], "bases": [{"n": "Fort Irwin", "la": 35.261, "lo": -116.685, "x": 733.26, "y": 800.78}, {"n": "Military Ocean Terminal Concord", "la": 38.056, "lo": -122.03, "x": 251.59, "y": 484.57}, {"n": "Presidio of Monterey", "la": 36.6, "lo": -121.917, "x": 261.77, "y": 649.29}, {"n": "Sierra Army Depot", "la": 40.241, "lo": -120.2, "x": 416.5, "y": 237.36}, {"n": "MCAGCC Twentynine Palms", "la": 34.233, "lo": -116.054, "x": 790.12, "y": 917.09}, {"n": "MCAS Miramar", "la": 32.868, "lo": -117.143, "x": 691.99, "y": 1071.52}, {"n": "MCB Camp Pendleton", "la": 33.302, "lo": -117.346, "x": 673.69, "y": 1022.42}, {"n": "MCLB Barstow", "la": 34.842, "lo": -117.047, "x": 700.64, "y": 848.19}, {"n": "MCMWTC Bridgeport", "la": 38.342, "lo": -119.45, "x": 484.09, "y": 452.21}, {"n": "MCRD San Diego", "la": 32.743, "lo": -117.198, "x": 687.03, "y": 1085.66}, {"n": "NAF El Centro", "la": 32.829, "lo": -115.672, "x": 824.55, "y": 1075.93}, {"n": "NAS Lemoore", "la": 36.333, "lo": -119.952, "x": 438.85, "y": 679.5}, {"n": "NAWS China Lake", "la": 35.689, "lo": -117.69, "x": 642.69, "y": 752.36}, {"n": "Naval Base Coronado", "la": 32.699, "lo": -117.215, "x": 685.5, "y": 1090.64}, {"n": "Naval Base Point Loma", "la": 32.711, "lo": -117.241, "x": 683.16, "y": 1089.28}, {"n": "Naval Base San Diego", "la": 32.684, "lo": -117.122, "x": 693.88, "y": 1092.34}, {"n": "Naval Base Ventura County (Point Mugu)", "la": 34.12, "lo": -119.12, "x": 513.83, "y": 929.87}, {"n": "NSA Monterey / Naval Postgraduate School", "la": 36.595, "lo": -121.874, "x": 265.64, "y": 649.86}, {"n": "Naval Information Warfare Systems Command (NAVWAR)", "la": 32.756, "lo": -117.211, "x": 685.86, "y": 1084.19}, {"n": "NWS Seal Beach", "la": 33.74, "lo": -118.06, "x": 609.35, "y": 972.87}, {"n": "NWS Seal Beach – Det Norco (NSWC Corona)", "la": 33.881, "lo": -117.549, "x": 655.4, "y": 956.91}, {"n": "NWS Seal Beach – NAD Fallbrook", "la": 33.364, "lo": -117.27, "x": 680.54, "y": 1015.4}, {"n": "Beale Air Force Base", "la": 39.136, "lo": -121.436, "x": 305.12, "y": 362.38}, {"n": "Edwards Air Force Base", "la": 34.905, "lo": -117.883, "x": 625.3, "y": 841.06}, {"n": "Los Angeles Air Force Base", "la": 33.916, "lo": -118.383, "x": 580.24, "y": 952.95}, {"n": "March Air Reserve Base", "la": 33.88, "lo": -117.259, "x": 681.53, "y": 957.03}, {"n": "Travis Air Force Base", "la": 38.263, "lo": -121.927, "x": 260.87, "y": 461.15}, {"n": "Vandenberg Space Force Base", "la": 34.742, "lo": -120.572, "x": 382.98, "y": 859.5}, {"n": "Camp Roberts", "la": 35.75, "lo": -120.75, "x": 366.94, "y": 745.46}, {"n": "Camp San Luis Obispo", "la": 35.34, "lo": -120.74, "x": 367.84, "y": 791.85}, {"n": "Fort Hunter Liggett", "la": 35.974, "lo": -121.24, "x": 322.78, "y": 720.12}, {"n": "Parks Reserve Forces Training Area (Camp Parks)", "la": 37.731, "lo": -121.9, "x": 263.3, "y": 521.34}, {"n": "Moffett Field", "la": 37.415, "lo": -122.049, "x": 249.87, "y": 557.09}, {"n": "Joint Forces Training Base Los Alamitos", "la": 33.79, "lo": -118.052, "x": 610.07, "y": 967.21}, {"n": "Lawrence Livermore National Laboratory", "la": 37.688, "lo": -121.706, "x": 280.78, "y": 526.2}, {"n": "Sandia National Laboratories (Livermore)", "la": 37.672, "lo": -121.706, "x": 280.78, "y": 528.01}, {"n": "Jet Propulsion Laboratory", "la": 34.201, "lo": -118.171, "x": 599.35, "y": 920.71}, {"n": "Aerospace Corporation", "la": 33.917, "lo": -118.383, "x": 580.24, "y": 952.84}, {"n": "RAND Corporation", "la": 34.011, "lo": -118.492, "x": 570.42, "y": 942.21}, {"n": "Defense MicroElectronics Activity (McClellan)", "la": 38.662, "lo": -121.401, "x": 308.27, "y": 416.01}, {"n": "Defense Distribution Depot San Joaquin", "la": 37.783, "lo": -121.27, "x": 320.08, "y": 515.45}, {"n": "Defense Innovation Unit (Mountain View)", "la": 37.418, "lo": -122.049, "x": 249.87, "y": 556.75}, {"n": "Coast Guard Island (Alameda)", "la": 37.78, "lo": -122.244, "x": 232.3, "y": 515.79}, {"n": "Coast Guard Sector San Francisco", "la": 37.807, "lo": -122.365, "x": 221.4, "y": 512.74}], "pairs": [["Fort Irwin", "Barstow College"], ["MCAGCC Twentynine Palms", "Copper Mountain College"], ["MCB Camp Pendleton", "Palomar College"]], "W": 1000.0, "H": 1146.06, "boundary": "M143.15,37.66 L220.15,37.04 L341.07,38.9 L434.36,38.9 L434.85,234.7 L434.36,377.84 L550.34,479.46 L659.91,579.22 L746.29,660.4 L808.48,720.5 L918.05,830.18 L918.05,844.43 L932.86,863.02 L945.19,892.76 L962.96,908.87 L952.1,923.75 L937.79,931.18 L926.93,951.01 L930.39,977.65 L927.92,994.38 L909.66,1010.5 L915.58,1052.63 L927.92,1053.25 L932.86,1074.32 L927.92,1084.23 L910.15,1088.57 L790.71,1099.1 L693.48,1109.02 L682.62,1094.15 L682.13,1070.6 L675.22,1042.72 L662.38,1022.89 L634.25,995.62 L598.22,970.22 L591.31,977.03 L577.49,972.7 L579.46,961.54 L563.67,938.62 L542.45,943.57 L504.94,926.84 L499.51,913.21 L474.33,896.48 L445.71,897.1 L422.02,889.67 L391.91,892.76 L376.12,877.89 L379.57,846.29 L374.14,841.33 L377.6,819.03 L353.91,802.3 L352.92,779.37 L344.03,778.13 L329.23,758.3 L318.86,753.96 L314.42,741.57 L279.87,695.1 L263.58,681.47 L260.13,644.91 L267.04,648.0 L273.45,626.32 L260.62,606.49 L244.83,608.97 L224.1,591.0 L216.69,576.75 L218.17,563.11 L207.81,545.14 L207.81,515.4 L224.59,515.4 L217.68,473.89 L210.28,478.22 L208.8,498.67 L191.03,503.01 L169.81,487.52 L166.35,460.87 L152.53,439.8 L134.27,426.79 L124.4,411.92 L97.75,382.8 L102.19,374.12 L89.85,336.32 L95.28,315.26 L87.38,283.65 L64.18,252.67 L41.48,235.32 L37.04,214.87 L59.74,165.3 L64.18,148.57 L59.74,135.56 L68.13,101.48 L60.73,70.5 L50.86,63.06 L54.81,38.28 L143.15,37.66 Z", "portal": "https://map.rccd.edu/cpllandingpages/", "milTotal": 24834, "asOf": "2026-06-30"};
+const NS = "http://www.w3.org/2000/svg";
+const svg = document.getElementById("map");
+const vp = document.getElementById("viewport");
+svg.setAttribute("viewBox", "0 0 " + DATA.W + " " + DATA.H);
+document.getElementById("boundary").setAttribute("d", DATA.boundary);
+
+// ---------- geometry helpers ----------
+function haversine(a, b){
+  const R=3958.8, toR=Math.PI/180;
+  const dLa=(b.la-a.la)*toR, dLo=(b.lo-a.lo)*toR;
+  const la1=a.la*toR, la2=b.la*toR;
+  const h=Math.sin(dLa/2)**2 + Math.cos(la1)*Math.cos(la2)*Math.sin(dLo/2)**2;
+  return 2*R*Math.asin(Math.sqrt(h));
+}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function num(n){ return (n==null)? null : n.toLocaleString("en-US"); }
+function vetLine(c){ return (c.m==null)? "" :
+  `<div class="vet">&#127894; <b>${num(c.m)}</b> service member${c.m===1?'':'s'} &amp; veteran${c.m===1?'':'s'} served via CPL</div>`; }
+
+// index by name for pair lookups
+const colByName = {}; DATA.colleges.forEach(c=>colByName[c.n]=c);
+const baseByName = {}; DATA.bases.forEach(b=>baseByName[b.n]=b);
+const pairOf = {};   // base -> [collegeNames], college -> [baseNames]
+DATA.pairs.forEach(([b,c])=>{ (pairOf[b]=pairOf[b]||[]).push(c); (pairOf[c]=pairOf[c]||[]).push(b); });
+
+const STAR = "M0,-7 L1.9,-2.3 L7,-2.3 L2.8,1 L4.3,6.6 L0,3.3 L-4.3,6.6 L-2.8,1 L-7,-2.3 L-1.9,-2.3 Z";
+
+// ---------- draw markers (counter-scaled so they stay constant screen size) ----------
+let scale = 1;
+const gCol = document.getElementById("g-colleges");
+const gBase = document.getElementById("g-bases");
+const gPair = document.getElementById("g-pairs");
+const colEls = {}, baseEls = {};
+
+DATA.colleges.forEach((c, i)=>{
+  const g = document.createElementNS(NS,"g");
+  g.setAttribute("class","mk col"+(c.k?" ":"")); g.dataset.i=i; g.dataset.kind="col";
+  g.setAttribute("transform",`translate(${c.x},${c.y})`);
+  const hit = document.createElementNS(NS,"circle"); hit.setAttribute("class","hit"); hit.setAttribute("r",11);
+  const dot = document.createElementNS(NS,"circle"); dot.setAttribute("class","col-dot"+(c.k?" key":"")); dot.setAttribute("r",c.k?6.5:5);
+  g.appendChild(hit); g.appendChild(dot);
+  gCol.appendChild(g); colEls[c.n]=g;
+});
+DATA.bases.forEach((b, i)=>{
+  const g = document.createElementNS(NS,"g");
+  g.setAttribute("class","mk base"); g.dataset.i=i; g.dataset.kind="base";
+  g.setAttribute("transform",`translate(${b.x},${b.y})`);
+  const hit = document.createElementNS(NS,"circle"); hit.setAttribute("class","hit"); hit.setAttribute("r",12);
+  const star = document.createElementNS(NS,"path"); star.setAttribute("class","base-star"); star.setAttribute("d",STAR);
+  g.appendChild(hit); g.appendChild(star);
+  gBase.appendChild(g); baseEls[b.n]=g;
+});
+const pairEls=[];
+DATA.pairs.forEach(([bn,cn])=>{
+  const b=baseByName[bn], c=colByName[cn]; if(!b||!c) return;
+  const ln=document.createElementNS(NS,"line");
+  ln.setAttribute("class","pair-line");
+  ln.setAttribute("x1",b.x); ln.setAttribute("y1",b.y); ln.setAttribute("x2",c.x); ln.setAttribute("y2",c.y);
+  ln.dataset.base=bn; ln.dataset.col=cn;
+  gPair.appendChild(ln); pairEls.push(ln);
+});
+
+// keep marker glyphs a constant on-screen size regardless of zoom
+function rescaleMarkers(){
+  const inv = 1/scale;
+  for(const k in colEls){ const c=colByName[k]; colEls[k].setAttribute("transform",`translate(${c.x},${c.y}) scale(${inv})`); }
+  for(const k in baseEls){ const b=baseByName[k]; baseEls[k].setAttribute("transform",`translate(${b.x},${b.y}) scale(${inv})`); }
+}
+
+// ---------- zoom / pan via viewBox ----------
+let vb = {x:0, y:0, w:DATA.W, h:DATA.H};
+function applyVB(){
+  svg.setAttribute("viewBox", `${vb.x} ${vb.y} ${vb.w} ${vb.h}`);
+  scale = DATA.W / vb.w;
+  rescaleMarkers();
+}
+function setView(cx, cy, w, h){
+  // clamp
+  w = Math.max(DATA.W*0.06, Math.min(DATA.W*1.4, w));
+  h = w * (DATA.H/DATA.W);
+  vb = {x: cx-w/2, y: cy-h/2, w, h};
+  applyVB();
+}
+function zoomBy(f, ax, ay){
+  // ax,ay = anchor in svg-units (default center)
+  ax = ax==null? vb.x+vb.w/2 : ax;
+  ay = ay==null? vb.y+vb.h/2 : ay;
+  const nw = vb.w/f;
+  const nh = nw*(DATA.H/DATA.W);
+  // keep anchor stationary
+  const rx = (ax-vb.x)/vb.w, ry=(ay-vb.y)/vb.h;
+  vb = {w:nw, h:nh, x: ax-rx*nw, y: ay-ry*nh};
+  // clamp width
+  if(vb.w>DATA.W*1.4){ setView(DATA.W/2, DATA.H/2, DATA.W*1.4); return; }
+  if(vb.w<DATA.W*0.06){ vb.w=DATA.W*0.06; vb.h=vb.w*(DATA.H/DATA.W); }
+  applyVB();
+}
+document.getElementById("zin").onclick = ()=>zoomBy(1.5);
+document.getElementById("zout").onclick = ()=>zoomBy(1/1.5);
+document.getElementById("zreset").onclick = ()=>{ setView(DATA.W/2, DATA.H/2, DATA.W); clearSelection(); };
+
+function clientToSvg(ev){
+  const r=svg.getBoundingClientRect();
+  return { x: vb.x + (ev.clientX-r.left)/r.width*vb.w,
+           y: vb.y + (ev.clientY-r.top)/r.height*vb.h };
+}
+svg.addEventListener("wheel", ev=>{
+  ev.preventDefault();
+  const p=clientToSvg(ev);
+  zoomBy(ev.deltaY<0?1.18:1/1.18, p.x, p.y);
+}, {passive:false});
+
+// drag to pan
+let drag=null;
+svg.addEventListener("pointerdown", ev=>{
+  if(ev.target.closest(".mk")) return;     // let marker clicks through
+  drag={sx:ev.clientX, sy:ev.clientY, ox:vb.x, oy:vb.y, moved:false};
+  svg.classList.add("grabbing"); svg.setPointerCapture(ev.pointerId);
+});
+svg.addEventListener("pointermove", ev=>{
+  if(!drag) return;
+  const r=svg.getBoundingClientRect();
+  const dx=(ev.clientX-drag.sx)/r.width*vb.w, dy=(ev.clientY-drag.sy)/r.height*vb.h;
+  if(Math.abs(ev.clientX-drag.sx)+Math.abs(ev.clientY-drag.sy)>3) drag.moved=true;
+  vb.x=drag.ox-dx; vb.y=drag.oy-dy; applyVB();
+});
+svg.addEventListener("pointerup", ev=>{ drag=null; svg.classList.remove("grabbing"); });
+svg.addEventListener("pointerleave", ()=>{ drag=null; svg.classList.remove("grabbing"); });
+
+// ---------- region presets (computed from member coords) ----------
+function bboxOf(list){
+  const xs=list.map(p=>p.x), ys=list.map(p=>p.y);
+  return {x0:Math.min(...xs), x1:Math.max(...xs), y0:Math.min(...ys), y1:Math.max(...ys)};
+}
+function inBox(p, latMin,latMax,loMin,loMax){ return p.la>=latMin&&p.la<=latMax&&p.lo>=loMin&&p.lo<=loMax; }
+const REGIONS = [
+  {label:"Statewide", all:true},
+  {label:"Bay Area",   latMin:36.9, latMax:38.6, loMin:-123.3, loMax:-121.5},
+  {label:"Los Angeles",latMin:33.6, latMax:34.5, loMin:-118.9, loMax:-117.5},
+  {label:"San Diego",  latMin:32.5, latMax:33.5, loMin:-117.4, loMax:-116.0},
+  {label:"Inland Empire",latMin:33.7, latMax:34.3, loMin:-117.6, loMax:-116.2},
+  {label:"Central Valley",latMin:35.0,latMax:38.7,loMin:-121.6,loMax:-118.7},
+];
+const regBox = document.getElementById("regions");
+REGIONS.forEach((rg,idx)=>{
+  const b=document.createElement("button"); b.className="btn"; b.textContent=rg.label;
+  b.onclick=()=>{
+    [...regBox.children].forEach(x=>x.classList.remove("on")); b.classList.add("on");
+    if(rg.all){ setView(DATA.W/2, DATA.H/2, DATA.W); return; }
+    const mem=[...DATA.colleges,...DATA.bases].filter(p=>inBox(p,rg.latMin,rg.latMax,rg.loMin,rg.loMax));
+    if(!mem.length){ setView(DATA.W/2,DATA.H/2,DATA.W); return; }
+    const bb=bboxOf(mem);
+    const cx=(bb.x0+bb.x1)/2, cy=(bb.y0+bb.y1)/2;
+    const w=Math.max((bb.x1-bb.x0)*1.5, DATA.W*0.12);
+    setView(cx, cy, w);
+  };
+  if(idx===0) b.classList.add("on");
+  regBox.appendChild(b);
+});
+
+// ---------- tooltip ----------
+const tip=document.getElementById("tip");
+function showTip(ev, htmlStr){ tip.innerHTML=htmlStr; tip.style.display="block"; moveTip(ev); }
+function moveTip(ev){
+  const pad=14, w=tip.offsetWidth, h=tip.offsetHeight;
+  let x=ev.clientX+pad, y=ev.clientY+pad;
+  if(x+w>innerWidth) x=ev.clientX-w-pad;
+  if(y+h>innerHeight) y=ev.clientY-h-pad;
+  tip.style.left=x+"px"; tip.style.top=y+"px";
+}
+function hideTip(){ tip.style.display="none"; }
+
+// ---------- selection / highlight ----------
+function clearHot(){ document.querySelectorAll(".mk.hot, .mk.dim, .mk.sel").forEach(e=>e.classList.remove("hot","dim","sel")); pairEls.forEach(l=>l.classList.remove("dim")); }
+function clearSelection(){ clearHot(); renderDetailDefault(); }
+
+function selectBase(name){
+  const b=baseByName[name]; if(!b) return;
+  clearHot();
+  baseEls[name].classList.add("sel");
+  // rank colleges by distance
+  const ranked = DATA.colleges.map(c=>({c, d:haversine(b,c)})).sort((a,b)=>a.d-b.d);
+  const demoSet = new Set(pairOf[name]||[]);
+  const top = ranked.slice(0, 6);
+  // dim everything, light up the near colleges
+  DATA.colleges.forEach(c=>colEls[c.n].classList.add("dim"));
+  DATA.bases.forEach(x=>{ if(x.n!==name) baseEls[x.n].classList.add("dim"); });
+  pairEls.forEach(l=> l.dataset.base===name? null : l.classList.add("dim"));
+  top.forEach(({c})=>{ colEls[c.n].classList.remove("dim"); colEls[c.n].classList.add("hot"); });
+  (pairOf[name]||[]).forEach(cn=>{ if(colEls[cn]){ colEls[cn].classList.remove("dim"); colEls[cn].classList.add("hot"); } });
+  // focus map near the base + its nearest college
+  focusOn([b, ...top.map(t=>t.c)]);
+  renderBaseDetail(b, ranked, demoSet);
+  switchTab("detail");
+}
+function selectCollege(name){
+  const c=colByName[name]; if(!c) return;
+  clearHot();
+  colEls[name].classList.add("sel");
+  const ranked = DATA.bases.map(b=>({b, d:haversine(c,b)})).sort((a,b)=>a.d-b.d);
+  const nearest = ranked[0];
+  DATA.bases.forEach(b=>baseEls[b.n].classList.add("dim"));
+  if(nearest){ baseEls[nearest.b.n].classList.remove("dim"); baseEls[nearest.b.n].classList.add("hot"); }
+  (pairOf[name]||[]).forEach(bn=>{ if(baseEls[bn]){ baseEls[bn].classList.remove("dim"); baseEls[bn].classList.add("hot"); } });
+  focusOn([c, nearest? nearest.b : c]);
+  renderCollegeDetail(c, ranked);
+  switchTab("detail");
+}
+function focusOn(pts){
+  const bb=bboxOf(pts);
+  const cx=(bb.x0+bb.x1)/2, cy=(bb.y0+bb.y1)/2;
+  const w=Math.max((bb.x1-bb.x0)*2.2, DATA.W*0.16);
+  setView(cx, cy, w);
+}
+
+// ---------- detail panel renderers ----------
+const detail=document.getElementById("detail");
+const CPL_BLURB="Credit for Prior Learning (CPL) turns military training (JST/CCAF), industry certifications, and work experience into college credit.";
+function renderDetailDefault(){
+  detail.innerHTML = `<p class="hint">Click any <b>installation &#9733;</b> to see the community colleges best
+    positioned to partner with it on Credit for Prior Learning &mdash; or click a <b>college &#9679;</b> to open its CPL landing page.</p>
+    <p class="hint" style="margin-top:14px">The three gold lines are the active <b>demonstration-project pairings</b>.</p>`;
+}
+function milesFmt(d){ return d<10? d.toFixed(1) : Math.round(d); }
+function renderBaseDetail(b, ranked, demoSet){
+  let lis="";
+  ranked.slice(0,6).forEach(({c,d})=>{
+    const demo = demoSet.has(c.n);
+    const vet = c.m==null? "" : ` &middot; &#127894; ${num(c.m)} vets`;
+    lis += `<li>
+      <a href="${escapeHtml(c.u)}" target="_blank" rel="noopener" title="Open CPL landing page">${escapeHtml(c.n)} &#8599;</a>
+      <div class="meta"><span>${milesFmt(d)} mi from base${vet}</span>${demo?'<span class="demo">&#9733; Demo project</span>':'<span>open CPL page</span>'}</div>
+    </li>`;
+  });
+  detail.innerHTML = `<div class="detail">
+    <div class="kicker">Military Installation</div>
+    <h2>${escapeHtml(b.n)}</h2>
+    <p class="blurb">Community colleges nearest to this installation &mdash; the strongest candidates to partner on
+      CPL pathways for service members and veterans. Click a college to open its CPL landing page.</p>
+    <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:4px">Partner colleges (nearest first)</div>
+    <ul class="nearlist">${lis}</ul>
+  </div>`;
+}
+function renderCollegeDetail(c, ranked){
+  const nb = ranked[0];
+  const partners = (pairOf[c.n]||[]);
+  let pairHtml="";
+  if(partners.length){
+    pairHtml = `<div style="margin:8px 0"><span class="pill">&#9733; Demonstration project</span>
+      <div class="blurb" style="margin-top:6px">Active pairing with <b>${escapeHtml(partners.join(', '))}</b>.</div></div>`;
+  }
+  let nearHtml="";
+  if(nb){
+    nearHtml = `<div style="font-size:12px;font-weight:700;color:var(--navy);margin:10px 0 4px">Nearest installation</div>
+      <ul class="nearlist"><li>
+        <a href="javascript:void(0)" onclick="selectBase('${escapeHtml(nb.b.n).replace(/'/g,"\\'")}')">${escapeHtml(nb.b.n)}</a>
+        <div class="meta"><span>${milesFmt(nb.d)} mi away</span><span>view partner colleges</span></div>
+      </li></ul>`;
+  }
+  detail.innerHTML = `<div class="detail">
+    <div class="kicker">Community College</div>
+    <h2>${escapeHtml(c.n)}</h2>
+    ${vetLine(c)}
+    <p class="blurb">${CPL_BLURB}</p>
+    <a class="cta" href="${escapeHtml(c.u)}" target="_blank" rel="noopener">Open CPL Landing Page &#8594;</a>
+    ${pairHtml}
+    ${nearHtml}
+  </div>`;
+}
+
+// ---------- marker events ----------
+function bindEvents(g, kind){
+  const i=+g.dataset.i;
+  const obj = kind==="col"? DATA.colleges[i] : DATA.bases[i];
+  g.addEventListener("mouseenter", ev=>{
+    if(kind==="col"){
+      const vet = obj.m==null? "" : `<div class="b" style="color:var(--navy)">&#127894; <b>${num(obj.m)}</b> veterans &amp; service members served via CPL</div>`;
+      showTip(ev, `<div class="t">${escapeHtml(obj.n)}</div><div class="c">Credit for Prior Learning</div>
+        ${vet}<div class="b" style="font-style:italic">Click for details &amp; CPL page &#8594;</div>`);
+    } else {
+      const demo = pairOf[obj.n]? ` &middot; demo with ${escapeHtml(pairOf[obj.n].join(', '))}`:'';
+      showTip(ev, `<div class="t" style="color:var(--crimson)">${escapeHtml(obj.n)}</div>
+        <div class="b">Military installation${demo}</div><div class="b" style="font-style:italic">Click for partner colleges &#8594;</div>`);
+    }
+  });
+  g.addEventListener("mousemove", moveTip);
+  g.addEventListener("mouseleave", hideTip);
+  g.addEventListener("click", ev=>{
+    ev.stopPropagation();
+    hideTip();
+    if(kind==="col") selectCollege(obj.n); else selectBase(obj.n);
+  });
+}
+Object.values(colEls).forEach(g=>bindEvents(g,"col"));
+Object.values(baseEls).forEach(g=>bindEvents(g,"base"));
+
+// ---------- layer toggles ----------
+document.getElementById("t-col").onchange=e=>{ gCol.style.display=e.target.checked?"":"none"; };
+document.getElementById("t-base").onchange=e=>{ gBase.style.display=e.target.checked?"":"none"; };
+document.getElementById("t-pair").onchange=e=>{ gPair.style.display=e.target.checked?"":"none"; };
+
+// ---------- side tabs + directories ----------
+function switchTab(name){
+  document.querySelectorAll("#side .tab").forEach(t=>t.classList.toggle("on", t.dataset.tab===name));
+  document.getElementById("panel-detail").style.display = name==="detail"?"":"none";
+  document.getElementById("panel-colleges").style.display = name==="colleges"?"":"none";
+  document.getElementById("panel-bases").style.display = name==="bases"?"":"none";
+}
+document.querySelectorAll("#side .tab").forEach(t=>t.onclick=()=>switchTab(t.dataset.tab));
+
+const listCol=document.getElementById("list-col");
+const listBase=document.getElementById("list-base");
+function buildColList(filter){
+  const f=(filter||"").toLowerCase();
+  const rows=DATA.colleges.filter(c=>c.n.toLowerCase().includes(f)).sort((a,b)=>a.n.localeCompare(b.n));
+  listCol.innerHTML = rows.length? rows.map(c=>`<li data-n="${escapeHtml(c.n)}">
+      <span class="nm">${escapeHtml(c.n)}${c.k?' <span class="pill">&#9733;</span>':''}${c.m!=null?` <span style="color:var(--muted);font-weight:400">&middot; &#127894; ${num(c.m)}</span>`:''}</span>
+      <a class="lnk" href="${escapeHtml(c.u)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">CPL &#8599;</a>
+    </li>`).join('') : '<div class="empty">No colleges match.</div>';
+  listCol.querySelectorAll("li").forEach(li=>li.onclick=()=>selectCollege(li.dataset.n));
+}
+function buildBaseList(filter){
+  const f=(filter||"").toLowerCase();
+  const rows=DATA.bases.filter(b=>b.n.toLowerCase().includes(f)).sort((a,b)=>a.n.localeCompare(b.n));
+  listBase.innerHTML = rows.length? rows.map(b=>`<li data-n="${escapeHtml(b.n)}">
+      <span class="nm"><span class="star-swatch">&#9733;</span> ${escapeHtml(b.n)}</span>
+      <span class="lnk">partners &#8594;</span></li>`).join('') : '<div class="empty">No installations match.</div>';
+  listBase.querySelectorAll("li").forEach(li=>li.onclick=()=>selectBase(li.dataset.n));
+}
+document.getElementById("search-col").addEventListener("input",e=>buildColList(e.target.value));
+document.getElementById("search-base").addEventListener("input",e=>buildBaseList(e.target.value));
+
+// click empty map clears selection
+svg.addEventListener("click", ev=>{ if(!ev.target.closest(".mk")) clearSelection(); });
+
+// ---------- init ----------
+if(DATA.milTotal!=null){
+  document.getElementById("vet-stat").innerHTML =
+    ` &nbsp;•&nbsp; <b>${num(DATA.milTotal)}</b> veterans &amp; service members served`;
+}
+buildColList(""); buildBaseList(""); renderDetailDefault();
+applyVB();
+</script>
+</body>
+</html>
