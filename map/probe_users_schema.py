@@ -173,6 +173,11 @@ GUESS_COLUMNS = [
     # guess the API columnName; the value-signature probe confirms which are real.
     # Users & Roles extras (Builder shows 11; the probe already locked 7):
     "Administrator", "Order", "RoleID", "SuperUser",
+    # ── Session 88: the 3 NEW user fields Sam added to the Custom Report
+    # (Builder labels Active / UserStatus / UserDisciplines / LastUpdatedOn).
+    # Guess the de-spaced PascalCase + close variants; value-signature confirms. ──
+    "Active", "UserStatus", "UserDisciplines", "UserDiscipline", "Disciplines",
+    "Discipline", "UserActive", "ActiveStatus", "LastUpdatedOn", "LastUpdatedDate",
     # Contacts role-columns + their emails/phones + the staleness field:
     "PrimaryContactEmail", "PrimaryContactPhone",
     "VPAA", "VPAAEmail", "VPSS", "VPSSEmail", "LastUpdatedOn",

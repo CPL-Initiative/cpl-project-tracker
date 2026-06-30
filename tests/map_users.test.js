@@ -103,6 +103,45 @@ function makeWin(opts) {
   check("rosterHtml rows: escapes the name", filled.indexOf("&lt;x&gt;") >= 0 && filled.indexOf("Ada <x>") < 0);
 })();
 
+// Session 88 — UserStatus / Disciplines / Last-updated in the roster.
+(function () {
+  const w = makeWin();
+  const api = w.CPL_MAP_USERS_TAB;
+  check("statusBadge Active → green badge", /mapu-st-active/.test(api._statusBadge("Active")));
+  check("statusBadge Inactive → muted badge", /mapu-st-inactive/.test(api._statusBadge("Inactive")));
+  check("statusBadge empty → em dash", api._statusBadge("") === "—");
+  check("discCell empty → em dash", api._discCell("") === "—");
+  check("discCell ≤2 → inline list", /Math, English/.test(api._discCell("Math, English")));
+  const many = api._discCell("A, B, C, D");
+  check("discCell >2 → 'N disciplines' chip", /4 disciplines/.test(many));
+  check("discCell keeps the full list in the title", many.indexOf('title="A, B, C, D"') >= 0);
+  check("discCell escapes the title (XSS)", api._discCell("<x>").indexOf("&lt;x&gt;") >= 0);
+  const roster = api._rosterHtml([{ first_name: "Ada", last_name: "L", email: "a@b.edu",
+    role_name: "Faculty", username: "ada", user_status: "Active",
+    disciplines: "Math, English, History", last_updated_on: "2026-06-15" }]);
+  check("rosterHtml header has Status/Disciplines/Last updated",
+    /Status<\/th>/.test(roster) && /Disciplines<\/th>/.test(roster) && /Last updated<\/th>/.test(roster));
+  check("rosterHtml row shows the Active badge", /mapu-st-active/.test(roster));
+  check("rosterHtml row shows the last-updated date", roster.indexOf("2026-06-15") >= 0);
+  check("rosterHtml row collapses 3 disciplines to a chip", /3 disciplines/.test(roster));
+})();
+
+// Session 88 — the public summary shows '(N active)' from active_count.
+(function () {
+  const w = makeWin();
+  const api = w.CPL_MAP_USERS_TAB;
+  api._state.summary = [
+    { college: "Foothill", user_count: 12, active_count: 9, role_mix: { Faculty: 12 }, last_synced: "2026-06-30T18:55:30Z" },
+    { college: "De Anza", user_count: 3, active_count: 0, role_mix: { Ambassador: 3 }, last_synced: "2026-06-30T18:55:30Z" },
+  ];
+  api._state.loading = false; api._state.error = null;
+  const root = w.document.getElementById("map-users-root");
+  api.render(root);
+  const html = root.innerHTML;
+  check("render: shows '(9 active)' when active_count>0", html.indexOf("(9 active)") >= 0);
+  check("render: omits '(0 active)' (pre-sync / all-inactive)", html.indexOf("(0 active)") < 0);
+})();
+
 // render: stat boxes + table + XSS-escape of a college name
 (function () {
   const w = makeWin();
