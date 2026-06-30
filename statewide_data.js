@@ -236565,6 +236565,34 @@ window.CPL_STATEWIDE = {
       "total_addressable": 0,
       "credit_recs": [],
       "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICI-OST3-1-001",
+      "exhibit_ids": [
+        "MAPICI-OST3-1-001"
+      ],
+      "title": "OSHA Safety Training 30-Hour Card",
+      "unified_title": "OSHA Safety Training 30-Hour Card",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "OSHA Safety Training 30-Hour Card"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
     }
   ],
   "analysis": {
@@ -237491,8 +237519,8 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 5367,
-        "exhibits": 1664,
+        "credit_recs": 5368,
+        "exhibits": 1665,
         "courses": 192,
         "colleges": 84,
         "ccc_collaborative": 25,
@@ -237707,8 +237735,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3584,
-        "exhibits": 1176,
+        "credit_recs": 3585,
+        "exhibits": 1177,
         "colleges": 78,
         "pct": 28.6
       },
@@ -237751,8 +237779,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2590,
-        "exhibits": 945,
+        "credit_recs": 2591,
+        "exhibits": 946,
         "colleges": 74,
         "pct": 20.7
       },
@@ -237816,8 +237844,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11006,
-        "exhibits": 4609,
+        "credit_recs": 11007,
+        "exhibits": 4610,
         "colleges": 99,
         "disciplines": 23,
         "pct": 87.8
@@ -238242,6 +238270,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-06-30T14:46:21",
-  "total_credit_recs": 12531
+  "generated_at": "2026-06-30T16:25:04",
+  "total_credit_recs": 12532
 };

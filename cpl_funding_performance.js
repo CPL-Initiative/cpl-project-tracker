@@ -8,7 +8,7 @@ window.CPL_FUNDING_PERF = {
  "suppress_below": 5,
  "statewide": {
   "p2": 4666,
-  "p3": 16196
+  "p3": 16197
  },
  "colleges": {
   "Bakersfield": {
@@ -21,7 +21,7 @@ window.CPL_FUNDING_PERF = {
   },
   "Chaffey": {
    "p2": 14,
-   "p3": 26
+   "p3": 27
   },
   "Cuesta": {
    "p2": null,
