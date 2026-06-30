@@ -124,6 +124,58 @@
       return r.json();
     });
   }
+  function loadContacts(college) {
+    // The gated contacts (Primary Contact / VPAA = VP Instruction / VPSS = VP
+    // Student Services) for the refresh nudge. Reviewer/team-phrase only.
+    var url = REST + "/map_college_contacts?college=eq." + encodeURIComponent(college) + "&limit=1";
+    return fetch(url, { headers: authHeaders() }).then(function (r) {
+      if (!r.ok) throw new Error("contacts " + r.status);
+      return r.json();
+    }).then(function (rows) { return (rows && rows[0]) || null; });
+  }
+
+  // ── Nudge (a pre-filled mailto: — like the RACI nudge, nothing auto-sent) ──
+  function nudgeRecipients(c) {
+    if (!c) return [];
+    return [c.primary_contact_email, c.vpaa_email, c.vpss_email]
+      .filter(function (e) { return e && String(e).indexOf("@") > 0; });
+  }
+  function buildNudgeMailto(college, c) {
+    var to = nudgeRecipients(c).join(",");
+    var subject = "Action requested: refresh your MAP college users — " + college;
+    var who = c ? [
+      c.primary_contact ? "Primary Contact: " + c.primary_contact : "",
+      c.vpaa ? "VP of Instruction (VPAA): " + c.vpaa : "",
+      c.vpss ? "VP of Student Services (VPSS): " + c.vpss : "",
+    ].filter(Boolean).join("\n") : "";
+    var body = "Hello " + college + " team,\n\n"
+      + "As part of the statewide CPL (Credit for Prior Learning) effort, please take a few "
+      + "minutes to review and update your institution's user list in the MAP platform so the "
+      + "right staff have access and the roster stays current.\n\n"
+      + (who ? who + "\n\n" : "")
+      + "You can manage users in the MAP CPL Dashboard. Thank you for keeping your college's "
+      + "CPL team up to date.\n\n— The CPL Initiative team";
+    return "mailto:" + encodeURIComponent(to)
+      + "?subject=" + encodeURIComponent(subject)
+      + "&body=" + encodeURIComponent(body);
+  }
+  function openNudge(college) {
+    return loadContacts(college).then(function (c) {
+      var recips = nudgeRecipients(c);
+      var href = buildNudgeMailto(college, c);
+      // Open the user's mail client (nothing is auto-sent — mirrors RACI).
+      try { window.location.href = href; } catch (e) {}
+      if (!recips.length) {
+        alert("No contact emails are on file for " + college
+          + ". A blank draft was opened — add the College Contact / VP of Instruction / "
+          + "VP of Student Services manually.");
+      }
+      return recips;
+    }).catch(function () {
+      alert("Could not load this college's contacts. Sign in on the Team & RACI tab "
+        + "(reviewer or team phrase) and try again.");
+    });
+  }
 
   // ── Render ──
   function roleChips(mix) {
@@ -199,17 +251,22 @@
       return;
     }
 
+    var canNudge = signedIn();
     html += '<table class="mapu-table"><thead><tr>'
-      + "<th>College</th><th class=\"num\">Users</th><th>Role mix</th><th>Roster</th>"
+      + "<th>College</th><th class=\"num\">Users</th><th>Role mix</th><th>Actions</th>"
       + "</tr></thead><tbody>";
     rows.forEach(function (r) {
       var open = !!state.rosterOpen[r.college];
+      var nudgeBtn = canNudge
+        ? ' <button class="mapu-rosterbtn" data-nudge="' + esc(r.college)
+          + '" title="Email this college’s Primary Contact + VP of Instruction + VP of Student Services to refresh their MAP users (opens your mail app — nothing is auto-sent)">\u{1F4E3} nudge</button>'
+        : "";
       html += "<tr>"
         + "<td>" + esc(r.college) + "</td>"
         + '<td class="num">' + (r.user_count || 0) + "</td>"
         + '<td><div class="mapu-roles">' + roleChips(r.role_mix) + "</div></td>"
         + '<td><button class="mapu-rosterbtn" data-roster="' + esc(r.college) + '">'
-        + (open ? "✕ hide" : "\u{1F465} roster") + "</button></td>"
+        + (open ? "✕ hide" : "\u{1F465} roster") + "</button>" + nudgeBtn + "</td>"
         + "</tr>";
       if (open) {
         html += '<tr class="mapu-roster"><td colspan="4" data-roster-cell="' + esc(r.college) + '">'
@@ -266,6 +323,9 @@
         renderInto(root, true);
       });
     });
+    root.querySelectorAll("[data-nudge]").forEach(function (btn) {
+      btn.addEventListener("click", function () { openNudge(btn.getAttribute("data-nudge")); });
+    });
   }
 
   // Re-render preserving scroll/focus is overkill here; a full re-render is fine
@@ -297,6 +357,8 @@
     _authHeaders: authHeaders,
     _filteredSorted: filteredSorted,
     _fmtDate: fmtDate,
+    _buildNudgeMailto: buildNudgeMailto,
+    _nudgeRecipients: nudgeRecipients,
   };
 
   document.addEventListener("cpl-tab-activated", function (e) {
