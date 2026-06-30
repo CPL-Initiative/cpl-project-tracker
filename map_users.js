@@ -89,6 +89,12 @@
       ".mapu-roster table { width:100%; border-collapse:collapse; font-size:.82rem; }",
       ".mapu-roster td, .mapu-roster th { padding:4px 8px; border-bottom:1px solid var(--border); }",
       ".mapu-roster th { color: var(--text-muted); text-transform:uppercase; font-size:.66rem; letter-spacing:.04em; text-align:left; }",
+      // Session 88 — active count + status/disciplines in the roster
+      ".mapu-active { color: var(--hunter,#2C601A); font-size:.74rem; font-weight:600; margin-left:3px; }",
+      ".mapu-st { font-size:.72rem; font-weight:600; padding:1px 7px; border-radius:10px; white-space:nowrap; }",
+      ".mapu-st-active { color: var(--hunter,#2C601A); background: rgba(44,96,26,.10); }",
+      ".mapu-st-inactive { color: var(--text-muted,#5C5C55); background: var(--surface-muted); }",
+      ".mapu-disc { cursor: help; }",
       ".mapu-gate { color: var(--text-muted); font-size:.82rem; padding:8px 4px; }",
       ".mapu-gate a { color: var(--navy-secondary); cursor:pointer; text-decoration:underline; }",
       ".mapu-empty { border:1px dashed var(--border-strong); border-radius:8px; background: var(--surface-subtle); color: var(--text-muted); padding:26px; text-align:center; }",
@@ -127,6 +133,22 @@
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
   }
+  // UserStatus → a small Active/Inactive badge (Session 88).
+  function statusBadge(s) {
+    s = String(s == null ? "" : s).trim();
+    if (!s) return "—";
+    var cls = /^active$/i.test(s) ? "mapu-st-active" : "mapu-st-inactive";
+    return '<span class="mapu-st ' + cls + '">' + esc(s) + "</span>";
+  }
+  // UserDisciplines (comma-delimited, can be long) → inline for ≤2, else a
+  // "N disciplines" chip with the full list in the title.
+  function discCell(d) {
+    d = String(d == null ? "" : d).trim();
+    if (!d) return "—";
+    var parts = d.split(",").map(function (x) { return x.trim(); }).filter(Boolean);
+    var label = parts.length > 2 ? parts.length + " disciplines" : parts.join(", ");
+    return '<span class="mapu-disc" title="' + esc(parts.join(", ")) + '">' + esc(label) + "</span>";
+  }
 
   // ── Data ──
   function loadSummary() {
@@ -140,7 +162,7 @@
     });
   }
   function loadRoster(college) {
-    var url = REST + "/map_college_users?select=first_name,last_name,email,role_name,username"
+    var url = REST + "/map_college_users?select=first_name,last_name,email,role_name,username,user_status,disciplines,last_updated_on"
       + "&college=eq." + encodeURIComponent(college) + "&order=role_name.asc,last_name.asc";
     return fetch(url, { headers: authHeaders() }).then(function (r) {
       if (!r.ok) throw new Error("roster " + r.status);
@@ -432,7 +454,12 @@
         : "";
       html += "<tr>"
         + "<td>" + esc(r.college) + "</td>"
-        + '<td class="num">' + (r.user_count || 0) + "</td>"
+        + '<td class="num">' + (r.user_count || 0)
+        + ((r.active_count || 0) > 0
+            ? ' <span class="mapu-active" title="users with UserStatus = Active">('
+              + r.active_count + " active)</span>"
+            : "")
+        + "</td>"
         + '<td><div class="mapu-roles">' + roleChips(r.role_mix) + "</div></td>"
         + '<td><button class="mapu-rosterbtn" data-roster="' + esc(r.college) + '">'
         + (open ? "✕ hide" : "\u{1F465} roster") + "</button>" + nudgeBtn + nudgedLine + "</td>"
@@ -455,11 +482,15 @@
         + (signedIn() ? "This college has no users on record." :
           "Sign in on the <b>Team &amp; RACI</b> tab to view names &amp; emails.") + "</div>";
     }
-    var h = "<table><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Username</th></tr></thead><tbody>";
+    var h = "<table><thead><tr><th>Name</th><th>Email</th><th>Role</th>"
+      + "<th>Status</th><th>Disciplines</th><th>Last updated</th><th>Username</th>"
+      + "</tr></thead><tbody>";
     rows.forEach(function (u) {
       var name = ((u.first_name || "") + " " + (u.last_name || "")).trim() || "—";
       h += "<tr><td>" + esc(name) + "</td><td>" + esc(u.email || "—") + "</td><td>"
-        + esc(u.role_name || "—") + "</td><td>" + esc(u.username || "—") + "</td></tr>";
+        + esc(u.role_name || "—") + "</td><td>" + statusBadge(u.user_status)
+        + "</td><td>" + discCell(u.disciplines) + "</td><td>"
+        + esc(u.last_updated_on || "—") + "</td><td>" + esc(u.username || "—") + "</td></tr>";
     });
     return h + "</tbody></table>";
   }
@@ -535,6 +566,8 @@
     _nudgeRecipients: nudgeRecipients,
     _nudgeRoles: NUDGE_ROLES,
     _showNudgePicker: showNudgePicker,
+    _statusBadge: statusBadge,
+    _discCell: discCell,
   };
 
   document.addEventListener("cpl-tab-activated", function (e) {

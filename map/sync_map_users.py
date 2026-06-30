@@ -34,14 +34,22 @@ SUPABASE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co"
 
 # API columnName → map_college_users column. CONFIRMED real columns only
 # (an unconfirmed name 400s the whole report). MAP is case-sensitive.
+# Session 88: + the 3 fields Sam added to the Custom Report, value-signature
+# confirmed (PR #628-followup probe): UserStatus ∈ {Active, Inactive} (2741/2741),
+# UserDisciplines (comma-delimited, 947/2741 populated), LastUpdatedOn (10-char
+# date, 2741/2741). The redundant boolean `Active` ("True"/"False") is skipped —
+# UserStatus carries the same signal more readably.
 FIELD_MAP = [
-    ("College",    "college"),
-    ("CollegeId",  "college_id"),
-    ("FirstName",  "first_name"),
-    ("LastName",   "last_name"),
-    ("Email",      "email"),
-    ("RoleName",   "role_name"),
-    ("UserName",   "username"),
+    ("College",         "college"),
+    ("CollegeId",       "college_id"),
+    ("FirstName",       "first_name"),
+    ("LastName",        "last_name"),
+    ("Email",           "email"),
+    ("RoleName",        "role_name"),
+    ("UserName",        "username"),
+    ("UserStatus",      "user_status"),
+    ("UserDisciplines", "disciplines"),
+    ("LastUpdatedOn",   "last_updated_on"),
 ]
 API_COLUMNS = [a for a, _ in FIELD_MAP]
 
@@ -116,6 +124,17 @@ def _summarize(rows):
         print(f"    - {role}: {n:,}")
     with_email = sum(1 for r in rows if (r.get("email") or "").strip())
     print(f"  rows with an email: {with_email:,}/{len(rows):,}")
+    # Session 88 — the 3 new fields, PII-safe counts only (no names/values):
+    status_mix = {}
+    for r in rows:
+        s = (r.get("user_status") or "(unknown)").strip() or "(unknown)"
+        status_mix[s] = status_mix.get(s, 0) + 1
+    print("  UserStatus mix (non-PII): "
+          + ", ".join(f"{s}={n:,}" for s, n in sorted(status_mix.items(), key=lambda kv: -kv[1])))
+    with_disc = sum(1 for r in rows if (r.get("disciplines") or "").strip())
+    with_upd = sum(1 for r in rows if (r.get("last_updated_on") or "").strip())
+    print(f"  rows with disciplines: {with_disc:,}/{len(rows):,}; "
+          f"with a last-updated date: {with_upd:,}/{len(rows):,}")
 
 
 def _fetch_landing_urls(key):
