@@ -1005,6 +1005,13 @@ JSON) and Saves/Resumes to Supabase `tmc_submissions`.
 
 - **Project**: `hvuwhnbuahrtptokpqfh.supabase.co`
 - **Tables**: projects, budget_expenditures, personnel, workplan_goals
+- **`workplan_goals.current`** (numeric, added Session 85): the manual "Current"
+  value for the Annual Workplan tab — used ONLY for sub-activities NOT mapped to a
+  live headline KPI (`PID_TO_KPI_KEY`); read on the **GOAL** row (canonical).
+  Mapped sub-activities source Current from the live scrape and ignore it. Edited
+  in the tab via `workplan_goals.js` (PATCH on the GOAL row); reviewer-gated
+  (`is_allowed_reviewer()`). Titles in the same tab PATCH **`projects.name`** (the
+  single authoritative title store). See `docs/annual_workplan_authoritative_lessons.md`.
 - **`tmc_submissions`** (added Session 59): TMC Builder's per-college course→TMC
   alignment store. Anon INSERT/UPDATE/SELECT RLS (institutional curriculum data,
   **no student PII**), `(college, tmc_id)` unique → upsert/resume. The always-true
@@ -2015,74 +2022,12 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > → full story in [`docs/fact_sheet_lessons.md`](docs/fact_sheet_lessons.md) (2026-06-28 sections); KB notes
 > `methodology-stable-dom-keys-exclude-live-text.md` + `playbook-standalone-dom-to-word-export.md`.
 
-### Session 83 — StarNova: CO-platform strategy → Mission Control → team-phrase gate (2026-06-29)
-
-Sam's "epic quest": recommend a long-term plan to move COBI + the CPL KB into a governed, team-based,
-CO-wide structure (with Director-of-Tech "Malone"), then build a tracker for the lift and drop the per-person
-login wall on team edits. **4 merged PRs.**
-
-**(1) `docs/co_platform_strategy.md` (#586, corrected #588)** — the "plan of attack." Built by a
-**12-agent workflow** (5 web-research threads → 6 design sections → synthesis), grounded in the **verified**
-current state (GitHub owner = Sam's personal `samueltlee`; `CPL-Initiative` org has 0 teams; Supabase =
-personal `LiveOak`/Pro; Cloudflare Worker + Anthropic key on personal accounts → the platform is owned by
-*individuals*, not the institution). Covers the operating model (**AI proposes, a named human disposes**), a
-Now/Next/Later roadmap + a parallel procurement track, account migration off personal logins, knowledge lanes
-(CPL · CCC Baccalaureate · Apprenticeships · Internships · MIS · Student Services), integration/API
-(de-scrape behind data-sharing agreements), governance/security/accessibility/HUMANS, decisions only humans
-make, candid pushback, and a scorecard against all ~14 asks. The PII ask was a no-op — **verified clean on
-`main`** (audit's "pending" was stale; Sam had already purged history).
-
-**(2) `kb/liftoff_plan.json` ("Lift Off") (#588, forward-only #592)** — the program-tracker data: phases
-(Now/Next/Later) of **`task` + `decision` nodes**. A `decision` FORKS the work — an option `activates` its
-branch tasks and `archives` the others; the choice doubles as the human decision log. **Forward-only** (31
-tasks, 3 decisions; PII-incident nodes dropped per Sam — handled long ago).
-
-**(3) `mission_control.js` ("Mission Control") (#590, #592)** — a self-contained static overlay (the
-`card_updates.js`/`first_light.js` pattern) that renders the plan ⊕ a Supabase `liftoff_state` overlay as a
-**collapsible `<details>` block mounted BELOW the RACI functions** in Team & RACI (mounts on
-`cpl-tab-activated`; inserts `#mission-control-root` after `#raci-root`; **didn't change one line of
-`raci.js`** → its 70-check suite stayed green). Anon = read-only; signed-in/team-phrase = set task status +
-pick decision branches (optimistic write + rollback).
-
-**(4) the RACI shared "team phrase" gate (#593)** — replaced the per-person magic-link *requirement* with a
-shared phrase so the team can update/nudge without each signing in. **Server-enforced** (the differentiator,
-not client-side theater on a public-anon-key surface): `team_access` (RLS on, **no anon policies** → not
-client-readable) + **`team_pass_ok()`** reads the **`x-team-pass`** request header and widens the
-`item_raci`/`team_members`/`item_updates`/`liftoff_state` write policies to `is_allowed_reviewer() OR
-team_pass_ok()` — magic-link reviewers still work. Client used a **pseudo-session** (`state.sess =
-{teamPass}`) so every existing `canEdit`/`state.sess` guard passed unchanged; only `sbWrite`'s header +
-`load()`'s fallback changed. Temp phrase `cpl-team-2026` (Sam to rotate). **⚠ The live header path is
-unverified from the sandbox** (Supabase egress-blocked) — Sam to confirm a save persists after deploy.
-
-**(5) Team-phrase hardening — same session, Sam live-testing with Malone (PRs #595–#598 + 2 Dependabot).**
-The gate shipped but Malone hit a **401 on save despite entering the phrase** — root cause: a team-phrase
-session has no user token, so `headersFor` sent `Authorization: "Bearer "` (empty), which **PostgREST rejects
-at the auth layer (401) BEFORE RLS/`team_pass_ok()` runs** (an RLS denial is 403 — the 401 pointed straight
-at auth). **#595** fixes it (fall back to the anon key as the bearer; never an empty Bearer) + adds the phrase
-box to the composer when not unlocked. **#596** makes the card 📝/📣 popups open **in place** (new
-`card_actions.js` interceptor + lazy-load; the nudge email lands on `#activities-projects` now) — no redirect
-to `#raci`. **#597** brings **Mission Control** to parity (same empty-Bearer fix + it now reads the team
-phrase; `liftoff_state` writes widened to `team_pass_ok()`). **#598** **validates the phrase on entry** (POST
-`rpc/team_pass_ok` — a wrong phrase is rejected, never stored, killing the silent-401 trap) + a reviewer-only
-**⚙ Manage team phrase** admin (view/rotate `team_access.secret` via new reviewer-only `ta_select`/`ta_update`
-RLS; anon still can't read it). Also merged the two pending **Dependabot** CI bumps (`setup-node` 4→6 #587,
-`checkout` 6→7 #482). All static JS → live on merge; suite **107 files green**.
-
-Durable lessons: **the build IS the operating model** (each artifact demonstrates AI-proposes/human-disposes);
-the **decision-fork tracker model**; **server-enforced shared password without per-user accounts** (new KB
-note [`docs/kb-notes/methodology-server-enforced-shared-password-gate.md`](docs/kb-notes/methodology-server-enforced-shared-password-gate.md));
-**repo-private ≠ site-private** (a Sam Q — Pages stays public to URL-holders; site-gating needs an app gate
-or Enterprise, and Pages-from-private needs a paid plan); **an empty `Bearer ` 401s at PostgREST's auth layer
-before RLS** (so on a public-anon-key surface, always send the anon key as the bearer — never `Bearer ` with
-no token — and remember a *wrong-credential* RLS rejection is 403, an *auth-layer* rejection is 401); **you
-can validate a secret the client can't read by calling the gate function itself as an RPC** (the same
-right/wrong signal a write gives, no new exposure). Tests: `card_actions.test.js` (15), `mission_control.test.js`
-(38), `raci_team_pass.test.js` (22), raci 70/70 → **107 files green**. Full stories:
-[`docs/mission_control_lessons.md`](docs/mission_control_lessons.md) +
-[`docs/cobi_raci_nudge_lessons.md`](docs/cobi_raci_nudge_lessons.md). **NEXT:
-[`docs/session_84_handoff.md`](docs/session_84_handoff.md)** — confirm the team phrase works live + gut-check
-the Lift Off plan with Malone, then the strategy's NOW lane (institution-owned GitHub/Supabase, `cobi-auth.js`
-consolidation, required a11y CI, the DSA paperwork) + the standing engineering lanes.
+> **Session 83 narrative (StarNova — CO-platform strategy `docs/co_platform_strategy.md` #586/#588;
+> the "Lift Off" plan `kb/liftoff_plan.json` #588/#592; Mission Control `mission_control.js` #590/#592;
+> the server-enforced RACI **team-phrase gate** #593 + hardening #595–#598) archived** →
+> [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full stories:
+> [`docs/mission_control_lessons.md`](docs/mission_control_lessons.md) +
+> [`docs/cobi_raci_nudge_lessons.md`](docs/cobi_raci_nudge_lessons.md).
 
 ### Session 84 — SkyScribe: project soft-delete · lean Pages · computed progress bars (2026-06-29)
 
@@ -2111,6 +2056,28 @@ Started "refine COBI a bit more"; the team using the dashboard surfaced a run of
 Suite **109 files green**. Full story: [`docs/project_lifecycle_lessons.md`](docs/project_lifecycle_lessons.md)
 + [`docs/pages_lean_deploy_scope.md`](docs/pages_lean_deploy_scope.md). M-ID pipeline did NOT move
 (`#tab-pipeline` untouched). **NEXT: [`docs/session_85_handoff.md`](docs/session_85_handoff.md).**
+
+### Session 85 — SkyLight: Annual Workplan tab = authoritative source (2026-06-30)
+
+Built the scoped priority (`docs/annual_workplan_authoritative_scope.md`). **1 code-only PR** (HTML
+published by the post-merge `daily-dashboard.yml` dispatch). Two pieces:
+- **"Current" column HYBRID** — killed the 96,449-vs-~100k drift. `PID_TO_KPI_KEY` is now a module
+  const (3.2 fixed `eligible_units`→**`transcripted_units`**; ordering is a no-op so it's safe). The 5
+  mapped sub-activities drive Current from the **live** headline KPI (read-only, verbatim string + a
+  `live · as of` badge → matches the headline card *by construction*); the rest get an **editable manual
+  Current** in a new `workplan_goals.current` column (falls back to Excel `kpi_metric`). Sequencing fix:
+  `build_workplan_goals_from_supabase` runs **before** the KPI merges, so the live sync is a **post-pass**
+  `apply_live_workplan_current()` after both merges (graceful skip when a KPI has no value).
+- **Authoritative titles** — the Annual Workplan table renders **`projects.name`** (single store) and the
+  title cell is click-to-edit → PATCH `projects.name` (the field the card editor already writes).
+- Editors in `workplan_goals.js` (`saveCurrent`/`saveTitle`, magic-link `cpl_sb`); live cells carry no
+  edit attr → read-only by construction. Verified `workplan_goals`+`projects` already gate writes on
+  `is_allowed_reviewer()` (the old "qual=true" comment was stale). Tests: `kb/_test_workplan_current_hybrid.py`
+  (30) + `tests/workplan_goals_authoritative.test.js` (26); **110 files green**; full generator run EXIT 0
+  ("5 sub-activities synced to live"). Reusable pattern:
+  [`docs/kb-notes/methodology-live-vs-manual-hybrid-column.md`](docs/kb-notes/methodology-live-vs-manual-hybrid-column.md).
+  Full story: [`docs/annual_workplan_authoritative_lessons.md`](docs/annual_workplan_authoritative_lessons.md).
+  **NEXT: [`docs/session_86_handoff.md`](docs/session_86_handoff.md).**
 
 ---
 

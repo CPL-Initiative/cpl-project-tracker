@@ -6,22 +6,23 @@
  * write directly to Supabase public.workplan_goals via PATCH (no overlay layer
  * — workplan_goals IS the source of truth as of PR-4).
  *
- * Scope (narrow per Sam's PR-5 sizing decision):
- *   - Per-cell edit on existing rows only (the 27 A+-derived activities)
- *   - NO add-activity flow yet (deferred until the Activity↔Project N-to-N
- *     data model is designed — Sam flagged prior consolidation work)
- *   - NO Current-column editing (kpi_metric is still Excel-sourced; Phase 2)
+ * Scope:
+ *   - Per-cell GOAL/STRETCH year-ladder edit on existing rows
+ *   - Add-activity flow (GOAL+STRETCH pair + associations)
+ *   - Session 85: the Annual Workplan tab is the AUTHORITATIVE source —
+ *       · manual "Current" editing for sub-activities NOT mapped to a live
+ *         headline KPI (PATCH workplan_goals.current on the GOAL row); the
+ *         KPI-mapped ones render the live value read-only (no edit affordance),
+ *         so the table matches the headline card by construction.
+ *       · sub-activity TITLE editing → PATCH projects.name (the single title
+ *         store the Dashboard card editor also writes).
  *
  * Auth: shared magic-link session via sessionStorage `cpl_sb`. After sign-in,
  * editable cells light up; click → input → blur or Enter to save. Saves
  * optimistically update every cell with matching (activity_id, row_type, year)
  * so the workplan_goals + annual_goals tables both reflect the new value
- * without a page reload.
- *
- * Known RLS gap: public.workplan_goals currently has "Allow auth write" with
- * qual=true — ANY authenticated user can write, not just allowed_reviewers.
- * Tightening this to mirror kb_curation's is_allowed_reviewer() policy is a
- * follow-up migration that needs Sam's explicit sign-off.
+ * without a page reload. Both public.workplan_goals and public.projects gate
+ * writes on is_allowed_reviewer() (RLS) — the anon key alone can't write.
  */
 (function () {
   "use strict";
@@ -102,6 +103,47 @@
     });
   }
 
+  /**
+   * Session 85 — manual "Current" editor. Writes the single Current value to
+   * workplan_goals.current on the GOAL row (canonical; the generator reads it
+   * there). Only fires on UNMAPPED sub-activities — KPI-mapped ones render the
+   * live value read-only (no data-current-edit attr), so they never reach here.
+   */
+  function saveCurrent(activity_id, value, sess) {
+    var qs = "activity_id=eq." + encodeURIComponent(activity_id)
+           + "&row_type=eq.GOAL";
+    return fetch(SUPABASE_URL + "/rest/v1/workplan_goals?" + qs, {
+      method: "PATCH",
+      headers: {
+        "apikey": SUPABASE_ANON,
+        "Authorization": "Bearer " + sess.access_token,
+        "Content-Type": "application/json",
+        "Prefer": "return=representation"
+      },
+      body: JSON.stringify({ current: value })
+    });
+  }
+
+  /**
+   * Session 85 — authoritative title editor. Writes to projects.name (the one
+   * title store; the same field the Dashboard card editor patches). The Annual
+   * Workplan table renders projects.name, so the edit is reflected on the next
+   * regen across every surface.
+   */
+  function saveTitle(pid, name, sess) {
+    return fetch(SUPABASE_URL + "/rest/v1/projects?id=eq."
+        + encodeURIComponent(pid), {
+      method: "PATCH",
+      headers: {
+        "apikey": SUPABASE_ANON,
+        "Authorization": "Bearer " + sess.access_token,
+        "Content-Type": "application/json",
+        "Prefer": "return=representation"
+      },
+      body: JSON.stringify({ name: name })
+    });
+  }
+
   // ═══ Activity↔Project association editor ════════════════════════════════
   // The popover (open / render / save / optimistic-paint / rollback) lives in
   // the SHARED module assoc_editor.js (window.CPL_ASSOC_EDITOR), so the Workplan
@@ -122,7 +164,7 @@
     if (state.sess) {
       widget.appendChild(el("span", { "style": "font-weight:600;" },
         ["Signed in as ", state.sess.email || "(no email)"]));
-      var sub = el("span", { "style": "color:#666;" }, ["Click any year cell to edit • Enter saves • Esc cancels"]);
+      var sub = el("span", { "style": "color:#666;" }, ["Click any goal/stretch/current cell or a sub-activity title to edit • Enter saves • Esc cancels"]);
       widget.appendChild(sub);
       var btnAdd = el("button", {
         "class": "wpg-btn wpg-btn-add",
@@ -211,7 +253,11 @@
    * pointer-cursor + hover affordance based on whether we have a session.
    */
   function paintEditability(state) {
-    var cells = document.querySelectorAll('[data-editable="1"]');
+    // Session 85: light up the year-ladder cells AND the new manual-Current
+    // cells + editable titles. Live-synced Current cells carry no edit attr, so
+    // they're never selected here (read-only by construction).
+    var cells = document.querySelectorAll(
+      '[data-editable="1"], [data-current-edit="1"], [data-title-edit="1"]');
     cells.forEach(function (c) {
       if (state.sess) c.classList.add("wpg-editable");
       else c.classList.remove("wpg-editable");
@@ -367,14 +413,151 @@
     input.addEventListener("blur", commit);
   }
 
+  // ─── Session 85: manual "Current" cell editor ───────────────────────────
+  function startCurrentEdit(cell, state) {
+    if (!state.sess) return;
+    if (cell.classList.contains("wpg-editing")) return;
+    var activity_id = cell.getAttribute("data-aid");
+    var isPct = cell.getAttribute("data-pct") === "1";
+    if (!activity_id) return;
+
+    var oldNum = Number(cell.getAttribute("data-val") || "0");
+    var input = el("input", {
+      "type": "text",
+      "value": isPct && oldNum ? (Math.round(oldNum * 100) + "%") : (oldNum || ""),
+      "class": "wpg-cell-input",
+      "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;text-align:right;background:#fff;"
+    }, []);
+    cell.classList.add("wpg-editing");
+    var prevHtml = cell.innerHTML;
+    cell.innerHTML = "";
+    cell.appendChild(input);
+    input.focus();
+    input.select();
+
+    function paintCell(c, num, saving) {
+      c.setAttribute("data-val", String(num));
+      c.innerHTML = fmtVal(num, isPct)
+        + ' <span class="wpg-manual-hint" aria-hidden="true">✎</span>';
+      if (saving) c.classList.add("wpg-saving");
+    }
+    function cancel() {
+      cell.innerHTML = prevHtml;
+      cell.classList.remove("wpg-editing");
+    }
+    function commit() {
+      var newNum = parseInput(input.value, isPct);
+      if (newNum === null) { input.style.borderColor = "#A33"; return; }
+      if (newNum === oldNum) { cancel(); return; }
+      // The TOTAL cell mirrors the single Current value (no ✎ hint there).
+      var totalCell = document.querySelector(
+        '[data-current-total="1"][data-aid="' + activity_id + '"]');
+      cell.classList.remove("wpg-editing");
+      paintCell(cell, newNum, true);
+      if (totalCell) {
+        totalCell.classList.add("wpg-saving");
+        totalCell.innerHTML = fmtVal(newNum, isPct);
+      }
+      saveCurrent(activity_id, newNum, state.sess).then(function (r) {
+        var ok = r.ok;
+        var paint = ok ? "wpg-saved" : "wpg-error";
+        [cell, totalCell].forEach(function (c) {
+          if (!c) return;
+          c.classList.remove("wpg-saving");
+          c.classList.add(paint);
+          setTimeout(function () { c.classList.remove(paint); }, 1500);
+        });
+        if (!ok) {
+          paintCell(cell, oldNum, false);
+          if (totalCell) totalCell.innerHTML = fmtVal(oldNum, isPct);
+          console.error("[workplan_goals] current save failed:", r.status);
+        }
+      }).catch(function (e) {
+        cell.classList.remove("wpg-saving");
+        cell.classList.add("wpg-error");
+        paintCell(cell, oldNum, false);
+        if (totalCell) { totalCell.classList.remove("wpg-saving"); totalCell.innerHTML = fmtVal(oldNum, isPct); }
+        setTimeout(function () { cell.classList.remove("wpg-error"); }, 2000);
+        console.error("[workplan_goals] current save error:", e);
+      });
+    }
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); commit(); }
+      else if (e.key === "Escape") { e.preventDefault(); cancel(); }
+    });
+    input.addEventListener("blur", commit);
+  }
+
+  // ─── Session 85: authoritative title editor (PATCH projects.name) ────────
+  function startTitleEdit(cell, state) {
+    if (!state.sess) return;
+    if (cell.classList.contains("wpg-editing")) return;
+    var pid = cell.getAttribute("data-pid");
+    if (!pid) return;
+    var oldName = cell.textContent;
+    var input = el("input", {
+      "type": "text",
+      "value": oldName,
+      "class": "wpg-title-input",
+      "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;background:#fff;"
+    }, []);
+    cell.classList.add("wpg-editing");
+    var prevHtml = cell.innerHTML;
+    cell.innerHTML = "";
+    cell.appendChild(input);
+    input.focus();
+    input.select();
+
+    function cancel() {
+      cell.innerHTML = prevHtml;
+      cell.classList.remove("wpg-editing");
+    }
+    function commit() {
+      var newName = (input.value || "").trim();
+      if (!newName) { input.style.borderColor = "#A33"; return; }
+      if (newName === oldName.trim()) { cancel(); return; }
+      cell.classList.remove("wpg-editing");
+      cell.textContent = newName;
+      cell.classList.add("wpg-saving");
+      saveTitle(pid, newName, state.sess).then(function (r) {
+        cell.classList.remove("wpg-saving");
+        var paint = r.ok ? "wpg-saved" : "wpg-error";
+        cell.classList.add(paint);
+        setTimeout(function () { cell.classList.remove(paint); }, 1500);
+        if (!r.ok) {
+          cell.textContent = oldName;
+          console.error("[workplan_goals] title save failed:", r.status);
+        }
+      }).catch(function (e) {
+        cell.classList.remove("wpg-saving");
+        cell.classList.add("wpg-error");
+        cell.textContent = oldName;
+        setTimeout(function () { cell.classList.remove("wpg-error"); }, 2000);
+        console.error("[workplan_goals] title save error:", e);
+      });
+    }
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); commit(); }
+      else if (e.key === "Escape") { e.preventDefault(); cancel(); }
+    });
+    input.addEventListener("blur", commit);
+  }
+
   function attachClickHandler(state) {
     // Use event delegation on the body — works for both tab tables.
     document.body.addEventListener("click", function (e) {
       var target = e.target;
       while (target && target !== document.body) {
-        if (target.getAttribute && target.getAttribute("data-editable") === "1") {
-          startEdit(target, state);
-          return;
+        if (target.getAttribute) {
+          if (target.getAttribute("data-editable") === "1") {
+            startEdit(target, state); return;
+          }
+          if (target.getAttribute("data-current-edit") === "1") {
+            startCurrentEdit(target, state); return;
+          }
+          if (target.getAttribute("data-title-edit") === "1") {
+            startTitleEdit(target, state); return;
+          }
         }
         target = target.parentNode;
       }
@@ -411,7 +594,12 @@
       + '.wpg-modal-card .wpg-btn-cancel { background:#fff;border:1px solid #ccc !important;color:#333; }'
       + '.wpg-modal-card .wpg-btn-submit { background:var(--cobalt);color:#fff;font-weight:600; }'
       + '.wpg-modal-card .wpg-btn-submit:disabled { opacity:0.6;cursor:not-allowed; }'
-      + '.wpg-act-chip { display:inline-block;padding:0.05rem 0.4rem;background:var(--surface-muted);color:var(--navy-secondary);border-radius:10px;font-size:0.7rem;font-weight:600; }';
+      + '.wpg-act-chip { display:inline-block;padding:0.05rem 0.4rem;background:var(--surface-muted);color:var(--navy-secondary);border-radius:10px;font-size:0.7rem;font-weight:600; }'
+      // Session 85 — Current hybrid + title editor affordances
+      + '.wpg-live-badge { display:inline-block;margin-left:0.35rem;padding:0.02rem 0.34rem;background:var(--cobalt,#2A6FB0);color:#fff;border-radius:8px;font-size:0.6rem;font-weight:700;letter-spacing:0.02em;vertical-align:middle;white-space:nowrap; }'
+      + '.wpg-manual-hint { color:#bbb;font-size:0.72rem; }'
+      + '.wpg-editable.wpg-manual-hint, .wpg-editable .wpg-manual-hint { color:#4D7EA8; }'
+      + '.wpg-title-cell { border-radius:3px; }';
     var style = document.createElement("style");
     style.id = "wpg-editor-styles";
     style.textContent = css;
