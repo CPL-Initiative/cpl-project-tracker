@@ -26,6 +26,8 @@ create table if not exists public.map_college_contacts (
   vpaa_email             text,
   vpss                   text,   -- VP of Student Services
   vpss_email             text,
+  ceo                    text,   -- College CEO / President (added Session 87 follow-up)
+  ceo_email              text,
   last_updated_on        text,   -- MAP's "Last Updated On" (per-college staleness)
   synced_at              timestamptz not null default now()
 );
@@ -48,15 +50,38 @@ begin
   delete from public.map_college_contacts where true;
   insert into public.map_college_contacts
         (college, primary_contact, primary_contact_email, vpaa, vpaa_email,
-         vpss, vpss_email, last_updated_on, synced_at)
+         vpss, vpss_email, ceo, ceo_email, last_updated_on, synced_at)
   select r.college, r.primary_contact, r.primary_contact_email, r.vpaa, r.vpaa_email,
-         r.vpss, r.vpss_email, r.last_updated_on, now()
+         r.vpss, r.vpss_email, r.ceo, r.ceo_email, r.last_updated_on, now()
   from jsonb_to_recordset(p_rows) as r(
          college text, primary_contact text, primary_contact_email text,
-         vpaa text, vpaa_email text, vpss text, vpss_email text, last_updated_on text)
+         vpaa text, vpaa_email text, vpss text, vpss_email text,
+         ceo text, ceo_email text, last_updated_on text)
   where coalesce(r.college, '') <> '';
   get diagnostics n = row_count;
   return n;
 end $$;
 revoke all on function public.map_contacts_replace(jsonb) from public, anon, authenticated;
 grant execute on function public.map_contacts_replace(jsonb) to service_role;
+
+-- ── map_college_nudges — the "last nudged" log (Session 87 follow-up) ──────
+-- One row per college, kept SEPARATE from map_college_contacts so the monthly
+-- full-refresh sync never wipes it. The tab upserts it (Prefer:
+-- resolution=merge-duplicates) when a reviewer opens a nudge; reviewer/
+-- team-phrase read + write (it's an internal accountability log).
+create table if not exists public.map_college_nudges (
+  college        text primary key,
+  last_nudged_at timestamptz not null default now(),
+  last_nudged_by text
+);
+alter table public.map_college_nudges enable row level security;
+drop policy if exists mcn_select on public.map_college_nudges;
+create policy mcn_select on public.map_college_nudges for select
+  using (is_allowed_reviewer() or team_pass_ok());
+drop policy if exists mcn_insert on public.map_college_nudges;
+create policy mcn_insert on public.map_college_nudges for insert
+  with check (is_allowed_reviewer() or team_pass_ok());
+drop policy if exists mcn_update on public.map_college_nudges;
+create policy mcn_update on public.map_college_nudges for update
+  using (is_allowed_reviewer() or team_pass_ok())
+  with check (is_allowed_reviewer() or team_pass_ok());

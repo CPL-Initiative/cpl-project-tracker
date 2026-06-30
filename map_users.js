@@ -26,7 +26,7 @@
   var REST = SUPABASE_URL + "/rest/v1";
   var TEAM_PASS_KEY = "cpl_team_pass";
 
-  var state = { summary: null, loading: false, error: null, q: "", sort: "users", rosterOpen: {} };
+  var state = { summary: null, loading: false, error: null, q: "", sort: "users", rosterOpen: {}, nudges: {} };
 
   // ── Auth (shared cpl_sb magic-link session + cpl_team_pass phrase) ──
   // Reads-only here; the roster RLS validates the access token / x-team-pass
@@ -93,6 +93,22 @@
       ".mapu-gate a { color: var(--navy-secondary); cursor:pointer; text-decoration:underline; }",
       ".mapu-empty { border:1px dashed var(--border-strong); border-radius:8px; background: var(--surface-subtle); color: var(--text-muted); padding:26px; text-align:center; }",
       ".mapu-draftchip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--text-strong, #4a3a00); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
+      ".mapu-nudged { display:block; font-size:.68rem; color: var(--text-muted); margin-top:3px; }",
+      // recipient picker (the confirm/uncheck dialog before the mailto opens)
+      ".mapu-picker-ov { position:fixed; inset:0; background:rgba(15,23,42,.45); display:flex; align-items:center; justify-content:center; z-index:9999; padding:16px; }",
+      ".mapu-picker { background: var(--surface-opaque, #fff); color: var(--text-body); border-radius:10px; max-width:520px; width:100%; max-height:86vh; overflow:auto; padding:18px 20px; box-shadow:0 14px 40px rgba(0,0,0,.3); }",
+      ".mapu-picker h3 { margin:0 0 6px; color: var(--navy-primary); font-size:1.05rem; }",
+      ".mapu-pick-note { font-size:.8rem; color: var(--text-muted); margin:0 0 12px; line-height:1.4; }",
+      ".mapu-pick-list { display:flex; flex-direction:column; gap:6px; margin:0 0 14px; }",
+      ".mapu-pick { display:grid; grid-template-columns:auto 1fr; align-items:baseline; gap:2px 10px; border:1px solid var(--border); border-radius:7px; padding:8px 10px; cursor:pointer; }",
+      ".mapu-pick:hover { background: var(--surface-subtle); }",
+      ".mapu-pick input { grid-row:1 / span 2; align-self:center; }",
+      ".mapu-pick .mapu-pick-l { font-weight:600; font-size:.86rem; }",
+      ".mapu-pick .mapu-pick-n { font-size:.78rem; color: var(--text-body); }",
+      ".mapu-pick .mapu-pick-e { grid-column:2; font-size:.74rem; color: var(--text-muted); }",
+      ".mapu-pick-actions { display:flex; justify-content:flex-end; gap:8px; }",
+      ".mapu-pick-go { background: var(--navy-primary); color:#fff; border-color: var(--navy-primary); }",
+      ".mapu-pick-go:hover { background: var(--navy-secondary); }",
     ].join("\n");
     var el = document.createElement("style");
     el.id = CSS_ID; el.textContent = css;
@@ -134,20 +150,26 @@
     }).then(function (rows) { return (rows && rows[0]) || null; });
   }
 
-  // ── Nudge (a pre-filled mailto: — like the RACI nudge, nothing auto-sent) ──
-  function nudgeRecipients(c) {
+  // ── Nudge — a recipient PICKER, then a pre-filled mailto: (like the RACI
+  // nudge, NOTHING is auto-sent; the draft opens in the user's mail app). ──
+  var NUDGE_ROLES = [
+    { key: "primary_contact", label: "Primary Contact" },
+    { key: "vpaa",            label: "VP of Instruction (VPAA)" },
+    { key: "vpss",            label: "VP of Student Services (VPSS)" },
+    { key: "ceo",             label: "CEO / President" },
+  ];
+  // The nudge-able people who HAVE an email on file: [{key,label,name,email}].
+  function nudgeRoster(c) {
     if (!c) return [];
-    return [c.primary_contact_email, c.vpaa_email, c.vpss_email]
-      .filter(function (e) { return e && String(e).indexOf("@") > 0; });
+    return NUDGE_ROLES.map(function (r) {
+      return { key: r.key, label: r.label, name: c[r.key] || "", email: c[r.key + "_email"] || "" };
+    }).filter(function (x) { return x.email && String(x.email).indexOf("@") > 0; });
   }
-  function buildNudgeMailto(college, c) {
-    var to = nudgeRecipients(c).join(",");
+  function nudgeRecipients(c) { return nudgeRoster(c).map(function (x) { return x.email; }); }
+  function buildNudgeMailto(college, picks) {
+    var to = (picks || []).map(function (p) { return p.email; }).filter(Boolean).join(",");
+    var who = (picks || []).map(function (p) { return p.label + (p.name ? ": " + p.name : ""); }).join("\n");
     var subject = "Action requested: refresh your MAP college users — " + college;
-    var who = c ? [
-      c.primary_contact ? "Primary Contact: " + c.primary_contact : "",
-      c.vpaa ? "VP of Instruction (VPAA): " + c.vpaa : "",
-      c.vpss ? "VP of Student Services (VPSS): " + c.vpss : "",
-    ].filter(Boolean).join("\n") : "";
     var body = "Hello " + college + " team,\n\n"
       + "As part of the statewide CPL (Credit for Prior Learning) effort, please take a few "
       + "minutes to review and update your institution's user list in the MAP platform so the "
@@ -159,21 +181,79 @@
       + "?subject=" + encodeURIComponent(subject)
       + "&body=" + encodeURIComponent(body);
   }
+  // Best-effort "last nudged" upsert — never blocks opening the draft.
+  function recordNudge(college) {
+    var s = getSession();
+    var by = (s && s.email) || "(unknown)";
+    var at = new Date().toISOString();
+    state.nudges[college] = { last_nudged_at: at, last_nudged_by: by };
+    var h = authHeaders();
+    h["Content-Type"] = "application/json";
+    h["Prefer"] = "resolution=merge-duplicates,return=minimal";
+    return fetch(REST + "/map_college_nudges", {
+      method: "POST", headers: h,
+      body: JSON.stringify([{ college: college, last_nudged_at: at, last_nudged_by: by }]),
+    }).catch(function () {});
+  }
+  function loadNudges() {
+    if (!signedIn()) { state.nudges = {}; return Promise.resolve({}); }
+    return fetch(REST + "/map_college_nudges?select=college,last_nudged_at,last_nudged_by",
+      { headers: authHeaders() })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (rows) {
+        var by = {};
+        (rows || []).forEach(function (n) { by[n.college] = n; });
+        state.nudges = by;
+        return by;
+      }).catch(function () { return {}; });
+  }
   function openNudge(college) {
     return loadContacts(college).then(function (c) {
-      var recips = nudgeRecipients(c);
-      var href = buildNudgeMailto(college, c);
-      // Open the user's mail client (nothing is auto-sent — mirrors RACI).
-      try { window.location.href = href; } catch (e) {}
-      if (!recips.length) {
-        alert("No contact emails are on file for " + college
-          + ". A blank draft was opened — add the College Contact / VP of Instruction / "
-          + "VP of Student Services manually.");
-      }
-      return recips;
+      showNudgePicker(college, nudgeRoster(c));
     }).catch(function () {
       alert("Could not load this college's contacts. Sign in on the Team & RACI tab "
         + "(reviewer or team phrase) and try again.");
+    });
+  }
+  // The confirm/uncheck dialog. All present recipients start CHECKED; the draft
+  // opens only after the user clicks "Open email draft".
+  function showNudgePicker(college, roster) {
+    var old = document.getElementById("mapu-picker");
+    if (old) old.parentNode.removeChild(old);
+    var ov = document.createElement("div");
+    ov.id = "mapu-picker"; ov.className = "mapu-picker-ov";
+    var list = roster.length
+      ? roster.map(function (x, i) {
+          return '<label class="mapu-pick"><input type="checkbox" data-pick="' + i + '" checked>'
+            + '<span class="mapu-pick-l">' + esc(x.label) + "</span>"
+            + '<span class="mapu-pick-n">' + esc(x.name || "(name not on file)") + "</span>"
+            + '<span class="mapu-pick-e">' + esc(x.email) + "</span></label>";
+        }).join("")
+      : '<div class="mapu-gate">No contact emails are on file for this college — you can open a '
+        + "blank draft and add recipients manually.</div>";
+    ov.innerHTML = '<div class="mapu-picker" role="dialog" aria-label="Nudge recipients">'
+      + "<h3>Nudge " + esc(college) + "</h3>"
+      + '<p class="mapu-pick-note">This opens a pre-filled <b>draft</b> in your email app — '
+      + "<b>nothing is sent</b> until you review it and click Send there. Uncheck anyone you don’t want to email.</p>"
+      + '<div class="mapu-pick-list">' + list + "</div>"
+      + '<div class="mapu-pick-actions">'
+      + '<button class="mapu-rosterbtn" data-pick-cancel>Cancel</button>'
+      + '<button class="mapu-rosterbtn mapu-pick-go" data-pick-go>✉ Open email draft</button>'
+      + "</div></div>";
+    document.body.appendChild(ov);
+    function close() { if (ov.parentNode) ov.parentNode.removeChild(ov); }
+    ov.addEventListener("click", function (e) { if (e.target === ov) close(); });
+    ov.querySelector("[data-pick-cancel]").addEventListener("click", close);
+    ov.querySelector("[data-pick-go]").addEventListener("click", function () {
+      var picks = [];
+      ov.querySelectorAll("[data-pick]").forEach(function (cb) {
+        if (cb.checked) picks.push(roster[parseInt(cb.getAttribute("data-pick"), 10)]);
+      });
+      try { window.location.href = buildNudgeMailto(college, picks); } catch (e) {}
+      recordNudge(college);
+      close();
+      var root = document.getElementById("map-users-root");
+      if (root && state.summary) render(root);  // repaint the "last nudged" line
     });
   }
 
@@ -259,14 +339,19 @@
       var open = !!state.rosterOpen[r.college];
       var nudgeBtn = canNudge
         ? ' <button class="mapu-rosterbtn" data-nudge="' + esc(r.college)
-          + '" title="Email this college’s Primary Contact + VP of Instruction + VP of Student Services to refresh their MAP users (opens your mail app — nothing is auto-sent)">\u{1F4E3} nudge</button>'
+          + '" title="Email this college’s Primary Contact + VP of Instruction + VP of Student Services + CEO to refresh their MAP users (you pick the recipients; opens your mail app — nothing is auto-sent)">\u{1F4E3} nudge</button>'
+        : "";
+      var nudged = canNudge && state.nudges[r.college];
+      var nudgedLine = nudged
+        ? '<span class="mapu-nudged">last nudged ' + fmtDate(nudged.last_nudged_at)
+          + (nudged.last_nudged_by ? " by " + esc(nudged.last_nudged_by) : "") + "</span>"
         : "";
       html += "<tr>"
         + "<td>" + esc(r.college) + "</td>"
         + '<td class="num">' + (r.user_count || 0) + "</td>"
         + '<td><div class="mapu-roles">' + roleChips(r.role_mix) + "</div></td>"
         + '<td><button class="mapu-rosterbtn" data-roster="' + esc(r.college) + '">'
-        + (open ? "✕ hide" : "\u{1F465} roster") + "</button>" + nudgeBtn + "</td>"
+        + (open ? "✕ hide" : "\u{1F465} roster") + "</button>" + nudgeBtn + nudgedLine + "</td>"
         + "</tr>";
       if (open) {
         html += '<tr class="mapu-roster"><td colspan="4" data-roster-cell="' + esc(r.college) + '">'
@@ -333,6 +418,9 @@
   function renderInto(root, keepData) {
     if (keepData && state.summary) { render(root); return; }
     state.loading = true; state.error = null; render(root);
+    // The "last nudged" log (signed-in only) loads alongside the summary and
+    // repaints when it lands — never blocks the public counts from rendering.
+    loadNudges().then(function () { if (state.summary) render(root); });
     loadSummary().then(function (data) {
       state.summary = Array.isArray(data) ? data : [];
       state.loading = false; render(root);
@@ -358,7 +446,10 @@
     _filteredSorted: filteredSorted,
     _fmtDate: fmtDate,
     _buildNudgeMailto: buildNudgeMailto,
+    _nudgeRoster: nudgeRoster,
     _nudgeRecipients: nudgeRecipients,
+    _nudgeRoles: NUDGE_ROLES,
+    _showNudgePicker: showNudgePicker,
   };
 
   document.addEventListener("cpl-tab-activated", function (e) {

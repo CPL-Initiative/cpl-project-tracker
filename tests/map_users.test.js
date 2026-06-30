@@ -137,7 +137,7 @@ function makeWin(opts) {
   check("filteredSorted: A–Z sort", api._filteredSorted()[0].college === "A");
 })();
 
-// nudge: recipients filter + mailto building
+// nudge: roster filter (incl. CEO) + recipients + mailto building from PICKS
 (function () {
   const w = makeWin();
   const api = w.CPL_MAP_USERS_TAB;
@@ -145,15 +145,64 @@ function makeWin(opts) {
     primary_contact: "Pat Lee", primary_contact_email: "pat@x.edu",
     vpaa: "Sam VP", vpaa_email: "vpaa@x.edu",
     vpss: "Jo VP", vpss_email: "not-an-email", // dropped (no @)
+    ceo: "Dr. Prez", ceo_email: "ceo@x.edu",
   };
+  // CEO is one of the nudge roles
+  check("nudge roles include CEO", api._nudgeRoles.some(function (r) { return r.key === "ceo"; }));
+  const roster = api._nudgeRoster(c);
+  check("nudge roster: keeps only valid emails (drops the no-@ VPSS)",
+    roster.length === 3 && !roster.some(function (x) { return x.email === "not-an-email"; }));
+  check("nudge roster: includes the CEO row with name + email",
+    roster.some(function (x) { return x.key === "ceo" && x.name === "Dr. Prez" && x.email === "ceo@x.edu"; }));
+  check("nudge roster: each entry carries a human label",
+    roster.every(function (x) { return typeof x.label === "string" && x.label.length > 0; }));
   const recips = api._nudgeRecipients(c);
-  check("nudge recipients: keeps only valid emails", recips.length === 2 && recips.indexOf("pat@x.edu") >= 0 && recips.indexOf("not-an-email") < 0);
-  const mailto = api._buildNudgeMailto("Foothill College", c);
+  check("nudge recipients: keeps only valid emails", recips.length === 3 && recips.indexOf("pat@x.edu") >= 0 && recips.indexOf("not-an-email") < 0);
+  // buildNudgeMailto now takes the PICKS the user chose (a subset of the roster)
+  const mailto = api._buildNudgeMailto("Foothill College", roster);
   check("nudge mailto: starts with mailto:", mailto.indexOf("mailto:") === 0);
-  check("nudge mailto: addresses the valid emails", decodeURIComponent(mailto).indexOf("pat@x.edu") >= 0 && decodeURIComponent(mailto).indexOf("vpaa@x.edu") >= 0);
+  check("nudge mailto: addresses the valid emails", decodeURIComponent(mailto).indexOf("pat@x.edu") >= 0 && decodeURIComponent(mailto).indexOf("ceo@x.edu") >= 0);
   check("nudge mailto: subject names the college", decodeURIComponent(mailto).indexOf("Foothill College") >= 0);
-  check("nudge mailto: no recipients → still a valid mailto (blank To)",
-    api._buildNudgeMailto("X", null).indexOf("mailto:") === 0);
+  // unchecking is just a shorter picks array
+  const onlyCeo = roster.filter(function (x) { return x.key === "ceo"; });
+  const mailto2 = decodeURIComponent(api._buildNudgeMailto("X", onlyCeo));
+  check("nudge mailto: unchecked recipients are excluded",
+    mailto2.indexOf("ceo@x.edu") >= 0 && mailto2.indexOf("pat@x.edu") < 0);
+  check("nudge mailto: no picks → still a valid mailto (blank To)",
+    api._buildNudgeMailto("X", null).indexOf("mailto:") === 0 && api._buildNudgeMailto("X", []).indexOf("mailto:") === 0);
+})();
+
+// nudge picker: showNudgePicker renders all recipients CHECKED with a confirm action
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const api = w.CPL_MAP_USERS_TAB;
+  const roster = [
+    { key: "primary_contact", label: "Primary Contact", name: "Pat", email: "pat@x.edu" },
+    { key: "ceo", label: "CEO / President", name: "Prez", email: "ceo@x.edu" },
+  ];
+  api._showNudgePicker("Foothill College", roster);
+  const ov = w.document.getElementById("mapu-picker");
+  check("nudge picker: a dialog overlay is mounted", !!ov);
+  const boxes = ov.querySelectorAll("[data-pick]");
+  check("nudge picker: a checkbox per recipient", boxes.length === 2);
+  check("nudge picker: all recipients start checked", Array.prototype.every.call(boxes, function (b) { return b.checked; }));
+  check("nudge picker: has an open-draft + cancel action", !!ov.querySelector("[data-pick-go]") && !!ov.querySelector("[data-pick-cancel]"));
+  check("nudge picker: recipient name/email shown + escaped", ov.innerHTML.indexOf("pat@x.edu") >= 0);
+  // cancel removes it
+  ov.querySelector("[data-pick-cancel]").click();
+  check("nudge picker: cancel closes the dialog", !w.document.getElementById("mapu-picker"));
+})();
+
+// render: a college that was nudged shows a "last nudged" line (signed-in)
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const api = w.CPL_MAP_USERS_TAB;
+  api._state.summary = [{ college: "A", user_count: 1, role_mix: { Faculty: 1 } }];
+  api._state.nudges = { A: { last_nudged_at: "2026-06-30T12:00:00Z", last_nudged_by: "rev@x.edu" } };
+  const root = w.document.getElementById("map-users-root");
+  api.render(root);
+  check("render: last-nudged line shown for a nudged college",
+    /last nudged 2026-06-30/.test(root.innerHTML) && root.innerHTML.indexOf("rev@x.edu") >= 0);
 })();
 
 // render: the 📣 nudge button shows ONLY when signed in

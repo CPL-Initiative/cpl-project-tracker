@@ -60,6 +60,8 @@ CONTACTS_FIELD_MAP = [
     ("VPAA Email",            "vpaa_email"),
     ("VPSS",                  "vpss"),
     ("VPSS Email",            "vpss_email"),
+    ("CEO",                   "ceo"),
+    ("CEO Email",             "ceo_email"),
 ]
 CONTACTS_COLUMNS = [a for a, _ in CONTACTS_FIELD_MAP]
 
@@ -144,10 +146,12 @@ def _contacts_summary(rows):
     have_pc = sum(1 for r in rows if (r.get("primary_contact_email") or "").strip())
     have_vpaa = sum(1 for r in rows if (r.get("vpaa_email") or "").strip())
     have_vpss = sum(1 for r in rows if (r.get("vpss_email") or "").strip())
+    have_ceo = sum(1 for r in rows if (r.get("ceo_email") or "").strip())
     print(f"  fetched {n} college contact rows")
     print(f"  with a Primary Contact email: {have_pc}/{n}")
     print(f"  with a VPAA (VP Instruction) email: {have_vpaa}/{n}")
     print(f"  with a VPSS (VP Student Services) email: {have_vpss}/{n}")
+    print(f"  with a CEO email: {have_ceo}/{n}")
 
 
 def main():
