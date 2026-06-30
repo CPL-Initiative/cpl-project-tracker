@@ -79,6 +79,16 @@ jobs:
           EOF
           echo "LIVE_METRICS_STATUS=$(cat /tmp/metrics_status)" >> "$GITHUB_ENV"
 
+      # ── Step 2b: Fetch MIL/JST (reported military vs uploaded JSTs) ──
+      # Same public potential-savings API the worker scrapes, but carrying the
+      # EnrolledMilitaryStudents (MIL) / VeteransWithJSTs (JST) counts + the
+      # Veteran Star (JST >= 75% of MIL) the worker doesn't surface. Runs on the
+      # runner (the Azure host is egress-blocked from the agent sandbox). Soft-
+      # fails (keeps the prior veteran_jst.json) — the generator degrades
+      # gracefully when it's absent (no MIL/JST column / proxy retained).
+      - name: Fetch MIL/JST veteran data
+        run: python3 fetch_veteran_jst.py || echo "veteran-jst fetch failed (non-fatal; prior artifact kept)"
+
       # ── Step 3: Sync curation overlay from Supabase ──────────────
       # Folds reviewer discipline edits (public.kb_curation) into the
       # git-canonical kb/coci_curation.json so the pipeline below bakes them
@@ -210,6 +220,10 @@ jobs:
                   kb/cred_rename_dryrun/collisions.json 2>/dev/null || true
           # Funding priority-metric actuals (P2/P3, suppressed — ratified ADR)
           git add cpl_funding_performance.js 2>/dev/null || true
+          # MIL/JST veteran data (aggregate per-college MIL/JST + Veteran Star;
+          # no PII — same counts shown on the public MAP dashboard). Guarded:
+          # absent until the first successful fetch_veteran_jst.py run.
+          git add veteran_jst.json 2>/dev/null || true
           # Workplan Goals Phase 1 PR-4: daily-cached Supabase snapshot
           # (graceful-degradation fallback for Supabase outages)
           git add kb/workplan_goals_snapshot.json 2>/dev/null || true

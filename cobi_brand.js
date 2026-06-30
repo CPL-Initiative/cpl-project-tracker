@@ -26,7 +26,14 @@
     s.id = "cobi-brand-css";
     s.textContent = [
       // ── single-row grid: brand | centered search | utility ──
+      // position:relative + z-index lifts the header's stacking context above
+      // the page content. The .header has backdrop-filter (own stacking
+      // context) painted BEFORE the later KPI cards, so the absolutely-
+      // positioned About popover (z-index:300, trapped inside that context)
+      // rendered BEHIND the cards. 150 clears all page content but stays under
+      // the mobile rail/hamburger (z 199-201) so they still cover the header.
       ".header{display:grid;grid-template-columns:1fr minmax(300px,560px) 1fr;",
+      "position:relative;z-index:150;",
       "align-items:center;column-gap:1.25rem;row-gap:.5rem;padding:.6rem 1.5rem;}",
       ".cobi-brand{justify-self:start;display:flex;align-items:center;gap:.65rem;min-width:0;}",
       ".cobi-seal{flex:0 0 auto;width:46px;height:46px;object-fit:contain;display:block;}",

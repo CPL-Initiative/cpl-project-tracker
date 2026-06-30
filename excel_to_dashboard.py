@@ -134,6 +134,10 @@ def fetch_cpl_kb(max_chars=CPL_KB_MAX_CHARS):
 HTML_FILE   = os.path.join(SCRIPT_DIR, "CPL_Dashboard.html")
 LIVE_FILE    = os.path.join(SCRIPT_DIR, "live_metrics.json")
 HISTORY_FILE = os.path.join(SCRIPT_DIR, "kpi_history.json")
+# MIL (reported service members) vs JST (uploaded) + per-college Veteran Star,
+# written by fetch_veteran_jst.py on the daily runner. Optional — the generator
+# degrades gracefully (no MIL/JST column / proxy retained) when it's absent.
+VETERAN_JST_FILE = os.path.join(SCRIPT_DIR, "veteran_jst.json")
 
 # ── MAP Exhibit / Custom Report data source ─────────────────────────
 # The Custom Reporting Module (customreportingmodule.azurewebsites.net) exports
@@ -3576,6 +3580,17 @@ def log_daily_snapshot(live_data, exhibit_data):
         # Exhibit / CustomReport metrics
         "credit_recs":           int((exhibit_data or {}).get("total_credit_recs", 0)),
         "map_exhibits":          int((exhibit_data or {}).get("unique_exhibits", 0)),
+        # CCC Collaborative EXHIBITS — the statewide-exhibit count, so the KPI
+        # Trends "CCC Collaborative" row matches the MAP Exhibits card's "CCC
+        # Collaborative" breakdown (132, "statewide exhibits"). Sam, 2026-06-30:
+        # the two surfaces showed different numbers because Trends was reading
+        # adopting_colleges (61) under the same label. A NEW key, so the
+        # 1d/7d/30d deltas correctly read "—" until its own history accrues
+        # (no fake jump off the old adopting-colleges series below).
+        "ccc_exhibits":          int((exhibit_data or {}).get("ccc_collaborative", {}).get("unique_exhibits", 0)),
+        # Retained for provenance (the adopting-colleges trend) — now surfaced
+        # only on the Statewide Exhibits card's "Adopting Colleges" breakdown,
+        # not on KPI Trends.
         "ccc_collaborative":     int((exhibit_data or {}).get("ccc_collaborative", {}).get("adopting_colleges", 0)),
         "articulating_colleges": int((exhibit_data or {}).get("articulation_colleges", 0)),
     }
@@ -3700,7 +3715,12 @@ def render_kpi_history_card(history, kpi_params=None):
         ("active_colleges",       "Active Colleges",        _fmt_int,      True),
         ("savings_m",             "Est. Savings",           _fmt_savings,  False),
         ("map_exhibits",          "MAP Exhibits",           _fmt_int,      True),
-        ("ccc_collaborative",     "CCC Collaborative",      _fmt_int,      True),
+        # Statewide CCC Collaborative EXHIBIT count — matches the MAP Exhibits
+        # card's "CCC Collaborative" breakdown (Sam, 2026-06-30). A new history
+        # key (NOT the legacy adopting-colleges `ccc_collaborative`), so the
+        # deltas read "—" until its own series accrues rather than jumping off a
+        # different metric's values.
+        ("ccc_exhibits",          "CCC Collaborative",      _fmt_int,      True),
         ("articulating_colleges", "Articulating Colleges",  _fmt_int,      True),
         ("star_colleges",         "Veteran Star Colleges",  _fmt_int,      True),
     ]
@@ -3870,7 +3890,7 @@ def _suppress_small(v, floor=COHORT_SUPPRESS_BELOW):
 
 
 def render_college_activity_card(live_data, last_activity=None, military_students=None,
-                                 exhibit_tables=None, kpi_params=None):
+                                 exhibit_tables=None, kpi_params=None, veteran_jst=None):
     """Render the full-width College Activity card — rich single-table layout.
 
     Emits:
@@ -3884,6 +3904,8 @@ def render_college_activity_card(live_data, last_activity=None, military_student
       live_data:         parsed live_metrics.json (tiers + per-college metrics)
       last_activity:     {college_name: datetime} from CustomReport
       military_students: {college_name: int} from CustomReport (used as veterans fallback)
+      veteran_jst:       parsed veteran_jst.json — per-college MIL/JST + the
+                         Veteran Star (JST >= 75% of MIL); adds the MIL/JST column
       exhibit_tables:    output of build_exhibit_analysis_tables() — supplies
                          per-college exhibit counts and discipline detail
     """
@@ -3917,6 +3939,12 @@ def render_college_activity_card(live_data, last_activity=None, military_student
     ms                = military_students or {}
     today_dt          = _now_pt()
 
+    # Per-college MIL (reported military students) / JST (uploaded) + Veteran
+    # Star (JST >= 75% of MIL). The star col in the table reflects THIS, not the
+    # near-always-on "met >=1 criterion" star (Sam, 2026-06-30).
+    vj_colleges = (veteran_jst or {}).get("colleges", {}) or {}
+    has_vj = bool(vj_colleges)
+
     # Per-college exhibit counts (from build_exhibit_analysis_tables output)
     by_college = {}
     college_discipline_detail = {}
@@ -3949,6 +3977,13 @@ def render_college_activity_card(live_data, last_activity=None, military_student
         last_dt = la.get(name)
         last_days = (today_dt - last_dt).days if last_dt else None
 
+        vj = vj_colleges.get(name) or {}
+        mil = int(vj.get("mil") or 0)
+        jst = int(vj.get("jst") or 0)
+        vstar = bool(vj.get("star"))
+        # JST/MIL upload rate, for the sort key + tooltip (0 when MIL unknown).
+        jst_rate = round(jst / mil * 100) if mil else (100 if jst else 0)
+
         return {
             "tier":               tier_name,
             "college":            name,
@@ -3967,6 +4002,11 @@ def render_college_activity_card(live_data, last_activity=None, military_student
             "trans_rate":         trans_rate,
             "criteria_met":       criteria,
             "last_activity_days": last_days,
+            # MIL/JST + Veteran Star (Session 88)
+            "mil":                mil,
+            "jst":                jst,
+            "vstar":              vstar,
+            "jst_rate":           jst_rate,
         }
 
     all_data = (
@@ -3991,10 +4031,13 @@ def render_college_activity_card(live_data, last_activity=None, military_student
             html = html.rstrip() + "\n" + algo_html + "\n"
 
     # Emit the data blob immediately before the external script so it loads first.
+    # COLLEGE_HAS_JST gates the MIL/JST column + Veteran-Star col so they only
+    # show once veteran_jst.json is present (degrade gracefully otherwise).
     data_script = (
         "    <script>\n"
         "    window.COLLEGE_ACTIVITY_DATA = " + _js_safe_json(all_data, indent=None) + ";\n"
         "    window.COLLEGE_DISCIPLINE_DETAIL = " + _js_safe_json(college_discipline_detail, indent=None) + ";\n"
+        "    window.COLLEGE_HAS_JST = " + ("true" if has_vj else "false") + ";\n"
         "    </script>\n"
         "    <script src=\"college_activity.js\"></script>\n"
     )
@@ -4097,6 +4140,71 @@ def merge_live_metrics(kpis, live_data):
         kpis["veteran_sprint"]["live"] = True
 
     kpis["_live_updated"] = live_data.get("scraped_at", "")
+    return kpis
+
+
+def read_veteran_jst():
+    """Read veteran_jst.json (MIL/JST + per-college Veteran Star), or None.
+
+    Written by fetch_veteran_jst.py on the daily runner from the
+    potential-savings API. Shape:
+        {"statewide": {"mil": int, "jst": int, "star_colleges": int},
+         "colleges": {name: {"mil": int, "jst": int, "star": bool}}, ...}
+    """
+    if not os.path.exists(VETERAN_JST_FILE):
+        return None
+    try:
+        with open(VETERAN_JST_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, IOError) as e:
+        print(f"WARNING: Could not read {VETERAN_JST_FILE}: {e}")
+        return None
+
+
+def apply_veteran_jst(kpis, vj_data):
+    """Put the REAL MIL (reported service members) + JST (uploaded) on the
+    Veteran Sprint card, replacing the military-students PROXY that stood in for
+    JSTs (Sam, 2026-06-30 — MIL and JST are tracked separately on the MAP
+    dashboard). The gold ⭐ is earned when a college uploaded JSTs for ≥75% of
+    its reported military students. No-op (proxy retained) when vj_data absent.
+    """
+    if not vj_data or "veteran_sprint" not in kpis:
+        return kpis
+    sw = vj_data.get("statewide") or {}
+    mil = int(sw.get("mil") or 0)
+    jst = int(sw.get("jst") or 0)
+    if not (mil or jst):
+        return kpis
+
+    card = kpis["veteran_sprint"]
+    bds = card.get("breakdowns", [])
+
+    # Real JSTs uploaded (vs the 30,000 sprint goal) — overwrites the proxy that
+    # merge_live_metrics filled from the military-students count.
+    jst_idx = -1
+    for i, bd in enumerate(bds):
+        if bd.get("label", "").lower().startswith("jsts uploaded"):
+            bd["value"] = f"{jst:,} / 30,000"
+            bd["note"] = "JSTs uploaded to MAP / sprint goal"
+            jst_idx = i
+            break
+
+    # Insert "Service Members (MIL)" right after JSTs Uploaded (idempotent).
+    if not any(b.get("label", "").lower().startswith("service members") for b in bds):
+        mil_bd = {"label": "Service Members (MIL)", "value": f"{mil:,}",
+                  "note": "reported by colleges"}
+        bds.insert(jst_idx + 1 if jst_idx >= 0 else 0, mil_bd)
+    card["breakdowns"] = bds
+
+    # The star rule, on the card footnote (renders like Active Colleges').
+    pct = round(jst / mil * 100) if mil else 0
+    rule = (f"Gold &#11088; = a college uploaded JSTs for &ge;75% of its reported "
+            f"military students. Statewide: {jst:,} JSTs / {mil:,} reported ({pct}%).")
+    fn = card.get("footnote") or []
+    if rule not in fn:
+        fn.append(rule)
+    card["footnote"] = fn
+    card["live"] = True
     return kpis
 
 
@@ -10897,6 +11005,8 @@ def main():
     # Load live CCCCO scrape early so it can seed star_college_count (single
     # source of truth for the Veteran Sprint headline + sprint composite).
     live_data       = read_live_metrics()
+    # MIL/JST + per-college Veteran Star (optional; degrades gracefully).
+    veteran_jst     = read_veteran_jst()
     kpis            = compute_headline_kpis(projects, budget, config_overrides, live_data)
 
     # Build workplan goals & annual goals from Supabase (Phase 1 source-of-truth,
@@ -10993,6 +11103,15 @@ def main():
     else:
         print("No exhibit data found — skipping exhibit KPIs")
 
+    # MIL vs JST on the Veteran Sprint card — real uploaded JST + reported MIL +
+    # the 75% star rule, replacing the military-students proxy. Must run after
+    # merge_live_metrics (which fills the {jst_credits} proxy this overwrites).
+    if veteran_jst:
+        apply_veteran_jst(kpis, veteran_jst)
+        _sw = veteran_jst.get("statewide", {})
+        print(f"Applied MIL/JST: MIL={_sw.get('mil', 0):,} JST={_sw.get('jst', 0):,} "
+              f"({len(veteran_jst.get('colleges', {}))} colleges)")
+
     # Session 85 — Annual Workplan "Current" hybrid: now that kpis carries the
     # fully-merged live + exhibit values, drive the Current column of the
     # KPI-mapped sub-activities (PID_TO_KPI_KEY) from the live headline value so
@@ -11024,6 +11143,7 @@ def main():
         military_students=college_military_students,
         exhibit_tables=exhibit_tables,
         kpi_params=kpi_params,
+        veteran_jst=veteran_jst,
     )
 
     # ── Vision 2030 progress — derive from live data + config overrides ──
