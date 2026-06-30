@@ -27,6 +27,14 @@ in the **`_APIDataset`** suffix (see fetch_custom_report.py — `View_*_APIDatas
 A bare `View_CollegeUsersRoles` returns responseCode 400 "… is not Valid". So we
 try a small CANDIDATE list per logical view and use the first the API accepts.
 
+Field-NAME capture (Session 87): the resolved `_APIDataset` views have no
+self-describe mode (a no-`columnName` request 500s), so once a name is confirmed
+REACHABLE (seed-probe with `["College"]` returns rows) we run a GUESS-AND-CONFIRM
+pass: probe each likely column from GUESS_COLUMNS alongside the `College` anchor
+and keep the ones the API accepts (a real column is echoed back / widens the row;
+an unknown one is dropped or 500s). Then the normal PII-safe per-field analysis
+runs on the confirmed list.
+
 PII safety (load-bearing):
   • Raw names / emails / phones are NEVER printed.
   • Nothing is written to disk (no artifact, no commit).
@@ -126,6 +134,142 @@ def _rows(ds, columns):
 # "view needs an explicit column list" apart from "view is auth-gated".
 SEED_COLUMNS = ["College"]
 
+# Guess-and-confirm candidate columns (union of likely College Users & Roles +
+# College Contacts fields). Each is probed alongside the known-good `College`
+# anchor; the API echoes back the columns it accepted (an unknown column is
+# either dropped from the echo or 500s the request), so we keep only the ones
+# it actually returns. PII-safe: confirming a field EXISTS never prints its
+# values (the per-field analysis masks high-cardinality / @-bearing fields).
+GUESS_COLUMNS = [
+    # college / district
+    "College", "CollegeId", "CollegeID", "CollegeCode", "CollegeName",
+    "District", "DistrictName", "DistrictId",
+    # person
+    "FirstName", "LastName", "MiddleName", "MiddleInitial", "Name", "FullName",
+    "DisplayName", "ContactName", "Suffix", "Prefix",
+    # contact
+    "Email", "EmailAddress", "Phone", "PhoneNumber", "Telephone", "Extension",
+    # role / title / status
+    "Role", "RoleName", "UserRole", "Roles", "ContactType", "ContactRole",
+    "Title", "JobTitle", "Position", "Department", "Division",
+    "Status", "IsActive", "Active", "AccountStatus",
+    # account / identity
+    "UserId", "UserID", "UserName", "Username", "Login", "LoginName", "GUID",
+    # timestamps
+    "LastLogin", "LastLoginDate", "LastLoginDateTime", "CreatedDate",
+    "CreatedDateTime", "ModifiedDate", "UpdatedDate", "LastUpdated",
+    "DateCreated", "DateModified", "LastModified",
+    # contact-view specific (run #2 found View_CollegeContacts uses different
+    # names than the Users view — only "College" matched). MAP is case-SENSITIVE
+    # (UserName ✓ vs Username ✗), so spellings matter.
+    "ContactEmail", "ContactFirstName", "ContactLastName", "ContactPhone",
+    "ContactTitle", "PrimaryContact", "ContactPerson", "PersonName",
+    "RoleTitle", "RoleDescription", "ContactRoleName", "EmailId", "PhoneNo",
+    "CollegeContact", "VPInstruction", "VPStudentServices", "CPLCoordinator",
+    "ArticulationOfficer", "CEO", "President", "Dean",
+]
+
+
+# Garbage column names used to CALIBRATE the "unknown column" response. The MAP
+# report API returns 2-wide rows even for a column it doesn't recognize (the
+# structural width/echo heuristic over-accepts — every candidate "passed", run
+# #1), so we instead inspect the VALUES: a REAL column carries its own data; a
+# FAKE one is null / empty / a copy of the anchor. The sentinels reveal exactly
+# what "fake" looks like on this server so the threshold is data-driven.
+SENTINEL_COLUMNS = ["ZqxNotAColumn1", "FakeFieldQwerty2", "NoSuchColumn3"]
+
+
+def _column_signature(view, anchor, col):
+    """PII-SAFE value signature of `col` when requested alongside `anchor`.
+    Returns counts only — never a raw value. Keys: http, code, n, nonnull,
+    distinct, copies_anchor, width, echoed."""
+    r = _try(view, [anchor, col])
+    sig = {"http": r["http"], "code": None, "n": 0, "nonnull": 0,
+           "distinct": 0, "copies_anchor": 0, "width": 0, "echoed": False}
+    ds = r.get("ds")
+    if r["http"] != 200 or ds is None:
+        return sig
+    sig["code"] = ds.get("responseCode")
+    sig["echoed"] = any(str(e).lower() == col.lower()
+                        for e in (ds.get("columnName") or []))
+    cv = ds.get("columnValue") or []
+    if cv and isinstance(cv[0], (list, tuple)):
+        sig["width"] = len(cv[0])
+    elif cv and isinstance(cv[0], dict):
+        sig["width"] = len(cv[0])
+    rows = _rows(ds, [anchor, col])
+    sig["n"] = len(rows)
+    seen = set()
+    for row in rows:
+        a, c = row.get(anchor), row.get(col)
+        if c not in (None, ""):
+            sig["nonnull"] += 1
+            seen.add(str(c))
+            if str(c) == str(a):
+                sig["copies_anchor"] += 1
+    sig["distinct"] = len(seen)
+    return sig
+
+
+def _looks_real(sig, fake):
+    """A column is REAL when it carries its own data: a meaningful non-null
+    share, more than one distinct value, and it isn't just echoing the anchor —
+    AND its signature beats the calibrated FAKE baseline (so if the server
+    returns identical shapes for known-garbage, nothing is falsely accepted)."""
+    n = sig["n"] or 1
+    nonnull_share = sig["nonnull"] / n
+    copy_share = sig["copies_anchor"] / n
+    if sig["http"] != 200 or sig["nonnull"] == 0:
+        return False
+    if sig["distinct"] <= 1 or copy_share >= 0.9:
+        return False
+    if nonnull_share < 0.25:
+        return False
+    # Must clear the fake baseline (the best a known-garbage column achieved).
+    return sig["nonnull"] > fake["nonnull"] and sig["distinct"] > fake["distinct"]
+
+
+def _confirm_columns(view, anchor, candidates):
+    """Confirm the real field list by VALUE SIGNATURE (run #2 method). Calibrate
+    the 'unknown column' response with garbage sentinels, then keep each
+    candidate whose values clearly beat that baseline. Prints a PII-safe per-
+    candidate line (counts only). Returns the ordered confirmed list (anchor
+    first)."""
+    print(f"  → value-signature confirm: {len(candidates)} candidates "
+          f"(anchor={anchor!r}); calibrating with {len(SENTINEL_COLUMNS)} sentinels …")
+    fake = {"nonnull": 0, "distinct": 0}
+    for s in SENTINEL_COLUMNS:
+        sg = _column_signature(view, anchor, s)
+        fake["nonnull"] = max(fake["nonnull"], sg["nonnull"])
+        fake["distinct"] = max(fake["distinct"], sg["distinct"])
+        print(f"    · sentinel {s}: http={sg['http']} code={sg['code']!r} "
+              f"width={sg['width']} nonnull={sg['nonnull']}/{sg['n']} "
+              f"distinct={sg['distinct']} copies={sg['copies_anchor']} echo={sg['echoed']}")
+    print(f"    fake baseline → nonnull≤{fake['nonnull']}, distinct≤{fake['distinct']}")
+    if fake["nonnull"] > 0:
+        print("    ⚠ garbage columns returned data — the server pads unknown "
+              "columns; value-signature may be unreliable. Inspect the lines below "
+              "/ fall back to the MAP Builder UI.")
+
+    confirmed = [anchor]
+    have = {anchor.lower()}
+    tried = set()
+    for c in candidates:
+        if c in tried or c.lower() in have:
+            continue
+        tried.add(c)
+        sig = _column_signature(view, anchor, c)
+        real = _looks_real(sig, fake)
+        mark = "✓" if real else "·"
+        print(f"    {mark} {c}: http={sig['http']} code={sig['code']!r} "
+              f"width={sig['width']} nonnull={sig['nonnull']}/{sig['n']} "
+              f"distinct={sig['distinct']} copies={sig['copies_anchor']} echo={sig['echoed']}")
+        if real:
+            confirmed.append(c)
+            have.add(c.lower())
+    print(f"  → confirmed {len(confirmed)} field(s) by value signature: {confirmed}")
+    return confirmed
+
 
 def _try(view, column_name=None):
     """One POST. Returns {http, ds} (http=200 + ds on success; http=code, ds=None
@@ -185,8 +329,13 @@ def _resolve(label, candidates):
                   f"dataCount={ds.get('dataCount')!r} rows={len(rows)}")
             if rows:
                 print(f"    → REACHABLE with an explicit column list "
-                      f"(no auth needed). Field NAMES still need the MAP Custom "
-                      f"Report Builder UI or the no-column discovery (auth?).")
+                      f"(no auth needed). Running guess-and-confirm to capture "
+                      f"the field list …")
+                cols = _confirm_columns(recognized, SEED_COLUMNS[0], GUESS_COLUMNS)
+                if len(cols) > 1:
+                    return recognized, cols, None
+                print("    → guess-and-confirm found no extra columns; the field "
+                      "names may be non-obvious — fall back to the MAP Builder UI.")
             else:
                 print("    → accepted the column but returned no rows.")
         else:
@@ -202,7 +351,7 @@ def _analyze(view, columns, ds1):
     print(f"\n=== {view}: {len(columns)} FIELDS ===")
     print("FIELDS:", columns)
 
-    rows = _rows(ds1, columns)
+    rows = _rows(ds1, columns) if ds1 else []
     if not rows and columns:
         # Pass 2 — re-request WITH the discovered columns to pull the rows.
         print(f"\n(no values in pass 1 — re-requesting with the {len(columns)} columns…)")
@@ -227,9 +376,12 @@ def _analyze(view, columns, ds1):
         lens = [len(str(v)) for v in nonnull]
         lo, hi = (min(lens), max(lens)) if lens else (0, 0)
         distinct = {str(v) for v in nonnull}
-        looks_pii = (any(h in f.lower() for h in PII_NAME_HINT)
-                     or any("@" in str(v) for v in nonnull[:200]))
-        if len(distinct) <= MAX_ENUM and not looks_pii:
+        # A field with ≤ MAX_ENUM distinct values across thousands of rows is a
+        # CATEGORY (role / status / type), not personal data — safe to print even
+        # if its name contains a PII hint (e.g. "RoleName"). Emails are the one
+        # low-cardinality-looking trap, so always mask anything with an '@'.
+        has_at = any("@" in str(v) for v in nonnull[:500])
+        if len(distinct) <= MAX_ENUM and not has_at:
             tail = "values=" + json.dumps(sorted(distinct), ensure_ascii=False)
         else:
             tail = f"distinct≈{len(distinct)} (MASKED — high-cardinality or PII)"
