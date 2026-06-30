@@ -1,0 +1,54 @@
+name: MAP Users sync (gated, PII-safe)
+
+# Syncs MAP "College Users & Roles" (View_CollegeUsersRoles_APIDataset, ~2,741
+# staff rows) into the GATED Supabase table public.map_college_users, which the
+# COBI "MAP Users" tab reads (aggregates public; the roster reviewer-gated).
+#
+# WHY A RUNNER: the Azure MAP Custom Report API is egress-blocked from the agent
+# sandbox (runner-as-proxy, like cpl-landing-pages.yml). The view is reachable
+# unauthenticated with an explicit column list — no MAP credential needed; the
+# write uses the Supabase SERVICE KEY through the transactional map_users_replace
+# RPC.
+#
+# PII-SAFE: map/sync_map_users.py prints only counts + the non-PII RoleName mix,
+# writes nothing to disk, and commits nothing. Staff names/emails exist ONLY in
+# the gated Supabase table — never in the repo or an Actions artifact.
+#
+# Triggers (NO push trigger — this fetches PII, so it runs only on demand / cron):
+#   - workflow_dispatch → dry-run by default; set apply=true to write.
+#   - schedule (monthly) → --apply, to keep the roster fresh.
+
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: 'Write the roster to map_college_users (service key)'
+        type: boolean
+        default: false
+  schedule:
+    - cron: '0 13 1 * *'   # 1st of each month, 13:00 UTC — the roster changes slowly
+
+permissions:
+  contents: read
+
+concurrency:
+  group: map-users-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Sync MAP users (apply on schedule / dispatch-apply)
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          APPLY=""
+          if [ "${{ github.event_name }}" = "schedule" ]; then APPLY="--apply"; fi
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.apply }}" = "true" ]; then APPLY="--apply"; fi
+          echo "event=${{ github.event_name }} apply='${APPLY:-(dry-run)}'"
+          python3 map/sync_map_users.py $APPLY
