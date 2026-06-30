@@ -22,21 +22,27 @@ your own moniker (Sky/Star streak).
 
 ## PRIORITY workstream — build the MAP-Users tab
 Read **`docs/map_users_tab_scope.md`** first (the whole plan). TL;DR:
-- "MAP users" = `View_CollegeUsersRoles` (MAP category #9, ~2,710 rows / 11
-  fields = staff **names+emails+roles**). It is **NOT in our datasets** — dropped
+- "MAP users" = **`View_CollegeUsersRoles_APIDataset`** (MAP category #9, **2,741
+  rows** = staff **names+emails+roles**). It is **NOT in our datasets** — dropped
   from the daily fetch for PII-minimization (Session 34), never committed.
 - **#1 rule: never commit this PII to the public repo.** It lives only in a gated
   Supabase table, synced server-side.
-- **P0 (do this FIRST):** dispatch **`map-users-schema-probe.yml`** (Actions tab →
-  Run). The probe (`map/probe_users_schema.py`) is **2-pass** (MAP's API is
-  column-oriented: `columnName`/`columnValue`; a no-column request returns the
-  field list but no values). Read its log → it prints the 11 field names + the
-  role vocabulary, **PII-masked**. Fold the schema into the scope doc's §1/§5.
+- **P0 — DONE (dispatch #4, §1a of the scope doc).** Real view names confirmed:
+  **`View_CollegeUsersRoles_APIDataset`** (2,741 rows) + **`View_CollegeContacts_APIDataset`**
+  (121 rows, for the P3 nudge). Both are **reachable UNAUTHENTICATED** from a runner
+  *with an explicit `columnName` list* (no `MAP_API_KEY` needed — the no-column
+  self-describe mode 500s, which is how we ID'd the real names). **Residual:** the
+  exact 11 field NAMES — the no-column discovery can't enumerate them. **Do this
+  FIRST:** get the field list from the **MAP Custom Report Builder UI** (categories
+  "College Users & Roles" + "College Contacts") OR add a **guess-and-confirm** pass
+  to `map/probe_users_schema.py` (name likely columns; keep the ones echoed back
+  with values), then fold the list into the scope doc + P1's `columnName`.
 - **P1:** gated Supabase `map_college_users` + a runner sync (the curation-sync /
-  `cpl-landing-pages.yml` runner-as-proxy template). **P2:** the COBI tab (the
-  `raci.js`/`cpl_news.js` lazy-renderer pattern, reviewer/team-phrase-gated for
-  PII). **P3:** reuse the **RACI nudge engine** (`raci.js` already emails people,
-  drafts via the report proxy, tracks `last_nudged_at`/`last_response_at`).
+  `cpl-landing-pages.yml` runner-as-proxy template) that fetches the view **with an
+  explicit `columnName`** and upserts via the **Supabase** service key. **P2:** the
+  COBI tab (the `raci.js`/`cpl_news.js` lazy-renderer pattern, reviewer/team-phrase-
+  gated for PII). **P3:** reuse the **RACI nudge engine** (`raci.js` already emails
+  people, drafts via the report proxy, tracks `last_nudged_at`/`last_response_at`).
 
 ## Carryover / standing lanes (in the To-Do feed)
 - **Reference-tab header bands** — Sam to decide if the CCR/CSR/CER dark-navy
