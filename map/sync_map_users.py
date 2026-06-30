@@ -92,15 +92,25 @@ def _summarize(rows):
 
 
 def _sb_rpc(fn, body, key):
-    """Call a Supabase RPC with the service key. Returns the parsed JSON body."""
+    """Call a Supabase RPC with the service key. Returns the parsed JSON body.
+    On an HTTP error, surface the PostgREST message (the error body describes the
+    function/request, not the data rows — no PII; truncated as a guard)."""
     req = urllib.request.Request(
         f"{SUPABASE_URL}/rest/v1/rpc/{fn}",
         data=json.dumps(body).encode("utf-8"), method="POST",
         headers={"apikey": key, "Authorization": f"Bearer {key}",
-                 "Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=120) as resp:
-        raw = resp.read()
-    return json.loads(raw) if raw else None
+                 "Content-Type": "application/json", "Accept": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=120) as resp:
+            raw = resp.read()
+        return json.loads(raw) if raw else None
+    except urllib.error.HTTPError as e:
+        detail = ""
+        try:
+            detail = e.read().decode("utf-8", "replace")[:400]
+        except Exception:
+            pass
+        raise SystemExit(f"Supabase RPC {fn} → HTTP {e.code}: {detail}")
 
 
 def main():
