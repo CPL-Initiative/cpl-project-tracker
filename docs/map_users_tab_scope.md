@@ -246,3 +246,41 @@ Sam parked it for now (chose the deep-link only).
 college's MAP CPL **dashboard** (their MAP home). If MAP exposes a per-college
 *Manage Users* screen, swapping the target is a one-line change (the column +
 plumbing exist). Sam to confirm whether such a URL exists.
+
+## 8. Roster-in-the-nudge + the 3 incoming Custom Report fields (Session 87, 2026-06-30)
+
+**Settled process (Sam):** scheduled + manual nudges email the selected contacts a
+link to the MAP login (Sam to provide the exact URL — a generic MAP login is fine
+for now; today's link is each college's MAP CPL dashboard, swappable). Only staff
+with MAP credentials can actually log in and edit.
+
+**Shipped — the college roster in the nudge body.** Leadership wanted "eyes on
+their CPL heroes," so the nudge dialog now renders the college's own
+`map_college_users` roster as an **opt-out checklist** (all checked) with a
+**Check-All master** in the header row + a checkbox per user (drop a departed
+staffer before sending). Only checked users land in the email body
+(`rosterEmailBlock`, sorted by role then last name; one `Name — Role — Email` line
+each). The roster is the college's OWN staff shown to that college's OWN leadership
+(no cross-college leak; client-side draft only, never logged). Big-college caveat:
+a very long roster can hit Outlook's mailto length cap — the per-user checklist is
+the escape hatch. `tests/map_users.test.js` → 56 checks.
+
+**INCOMING — 3 new per-user Custom Report fields (Sam asked MAP to add).** When they
+land in `View_CollegeUsersRoles_APIDataset`, fold them into `map_college_users`:
+1. **Active/Inactive** — a per-user status. Recommend: a default "active only"
+   filter on the tab + roster, surface the active count in `map_users_summary()`
+   (more honest than total), and exclude inactive users from the nudge roster.
+2. **Disciplines** — comma-delimited multi-value (a faculty reviewer can cover many).
+   Store as text, render as chips. **High value:** lets us filter "Biology faculty
+   reviewers across colleges," which feeds the §11 faculty-trust / MC pipeline
+   (knowing which reviewer can ratify which discipline's cross-college articulation).
+3. **Date last updated** — the per-user staleness signal we currently lack (the
+   Contacts view's "Last Updated On" is all-null). Recommend: surface per-user +
+   roll up to a per-college oldest/newest so the tab can flag "not refreshed in N
+   months" → drives the semester nudge cadence ("nudge colleges stale since X").
+
+**Wiring checklist when they land (don't guess names):** re-run the value-signature
+probe (`map/probe_users_schema.py`) to confirm the EXACT case-sensitive column
+spellings → add columns to `map_college_users` + `FIELD_MAP` + `map_users_replace`
+→ extend `map_users_summary()` (active count; NO PII) → render in the tab/roster.
+All three are per-USER → they live in the gated roster table, not Contacts.

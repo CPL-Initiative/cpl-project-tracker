@@ -175,6 +175,28 @@ function makeWin(opts) {
   check("nudge mailto: includes the MAP dashboard URL when supplied", mailtoUrl.indexOf("https://map.example/college/abc") >= 0);
   check("nudge mailto: omits the URL line when not supplied",
     decodeURIComponent(api._buildNudgeMailto("X", roster)).indexOf("http") < 0);
+  // the college's user roster (4th arg) lands in the body, sorted by role then last name
+  const userRoster = [
+    { first_name: "Zoe", last_name: "Young", role_name: "Faculty Reviewer", email: "zoe@x.edu" },
+    { first_name: "Al", last_name: "Adams", role_name: "Ambassador", email: "al@x.edu" },
+  ];
+  const withRoster = decodeURIComponent(api._buildNudgeMailto("X", roster, "", userRoster));
+  check("nudge mailto: roster block lists the college's users", withRoster.indexOf("Zoe Young") >= 0 && withRoster.indexOf("Al Adams") >= 0);
+  check("nudge mailto: roster header carries the count (2)", /current MAP CPL users \(2\)/.test(withRoster));
+  check("nudge mailto: roster sorted by role (Ambassador before Faculty)", withRoster.indexOf("Al Adams") < withRoster.indexOf("Zoe Young"));
+  check("nudge mailto: roster omitted when not supplied / empty",
+    decodeURIComponent(api._buildNudgeMailto("X", roster)).indexOf("current MAP CPL users") < 0 &&
+    decodeURIComponent(api._buildNudgeMailto("X", roster, "", [])).indexOf("current MAP CPL users") < 0);
+})();
+
+// rosterEmailBlock: name/role/email line per user; empty → ""
+(function () {
+  const w = makeWin();
+  const api = w.CPL_MAP_USERS_TAB;
+  check("rosterEmailBlock empty → empty string", api._rosterEmailBlock([]) === "" && api._rosterEmailBlock(null) === "");
+  const block = api._rosterEmailBlock([{ first_name: "Ada", last_name: "Lovelace", role_name: "Faculty", email: "ada@x.edu" }]);
+  check("rosterEmailBlock: one line per user with name/role/email",
+    block.indexOf("Ada Lovelace") >= 0 && block.indexOf("Faculty") >= 0 && block.indexOf("ada@x.edu") >= 0);
 })();
 
 // nudge picker: showNudgePicker renders all recipients CHECKED with a confirm action
@@ -185,7 +207,11 @@ function makeWin(opts) {
     { key: "primary_contact", label: "Primary Contact", name: "Pat", email: "pat@x.edu" },
     { key: "ceo", label: "CEO / President", name: "Prez", email: "ceo@x.edu" },
   ];
-  api._showNudgePicker("Foothill College", roster, "https://map.example/foothill");
+  const userRoster = [
+    { first_name: "Ada", last_name: "Lovelace", role_name: "Faculty", email: "ada@x.edu" },
+    { first_name: "Bo", last_name: "Bell", role_name: "Ambassador", email: "bo@x.edu" },
+  ];
+  api._showNudgePicker("Foothill College", roster, "https://map.example/foothill", userRoster);
   const ov = w.document.getElementById("mapu-picker");
   check("nudge picker: a dialog overlay is mounted", !!ov);
   const boxes = ov.querySelectorAll("[data-pick]");
@@ -195,6 +221,20 @@ function makeWin(opts) {
   check("nudge picker: recipient name/email shown + escaped", ov.innerHTML.indexOf("pat@x.edu") >= 0);
   check("nudge picker: shows the MAP dashboard link when on file",
     ov.innerHTML.indexOf("https://map.example/foothill") >= 0 && /MAP CPL Dashboard/.test(ov.innerHTML));
+  // user-roster checklist: a Check-All master + a checkbox per user, all checked
+  const allBox = ov.querySelector("[data-roster-all]");
+  const userBoxes = ov.querySelectorAll("[data-roster-user]");
+  check("nudge picker: Check-All master present + checked", !!allBox && allBox.checked);
+  check("nudge picker: a checkbox per roster user, all checked", userBoxes.length === 2 && Array.prototype.every.call(userBoxes, function (b) { return b.checked; }));
+  check("nudge picker: roster header shows the user count (2)", /Include our user roster \(2\)/.test(ov.innerHTML));
+  check("nudge picker: roster lists each user", ov.innerHTML.indexOf("Ada Lovelace") >= 0 && ov.innerHTML.indexOf("Bo Bell") >= 0);
+  // Check-All unchecks every user
+  allBox.checked = false; allBox.dispatchEvent(new w.Event("change"));
+  check("nudge picker: Check-All off → all roster users unchecked", Array.prototype.every.call(userBoxes, function (b) { return !b.checked; }));
+  // unchecking one user flips the master off
+  allBox.checked = true; allBox.dispatchEvent(new w.Event("change"));
+  userBoxes[0].checked = false; userBoxes[0].dispatchEvent(new w.Event("change"));
+  check("nudge picker: unchecking a user un-checks the master", !allBox.checked);
   // cancel removes it
   ov.querySelector("[data-pick-cancel]").click();
   check("nudge picker: cancel closes the dialog", !w.document.getElementById("mapu-picker"));

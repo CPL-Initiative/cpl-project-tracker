@@ -109,6 +109,13 @@
       ".mapu-pick-actions { display:flex; justify-content:flex-end; gap:8px; }",
       ".mapu-pick-go { background: var(--navy-primary); color:#fff; border-color: var(--navy-primary); }",
       ".mapu-pick-go:hover { background: var(--navy-secondary); }",
+      // user-roster checklist (Check-All header + per-user rows, scroll-capped)
+      ".mapu-roster-pick { margin:0 0 14px; }",
+      ".mapu-roster-head { background: var(--surface-subtle); border-color: var(--border-strong); }",
+      ".mapu-roster-users { max-height:200px; overflow:auto; display:flex; flex-direction:column; gap:4px; margin-top:6px; padding-left:14px; border-left:2px solid var(--border); }",
+      ".mapu-roster-user { grid-template-columns:auto 1fr auto; padding:5px 8px; }",
+      ".mapu-roster-user .mapu-pick-n { grid-column:auto; font-size:.74rem; color: var(--text-muted); justify-self:start; }",
+      ".mapu-roster-user .mapu-pick-e { grid-column:auto; justify-self:end; }",
     ].join("\n");
     var el = document.createElement("style");
     el.id = CSS_ID; el.textContent = css;
@@ -166,7 +173,27 @@
     }).filter(function (x) { return x.email && String(x.email).indexOf("@") > 0; });
   }
   function nudgeRecipients(c) { return nudgeRoster(c).map(function (x) { return x.email; }); }
-  function buildNudgeMailto(college, picks, landingUrl) {
+  // A plain-text roster block for the email body so college leadership has eyes
+  // on their CPL people. `userRoster` = the gated map_college_users rows for the
+  // college (their OWN staff — fine to show their own leadership). Sorted by
+  // role then last name; one line each.
+  function rosterEmailBlock(userRoster) {
+    if (!userRoster || !userRoster.length) return "";
+    var lines = userRoster.slice().sort(function (a, b) {
+      var ra = (a.role_name || "").toLowerCase(), rb = (b.role_name || "").toLowerCase();
+      if (ra !== rb) return ra < rb ? -1 : 1;
+      return String(a.last_name || "").localeCompare(String(b.last_name || ""));
+    }).map(function (u) {
+      var name = ((u.first_name || "") + " " + (u.last_name || "")).trim() || "(no name)";
+      var parts = [name];
+      if (u.role_name) parts.push(u.role_name);
+      if (u.email) parts.push(u.email);
+      return "  • " + parts.join(" — ");
+    });
+    return "Your college's current MAP CPL users (" + userRoster.length + "):\n"
+      + lines.join("\n") + "\n\n";
+  }
+  function buildNudgeMailto(college, picks, landingUrl, userRoster) {
     var to = (picks || []).map(function (p) { return p.email; }).filter(Boolean).join(",");
     var who = (picks || []).map(function (p) { return p.label + (p.name ? ": " + p.name : ""); }).join("\n");
     var subject = "Action requested: refresh your MAP college users — " + college;
@@ -181,6 +208,7 @@
       + "minutes to review and update your institution's user list in the MAP platform so the "
       + "right staff have access and the roster stays current.\n\n"
       + (who ? who + "\n\n" : "")
+      + rosterEmailBlock(userRoster)
       + goLine
       + "Thank you for keeping your college's CPL team up to date.\n\n— The CPL Initiative team";
     return "mailto:" + encodeURIComponent(to)
@@ -214,8 +242,15 @@
       }).catch(function () { return {}; });
   }
   function openNudge(college) {
-    return loadContacts(college).then(function (c) {
-      showNudgePicker(college, nudgeRoster(c), (c && c.landing_page_url) || "");
+    // Load the contacts (recipients) + the college's own user roster in parallel
+    // so the email can carry the roster. The roster is optional — its failure
+    // never blocks the nudge.
+    return Promise.all([
+      loadContacts(college),
+      loadRoster(college).catch(function () { return []; }),
+    ]).then(function (res) {
+      var c = res[0], userRoster = res[1] || [];
+      showNudgePicker(college, nudgeRoster(c), (c && c.landing_page_url) || "", userRoster);
     }).catch(function () {
       alert("Could not load this college's contacts. Sign in on the Team & RACI tab "
         + "(reviewer or team phrase) and try again.");
@@ -223,7 +258,7 @@
   }
   // The confirm/uncheck dialog. All present recipients start CHECKED; the draft
   // opens only after the user clicks "Open email draft".
-  function showNudgePicker(college, roster, landingUrl) {
+  function showNudgePicker(college, roster, landingUrl, userRoster) {
     var old = document.getElementById("mapu-picker");
     if (old) old.parentNode.removeChild(old);
     var ov = document.createElement("div");
@@ -241,11 +276,32 @@
       ? '<p class="mapu-pick-note">The email links them to <a href="' + esc(landingUrl)
         + '" target="_blank" rel="noopener">their MAP CPL Dashboard ↗</a> so they can log in and update their users.</p>'
       : "";
+    // The college's own user roster, as an opt-out CHECKLIST (all checked) so
+    // leadership sees their CPL people — with a Check-All master in the header
+    // row + per-user checkboxes to drop anyone (e.g. a departed staffer) before
+    // sending. Only checked users go into the email.
+    var nRoster = (userRoster && userRoster.length) || 0;
+    var rosterBlock = "";
+    if (nRoster) {
+      var head = '<label class="mapu-pick mapu-roster-head"><input type="checkbox" data-roster-all checked>'
+        + '<span class="mapu-pick-l">Include our user roster (' + nRoster + ")</span>"
+        + '<span class="mapu-pick-e">your college’s current MAP CPL people — uncheck anyone to leave them out</span></label>';
+      var users = userRoster.map(function (u, i) {
+        var name = ((u.first_name || "") + " " + (u.last_name || "")).trim() || "(no name)";
+        return '<label class="mapu-pick mapu-roster-user"><input type="checkbox" data-roster-user="' + i + '" checked>'
+          + '<span class="mapu-pick-l">' + esc(name) + "</span>"
+          + '<span class="mapu-pick-n">' + esc(u.role_name || "") + "</span>"
+          + '<span class="mapu-pick-e">' + esc(u.email || "") + "</span></label>";
+      }).join("");
+      rosterBlock = '<div class="mapu-roster-pick">' + head
+        + '<div class="mapu-roster-users">' + users + "</div></div>";
+    }
     ov.innerHTML = '<div class="mapu-picker" role="dialog" aria-label="Nudge recipients">'
       + "<h3>Nudge " + esc(college) + "</h3>"
       + '<p class="mapu-pick-note">This opens a pre-filled <b>draft</b> in your email app — '
       + "<b>nothing is sent</b> until you review it and click Send there. Uncheck anyone you don’t want to email.</p>"
       + '<div class="mapu-pick-list">' + list + "</div>"
+      + rosterBlock
       + mapLine
       + '<div class="mapu-pick-actions">'
       + '<button class="mapu-rosterbtn" data-pick-cancel>Cancel</button>'
@@ -255,12 +311,29 @@
     function close() { if (ov.parentNode) ov.parentNode.removeChild(ov); }
     ov.addEventListener("click", function (e) { if (e.target === ov) close(); });
     ov.querySelector("[data-pick-cancel]").addEventListener("click", close);
+    // Check-All master ⇄ per-user roster checkboxes.
+    var allBox = ov.querySelector("[data-roster-all]");
+    var userBoxes = Array.prototype.slice.call(ov.querySelectorAll("[data-roster-user]"));
+    if (allBox) {
+      allBox.addEventListener("change", function () {
+        userBoxes.forEach(function (cb) { cb.checked = allBox.checked; });
+      });
+      userBoxes.forEach(function (cb) {
+        cb.addEventListener("change", function () {
+          allBox.checked = userBoxes.every(function (b) { return b.checked; });
+        });
+      });
+    }
     ov.querySelector("[data-pick-go]").addEventListener("click", function () {
       var picks = [];
       ov.querySelectorAll("[data-pick]").forEach(function (cb) {
         if (cb.checked) picks.push(roster[parseInt(cb.getAttribute("data-pick"), 10)]);
       });
-      try { window.location.href = buildNudgeMailto(college, picks, landingUrl); } catch (e) {}
+      var rosterForEmail = [];
+      userBoxes.forEach(function (cb) {
+        if (cb.checked) rosterForEmail.push(userRoster[parseInt(cb.getAttribute("data-roster-user"), 10)]);
+      });
+      try { window.location.href = buildNudgeMailto(college, picks, landingUrl, rosterForEmail); } catch (e) {}
       recordNudge(college);
       close();
       var root = document.getElementById("map-users-root");
@@ -457,6 +530,7 @@
     _filteredSorted: filteredSorted,
     _fmtDate: fmtDate,
     _buildNudgeMailto: buildNudgeMailto,
+    _rosterEmailBlock: rosterEmailBlock,
     _nudgeRoster: nudgeRoster,
     _nudgeRecipients: nudgeRecipients,
     _nudgeRoles: NUDGE_ROLES,
