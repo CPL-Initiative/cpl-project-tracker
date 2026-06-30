@@ -1896,3 +1896,31 @@ right/wrong signal a write gives, no new exposure). Tests: `card_actions.test.js
 (38), `raci_team_pass.test.js` (22), raci 70/70 → **107 files green**. Full stories:
 [`docs/mission_control_lessons.md`](mission_control_lessons.md) +
 [`docs/cobi_raci_nudge_lessons.md`](cobi_raci_nudge_lessons.md).
+
+### Session 84 — SkyScribe: project soft-delete · lean Pages · computed progress bars (2026-06-29)
+
+Started "refine COBI a bit more"; the team using the dashboard surfaced a run of needs. **6 merged PRs.**
+- **Project soft-delete (#600)** — a reviewer / team-phrase user can **Table** (pause) or **Archive** (close)
+  a project; it leaves the live priority surfaces and moves to a collapsed **"Tabled & Archived"** section,
+  reversible (♻ Restore). New Supabase **`project_lifecycle`** overlay (absence of a row = active; write gated
+  `is_allowed_reviewer() OR team_pass_ok()`) + the committed `kb/project_lifecycle.json` ledger (the "noted in
+  the KB" record) + static `project_lifecycle.js` (the `card_updates.js` overlay pattern). **Wired across ALL
+  surfaces** (#605): the generator excludes tabled from the grid, `CPL_DATA.projects`, the Annual Workplan
+  tables, AND `build_activity_kpis` (so they drop from the Activity Metrics cards + the RACI matrix); the
+  client live-hides each surface pre-regen (`raci.js` filters `buildItems` by the overlay).
+- **Pages deploy fixed + leaned** — Sam's Jekyll build was hung on the 553 MB repo; **`.nojekyll` (#601)**
+  unstuck it, then a **custom lean `pages.yml` (#602)** (`git archive` → prune internal-only `kb/` staging /
+  alias maps / build inputs → assert every served path survives → upload + deploy) cut the published site to
+  **~192 MB (−65%)**, validated 0 served files dropped. Sam switched Settings → Pages → Source to "GitHub
+  Actions"; triggers = push + **`workflow_run` on "Daily CPL Dashboard"** (the cron's `GITHUB_TOKEN` push
+  doesn't self-trigger) + dispatch — all three verified green.
+- **Computed progress bars (#604)** — the Activity KPI card bar now computes **Goal (blue) + Stretch (gold)**
+  from `current ÷ current-fiscal-year target` (was the manual `percent_complete`); manual fallback where no
+  numeric/ladder. 1.1 reads Goal 200% ✓ / Stretch 100% ✓.
+- **Scoped, build next session:** the Annual Workplan tab as the **authoritative source** — hybrid Current
+  (live for the 5 `pid_to_kpi_key`-mapped, manual-editable for the rest) + editable titles (single
+  `projects.name` store). Decisions locked → [`docs/annual_workplan_authoritative_scope.md`](annual_workplan_authoritative_scope.md).
+
+Suite **109 files green**. Full story: [`docs/project_lifecycle_lessons.md`](project_lifecycle_lessons.md)
++ [`docs/pages_lean_deploy_scope.md`](pages_lean_deploy_scope.md). M-ID pipeline did NOT move
+(`#tab-pipeline` untouched). **NEXT: [`docs/session_85_handoff.md`](session_85_handoff.md).**
