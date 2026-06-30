@@ -110,6 +110,22 @@ check("buildPolishContent: image -> base64 image block with media_type",
 const cMix = K.buildPolishContent({ prompt: "P", attachments: [{ name: "a.md", text: "T" }, { name: "b.png", image: "ZZ", mediaType: "image/png" }] });
 check("buildPolishContent: mixed -> text block then image block", cMix.length === 2 && cMix[0].type === "text" && /T/.test(cMix[0].text) && cMix[1].type === "image");
 
+// ── teamPassRequest: the team-phrase server-check contract (Session 86) ──
+// The phrase must ride ONLY in the x-team-pass header (never the URL/body, so it
+// isn't logged), POST {} to the team_pass_ok() RPC on the MAIN dashboard project.
+const tpr = K.teamPassRequest("https://hvuwhnbuahrtptokpqfh.supabase.co/", "ANON_KEY", "  hunter2 ");
+check("teamPassRequest hits the team_pass_ok RPC (trailing slash normalized)",
+  tpr.url === "https://hvuwhnbuahrtptokpqfh.supabase.co/rest/v1/rpc/team_pass_ok");
+check("teamPassRequest POSTs an empty body", tpr.method === "POST" && tpr.body === "{}");
+check("teamPassRequest puts the TRIMMED phrase only in x-team-pass",
+  tpr.headers["x-team-pass"] === "hunter2");
+check("teamPassRequest never leaks the phrase into url/body",
+  tpr.url.indexOf("hunter2") === -1 && tpr.body.indexOf("hunter2") === -1);
+check("teamPassRequest sends the anon key as apikey + bearer",
+  tpr.headers.apikey === "ANON_KEY" && tpr.headers.Authorization === "Bearer ANON_KEY");
+check("teamPassRequest tolerates a null phrase (empty header)",
+  K.teamPassRequest("https://x.co", "k", null).headers["x-team-pass"] === "");
+
 // ── portal shell: back-to-tracker link ──
 // The portal runs inside the dashboard's iframe; the back link MUST target _top so
 // it navigates the whole tab, not the iframe (which would nest the dashboard inside
