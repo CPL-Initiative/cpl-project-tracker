@@ -154,7 +154,18 @@ Building blocks already in the repo to reuse:
 | **P0 — Schema probe** | Capture the exact 11 fields + the role vocabulary, PII-safe, on a runner. `map/probe_users_schema.py` + `map-users-schema-probe.yml` (dispatch-only; masks names/emails; commits nothing). **DONE (dispatch #4, 2026-06-30 — see §1a):** real view names = **`View_CollegeUsersRoles_APIDataset`** (2,741 rows) + **`View_CollegeContacts_APIDataset`** (121 rows); both **reachable unauthenticated** with an explicit `columnName` list (no MAP credential needed). **Residual:** the 11 field NAMES (the no-column self-describe mode 500s) — get them from the MAP Builder UI or a guess-and-confirm probe (§1a / §5 Q1). | **DONE** (names + reachability); field-name capture remains |
 | **P1 — Gated sync** | `public.map_college_users` (RLS: reviewer/team-phrase SELECT; service-role write; public aggregate `map_users_summary()`) + `map/sync_map_users.py` + `map-users-sync.yml` (dispatch + monthly cron). **DONE + LIVE (PR #619/#620)** — seeded **2,741 users / 128 colleges**. Gotcha fixed: pg-safeupdate needs `where true` on the full-table delete. | **DONE** |
 | **P2 — COBI "MAP Users" tab** | `map_users.js` (static, lazy): public per-college **counts + role mix** (anon `map_users_summary()`), reviewer/team-phrase **roster drawer** (names/emails), XSS-escaped. Nav/pane/boot in BOTH HTMLs. Tests `tests/map_users.test.js` (22). **DONE + LIVE (PR #620).** | **DONE** |
-| **P3 — College nudge** | The RACI nudge is a **client-side `mailto:`** (no email server). So: a gated `map_college_contacts` table (Primary Contact / VPAA = VP Instruction / VPSS = VP Student Services + their emails + **Last Updated On** = the staleness signal), fed by extending the sync; a per-college 📣 button in the tab opens a pre-filled mailto to those 3 contacts. Each-semester cadence is the reviewer's prompt cadence. | in progress (Session 87) |
+| **P3 — College nudge** | The RACI nudge is a **client-side `mailto:`** (no email server). Gated `map_college_contacts` (Primary Contact / VPAA = VP Instruction / VPSS = VP Student Services + emails) fed by the same sync; a per-college 📣 button opens a pre-filled mailto to those 3 contacts. **DONE + LIVE (PR #621)** — contacts seeded **121 colleges** (99 PC / 100 VPAA / 58 VPSS emails). Contacts API names keep the **spaces** ("VPAA Email"). `Last Updated On` is all-null in MAP → no staleness signal yet. | **DONE** |
+
+## 7. STATUS — ALL PHASES DONE (Session 87, StarMax)
+
+The MAP Users tab is **complete + live** across PRs #618 (probe) / #619 (P1) / #620
+(P2) / #621 (P3). Gated Supabase: `map_college_users` (2,741 rows, public aggregate
+via `map_users_summary()`, roster reviewer-gated) + `map_college_contacts` (121 rows,
+reviewer-gated). Sync: `map/sync_map_users.py` + `.github/workflows/map-users-sync.yml`
+(dispatch + monthly cron, both tables in one run). Tab: `map_users.js` (lazy, in BOTH
+HTMLs). **Future:** wire `Last Updated On` if MAP starts populating it (per-college
+staleness); add the 3 other Contacts roles (CEO / Articulation Officer / etc.) to the
+nudge if Sam wants; consider an in-app "mark nudged" log (today it's mailto-only).
 
 ## 5. Open questions — Sam's decisions (2026-06-30, Session 87 / StarMax)
 
