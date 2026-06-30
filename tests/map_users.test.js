@@ -170,6 +170,11 @@ function makeWin(opts) {
     mailto2.indexOf("ceo@x.edu") >= 0 && mailto2.indexOf("pat@x.edu") < 0);
   check("nudge mailto: no picks → still a valid mailto (blank To)",
     api._buildNudgeMailto("X", null).indexOf("mailto:") === 0 && api._buildNudgeMailto("X", []).indexOf("mailto:") === 0);
+  // the MAP dashboard deep-link (3rd arg) lands in the email body when present
+  const mailtoUrl = decodeURIComponent(api._buildNudgeMailto("X", roster, "https://map.example/college/abc"));
+  check("nudge mailto: includes the MAP dashboard URL when supplied", mailtoUrl.indexOf("https://map.example/college/abc") >= 0);
+  check("nudge mailto: omits the URL line when not supplied",
+    decodeURIComponent(api._buildNudgeMailto("X", roster)).indexOf("http") < 0);
 })();
 
 // nudge picker: showNudgePicker renders all recipients CHECKED with a confirm action
@@ -180,7 +185,7 @@ function makeWin(opts) {
     { key: "primary_contact", label: "Primary Contact", name: "Pat", email: "pat@x.edu" },
     { key: "ceo", label: "CEO / President", name: "Prez", email: "ceo@x.edu" },
   ];
-  api._showNudgePicker("Foothill College", roster);
+  api._showNudgePicker("Foothill College", roster, "https://map.example/foothill");
   const ov = w.document.getElementById("mapu-picker");
   check("nudge picker: a dialog overlay is mounted", !!ov);
   const boxes = ov.querySelectorAll("[data-pick]");
@@ -188,6 +193,8 @@ function makeWin(opts) {
   check("nudge picker: all recipients start checked", Array.prototype.every.call(boxes, function (b) { return b.checked; }));
   check("nudge picker: has an open-draft + cancel action", !!ov.querySelector("[data-pick-go]") && !!ov.querySelector("[data-pick-cancel]"));
   check("nudge picker: recipient name/email shown + escaped", ov.innerHTML.indexOf("pat@x.edu") >= 0);
+  check("nudge picker: shows the MAP dashboard link when on file",
+    ov.innerHTML.indexOf("https://map.example/foothill") >= 0 && /MAP CPL Dashboard/.test(ov.innerHTML));
   // cancel removes it
   ov.querySelector("[data-pick-cancel]").click();
   check("nudge picker: cancel closes the dialog", !w.document.getElementById("mapu-picker"));

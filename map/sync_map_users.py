@@ -118,6 +118,30 @@ def _summarize(rows):
     print(f"  rows with an email: {with_email:,}/{len(rows):,}")
 
 
+def _fetch_landing_urls(key):
+    """GET the per-college MAP CPL dashboard URLs from chatbox_college_profiles
+    (the same ones the CPL Assistant surfaces). Used to link a college straight
+    to their MAP page in the refresh nudge. Best-effort: any failure → {} (the
+    nudge just omits the link). Returns {college: landing_page_url}."""
+    url = (f"{SUPABASE_URL}/rest/v1/chatbox_college_profiles"
+           "?select=college,landing_page_url&landing_page_url=not.is.null")
+    req = urllib.request.Request(
+        url, method="GET",
+        headers={"apikey": key, "Authorization": f"Bearer {key}",
+                 "Accept": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            rows = json.loads(resp.read() or "[]")
+    except Exception:
+        return {}
+    out = {}
+    for r in rows or []:
+        c, u = r.get("college"), r.get("landing_page_url")
+        if c and u:
+            out[c] = u
+    return out
+
+
 def _sb_rpc(fn, body, key):
     """Call a Supabase RPC with the service key. Returns the parsed JSON body.
     On an HTTP error, surface the PostgREST message (the error body describes the
@@ -177,6 +201,18 @@ def main():
     key = os.environ.get("SUPABASE_SERVICE_KEY") or os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
     if not key:
         raise SystemExit("SUPABASE_SERVICE_KEY unset — cannot write. (Set it in the workflow env.)")
+    # Attach each college's MAP CPL dashboard URL (for the nudge's "go update
+    # your users in MAP" link), joined by exact college name. Best-effort.
+    landing = _fetch_landing_urls(key)
+    if landing:
+        linked = 0
+        for c in contacts:
+            u = landing.get(c.get("college"))
+            if u:
+                c["landing_page_url"] = u
+                linked += 1
+        print(f"  linked {linked}/{len(contacts)} contacts to a MAP dashboard URL "
+              f"(from chatbox_college_profiles).")
     n = _sb_rpc("map_users_replace", {"p_rows": rows}, key)
     print(f"  ✓ map_users_replace inserted {n} user rows (atomic full refresh).")
     m = _sb_rpc("map_contacts_replace", {"p_rows": contacts}, key)

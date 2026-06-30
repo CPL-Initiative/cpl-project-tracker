@@ -28,6 +28,10 @@ create table if not exists public.map_college_contacts (
   vpss_email             text,
   ceo                    text,   -- College CEO / President (added Session 87 follow-up)
   ceo_email              text,
+  landing_page_url       text,   -- the college's MAP CPL dashboard URL (joined from
+                                 -- chatbox_college_profiles in the sync) → the nudge
+                                 -- links the college straight to their MAP page so
+                                 -- they can log in + update their users
   last_updated_on        text,   -- MAP's "Last Updated On" (per-college staleness)
   synced_at              timestamptz not null default now()
 );
@@ -50,13 +54,13 @@ begin
   delete from public.map_college_contacts where true;
   insert into public.map_college_contacts
         (college, primary_contact, primary_contact_email, vpaa, vpaa_email,
-         vpss, vpss_email, ceo, ceo_email, last_updated_on, synced_at)
+         vpss, vpss_email, ceo, ceo_email, landing_page_url, last_updated_on, synced_at)
   select r.college, r.primary_contact, r.primary_contact_email, r.vpaa, r.vpaa_email,
-         r.vpss, r.vpss_email, r.ceo, r.ceo_email, r.last_updated_on, now()
+         r.vpss, r.vpss_email, r.ceo, r.ceo_email, r.landing_page_url, r.last_updated_on, now()
   from jsonb_to_recordset(p_rows) as r(
          college text, primary_contact text, primary_contact_email text,
          vpaa text, vpaa_email text, vpss text, vpss_email text,
-         ceo text, ceo_email text, last_updated_on text)
+         ceo text, ceo_email text, landing_page_url text, last_updated_on text)
   where coalesce(r.college, '') <> '';
   get diagnostics n = row_count;
   return n;
