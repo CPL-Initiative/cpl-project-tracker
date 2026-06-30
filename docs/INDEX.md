@@ -38,6 +38,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
 | [Methodology — Hybrid live-vs-manual value column (per-row source flag; live cells render verbatim + carry NO edit attr → read-only by construction; the live sync is a post-pass after the merges; single-store titles by repointing the render)](kb-notes/methodology-live-vs-manual-hybrid-column.md) | methodology | published | 2026-06-30 | 2026-06-30 (Session 85 — SkyLight, the Annual Workplan "Current") |
+| [Methodology — Dark→light recolor mapping (COBI tokens; chips/trendlines contrast; guard the SOURCE when CSS is generator-injected)](kb-notes/methodology-dark-to-light-recolor-mapping.md) | methodology | published | 2026-06-30 | 2026-06-30 (Session 87 — SkyGuy, the light/glass theme) |
 | [ADR — Obsidian sync via vault-side clone (not edge function)](kb-notes/adr-obsidian-vault-via-clone.md) | adr | published | 2026-05-27 | 2026-05-27 |
 | [ADR — Supersede, don't mutate, at the synthetic identity layer](kb-notes/adr-supersede-dont-mutate-synthetic-layer.md) | adr | published | 2026-05-27 | 2026-05-27 |
 | [Methodology — Two-mode sync (safe Mode A vs identity-touching Mode B)](kb-notes/methodology-two-mode-sync.md) | methodology | published | 2026-05-27 | 2026-05-27 |

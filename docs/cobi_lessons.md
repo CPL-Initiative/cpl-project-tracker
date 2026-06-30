@@ -167,3 +167,47 @@ clarity polish. Patterns worth keeping:
 re-apply only the `<script>` tag, let the post-merge `daily-dashboard.yml` dispatch
 publish the activity-card change. 112 JS test files + Python tests green; generator
 EXIT 0.
+
+## Session 87 cont. (2026-06-30, SkyGuy) — light/glass theme (#611) + MAP-Users scope (#612)
+
+Same session, two more asks after the six refinements.
+
+### Light/glass theme (PR #611)
+Sam: make the **KPI Metrics + CPL Analytics tables** match COBI's light look, then
+"**EACR should also be adjusted… consistent look throughout COBI**," with **chips +
+trendlines** contrast-fixed. Flipped four dark-navy surfaces to light:
+- **KPI Trends card** (`render_kpi_history_card` + `_delta_badge` + `_sparkline_svg`).
+- **CPL Analytics + EACR** — the *shared* `EXHIBIT_ANALYSIS_CSS` `.exhibit-*`/`.sw-*`
+  families, so **one base-rule flip covered both** (the consistent outcome Sam wanted).
+- **College Activity card** (`college_activity_template.html` + `college_activity.js`).
+- **EACR interactive** (`statewide_interactive.js` `CV_STYLE`/`.cv-*`/`.sv-*`).
+
+Lessons (full mapping → `docs/kb-notes/methodology-dark-to-light-recolor-mapping.md`):
+1. **Contrast is the whole point** — delta chips `--*-on-dark`→`--hunter`/`--crimson`,
+   gold text `--gold-accent`→`--mustard-text`, sparkline `#E3B341`→`#8B6800`, white
+   bar-tracks→`rgba(28,28,26,.08)`. Light tints kept; only their text flips.
+2. **Generator-injected CSS can't be verified in the sandbox** — `EXHIBIT_ANALYSIS_CSS`
+   injects only `if exhibit_tables:` (MAP fetch, egress-blocked here), so a sandbox
+   regen leaves the stale baked copy. **Guard the SOURCE** (`kb/_test_light_theme.py`,
+   15 assertions) instead of a rendered diff; the daily cron strips+injects the light
+   version. The static JS (college_activity/statewide_interactive) is live on commit.
+3. **Parallelized the independent files** — 2 subagents (College Activity, EACR JS)
+   with ONE precise token mapping while I owned the shared CSS + KPI Trends; verified
+   by grep (no stray dark) + the source test.
+4. **Scope discipline** — flipped exactly the fully-dark "boxes" Sam named; left the
+   CCR/CSR/CER reference tabs (light tables w/ dark header bands) and flagged them for
+   his call rather than unilaterally restyling the heaviest tabs.
+
+### MAP-Users management tab — scoped (PR #612)
+Sam asked whether we have MAP college **users**. Research finding: yes in MAP
+(`View_CollegeUsersRoles`, category #9, ~2,710 rows / 11 fields = staff
+names+emails+roles) but **NOT in our datasets** — dropped from the fetch for
+PII-minimization (Session 34) and never committed. Delivered a **PII-safe schema
+probe** (`map/probe_users_schema.py`, dispatch-only, runner-as-proxy, masks all
+names/emails, writes nothing) + a 4-phase **scope** (`docs/map_users_tab_scope.md`:
+runner sync → gated Supabase `map_college_users` → COBI tab → reuse the RACI nudge).
+**Probe lesson:** MAP's API is **column-oriented** — each dataset is
+`{columnName:[fields], columnValue:[rows], dataCount, responseCode/Message}`, and a
+no-`columnName` request returns the field list but **no values**, so the probe is
+2-pass (discover fields → re-request WITH them for the rows). NEXT: dispatch the
+fixed probe, fold the schema into the scope doc, build P1 (the gated sync).

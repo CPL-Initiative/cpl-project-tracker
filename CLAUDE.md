@@ -2074,9 +2074,23 @@ Sam's six COBI refinements (PR #610, code-only → post-merge dispatch publishes
 - **KB tab team-phrase** (#6) — the KB portal (a separate Supabase project) now unlocks + curates via the shared
   `cpl_team_pass` (validated server-side against the MAIN project's `team_pass_ok()` RPC; carries over from the
   Team & RACI tab via same-origin localStorage). Pure `KBComposer.teamPassRequest` keeps it unit-tested.
+- **Light/glass theme (#611)** — flipped the dark-navy data surfaces to COBI's light look, chips/trendlines
+  recolored for contrast: KPI Trends card + the shared `EXHIBIT_ANALYSIS_CSS` `.exhibit-*`/`.sw-*` families (CPL
+  Analytics **+** EACR) + College Activity (`college_activity_template.html`/`.js`) + EACR `statewide_interactive.js`.
+  Delta chips `--*-on-dark`→`--hunter`/`--crimson`, sparkline `#E3B341`→`#8B6800`, gold text→`--mustard-text`.
+  Exhibit CSS publishes via the cron (injected only when MAP exhibit data present → source-guarded by
+  `kb/_test_light_theme.py`). The CCR/CSR/CER reference tabs (light tables w/ dark header bands) left as-is.
+  Reusable dark→light map: [`docs/kb-notes/methodology-dark-to-light-recolor-mapping.md`](docs/kb-notes/methodology-dark-to-light-recolor-mapping.md).
+- **MAP Users — scoped (#612)** — Sam wants a tab to manage MAP college users + nudge colleges to refresh them.
+  Finding: "MAP users" = `View_CollegeUsersRoles` (~2,710 rows / 11 fields = staff names+emails+roles), MAP
+  category #9, **NOT in our datasets** (dropped from the fetch for PII-minimization, never committed). Built a
+  **PII-safe schema probe** (`map/probe_users_schema.py` + `map-users-schema-probe.yml`, dispatch-only,
+  runner-as-proxy) + a 4-phase scope ([`docs/map_users_tab_scope.md`](docs/map_users_tab_scope.md): runner sync
+  → gated Supabase `map_college_users` → COBI tab → reuse the RACI nudge engine). The probe fix handles MAP's
+  **column-oriented** response (`columnName`/`columnValue`, 2-pass). NEXT: dispatch it, fold the schema in, build P1.
 
 112 JS test files + Python tests green; generator EXIT 0. Full story:
-[`docs/cobi_lessons.md`](docs/cobi_lessons.md) (S86). **NEXT: [`docs/session_87_handoff.md`](docs/session_87_handoff.md).**
+[`docs/cobi_lessons.md`](docs/cobi_lessons.md) (S86–87). **NEXT: [`docs/session_87_handoff.md`](docs/session_87_handoff.md).**
 
 ---
 
