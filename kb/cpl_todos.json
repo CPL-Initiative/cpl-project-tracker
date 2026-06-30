@@ -1,6 +1,6 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-30 · Session 87 (StarMax) · MAP Users nudge upgraded — recipient picker + CEO + last-nudged log + a link into each college's MAP dashboard",
+ "_as_of": "2026-06-30 · Session 87 (StarMax) · MAP Users nudge — recipient picker + CEO + last-nudged + MAP-dashboard link + the college user roster (Check-All checklist) in the email",
  "_session": 87,
  "_status": "Earlier today: the Goal-2 population cards were re-wired to the live STUDENTS-SERVED breakdown (PR #617), and the gated MAP Users tab shipped end-to-end (PRs #618–#621). This afternoon the 📣 refresh nudge got three upgrades Sam asked for: a RECIPIENT PICKER (Primary Contact · VP Instruction · VP Student Services · CEO — all pre-checked, uncheck anyone; still a draft mailto, nothing auto-sends) (#623), a 'last nudged' log per college (#623), and the draft now LINKS the college straight to their own MAP CPL dashboard so they can log in and update users (#624). Open: whether MAP has a deeper per-college 'Manage Users' URL to swap in.",
  "items": [
@@ -14,7 +14,7 @@
    "id": "mapusers-nudge-url",
    "who": "sam",
    "tab": "map-users",
-   "text": "MAP Users nudge upgraded: 📣 now opens a recipient PICKER (Primary Contact · VP Instruction · VP Student Services · CEO — all pre-checked, uncheck anyone; nothing sends until you hit Send), shows a 'last nudged' line, and the draft links the college to THEIR MAP CPL dashboard. ONE ask: if MAP has a deeper per-college 'Manage Users' URL you'd rather link, grab it from your browser on that screen and send it — it's a one-line swap."
+   "text": "MAP Users nudge now also drops the college's USER ROSTER into the email (so leadership sees their CPL heroes) — shown as a checklist with a Check-All header so you can drop anyone before sending. Plus the recipient picker (Primary Contact · VP Instruction · VP Student Services · CEO), a 'last nudged' line, and a link to their MAP dashboard. TWO asks: (1) send me the MAP login URL you want the link to point to; (2) when the 3 new Custom Report fields land (Active/Inactive · Disciplines · Last updated), tell me and I'll fold them into the tab."
   },
   {
    "id": "reference-tabs-headerbands",
