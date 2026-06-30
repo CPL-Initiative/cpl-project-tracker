@@ -332,3 +332,82 @@ deep-link + the accountability log**; colleges edit **in MAP**. Distilled to an 
 current" attestation loop (buildable COBI-only later). Incoming: 3 per-user Custom Report
 fields Sam asked MAP to add (Active/Inactive · Disciplines · Last updated) — fold them in
 via the value-signature probe when they land (`map_users_tab_scope.md` §8).
+
+---
+
+## Session 88 — SkyThru: CCC-metric match · MIL/JST + Veteran Star · About z-index · MAP-Users 3 fields (2026-06-30)
+
+Four COBI tweaks across two PRs (both merged + live).
+
+**PR #628 — three tweaks (code-only → daily-workflow dispatch publishes the HTML).**
+
+- **CCC Collaborative metric match.** The KPI Trends "CCC Collaborative" row read
+  the snapshot key `ccc_collaborative` = `ccc.adopting_colleges` (61), but the MAP
+  Exhibits card's "CCC Collaborative" breakdown is `ccc.unique_exhibits` (132,
+  "statewide exhibits"). Same label, two different quantities → Sam flagged the
+  mismatch. Fix: a **NEW** snapshot key `ccc_exhibits` (= `unique_exhibits`),
+  repoint the Trends `METRICS` row to it, keep the legacy adopting-colleges series
+  for provenance (it still feeds the Statewide Exhibits card's "Adopting Colleges").
+  **Lesson — repointing a metric's *meaning* needs a NEW key, not a redefined one:**
+  the deltas/`_history_lookup` filter `val>0`, so a new key naturally reads "—"
+  until its own series accrues, instead of computing a fake +71/+116% jump off the
+  old metric's 78-day history. No backfill, no destroyed data. Test:
+  `tests/ccc_metric_test.py`.
+
+- **MIL vs JST data element + the Veteran Star.** MIL (`EnrolledMilitaryStudents` =
+  service members a college *reports*) and JST (`VeteransWithJSTs` = transcripts
+  *uploaded*) are tracked separately on the MAP dashboard; the gold ⭐ is JST ≥ 75%
+  of MIL. These counts are in the `potential-savings` API but **NOT** in the worker
+  scrape's `live_metrics.json` (the worker emits 6 KPIs + tiers, no MIL/JST), and
+  **the worker can't be redeployed from a session** (Cloudflare). **Lesson —
+  runner-as-proxy direct fetch beats waiting on the worker:** new
+  `fetch_veteran_jst.py` hits the same public API on the runner (the Azure host is
+  egress-blocked from the sandbox but reachable from Actions) → commits
+  `veteran_jst.json` (aggregate, no PII — same counts the public MAP dashboard
+  shows). The generator reads it (`read_veteran_jst` + `apply_veteran_jst` +
+  `render_college_activity_card(veteran_jst=…)`), **degrading gracefully** when
+  absent. Surfaces: the **Veteran Sprint card** swaps its military-students *proxy*
+  for the real JST + a new "Service Members (MIL)" line + a 75%-rule footnote; the
+  **College Activity table** gets a "MIL / JST" column and its ★ becomes the
+  Veteran Star (vstar), both gated on `window.COLLEGE_HAS_JST` (column hidden +
+  criteria-star restored when absent). **The 46-vs-50 discrepancy (note for next
+  session):** my exact 75% rule flags ~46 star colleges; MAP's `StarCollegeCount`
+  headline is 50. The savings API has **no per-college star flag**, so the rule is
+  the best available signal; `fetch_veteran_jst.py` logs `computed_star_colleges`
+  vs `statewide.star_colleges` so the gap is visible. Likely a rounding / boundary
+  / MIL=0 difference in MAP's internal rule. Tests:
+  `tests/veteran_jst_test.py` (parser/star rule), `tests/veteran_sprint_jst_test.py`
+  (card), `tests/college_activity_jst.test.js` (column + star).
+
+- **About-box z-index.** The About popover slipped *behind* the KPI cards. Root
+  cause: `.header` has `backdrop-filter`, which makes its **own stacking context**
+  that paints *before* the later cards; the popover (z-index:300) is trapped inside
+  it. **Lesson — a trapped popover is an ANCESTOR problem:** bumping the popover's
+  own z-index can't escape its ancestor's context. Fix in `cobi_brand.js`'s
+  injected CSS (one static file, regen-proof, both HTMLs): lift `.header` to
+  `position:relative; z-index:150` — above page content, below the mobile
+  rail/hamburger (199–201) so those still cover it. Guards in `tests/cobi_brand.test.js`.
+
+**PR #629 — MAP Users: the 3 new Custom Report fields.**
+
+Sam added Active/Inactive · Disciplines · Last-updated to the "College Users &
+Roles" Custom Report. **Lesson — value-signature probe before extending a MAP-fed
+schema:** Builder labels can differ from API column names (`CollegeID` vs
+`CollegeId`), so a runner probe (`map/probe_users_schema.py`, GUESS_COLUMNS +
+the new variants) confirmed `UserStatus` ∈ {Active, Inactive}, `UserDisciplines`
+(comma-delimited, 947/2741), `LastUpdatedOn` (10-char date, 2741/2741) on the
+16-field `View_CollegeUsersRoles_APIDataset`. (`Active` "True"/"False" is the
+redundant boolean twin of `UserStatus` → not synced.) Schema (Supabase MCP):
+`map_college_users` += `user_status`/`disciplines`/`last_updated_on`;
+`map_users_replace` carries them; `map_users_summary()` adds a public
+**`active_count`** — **and the gating call:** Disciplines + Last-updated attach to
+*named staff* → reviewer-gated roster only; only the active *count* is public.
+Sync FIELD_MAP + the tab (`(N active)` per row; Status/Disciplines/Last-updated in
+the reviewer roster). `tests/map_users.test.js` → 70 checks.
+
+**Process notes:** code-only PRs + post-merge `daily-dashboard.yml` dispatch
+published the HTML + the first `veteran_jst.json`; merged each PR on **`unstable`**
+(required TruffleHog green; non-required js-tests still running). One self-inflicted
+gotcha: a **stale `origin/main` ref** — branched the checkpoint off `origin/main`
+*before* re-fetching after the #629 merge → got the pre-merge tree; always
+`git fetch origin main` immediately before `git checkout -B … origin/main`.
