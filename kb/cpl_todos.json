@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-30 · Session 87 (StarMax) · the population sub-activity cards now match the KPI breakdown, and the MAP Users management tab is live end-to-end",
+ "_as_of": "2026-06-30 · Session 87 (StarMax) · MAP Users nudge upgraded — recipient picker + CEO + last-nudged log + a link into each college's MAP dashboard",
  "_session": 87,
- "_status": "Two things shipped today. (A) CARD FIX (PR #617): the Working Adults / Veterans / Apprentice cards on Goal 2 were showing stale numbers — they're now wired to the live STUDENTS-SERVED breakdown, so 3.1.1/3.1.2/3.1.2a (23,388 / 24,864 / 753) match the headline by construction, just like 3.1 and 3.2. (B) MAP USERS TAB (PRs #618–#621): a new gated 'MAP Users' tab manages MAP's per-college user roster (2,741 staff across 128 colleges) — everyone sees per-college counts + the role mix; signed-in reviewers see the names/emails; and a 📣 nudge opens a pre-filled email to a college's Primary Contact + VP of Instruction + VP of Student Services asking them to refresh their users. Staff PII lives only in a gated database, never in the repo.",
+ "_status": "Earlier today: the Goal-2 population cards were re-wired to the live STUDENTS-SERVED breakdown (PR #617), and the gated MAP Users tab shipped end-to-end (PRs #618–#621). This afternoon the 📣 refresh nudge got three upgrades Sam asked for: a RECIPIENT PICKER (Primary Contact · VP Instruction · VP Student Services · CEO — all pre-checked, uncheck anyone; still a draft mailto, nothing auto-sends) (#623), a 'last nudged' log per college (#623), and the draft now LINKS the college straight to their own MAP CPL dashboard so they can log in and update users (#624). Open: whether MAP has a deeper per-college 'Manage Users' URL to swap in.",
  "items": [
   {
    "id": "cards-confirm",
@@ -11,10 +11,10 @@
    "text": "Glance at Goal 2: the Working Adults (3.1.1), Veterans & Service (3.1.2), and Apprentice (3.1.2a) cards should now show live numbers that match the STUDENTS-SERVED breakdown on the headline card (no more stale 21,552 / 22,149 / 700). Flag if any still look off."
   },
   {
-   "id": "mapusers-try",
+   "id": "mapusers-nudge-url",
    "who": "sam",
    "tab": "map-users",
-   "text": "Try the new MAP Users tab: per-college user counts + role mix are public; sign in (Team & RACI magic link or the team phrase) to see names/emails and the 📣 nudge. The nudge opens a pre-filled email to that college's Primary Contact + VP of Instruction (VPAA) + VP of Student Services (VPSS) — nothing is auto-sent. Tell me if you want more roles on the nudge or a 'last nudged' log."
+   "text": "MAP Users nudge upgraded: 📣 now opens a recipient PICKER (Primary Contact · VP Instruction · VP Student Services · CEO — all pre-checked, uncheck anyone; nothing sends until you hit Send), shows a 'last nudged' line, and the draft links the college to THEIR MAP CPL dashboard. ONE ask: if MAP has a deeper per-college 'Manage Users' URL you'd rather link, grab it from your browser on that screen and send it — it's a one-line swap."
   },
   {
    "id": "reference-tabs-headerbands",

@@ -209,3 +209,40 @@ Then **P2** (the gated COBI tab — `raci.js`/`cpl_news.js` lazy-renderer patter
 and **P3** (the nudge — reuse the RACI engine; **BLOCKED** on the Contacts-view
 role-column spellings for College Contact / VP Instruction / VP Student Services,
 §1b — get them from the MAP Builder UI). Nothing committed so far exposes PII.
+
+## 7. Shipped + the nudge follow-up (Session 87, 2026-06-30)
+
+P1–P3 all shipped (PRs #618–#621). Then Sam's follow-up on the 📣 nudge:
+
+- **Recipient picker** (PR #623) — 📣 opens a confirm dialog listing everyone on
+  file, **all pre-checked**; uncheck anyone, then **✉ Open email draft**. Still a
+  draft `mailto:` (nothing auto-sends). `buildNudgeMailto(college, picks[, url])`
+  now takes the chosen picks, not the whole contacts row.
+- **CEO added** as a 4th nudge role (`ceo`/`ceo_email` on `map_college_contacts`;
+  value-signature-confirmed labels `CEO` / `CEO Email`). 71/121 colleges have one.
+- **Last-nudged log** (PR #623) — gated `map_college_nudges` (college pk,
+  `last_nudged_at`/`last_nudged_by`; reviewer/team-phrase R+W), kept SEPARATE from
+  the contacts table so the monthly full-refresh never wipes it. The tab upserts on
+  open and shows "last nudged &lt;date&gt; by &lt;who&gt;" per row.
+- **MAP dashboard deep-link** (PR #624) — new `map_college_contacts.landing_page_url`,
+  joined in the sync from `chatbox_college_profiles` (the same per-college URLs the
+  CPL Assistant uses; 118/121 match by exact college name). The draft email + the
+  picker dialog link the college to **their own MAP CPL dashboard**.
+
+**Decision — DON'T build a roster editor in COBI.** Sam asked about a self-service
+"update only your users" link that *feeds MAP*. MAP is the system of record for
+users and there is **no MAP write API** we can call (the Custom Report API is
+read-only), so a COBI-side editor would be a second roster that drifts. The clean
+split: colleges edit **in MAP** (deep-linked from the nudge); COBI owns the
+**nudge + accountability**. True write-back would be a MAP-team endpoint — scope
+separately if ever wanted.
+
+**Parked — the attestation loop (B).** A tokenized "✓ our roster is current"
+confirm page → a gated `map_college_attestations` table (anon-facing Edge Function
++ service-role write, the cpl-chat pattern). Buildable COBI-only, no MAP dependency.
+Sam parked it for now (chose the deep-link only).
+
+**Open — a deeper MAP "Manage Users" URL.** Today the deep-link points at each
+college's MAP CPL **dashboard** (their MAP home). If MAP exposes a per-college
+*Manage Users* screen, swapping the target is a one-line change (the column +
+plumbing exist). Sam to confirm whether such a URL exists.
