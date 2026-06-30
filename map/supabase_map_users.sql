@@ -89,7 +89,9 @@ returns integer
 language plpgsql security definer set search_path = public as $$
 declare n integer;
 begin
-  delete from public.map_college_users;
+  -- Explicit WHERE: Supabase's pg-safeupdate guard blocks an unqualified
+  -- DELETE through the PostgREST API roles ("DELETE requires a WHERE clause").
+  delete from public.map_college_users where true;
   insert into public.map_college_users
         (college, college_id, first_name, last_name, email, role_name, username, synced_at)
   select r.college, r.college_id, r.first_name, r.last_name, r.email,
