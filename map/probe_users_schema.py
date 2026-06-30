@@ -27,6 +27,14 @@ in the **`_APIDataset`** suffix (see fetch_custom_report.py — `View_*_APIDatas
 A bare `View_CollegeUsersRoles` returns responseCode 400 "… is not Valid". So we
 try a small CANDIDATE list per logical view and use the first the API accepts.
 
+Field-NAME capture (Session 87): the resolved `_APIDataset` views have no
+self-describe mode (a no-`columnName` request 500s), so once a name is confirmed
+REACHABLE (seed-probe with `["College"]` returns rows) we run a GUESS-AND-CONFIRM
+pass: probe each likely column from GUESS_COLUMNS alongside the `College` anchor
+and keep the ones the API accepts (a real column is echoed back / widens the row;
+an unknown one is dropped or 500s). Then the normal PII-safe per-field analysis
+runs on the confirmed list.
+
 PII safety (load-bearing):
   • Raw names / emails / phones are NEVER printed.
   • Nothing is written to disk (no artifact, no commit).
@@ -126,6 +134,85 @@ def _rows(ds, columns):
 # "view needs an explicit column list" apart from "view is auth-gated".
 SEED_COLUMNS = ["College"]
 
+# Guess-and-confirm candidate columns (union of likely College Users & Roles +
+# College Contacts fields). Each is probed alongside the known-good `College`
+# anchor; the API echoes back the columns it accepted (an unknown column is
+# either dropped from the echo or 500s the request), so we keep only the ones
+# it actually returns. PII-safe: confirming a field EXISTS never prints its
+# values (the per-field analysis masks high-cardinality / @-bearing fields).
+GUESS_COLUMNS = [
+    # college / district
+    "College", "CollegeId", "CollegeID", "CollegeCode", "CollegeName",
+    "District", "DistrictName", "DistrictId",
+    # person
+    "FirstName", "LastName", "MiddleName", "MiddleInitial", "Name", "FullName",
+    "DisplayName", "ContactName", "Suffix", "Prefix",
+    # contact
+    "Email", "EmailAddress", "Phone", "PhoneNumber", "Telephone", "Extension",
+    # role / title / status
+    "Role", "RoleName", "UserRole", "Roles", "ContactType", "ContactRole",
+    "Title", "JobTitle", "Position", "Department", "Division",
+    "Status", "IsActive", "Active", "AccountStatus",
+    # account / identity
+    "UserId", "UserID", "UserName", "Username", "Login", "LoginName", "GUID",
+    # timestamps
+    "LastLogin", "LastLoginDate", "LastLoginDateTime", "CreatedDate",
+    "CreatedDateTime", "ModifiedDate", "UpdatedDate", "LastUpdated",
+    "DateCreated", "DateModified", "LastModified",
+]
+
+
+def _accepted_name(ds, col):
+    """If the server ACCEPTED `col`, return its canonical (server-echoed)
+    spelling; else None. Prefers the echoed columnName, falls back to the
+    row-dict keys, then to the row width (no echo + width≥2 → accepted, returns
+    the candidate's own spelling). An unknown column is dropped or 500s, so a
+    returned name is a real field."""
+    if ds is None:
+        return None
+    for e in (ds.get("columnName") or []):
+        if str(e).lower() == col.lower():
+            return str(e)
+    cv = ds.get("columnValue")
+    if isinstance(cv, list) and cv:
+        if isinstance(cv[0], dict):
+            for k in cv[0]:
+                if str(k).lower() == col.lower():
+                    return str(k)
+        elif isinstance(cv[0], (list, tuple)) and len(cv[0]) >= 2:
+            return col                      # no echo; accept the candidate spelling
+    return None
+
+
+def _confirm_columns(view, anchor, candidates):
+    """Guess-and-confirm the field list: probe each candidate column alongside a
+    known-good anchor and keep the ones the API accepts, recording the server's
+    canonical spelling. Case variants are all tried (in case MAP is
+    case-sensitive) but the output is deduped by canonical name. Returns the
+    ordered confirmed list (anchor first). One POST per candidate — fine for a
+    dispatch."""
+    print(f"  → guess-and-confirm: {len(candidates)} candidate columns "
+          f"(anchor={anchor!r}) …")
+    confirmed = [anchor]
+    have = {anchor.lower()}
+    tried = set()
+    for c in candidates:
+        if c in tried:
+            continue
+        tried.add(c)
+        if c.lower() in have:
+            continue
+        r = _try(view, [anchor, c])
+        if r["http"] != 200:
+            continue                        # 500/4xx → unknown column rejected
+        name = _accepted_name(r["ds"], c)
+        if name and name.lower() not in have:
+            confirmed.append(name)
+            have.add(name.lower())
+            print(f"    ✓ {name}")
+    print(f"  → confirmed {len(confirmed)} field(s): {confirmed}")
+    return confirmed
+
 
 def _try(view, column_name=None):
     """One POST. Returns {http, ds} (http=200 + ds on success; http=code, ds=None
@@ -185,8 +272,13 @@ def _resolve(label, candidates):
                   f"dataCount={ds.get('dataCount')!r} rows={len(rows)}")
             if rows:
                 print(f"    → REACHABLE with an explicit column list "
-                      f"(no auth needed). Field NAMES still need the MAP Custom "
-                      f"Report Builder UI or the no-column discovery (auth?).")
+                      f"(no auth needed). Running guess-and-confirm to capture "
+                      f"the field list …")
+                cols = _confirm_columns(recognized, SEED_COLUMNS[0], GUESS_COLUMNS)
+                if len(cols) > 1:
+                    return recognized, cols, None
+                print("    → guess-and-confirm found no extra columns; the field "
+                      "names may be non-obvious — fall back to the MAP Builder UI.")
             else:
                 print("    → accepted the column but returned no rows.")
         else:
@@ -202,7 +294,7 @@ def _analyze(view, columns, ds1):
     print(f"\n=== {view}: {len(columns)} FIELDS ===")
     print("FIELDS:", columns)
 
-    rows = _rows(ds1, columns)
+    rows = _rows(ds1, columns) if ds1 else []
     if not rows and columns:
         # Pass 2 — re-request WITH the discovered columns to pull the rows.
         print(f"\n(no values in pass 1 — re-requesting with the {len(columns)} columns…)")
