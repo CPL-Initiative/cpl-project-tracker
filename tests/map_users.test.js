@@ -137,6 +137,40 @@ function makeWin(opts) {
   check("filteredSorted: A–Z sort", api._filteredSorted()[0].college === "A");
 })();
 
+// nudge: recipients filter + mailto building
+(function () {
+  const w = makeWin();
+  const api = w.CPL_MAP_USERS_TAB;
+  const c = {
+    primary_contact: "Pat Lee", primary_contact_email: "pat@x.edu",
+    vpaa: "Sam VP", vpaa_email: "vpaa@x.edu",
+    vpss: "Jo VP", vpss_email: "not-an-email", // dropped (no @)
+  };
+  const recips = api._nudgeRecipients(c);
+  check("nudge recipients: keeps only valid emails", recips.length === 2 && recips.indexOf("pat@x.edu") >= 0 && recips.indexOf("not-an-email") < 0);
+  const mailto = api._buildNudgeMailto("Foothill College", c);
+  check("nudge mailto: starts with mailto:", mailto.indexOf("mailto:") === 0);
+  check("nudge mailto: addresses the valid emails", decodeURIComponent(mailto).indexOf("pat@x.edu") >= 0 && decodeURIComponent(mailto).indexOf("vpaa@x.edu") >= 0);
+  check("nudge mailto: subject names the college", decodeURIComponent(mailto).indexOf("Foothill College") >= 0);
+  check("nudge mailto: no recipients → still a valid mailto (blank To)",
+    api._buildNudgeMailto("X", null).indexOf("mailto:") === 0);
+})();
+
+// render: the 📣 nudge button shows ONLY when signed in
+(function () {
+  const logged = makeWin({ teamPass: "p" });
+  logged.CPL_MAP_USERS_TAB._state.summary = [{ college: "A", user_count: 1, role_mix: { Faculty: 1 } }];
+  const r1 = logged.document.getElementById("map-users-root");
+  logged.CPL_MAP_USERS_TAB.render(r1);
+  check("render: nudge button present when signed in", /data-nudge="A"/.test(r1.innerHTML));
+
+  const out = makeWin();
+  out.CPL_MAP_USERS_TAB._state.summary = [{ college: "A", user_count: 1, role_mix: { Faculty: 1 } }];
+  const r2 = out.document.getElementById("map-users-root");
+  out.CPL_MAP_USERS_TAB.render(r2);
+  check("render: no nudge button when logged out", !/data-nudge=/.test(r2.innerHTML));
+})();
+
 // ── report ──
 let failed = 0;
 for (const [name, ok] of results) { console.log((ok ? "PASS " : "FAIL ") + name); if (!ok) failed++; }
