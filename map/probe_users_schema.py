@@ -184,6 +184,20 @@ GUESS_COLUMNS = [
     "VeteranSchoolCertifyingOfficialEmail",
     "VRCOfficialFromMapCohortApplication", "VRCOfficialFromMapCohortApplicationEmail",
     "VRCOfficialFromMapCohortApplicationPhone",
+    # ── Builder labels VERBATIM, WITH spaces (run #8: VPAA/VPSS ✓ but the
+    # de-spaced *Email/PrimaryContact/LastUpdatedOn all 400'd → the Contacts
+    # email/multi-word columns likely keep the spaces from the Builder label,
+    # since "VPAA" (no space in label) worked but "VPAAEmail" didn't). ──────────
+    "VPAA Email", "VPSS Email", "CEO Email",
+    "Primary Contact", "Primary Contact Email", "Primary Contact Phone",
+    "Last Updated On",
+    "CPL Coordinator", "CPL Coordinator Email",
+    "CPL Counselor Contact", "CPL Counselor Email",
+    "Articulation Officer", "Articulation Officer Email",
+    "Academic Senate President", "Academic Senate President Email",
+    "Faculty Lead", "Faculty Lead Email", "IT Contact", "IT Contact Email",
+    "Lead Initiator", "Lead Initiator Email", "Lead Manager", "Lead Manager Email",
+    "School Certifying Official", "Veteran School Certifying Official Email",
 ]
 
 
