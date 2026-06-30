@@ -121,24 +121,79 @@ def _rows(ds, columns):
     return []
 
 
+# Non-PII columns near-certain to exist on a per-college user/contact view — used
+# ONLY as a *reachability* seed when the no-columnName discovery 500s, to tell
+# "view needs an explicit column list" apart from "view is auth-gated".
+SEED_COLUMNS = ["College"]
+
+
+def _try(view, column_name=None):
+    """One POST. Returns {http, ds} (http=200 + ds on success; http=code, ds=None
+    on an HTTPError; http=None on a URLError)."""
+    payload = {"viewName": view}
+    if column_name:
+        payload["columnName"] = column_name
+    try:
+        return {"http": 200, "ds": _dataset(_post([payload]), view)}
+    except urllib.error.HTTPError as e:
+        return {"http": e.code, "ds": None, "err": str(e)}
+    except urllib.error.URLError as e:
+        return {"http": None, "ds": None, "err": str(e)}
+
+
 def _resolve(label, candidates):
-    """Try each candidate viewName (pass 1); return (view, columns, ds) for the
-    first the API accepts, else (None, [], None)."""
+    """Try each candidate viewName (pass 1, no columnName); return (view, columns, ds)
+    for the first the API ACCEPTS. A clean 400 '… is not Valid' = wrong name → next.
+    An HTTP 500 = the name is RECOGNIZED but the server errored building the report
+    without columns → seed-probe with SEED_COLUMNS to classify auth-gated vs
+    needs-columns, then report. Returns (None, [], None) if nothing was accepted."""
     print(f"\n########## {label} ##########")
+    recognized = None  # first candidate that 500'd (recognized name, blocked)
     for view in candidates:
-        try:
-            ds = _dataset(_post([{"viewName": view}]), view)
-        except (urllib.error.HTTPError, urllib.error.URLError) as e:
-            print(f"  {view}: ERROR fetching: {e}")
-            continue
-        code = ds.get("responseCode") if ds else None
-        msg = ds.get("responseMessage") if ds else None
-        if _is_valid(ds):
-            cols = ds.get("columnName") or []
+        r = _try(view)
+        if r["http"] == 200 and _is_valid(r["ds"]):
+            cols = r["ds"].get("columnName") or []
             print(f"  ✓ {view}: VALID — {len(cols)} fields "
-                  f"(responseCode={code!r} dataCount={ds.get('dataCount')!r})")
-            return view, cols, ds
-        print(f"  ✗ {view}: responseCode={code!r} responseMessage={msg!r}")
+                  f"(responseCode={r['ds'].get('responseCode')!r} "
+                  f"dataCount={r['ds'].get('dataCount')!r})")
+            return view, cols, r["ds"]
+        if r["http"] in (500, 502, 503):
+            # Recognized name (the validity check passed) but the no-column build
+            # errored server-side. Not "is not Valid" — keep it as the real name.
+            print(f"  ⚠ {view}: HTTP {r['http']} (RECOGNIZED name — server errored "
+                  f"building report without columns)")
+            recognized = recognized or view
+            continue
+        if r["http"] != 200:
+            print(f"  ✗ {view}: ERROR fetching: HTTP {r['http']}")
+            continue
+        ds = r["ds"]
+        print(f"  ✗ {view}: responseCode={ds.get('responseCode')!r} "
+              f"responseMessage={ds.get('responseMessage')!r}")
+
+    if recognized:
+        # Reachability seed: name a non-PII column and see if the server returns
+        # data. Success → view works WITH columns (just no self-describe); still
+        # 500/4xx → likely auth-gated (needs MAP_API_KEY) or otherwise blocked.
+        print(f"  → recognized name '{recognized}' but no-column discovery failed. "
+              f"Seed-probing with columnName={SEED_COLUMNS} …")
+        seed = _try(recognized, SEED_COLUMNS)
+        if seed["http"] == 200 and seed["ds"]:
+            ds = seed["ds"]
+            rows = _rows(ds, SEED_COLUMNS)
+            print(f"    seed responseCode={ds.get('responseCode')!r} "
+                  f"dataCount={ds.get('dataCount')!r} rows={len(rows)}")
+            if rows:
+                print(f"    → REACHABLE with an explicit column list "
+                      f"(no auth needed). Field NAMES still need the MAP Custom "
+                      f"Report Builder UI or the no-column discovery (auth?).")
+            else:
+                print("    → accepted the column but returned no rows.")
+        else:
+            print(f"    seed HTTP {seed['http']} → still blocked. Likely AUTH-GATED "
+                  f"(set MAP_API_KEY) — consistent with these being the PII views.")
+        return None, [], None
+
     print(f"  → no candidate accepted for {label}.")
     return None, [], None
 
