@@ -135,6 +135,60 @@ ag2 = {r["id"]: r for r in annual2}
 check("mapped 2.1 with no live KPI value stays manual (288)",
       ag2["2.1"]["current_source"] == "manual" and ag2["2.1"]["current"]["2025-26"] == 288.0)
 
+# ── Population breakdown sub-activities (StarMax fix): the Annual Workplan
+#    "Current" for 3.1.1/3.1.2/3.1.2a flips to live from a STUDENTS-SERVED
+#    breakdown row, so the table matches the headline breakdown (and the card). ─
+rows3 = [
+    {"activity_id": "3", "name": "Activity 3", "row_type": "GOAL", "kind": "activity", "yr_2025_26": "0", "total": "0"},
+    {"activity_id": "3", "name": "Activity 3", "row_type": "STRETCH", "kind": "activity", "yr_2025_26": "0", "total": "0"},
+    {"activity_id": "3.1.1", "name": "Working Adults", "row_type": "GOAL", "kind": "project", "yr_2025_26": "9500", "total": "160000", "current": "21552"},
+    {"activity_id": "3.1.1", "name": "Working Adults", "row_type": "STRETCH", "kind": "project", "yr_2025_26": "39000", "total": "360000"},
+    {"activity_id": "3.1.2", "name": "Veterans & Service Members", "row_type": "GOAL", "kind": "project", "yr_2025_26": "30000", "total": "70000", "current": "22149"},
+    {"activity_id": "3.1.2", "name": "Veterans & Service Members", "row_type": "STRETCH", "kind": "project", "yr_2025_26": "40000", "total": "100000"},
+    {"activity_id": "3.1.2a", "name": "Apprentice Cohort", "row_type": "GOAL", "kind": "project", "yr_2025_26": "500", "total": "20000", "current": "700"},
+    {"activity_id": "3.1.2a", "name": "Apprentice Cohort", "row_type": "STRETCH", "kind": "project", "yr_2025_26": "1000", "total": "40000"},
+]
+assocs3 = [
+    {"project_id": "3.1.1", "activity_id": "3"},
+    {"project_id": "3.1.2", "activity_id": "3"},
+    {"project_id": "3.1.2a", "activity_id": "3"},
+]
+projects3 = [
+    {"id": "3.1.1", "name": "Working Adults", "kpi_metric": "21552"},
+    {"id": "3.1.2", "name": "Veterans & Service Members", "kpi_metric": "22149"},
+    {"id": "3.1.2a", "name": "Apprentice Cohort", "kpi_metric": "700"},
+]
+_a3, _w3, annual3 = e.build_workplan_goals_from_supabase(rows3, assocs3, projects3, None)
+ag3 = {r["id"]: r for r in annual3}
+check("breakdown rows carry current_kpi_breakdown, not current_kpi_key",
+      ag3["3.1.1"]["current_kpi_breakdown"] == ("cumulative_students", "workforce")
+      and ag3["3.1.1"]["current_kpi_key"] is None
+      and ag3["3.1.2"]["current_kpi_breakdown"] == ("cumulative_students", "military")
+      and ag3["3.1.2a"]["current_kpi_breakdown"] == ("cumulative_students", "apprentice"))
+kpis_bd = {"cumulative_students": {"value": "48,176", "breakdowns": [
+    {"label": "Military", "value": "24,864"},
+    {"label": "Workforce/Other", "value": "23,388"},
+    {"label": "Apprentice", "value": "753"},
+]}}
+e.apply_live_workplan_current(annual3, kpis_bd, {"scraped_at": "2026-06-30T16:25:39Z"})
+check("3.1.1 Current flips to live Workforce/Other (23,388)",
+      ag3["3.1.1"]["current_source"] == "live" and ag3["3.1.1"]["current_live_display"] == "23,388")
+check("3.1.2 Current flips to live Military (24,864)",
+      ag3["3.1.2"]["current_source"] == "live" and ag3["3.1.2"]["current_live_display"] == "24,864")
+check("3.1.2a Current flips to live Apprentice (753)",
+      ag3["3.1.2a"]["current_source"] == "live" and ag3["3.1.2a"]["current_live_display"] == "753")
+# Graceful: a KPI with no breakdowns leaves the breakdown rows manual.
+_a3b, _w3b, annual3b = e.build_workplan_goals_from_supabase(rows3, assocs3, projects3, None)
+e.apply_live_workplan_current(annual3b, {"cumulative_students": {"value": "48,176"}}, None)
+ag3b = {r["id"]: r for r in annual3b}
+check("breakdown row stays manual when KPI has no breakdowns",
+      ag3b["3.1.1"]["current_source"] == "manual" and ag3b["3.1.1"]["current"]["2025-26"] == 21552.0)
+# Render the live breakdown rows: read-only badge, verbatim value, not editable.
+html3 = e.render_annual_goals_table_html(annual3, activities=_a3)
+check("render: breakdown live value shown verbatim (24,864)", '24,864' in html3)
+check("render: breakdown live rows are read-only (no data-current-edit)",
+      'data-current-edit="1"' not in html3)
+
 # ── Render: live cell read-only w/ badge; manual cell editable; title span ───
 html = e.render_annual_goals_table_html(annual, activities=acts)
 check("render: live badge present", 'wpg-live-badge' in html and '>live' in html)

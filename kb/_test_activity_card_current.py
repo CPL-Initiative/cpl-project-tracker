@@ -92,6 +92,54 @@ check("3.1 mapped but empty live value -> kept",
       ak2[0]["kpis"][0]["metric"] == "43,630" and
       "metric_source" not in ak2[0]["kpis"][0])
 
+# ── Population breakdown sub-activities (StarMax fix) ────────────────────────
+# 3.1.1 / 3.1.2 / 3.1.2a mirror the STUDENTS-SERVED breakdown rows, NOT a
+# top-level KPI. They were stuck on stale Excel kpi_metric (sad faces in Sam's
+# screenshot) until wired through PID_TO_KPI_BREAKDOWN.
+def make_pop_kpis():
+    return [
+        {"activity_id": "Activity 3", "activity_name": "Activity 3", "kpis": [
+            {"id": "3.1",    "name": "All Populations", "metric": "43,630", "unit": "students"},
+            {"id": "3.1.1",  "name": "Working Adults",  "metric": "21,552", "unit": "adults"},
+            {"id": "3.1.2",  "name": "Veterans",        "metric": "22,149", "unit": "veterans"},
+            {"id": "3.1.2a", "name": "Apprentice",      "metric": "700",    "unit": "apprentices"},
+        ]},
+    ]
+
+pop_kpis = {"cumulative_students": {"value": "48,176", "breakdowns": [
+    {"label": "Military",        "value": "24,864"},
+    {"label": "Workforce/Other", "value": "23,388"},
+    {"label": "Apprentice",      "value": "753"},
+]}}
+pak = make_pop_kpis()
+e.apply_live_activity_current(pak, [], pop_kpis,
+                              live_data={"scraped_at": "2026-06-30T16:25:39Z"})
+pby = {k["id"]: k for k in pak[0]["kpis"]}
+check("3.1.1 Working Adults -> live Workforce/Other breakdown (23,388)",
+      pby["3.1.1"]["metric"] == "23,388" and pby["3.1.1"].get("metric_source") == "live")
+check("3.1.2 Veterans -> live Military breakdown (24,864)",
+      pby["3.1.2"]["metric"] == "24,864" and pby["3.1.2"].get("metric_source") == "live")
+check("3.1.2a Apprentice -> live Apprentice breakdown (753)",
+      pby["3.1.2a"]["metric"] == "753" and pby["3.1.2a"].get("metric_source") == "live")
+check("3.1.2a carries the scrape date", pby["3.1.2a"].get("metric_as_of") == "2026-06-30")
+check("3.1 total still wired to the headline value (48,176)",
+      pby["3.1"]["metric"] == "48,176" and pby["3.1"].get("metric_source") == "live")
+
+# Graceful: no breakdowns on the KPI (Excel-fallback path) → cards kept as-is.
+pak2 = make_pop_kpis()
+e.apply_live_activity_current(pak2, [], {"cumulative_students": {"value": "48,176"}})
+pby2 = {k["id"]: k for k in pak2[0]["kpis"]}
+check("breakdown card kept when KPI has no breakdowns (no regression)",
+      pby2["3.1.1"]["metric"] == "21,552" and "metric_source" not in pby2["3.1.1"])
+
+# _kpi_breakdown_value direct: prefix match, case-insensitive, missing -> None.
+check("_kpi_breakdown_value matches by case-insensitive prefix",
+      e._kpi_breakdown_value(pop_kpis, "cumulative_students", "military") == "24,864")
+check("_kpi_breakdown_value None when label absent",
+      e._kpi_breakdown_value(pop_kpis, "cumulative_students", "nonsense") is None)
+check("_kpi_breakdown_value None when KPI absent",
+      e._kpi_breakdown_value(pop_kpis, "no_such_kpi", "military") is None)
+
 # ── Empty / None inputs are safe no-ops ──────────────────────────────────────
 e.apply_live_activity_current(None, annual_goals, kpis)
 e.apply_live_activity_current([], None, None)
