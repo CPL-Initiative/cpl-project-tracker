@@ -3611,12 +3611,12 @@ def _history_lookup(history, key, days_ago=None, date_str=None):
 def _delta_badge(current, previous, abs_format=False):
     """Return (html_badge, sort_key) showing change from previous to current."""
     if previous is None or previous == 0 or current == 0:
-        return '<span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span>', 0
+        return '<span style="color:var(--text-muted);font-size:0.68rem;">—</span>', 0
     diff = current - previous
     pct  = diff / previous * 100
     if abs(pct) < 0.05:
-        return '<span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span>', 0
-    color = "var(--hunter-on-dark)" if diff >= 0 else "var(--crimson-on-dark)"  # dark trend card
+        return '<span style="color:var(--text-muted);font-size:0.68rem;">—</span>', 0
+    color = "var(--hunter)" if diff >= 0 else "var(--crimson)"  # light trend card — readable on white
     arrow = "▲" if diff >= 0 else "▼"
     if abs_format:
         label = f"{arrow}{abs(diff):,.0f}"
@@ -3676,19 +3676,19 @@ def render_kpi_history_card(history, kpi_params=None):
 
     # Header row
     period_headers = "".join(
-        f'<th style="font-size:0.65rem;color:rgba(255,255,255,0.5);font-weight:600;'
+        f'<th style="font-size:0.65rem;color:var(--text-muted);font-weight:600;'
         f'text-transform:uppercase;padding:0.2rem 0.5rem;text-align:center;'
         f'white-space:nowrap;">{p[0]}</th>'
         for p in PERIODS
     )
     header = (
         f'<tr>'
-        f'<th style="font-size:0.65rem;color:rgba(255,255,255,0.5);font-weight:600;'
+        f'<th style="font-size:0.65rem;color:var(--text-muted);font-weight:600;'
         f'text-transform:uppercase;padding:0.2rem 0.5rem;text-align:left;">Metric</th>'
-        f'<th style="font-size:0.65rem;color:rgba(255,255,255,0.5);font-weight:600;'
+        f'<th style="font-size:0.65rem;color:var(--text-muted);font-weight:600;'
         f'text-transform:uppercase;padding:0.2rem 0.5rem;text-align:right;">Today</th>'
         f'{period_headers}'
-        f'<th style="font-size:0.65rem;color:rgba(255,255,255,0.5);font-weight:600;'
+        f'<th style="font-size:0.65rem;color:var(--text-muted);font-weight:600;'
         f'text-transform:uppercase;padding:0.2rem 0.5rem;text-align:center;">30-Day Trend</th>'
         f'</tr>'
     )
@@ -3701,15 +3701,15 @@ def render_kpi_history_card(history, kpi_params=None):
         current_str = fmt_fn(current)
 
         is_sub = label.startswith("↳")
-        row_style    = "border-top:1px solid rgba(255,255,255,0.04);" if is_sub else "border-top:1px solid rgba(255,255,255,0.06);"
+        row_style    = "border-top:1px solid rgba(28,28,26,0.05);" if is_sub else "border-top:1px solid var(--border);"
         label_style  = (f"padding:0.15rem 0.5rem 0.15rem 1.2rem;font-size:0.68rem;"
-                        f"color:rgba(255,255,255,0.5);white-space:nowrap;{row_style}") if is_sub else \
+                        f"color:var(--text-muted);white-space:nowrap;{row_style}") if is_sub else \
                        (f"padding:0.3rem 0.5rem;font-size:0.75rem;"
-                        f"color:rgba(255,255,255,0.8);white-space:nowrap;{row_style}")
+                        f"color:var(--text-body);white-space:nowrap;{row_style}")
         value_style  = (f"padding:0.15rem 0.5rem;font-size:0.68rem;font-weight:600;"
-                        f"color:rgba(227,179,65,0.65);text-align:right;white-space:nowrap;{row_style}") if is_sub else \
+                        f"color:var(--text-muted);text-align:right;white-space:nowrap;{row_style}") if is_sub else \
                        (f"padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;"
-                        f"color:var(--gold-accent);text-align:right;white-space:nowrap;{row_style}")
+                        f"color:var(--mustard-text);text-align:right;white-space:nowrap;{row_style}")
         cell_style   = f"padding:{'0.15rem' if is_sub else '0.3rem'} 0.5rem;text-align:center;{row_style}"
         spark_style  = f"padding:{'0.15rem' if is_sub else '0.3rem'} 0.8rem;{row_style}"
 
@@ -3722,9 +3722,10 @@ def render_kpi_history_card(history, kpi_params=None):
                 badge = badge.replace("font-size:0.68rem", "font-size:0.62rem")
             delta_cells += f'<td style="{cell_style}">{badge}</td>'
 
-        # Sparkline (smaller for sub-rows)
+        # Sparkline (smaller for sub-rows) — darkened gold for contrast on the
+        # now-light trend card (#E3B341 was a dark-card stroke).
         spark_vals = [e.get(key, 0) for e in recent]
-        spark_color = "rgba(227,179,65,0.5)" if is_sub else "#E3B341"
+        spark_color = "rgba(139,104,0,0.55)" if is_sub else "#8B6800"
         spark_svg   = _sparkline_svg(spark_vals, height=20 if is_sub else 30, color=spark_color)
 
         rows_html += (
@@ -3743,19 +3744,19 @@ def render_kpi_history_card(history, kpi_params=None):
     aq_label   = _academic_quarter(today_dt)
 
     html = f"""
-    <div style="grid-column:1/-1;background:var(--navy-primary);border-radius:8px;
+    <div style="grid-column:1/-1;background:var(--surface-opaque);border:1px solid var(--border);border-radius:8px;
                 border-top:4px solid var(--gold-accent);padding:1.2rem 1.5rem;
-                box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+                box-shadow:0 8px 30px rgba(20,20,30,0.08);">
       <div style="display:flex;align-items:baseline;justify-content:space-between;
                   margin-bottom:0.8rem;">
         <div>
           <span style="font-family:Georgia,serif;font-size:1rem;font-weight:bold;
-                       color:var(--gold-accent);">&#128200; KPI Trends</span>
-          <span style="font-size:0.7rem;color:rgba(255,255,255,0.45);margin-left:0.8rem;">
+                       color:var(--mustard-text);">&#128200; KPI Trends</span>
+          <span style="font-size:0.7rem;color:var(--text-muted);margin-left:0.8rem;">
             Academic {aq_label} &nbsp;·&nbsp; QTD resets each academic quarter (Jul/Oct/Jan/Apr)
           </span>
         </div>
-        <span style="font-size:0.65rem;color:rgba(255,255,255,0.35);">{since_note}</span>
+        <span style="font-size:0.65rem;color:var(--text-muted);">{since_note}</span>
       </div>
       <div style="overflow-x:auto;">
         <table style="width:100%;border-collapse:collapse;">
@@ -8865,7 +8866,7 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
 
     def pct_bar(pct_val):
         w = min(pct_val, 100)
-        return (f'<div style="display:inline-block;width:60px;height:8px;background:rgba(255,255,255,0.1);'
+        return (f'<div style="display:inline-block;width:60px;height:8px;background:rgba(28,28,26,0.08);'
                 f'border-radius:4px;vertical-align:middle;margin-left:6px;">'
                 f'<div style="width:{w}%;height:100%;background:var(--gold-accent);border-radius:4px;"></div></div>')
 
@@ -9274,16 +9275,16 @@ EXHIBIT_ANALYSIS_CSS = """
     margin: 0 auto;
 }
 .exhibit-card {
-    background: var(--navy-primary);
-    border: 1px solid rgba(227,179,65,0.25);
+    background: var(--surface-opaque);
+    border: 1px solid var(--border);
     border-top: 4px solid var(--gold-accent);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 30px rgba(20,20,30,0.08);
 }
 .exhibit-card-header {
     padding: 0.8rem 1rem 0.5rem;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid var(--border);
 }
 .exhibit-card-title-row {
     display: flex;
@@ -9294,11 +9295,11 @@ EXHIBIT_ANALYSIS_CSS = """
 .exhibit-card-title {
     font-size: 0.95rem;
     font-weight: 700;
-    color: var(--gold-accent);
+    color: var(--mustard-text);
 }
 .exhibit-card-subtitle {
     font-size: 0.7rem;
-    color: rgba(255,255,255,0.55);
+    color: var(--text-muted);
     margin-top: 2px;
 }
 .analytics-export-btn {
@@ -9306,7 +9307,7 @@ EXHIBIT_ANALYSIS_CSS = """
     align-items: center;
     gap: 0.25rem;
     background: transparent;
-    color: var(--gold-accent);
+    color: var(--mustard-text);
     border: 1px solid rgba(227,179,65,0.5);
     padding: 4px 10px;
     border-radius: 4px;
@@ -9322,7 +9323,7 @@ EXHIBIT_ANALYSIS_CSS = """
 }
 .exhibit-total-row td {
     background: rgba(227,179,65,0.12);
-    color: var(--gold-accent);
+    color: var(--mustard-text);
     font-weight: 700;
     border-top: 2px solid rgba(227,179,65,0.4);
     position: sticky;
@@ -9337,8 +9338,8 @@ EXHIBIT_ANALYSIS_CSS = """
 .exhibit-card-footer {
     padding: 0.45rem 1rem;
     font-size: 0.64rem;
-    color: rgba(255,255,255,0.38);
-    border-top: 1px solid rgba(255,255,255,0.06);
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
     font-style: italic;
 }
 .exhibit-card-body::-webkit-scrollbar { width: 6px; height: 6px; }
@@ -9348,7 +9349,7 @@ EXHIBIT_ANALYSIS_CSS = """
     width: 100%;
     border-collapse: collapse;
     font-size: 0.72rem;
-    color: rgba(255,255,255,0.85);
+    color: var(--text-body);
 }
 .exhibit-table thead {
     position: sticky;
@@ -9356,15 +9357,15 @@ EXHIBIT_ANALYSIS_CSS = """
     z-index: 2;
 }
 .exhibit-table th {
-    background: rgba(28,28,26,0.98);
-    color: var(--gold-accent);
+    background: var(--surface-muted);
+    color: var(--mustard-text);
     font-size: 0.65rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.03em;
     padding: 0.45rem 0.5rem;
     text-align: left;
-    border-bottom: 1px solid rgba(227,179,65,0.3);
+    border-bottom: 1px solid rgba(227,179,65,0.4);
     white-space: nowrap;
 }
 /* CSC-G phase 2 — per-column header alignment so numeric / percent headers
@@ -9375,11 +9376,11 @@ EXHIBIT_ANALYSIS_CSS = """
 .exhibit-table th.exhibit-th-name { text-align: left; }
 .exhibit-table td {
     padding: 0.35rem 0.5rem;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(28,28,26,0.06);
     vertical-align: top;
 }
 .exhibit-table tbody tr:hover {
-    background: rgba(227,179,65,0.06);
+    background: rgba(227,179,65,0.10);
 }
 .exhibit-cell-name {
     max-width: 280px;
@@ -9391,7 +9392,7 @@ EXHIBIT_ANALYSIS_CSS = """
 /* EACR Phase 4 PR-C2 — supporting elements around the unified-title card name. */
 .sw-issuer-subtitle {
     font-size: 0.7rem;
-    color: rgba(255,255,255,0.55);
+    color: var(--text-muted);
     margin-top: 1px;
     font-style: italic;
     white-space: nowrap;
@@ -9415,25 +9416,25 @@ EXHIBIT_ANALYSIS_CSS = """
 }
 .sw-conf-badge {
     background: rgba(227,179,65,0.18);
-    color: var(--gold-accent);
+    color: var(--mustard-text);
     border: 1px solid rgba(227,179,65,0.4);
 }
 .sw-conf-low {
-    background: rgba(207,143,143,0.18);
-    color: var(--crimson-on-dark);
-    border-color: rgba(207,143,143,0.4);
+    background: rgba(146,0,0,0.10);
+    color: var(--crimson);
+    border-color: rgba(146,0,0,0.3);
 }
 .sw-quality-badge {
-    background: rgba(207,143,143,0.15);
-    color: var(--crimson-on-dark);
-    border: 1px solid rgba(207,143,143,0.3);
+    background: rgba(146,0,0,0.08);
+    color: var(--crimson);
+    border: 1px solid rgba(146,0,0,0.25);
 }
 .sw-also-entered {
     margin-top: 3px;
 }
 .sw-also-entered > summary {
     font-size: 0.7rem;
-    color: rgba(125,161,212,0.85);
+    color: var(--cobalt);
     cursor: pointer;
     list-style: none;
     user-select: none;
@@ -9448,14 +9449,14 @@ EXHIBIT_ANALYSIS_CSS = """
     transform: rotate(90deg);
 }
 .sw-also-entered > summary:hover {
-    color: var(--gold-accent);
+    color: var(--mustard-text);
 }
 .sw-raw-titles {
     list-style: none;
     margin: 4px 0 0;
     padding: 0 0 0 14px;
     font-size: 0.7rem;
-    color: rgba(255,255,255,0.6);
+    color: var(--text-muted);
 }
 .sw-raw-titles li {
     padding: 1px 0;
@@ -9473,7 +9474,7 @@ EXHIBIT_ANALYSIS_CSS = """
 .exhibit-cell-pct {
     text-align: right;
     white-space: nowrap;
-    color: rgba(255,255,255,0.6);
+    color: var(--text-muted);
 }
 /* Full-width card (statewide adoption) */
 .exhibit-card-full {
@@ -9493,65 +9494,65 @@ EXHIBIT_ANALYSIS_CSS = """
     white-space: nowrap;
 }
 .sw-adopted {
-    background: rgba(44,96,26,0.25);
-    color: var(--hunter-on-dark);
-    border: 1px solid rgba(44,96,26,0.4);
+    background: rgba(44,96,26,0.16);
+    color: var(--hunter);
+    border: 1px solid rgba(44,96,26,0.35);
 }
 .sw-potential {
-    background: rgba(227,179,65,0.12);
-    color: var(--gold-accent);
-    border: 1px solid rgba(227,179,65,0.25);
+    background: rgba(227,179,65,0.16);
+    color: var(--mustard-text);
+    border: 1px solid rgba(227,179,65,0.35);
 }
 /* ═══ Interactive Statewide Card ═══ */
 #statewide-interactive-container { grid-column: 1 / -1; }
-.sw-interactive { background:rgba(28,28,26,0.85); border:1px solid rgba(227,179,65,0.25); border-radius:10px; overflow:hidden; }
-.sw-toolbar { padding:0.8rem 1rem; display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; border-bottom:1px solid rgba(255,255,255,0.08); }
-.sw-toolbar input[type=text] { flex:1 1 200px; padding:0.4rem 0.6rem; border:1px solid rgba(255,255,255,0.2); border-radius:5px; background:rgba(255,255,255,0.06); color:#fff; font-size:0.78rem; outline:none; }
-.sw-toolbar input[type=text]:focus { border-color:var(--gold-accent); }
-.sw-toolbar input[type=text]::placeholder { color:rgba(255,255,255,0.35); }
+.sw-interactive { background:var(--surface-opaque); border:1px solid var(--border); border-radius:10px; overflow:hidden; box-shadow:0 8px 30px rgba(20,20,30,0.08); }
+.sw-toolbar { padding:0.8rem 1rem; display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; border-bottom:1px solid var(--border); }
+.sw-toolbar input[type=text] { flex:1 1 200px; padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:5px; background:#fff; color:var(--text-body); font-size:0.78rem; outline:none; }
+.sw-toolbar input[type=text]:focus { border-color:var(--cobalt); }
+.sw-toolbar input[type=text]::placeholder { color:var(--text-muted); }
 .sw-filter-group { position:relative; display:inline-block; }
-.sw-filter-btn { padding:0.35rem 0.7rem; border:1px solid rgba(255,255,255,0.2); border-radius:5px; background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.8); font-size:0.72rem; cursor:pointer; white-space:nowrap; }
-.sw-filter-btn:hover, .sw-filter-btn.active { border-color:var(--gold-accent); color:var(--gold-accent); }
-.sw-filter-dropdown { display:none; position:absolute; top:100%; left:0; z-index:100; min-width:220px; max-height:280px; overflow-y:auto; background:#2A2A26; border:1px solid rgba(227,179,65,0.3); border-radius:6px; box-shadow:0 6px 20px rgba(0,0,0,0.5); margin-top:4px; }
+.sw-filter-btn { padding:0.35rem 0.7rem; border:1px solid var(--border); border-radius:5px; background:var(--surface-subtle); color:var(--text-body); font-size:0.72rem; cursor:pointer; white-space:nowrap; }
+.sw-filter-btn:hover, .sw-filter-btn.active { border-color:var(--mustard-text); color:var(--mustard-text); }
+.sw-filter-dropdown { display:none; position:absolute; top:100%; left:0; z-index:100; min-width:220px; max-height:280px; overflow-y:auto; background:var(--surface-opaque); border:1px solid var(--border); border-radius:6px; box-shadow:0 6px 20px rgba(20,20,30,0.14); margin-top:4px; }
 .sw-filter-dropdown.open { display:block; }
-.sw-filter-dropdown label { display:flex; align-items:center; gap:0.4rem; padding:0.3rem 0.6rem; font-size:0.7rem; color:rgba(255,255,255,0.8); cursor:pointer; }
-.sw-filter-dropdown label:hover { background:rgba(227,179,65,0.1); }
+.sw-filter-dropdown label { display:flex; align-items:center; gap:0.4rem; padding:0.3rem 0.6rem; font-size:0.7rem; color:var(--text-body); cursor:pointer; }
+.sw-filter-dropdown label:hover { background:rgba(227,179,65,0.12); }
 .sw-filter-dropdown input[type=checkbox] { accent-color:var(--accent-link); }
-.sw-filter-search { width:calc(100% - 1rem); margin:0.4rem 0.5rem; padding:0.3rem 0.5rem; border:1px solid rgba(255,255,255,0.15); border-radius:4px; background:rgba(255,255,255,0.05); color:#fff; font-size:0.68rem; }
-.sw-action-bar { padding:0.5rem 1rem; display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; border-bottom:1px solid rgba(255,255,255,0.06); }
-.sw-action-btn { padding:0.35rem 0.9rem; border:1px solid rgba(227,179,65,0.4); border-radius:5px; background:rgba(227,179,65,0.1); color:var(--gold-accent); font-size:0.72rem; font-weight:600; cursor:pointer; transition:all 0.15s; }
+.sw-filter-search { width:calc(100% - 1rem); margin:0.4rem 0.5rem; padding:0.3rem 0.5rem; border:1px solid var(--border); border-radius:4px; background:#fff; color:var(--text-body); font-size:0.68rem; }
+.sw-action-bar { padding:0.5rem 1rem; display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; border-bottom:1px solid var(--border); }
+.sw-action-btn { padding:0.35rem 0.9rem; border:1px solid rgba(227,179,65,0.5); border-radius:5px; background:rgba(227,179,65,0.12); color:var(--mustard-text); font-size:0.72rem; font-weight:600; cursor:pointer; transition:all 0.15s; }
 .sw-action-btn:hover { background:rgba(227,179,65,0.25); }
 .sw-action-btn.primary { background:var(--gold-accent); color:var(--navy-primary); border-color:var(--gold-accent); }
 .sw-action-btn.primary:hover { background:#EBC25D; }
-.sw-count { font-size:0.7rem; color:rgba(255,255,255,0.5); margin-left:auto; }
-.sw-table-wrap { max-height:600px; overflow:auto; scrollbar-width:thin; scrollbar-color:rgba(227,179,65,0.3) transparent; }
+.sw-count { font-size:0.7rem; color:var(--text-muted); margin-left:auto; }
+.sw-table-wrap { max-height:600px; overflow:auto; scrollbar-width:thin; scrollbar-color:rgba(227,179,65,0.4) transparent; }
 .sw-table-wrap::-webkit-scrollbar { width:6px; height:6px; }
-.sw-table-wrap::-webkit-scrollbar-thumb { background:rgba(227,179,65,0.3); border-radius:3px; }
+.sw-table-wrap::-webkit-scrollbar-thumb { background:rgba(227,179,65,0.4); border-radius:3px; }
 .sw-chk { accent-color:var(--accent-link); cursor:pointer; }
-.sw-row-selected { background:rgba(227,179,65,0.08) !important; }
+.sw-row-selected { background:rgba(227,179,65,0.12) !important; }
 /* Badges */
 .sw-badge { display:inline-block; font-size:0.58rem; font-weight:700; padding:1px 5px; border-radius:3px; text-transform:uppercase; letter-spacing:0.03em; }
-.sw-badge-ccc { background:rgba(44,96,26,0.25); color:var(--hunter-on-dark); border:1px solid rgba(44,96,26,0.4); }
-.sw-badge-local { background:rgba(125,161,212,0.15); color:var(--cobalt-on-dark); border:1px solid rgba(125,161,212,0.3); }
+.sw-badge-ccc { background:rgba(44,96,26,0.16); color:var(--hunter); border:1px solid rgba(44,96,26,0.35); }
+.sw-badge-local { background:rgba(0,71,171,0.10); color:var(--cobalt); border:1px solid rgba(0,71,171,0.25); }
 /* Credit recs toggle */
-.sw-recs-toggle { cursor:pointer; color:var(--gold-accent); font-weight:600; }
+.sw-recs-toggle { cursor:pointer; color:var(--mustard-text); font-weight:600; }
 .sw-recs-toggle:hover { text-decoration:underline; }
 /* Credit recs panel */
-.sw-recs-panel { background:rgba(0,0,0,0.2); border:1px solid rgba(227,179,65,0.15); border-radius:6px; padding:0.4rem 0.6rem; max-height:200px; overflow-y:auto; }
+.sw-recs-panel { background:var(--surface-subtle); border:1px solid var(--border); border-radius:6px; padding:0.4rem 0.6rem; max-height:200px; overflow-y:auto; }
 .sw-recs-row td { padding:0 !important; border-bottom:none !important; }
 /* Pagination */
-.sw-pagination { display:flex; justify-content:center; align-items:center; gap:4px; padding:0.6rem 1rem; border-top:1px solid rgba(255,255,255,0.06); }
-.sw-page-btn { padding:4px 10px; border:1px solid rgba(255,255,255,0.15); border-radius:4px; background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.7); font-size:0.68rem; cursor:pointer; }
-.sw-page-btn:hover:not([disabled]) { background:rgba(227,179,65,0.15); border-color:var(--gold-accent); color:var(--gold-accent); }
-.sw-page-btn.active { background:rgba(227,179,65,0.25); border-color:var(--gold-accent); color:var(--gold-accent); font-weight:700; }
+.sw-pagination { display:flex; justify-content:center; align-items:center; gap:4px; padding:0.6rem 1rem; border-top:1px solid var(--border); }
+.sw-page-btn { padding:4px 10px; border:1px solid var(--border); border-radius:4px; background:var(--surface-subtle); color:var(--text-body); font-size:0.68rem; cursor:pointer; }
+.sw-page-btn:hover:not([disabled]) { background:rgba(227,179,65,0.18); border-color:var(--mustard-text); color:var(--mustard-text); }
+.sw-page-btn.active { background:rgba(227,179,65,0.25); border-color:var(--mustard-text); color:var(--mustard-text); font-weight:700; }
 .sw-page-btn[disabled] { opacity:0.3; cursor:default; }
 /* Show more link */
-.sw-show-more { cursor:pointer; color:var(--gold-accent); font-size:0.62rem; font-weight:600; }
+.sw-show-more { cursor:pointer; color:var(--mustard-text); font-size:0.62rem; font-weight:600; }
 .sw-show-more:hover { text-decoration:underline; }
 /* Inline credit recs */
-.sw-credit-recs { margin-top:0.25rem; padding-top:0.2rem; border-top:1px solid rgba(255,255,255,0.05); }
-.sw-rec-line { font-size:0.64rem; color:rgba(255,255,255,0.55); line-height:1.5; padding:1px 0; }
-.sw-rec-course { font-size:0.58rem; color:rgba(227,179,65,0.5); }
+.sw-credit-recs { margin-top:0.25rem; padding-top:0.2rem; border-top:1px solid var(--border); }
+.sw-rec-line { font-size:0.64rem; color:var(--text-muted); line-height:1.5; padding:1px 0; }
+.sw-rec-course { font-size:0.58rem; color:var(--mustard-text); }
 /* ═══ Projects inline editor (Phase 2 PR-5 — projects_editor.js) ═══ */
 .proj-auth-widget { margin:0 0 1rem 0; padding:0.75rem 1rem; background:var(--surface-subtle); border-radius:8px; font-size:0.85rem; color:var(--navy-primary); display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; }
 .proj-auth-widget input[type=email] { padding:0.35rem 0.5rem; border:1px solid #ccc; border-radius:5px; font-size:0.8rem; min-width:180px; }

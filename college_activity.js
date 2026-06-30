@@ -10,7 +10,7 @@
  * the data blobs, preventing layout regressions.
  */
     (function() {
-      const GOLD = '#E3B341', GREEN = '#89A67F', AMBER = '#FF9800', BLUE = '#7DA1D4', RED = '#CF8F8F';
+      const GOLD = '#8B6800', GREEN = '#2C601A', AMBER = '#FF9800', BLUE = '#0047AB', RED = '#920000';
 
       // Data embedded from Python
       const allData = window.COLLEGE_ACTIVITY_DATA || [];
@@ -53,8 +53,8 @@
         if (n >= 1000) return Math.round(n / 1000) + 'k';
         return n.toLocaleString();
       }
-      function tierColor(t) { return t === 'Leading' ? GOLD : (t === 'Advancing' ? BLUE : 'rgba(255,255,255,0.3)'); }
-      function bc(r) { return r >= 50 ? GREEN : (r >= 25 ? AMBER : 'rgba(255,255,255,0.25)'); }
+      function tierColor(t) { return t === 'Leading' ? GOLD : (t === 'Advancing' ? BLUE : '#5C5C55'); }
+      function bc(r) { return r >= 50 ? GREEN : (r >= 25 ? AMBER : '#8A867E'); }
 
       // ── Get effective exhibit values when discipline filter is active ──
       function getExhibitVals(row) {
@@ -92,13 +92,13 @@
           ? filteredData.filter(r => { const cd = collegeDisciplineDetail[r.college]; return cd && cd[disciplineFilter.value]; }).length
           : allDiscs.size;
 
-        const s = 'font-size:0.67rem;font-weight:700;padding:0.3rem 0.3rem;text-align:right;color:rgba(255,255,255,0.9);';
+        const s = 'font-size:0.67rem;font-weight:700;padding:0.3rem 0.3rem;text-align:right;color:#1C1C1A;';
         totalsRow.innerHTML = `<tr style="background:rgba(201,168,76,0.08);">
           <td style="${s}text-align:center;" colspan="2">
             <span style="font-size:0.63rem;color:${GOLD};font-weight:700;">${filteredData.length}</span>
           </td>
           <td style="${s}text-align:left;color:${GOLD};">Totals</td>
-          <td style="${s}text-align:left;font-size:0.6rem;color:rgba(255,255,255,0.5);">${filteredData.length} colleges</td>
+          <td style="${s}text-align:left;font-size:0.6rem;color:#5C5C55;">${filteredData.length} colleges</td>
           <td style="${s}">${fmtN(sums.students)}</td>
           <td style="${s}">${fmtN(sums.veterans)}</td>
           <td style="${s}">${fmtN(sums.working_adults)}</td>
@@ -119,19 +119,19 @@
         tableBody.innerHTML = '';
         filteredData.forEach(row => {
           const tr = document.createElement('tr');
-          tr.style.borderBottom = '1px solid rgba(255,255,255,0.04)';
+          tr.style.borderBottom = '1px solid rgba(28,28,26,0.08)';
           const tc = tierColor(row.tier);
-          const nc = row.tier === 'Leading' ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.75)';
+          const nc = row.tier === 'Leading' ? '#1C1C1A' : '#3A3A36';
           const brc = bc(row.trans_rate);
           const ev = getExhibitVals(row);
 
           const star = row.criteria_met >= 1 ? '&#11088;' : '';
           const dots = Array(5).fill(0).map((_,i) =>
-            '<span style="color:' + (i < row.criteria_met ? GOLD : 'rgba(255,255,255,0.15)') + ';font-size:0.7rem;">' + (i < row.criteria_met ? '●' : '○') + '</span>'
+            '<span style="color:' + (i < row.criteria_met ? GOLD : '#D5D2CB') + ';font-size:0.7rem;">' + (i < row.criteria_met ? '●' : '○') + '</span>'
           ).join('');
 
           let laHtml = '—';
-          let laColor = 'rgba(255,255,255,0.2)';
+          let laColor = '#8A867E';
           if (row.last_activity_days !== null) {
             const d = row.last_activity_days;
             laColor = d <= 30 ? GREEN : (d <= 90 ? AMBER : RED);
@@ -145,24 +145,24 @@
             </td>
             <td style="padding:0.2rem 0.2rem;text-align:center;font-size:0.7rem;">${star}</td>
             <td style="padding:0.2rem 0.3rem;font-size:0.68rem;color:${nc};white-space:nowrap;">${row.college}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.6rem;color:rgba(255,255,255,0.5);max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${row.district}">${row.district}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:rgba(255,255,255,0.8);text-align:right;">${fmtN(row.students)}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#7EC8E3;text-align:right;">${fmtN(row.veterans)}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:rgba(255,255,255,0.7);text-align:right;">${fmtN(row.working_adults)}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:rgba(255,255,255,0.7);text-align:right;">${fmtN(row.apprentices)}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:rgba(255,255,255,0.7);text-align:right;">${fmtU(row.eligible_units)}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:rgba(255,255,255,0.7);text-align:right;">${fmtU(row.transcribed_units)}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:rgba(255,255,255,0.7);text-align:right;">${fmtN(ev.exhibits)}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:rgba(255,255,255,0.7);text-align:right;">${fmtN(ev.credit_recs)}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:rgba(255,255,255,0.7);text-align:right;">${ev.disciplines}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:rgba(255,255,255,0.7);text-align:right;">${fmtD(row.savings)}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:rgba(255,255,255,0.7);text-align:right;">${fmtD(row.year_impact)}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.6rem;color:#5C5C55;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${row.district}">${row.district}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${fmtN(row.students)}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#0047AB;text-align:right;">${fmtN(row.veterans)}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${fmtN(row.working_adults)}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${fmtN(row.apprentices)}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${fmtU(row.eligible_units)}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${fmtU(row.transcribed_units)}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${fmtN(ev.exhibits)}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${fmtN(ev.credit_recs)}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${ev.disciplines}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${fmtD(row.savings)}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${fmtD(row.year_impact)}</td>
             <td style="padding:0.2rem 0.3rem;text-align:center;">
               <div style="display:flex;align-items:center;gap:3px;justify-content:center;">
-                <div style="width:40px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;">
+                <div style="width:40px;height:5px;background:#E6E3DC;border-radius:3px;overflow:hidden;">
                   <div style="width:${Math.min(row.trans_rate/100,1)*40}px;height:100%;background:${brc};border-radius:3px;"></div>
                 </div>
-                <span style="font-size:0.6rem;color:rgba(255,255,255,0.6);">${row.trans_rate.toFixed(0)}%</span>
+                <span style="font-size:0.6rem;color:#5C5C55;">${row.trans_rate.toFixed(0)}%</span>
               </div>
             </td>
             <td style="padding:0.2rem 0.3rem;text-align:center;">${dots}</td>
@@ -239,7 +239,7 @@
             position:'fixed', bottom:'2rem', right:'2rem', padding:'0.75rem 1.25rem',
             background:'rgba(46,204,113,0.95)', color:'#fff', borderRadius:'8px',
             fontSize:'0.85rem', fontWeight:'600', zIndex:'99999',
-            boxShadow:'0 4px 20px rgba(0,0,0,0.3)', opacity:'0',
+            boxShadow:'0 6px 20px rgba(20,20,30,0.2)', opacity:'0',
             transition:'opacity 0.3s ease', pointerEvents:'none'
           });
           document.body.appendChild(toast);

@@ -1,17 +1,18 @@
-    <div style="grid-column:1/-1;background:var(--navy-primary);border-radius:8px;
+    <div style="grid-column:1/-1;background:var(--surface-opaque);border-radius:8px;
+                border:1px solid var(--border);
                 border-top:4px solid var(--gold-accent);padding:1.2rem 1.5rem;
-                box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+                box-shadow:0 8px 30px rgba(20,20,30,0.08);">
 
       <!-- Header -->
       <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:1rem;">
-        <span style="font-family:Georgia,serif;font-size:1rem;font-weight:bold;color:var(--gold-accent);">
+        <span style="font-family:Georgia,serif;font-size:1rem;font-weight:bold;color:var(--mustard-text);">
           &#127942; College Activity
         </span>
         <div style="display:flex;gap:0.8rem;align-items:center;flex-wrap:wrap;">
-          <span style="font-size:0.55rem;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;color:var(--gold-accent);border:1px solid var(--gold-accent);border-radius:2px;padding:0.04rem 0.25rem;white-space:nowrap;">Leading</span>
-          <span style="font-size:0.55rem;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;color:var(--cobalt-on-dark);border:1px solid var(--cobalt-on-dark);border-radius:2px;padding:0.04rem 0.25rem;white-space:nowrap;">Advancing</span>
-          <span style="font-size:0.55rem;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;color:rgba(255,255,255,0.3);border:1px solid rgba(255,255,255,0.3);border-radius:2px;padding:0.04rem 0.25rem;white-space:nowrap;">Inactive</span>
-          <span style="font-size:0.64rem;color:rgba(255,255,255,0.28);">As of __AS_OF_DATE__</span>
+          <span style="font-size:0.55rem;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;color:var(--mustard-text);border:1px solid var(--gold-accent);border-radius:2px;padding:0.04rem 0.25rem;white-space:nowrap;">Leading</span>
+          <span style="font-size:0.55rem;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;color:var(--cobalt);border:1px solid var(--cobalt);border-radius:2px;padding:0.04rem 0.25rem;white-space:nowrap;">Advancing</span>
+          <span style="font-size:0.55rem;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;color:var(--text-muted);border:1px solid var(--border);border-radius:2px;padding:0.04rem 0.25rem;white-space:nowrap;">Inactive</span>
+          <span style="font-size:0.64rem;color:var(--text-muted);">As of __AS_OF_DATE__</span>
         </div>
       </div>
 
@@ -19,11 +20,11 @@
       <div style="margin-bottom:0.6rem;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;">
         <input id="collegeSearchBox" type="text" placeholder="Search college..."
                style="flex:1;min-width:140px;max-width:220px;padding:0.35rem 0.5rem;font-size:0.68rem;
-                      background:#2A2A26;border:1px solid var(--gold-accent);
-                      border-radius:4px;color:#fff;outline:none;appearance:none;-webkit-appearance:none;" />
+                      background:#fff;border:1px solid var(--border);
+                      border-radius:4px;color:var(--text-body);outline:none;appearance:none;-webkit-appearance:none;" />
         <select id="caDistrictFilter" style="padding:0.35rem 0.3rem;font-size:0.68rem;max-width:200px;
-                      background:#2A2A26;border:1px solid var(--gold-accent);
-                      border-radius:4px;color:#fff;outline:none;appearance:none;-webkit-appearance:none;">
+                      background:#fff;border:1px solid var(--border);
+                      border-radius:4px;color:var(--text-body);outline:none;appearance:none;-webkit-appearance:none;">
           <option value="">All Districts</option>
           <option value="Antelope Valley Community College District">Antelope Valley Community College District</option>
           <option value="Barstow Community College District">Barstow Community College District</option>
@@ -101,16 +102,16 @@
           <option value="Yuba Community College District">Yuba Community College District</option>
         </select>
         <select id="tierFilter" style="padding:0.35rem 0.3rem;font-size:0.68rem;
-                      background:#2A2A26;border:1px solid var(--gold-accent);
-                      border-radius:4px;color:#fff;outline:none;appearance:none;-webkit-appearance:none;">
+                      background:#fff;border:1px solid var(--border);
+                      border-radius:4px;color:var(--text-body);outline:none;appearance:none;-webkit-appearance:none;">
           <option value="">All Tiers</option>
           <option value="Leading">Leading</option>
           <option value="Advancing">Advancing</option>
           <option value="Inactive">Inactive</option>
         </select>
         <select id="caDisciplineFilter" style="padding:0.35rem 0.3rem;font-size:0.68rem;max-width:200px;
-                      background:#2A2A26;border:1px solid var(--gold-accent);
-                      border-radius:4px;color:#fff;outline:none;appearance:none;-webkit-appearance:none;">
+                      background:#fff;border:1px solid var(--border);
+                      border-radius:4px;color:var(--text-body);outline:none;appearance:none;-webkit-appearance:none;">
           <option value="">All Disciplines</option>
           <option value="Agriculture and Natural Resources">Agriculture and Natural Resources</option>
           <option value="Architecture and Related Technologies">Architecture and Related Technologies</option>
@@ -140,10 +141,10 @@
                         background:var(--gold-accent);color:#000;border:none;border-radius:3px;
                         cursor:pointer;font-weight:bold;">Excel</button>
           <button id="exportCSVBtn" style="padding:0.3rem 0.5rem;font-size:0.63rem;
-                        background:var(--cobalt-on-dark);color:#fff;border:none;border-radius:3px;
+                        background:var(--cobalt);color:#fff;border:none;border-radius:3px;
                         cursor:pointer;font-weight:bold;">CSV</button>
           <button id="exportJSONBtn" style="padding:0.3rem 0.5rem;font-size:0.63rem;
-                        background:var(--hunter-on-dark);color:#fff;border:none;border-radius:3px;
+                        background:var(--hunter);color:#fff;border:none;border-radius:3px;
                         cursor:pointer;font-weight:bold;">JSON</button>
           <button id="caCustomReportBtn" style="padding:0.3rem 0.6rem;font-size:0.63rem;
                         background:linear-gradient(135deg,var(--gold-accent),#FF9800);color:#000;border:none;border-radius:3px;
@@ -152,100 +153,100 @@
       </div>
 
       <!-- Main Table Container -->
-      <div style="max-height:600px;overflow-y:auto;border:1px solid rgba(255,255,255,0.07);
+      <div style="max-height:600px;overflow-y:auto;border:1px solid var(--border);
                   border-radius:4px;scrollbar-width:thin;
-                  scrollbar-color:rgba(255,255,255,0.2) transparent;">
+                  scrollbar-color:var(--border) transparent;">
         <table id="collegeActivityTable" style="width:100%;border-collapse:collapse;">
-          <thead style="position:sticky;top:0;z-index:10;background:var(--navy-primary);
-                       border-bottom:2px solid rgba(255,255,255,0.1);">
+          <thead style="position:sticky;top:0;z-index:10;background:var(--surface-muted);
+                       border-bottom:2px solid var(--border);">
             <tr>
-              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:var(--text-muted);
                         text-align:center;cursor:pointer;" data-sort="tier">
                 Tier <span class="sort-indicator"></span>
               </th>
-              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:var(--text-muted);
                         text-align:center;">★</th>
-              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:var(--text-muted);
                         text-align:left;cursor:pointer;" data-sort="college">
                 College <span class="sort-indicator"></span>
               </th>
-              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:var(--text-muted);
                         text-align:left;cursor:pointer;" data-sort="district">
                 District <span class="sort-indicator"></span>
               </th>
-              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:var(--text-muted);
                         text-align:right;cursor:pointer;" data-sort="students">
                 Students <span class="sort-indicator"></span>
               </th>
-              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:var(--text-muted);
                         text-align:right;cursor:pointer;" data-sort="veterans">
                 Veterans <span class="sort-indicator"></span>
               </th>
-              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:var(--text-muted);
                         text-align:right;cursor:pointer;" data-sort="working_adults">
                 Working <span class="sort-indicator"></span>
               </th>
-              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:var(--text-muted);
                         text-align:right;cursor:pointer;" data-sort="apprentices">
                 Apprentices <span class="sort-indicator"></span>
               </th>
-              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:var(--text-muted);
                         text-align:right;cursor:pointer;" data-sort="eligible_units">
                 Eligible Units <span class="sort-indicator"></span>
               </th>
-              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:var(--text-muted);
                         text-align:right;cursor:pointer;" data-sort="transcribed_units">
                 Transcribed <span class="sort-indicator"></span>
               </th>
-              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:var(--text-muted);
                         text-align:right;cursor:pointer;" data-sort="exhibits">
                 Exhibits <span class="sort-indicator"></span>
               </th>
-              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:var(--text-muted);
                         text-align:right;cursor:pointer;" data-sort="credit_recs">
                 Credit Recs <span class="sort-indicator"></span>
               </th>
-              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:var(--text-muted);
                         text-align:right;cursor:pointer;" data-sort="disciplines">
                 Disciplines <span class="sort-indicator"></span>
               </th>
-              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:var(--text-muted);
                         text-align:right;cursor:pointer;" data-sort="savings">
                 Savings <span class="sort-indicator"></span>
               </th>
-              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:var(--text-muted);
                         text-align:right;cursor:pointer;" data-sort="year_impact">
                 20-Yr Impact <span class="sort-indicator"></span>
               </th>
-              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:var(--text-muted);
                         text-align:center;">Trans. Rate</th>
-              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:var(--text-muted);
                         text-align:center;">Criteria</th>
-              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:var(--text-muted);
                         text-align:center;cursor:pointer;" data-sort="last_activity_days">
                 Last Activity <span class="sort-indicator"></span>
               </th>
             </tr>
           </thead>
-          <tbody id="collegeTotalsRow" style="border-top:2px solid rgba(255,255,255,0.15);border-bottom:2px solid rgba(255,255,255,0.15);">
+          <tbody id="collegeTotalsRow" style="border-top:2px solid var(--border);border-bottom:2px solid var(--border);">
           </tbody>
-          <tbody id="collegeTableBody" style="border-top:1px solid rgba(255,255,255,0.07);">
+          <tbody id="collegeTableBody" style="border-top:1px solid var(--border);">
           </tbody>
         </table>
       </div>
 
       <!-- Legend -->
-      <div style="margin-top:0.8rem;padding-top:0.6rem;border-top:1px solid rgba(255,255,255,0.06);
+      <div style="margin-top:0.8rem;padding-top:0.6rem;border-top:1px solid var(--border);
                   display:flex;flex-wrap:wrap;gap:0.2rem 0;">
-        <span style="font-size:0.61rem;color:rgba(255,255,255,0.32);">● Criteria met: &nbsp;
-          <span style="font-size:0.61rem;color:rgba(255,255,255,0.32);">1. Students≥500</span> &nbsp;·&nbsp; <span style="font-size:0.61rem;color:rgba(255,255,255,0.32);">2. Units≥3k</span> &nbsp;·&nbsp; <span style="font-size:0.61rem;color:rgba(255,255,255,0.32);">3. Avg≥5</span> &nbsp;·&nbsp; <span style="font-size:0.61rem;color:rgba(255,255,255,0.32);">4. Trans≥25%</span> &nbsp;·&nbsp; <span style="font-size:0.61rem;color:rgba(255,255,255,0.32);">5. AvgTrans≥3</span>
+        <span style="font-size:0.61rem;color:var(--text-muted);">● Criteria met: &nbsp;
+          <span style="font-size:0.61rem;color:var(--text-muted);">1. Students≥500</span> &nbsp;·&nbsp; <span style="font-size:0.61rem;color:var(--text-muted);">2. Units≥3k</span> &nbsp;·&nbsp; <span style="font-size:0.61rem;color:var(--text-muted);">3. Avg≥5</span> &nbsp;·&nbsp; <span style="font-size:0.61rem;color:var(--text-muted);">4. Trans≥25%</span> &nbsp;·&nbsp; <span style="font-size:0.61rem;color:var(--text-muted);">5. AvgTrans≥3</span>
         </span>
         <span style="font-size:0.61rem;">&#11088;</span>
-        <span style="font-size:0.61rem;color:rgba(255,255,255,0.32);margin-left:4px;">MAP Star College (≥1 criterion)</span>
-        <span style="font-size:0.61rem;color:rgba(255,255,255,0.32);margin-left:1rem;">Last Activity: </span>
-        <span style="font-size:0.61rem;color:var(--hunter-on-dark);">● ≤30d</span>
+        <span style="font-size:0.61rem;color:var(--text-muted);margin-left:4px;">MAP Star College (≥1 criterion)</span>
+        <span style="font-size:0.61rem;color:var(--text-muted);margin-left:1rem;">Last Activity: </span>
+        <span style="font-size:0.61rem;color:var(--hunter);">● ≤30d</span>
         <span style="font-size:0.61rem;color:#FF9800;margin-left:0.3rem;">● 31–90d</span>
-        <span style="font-size:0.61rem;color:var(--crimson-on-dark);margin-left:0.3rem;">● 90+d</span>
+        <span style="font-size:0.61rem;color:var(--crimson);margin-left:0.3rem;">● 90+d</span>
       </div>
 
     </div>
