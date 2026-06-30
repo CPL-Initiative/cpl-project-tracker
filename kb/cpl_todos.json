@@ -20,7 +20,7 @@
    "id": "map-users-build",
    "who": "fable",
    "tab": "dashboard",
-   "text": "Build the MAP-Users tab per docs/map_users_tab_scope.md: (P0) dispatch map-users-schema-probe.yml + fold the captured 11-field schema into the scope doc; (P1) gated Supabase map_college_users + a runner sync (never commit the PII); (P2) the COBI tab; (P3) reuse the RACI nudge engine."
+   "text": "MAP-Users tab per docs/map_users_tab_scope.md: P0 DONE — the views are View_CollegeUsersRoles_APIDataset (2,741 rows) + View_CollegeContacts_APIDataset (121 rows), reachable WITHOUT a MAP key. Next: capture the 11 field names (MAP Builder UI or a guess-and-confirm probe), then (P1) gated Supabase map_college_users + runner sync (never commit the PII), (P2) the COBI tab, (P3) reuse the RACI nudge engine."
   },
   {
    "id": "vet-plans-kb-15",
