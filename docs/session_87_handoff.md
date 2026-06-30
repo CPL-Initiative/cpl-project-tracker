@@ -1,101 +1,77 @@
 # Session 87 handoff — you are Session 87
 
 You are **Session 87** of the CPL Project Tracker (COBI) build. Session 86
-(**SkyGuy**) shipped six COBI refinements Sam asked for in one PR. Pick your own
-moniker (Sky/Star streak).
+(**SkyGuy**) was a long, multi-ask session: six COBI refinements, a full
+light/glass theme pass, and the scoping of a **MAP-Users** management tab. Pick
+your own moniker (Sky/Star streak).
 
-## TL;DR of what Session 86 shipped — PR #610 (code-only)
-All six of Sam's asks, code-only (the post-merge `daily-dashboard.yml` dispatch
-publishes the activity-card HTML). 112 JS test files + Python tests green; full
-generator run EXIT 0.
+## What SkyGuy shipped (3 merged PRs, all on `main`)
+1. **#610 — six COBI refinements** (`docs/cobi_lessons.md` S86): KPI cards
+   hide/center/collapse (new static `kpi_cards.js`); Activity-card big number
+   wired live (`apply_live_activity_current()`); RACI update popup show-all +
+   edit/delete polish; **KB tab unlock via the shared team phrase**.
+2. **#611 — light/glass theme** (`docs/cobi_lessons.md` S87 cont.): flipped the
+   dark-navy data surfaces to light — **KPI Trends card**, the shared
+   `EXHIBIT_ANALYSIS_CSS` `.exhibit-*`/`.sw-*` (**CPL Analytics + EACR**),
+   **College Activity** (`college_activity_template.html`/`.js`), and the EACR
+   `statewide_interactive.js`. Chips/trendlines contrast-fixed. Source-guarded by
+   `kb/_test_light_theme.py`. Reusable map:
+   `docs/kb-notes/methodology-dark-to-light-recolor-mapping.md`.
+3. **#612 — MAP-Users scoped**: a PII-safe schema probe + a 4-phase scope for a
+   gated user-management tab + college-nudge.
 
-1. **KPI cards — hide / center / collapse** → new static **`kpi_cards.js`**
-   (the regen-safe `kpi_reorder.js` pattern, NOT a generator change). At runtime
-   it wraps each headline `.kpi-card`'s metric+label into a centered `.kc-head`
-   and the rest into a collapsible `.kc-body`: cards open **collapsed (top half
-   only)**, click a card's head to expand, per-card `×` hides → a "Hidden (N)"
-   restore tray, and an **Expand-all/Collapse-all** toolbar. Per-browser
-   `localStorage` (`cplKpiCards.v1`), scopes to `.kpi-section > .kpi-card` only,
-   injects its own CSS, coexists with `kpi_reorder.js`. `<script>` in BOTH HTMLs.
-2. **Activity-card big number = live KPI** → new generator post-pass
-   **`apply_live_activity_current()`** (after the merges + `apply_live_workplan_current`)
-   drives the Activity Metrics sub-activity card `metric` from the live headline
-   KPI (the 5 `PID_TO_KPI_KEY` rows) or an explicit `workplan_goals.current`
-   (unmapped). 3.1 was 43,630 → now the live **48,158**; Goal/Stretch bars
-   recompute. `_parse_metric_num` now parses `k`/`M`/`B`/`$` suffixes.
-3. **RACI Update popup** — was ALREADY show-all + edit/delete-any (incl.
-   team-phrase). Added a live `Updates (N)` count, a taller viewport (30→44vh),
-   and a fresh-save id backfill; a test now guards the behavior.
-4. **KB tab team-phrase** — the KB portal (a SEPARATE Supabase project) now
-   unlocks + curates via the shared `cpl_team_pass` (validated server-side against
-   the MAIN project's `team_pass_ok()` RPC; carries over from Team & RACI via
-   same-origin localStorage). `kb-portal/config.js` + `app.js` + `index.html`.
+## PRIORITY workstream — build the MAP-Users tab
+Read **`docs/map_users_tab_scope.md`** first (the whole plan). TL;DR:
+- "MAP users" = `View_CollegeUsersRoles` (MAP category #9, ~2,710 rows / 11
+  fields = staff **names+emails+roles**). It is **NOT in our datasets** — dropped
+  from the daily fetch for PII-minimization (Session 34), never committed.
+- **#1 rule: never commit this PII to the public repo.** It lives only in a gated
+  Supabase table, synced server-side.
+- **P0 (do this FIRST):** dispatch **`map-users-schema-probe.yml`** (Actions tab →
+  Run). The probe (`map/probe_users_schema.py`) is **2-pass** (MAP's API is
+  column-oriented: `columnName`/`columnValue`; a no-column request returns the
+  field list but no values). Read its log → it prints the 11 field names + the
+  role vocabulary, **PII-masked**. Fold the schema into the scope doc's §1/§5.
+- **P1:** gated Supabase `map_college_users` + a runner sync (the curation-sync /
+  `cpl-landing-pages.yml` runner-as-proxy template). **P2:** the COBI tab (the
+  `raci.js`/`cpl_news.js` lazy-renderer pattern, reviewer/team-phrase-gated for
+  PII). **P3:** reuse the **RACI nudge engine** (`raci.js` already emails people,
+  drafts via the report proxy, tracks `last_nudged_at`/`last_response_at`).
 
-## Read these first (in order)
-1. `docs/cobi_lessons.md` — the **Session 86** section has the full story + the
-   four reusable patterns (regen-safe card overlay; post-pass-after-merge;
-   "already built, verify don't rebuild"; cross-bundle team-phrase via shared
-   localStorage).
-2. `CLAUDE.md` §11 "Session 86" + the File Inventory `kpi_cards.js` row + §7b
-   Knowledge Base row.
-3. `docs/dashboard_card_metrics_recommendations.md` — item 1 is now DONE for the
-   Activity cards; the project-GRID card's small editable `KPI:` row was left
-   manual on purpose (see below).
-
-## First things to check
-- **Confirm the publish landed.** After PR #610 merged, the dispatch should have
-  regenerated the HTML. Open `#activities-projects`: the 5 KPI-mapped Activity
-  Metrics cards (3.1/3.2/2.1/3.3) should match the headline KPI cards (3.1 ≈
-  48,158, not 43,630). If the dispatch didn't fire, dispatch `daily-dashboard.yml`.
-- The **four Session-86 confirm items** are in the To-Do feed (`kpi-cards-confirm`,
-  `card-metric-sync-confirm`, `kb-teamphrase-confirm`, `update-popup-confirm`).
-
-## Open / deferred from this session (small, only if Sam asks)
-- **Project-GRID card `KPI:` row** — left as the editable manual `kpi_metric`
-  (the deliberate decision in `docs/dashboard_card_metrics_recommendations.md`).
-  Wiring it live for the 5 mapped would remove the inline editor; trivial follow-up
-  if Sam wants it (reuse `PID_TO_KPI_KEY` + a read-only badge like Session 85).
-- **KPI cards default state** — they open COLLAPSED (Sam said "only the top half
-  shows by default"). If he'd rather they open expanded, it's a one-line flip in
-  `kpi_cards.js applyCardState` (default `expanded` instead of `collapsed`).
-- **Team-phrase secret** — currently `cpl-team-2026` (rotate via the RACI ⚙ admin
-  or `update public.team_access set secret='…' where id='raci';`). The KB portal
-  reads the same `team_pass_ok()`, so a rotation covers both.
-
-## Carryover / standing lanes (unchanged — in the To-Do feed)
+## Carryover / standing lanes (in the To-Do feed)
+- **Reference-tab header bands** — Sam to decide if the CCR/CSR/CER dark-navy
+  sticky header bands should also flip light (quick follow-up; the tables are
+  already light).
 - **Unverified-M-ID renumber** — `docs/unverified_mid_renumber_scope.md` (#494).
 - **TMC Phase-2 acceptance engine** — `docs/kb-notes/tmc-co-review-scope.md`.
 - **CPL-Assistant CCR/CER recommender ETL** — `docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md`.
 - **Public KB PR #15** (Veterans plans) waiting on Sam's sign-off.
-- **Strategy NOW lane** — institution-owned GitHub/Supabase, `cobi-auth.js`
-  consolidation, a11y CI, DSA paperwork.
 
 ## Patterns that worked (reuse them)
-- **Regen-safe card overlay** — when the markup is regenerated daily but you need
-  per-card chrome (hide/collapse/center), don't touch the generator: a static JS
-  asset that re-wraps + re-matches by a stable label on every load is the move
-  (`kpi_cards.js`, like `kpi_reorder.js` / `card_updates.js`). Inject CSS from the
-  JS so there's no Rule-4 `<style>` mirror — only the one `<script>` tag.
-- **Live-value sync = a POST-PASS after the merges**, never inlined in a build
-  that runs before `merge_live_metrics` (the Session-85 lesson, reused here).
-- **"Already built" is a valid finding** — recon the actual code before building;
-  the Update popup already did what was asked. Verify + clarify + test, don't
-  rebuild.
-- **Cross-bundle team gate via same-origin localStorage** — a separate bundle can
-  honor the shared `cpl_team_pass` by validating it against the gate's own RPC;
-  the secret never leaves Postgres.
-- **Code-only PR + post-merge dispatch** — reset the HTMLs to the cron's `main`,
-  re-apply only the `<script>` tag, let `daily-dashboard.yml` publish.
+- **Regen-safe runtime overlay** for per-card chrome the generator owns
+  (`kpi_cards.js` — re-wrap + re-match by a stable label each load; CSS from JS).
+- **Live-value sync = a POST-PASS after the merges** (`apply_live_activity_current`).
+- **Dark→light recolor** — the token mapping in the KB note above; **guard the
+  SOURCE** when the CSS is generator-injected (can't render it in the sandbox).
+- **Parallelize independent files with subagents** given ONE precise spec; own the
+  shared/risky piece yourself; verify by grep + a source test.
+- **Cross-bundle team gate** — validate the shared `cpl_team_pass` against the
+  main project's `team_pass_ok()` RPC; the secret never leaves Postgres.
+- **Runner-as-proxy for Azure** — the MAP API is egress-blocked from the sandbox;
+  fetch on a runner (probe / landing-pages / cpl-chat-smoke).
+- **PII-safe probe** — print field names + low-cardinality enums only; mask
+  high-cardinality/`@`-bearing values; write nothing to disk.
 
 ## Safety patterns to honor
-- **Rule 4** (`CPL_Dashboard.html` === `index.html`) — only the `kpi_cards.js`
-  `<script>` tag was added; verify identical if you touch HTML.
-- **Rule 5** (never force-push main). **Rule 8** (checkpoint). Merge-on-green
-  (`clean` OR `unstable`), squash, ready→merge.
-- `build_activity_kpis` / `build_workplan_goals_from_supabase` run **before**
-  `merge_live_metrics` — anything needing merged `kpis` is a post-pass.
-- `kb-portal/app.js` imports esm.sh modules at the top, so it can't be eval'd in
-  Node — test the wiring via source checks + the pure `teamPassRequest` helper.
+- **Rule 4** (`CPL_Dashboard.html` === `index.html`). **Rule 5** (never force-push
+  main; feature branches `--force-with-lease` fine). **Rule 8** (checkpoint).
+- **Merge-on-green** (`clean` OR `unstable`), squash, ready→merge; poll CI via the
+  MCP `github` tools (curl can't reach GitHub here). Code-only PRs + post-merge
+  `daily-dashboard.yml` dispatch publish generated artifacts.
+- **Designated branch `claude/cobi-kpi-cards-refinements-kq7la1` keeps getting
+  merged + auto-deleted** — restart it from `origin/main` for each new change
+  (`git checkout -B … origin/main`), then a plain `push -u` recreates it.
+- **MAP-Users PII** — never commit names/emails; gated Supabase only.
 
 ## Moniker
 Session 86 was **SkyGuy**. Claim your own (the Sky/Star streak continues).

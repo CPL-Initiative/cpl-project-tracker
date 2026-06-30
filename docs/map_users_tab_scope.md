@@ -79,7 +79,7 @@ Building blocks already in the repo to reuse:
 
 | Phase | What | Status |
 |---|---|---|
-| **P0 — Schema probe** | Capture the exact 11 fields + the role vocabulary, PII-safe, on a runner. `map/probe_users_schema.py` + `map-users-schema-probe.yml` (dispatch-only; masks names/emails; commits nothing). | **READY — dispatch it** |
+| **P0 — Schema probe** | Capture the exact 11 fields + the role vocabulary, PII-safe, on a runner. `map/probe_users_schema.py` + `map-users-schema-probe.yml` (dispatch-only; masks names/emails; commits nothing). **First dispatch (run #1) confirmed the endpoint reachable + revealed MAP's response is COLUMN-ORIENTED** — each dataset is `{columnName:[fields], columnValue:[rows], dataCount, responseCode/Message}`, and a no-`columnName` request returns the field list but **no values**. The probe is now **2-pass** (discover `columnName` → re-request WITH those columns for the rows). | **READY — re-dispatch the fixed probe** |
 | **P1 — Gated sync** | New Supabase `public.map_college_users` (schema informed by P0) + a sync workflow that fetches `View_CollegeUsersRoles` on a runner and upserts via the service key. Decide what (if anything) the anon role may read — likely counts/roles per college, **emails withheld** unless a signed-in/team-phrase reviewer. | not started |
 | **P2 — COBI "MAP Users" tab** | Static lazy renderer (the `raci.js`/`cpl_news.js` pattern): per-college roster, role, last-updated, a "stale / needs refresh" signal. Reviewer/team-phrase-gated for any PII. | not started |
 | **P3 — College nudge** | Reuse the RACI nudge: periodic "refresh your MAP users" email per college (to the AO / CPL Coordinator already in `View_CollegeContacts`), with `last_nudged_at`/`last_response_at` accountability. | not started |
