@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-30T16:25:39.283Z",
+  "scraped_at": "2026-06-30T17:37:10.933Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -308,13 +308,13 @@
         },
         {
           "college": "College of the Desert",
-          "students": 384,
+          "students": 391,
           "units": 2211.5,
-          "avgUnits": 5.759114583333333,
+          "avgUnits": 5.656010230179028,
           "transcriptionRate": 37.6,
-          "avgTranscribed": 2.1653645833333335,
+          "avgTranscribed": 2.126598465473146,
           "criteriaMetCount": 2,
-          "militaryStudents": 348,
+          "militaryStudents": 355,
           "nonMilitaryStudents": 37,
           "apprenticeStudents": 0,
           "savings": 3218912.5,
@@ -1042,6 +1042,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Allan Hancock College",
+          "students": 137,
+          "units": 532,
+          "avgUnits": 3.883211678832117,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 137,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 920360,
+          "yearImpact": 3227644,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Monterey Peninsula College",
           "students": 136,
           "units": 4,
@@ -1054,21 +1069,6 @@
           "apprenticeStudents": 0,
           "savings": 6920,
           "yearImpact": 24268,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Allan Hancock College",
-          "students": 133,
-          "units": 532,
-          "avgUnits": 4,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 133,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 920360,
-          "yearImpact": 3227644,
           "transcribedUnits": 0
         },
         {
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "48,176",
+      "value": "48,187",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,864"
+          "value": "24,875"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 48176,
+    "Students": 48187,
     "Units": 230440.65000000002,
     "TranscribedUnits": 99534.95,
     "Savings": 321229590.25,
     "YearImpact": 1299390447.3999999,
-    "MilitaryStudents": 24864,
+    "MilitaryStudents": 24875,
     "NonMilitaryStudents": 23388,
     "AprenticeStudents": 753,
-    "AverageUnits": 4.783308078711392,
-    "TranscribedAverage": 2.066069204583195
+    "AverageUnits": 4.782216157884907,
+    "TranscribedAverage": 2.065597567808745
   }
 }
