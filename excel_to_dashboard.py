@@ -1479,6 +1479,40 @@ PID_TO_KPI_KEY = {
     "4.1.1": "veteran_sprint",
 }
 
+# Sub-activity cards/rows whose authoritative live value is a BREAKDOWN row
+# WITHIN a headline KPI rather than a top-level KPI. The CCCCO dashboard reports
+# the Military / Workforce-Other / Apprentice splits of STUDENTS SERVED directly
+# (the cumulative_students `breakdowns`), so these population sub-activities must
+# mirror those breakdown rows to match the headline card BY CONSTRUCTION —
+# exactly the way 3.1 mirrors the STUDENTS SERVED total. Before this map the 3
+# cards kept their stale Excel `kpi_metric` (e.g. 3.1.2 read 22,149 while the
+# headline Military breakdown was 24,864). value = (kpi_key, breakdown_label
+# _prefix); the breakdown label is matched case-insensitively by prefix. Wired
+# by apply_live_activity_current + apply_live_workplan_current (the same
+# post-pass that handles PID_TO_KPI_KEY).
+PID_TO_KPI_BREAKDOWN = {
+    "3.1.1":  ("cumulative_students", "workforce"),    # Working Adults → Workforce/Other (non-military)
+    "3.1.2":  ("cumulative_students", "military"),      # Veterans & Service Members → Military
+    "3.1.2a": ("cumulative_students", "apprentice"),    # Apprentice Cohort → Apprentice
+}
+
+
+def _kpi_breakdown_value(kpis, kpi_key, label_prefix):
+    """Return the verbatim display value (e.g. '24,864') of the first breakdown
+    whose label starts with label_prefix (case-insensitive) inside
+    kpis[kpi_key]['breakdowns'], or None when the KPI/breakdown is absent (the
+    Excel-fallback path carries no breakdowns → graceful no-op, no override)."""
+    kpi = (kpis or {}).get(kpi_key)
+    if not isinstance(kpi, dict):
+        return None
+    pref = str(label_prefix).lower()
+    for bd in kpi.get("breakdowns", []) or []:
+        if str(bd.get("label", "")).lower().startswith(pref):
+            v = bd.get("value")
+            if v not in (None, ""):
+                return str(v)
+    return None
+
 
 def _kpi_cell_nonzero_any(p):
     """True if any of the project's 10 KPI ladder cells parses to a non-zero
@@ -9764,10 +9798,17 @@ def apply_live_workplan_current(annual_goals, kpis, live_data=None):
     n_live = 0
     for row in annual_goals:
         key = row.get("current_kpi_key")
-        if not key:
+        bd = row.get("current_kpi_breakdown")  # (kpi_key, label_prefix) | None
+        if key:
+            kpi = (kpis or {}).get(key)
+            val = kpi.get("value") if isinstance(kpi, dict) else None
+        elif bd:
+            # Population sub-activity → a STUDENTS-SERVED breakdown row, so the
+            # Annual Workplan Current matches the headline breakdown the same way
+            # a top-level-KPI row matches its headline card (StarMax fix).
+            val = _kpi_breakdown_value(kpis, bd[0], bd[1])
+        else:
             continue
-        kpi = (kpis or {}).get(key)
-        val = kpi.get("value") if isinstance(kpi, dict) else None
         if val is None or val == "":
             continue
         row["current_source"] = "live"
@@ -9782,9 +9823,13 @@ def apply_live_activity_current(activity_kpis, annual_goals, kpis, live_data=Non
     SAME authoritative Current the Annual Workplan tab shows (Session 86), so the
     card == headline KPI == Annual Workplan by construction instead of the stale
     Excel kpi_metric (e.g. 3.1 was 43,630 vs the live 48,158). Mutates the
-    activity_kpis entries in place. Two authoritative sources:
+    activity_kpis entries in place. Three authoritative sources:
       • Mapped sub-activities (PID_TO_KPI_KEY) → the live MERGED headline KPI value
         (verbatim display string, e.g. '48,158'), stamped metric_source='live'.
+      • Population sub-activities (PID_TO_KPI_BREAKDOWN — Working Adults / Veterans
+        / Apprentice) → the matching BREAKDOWN row of a headline KPI (the live
+        STUDENTS-SERVED Military/Workforce/Apprentice split), also metric_source
+        ='live', so each card matches the headline breakdown by construction.
       • Unmapped sub-activities that carry an EXPLICIT workplan_goals.current →
         that manual value, so editing Current on the Annual Workplan tab updates
         the card too; stamped metric_source='workplan'. Percentage ladders are
@@ -9809,6 +9854,18 @@ def apply_live_activity_current(activity_kpis, annual_goals, kpis, live_data=Non
                 val = merged.get("value") if isinstance(merged, dict) else None
                 if val not in (None, ""):
                     kpi["metric"] = str(val)
+                    kpi["metric_source"] = "live"
+                    kpi["metric_as_of"] = as_of
+                    n_live += 1
+                    continue
+            # Population sub-activity cards (Working Adults / Veterans /
+            # Apprentice) mirror a BREAKDOWN row of STUDENTS SERVED, so the card
+            # matches the headline KPI breakdown by construction (StarMax fix).
+            bd = PID_TO_KPI_BREAKDOWN.get(aid)
+            if bd:
+                bval = _kpi_breakdown_value(kpis, bd[0], bd[1])
+                if bval not in (None, ""):
+                    kpi["metric"] = str(bval)
                     kpi["metric_source"] = "live"
                     kpi["metric_as_of"] = as_of
                     n_live += 1
@@ -9977,6 +10034,9 @@ def build_workplan_goals_from_supabase(
         #    workplan_goals.current (GOAL row; falls back to STRETCH, then to the
         #    legacy Excel kpi_metric for back-compat / pre-column snapshots).
         current_kpi_key = PID_TO_KPI_KEY.get(aid)
+        # Population sub-activities map to a breakdown of a headline KPI rather
+        # than a top-level KPI; apply_live_workplan_current resolves it.
+        current_kpi_breakdown = PID_TO_KPI_BREAKDOWN.get(aid)
         current_manual = _row_current(data.get("GOAL"), data.get("STRETCH"))
         # Did this Current come from an EXPLICIT workplan_goals.current (vs the
         # Excel kpi_metric fallback)? The activity-card live-sync (Session 86)
@@ -10033,6 +10093,7 @@ def build_workplan_goals_from_supabase(
             "current_source": "manual",
             "current_manual_explicit": current_manual_explicit,
             "current_kpi_key": current_kpi_key,
+            "current_kpi_breakdown": current_kpi_breakdown,
         })
 
     print(

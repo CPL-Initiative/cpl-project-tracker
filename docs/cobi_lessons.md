@@ -211,3 +211,42 @@ runner sync → gated Supabase `map_college_users` → COBI tab → reuse the RA
 no-`columnName` request returns the field list but **no values**, so the probe is
 2-pass (discover fields → re-request WITH them for the rows). NEXT: dispatch the
 fixed probe, fold the schema into the scope doc, build P1 (the gated sync).
+
+## Session 87 — StarMax: population sub-activity cards = live KPI breakdowns
+
+Sam's screenshot review of Goal 2: 3.1 (48,176, ✅) and 3.2 (100k, ✅) matched the
+headline KPIs, but **3.1.1 Working Adults (21,552), 3.1.2 Veterans (22,149), and
+3.1.2a Apprentice (700)** were stale (sad faces). Session 86's
+`apply_live_activity_current` only wired the 5 `PID_TO_KPI_KEY` sub-activities,
+which map to **top-level** headline KPIs. These three populations are instead
+**breakdown ROWS within** the STUDENTS SERVED KPI (`cumulative_students.breakdowns`
+= Military / Workforce-Other / Apprentice, reported by CCCCO directly), so they had
+no key and kept their Excel `kpi_metric`.
+
+Fix (generator-only, mirrors the Session-85/86 hybrid):
+- New module map **`PID_TO_KPI_BREAKDOWN`** = `{3.1.1→(cumulative_students,
+  workforce), 3.1.2→(…,military), 3.1.2a→(…,apprentice)}` + a
+  **`_kpi_breakdown_value()`** helper (case-insensitive label-prefix match;
+  returns `None` when the KPI/breakdown is absent → graceful Excel-fallback no-op).
+- Wired into **both** post-passes so the card == the Annual Workplan Current ==
+  the headline breakdown by construction: `apply_live_activity_current`
+  (card `metric`, `metric_source='live'`) and `apply_live_workplan_current`
+  (the AWG Current row flips read-only-live via a new `current_kpi_breakdown`
+  stamp on the annual_goals row). The renderer gates purely on
+  `current_source=='live'`, so **no renderer change** was needed.
+- Mapping rationale: Military→Veterans/Service, Workforce-Other (non-military)→
+  Working Adults, Apprentice→Apprentice — confirmed against the 2030 goal split
+  (160k + 70k + 20k = 250k).
+
+Result (live 2026-06-30): cards now read **23,388 / 24,864 / 753**, all
+`metric_source=live`; generator EXIT 0 ("Activity cards: 7 synced", "Annual
+Workplan: 8 synced" — each +3). Verification extended **both** existing Python
+tests (`kb/_test_activity_card_current.py` + `kb/_test_workplan_current_hybrid.py`)
+with breakdown cases incl. the no-breakdowns graceful-degrade path.
+
+Lessons: (1) **a "sub-activity" can map to a breakdown, not a KPI** — the live-sync
+mechanism needed a parallel breakdown map, not a new entry in `PID_TO_KPI_KEY`.
+(2) **One value, two surfaces** — wiring only the card would have re-introduced
+card↔Annual-Workplan drift (the exact thing Session 85 killed); fix both in
+lockstep through a shared helper. (3) **Code-only PR** — reverted all regenerated
+artifacts; the post-merge `daily-dashboard.yml` dispatch publishes the live HTML/JS.
