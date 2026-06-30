@@ -407,6 +407,38 @@ const RACI_ROWS = [
   anonU.window.dispatchEvent(new anonU.window.CustomEvent("cpl-tab-activated", { detail: { tab: "raci" } }));
   check("anon viewer gets NO edit/delete affordance", !anonU.window.document.querySelector(".raci-upd-act"));
 
+  // Show-ALL + edit/delete-ANY (Session 86): 3 updates → all render, each with
+  // its own ✏️/🗑, and the header carries the live count "Updates (3)".
+  const now = Date.now();
+  const UPD3 = [
+    { id: 1, item_type: "project", item_id: "1.1", body: "first", author: "(team)", created_at: new Date(now - 3000).toISOString() },
+    { id: 2, item_type: "project", item_id: "1.1", body: "second", author: "(team)", created_at: new Date(now - 2000).toISOString() },
+    { id: 3, item_type: "project", item_id: "1.1", body: "third", author: "(team)", created_at: new Date(now - 1000).toISOString() },
+  ];
+  const multi = makeDom(MEMBERS, RACI_ROWS, { session: { access_token: "aaa.bbb.ccc" }, updates: UPD3 });
+  multi.window.CPL_RACI_TAB.boot();
+  await new Promise((r) => setTimeout(r, 30));
+  const mdoc = multi.window.document;
+  mdoc.querySelector('[data-raci-key="project:1.1"] .raci-upd-btn').click();
+  check("all 3 updates render (show-all, no limit)",
+    mdoc.querySelectorAll(".raci-upd-entry").length === 3);
+  check("EVERY entry gets ✏️ Edit + 🗑 Delete (edit/delete ANY entry)",
+    mdoc.querySelectorAll(".raci-upd-entry").length === 3 &&
+    Array.from(mdoc.querySelectorAll(".raci-upd-entry")).every((e) =>
+      /Edit/.test(e.textContent) && /Delete/.test(e.textContent)));
+  check("the Updates header shows the live count (3)",
+    /Updates \(3\)/.test(mdoc.querySelector(".raci-upd-h").textContent));
+
+  // A team-phrase user (no magic-link session) ALSO gets edit/delete on any entry.
+  const teamU = makeDom(MEMBERS, RACI_ROWS, { updates: UPD3 });
+  teamU.window.localStorage.setItem("cpl_team_pass", "open-sesame");
+  teamU.window.CPL_RACI_TAB.boot();
+  await new Promise((r) => setTimeout(r, 30));
+  const tmdoc = teamU.window.document;
+  tmdoc.querySelector('[data-raci-key="project:1.1"] .raci-upd-btn').click();
+  check("team-phrase user can edit/delete any entry too (3 entries × 2 controls)",
+    tmdoc.querySelectorAll(".raci-upd-act").length === 6);
+
   let failed = 0;
   for (const [name, ok] of results) {
     console.log((ok ? "PASS" : "FAIL") + "  " + name);

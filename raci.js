@@ -554,15 +554,28 @@
       return r;
     });
   }
+  // Re-fetch one item's full update history (newest-first) into state.updates —
+  // used to backfill row ids after a POST whose representation didn't return one.
+  function refetchUpdates(item) {
+    var k = item.type + ":" + item.id;
+    return sbGet("item_updates?select=*&item_type=eq." + encodeURIComponent(item.type) +
+      "&item_id=eq." + encodeURIComponent(item.id) + "&order=created_at.desc")
+      .then(function (rows) { if (Array.isArray(rows)) state.updates[k] = rows; })
+      .catch(function () {});
+  }
   // The composer: anyone can VIEW the summary + update history; a signed-in
   // reviewer can braindump → ✨ have CC write it up → Save (appends item_updates).
   function openUpdate(item) {
     var c = cplItem(item);
     var canEdit = !!state.sess;
     var hist = el("div", { "class": "raci-upd-hist" }, []);
+    // Header carries a live count so it's clear EVERY entry is shown (the list
+    // scrolls if there are many). Updated by paintHist on add/edit/delete.
+    var histH = el("div", { "class": "raci-upd-h" }, ["Updates"]);
     function paintHist() {
       hist.innerHTML = "";
       var ups = updatesFor(item);
+      histH.textContent = ups.length ? "Updates (" + ups.length + ")" : "Updates";
       if (!ups.length) { hist.appendChild(el("div", { "class": "raci-empty" }, ["No updates recorded yet."])); return; }
       ups.forEach(function (u) {
         var entry = el("div", { "class": "raci-upd-entry" }, []);
@@ -624,7 +637,7 @@
       c.desc ? el("div", { "class": "raci-upd-desc" }, [c.desc]) : null]);
 
     var body = [el("div", { "class": "raci-modal-sub" }, ["The card so far:"]), summary,
-      el("div", { "class": "raci-upd-h" }, ["Updates"]), hist];
+      histH, hist];
 
     if (canEdit) {
       var ta = el("textarea", { "class": "raci-in raci-upd-ta", rows: "4",
@@ -651,6 +664,10 @@
           var k = item.type + ":" + item.id;
           (state.updates[k] = state.updates[k] || []).unshift(rec);
           ta.value = ""; msg.textContent = "✓ Saved."; save.disabled = false; paintHist(); render();
+          // If the POST representation didn't carry the row id (rare), re-fetch
+          // this item's updates so the just-saved entry gets its ✏️/🗑 controls
+          // immediately (they require u.id) — no reload needed.
+          if (rec.id == null) { refetchUpdates(item).then(paintHist); }
           // Let the Activity/Project card overlay (card_updates.js) refresh so the
           // just-posted update appears on the card face without a reload.
           try { window.dispatchEvent(new CustomEvent("cpl-item-updated", { detail: { key: k } })); } catch (e) {}
@@ -1435,7 +1452,7 @@
       ".raci-upd-summary{background:var(--surface-2,#f4f7fb);border-radius:6px;padding:.5rem .6rem;margin:.2rem 0 .6rem;font-size:.82rem;line-height:1.4;}" +
       ".raci-upd-prev{color:var(--text-faint,#555);margin-top:.2rem;}.raci-upd-desc{color:var(--text-faint,#777);margin-top:.2rem;font-size:.78rem;}" +
       ".raci-upd-h{font-weight:700;font-size:.74rem;text-transform:uppercase;letter-spacing:.03em;color:var(--text-faint,#888);margin:.6rem 0 .3rem;}" +
-      ".raci-upd-hist{display:flex;flex-direction:column;gap:.4rem;max-height:30vh;overflow:auto;}" +
+      ".raci-upd-hist{display:flex;flex-direction:column;gap:.4rem;max-height:44vh;overflow:auto;}" +
       ".raci-upd-entry{border-left:3px solid var(--gold-accent,#B8860B);padding:.2rem .5rem;background:var(--surface-2,#f8fafc);border-radius:0 5px 5px 0;}" +
       ".raci-upd-body{font-size:.85rem;color:var(--text-strong,#222);}" +
       ".raci-upd-meta{font-size:.72rem;color:var(--text-faint,#999);margin-top:.15rem;}" +
