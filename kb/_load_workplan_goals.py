@@ -67,11 +67,24 @@ def _fetch_supabase() -> tuple[list[dict], list[dict]]:
     PR-A added the `kind` column + the workplan_activity_associations table;
     both are fetched here so the snapshot carries the full picture.
     """
-    rows = _fetch_table(
-        "workplan_goals"
-        "?select=activity_id,name,row_type,kind,"
-        "yr_2025_26,yr_2026_27,yr_2027_28,yr_2028_29,yr_2029_30,total"
-    )
+    # `current` (the Annual Workplan manual-Current column, added Session 85)
+    # degrades gracefully: if the migration hasn't been applied yet the select
+    # 400s, so try the richer select first and fall back to the pre-`current`
+    # shape — same defensive pattern as is_primary below. Once the column lands,
+    # the snapshot carries it and unmapped sub-activities surface their manual
+    # Current on the next regen.
+    try:
+        rows = _fetch_table(
+            "workplan_goals"
+            "?select=activity_id,name,row_type,kind,current,"
+            "yr_2025_26,yr_2026_27,yr_2027_28,yr_2028_29,yr_2029_30,total"
+        )
+    except Exception:
+        rows = _fetch_table(
+            "workplan_goals"
+            "?select=activity_id,name,row_type,kind,"
+            "yr_2025_26,yr_2026_27,yr_2027_28,yr_2028_29,yr_2029_30,total"
+        )
     # is_primary is added by kb/supabase_activity_associations_add_primary.sql
     # (the Activity↔Project association editor's schema change). Until that
     # migration is applied, selecting the column 400s, so try the richer select

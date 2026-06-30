@@ -2,7 +2,7 @@
 title: Dashboard card metrics — consistency recommendations (Sam's recommend list)
 date: 2026-06-29
 session: 84 (SkyScribe)
-status: item 2 BUILT (Session 84) · item 1 still recommended
+status: item 2 BUILT (Session 84) · item 1 PARTIALLY addressed (Session 85 — see note)
 tags: [cobi, dashboard, kpi, progress-bar, recommendation]
 artifacts:
   - excel_to_dashboard.py
@@ -18,6 +18,15 @@ headline KPIs + the `workplan_goals` Goal/Stretch ladder). Recommended fix famil
 manual field.*
 
 ## 1. Headline KPI ≠ the project/activity card metric
+
+> **Session 85 update (SkyLight):** the **Annual Workplan "Current" column** of
+> the 5 `PID_TO_KPI_KEY`-mapped sub-activities now reads the **live** headline
+> value (read-only `live · as of` badge), so Annual Workplan Current == headline
+> card by construction (see `docs/annual_workplan_authoritative_lessons.md`). The
+> **project-GRID card** big number (the editable `kpi_metric`) is a *separate*
+> surface and was deliberately left manual/editable — driving it live too would
+> reuse the same `PID_TO_KPI_KEY` post-pass if Sam wants it. So item 1 is
+> addressed for the Annual Workplan surface; the grid-card sync is still open.
 
 **Observed:** the headline "Cumulative CPL Students" card shows **48,148**, but
 project 3.1's card shows **43,630** for the same metric.

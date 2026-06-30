@@ -1,8 +1,8 @@
 ---
 title: Annual Workplan Targets as the authoritative source — scope (Current hybrid + editable titles)
 date: 2026-06-29
-session: 84 (SkyScribe) — scoped; build in a fresh session
-status: SCOPED · decisions locked · ready to build
+session: 84 (SkyScribe) — scoped; BUILT Session 85 (SkyLight)
+status: BUILT (Session 85) — see docs/annual_workplan_authoritative_lessons.md
 tags: [cobi, dashboard, kpi, workplan-goals, supabase, scope]
 artifacts:
   - excel_to_dashboard.py

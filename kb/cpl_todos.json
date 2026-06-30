@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-29 (later still) · Session 84 (SkyScribe) · you can now Table/Archive a project and it cleanly disappears everywhere; the Pages site is fixed + 65% leaner; and the Activity progress bars now compute from your goal/stretch targets",
- "_session": 84,
- "_status": "A productive run as the team started updating things. (1) You can now Table or Archive a project (the 🗄 button on any Activity/Project card, or unlock with the team phrase) — it drops out of the active grid, the Annual Workplan targets, the Activity cards, AND the RACI matrix, and lands in a collapsed 'Tabled & Archived' section you can ♻ Restore from. (2) The GitHub Pages build that was stuck is fixed, and the published site is now ~65% smaller/faster. (3) The Activity card progress bars now compute Goal (blue) + Stretch (gold) from your actual-vs-target instead of a hand-typed %. (4) You flagged that the Annual Workplan 'Current' numbers don't match the KPI cards and that titles should be editable there — I scoped that (you chose: live-pull for the KPI-mapped ones, manual-editable for the rest; single source for titles); Fable builds it next session.",
+ "_as_of": "2026-06-30 · Session 85 (SkyLight) · the Annual Workplan tab is now the authoritative source: the KPI-mapped 'Current' numbers pull live (matching the headline cards), the rest are editable right in the tab, and sub-activity titles are editable there as the single source of truth",
+ "_session": 85,
+ "_status": "Built the Annual Workplan authoritative-source work you scoped. (1) The 'Current' column no longer drifts from the KPI cards: the 5 KPI-mapped sub-activities (3.1 students, 3.2 transcribed units, 2.1 credit recs, 3.3 colleges, 4.1.1 veteran sprint) now show the LIVE headline value read-only with a 'live · as of' badge — so they match the cards by construction. I also fixed 3.2's mapping (it was pointed at eligible units; it's transcription). (2) Every OTHER sub-activity's 'Current' is now editable right in the Annual Workplan tab (sign in, click the green Current cell). (3) Sub-activity TITLES are editable there too, saving to the one title store the cards use. This goes live the moment the daily publish runs after the PR merges.",
  "items": [
   {
    "id": "soft-delete-confirm",
@@ -17,10 +17,10 @@
    "text": "Glance at the Activity Metrics cards — the progress bar is now two bars: blue = Goal, gold = Stretch, computed from actual ÷ this fiscal year's target (a ✓ when met). Tell me if you'd rather they track the 2030 target instead of the current year — it's a one-line change."
   },
   {
-   "id": "annual-workplan-direction",
+   "id": "annual-workplan-confirm",
    "who": "sam",
    "tab": "workplan-goals",
-   "text": "FYI / your decisions are locked: the Annual Workplan 'Current' numbers will be wired so the KPI-mapped ones pull live (matching the KPI cards) and the rest become editable right in this tab; and titles will be editable here as the single source of truth. Fable builds it next session (docs/annual_workplan_authoritative_scope.md). Flag anything you'd change."
+   "text": "Confirm the new Annual Workplan tab live: the 5 KPI-mapped 'Current' rows should match the headline KPI cards exactly (with a 'live · as of' badge, read-only); every other 'Current' cell should be click-to-edit once you sign in; and a sub-activity title should be click-to-edit too (it saves to the one title store the cards use). Flag anything off. (Goes live after the next daily publish.)"
   },
   {
    "id": "vet-plans-kb-15",
@@ -33,12 +33,6 @@
    "who": "sam",
    "tab": "dashboard",
    "text": "One-time: add the Fact Sheet URL (or …/cpl-project-tracker/**) to the Supabase Auth → Redirect URLs list so a magic-link sign-in from the Fact Sheet lands back on that page."
-  },
-  {
-   "id": "annual-workplan-build",
-   "who": "fable",
-   "tab": "workplan-goals",
-   "text": "PRIORITY: build the Annual Workplan authoritative-source work per docs/annual_workplan_authoritative_scope.md — hybrid 'Current' (live for the 5 pid_to_kpi_key-mapped sub-activities, new workplan_goals.current column + a CURRENT-row editor for the rest) + single-source editable titles (projects.name). Verify the 3.2 KPI mapping (eligible vs transcripted units)."
   },
   {
    "id": "mid-renumber",
