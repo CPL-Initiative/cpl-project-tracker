@@ -129,6 +129,23 @@ function dom() {
     !!(chat && chat.querySelector(".qs-row .qs-label") && chat.querySelector(".qs-row .qs-input")));
 }
 
+// (f) About popover z-index fix — the header gets a stacking context above the
+// page content so the absolutely-positioned About panel isn't trapped behind
+// the KPI cards (backdrop-filter on .header makes its own context).
+check("cobi_brand.js source lifts .header (position:relative; z-index:150)",
+  BRAND_SRC.includes("position:relative;z-index:150"));
+{
+  const d = dom();
+  d.window.eval(BRAND_SRC);
+  d.window.COBI_BRAND.init();
+  const headCss = Array.from(d.window.document.querySelectorAll("head style"))
+    .map(s => s.textContent).join("");
+  check("injected CSS sets .header z-index:150 (above content)",
+    /\.header\{[^}]*z-index:150/.test(headCss));
+  check("injected CSS keeps the About panel z-index high (300)",
+    /\.cobi-about-panel\{[^}]*z-index:300/.test(headCss));
+}
+
 let failed = 0;
 for (const [name, ok] of results) {
   console.log((ok ? "PASS" : "FAIL") + "  " + name);
