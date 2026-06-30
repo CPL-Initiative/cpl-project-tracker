@@ -167,6 +167,23 @@ GUESS_COLUMNS = [
     "RoleTitle", "RoleDescription", "ContactRoleName", "EmailId", "PhoneNo",
     "CollegeContact", "VPInstruction", "VPStudentServices", "CPLCoordinator",
     "ArticulationOfficer", "CEO", "President", "Dean",
+    # ── Builder-UI-derived candidates (Sam, 2026-06-30) ──────────────────────
+    # The Builder shows DISPLAY labels (e.g. "CollegeID" while the API name is
+    # "CollegeId"; "Primary Contact" with a space). De-space to PascalCase to
+    # guess the API columnName; the value-signature probe confirms which are real.
+    # Users & Roles extras (Builder shows 11; the probe already locked 7):
+    "Administrator", "Order", "RoleID", "SuperUser",
+    # Contacts role-columns + their emails/phones + the staleness field:
+    "PrimaryContactEmail", "PrimaryContactPhone",
+    "VPAA", "VPAAEmail", "VPSS", "VPSSEmail", "LastUpdatedOn",
+    "AcademicSenatePresident", "AcademicSenatePresidentEmail",
+    "ArticulationOfficerEmail", "CEOEmail", "CPLCoordinatorEmail",
+    "CPLCounselorContact", "CPLCounselorEmail", "FacultyLead", "FacultyLeadEmail",
+    "ITContact", "ITContactEmail", "LeadInitiator", "LeadInitiatorEmail",
+    "LeadManager", "LeadManagerEmail", "SchoolCertifyingOfficial",
+    "VeteranSchoolCertifyingOfficialEmail",
+    "VRCOfficialFromMapCohortApplication", "VRCOfficialFromMapCohortApplicationEmail",
+    "VRCOfficialFromMapCohortApplicationPhone",
 ]
 
 
