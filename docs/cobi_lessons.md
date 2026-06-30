@@ -250,3 +250,46 @@ mechanism needed a parallel breakdown map, not a new entry in `PID_TO_KPI_KEY`.
 card↔Annual-Workplan drift (the exact thing Session 85 killed); fix both in
 lockstep through a shared helper. (3) **Code-only PR** — reverted all regenerated
 artifacts; the post-merge `daily-dashboard.yml` dispatch publishes the live HTML/JS.
+
+## Session 87 — StarMax: the MAP Users tab end-to-end (P1→P2→P3)
+
+Sam wanted a COBI tab to **manage MAP's per-college user roster** (staff PII) + a
+**nudge** to remind colleges to keep it current. Built it across PRs #618–#621.
+
+**The schema probe — value-signature, not structure.** MAP's Custom Report API has
+no self-describe mode (a no-`columnName` request 500s) AND it **pads unknown columns
+into 2-wide rows** — so a structural "did the column come back?" guess-and-confirm
+**over-accepts** (run #1: all 57 candidates "passed"). The reliable method is
+**value signature**: probe each candidate alongside a known-good anchor, and keep it
+only if its VALUES come back (`responseCode='000'`, non-null) — calibrated with 3
+**garbage sentinel** columns so the "fake" baseline is data-driven. Two more gotchas:
+MAP is **case-sensitive** (`UserName` ✓ vs `Username` ✗), and the multi-word Contacts
+columns keep the **spaces** from the Builder labels (`VPAA Email` ✓, `VPAAEmail` ✗).
+PII-safe throughout: print field names + counts + low-cardinality non-`@` enums only.
+KB note: [`docs/kb-notes/methodology-map-api-value-signature-probe.md`](docs/kb-notes/methodology-map-api-value-signature-probe.md).
+
+**The gated-PII pattern (reusable).** Staff PII must never touch the repo, so it lives
+ONLY in a gated Supabase table: **no anon SELECT policy** (the public key can't read
+rows), a reviewer/team-phrase SELECT policy (`is_allowed_reviewer() OR team_pass_ok()`),
+and **no write policy at all** (only the service-role sync mutates it, bypassing RLS).
+The PUBLIC surface is a separate **SECURITY DEFINER aggregate RPC** (`map_users_summary()`,
+anon-granted) that returns counts + role-mix only — never a row. The sync is the
+**runner-as-proxy** template (the MAP API is egress-blocked from the sandbox): fetch on a
+runner with an explicit `columnName`, write via the service key through an **atomic replace
+RPC**. Gotcha that cost two failed runs: Supabase's **pg-safeupdate** guard blocks an
+unqualified `DELETE` through the PostgREST API roles (`21000` "DELETE requires a WHERE
+clause") even though it worked via the MCP/direct SQL — add `where true`.
+
+**The nudge is a `mailto:`, not an email server.** The RACI nudge (the precedent) just
+opens the user's mail client pre-filled — nothing is auto-sent. So P3 needed no email
+infra: a gated `map_college_contacts` table (Primary Contact / VPAA = VP Instruction /
+VPSS = VP Student Services + emails, confirmed via the same probe) + a 📣 button that
+builds a `mailto:` to the present emails. Cheap, honest, reviewer-driven.
+
+**Other lessons.** (1) **A "sub-activity" can map to a KPI BREAKDOWN, not a top-level
+KPI** — the card fix (#617) needed a parallel `PID_TO_KPI_BREAKDOWN` map, wired through
+BOTH the card and the Annual-Workplan post-passes so they stay consistent. (2) **Lazy
+tabs need their workflow on the DEFAULT branch to be API-dispatchable** — a brand-new
+`workflow_dispatch` workflow 404s on the dispatch API until it's merged to main. (3)
+**Surface the error body** — the sync swallowed an opaque 400; capturing the PostgREST
+message (PII-free) made the safeupdate cause obvious in one more run.
