@@ -293,3 +293,42 @@ tabs need their workflow on the DEFAULT branch to be API-dispatchable** — a br
 `workflow_dispatch` workflow 404s on the dispatch API until it's merged to main. (3)
 **Surface the error body** — the sync swallowed an opaque 400; capturing the PostgREST
 message (PII-free) made the safeupdate cause obvious in one more run.
+
+## Session 87 follow-up — the MAP Users nudge grows up (2026-06-30, PRs #623–#626)
+
+After the tab shipped, Sam refined the nudge. Four PRs, all code/docs-only (the static
+`map_users.js` publishes via Pages; the schema bits applied live via MCP + a sync re-run):
+
+- **Recipient PICKER + CEO + last-nudged log (#623).** Clicking 📣 now opens a confirm
+  dialog with every contact **pre-checked** — uncheck anyone, then *✉ Open email draft*.
+  `buildNudgeMailto(college, picks, …)` takes the chosen picks, not the whole contacts
+  row. **CEO** joined Primary Contact / VPAA / VPSS as a 4th recipient (new `ceo`/`ceo_email`
+  columns; 71/121 colleges have one). A new gated **`map_college_nudges`** table
+  (`last_nudged_at`/`last_nudged_by`) logs each open — kept **separate** from
+  `map_college_contacts` so the monthly full-refresh sync never wipes it (a clean instance
+  of "mutable state and refreshed-from-source data don't share a table").
+- **Deep-link into MAP (#624).** The draft links the college to **their own MAP CPL
+  dashboard** — reused the per-college `landing_page_url` already in
+  `chatbox_college_profiles` (the CPL Assistant's source), joined in the sync by exact
+  college name (118/121 match). Lesson: **before sourcing a new field, check what an
+  adjacent feature already stores** — the landing URLs were one join away.
+- **Roster-in-the-email, as a Check-All checklist (#626).** Leadership wanted "eyes on
+  their CPL heroes," so the nudge body now carries the college's **own** user roster.
+  Rendered in the picker as an **opt-out checklist** (all checked) with a **Check-All
+  master in the header row** + a checkbox per user (drop a departed staffer before
+  sending). Only checked users hit the email. "Add a Check All" was the tell that Sam
+  wanted *per-user* checkboxes, not a single toggle — a single checkbox has nothing to
+  "check all." Privacy: it's the college's OWN staff shown to that college's OWN
+  leadership (no cross-college leak), client-side draft only, never logged. The per-user
+  checklist doubles as the escape hatch for big colleges (a long roster can hit Outlook's
+  mailto length cap).
+
+**The load-bearing architecture call.** Sam asked for a self-service "edit your users"
+link that *feeds MAP*. The right answer was to **not** build that: MAP is the system of
+record for users and exposes **no write API** (the Custom Report API is read-only), so a
+COBI-side editor would be a second roster that drifts. COBI owns the **nudge + the
+deep-link + the accountability log**; colleges edit **in MAP**. Distilled to an ADR:
+`docs/kb-notes/adr-surface-dont-edit-readonly-system-of-record.md`. Parked the "✓ confirmed
+current" attestation loop (buildable COBI-only later). Incoming: 3 per-user Custom Report
+fields Sam asked MAP to add (Active/Inactive · Disciplines · Last updated) — fold them in
+via the value-signature probe when they land (`map_users_tab_scope.md` §8).

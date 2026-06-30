@@ -513,7 +513,7 @@ scraping proved unreliable.
 | `annual_report.js` | **Annual Report tab** renderer (`window.CPL_ANNUAL_REPORT`, `#annual-report`). Lazy-loaded on first open; injects own `var(--token)` CSS. Assembles a 6-section report draft from live `window.CPL_DATA` each open — Exec Summary · Vision 2030 & Goals · Activity Progress (the 4) · Statewide Impact · Spotlights (Veteran Sprint / Military Base) · Looking Ahead — EDITABLE in place (textarea) with a live markdown preview; toolbar = ↻ Rebuild from data · ✨ AI polish (reuses `CPL_REPORT_PROXY_URL`; disabled if unset) · ⬇ Word (`docx.min.js`) · 🖨 Print. Content is creation-era until `item_updates` is surfaced into it (next). Static — NOT a daily-cron artifact. Tests: `tests/annual_report.test.js` (29). Added Session 77 (StarPort), PR #557. Docs: `docs/cobi_raci_nudge_lessons.md`. |
 | `mission_control.js` | **Mission Control** — the "Lift Off" program tracker (`window.CPL_MISSION_CONTROL`, added Session 83). A self-contained **read-only-by-default overlay** (the `card_updates.js` pattern) that renders `kb/liftoff_plan.json` ⊕ a Supabase `liftoff_state` overlay as a **collapsible `<details>` block mounted BELOW the RACI functions** in the Team & RACI tab (mounts on `cpl-tab-activated` when `tab==='raci'`; inserts `#mission-control-root` after `#raci-root`; injects own `var(--token)` CSS; never touches `raci.js`). The plan is **phases (Now/Next/Later) of `task` + `decision` nodes** — a `decision` FORKS the work (an option `activates` its branch tasks + `archives` the others; the choice doubles as the human decision log). Anonymous = read-only; a signed-in/team-phrase user sets task status (`setStatus`) + picks decision branches (`setChoice`) — optimistic write + rollback, upsert to `liftoff_state`. **Forward-only** (PII-incident items dropped — handled long ago). Static — NOT a daily-cron artifact; nav/boot mirrored in BOTH HTMLs (Rule 4). Schema: `mission/supabase_liftoff_state.sql`. Tests: `tests/mission_control.test.js` (32). Docs: `docs/mission_control_lessons.md` + `docs/co_platform_strategy.md`. |
 | `project_lifecycle.js` | **Project soft-delete overlay** (`window.CPL_PROJECT_LIFECYCLE`, added Session 84). Lets a reviewer / team-phrase user **Table** (pause) or **Archive** (close) a project on the Activities & Projects cards — it leaves the active grid + every `CPL_DATA` consumer (RACI matrix, Annual Report, custom reports, Workplan Goals ladder) and moves to a collapsed **"Tabled & Archived"** `<details>` section with the reason + date; **♻ Restore** reverses it. Never a hard delete. STATIC, anon-read overlay (the `card_updates.js` pattern) over Supabase **`public.project_lifecycle`** (write gated `is_allowed_reviewer() OR team_pass_ok()`); injects own CSS; reconciles drift since the last regen + provides the 🗄 Table/Archive + ♻ Restore controls. The generator bakes the last-known overlay (tabled cards render HIDDEN with `data-lifecycle`; the collapsed section; tabled ids excluded from `CPL_DATA.projects` + the Workplan Goals tables) and `kb/_load_projects.py:load_project_lifecycle()` folds it into the committed `kb/project_lifecycle.json` ledger (the "noted in the KB" record). `dashboard_filters.js` skips `[data-lifecycle]` cards. Script-loaded in BOTH HTMLs (Rule 4). Schema: `kb/supabase_project_lifecycle.sql`. Tests: `tests/project_lifecycle.test.js` (25). Docs: `docs/project_lifecycle_lessons.md` + `docs/kb-notes/playbook-soft-delete-generated-entity-via-overlay.md`. |
-| `map_users.js` | **MAP Users tab** renderer (`window.CPL_MAP_USERS_TAB`, `#map-users`, added Session 87). Lazy-loaded; injects own CSS. Manages the MAP platform's per-college user roster (MAP "College Users & Roles" — STAFF PII). **DEFAULT public view** = per-college user **counts + the 7-way RoleName mix** + "data as of", from the anon `map_users_summary()` RPC (no PII). **Roster drawer** (👥) reveals names/emails — read with the shared `cpl_sb` reviewer token / `cpl_team_pass` header, **gated server-side** by `map_college_users` RLS (logged-out → no rows → a sign-in gate). **📣 nudge** (signed-in only) opens a pre-filled `mailto:` to a college's Primary Contact + VPAA (VP Instruction) + VPSS (VP Student Services) from the gated `map_college_contacts` — nothing auto-sent (the RACI-nudge pattern). All output HTML-escaped. STATIC, lazy, NOT a daily-cron artifact; nav/pane/boot in BOTH HTMLs (Rule 4). Data synced by `map/sync_map_users.py` + `.github/workflows/map-users-sync.yml` (dispatch + monthly cron; runner-as-proxy to the egress-blocked MAP API; service-key writes; PII never committed). Schema: `map/supabase_map_users.sql` + `map/supabase_map_contacts.sql`. Tests: `tests/map_users.test.js` (29). Scope/story: `docs/map_users_tab_scope.md` + `docs/cobi_lessons.md` (S87). |
+| `map_users.js` | **MAP Users tab** renderer (`window.CPL_MAP_USERS_TAB`, `#map-users`, added Session 87). Lazy-loaded; injects own CSS. Manages the MAP platform's per-college user roster (MAP "College Users & Roles" — STAFF PII). **DEFAULT public view** = per-college user **counts + the 7-way RoleName mix** + "data as of", from the anon `map_users_summary()` RPC (no PII). **Roster drawer** (👥) reveals names/emails — read with the shared `cpl_sb` reviewer token / `cpl_team_pass` header, **gated server-side** by `map_college_users` RLS (logged-out → no rows → a sign-in gate). **📣 nudge** (signed-in only) opens a **recipient PICKER** (all pre-checked, uncheck anyone) then a pre-filled `mailto:` — nothing auto-sent (the RACI-nudge pattern). Recipients = Primary Contact + VPAA (VP Instruction) + VPSS (VP Student Services) + **CEO** (Session-87 follow-up) from the gated `map_college_contacts`; the draft also (a) links the college to **their own MAP CPL dashboard** (`landing_page_url`, joined in the sync from `chatbox_college_profiles`) and (b) embeds the **college's own user roster** as a Check-All **checklist** (drop a departed staffer before sending → `rosterEmailBlock`) so leadership sees their CPL people. A **last-nudged log** (`map_college_nudges`) stamps "last nudged &lt;date&gt; by &lt;who&gt;" per row. All output HTML-escaped. STATIC, lazy, NOT a daily-cron artifact; nav/pane/boot in BOTH HTMLs (Rule 4). Data synced by `map/sync_map_users.py` + `.github/workflows/map-users-sync.yml` (dispatch + monthly cron; runner-as-proxy to the egress-blocked MAP API; service-key writes; PII never committed). Schema: `map/supabase_map_users.sql` + `map/supabase_map_contacts.sql`. Tests: `tests/map_users.test.js` (56). Scope/story: `docs/map_users_tab_scope.md` + `docs/cobi_lessons.md` (S87). |
 
 ### 3. Cloudflare Worker (cpl-proxy)
 
@@ -1110,10 +1110,15 @@ JSON) and Saves/Resumes to Supabase `tmc_submissions`.
   a **public aggregate** `map_users_summary()` (SECURITY DEFINER, anon) returns
   per-college counts + the 7-way RoleName mix + last_synced (no PII). `map_college_contacts`
   (121 rows): reviewer/team-phrase SELECT only — the Primary Contact / VPAA (VP
-  Instruction) / VPSS (VP Student Services) + emails behind the 📣 nudge. Both refreshed
+  Instruction) / VPSS (VP Student Services) / **CEO** + emails behind the 📣 nudge, plus
+  **`landing_page_url`** (the college's MAP CPL dashboard, joined in the sync from
+  `chatbox_college_profiles`). Both refreshed
   atomically by service-role-only `map_users_replace`/`map_contacts_replace(jsonb)` RPCs
   (note the **`where true`** on the full-table delete — Supabase's pg-safeupdate blocks an
-  unqualified DELETE through the PostgREST API roles). Synced by `map/sync_map_users.py`
+  unqualified DELETE through the PostgREST API roles). A third table **`map_college_nudges`**
+  (Session-87 follow-up: college pk, `last_nudged_at`/`last_nudged_by`; reviewer/team-phrase
+  R+W) is the "last nudged" log — kept SEPARATE from the contacts table so the monthly
+  full-refresh never wipes it. Synced by `map/sync_map_users.py`
   (runner-as-proxy; `map-users-sync.yml`, dispatch + monthly cron). Schema of record:
   `map/supabase_map_users.sql` + `map/supabase_map_contacts.sql` (applied live via the
   Supabase MCP). Docs: `docs/map_users_tab_scope.md`.
@@ -2107,7 +2112,21 @@ public aggregate via `map_users_summary()`, roster reviewer/team-phrase gated) +
 `map_college_contacts` (121); runner sync `map/sync_map_users.py` (`map-users-sync.yml`);
 the tab `map_users.js` (lazy, both HTMLs) + a 📣 **mailto nudge** to Primary Contact /
 VPAA / VPSS. Gotcha: Supabase **pg-safeupdate** needs `where true` on a full-table DELETE
-through the API roles. 113 JS test files green. Full story:
+through the API roles. 113 JS test files green.
+
+**(3) Nudge follow-up (PRs #623–#626).** Per Sam: a **recipient PICKER** (all pre-checked,
+uncheck anyone) + **CEO** as a 4th recipient (71/121 have one) + a **last-nudged log**
+(`map_college_nudges`, kept separate from the monthly-wiped contacts table) (#623); the draft
+**links the college to their own MAP CPL dashboard** (`map_college_contacts.landing_page_url`,
+joined in the sync from `chatbox_college_profiles`; 118/121 match) (#624); and the
+**college's own user roster** rides in the email body as a **Check-All checklist** (drop a
+departed staffer before sending) so leadership sees their CPL people (#626). **Architecture
+call (durable):** MAP is the system of record for users and there's **no MAP write API**, so
+we DON'T build a roster editor in COBI — colleges edit in MAP (deep-linked), COBI owns the
+nudge → `docs/kb-notes/adr-surface-dont-edit-readonly-system-of-record.md`. Parked: the
+"✓ confirmed current" attestation loop. Incoming (Sam asked MAP to add): 3 per-user Custom
+Report fields — Active/Inactive · Disciplines · Last updated (`docs/map_users_tab_scope.md` §8).
+56 map_users checks; 113 JS test files green. Full story:
 [`docs/cobi_lessons.md`](docs/cobi_lessons.md) (S87) + [`docs/map_users_tab_scope.md`](docs/map_users_tab_scope.md).
 **NEXT: [`docs/session_88_handoff.md`](docs/session_88_handoff.md).**
 
