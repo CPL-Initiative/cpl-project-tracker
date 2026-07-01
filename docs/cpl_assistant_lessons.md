@@ -514,3 +514,48 @@ and asserts El Camino is named + not falsely dismissed.
 - **Multi-entity queries defeat first-match detection.** Naming 3 colleges → only the
   first alias resolves; the others must still surface via the (now larger) global
   offerings search. A future refinement: detect ALL named colleges, not just the first.
+
+---
+
+## Session 90 — SkySherpa: the standalone Sierra page gets its brand (2026-07-01)
+
+Not response-logic this time — a **visual/branding pass** on the standalone
+`sierra/` page (the shareable chat surface from S89 #633). Three PRs, all merged
++ live via the lean Pages deploy:
+
+- **#635 — CPL Initiative logo replaces the header 🏔️ emoji.** Sam uploaded the
+  official logo (white lettering, transparent bg). Cropped to its content bbox +
+  a small margin → `sierra/cpl-initiative-logo.png`; placed as a co-brand lockup
+  left of the "Sierra" wordmark with a thin white divider.
+- **#636 — Mt Whitney ridge ghosted behind "Sierra" + tagline.** A hand-authored
+  `sierra/whitney-mark.svg` (a single white `<path>` skyline traced from Sam's
+  east-face photo — dominant sharp summit, jagged East-Buttress descent, snow
+  saddle, lower North-Face massif — plus a small filled snow patch below the
+  apex), ghosted at 34% behind the wordmark: **flat base level with the text
+  baseline**, **nudged right** so the right slope clears the final "a". Tagline
+  reframed **"Your CPL Sherpa"** (Whitney is the tallest peak in the Sierra
+  Nevada; a Sherpa guides you up it).
+- **#637 — trimmed the tagline** to just "Your CPL Sherpa" (dropped
+  "· California Community Colleges" — already in the logo on the left).
+
+**Lessons / reusable tricks:**
+- **A pasted image may never touch disk.** When Sam pastes an image into chat,
+  it's visible to the model but not written to the filesystem. The raw bytes
+  live as a base64 `{"type":"image","source":{"type":"base64",...}}` block in
+  the session transcript (`/root/.claude/projects/<proj>/<session>.jsonl`). Walk
+  the JSONL, `base64.b64decode` the `data`, write the file. (Also: the upload
+  rendered "blank" in chat because it was white-on-transparent — expected for the
+  variant we wanted.)
+- **SVG line-art > raster for a UI mark.** Scalable, recolorable to any brand
+  color, ~0.5 KB, no sourcing/liveness pipeline (unlike First Light's PD photos).
+  Hand-authoring a `<path>` from a reference photo is quick and gives exact
+  control (thickness, base level, horizontal offset) — all tuned live via
+  headless Chromium screenshots against the real "Sierra" text.
+- **Ghost-behind-text placement:** wrap the `<h1>` in a `position:relative`
+  inline-block, absolutely position the mark behind it (`z-index:0`, `h1`
+  `z-index:1`), size in `em` so it scales with the wordmark, align the flat base
+  to the baseline via `bottom`, and shift horizontally with `translateX`.
+- **A public government-facing brand string deserves a beat.** "Sherpa" is an
+  ethnic group; flagged the cultural-sensitivity angle to Sam before baking it in
+  (he chose to keep it — his call, his brand). Surface, don't lecture; then honor
+  the decision.
