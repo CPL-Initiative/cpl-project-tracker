@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-01 · Session 92 (StarFab) · TMC Builder: every official c-id.net approval now lands (Saddleback SOCI 110 fixed) + the confidence-score data map for the mid-July CO backlog",
+ "_as_of": "2026-07-01 · Session 92 (StarFab) · TMC Builder: every c-id.net approval lands + THE CONFIDENCE ENGINE IS LIVE (verdict tiers, submit gates, CO review queue with Approve/Return)",
  "_session": 92,
- "_status": "Session 92 dug one layer deeper on your Saddleback screenshot. The 'Select a college…' rows were just the no-college-picked view — but underneath was a real defect: when c-id.net says a college holds a C-ID approval and the course itself is missing from our COCI snapshot (very common right now — colleges are renumbering to the new statewide C1000 numbers, so old rows are gone and new ones haven't landed), the approval vanished and the slot showed a wrong blank. That was 1,195 wrong blanks across 114 colleges. Now EVERY official approval lands: matched to the real course where we can (smarter joins), or shown as a clearly-badged 'per c-id.net — verify' row when the course isn't in our snapshot. Blanks that remain are TRUE (the college holds no approval — e.g. Saddleback's AJ 120–160). A safety review caught and fixed a subtle bug before shipping (title matching could grab a sibling course like 'Part B' of a two-part sequence — now impossible). Also mapped YOUR new goal (confidence score + can't-submit-misaligned before the mid-July Institute) against the data we hold: everything's in hand except CONTACT HOURS — see the new data-requirements note and the two questions below.",
+ "_status": "Big day on the TMC Builder, in two acts. ACT 1: every official c-id.net approval now lands on the right side (1,195 wrong blanks across 114 colleges → 0; Saddleback's SOCI 110 fixed; remaining blanks are TRUE absences). ACT 2 — your 'Let's build:)': the CONFIDENCE ENGINE is live. Colleges now see a verdict chip on every slot (✓ auto = C-ID aligned, accept by rule · ≈ verify · 📎 evidence · ⚠ review), enter HOURS (placeholder until your COCI report lands) + UNITS for courses missing from our snapshot + ASSIST evidence on flexible slots, and CANNOT SUBMIT an incomplete application (select-counts, list unit floors, and the 18-unit STAR gate all block at the door). CO staff (signed in) get the 'New requests' queue ranked so near-auto-approvable submissions clear first, an expandable per-course review panel, and Approve / Return-with-note buttons — approvals are server-enforced (nobody can forge one with the public key; a security review caught exactly that hole plus an XSS before shipping, both fixed). Plus the '⏳ In progress in COCI' list = your 200+ backlog proxy, ranked by computed alignment. Try it: TMC Builder → Show → 'New requests'.",
  "items": [
   {
    "id": "coci-hours-extract",
@@ -53,10 +53,16 @@
    "text": "One-time: add the Fact Sheet URL (or …/cpl-project-tracker/**) to the Supabase Auth → Redirect URLs list so a magic-link sign-in from the Fact Sheet lands back on that page."
   },
   {
-   "id": "tmc-confidence-engine",
+   "id": "tmc-engine-tryit",
+   "who": "sam",
+   "tab": "tmc-builder",
+   "text": "TRY THE NEW CONFIDENCE ENGINE: pick a college + TMC → verdict chips on every slot, hours/units/evidence inputs, and the submit gates. Then sign in and open Show → 'New requests' → expand a submission → Approve / Return. Tell me what the CO staff workflow needs changed before the Institute."
+  },
+  {
+   "id": "tmc-engine-next",
    "who": "fable",
    "tab": "tmc-builder",
-   "text": "Build the TMC confidence engine for the mid-July backlog: per-slot tiers (C-ID auto-accept / ≈ verify / scored), submission gates ('can't submit incomplete'), and the CO triage queue ranked by computed alignment. All data shipped as of #642 except hours. Build order: docs/kb-notes/reference-tmc-confidence-data-requirements.md."
+   "text": "Confidence engine round 2: description-similarity precompute (course description vs C-ID descriptor text — data in hand, ship scores not text), wire real hours when Sam's COCI master report lands, and distinguish verify-tier carriers in the directory coverage column."
   },
   {
    "id": "assistant-cer",
