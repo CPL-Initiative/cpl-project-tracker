@@ -36,7 +36,10 @@
                             // "requested" = the CO-review queue. Falls back to "all" when no
                             // college is picked or before the ADT overlay has loaded.
     notes: {},            // slotKey -> {note, by, at} — global curator notes for the selected TMC
-    requests: []          // submitted ADT requests (status=submitted) for CO review
+    requests: [],         // submitted / reviewed ADT requests for the CO queue
+    hours: {},            // slotKey -> contact hours (PLACEHOLDER — COCI master report with hours requested; captured from the college's COR, never scored yet)
+    evidence: {},         // slotKey -> ASSIST/articulation evidence for a FLEXIBLE slot (tier-2 acceptance)
+    unitsx: {}            // slotKey -> college-entered units for an unknown-units (synthesized) course — feeds the ≥18-unit gate so a CCN-transition college isn't dead-ended
   };
 
   /* ----------------------------------------------------------------- utils */
@@ -318,6 +321,35 @@
       "#tab-tmc-builder .tmc-opt .tmc-pc-u{color:var(--text-muted);}" +
       "#tab-tmc-builder .tmc-opt .tmc-pc-cid{display:inline-block;font-size:.68rem;font-weight:700;color:#065f46;background:#ecfdf5;border:1px solid #34d399;border-radius:4px;padding:0 5px;margin-left:6px;}" +
       "#tab-tmc-builder .tmc-pc-net{display:inline-block;font-size:.66rem;font-weight:700;color:#92400e;background:#fffbeb;border:1px solid #fbbf24;border-radius:4px;padding:0 5px;margin-left:6px;cursor:help;}" +
+      "#tab-tmc-builder .tmc-vd{display:inline-block;font-size:.68rem;font-weight:700;border-radius:4px;padding:0 6px;cursor:help;border:1px solid transparent;}" +
+      "#tab-tmc-builder .vd-auto{color:#065f46;} #tab-tmc-builder .tmc-vd.vd-auto{background:#ecfdf5;border-color:#34d399;}" +
+      "#tab-tmc-builder .vd-verify{color:#92400e;} #tab-tmc-builder .tmc-vd.vd-verify{background:#fffbeb;border-color:#fbbf24;}" +
+      "#tab-tmc-builder .vd-evid{color:#1e40af;} #tab-tmc-builder .tmc-vd.vd-evid{background:#eff6ff;border-color:#93c5fd;}" +
+      "#tab-tmc-builder .vd-review{color:#b91c1c;} #tab-tmc-builder .tmc-vd.vd-review{background:#fef2f2;border-color:#fca5a5;}" +
+      "#tab-tmc-builder .tmc-vd.vd-open{color:var(--text-muted);background:var(--surface-subtle,#f8fafc);border-color:#e2e8f0;}" +
+      "#tab-tmc-builder .tmc-extras{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:4px;font-size:.72rem;color:var(--text-muted);}" +
+      "#tab-tmc-builder .tmc-ex{display:inline-flex;align-items:center;gap:4px;font-size:.72rem;color:var(--text-muted);}" +
+      "#tab-tmc-builder .tmc-hrs-in{width:52px;font-size:.74rem;padding:1px 5px;border:1px solid #cbd5e1;border-radius:4px;}" +
+      "#tab-tmc-builder .tmc-un-in{width:44px;font-size:.74rem;padding:1px 5px;border:1px solid #fbbf24;border-radius:4px;}" +
+      "#tab-tmc-builder .tmc-ev-in{width:230px;font-size:.74rem;padding:1px 5px;border:1px solid #93c5fd;border-radius:4px;}" +
+      "#tab-tmc-builder .tmc-hrs-hint{font-size:.66rem;color:var(--text-muted);font-style:italic;}" +
+      "#tab-tmc-builder .tmc-gates-bad{color:#b91c1c;font-weight:700;cursor:help;}" +
+      "#tab-tmc-builder .tmc-gates-ok{color:#065f46;font-weight:700;}" +
+      "#tab-tmc-builder .tmc-req-row{cursor:pointer;} #tab-tmc-builder .tmc-req-row:hover td{background:#eef6ff;}" +
+      "#tab-tmc-builder .tmc-req-st{display:inline-block;font-size:.68rem;font-weight:700;border-radius:4px;padding:0 6px;}" +
+      "#tab-tmc-builder .st-sub{color:#1e40af;background:#eff6ff;border:1px solid #93c5fd;}" +
+      "#tab-tmc-builder .st-app{color:#065f46;background:#ecfdf5;border:1px solid #34d399;}" +
+      "#tab-tmc-builder .st-ret{color:#92400e;background:#fffbeb;border:1px solid #fbbf24;}" +
+      "#tab-tmc-builder .tmc-req-panel{padding:10px 12px;background:var(--surface-subtle,#f8fafc);border:1px solid #e2e8f0;border-radius:8px;margin:4px 0 10px;}" +
+      "#tab-tmc-builder .tmc-req-head{font-size:.8rem;margin-bottom:8px;}" +
+      "#tab-tmc-builder .tmc-req-sub{font-size:.72rem;color:var(--text-muted);margin-top:2px;}" +
+      "#tab-tmc-builder .tmc-req-slots{width:100%;border-collapse:collapse;font-size:.78rem;}" +
+      "#tab-tmc-builder .tmc-req-slots th,#tab-tmc-builder .tmc-req-slots td{padding:5px 8px;border-top:1px solid #eef2f7;text-align:left;vertical-align:top;}" +
+      "#tab-tmc-builder .tmc-req-act{display:flex;align-items:flex-start;gap:8px;margin-top:10px;}" +
+      "#tab-tmc-builder .tmc-req-note{flex:1;min-height:44px;font-size:.78rem;padding:5px 8px;border:1px solid #cbd5e1;border-radius:6px;}" +
+      "#tab-tmc-builder .tmc-backlog{margin-top:18px;} #tab-tmc-builder .tmc-backlog>summary{cursor:pointer;font-weight:700;font-size:.85rem;color:var(--navy-primary);}" +
+      "#tab-tmc-builder .tmc-backlog-body table{width:100%;border-collapse:collapse;font-size:.78rem;margin-top:6px;}" +
+      "#tab-tmc-builder .tmc-backlog-body th,#tab-tmc-builder .tmc-backlog-body td{padding:4px 8px;border-top:1px solid #eef2f7;text-align:left;}" +
       "#tab-tmc-builder .tmc-opt-none{padding:10px 11px;color:var(--text-muted);font-size:.8rem;}" +
       "#tab-tmc-builder .tmc-opt-group{padding:5px 11px;font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-muted);font-weight:700;background:var(--surface-subtle,#f8fafc);}" +
       "#tab-tmc-builder .tmc-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:16px;}" +
@@ -455,9 +487,11 @@
     });
   }
 
-  /* ---- ADT requests for CO review (a tmc_submissions row, status=submitted) */
+  /* ---- ADT requests for CO review (tmc_submissions rows past 'draft') ------ */
   function loadRequests(cb) {
-    var q = "/rest/v1/tmc_submissions?status=eq.submitted&select=college,tmc_id,tmc_discipline,degree_type,filled_slots,total_slots,updated_at&order=updated_at.desc";
+    var q = "/rest/v1/tmc_submissions?status=in.(submitted,approved,returned)" +
+      "&select=college,tmc_id,tmc_discipline,degree_type,filled_slots,total_slots,updated_at," +
+      "status,review_note,reviewed_by,reviewed_at,readiness:alignments->_readiness&order=updated_at.desc";
     fetch(SUPABASE_URL + q, { headers: sbHeaders() })
       .then(function (r) { return r.ok ? r.json() : []; })
       .then(function (rows) { state.requests = rows || []; if (cb) cb(); })
@@ -482,6 +516,9 @@
   function setCollege(name) {
     state.college = name;
     state.choice = {};
+    state.hours = {};
+    state.evidence = {};
+    state.unitsx = {};
     var data = window[CC_GLOBAL];
     if (!data || !name) { state.collegeIdx = -1; state.courses = []; state.byCid = null; return; }
     state.collegeIdx = data.colleges.indexOf(name);
@@ -586,12 +623,117 @@
   }
   function fmtU(u) { return u == null ? "?" : (u % 1 === 0 ? String(u) : String(u)); }
 
+  /* ---- confidence engine (Session 92 follow-on) -----------------------------
+   * Grades every MAJOR slot into a verdict tier for the CO five-check review
+   * (course number · title · units · C-ID · description). Per the ASCCC
+   * acceptance ladder a C-ID match is a MANDATORY accept — the statewide
+   * approval already certified title/units/content — so the manual checks
+   * collapse to one lookup wherever a C-ID exists; the scored tiers cover the
+   * residual. Contact HOURS are a PLACEHOLDER (a COCI master report with hours
+   * is requested but pending): captured per slot from the college's COR,
+   * displayed to the CO reviewer, never scored yet.
+   * Tiers: auto (accept by rule) · verify (official signal, one thing to
+   * confirm) · evidence (flexible slot + attached evidence) · review (the CO
+   * triage queue) · open (nothing selected). */
+  function confidenceFor(slot, course, key) {
+    if (!course) return { tier: "open", score: 0, why: "no course selected" };
+    var cids = slotCids(slot);
+    var mc = matchedCid(course, cids);
+    if (mc) {
+      if (slot.cid_unverified)
+        return { tier: "verify", score: 0.85, why: "C-ID matched, but this template C-ID is not in our C-ID reference — verify the descriptor is real & current" };
+      if (matchedViaTitle(course, cids))
+        return { tier: "verify", score: 0.8, why: "C-ID per c-id.net title match — verify the course mapping" };
+      if (course.src === "cidnet")
+        return { tier: "verify", score: 0.9, why: "official c-id.net approval; course not in our COCI extract — verify number & units" };
+      if (unitsInRange(course.units, slot.units) === false)
+        return { tier: "verify", score: 0.85, why: "C-ID aligned; units differ from the template — verify" };
+      return { tier: "auto", score: 1, why: "C-ID aligned — mandatory accept (ASCCC)" };
+    }
+    if (slot.flexible) {
+      // rule 2: a flexible-list proviso accepts a non-C-ID course WITH evidence
+      var ev = key != null && state.evidence[key];
+      if (ev) return { tier: "evidence", score: 0.75, why: "flexible slot — accepted with the attached evidence (CO verifies)" };
+      return { tier: "review", score: 0.5, why: "flexible slot — attach ASSIST/articulation evidence to strengthen" };
+    }
+    if (slot.noncid && !slot.cid)
+      // rule 3: a NAMED non-C-ID template course needs the faculty
+      // descriptor/COR comparison — never evidence-upgraded, never auto
+      return { tier: "review", score: 0.5, why: "non-C-ID template course — faculty descriptor/COR comparison needed" };
+    if (slot.cid && titleJaccard(titleTokens(slot.title), courseTokens(course)) >= TITLE_MATCH_MIN) {
+      var ur = unitsInRange(course.units, slot.units);
+      return { tier: "review", score: ur === false ? 0.5 : 0.6, why: "title-matched, no C-ID on file — CO comparison needed" };
+    }
+    return { tier: "review", score: 0.3, why: "no C-ID or title signal — full CO comparison needed" };
+  }
+  var VERDICT_CHIP = {
+    auto:     { txt: "✓ auto",      cls: "vd-auto",   hint: "C-ID aligned — mandatory accept per the ASCCC acceptance rules" },
+    verify:   { txt: "≈ verify",    cls: "vd-verify", hint: "Official signal present — one item for the reviewer to confirm" },
+    evidence: { txt: "📎 evidence", cls: "vd-evid",   hint: "Flexible slot accepted with attached evidence" },
+    review:   { txt: "⚠ review",    cls: "vd-review", hint: "No C-ID — needs the CO course-comparison (the triage queue)" },
+    open:     { txt: "· open",      cls: "vd-open",   hint: "No course selected" }
+  };
+  function verdictChipHtml(v) {
+    var c = VERDICT_CHIP[v.tier] || VERDICT_CHIP.open;
+    return "<span class='tmc-vd " + c.cls + "' title='" + esc(v.why || c.hint) + "'>" + c.txt + "</span>";
+  }
+  // verdict mix across the MAJOR slots (GE is certified separately — excluded)
+  function verdictTally() {
+    var out = { auto: 0, verify: 0, evidence: 0, review: 0, open: 0 };
+    if (!state.tmc || !state.tmc.sections) return out;
+    state.tmc.sections.forEach(function (sec, si) {
+      sec.slots.forEach(function (slot, sj) {
+        var key = si + ":" + sj;
+        out[confidenceFor(slot, state.choice[key], key).tier]++;
+      });
+    });
+    return out;
+  }
+  // the "can't submit misaligned" structural gates (STAR Act + template shape);
+  // returns [] when submittable, else human-readable unmet-gate strings
+  function submitGates() {
+    var gates = [];
+    if (!state.tmc || !state.tmc.sections) return gates;
+    state.tmc.sections.forEach(function (sec, si) {
+      var need = sec.select === "all" ? (sec.slots || []).length : sec.select;
+      if (!need) return;
+      var got = 0;
+      (sec.slots || []).forEach(function (slot, sj) { if (state.choice[si + ":" + sj]) got++; });
+      if (got < need) {
+        gates.push((sec.name || "Section " + (si + 1)) + ": " + got + " of " + need + " course" + (need === 1 ? "" : "s") + " selected");
+        return;
+      }
+      // per-list units floor (e.g. "select 2 · 6 units" — two 2-unit picks
+      // meet the count but not the list's unit requirement)
+      var r = unitRange(sec.units);
+      if (r) {
+        var su = sumSectionUnits(state.tmc.sections, si, "");
+        if (su + 0.01 < r[0])
+          gates.push((sec.name || "Section " + (si + 1)) + ": " + su + " of the required " + sec.units + " units selected");
+      }
+    });
+    var t = tally();
+    if (t.units < 18)
+      gates.push("Major units " + t.units + " — the STAR Act requires ≥ 18 semester units (27 quarter; this check uses your local unit values) in the major. Unknown-unit courses count 0 until you enter their units on the slot.");
+    return gates;
+  }
+
   /* -------------------------------------------------------------- counters */
+  // effective units for a chosen course: COCI units, else the college-entered
+  // value for an unknown-units (synthesized) course — so the ≥18-unit gate has
+  // a remedy instead of dead-ending a CCN-transition college
+  function effUnits(key, c) {
+    if (!c) return null;
+    if (c.units != null && !isNaN(parseFloat(c.units))) return parseFloat(c.units);
+    var x = parseFloat(state.unitsx[key]);
+    return isNaN(x) ? null : x;
+  }
   function sumSectionUnits(sections, si, prefix) {
     var sec = sections[si], sum = 0;
     (sec.slots || []).forEach(function (slot, sj) {
-      var c = state.choice[(prefix || "") + si + ":" + sj];
-      if (c && c.units != null && !isNaN(parseFloat(c.units))) sum += parseFloat(c.units);
+      var key = (prefix || "") + si + ":" + sj;
+      var u = effUnits(key, state.choice[key]);
+      if (u != null) sum += u;
     });
     return Math.round(sum * 10) / 10;
   }
@@ -622,10 +764,12 @@
       var need = sec.select === "all" ? sec.slots.length : sec.select;
       required += need;
       sec.slots.forEach(function (slot, sj) {
-        var c = state.choice[si + ":" + sj];
+        var key = si + ":" + sj;
+        var c = state.choice[key];
         if (c) {
           filled++;
-          if (c.units != null && !isNaN(parseFloat(c.units))) units += parseFloat(c.units);
+          var u = effUnits(key, c);
+          if (u != null) units += u;
           var stt = statusFor(slot, c);
           if (stt.cls === "ok") aligned++;
           else if (stt.cls === "tmatch") tmatched++;
@@ -843,6 +987,9 @@
   function openTmc(id) {
     state.tmc = findCatalog(id);
     state.choice = {};
+    state.hours = {};
+    state.evidence = {};
+    state.unitsx = {};
     state.notes = {};
     state.view = "detail";
     if (state.college && state.tmc) autoPopulate();
@@ -1229,8 +1376,18 @@
   function doSubmitReview() {
     if (!state.college || !state.tmc) return;
     if (tally().filled === 0) { setMsg("Select at least one course before submitting.", "err"); return; }
+    // "can't submit misaligned": the structural gates block an incomplete
+    // application at the door (the whole point — CO receives near-auto-approvable)
+    var gates = submitGates();
+    if (gates.length) {
+      setMsg("⛔ Not ready to submit — " + gates.join(" · "), "err");
+      return;
+    }
+    var v = verdictTally();
     if (!window.confirm("Submit " + state.college + "'s " + state.tmc.discipline +
-        " alignment to the Chancellor's Office for review? You can keep editing and re-submit.")) return;
+        " alignment to the Chancellor's Office for review?\n\nReadiness: " +
+        v.auto + " auto-accept · " + v.verify + " verify · " + v.evidence + " evidence · " +
+        v.review + " need CO review.\n\nYou can keep editing and re-submit.")) return;
     setMsg("Submitting…", "");
     sbSave(collectPayload("submitted")).then(function (r) {
       if (r.ok) { setMsg("📤 Submitted for CO review — it now appears under “New requests”.", "ok"); loadRequests(); }
@@ -1238,25 +1395,240 @@
     }).catch(function (e) { setMsg("Submit failed: " + e.message, "err"); });
   }
 
-  /* ---- the CO-review queue (Status filter = New requests) ----------------- */
+  /* ---- the CO-review queue (Status filter = New requests) -----------------
+   * The CO triage surface: submissions ranked so the near-auto-approvable ones
+   * clear first (the mid-July backlog play). Rows expand to a per-slot review
+   * panel; signed-in reviewers Approve / Return with a note (UI-gated, per the
+   * table's design). Below it: the ⏳ In-progress backlog proxy from COCI —
+   * the CO holds no extract of pending files, but the COCI program export
+   * already tells us which (college, TMC) pairs are in flight. */
+  var REQ_STATUS_CHIP = {
+    submitted: "<span class='tmc-req-st st-sub'>📤 needs review</span>",
+    approved:  "<span class='tmc-req-st st-app'>✅ approved</span>",
+    returned:  "<span class='tmc-req-st st-ret'>↩ returned</span>"
+  };
+  // _readiness rides an ANON-WRITABLE jsonb — coerce every value to a finite
+  // number before it touches innerHTML (a string here is a stored-XSS vector)
+  function rNum(x) { var n = Number(x); return isFinite(n) ? n : 0; }
+  function readinessCell(r) {
+    var v = r.readiness;
+    if (!v || typeof v !== "object")
+      return r.filled_slots != null ? esc(r.filled_slots + "/" + (r.total_slots || "?")) + " filled" : "—";
+    return "<b class='vd-auto'>" + rNum(v.auto) + "✓</b> <b class='vd-verify'>" + rNum(v.verify) + "≈</b>" +
+      (rNum(v.evidence) ? " <b class='vd-evid'>" + rNum(v.evidence) + "📎</b>" : "") +
+      " <b class='vd-review'>" + rNum(v.review) + "⚠</b>" + (rNum(v.open) ? " " + rNum(v.open) + "·" : "");
+  }
+  function autoShare(r) {
+    var v = r.readiness;
+    if (!v || typeof v !== "object") return -1; // legacy rows sort last within their status
+    // denominator EXCLUDES open: unfilled optional-list slots are legitimate
+    // and must not dilute a flawless submission on a big-list TMC
+    var tot = rNum(v.auto) + rNum(v.verify) + rNum(v.evidence) + rNum(v.review);
+    return tot ? (rNum(v.auto) + 0.5 * (rNum(v.verify) + rNum(v.evidence))) / tot : -1;
+  }
   function renderRequestQueue(mount) {
     mount.innerHTML = "";
     var q = el("div");
-    q.appendChild(el("h3", null, "📤 New ADT requests for CO review"));
-    q.appendChild(el("p", "tmc-intro", "Completed TMC/ADT alignments colleges have submitted to the Chancellor's Office for review. (A future CCCCO sign-in will let CO staff triage these.)"));
+    q.appendChild(el("h3", null, "📤 ADT requests for CO review"));
+    q.appendChild(el("p", "tmc-intro",
+      "Submitted TMC/ADT alignments, ranked so the near-auto-approvable ones clear first " +
+      "(✓ auto = C-ID aligned, accept by rule · ≈ verify = official signal, one confirm · 📎 evidence · ⚠ review = needs the course comparison). " +
+      (state.email ? "You're signed in — open a row to approve or return it." : "Curator sign-in (above) unlocks approve/return.")));
     if (!state.requests.length) {
       q.appendChild(el("div", "tmc-empty", "No submitted requests yet. Build an alignment, then “📤 Submit for CO review”."));
-      mount.appendChild(q); return;
+    } else {
+      var order = { submitted: 0, returned: 1, approved: 2 };
+      var reqs = state.requests.slice().sort(function (a, b) {
+        var so = (order[a.status] || 0) - (order[b.status] || 0);
+        if (so) return so;
+        return autoShare(b) - autoShare(a);
+      });
+      var box = el("div", "tmc-reqlist");
+      var rows = reqs.map(function (r, i) {
+        return "<tr class='tmc-req-row' data-req='" + i + "'><td>" + esc(r.college || "—") + "</td><td>" + esc(r.tmc_discipline || r.tmc_id || "—") + "</td>" +
+          "<td>" + esc(r.degree_type || "") + "</td><td class='tmc-req-rd'>" + readinessCell(r) + "</td>" +
+          "<td>" + (REQ_STATUS_CHIP[r.status] || esc(r.status || "")) + "</td>" +
+          "<td>" + esc(String(r.updated_at || "").slice(0, 10)) + "</td></tr>" +
+          "<tr class='tmc-req-detail' data-detail='" + i + "' style='display:none'><td colspan='6'><div class='tmc-req-panel'>Loading…</div></td></tr>";
+      }).join("");
+      box.innerHTML = "<table><thead><tr><th>College</th><th>TMC / Discipline</th><th>Degree</th><th>Readiness</th><th>Status</th><th>Updated</th></tr></thead><tbody>" + rows + "</tbody></table>";
+      box.querySelectorAll(".tmc-req-row").forEach(function (tr) {
+        tr.onclick = function () {
+          var i = tr.getAttribute("data-req");
+          var det = box.querySelector("[data-detail='" + i + "']");
+          if (det.style.display !== "none") { det.style.display = "none"; return; }
+          box.querySelectorAll(".tmc-req-detail").forEach(function (d) { d.style.display = "none"; });
+          det.style.display = "";
+          openReviewPanel(reqs[i], det.querySelector(".tmc-req-panel"));
+        };
+      });
+      q.appendChild(box);
     }
-    var box = el("div", "tmc-reqlist");
-    var rows = state.requests.map(function (r) {
-      return "<tr><td>" + esc(r.college || "—") + "</td><td>" + esc(r.tmc_discipline || r.tmc_id || "—") + "</td>" +
-        "<td>" + esc(r.degree_type || "") + "</td><td>" + (r.filled_slots != null ? esc(r.filled_slots + "/" + (r.total_slots || "?")) : "—") +
-        "</td><td>" + esc(String(r.updated_at || "").slice(0, 10)) + "</td></tr>";
-    }).join("");
-    box.innerHTML = "<table><thead><tr><th>College</th><th>TMC / Discipline</th><th>Degree</th><th>Courses</th><th>Submitted</th></tr></thead><tbody>" + rows + "</tbody></table>";
-    q.appendChild(box);
+    q.appendChild(renderBacklogProxy());
     mount.appendChild(q);
+  }
+
+  // the expandable per-submission review panel (per-slot five-check table +
+  // the reviewer's Approve / Return actions)
+  function openReviewPanel(r, panel) {
+    panel.textContent = "Loading " + r.college + "'s alignment…";
+    sbLoad(r.college, r.tmc_id).then(function (row) {
+      if (!row || !row.alignments) { panel.textContent = "Could not load this submission."; return; }
+      var a = row.alignments;
+      var keys = Object.keys(a).filter(function (k) { return k.charAt(0) !== "_" && k.indexOf("ge:") !== 0; })
+        .sort(function (x, y) {
+          var px = x.split(":").map(Number), py = y.split(":").map(Number);
+          return (px[0] - py[0]) || (px[1] - py[1]);
+        });
+      // legacy submissions predate the verdict field — derive the tier from the
+      // saved status cls so an old hard C-ID match doesn't mislabel as ⚠ review.
+      // Guard: statusFor also returns 'ok' for flexible/named non-C-ID slots
+      // ('✓ selected'), which the ruleset puts at tier 2/3 — a slot with NO
+      // template C-ID can never be rule-1 auto.
+      var tierOf = function (s) {
+        if (s.verdict) return s.verdict;
+        if (!s.cid) return s.evidence ? "evidence" : "review";
+        if (s.status === "ok") return s.course_src === "cidnet" ? "verify" : "auto";
+        if (s.status === "warn") return "verify";
+        return "review";
+      };
+      var chip = function (s) { var t = tierOf(s); return verdictChipHtml({ tier: t, why: (VERDICT_CHIP[t] || VERDICT_CHIP.review).hint }); };
+      var body = keys.map(function (k) {
+        var s = a[k] || {};
+        // provenance rides the MATCHED C-ID (may be an OR-alt, not the slot's
+        // primary); legacy rows without matched_cid fall back to the primary
+        var mcid = s.matched_cid || s.cid || "";
+        var prov = s.course_src === "cidnet" ? " <span class='tmc-pc-net'>per c-id.net</span>"
+          : ((s.course_tcids || []).indexOf(mcid) !== -1 ? " <span class='tmc-pc-net'>≈ c-id.net title</span>" : "");
+        var matchedNote = (s.matched_cid && s.matched_cid !== s.cid)
+          ? " <span class='tmc-req-sub'>(matched via " + esc(s.matched_cid) + ")</span>" : "";
+        return "<tr><td>" + (s.cid ? "<span class='tmc-cid'>" + esc(s.cid) + "</span> " : "") + esc(s.slot_title || "") +
+          "<div class='tmc-req-sub'>req. units: " + esc(s.slot_units || "—") + "</div></td>" +
+          "<td><b>" + esc((s.subj || "") + " " + (s.num || "")) + "</b> — " + esc(s.title || "") + prov + matchedNote +
+          "<div class='tmc-req-sub'>units: " + esc(s.units != null ? String(s.units) : (s.course_units_entered ? s.course_units_entered + " (college-entered — verify)" : "?")) +
+          " · hrs: " + esc(s.course_hours || "— pending") +
+          (s.evidence ? " · 📎 " + esc(s.evidence) : "") + "</div></td>" +
+          "<td>" + chip(s) + "</td></tr>";
+      }).join("");
+      var vm = a._readiness && typeof a._readiness === "object" ? a._readiness : null;
+      var html = "<div class='tmc-req-head'>" +
+        (vm ? "<b>" + rNum(vm.auto) + "</b> auto · <b>" + rNum(vm.verify) + "</b> verify · <b>" + rNum(vm.evidence) + "</b> evidence · <b>" + rNum(vm.review) + "</b> review" : "") +
+        (row.contact_name || row.contact_email ? " · contact: " + esc(row.contact_name || "") + " " + esc(row.contact_email || "") : "") +
+        (row.notes ? "<div class='tmc-req-sub'>college notes: " + esc(row.notes) + "</div>" : "") +
+        (row.review_note ? "<div class='tmc-req-sub'>CO note (" + esc(row.reviewed_by || "") + " " + esc(String(row.reviewed_at || "").slice(0, 10)) + "): " + esc(row.review_note) + "</div>" : "") +
+        "</div>" +
+        "<table class='tmc-req-slots'><thead><tr><th>Template course</th><th>College's course</th><th>Verdict</th></tr></thead><tbody>" + body + "</tbody></table>";
+      panel.innerHTML = html;
+      if (state.email) {
+        var act = el("div", "tmc-req-act");
+        var ta = el("textarea", "tmc-req-note");
+        ta.placeholder = "Review note to the college (required for Return)…";
+        ta.value = row.review_note || "";
+        act.appendChild(ta);
+        var ok = mkBtn("✅ Approve", "primary", function () { reviewAction(r, "approved", ta.value, panel); });
+        var ret = mkBtn("↩ Return for revisions", "", function () {
+          if (!(ta.value || "").trim()) { ta.focus(); ta.placeholder = "A note is required when returning — tell the college what to fix."; return; }
+          reviewAction(r, "returned", ta.value, panel);
+        });
+        act.appendChild(ok); act.appendChild(ret);
+        panel.appendChild(act);
+      } else {
+        panel.appendChild(el("div", "tmc-req-sub", "Sign in as a curator (above) to approve or return this submission."));
+      }
+    });
+  }
+  function reviewAction(r, status, note, panel) {
+    // SERVER-gated: the tmc_review_submission RPC requires is_allowed_reviewer()
+    // on the caller's JWT (an approval is a CO authority claim — never writable
+    // with the bare anon key). reviewed_by is stamped from the token server-side.
+    var tok = state.session && state.session.access_token;
+    if (!tok) { panel.appendChild(el("div", "tmc-req-sub", "Your sign-in session has expired — sign in again to review.")); return; }
+    fetch(SUPABASE_URL + "/rest/v1/rpc/tmc_review_submission", {
+      method: "POST",
+      headers: sbHeaders({ Authorization: "Bearer " + tok }),
+      body: JSON.stringify({ p_college: r.college, p_tmc_id: r.tmc_id, p_status: status, p_note: (note || "").trim() || null })
+    }).then(function (resp) {
+      if (resp.ok) {
+        setMsg((status === "approved" ? "✅ Approved " : "↩ Returned ") + r.college + " — " + (r.tmc_discipline || r.tmc_id) + ".", "ok");
+        loadRequests(function () { renderBody(); });
+      } else {
+        resp.text().then(function (tx) {
+          panel.appendChild(el("div", "tmc-req-sub",
+            resp.status === 401 || resp.status === 403 || /not an allowed reviewer/.test(tx || "")
+              ? "Not authorized — your account isn't on the reviewer list, or the session expired (sign in again)."
+              : "Save failed: " + (tx || resp.status)));
+        });
+      }
+    }).catch(function (e) { panel.appendChild(el("div", "tmc-req-sub", "Save failed: " + e.message)); });
+  }
+
+  // ⏳ the backlog proxy: (college, TMC) pairs COCI marks In-progress that have
+  // no submission here — the CO has no extract of its pending files ("old
+  // school"), so this is the workable triage list. Ranked lazily on expand by
+  // each college's C-ID coverage of that TMC's slots.
+  function renderBacklogProxy() {
+    var det = document.createElement("details");
+    det.className = "tmc-backlog";
+    det.innerHTML = "<summary>⏳ In progress in COCI — the statewide backlog proxy (expand to rank by computed alignment)</summary>";
+    var bodyEl = el("div", "tmc-backlog-body", "");
+    det.appendChild(bodyEl);
+    var computed = false;
+    det.addEventListener("toggle", function () {
+      if (!det.open || computed) return;
+      computed = true;
+      bodyEl.textContent = "Computing coverage…";
+      setTimeout(function () {
+        var out = computeBacklog();
+        if (!out.length) { bodyEl.textContent = "No in-progress (college, TMC) pairs in the COCI program export — or the ADT overlay hasn't loaded."; return; }
+        var submittedKey = {};
+        state.requests.forEach(function (r) { submittedKey[r.college + "||" + r.tmc_id] = true; });
+        var rows = out.map(function (p) {
+          var here = submittedKey[p.college + "||" + p.tmcId] ? " <span class='tmc-req-st st-sub'>also submitted here</span>" : "";
+          return "<tr><td>" + esc(p.college) + "</td><td>" + esc(p.name) + here + "</td>" +
+            "<td><b class='vd-auto'>" + p.cov + "</b>/" + p.slots + " slots C-ID-coverable</td></tr>";
+        }).join("");
+        bodyEl.innerHTML = "<p class='tmc-intro'>Ranked highest-coverage first — these are the reviews most likely to clear fast. Pick the college + TMC above to open its full per-slot picture.</p>" +
+          "<table><thead><tr><th>College</th><th>TMC (COCI: In progress)</th><th>Computed coverage</th></tr></thead><tbody>" + rows + "</tbody></table>";
+      }, 30);
+    });
+    return det;
+  }
+  function computeBacklog() {
+    var adts = window.CPL_TMC_COLLEGE_ADTS, cc = window[CC_GLOBAL];
+    if (!adts || !adts.by_college || !cc || !cc.courses) return [];
+    var cidSetCache = {};
+    function cidSetFor(college) {
+      if (cidSetCache[college]) return cidSetCache[college];
+      var idx = cc.colleges.indexOf(college);
+      var s = new Set();
+      ((idx >= 0 && cc.courses[String(idx)]) || []).forEach(function (r) {
+        if (r[4]) s.add(normCid(r[4]));
+        if (r[5]) r[5].forEach(function (x) { s.add(normCid(x)); });
+        if (r[7]) r[7].forEach(function (x) { s.add(normCid(x)); });
+      });
+      cidSetCache[college] = s;
+      return s;
+    }
+    var out = [];
+    Object.keys(adts.by_college).forEach(function (college) {
+      var per = adts.by_college[college];
+      Object.keys(per).forEach(function (tmcId) {
+        if ((per[tmcId] || {}).b !== "in_progress") return;
+        var t = findCatalog(tmcId);
+        if (!t || !t.sections) return;
+        var s = cidSetFor(college), cov = 0, slots = 0;
+        t.sections.forEach(function (sec) {
+          (sec.slots || []).forEach(function (slot) {
+            slots++;
+            var cids = slotCids(slot);
+            for (var i = 0; i < cids.length; i++) { if (s.has(cids[i])) { cov++; break; } }
+          });
+        });
+        out.push({ college: college, tmcId: tmcId, name: t.discipline || tmcId, cov: cov, slots: slots });
+      });
+    });
+    out.sort(function (a, b) { return (b.cov / (b.slots || 1)) - (a.cov / (a.slots || 1)) || b.cov - a.cov; });
+    return out;
   }
 
   function renderSlot(si, sj, slot, keyPrefix) {
@@ -1296,6 +1668,36 @@
         var clr = el("span", "tmc-clear", "clear");
         clr.onclick = function () { setChoice(key, null); };
         rightc.appendChild(clr);
+      }
+      if (chosen && !slot.ge) {
+        // confidence verdict + the capture inputs the CO review reads
+        var vd = confidenceFor(slot, chosen, key);
+        var ex = el("div", "tmc-extras");
+        var evHtml = (slot.flexible)
+          ? "<label class='tmc-ex'>evidence <input type='text' class='tmc-ev-in' maxlength='500' placeholder='ASSIST link / articulation evidence' value='" + esc(state.evidence[key] || "") + "' title='Flexible slot: paste the ASSIST agreement link or describe the articulation evidence — the CO reviewer sees this.'></label>"
+          : "";
+        // a synthesized (per c-id.net) course has unknown units — let the
+        // college supply them from its COR so the ≥18-unit gate has a remedy
+        var unHtml = (chosen.units == null)
+          ? "<label class='tmc-ex'>units <input type='text' class='tmc-un-in' maxlength='6' inputmode='decimal' placeholder='?' value='" + esc(state.unitsx[key] || "") + "' title='This course is not in our COCI extract, so its units are unknown — enter them from your catalog/COR. They count toward the major-units total and the CO reviewer verifies them.'></label>"
+          : "";
+        ex.innerHTML = verdictChipHtml(vd) + unHtml +
+          "<label class='tmc-ex'>hrs <input type='text' class='tmc-hrs-in' maxlength='12' inputmode='decimal' placeholder='—' value='" + esc(state.hours[key] || "") + "' title='Contact hours from your Course Outline of Record. PLACEHOLDER: a COCI master report with hours is requested — until it lands, hours are college-entered and reviewer-verified, never auto-scored.'></label>" +
+          evHtml +
+          "<span class='tmc-hrs-hint'>hours pending COCI data — enter from your COR</span>";
+        var hin = ex.querySelector(".tmc-hrs-in");
+        hin.oninput = function () { state.hours[key] = hin.value.trim(); };
+        var uin = ex.querySelector(".tmc-un-in");
+        if (uin) {
+          uin.oninput = function () { state.unitsx[key] = uin.value.trim(); };
+          uin.onchange = function () { renderBody(); };   // refresh totals + gates
+        }
+        var ein = ex.querySelector(".tmc-ev-in");
+        if (ein) {
+          ein.oninput = function () { state.evidence[key] = ein.value.trim(); }; // persist per keystroke — Save must not lose an unblurred value
+          ein.onchange = function () { state.evidence[key] = ein.value.trim(); renderBody(); }; // blur: persist + refresh the verdict chip
+        }
+        rightc.appendChild(ex);
       }
     }
     row.appendChild(rightc);
@@ -1364,7 +1766,16 @@
   }
 
   function setChoice(key, course) {
+    var prev = state.choice[key];
     state.choice[key] = course;
+    // hours/evidence/units belong to the COURSE that was picked — clear them
+    // whenever the slot's course changes (or is cleared) so a replacement pick
+    // can't inherit the old course's capture values
+    if (!course || !prev || prev.subj !== course.subj || prev.num !== course.num) {
+      delete state.hours[key];
+      delete state.evidence[key];
+      delete state.unitsx[key];
+    }
     // re-render just the affected slot + meter (cheap full re-render of the form mount)
     renderBody();
   }
@@ -1378,9 +1789,17 @@
       return;
     }
     var t = tally();
+    var v = verdictTally();
+    var gates = submitGates();
     m.innerHTML = "Total Units: <b>" + t.units + "</b> · <b>" + t.aligned + "</b> C-ID aligned" +
       (t.tmatched ? " · <b>" + t.tmatched + "</b> title-matched" : "") +
-      " · <b>" + t.filled + "/" + t.required + "</b> slots";
+      " · <b>" + t.filled + "/" + t.required + "</b> slots" +
+      " · Readiness: <b class='vd-auto'>" + v.auto + " auto</b> / <b class='vd-verify'>" + v.verify + " verify</b>" +
+      (v.evidence ? " / <b class='vd-evid'>" + v.evidence + " evidence</b>" : "") +
+      " / <b class='vd-review'>" + v.review + " review</b> / " + v.open + " open" +
+      (gates.length
+        ? " · <span class='tmc-gates-bad' title='" + esc(gates.join("\n")) + "'>⛔ " + gates.length + " submit gate" + (gates.length === 1 ? "" : "s") + " unmet</span>"
+        : " · <span class='tmc-gates-ok'>✅ ready to submit</span>");
   }
 
   /* --------------------------------------------------------------- actions */
@@ -1390,12 +1809,21 @@
       sec.slots.forEach(function (slot, sj) {
         var c = state.choice[si + ":" + sj];
         if (c) {
-          alignments[si + ":" + sj] = {
+          var vkey = si + ":" + sj;
+          alignments[vkey] = {
             cid: slot.cid || "", slot_title: slot.title, slot_units: slot.units || "",
             subj: c.subj, num: c.num, title: c.title, units: c.units, course_cid: c.cid || "",
             // provenance must survive the round-trip: the CO review queue reads
-            // these to tell a COCI-grade alignment from a verify-tier one
+            // these to tell a COCI-grade alignment from a verify-tier one.
+            // matched_cid = WHICH C-ID satisfied the slot (may be an OR-alt,
+            // not the slot's primary) — the reviewer sees the actual match
             course_cids: c.cids || [], course_tcids: c.tcids || [], course_src: c.src || "",
+            matched_cid: matchedCid(c, slotCids(slot)) || "",
+            // the confidence verdict + the college-entered capture fields
+            verdict: confidenceFor(slot, c, vkey).tier,
+            course_hours: state.hours[vkey] || "",
+            course_units_entered: state.unitsx[vkey] || "",
+            evidence: state.evidence[vkey] || "",
             status: statusFor(slot, c).cls
           };
         }
@@ -1418,6 +1846,9 @@
         });
       });
     }
+    // the verdict mix — the CO queue ranks submissions by this without
+    // refetching each payload (PostgREST selects it as alignments->_readiness)
+    alignments["_readiness"] = verdictTally();
     var t = tally(), g = geTally();
     return {
       college: state.college, tmc_id: state.tmc.id, tmc_discipline: state.tmc.discipline,
@@ -1606,11 +2037,15 @@
       Object.keys(row.alignments).forEach(function (k) {
         var a = row.alignments[k];
         if (k === "_ge_pattern") { if (a && a.ge_pattern) state.gePattern = a.ge_pattern; return; }
+        if (k.charAt(0) === "_") return; // meta records (_readiness, future _*)
         // restore full C-ID provenance (older saves lack these keys → fall back
         // to the primary cid; a legacy xcid-only pick resumes as unaligned)
         state.choice[k] = { subj: a.subj, num: a.num, title: a.title, units: a.units, cid: a.course_cid || null,
                             cids: a.course_cids || (a.course_cid ? [a.course_cid] : []),
                             tcids: a.course_tcids || [], src: a.course_src || "" };
+        if (a.course_hours) state.hours[k] = a.course_hours;
+        if (a.evidence) state.evidence[k] = a.evidence;
+        if (a.course_units_entered) state.unitsx[k] = a.course_units_entered;
       });
       if (state.view === "detail") renderBody();
       setMsg("Resumed your saved alignment from " + (row.updated_at || "Supabase").slice(0, 10) + ".", "ok");

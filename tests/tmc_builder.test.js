@@ -111,9 +111,9 @@ window.sessionStorage.setItem("cpl_sb", JSON.stringify({
 // Mock the feature endpoints: a curator note on slot 0:0, one submitted request.
 window.fetch = function (url, opts) {
   url = String(url);
-  if (url.indexOf("status=eq.submitted") >= 0)
+  if (url.indexOf("status=in.(submitted,approved,returned)") >= 0)
     return Promise.resolve({ ok: true, json: () => Promise.resolve([
-      { college: "Test College", tmc_id: "test-psych", tmc_discipline: "Test Psychology", degree_type: "AA-T", filled_slots: 2, total_slots: 3, updated_at: "2026-06-17" }]) });
+      { college: "Test College", tmc_id: "test-psych", tmc_discipline: "Test Psychology", degree_type: "AA-T", filled_slots: 2, total_slots: 3, updated_at: "2026-06-17", status: "submitted", readiness: null }]) });
   if (url.indexOf("tmc_curator_notes") >= 0 && (!opts || opts.method !== "POST"))
     return Promise.resolve({ ok: true, json: () => Promise.resolve([
       { slot_key: "0:0", note: "C-ID under revision", reviewer_email: "map@rccd.edu", updated_at: "2026-06-17" }]) });
