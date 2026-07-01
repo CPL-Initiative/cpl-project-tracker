@@ -15,8 +15,8 @@
       // Data embedded from Python
       const allData = window.COLLEGE_ACTIVITY_DATA || [];
       const collegeDisciplineDetail = window.COLLEGE_DISCIPLINE_DETAIL || {};
-      // MIL (reported military students) / JST (uploaded to MAP) + Veteran Star
-      // (JST >= 75% of MIL). Present only once veteran_jst.json is published —
+      // Vets (veterans reported to MIS) / JST (uploaded to MAP) + Veteran Star
+      // (JST >= 75% of Vets). Present only once veteran_jst.json is published —
       // when absent the column hides + the star falls back to the criteria star.
       const hasJst = !!window.COLLEGE_HAS_JST;
       let filteredData = [...allData];
@@ -59,20 +59,20 @@
       }
       function tierColor(t) { return t === 'Leading' ? GOLD : (t === 'Advancing' ? BLUE : '#5C5C55'); }
       function bc(r) { return r >= 50 ? GREEN : (r >= 25 ? AMBER : '#8A867E'); }
-      // "MIL / JST" cell — reported military / JSTs uploaded, ⭐-eligible when
-      // JST >= 75% of MIL. Star colleges render the ratio in gold. The visible
-      // (N%) = JST as a % of MIL — the star-threshold denominator, so it's easy
-      // to see which colleges sit near 75% (Sam, 2026-07-01: diagnose the ~46
-      // vs MAP's 50 star gap). Shown only when MIL>0 (undefined otherwise).
-      function milJstCell(row) {
-        const mil = row.mil || 0, jst = row.jst || 0;
-        if (!mil && !jst) return '<span style="color:#8A867E;">—</span>';
+      // "Vets / JST" cell — veterans reported to MIS / JSTs uploaded, ⭐-eligible
+      // when JST >= 75% of Vets. Star colleges render the ratio in gold. The
+      // visible (N%) = JST as a % of Vets — the star-threshold denominator, so
+      // it's easy to see which colleges sit near 75% (Sam, 2026-07-01). Shown
+      // only when Vets>0 or JST>0 (— otherwise).
+      function vetsJstCell(row) {
+        const vets = row.vets || 0, jst = row.jst || 0;
+        if (!vets && !jst) return '<span style="color:#8A867E;">—</span>';
         const col = row.vstar ? GOLD : '#3A3A36';
         const wt = row.vstar ? '700' : '400';
-        const pct = mil ? ' (' + (row.jst_rate || 0) + '%)' : '';
-        return '<span title="' + jst + ' JSTs uploaded / ' + mil + ' reported military'
-          + (mil ? ' = ' + (row.jst_rate || 0) + '% — Veteran Star at 75%+' : '') + '" style="color:'
-          + col + ';font-weight:' + wt + ';">' + fmtN(mil) + ' / ' + fmtN(jst) + pct + '</span>';
+        const pct = vets ? ' (' + (row.jst_rate || 0) + '%)' : '';
+        return '<span title="' + jst + ' JSTs uploaded / ' + vets + ' reported veterans'
+          + (vets ? ' = ' + (row.jst_rate || 0) + '% — Veteran Star at 75%+' : '') + '" style="color:'
+          + col + ';font-weight:' + wt + ';">' + fmtN(vets) + ' / ' + fmtN(jst) + pct + '</span>';
       }
       // The star shown in the ★ column: the Veteran Star when JST data is loaded,
       // else the legacy "met >=1 criterion" star (graceful degradation).
@@ -89,18 +89,17 @@
 
       // ── Render pinned totals row ───────────────────────────────
       function renderTotals() {
-        const sums = { students:0, veterans:0, working_adults:0, apprentices:0,
+        const sums = { students:0, working_adults:0, apprentices:0,
                        eligible_units:0, transcribed_units:0, exhibits:0,
-                       credit_recs:0, savings:0, year_impact:0, mil:0, jst:0, vstars:0 };
+                       credit_recs:0, savings:0, year_impact:0, vets:0, jst:0, vstars:0 };
         const allDiscs = new Set();
         filteredData.forEach(r => {
           // Masked "<N" cells (small-cell suppression) are non-numeric → exclude
           // them from the totals (the row is a floor; suppressed cells are rare).
           if (typeof r.students === 'number') sums.students += r.students;
-          if (typeof r.veterans === 'number') sums.veterans += r.veterans;
           if (typeof r.working_adults === 'number') sums.working_adults += r.working_adults;
           if (typeof r.apprentices === 'number') sums.apprentices += r.apprentices;
-          sums.mil += r.mil || 0; sums.jst += r.jst || 0; if (r.vstar) sums.vstars++;
+          sums.vets += r.vets || 0; sums.jst += r.jst || 0; if (r.vstar) sums.vstars++;
           sums.eligible_units += r.eligible_units;
           sums.transcribed_units += r.transcribed_units;
           sums.savings += r.savings;
@@ -116,9 +115,9 @@
           : allDiscs.size;
 
         const s = 'font-size:0.67rem;font-weight:700;padding:0.3rem 0.3rem;text-align:right;color:#1C1C1A;';
-        const totPct = sums.mil ? ' (' + Math.round(sums.jst / sums.mil * 100) + '%)' : '';
-        const milJstTotal = hasJst
-          ? `<td style="${s}" title="${sums.vstars} Veteran Star colleges · ${fmtN(sums.jst)} JSTs / ${fmtN(sums.mil)} reported military statewide">${fmtN(sums.mil)} / ${fmtN(sums.jst)}${totPct}</td>`
+        const totPct = sums.vets ? ' (' + Math.round(sums.jst / sums.vets * 100) + '%)' : '';
+        const vetsJstTotal = hasJst
+          ? `<td style="${s}" title="${sums.vstars} Veteran Star colleges · ${fmtN(sums.jst)} JSTs / ${fmtN(sums.vets)} reported veterans statewide">${fmtN(sums.vets)} / ${fmtN(sums.jst)}${totPct}</td>`
           : '';
         totalsRow.innerHTML = `<tr style="background:rgba(201,168,76,0.08);">
           <td style="${s}text-align:center;" colspan="2">
@@ -127,8 +126,7 @@
           <td style="${s}text-align:left;color:${GOLD};">Totals</td>
           <td style="${s}text-align:left;font-size:0.6rem;color:#5C5C55;">${filteredData.length} colleges</td>
           <td style="${s}">${fmtN(sums.students)}</td>
-          <td style="${s}">${fmtN(sums.veterans)}</td>
-          ${milJstTotal}
+          ${vetsJstTotal}
           <td style="${s}">${fmtN(sums.working_adults)}</td>
           <td style="${s}">${fmtN(sums.apprentices)}</td>
           <td style="${s}">${fmtU(sums.eligible_units)}</td>
@@ -154,10 +152,10 @@
           const ev = getExhibitVals(row);
 
           const star = isStar(row)
-            ? '<span title="' + (hasJst ? 'Veteran Star — JST ≥ 75% of reported military (MIL)' : 'MAP Star College (≥1 criterion)') + '">&#11088;</span>'
+            ? '<span title="' + (hasJst ? 'Veteran Star — JST ≥ 75% of reported veterans (Vets)' : 'MAP Star College (≥1 criterion)') + '">&#11088;</span>'
             : '';
-          const milJstTd = hasJst
-            ? `<td style="padding:0.2rem 0.3rem;font-size:0.67rem;text-align:right;white-space:nowrap;">${milJstCell(row)}</td>`
+          const vetsJstTd = hasJst
+            ? `<td style="padding:0.2rem 0.3rem;font-size:0.67rem;text-align:right;white-space:nowrap;">${vetsJstCell(row)}</td>`
             : '';
           const dots = Array(5).fill(0).map((_,i) =>
             '<span style="color:' + (i < row.criteria_met ? GOLD : '#D5D2CB') + ';font-size:0.7rem;">' + (i < row.criteria_met ? '●' : '○') + '</span>'
@@ -180,8 +178,7 @@
             <td style="padding:0.2rem 0.3rem;font-size:0.68rem;color:${nc};white-space:nowrap;">${row.college}</td>
             <td style="padding:0.2rem 0.3rem;font-size:0.6rem;color:#5C5C55;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${row.district}">${row.district}</td>
             <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${fmtN(row.students)}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#0047AB;text-align:right;">${fmtN(row.veterans)}</td>
-            ${milJstTd}
+            ${vetsJstTd}
             <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${fmtN(row.working_adults)}</td>
             <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${fmtN(row.apprentices)}</td>
             <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${fmtU(row.eligible_units)}</td>
@@ -289,8 +286,8 @@
           const ev = getExhibitVals(r);
           return {
             Tier: r.tier, College: r.college, District: r.district,
-            Students: r.students, Veterans: r.veterans,
-            ...(hasJst ? { MIL: r.mil, JST: r.jst, 'Veteran Star': r.vstar ? 'Yes' : '' } : {}),
+            Students: r.students,
+            ...(hasJst ? { Vets: r.vets, JST: r.jst, 'JST %': r.jst_rate, 'Veteran Star': r.vstar ? 'Yes' : '' } : {}),
             'Working Adults': r.working_adults,
             Apprentices: r.apprentices, 'Eligible Units': Math.round(r.eligible_units),
             'Transcribed Units': Math.round(r.transcribed_units),
@@ -371,12 +368,12 @@
         });
       });
 
-      // The MIL/JST column + Veteran-Star legend depend on veteran_jst.json
+      // The Vets/JST column + Veteran-Star legend depend on veteran_jst.json
       // being published. Until it is, hide the column header and restore the
       // criteria-star legend text (the data rows already skip the cell).
       if (!hasJst) {
-        const milJstHeader = document.getElementById('caMilJstHeader');
-        if (milJstHeader) milJstHeader.style.display = 'none';
+        const vetsJstHeader = document.getElementById('caVetsJstHeader');
+        if (vetsJstHeader) vetsJstHeader.style.display = 'none';
         const starLegend = document.getElementById('caStarLegend');
         if (starLegend) starLegend.textContent = 'MAP Star College (≥1 criterion)';
       }
