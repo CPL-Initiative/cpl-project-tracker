@@ -125,11 +125,14 @@ answer_must_not_match -i "focused on dental|don.?t see a real estate|no real est
 
 # OFFERINGS / adoption reasoning (v20 — the COCI course catalog). A college that
 # hasn't ARTICULATED a credential but whose neighbors TEACH the discipline: LA
-# Harbor doesn't teach the construction trades; El Camino / Long Beach City / LA
-# Trade-Tech / Rio Hondo / Compton do. The bot should route to a nearby teaching
-# college rather than dead-end at "no exhibit". (Boys & Girls Club / NCCER case.)
+# Harbor doesn't teach the construction trades; El Camino / LA Trade-Tech / Rio
+# Hondo / Cerritos / Compton (LA County) do. The bot should route to a nearby
+# teaching college rather than dead-end at "no exhibit". (Boys & Girls Club case.)
+# SINGLE-turn (no history) = the production-widget path AND it bypasses the
+# multi-turn "ask a focusing follow-up first" gate, so the routing is named
+# directly rather than offered ("want me to show nearby colleges?").
 run "7 offerings adoption (LA Harbor NCCER carpentry)" \
-  '{"query":"Does Los Angeles Harbor College give credit for NCCER carpentry or construction certifications?","session_id":"smoke-ci","history":[]}'
+  '{"query":"Does Los Angeles Harbor College give credit for NCCER carpentry or construction certifications?","session_id":"smoke-ci"}'
 answer_must_match -i "El Camino|Long Beach|Trade.?Tech|Rio Hondo|Compton|Cerritos" "7 nearby construction college"
 answer_must_match -i "construction|carpentry|trades|OSHA" "7 on-topic"
 

@@ -364,7 +364,7 @@ stays (it's what puts "real estate" into the search).
   wrong-conclusion phrasings. The workflow now also re-runs on any change to the function
   source (`index.ts`), so a function tweak is always smoke-verified.
 
-**Still deferred / future direction:**
+**Still deferred / future direction (pre-Session-89):**
 - The **Sierra** rename (Sam, with a wink, "you can rename her 'Maybe Sierra'…") —
   lands with the Student Portal, not piecemeal.
 - A **curator login to edit the assistant's response text on the fly** (Sam, 2026-06-25:
@@ -375,3 +375,98 @@ stays (it's what puts "real estate" into the search).
   text move from hard-coded `index.ts` strings into a Supabase-backed, reviewer-editable
   config the function reads live, so tuning the wording stops requiring a redeploy. Keep
   the current consts as the seed/default. Scope before building.
+
+---
+
+## Session 89 (Bruh SkyMiles) — 2026-07-01 — the COCI *offerings* catalog (v19 → v20): Sierra can now see what colleges TEACH
+
+### (a) What was learned / done this checkpoint
+
+Sam's ask: a Boys & Girls Club colleague sent a detailed CPL question (get their
+teens NCCER/OSHA/welding certs recognized at LA Harbor / El Camino / Long Beach
+City). Sierra's answer was generic because she could only search the **earned-
+exhibit set** (`chatbox_exhibits` — what colleges have *already articulated*), not
+**what each college TEACHES**. So she couldn't reason: *"LA Harbor hasn't
+articulated NCCER — but does it teach construction that could map? if not, which
+nearby college does?"* Confirmed the gap in data: LA Harbor teaches **0**
+construction-crafts courses, El Camino **25**, Long Beach City **14** — yet none
+had an existing construction exhibit, so exhibit-only search could only
+(misleadingly) say "no."
+
+**Full build shipped (PR #631):**
+1. **COCI offerings catalog → Supabase** (public, no PII): `coci_college_offerings`
+   (16,097 `college × TOP-program` rollups w/ course counts, credit split, C-ID
+   coverage, sample courses, FTS title blob), `coci_college_programs` (22,335
+   active/approved awards), `college_geo` (curated region/county for all 120,
+   10 CA macro-regions). Built by `chatbox/build_coci_offerings.py` (rolls up
+   `kb/reference/coci_course_list.xlsx`, reuses the ADT builder's college-name
+   reconciliation + a `CaÃ±ada`→`Cañada` mojibake fix); loaded by the runner-as-proxy
+   `chatbox/sync_coci_offerings.py` + `coci-offerings-sync.yml` via chunkable
+   service-key replace RPCs. Schema + `search_college_offerings` RPC applied via the
+   Supabase MCP.
+2. **Wired into `cpl-chat` (v20 ACTIVE, `verify_jwt` still false):** a 5th parallel
+   lookup `searchCollegeOfferings()`, `buildOfferingsContext()` (core-vs-tangential
+   match + nearest-college ranking via `fetchCollegeGeo`/`college_geo`), and an
+   `OFFERINGS_RULE` prompt (teaches-but-no-exhibit → adoption opportunity;
+   doesn't-teach → nearest teaching college; peers who already articulated = proof;
+   never claim an articulation from a taught course). Construction-trade synonyms
+   (NCCER family) added, kept tight.
+3. Smoke modes 7 (LA Harbor NCCER → route to El Camino/LBCC) + 8 (who teaches
+   construction) on the runner.
+
+### Patterns that worked / things worth remembering
+
+- **Two different data layers answer two different questions.** *Exhibits* =
+  what's already articulated (the earned set). *Offerings* = the course catalog
+  (what a college teaches). Adoption reasoning needs BOTH: teaches + no exhibit =
+  the opportunity. Don't conflate them.
+- **Rank a full-text catalog by relevance, not size.** First cut ordered offerings
+  by `course_count desc` → big departments ("Fire Technology", "Music") that merely
+  *mention* a keyword outranked the real discipline. Fix: `ts_rank` with the
+  TOP-program **title weighted A** over the course-title blob **D**, so "Carpentry"/
+  "Construction Crafts" win. Keep the WHERE on the unweighted indexed expression for
+  a fast GIN prefilter.
+- **Core-vs-tangential gating.** A row is a *core* match only when a query keyword
+  is in its TOP-program **title** (the clean discipline), not just the course-title
+  blob — so an Architecture dept that mentions "construction" in course text isn't
+  counted as "teaches construction." Gate the asked-college "DOES teach this" on a
+  core match; boost core colleges in the nearby ranking.
+- **Tight synonyms > broad.** Generic expansions ("building", "trades", "safety")
+  cross-matched fire/child-dev/radiologic departments. With relevance ranking +
+  core-gating doing the work, keep the synonym set tight (construction ↔ carpentry ↔
+  carpenter ↔ nccer).
+- **Runner-as-proxy for the bulk load, MCP for schema.** 16k+22k rows are too big
+  for one PostgREST body — chunkable replace RPCs (`p_truncate` on the first chunk
+  only) + a push-triggered workflow (public data → a push trigger is fine, unlike
+  the gated map-users sync). Schema/RPCs via `apply_migration`; verified the search
+  RPC via `execute_sql` before deploying.
+- **Deploy is fails-closed + smoke-gated.** Captured live v19 (= `origin/main`
+  index.ts) as rollback; deployed v20 via MCP preserving `verify_jwt:false`; the
+  committed smoke workflow re-runs on any `index.ts` change and asserts the *symptom*
+  (does the answer route to a nearby construction-teaching college).
+
+### (b) Current state
+
+- **`cpl-chat` v20 ACTIVE**, `verify_jwt:false`, model `claude-sonnet-4-6`. Offerings
+  catalog live in Supabase (16,097 offerings / 22,335 programs / 120 geo). Both
+  surfaces (dashboard tab + production `map.rccd.edu` widget) now get offerings
+  context whenever a topic matches — additive, backward-compatible.
+- This is the **offerings** slice of the CCR/CER scope's ETL + M1. The CCR
+  course-identity crosswalk / CER credential layer / adoption-leverage (the
+  `unified_courses_*` / `credential_reference_data` / `statewide_prescriptive`
+  artifacts) are still NOT wired — a natural follow-on now that the offerings
+  pattern (Supabase table + parallel lookup + context builder + prompt rule) is
+  proven.
+
+### (c) Strategic roadmap / next concrete step
+
+- **Refresh cadence:** re-run `coci-offerings-sync.yml` (dispatch) on each fresh
+  COCI extract — it's static like `tmc_college_courses.js`, not a daily-cron
+  artifact.
+- **Next capability:** fold in the CER credential layer + `adoption_leverage` so a
+  request resolves credential → articulated-where → local course → adoption path
+  (M1 keystone). The offerings table is the "does the college even teach it" gate
+  that keeps those recommendations honest.
+- **Contacts routing (M3):** the offerings answer already routes to a college; pair
+  it with the college's CPL coordinator (the `chatbox_college_profiles.contacts` /
+  the richer Custom Reports College Contacts) so "adopt this" comes with "here's who."
