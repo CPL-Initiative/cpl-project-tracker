@@ -492,3 +492,52 @@ embed as the graduation step with the prototype in hand.
 **Still queued:** the Phase-2 **acceptance engine** (Sam: "Go for A") — per-slot verdicts
 from `slot.flexible` + `t.flexibility` (#479) + the structural checklist + the bulk-PCF
 Playwright extractor. Hours stay a manual flag until the COR-upload layer lands.
+
+---
+
+## 2026-07-01 (Session 90, SkySherpa) — the c-id.net authority doubles right-side C-ID coverage
+
+**Ask (Sam, from the Saddleback AoJ screenshot):** the right-side pickers show many
+NULL alignments (only 2 of 6+ AoJ slots auto-filled). Can our datasets complete them?
+
+**Diagnosis.** Auto-match was keyed **only** on COCI's `CIDNumber` column, which colleges
+**under-report** (~1/4 report few/no C-IDs). We already held a second, unused authority:
+`kb/reference/cid_articulations.json` — the **official c-id.net approved-courses export**
+(28,070 articulations, supplied 2026-06-11, "same trust tier as COCI's CIDNumber"). It was
+wired into the kb/CCR pipeline but **not the TMC builder**. Coverage measured:
+`(college × C-ID)` distinct pairs = **10,627 COCI → 21,300 union (+100%)**; for the AoJ
+slots specifically, +28 to +43 colleges *per slot*.
+
+**Three gap types (only #1 is fillable by data):**
+1. **Reporting gap** — college IS c-id.net-approved but COCI blank → the union fills it
+   (8,307 courses gain a C-ID). This PR.
+2. **Subject relabel** — course sits under a different subject (Saddleback teaches AoJ under
+   `HS`/`SOC`, not `AJ`). C-ID match already crosses subjects; only the picker *label* reads
+   "Select your AJ course" (cosmetic).
+3. **Genuine absence** — no C-ID-approved local course exists (Saddleback's `AJ 120/122/…`
+   are absent from BOTH authorities). No course dataset closes these; the approved-ADT
+   evidence lives in COCI's **program** export, which carries no course-to-slot map. (We do
+   NOT hold the CCCCO **MIS Master Program/Course** table; MIS carries CB-codes/transfer
+   flags, not C-ID, so it wouldn't add C-ID coverage anyway.)
+
+**Build (`tmc/_build_college_courses.py`).** Union each course's COCI `CIDNumber` with the
+c-id.net C-IDs joined on `(college, subject, number)` EXACT + a leading-zero-normalized
+fallback (`MATH 019 ↔ MATH 19`, +1,903 attaches). `sequence:true` rows excluded (a single
+course isn't a standalone match for a sequence descriptor). A course can now carry >1 C-ID →
+rows gain an optional 6th element `xcid[]` (primary `cid` for display; `xcid` = the extras).
+Soft-fails if the c-id.net file is absent. Result: courses-with-a-C-ID **~doubled**
+(→22,037); 9,924 gained a C-ID; 961 carry ≥2. All 469 distinct c-id.net C-IDs are recognized
+(descriptor ∪ TMC slot cids) → **zero** new noise; the 6 "malformed" agriculture C-IDs
+(`AG-PS 104 104`) line up with their equally-malformed `cid_unverified` slots.
+
+**Consumer (`tmc_builder.js`).** `courseCids()`/`matchedCid()` match a slot against
+`{cid}∪xcid`; `setCollege` registers a course in `byCid` under **each** of its C-IDs;
+`candidatesFor`/`statusFor` use the intersection; the picker option shows the **matched**
+C-ID (may be an xcid, not the primary). `autoMatch` now **used-tracks** so one physical
+course can't auto-fill two slots (more likely now that courses are multi-C-ID). Test:
+`tests/tmc_cid_articulations.test.js` (16 checks) guards xcid-match, used-tracking,
+backward-compat, and the shipped-artifact contract.
+
+**Limitation logged:** ~24% of c-id.net course-keys have no matching COCI course row (the
+college doesn't list that course in COCI) → those articulations can't surface as a pickable
+course. And genuine-absence slots (gap type #3) stay honest blanks.
