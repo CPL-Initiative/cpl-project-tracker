@@ -785,6 +785,13 @@ it and it opens the standalone page in a new tab. Mirrored in both HTMLs (Rule 4
 Added Session 74. **Session 89 added a second such rail launcher — `🏔️ Ask Sierra ↗`
 → the standalone `sierra/` chat page** (chat-first, multi-turn Sierra, shareable
 externally without the internal tabs; served by the lean Pages deploy; PR #633).
+**Session 90 (SkySherpa) rebranded that page's header** (PRs #635/#636/#637): the
+🏔️ emoji → the official **CPL Initiative logo** (`sierra/cpl-initiative-logo.png`,
+white/transparent), a hand-traced **Mt Whitney ridge ghosted behind the "Sierra"
+wordmark** (`sierra/whitney-mark.svg` — single white stroke + snowcap, 34% opacity,
+flat base on the text baseline), and the tagline **"Your CPL Sherpa"**. Static
+files under `sierra/` — no Rule-4 mirror, not a daily-cron artifact. Story:
+`docs/cpl_assistant_lessons.md` (Session 90).
 
 Implementation notes (important — keep in sync with the generator):
 
@@ -2118,27 +2125,10 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full story:
 > [`docs/cobi_lessons.md`](docs/cobi_lessons.md) (S87) + [`docs/map_users_tab_scope.md`](docs/map_users_tab_scope.md).
 
-### Session 88 — SkyThru: CCC-metric match · MIL/JST + Veteran Star · About z-index · MAP-Users 3 fields (2026-06-30)
-
-Four COBI tweaks across two PRs (both merged + live). **PR #628 (code-only → daily-dispatch
-publishes):** (1) **CCC Collaborative match** — KPI Trends read `ccc_collaborative`=adopting_colleges
-(61) under the same label as the MAP Exhibits card's exhibit count (132). New `kpi_history` key
-**`ccc_exhibits`** (= `ccc.unique_exhibits`) repoints the Trends row; legacy series kept. NEW key →
-deltas read "—" until its own series accrues (no fake jump). (2) **MIL vs JST + the Veteran Star** —
-new **`fetch_veteran_jst.py`** → committed **`veteran_jst.json`** (runner-as-proxy, soft-fail; the
-worker scrape lacks MIL/JST + can't be redeployed from a session). `apply_veteran_jst` puts the REAL
-JST + reported MIL + the 75% rule on the **Veteran Sprint card** (was a proxy); the **College
-Activity** table gains a "MIL / JST" column + the ★ becomes the Veteran Star (JST≥75%MIL), gated on
-`COLLEGE_HAS_JST`. ⚠ per-college star count ≈46 vs MAP's `StarCollegeCount` 50 — boundary cases, the
-savings API has no per-college star flag (logged as `computed_star_colleges`). (3) **About-box
-z-index** — `.header`'s `backdrop-filter` trapped the popover (z-index:300) behind the cards;
-`cobi_brand.js` lifts `.header` to `z-index:150`. **PR #629 (MAP Users):** the value-signature probe
-confirmed UserStatus∈{Active,Inactive}/UserDisciplines/LastUpdatedOn on the 16-field Users view;
-`map_college_users` += `user_status`/`disciplines`/`last_updated_on`, `map_users_summary()` += public
-`active_count` (Disciplines+Last-updated reviewer-gated). Sync FIELD_MAP + tab roster columns. Tests:
-+4 new files (#628) + cobi_brand z-index guards; map_users → 70 checks; 114 JS files green. Full
-story: [`docs/cobi_lessons.md`](docs/cobi_lessons.md) (S88).
-**NEXT: [`docs/session_89_handoff.md`](docs/session_89_handoff.md).**
+> **Session 88 narrative (SkyThru — CCC-metric match · MIL/JST + Veteran Star · About-box
+> z-index · MAP-Users 3 fields, PRs #628/#629) archived** →
+> [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full story:
+> [`docs/cobi_lessons.md`](docs/cobi_lessons.md) (S88).
 
 ### Session 89 — SkyMiles: Sierra sees what colleges TEACH (the COCI offerings catalog, v20) (2026-07-01)
 
@@ -2157,6 +2147,22 @@ nearest-college ranking + `OFFERINGS_RULE` adoption prompt; `verify_jwt` preserv
 false). Smoke modes 7–8. This is the **offerings slice of the CCR/CER ETL** (CER +
 adoption-leverage layers are the next wire). Full story: `docs/cpl_assistant_lessons.md`
 (Session 89). **NEXT: `docs/session_90_handoff.md`.**
+
+### Session 90 — SkySherpa: the standalone Sierra page gets its brand (2026-07-01)
+
+A focused visual pass on the **standalone Sierra page** (`sierra/`, added S89 PR #633),
+3 PRs all merged + live. **#635** — the header 🏔️ emoji → the official **CPL Initiative
+logo** (`sierra/cpl-initiative-logo.png`, white-on-transparent, cropped to content) as a
+co-brand lockup left of the wordmark. **#636** — a hand-traced **Mt Whitney ridge ghosted
+behind "Sierra"** (`sierra/whitney-mark.svg`, single white stroke + a summit snowcap, 34%
+opacity, flat base on the text baseline, nudged right to clear the "a") + tagline "Your
+Credit for Prior Learning guide" → **"Your CPL Sherpa"** (Whitney = tallest Sierra Nevada
+peak; a Sherpa guides you up). **#637** — trimmed the tagline to just "Your CPL Sherpa".
+Two reusable tricks: **a pasted image isn't on disk** — recover its bytes from the
+base64 `image` block in the session `.jsonl` transcript; **hand-authored SVG line-art**
+beats raster for a UI mark (scalable, recolorable, ~0.5 KB). All `sierra/` files are
+static (no Rule-4 mirror, not a cron artifact); merged on `unstable` (TruffleHog green).
+Full story: `docs/cpl_assistant_lessons.md` (Session 90). **NEXT: `docs/session_91_handoff.md`.**
 
 ---
 

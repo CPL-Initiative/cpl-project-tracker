@@ -1993,3 +1993,26 @@ we DON'T build a roster editor in COBI — colleges edit in MAP (deep-linked), C
 nudge → `docs/kb-notes/adr-surface-dont-edit-readonly-system-of-record.md`. Parked: the
 "✓ confirmed current" attestation loop. 56 map_users checks; 113 JS test files green. Full
 story: `docs/cobi_lessons.md` (S87) + `docs/map_users_tab_scope.md`.
+
+---
+
+### Session 88 — SkyThru: CCC-metric match · MIL/JST + Veteran Star · About z-index · MAP-Users 3 fields (2026-06-30)
+
+Four COBI tweaks across two PRs (both merged + live). **PR #628 (code-only → daily-dispatch
+publishes):** (1) **CCC Collaborative match** — KPI Trends read `ccc_collaborative`=adopting_colleges
+(61) under the same label as the MAP Exhibits card's exhibit count (132). New `kpi_history` key
+**`ccc_exhibits`** (= `ccc.unique_exhibits`) repoints the Trends row; legacy series kept. NEW key →
+deltas read "—" until its own series accrues (no fake jump). (2) **MIL vs JST + the Veteran Star** —
+new **`fetch_veteran_jst.py`** → committed **`veteran_jst.json`** (runner-as-proxy, soft-fail; the
+worker scrape lacks MIL/JST + can't be redeployed from a session). `apply_veteran_jst` puts the REAL
+JST + reported MIL + the 75% rule on the **Veteran Sprint card** (was a proxy); the **College
+Activity** table gains a "MIL / JST" column + the ★ becomes the Veteran Star (JST≥75%MIL), gated on
+`COLLEGE_HAS_JST`. ⚠ per-college star count ≈46 vs MAP's `StarCollegeCount` 50 — boundary cases, the
+savings API has no per-college star flag (logged as `computed_star_colleges`). (3) **About-box
+z-index** — `.header`'s `backdrop-filter` trapped the popover (z-index:300) behind the cards;
+`cobi_brand.js` lifts `.header` to `z-index:150`. **PR #629 (MAP Users):** the value-signature probe
+confirmed UserStatus∈{Active,Inactive}/UserDisciplines/LastUpdatedOn on the 16-field Users view;
+`map_college_users` += `user_status`/`disciplines`/`last_updated_on`, `map_users_summary()` += public
+`active_count` (Disciplines+Last-updated reviewer-gated). Sync FIELD_MAP + tab roster columns. Tests:
++4 new files (#628) + cobi_brand z-index guards; map_users → 70 checks; 114 JS files green. Full
+story: [`docs/cobi_lessons.md`](docs/cobi_lessons.md) (S88).
