@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-01T16:08:31.317Z",
+  "scraped_at": "2026-07-01T19:36:59.282Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -33,13 +33,13 @@
         },
         {
           "college": "Los Angeles Pierce College",
-          "students": 1858,
+          "students": 1860,
           "units": 28283,
-          "avgUnits": 15.222282023681379,
+          "avgUnits": 15.205913978494623,
           "transcriptionRate": 98.8,
-          "avgTranscribed": 15.036598493003229,
+          "avgTranscribed": 15.020430107526881,
           "criteriaMetCount": 5,
-          "militaryStudents": 116,
+          "militaryStudents": 118,
           "nonMilitaryStudents": 1742,
           "apprenticeStudents": 173,
           "savings": 27587065,
@@ -548,13 +548,13 @@
         },
         {
           "college": "Moorpark College",
-          "students": 127,
+          "students": 128,
           "units": 14,
-          "avgUnits": 0.11023622047244094,
+          "avgUnits": 0.109375,
           "transcriptionRate": 28.6,
-          "avgTranscribed": 0.031496062992125984,
+          "avgTranscribed": 0.03125,
           "criteriaMetCount": 1,
-          "militaryStudents": 123,
+          "militaryStudents": 124,
           "nonMilitaryStudents": 4,
           "apprenticeStudents": 0,
           "savings": 18100,
@@ -758,17 +758,17 @@
         },
         {
           "college": "Fresno City College",
-          "students": 468,
-          "units": 1066,
-          "avgUnits": 2.2777777777777777,
+          "students": 489,
+          "units": 1058,
+          "avgUnits": 2.16359918200409,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 467,
+          "militaryStudents": 488,
           "nonMilitaryStudents": 1,
           "apprenticeStudents": 0,
-          "savings": 1844180,
-          "yearImpact": 6467422,
+          "savings": 1830340,
+          "yearImpact": 6418886,
           "transcribedUnits": 0
         },
         {
@@ -1208,13 +1208,13 @@
         },
         {
           "college": "Sacramento City College",
-          "students": 65,
+          "students": 66,
           "units": 0,
           "avgUnits": 0,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 65,
+          "militaryStudents": 66,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 0,
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "48,224",
+      "value": "48,249",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,886"
+          "value": "24,911"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 48224,
-    "Units": 230601.65000000002,
+    "Students": 48249,
+    "Units": 230593.65000000002,
     "TranscribedUnits": 99577.95,
-    "Savings": 321491525.25,
-    "YearImpact": 1300353580.3999999,
-    "MilitaryStudents": 24886,
+    "Savings": 321477685.25,
+    "YearImpact": 1300305044.3999999,
+    "MilitaryStudents": 24911,
     "NonMilitaryStudents": 23414,
     "AprenticeStudents": 753,
-    "AverageUnits": 4.781885575646982,
-    "TranscribedAverage": 2.064904404445919
+    "AverageUnits": 4.779242056830194,
+    "TranscribedAverage": 2.063834483616241
   }
 }

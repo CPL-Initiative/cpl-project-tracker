@@ -1,18 +1,18 @@
 {
-  "scraped_at": "2026-07-01T16:08:31.462871+00:00",
+  "scraped_at": "2026-07-01T19:36:59.432096+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 24886,
+    "jst": 24911,
     "star_colleges": 50
   },
   "computed_star_colleges": 50,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 116,
+      "jst": 118,
       "star": false
     },
     "Merced College": {
@@ -175,14 +175,14 @@
       "jst": 266,
       "star": true
     },
-    "Fresno City College": {
-      "vets": 724,
-      "jst": 467,
-      "star": false
-    },
     "Shasta College": {
       "vets": 343,
       "jst": 176,
+      "star": false
+    },
+    "Fresno City College": {
+      "vets": 724,
+      "jst": 488,
       "star": false
     },
     "Victor Valley College": {
@@ -447,7 +447,7 @@
     },
     "Moorpark College": {
       "vets": 179,
-      "jst": 123,
+      "jst": 124,
       "star": false
     },
     "Coalinga College": {
@@ -477,7 +477,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 65,
+      "jst": 66,
       "star": false
     },
     "Gavilan College": {
