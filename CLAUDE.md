@@ -2141,23 +2141,10 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full story:
 > [`docs/cobi_lessons.md`](docs/cobi_lessons.md) (S88).
 
-### Session 89 — SkyMiles: Sierra sees what colleges TEACH (the COCI offerings catalog, v20) (2026-07-01)
-
-Sam's ask (from a Boys & Girls Club colleague's detailed NCCER/OSHA/welding CPL
-question): free Sierra to research the course/program catalog. Root cause — the
-shared `cpl-chat` function could search only the **earned-exhibit** set
-(`chatbox_exhibits`), never **what a college TEACHES**, so it couldn't reason
-"LA Harbor hasn't articulated NCCER, but does it teach construction? if not, which
-nearby college does?" (confirmed: LA Harbor **0** construction-crafts courses, El
-Camino **25**, Long Beach City **14**). **Full build shipped (PR #631):** a public
-COCI **offerings catalog** in Supabase (`coci_college_offerings` 16k · `coci_college_programs`
-22k · `college_geo` 120; §8), built by `chatbox/build_coci_offerings.py`, loaded by
-the runner sync `coci-offerings-sync.yml`; wired into **`cpl-chat` v20** (5th parallel
-lookup + relevance-ranked `search_college_offerings` + core-vs-tangential gating +
-nearest-college ranking + `OFFERINGS_RULE` adoption prompt; `verify_jwt` preserved
-false). Smoke modes 7–8. This is the **offerings slice of the CCR/CER ETL** (CER +
-adoption-leverage layers are the next wire). Full story: `docs/cpl_assistant_lessons.md`
-(Session 89). **NEXT: `docs/session_90_handoff.md`.**
+> **Session 89 narrative (SkyMiles — Sierra sees what colleges TEACH: the COCI
+> offerings catalog `coci_college_offerings`/`coci_college_programs`/`college_geo` +
+> `cpl-chat` v20, PR #631) archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md).
+> Full story: [`docs/cpl_assistant_lessons.md`](docs/cpl_assistant_lessons.md) (Session 89).
 
 ### Session 90 — SkySherpa: the standalone Sierra page gets its brand (2026-07-01)
 
@@ -2174,6 +2161,27 @@ base64 `image` block in the session `.jsonl` transcript; **hand-authored SVG lin
 beats raster for a UI mark (scalable, recolorable, ~0.5 KB). All `sierra/` files are
 static (no Rule-4 mirror, not a cron artifact); merged on `unstable` (TruffleHog green).
 Full story: `docs/cpl_assistant_lessons.md` (Session 90). **NEXT: `docs/session_91_handoff.md`.**
+
+### Session 91 — SkyGOAT: the TMC Builder gets both C-ID authorities + "OR" alternatives (2026-07-01)
+
+Sam's two TMC asks (from the Saddleback Administration-of-Justice screenshot showing
+many NULL right-side alignments), both shipped + merged. **PR #639 — right-side C-ID
+coverage doubled:** auto-match keyed only on COCI's under-reported `CIDNumber`; wired in
+the already-in-repo but **unused** c-id.net authority (`cid_articulations.json`) →
+`tmc/_build_college_courses.py` unions both (join `(college,subject,number)` exact +
+leading-zero fallback; `sequence:true` excluded). **10,627 → 21,300** college×C-ID pairs
+(+100%); **9,924** courses gained a C-ID; 961 carry ≥2 → rows gain an optional 6th
+element `xcid[]`, consumer matches `{cid}∪xcid` + `autoMatch` used-tracks. **PR #640 —
+"X OR Y" alternatives:** the consumer already rendered/matched per-slot `alts[]` but
+**0/756 slots had any** (the PDFs' multi-column "OR" scrambles under `fitz`). Extracted
+the OR-groups by a **visual PDF read** — a Workflow fanned an extractor + adversarial
+verifier over all 45 PDFs → curated `tmc/tmc_or_groups.json` (80 groups, evidence
+quotes); the parser folds each into one slot (`cid` + `alts[]`). **77/80 folded**,
+zero drift; 3 skipped-and-logged (LPPS overlap, studio-art missing line). Genuine-absence
+slots stay honest blanks (no dataset fills them; we don't hold MIS). Consumer needed no
+change for #640. Suite 117 green (+2 test files). Full story: `docs/tmc_builder_lessons.md`;
+new KB note `docs/kb-notes/methodology-visual-pdf-read-for-layout-encoded-facts.md`.
+**NEXT: `docs/session_92_handoff.md`.**
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-30 (Session 85 — SkyLight: Annual Workplan tab = authoritative source — the "Current" column LIVE/manual HYBRID (KPI-mapped pull live read-only, the rest editable via the new workplan_goals.current column; PID_TO_KPI_KEY const + 3.2→transcripted_units fix; live sync as a post-pass after the KPI merges) + authoritative editable titles projects.name; NEW kb-note methodology-live-vs-manual-hybrid-column + annual_workplan_authoritative_lessons; Session 83 narrative archived to roadmap_archive.md)
+updated: 2026-07-01 (Session 91 — SkyGOAT: TMC Builder gets both C-ID authorities (c-id.net union → coverage doubled, PR #639) + "X OR Y" left-side alternatives via a visual-PDF-read overlay tmc_or_groups.json (77/80 folded, PR #640); NEW kb-note methodology-visual-pdf-read-for-layout-encoded-facts + 2 dated sections in tmc_builder_lessons; Session 89 narrative archived to roadmap_archive.md)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -37,6 +37,8 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
+| [Methodology — Visual PDF read (not text parse) for layout-encoded facts (columns/OR-adjacency that get_text scrambles; fan one reader per doc + adversarial verify; land as a curated overlay, not inline regex; guard the apply with anchor/overlap/all-or-nothing + zero-drift diff)](kb-notes/methodology-visual-pdf-read-for-layout-encoded-facts.md) | methodology | published | 2026-07-01 | 2026-07-01 (Session 91 — SkyGOAT, the TMC "X OR Y" overlay) |
+| [Reference — TMC / ADT data model & the C-ID auto-match (UPDATED S91: c-id.net authority union doubles coverage; slot.alts[] "OR" fold)](kb-notes/reference-tmc-adt-data-model.md) | reference | published | 2026-06-16 | 2026-07-01 (Session 91 — SkyGOAT) |
 | [Methodology — Hybrid live-vs-manual value column (per-row source flag; live cells render verbatim + carry NO edit attr → read-only by construction; the live sync is a post-pass after the merges; single-store titles by repointing the render)](kb-notes/methodology-live-vs-manual-hybrid-column.md) | methodology | published | 2026-06-30 | 2026-06-30 (Session 85 — SkyLight, the Annual Workplan "Current") |
 | [Methodology — Dark→light recolor mapping (COBI tokens; chips/trendlines contrast; guard the SOURCE when CSS is generator-injected)](kb-notes/methodology-dark-to-light-recolor-mapping.md) | methodology | published | 2026-06-30 | 2026-06-30 (Session 87 — SkyGuy, the light/glass theme) |
 | [ADR — Obsidian sync via vault-side clone (not edge function)](kb-notes/adr-obsidian-vault-via-clone.md) | adr | published | 2026-05-27 | 2026-05-27 |
