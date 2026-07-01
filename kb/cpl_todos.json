@@ -1,44 +1,44 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-30 · Session 88 (SkyThru) · checkpoint — CCC-metric match · MIL vs JST data element + Veteran Star · About-box z-index · MAP Users 3 new fields",
- "_session": 88,
- "_status": "Four COBI tweaks shipped + live. (1) KPI Trends 'CCC Collaborative' now shows the statewide-EXHIBIT count (132) to match the MAP Exhibits card — it was quietly showing adopting-colleges (61). (2) NEW MIL vs JST data element: the Veteran Sprint card shows the REAL JSTs uploaded (≈23.5k) + reported service members (MIL ≈34.1k) + the 75% star rule (was a stand-in number); the College Activity table gains a 'MIL / JST' column and its ⭐ is now the Veteran Star (uploaded JSTs ≥ 75% of reported MIL) instead of the near-always-on criteria star. (3) The About box no longer slips behind the cards. (4) The 3 new MAP Custom Report fields (Active/Inactive · Disciplines · Last-updated) now flow into the MAP Users tab — public 'N active' counts + a richer reviewer roster. HEADS-UP for Sam: the table's per-college Veteran Star uses the exact 75% rule (~46 colleges); MAP's official tally is 50 — the 4-college gap is boundary cases (the savings API has no per-college star flag), flag if it bugs you.",
+ "_as_of": "2026-07-01 · Session 89 (SkyMiles) · Sierra (the CPL Assistant) can now see what each college TEACHES",
+ "_session": 89,
+ "_status": "Sierra just got a lot smarter for detailed questions. She could only search the credit colleges have ALREADY set up (the exhibit list); now she can also search the full COCI course + program catalog — what each college actually TEACHES — plus a region/county map of all 120 colleges. So for a question like the Boys & Girls Club's (get their teens NCCER/OSHA/welding credit at LA Harbor / El Camino / Long Beach), she can reason: LA Harbor teaches 0 construction-trades courses, but El Camino (25) and Long Beach City (14) DO, and Norco/Barstow already articulated NCCER — so she routes you to the right nearby college and frames it as an easy adoption, instead of dead-ending at 'no exhibit.' Live now on both the dashboard tab AND the public map.rccd.edu widget (cpl-chat v20).",
  "items": [
   {
-   "id": "ccc-metric-confirm",
+   "id": "sierra-try",
    "who": "sam",
-   "tab": "dashboard",
-   "text": "On the KPI Trends panel, 'CCC Collaborative' should now read ~132 (matching the MAP Exhibits card's 'CCC Collaborative — statewide exhibits'), not 61. Its 1d/7d/30d deltas show '—' for a few days while the new series builds up — that's expected, not a bug."
+   "tab": "chatbot",
+   "text": "Try Sierra on a detailed trades question (e.g. paste your Boys & Girls Club NCCER/OSHA/welding question, or ask 'Does LA Harbor give credit for NCCER carpentry?'). She should now name nearby colleges that TEACH construction (El Camino, LA Trade-Tech, Rio Hondo…) and point to Norco/Barstow as proof. Tell me if any answer should route or word differently — we keep tuning her."
   },
   {
-   "id": "miljst-confirm",
-   "who": "sam",
-   "tab": "dashboard",
-   "text": "College Activity table: new 'MIL / JST' column (reported military / JSTs uploaded), and the gold ⭐ is now the Veteran Star (JST ≥ 75% of MIL). The Veteran Sprint card shows the real uploaded-JST and reported-MIL numbers + the 75% rule. NOTE: the table's per-college star count (~46) is slightly under MAP's official '50' — boundary cases; tell me if you want me to chase the exact rule."
-  },
-  {
-   "id": "mapusers-newfields",
+   "id": "mapusers-loginurl",
    "who": "sam",
    "tab": "map-users",
-   "text": "The 3 new Custom Report fields are wired in: each college row now shows '(N active)', and the reviewer roster drawer gains Status (Active/Inactive), Disciplines, and Last-updated columns. STILL OPEN from before: send me the MAP login URL you want the refresh-nudge link to point at (today it links each college's MAP dashboard)."
+   "text": "Carryover: send me the MAP login URL you want the refresh-nudge link to point at (today it links each college's MAP dashboard)."
   },
   {
    "id": "reference-tabs-headerbands",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "Decision (carryover): the CCR / Canonical-SUBJ4 / Credential-Reference tabs are light tables but still have a dark-navy sticky HEADER band. Want those flipped light too for total uniformity? Just say the word."
+   "text": "Carryover decision: the CCR / Canonical-SUBJ4 / Credential-Reference tabs are light tables but still have a dark-navy sticky HEADER band. Want those flipped light too for total uniformity? Just say the word."
   },
   {
    "id": "vet-plans-kb-15",
    "who": "sam",
    "tab": "knowledge-base",
-   "text": "Review and merge public Knowledge Base PR #15 (Veterans plans) when you have a moment — it's waiting on your sign-off."
+   "text": "Carryover: review and merge public Knowledge Base PR #15 (Veterans plans) when you have a moment — waiting on your sign-off."
   },
   {
    "id": "factsheet-auth-redirect",
    "who": "sam",
    "tab": "dashboard",
    "text": "One-time: add the Fact Sheet URL (or …/cpl-project-tracker/**) to the Supabase Auth → Redirect URLs list so a magic-link sign-in from the Fact Sheet lands back on that page."
+  },
+  {
+   "id": "assistant-cer",
+   "who": "fable",
+   "tab": "chatbot",
+   "text": "Next Sierra wire: after the offerings catalog (Session 89), fold in the CER credential layer + adoption-leverage / statewide_prescriptive so a request resolves credential → articulated-where → local course → adoption path (the rest of the CCR/CER ETL)."
   },
   {
    "id": "mid-renumber",
@@ -51,12 +51,6 @@
    "who": "fable",
    "tab": "tmc-builder",
    "text": "Build the TMC Phase-2 acceptance engine (the CO-review scoring that decides whether a college's submitted courses meet each ADT's requirements)."
-  },
-  {
-   "id": "assistant-etl",
-   "who": "fable",
-   "tab": "chatbot",
-   "text": "Stand up the CPL-Assistant CCR/CER recommender ETL so the assistant can suggest the right course/credential a college could adopt."
   }
  ]
 }

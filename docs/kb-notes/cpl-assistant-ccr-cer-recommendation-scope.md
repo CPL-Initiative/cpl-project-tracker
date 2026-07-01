@@ -19,7 +19,17 @@ related:
 
 # CPL Assistant — CCR/CER-grounded recommendations, benchmark & landing-site demand signal
 
-**Status: SCOPE / kickoff (2026-06-19, Bruh Startripper). Decisions locked with Sam in-session; build not yet started.**
+**Status: SCOPE / kickoff (2026-06-19, Bruh Startripper). Decisions locked with Sam in-session.**
+
+> **PARTIALLY SHIPPED — the OFFERINGS slice (Session 89, SkyMiles, PR #631, `cpl-chat` v20).**
+> The **course/program catalog** ("what does each college TEACH") is now landed into
+> shared Supabase (`coci_college_offerings` / `coci_college_programs` / `college_geo`)
+> and wired into the bot as a 5th lookup + adoption/nearest-teaching prompt. This is
+> the ETL + M1 **offerings** layer — it answers "does college X teach discipline Y; if
+> not, which nearby college does" (the Boys & Girls Club / NCCER case). **Still to
+> wire:** the **CER credential layer** + **CCR course-identity crosswalk** +
+> **adoption-leverage / `statewide_prescriptive`** (the credential→articulated-where→
+> local-course→adoption-path chain). Story: `docs/cpl_assistant_lessons.md` (Session 89).
 
 ## Why
 

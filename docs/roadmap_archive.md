@@ -1962,3 +1962,34 @@ Sam's six COBI refinements (PR #610, code-only → post-merge dispatch publishes
 
 112 JS test files + Python tests green; generator EXIT 0. Full story:
 [`docs/cobi_lessons.md`](docs/cobi_lessons.md) (S86–87). **NEXT: [`docs/session_87_handoff.md`](docs/session_87_handoff.md).**
+
+### Session 87 — StarMax: card↔KPI breakdown sync + the MAP Users tab end-to-end (2026-06-30)
+
+Two asks. **(1) Cured the population sub-activity cards** (PR #617, code-only): 3.1.1
+Working Adults / 3.1.2 Veterans / 3.1.2a Apprentice were stale because Session 86's
+live-sync only wired **top-level**-KPI sub-activities; these three are **breakdown rows
+WITHIN** STUDENTS SERVED. New `PID_TO_KPI_BREAKDOWN` + `_kpi_breakdown_value()` wired
+through both post-passes → cards now match the headline breakdown by construction
+(23,388 / 24,864 / 753). **(2) Built the MAP Users tab end-to-end** (`#map-users`,
+§2/§7b/§8; PRs #618–#621): a runner probe captured the schema (the **value-signature**
+method — the MAP report API pads unknown columns, so confirm a column by whether its
+VALUES come back, calibrated with garbage sentinels; MAP is case-sensitive + multi-word
+Contacts columns keep their **spaces**). Gated Supabase `map_college_users` (2,741 rows;
+public aggregate via `map_users_summary()`, roster reviewer/team-phrase gated) +
+`map_college_contacts` (121); runner sync `map/sync_map_users.py` (`map-users-sync.yml`);
+the tab `map_users.js` (lazy, both HTMLs) + a 📣 **mailto nudge** to Primary Contact /
+VPAA / VPSS. Gotcha: Supabase **pg-safeupdate** needs `where true` on a full-table DELETE
+through the API roles. 113 JS test files green.
+
+**(3) Nudge follow-up (PRs #623–#626).** Per Sam: a **recipient PICKER** (all pre-checked,
+uncheck anyone) + **CEO** as a 4th recipient (71/121 have one) + a **last-nudged log**
+(`map_college_nudges`, kept separate from the monthly-wiped contacts table) (#623); the draft
+**links the college to their own MAP CPL dashboard** (`map_college_contacts.landing_page_url`,
+joined in the sync from `chatbox_college_profiles`; 118/121 match) (#624); and the
+**college's own user roster** rides in the email body as a **Check-All checklist** (drop a
+departed staffer before sending) so leadership sees their CPL people (#626). **Architecture
+call (durable):** MAP is the system of record for users and there's **no MAP write API**, so
+we DON'T build a roster editor in COBI — colleges edit in MAP (deep-linked), COBI owns the
+nudge → `docs/kb-notes/adr-surface-dont-edit-readonly-system-of-record.md`. Parked: the
+"✓ confirmed current" attestation loop. 56 map_users checks; 113 JS test files green. Full
+story: `docs/cobi_lessons.md` (S87) + `docs/map_users_tab_scope.md`.
