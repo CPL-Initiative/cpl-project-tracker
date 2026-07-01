@@ -782,7 +782,9 @@ detailed in §7c):
 the bottom of the nav rail — an `<a class="cpl-tab cpl-tab-external">` with **no
 `data-tab`**, so `tabs.js` (which derives tabs from `.cpl-tab[data-tab]`) ignores
 it and it opens the standalone page in a new tab. Mirrored in both HTMLs (Rule 4).
-Added Session 74.
+Added Session 74. **Session 89 added a second such rail launcher — `🏔️ Ask Sierra ↗`
+→ the standalone `sierra/` chat page** (chat-first, multi-turn Sierra, shareable
+externally without the internal tabs; served by the lean Pages deploy; PR #633).
 
 Implementation notes (important — keep in sync with the generator):
 
@@ -839,9 +841,15 @@ reuse, so keep it self-contained behind its CONFIG block.
   part of the daily GitHub Actions cron. Source-of-record is the **live
   function**, captured at `chatbox/supabase/functions/cpl-chat/index.ts`
   (re-capture with `get_edge_function` before editing if in doubt).
-- Live now: **v20 ACTIVE** (Session 89 added the **COCI offerings catalog** lookup —
+- Live now: **v21 ACTIVE** (Session 89 added the **COCI offerings catalog** lookup —
   Sierra now sees what each college *teaches*, not only earned exhibits; see the
-  offerings bullet at the end of this section + §8. Prior: model `claude-sonnet-4-6`; v15→v19 = the Session-73
+  offerings bullet at the end of this section + §8. **v21** fixed a preflight-found
+  false-negative — a query naming several colleges detected only the first, so the
+  80-row offerings cap dropped another named college and the model wrongly said it
+  "doesn't teach" the subject; v21 raises the cap to 150 + forbids asserting absence
+  from the top-N list. There's also a **standalone shareable Sierra page** at
+  `sierra/` (chat-first, multi-turn, no internal nav — the fact-sheet/kb-portal
+  pattern; `sierra/sierra.js`, launched from the COBI rail, PR #633). Prior: model `claude-sonnet-4-6`; v15→v19 = the Session-73
   response-logic tuning below — v16/v17 the three tweaks, **v18 the multi-turn
   retrieval-fold** (a place-only refinement like "How about West LA?" folds the
   whole recent conversation's topic into the search via `REFINE_NOISE` +

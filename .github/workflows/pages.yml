@@ -99,6 +99,7 @@ jobs:
             "_site/cpl_funding_data.js"
             "_site/fact-sheet/index.html"
             "_site/kb-portal/index.html"
+            "_site/sierra/index.html"
             "_site/kb/cpl_todos.json"
             "_site/kb/liftoff_plan.json"
             "_site/kb/project_lifecycle.json"

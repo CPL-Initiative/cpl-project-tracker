@@ -142,6 +142,17 @@ run "8 offerings broad (who teaches construction)" \
   '{"query":"Which community colleges teach construction or carpentry courses that could lead to NCCER credit?","session_id":"smoke-ci","history":[]}'
 answer_must_match -i "carpentry|construction" "8 on-topic offerings"
 
+# v21 regression guard: the big multi-cert BGCA question names MULTIPLE colleges,
+# so only ONE is detected (LBCC) — El Camino must still surface as a nearby teacher
+# (it teaches Construction Crafts 25 / Welding 20 / Carpentry 4). Pre-v21 the noisy
+# query truncated El Camino out of the 80-row offerings + the model wrongly said it
+# "is not listed as teaching these trades." v21 raised the cap to 150 + forbids
+# asserting absence from the top-N list. Assert El Camino is named + NOT dismissed.
+run "9 offerings multi-cert (El Camino not truncated)" \
+  '{"query":"A Boys & Girls Club near San Pedro offers NCCER carpentry, electrician, plumbing, welding and OSHA-10 to teens, with Harbor College, El Camino, and Long Beach City nearby. Which colleges should we approach for college credit?","session_id":"smoke-ci"}'
+answer_must_match -i "El Camino" "9 El Camino surfaced"
+answer_must_not_match -i "El Camino.{0,40}(not listed|does not teach|doesn.t teach|not.{0,10}teaching)" "9 El Camino not falsely dismissed"
+
 if [ "$fail" -ne 0 ]; then
   echo "SMOKE TEST FAILED"
   exit 1

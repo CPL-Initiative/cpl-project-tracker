@@ -1,0 +1,26 @@
+name: Sierra preflight (adoption/offerings QA)
+
+# Runs the Sierra ADOPTION/OFFERINGS QA battery (the real Boys & Girls Club case
+# + variants) against the LIVE cpl-chat function and prints each full answer for
+# review. A richer companion to cpl-chat-smoke.yml (the deploy gate) — re-run
+# after any Sierra tuning to eyeball the trades/adoption answers.
+#
+# WHY A RUNNER: the agent sandbox is egress-blocked from *.supabase.co.
+# Triggers: push touching the battery, and manual dispatch.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - chatbox/preflight_bgca.sh
+      - .github/workflows/sierra-preflight.yml
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+      - name: Run Sierra preflight battery
+        run: bash chatbox/preflight_bgca.sh

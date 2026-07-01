@@ -470,3 +470,47 @@ had an existing construction exhibit, so exhibit-only search could only
 - **Contacts routing (M3):** the offerings answer already routes to a college; pair
   it with the college's CPL coordinator (the `chatbox_college_profiles.contacts` /
   the richer Custom Reports College Contacts) so "adopt this" comes with "here's who."
+
+### Pass 2 — 2026-07-01 (Session 89): the BGCA preflight + the Q1 El-Camino false-negative (v20 → v21)
+
+Built a **standalone shareable Sierra page** (`sierra/`, chat-first, multi-turn — so a
+partner like a Boys & Girls Club can be handed a public link without the internal
+COBI tabs) + a reusable **adoption/offerings QA battery** (`chatbox/preflight_bgca.sh`
++ `sierra-preflight.yml`) that runs the REAL BGCA question + 9 variants against live
+Sierra on a runner and prints each answer for review.
+
+**The preflight caught a real bug on the flagship question.** Q1 (the verbatim
+multi-cert BGCA question) answered *"El Camino College is not listed as teaching these
+specific trades currently in the data I have"* — **false**: El Camino teaches
+Construction Crafts (25), Welding (20), Carpentry (4). **Root cause:** the question
+names 3 colleges, so college-detection returned only the FIRST alias hit (LBCC), and
+the huge multi-keyword tsquery (osha+nccer+carpentry+electrician+plumbing+welding+aws…)
+capped at **80** offerings rows by relevance — El Camino's rows fell outside the top-80,
+so the model saw LBCC but not El Camino and **over-asserted absence.** The other 9
+answers were strong, and adversarial verification via `execute_sql` confirmed the
+load-bearing claims were ACCURATE (Barstow/Chaffey/Cuesta/Norco/Palomar/Santa Ana do
+hold welding exhibits; Norco's IBEW electrician exhibit is real) — so the fix was
+narrow.
+
+**Fix (v21, deployed, `verify_jwt` preserved):** (1) raise `searchCollegeOfferings`
+`result_limit` **80 → 150** so a noisy multi-keyword query doesn't truncate a relevant
+college; (2) label the offerings context as **"TOP matches — NOT exhaustive"**; (3) an
+`OFFERINGS_RULE` clause: **never conclude a college does NOT teach a subject from its
+absence in the (top-N) list** — if a named college isn't shown, be uncertain and
+suggest checking, don't assert absence. Smoke mode 9 replays the multi-cert question
+and asserts El Camino is named + not falsely dismissed.
+
+**Lessons:**
+- **A real-user battery finds what a liveness smoke test can't.** The 8-mode smoke
+  gate is about *does it work*; the BGCA battery is about *is the answer good* — and it
+  surfaced a flagship-question false-negative the smoke test never would.
+- **Adversarial-verify the claims, not just the vibe.** Before "fixing" I checked the
+  peer-articulation claims against `chatbox_exhibits`/`coci_college_offerings` via SQL —
+  they were accurate, which kept the fix narrow (a retrieval-cap + prompt tweak, not a
+  data problem).
+- **Absence in a top-N retrieval is not evidence of absence in the world.** Any
+  capped/ranked retrieval must forbid the model from concluding "X doesn't exist"
+  from "X isn't in the list." The single highest-leverage correctness rule here.
+- **Multi-entity queries defeat first-match detection.** Naming 3 colleges → only the
+  first alias resolves; the others must still surface via the (now larger) global
+  offerings search. A future refinement: detect ALL named colleges, not just the first.
