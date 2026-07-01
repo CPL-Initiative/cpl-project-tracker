@@ -1,26 +1,32 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-30 · Session 87 (StarMax) · checkpoint — MAP Users nudge: recipient picker + CEO + last-nudged + MAP-dashboard link + the college user roster (Check-All checklist) in the email",
- "_session": 87,
- "_status": "Earlier today: the Goal-2 population cards were re-wired to the live STUDENTS-SERVED breakdown (#617) and the gated MAP Users tab shipped end-to-end (#618–#621). Then the 📣 refresh nudge grew up (#623–#626): a RECIPIENT PICKER (Primary Contact · VP Instruction · VP Student Services · CEO — all pre-checked, uncheck anyone; still a draft mailto, nothing auto-sends), a 'last nudged' log per college, a link to each college's MAP dashboard, and — newest — the college's OWN user roster dropped into the email as a Check-All checklist so leadership sees their CPL heroes (drop anyone before sending). Architecture call: we do NOT build a roster editor in COBI (MAP is the system of record, no write API) — colleges edit in MAP, COBI nudges. OPEN for Sam: (1) the MAP login URL to point the link at; (2) heads-up when the 3 new Custom Report fields land (Active/Inactive · Disciplines · Last updated).",
+ "_as_of": "2026-06-30 · Session 88 (SkyThru) · checkpoint — CCC-metric match · MIL vs JST data element + Veteran Star · About-box z-index · MAP Users 3 new fields",
+ "_session": 88,
+ "_status": "Four COBI tweaks shipped + live. (1) KPI Trends 'CCC Collaborative' now shows the statewide-EXHIBIT count (132) to match the MAP Exhibits card — it was quietly showing adopting-colleges (61). (2) NEW MIL vs JST data element: the Veteran Sprint card shows the REAL JSTs uploaded (≈23.5k) + reported service members (MIL ≈34.1k) + the 75% star rule (was a stand-in number); the College Activity table gains a 'MIL / JST' column and its ⭐ is now the Veteran Star (uploaded JSTs ≥ 75% of reported MIL) instead of the near-always-on criteria star. (3) The About box no longer slips behind the cards. (4) The 3 new MAP Custom Report fields (Active/Inactive · Disciplines · Last-updated) now flow into the MAP Users tab — public 'N active' counts + a richer reviewer roster. HEADS-UP for Sam: the table's per-college Veteran Star uses the exact 75% rule (~46 colleges); MAP's official tally is 50 — the 4-college gap is boundary cases (the savings API has no per-college star flag), flag if it bugs you.",
  "items": [
   {
-   "id": "cards-confirm",
+   "id": "ccc-metric-confirm",
    "who": "sam",
-   "tab": "activities-projects",
-   "text": "Glance at Goal 2: the Working Adults (3.1.1), Veterans & Service (3.1.2), and Apprentice (3.1.2a) cards should now show live numbers that match the STUDENTS-SERVED breakdown on the headline card (no more stale 21,552 / 22,149 / 700). Flag if any still look off."
+   "tab": "dashboard",
+   "text": "On the KPI Trends panel, 'CCC Collaborative' should now read ~132 (matching the MAP Exhibits card's 'CCC Collaborative — statewide exhibits'), not 61. Its 1d/7d/30d deltas show '—' for a few days while the new series builds up — that's expected, not a bug."
   },
   {
-   "id": "mapusers-nudge-url",
+   "id": "miljst-confirm",
+   "who": "sam",
+   "tab": "dashboard",
+   "text": "College Activity table: new 'MIL / JST' column (reported military / JSTs uploaded), and the gold ⭐ is now the Veteran Star (JST ≥ 75% of MIL). The Veteran Sprint card shows the real uploaded-JST and reported-MIL numbers + the 75% rule. NOTE: the table's per-college star count (~46) is slightly under MAP's official '50' — boundary cases; tell me if you want me to chase the exact rule."
+  },
+  {
+   "id": "mapusers-newfields",
    "who": "sam",
    "tab": "map-users",
-   "text": "MAP Users nudge now also drops the college's USER ROSTER into the email (so leadership sees their CPL heroes) — shown as a checklist with a Check-All header so you can drop anyone before sending. Plus the recipient picker (Primary Contact · VP Instruction · VP Student Services · CEO), a 'last nudged' line, and a link to their MAP dashboard. TWO asks: (1) send me the MAP login URL you want the link to point to; (2) when the 3 new Custom Report fields land (Active/Inactive · Disciplines · Last updated), tell me and I'll fold them into the tab."
+   "text": "The 3 new Custom Report fields are wired in: each college row now shows '(N active)', and the reviewer roster drawer gains Status (Active/Inactive), Disciplines, and Last-updated columns. STILL OPEN from before: send me the MAP login URL you want the refresh-nudge link to point at (today it links each college's MAP dashboard)."
   },
   {
    "id": "reference-tabs-headerbands",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "Decision (carryover): the CCR / Canonical-SUBJ4 / Credential-Reference tabs are light tables but still have a dark-navy sticky HEADER band. Want those flipped light too for total uniformity? Quick follow-up — just say the word."
+   "text": "Decision (carryover): the CCR / Canonical-SUBJ4 / Credential-Reference tabs are light tables but still have a dark-navy sticky HEADER band. Want those flipped light too for total uniformity? Just say the word."
   },
   {
    "id": "vet-plans-kb-15",
