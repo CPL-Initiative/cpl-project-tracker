@@ -1,9 +1,21 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-01 · Session 91 (SkyGOAT) · TMC Builder: right-side C-ID coverage roughly DOUBLED + 'X OR Y' course choices now show on the left",
- "_session": 91,
- "_status": "Session 91 answered two questions about the TMC Builder from your Saddleback screenshot (lots of blank right-side matches). (1) COVERAGE: the tab was only matching a college's course to a TMC slot when the college itself had recorded the C-ID in COCI — and about a quarter of colleges barely record C-IDs. We folded in the official c-id.net approved-courses list (already in the repo, just unused), which roughly DOUBLED the matches (10,627 → 21,300 college×course C-IDs; ~9,900 courses gained a C-ID). So far fewer blanks now. (2) 'OR' CHOICES: many templates say 'Course X OR Course Y' (pick one) — the builder could already show that, but the data never had it, because the official PDFs hide the 'OR' in a two-column layout that plain text extraction scrambles. We had Claude READ the 45 PDFs visually (with a second pass double-checking each one) to pull out the real OR-groups, and folded 77 of them in — so the left side now shows 'X or Y' and matches either. What it still CAN'T do: if a college simply has no C-ID-approved course for a slot (like Saddleback's Criminal Law), no dataset fills it — that's an honest blank, not a bug.",
+ "_as_of": "2026-07-01 · Session 92 (StarFab) · TMC Builder: every official c-id.net approval now lands (Saddleback SOCI 110 fixed) + the confidence-score data map for the mid-July CO backlog",
+ "_session": 92,
+ "_status": "Session 92 dug one layer deeper on your Saddleback screenshot. The 'Select a college…' rows were just the no-college-picked view — but underneath was a real defect: when c-id.net says a college holds a C-ID approval and the course itself is missing from our COCI snapshot (very common right now — colleges are renumbering to the new statewide C1000 numbers, so old rows are gone and new ones haven't landed), the approval vanished and the slot showed a wrong blank. That was 1,195 wrong blanks across 114 colleges. Now EVERY official approval lands: matched to the real course where we can (smarter joins), or shown as a clearly-badged 'per c-id.net — verify' row when the course isn't in our snapshot. Blanks that remain are TRUE (the college holds no approval — e.g. Saddleback's AJ 120–160). A safety review caught and fixed a subtle bug before shipping (title matching could grab a sibling course like 'Part B' of a two-part sequence — now impossible). Also mapped YOUR new goal (confidence score + can't-submit-misaligned before the mid-July Institute) against the data we hold: everything's in hand except CONTACT HOURS — see the new data-requirements note and the two questions below.",
  "items": [
+  {
+   "id": "coci-hours-extract",
+   "who": "sam",
+   "tab": "tmc-builder",
+   "text": "TOP DATA ASK (mid-July): can the COCI course report be exported WITH the contact-hours columns colleges enter at course approval? And either way, pull a FRESH COCI course extract — ours is stale mid-renumbering (1,986 officially-approved courses have no row in it). Hours are the ONLY one of the CO's five checks we can't source today; everything else is in hand."
+  },
+  {
+   "id": "pending-queue-list",
+   "who": "sam",
+   "tab": "tmc-builder",
+   "text": "Can the CO export the 200+ pending ADT submissions as a simple list (college, TMC, date submitted)? Then the tab can rank the queue by computed alignment so staff clear the near-auto-approvable ones first before the Curriculum Institute. Fallback if not: we already hold every ⏳ In-progress (college, TMC) pair from the COCI program export and can use that as the queue."
+  },
   {
    "id": "tmc-or-skips",
    "who": "sam",
@@ -15,12 +27,6 @@
    "who": "sam",
    "tab": "chatbot",
    "text": "Try Sierra on a detailed trades question (e.g. your Boys & Girls Club NCCER/OSHA/welding question, or 'Does LA Harbor give credit for NCCER carpentry?'). She should name nearby colleges that TEACH construction (El Camino, LA Trade-Tech, Rio Hondo…) and cite Norco/Barstow as proof. Tell me if any answer should route or word differently."
-  },
-  {
-   "id": "sierra-whitney-followthrough",
-   "who": "sam",
-   "tab": "chatbot",
-   "text": "Optional Sierra polish: want the Mt Whitney mark carried into the little chat avatar (still a 🏔️ emoji) and/or the browser tab icon? It's a reusable graphic now — just say the word and Fable will drop it in."
   },
   {
    "id": "mapusers-loginurl",
@@ -47,10 +53,10 @@
    "text": "One-time: add the Fact Sheet URL (or …/cpl-project-tracker/**) to the Supabase Auth → Redirect URLs list so a magic-link sign-in from the Fact Sheet lands back on that page."
   },
   {
-   "id": "tmc-engine",
+   "id": "tmc-confidence-engine",
    "who": "fable",
    "tab": "tmc-builder",
-   "text": "Build the TMC Phase-2 acceptance engine — per-slot verdicts on a college's submitted courses (now that the C-ID coverage is doubled and 'OR' alternatives are in place, the matching inputs are much richer). Scope: docs/kb-notes/tmc-co-review-scope.md."
+   "text": "Build the TMC confidence engine for the mid-July backlog: per-slot tiers (C-ID auto-accept / ≈ verify / scored), submission gates ('can't submit incomplete'), and the CO triage queue ranked by computed alignment. All data shipped as of #642 except hours. Build order: docs/kb-notes/reference-tmc-confidence-data-requirements.md."
   },
   {
    "id": "assistant-cer",

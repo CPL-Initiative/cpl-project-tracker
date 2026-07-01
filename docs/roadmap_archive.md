@@ -2034,3 +2034,21 @@ nearest-college ranking + `OFFERINGS_RULE` adoption prompt; `verify_jwt` preserv
 false). Smoke modes 7–8. This is the **offerings slice of the CCR/CER ETL** (CER +
 adoption-leverage layers are the next wire). Full story: `docs/cpl_assistant_lessons.md`
 (Session 89).
+
+## Archived session narrative (Session 90) — moved 2026-07-01 (Session 92)
+
+### Session 90 — SkySherpa: the standalone Sierra page gets its brand (2026-07-01)
+
+A focused visual pass on the **standalone Sierra page** (`sierra/`, added S89 PR #633),
+3 PRs all merged + live. **#635** — the header 🏔️ emoji → the official **CPL Initiative
+logo** (`sierra/cpl-initiative-logo.png`, white-on-transparent, cropped to content) as a
+co-brand lockup left of the wordmark. **#636** — a hand-traced **Mt Whitney ridge ghosted
+behind "Sierra"** (`sierra/whitney-mark.svg`, single white stroke + a summit snowcap, 34%
+opacity, flat base on the text baseline, nudged right to clear the "a") + tagline "Your
+Credit for Prior Learning guide" → **"Your CPL Sherpa"** (Whitney = tallest Sierra Nevada
+peak; a Sherpa guides you up). **#637** — trimmed the tagline to just "Your CPL Sherpa".
+Two reusable tricks: **a pasted image isn't on disk** — recover its bytes from the
+base64 `image` block in the session `.jsonl` transcript; **hand-authored SVG line-art**
+beats raster for a UI mark (scalable, recolorable, ~0.5 KB). All `sierra/` files are
+static (no Rule-4 mirror, not a cron artifact); merged on `unstable` (TruffleHog green).
+Full story: `docs/cpl_assistant_lessons.md` (Session 90).
