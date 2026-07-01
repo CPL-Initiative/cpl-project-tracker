@@ -644,3 +644,44 @@ Suite 118 files green (+`tests/tmc_cidnet_synth.test.js`, 31 checks).
 (cosmetic inflation — fold into the Phase-2 confidence engine); the 3 skipped
 OR-groups still need Sam's faculty-verify calls; a FRESH COCI extract (+ hours
 columns if exportable) is the top data ask — see the data-requirements note.
+
+## 2026-07-01 (Session 92 cont., StarFab) — the confidence engine ships (same-day "Let's build:)")
+
+Sam's green light with three ground rules: hours as a **placeholder** (COCI master
+report requested, don't hold breath), roll with the current COCI extract, and the
+CO has **no extract of pending files** ("old school") → use our COCI In-progress
+pairs as the queue. Shipped the engine end-to-end the same day:
+
+- **College side:** `confidenceFor()` verdict tiers per the ASCCC ladder (✓ auto ·
+  ≈ verify · 📎 evidence · ⚠ review · open) with chips on every slot; readiness
+  mix + gates on the meter; **submit blocks** on select-N, per-list units floors,
+  and the ≥18-major-units STAR gate; capture inputs for **hours** (placeholder),
+  **units** (unknown-units synth courses — the gate remedy), and **evidence**
+  (flexible slots). All round-trip save/resume; cleared when a slot's course changes.
+- **CO side:** the New-requests queue ranks by readiness mix (`_readiness` in the
+  jsonb, PostgREST-selected as `alignments->_readiness`), rows expand to the
+  five-check panel (provenance + matched C-ID + college-entered values flagged),
+  **Approve / Return + note**, and the **⏳ In-progress backlog proxy** ranked by
+  computed coverage.
+- **The adversarial verify caught two blockers pre-merge (third time this session
+  the pattern paid):** ① **stored XSS** — `_readiness` is anon-writable jsonb and
+  its "numbers" were interpolated into innerHTML unescaped (`(v.auto || 0)` passes
+  a non-falsy string straight through) → `rNum()` coercion + a malicious-payload
+  regression test; ② **forgeable approvals** — the PATCH rode the table's
+  always-true anon UPDATE, so anyone with the public key could stamp "✅ approved"
+  → the `tmc_review_submission` SECURITY DEFINER RPC (`is_allowed_reviewer()`,
+  `reviewed_by` from the JWT), anon policies narrowed WITH CHECK
+  (draft|submitted), review columns revoked from direct API writes. **Lesson: the
+  moment a UI action becomes an AUTHORITY CLAIM (a CO approval), UI-gating is no
+  longer enough — move it server-side even when the table's anon-write design was
+  deliberate for the college flow.** Also fixed from the verify: legacy-tier
+  overshoot (non-C-ID slots can never be rule-1 auto), open-slot dilution in the
+  triage ranking, the 18-unit dead end for CCN-transition colleges, cid_unverified
+  auto-downgrade, rule-2 vs rule-3 wording, stale capture values on course change.
+- **Known honest limits:** the 18-unit gate uses local unit values (quarter
+  colleges are under-gated — wording says so; calendar detection needs data we
+  don't hold); evidence is free text (CO reads it — not auto-trusted); hours never
+  scored until the COCI report lands.
+
+Suite 119 files green (`tests/tmc_confidence.test.js`, 38 checks). Schema:
+`tmc/supabase_tmc_submissions.sql` (2 migrations applied live).

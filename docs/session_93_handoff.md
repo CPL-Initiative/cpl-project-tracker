@@ -62,18 +62,31 @@ a **fresh COCI extract** is the top data ask (ours is stale mid-CCN —
 
 ## Priority workstream — the confidence engine (mid-July clock)
 
-Build order (from the data-requirements note):
-1. **Submission gates + per-slot tiers** (1/1b/1c/2) — all data shipped as of
-   #642. Extend `tmc_submissions.status` → `approved|denied|returned`.
-2. **CO triage queue** — rank ⏳ In-progress (college, TMC) pairs (already in
-   `tmc_college_adts.js`) by computed coverage; per-slot ✓/≈/✗ panel = the
-   review screen.
-3. **Description-similarity precompute** (build-time score vs descriptor text;
-   ship scores, lazy text).
-4. **Hours** — the moment Sam sources them (or the form captures them).
+**Steps 1 + 2 SHIPPED same-session** (Sam: "Let's build:)"). Live now: per-slot
+verdict tiers (✓ auto / ≈ verify / 📎 evidence / ⚠ review per the ASCCC ladder),
+submit gates (select-N · per-list units floors · ≥18 major units with a
+units-capture remedy for unknown-units synth courses), hours-placeholder +
+flexible-slot evidence capture (all round-trip save/resume), and the CO review
+queue: readiness-ranked submissions, expandable five-check panel, **server-gated
+Approve/Return** (`tmc_review_submission` RPC — `is_allowed_reviewer()`,
+JWT-stamped; 2 migrations applied + mirrored in
+`tmc/supabase_tmc_submissions.sql`), and the ⏳ In-progress backlog proxy ranked
+by computed coverage. The adversarial verify caught 2 blockers pre-merge (stored
+XSS via anon-writable `_readiness`; anon-forgeable approvals) — read the S92
+lessons sections before touching this surface.
 
-Known cosmetic follow-up: directory `coverageFor` counts verify-tier carriers
-same as hard (inflates the coverage column slightly) — fold into step 2.
+Still open, in order:
+1. **Description-similarity precompute** (build-time score per candidate vs the
+   C-ID descriptor text; ship scores, lazy text — data all in hand).
+2. **Hours** — wire for real the moment Sam's COCI master report lands
+   (prefill + compare; the placeholder inputs become verification).
+3. **Directory `coverageFor`** still counts verify-tier carriers same as hard
+   (cosmetic inflation) — distinguish or annotate.
+4. **Quarter-college units gate** — the ≥18 gate uses local unit values
+   (quarter colleges under-gated; wording is honest). Needs a college→calendar
+   signal we don't hold; ask Sam if precision matters for the Institute.
+5. Evidence is free text (CO reads it, not auto-trusted) — a URL-shape nudge or
+   ASSIST deep-link picker would strengthen tier 2.
 
 ## Carryover (waiting on Sam, then you)
 - **COCI export with hours columns? + a FRESH COCI extract** (top data ask).

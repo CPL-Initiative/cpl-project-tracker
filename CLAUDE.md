@@ -1067,11 +1067,19 @@ JSON) and Saves/Resumes to Supabase `tmc_submissions`.
   in the tab via `workplan_goals.js` (PATCH on the GOAL row); reviewer-gated
   (`is_allowed_reviewer()`). Titles in the same tab PATCH **`projects.name`** (the
   single authoritative title store). See `docs/annual_workplan_authoritative_lessons.md`.
-- **`tmc_submissions`** (added Session 59): TMC Builder's per-college course→TMC
-  alignment store. Anon INSERT/UPDATE/SELECT RLS (institutional curriculum data,
-  **no student PII**), `(college, tmc_id)` unique → upsert/resume. The always-true
-  anon write policies are deliberate (mirror `chat_interactions`); the authoritative
-  submission is the exported form. Schema: `tmc/supabase_tmc_submissions.sql`.
+- **`tmc_submissions`** (added Session 59; **CO-review states Session 92**): TMC
+  Builder's per-college course→TMC alignment store. Anon INSERT/UPDATE/SELECT RLS
+  (institutional curriculum data, **no student PII**), `(college, tmc_id)` unique →
+  upsert/resume; the anon write policies now carry **WITH CHECK (status in
+  draft|submitted)** — the college flow stays no-login, but **approved/returned +
+  the review receipts (`review_note`/`reviewed_by`/`reviewed_at`) are SERVER-GATED**:
+  set only by the `tmc_review_submission(college, tmc_id, status, note)` SECURITY
+  DEFINER RPC (`is_allowed_reviewer()`, `reviewed_by` stamped from the JWT; the
+  receipt columns are revoked from direct anon/authenticated writes — an approval
+  is a CO authority claim, never forgeable with the public key). The alignments
+  jsonb also carries per-slot `verdict`/`course_hours`/`course_units_entered`/
+  `evidence`/`matched_cid` + `_readiness` (the CO queue's triage ranking).
+  Schema: `tmc/supabase_tmc_submissions.sql`.
 - **`tmc_curator_notes`** + **`tmc_requests`** (added Session 59): TMC Builder's
   curator layer. `tmc_curator_notes` = one global note per (tmc_id, slot_key),
   anon SELECT + **reviewer-gated** INSERT/UPDATE (`is_allowed_reviewer()`).
@@ -2189,7 +2197,16 @@ title-stripping blocker pre-merge. 0 wrong blanks remain; suite 118 (+31-check t
 Sam reframed the goal: **CO confidence score + can't-submit-misaligned** (200+ backlog
 before the mid-July Curriculum Institute) → data scorecard + build order in
 `docs/kb-notes/reference-tmc-confidence-data-requirements.md` (hours = the one true gap).
-Full story: `docs/tmc_builder_lessons.md`. **NEXT: `docs/session_93_handoff.md`.**
+**Then Sam said "Let's build:)" — the CONFIDENCE ENGINE shipped same-day:** per-slot
+verdict tiers (✓ auto / ≈ verify / 📎 evidence / ⚠ review) per the ASCCC ladder, submit
+gates (select-N · per-list units · ≥18 major units w/ a units-capture remedy for synth
+courses), hours-placeholder + evidence capture, and the **server-gated CO review queue**
+(rank-by-readiness, per-slot five-check panel, Approve/Return via the
+`tmc_review_submission` RPC — `is_allowed_reviewer()`, JWT-stamped; anon can no longer
+mint approved/returned) + the ⏳ In-progress backlog proxy. The adversarial verify caught
+2 more blockers pre-merge (stored XSS via anon-writable `_readiness`; forgeable
+approvals). Suite 119 (+38-check test). Full story: `docs/tmc_builder_lessons.md`.
+**NEXT: `docs/session_93_handoff.md`.**
 
 ---
 
