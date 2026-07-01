@@ -1,0 +1,602 @@
+[
+ {
+  "college": "Allan Hancock College",
+  "region": "Central Coast",
+  "county": "Santa Barbara"
+ },
+ {
+  "college": "American River College",
+  "region": "Greater Sacramento",
+  "county": "Sacramento"
+ },
+ {
+  "college": "Antelope Valley College",
+  "region": "Los Angeles",
+  "county": "Los Angeles"
+ },
+ {
+  "college": "Bakersfield College",
+  "region": "San Joaquin Valley",
+  "county": "Kern"
+ },
+ {
+  "college": "Barstow Community College",
+  "region": "Inland Empire",
+  "county": "San Bernardino"
+ },
+ {
+  "college": "Berkeley City College",
+  "region": "Bay Area",
+  "county": "Alameda"
+ },
+ {
+  "college": "Butte College",
+  "region": "Far North",
+  "county": "Butte"
+ },
+ {
+  "college": "Cabrillo College",
+  "region": "Central Coast",
+  "county": "Santa Cruz"
+ },
+ {
+  "college": "Calbright College Credit",
+  "region": "Statewide / Online",
+  "county": null
+ },
+ {
+  "college": "Cañada College",
+  "region": "Bay Area",
+  "county": "San Mateo"
+ },
+ {
+  "college": "Cerritos College",
+  "region": "Los Angeles",
+  "county": "Los Angeles"
+ },
+ {
+  "college": "Cerro Coso Community College",
+  "region": "San Joaquin Valley",
+  "county": "Kern"
+ },
+ {
+  "college": "Chabot College",
+  "region": "Bay Area",
+  "county": "Alameda"
+ },
+ {
+  "college": "Chaffey College",
+  "region": "Inland Empire",
+  "county": "San Bernardino"
+ },
+ {
+  "college": "Citrus College",
+  "region": "Los Angeles",
+  "county": "Los Angeles"
+ },
+ {
+  "college": "City College of San Francisco",
+  "region": "Bay Area",
+  "county": "San Francisco"
+ },
+ {
+  "college": "Clovis Community College",
+  "region": "San Joaquin Valley",
+  "county": "Fresno"
+ },
+ {
+  "college": "Coalinga College",
+  "region": "San Joaquin Valley",
+  "county": "Fresno"
+ },
+ {
+  "college": "Coastline Community College",
+  "region": "Orange County",
+  "county": "Orange"
+ },
+ {
+  "college": "College of Alameda",
+  "region": "Bay Area",
+  "county": "Alameda"
+ },
+ {
+  "college": "College of Marin",
+  "region": "Bay Area",
+  "county": "Marin"
+ },
+ {
+  "college": "College of San Mateo",
+  "region": "Bay Area",
+  "county": "San Mateo"
+ },
+ {
+  "college": "College of the Canyons",
+  "region": "Los Angeles",
+  "county": "Los Angeles"
+ },
+ {
+  "college": "College of the Desert",
+  "region": "Inland Empire",
+  "county": "Riverside"
+ },
+ {
+  "college": "College of the Redwoods",
+  "region": "Far North",
+  "county": "Humboldt"
+ },
+ {
+  "college": "College of the Sequoias",
+  "region": "San Joaquin Valley",
+  "county": "Tulare"
+ },
+ {
+  "college": "College of the Siskiyous",
+  "region": "Far North",
+  "county": "Siskiyou"
+ },
+ {
+  "college": "Columbia College",
+  "region": "San Joaquin Valley",
+  "county": "Tuolumne"
+ },
+ {
+  "college": "Compton College",
+  "region": "Los Angeles",
+  "county": "Los Angeles"
+ },
+ {
+  "college": "Contra Costa College",
+  "region": "Bay Area",
+  "county": "Contra Costa"
+ },
+ {
+  "college": "Copper Mountain College",
+  "region": "Inland Empire",
+  "county": "San Bernardino"
+ },
+ {
+  "college": "Cosumnes River College",
+  "region": "Greater Sacramento",
+  "county": "Sacramento"
+ },
+ {
+  "college": "Crafton Hills College",
+  "region": "Inland Empire",
+  "county": "San Bernardino"
+ },
+ {
+  "college": "Cuesta College",
+  "region": "Central Coast",
+  "county": "San Luis Obispo"
+ },
+ {
+  "college": "Cuyamaca College",
+  "region": "San Diego – Imperial",
+  "county": "San Diego"
+ },
+ {
+  "college": "Cypress College",
+  "region": "Orange County",
+  "county": "Orange"
+ },
+ {
+  "college": "De Anza College",
+  "region": "Bay Area",
+  "county": "Santa Clara"
+ },
+ {
+  "college": "Diablo Valley College",
+  "region": "Bay Area",
+  "county": "Contra Costa"
+ },
+ {
+  "college": "East Los Angeles College",
+  "region": "Los Angeles",
+  "county": "Los Angeles"
+ },
+ {
+  "college": "El Camino College",
+  "region": "Los Angeles",
+  "county": "Los Angeles"
+ },
+ {
+  "college": "Evergreen Valley College",
+  "region": "Bay Area",
+  "county": "Santa Clara"
+ },
+ {
+  "college": "Feather River College",
+  "region": "Far North",
+  "county": "Plumas"
+ },
+ {
+  "college": "Folsom Lake College",
+  "region": "Greater Sacramento",
+  "county": "Sacramento"
+ },
+ {
+  "college": "Foothill College",
+  "region": "Bay Area",
+  "county": "Santa Clara"
+ },
+ {
+  "college": "Fresno City College",
+  "region": "San Joaquin Valley",
+  "county": "Fresno"
+ },
+ {
+  "college": "Fullerton College",
+  "region": "Orange County",
+  "county": "Orange"
+ },
+ {
+  "college": "Gavilan College",
+  "region": "Bay Area",
+  "county": "Santa Clara"
+ },
+ {
+  "college": "Glendale Community College",
+  "region": "Los Angeles",
+  "county": "Los Angeles"
+ },
+ {
+  "college": "Golden West College",
+  "region": "Orange County",
+  "county": "Orange"
+ },
+ {
+  "college": "Grossmont College",
+  "region": "San Diego – Imperial",
+  "county": "San Diego"
+ },
+ {
+  "college": "Hartnell College",
+  "region": "Central Coast",
+  "county": "Monterey"
+ },
+ {
+  "college": "Imperial Valley College",
+  "region": "San Diego – Imperial",
+  "county": "Imperial"
+ },
+ {
+  "college": "Irvine Valley College",
+  "region": "Orange County",
+  "county": "Orange"
+ },
+ {
+  "college": "Lake Tahoe Community College",
+  "region": "Greater Sacramento",
+  "county": "El Dorado"
+ },
+ {
+  "college": "Laney College",
+  "region": "Bay Area",
+  "county": "Alameda"
+ },
+ {
+  "college": "Las Positas College",
+  "region": "Bay Area",
+  "county": "Alameda"
+ },
+ {
+  "college": "Lassen College",
+  "region": "Far North",
+  "county": "Lassen"
+ },
+ {
+  "college": "Lemoore College",
+  "region": "San Joaquin Valley",
+  "county": "Kings"
+ },
+ {
+  "college": "Long Beach City College",
+  "region": "Los Angeles",
+  "county": "Los Angeles"
+ },
+ {
+  "college": "Los Angeles City College",
+  "region": "Los Angeles",
+  "county": "Los Angeles"
+ },
+ {
+  "college": "Los Angeles Harbor College",
+  "region": "Los Angeles",
+  "county": "Los Angeles"
+ },
+ {
+  "college": "Los Angeles Mission College",
+  "region": "Los Angeles",
+  "county": "Los Angeles"
+ },
+ {
+  "college": "Los Angeles Pierce College",
+  "region": "Los Angeles",
+  "county": "Los Angeles"
+ },
+ {
+  "college": "Los Angeles Southwest College",
+  "region": "Los Angeles",
+  "county": "Los Angeles"
+ },
+ {
+  "college": "Los Angeles Trade Technical College",
+  "region": "Los Angeles",
+  "county": "Los Angeles"
+ },
+ {
+  "college": "Los Angeles Valley College",
+  "region": "Los Angeles",
+  "county": "Los Angeles"
+ },
+ {
+  "college": "Los Medanos College",
+  "region": "Bay Area",
+  "county": "Contra Costa"
+ },
+ {
+  "college": "Madera College",
+  "region": "San Joaquin Valley",
+  "county": "Madera"
+ },
+ {
+  "college": "Mendocino College",
+  "region": "Far North",
+  "county": "Mendocino"
+ },
+ {
+  "college": "Merced College",
+  "region": "San Joaquin Valley",
+  "county": "Merced"
+ },
+ {
+  "college": "Merritt College",
+  "region": "Bay Area",
+  "county": "Alameda"
+ },
+ {
+  "college": "MiraCosta College",
+  "region": "San Diego – Imperial",
+  "county": "San Diego"
+ },
+ {
+  "college": "Mission College",
+  "region": "Bay Area",
+  "county": "Santa Clara"
+ },
+ {
+  "college": "Modesto Junior College",
+  "region": "San Joaquin Valley",
+  "county": "Stanislaus"
+ },
+ {
+  "college": "Monterey Peninsula College",
+  "region": "Central Coast",
+  "county": "Monterey"
+ },
+ {
+  "college": "Moorpark College",
+  "region": "Central Coast",
+  "county": "Ventura"
+ },
+ {
+  "college": "Moreno Valley College",
+  "region": "Inland Empire",
+  "county": "Riverside"
+ },
+ {
+  "college": "Mt. San Antonio College",
+  "region": "Los Angeles",
+  "county": "Los Angeles"
+ },
+ {
+  "college": "Mt. San Jacinto College",
+  "region": "Inland Empire",
+  "county": "Riverside"
+ },
+ {
+  "college": "Napa Valley College",
+  "region": "Bay Area",
+  "county": "Napa"
+ },
+ {
+  "college": "Norco College",
+  "region": "Inland Empire",
+  "county": "Riverside"
+ },
+ {
+  "college": "North Orange Continuing Education",
+  "region": "Orange County",
+  "county": "Orange"
+ },
+ {
+  "college": "North Orange Continuing Education Credit",
+  "region": "Orange County",
+  "county": "Orange"
+ },
+ {
+  "college": "Ohlone College",
+  "region": "Bay Area",
+  "county": "Alameda"
+ },
+ {
+  "college": "Orange Coast College",
+  "region": "Orange County",
+  "county": "Orange"
+ },
+ {
+  "college": "Oxnard College",
+  "region": "Central Coast",
+  "county": "Ventura"
+ },
+ {
+  "college": "Palo Verde College",
+  "region": "Inland Empire",
+  "county": "Riverside"
+ },
+ {
+  "college": "Palomar College",
+  "region": "San Diego – Imperial",
+  "county": "San Diego"
+ },
+ {
+  "college": "Pasadena City College",
+  "region": "Los Angeles",
+  "county": "Los Angeles"
+ },
+ {
+  "college": "Porterville College",
+  "region": "San Joaquin Valley",
+  "county": "Tulare"
+ },
+ {
+  "college": "Reedley College",
+  "region": "San Joaquin Valley",
+  "county": "Fresno"
+ },
+ {
+  "college": "Rio Hondo College",
+  "region": "Los Angeles",
+  "county": "Los Angeles"
+ },
+ {
+  "college": "Riverside City College",
+  "region": "Inland Empire",
+  "county": "Riverside"
+ },
+ {
+  "college": "Sacramento City College",
+  "region": "Greater Sacramento",
+  "county": "Sacramento"
+ },
+ {
+  "college": "Saddleback College",
+  "region": "Orange County",
+  "county": "Orange"
+ },
+ {
+  "college": "San Bernardino Valley College",
+  "region": "Inland Empire",
+  "county": "San Bernardino"
+ },
+ {
+  "college": "San Diego City College",
+  "region": "San Diego – Imperial",
+  "county": "San Diego"
+ },
+ {
+  "college": "San Diego College of Continuing Education",
+  "region": "San Diego – Imperial",
+  "county": "San Diego"
+ },
+ {
+  "college": "San Diego College of Continuing Education Credit",
+  "region": "San Diego – Imperial",
+  "county": "San Diego"
+ },
+ {
+  "college": "San Diego Mesa College",
+  "region": "San Diego – Imperial",
+  "county": "San Diego"
+ },
+ {
+  "college": "San Diego Miramar College",
+  "region": "San Diego – Imperial",
+  "county": "San Diego"
+ },
+ {
+  "college": "San Joaquin Delta College",
+  "region": "San Joaquin Valley",
+  "county": "San Joaquin"
+ },
+ {
+  "college": "San Jose City College",
+  "region": "Bay Area",
+  "county": "Santa Clara"
+ },
+ {
+  "college": "Santa Ana College",
+  "region": "Orange County",
+  "county": "Orange"
+ },
+ {
+  "college": "Santa Barbara City College",
+  "region": "Central Coast",
+  "county": "Santa Barbara"
+ },
+ {
+  "college": "Santa Monica College",
+  "region": "Los Angeles",
+  "county": "Los Angeles"
+ },
+ {
+  "college": "Santa Rosa Junior College",
+  "region": "Bay Area",
+  "county": "Sonoma"
+ },
+ {
+  "college": "Santiago Canyon College",
+  "region": "Orange County",
+  "county": "Orange"
+ },
+ {
+  "college": "Shasta College",
+  "region": "Far North",
+  "county": "Shasta"
+ },
+ {
+  "college": "Sierra College",
+  "region": "Greater Sacramento",
+  "county": "Placer"
+ },
+ {
+  "college": "Skyline College",
+  "region": "Bay Area",
+  "county": "San Mateo"
+ },
+ {
+  "college": "Solano Community College",
+  "region": "Bay Area",
+  "county": "Solano"
+ },
+ {
+  "college": "Southwestern College",
+  "region": "San Diego – Imperial",
+  "county": "San Diego"
+ },
+ {
+  "college": "Taft College",
+  "region": "San Joaquin Valley",
+  "county": "Kern"
+ },
+ {
+  "college": "Ventura College",
+  "region": "Central Coast",
+  "county": "Ventura"
+ },
+ {
+  "college": "Victor Valley College",
+  "region": "Inland Empire",
+  "county": "San Bernardino"
+ },
+ {
+  "college": "West Los Angeles College",
+  "region": "Los Angeles",
+  "county": "Los Angeles"
+ },
+ {
+  "college": "West Valley College",
+  "region": "Bay Area",
+  "county": "Santa Clara"
+ },
+ {
+  "college": "Woodland Community College",
+  "region": "Greater Sacramento",
+  "county": "Yolo"
+ },
+ {
+  "college": "Yuba College",
+  "region": "Greater Sacramento",
+  "county": "Yuba"
+ }
+]

@@ -839,7 +839,9 @@ reuse, so keep it self-contained behind its CONFIG block.
   part of the daily GitHub Actions cron. Source-of-record is the **live
   function**, captured at `chatbox/supabase/functions/cpl-chat/index.ts`
   (re-capture with `get_edge_function` before editing if in doubt).
-- Live now: **v19 ACTIVE** (model `claude-sonnet-4-6`; v15→v19 = the Session-73
+- Live now: **v20 ACTIVE** (Session 89 added the **COCI offerings catalog** lookup —
+  Sierra now sees what each college *teaches*, not only earned exhibits; see the
+  offerings bullet at the end of this section + §8. Prior: model `claude-sonnet-4-6`; v15→v19 = the Session-73
   response-logic tuning below — v16/v17 the three tweaks, **v18 the multi-turn
   retrieval-fold** (a place-only refinement like "How about West LA?" folds the
   whole recent conversation's topic into the search via `REFINE_NOISE` +
@@ -914,6 +916,25 @@ reuse, so keep it self-contained behind its CONFIG block.
   adding these URLs to the MAP Custom Report → when that lands, retire the scraper
   + workflow and source from the Custom Report. Story:
   `docs/cpl_landing_pages_lessons.md`.
+
+- **COCI offerings catalog — what each college TEACHES (added Session 89, v20).**
+  The function gained a **5th parallel lookup** `searchCollegeOfferings()` →
+  `search_college_offerings` RPC over the new **`coci_college_offerings`** table
+  (16k `college × TOP-program` rollups; relevance-ranked with TOP-title weighted A
+  over the course-title blob D). `buildOfferingsContext()` distinguishes a
+  **core-discipline** match (query keyword in the TOP-program title) from a
+  tangential one, and ranks **nearby** colleges (same county > region, via
+  `fetchCollegeGeo()`/`college_geo`). The `OFFERINGS_RULE` prompt turns this into
+  adoption reasoning: *teaches-but-no-exhibit → adoption opportunity; doesn't-teach
+  → nearest teaching college; peers who already articulated = proof; never claim an
+  articulation from a taught course alone.* This is what lets Sierra answer the
+  Boys-&-Girls-Club / NCCER case (LA Harbor teaches 0 construction-crafts → route to
+  El Camino/Trade-Tech/Rio Hondo, cite Norco/Barstow's existing NCCER). It's the
+  **offerings slice of the CCR/CER ETL** (`docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md`);
+  the CER credential + adoption-leverage layers are the next wire. Builder
+  `chatbox/build_coci_offerings.py` + geo `chatbox/_seed_college_geo.py` + runner
+  sync `chatbox/sync_coci_offerings.py` (`coci-offerings-sync.yml`). Smoke modes 7–8.
+  Story: `docs/cpl_assistant_lessons.md` (Session 89).
 
 ### 7d. TMC Builder — interactive ADT submission tab (Session 59, 2026-06-16)
 
@@ -1128,6 +1149,20 @@ JSON) and Saves/Resumes to Supabase `tmc_submissions`.
   (runner-as-proxy; `map-users-sync.yml`, dispatch + monthly cron). Schema of record:
   `map/supabase_map_users.sql` + `map/supabase_map_contacts.sql` (applied live via the
   Supabase MCP). Docs: `docs/map_users_tab_scope.md`.
+- **`coci_college_offerings` + `coci_college_programs` + `college_geo`** (added
+  Session 89): the **COCI offerings catalog** the shared `cpl-chat` function
+  (Sierra) queries to know what each college **teaches** (vs the earned-exhibit set
+  `chatbox_exhibits`). `coci_college_offerings` (16,097 `college × TOP-program`
+  rollups: course/credit/noncredit counts, C-ID coverage, sample courses, a
+  full-text `titles_text` blob), `coci_college_programs` (22,335 active/approved
+  awards), `college_geo` (120 colleges → region/county). **Public read (no PII —
+  course/program catalogs); writes only via SECURITY DEFINER `*_replace(jsonb, p_truncate)`
+  RPCs** (service-role, chunkable). Search via **`search_college_offerings(search_query, college_filter, result_limit)`**
+  (anon; `ts_rank`, TOP-title weighted A over the blob D). Built by
+  `chatbox/build_coci_offerings.py` from `kb/reference/coci_course_list.xlsx` + the
+  COCI program export; loaded by the runner sync `chatbox/sync_coci_offerings.py`
+  (`coci-offerings-sync.yml`, push + dispatch). STATIC — rebuild on a fresh COCI
+  extract, NOT a daily-cron artifact. Schema applied live via the Supabase MCP.
 - Separate from live metrics scraping; handles project-level data storage.
 
 ### 9. EACR Exhibit Identity — current state and future direction
@@ -2070,39 +2105,10 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > update popup; KB team-phrase; the light/glass theme #611; the MAP-Users PII-safe probe #612) archived**
 > → [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full story: [`docs/cobi_lessons.md`](docs/cobi_lessons.md) (S86).
 
-### Session 87 — StarMax: card↔KPI breakdown sync + the MAP Users tab end-to-end (2026-06-30)
-
-Two asks. **(1) Cured the population sub-activity cards** (PR #617, code-only): 3.1.1
-Working Adults / 3.1.2 Veterans / 3.1.2a Apprentice were stale because Session 86's
-live-sync only wired **top-level**-KPI sub-activities; these three are **breakdown rows
-WITHIN** STUDENTS SERVED. New `PID_TO_KPI_BREAKDOWN` + `_kpi_breakdown_value()` wired
-through both post-passes → cards now match the headline breakdown by construction
-(23,388 / 24,864 / 753). **(2) Built the MAP Users tab end-to-end** (`#map-users`,
-§2/§7b/§8; PRs #618–#621): a runner probe captured the schema (the **value-signature**
-method — the MAP report API pads unknown columns, so confirm a column by whether its
-VALUES come back, calibrated with garbage sentinels; MAP is case-sensitive + multi-word
-Contacts columns keep their **spaces**). Gated Supabase `map_college_users` (2,741 rows;
-public aggregate via `map_users_summary()`, roster reviewer/team-phrase gated) +
-`map_college_contacts` (121); runner sync `map/sync_map_users.py` (`map-users-sync.yml`);
-the tab `map_users.js` (lazy, both HTMLs) + a 📣 **mailto nudge** to Primary Contact /
-VPAA / VPSS. Gotcha: Supabase **pg-safeupdate** needs `where true` on a full-table DELETE
-through the API roles. 113 JS test files green.
-
-**(3) Nudge follow-up (PRs #623–#626).** Per Sam: a **recipient PICKER** (all pre-checked,
-uncheck anyone) + **CEO** as a 4th recipient (71/121 have one) + a **last-nudged log**
-(`map_college_nudges`, kept separate from the monthly-wiped contacts table) (#623); the draft
-**links the college to their own MAP CPL dashboard** (`map_college_contacts.landing_page_url`,
-joined in the sync from `chatbox_college_profiles`; 118/121 match) (#624); and the
-**college's own user roster** rides in the email body as a **Check-All checklist** (drop a
-departed staffer before sending) so leadership sees their CPL people (#626). **Architecture
-call (durable):** MAP is the system of record for users and there's **no MAP write API**, so
-we DON'T build a roster editor in COBI — colleges edit in MAP (deep-linked), COBI owns the
-nudge → `docs/kb-notes/adr-surface-dont-edit-readonly-system-of-record.md`. Parked: the
-"✓ confirmed current" attestation loop. Incoming (Sam asked MAP to add): 3 per-user Custom
-Report fields — Active/Inactive · Disciplines · Last updated (`docs/map_users_tab_scope.md` §8).
-56 map_users checks; 113 JS test files green. Full story:
-[`docs/cobi_lessons.md`](docs/cobi_lessons.md) (S87) + [`docs/map_users_tab_scope.md`](docs/map_users_tab_scope.md).
-**NEXT: [`docs/session_88_handoff.md`](docs/session_88_handoff.md).**
+> **Session 87 narrative (StarMax — card↔KPI breakdown sync #617 + the MAP Users tab
+> end-to-end #618–#621 + the nudge follow-up #623–#626) archived** →
+> [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full story:
+> [`docs/cobi_lessons.md`](docs/cobi_lessons.md) (S87) + [`docs/map_users_tab_scope.md`](docs/map_users_tab_scope.md).
 
 ### Session 88 — SkyThru: CCC-metric match · MIL/JST + Veteran Star · About z-index · MAP-Users 3 fields (2026-06-30)
 
@@ -2125,6 +2131,24 @@ confirmed UserStatus∈{Active,Inactive}/UserDisciplines/LastUpdatedOn on the 16
 +4 new files (#628) + cobi_brand z-index guards; map_users → 70 checks; 114 JS files green. Full
 story: [`docs/cobi_lessons.md`](docs/cobi_lessons.md) (S88).
 **NEXT: [`docs/session_89_handoff.md`](docs/session_89_handoff.md).**
+
+### Session 89 — SkyMiles: Sierra sees what colleges TEACH (the COCI offerings catalog, v20) (2026-07-01)
+
+Sam's ask (from a Boys & Girls Club colleague's detailed NCCER/OSHA/welding CPL
+question): free Sierra to research the course/program catalog. Root cause — the
+shared `cpl-chat` function could search only the **earned-exhibit** set
+(`chatbox_exhibits`), never **what a college TEACHES**, so it couldn't reason
+"LA Harbor hasn't articulated NCCER, but does it teach construction? if not, which
+nearby college does?" (confirmed: LA Harbor **0** construction-crafts courses, El
+Camino **25**, Long Beach City **14**). **Full build shipped (PR #631):** a public
+COCI **offerings catalog** in Supabase (`coci_college_offerings` 16k · `coci_college_programs`
+22k · `college_geo` 120; §8), built by `chatbox/build_coci_offerings.py`, loaded by
+the runner sync `coci-offerings-sync.yml`; wired into **`cpl-chat` v20** (5th parallel
+lookup + relevance-ranked `search_college_offerings` + core-vs-tangential gating +
+nearest-college ranking + `OFFERINGS_RULE` adoption prompt; `verify_jwt` preserved
+false). Smoke modes 7–8. This is the **offerings slice of the CCR/CER ETL** (CER +
+adoption-leverage layers are the next wire). Full story: `docs/cpl_assistant_lessons.md`
+(Session 89). **NEXT: `docs/session_90_handoff.md`.**
 
 ---
 

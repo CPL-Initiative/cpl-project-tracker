@@ -241,10 +241,21 @@ const TOPIC_SYNONYMS: Record<string, string[]> = {
   automotive: ["auto", "ase", "mechanic", "vehicle", "engine"],
   mechanic: ["automotive", "ase", "engine", "vehicle"],
   apprentice: ["apprenticeship", "journeyperson", "ibew"],
-  electrician: ["electrical", "ibew", "apprentice"],
+  electrician: ["electrical", "ibew", "apprentice", "wiring"],
   dental: ["dentist", "hygiene", "rdh"],
   aviation: ["faa", "flight", "aircraft", "airframe", "powerplant", "pilot"],
   cyber: ["cybersecurity", "comptia", "network", "ethical"],
+  // Construction trades — the NCCER family (Boys & Girls Club case). Kept tight;
+  // generic words ("building", "trades") over-matched fire/other departments, and
+  // relevance ranking (top_title weighted) surfaces the real discipline anyway.
+  construction: ["carpentry", "carpenter", "nccer"],
+  carpentry: ["construction", "carpenter", "woodworking", "nccer"],
+  carpenter: ["carpentry", "construction", "nccer"],
+  plumbing: ["construction", "pipefitting", "plumber"],
+  plumber: ["plumbing", "pipefitting"],
+  nccer: ["construction", "carpentry", "welding", "electrician", "plumbing"],
+  hvac: ["refrigeration", "environmental", "heating"],
+  osha: ["occupational"],
 };
 
 // ── Topic keyword extraction ──────────────────────────────────
@@ -370,6 +381,117 @@ async function searchExhibitsByTopic(
   }
 
   return null;
+}
+
+// ── College OFFERINGS search (the COURSE CATALOG — what colleges TEACH) ─────────
+// Distinct from searchExhibitsByTopic (the earned-EXHIBIT set). This answers
+// "does college X teach discipline Y?" and "which colleges teach it?" — the basis
+// for an adoption recommendation when a college teaches a discipline but hasn't
+// articulated the credential yet (e.g. NCCER carpentry). Reads coci_college_offerings
+// via search_college_offerings (rollup by college x TOP program, + region/county).
+async function searchCollegeOfferings(query: string, sb: any): Promise<any[] | null> {
+  const rawKeywords = extractTopicKeywords(query);
+  if (rawKeywords.length === 0) return null;
+  const keywords = expandWithSynonyms(rawKeywords);
+  const tsQuery = keywords.map((k) => `${k}:*`).join(" | ");
+  const { data, error } = await sb.rpc("search_college_offerings", {
+    search_query: tsQuery,
+    college_filter: null,
+    result_limit: 80,
+  });
+  if (error || !data || data.length === 0) return null;
+  return data;
+}
+
+// Fetch a college's region/county so we can rank "nearby colleges that teach X".
+async function fetchCollegeGeo(college: string, sb: any): Promise<any | null> {
+  if (!college) return null;
+  const { data } = await sb.from("college_geo").select("region, county").eq("college", college).single();
+  return data || null;
+}
+
+// ── Build offerings context (what colleges TEACH — the adoption basis) ──────────
+function buildOfferingsContext(
+  offerings: any[],
+  askedCollege: string | null,
+  askedGeo: any | null,
+  coreKeywords: string[] = [],
+): string {
+  if (!offerings || offerings.length === 0) return "";
+
+  // A row is a CORE-discipline match when a query keyword appears in its TOP-program
+  // title (the clean discipline label), vs a tangential titles-blob-only match — so
+  // "Construction Crafts Technology" counts, "Architecture" (which merely mentions
+  // construction in course text) does not. Used to decide whether a college really
+  // teaches the discipline vs just has a related program.
+  const isCore = (o: any) => {
+    const t = (o.top_title || "").toLowerCase();
+    return coreKeywords.some((k) => k.length >= 4 && t.includes(k));
+  };
+
+  // Group by college; sum course counts across matching TOP programs.
+  const byCollege = new Map<string, { rows: any[]; courses: number; core: boolean; region: string | null; county: string | null }>();
+  for (const o of offerings) {
+    const g = byCollege.get(o.college) || { rows: [], courses: 0, core: false, region: o.region || null, county: o.county || null };
+    g.rows.push(o);
+    g.courses += o.course_count || 0;
+    if (isCore(o)) g.core = true;
+    byCollege.set(o.college, g);
+  }
+
+  // Rank: colleges that teach the CORE discipline first, then proximity to the
+  // asked college (same county > same region), then how much they teach.
+  const rank = (g: any) => {
+    let p = g.core ? 200 : 0;
+    if (askedGeo?.county && g.county === askedGeo.county) p += 100;
+    if (askedGeo?.region && g.region === askedGeo.region) p += 40;
+    return p + Math.min(g.courses, 39);
+  };
+
+  const askedRaw = askedCollege ? byCollege.get(askedCollege) : null;
+  // Only treat the asked college as "teaches this" when it has a CORE match.
+  const asked = askedRaw && askedRaw.core ? askedRaw : null;
+  const others = [...byCollege.entries()]
+    .filter(([c]) => c !== askedCollege)
+    .sort((a, b) => rank(b[1]) - rank(a[1]));
+
+  const fmtCollege = (college: string, g: any) => {
+    let s = `\n## ${college}`;
+    if (g.county || g.region) s += ` (${[g.county && g.county + " County", g.region].filter(Boolean).join(", ")})`;
+    s += ` — teaches ${g.courses} course(s) in this area:\n`;
+    for (const o of g.rows.slice(0, 4)) {
+      s += `  - ${o.top_title || o.top_code} (${o.course_count} course(s)`;
+      if (o.cid_count > 0) s += `, ${o.cid_count} with a C-ID`;
+      s += `)`;
+      const samples = (o.sample_courses || []).slice(0, 3)
+        .map((c: any) => `${c.code} ${c.title}`.trim()).filter(Boolean);
+      if (samples.length) s += `: ${samples.join("; ")}`;
+      s += `\n`;
+    }
+    return s;
+  };
+
+  let ctx = "\n\n--- Course Catalog: WHICH COLLEGES TEACH THIS (COCI offerings — what a college teaches, NOT whether it has a CPL articulation yet) ---\n";
+  ctx += `${byCollege.size} college(s) currently teach course(s) in this area.\n`;
+
+  if (askedCollege) {
+    if (asked) {
+      ctx += `\n### ${askedCollege} DOES teach this discipline — strong candidate to ADOPT a CPL articulation:`;
+      ctx += fmtCollege(askedCollege, asked);
+    } else if (askedRaw) {
+      ctx += `\n### ${askedCollege} teaches only RELATED programs (not the core discipline) — mention these lightly, then point to the nearest colleges that teach the core discipline (below):`;
+      ctx += fmtCollege(askedCollege, askedRaw);
+    } else {
+      ctx += `\n### ${askedCollege} does NOT appear to teach courses in this area in the current COCI catalog — point to the nearest colleges that do (below).\n`;
+    }
+  }
+
+  if (others.length) {
+    ctx += `\n### ${askedCollege ? "Other colleges" : "Colleges"} that teach this (nearest first when a home college is known):\n`;
+    for (const [college, g] of others.slice(0, 10)) ctx += fmtCollege(college, g);
+    if (others.length > 10) ctx += `\n  ... and ${others.length - 10} more college(s) teach in this area.\n`;
+  }
+  return ctx;
 }
 
 // ── Build topic context (organized by college) ─────────────────
@@ -507,6 +629,14 @@ function buildCollegeContext(profile: any): string {
 const STATEWIDE_RULE = `\n\nABOUT STATEWIDE COLLABORATIVE (CCC) CREDIT RECOMMENDATIONS: these are system-wide standards developed through statewide faculty workgroups — they are NOT housed at, or owned by, any single college (one college may serve as the initiator or lead that signs off, but that does not make it "the place" to get the credit). Local colleges ADOPT or ADAPT them, and a student earns/accesses them through THEIR OWN college's CPL landing page. So when presenting a statewide standard: describe it as available system-wide, and point the visitor to their own (or a chosen) college's CPL landing page to pursue it — never tell them to go to one specific college's page to "access" a statewide credit.`;
 // #2 — List course titles + units, not a bare count.
 const CREDIT_LIST_RULE = `\n\nWHEN DESCRIBING WHAT CREDIT IS AVAILABLE: do NOT just state a count like "6 credit recommendations." Instead, LIST the specific course titles and the units/credit each is eligible for, using the "Eligible courses (title — units/credit)" lines provided, e.g. "Fire Behavior and Combustion (3 units); Principles of Emergency Services (3 units)". If more exist than are listed in the context, add "…and more" rather than inventing course names.`;
+// #4 — Use the course catalog (what colleges TEACH) to reason about ADOPTION and to
+// redirect to the nearest teaching college. This is the key upgrade for detailed
+// questions like "which nearby college could give my students CPL for NCCER?"
+const OFFERINGS_RULE = `\n\nABOUT THE "COURSE CATALOG / WHICH COLLEGES TEACH THIS" SECTION (if present): this shows which colleges currently TEACH courses in a discipline (their curriculum). This is DIFFERENT from a CPL exhibit/articulation — teaching a course does NOT mean the college has set up CPL credit for a credential yet. Use it to reason like a CPL advisor:
+- If a college TEACHES the relevant discipline but has NO matching CPL exhibit, present it as a strong ADOPTION OPPORTUNITY: e.g. "El Camino already teaches construction courses (CTEC 170, CTEC 503 OSHA), so it's well positioned to award CPL for NCCER — the college's CPL coordinator would set up that articulation." Frame it invitingly, never as a deficiency.
+- If the college the visitor named does NOT teach the discipline, say so warmly and point them to the NEAREST colleges that DO (use the county/region provided — closest first).
+- When a peer college has ALREADY articulated the credential (from the exhibit results), name it as proof it can be done ("Barstow and Norco have already set up NCCER credit").
+- ALWAYS add that teaching a course is not a guarantee of credit — the student/organization should contact the college's CPL coordinator to request a review. Never claim an articulation exists when only a course is taught.`;
 
 function buildSystemPrompt(
   sections: any[],
@@ -514,7 +644,8 @@ function buildSystemPrompt(
   collegeContext: string,
   topicContext: string,
   searchMode: "college" | "topic" | "college_topic" | "general",
-  multiTurn: boolean = false
+  multiTurn: boolean = false,
+  offeringsContext: string = ""
 ): string {
   let context = sections
     .map((s: any, i: number) => {
@@ -584,7 +715,7 @@ Be concise, friendly, and professional. Use plain language.
 
 IMPORTANT: When citing any numbers or metrics (student counts, units, savings, college counts, etc.), ALWAYS use the "LIVE CPL Dashboard Metrics" section below. These live numbers are scraped directly from the CCCCO Dashboard and are the most current. If a vault source below mentions a different number for the same metric, the live dashboard number is correct and the vault source is outdated. This applies especially to military/veteran student counts, savings figures, and unit totals.
 
-${context}${metricsContext}${collegeContext}${topicContext}${STATEWIDE_RULE}${CREDIT_LIST_RULE}${specialInstruction}`;
+${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${STATEWIDE_RULE}${CREDIT_LIST_RULE}${OFFERINGS_RULE}${specialInstruction}`;
 }
 
 async function fetchLiveMetrics(): Promise<any> {
@@ -680,8 +811,9 @@ Deno.serve(async (req: Request) => {
       normalize: true,
     });
 
-    // 2. Vector search + college detection + live metrics + topic search (parallel)
-    const [searchResult, collegeProfile, liveMetrics, topicResults] = await Promise.all([
+    // 2. Vector search + college detection + live metrics + topic search +
+    //    course-catalog offerings (parallel)
+    const [searchResult, collegeProfile, liveMetrics, topicResults, offeringsResults] = await Promise.all([
       sb.rpc("match_document_sections", {
         query_embedding: Array.from(queryEmbedding),
         match_threshold: MATCH_THRESHOLD,
@@ -689,7 +821,8 @@ Deno.serve(async (req: Request) => {
       }),
       detectAndFetchCollegeProfile(searchText, sb),
       fetchLiveMetrics(),
-      searchExhibitsByTopic(searchText, sb), // broad search first (no college filter)
+      searchExhibitsByTopic(searchText, sb), // earned-exhibit set (no college filter)
+      searchCollegeOfferings(searchText, sb), // course catalog: who TEACHES this
     ]);
 
     const sections = searchResult.data;
@@ -760,7 +893,18 @@ Deno.serve(async (req: Request) => {
     }
     // else: GENERAL MODE — just RAG + live metrics
 
-    const systemPrompt = buildSystemPrompt(sections || [], liveMetrics, collegeContext, topicContext, searchMode, multiTurn);
+    // Course-catalog offerings context — WHAT colleges teach (the adoption basis).
+    // Available in every mode. When a single college is in focus, fetch its
+    // region/county so we can rank "nearest colleges that teach this".
+    let offeringsContext = "";
+    if (offeringsResults && offeringsResults.length > 0) {
+      const askedCollege = singleProfile?.college || null;
+      const askedGeo = askedCollege ? await fetchCollegeGeo(askedCollege, sb) : null;
+      const coreKeywords = expandWithSynonyms(extractTopicKeywords(searchText));
+      offeringsContext = buildOfferingsContext(offeringsResults, askedCollege, askedGeo, coreKeywords);
+    }
+
+    const systemPrompt = buildSystemPrompt(sections || [], liveMetrics, collegeContext, topicContext, searchMode, multiTurn, offeringsContext);
 
     // 4. Call Claude Sonnet
     const anthropicRes = await fetch("https://api.anthropic.com/v1/messages", {

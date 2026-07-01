@@ -1,0 +1,51 @@
+name: COCI offerings sync (Sierra catalog)
+
+# Builds the COCI *offerings* catalog (what each college TEACHES — course +
+# program catalog + geography) from the committed COCI extracts and lands it into
+# the public Supabase tables coci_college_offerings / coci_college_programs /
+# college_geo, which the shared cpl-chat function (Sierra) queries.
+#
+# WHY A RUNNER: the write uses the Supabase SERVICE KEY (chunkable replace RPCs),
+# and the 141k-row source is rebuilt on the runner — no 20 MB artifact committed.
+# NO PII (public course/program catalogs) → a push trigger is fine (unlike the
+# gated map-users sync). Rebuild + re-sync whenever the COCI extract refreshes.
+#
+# Triggers:
+#   - push (to the builder/source paths) → --apply (refresh the catalog)
+#   - workflow_dispatch → --apply (on-demand, after merge)
+
+on:
+  push:
+    paths:
+      - 'chatbox/build_coci_offerings.py'
+      - 'chatbox/sync_coci_offerings.py'
+      - 'chatbox/_seed_college_geo.py'
+      - 'chatbox/college_geo.json'
+      - 'kb/reference/coci_course_list.xlsx'
+      - 'tmc/source_data/coci_program_export_*.csv'
+      - '.github/workflows/coci-offerings-sync.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: coci-offerings-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install deps
+        run: pip install --quiet openpyxl
+      - name: Build offerings payload
+        run: python3 chatbox/build_coci_offerings.py
+      - name: Sync to Supabase (service key)
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python3 chatbox/sync_coci_offerings.py --apply
