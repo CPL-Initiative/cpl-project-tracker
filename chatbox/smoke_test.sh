@@ -164,6 +164,19 @@ answer_must_match -i "emt|emergency|credit" "10 on-topic"
 run "11 audience unknown key (ignored, not an error)" \
   '{"query":"What is Credit for Prior Learning?","session_id":"smoke-ci","audience":"martian"}'
 
+# CPR regression guard (Session 93 — the rec_count-ranking miss, 2026-07-01):
+# every standalone CPR/First-Aid exhibit has rec_count=1, so the old
+# `ORDER BY rec_count DESC` in search_exhibits_by_topic cut ALL of them whenever
+# a noisy query matched more rows than the 200 limit (Sam's BGCA session surfaced
+# only Cabrillo's rec_count=3 EMT+CPR bundle and nothing else). The RPC now ranks
+# by ts_rank_cd over a title-weighted vector, so this question must surface the
+# single-rec adopters (Modesto HE 100/101 + EMS 350, Las Positas, Cypress, CCSF).
+# Single-turn (no history) = the production-widget path; lists matches directly.
+run "13 topic CPR (single-rec exhibits must surface)" \
+  '{"query":"I think First Aid and CPR or just the CPR Lifesaving certs are articulated by some colleges in MAP, can you check again?","session_id":"smoke-ci"}'
+answer_must_match -i "Modesto|Las Positas|Cypress|San Francisco|Cabrillo" "13 CPR adopter college named"
+answer_must_match -i "first aid|cpr" "13 on-topic"
+
 # sierra_feedback anon write path — the exact call the pages' 👍/👎 performs:
 # the SECURITY DEFINER RPC sierra_feedback_upsert (a direct PostgREST upsert
 # would 401 — ON CONFLICT needs SELECT visibility, which anon deliberately

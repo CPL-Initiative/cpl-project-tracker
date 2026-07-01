@@ -849,7 +849,18 @@ reuse, so keep it self-contained behind its CONFIG block.
   part of the daily GitHub Actions cron. Source-of-record is the **live
   function**, captured at `chatbox/supabase/functions/cpl-chat/index.ts`
   (re-capture with `get_edge_function` before editing if in doubt).
-- Live now: **v23 ACTIVE** (Session 92, StarLab — **v23** adds `LANDING_PAGE_RULE`:
+- Live now: **v24 ACTIVE** (Session 93, SkyReach — the CPR retrieval miss: the
+  `search_exhibits_by_topic` RPC ranked by `rec_count DESC` with NO relevance
+  ranking, so the 76% of exhibits with `rec_count=1` were unfindable whenever a
+  query matched >200 rows; migration `search_exhibits_by_topic_relevance_rank`
+  re-ranks by `ts_rank_cd` over a title-A/discipline-B weighted vector
+  (cpl_type/collaborative_type REMOVED from the searched text — "certs" was
+  matching every Industry-Certification row), schema of record now committed at
+  `chatbox/supabase_search_exhibits_by_topic.sql`; v24 also adds the CPR/First-Aid
+  synonym family + meta words (check/again/already/exist/map/colleges) to
+  `TOPIC_STOP_WORDS` so continuation turns fold the prior topic per v18; smoke
+  mode 13 guards it. Story: `docs/cpl_assistant_lessons.md` Session 93). Prior:
+  **v23** (Session 92, StarLab) adds `LANDING_PAGE_RULE`:
   a college with no CPL Landing Page URL in context → never invent a link; say the
   page isn't configured yet + suggest asking the college to set it up + offer
   MAP@rccd.edu. **v22** (same session) — the **audience-aware voice**: an

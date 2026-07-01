@@ -642,3 +642,80 @@ inside baseball"), and a recommendation on a **Sierra Training tab** for COBI.
   validated public write path, and DROP the open anon INSERT/UPDATE policies.
   The smoke suite caught this because mode 12 exercises the literal REST call
   the browser makes — keep writing smoke modes at that fidelity.
+
+## Session 93 (SkyReach) — 2026-07-01 — the CPR retrieval miss: rank by relevance, not popularity (v24)
+
+**The case (Sam's own session, caught by the day-old feedback loop).** Sam pasted
+the Boys & Girls Clubs email (CPR certs at scale) into the standalone Sierra page,
+then asked "Do any of these opportunities already exist in MAP?" and finally "I
+think First Aid and CPR … are articulated by some colleges in MAP, can you check
+again?". Sierra surfaced ONE exhibit (Cabrillo's EMT+CPR bundle) and hedged —
+while `chatbox_exhibits` held **16 CPR/First-Aid rows** the whole time (Modesto's
+HE 100/HE 101/EMS 350 family, Las Positas, Cypress, CCSF). Both of Sam's 👎 notes
+in `sierra_feedback` described the gap exactly. Diagnosed by replaying the logged
+`chat_interactions` turns against the live RPC.
+
+**Root cause 1 — the RPC ranked by popularity, not relevance.**
+`search_exhibits_by_topic` was `WHERE tsvector @@ query ORDER BY rec_count DESC
+LIMIT n` — no `ts_rank` anywhere. **76% of exhibits (1,832 of 2,397) carry
+`rec_count = 1`**, so the moment a query matched more rows than the limit, every
+single-rec exhibit became unfindable. Sam's recheck matched 729 rows; the top-200
+cutoff landed at `rec_count = 2`; all 16 CPR rows sat at positions 285–677.
+
+**Root cause 2 — category columns inside the searched tsvector.** The vector
+concatenated `exhibit_title + cpl_type + collaborative_type + discipline`, so a
+generic query word matched whole CATEGORIES: "certs" → `'cert':*` → every
+"Industry Certification" row; "exam" → every "Credit By Exam" row. That's what
+inflated 729 matches from a pointed question.
+
+**Root cause 3 — meta words leaked past the keyword filter.** "Do any of these
+opportunities already exist in MAP?" left 3 junk keywords ("already exist map"),
+so the v18 refinement fold saw a "new topic" and never folded the conversation's
+real subject into retrieval. And "check" lexically matched "Truck-**Check**"
+exhibits.
+
+**The fix (all three layers):**
+- **Migration `search_exhibits_by_topic_relevance_rank`** (schema of record now
+  committed at `chatbox/supabase_search_exhibits_by_topic.sql` — the old function
+  had never been in the repo, which is how `ORDER BY rec_count` went unreviewed):
+  search + rank over `setweight(title,'A') || setweight(discipline,'B')`, order
+  by `ts_rank_cd` with `rec_count` demoted to tiebreaker. Signature unchanged →
+  the production widget is untouched and strictly improved.
+- **`index.ts` v24**: CPR/First-Aid synonym family (cpr ↔ aed/bls/aid/
+  lifesaving/resuscitation/heartsaver) + meta/continuation words added to
+  `TOPIC_STOP_WORDS` (think/check/again/already/exist(s)/colleges/map) so they
+  neither pollute the FTS nor defeat the refinement fold.
+- **Smoke mode 13**: Sam's literal recheck question, asserting a CPR adopter
+  college is named.
+
+**Verification:** replaying the failing query moved the CPR rows from positions
+285–677 (all cut) to **positions 2–8 of the returned set** (14 of 16 returned).
+Regression probes — West-LA real estate, NCCER construction, firefighter — all
+still lead with their expected exhibits. Deployed v24 byte-verified against the
+repo copy via `get_edge_function`.
+
+**Lessons:**
+
+- **A capped retrieval MUST rank by relevance.** Any `LIMIT n` + broad OR-query
+  combination silently drops the long tail under a popularity sort — and in this
+  dataset the long tail IS the catalog (76% single-rec). Popularity belongs in
+  the tiebreaker, never the sort key. (Same lesson as Session 89's offerings RPC,
+  which was built rank-first — this RPC predated it and was never retrofitted.)
+- **Never put category/enum columns in a searched tsvector.** One generic query
+  word turns into a whole-category match and swamps the candidate set. Search
+  names/text; return categories as columns.
+- **Every live DB function needs a committed schema-of-record file.** The
+  `rec_count` ordering survived ~20 Sierra sessions because the function body
+  lived only in Postgres where no review ever saw it.
+- **The feedback loop paid for itself in one day.** StarLab shipped 👍/👎 on
+  2026-07-01; the first real 👎 notes (same day) described this bug precisely and
+  the logged Q/A snapshot made the replay trivial. Mine `sierra_feedback` +
+  `chat_interactions` — the Training-tab P1 gap-miner is worth building.
+- **Known residue for the CER wire (not fixed here):** `chatbox_exhibits` itself
+  is stale + near-duplicated — Modesto carries tab-vs-space title twins (12 rows
+  for ~4 exhibits), Evergreen's "Credit by Exam KINS 025 First Aid, CPR & AED"
+  is missing entirely, and raw titles embed course codes + CPL-type suffixes.
+  The unified-title (CER) layer from the EACR is the durable fix
+  (`docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md`). Also an EACR
+  content note: there is NO statewide CCC standard for CPR despite a ~65-college
+  addressable base — a "suggested standard" / MC candidate.

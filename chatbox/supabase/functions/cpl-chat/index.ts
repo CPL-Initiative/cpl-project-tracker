@@ -256,6 +256,14 @@ const TOPIC_SYNONYMS: Record<string, string[]> = {
   nccer: ["construction", "carpentry", "welding", "electrician", "plumbing"],
   hvac: ["refrigeration", "environmental", "heating"],
   osha: ["occupational"],
+  // CPR / First-Aid family (Session 93 — the CPR retrieval miss, 2026-07-01):
+  // exhibit titles drift across "CPR", "First Aid", "AED", "BLS", "Lifesaving",
+  // "Resuscitation" — bridge them so any one term finds the whole family.
+  cpr: ["aed", "bls", "aid", "lifesaving", "resuscitation", "heartsaver"],
+  aed: ["cpr", "aid", "lifesaving"],
+  bls: ["cpr", "aed", "resuscitation"],
+  lifesaving: ["cpr", "aed", "aid"],
+  resuscitation: ["cpr", "bls", "aed"],
 };
 
 // ── Topic keyword extraction ──────────────────────────────────
@@ -269,6 +277,14 @@ const TOPIC_STOP_WORDS = new Set([
   "all", "any", "who", "its", "you", "into", "also", "just", "very",
   "offer", "offers", "give", "gives", "provide", "provides",
   "opportunities", "opportunity", "available", "tell",
+  // Meta/continuation words that poisoned retrieval (Session 93, the CPR miss):
+  // they matched exhibits lexically ("check" → "Truck-Check") and — worse — a
+  // turn like "Do any of these already exist in MAP?" read as a NEW topic
+  // ("already exist map") instead of folding the conversation's real subject.
+  // With these stopped, that turn has no topic words of its own → the v18
+  // refinement fold kicks in and carries the prior topic into retrieval.
+  "think", "check", "checking", "checked", "again", "already",
+  "exist", "exists", "existing", "colleges", "map",
 ]);
 
 function extractTopicKeywords(query: string): string[] {
