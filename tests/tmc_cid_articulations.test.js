@@ -144,11 +144,15 @@ function runArtifactChecks() {
   check("artifact _meta reports courses_gained_cid_from_cidnet > 0", (m.courses_gained_cid_from_cidnet || 0) > 0);
   check("artifact _meta reports courses_multi_cid > 0", (m.courses_multi_cid || 0) > 0);
 
-  // find 6-element (xcid) rows and validate their shape
+  // find 6-element (xcid) rows and validate their shape. LONGER rows belong to
+  // the c-id.net provenance tiers — 7-element SYNTH rows (r[6] === 1, xcid MAY
+  // be empty) and 8-element TCID rows (r[6] === 0 + tcid[]; primary may be null
+  // when the course's ONLY C-IDs are title-inferred) — whose contracts are
+  // owned by tests/tmc_cidnet_synth.test.js.
   let sixEl = 0, badShape = 0;
   Object.keys(data.courses).forEach((ci) => {
     data.courses[ci].forEach((r) => {
-      if (r.length > 5) {
+      if (r.length === 6) {
         sixEl++;
         if (!Array.isArray(r[5]) || !r[5].length || !r[5].every((x) => typeof x === "string" && x.length)) badShape++;
         if (typeof r[4] !== "string" || !r[4].length) badShape++; // a 6-el row must have a non-null primary
