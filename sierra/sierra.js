@@ -42,7 +42,169 @@
 
   var convo = [];          // prior {role,content} turns → sent as history (multi-turn)
   var CONVO_MAX = 8;
-  var logEl, inputEl, sendBtn, statusEl, formEl, suggestEl, wired = false;
+  var logEl, inputEl, sendBtn, statusEl, formEl, suggestEl, audEl, wired = false;
+
+  // ── Audience (primary population) ──
+  // Required before the first question (Sam, 2026-07-01): the visitor picks who
+  // they are so Sierra tailors tone + content — students shouldn't get system
+  // inside-baseball (articulation mechanics, apportionment, C-ID governance).
+  // Single-select (it's the PRIMARY population), persisted per-browser and
+  // SHARED with the COBI CPL Assistant tab (same origin, same key). Sent as an
+  // optional `audience` field — callers that omit it (the map.rccd.edu widget)
+  // are unaffected.
+  var AUDIENCES = [
+    { k: 'student',       label: '🎓 Student / future student' },
+    { k: 'faculty',       label: '📚 Faculty' },
+    { k: 'administrator', label: '🏛️ College administrator' },
+    { k: 'employer',      label: '💼 Employer / industry' },
+    { k: 'civic',         label: '🤝 Civic leader' },
+  ];
+  var AUD_KEY = 'cplSierraAudience.v1';
+  var audience = null;     // in-memory copy (localStorage may be unavailable)
+
+  function loadAudience() {
+    try {
+      var v = localStorage.getItem(AUD_KEY);
+      if (AUDIENCES.some(function (a) { return a.k === v; })) audience = v;
+    } catch (e) { /* keep in-memory only */ }
+  }
+  function setAudience(k) {
+    audience = k;
+    try { localStorage.setItem(AUD_KEY, k); } catch (e) { /* in-memory only */ }
+    renderAudience();
+  }
+  function renderAudience() {
+    if (!audEl) return;
+    audEl.textContent = '';
+    var lab = document.createElement('span');
+    lab.className = 's-aud-label';
+    lab.textContent = "I'm a…";
+    audEl.appendChild(lab);
+    AUDIENCES.forEach(function (a) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 's-aud-chip' + (audience === a.k ? ' on' : '');
+      b.setAttribute('aria-pressed', audience === a.k ? 'true' : 'false');
+      b.textContent = a.label;
+      b.addEventListener('click', function () { setAudience(a.k); setStatus(''); });
+      audEl.appendChild(b);
+    });
+  }
+  // Flash the selector when a send is attempted without a pick.
+  function needAudience() {
+    setStatus('First, tap who you are above — it helps Sierra tailor the answer for you.', 'error');
+    if (!audEl) return;
+    audEl.classList.add('s-need');
+    setTimeout(function () { audEl.classList.remove('s-need'); }, 1700);
+  }
+
+  // ── Per-answer feedback (👍/👎 + optional note → Supabase sierra_feedback) ──
+  // One row per assistant turn, keyed by a client uuid; the row is UPSERTed
+  // (Prefer: resolution=merge-duplicates) so a thumb click logs immediately and
+  // an added note (or a switched rating) updates the same row. Anon write-only;
+  // the CPL team reads these (reviewer/team-phrase gate) to train Sierra.
+  function newTurnId() {
+    return (window.crypto && crypto.randomUUID) ? crypto.randomUUID()
+      : 'turn-' + Date.now() + '-' + Math.random().toString(16).slice(2);
+  }
+  function feedbackPayload(o) {
+    return {
+      turn_id: o.turnId,
+      session_id: o.sessionId || null,
+      page: o.page || 'sierra',
+      audience: o.audience || null,
+      question: String(o.question || '').slice(0, 4000),
+      response: String(o.response || '').slice(0, 12000),
+      rating: o.rating,
+      note: o.note ? String(o.note).slice(0, 2000) : null,
+    };
+  }
+  function sendFeedback(payload) {
+    try {
+      return fetch(SUPABASE_URL + '/rest/v1/sierra_feedback', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_ANON,
+          'Authorization': 'Bearer ' + SUPABASE_ANON,
+          'Prefer': 'resolution=merge-duplicates',
+        },
+        body: JSON.stringify(payload),
+      }).catch(function () { /* feedback is best-effort */ });
+    } catch (e) { return Promise.resolve(); }
+  }
+  function addFeedbackBar(afterRow, question, answer) {
+    var tid = newTurnId();
+    var rating = null;
+    var bar = document.createElement('div');
+    bar.className = 's-fb';
+
+    var hint = document.createElement('span');
+    hint.textContent = 'Rate this answer:';
+    bar.appendChild(hint);
+
+    var noteWrap = document.createElement('div');
+    noteWrap.className = 's-fb-note';
+    noteWrap.hidden = true;
+    var noteIn = document.createElement('input');
+    noteIn.type = 'text';
+    noteIn.maxLength = 2000;
+    noteIn.placeholder = 'Optional note for the CPL team — what was right or missing? (no personal info)';
+    noteIn.setAttribute('aria-label', 'Optional feedback note');
+    var noteBtn = document.createElement('button');
+    noteBtn.type = 'button';
+    noteBtn.textContent = 'Send note';
+    noteWrap.appendChild(noteIn);
+    noteWrap.appendChild(noteBtn);
+
+    function upsert(note) {
+      return sendFeedback(feedbackPayload({
+        turnId: tid, sessionId: sessionId(), page: 'sierra', audience: audience,
+        question: question, response: answer, rating: rating, note: note,
+      }));
+    }
+
+    var btns = {};
+    [['up', '👍', 'This answer was helpful'], ['down', '👎', 'This answer was not helpful']]
+      .forEach(function (spec) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 's-fb-btn';
+        b.textContent = spec[1];
+        b.setAttribute('aria-label', spec[2]);
+        b.addEventListener('click', function () {
+          rating = spec[0];
+          btns.up.classList.toggle('on', rating === 'up');
+          btns.down.classList.toggle('on', rating === 'down');
+          hint.textContent = '✓ Thanks — logged.';
+          noteWrap.hidden = false;
+          upsert(noteIn.value.trim() || null);
+        });
+        btns[spec[0]] = b;
+        bar.appendChild(b);
+      });
+
+    noteBtn.addEventListener('click', function () {
+      var n = noteIn.value.trim();
+      if (!n || !rating) return;
+      noteBtn.disabled = true;
+      upsert(n);
+      noteWrap.hidden = true;
+      hint.textContent = '✓ Note sent — thank you!';
+      hint.className = 's-fb-done';
+    });
+    noteIn.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { e.preventDefault(); noteBtn.click(); }
+    });
+
+    bar.appendChild(noteWrap);
+    if (afterRow && afterRow.parentNode) {
+      afterRow.parentNode.insertBefore(bar, afterRow.nextSibling);
+    } else {
+      logEl.appendChild(bar);
+    }
+    scrollDown();
+  }
 
   function sessionId() {
     try {
@@ -121,7 +283,7 @@
     row.appendChild(avatar); row.appendChild(bubble);
     logEl.appendChild(row);
     scrollDown();
-    return bubble;
+    return { row: row, bubble: bubble };
   }
   function scrollDown() {
     if (logEl) requestAnimationFrame(function () { logEl.scrollTop = logEl.scrollHeight; });
@@ -134,7 +296,8 @@
 
   // ── Call the Edge Function + stream the SSE response ──
   async function ask(query) {
-    var bubble = addAssistantMsg();
+    var msg = addAssistantMsg();
+    var bubble = msg.bubble;
     bubble.innerHTML = '<span class="s-typing">●●●</span>';
     var full = '';
 
@@ -147,7 +310,10 @@
           'apikey': SUPABASE_ANON,
           'Authorization': 'Bearer ' + SUPABASE_ANON,
         },
-        body: JSON.stringify({ query: query, session_id: sessionId(), history: convo.slice() }),
+        body: JSON.stringify({
+          query: query, session_id: sessionId(), history: convo.slice(),
+          audience: audience,
+        }),
       });
     } catch (e) {
       bubble.innerHTML = renderMarkdown('Sorry — I couldn\'t reach the assistant. Please check your connection and try again.');
@@ -202,6 +368,7 @@
     }
     convo.push({ role: 'user', content: query }, { role: 'assistant', content: full });
     if (convo.length > CONVO_MAX) convo = convo.slice(-CONVO_MAX);
+    addFeedbackBar(msg.row, query, full);
   }
 
   // ── Submit flow ──
@@ -210,6 +377,7 @@
     if (busy) return;
     var q = (inputEl.value || '').trim();
     if (!q) { inputEl.focus(); return; }
+    if (!audience) { needAudience(); return; }
     busy = true;
     sendBtn.disabled = true; inputEl.disabled = true;
     addUserMsg(q);
@@ -237,7 +405,11 @@
     statusEl = document.getElementById('s-status');
     formEl = document.getElementById('s-form');
     suggestEl = document.getElementById('s-suggest');
+    audEl = document.getElementById('s-audience');
     if (!logEl || !inputEl || !sendBtn || !formEl) return;
+
+    loadAudience();
+    renderAudience();
 
     // Fill starter chips
     if (suggestEl) {
@@ -262,5 +434,6 @@
   window.CPL_SIERRA_PAGE = {
     escapeHtml: escapeHtml, inlineMd: inlineMd, renderMarkdown: renderMarkdown,
     parseSse: parseSse, CHAT_URL: CHAT_URL, SUGGESTED: SUGGESTED,
+    AUDIENCES: AUDIENCES, AUD_KEY: AUD_KEY, feedbackPayload: feedbackPayload,
   };
 })();

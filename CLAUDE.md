@@ -849,13 +849,18 @@ reuse, so keep it self-contained behind its CONFIG block.
   part of the daily GitHub Actions cron. Source-of-record is the **live
   function**, captured at `chatbox/supabase/functions/cpl-chat/index.ts`
   (re-capture with `get_edge_function` before editing if in doubt).
-- Live now: **v21 ACTIVE** (Session 89 added the **COCI offerings catalog** lookup —
+- Live now: **v22 ACTIVE** (Session 92, StarLab — the **audience-aware voice**: an
+  optional `audience` body field (validated against `AUDIENCE_RULES` keys
+  student/faculty/administrator/employer/civic) appends a per-population tone/content
+  rule to the system prompt — the student rule bans system inside-baseball; absent or
+  unknown → default voice, production widget untouched; `audience` also logs to
+  `chat_interactions`. Prior: **v21** (Session 89 added the **COCI offerings catalog** lookup —
   Sierra now sees what each college *teaches*, not only earned exhibits; see the
   offerings bullet at the end of this section + §8. **v21** fixed a preflight-found
   false-negative — a query naming several colleges detected only the first, so the
   80-row offerings cap dropped another named college and the model wrongly said it
   "doesn't teach" the subject; v21 raises the cap to 150 + forbids asserting absence
-  from the top-N list. There's also a **standalone shareable Sierra page** at
+  from the top-N list). There's also a **standalone shareable Sierra page** at
   `sierra/` (chat-first, multi-turn, no internal nav — the fact-sheet/kb-portal
   pattern; `sierra/sierra.js`, launched from the COBI rail, PR #633). Prior: model `claude-sonnet-4-6`; v15→v19 = the Session-73
   response-logic tuning below — v16/v17 the three tweaks, **v18 the multi-turn
@@ -910,6 +915,24 @@ reuse, so keep it self-contained behind its CONFIG block.
   deploy mechanics: [`chatbox/README.md`](chatbox/README.md); the durable
   redeploy procedure:
   [`docs/kb-notes/playbook-deploy-shared-supabase-edge-function.md`](docs/kb-notes/playbook-deploy-shared-supabase-edge-function.md).
+
+- **Audience selector + 👍/👎 feedback (added Session 92, 2026-07-01).** Both
+  first-party surfaces (`cpl_chat.js` tab + `sierra/` page) now REQUIRE a
+  single-select **primary-population pick** before the first send (5 chips:
+  student / faculty / administrator / employer / civic; persisted per-browser in
+  the SHARED same-origin key **`cplSierraAudience.v1`**; sent as the optional
+  `audience` body field that v22 turns into per-audience response rules — the
+  driving case: students never get system inside-baseball). Every completed
+  answer gets a **👍/👎 + optional note** bar that UPSERTs (client-uuid
+  `turn_id`, `Prefer: resolution=merge-duplicates`) into Supabase
+  **`sierra_feedback`** with the audience + page + Q/A snapshot — anon
+  write-only; reviewer/team-phrase SELECT (the future Sierra-Training review
+  queue; `chat_interactions` gained the same reviewer SELECT for log-informed
+  gap mining). The production map.rccd.edu widget sends neither field —
+  unaffected. Schema: `chatbox/supabase_sierra_feedback.sql`; scope +
+  Training-tab recommendation: `docs/sierra_training_tab_scope.md`; tests:
+  `tests/sierra_page.test.js` + `tests/cpl_chat_audience.test.js`; smoke modes
+  10–12.
 
 - **College landing-page links (added Session 73, 2026-06-25).** The assistant
   surfaces each college's CPL landing page from
@@ -1092,6 +1115,16 @@ JSON) and Saves/Resumes to Supabase `tmc_submissions`.
   uplifting-themes analysis). Never add a public read path; the payload shape
   (`painting`, `reflection` — nothing identifying) is pinned by
   `tests/first_light.test.js`.
+- **`sierra_feedback`** (added Session 92): the Sierra 👍/👎 + note store behind
+  both chat surfaces. One row per assistant turn keyed by a client-uuid
+  `turn_id`; the client UPSERTs (rating on thumb click, note/rating-switch
+  updates the same row). Carries `page`, `audience`, and the Q/A snapshot. RLS:
+  anon INSERT+UPDATE (deliberate — the tmc_submissions posture; uuid-keyed,
+  non-sensitive), SELECT gated `is_allowed_reviewer() OR team_pass_ok()` (the
+  planned Sierra-Training review queue). Same wave: `chat_interactions` gained
+  an `audience` column + the same reviewer/team-phrase SELECT policy (was
+  write-only) for log-informed gap mining. Schema:
+  `chatbox/supabase_sierra_feedback.sql`.
 - **`item_updates`** (added Session 77): the Update Log behind the RACI tab's 📝 braindump→CC
   composer. One row per status update on an Activity/sub-activity/project, keyed `(item_type, item_id)`
   like `item_raci`. Anon SELECT + **reviewer-gated** INSERT/UPDATE/DELETE (`is_allowed_reviewer()`).
@@ -2207,6 +2240,21 @@ mint approved/returned) + the ⏳ In-progress backlog proxy. The adversarial ver
 2 more blockers pre-merge (stored XSS via anon-writable `_readiness`; forgeable
 approvals). Suite 119 (+38-check test). Full story: `docs/tmc_builder_lessons.md`.
 **NEXT: `docs/session_93_handoff.md`.**
+
+### Session 92 — StarLab: Sierra audience selector + 👍/👎 feedback (v22) + the Training-tab scope (2026-07-01)
+
+Sam's three Sierra asks, all landed. **Feedback:** new Supabase **`sierra_feedback`**
+(👍/👎 + note per answer, client-uuid `turn_id`, UPSERT merge-duplicates; anon
+write-only, reviewer/team-phrase SELECT; §8) with the bar on BOTH surfaces
+(`sierra/sierra.js` + `cpl_chat.js`). **Audience:** a REQUIRED 5-chip primary-population
+selector on both surfaces (shared key `cplSierraAudience.v1`) → optional `audience`
+body field → **`cpl-chat` v22** `AUDIENCE_RULES` (students get zero inside-baseball;
+widget untouched); `audience` also logs to `chat_interactions`, which gained a
+reviewer SELECT for gap mining. **Training tab: recommended YES, phased** —
+`docs/sierra_training_tab_scope.md` (P1 review-queue+gap-miner · P2 guidance table ·
+P3 RAG-corpus ingestion · the Malone guardrails lane pre-"Credit for Being Me").
+Tests 33+17 new checks, 118 files green; smoke modes 10–12. Full story:
+`docs/cpl_assistant_lessons.md` (Session 92). **NEXT: `docs/session_93_handoff.md`.**
 
 ---
 

@@ -1,8 +1,9 @@
 # Session 93 handoff — you are Session 93
 
-You are **Session 93** of the CPL Project Tracker (COBI) build. Session 92
-(**StarFab**) made every c-id.net approval land in the TMC Builder and mapped
-the data for the CO confidence-score goal. Pick your own moniker (Sky/Star
+**Session 92 ran TWICE in parallel on 2026-07-01** — **StarFab** (TMC Builder:
+every c-id.net approval lands + the confidence-score data map) and **StarLab**
+(Sierra: required audience selector + 👍/👎 feedback + `cpl-chat` v22 + the
+Training-tab scope). This handoff covers both. Pick your own moniker (Sky/Star
 streak).
 
 ## The strategic reframe (Sam, 2026-07-01 — READ THIS FIRST)
@@ -50,17 +51,42 @@ a **fresh COCI extract** is the top data ask (ours is stale mid-CCN —
 - Also verified S91's OR-fold is live (77/638 slots carry `alts[]`; AJ's
   SOCI 125 "or MATH 110" renders — visible in Sam's own screenshot).
 
-## Read these first (in order)
-- `docs/kb-notes/reference-tmc-confidence-data-requirements.md` — the goal map.
-- `docs/tmc_builder_lessons.md` (the S92 section) — the ladder + the
-  title-stripping lesson ("every token you strip is a dimension a sibling can
-  hide in").
-- `docs/kb-notes/tmc-co-review-scope.md` — Phase 2 = the engine to build;
-  honest-limits updated (C-ID coverage limiter CLOSED).
-- `docs/kb-notes/reference-adt-acceptance-rules.md` — the ruleset the engine
-  implements.
+## What StarLab shipped (PR #644 + a live cpl-chat v22 deploy)
 
-## Priority workstream — the confidence engine (mid-July clock)
+- **`sierra_feedback`** (Supabase, live; schema-of-record
+  `chatbox/supabase_sierra_feedback.sql`): 👍/👎 + optional note per assistant
+  turn on BOTH chat surfaces (`sierra/sierra.js` + `cpl_chat.js`); client-uuid
+  `turn_id`, UPSERT (`Prefer: resolution=merge-duplicates`) — thumb logs
+  immediately, note/rating-switch updates the same row. Anon INSERT+UPDATE,
+  **SELECT = reviewer/team-phrase** (the Training tab's read path is open).
+- **Audience selector** — REQUIRED single-select (Student/future student ·
+  Faculty · College administrator · Employer/industry · Civic leader) on both
+  surfaces; shared same-origin localStorage key **`cplSierraAudience.v1`**;
+  sent as the optional `audience` body field.
+- **`cpl-chat` v22** (deployed via MCP, `verify_jwt:false` preserved):
+  `AUDIENCE_RULES` per population appended to the system prompt — the student
+  rule bans system inside-baseball. Absent/unknown audience → default voice;
+  **the production map.rccd.edu widget is untouched.** `audience` also logs to
+  `chat_interactions` (new column) + `chat_interactions` gained a
+  reviewer/team-phrase SELECT (was write-only) for log-informed gap mining.
+- Tests: `tests/sierra_page.test.js` (33) + `tests/cpl_chat_audience.test.js`
+  (17). Smoke modes **10–12** (student audience, unknown-key no-500, the
+  feedback REST upsert + anon-SELECT-returns-[] RLS assertion).
+- **Training-tab recommendation** (the decision doc Sam is reviewing):
+  `docs/sierra_training_tab_scope.md` — YES, phased (P1 review queue + gap
+  miner · P2 `sierra_guidance` prompt knob · P3 RAG-corpus ingestion, never
+  the public KB) + the **Malone guardrails lane** (durable rate limit, daily
+  cost breaker, CORS tightening) pre-"Credit for Being Me".
+
+## Read these first (in order)
+- `docs/kb-notes/reference-tmc-confidence-data-requirements.md` — the TMC goal map.
+- `docs/tmc_builder_lessons.md` (S92 section) — the ladder + the
+  title-stripping lesson.
+- `docs/sierra_training_tab_scope.md` — the Sierra decision doc.
+- `docs/cpl_assistant_lessons.md` (S92 section) — the feedback/audience patterns.
+- `docs/kb-notes/tmc-co-review-scope.md` + `reference-adt-acceptance-rules.md`.
+
+## Priority workstreams
 
 **Steps 1 + 2 SHIPPED same-session** (Sam: "Let's build:)"). Live now: per-slot
 verdict tiers (✓ auto / ≈ verify / 📎 evidence / ⚠ review per the ASCCC ladder),
@@ -88,38 +114,50 @@ Still open, in order:
 5. Evidence is free text (CO reads it, not auto-trusted) — a URL-shape nudge or
    ASSIST deep-link picker would strengthen tier 2.
 
+**Sierra lane (StarLab), also open:**
+1. **Sierra Training tab Phase 1** (on Sam's go) — team-only review queue +
+   gap miner over `sierra_feedback` + `chat_interactions` (thumbs-down
+   clusters · `top_similarity` < ~0.55 · "I don't know" fallbacks · sliced by
+   audience). Add a reviewer-writable `status` column for triage.
+2. **Guardrails with Malone** — durable rate limit + daily cost breaker in
+   `cpl-chat`, drop the `"null"` CORS origin, Portal-side bot friction. Get
+   thresholds from Malone. The cost breaker should land BEFORE the Portal
+   publicizes the endpoint.
+
 ## Carryover (waiting on Sam, then you)
 - **COCI export with hours columns? + a FRESH COCI extract** (top data ask).
 - **The pending-submissions list** (college, TMC) — else use In-progress proxy.
-- The 3 skipped OR-groups (Studio Art missing line; LPPS COMM 120 in two
-  lines) — faculty-verify calls.
-- Try Sierra on a trades question · MAP login URL for the nudge link ·
-  reference-tab header bands · public KB PR #15 · Fact Sheet redirect URL.
+- The 3 skipped OR-groups (Studio Art missing line; LPPS COMM 120 in two lines).
+- Sierra: try the audience/feedback flow · the Training-tab Phase-1 go/no-go ·
+  the Malone intro.
+- MAP login URL for the nudge link · reference-tab header bands · public KB
+  PR #15 · Fact Sheet redirect URL.
 - Standing lanes: Sierra CER/adoption-leverage wire
   (`docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md`);
   unverified-M-ID renumber (`docs/unverified_mid_renumber_scope.md`).
 
 ## Patterns that worked (reuse them)
-- **Adversarial verify before merge on data-inference code.** Both rounds paid:
-  round 1 found the sibling-capture blocker; round 2 quantified the residual
-  (18 title joins, all correctly downgraded). Prompt the verifiers to REFUTE
-  with concrete cases from the real data, not to review style.
-- **Precedence ladder + graded provenance** for joining an authority dataset
-  to an incomplete extract: exact → normalized → squashed → strict-title →
-  synthesize-flagged. Never let a fallback lane masquerade as the top lane.
-- **Strict title equality for identity joins** — word-stripping = sibling
-  capture when the true owner is absent (which is the only time the lane runs).
-- **Audit-first**: measure the gap class statewide (counts per cause) before
-  designing; the fix wrote itself from the four cause buckets.
+- **Adversarial verify before merge on data-inference code** — prompt the
+  verifiers to REFUTE with concrete cases from the real data.
+- **Precedence ladder + graded provenance** when joining an authority dataset
+  to an incomplete extract; never let a fallback lane masquerade as the top lane.
+- **Strict title equality for identity joins** — word-stripping = sibling capture.
+- **Feedback-as-upsert** (client-uuid PK + merge-duplicates) beats
+  feedback-as-append: log on click, enrich on note, correct on switch — one row.
+- **Same-origin surfaces share one localStorage preference key** — pick once,
+  both remember.
+- **Audit-first**: measure the gap class statewide before designing.
 
 ## Safety patterns to honor
 - **Rule 4** (both HTMLs) · **Rule 5** (never force-push main) · **Rule 8**
   (checkpoint). Merge on `unstable` once TruffleHog is green.
-- **Static TMC artifacts are committed, not cron-published**
-  (`tmc_college_courses.js`, `tmc_templates.js`, `tmc_college_adts.js`).
-- **Restart the branch from freshly-fetched `origin/main`** after a merge.
-- **`cpl-chat` is SHARED + LIVE** — capture version, `verify_jwt:false`,
-  runner smoke-tests, if you touch Sierra.
+- **Static TMC artifacts are committed, not cron-published.**
+- **Restart the branch from freshly-fetched `origin/main`** after a merge —
+  TWO sessions collided on the checkpoint files today; expect siblings.
+- **`cpl-chat` is SHARED + LIVE** — capture version first, `verify_jwt:false`
+  explicit, runner smoke-tests after every deploy. Audience keys must stay in
+  sync across `AUDIENCE_RULES` (index.ts) + `AUDIENCES` (sierra.js,
+  cpl_chat.js) + the smoke test.
 
 ## Moniker
-Session 92 was **StarFab**. Claim your own (Sky/Star streak continues).
+Session 92 was StarFab ∥ StarLab. Claim your own (Sky/Star streak continues).

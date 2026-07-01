@@ -153,6 +153,50 @@ run "9 offerings multi-cert (El Camino not truncated)" \
 answer_must_match -i "El Camino" "9 El Camino surfaced"
 answer_must_not_match -i "El Camino.{0,40}(not listed|does not teach|doesn.t teach|not.{0,10}teaching)" "9 El Camino not falsely dismissed"
 
+# AUDIENCE-aware voice (v22): the pages send the visitor's self-selected primary
+# population as `audience`. Assert the student mode runs + stays on-topic (a
+# stochastic model can't be robustly asserted jargon-free — the tone rule is
+# reviewed by eye in the log), and that an unknown key is ignored, not a 500.
+run "10 audience student (EMT)" \
+  '{"query":"I have an EMT certification. Can I get college credit for it?","session_id":"smoke-ci","history":[],"audience":"student"}'
+answer_must_match -i "emt|emergency|credit" "10 on-topic"
+
+run "11 audience unknown key (ignored, not an error)" \
+  '{"query":"What is Credit for Prior Learning?","session_id":"smoke-ci","audience":"martian"}'
+
+# sierra_feedback anon-upsert path — the exact write the pages' 👍/👎 performs
+# (POST + Prefer: resolution=merge-duplicates; second POST on the same turn_id
+# carries the note). RLS: anon may INSERT/UPDATE, never SELECT.
+echo "===================================================================="
+echo "MODE: 12 sierra_feedback anon upsert (REST)"
+REST_BASE="${URL%/functions/v1/cpl-chat}/rest/v1"
+TID="smoke-$(date +%s)-$RANDOM"
+code=$(curl -sS -o /tmp/fb_out.txt -w '%{http_code}' -X POST "$REST_BASE/sierra_feedback" \
+  -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
+  -H 'Prefer: resolution=merge-duplicates' \
+  -d "{\"turn_id\":\"$TID\",\"session_id\":\"smoke-ci\",\"page\":\"smoke\",\"audience\":\"student\",\"question\":\"q\",\"response\":\"a\",\"rating\":\"up\"}")
+case "$code" in
+  200|201|204) echo "  [assert ok] anon rating insert ($code)" ;;
+  *) echo "::error::sierra_feedback insert returned $code: $(cat /tmp/fb_out.txt)"; fail=1 ;;
+esac
+code=$(curl -sS -o /tmp/fb_out2.txt -w '%{http_code}' -X POST "$REST_BASE/sierra_feedback" \
+  -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
+  -H 'Prefer: resolution=merge-duplicates' \
+  -d "{\"turn_id\":\"$TID\",\"session_id\":\"smoke-ci\",\"page\":\"smoke\",\"audience\":\"student\",\"question\":\"q\",\"response\":\"a\",\"rating\":\"down\",\"note\":\"smoke note\"}")
+case "$code" in
+  200|201|204) echo "  [assert ok] anon note upsert on same turn_id ($code)" ;;
+  *) echo "::error::sierra_feedback note upsert returned $code: $(cat /tmp/fb_out2.txt)"; fail=1 ;;
+esac
+# anon SELECT must come back EMPTY (reviewer/team-phrase gate) — not an error.
+sel=$(curl -sS "$REST_BASE/sierra_feedback?turn_id=eq.$TID" \
+  -H "apikey: $ANON" -H "Authorization: Bearer $ANON")
+if [ "$sel" = "[]" ]; then
+  echo "  [assert ok] anon select returns [] (write-only for the public)"
+else
+  echo "::error::anon select unexpectedly returned: $sel"; fail=1
+fi
+echo
+
 if [ "$fail" -ne 0 ]; then
   echo "SMOKE TEST FAILED"
   exit 1

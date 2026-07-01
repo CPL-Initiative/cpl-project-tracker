@@ -8,7 +8,14 @@
 //      answer into a bot bubble with markdown;
 //  (d) MULTI-TURN — the prior turn rides in `history` on the next request;
 //  (e) XSS-safe — a crafted streamed delta injects no live <script>/<img>;
-//  (f) graceful when fetch is unavailable.
+//  (f) graceful when fetch is unavailable;
+//  (g) AUDIENCE — the primary-population pick is REQUIRED before the first
+//      send, persists to localStorage (key shared with the COBI tab), and
+//      rides in the POST body as `audience`;
+//  (h) FEEDBACK — 👍/👎 under each answer upserts to sierra_feedback (rating,
+//      turn_id, audience, Q/A snapshot, merge-duplicates) and the optional
+//      note re-upserts the SAME turn row;
+//  (i) feedbackPayload clamps note/question/response lengths.
 //
 // Run from repo root: `npm test` (or `node tests/sierra_page.test.js`).
 const fs = require("fs");
@@ -45,6 +52,11 @@ function loadDom(opts) {
   const requests = [];
   w.TextEncoder = TextEncoder; w.TextDecoder = TextDecoder;
   w.requestAnimationFrame = function (cb) { return setTimeout(cb, 0); };
+  // The audience pick is required before send — pre-seed it for the legacy
+  // scenarios; the dedicated audience test passes noAudience to test the gate.
+  if (!opts.noAudience) {
+    try { w.localStorage.setItem("cplSierraAudience.v1", "student"); } catch (e) { /* ignore */ }
+  }
   if (opts.noFetch) { try { delete w.fetch; } catch (e) { w.fetch = undefined; } }
   else w.fetch = function (url, init) {
     const body = init && init.body ? JSON.parse(init.body) : null;
@@ -72,6 +84,7 @@ function lastBotBubble(w) {
 check("index.html loads sierra.js", /<script src="\.\/sierra\.js"><\/script>/.test(HTML));
 check("index.html has the chat structure", /id="s-log"/.test(HTML) && /id="s-form"/.test(HTML) &&
   /id="s-input"/.test(HTML) && /id="s-send"/.test(HTML));
+check("index.html has the audience selector container", /id="s-audience"/.test(HTML));
 check("favicon references the repo-root seal", /href="\.\.\/cccco_seal\.png"/.test(HTML));
 check("standalone — no COBI tab nav present", !/data-tab=/.test(HTML) && !/cpl-tab/.test(HTML));
 {
@@ -139,6 +152,70 @@ check("standalone — no COBI tab nav present", !/data-tab=/.test(HTML) && !/cpl
     await drain(14);
     const bub = lastBotBubble(w);
     check("no-fetch shows a friendly error, not a crash", bub && /couldn.t reach|something went wrong/i.test(bub.textContent));
+  }
+
+  // ── (g) audience — required, persisted, sent ──
+  {
+    const { w, requests, API } = loadDom({ noAudience: true });
+    const chips = w.document.querySelectorAll("#s-audience .s-aud-chip");
+    check("audience selector renders 5 population chips", chips.length === 5);
+    submit(w, "hello?");
+    await drain(6);
+    check("send is BLOCKED until an audience is picked (no request)", requests.length === 0);
+    check("the block explains itself (flash + status)",
+      /who you are/i.test(w.document.getElementById("s-status").textContent));
+    chips[1].click(); // 📚 Faculty
+    submit(w, "hello?");
+    await drain(14);
+    check("after picking, the request carries `audience`",
+      requests.length === 1 && requests[0].body.audience === API.AUDIENCES[1].k);
+    check("the pick persists to the SHARED localStorage key",
+      w.localStorage.getItem(API.AUD_KEY) === API.AUDIENCES[1].k &&
+      API.AUD_KEY === "cplSierraAudience.v1");
+  }
+
+  // ── (h) feedback — 👍/👎 + note upsert ──
+  {
+    const { w, requests } = loadDom();
+    submit(w, "Which colleges give credit for a real estate license?");
+    await drain(14);
+    const fb = w.document.querySelector("#s-log .s-fb");
+    check("a feedback bar renders under the answer", !!fb);
+    const btns = fb ? fb.querySelectorAll(".s-fb-btn") : [];
+    check("it offers 👍 and 👎", btns.length === 2);
+    btns[0].click();
+    await drain(4);
+    let fbReqs = requests.filter((r) => /\/rest\/v1\/sierra_feedback$/.test(r.url));
+    check("clicking 👍 upserts a rating row (turn_id present)",
+      fbReqs.length === 1 && fbReqs[0].body.rating === "up" &&
+      typeof fbReqs[0].body.turn_id === "string" && fbReqs[0].body.turn_id.length >= 8);
+    check("the row carries audience + page + the Q/A snapshot",
+      fbReqs[0].body.audience === "student" && fbReqs[0].body.page === "sierra" &&
+      /real estate/.test(fbReqs[0].body.question) && fbReqs[0].body.response.length > 0);
+    check("upsert uses Prefer: resolution=merge-duplicates",
+      /merge-duplicates/.test((fbReqs[0].init.headers || {}).Prefer || ""));
+    const noteWrap = fb.querySelector(".s-fb-note");
+    check("the optional note box appears after rating", noteWrap && noteWrap.hidden === false);
+    noteWrap.querySelector("input").value = "Missing my college";
+    noteWrap.querySelector("button").click();
+    await drain(4);
+    fbReqs = requests.filter((r) => /\/rest\/v1\/sierra_feedback$/.test(r.url));
+    check("Send note re-upserts the SAME turn row with the note",
+      fbReqs.length === 2 && fbReqs[1].body.note === "Missing my college" &&
+      fbReqs[1].body.turn_id === fbReqs[0].body.turn_id);
+  }
+
+  // ── (i) feedbackPayload clamps ──
+  {
+    const { API } = loadDom();
+    const p = API.feedbackPayload({
+      turnId: "t-123456789", rating: "down",
+      note: "x".repeat(3000), question: "q".repeat(5000), response: "r".repeat(20000),
+    });
+    check("feedbackPayload clamps note/question/response lengths",
+      p.note.length === 2000 && p.question.length === 4000 && p.response.length === 12000);
+    check("feedbackPayload nulls an absent note",
+      API.feedbackPayload({ turnId: "t-123456789", rating: "up" }).note === null);
   }
 
   // ── report ──

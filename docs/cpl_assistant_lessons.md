@@ -559,3 +559,70 @@ Not response-logic this time — a **visual/branding pass** on the standalone
   ethnic group; flagged the cultural-sensitivity angle to Sam before baking it in
   (he chose to keep it — his call, his brand). Surface, don't lecture; then honor
   the decision.
+
+## Session 92 (StarLab) — 2026-07-01 — audience selector + 👍/👎 feedback (v22) + the Training-tab scope
+
+Three team asks landed in one pass (Sam, mid-morning): rate-the-answer feedback,
+a **required primary-population selector** ("avoid serving students a bunch of
+inside baseball"), and a recommendation on a **Sierra Training tab** for COBI.
+
+**What shipped:**
+
+- **`sierra_feedback` (new Supabase table)** — 👍/👎 + optional note per answer,
+  one row per assistant turn keyed by a client `crypto.randomUUID()`. The client
+  **UPSERTs** (`POST` + `Prefer: resolution=merge-duplicates`): thumb click logs
+  immediately; the note (or a switched rating) updates the SAME row — no row
+  explosion, no lost drive-by clicks. Row carries `page` ('sierra' | 'cobi-tab'),
+  `audience`, and the Q/A snapshot, so a review needs no join to be readable.
+  RLS: anon INSERT+UPDATE (the documented tmc_submissions posture — uuid-keyed,
+  non-sensitive), SELECT gated `is_allowed_reviewer() OR team_pass_ok()`.
+  Schema of record: `chatbox/supabase_sierra_feedback.sql`.
+- **Audience selector on BOTH Sierra surfaces** (`sierra/sierra.js` +
+  `cpl_chat.js`) — 5 single-select chips (Student/future student · Faculty ·
+  College administrator · Employer/industry · Civic leader), **required before
+  the first send** (submit blocks with a flash + plain-language status line),
+  persisted in localStorage **`cplSierraAudience.v1` — one key, both surfaces**
+  (same origin), sent as an optional `audience` body field.
+- **`cpl-chat` v21 → v22** — validates `audience` against known keys and appends
+  a per-audience `AUDIENCE_RULES` block to the system prompt (module-level
+  const, the standing convention). The student rule is the sharp one: no
+  articulation mechanics / "exhibits" / TOP codes / COCI / apportionment — plain
+  words + the concrete next step. Absent/unknown audience → default voice, so
+  the **production widget is untouched** (same backward-compat pattern as
+  `history`). Also logs `audience` into `chat_interactions` (new column).
+- **`chat_interactions` reviewer SELECT** — the log was anon-INSERT/no-SELECT;
+  it now has a reviewer/team-phrase SELECT policy, enabling the log-informed
+  gap review Sam asked for ("informed by log entries to see where gaps might
+  be") without any public exposure.
+- **Smoke test modes 10–12** (`chatbox/smoke_test.sh`) — student-audience run,
+  unknown-key-must-not-500 run, and the exact feedback REST upsert path incl.
+  the "anon SELECT returns []" assertion. Suite: `tests/sierra_page.test.js`
+  33 checks + new `tests/cpl_chat_audience.test.js` 17 checks; all 118 test
+  files green.
+- **Training-tab recommendation** — YES, phased; full scope in
+  `docs/sierra_training_tab_scope.md` (Phase 1 review-queue + gap miner over
+  the two tables; Phase 2 `sierra_guidance` prompt-knob; Phase 3 artifact
+  ingestion into the RAG corpus — never the public KB). Plus the **guardrails
+  lane for Malone** (durable rate limit, daily cost breaker, CORS tightening)
+  ahead of the "Credit for Being Me" Student Portal.
+
+**Lessons:**
+
+- **Same-origin surfaces can share one preference key.** The standalone
+  `sierra/` page and the COBI tab both live on `cpl-initiative.github.io`, so
+  one `localStorage` key gives "pick who you are once, both surfaces remember" —
+  no sync code. The map.rccd.edu widget is a different origin and deliberately
+  out of scope.
+- **Feedback-as-upsert beats feedback-as-append.** The naive design (INSERT per
+  interaction) either loses the note (only log the thumb) or double-counts
+  (thumb row + note row). A client-uuid PK + `merge-duplicates` gets: log on
+  first click, enrich on note, correct on rating switch — one row, no UPDATE
+  policy keyed to anything guessable.
+- **"Required" UX = block + explain + flash, not a modal.** Disabling send
+  silently reads as broken; a modal is friction. Blocking submit with a status
+  line ("First, tap who you are above…") + a 2-pulse outline on the selector
+  converts in one glance.
+- **Persona rules live server-side, not client-side.** Tailoring in the prompt
+  (v22) means every caller that sends `audience` gets it — the Portal embed
+  inherits it free — and the tone rules version with the function, not with N
+  copies of client JS.
