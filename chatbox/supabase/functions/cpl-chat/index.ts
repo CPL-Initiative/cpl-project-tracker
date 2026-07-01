@@ -397,7 +397,8 @@ async function searchCollegeOfferings(query: string, sb: any): Promise<any[] | n
   const { data, error } = await sb.rpc("search_college_offerings", {
     search_query: tsQuery,
     college_filter: null,
-    result_limit: 80,
+    result_limit: 150, // generous — a noisy multi-keyword query must not truncate a
+                       // relevant college out (the Q1 El-Camino false-negative)
   });
   if (error || !data || data.length === 0) return null;
   return data;
@@ -472,7 +473,7 @@ function buildOfferingsContext(
   };
 
   let ctx = "\n\n--- Course Catalog: WHICH COLLEGES TEACH THIS (COCI offerings — what a college teaches, NOT whether it has a CPL articulation yet) ---\n";
-  ctx += `${byCollege.size} college(s) currently teach course(s) in this area.\n`;
+  ctx += `${byCollege.size} college(s) shown below currently teach course(s) in this area (TOP matches — NOT an exhaustive list; more colleges may teach it).\n`;
 
   if (askedCollege) {
     if (asked) {
@@ -636,7 +637,8 @@ const OFFERINGS_RULE = `\n\nABOUT THE "COURSE CATALOG / WHICH COLLEGES TEACH THI
 - If a college TEACHES the relevant discipline but has NO matching CPL exhibit, present it as a strong ADOPTION OPPORTUNITY: e.g. "El Camino already teaches construction courses (CTEC 170, CTEC 503 OSHA), so it's well positioned to award CPL for NCCER — the college's CPL coordinator would set up that articulation." Frame it invitingly, never as a deficiency.
 - If the college the visitor named does NOT teach the discipline, say so warmly and point them to the NEAREST colleges that DO (use the county/region provided — closest first).
 - When a peer college has ALREADY articulated the credential (from the exhibit results), name it as proof it can be done ("Barstow and Norco have already set up NCCER credit").
-- ALWAYS add that teaching a course is not a guarantee of credit — the student/organization should contact the college's CPL coordinator to request a review. Never claim an articulation exists when only a course is taught.`;
+- ALWAYS add that teaching a course is not a guarantee of credit — the student/organization should contact the college's CPL coordinator to request a review. Never claim an articulation exists when only a course is taught.
+- The catalog list shows the TOP matching colleges, NOT an exhaustive list. NEVER conclude that a college does NOT teach a subject just because it isn't shown — many colleges that teach it may not appear. If a specific college the visitor named is not in the list, do NOT say it lacks the courses; say you're not certain from the data at hand and suggest checking that college's catalog or CPL coordinator.`;
 
 function buildSystemPrompt(
   sections: any[],
