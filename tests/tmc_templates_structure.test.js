@@ -36,10 +36,17 @@ function hasCid(id, cid) {
   const t = templates.find((x) => x.id === id);
   return t && cidSlots(t).some((sl) => sl.cid === cid);
 }
+// present as a slot cid OR a fold-alt (Session 90 folds "X OR Y" → cid X + alts[Y])
+function hasCidOrAlt(id, cid) {
+  const t = templates.find((x) => x.id === id);
+  return t && (t.sections || []).flatMap((s) => s.slots)
+    .some((sl) => sl.cid === cid || (sl.alts || []).includes(cid));
+}
 check("African American Studies recovered AFS 100/140/141 from inline 'C-ID …'",
   hasCid("african-american-studies", "AFS 100") &&
   hasCid("african-american-studies", "AFS 140") &&
-  hasCid("african-american-studies", "AFS 141"));
+  // AFS 141 is now an OR-alternative of AFS 140 (Session 90 fold), not a separate slot
+  hasCidOrAlt("african-american-studies", "AFS 141"));
 check("Studio Art recovered the embedded ARTS token C-IDs",
   hasCid("studio-art", "ARTS 230") && hasCid("studio-art", "ARTS 240"));
 

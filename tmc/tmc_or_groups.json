@@ -1,0 +1,861 @@
+{
+ "_meta": {
+  "_generated": "2026-07-01 (Session 90)",
+  "_source": "Official ASCCC TMC PDFs (tmc/source_pdfs/*.pdf), extracted by the OR-extraction workflow: per-template VISUAL PDF read + independent adversarial verification.",
+  "_semantics": "Each group = the C-IDs that satisfy ONE requirement line where the official template joins them with \"OR\" (pick ONE). tmc/_parse_tmc_pdfs.py FOLDS a group into a single slot: the first member that is an existing parsed slot in the named section becomes the slot cid, the remaining members become its alts[]; the other folded slots are removed. This is DISTINCT from a \"Select N of many\" list (already modeled by section.select).",
+  "_note": "DRAFT — faculty-verify. Curated/authored data: edit here to correct an OR-group, then re-run tmc/_parse_tmc_pdfs.py. A group whose members are NOT existing slots in the named section, or that overlaps another group on a shared member, is recorded but NOT folded (the parser logs it); those need a manual slot-add / disambiguation.",
+  "groups": 80
+ },
+ "groups": [
+  {
+   "tmc": "administration-of-justice",
+   "section": "List B",
+   "cids": [
+    "SOCI 125",
+    "MATH 110"
+   ],
+   "evidence": "Introduction to Statistics in Sociology  SOCI 125 ... OR Introduction to Statistics  MATH 110 ... OR See examples below  AAM",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "african-american-studies",
+   "section": "Required Core",
+   "cids": [
+    "AFS 140",
+    "AFS 141"
+   ],
+   "evidence": "AND African American History of the U.S. to Reconstruction — C-ID AFS 140 / OR African American History of the U.S. since Reconstruction — C-ID AFS 141",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "agriculture-animal-sciences",
+   "section": "Required Core",
+   "cids": [
+    "CHEM 110",
+    "CHEM 101"
+   ],
+   "evidence": "General Chemistry for Science Majors 1, with Lab | CHEM 110 | 5 ... OR Introduction to Chemistry | CHEM 101 | 4",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "agriculture-animal-sciences",
+   "section": "Required Core",
+   "cids": [
+    "AG-AB 124",
+    "ECON 201"
+   ],
+   "evidence": "Agriculture Economics | AG-AB 124 | 3 ... OR. Principles of Microeconomics | ECON 201 | 3",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "agriculture-business",
+   "section": "Required Core",
+   "cids": [
+    "AG-PS 128L",
+    "CHEM 101",
+    "CHEM 110"
+   ],
+   "evidence": "Introduction to Soil Science AG-PS 128L 3 / OR Introduction to Chemistry CHEM 101 4 / OR General Chemistry for Science Majors I, with Lab CHEM 110 5",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "agriculture-business",
+   "section": "List A",
+   "cids": [
+    "AG-AS 104",
+    "AG-PS 104",
+    "AG-PS 106"
+   ],
+   "evidence": "Introduction to Animal Science AG-AS 104 3 / OR Introduction to Plant Science AG-PS 104 3 / OR Introduction to Plant Science with Lab AG-PS 106 3",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "agriculture-plant-sciences",
+   "section": "Required Core",
+   "cids": [
+    "CHEM 101",
+    "CHEM 110"
+   ],
+   "evidence": "Introduction to Chemistry | CHEM 101 ... OR General Chemistry for Science Majors I, with Lab | CHEM 110",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "agriculture-plant-sciences",
+   "section": "Required Core",
+   "cids": [
+    "AG-AB 124",
+    "ECON 201"
+   ],
+   "evidence": "Agriculture Economics | AG-AB 124 ... OR. Principles of Microeconomics | ECON 201",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "agriculture-plant-sciences",
+   "section": "Required Core",
+   "cids": [
+    "AG-PS 104",
+    "AG-PS 106L"
+   ],
+   "evidence": "Introduction to Plant Sciences | AG-PS 104 ... OR Introduction to Plant Sciences with Lab | AG-PS 106L",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "anthropology",
+   "section": "List A",
+   "cids": [
+    "MATH 110",
+    "SOCI 125"
+   ],
+   "evidence": "Introduction to Statistics  MATH 110  3  2 / OR Introduction to Statistics in Sociology  SOCI 125  3  2",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "art-history",
+   "section": "Required Core",
+   "cids": [
+    "ARTH 110",
+    "ARTH 120"
+   ],
+   "evidence": "Survey of Western Art from Prehistory through the Middle Ages | ARTH 110 ... OR Survey of Western Art from Renaissance to Contemporary | ARTH 120",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "biology",
+   "section": "Required Core",
+   "cids": [
+    "MATH 210",
+    "MATH 211"
+   ],
+   "evidence": "Single Variable Calculus I – Early Transcendentals | MATH 210 | 4 ... OR Single Variable Calculus I – Late Transcendentals | MATH 211 | 4 ... OR Calculus for Life and Social Sciences | AAM | 3",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "business-administration",
+   "section": "Required Core",
+   "cids": [
+    "BUS 125",
+    "BUS 120"
+   ],
+   "evidence": "Business Law  BUS 125 ... OR  Legal Environment of Business  BUS 120",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "business-administration",
+   "section": "Required Core",
+   "cids": [
+    "MATH 130",
+    "MATH 140"
+   ],
+   "evidence": "Finite Mathematics  MATH 130 ... OR  Business Calculus  MATH 140 ... OR  A math course (excluding Statistics) articulated for the Business major at a CSU campus  AAM",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "business-administration",
+   "section": "Required Core",
+   "cids": [
+    "BUS 110",
+    "BUS 115"
+   ],
+   "evidence": "Introduction to Business  BUS 110 ... OR  Business Communication  BUS 115",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "chemistry",
+   "section": "Required Core",
+   "cids": [
+    "MATH 210",
+    "MATH 220",
+    "MATH 211",
+    "MATH 221",
+    "MATH 900 S"
+   ],
+   "evidence": "Single Variable Calculus I – Early Transcendentals and (MATH 210) ... Single Variable Calculus II - Early Transcendentals (MATH 220) ... OR Single Variable Calculus I – Late Transcendentals and (MATH 211) ... Single Variable Calculus II - Late Transcendentals (MATH 221) ... OR Si",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "child-and-adolescent-development",
+   "section": "Required Core",
+   "cids": [
+    "MATH 110",
+    "SOCI 125"
+   ],
+   "evidence": "Introduction to Statistics — MATH 110 — 3 / OR Introduction to Statistics in Sociology — SOCI 125 — 3 / OR Another CSU transferable statistics course... AAM and GECC",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "child-and-adolescent-development",
+   "section": "List A",
+   "cids": [
+    "ANTH 120",
+    "SOCI 110",
+    "SOCI 150",
+    "CDEV 110",
+    "SOCI 130"
+   ],
+   "evidence": "Introduction to Cultural Anthropology — ANTH 120 / OR. Introduction to Sociology — SOCI 110 / OR. Introduction to Race and Ethnicity — SOCI 150 / OR. Child Family and Community — CDEV 110 / OR. Introduction to Marriage and Family — SOCI 130",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "communication-studies",
+   "section": "List B",
+   "cids": [
+    "ENGL 120",
+    "ENGL 105"
+   ],
+   "evidence": "Introduction to Literature | ENGL 120 ... OR Argumentative Writing and Critical Thinking | ENGL 105",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "computer-science",
+   "section": "Required Core",
+   "cids": [
+    "PHYS 210",
+    "BIOL 190",
+    "BIOL 140",
+    "CHEM 110"
+   ],
+   "evidence": "Calculus-Based Physics for Scientists and Engineers: B PHYS 210 ... OR Cell and Molecular Biology BIOL 190 ... OR Organismal Biology BIOL 140 ... OR General Chemistry for Science Majors I, with Lab CHEM 110",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "economics",
+   "section": "Required Core",
+   "cids": [
+    "MATH 140",
+    "MATH 210",
+    "MATH 211",
+    "MATH 900 S"
+   ],
+   "evidence": "Business Calculus MATH 140 / OR Single Variable Calculus I – Early Transcendentals MATH 210 / OR Single Variable Calculus I – Late Transcendentals MATH 211 / OR Single Variable Calculus Sequence MATH 900S",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "economics",
+   "section": "List A",
+   "cids": [
+    "MATH 220",
+    "MATH 221"
+   ],
+   "evidence": "**Single Variable Calculus II – Early Transcendentals MATH 220 / OR **Single Variable Calculus II – Late Transcendentals MATH 221",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "elementary-teacher-education-integrated-programs",
+   "section": "Required Core",
+   "cids": [
+    "HIST 150",
+    "ENGL 120",
+    "ENGL 180"
+   ],
+   "evidence": "World History to 1500 | HIST 150 | 3 | 3B  /  OR  Introduction to Literature | ENGL 120 | 3 | 3B  /  OR  Children's Literature | ENGL 180 | 3 | 3B",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "elementary-teacher-education-integrated-programs",
+   "section": "List A",
+   "cids": [
+    "CHEM 140",
+    "PHYS 140"
+   ],
+   "evidence": "Survey of Chemistry and Physics | CHEM 140 or PHYS 140 | 4",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "environmental-science",
+   "section": "Required Core",
+   "cids": [
+    "GEOL 100",
+    "GEOL 100 L",
+    "GEOL 101",
+    "GEOG 110",
+    "GEOG 111",
+    "GEOG 115"
+   ],
+   "evidence": "Physical Geology and GEOL 100 / Physical Geology Lab GEOL 100L / OR Physical Geology with Lab GEOL 101 / OR Introduction to Physical Geography and GEOG 110 / Physical Geography Laboratory GEOG 111 / OR Introduction to Physical Geography, with Lab GEOG 115",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "environmental-science",
+   "section": "Required Core",
+   "cids": [
+    "MATH 210",
+    "MATH 211",
+    "MATH 140"
+   ],
+   "evidence": "Single Variable Calculus I – Early Transcendentals MATH 210 / OR Single Variable Calculus I – Late Transcendentals MATH 211 / OR Business Calculus MATH 140",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "environmental-science",
+   "section": "Required Core",
+   "cids": [
+    "PHYS 100 S",
+    "PHYS 205",
+    "PHYS 210"
+   ],
+   "evidence": "Algebra/Trigonometry-Based Physics AB PHYS 100S / OR Calculus-Based Physics for Scientists and Engineers: A and PHYS 205 / Calculus-Based Physics for Scientists and Engineers: B PHYS 210",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "film-television-and-electronic-media",
+   "section": "Required Core",
+   "cids": [
+    "FTVE 100",
+    "JOUR 100"
+   ],
+   "evidence": "Introduction to Electronic Media FTVE 100 / OR Introduction to Mass Communications JOUR 100",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "film-television-and-electronic-media",
+   "section": "Required Core",
+   "cids": [
+    "FTVE 110",
+    "FTVE 115"
+   ],
+   "evidence": "Introduction to Media Writing FTVE 110 / OR Introduction to Screenwriting FTVE 115",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "film-television-and-electronic-media",
+   "section": "List A",
+   "cids": [
+    "FTVE 120",
+    "FTVE 125"
+   ],
+   "evidence": "Audio: Beginning Audio Production FTVE 120 / OR Beginning Radio Production FTVE 125",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "film-television-and-electronic-media",
+   "section": "List A",
+   "cids": [
+    "FTVE 130",
+    "FTVE 135",
+    "FTVE 150"
+   ],
+   "evidence": "Video or Film: Beginning Single Camera Production FTVE 130 / OR Beginning TV Studio Production FTVE 135 / OR Beginning Motion Picture Production FTVE 150",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "geography",
+   "section": "Required Core",
+   "cids": [
+    "GEOG 110",
+    "GEOG 115",
+    "GEOG 111"
+   ],
+   "evidence": "Introduction to Physical Geography GEOG 110 / OR Introduction to Physical Geography, with Lab GEOG 115 / OR Introduction to Physical Geography and Physical Geography, Laboratory GEOG 110 GEOG 111",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "geography",
+   "section": "Required Core",
+   "cids": [
+    "GEOG 120",
+    "GEOG 125"
+   ],
+   "evidence": "Introduction to Human Geography GEOG 120 / OR World Regional Geography GEOG 125",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "geology",
+   "section": "Required Core",
+   "cids": [
+    "GEOL 101",
+    "GEOL 100",
+    "GEOL 100 L"
+   ],
+   "evidence": "Physical Geology with Lab GEOL 101 | OR Physical Geology and Physical Geology GEOL 100 / Laboratory GEOL 100L",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "geology",
+   "section": "Required Core",
+   "cids": [
+    "GEOL 111",
+    "GEOL 110",
+    "GEOL 110 L"
+   ],
+   "evidence": "Historical Geology with Lab GEOL 111 | OR Historical Geology and Historical Geology GEOL 110 / Lab GEOL 110L",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "geology",
+   "section": "Required Core",
+   "cids": [
+    "MATH 210",
+    "MATH 220",
+    "MATH 211",
+    "MATH 221",
+    "MATH 900 S"
+   ],
+   "evidence": "Single Variable Calculus I – Early Transcendentals and MATH 210 ... II MATH 220 | OR Single Variable Calculus I – Late Transcendentals and MATH 211 ... II MATH 221 | OR Single Variable Calculus Sequence MATH 900S",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "history",
+   "section": "List A",
+   "cids": [
+    "HIST 150",
+    "HIST 170"
+   ],
+   "evidence": "World History to 1500 / HIST 150 ... OR Western Civilization I / HIST 170",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "history",
+   "section": "List A",
+   "cids": [
+    "HIST 160",
+    "HIST 180"
+   ],
+   "evidence": "World History Since 1500 / HIST 160 ... OR Western Civilization II / HIST 180",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "history",
+   "section": "List B",
+   "cids": [
+    "HIST 150",
+    "HIST 160"
+   ],
+   "evidence": "Area 1 / World History to 1500 (if not used in List A) HIST 150 / OR World History Since 1500 (if not used in List) HIST 160",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "journalism",
+   "section": "List B",
+   "cids": [
+    "MATH 110",
+    "SOCI 125"
+   ],
+   "evidence": "Introduction to Statistics MATH 110 / OR Introduction to Statistics in Sociology SOCI 125",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "journalism",
+   "section": "List B",
+   "cids": [
+    "ECON 201",
+    "ECON 202"
+   ],
+   "evidence": "Principles of Microeconomics ECON 201 / OR Principles of Macroeconomics ECON 202",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "journalism",
+   "section": "List B",
+   "cids": [
+    "PHIL 110",
+    "PHIL 210"
+   ],
+   "evidence": "Introduction to Logic PHIL 110 / OR Symbolic Logic PHIL 210",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "kinesiology",
+   "section": "List A",
+   "cids": [
+    "MATH 110",
+    "SOCI 125"
+   ],
+   "evidence": "Introduction to Statistics MATH 110 / OR Introduction to Statistics in Sociology SOCI 125",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "kinesiology",
+   "section": "List A",
+   "cids": [
+    "PHYS 105",
+    "PHYS 205"
+   ],
+   "evidence": "Algebra/Trigonometry-Based Physics PHYS 105 / OR Calculus-Based Physics for Scientists and Engineers: A PHYS 205",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "kinesiology",
+   "section": "List A",
+   "cids": [
+    "PSY 110",
+    "SOCI 110"
+   ],
+   "evidence": "Introduction to Psychology PSY 110 / OR Introduction to Sociology SOCI 110",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "law-public-policy-and-society",
+   "section": "Required Core",
+   "cids": [
+    "LPPS 110",
+    "AJ 110",
+    "AJ 120",
+    "AJ 122",
+    "BUS 120",
+    "BUS 125"
+   ],
+   "evidence": "Understanding the Law: Introduction to Law and Society LPPS 110  OR Introduction to Criminal Justice AJ 110  OR Concepts of Criminal Law AJ 120  OR Criminal Court Process AJ 122  OR Legal Environment of Business BUS 120  OR Business Law BUS 125",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "law-public-policy-and-society",
+   "section": "Required Core",
+   "cids": [
+    "LPPS 120",
+    "PHIL 120"
+   ],
+   "evidence": "Ethics: Ethical Reasoning LPPS 120  OR Introduction to Ethics PHIL 120",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "law-public-policy-and-society",
+   "section": "Required Core",
+   "cids": [
+    "COMM 110",
+    "COMM 120",
+    "COMM 140"
+   ],
+   "evidence": "Oral Communication: Public Speaking COMM 110  OR Argumentation or Argumentation and Debate* COMM 120  OR Small Group Communication COMM 140",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "law-public-policy-and-society",
+   "section": "Required Core",
+   "cids": [
+    "COMM 120",
+    "COMM 190",
+    "ENGL 105",
+    "PHIL 110"
+   ],
+   "evidence": "Critical Thinking: Argumentation or Argumentation and Debate* COMM 120  OR Introduction to Persuasion COMM 190  OR Argumentative Writing and Critical Thinking ENGL 105  OR Introduction to Logic PHIL 110",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "law-public-policy-and-society",
+   "section": "Required Core",
+   "cids": [
+    "MATH 110",
+    "SOCI 125"
+   ],
+   "evidence": "Quantitative Reasoning: Introduction to Statistics MATH 110  OR Introduction to Statistics in Sociology SOCI 125",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "law-public-policy-and-society",
+   "section": "Required Core",
+   "cids": [
+    "HIST 130",
+    "HIST 140"
+   ],
+   "evidence": "US History: US History to 1877 HIST 130  OR US History from 1865 HIST 140",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "mathematics",
+   "section": "Required Core",
+   "cids": [
+    "MATH 900 S",
+    "MATH 210",
+    "MATH 220",
+    "MATH 211",
+    "MATH 221"
+   ],
+   "evidence": "Single Variable Calculus Sequence MATH 900S | OR Single Variable Calculus I – Early Transcendentals MATH 210 and Single Variable Calculus II – Early Transcendentals MATH 220 | OR Single Variable Calculus I – Late Transcendentals MATH 211 and Single Variable Calculus II – Late Tra",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "mathematics",
+   "section": "Required Core",
+   "cids": [
+    "MATH 240",
+    "MATH 250",
+    "MATH 910 S"
+   ],
+   "evidence": "Ordinary Differential Equations MATH 240 and Introduction to Linear Algebra MATH 250 | OR Differential Equations and Linear Algebra MATH 910S",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "music",
+   "section": "Required Core",
+   "cids": [
+    "MUS 180",
+    "MUS 185"
+   ],
+   "evidence": "Required Core row: \"Major Ensemble and/or Specialized Ensemble Note 3\" with C-ID Designation \"MUS 180 or MUS 185\"",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "music",
+   "section": "List A",
+   "cids": [
+    "MUS 105",
+    "MUS 106"
+   ],
+   "evidence": "List A: \"Music History I, Antiquity to 1750\" MUS 105 / \"OR Music History II, 1750-Present\" MUS 106 (bold \"OR\" prefix joining the two)",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "nutrition-and-dietetics",
+   "section": "Required Core",
+   "cids": [
+    "CHEM 110",
+    "CHEM 120 S"
+   ],
+   "evidence": "\"General Chemistry for Science Majors I, with Lab  CHEM 110 / OR General Chemistry for Science Majors Sequence A  CHEM 120S\" - the two rows are joined by a bold OR as substitutes for the single Core chemistry line.",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "nutrition-and-dietetics",
+   "section": "List A",
+   "cids": [
+    "MATH 110",
+    "SOC 125"
+   ],
+   "evidence": "\"Introduction to Statistics  MATH 110 / OR Introduction to Statistics in Sociology  SOC 125\" - one statistics requirement satisfiable by either C-ID, explicitly joined by a bold OR.",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "philosophy",
+   "section": "Required Core",
+   "cids": [
+    "PHIL 210",
+    "PHIL 110"
+   ],
+   "evidence": "Symbolic Logic** PHIL 210 ... OR Introduction to Logic PHIL 110 (both Cal-GETC 1B); NOTES: **For any college that does not offer Symbolic Logic, Introduction to Logic may be substituted",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "philosophy",
+   "section": "Required Core",
+   "cids": [
+    "PHIL 100",
+    "PHIL 120"
+   ],
+   "evidence": "Introduction to Philosophy PHIL 100 ... OR Introduction to Ethics PHIL 120 (both Cal-GETC 4)",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "physics-2-0",
+   "section": "Required Core",
+   "cids": [
+    "PHYS 200 S",
+    "PHYS 205",
+    "PHYS 210",
+    "PHYS 215"
+   ],
+   "evidence": "Calculus-based Physics for Scientists and Engineers: ABC (12) | PHYS 200S | OR Calculus-based Physics for Scientists and Engineers: A | PHYS 205 | and ... | and PHYS 210 | and ... | and PHYS 215",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "physics-2-0",
+   "section": "Required Core",
+   "cids": [
+    "MATH 900 S",
+    "MATH 230",
+    "MATH 210",
+    "MATH 220",
+    "MATH 211",
+    "MATH 221"
+   ],
+   "evidence": "Single Variable Calculus Sequence MATH 900S and Multivariable Calculus MATH 230 | OR Single Variable Calculus I – Early Transcendentals MATH 210 and ... MATH 220 and Multivariable Calculus MATH 230 | OR Single Variable Calculus I – Late Transcendentals MATH 211 and ... MATH 221 a",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "physics-2-0",
+   "section": "Required Core",
+   "cids": [
+    "MATH 240",
+    "MATH 250",
+    "MATH 910 S"
+   ],
+   "evidence": "Ordinary Differential Equations MATH 240 and Linear Algebra MATH 250 | OR Differential Equations and Linear Algebra MATH 910-S 5",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "political-science",
+   "section": "List A",
+   "cids": [
+    "POLS 160",
+    "MATH 110",
+    "SOCI 125"
+   ],
+   "evidence": "Introduction to Political Science Research Methods POLS 160 | OR Introduction to Statistic MATH 110 | OR Introduction to Statistics in Sociology SOCI 125",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "psychology",
+   "section": "Required Core",
+   "cids": [
+    "PSY 200",
+    "PSY 205 B"
+   ],
+   "evidence": "Introduction to Research Methods in Psychology  PSY 200  3 ... OR Introduction to Research Methods in Psychology (with lab)  PSY 205B  4",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "public-health",
+   "section": "Required Core",
+   "cids": [
+    "MATH 110",
+    "PH 114"
+   ],
+   "evidence": "Introduction to Statistics — MATH 110 (3 units, Area 2); OR Public Health Statistics — PH 114 (3 units, Area 2); OR Any statistics course articulated as Area 2 — GECC",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "social-justice-studies",
+   "section": "Required Core",
+   "cids": [
+    "SJS 110",
+    "SOCI 150"
+   ],
+   "evidence": "Introduction to Social Justice Studies  SJS 110 / OR  Introduction to Race and Ethnicity  SOCI 150",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "social-justice-studies",
+   "section": "Required Core",
+   "cids": [
+    "SJS 120",
+    "SJS 130",
+    "SJS 140"
+   ],
+   "evidence": "Introduction to Women's Studies  SJS 120 / OR  Introduction to LGBT Studies  SJS 130 / OR  Introduction to Gender  SJS 140",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "social-justice-studies",
+   "section": "List A",
+   "cids": [
+    "MATH 110",
+    "SOCI 125",
+    "POLS 160"
+   ],
+   "evidence": "Area 4*** Introduction to Statistics  MATH 110 / OR  Introduction to Statistics in Sociology  SOCI 125 / OR  Introduction to Political Science Research Methods  POLS 160",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "social-justice-studies",
+   "section": "List A",
+   "cids": [
+    "PSY 200",
+    "PSYC 250B",
+    "SOCI 120"
+   ],
+   "evidence": "Introduction to Research Methods in Psychology  PSY 200 / OR  Introduction to Research Methods in Psychology with Lab  PSYC 250B / OR  Introduction to Research Methods  SOCI 120",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "social-work-and-human-services",
+   "section": "Required Core",
+   "cids": [
+    "MATH 110",
+    "SOCI 125"
+   ],
+   "evidence": "Introduction to Statistics MATH 110 / OR Introduction to Statistics in Sociology SOCI 125",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "social-work-and-human-services",
+   "section": "Required Core",
+   "cids": [
+    "BIOL 110 B",
+    "BIOL 120 B",
+    "BIOL 115 S"
+   ],
+   "evidence": "Human Anatomy with Lab BIOL 110B / OR Human Physiology with Lab BIOL 120B / OR Human Anatomy and Physiology with Lab BIOL 115S (the following two OR lines are non-C-ID flexible provisos 'Human Biology' / 'Other Biology course articulated as major preparation' = AAM, correctly exc",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "social-work-and-human-services",
+   "section": "Required Core",
+   "cids": [
+    "ECON 201",
+    "ECON 202"
+   ],
+   "evidence": "Microeconomics ECON 201 / OR Macroeconomics ECON 202",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "sociology",
+   "section": "Required Core",
+   "cids": [
+    "SOCI 125",
+    "MATH 110"
+   ],
+   "evidence": "Introduction to Statistics in Sociology  SOCI 125 ... OR Introduction to Statistics  MATH 110 ... OR Behavioral and/or or Social Science Statistics  AAM",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "spanish",
+   "section": "Required Core",
+   "cids": [
+    "SPAN 200",
+    "SPAN 220"
+   ],
+   "evidence": "Intermediate Spanish I  SPAN 200  4  3B / OR  Spanish for Heritage Speakers  SPAN 220  4  3B",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "spanish",
+   "section": "Required Core",
+   "cids": [
+    "SPAN 210",
+    "SPAN 230"
+   ],
+   "evidence": "Intermediate Spanish II  SPAN 210  4  3B / OR  Spanish for Heritage Speakers II  SPAN 230  4  3B",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "studio-art",
+   "section": "List B",
+   "cids": [
+    "ARTS 200",
+    "ARTS 205"
+   ],
+   "evidence": "Drawing — Figure Drawing ARTS 200 / OR Intermediate Drawing ARTS 205",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "studio-art",
+   "section": "List B",
+   "cids": [
+    "ARTS 280",
+    "ARTS 281",
+    "ARTS 282"
+   ],
+   "evidence": "Applied Design — Introduction to Crafts ARTS 280 or AAM / OR Introduction to Jewelry and Metalsmithing ARTS 281 or AAM / OR Introduction to Fiber Arts ARTS 282 or AAM",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "theatre-arts",
+   "section": "Required Core",
+   "cids": [
+    "THTR 111",
+    "THTR 113"
+   ],
+   "evidence": "Introduction to Theatre THTR 111 / OR Theatre History THTR 113",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "theatre-arts",
+   "section": "Required Core",
+   "cids": [
+    "THTR 191",
+    "THTR 192"
+   ],
+   "evidence": "Rehearsal and Performance in Production THTR 191 / OR Technical Theatre in Production THTR 192",
+   "verdict": "confirmed"
+  },
+  {
+   "tmc": "theatre-arts",
+   "section": "List A",
+   "cids": [
+    "THTR 191",
+    "THTR 192"
+   ],
+   "evidence": "Rehearsal and Performance in Production THTR 191 / OR Technical Theatre in Production THTR 192 (List A row)",
+   "verdict": "confirmed"
+  }
+ ]
+}
