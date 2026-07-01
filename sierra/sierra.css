@@ -40,6 +40,16 @@ body {
 .s-brand-name {
   padding-left: 16px; border-left: 1px solid rgba(255, 255, 255, .35); min-width: 0;
 }
+/* Mt Whitney ridgeline ghosted behind the "Sierra" wordmark */
+.s-name-peak { position: relative; display: inline-block; }
+.s-name-peak > h1 { position: relative; z-index: 1; }
+.s-whitney-ghost {
+  position: absolute; z-index: 0; pointer-events: none;
+  height: 1.95em; width: auto;
+  left: 50%; bottom: .02em;           /* flat base sits level with the text baseline */
+  transform: translateX(-32%);        /* nudged right so the right slope clears the final "a" */
+  opacity: .34;
+}
 .s-head h1 { margin: 0; font-size: 1.35rem; letter-spacing: .01em; }
 .s-head .s-role { margin: 2px 0 0; font-size: .82rem; opacity: .85; }
 .s-back {

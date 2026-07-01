@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 34" role="img" aria-label="Mount Whitney, snow-capped">
+  <!-- east-face skyline, flat base level -->
+  <path d="M2 30
+           L12 25 21 17 29 9 35 4 40 1
+           43 6 46 4 49 9 52 7 55 11 59 15 63 19 66 22
+           70 18 73 20 76 15 79 13 82 16 85 20
+           90 24 97 27 105 29 118 30"
+        fill="none" stroke="#ffffff" stroke-width="3.8"
+        stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- a touch of snow just below the summit (distinct patch, navy gap from the ridge) -->
+  <path d="M40 5.4 L37.4 10.6 38.9 9.6 40 11 41.1 9.5 42.6 10.7 40 5.4 Z"
+        fill="#ffffff" stroke="none"/>
+</svg>
