@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-01T12:18:41.428342+00:00",
+  "scraped_at": "2026-07-01T15:16:07.640858+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "mil": 34135,
-    "jst": 23548,
+    "jst": 23552,
     "star_colleges": 50
   },
   "computed_star_colleges": 46,
@@ -217,7 +217,7 @@
     },
     "Cerro Coso Community College": {
       "mil": 115,
-      "jst": 151,
+      "jst": 155,
       "star": true
     },
     "East Los Angeles College": {

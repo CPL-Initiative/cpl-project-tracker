@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-01T12:18:41.158Z",
+  "scraped_at": "2026-07-01T15:16:07.105Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -968,13 +968,13 @@
         },
         {
           "college": "Cerro Coso Community College",
-          "students": 152,
+          "students": 156,
           "units": 755,
-          "avgUnits": 4.967105263157895,
+          "avgUnits": 4.839743589743589,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 152,
+          "militaryStudents": 156,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 1306150,
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "48,219",
+      "value": "48,223",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,881"
+          "value": "24,885"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 48219,
+    "Students": 48223,
     "Units": 230601.65000000002,
     "TranscribedUnits": 99577.95,
     "Savings": 321491525.25,
     "YearImpact": 1300353580.3999999,
-    "MilitaryStudents": 24881,
+    "MilitaryStudents": 24885,
     "NonMilitaryStudents": 23414,
     "AprenticeStudents": 753,
-    "AverageUnits": 4.782381426408677,
-    "TranscribedAverage": 2.0651185217445405
+    "AverageUnits": 4.7819847375733575,
+    "TranscribedAverage": 2.0649472243535243
   }
 }
