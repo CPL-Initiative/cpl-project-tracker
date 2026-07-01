@@ -86,6 +86,9 @@ let hasCellCount = 0, noneCellCount = 0;
 
   check("[has] MIL/JST cell renders '168 / 535'", /168 \/ 535/.test(txt));
   check("[has] MIL/JST cell renders '724 / 467'", /724 \/ 467/.test(txt));
+  // JST-as-%-of-MIL shown inline (Sam's diagnostic for the star-threshold).
+  check("[has] star cell shows JST% '(318%)'", /318%/.test(starRow.innerHTML));
+  check("[has] below-75% cell shows JST% '(64%)'", /64%/.test(belowRow.innerHTML));
   check("[has] no-data college MIL/JST renders an em dash", /—/.test(noDataRow.textContent));
   check("[has] star college shows the ⭐", /⭐/.test(starRow.innerHTML));
   check("[has] below-75% college shows NO ⭐", !/⭐/.test(belowRow.innerHTML));
@@ -95,6 +98,8 @@ let hasCellCount = 0, noneCellCount = 0;
   check("[has] MIL/JST header stays visible",
     doc.getElementById("caMilJstHeader").style.display !== "none");
   check("[has] totals show MIL/JST sum (892 / 1,002)", /892 \/ 1,002/.test(totals.textContent));
+  // Total JST% = round(1002/892*100) = 112%.
+  check("[has] totals show the JST% '(112%)'", /112%/.test(totals.textContent));
   hasCellCount = starRow.querySelectorAll("td").length;
 }
 

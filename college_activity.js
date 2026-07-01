@@ -60,15 +60,19 @@
       function tierColor(t) { return t === 'Leading' ? GOLD : (t === 'Advancing' ? BLUE : '#5C5C55'); }
       function bc(r) { return r >= 50 ? GREEN : (r >= 25 ? AMBER : '#8A867E'); }
       // "MIL / JST" cell — reported military / JSTs uploaded, ⭐-eligible when
-      // JST >= 75% of MIL. Star colleges render the ratio in gold.
+      // JST >= 75% of MIL. Star colleges render the ratio in gold. The visible
+      // (N%) = JST as a % of MIL — the star-threshold denominator, so it's easy
+      // to see which colleges sit near 75% (Sam, 2026-07-01: diagnose the ~46
+      // vs MAP's 50 star gap). Shown only when MIL>0 (undefined otherwise).
       function milJstCell(row) {
         const mil = row.mil || 0, jst = row.jst || 0;
         if (!mil && !jst) return '<span style="color:#8A867E;">—</span>';
         const col = row.vstar ? GOLD : '#3A3A36';
         const wt = row.vstar ? '700' : '400';
-        return '<span title="' + jst + ' JSTs uploaded / ' + mil + ' reported military = '
-          + (row.jst_rate || 0) + '%" style="color:' + col + ';font-weight:' + wt + ';">'
-          + fmtN(mil) + ' / ' + fmtN(jst) + '</span>';
+        const pct = mil ? ' (' + (row.jst_rate || 0) + '%)' : '';
+        return '<span title="' + jst + ' JSTs uploaded / ' + mil + ' reported military'
+          + (mil ? ' = ' + (row.jst_rate || 0) + '% — Veteran Star at 75%+' : '') + '" style="color:'
+          + col + ';font-weight:' + wt + ';">' + fmtN(mil) + ' / ' + fmtN(jst) + pct + '</span>';
       }
       // The star shown in the ★ column: the Veteran Star when JST data is loaded,
       // else the legacy "met >=1 criterion" star (graceful degradation).
@@ -112,8 +116,9 @@
           : allDiscs.size;
 
         const s = 'font-size:0.67rem;font-weight:700;padding:0.3rem 0.3rem;text-align:right;color:#1C1C1A;';
+        const totPct = sums.mil ? ' (' + Math.round(sums.jst / sums.mil * 100) + '%)' : '';
         const milJstTotal = hasJst
-          ? `<td style="${s}" title="${sums.vstars} Veteran Star colleges">${fmtN(sums.mil)} / ${fmtN(sums.jst)}</td>`
+          ? `<td style="${s}" title="${sums.vstars} Veteran Star colleges · ${fmtN(sums.jst)} JSTs / ${fmtN(sums.mil)} reported military statewide">${fmtN(sums.mil)} / ${fmtN(sums.jst)}${totPct}</td>`
           : '';
         totalsRow.innerHTML = `<tr style="background:rgba(201,168,76,0.08);">
           <td style="${s}text-align:center;" colspan="2">
