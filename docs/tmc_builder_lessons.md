@@ -541,3 +541,55 @@ backward-compat, and the shipped-artifact contract.
 **Limitation logged:** ~24% of c-id.net course-keys have no matching COCI course row (the
 college doesn't list that course in COCI) → those articulations can't surface as a pickable
 course. And genuine-absence slots (gap type #3) stay honest blanks.
+
+---
+
+## 2026-07-01 (Session 90, SkySherpa) — "OR" alternatives on the left side
+
+**Ask (Sam):** some template courses are a **choice of "OR"** — one of two/three
+courses satisfies a single requirement. Can the builder's left side show that?
+
+**Finding — the machinery already existed; the data didn't.** The consumer
+already fully supported per-slot `alts[]`: it renders "`X` or `Y`" (`tmc_builder.js`
+`renderSlot`) and auto-matches a course carrying any of `{cid}∪alts` (`slotCids`).
+But **0 of 756 slots carried alts** — the parser's OR-fold (`parse_body`, the
+"line starts with `or `" heuristic) never fired, because the ASCCC PDFs render
+"X OR Y" as a **multi-column layout** that `fitz` text-extraction scrambles, so
+the "OR" tokens never line up with their C-IDs. 244 "OR"-lines exist across 41/45
+PDFs → every one was flattened into independent slots.
+
+**Approach — a curated overlay, extracted by visual PDF read.** Rather than fight
+the column-scramble in code, I extracted the OR-groups by **reading the rendered
+PDFs visually** — a Workflow fanned one extractor + one **adversarial verifier**
+per template across all 45 PDFs (the verifier re-read the PDF to reject "select-N"
+lists misread as ORs and flexible provisos). Output: `tmc/tmc_or_groups.json` — 80
+verified groups, each with an evidence quote. This is the **"curated overlay"**
+recommendation from the analysis (curriculum-authoritative data shouldn't be
+guessed from mangled text).
+
+**Fold (`tmc/_parse_tmc_pdfs.py:apply_or_groups`).** Per group, fold the members
+into ONE slot: the first member that is an existing parsed slot becomes the `cid`,
+the rest become `alts[]`; the other member-slots are removed. Guards + skips
+(logged in `_meta.or_groups.skipped`):
+- **no existing-slot anchor** — the parser missed the whole line (studio-art
+  `ARTS 280/281/282`) → needs a manual slot-add, not a fold.
+- **member overlap** — one course is an option in two lines (LPPS `COMM 120`) →
+  can't fold into two anchors.
+- **duplicate section names** — African American Studies has *two* "Required
+  Core" sections; the apply resolves each group to the section that actually
+  contains an anchor (a `name→section` dict silently dropped one — the bug that
+  first wrongly-skipped AAS). Overlap is judged per section **object**, not name.
+
+**Result: 77/80 folded** (3 skipped, all logged + legitimate). A structural diff
+old→new confirmed **zero drift**: the only change is 77 slots gaining alts; no cid
+lost, no non-C-ID slot touched. Missing-descriptor members (valid C-IDs the parser
+missed, e.g. music `MUS 180`) are added as alts (the anchor stays an existing
+slot — no fabricated slots). Tests: `tests/tmc_or_alternatives.test.js` (13) +
+updated the AAS assertion in `tmc_templates_structure.test.js` (AFS 141 is now an
+alt of AFS 140). Consumer needed **no change** — the alts plumbing was already there.
+
+**Lesson — read the PDF, don't parse the text, for layout-encoded facts.** When a
+fact lives in a document's *visual layout* (columns, "OR" adjacency) that text
+extraction destroys, a visual read (per-item, verified) beats ever-more-elaborate
+text heuristics. The Workflow's adversarial-verify stage was load-bearing: it
+caught the "select-N list ≠ OR-group" and "flexible proviso ≠ C-ID OR" traps.

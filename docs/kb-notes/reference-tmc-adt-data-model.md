@@ -89,6 +89,30 @@ lacking a C-ID-approved course for a slot (e.g. Saddleback's AoJ `AJ 120`)
 stays a legitimate blank — no course dataset fills it (the approved-ADT
 evidence lives in COCI's *program* export, which carries no course-to-slot map).
 
+## "OR" alternatives on the left (Session 90)
+
+A TMC slot can be a **single requirement satisfiable by one of several C-IDs** —
+the template writes "Course X **OR** Course Y [OR Z]" (pick one). This is
+**distinct** from a "Select N of many" *section* (List A/B/C), which is modeled
+by `section.select`. The intra-line OR is modeled per **slot**:
+
+- `slot.alts[]` — additional C-IDs that also satisfy the slot. The Builder
+  renders "`X` or `Y`" on the left and **auto-matches a course carrying ANY** of
+  `{cid} ∪ alts` (`slotCids()` in `tmc_builder.js`).
+
+The ASCCC PDFs express OR as a multi-column layout that `fitz` text-extraction
+scrambles, so the parser can't recover it from the token stream (it emitted every
+alternative as its own slot). **`tmc/tmc_or_groups.json`** is a curated overlay —
+per `(tmc, section)`, the C-IDs that form one OR-line — extracted by a per-template
+**visual PDF read + adversarial verification** (80 groups). `tmc/_parse_tmc_pdfs.py`
+**folds** each group into one slot: the first member that is an existing parsed
+slot becomes the `cid`, the rest become `alts[]`, and the other member-slots are
+removed. Guards: a group is **skipped** (logged in `_meta.or_groups.skipped`) when
+it has **no existing-slot anchor** (the parser missed the whole line → needs a
+manual slot-add, e.g. studio-art `ARTS 280/281/282`) or its members **overlap**
+another group in the same section (one course can't fold into two lines, e.g. LPPS
+`COMM 120`). 77/80 folded. Re-run the parser after editing the overlay.
+
 ## The auto-match rule (safe-by-construction)
 
 Pre-fill a slot **only** on an exact C-ID match (the slot's `cid` or any of its

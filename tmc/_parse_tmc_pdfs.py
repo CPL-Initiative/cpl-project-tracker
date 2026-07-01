@@ -31,6 +31,7 @@ from datetime import datetime, timezone
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PDFDIR = os.path.join(ROOT, "tmc", "source_pdfs")
 OUT = os.path.join(ROOT, "tmc_templates.js")
+OR_GROUPS_PATH = os.path.join(ROOT, "tmc", "tmc_or_groups.json")
 DESC = json.load(open(os.path.join(ROOT, "kb/reference/cid_descriptors.json")))["descriptors"]
 CIDS = {re.sub(r"\s+", " ", d["descriptor"].strip().upper()) for d in DESC}
 TITLE = {re.sub(r"\s+", " ", d["descriptor"].strip().upper()): d.get("title", "").strip() for d in DESC}
@@ -286,12 +287,112 @@ def parse(path):
             sections.append(sec)
     return degree, total, version, sections
 
+# --- OR-alternative folding (Session 90) --------------------------------------
+# The ASCCC PDFs express "Course X OR Course Y [OR Z]" (pick one) as a multi-column
+# layout that fitz's text extraction scrambles, so parse_body() can't recover the
+# OR grouping from the token stream (it emits every alternative as an independent
+# slot). tmc/tmc_or_groups.json is a curated overlay (extracted by a per-template
+# VISUAL PDF read + adversarial verification) listing, per (tmc, section), the
+# C-IDs that satisfy ONE requirement line. We FOLD each group into a single slot:
+# the first member that is an existing parsed slot becomes the slot's cid, the rest
+# become its alts[] (which the Builder already renders "X or Y" and auto-matches
+# against). Groups with no existing-slot anchor, or that overlap another group on a
+# shared member, are recorded but NOT folded (they'd need a manual slot-add /
+# disambiguation) — see the apply report.
+def _ns(c):
+    return re.sub(r"\s+", "", str(c or "")).upper()
+
+
+def load_or_groups():
+    if not os.path.exists(OR_GROUPS_PATH):
+        print(f"  (no {os.path.relpath(OR_GROUPS_PATH, ROOT)}; skipping OR-fold)")
+        return {}
+    data = json.load(open(OR_GROUPS_PATH, encoding="utf-8"))
+    by_tmc = {}
+    for g in data.get("groups", []):
+        by_tmc.setdefault(g["tmc"], []).append(g)
+    return by_tmc
+
+
+def apply_or_groups(tid, sections, groups, report):
+    """Fold this template's OR-groups into single slots (with alts[]). Mutates
+    `sections`; appends to report['applied'] / report['skipped'].
+
+    Each group is resolved to the section that actually CONTAINS an anchor (a
+    member that is an existing slot) — robust to a template carrying two sections
+    with the same name (e.g. African American Studies' two 'Required Core's).
+    Overlap is judged per resolved section object, not per name."""
+    from collections import defaultdict
+
+    def slot_ns_map(sec):
+        m = {}
+        for sl in sec["slots"]:
+            if sl.get("cid"):
+                m.setdefault(_ns(sl["cid"]), sl)
+        return m
+
+    # 1) resolve each group to (section, anchor_ns) or record a skip
+    resolved = []
+    for g in groups:
+        cands = [s for s in sections if s["name"].lower() == g["section"].lower()]
+        target, anchor_ns = None, None
+        for sec in cands:
+            sm = slot_ns_map(sec)
+            a = next((_ns(c) for c in g["cids"] if _ns(c) in sm), None)
+            if a is not None:
+                target, anchor_ns = sec, a
+                break
+        if target is None:
+            report["skipped"].append({
+                "tmc": tid, "section": g["section"], "cids": g["cids"],
+                "reason": "section-not-found" if not cands else "no-existing-slot-anchor"})
+        else:
+            resolved.append((g, target, anchor_ns))
+
+    # 2) a member cid appearing in >1 group of the SAME resolved section can't fold
+    sec_member_count = defaultdict(lambda: defaultdict(int))
+    for g, sec, _a in resolved:
+        for c in g["cids"]:
+            sec_member_count[id(sec)][_ns(c)] += 1
+
+    # 3) fold
+    for g, sec, anchor_ns in resolved:
+        cids = g["cids"]
+        if any(sec_member_count[id(sec)][_ns(c)] > 1 for c in cids):
+            report["skipped"].append({"tmc": tid, "section": g["section"],
+                                      "cids": cids, "reason": "member-overlap-in-section"})
+            continue
+        sm = slot_ns_map(sec)  # recompute — a prior fold may have removed slots
+        anchor = sm.get(anchor_ns)
+        if anchor is None:
+            report["skipped"].append({"tmc": tid, "section": g["section"],
+                                      "cids": cids, "reason": "anchor-consumed"})
+            continue
+        # alts = every other member (existing-slot + missing-descriptor), merged
+        # with any alts already on the anchor; dedup, drop self
+        merged = []
+        for a in (anchor.get("alts", []) + [c for c in cids if _ns(c) != anchor_ns]):
+            if a and _ns(a) != anchor_ns and a not in merged:
+                merged.append(a)
+        if merged:
+            anchor["alts"] = merged
+        member_ns = {_ns(c) for c in cids if _ns(c) != anchor_ns}
+        sec["slots"] = [sl for sl in sec["slots"]
+                        if sl is anchor or not (sl.get("cid") and _ns(sl["cid"]) in member_ns)]
+        report["applied"].append({"tmc": tid, "section": g["section"],
+                                  "cid": anchor["cid"], "alts": anchor.get("alts", [])})
+
+
 def main():
     templates = []
     rpt = []
+    or_groups = load_or_groups()
+    or_report = {"applied": [], "skipped": []}
     for fn, tid, disc in CATALOG:
         p = os.path.join(PDFDIR, fn)
         degree, total, version, sections = parse(p)
+        if tid in or_groups:
+            apply_or_groups(tid, sections, or_groups[tid], or_report)
         ncid = sum(1 for s in sections for x in s["slots"] if x.get("cid"))
         unv = sum(1 for s in sections for x in s["slots"] if x.get("cid_unverified"))
         flex = sum(1 for s in sections for x in s["slots"] if x.get("flexible"))
@@ -326,6 +427,15 @@ def main():
                      "(no substitution latitude, e.g. ECE) | 'flexible' (has select-N lists or "
                      "flexible slots)."),
             "sources": SOURCES,
+            "or_groups": {
+                "source": "tmc/tmc_or_groups.json",
+                "note": ("Intra-line 'Course X OR Y' alternatives folded into a single slot "
+                         "with alts[] (the Builder renders 'X or Y' + auto-matches any). "
+                         "skipped[] = groups not foldable (no existing-slot anchor / member "
+                         "overlap) — need a manual slot-add or disambiguation."),
+                "applied": len(or_report["applied"]),
+                "skipped": or_report["skipped"],
+            },
         },
         "templates": templates,
     }
@@ -339,8 +449,13 @@ def main():
 
     drafted = sum(1 for r in rpt if r[8] == "draft")
     nfixed = sum(1 for r in rpt if r[7] == "fixed")
+    n_alts = sum(1 for t in templates for s in t.get("sections", []) for x in s["slots"] if x.get("alts"))
     print(f"wrote {OUT}: {len(templates)} TMCs ({drafted} draft, {len(templates)-drafted} planned); "
           f"{nfixed} fixed / {len(templates)-nfixed} flexible")
+    print(f"OR-fold: {len(or_report['applied'])} groups folded → {n_alts} slots now carry alts; "
+          f"{len(or_report['skipped'])} skipped")
+    for s in or_report["skipped"]:
+        print(f"    skip {s['tmc']} / {s['section']} {s['cids']} — {s['reason']}")
     print("%-42s %-5s %-7s sec cid unv flx flexibility" % ("DISCIPLINE", "DEG", "TOTAL"))
     for disc, deg, tot, ns, nc, uv, fx, flb, st in rpt:
         print("%-42s %-5s %-7s %3d %3d %3d %3d %-8s %s" % (disc[:42], deg, tot, ns, nc, uv, fx, flb, st))

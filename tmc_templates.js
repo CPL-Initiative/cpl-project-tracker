@@ -4,7 +4,7 @@
 window.CPL_TMC_TEMPLATES = {
  "_meta": {
   "draft": true,
-  "generated": "2026-06-20",
+  "generated": "2026-07-01",
   "generated_by": "tmc/_parse_tmc_pdfs.py (from tmc/source_pdfs/*.pdf)",
   "source": "Official ASCCC C-ID Transfer Model Curriculum PDFs (c-idsystem.org/transfer-efforts)",
   "note": "Per-TMC status: 'official' (faculty-verified) / 'draft' (parsed from the official template, faculty-verify) / 'planned' (catalog only). Slots with cid_unverified:true carry a C-ID not in our descriptor extract — a discrepancy signal that C-ID (or our reference) may need updating. Titles for verified C-IDs come from kb/reference/cid_descriptors.json. Per-slot flexible:true marks a FLEXIBLE proviso ('any articulated major-prep / CSU-transferable course') that accepts any qualifying course + ASSIST evidence (acceptance-engine tier 2; see docs/kb-notes/reference-adt-acceptance-rules.md). Per-TMC flexibility:'fixed' (no substitution latitude, e.g. ECE) | 'flexible' (has select-N lists or flexible slots).",
@@ -54,6 +54,44 @@ window.CPL_TMC_TEMPLATES = {
    "spanish": "https://c-idsystem.org/wp-content/uploads/2025/06/2023_Nov_Spanish_TMC_r.pdf",
    "studio-art": "https://c-idsystem.org/wp-content/uploads/2025/06/2023_Nov_Studio_Art_TMC_r.pdf",
    "theatre-arts": "https://c-idsystem.org/wp-content/uploads/2025/06/2023_Nov_Theatre_Arts_TMC_r.pdf"
+  },
+  "or_groups": {
+   "source": "tmc/tmc_or_groups.json",
+   "note": "Intra-line 'Course X OR Y' alternatives folded into a single slot with alts[] (the Builder renders 'X or Y' + auto-matches any). skipped[] = groups not foldable (no existing-slot anchor / member overlap) — need a manual slot-add or disambiguation.",
+   "applied": 77,
+   "skipped": [
+    {
+     "tmc": "law-public-policy-and-society",
+     "section": "Required Core",
+     "cids": [
+      "COMM 110",
+      "COMM 120",
+      "COMM 140"
+     ],
+     "reason": "member-overlap-in-section"
+    },
+    {
+     "tmc": "law-public-policy-and-society",
+     "section": "Required Core",
+     "cids": [
+      "COMM 120",
+      "COMM 190",
+      "ENGL 105",
+      "PHIL 110"
+     ],
+     "reason": "member-overlap-in-section"
+    },
+    {
+     "tmc": "studio-art",
+     "section": "List B",
+     "cids": [
+      "ARTS 280",
+      "ARTS 281",
+      "ARTS 282"
+     ],
+     "reason": "no-existing-slot-anchor"
+    }
+   ]
   }
  },
  "templates": [
@@ -136,12 +174,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "SOCI 125",
        "title": "Introduction to Statistics in Sociology",
-       "units": "3"
-      },
-      {
-       "cid": "MATH 110",
-       "title": "Introduction to Statistics",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "MATH 110"
+       ]
       },
       {
        "title": "See examples below",
@@ -191,12 +227,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "African American History of the U.S. to Reconstruction",
        "units": "3",
-       "cid": "AFS 140"
-      },
-      {
-       "title": "African American History of the U.S. since Reconstruction",
-       "units": "3",
-       "cid": "AFS 141"
+       "cid": "AFS 140",
+       "alts": [
+        "AFS 141"
+       ]
       }
      ],
      "units": "6"
@@ -261,22 +295,18 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "CHEM 110",
        "title": "General Chemistry for Science Majors I, with Lab",
-       "units": "5"
-      },
-      {
-       "cid": "CHEM 101",
-       "title": "Introduction to Chemistry",
-       "units": "4"
+       "units": "5",
+       "alts": [
+        "CHEM 101"
+       ]
       },
       {
        "cid": "AG-AB 124",
        "title": "Agriculture Economics",
-       "units": "3"
-      },
-      {
-       "cid": "ECON 201",
-       "title": "Principles of Microeconomics",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "ECON 201"
+       ]
       },
       {
        "cid": "AG-AS 104",
@@ -380,17 +410,11 @@ window.CPL_TMC_TEMPLATES = {
        "cid": "AG-PS 128L",
        "title": "Introduction to Soil Science",
        "cid_unverified": true,
-       "units": "3"
-      },
-      {
-       "cid": "CHEM 101",
-       "title": "Introduction to Chemistry",
-       "units": "4"
-      },
-      {
-       "cid": "CHEM 110",
-       "title": "General Chemistry for Science Majors I, with Lab",
-       "units": "5"
+       "units": "3",
+       "alts": [
+        "CHEM 101",
+        "CHEM 110"
+       ]
       },
       {
        "cid": "AG-AB 124",
@@ -428,19 +452,11 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "AG-AS 104",
        "title": "Introduction to Animal Science",
-       "units": "3"
-      },
-      {
-       "cid": "AG-PS 104",
-       "title": "Introduction to Plant Science",
-       "cid_unverified": true,
-       "units": "3"
-      },
-      {
-       "cid": "AG-PS 106",
-       "title": "Introduction to Plant Science with Lab",
-       "cid_unverified": true,
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "AG-PS 104",
+        "AG-PS 106"
+       ]
       },
       {
        "cid": "AG-AB 128",
@@ -497,22 +513,18 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "CHEM 101",
        "title": "Introduction to Chemistry",
-       "units": "4"
-      },
-      {
-       "cid": "CHEM 110",
-       "title": "General Chemistry for Science Majors I, with Lab",
-       "units": "5"
+       "units": "4",
+       "alts": [
+        "CHEM 110"
+       ]
       },
       {
        "cid": "AG-AB 124",
        "title": "Agriculture Economics",
-       "units": "3"
-      },
-      {
-       "cid": "ECON 201",
-       "title": "Principles of Microeconomics",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "ECON 201"
+       ]
       },
       {
        "cid": "MATH 110",
@@ -523,13 +535,10 @@ window.CPL_TMC_TEMPLATES = {
        "cid": "AG-PS 104",
        "title": "Introduction to Plant Sciences",
        "cid_unverified": true,
-       "units": "3"
-      },
-      {
-       "cid": "AG-PS 106L",
-       "title": "Introduction to Plant Sciences with Lab",
-       "cid_unverified": true,
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "AG-PS 106L"
+       ]
       }
      ],
      "units": "16-17"
@@ -680,12 +689,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "MATH 110",
        "title": "Introduction to Statistics",
-       "units": "3"
-      },
-      {
-       "cid": "SOCI 125",
-       "title": "Introduction to Statistics in Sociology",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "SOCI 125"
+       ]
       }
      ],
      "units": "3"
@@ -812,12 +819,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "ARTH 110",
        "title": "Survey of Western Art from Prehistory through the Middle Ages",
-       "units": "3"
-      },
-      {
-       "cid": "ARTH 120",
-       "title": "Survey of Western Art from Renaissance to Contemporary",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "ARTH 120"
+       ]
       },
       {
        "title": "Any CSU transferable non-western art history course",
@@ -1085,12 +1090,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "MATH 210",
        "title": "Single Variable Calculus I Early Transcendentals",
-       "units": "4"
-      },
-      {
-       "cid": "MATH 211",
-       "title": "Single Variable Calculus I Late Transcendentals",
-       "units": "4"
+       "units": "4",
+       "alts": [
+        "MATH 211"
+       ]
       },
       {
        "title": "Calculus for Life and Social Sciences",
@@ -1140,22 +1143,18 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "BUS 125",
        "title": "Business Law",
-       "units": "3"
-      },
-      {
-       "cid": "BUS 120",
-       "title": "Legal Environment of Business",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "BUS 120"
+       ]
       },
       {
        "cid": "MATH 130",
        "title": "Finite Mathematics",
-       "units": "3"
-      },
-      {
-       "cid": "MATH 140",
-       "title": "Business Calculus",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "MATH 140"
+       ]
       },
       {
        "title": "math course (excluding Statistics) articulated for the Business major at a CSU campus",
@@ -1181,12 +1180,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "BUS 110",
        "title": "Introduction to Business",
-       "units": "3"
-      },
-      {
-       "cid": "BUS 115",
-       "title": "Business Communication",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "BUS 115"
+       ]
       }
      ],
      "units": "24"
@@ -1229,27 +1226,13 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "MATH 210",
        "title": "Single Variable Calculus I Early Transcendentals",
-       "units": "4"
-      },
-      {
-       "cid": "MATH 220",
-       "title": "Single Variable Calculus II Early Transcendentals",
-       "units": "4"
-      },
-      {
-       "cid": "MATH 211",
-       "title": "Single Variable Calculus I Late Transcendentals",
-       "units": "4"
-      },
-      {
-       "cid": "MATH 221",
-       "title": "Single Variable Calculus II Late Transcendentals",
-       "units": "4"
-      },
-      {
-       "cid": "MATH 900 S",
-       "title": "Single Variable Calculus Sequence",
-       "units": "8"
+       "units": "4",
+       "alts": [
+        "MATH 220",
+        "MATH 211",
+        "MATH 221",
+        "MATH 900 S"
+       ]
       }
      ],
      "units": "36"
@@ -1359,12 +1342,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "MATH 110",
        "title": "Introduction to Statistics",
-       "units": "3"
-      },
-      {
-       "cid": "SOCI 125",
-       "title": "Introduction to Statistics in Sociology",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "SOCI 125"
+       ]
       },
       {
        "title": "Another CSU transferable statistics course that has been approved for Cal-GETC Area 2 and is articulated as major preparation for the Child Development major AAM and GECC",
@@ -1382,27 +1363,13 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "ANTH 120",
        "title": "Introduction to Cultural Anthropology",
-       "units": "3"
-      },
-      {
-       "cid": "SOCI 110",
-       "title": "Introduction to Sociology",
-       "units": "3"
-      },
-      {
-       "cid": "SOCI 150",
-       "title": "Introduction to Race and Ethnicity",
-       "units": "3"
-      },
-      {
-       "cid": "CDEV 110",
-       "title": "Child Family and Community",
-       "units": "3"
-      },
-      {
-       "cid": "SOCI 130",
-       "title": "Introduction to Marriage and Family",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "SOCI 110",
+        "SOCI 150",
+        "CDEV 110",
+        "SOCI 130"
+       ]
       },
       {
        "title": "Introduction to Biology",
@@ -1547,12 +1514,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "ENGL 120",
        "title": "Introduction to Literature",
-       "units": "3"
-      },
-      {
-       "cid": "ENGL 105",
-       "title": "Argumentative Writing and Critical Thinking",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "ENGL 105"
+       ]
       },
       {
        "cid": "JOUR 110",
@@ -1641,22 +1606,12 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "PHYS 210",
        "title": "Calculus-Based Physics for Scientists and Engineers: B",
-       "units": "4"
-      },
-      {
-       "cid": "BIOL 190",
-       "title": "Cell and Molecular Biology",
-       "units": "4"
-      },
-      {
-       "cid": "BIOL 140",
-       "title": "Organismal Biology",
-       "units": "4"
-      },
-      {
-       "cid": "CHEM 110",
-       "title": "General Chemistry for Science Majors I, with Lab",
-       "units": "5"
+       "units": "4",
+       "alts": [
+        "BIOL 190",
+        "BIOL 140",
+        "CHEM 110"
+       ]
       }
      ],
      "units": "28"
@@ -1758,22 +1713,12 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "MATH 140",
        "title": "Business Calculus",
-       "units": "3"
-      },
-      {
-       "cid": "MATH 210",
-       "title": "Single Variable Calculus I Early Transcendentals",
-       "units": "4"
-      },
-      {
-       "title": "Single Variable Calculus I Late Transcendentals",
-       "units": "4",
-       "cid": "MATH 211"
-      },
-      {
-       "cid": "MATH 900 S",
-       "title": "Single Variable Calculus Sequence",
-       "units": "8"
+       "units": "3",
+       "alts": [
+        "MATH 210",
+        "MATH 211",
+        "MATH 900 S"
+       ]
       }
      ],
      "units": "12-13"
@@ -1796,12 +1741,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "MATH 220",
        "title": "Single Variable Calculus II Early Transcendentals",
-       "units": "4"
-      },
-      {
-       "cid": "MATH 221",
-       "title": "Single Variable Calculus II Late Transcendentals",
-       "units": "4"
+       "units": "4",
+       "alts": [
+        "MATH 221"
+       ]
       },
       {
        "cid": "ACCT 110",
@@ -1919,17 +1862,11 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "HIST 150",
        "title": "World History to 1500",
-       "units": "3"
-      },
-      {
-       "cid": "ENGL 120",
-       "title": "Introduction to Literature",
-       "units": "3"
-      },
-      {
-       "cid": "ENGL 180",
-       "title": "Children’s Literature",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "ENGL 120",
+        "ENGL 180"
+       ]
       }
      ],
      "units": "25"
@@ -1966,7 +1903,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "PHYS 140",
        "title": "Survey of Chemistry and Physics",
-       "units": "4"
+       "units": "4",
+       "alts": [
+        "CHEM 140"
+       ]
       },
       {
        "title": "Intro to Chemistry",
@@ -2273,32 +2213,14 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "GEOL 100",
        "title": "Physical Geology",
-       "units": "3"
-      },
-      {
-       "cid": "GEOL 100 L",
-       "title": "Physical Geology Laboratory",
-       "units": "1"
-      },
-      {
-       "cid": "GEOL 101",
-       "title": "Physical Geology with Lab",
-       "units": "4"
-      },
-      {
-       "cid": "GEOG 110",
-       "title": "Introduction to Physical Geography",
-       "units": "3"
-      },
-      {
-       "cid": "GEOG 111",
-       "title": "Physical Geography, Laboratory",
-       "units": "1"
-      },
-      {
-       "cid": "GEOG 115",
-       "title": "Introduction to Physical Geography, with Lab",
-       "units": "4"
+       "units": "3",
+       "alts": [
+        "GEOL 100 L",
+        "GEOL 101",
+        "GEOG 110",
+        "GEOG 111",
+        "GEOG 115"
+       ]
       },
       {
        "cid": "MATH 110",
@@ -2308,17 +2230,11 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "MATH 210",
        "title": "Single Variable Calculus I Early Transcendentals",
-       "units": "4"
-      },
-      {
-       "cid": "MATH 211",
-       "title": "Single Variable Calculus I Late Transcendentals",
-       "units": "4"
-      },
-      {
-       "cid": "MATH 140",
-       "title": "Business Calculus",
-       "units": "3"
+       "units": "4",
+       "alts": [
+        "MATH 211",
+        "MATH 140"
+       ]
       },
       {
        "cid": "ECON 201",
@@ -2328,17 +2244,11 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "PHYS 100 S",
        "title": "Algebra/Trigonometry-Based Physics: AB",
-       "units": "8"
-      },
-      {
-       "cid": "PHYS 205",
-       "title": "Calculus-Based Physics for Scientists and Engineers: A",
-       "units": "4"
-      },
-      {
-       "cid": "PHYS 210",
-       "title": "Calculus-Based Physics for Scientists and Engineers: B",
-       "units": "4"
+       "units": "8",
+       "alts": [
+        "PHYS 205",
+        "PHYS 210"
+       ]
       }
      ],
      "units": "37-39"
@@ -2361,22 +2271,18 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "FTVE 100",
        "title": "Introduction to Electronic Media",
-       "units": "3"
-      },
-      {
-       "cid": "JOUR 100",
-       "title": "Introduction to Mass Communications",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "JOUR 100"
+       ]
       },
       {
        "cid": "FTVE 110",
        "title": "Introduction to Media Writing",
-       "units": "3"
-      },
-      {
-       "cid": "FTVE 115",
-       "title": "Introduction to Screenwriting",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "FTVE 115"
+       ]
       },
       {
        "cid": "FTVE 105",
@@ -2393,27 +2299,19 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "FTVE 120",
        "title": "Beginning Audio Production",
-       "units": "3"
-      },
-      {
-       "cid": "FTVE 125",
-       "title": "Beginning Radio & Podcasting Production",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "FTVE 125"
+       ]
       },
       {
        "cid": "FTVE 130",
        "title": "Beginning Single Camera Production",
-       "units": "3"
-      },
-      {
-       "cid": "FTVE 135",
-       "title": "Beginning TV Studio Production",
-       "units": "3"
-      },
-      {
-       "cid": "FTVE 150",
-       "title": "Beginning Motion Picture Production",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "FTVE 135",
+        "FTVE 150"
+       ]
       }
      ],
      "units": "6"
@@ -2493,27 +2391,19 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "GEOG 110",
        "title": "Introduction to Physical Geography",
-       "units": "3"
-      },
-      {
-       "cid": "GEOG 115",
-       "title": "Introduction to Physical Geography, with Lab",
-       "units": "4"
-      },
-      {
-       "cid": "GEOG 111",
-       "title": "Physical Geography, Laboratory",
-       "units": "1"
+       "units": "3",
+       "alts": [
+        "GEOG 115",
+        "GEOG 111"
+       ]
       },
       {
        "cid": "GEOG 120",
        "title": "Introduction to Human Geography",
-       "units": "3"
-      },
-      {
-       "cid": "GEOG 125",
-       "title": "World Regional Geography",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "GEOG 125"
+       ]
       }
      ],
      "units": "6-7"
@@ -2602,32 +2492,20 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "GEOL 101",
        "title": "Physical Geology with Lab",
-       "units": "4"
-      },
-      {
-       "cid": "GEOL 100",
-       "title": "Physical Geology",
-       "units": "3"
-      },
-      {
-       "cid": "GEOL 100 L",
-       "title": "Physical Geology Laboratory",
-       "units": "1"
+       "units": "4",
+       "alts": [
+        "GEOL 100",
+        "GEOL 100 L"
+       ]
       },
       {
        "cid": "GEOL 111",
        "title": "Historical Geology with Lab",
-       "units": "4"
-      },
-      {
-       "cid": "GEOL 110",
-       "title": "Historical Geology",
-       "units": "3"
-      },
-      {
-       "cid": "GEOL 110 L",
-       "title": "Historical Geology Laboratory",
-       "units": "1"
+       "units": "4",
+       "alts": [
+        "GEOL 110",
+        "GEOL 110 L"
+       ]
       },
       {
        "cid": "CHEM 120 S",
@@ -2637,27 +2515,13 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "MATH 210",
        "title": "Single Variable Calculus I Early Transcendentals",
-       "units": "4"
-      },
-      {
-       "cid": "MATH 220",
-       "title": "Single Variable Calculus II Early Transcendentals",
-       "units": "4"
-      },
-      {
-       "cid": "MATH 211",
-       "title": "Single Variable Calculus I Late Transcendentals",
-       "units": "4"
-      },
-      {
-       "cid": "MATH 221",
-       "title": "Single Variable Calculus II Late Transcendentals",
-       "units": "4"
-      },
-      {
-       "cid": "MATH 900 S",
-       "title": "Single Variable Calculus Sequence",
-       "units": "8"
+       "units": "4",
+       "alts": [
+        "MATH 220",
+        "MATH 211",
+        "MATH 221",
+        "MATH 900 S"
+       ]
       }
      ],
      "units": "26"
@@ -2822,22 +2686,18 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "HIST 150",
        "title": "World History to 1500",
-       "units": "3"
-      },
-      {
-       "cid": "HIST 170",
-       "title": "Western Civilization I",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "HIST 170"
+       ]
       },
       {
        "cid": "HIST 160",
        "title": "World History since 1500",
-       "units": "3"
-      },
-      {
-       "cid": "HIST 180",
-       "title": "Western Civilization II",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "HIST 180"
+       ]
       }
      ],
      "units": "6"
@@ -2849,12 +2709,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "HIST 150",
        "title": "World History to 1500",
-       "units": "3"
-      },
-      {
-       "cid": "HIST 160",
-       "title": "World History since 1500",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "HIST 160"
+       ]
       },
       {
        "title": "non-western history course (any history course not pertaining to the US or Europe) articulated as fulfilling Cal-GETC Area 3B or 4",
@@ -3080,12 +2938,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "MATH 110",
        "title": "Introduction to Statistics",
-       "units": "3"
-      },
-      {
-       "cid": "SOCI 125",
-       "title": "Introduction to Statistics in Sociology",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "SOCI 125"
+       ]
       },
       {
        "cid": "COMM 180",
@@ -3095,12 +2951,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "ECON 201",
        "title": "Principles of Microeconomics",
-       "units": "3"
-      },
-      {
-       "cid": "ECON 202",
-       "title": "Principles of Macroeconomics",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "ECON 202"
+       ]
       },
       {
        "cid": "POLS 110",
@@ -3120,12 +2974,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "PHIL 110",
        "title": "Introduction to Logic",
-       "units": "3"
-      },
-      {
-       "cid": "PHIL 210",
-       "title": "Symbolic Logic",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "PHIL 210"
+       ]
       },
       {
        "cid": "COMM 120",
@@ -3201,12 +3053,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "MATH 110",
        "title": "Introduction to Statistics",
-       "units": "3"
-      },
-      {
-       "cid": "SOCI 125",
-       "title": "Introduction to Statistics in Sociology",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "SOCI 125"
+       ]
       },
       {
        "cid": "CHEM 110",
@@ -3221,12 +3071,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "PHYS 105",
        "title": "Algebra/Trigonometry-Based Physics A",
-       "units": "4"
-      },
-      {
-       "cid": "PHYS 205",
-       "title": "Calculus-Based Physics for Scientists and Engineers: A",
-       "units": "4"
+       "units": "4",
+       "alts": [
+        "PHYS 205"
+       ]
       },
       {
        "cid": "KIN 101",
@@ -3236,12 +3084,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "PSY 110",
        "title": "Introductory Psychology",
-       "units": "3"
-      },
-      {
-       "cid": "SOCI 110",
-       "title": "Introduction to Sociology",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "SOCI 110"
+       ]
       },
       {
        "cid": "PH 100",
@@ -3269,42 +3115,22 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "LPPS 110",
        "title": "Introduction to Law and Society",
-       "units": "3"
-      },
-      {
-       "cid": "AJ 110",
-       "title": "Introduction to Criminal Justice",
-       "units": "3"
-      },
-      {
-       "cid": "AJ 120",
-       "title": "Concepts of Criminal Law",
-       "units": "3"
-      },
-      {
-       "cid": "AJ 122",
-       "title": "Criminal Court Process",
-       "units": "3"
-      },
-      {
-       "cid": "BUS 120",
-       "title": "Legal Environment of Business",
-       "units": "3"
-      },
-      {
-       "cid": "BUS 125",
-       "title": "Business Law",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "AJ 110",
+        "AJ 120",
+        "AJ 122",
+        "BUS 120",
+        "BUS 125"
+       ]
       },
       {
        "cid": "LPPS 120",
        "title": "Ethical Reasoning/Ethics in Practice",
-       "units": "3"
-      },
-      {
-       "cid": "PHIL 120",
-       "title": "Introduction to Ethics",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "PHIL 120"
+       ]
       },
       {
        "cid": "COMM 110",
@@ -3344,22 +3170,18 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "MATH 110",
        "title": "Introduction to Statistics",
-       "units": "3"
-      },
-      {
-       "cid": "SOCI 125",
-       "title": "Introduction to Statistics in Sociology",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "SOCI 125"
+       ]
       },
       {
        "cid": "HIST 130",
        "title": "United States History to 1877",
-       "units": "3"
-      },
-      {
-       "cid": "HIST 140",
-       "title": "United States History from 1865",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "HIST 140"
+       ]
       },
       {
        "cid": "POLS 110",
@@ -3563,27 +3385,13 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "MATH 900 S",
        "title": "Single Variable Calculus Sequence",
-       "units": "8"
-      },
-      {
-       "cid": "MATH 210",
-       "title": "Single Variable Calculus I Early Transcendentals",
-       "units": "4"
-      },
-      {
-       "title": "Single Variable Calculus II Early Transcendentals",
-       "units": "4",
-       "cid": "MATH 220"
-      },
-      {
-       "cid": "MATH 211",
-       "title": "Single Variable Calculus I Late Transcendentals",
-       "units": "4"
-      },
-      {
-       "cid": "MATH 221",
-       "title": "Single Variable Calculus II Late Transcendentals",
-       "units": "4"
+       "units": "8",
+       "alts": [
+        "MATH 210",
+        "MATH 220",
+        "MATH 211",
+        "MATH 221"
+       ]
       },
       {
        "cid": "MATH 230",
@@ -3593,17 +3401,11 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "MATH 240",
        "title": "Ordinary Differential Equations",
-       "units": "3"
-      },
-      {
-       "cid": "MATH 250",
-       "title": "Introduction to Linear Algebra",
-       "units": "3"
-      },
-      {
-       "cid": "MATH 910 S",
-       "title": "Differential Equations and Linear Algebra",
-       "units": "5"
+       "units": "3",
+       "alts": [
+        "MATH 250",
+        "MATH 910 S"
+       ]
       }
      ],
      "units": "17-18"
@@ -3685,7 +3487,10 @@ window.CPL_TMC_TEMPLATES = {
       },
       {
        "cid": "MUS 185",
-       "title": "Specialized Ensemble"
+       "title": "Specialized Ensemble",
+       "alts": [
+        "MUS 180"
+       ]
       }
      ],
      "units": "18-21"
@@ -3733,12 +3538,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "MUS 105",
        "title": "Music History I, Antiquity to 1750",
-       "units": "3"
-      },
-      {
-       "cid": "MUS 106",
-       "title": "Music History II, 1750-Present",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "MUS 106"
+       ]
       }
      ]
     }
@@ -3848,12 +3651,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "CHEM 110",
        "title": "General Chemistry for Science Majors I, with Lab",
-       "units": "5"
-      },
-      {
-       "cid": "CHEM 120 S",
-       "title": "General Chemistry for Science Majors Sequence A",
-       "units": "10"
+       "units": "5",
+       "alts": [
+        "CHEM 120 S"
+       ]
       },
       {
        "title": "Microbiology with Lab (See example)",
@@ -3895,13 +3696,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "MATH 110",
        "title": "Introduction to Statistics",
-       "units": "3"
-      },
-      {
-       "cid": "SOC 125",
-       "title": "Introduction to Statistics in Sociology",
-       "cid_unverified": true,
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "SOC 125"
+       ]
       }
      ],
      "units": "3-13"
@@ -3942,22 +3740,18 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "PHIL 210",
        "title": "Symbolic Logic",
-       "units": "3"
-      },
-      {
-       "cid": "PHIL 110",
-       "title": "Introduction to Logic",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "PHIL 110"
+       ]
       },
       {
        "cid": "PHIL 100",
        "title": "Introduction to Philosophy",
-       "units": "3"
-      },
-      {
-       "cid": "PHIL 120",
-       "title": "Introduction to Ethics",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "PHIL 120"
+       ]
       }
      ],
      "units": "2 courses, 6"
@@ -4054,11 +3848,12 @@ window.CPL_TMC_TEMPLATES = {
      "slots": [
       {
        "cid": "PHYS 200 S",
-       "title": "Calculus-Based Physics for Scientists and Engineers: ABC"
-      },
-      {
-       "cid": "PHYS 205",
-       "title": "Calculus-Based Physics for Scientists and Engineers: A"
+       "title": "Calculus-Based Physics for Scientists and Engineers: ABC",
+       "alts": [
+        "PHYS 205",
+        "PHYS 210",
+        "PHYS 215"
+       ]
       },
       {
        "title": "(5) 5A/C and Calculus-based Physics for Scientists and Engineers: B and PHYS",
@@ -4068,42 +3863,23 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "MATH 900 S",
        "title": "Single Variable Calculus Sequence",
-       "units": "8"
-      },
-      {
-       "cid": "MATH 230",
-       "title": "Multivariable Calculus",
-       "units": "4"
-      },
-      {
-       "cid": "MATH 210",
-       "title": "Single Variable Calculus I Early Transcendentals",
-       "units": "4"
-      },
-      {
-       "cid": "MATH 220",
-       "title": "Single Variable Calculus II Early Transcendentals",
-       "units": "4"
-      },
-      {
-       "cid": "MATH 211",
-       "title": "Single Variable Calculus I Late Transcendentals",
-       "units": "4"
-      },
-      {
-       "cid": "MATH 221",
-       "title": "Single Variable Calculus II Late Transcendentals",
-       "units": "4"
+       "units": "8",
+       "alts": [
+        "MATH 230",
+        "MATH 210",
+        "MATH 220",
+        "MATH 211",
+        "MATH 221"
+       ]
       },
       {
        "cid": "MATH 240",
        "title": "Ordinary Differential Equations",
-       "units": "3"
-      },
-      {
-       "cid": "MATH 250",
-       "title": "Introduction to Linear Algebra",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "MATH 250",
+        "MATH 910 S"
+       ]
       },
       {
        "title": "Differential Equations and Linear Algebra MATH 910-S",
@@ -4178,17 +3954,11 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "POLS 160",
        "title": "Introduction to Political Science Research Methods",
-       "units": "3"
-      },
-      {
-       "cid": "MATH 110",
-       "title": "Introduction to Statistics",
-       "units": "3"
-      },
-      {
-       "cid": "SOCI 125",
-       "title": "Introduction to Statistics in Sociology",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "MATH 110",
+        "SOCI 125"
+       ]
       },
       {
        "cid": "POLS 170",
@@ -4263,12 +4033,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "PSY 200",
        "title": "Introduction to Research Methods in Psychology",
-       "units": "3"
-      },
-      {
-       "cid": "PSY 205 B",
-       "title": "Introduction to Research Methods in Psychology (With Lab)",
-       "units": "4"
+       "units": "3",
+       "alts": [
+        "PSY 205 B"
+       ]
       }
      ],
      "units": "9-11"
@@ -4367,12 +4135,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "MATH 110",
        "title": "Introduction to Statistics",
-       "units": "3"
-      },
-      {
-       "cid": "PH 114",
-       "title": "Statistics for Public Health",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "PH 114"
+       ]
       },
       {
        "title": "Any statistics course articulated as Area 2",
@@ -4542,28 +4308,19 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "SJS 110",
        "title": "Introduction to Social Justice",
-       "units": "3"
-      },
-      {
-       "cid": "SOCI 150",
-       "title": "Introduction to Race and Ethnicity",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "SOCI 150"
+       ]
       },
       {
        "cid": "SJS 120",
        "title": "Introduction to Women’s Studies",
-       "units": "3"
-      },
-      {
-       "cid": "SJS 130",
-       "title": "Introduction to LGBTQ Studies",
-       "units": "3"
-      },
-      {
-       "cid": "SJS 140",
-       "title": "Introduction to Gender",
-       "cid_unverified": true,
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "SJS 130",
+        "SJS 140"
+       ]
       },
       {
        "title": "Any course listed above, not already used.",
@@ -4599,33 +4356,20 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "MATH 110",
        "title": "Introduction to Statistics",
-       "units": "3"
-      },
-      {
-       "cid": "SOCI 125",
-       "title": "Introduction to Statistics in Sociology",
-       "units": "3"
-      },
-      {
-       "cid": "POLS 160",
-       "title": "Introduction to Political Science Research Methods",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "SOCI 125",
+        "POLS 160"
+       ]
       },
       {
        "cid": "PSY 200",
        "title": "Introduction to Research Methods in Psychology",
-       "units": "3"
-      },
-      {
-       "cid": "PSYC 250B",
-       "title": "Introduction to Research Methods in Psychology with Lab",
-       "cid_unverified": true,
-       "units": "4"
-      },
-      {
-       "cid": "SOCI 120",
-       "title": "Introduction to Research Methods",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "PSYC 250B",
+        "SOCI 120"
+       ]
       },
       {
        "title": "Area 5 Courses with articulation as major preparation for a major the TMC is intended to serve.",
@@ -4676,27 +4420,19 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "MATH 110",
        "title": "Introduction to Statistics",
-       "units": "3"
-      },
-      {
-       "cid": "SOCI 125",
-       "title": "Introduction to Statistics in Sociology",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "SOCI 125"
+       ]
       },
       {
        "cid": "BIOL 110 B",
        "title": "Human Anatomy with Lab",
-       "units": "3"
-      },
-      {
-       "cid": "BIOL 120 B",
-       "title": "Human Physiology with Lab",
-       "units": "3"
-      },
-      {
-       "cid": "BIOL 115 S",
-       "title": "Human Anatomy and Physiology with Lab",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "BIOL 120 B",
+        "BIOL 115 S"
+       ]
       },
       {
        "title": "Human Biology",
@@ -4712,12 +4448,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "ECON 201",
        "title": "Principles of Microeconomics",
-       "units": "3"
-      },
-      {
-       "cid": "ECON 202",
-       "title": "Principles of Macroeconomics",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "ECON 202"
+       ]
       }
      ],
      "units": "21"
@@ -4841,12 +4575,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "SOCI 125",
        "title": "Introduction to Statistics in Sociology",
-       "units": "3"
-      },
-      {
-       "cid": "MATH 110",
-       "title": "Introduction to Statistics",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "MATH 110"
+       ]
       },
       {
        "title": "Behavioral and/or or Social Science Statistics",
@@ -4957,22 +4689,18 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "SPAN 200",
        "title": "Intermediate Spanish I",
-       "units": "4"
-      },
-      {
-       "cid": "SPAN 220",
-       "title": "Spanish for Heritage Speakers I",
-       "units": "4"
+       "units": "4",
+       "alts": [
+        "SPAN 220"
+       ]
       },
       {
        "cid": "SPAN 210",
        "title": "Intermediate Spanish II",
-       "units": "4"
-      },
-      {
-       "cid": "SPAN 230",
-       "title": "Spanish for Heritage Speakers II",
-       "units": "4"
+       "units": "4",
+       "alts": [
+        "SPAN 230"
+       ]
       }
      ],
      "units": "16"
@@ -5092,11 +4820,10 @@ window.CPL_TMC_TEMPLATES = {
      "slots": [
       {
        "cid": "ARTS 200",
-       "title": "Figure Drawing"
-      },
-      {
-       "cid": "ARTS 205",
-       "title": "Intermediate Drawing"
+       "title": "Figure Drawing",
+       "alts": [
+        "ARTS 205"
+       ]
       },
       {
        "cid": "ARTS 210",
@@ -5172,12 +4899,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "THTR 111",
        "title": "Introduction to Theatre",
-       "units": "3"
-      },
-      {
-       "cid": "THTR 113",
-       "title": "Theatre History 1",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "THTR 113"
+       ]
       },
       {
        "cid": "THTR 151",
@@ -5187,12 +4912,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "THTR 191",
        "title": "Rehearsal and Performance in Production",
-       "units": "3"
-      },
-      {
-       "cid": "THTR 192",
-       "title": "Technical Theatre in Production",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "THTR 192"
+       ]
       }
      ],
      "units": "9"
@@ -5239,12 +4962,10 @@ window.CPL_TMC_TEMPLATES = {
       {
        "cid": "THTR 191",
        "title": "Rehearsal and Performance in Production",
-       "units": "3"
-      },
-      {
-       "cid": "THTR 192",
-       "title": "Technical Theatre in Production",
-       "units": "3"
+       "units": "3",
+       "alts": [
+        "THTR 192"
+       ]
       }
      ],
      "units": "9"
