@@ -121,7 +121,183 @@
   var CONVO_MAX = 8;
 
   // ── Chat transcript helpers ──
-  var logEl, inputEl, sendBtn, statusEl;
+  var logEl, inputEl, sendBtn, statusEl, audEl;
+
+  // ── Audience (primary population) ──
+  // Required before the first question (Sam, 2026-07-01): the visitor picks who
+  // they are so Sierra tailors tone + content per audience — students shouldn't
+  // get system inside-baseball. Single-select, persisted per-browser and SHARED
+  // with the standalone sierra/ page (same origin, same localStorage key). Sent
+  // as an optional `audience` body field — the production map.rccd.edu widget
+  // omits it and is unaffected.
+  var AUDIENCES = [
+    { k: 'student',       label: '🎓 Student / future student' },
+    { k: 'faculty',       label: '📚 Faculty' },
+    { k: 'administrator', label: '🏛️ College administrator' },
+    { k: 'employer',      label: '💼 Employer / industry' },
+    { k: 'civic',         label: '🤝 Civic leader' },
+  ];
+  var AUD_KEY = 'cplSierraAudience.v1';
+  var audience = null;
+
+  function loadAudience() {
+    try {
+      var v = localStorage.getItem(AUD_KEY);
+      if (AUDIENCES.some(function (a) { return a.k === v; })) audience = v;
+    } catch (e) { /* keep in-memory only */ }
+  }
+  function setAudience(k) {
+    audience = k;
+    try { localStorage.setItem(AUD_KEY, k); } catch (e) { /* in-memory only */ }
+    renderAudience();
+  }
+  function renderAudience() {
+    if (!audEl) return;
+    audEl.textContent = '';
+    audEl.appendChild(el('span', { className: 'cplchat-aud-label' }, "I'm a…"));
+    AUDIENCES.forEach(function (a) {
+      audEl.appendChild(el('button', {
+        type: 'button',
+        className: 'cplchat-aud-chip' + (audience === a.k ? ' on' : ''),
+        'aria-pressed': audience === a.k ? 'true' : 'false',
+        onclick: function () { setAudience(a.k); setStatus(''); },
+      }, a.label));
+    });
+  }
+  function needAudience() {
+    setStatus('First, tap who you are above — it helps the assistant tailor the answer.', 'error');
+    if (!audEl) return;
+    audEl.classList.add('need');
+    setTimeout(function () { audEl.classList.remove('need'); }, 1700);
+  }
+
+  // ── Per-answer feedback (👍/👎 + optional note → Supabase sierra_feedback) ──
+  // One row per assistant turn, keyed by a client uuid: a thumb click logs
+  // immediately and an added note / switched rating updates the SAME row.
+  // Writes go through the SECURITY DEFINER RPC `sierra_feedback_upsert` — a
+  // direct PostgREST upsert (ON CONFLICT) needs SELECT visibility of the
+  // conflicting row, which this table deliberately denies to anon (write-only
+  // for the public; the team reads it via the reviewer/team-phrase gate).
+  // Mirrors sierra/sierra.js.
+  function newTurnId() {
+    return (window.crypto && crypto.randomUUID) ? crypto.randomUUID()
+      : 'turn-' + Date.now() + '-' + Math.random().toString(16).slice(2);
+  }
+  function feedbackPayload(o) {
+    return {
+      p_turn_id: o.turnId,
+      p_rating: o.rating,
+      p_session_id: o.sessionId || null,
+      p_page: o.page || 'cobi-tab',
+      p_audience: o.audience || null,
+      p_question: String(o.question || '').slice(0, 4000),
+      p_response: String(o.response || '').slice(0, 12000),
+      p_note: o.note ? String(o.note).slice(0, 2000) : null,
+    };
+  }
+  function sendFeedback(payload) {
+    try {
+      return fetch(SUPABASE_URL + '/rest/v1/rpc/sierra_feedback_upsert', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_ANON,
+          'Authorization': 'Bearer ' + SUPABASE_ANON,
+        },
+        body: JSON.stringify(payload),
+      }).catch(function () { /* feedback is best-effort */ });
+    } catch (e) { return Promise.resolve(); }
+  }
+  function addFeedbackBar(afterRow, question, answer) {
+    var tid = newTurnId();
+    var rating = null;
+
+    var hint = el('span', null, 'Rate this answer:');
+    var noteIn = el('input', {
+      type: 'text', maxlength: '2000',
+      placeholder: 'Optional note for the CPL team — what was right or missing? (no personal info)',
+      'aria-label': 'Optional feedback note',
+    });
+    var noteBtn = el('button', { type: 'button' }, 'Send note');
+    var noteWrap = el('div', { className: 'cplchat-fb-note' }, [noteIn, noteBtn]);
+    noteWrap.hidden = true;
+
+    function upsert(note) {
+      return sendFeedback(feedbackPayload({
+        turnId: tid, sessionId: sessionId(), page: 'cobi-tab', audience: audience,
+        question: question, response: answer, rating: rating, note: note,
+      }));
+    }
+
+    var btns = {};
+    var bar = el('div', { className: 'cplchat-fb' }, [hint]);
+    [['up', '👍', 'This answer was helpful'], ['down', '👎', 'This answer was not helpful']]
+      .forEach(function (spec) {
+        var b = el('button', {
+          type: 'button', className: 'cplchat-fb-btn', 'aria-label': spec[2],
+          onclick: function () {
+            rating = spec[0];
+            btns.up.classList.toggle('on', rating === 'up');
+            btns.down.classList.toggle('on', rating === 'down');
+            hint.textContent = '✓ Thanks — logged.';
+            noteWrap.hidden = false;
+            upsert(noteIn.value.trim() || null);
+          },
+        }, spec[1]);
+        btns[spec[0]] = b;
+        bar.appendChild(b);
+      });
+
+    noteBtn.addEventListener('click', function () {
+      var n = noteIn.value.trim();
+      if (!n || !rating) return;
+      noteBtn.disabled = true;
+      upsert(n);
+      noteWrap.hidden = true;
+      hint.textContent = '✓ Note sent — thank you!';
+      hint.className = 'cplchat-fb-done';
+    });
+    noteIn.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { e.preventDefault(); noteBtn.click(); }
+    });
+
+    bar.appendChild(noteWrap);
+    if (afterRow && afterRow.parentNode) {
+      afterRow.parentNode.insertBefore(bar, afterRow.nextSibling);
+    } else {
+      logEl.appendChild(bar);
+    }
+    scrollDown();
+  }
+
+  // New-class CSS injected from the JS (covers BOTH HTMLs without a Rule-4
+  // mirror — the CER ensureCerScopeCss() pattern). The pre-existing cplchat-*
+  // styles stay in the HTML <style> blocks; only the audience + feedback
+  // additions live here.
+  function ensureChatCss() {
+    if (document.getElementById('cplchat-aud-css')) return;
+    var css = [
+      '.cplchat-audience { display:flex; flex-wrap:wrap; align-items:center; gap:7px; margin:8px 0 2px; padding:8px 11px; background:var(--surface-subtle, #f2f6fb); border:1px solid var(--border, #d8dde6); border-radius:10px; }',
+      '.cplchat-aud-label { font-size:.82rem; font-weight:600; color:var(--text-muted, #5a6478); margin-right:2px; }',
+      '.cplchat-aud-chip { border:1px solid var(--border-strong, #cdd6e3); background:var(--surface-opaque, #fff); color:var(--text-body, #1c2433); border-radius:999px; padding:6px 12px; font-size:.82rem; font-weight:600; cursor:pointer; }',
+      '.cplchat-aud-chip:hover { border-color:var(--cobalt, #0047AB); }',
+      '.cplchat-aud-chip.on { background:var(--seal-blue, #002F6D); border-color:var(--seal-blue, #002F6D); color:#fff; }',
+      '.cplchat-audience.need { outline:2px solid var(--crimson, #920000); }',
+      '.cplchat-fb { display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:2px 0 8px 38px; font-size:.78rem; color:var(--text-faint, #8a94a6); }',
+      '.cplchat-fb-btn { border:1px solid var(--border, #d8dde6); background:var(--surface-opaque, #fff); border-radius:999px; padding:2px 9px; cursor:pointer; font-size:.85rem; line-height:1.4; opacity:.75; }',
+      '.cplchat-fb-btn:hover { opacity:1; border-color:var(--cobalt, #0047AB); }',
+      '.cplchat-fb-btn.on { opacity:1; background:var(--surface-subtle, #eef3fa); border-color:var(--cobalt, #0047AB); }',
+      '.cplchat-fb-note { display:flex; flex:1 1 100%; gap:6px; margin-top:4px; }',
+      '.cplchat-fb-note input { flex:1; border:1px solid var(--border-strong, #cdd6e3); border-radius:8px; padding:6px 10px; font-size:.82rem; background:var(--surface-opaque, #fff); color:var(--text-body, #1c2433); }',
+      '.cplchat-fb-note button { border:none; border-radius:8px; padding:6px 12px; cursor:pointer; background:var(--cobalt, #0047AB); color:#fff; font-size:.8rem; font-weight:600; }',
+      '.cplchat-fb-note button:disabled { opacity:.6; cursor:default; }',
+      '.cplchat-fb-done { color:var(--text-muted, #5a6478); font-weight:600; }',
+    ].join('\n');
+    var st = document.createElement('style');
+    st.id = 'cplchat-aud-css';
+    st.textContent = css;
+    document.head.appendChild(st);
+  }
 
   function scrollDown() {
     if (logEl) requestAnimationFrame(function () { logEl.scrollTop = logEl.scrollHeight; });
@@ -132,14 +308,15 @@
     logEl.appendChild(row);
     scrollDown();
   }
-  // Returns the bubble node so the streamer can append to it as deltas arrive.
+  // Returns the row + bubble; the streamer appends deltas to the bubble and the
+  // feedback bar anchors after the row.
   function addAssistantMsg() {
     var bubble = el('div', { className: 'cplchat-bubble' });
     var row = el('div', { className: 'cplchat-msg cplchat-bot' },
       [el('div', { className: 'cplchat-avatar', 'aria-hidden': 'true' }, '🎓'), bubble]);
     logEl.appendChild(row);
     scrollDown();
-    return bubble;
+    return { row: row, bubble: bubble };
   }
   function setStatus(text, kind) {
     if (!statusEl) return;
@@ -149,7 +326,8 @@
 
   // ── Call the Edge Function + stream the SSE response ──
   async function ask(query) {
-    var bubble = addAssistantMsg();
+    var msg = addAssistantMsg();
+    var bubble = msg.bubble;
     bubble.innerHTML = '<span class="cplchat-typing">●●●</span>';
     var full = '';
 
@@ -164,7 +342,10 @@
         },
         // Send the PRIOR turns; the function appends this query as the final
         // user turn. The empty [] on turn 1 still opts us into multi-turn mode.
-        body: JSON.stringify({ query: query, session_id: sessionId(), history: convo.slice() }),
+        body: JSON.stringify({
+          query: query, session_id: sessionId(), history: convo.slice(),
+          audience: audience,
+        }),
       });
     } catch (e) {
       bubble.innerHTML = renderMarkdown('Sorry — I couldn\'t reach the assistant. Please check your connection and try again.');
@@ -224,6 +405,7 @@
     // Record this completed turn so the next request carries the back-and-forth.
     convo.push({ role: 'user', content: query }, { role: 'assistant', content: full });
     if (convo.length > CONVO_MAX) convo = convo.slice(-CONVO_MAX);
+    addFeedbackBar(msg.row, query, full);
   }
 
   // Parse one SSE event block ("event: <name>\ndata: <json>")
@@ -243,6 +425,7 @@
     if (busy) return;
     var q = (inputEl.value || '').trim();
     if (!q) { inputEl.focus(); return; }
+    if (!audience) { needAudience(); return; }
     busy = true;
     sendBtn.disabled = true; inputEl.disabled = true;
     addUserMsg(q);
@@ -264,6 +447,7 @@
 
   // ── Build the panel ──
   function build(mount) {
+    ensureChatCss();
     var wrap = el('div', { className: 'cplchat' });
 
     wrap.appendChild(el('div', { className: 'cplchat-intro' }, [
@@ -277,6 +461,14 @@
         '🧪 Beta — in development. Please don\'t enter personal information; ' +
         'questions are logged to improve answers.'),
     ]));
+
+    audEl = el('div', {
+      className: 'cplchat-audience', id: 'cplchat-audience', role: 'radiogroup',
+      'aria-label': 'Tell the assistant who you are so answers fit your needs',
+    });
+    loadAudience();
+    renderAudience();
+    wrap.appendChild(audEl);
 
     logEl = el('div', { className: 'cplchat-log', id: 'cplchat-log', 'aria-live': 'polite' });
 
@@ -322,4 +514,9 @@
   } else {
     mount();
   }
+
+  // Pure helpers exposed for the jsdom test (tests/cpl_chat_audience.test.js).
+  window.CPL_CHAT = {
+    AUDIENCES: AUDIENCES, AUD_KEY: AUD_KEY, feedbackPayload: feedbackPayload,
+  };
 })();

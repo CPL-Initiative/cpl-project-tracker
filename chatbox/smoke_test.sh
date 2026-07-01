@@ -153,6 +153,58 @@ run "9 offerings multi-cert (El Camino not truncated)" \
 answer_must_match -i "El Camino" "9 El Camino surfaced"
 answer_must_not_match -i "El Camino.{0,40}(not listed|does not teach|doesn.t teach|not.{0,10}teaching)" "9 El Camino not falsely dismissed"
 
+# AUDIENCE-aware voice (v22): the pages send the visitor's self-selected primary
+# population as `audience`. Assert the student mode runs + stays on-topic (a
+# stochastic model can't be robustly asserted jargon-free — the tone rule is
+# reviewed by eye in the log), and that an unknown key is ignored, not a 500.
+run "10 audience student (EMT)" \
+  '{"query":"I have an EMT certification. Can I get college credit for it?","session_id":"smoke-ci","history":[],"audience":"student"}'
+answer_must_match -i "emt|emergency|credit" "10 on-topic"
+
+run "11 audience unknown key (ignored, not an error)" \
+  '{"query":"What is Credit for Prior Learning?","session_id":"smoke-ci","audience":"martian"}'
+
+# sierra_feedback anon write path — the exact call the pages' 👍/👎 performs:
+# the SECURITY DEFINER RPC sierra_feedback_upsert (a direct PostgREST upsert
+# would 401 — ON CONFLICT needs SELECT visibility, which anon deliberately
+# lacks; found the hard way on the first run of this mode). Second call on the
+# same turn_id carries the note and updates the SAME row.
+echo "===================================================================="
+echo "MODE: 12 sierra_feedback anon upsert (RPC)"
+REST_BASE="${URL%/functions/v1/cpl-chat}/rest/v1"
+TID="smoke-$(date +%s)-$RANDOM"
+code=$(curl -sS -o /tmp/fb_out.txt -w '%{http_code}' -X POST "$REST_BASE/rpc/sierra_feedback_upsert" \
+  -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
+  -d "{\"p_turn_id\":\"$TID\",\"p_rating\":\"up\",\"p_session_id\":\"smoke-ci\",\"p_page\":\"smoke\",\"p_audience\":\"student\",\"p_question\":\"q\",\"p_response\":\"a\"}")
+case "$code" in
+  200|201|204) echo "  [assert ok] anon rating upsert via RPC ($code)" ;;
+  *) echo "::error::sierra_feedback_upsert returned $code: $(cat /tmp/fb_out.txt)"; fail=1 ;;
+esac
+code=$(curl -sS -o /tmp/fb_out2.txt -w '%{http_code}' -X POST "$REST_BASE/rpc/sierra_feedback_upsert" \
+  -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
+  -d "{\"p_turn_id\":\"$TID\",\"p_rating\":\"down\",\"p_session_id\":\"smoke-ci\",\"p_page\":\"smoke\",\"p_audience\":\"student\",\"p_question\":\"q\",\"p_response\":\"a\",\"p_note\":\"smoke note\"}")
+case "$code" in
+  200|201|204) echo "  [assert ok] anon note upsert on same turn_id ($code)" ;;
+  *) echo "::error::sierra_feedback_upsert note call returned $code: $(cat /tmp/fb_out2.txt)"; fail=1 ;;
+esac
+# a bad rating must be REJECTED by the RPC's validation
+code=$(curl -sS -o /dev/null -w '%{http_code}' -X POST "$REST_BASE/rpc/sierra_feedback_upsert" \
+  -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
+  -d "{\"p_turn_id\":\"$TID-bad\",\"p_rating\":\"meh\"}")
+case "$code" in
+  2*) echo "::error::invalid rating was accepted ($code)"; fail=1 ;;
+  *) echo "  [assert ok] invalid rating rejected ($code)" ;;
+esac
+# anon SELECT must come back EMPTY (reviewer/team-phrase gate) — not an error.
+sel=$(curl -sS "$REST_BASE/sierra_feedback?turn_id=eq.$TID" \
+  -H "apikey: $ANON" -H "Authorization: Bearer $ANON")
+if [ "$sel" = "[]" ]; then
+  echo "  [assert ok] anon select returns [] (write-only for the public)"
+else
+  echo "::error::anon select unexpectedly returned: $sel"; fail=1
+fi
+echo
+
 if [ "$fail" -ne 0 ]; then
   echo "SMOKE TEST FAILED"
   exit 1

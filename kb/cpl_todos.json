@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-01 · Session 92 (StarFab) · TMC Builder: every c-id.net approval lands + THE CONFIDENCE ENGINE IS LIVE (verdict tiers, submit gates, CO review queue with Approve/Return)",
+ "_as_of": "2026-07-01 · Session 92 ran TWICE in parallel (StarFab: TMC · StarLab: Sierra) · TMC: the CONFIDENCE ENGINE is LIVE · Sierra: 👍/👎 feedback + a required 'who are you?' selector are LIVE",
  "_session": 92,
- "_status": "Big day on the TMC Builder, in two acts. ACT 1: every official c-id.net approval now lands on the right side (1,195 wrong blanks across 114 colleges → 0; Saddleback's SOCI 110 fixed; remaining blanks are TRUE absences). ACT 2 — your 'Let's build:)': the CONFIDENCE ENGINE is live. Colleges now see a verdict chip on every slot (✓ auto = C-ID aligned, accept by rule · ≈ verify · 📎 evidence · ⚠ review), enter HOURS (placeholder until your COCI report lands) + UNITS for courses missing from our snapshot + ASSIST evidence on flexible slots, and CANNOT SUBMIT an incomplete application (select-counts, list unit floors, and the 18-unit STAR gate all block at the door). CO staff (signed in) get the 'New requests' queue ranked so near-auto-approvable submissions clear first, an expandable per-course review panel, and Approve / Return-with-note buttons — approvals are server-enforced (nobody can forge one with the public key; a security review caught exactly that hole plus an XSS before shipping, both fixed). Plus the '⏳ In progress in COCI' list = your 200+ backlog proxy, ranked by computed alignment. Try it: TMC Builder → Show → 'New requests'.",
+ "_status": "Two Session-92s ran side by side today. Big day on the TMC Builder, in two acts. ACT 1: every official c-id.net approval now lands on the right side (1,195 wrong blanks across 114 colleges → 0; Saddleback's SOCI 110 fixed; remaining blanks are TRUE absences). ACT 2 — your 'Let's build:)': the CONFIDENCE ENGINE is live. Colleges now see a verdict chip on every slot (✓ auto = C-ID aligned, accept by rule · ≈ verify · 📎 evidence · ⚠ review), enter HOURS (placeholder until your COCI report lands) + UNITS for courses missing from our snapshot + ASSIST evidence on flexible slots, and CANNOT SUBMIT an incomplete application (select-counts, list unit floors, and the 18-unit STAR gate all block at the door). CO staff (signed in) get the 'New requests' queue ranked so near-auto-approvable submissions clear first, an expandable per-course review panel, and Approve / Return-with-note buttons — approvals are server-enforced (nobody can forge one with the public key; a security review caught exactly that hole plus an XSS before shipping, both fixed). Plus the '⏳ In progress in COCI' list = your 200+ backlog proxy, ranked by computed alignment. Try it: TMC Builder → Show → 'New requests'. MEANWHILE, STARLAB (Sierra): (1) every answer on the Ask-Sierra page and the COBI CPL Assistant tab now has 👍/👎 with an optional note, logged to a team-only table — the training signal; (2) both surfaces now require the visitor to tap who they are (Student / Faculty / Administrator / Employer / Civic leader) and Sierra tailors the answer — a student gets plain next-steps language, never system inside-baseball; and if a college has no CPL landing page configured, Sierra now says so and routes to the college + MAP@rccd.edu instead of inventing a link (your ask — cpl-chat v23). The live map.rccd.edu widget is untouched. (3) The Sierra Training tab recommendation is written (docs/sierra_training_tab_scope.md): YES, phased, starting with a review queue over the feedback + chat logs to spot gaps, plus the Malone guardrails lane (usage limits, cost cap, spam guards) for the 'Credit for Being Me' portal.",
  "items": [
   {
    "id": "coci-hours-extract",
@@ -17,16 +17,28 @@
    "text": "Can the CO export the 200+ pending ADT submissions as a simple list (college, TMC, date submitted)? Then the tab can rank the queue by computed alignment so staff clear the near-auto-approvable ones first before the Curriculum Institute. Fallback if not: we already hold every ⏳ In-progress (college, TMC) pair from the COCI program export and can use that as the queue."
   },
   {
+   "id": "sierra-feedback-try",
+   "who": "sam",
+   "tab": "chatbot",
+   "text": "Try the new Sierra features: pick who you are at the top (it's required now), ask a question, then hit 👍 or 👎 and drop a note — that's the training signal. Ask the same question as a Student vs an Administrator to see the voice change, and tell me where the tailoring should go further."
+  },
+  {
+   "id": "training-tab-decision",
+   "who": "sam",
+   "tab": "chatbot",
+   "text": "Decision: green-light the Sierra Training tab Phase 1? Recommendation (docs/sierra_training_tab_scope.md) is YES — a team-only review queue over the feedback + chat logs that surfaces gaps (thumbs-down clusters, questions Sierra had no source for, explicit 'I don't know' answers), sliced by who was asking. Say go and the next session builds it."
+  },
+  {
+   "id": "malone-guardrails",
+   "who": "sam",
+   "tab": "chatbot",
+   "text": "Intro Fable to Malone when ready: the Sierra guardrails lane (durable IP usage limits, a daily cost cap, spam protection) is scoped in the same doc — we need his thresholds (requests/min, daily budget, portal launch date). The cost cap is worth landing BEFORE 'Credit for Being Me' publicizes the endpoint."
+  },
+  {
    "id": "tmc-or-skips",
    "who": "sam",
    "tab": "tmc-builder",
    "text": "Faculty-verify territory (3 leftover 'OR' groups the auto-fold skipped on purpose): Studio Art's advanced-studio line (ARTS 280/281/282) wasn't in our parse at all → needs a slot added; and Law/Public-Policy uses one course (COMM 120) as an option in TWO different requirement lines, which our one-slot model can't hold cleanly. Want me to add the Studio Art slot and/or handle the LPPS case, or leave for a faculty pass?"
-  },
-  {
-   "id": "sierra-try",
-   "who": "sam",
-   "tab": "chatbot",
-   "text": "Try Sierra on a detailed trades question (e.g. your Boys & Girls Club NCCER/OSHA/welding question, or 'Does LA Harbor give credit for NCCER carpentry?'). She should name nearby colleges that TEACH construction (El Camino, LA Trade-Tech, Rio Hondo…) and cite Norco/Barstow as proof. Tell me if any answer should route or word differently."
   },
   {
    "id": "mapusers-loginurl",
@@ -63,6 +75,12 @@
    "who": "fable",
    "tab": "tmc-builder",
    "text": "Confidence engine round 2: description-similarity precompute (course description vs C-ID descriptor text — data in hand, ship scores not text), wire real hours when Sam's COCI master report lands, and distinguish verify-tier carriers in the directory coverage column."
+  },
+  {
+   "id": "sierra-training-p1",
+   "who": "fable",
+   "tab": "chatbot",
+   "text": "On Sam's go: build Sierra Training Phase 1 — the team-only review queue + gap miner over sierra_feedback + chat_interactions (both already reviewer-readable), per docs/sierra_training_tab_scope.md."
   },
   {
    "id": "assistant-cer",

@@ -640,6 +640,25 @@ const OFFERINGS_RULE = `\n\nABOUT THE "COURSE CATALOG / WHICH COLLEGES TEACH THI
 - ALWAYS add that teaching a course is not a guarantee of credit — the student/organization should contact the college's CPL coordinator to request a review. Never claim an articulation exists when only a course is taught.
 - The catalog list shows the TOP matching colleges, NOT an exhaustive list. NEVER conclude that a college does NOT teach a subject just because it isn't shown — many colleges that teach it may not appear. If a specific college the visitor named is not in the list, do NOT say it lacks the courses; say you're not certain from the data at hand and suggest checking that college's catalog or CPL coordinator.`;
 
+// #6 — Missing/unconfigured CPL landing pages (v23 — Sam, 2026-07-01: "not all
+// colleges have configured their CPL Landing pages"). Never invent a link;
+// turn the gap into two concrete next steps.
+const LANDING_PAGE_RULE = `\n\nIF A COLLEGE HAS NO "CPL Landing Page" URL in the context above (or the visitor says a college's CPL page isn't working or isn't set up): do NOT invent or guess a link. Say warmly that the college doesn't appear to have its CPL landing page configured yet, and give two concrete steps: (1) contact that college's CPL coordinator or counseling/admissions office directly — it's perfectly fair to ask the college to set up its CPL landing page; (2) email the MAP team at MAP@rccd.edu to flag the missing page and get help finding the right contact at that college.`;
+
+// #5 — Audience-aware voice (v22, Session 92). The COBI CPL Assistant tab and
+// the standalone sierra/ page send an optional `audience` key = the visitor's
+// self-selected PRIMARY population. Same facts, framed for the reader — the
+// driving case: students must never get system inside-baseball. Callers that
+// omit the field (the production map.rccd.edu widget) get the default voice,
+// unchanged. Keys must match the AUDIENCES list in cpl_chat.js / sierra.js.
+const AUDIENCE_RULES: Record<string, string> = {
+  student: `\n\nAUDIENCE: a STUDENT or prospective student. Speak directly to them ("you"). Plain, encouraging language — no system inside-baseball: do NOT mention articulation mechanics, "exhibits", TOP codes, COCI, C-ID governance, apportionment/funding, MIS, or Chancellor's Office process; if such a concept is unavoidable, translate it into plain words (e.g. "credit the college has already approved for this certification"). Focus on what THEY can do: what their license/training/experience could be worth in credit, which courses it may cover, and the concrete next step — their college's CPL landing page or CPL coordinator. Never imply credit is guaranteed; the college makes the final call.`,
+  faculty: `\n\nAUDIENCE: COLLEGE FACULTY. Curricular vocabulary is welcome (articulation, credit recommendation, C-ID, units). Emphasize how the credential maps to specific courses, what peer colleges have already articulated (evidence a local review is warranted), and that faculty ratify CPL through their local process. Where relevant, note that adopting an existing Statewide Collaborative (CCC) recommendation is a lighter lift than building one from scratch.`,
+  administrator: `\n\nAUDIENCE: a COLLEGE ADMINISTRATOR. Frame around participation, student outcomes, and implementation: adoption opportunities (what peers have articulated that this college could), what unlocks more activity, and who acts next (CPL coordinator, curriculum committee, faculty leads). Metrics and funding context are appropriate. Keep the tone inviting — never imply a college is negligent or behind.`,
+  employer: `\n\nAUDIENCE: an EMPLOYER / INDUSTRY PROFESSIONAL. Focus on how their employees' or trainees' certifications, licenses, and training convert to college credit: which credentials are recognized, which nearby colleges to partner with, and how to start (the college's CPL coordinator). Plain business language — skip system acronyms and internal process detail.`,
+  civic: `\n\nAUDIENCE: a CIVIC / COMMUNITY LEADER. Frame around community impact and access: what CPL means for their constituents (veterans, working adults, apprentices), statewide results (students served, savings), and how to connect people to a local college's CPL program. Plain language; statewide numbers are welcome; skip internal system mechanics.`,
+};
+
 function buildSystemPrompt(
   sections: any[],
   liveMetrics: any,
@@ -647,7 +666,8 @@ function buildSystemPrompt(
   topicContext: string,
   searchMode: "college" | "topic" | "college_topic" | "general",
   multiTurn: boolean = false,
-  offeringsContext: string = ""
+  offeringsContext: string = "",
+  audienceRule: string = ""
 ): string {
   let context = sections
     .map((s: any, i: number) => {
@@ -717,7 +737,7 @@ Be concise, friendly, and professional. Use plain language.
 
 IMPORTANT: When citing any numbers or metrics (student counts, units, savings, college counts, etc.), ALWAYS use the "LIVE CPL Dashboard Metrics" section below. These live numbers are scraped directly from the CCCCO Dashboard and are the most current. If a vault source below mentions a different number for the same metric, the live dashboard number is correct and the vault source is outdated. This applies especially to military/veteran student counts, savings figures, and unit totals.
 
-${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${STATEWIDE_RULE}${CREDIT_LIST_RULE}${OFFERINGS_RULE}${specialInstruction}`;
+${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${STATEWIDE_RULE}${CREDIT_LIST_RULE}${OFFERINGS_RULE}${LANDING_PAGE_RULE}${specialInstruction}${audienceRule}`;
 }
 
 async function fetchLiveMetrics(): Promise<any> {
@@ -756,7 +776,7 @@ Deno.serve(async (req: Request) => {
   }
 
   try {
-    const { query, session_id, history } = await req.json();
+    const { query, session_id, history, audience } = await req.json();
     if (!query || typeof query !== "string" || query.trim().length === 0) {
       return new Response(JSON.stringify({ error: "Query is required" }), {
         status: 400,
@@ -765,6 +785,11 @@ Deno.serve(async (req: Request) => {
     }
 
     const trimmedQuery = query.trim().slice(0, 1000);
+
+    // Optional audience (primary population) — validated against the known
+    // keys; anything else (or absent, e.g. the production widget) → null.
+    const audienceKey: string | null =
+      typeof audience === "string" && AUDIENCE_RULES[audience] ? audience : null;
 
     // Optional conversation history (multi-turn). Backward-compatible: callers
     // that omit it (e.g. the production widget) stay single-turn. Sanitize to
@@ -906,7 +931,9 @@ Deno.serve(async (req: Request) => {
       offeringsContext = buildOfferingsContext(offeringsResults, askedCollege, askedGeo, coreKeywords);
     }
 
-    const systemPrompt = buildSystemPrompt(sections || [], liveMetrics, collegeContext, topicContext, searchMode, multiTurn, offeringsContext);
+    const systemPrompt = buildSystemPrompt(
+      sections || [], liveMetrics, collegeContext, topicContext, searchMode,
+      multiTurn, offeringsContext, audienceKey ? AUDIENCE_RULES[audienceKey] : "");
 
     // 4. Call Claude Sonnet
     const anthropicRes = await fetch("https://api.anthropic.com/v1/messages", {
@@ -999,6 +1026,7 @@ Deno.serve(async (req: Request) => {
             top_similarity: sections?.[0]?.similarity || null,
             response_tokens: responseTokens,
             topic_match: searchMode === "topic" || searchMode === "college_topic",
+            audience: audienceKey,
           });
         } catch (logErr) {
           console.error("Failed to log interaction:", logErr);
