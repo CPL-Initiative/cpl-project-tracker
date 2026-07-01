@@ -90,6 +90,18 @@
     for (var i = 0; i < cc.length; i++) { if (cids.indexOf(cc[i]) !== -1) return cc[i]; }
     return null;
   }
+  // does this course's match against the slot ride on a TITLE-inferred C-ID?
+  function matchedViaTitle(course, cids) {
+    var mc = matchedCid(course, cids);
+    return !!(mc && course.tcids && course.tcids.indexOf(mc) !== -1);
+  }
+  // preference order when several courses carry the same C-ID `k`:
+  // 0 = hard carrier (COCI CIDNumber or exact-lane c-id.net) · 1 = title-inferred · 2 = synthesized
+  function carrierRank(course, k) {
+    if (course.src === "cidnet") return 2;
+    if (course.tcids && course.tcids.indexOf(k) !== -1) return 1;
+    return 0;
+  }
 
   /* ---- title matching (Session 69) -------------------------------------------
    * For colleges that ALREADY hold an approved ADT, approval implies every course
@@ -305,6 +317,7 @@
       "#tab-tmc-builder .tmc-opt .tmc-pc-code{font-family:ui-monospace,Menlo,monospace;font-weight:700;color:var(--navy-primary);}" +
       "#tab-tmc-builder .tmc-opt .tmc-pc-u{color:var(--text-muted);}" +
       "#tab-tmc-builder .tmc-opt .tmc-pc-cid{display:inline-block;font-size:.68rem;font-weight:700;color:#065f46;background:#ecfdf5;border:1px solid #34d399;border-radius:4px;padding:0 5px;margin-left:6px;}" +
+      "#tab-tmc-builder .tmc-pc-net{display:inline-block;font-size:.66rem;font-weight:700;color:#92400e;background:#fffbeb;border:1px solid #fbbf24;border-radius:4px;padding:0 5px;margin-left:6px;cursor:help;}" +
       "#tab-tmc-builder .tmc-opt-none{padding:10px 11px;color:var(--text-muted);font-size:.8rem;}" +
       "#tab-tmc-builder .tmc-opt-group{padding:5px 11px;font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-muted);font-weight:700;background:var(--surface-subtle,#f8fafc);}" +
       "#tab-tmc-builder .tmc-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:16px;}" +
@@ -476,11 +489,20 @@
     state.courses = recs.map(function (r) {
       // r = [subj, num, title, units, cid] or [..., cid, xcid[]]; cid is the
       // PRIMARY (display) C-ID, xcid[] the additional c-id.net-authority C-IDs.
+      // A 7th element === 1 marks a SYNTHESIZED row: the college holds the C-ID
+      // approval per c-id.net but the course has no row in our COCI extract
+      // (units unknown) — surfaced with a "per c-id.net — verify" badge.
+      // An 8th element tcid[] (7th === 0) carries C-IDs attached by the
+      // UNIQUE-TITLE join (the approval names a retired/renamed local code) —
+      // matched, but rendered "≈ verify", never COCI-grade "✓ aligned".
       var cids = [];
       var primary = r[4] || null;
       if (primary) { var np = normCid(primary); if (np) cids.push(np); }
       if (r[5]) r[5].forEach(function (a) { var n = normCid(a); if (n && cids.indexOf(n) === -1) cids.push(n); });
-      return { subj: r[0] || "", num: r[1] || "", title: r[2] || "", units: r[3], cid: primary, cids: cids };
+      var tcids = [];
+      if (r[7]) r[7].forEach(function (a) { var n = normCid(a); if (n && tcids.indexOf(n) === -1) { tcids.push(n); if (cids.indexOf(n) === -1) cids.push(n); } });
+      return { subj: r[0] || "", num: r[1] || "", title: r[2] || "", units: r[3], cid: primary, cids: cids,
+               tcids: tcids, src: r[6] === 1 ? "cidnet" : "" };
     });
     var m = new Map();
     state.courses.forEach(function (c) {
@@ -488,6 +510,11 @@
         if (!m.has(k)) m.set(k, []);
         m.get(k).push(c);
       });
+    });
+    // auto-match preference per C-ID: a hard carrier (COCI / exact c-id.net)
+    // beats a title-inferred carrier beats a synthesized row.
+    m.forEach(function (list, k) {
+      list.sort(function (a, b) { return carrierRank(a, k) - carrierRank(b, k); });
     });
     state.byCid = m;
   }
@@ -537,6 +564,15 @@
       return { cls: "ok", label: "✓ selected" };
     }
     if (hasCid) {
+      // title-inferred C-ID (tcid): the c-id.net approval names a retired or
+      // renamed local code; this course uniquely bears the identical title.
+      // A verify tier — never presented as COCI-grade alignment.
+      if (matchedViaTitle(course, cids))
+        return { cls: "tmatch", label: "≈ C-ID per c-id.net title match — verify the course number & C-ID currency" };
+      // synthesized c-id.net row: the approval is official, but the course has
+      // no row in our COCI extract (units unknown) — aligned, with a verify nudge
+      if (course.src === "cidnet")
+        return { cls: "ok", label: "✓ C-ID aligned · per c-id.net — verify course & units (not in our COCI extract)" };
       if (ur === false) return { cls: "warn", label: "⚠ C-ID match · units differ (" + fmtU(course.units) + " vs " + slot.units + ")" };
       return { cls: "ok", label: "✓ C-ID aligned" };
     }
@@ -1272,7 +1308,9 @@
     btn.type = "button";
     btn.innerHTML = chosen
       ? "<span class='tmc-pc-code'>" + esc(chosen.subj + " " + chosen.num) + "</span> — " + esc(chosen.title) +
-        " <span class='tmc-pc-u'>(" + fmtU(chosen.units) + " u)</span>"
+        " <span class='tmc-pc-u'>(" + fmtU(chosen.units) + " u)</span>" +
+        (chosen.src === "cidnet" ? " <span class='tmc-pc-net' title='This approval is listed on c-id.net, but the course has no row in our COCI extract — verify the current course number and units in your catalog.'>per c-id.net</span>"
+          : (matchedViaTitle(chosen, slotCids(slot)) ? " <span class='tmc-pc-net' title='The c-id.net approval names a retired or renamed local course code; this course carries the identical title. Verify the mapping and the C-ID approval currency.'>≈ c-id.net title</span>" : ""))
       : "Select your " + esc((slot.cid || "").split(" ")[0] || "local") + " course…";
     btn.onclick = function (e) {
       e.stopPropagation();
@@ -1313,7 +1351,9 @@
         var o = el("div", "tmc-opt");
         o.innerHTML = "<span class='tmc-pc-code'>" + esc(x.c.subj + " " + x.c.num) + "</span> " + esc(x.c.title) +
           " <span class='tmc-pc-u'>(" + fmtU(x.c.units) + " u)</span>" +
-          (isMatch ? "<span class='tmc-pc-cid'>" + esc(x.mcid || x.c.cid) + "</span>" : "");
+          (isMatch ? "<span class='tmc-pc-cid'>" + esc(x.mcid || x.c.cid) + "</span>" : "") +
+          (x.c.src === "cidnet" ? "<span class='tmc-pc-net' title='This approval is listed on c-id.net, but the course has no row in our COCI extract — verify the current course number and units in your catalog.'>per c-id.net</span>"
+            : (x.mcid && x.c.tcids && x.c.tcids.indexOf(x.mcid) !== -1 ? "<span class='tmc-pc-net' title='The c-id.net approval names a retired or renamed local course code; this course carries the identical title. Verify the mapping and the C-ID approval currency.'>≈ c-id.net title</span>" : ""));
         o.onclick = function () { setChoice(key, x.c); closePicker(); };
         list.appendChild(o);
       });
@@ -1353,6 +1393,9 @@
           alignments[si + ":" + sj] = {
             cid: slot.cid || "", slot_title: slot.title, slot_units: slot.units || "",
             subj: c.subj, num: c.num, title: c.title, units: c.units, course_cid: c.cid || "",
+            // provenance must survive the round-trip: the CO review queue reads
+            // these to tell a COCI-grade alignment from a verify-tier one
+            course_cids: c.cids || [], course_tcids: c.tcids || [], course_src: c.src || "",
             status: statusFor(slot, c).cls
           };
         }
@@ -1563,7 +1606,11 @@
       Object.keys(row.alignments).forEach(function (k) {
         var a = row.alignments[k];
         if (k === "_ge_pattern") { if (a && a.ge_pattern) state.gePattern = a.ge_pattern; return; }
-        state.choice[k] = { subj: a.subj, num: a.num, title: a.title, units: a.units, cid: a.course_cid || null };
+        // restore full C-ID provenance (older saves lack these keys → fall back
+        // to the primary cid; a legacy xcid-only pick resumes as unaligned)
+        state.choice[k] = { subj: a.subj, num: a.num, title: a.title, units: a.units, cid: a.course_cid || null,
+                            cids: a.course_cids || (a.course_cid ? [a.course_cid] : []),
+                            tcids: a.course_tcids || [], src: a.course_src || "" };
       });
       if (state.view === "detail") renderBody();
       setMsg("Resumed your saved alignment from " + (row.updated_at || "Supabase").slice(0, 10) + ".", "ok");
