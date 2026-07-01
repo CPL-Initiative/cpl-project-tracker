@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sierra — your Credit for Prior Learning guide | California Community Colleges</title>
+<meta name="description" content="Sierra is the California Community Colleges' Credit for Prior Learning (CPL) assistant. Ask where to get college credit for licenses, certifications, and military training, which colleges near you teach a subject, and how CPL works.">
+<meta property="og:title" content="Sierra — your CPL guide">
+<meta property="og:description" content="Ask the California Community Colleges CPL assistant where to get college credit for your certifications, licenses, and training.">
+<meta property="og:type" content="website">
+<link rel="icon" href="../cccco_seal.png">
+<link rel="stylesheet" href="./sierra.css">
+</head>
+<body>
+
+<header class="s-head">
+  <div class="s-brand">
+    <span class="s-brand-avatar" aria-hidden="true">🏔️</span>
+    <div>
+      <h1>Sierra</h1>
+      <p class="s-role">Your Credit for Prior Learning guide · California Community Colleges</p>
+    </div>
+  </div>
+  <a class="s-back" href="https://map.rccd.edu" target="_blank" rel="noopener">map.rccd.edu ↗</a>
+</header>
+
+<main class="s-main">
+  <div class="s-intro">
+    <p>Hi, I'm <strong>Sierra</strong>. Ask me about <strong>Credit for Prior Learning</strong> —
+      where students can turn a license, certification, apprenticeship, or military training into
+      <strong>college credit</strong>, which California community colleges teach or already award credit
+      for a subject, and how the process works.</p>
+    <p class="s-beta">🧪 Beta — I'm still learning, so please double-check anything important with the
+      college's CPL coordinator (I point you to the right one). Don't enter personal information;
+      questions are logged anonymously to help me improve.</p>
+  </div>
+
+  <div id="s-log" class="s-log" aria-live="polite" aria-label="Conversation with Sierra">
+    <div id="s-suggest" class="s-suggest" aria-label="Suggested questions"></div>
+  </div>
+
+  <div id="s-status" class="s-status" role="status" aria-live="polite"></div>
+
+  <form id="s-form" class="s-form" autocomplete="off">
+    <input id="s-input" class="s-input" type="text" maxlength="1000"
+           placeholder="Ask Sierra about CPL…" aria-label="Ask Sierra a question about CPL">
+    <button id="s-send" class="s-send" type="submit">Send</button>
+  </form>
+</main>
+
+<footer class="s-foot">
+  Sierra offers guidance, not a guarantee of credit — your college's CPL coordinator makes the final call.
+  Questions? <a href="mailto:MAP@rccd.edu">MAP@rccd.edu</a> ·
+  <a href="https://map.rccd.edu" target="_blank" rel="noopener">MAP CPL platform</a>
+</footer>
+
+<script src="./sierra.js"></script>
+</body>
+</html>
