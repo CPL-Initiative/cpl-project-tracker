@@ -150,7 +150,18 @@ at every college regardless of C-ID** — that half is bulletproof.
   `tmc_college_adts.js` (NOT a daily-cron artifact; refresh on re-extract).
 
 ## Honest limits
-- C-ID auto-slot degrades for the sparse ~1/4 of colleges (structural); new
-  in-tool submissions carry an explicit mapping, so it matters less going forward.
-- Contact **hours** absent everywhere.
+- ~~C-ID auto-slot degrades for the sparse ~1/4 of colleges~~ → **largely CLOSED
+  (2026-07-01, PRs #639/#642):** the c-id.net authority is unioned with COCI's
+  `CIDNumber` and **every one of the 25,084 non-sequence approvals now lands**
+  via a join ladder (exact → zero-norm → squashed code → strict unique-title →
+  synthesized flagged row), with **graded provenance** (hard / ≈ title-inferred
+  / per-c-id.net-synth) so nothing over-claims. The residual is *real* absence:
+  a college with no C-ID approval for a slot still shows an honest blank.
+- Contact **hours** absent everywhere — the one true data gap; sourcing options
+  + the full scorecard: [`reference-tmc-confidence-data-requirements.md`](reference-tmc-confidence-data-requirements.md)
+  (2026-07-01 — Sam's confidence-score / can't-submit-misaligned framing +
+  the mid-July 200+-submission backlog build order).
+- Our **COCI extract goes stale fast mid-CCN-transition** (1,986 approved
+  courses have no row in it today) — refresh cadence needed; the synth tier
+  covers the gap honestly in the meantime.
 - The PCF is a periodic snapshot — re-extract to refresh (like the ADT overlay).

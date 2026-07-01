@@ -593,3 +593,54 @@ fact lives in a document's *visual layout* (columns, "OR" adjacency) that text
 extraction destroys, a visual read (per-item, verified) beats ever-more-elaborate
 text heuristics. The Workflow's adversarial-verify stage was load-bearing: it
 caught the "select-N list ≠ OR-group" and "flexible proviso ≠ C-ID OR" traps.
+
+## 2026-07-01 (Session 92, StarFab) — the join ladder: every c-id.net approval lands, with graded provenance (#642)
+
+Sam's follow-up on the same Saddleback AJ screenshot: the right side still looked
+sparse. Two findings up front: the screenshot's *"Select a college to align a local
+course"* rows were the **review-mode empty state** (no college picked), not failed
+matches — and with Saddleback actually selected, the real defect was **SOCI 110
+showing blank while c-id.net lists Saddleback's SOC 1/1H as approved**. Root cause:
+the #639 union only attached c-id.net C-IDs to courses that EXIST in our COCI
+extract; an approval with no COCI row **vanished silently**. Audit: **3,684
+approvals unattached → 1,195 visible wrong blanks across 114 colleges**. The
+biggest driver is the CCN transition: legacy intro-sociology rows have left the
+COCI Active export while `SOCI C1000` rows haven't landed (8 statewide vs 144–185
+for the Phase-1 CCN subjects).
+
+**The fix — a precedence ladder** in `tmc/_build_college_courses.py`; every
+non-sequence approval lands exactly one way (receipts in
+`_meta.cidnet_join_lanes`): exact **18,157** → zero-normalized **1,903** →
+**squashed full code 629** (`PHYS 223`+`F` ↔ `PHYS`+`223 F`; `C DEV` ↔ `CDEV` —
+subject/number split drift from the c-id.net ingestion) → **strict unique-title
+915** (subject renames SPCH→CMST, CCN renumbers — lands as the verify-tier
+`tcid[]` 8th row element) → **synthesized flagged rows 1,986** (course absent
+from the extract; 7-element rows, units unknown, `per c-id.net` badge). Plus:
+**comma-joined COCI `CIDNumber` split** (46 rows like `'AJ 110, SOCI 160'` whose
+primary could never match a slot).
+
+**The adversarial verify earned its keep (again).** Round 1 (3 agents) caught a
+real **blocker** in the draft title lane: stripping `honors`/`a` from titles let
+approvals be captured by *sibling* courses — West Valley `HIST 017BH` (the B-half
+honors) inherited the A-half's `HIST 130`; SBCC's 2-unit `Elementary Statistics A`
+swallowed the honors full-course approval. **Lesson: uniqueness of a normalized
+title is only meaningful under STRICT equality — every token you strip is a
+dimension a sibling can hide in**, precisely because the true owner is absent
+(that's why the lane ran at all). Stripped-only matches now fall through to
+honest synthesis. Round 2 passed; the 18 residual sibling-pattern title joins all
+ship in the ≈ verify tier — which is the tier's job.
+
+**Provenance is graded per C-ID** — the confidence-score foundation for the CO
+review queue (`reference-tmc-confidence-data-requirements.md`): hard carrier →
+`✓ C-ID aligned`; synth → `✓ aligned · per c-id.net — verify course & units`;
+tcid → `≈ … verify` (never COCI-grade). `autoMatch` prefers hard > title > synth;
+save/resume round-trips `course_cids`/`course_tcids`/`course_src` (the flag used
+to die on resume). Post-fix: **0 unattached approvals · 0 visible wrong blanks ·
+0 comma primaries**. Saddleback AJ: SOCI 110 fills via synth SOC 1/1H, SOCI 125
+via its MATH 110 OR-alt (#640), AJ 120–160 stay blank **because that's true**.
+Suite 118 files green (+`tests/tmc_cidnet_synth.test.js`, 31 checks).
+
+**Follow-ups:** directory `coverageFor` counts verify-tier carriers same as hard
+(cosmetic inflation — fold into the Phase-2 confidence engine); the 3 skipped
+OR-groups still need Sam's faculty-verify calls; a FRESH COCI extract (+ hours
+columns if exportable) is the top data ask — see the data-requirements note.
