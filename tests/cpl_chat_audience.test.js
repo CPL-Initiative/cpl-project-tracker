@@ -8,9 +8,10 @@
 //      REQUIRED before the first send (no request without it);
 //  (c) the pick persists to the localStorage key SHARED with sierra/ and rides
 //      in the POST body as `audience`;
-//  (d) a completed answer gets a feedback bar; 👍 upserts to sierra_feedback
-//      with page:'cobi-tab' + the Q/A snapshot; the note re-upserts the SAME
-//      turn row (merge-duplicates).
+//  (d) a completed answer gets a feedback bar; 👍 calls the
+//      sierra_feedback_upsert RPC with page:'cobi-tab' + the Q/A snapshot (a
+//      direct table upsert would trip RLS — anon has no SELECT); the note
+//      re-upserts the SAME turn row.
 //
 // Run from repo root: `npm test` (or `node tests/cpl_chat_audience.test.js`).
 const fs = require("fs");
@@ -121,22 +122,20 @@ function submit(w, text) {
     check("it offers 👍 and 👎", btns.length === 2);
     btns[1].click(); // 👎
     await drain(4);
-    let fbReqs = requests.filter((r) => /\/rest\/v1\/sierra_feedback$/.test(r.url));
-    check("clicking 👎 upserts a rating row with page:'cobi-tab'",
-      fbReqs.length === 1 && fbReqs[0].body.rating === "down" &&
-      fbReqs[0].body.page === "cobi-tab" && fbReqs[0].body.audience === "student" &&
-      /Saddleback/.test(fbReqs[0].body.question));
-    check("upsert uses Prefer: resolution=merge-duplicates",
-      /merge-duplicates/.test((fbReqs[0].init.headers || {}).Prefer || ""));
+    let fbReqs = requests.filter((r) => /\/rest\/v1\/rpc\/sierra_feedback_upsert$/.test(r.url));
+    check("clicking 👎 calls the feedback RPC with page:'cobi-tab'",
+      fbReqs.length === 1 && fbReqs[0].body.p_rating === "down" &&
+      fbReqs[0].body.p_page === "cobi-tab" && fbReqs[0].body.p_audience === "student" &&
+      /Saddleback/.test(fbReqs[0].body.p_question));
     const noteWrap = fb.querySelector(".cplchat-fb-note");
     check("the optional note box appears after rating", noteWrap && noteWrap.hidden === false);
     noteWrap.querySelector("input").value = "Answer missed the statewide standard";
     noteWrap.querySelector("button").click();
     await drain(4);
-    fbReqs = requests.filter((r) => /\/rest\/v1\/sierra_feedback$/.test(r.url));
+    fbReqs = requests.filter((r) => /\/rest\/v1\/rpc\/sierra_feedback_upsert$/.test(r.url));
     check("Send note re-upserts the SAME turn row with the note",
-      fbReqs.length === 2 && fbReqs[1].body.note === "Answer missed the statewide standard" &&
-      fbReqs[1].body.turn_id === fbReqs[0].body.turn_id);
+      fbReqs.length === 2 && fbReqs[1].body.p_note === "Answer missed the statewide standard" &&
+      fbReqs[1].body.p_turn_id === fbReqs[0].body.p_turn_id);
   }
 
   // ── report ──

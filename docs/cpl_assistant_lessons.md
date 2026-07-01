@@ -570,12 +570,12 @@ inside baseball"), and a recommendation on a **Sierra Training tab** for COBI.
 
 - **`sierra_feedback` (new Supabase table)** — 👍/👎 + optional note per answer,
   one row per assistant turn keyed by a client `crypto.randomUUID()`. The client
-  **UPSERTs** (`POST` + `Prefer: resolution=merge-duplicates`): thumb click logs
-  immediately; the note (or a switched rating) updates the SAME row — no row
-  explosion, no lost drive-by clicks. Row carries `page` ('sierra' | 'cobi-tab'),
-  `audience`, and the Q/A snapshot, so a review needs no join to be readable.
-  RLS: anon INSERT+UPDATE (the documented tmc_submissions posture — uuid-keyed,
-  non-sensitive), SELECT gated `is_allowed_reviewer() OR team_pass_ok()`.
+  UPSERTs via the **SECURITY DEFINER RPC `sierra_feedback_upsert`**: thumb click
+  logs immediately; the note (or a switched rating) updates the SAME row — no
+  row explosion, no lost drive-by clicks. Row carries `page` ('sierra' |
+  'cobi-tab'), `audience`, and the Q/A snapshot, so a review needs no join to be
+  readable. RLS: NO anon table policies at all (the validated RPC is the only
+  public write path); SELECT gated `is_allowed_reviewer() OR team_pass_ok()`.
   Schema of record: `chatbox/supabase_sierra_feedback.sql`.
 - **Audience selector on BOTH Sierra surfaces** (`sierra/sierra.js` +
   `cpl_chat.js`) — 5 single-select chips (Student/future student · Faculty ·
@@ -583,13 +583,20 @@ inside baseball"), and a recommendation on a **Sierra Training tab** for COBI.
   the first send** (submit blocks with a flash + plain-language status line),
   persisted in localStorage **`cplSierraAudience.v1` — one key, both surfaces**
   (same origin), sent as an optional `audience` body field.
-- **`cpl-chat` v21 → v22** — validates `audience` against known keys and appends
+- **`cpl-chat` v21 → v22 → v23** — v22 validates `audience` against known keys and appends
   a per-audience `AUDIENCE_RULES` block to the system prompt (module-level
   const, the standing convention). The student rule is the sharp one: no
   articulation mechanics / "exhibits" / TOP codes / COCI / apportionment — plain
   words + the concrete next step. Absent/unknown audience → default voice, so
   the **production widget is untouched** (same backward-compat pattern as
   `history`). Also logs `audience` into `chat_interactions` (new column).
+  **v23** added `LANDING_PAGE_RULE` (Sam, same day: "not all colleges have
+  configured their CPL Landing pages"): when a college has no CPL Landing Page
+  URL in context (or the visitor reports a broken/unset page), never invent a
+  link — say the page isn't configured yet, suggest asking the college to set
+  it up, and offer MAP@rccd.edu for assistance. (Data check: all 7 profiles
+  missing a URL today are test/non-CCC entities — but a URL in our table can
+  still point at a page the college never configured, so the rule covers both.)
 - **`chat_interactions` reviewer SELECT** — the log was anon-INSERT/no-SELECT;
   it now has a reviewer/team-phrase SELECT policy, enabling the log-informed
   gap review Sam asked for ("informed by log entries to see where gaps might
@@ -626,3 +633,12 @@ inside baseball"), and a recommendation on a **Sierra Training tab** for COBI.
   (v22) means every caller that sends `audience` gets it — the Portal embed
   inherits it free — and the tone rules version with the function, not with N
   copies of client JS.
+- **Postgres upsert under RLS needs the conflicting row to be VISIBLE.** The
+  first smoke run 401'd (`new row violates row-level security policy`) on the
+  anon `INSERT … ON CONFLICT DO UPDATE`, even though plain INSERT and plain
+  UPDATE each passed in isolation — ON CONFLICT requires SELECT visibility of
+  the potential conflict row, and this table deliberately has no anon SELECT.
+  Fix (and the better design anyway): a **SECURITY DEFINER RPC** as the single
+  validated public write path, and DROP the open anon INSERT/UPDATE policies.
+  The smoke suite caught this because mode 12 exercises the literal REST call
+  the browser makes — keep writing smoke modes at that fidelity.

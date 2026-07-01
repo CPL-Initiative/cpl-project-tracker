@@ -164,28 +164,36 @@ answer_must_match -i "emt|emergency|credit" "10 on-topic"
 run "11 audience unknown key (ignored, not an error)" \
   '{"query":"What is Credit for Prior Learning?","session_id":"smoke-ci","audience":"martian"}'
 
-# sierra_feedback anon-upsert path — the exact write the pages' 👍/👎 performs
-# (POST + Prefer: resolution=merge-duplicates; second POST on the same turn_id
-# carries the note). RLS: anon may INSERT/UPDATE, never SELECT.
+# sierra_feedback anon write path — the exact call the pages' 👍/👎 performs:
+# the SECURITY DEFINER RPC sierra_feedback_upsert (a direct PostgREST upsert
+# would 401 — ON CONFLICT needs SELECT visibility, which anon deliberately
+# lacks; found the hard way on the first run of this mode). Second call on the
+# same turn_id carries the note and updates the SAME row.
 echo "===================================================================="
-echo "MODE: 12 sierra_feedback anon upsert (REST)"
+echo "MODE: 12 sierra_feedback anon upsert (RPC)"
 REST_BASE="${URL%/functions/v1/cpl-chat}/rest/v1"
 TID="smoke-$(date +%s)-$RANDOM"
-code=$(curl -sS -o /tmp/fb_out.txt -w '%{http_code}' -X POST "$REST_BASE/sierra_feedback" \
+code=$(curl -sS -o /tmp/fb_out.txt -w '%{http_code}' -X POST "$REST_BASE/rpc/sierra_feedback_upsert" \
   -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
-  -H 'Prefer: resolution=merge-duplicates' \
-  -d "{\"turn_id\":\"$TID\",\"session_id\":\"smoke-ci\",\"page\":\"smoke\",\"audience\":\"student\",\"question\":\"q\",\"response\":\"a\",\"rating\":\"up\"}")
+  -d "{\"p_turn_id\":\"$TID\",\"p_rating\":\"up\",\"p_session_id\":\"smoke-ci\",\"p_page\":\"smoke\",\"p_audience\":\"student\",\"p_question\":\"q\",\"p_response\":\"a\"}")
 case "$code" in
-  200|201|204) echo "  [assert ok] anon rating insert ($code)" ;;
-  *) echo "::error::sierra_feedback insert returned $code: $(cat /tmp/fb_out.txt)"; fail=1 ;;
+  200|201|204) echo "  [assert ok] anon rating upsert via RPC ($code)" ;;
+  *) echo "::error::sierra_feedback_upsert returned $code: $(cat /tmp/fb_out.txt)"; fail=1 ;;
 esac
-code=$(curl -sS -o /tmp/fb_out2.txt -w '%{http_code}' -X POST "$REST_BASE/sierra_feedback" \
+code=$(curl -sS -o /tmp/fb_out2.txt -w '%{http_code}' -X POST "$REST_BASE/rpc/sierra_feedback_upsert" \
   -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
-  -H 'Prefer: resolution=merge-duplicates' \
-  -d "{\"turn_id\":\"$TID\",\"session_id\":\"smoke-ci\",\"page\":\"smoke\",\"audience\":\"student\",\"question\":\"q\",\"response\":\"a\",\"rating\":\"down\",\"note\":\"smoke note\"}")
+  -d "{\"p_turn_id\":\"$TID\",\"p_rating\":\"down\",\"p_session_id\":\"smoke-ci\",\"p_page\":\"smoke\",\"p_audience\":\"student\",\"p_question\":\"q\",\"p_response\":\"a\",\"p_note\":\"smoke note\"}")
 case "$code" in
   200|201|204) echo "  [assert ok] anon note upsert on same turn_id ($code)" ;;
-  *) echo "::error::sierra_feedback note upsert returned $code: $(cat /tmp/fb_out2.txt)"; fail=1 ;;
+  *) echo "::error::sierra_feedback_upsert note call returned $code: $(cat /tmp/fb_out2.txt)"; fail=1 ;;
+esac
+# a bad rating must be REJECTED by the RPC's validation
+code=$(curl -sS -o /dev/null -w '%{http_code}' -X POST "$REST_BASE/rpc/sierra_feedback_upsert" \
+  -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
+  -d "{\"p_turn_id\":\"$TID-bad\",\"p_rating\":\"meh\"}")
+case "$code" in
+  2*) echo "::error::invalid rating was accepted ($code)"; fail=1 ;;
+  *) echo "  [assert ok] invalid rating rejected ($code)" ;;
 esac
 # anon SELECT must come back EMPTY (reviewer/team-phrase gate) — not an error.
 sel=$(curl -sS "$REST_BASE/sierra_feedback?turn_id=eq.$TID" \

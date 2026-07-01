@@ -56,18 +56,23 @@ a **fresh COCI extract** is the top data ask (ours is stale mid-CCN —
 - **`sierra_feedback`** (Supabase, live; schema-of-record
   `chatbox/supabase_sierra_feedback.sql`): 👍/👎 + optional note per assistant
   turn on BOTH chat surfaces (`sierra/sierra.js` + `cpl_chat.js`); client-uuid
-  `turn_id`, UPSERT (`Prefer: resolution=merge-duplicates`) — thumb logs
-  immediately, note/rating-switch updates the same row. Anon INSERT+UPDATE,
-  **SELECT = reviewer/team-phrase** (the Training tab's read path is open).
+  `turn_id`, upserted via the **SECURITY DEFINER RPC `sierra_feedback_upsert`**
+  (a direct PostgREST upsert 401s — ON CONFLICT needs SELECT visibility, which
+  anon deliberately lacks; found by smoke mode 12 on the first run) — thumb
+  logs immediately, note/rating-switch updates the same row. No anon table
+  policies; **SELECT = reviewer/team-phrase** (the Training tab's read path is
+  open).
 - **Audience selector** — REQUIRED single-select (Student/future student ·
   Faculty · College administrator · Employer/industry · Civic leader) on both
   surfaces; shared same-origin localStorage key **`cplSierraAudience.v1`**;
   sent as the optional `audience` body field.
-- **`cpl-chat` v22** (deployed via MCP, `verify_jwt:false` preserved):
-  `AUDIENCE_RULES` per population appended to the system prompt — the student
-  rule bans system inside-baseball. Absent/unknown audience → default voice;
-  **the production map.rccd.edu widget is untouched.** `audience` also logs to
-  `chat_interactions` (new column) + `chat_interactions` gained a
+- **`cpl-chat` v22 + v23** (deployed via MCP, `verify_jwt:false` preserved):
+  v22 = `AUDIENCE_RULES` per population appended to the system prompt — the
+  student rule bans system inside-baseball; absent/unknown audience → default
+  voice; **the production map.rccd.edu widget is untouched.** v23 =
+  `LANDING_PAGE_RULE` (missing/unconfigured college landing page → never invent
+  a link; suggest asking the college to configure it + MAP@rccd.edu). `audience`
+  also logs to `chat_interactions` (new column) + `chat_interactions` gained a
   reviewer/team-phrase SELECT (was write-only) for log-informed gap mining.
 - Tests: `tests/sierra_page.test.js` (33) + `tests/cpl_chat_audience.test.js`
   (17). Smoke modes **10–12** (student audience, unknown-key no-500, the

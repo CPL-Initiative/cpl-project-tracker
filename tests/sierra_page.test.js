@@ -12,9 +12,10 @@
 //  (g) AUDIENCE — the primary-population pick is REQUIRED before the first
 //      send, persists to localStorage (key shared with the COBI tab), and
 //      rides in the POST body as `audience`;
-//  (h) FEEDBACK — 👍/👎 under each answer upserts to sierra_feedback (rating,
-//      turn_id, audience, Q/A snapshot, merge-duplicates) and the optional
-//      note re-upserts the SAME turn row;
+//  (h) FEEDBACK — 👍/👎 under each answer calls the sierra_feedback_upsert RPC
+//      (rating, turn_id, audience, Q/A snapshot — a direct table upsert would
+//      trip RLS since anon has no SELECT) and the optional note re-upserts the
+//      SAME turn row;
 //  (i) feedbackPayload clamps note/question/response lengths.
 //
 // Run from repo root: `npm test` (or `node tests/sierra_page.test.js`).
@@ -185,24 +186,22 @@ check("standalone — no COBI tab nav present", !/data-tab=/.test(HTML) && !/cpl
     check("it offers 👍 and 👎", btns.length === 2);
     btns[0].click();
     await drain(4);
-    let fbReqs = requests.filter((r) => /\/rest\/v1\/sierra_feedback$/.test(r.url));
-    check("clicking 👍 upserts a rating row (turn_id present)",
-      fbReqs.length === 1 && fbReqs[0].body.rating === "up" &&
-      typeof fbReqs[0].body.turn_id === "string" && fbReqs[0].body.turn_id.length >= 8);
+    let fbReqs = requests.filter((r) => /\/rest\/v1\/rpc\/sierra_feedback_upsert$/.test(r.url));
+    check("clicking 👍 calls the feedback RPC with a rating (turn_id present)",
+      fbReqs.length === 1 && fbReqs[0].body.p_rating === "up" &&
+      typeof fbReqs[0].body.p_turn_id === "string" && fbReqs[0].body.p_turn_id.length >= 8);
     check("the row carries audience + page + the Q/A snapshot",
-      fbReqs[0].body.audience === "student" && fbReqs[0].body.page === "sierra" &&
-      /real estate/.test(fbReqs[0].body.question) && fbReqs[0].body.response.length > 0);
-    check("upsert uses Prefer: resolution=merge-duplicates",
-      /merge-duplicates/.test((fbReqs[0].init.headers || {}).Prefer || ""));
+      fbReqs[0].body.p_audience === "student" && fbReqs[0].body.p_page === "sierra" &&
+      /real estate/.test(fbReqs[0].body.p_question) && fbReqs[0].body.p_response.length > 0);
     const noteWrap = fb.querySelector(".s-fb-note");
     check("the optional note box appears after rating", noteWrap && noteWrap.hidden === false);
     noteWrap.querySelector("input").value = "Missing my college";
     noteWrap.querySelector("button").click();
     await drain(4);
-    fbReqs = requests.filter((r) => /\/rest\/v1\/sierra_feedback$/.test(r.url));
+    fbReqs = requests.filter((r) => /\/rest\/v1\/rpc\/sierra_feedback_upsert$/.test(r.url));
     check("Send note re-upserts the SAME turn row with the note",
-      fbReqs.length === 2 && fbReqs[1].body.note === "Missing my college" &&
-      fbReqs[1].body.turn_id === fbReqs[0].body.turn_id);
+      fbReqs.length === 2 && fbReqs[1].body.p_note === "Missing my college" &&
+      fbReqs[1].body.p_turn_id === fbReqs[0].body.p_turn_id);
   }
 
   // ── (i) feedbackPayload clamps ──
@@ -213,9 +212,9 @@ check("standalone — no COBI tab nav present", !/data-tab=/.test(HTML) && !/cpl
       note: "x".repeat(3000), question: "q".repeat(5000), response: "r".repeat(20000),
     });
     check("feedbackPayload clamps note/question/response lengths",
-      p.note.length === 2000 && p.question.length === 4000 && p.response.length === 12000);
+      p.p_note.length === 2000 && p.p_question.length === 4000 && p.p_response.length === 12000);
     check("feedbackPayload nulls an absent note",
-      API.feedbackPayload({ turnId: "t-123456789", rating: "up" }).note === null);
+      API.feedbackPayload({ turnId: "t-123456789", rating: "up" }).p_note === null);
   }
 
   // ── report ──

@@ -99,35 +99,36 @@
   }
 
   // ── Per-answer feedback (👍/👎 + optional note → Supabase sierra_feedback) ──
-  // One row per assistant turn, keyed by a client uuid; the row is UPSERTed
-  // (Prefer: resolution=merge-duplicates) so a thumb click logs immediately and
-  // an added note (or a switched rating) updates the same row. Anon write-only;
-  // the CPL team reads these (reviewer/team-phrase gate) to train Sierra.
+  // One row per assistant turn, keyed by a client uuid: a thumb click logs
+  // immediately and an added note (or a switched rating) updates the SAME row.
+  // Writes go through the SECURITY DEFINER RPC `sierra_feedback_upsert` — a
+  // direct PostgREST upsert (ON CONFLICT) needs SELECT visibility of the
+  // conflicting row, which this table deliberately denies to anon (write-only
+  // for the public; the CPL team reads it via the reviewer/team-phrase gate).
   function newTurnId() {
     return (window.crypto && crypto.randomUUID) ? crypto.randomUUID()
       : 'turn-' + Date.now() + '-' + Math.random().toString(16).slice(2);
   }
   function feedbackPayload(o) {
     return {
-      turn_id: o.turnId,
-      session_id: o.sessionId || null,
-      page: o.page || 'sierra',
-      audience: o.audience || null,
-      question: String(o.question || '').slice(0, 4000),
-      response: String(o.response || '').slice(0, 12000),
-      rating: o.rating,
-      note: o.note ? String(o.note).slice(0, 2000) : null,
+      p_turn_id: o.turnId,
+      p_rating: o.rating,
+      p_session_id: o.sessionId || null,
+      p_page: o.page || 'sierra',
+      p_audience: o.audience || null,
+      p_question: String(o.question || '').slice(0, 4000),
+      p_response: String(o.response || '').slice(0, 12000),
+      p_note: o.note ? String(o.note).slice(0, 2000) : null,
     };
   }
   function sendFeedback(payload) {
     try {
-      return fetch(SUPABASE_URL + '/rest/v1/sierra_feedback', {
+      return fetch(SUPABASE_URL + '/rest/v1/rpc/sierra_feedback_upsert', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'apikey': SUPABASE_ANON,
           'Authorization': 'Bearer ' + SUPABASE_ANON,
-          'Prefer': 'resolution=merge-duplicates',
         },
         body: JSON.stringify(payload),
       }).catch(function () { /* feedback is best-effort */ });

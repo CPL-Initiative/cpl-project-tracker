@@ -640,6 +640,11 @@ const OFFERINGS_RULE = `\n\nABOUT THE "COURSE CATALOG / WHICH COLLEGES TEACH THI
 - ALWAYS add that teaching a course is not a guarantee of credit — the student/organization should contact the college's CPL coordinator to request a review. Never claim an articulation exists when only a course is taught.
 - The catalog list shows the TOP matching colleges, NOT an exhaustive list. NEVER conclude that a college does NOT teach a subject just because it isn't shown — many colleges that teach it may not appear. If a specific college the visitor named is not in the list, do NOT say it lacks the courses; say you're not certain from the data at hand and suggest checking that college's catalog or CPL coordinator.`;
 
+// #6 — Missing/unconfigured CPL landing pages (v23 — Sam, 2026-07-01: "not all
+// colleges have configured their CPL Landing pages"). Never invent a link;
+// turn the gap into two concrete next steps.
+const LANDING_PAGE_RULE = `\n\nIF A COLLEGE HAS NO "CPL Landing Page" URL in the context above (or the visitor says a college's CPL page isn't working or isn't set up): do NOT invent or guess a link. Say warmly that the college doesn't appear to have its CPL landing page configured yet, and give two concrete steps: (1) contact that college's CPL coordinator or counseling/admissions office directly — it's perfectly fair to ask the college to set up its CPL landing page; (2) email the MAP team at MAP@rccd.edu to flag the missing page and get help finding the right contact at that college.`;
+
 // #5 — Audience-aware voice (v22, Session 92). The COBI CPL Assistant tab and
 // the standalone sierra/ page send an optional `audience` key = the visitor's
 // self-selected PRIMARY population. Same facts, framed for the reader — the
@@ -732,7 +737,7 @@ Be concise, friendly, and professional. Use plain language.
 
 IMPORTANT: When citing any numbers or metrics (student counts, units, savings, college counts, etc.), ALWAYS use the "LIVE CPL Dashboard Metrics" section below. These live numbers are scraped directly from the CCCCO Dashboard and are the most current. If a vault source below mentions a different number for the same metric, the live dashboard number is correct and the vault source is outdated. This applies especially to military/veteran student counts, savings figures, and unit totals.
 
-${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${STATEWIDE_RULE}${CREDIT_LIST_RULE}${OFFERINGS_RULE}${specialInstruction}${audienceRule}`;
+${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${STATEWIDE_RULE}${CREDIT_LIST_RULE}${OFFERINGS_RULE}${LANDING_PAGE_RULE}${specialInstruction}${audienceRule}`;
 }
 
 async function fetchLiveMetrics(): Promise<any> {

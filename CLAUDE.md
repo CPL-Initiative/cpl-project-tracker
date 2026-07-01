@@ -849,7 +849,10 @@ reuse, so keep it self-contained behind its CONFIG block.
   part of the daily GitHub Actions cron. Source-of-record is the **live
   function**, captured at `chatbox/supabase/functions/cpl-chat/index.ts`
   (re-capture with `get_edge_function` before editing if in doubt).
-- Live now: **v22 ACTIVE** (Session 92, StarLab — the **audience-aware voice**: an
+- Live now: **v23 ACTIVE** (Session 92, StarLab — **v23** adds `LANDING_PAGE_RULE`:
+  a college with no CPL Landing Page URL in context → never invent a link; say the
+  page isn't configured yet + suggest asking the college to set it up + offer
+  MAP@rccd.edu. **v22** (same session) — the **audience-aware voice**: an
   optional `audience` body field (validated against `AUDIENCE_RULES` keys
   student/faculty/administrator/employer/civic) appends a per-population tone/content
   rule to the system prompt — the student rule bans system inside-baseball; absent or
@@ -924,11 +927,12 @@ reuse, so keep it self-contained behind its CONFIG block.
   `audience` body field that v22 turns into per-audience response rules — the
   driving case: students never get system inside-baseball). Every completed
   answer gets a **👍/👎 + optional note** bar that UPSERTs (client-uuid
-  `turn_id`, `Prefer: resolution=merge-duplicates`) into Supabase
-  **`sierra_feedback`** with the audience + page + Q/A snapshot — anon
-  write-only; reviewer/team-phrase SELECT (the future Sierra-Training review
-  queue; `chat_interactions` gained the same reviewer SELECT for log-informed
-  gap mining). The production map.rccd.edu widget sends neither field —
+  `turn_id`) via the SECURITY DEFINER RPC **`sierra_feedback_upsert`** into
+  **`sierra_feedback`** with the audience + page + Q/A snapshot — the RPC is
+  the only public write path (a direct PostgREST upsert would trip RLS: ON
+  CONFLICT needs SELECT visibility, which anon lacks); reviewer/team-phrase
+  SELECT (the future Sierra-Training review queue; `chat_interactions` gained
+  the same reviewer SELECT for log-informed gap mining). The production map.rccd.edu widget sends neither field —
   unaffected. Schema: `chatbox/supabase_sierra_feedback.sql`; scope +
   Training-tab recommendation: `docs/sierra_training_tab_scope.md`; tests:
   `tests/sierra_page.test.js` + `tests/cpl_chat_audience.test.js`; smoke modes
@@ -1118,10 +1122,12 @@ JSON) and Saves/Resumes to Supabase `tmc_submissions`.
 - **`sierra_feedback`** (added Session 92): the Sierra 👍/👎 + note store behind
   both chat surfaces. One row per assistant turn keyed by a client-uuid
   `turn_id`; the client UPSERTs (rating on thumb click, note/rating-switch
-  updates the same row). Carries `page`, `audience`, and the Q/A snapshot. RLS:
-  anon INSERT+UPDATE (deliberate — the tmc_submissions posture; uuid-keyed,
-  non-sensitive), SELECT gated `is_allowed_reviewer() OR team_pass_ok()` (the
-  planned Sierra-Training review queue). Same wave: `chat_interactions` gained
+  updates the same row) via the **SECURITY DEFINER RPC `sierra_feedback_upsert`**
+  — the ONLY public write path (a direct PostgREST upsert 401s: ON CONFLICT
+  needs SELECT visibility, which anon deliberately lacks; the RPC also
+  centralizes validation). Carries `page`, `audience`, and the Q/A snapshot.
+  RLS: no anon table policies; SELECT gated `is_allowed_reviewer() OR
+  team_pass_ok()` (the planned Sierra-Training review queue). Same wave: `chat_interactions` gained
   an `audience` column + the same reviewer/team-phrase SELECT policy (was
   write-only) for log-informed gap mining. Schema:
   `chatbox/supabase_sierra_feedback.sql`.
@@ -2253,7 +2259,10 @@ widget untouched); `audience` also logs to `chat_interactions`, which gained a
 reviewer SELECT for gap mining. **Training tab: recommended YES, phased** —
 `docs/sierra_training_tab_scope.md` (P1 review-queue+gap-miner · P2 guidance table ·
 P3 RAG-corpus ingestion · the Malone guardrails lane pre-"Credit for Being Me").
-Tests 33+17 new checks, 118 files green; smoke modes 10–12. Full story:
+**v23** (same session): the missing-landing-page rule (never invent a link; route to
+the college + MAP@rccd.edu); feedback writes hardened to the `sierra_feedback_upsert`
+RPC after the smoke run caught the ON-CONFLICT-needs-SELECT RLS 401.
+Tests 32+16 new checks, 118 files green; smoke modes 10–12. Full story:
 `docs/cpl_assistant_lessons.md` (Session 92). **NEXT: `docs/session_93_handoff.md`.**
 
 ---

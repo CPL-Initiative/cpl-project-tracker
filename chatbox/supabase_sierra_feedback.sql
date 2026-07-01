@@ -11,12 +11,16 @@
 --
 -- One row per assistant turn, keyed by a client-generated unguessable turn_id
 -- (crypto.randomUUID). The client UPSERTs: bare rating on thumb click, again
--- when the optional note lands (or the rating is switched) — no row explosion,
--- no UPDATE-by-guessable-key surface.
+-- when the optional note lands (or the rating is switched) — no row explosion.
 --
--- RLS posture (deliberate — mirrors the documented tmc_submissions /
--- chat_interactions stance for public, non-sensitive, uuid-keyed rows):
---   * anon INSERT + UPDATE: true. Public thumbs must work logged-out.
+-- RLS posture:
+--   * NO anon table policies at all. The public write path is the SECURITY
+--     DEFINER RPC sierra_feedback_upsert() below — a direct PostgREST upsert
+--     (INSERT … ON CONFLICT DO UPDATE) requires the conflicting row to be
+--     VISIBLE under a SELECT policy, which this table deliberately denies to
+--     anon. (Found empirically: the first smoke run 401'd with "new row
+--     violates row-level security policy".) The RPC also centralizes input
+--     validation, which is tighter than open anon INSERT/UPDATE policies.
 --   * SELECT: is_allowed_reviewer() OR team_pass_ok() ONLY. The public anon
 --     key alone reads nothing back.
 -- ============================================================================
@@ -44,18 +48,52 @@ create table if not exists public.sierra_feedback (
 
 alter table public.sierra_feedback enable row level security;
 
-drop policy if exists sierra_fb_insert on public.sierra_feedback;
-create policy sierra_fb_insert on public.sierra_feedback
-  for insert to anon, authenticated with check (true);
-
-drop policy if exists sierra_fb_update on public.sierra_feedback;
-create policy sierra_fb_update on public.sierra_feedback
-  for update to anon, authenticated using (true) with check (true);
-
+-- The ONLY policy: reviewer/team-phrase read. No anon write policies — the
+-- write path is the RPC below. (The original anon INSERT/UPDATE policies were
+-- dropped in the sierra_feedback_upsert_rpc migration.)
 drop policy if exists sierra_fb_select on public.sierra_feedback;
 create policy sierra_fb_select on public.sierra_feedback
   for select to anon, authenticated
   using (public.is_allowed_reviewer() or public.team_pass_ok());
+
+-- ── The public write path: validated SECURITY DEFINER upsert ────────────────
+-- Clients call POST /rest/v1/rpc/sierra_feedback_upsert with p_* keys
+-- (sierra/sierra.js + cpl_chat.js feedbackPayload()).
+create or replace function public.sierra_feedback_upsert(
+  p_turn_id text,
+  p_rating text,
+  p_session_id text default null,
+  p_page text default null,
+  p_audience text default null,
+  p_question text default null,
+  p_response text default null,
+  p_note text default null
+) returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if p_turn_id is null or char_length(p_turn_id) < 8 or char_length(p_turn_id) > 64 then
+    raise exception 'invalid turn_id';
+  end if;
+  if p_rating is null or p_rating not in ('up', 'down') then
+    raise exception 'invalid rating';
+  end if;
+  insert into public.sierra_feedback
+    (turn_id, session_id, page, audience, question, response, rating, note)
+  values
+    (p_turn_id, left(p_session_id, 80), left(p_page, 40), left(p_audience, 40),
+     left(p_question, 4000), left(p_response, 12000), p_rating, left(p_note, 2000))
+  on conflict (turn_id) do update set
+    rating = excluded.rating,
+    -- a later rating-only upsert must not erase an already-recorded note
+    note = coalesce(excluded.note, sierra_feedback.note),
+    audience = coalesce(excluded.audience, sierra_feedback.audience);
+end $$;
+
+revoke all on function public.sierra_feedback_upsert(text, text, text, text, text, text, text, text) from public;
+grant execute on function public.sierra_feedback_upsert(text, text, text, text, text, text, text, text) to anon, authenticated;
 
 -- Keep created_at immutable + stamp updated_at on the note/rating upsert.
 create or replace function public.sierra_feedback_touch()
