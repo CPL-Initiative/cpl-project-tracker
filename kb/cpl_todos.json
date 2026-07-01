@@ -1,20 +1,26 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-01 · Session 90 (SkySherpa) · Sierra's standalone page got its brand: CPL Initiative logo + Mt Whitney + \"Your CPL Sherpa\"",
- "_session": 90,
- "_status": "Session 90 was a quick visual pass on the shareable Sierra page (sierra/): her header now leads with the official CPL Initiative logo, has a subtle Mt Whitney ridgeline traced behind the 'Sierra' name (with a touch of snow at the peak — Whitney is the tallest peak in the Sierra Nevada), and a new tagline, 'Your CPL Sherpa.' All live. — Prior context: Sierra also got a lot smarter for detailed questions. She could only search the credit colleges have ALREADY set up (the exhibit list); now she can also search the full COCI course + program catalog — what each college actually TEACHES — plus a region/county map of all 120 colleges. So for a question like the Boys & Girls Club's (get their teens NCCER/OSHA/welding credit at LA Harbor / El Camino / Long Beach), she can reason: LA Harbor teaches 0 construction-trades courses, but El Camino (25) and Long Beach City (14) DO, and Norco/Barstow already articulated NCCER — so she routes you to the right nearby college and frames it as an easy adoption, instead of dead-ending at 'no exhibit.' Live now on both the dashboard tab AND the public map.rccd.edu widget (cpl-chat v20).",
+ "_as_of": "2026-07-01 · Session 91 (SkyGOAT) · TMC Builder: right-side C-ID coverage roughly DOUBLED + 'X OR Y' course choices now show on the left",
+ "_session": 91,
+ "_status": "Session 91 answered two questions about the TMC Builder from your Saddleback screenshot (lots of blank right-side matches). (1) COVERAGE: the tab was only matching a college's course to a TMC slot when the college itself had recorded the C-ID in COCI — and about a quarter of colleges barely record C-IDs. We folded in the official c-id.net approved-courses list (already in the repo, just unused), which roughly DOUBLED the matches (10,627 → 21,300 college×course C-IDs; ~9,900 courses gained a C-ID). So far fewer blanks now. (2) 'OR' CHOICES: many templates say 'Course X OR Course Y' (pick one) — the builder could already show that, but the data never had it, because the official PDFs hide the 'OR' in a two-column layout that plain text extraction scrambles. We had Claude READ the 45 PDFs visually (with a second pass double-checking each one) to pull out the real OR-groups, and folded 77 of them in — so the left side now shows 'X or Y' and matches either. What it still CAN'T do: if a college simply has no C-ID-approved course for a slot (like Saddleback's Criminal Law), no dataset fills it — that's an honest blank, not a bug.",
  "items": [
   {
-   "id": "sierra-whitney-followthrough",
+   "id": "tmc-or-skips",
    "who": "sam",
-   "tab": "chatbot",
-   "text": "Optional Sierra polish: want the new Mt Whitney mark carried into the little chat avatar (still a 🏔️ emoji) and/or the browser tab icon? It's a reusable graphic now — just say the word and Fable will drop it in."
+   "tab": "tmc-builder",
+   "text": "Faculty-verify territory (3 leftover 'OR' groups the auto-fold skipped on purpose): Studio Art's advanced-studio line (ARTS 280/281/282) wasn't in our parse at all → needs a slot added; and Law/Public-Policy uses one course (COMM 120) as an option in TWO different requirement lines, which our one-slot model can't hold cleanly. Want me to add the Studio Art slot and/or handle the LPPS case, or leave for a faculty pass?"
   },
   {
    "id": "sierra-try",
    "who": "sam",
    "tab": "chatbot",
-   "text": "Try Sierra on a detailed trades question (e.g. paste your Boys & Girls Club NCCER/OSHA/welding question, or ask 'Does LA Harbor give credit for NCCER carpentry?'). She should now name nearby colleges that TEACH construction (El Camino, LA Trade-Tech, Rio Hondo…) and point to Norco/Barstow as proof. Tell me if any answer should route or word differently — we keep tuning her."
+   "text": "Try Sierra on a detailed trades question (e.g. your Boys & Girls Club NCCER/OSHA/welding question, or 'Does LA Harbor give credit for NCCER carpentry?'). She should name nearby colleges that TEACH construction (El Camino, LA Trade-Tech, Rio Hondo…) and cite Norco/Barstow as proof. Tell me if any answer should route or word differently."
+  },
+  {
+   "id": "sierra-whitney-followthrough",
+   "who": "sam",
+   "tab": "chatbot",
+   "text": "Optional Sierra polish: want the Mt Whitney mark carried into the little chat avatar (still a 🏔️ emoji) and/or the browser tab icon? It's a reusable graphic now — just say the word and Fable will drop it in."
   },
   {
    "id": "mapusers-loginurl",
@@ -26,7 +32,7 @@
    "id": "reference-tabs-headerbands",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "Carryover decision: the CCR / Canonical-SUBJ4 / Credential-Reference tabs are light tables but still have a dark-navy sticky HEADER band. Want those flipped light too for total uniformity? Just say the word."
+   "text": "Carryover decision: the CCR / Canonical-SUBJ4 / Credential-Reference tabs are light tables but still have a dark-navy sticky HEADER band. Want those flipped light too for total uniformity?"
   },
   {
    "id": "vet-plans-kb-15",
@@ -41,6 +47,12 @@
    "text": "One-time: add the Fact Sheet URL (or …/cpl-project-tracker/**) to the Supabase Auth → Redirect URLs list so a magic-link sign-in from the Fact Sheet lands back on that page."
   },
   {
+   "id": "tmc-engine",
+   "who": "fable",
+   "tab": "tmc-builder",
+   "text": "Build the TMC Phase-2 acceptance engine — per-slot verdicts on a college's submitted courses (now that the C-ID coverage is doubled and 'OR' alternatives are in place, the matching inputs are much richer). Scope: docs/kb-notes/tmc-co-review-scope.md."
+  },
+  {
    "id": "assistant-cer",
    "who": "fable",
    "tab": "chatbot",
@@ -51,12 +63,6 @@
    "who": "fable",
    "tab": "unified-courses",
    "text": "Continue the unverified-M-ID renumber re-mint per the scope doc — staging-cleanup pass, dry-run first, alias map committed."
-  },
-  {
-   "id": "tmc-engine",
-   "who": "fable",
-   "tab": "tmc-builder",
-   "text": "Build the TMC Phase-2 acceptance engine (the CO-review scoring that decides whether a college's submitted courses meet each ADT's requirements)."
   }
  ]
 }

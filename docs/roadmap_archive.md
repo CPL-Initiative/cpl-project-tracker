@@ -2016,3 +2016,21 @@ confirmed UserStatus∈{Active,Inactive}/UserDisciplines/LastUpdatedOn on the 16
 `active_count` (Disciplines+Last-updated reviewer-gated). Sync FIELD_MAP + tab roster columns. Tests:
 +4 new files (#628) + cobi_brand z-index guards; map_users → 70 checks; 114 JS files green. Full
 story: [`docs/cobi_lessons.md`](docs/cobi_lessons.md) (S88).
+
+### Session 89 — SkyMiles: Sierra sees what colleges TEACH (the COCI offerings catalog, v20) (2026-07-01)
+
+Sam's ask (from a Boys & Girls Club colleague's detailed NCCER/OSHA/welding CPL
+question): free Sierra to research the course/program catalog. Root cause — the
+shared `cpl-chat` function could search only the **earned-exhibit** set
+(`chatbox_exhibits`), never **what a college TEACHES**, so it couldn't reason
+"LA Harbor hasn't articulated NCCER, but does it teach construction? if not, which
+nearby college does?" (confirmed: LA Harbor **0** construction-crafts courses, El
+Camino **25**, Long Beach City **14**). **Full build shipped (PR #631):** a public
+COCI **offerings catalog** in Supabase (`coci_college_offerings` 16k · `coci_college_programs`
+22k · `college_geo` 120; §8), built by `chatbox/build_coci_offerings.py`, loaded by
+the runner sync `coci-offerings-sync.yml`; wired into **`cpl-chat` v20** (5th parallel
+lookup + relevance-ranked `search_college_offerings` + core-vs-tangential gating +
+nearest-college ranking + `OFFERINGS_RULE` adoption prompt; `verify_jwt` preserved
+false). Smoke modes 7–8. This is the **offerings slice of the CCR/CER ETL** (CER +
+adoption-leverage layers are the next wire). Full story: `docs/cpl_assistant_lessons.md`
+(Session 89).
