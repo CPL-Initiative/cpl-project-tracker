@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-01T10:17:33.884452+00:00",
+  "scraped_at": "2026-07-01T12:18:41.428342+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
@@ -110,14 +110,14 @@
       "jst": 197,
       "star": false
     },
-    "Cypress College": {
-      "mil": 259,
-      "jst": 367,
-      "star": true
-    },
     "College of the Desert": {
       "mil": 235,
       "jst": 355,
+      "star": true
+    },
+    "Cypress College": {
+      "mil": 259,
+      "jst": 367,
       "star": true
     },
     "Modesto Junior College": {
@@ -250,6 +250,11 @@
       "jst": 136,
       "star": true
     },
+    "Allan Hancock College": {
+      "mil": 392,
+      "jst": 128,
+      "star": false
+    },
     "College of San Mateo": {
       "mil": 199,
       "jst": 179,
@@ -259,11 +264,6 @@
       "mil": 185,
       "jst": 166,
       "star": true
-    },
-    "Allan Hancock College": {
-      "mil": 392,
-      "jst": 128,
-      "star": false
     },
     "Solano Community College": {
       "mil": 278,

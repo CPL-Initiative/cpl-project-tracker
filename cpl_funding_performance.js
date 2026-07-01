@@ -7,8 +7,8 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "p2": 4666,
-  "p3": 16200
+  "p2": 4668,
+  "p3": 16208
  },
  "colleges": {
   "Bakersfield": {
@@ -92,8 +92,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Moreno Valley": {
-   "p2": 364,
-   "p3": 1378
+   "p2": 366,
+   "p3": 1387
   },
   "Norco College": {
    "p2": 111,
@@ -105,7 +105,7 @@ window.CPL_FUNDING_PERF = {
   },
   "Riverside": {
    "p2": 33,
-   "p3": 690
+   "p3": 689
   },
   "San Bernardino": {
    "p2": 54,
