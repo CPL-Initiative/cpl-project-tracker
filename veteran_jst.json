@@ -1,14 +1,14 @@
 {
-  "scraped_at": "2026-07-01T15:16:07.640858+00:00",
+  "scraped_at": "2026-07-01T16:08:31.462871+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
-  "_note": "vets = EnrolledMilitaryStudents (veterans reported to MIS); jst = MilitaryStudents (military students served via JST — the number the MAP Dash shows as 'JST'). Corrected 2026-07-01 (was VeteransWithJSTs).",
   "statewide": {
     "vets": 34135,
-    "jst": 24885,
+    "jst": 24886,
     "star_colleges": 50
   },
+  "computed_star_colleges": 50,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 296,
@@ -132,7 +132,7 @@
     },
     "Santa Ana College": {
       "vets": 334,
-      "jst": 352,
+      "jst": 353,
       "star": true
     },
     "Santa Rosa Junior College": {
@@ -585,6 +585,5 @@
       "jst": 0,
       "star": false
     }
-  },
-  "computed_star_colleges": 50
+  }
 }
