@@ -134,9 +134,9 @@ def fetch_cpl_kb(max_chars=CPL_KB_MAX_CHARS):
 HTML_FILE   = os.path.join(SCRIPT_DIR, "CPL_Dashboard.html")
 LIVE_FILE    = os.path.join(SCRIPT_DIR, "live_metrics.json")
 HISTORY_FILE = os.path.join(SCRIPT_DIR, "kpi_history.json")
-# MIL (reported service members) vs JST (uploaded) + per-college Veteran Star,
-# written by fetch_veteran_jst.py on the daily runner. Optional — the generator
-# degrades gracefully (no MIL/JST column / proxy retained) when it's absent.
+# Vets (veterans reported to MIS) vs JST (uploaded to MAP) + per-college Veteran
+# Star, written by fetch_veteran_jst.py on the daily runner. Optional — the
+# generator degrades gracefully (no Vets/JST column / proxy retained) when absent.
 VETERAN_JST_FILE = os.path.join(SCRIPT_DIR, "veteran_jst.json")
 
 # ── MAP Exhibit / Custom Report data source ─────────────────────────
@@ -3904,8 +3904,8 @@ def render_college_activity_card(live_data, last_activity=None, military_student
       live_data:         parsed live_metrics.json (tiers + per-college metrics)
       last_activity:     {college_name: datetime} from CustomReport
       military_students: {college_name: int} from CustomReport (used as veterans fallback)
-      veteran_jst:       parsed veteran_jst.json — per-college MIL/JST + the
-                         Veteran Star (JST >= 75% of MIL); adds the MIL/JST column
+      veteran_jst:       parsed veteran_jst.json — per-college Vets/JST + the
+                         Veteran Star (JST >= 75% of Vets); adds the Vets/JST column
       exhibit_tables:    output of build_exhibit_analysis_tables() — supplies
                          per-college exhibit counts and discipline detail
     """
@@ -3939,9 +3939,10 @@ def render_college_activity_card(live_data, last_activity=None, military_student
     ms                = military_students or {}
     today_dt          = _now_pt()
 
-    # Per-college MIL (reported military students) / JST (uploaded) + Veteran
-    # Star (JST >= 75% of MIL). The star col in the table reflects THIS, not the
-    # near-always-on "met >=1 criterion" star (Sam, 2026-06-30).
+    # Per-college Vets (veterans reported to MIS) / JST (uploaded to MAP) +
+    # Veteran Star (JST >= 75% of Vets). The star col in the table reflects
+    # THIS, not the near-always-on "met >=1 criterion" star (Sam, 2026-06-30;
+    # Vets label corrected 2026-07-01).
     vj_colleges = (veteran_jst or {}).get("colleges", {}) or {}
     has_vj = bool(vj_colleges)
 
@@ -3977,12 +3978,13 @@ def render_college_activity_card(live_data, last_activity=None, military_student
         last_dt = la.get(name)
         last_days = (today_dt - last_dt).days if last_dt else None
 
-        vj = vj_colleges.get(name) or {}
-        mil = int(vj.get("mil") or 0)
+        vj = vj_colleges.get(name) or vj_colleges.get((name or "").strip()) or {}
+        vets = int(vj.get("vets") or 0)
         jst = int(vj.get("jst") or 0)
         vstar = bool(vj.get("star"))
-        # JST/MIL upload rate, for the sort key + tooltip (0 when MIL unknown).
-        jst_rate = round(jst / mil * 100) if mil else (100 if jst else 0)
+        # JST upload rate = JST / Vets (reported veterans), for the sort key +
+        # inline % (0 when Vets unknown). Star = JST >= 75% of Vets.
+        jst_rate = round(jst / vets * 100) if vets else (100 if jst else 0)
 
         return {
             "tier":               tier_name,
@@ -4002,8 +4004,10 @@ def render_college_activity_card(live_data, last_activity=None, military_student
             "trans_rate":         trans_rate,
             "criteria_met":       criteria,
             "last_activity_days": last_days,
-            # MIL/JST + Veteran Star (Session 88)
-            "mil":                mil,
+            # Vets/JST + Veteran Star (Session 88; Vets label 2026-07-01).
+            # `veterans` (above) stays as the report-prose field; the table
+            # column now shows Vets/JST from veteran_jst.json.
+            "vets":               vets,
             "jst":                jst,
             "vstar":              vstar,
             "jst_rate":           jst_rate,
@@ -4031,7 +4035,7 @@ def render_college_activity_card(live_data, last_activity=None, military_student
             html = html.rstrip() + "\n" + algo_html + "\n"
 
     # Emit the data blob immediately before the external script so it loads first.
-    # COLLEGE_HAS_JST gates the MIL/JST column + Veteran-Star col so they only
+    # COLLEGE_HAS_JST gates the Vets/JST column + Veteran-Star col so they only
     # show once veteran_jst.json is present (degrade gracefully otherwise).
     data_script = (
         "    <script>\n"
@@ -4144,12 +4148,14 @@ def merge_live_metrics(kpis, live_data):
 
 
 def read_veteran_jst():
-    """Read veteran_jst.json (MIL/JST + per-college Veteran Star), or None.
+    """Read veteran_jst.json (Vets/JST + per-college Veteran Star), or None.
 
     Written by fetch_veteran_jst.py on the daily runner from the
     potential-savings API. Shape:
-        {"statewide": {"mil": int, "jst": int, "star_colleges": int},
-         "colleges": {name: {"mil": int, "jst": int, "star": bool}}, ...}
+        {"statewide": {"vets": int, "jst": int, "star_colleges": int},
+         "colleges": {name: {"vets": int, "jst": int, "star": bool}}, ...}
+    Vets = veterans reported to MIS; JST = JSTs uploaded to MAP; the Veteran
+    Star is JST >= 75% of Vets (Sam, 2026-07-01).
     """
     if not os.path.exists(VETERAN_JST_FILE):
         return None
@@ -4162,18 +4168,19 @@ def read_veteran_jst():
 
 
 def apply_veteran_jst(kpis, vj_data):
-    """Put the REAL MIL (reported service members) + JST (uploaded) on the
-    Veteran Sprint card, replacing the military-students PROXY that stood in for
-    JSTs (Sam, 2026-06-30 — MIL and JST are tracked separately on the MAP
-    dashboard). The gold ⭐ is earned when a college uploaded JSTs for ≥75% of
-    its reported military students. No-op (proxy retained) when vj_data absent.
+    """Put the REAL Vets (veterans reported to MIS) + JST (uploaded to MAP) on
+    the Veteran Sprint card, replacing the military-students PROXY that stood in
+    for JSTs (Sam, 2026-06-30 — Vets and JST are tracked separately on the MAP
+    dashboard; "Vets" label corrected 2026-07-01). The gold ⭐ is earned when a
+    college uploaded JSTs for ≥75% of its reported veterans. No-op (proxy
+    retained) when vj_data absent.
     """
     if not vj_data or "veteran_sprint" not in kpis:
         return kpis
     sw = vj_data.get("statewide") or {}
-    mil = int(sw.get("mil") or 0)
+    vets = int(sw.get("vets") or 0)
     jst = int(sw.get("jst") or 0)
-    if not (mil or jst):
+    if not (vets or jst):
         return kpis
 
     card = kpis["veteran_sprint"]
@@ -4189,18 +4196,22 @@ def apply_veteran_jst(kpis, vj_data):
             jst_idx = i
             break
 
-    # Insert "Service Members (MIL)" right after JSTs Uploaded (idempotent).
-    if not any(b.get("label", "").lower().startswith("service members") for b in bds):
-        mil_bd = {"label": "Service Members (MIL)", "value": f"{mil:,}",
-                  "note": "reported by colleges"}
-        bds.insert(jst_idx + 1 if jst_idx >= 0 else 0, mil_bd)
+    # Insert "Veterans (reported)" right after JSTs Uploaded (idempotent). Drop
+    # any prior "Service Members (MIL)" breakdown from the old proxy labeling.
+    bds = [b for b in bds if not b.get("label", "").lower().startswith("service members")]
+    if not any(b.get("label", "").lower().startswith("veterans (reported)") for b in bds):
+        vets_bd = {"label": "Veterans (reported)", "value": f"{vets:,}",
+                   "note": "reported to MIS by colleges"}
+        bds.insert(jst_idx + 1 if jst_idx >= 0 else 0, vets_bd)
     card["breakdowns"] = bds
 
     # The star rule, on the card footnote (renders like Active Colleges').
-    pct = round(jst / mil * 100) if mil else 0
+    pct = round(jst / vets * 100) if vets else 0
     rule = (f"Gold &#11088; = a college uploaded JSTs for &ge;75% of its reported "
-            f"military students. Statewide: {jst:,} JSTs / {mil:,} reported ({pct}%).")
+            f"veterans. Statewide: {jst:,} JSTs / {vets:,} veterans ({pct}%).")
     fn = card.get("footnote") or []
+    # Drop the prior "military students" phrasing of this rule if present.
+    fn = [x for x in fn if "military students" not in x or "&ge;75%" not in x]
     if rule not in fn:
         fn.append(rule)
     card["footnote"] = fn
@@ -11005,7 +11016,7 @@ def main():
     # Load live CCCCO scrape early so it can seed star_college_count (single
     # source of truth for the Veteran Sprint headline + sprint composite).
     live_data       = read_live_metrics()
-    # MIL/JST + per-college Veteran Star (optional; degrades gracefully).
+    # Vets/JST + per-college Veteran Star (optional; degrades gracefully).
     veteran_jst     = read_veteran_jst()
     kpis            = compute_headline_kpis(projects, budget, config_overrides, live_data)
 
@@ -11103,13 +11114,13 @@ def main():
     else:
         print("No exhibit data found — skipping exhibit KPIs")
 
-    # MIL vs JST on the Veteran Sprint card — real uploaded JST + reported MIL +
+    # Vets vs JST on the Veteran Sprint card — real uploaded JST + reported Vets +
     # the 75% star rule, replacing the military-students proxy. Must run after
     # merge_live_metrics (which fills the {jst_credits} proxy this overwrites).
     if veteran_jst:
         apply_veteran_jst(kpis, veteran_jst)
         _sw = veteran_jst.get("statewide", {})
-        print(f"Applied MIL/JST: MIL={_sw.get('mil', 0):,} JST={_sw.get('jst', 0):,} "
+        print(f"Applied Vets/JST: Vets={_sw.get('vets', 0):,} JST={_sw.get('jst', 0):,} "
               f"({len(veteran_jst.get('colleges', {}))} colleges)")
 
     # Session 85 — Annual Workplan "Current" hybrid: now that kpis carries the

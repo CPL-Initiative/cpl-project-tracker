@@ -1,21 +1,28 @@
 """
-fetch_veteran_jst.py — MIL vs JST data from the CPL potential-savings API
-=========================================================================
-The CCCCO MAP CPL Dashboard's `potential-savings` API carries two
-veteran-program counts the daily worker scrape doesn't surface:
+fetch_veteran_jst.py — Vets vs JST data from the CPL potential-savings API
+==========================================================================
+The CCCCO MAP CPL Dashboard's `potential-savings` API carries the two
+veteran-program counts the MAP Dash shows as "Vets/JST+" (Sam, 2026-07-01 —
+this is exactly what the MAP Dash displays, matching field-for-field):
 
-  EnrolledMilitaryStudents  → "MIL" — service members a college REPORTS enrolled
-  VeteransWithJSTs          → "JST" — Joint Services Transcripts UPLOADED to MAP
+  EnrolledMilitaryStudents  → "Vets" — veterans a college REPORTS to MIS annually
+  MilitaryStudents          → "JST"  — military students served via an uploaded
+                                       JST (the MAP Dash's "JST" number)
 
-A college earns the **Veteran Star** when it has uploaded JSTs for at least 75%
-of its reported military students (JST ≥ 0.75 × MIL). The statewide
-`StarCollegeCount` is MAP's authoritative star tally.
+  % = JST / Vets   ·   Star = when JST ≥ 75% of Vets
+
+NOTE (2026-07-01 correction): the "JST" number is `MilitaryStudents`, NOT
+`VeteransWithJSTs`. The MAP Dash's second number matches `MilitaryStudents`
+field-for-field (statewide 24,885; Antelope 266; Bakersfield 541), and with it
+the 75%-rule star count lands on EXACTLY MAP's `StarCollegeCount` (50).
+`VeteransWithJSTs` (statewide ~23.5k) is a different, unused field. Do NOT use
+the label "MIL" — the first number is "Vets".
 
 This script fetches the same public API the worker uses (no auth) and writes
-`veteran_jst.json` — statewide totals + per-college {mil, jst, star}. The
-generator (excel_to_dashboard.py) reads it to (a) put the real JST/MIL on the
-Veteran Sprint KPI card and (b) add a MIL/JST column + the Veteran Star to the
-College Activity table.
+`veteran_jst.json` — statewide totals + per-college {vets, jst, star}. The
+generator (excel_to_dashboard.py) reads it to (a) put the real Vets/JST on the
+Veteran Sprint KPI card and (b) add a "Vets / JST" column + the Veteran Star to
+the College Activity table.
 
 Runs on a GitHub Actions runner (the Azure API host is egress-blocked from the
 agent sandbox). Fails SOFT: on any error it leaves the prior veteran_jst.json
@@ -38,7 +45,7 @@ from datetime import datetime, timezone
 
 API_URL = "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0"
 SOURCE_URL = "https://cpldashboardcccco.azurewebsites.net/insights/dashboard"
-STAR_THRESHOLD = 0.75  # JST ≥ 75% of MIL → Veteran Star
+STAR_THRESHOLD = 0.75  # JST ≥ 75% of Vets → Veteran Star
 
 
 def _int(v):
@@ -48,15 +55,15 @@ def _int(v):
         return 0
 
 
-def is_star(mil, jst):
-    """Veteran Star: uploaded JSTs ≥ 75% of reported military students.
+def is_star(vets, jst):
+    """Veteran Star: JST ≥ 75% of Vets (reported veterans).
 
-    A college reporting 0 military but with JSTs on file (more uploaded than
-    enrolled) earns the star; 0/0 does not.
+    A college reporting 0 veterans but with JSTs on file earns the star; 0/0
+    does not.
     """
-    if mil <= 0:
+    if vets <= 0:
         return jst > 0
-    return jst >= STAR_THRESHOLD * mil
+    return jst >= STAR_THRESHOLD * vets
 
 
 def build_veteran_jst(rows, now_iso):
@@ -75,8 +82,10 @@ def build_veteran_jst(rows, now_iso):
         allc = rows[1] if len(rows) > 1 else {}
 
     statewide = {
-        "mil": _int(allc.get("EnrolledMilitaryStudents")),
-        "jst": _int(allc.get("VeteransWithJSTs")),
+        # Vets = EnrolledMilitaryStudents (reported to MIS); JST = MilitaryStudents
+        # (served via an uploaded JST — the MAP Dash's "JST" number).
+        "vets": _int(allc.get("EnrolledMilitaryStudents")),
+        "jst": _int(allc.get("MilitaryStudents")),
         # MAP's authoritative star tally (independent of our per-college calc).
         "star_colleges": _int(allc.get("StarCollegeCount")),
     }
@@ -89,12 +98,12 @@ def build_veteran_jst(rows, now_iso):
         name = (r.get("College") or "").strip()
         if not name:
             continue
-        mil = _int(r.get("EnrolledMilitaryStudents"))
-        jst = _int(r.get("VeteransWithJSTs"))
-        star = is_star(mil, jst)
+        vets = _int(r.get("EnrolledMilitaryStudents"))
+        jst = _int(r.get("MilitaryStudents"))
+        star = is_star(vets, jst)
         if star:
             computed_stars += 1
-        colleges[name] = {"mil": mil, "jst": jst, "star": star}
+        colleges[name] = {"vets": vets, "jst": jst, "star": star}
 
     return {
         "scraped_at": now_iso,
@@ -129,7 +138,7 @@ def fetch(output_path="veteran_jst.json", timeout=60):
         return None
 
     sw = payload["statewide"]
-    print(f"  statewide MIL={sw['mil']:,} JST={sw['jst']:,} "
+    print(f"  statewide Vets={sw['vets']:,} JST={sw['jst']:,} "
           f"star_colleges={sw['star_colleges']} "
           f"(computed {payload['computed_star_colleges']}) "
           f"over {len(payload['colleges'])} colleges")
