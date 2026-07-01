@@ -39,12 +39,13 @@ C-ID descriptor  →  TMC (Transfer Model Curriculum)  →  ADT (AA-T / AS-T)
 > the transferability claim. The TMC Builder tab is the genuine transfer artifact;
 > keep the two framings separate.
 
-## The two authoritative data sources (both already in-repo)
+## The authoritative data sources (all already in-repo)
 
 | Need | File | Key fields |
 |---|---|---|
 | Left column (fixed C-ID slot labels) | `kb/reference/cid_descriptors.json` | 495 records `{descriptor:"ANTH 110", title, description}` |
 | Right column (a college's own courses) | `kb/reference/coci_course_list.xlsx` | 141,738 rows `College, Subject, Course_Number, CourseTitle, UnitValue, CIDNumber, …` |
+| Right column, C-ID coverage BOOST | `kb/reference/cid_articulations.json` | 28,070 official c-id.net articulations `{cid, college, subject, number, local_title, sequence?}` |
 
 **The join is trivial because the keys are identical.** COCI's `CIDNumber` is
 byte-for-byte the same string as the descriptor key (`"ANTH 110"`, `"PSY 205 B"`)
@@ -52,6 +53,41 @@ byte-for-byte the same string as the descriptor key (`"ANTH 110"`, `"PSY 205 B"`
 course "already carries" a TMC slot's C-ID iff
 `normalize(course.CIDNumber) == normalize(slot.cid)` (normalize = trim, upper,
 collapse spaces). No fuzzy matching, no descriptor-text NLP.
+
+### C-ID coverage doubles with the c-id.net authority (Session 90)
+
+COCI's `CIDNumber` column is **under-reported** — colleges self-report it
+unevenly (~1/4 report few/no C-IDs), so a lot of real articulations are missing
+from COCI. `cid_articulations.json` is the **official c-id.net approved-courses
+export** (same trust tier as COCI's `CIDNumber`, and roughly *doubles* it):
+
+```
+(college × C-ID) coverage — distinct pairs
+  COCI CIDNumber column        10,627
+  c-id.net cid_articulations   20,948
+  UNION                        21,300   (+10,673, ≈ +100%)
+```
+
+`tmc/_build_college_courses.py` **unions both sources per course**, joined on
+`(college, subject, number)` EXACT with a leading-zero-normalized fallback
+(`MATH 019 ↔ MATH 19`, +1.9k attaches). `sequence:true` rows (multi-course
+articulations) are excluded — one local course is not a standalone match for a
+sequence descriptor. Result: a course can now carry **more than one C-ID**, so
+`tmc_college_courses.js` rows gain an optional 6th element:
+
+- `[subj, num, title, units, cid]` — single C-ID (unchanged, lean).
+- `[subj, num, title, units, cid, xcid[]]` — `cid` = primary/display C-ID
+  (COCI's when present, else the first c-id.net one); `xcid[]` = the additional
+  C-IDs. The consumer matches a slot against `{cid} ∪ xcid` (`courseCids()` /
+  `matchedCid()` in `tmc_builder.js`), and `autoMatch` tracks used courses so one
+  physical course can't fill two slots.
+
+**A gap this does NOT close:** ~24% of c-id.net course-keys have no matching
+COCI course row (the college doesn't list that course in COCI), so those
+articulations can't surface as a pickable course. And a college genuinely
+lacking a C-ID-approved course for a slot (e.g. Saddleback's AoJ `AJ 120`)
+stays a legitimate blank — no course dataset fills it (the approved-ADT
+evidence lives in COCI's *program* export, which carries no course-to-slot map).
 
 ## The auto-match rule (safe-by-construction)
 
@@ -63,8 +99,9 @@ submission is worse than an empty slot. Title/subject similarity is reserved for
 ## Gotchas
 
 - **C-ID coverage in COCI is uneven.** ~1/4 of colleges record few/no C-IDs in
-  the MAP extract (a *reporting* gap, not an articulation gap). Auto-match is
-  sparse for them; the manual picker carries the load.
+  the MAP extract (a *reporting* gap, not an articulation gap). **Mitigated
+  Session 90** by unioning the c-id.net authority (above) — but the manual picker
+  + the approved-ADT title-fill recovery still carry the residual.
 - **No contact hours in COCI.** Only `UnitValue`. Units-in-range is the
   machine-checkable legitimacy signal; contact-hour parity is a faculty step.
 - **TOP/units vary by college** (see §9) — the same course can carry different

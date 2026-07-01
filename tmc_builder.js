@@ -77,6 +77,19 @@
     (slot.alts || []).forEach(function (a) { arr.push(normCid(a)); });
     return arr;
   }
+  // A local course can carry MORE THAN ONE C-ID — its COCI CIDNumber plus any
+  // additional C-IDs from the official c-id.net authority (row[5] = xcid[], folded
+  // into c.cids by setCollege). A course satisfies a slot if ANY of its C-IDs
+  // equals the slot's C-ID or one of its alts.
+  function courseCids(c) {
+    if (c.cids && c.cids.length) return c.cids;
+    return c.cid ? [normCid(c.cid)] : [];
+  }
+  function matchedCid(course, cids) {
+    var cc = courseCids(course);
+    for (var i = 0; i < cc.length; i++) { if (cids.indexOf(cc[i]) !== -1) return cc[i]; }
+    return null;
+  }
 
   /* ---- title matching (Session 69) -------------------------------------------
    * For colleges that ALREADY hold an approved ADT, approval implies every course
@@ -460,14 +473,21 @@
     if (!data || !name) { state.collegeIdx = -1; state.courses = []; state.byCid = null; return; }
     state.collegeIdx = data.colleges.indexOf(name);
     var recs = (state.collegeIdx >= 0 && data.courses[String(state.collegeIdx)]) || [];
-    state.courses = recs.map(function (r) { return { subj: r[0] || "", num: r[1] || "", title: r[2] || "", units: r[3], cid: r[4] || null }; });
+    state.courses = recs.map(function (r) {
+      // r = [subj, num, title, units, cid] or [..., cid, xcid[]]; cid is the
+      // PRIMARY (display) C-ID, xcid[] the additional c-id.net-authority C-IDs.
+      var cids = [];
+      var primary = r[4] || null;
+      if (primary) { var np = normCid(primary); if (np) cids.push(np); }
+      if (r[5]) r[5].forEach(function (a) { var n = normCid(a); if (n && cids.indexOf(n) === -1) cids.push(n); });
+      return { subj: r[0] || "", num: r[1] || "", title: r[2] || "", units: r[3], cid: primary, cids: cids };
+    });
     var m = new Map();
     state.courses.forEach(function (c) {
-      if (c.cid) {
-        var k = normCid(c.cid);
+      courseCids(c).forEach(function (k) {
         if (!m.has(k)) m.set(k, []);
         m.get(k).push(c);
-      }
+      });
     });
     state.byCid = m;
   }
@@ -481,13 +501,14 @@
     var titleToks = String(slot.title || "").toLowerCase().split(/[^a-z0-9]+/).filter(function (t) { return t.length > 3; });
     var out = [];
     state.courses.forEach(function (c) {
-      var hay = (c.subj + " " + c.num + " " + c.title + " " + (c.cid || "")).toLowerCase();
+      var hay = (c.subj + " " + c.num + " " + c.title + " " + courseCids(c).join(" ")).toLowerCase();
       if (q && hay.indexOf(q) === -1) return;
       var score = 0;
-      if (c.cid && cids.indexOf(normCid(c.cid)) !== -1) score += 100;
+      var mcid = matchedCid(c, cids);
+      if (mcid) score += 100;
       if (subjHint && c.subj.toLowerCase().indexOf(subjHint.slice(0, 3)) === 0) score += 8;
       titleToks.forEach(function (t) { if (c.title.toLowerCase().indexOf(t) !== -1) score += 2; });
-      out.push({ c: c, score: score });
+      out.push({ c: c, score: score, mcid: mcid });
     });
     out.sort(function (a, b) {
       if (b.score !== a.score) return b.score - a.score;
@@ -501,7 +522,7 @@
   function statusFor(slot, course) {
     if (!course) return { cls: "empty", label: "— not selected" };
     var cids = slotCids(slot);
-    var hasCid = course.cid && cids.indexOf(normCid(course.cid)) !== -1;
+    var hasCid = !!matchedCid(course, cids);
     var ur = unitsInRange(course.units, slot.units);
     if (slot.ge) {
       // GE areas are college-certified (no C-ID); `units` is a per-course MINIMUM.
@@ -1292,7 +1313,7 @@
         var o = el("div", "tmc-opt");
         o.innerHTML = "<span class='tmc-pc-code'>" + esc(x.c.subj + " " + x.c.num) + "</span> " + esc(x.c.title) +
           " <span class='tmc-pc-u'>(" + fmtU(x.c.units) + " u)</span>" +
-          (isMatch ? "<span class='tmc-pc-cid'>" + esc(x.c.cid) + "</span>" : "");
+          (isMatch ? "<span class='tmc-pc-cid'>" + esc(x.mcid || x.c.cid) + "</span>" : "");
         o.onclick = function () { setChoice(key, x.c); closePicker(); };
         list.appendChild(o);
       });
@@ -1478,14 +1499,25 @@
   // pre-select the college's course that already carries each slot's C-ID
   function autoMatch() {
     if (!state.tmc || !state.tmc.sections || !state.byCid) return;
+    // don't assign one physical course to two slots (a course C-ID-approved for
+    // two descriptors could match both — but it can't be double-counted in a real
+    // degree); track used courses so each auto-fills at most one slot.
+    var used = {};
+    Object.keys(state.choice).forEach(function (k) {
+      var c = state.choice[k]; if (c) used[c.subj + " " + c.num] = 1;
+    });
     state.tmc.sections.forEach(function (sec, si) {
       sec.slots.forEach(function (slot, sj) {
         var key = si + ":" + sj;
         if (state.choice[key]) return;
         var cids = slotCids(slot);
-        for (var i = 0; i < cids.length; i++) {
+        for (var i = 0; i < cids.length && !state.choice[key]; i++) {
           var hit = state.byCid.get(cids[i]);
-          if (hit && hit.length) { state.choice[key] = hit[0]; break; }
+          if (!hit) continue;
+          for (var h = 0; h < hit.length; h++) {
+            var ck = hit[h].subj + " " + hit[h].num;
+            if (!used[ck]) { state.choice[key] = hit[h]; used[ck] = 1; break; }
+          }
         }
       });
     });
