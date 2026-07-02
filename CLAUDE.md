@@ -777,6 +777,7 @@ detailed in §7c):
 | `cpl-news` | CPL News | **Auto-curated** CPL news feed (CA-first, then national; + adjacent systems Career Passport / CA Master Plan / workforce-upskilling + CA budget items). Live-reads `public.cpl_news` (filled daily by the `cpl-news-harvest` Edge Function); filters, suggest-a-story (the path closed socials enter), reviewer feature/hide. Renderer `cpl_news.js` (static, lazy). **Added Session 67 (Skywatch), PR #481.** Docs: `docs/cpl_news_lessons.md`. |
 | `raci` | Team & RACI | Ownership spine for the workplan — a **3-tier RACI Matrix** (Activity → sub-activity → project/work item, each RACI-able × R/A/C/I) + an editable **Team Directory** + per-member update-**nudge** toggle, over Supabase `team_members` + `item_raci` (public read, reviewer write). Matrix has a **hierarchical scope filter** (Activity / sub-activity optgroups) + per-card **`👥 RACI` deep-links** (Session 76). Renderer `raci.js` (static, lazy). **Added Session 75 (SkyMaster), PRs #546–#548; nav PR #550 + 3-tier PR #553 (Session 76).** Docs: `docs/cobi_raci_nudge_lessons.md`. |
 | `map-users` | MAP Users | Manage the MAP platform's per-college **user roster** (MAP "College Users & Roles", staff PII) + a per-college refresh **nudge**. Public view = counts + role mix (anon `map_users_summary()`); roster (names/emails) reviewer/team-phrase-gated; 📣 nudge = mailto to Primary Contact + VPAA + VPSS. Renderer `map_users.js` (static, lazy). Gated Supabase `map_college_users` + `map_college_contacts`, synced by `map/sync_map_users.py` (`map-users-sync.yml`). **Added Session 87 (StarMax), PRs #618–#621.** Scope: `docs/map_users_tab_scope.md`. |
+| `sierra-training` | Sierra Training | **Team-only** improvement loop for Sierra (Phase 1 of `docs/sierra_training_tab_scope.md`): the 👍/👎 **feedback queue** (`sierra_feedback`, triage `new→triaged→addressed` via the `sierra_feedback_set_status` RPC) + a **gap miner** over `chat_interactions` (low-similarity turns, punt-signature answers, recurring themes, audience slice). Renderer `sierra_training.js` (static, lazy, the `map_users.js` pattern); reviewer/team-phrase gated server-side by RLS — logged out sees only the sign-in gate. NEVER writes to the public KB (curation pipeline only). **Added Session 93 (SkyReach).** Tests: `tests/sierra_training.test.js` (38). |
 
 **Not a tab, but launched from the rail:** the **public CPL Fact Sheet**
 (`fact-sheet/`, §2 File Inventory) is reached by a `📄 CPL Fact Sheet ↗` anchor at
@@ -1138,9 +1139,15 @@ JSON) and Saves/Resumes to Supabase `tmc_submissions`.
   needs SELECT visibility, which anon deliberately lacks; the RPC also
   centralizes validation). Carries `page`, `audience`, and the Q/A snapshot.
   RLS: no anon table policies; SELECT gated `is_allowed_reviewer() OR
-  team_pass_ok()` (the planned Sierra-Training review queue). Same wave: `chat_interactions` gained
+  team_pass_ok()` (the Sierra-Training review queue — **live since Session 93**,
+  the `#sierra-training` tab). Same wave: `chat_interactions` gained
   an `audience` column + the same reviewer/team-phrase SELECT policy (was
-  write-only) for log-informed gap mining. Schema:
+  write-only) for log-informed gap mining. **Session 93 added the triage
+  `status` column** (`new/triaged/addressed`, default `new`) + the SECURITY
+  DEFINER RPC **`sierra_feedback_set_status`** (gated `is_allowed_reviewer()
+  OR team_pass_ok()`; the only public write besides the upsert RPC — the rest
+  of the row stays immutable to the public), migration
+  `sierra_feedback_triage_status`. Schema:
   `chatbox/supabase_sierra_feedback.sql`.
 - **`item_updates`** (added Session 77): the Update Log behind the RACI tab's 📝 braindump→CC
   composer. One row per status update on an Activity/sub-activity/project, keyed `(item_type, item_id)`
