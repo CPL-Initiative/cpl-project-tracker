@@ -56,6 +56,11 @@ for (const [k, v] of Object.entries(rawKpis)) {
 }
 const projects = DATA.projects || [];
 const updateLog = DATA.update_log || {};
+// Newest live item_updates row per `activity:N` / `project:<id>` key (the RACI
+// tab's 📝 composer), exported by excel_to_dashboard.py. Project-level bodies
+// are already folded into projects[].update upstream; this map lets the master
+// report also surface ACTIVITY-level updates under each Activity heading.
+const liveUpdates = DATA.live_updates || {};
 const now = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
 const reportDate = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long" });
 
@@ -396,6 +401,19 @@ async function generateMasterReport() {
       children.push(new Paragraph({
         spacing: { after: 160 },
         children: [new TextRun({ text: actInfo.desc, font: FONT, size: 21, italic: true, color: "555555" })],
+      }));
+    }
+
+    // Latest ACTIVITY-level update (RACI 📝 composer, key `activity:N`)
+    const actNum = (actName.match(/Activity\s+(\d+)/) || [])[1];
+    const actUpd = actNum ? liveUpdates["activity:" + actNum] : null;
+    if (actUpd && actUpd.body) {
+      children.push(new Paragraph({
+        spacing: { after: 160 },
+        children: [
+          new TextRun({ text: "Latest update" + (actUpd.date ? ` (${actUpd.date})` : "") + ": ", font: FONT, size: 20, bold: true, color: NAVY2 }),
+          new TextRun({ text: actUpd.body, font: FONT, size: 20, color: "444444" }),
+        ],
       }));
     }
 

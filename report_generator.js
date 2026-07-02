@@ -2,6 +2,13 @@
  * CPL Dashboard — Custom Report Generator
  * Multi-select activities/projects + audience picker → AI-generated .docx
  * Requires: docx library (loaded from CDN), Cloudflare Worker proxy for Claude API
+ *
+ * Live wiring (Sam, 2026-07-02): before building the prompt, the generator
+ * fetches the SAME live overlays the card faces use — the newest item_updates
+ * row per activity/project (the RACI 📝 composer) and the item_raci roster
+ * (lead = Responsible → Accountable) — so the report always carries the
+ * current updates + leads, not the creation-era snapshot. Falls back to the
+ * build-time CPL_DATA.live_updates map, then to the baked fields.
  */
 
 (function () {
@@ -9,8 +16,97 @@
 
     // ── Configuration ──
     // Set these in the HTML or via window globals before this script loads
-    var PROXY_URL = window.CPL_REPORT_PROXY_URL || '';
+    var PROXY_URL = (typeof window !== 'undefined' && window.CPL_REPORT_PROXY_URL) || '';
     var CLAUDE_MODEL = 'claude-sonnet-4-5-20250929';
+
+    // Public anon key — same one committed in card_updates.js / card_raci.js.
+    var SUPABASE_URL = 'https://hvuwhnbuahrtptokpqfh.supabase.co';
+    var SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM';
+
+    // ── Live overlay helpers (pure — exported for tests) ──
+    // Newest item_updates row per `item_type:item_id` (mirrors card_updates.js).
+    function latestByKey(rows) {
+        var out = {};
+        (rows || []).forEach(function (r) {
+            if (!r || r.item_type == null || r.item_id == null) return;
+            var k = r.item_type + ':' + r.item_id;
+            var cur = out[k];
+            if (!cur || new Date(r.created_at).getTime() > new Date(cur.created_at).getTime()) out[k] = r;
+        });
+        return out;
+    }
+    // item_raci rows → { "project:1.1": {R:[],A:[],C:[],I:[]}, … } (mirrors card_raci.js).
+    function raciByKey(rows) {
+        var out = {};
+        (rows || []).forEach(function (r) {
+            if (!r || r.item_type == null || r.item_id == null) return;
+            out[r.item_type + ':' + r.item_id] = r.raci || {};
+        });
+        return out;
+    }
+    // Card "Lead" = Responsible member(s), falling back to Accountable.
+    function leadNames(raci) {
+        function names(arr) {
+            return (arr || []).map(function (m) { return m && m.name ? m.name : (typeof m === 'string' ? m : ''); }).filter(Boolean);
+        }
+        if (!raci) return [];
+        var r = names(raci.R);
+        return r.length ? r : names(raci.A);
+    }
+    // The update body/date out of either shape: a fetched item_updates row
+    // ({body, created_at}) or the build-time CPL_DATA.live_updates entry
+    // ({body, date, created_at}).
+    function updText(u) { return (u && u.body) || ''; }
+    function updDate(u) {
+        if (!u) return '';
+        return u.date || String(u.created_at || '').slice(0, 10);
+    }
+    // Overlay live updates + RACI leads onto copies of the selected projects so
+    // the prompt reads the same "current" data the cards show.
+    function applyLiveOverlay(projects, live) {
+        return (projects || []).map(function (p) {
+            var q = {};
+            for (var k in p) q[k] = p[k];
+            var u = live && live.updates && live.updates['project:' + p.id];
+            if (updText(u)) { q.update = updText(u); q.update_date = updDate(u) || q.update_date; }
+            var ln = leadNames(live && live.raci && live.raci['project:' + p.id]);
+            if (ln.length) q.lead = ln.join(', ');
+            return q;
+        });
+    }
+    // The activity-level updates (`activity:N`) for the activities the selected
+    // projects belong to → [{activity, body, date}].
+    function activityUpdatesFor(projects, updates) {
+        var seen = {}, out = [];
+        (projects || []).forEach(function (p) {
+            var m = String(p.activity || '').match(/Activity\s+(\d+)/);
+            if (!m || seen[m[1]]) return;
+            seen[m[1]] = true;
+            var u = updates && updates['activity:' + m[1]];
+            if (updText(u)) out.push({ activity: 'Activity ' + m[1], body: updText(u), date: updDate(u) });
+        });
+        return out;
+    }
+    // Fetch both overlays (anon read; each soft-fails to []). When item_updates
+    // is unreachable, fall back to the build-time CPL_DATA.live_updates export.
+    function fetchLiveOverlay() {
+        function get(path) {
+            return fetch(SUPABASE_URL + '/rest/v1/' + path, { headers: { apikey: SUPABASE_ANON } })
+                .then(function (r) { return r.ok ? r.json() : []; })
+                .catch(function () { return []; });
+        }
+        return Promise.all([
+            get('item_updates?select=item_type,item_id,body,author,created_at&order=created_at.desc'),
+            get('item_raci?select=item_type,item_id,raci'),
+        ]).then(function (res) {
+            var updates = latestByKey(res[0]);
+            if (!Object.keys(updates).length && typeof window !== 'undefined'
+                && window.CPL_DATA && window.CPL_DATA.live_updates) {
+                updates = window.CPL_DATA.live_updates;
+            }
+            return { updates: updates, raci: raciByKey(res[1]) };
+        });
+    }
 
     // ── Load docx library from CDN ──
     var docxLoaded = false;
@@ -206,13 +302,17 @@
                 + '  Description: ' + p.desc + '\n'
                 + '  KPI: ' + (p.kpi_metric || 'N/A') + ' ' + (p.kpi_unit || '') + '\n'
                 + '  Goal 25-26: ' + (p.kpi_goal_2526 || 'N/A') + ' | Stretch: ' + (p.kpi_stretch_2526 || 'N/A') + '\n'
-                + '  Latest Update: ' + (p.update || 'N/A') + '\n'
+                + '  Latest Update: ' + (p.update || 'N/A') + (p.update && p.update_date ? ' (' + p.update_date + ')' : '') + '\n'
                 + '  Milestones: ' + (p.milestones || 'N/A') + '\n'
                 + '  Workplan Notes: ' + (p.workplan_notes || 'N/A') + '\n'
                 + '  Lead: ' + (p.lead || 'N/A') + ' | Team: ' + (p.team || 'N/A') + '\n'
                 + '  Budget: ' + (p.budget || 'N/A') + ' (' + (p.budget_source || '') + ')\n'
                 + '  Vision 2030: ' + (p.v2030 || 'N/A') + ' | CPL Goal: ' + (p.goal || 'N/A');
         }).join('\n\n');
+
+        var activityUpdates = (sel.activityUpdates || []).map(function (u) {
+            return '- **' + u.activity + '**' + (u.date ? ' (' + u.date + ')' : '') + ': ' + u.body;
+        }).join('\n');
 
         var kpiSummary = '';
         for (var key in sel.kpis) {
@@ -229,6 +329,7 @@
             + '## Audience\n' + sel.audience.prompt + '\n\n'
             + '## Headline KPIs (as of ' + sel.lastUpdated + ')\n' + kpiSummary + '\n\n'
             + '## Selected Projects\n' + projectSummaries + '\n\n'
+            + (activityUpdates ? '## Latest Activity-Level Updates (posted by the team)\n' + activityUpdates + '\n\n' : '')
             + '## Instructions\n'
             + 'Write a polished, professional report covering the selected projects. Structure it as:\n'
             + '1. **Executive Summary** (2-3 paragraphs) — tailored to the audience, highlighting the most impactful findings\n'
@@ -399,9 +500,16 @@
         var btn = document.getElementById('reportGenBtn');
         btn.disabled = true;
         btn.textContent = 'Generating...';
-        setStatus('Building prompt for ' + sel.projects.length + ' projects...', '#4A90D9');
+        setStatus('Fetching the latest card updates...', '#4A90D9');
 
         try {
+            // Pull the live overlays (posted updates + RACI leads) so the
+            // prompt carries the current card data, not the build-time bake.
+            var live = await fetchLiveOverlay();
+            sel.projects = applyLiveOverlay(sel.projects, live);
+            sel.activityUpdates = activityUpdatesFor(sel.projects, live.updates);
+
+            setStatus('Building prompt for ' + sel.projects.length + ' projects...', '#4A90D9');
             var prompt = buildPrompt(sel);
             setStatus('Calling Claude API — this may take 15-30 seconds...', '#4A90D9');
 
@@ -457,6 +565,20 @@
 
     // Expose openModal globally so College Activity card can call it
     window.openReportModal = openModal;
+
+    // Pure helpers exported for tests (window in the browser, module.exports
+    // under the jsdom test runner) — the live-overlay wiring must stay guarded.
+    var api = {
+        latestByKey: latestByKey,
+        raciByKey: raciByKey,
+        leadNames: leadNames,
+        applyLiveOverlay: applyLiveOverlay,
+        activityUpdatesFor: activityUpdatesFor,
+        buildPrompt: buildPrompt,
+        fetchLiveOverlay: fetchLiveOverlay,
+    };
+    if (typeof window !== 'undefined') window.CPL_CUSTOM_REPORT = api;
+    if (typeof module !== 'undefined' && module.exports) module.exports = api;
 
     // ── Initialize ──
     function init() {

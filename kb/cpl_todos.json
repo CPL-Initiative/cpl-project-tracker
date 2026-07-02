@@ -1,44 +1,44 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-02 · Session 95 · Activities RESTORED · Activity ⇄ Project separation LIVE · Archive fixed · ＋ Add project · AWG Projects section",
- "_session": 95,
- "_status": "The Activity/Project mixup day — fixed end-to-end. This morning's 23 mistaken tablings were restored within the hour (5.1 stays tabled, your June call). The two card types are now truly separate things: sub-activities render ONCE (as Activity cards) and can never be tabled/archived/deleted — the Projects grid holds only the real work items (the four 4.1.x sprints + the 5.x initiatives). The Archive option works now (a bug was closing the popup on any inner click — that's also why no reasons ever saved; type away). From your afternoon asks: the two Path-to-2030 graphs moved to CPL Analytics on the Dashboard tab, the 4.1 Sprints card no longer wraps onto its own row, there's a ＋ Add project button (Projects header + the Annual Workplan's new Projects section) that creates a real project with the team phrase, and the Annual Workplan Goals tab now ends with a Projects table listing the work items with live leads. Bonus: a long-standing bug that grew the page by one blank line every rebuild (198 had piled up) is fixed. Everything is live after the next rebuild — hard-refresh if a tab looks stale.",
+ "_as_of": "2026-07-02 · Session 96 · Master + Custom Reports now pull LIVE card updates · report links fresh daily · attach flow explained",
+ "_session": 96,
+ "_status": "Report day. Both report generators now read the same live data the cards show: the Custom Report folds in the latest posted updates + Team & RACI leads before it writes, and the Master Report button opens a checkbox picker (activities AND project cards — your ask) that builds the Word doc right in the browser from live data. Behind the scenes we found why the old Master Report file was stale: the daily robot never had the Word library installed (it failed silently every night) and never saved the reports it made — both fixed, so the per-card Report buttons refresh daily again. Your three tweaks landed too: the update popup saves-and-closes, nudge emails use semicolons for Outlook, and the two trend graphs sit at the bottom of CPL Analytics now. On attachments: the 📎 button explains itself now (it hands off to SharePoint's ＋ Create or upload) — but note some newer projects (like 4.1.4) never got a SharePoint folder, so the popover also links the parent folder. Everything ships with the next rebuild.",
  "items": [
   {
-   "id": "activities-projects-confirm",
+   "id": "reports-live-check",
    "who": "sam",
    "tab": "activities-projects",
-   "text": "NEW LAYOUT CHECK: activities show once (Activity cards), the Projects grid = real work items only (4.1.x sprints + 5.x). Try Table/Archive on a project — Activity cards + their updates are untouched now, and Archive + a typed reason actually save. Two calls for you: re-table 5.8 (Legislative Advocacy) if you meant it this morning, and try ＋ Add project (team phrase works) — it suggests the next 5.x ID and the full card appears after the next rebuild."
+   "text": "NEW: try both report buttons. 📄 Master Report now opens a picker (activities + project cards, uncheck anything) and builds the Word doc from LIVE data — updates you posted via 📝 and the RACI leads are in it. 📊 Custom Report carries them too. If a report shows a stale update, tell Fable which project."
+  },
+  {
+   "id": "attach-decision",
+   "who": "sam",
+   "tab": "activities-projects",
+   "text": "ATTACH DECISION: Supabase CAN take attachments (we already run a storage bucket for the Fact Sheet images). Want a native per-card ⬆ Attach — upload right on the card, listed instantly, no SharePoint hop? One call needed from you first: are attachment files okay to be PUBLICLY downloadable by link (like the Fact Sheet images), or team-only? Your \"process attachments into KB md files\" idea rides along with this build."
+  },
+  {
+   "id": "attach-workaround",
+   "who": "sam",
+   "tab": "activities-projects",
+   "text": "ATTACH TODAY (SharePoint): projects added after April 8 (the 4.1.x sprints, new 5.x) never got a SharePoint folder — that's the 'something went wrong' you hit on 4.1.4. The 📎 popover now links the parent Attachments folder: upload there, or ＋ Create or upload → Folder to make the project's folder first. Drag-and-drop is flaky in SharePoint; the button always works."
   },
   {
    "id": "sierra-day2",
    "who": "sam",
    "tab": "sierra-training",
-   "text": "Sierra day-2 (carryover): write the FIRST REAL GUIDANCE RULE in the 🧭 pane (reaches every surface incl. the production widget within a minute; deactivate, never delete); try the team-session tools (🧪 Test in Sierra, date filters, bulk triage, per-row telemetry); and re-ask a table-heavy question — answers should render real tables/headings now. 👎 anything off."
+   "text": "Sierra day-2 (carryover): write the FIRST REAL GUIDANCE RULE in the 🧭 pane (reaches every surface incl. the production widget within a minute; deactivate, never delete); try the team-session tools; 👎 anything off."
   },
   {
    "id": "malone-guardrails",
    "who": "sam",
    "tab": "chatbot",
-   "text": "Intro Fable to Malone when ready: the Sierra guardrails lane (durable usage limits, a daily cost cap, spam protection) needs his thresholds (requests/min, daily budget, portal launch date). The cost cap should land BEFORE 'Credit for Being Me' publicizes the endpoint."
+   "text": "Intro Fable to Malone when ready: the Sierra guardrails lane (durable usage limits, a daily cost cap, spam protection) needs his thresholds. The cost cap should land BEFORE 'Credit for Being Me' publicizes the endpoint."
   },
   {
    "id": "coci-hours-extract",
    "who": "sam",
    "tab": "tmc-builder",
-   "text": "TOP DATA ASK (mid-July): can the COCI course report be exported WITH the contact-hours columns? And either way, pull a FRESH COCI course extract — ours is stale mid-renumbering (1,986 officially-approved courses have no row). Hours are the ONLY one of the CO's five checks we can't source today."
-  },
-  {
-   "id": "pending-queue-list",
-   "who": "sam",
-   "tab": "tmc-builder",
-   "text": "Can the CO export the 200+ pending ADT submissions as a simple list (college, TMC, date submitted)? Then the review queue ranks them by computed alignment so staff clear the near-auto-approvable ones first before the Curriculum Institute."
-  },
-  {
-   "id": "tmc-or-skips",
-   "who": "sam",
-   "tab": "tmc-builder",
-   "text": "Faculty-verify territory (3 leftover 'OR' groups the auto-fold skipped on purpose): Studio Art's advanced-studio line (ARTS 280/281/282) needs a slot added; Law/Public-Policy uses COMM 120 in TWO requirement lines. Add them, or leave for a faculty pass?"
+   "text": "TOP DATA ASK (mid-July): can the COCI course report be exported WITH the contact-hours columns? Either way, pull a FRESH COCI course extract — ours is stale mid-renumbering. Also: can the CO export the 200+ pending ADT submissions as a simple list (college, TMC, date)?"
   },
   {
    "id": "mapusers-loginurl",
@@ -53,34 +53,28 @@
    "text": "Carryover: review and merge public Knowledge Base PR #15 (Veterans plans) when you have a moment — waiting on your sign-off."
   },
   {
-   "id": "add-project-watch",
+   "id": "attach-native-build",
    "who": "fable",
    "tab": "activities-projects",
-   "text": "Watch Sam's first ＋ Add-project uses and fold friction fast. Known edge on the shelf: a ladder-bearing 5.x (only 5.1, currently tabled) would show both an Activity card and a project card if restored — fix by moving its ladder or re-homing the id if he objects."
+   "text": "Once Sam picks the attachment access model (public-read vs team-gated): build the native attach — `project-attachments` Storage bucket + table, per-card ⬆ upload gated reviewer/team-phrase, live card listing (card_updates.js pattern), and scope the attachments→KB-markdown ingest into the same flow. SharePoint stays the archive of record."
+  },
+  {
+   "id": "verify-daily-publish",
+   "who": "fable",
+   "tab": "dashboard",
+   "text": "After the next daily run: confirm the new 'Install node docx' step is green, reports/*.docx are in the daily commit, the Path-to-2030 charts render at the BOTTOM of CPL Analytics, and CPL_Data.js carries live_updates."
   },
   {
    "id": "sierra-training-p3",
    "who": "fable",
    "tab": "sierra-training",
-   "text": "Phase 3 once the gap miner shows which artifacts are missing: ingest documents into Sierra's knowledge (upload → chunk → embed with the SAME gte-small model → cpl_documents/cpl_document_sections), with a test-it box and per-document retire. Build against real gaps, not speculation."
-  },
-  {
-   "id": "chatbox-exhibits-refresh",
-   "who": "fable",
-   "tab": "chatbot",
-   "text": "Sierra data residue from the CPR case: chatbox_exhibits is stale + near-duplicated (Modesto has 12 rows for ~4 exhibits from tab-vs-space title twins; Evergreen's KINS 025 exhibit is missing entirely). Dedupe/refresh the sync; longer-term wire the CER unified-title layer so Sierra reads clean credential names."
+   "text": "Phase 3 once the gap miner shows which artifacts are missing: ingest documents into Sierra's knowledge (upload → chunk → embed with the SAME gte-small model → cpl_documents/cpl_document_sections). Build against real gaps, not speculation."
   },
   {
    "id": "tmc-engine-next",
    "who": "fable",
    "tab": "tmc-builder",
-   "text": "Confidence engine round 2: description-similarity precompute (course description vs C-ID descriptor — data in hand, ship scores not text), wire real hours when Sam's COCI master report lands, distinguish verify-tier carriers in the directory coverage column."
-  },
-  {
-   "id": "mid-renumber",
-   "who": "fable",
-   "tab": "unified-courses",
-   "text": "Continue the unverified-M-ID renumber re-mint per the scope doc — staging-cleanup pass, dry-run first, alias map committed."
+   "text": "Confidence engine round 2 (carryover): description-similarity precompute, wire real hours when Sam's COCI master report lands, verify-tier carriers in the directory coverage column. Also standing: chatbox_exhibits dedupe/refresh + the unverified-M-ID renumber per scope."
   }
  ]
 }
