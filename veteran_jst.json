@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-01T19:36:59.432096+00:00",
+  "scraped_at": "2026-07-02T09:35:22.486461+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 24911,
+    "jst": 24938,
     "star_colleges": 50
   },
   "computed_star_colleges": 50,
@@ -52,7 +52,7 @@
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 541,
+      "jst": 542,
       "star": true
     },
     "City College of San Francisco": {
@@ -422,7 +422,7 @@
     },
     "College of the Canyons": {
       "vets": 382,
-      "jst": 13,
+      "jst": 38,
       "star": false
     },
     "Napa Valley College": {
@@ -515,19 +515,14 @@
       "jst": 9,
       "star": false
     },
+    "MiraCosta College": {
+      "vets": 619,
+      "jst": 3,
+      "star": false
+    },
     "Imperial Valley College": {
       "vets": 489,
       "jst": 1,
-      "star": false
-    },
-    "MiraCosta College": {
-      "vets": 619,
-      "jst": 2,
-      "star": false
-    },
-    "Rio Hondo College": {
-      "vets": 172,
-      "jst": 0,
       "star": false
     },
     "Contra Costa College": {
@@ -535,14 +530,9 @@
       "jst": 1,
       "star": false
     },
-    "Grossmont College": {
-      "vets": 415,
-      "jst": 1,
-      "star": false
-    },
-    "Palomar College": {
-      "vets": 1019,
-      "jst": 1,
+    "Rio Hondo College": {
+      "vets": 172,
+      "jst": 0,
       "star": false
     },
     "Orange Coast College": {
@@ -553,6 +543,16 @@
     "Yuba College": {
       "vets": 64,
       "jst": 0,
+      "star": false
+    },
+    "Grossmont College": {
+      "vets": 415,
+      "jst": 1,
+      "star": false
+    },
+    "Palomar College": {
+      "vets": 1019,
+      "jst": 1,
       "star": false
     },
     "College of Marin": {

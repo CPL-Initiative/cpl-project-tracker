@@ -1,29 +1,29 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-07-01T19:36:59.282Z",
+ "_as_of": "2026-07-02T09:35:21.937Z",
  "credit_recommendations": {
-  "total": "12,595",
-  "ccc": "1,300",
-  "local": "11,295",
+  "total": "12,606",
+  "ccc": "1,297",
+  "local": "11,309",
   "by_type": [
    "Standardized Assessment: 6,756",
-   "Industry Certification: 3,583",
-   "Credit By Exam: 1,668",
-   "Portfolio Review: 384",
+   "Industry Certification: 3,591",
+   "Credit By Exam: 1,670",
+   "Portfolio Review: 385",
    "Military: 116"
   ]
  },
  "map_exhibits": {
-  "total": "2,647",
+  "total": "2,655",
   "ccc": "132",
-  "local": "2,515",
+  "local": "2,523",
   "originating_colleges": "88"
  },
  "statewide_exhibits": {
   "total": "132",
   "program_areas": "12",
-  "distinct_credit_recs": "1,099",
-  "adoptions": "1,294",
+  "distinct_credit_recs": "1,096",
+  "adoptions": "1,291",
   "adopting_colleges": "61",
   "by_sector": [
    {
@@ -71,8 +71,8 @@
    {
     "sector": "Emergency Medical Services",
     "exhibits": 5,
-    "credit_recs": 64,
-    "adoptions": 65,
+    "credit_recs": 61,
+    "adoptions": 62,
     "could_adopt": 59
    },
    {

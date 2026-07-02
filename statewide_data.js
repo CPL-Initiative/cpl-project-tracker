@@ -94773,6 +94773,122 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPICI-RLC-1-001|MAPICI-RLC1-1-001",
+      "exhibit_ids": [
+        "MAPICI-RLC-1-001",
+        "MAPICI-RLC1-1-001"
+      ],
+      "title": "Red Hat Certified System Administrator (RHCSA)",
+      "unified_title": "Red Hat Certified System Administrator (RHCSA)",
+      "is_classified": true,
+      "issuing_agency": "Red Hat",
+      "training_agency": "",
+      "confidence_title": 0.6,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "RedHat Linux Certification"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "collaborative_type": "Local",
+      "adopters": 2,
+      "adopter_names": [
+        "Cabrillo College",
+        "San Jose City College"
+      ],
+      "potential": 70,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Coastline Community College",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 72,
+      "credit_recs": [
+        {
+          "course": "Computer Information Systems (CIS) 157",
+          "credit": "3 hours in Introduction to Unix/Linux"
+        },
+        {
+          "course": "CIS 90",
+          "credit": "3 hours in Introduction to Unix/Linux"
+        },
+        {
+          "course": "Computer Information Systems (CIS) 158",
+          "credit": "3 hours in Unix System Administration"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPSAI-CSC-1-001",
       "exhibit_ids": [
         "MAPSAI-CSC-1-001"
@@ -117777,9 +117893,10 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CFEC-1-001|MAPICI-CFE-1-001",
+      "exhibit_id": "MAPICA-CFEC-1-001|MAPICA-CFEC1-1-001|MAPICI-CFE-1-001",
       "exhibit_ids": [
         "MAPICA-CFEC-1-001",
+        "MAPICA-CFEC1-1-001",
         "MAPICI-CFE-1-001"
       ],
       "title": "Firefighter EMT Certificate",
@@ -117938,18 +118055,6 @@ window.CPL_STATEWIDE = {
           "credit": "3 hours in Fire Behavior and Combustion"
         },
         {
-          "course": "FIRE 0001",
-          "credit": "3 hours in Fire Protection Organization"
-        },
-        {
-          "course": "FIRE 0003",
-          "credit": "3 hours in Fire Behavior and Combustion"
-        },
-        {
-          "course": "FIRE 0008",
-          "credit": "3 hours in Building Construction for Fire Protection"
-        },
-        {
           "course": "FT 1",
           "credit": "3 hours in Fire Protection Organization"
         },
@@ -118012,6 +118117,26 @@ window.CPL_STATEWIDE = {
         {
           "course": "FT 4",
           "credit": "3 hours in Building Construction for Fire  Protection"
+        },
+        {
+          "course": "FIRE 0001",
+          "credit": "3 hours in Principles of Fire and Emergency Services"
+        },
+        {
+          "course": "FIRE 0003",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        },
+        {
+          "course": "FIRE 0008",
+          "credit": "3 hours in Building Construction for Fire Protection"
+        },
+        {
+          "course": "FIRE 0100",
+          "credit": "17 hours in Firefighter Academy"
+        },
+        {
+          "course": "FIRE 0100A",
+          "credit": "2.5 hours in Fire Academy Physical Training"
         }
       ],
       "authoritative_recs": [
@@ -143396,6 +143521,96 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCXA-ITU-1-001",
+      "exhibit_ids": [
+        "MAPCXA-ITU-1-001"
+      ],
+      "title": "Introduciton to UNIX/Linux",
+      "unified_title": "Introduciton to UNIX/Linux",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Introduciton to UNIX/Linux"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 54,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Cerritos College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Coastline Community College",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Hartnell College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Medanos College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 55,
+      "credit_recs": [
+        {
+          "course": "CIS 90",
+          "credit": "3 hours in Introduction to UNIX/Linux"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPICA-CJFO-1-001",
       "exhibit_ids": [
         "MAPICA-CJFO-1-001"
@@ -152787,6 +153002,92 @@ window.CPL_STATEWIDE = {
         {
           "course": "KNES 053.",
           "credit": "5 hours in Health and Fitness"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPPRS-PR-A-1-001",
+      "exhibit_ids": [
+        "MAPPRS-PR-A-1-001"
+      ],
+      "title": "Portfolio Review - ART 125B",
+      "unified_title": "Portfolio Review - ART 125B",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Portfolio Review - ART 125B"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Fine and Applied Arts",
+      "sector": "ICT/Digital Media",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "College of the Canyons"
+      ],
+      "potential": 50,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Berkeley City College",
+        "Cabrillo College",
+        "Chaffey College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of the Desert",
+        "College of the Redwoods",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Laney College",
+        "Lemoore College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Solano Community College",
+        "Ventura College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 51,
+      "credit_recs": [
+        {
+          "course": "ART 125B",
+          "credit": "3 hours in Intermediate Drawing"
         }
       ],
       "authoritative_recs": []
@@ -162968,86 +163269,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICI-RLC-1-001|MAPICI-RLC1-1-001",
-      "exhibit_ids": [
-        "MAPICI-RLC-1-001",
-        "MAPICI-RLC1-1-001"
-      ],
-      "title": "Red Hat Certified System Administrator (RHCSA)",
-      "unified_title": "Red Hat Certified System Administrator (RHCSA)",
-      "is_classified": true,
-      "issuing_agency": "Red Hat",
-      "training_agency": "",
-      "confidence_title": 0.6,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "RedHat Linux Certification"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Information Technology",
-      "sector": "ICT/Digital Media",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "San Jose City College"
-      ],
-      "potential": 39,
-      "potential_names": [
-        "American River College",
-        "Bakersfield College",
-        "Cerro Coso Community College",
-        "Chaffey College",
-        "Citrus College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Laney College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Mt. San Antonio College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Palomar College",
-        "Porterville College",
-        "Reedley College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Joaquin Delta College",
-        "Santa Monica College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 40,
-      "credit_recs": [
-        {
-          "course": "Computer Information Systems (CIS) 157",
-          "credit": "3 hours in Introduction to Unix/Linux"
-        },
-        {
-          "course": "Computer Information Systems (CIS) 158",
-          "credit": "3 hours in Unix System Administration"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPICI-GC-1-001",
       "exhibit_ids": [
         "MAPICI-GC-1-001"
@@ -164693,6 +164914,81 @@ window.CPL_STATEWIDE = {
         {
           "course": "NURVN 421L",
           "credit": "2 hours in Maternal and Child Health Nursing Lab"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICI-ICFI-1-001",
+      "exhibit_ids": [
+        "MAPICI-ICFI-1-001"
+      ],
+      "title": "Industry Credentials for Introduction to Computers",
+      "unified_title": "Industry Credentials for Introduction to Computers",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Industry Credentials for Introduction to Computers"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 39,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "Citrus College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Laney College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palomar College",
+        "Porterville College",
+        "Reedley College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Joaquin Delta College",
+        "Santa Monica College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 40,
+      "credit_recs": [
+        {
+          "course": "CIS 101",
+          "credit": "3 hours in Introduction to Computers and Their Uses"
         }
       ],
       "authoritative_recs": []
@@ -170691,6 +170987,77 @@ window.CPL_STATEWIDE = {
         {
           "course": "BIOTECH 002",
           "credit": "4 hours in Biotechnology I"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICI-QIAC-1-001",
+      "exhibit_ids": [
+        "MAPICI-QIAC-1-001"
+      ],
+      "title": "Quality Improvement Associate Certification/CQIA (American Society for Quality/ASQ) -  This certification has no expiration",
+      "unified_title": "Quality Improvement Associate Certification/CQIA (American Society for Quality/ASQ) -  This certification has no expiration",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Quality Improvement Associate Certification/CQIA (American Society for Quality/ASQ) -  This certification has no expiration"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Biological Sciences",
+      "sector": "Life Sciences/Biotechnology",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Berkeley City College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Compton College",
+        "Contra Costa College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Irvine Valley College",
+        "Las Positas College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Moorpark College",
+        "Ohlone College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego City College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Santiago Canyon College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "BIOTECH 006",
+          "credit": "2 hours in Biotechnology: Quality Control"
         }
       ],
       "authoritative_recs": []
@@ -205178,6 +205545,114 @@ window.CPL_STATEWIDE = {
         {
           "course": "DETT 181",
           "credit": "5 hours in Introduction to Preventative Maintenance Inspection"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-CBE-6-1-001",
+      "exhibit_ids": [
+        "MAPCXS-CBE-6-1-001"
+      ],
+      "title": "Credit by Exam - WATER 140",
+      "unified_title": "Credit by Exam - WATER 140",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Credit by Exam - WATER 140"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Environmental Sciences and Technologies",
+      "sector": "Agriculture, Water & Environmental Technologies",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "College of the Canyons"
+      ],
+      "potential": 18,
+      "potential_names": [
+        "Citrus College",
+        "Clovis Community College",
+        "Columbia College",
+        "Cuyamaca College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Gavilan College",
+        "Imperial Valley College",
+        "Los Angeles Trade Technical College",
+        "Mt. San Jacinto College",
+        "Palomar College",
+        "San Bernardino Valley College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Solano Community College",
+        "Ventura College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 19,
+      "credit_recs": [
+        {
+          "course": "WATER 140",
+          "credit": "3 hours in Water Distribution Operator I"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICI-CSWR-1-001",
+      "exhibit_ids": [
+        "MAPICI-CSWR-1-001"
+      ],
+      "title": "California State Water Resources Control Board D2, D3, D4, or D5 certification",
+      "unified_title": "California State Water Resources Control Board D2, D3, D4, or D5 certification",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "California State Water Resources Control Board D2, D3, D4, or D5 certification"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Environmental Sciences and Technologies",
+      "sector": "Agriculture, Water & Environmental Technologies",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "College of the Canyons"
+      ],
+      "potential": 18,
+      "potential_names": [
+        "Citrus College",
+        "Clovis Community College",
+        "Columbia College",
+        "Cuyamaca College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Gavilan College",
+        "Imperial Valley College",
+        "Los Angeles Trade Technical College",
+        "Mt. San Jacinto College",
+        "Palomar College",
+        "San Bernardino Valley College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Solano Community College",
+        "Ventura College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 19,
+      "credit_recs": [
+        {
+          "course": "WATER 140",
+          "credit": "3 hours in Water Distribution Operator I"
         }
       ],
       "authoritative_recs": []
@@ -240245,6 +240720,76 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPICI-FI3-1-001",
+      "exhibit_ids": [
+        "MAPICI-FI3-1-001"
+      ],
+      "title": "Firefighter I",
+      "unified_title": "Firefighter I",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Firefighter I"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Interdisciplinary Studies",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 7",
+          "credit": "3 hours in Lifelong Learning and Self Development"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICI-FI4-1-001",
+      "exhibit_ids": [
+        "MAPICI-FI4-1-001"
+      ],
+      "title": "Firefighter II",
+      "unified_title": "Firefighter II",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Firefighter II"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Interdisciplinary Studies",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 7",
+          "credit": "3 hours in Lifelong Learning and Self Development"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPCBEN-PP-1-001",
       "exhibit_ids": [
         "MAPCBEN-PP-1-001"
@@ -241905,11 +242450,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Cabrillo College",
-        "credit_recs": 336,
-        "exhibits": 233,
+        "credit_recs": 338,
+        "exhibits": 235,
         "disciplines": 13,
         "ccc_collaborative": 125,
-        "industry_certs": 192,
+        "industry_certs": 193,
         "pct": 2.7
       },
       {
@@ -241919,15 +242464,15 @@ window.CPL_STATEWIDE = {
         "disciplines": 17,
         "ccc_collaborative": 23,
         "industry_certs": 74,
-        "pct": 2.7
+        "pct": 2.6
       },
       {
         "college": "Los Angeles Pierce College",
-        "credit_recs": 312,
-        "exhibits": 231,
+        "credit_recs": 316,
+        "exhibits": 235,
         "disciplines": 18,
         "ccc_collaborative": 0,
-        "industry_certs": 11,
+        "industry_certs": 15,
         "pct": 2.5
       },
       {
@@ -242139,11 +242684,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Sierra College",
-        "credit_recs": 123,
+        "credit_recs": 125,
         "exhibits": 90,
         "disciplines": 4,
-        "ccc_collaborative": 45,
-        "industry_certs": 46,
+        "ccc_collaborative": 42,
+        "industry_certs": 48,
         "pct": 1.0
       },
       {
@@ -242210,6 +242755,15 @@ window.CPL_STATEWIDE = {
         "pct": 0.9
       },
       {
+        "college": "College of the Canyons",
+        "credit_recs": 107,
+        "exhibits": 81,
+        "disciplines": 11,
+        "ccc_collaborative": 0,
+        "industry_certs": 1,
+        "pct": 0.8
+      },
+      {
         "college": "Las Positas College",
         "credit_recs": 105,
         "exhibits": 84,
@@ -242234,15 +242788,6 @@ window.CPL_STATEWIDE = {
         "disciplines": 6,
         "ccc_collaborative": 18,
         "industry_certs": 76,
-        "pct": 0.8
-      },
-      {
-        "college": "College of the Canyons",
-        "credit_recs": 104,
-        "exhibits": 78,
-        "disciplines": 11,
-        "ccc_collaborative": 0,
-        "industry_certs": 0,
         "pct": 0.8
       },
       {
@@ -242776,7 +243321,7 @@ window.CPL_STATEWIDE = {
         "courses": 193,
         "colleges": 84,
         "ccc_collaborative": 25,
-        "pct": 42.7
+        "pct": 42.6
       },
       {
         "discipline": "Engineering and Industrial Technologies",
@@ -242789,17 +243334,17 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Public and Protective Services",
-        "credit_recs": 1344,
-        "exhibits": 406,
-        "courses": 552,
+        "credit_recs": 1346,
+        "exhibits": 407,
+        "courses": 554,
         "colleges": 50,
-        "ccc_collaborative": 545,
+        "ccc_collaborative": 542,
         "pct": 10.7
       },
       {
         "discipline": "Interdisciplinary Studies",
-        "credit_recs": 640,
-        "exhibits": 162,
+        "credit_recs": 642,
+        "exhibits": 164,
         "courses": 27,
         "colleges": 81,
         "ccc_collaborative": 1,
@@ -242821,13 +243366,13 @@ window.CPL_STATEWIDE = {
         "courses": 273,
         "colleges": 44,
         "ccc_collaborative": 31,
-        "pct": 3.4
+        "pct": 3.3
       },
       {
         "discipline": "Information Technology",
-        "credit_recs": 359,
-        "exhibits": 203,
-        "courses": 249,
+        "credit_recs": 362,
+        "exhibits": 205,
+        "courses": 250,
         "colleges": 43,
         "ccc_collaborative": 105,
         "pct": 2.9
@@ -242852,9 +243397,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Fine and Applied Arts",
-        "credit_recs": 224,
-        "exhibits": 180,
-        "courses": 180,
+        "credit_recs": 225,
+        "exhibits": 181,
+        "courses": 181,
         "colleges": 32,
         "ccc_collaborative": 0,
         "pct": 1.8
@@ -242915,8 +243460,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Biological Sciences",
-        "credit_recs": 62,
-        "exhibits": 51,
+        "credit_recs": 63,
+        "exhibits": 52,
         "courses": 38,
         "colleges": 26,
         "ccc_collaborative": 0,
@@ -242951,9 +243496,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Environmental Sciences and Technologies",
-        "credit_recs": 35,
-        "exhibits": 30,
-        "courses": 31,
+        "credit_recs": 37,
+        "exhibits": 32,
+        "courses": 32,
         "colleges": 16,
         "ccc_collaborative": 0,
         "pct": 0.3
@@ -242987,24 +243532,24 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3583,
-        "exhibits": 1177,
-        "colleges": 78,
-        "pct": 28.4
+        "credit_recs": 3591,
+        "exhibits": 1183,
+        "colleges": 79,
+        "pct": 28.5
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 1668,
-        "exhibits": 1201,
-        "colleges": 56,
+        "credit_recs": 1670,
+        "exhibits": 1203,
+        "colleges": 57,
         "pct": 13.2
       },
       {
         "cpl_type": "Portfolio Review",
-        "credit_recs": 384,
-        "exhibits": 313,
-        "colleges": 27,
-        "pct": 3.0
+        "credit_recs": 385,
+        "exhibits": 314,
+        "colleges": 28,
+        "pct": 3.1
       },
       {
         "cpl_type": "Military",
@@ -243024,22 +243569,22 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 7812,
-        "exhibits": 2808,
+        "credit_recs": 7814,
+        "exhibits": 2810,
         "colleges": 91,
         "pct": 62.0
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2593,
-        "exhibits": 948,
-        "colleges": 74,
+        "credit_recs": 2599,
+        "exhibits": 953,
+        "colleges": 75,
         "pct": 20.6
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1455,
-        "exhibits": 583,
+        "credit_recs": 1458,
+        "exhibits": 585,
         "colleges": 42,
         "pct": 11.6
       },
@@ -243096,15 +243641,15 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11070,
-        "exhibits": 4656,
+        "credit_recs": 11084,
+        "exhibits": 4665,
         "colleges": 99,
         "disciplines": 23,
         "pct": 87.9
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1300,
+        "credit_recs": 1297,
         "exhibits": 163,
         "colleges": 62,
         "disciplines": 9,
@@ -243522,6 +244067,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-07-01T19:36:23",
-  "total_credit_recs": 12595
+  "generated_at": "2026-07-02T09:34:45",
+  "total_credit_recs": 12606
 };
