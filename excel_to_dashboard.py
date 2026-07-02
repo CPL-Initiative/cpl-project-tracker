@@ -11006,6 +11006,31 @@ def main():
     except Exception as _le:
         print(f"  Project lifecycle overlay unavailable ({_le}); all projects active.")
         project_lifecycle = {}
+    # ── Activity ⇄ Project separation (Session 95, Sam 2026-07-02) ──
+    # The OFFICIAL WORKPLAN layer — the 1.x–4.x sub-activities (incl. the
+    # 3.1.x population breakdowns) that render Activity-metrics KPI cards —
+    # is IMMUNE to the project soft-delete overlay: a project_lifecycle row
+    # pointing at one of them is ignored here, so tabling/archiving a project
+    # can never remove an Activity card, its RACI rows, or its Workplan Goals
+    # ladder. (The 2026-07-02 mixup: 22 sub-activities were tabled as
+    # "redundant project cards" and their Activity cards vanished with them.)
+    # The legacy `5.x` "Strategic Initiatives" ids are REAL projects even when
+    # they carry a KPI ladder (e.g. 5.1, deliberately tabled 2026-06-29), so
+    # they are NOT immune and keep their grid card. Sub-activities also no
+    # longer render duplicate Projects-Grid cards — see the dedup at the
+    # render call. Mirror any change to this rule in project_lifecycle.js
+    # activityLayerIds().
+    activity_layer_ids = {
+        pid for pid in derive_core_activity_ids(projects)
+        if not pid.startswith("5.")
+    }
+    _immune = sorted(set(project_lifecycle) & activity_layer_ids)
+    if _immune:
+        print(f"  Project lifecycle: ignoring {len(_immune)} overlay row(s) on "
+              f"activity-layer ids ({', '.join(_immune)}) — sub-activities are "
+              f"immune to table/archive.")
+        for _pid in _immune:
+            project_lifecycle.pop(_pid, None)
     inactive_pids = set(project_lifecycle.keys())
     if inactive_pids:
         print(f"  Project lifecycle: {len(inactive_pids)} tabled/archived "
@@ -11042,10 +11067,10 @@ def main():
     # "Contributes to:" chip line + the shared assoc_editor.js editor anchor.
     assoc_records_by_project = build_assoc_records_by_project(wpg_assocs)
 
-    # Tabled/archived projects are excluded so they drop from the Activity Metrics
-    # sub-activity cards AND the RACI matrix (which reads CPL_DATA.activity_kpis for
-    # its sub-activity rows) — Sam, Session 84. Headline KPIs come from live metrics,
-    # not this, so they're unaffected.
+    # inactive_pids only ever contains real work-item projects now (the
+    # activity-layer ids were scrubbed above — Session 95), so this filter's
+    # remaining job is folding a tabled SPRINT CHILD out of the 4.1 composite.
+    # Sub-activity cards themselves can no longer be dropped by the overlay.
     activity_kpis   = build_activity_kpis(
         [p for p in projects if p["id"] not in inactive_pids], activities=activities)
 
@@ -11212,6 +11237,8 @@ def main():
         # Tabled/archived projects are excluded from CPL_DATA so every JS
         # consumer (RACI matrix buildItems, Annual Report, custom report
         # generator) drops them — "not mentioned in anything" (Sam, Session 84).
+        # Since Session 95 inactive_pids holds only real work-item projects
+        # (activity-layer ids are immune), so sub-activities always ship here.
         "projects": [p for p in projects if p["id"] not in inactive_pids],
         "workplan_goals": [g for g in workplan_goals if g.get("id") not in inactive_pids],
     }
@@ -11745,22 +11772,33 @@ def main():
                 proj_grid_end = html.find('<!-- Budget Section -->')
                 proj_grid_end_consumes = proj_grid_end
             if proj_grid_start != -1 and proj_grid_end != -1:
+                # Activity ⇄ Project card dedup (Session 95, Sam 2026-07-02:
+                # "no redundant activity or project cards"). The activity-layer
+                # ids (which render Activity-metrics KPI cards) are NOT repeated
+                # as Projects-Grid cards — the grid holds only the real work-item
+                # projects (the 4.1.x sprint children + the 5.x initiatives). The
+                # Activity card carries the same affordances (Latest Update /
+                # Workplan Note / Report / Attach / RACI / Update / Nudge), so
+                # nothing is lost by dropping the duplicate.
+                grid_projects = [
+                    p for p in projects if p["id"] not in activity_layer_ids
+                ]
                 proj_cards_html = render_projects_grid_html(
-                    projects, update_log, attachments=attachments,
+                    grid_projects, update_log, attachments=attachments,
                     data_source_stamp=projects_fetched_at,
                     assoc_records_by_project=assoc_records_by_project,
                     activities=activities, lifecycle=project_lifecycle,
                 )
                 # Active project count excludes D.* helper rows AND tabled/archived.
                 project_count = len([
-                    p for p in projects
+                    p for p in grid_projects
                     if not p["id"].startswith("D.") and p["id"] not in inactive_pids
                 ])
                 # Collapsed "Tabled & Archived" section (sibling of #projectsGrid so
                 # the filters/count ignore it). Built from the soft-deleted project
                 # dicts + their lifecycle metadata.
                 inactive_projects = [
-                    p for p in projects
+                    p for p in grid_projects
                     if p["id"] in inactive_pids and not p["id"].startswith("D.")
                 ]
                 tabled_archived_html = render_tabled_archived_section(
@@ -11779,7 +11817,8 @@ def main():
                     '        <!-- End Projects Grid -->\n'
                 )
                 html = html[:proj_grid_start] + new_proj_section + html[proj_grid_end_consumes:]
-                print(f"  Rendered static project cards ({project_count} projects, grouped by Goal)")
+                print(f"  Rendered static project cards ({project_count} projects, grouped by Goal; "
+                      f"{len(activity_layer_ids)} sub-activities render as Activity cards only)")
                 print("  Rendered Workplan Progress Chart inside Workplan Activity Metrics (3 trend lines)")
 
             # ── Teaser cards on the Dashboard tab linking to the other tabs ──

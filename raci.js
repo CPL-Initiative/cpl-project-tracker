@@ -318,9 +318,15 @@
         state.raci = {};
         (res[1] || []).forEach(function (r) { state.raci[r.item_type + ":" + r.item_id] = r.raci || {}; });
         // Tabled/archived projects → exclude from the matrix (Session 84).
+        // Activity-layer ids (official 1.x–4.x sub-activities) are IMMUNE to
+        // table/archive (Session 95) — ignore any stale overlay row on them,
+        // mirroring the generator scrub + project_lifecycle.js.
+        var immune = (window.CPL_PROJECT_LIFECYCLE && window.CPL_PROJECT_LIFECYCLE.activityLayerIds)
+          ? window.CPL_PROJECT_LIFECYCLE.activityLayerIds() : {};
         state.tabled = {};
         (res[3] || []).forEach(function (r) {
-          if (r && r.project_id != null && (r.state === "tabled" || r.state === "archived")) state.tabled[String(r.project_id)] = true;
+          if (r && r.project_id != null && (r.state === "tabled" || r.state === "archived")
+              && !immune[String(r.project_id)]) state.tabled[String(r.project_id)] = true;
         });
         state.items = buildItems();  // rebuild now that the tabled set is known
         // Group the update log by item key (newest first — the query is ordered).

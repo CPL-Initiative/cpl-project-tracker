@@ -8,6 +8,14 @@
  * reason + date. Reversible — ♻ Restore deletes the overlay row and the project
  * returns to the grid (live, or on the next daily regen). Never a hard delete.
  *
+ * SCOPE — real work-item projects ONLY (Session 95, Sam 2026-07-02). Ids that
+ * render Activity-metrics KPI cards (CPL_DATA.activity_kpis — the official
+ * workplan sub-activities) are IMMUNE: the generator ignores overlay rows on
+ * them, no longer renders duplicate Projects-Grid cards for them, and this
+ * module skips them in reconcile()/mountControls(). Tabling/archiving a
+ * project can never remove an Activity card, its RACI rows, or its Workplan
+ * Goals ladder.
+ *
  * Storage: the Supabase `public.project_lifecycle` overlay (project_id pk →
  * {state, reason, updated_by, updated_at}; absence of a row = active). Anon read;
  * writes gated by is_allowed_reviewer() OR team_pass_ok() (the RACI / Mission
@@ -275,26 +283,38 @@
     });
   }
 
-  // The Workplan Activity Metrics section renders a sub-activity KPI card per
-  // project. Hide a tabled project's card there too (the generator drops it from
-  // activity_kpis on the next regen; this is the live, pre-regen reconcile). The
-  // card is found via its card_updates.js hook, scoped to .activity-kpi-card so
-  // the project-grid card (same hook) is not touched.
-  function setActivityCardHidden(pid, hidden) {
-    var q = esc4q(pid);
-    Array.prototype.forEach.call(
-      document.querySelectorAll('.cpl-live-update[data-update-key="project:' + q + '"]'),
-      function (h) {
-        var card = h.closest && h.closest(".activity-kpi-card");
-        if (card) card.style.display = hidden ? "none" : "";
+  // The OFFICIAL WORKPLAN layer — the 1.x–4.x sub-activity ids that render
+  // Activity-metrics KPI cards (read from CPL_DATA.activity_kpis). These are
+  // IMMUNE to table/archive (Session 95): the generator ignores overlay rows
+  // on them, and this mirrors that rule client-side so a stale row can never
+  // hide an Activity card or its goals-ladder rows. (Pre-Session-95 the
+  // overlay deliberately hid the Activity card too — the 2026-07-02 mixup
+  // where tabling "redundant" project cards erased 22 Activity cards.) The
+  // legacy `5.x` "Strategic Initiatives" ids are REAL projects even when a
+  // KPI ladder puts them in activity_kpis (e.g. 5.1) — never immune. Keep in
+  // sync with the generator's activity_layer_ids. Empty map when CPL_DATA is
+  // absent (e.g. tests) → nothing is immune.
+  function activityLayerIds() {
+    var out = {};
+    try {
+      var groups = (window.CPL_DATA && window.CPL_DATA.activity_kpis) || [];
+      groups.forEach(function (g) {
+        (g.kpis || []).forEach(function (k) {
+          if (k && k.id != null && String(k.id).indexOf("5.") !== 0) out[String(k.id)] = true;
+        });
       });
+    } catch (e) {}
+    return out;
   }
 
   // ── Reconcile drift between the baked HTML and the live overlay ───────────────
   var _overlay = {};
   function reconcile() {
+    var immune = activityLayerIds();
     // 1. Anything in the overlay but visible in the grid → hide + add an entry.
+    //    Activity-layer ids are skipped entirely (immune — Session 95).
     Object.keys(_overlay).forEach(function (pid) {
+      if (immune[pid]) return;
       var meta = _overlay[pid];
       var card = cardFor(pid);
       var name = (card && cardName(card)) || (entryFor(pid) && entryNameOf(entryFor(pid))) || pid;
@@ -303,17 +323,16 @@
       if (!entryFor(pid)) addEntry(pid, name, meta);
       else entryFor(pid).innerHTML = entryHtml(pid, name, meta); // keep reason/date fresh
       setGoalsRowsHidden(pid, true);                  // also drop it from the Annual Goals table
-      setActivityCardHidden(pid, true);               // and the Workplan Activity Metrics card
     });
     // 2. Anything baked as tabled but NO LONGER in the overlay → restore it.
     var baked = gridEl() ? gridEl().querySelectorAll(".project-card[data-lifecycle]") : [];
     Array.prototype.forEach.call(baked, function (card) {
       var pid = card.getAttribute("data-pid");
-      if (pid && !_overlay[pid]) { showCard(pid); setGoalsRowsHidden(pid, false); setActivityCardHidden(pid, false); }
+      if (pid && (!_overlay[pid] || immune[pid])) { showCard(pid); setGoalsRowsHidden(pid, false); }
     });
     Array.prototype.forEach.call(document.querySelectorAll(".tabled-card[data-pid]"), function (e) {
       var pid = e.getAttribute("data-pid");
-      if (pid && !_overlay[pid]) e.remove();
+      if (pid && (!_overlay[pid] || immune[pid])) e.remove();
     });
     refreshCount();
     mountControls();
@@ -332,11 +351,15 @@
     Array.prototype.forEach.call(document.querySelectorAll(".tabled-restore"), function (b) {
       b.style.display = authed ? "" : "none";
     });
-    // A 🗄 control on each ACTIVE (visible) card.
+    // A 🗄 control on each ACTIVE (visible) card. Activity-layer ids never get
+    // one (immune — Session 95; also covers pre-regen HTML that still carries
+    // duplicate sub-activity grid cards).
     var grid = gridEl();
     if (!grid) return;
+    var immune = activityLayerIds();
     Array.prototype.forEach.call(grid.querySelectorAll(".project-card"), function (card) {
       var has = card.querySelector(".plc-ctl-row");
+      if (immune[card.getAttribute("data-pid")]) { if (has) has.remove(); return; }
       if (card.getAttribute("data-lifecycle")) { if (has) has.remove(); return; }
       // The 🗄 control shows for EVERYONE (affordance-visibility vs action-
       // eligibility) so the team-phrase / reviewer unlock is reachable from the
@@ -499,7 +522,16 @@
     while (t && t !== document) {
       if (t.classList && t.classList.contains("plc-table-btn")) { e.preventDefault(); openTableModal(t.getAttribute("data-pid")); return; }
       if (t.classList && t.classList.contains("tabled-restore")) { e.preventDefault(); doRestore(t.getAttribute("data-pid"), t); return; }
-      if (t.classList && t.classList.contains("plc-modal-overlay")) { closeModal(); return; }
+      if (t.classList && t.classList.contains("plc-modal-overlay")) {
+        // Close ONLY on a true backdrop click. (Session-95 fix: this capture-
+        // phase walk reaches the overlay from ANY click inside the modal, so
+        // picking the Archive radio — or clicking the reason box — dismissed
+        // the modal instantly; only the pre-selected "Tabled" with an empty
+        // reason could ever be confirmed. That's why every 2026-07-02 row
+        // landed as tabled/no-reason.)
+        if (t === e.target) closeModal();
+        return;
+      }
       t = t.parentNode;
     }
   }
@@ -569,6 +601,7 @@
     entryHtml: entryHtml,
     badgeHtml: badgeHtml,
     fmtDate: fmtDate,
+    activityLayerIds: activityLayerIds,
     reconcile: reconcile,
     mountControls: mountControls,
     run: run,

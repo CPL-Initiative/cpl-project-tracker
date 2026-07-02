@@ -145,3 +145,73 @@ else the daily regen silently leaves a stale site. Verified the `workflow_run`
 (d) **Next step.** The Annual Workplan tab as the authoritative source — hybrid
 Current (live for the `pid_to_kpi_key` 5, manual-editable otherwise) + editable
 single-source titles. Scoped + locked: `docs/annual_workplan_authoritative_scope.md`.
+
+---
+
+## 2026-07-02 (Session 95) — the Activity ⇄ Project mixup: separation + the Archive-radio bug
+
+### What happened
+
+Sam tabled **23 cards in one morning sweep** (15:26–15:34 UTC) because they
+looked "redundant with Activity cards" — and the Activity cards vanished with
+them. Root cause is structural: the Activity-metrics KPI cards and the
+Projects-Grid cards are the SAME `public.projects` rows rendered twice, and
+Session 84 had *deliberately* wired the lifecycle overlay to hide the Activity
+card too (lesson (b) above). 22 of the 23 were official sub-activities
+(`1.1–1.4, 2.1–2.4, 3.1–3.6 incl. the 3.1.x population breakdowns, 4.1–4.5`);
+one (`5.8`) was a real project caught in the sweep. All 23 rows landed as
+`state='tabled'`, `reason=null`, `updated_by='(team)'` — which exposed a second
+bug (below).
+
+### The fixes (this session's PR)
+
+1. **Restore** — the 23 mistaken Supabase rows were DELETED (receipt: ids above,
+   all `updated_at` 2026-07-02 15:26–15:34 UTC). `5.1` (tabled 2026-06-29 with a
+   reason, deliberately) was kept.
+2. **Activity ⇄ Project separation (the invariant).** The **activity layer** =
+   `derive_core_activity_ids(projects)` MINUS the legacy `5.x` family — i.e. the
+   official 1.x–4.x workplan sub-activities that render Activity-metrics KPI
+   cards. These ids are now **IMMUNE to `project_lifecycle`** at every consumer:
+   - generator `main()` scrubs overlay rows on activity-layer ids right after
+     `load_project_lifecycle()` (logged, ignored);
+   - `project_lifecycle.js` mirrors the rule (`activityLayerIds()` from
+     `CPL_DATA.activity_kpis`, minus `5.x`): reconcile skips them, no 🗄 control
+     mounts on them (covers pre-regen HTML), stale entries are removed;
+   - `raci.js` `load()` ignores overlay rows on immune ids.
+   The `5.x` carve-out matters: **`5.1` carries a KPI ladder** (so it appears in
+   `activity_kpis` when active) but is a REAL project Sam deliberately tabled —
+   a first draft without the carve-out silently resurrected it (caught by the
+   local regen A/B).
+3. **Card dedup (Sam: "no redundant activity or project cards").** The Projects
+   Grid no longer repeats activity-layer rows: grid = real work items only
+   (`4.1.x` sprint children + `5.x` initiatives → 11 active + tabled 5.1). The
+   Activity card already carried every affordance the grid card had (Latest
+   Update / Workplan Note / history / Report / Attach / RACI / Update / Nudge),
+   so nothing is lost. `CPL_DATA.projects` still ships ALL active rows (RACI
+   tree + Annual Report need the sub-activities) — the dedup is render-only.
+4. **The Archive-radio bug.** `project_lifecycle.js`'s document-level CAPTURE
+   click handler walked ancestors and matched `.plc-modal-overlay` from ANY
+   click inside the modal — so picking the Archive radio (or clicking the
+   reason box) dismissed the modal instantly. Confirm "worked" only because the
+   event's dispatch path is precomputed: the button's own listener still fired
+   after the capture handler removed the overlay — always saving the DEFAULT
+   `tabled` with an EMPTY reason. (That's why all 23 mixup rows were
+   tabled/no-reason.) Fix: close only when `e.target` IS the backdrop.
+   **Reusable lesson:** an overlay-click-closes handler must compare the click
+   TARGET to the backdrop, never walk ancestors from an inner element.
+
+### Verification
+
+`tests/project_lifecycle.test.js` grew 28 → 42 checks (activity-card no-hide;
+immunity end-to-end incl. the 5.x carve-out; modal survives inner clicks;
+Confirm saves `archived` + reason; backdrop click still closes). Suite 124
+green. Local regen A/B: grid = `4.1.1–4.1.4, 5.1(hidden/tabled), 5.2–5.8`,
+activity_kpis = 22 (all restored), Tabled section = `5.1` only, Rule-4 mirror
+byte-identical.
+
+### Known edge (accepted)
+
+A ladder-bearing `5.x` (today: only `5.1`) renders BOTH an Activity card and a
+grid card when active — the one residual redundancy, invisible today because
+5.1 is tabled. If Sam restores 5.1 and dislikes the double card, either move
+its ladder out of `workplan_goals` or re-home the id under 1–4.
