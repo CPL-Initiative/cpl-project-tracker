@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-02T16:45:12.980Z",
+  "scraped_at": "2026-07-02T17:40:04.243Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -108,13 +108,13 @@
         },
         {
           "college": "San Diego City College",
-          "students": 6545,
+          "students": 6552,
           "units": 14269,
-          "avgUnits": 2.180137509549274,
+          "avgUnits": 2.1778083028083026,
           "transcriptionRate": 62,
-          "avgTranscribed": 1.3512605042016808,
+          "avgTranscribed": 1.34981684981685,
           "criteriaMetCount": 3,
-          "militaryStudents": 1354,
+          "militaryStudents": 1361,
           "nonMilitaryStudents": 5201,
           "apprenticeStudents": 0,
           "savings": 17900585,
@@ -248,14 +248,14 @@
       "colleges": [
         {
           "college": "City College of San Francisco",
-          "students": 1758,
+          "students": 1764,
           "units": 6829,
-          "avgUnits": 3.88452787258248,
+          "avgUnits": 3.871315192743764,
           "transcriptionRate": 1.5,
-          "avgTranscribed": 0.05887372013651877,
+          "avgTranscribed": 0.058673469387755105,
           "criteriaMetCount": 2,
           "militaryStudents": 1066,
-          "nonMilitaryStudents": 693,
+          "nonMilitaryStudents": 699,
           "apprenticeStudents": 7,
           "savings": 11820335,
           "yearImpact": 41524703,
@@ -1102,6 +1102,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "College of the Canyons",
+          "students": 125,
+          "units": 39,
+          "avgUnits": 0.312,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 123,
+          "nonMilitaryStudents": 2,
+          "apprenticeStudents": 0,
+          "savings": 67470,
+          "yearImpact": 236613,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Irvine Valley College",
           "students": 124,
           "units": 363,
@@ -1294,21 +1309,6 @@
           "apprenticeStudents": 0,
           "savings": 228360,
           "yearImpact": 800844,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "College of the Canyons",
-          "students": 40,
-          "units": 39,
-          "avgUnits": 0.975,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 38,
-          "nonMilitaryStudents": 2,
-          "apprenticeStudents": 0,
-          "savings": 67470,
-          "yearImpact": 236613,
           "transcribedUnits": 0
         },
         {
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "48,286",
+      "value": "48,384",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,939"
+          "value": "25,031"
         },
         {
           "label": "Workforce/Other",
-          "value": "23,424"
+          "value": "23,430"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 48286,
+    "Students": 48384,
     "Units": 230673.65000000002,
     "TranscribedUnits": 99588.95,
     "Savings": 321613025.25,
     "YearImpact": 1300785072.3999999,
-    "MilitaryStudents": 24939,
-    "NonMilitaryStudents": 23424,
+    "MilitaryStudents": 25031,
+    "NonMilitaryStudents": 23430,
     "AprenticeStudents": 754,
-    "AverageUnits": 4.77723667315578,
-    "TranscribedAverage": 2.0624808433086192
+    "AverageUnits": 4.767560557208995,
+    "TranscribedAverage": 2.058303364748677
   }
 }
