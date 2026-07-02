@@ -3121,6 +3121,87 @@ def render_tabled_archived_section(inactive_projects, lifecycle):
     )
 
 
+def render_awg_projects_section_html(work_projects):
+    """The "Projects" section at the bottom of the Annual Workplan Goals tab
+    (Session 95, Sam 2026-07-02: "have those Projects populate on a Project
+    section of the Annual Workplan Goals tab"). Lists the real WORK-ITEM
+    projects — everything that is NOT an official 1.x–4.x sub-activity (those
+    live in the ladder table above) — i.e. the 4.1.x sprint children + the
+    5.x initiatives. `work_projects` arrives pre-filtered (no D.* rows, no
+    tabled/archived, no activity-layer ids).
+
+    Compact single table (fits desktop widths — Activity shown as a short
+    "Activity N" chip with the full text in title). The Lead cell carries the
+    card_raci.js live hook (.cpl-raci-lead[data-raci-key]) so it resolves to
+    the RACI Responsible at runtime, with the creation-era lead as fallback.
+    The header carries #awgProjectsAddSlot — project_add.js mounts its
+    "+ Add project" button there. Returns "" when there are no work projects.
+    """
+    if not work_projects:
+        return ""
+
+    def _idkey(p):
+        key = []
+        for seg in str(p.get("id", "")).split("."):
+            m = re.match(r'(\d+)(.*)', seg)
+            key.append((int(m.group(1)), m.group(2)) if m else (0, seg))
+        return key
+
+    th = ('style="text-align:left;padding:0.5rem 0.6rem;font-size:0.68rem;'
+          'text-transform:uppercase;letter-spacing:0.04em;color:#888;'
+          'border-bottom:2px solid #e8e8e8;white-space:nowrap;"')
+    td = 'padding:0.5rem 0.6rem;border-bottom:1px solid #f0f0f0;vertical-align:middle;'
+    body = ""
+    for p in sorted(work_projects, key=_idkey):
+        pid = html_escape(str(p.get("id", "")), quote=True)
+        act_full = str(p.get("activity", "") or "")
+        act_num = _activity_num_from_workplan(act_full)
+        act_disp = f"Activity {act_num}" if act_num else (act_full or "—")
+        status = str(p.get("status", "") or "")
+        status_class = html_escape(status.lower().replace(" ", "-"), quote=True)
+        pct = p.get("pct", 0) or 0
+        timeline = " – ".join(x for x in (p.get("start", ""), p.get("end", "")) if x)
+        lead = html_escape(str(p.get("lead", "") or ""))
+        body += (
+            f'                <tr data-awgp-pid="{pid}">\n'
+            f'                    <td style="{td}white-space:nowrap;color:#888;font-weight:600;">{pid}</td>\n'
+            f'                    <td style="{td}font-weight:600;color:var(--navy-primary);">{html_escape(str(p.get("name", "")))}</td>\n'
+            f'                    <td style="{td}white-space:nowrap;font-size:0.78rem;color:#555;" title="{html_escape(act_full, quote=True)}">{html_escape(act_disp)}</td>\n'
+            f'                    <td style="{td}white-space:nowrap;font-size:0.78rem;color:#555;">{html_escape(str(p.get("goal", "") or "")) or "&mdash;"}</td>\n'
+            f'                    <td style="{td}font-size:0.78rem;"><span class="cpl-raci-lead" data-raci-key="project:{pid}" title="Responsible (from the Team &amp; RACI matrix)">{lead or "&mdash;"}</span></td>\n'
+            f'                    <td style="{td}white-space:nowrap;">'
+            f'<span class="status-badge status-{status_class}" style="font-size:0.62rem;padding:0.1rem 0.4rem;">{html_escape(status) or "&mdash;"}</span></td>\n'
+            f'                    <td style="{td}min-width:110px;"><div style="display:flex;align-items:center;gap:0.4rem;">'
+            f'<div style="flex:1;height:6px;background:#e8e8e8;border-radius:3px;overflow:hidden;">'
+            f'<div style="height:100%;width:{pct}%;background:var(--green-progress);border-radius:3px;"></div></div>'
+            f'<span style="font-size:0.72rem;color:#555;white-space:nowrap;">{pct}%</span></div></td>\n'
+            f'                    <td style="{td}white-space:nowrap;font-size:0.75rem;color:#666;">{html_escape(timeline) or "&mdash;"}</td>\n'
+            f'                </tr>\n'
+        )
+
+    return (
+        '<div class="workplan-goals-section" id="awgProjectsSection" style="margin-top:2rem;">\n'
+        '            <h2 style="margin-bottom:0.25rem;">Projects '
+        f'<span style="font-size:0.9rem;color:#888;">({len(work_projects)})</span>'
+        '<span id="awgProjectsAddSlot"></span></h2>\n'
+        '            <p style="color:#888;font-size:0.78rem;margin:0 0 1rem 0;">'
+        'Work-item projects (sprints, demonstrations, initiatives) that contribute to the '
+        'sub-activities above. Table/Archive lives on the Activities &amp; Projects tab; '
+        'tabled and archived projects are excluded here.</p>\n'
+        '            <div style="overflow-x:auto;">\n'
+        '            <table style="width:100%;border-collapse:collapse;background:var(--white,#fff);'
+        'border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.08);">\n'
+        '                <thead><tr>'
+        f'<th {th}>ID</th><th {th}>Project</th><th {th}>Activity</th><th {th}>CPL Goal</th>'
+        f'<th {th}>Lead</th><th {th}>Status</th><th {th}>Progress</th><th {th}>Timeline</th>'
+        '</tr></thead>\n'
+        '                <tbody>\n' + body + '                </tbody>\n'
+        '            </table>\n'
+        '            </div>\n'
+        '        </div>\n'
+    )
+
+
 def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=None, config_overrides=None):
     """
     Render two side-by-side canvas-based trend charts:
@@ -12001,6 +12082,36 @@ def main():
                         wrapped = '<!-- Annual Workplan Goals -->\n' + goals_table_html + '        <!-- End Annual Workplan Goals -->\n\n        '
                         html = html[:v2030_insert] + wrapped + html[v2030_insert:]
                         print(f"  Rendered Annual Workplan Goals table ({len(annual_goals)} rows, first-run insert)")
+
+            # ── AWG "Projects" section (Session 95, Sam 2026-07-02) ──
+            # The real work-item projects (non-activity-layer, active) listed at
+            # the bottom of the Annual Workplan Goals tab — the official
+            # sub-activities stay in the ladder table above. Own paired markers
+            # placed AFTER the End-AWG marker (everything BETWEEN the AWG
+            # markers is overwritten by the annual-goals injection every run),
+            # replaced in place for idempotency.
+            awg_projects_html = render_awg_projects_section_html([
+                p for p in projects
+                if p["id"] not in activity_layer_ids
+                and not p["id"].startswith("D.")
+                and p["id"] not in inactive_pids
+            ])
+            _AWGP_S = '<!-- AWG Projects Section -->'
+            _AWGP_E = '<!-- End AWG Projects Section -->'
+            if awg_projects_html:
+                wrapped_awgp = _AWGP_S + '\n        ' + awg_projects_html + '        ' + _AWGP_E
+                aps = html.find(_AWGP_S)
+                ape = html.find(_AWGP_E)
+                _n_awgp = awg_projects_html.count('data-awgp-pid=')
+                if aps != -1 and ape != -1:
+                    html = html[:aps] + wrapped_awgp + html[ape + len(_AWGP_E):]
+                    print(f"  Rendered AWG Projects section ({_n_awgp} work-item projects, replaced in place)")
+                else:
+                    _awgp_anchor = html.find('<!-- End Annual Workplan Goals -->')
+                    if _awgp_anchor != -1:
+                        _ins = _awgp_anchor + len('<!-- End Annual Workplan Goals -->')
+                        html = html[:_ins] + '\n\n        ' + wrapped_awgp + html[_ins:]
+                        print(f"  Rendered AWG Projects section ({_n_awgp} work-item projects, first-run insert)")
 
             # ── Rebuild the Vision 2030 section with updated goal data ──
             # End boundary is <!-- End Vision 2030 Section --> (added Phase D)
