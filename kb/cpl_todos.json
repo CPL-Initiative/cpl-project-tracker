@@ -1,20 +1,26 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-02 · Session 93 (SkyReach) · Sierra's CPR blind spot FIXED (cpl-chat v24) · the SIERRA TRAINING tab is LIVE (team-only)",
- "_session": 93,
- "_status": "Sierra session, two acts — both sparked by YOUR feedback. ACT 1: the CPR mystery solved. Sierra had all 16 CPR/First-Aid articulations in her data the whole time, but the search behind her ranked matches by POPULARITY (how many credit recs an exhibit has) instead of RELEVANCE — and since 76% of all exhibits carry just one rec, three-quarters of the catalog could never surface on a busy question. Fixed at the database layer (relevance ranking, live for the map.rccd.edu widget too), plus CPR/First-Aid/AED/BLS now count as one family and filler words ('check', 'again', 'MAP') no longer pollute the search. Verified end-to-end: your exact question now returns CCSF, Las Positas, Cypress with courses + units. Your two 👎 notes were the trail — the feedback loop paid for itself on day one. ACT 2 — your 'go green': the SIERRA TRAINING tab is live (team-only; sign in via Team & RACI). Two panes: the 👍/👎 FEEDBACK QUEUE (expand a row → full question + answer + note; mark it new → triaged → addressed so the queue drains) and the GAP MINER (the questions where Sierra's knowledge had nothing close, the answers where she punted, recurring themes, sliced by who was asking). Hack away with the team — everything you thumbs-down or triage becomes the work list for Phase 2 (a guidance table for same-minute answer tuning) and Phase 3 (feeding missing documents into Sierra's knowledge).",
+ "_as_of": "2026-07-02 · Session 94 (SkySierra) · Sierra answers now RENDER (tables/headings) · the Whitney mark replaces the 🏔️ · Training tab P1 + the GUIDANCE layer are LIVE",
+ "_session": 94,
+ "_status": "Sierra polish + Training-tab completion day, straight from your three asks. ① FORMATTING: Sierra's answers now render properly on all three chat surfaces — real tables (the college/landing-page grids), section headings, dividers, numbered lists — instead of raw pipes and hash marks. ② BRANDING: the little 🏔️ emoji is retired; the Mt Whitney ridge in a navy roundel (the same hand-traced mark from the Sierra page header) is now the avatar everywhere — the COBI sidebar's Ask Sierra button, both chat surfaces, and the Fact Sheet drawer. ③ P1: the Training tab grew the team-session tools — a 🧪 'Test in Sierra' button on every feedback/gap row (jumps to the chat with the question pre-filled so you can replay it after a fix), date filters, one-click bulk triage, and each feedback row now shows its chat-log telemetry (was this a knowledge gap or a wording problem?). ④ P2 SHIPPED: the 🧭 GUIDANCE layer — type a short rule in the Training tab ('always mention the statewide EMS pathway on CPR questions') and Sierra follows it on her next answer, across every surface INCLUDING the production map.rccd.edu widget, no redeploy needed. Sierra follows the newest 10 active rules; deactivate instead of delete (the list is its own audit trail). Proven end-to-end with a temporary marker rule visible in the live smoke test, then deactivated. The guidance box is empty and waiting for the team's first real rule.",
  "items": [
   {
-   "id": "training-tab-tryit",
+   "id": "guidance-first-rule",
    "who": "sam",
    "tab": "sierra-training",
-   "text": "TRY THE NEW SIERRA TRAINING TAB with the team: sign in (Team & RACI magic link or team phrase) → the 👎 queue has your two CPR notes waiting as its first real entries. Expand, triage (new → triaged → addressed), then skim the Gap Miner's low-similarity questions + recurring themes. Tell me what the workflow needs — bulk triage? date filters? a 're-ask Sierra' button?"
+   "text": "WRITE THE FIRST REAL GUIDANCE RULE: Training tab → 🧭 Guidance → type a short directive (e.g. 'When asked about CPR or First Aid credit, always mention both the local adopters and that any college can set this up'). It reaches Sierra within a minute — on every surface, including the production widget. Only the newest 10 active rules are sent; deactivate rather than delete."
   },
   {
-   "id": "cpr-answer-check",
+   "id": "training-p1-tryit",
+   "who": "sam",
+   "tab": "sierra-training",
+   "text": "Try the new team-session tools with the crew: 🧪 Test in Sierra (replays a logged question in the chat tab, pre-filled), the date filters (24h/7d/30d), bulk triage ('Mark all N filtered → addressed'), and the chat-log telemetry inside each feedback row. Tell me what's still missing."
+  },
+  {
+   "id": "formatting-spotcheck",
    "who": "sam",
    "tab": "chatbot",
-   "text": "Re-ask Sierra your CPR question (either surface) — she should now list the CPR/First-Aid adopters with courses + units (CCSF, Las Positas, Cypress…) instead of hedging. If any angle still comes back thin, 👎 it — it lands straight in the Training queue."
+   "text": "Re-ask Sierra a table-heavy question (your POST/AJ one is perfect) — the college table, headings, and dividers should now render cleanly instead of raw | pipes | and ## marks. Same on the standalone Sierra page and the Fact Sheet drawer. 👎 anything that still looks off."
   },
   {
    "id": "malone-guardrails",
@@ -53,16 +59,10 @@
    "text": "Carryover: review and merge public Knowledge Base PR #15 (Veterans plans) when you have a moment — waiting on your sign-off."
   },
   {
-   "id": "factsheet-auth-redirect",
-   "who": "sam",
-   "tab": "dashboard",
-   "text": "One-time: add the Fact Sheet URL (or …/cpl-project-tracker/**) to the Supabase Auth → Redirect URLs list so a magic-link sign-in from the Fact Sheet lands back on that page."
-  },
-  {
-   "id": "sierra-training-p2",
+   "id": "sierra-training-p3",
    "who": "fable",
    "tab": "sierra-training",
-   "text": "After the team has driven Phase 1: build Phase 2 — the sierra_guidance table (short rule text + active flag, team-writable) that cpl-chat folds into the system prompt, so answer tuning is same-minute without a redeploy. Then Phase 3 (feed missing documents into Sierra's knowledge) once the gap miner shows which artifacts are missing."
+   "text": "Phase 3 once the gap miner shows which artifacts are missing: ingest documents into Sierra's knowledge (upload → chunk → embed with the SAME gte-small model → cpl_documents/cpl_document_sections), with a test-it box and per-document retire. The heaviest phase — build it against real gaps, not speculation."
   },
   {
    "id": "chatbox-exhibits-refresh",
@@ -75,12 +75,6 @@
    "who": "fable",
    "tab": "tmc-builder",
    "text": "Confidence engine round 2: description-similarity precompute (course description vs C-ID descriptor — data in hand, ship scores not text), wire real hours when Sam's COCI master report lands, distinguish verify-tier carriers in the directory coverage column."
-  },
-  {
-   "id": "assistant-cer",
-   "who": "fable",
-   "tab": "chatbot",
-   "text": "Next Sierra wire: fold in the CER credential layer + adoption-leverage / statewide_prescriptive so a request resolves credential → articulated-where → local course → adoption path (the rest of the CCR/CER ETL)."
   },
   {
    "id": "mid-renumber",

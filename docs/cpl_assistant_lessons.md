@@ -760,3 +760,78 @@ gating server-side), two panes:
   ingestion) stay parked until the team has used Phase 1; the Malone
   guardrails lane (durable rate limit + daily cost breaker) is unchanged and
   should land before the Student Portal publicizes the endpoint.
+
+---
+
+## Session 94 (SkySierra, 2026-07-02) — formatting + branding + Training P1 + the guidance layer (v25/v26)
+
+Sam's morning asks after the first live test of the v24 fixes ("Great
+response… much improved!"): swap the 🏔️ emoji for the real Sierra branding,
+make the chat answers render elegantly, and continue P1 + P2. Four PRs, all
+squash-merged same-session: **#649** (branding + markdown), **#650**
+(Training-tab P1), **#651** (the guidance layer). cpl-chat **v26 ACTIVE**.
+
+**What shipped:**
+
+- **The Sierra mark everywhere (#649).** Mt Whitney's east-face ridge (the
+  hand-traced `sierra/whitney-mark.svg`) in a navy roundel, inlined as a
+  self-contained trusted SVG string (`SIERRA_MARK`) — no relative-path asset,
+  renders at any mount depth. Applied to the COBI rail `Ask Sierra ↗` anchor
+  (both HTMLs, Rule 4), the sierra/ page avatar (was 🏔️), the COBI tab avatar
+  (was 🎓), and the Fact Sheet drawer header + bubbles.
+- **Full markdown in chat answers (#649).** Sierra routinely writes `##`/`###`
+  headings, `| pipe | tables |`, `---` rules, and `1.` numbered lists — the
+  old paragraph/bullet-only pass showed them as RAW TEXT (Sam's POST/AJ
+  answer paste). The upgraded block renderer (identical in all three
+  self-contained surfaces: `sierra/sierra.js`, `cpl_chat.js`,
+  `fact-sheet/factsheet_sierra.js`) handles headings (#/## → h3, ### → h4,
+  #### → h5), GFM tables (+ zebra CSS), rules, ordered lists, italics, and
+  mixed paragraph+list blocks — still escape-FIRST, still re-run per streamed
+  delta (a half-arrived table degrades to a paragraph until its separator
+  row lands). `tests/sierra_markdown.test.js` (36 checks) pins the three
+  renderers byte-identical.
+- **Training-tab P1 (#650).** 🧪 Test-in-Sierra (sessionStorage handoff
+  `cplSierraTestQ.v1` → `#chatbot` prefill, never auto-send) + ⧉ copy-question
+  on every feedback/gap row; 24h/7d/30d date filters on both panes; bulk
+  triage ("Mark all N filtered → triaged|addressed", one RPC per row not
+  already there); and the feedback→chat-turn link (same normalized question,
+  nearest in time → KB similarity + topic-match + gap chips inline —
+  "knowledge gap or wording problem?" at a glance).
+- **The guidance layer (#651 — Phase 2 of the Training scope).**
+  `sierra_guidance` (migration `sierra_guidance_layer`; schema of record
+  `chatbox/supabase_sierra_guidance.sql`): team-gated SELECT/INSERT/UPDATE,
+  NO delete policy. cpl-chat `fetchTeamGuidance()` (6th parallel lookup)
+  appends the newest 10 active rules (~2,500-char cap, fails soft) as a
+  TEAM GUIDANCE block that wins on conflict. The tab's 🧭 pane: composer,
+  Deactivate/Reactivate, and honest sent-cap chips ("active · sent" vs
+  "beyond top-10, not sent"). End-to-end proven with a temporary marker rule
+  ("include the exact phrase 'your prior learning counts'") visible in the
+  runner smoke's mode-1 answer, then deactivated.
+
+**Lessons:**
+
+- **The MCP `deploy_edge_function` tool SILENTLY DEFAULTS `verify_jwt` to
+  true.** The v25 deploy omitted the param → the platform started requiring a
+  valid JWT on the shared function (~40 min; first-party surfaces send the
+  anon Bearer so likely no visible outage, but the invariant exists because
+  the production widget must never depend on that). v26 (same `ezbr_sha256`)
+  restored `false`. The playbook's "pass `verify_jwt:false` explicitly" line
+  is load-bearing — it is now a REQUIRED param in every cpl-chat deploy call.
+- **`cpl-tab-activated` is dispatched on WINDOW, not document** (tabs.js:75).
+  `sierra_training.js` and `map_users.js` listened on `document` — a listener
+  that can never fire, silently breaking "sign in on Team & RACI, then come
+  back — the queue loads automatically." Both fixed (#650); when adding a tab
+  consumer, copy `card_updates.js` (window), not an older document listener.
+- **A 55KB one-shot MCP deploy payload can drop mid-flight** ("permission
+  stream closed"). Recovery is mechanical — `list_edge_functions` to see what
+  actually landed, then redeploy — but budget for a retry, and always
+  byte-verify (`get_edge_function` → diff vs the repo copy) afterwards.
+- **Prove a prompt-layer wire with a marker rule, not by eyeballing.** A
+  temporary detectable directive + the existing smoke's mode-1 grep gives a
+  positive end-to-end proof in one run; deactivating it afterwards leaves the
+  audit trail (no delete) and an empty active set.
+
+**NEXT for this surface:** the team authors real guidance rules (the
+CPR/First-Aid lesson is a natural first one); Phase 3 (artifact ingestion)
+once the gap miner shows what's missing; the Malone guardrails lane before
+the Student Portal publicizes the endpoint.

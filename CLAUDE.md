@@ -777,16 +777,20 @@ detailed in §7c):
 | `cpl-news` | CPL News | **Auto-curated** CPL news feed (CA-first, then national; + adjacent systems Career Passport / CA Master Plan / workforce-upskilling + CA budget items). Live-reads `public.cpl_news` (filled daily by the `cpl-news-harvest` Edge Function); filters, suggest-a-story (the path closed socials enter), reviewer feature/hide. Renderer `cpl_news.js` (static, lazy). **Added Session 67 (Skywatch), PR #481.** Docs: `docs/cpl_news_lessons.md`. |
 | `raci` | Team & RACI | Ownership spine for the workplan — a **3-tier RACI Matrix** (Activity → sub-activity → project/work item, each RACI-able × R/A/C/I) + an editable **Team Directory** + per-member update-**nudge** toggle, over Supabase `team_members` + `item_raci` (public read, reviewer write). Matrix has a **hierarchical scope filter** (Activity / sub-activity optgroups) + per-card **`👥 RACI` deep-links** (Session 76). Renderer `raci.js` (static, lazy). **Added Session 75 (SkyMaster), PRs #546–#548; nav PR #550 + 3-tier PR #553 (Session 76).** Docs: `docs/cobi_raci_nudge_lessons.md`. |
 | `map-users` | MAP Users | Manage the MAP platform's per-college **user roster** (MAP "College Users & Roles", staff PII) + a per-college refresh **nudge**. Public view = counts + role mix (anon `map_users_summary()`); roster (names/emails) reviewer/team-phrase-gated; 📣 nudge = mailto to Primary Contact + VPAA + VPSS. Renderer `map_users.js` (static, lazy). Gated Supabase `map_college_users` + `map_college_contacts`, synced by `map/sync_map_users.py` (`map-users-sync.yml`). **Added Session 87 (StarMax), PRs #618–#621.** Scope: `docs/map_users_tab_scope.md`. |
-| `sierra-training` | Sierra Training | **Team-only** improvement loop for Sierra (Phase 1 of `docs/sierra_training_tab_scope.md`): the 👍/👎 **feedback queue** (`sierra_feedback`, triage `new→triaged→addressed` via the `sierra_feedback_set_status` RPC) + a **gap miner** over `chat_interactions` (low-similarity turns, punt-signature answers, recurring themes, audience slice). Renderer `sierra_training.js` (static, lazy, the `map_users.js` pattern); reviewer/team-phrase gated server-side by RLS — logged out sees only the sign-in gate. NEVER writes to the public KB (curation pipeline only). **Added Session 93 (SkyReach).** Tests: `tests/sierra_training.test.js` (38). |
+| `sierra-training` | Sierra Training | **Team-only** improvement loop for Sierra (Phases 1+2 of `docs/sierra_training_tab_scope.md`): the 👍/👎 **feedback queue** (`sierra_feedback`, triage `new→triaged→addressed` via the `sierra_feedback_set_status` RPC; **Session 94 P1**: 🧪 Test-in-Sierra prefill handoff → `#chatbot`, ⧉ copy, 24h/7d/30d date filters, bulk triage, and a per-row **chat-turn telemetry link** — similarity/topic-match/gap chips) + a **gap miner** over `chat_interactions` (low-similarity turns, punt-signature answers, recurring themes, audience slice) + the **🧭 GUIDANCE pane** (Session 94 Phase 2 — author short directives in `sierra_guidance`; cpl-chat v26 appends the newest 10 active to every prompt INCLUDING the production widget; deactivate, never delete; honest "sent / beyond top-10" chips). Renderer `sierra_training.js` (static, lazy, the `map_users.js` pattern); reviewer/team-phrase gated server-side by RLS — logged out sees only the sign-in gate. NEVER writes to the public KB (curation pipeline only). **Added Session 93 (SkyReach); P1+P2 Session 94 (SkySierra, #650/#651).** Tests: `tests/sierra_training.test.js` (38) + `tests/sierra_training_p1.test.js` (26) + `tests/sierra_guidance.test.js` (23). |
 
 **Not a tab, but launched from the rail:** the **public CPL Fact Sheet**
 (`fact-sheet/`, §2 File Inventory) is reached by a `📄 CPL Fact Sheet ↗` anchor at
 the bottom of the nav rail — an `<a class="cpl-tab cpl-tab-external">` with **no
 `data-tab`**, so `tabs.js` (which derives tabs from `.cpl-tab[data-tab]`) ignores
 it and it opens the standalone page in a new tab. Mirrored in both HTMLs (Rule 4).
-Added Session 74. **Session 89 added a second such rail launcher — `🏔️ Ask Sierra ↗`
+Added Session 74. **Session 89 added a second such rail launcher — `Ask Sierra ↗`
 → the standalone `sierra/` chat page** (chat-first, multi-turn Sierra, shareable
 externally without the internal tabs; served by the lean Pages deploy; PR #633).
+**Session 94 (SkySierra, #649) replaced its 🏔️ emoji with the Sierra mark** — the
+Whitney ridge in a navy roundel as an inline SVG (both HTMLs, Rule 4); the same
+`SIERRA_MARK` roundel is now the chat avatar in `sierra/sierra.js`, `cpl_chat.js`
+(was 🎓), and `fact-sheet/factsheet_sierra.js`.
 **Session 90 (SkySherpa) rebranded that page's header** (PRs #635/#636/#637): the
 🏔️ emoji → the official **CPL Initiative logo** (`sierra/cpl-initiative-logo.png`,
 white/transparent), a hand-traced **Mt Whitney ridge ghosted behind the "Sierra"
@@ -850,7 +854,15 @@ reuse, so keep it self-contained behind its CONFIG block.
   part of the daily GitHub Actions cron. Source-of-record is the **live
   function**, captured at `chatbox/supabase/functions/cpl-chat/index.ts`
   (re-capture with `get_edge_function` before editing if in doubt).
-- Live now: **v24 ACTIVE** (Session 93, SkyReach — the CPR retrieval miss: the
+- Live now: **v26 ACTIVE** (Session 94, SkySierra — the **team-guidance layer**:
+  `fetchTeamGuidance()` joins the parallel fan-out and appends the newest **10
+  ACTIVE `sierra_guidance` rules** (~2,500-char cap, fails soft) as a TEAM
+  GUIDANCE block that wins on conflict — the Training tab's 🧭 pane is the
+  same-minute tuning knob, no redeploy; schema of record
+  `chatbox/supabase_sierra_guidance.sql`. ⚠ the MCP `deploy_edge_function` tool
+  **silently defaults `verify_jwt` to TRUE** — v25 briefly carried it; v26 =
+  identical code (same sha) with `false` restored. **Always pass
+  `verify_jwt:false` explicitly.**). Prior: **v24** (Session 93, SkyReach — the CPR retrieval miss: the
   `search_exhibits_by_topic` RPC ranked by `rec_count DESC` with NO relevance
   ranking, so the 76% of exhibits with `rec_count=1` were unfindable whenever a
   query matched >200 rows; migration `search_exhibits_by_topic_relevance_rank`
@@ -1149,6 +1161,17 @@ JSON) and Saves/Resumes to Supabase `tmc_submissions`.
   of the row stays immutable to the public), migration
   `sierra_feedback_triage_status`. Schema:
   `chatbox/supabase_sierra_feedback.sql`.
+- **`sierra_guidance`** (added Session 94, migration `sierra_guidance_layer`):
+  the **team guidance layer** — short response directives (rule 3–500 chars +
+  `active` flag + note + author) that cpl-chat **v26** appends to EVERY system
+  prompt (newest 10 active, ~2,500-char cap, fails soft; the block header tells
+  the model team guidance wins on conflict). Authored in the Training tab's 🧭
+  pane. RLS: SELECT/INSERT/UPDATE gated `is_allowed_reviewer() OR
+  team_pass_ok()`; **NO delete policy** — deactivate (`active=false`) instead,
+  the table is its own audit trail; touch trigger keeps `created_at`/
+  `created_by` immutable. ⚠ Guidance steers the **production map.rccd.edu
+  widget too** — the write gate is the security boundary; never widen to anon.
+  Schema of record: `chatbox/supabase_sierra_guidance.sql`.
 - **`item_updates`** (added Session 77): the Update Log behind the RACI tab's 📝 braindump→CC
   composer. One row per status update on an Activity/sub-activity/project, keyed `(item_type, item_id)`
   like `item_raci`. Anon SELECT + **reviewer-gated** INSERT/UPDATE/DELETE (`is_allowed_reviewer()`).
@@ -2243,6 +2266,20 @@ cpl_type/collab_type OUT of the searched vector; schema-of-record now committed)
 feedback queue with `status` triage via `sierra_feedback_set_status`, gap miner over chat_interactions;
 38-check test; suite 121). New KB notes: `methodology-capped-retrieval-ranks-by-relevance` +
 `methodology-live-db-functions-need-committed-schema`. **NEXT: `docs/session_94_handoff.md`.**
+
+### Session 94 — SkySierra: Sierra branding + markdown + Training P1 + the GUIDANCE layer (cpl-chat v26) (2026-07-02)
+
+Sam's three asks, all shipped same-day (PRs **#649/#650/#651**, merged): the **Whitney-roundel
+Sierra mark** replaces 🏔️/🎓 everywhere (rail + all three chat avatars); the chat renderers now
+handle **headings/tables/rules/ordered lists** (escape-first, byte-identical across the three
+surfaces — `tests/sierra_markdown.test.js`); Training-tab **P1** (🧪 Test-in-Sierra prefill handoff,
+date filters, bulk triage, feedback→chat-turn telemetry link + the **window-vs-document
+`cpl-tab-activated` listener fix** in sierra_training.js/map_users.js); and **Phase 2 SHIPPED** —
+`sierra_guidance` (team-gated, no-delete; `chatbox/supabase_sierra_guidance.sql`) + cpl-chat
+`fetchTeamGuidance()` (newest 10 active rules, ~2.5k-char cap) + the tab's 🧭 pane, proven with a
+marker rule in the smoke run. ⚠ Deploy footgun: the MCP deploy tool **defaults `verify_jwt` to
+true** — always pass `false` explicitly (v25 briefly carried it; v26 = same sha, flag restored).
+Full story: `docs/cpl_assistant_lessons.md` (S94). **NEXT: `docs/session_95_handoff.md`.**
 
 ---
 
