@@ -71,7 +71,11 @@ The whole ecosystem, end-to-end:
    and get streamed answers drawn from the knowledge base, live dashboard
    metrics, and 2,300+ statewide exhibits; it talks to the shared `cpl-chat`
    Supabase Edge Function that also powers the live map.rccd.edu widget),
-   an **Implementation Funding** tab (the DRAFT 2026-30 CPL funding model:
+   a **Sierra Training** tab (team-only: the assistant's improvement loop —
+   the 👍/👎 feedback queue from both chat surfaces with a triage status, and
+   a gap miner over the chat logs surfacing the questions the knowledge base
+   had no good source for), an **Implementation Funding** tab (the DRAFT
+   2026-30 CPL funding model:
    one-time pools, three funding priorities, per-college potential
    allocations with district rollups and drill-ins, a login-free **what-if
    sandbox** — edit the pools, priority shares, and projection targets and
