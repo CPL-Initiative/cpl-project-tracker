@@ -216,7 +216,9 @@
       + lines.join("\n") + "\n\n";
   }
   function buildNudgeMailto(college, picks, landingUrl, userRoster) {
-    var to = (picks || []).map(function (p) { return p.email; }).filter(Boolean).join(",");
+    // Semicolon-delimited — Outlook rejects comma-separated mailto recipient
+    // lists (same fix as the RACI nudges, Sam 2026-07-02).
+    var to = (picks || []).map(function (p) { return p.email; }).filter(Boolean).join(";");
     var who = (picks || []).map(function (p) { return p.label + (p.name ? ": " + p.name : ""); }).join("\n");
     var subject = "Action requested: refresh your MAP college users — " + college;
     // Link the college straight to their MAP CPL dashboard when we have it

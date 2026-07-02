@@ -207,6 +207,73 @@ def _read_lifecycle_ledger() -> list[dict]:
     return rows or []
 
 
+# ── Live item updates (the RACI tab's 📝 composer → public.item_updates) ─────
+# The composer writes status updates to item_updates keyed (item_type, item_id)
+# — `activity:N` / `project:<id>`. The dashboard cards surface them live via
+# card_updates.js, but anything generated at build time (the Master/mini Word
+# reports, the baked card "Latest Update" lines, CPL_Data.js consumed by the
+# Custom Report prompt) only saw the creation-era projects.latest_update. This
+# loader gives the generator the same "newest update per item" view the cards
+# show. Anon-key fallback: item_updates has a public SELECT policy (the same
+# anon key is committed in card_updates.js), so the fold also works for local
+# runs without the service key. Never raises — {} on any failure.
+_ITEM_UPDATES_COLUMNS = "item_type,item_id,body,author,created_at,edited_at"
+_SUPABASE_ANON = (
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9."
+    "eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6"
+    "ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0."
+    "p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM"
+)
+
+
+def load_item_updates() -> dict[str, dict]:
+    """Return {"project:1.1": {body, author, created_at, date}, "activity:2": …}
+    — the NEWEST item_updates row per item (mirrors card_updates.js
+    latestByKey). `date` is the created_at date part (YYYY-MM-DD), matching the
+    update_date format the project rows carry. Never raises; {} on any failure
+    (sandbox egress-block, outage) so the regen keeps creation-era updates.
+    """
+    key = SUPABASE_KEY or _SUPABASE_ANON
+    endpoint = (
+        f"{SUPABASE_URL}/rest/v1/item_updates"
+        f"?select={_ITEM_UPDATES_COLUMNS}&order=created_at.desc"
+    )
+    try:
+        req = urllib.request.Request(
+            endpoint,
+            headers={
+                "apikey": key,
+                "Authorization": f"Bearer {key}",
+                "Accept": "application/json",
+            },
+        )
+        with urllib.request.urlopen(req, timeout=30) as r:
+            rows = json.load(r)
+        if not isinstance(rows, list):
+            raise RuntimeError("item_updates returned a non-list payload")
+    except Exception as e:
+        print(f"[item-updates] Supabase fetch unavailable ({e}); "
+              "cards/reports keep creation-era updates.")
+        return {}
+    out: dict[str, dict] = {}
+    for r in rows:  # newest-first ordering → first row per key wins
+        itype, iid = r.get("item_type"), r.get("item_id")
+        if not itype or iid is None:
+            continue
+        k = f"{itype}:{iid}"
+        if k in out:
+            continue
+        created = str(r.get("created_at") or "")
+        out[k] = {
+            "body": r.get("body") or "",
+            "author": r.get("author") or "",
+            "created_at": created,
+            "date": created[:10],
+        }
+    print(f"[item-updates] Loaded {len(out)} live item update(s) from Supabase.")
+    return out
+
+
 def load_project_lifecycle() -> dict[str, dict]:
     """Return {project_id: {state, reason, updated_by, updated_at}} for every
     Tabled/Archived project. Tries Supabase first (service key) and, on success,

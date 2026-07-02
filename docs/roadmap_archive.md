@@ -2134,3 +2134,19 @@ cpl_type/collab_type OUT of the searched vector; schema-of-record now committed)
 feedback queue with `status` triage via `sierra_feedback_set_status`, gap miner over chat_interactions;
 38-check test; suite 121). New KB notes: `methodology-capped-retrieval-ranks-by-relevance` +
 `methodology-live-db-functions-need-committed-schema`. **NEXT: `docs/session_94_handoff.md`.**
+
+## Archived session narrative — Session 94 (moved at the Session-96 checkpoint, 2026-07-02)
+
+### Session 94 — SkySierra: Sierra branding + markdown + Training P1 + the GUIDANCE layer (cpl-chat v26) (2026-07-02)
+
+Sam's three asks, all shipped same-day (PRs **#649/#650/#651**, merged): the **Whitney-roundel
+Sierra mark** replaces 🏔️/🎓 everywhere (rail + all three chat avatars); the chat renderers now
+handle **headings/tables/rules/ordered lists** (escape-first, byte-identical across the three
+surfaces — `tests/sierra_markdown.test.js`); Training-tab **P1** (🧪 Test-in-Sierra prefill handoff,
+date filters, bulk triage, feedback→chat-turn telemetry link + the **window-vs-document
+`cpl-tab-activated` listener fix** in sierra_training.js/map_users.js); and **Phase 2 SHIPPED** —
+`sierra_guidance` (team-gated, no-delete; `chatbox/supabase_sierra_guidance.sql`) + cpl-chat
+`fetchTeamGuidance()` (newest 10 active rules, ~2.5k-char cap) + the tab's 🧭 pane, proven with a
+marker rule in the smoke run. ⚠ Deploy footgun: the MCP deploy tool **defaults `verify_jwt` to
+true** — always pass `false` explicitly (v25 briefly carried it; v26 = same sha, flag restored).
+Full story: `docs/cpl_assistant_lessons.md` (S94). **NEXT: `docs/session_95_handoff.md`.**

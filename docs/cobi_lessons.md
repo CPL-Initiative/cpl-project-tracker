@@ -1,7 +1,7 @@
 ---
 title: COBI — the masthead rename and the Mamba brand layer
 created: 2026-06-19
-updated: 2026-06-30
+updated: 2026-07-02
 tags: [lessons, cobi, branding, masthead, ui, easter-egg, kpi-cards]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -411,3 +411,93 @@ published the HTML + the first `veteran_jst.json`; merged each PR on **`unstable
 gotcha: a **stale `origin/main` ref** — branched the checkpoint off `origin/main`
 *before* re-fetching after the #629 merge → got the pre-merge tree; always
 `git fetch origin main` immediately before `git checkout -B … origin/main`.
+
+## Session 96 — SkyPress: report generators go live-data + the attach handoff (2026-07-02)
+
+Sam's batch: *"see the state of the Master Report and Custom Report generator …
+make sure both are wired to pull in current data and updates on the activity and
+project cards. Also add the project cards check boxes to the list of Activities
+to include in the Master Report"* + three tweaks + the attach-doc confusion.
+
+### What was actually wrong (the audit)
+
+- **Custom Report** (`report_generator.js`) prompted Claude with
+  `CPL_DATA.projects[].update` = the creation-era `projects.latest_update`.
+  Every update posted through the RACI 📝 composer since Session 77 lives in
+  Supabase `item_updates` and only reached the CARD FACE (via the
+  `card_updates.js` overlay) — never a report. Leads were the abandoned
+  `projects.lead`, not the RACI Responsible.
+- **Master Report** was worse: the button was a bare `<a download>` to
+  `reports/CPL_Master_Report.docx`, and that artifact was **stale by
+  construction** — the daily runner never installed the node `docx` module, so
+  `generate_reports.js` failed (non-fatal warning) on every cron; AND
+  `reports/` was never in the workflow `git add` list. The committed docx only
+  refreshed when a session happened to commit one (last: #617, 2026-06-30).
+  Same story for the 34 per-card mini-report links.
+
+### What shipped
+
+1. **Live overlay for the Custom Report.** Before building the prompt it now
+   fetches the same anon reads the card faces use — newest `item_updates` per
+   `activity:N`/`project:<id>` + `item_raci` (lead = Responsible → Accountable)
+   — and folds them into the selected projects + a new "Latest Activity-Level
+   Updates" prompt block. Falls back to the build-time `CPL_DATA.live_updates`,
+   then the baked fields. Pure helpers exported (`window.CPL_CUSTOM_REPORT`).
+2. **Master Report = a selection modal + client-side docx** (new
+   `master_report.js`, lazy-loaded by the filter-bar button via
+   `CPL_TABS.loadScript`). Same Activities & Projects checkbox tree as the
+   Custom Report (Sam's ask), same live overlay at click time, and the
+   Workplan-style layout ported 1:1 from `generate_reports.js` to the local
+   `docx.min.js` UMD (title page → exec summary/highlights → KPI table →
+   activity sections incl. the activity-level live update → annual goals
+   summary → conclusion; partial selections stamp a "Scope: N of M" line).
+   The daily pre-built docx stays as the modal's fallback link.
+3. **Pipeline fold** — `kb/_load_projects.py:load_item_updates()` (service key
+   with the public anon key as fallback; soft-fails to `{}`) + a fold in
+   `main()` that overrides `p.update`/`p.update_date` with the newest
+   `project:<id>` row BEFORE anything renders, and exports the whole map as
+   `CPL_DATA.live_updates`. So the baked card lines, `CPL_Data.js`, the node
+   master/mini reports, and the Annual Report tab all read current updates
+   even before the client overlays kick in.
+4. **Workflow repair** — `npm install --no-save docx@8.0.4` step before the
+   pipeline + `reports/*.docx` added to the daily `git add` list. The stale-
+   reports failure mode is dead.
+5. **The three tweaks:** RACI 📝 composer now acknowledges ("✓ Saved.") then
+   closes ~0.9s later (it used to sit open); every nudge mailto joins
+   recipients with **semicolons** (Outlook rejects comma lists — raci.js team
+   + per-item nudges, map_users.js college nudge); the Path-to-2030 trajectory
+   charts moved from the TOP of CPL Analytics to the BOTTOM
+   (`render_exhibit_analysis_html` `extra_top_html` → `extra_bottom_html`).
+6. **Attach-doc explainer.** Sam hit the 📎 button, landed in the SharePoint
+   folder, and saw "no way to select and attach". The flow is BY DESIGN a
+   handoff — COBI deep-links the project's SharePoint folder and the upload is
+   SharePoint's own **＋ Create or upload** / drag-&-drop (COBI can't push into
+   SharePoint without MS auth); the card count refreshes on the next daily
+   scan. A first-click explainer popover now walks those three steps, with a
+   per-browser "Got it — take me straight to the folder next time"
+   (`cplAttachHelp.v1`). Toolbar attach anchor gained `id="attachDocBtn"`.
+
+### Decisions parked for Sam (captured in the To-Do feed)
+
+- **Native attachments?** Supabase CAN take attachments now — we already run
+  the `factsheet-images` Storage bucket (Session 81). A `project-attachments`
+  bucket + per-card upload (reviewer/team-phrase gated) would kill the
+  SharePoint tab-hop and the next-day lag. The blocker is the ACCESS MODEL:
+  public-read URLs (like factsheet-images) vs team-gated reads (private bucket
+  + signed URLs) — project docs may be internal, and this repo has PII
+  history. Sam picks; then it's a build.
+- **Attachments → KB markdown.** Sam's stretch idea: process uploaded docs
+  into md for the KB/vault. Feasible as a runner-side ingest (docx/pdf → md →
+  `docs/kb-notes/` candidates or CPLBrain), same lane as the Sierra Phase-3
+  document-ingest plan — scope when the native-attachment decision lands.
+
+### Tests
+
+`tests/master_report.test.js` (28 — modal tree, selection, live-overlay model,
+renderDocx packs a real >10KB docx via the local UMD), 
+`tests/report_live_wiring.test.js` (20 — custom-report overlay + prompt, the
+semicolon mailtos incl. a functional map_users check, the composer
+close-on-save source pin), `tests/attach_explainer.test.js` (12). Suite: 128
+files green. Regen A/B: chart-at-bottom verified by unit call (sandbox regen
+can't produce the analytics section — no CustomReport fetch); artifacts
+reverted, code-only PR per the artifact policy.

@@ -9091,17 +9091,18 @@ def export_unified_courses():
 
 
 def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None,
-                                 extra_top_html=""):
+                                 extra_bottom_html=""):
     """
     Render exhibit analysis tables as scrollable HTML cards inside a
     collapsible "CPL Analytics" section that mirrors the KPI Metrics header.
     Per-table xlsx exports are written to xlsx_export_dir (relative to the
     dashboard) so the in-card Export buttons link to a real file.
 
-    extra_top_html (Session 95, Sam 2026-07-02): optional block emitted at the
-    top of the analytics body, before the cards grid — used for the
-    "CPL Workplan Progress — Path to 2030" trajectory charts (moved here from
-    the Workplan Activity Metrics section on the Activities & Projects tab).
+    extra_bottom_html: optional block emitted at the BOTTOM of the analytics
+    body, after the cards grid — used for the "CPL Workplan Progress — Path
+    to 2030" trajectory charts (moved into CPL Analytics from the Workplan
+    Activity Metrics section Session 95; repositioned top → bottom per Sam,
+    2026-07-02: "near the bottom").
     """
     if not tables:
         return ""
@@ -9453,8 +9454,7 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None,
         '        <span class="kpi-toggle-arrow">&#9650;</span>\n'
         '    </div>\n'
         '    <div class="cpl-analytics-body" id="exhibitAnalysisSection">\n'
-        + (extra_top_html or '')
-        + '        <div class="exhibit-cards-grid">\n'
+        '        <div class="exhibit-cards-grid">\n'
         f'            {collab_card}\n'
         f'            {cpl_card}\n'
         f'            {mol_card}\n'
@@ -9463,6 +9463,7 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None,
         f'            {top_card}\n'
         f'            {abc_card}\n'
         '        </div>\n'
+        + (extra_bottom_html or '')
         + '    </div>\n'
         '</div>\n'
     )
@@ -11128,6 +11129,34 @@ def main():
     if inactive_pids:
         print(f"  Project lifecycle: {len(inactive_pids)} tabled/archived "
               f"({', '.join(sorted(inactive_pids))}) → excluded from live surfaces.")
+    # ── Live item updates (RACI 📝 composer) fold — Sam, 2026-07-02 ──
+    # The newest item_updates row per project overrides the creation-era
+    # projects.latest_update BEFORE anything renders or exports, so the baked
+    # card "Latest Update" lines, CPL_Data.js (→ Custom Report prompt, Annual
+    # Report), and the Master/mini Word reports all carry the same current
+    # update the cards show live via card_updates.js. The full newest-per-key
+    # map (incl. `activity:N`) also ships as CPL_DATA.live_updates for the
+    # report generators. Soft-fails to {} (sandbox egress-block / outage) —
+    # creation-era updates then stand.
+    try:
+        from kb._load_projects import load_item_updates as _load_item_updates
+    except ImportError:
+        sys.path.insert(0, os.path.join(os.path.dirname(__file__), "kb"))
+        from _load_projects import load_item_updates as _load_item_updates
+    try:
+        live_updates = _load_item_updates()
+    except Exception as _ue:
+        print(f"  Live item updates unavailable ({_ue}); keeping creation-era updates.")
+        live_updates = {}
+    _folded = 0
+    for p in projects:
+        _lu = live_updates.get(f"project:{p['id']}")
+        if _lu and _lu.get("body"):
+            p["update"] = _lu["body"]
+            p["update_date"] = _lu.get("date") or p.get("update_date", "")
+            _folded += 1
+    if _folded:
+        print(f"  Folded {_folded} live project update(s) into card/report data.")
     config_overrides = read_config_overrides()
     update_log      = read_update_log(wb)
     budget, budget_fetched_at, budget_source = load_budget(wb)
@@ -11297,6 +11326,12 @@ def main():
         "kpis":         kpis,
         "activity_kpis": activity_kpis,
         "update_log":   update_log,
+        # Newest live item_updates row per `activity:N` / `project:<id>` key
+        # (RACI 📝 composer). Project-level bodies are already folded into
+        # projects[].update above; the map ships whole so the Master/Custom
+        # report generators can also surface ACTIVITY-level updates and stamp
+        # authorship. {} when Supabase was unreachable at build time.
+        "live_updates": live_updates,
         "budget":       budget,
         "vision2030": {
             "actions": [
@@ -11675,10 +11710,10 @@ def main():
             # Strip any pre-existing copy first so repeat runs don't accumulate.
             import re as _re
             # The "CPL Workplan Progress — Path to 2030" trajectory charts render
-            # at the TOP of the CPL Analytics body (moved from the Workplan
-            # Activity Metrics section — Sam, 2026-07-02 Session 95: "move the
-            # 2 graph charts to the CPL Analysis tab"). Built here because the
-            # analytics injection below consumes them.
+            # at the BOTTOM of the CPL Analytics body (moved from the Workplan
+            # Activity Metrics section Session 95; top → bottom per Sam,
+            # 2026-07-02: "near the bottom"). Built here because the analytics
+            # injection below consumes them.
             _current_students = kpis.get("cumulative_students", {}).get("value", "43,321")
             _bd_list = kpis.get("cumulative_students", {}).get("breakdowns", [])
             _sub_pops = {}
@@ -11710,14 +11745,14 @@ def main():
             if exhibit_tables:
                 exhibit_html = render_exhibit_analysis_html(
                     exhibit_tables, kpi_params=kpi_params, xlsx_export_dir="exports",
-                    extra_top_html=workplan_charts_html,
+                    extra_bottom_html=workplan_charts_html,
                 )
                 # Insert BEFORE the sentinel so Analytics stays in the Dashboard
                 # tab, after KPI Metrics and before the teaser cards.
                 outer_pos = html.find('<!-- ═══ Dashboard Sections End ═══ -->')
                 if outer_pos != -1:
                     html = html[:outer_pos] + exhibit_html + '\n    ' + html[outer_pos:]
-                    print(f"  Injected CPL Analytics section (+ Workplan Progress charts at top; "
+                    print(f"  Injected CPL Analytics section (+ Workplan Progress charts at bottom; "
                           f"{len(exhibit_tables['by_college'])} college cards, "
                           f"{len(exhibit_tables['top_exhibits'])} top exhibits, "
                           f"{len(exhibit_tables.get('articulations_by_course', []))} unified-course articulation rows, "

@@ -671,12 +671,16 @@
           (state.updates[k] = state.updates[k] || []).unshift(rec);
           ta.value = ""; msg.textContent = "✓ Saved."; save.disabled = false; paintHist(); render();
           // If the POST representation didn't carry the row id (rare), re-fetch
-          // this item's updates so the just-saved entry gets its ✏️/🗑 controls
-          // immediately (they require u.id) — no reload needed.
+          // this item's updates so the entry has its ✏️/🗑 controls (they require
+          // u.id) the next time the composer opens — no reload needed.
           if (rec.id == null) { refetchUpdates(item).then(paintHist); }
           // Let the Activity/Project card overlay (card_updates.js) refresh so the
           // just-posted update appears on the card face without a reload.
           try { window.dispatchEvent(new CustomEvent("cpl-item-updated", { detail: { key: k } })); } catch (e) {}
+          // Acknowledge, then close — the popup used to stay open after Save,
+          // which read as "did it take?" (Sam, 2026-07-02). The brief ✓ Saved
+          // beat gives visual confirmation before the modal dismisses.
+          setTimeout(closeModal, 900);
         }).catch(function (e) {
           save.disabled = false;
           // A 401/403 on a team-phrase session means the phrase was rotated since
@@ -1065,7 +1069,9 @@
   function buildNudgeHref() {
     var recips = nudgeRecipients();
     if (!recips.length) return null;
-    var emails = recips.map(function (m) { return m.email; }).join(",");
+    // Semicolon-delimited — Outlook (the team's client) rejects comma-separated
+    // recipient lists in mailto drafts (Sam, 2026-07-02).
+    var emails = recips.map(function (m) { return m.email; }).join(";");
     var subject = "CPL Workplan — quick update request";
     var url = location.origin + location.pathname + "#raci";
     var body = "Hi team,\n\nPlease reply with a short status update on your CPL workplan "
@@ -1120,7 +1126,8 @@
   function buildItemNudgeHref(item) {
     var recips = itemNudgeRecipients(item);
     if (!recips.length) return null;
-    var emails = recips.map(function (m) { return m.email; }).join(",");
+    // Semicolon-delimited for Outlook (see buildNudgeHref).
+    var emails = recips.map(function (m) { return m.email; }).join(";");
     var c = cplItem(item);
     // Land on the Activities & Projects tab (NOT #raci) — card_actions.js reads the
     // ?update= param there and opens the composer in place (Sam, 2026-06-29).

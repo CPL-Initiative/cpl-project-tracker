@@ -311,24 +311,40 @@ function resetFilters() {
         if (d && d.tab === 'activities-projects') applyQuickstartHint(d.hint);
     });
 
-    // Inject Master Report button next to filter buttons. (The "Update Projects"
-    // toolbar button was an Excel-for-the-Web deep-link — removed in
-    // Excel-retirement P1; the per-card "Update" button now opens the inline
-    // Latest Update editor via projects_editor.js.)
+    // Inject Master Report button next to filter buttons. Was a bare download
+    // link to the daily pre-built reports/CPL_Master_Report.docx; it now opens
+    // the master_report.js selection modal (Activities & Projects checkboxes,
+    // built client-side from live data — Sam, 2026-07-02). The script is
+    // lazy-loaded on first click via CPL_TABS.loadScript; if that helper (or
+    // the load) is unavailable, fall back to downloading the pre-built docx so
+    // the button never dead-ends.
     var filterBtns = document.querySelector('.filter-buttons');
     if (filterBtns) {
-        var reportBtn = document.createElement('a');
-        reportBtn.href = 'reports/CPL_Master_Report.docx';
-        reportBtn.download = '';
+        var reportBtn = document.createElement('button');
+        reportBtn.type = 'button';
+        reportBtn.id = 'masterReportBtn';
         reportBtn.innerHTML = '&#128196; Master Report';
         reportBtn.style.cssText = "display:inline-flex;align-items:center;gap:0.3rem;background:transparent;color:var(--text-strong);border:1px solid #ccc;padding:7px 16px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.85rem;font-family:'Source Sans 3',Arial,sans-serif;line-height:1.2;text-decoration:none;margin-left:0.5rem;transition:background 0.2s;";
         reportBtn.onmouseover = function() { this.style.background = '#f5f5f5'; };
         reportBtn.onmouseout = function() { this.style.background = 'transparent'; };
+        reportBtn.addEventListener('click', function () {
+            if (window.CPL_MASTER_REPORT) { window.CPL_MASTER_REPORT.open(); return; }
+            var tabs = window.CPL_TABS;
+            if (tabs && typeof tabs.loadScript === 'function') {
+                tabs.loadScript('master_report.js', 'CPL_MASTER_REPORT', function () {
+                    if (window.CPL_MASTER_REPORT) window.CPL_MASTER_REPORT.open();
+                    else window.location.href = 'reports/CPL_Master_Report.docx';
+                });
+            } else {
+                window.location.href = 'reports/CPL_Master_Report.docx';
+            }
+        });
         filterBtns.appendChild(reportBtn);
 
         // Attach Doc button — opens SharePoint attachments folder
         if (ATTACHMENTS_URL) {
             var attachBtn = document.createElement('a');
+            attachBtn.id = 'attachDocBtn';
             attachBtn.href = ATTACHMENTS_URL;
             attachBtn.target = '_blank';
             attachBtn.innerHTML = '&#128206; Attach Doc';
@@ -355,6 +371,73 @@ function resetFilters() {
         document.addEventListener('DOMContentLoaded', function() { rewriteAttachBtns(); });
         setTimeout(function() { rewriteAttachBtns(); }, 500);
     }
+
+    // ── Attach-flow explainer (Sam, 2026-07-02) ──
+    // The 📎 buttons OPEN the project's SharePoint folder — the actual attach
+    // is SharePoint's own "＋ Create or upload" INTO that folder (COBI can't
+    // push files into SharePoint without Microsoft auth). That handoff wasn't
+    // discoverable ("it's taking me to an attachment folder but no way I see
+    // to select and attach it"), so a small explainer now precedes the folder
+    // open. "Got it" persists per browser (localStorage) and skips straight
+    // to the folder on later clicks.
+    //
+    // MISSING-FOLDER caveat (Sam's 4.1.4 screenshot, same day): the per-project
+    // folders were created ONCE (April 8) by the generator running on Sam's
+    // OneDrive-synced machine; on the Actions runner that synced path doesn't
+    // exist, so folders for projects added since (the 4.1.x sprints, new 5.x)
+    // were never created — their deep link hits SharePoint's "Unknown render
+    // failure". The explainer therefore also links the PARENT Attachments
+    // folder and names the fix (create the folder there, or upload to the
+    // parent). The durable fix is the native Supabase-Storage attach flow
+    // (decision with Sam — see docs/session_97_handoff.md).
+    var ATTACH_HELP_KEY = 'cplAttachHelp.v1';
+    function attachHelpDismissed() {
+        try { return localStorage.getItem(ATTACH_HELP_KEY) === 'dismissed'; } catch (e) { return false; }
+    }
+    function showAttachExplainer(href) {
+        var old = document.getElementById('attachExplainer');
+        if (old) old.parentNode.removeChild(old);
+        var ov = document.createElement('div');
+        ov.id = 'attachExplainer';
+        ov.style.cssText = 'position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;padding:1.5rem;';
+        ov.innerHTML =
+            '<div style="max-width:460px;background:#fff;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.25);overflow:hidden;font-family:\'Source Sans 3\',Arial,sans-serif;">'
+            + '<div style="background:linear-gradient(135deg,var(--navy-primary) 0%,var(--navy-secondary) 100%);padding:0.9rem 1.2rem;display:flex;justify-content:space-between;align-items:center;">'
+            + '<h3 style="margin:0;color:#fff;font-size:1rem;">&#128206; Attaching a document</h3>'
+            + '<button id="attachExplainerClose" type="button" style="background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;line-height:1;">&times;</button></div>'
+            + '<div style="padding:1.1rem 1.3rem;font-size:0.86rem;color:#333;line-height:1.5;">'
+            + '<p style="margin:0 0 0.6rem 0;">Attachments live in the project\'s <strong>SharePoint folder</strong> — COBI links you there, and the upload happens in SharePoint itself:</p>'
+            + '<ol style="margin:0 0 0.8rem 1.1rem;padding:0;">'
+            + '<li style="margin-bottom:0.35rem;"><strong>Open the folder</strong> with the button below (new tab).</li>'
+            + '<li style="margin-bottom:0.35rem;">Click SharePoint\'s <strong>＋ Create or upload</strong> button (top right of the folder view) and pick your file. (Drag-and-drop from File Explorer can work too, but SharePoint is picky about it — the upload button always works.)</li>'
+            + '<li>Done — the card\'s &#128206; attachment count picks it up on the next daily dashboard refresh.</li></ol>'
+            + '<p style="margin:0 0 0.8rem 0;font-size:0.78rem;color:#777;">If SharePoint says <em>"something went wrong / this item isn\'t available"</em>, this project\'s folder hasn\'t been created yet (newer projects don\'t get one automatically). Open <a id="attachExplainerParent" target="_blank" rel="noopener" style="color:var(--accent-link);">the parent Attachments folder ↗</a> and either upload there or use <strong>＋ Create or upload → Folder</strong> to add it first.</p>'
+            + '<label style="display:flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:#555;cursor:pointer;">'
+            + '<input type="checkbox" id="attachExplainerSkip" style="accent-color:var(--accent-link);cursor:pointer;">Got it — take me straight to the folder next time</label>'
+            + '</div>'
+            + '<div style="padding:0.8rem 1.3rem;border-top:1px solid #e8e8e8;display:flex;justify-content:flex-end;gap:0.5rem;">'
+            + '<a id="attachExplainerGo" target="_blank" rel="noopener" style="padding:8px 18px;background:var(--cobalt);color:#fff;border-radius:4px;font-weight:600;font-size:0.85rem;text-decoration:none;">Open the project folder &#8599;</a>'
+            + '</div></div>';
+        document.body.appendChild(ov);
+        var go = document.getElementById('attachExplainerGo');
+        go.href = href;
+        var parentLink = document.getElementById('attachExplainerParent');
+        if (parentLink) parentLink.href = buildAttachmentUrl('');
+        function done() { if (ov.parentNode) ov.parentNode.removeChild(ov); }
+        document.getElementById('attachExplainerClose').addEventListener('click', done);
+        ov.addEventListener('click', function (e) { if (e.target === ov) done(); });
+        go.addEventListener('click', function () {
+            var skip = document.getElementById('attachExplainerSkip');
+            if (skip && skip.checked) { try { localStorage.setItem(ATTACH_HELP_KEY, 'dismissed'); } catch (e) {} }
+            done();
+        });
+    }
+    document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a.attach-btn, #attachDocBtn') : null;
+        if (!a || attachHelpDismissed()) return; // dismissed → straight to the folder
+        e.preventDefault();
+        showAttachExplainer(a.href);
+    });
 
     // Notes history toggle — show/hide full history per card
     document.addEventListener('change', function(e) {

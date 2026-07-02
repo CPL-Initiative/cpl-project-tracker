@@ -502,7 +502,8 @@ scraping proved unreliable.
 | `first_light.js` | **First Light** — the once-a-day plein air greeting (added Session 48): date-seeded painting-of-the-day modal with **local-day rotation** (no day-to-day repeats, Session 62; **89-painting gallery, Session 65**; grayscale→color reveal **(mono:true B&W prints skip the no-op fade via `.cplfl-mono` — load-bearing since 2026-06-23; a build guard fails any un-flagged B&W)**, read-aloud via browser `speechSynthesis`, hand-written alt text), opt-out + once-per-day localStorage guards, a **hidden reviewer almanac** (type `almanac` anywhere → ‹ Prev/Next › the full catalog with a counter; a review pass never consumes the daily greeting — the private QA tool, NOT a public browse-all), runtime-injected "Today's painting" header chip (regen-proof), an anonymous reflection box POSTing `{painting, reflection}` to Supabase `cpl_reflections` (anon WRITE-ONLY RLS; the weekly **musings digest** reads them server-side via `reflections/build_reflections_digest.py` → output bound for the private `cpl-knowledge-base` vault, NOT this repo), and — since the Session-49 retheme — the **ghosted painting layer** behind the whole page (`.cplfl-bg`: today's pick grayscaled at 14% opacity, painterly fallback, honors the opt-out + `prefers-reduced-transparency`/`contrast`). Manifest = **89** verified-PD paintings, built by the **runner-as-Commons-proxy** pipeline — `tools/source_first_light_art.mjs` (sources exact PD filenames from the Commons API on a CI runner, since the agent sandbox can't reach Wikimedia) → `tools/build_first_light_manifest.mjs` (assembles from the curated `tools/first_light_selection.json`; no hand-typed filenames) → `.github/workflows/first-light-art.yml` (push-triggered source + image-liveness verify). Categories in `tools/art_categories.json`; iconic works via the append-only `tools/art_extra_files.json`. Sourcing rules: `docs/kb-notes/reference-public-domain-art-sourcing.md`; pipeline: `docs/kb-notes/playbook-runner-as-external-api-proxy.md` + `docs/first_light_lessons.md`. Static — NOT a daily-cron artifact. Theme spec/prototype: `prototype/first_light_theme_v1.html` (**v1.6 — GLASS-QUIET chips graduated**, Sam-blessed 2026-06-12; solid family archived in the Chip Studio) + `prototype/check_contrast.py` (whose `--live` mode lints the live `:root` in CI — the retheme SHIPPED Session 49, PRs #407/#408/#410). Tests: `tests/first_light*.test.js`. |
 | `cobi_brand.js` | **COBI brand layer** (added Session 65): the masthead personality for *COBI — Chancellor's Office Business Intelligence* (a light Kobe homage). STATIC, regen-proof (the `first_light.js` pattern — injects own CSS + runtime DOM): a **rotating Mamba subtitle** (random per load), an **8→24** jersey wink on the wordmark, **Mamba Day** (Aug 24 → purple & gold). The `<h1>`/`<title>` emit `COBI` from the generator (decoupled from `proj_title` so Word reports keep their name); tagline + `#cobi-mamba` slot + nav label are static in BOTH HTMLs (Rule 4). Tests: `tests/cobi_brand.test.js`. Docs: `docs/cobi_lessons.md`. |
 | `cpl_todos.js` | The 📋 To-Do button on every tab (added Session 47): renders `kb/cpl_todos.json` as a For-Sam / For-Fable daily checklist with a "where we are" status line; per-browser check-offs (`cplTodos.v1`, keyed by the feed's `_as_of` so each refresh starts fresh); per-tab badge + nav chips for other tabs' items. Feed refreshed at every Rule-8 checkpoint. Static — NOT a daily-cron artifact. |
-| `report_generator.js` | Custom Report Generator (Claude API via proxy) |
+| `report_generator.js` | Custom Report Generator (Claude API via proxy). **Session 96 wired it LIVE:** before prompting it fetches the newest `item_updates` per activity/project + `item_raci` (lead = Responsible → Accountable) — the same anon overlays the card faces use — and adds a "Latest Activity-Level Updates" prompt block; falls back to the build-time `CPL_DATA.live_updates`, then the baked fields. Test hooks on `window.CPL_CUSTOM_REPORT`. Tests: `tests/report_live_wiring.test.js`. |
+| `master_report.js` | **Master Report selection modal + client-side generator** (`window.CPL_MASTER_REPORT`, added Session 96). The filter-bar "📄 Master Report" button (now in `dashboard_filters.js` as `#masterReportBtn`, lazy-loading this file via `CPL_TABS.loadScript`) opens the same Activities & Projects checkbox tree as the Custom Report and builds the Workplan-style master .docx CLIENT-SIDE from `CPL_DATA` + the live `item_updates`/`item_raci` overlays — always-current at click time; partial selections stamp a "Scope: N of M" line. Layout ported 1:1 from `generate_reports.js`; uses the local `docx.min.js` (never CDN). The daily pre-built `reports/CPL_Master_Report.docx` stays as the modal's fallback link (and is FRESH again — the workflow now installs node `docx` + commits `reports/*.docx`; it had been failing silently since forever). STATIC, lazy — NOT a daily-cron artifact. Tests: `tests/master_report.test.js` (28). Docs: `docs/cobi_lessons.md` (S96). |
 | `docx.min.js` | Local copy of docx@8.0.4 UMD build (do **not** switch to CDN) |
 | `fetch_custom_report.py` | Fetches CustomReport JSON from the MAP API |
 | `cpl_news.js` | **CPL News** tab renderer (`window.CPL_NEWS_TAB`). Lazy-loaded on first `#cpl-news` open; injects own `var(--token)` CSS; reads `public.cpl_news` LIVE (anon) — CA-first, scope/source/search filters, suggest-a-story, reviewer feature/hide. Static — NOT a daily-cron artifact (the feed is the live table, not a committed file). Fed by the **`cpl-news-harvest`** Supabase Edge Function (`chatbox/supabase/functions/cpl-news-harvest/index.ts`) invoked by **`.github/workflows/cpl-news.yml`** (cron 13:17 UTC). Schema: `news/supabase_cpl_news.sql`. Docs: `docs/cpl_news_lessons.md` + `docs/kb-notes/playbook-cpl-news-aggregation.md`. Added Session 67 (Skywatch, PR #481). |
@@ -720,6 +721,13 @@ Goals** tab, which holds the 5-year targets table — different content.)
 - **Output**: in-browser preview or downloadable .docx (via local `docx.min.js`)
 - **Config**: `window.CPL_REPORT_PROXY_URL` set in HTML before
   `report_generator.js` loads
+- **Live data (Session 96):** at Generate time the prompt is built from the
+  LIVE overlays, not the build-time bake — newest `item_updates` per
+  activity/project (RACI 📝 composer) folded into each selected project's
+  Latest Update, RACI Responsible→Accountable as the Lead, and an
+  activity-level updates block. The **Master Report** button opens the same
+  checkbox tree via `master_report.js` (§2) and builds its docx client-side
+  from the same live overlay.
 
 ### 7a. College Activity Custom Report — Output Style Guidance
 
@@ -2281,19 +2289,10 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > the Sierra Training tab #647) archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md).
 > Full story: [`docs/cpl_assistant_lessons.md`](docs/cpl_assistant_lessons.md) (S93).
 
-### Session 94 — SkySierra: Sierra branding + markdown + Training P1 + the GUIDANCE layer (cpl-chat v26) (2026-07-02)
-
-Sam's three asks, all shipped same-day (PRs **#649/#650/#651**, merged): the **Whitney-roundel
-Sierra mark** replaces 🏔️/🎓 everywhere (rail + all three chat avatars); the chat renderers now
-handle **headings/tables/rules/ordered lists** (escape-first, byte-identical across the three
-surfaces — `tests/sierra_markdown.test.js`); Training-tab **P1** (🧪 Test-in-Sierra prefill handoff,
-date filters, bulk triage, feedback→chat-turn telemetry link + the **window-vs-document
-`cpl-tab-activated` listener fix** in sierra_training.js/map_users.js); and **Phase 2 SHIPPED** —
-`sierra_guidance` (team-gated, no-delete; `chatbox/supabase_sierra_guidance.sql`) + cpl-chat
-`fetchTeamGuidance()` (newest 10 active rules, ~2.5k-char cap) + the tab's 🧭 pane, proven with a
-marker rule in the smoke run. ⚠ Deploy footgun: the MCP deploy tool **defaults `verify_jwt` to
-true** — always pass `false` explicitly (v25 briefly carried it; v26 = same sha, flag restored).
-Full story: `docs/cpl_assistant_lessons.md` (S94). **NEXT: `docs/session_95_handoff.md`.**
+> **Session 94 narrative (SkySierra — Sierra mark + chat markdown + Training P1
+> #649/#650 + the GUIDANCE layer, cpl-chat v26 #651) archived** →
+> [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full story:
+> [`docs/cpl_assistant_lessons.md`](docs/cpl_assistant_lessons.md) (S94).
 
 ### Session 95 — the Activity ⇄ Project separation + the Archive-radio fix (2026-07-02)
 
@@ -2315,6 +2314,20 @@ Projects section** (work-item projects table at the bottom of Annual Workplan Go
 AFTER the End-AWG marker); + the grid-replace **+1-blank-line/run accretion fixed** (198 piled up —
 regen now byte-idempotent modulo timestamps). Suite 125 green. Full story:
 `docs/project_lifecycle_lessons.md` (both 2026-07-02 sections).
+
+### Session 96 — SkyPress: report generators go live-data + the attach handoff (2026-07-02)
+
+Sam's report audit, one PR: the **Custom Report** now fetches the live overlays before prompting
+(newest `item_updates` + RACI lead per project + an activity-updates block); the **Master Report**
+button opens a **selection modal** (same Activities & Projects tree) and builds the Workplan-style
+docx **client-side** from live data (`master_report.js`; the pre-built docx = fallback). Root cause
+of the staleness: the runner never had node `docx` (reports failed silently every cron) and
+`reports/` was never committed — both fixed in the workflow. Pipeline now folds `item_updates` into
+`projects[].update` + exports `CPL_DATA.live_updates` (`kb/_load_projects.py:load_item_updates()`).
+Tweaks: 📝 composer closes after "✓ Saved."; nudge mailtos semicolon-delimited (Outlook); the
+Path-to-2030 charts → BOTTOM of CPL Analytics; a first-click 📎 **attach explainer** (SharePoint
+"＋ Create or upload" handoff wasn't discoverable). Parked for Sam: native Supabase-Storage
+attachments (access model) + attachments→KB-md ingest. Suite 128. Full story: `docs/cobi_lessons.md` (S96).
 
 ---
 
