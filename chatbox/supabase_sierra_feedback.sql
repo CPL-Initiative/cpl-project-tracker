@@ -43,7 +43,13 @@ create table if not exists public.sierra_feedback (
   rating text not null
     constraint sierra_feedback_rating check (rating in ('up','down')),
   note text
-    constraint sierra_feedback_note_len check (note is null or char_length(note) <= 2000)
+    constraint sierra_feedback_note_len check (note is null or char_length(note) <= 2000),
+  -- Triage status for the Sierra Training review queue (Session 93 — Phase 1;
+  -- migration sierra_feedback_triage_status). Reviewer/team-phrase users
+  -- advance it via the sierra_feedback_set_status RPC below so the queue
+  -- drains instead of being re-read forever.
+  status text not null default 'new'
+    constraint sierra_feedback_status_chk check (status in ('new','triaged','addressed'))
 );
 
 alter table public.sierra_feedback enable row level security;
@@ -94,6 +100,34 @@ end $$;
 
 revoke all on function public.sierra_feedback_upsert(text, text, text, text, text, text, text, text) from public;
 grant execute on function public.sierra_feedback_upsert(text, text, text, text, text, text, text, text) to anon, authenticated;
+
+-- ── Triage-status write path (Session 93 — the Sierra Training tab) ─────────
+-- The ONLY thing a gated team member can change from the tab; the table still
+-- has no direct anon/authenticated write policies, so the rest of the row
+-- stays immutable to the public. Same gate as the SELECT policy.
+create or replace function public.sierra_feedback_set_status(
+  p_turn_id text,
+  p_status text
+) returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if not (public.is_allowed_reviewer() or public.team_pass_ok()) then
+    raise exception 'not authorized';
+  end if;
+  if p_status is null or p_status not in ('new', 'triaged', 'addressed') then
+    raise exception 'invalid status';
+  end if;
+  update public.sierra_feedback set status = p_status where turn_id = p_turn_id;
+  if not found then
+    raise exception 'unknown turn_id';
+  end if;
+end $$;
+
+revoke all on function public.sierra_feedback_set_status(text, text) from public;
+grant execute on function public.sierra_feedback_set_status(text, text) to anon, authenticated;
 
 -- Keep created_at immutable + stamp updated_at on the note/rating upsert.
 create or replace function public.sierra_feedback_touch()

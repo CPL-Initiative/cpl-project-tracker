@@ -1,7 +1,7 @@
 ---
 title: Sierra Training tab — recommendation + phased scope
 created: 2026-07-01
-updated: 2026-07-01
+updated: 2026-07-02
 tags: [scope, sierra, cpl-assistant, training, feedback, rag, guardrails]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -55,7 +55,23 @@ to prompt-guidance tables. It must **never** write to the public
 - **Audience selector** on both Sierra surfaces → every logged turn now carries
   who was asking, so gaps can be sliced per population.
 
-## Phase 1 — Review queue + gap miner (build first; small)
+## Phase 1 — Review queue + gap miner ✅ SHIPPED (2026-07-02, Session 93 SkyReach)
+
+**Sam green-lit Phase 1 on 2026-07-01 ("Let's go green on the Training Tab")
+and it shipped the same session** as the `#sierra-training` tab (nav label
+"Sierra Training", right under CPL Assistant): renderer `sierra_training.js`
+(static, lazy, the `map_users.js` pattern), reviewer/team-phrase gated
+server-side by the existing RLS SELECT policies. Both panes below as scoped,
+plus: punt signatures measured from the live logs (a bare "MAP@rccd.edu"
+mention is NOT a punt — it appears in 174/298 answers as routine routing;
+curly-apostrophe-safe regexes), a recurring-themes strip over the gap rows,
+and an honest "your sign-in doesn't unlock the logs" state (RLS returns
+200+[] rather than an error). The `status` column + the reviewer/team-phrase
+`sierra_feedback_set_status` RPC landed in migration
+`sierra_feedback_triage_status` (schema of record:
+`chatbox/supabase_sierra_feedback.sql`). Tests:
+`tests/sierra_training.test.js` (38 checks). Original Phase-1 scope kept
+below for reference.
 
 One tab, two panes, all read-only over the two tables (reviewer/team-phrase
 gated, the shared `cpl_sb` session):
@@ -128,6 +144,8 @@ publicizes the endpoint.
 | 2 — Guidance table | ~½ session | After the team has used Phase 1 |
 | 3 — Artifact ingestion | 1–2 sessions | After Phase 1 shows which artifacts are missing |
 
-**Decision requested from Sam:** green-light Phase 1 (a `#sierra-training` tab,
-reviewer/team-phrase gated), and introduce the session to Malone for the
-guardrails thresholds (rate, daily budget, launch date).
+**Decisions:** Phase 1 ✅ green-lit + SHIPPED (2026-07-01/02, Session 93).
+Still open: introduce a session to Malone for the guardrails thresholds
+(rate, daily budget, launch date); Phase 2 (guidance table) waits for the
+team to use Phase 1; Phase 3 (artifact ingestion) waits for Phase 1 to show
+which artifacts are missing.

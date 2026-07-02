@@ -719,3 +719,44 @@ repo copy via `get_edge_function`.
   (`docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md`). Also an EACR
   content note: there is NO statewide CCC standard for CPR despite a ~65-college
   addressable base — a "suggested standard" / MC candidate.
+
+## Session 93 (SkyReach), part 2 — 2026-07-02 — the Sierra Training tab ships (Phase 1)
+
+Sam green-lit the Training tab the same evening the CPR fix landed ("Let's go
+green on the Training Tab"). **Phase 1 of `docs/sierra_training_tab_scope.md`
+shipped as the `#sierra-training` tab**: `sierra_training.js` (static, lazy,
+the `map_users.js` gate pattern — reviewer/team-phrase RLS does the real
+gating server-side), two panes:
+
+- **Feedback queue** — `sierra_feedback` newest-first; rating / audience /
+  page / status / has-note filters (default view = "Open", hiding addressed);
+  rows expand to the full Q + A + rater note; triage buttons advance
+  `new → triaged → addressed` via the new SECURITY DEFINER RPC
+  **`sierra_feedback_set_status`** (migration `sierra_feedback_triage_status`;
+  the table still has NO direct public write policies — status is the only
+  thing a gated team member can change).
+- **Gap miner** — the newest 500 `chat_interactions` classified client-side:
+  **low-similarity** (`top_similarity < 0.55` or null — the "what artifact is
+  missing" signal), **punts** (Sierra explicitly said she didn't have it),
+  a **recurring-themes** strip (stopworded per-turn keyword counts), and an
+  audience slice.
+
+**Lessons:**
+
+- **Measure the punt signatures before encoding them.** The obvious detector —
+  "mentions MAP@rccd.edu" — would have flagged 174 of 298 answers (the email is
+  routine routing, offered in most good answers). The honest signatures from
+  the live logs: "don't have" (24) · "doesn't appear" (8) · "don't see" (6) ·
+  "not certain"/"couldn't find" (rare). Encode what the data shows, not what
+  the fallback prompt says.
+- **The model writes CURLY apostrophes.** A `don'?t`-style regex silently
+  misses "don’t" (U+2019) — most real punts. The committed test caught it
+  before ship; every apostrophe class in `PUNT_RES` is now `['’]`.
+- **RLS "gated" reads return 200 + empty, not an error.** A session that
+  doesn't unlock the logs renders an all-zeros dashboard that looks like
+  success. The tab detects both-tables-empty and says "your sign-in doesn't
+  appear to unlock the gated logs" instead.
+- Phase 2 (the `sierra_guidance` prompt knob) and Phase 3 (RAG-corpus
+  ingestion) stay parked until the team has used Phase 1; the Malone
+  guardrails lane (durable rate limit + daily cost breaker) is unchanged and
+  should land before the Student Portal publicizes the endpoint.
