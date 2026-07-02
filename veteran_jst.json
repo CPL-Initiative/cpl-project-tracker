@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-02T09:35:22.486461+00:00",
+  "scraped_at": "2026-07-02T11:45:18.279161+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
@@ -160,6 +160,11 @@
       "jst": 494,
       "star": true
     },
+    "Fresno City College": {
+      "vets": 724,
+      "jst": 488,
+      "star": false
+    },
     "Clovis Community College": {
       "vets": 117,
       "jst": 187,
@@ -178,11 +183,6 @@
     "Shasta College": {
       "vets": 343,
       "jst": 176,
-      "star": false
-    },
-    "Fresno City College": {
-      "vets": 724,
-      "jst": 488,
       "star": false
     },
     "Victor Valley College": {

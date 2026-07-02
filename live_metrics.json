@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-02T09:35:21.937Z",
+  "scraped_at": "2026-07-02T11:45:17.713Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -34,28 +34,28 @@
         {
           "college": "Los Angeles Pierce College",
           "students": 1860,
-          "units": 28283,
-          "avgUnits": 15.205913978494623,
-          "transcriptionRate": 98.8,
+          "units": 28295,
+          "avgUnits": 15.21236559139785,
+          "transcriptionRate": 98.7,
           "avgTranscribed": 15.020430107526881,
           "criteriaMetCount": 5,
           "militaryStudents": 118,
           "nonMilitaryStudents": 1742,
           "apprenticeStudents": 173,
-          "savings": 27587065,
-          "yearImpact": 134477220,
+          "savings": 27607825,
+          "yearImpact": 134550024,
           "transcribedUnits": 27938
         },
         {
           "college": "Moreno Valley College",
-          "students": 1551,
+          "students": 1552,
           "units": 9929.5,
-          "avgUnits": 6.401998710509349,
+          "avgUnits": 6.397873711340206,
           "transcriptionRate": 90.7,
-          "avgTranscribed": 5.803997421018698,
+          "avgTranscribed": 5.800257731958763,
           "criteriaMetCount": 5,
           "militaryStudents": 953,
-          "nonMilitaryStudents": 614,
+          "nonMilitaryStudents": 615,
           "apprenticeStudents": 0,
           "savings": 15212200,
           "yearImpact": 59260370,
@@ -759,31 +759,31 @@
         {
           "college": "Fresno City College",
           "students": 489,
-          "units": 1058,
-          "avgUnits": 2.16359918200409,
+          "units": 1108,
+          "avgUnits": 2.2658486707566463,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
           "militaryStudents": 488,
           "nonMilitaryStudents": 1,
           "apprenticeStudents": 0,
-          "savings": 1830340,
-          "yearImpact": 6418886,
+          "savings": 1916840,
+          "yearImpact": 6722236,
           "transcribedUnits": 0
         },
         {
           "college": "Santa Ana College",
           "students": 462,
-          "units": 1839.1999999999998,
-          "avgUnits": 3.9809523809523806,
+          "units": 1847.1999999999998,
+          "avgUnits": 3.9982683982683977,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
           "militaryStudents": 353,
           "nonMilitaryStudents": 108,
           "apprenticeStudents": 7,
-          "savings": 2925058.5,
-          "yearImpact": 10896317.6,
+          "savings": 2935838.5,
+          "yearImpact": 10939521.6,
           "transcribedUnits": 0
         },
         {
@@ -894,16 +894,16 @@
         {
           "college": "Glendale Community College",
           "students": 214,
-          "units": 639,
-          "avgUnits": 2.985981308411215,
+          "units": 649,
+          "avgUnits": 3.032710280373832,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
           "militaryStudents": 213,
           "nonMilitaryStudents": 1,
           "apprenticeStudents": 0,
-          "savings": 1105470,
-          "yearImpact": 3876813,
+          "savings": 1122770,
+          "yearImpact": 3937483,
           "transcribedUnits": 0
         },
         {
@@ -1757,7 +1757,7 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "48,283",
+      "value": "48,284",
       "breakdowns": [
         {
           "label": "Military",
@@ -1765,7 +1765,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "23,422"
+          "value": "23,423"
         },
         {
           "label": "Apprentice",
@@ -1813,11 +1813,11 @@
     },
     {
       "title": "SAVINGS",
-      "value": "$321M",
+      "value": "$322M",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$159M"
+          "value": "$160M"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 48283,
-    "Units": 230593.65000000002,
+    "Students": 48284,
+    "Units": 230673.65000000002,
     "TranscribedUnits": 99588.95,
-    "Savings": 321477685.25,
-    "YearImpact": 1300305044.3999999,
+    "Savings": 321613025.25,
+    "YearImpact": 1300785072.3999999,
     "MilitaryStudents": 24938,
-    "NonMilitaryStudents": 23422,
+    "NonMilitaryStudents": 23423,
     "AprenticeStudents": 754,
-    "AverageUnits": 4.775876602530912,
-    "TranscribedAverage": 2.0626089928132054
+    "AverageUnits": 4.777434553889488,
+    "TranscribedAverage": 2.0625662745422915
   }
 }
