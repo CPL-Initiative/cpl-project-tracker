@@ -1,6 +1,6 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-02 · Session 96 · Master + Custom Reports now pull LIVE card updates · report links fresh daily · attach flow explained",
+ "_as_of": "2026-07-02 · Session 96 · reports LIVE + attach decision LOCKED: team-only Supabase attachments, building next session",
  "_session": 96,
  "_status": "Report day. Both report generators now read the same live data the cards show: the Custom Report folds in the latest posted updates + Team & RACI leads before it writes, and the Master Report button opens a checkbox picker (activities AND project cards — your ask) that builds the Word doc right in the browser from live data. Behind the scenes we found why the old Master Report file was stale: the daily robot never had the Word library installed (it failed silently every night) and never saved the reports it made — both fixed, so the per-card Report buttons refresh daily again. Your three tweaks landed too: the update popup saves-and-closes, nudge emails use semicolons for Outlook, and the two trend graphs sit at the bottom of CPL Analytics now. On attachments: the 📎 button explains itself now (it hands off to SharePoint's ＋ Create or upload) — but note some newer projects (like 4.1.4) never got a SharePoint folder, so the popover also links the parent folder. Everything ships with the next rebuild.",
  "items": [
@@ -9,12 +9,6 @@
    "who": "sam",
    "tab": "activities-projects",
    "text": "NEW: try both report buttons. 📄 Master Report now opens a picker (activities + project cards, uncheck anything) and builds the Word doc from LIVE data — updates you posted via 📝 and the RACI leads are in it. 📊 Custom Report carries them too. If a report shows a stale update, tell Fable which project."
-  },
-  {
-   "id": "attach-decision",
-   "who": "sam",
-   "tab": "activities-projects",
-   "text": "ATTACH DECISION: Supabase CAN take attachments (we already run a storage bucket for the Fact Sheet images). Want a native per-card ⬆ Attach — upload right on the card, listed instantly, no SharePoint hop? One call needed from you first: are attachment files okay to be PUBLICLY downloadable by link (like the Fact Sheet images), or team-only? Your \"process attachments into KB md files\" idea rides along with this build."
   },
   {
    "id": "attach-workaround",
@@ -56,7 +50,7 @@
    "id": "attach-native-build",
    "who": "fable",
    "tab": "activities-projects",
-   "text": "Once Sam picks the attachment access model (public-read vs team-gated): build the native attach — `project-attachments` Storage bucket + table, per-card ⬆ upload gated reviewer/team-phrase, live card listing (card_updates.js pattern), and scope the attachments→KB-markdown ingest into the same flow. SharePoint stays the archive of record."
+   "text": "DECIDED (Sam, 2026-07-02): attachments are TEAM-ONLY. Next session builds the native attach: PRIVATE `project-attachments` Storage bucket (NO public read — reads AND writes gated reviewer/team-phrase via storage RLS), `project_attachments` metadata table, per-card ⬆ upload, live card listing (card_updates.js pattern). Note: gated downloads can't be plain links — fetch-with-auth-headers → blob URL (or signed URLs via RPC). Scope the attachments→KB-markdown ingest into the same flow. SharePoint stays the archive of record."
   },
   {
    "id": "verify-daily-publish",
