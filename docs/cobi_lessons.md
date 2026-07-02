@@ -486,10 +486,14 @@ to include in the Master Report"* + three tweaks + the attach-doc confusion.
   public-read URLs (like factsheet-images) vs team-gated reads (private bucket
   + signed URLs) — project docs may be internal, and this repo has PII
   history. Sam picks; then it's a build.
+  **RESOLVED same evening (Sam): "Attachments should be team only. The
+  Supabase solution sounds good" — build lands next session (his call); spec
+  locked in `docs/session_97_handoff.md` priority #1.**
 - **Attachments → KB markdown.** Sam's stretch idea: process uploaded docs
   into md for the KB/vault. Feasible as a runner-side ingest (docx/pdf → md →
   `docs/kb-notes/` candidates or CPLBrain), same lane as the Sierra Phase-3
   document-ingest plan — scope when the native-attachment decision lands.
+  **Rides the Session-97 build (same upload event).**
 
 ### Tests
 

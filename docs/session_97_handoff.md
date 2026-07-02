@@ -58,29 +58,44 @@ live-data session. Read in this order if you're cold:
 
 ## Priority queue for you
 
-1. **Native attachments decision → build** (Sam-gated). Sam asked for "a more
-   efficient way to attach docs" and noted "we used SharePoint because
-   Supabase couldn't take attachments" — **it can**: we already run the
-   `factsheet-images` Storage bucket (Session 81, public-read/reviewer-write).
-   Proposal on the table: a `project-attachments` bucket + `project_attachments`
-   table, per-card ⬆ upload gated `is_allowed_reviewer() OR team_pass_ok()`,
-   attachments listed live on the card via a `card_updates.js`-pattern overlay
-   (no SharePoint hop, no next-day lag). **THE BLOCKER IS THE ACCESS MODEL** —
-   public-read URLs vs team-gated (private bucket + signed URLs). Project docs
-   may be internal and this repo has PII history: get Sam's explicit pick
-   BEFORE building. SharePoint stays the archive of record either way (24
-   members already live there).
-2. **Attachments → KB markdown** (Sam's stretch idea, same lane): runner-side
-   ingest of uploaded docs (docx/pdf → md) into `docs/kb-notes/` candidates /
-   the vault. Scope it WITH the native-attachment build — same upload event,
-   same storage. Related: the Sierra Phase-3 document-ingest plan
-   (`kb/cpl_todos.json` → `sierra-training-p3`).
-3. **Verify the daily cron publishes the S96 changes**: after the next
-   `daily-dashboard.yml` run, confirm (a) "Install node docx" step green,
-   (b) `reports/*.docx` in the daily commit, (c) charts render at the BOTTOM
-   of CPL Analytics, (d) `CPL_Data.js` carries `live_updates`, (e) the
-   Master Report modal generates (needs `CPL_DATA` + docx.min.js — both live).
-4. **Standing lanes** (unchanged from Session 96's inheritance): Sierra
+1. **Native attachments — DECIDED, BUILD IT (your headline workstream).**
+   Sam, same day (2026-07-02): *"Attachments should be team only. The
+   Supabase solution sounds good. I'm thinking we handle this in the next
+   session."* The access model is **TEAM-ONLY** — locked, don't re-ask.
+   Build spec (adapt as you see fit, honor the boundary):
+   - **PRIVATE `project-attachments` Storage bucket** — NO public/anon read
+     policy. Reads AND writes on `storage.objects` gated
+     `is_allowed_reviewer() OR team_pass_ok()` (the same boundary as
+     `item_raci`/`map_college_users`; storage RLS can call those functions —
+     the `factsheet-images` bucket already uses `is_allowed_reviewer()` for
+     writes). Sanity-cap size (~10 MB?) + MIME allowlist (docs, not
+     executables).
+   - **`project_attachments` metadata table** (item key `activity:N`/
+     `project:<id>`, filename, storage path, size, uploaded_by/at) with the
+     same RLS gate, so listing doesn't require bucket enumeration.
+   - **Per-card ⬆ Attach** + live listing overlay (the `card_updates.js`
+     pattern, but note: the roster is GATED, so the overlay shows a
+     sign-in/team-phrase gate to the public — mirror `map_users.js`, not
+     `card_updates.js`, for the auth posture).
+   - **Download nuance:** a gated object can't be a plain `<a href>` — the
+     request must carry the reviewer bearer / `x-team-pass` header. Either
+     fetch-with-headers → blob URL client-side (attachments are small), or a
+     SECURITY DEFINER RPC that mints short-lived signed URLs. Pick one,
+     document why.
+   - **KB-markdown ingest** (Sam's stretch ask) rides the same upload event:
+     runner-side docx/pdf → md into the vault lane (`docs/kb-notes/`
+     candidates / CPLBrain), same shape as the Sierra Phase-3 ingest. Scope
+     it in the same PR ladder, even if it ships as PR 2.
+   - **SharePoint stays the archive of record** (24 members live there); the
+     📎 SharePoint handoff + explainer remain as-is until Sam says otherwise.
+   - PII discipline: bucket contents are TEAM data — never commit file bytes
+     or names to the repo; the metadata table is Supabase-only.
+2. **S96 publish — ALREADY VERIFIED** (post-merge dispatch run #208,
+   `89166ff`): "Install node docx" green, `reports/*.docx` in the daily
+   commit (first cron-fresh reports ever), charts at the BOTTOM of CPL
+   Analytics on live main, `CPL_Data.js` carries `live_updates`. Nothing to
+   re-check unless a later cron regresses.
+3. **Standing lanes** (unchanged from Session 96's inheritance): Sierra
    guidance day-2 + Malone guardrails intro, TMC confidence engine round 2,
    `chatbox_exhibits` dedupe/refresh, the unverified-M-ID renumber re-mint.
 
