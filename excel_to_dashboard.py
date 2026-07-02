@@ -11868,6 +11868,14 @@ def main():
             proj_grid_end = html.find('<!-- End Projects Grid -->')
             if proj_grid_end != -1:
                 proj_grid_end_consumes = proj_grid_end + len('<!-- End Projects Grid -->')
+                # Swallow the trailing blank-line run after the old End marker.
+                # new_proj_section ends with its own '\n', so leaving the old
+                # newline in the remainder accreted +1 blank line per run (198
+                # had piled up since the tab move). Consuming the whole run and
+                # re-adding one newline is byte-stable across repeat runs.
+                _ws = re.match(r'(?:[ \t]*\r?\n)+', html[proj_grid_end_consumes:])
+                if _ws:
+                    proj_grid_end_consumes += _ws.end()
             else:
                 proj_grid_end = html.find('<!-- Budget Section -->')
                 proj_grid_end_consumes = proj_grid_end
