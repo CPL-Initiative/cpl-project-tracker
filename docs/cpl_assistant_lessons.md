@@ -835,3 +835,50 @@ squash-merged same-session: **#649** (branding + markdown), **#650**
 CPR/First-Aid lesson is a natural first one); Phase 3 (artifact ingestion)
 once the gap miner shows what's missing; the Malone guardrails lane before
 the Student Portal publicizes the endpoint.
+
+## Sierra vendor-integration lane — 2026-07-02 — the fail-open external contacts gate (v27)
+
+Same-day follow-through on the vendor-integration doc trio (PR #654:
+`docs/sierra_technical_reference.md` + `docs/sierra_integration_analysis.md` +
+`docs/sierra_integration_guide.md`). Sam + Malone locked the first backend
+change for the vendor embed: **external surfaces must not broadcast college
+staff contacts, while COBI keeps them.**
+
+**The change (v27):** a new opt-in body field **`ctx`** — the exact string
+`"external"` makes `buildCollegeContext(profile, includeContacts=false)` omit
+the `CPL Contact: <name> (<email>)` line from the college context, so the
+model *cannot* name staff (Sierra answers only from its sources; the
+LANDING_PAGE_RULE routing to the college / MAP@rccd.edu takes over).
+**FAIL-OPEN by explicit decision (Malone):** absent/unknown values = today's
+behavior — the COBI tab, the standalone page, the Fact Sheet drawer, and the
+production map.rccd.edu widget send no `ctx` and are byte-for-byte unchanged.
+This is the third opt-in body field to ride the v17 (`history`) / v22
+(`audience`) backward-compat convention.
+
+- **Client:** `sierra/sierra.js` passes it through when loaded as
+  **`sierra/?ctx=external`** — the vendor-iframe path needs zero vendor code.
+  A normal visit's payload is byte-identical to pre-v27 (`buildPayload()`
+  only adds the key under the variant). `tests/sierra_ctx.test.js` (11 checks)
+  guards both directions + the unknown-value drop.
+- **Smoke mode 14 (a/b):** anchored on San Diego Mesa College (populated
+  `cpl_coordinator`, landing URL `/SDMESA` so the negative grep can't collide)
+  — 14a default answer MUST name the coordinator; 14b `ctx:"external"` MUST
+  NOT. The privacy claim is asserted at the live function on every deploy.
+- **Context that drove it:** contacts are reviewer/team-gated elsewhere on the
+  platform (`map_college_contacts`); Sierra publicly quoting its own
+  `chatbox_college_profiles.contacts` copy was the outlier. The **fail-closed
+  flip** (default = no contacts, internal surfaces opt IN) is the more
+  defensible end-state but would strip contacts from the production widget
+  uncoordinated — parked on the guardrails backlog as a deliberate follow-up.
+- **Pre-flight discipline honored:** conflict check (only unrelated open PR
+  #444; the parallel Session-97 attachments lane touches nothing in
+  chatbox/sierra), live-vs-repo byte-verify BEFORE editing (v26 sha matched),
+  live v26 capture parked in scratchpad as rollback, `verify_jwt:false` passed
+  explicitly on the v27 deploy.
+
+Vendor-lane context: Sam is integrating Sierra into a vendor-built platform
+(their current bot is Azure-AI-Foundry-based; 9-day integration window;
+guardrails committed for the same week). Recommended path = iframe of
+`sierra/?ctx=external` now, native embed later. Full decision trail in
+`docs/sierra_integration_analysis.md`; implementation contract in
+`docs/sierra_integration_guide.md`.

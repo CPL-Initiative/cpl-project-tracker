@@ -141,6 +141,7 @@ returns a 204 preflight; any method other than `POST`/`OPTIONS` returns 405.
 | `session_id` | string | no | Opaque client-generated id, used only for log correlation (`chat_interactions`). Not auth, not server-side state. |
 | `history` | array | no | Prior turns as `{role:'user'\|'assistant', content:string}`. **Sending the field at all (even `[]`) opts the client into multi-turn mode.** Server keeps the last 6 valid turns, caps each `content` at 2,000 chars, and forces the array to start on a `user` turn. Omit it entirely to stay single-turn (this is what the production widget does). |
 | `audience` | string | no | One of `student`, `faculty`, `administrator`, `employer`, `civic`. Anything else is treated as absent (default voice) — never an error. Appends a per-audience tone/content rule to the prompt and is logged. |
+| `ctx` | string | no | **v27, the external contacts gate.** The exact string `external` suppresses the college staff CPL-contact name/email line from the college context (external/vendor embeds shouldn't broadcast staff contacts). **Fail-open:** absent or any other value = full context — every pre-existing caller is unchanged. The standalone page passes it through when loaded as `sierra/?ctx=external` (the iframe path). |
 
 Unknown extra fields are ignored.
 
@@ -344,7 +345,9 @@ They share byte-identical core logic (asserted by tests):
 
 - `sierra/` (standalone page) is **fully self-contained**: its own HTML, CSS,
   JS, and image assets; system font stack; zero external dependencies. This
-  is the artifact to link or iframe.
+  is the artifact to link or iframe. Loading it as `sierra/?ctx=external`
+  activates the v27 contacts gate (the page sends `ctx:'external'` on every
+  chat request); a normal visit sends no `ctx` field at all.
 - `cpl_chat.js` is self-contained *behind its CONFIG block* and injects its
   audience/feedback/markdown CSS at runtime, **but** its base chat-layout CSS
   currently lives in the host dashboard's `<style>` block, and it mounts only
@@ -417,6 +420,7 @@ scale-out).
 | v22–v23 | 2026-07-01 | **Audience-aware voice** (5 populations); `sierra_feedback`; landing-page never-invent rule |
 | v24 | 2026-07-01 | Topic search re-ranked by relevance (`ts_rank_cd`, title weighted A) — fixed the "CPR miss" long-tail bug |
 | v25–v26 | 2026-07-02 | **Team guidance layer** (live prompt directives, no redeploy); v26 restored `verify_jwt:false` after the deploy-tool footgun; full markdown + Sierra mark on the clients |
+| v27 | 2026-07-02 | **External contacts gate** — opt-in `ctx:"external"` body field suppresses the college staff contact line from the college context (vendor embeds); fail-open, every existing caller unchanged; `sierra/?ctx=external` passes it through; smoke mode 14 guards both directions |
 
 ---
 

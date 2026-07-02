@@ -177,6 +177,21 @@ run "13 topic CPR (single-rec exhibits must surface)" \
 answer_must_match -i "Modesto|Las Positas|Cypress|San Francisco|Cabrillo" "13 CPR adopter college named"
 answer_must_match -i "first aid|cpr" "13 on-topic"
 
+# External contacts gate (v27 — the vendor-embed privacy variant). FAIL-OPEN:
+# a default request keeps the CPL-contact line in the college context (COBI /
+# the production widget unchanged); ctx:"external" suppresses it, so the model
+# CANNOT name the coordinator (Sierra answers only from its sources). Anchor =
+# San Diego Mesa College, whose profile carries a populated cpl_coordinator
+# ("Monica Romero" + an sdccd.edu email); its landing URL is /SDMESA so the
+# negative grep can't false-fail on the URL. Both directions asserted.
+run "14a contacts default (San Diego Mesa — contact included)" \
+  '{"query":"Who is the CPL contact at San Diego Mesa College?","session_id":"smoke-ci"}'
+answer_must_match -i "romero|mdromero" "14a default surfaces the CPL contact"
+
+run "14b contacts gated (ctx external — contact suppressed)" \
+  '{"query":"Who is the CPL contact at San Diego Mesa College?","session_id":"smoke-ci","ctx":"external"}'
+answer_must_not_match -i "romero|mdromero" "14b external ctx never names the contact"
+
 # sierra_feedback anon write path — the exact call the pages' 👍/👎 performs:
 # the SECURITY DEFINER RPC sierra_feedback_upsert (a direct PostgREST upsert
 # would 401 — ON CONFLICT needs SELECT visibility, which anon deliberately
