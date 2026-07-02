@@ -1,7 +1,7 @@
 ---
 title: Sierra Training tab — recommendation + phased scope
 created: 2026-07-01
-updated: 2026-07-02
+updated: 2026-07-02  # Session 94: Phase 2 shipped + P1 affordances
 tags: [scope, sierra, cpl-assistant, training, feedback, rag, guardrails]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -90,7 +90,22 @@ gated, the shared `cpl_sb` session):
 Add a small `status` column (`new / triaged / addressed`) on `sierra_feedback`
 (reviewer-writable) so the queue drains instead of re-reading forever.
 
-## Phase 2 — Guidance layer (response enhancements without a redeploy)
+## Phase 2 — Guidance layer ✅ SHIPPED (2026-07-02, Session 94 SkySierra)
+
+**Shipped as scoped** (PR #651 + migration `sierra_guidance_layer` + cpl-chat
+v25/v26): the `sierra_guidance` table (rule 3–500 chars + active flag + note +
+author + timestamps; SELECT/INSERT/UPDATE gated `is_allowed_reviewer() OR
+team_pass_ok()`, **no delete policy** — deactivate instead), a third
+**🧭 Guidance pane** on the Training tab (composer + toggle + honest
+"sent / beyond top-10, not sent" chips), and `fetchTeamGuidance()` in the
+function's parallel fan-out appending a bounded TEAM GUIDANCE block (newest
+**10 active** rules, ~2,500-char cap, fails soft) to every system prompt.
+Schema of record: `chatbox/supabase_sierra_guidance.sql`. Tests:
+`tests/sierra_guidance.test.js` (23 checks); end-to-end proven with a
+temporary marker rule + the runner smoke. ⚠ Deploy footgun found: the MCP
+`deploy_edge_function` tool **silently defaults `verify_jwt` to true** — v25
+briefly carried it; v26 (same sha) restored `false`. Always pass it
+explicitly. Original Phase-2 scope kept below for reference.
 
 A `sierra_guidance` table (short rule text + active flag + author + timestamp;
 reviewer/team-phrase write, service-role read). The `cpl-chat` function fetches
@@ -139,13 +154,15 @@ publicizes the endpoint.
 
 | Phase | Size | When |
 |---|---|---|
-| 1 — Review queue + gap miner | ~1 session | On Sam's go |
+| 1 — Review queue + gap miner | ~1 session | ✅ SHIPPED (Session 93) |
 | Guardrails: budget breaker + durable rate limit | ~1 session (with Malone for thresholds) | Before Portal launch |
-| 2 — Guidance table | ~½ session | After the team has used Phase 1 |
-| 3 — Artifact ingestion | 1–2 sessions | After Phase 1 shows which artifacts are missing |
+| 2 — Guidance table | ~½ session | ✅ SHIPPED (Session 94) |
+| 3 — Artifact ingestion | 1–2 sessions | After the gap miner shows which artifacts are missing |
 
-**Decisions:** Phase 1 ✅ green-lit + SHIPPED (2026-07-01/02, Session 93).
-Still open: introduce a session to Malone for the guardrails thresholds
-(rate, daily budget, launch date); Phase 2 (guidance table) waits for the
-team to use Phase 1; Phase 3 (artifact ingestion) waits for Phase 1 to show
-which artifacts are missing.
+**Decisions:** Phase 1 ✅ SHIPPED (2026-07-01/02, Session 93) — plus the P1
+team-session affordances (2026-07-02, Session 94: test-in-Sierra, date
+filters, bulk triage, feedback→log-turn link). Phase 2 (guidance table)
+✅ SHIPPED (2026-07-02, Session 94). Still open: introduce a session to
+Malone for the guardrails thresholds (rate, daily budget, launch date);
+Phase 3 (artifact ingestion) waits for the gap miner to show which
+artifacts are missing.

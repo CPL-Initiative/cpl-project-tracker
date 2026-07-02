@@ -683,7 +683,8 @@ function buildSystemPrompt(
   searchMode: "college" | "topic" | "college_topic" | "general",
   multiTurn: boolean = false,
   offeringsContext: string = "",
-  audienceRule: string = ""
+  audienceRule: string = "",
+  teamGuidance: string = ""
 ): string {
   let context = sections
     .map((s: any, i: number) => {
@@ -753,7 +754,7 @@ Be concise, friendly, and professional. Use plain language.
 
 IMPORTANT: When citing any numbers or metrics (student counts, units, savings, college counts, etc.), ALWAYS use the "LIVE CPL Dashboard Metrics" section below. These live numbers are scraped directly from the CCCCO Dashboard and are the most current. If a vault source below mentions a different number for the same metric, the live dashboard number is correct and the vault source is outdated. This applies especially to military/veteran student counts, savings figures, and unit totals.
 
-${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${STATEWIDE_RULE}${CREDIT_LIST_RULE}${OFFERINGS_RULE}${LANDING_PAGE_RULE}${specialInstruction}${audienceRule}`;
+${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${STATEWIDE_RULE}${CREDIT_LIST_RULE}${OFFERINGS_RULE}${LANDING_PAGE_RULE}${specialInstruction}${audienceRule}${teamGuidance}`;
 }
 
 async function fetchLiveMetrics(): Promise<any> {
@@ -765,6 +766,39 @@ async function fetchLiveMetrics(): Promise<any> {
     if (res.ok) return await res.json();
   } catch { /* non-fatal */ }
   return null;
+}
+
+// ── Team guidance layer (v25 — Phase 2 of the Sierra Training scope) ────────
+// The CPL/MAP team authors short response directives in `sierra_guidance`
+// (via the Sierra Training tab; reviewer/team-phrase-gated writes) and this
+// function appends the ACTIVE ones to every system prompt — the same-minute
+// tuning knob that doesn't need a redeploy. Bounded on purpose: newest 10
+// active rows, each ≤500 chars, ~2,500 chars total, so a runaway guidance
+// list can't crowd out the retrieval context. Fails soft (no guidance on any
+// error). Schema of record: chatbox/supabase_sierra_guidance.sql.
+const GUIDANCE_MAX_RULES = 10;
+const GUIDANCE_MAX_CHARS = 2500;
+async function fetchTeamGuidance(sb: any): Promise<string> {
+  try {
+    const { data, error } = await sb
+      .from("sierra_guidance")
+      .select("rule")
+      .eq("active", true)
+      .order("created_at", { ascending: false })
+      .limit(GUIDANCE_MAX_RULES);
+    if (error || !data || data.length === 0) return "";
+    let out = "";
+    for (const r of data) {
+      const rule = String(r.rule || "").trim().slice(0, 500);
+      if (!rule) continue;
+      if (out.length + rule.length > GUIDANCE_MAX_CHARS) break;
+      out += `\n- ${rule}`;
+    }
+    if (!out) return "";
+    return `\n\nTEAM GUIDANCE (directives added by the CPL/MAP team — follow them; if one conflicts with the general instructions above, the team guidance wins):${out}`;
+  } catch {
+    return "";
+  }
 }
 
 Deno.serve(async (req: Request) => {
@@ -855,8 +889,8 @@ Deno.serve(async (req: Request) => {
     });
 
     // 2. Vector search + college detection + live metrics + topic search +
-    //    course-catalog offerings (parallel)
-    const [searchResult, collegeProfile, liveMetrics, topicResults, offeringsResults] = await Promise.all([
+    //    course-catalog offerings + team guidance (parallel)
+    const [searchResult, collegeProfile, liveMetrics, topicResults, offeringsResults, teamGuidance] = await Promise.all([
       sb.rpc("match_document_sections", {
         query_embedding: Array.from(queryEmbedding),
         match_threshold: MATCH_THRESHOLD,
@@ -866,6 +900,7 @@ Deno.serve(async (req: Request) => {
       fetchLiveMetrics(),
       searchExhibitsByTopic(searchText, sb), // earned-exhibit set (no college filter)
       searchCollegeOfferings(searchText, sb), // course catalog: who TEACHES this
+      fetchTeamGuidance(sb),                  // sierra_guidance active rows (v25)
     ]);
 
     const sections = searchResult.data;
@@ -949,7 +984,8 @@ Deno.serve(async (req: Request) => {
 
     const systemPrompt = buildSystemPrompt(
       sections || [], liveMetrics, collegeContext, topicContext, searchMode,
-      multiTurn, offeringsContext, audienceKey ? AUDIENCE_RULES[audienceKey] : "");
+      multiTurn, offeringsContext, audienceKey ? AUDIENCE_RULES[audienceKey] : "",
+      teamGuidance || "");
 
     // 4. Call Claude Sonnet
     const anthropicRes = await fetch("https://api.anthropic.com/v1/messages", {
