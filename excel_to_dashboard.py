@@ -1650,6 +1650,11 @@ def build_activity_kpis(projects, activities=None):
         composite_41 = {
             "id": "4.1",
             "name": "Sprints (Veteran, Apprenticeship, Adoption, 29 Palms)",
+            # Inherit the REAL 4.1 row's goal — without it the composite fell
+            # into the goal-less "Other" bucket, which renders as its own grid
+            # and pushed the Sprints card onto a phantom new row (Sam,
+            # 2026-07-02: "1 activity is pushing to a new row").
+            "goal": (proj_map.get("4.1") or {}).get("goal", ""),
             "kpi_metric": str(len(sprint_projects)),
             "kpi_unit": "active sprints",
             "kpi_goal_2526": "",
@@ -9004,12 +9009,18 @@ def export_unified_courses():
     print(f"  Unified Courses: wrote exports/unified_courses.xlsx ({len(xrows)} rows)")
 
 
-def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
+def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None,
+                                 extra_top_html=""):
     """
     Render exhibit analysis tables as scrollable HTML cards inside a
     collapsible "CPL Analytics" section that mirrors the KPI Metrics header.
     Per-table xlsx exports are written to xlsx_export_dir (relative to the
     dashboard) so the in-card Export buttons link to a real file.
+
+    extra_top_html (Session 95, Sam 2026-07-02): optional block emitted at the
+    top of the analytics body, before the cards grid — used for the
+    "CPL Workplan Progress — Path to 2030" trajectory charts (moved here from
+    the Workplan Activity Metrics section on the Activities & Projects tab).
     """
     if not tables:
         return ""
@@ -9361,7 +9372,8 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
         '        <span class="kpi-toggle-arrow">&#9650;</span>\n'
         '    </div>\n'
         '    <div class="cpl-analytics-body" id="exhibitAnalysisSection">\n'
-        '        <div class="exhibit-cards-grid">\n'
+        + (extra_top_html or '')
+        + '        <div class="exhibit-cards-grid">\n'
         f'            {collab_card}\n'
         f'            {cpl_card}\n'
         f'            {mol_card}\n'
@@ -11581,6 +11593,25 @@ def main():
             # exhibit_tables was built earlier during College Activity rendering.
             # Strip any pre-existing copy first so repeat runs don't accumulate.
             import re as _re
+            # The "CPL Workplan Progress — Path to 2030" trajectory charts render
+            # at the TOP of the CPL Analytics body (moved from the Workplan
+            # Activity Metrics section — Sam, 2026-07-02 Session 95: "move the
+            # 2 graph charts to the CPL Analysis tab"). Built here because the
+            # analytics injection below consumes them.
+            _current_students = kpis.get("cumulative_students", {}).get("value", "43,321")
+            _bd_list = kpis.get("cumulative_students", {}).get("breakdowns", [])
+            _sub_pops = {}
+            for _bd in _bd_list:
+                _lbl = _bd.get("label", "").lower()
+                if "military" in _lbl:
+                    _sub_pops["military"] = _bd.get("value", "")
+                elif "workforce" in _lbl or "other" in _lbl:
+                    _sub_pops["workforce"] = _bd.get("value", "")
+                elif "apprentice" in _lbl:
+                    _sub_pops["apprentice"] = _bd.get("value", "")
+            workplan_charts_html = render_workplan_charts_html(
+                _current_students, _sub_pops, workplan_goals, config_overrides,
+            )
             html = _re.sub(
                 r'<div style="text-align:center;"><button class="exhibit-toggle-btn".*?</button></div>\s*',
                 '', html, flags=_re.DOTALL,
@@ -11598,13 +11629,15 @@ def main():
             if exhibit_tables:
                 exhibit_html = render_exhibit_analysis_html(
                     exhibit_tables, kpi_params=kpi_params, xlsx_export_dir="exports",
+                    extra_top_html=workplan_charts_html,
                 )
                 # Insert BEFORE the sentinel so Analytics stays in the Dashboard
                 # tab, after KPI Metrics and before the teaser cards.
                 outer_pos = html.find('<!-- ═══ Dashboard Sections End ═══ -->')
                 if outer_pos != -1:
                     html = html[:outer_pos] + exhibit_html + '\n    ' + html[outer_pos:]
-                    print(f"  Injected CPL Analytics section ({len(exhibit_tables['by_college'])} college cards, "
+                    print(f"  Injected CPL Analytics section (+ Workplan Progress charts at top; "
+                          f"{len(exhibit_tables['by_college'])} college cards, "
                           f"{len(exhibit_tables['top_exhibits'])} top exhibits, "
                           f"{len(exhibit_tables.get('articulations_by_course', []))} unified-course articulation rows, "
                           f"7 xlsx exports written to exports/)")
@@ -11693,24 +11726,11 @@ def main():
                 '', html, flags=_re.DOTALL,
             )
             act_html = render_activity_kpis_html(activity_kpis, annual_goals, update_log, attachments=attachments)
-            # The "CPL Workplan Progress — Path to 2030" trend chart logically
-            # belongs to this section, so we render it inside the same
-            # collapsible body. It used to sit at the top of Projects Grid,
-            # which meant it kept showing when Workplan Activity collapsed.
-            _current_students = kpis.get("cumulative_students", {}).get("value", "43,321")
-            _bd_list = kpis.get("cumulative_students", {}).get("breakdowns", [])
-            _sub_pops = {}
-            for _bd in _bd_list:
-                _lbl = _bd.get("label", "").lower()
-                if "military" in _lbl:
-                    _sub_pops["military"] = _bd.get("value", "")
-                elif "workforce" in _lbl or "other" in _lbl:
-                    _sub_pops["workforce"] = _bd.get("value", "")
-                elif "apprentice" in _lbl:
-                    _sub_pops["apprentice"] = _bd.get("value", "")
-            workplan_charts_html = render_workplan_charts_html(
-                _current_students, _sub_pops, workplan_goals, config_overrides,
-            )
+            # The "CPL Workplan Progress — Path to 2030" trajectory charts no
+            # longer render here — they MOVED to the top of the CPL Analytics
+            # body on the Dashboard tab (Sam, 2026-07-02 Session 95; built +
+            # injected at the CPL Analytics block above). The bounded strip
+            # regex over this section removes the previously-baked copy.
             # Activity Metrics is now a subsection inside the outer
             # "Workplan Activities & Projects" wrapper (defined in the static
             # template), so it no longer has its own kpi-section-wrapper /
@@ -11722,7 +11742,6 @@ def main():
                 '            <div class="activity-kpi-section" id="activityKpiSection">\n'
                 + act_html +
                 '            </div>\n'
-                + workplan_charts_html +
                 '        </div>\n\n        '
             )
             filter_marker = '<!-- Filter Bar -->'
@@ -11804,9 +11823,9 @@ def main():
                 tabled_archived_html = render_tabled_archived_section(
                     inactive_projects, project_lifecycle
                 )
-                # Workplan Progress chart now lives inside the Workplan Activity
-                # Metrics section (so it collapses with it). The Projects Grid
-                # is just the project cards now.
+                # The Workplan Progress charts moved to the CPL Analytics body
+                # on the Dashboard tab (2026-07-02). The Projects Grid is just
+                # the project cards now.
                 new_proj_section = (
                     '<!-- Projects Grid -->\n'
                     '        <h2 style="margin-bottom:1.5rem;">Projects <span id="projectCount" style="font-size:0.9rem;color:#888;">(' + str(project_count) + ')</span></h2>\n'
@@ -11819,7 +11838,6 @@ def main():
                 html = html[:proj_grid_start] + new_proj_section + html[proj_grid_end_consumes:]
                 print(f"  Rendered static project cards ({project_count} projects, grouped by Goal; "
                       f"{len(activity_layer_ids)} sub-activities render as Activity cards only)")
-                print("  Rendered Workplan Progress Chart inside Workplan Activity Metrics (3 trend lines)")
 
             # ── Teaser cards on the Dashboard tab linking to the other tabs ──
             # Replace the static placeholder; idempotent because the placeholder
