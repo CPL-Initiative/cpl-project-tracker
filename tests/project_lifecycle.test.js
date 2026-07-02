@@ -13,6 +13,16 @@
 //      (un-hidden + its collapsed entry removed);
 //  (f) mountControls gates on auth — no 🗄 control / Restore hidden when signed
 //      out; both appear once a team phrase is present.
+//  (h) reconcile NEVER hides an Activity-metrics KPI card (Session 95 — the
+//      2026-07-02 mixup: tabling a "redundant" project card erased its
+//      Activity card too);
+//  (i) activity-layer ids (CPL_DATA.activity_kpis) are IMMUNE: no hide, no
+//      collapsed entry, no 🗄 control — table/archive applies to real
+//      work-item projects only;
+//  (j) the Table/Archive modal survives clicks INSIDE it (Session-95 fix —
+//      picking the Archive radio used to dismiss the modal via the capture-
+//      phase overlay walk, so only the default "Tabled" could be confirmed);
+//      Confirm saves the picked state + reason; a true backdrop click closes.
 //
 // Run from repo root: `npm test` (or `node tests/project_lifecycle.test.js`).
 const fs = require("fs");
@@ -31,9 +41,14 @@ check("project_lifecycle.js included in index.html", /<script src="project_lifec
 const SRC = fs.readFileSync("project_lifecycle.js", "utf8");
 
 // ── Part B — behavior, loaded into jsdom ──
-function makeDom(overlayRows) {
+function makeDom(overlayRows, opts) {
+  opts = opts || {};
   const dom = new JSDOM(
     "<!doctype html><html><head></head><body>" +
+      // An Activity-metrics KPI card hooked (card_updates.js pattern) to 5.1 —
+      // 5.1 is tabled in the overlay below, but the Activity card must NEVER
+      // be hidden by the project lifecycle (Session 95).
+      '<div class="activity-kpi-card"><div class="cpl-live-update" data-update-key="project:5.1"></div></div>' +
       '<div id="projectsGrid">' +
         // active, visible card
         '<div class="project-card" data-pid="5.1"><div class="project-name">AI-Ready California Demonstration</div></div>' +
@@ -63,16 +78,19 @@ function makeDom(overlayRows) {
     { runScripts: "outside-only", url: "https://cpl-initiative.github.io/cpl-project-tracker/" });
   const w = dom.window;
   dom._rows = overlayRows;
-  w.fetch = function (url, opts) {
+  dom._writes = [];
+  w.fetch = function (url, fopts) {
     if (/project_lifecycle\?select/.test(url)) {
       return Promise.resolve({ ok: true, status: 200, json: function () { return Promise.resolve(dom._rows); } });
     }
     if (/rpc\/team_pass_ok/.test(url)) {
       return Promise.resolve({ ok: true, status: 200, json: function () { return Promise.resolve(true); } });
     }
-    // writes (POST upsert / DELETE) succeed
+    // writes (POST upsert / DELETE) succeed — recorded for the modal test (j)
+    dom._writes.push({ url: url, opts: fopts || {} });
     return Promise.resolve({ ok: true, status: 200, text: function () { return Promise.resolve(""); }, json: function () { return Promise.resolve([]); } });
   };
+  if (opts.preEval) opts.preEval(w);
   w.eval(SRC);
   return dom;
 }
@@ -146,6 +164,60 @@ const OVERLAY = [
   let threw = false;
   try { API.reconcile(); API.reconcile(); } catch (e) { threw = true; }
   check("reconcile is idempotent (no throw, single 5.1 entry)", !threw && doc.querySelectorAll('.tabled-card[data-pid="5.1"]').length === 1);
+
+  // (h) the Activity-metrics KPI card hooked to the tabled 5.1 is NOT hidden —
+  // the project lifecycle never touches the Activity layer (Session 95).
+  const actCard = doc.querySelector(".activity-kpi-card");
+  check("activity KPI card for tabled 5.1 stays visible", actCard && actCard.style.display !== "none");
+
+  // (i) activity-layer ids (CPL_DATA.activity_kpis) are IMMUNE end-to-end.
+  const dom2 = makeDom(
+    [{ project_id: "1.1", state: "tabled", reason: "mixup", updated_by: "(team)", updated_at: "2026-07-02T15:28:35Z" }],
+    { preEval: function (w2) {
+        w2.CPL_DATA = { activity_kpis: [
+          { activity_id: "Activity 1", kpis: [{ id: "1.1", name: "MAP Platform Development" }] },
+          // a ladder-bearing legacy 5.x — a REAL project, never immune
+          { activity_id: "Activity 4", kpis: [{ id: "5.1", name: "AI-Ready California Demonstration" }] },
+        ] };
+        w2.localStorage.setItem("cpl_team_pass", "cpl-team-2026");
+      } });
+  await new Promise((r) => setTimeout(r, 30));
+  const doc2 = dom2.window.document;
+  const API2 = dom2.window.CPL_PROJECT_LIFECYCLE;
+  check("immune: activityLayerIds reads CPL_DATA", API2.activityLayerIds()["1.1"] === true);
+  check("immune: legacy 5.x is NEVER immune (real project)", !API2.activityLayerIds()["5.1"]);
+  const card11 = doc2.querySelector('.project-card[data-pid="1.1"]');
+  check("immune: overlay row on sub-activity 1.1 does NOT hide its card",
+    card11 && card11.style.display !== "none" && !card11.getAttribute("data-lifecycle"));
+  check("immune: no collapsed Tabled entry for sub-activity 1.1", !doc2.querySelector('.tabled-card[data-pid="1.1"]'));
+  check("immune: no 🗄 control on sub-activity 1.1 even when authed", !doc2.querySelector('.project-card[data-pid="1.1"] .plc-table-btn'));
+  check("immune: real project 5.1 still gets a 🗄 control", !!doc2.querySelector('.project-card[data-pid="5.1"] .plc-table-btn'));
+
+  // (j) the modal survives inner clicks; Archive is now confirmable.
+  const dom3 = makeDom([], { preEval: function (w3) { w3.localStorage.setItem("cpl_team_pass", "cpl-team-2026"); } });
+  await new Promise((r) => setTimeout(r, 30));
+  const w3 = dom3.window, doc3 = w3.document;
+  doc3.querySelector('.project-card[data-pid="5.1"] .plc-table-btn').click();
+  check("modal opens with the state choice (authed)", !!doc3.querySelector(".plc-modal .plc-choice"));
+  const archRadio = doc3.querySelector('input[name="plc-state"][value="archived"]');
+  archRadio.click();
+  check("clicking the Archive radio does NOT dismiss the modal", !!doc3.querySelector(".plc-modal-overlay"));
+  check("Archive radio is selected after the click", archRadio.checked === true);
+  doc3.querySelector(".plc-reason").value = "Completed in June.";
+  doc3.querySelector(".plc-btn-submit").click();
+  await new Promise((r) => setTimeout(r, 30));
+  const upsert = dom3._writes.find(function (x) { return /rest\/v1\/project_lifecycle$/.test(x.url) && x.opts.method === "POST"; });
+  const body = upsert ? JSON.parse(upsert.opts.body) : {};
+  check("Confirm saves state=archived (not the default tabled)", body.state === "archived");
+  check("Confirm saves the typed reason", body.reason === "Completed in June.");
+  // Reopen → a TRUE backdrop click still closes.
+  dom3.window.CPL_PROJECT_LIFECYCLE.mountControls();
+  const btn11 = doc3.querySelector('.project-card[data-pid="1.1"] .plc-table-btn');
+  if (btn11) btn11.click();
+  const backdrop = doc3.querySelector(".plc-modal-overlay");
+  check("modal reopens for the backdrop test", !!backdrop);
+  if (backdrop) backdrop.click();
+  check("a true backdrop click closes the modal", !doc3.querySelector(".plc-modal-overlay"));
 
   // ── report ──
   let failed = 0;

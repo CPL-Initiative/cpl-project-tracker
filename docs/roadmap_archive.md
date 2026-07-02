@@ -2118,3 +2118,19 @@ the college + MAP@rccd.edu); feedback writes hardened to the `sierra_feedback_up
 RPC after the smoke run caught the ON-CONFLICT-needs-SELECT RLS 401.
 Tests 32+16 new checks, 118 files green; smoke modes 10–12. Full story:
 `docs/cpl_assistant_lessons.md` (Session 92). **NEXT: `docs/session_93_handoff.md`.**
+
+## Archived session narrative — Session 93 (moved at the Session-95 checkpoint, 2026-07-02)
+
+### Session 93 — SkyReach: the CPR retrieval miss fixed (cpl-chat v24) + the Sierra Training tab ships (2026-07-01/02)
+
+Sam's CPR question exposed that `search_exhibits_by_topic` ranked by `rec_count DESC` with NO
+relevance ranking — 76% of exhibits (rec_count=1) were unfindable once a query matched >200 rows
+(his 16 CPR rows sat at positions 285–677; only Cabrillo's bundle surfaced). **PR #646 (merged):**
+migration `search_exhibits_by_topic_relevance_rank` (ts_rank_cd over title-A/discipline-B;
+cpl_type/collab_type OUT of the searched vector; schema-of-record now committed) + **cpl-chat v24**
+(CPR synonym family, meta stop-words) + smoke mode 13 — CPR rows now return at positions 2–8; smoke
+13/13 green. His two 👎 notes were the trail — the day-old feedback loop's first real catch. Then Sam's
+"go green": **PR #647 (merged)** shipped the **Sierra Training tab** (Phase 1 — §7b `sierra-training`;
+feedback queue with `status` triage via `sierra_feedback_set_status`, gap miner over chat_interactions;
+38-check test; suite 121). New KB notes: `methodology-capped-retrieval-ranks-by-relevance` +
+`methodology-live-db-functions-need-committed-schema`. **NEXT: `docs/session_94_handoff.md`.**
