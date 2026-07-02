@@ -570,7 +570,10 @@
     _discCell: discCell,
   };
 
-  document.addEventListener("cpl-tab-activated", function (e) {
+  // NOTE: tabs.js dispatches cpl-tab-activated on WINDOW (not document) — a
+  // document listener never fires, so re-opening the tab after signing in on
+  // Team & RACI never re-activated (fixed Session 94, with sierra_training.js).
+  window.addEventListener("cpl-tab-activated", function (e) {
     if (e && e.detail && e.detail.tab === "map-users") activate();
   });
 })();
