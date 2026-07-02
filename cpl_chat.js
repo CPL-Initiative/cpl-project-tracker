@@ -585,6 +585,26 @@
     mount.appendChild(wrap);
   }
 
+  // ── "Test in Sierra" prefill (Sierra Training tab handoff) ──
+  // The Training tab stores a logged question under this key then navigates to
+  // #chatbot; we fill the input (never auto-send) so the reviewer can tweak
+  // before replaying it. Consumed on tab activation (tabs.js dispatches
+  // cpl-tab-activated on WINDOW) + once at mount for the deep-link landing.
+  var TEST_Q_KEY = 'cplSierraTestQ.v1';
+  function consumeTestQuestion() {
+    var q = null;
+    try {
+      q = sessionStorage.getItem(TEST_Q_KEY);
+      if (q) sessionStorage.removeItem(TEST_Q_KEY);
+    } catch (e) { /* storage unavailable */ }
+    if (!q || !inputEl) return;
+    inputEl.value = q.slice(0, 1000);
+    try { inputEl.focus(); } catch (e) { /* hidden pane */ }
+  }
+  window.addEventListener('cpl-tab-activated', function (e) {
+    if (e && e.detail && e.detail.tab === 'chatbot') consumeTestQuestion();
+  });
+
   function mount() {
     var pane = document.getElementById('tab-chatbot');
     if (!pane) return;
@@ -592,6 +612,7 @@
     if (host.getAttribute('data-cplchat-mounted') === '1') return; // idempotent
     host.setAttribute('data-cplchat-mounted', '1');
     build(host);
+    consumeTestQuestion();
   }
 
   if (document.readyState === 'loading') {
@@ -605,6 +626,7 @@
   window.CPL_CHAT = {
     AUDIENCES: AUDIENCES, AUD_KEY: AUD_KEY, feedbackPayload: feedbackPayload,
     escapeHtml: escapeHtml, inlineMd: inlineMd, renderMarkdown: renderMarkdown,
-    SIERRA_MARK: SIERRA_MARK,
+    SIERRA_MARK: SIERRA_MARK, TEST_Q_KEY: TEST_Q_KEY,
+    consumeTestQuestion: consumeTestQuestion,
   };
 })();

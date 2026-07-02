@@ -68,13 +68,24 @@
     loading: false, error: null, gated: false,
     feedback: null, turns: null,
     // feedback-queue filters
-    fRating: "", fAudience: "", fPage: "", fStatus: "open", fNote: false,
+    fRating: "", fAudience: "", fPage: "", fStatus: "open", fNote: false, fDays: "",
     open: {},          // turn_id → expanded
     // gap-miner filters
-    gKind: "all", gAudience: "",
+    gKind: "all", gAudience: "", gDays: "",
     gOpen: {},         // interaction id → expanded
     busy: {},          // turn_id → status write in flight
+    bulkStatus: "triaged", bulkBusy: false,
   };
+
+  // "Test in Sierra" handoff — same-origin sessionStorage key the CPL Assistant
+  // tab (cpl_chat.js) consumes on #chatbot activation: it prefills the input
+  // (never auto-sends) so a reviewer can replay a logged question against the
+  // live function after a fix.
+  var TEST_Q_KEY = "cplSierraTestQ.v1";
+  function testInSierra(q) {
+    try { sessionStorage.setItem(TEST_Q_KEY, String(q || "").slice(0, 1000)); } catch (e) {}
+    location.hash = "#chatbot";
+  }
 
   // ── Auth (shared cpl_sb magic-link session + cpl_team_pass phrase) ──
   function isValidJwt(t) {
@@ -148,6 +159,10 @@
       ".sit-theme b { color: var(--navy-primary); }",
       ".sit-cap { font-size:.74rem; color: var(--text-muted); margin:4px 0 14px; }",
       ".sit-gov { font-size:.76rem; color: var(--text-muted); border-left:3px solid var(--border-strong); padding:4px 10px; margin:16px 0 0; }",
+      ".sit-bulk { display:inline-flex; align-items:center; gap:5px; font-size:.76rem; color: var(--text-muted); }",
+      ".sit-logmatch { font-size:.78rem; color: var(--text-body); background: var(--surface-subtle); border-radius:6px; padding:6px 10px; }",
+      ".sit-logmatch b { color: var(--navy-primary); }",
+      ".sit-logmatch.sit-dim { color: var(--text-muted); }",
     ].join("\n");
     var el = document.createElement("style");
     el.id = CSS_ID; el.textContent = css;
@@ -168,6 +183,36 @@
   function truncate(s, n) {
     s = String(s == null ? "" : s);
     return s.length > n ? s.slice(0, n - 1) + "…" : s;
+  }
+  function withinDays(iso, days) {
+    if (!days) return true;
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return false;
+    return Date.now() - d.getTime() <= days * 86400000;
+  }
+  function dayOptions(current) {
+    var h = "";
+    [["", "Any time"], ["1", "Last 24h"], ["7", "Last 7 days"], ["30", "Last 30 days"]]
+      .forEach(function (o) {
+        h += '<option value="' + o[0] + '"' + (current === o[0] ? " selected" : "") + ">" + o[1] + "</option>";
+      });
+    return h;
+  }
+  // Link a feedback row back to its chat_interactions turn: same normalized
+  // question, nearest in time. Gives the triager the retrieval telemetry
+  // (similarity / topic-match) the feedback snapshot itself doesn't carry.
+  function normQ(s) { return String(s || "").trim().toLowerCase().replace(/\s+/g, " "); }
+  function logMatch(f) {
+    var q = normQ(f && f.question);
+    if (!q || !state.turns) return null;
+    var best = null;
+    var fT = new Date((f && f.created_at) || 0).getTime();
+    state.turns.forEach(function (t) {
+      if (normQ(t.question) !== q) return;
+      var dt = Math.abs(new Date(t.created_at || 0).getTime() - fT);
+      if (!best || dt < best.dt) best = { t: t, dt: dt };
+    });
+    return best && best.t;
   }
 
   // ── Gap classification (exposed for tests) ──
@@ -255,6 +300,37 @@
       delete state.busy[turnId]; render(root);
     });
   }
+  // Bulk triage: advance EVERY currently-filtered row to the picked status in
+  // one go (sequential RPC calls — the queue caps at 200 rows and the RPC is
+  // the only public write path, so no batch endpoint to lean on).
+  function bulkTriage(root) {
+    if (state.bulkBusy) return Promise.resolve();
+    var target = state.bulkStatus;
+    var rows = filteredFeedback().filter(function (f) { return (f.status || "new") !== target; });
+    if (!rows.length) { alert('Every filtered row is already "' + target + '".'); return Promise.resolve(); }
+    if (!confirm('Mark ' + rows.length + ' filtered feedback row(s) as "' + target + '"?')) return Promise.resolve();
+    state.bulkBusy = true; render(root);
+    var h = authHeaders();
+    h["Content-Type"] = "application/json";
+    var failed = 0;
+    var chain = Promise.resolve();
+    rows.forEach(function (f) {
+      chain = chain.then(function () {
+        return fetch(REST + "/rpc/sierra_feedback_set_status", {
+          method: "POST", headers: h,
+          body: JSON.stringify({ p_turn_id: f.turn_id, p_status: target }),
+        }).then(function (r) {
+          if (!r.ok) { failed++; return; }
+          (state.feedback || []).forEach(function (x) { if (x.turn_id === f.turn_id) x.status = target; });
+        }).catch(function () { failed++; });
+      });
+    });
+    return chain.then(function () {
+      state.bulkBusy = false;
+      if (failed) alert(failed + " of " + rows.length + " rows failed to save — renew your session on the Team & RACI tab and retry.");
+      render(root);
+    });
+  }
 
   // ── Feedback queue ──
   function filteredFeedback() {
@@ -265,6 +341,7 @@
     if (state.fStatus === "open") rows = rows.filter(function (f) { return (f.status || "new") !== "addressed"; });
     else if (state.fStatus) rows = rows.filter(function (f) { return (f.status || "new") === state.fStatus; });
     if (state.fNote) rows = rows.filter(function (f) { return !!(f.note && String(f.note).trim()); });
+    if (state.fDays) rows = rows.filter(function (f) { return withinDays(f.created_at, +state.fDays); });
     return rows;
   }
   function options(values, current, anyLabel) {
@@ -298,13 +375,31 @@
       h += '<div class="sit-row-body">';
       if (f.note) h += '<div class="lbl">Note from the rater</div><div class="txt sit-note">' + esc(f.note) + "</div>";
       h += '<div class="lbl">Question</div><div class="txt">' + esc(f.question || "—") + "</div>"
-        + '<div class="lbl">Sierra’s answer</div><div class="txt">' + esc(f.response || "—") + "</div>"
-        + '<div class="sit-actions"><span class="lbl" style="margin:0">Triage:</span>';
+        + '<div class="lbl">Sierra’s answer</div><div class="txt">' + esc(f.response || "—") + "</div>";
+      // Retrieval telemetry from the matching chat_interactions turn — was
+      // this a knowledge gap (low similarity / punt) or a wording problem?
+      var m = logMatch(f);
+      h += '<div class="lbl">Chat-log turn</div>';
+      if (m) {
+        var sim = m.top_similarity == null ? "none" : Number(m.top_similarity).toFixed(2);
+        h += '<div class="sit-logmatch">KB similarity <b>' + sim + "</b>"
+          + (m.topic_match ? " · exhibit topic-match ✓" : " · no exhibit topic-match")
+          + gapKinds(m).map(function (k) {
+            return ' · <span class="sit-chip sit-chip-gap">' + (k === "low-sim" ? "⚠ low similarity" : "\u{1F6A7} punt") + "</span>";
+          }).join("")
+          + " · logged " + fmtWhen(m.created_at) + "</div>";
+      } else {
+        h += '<div class="sit-logmatch sit-dim">No matching turn in the newest ' + TURN_LIMIT
+          + " loaded — likely older than the analysis window.</div>";
+      }
+      h += '<div class="sit-actions"><span class="lbl" style="margin:0">Triage:</span>';
       STATUSES.forEach(function (s) {
         var on = (f.status || "new") === s;
         h += '<button class="sit-btn' + (on ? " on" : "") + '" data-status="' + esc(s) + '" data-turn="' + esc(f.turn_id) + '"'
           + (on || state.busy[f.turn_id] ? " disabled" : "") + ">" + esc(s) + "</button>";
       });
+      h += '<button class="sit-btn" data-qact="test" data-qsrc="fb:' + esc(f.turn_id) + '">🧪 Test in Sierra</button>'
+        + '<button class="sit-btn" data-qact="copy" data-qsrc="fb:' + esc(f.turn_id) + '">⧉ Copy question</button>';
       h += "</div></div>";
     }
     return h + "</div>";
@@ -316,6 +411,7 @@
     if (state.gKind === "low-sim") rows = rows.filter(isLowSim);
     else if (state.gKind === "punt") rows = rows.filter(isPunt);
     if (state.gAudience) rows = rows.filter(function (t) { return ((t.audience || "(not set)")) === state.gAudience; });
+    if (state.gDays) rows = rows.filter(function (t) { return withinDays(t.created_at, +state.gDays); });
     return rows;
   }
   function gapRow(t) {
@@ -336,7 +432,10 @@
       h += '<div class="sit-row-body">'
         + '<div class="lbl">Question</div><div class="txt">' + esc(t.question || "—") + "</div>"
         + '<div class="lbl">Sierra’s answer</div><div class="txt">' + esc(t.response || "—") + "</div>"
-        + "</div>";
+        + '<div class="sit-actions">'
+        + '<button class="sit-btn" data-qact="test" data-qsrc="gap:' + esc(t.id) + '">🧪 Test in Sierra</button>'
+        + '<button class="sit-btn" data-qact="copy" data-qsrc="gap:' + esc(t.id) + '">⧉ Copy question</button>'
+        + "</div></div>";
     }
     return h + "</div>";
   }
@@ -401,6 +500,15 @@
       + STATUSES.map(function (s) { return '<option value="' + s + '"' + (state.fStatus === s ? " selected" : "") + ">" + s + "</option>"; }).join("")
       + "</select>"
       + '<label class="sit-check"><input type="checkbox" data-f-note' + (state.fNote ? " checked" : "") + "> has note</label>"
+      + '<select class="sit-select" data-f="fDays" aria-label="Feedback date range">' + dayOptions(state.fDays) + "</select>"
+      + '<span class="sit-bulk">Mark all ' + rows.length + " filtered → "
+      + '<select class="sit-select" data-bulk-status aria-label="Bulk triage status">'
+      + ["triaged", "addressed"].map(function (s) {
+        return '<option value="' + s + '"' + (state.bulkStatus === s ? " selected" : "") + ">" + s + "</option>";
+      }).join("")
+      + "</select>"
+      + '<button class="sit-btn" data-bulk-apply' + (state.bulkBusy || !rows.length ? " disabled" : "") + ">"
+      + (state.bulkBusy ? "Working…" : "Apply") + "</button></span>"
       + '<span class="sit-count">' + rows.length + " of " + fb.length + "</span>"
       + "</div>";
     if (!rows.length) {
@@ -426,6 +534,7 @@
       + '<option value="punt"' + (state.gKind === "punt" ? " selected" : "") + ">Punts</option>"
       + "</select>"
       + '<select class="sit-select" data-g="gAudience">' + options(Object.keys(byAud).sort(), state.gAudience, "Any audience") + "</select>"
+      + '<select class="sit-select" data-g="gDays" aria-label="Gap date range">' + dayOptions(state.gDays) + "</select>"
       + '<span class="sit-meta">' + Object.keys(byAud).sort().map(function (a) { return esc(a) + " " + byAud[a]; }).join(" · ") + "</span>"
       + '<span class="sit-count">' + g.length + " of " + gaps.length + "</span>"
       + "</div>";
@@ -474,6 +583,53 @@
         setStatus(btn.getAttribute("data-turn"), btn.getAttribute("data-status"), root);
       });
     });
+    var bulkSel = root.querySelector("[data-bulk-status]");
+    if (bulkSel) bulkSel.addEventListener("change", function () { state.bulkStatus = bulkSel.value; });
+    var bulkBtn = root.querySelector("[data-bulk-apply]");
+    if (bulkBtn) bulkBtn.addEventListener("click", function () { bulkTriage(root); });
+    root.querySelectorAll("[data-qact]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var q = lookupQuestion(btn.getAttribute("data-qsrc"));
+        if (!q) return;
+        if (btn.getAttribute("data-qact") === "copy") copyText(q, btn);
+        else testInSierra(q);
+      });
+    });
+  }
+
+  // Resolve a row's question from the id-typed data-qsrc handle ("fb:<turn_id>"
+  // / "gap:<interaction id>") — ids are attribute-safe where full question text
+  // is not.
+  function lookupQuestion(src) {
+    var m = /^(fb|gap):([\s\S]+)$/.exec(src || "");
+    if (!m) return null;
+    var rows = m[1] === "fb" ? state.feedback : state.turns;
+    var key = m[1] === "fb" ? "turn_id" : "id";
+    var hit = (rows || []).filter(function (r) { return String(r[key]) === m[2]; })[0];
+    return (hit && hit.question) || null;
+  }
+  function copyText(q, btn) {
+    function flash() {
+      var o = btn.textContent;
+      btn.textContent = "✓ copied";
+      setTimeout(function () { btn.textContent = o; }, 1200);
+    }
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(q).then(flash, function () {});
+        return;
+      }
+    } catch (e) { /* fall through */ }
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = q;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+      flash();
+    } catch (e2) { /* clipboard unavailable */ }
   }
 
   function renderInto(root, keepData) {
@@ -516,9 +672,18 @@
     _statusChip: statusChip,
     _LOW_SIM: LOW_SIM,
     _PUNT_RES: PUNT_RES,
+    _withinDays: withinDays,
+    _logMatch: logMatch,
+    _lookupQuestion: lookupQuestion,
+    _bulkTriage: bulkTriage,
+    _testInSierra: testInSierra,
+    TEST_Q_KEY: TEST_Q_KEY,
   };
 
-  document.addEventListener("cpl-tab-activated", function (e) {
+  // NOTE: tabs.js dispatches cpl-tab-activated on WINDOW (not document) — a
+  // document listener never fires, which silently broke "sign in on Team &
+  // RACI, then come back — the queue loads automatically" (fixed Session 94).
+  window.addEventListener("cpl-tab-activated", function (e) {
     if (e && e.detail && e.detail.tab === "sierra-training") activate();
   });
 })();
