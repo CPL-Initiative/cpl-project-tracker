@@ -7,8 +7,8 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "p2": 4669,
-  "p3": 16210
+  "p2": 4682,
+  "p3": 16235
  },
  "colleges": {
   "Bakersfield": {
@@ -92,8 +92,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Moreno Valley": {
-   "p2": 366,
-   "p3": 1387
+   "p2": 376,
+   "p3": 1400
   },
   "Norco College": {
    "p2": 111,
@@ -128,8 +128,8 @@ window.CPL_FUNDING_PERF = {
    "p3": 14
   },
   "West LA": {
-   "p2": 479,
-   "p3": 534
+   "p2": 482,
+   "p3": 546
   }
  },
  "unmatched": {}
