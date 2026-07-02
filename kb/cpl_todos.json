@@ -1,56 +1,50 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-01 · Session 92 ran TWICE in parallel (StarFab: TMC · StarLab: Sierra) · TMC: the CONFIDENCE ENGINE is LIVE · Sierra: 👍/👎 feedback + a required 'who are you?' selector are LIVE",
- "_session": 92,
- "_status": "Two Session-92s ran side by side today. Big day on the TMC Builder, in two acts. ACT 1: every official c-id.net approval now lands on the right side (1,195 wrong blanks across 114 colleges → 0; Saddleback's SOCI 110 fixed; remaining blanks are TRUE absences). ACT 2 — your 'Let's build:)': the CONFIDENCE ENGINE is live. Colleges now see a verdict chip on every slot (✓ auto = C-ID aligned, accept by rule · ≈ verify · 📎 evidence · ⚠ review), enter HOURS (placeholder until your COCI report lands) + UNITS for courses missing from our snapshot + ASSIST evidence on flexible slots, and CANNOT SUBMIT an incomplete application (select-counts, list unit floors, and the 18-unit STAR gate all block at the door). CO staff (signed in) get the 'New requests' queue ranked so near-auto-approvable submissions clear first, an expandable per-course review panel, and Approve / Return-with-note buttons — approvals are server-enforced (nobody can forge one with the public key; a security review caught exactly that hole plus an XSS before shipping, both fixed). Plus the '⏳ In progress in COCI' list = your 200+ backlog proxy, ranked by computed alignment. Try it: TMC Builder → Show → 'New requests'. MEANWHILE, STARLAB (Sierra): (1) every answer on the Ask-Sierra page and the COBI CPL Assistant tab now has 👍/👎 with an optional note, logged to a team-only table — the training signal; (2) both surfaces now require the visitor to tap who they are (Student / Faculty / Administrator / Employer / Civic leader) and Sierra tailors the answer — a student gets plain next-steps language, never system inside-baseball; and if a college has no CPL landing page configured, Sierra now says so and routes to the college + MAP@rccd.edu instead of inventing a link (your ask — cpl-chat v23). The live map.rccd.edu widget is untouched. (3) The Sierra Training tab recommendation is written (docs/sierra_training_tab_scope.md): YES, phased, starting with a review queue over the feedback + chat logs to spot gaps, plus the Malone guardrails lane (usage limits, cost cap, spam guards) for the 'Credit for Being Me' portal.",
+ "_as_of": "2026-07-02 · Session 93 (SkyReach) · Sierra's CPR blind spot FIXED (cpl-chat v24) · the SIERRA TRAINING tab is LIVE (team-only)",
+ "_session": 93,
+ "_status": "Sierra session, two acts — both sparked by YOUR feedback. ACT 1: the CPR mystery solved. Sierra had all 16 CPR/First-Aid articulations in her data the whole time, but the search behind her ranked matches by POPULARITY (how many credit recs an exhibit has) instead of RELEVANCE — and since 76% of all exhibits carry just one rec, three-quarters of the catalog could never surface on a busy question. Fixed at the database layer (relevance ranking, live for the map.rccd.edu widget too), plus CPR/First-Aid/AED/BLS now count as one family and filler words ('check', 'again', 'MAP') no longer pollute the search. Verified end-to-end: your exact question now returns CCSF, Las Positas, Cypress with courses + units. Your two 👎 notes were the trail — the feedback loop paid for itself on day one. ACT 2 — your 'go green': the SIERRA TRAINING tab is live (team-only; sign in via Team & RACI). Two panes: the 👍/👎 FEEDBACK QUEUE (expand a row → full question + answer + note; mark it new → triaged → addressed so the queue drains) and the GAP MINER (the questions where Sierra's knowledge had nothing close, the answers where she punted, recurring themes, sliced by who was asking). Hack away with the team — everything you thumbs-down or triage becomes the work list for Phase 2 (a guidance table for same-minute answer tuning) and Phase 3 (feeding missing documents into Sierra's knowledge).",
  "items": [
   {
-   "id": "coci-hours-extract",
+   "id": "training-tab-tryit",
    "who": "sam",
-   "tab": "tmc-builder",
-   "text": "TOP DATA ASK (mid-July): can the COCI course report be exported WITH the contact-hours columns colleges enter at course approval? And either way, pull a FRESH COCI course extract — ours is stale mid-renumbering (1,986 officially-approved courses have no row in it). Hours are the ONLY one of the CO's five checks we can't source today; everything else is in hand."
+   "tab": "sierra-training",
+   "text": "TRY THE NEW SIERRA TRAINING TAB with the team: sign in (Team & RACI magic link or team phrase) → the 👎 queue has your two CPR notes waiting as its first real entries. Expand, triage (new → triaged → addressed), then skim the Gap Miner's low-similarity questions + recurring themes. Tell me what the workflow needs — bulk triage? date filters? a 're-ask Sierra' button?"
   },
   {
-   "id": "pending-queue-list",
-   "who": "sam",
-   "tab": "tmc-builder",
-   "text": "Can the CO export the 200+ pending ADT submissions as a simple list (college, TMC, date submitted)? Then the tab can rank the queue by computed alignment so staff clear the near-auto-approvable ones first before the Curriculum Institute. Fallback if not: we already hold every ⏳ In-progress (college, TMC) pair from the COCI program export and can use that as the queue."
-  },
-  {
-   "id": "sierra-feedback-try",
+   "id": "cpr-answer-check",
    "who": "sam",
    "tab": "chatbot",
-   "text": "Try the new Sierra features: pick who you are at the top (it's required now), ask a question, then hit 👍 or 👎 and drop a note — that's the training signal. Ask the same question as a Student vs an Administrator to see the voice change, and tell me where the tailoring should go further."
-  },
-  {
-   "id": "training-tab-decision",
-   "who": "sam",
-   "tab": "chatbot",
-   "text": "Decision: green-light the Sierra Training tab Phase 1? Recommendation (docs/sierra_training_tab_scope.md) is YES — a team-only review queue over the feedback + chat logs that surfaces gaps (thumbs-down clusters, questions Sierra had no source for, explicit 'I don't know' answers), sliced by who was asking. Say go and the next session builds it."
+   "text": "Re-ask Sierra your CPR question (either surface) — she should now list the CPR/First-Aid adopters with courses + units (CCSF, Las Positas, Cypress…) instead of hedging. If any angle still comes back thin, 👎 it — it lands straight in the Training queue."
   },
   {
    "id": "malone-guardrails",
    "who": "sam",
    "tab": "chatbot",
-   "text": "Intro Fable to Malone when ready: the Sierra guardrails lane (durable IP usage limits, a daily cost cap, spam protection) is scoped in the same doc — we need his thresholds (requests/min, daily budget, portal launch date). The cost cap is worth landing BEFORE 'Credit for Being Me' publicizes the endpoint."
+   "text": "Intro Fable to Malone when ready: the Sierra guardrails lane (durable usage limits, a daily cost cap, spam protection) needs his thresholds (requests/min, daily budget, portal launch date). The cost cap should land BEFORE 'Credit for Being Me' publicizes the endpoint."
+  },
+  {
+   "id": "coci-hours-extract",
+   "who": "sam",
+   "tab": "tmc-builder",
+   "text": "TOP DATA ASK (mid-July): can the COCI course report be exported WITH the contact-hours columns? And either way, pull a FRESH COCI course extract — ours is stale mid-renumbering (1,986 officially-approved courses have no row). Hours are the ONLY one of the CO's five checks we can't source today."
+  },
+  {
+   "id": "pending-queue-list",
+   "who": "sam",
+   "tab": "tmc-builder",
+   "text": "Can the CO export the 200+ pending ADT submissions as a simple list (college, TMC, date submitted)? Then the review queue ranks them by computed alignment so staff clear the near-auto-approvable ones first before the Curriculum Institute."
   },
   {
    "id": "tmc-or-skips",
    "who": "sam",
    "tab": "tmc-builder",
-   "text": "Faculty-verify territory (3 leftover 'OR' groups the auto-fold skipped on purpose): Studio Art's advanced-studio line (ARTS 280/281/282) wasn't in our parse at all → needs a slot added; and Law/Public-Policy uses one course (COMM 120) as an option in TWO different requirement lines, which our one-slot model can't hold cleanly. Want me to add the Studio Art slot and/or handle the LPPS case, or leave for a faculty pass?"
+   "text": "Faculty-verify territory (3 leftover 'OR' groups the auto-fold skipped on purpose): Studio Art's advanced-studio line (ARTS 280/281/282) needs a slot added; Law/Public-Policy uses COMM 120 in TWO requirement lines. Add them, or leave for a faculty pass?"
   },
   {
    "id": "mapusers-loginurl",
    "who": "sam",
    "tab": "map-users",
    "text": "Carryover: send me the MAP login URL you want the refresh-nudge link to point at (today it links each college's MAP dashboard)."
-  },
-  {
-   "id": "reference-tabs-headerbands",
-   "who": "sam",
-   "tab": "unified-courses",
-   "text": "Carryover decision: the CCR / Canonical-SUBJ4 / Credential-Reference tabs are light tables but still have a dark-navy sticky HEADER band. Want those flipped light too for total uniformity?"
   },
   {
    "id": "vet-plans-kb-15",
@@ -65,28 +59,28 @@
    "text": "One-time: add the Fact Sheet URL (or …/cpl-project-tracker/**) to the Supabase Auth → Redirect URLs list so a magic-link sign-in from the Fact Sheet lands back on that page."
   },
   {
-   "id": "tmc-engine-tryit",
-   "who": "sam",
-   "tab": "tmc-builder",
-   "text": "TRY THE NEW CONFIDENCE ENGINE: pick a college + TMC → verdict chips on every slot, hours/units/evidence inputs, and the submit gates. Then sign in and open Show → 'New requests' → expand a submission → Approve / Return. Tell me what the CO staff workflow needs changed before the Institute."
+   "id": "sierra-training-p2",
+   "who": "fable",
+   "tab": "sierra-training",
+   "text": "After the team has driven Phase 1: build Phase 2 — the sierra_guidance table (short rule text + active flag, team-writable) that cpl-chat folds into the system prompt, so answer tuning is same-minute without a redeploy. Then Phase 3 (feed missing documents into Sierra's knowledge) once the gap miner shows which artifacts are missing."
+  },
+  {
+   "id": "chatbox-exhibits-refresh",
+   "who": "fable",
+   "tab": "chatbot",
+   "text": "Sierra data residue from the CPR case: chatbox_exhibits is stale + near-duplicated (Modesto has 12 rows for ~4 exhibits from tab-vs-space title twins; Evergreen's KINS 025 exhibit is missing entirely). Dedupe/refresh the sync; longer-term wire the CER unified-title layer so Sierra reads clean credential names."
   },
   {
    "id": "tmc-engine-next",
    "who": "fable",
    "tab": "tmc-builder",
-   "text": "Confidence engine round 2: description-similarity precompute (course description vs C-ID descriptor text — data in hand, ship scores not text), wire real hours when Sam's COCI master report lands, and distinguish verify-tier carriers in the directory coverage column."
-  },
-  {
-   "id": "sierra-training-p1",
-   "who": "fable",
-   "tab": "chatbot",
-   "text": "On Sam's go: build Sierra Training Phase 1 — the team-only review queue + gap miner over sierra_feedback + chat_interactions (both already reviewer-readable), per docs/sierra_training_tab_scope.md."
+   "text": "Confidence engine round 2: description-similarity precompute (course description vs C-ID descriptor — data in hand, ship scores not text), wire real hours when Sam's COCI master report lands, distinguish verify-tier carriers in the directory coverage column."
   },
   {
    "id": "assistant-cer",
    "who": "fable",
    "tab": "chatbot",
-   "text": "Next Sierra wire: after the offerings catalog (Session 89), fold in the CER credential layer + adoption-leverage / statewide_prescriptive so a request resolves credential → articulated-where → local course → adoption path (the rest of the CCR/CER ETL)."
+   "text": "Next Sierra wire: fold in the CER credential layer + adoption-leverage / statewide_prescriptive so a request resolves credential → articulated-where → local course → adoption path (the rest of the CCR/CER ETL)."
   },
   {
    "id": "mid-renumber",

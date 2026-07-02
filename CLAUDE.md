@@ -2220,68 +2220,29 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full story:
 > [`docs/cpl_assistant_lessons.md`](docs/cpl_assistant_lessons.md) (Session 90).
 
-### Session 91 — SkyGOAT: the TMC Builder gets both C-ID authorities + "OR" alternatives (2026-07-01)
+> **Session 91 narrative (SkyGOAT — both C-ID authorities unioned into the TMC right side #639 +
+> the visual-PDF-read "OR" alternatives #640) archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md).
+> Full story: [`docs/tmc_builder_lessons.md`](docs/tmc_builder_lessons.md).
 
-Sam's two TMC asks (from the Saddleback Administration-of-Justice screenshot showing
-many NULL right-side alignments), both shipped + merged. **PR #639 — right-side C-ID
-coverage doubled:** auto-match keyed only on COCI's under-reported `CIDNumber`; wired in
-the already-in-repo but **unused** c-id.net authority (`cid_articulations.json`) →
-`tmc/_build_college_courses.py` unions both (join `(college,subject,number)` exact +
-leading-zero fallback; `sequence:true` excluded). **10,627 → 21,300** college×C-ID pairs
-(+100%); **9,924** courses gained a C-ID; 961 carry ≥2 → rows gain an optional 6th
-element `xcid[]`, consumer matches `{cid}∪xcid` + `autoMatch` used-tracks. **PR #640 —
-"X OR Y" alternatives:** the consumer already rendered/matched per-slot `alts[]` but
-**0/756 slots had any** (the PDFs' multi-column "OR" scrambles under `fitz`). Extracted
-the OR-groups by a **visual PDF read** — a Workflow fanned an extractor + adversarial
-verifier over all 45 PDFs → curated `tmc/tmc_or_groups.json` (80 groups, evidence
-quotes); the parser folds each into one slot (`cid` + `alts[]`). **77/80 folded**,
-zero drift; 3 skipped-and-logged (LPPS overlap, studio-art missing line). Genuine-absence
-slots stay honest blanks (no dataset fills them; we don't hold MIS). Consumer needed no
-change for #640. Suite 117 green (+2 test files). Full story: `docs/tmc_builder_lessons.md`;
-new KB note `docs/kb-notes/methodology-visual-pdf-read-for-layout-encoded-facts.md`.
+> **Session 92 narratives (StarFab — the c-id.net join ladder #642 + the CONFIDENCE ENGINE +
+> `docs/kb-notes/reference-tmc-confidence-data-requirements.md`; StarLab — audience selector +
+> 👍/👎 feedback, cpl-chat v22/v23 #644 + `docs/sierra_training_tab_scope.md`) archived** →
+> [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full stories:
+> [`docs/tmc_builder_lessons.md`](docs/tmc_builder_lessons.md) + [`docs/cpl_assistant_lessons.md`](docs/cpl_assistant_lessons.md).
 
-### Session 92 — StarFab: every c-id.net approval lands + the confidence-score data map (2026-07-01)
+### Session 93 — SkyReach: the CPR retrieval miss fixed (cpl-chat v24) + the Sierra Training tab ships (2026-07-01/02)
 
-Same Saddleback AJ screenshot, layer deeper. **PR #642 (merged):** a c-id.net approval
-with no COCI row **vanished silently** — 3,684 unattached → **1,195 visible wrong blanks
-across 114 colleges** (biggest driver: the CCN transition — Saddleback's SOCI 110 lived
-on retired `SOC 1/1H`). Now a **join ladder** lands every approval (exact 18,157 ·
-zero-norm 1,903 · squashed-code 629 · strict-title 915 → verify-tier `tcid[]` ·
-**synthesized flagged rows 1,986**) + comma-joined `CIDNumber` split (46). **Graded
-provenance** per C-ID (hard ✓ / tcid ≈ verify / synth badge; autoMatch prefers
-hard>title>synth; save/resume round-trips it). 2-round adversarial verify caught a real
-title-stripping blocker pre-merge. 0 wrong blanks remain; suite 118 (+31-check test).
-Sam reframed the goal: **CO confidence score + can't-submit-misaligned** (200+ backlog
-before the mid-July Curriculum Institute) → data scorecard + build order in
-`docs/kb-notes/reference-tmc-confidence-data-requirements.md` (hours = the one true gap).
-**Then Sam said "Let's build:)" — the CONFIDENCE ENGINE shipped same-day:** per-slot
-verdict tiers (✓ auto / ≈ verify / 📎 evidence / ⚠ review) per the ASCCC ladder, submit
-gates (select-N · per-list units · ≥18 major units w/ a units-capture remedy for synth
-courses), hours-placeholder + evidence capture, and the **server-gated CO review queue**
-(rank-by-readiness, per-slot five-check panel, Approve/Return via the
-`tmc_review_submission` RPC — `is_allowed_reviewer()`, JWT-stamped; anon can no longer
-mint approved/returned) + the ⏳ In-progress backlog proxy. The adversarial verify caught
-2 more blockers pre-merge (stored XSS via anon-writable `_readiness`; forgeable
-approvals). Suite 119 (+38-check test). Full story: `docs/tmc_builder_lessons.md`.
-**NEXT: `docs/session_93_handoff.md`.**
-
-### Session 92 — StarLab: Sierra audience selector + 👍/👎 feedback (v22) + the Training-tab scope (2026-07-01)
-
-Sam's three Sierra asks, all landed. **Feedback:** new Supabase **`sierra_feedback`**
-(👍/👎 + note per answer, client-uuid `turn_id`, UPSERT merge-duplicates; anon
-write-only, reviewer/team-phrase SELECT; §8) with the bar on BOTH surfaces
-(`sierra/sierra.js` + `cpl_chat.js`). **Audience:** a REQUIRED 5-chip primary-population
-selector on both surfaces (shared key `cplSierraAudience.v1`) → optional `audience`
-body field → **`cpl-chat` v22** `AUDIENCE_RULES` (students get zero inside-baseball;
-widget untouched); `audience` also logs to `chat_interactions`, which gained a
-reviewer SELECT for gap mining. **Training tab: recommended YES, phased** —
-`docs/sierra_training_tab_scope.md` (P1 review-queue+gap-miner · P2 guidance table ·
-P3 RAG-corpus ingestion · the Malone guardrails lane pre-"Credit for Being Me").
-**v23** (same session): the missing-landing-page rule (never invent a link; route to
-the college + MAP@rccd.edu); feedback writes hardened to the `sierra_feedback_upsert`
-RPC after the smoke run caught the ON-CONFLICT-needs-SELECT RLS 401.
-Tests 32+16 new checks, 118 files green; smoke modes 10–12. Full story:
-`docs/cpl_assistant_lessons.md` (Session 92). **NEXT: `docs/session_93_handoff.md`.**
+Sam's CPR question exposed that `search_exhibits_by_topic` ranked by `rec_count DESC` with NO
+relevance ranking — 76% of exhibits (rec_count=1) were unfindable once a query matched >200 rows
+(his 16 CPR rows sat at positions 285–677; only Cabrillo's bundle surfaced). **PR #646 (merged):**
+migration `search_exhibits_by_topic_relevance_rank` (ts_rank_cd over title-A/discipline-B;
+cpl_type/collab_type OUT of the searched vector; schema-of-record now committed) + **cpl-chat v24**
+(CPR synonym family, meta stop-words) + smoke mode 13 — CPR rows now return at positions 2–8; smoke
+13/13 green. His two 👎 notes were the trail — the day-old feedback loop's first real catch. Then Sam's
+"go green": **PR #647 (merged)** shipped the **Sierra Training tab** (Phase 1 — §7b `sierra-training`;
+feedback queue with `status` triage via `sierra_feedback_set_status`, gap miner over chat_interactions;
+38-check test; suite 121). New KB notes: `methodology-capped-retrieval-ranks-by-relevance` +
+`methodology-live-db-functions-need-committed-schema`. **NEXT: `docs/session_94_handoff.md`.**
 
 ---
 
