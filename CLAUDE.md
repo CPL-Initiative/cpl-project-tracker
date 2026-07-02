@@ -1004,6 +1004,19 @@ reuse, so keep it self-contained behind its CONFIG block.
   sync `chatbox/sync_coci_offerings.py` (`coci-offerings-sync.yml`). Smoke modes 7–8.
   Story: `docs/cpl_assistant_lessons.md` (Session 89).
 
+- **Vendor-integration doc set (added 2026-07-02).** Sam is integrating Sierra
+  into a vendor-built platform; three vendor-facing docs cover it:
+  [`docs/sierra_technical_reference.md`](docs/sierra_technical_reference.md)
+  (how Sierra is built — full API contract, pipeline, data layer, ops),
+  [`docs/sierra_integration_analysis.md`](docs/sierra_integration_analysis.md)
+  (benefits/risks/challenges + the pre-launch preconditions checklist — cost
+  breaker + durable rate limit before a native embed scales), and
+  [`docs/sierra_integration_guide.md`](docs/sierra_integration_guide.md) (the
+  implementation plan: link / iframe / native-API / server-proxy paths; iframe
+  of `sierra/` needs NO backend change; a native embed = one-line
+  `ALLOWED_ORIGINS` add + playbook redeploy). Keep these in sync with future
+  `cpl-chat` contract changes.
+
 ### 7d. TMC Builder — interactive ADT submission tab (Session 59, 2026-06-16)
 
 The **TMC Builder** tab (`#tmc-builder`, hash `tmc-builder`) lets a college align

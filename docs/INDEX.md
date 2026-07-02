@@ -303,6 +303,22 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 - [`../README.md`](../README.md) — first-time visitor entry
 - [`../kb/README.md`](../kb/README.md) — knowledge-base schemas + generators
 
+## Sierra integration docs (vendor-facing, added 2026-07-02)
+
+Commissioned by Sam for integrating Sierra into a vendor-built platform:
+
+- [`sierra_technical_reference.md`](sierra_technical_reference.md) — how
+  Sierra is built: architecture, the full `cpl-chat` API contract (request /
+  SSE protocol / errors), the six-lookup answer pipeline, behavior rules,
+  data layer, client surfaces, security model, ops, v13→v26 timeline.
+- [`sierra_integration_analysis.md`](sierra_integration_analysis.md) —
+  benefits / risks / challenges of embedding Sierra on another site, the
+  pre-launch preconditions checklist, and the decision points for Sam.
+- [`sierra_integration_guide.md`](sierra_integration_guide.md) — the vendor
+  implementation plan: link / iframe / native-API / server-proxy paths, a
+  minimal reference client, non-negotiable client requirements, launch
+  checklist, ongoing-operations expectations.
+
 ## Reference materials
 
 Authoritative external sources we've cached:
