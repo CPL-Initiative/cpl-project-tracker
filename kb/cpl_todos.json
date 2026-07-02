@@ -1,26 +1,20 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-02 · Session 94 (SkySierra) · Sierra answers now RENDER (tables/headings) · the Whitney mark replaces the 🏔️ · Training tab P1 + the GUIDANCE layer are LIVE",
- "_session": 94,
- "_status": "Sierra polish + Training-tab completion day, straight from your three asks. ① FORMATTING: Sierra's answers now render properly on all three chat surfaces — real tables (the college/landing-page grids), section headings, dividers, numbered lists — instead of raw pipes and hash marks. ② BRANDING: the little 🏔️ emoji is retired; the Mt Whitney ridge in a navy roundel (the same hand-traced mark from the Sierra page header) is now the avatar everywhere — the COBI sidebar's Ask Sierra button, both chat surfaces, and the Fact Sheet drawer. ③ P1: the Training tab grew the team-session tools — a 🧪 'Test in Sierra' button on every feedback/gap row (jumps to the chat with the question pre-filled so you can replay it after a fix), date filters, one-click bulk triage, and each feedback row now shows its chat-log telemetry (was this a knowledge gap or a wording problem?). ④ P2 SHIPPED: the 🧭 GUIDANCE layer — type a short rule in the Training tab ('always mention the statewide EMS pathway on CPR questions') and Sierra follows it on her next answer, across every surface INCLUDING the production map.rccd.edu widget, no redeploy needed. Sierra follows the newest 10 active rules; deactivate instead of delete (the list is its own audit trail). Proven end-to-end with a temporary marker rule visible in the live smoke test, then deactivated. The guidance box is empty and waiting for the team's first real rule.",
+ "_as_of": "2026-07-02 · Session 95 · Activities RESTORED · Activity ⇄ Project separation LIVE · Archive fixed · ＋ Add project · AWG Projects section",
+ "_session": 95,
+ "_status": "The Activity/Project mixup day — fixed end-to-end. This morning's 23 mistaken tablings were restored within the hour (5.1 stays tabled, your June call). The two card types are now truly separate things: sub-activities render ONCE (as Activity cards) and can never be tabled/archived/deleted — the Projects grid holds only the real work items (the four 4.1.x sprints + the 5.x initiatives). The Archive option works now (a bug was closing the popup on any inner click — that's also why no reasons ever saved; type away). From your afternoon asks: the two Path-to-2030 graphs moved to CPL Analytics on the Dashboard tab, the 4.1 Sprints card no longer wraps onto its own row, there's a ＋ Add project button (Projects header + the Annual Workplan's new Projects section) that creates a real project with the team phrase, and the Annual Workplan Goals tab now ends with a Projects table listing the work items with live leads. Bonus: a long-standing bug that grew the page by one blank line every rebuild (198 had piled up) is fixed. Everything is live after the next rebuild — hard-refresh if a tab looks stale.",
  "items": [
   {
-   "id": "guidance-first-rule",
+   "id": "activities-projects-confirm",
    "who": "sam",
-   "tab": "sierra-training",
-   "text": "WRITE THE FIRST REAL GUIDANCE RULE: Training tab → 🧭 Guidance → type a short directive (e.g. 'When asked about CPR or First Aid credit, always mention both the local adopters and that any college can set this up'). It reaches Sierra within a minute — on every surface, including the production widget. Only the newest 10 active rules are sent; deactivate rather than delete."
+   "tab": "activities-projects",
+   "text": "NEW LAYOUT CHECK: activities show once (Activity cards), the Projects grid = real work items only (4.1.x sprints + 5.x). Try Table/Archive on a project — Activity cards + their updates are untouched now, and Archive + a typed reason actually save. Two calls for you: re-table 5.8 (Legislative Advocacy) if you meant it this morning, and try ＋ Add project (team phrase works) — it suggests the next 5.x ID and the full card appears after the next rebuild."
   },
   {
-   "id": "training-p1-tryit",
+   "id": "sierra-day2",
    "who": "sam",
    "tab": "sierra-training",
-   "text": "Try the new team-session tools with the crew: 🧪 Test in Sierra (replays a logged question in the chat tab, pre-filled), the date filters (24h/7d/30d), bulk triage ('Mark all N filtered → addressed'), and the chat-log telemetry inside each feedback row. Tell me what's still missing."
-  },
-  {
-   "id": "formatting-spotcheck",
-   "who": "sam",
-   "tab": "chatbot",
-   "text": "Re-ask Sierra a table-heavy question (your POST/AJ one is perfect) — the college table, headings, and dividers should now render cleanly instead of raw | pipes | and ## marks. Same on the standalone Sierra page and the Fact Sheet drawer. 👎 anything that still looks off."
+   "text": "Sierra day-2 (carryover): write the FIRST REAL GUIDANCE RULE in the 🧭 pane (reaches every surface incl. the production widget within a minute; deactivate, never delete); try the team-session tools (🧪 Test in Sierra, date filters, bulk triage, per-row telemetry); and re-ask a table-heavy question — answers should render real tables/headings now. 👎 anything off."
   },
   {
    "id": "malone-guardrails",
@@ -59,10 +53,16 @@
    "text": "Carryover: review and merge public Knowledge Base PR #15 (Veterans plans) when you have a moment — waiting on your sign-off."
   },
   {
+   "id": "add-project-watch",
+   "who": "fable",
+   "tab": "activities-projects",
+   "text": "Watch Sam's first ＋ Add-project uses and fold friction fast. Known edge on the shelf: a ladder-bearing 5.x (only 5.1, currently tabled) would show both an Activity card and a project card if restored — fix by moving its ladder or re-homing the id if he objects."
+  },
+  {
    "id": "sierra-training-p3",
    "who": "fable",
    "tab": "sierra-training",
-   "text": "Phase 3 once the gap miner shows which artifacts are missing: ingest documents into Sierra's knowledge (upload → chunk → embed with the SAME gte-small model → cpl_documents/cpl_document_sections), with a test-it box and per-document retire. The heaviest phase — build it against real gaps, not speculation."
+   "text": "Phase 3 once the gap miner shows which artifacts are missing: ingest documents into Sierra's knowledge (upload → chunk → embed with the SAME gte-small model → cpl_documents/cpl_document_sections), with a test-it box and per-document retire. Build against real gaps, not speculation."
   },
   {
    "id": "chatbox-exhibits-refresh",

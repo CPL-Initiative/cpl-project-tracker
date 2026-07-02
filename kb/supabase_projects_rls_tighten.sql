@@ -56,6 +56,28 @@ create policy "Allow public read" on public.projects
 
 commit;
 
+-- ============================================================================
+-- 2026-07-02 (Session 95) — team-phrase widening  ✅ APPLIED LIVE
+-- (migration `projects_write_team_phrase_widen`, via the Supabase MCP)
+-- ============================================================================
+-- The new "Add project" flow (project_add.js) needs team-phrase users to be
+-- able to INSERT/UPDATE projects, matching the shared boundary already used by
+-- item_raci / team_members / item_updates / liftoff_state / project_lifecycle
+-- (Session 83). DELETE stays reviewer-only (project removal is soft, via the
+-- project_lifecycle overlay). Public SELECT unchanged. The anon key alone
+-- still cannot write.
+
+drop policy if exists projects_insert on public.projects;
+create policy projects_insert on public.projects
+  for insert to public
+  with check (is_allowed_reviewer() or team_pass_ok());
+
+drop policy if exists projects_update on public.projects;
+create policy projects_update on public.projects
+  for update to public
+  using (is_allowed_reviewer() or team_pass_ok())
+  with check (is_allowed_reviewer() or team_pass_ok());
+
 -- Verify (optional):
 --   select policyname, cmd, qual, with_check from pg_policies
 --   where schemaname='public' and tablename='projects' order by cmd;

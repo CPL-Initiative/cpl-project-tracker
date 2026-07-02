@@ -42,7 +42,10 @@ The whole ecosystem, end-to-end:
    (one card per credential, the CCC standard on top), and a seeker-framed
    **Student view** (pick your college → where you can get credit + the likely
    local course to ask about); plus
-   Workplan Activities & Projects, Annual Goals, Budget, Vision 2030, a
+   Workplan Activities & Projects (Activity/sub-activity KPI cards + a
+   work-item Projects grid — sub-activities render once, as Activity cards,
+   and are immune to project Table/Archive; a ＋ Add-project flow creates new
+   work items), Annual Goals (+ a Projects section listing the work items), Budget, Vision 2030, a
    per-college **Common Course Reference** curation tab (expand a course → an
    **inverse view** of the EACR: the aligned exhibits/credentials that articulate
    to it), a **Common Subjects Reference** tab (faculty-facing per-discipline

@@ -1650,6 +1650,11 @@ def build_activity_kpis(projects, activities=None):
         composite_41 = {
             "id": "4.1",
             "name": "Sprints (Veteran, Apprenticeship, Adoption, 29 Palms)",
+            # Inherit the REAL 4.1 row's goal — without it the composite fell
+            # into the goal-less "Other" bucket, which renders as its own grid
+            # and pushed the Sprints card onto a phantom new row (Sam,
+            # 2026-07-02: "1 activity is pushing to a new row").
+            "goal": (proj_map.get("4.1") or {}).get("goal", ""),
             "kpi_metric": str(len(sprint_projects)),
             "kpi_unit": "active sprints",
             "kpi_goal_2526": "",
@@ -3113,6 +3118,87 @@ def render_tabled_archived_section(inactive_projects, lifecycle):
         + cards +
         '            </div>\n'
         '        </details>\n'
+    )
+
+
+def render_awg_projects_section_html(work_projects):
+    """The "Projects" section at the bottom of the Annual Workplan Goals tab
+    (Session 95, Sam 2026-07-02: "have those Projects populate on a Project
+    section of the Annual Workplan Goals tab"). Lists the real WORK-ITEM
+    projects — everything that is NOT an official 1.x–4.x sub-activity (those
+    live in the ladder table above) — i.e. the 4.1.x sprint children + the
+    5.x initiatives. `work_projects` arrives pre-filtered (no D.* rows, no
+    tabled/archived, no activity-layer ids).
+
+    Compact single table (fits desktop widths — Activity shown as a short
+    "Activity N" chip with the full text in title). The Lead cell carries the
+    card_raci.js live hook (.cpl-raci-lead[data-raci-key]) so it resolves to
+    the RACI Responsible at runtime, with the creation-era lead as fallback.
+    The header carries #awgProjectsAddSlot — project_add.js mounts its
+    "+ Add project" button there. Returns "" when there are no work projects.
+    """
+    if not work_projects:
+        return ""
+
+    def _idkey(p):
+        key = []
+        for seg in str(p.get("id", "")).split("."):
+            m = re.match(r'(\d+)(.*)', seg)
+            key.append((int(m.group(1)), m.group(2)) if m else (0, seg))
+        return key
+
+    th = ('style="text-align:left;padding:0.5rem 0.6rem;font-size:0.68rem;'
+          'text-transform:uppercase;letter-spacing:0.04em;color:#888;'
+          'border-bottom:2px solid #e8e8e8;white-space:nowrap;"')
+    td = 'padding:0.5rem 0.6rem;border-bottom:1px solid #f0f0f0;vertical-align:middle;'
+    body = ""
+    for p in sorted(work_projects, key=_idkey):
+        pid = html_escape(str(p.get("id", "")), quote=True)
+        act_full = str(p.get("activity", "") or "")
+        act_num = _activity_num_from_workplan(act_full)
+        act_disp = f"Activity {act_num}" if act_num else (act_full or "—")
+        status = str(p.get("status", "") or "")
+        status_class = html_escape(status.lower().replace(" ", "-"), quote=True)
+        pct = p.get("pct", 0) or 0
+        timeline = " – ".join(x for x in (p.get("start", ""), p.get("end", "")) if x)
+        lead = html_escape(str(p.get("lead", "") or ""))
+        body += (
+            f'                <tr data-awgp-pid="{pid}">\n'
+            f'                    <td style="{td}white-space:nowrap;color:#888;font-weight:600;">{pid}</td>\n'
+            f'                    <td style="{td}font-weight:600;color:var(--navy-primary);">{html_escape(str(p.get("name", "")))}</td>\n'
+            f'                    <td style="{td}white-space:nowrap;font-size:0.78rem;color:#555;" title="{html_escape(act_full, quote=True)}">{html_escape(act_disp)}</td>\n'
+            f'                    <td style="{td}white-space:nowrap;font-size:0.78rem;color:#555;">{html_escape(str(p.get("goal", "") or "")) or "&mdash;"}</td>\n'
+            f'                    <td style="{td}font-size:0.78rem;"><span class="cpl-raci-lead" data-raci-key="project:{pid}" title="Responsible (from the Team &amp; RACI matrix)">{lead or "&mdash;"}</span></td>\n'
+            f'                    <td style="{td}white-space:nowrap;">'
+            f'<span class="status-badge status-{status_class}" style="font-size:0.62rem;padding:0.1rem 0.4rem;">{html_escape(status) or "&mdash;"}</span></td>\n'
+            f'                    <td style="{td}min-width:110px;"><div style="display:flex;align-items:center;gap:0.4rem;">'
+            f'<div style="flex:1;height:6px;background:#e8e8e8;border-radius:3px;overflow:hidden;">'
+            f'<div style="height:100%;width:{pct}%;background:var(--green-progress);border-radius:3px;"></div></div>'
+            f'<span style="font-size:0.72rem;color:#555;white-space:nowrap;">{pct}%</span></div></td>\n'
+            f'                    <td style="{td}white-space:nowrap;font-size:0.75rem;color:#666;">{html_escape(timeline) or "&mdash;"}</td>\n'
+            f'                </tr>\n'
+        )
+
+    return (
+        '<div class="workplan-goals-section" id="awgProjectsSection" style="margin-top:2rem;">\n'
+        '            <h2 style="margin-bottom:0.25rem;">Projects '
+        f'<span style="font-size:0.9rem;color:#888;">({len(work_projects)})</span>'
+        '<span id="awgProjectsAddSlot"></span></h2>\n'
+        '            <p style="color:#888;font-size:0.78rem;margin:0 0 1rem 0;">'
+        'Work-item projects (sprints, demonstrations, initiatives) that contribute to the '
+        'sub-activities above. Table/Archive lives on the Activities &amp; Projects tab; '
+        'tabled and archived projects are excluded here.</p>\n'
+        '            <div style="overflow-x:auto;">\n'
+        '            <table style="width:100%;border-collapse:collapse;background:var(--white,#fff);'
+        'border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.08);">\n'
+        '                <thead><tr>'
+        f'<th {th}>ID</th><th {th}>Project</th><th {th}>Activity</th><th {th}>CPL Goal</th>'
+        f'<th {th}>Lead</th><th {th}>Status</th><th {th}>Progress</th><th {th}>Timeline</th>'
+        '</tr></thead>\n'
+        '                <tbody>\n' + body + '                </tbody>\n'
+        '            </table>\n'
+        '            </div>\n'
+        '        </div>\n'
     )
 
 
@@ -9004,12 +9090,18 @@ def export_unified_courses():
     print(f"  Unified Courses: wrote exports/unified_courses.xlsx ({len(xrows)} rows)")
 
 
-def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
+def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None,
+                                 extra_top_html=""):
     """
     Render exhibit analysis tables as scrollable HTML cards inside a
     collapsible "CPL Analytics" section that mirrors the KPI Metrics header.
     Per-table xlsx exports are written to xlsx_export_dir (relative to the
     dashboard) so the in-card Export buttons link to a real file.
+
+    extra_top_html (Session 95, Sam 2026-07-02): optional block emitted at the
+    top of the analytics body, before the cards grid — used for the
+    "CPL Workplan Progress — Path to 2030" trajectory charts (moved here from
+    the Workplan Activity Metrics section on the Activities & Projects tab).
     """
     if not tables:
         return ""
@@ -9361,7 +9453,8 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
         '        <span class="kpi-toggle-arrow">&#9650;</span>\n'
         '    </div>\n'
         '    <div class="cpl-analytics-body" id="exhibitAnalysisSection">\n'
-        '        <div class="exhibit-cards-grid">\n'
+        + (extra_top_html or '')
+        + '        <div class="exhibit-cards-grid">\n'
         f'            {collab_card}\n'
         f'            {cpl_card}\n'
         f'            {mol_card}\n'
@@ -11581,6 +11674,25 @@ def main():
             # exhibit_tables was built earlier during College Activity rendering.
             # Strip any pre-existing copy first so repeat runs don't accumulate.
             import re as _re
+            # The "CPL Workplan Progress — Path to 2030" trajectory charts render
+            # at the TOP of the CPL Analytics body (moved from the Workplan
+            # Activity Metrics section — Sam, 2026-07-02 Session 95: "move the
+            # 2 graph charts to the CPL Analysis tab"). Built here because the
+            # analytics injection below consumes them.
+            _current_students = kpis.get("cumulative_students", {}).get("value", "43,321")
+            _bd_list = kpis.get("cumulative_students", {}).get("breakdowns", [])
+            _sub_pops = {}
+            for _bd in _bd_list:
+                _lbl = _bd.get("label", "").lower()
+                if "military" in _lbl:
+                    _sub_pops["military"] = _bd.get("value", "")
+                elif "workforce" in _lbl or "other" in _lbl:
+                    _sub_pops["workforce"] = _bd.get("value", "")
+                elif "apprentice" in _lbl:
+                    _sub_pops["apprentice"] = _bd.get("value", "")
+            workplan_charts_html = render_workplan_charts_html(
+                _current_students, _sub_pops, workplan_goals, config_overrides,
+            )
             html = _re.sub(
                 r'<div style="text-align:center;"><button class="exhibit-toggle-btn".*?</button></div>\s*',
                 '', html, flags=_re.DOTALL,
@@ -11598,13 +11710,15 @@ def main():
             if exhibit_tables:
                 exhibit_html = render_exhibit_analysis_html(
                     exhibit_tables, kpi_params=kpi_params, xlsx_export_dir="exports",
+                    extra_top_html=workplan_charts_html,
                 )
                 # Insert BEFORE the sentinel so Analytics stays in the Dashboard
                 # tab, after KPI Metrics and before the teaser cards.
                 outer_pos = html.find('<!-- ═══ Dashboard Sections End ═══ -->')
                 if outer_pos != -1:
                     html = html[:outer_pos] + exhibit_html + '\n    ' + html[outer_pos:]
-                    print(f"  Injected CPL Analytics section ({len(exhibit_tables['by_college'])} college cards, "
+                    print(f"  Injected CPL Analytics section (+ Workplan Progress charts at top; "
+                          f"{len(exhibit_tables['by_college'])} college cards, "
                           f"{len(exhibit_tables['top_exhibits'])} top exhibits, "
                           f"{len(exhibit_tables.get('articulations_by_course', []))} unified-course articulation rows, "
                           f"7 xlsx exports written to exports/)")
@@ -11693,24 +11807,11 @@ def main():
                 '', html, flags=_re.DOTALL,
             )
             act_html = render_activity_kpis_html(activity_kpis, annual_goals, update_log, attachments=attachments)
-            # The "CPL Workplan Progress — Path to 2030" trend chart logically
-            # belongs to this section, so we render it inside the same
-            # collapsible body. It used to sit at the top of Projects Grid,
-            # which meant it kept showing when Workplan Activity collapsed.
-            _current_students = kpis.get("cumulative_students", {}).get("value", "43,321")
-            _bd_list = kpis.get("cumulative_students", {}).get("breakdowns", [])
-            _sub_pops = {}
-            for _bd in _bd_list:
-                _lbl = _bd.get("label", "").lower()
-                if "military" in _lbl:
-                    _sub_pops["military"] = _bd.get("value", "")
-                elif "workforce" in _lbl or "other" in _lbl:
-                    _sub_pops["workforce"] = _bd.get("value", "")
-                elif "apprentice" in _lbl:
-                    _sub_pops["apprentice"] = _bd.get("value", "")
-            workplan_charts_html = render_workplan_charts_html(
-                _current_students, _sub_pops, workplan_goals, config_overrides,
-            )
+            # The "CPL Workplan Progress — Path to 2030" trajectory charts no
+            # longer render here — they MOVED to the top of the CPL Analytics
+            # body on the Dashboard tab (Sam, 2026-07-02 Session 95; built +
+            # injected at the CPL Analytics block above). The bounded strip
+            # regex over this section removes the previously-baked copy.
             # Activity Metrics is now a subsection inside the outer
             # "Workplan Activities & Projects" wrapper (defined in the static
             # template), so it no longer has its own kpi-section-wrapper /
@@ -11722,7 +11823,6 @@ def main():
                 '            <div class="activity-kpi-section" id="activityKpiSection">\n'
                 + act_html +
                 '            </div>\n'
-                + workplan_charts_html +
                 '        </div>\n\n        '
             )
             filter_marker = '<!-- Filter Bar -->'
@@ -11768,6 +11868,14 @@ def main():
             proj_grid_end = html.find('<!-- End Projects Grid -->')
             if proj_grid_end != -1:
                 proj_grid_end_consumes = proj_grid_end + len('<!-- End Projects Grid -->')
+                # Swallow the trailing blank-line run after the old End marker.
+                # new_proj_section ends with its own '\n', so leaving the old
+                # newline in the remainder accreted +1 blank line per run (198
+                # had piled up since the tab move). Consuming the whole run and
+                # re-adding one newline is byte-stable across repeat runs.
+                _ws = re.match(r'(?:[ \t]*\r?\n)+', html[proj_grid_end_consumes:])
+                if _ws:
+                    proj_grid_end_consumes += _ws.end()
             else:
                 proj_grid_end = html.find('<!-- Budget Section -->')
                 proj_grid_end_consumes = proj_grid_end
@@ -11804,9 +11912,9 @@ def main():
                 tabled_archived_html = render_tabled_archived_section(
                     inactive_projects, project_lifecycle
                 )
-                # Workplan Progress chart now lives inside the Workplan Activity
-                # Metrics section (so it collapses with it). The Projects Grid
-                # is just the project cards now.
+                # The Workplan Progress charts moved to the CPL Analytics body
+                # on the Dashboard tab (2026-07-02). The Projects Grid is just
+                # the project cards now.
                 new_proj_section = (
                     '<!-- Projects Grid -->\n'
                     '        <h2 style="margin-bottom:1.5rem;">Projects <span id="projectCount" style="font-size:0.9rem;color:#888;">(' + str(project_count) + ')</span></h2>\n'
@@ -11819,7 +11927,6 @@ def main():
                 html = html[:proj_grid_start] + new_proj_section + html[proj_grid_end_consumes:]
                 print(f"  Rendered static project cards ({project_count} projects, grouped by Goal; "
                       f"{len(activity_layer_ids)} sub-activities render as Activity cards only)")
-                print("  Rendered Workplan Progress Chart inside Workplan Activity Metrics (3 trend lines)")
 
             # ── Teaser cards on the Dashboard tab linking to the other tabs ──
             # Replace the static placeholder; idempotent because the placeholder
@@ -11983,6 +12090,36 @@ def main():
                         wrapped = '<!-- Annual Workplan Goals -->\n' + goals_table_html + '        <!-- End Annual Workplan Goals -->\n\n        '
                         html = html[:v2030_insert] + wrapped + html[v2030_insert:]
                         print(f"  Rendered Annual Workplan Goals table ({len(annual_goals)} rows, first-run insert)")
+
+            # ── AWG "Projects" section (Session 95, Sam 2026-07-02) ──
+            # The real work-item projects (non-activity-layer, active) listed at
+            # the bottom of the Annual Workplan Goals tab — the official
+            # sub-activities stay in the ladder table above. Own paired markers
+            # placed AFTER the End-AWG marker (everything BETWEEN the AWG
+            # markers is overwritten by the annual-goals injection every run),
+            # replaced in place for idempotency.
+            awg_projects_html = render_awg_projects_section_html([
+                p for p in projects
+                if p["id"] not in activity_layer_ids
+                and not p["id"].startswith("D.")
+                and p["id"] not in inactive_pids
+            ])
+            _AWGP_S = '<!-- AWG Projects Section -->'
+            _AWGP_E = '<!-- End AWG Projects Section -->'
+            if awg_projects_html:
+                wrapped_awgp = _AWGP_S + '\n        ' + awg_projects_html + '        ' + _AWGP_E
+                aps = html.find(_AWGP_S)
+                ape = html.find(_AWGP_E)
+                _n_awgp = awg_projects_html.count('data-awgp-pid=')
+                if aps != -1 and ape != -1:
+                    html = html[:aps] + wrapped_awgp + html[ape + len(_AWGP_E):]
+                    print(f"  Rendered AWG Projects section ({_n_awgp} work-item projects, replaced in place)")
+                else:
+                    _awgp_anchor = html.find('<!-- End Annual Workplan Goals -->')
+                    if _awgp_anchor != -1:
+                        _ins = _awgp_anchor + len('<!-- End Annual Workplan Goals -->')
+                        html = html[:_ins] + '\n\n        ' + wrapped_awgp + html[_ins:]
+                        print(f"  Rendered AWG Projects section ({_n_awgp} work-item projects, first-run insert)")
 
             # ── Rebuild the Vision 2030 section with updated goal data ──
             # End boundary is <!-- End Vision 2030 Section --> (added Phase D)

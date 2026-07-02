@@ -163,7 +163,7 @@ one (`5.8`) was a real project caught in the sweep. All 23 rows landed as
 `state='tabled'`, `reason=null`, `updated_by='(team)'` — which exposed a second
 bug (below).
 
-### The fixes (this session's PR)
+### The fixes (PR #652, squash-merged 2026-07-02; site rebuilt via post-merge dispatch)
 
 1. **Restore** — the 23 mistaken Supabase rows were DELETED (receipt: ids above,
    all `updated_at` 2026-07-02 15:26–15:34 UTC). `5.1` (tabled 2026-06-29 with a
@@ -215,3 +215,55 @@ A ladder-bearing `5.x` (today: only `5.1`) renders BOTH an Activity card and a
 grid card when active — the one residual redundancy, invisible today because
 5.1 is tabled. If Sam restores 5.1 and dislikes the double card, either move
 its ladder out of `workplan_goals` or re-home the id under 1–4.
+
+---
+
+## 2026-07-02 (Session 95, continued) — Sam's poke-around round: charts, phantom row, add-project, AWG Projects section
+
+Live feedback while Sam poked the rebuilt tabs, all landed the same afternoon
+(second PR of the session):
+
+1. **Path-to-2030 charts → CPL Analytics (Dashboard tab).** Sam: "move the 2
+   graph charts to the CPL Analysis tab." `render_exhibit_analysis_html` gained
+   `extra_top_html`; the Goal/Stretch trajectory charts now render at the top of
+   the CPL Analytics body and left the Workplan Activity Metrics section (its
+   bounded strip regex removes the previously-baked copy). Note: the charts now
+   ride the analytics injection, which is skipped when no `CustomReport_*.json`
+   exists (sandbox runs) — on the runner the data is always fetched. Verified
+   via a stub-tables unit call (placement body → charts → cards-grid).
+2. **The 4.1 Sprints phantom row.** The synthetic 4.1 composite in
+   `build_activity_kpis` never inherited the real 4.1 row's `goal`, so it fell
+   into the goal-less "Other" bucket — which renders as its OWN
+   `.activity-kpi-grid`, visually a half-empty row + a lone card below. Fix:
+   composite inherits the real row's goal (Goal 1).
+3. **Add-project flow (`project_add.js`, NEW static asset).** "＋ Add project"
+   next to the Projects (N) header + in the AWG Projects section header. Modal
+   INSERTs `public.projects` (ID auto-suggested = next free `5.N` from the LIVE
+   id list so tabled rows can't collide; Name/Description/Activity/CPL
+   Goal/Lead/Status/Timeline). Auth = reviewer magic-link OR team phrase —
+   `projects` INSERT/UPDATE policies widened to `is_allowed_reviewer() OR
+   team_pass_ok()` (migration `projects_write_team_phrase_widen`, applied live;
+   DELETE stays reviewer-only; schema of record
+   `kb/supabase_projects_rls_tighten.sql`). Escaped optimistic card; modal
+   closes on backdrop only (the lesson above, applied from birth). Tests:
+   `tests/project_add.test.js` (24).
+4. **AWG Projects section.** `render_awg_projects_section_html` + an injection
+   with its own paired markers placed AFTER `<!-- End Annual Workplan Goals -->`
+   (everything BETWEEN the AWG markers is overwritten by the annual-goals
+   injection every run — the scout's key finding). Columns: ID · Project ·
+   Activity chip (full text in title) · CPL Goal · Lead (live `card_raci.js`
+   hook → RACI Responsible) · Status · Progress · Timeline. 11 work-item rows
+   (4.1.x + 5.2–5.8); tabled excluded.
+5. **Bonus idempotency fix.** The Projects-Grid replacement accreted **+1 blank
+   line per regen** (198 had piled up inside the pane since the tab move — the
+   replace emitted its own trailing newline while leaving the old one in the
+   remainder). The replace now swallows the trailing blank-line run; a double
+   regen is **byte-identical modulo the two timestamp lines** — the first time
+   this file has been able to claim that.
+
+### Verification
+
+Suite **125** test files green (project_add 24 new). Double-run regen A/B:
+byte-idempotent modulo timestamps; AWG Projects = 11 rows, single copy,
+placed after End-AWG; grid still 11 projects / 22 sub-activities as Activity
+cards; 4.1 inside the Goal 1 sub-grid.
