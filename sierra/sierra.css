@@ -82,7 +82,8 @@ body {
 }
 .s-msg { display: flex; gap: 10px; max-width: 100%; }
 .s-user { justify-content: flex-end; }
-.s-avatar { flex: 0 0 auto; font-size: 1.3rem; line-height: 1.6; }
+.s-avatar { flex: 0 0 auto; width: 30px; height: 30px; margin-top: 2px; }
+.s-avatar svg { width: 100%; height: 100%; display: block; }
 .s-bubble {
   padding: 10px 14px; border-radius: 14px; font-size: .95rem; line-height: 1.55;
   max-width: 88%; overflow-wrap: anywhere;
@@ -90,9 +91,18 @@ body {
   border: 1px solid var(--sierra-border); box-shadow: 0 1px 2px rgba(11, 61, 97, .05);
 }
 .s-bubble p { margin: 0 0 9px; } .s-bubble p:last-child { margin-bottom: 0; }
-.s-bubble ul { margin: 5px 0; padding-left: 20px; } .s-bubble li { margin: 2px 0; }
+.s-bubble ul, .s-bubble ol { margin: 5px 0 9px; padding-left: 21px; } .s-bubble li { margin: 2px 0; }
 .s-bubble a { color: var(--sierra-cobalt); }
 .s-bubble code { background: var(--sierra-subtle); padding: 1px 5px; border-radius: 5px; font-size: .9em; }
+/* Markdown upgrades (2026-07-02): headings, rules, and tables in answers */
+.s-bubble h3, .s-bubble h4, .s-bubble h5 { margin: 13px 0 5px; line-height: 1.3; color: var(--sierra-navy); }
+.s-bubble h3 { font-size: 1.04rem; } .s-bubble h4 { font-size: .96rem; } .s-bubble h5 { font-size: .9rem; }
+.s-bubble h3:first-child, .s-bubble h4:first-child, .s-bubble h5:first-child { margin-top: 2px; }
+.s-bubble hr { border: none; border-top: 1px solid var(--sierra-border); margin: 11px 0; }
+.s-bubble table { border-collapse: collapse; margin: 8px 0 10px; font-size: .92em; display: block; max-width: 100%; overflow-x: auto; }
+.s-bubble th, .s-bubble td { border: 1px solid var(--sierra-border); padding: 4px 10px; text-align: left; vertical-align: top; }
+.s-bubble th { background: var(--sierra-subtle); color: var(--sierra-navy); font-weight: 700; }
+.s-bubble tbody tr:nth-child(even) { background: var(--sierra-bg); }
 .s-user .s-bubble { background: var(--sierra-navy); color: #fff; border-color: var(--sierra-navy); }
 .s-user .s-bubble a { color: #cfe3ff; }
 .s-typing { letter-spacing: 3px; color: var(--sierra-muted); animation: s-pulse 1.1s infinite; }

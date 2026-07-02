@@ -36,7 +36,24 @@
   var CHAT_URL = SUPABASE_URL + '/functions/v1/cpl-chat';
 
   var NAME = 'Sierra';
-  var AVATAR = '🏔️';                                   // Sierra Nevada
+  // The Sierra mark — Mt Whitney's east-face ridge (sierra/whitney-mark.svg)
+  // in a navy roundel. A STATIC, trusted string (never user input) inlined so
+  // the avatar needs no relative-path asset. Mirrors sierra/sierra.js.
+  var SIERRA_MARK =
+    '<svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">' +
+    '<circle cx="20" cy="20" r="19" style="fill:var(--seal-blue,#0b3d61)"/>' +
+    '<path d="M2 30 L12 25 21 17 29 9 35 4 40 1 43 6 46 4 49 9 52 7 55 11 59 15 63 19 66 22 70 18 73 20 76 15 79 13 82 16 85 20 90 24 97 27 105 29 118 30"' +
+    ' transform="translate(4 15.4) scale(0.2667)" fill="none" stroke="#fff" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>' +
+    '<path d="M40 5.4 L37.4 10.6 38.9 9.6 40 11 41.1 9.5 42.6 10.7 40 5.4 Z"' +
+    ' transform="translate(-7.33 13.83) scale(0.55)" fill="#fff"/>' +
+    '</svg>';
+  function markEl(cls) {
+    var n = document.createElement(cls === 'fs-sra-head-avatar' ? 'span' : 'div');
+    n.className = cls;
+    n.setAttribute('aria-hidden', 'true');
+    n.innerHTML = SIERRA_MARK;
+    return n;
+  }
   var SUGGESTED = [
     'What is Credit for Prior Learning?',
     'How many students has CPL served statewide?',
@@ -89,23 +106,80 @@
   function inlineMd(s) {
     return s
       .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/(^|[^*])\*([^*\s][^*]*)\*(?!\*)/g, '$1<em>$2</em>')
       .replace(/`([^`]+)`/g, '<code>$1</code>')
       .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
       .replace(/(^|[\s(])((https?:\/\/)[^\s)]+)(?=[\s).,;!?]|$)/g, '$1<a href="$2" target="_blank" rel="noopener noreferrer">$2</a>');
   }
+  // Block pass upgraded 2026-07-02 (SkySierra): ##/### headings, | pipe |
+  // tables |, --- rules, and 1. numbered lists used to show as raw text.
+  // Escape-first is unchanged; re-runs per streamed delta so a half-arrived
+  // table degrades to a paragraph until its separator row lands. Mirrors
+  // sierra/sierra.js + cpl_chat.js (each surface is self-contained — keep in sync).
+  var MD_TABLE_SEP = /^\s*\|?\s*:?-{2,}[-\s:|]*$/;   // | --- | :--- | …
+  function mdCells(row) {
+    return row.replace(/^\s*\|/, '').replace(/\|\s*$/, '').split('|')
+      .map(function (c) { return c.trim(); });
+  }
   function renderMarkdown(text) {
-    var safe = escapeHtml(text);
-    var blocks = safe.split(/\n{2,}/), html = '';
-    blocks.forEach(function (block) {
-      var lines = block.split(/\n/);
-      var isList = lines.length && lines.every(function (l) { return /^\s*[-*]\s+/.test(l) || l.trim() === ''; });
-      if (isList) {
-        html += '<ul>' + lines.filter(function (l) { return l.trim(); })
-          .map(function (l) { return '<li>' + inlineMd(l.replace(/^\s*[-*]\s+/, '')) + '</li>'; }).join('') + '</ul>';
-      } else {
-        html += '<p>' + inlineMd(block.replace(/\n/g, '<br>')) + '</p>';
+    var lines = escapeHtml(text).split(/\n/);
+    var html = '', para = [], list = null;
+    function flushPara() {
+      if (para.length) { html += '<p>' + para.map(inlineMd).join('<br>') + '</p>'; para = []; }
+    }
+    function flushList() {
+      if (list) {
+        html += '<' + list.t + '>' + list.items.map(function (it) {
+          return '<li>' + inlineMd(it) + '</li>';
+        }).join('') + '</' + list.t + '>';
+        list = null;
       }
-    });
+    }
+    for (var i = 0; i < lines.length; i++) {
+      var t = lines[i].trim();
+      if (!t) { flushPara(); flushList(); continue; }
+      if (/^(?:-{3,}|_{3,}|\*{3,})$/.test(t)) { flushPara(); flushList(); html += '<hr>'; continue; }
+      var hm = t.match(/^(#{1,4})\s+(.+)$/);
+      if (hm) {
+        flushPara(); flushList();
+        var lvl = hm[1].length <= 2 ? 3 : hm[1].length + 1;
+        html += '<h' + lvl + '>' + inlineMd(hm[2]) + '</h' + lvl + '>';
+        continue;
+      }
+      if (t.indexOf('|') > -1 && i + 1 < lines.length
+          && lines[i + 1].indexOf('|') > -1 && MD_TABLE_SEP.test(lines[i + 1])) {
+        flushPara(); flushList();
+        var head = mdCells(t), body = [];
+        i += 1; // consume the separator row
+        while (i + 1 < lines.length && lines[i + 1].trim().indexOf('|') > -1
+               && !MD_TABLE_SEP.test(lines[i + 1])) {
+          i += 1;
+          body.push(mdCells(lines[i].trim()));
+        }
+        html += '<table><thead><tr>' + head.map(function (c) {
+          return '<th>' + inlineMd(c) + '</th>';
+        }).join('') + '</tr></thead>';
+        if (body.length) {
+          html += '<tbody>' + body.map(function (r) {
+            return '<tr>' + r.map(function (c) { return '<td>' + inlineMd(c) + '</td>'; }).join('') + '</tr>';
+          }).join('') + '</tbody>';
+        }
+        html += '</table>';
+        continue;
+      }
+      var ul = t.match(/^[-*•]\s+(.+)$/);
+      var ol = ul ? null : t.match(/^\d{1,3}[.)]\s+(.+)$/);
+      if (ul || ol) {
+        flushPara();
+        var kind = ul ? 'ul' : 'ol';
+        if (!list || list.t !== kind) { flushList(); list = { t: kind, items: [] }; }
+        list.items.push(ul ? ul[1] : ol[1]);
+        continue;
+      }
+      flushList();
+      para.push(t);
+    }
+    flushPara(); flushList();
     return html;
   }
 
@@ -118,7 +192,7 @@
   function addAssistantMsg() {
     var bubble = el('div', { className: 'fs-sra-bubble' });
     logEl.appendChild(el('div', { className: 'fs-sra-msg fs-sra-bot' },
-      [el('div', { className: 'fs-sra-avatar', 'aria-hidden': 'true' }, AVATAR), bubble]));
+      [markEl('fs-sra-avatar'), bubble]));
     scrollDown();
     return bubble;
   }
@@ -222,7 +296,7 @@
 
     var closeBtn = el('button', { type: 'button', className: 'fs-sra-close', title: 'Close', 'aria-label': 'Close ' + NAME, onclick: close }, '✕');
     var head = el('div', { className: 'fs-sra-head' }, [
-      el('span', { className: 'fs-sra-head-avatar', 'aria-hidden': 'true' }, AVATAR),
+      markEl('fs-sra-head-avatar'),
       el('span', { className: 'fs-sra-head-name' }, [
         el('strong', null, NAME),
         el('span', { className: 'fs-sra-head-role' }, 'CPL Assistant'),
@@ -233,7 +307,7 @@
     logEl = el('div', { className: 'fs-sra-log', id: 'fs-sra-log', 'aria-live': 'polite' });
     // Greeting + intro as the first assistant bubble.
     logEl.appendChild(el('div', { className: 'fs-sra-msg fs-sra-bot' }, [
-      el('div', { className: 'fs-sra-avatar', 'aria-hidden': 'true' }, AVATAR),
+      markEl('fs-sra-avatar'),
       el('div', { className: 'fs-sra-bubble' }, [
         el('p', null, 'Hi, I’m ' + NAME + ' — the California CPL assistant. Ask me about Credit for Prior Learning: what a college offers, where to find credit for a license or certification, or statewide CPL numbers.'),
         el('p', { className: 'fs-sra-beta' }, '🧪 Beta. Please don’t enter personal information — questions are logged anonymously to improve answers.'),
@@ -313,7 +387,8 @@
       '.fs-sra-drawer.on{transform:translateX(0);}' +
       '.fs-sra-head{display:flex;align-items:center;gap:10px;padding:13px 16px;border-bottom:1px solid var(--border);' +
         'background:linear-gradient(180deg,var(--surface),var(--surface-subtle));}' +
-      '.fs-sra-head-avatar{font-size:1.5rem;line-height:1;}' +
+      '.fs-sra-head-avatar{flex:0 0 auto;width:28px;height:28px;}' +
+      '.fs-sra-head-avatar svg,.fs-sra-avatar svg{width:100%;height:100%;display:block;}' +
       '.fs-sra-head-name{display:flex;flex-direction:column;line-height:1.15;margin-right:auto;}' +
       '.fs-sra-head-name strong{color:var(--seal-blue);font-size:1.06rem;}' +
       '.fs-sra-head-role{color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;}' +
@@ -323,11 +398,18 @@
       '.fs-sra-log{flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column;gap:12px;}' +
       '.fs-sra-msg{display:flex;gap:9px;max-width:100%;}' +
       '.fs-sra-user{justify-content:flex-end;}' +
-      '.fs-sra-avatar{flex:0 0 auto;font-size:1.2rem;line-height:1.5;}' +
+      '.fs-sra-avatar{flex:0 0 auto;width:26px;height:26px;margin-top:2px;}' +
       '.fs-sra-bubble{padding:9px 13px;border-radius:13px;font-size:.92rem;line-height:1.5;max-width:86%;' +
         'background:var(--surface-subtle);color:var(--ink);border:1px solid var(--border);overflow-wrap:anywhere;}' +
       '.fs-sra-bubble p{margin:0 0 8px;}.fs-sra-bubble p:last-child{margin-bottom:0;}' +
-      '.fs-sra-bubble ul{margin:4px 0;padding-left:18px;}.fs-sra-bubble a{color:var(--cobalt);}' +
+      '.fs-sra-bubble ul,.fs-sra-bubble ol{margin:4px 0 8px;padding-left:19px;}.fs-sra-bubble a{color:var(--cobalt);}' +
+      '.fs-sra-bubble h3,.fs-sra-bubble h4,.fs-sra-bubble h5{margin:12px 0 4px;line-height:1.3;color:var(--seal-blue);}' +
+      '.fs-sra-bubble h3{font-size:1rem;}.fs-sra-bubble h4{font-size:.94rem;}.fs-sra-bubble h5{font-size:.88rem;}' +
+      '.fs-sra-bubble h3:first-child,.fs-sra-bubble h4:first-child,.fs-sra-bubble h5:first-child{margin-top:2px;}' +
+      '.fs-sra-bubble hr{border:none;border-top:1px solid var(--border);margin:10px 0;}' +
+      '.fs-sra-bubble table{border-collapse:collapse;margin:8px 0;font-size:.92em;display:block;max-width:100%;overflow-x:auto;}' +
+      '.fs-sra-bubble th,.fs-sra-bubble td{border:1px solid var(--border);padding:3px 9px;text-align:left;vertical-align:top;}' +
+      '.fs-sra-bubble th{background:var(--surface-muted);color:var(--seal-blue);font-weight:700;}' +
       '.fs-sra-user .fs-sra-bubble{background:var(--seal-blue);color:#fff;border-color:var(--seal-blue);}' +
       '.fs-sra-beta{color:var(--faint);font-size:.8rem;}' +
       '.fs-sra-typing{letter-spacing:2px;color:var(--muted);animation:fs-sra-pulse 1.1s infinite;}' +
@@ -362,7 +444,7 @@
     boot: boot, open: open, close: close, toggle: toggle, build: build,
     ask: ask, parseSse: parseSse, renderMarkdown: renderMarkdown, escapeHtml: escapeHtml,
     sessionId: sessionId, isOpen: function () { return API._open; }, convo: function () { return API._convo; },
-    NAME: NAME, CHAT_URL: CHAT_URL
+    NAME: NAME, CHAT_URL: CHAT_URL, SIERRA_MARK: SIERRA_MARK
   };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);

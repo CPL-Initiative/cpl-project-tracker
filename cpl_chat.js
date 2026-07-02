@@ -74,8 +74,13 @@
   }
 
   // ── Markdown-lite → safe HTML ──
-  // Escape FIRST (so model text can't inject), then apply a tiny subset:
-  // **bold**, `code`, [text](http…) links, "- " bullet lists, blank-line paras.
+  // Escape FIRST (so model text can't inject), then render the subset Sierra
+  // actually writes. Upgraded 2026-07-02 (SkySierra): ##/### headings, | pipe |
+  // tables |, --- rules, and 1. numbered lists used to show as raw text — the
+  // block pass below handles them. Re-runs on every streamed delta, so a
+  // half-arrived table degrades to a paragraph until its separator row lands.
+  // Mirrors sierra/sierra.js + fact-sheet/factsheet_sierra.js (each surface is
+  // deliberately self-contained — keep the three in sync).
   function escapeHtml(s) {
     return String(s)
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -84,6 +89,7 @@
   function inlineMd(s) {
     return s
       .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/(^|[^*])\*([^*\s][^*]*)\*(?!\*)/g, '$1<em>$2</em>')
       .replace(/`([^`]+)`/g, '<code>$1</code>')
       // links: only http(s), target=_blank, escaped text already
       .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
@@ -92,21 +98,74 @@
       .replace(/(^|[\s(])((https?:\/\/)[^\s)]+)(?=[\s).,;!?]|$)/g,
         '$1<a href="$2" target="_blank" rel="noopener noreferrer">$2</a>');
   }
+  var MD_TABLE_SEP = /^\s*\|?\s*:?-{2,}[-\s:|]*$/;   // | --- | :--- | …
+  function mdCells(row) {
+    return row.replace(/^\s*\|/, '').replace(/\|\s*$/, '').split('|')
+      .map(function (c) { return c.trim(); });
+  }
   function renderMarkdown(text) {
-    var safe = escapeHtml(text);
-    var blocks = safe.split(/\n{2,}/);
-    var html = '';
-    blocks.forEach(function (block) {
-      var lines = block.split(/\n/);
-      var isList = lines.length && lines.every(function (l) { return /^\s*[-*]\s+/.test(l) || l.trim() === ''; });
-      if (isList) {
-        html += '<ul>' + lines.filter(function (l) { return l.trim(); })
-          .map(function (l) { return '<li>' + inlineMd(l.replace(/^\s*[-*]\s+/, '')) + '</li>'; })
-          .join('') + '</ul>';
-      } else {
-        html += '<p>' + inlineMd(block.replace(/\n/g, '<br>')) + '</p>';
+    var lines = escapeHtml(text).split(/\n/);
+    var html = '', para = [], list = null;
+    function flushPara() {
+      if (para.length) { html += '<p>' + para.map(inlineMd).join('<br>') + '</p>'; para = []; }
+    }
+    function flushList() {
+      if (list) {
+        html += '<' + list.t + '>' + list.items.map(function (it) {
+          return '<li>' + inlineMd(it) + '</li>';
+        }).join('') + '</' + list.t + '>';
+        list = null;
       }
-    });
+    }
+    for (var i = 0; i < lines.length; i++) {
+      var t = lines[i].trim();
+      if (!t) { flushPara(); flushList(); continue; }
+      // horizontal rule (--- / *** / ___ on its own line)
+      if (/^(?:-{3,}|_{3,}|\*{3,})$/.test(t)) { flushPara(); flushList(); html += '<hr>'; continue; }
+      // headings: # / ## → h3 (bubble-scale), ### → h4, #### → h5
+      var hm = t.match(/^(#{1,4})\s+(.+)$/);
+      if (hm) {
+        flushPara(); flushList();
+        var lvl = hm[1].length <= 2 ? 3 : hm[1].length + 1;
+        html += '<h' + lvl + '>' + inlineMd(hm[2]) + '</h' + lvl + '>';
+        continue;
+      }
+      // table: a | header | row directly above a |---|---| separator row
+      if (t.indexOf('|') > -1 && i + 1 < lines.length
+          && lines[i + 1].indexOf('|') > -1 && MD_TABLE_SEP.test(lines[i + 1])) {
+        flushPara(); flushList();
+        var head = mdCells(t), body = [];
+        i += 1; // consume the separator row
+        while (i + 1 < lines.length && lines[i + 1].trim().indexOf('|') > -1
+               && !MD_TABLE_SEP.test(lines[i + 1])) {
+          i += 1;
+          body.push(mdCells(lines[i].trim()));
+        }
+        html += '<table><thead><tr>' + head.map(function (c) {
+          return '<th>' + inlineMd(c) + '</th>';
+        }).join('') + '</tr></thead>';
+        if (body.length) {
+          html += '<tbody>' + body.map(function (r) {
+            return '<tr>' + r.map(function (c) { return '<td>' + inlineMd(c) + '</td>'; }).join('') + '</tr>';
+          }).join('') + '</tbody>';
+        }
+        html += '</table>';
+        continue;
+      }
+      // bullet + numbered lists (consecutive runs group; type switch splits)
+      var ul = t.match(/^[-*•]\s+(.+)$/);
+      var ol = ul ? null : t.match(/^\d{1,3}[.)]\s+(.+)$/);
+      if (ul || ol) {
+        flushPara();
+        var kind = ul ? 'ul' : 'ol';
+        if (!list || list.t !== kind) { flushList(); list = { t: kind, items: [] }; }
+        list.items.push(ul ? ul[1] : ol[1]);
+        continue;
+      }
+      flushList();
+      para.push(t);
+    }
+    flushPara(); flushList();
     return html;
   }
 
@@ -292,6 +351,19 @@
       '.cplchat-fb-note button { border:none; border-radius:8px; padding:6px 12px; cursor:pointer; background:var(--cobalt, #0047AB); color:#fff; font-size:.8rem; font-weight:600; }',
       '.cplchat-fb-note button:disabled { opacity:.6; cursor:default; }',
       '.cplchat-fb-done { color:var(--text-muted, #5a6478); font-weight:600; }',
+      // Sierra-mark avatar (SVG roundel replaces the emoji glyph)
+      '.cplchat-avatar { background: transparent; }',
+      '.cplchat-avatar svg { width:100%; height:100%; display:block; }',
+      // Markdown upgrades (2026-07-02): headings, rules, ordered lists, tables
+      '.cplchat-bubble h3, .cplchat-bubble h4, .cplchat-bubble h5 { margin:13px 0 5px; line-height:1.3; color:var(--navy-primary, #0b3d61); }',
+      '.cplchat-bubble h3 { font-size:1.04rem; } .cplchat-bubble h4 { font-size:.96rem; } .cplchat-bubble h5 { font-size:.9rem; }',
+      '.cplchat-bubble h3:first-child, .cplchat-bubble h4:first-child, .cplchat-bubble h5:first-child { margin-top:2px; }',
+      '.cplchat-bubble hr { border:none; border-top:1px solid var(--border, #d8dde6); margin:11px 0; }',
+      '.cplchat-bubble ol { margin:5px 0 9px; padding-left:21px; }',
+      '.cplchat-bubble table { border-collapse:collapse; margin:8px 0 10px; font-size:.92em; display:block; max-width:100%; overflow-x:auto; }',
+      '.cplchat-bubble th, .cplchat-bubble td { border:1px solid var(--border, #d8dde6); padding:4px 10px; text-align:left; vertical-align:top; }',
+      '.cplchat-bubble th { background:var(--surface-subtle, #f2f6fb); color:var(--navy-primary, #0b3d61); font-weight:700; }',
+      '.cplchat-bubble tbody tr:nth-child(even) { background:var(--surface-subtle, #f2f6fb); }',
     ].join('\n');
     var st = document.createElement('style');
     st.id = 'cplchat-aud-css';
@@ -308,12 +380,25 @@
     logEl.appendChild(row);
     scrollDown();
   }
+  // The Sierra mark — Mt Whitney's east-face ridge (sierra/whitney-mark.svg)
+  // in a navy roundel. A STATIC, trusted string (never user input) inlined so
+  // the avatar needs no relative-path asset. Mirrors sierra/sierra.js.
+  var SIERRA_MARK =
+    '<svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">' +
+    '<circle cx="20" cy="20" r="19" style="fill:var(--seal-blue,#0b3d61)"/>' +
+    '<path d="M2 30 L12 25 21 17 29 9 35 4 40 1 43 6 46 4 49 9 52 7 55 11 59 15 63 19 66 22 70 18 73 20 76 15 79 13 82 16 85 20 90 24 97 27 105 29 118 30"' +
+    ' transform="translate(4 15.4) scale(0.2667)" fill="none" stroke="#fff" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>' +
+    '<path d="M40 5.4 L37.4 10.6 38.9 9.6 40 11 41.1 9.5 42.6 10.7 40 5.4 Z"' +
+    ' transform="translate(-7.33 13.83) scale(0.55)" fill="#fff"/>' +
+    '</svg>';
+
   // Returns the row + bubble; the streamer appends deltas to the bubble and the
   // feedback bar anchors after the row.
   function addAssistantMsg() {
     var bubble = el('div', { className: 'cplchat-bubble' });
-    var row = el('div', { className: 'cplchat-msg cplchat-bot' },
-      [el('div', { className: 'cplchat-avatar', 'aria-hidden': 'true' }, '🎓'), bubble]);
+    var avatar = el('div', { className: 'cplchat-avatar', 'aria-hidden': 'true' });
+    avatar.innerHTML = SIERRA_MARK;
+    var row = el('div', { className: 'cplchat-msg cplchat-bot' }, [avatar, bubble]);
     logEl.appendChild(row);
     scrollDown();
     return { row: row, bubble: bubble };
@@ -515,8 +600,11 @@
     mount();
   }
 
-  // Pure helpers exposed for the jsdom test (tests/cpl_chat_audience.test.js).
+  // Pure helpers exposed for the jsdom tests (tests/cpl_chat_audience.test.js,
+  // tests/sierra_markdown.test.js).
   window.CPL_CHAT = {
     AUDIENCES: AUDIENCES, AUD_KEY: AUD_KEY, feedbackPayload: feedbackPayload,
+    escapeHtml: escapeHtml, inlineMd: inlineMd, renderMarkdown: renderMarkdown,
+    SIERRA_MARK: SIERRA_MARK,
   };
 })();

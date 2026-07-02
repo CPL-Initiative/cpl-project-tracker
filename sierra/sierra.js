@@ -220,6 +220,12 @@
   }
 
   // ── Markdown-lite → safe HTML (escape FIRST, then a tiny subset) ──
+  // Upgraded 2026-07-02 (SkySierra): Sierra's answers routinely carry ##/###
+  // headings, | pipe | tables |, --- rules, and 1. numbered lists — the old
+  // paragraph/bullet-only pass showed those as raw text. Still escape-first
+  // (model text can never inject markup), and the pass re-runs on every
+  // streamed delta, so a half-arrived table degrades to a paragraph until its
+  // separator row lands.
   function escapeHtml(s) {
     return String(s)
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -228,27 +234,81 @@
   function inlineMd(s) {
     return s
       .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/(^|[^*])\*([^*\s][^*]*)\*(?!\*)/g, '$1<em>$2</em>')
       .replace(/`([^`]+)`/g, '<code>$1</code>')
       .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
         '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
       .replace(/(^|[\s(])((https?:\/\/)[^\s)]+)(?=[\s).,;!?]|$)/g,
         '$1<a href="$2" target="_blank" rel="noopener noreferrer">$2</a>');
   }
+  var MD_TABLE_SEP = /^\s*\|?\s*:?-{2,}[-\s:|]*$/;   // | --- | :--- | …
+  function mdCells(row) {
+    return row.replace(/^\s*\|/, '').replace(/\|\s*$/, '').split('|')
+      .map(function (c) { return c.trim(); });
+  }
   function renderMarkdown(text) {
-    var safe = escapeHtml(text);
-    var blocks = safe.split(/\n{2,}/);
-    var html = '';
-    blocks.forEach(function (block) {
-      var lines = block.split(/\n/);
-      var isList = lines.length && lines.every(function (l) { return /^\s*[-*]\s+/.test(l) || l.trim() === ''; });
-      if (isList) {
-        html += '<ul>' + lines.filter(function (l) { return l.trim(); })
-          .map(function (l) { return '<li>' + inlineMd(l.replace(/^\s*[-*]\s+/, '')) + '</li>'; })
-          .join('') + '</ul>';
-      } else {
-        html += '<p>' + inlineMd(block.replace(/\n/g, '<br>')) + '</p>';
+    var lines = escapeHtml(text).split(/\n/);
+    var html = '', para = [], list = null;
+    function flushPara() {
+      if (para.length) { html += '<p>' + para.map(inlineMd).join('<br>') + '</p>'; para = []; }
+    }
+    function flushList() {
+      if (list) {
+        html += '<' + list.t + '>' + list.items.map(function (it) {
+          return '<li>' + inlineMd(it) + '</li>';
+        }).join('') + '</' + list.t + '>';
+        list = null;
       }
-    });
+    }
+    for (var i = 0; i < lines.length; i++) {
+      var t = lines[i].trim();
+      if (!t) { flushPara(); flushList(); continue; }
+      // horizontal rule (--- / *** / ___ on its own line)
+      if (/^(?:-{3,}|_{3,}|\*{3,})$/.test(t)) { flushPara(); flushList(); html += '<hr>'; continue; }
+      // headings: # / ## → h3 (bubble-scale), ### → h4, #### → h5
+      var hm = t.match(/^(#{1,4})\s+(.+)$/);
+      if (hm) {
+        flushPara(); flushList();
+        var lvl = hm[1].length <= 2 ? 3 : hm[1].length + 1;
+        html += '<h' + lvl + '>' + inlineMd(hm[2]) + '</h' + lvl + '>';
+        continue;
+      }
+      // table: a | header | row directly above a |---|---| separator row
+      if (t.indexOf('|') > -1 && i + 1 < lines.length
+          && lines[i + 1].indexOf('|') > -1 && MD_TABLE_SEP.test(lines[i + 1])) {
+        flushPara(); flushList();
+        var head = mdCells(t), body = [];
+        i += 1; // consume the separator row
+        while (i + 1 < lines.length && lines[i + 1].trim().indexOf('|') > -1
+               && !MD_TABLE_SEP.test(lines[i + 1])) {
+          i += 1;
+          body.push(mdCells(lines[i].trim()));
+        }
+        html += '<table><thead><tr>' + head.map(function (c) {
+          return '<th>' + inlineMd(c) + '</th>';
+        }).join('') + '</tr></thead>';
+        if (body.length) {
+          html += '<tbody>' + body.map(function (r) {
+            return '<tr>' + r.map(function (c) { return '<td>' + inlineMd(c) + '</td>'; }).join('') + '</tr>';
+          }).join('') + '</tbody>';
+        }
+        html += '</table>';
+        continue;
+      }
+      // bullet + numbered lists (consecutive runs group; type switch splits)
+      var ul = t.match(/^[-*•]\s+(.+)$/);
+      var ol = ul ? null : t.match(/^\d{1,3}[.)]\s+(.+)$/);
+      if (ul || ol) {
+        flushPara();
+        var kind = ul ? 'ul' : 'ol';
+        if (!list || list.t !== kind) { flushList(); list = { t: kind, items: [] }; }
+        list.items.push(ul ? ul[1] : ol[1]);
+        continue;
+      }
+      flushList();
+      para.push(t);
+    }
+    flushPara(); flushList();
     return html;
   }
 
@@ -274,11 +334,23 @@
     logEl.appendChild(row);
     scrollDown();
   }
+  // The Sierra mark — Mt Whitney's east-face ridge (sierra/whitney-mark.svg)
+  // in a navy roundel. A STATIC, trusted string (never user input) inlined so
+  // the avatar needs no relative-path asset and renders at any mount depth.
+  var SIERRA_MARK =
+    '<svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">' +
+    '<circle cx="20" cy="20" r="19" style="fill:var(--sierra-navy,#0b3d61)"/>' +
+    '<path d="M2 30 L12 25 21 17 29 9 35 4 40 1 43 6 46 4 49 9 52 7 55 11 59 15 63 19 66 22 70 18 73 20 76 15 79 13 82 16 85 20 90 24 97 27 105 29 118 30"' +
+    ' transform="translate(4 15.4) scale(0.2667)" fill="none" stroke="#fff" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>' +
+    '<path d="M40 5.4 L37.4 10.6 38.9 9.6 40 11 41.1 9.5 42.6 10.7 40 5.4 Z"' +
+    ' transform="translate(-7.33 13.83) scale(0.55)" fill="#fff"/>' +
+    '</svg>';
+
   function addAssistantMsg() {
     var row = document.createElement('div');
     row.className = 's-msg s-bot';
     var avatar = document.createElement('div');
-    avatar.className = 's-avatar'; avatar.setAttribute('aria-hidden', 'true'); avatar.textContent = '🏔️';
+    avatar.className = 's-avatar'; avatar.setAttribute('aria-hidden', 'true'); avatar.innerHTML = SIERRA_MARK;
     var bubble = document.createElement('div');
     bubble.className = 's-bubble';
     row.appendChild(avatar); row.appendChild(bubble);
@@ -436,5 +508,6 @@
     escapeHtml: escapeHtml, inlineMd: inlineMd, renderMarkdown: renderMarkdown,
     parseSse: parseSse, CHAT_URL: CHAT_URL, SUGGESTED: SUGGESTED,
     AUDIENCES: AUDIENCES, AUD_KEY: AUD_KEY, feedbackPayload: feedbackPayload,
+    SIERRA_MARK: SIERRA_MARK,
   };
 })();
