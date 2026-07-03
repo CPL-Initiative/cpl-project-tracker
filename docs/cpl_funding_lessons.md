@@ -513,3 +513,22 @@ directly to the hand-maintained `cpl_funding_data.js` (model `2026-07-03.2`):
 - Roster 119 → **115 colleges**; SYSTEM headcount 2,210,025 → **2,258,784**;
   `headcount_pct` recomputed over the new roster; `headcount_label` re-labeled
   (drives the column tooltip + footnote automatically).
+
+### 2026-07-03 follow-up 3 — year columns · combined headcount · measurability map (Sam's 4 items)
+
+① **Measurability analysis** of the six new metrics → the vault note
+`docs/kb-notes/reference-funding-metrics-measurability.md` + a `MEASURABILITY`
+map in the renderer: Y1-P1 (any transcribed) is live NOW (the daily builder's
+distinct-student count — the old "awaiting completion data" label was stale
+under the new metric set); Y2-P1/Y2-P2's units halves are a small builder
+extension; Y1-P2 needs exhibit linkage in the Custom Report; Y1-P3 needs origin
+tracking baked into the Student-Portal launch (~2 weeks — time-critical);
+Y2-P2 completion + Y2-P3 both ride the CO MIS match-back. ② The headcount pool
+card now shows **colleges (allocation basis) + noncredit feeders = CCC total**.
+③ The college table's P1/P2/P3 columns → **one column per funding year (Yr 1 /
+Yr 2, actual years in the tooltip) + a window Total**; per-priority math stays
+in the drill-in for the filtered year; the Per-year/Total period toggle is
+retired (both are columns now); the feeder table gains Support/yr + window
+Total. ④ Sam's future ask noted: a PUBLIC "current metrics + allocations vs
+potential" college view once the model finalizes — colleges see where they
+stand (and each other). Tests 125; suite green.
