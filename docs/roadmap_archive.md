@@ -2150,3 +2150,27 @@ date filters, bulk triage, feedback→chat-turn telemetry link + the **window-vs
 marker rule in the smoke run. ⚠ Deploy footgun: the MCP deploy tool **defaults `verify_jwt` to
 true** — always pass `false` explicitly (v25 briefly carried it; v26 = same sha, flag restored).
 Full story: `docs/cpl_assistant_lessons.md` (S94). **NEXT: `docs/session_95_handoff.md`.**
+
+
+## Archived session narrative — Session 95 (moved from CLAUDE.md §11 at the Session 97 checkpoint)
+
+### Session 95 — the Activity ⇄ Project separation + the Archive-radio fix (2026-07-02)
+
+Sam's morning mixup: he tabled **23 cards** as "redundant with Activity cards" and the Activity
+cards vanished too (both are the same `projects` rows dual-rendered; Session 84 wired the overlay
+to hide the Activity card deliberately). Fixes, one PR: ① the 23 mistaken `project_lifecycle` rows
+DELETED (5.1's deliberate June-29 tabling kept); ② the **activity layer**
+(`derive_core_activity_ids` minus `5.x` — ladder-bearing `5.1` is a REAL project, caught in A/B) is
+now **IMMUNE** to table/archive at every consumer (generator scrub + `project_lifecycle.js`
+`activityLayerIds()` + `raci.js`); ③ the Projects Grid **no longer duplicates** activity-layer rows
+("no redundant activity or project cards") — grid = `4.1.x` sprint children + `5.x` only; the
+Activity card already carried every affordance; ④ the **Archive radio bug**: the capture-phase
+overlay walk closed the modal on ANY inner click, so only default-Tabled/no-reason could save —
+now backdrop-only. Tests 25 → 42. **Afternoon wave (Sam's poke-around, 2nd PR):** the
+Path-to-2030 charts → top of CPL Analytics (Dashboard tab); the 4.1 Sprints composite inherits the
+real row's goal (no more phantom row); **`project_add.js`** — the ＋ Add-project flow (projects
+INSERT/UPDATE widened to the team-phrase gate, `projects_write_team_phrase_widen`); the **AWG
+Projects section** (work-item projects table at the bottom of Annual Workplan Goals, own markers
+AFTER the End-AWG marker); + the grid-replace **+1-blank-line/run accretion fixed** (198 piled up —
+regen now byte-idempotent modulo timestamps). Suite 125 green. Full story:
+`docs/project_lifecycle_lessons.md` (both 2026-07-02 sections).

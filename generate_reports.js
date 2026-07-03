@@ -148,7 +148,7 @@ function headerFooter(title) {
           new Paragraph({
             border: { top: { style: BorderStyle.SINGLE, size: 2, color: "DDDDDD", space: 4 } },
             children: [
-              new TextRun({ text: `Generated ${now}  |  California Community Colleges  |  MAP Initiative`, font: FONT, size: 14, color: GRAY }),
+              new TextRun({ text: `Generated ${now}  |  California Community Colleges  |  CPL Initiative`, font: FONT, size: 14, color: GRAY }),
               new TextRun({ text: "\t", font: FONT }),
               new TextRun({ text: "Page ", font: FONT, size: 14, color: GRAY }),
               new TextRun({ children: [PageNumber.CURRENT], font: FONT, size: 14, color: GRAY }),

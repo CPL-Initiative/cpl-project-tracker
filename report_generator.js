@@ -17,7 +17,18 @@
     // ── Configuration ──
     // Set these in the HTML or via window globals before this script loads
     var PROXY_URL = (typeof window !== 'undefined' && window.CPL_REPORT_PROXY_URL) || '';
-    var CLAUDE_MODEL = 'claude-sonnet-4-5-20250929';
+    // Unversioned alias, NOT a dated snapshot — a pinned claude-*-YYYYMMDD is a
+    // latent outage on its retirement date (docs/kb-notes/playbook-edge-function-502-retired-model.md).
+    var CLAUDE_MODEL = 'claude-sonnet-4-5';
+
+    // Naming rules appended to every report prompt (Sam, 2026-07-03): the
+    // program is the CPL Initiative; MAP is the platform. The generated
+    // Legislative Report had twice expanded MAP by its 2017-era name.
+    var NAMING_RULE = 'Naming rules (STRICT): The program is the "CPL Initiative" of the '
+        + 'California Community Colleges Chancellor\'s Office — never call it the "MAP Initiative". '
+        + 'MAP is the platform, expanded as the "Mapping Articulated Pathways (MAP) platform". '
+        + 'NEVER expand MAP as "Military Articulation Platform" — that was only the platform\'s '
+        + 'original name at its 2017 launch, and it may appear only when explicitly recounting that history.';
 
     // Public anon key — same one committed in card_updates.js / card_raci.js.
     var SUPABASE_URL = 'https://hvuwhnbuahrtptokpqfh.supabase.co';
@@ -120,14 +131,66 @@
     }
 
     // ── Audiences ──
+    // `title` is the document title the docx template stamps (and the model is
+    // told NOT to repeat) — previously every report read "Legislative Report"
+    // regardless of audience because the model invented its own title.
     var AUDIENCES = [
-        { id: 'legislators', label: 'State Legislators & Legislative Staff', prompt: 'Write for California state legislators and legislative staff. Emphasize ROI, fiscal impact, student outcomes, policy alignment with AB 1071 and Vision 2030, and statewide scale. Use formal but accessible language. Lead with measurable impact.' },
-        { id: 'ccc_leaders', label: 'CCC System Leaders (Chancellor\'s Office, Presidents)', prompt: 'Write for California Community College system leaders — the Chancellor\'s Office and college presidents. Emphasize strategic alignment with Vision 2030, institutional adoption metrics, implementation progress, and scalability across 116 colleges. Professional and strategic tone.' },
-        { id: 'faculty', label: 'Faculty & Academic Senate', prompt: 'Write for faculty and academic senate members. Emphasize academic rigor, credit recommendation quality, faculty workgroup outcomes, discipline-specific progress, and how CPL maintains academic standards while expanding access. Collegial and evidence-based tone.' },
-        { id: 'veterans', label: 'Veterans & Military Partners', prompt: 'Write for military service members, veterans, and military education partners. Emphasize JST credit translation, military-specific CPL pathways, Star Colleges network, and how military training translates to college credit. Warm, respectful, action-oriented tone.' },
-        { id: 'workforce', label: 'Workforce & Industry Partners', prompt: 'Write for workforce development boards, employers, and industry partners. Emphasize skills-based credentials, apprenticeship pathways, industry-aligned credit recommendations, and how CPL bridges work experience to college credentials. Professional and outcome-focused.' },
-        { id: 'general', label: 'General Audience', prompt: 'Write for a general audience of education stakeholders. Use clear, accessible language. Explain acronyms on first use. Balance data with narrative. Highlight student impact and real-world outcomes.' },
+        { id: 'legislators', label: 'State Legislators & Legislative Staff', title: 'Legislative Report', prompt: 'Write for California state legislators and legislative staff. Emphasize ROI, fiscal impact, student outcomes, policy alignment with AB 1071 and Vision 2030, and statewide scale. Use formal but accessible language. Lead with measurable impact.' },
+        { id: 'ccc_leaders', label: 'CCC System Leaders (Chancellor\'s Office, Presidents)', title: 'System Leadership Report', prompt: 'Write for California Community College system leaders — the Chancellor\'s Office and college presidents. Emphasize strategic alignment with Vision 2030, institutional adoption metrics, implementation progress, and scalability across all California community colleges. Professional and strategic tone.' },
+        { id: 'faculty', label: 'Faculty & Academic Senate', title: 'Faculty & Academic Senate Report', prompt: 'Write for faculty and academic senate members. Emphasize academic rigor, credit recommendation quality, faculty workgroup outcomes, discipline-specific progress, and how CPL maintains academic standards while expanding access. Collegial and evidence-based tone.' },
+        { id: 'veterans', label: 'Veterans & Military Partners', title: 'Veterans & Military Partners Report', prompt: 'Write for military service members, veterans, and military education partners. Emphasize JST credit translation, military-specific CPL pathways, Star Colleges network, and how military training translates to college credit. Warm, respectful, action-oriented tone.' },
+        { id: 'workforce', label: 'Workforce & Industry Partners', title: 'Workforce & Industry Report', prompt: 'Write for workforce development boards, employers, and industry partners. Emphasize skills-based credentials, apprenticeship pathways, industry-aligned credit recommendations, and how CPL bridges work experience to college credentials. Professional and outcome-focused.' },
+        { id: 'general', label: 'General Audience', title: 'CPL Initiative Report', prompt: 'Write for a general audience of education stakeholders. Use clear, accessible language. Explain acronyms on first use. Balance data with narrative. Highlight student impact and real-world outcomes.' },
     ];
+
+    // ── Elevation (Sam, 2026-07-03) ──
+    // A 0 → 30,000 ft slider: how much detail vs. high-altitude focus the
+    // report carries. Sea level = writing for a CPL newcomer (all the data
+    // points, background, defined terms); 30,000 ft = a Board of Governors /
+    // agency-head brief (salient outcomes, opportunities, asks — no detail).
+    var ELEVATION_BANDS = [
+        {
+            max: 5000, name: 'Ground level', short: 'full operational detail — written for a CPL newcomer',
+            words: '2,500–3,500', maxTokens: 8192,
+            guidance: 'The reader is NEW to CPL (a newcomer to the field or community). Provide background and context for the initiative, define every acronym and program term on first use, and include ALL the relevant data points for each selected project — goals, stretch targets, budget, milestones, team — explaining what each metric means and why it matters.',
+        },
+        {
+            max: 12500, name: 'Low altitude', short: 'working detail for someone familiar with the initiative',
+            words: '1,800–2,500', maxTokens: 8192,
+            guidance: 'The reader knows the initiative. Provide working-level detail: most data points per project with brief context, per-project narratives, and light background only where genuinely needed.',
+        },
+        {
+            max: 20000, name: 'Cruising altitude', short: 'balanced executive report',
+            words: '1,200–1,800', maxTokens: 4096,
+            guidance: 'A balanced executive report: only the salient metrics per project, concise narratives, minimal background. Assume fluency with CPL terms.',
+        },
+        {
+            max: 27500, name: 'High altitude', short: 'senior-leadership brief — outcomes and opportunities',
+            words: '800–1,200', maxTokens: 4096,
+            guidance: 'A senior-leadership brief: lead with outcomes, opportunities, and asks. Group projects under their Activity rather than narrating each one, and cite at most one standout metric per point.',
+        },
+        {
+            max: 30000, name: '30,000 ft', short: 'board / agency-head altitude — high points only',
+            words: '500–800', maxTokens: 4096,
+            guidance: 'Board of Governors / public-agency-leader altitude: ONLY the headline outcomes, the strategic opportunities, and any decisions or support needed. No project-by-project detail — roll everything up to the initiative and Activity level. A reader should absorb the whole report in three minutes.',
+        },
+    ];
+    function elevationBand(ft) {
+        var n = Number(ft) || 0;
+        for (var i = 0; i < ELEVATION_BANDS.length; i++) {
+            if (n <= ELEVATION_BANDS[i].max) return ELEVATION_BANDS[i];
+        }
+        return ELEVATION_BANDS[ELEVATION_BANDS.length - 1];
+    }
+    function elevationGuidance(ft) {
+        var b = elevationBand(ft);
+        return 'Elevation: ' + Number(ft).toLocaleString() + ' ft (' + b.name + '). ' + b.guidance
+            + ' Target length: ' + b.words + ' words.';
+    }
+    function fmtFeet(ft) {
+        var n = Number(ft) || 0;
+        return (n === 0 ? 'Sea level' : n.toLocaleString() + ' ft') + ' — ' + elevationBand(n).name;
+    }
 
     // ── Build Modal HTML ──
     function buildModal() {
@@ -160,14 +223,33 @@
         // Body
         html += '<div style="padding:1.5rem;max-height:70vh;overflow-y:auto;">';
 
-        // Audience picker
+        // Report type — the Master Report was consolidated into this modal
+        // (Session 97): one button, two outputs.
         html += '<div style="margin-bottom:1.2rem;">';
+        html += '<label style="font-weight:700;color:var(--text-strong);font-size:0.9rem;display:block;margin-bottom:0.4rem;">Report Type</label>';
+        html += '<div style="display:flex;gap:1.2rem;flex-wrap:wrap;font-size:0.85rem;">';
+        html += '<label style="display:flex;align-items:center;gap:0.35rem;cursor:pointer;"><input type="radio" name="reportType" value="custom" checked style="accent-color:var(--accent-link);cursor:pointer;">&#9889; Audience narrative <span style="color:#888;">(AI-written)</span></label>';
+        html += '<label style="display:flex;align-items:center;gap:0.35rem;cursor:pointer;"><input type="radio" name="reportType" value="master" style="accent-color:var(--accent-link);cursor:pointer;">&#128203; Master data report <span style="color:#888;">(verbatim workplan, no AI)</span></label>';
+        html += '</div></div>';
+
+        // Audience picker (narrative mode only)
+        html += '<div id="reportAudienceRow" style="margin-bottom:1.2rem;">';
         html += '<label style="font-weight:700;color:var(--text-strong);font-size:0.9rem;display:block;margin-bottom:0.4rem;">Target Audience</label>';
         html += '<select id="reportAudience" style="width:100%;padding:8px 12px;border:1px solid #ccc;border-radius:4px;font-size:0.85rem;font-family:inherit;">';
         AUDIENCES.forEach(function (a) {
             html += '<option value="' + a.id + '">' + a.label + '</option>';
         });
         html += '</select>';
+        html += '</div>';
+
+        // Elevation slider (narrative mode only)
+        var savedElev = 15000;
+        try { savedElev = parseInt(localStorage.getItem('cplReportElevation.v1'), 10) || 15000; } catch (e) { /* ignore */ }
+        html += '<div id="reportElevationRow" style="margin-bottom:1.2rem;">';
+        html += '<label style="font-weight:700;color:var(--text-strong);font-size:0.9rem;display:block;margin-bottom:0.2rem;">Elevation &nbsp;<span id="reportElevOut" style="font-weight:600;color:var(--navy-secondary);"></span></label>';
+        html += '<input type="range" id="reportElevation" min="0" max="30000" step="2500" value="' + savedElev + '" style="width:100%;accent-color:var(--accent-link);cursor:pointer;">';
+        html += '<div style="display:flex;justify-content:space-between;font-size:0.72rem;color:#888;"><span>Sea level — every data point, explained</span><span>30,000 ft — high points only</span></div>';
+        html += '<div id="reportElevHint" style="font-size:0.78rem;color:#666;margin-top:0.25rem;"></div>';
         html += '</div>';
 
         // Select All / None
@@ -207,9 +289,14 @@
 
         html += '</div>'; // end body
 
-        // Footer
-        html += '<div style="padding:1rem 1.5rem;border-top:1px solid #e8e8e8;display:flex;justify-content:space-between;align-items:center;gap:0.5rem;flex-wrap:wrap;">';
+        // Footer — progress bar + status label + Generate
+        html += '<div style="padding:1rem 1.5rem;border-top:1px solid #e8e8e8;display:flex;justify-content:space-between;align-items:center;gap:0.8rem;flex-wrap:wrap;">';
+        html += '<div style="flex:1 1 240px;min-width:200px;">';
+        html += '<div id="reportProgressWrap" style="display:none;height:8px;background:#e8e8e8;border-radius:4px;overflow:hidden;margin-bottom:5px;">';
+        html += '<div id="reportProgressBar" style="height:100%;width:0%;background:var(--cobalt);border-radius:4px;transition:width 0.4s ease;"></div>';
+        html += '</div>';
         html += '<div id="reportStatus" style="font-size:0.8rem;color:#666;"></div>';
+        html += '</div>';
         html += '<div style="display:flex;gap:0.5rem;">';
         html += '<button id="reportGenBtn" style="padding:8px 20px;background:var(--cobalt);color:#fff;border:none;border-radius:4px;font-weight:600;font-size:0.85rem;cursor:pointer;font-family:inherit;">Generate Report</button>';
         html += '</div></div>';
@@ -250,7 +337,81 @@
         // Generate button
         document.getElementById('reportGenBtn').addEventListener('click', generateReport);
 
-        // (API key handled by proxy — no client-side storage needed)
+        // Elevation slider — live label + per-browser persistence
+        var elevInput = document.getElementById('reportElevation');
+        function syncElev() {
+            var ft = parseInt(elevInput.value, 10) || 0;
+            var out = document.getElementById('reportElevOut');
+            var hint = document.getElementById('reportElevHint');
+            if (out) out.textContent = fmtFeet(ft);
+            if (hint) hint.textContent = elevationBand(ft).short;
+            try { localStorage.setItem('cplReportElevation.v1', String(ft)); } catch (e) { /* ignore */ }
+        }
+        elevInput.addEventListener('input', syncElev);
+        syncElev();
+
+        // Report type toggle — Master mode hides the narrative-only controls
+        document.querySelectorAll('input[name="reportType"]').forEach(function (r) {
+            r.addEventListener('change', syncReportType);
+        });
+        syncReportType();
+    }
+
+    function reportType() {
+        var el = document.querySelector('input[name="reportType"]:checked');
+        return el ? el.value : 'custom';
+    }
+    function syncReportType() {
+        var master = reportType() === 'master';
+        var aud = document.getElementById('reportAudienceRow');
+        var elev = document.getElementById('reportElevationRow');
+        var btn = document.getElementById('reportGenBtn');
+        if (aud) aud.style.display = master ? 'none' : '';
+        if (elev) elev.style.display = master ? 'none' : '';
+        if (btn) btn.textContent = master ? 'Generate Master Report' : 'Generate Report';
+    }
+
+    // ── Progress bar ──
+    // Replaces the old "Generating..." button label: a staged bar that creeps
+    // toward a cap while the API call is in flight (the call itself is a
+    // single POST, so in-between progress is time-based, not byte-based).
+    var _progressTimer = null;
+    function progressTo(pct, msg, color) {
+        var wrap = document.getElementById('reportProgressWrap');
+        var bar = document.getElementById('reportProgressBar');
+        if (wrap) wrap.style.display = 'block';
+        if (bar) { bar.style.width = Math.max(0, Math.min(100, pct)) + '%'; bar.style.background = 'var(--cobalt)'; }
+        if (msg != null) setStatus(msg, color || '#4A90D9');
+    }
+    function progressCreep(cap) {
+        progressStopCreep();
+        _progressTimer = setInterval(function () {
+            var bar = document.getElementById('reportProgressBar');
+            if (!bar) return;
+            var cur = parseFloat(bar.style.width) || 0;
+            if (cur < cap) bar.style.width = (cur + 1) + '%';
+        }, 450);
+    }
+    function progressStopCreep() {
+        if (_progressTimer) { clearInterval(_progressTimer); _progressTimer = null; }
+    }
+    function progressDone(msg) {
+        progressStopCreep();
+        var bar = document.getElementById('reportProgressBar');
+        if (bar) { bar.style.width = '100%'; bar.style.background = '#2A7D4F'; }
+        setStatus(msg, '#2A7D4F');
+        setTimeout(function () {
+            var wrap = document.getElementById('reportProgressWrap');
+            if (wrap) wrap.style.display = 'none';
+            var b = document.getElementById('reportProgressBar');
+            if (b) { b.style.width = '0%'; b.style.background = 'var(--cobalt)'; }
+        }, 2500);
+    }
+    function progressFail(msg) {
+        progressStopCreep();
+        var bar = document.getElementById('reportProgressBar');
+        if (bar) bar.style.background = '#c00';
+        setStatus(msg, '#c00');
     }
 
     function openModal() {
@@ -285,10 +446,13 @@
         var projects = data.projects.filter(function (p) { return pidSet[p.id]; });
         var audienceId = document.getElementById('reportAudience').value;
         var audience = AUDIENCES.find(function (a) { return a.id === audienceId; }) || AUDIENCES[AUDIENCES.length - 1];
+        var elevEl = document.getElementById('reportElevation');
+        var elevation = elevEl ? (parseInt(elevEl.value, 10) || 0) : 15000;
 
         return {
             projects: projects,
             audience: audience,
+            elevation: elevation,
             kpis: data.kpis || {},
             lastUpdated: data.last_updated || 'N/A',
         };
@@ -325,25 +489,42 @@
             kpiSummary += '\n';
         }
 
+        // Elevation shapes both the level of detail and the structure: at high
+        // altitude the per-project section collapses into per-Activity highlights.
+        var elevation = (sel.elevation == null) ? 15000 : sel.elevation;
+        var band = elevationBand(elevation);
+        var highAltitude = elevation > 20000;
+        var structure = highAltitude
+            ? ('1. **Executive Summary** (1-2 short paragraphs) — the most impactful outcomes for this audience\n'
+                + '2. **Key Metrics & Progress** — only the headline numbers that matter to this audience\n'
+                + '3. **Highlights by Activity** — one tight paragraph per Activity rolling up its selected projects (no project-by-project narration)\n'
+                + '4. **Opportunities & Asks** — the strategic opportunities and any decisions or support needed\n')
+            : ('1. **Executive Summary** (2-3 paragraphs) — tailored to the audience, highlighting the most impactful findings\n'
+                + '2. **Key Metrics & Progress** — present headline KPIs in context for the audience\n'
+                + '3. **Project Highlights** — for each selected project, write a concise but substantive narrative paragraph (not bullet points). Group by Activity.\n'
+                + '4. **Looking Ahead** — upcoming milestones, goals, and strategic priorities\n'
+                + '5. **Recommendations** — 3-5 actionable recommendations tailored to the audience\n');
+
         return 'You are writing a professional report about the California Community Colleges Credit for Prior Learning (CPL) Initiative.\n\n'
             + '## Audience\n' + sel.audience.prompt + '\n\n'
+            + '## Altitude\n' + elevationGuidance(elevation) + '\n\n'
             + '## Headline KPIs (as of ' + sel.lastUpdated + ')\n' + kpiSummary + '\n\n'
             + '## Selected Projects\n' + projectSummaries + '\n\n'
             + (activityUpdates ? '## Latest Activity-Level Updates (posted by the team)\n' + activityUpdates + '\n\n' : '')
             + '## Instructions\n'
             + 'Write a polished, professional report covering the selected projects. Structure it as:\n'
-            + '1. **Executive Summary** (2-3 paragraphs) — tailored to the audience, highlighting the most impactful findings\n'
-            + '2. **Key Metrics & Progress** — present headline KPIs in context for the audience\n'
-            + '3. **Project Highlights** — for each selected project, write a concise but substantive narrative paragraph (not bullet points). Group by Activity.\n'
-            + '4. **Looking Ahead** — upcoming milestones, goals, and strategic priorities\n'
-            + '5. **Recommendations** — 3-5 actionable recommendations tailored to the audience\n\n'
+            + structure + '\n'
+            + 'The document template already renders the report title ("' + (sel.audience.title || 'CPL Initiative Report')
+            + '") and the audience/date line — do NOT write a document title or an opening heading of your own; '
+            + 'begin directly with "## Executive Summary".\n'
+            + NAMING_RULE + '\n'
             + 'Use the data provided. Do not invent metrics. Write in prose, not bullet lists. '
             + 'Format section headers with ## markdown. Keep paragraphs concise but substantive.\n'
-            + 'The report should be 1,500-2,500 words.';
+            + 'Honor the Altitude section above for depth and length (target ' + band.words + ' words).';
     }
 
     // ── Call Claude API ──
-    async function callClaude(prompt) {
+    async function callClaude(prompt, maxTokens) {
         var url = PROXY_URL || 'https://api.anthropic.com/v1/messages';
         var headers = {
             'Content-Type': 'application/json',
@@ -352,7 +533,7 @@
 
         var body = JSON.stringify({
             model: CLAUDE_MODEL,
-            max_tokens: 4096,
+            max_tokens: maxTokens || 4096,
             messages: [{ role: 'user', content: prompt }],
         });
 
@@ -375,10 +556,11 @@
 
         var children = [];
 
-        // Title
+        // Title — dynamic per audience (was a fixed "Custom Report" while the
+        // model wrote its own "Legislative Report" heading for every audience)
         children.push(new D.Paragraph({
             children: [new D.TextRun({
-                text: 'CPL Initiative — Custom Report',
+                text: 'CPL Initiative — ' + (audience.title || 'Custom Report'),
                 bold: true, size: 36, color: '0A2240', font: 'Calibri',
             })],
             spacing: { after: 100 },
@@ -492,15 +674,22 @@
             return;
         }
 
+        var btn = document.getElementById('reportGenBtn');
+
+        // Master mode — verbatim Workplan-style docx via master_report.js's
+        // builder (consolidated from the retired filter-bar button, Session 97).
+        if (reportType() === 'master') {
+            generateMasterReport(sel, btn);
+            return;
+        }
+
         if (!PROXY_URL) {
             setStatus('Report proxy not configured. Contact your administrator.', '#c00');
             return;
         }
 
-        var btn = document.getElementById('reportGenBtn');
         btn.disabled = true;
-        btn.textContent = 'Generating...';
-        setStatus('Fetching the latest card updates...', '#4A90D9');
+        progressTo(5, 'Fetching the latest card updates…');
 
         try {
             // Pull the live overlays (posted updates + RACI leads) so the
@@ -509,13 +698,15 @@
             sel.projects = applyLiveOverlay(sel.projects, live);
             sel.activityUpdates = activityUpdatesFor(sel.projects, live.updates);
 
-            setStatus('Building prompt for ' + sel.projects.length + ' projects...', '#4A90D9');
+            progressTo(15, 'Building the prompt for ' + sel.projects.length + ' projects…');
             var prompt = buildPrompt(sel);
-            setStatus('Calling Claude API — this may take 15-30 seconds...', '#4A90D9');
+            progressTo(20, 'Writing the ' + (sel.audience.title || 'report') + ' — usually 15–30 seconds…');
+            progressCreep(85);
 
-            var narrative = await callClaude(prompt);
+            var narrative = await callClaude(prompt, elevationBand(sel.elevation).maxTokens);
 
-            setStatus('Building Word document...', '#4A90D9');
+            progressStopCreep();
+            progressTo(90, 'Building the Word document…');
 
             ensureDocxLib(async function () {
                 try {
@@ -526,23 +717,81 @@
                     var a = document.createElement('a');
                     a.href = URL.createObjectURL(blob);
                     var dateStr = new Date().toISOString().slice(0, 10);
-                    a.download = 'CPL_Report_' + sel.audience.id + '_' + dateStr + '.docx';
+                    a.download = 'CPL_' + (sel.audience.title || 'Report').replace(/[^A-Za-z0-9]+/g, '_') + '_' + dateStr + '.docx';
                     document.body.appendChild(a);
                     a.click();
                     document.body.removeChild(a);
 
-                    setStatus('Report downloaded!', '#2A7D4F');
+                    progressDone('Report downloaded!');
                 } catch (docErr) {
-                    setStatus('Error building document: ' + docErr.message, '#c00');
+                    progressFail('Error building document: ' + docErr.message);
                 }
                 btn.disabled = false;
-                btn.textContent = 'Generate Report';
+                syncReportType();
             });
         } catch (err) {
-            setStatus('Error: ' + err.message, '#c00');
+            progressFail('Error: ' + err.message);
             btn.disabled = false;
-            btn.textContent = 'Generate Report';
+            syncReportType();
         }
+    }
+
+    // ── Master report flow (no AI — verbatim workplan data) ──
+    // Reuses master_report.js's fetchLiveOverlay/buildReportModel/renderDocx
+    // with THIS modal's checkbox selection; the script lazy-loads on first use.
+    function ensureMasterLib(cb) {
+        if (window.CPL_MASTER_REPORT) { cb(); return; }
+        var tabs = window.CPL_TABS;
+        if (tabs && typeof tabs.loadScript === 'function') {
+            tabs.loadScript('master_report.js', 'CPL_MASTER_REPORT', cb);
+            return;
+        }
+        var s = document.createElement('script');
+        s.src = 'master_report.js';
+        s.onload = function () { cb(); };
+        s.onerror = function () { cb(); };
+        document.head.appendChild(s);
+    }
+    function generateMasterReport(sel, btn) {
+        btn.disabled = true;
+        progressTo(10, 'Loading the report builder…');
+        ensureMasterLib(function () {
+            var M = window.CPL_MASTER_REPORT;
+            if (!M) {
+                // Builder unavailable — fall back to the daily pre-built copy.
+                progressFail('Builder unavailable — opening the pre-built master report instead.');
+                window.location.href = 'reports/CPL_Master_Report.docx';
+                btn.disabled = false; syncReportType();
+                return;
+            }
+            progressTo(25, 'Fetching the latest card updates…');
+            M.fetchLiveOverlay().then(function (live) {
+                var pids = sel.projects.map(function (p) { return p.id; });
+                var model = M.buildReportModel(window.CPL_DATA, pids, live);
+                progressTo(60, 'Building the Word document…');
+                ensureDocxLib(function () {
+                    try {
+                        var doc = M.renderDocx(model);
+                        window.docx.Packer.toBlob(doc).then(function (blob) {
+                            var a = document.createElement('a');
+                            a.href = URL.createObjectURL(blob);
+                            a.download = 'CPL_Master_Report_' + new Date().toISOString().slice(0, 10) + '.docx';
+                            document.body.appendChild(a);
+                            a.click();
+                            document.body.removeChild(a);
+                            progressDone('Master report downloaded!');
+                            btn.disabled = false; syncReportType();
+                        }).catch(function (err) {
+                            progressFail('Error building document: ' + err.message);
+                            btn.disabled = false; syncReportType();
+                        });
+                    } catch (err) {
+                        progressFail('Error building document: ' + err.message);
+                        btn.disabled = false; syncReportType();
+                    }
+                });
+            });
+        });
     }
 
     // ── Add "Custom Report" button to filter bar ──
@@ -576,6 +825,12 @@
         activityUpdatesFor: activityUpdatesFor,
         buildPrompt: buildPrompt,
         fetchLiveOverlay: fetchLiveOverlay,
+        // Session 97 additions (elevation / audience titles / naming rule)
+        AUDIENCES: AUDIENCES,
+        ELEVATION_BANDS: ELEVATION_BANDS,
+        elevationBand: elevationBand,
+        elevationGuidance: elevationGuidance,
+        NAMING_RULE: NAMING_RULE,
     };
     if (typeof window !== 'undefined') window.CPL_CUSTOM_REPORT = api;
     if (typeof module !== 'undefined' && module.exports) module.exports = api;

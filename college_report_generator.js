@@ -22,12 +22,12 @@
     'use strict';
 
     var PROXY_URL = window.CPL_REPORT_PROXY_URL || '';
-    var CLAUDE_MODEL = 'claude-sonnet-4-5-20250929';
+    var CLAUDE_MODEL = 'claude-sonnet-4-5';
 
     // ── Audience prompts (mirrors report_generator.js) ──
     var AUDIENCES = [
         { id: 'legislators',  label: 'State Legislators & Legislative Staff', prompt: 'Write for California state legislators and legislative staff. Emphasize ROI, fiscal impact, student outcomes, policy alignment with AB 1071 and Vision 2030, and statewide scale. Use formal but accessible language. Lead with measurable impact.' },
-        { id: 'ccc_leaders',  label: "CCC System Leaders (Chancellor's Office, Presidents)", prompt: "Write for California Community College system leaders — the Chancellor's Office and college presidents. Emphasize strategic alignment with Vision 2030, institutional adoption metrics, implementation progress, and scalability across 116 colleges. Professional and strategic tone." },
+        { id: 'ccc_leaders',  label: "CCC System Leaders (Chancellor's Office, Presidents)", prompt: "Write for California Community College system leaders — the Chancellor's Office and college presidents. Emphasize strategic alignment with Vision 2030, institutional adoption metrics, implementation progress, and scalability across all California community colleges. Professional and strategic tone." },
         { id: 'faculty',      label: 'Faculty & Academic Senate', prompt: 'Write for faculty and academic senate members. Emphasize academic rigor, credit recommendation quality, faculty workgroup outcomes, discipline-specific progress, and how CPL maintains academic standards while expanding access. Collegial and evidence-based tone.' },
         { id: 'veterans',     label: 'Veterans & Military Partners', prompt: 'Write for military service members, veterans, and military education partners. Emphasize JST credit translation, military-specific CPL pathways, Star Colleges network, and how military training translates to college credit. Warm, respectful, action-oriented tone.' },
         { id: 'workforce',    label: 'Workforce & Industry Partners', prompt: 'Write for workforce development boards, employers, and industry partners. Emphasize skills-based credentials, apprenticeship pathways, industry-aligned credit recommendations, and how CPL bridges work experience to college credentials. Professional and outcome-focused.' },
@@ -419,6 +419,7 @@
             + '3. **Opportunities to Maximize Funding & Student Impact** — Bullets or short paragraphs that turn any gap into an invitation: low transcription rate → "opportunity to convert eligible units into credit on transcripts, unlocking more apportionment"; thin discipline coverage → "room to expand into high-demand disciplines like X"; limited veteran reach → "opportunity to deepen JST/military outreach." Tie each opportunity, where natural, to additional CPL funding or student benefit. Ground recommendations in the KB methodology.\n'
             + '4. **Next Steps** — 2-4 concrete, audience-appropriate suggestions. Short and actionable.\n\n'
             + 'Hard constraints:\n'
+            + '- Naming (STRICT): the program is the "CPL Initiative" (never "MAP Initiative"); MAP is the platform — "Mapping Articulated Pathways (MAP) platform". NEVER expand MAP as "Military Articulation Platform" (that was only its historical 2017 launch name).\n'
             + '- Use only the numbers provided. Do not invent metrics.\n'
             + '- Target **600-1,000 words total** (shorter is welcome for single colleges with limited data). Brevity is a feature.\n'
             + '- Use bullets for the Accomplishments and Opportunities sections. Use short paragraphs elsewhere.\n'

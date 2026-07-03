@@ -715,7 +715,7 @@
             children: [new D.Paragraph({
               border: { top: { style: D.BorderStyle.SINGLE, size: 2, color: 'DDDDDD', space: 4 } },
               children: [
-                new D.TextRun({ text: 'Generated ' + now + '  |  California Community Colleges  |  MAP Initiative', font: FONT, size: 14, color: GRAY }),
+                new D.TextRun({ text: 'Generated ' + now + '  |  California Community Colleges  |  CPL Initiative', font: FONT, size: 14, color: GRAY }),
                 new D.TextRun({ text: '\t', font: FONT }),
                 new D.TextRun({ text: 'Page ', font: FONT, size: 14, color: GRAY }),
                 new D.TextRun({ children: [D.PageNumber.CURRENT], font: FONT, size: 14, color: GRAY }),

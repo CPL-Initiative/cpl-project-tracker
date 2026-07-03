@@ -3186,7 +3186,7 @@ def render_awg_projects_section_html(work_projects):
         '<span id="awgProjectsAddSlot"></span></h2>\n'
         '            <p style="color:#888;font-size:0.78rem;margin:0 0 1rem 0;">'
         'Work-item projects (sprints, demonstrations, initiatives) that contribute to the '
-        'sub-activities above. Table/Archive lives on the Activities &amp; Projects tab; '
+        'sub-activities above. Table/Archive lives on the Activities tab; '
         'tabled and archived projects are excluded here.</p>\n'
         '            <div style="overflow-x:auto;">\n'
         '            <table style="width:100%;border-collapse:collapse;background:var(--white,#fff);'
@@ -12039,15 +12039,18 @@ def main():
                 print("  Injected Budget section")
 
             # ── Populate the Lead filter dropdown with unique leads ──
+            # Full-replace the select contents every run (Session 97). The old
+            # regex only matched an EMPTY select, so the options were frozen at
+            # whatever run first populated them — a lead change never surfaced.
             leads = sorted(set(p.get("lead", "") for p in projects if p.get("lead") and not p["id"].startswith("D.")))
             lead_options = '<option value="">All</option>\n'
             for lead in leads:
                 lead_options += f'                <option value="{lead}">{lead}</option>\n'
             html = re.sub(
-                r'(<select id="filterLead">)\s*<option value="">All</option>\s*(</select>)',
-                r'\1\n                ' + lead_options + r'            \2',
+                r'<select id="filterLead">.*?</select>',
+                '<select id="filterLead">\n                ' + lead_options + '            </select>',
                 html,
-                flags=re.DOTALL
+                flags=re.DOTALL,
             )
 
             # ── Update the last-updated timestamp ──

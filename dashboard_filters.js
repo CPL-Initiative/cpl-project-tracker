@@ -64,11 +64,18 @@ function buildAttachmentUrl(subfolder) {
 var ATTACHMENTS_URL = buildAttachmentUrl('');
 
 function applyFilters() {
-    var actVal = document.getElementById('filterActivity').value;
-    var visVal = document.getElementById('filterVision').value;
-    var goalVal = document.getElementById('filterGoal').value;
-    var statusVal = document.getElementById('filterStatus').value;
-    var leadVal = document.getElementById('filterLead').value;
+    // Session 97: the slim actions bar carries only Lead + Search — the
+    // Activity / Vision / Goal / Status selects were removed. Read every
+    // control defensively so this keeps working on either layout.
+    function selVal(id) {
+        var el = document.getElementById(id);
+        return el ? el.value : '';
+    }
+    var actVal = selVal('filterActivity');
+    var visVal = selVal('filterVision');
+    var goalVal = selVal('filterGoal');
+    var statusVal = selVal('filterStatus');
+    var leadVal = selVal('filterLead');
     var searchBox = document.getElementById('searchBox');
     var searchVal = searchBox ? searchBox.value.toLowerCase() : '';
 
@@ -235,7 +242,8 @@ function resetFilters() {
     var sb = document.getElementById('searchBox');
     if (sb) sb.addEventListener('input', applyFilters);
 
-    // Attach to the Apply/Reset buttons via addEventListener
+    // (Apply/Reset buttons removed Session 97 — filters auto-apply on change;
+    // the guarded wiring below keeps older layouts working.)
     var applyBtn = document.getElementById('applyBtn');
     if (applyBtn) applyBtn.addEventListener('click', applyFilters);
     var resetBtn = document.getElementById('resetBtn');
@@ -311,50 +319,12 @@ function resetFilters() {
         if (d && d.tab === 'activities-projects') applyQuickstartHint(d.hint);
     });
 
-    // Inject Master Report button next to filter buttons. Was a bare download
-    // link to the daily pre-built reports/CPL_Master_Report.docx; it now opens
-    // the master_report.js selection modal (Activities & Projects checkboxes,
-    // built client-side from live data — Sam, 2026-07-02). The script is
-    // lazy-loaded on first click via CPL_TABS.loadScript; if that helper (or
-    // the load) is unavailable, fall back to downloading the pre-built docx so
-    // the button never dead-ends.
+    // Session 97: the filter-bar "📄 Master Report" button was retired — the
+    // Master Report is now a Report-Type option inside the Custom Report modal
+    // (report_generator.js). The bar-level "📎 Attach Doc" button was retired
+    // too: attachments happen at the card level only (per-card 📎 Attach).
     var filterBtns = document.querySelector('.filter-buttons');
     if (filterBtns) {
-        var reportBtn = document.createElement('button');
-        reportBtn.type = 'button';
-        reportBtn.id = 'masterReportBtn';
-        reportBtn.innerHTML = '&#128196; Master Report';
-        reportBtn.style.cssText = "display:inline-flex;align-items:center;gap:0.3rem;background:transparent;color:var(--text-strong);border:1px solid #ccc;padding:7px 16px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.85rem;font-family:'Source Sans 3',Arial,sans-serif;line-height:1.2;text-decoration:none;margin-left:0.5rem;transition:background 0.2s;";
-        reportBtn.onmouseover = function() { this.style.background = '#f5f5f5'; };
-        reportBtn.onmouseout = function() { this.style.background = 'transparent'; };
-        reportBtn.addEventListener('click', function () {
-            if (window.CPL_MASTER_REPORT) { window.CPL_MASTER_REPORT.open(); return; }
-            var tabs = window.CPL_TABS;
-            if (tabs && typeof tabs.loadScript === 'function') {
-                tabs.loadScript('master_report.js', 'CPL_MASTER_REPORT', function () {
-                    if (window.CPL_MASTER_REPORT) window.CPL_MASTER_REPORT.open();
-                    else window.location.href = 'reports/CPL_Master_Report.docx';
-                });
-            } else {
-                window.location.href = 'reports/CPL_Master_Report.docx';
-            }
-        });
-        filterBtns.appendChild(reportBtn);
-
-        // Attach Doc button — opens SharePoint attachments folder
-        if (ATTACHMENTS_URL) {
-            var attachBtn = document.createElement('a');
-            attachBtn.id = 'attachDocBtn';
-            attachBtn.href = ATTACHMENTS_URL;
-            attachBtn.target = '_blank';
-            attachBtn.innerHTML = '&#128206; Attach Doc';
-            attachBtn.style.cssText = "display:inline-flex;align-items:center;gap:0.3rem;background:transparent;color:var(--text-strong);border:1px solid #ccc;padding:7px 16px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.85rem;font-family:'Source Sans 3',Arial,sans-serif;line-height:1.2;text-decoration:none;margin-left:0.5rem;transition:background 0.2s;";
-            attachBtn.onmouseover = function() { this.style.background = '#f5f5f5'; };
-            attachBtn.onmouseout = function() { this.style.background = 'transparent'; };
-            attachBtn.title = 'Open SharePoint folder — use Upload or drag & drop to add files';
-            filterBtns.appendChild(attachBtn);
-        }
-
         // Rewrite all card-level Attach buttons to use the parsed SharePoint URL.
         // (The card "Update" rewrite was removed in P1 — see note above.)
         function rewriteAttachBtns() {
@@ -433,7 +403,7 @@ function resetFilters() {
         });
     }
     document.addEventListener('click', function (e) {
-        var a = e.target && e.target.closest ? e.target.closest('a.attach-btn, #attachDocBtn') : null;
+        var a = e.target && e.target.closest ? e.target.closest('a.attach-btn') : null;
         if (!a || attachHelpDismissed()) return; // dismissed → straight to the folder
         e.preventDefault();
         showAttachExplainer(a.href);
