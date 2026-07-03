@@ -24,10 +24,14 @@ function check(name, cond) { results.push([name, !!cond]); }
 
 // ── Part A — static invariants ──
 const df = fs.readFileSync("dashboard_filters.js", "utf8");
-check("filter bar: Master Report is a button (id masterReportBtn)", /masterReportBtn/.test(df));
-check("filter bar: no bare download-link Master Report anymore", !/reportBtn\.href = 'reports\/CPL_Master_Report\.docx'/.test(df));
-check("filter bar: lazy-loads master_report.js via CPL_TABS.loadScript", /loadScript\('master_report\.js', 'CPL_MASTER_REPORT'/.test(df));
-check("filter bar: pre-built docx kept as the fallback", /reports\/CPL_Master_Report\.docx/.test(df));
+// Session 97: the filter-bar button was retired — the Master Report is now a
+// Report-Type option inside the Custom Report modal (report_generator.js),
+// which lazy-loads this module and keeps the pre-built docx as the fallback.
+check("filter bar: retired Master Report button stays out of dashboard_filters", !/masterReportBtn/.test(df));
+const rg = fs.readFileSync("report_generator.js", "utf8");
+check("custom report modal: lazy-loads master_report.js via CPL_TABS.loadScript", /loadScript\('master_report\.js', 'CPL_MASTER_REPORT'/.test(rg));
+check("custom report modal: drives buildReportModel with the modal's selection", /M\.buildReportModel\(window\.CPL_DATA, pids, live\)/.test(rg));
+check("custom report modal: pre-built docx kept as the fallback", /reports\/CPL_Master_Report\.docx/.test(rg));
 
 const SRC = fs.readFileSync("master_report.js", "utf8");
 check("master_report.js loads the LOCAL docx.min.js (never a CDN URL)",

@@ -29,7 +29,7 @@
   "use strict";
 
   var PROXY_URL = window.CPL_REPORT_PROXY_URL || "";
-  var CLAUDE_MODEL = "claude-sonnet-4-5-20250929";
+  var CLAUDE_MODEL = "claude-sonnet-4-5";
 
   // Supabase (anon, read-only) — mirrors card_updates.js. Used to fold the newest
   // item_updates into the Activity Progress + Spotlights sections.
@@ -315,6 +315,9 @@
       + "Keep every factual number EXACTLY as given — do not invent or alter figures. Preserve the "
       + "section structure using ## markdown headers (and ### for sub-sections). Keep bullet lists "
       + "where they aid scannability. Be celebratory but credible; reframe any gaps as opportunities. "
+      + "Naming (STRICT): the program is the \"CPL Initiative\" (never \"MAP Initiative\"); MAP is the "
+      + "platform — \"Mapping Articulated Pathways (MAP) platform\"; NEVER expand MAP as \"Military "
+      + "Articulation Platform\" (its historical 2017 launch name, history-only). "
       + "Target 1,200–2,000 words. Return ONLY the report markdown.\n\n=== DRAFT ===\n" + md;
   }
 

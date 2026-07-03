@@ -1,74 +1,62 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-02 · Session 96 · reports LIVE + attach decision LOCKED: team-only Supabase attachments, building next session",
- "_session": 96,
- "_status": "Report day. Both report generators now read the same live data the cards show: the Custom Report folds in the latest posted updates + Team & RACI leads before it writes, and the Master Report button opens a checkbox picker (activities AND project cards — your ask) that builds the Word doc right in the browser from live data. Behind the scenes we found why the old Master Report file was stale: the daily robot never had the Word library installed (it failed silently every night) and never saved the reports it made — both fixed, so the per-card Report buttons refresh daily again. Your three tweaks landed too: the update popup saves-and-closes, nudge emails use semicolons for Outlook, and the two trend graphs sit at the bottom of CPL Analytics now. On attachments: the 📎 button explains itself now (it hands off to SharePoint's ＋ Create or upload) — but note some newer projects (like 4.1.4) never got a SharePoint folder, so the popover also links the parent folder. Everything ships with the next rebuild.",
+ "_as_of": "2026-07-03 · Session 97 · Activities tab decluttered + reports consolidated + MAP naming locked",
+ "_session": 97,
+ "_status": "Cleanup day on your laundry list. The Activities tab is decluttered: one slim bar at the top (Lead + Search + Element Map + Custom Report), and the sidebar is grouped into five sections so the top layer stays calm — everything is still one click away, and the tab is just called 'Activities' now. The Custom Report absorbed the Master Report (one button, a Report Type choice inside), got a real progress bar, titles that match the audience you pick, and your new Elevation slider — sea level writes for a CPL newcomer with every data point; 30,000 ft writes the three-minute board brief. The old-name problem is fixed at the source: every report writer now carries the naming rule (CPL Initiative; Mapping Articulated Pathways platform; the military name is history-only), Sierra got the same rule live, and the public KB's instructions are fixed in a draft PR waiting for your merge. Your team-phrase question got a full plan doc — most gates can switch, four should stay magic-link.",
  "items": [
   {
-   "id": "reports-live-check",
+   "id": "s97-tryout",
    "who": "sam",
    "tab": "activities-projects",
-   "text": "NEW: try both report buttons. 📄 Master Report now opens a picker (activities + project cards, uncheck anything) and builds the Word doc from LIVE data — updates you posted via 📝 and the RACI leads are in it. 📊 Custom Report carries them too. If a report shows a stale update, tell Fable which project."
+   "text": "NEW LOOK: open the Activities tab (sidebar now says just 'Activities', inside the Workplan group). The slim bar sits at the top; 📊 Custom Report now holds BOTH reports — pick ⚡ narrative or 📋 Master, set the audience and the new Elevation slider (sea level = full detail, 30,000 ft = board brief), and watch the progress bar instead of 'Generating…'. Tell Fable if any band's length/detail feels off."
   },
   {
-   "id": "attach-workaround",
+   "id": "s97-sidebar",
    "who": "sam",
-   "tab": "activities-projects",
-   "text": "ATTACH TODAY (SharePoint): projects added after April 8 (the 4.1.x sprints, new 5.x) never got a SharePoint folder — that's the 'something went wrong' you hit on 4.1.4. The 📎 popover now links the parent Attachments folder: upload there, or ＋ Create or upload → Folder to make the project's folder first. Drag-and-drop is flaky in SharePoint; the button always works."
+   "tab": "dashboard",
+   "text": "SIDEBAR: the rail is grouped (Workplan / Funding / Strategy & Impact / Reference & Curation / Sierra & Team Tools / Share). Click a header to open or collapse; your layout is remembered per browser. If a grouping feels wrong, say which tab belongs where — it's a one-line change."
+  },
+  {
+   "id": "kb-naming-pr",
+   "who": "sam",
+   "tab": "knowledge-base",
+   "text": "MERGE WHEN READY: a draft PR on cpl-knowledge-base fixes the wrong MAP expansion ('Map Academic Pathways') in the assistant instructions and adds the naming conventions (CPL Initiative / Mapping Articulated Pathways platform / old name history-only). Curation-gated — your review is the audit."
+  },
+  {
+   "id": "team-phrase-ratify",
+   "who": "sam",
+   "tab": "raci",
+   "text": "RATIFY: docs/team_phrase_expansion_plan.md answers your team-phrase question — widen most remaining magic-link gates in two phases; keep four reviewer-only (TMC CO-approval, phrase management, project hard-delete) and hold the public Fact Sheet. Say 'go Phase 1' and next session executes."
+  },
+  {
+   "id": "factsheet-naming",
+   "who": "sam",
+   "tab": "dashboard",
+   "text": "FACT SHEET NAMING: the public fact sheet still says 'MAP Initiative' in its footer/contact/resources boxes. Safest fix is YOU editing those via ✎ Curate (a code edit could orphan existing Curate overrides — the keys derive from the text). Or tell Fable to do the key-migration version."
   },
   {
    "id": "sierra-day2",
    "who": "sam",
    "tab": "sierra-training",
-   "text": "Sierra day-2 (carryover): write the FIRST REAL GUIDANCE RULE in the 🧭 pane (reaches every surface incl. the production widget within a minute; deactivate, never delete); try the team-session tools; 👎 anything off."
+   "text": "Sierra day-2 (carryover): the naming rule is now LIVE in the 🧭 guidance pane (deactivate, never delete). Add your own first rule; try the team-session tools; 👎 anything off."
   },
   {
-   "id": "malone-guardrails",
-   "who": "sam",
-   "tab": "chatbot",
-   "text": "Intro Fable to Malone when ready: the Sierra guardrails lane (durable usage limits, a daily cost cap, spam protection) needs his thresholds. The cost cap should land BEFORE 'Credit for Being Me' publicizes the endpoint."
+   "id": "attachments-build",
+   "who": "fable",
+   "tab": "activities-projects",
+   "text": "HEADLINE NEXT BUILD (decided, carried over): native team-only attachments — private Supabase Storage bucket + project_attachments table + per-card ⬆ Attach; spec in session_97_handoff.md. SharePoint 📎 stays until it lands."
   },
   {
    "id": "coci-hours-extract",
    "who": "sam",
    "tab": "tmc-builder",
-   "text": "TOP DATA ASK (mid-July): can the COCI course report be exported WITH the contact-hours columns? Either way, pull a FRESH COCI course extract — ours is stale mid-renumbering. Also: can the CO export the 200+ pending ADT submissions as a simple list (college, TMC, date)?"
+   "text": "TOP DATA ASK (mid-July): fresh COCI course extract, ideally WITH contact-hours columns; and can the CO export the 200+ pending ADT submissions as a simple list (college, TMC, date)?"
   },
   {
-   "id": "mapusers-loginurl",
+   "id": "malone-guardrails",
    "who": "sam",
-   "tab": "map-users",
-   "text": "Carryover: send me the MAP login URL you want the refresh-nudge link to point at (today it links each college's MAP dashboard)."
-  },
-  {
-   "id": "vet-plans-kb-15",
-   "who": "sam",
-   "tab": "knowledge-base",
-   "text": "Carryover: review and merge public Knowledge Base PR #15 (Veterans plans) when you have a moment — waiting on your sign-off."
-  },
-  {
-   "id": "attach-native-build",
-   "who": "fable",
-   "tab": "activities-projects",
-   "text": "DECIDED (Sam, 2026-07-02): attachments are TEAM-ONLY. Next session builds the native attach: PRIVATE `project-attachments` Storage bucket (NO public read — reads AND writes gated reviewer/team-phrase via storage RLS), `project_attachments` metadata table, per-card ⬆ upload, live card listing (card_updates.js pattern). Note: gated downloads can't be plain links — fetch-with-auth-headers → blob URL (or signed URLs via RPC). Scope the attachments→KB-markdown ingest into the same flow. SharePoint stays the archive of record."
-  },
-  {
-   "id": "verify-daily-publish",
-   "who": "fable",
-   "tab": "dashboard",
-   "text": "After the next daily run: confirm the new 'Install node docx' step is green, reports/*.docx are in the daily commit, the Path-to-2030 charts render at the BOTTOM of CPL Analytics, and CPL_Data.js carries live_updates."
-  },
-  {
-   "id": "sierra-training-p3",
-   "who": "fable",
-   "tab": "sierra-training",
-   "text": "Phase 3 once the gap miner shows which artifacts are missing: ingest documents into Sierra's knowledge (upload → chunk → embed with the SAME gte-small model → cpl_documents/cpl_document_sections). Build against real gaps, not speculation."
-  },
-  {
-   "id": "tmc-engine-next",
-   "who": "fable",
-   "tab": "tmc-builder",
-   "text": "Confidence engine round 2 (carryover): description-similarity precompute, wire real hours when Sam's COCI master report lands, verify-tier carriers in the directory coverage column. Also standing: chatbox_exhibits dedupe/refresh + the unverified-M-ID renumber per scope."
+   "tab": "chatbot",
+   "text": "Intro Fable to Malone when ready: the Sierra guardrails lane (durable usage limits, daily cost cap, spam protection) needs his thresholds — the cost cap should land BEFORE the endpoint gets publicized."
   }
  ]
 }

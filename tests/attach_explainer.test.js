@@ -9,7 +9,9 @@
 //      carries an "Open the project folder" link with the same href;
 //  (c) "Got it" (checkbox + open) persists per browser and later clicks skip
 //      the popover (normal navigation);
-//  (d) the toolbar Attach Doc + Master Report affordances exist (button ids).
+//  (d) the retired toolbar Attach Doc + Master Report buttons stay retired
+//      (Session 97: master report lives in the Custom Report modal; attach
+//      is card-level only).
 //
 // Run from repo root: `npm test` (or `node tests/attach_explainer.test.js`).
 const fs = require("fs");
@@ -43,9 +45,9 @@ function makeWin() {
   const w = makeWin();
   const doc = w.document;
 
-  // (d) toolbar affordances
-  check("toolbar: Master Report button injected", !!doc.getElementById("masterReportBtn"));
-  check("toolbar: Attach Doc link injected (id attachDocBtn)", !!doc.getElementById("attachDocBtn"));
+  // (d) retired toolbar affordances stay retired (Session 97)
+  check("toolbar: Master Report button NOT injected", !doc.getElementById("masterReportBtn"));
+  check("toolbar: Attach Doc link NOT injected", !doc.getElementById("attachDocBtn"));
 
   // (a) card attach button rewritten to the project subfolder
   const cardBtn = doc.querySelector("a.attach-btn");

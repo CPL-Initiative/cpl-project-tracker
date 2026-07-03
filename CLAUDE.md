@@ -220,6 +220,23 @@ into the Pipeline Reference below or into dedicated docs.
    user can trigger a checkpoint at any time with the **`/checkpoint`**
    slash command (`.claude/commands/checkpoint.md`).
 
+## Naming & terminology (Sam's conventions — honor in ALL output)
+
+- **New identity phase (Sam, 2026-07-03):** the program is the **CPL
+  Initiative**; never "MAP Initiative" in new writing. The platform is the
+  **MAP platform** — long form **"Mapping Articulated Pathways (MAP)
+  platform"**. **"Military Articulation Platform" is the platform's original
+  2017 launch name — history-only, never the current expansion.** Enforced in
+  every report prompt (`NAMING_RULE` in `report_generator.js`;
+  `college_report_generator.js`; `annual_report.js` polish), the docx footers,
+  a live `sierra_guidance` row (id `cb226a48`, deactivatable in the 🧭 pane),
+  and the public KB's `claude/CLAUDE.md`. Historical titles/quotes stay verbatim.
+- **"Activities" = activities AND their projects.** When Sam says
+  "Activities" he generally means both the workplan activities and the
+  projects under them. The sidebar label is **Activities** (renamed from
+  "Activities & Projects", Session 97); the tab hash stays
+  `activities-projects`.
+
 ## Branch policy
 
 - Work on feature branches; open a PR to `main`.
@@ -496,14 +513,15 @@ scraping proved unreliable.
 | `tmc_college_courses.js` | Per-college course index (`window.CPL_TMC_COLLEGE_COURSES`: 120 colleges, 141,699 courses + 1,986 synth rows, 8.0 MB) powering the right-side pickers. Built one-shot by `tmc/_build_college_courses.py`. **Session 90 unioned the c-id.net authority** (`kb/reference/cid_articulations.json`) with COCI's `CIDNumber`; **Session 92 (#642) made the union a JOIN LADDER so EVERY non-sequence approval lands** (receipts in `_meta.cidnet_join_lanes`): exact → zero-norm → squashed full code (`PHYS 223`+`F` ↔ `223 F`) → **strict unique-title** (→ the verify-tier `tcid[]` 8th element) → **synthesized flagged row** (7th element `1` — approval real per c-id.net, course absent from our stale-mid-CCN COCI extract; units null). Comma-joined `CIDNumber` values are split (46 were unmatchable primaries). Rows: `[subj,num,title,units,cid]` / `[…,cid,xcid[]]` / `[…,xcid[],1]` synth / `[…,xcid[],0,tcid[]]` title-inferred; consumer matches `{cid}∪xcid∪tcid`, renders tcid `≈ verify` + synth `per c-id.net` chips (never COCI-grade ✓), `autoMatch` prefers hard>title>synth carriers + used-tracks, save/resume round-trips `course_cids/tcids/src`. `sequence:true` rows excluded; soft-fails without the c-id.net file. Static — rebuild only on a fresh COCI/c-id.net extract; NOT in the daily `git add` list. Tests: `tests/tmc_cidnet_synth.test.js` (31). |
 | `tmc_college_adts.js` | Per-college **approved-ADT overlay** (`window.CPL_TMC_COLLEGE_ADTS`: `by_college[college][tmc_id] → {b:bucket, s:status, c:control#, a:approvedDate, u:units, t:rawTitle}` + `tmc_totals` + `extra_tmcs`) — the **authoritative source** for which colleges hold an approved ADT in each discipline. Built one-shot by `tmc/_build_college_adts.py` from the COCI **program** export (`tmc/source_data/coci_program_export_<date>.csv`, committed for provenance). The TMC tab stamps a per-college status onto each TMC, mirroring COCI's two affirmative states separately (Session 66 — ✓ Active = live in catalog · ✓ Approved = CO-approved, pending activation · ⏳ In progress · ◐ Teachout; Inactive hidden). 3,238 (college,TMC) pairs (2,867 active · 218 approved-pending) · 115 colleges · 42 ASCCC TMCs + UCTP. UC Transfer Pathway (UCTP Chemistry/Physics) are their **own instances** (`extra_tmcs`, `kind:"uc-transfer-pathway"`), never folded into the Chemistry/Physics ADT. Lazy-loaded by `tmc_builder.js`. Static — NOT a daily-cron artifact; rebuild on a fresh COCI program extract. |
 | `tmc_ge_patterns.js` | The **GE Breadth patterns** (`window.CPL_TMC_GE_PATTERNS`) for the full-ADT companion panel (Session 60): **Cal-GETC** (the single statewide ADT GE pattern as of Fall 2025, AB 928; primary) + legacy **IGETC** and **CSU GE Breadth**. Each modeled as `sections[].slots[]` like a TMC but `ge:true`+`noncid:true` (college-certified GE areas, no C-ID auto-match; `units` = per-course minimum). **DRAFT** — encoded from public ASCCC/CCC standards (CCCCO Breadth Form PDFs bot-block the agent env), verify against the official forms. Lazy-loaded by `tmc_builder.js`. Static — NOT a daily-cron artifact. |
-| `dashboard_filters.js` | Client-side filter/search/sort logic |
+| `dashboard_filters.js` | Client-side filter/search logic. **Session 97:** reads the slim actions bar (Lead + Search only) defensively — the Activity/Vision/Goal/Status selects, Apply/Reset, and the bar-level Master Report/Attach Doc buttons are retired (attach = card-level 📎 only; the explainer stays). |
+| `nav_groups.js` | **Sidebar nav groups** (added Session 97): runtime-wraps the flat rail into 5 labeled collapsible groups + Share (Workplan / Funding / Strategy & Impact / Reference & Curation / Sierra & Team Tools) — the `kpi_cards.js` regen-proof pattern; Dashboard stays pinned; unlisted future tabs stay top-level; active tab force-opens its group; per-browser state `cplNavGroups.v1`; `<script>` in BOTH HTMLs (Rule 4). Tests: `tests/nav_groups.test.js`. |
 | `kpi_reorder.js` | Login-free drag-to-reorder for the headline KPI grid (`.kpi-section`): per-browser order in localStorage (`cplKpiOrder.v1`), cards re-matched by label text across daily regens, new cards re-enter at default position, ↺ reset affordance. Static — NOT a daily-cron artifact. |
 | `kpi_cards.js` | **KPI card shelf** (added Session 86): per-browser **HIDE** + **centered title row** + per-card **COLLAPSE** for the headline KPI grid — the `kpi_reorder.js` pattern. At runtime it wraps each `.kpi-card`'s `.kpi-number`+`.kpi-label` into a centered `.kc-head` and the rest into a collapsible `.kc-body`; cards open **collapsed (top half only)**, click a card's head to expand, per-card × hides (→ a "Hidden (N)" restore tray), and an **Expand-all/Collapse-all** toolbar flips them all. Scopes to `.kpi-section > .kpi-card` ONLY (the full-width KPI-Trends + College-Activity panels are left alone). State in localStorage (`cplKpiCards.v1`), re-matched by `.kpi-label` across daily regens, injects own CSS, coexists with `kpi_reorder.js` (controls ride a drag; clicks stopPropagation). `<script>` in BOTH HTMLs (Rule 4). Static — NOT a daily-cron artifact. Tests: `tests/kpi_cards.test.js`. Docs: `docs/cobi_lessons.md` (S86). |
 | `first_light.js` | **First Light** — the once-a-day plein air greeting (added Session 48): date-seeded painting-of-the-day modal with **local-day rotation** (no day-to-day repeats, Session 62; **89-painting gallery, Session 65**; grayscale→color reveal **(mono:true B&W prints skip the no-op fade via `.cplfl-mono` — load-bearing since 2026-06-23; a build guard fails any un-flagged B&W)**, read-aloud via browser `speechSynthesis`, hand-written alt text), opt-out + once-per-day localStorage guards, a **hidden reviewer almanac** (type `almanac` anywhere → ‹ Prev/Next › the full catalog with a counter; a review pass never consumes the daily greeting — the private QA tool, NOT a public browse-all), runtime-injected "Today's painting" header chip (regen-proof), an anonymous reflection box POSTing `{painting, reflection}` to Supabase `cpl_reflections` (anon WRITE-ONLY RLS; the weekly **musings digest** reads them server-side via `reflections/build_reflections_digest.py` → output bound for the private `cpl-knowledge-base` vault, NOT this repo), and — since the Session-49 retheme — the **ghosted painting layer** behind the whole page (`.cplfl-bg`: today's pick grayscaled at 14% opacity, painterly fallback, honors the opt-out + `prefers-reduced-transparency`/`contrast`). Manifest = **89** verified-PD paintings, built by the **runner-as-Commons-proxy** pipeline — `tools/source_first_light_art.mjs` (sources exact PD filenames from the Commons API on a CI runner, since the agent sandbox can't reach Wikimedia) → `tools/build_first_light_manifest.mjs` (assembles from the curated `tools/first_light_selection.json`; no hand-typed filenames) → `.github/workflows/first-light-art.yml` (push-triggered source + image-liveness verify). Categories in `tools/art_categories.json`; iconic works via the append-only `tools/art_extra_files.json`. Sourcing rules: `docs/kb-notes/reference-public-domain-art-sourcing.md`; pipeline: `docs/kb-notes/playbook-runner-as-external-api-proxy.md` + `docs/first_light_lessons.md`. Static — NOT a daily-cron artifact. Theme spec/prototype: `prototype/first_light_theme_v1.html` (**v1.6 — GLASS-QUIET chips graduated**, Sam-blessed 2026-06-12; solid family archived in the Chip Studio) + `prototype/check_contrast.py` (whose `--live` mode lints the live `:root` in CI — the retheme SHIPPED Session 49, PRs #407/#408/#410). Tests: `tests/first_light*.test.js`. |
 | `cobi_brand.js` | **COBI brand layer** (added Session 65): the masthead personality for *COBI — Chancellor's Office Business Intelligence* (a light Kobe homage). STATIC, regen-proof (the `first_light.js` pattern — injects own CSS + runtime DOM): a **rotating Mamba subtitle** (random per load), an **8→24** jersey wink on the wordmark, **Mamba Day** (Aug 24 → purple & gold). The `<h1>`/`<title>` emit `COBI` from the generator (decoupled from `proj_title` so Word reports keep their name); tagline + `#cobi-mamba` slot + nav label are static in BOTH HTMLs (Rule 4). Tests: `tests/cobi_brand.test.js`. Docs: `docs/cobi_lessons.md`. |
 | `cpl_todos.js` | The 📋 To-Do button on every tab (added Session 47): renders `kb/cpl_todos.json` as a For-Sam / For-Fable daily checklist with a "where we are" status line; per-browser check-offs (`cplTodos.v1`, keyed by the feed's `_as_of` so each refresh starts fresh); per-tab badge + nav chips for other tabs' items. Feed refreshed at every Rule-8 checkpoint. Static — NOT a daily-cron artifact. |
-| `report_generator.js` | Custom Report Generator (Claude API via proxy). **Session 96 wired it LIVE:** before prompting it fetches the newest `item_updates` per activity/project + `item_raci` (lead = Responsible → Accountable) — the same anon overlays the card faces use — and adds a "Latest Activity-Level Updates" prompt block; falls back to the build-time `CPL_DATA.live_updates`, then the baked fields. Test hooks on `window.CPL_CUSTOM_REPORT`. Tests: `tests/report_live_wiring.test.js`. |
-| `master_report.js` | **Master Report selection modal + client-side generator** (`window.CPL_MASTER_REPORT`, added Session 96). The filter-bar "📄 Master Report" button (now in `dashboard_filters.js` as `#masterReportBtn`, lazy-loading this file via `CPL_TABS.loadScript`) opens the same Activities & Projects checkbox tree as the Custom Report and builds the Workplan-style master .docx CLIENT-SIDE from `CPL_DATA` + the live `item_updates`/`item_raci` overlays — always-current at click time; partial selections stamp a "Scope: N of M" line. Layout ported 1:1 from `generate_reports.js`; uses the local `docx.min.js` (never CDN). The daily pre-built `reports/CPL_Master_Report.docx` stays as the modal's fallback link (and is FRESH again — the workflow now installs node `docx` + commits `reports/*.docx`; it had been failing silently since forever). STATIC, lazy — NOT a daily-cron artifact. Tests: `tests/master_report.test.js` (28). Docs: `docs/cobi_lessons.md` (S96). |
+| `report_generator.js` | Custom Report Generator (Claude API via proxy). **Session 96 wired it LIVE:** before prompting it fetches the newest `item_updates` per activity/project + `item_raci` (lead = Responsible → Accountable) — the same anon overlays the card faces use — and adds a "Latest Activity-Level Updates" prompt block; falls back to the build-time `CPL_DATA.live_updates`, then the baked fields. Test hooks on `window.CPL_CUSTOM_REPORT`. **Session 97:** Report-Type toggle (absorbs the Master Report), Elevation slider, per-audience titles, progress bar, `NAMING_RULE` (see §7). Tests: `tests/report_live_wiring.test.js` + `tests/report_session97.test.js`. |
+| `master_report.js` | **Master Report builder** (`window.CPL_MASTER_REPORT`, added Session 96). **Session 97: the filter-bar button was RETIRED** — the Custom Report modal's 📋 Master Report-Type option now drives this module's `fetchLiveOverlay`/`buildReportModel`/`renderDocx` with its own checkbox selection (lazy-loaded via `CPL_TABS.loadScript`; this file's own modal remains as a dormant fallback). Opens the same Activities & Projects checkbox tree as the Custom Report and builds the Workplan-style master .docx CLIENT-SIDE from `CPL_DATA` + the live `item_updates`/`item_raci` overlays — always-current at click time; partial selections stamp a "Scope: N of M" line. Layout ported 1:1 from `generate_reports.js`; uses the local `docx.min.js` (never CDN). The daily pre-built `reports/CPL_Master_Report.docx` stays as the modal's fallback link (and is FRESH again — the workflow now installs node `docx` + commits `reports/*.docx`; it had been failing silently since forever). STATIC, lazy — NOT a daily-cron artifact. Tests: `tests/master_report.test.js` (28). Docs: `docs/cobi_lessons.md` (S96). |
 | `docx.min.js` | Local copy of docx@8.0.4 UMD build (do **not** switch to CDN) |
 | `fetch_custom_report.py` | Fetches CustomReport JSON from the MAP API |
 | `cpl_news.js` | **CPL News** tab renderer (`window.CPL_NEWS_TAB`). Lazy-loaded on first `#cpl-news` open; injects own `var(--token)` CSS; reads `public.cpl_news` LIVE (anon) — CA-first, scope/source/search filters, suggest-a-story, reviewer feature/hide. Static — NOT a daily-cron artifact (the feed is the live table, not a committed file). Fed by the **`cpl-news-harvest`** Supabase Edge Function (`chatbox/supabase/functions/cpl-news-harvest/index.ts`) invoked by **`.github/workflows/cpl-news.yml`** (cron 13:17 UTC). Schema: `news/supabase_cpl_news.sql`. Docs: `docs/cpl_news_lessons.md` + `docs/kb-notes/playbook-cpl-news-aggregation.md`. Added Session 67 (Skywatch, PR #481). |
@@ -715,9 +733,20 @@ Goals** tab, which holds the 5-year targets table — different content.)
 
 ### 7. Custom Report Generator
 
-- **UI**: Modal with audience picker, metric checkboxes, format selection
+- **UI**: Modal with a **Report Type toggle** (⚡ audience narrative / 📋 Master
+  data report — the Master Report was consolidated INTO this modal in Session 97;
+  its filter-bar button is retired), audience picker (each audience carries a
+  document `title` stamped by the docx template — the model is told NOT to write
+  its own), the **Elevation slider** (0→30,000 ft; bands in `ELEVATION_BANDS` map
+  to detail/length guidance + a structure swap at >20k ft; persisted per-browser
+  in `cplReportElevation.v1`), checkbox tree, and a staged **progress bar**
+  (replaces the old "Generating..." label; time-based creep during the API call).
 - **Backend**: POSTs to Cloudflare Worker → Anthropic API
-- **Model**: `claude-sonnet-4-5-20250929`
+- **Model**: `claude-sonnet-4-5` (unversioned alias — never re-pin a dated
+  snapshot; `college_report_generator.js` + `annual_report.js` de-pinned too)
+- **Naming**: every prompt carries `NAMING_RULE` (CPL Initiative / Mapping
+  Articulated Pathways (MAP) platform; "Military Articulation Platform" is
+  history-only — see Naming & terminology)
 - **Output**: in-browser preview or downloadable .docx (via local `docx.min.js`)
 - **Config**: `window.CPL_REPORT_PROXY_URL` set in HTML before
   `report_generator.js` loads
@@ -776,7 +805,7 @@ detailed in §7c):
 | Tab key (hash) | Display label | Content |
 |----------------|---------------|---------|
 | `dashboard` (default, no hash) | Dashboard | KPI Metrics, CPL Analytics, **plus teaser cards** linking to the other tabs. (Workplan Activity Metrics + Filter Bar + Projects Grid MOVED OUT 2026-05-31 → `activities-projects`.) |
-| `activities-projects` | Activities & Projects | Workplan Activity Metrics, Filter Bar, Projects Grid (the `#workplanProjectsWrapper` collapsible — see §6b). **Added 2026-05-31, PR #206.** **Session 95: the grid holds only real work-item projects** (4.1.x + 5.x) — sub-activities render as Activity cards only, and are IMMUNE to Table/Archive; the Path-to-2030 charts moved to CPL Analytics (Dashboard tab). |
+| `activities-projects` | Activities (renamed Session 97; = activities + projects) | Workplan Activity Metrics, Filter Bar, Projects Grid (the `#workplanProjectsWrapper` collapsible — see §6b). **Added 2026-05-31, PR #206.** **Session 95: the grid holds only real work-item projects** (4.1.x + 5.x) — sub-activities render as Activity cards only, and are IMMUNE to Table/Archive; the Path-to-2030 charts moved to CPL Analytics (Dashboard tab). |
 | `workplan-goals` | Annual Workplan Goals | The 5-year goals + stretch + current table, **plus the Projects section (Session 95)** — the real work-item projects (4.1.x sprint children + 5.x) in a compact table (live RACI lead via `card_raci.js`), with a ＋ Add-project button (`project_add.js`) |
 | `budget` | Budget | CPL Budget & Expenditure Plan |
 | `implementation-funding` | Implementation Funding | CPL Implementation Funding model (DRAFT-chipped) — 2026-30 one-time pools, 3 priorities (shares-first, rev2 workbook), 119 colleges' potential allocations, a **what-if sandbox** (pools/shares/targets editable, per-browser, Reset-to-workbook), and **P2/P3 actuals vs target** from the daily `cpl_funding_performance.js` (P1 = deliberate incentive gap). Shell static; renders from `cpl_funding.js` + `cpl_funding_data.js` (lazy; data static, actuals cron). **Built 2026-06-11, PRs #352–#368** — `docs/cpl_funding_lessons.md` + `docs/cpl_funding_handoff.md`. |
@@ -2306,26 +2335,8 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full story:
 > [`docs/cpl_assistant_lessons.md`](docs/cpl_assistant_lessons.md) (S94).
 
-### Session 95 — the Activity ⇄ Project separation + the Archive-radio fix (2026-07-02)
-
-Sam's morning mixup: he tabled **23 cards** as "redundant with Activity cards" and the Activity
-cards vanished too (both are the same `projects` rows dual-rendered; Session 84 wired the overlay
-to hide the Activity card deliberately). Fixes, one PR: ① the 23 mistaken `project_lifecycle` rows
-DELETED (5.1's deliberate June-29 tabling kept); ② the **activity layer**
-(`derive_core_activity_ids` minus `5.x` — ladder-bearing `5.1` is a REAL project, caught in A/B) is
-now **IMMUNE** to table/archive at every consumer (generator scrub + `project_lifecycle.js`
-`activityLayerIds()` + `raci.js`); ③ the Projects Grid **no longer duplicates** activity-layer rows
-("no redundant activity or project cards") — grid = `4.1.x` sprint children + `5.x` only; the
-Activity card already carried every affordance; ④ the **Archive radio bug**: the capture-phase
-overlay walk closed the modal on ANY inner click, so only default-Tabled/no-reason could save —
-now backdrop-only. Tests 25 → 42. **Afternoon wave (Sam's poke-around, 2nd PR):** the
-Path-to-2030 charts → top of CPL Analytics (Dashboard tab); the 4.1 Sprints composite inherits the
-real row's goal (no more phantom row); **`project_add.js`** — the ＋ Add-project flow (projects
-INSERT/UPDATE widened to the team-phrase gate, `projects_write_team_phrase_widen`); the **AWG
-Projects section** (work-item projects table at the bottom of Annual Workplan Goals, own markers
-AFTER the End-AWG marker); + the grid-replace **+1-blank-line/run accretion fixed** (198 piled up —
-regen now byte-idempotent modulo timestamps). Suite 125 green. Full story:
-`docs/project_lifecycle_lessons.md` (both 2026-07-02 sections).
+> **Session 95 narrative (the Activity ⇄ Project separation + the Archive-radio fix) archived** →
+> [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full story: `docs/project_lifecycle_lessons.md`.
 
 ### Session 96 — SkyPress: report generators go live-data + the attach handoff (2026-07-02)
 
@@ -2340,6 +2351,23 @@ Tweaks: 📝 composer closes after "✓ Saved."; nudge mailtos semicolon-delimit
 Path-to-2030 charts → BOTTOM of CPL Analytics; a first-click 📎 **attach explainer** (SharePoint
 "＋ Create or upload" handoff wasn't discoverable). Parked for Sam: native Supabase-Storage
 attachments (access model) + attachments→KB-md ingest. Suite 128. Full story: `docs/cobi_lessons.md` (S96).
+
+
+### Session 97 — BigSky: the Activities tab optimization + reports consolidation (2026-07-03)
+
+Sam's laundry list, one PR: the **Custom Report** gains a staged **progress bar**, **per-audience
+document titles**, the **Elevation slider** (0→30,000 ft detail control feeding an Altitude prompt
+block), and absorbs the **Master Report** as a Report-Type option (filter-bar button retired). The
+**slim actions bar** (Lead + Search + Element Map + Custom Report) moved to the TOP of the Activities
+pane — the Activity/Vision/Goal/Status selects, Apply/Reset, and the bar-level Attach Doc were
+retired (the generator's `<!-- Filter Bar -->` comment stays put as the injection anchor; the Lead
+dropdown is now rebuilt every run — it had been frozen since first populate). **Sidebar grouped**
+into 5 collapsible groups + Share (`nav_groups.js`, runtime-wrap, regen-proof) with the label renamed
+**Activities**; Where To now resets after each use; **MAP naming locked** (see Naming & terminology
+above) across prompts, footers, the KB repo (draft PR), and a `sierra_guidance` row; report models
+de-pinned to the `claude-sonnet-4-5` alias. Team-phrase expansion plan authored:
+[`docs/team_phrase_expansion_plan.md`](docs/team_phrase_expansion_plan.md) (recommendation: widen
+most, keep 4 reviewer-only). Suite 132 files green (+3 new). Full story: `docs/cobi_lessons.md` (S97).
 
 ---
 

@@ -505,3 +505,94 @@ close-on-save source pin), `tests/attach_explainer.test.js` (12). Suite: 128
 files green. Regen A/B: chart-at-bottom verified by unit call (sandbox regen
 can't produce the analytics section — no CustomReport fetch); artifacts
 reverted, code-only PR per the artifact policy.
+
+
+---
+
+## Session 97 — BigSky: Activities tab optimization + reports consolidation (2026-07-03)
+
+Sam's laundry list session ("assess, design, and implement — the list informs your
+recommendations"), plus two naming directives and an auth question. One code-only PR.
+
+### The MAP naming lock
+
+The Session-96 Legislative Report expanded MAP as "Military Articulation Platform"
+twice — nothing in any prompt said otherwise, so the model reached for the 2017-era
+name from its training data. Sam's directive (new identity phase): **CPL Initiative**
+(never "MAP Initiative"), **Mapping Articulated Pathways (MAP) platform**, old name =
+history-only. Fixed at every layer that WRITES prose: `NAMING_RULE` in the Custom
+Report prompt, the college report's hard constraints, the Annual Report polish prompt,
+both docx footers ("| MAP Initiative" → "| CPL Initiative"), a live `sierra_guidance`
+row (id `cb226a48` — steers all Sierra surfaces incl. the production widget, no
+redeploy), and the public KB's two CLAUDE.md files (which carried a THIRD, wrong
+expansion — "Map Academic Pathways"; fixed via the curation-gated draft PR).
+Historical titles/quotes stay verbatim. Left alone deliberately: `CPL_Data.js` update
+bodies (Sam's own content), the SharePoint library name (an external path), and the
+fact-sheet's baked text — its Curate override keys derive from text content
+(`methodology-stable-dom-keys`), so a baked-text edit could orphan live overrides;
+Sam edits those via ✎ Curate instead.
+
+### Custom Report: elevation, titles, progress, consolidation
+
+- **Elevation slider** (0→30,000 ft): five bands (`ELEVATION_BANDS`) map altitude to
+  an Altitude prompt block — Ground level explains everything for a CPL newcomer;
+  30,000 ft is a Board-of-Governors brief (500–800 words, no per-project detail; the
+  structure itself swaps to Highlights-by-Activity above 20k ft). Band drives
+  max_tokens too (8192 below 12.5k ft). Persisted per-browser.
+- **Per-audience titles**: each audience carries a `title` the docx template stamps
+  ("CPL Initiative — Legislative Report", "…— Workforce & Industry Report"); the
+  prompt forbids the model writing its own title (the college report's pattern) —
+  this is what had made every report a "Legislative Report".
+- **Progress bar** replaces "Generating...": staged (fetch overlays → prompt → API
+  call with time-based creep to 85% → docx → done), red on failure.
+- **Master Report consolidated in** as a Report-Type radio (⚡ narrative / 📋 master);
+  master mode hides audience+elevation, drives `master_report.js`'s builder with the
+  modal's own selection. The filter-bar button is retired; `master_report.js` keeps
+  its exports (and its dormant modal) as the builder library.
+- Models de-pinned: `claude-sonnet-4-5-20250929` → `claude-sonnet-4-5` in all three
+  report generators (the retired-model 502 playbook).
+
+### The slim actions bar + the frozen-lead-options bug
+
+The filter bar's four selects (Activity/Vision/Goal/Status), Apply/Reset, and the
+bar-level Attach Doc went away (Sam's screenshot X's); Lead + Search + Element Map
+stay, moved to the TOP of the pane near Where To. Key mechanic: the actual
+`.filter-bar` div moved but **the `<!-- Filter Bar -->` comment stayed put** — it's
+the generator's strip/inject anchor for Activity Metrics, so no generator anchor
+surgery was needed (verified: two full regens, all anchors hold, byte-idempotent
+modulo timestamps). Found + fixed along the way: the generator's Lead-options regex
+only matched an EMPTY select, so the dropdown had been frozen since the run that
+first populated it — now a full-replace every run. `applyFilters()` reads all
+controls defensively; quickstart's HINT_VOCAB dropped the retired select hints
+(search covers "Activity 3"-type asks against an 11-project grid).
+
+### Sidebar groups + Where To reset
+
+`nav_groups.js` runtime-wraps the 21-tab flat rail into 5 collapsible groups +
+Share (Workplan · Funding · Strategy & Impact · Reference & Curation · Sierra &
+Team Tools), Dashboard pinned. The kpi_cards.js pattern again: no template
+restructuring, tabs.js untouched (buttons stay under `nav.cpl-tabs`, listeners
+survive the DOM move), unlisted future tabs stay top-level instead of vanishing,
+active tab force-opens its group (deep links always land visible), state per-browser.
+Sidebar label → **Activities** (Sam: "Activities" generally means activities + their
+projects — now in CLAUDE.md's terminology section). Where To resets after each jump
+(input cleared + status fades; it used to keep the old query forever).
+
+### Team-phrase expansion (recommendation only, Sam's ask)
+
+Full inventory + phased plan in `docs/team_phrase_expansion_plan.md`. Headline:
+widen most remaining magic-link-only writes to `is_allowed_reviewer() OR
+team_pass_ok()` in two phases (Phase 1: workplan_goals/budget/personnel/
+tmc_curator_notes/kpi_order; Phase 2: kb_curation with a `team:<name>` attribution
+stamp), and KEEP reviewer-only: `tmc_review_submission` (CO authority claim),
+`team_access` manage, `projects` DELETE — plus hold the public Fact Sheet Curate
+layer pending Sam's call.
+
+### Tests
+
++3 files: `tests/report_session97.test.js` (26), `tests/nav_groups.test.js` (12),
+`tests/actions_bar_slim.test.js` (15 — incl. Rule-4 identity + template-position
+guards + the Where To reset). Two files updated to pin the retirements
+(`attach_explainer`, `master_report`). Suite: **132 files green**. Regen A/B: two
+full generator runs against the moved bar — anchors hold, idempotent; artifacts
+reverted (code-only PR).

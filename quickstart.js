@@ -31,7 +31,7 @@
   // Tabs known to the router — keep in sync with VALID_TABS in CPL_Dashboard.html (~line 13091).
   var TABS = [
     {hash: 'dashboard',            label: 'Dashboard',                desc: 'KPI metrics + CPL Analytics overview, plus teaser cards linking to the other tabs. (The CPL projects grid + workplan activity metrics moved to the Activities & Projects tab in PR #206.)'},
-    {hash: 'activities-projects',  label: 'Activities & Projects',    desc: 'CPL projects grid (named projects + initiatives like Apprenticeship, AI in CPL, etc.) + workplan activity metrics. Use filter_hint.scroll_to for one named project, or search/activity/goal/status to filter the grid.'},
+    {hash: 'activities-projects',  label: 'Activities',    desc: 'Workplan activities AND their projects (named projects + initiatives like Apprenticeship, AI in CPL, etc.) + workplan activity metrics. Use filter_hint.scroll_to for one named project, or search to filter the grid.'},
     {hash: 'workplan-goals',       label: 'Annual Workplan Goals',    desc: 'Five-year CPL goals with annual progress'},
     {hash: 'budget',               label: 'Budget',                   desc: 'CPL budget and expenditure plan'},
     {hash: 'vision-2030',          label: 'Vision 2030',              desc: 'Alignment cards showing CPL contribution to Vision 2030'},
@@ -66,12 +66,9 @@
       // activity names). Use this when the user describes a THEME rather
       // than a specific project — e.g. "AI work" or "Veterans-related
       // projects" — so the grid filters but doesn't single out one card.
-      search: '<free-form search string, e.g. "AI", "Veterans">',
-      // Optional category filters. Use these when the user names a workplan
-      // structure (e.g. "show me Activity 3" or "Goal 2 projects").
-      activity: ['Activity 1', 'Activity 2', 'Activity 3', 'Activity 4', 'Activity 5'],
-      goal:     ['Goal 1', 'Goal 2', 'Goal 3', 'Goal 4', 'Goal 5'],
-      status:   ['Complete', 'In Progress', 'Not Started', 'On Hold'],
+      // (The Activity/Goal/Status dropdowns were removed from the slim
+      // actions bar in Session 97 — search + scroll_to are the levers now.)
+      search: '<free-form search string, e.g. "AI", "Veterans", "Activity 3">',
     },
     'credential-reference': {
       audit_tag: [
@@ -160,8 +157,8 @@
       '',
       'Examples:',
       '  "apprenticeship sprint" → {"tab":"activities-projects","filter_hint":{"scroll_to":"Apprenticeship Sprint"},"message":"Jumping to the Apprenticeship Sprint project."}',
-      '  "show me Activity 3 projects" → {"tab":"activities-projects","filter_hint":{"activity":"Activity 3"},"message":"Opening Activities & Projects filtered to Activity 3."}',
-      '  "AI in CPL" → {"tab":"activities-projects","filter_hint":{"search":"AI"},"message":"Opening Activities & Projects filtered to AI-related projects."}',
+      '  "show me Activity 3 projects" → {"tab":"activities-projects","filter_hint":{"search":"Activity 3"},"message":"Opening Activities filtered to Activity 3."}',
+      '  "AI in CPL" → {"tab":"activities-projects","filter_hint":{"search":"AI"},"message":"Opening Activities filtered to AI-related projects."}',
       '  "review unclassified credentials" → {"tab":"credential-reference","filter_hint":{"audit_tag":"unclassified_in_map"},"message":"Opening Common Exhibit Reference with the unclassified-in-MAP queue."}',
       '  "find Adobe credentials" → {"tab":"credential-reference","filter_hint":{"search":"Adobe"},"message":"Opening Common Exhibit Reference filtered to Adobe."}',
       '  "title-keyword Generated rows in CCR" → {"tab":"unified-courses","filter_hint":{"status":"Generated","prov":"by title-keyword"},"message":"Opening the Common Course Reference with title-keyword Generated rows."}',
@@ -411,8 +408,20 @@
       setTimeout(function () {
         if (s.hint.filter_hint) stashAndDispatch(s.hint.tab, s.hint.filter_hint);
         navigateTo(s.hint.tab);
-        input.focus();
+        resetBox();
       }, 200);
+    }
+
+    // Clear the box after a successful jump so Where To is a clean slate for
+    // the next use (Sam, 2026-07-03: "works but doesn't reset after the first
+    // use"). The status message lingers briefly, then clears too.
+    var _statusClearTimer = null;
+    function resetBox() {
+      input.value = '';
+      closeSuggest();
+      input.focus();
+      if (_statusClearTimer) clearTimeout(_statusClearTimer);
+      _statusClearTimer = setTimeout(function () { setStatus(''); }, 2500);
     }
 
     // Quick-search always opens blank — no pre-fill from a previous visit — so
@@ -443,7 +452,7 @@
           if (routed.filter_hint) stashAndDispatch(routed.tab, routed.filter_hint);
           navigateTo(routed.tab);
           btn.disabled = false; input.disabled = false;
-          input.focus();
+          resetBox();
         }, 350);
       } catch (e) {
         setStatus(e.message || 'Sorry — could not route that. Try rephrasing.', 'error');
