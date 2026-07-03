@@ -112,6 +112,15 @@
     }
     return false;
   }
+  // An RLS-filtered PATCH returns 200 + an EMPTY representation (never a
+  // 401/403) — verify the write actually touched a row before confirming
+  // the paint (see team_phrase.js checkWrite).
+  function writeResult(r) {
+    if (window.CPL_TEAM_PHRASE && window.CPL_TEAM_PHRASE.checkWrite) {
+      return window.CPL_TEAM_PHRASE.checkWrite(r);
+    }
+    return Promise.resolve({ ok: r.ok, status: r.status });
+  }
 
   // ─── Save: PATCH one column on a budget_funding row (single-PK, no kind) ───
   function saveField(bid, column, value, sess) {
@@ -261,6 +270,7 @@
       cell.setAttribute("data-val", normalized);
 
       saveField(bid, column, n, state.sess)
+        .then(writeResult)
         .then(function (r) {
           cell.classList.remove("budget-saving");
           if (r.ok) {

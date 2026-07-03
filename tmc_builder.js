@@ -479,7 +479,12 @@
   function authHeaders(extra) {
     var h = sbHeaders(extra);
     if (state.session && state.session.access_token) h["Authorization"] = "Bearer " + state.session.access_token;
-    else if (teamMode()) h["x-team-pass"] = window.CPL_TEAM_PHRASE.get();
+    else if (teamMode()) {
+      // Anon bearer alongside the phrase — the proven raci.js shape (relying
+      // on Kong's apikey-only fallback is an untestable divergence from here).
+      h["Authorization"] = "Bearer " + SUPABASE_ANON;
+      h["x-team-pass"] = window.CPL_TEAM_PHRASE.get();
+    }
     return h;
   }
 
@@ -1392,12 +1397,17 @@
           state.notes[key] = { note: (ta.value || "").trim(), by: state.email || "(team)", at: new Date().toISOString() };
           renderBody();
         } else if ((r.status === 401 || r.status === 403) && teamMode()) {
-          // rotated/stale phrase — drop it and surface the lock state
+          // rotated/stale phrase — drop it, tell the sibling editors
+          // (workplan/budget/assoc listen for the event), and surface the
+          // lock state. renderBody() is deferred so the guidance stays
+          // readable before the note affordances un-light.
           window.CPL_TEAM_PHRASE.clear();
+          try { window.dispatchEvent(new CustomEvent("cpl-team-pass-dropped")); } catch (e2) {}
           msg.textContent = "The team phrase changed — unlock again (curator bar above).";
           msg.className = "tmc-msg err";
           var authNode = document.getElementById("tmc-auth");
           if (authNode) renderAuthInto(authNode);
+          setTimeout(function () { renderBody(); }, 2500);
         } else r.text().then(function (tx) { msg.textContent = "Save failed: " + (tx || r.status); msg.className = "tmc-msg err"; });
       }).catch(function (e) { msg.textContent = "Save failed: " + e.message; msg.className = "tmc-msg err"; });
     });
@@ -2112,6 +2122,13 @@
     if (!root) return;
     var s0 = getSession();
     if (s0) { state.session = s0; state.email = s0.email || jwtEmail(s0.access_token); }
+    // A sibling editor (workplan/budget/assoc) dropped a rotated phrase →
+    // refresh our auth bar + note affordances too (booted guard = bound once).
+    window.addEventListener("cpl-team-pass-dropped", function () {
+      var a = document.getElementById("tmc-auth");
+      if (a) renderAuthInto(a);
+      renderBody();
+    });
     render(); // shell + (empty) selectors immediately
     restoreSession(function () { var a = document.getElementById("tmc-auth"); if (a) renderAuthInto(a); });
     loadRequests();

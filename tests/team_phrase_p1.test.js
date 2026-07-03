@@ -140,7 +140,7 @@ function makeWin(html, opts) {
   {
     const t = fs.readFileSync("tmc_builder.js", "utf8");
     check("tmc: x-team-pass injected in authHeaders only",
-      /function authHeaders[\s\S]{0,400}x-team-pass/.test(t));
+      /function authHeaders[\s\S]{0,700}x-team-pass/.test(t));
     check("tmc: base sbHeaders NOT phrase-decorated",
       !/function sbHeaders[\s\S]{0,300}x-team-pass/.test(t));
     check("tmc: note affordance gates on canNote()",
@@ -152,7 +152,7 @@ function makeWin(html, opts) {
     check("tmc: phrase note stamps reviewer_email '(team)'",
       t.indexOf('reviewer_email: state.email || "(team)"') >= 0);
     check("tmc: stale phrase dropped on 401/403 note save",
-      /40[13][\s\S]{0,200}?CPL_TEAM_PHRASE\.clear\(\)/.test(t) || /r\.status === 401 \|\| r\.status === 403[\s\S]{0,300}?clear\(\)/.test(t));
+      /40[13][\s\S]{0,500}?CPL_TEAM_PHRASE\.clear\(\)/.test(t) || /r\.status === 401 \|\| r\.status === 403[\s\S]{0,600}?clear\(\)/.test(t));
   }
 
   // ── (d) assoc_editor pins ──
@@ -207,6 +207,66 @@ function makeWin(html, opts) {
     check("team_phrase.js script-loaded before its consumers",
       h1.indexOf('src="team_phrase.js"') > 0
       && h1.indexOf('src="team_phrase.js"') < h1.indexOf('src="assoc_editor.js"'));
+  }
+
+  // ── (f) hardening round 2 (adversarial-review follow-up, 2026-07-03) ──
+  // The RLS silent-no-op class: an UPDATE/DELETE whose USING clause filters
+  // the target rows returns 200 with an EMPTY representation — never 401/403.
+  {
+    // checkWrite semantics (functional)
+    const w = makeWin();
+    const TP = w.CPL_TEAM_PHRASE;
+    check("checkWrite: empty representation = 403-shaped failure",
+      (await TP.checkWrite({ ok: true, status: 200, json: () => Promise.resolve([]) })).status === 403
+      && (await TP.checkWrite({ ok: true, status: 200, json: () => Promise.resolve([]) })).ok === false);
+    check("checkWrite: non-empty representation passes",
+      (await TP.checkWrite({ ok: true, status: 200, json: () => Promise.resolve([{ id: 1 }]) })).ok === true);
+    check("checkWrite: bodyless 204 trusts r.ok",
+      (await TP.checkWrite({ ok: true, status: 204, json: () => Promise.reject(new Error("no body")) })).ok === true);
+    check("checkWrite: real error status passes through",
+      (await TP.checkWrite({ ok: false, status: 401, json: () => Promise.resolve([]) })).status === 401);
+
+    // verify(): transient failure is NOT "wrong phrase" (nothing stored)
+    const w2 = makeWin();
+    w2.fetch = function () { return Promise.reject(new Error("network down")); };
+    const t = await w2.CPL_TEAM_PHRASE.unlock("correct-horse");
+    check("verify: network failure resolves null (not false), nothing stored",
+      t === null && w2.localStorage.getItem("cpl_team_pass") === null);
+
+    // decorateHeaders: stored phrase rides along even under a JWT bearer
+    // (a signed-in NON-reviewer's valid phrase must not be shadowed — the
+    // RLS OR-predicate makes the extra header harmless for reviewers).
+    const w3 = makeWin();
+    await w3.CPL_TEAM_PHRASE.unlock("correct-horse");
+    const jwtHeaders = w3.CPL_TEAM_PHRASE.decorateHeaders(
+      { Authorization: "Bearer some.jwt.token" }, { access_token: "some.jwt.token", email: "x@y.z" });
+    check("decorateHeaders: stored phrase attached alongside a JWT session",
+      jwtHeaders["x-team-pass"] === "correct-horse");
+
+    // Source pins: every PATCH save path verifies the representation
+    const wpg = fs.readFileSync("workplan_goals.js", "utf8");
+    check("wpg: all 3 PATCH paths piped through writeResult",
+      (wpg.match(/\.then\(writeResult\)/g) || []).length >= 3
+      && /function writeResult/.test(wpg));
+    const bud = fs.readFileSync("budget_editor.js", "utf8");
+    check("budget: saveField piped through writeResult",
+      /saveField\(bid, column, n, state\.sess\)\s*\n?\s*\.then\(writeResult\)/.test(bud));
+    const a = fs.readFileSync("assoc_editor.js", "utf8");
+    check("assoc: DELETE/PATCH request return=representation (POST stays minimal)",
+      /method: "DELETE",\s*\n\s*headers: assocHeaders\(sess, "return=representation"\)/.test(a)
+      && /method: "PATCH",\s*\n\s*headers: assocHeaders\(sess, "return=representation"\)/.test(a)
+      && /method: "POST",\s*\n\s*headers: assocHeaders\(sess, "return=minimal"\)/.test(a));
+    check("assoc: save wrapper rejects an empty-representation write",
+      /checkWrite\(r\)\.then[\s\S]{0,220}no rows written/.test(a));
+
+    // tmc round-2 pins
+    const tmc = fs.readFileSync("tmc_builder.js", "utf8");
+    check("tmc: team-mode note save carries the anon bearer (raci shape)",
+      /else if \(teamMode\(\)\) \{[\s\S]{0,260}Bearer " \+ SUPABASE_ANON[\s\S]{0,220}x-team-pass/.test(tmc));
+    check("tmc: phrase drop broadcasts cpl-team-pass-dropped + refreshes the body",
+      /CPL_TEAM_PHRASE\.clear\(\);[\s\S]{0,300}cpl-team-pass-dropped[\s\S]{0,600}setTimeout\(function \(\) \{ renderBody\(\); \}/.test(tmc));
+    check("tmc: listens for sibling phrase drops",
+      /addEventListener\("cpl-team-pass-dropped", function \(\) \{[\s\S]{0,220}renderBody\(\);/.test(tmc));
   }
 
   // ── report ──

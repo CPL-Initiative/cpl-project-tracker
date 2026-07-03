@@ -46,7 +46,9 @@
     try { localStorage.removeItem(KEY); } catch (e) { /* ignore */ }
   }
 
-  // Server-side check WITHOUT storing — resolves strict true/false.
+  // Server-side check WITHOUT storing. Resolves strict true (phrase matches),
+  // false (server said no), or null (TRANSIENT — network error / 429 / 5xx:
+  // we could not verify either way, so never report "wrong phrase").
   function verify(phrase) {
     return fetch(SUPABASE_URL + '/rest/v1/rpc/team_pass_ok', {
       method: 'POST',
@@ -58,25 +60,53 @@
       },
       body: '{}',
     }).then(function (r) {
+      if (r.status === 429 || r.status >= 500) return null;
       if (!r.ok) return false;
       return r.json().then(function (v) { return v === true; });
-    }).catch(function () { return false; });
+    }).catch(function () { return null; });
   }
 
-  // Validate-then-store. Resolves true on success (phrase persisted).
+  // Validate-then-store. Resolves true on success (phrase persisted),
+  // false on a rejected phrase, null on a transient verification failure
+  // (nothing stored in either non-true case).
   function unlock(phrase) {
     phrase = (phrase || '').trim();
     if (!phrase) return Promise.resolve(false);
     return verify(phrase).then(function (ok) {
-      if (ok) { try { localStorage.setItem(KEY, phrase); } catch (e) { /* ignore */ } }
+      if (ok === true) { try { localStorage.setItem(KEY, phrase); } catch (e) { /* ignore */ } }
       return ok;
     });
   }
 
-  // Attach x-team-pass for phrase sessions; harmless no-op otherwise.
+  // Attach x-team-pass on WRITE headers. For a phrase pseudo-session that's
+  // the session's own phrase; for a magic-link (JWT) session the STORED
+  // phrase still rides along when present — the RLS gates are OR-predicates,
+  // so this is harmless for reviewers and it un-shadows the phrase for a
+  // signed-in NON-reviewer (their JWT alone fails is_allowed_reviewer(),
+  // and without the header the valid phrase they hold would never engage).
   function decorateHeaders(headers, sess) {
-    if (sess && sess.teamPass) headers['x-team-pass'] = sess.teamPass;
+    var p = (sess && sess.teamPass) || get();
+    if (p) headers['x-team-pass'] = p;
     return headers;
+  }
+
+  // PostgREST + RLS failure mode this whole module must respect: a PATCH /
+  // DELETE whose target rows are filtered out by the policy's USING clause
+  // (rotated phrase, non-reviewer session) returns HTTP 200/204 with ZERO
+  // affected rows — NOT 401/403. An "ok" write must therefore also prove it
+  // touched a row. Call with a fetch Response from a write that sent
+  // `Prefer: return=representation`; resolves {ok, status, rows} where an
+  // ok-but-empty representation is reported as a 403-shaped failure so the
+  // callers' stale-phrase recovery (handleWriteFailure) engages.
+  function checkWrite(r) {
+    if (!r.ok) return Promise.resolve({ ok: false, status: r.status, rows: null });
+    return r.json().then(function (rows) {
+      var wrote = !Array.isArray(rows) || rows.length > 0;
+      return { ok: wrote, status: wrote ? r.status : 403, rows: rows };
+    }).catch(function () {
+      // No JSON body (e.g. a 204) — can't count rows; trust r.ok.
+      return { ok: true, status: r.status, rows: null };
+    });
   }
 
   function isAuthError(status) { return status === 401 || status === 403; }
@@ -117,9 +147,11 @@
       btn.disabled = true;
       unlock(input.value).then(function (ok) {
         btn.disabled = false;
-        if (ok) {
+        if (ok === true) {
           input.value = '';
           if (typeof opts.onUnlocked === 'function') opts.onUnlocked(session());
+        } else if (ok === null) {
+          msg.textContent = "couldn't reach the server — try again in a moment";
         } else {
           msg.textContent = "that doesn't match — check with the team";
         }
@@ -145,6 +177,7 @@
     decorateHeaders: decorateHeaders,
     isAuthError: isAuthError,
     handleWriteFailure: handleWriteFailure,
+    checkWrite: checkWrite,
     unlockRow: unlockRow,
   };
   if (typeof window !== 'undefined') window.CPL_TEAM_PHRASE = api;
