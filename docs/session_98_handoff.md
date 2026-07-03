@@ -57,11 +57,12 @@ optimization + reports-consolidation session. Read in this order if you're cold:
    instead). TEAM-ONLY Supabase Storage + `project_attachments` metadata
    table; full spec in `docs/session_97_handoff.md` §1 — it remains accurate.
    Attach explainer + SharePoint handoff stay until it lands.
-2. **Team-phrase expansion** — if Sam ratifies
-   `docs/team_phrase_expansion_plan.md`, execute Phase 1 (workplan_goals,
-   budget_*, personnel, tmc_curator_notes, kpi_order → widen to
-   `is_allowed_reviewer() OR team_pass_ok()`; copy raci.js's validate-then-
-   store unlock). Phase 2 (kb_curation + `team:<name>` stamp) is its own PR.
+2. **Team-phrase Phase 1 — ✅ DONE (same session, Sam: "Go phase 1").**
+   Migrations `team_phrase_widen_p1` + `_associations` applied; shared
+   `team_phrase.js` wired into workplan_goals/budget_editor/assoc_editor/
+   tmc_builder (notes only); `kpi_order` was never built — dropped.
+   **Phase 2 remains** (kb_curation + the `team:<name>` attribution stamp) —
+   its own PR when Sam wants it; plan doc has the spec.
 3. **Fact-sheet naming** — the public fact-sheet's baked text still says "MAP
    Initiative" in 4 places (footer, contact box, resources). DON'T edit the
    baked HTML casually: Curate override keys derive from box text

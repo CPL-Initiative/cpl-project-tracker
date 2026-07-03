@@ -81,7 +81,37 @@
       body: JSON.stringify({ email: email, create_user: true })
     });
   }
-  function signOut() { sessionStorage.removeItem("cpl_sb"); }
+  function signOut() {
+    sessionStorage.removeItem("cpl_sb");
+    if (window.CPL_TEAM_PHRASE) window.CPL_TEAM_PHRASE.clear();
+  }
+
+  // Phase 1 team-phrase widening (2026-07-03): magic link wins, else the
+  // shared team phrase (team_phrase.js pseudo-session) — budget_funding
+  // INSERT/UPDATE RLS accepts either (migration team_phrase_widen_p1).
+  function fullSession() {
+    return getSession()
+      || (window.CPL_TEAM_PHRASE ? window.CPL_TEAM_PHRASE.session() : null);
+  }
+  function authHeaders(sess, prefer) {
+    var h = {
+      "apikey": SUPABASE_ANON,
+      "Authorization": "Bearer " + ((sess && sess.access_token) || SUPABASE_ANON),
+      "Content-Type": "application/json"
+    };
+    if (prefer) h.Prefer = prefer;
+    if (window.CPL_TEAM_PHRASE) window.CPL_TEAM_PHRASE.decorateHeaders(h, sess);
+    else if (sess && sess.teamPass) h["x-team-pass"] = sess.teamPass;
+    return h;
+  }
+  function maybeDropStalePhrase(sess, status) {
+    if (window.CPL_TEAM_PHRASE
+        && window.CPL_TEAM_PHRASE.handleWriteFailure(sess, status)) {
+      try { window.dispatchEvent(new CustomEvent("cpl-team-pass-dropped")); } catch (e) {}
+      return true;
+    }
+    return false;
+  }
 
   // ─── Save: PATCH one column on a budget_funding row (single-PK, no kind) ───
   function saveField(bid, column, value, sess) {
@@ -89,12 +119,7 @@
     body[column] = value;
     return fetch(SUPABASE_URL + "/rest/v1/budget_funding?id=eq." + encodeURIComponent(bid), {
       method: "PATCH",
-      headers: {
-        "apikey": SUPABASE_ANON,
-        "Authorization": "Bearer " + sess.access_token,
-        "Content-Type": "application/json",
-        "Prefer": "return=representation"
-      },
+      headers: authHeaders(sess, "return=representation"),
       body: JSON.stringify(body)
     });
   }
@@ -104,10 +129,13 @@
     var widget = el("div", { "class": "budget-auth-widget" }, []);
     if (state.sess) {
       widget.appendChild(el("span", { "style": "font-weight:600;" },
-        ["Signed in as ", state.sess.email || "(no email)"]));
+        state.sess.teamPass
+          ? ["✓ Editing unlocked (team phrase)"]
+          : ["Signed in as ", state.sess.email || "(no email)"]));
       widget.appendChild(el("span", { "style": "color:#666;" },
         ["Click any dollar figure to edit • Enter saves • Esc cancels"]));
-      var btnOut = el("button", { "class": "budget-btn budget-btn-out" }, ["Sign out"]);
+      var btnOut = el("button", { "class": "budget-btn budget-btn-out" },
+        [state.sess.teamPass ? "🔒 Lock" : "Sign out"]);
       btnOut.addEventListener("click", function () { signOut(); onChange(); });
       widget.appendChild(btnOut);
     } else {
@@ -150,6 +178,14 @@
 
       widget.appendChild(emailInput);
       widget.appendChild(btnIn);
+      // Team-phrase alternative (Phase 1 widening, 2026-07-03).
+      if (window.CPL_TEAM_PHRASE) {
+        widget.appendChild(el("span", { "style": "color:#999;" }, ["·"]));
+        widget.appendChild(window.CPL_TEAM_PHRASE.unlockRow({
+          blurb: "or the team phrase:",
+          onUnlocked: function () { onChange(); }
+        }));
+      }
       widget.appendChild(status);
     }
     return widget;
@@ -160,7 +196,7 @@
     if (!anchor || !anchor.parentNode) return;
     var parent = anchor.parentNode;
     var widget = buildAuthWidget(state, function () {
-      state.sess = getSession();
+      state.sess = fullSession();
       mountAuthWidget(state);
       paintEditability(state);
     });
@@ -232,6 +268,7 @@
             setTimeout(function () { cell.classList.remove("budget-saved"); }, 1500);
           } else {
             rollback("HTTP " + r.status);
+            maybeDropStalePhrase(state.sess, r.status);
           }
         })
         .catch(function (e) { cell.classList.remove("budget-saving"); rollback(e && e.message); });
@@ -279,14 +316,19 @@
     if (!document.getElementById("budget-funding")) return;
     if (editableCells().length === 0) return;
 
-    var state = { sess: getSession() };
+    var state = { sess: fullSession() };
     mountAuthWidget(state);
     paintEditability(state);
     attachClickHandler(state);
 
     // Re-paint when sign-in completes on another tab and routes back here.
     window.addEventListener("hashchange", function () {
-      state.sess = getSession();
+      state.sess = fullSession();
+      mountAuthWidget(state);
+      paintEditability(state);
+    });
+    window.addEventListener("cpl-team-pass-dropped", function () {
+      state.sess = fullSession();
       mountAuthWidget(state);
       paintEditability(state);
     });

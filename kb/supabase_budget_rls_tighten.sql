@@ -93,3 +93,29 @@ commit;
 --   where schemaname='public'
 --     and tablename in ('budget_funding','budget_expenditures','personnel')
 --   order by tablename, cmd;
+
+
+-- ============================================================================
+-- 2026-07-03 (Session 97 follow-up) — team-phrase widening, Phase 1  ✅ APPLIED LIVE
+-- (migration `team_phrase_widen_p1`, via the Supabase MCP; plan + tiering:
+--  docs/team_phrase_expansion_plan.md — Sam: "Go phase 1")
+-- INSERT/UPDATE widen to reviewer OR shared team phrase; DELETE stays
+-- reviewer-only (destructive). team_pass_ok() reads the x-team-pass header
+-- (see raci/supabase_raci.sql for the gate itself).
+-- ============================================================================
+
+alter policy budget_funding_insert on public.budget_funding
+  with check (is_allowed_reviewer() or team_pass_ok());
+alter policy budget_funding_update on public.budget_funding
+  using (is_allowed_reviewer() or team_pass_ok())
+  with check (is_allowed_reviewer() or team_pass_ok());
+alter policy budget_expenditures_insert on public.budget_expenditures
+  with check (is_allowed_reviewer() or team_pass_ok());
+alter policy budget_expenditures_update on public.budget_expenditures
+  using (is_allowed_reviewer() or team_pass_ok())
+  with check (is_allowed_reviewer() or team_pass_ok());
+alter policy personnel_insert on public.personnel
+  with check (is_allowed_reviewer() or team_pass_ok());
+alter policy personnel_update on public.personnel
+  using (is_allowed_reviewer() or team_pass_ok())
+  with check (is_allowed_reviewer() or team_pass_ok());

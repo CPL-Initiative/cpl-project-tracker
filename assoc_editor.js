@@ -66,25 +66,36 @@
     } catch (e) {}
     return null;
   }
+  // Phase 1 team-phrase widening (2026-07-03): magic link wins, else the
+  // shared team phrase (team_phrase.js) — waa_* policies accept either.
+  function fullSession() {
+    return getSession()
+      || (window.CPL_TEAM_PHRASE ? window.CPL_TEAM_PHRASE.session() : null);
+  }
 
   // ─── Supabase association CRUD ───────────────────────────────────────────
   function assocHeaders(sess, prefer) {
     var h = {
       "apikey": SUPABASE_ANON,
-      "Authorization": "Bearer " + sess.access_token,
+      "Authorization": "Bearer " + ((sess && sess.access_token) || SUPABASE_ANON),
       "Content-Type": "application/json"
     };
     if (prefer) h.Prefer = prefer;
+    if (window.CPL_TEAM_PHRASE) window.CPL_TEAM_PHRASE.decorateHeaders(h, sess);
+    else if (sess && sess.teamPass) h["x-team-pass"] = sess.teamPass;
     return h;
   }
 
   // One-time detection of the is_primary column. Resolves true/false; cached.
+  // Read-only public-RLS probe → bare anon headers, deliberately NOT
+  // assocHeaders(): the x-team-pass secret rides only on the writes that
+  // need it, never on a GET.
   var _primaryColPromise = null;
-  function detectPrimaryColumn(sess) {
+  function detectPrimaryColumn() {
     if (_primaryColPromise) return _primaryColPromise;
     _primaryColPromise = fetch(
       ASSOC_TABLE + "?select=is_primary&limit=1",
-      { headers: assocHeaders(sess) }
+      { headers: { "apikey": SUPABASE_ANON, "Authorization": "Bearer " + SUPABASE_ANON } }
     ).then(function (r) {
       // 200 → column exists; 400 (undefined column) → not yet migrated.
       return r.ok;
@@ -187,7 +198,7 @@
   }
 
   function openAssocPop(cell) {
-    var sess = getSession();
+    var sess = fullSession();
     if (!sess) return; // anonymous: chips are read-only
     closeAssocPop();
 
@@ -291,7 +302,7 @@
     positionPop(pop, cell);
 
     // Probe the is_primary column once; reveal the primary radios if present.
-    detectPrimaryColumn(sess).then(function (has) {
+    detectPrimaryColumn().then(function (has) {
       st.hasPrimaryCol = has;
       if (has) {
         Object.keys(primaryRadios).forEach(function (aid) {
@@ -398,7 +409,9 @@
       return p.then(function (r) {
         if (!r.ok) {
           return r.text().then(function (t) {
-            throw new Error("HTTP " + r.status + (t ? ": " + t.slice(0, 160) : ""));
+            var err = new Error("HTTP " + r.status + (t ? ": " + t.slice(0, 160) : ""));
+            err.status = r.status;
+            throw err;
           });
         }
       });
@@ -419,12 +432,21 @@
       statusEl.className = "wpg-assoc-pop-status err";
       statusEl.textContent = "Save failed — " + (e.message || "unknown") + ". Reload to re-check.";
       console.error("[assoc_editor] association save failed:", e);
+      // Rotated/stale team phrase (the raci.js #598 recovery): drop it, dim
+      // the ✎ affordances, and tell the sibling widgets to re-render their
+      // unlock rows. paintEditability() also closes this popover when the
+      // drop leaves no session.
+      if (window.CPL_TEAM_PHRASE
+          && window.CPL_TEAM_PHRASE.handleWriteFailure(sess, e.status)) {
+        try { window.dispatchEvent(new CustomEvent("cpl-team-pass-dropped")); } catch (e2) {}
+        paintEditability();
+      }
     });
   }
 
   // ─── Affordance painting (lights up .wpg-assoc-on per session) ──────────
   function paintEditability() {
-    var signed = !!getSession();
+    var signed = !!fullSession();
     var cells = document.querySelectorAll('[data-assoc-edit="1"]');
     Array.prototype.forEach.call(cells, function (c) {
       if (signed) c.classList.add("wpg-assoc-on");
@@ -442,7 +464,7 @@
       var target = e.target;
       while (target && target !== document.body && target.nodeType === 1) {
         if (target.getAttribute && target.getAttribute("data-assoc-edit") === "1") {
-          if (!getSession()) return; // anonymous: read-only, no popover
+          if (!fullSession()) return; // anonymous: read-only, no popover
           openAssocPop(target);
           e.stopPropagation();
           return;
@@ -459,7 +481,7 @@
     close: closeAssocPop,
     refresh: paintEditability,
     paintEditability: paintEditability,
-    isSignedIn: function () { return !!getSession(); },
+    isSignedIn: function () { return !!fullSession(); },
     _hasListener: false
   };
 
@@ -469,6 +491,8 @@
     // Re-light when the URL hash flips (sign-in may complete on another tab and
     // route back). Each editor also calls refresh() on its own auth changes.
     window.addEventListener("hashchange", paintEditability);
+    // A sibling editor dropped a rotated/stale team phrase → dim ours too.
+    window.addEventListener("cpl-team-pass-dropped", paintEditability);
   }
 
   if (document.readyState === "loading") {

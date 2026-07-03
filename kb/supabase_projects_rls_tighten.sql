@@ -81,3 +81,19 @@ create policy projects_update on public.projects
 -- Verify (optional):
 --   select policyname, cmd, qual, with_check from pg_policies
 --   where schemaname='public' and tablename='projects' order by cmd;
+
+
+-- ============================================================================
+-- 2026-07-03 (Session 97 follow-up) — team-phrase widening, Phase 1  ✅ APPLIED LIVE
+-- (migration `team_phrase_widen_p1`, via the Supabase MCP; plan + tiering:
+--  docs/team_phrase_expansion_plan.md — Sam: "Go phase 1")
+-- INSERT/UPDATE widen to reviewer OR shared team phrase; DELETE stays
+-- reviewer-only (destructive). team_pass_ok() reads the x-team-pass header
+-- (see raci/supabase_raci.sql for the gate itself).
+-- ============================================================================
+
+alter policy wpg_insert on public.workplan_goals
+  with check (is_allowed_reviewer() or team_pass_ok());
+alter policy wpg_update on public.workplan_goals
+  using (is_allowed_reviewer() or team_pass_ok())
+  with check (is_allowed_reviewer() or team_pass_ok());

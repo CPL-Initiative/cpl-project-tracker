@@ -596,3 +596,35 @@ guards + the Where To reset). Two files updated to pin the retirements
 (`attach_explainer`, `master_report`). Suite: **132 files green**. Regen A/B: two
 full generator runs against the moved bar — anchors hold, idempotent; artifacts
 reverted (code-only PR).
+
+
+### S97 continued — team-phrase Phase 1 EXECUTED (same day, "Go phase 1")
+
+Sam ratified the plan same-session. Shipped in a follow-up PR:
+
+- **DB (applied live, 2 migrations):** `team_phrase_widen_p1` — `workplan_goals`,
+  `budget_funding`, `budget_expenditures`, `personnel` INSERT/UPDATE →
+  `is_allowed_reviewer() OR team_pass_ok()`; `tmc_curator_notes` write/update
+  RECREATED for `anon, authenticated` (they were `authenticated`-only — a phrase
+  user is anon and never even reached the predicate; the recon's best catch).
+  `team_phrase_widen_p1_associations` — the Annual Workplan "+ Add row" flow and
+  the shared ✎ popover also write `workplan_activity_associations`, which would
+  have half-failed; link rows widen on all three ops (a join-table delete is a
+  reversible edit, unlike the content DELETEs, which all stay reviewer-only).
+  **`kpi_order` dropped from scope — the table was never built.**
+- **Client:** new shared `team_phrase.js` (the raci.js mechanics extracted:
+  validate-before-store, anon-bearer + `x-team-pass` decoration, stale-phrase
+  drop + `cpl-team-pass-dropped` event) consumed by `workplan_goals.js`,
+  `budget_editor.js`, `assoc_editor.js`, and `tmc_builder.js`. TMC nuance:
+  the header rides ONLY on `authHeaders` (curator-note upserts) — never the
+  base `sbHeaders` (anon reads + the reviewer-only review RPC); phrase users
+  get "✓ Team unlocked (phrase) — notes only" while approve/return stays
+  visibly magic-link-gated (affordance-visibility-vs-eligibility); phrase
+  notes stamp `reviewer_email: "(team)"`.
+- **Found along the way:** every one of these editors hardcoded
+  `Bearer sess.access_token` inline — a phrase pseudo-session would have sent
+  "Bearer undefined" and 401'd at PostgREST before RLS ever ran. All write
+  paths now go through a shared `authHeaders(sess, prefer)` per file.
+- **Tests:** `tests/team_phrase_p1.test.js` (41 — helper functional coverage +
+  per-consumer pins incl. the sbHeaders isolation + DELETE-not-widened schema
+  pins). Adversarial review workflow (3 lenses → refute pass) run pre-PR.
