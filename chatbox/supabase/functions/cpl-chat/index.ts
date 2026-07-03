@@ -596,7 +596,10 @@ function buildTopicContext(results: any[], isCollegeSpecific: boolean = false): 
   return ctx;
 }
 
-function buildCollegeContext(profile: any): string {
+// includeContacts (v27): false suppresses the CPL-contact name/email line —
+// the external/vendor embeds (ctx:"external"). Default true = every existing
+// caller unchanged (fail-open).
+function buildCollegeContext(profile: any, includeContacts: boolean = true): string {
   if (!profile) return "";
   const profiles = Array.isArray(profile) ? profile : [profile];
 
@@ -618,13 +621,15 @@ function buildCollegeContext(profile: any): string {
       }
     }
 
-    const contacts = p.contacts || {};
-    const coordinator = contacts.cpl_coordinator || contacts.primary_contact;
-    const email = contacts.cpl_coordinator_email || contacts.primary_contact_email;
-    if (coordinator && coordinator !== "" && coordinator !== "NA") {
-      ctx += `\nCPL Contact: ${coordinator}`;
-      if (email && email !== "" && email !== "NA") ctx += ` (${email})`;
-      ctx += `\n`;
+    if (includeContacts) {
+      const contacts = p.contacts || {};
+      const coordinator = contacts.cpl_coordinator || contacts.primary_contact;
+      const email = contacts.cpl_coordinator_email || contacts.primary_contact_email;
+      if (coordinator && coordinator !== "" && coordinator !== "NA") {
+        ctx += `\nCPL Contact: ${coordinator}`;
+        if (email && email !== "" && email !== "NA") ctx += ` (${email})`;
+        ctx += `\n`;
+      }
     }
 
     const cr = p.credit_distribution || {};
@@ -826,7 +831,7 @@ Deno.serve(async (req: Request) => {
   }
 
   try {
-    const { query, session_id, history, audience } = await req.json();
+    const { query, session_id, history, audience, ctx } = await req.json();
     if (!query || typeof query !== "string" || query.trim().length === 0) {
       return new Response(JSON.stringify({ error: "Query is required" }), {
         status: 400,
@@ -840,6 +845,18 @@ Deno.serve(async (req: Request) => {
     // keys; anything else (or absent, e.g. the production widget) → null.
     const audienceKey: string | null =
       typeof audience === "string" && AUDIENCE_RULES[audience] ? audience : null;
+
+    // Optional context variant (v27 — the external/vendor contacts gate).
+    // FAIL-OPEN by design: ONLY the exact string "external" changes anything.
+    // Absent or unknown values — i.e. every existing caller: the COBI tab, the
+    // standalone sierra/ page, the Fact Sheet drawer, the production
+    // map.rccd.edu widget — keep today's behavior, contacts included. An
+    // external embed (the vendor platform; sierra/?ctx=external for iframes)
+    // sends ctx:"external" to suppress college staff contact names/emails from
+    // the college context (contacts are reviewer-gated elsewhere on the
+    // platform — the embed shouldn't broadcast them). Smoke mode 14 guards
+    // BOTH directions.
+    const externalCtx = ctx === "external";
 
     // Optional conversation history (multi-turn). Backward-compatible: callers
     // that omit it (e.g. the production widget) stay single-turn. Sanitize to
@@ -938,7 +955,7 @@ Deno.serve(async (req: Request) => {
     if (singleProfile && topicResults && topicResults.length > 0) {
       // COMBINED MODE: both college and topic detected
       searchMode = "college_topic";
-      collegeContext = buildCollegeContext(singleProfile);
+      collegeContext = buildCollegeContext(singleProfile, !externalCtx);
 
       // Filter topic results: show college-specific matches first, then others
       const collegeName = singleProfile.college;
@@ -961,7 +978,7 @@ Deno.serve(async (req: Request) => {
     } else if (singleProfile || (Array.isArray(resolvedProfile) && resolvedProfile.length > 0)) {
       // COLLEGE-ONLY MODE
       searchMode = "college";
-      collegeContext = buildCollegeContext(resolvedProfile);
+      collegeContext = buildCollegeContext(resolvedProfile, !externalCtx);
 
     } else if (topicResults && topicResults.length > 0) {
       // TOPIC-ONLY MODE

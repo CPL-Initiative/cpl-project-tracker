@@ -66,7 +66,7 @@ is fully self-contained (no login, no cookies required, mobile-friendly).
 
 ```html
 <iframe
-  src="https://cpl-initiative.github.io/cpl-project-tracker/sierra/"
+  src="https://cpl-initiative.github.io/cpl-project-tracker/sierra/?ctx=external"
   title="Sierra — Credit for Prior Learning assistant"
   style="width:100%; max-width:860px; height:680px; border:0; border-radius:12px;
          box-shadow:0 2px 12px rgba(11,61,97,.15);"
@@ -80,6 +80,11 @@ is fully self-contained (no login, no cookies required, mobile-friendly).
   for the session id and the audience pick.
 - If your site sends a Content-Security-Policy, allow
   `frame-src https://cpl-initiative.github.io`.
+- **`?ctx=external` is the external-embed variant** (v27): it suppresses
+  college staff contact names/emails from answers (Sierra instead routes
+  visitors to the college's CPL landing page / MAP@rccd.edu). External embeds
+  should use it; omit it only if the CPL team has agreed contacts belong on
+  your surface.
 
 ### 2.2 Sizing guidance
 
@@ -138,7 +143,10 @@ Body:    { "query":      "<user question, ≤1000 chars>",
            "session_id": "vendorname-<uuid>",          ← prefix please (attribution)
            "history":    [ {"role":"user","content":"…"},
                            {"role":"assistant","content":"…"} ],   ← prior turns; send [] on turn 1
-           "audience":   "student" }                    ← optional; see 3.5
+           "audience":   "student",                     ← optional; see 3.5
+           "ctx":        "external" }                   ← REQUIRED for external embeds (v27):
+                                                          suppresses college staff contact
+                                                          names/emails from answers; fail-open
 
 Success → 200 text/event-stream:
     event: sources   data: [{id,heading,similarity},…]     (once, first)
@@ -167,7 +175,8 @@ async function ask(query, onDelta, onDone, onError) {
       headers: { 'Content-Type': 'application/json',
                  'apikey': ANON, 'Authorization': 'Bearer ' + ANON },
       body: JSON.stringify({ query, session_id: sessionId,
-                             history: convo.slice(), audience: 'student' })
+                             history: convo.slice(), audience: 'student',
+                             ctx: 'external' })   // external embeds: suppress staff contacts (v27)
     });
     if (!resp.ok) {                     // error JSON, not SSE
       if (resp.status === 429) return onError('Lots of questions right now — try again in a minute.');
@@ -333,6 +342,7 @@ Works today with no CORS change (CORS doesn't apply server-to-server).
 | Query cap | 1,000 chars (silent truncation) |
 | History | opt-in; last 6 turns used; 2,000 chars/turn |
 | Audiences | `student` · `faculty` · `administrator` · `employer` · `civic` |
+| Context variant | `ctx:"external"` (or `sierra/?ctx=external`) — suppresses college staff contacts from answers; use it on external embeds |
 | SSE events | `sources` → `text`* → `done` (no error event; errors are pre-stream JSON) |
 | Model (server-side) | `claude-sonnet-4-6`, max 2,048 output tokens, streaming |
 | Standalone page | `https://cpl-initiative.github.io/cpl-project-tracker/sierra/` |

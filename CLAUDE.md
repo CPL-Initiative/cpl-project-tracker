@@ -863,7 +863,19 @@ reuse, so keep it self-contained behind its CONFIG block.
   part of the daily GitHub Actions cron. Source-of-record is the **live
   function**, captured at `chatbox/supabase/functions/cpl-chat/index.ts`
   (re-capture with `get_edge_function` before editing if in doubt).
-- Live now: **v26 ACTIVE** (Session 94, SkySierra — the **team-guidance layer**:
+- Live now: **v27 ACTIVE** (2026-07-02, the Sierra vendor lane — the **fail-open
+  external contacts gate**: an opt-in body field **`ctx:"external"`** makes
+  `buildCollegeContext` omit the college staff `CPL Contact: name (email)` line,
+  so external/vendor embeds never broadcast staff contacts (contacts are
+  reviewer-gated elsewhere — `map_college_contacts`; Sierra quoting them
+  publicly was the outlier). Absent/unknown `ctx` = byte-identical prior
+  behavior — COBI tab / standalone page / Fact Sheet / production widget all
+  unchanged (the third opt-in field on the v17-`history` / v22-`audience`
+  convention). `sierra/?ctx=external` passes it through for iframe embeds
+  (`tests/sierra_ctx.test.js`); **smoke mode 14a/b** asserts both directions on
+  the San Diego Mesa anchor. Fail-closed flip (default-suppress, internal
+  surfaces opt in) parked on the guardrails backlog. Vendor docs:
+  `docs/sierra_integration_guide.md`.). Prior: **v26** (Session 94, SkySierra — the **team-guidance layer**:
   `fetchTeamGuidance()` joins the parallel fan-out and appends the newest **10
   ACTIVE `sierra_guidance` rules** (~2,500-char cap, fails soft) as a TEAM
   GUIDANCE block that wins on conflict — the Training tab's 🧭 pane is the

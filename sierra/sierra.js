@@ -42,6 +42,16 @@
 
   var convo = [];          // prior {role,content} turns → sent as history (multi-turn)
   var CONVO_MAX = 8;
+
+  // ── Context variant (v27 — the external contacts gate) ──
+  // An embedding host (e.g. the vendor-platform iframe) loads this page with
+  // ?ctx=external to suppress college staff contact names/emails from answers.
+  // FAIL-OPEN: absent/unknown → full context, exactly today's behavior — a
+  // normal visit to sierra/ sends no ctx field at all.
+  var ctxVariant = null;
+  try {
+    if (new URLSearchParams(location.search).get('ctx') === 'external') ctxVariant = 'external';
+  } catch (e) { /* no URLSearchParams → no ctx (fail-open) */ }
   var logEl, inputEl, sendBtn, statusEl, formEl, suggestEl, audEl, wired = false;
 
   // ── Audience (primary population) ──
@@ -367,6 +377,14 @@
     statusEl.className = 's-status' + (kind ? ' s-' + kind : '');
   }
 
+  // Request body — ctx rides ONLY when the ?ctx=external variant is active, so
+  // a normal visit's payload is byte-identical to pre-v27 (fail-open).
+  function buildPayload(query) {
+    var p = { query: query, session_id: sessionId(), history: convo.slice(), audience: audience };
+    if (ctxVariant) p.ctx = ctxVariant;
+    return p;
+  }
+
   // ── Call the Edge Function + stream the SSE response ──
   async function ask(query) {
     var msg = addAssistantMsg();
@@ -383,10 +401,7 @@
           'apikey': SUPABASE_ANON,
           'Authorization': 'Bearer ' + SUPABASE_ANON,
         },
-        body: JSON.stringify({
-          query: query, session_id: sessionId(), history: convo.slice(),
-          audience: audience,
-        }),
+        body: JSON.stringify(buildPayload(query)),
       });
     } catch (e) {
       bubble.innerHTML = renderMarkdown('Sorry — I couldn\'t reach the assistant. Please check your connection and try again.');
@@ -508,6 +523,6 @@
     escapeHtml: escapeHtml, inlineMd: inlineMd, renderMarkdown: renderMarkdown,
     parseSse: parseSse, CHAT_URL: CHAT_URL, SUGGESTED: SUGGESTED,
     AUDIENCES: AUDIENCES, AUD_KEY: AUD_KEY, feedbackPayload: feedbackPayload,
-    SIERRA_MARK: SIERRA_MARK,
+    SIERRA_MARK: SIERRA_MARK, ctxVariant: ctxVariant, buildPayload: buildPayload,
   };
 })();
