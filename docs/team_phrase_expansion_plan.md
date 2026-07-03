@@ -79,12 +79,18 @@ of the proven `raci.js` pattern: validate the typed phrase against
 writes, drop + re-prompt on a 401/403 from a rotated phrase, and share the
 same `cpl_team_pass` localStorage key so one unlock covers every tab.
 
-- **Phase 1 — low risk, no attribution dependency** (one PR):
-  migration `team_phrase_widen_p1` → `workplan_goals`, `budget_funding`,
-  `budget_expenditures`, `personnel`, `tmc_curator_notes`, `kpi_order`
-  write policies become `is_allowed_reviewer() OR team_pass_ok()`.
-  Client: `workplan_goals.js`, `budget_editor.js`, `tmc_builder.js` (notes)
-  gain the phrase-unlock affordance next to their existing sign-in.
+- **Phase 1 — low risk, no attribution dependency** — ✅ **EXECUTED 2026-07-03**
+  (Sam: "Go phase 1"). Migration `team_phrase_widen_p1` APPLIED + verified:
+  `workplan_goals`, `budget_funding`, `budget_expenditures`, `personnel`
+  INSERT/UPDATE → `is_allowed_reviewer() OR team_pass_ok()`;
+  `tmc_curator_notes` write/update policies RECREATED for `anon, authenticated`
+  (they were `authenticated`-only, so a phrase user — anon role — never even
+  reached the predicate) with the widened gate; every DELETE stays
+  reviewer-only. **`kpi_order` dropped from scope — the table was never built**
+  (the roadmap's "curated default KPI order" is still a later add; gate it at
+  birth when it lands). Client: `workplan_goals.js`, `budget_editor.js`,
+  `tmc_builder.js` (notes) gained the shared phrase-unlock affordance
+  (`team_phrase.js`, the validated raci.js pattern).
 - **Phase 2 — curation lanes with the `team:<name>` stamp** (one PR):
   migration `team_phrase_widen_kb_curation`; `unified_courses.js` (+ CSR/CER
   consumers) gain phrase unlock + the one-time display-name prompt; the

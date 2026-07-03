@@ -70,6 +70,44 @@
   }
   function signOut() {
     sessionStorage.removeItem("cpl_sb");
+    if (window.CPL_TEAM_PHRASE) window.CPL_TEAM_PHRASE.clear();
+  }
+
+  // Phase 1 team-phrase widening (2026-07-03): a magic-link session wins;
+  // otherwise the shared team phrase (localStorage cpl_team_pass, validated
+  // server-side before store by team_phrase.js) yields a pseudo-session
+  // {teamPass, email:"(team)"} — every gate here only checks truthiness.
+  function fullSession() {
+    return getSession()
+      || (window.CPL_TEAM_PHRASE ? window.CPL_TEAM_PHRASE.session() : null);
+  }
+
+  // One header builder for every write: phrase sessions have no access_token,
+  // so the bearer falls back to the ANON key and x-team-pass rides along
+  // (RLS's team_pass_ok() reads the header; "Bearer undefined" would 401
+  // before RLS even ran).
+  function authHeaders(sess, prefer) {
+    var h = {
+      "apikey": SUPABASE_ANON,
+      "Authorization": "Bearer " + ((sess && sess.access_token) || SUPABASE_ANON),
+      "Content-Type": "application/json"
+    };
+    if (prefer) h.Prefer = prefer;
+    if (window.CPL_TEAM_PHRASE) window.CPL_TEAM_PHRASE.decorateHeaders(h, sess);
+    else if (sess && sess.teamPass) h["x-team-pass"] = sess.teamPass;
+    return h;
+  }
+
+  // Rotated/stale phrase → drop it and let init()'s listener re-render the
+  // auth widget + editability, so the user sees the entry box again instead
+  // of silent 401s (the raci.js #598 recovery).
+  function maybeDropStalePhrase(sess, status) {
+    if (window.CPL_TEAM_PHRASE
+        && window.CPL_TEAM_PHRASE.handleWriteFailure(sess, status)) {
+      try { window.dispatchEvent(new CustomEvent("cpl-team-pass-dropped")); } catch (e) {}
+      return true;
+    }
+    return false;
   }
 
   // ─── Save ────────────────────────────────────────────────────────────────
@@ -93,12 +131,7 @@
     body.total = new_total;
     return fetch(SUPABASE_URL + "/rest/v1/workplan_goals?" + qs, {
       method: "PATCH",
-      headers: {
-        "apikey": SUPABASE_ANON,
-        "Authorization": "Bearer " + sess.access_token,
-        "Content-Type": "application/json",
-        "Prefer": "return=representation"
-      },
+      headers: authHeaders(sess, "return=representation"),
       body: JSON.stringify(body)
     });
   }
@@ -114,12 +147,7 @@
            + "&row_type=eq.GOAL";
     return fetch(SUPABASE_URL + "/rest/v1/workplan_goals?" + qs, {
       method: "PATCH",
-      headers: {
-        "apikey": SUPABASE_ANON,
-        "Authorization": "Bearer " + sess.access_token,
-        "Content-Type": "application/json",
-        "Prefer": "return=representation"
-      },
+      headers: authHeaders(sess, "return=representation"),
       body: JSON.stringify({ current: value })
     });
   }
@@ -134,12 +162,7 @@
     return fetch(SUPABASE_URL + "/rest/v1/projects?id=eq."
         + encodeURIComponent(pid), {
       method: "PATCH",
-      headers: {
-        "apikey": SUPABASE_ANON,
-        "Authorization": "Bearer " + sess.access_token,
-        "Content-Type": "application/json",
-        "Prefer": "return=representation"
-      },
+      headers: authHeaders(sess, "return=representation"),
       body: JSON.stringify({ name: name })
     });
   }
@@ -163,7 +186,9 @@
 
     if (state.sess) {
       widget.appendChild(el("span", { "style": "font-weight:600;" },
-        ["Signed in as ", state.sess.email || "(no email)"]));
+        state.sess.teamPass
+          ? ["✓ Editing unlocked (team phrase)"]
+          : ["Signed in as ", state.sess.email || "(no email)"]));
       var sub = el("span", { "style": "color:#666;" }, ["Click any goal/stretch/current cell or a sub-activity title to edit • Enter saves • Esc cancels"]);
       widget.appendChild(sub);
       var btnAdd = el("button", {
@@ -175,7 +200,7 @@
       var btnOut = el("button", {
         "class": "wpg-btn",
         "style": "padding:0.35rem 0.75rem;border:1px solid #ccc;background:#fff;color:#333;border-radius:5px;font-size:0.8rem;cursor:pointer;"
-      }, ["Sign out"]);
+      }, [state.sess.teamPass ? "🔒 Lock" : "Sign out"]);
       btnOut.addEventListener("click", function () {
         signOut();
         onChange();
@@ -226,6 +251,15 @@
 
       widget.appendChild(emailInput);
       widget.appendChild(btnIn);
+      // Team-phrase alternative (Phase 1 widening, 2026-07-03) — validated
+      // server-side before store; one unlock covers every phrase-enabled tab.
+      if (window.CPL_TEAM_PHRASE) {
+        widget.appendChild(el("span", { "style": "color:#999;" }, ["·"]));
+        widget.appendChild(window.CPL_TEAM_PHRASE.unlockRow({
+          blurb: "or the team phrase:",
+          onUnlocked: function () { onChange(); }
+        }));
+      }
       widget.appendChild(status);
     }
 
@@ -237,7 +271,7 @@
     if (!tab) return;
     var existing = tab.querySelector(".wpg-auth-widget");
     var widget = buildAuthWidget(state, function () {
-      state.sess = getSession();
+      state.sess = fullSession();
       mountAuthWidget(state);
       paintEditability(state);
       // Shared editor re-lights its affordance + closes the popover on sign-out.
@@ -392,6 +426,7 @@
               c.innerHTML = fmtVal(oldNum, isPct);
             });
             console.error("[workplan_goals] save failed:", r.status);
+            maybeDropStalePhrase(state.sess, r.status);
           }
         })
         .catch(function (e) {
@@ -471,6 +506,7 @@
           paintCell(cell, oldNum, false);
           if (totalCell) totalCell.innerHTML = fmtVal(oldNum, isPct);
           console.error("[workplan_goals] current save failed:", r.status);
+            maybeDropStalePhrase(state.sess, r.status);
         }
       }).catch(function (e) {
         cell.classList.remove("wpg-saving");
@@ -527,6 +563,7 @@
         if (!r.ok) {
           cell.textContent = oldName;
           console.error("[workplan_goals] title save failed:", r.status);
+            maybeDropStalePhrase(state.sess, r.status);
         }
       }).catch(function (e) {
         cell.classList.remove("wpg-saving");
@@ -884,12 +921,7 @@
     ctx.status.textContent = "Inserting…";
 
     var sess = ctx.state.sess;
-    var headers = {
-      "apikey": SUPABASE_ANON,
-      "Authorization": "Bearer " + sess.access_token,
-      "Content-Type": "application/json",
-      "Prefer": "return=representation"
-    };
+    var headers = authHeaders(sess, "return=representation");
 
     fetch(SUPABASE_URL + "/rest/v1/workplan_goals", {
       method: "POST",
@@ -924,6 +956,7 @@
       ctx.status.className = "wpg-status err";
       ctx.status.textContent = e.message || "Insert failed.";
       console.error("[workplan_goals] add failed:", e);
+      if (/\b40[13]\b/.test(e.message || "")) maybeDropStalePhrase(sess, 401);
     });
   }
 
@@ -931,7 +964,7 @@
   function init() {
     if (!document.getElementById("tab-workplan-goals")) return;
     injectStyles();
-    var state = { sess: getSession() };
+    var state = { sess: fullSession() };
     mountAuthWidget(state);
     paintEditability(state);
     // The association popover + its click delegation live in assoc_editor.js
@@ -942,7 +975,14 @@
     // Re-paint when the tab becomes visible (in case sign-in happened on
     // another tab and the URL fragment now reflects us).
     window.addEventListener("hashchange", function () {
-      state.sess = getSession();
+      state.sess = fullSession();
+      mountAuthWidget(state);
+      paintEditability(state);
+      paintAssocEditability();
+    });
+    // A write under a rotated phrase dropped it — re-render lock state.
+    window.addEventListener("cpl-team-pass-dropped", function () {
+      state.sess = fullSession();
       mountAuthWidget(state);
       paintEditability(state);
       paintAssocEditability();

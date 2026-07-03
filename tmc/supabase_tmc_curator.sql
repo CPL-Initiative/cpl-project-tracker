@@ -51,3 +51,26 @@ create table if not exists public.tmc_requests (
 alter table public.tmc_requests enable row level security;
 create policy tmc_requests_read   on public.tmc_requests for select to anon, authenticated using (true);
 create policy tmc_requests_insert on public.tmc_requests for insert to anon, authenticated with check (true);
+
+
+-- ============================================================================
+-- 2026-07-03 (Session 97 follow-up) — team-phrase widening, Phase 1  ✅ APPLIED LIVE
+-- (migration `team_phrase_widen_p1`, via the Supabase MCP; plan + tiering:
+--  docs/team_phrase_expansion_plan.md — Sam: "Go phase 1")
+-- INSERT/UPDATE widen to reviewer OR shared team phrase; DELETE stays
+-- reviewer-only (destructive). team_pass_ok() reads the x-team-pass header
+-- (see raci/supabase_raci.sql for the gate itself).
+-- ============================================================================
+
+-- The original write/update policies were scoped TO authenticated only, so an
+-- anon team-phrase caller never even reached the predicate — recreated for
+-- anon + authenticated with the widened gate:
+drop policy tmc_curator_notes_write on public.tmc_curator_notes;
+drop policy tmc_curator_notes_update on public.tmc_curator_notes;
+create policy tmc_curator_notes_write on public.tmc_curator_notes
+  for insert to anon, authenticated
+  with check (is_allowed_reviewer() or team_pass_ok());
+create policy tmc_curator_notes_update on public.tmc_curator_notes
+  for update to anon, authenticated
+  using (is_allowed_reviewer() or team_pass_ok())
+  with check (is_allowed_reviewer() or team_pass_ok());

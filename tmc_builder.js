@@ -461,10 +461,25 @@
       body: JSON.stringify({ email: email, create_user: true })
     });
   }
-  function signOut() { try { sessionStorage.removeItem("cpl_sb"); } catch (e) {} state.session = null; state.email = ""; }
+  function signOut() {
+    try { sessionStorage.removeItem("cpl_sb"); } catch (e) {}
+    if (window.CPL_TEAM_PHRASE) window.CPL_TEAM_PHRASE.clear();
+    state.session = null; state.email = "";
+  }
+  // Phase 1 team-phrase widening (2026-07-03): phrase mode lights the ✎ note
+  // affordances only — the approve/return review UI stays gated on a REAL
+  // magic-link session (state.email; the tmc_review_submission RPC is a CO
+  // authority claim and remains reviewer-only server-side).
+  function teamMode() {
+    return !state.email && !!(window.CPL_TEAM_PHRASE && window.CPL_TEAM_PHRASE.get());
+  }
+  function canNote() { return !!state.email || teamMode(); }
+  // Used ONLY by saveNote (the curator-note upsert) — the x-team-pass header
+  // must NOT ride on the base sbHeaders() (anon reads + the review RPC).
   function authHeaders(extra) {
     var h = sbHeaders(extra);
     if (state.session && state.session.access_token) h["Authorization"] = "Bearer " + state.session.access_token;
+    else if (teamMode()) h["x-team-pass"] = window.CPL_TEAM_PHRASE.get();
     return h;
   }
 
@@ -483,7 +498,7 @@
     return fetch(SUPABASE_URL + "/rest/v1/tmc_curator_notes?on_conflict=tmc_id,slot_key", {
       method: "POST",
       headers: authHeaders({ Prefer: "resolution=merge-duplicates,return=minimal" }),
-      body: JSON.stringify({ tmc_id: tmcId, slot_key: slotKey, note: note, reviewer_email: state.email })
+      body: JSON.stringify({ tmc_id: tmcId, slot_key: slotKey, note: note, reviewer_email: state.email || "(team)" })
     });
   }
 
@@ -939,7 +954,7 @@
     var note = state.college
       ? "Showing <b>" + esc(state.college) + "</b>’s approved ADTs (from the COCI program inventory) and how its courses auto-match each TMC — open one to build & submit."
       : "Browse every Transfer Model Curriculum, with the count of California colleges that already have each one approved. Open one to view its C-ID course list" +
-        (state.email ? " and add curator notes" : "") + ", or pick your college above to see your status and start building.";
+        (canNote() ? " and add curator notes" : "") + ", or pick your college above to see your status and start building.";
     hdr.innerHTML = "<span class='tmc-listcount'>" + rows.length + " of " + catalog.length + " TMCs</span> " + note;
     mount.appendChild(hdr);
 
@@ -1307,10 +1322,24 @@
       node.innerHTML = "<span class='tmc-auth-on'>✓ Curator: " + esc(state.email) + "</span> · <a class='tmc-link' id='tmc-signout'>Sign out</a>";
       var so = node.querySelector("#tmc-signout");
       if (so) so.onclick = function () { signOut(); renderAuthInto(node); renderBody(); };
+    } else if (teamMode()) {
+      // Phrase mode: notes unlock; approve/return stays magic-link-only.
+      node.innerHTML = "<span class='tmc-auth-on'>✓ Team unlocked (phrase)</span> — notes only · <a class='tmc-link' id='tmc-signout'>Lock</a>";
+      var lk = node.querySelector("#tmc-signout");
+      if (lk) lk.onclick = function () { signOut(); renderAuthInto(node); renderBody(); };
     } else {
       node.innerHTML = "Curator? <a class='tmc-link' id='tmc-signin'>Sign in</a> to add notes";
       var si = node.querySelector("#tmc-signin");
       if (si) si.onclick = function () { showSignin(node); };
+      if (window.CPL_TEAM_PHRASE) {
+        node.appendChild(document.createTextNode(" · "));
+        node.appendChild(window.CPL_TEAM_PHRASE.unlockRow({
+          blurb: "or:",
+          label: "🔓 Unlock notes",
+          placeholder: "team phrase…",
+          onUnlocked: function () { renderAuthInto(node); renderBody(); }
+        }));
+      }
     }
   }
   function showSignin(node) {
@@ -1346,7 +1375,7 @@
         (n.at ? ", " + esc(String(n.at).slice(0, 10)) : "") + "</span>";
       leftc.appendChild(box);
     }
-    if (state.email) {
+    if (canNote()) {
       var add = el("span", "tmc-note-add", n && n.note ? "✎ edit note" : "✎ add curator note");
       add.onclick = function () { openNoteEditor(leftc, key, n && n.note ? n.note : ""); };
       leftc.appendChild(add);
@@ -1360,8 +1389,15 @@
       msg.textContent = "Saving…"; msg.className = "tmc-msg";
       saveNote(state.tmc.id, key, (ta.value || "").trim()).then(function (r) {
         if (r.ok) {
-          state.notes[key] = { note: (ta.value || "").trim(), by: state.email, at: new Date().toISOString() };
+          state.notes[key] = { note: (ta.value || "").trim(), by: state.email || "(team)", at: new Date().toISOString() };
           renderBody();
+        } else if ((r.status === 401 || r.status === 403) && teamMode()) {
+          // rotated/stale phrase — drop it and surface the lock state
+          window.CPL_TEAM_PHRASE.clear();
+          msg.textContent = "The team phrase changed — unlock again (curator bar above).";
+          msg.className = "tmc-msg err";
+          var authNode = document.getElementById("tmc-auth");
+          if (authNode) renderAuthInto(authNode);
         } else r.text().then(function (tx) { msg.textContent = "Save failed: " + (tx || r.status); msg.className = "tmc-msg err"; });
       }).catch(function (e) { msg.textContent = "Save failed: " + e.message; msg.className = "tmc-msg err"; });
     });

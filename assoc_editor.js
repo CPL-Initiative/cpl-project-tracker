@@ -66,15 +66,23 @@
     } catch (e) {}
     return null;
   }
+  // Phase 1 team-phrase widening (2026-07-03): magic link wins, else the
+  // shared team phrase (team_phrase.js) — waa_* policies accept either.
+  function fullSession() {
+    return getSession()
+      || (window.CPL_TEAM_PHRASE ? window.CPL_TEAM_PHRASE.session() : null);
+  }
 
   // ─── Supabase association CRUD ───────────────────────────────────────────
   function assocHeaders(sess, prefer) {
     var h = {
       "apikey": SUPABASE_ANON,
-      "Authorization": "Bearer " + sess.access_token,
+      "Authorization": "Bearer " + ((sess && sess.access_token) || SUPABASE_ANON),
       "Content-Type": "application/json"
     };
     if (prefer) h.Prefer = prefer;
+    if (window.CPL_TEAM_PHRASE) window.CPL_TEAM_PHRASE.decorateHeaders(h, sess);
+    else if (sess && sess.teamPass) h["x-team-pass"] = sess.teamPass;
     return h;
   }
 
@@ -187,7 +195,7 @@
   }
 
   function openAssocPop(cell) {
-    var sess = getSession();
+    var sess = fullSession();
     if (!sess) return; // anonymous: chips are read-only
     closeAssocPop();
 
@@ -424,7 +432,7 @@
 
   // ─── Affordance painting (lights up .wpg-assoc-on per session) ──────────
   function paintEditability() {
-    var signed = !!getSession();
+    var signed = !!fullSession();
     var cells = document.querySelectorAll('[data-assoc-edit="1"]');
     Array.prototype.forEach.call(cells, function (c) {
       if (signed) c.classList.add("wpg-assoc-on");
@@ -442,7 +450,7 @@
       var target = e.target;
       while (target && target !== document.body && target.nodeType === 1) {
         if (target.getAttribute && target.getAttribute("data-assoc-edit") === "1") {
-          if (!getSession()) return; // anonymous: read-only, no popover
+          if (!fullSession()) return; // anonymous: read-only, no popover
           openAssocPop(target);
           e.stopPropagation();
           return;
@@ -459,7 +467,7 @@
     close: closeAssocPop,
     refresh: paintEditability,
     paintEditability: paintEditability,
-    isSignedIn: function () { return !!getSession(); },
+    isSignedIn: function () { return !!fullSession(); },
     _hasListener: false
   };
 

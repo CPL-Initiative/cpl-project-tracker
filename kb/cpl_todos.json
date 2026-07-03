@@ -41,10 +41,10 @@
    "text": "MERGE WHEN READY: a draft PR on cpl-knowledge-base fixes the wrong MAP expansion ('Map Academic Pathways') in the assistant instructions and adds the naming conventions (CPL Initiative / Mapping Articulated Pathways platform / old name history-only). Curation-gated — your review is the audit."
   },
   {
-   "id": "team-phrase-ratify",
+   "id": "team-phrase-p1-try",
    "who": "sam",
    "tab": "raci",
-   "text": "RATIFY: docs/team_phrase_expansion_plan.md answers your team-phrase question — widen most remaining magic-link gates in two phases; keep four reviewer-only (TMC CO-approval, phrase management, project hard-delete) and hold the public Fact Sheet. Say 'go Phase 1' and next session executes."
+   "text": "LIVE NOW (your 'Go phase 1'): the team phrase unlocks editing on the Annual Workplan tab (values, titles, + Add row), the Budget dollar cells, the Activity↔Project ✎ links, and TMC curator notes — same phrase as RACI, one unlock covers all tabs. Approve/Return on TMC submissions still needs the magic link on purpose (it's a CO authority claim). Phase 2 (course-curation tabs with a name stamp) is specced — say 'go Phase 2' when you want it."
   },
   {
    "id": "factsheet-naming",
