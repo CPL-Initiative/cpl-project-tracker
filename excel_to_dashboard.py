@@ -11970,16 +11970,17 @@ def main():
             # the committed cpl_funding_data.js (static asset, built by
             # funding/_build_funding_data.py); number-free fallback if absent.
             funding_teaser_p = (
-                "One-time implementation funding pools for 2026-30, the three "
-                "funding priorities, and each college's potential allocation."
+                "One-time implementation funding pools, the year-specific funding "
+                "priorities, and each college's potential allocation."
             )
             try:
                 with open('cpl_funding_data.js', 'r', encoding='utf-8') as _ff:
                     _fm = json.loads(_ff.read().split('window.CPL_FUNDING = ', 1)[1].rstrip().rstrip(';'))
                 funding_teaser_p = (
-                    f"${_fm['pool']['total_college_funding'] / 1e6:.1f}M in one-time implementation "
-                    f"funding for 2026-30 — {len(_fm['priorities'])} funding priorities and potential "
-                    f"allocations for {len(_fm['colleges'])} colleges."
+                    f"${_fm['pool']['college_funding_before_feeder'] / 1e6:.1f}M in one-time CPL "
+                    f"implementation funding — a selectable multi-year window, year-specific funding "
+                    f"priorities, a noncredit-feeder carve-out, and potential allocations for "
+                    f"{len(_fm['colleges'])} colleges."
                 )
             except Exception:
                 pass
