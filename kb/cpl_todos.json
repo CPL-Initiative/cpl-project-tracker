@@ -1,20 +1,32 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-03 · CCR Convergence kickoff (MindMeld) + Session 97",
- "_session": 97,
- "_status": "TWO lanes landed today. NEW — the CCR mountain has a plan: instead of you grinding 7,700 merge decisions, the merge rules are now WRITTEN DOWN (kb/merge_doctrine.md), Fable pre-decided 78 sample groups against them, and the Suggested-merges popup grew a 🧠 Mind-meld panel — it asks you the exact question each group raises and you answer BY VOICE (🎤 Dictate). Your spoken reasoning is what turns the draft rules into YOUR rules; once they match your judgment (target ≥90% agreement), Fable batch-decides the rest and the worklist drops to the few genuinely hard calls. ALSO (Session 97): Activities tab decluttered, one slim bar at the top, sidebar grouped into five sections, Custom Report absorbed the Master Report + Elevation slider + progress bar, MAP naming locked everywhere.",
+ "_as_of": "2026-07-03 · Session 98 (Implementation Funding rework) + MindMeld + Session 97",
+ "_session": 98,
+ "_status": "THREE lanes live today. NEWEST — the Implementation Funding tab is now a scenario tool ready for the Chancellor: pick the two funding years from dropdowns, flip a Year 1 / Year 2 filter to see that year's priority metrics (your six new metrics are in; every text field is editable), and a new $1M noncredit-feeder carve-out supports NOCE / SD Continuing Ed / Mt. SAC Noncredit / Calbright by headcount (they're out of the college table now — they can't earn CPL metrics). Anyone can play: edits without the team phrase stay in that browser only; unlock with the phrase and your edits become the shared model everyone opens to. The Excel workbook is retired; your 2025-26 headcounts are applied (74 colleges — 41 still show the old 2022-23 figure until you send the rest). STILL THE BIG ONE: the CCR Mind-meld voice pass — the doctrine only becomes YOUR rules when you talk to it.",
  "items": [
+  {
+   "id": "funding-tryout",
+   "who": "sam",
+   "tab": "implementation-funding",
+   "text": "NEW MODEL: open Implementation Funding — pick the two years, flip Year 1/Year 2 to see each year's metrics (all editable), check the feeder table at the bottom, and try editing a share or the $1M carve-out. Without the phrase it's your private sandbox; 🔓 Unlock team editing to save the base model for everyone (anything you were exploring is carried over when you unlock)."
+  },
+  {
+   "id": "funding-headcounts-41",
+   "who": "sam",
+   "tab": "implementation-funding",
+   "text": "HEADCOUNTS: 41 of 115 colleges still carry the 2022-23 figure (the tab footnote lists the count). Send the remaining Annual 2025-26 counts when you have them and Fable will drop them in — the mixed-vintage note disappears on its own once complete."
+  },
+  {
+   "id": "funding-admin-cost",
+   "who": "sam",
+   "tab": "implementation-funding",
+   "text": "QUICK CALL: the Admin cost still shows $1.2M ('2 FTE × 3 YRS') from the 3-year model — with a 2-year window you may want $800K. It's editable right on the card (unlock first if it should stick for everyone)."
+  },
   {
    "id": "ccr-mindmeld-voice",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "MIND MELD (the big one, ~45 min when you can): open ✨ Suggested merges and work a handful of groups with the new 🧠 Mind-meld panel — hit 🎤 Dictate and think aloud (why merge, why keep, where the ESL-style packaging line sits). Every note trains the doctrine. The KIN/Dance/Music 'one row per activity?' question (Q-TARGETCOUNT) is the single highest-leverage answer you can give — 9 of the 78 sample calls hinge on it."
-  },
-  {
-   "id": "ccr-calibration-review",
-   "who": "sam",
-   "tab": "unified-courses",
-   "text": "REACT: kb/doctrine_out/2026-07-03/calibration_review.md holds Fable's 78 pre-decided merge/mint calls (stratified across every hard pattern) with the reasoning spelled out. Skim any section — agree/disagree out loud via the 🧠 panel or in the doc. Disagreements are the gold."
+   "text": "MIND MELD (the big one, ~45 min when you can): open ✨ Suggested merges and work a handful of groups with the 🧠 Mind-meld panel — hit 🎤 Dictate and think aloud (why merge, why keep, where the ESL-style packaging line sits). Skim kb/doctrine_out/2026-07-03/calibration_review.md (78 pre-decided calls) and disagree out loud — disagreements are the gold. The KIN/Dance/Music 'one row per activity?' question (Q-TARGETCOUNT) is the single highest-leverage answer."
   },
   {
    "id": "ccr-batch-pass2",
@@ -27,12 +39,6 @@
    "who": "sam",
    "tab": "activities-projects",
    "text": "NEW LOOK: open the Activities tab (sidebar now says just 'Activities', inside the Workplan group). The slim bar sits at the top; 📊 Custom Report now holds BOTH reports — pick ⚡ narrative or 📋 Master, set the audience and the new Elevation slider (sea level = full detail, 30,000 ft = board brief), and watch the progress bar instead of 'Generating…'. Tell Fable if any band's length/detail feels off."
-  },
-  {
-   "id": "s97-sidebar",
-   "who": "sam",
-   "tab": "dashboard",
-   "text": "SIDEBAR: the rail is grouped (Workplan / Funding / Strategy & Impact / Reference & Curation / Sierra & Team Tools / Share). Click a header to open or collapse; your layout is remembered per browser. If a grouping feels wrong, say which tab belongs where — it's a one-line change."
   },
   {
    "id": "kb-naming-pr",
@@ -51,12 +57,6 @@
    "who": "sam",
    "tab": "dashboard",
    "text": "FACT SHEET NAMING: the public fact sheet still says 'MAP Initiative' in its footer/contact/resources boxes. Safest fix is YOU editing those via ✎ Curate (a code edit could orphan existing Curate overrides — the keys derive from the text). Or tell Fable to do the key-migration version."
-  },
-  {
-   "id": "sierra-day2",
-   "who": "sam",
-   "tab": "sierra-training",
-   "text": "Sierra day-2 (carryover): the naming rule is now LIVE in the 🧭 guidance pane (deactivate, never delete). Add your own first rule; try the team-session tools; 👎 anything off."
   },
   {
    "id": "attachments-build",
