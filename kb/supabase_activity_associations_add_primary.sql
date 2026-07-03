@@ -80,3 +80,40 @@ commit;
 -- (Left commented — the product owner decides whether to seed defaults or let
 -- the editor assign primaries deliberately. The editor treats "no primary yet"
 -- as a valid state.)
+
+
+-- ============================================================================
+-- 2026-07-03 (Session 97 follow-up) — team-phrase widening, Phase 1  ✅ APPLIED LIVE
+-- (migration `team_phrase_widen_p1_associations`, via the Supabase MCP; plan:
+--  docs/team_phrase_expansion_plan.md — Sam: "Go phase 1")
+--
+-- ALL THREE write policies — INSERT, UPDATE, **and DELETE** — widen to
+-- reviewer OR shared team phrase. The DELETE widening is a DELIBERATE,
+-- DOCUMENTED exception to the Phase-1 "DELETEs stay reviewer-only" rule:
+--
+--   * This is a JOIN table (project_id, activity_id links). "Delete" here is
+--     the everyday UN-CHECK action in the association popover
+--     (assoc_editor.js removeAssociation) — a phrase user who can check an
+--     Activity box must be able to un-check it, or the editor is add-only
+--     and broken for the team.
+--   * Fully reversible: re-checking the box re-creates the identical row.
+--     No cascade, no data loss beyond the link itself (contrast: deleting a
+--     projects / budget_funding / workplan_goals row destroys content —
+--     those DELETEs stay reviewer-only).
+--
+-- team_pass_ok() reads the x-team-pass header (raci/supabase_raci.sql).
+-- Pinned by tests/team_phrase_p1.test.js.
+-- ============================================================================
+
+alter policy waa_insert on public.workplan_activity_associations
+  with check (is_allowed_reviewer() or team_pass_ok());
+alter policy waa_update on public.workplan_activity_associations
+  using (is_allowed_reviewer() or team_pass_ok())
+  with check (is_allowed_reviewer() or team_pass_ok());
+alter policy waa_delete on public.workplan_activity_associations
+  using (is_allowed_reviewer() or team_pass_ok());
+
+-- Verify:
+--   select policyname, cmd, qual, with_check from pg_policies
+--   where schemaname='public'
+--     and tablename='workplan_activity_associations' order by cmd;

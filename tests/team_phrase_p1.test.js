@@ -13,8 +13,13 @@
 //      authHeaders (curator notes ONLY — never the base sbHeaders used by the
 //      review RPC + anon paths); the approve/return UI stays gated on
 //      state.email (magic link), while notes gate on canNote();
-//  (d) assoc_editor.js: fullSession fallback + decorated headers;
-//  (e) the DELETE policies were NOT widened (schema-of-record pins) and
+//  (d) assoc_editor.js: fullSession fallback + decorated headers + the
+//      stale-phrase drop on save failure + NO x-team-pass on the read-only
+//      column probe (adversarial-review fixes, 2026-07-03);
+//  (e) content-bearing DELETE policies were NOT widened (schema-of-record
+//      pins) — with ONE documented exception: workplan_activity_associations
+//      DELETE is deliberately phrase-enabled (reversible join-table un-check;
+//      appendix in kb/supabase_activity_associations_add_primary.sql) — and
 //      team_phrase.js is script-loaded in BOTH HTMLs (Rule 4).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -156,6 +161,26 @@ function makeWin(html, opts) {
     check("assoc: fullSession fallback present", a.indexOf("function fullSession()") >= 0);
     check("assoc: headers decorated", /decorateHeaders\(h, sess\)/.test(a));
     check("assoc: isSignedIn uses fullSession", a.indexOf("return !!fullSession();") >= 0);
+    check("assoc: save failure drops a stale phrase (#598 recovery)",
+      /handleWriteFailure\(sess, e\.status\)/.test(a)
+      && a.indexOf("cpl-team-pass-dropped") >= 0);
+    check("assoc: write errors thread the real HTTP status",
+      /err\.status = r\.status/.test(a));
+    check("assoc: read-only column probe does NOT carry the phrase",
+      /_primaryColPromise = fetch\([\s\S]{0,220}Bearer " \+ SUPABASE_ANON/.test(a)
+      && !/_primaryColPromise = fetch\([\s\S]{0,220}assocHeaders/.test(a));
+    check("assoc: listens for sibling phrase drops",
+      /addEventListener\("cpl-team-pass-dropped", paintEditability\)/.test(a));
+  }
+
+  // ── (d2) workplan_goals add-row: real status, never message-regex ──
+  {
+    const wpg = fs.readFileSync("workplan_goals.js", "utf8");
+    check("wpg: submitAdd drops phrase on the REAL status (no message regex)",
+      wpg.indexOf("maybeDropStalePhrase(sess, e.status)") >= 0
+      && !/40\[13\]\\b/.test(wpg));
+    check("wpg: submitAdd throw sites carry err.status",
+      (wpg.match(/err\.status = r2?\.status/g) || []).length >= 2);
   }
 
   // ── (e) schema + template pins ──
@@ -169,6 +194,13 @@ function makeWin(html, opts) {
     check("schema: workplan widening recorded", /wpg_update[\s\S]{0,200}team_pass_ok/.test(psql));
     check("schema: curator-notes policies recreated for anon+authenticated",
       /tmc_curator_notes_write[\s\S]{0,200}anon, authenticated/.test(tsql));
+    const wsql = fs.readFileSync("kb/supabase_activity_associations_add_primary.sql", "utf8");
+    check("schema: waa widening recorded (insert+update+delete)",
+      /team_phrase_widen_p1_associations/.test(wsql)
+      && /waa_insert[\s\S]{0,120}team_pass_ok/.test(wsql)
+      && /waa_delete[\s\S]{0,120}team_pass_ok/.test(wsql));
+    check("schema: waa DELETE exception documented as deliberate",
+      /DELIBERATE[\s\S]{0,400}un-?check/i.test(wsql));
     const h1 = fs.readFileSync("CPL_Dashboard.html", "utf8");
     const h2 = fs.readFileSync("index.html", "utf8");
     check("Rule 4: HTMLs identical", h1 === h2);

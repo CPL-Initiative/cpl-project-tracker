@@ -930,7 +930,9 @@
     }).then(function (r) {
       if (!r.ok) {
         return r.text().then(function (t) {
-          throw new Error("workplan_goals insert failed (HTTP " + r.status + "): " + t.slice(0, 200));
+          var err = new Error("workplan_goals insert failed (HTTP " + r.status + "): " + t.slice(0, 200));
+          err.status = r.status;
+          throw err;
         });
       }
       // Project: also insert associations
@@ -942,7 +944,9 @@
         }).then(function (r2) {
           if (!r2.ok) {
             return r2.text().then(function (t) {
-              throw new Error("associations insert failed (HTTP " + r2.status + "): " + t.slice(0, 200));
+              var err = new Error("associations insert failed (HTTP " + r2.status + "): " + t.slice(0, 200));
+              err.status = r2.status;
+              throw err;
             });
           }
         });
@@ -956,7 +960,10 @@
       ctx.status.className = "wpg-status err";
       ctx.status.textContent = e.message || "Insert failed.";
       console.error("[workplan_goals] add failed:", e);
-      if (/\b40[13]\b/.test(e.message || "")) maybeDropStalePhrase(sess, 401);
+      // Real HTTP status threaded onto the error — never regex the message
+      // (the response-body slice could contain "401" as data and spuriously
+      // drop a valid phrase for the whole browser).
+      if (e.status) maybeDropStalePhrase(sess, e.status);
     });
   }
 

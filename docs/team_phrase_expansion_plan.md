@@ -80,17 +80,31 @@ writes, drop + re-prompt on a 401/403 from a rotated phrase, and share the
 same `cpl_team_pass` localStorage key so one unlock covers every tab.
 
 - **Phase 1 — low risk, no attribution dependency** — ✅ **EXECUTED 2026-07-03**
-  (Sam: "Go phase 1"). Migration `team_phrase_widen_p1` APPLIED + verified:
+  (Sam: "Go phase 1"). Migrations `team_phrase_widen_p1` +
+  `team_phrase_widen_p1_associations` APPLIED + verified:
   `workplan_goals`, `budget_funding`, `budget_expenditures`, `personnel`
   INSERT/UPDATE → `is_allowed_reviewer() OR team_pass_ok()`;
   `tmc_curator_notes` write/update policies RECREATED for `anon, authenticated`
   (they were `authenticated`-only, so a phrase user — anon role — never even
-  reached the predicate) with the widened gate; every DELETE stays
-  reviewer-only. **`kpi_order` dropped from scope — the table was never built**
-  (the roadmap's "curated default KPI order" is still a later add; gate it at
-  birth when it lands). Client: `workplan_goals.js`, `budget_editor.js`,
-  `tmc_builder.js` (notes) gained the shared phrase-unlock affordance
-  (`team_phrase.js`, the validated raci.js pattern).
+  reached the predicate) with the widened gate; every content-bearing DELETE
+  stays reviewer-only. **One documented DELETE exception:**
+  `workplan_activity_associations` (waa_insert/update/**delete**) — it's a
+  reversible JOIN table where "delete" is the popover's everyday un-check
+  action (re-checking recreates the identical row, no data loss), so a phrase
+  user who can add a link can also remove one; schema-of-record appendix in
+  `kb/supabase_activity_associations_add_primary.sql`, pinned by
+  `tests/team_phrase_p1.test.js`. **`kpi_order` dropped from scope — the table
+  was never built** (the roadmap's "curated default KPI order" is still a later
+  add; gate it at birth when it lands). Client: `workplan_goals.js`,
+  `budget_editor.js`, `assoc_editor.js`, `tmc_builder.js` (notes) gained the
+  shared phrase-unlock affordance (`team_phrase.js`, the validated raci.js
+  pattern). Post-ship adversarial review (3 lenses): the 5 core invariants
+  hold; fixes landed for its low findings (assoc stale-phrase recovery, real
+  HTTP status threaded to the phrase-drop check, no x-team-pass on read-only
+  GETs). Known Phase-2 item it surfaced: `tmc_curator_notes.reviewer_email` is
+  client-asserted — a phrase holder could label a note with any byline; the
+  Phase-2 `team:<name>` stamp should move attribution server-side (trigger:
+  stamp from the JWT when present, force a `team:` prefix on phrase writes).
 - **Phase 2 — curation lanes with the `team:<name>` stamp** (one PR):
   migration `team_phrase_widen_kb_curation`; `unified_courses.js` (+ CSR/CER
   consumers) gain phrase unlock + the one-time display-name prompt; the

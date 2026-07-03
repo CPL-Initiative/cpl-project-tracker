@@ -1176,13 +1176,20 @@ JSON) and Saves/Resumes to Supabase `tmc_submissions`.
 - **Project**: `hvuwhnbuahrtptokpqfh.supabase.co`
 - **Tables**: projects, budget_expenditures, personnel, workplan_goals
 - **`projects` writes (Session 95):** INSERT/UPDATE gated `is_allowed_reviewer() OR team_pass_ok()` (widened for the `project_add.js` Add-project flow, migration `projects_write_team_phrase_widen`); DELETE reviewer-only; public SELECT. Schema of record: `kb/supabase_projects_rls_tighten.sql`.
-- **Team-phrase widening Phase 1 (2026-07-03, migration `team_phrase_widen_p1`;
+- **Team-phrase widening Phase 1 (2026-07-03, migrations `team_phrase_widen_p1`
+  + `team_phrase_widen_p1_associations`;
   plan: [`docs/team_phrase_expansion_plan.md`](docs/team_phrase_expansion_plan.md)):**
   `workplan_goals`, `budget_funding`, `budget_expenditures`, `personnel`
   INSERT/UPDATE + `tmc_curator_notes` write/update (recreated for
   anon+authenticated) are now gated `is_allowed_reviewer() OR team_pass_ok()`;
-  DELETEs stay reviewer-only. Phase 2 (kb_curation + `team:<name>` stamp) is
-  authored-not-executed; reviewer-only forever: `tmc_review_submission`,
+  DELETEs stay reviewer-only **except the documented
+  `workplan_activity_associations` exception** — waa INSERT/UPDATE/**DELETE**
+  all widened, because it's a reversible join table where DELETE is the
+  popover's un-check action (rationale + SQL:
+  `kb/supabase_activity_associations_add_primary.sql` appendix; pinned in
+  `tests/team_phrase_p1.test.js`). Phase 2 (kb_curation + `team:<name>` stamp,
+  which also moves `tmc_curator_notes.reviewer_email` attribution server-side)
+  is authored-not-executed; reviewer-only forever: `tmc_review_submission`,
   `team_access` manage, `projects` DELETE; Fact Sheet Curate held.
 - **`workplan_goals.current`** (numeric, added Session 85): the manual "Current"
   value for the Annual Workplan tab — used ONLY for sub-activities NOT mapped to a

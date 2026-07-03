@@ -87,12 +87,15 @@
   }
 
   // One-time detection of the is_primary column. Resolves true/false; cached.
+  // Read-only public-RLS probe → bare anon headers, deliberately NOT
+  // assocHeaders(): the x-team-pass secret rides only on the writes that
+  // need it, never on a GET.
   var _primaryColPromise = null;
-  function detectPrimaryColumn(sess) {
+  function detectPrimaryColumn() {
     if (_primaryColPromise) return _primaryColPromise;
     _primaryColPromise = fetch(
       ASSOC_TABLE + "?select=is_primary&limit=1",
-      { headers: assocHeaders(sess) }
+      { headers: { "apikey": SUPABASE_ANON, "Authorization": "Bearer " + SUPABASE_ANON } }
     ).then(function (r) {
       // 200 → column exists; 400 (undefined column) → not yet migrated.
       return r.ok;
@@ -299,7 +302,7 @@
     positionPop(pop, cell);
 
     // Probe the is_primary column once; reveal the primary radios if present.
-    detectPrimaryColumn(sess).then(function (has) {
+    detectPrimaryColumn().then(function (has) {
       st.hasPrimaryCol = has;
       if (has) {
         Object.keys(primaryRadios).forEach(function (aid) {
@@ -406,7 +409,9 @@
       return p.then(function (r) {
         if (!r.ok) {
           return r.text().then(function (t) {
-            throw new Error("HTTP " + r.status + (t ? ": " + t.slice(0, 160) : ""));
+            var err = new Error("HTTP " + r.status + (t ? ": " + t.slice(0, 160) : ""));
+            err.status = r.status;
+            throw err;
           });
         }
       });
@@ -427,6 +432,15 @@
       statusEl.className = "wpg-assoc-pop-status err";
       statusEl.textContent = "Save failed — " + (e.message || "unknown") + ". Reload to re-check.";
       console.error("[assoc_editor] association save failed:", e);
+      // Rotated/stale team phrase (the raci.js #598 recovery): drop it, dim
+      // the ✎ affordances, and tell the sibling widgets to re-render their
+      // unlock rows. paintEditability() also closes this popover when the
+      // drop leaves no session.
+      if (window.CPL_TEAM_PHRASE
+          && window.CPL_TEAM_PHRASE.handleWriteFailure(sess, e.status)) {
+        try { window.dispatchEvent(new CustomEvent("cpl-team-pass-dropped")); } catch (e2) {}
+        paintEditability();
+      }
     });
   }
 
@@ -477,6 +491,8 @@
     // Re-light when the URL hash flips (sign-in may complete on another tab and
     // route back). Each editor also calls refresh() on its own auth changes.
     window.addEventListener("hashchange", paintEditability);
+    // A sibling editor dropped a rotated/stale team phrase → dim ours too.
+    window.addEventListener("cpl-team-pass-dropped", paintEditability);
   }
 
   if (document.readyState === "loading") {
