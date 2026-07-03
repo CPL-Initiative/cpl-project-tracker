@@ -207,10 +207,11 @@
   function prioField(slot, idx, field) {
     var sc = SCENARIO.yearPriorities && SCENARIO.yearPriorities[slot] && SCENARIO.yearPriorities[slot][idx];
     var sh = SHARED.yearPriorities && SHARED.yearPriorities[slot] && SHARED.yearPriorities[slot][idx];
-    var bp = base().year_priorities[slot][idx];
+    var bp = (base().year_priorities[slot] || base().year_priorities["2"])[idx];
     return firstDefined(sc && sc[field], sh && sh[field], bp[field]);
   }
   function priorities(slot) {
+    if (!base().year_priorities[slot]) slot = "2";   // defensive: >2-year windows reuse Year-2 config
     return base().year_priorities[slot].map(function (p, i) {
       return {
         key: p.key, label: p.label,
@@ -224,6 +225,16 @@
   function feeders() {
     var f = firstDefined(SCENARIO.feeders, SHARED.feeders, base().feeders) || [];
     return clone(f);
+  }
+  function feederHeads() {
+    return feeders().reduce(function (s, f) { return s + (Number(f.headcount) || 0); }, 0);
+  }
+  // Shares can differ per year once edited — a year's allocated fraction.
+  function shareSum(slot) {
+    return priorities(slot).reduce(function (s, p) { return s + p.share; }, 0);
+  }
+  function yearKeys() {
+    return selectedYears().map(function (_, i) { return "y" + (i + 1); });
   }
   function feederMetric() {
     return firstDefined(SCENARIO.feederMetric, SHARED.feederMetric, base().feeder_metric);
@@ -428,7 +439,9 @@
       { v: edNum("pool", fmtInt(poolField("scaling_projects_tech")), { field: "scaling_projects_tech", neg: true, label: "Scaling projects and tech (deducted)" }), l: "Scaling projects &amp; tech &mdash; deducted" },
       { v: edNum("pool", fmtInt(feederCarveout()), { field: "feeder_carveout", neg: true, label: "Noncredit feeder carve-out (deducted)" }), l: "Noncredit feeder support &mdash; carve-out (deducted)", feeder: true },
       { v: fmtMoney(netCol), l: "Available college funding " + windowLabel() + " &mdash; " + nYears() + " annual tranches of " + fmtMoney(per) + " (" + esc(y[0]) + " &rarr; " + esc(y[y.length - 1]) + ")", hero: true },
-      { v: fmtInt(totalHeads()), l: "CCC headcount &mdash; &Sigma; of the " + base().colleges.length + " college rows" },
+      { v: fmtInt(totalHeads()), l: "College headcount (allocation basis) &mdash; &Sigma; of the " + base().colleges.length +
+          " college rows &middot; plus " + fmtInt(feederHeads()) + " noncredit-feeder students = <strong>" +
+          fmtInt(totalHeads() + feederHeads()) + " CCC total</strong>" },
       { v: fmtRate(perStudent()), l: "Per-student rate &mdash; " + fmtMoney(per) + " &divide; " + fmtInt(totalHeads()) + " headcount (informational)" }
     ];
     // Data attributes: the pool edNum builder needs the field name — patch it in.
@@ -456,28 +469,58 @@
         '<p class="nums">Projection target ' + edNum("target", fmtRatePct(p.target_rate), { small: true, slot: slot, idx: i, label: p.label + " projection target percent" }) +
         "% of headcount &rarr; " + fmtInt(sysHeads) + " students " +
         '<span class="dk">(target only &mdash; doesn&#39;t move dollars)</span></p>' +
-        actualLineHtml(p, sysHeads) +
+        actualLineHtml(p, i, sysHeads) +
         '<div class="metric">METRIC (Year ' + slot + "): " + edText("metric", p.metric, { slot: slot, idx: i, label: p.label + " metric" }) + "</div></div>";
     }).join("") + "</div>";
   }
 
-  function actualLineHtml(p, targetHeads) {
-    // The actuals feed is keyed by the STABLE priority slot (p1/p2/p3); its
-    // metric text differs per year, so actuals are only meaningful against a
-    // year whose metric matches the feed. We surface them regardless (they're
-    // the closest live signal) but label them as per-MAP.
-    if (p.key === "p1") {
-      return '<p class="nums dk">&#9203; Actual: <strong>awaiting completion data</strong> &mdash; deliberate ' +
-        "incentive metric; completions live in college SIS, not MAP (see the P1 gap note).</p>";
+  // ── metric measurability (2026-07-03 analysis) ────────────────────────
+  // Which of the six year-specific metrics today's daily MAP feed
+  // (View_StudentAggregatedValues) can actually measure. src = a key in the
+  // perf artifact; gap = the honest reason there's no feed yet + what closes
+  // it. Full analysis: docs/kb-notes/reference-funding-metrics-measurability.md.
+  var MEASURABILITY = {
+    "1": [
+      { src: "p3", basis: "distinct students with any transcribed CPL, per MAP" },
+      { gap: "the Custom Report carries eligible units per student but NO exhibit linkage &mdash; " +
+             "can&#39;t yet tell which eligibility traces to a STATEWIDE credit recommendation " +
+             "(needs an exhibit/collaborative-type field on the eligibility rows)",
+        gap_short: "needs exhibit linkage in the Custom Report" },
+      { gap: "origin (CPL Portal / CPL Landing Page) isn&#39;t captured anywhere yet &mdash; provenance " +
+             "should be stamped at the source when the Student Portal ships (production in ~2 weeks); " +
+             "retrofitting later loses history",
+        gap_short: "needs origin tracking &mdash; bake into the Portal launch" }
+    ],
+    "2": [
+      { gap: "total transcribed units IS derivable from the same MAP dataset &mdash; a small extension " +
+             "to the daily actuals builder away",
+        gap_short: "builder extension queued" },
+      { gap: "the 3+-transcribed-units half is derivable from MAP; the COMPLETION half needs the " +
+             "CO MIS match-back (completions live in college SIS/MIS, not MAP)",
+        gap_short: "needs the CO MIS match-back" },
+      { gap: "needs the MAP &harr; MIS student match (CO match-back) &mdash; the same build that " +
+             "unlocks Year-2 P2&#39;s completion half",
+        gap_short: "needs the CO MIS match-back" }
+    ]
+  };
+  function measurability(slot, idx) {
+    return (MEASURABILITY[slot] || MEASURABILITY["2"])[idx] || {};
+  }
+
+  function actualLineHtml(p, idx, targetHeads) {
+    var meas = measurability(state.viewSlot, idx);
+    if (meas.gap) {
+      return '<p class="nums dk">&#9203; Actual: <strong>data gap</strong> &mdash; ' + meas.gap + ".</p>";
     }
     var pf = perf();
-    if (!pf || !pf.statewide || pf.statewide[p.key] == null) {
+    if (!pf || !pf.statewide || pf.statewide[meas.src] == null) {
       return '<p class="nums dk">Actuals (per MAP) arrive with the next daily data refresh.</p>';
     }
-    var act = pf.statewide[p.key];
+    var act = pf.statewide[meas.src];
     var pct = targetHeads ? act / targetHeads : null;
     return '<p class="nums">Actual <strong>' + fmtInt(act) + "</strong> students per MAP (as of " +
-      esc(pf.as_of) + ")" + (pct != null ? " &mdash; <strong>" + fmtPctTrim(pct) + "</strong> of target" : "") + "</p>";
+      esc(pf.as_of) + ")" + (pct != null ? " &mdash; <strong>" + fmtPctTrim(pct) + "</strong> of target" : "") +
+      (meas.basis ? ' <span class="dk">(' + meas.basis + ")</span>" : "") + "</p>";
   }
 
   function formulaHtml() {
@@ -505,60 +548,73 @@
   }
 
   // ── college table state + shaping ─────────────────────────────────────
-  var COLS_COLLEGE = [
-    { key: "order", label: "#", cls: "" },
-    { key: "college", label: "College", cls: "t" },
-    { key: "district", label: "District", cls: "t" },
-    { key: "county", label: "County", cls: "t" },
-    { key: "headcount", label: "Headcount", cls: "" },
-    { key: "p3a", label: "CPL students†", cls: "" },
-    { key: "p1", label: "P1", cls: "", title: "Priority 1 allocation" },
-    { key: "p2", label: "P2", cls: "", title: "Priority 2 allocation" },
-    { key: "p3", label: "P3", cls: "", title: "Priority 3 allocation" },
-    { key: "total", label: "TOTAL_LABEL", cls: "" },
-    { key: "working_adults", label: "Working adults*", cls: "" }
-  ];
-  var COLS_DISTRICT = [
-    { key: "district", label: "District", cls: "t" },
-    { key: "n", label: "Colleges", cls: "" },
-    { key: "counties", label: "Counties", cls: "t" },
-    { key: "headcount", label: "Headcount", cls: "" },
-    { key: "p1", label: "P1", cls: "", title: "Priority 1 allocation" },
-    { key: "p2", label: "P2", cls: "", title: "Priority 2 allocation" },
-    { key: "p3", label: "P3", cls: "", title: "Priority 3 allocation" },
-    { key: "total", label: "TOTAL_LABEL", cls: "" }
-  ];
+  // One dollar column PER FUNDING YEAR (Sam, 2026-07-03: "shouldn't there
+  // only be 2, one for each year of funding?") + a window Total. The
+  // per-priority P1/P2/P3 math lives in the row drill-in for the active
+  // filter year. Columns are built dynamically from the selected years.
+  function yearColDefs() {
+    return selectedYears().map(function (yr, i) {
+      return { key: "y" + (i + 1), label: "Yr " + (i + 1), cls: "",
+               title: "Year " + (i + 1) + " (" + yr + ") potential allocation" };
+    });
+  }
+  function COLS_COLLEGE() {
+    return [
+      { key: "order", label: "#", cls: "" },
+      { key: "college", label: "College", cls: "t" },
+      { key: "district", label: "District", cls: "t" },
+      { key: "county", label: "County", cls: "t" },
+      { key: "headcount", label: "Headcount", cls: "" },
+      { key: "p3a", label: "CPL students†", cls: "" }
+    ].concat(yearColDefs(), [
+      { key: "total", label: "Total " + windowLabel(), cls: "" },
+      { key: "working_adults", label: "Working adults*", cls: "" }
+    ]);
+  }
+  function COLS_DISTRICT() {
+    return [
+      { key: "district", label: "District", cls: "t" },
+      { key: "n", label: "Colleges", cls: "" },
+      { key: "counties", label: "Counties", cls: "t" },
+      { key: "headcount", label: "Headcount", cls: "" }
+    ].concat(yearColDefs(), [
+      { key: "total", label: "Total " + windowLabel(), cls: "" }
+    ]);
+  }
   function districtShort(name) {
     return String(name || "").replace(/\s+Community College District$/i, " CCD");
   }
 
   var state = {
-    q: "", view: "college", period: "year", viewSlot: "1",
+    q: "", view: "college", viewSlot: "1",
     sortKey: "order", sortDir: 1, open: {}
   };
 
-  // Compute a college's per-priority dollars + projected heads for the active
-  // view year. TOTAL = headcount share × perYear (year-independent).
+  // Per-year dollars (y1, y2, …: headcount share × tranche × that year's share
+  // sum — identical across years until a year's shares are edited), a window
+  // TOTAL, plus the active-year per-priority breakdown for the drill-in.
   function collegeAlloc(c) {
-    var ps = priorities(state.viewSlot);
     var per = perYear();
     var pct = c.headcount_pct;
     var out = { total: 0 };
-    ps.forEach(function (p) {
+    selectedYears().forEach(function (_, i) {
+      var v = pct * per * shareSum(String(i + 1));
+      out["y" + (i + 1)] = v;
+      out.total += v;
+    });
+    priorities(state.viewSlot).forEach(function (p) {
       out[p.key] = pct * p.share * per;
       out[p.key + "_heads"] = c.headcount * p.target_rate;
-      out.total += out[p.key];
     });
     return out;
   }
   function systemAlloc() {
-    var ps = priorities(state.viewSlot);
     var per = perYear();
     var out = { total: 0, headcount: totalHeads() };
-    ps.forEach(function (p) {
-      out[p.key] = p.share * per;
-      out[p.key + "_heads"] = out.headcount * p.target_rate;
-      out.total += out[p.key];
+    selectedYears().forEach(function (_, i) {
+      var v = per * shareSum(String(i + 1));
+      out["y" + (i + 1)] = v;
+      out.total += v;
     });
     return out;
   }
@@ -567,13 +623,19 @@
   function districts() {
     if (_districtsCache) return _districtsCache;
     var by = {};
+    var yks = yearKeys();
     base().colleges.forEach(function (c) {
       var a = collegeAlloc(c);
       var k = c.district || "(no district)";
-      var g = by[k] || (by[k] = { district: k, n: 0, counties: [], headcount: 0, p1: 0, p2: 0, p3: 0, total: 0, members: [] });
+      var g = by[k];
+      if (!g) {
+        g = by[k] = { district: k, n: 0, counties: [], headcount: 0, total: 0, members: [] };
+        yks.forEach(function (yk) { g[yk] = 0; });
+      }
       g.n += 1;
       g.headcount += c.headcount || 0;
-      g.p1 += a.p1; g.p2 += a.p2; g.p3 += a.p3; g.total += a.total;
+      yks.forEach(function (yk) { g[yk] += a[yk]; });
+      g.total += a.total;
       if (c.county && g.counties.indexOf(c.county) === -1) g.counties.push(c.county);
       g.members.push({ college: c.college, headcount: c.headcount, total: a.total });
     });
@@ -586,9 +648,7 @@
     return _districtsCache;
   }
 
-  function activeCols() { return state.view === "district" ? COLS_DISTRICT : COLS_COLLEGE; }
-  function periodMult() { return state.period === "year" ? 1 : nYears(); }
-  function totalLabel() { return state.period === "year" ? "Total / yr" : "Total " + windowLabel(); }
+  function activeCols() { return state.view === "district" ? COLS_DISTRICT() : COLS_COLLEGE(); }
 
   function rowsFiltered() {
     var q = state.q.trim().toLowerCase();
@@ -596,13 +656,13 @@
     if (state.view === "district") rows = districts();
     else rows = base().colleges.map(function (c) {
       var a = collegeAlloc(c);
-      return {
+      var r = {
         order: c.order, college: c.college, district: c.district, county: c.county,
-        headcount: c.headcount, headcount_pct: c.headcount_pct,
-        working_adults: c.working_adults, county_pop_pct: c.county_pop_pct,
-        p1: a.p1, p2: a.p2, p3: a.p3, total: a.total,
-        p1_heads: a.p1_heads, p2_heads: a.p2_heads, p3_heads: a.p3_heads
+        headcount: c.headcount, headcount_pct: c.headcount_pct, hc_vintage: c.hc_vintage,
+        working_adults: c.working_adults, county_pop_pct: c.county_pop_pct
       };
+      Object.keys(a).forEach(function (k) { r[k] = a[k]; });
+      return r;
     });
     if (q) {
       rows = rows.filter(function (r) {
@@ -631,10 +691,13 @@
   }
 
   // ── row + drill-in rendering ──────────────────────────────────────────
-  function collegeRowHtml(c, m) {
-    function pCell(k) {
-      return '<td title="projected ' + fmtInt(c[k + "_heads"]) + ' students/yr">' + fmtMoney(c[k] * m) + "</td>";
-    }
+  function yearCellsHtml(row) {
+    var ys = selectedYears();
+    return yearKeys().map(function (yk, i) {
+      return '<td title="Year ' + (i + 1) + " (" + esc(ys[i]) + ') potential allocation">' + fmtMoney(row[yk]) + "</td>";
+    }).join("");
+  }
+  function collegeRowHtml(c) {
     var id = "c:" + c.order;
     return '<tr class="cplfund-row' + (state.open[id] ? " cplfund-open" : "") + '" data-id="' + esc(id) + '">' +
       "<td>" + esc(c.order) + "</td>" +
@@ -642,32 +705,32 @@
       '<td class="t trunc" title="' + esc(c.district || "") + '">' + esc(districtShort(c.district) || "—") + "</td>" +
       '<td class="t trunc" title="' + esc(c.county || "") + '">' + esc(c.county || "—") + "</td>" +
       '<td title="' + fmtPct(c.headcount_pct, 2) + ' of statewide headcount">' + fmtInt(c.headcount) + "</td>" +
-      '<td title="distinct students with transcribed CPL, per MAP (P3 actual)">' + fmtActual(perfFor(c.college), "p3") + "</td>" +
-      pCell("p1") + pCell("p2") + pCell("p3") +
-      '<td class="tot">' + fmtMoney(c.total * m) + "</td>" +
+      '<td title="distinct students with any transcribed CPL, per MAP (the Year-1 Priority-1 metric)">' + fmtActual(perfFor(c.college), "p3") + "</td>" +
+      yearCellsHtml(c) +
+      '<td class="tot">' + fmtMoney(c.total) + "</td>" +
       "<td>" + (c.working_adults == null ? "—" : fmtInt(c.working_adults) +
         '<span class="sub">' + fmtPct(c.county_pop_pct, 1) + " of county</span>") + "</td>" +
-      "</tr>" + (state.open[id] ? collegeDetailHtml(c, m) : "");
+      "</tr>" + (state.open[id] ? collegeDetailHtml(c) : "");
   }
 
-  function collegeDetailHtml(c, m) {
+  function collegeDetailHtml(c) {
     var ps = priorities(state.viewSlot);
     var per = perYear();
     var rec = perfFor(c.college);
-    var prio = ps.map(function (p) {
+    var prio = ps.map(function (p, i) {
+      var meas = measurability(state.viewSlot, i);
       var actual = "";
-      if (p.key === "p1") {
-        actual = ' &middot; actual: <span class="dk">awaiting completion data (incentive metric)</span>';
-      } else if (rec) {
-        actual = " &middot; actual <strong>" + fmtActual(rec, p.key) + "</strong>";
-        if (rec[p.key] != null && c[p.key + "_heads"] > 0) {
-          actual += " (" + fmtPctTrim(rec[p.key] / c[p.key + "_heads"]) + " of target)";
+      if (meas.src && rec) {
+        actual = " &middot; actual <strong>" + fmtActual(rec, meas.src) + "</strong>";
+        if (rec[meas.src] != null && c[p.key + "_heads"] > 0) {
+          actual += " (" + fmtPctTrim(rec[meas.src] / c[p.key + "_heads"]) + " of target)";
         }
+      } else if (meas.gap) {
+        actual = ' &middot; actual: <span class="dk">' + esc(meas.gap_short || "data gap") + "</span>";
       }
-      return '<div><span class="dk">' + esc(p.label) + ":</span> " +
+      return '<div><span class="dk">' + esc(p.label) + " (Year " + esc(state.viewSlot) + "):</span> " +
         fmtPctTrim(c.headcount_pct) + " headcount share &times; " + fmtPctTrim(p.share) + " share &times; " +
-        fmtMoney(per) + " = <strong>" + fmtMoney(c[p.key] * m) + "</strong>" +
-        (m > 1 ? " over " + nYears() + " yrs" : "/yr") +
+        fmtMoney(per) + " = <strong>" + fmtMoney(c[p.key]) + "</strong>/yr" +
         " &middot; target " + fmtInt(c[p.key + "_heads"]) + " students (" + fmtPctTrim(p.target_rate) + ")" +
         "<br><span class='dk'>metric:</span> " + esc(p.metric) + actual + "</div>";
     }).join("");
@@ -675,7 +738,7 @@
       ? '<div><span class="dk">County context:</span> not estimated (county &lt; 65K population)</div>'
       : '<div><span class="dk">County context (' + esc(c.county) + "):</span> " + fmtInt(c.working_adults) +
         " working adults with some college, no degree (" + fmtPct(c.county_pop_pct, 1) + " of county population)</div>";
-    return '<tr class="cplfund-detail"><td colspan="' + COLS_COLLEGE.length + '">' +
+    return '<tr class="cplfund-detail"><td colspan="' + COLS_COLLEGE().length + '">' +
       '<div class="cplfund-detail-grid">' +
       '<div><span class="dk">Headcount share:</span> ' + fmtInt(c.headcount) + " students = " +
       fmtPct(c.headcount_pct, 3) + " of the statewide " + fmtInt(totalHeads()) + "</div>" +
@@ -684,47 +747,46 @@
       "</div></td></tr>";
   }
 
-  function districtRowHtml(g, m) {
+  function districtRowHtml(g) {
     var id = "d:" + g.district;
     return '<tr class="cplfund-row' + (state.open[id] ? " cplfund-open" : "") + '" data-id="' + esc(id) + '">' +
       '<td class="t trunc" title="' + esc(g.district) + '"><span class="cplfund-caret">▸</span><strong>' + esc(districtShort(g.district)) + "</strong></td>" +
       "<td>" + g.n + "</td>" +
       '<td class="t trunc" title="' + esc(g.counties) + '">' + esc(g.counties) + "</td>" +
       "<td>" + fmtInt(g.headcount) + "</td>" +
-      "<td>" + fmtMoney(g.p1 * m) + "</td><td>" + fmtMoney(g.p2 * m) + "</td><td>" + fmtMoney(g.p3 * m) + "</td>" +
-      '<td class="tot">' + fmtMoney(g.total * m) + "</td>" +
-      "</tr>" + (state.open[id] ? districtDetailHtml(g, m) : "");
+      yearCellsHtml(g) +
+      '<td class="tot">' + fmtMoney(g.total) + "</td>" +
+      "</tr>" + (state.open[id] ? districtDetailHtml(g) : "");
   }
-  function districtDetailHtml(g, m) {
+  function districtDetailHtml(g) {
     var rows = g.members.map(function (c) {
       return '<div><span class="dk">' + esc(c.college) + ":</span> " + fmtInt(c.headcount) +
-        " students &middot; <strong>" + fmtMoney(c.total * m) + "</strong></div>";
+        " students &middot; <strong>" + fmtMoney(c.total) + "</strong> over " + esc(windowLabel()) + "</div>";
     }).join("");
-    return '<tr class="cplfund-detail"><td colspan="' + COLS_DISTRICT.length + '">' +
+    return '<tr class="cplfund-detail"><td colspan="' + COLS_DISTRICT().length + '">' +
       '<div class="cplfund-detail-grid">' + rows + "</div></td></tr>";
   }
 
   function tableHtml() {
-    var m = periodMult();
     var rows = rowsFiltered();
     var cols = activeCols();
     var sys = systemAlloc();
     var head = cols.map(function (col) {
-      var label = col.label === "TOTAL_LABEL" ? totalLabel() : col.label;
       var arr = state.sortKey === col.key ? ' <span class="arr">' + (state.sortDir === 1 ? "▲" : "▼") + "</span>" : "";
       var titleVal = (col.key === "headcount" && base().headcount_label) ? base().headcount_label : col.title;
       var title = titleVal ? ' title="' + esc(titleVal) + '"' : "";
-      return '<th class="' + col.cls + '" data-sort="' + col.key + '"' + title + ">" + label + arr + "</th>";
+      return '<th class="' + col.cls + '" data-sort="' + col.key + '"' + title + ">" + col.label + arr + "</th>";
     }).join("");
     var body;
     if (!rows.length) {
       body = '<tr><td colspan="' + cols.length + '" class="t">No ' +
         (state.view === "district" ? "districts" : "colleges") + " match the search.</td></tr>";
     } else if (state.view === "district") {
-      body = rows.map(function (g) { return districtRowHtml(g, m); }).join("");
+      body = rows.map(function (g) { return districtRowHtml(g); }).join("");
     } else {
-      body = rows.map(function (c) { return collegeRowHtml(c, m); }).join("");
+      body = rows.map(function (c) { return collegeRowHtml(c); }).join("");
     }
+    var sysYearCells = yearKeys().map(function (yk) { return "<td>" + fmtMoney(sys[yk]) + "</td>"; }).join("");
     var foot;
     if (state.view === "district") {
       foot = "<tr>" +
@@ -732,8 +794,8 @@
         "<td>" + districts().reduce(function (s, g) { return s + g.n; }, 0) + "</td>" +
         '<td class="t"></td>' +
         "<td>" + fmtInt(sys.headcount) + "</td>" +
-        "<td>" + fmtMoney(sys.p1 * m) + "</td><td>" + fmtMoney(sys.p2 * m) + "</td><td>" + fmtMoney(sys.p3 * m) + "</td>" +
-        "<td>" + fmtMoney(sys.total * m) + "</td></tr>";
+        sysYearCells +
+        "<td>" + fmtMoney(sys.total) + "</td></tr>";
     } else {
       var pf = perf();
       foot = "<tr>" +
@@ -741,8 +803,8 @@
         "<td>" + fmtInt(sys.headcount) + "</td>" +
         '<td title="statewide distinct students — deduplicated across colleges, not the column sum">' +
         (pf && pf.statewide && pf.statewide.p3 != null ? fmtInt(pf.statewide.p3) : "—") + "</td>" +
-        "<td>" + fmtMoney(sys.p1 * m) + "</td><td>" + fmtMoney(sys.p2 * m) + "</td><td>" + fmtMoney(sys.p3 * m) + "</td>" +
-        "<td>" + fmtMoney(sys.total * m) + "</td>" +
+        sysYearCells +
+        "<td>" + fmtMoney(sys.total) + "</td>" +
         "<td>" + (base().system.working_adults == null ? "—" : fmtInt(base().system.working_adults)) + "</td></tr>";
     }
     return '<div class="cplfund-tablewrap"><table class="cplfund-table">' +
@@ -757,21 +819,19 @@
     var list = feeders();
     var carve = feederCarveout();
     var perYearPool = carve / nYears();
-    var m = periodMult();
     var totalHc = list.reduce(function (s, f) { return s + (Number(f.headcount) || 0); }, 0) || 1;
     var anyEstimate = list.some(function (f) { return f.estimate; });
     var rows = list.map(function (f, i) {
       var hc = Number(f.headcount) || 0;
-      var alloc = (hc / totalHc) * perYearPool * m;
       return "<tr>" +
         '<td class="t"><strong>' + esc(f.name) + "</strong>" +
         (f.estimate ? ' <span class="cplfund-est" title="editable estimate — no authoritative noncredit MIS pull is wired here">est.</span>' : "") +
         (f.vintage ? ' <span class="dk" style="font-size:.72rem;" title="headcount vintage">' + esc(f.vintage) + "</span>" : "") + "</td>" +
         '<td>' + edNum("feeder-hc", fmtInt(hc), { small: true, idx: i, label: f.name + " headcount" }) + "</td>" +
         "<td>" + fmtPctTrim(hc / totalHc) + "</td>" +
-        '<td class="tot">' + fmtMoney(alloc) + "</td></tr>";
+        "<td>" + fmtMoney((hc / totalHc) * perYearPool) + "</td>" +
+        '<td class="tot">' + fmtMoney((hc / totalHc) * carve) + "</td></tr>";
     }).join("");
-    var totalAlloc = carve * (state.period === "year" ? 1 / nYears() : 1);
     return '<h3>Noncredit feeder support ' +
       '<span class="dk" style="font-size:.8rem;font-weight:400;">(carve-out &mdash; not a CPL award)</span></h3>' +
       '<div class="cplfund-formula" style="margin-bottom:10px;">' +
@@ -783,11 +843,12 @@
       "<div style='margin-top:8px;'><span class='dk'>Feeder metric:</span> " +
       edText("feeder-metric", feederMetric(), { label: "Feeder metric" }) + "</div></div>" +
       '<div class="cplfund-tablewrap"><table class="cplfund-table">' +
-      "<thead><tr><th class='t'>Feeder</th><th>Noncredit headcount</th><th>Share</th><th>" +
-      (state.period === "year" ? "Support / yr" : "Support " + windowLabel()) + "</th></tr></thead>" +
+      "<thead><tr><th class='t'>Feeder</th><th>Noncredit headcount</th><th>Share</th>" +
+      "<th>Support / yr</th><th>Total " + esc(windowLabel()) + "</th></tr></thead>" +
       "<tbody>" + rows + "</tbody>" +
       '<tfoot><tr><td class="t">FEEDER POOL</td><td>' + fmtInt(totalHc) + "</td><td>100%</td>" +
-      '<td class="tot">' + fmtMoney(totalAlloc) + "</td></tr></tfoot></table></div>" +
+      "<td>" + fmtMoney(perYearPool) + "</td>" +
+      '<td class="tot">' + fmtMoney(carve) + "</td></tr></tfoot></table></div>" +
       (anyEstimate ? '<div class="cplfund-foot"><div>Noncredit headcounts are <strong>editable estimates</strong> ' +
         "&mdash; replace them with each feeder&#39;s MIS noncredit annual headcount to true up the split.</div></div>" : "");
   }
@@ -867,15 +928,14 @@
       "<h3>Potential allocation by college</h3>" +
       '<div class="cplfund-toolbar">' +
       segHtml("cplFundView", [{ val: "college", label: "Colleges" }, { val: "district", label: "Districts" }], state.view) +
-      segHtml("cplFundPeriod", [{ val: "year", label: "Per year" }, { val: "window", label: windowLabel() + " total" }], state.period) +
       '<input type="search" id="cplFundSearch" placeholder="Search college / district / county&hellip;" aria-label="Search colleges">' +
       '<span class="cplfund-count" id="cplFundCount"></span></div>' +
       '<div id="cplFundTable">' + tableHtml() + "</div>" +
       feederSectionHtml() +
       '<div class="cplfund-foot">' +
-      "<div>Dollar cells round to whole dollars; click a row to expand its detail. Priority columns reflect the " +
-      "selected year (Year " + state.viewSlot + "); a college&#39;s TOTAL is its headcount share of the tranche " +
-      "(identical each year while that year&#39;s shares sum to 100%). " +
+      "<div>Dollar cells round to whole dollars; click a row to expand its detail (the per-priority math for the " +
+      "year selected above). The Yr columns are each funding year&#39;s potential allocation &mdash; identical " +
+      "while both years&#39; priority shares sum to 100%; Total is the full " + esc(windowLabel()) + " window. " +
       "&ldquo;Working adults&rdquo; = 2022 estimated working adults with some college, no degree, in the college&#39;s county.</div>" +
       headcountSourceHtml() +
       actualsFootHtml() +
@@ -889,14 +949,13 @@
     var el = document.getElementById("cplFundCount");
     if (!el) return;
     var n = rowsFiltered().length;
-    var m = periodMult();
     var unit = state.view === "district" ? "districts" : "colleges";
     var denom = state.view === "district" ? districts().length : base().colleges.length;
     var avg = state.view === "college"
       ? base().colleges.reduce(function (s, c) { return s + collegeAlloc(c).total; }, 0) / base().colleges.length
       : null;
     el.textContent = n + " of " + denom + " " + unit +
-      (avg != null ? " · average allocation " + fmtMoney(avg * m) + (m === 1 ? "/yr" : " over " + windowLabel()) : "");
+      (avg != null ? " · average allocation " + fmtMoney(avg) + " over " + windowLabel() : "");
   }
 
   function refreshTable() {
@@ -991,9 +1050,6 @@
       if (!valid) { state.sortKey = v === "district" ? "district" : "order"; state.sortDir = 1; }
       render();
     });
-    // Period toggle affects the college table AND the feeder support column,
-    // so a full render keeps both in sync.
-    wireSeg("cplFundPeriod", function (v) { state.period = v; render(); });
     wireSeg("cplFundYear", function (v) { state.viewSlot = v; render(); });
 
     // Editable inputs — commit on change (blur/Enter). savingState clears so a
