@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-03T11:43:40.515Z",
+  "scraped_at": "2026-07-03T14:09:22.111Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -49,17 +49,17 @@
         {
           "college": "Moreno Valley College",
           "students": 1544,
-          "units": 9929.5,
-          "avgUnits": 6.431023316062176,
-          "transcriptionRate": 92.3,
-          "avgTranscribed": 5.935880829015544,
+          "units": 10059.5,
+          "avgUnits": 6.515220207253886,
+          "transcriptionRate": 92.1,
+          "avgTranscribed": 6.000647668393782,
           "criteriaMetCount": 5,
           "militaryStudents": 953,
           "nonMilitaryStudents": 607,
           "apprenticeStudents": 0,
-          "savings": 15212200,
-          "yearImpact": 59260370,
-          "transcribedUnits": 9165
+          "savings": 15369495,
+          "yearImpact": 60032012,
+          "transcribedUnits": 9265
         },
         {
           "college": "Riverside City College",
@@ -1839,7 +1839,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "$686M"
+          "value": "$687M"
         },
         {
           "label": "Apprentice",
@@ -1878,14 +1878,14 @@
   ],
   "raw": {
     "Students": 48428,
-    "Units": 230673.65000000002,
-    "TranscribedUnits": 99798.45,
-    "Savings": 321613025.25,
-    "YearImpact": 1300785072.3999999,
+    "Units": 230803.65000000002,
+    "TranscribedUnits": 99898.45,
+    "Savings": 321770320.25,
+    "YearImpact": 1301556714.3999999,
     "MilitaryStudents": 25047,
     "NonMilitaryStudents": 23458,
     "AprenticeStudents": 754,
-    "AverageUnits": 4.763228917155365,
-    "TranscribedAverage": 2.060759271495829
+    "AverageUnits": 4.765913314611383,
+    "TranscribedAverage": 2.062824192615842
   }
 }
