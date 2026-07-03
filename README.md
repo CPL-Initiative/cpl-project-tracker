@@ -78,13 +78,16 @@ The whole ecosystem, end-to-end:
    the 👍/👎 feedback queue from both chat surfaces with a triage status, and
    a gap miner over the chat logs surfacing the questions the knowledge base
    had no good source for), an **Implementation Funding** tab (the DRAFT
-   2026-30 CPL funding model:
-   one-time pools, three funding priorities, per-college potential
-   allocations with district rollups and drill-ins, a login-free **what-if
-   sandbox** — edit the pools, priority shares, and projection targets and
-   every figure recomputes in your browser — plus live P2/P3 priority-metric
-   actuals from MAP; Priority 1 completions are a deliberate, labeled data
-   gap kept as an incentive), a **TMC Builder** tab (align a college's local
+   CPL funding model as a scenario tool: a selectable 2-year window,
+   **year-specific funding priorities** (Year 1 / Year 2 filter; every metric
+   and description editable), a **noncredit-feeder carve-out** (NOCE / SD
+   Continuing Ed / Mt. SAC Noncredit / Calbright, split by headcount),
+   per-college potential allocations with district rollups and drill-ins,
+   and **layered editing** — anonymous edits are a private per-browser
+   sandbox, while the shared team phrase saves the base model everyone
+   opens to (Supabase-backed) — plus live P2/P3 priority-metric actuals
+   from MAP; Priority 1 completions are a deliberate, labeled data gap
+   kept as an incentive), a **TMC Builder** tab (align a college's local
    courses to an ASCCC Transfer Model Curriculum / ADT — pick a college + a TMC
    and the right column auto-fills the local course already carrying each
    slot's C-ID; all 45 official TMCs, a GE Breadth companion for the full ADT,

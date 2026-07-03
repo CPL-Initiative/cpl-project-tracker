@@ -2367,35 +2367,14 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > **Session 95 narrative (the Activity ⇄ Project separation + the Archive-radio fix) archived** →
 > [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full story: `docs/project_lifecycle_lessons.md`.
 
-### Session 96 — SkyPress: report generators go live-data + the attach handoff (2026-07-02)
+> **Session 96 narrative (SkyPress — report generators go live-data + the attach handoff) archived**
+> → [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full story: [`docs/cobi_lessons.md`](docs/cobi_lessons.md) (S96).
 
-Sam's report audit, one PR: the **Custom Report** now fetches the live overlays before prompting
-(newest `item_updates` + RACI lead per project + an activity-updates block); the **Master Report**
-button opens a **selection modal** (same Activities & Projects tree) and builds the Workplan-style
-docx **client-side** from live data (`master_report.js`; the pre-built docx = fallback). Root cause
-of the staleness: the runner never had node `docx` (reports failed silently every cron) and
-`reports/` was never committed — both fixed in the workflow. Pipeline now folds `item_updates` into
-`projects[].update` + exports `CPL_DATA.live_updates` (`kb/_load_projects.py:load_item_updates()`).
-Tweaks: 📝 composer closes after "✓ Saved."; nudge mailtos semicolon-delimited (Outlook); the
-Path-to-2030 charts → BOTTOM of CPL Analytics; a first-click 📎 **attach explainer** (SharePoint
-"＋ Create or upload" handoff wasn't discoverable). Parked for Sam: native Supabase-Storage
-attachments (access model) + attachments→KB-md ingest. Suite 128. Full story: `docs/cobi_lessons.md` (S96).
-
-
-### CCR Convergence kickoff — MindMeld: doctrine + voice mind-meld + calibration (2026-07-03)
-
-Parallel-lane session on Sam's charge: converge the 7,716-group worklist into a
-≤2,500-course CPL crosswalk via a written **Merge/Mint Doctrine** calibrated to his
-judgment, then batch passes. Shipped (one PR): `docs/ccr_convergence_strategy.md`
-(plan of record; two-number goal — Tier-1 ≤2,500 over a converging total space;
-measured: ladders 1,533 + same-college 1,773 ≈ 43% of the worklist = 2 policy calls),
-`kb/merge_doctrine.md` v0 + `kb/doctrine_questions.json` (11 open Q-*), the **🧠
-Mind-meld voice panel** in the CCR worklist (→ new Supabase `merge_doctrine_notes`,
-schema `kb/supabase_merge_doctrine.sql`; tests `uc_mind_meld.test.js`, 31), and the
-78-group calibration sample pre-decided by 4 agents (`kb/doctrine_out/2026-07-03/`).
-Next: Sam's voice pass → distill v1 → batch pass 2 + ESL packaging pass per
-[`docs/ccr_convergence_handoff.md`](docs/ccr_convergence_handoff.md). Full story:
-`docs/ccr_convergence_lessons.md`.
+> **CCR Convergence kickoff narrative (MindMeld — doctrine + voice mind-meld + 78-group calibration,
+> 2026-07-03) archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md). **STILL THE ACTIVE
+> CCR LANE:** Sam's voice pass → distill Doctrine v1 → batch pass 2 + ESL packaging per
+> [`docs/ccr_convergence_handoff.md`](docs/ccr_convergence_handoff.md); full story
+> `docs/ccr_convergence_lessons.md`.
 
 ### Session 97 — BigSky: the Activities tab optimization + reports consolidation (2026-07-03)
 
@@ -2412,6 +2391,21 @@ above) across prompts, footers, the KB repo (draft PR), and a `sierra_guidance` 
 de-pinned to the `claude-sonnet-4-5` alias. Team-phrase expansion plan authored:
 [`docs/team_phrase_expansion_plan.md`](docs/team_phrase_expansion_plan.md) (recommendation: widen
 most, keep 4 reviewer-only). Suite 132 files green (+3 new). Full story: `docs/cobi_lessons.md` (S97).
+
+### Session 98 — the Implementation Funding rework: Chancellor-facing scenario tool (2026-07-03)
+
+Sam's funding-tab spec, one PR (#663, merged): **2-year selectable window** (year dropdowns; pool ÷
+selected years), **year-specific priorities** (Year 1/2 filter; Sam's six metrics seeded; all text
+editable), the **noncredit-feeder carve-out** ($1M editable → NOCE / SD Cont. Ed / Mt. SAC NC /
+Calbright split by headcount — the 4 moved OUT of the college table), and **3-layer editing**:
+per-browser scenario ⊕ shared Supabase **`cpl_funding_config`** (team-phrase write via
+`team_phrase.js`; unlock promotes an explored scenario) ⊕ baked defaults — resolution
+`SCENARIO ?? SHARED ?? BASE`. **Excel workbook RETIRED** (Sam: "we don't need that excel book
+anymore") — `cpl_funding_data.js` is now the hand-maintained snapshot; **2025-26 headcounts applied**
+(74 rows; 41 keep 2022-23 with per-row `hc_vintage` + a data-driven mixed-vintage note; roster 115,
+SYSTEM 2,258,784). Suite 134 green (funding test 119 assertions). Full story:
+`docs/cpl_funding_lessons.md` (Session 2); KB note
+`docs/kb-notes/methodology-three-layer-scenario-config.md`.
 
 ---
 
