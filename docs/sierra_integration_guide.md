@@ -42,6 +42,12 @@ integration is needed. B delivers the full feature set (multi-turn, audience
 selector, feedback, streaming, branding) with zero coupling to the API
 contract; C gives you pixel-level control at the cost of owning the client.
 
+> **Path B has its own day-one recipe** —
+> [`sierra_iframe_implementation_guide.md`](sierra_iframe_implementation_guide.md)
+> (exact URL incl. the required `?ctx=external`, annotated markup, QA
+> checklist). The graduation sequence beyond the iframe is scoped in
+> [`sierra_maturity_roadmap.md`](sierra_maturity_roadmap.md).
+
 Whichever path you pick, coordinate launch timing with the CPL team — see §6.
 
 ---
