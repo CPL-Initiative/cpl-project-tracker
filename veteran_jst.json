@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-02T22:43:35.433031+00:00",
+  "scraped_at": "2026-07-03T09:37:45.111669+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25046,
+    "jst": 25047,
     "star_colleges": 50
   },
   "computed_star_colleges": 50,
@@ -72,7 +72,7 @@
     },
     "Long Beach City College": {
       "vets": 307,
-      "jst": 808,
+      "jst": 809,
       "star": true
     },
     "De Anza College": {
