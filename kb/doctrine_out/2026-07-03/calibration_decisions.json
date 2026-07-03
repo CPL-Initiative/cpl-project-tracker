@@ -1,0 +1,1748 @@
+{
+ "decided_at": "2026-07-03",
+ "doctrine_version": "v0 (seed - pre-calibration)",
+ "decider": "claude-fable-5 (4 parallel decision agents, doctrine-guided)",
+ "sample_ref": "calibration_sample.json",
+ "stats": {
+  "calls": {
+   "PACKAGE_BAND": 8,
+   "MERGE_PARTIAL": 19,
+   "KEEP_SEPARATE": 26,
+   "MERGE_ALL": 14,
+   "MINT_NEW": 10,
+   "DEFER_HUMAN": 1
+  },
+  "open_questions": {
+   "Q-LADDER": 2,
+   "Q-TARGETCOUNT": 9,
+   "Q-STRANDS": 1,
+   "Q-MINTNAME": 1,
+   "Q-CREDITNC": 4,
+   "Q-SAMECOLL": 2,
+   "Q-XDISC": 1,
+   "Q-GENERIC": 1,
+   "Q-FLOOR": 1
+  },
+  "mean_confidence": 0.758
+ },
+ "decisions": [
+  {
+   "sig": "appli costum theat",
+   "stratum": "level_ladder",
+   "call": "PACKAGE_BAND",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": "Applied Costuming for the Theater",
+   "bands": "1 package: Applied Costuming for the Theater (levels 2-4 folded; original level recorded in merge_note per member)",
+   "rationale": "Three same-college rungs of a repeatable applied production ladder at identical units — the levels are re-enrollment tiers, not distinct credit outcomes. A workgroup mapping professional costuming experience would target 'Applied Costuming for the Theater,' never rung 3. Same-college status routes this to the packaging pass rather than a duplicate merge, which is exactly what this call is.",
+   "doctrine_cited": [
+    "P-3",
+    "P-6",
+    "P-9",
+    "P-10"
+   ],
+   "confidence": 0.7,
+   "open_question": "Q-LADDER",
+   "_slice": "A"
+  },
+  {
+   "sig": "cad creo laboratory parametr technolog",
+   "stratum": "level_ladder",
+   "call": "PACKAGE_BAND",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": "Creo Parametric CAD Laboratory",
+   "bands": "1 package: Creo Parametric CAD Laboratory — Beginning/Intermediate/Advanced levels folded as rungs; Sheetmetal and Surfaces folded as skill strands (P-4), each recorded in merge_note",
+   "rationale": "A single-college CTE skills ladder on one vendor toolchain, uniform 2-unit labs — the kind of externally standardized skill family where a PTC certification maps to the tool competency, not to a rung. Beginning through Advanced are ladder levels and Sheetmetal/Surfaces are parallel strands, none independently a distinct credit target. Credential-aligned CTE biases strongly to convergence; one package with receipted levels serves the CPL crosswalk.",
+   "doctrine_cited": [
+    "P-3",
+    "P-4",
+    "P-6",
+    "P-8"
+   ],
+   "confidence": 0.7,
+   "open_question": "Q-LADDER",
+   "_slice": "A"
+  },
+  {
+   "sig": "compo dance production",
+   "stratum": "level_ladder",
+   "call": "PACKAGE_BAND",
+   "survivor": "DANC M1145",
+   "excluded_members": [],
+   "proposed_title": "Dance Composition and Production",
+   "bands": "1 package: Dance Composition and Production (levels 1-4 folded into the level-1 anchor DANC M1145; original level in merge_note)",
+   "rationale": "A cross-college performance-production ladder at uniform 2 units — the numbered levels are repeat-participation tiers of one activity, not four different courses a faculty workgroup would map separately. A professional dancer's prior learning targets 'Dance Composition and Production' once. Anchoring the package on the existing level-1 M-ID keeps the corroborated identity while the rungs fold in with receipts.",
+   "doctrine_cited": [
+    "P-3",
+    "P-9",
+    "P-10"
+   ],
+   "confidence": 0.75,
+   "open_question": "Q-TARGETCOUNT",
+   "_slice": "A"
+  },
+  {
+   "sig": "esl grammar writ",
+   "stratum": "level_ladder",
+   "call": "PACKAGE_BAND",
+   "survivor": null,
+   "excluded_members": [
+    {
+     "id": "ESOL M91JD",
+     "why": "no level mark on the title — needs a catalog level read before band placement"
+    }
+   ],
+   "proposed_title": null,
+   "bands": "2 packages: Intermediate ESL — ESOL M1284, ESOL M10SG, ESOL M91JB (anchor the existing M-ID ESOL M1284; the credit/noncredit and 0-5 unit mix is recorded as an explicit packaging decision); Advanced ESL — ESOL M90NS",
+   "rationale": "This is the canonical ESL move: grammar-writing strands at Intermediate and Advanced fold into their level-band packages, because a JST skill or certification maps to 'Intermediate ESL,' never to 'Grammar for Intermediate ESL Writers.' The band-purity rule is honored the only permitted way — as an explicit, receipted packaging decision, not a silent same-course merge. The two credit members are arguably independent credit targets, so this fold rides the staging default and reverses cleanly if faculty split the writing strand back out.",
+   "doctrine_cited": [
+    "P-3",
+    "P-4",
+    "D-3",
+    "P-9"
+   ],
+   "confidence": 0.55,
+   "open_question": "Q-STRANDS",
+   "_slice": "A"
+  },
+  {
+   "sig": "esl noncredit",
+   "stratum": "level_ladder",
+   "call": "PACKAGE_BAND",
+   "survivor": null,
+   "excluded_members": [
+    {
+     "id": "ESLN M90BH",
+     "why": "unleveled program-wide umbrella row with an off-vocabulary discipline string — needs level determination and discipline cleanup before placement"
+    }
+   ],
+   "proposed_title": null,
+   "bands": "2 packages: Beginning ESL — ESOL M90VT; Advanced ESL — ESOL M90OB (each becomes the statewide noncredit band target future rungs fold into)",
+   "rationale": "All-noncredit ESL, so band purity is not in play, and the doctrine's target state is exactly these plain band names: Beginning ESL and Advanced ESL. Minting the two band packages now, even thinly populated, gives every future noncredit ESL rung an obvious home instead of another standalone. The unleveled all-caps umbrella row stays out until its level is established — folding it blind would blur the band boundary.",
+   "doctrine_cited": [
+    "P-3",
+    "P-10",
+    "P-9"
+   ],
+   "confidence": 0.75,
+   "open_question": "Q-MINTNAME",
+   "_slice": "A"
+  },
+  {
+   "sig": "evalu fitness person",
+   "stratum": "level_ladder",
+   "call": "PACKAGE_BAND",
+   "survivor": "KINE Z1010",
+   "excluded_members": [],
+   "proposed_title": "Personal Fitness Evaluation",
+   "bands": "1 package: Personal Fitness Evaluation (levels 1-3 folded into the existing Unified identity KINE Z1010; levels in merge_note)",
+   "rationale": "A kinesiology activity ladder at 1 unit per rung — levels 2 and 3 are repeat tiers of the same fitness-evaluation activity, and a personal-training certification maps to the activity, not the rung. The existing Unified identity already holds level 1 and is the natural anchor for the fold. This is the one-row-per-activity pattern the doctrine is converging toward for KIN ladders.",
+   "doctrine_cited": [
+    "P-3",
+    "P-9",
+    "D-1"
+   ],
+   "confidence": 0.75,
+   "open_question": "Q-TARGETCOUNT",
+   "_slice": "A"
+  },
+  {
+   "sig": "Accelerated College Writing",
+   "stratum": "skill_strands",
+   "call": "MERGE_PARTIAL",
+   "survivor": "ENGL M1029",
+   "excluded_members": [
+    {
+     "id": "ENGL M10ED",
+     "why": "2-unit 'Transfer ... Academic Skills' reads as a transfer-level co-requisite support course — a different credit function than the accelerated prep course"
+    }
+   ],
+   "proposed_title": "Accelerated College Writing",
+   "bands": null,
+   "rationale": "Eight of nine members are the same post-AB705 animal — an accelerated integrated reading/writing preparation for college-level English — under drifted local titles; catalog fidelity differs, the credit outcome does not. The reading-and-writing phrasing variants are strands that fold, and the 3-5 unit spread stays under the stop-and-look threshold once the outlier is removed; store the modal units and flag unit_anomaly for faculty. The 2-unit transfer co-req support course is the one member doing a different job, so it stays out.",
+   "doctrine_cited": [
+    "P-9",
+    "P-1",
+    "P-4",
+    "P-5"
+   ],
+   "confidence": 0.6,
+   "open_question": null,
+   "_slice": "A"
+  },
+  {
+   "sig": "Reading for Academic Success",
+   "stratum": "skill_strands",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "Reading, Writing, and Math Skills are three different subjects wearing one college's naming template — the description-lane similarity is shared boilerplate, not shared content. No faculty workgroup would award reading credit against a math-skills module. There is no level band here for strands to fold into, and same-college groups are variants by presumption, so these stay three rows.",
+   "doctrine_cited": [
+    "P-1",
+    "P-4",
+    "P-6",
+    "P-7"
+   ],
+   "confidence": 0.85,
+   "open_question": null,
+   "_slice": "A"
+  },
+  {
+   "sig": "business english writ",
+   "stratum": "skill_strands",
+   "call": "PACKAGE_BAND",
+   "survivor": null,
+   "excluded_members": [
+    {
+     "id": "BUSI M10RV",
+     "why": "3-unit credit course — band purity (D-3) bars folding it into the noncredit package; it stands as the credit target, cross-referenced as the credit counterpart"
+    }
+   ],
+   "proposed_title": "Basic Business English Writing",
+   "bands": "1 noncredit package: Basic Business English Writing — BUSI M90DF + BUSI M90DG (levels 1-2 folded, levels in merge_note)",
+   "rationale": "The two noncredit rungs are a classic skills ladder and package into one noncredit target — no student's CPL award turns on whether their workplace writing maps to level 1 or level 2. The credit course is the same subject at a different funding band, and band purity is an established rule: it stays its own row, linked as the credit twin rather than merged. Whether noncredit twins eventually fold under the credit target is an open fork; until settled, the hard carve-out governs.",
+   "doctrine_cited": [
+    "P-3",
+    "D-3",
+    "P-9"
+   ],
+   "confidence": 0.8,
+   "open_question": "Q-CREDITNC",
+   "_slice": "A"
+  },
+  {
+   "sig": "college read strategy",
+   "stratum": "skill_strands",
+   "call": "MERGE_ALL",
+   "survivor": "ENGL M1161",
+   "excluded_members": [],
+   "proposed_title": "Reading Strategies for College",
+   "bands": null,
+   "rationale": "The two half-unit numbered entries are module splits of the same reading-strategies content the corroborated M-ID already names — micro-modules, not a degree-applicable sequence where the rung is the credit target. Fold both into ENGL M1161 with the module numbers receipted in merge_note. This is the staging default working as intended: one CCR row, reversible if a catalog read ever shows distinct content.",
+   "doctrine_cited": [
+    "P-9",
+    "P-3",
+    "P-1"
+   ],
+   "confidence": 0.75,
+   "open_question": null,
+   "_slice": "A"
+  },
+  {
+   "sig": "edit grammar high review",
+   "stratum": "skill_strands",
+   "call": "MINT_NEW",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": "High Advanced ESL Editing and Grammar Review",
+   "bands": null,
+   "rationale": "One college's 3-unit course plus its 1-unit B and C module carve-outs — a format variant ladder, not three courses. The section letters are exactly the college-ism the naming rule strips, and an ESL student's prior learning maps to the course, not to module C. Minting one unified title with the module structure receipted is the packaging-pass treatment same-college variants are supposed to get.",
+   "doctrine_cited": [
+    "P-6",
+    "P-3",
+    "P-10",
+    "P-9"
+   ],
+   "confidence": 0.7,
+   "open_question": "Q-SAMECOLL",
+   "_slice": "A"
+  },
+  {
+   "sig": "integrat read skill study writ",
+   "stratum": "skill_strands",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "The READ entry serves the general developmental-reading population while the two ESOL entries serve English learners — different MQ disciplines, different curriculum, a near-homonym on 'integrated reading and writing' that the cross-discipline carve-out says never merges on title alone. The two ESOL members are Intermediate and Advanced rungs, so they belong to the ESL band-packaging pass in different bands, not to each other. Route the ESOL pair to the P-3/P-4 ESL fold; leave the Reading course alone.",
+   "doctrine_cited": [
+    "P-9",
+    "D-8",
+    "P-3",
+    "P-4"
+   ],
+   "confidence": 0.7,
+   "open_question": "Q-XDISC",
+   "_slice": "A"
+  },
+  {
+   "sig": "Costume Production",
+   "stratum": "activity_ladder",
+   "call": "MERGE_PARTIAL",
+   "survivor": "THEA M1133",
+   "excluded_members": [
+    {
+     "id": "THES M1004",
+     "why": "design-and-history survey — lecture content, not shop production"
+    },
+    {
+     "id": "THEA M11CV",
+     "why": "costume DESIGN — a distinct course; candidate for its own design-family merge"
+    },
+    {
+     "id": "THES M10AQ",
+     "why": "applied costume DESIGN — belongs with the design family, not production"
+    },
+    {
+     "id": "DANC M11BL",
+     "why": "costume design for dance — design family, different discipline tag"
+    },
+    {
+     "id": "THEA M11CT",
+     "why": "history of costume design in film — a history course, different content"
+    },
+    {
+     "id": "THEA M11CS",
+     "why": "fashion history survey — different content entirely"
+    }
+   ],
+   "proposed_title": "Costume Production",
+   "bands": null,
+   "rationale": "The title lane bridged three genuinely different courses — costume construction, costume design, and costume history — and any theater department separates those. The construction cluster (Production, Sewing, Sewing and Production, and Costume Production for Dance) is one shop-skills credit target and folds into the corroborated M-ID, with the Dance-tagged member re-disciplined explicitly per D-8. The four design entries are flagged as their own follow-on merge candidate rather than forced under a production survivor.",
+   "doctrine_cited": [
+    "P-9",
+    "D-4",
+    "D-8",
+    "P-1"
+   ],
+   "confidence": 0.7,
+   "open_question": null,
+   "_slice": "A"
+  },
+  {
+   "sig": "Dance Repertoire",
+   "stratum": "activity_ladder",
+   "call": "MERGE_PARTIAL",
+   "survivor": "DANC M1330",
+   "excluded_members": [
+    {
+     "id": "MUSI M1544",
+     "why": "VOCAL repertoire — a music voice course; anchor for its own vocal-repertoire merge family"
+    },
+    {
+     "id": "MUSI M1032",
+     "why": "vocal production and repertoire — belongs to the vocal family"
+    },
+    {
+     "id": "MUSI M12OM",
+     "why": "mentorship and vocal repertoire — vocal family"
+    },
+    {
+     "id": "MUSI M12QW",
+     "why": "vocal repertoire and performance procedures — vocal family"
+    },
+    {
+     "id": "MUSI M12QC",
+     "why": "vocal repertoire for musical theater — vocal family"
+    }
+   ],
+   "proposed_title": "Dance Repertoire",
+   "bands": null,
+   "rationale": "'Repertoire' is the false bridge: dance repertoire and vocal repertoire are different activities in different disciplines, the homonym pattern that never merges on title similarity. Within dance, the ballet and hip-hop genre variants plus the production-repertoire entry are one repeatable activity — a professional dancer's CPL targets Dance Repertoire, and genre reads as a section-level mark, folded with receipts. The five vocal entries form their own merge family around MUSI M1544 and should be queued separately.",
+   "doctrine_cited": [
+    "P-9",
+    "D-8",
+    "P-3",
+    "P-1"
+   ],
+   "confidence": 0.65,
+   "open_question": "Q-TARGETCOUNT",
+   "_slice": "A"
+  },
+  {
+   "sig": "Intersession Concert Band",
+   "stratum": "activity_ladder",
+   "call": "MERGE_PARTIAL",
+   "survivor": "MUSI M1102",
+   "excluded_members": [
+    {
+     "id": "MUSI M10UN",
+     "why": "Concert JAZZ Band — a different ensemble type faculty treat as its own course"
+    },
+    {
+     "id": "DANC M1013",
+     "why": "Fall Dance Concert — dance performance production, different discipline and activity; own family with M1014/M10YS"
+    },
+    {
+     "id": "DANC M1014",
+     "why": "Spring Dance Concert — same dance-concert family, seasonal variant"
+    },
+    {
+     "id": "DANC M10YS",
+     "why": "Dance Concert Performance 3 — dance-concert family, not band"
+    }
+   ],
+   "proposed_title": "Concert Band",
+   "bands": null,
+   "rationale": "'Concert' bridged an instrumental ensemble to dance performance productions — different disciplines, different activities, the homonym carve-out. Within music, Intersession and Summer are scheduling marks on the same Concert Band activity and fold cleanly, with the unified title dropped to plain 'Concert Band' since a term label is a college-ism. Jazz Band is a distinct ensemble and stays out; the three dance-concert entries are their own seasonal-fold candidate to queue separately.",
+   "doctrine_cited": [
+    "P-9",
+    "D-4",
+    "P-10",
+    "D-8"
+   ],
+   "confidence": 0.7,
+   "open_question": null,
+   "_slice": "A"
+  },
+  {
+   "sig": "Pop Music Workshop 2",
+   "stratum": "activity_ladder",
+   "call": "MERGE_PARTIAL",
+   "survivor": "MUSI M1425",
+   "excluded_members": [
+    {
+     "id": "MUSI M11MF",
+     "why": "3-unit music THEORY course — academic classroom content, not a performance workshop"
+    },
+    {
+     "id": "MUSI M11LP",
+     "why": "theory sequence course — same exclusion; pairs with M11MF as its own family"
+    },
+    {
+     "id": "MUSI M10GJ",
+     "why": "applied vocal/instrumental music — private-lesson instruction, a distinct course type"
+    },
+    {
+     "id": "MUSI M12JM",
+     "why": "generic 'Instrumental-Vocal Workshops' title carries no course identity — needs a second signal before folding"
+    }
+   ],
+   "proposed_title": "Pop and Commercial Music Performance Workshop",
+   "bands": null,
+   "rationale": "The mergeable core is the pop/commercial performance ensemble family — the workshop, the ensemble, and the two 'Emphasis' variants of Commercial Music Performance — one repeatable performance activity where the emphasis marks read as sections, folded with receipts. The two 3-unit theory courses are classroom academics wearing the word 'Pop,' applied music is private instruction, and the generic workshops title needs description evidence before it joins anything. This split is what keeps a working musician's CPL landing on a performance target instead of a theory course.",
+   "doctrine_cited": [
+    "P-9",
+    "P-7",
+    "D-4",
+    "P-1"
+   ],
+   "confidence": 0.55,
+   "open_question": "Q-TARGETCOUNT",
+   "_slice": "A"
+  },
+  {
+   "sig": "intercollegiate volleyball",
+   "stratum": "activity_ladder",
+   "call": "MERGE_PARTIAL",
+   "survivor": "ATHL M1157",
+   "excluded_members": [
+    {
+     "id": "ATHL M10TY",
+     "why": "'Prep for' is an unshared variant-type mark — off-season conditioning is a distinct course from in-season intercollegiate competition"
+    }
+   ],
+   "proposed_title": "Intercollegiate Volleyball (Women)",
+   "bands": null,
+   "rationale": "This is the one-row-per-activity case in its purest form: levels I and 2 plus an unleveled (W) entry are all the same women's intercollegiate volleyball activity, and season-level rungs carry no distinct credit meaning — every member shares the gender mark, so the athletics-template guard is satisfied. Fold the three M-IDs with levels receipted. The Prep course carries an unshared variant-type mark and a genuinely different function, so it stays out absent member-level evidence.",
+   "doctrine_cited": [
+    "P-3",
+    "D-4",
+    "P-9"
+   ],
+   "confidence": 0.8,
+   "open_question": "Q-TARGETCOUNT",
+   "_slice": "A"
+  },
+  {
+   "sig": "perform play rehear",
+   "stratum": "activity_ladder",
+   "call": "MINT_NEW",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": "Play Rehearsal and Performance",
+   "bands": null,
+   "rationale": "One college's A-through-D tiers at 1-4 units are escalating enrollment variants of a single repeatable production activity — the section letters and unit steps are the enrollment mechanics, not four credit targets. A theater professional's prior learning maps to 'Play Rehearsal and Performance' once, with the credit recommendation specifying units. Mint one unified title, strip the section letters per the naming rule, receipt the tier/unit structure, and preserve the unit spread for faculty.",
+   "doctrine_cited": [
+    "P-6",
+    "P-3",
+    "P-10",
+    "P-5"
+   ],
+   "confidence": 0.8,
+   "open_question": null,
+   "_slice": "A"
+  },
+  {
+   "sig": "administr childhood early program",
+   "stratum": "credit_noncredit",
+   "call": "MERGE_PARTIAL",
+   "survivor": "ECED M1013",
+   "excluded_members": [
+    {
+     "id": "ECED M10DU",
+     "why": "Administration 2 — second rung of the degree-applicable ECE Admin sequence (Permit-relevant); digit-level gate, D-4 / P-3 boundary"
+    }
+   ],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "ECE Program Administration is a standard cross-college course; the unleveled base and the 'Administration 1' variants are the same first-course credit target (unleveled base = Admin 1 in nearly every catalog, and all sit at 3.0 units in the credit band). The Z-id and both '1'/unleveled stand-alones fold into the M-ID anchor per identity precedence. Admin 2 is a distinct rung of a degree-applicable sequence tied to the Child Development Permit — the rung IS the credit target, so it stays out.",
+   "doctrine_cited": [
+    "P-9",
+    "D-4",
+    "P-3",
+    "D-1",
+    "P-1"
+   ],
+   "confidence": 0.8,
+   "open_question": null,
+   "_slice": "B"
+  },
+  {
+   "sig": "baking principl",
+   "stratum": "credit_noncredit",
+   "call": "MERGE_PARTIAL",
+   "survivor": "CULN M1046",
+   "excluded_members": [
+    {
+     "id": "CULN Z1003",
+     "why": "Principles of Baking 2 — distinct rung of a credit culinary sequence; digit-level gate D-4"
+    }
+   ],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "Unleveled 'Principles of Baking' and 'Principles of Baking 1' are the same introductory credit target — the unleveled catalog title is the first course. Baking 2 is a genuine sequence rung in a credit CTE program where CPL awards the specific course, so it keeps its own row. Survivor is the M-ID over the Unified id per precedence.",
+   "doctrine_cited": [
+    "P-9",
+    "D-4",
+    "D-1",
+    "P-1"
+   ],
+   "confidence": 0.75,
+   "open_question": null,
+   "_slice": "B"
+  },
+  {
+   "sig": "business ethic",
+   "stratum": "credit_noncredit",
+   "call": "MERGE_PARTIAL",
+   "survivor": "BUSI M1171",
+   "excluded_members": [
+    {
+     "id": "VOCE M90HY",
+     "why": "noncredit twin (0 units, M9 band) — band purity D-3"
+    }
+   ],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "Business Ethics is one common course that colleges tag under BUS or PHIL — the anchor M-ID already carries both subject codes, which is the second signal the cross-discipline carve-out asks for (this is inconsistent tagging, not a homonym). The Philosophy stand-alone merges in at identical 3.0 units; survivor keeps Business with PHIL best handled as a cross-listing. The 0-unit vocational twin is the same content in the noncredit band and never crosses the band line in a same-course merge.",
+   "doctrine_cited": [
+    "P-9",
+    "D-3",
+    "D-8",
+    "D-1"
+   ],
+   "confidence": 0.75,
+   "open_question": "Q-CREDITNC",
+   "_slice": "B"
+  },
+  {
+   "sig": "chemistry phys science",
+   "stratum": "credit_noncredit",
+   "call": "MERGE_PARTIAL",
+   "survivor": "IDST M90VQ",
+   "excluded_members": [
+    {
+     "id": "PHSC M10DA",
+     "why": "credit-band course — band purity D-3; forms its own mergeable credit pair with M10DC"
+    },
+    {
+     "id": "PHSC M10DC",
+     "why": "credit-band course — band purity D-3; forms its own mergeable credit pair with M10DA"
+    }
+   ],
+   "proposed_title": null,
+   "bands": "9-band: IDST M90VQ ⟵ M90AR (adult-HS-diploma physical science, chemistry semester). 1-band: PHSC M10DA + M10DC are one credit Intro Physical Science course — merge them as a separate credit identity.",
+   "rationale": "This group splits cleanly on the band line: two 0-unit adult-high-school-diploma physical-science courses and two 3.0-unit college Intro Physical Science courses. The noncredit stand-alone folds into the M-ID anchor (the '1' rung is noise inside a non-degree-applicable HS-diploma ladder). The credit pair is genuinely one course too, but it must converge as its own credit identity — never across the band.",
+   "doctrine_cited": [
+    "D-3",
+    "P-9",
+    "P-3",
+    "D-1"
+   ],
+   "confidence": 0.7,
+   "open_question": "Q-CREDITNC",
+   "_slice": "B"
+  },
+  {
+   "sig": "echocardiography practice profession",
+   "stratum": "credit_noncredit",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "Introductory vs Intermediate is an explicit word-level split in a sequenced, clinical allied-health (CVT) credit program — exactly the degree-applicable sequence where the rung is the credit target and packaging does not apply. A faculty workgroup mapping echocardiography credentials would not treat these as one target. The level marks gate absent member-level evidence they are the same course.",
+   "doctrine_cited": [
+    "D-4",
+    "P-3",
+    "P-1"
+   ],
+   "confidence": 0.8,
+   "open_question": null,
+   "_slice": "B"
+  },
+  {
+   "sig": "interpret medic transl",
+   "stratum": "credit_noncredit",
+   "call": "PACKAGE_BAND",
+   "survivor": null,
+   "excluded_members": [
+    {
+     "id": "BUSI M11NO",
+     "why": "credit twin (3.0 units, M1 band) — band purity D-3; stays its own credit target"
+    }
+   ],
+   "proposed_title": "Medical Interpretation and Translation",
+   "bands": "9-band package: PUBS M90AV + M90AH (Modules A/B folded, module recorded in merge_note). 1-band: BUSI M11NO remains the standalone credit target.",
+   "rationale": "Modules A and B are rungs of one noncredit medical-interpreting sequence — a certification or work-history maps to 'medical interpretation,' never to 'Module B,' so the modules fold into a single band package with the module preserved in the receipt. The 3-unit credit course is the same field in the credit band and stays a separate target under band purity. Whether the noncredit package should eventually fold under the credit target with a band note is the open credit/noncredit-twin question.",
+   "doctrine_cited": [
+    "P-3",
+    "P-4",
+    "D-3",
+    "P-10"
+   ],
+   "confidence": 0.7,
+   "open_question": "Q-CREDITNC",
+   "_slice": "B"
+  },
+  {
+   "sig": "BIOT 101 B X",
+   "stratum": "honors_variant",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "The M-ID's own member evidence is split 1–1 between two different C-IDs (BIOT 101 B X and BIOT 150 X) — a single witness each, contested, with no plurality to justify a fold. The target descriptor is also the with-Laboratory variant while the M-ID title carries no lab mark. On tied, thin evidence the evidence ladder does not support placement; leave the M-ID standing until more COCI filings arrive.",
+   "doctrine_cited": [
+    "D-2",
+    "D-4",
+    "D-1"
+   ],
+   "confidence": 0.7,
+   "open_question": null,
+   "_slice": "B"
+  },
+  {
+   "sig": "GEOL 111",
+   "stratum": "honors_variant",
+   "call": "MERGE_ALL",
+   "survivor": "GEOL 111",
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "Fourteen member colleges filed this course as GEOL 111 (Historical Geology with Lab) against eleven as GEOL 110, and the M-ID's modal 4.0 units matches the lab-inclusive descriptor, not the 3-unit lecture-only one. That is member-level evidence with a plurality, which is what the variant-mark gate asks for before crossing a lab distinction. Fold into the official C-ID per precedence, with the 11 GEOL-110 witnesses preserved in the receipt so faculty can re-point individual lecture-only members later.",
+   "doctrine_cited": [
+    "D-1",
+    "D-2",
+    "D-4",
+    "P-9",
+    "D-6"
+   ],
+   "confidence": 0.65,
+   "open_question": null,
+   "_slice": "B"
+  },
+  {
+   "sig": "PHYS 105",
+   "stratum": "honors_variant",
+   "call": "MERGE_PARTIAL",
+   "survivor": "PHYS 105",
+   "excluded_members": [
+    {
+     "id": "PHYS M1056",
+     "why": "witness tie 2–2 between PHYS 105 and PHYS 110 (Physics A vs B) — contested, no plurality (D-2)"
+    },
+    {
+     "id": "PHYS M1044",
+     "why": "1-unit Lab-only variant — variant-type mark, D-4 (CCN would mark it 'L')"
+    }
+   ],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "College Physics 1 (3 witnesses to PHYS 105 vs 2 to the full A+B sequence descriptor) and General Physics 1 (2 vs 1) are first-semester algebra/trig physics — plurality evidence plus the '1' semantics support folding both into the official C-ID. 'Introductory Physics' sits at a dead 2–2 tie between Physics A and Physics B, so its placement is genuinely contested and it stays out. The standalone 1-unit laboratory course is a lab-only variant, not the lecture+lab target the descriptor names. Unit spread (4 vs 5) is tolerable where the credit rec will specify units anyway.",
+   "doctrine_cited": [
+    "D-1",
+    "D-2",
+    "D-4",
+    "P-5",
+    "P-9"
+   ],
+   "confidence": 0.7,
+   "open_question": null,
+   "_slice": "B"
+  },
+  {
+   "sig": "Religions of the Middle East & the West",
+   "stratum": "honors_variant",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "These fail on two independent gates. 'World Religions (Honors)' carries an unshared Honors mark, and its scope is the global survey while 'Religions of the Middle East &amp; the West' is a regional-comparative course — different content coverage, different credit targets. The cross-discipline PHIL/HUMA split adds a third reason to want a second signal before any merge, and none is present.",
+   "doctrine_cited": [
+    "D-4",
+    "P-9",
+    "P-1"
+   ],
+   "confidence": 0.85,
+   "open_question": null,
+   "_slice": "B"
+  },
+  {
+   "sig": "esl family literacy",
+   "stratum": "honors_variant",
+   "call": "MERGE_ALL",
+   "survivor": "ESOL M9218",
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "This is the textbook ESL packaging move: two noncredit Module A/B stand-alones fold into the existing noncredit M-ID for the same family-literacy course. All three sit in the 9-band at 0 units, so no band line is crossed, and no credential ever maps to 'Module B' — the rung is noise to a faculty workgroup. Modules recorded in merge_note per the receipts discipline.",
+   "doctrine_cited": [
+    "P-3",
+    "P-4",
+    "P-9",
+    "D-1",
+    "D-6"
+   ],
+   "confidence": 0.9,
+   "open_question": null,
+   "_slice": "B"
+  },
+  {
+   "sig": "param train",
+   "stratum": "honors_variant",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "A same-college lecture/laboratory corequisite pair (1.5 + 5.5 units) — variants of one local offering, not cross-college corroboration, and the Lab mark gates on its own. The doctrine's default for same-college groups is to leave them to a deliberate packaging pass rather than merge as duplicates. Whether a lec/lab coreq pair is exactly the same-college case worth packaging (the combined course is arguably the NREMT-facing credit target) is the open same-college question.",
+   "doctrine_cited": [
+    "P-6",
+    "D-4"
+   ],
+   "confidence": 0.7,
+   "open_question": "Q-SAMECOLL",
+   "_slice": "B"
+  },
+  {
+   "sig": "ASE Exam Prep",
+   "stratum": "units_spread",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "ASE certification is area-specific — a technician holding the HVAC (A7) cert maps to heating/AC coursework, not to manual-drivetrain prep — so the two 0.5-unit area preps are distinct credit targets and neither belongs under the generic 3-unit 'ASE Exam Prep' without evidence. 'Ford Manual &amp; Automatic Drivetrain' is a manufacturer drivetrain course dragged in by token overlap — a title-lane false positive at the 0.50 cosine floor. External standardization tolerates unit spread on the SAME curriculum; these are four different curricula.",
+   "doctrine_cited": [
+    "P-1",
+    "P-5",
+    "D-7"
+   ],
+   "confidence": 0.75,
+   "open_question": null,
+   "_slice": "B"
+  },
+  {
+   "sig": "Automotive Engine Performance-Electronics and Ignition",
+   "stratum": "units_spread",
+   "call": "MINT_NEW",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": "Automotive Engine Performance: Electronics and Ignition",
+   "bands": null,
+   "rationale": "Same course by content: engine performance covering ignition systems and electronic engine controls — the ASE A8 territory — titled from opposite ends at two colleges. This is CTE where the CPL payoff concentrates, so the bias is to converge, and the 3-vs-6-unit spread reflects how colleges package standardized automotive content rather than different courses (and it sits under the 4-unit stop-and-look line). Both are singletons, so mint one unified credit course; preserve the spread and flag unit_anomaly for faculty.",
+   "doctrine_cited": [
+    "P-9",
+    "P-8",
+    "P-5",
+    "P-10"
+   ],
+   "confidence": 0.65,
+   "open_question": null,
+   "_slice": "B"
+  },
+  {
+   "sig": "Disabilities-Developing Child",
+   "stratum": "units_spread",
+   "call": "MERGE_PARTIAL",
+   "survivor": "ECED M10ZW",
+   "excluded_members": [
+    {
+     "id": "ECED M10SP",
+     "why": "distinct topic — children with disabilities/special needs"
+    },
+    {
+     "id": "ECED M10NK",
+     "why": "distinct topic — bilingual development"
+    },
+    {
+     "id": "ECED M10SS",
+     "why": "distinct topic — media and the child (1-unit topical)"
+    },
+    {
+     "id": "ECED M10ST",
+     "why": "distinct topic — play-based learning (1-unit topical)"
+    },
+    {
+     "id": "ECED M10RZ",
+     "why": "distinct topic — cultural influences (1-unit topical)"
+    },
+    {
+     "id": "ECED M10SQ",
+     "why": "distinct topic — emotional intelligence (1-unit topical)"
+    }
+   ],
+   "proposed_title": "Developing Language and Literacy in Young Children",
+   "bands": null,
+   "rationale": "This family is a title-lane artifact — eight topically DIFFERENT ECE courses sharing only the 'Developing Child' phrase, each a distinct credit target a faculty workgroup would map separately (disabilities, bilingualism, media, play, culture, emotional intelligence). The one genuine pair is the two 3.0-unit language-and-literacy courses at different colleges, which are the same course under drifted titles; merge those two and mint under the plainer title. Everything else stays out on content, not formatting.",
+   "doctrine_cited": [
+    "P-1",
+    "D-7",
+    "P-9",
+    "P-10"
+   ],
+   "confidence": 0.8,
+   "open_question": null,
+   "_slice": "B"
+  },
+  {
+   "sig": "Domestic Mechanical Refrigeration",
+   "stratum": "units_spread",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "An unshared 'Advanced' level mark, an 8-unit spread (4.0 vs 12.0) on a curriculum that is not externally standardized the way smog or NREMT is, and a scope mismatch — domestic refrigeration only versus advanced commercial-plus-domestic AC and refrigeration. The 12-unit course reads as a program-scale block, not the same credit target. Every signal says two different courses.",
+   "doctrine_cited": [
+    "D-4",
+    "P-5",
+    "P-1"
+   ],
+   "confidence": 0.85,
+   "open_question": null,
+   "_slice": "B"
+  },
+  {
+   "sig": "First Responder Skills: Part 2",
+   "stratum": "units_spread",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "An 8.3-unit first-responder skills block and a 1-unit firefighter fitness-and-wellness course share nothing but the phrase 'First Responder' and a trailing '2'. The content domains are different (emergency medical/rescue skills vs physical conditioning), and the 7-unit spread on a non-standardized pairing is a hard stop. Genuinely different courses.",
+   "doctrine_cited": [
+    "P-1",
+    "P-5"
+   ],
+   "confidence": 0.9,
+   "open_question": null,
+   "_slice": "B"
+  },
+  {
+   "sig": "Presentation Methods 1",
+   "stratum": "units_spread",
+   "call": "MINT_NEW",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": "Art Presentation Methods",
+   "bands": null,
+   "rationale": "Both are the same art-program course — methods of presenting/exhibiting artwork — under inverted titles at two colleges (0.857 cosine, same ART subject, same credit band). The bare '1' on one member is a local sequencing artifact rather than an unshared level of record; if that college's 'Presentation Methods 2' surfaces later it stays a separate rung. Mint one unified credit course under a plain name per naming policy; the 1-vs-3-unit spread stays under the stop-and-look line but gets the unit_anomaly flag for faculty.",
+   "doctrine_cited": [
+    "P-9",
+    "P-5",
+    "P-10",
+    "D-4"
+   ],
+   "confidence": 0.6,
+   "open_question": null,
+   "_slice": "B"
+  },
+  {
+   "sig": "Coastal Ecosystem Field Studies",
+   "stratum": "generic_title",
+   "call": "MERGE_PARTIAL",
+   "survivor": "BIOL M1162",
+   "excluded_members": [
+    {
+     "id": "BIOL M10NA",
+     "why": "Ecosystem-unspecified 'Field Biology: Ecosystems' — no coastal signal; a field-studies title carries its identity in the locale, and this one names none (P-7 second-signal bar not met)."
+    },
+    {
+     "id": "BIOL M10WQ",
+     "why": "Mountain ecosystems — different subject matter, not a title variant of the coastal course. Candidate for its own mountain-family review with M10WI."
+    },
+    {
+     "id": "BIOL M10WI",
+     "why": "Mountain ecosystems plus the 'Extended' variant-type mark (D-4) and a 2u vs 1u split against M10WQ."
+    },
+    {
+     "id": "BIOL M10WL",
+     "why": "Valley and grassland ecosystems — a third distinct field-site course, not the coastal one."
+    },
+    {
+     "id": "BIOL M10KF",
+     "why": "'Introductory Topics in Biology: Cells to Ecosystems' is a 4-unit survey topics shell — different course kind and a 3-unit spread (P-7, P-5)."
+    }
+   ],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "Field-studies courses are identified by their ecosystem, not by the shared 'field studies' scaffold — a workgroup mapping, say, a coastal-restoration credential would target the coastal course specifically, never a mountain or grassland one. Only 'Field Biology - Coastal California' matches the anchor's actual content and folds into BIOL M1162 under the staging default, with the 1u-vs-2u spread noted in the merge_note. The rest of the family is a title-token artifact, not one course.",
+   "doctrine_cited": [
+    "P-7",
+    "P-1",
+    "P-9",
+    "D-4",
+    "P-5"
+   ],
+   "confidence": 0.6,
+   "open_question": null,
+   "_slice": "C"
+  },
+  {
+   "sig": "Experimental Offering in Automotive Mechanics Technology",
+   "stratum": "generic_title",
+   "call": "MERGE_PARTIAL",
+   "survivor": "AUTO M10MR",
+   "excluded_members": [
+    {
+     "id": "AVIA M1025",
+     "why": "'Experimental Offering in…' is a rotating-content shell (P-7) at 0.5 units, and it sits cross-discipline under Aviation via the AMT subject-code homonym — never a stable credit target."
+    },
+    {
+     "id": "AVIA M10JX",
+     "why": "'Topics in…' shell, 0.5 units, same Aviation/AMT homonym issue — P-7 excludes it absent member-level evidence."
+    },
+    {
+     "id": "AUTO M10XL",
+     "why": "A 1-unit 'Survey of' course — a different instrument (orientation-scale) than the 3–4 unit skills intro; variant-type word plus unit divergence (D-4, P-5)."
+    }
+   ],
+   "proposed_title": "Introduction to Automotive Mechanics",
+   "bands": null,
+   "rationale": "Six single-college intro auto-mechanics courses (3–4 units, consistent titles: Intro/Fundamentals/Basic Mechanics) are plainly the same first course a certification workgroup would map ASE-track or JST automotive skills onto — exactly the fragmentation P-8 says to converge. They mint one common course under a clean plain-language name (P-10), discipline Automotive Technology. The two 0.5-unit 'Experimental Offering'/'Topics' shells and the 1-unit survey stay out; a generic shell title carries no course identity.",
+   "doctrine_cited": [
+    "P-7",
+    "P-8",
+    "P-9",
+    "P-5",
+    "P-10",
+    "D-8"
+   ],
+   "confidence": 0.7,
+   "open_question": null,
+   "_slice": "C"
+  },
+  {
+   "sig": "Topics in Automotive Technology",
+   "stratum": "generic_title",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "One college's 'Topics in Automotive Technology' and 'Topics in Electronics Technology' are parallel rotating-content shells in two different programs — the 0.89 description cosine is topics-course boilerplate, not shared content. P-7 forbids merging generic-title shells on similarity alone, and merging across Automotive and Electronics would be a content error, not a tagging cleanup. Same-college pairing (P-6) further marks this as a catalog pattern, not corroboration.",
+   "doctrine_cited": [
+    "P-7",
+    "P-6",
+    "D-8",
+    "P-9"
+   ],
+   "confidence": 0.95,
+   "open_question": null,
+   "_slice": "C"
+  },
+  {
+   "sig": "Topics in Italian",
+   "stratum": "generic_title",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "Italian, Japanese, ornamental horticulture, and culinary arts topics courses share nothing but the 'Topics in' template — the description-lane similarity is pure shell boilerplate. No faculty workgroup would treat these as one credit target in any universe; they aren't even one discipline. This is the textbook P-7 case the generic-title rule exists for.",
+   "doctrine_cited": [
+    "P-7",
+    "D-8",
+    "P-1"
+   ],
+   "confidence": 0.97,
+   "open_question": null,
+   "_slice": "C"
+  },
+  {
+   "sig": "Topics in Preschool Program Administration",
+   "stratum": "generic_title",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "'Preschool Administration' at 3 units reads as the substantive program-administration course on the Child Development director-permit ladder — a real CPL credit target. 'Topics in Preschool Program Administration' at 1 unit is a supplemental rotating-topics shell alongside it. The credit outcomes differ (1u vs 3u) and P-7 bars folding a topics shell into a content course on title overlap alone.",
+   "doctrine_cited": [
+    "P-7",
+    "P-1",
+    "P-5"
+   ],
+   "confidence": 0.75,
+   "open_question": null,
+   "_slice": "C"
+  },
+  {
+   "sig": "business topic",
+   "stratum": "generic_title",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "'Topics in Business' (0.5u) and 'Advanced Topics in Business' (3.0u) are generic shells separated by both a level mark and a 2.5-unit gulf — neither carries a stable course identity to merge on. P-7 keeps topics families apart absent a second signal, and D-4 gates the unshared 'Advanced' mark regardless.",
+   "doctrine_cited": [
+    "P-7",
+    "D-4",
+    "P-5"
+   ],
+   "confidence": 0.85,
+   "open_question": null,
+   "_slice": "C"
+  },
+  {
+   "sig": "art decorat production retail sale",
+   "stratum": "same_college",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "One college's Beginning and Intermediate noncredit ladder — variants, not duplicates (P-6). Notably, this family is already at band granularity: 'Beginning' and 'Intermediate' are exactly the packages P-3 would mint, so there are no finer rungs to fold and the two band targets stand as-is. Merging them into one row would erase the level distinction a skill mapping would actually use.",
+   "doctrine_cited": [
+    "P-6",
+    "P-3",
+    "D-4"
+   ],
+   "confidence": 0.8,
+   "open_question": null,
+   "_slice": "C"
+  },
+  {
+   "sig": "concept cosmetolog",
+   "stratum": "same_college",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "Intermediate (3u) and Advanced (6u) Concepts at one college are sequential rungs of a Board-of-Barbering-and-Cosmetology hour ladder — a same-college variant pair, never cross-college corroboration (P-6). The level marks gate (D-4) and the 3-unit spread reflects genuinely different course loads, so each rung remains its own credit target for licensure-hours CPL mapping.",
+   "doctrine_cited": [
+    "P-6",
+    "D-4",
+    "P-5"
+   ],
+   "confidence": 0.85,
+   "open_question": null,
+   "_slice": "C"
+  },
+  {
+   "sig": "culture language nauatl",
+   "stratum": "same_college",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "Intermediate and Advanced Nauatl are degree-applicable sequenced language courses — squarely on P-3's stated boundary (the Spanish 1/2/3 example): the rung IS the credit target, because a heritage speaker's CPL award lands on a specific level. Same-college pairing confirms this is a ladder, not duplication. Keep both rungs.",
+   "doctrine_cited": [
+    "P-3",
+    "P-6",
+    "D-4"
+   ],
+   "confidence": 0.9,
+   "open_question": null,
+   "_slice": "C"
+  },
+  {
+   "sig": "develop vocal",
+   "stratum": "same_college",
+   "call": "DEFER_HUMAN",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "'Advanced Vocal Development 1' and '2' at one college are a repeatable music activity ladder — exactly the family Q-TARGETCOUNT asks about: does the CPL tier carry one row per activity ('Vocal Development') regardless of numbered rung, or does each rung stay? The doctrine's default (P-6/D-4: keep, leave to packaging) and the one-row-per-activity instinct give opposite catalog shapes here, so this call should calibrate against Sam's answer rather than pre-commit.",
+   "doctrine_cited": [
+    "P-6",
+    "D-4",
+    "P-3"
+   ],
+   "confidence": 0.5,
+   "open_question": "Q-TARGETCOUNT",
+   "_slice": "C"
+  },
+  {
+   "sig": "esl independ study writ",
+   "stratum": "same_college",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "Independent Study titles carry no course identity — P-7 bars merging them on title similarity, full stop — and these two are additionally level-split (Intermediate vs Advanced ESL) at a single college (P-6). If ESL packaging ever runs, these would be candidates to fold under their band packages with the level recorded, but that is a P-3/P-4 packaging decision, not a duplicate merge.",
+   "doctrine_cited": [
+    "P-7",
+    "P-6",
+    "D-4",
+    "P-3"
+   ],
+   "confidence": 0.85,
+   "open_question": "Q-GENERIC",
+   "_slice": "C"
+  },
+  {
+   "sig": "sign voice",
+   "stratum": "same_college",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "Four courses in one college's ASL interpreting program: two genuine skill directions (Sign-to-Voice vs Voice-to-Sign — interpreting into English vs into ASL are distinct competencies an interpreter credential assesses separately) crossed with two levels. Directionality is an independently-credit-worthy strand, the level marks gate, and same-college membership means no cross-college corroboration exists. All four stand.",
+   "doctrine_cited": [
+    "P-6",
+    "D-4",
+    "P-4",
+    "P-3"
+   ],
+   "confidence": 0.9,
+   "open_question": null,
+   "_slice": "C"
+  },
+  {
+   "sig": "Applying Emotional Intelligence for Effective Project Management",
+   "stratum": "cross_discipline",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "A soft-skills course on emotional intelligence in project settings (CIS, 3u) and the third course of an office-technologies project-management sequence (2u) share only the words 'applying' and 'project management' — a false cognate, the same trap as music-vs-office 'keyboard.' Cross-discipline groups need a second signal beyond title tokens (the P-9 homonym carve-out) and none exists; a PMP-mapping workgroup would not accept these as one target.",
+   "doctrine_cited": [
+    "P-9",
+    "P-1",
+    "D-8"
+   ],
+   "confidence": 0.9,
+   "open_question": null,
+   "_slice": "C"
+  },
+  {
+   "sig": "Creative Darkroom Techniques 4",
+   "stratum": "cross_discipline",
+   "call": "MERGE_PARTIAL",
+   "survivor": null,
+   "excluded_members": [
+    {
+     "id": "PHOT M10JO",
+     "why": "'Directed Darkroom Studies' is a directed-studies shell — P-7 generic-title family; no second signal that its content matches the structured level-4 course."
+    }
+   ],
+   "proposed_title": "Darkroom Photography 4",
+   "bands": null,
+   "rationale": "'Creative Darkroom Techniques 4' and 'Film and Darkroom Photography 4' are the same craft at the same rung — the ART vs PHOT split is inconsistent local tagging of one field, not different content, so the merge carries discipline Photography as the deliberate D-8 pick. Level marks agree (both 4, satisfying D-4), and the 1u-vs-3u spread is flagged unit_anomaly rather than blocking under the staging default. Both members are standalones, so Confirm mints the new unified course; the directed-studies row stays out.",
+   "doctrine_cited": [
+    "P-9",
+    "D-8",
+    "D-4",
+    "P-7",
+    "P-10",
+    "P-5"
+   ],
+   "confidence": 0.6,
+   "open_question": null,
+   "_slice": "C"
+  },
+  {
+   "sig": "Industrial Control Devices",
+   "stratum": "cross_discipline",
+   "call": "MERGE_PARTIAL",
+   "survivor": "MANU M10FW",
+   "excluded_members": [
+    {
+     "id": "WELD M10PM",
+     "why": "'Quality Control for Medical Devices' is a homonym trap — QC in medical-device manufacturing, sharing only the tokens 'control' and 'devices' with industrial motor-controls content. P-9's homonym carve-out excludes it outright."
+    }
+   ],
+   "proposed_title": "Industrial Control Devices",
+   "bands": null,
+   "rationale": "Three 3-unit courses on industrial control devices/systems/circuits (relays, motor controls, PLC-adjacent content) tagged variously Manufacturing, Electronic Technology, and Electronics are one course inconsistently disciplined — a maintenance or automation certification would map to a single 'Industrial Control Devices' target. Merge all three with the survivor re-disciplined deliberately to Electronics (the modal and content-honest home, per D-8's explicit re-discipline rule); units agree exactly. The medical-device QC course is a token-collision and stays out.",
+   "doctrine_cited": [
+    "P-9",
+    "D-8",
+    "P-8",
+    "P-5",
+    "P-10"
+   ],
+   "confidence": 0.7,
+   "open_question": null,
+   "_slice": "C"
+  },
+  {
+   "sig": "Intermediate Automotive Collision Repair 2",
+   "stratum": "cross_discipline",
+   "call": "MERGE_PARTIAL",
+   "survivor": "AUTB M1026",
+   "excluded_members": [
+    {
+     "id": "AUTB M1027",
+     "why": "Introduction-level — a different rung (D-4 digit/word level axes). It anchors a separate intro-family merge candidate with M10DD; one call per group, so it exits here."
+    },
+    {
+     "id": "AUTB M1029",
+     "why": "'for Non-Majors' is an unshared variant-type mark (D-4) with a different credit outcome (2u service course, not the majors sequence)."
+    },
+    {
+     "id": "AUTB M10DN",
+     "why": "'Automotive Collision Service and Repair' carries no level mark and reads as a 2-unit general service course — level-ambiguous, no second signal it is the rung-2 course."
+    },
+    {
+     "id": "AUTB M10DD",
+     "why": "Introduction-level rung — belongs with the M1027 intro family, not the level-2 merge."
+    },
+    {
+     "id": "AUTO M10RB",
+     "why": "Intro 'Fundamentals' strand, 2u — wrong rung and a distinct strand from the level-2 course."
+    },
+    {
+     "id": "AUTO M10RC",
+     "why": "Intro 'Troubleshooting' strand, 2u — wrong rung; also a different strand from M10RB at the same subject code, so it should not even fold into the intro family without member evidence."
+    }
+   ],
+   "proposed_title": "Automotive Collision Repair 2",
+   "bands": null,
+   "rationale": "The defensible merge inside this over-wide family is the second-course rung: 'Automotive Collision Repair 2', 'Intermediate Auto Collision Repair', and 'Auto Collision Repair Tech 2' all fold into AUTB M1026 — 'Intermediate' and '2' are the same rung expressed on the two level axes, and collision repair's externally-standardized curriculum (I-CAR-aligned) tolerates the 4–6 unit packaging spread under P-5(a) with a unit_anomaly flag. The HVAC-tagged member is an 'ACR' subject-code homonym artifact; the survivor's discipline is deliberately Auto Body Technology per D-8. The intro rungs, the non-majors variant, and the level-ambiguous service course are different credit targets and stay out — the intro pair (M1027 + M10DD) deserves its own follow-on call.",
+   "doctrine_cited": [
+    "P-9",
+    "D-8",
+    "D-4",
+    "P-5",
+    "P-8"
+   ],
+   "confidence": 0.7,
+   "open_question": null,
+   "_slice": "C"
+  },
+  {
+   "sig": "Introduction to Drone-Based Science and Engineering",
+   "stratum": "cross_discipline",
+   "call": "MERGE_PARTIAL",
+   "survivor": "ENGR M1013",
+   "excluded_members": [
+    {
+     "id": "DRAF M10ER",
+     "why": "A 0.5-unit applied-drones-in-design module — the unit gulf (0.5 vs 3.0, P-5 stop-and-look) and the design-application framing mark a different instrument, likely a same-college micro-module pair with M10EQ (P-6)."
+    },
+    {
+     "id": "DRAF M10EQ",
+     "why": "0.5-unit 'Survey of Applied Drone Tech in Design' — same exclusion: survey-scale design module, not the intro engineering course."
+    }
+   ],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "'Introduction to Drone Technology' (2u) and the anchor's 'Introduction to Drone-Based Science and Engineering' (3u) are the same first drone course a Part-107 or UAS-credential workgroup would target — an emerging CTE field where fragmentation is exactly the P-8 failure mode. The merge folds into the existing M-ID with discipline Engineering (D-8 deliberate pick over Engineering Technology). The two half-unit drafting/design modules are a different scale and context and stay out.",
+   "doctrine_cited": [
+    "P-9",
+    "P-8",
+    "D-8",
+    "P-5",
+    "P-6"
+   ],
+   "confidence": 0.65,
+   "open_question": null,
+   "_slice": "C"
+  },
+  {
+   "sig": "Parenting the Preschool Child",
+   "stratum": "cross_discipline",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "This family clusters on the tokens 'preschool child' while spanning genuinely different courses: a parenting-education course (M1119), a child-development content course on the preschool child (M10UW, 3u), techniques courses, and two guidance/discipline courses aimed at different populations — preschool vs school-age/adolescent, which no ECE faculty would call one course. The one superficially plausible pair (the two 'techniques' titles) is cross-discipline with no second signal, so the P-9 homonym carve-out holds it. No merge in this group survives the CPL-utility test.",
+   "doctrine_cited": [
+    "P-1",
+    "P-9",
+    "D-8",
+    "P-5"
+   ],
+   "confidence": 0.75,
+   "open_question": null,
+   "_slice": "C"
+  },
+  {
+   "sig": "DMGR 130 X",
+   "stratum": "evidence_lane",
+   "call": "MERGE_ALL",
+   "survivor": "DMGR 130 X",
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "The M-ID's title is byte-identical to the C-ID descriptor's, and one member college filed DMGR 130 X in COCI — the strongest rung of the evidence ladder, corroborated by the exact title. An official C-ID exists, so the M-ID has no reason to live on; fold MULT M1053 under it, alias-tracked.",
+   "doctrine_cited": [
+    "D-1",
+    "D-2",
+    "P-9"
+   ],
+   "confidence": 0.9,
+   "open_question": null,
+   "_slice": "D"
+  },
+  {
+   "sig": "EET 140 X",
+   "stratum": "evidence_lane",
+   "call": "MERGE_ALL",
+   "survivor": "EET 140 X",
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "Programmable Logic Controllers is a standardized industrial-maintenance course; the M-ID's title matches the descriptor exactly (the '(PLCs)' gloss is cosmetic) and a college's own COCI filing witnesses the C-ID. This is also exactly the CTE credential territory where convergence pays (P-8) — fold the 10-subject-code M-ID under the official id.",
+   "doctrine_cited": [
+    "D-1",
+    "D-2",
+    "P-8",
+    "P-9"
+   ],
+   "confidence": 0.85,
+   "open_question": null,
+   "_slice": "D"
+  },
+  {
+   "sig": "EET 142 X",
+   "stratum": "evidence_lane",
+   "call": "MERGE_ALL",
+   "survivor": "EET 142 X",
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "Identical titles, a COCI filing as witness, and a CTE course whose content (CIM) is externally standardized. Textbook evidence-lane fold of ENGT M1018 into the official C-ID.",
+   "doctrine_cited": [
+    "D-1",
+    "D-2",
+    "P-8",
+    "P-9"
+   ],
+   "confidence": 0.9,
+   "open_question": null,
+   "_slice": "D"
+  },
+  {
+   "sig": "HIST 150",
+   "stratum": "evidence_lane",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [
+    {
+     "id": "HLTH M1148",
+     "why": "Contested (x:1 — witnesses split between HIST 150 and PH 100), and its title 'Health Science' shares nothing with 'World History to 1500'. Almost certainly a COCI data-entry error on the CIDNumber field."
+    }
+   ],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "A Health Science course cannot fold into a world-history C-ID no matter what one mis-keyed filing says — the kinship/title-freshness check exists precisely to catch this. Excluding the contested member leaves nothing to merge. The PH 100 witness suggests the M-ID's real home may be a public-health identity; route that to its own group rather than forcing it here.",
+   "doctrine_cited": [
+    "D-2",
+    "P-1",
+    "P-9"
+   ],
+   "confidence": 0.9,
+   "open_question": null,
+   "_slice": "D"
+  },
+  {
+   "sig": "SPAN 230",
+   "stratum": "evidence_lane",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "Heritage-speaker Spanish and conversational Spanish are genuinely different curricular tracks with different students and different outcomes — a faculty workgroup would not treat them as one credit target. The single witness fails the title-freshness check (one college's filing cannot re-identify every member college's Advanced Conversational Spanish as Heritage Speakers II), and language sequences sit on the rung-preserving side of the P-3 boundary. Leave the M-ID standing; revisit if more witnesses accumulate.",
+   "doctrine_cited": [
+    "D-2",
+    "P-1",
+    "P-3"
+   ],
+   "confidence": 0.65,
+   "open_question": null,
+   "_slice": "D"
+  },
+  {
+   "sig": "THTR 172",
+   "stratum": "evidence_lane",
+   "call": "MERGE_ALL",
+   "survivor": "THTR 172",
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "Seven member colleges filed THTR 172 and the M-ID's title matches the descriptor verbatim, so the contested flag resolves in favor of inclusion — the lone THTR 174 witness is the outlier, not the signal. Fold THEA M1151 into the official C-ID and record the dissenting filing in the merge_note receipt so faculty can chase it.",
+   "doctrine_cited": [
+    "D-1",
+    "D-2",
+    "D-6",
+    "P-9"
+   ],
+   "confidence": 0.9,
+   "open_question": null,
+   "_slice": "D"
+  },
+  {
+   "sig": "acqui",
+   "stratum": "plain_anchored",
+   "call": "MERGE_ALL",
+   "survivor": "LIBR M1004",
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "'Introduction to Acquisitions' and 'Acquisitions' are one library-science course with a title-drift 'Introduction to' — there is no upper rung it contrasts with. The 2-vs-3 unit spread is small and the credit recommendation will specify units anyway; store the modal, keep the spread in the receipt. Fold the stand-alone into the corroborated M-ID.",
+   "doctrine_cited": [
+    "P-9",
+    "P-5",
+    "P-1",
+    "D-1"
+   ],
+   "confidence": 0.8,
+   "open_question": null,
+   "_slice": "D"
+  },
+  {
+   "sig": "boot camp",
+   "stratum": "plain_anchored",
+   "call": "MERGE_ALL",
+   "survivor": "KINE M1364",
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "In the standard activity numbering, rung 4 IS the advanced tier — 'Boot Camp 4' and 'Advanced Boot Camp' are the same rung wearing digit and word clothing, so the level marks agree in substance rather than conflict. Survivor is the spelled-out title per the naming rule; original level labels go in merge_note. Flagging the broader question of whether activity ladders should collapse to one row per activity entirely.",
+   "doctrine_cited": [
+    "P-9",
+    "P-10",
+    "D-4"
+   ],
+   "confidence": 0.6,
+   "open_question": "Q-TARGETCOUNT",
+   "_slice": "D"
+  },
+  {
+   "sig": "commerci music techniqu",
+   "stratum": "plain_anchored",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "Techniques 1 and Techniques 2 are consecutive rungs of a credit sequence, not title drift — a student earning CPL for one has not demonstrated the other. Credit-bearing sequenced courses keep their rungs; the rung is the credit target.",
+   "doctrine_cited": [
+    "D-4",
+    "P-3",
+    "P-1"
+   ],
+   "confidence": 0.85,
+   "open_question": null,
+   "_slice": "D"
+  },
+  {
+   "sig": "excel spreadsheet window",
+   "stratum": "plain_anchored",
+   "call": "MERGE_ALL",
+   "survivor": "OTEC M1170",
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "Both are the introductory Excel course — 'Introduction to' here marks the whole course, not a rung below some advanced twin in this group. This is prime CTE/credential territory (MOS Excel certification maps to exactly one target), so converge; the dated 'for Windows' phrasing is a naming-pass cleanup, not an identity difference.",
+   "doctrine_cited": [
+    "P-9",
+    "P-8",
+    "P-1",
+    "P-10"
+   ],
+   "confidence": 0.75,
+   "open_question": null,
+   "_slice": "D"
+  },
+  {
+   "sig": "laboratory oceanography phys",
+   "stratum": "plain_anchored",
+   "call": "MERGE_ALL",
+   "survivor": "PHSC M1038",
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "Both are the one-unit physical-oceanography lab; colleges rarely offer more than one, so 'Introductory' is descriptive drift, not a rung. The Lab variant mark is shared by both members, satisfying the strict-equality guard. Merge and note the level word in the receipt.",
+   "doctrine_cited": [
+    "P-9",
+    "D-4",
+    "P-1"
+   ],
+   "confidence": 0.7,
+   "open_question": null,
+   "_slice": "D"
+  },
+  {
+   "sig": "perform techniqu vocal",
+   "stratum": "plain_anchored",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "Base vs Advanced is an unshared level mark with no member-level evidence that they are the same rung — in music performance, the level ladder is real and repeatable, and the stand-alone base course plausibly sits a rung below the M-ID's advanced course. Gate it; if the activity-ladder question settles on one-row-per-activity, this pair folds in that explicitly-scoped packaging pass instead.",
+   "doctrine_cited": [
+    "D-4",
+    "P-3",
+    "P-9"
+   ],
+   "confidence": 0.6,
+   "open_question": "Q-TARGETCOUNT",
+   "_slice": "D"
+  },
+  {
+   "sig": "field production video",
+   "stratum": "plain_singleton",
+   "call": "MINT_NEW",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": "Video Field Production",
+   "bands": null,
+   "rationale": "Two colleges teaching the same CTE field-production course; the unmarked title is the course, and 'Intermediate' at the other college reads as local ladder labeling rather than a distinct rung above it in this pair. Media-production credentials want one credit target here, and the 2-vs-3 unit spread is within tolerance with the spread preserved. Mint with the level mark recorded in merge_note so faculty can split it back if a beginning twin surfaces.",
+   "doctrine_cited": [
+    "P-9",
+    "P-8",
+    "P-5",
+    "P-10"
+   ],
+   "confidence": 0.6,
+   "open_question": null,
+   "_slice": "E"
+  },
+  {
+   "sig": "game programm video",
+   "stratum": "plain_singleton",
+   "call": "MINT_NEW",
+   "survivor": null,
+   "excluded_members": [
+    {
+     "id": "CISC M10CY",
+     "why": "'Advanced Video Game Programming' is an unshared upper-rung level mark — a distinct credit target above the introductory course, gated absent member-level evidence."
+    }
+   ],
+   "proposed_title": "Video Game Programming",
+   "bands": null,
+   "rationale": "'Video Game Programming' and 'Video Game Programming 1' are the same entry course — an unmarked title and a '1' both denote the first rung. The Advanced course is a genuine second rung and stays out. Mint the entry-level target from the two cross-college standalones.",
+   "doctrine_cited": [
+    "P-9",
+    "P-10",
+    "D-4"
+   ],
+   "confidence": 0.8,
+   "open_question": null,
+   "_slice": "E"
+  },
+  {
+   "sig": "indo outdo socc",
+   "stratum": "plain_singleton",
+   "call": "MINT_NEW",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": "Indoor/Outdoor Soccer",
+   "bands": null,
+   "rationale": "Same one-unit activity course at two colleges; an unmarked activity title and a 'Beginning' variant are both the entry rung, so this is drift, not a ladder span. Mint one row per activity. Whether recreational PE belongs on the CPL-facing tier at all is a separate, open floor question — the mechanical convergence is safe either way.",
+   "doctrine_cited": [
+    "P-9",
+    "P-10",
+    "P-3",
+    "P-2"
+   ],
+   "confidence": 0.7,
+   "open_question": "Q-FLOOR",
+   "_slice": "E"
+  },
+  {
+   "sig": "manag phys stress",
+   "stratum": "plain_singleton",
+   "call": "MINT_NEW",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": "Physical Stress Management",
+   "bands": null,
+   "rationale": "Identical 3-unit course with the title words reordered — 'Managing Physical Stress' vs 'Physical Stress Management' is pure drift across two colleges. A clean cross-college mint.",
+   "doctrine_cited": [
+    "P-9",
+    "P-10",
+    "P-1"
+   ],
+   "confidence": 0.9,
+   "open_question": null,
+   "_slice": "E"
+  },
+  {
+   "sig": "math modern society",
+   "stratum": "plain_singleton",
+   "call": "MINT_NEW",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": "Mathematics for Modern Society",
+   "bands": null,
+   "rationale": "The same liberal-arts quantitative-literacy course under trivially different phrasings. The 3-vs-4 unit spread is a one-unit packaging difference the credit recommendation will specify anyway — store the modal, keep the spread flagged.",
+   "doctrine_cited": [
+    "P-9",
+    "P-10",
+    "P-5"
+   ],
+   "confidence": 0.85,
+   "open_question": null,
+   "_slice": "E"
+  },
+  {
+   "sig": "qualif weld",
+   "stratum": "plain_singleton",
+   "call": "MINT_NEW",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": "Welder Qualification",
+   "bands": null,
+   "rationale": "Three colleges, three word-orders, one course: preparation for welder qualification testing — externally standardized (AWS) and squarely in the credential-aligned lane where convergence is the whole point. Uniform 3 units. Mint one statewide target.",
+   "doctrine_cited": [
+    "P-9",
+    "P-8",
+    "P-10"
+   ],
+   "confidence": 0.95,
+   "open_question": null,
+   "_slice": "E"
+  },
+  {
+   "sig": "Certified Information Systems Auditor",
+   "stratum": "plain_similarity",
+   "call": "MERGE_PARTIAL",
+   "survivor": null,
+   "excluded_members": [
+    {
+     "id": "CSIS M10WJ",
+     "why": "CISA (ISACA's auditor credential) is a different certification from CISSP (ISC2's security-professional credential) — a shared 'Certified Information Systems' prefix is the homonym trap, not course identity."
+    }
+   ],
+   "proposed_title": "Certified Information Systems Security Professional (CISSP) Preparation",
+   "bands": null,
+   "rationale": "The two CISSP courses are the same exam-preparation course — one title just spells out the acronym and the parenthetical — and the 3-vs-4 unit spread on an externally standardized cert curriculum does not gate. The CISA course must stay out: same title family, different credential, different credit target. Mint the CISSP pair; leave CISA standalone for its own group.",
+   "doctrine_cited": [
+    "P-8",
+    "P-9",
+    "P-5",
+    "P-10",
+    "P-1"
+   ],
+   "confidence": 0.85,
+   "open_question": null,
+   "_slice": "E"
+  },
+  {
+   "sig": "Chicana/O Literature",
+   "stratum": "plain_similarity",
+   "call": "MERGE_ALL",
+   "survivor": "ENGL M1129",
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "Introduction / Survey / bare-title are framing variants of the same one-semester Chicana/o literature survey, not sequence rungs — five colleges, uniform 3 units, one credit target. As a transfer academic course the precision bias applies, so the wordier 'and Studies in the United States' member merges with a merge_note flag for faculty to confirm it is not a combined lit-plus-studies hybrid. Survivor is the cleanest-titled M-ID.",
+   "doctrine_cited": [
+    "P-9",
+    "P-8",
+    "P-10",
+    "D-6"
+   ],
+   "confidence": 0.7,
+   "open_question": null,
+   "_slice": "E"
+  },
+  {
+   "sig": "Intermediate Water Aerobics",
+   "stratum": "plain_similarity",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "Water aerobics, low-impact aerobics, and general aerobics are three different activity modalities that happen to share a level word — the title lane matched on 'Intermediate … Aerobics', which is the false-pair pattern. Even under the most aggressive one-row-per-activity folding, these are different activities, hence different rows.",
+   "doctrine_cited": [
+    "P-1",
+    "D-4",
+    "P-7"
+   ],
+   "confidence": 0.8,
+   "open_question": null,
+   "_slice": "E"
+  },
+  {
+   "sig": "Jazz Improvization - Instrumental",
+   "stratum": "plain_similarity",
+   "call": "KEEP_SEPARATE",
+   "survivor": null,
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "Base vs Advanced jazz improvisation is an unshared level mark on a repeatable music-performance ladder where the level is the rung — same gate as the vocal-techniques pair in this sample. If the activity-ladder question settles on one row per activity, fold it in that dedicated packaging pass, not as a same-course merge.",
+   "doctrine_cited": [
+    "D-4",
+    "P-3"
+   ],
+   "confidence": 0.6,
+   "open_question": "Q-TARGETCOUNT",
+   "_slice": "E"
+  },
+  {
+   "sig": "Latin American Politics and Government",
+   "stratum": "plain_similarity",
+   "call": "MERGE_ALL",
+   "survivor": "POSC M1013",
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "One introductory Latin American politics survey under two word-orders — same discipline, same 3 units, and strong description-evidence cosine backing the title read. 'Introduction to' marks the whole course, not a rung. The transfer-academic precision bias is satisfied by the two independent signals; survivor takes the cleaner plain title.",
+   "doctrine_cited": [
+    "P-9",
+    "P-1",
+    "P-8",
+    "P-10"
+   ],
+   "confidence": 0.85,
+   "open_question": null,
+   "_slice": "E"
+  },
+  {
+   "sig": "Polynesian Dance",
+   "stratum": "plain_similarity",
+   "call": "MERGE_ALL",
+   "survivor": "DANC M1325",
+   "excluded_members": [],
+   "proposed_title": null,
+   "bands": null,
+   "rationale": "'Polynesian Dance' and 'Polynesian Dance 1' are the same entry rung — an unmarked activity title and a '1' both denote the first course, and the 0.97 title cosine plus identical units confirm it. Mixed group folds the stand-alone into the existing M-ID with the rung label receipted.",
+   "doctrine_cited": [
+    "P-9",
+    "P-10",
+    "D-6"
+   ],
+   "confidence": 0.85,
+   "open_question": null,
+   "_slice": "E"
+  }
+ ]
+}

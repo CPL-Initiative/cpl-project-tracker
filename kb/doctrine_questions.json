@@ -1,0 +1,72 @@
+{
+  "_about": "Contextual mind-meld questions for the CCR Suggested-merges worklist. The 🧠 Mind-meld panel (unified_courses.js) matches each group's computed features against `trigger` and surfaces matching questions; Sam answers by voice/text and the note lands in Supabase merge_doctrine_notes tagged with the question id. Answers are distilled into kb/merge_doctrine.md at checkpoints. Triggers: level_ladder, skill_strands, credit_noncredit_mix, units_spread, same_college, cross_discipline, generic_title, honors_variant, esl_language, activity_ladder, big_group, always.",
+  "_version": "2026-07-03 v0",
+  "questions": [
+    {
+      "id": "Q-LADDER",
+      "trigger": ["level_ladder"],
+      "doctrine": "P-3",
+      "question": "This looks like a level ladder. Package into Beginning/Intermediate/Advanced, or keep the rungs? What signal are you using — degree-applicability, credit status, whether a credential could map to a single rung?"
+    },
+    {
+      "id": "Q-STRANDS",
+      "trigger": ["skill_strands", "esl_language"],
+      "doctrine": "P-4",
+      "question": "These differentiate skill strands (reading/writing/grammar/conversation…). Do strands fold into the level band, or is any strand its own credit target?"
+    },
+    {
+      "id": "Q-CREDITNC",
+      "trigger": ["credit_noncredit_mix"],
+      "doctrine": "D-3/P-3",
+      "question": "Credit and noncredit versions are both in play here. Separate targets forever, or should the noncredit twin fold under the credit target with a note? What would the credit recommendation actually award?"
+    },
+    {
+      "id": "Q-UNITS",
+      "trigger": ["units_spread"],
+      "doctrine": "P-5",
+      "question": "Unit loads differ across these members. At what spread would you stop merging — and does it matter whether the curriculum is externally standardized (BAR/POST/NCCER)?"
+    },
+    {
+      "id": "Q-SAMECOLL",
+      "trigger": ["same_college"],
+      "doctrine": "P-6",
+      "question": "All members are from one college. Is there any same-college case you'd merge outright (catalog editions, renumberings), or is this always variants to package or keep?"
+    },
+    {
+      "id": "Q-XDISC",
+      "trigger": ["cross_discipline"],
+      "doctrine": "D-8/P-9",
+      "question": "This group spans disciplines. Same course tagged inconsistently, or a homonym? If you merge it, which discipline should the survivor carry, and why?"
+    },
+    {
+      "id": "Q-GENERIC",
+      "trigger": ["generic_title"],
+      "doctrine": "P-7",
+      "question": "Generic-title family (special topics / work experience / independent study). Umbrella-mint one per discipline, leave standalone, or exclude from the CPL-facing tier entirely?"
+    },
+    {
+      "id": "Q-HONORS",
+      "trigger": ["honors_variant"],
+      "doctrine": "D-4/P-3",
+      "question": "An Honors (or Lab/Refresher/Instructor) variant sits next to its base. For CPL purposes does the variant fold under the base course, or stay its own target?"
+    },
+    {
+      "id": "Q-TARGETCOUNT",
+      "trigger": ["activity_ladder"],
+      "doctrine": "P-3",
+      "question": "Activity family (sport/dance/music ensemble). One CCR row per activity regardless of level/gender/season, or finer? What would a credential ever map to here?"
+    },
+    {
+      "id": "Q-MINTNAME",
+      "trigger": ["big_group"],
+      "doctrine": "P-10",
+      "question": "If this mints a package, how should it be named — clean band (\"Beginning ESL\") or explicit fold (\"ESL — Beginning (Levels 1–2)\")?"
+    },
+    {
+      "id": "Q-FREE",
+      "trigger": ["always"],
+      "doctrine": "—",
+      "question": "What went through your mind deciding this one? Anything the doctrine doesn't capture yet — say it here."
+    }
+  ]
+}

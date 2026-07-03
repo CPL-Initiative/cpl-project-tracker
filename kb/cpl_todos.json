@@ -1,9 +1,27 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-03 · Session 97 · Activities tab decluttered + reports consolidated + MAP naming locked",
+ "_as_of": "2026-07-03 · CCR Convergence kickoff (MindMeld) + Session 97",
  "_session": 97,
- "_status": "Cleanup day on your laundry list. The Activities tab is decluttered: one slim bar at the top (Lead + Search + Element Map + Custom Report), and the sidebar is grouped into five sections so the top layer stays calm — everything is still one click away, and the tab is just called 'Activities' now. The Custom Report absorbed the Master Report (one button, a Report Type choice inside), got a real progress bar, titles that match the audience you pick, and your new Elevation slider — sea level writes for a CPL newcomer with every data point; 30,000 ft writes the three-minute board brief. The old-name problem is fixed at the source: every report writer now carries the naming rule (CPL Initiative; Mapping Articulated Pathways platform; the military name is history-only), Sierra got the same rule live, and the public KB's instructions are fixed in a draft PR waiting for your merge. Your team-phrase question got a full plan doc — most gates can switch, four should stay magic-link.",
+ "_status": "TWO lanes landed today. NEW — the CCR mountain has a plan: instead of you grinding 7,700 merge decisions, the merge rules are now WRITTEN DOWN (kb/merge_doctrine.md), Fable pre-decided 78 sample groups against them, and the Suggested-merges popup grew a 🧠 Mind-meld panel — it asks you the exact question each group raises and you answer BY VOICE (🎤 Dictate). Your spoken reasoning is what turns the draft rules into YOUR rules; once they match your judgment (target ≥90% agreement), Fable batch-decides the rest and the worklist drops to the few genuinely hard calls. ALSO (Session 97): Activities tab decluttered, one slim bar at the top, sidebar grouped into five sections, Custom Report absorbed the Master Report + Elevation slider + progress bar, MAP naming locked everywhere.",
  "items": [
+  {
+   "id": "ccr-mindmeld-voice",
+   "who": "sam",
+   "tab": "unified-courses",
+   "text": "MIND MELD (the big one, ~45 min when you can): open ✨ Suggested merges and work a handful of groups with the new 🧠 Mind-meld panel — hit 🎤 Dictate and think aloud (why merge, why keep, where the ESL-style packaging line sits). Every note trains the doctrine. The KIN/Dance/Music 'one row per activity?' question (Q-TARGETCOUNT) is the single highest-leverage answer you can give — 9 of the 78 sample calls hinge on it."
+  },
+  {
+   "id": "ccr-calibration-review",
+   "who": "sam",
+   "tab": "unified-courses",
+   "text": "REACT: kb/doctrine_out/2026-07-03/calibration_review.md holds Fable's 78 pre-decided merge/mint calls (stratified across every hard pattern) with the reasoning spelled out. Skim any section — agree/disagree out loud via the 🧠 panel or in the doc. Disagreements are the gold."
+  },
+  {
+   "id": "ccr-batch-pass2",
+   "who": "fable",
+   "tab": "unified-courses",
+   "text": "AFTER Sam's voice pass: distill merge_doctrine_notes → Doctrine v1, re-measure agreement on a fresh sample (gate ≥90%), then batch pass 2 (doctrine-v1@bot, all six lanes, dry-run→skim→apply) + the ESL packaging pilot. Full queue: docs/ccr_convergence_handoff.md."
+  },
   {
    "id": "s97-tryout",
    "who": "sam",

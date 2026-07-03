@@ -506,3 +506,29 @@ college course titles carrying encoding artifacts (mojibake), repaired for
 display by `excel_to_dashboard.py _fix_text_encoding()` (member rows flag
 `e:1` → the CCR "⚠ fix in COCI" chip). Regenerated each daily run;
 deterministic; rows leave as colleges fix their source records.
+
+## CCR Convergence — the Merge/Mint Doctrine layer (2026-07-03)
+
+The doctrine-driven campaign to converge the suggested-merge worklist into a
+≤2,500-course CPL-facing crosswalk (strategy of record:
+`docs/ccr_convergence_strategy.md`). Files in this directory:
+
+- `merge_doctrine.md` — the written merge/mint decision policy (ESTABLISHED /
+  PROPOSED / OPEN rules, ids D-* / P-* / Q-*). Versioned; batch passes cite
+  rule ids in receipts. THE mind-meld artifact — edited at checkpoints from
+  Sam's captured reasoning.
+- `doctrine_questions.json` — the contextual question bank the CCR worklist's
+  🧠 Mind-meld panel surfaces per group (triggers → Q-* ids). Keep triggers in
+  sync with `doctrineFeatures()` in `unified_courses.js` AND `features()` in
+  the sampler below.
+- `supabase_merge_doctrine.sql` — schema of record for `merge_doctrine_notes`
+  (voice/text reasoning notes; reviewer-gated writes, no delete; applied live
+  2026-07-03).
+- `_doctrine_calibration_sample.py` — re-runnable, read-only stratified
+  sampler over `unified_courses_suggestions.js` (13 doctrine-trigger strata,
+  seeded). Outputs to `doctrine_out/<date>/`.
+- `doctrine_out/<date>/` — calibration receipts: `calibration_sample.json`,
+  `calibration_decisions.json` (AI pre-decisions: call / survivor /
+  exclusions / rationale / doctrine_cited / confidence / open_question — the
+  same schema the future batch pass 2 plans in), `calibration_review.md`
+  (the human review doc Sam reacts to).
