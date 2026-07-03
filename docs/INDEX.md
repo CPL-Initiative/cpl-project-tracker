@@ -319,6 +319,18 @@ Commissioned by Sam for integrating Sierra into a vendor-built platform:
   implementation plan: link / iframe / native-API / server-proxy paths, a
   minimal reference client, non-negotiable client requirements, launch
   checklist, ongoing-operations expectations.
+- [`sierra_iframe_implementation_guide.md`](sierra_iframe_implementation_guide.md)
+  — the **day-one iframe recipe** (2026-07-03): the exact `?ctx=external`
+  URL, annotated markup/CSP/sandbox, sizing, QA checklist (incl. the
+  contacts-gate check), launch coordination, rollback.
+- [`sierra_maturity_roadmap.md`](sierra_maturity_roadmap.md) — **Malone's
+  scope-and-sequence to end-state** (2026-07-03): Phases 1–6 (guardrails →
+  contract hardening → content maturity → integration graduation →
+  recommender depth → platform ops), efforts, dependencies, the three
+  human-only decisions, the critical path. The iframe is explicitly interim.
+- [`sierra_vendor_lane_handoff.md`](sierra_vendor_lane_handoff.md) — the
+  lane handoff (2026-07-03): what shipped (#654/#657 + v27 LIVE), locked
+  decisions, verified access facts, the priority queue, safety rails.
 
 ## Reference materials
 
