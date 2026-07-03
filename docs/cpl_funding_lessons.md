@@ -423,3 +423,93 @@ one), so a funding teaser isn't the established pattern AND it's the
 highest-collision file (the generator is where `export_unified_courses`
 lives). Available on request as a small generator edit at the
 `teaser_html` block (~line 10076).
+
+## 2026-07-03 — Session 2 (Chancellor-facing rework: 2-year selectable window + year-specific priorities + noncredit-feeder carve-out + team-phrase config)
+
+**(a) Learned.** Once a "data extract" tab becomes a knob the audience *plays*
+with, the year-specific policy fields (metrics, factors, selected years, the
+feeder carve-out) stop being workbook cells and become **config**, not data.
+The clean split: the builder keeps emitting the stable data-derived facts (pool
+inputs, college + system headcounts, census context) as DEFAULTS; the policy
+layer lives in a Supabase config blob (team-phrase editable) + a per-browser
+what-if. So the workbook stays untouched, and the renderer computes every dollar
+live from the effective config (the baked per-college dollar columns were
+dropped — they'd be stale the instant a year / share / carve-out changes; the
+builder still recomputes the workbook chain to SELF-CHECK the extract, it just
+doesn't ship the derived cells). Three-layer resolution, per field:
+`SCENARIO ?? SHARED ?? BASE`.
+
+**(b) State.** Shipped in one PR:
+- `funding/supabase_cpl_funding_config.sql` + live migration `cpl_funding_config`
+  — single-row JSONB config, anon SELECT, `is_allowed_reviewer() OR team_pass_ok()`
+  write. Seeded `{}` so the client PATCHes.
+- Builder rewrite (`_build_funding_data.py`, model version `2026-07-03.1`):
+  `year_options` (2026-27…2029-30) + `default_years` (**2** — 2026-27 + 2027-28),
+  `year_priorities` (slot 1 & 2, each 3 priorities with Sam's Year-1/Year-2 metric
+  text; shares/targets default from the workbook row-7 values), `feeders` (NOCE /
+  SD Cont. Ed / Mt. SAC NC / Calbright — **editable headcount estimates**),
+  `pool.feeder_carveout` ($1M default) + `feeder_metric`.
+- Renderer rewrite (`cpl_funding.js` v2): two **year dropdowns**, a **Year 1 /
+  Year 2 filter** (switches the priority metrics + the college P1/P2/P3 columns),
+  **editable priority metric/description/share/target** + **editable feeder
+  headcount/metric** + editable pool inputs, a **noncredit-feeder section** (pool
+  = carve-out ÷ years, split by headcount), a **team-phrase auth bar**
+  (`CPL_TEAM_PHRASE.unlockRow`; unlocked edits PATCH the shared config, locked
+  edits are a local scenario), Supabase load/save with rollback on RLS no-op.
+  Kept the college table format, drill-ins, district rollup, period toggle, and
+  P2/P3 actuals.
+- Teaser in `excel_to_dashboard.py` re-pointed to the renamed pool field
+  (`college_funding_before_feeder`); try/except means the cron never breaks on it.
+- Tests: `tests/cpl_funding.test.js` rewritten (110 assertions — schema, year
+  window/filter, feeder split, editable text, the 3-layer merge, team-phrase
+  shared edits via a mock, actuals, empty-state). Full suite green.
+
+**(c) Roadmap.** Feeder headcounts are placeholder estimates — Sam/Chancellor
+true them up in-tab (an explicit edit drops the `est.` flag). Admin cost label
+still reads "2 FTE × 3 YRS" while the default is a 2-year window — the pool
+inputs are editable, so adjust in-tab or re-label the workbook next edition.
+The actuals feed (`cpl_funding_performance.js`) is keyed by stable p1/p2/p3
+slots; its metric text no longer matches every year's metric, so actuals are
+surfaced as "per MAP" against whichever year is shown (honest, not year-matched).
+
+**(d) Next concrete step.** Hand the tab to the Chancellor for scenario play;
+if a base model wants to be shared, unlock with the team phrase and configure.
+Consider: a 3rd/4th year toggle (the renderer already divides by
+`selectedYears().length`); real noncredit MIS headcounts for the feeders.
+
+### 2026-07-03 follow-up — Excel workbook RETIRED
+
+Sam: "We don't need that excel book anymore." Confirmed the only thing still
+sourced from `funding/CPL_Funding_Model_2026.xlsx` was the 119-college roster
+(2022-23 MIS headcount + district/county + census working-adults) — and that was
+already **baked into the committed `cpl_funding_data.js`**; nothing at runtime
+(incl. the daily cron, which only builds the P2/P3 *actuals* via
+`_build_funding_performance.py`) reads the `.xlsx`. Deleted the workbook + the
+one-shot builder (`_build_funding_data.py`) + the two `_revise_workbook_*` scripts.
+`cpl_funding_data.js` is now a **committed hand-maintained snapshot** (header
+rewritten; `source` re-labeled; `sheet` dropped from the render line). A future
+headcount refresh = edit the roster in the data file directly; the builder lives
+in git history for a full re-derive. Kept: `_build_funding_performance.py` (cron
+actuals — reads the MAP CustomReport, not the workbook) + the new
+`supabase_cpl_funding_config.sql`.
+
+### 2026-07-03 follow-up 2 — 2025-26 headcount refresh + feeders out of the college table
+
+Sam supplied the **Annual 2025-2026 student counts** (76 institutions). Applied
+directly to the hand-maintained `cpl_funding_data.js` (model `2026-07-03.2`):
+
+- **74 college rows → 2025-26** (name aliases handled: Chabot Hayward→Chabot,
+  Coalinga College→West Hills Coalinga, Lemoore College→West Hills Lemoore);
+  the **41 colleges not in the update keep 2022-23**, stamped per-row
+  `hc_vintage` — the tab renders a data-driven honesty note ("41 of 115 college
+  rows await a 2025-26 headcount") that disappears once the refresh completes.
+- **The 4 feeder institutions were MOVED OUT of the college table** (they were
+  in the MIS roster as CalBright / Mt San Antonio Noncredit / North Orange
+  Adult / San Diego Adult — drawing college allocations against CPL metrics
+  they can't earn). They now live only in the `feeders` roster with REAL
+  headcounts (NOCE 15,560 + SD Cont. Ed 21,561 per Sam's 2025-26 table; Mt. SAC
+  NC 35,363 + Calbright 2,484 from their 2022-23 MIS rows) — `estimate` flags
+  gone, per-feeder `vintage` shown in the feeder table.
+- Roster 119 → **115 colleges**; SYSTEM headcount 2,210,025 → **2,258,784**;
+  `headcount_pct` recomputed over the new roster; `headcount_label` re-labeled
+  (drives the column tooltip + footnote automatically).
