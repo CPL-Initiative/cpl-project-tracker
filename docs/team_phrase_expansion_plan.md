@@ -101,10 +101,29 @@ same `cpl_team_pass` localStorage key so one unlock covers every tab.
   pattern). Post-ship adversarial review (3 lenses): the 5 core invariants
   hold; fixes landed for its low findings (assoc stale-phrase recovery, real
   HTTP status threaded to the phrase-drop check, no x-team-pass on read-only
-  GETs). Known Phase-2 item it surfaced: `tmc_curator_notes.reviewer_email` is
-  client-asserted — a phrase holder could label a note with any byline; the
-  Phase-2 `team:<name>` stamp should move attribution server-side (trigger:
-  stamp from the JWT when present, force a `team:` prefix on phrase writes).
+  GETs). **Hardening round 2 (same day, the review's remaining findings):**
+  the **RLS silent-no-op class** — PostgREST answers an UPDATE/DELETE whose
+  USING clause filters the target rows with **200 + an empty representation,
+  never 401/403** — so a rotated phrase made every PATCH save flash green
+  while writing nothing, and the drop-recovery was dead code on those paths
+  (raci.js dodges it: its saves are POST upserts, which fail loud via WITH
+  CHECK). Fix: shared `CPL_TEAM_PHRASE.checkWrite()` — an ok write must
+  return ≥1 row (`Prefer: return=representation`, incl. the assoc editor's
+  DELETE/PATCH, formerly `return=minimal`) or it's treated as a 403-shaped
+  failure → rollback + phrase drop. Also: `decorateHeaders` now attaches the
+  STORED phrase alongside a JWT bearer (a signed-in non-reviewer's valid
+  phrase is no longer shadowed — the RLS OR-predicate makes it harmless for
+  reviewers); `verify()` maps network/429/5xx to `null` ("couldn't reach the
+  server", never "wrong phrase"; nothing stored); tmc_builder broadcasts +
+  listens for `cpl-team-pass-dropped`, refreshes the note affordances on a
+  drop, and its team-mode note save carries the anon bearer (the raci
+  shape). Still open for Phase 2: the expired-magic-link-token case (a dead
+  JWT shadows a valid phrase until sign-out — port raci's `ensureFresh` or
+  prefer the phrase on token expiry), and the server-side attribution stamp:
+  `tmc_curator_notes.reviewer_email` is client-asserted — a phrase holder
+  could label a note with any byline; the Phase-2 `team:<name>` stamp should
+  move attribution server-side (trigger: stamp from the JWT when present,
+  force a `team:` prefix on phrase writes).
 - **Phase 2 — curation lanes with the `team:<name>` stamp** (one PR):
   migration `team_phrase_widen_kb_curation`; `unified_courses.js` (+ CSR/CER
   consumers) gain phrase unlock + the one-time display-name prompt; the

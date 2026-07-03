@@ -98,6 +98,19 @@
     return h;
   }
 
+  // An RLS-filtered PATCH "succeeds": PostgREST returns 200 with an EMPTY
+  // return=representation array when the policy's USING clause hides the
+  // target rows (rotated phrase / non-reviewer session) — never a 401/403.
+  // So every PATCH here must verify the representation before confirming
+  // the optimistic paint (team_phrase.js checkWrite reports the empty case
+  // as a 403-shaped failure so the phrase-drop recovery below engages).
+  function writeResult(r) {
+    if (window.CPL_TEAM_PHRASE && window.CPL_TEAM_PHRASE.checkWrite) {
+      return window.CPL_TEAM_PHRASE.checkWrite(r);
+    }
+    return Promise.resolve({ ok: r.ok, status: r.status });
+  }
+
   // Rotated/stale phrase → drop it and let init()'s listener re-render the
   // auth widget + editability, so the user sees the entry box again instead
   // of silent 401s (the raci.js #598 recovery).
@@ -406,6 +419,7 @@
       cell.classList.remove("wpg-editing");
 
       saveCell(activity_id, row_type, year_key, newNum, newTotal, state.sess, kind)
+        .then(writeResult)
         .then(function (r) {
           var ok = r.ok;
           var paintClass = ok ? "wpg-saved" : "wpg-error";
@@ -493,7 +507,7 @@
         totalCell.classList.add("wpg-saving");
         totalCell.innerHTML = fmtVal(newNum, isPct);
       }
-      saveCurrent(activity_id, newNum, state.sess).then(function (r) {
+      saveCurrent(activity_id, newNum, state.sess).then(writeResult).then(function (r) {
         var ok = r.ok;
         var paint = ok ? "wpg-saved" : "wpg-error";
         [cell, totalCell].forEach(function (c) {
@@ -555,7 +569,7 @@
       cell.classList.remove("wpg-editing");
       cell.textContent = newName;
       cell.classList.add("wpg-saving");
-      saveTitle(pid, newName, state.sess).then(function (r) {
+      saveTitle(pid, newName, state.sess).then(writeResult).then(function (r) {
         cell.classList.remove("wpg-saving");
         var paint = r.ok ? "wpg-saved" : "wpg-error";
         cell.classList.add(paint);

@@ -115,12 +115,17 @@
     });
   }
 
+  // DELETE/PATCH ask for return=representation (NOT minimal): an RLS-filtered
+  // target (rotated phrase / non-reviewer session) "succeeds" with ZERO rows
+  // and no error status — the returned rows are the only proof the write
+  // landed (the save wrapper rejects an empty representation). The POST keeps
+  // return=minimal because an RLS-denied INSERT fails loud (WITH CHECK → 403).
   function removeAssociation(sess, pid, aid) {
     var qs = "project_id=eq." + encodeURIComponent(pid)
            + "&activity_id=eq." + encodeURIComponent(aid);
     return fetch(ASSOC_TABLE + "?" + qs, {
       method: "DELETE",
-      headers: assocHeaders(sess, "return=minimal")
+      headers: assocHeaders(sess, "return=representation")
     });
   }
 
@@ -129,7 +134,7 @@
            + "&activity_id=eq." + encodeURIComponent(aid);
     return fetch(ASSOC_TABLE + "?" + qs, {
       method: "PATCH",
-      headers: assocHeaders(sess, "return=minimal"),
+      headers: assocHeaders(sess, "return=representation"),
       body: JSON.stringify({ is_primary: !!value })
     });
   }
@@ -412,6 +417,18 @@
             var err = new Error("HTTP " + r.status + (t ? ": " + t.slice(0, 160) : ""));
             err.status = r.status;
             throw err;
+          });
+        }
+        // ok is not enough: an RLS-filtered DELETE/PATCH returns 200 with an
+        // empty representation (see the CRUD helpers above). checkWrite treats
+        // that as a 403-shaped failure; POSTs (201, no body) pass through.
+        if (window.CPL_TEAM_PHRASE && window.CPL_TEAM_PHRASE.checkWrite) {
+          return window.CPL_TEAM_PHRASE.checkWrite(r).then(function (res) {
+            if (!res.ok) {
+              var err = new Error("no rows written — permission denied (phrase changed?)");
+              err.status = res.status;
+              throw err;
+            }
           });
         }
       });
