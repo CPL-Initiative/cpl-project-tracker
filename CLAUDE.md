@@ -2353,6 +2353,21 @@ Path-to-2030 charts → BOTTOM of CPL Analytics; a first-click 📎 **attach exp
 attachments (access model) + attachments→KB-md ingest. Suite 128. Full story: `docs/cobi_lessons.md` (S96).
 
 
+### CCR Convergence kickoff — MindMeld: doctrine + voice mind-meld + calibration (2026-07-03)
+
+Parallel-lane session on Sam's charge: converge the 7,716-group worklist into a
+≤2,500-course CPL crosswalk via a written **Merge/Mint Doctrine** calibrated to his
+judgment, then batch passes. Shipped (one PR): `docs/ccr_convergence_strategy.md`
+(plan of record; two-number goal — Tier-1 ≤2,500 over a converging total space;
+measured: ladders 1,533 + same-college 1,773 ≈ 43% of the worklist = 2 policy calls),
+`kb/merge_doctrine.md` v0 + `kb/doctrine_questions.json` (11 open Q-*), the **🧠
+Mind-meld voice panel** in the CCR worklist (→ new Supabase `merge_doctrine_notes`,
+schema `kb/supabase_merge_doctrine.sql`; tests `uc_mind_meld.test.js`, 31), and the
+78-group calibration sample pre-decided by 4 agents (`kb/doctrine_out/2026-07-03/`).
+Next: Sam's voice pass → distill v1 → batch pass 2 + ESL packaging pass per
+[`docs/ccr_convergence_handoff.md`](docs/ccr_convergence_handoff.md). Full story:
+`docs/ccr_convergence_lessons.md`.
+
 ### Session 97 — BigSky: the Activities tab optimization + reports consolidation (2026-07-03)
 
 Sam's laundry list, one PR: the **Custom Report** gains a staged **progress bar**, **per-audience

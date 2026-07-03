@@ -247,6 +247,208 @@
       }
     });
   }
+  // ── 🧠 Mind-meld doctrine capture (CCR Convergence, 2026-07-03) ─────────
+  // The Suggested-merges worklist renders a Mind-meld panel under each group:
+  // it detects which merge-doctrine question the group on screen instantiates
+  // (a level ladder → the packaging question; a credit/noncredit mix → the
+  // band question), and lets Sam answer by VOICE (browser speech-to-text) or
+  // text. Each saved note lands in Supabase merge_doctrine_notes with the
+  // group snapshot + question id + stance; checkpoint sessions distill the
+  // notes into kb/merge_doctrine.md, which drives the batch merge/mint
+  // passes. Strategy: docs/ccr_convergence_strategy.md. Fail-soft everywhere:
+  // no table / signed out / no mic → the panel degrades, never breaks.
+  var _doctrineQs = null;
+  function loadDoctrineQuestions() {
+    if (_doctrineQs) return Promise.resolve(_doctrineQs);
+    return fetch("kb/doctrine_questions.json")
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { _doctrineQs = (j && j.questions) || []; return _doctrineQs; })
+      .catch(function () { _doctrineQs = []; return _doctrineQs; });
+  }
+  function saveDoctrineNote(payload, sess) {
+    return fetch(SUPABASE_URL + "/rest/v1/merge_doctrine_notes", {
+      method: "POST",
+      headers: {
+        "apikey": SUPABASE_ANON, "Authorization": "Bearer " + sess.access_token,
+        "Content-Type": "application/json", "Prefer": "return=minimal"
+      },
+      body: JSON.stringify(payload)
+    });
+  }
+  // Doctrine-trigger features for one worklist group — pure function of the
+  // group JSON, MIRRORED in kb/_doctrine_calibration_sample.py (keep in sync).
+  function doctrineFeatures(g, mems, lane) {
+    var f = [];
+    var titles = mems.map(function (m) { return m.t || ""; });
+    var LVL = { beginning: 1, beginner: 1, elementary: 1, introductory: 1, basic: 1,
+                intermediate: 1, advanced: 1, first: 1, second: 1, third: 1, fourth: 1 };
+    var marks = {}, withMarks = 0;
+    titles.forEach(function (t) {
+      var found = 0;
+      (t.toLowerCase().match(/[a-z0-9]+/g) || []).forEach(function (tok) {
+        if (/^\d+$/.test(tok) && +tok >= 1 && +tok <= 12) { marks["d" + tok] = 1; found = 1; }
+        else if (/^(i|ii|iii|iv|v|vi|vii|viii)$/.test(tok)) { marks["r" + tok] = 1; found = 1; }
+        else if (/^(one|two|three|four|five|six|seven|eight)$/.test(tok)) { marks["w" + tok] = 1; found = 1; }
+        else if (LVL[tok]) { marks["l" + tok] = 1; found = 1; }
+      });
+      if (found) withMarks++;
+    });
+    if (withMarks >= 3 && Object.keys(marks).length >= 3) f.push("level_ladder");
+    if (mems.length >= 3 && titles.filter(function (t) {
+      return /\b(reading|writing|grammar|conversation|listening|speaking|pronunciation|vocabulary)\b/i.test(t);
+    }).length >= 2) f.push("skill_strands");
+    var units = mems.map(function (m) { return m.u; }).filter(function (u) { return u != null; });
+    var bands = {};
+    mems.forEach(function (m) {
+      var mm = /^[A-Z]{2,4} [MZ](\d)/.exec(m.id || "");
+      if (mm) bands[mm[1]] = 1;
+    });
+    var bandMix = Object.keys(bands).length >= 2
+      || (units.length > 1 && Math.min.apply(null, units) === 0 && Math.max.apply(null, units) > 0);
+    if (bandMix) f.push("credit_noncredit_mix");
+    if (units.length >= 2 && (Math.max.apply(null, units) - Math.min.apply(null, units)) >= 2) f.push("units_spread");
+    if (g && g.same_college) f.push("same_college");
+    var discs = {};
+    mems.forEach(function (m) { if (m.d) discs[m.d] = 1; });
+    if (Object.keys(discs).length >= 2) f.push("cross_discipline");
+    if (titles.some(function (t) {
+      return /\b(special topics?|selected topics?|independent stud|directed stud|work experience|internship|practicum|topics in)\b/i.test(t);
+    })) f.push("generic_title");
+    var vs = titles.map(function (t) {
+      return /\b(honors|lab|laboratory|refresher|recertification|update|instructor|supervisor|module|bridge)\b/i.test(t);
+    });
+    if (vs.some(Boolean) && !vs.every(Boolean)) f.push("honors_variant");
+    var ACT = { "Kinesiology": 1, "Dance": 1, "Music": 1, "Drama/Theater Arts": 1 };
+    if (Object.keys(discs).some(function (d) { return ACT[d]; })
+        && (f.indexOf("level_ladder") >= 0 || mems.length >= 4)) f.push("activity_ladder");
+    if (discs["English as a Second Language"] || discs["Foreign Languages"]) f.push("esl_language");
+    if (mems.length >= 6) f.push("big_group");
+    f.push("always");
+    return f;
+  }
+  function matchDoctrineQuestions(features, questions) {
+    var fs = {};
+    (features || []).forEach(function (x) { fs[x] = 1; });
+    return (questions || []).filter(function (q) {
+      return (q.trigger || []).some(function (t) { return fs[t]; });
+    });
+  }
+  // The panel element. opts = { g, mems, lane, sig, getSession } — getSession
+  // is the worklist's ensureFresh (a Promise of a fresh session or null).
+  function buildMindMeldPanel(opts) {
+    var g = opts.g || {}, mems = opts.mems || [];
+    var feats = doctrineFeatures(g, mems, opts.lane);
+    var root = el("details", { class: "uc-mindmeld",
+      style: "margin:12px 0 2px;border:1px dashed #c7d2fe;border-radius:8px;background:#f8faff;padding:6px 10px;" });
+    var hasSpecific = feats.length > 1;   // more than the bare "always"
+    if (hasSpecific) root.open = true;
+    var sum = el("summary", { style: "cursor:pointer;font-size:.82rem;font-weight:700;color:#3730a3;",
+      title: "Teach the merge doctrine: say (or type) what you're weighing on this group. Notes save to the doctrine store and get distilled into kb/merge_doctrine.md — this is how your judgment scales to the other 7,000 groups." },
+      ["🧠 Mind-meld — teach the doctrine"]);
+    root.appendChild(sum);
+    var body = el("div", { style: "margin-top:6px;" });
+    root.appendChild(body);
+    var qWrap = el("div", { style: "display:flex;flex-direction:column;gap:4px;margin-bottom:6px;" });
+    body.appendChild(qWrap);
+    var selectedQ = null;
+    loadDoctrineQuestions().then(function (qs) {
+      var matched = matchDoctrineQuestions(feats, qs);
+      if (!matched.length) matched = [{ id: "Q-FREE", question: "What went through your mind deciding this one?" }];
+      matched.forEach(function (q, idx) {
+        var chip = el("label", { style: "display:flex;gap:6px;align-items:flex-start;font-size:.8rem;color:#334155;cursor:pointer;" });
+        var rb = el("input", { type: "radio", name: "uc-mm-q", style: "margin-top:2px;" });
+        rb.checked = idx === 0;
+        if (idx === 0) selectedQ = q.id;
+        rb.onchange = function () { selectedQ = q.id; };
+        chip.appendChild(rb);
+        chip.appendChild(el("span", {}, [(q.id !== "Q-FREE" ? q.id + " · " : "") + q.question]));
+        qWrap.appendChild(chip);
+      });
+    });
+    var ta = el("textarea", { rows: "3", placeholder: "Dictate or type your reasoning…",
+      style: "width:100%;box-sizing:border-box;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;font-size:.84rem;" });
+    body.appendChild(ta);
+    var row = el("div", { style: "display:flex;gap:8px;align-items:center;margin-top:6px;flex-wrap:wrap;" });
+    body.appendChild(row);
+    // Voice dictation — Web Speech API (Chrome/Edge). Appends final results
+    // to the textarea; degrades to typing when the browser has no support.
+    var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    var mic = null, rec = null, recording = false;
+    if (SR) {
+      mic = el("button", { type: "button",
+        style: "padding:4px 12px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;font-size:.82rem;cursor:pointer;",
+        title: "Dictate — speech-to-text in your browser; nothing is uploaded until you Save" }, ["🎤 Dictate"]);
+      mic.onclick = function () {
+        if (recording) { try { rec.stop(); } catch (e) {} return; }
+        rec = new SR();
+        rec.continuous = true; rec.interimResults = false; rec.lang = "en-US";
+        rec.onresult = function (ev) {
+          for (var k = ev.resultIndex; k < ev.results.length; k++) {
+            if (ev.results[k].isFinal) {
+              ta.value = (ta.value ? ta.value.replace(/\s+$/, "") + " " : "") + ev.results[k][0].transcript.trim();
+            }
+          }
+        };
+        rec.onend = function () { recording = false; mic.textContent = "🎤 Dictate"; mic.style.background = "#fff"; };
+        rec.onerror = function () { recording = false; mic.textContent = "🎤 Dictate"; mic.style.background = "#fff"; };
+        try { rec.start(); recording = true; mic.textContent = "⏹ Stop"; mic.style.background = "#fee2e2"; } catch (e) {}
+      };
+      row.appendChild(mic);
+    } else {
+      row.appendChild(el("span", { style: "font-size:.75rem;color:#94a3b8;" },
+        ["(voice unavailable in this browser — type instead)"]));
+    }
+    var stance = el("select", { style: "padding:4px 6px;border:1px solid #cbd5e1;border-radius:6px;font-size:.8rem;",
+      title: "What you'd DO with this group — saved with the note so the doctrine learns the action, not just the words" });
+    [["commentary", "stance: commentary"], ["merge_all", "merge all"], ["merge_partial", "merge some"],
+     ["package", "package levels"], ["mint", "mint new"], ["keep", "keep separate"], ["unsure", "unsure"]]
+      .forEach(function (o) { stance.appendChild(el("option", { value: o[0] }, [o[1]])); });
+    row.appendChild(stance);
+    var save = el("button", { type: "button",
+      style: "padding:4px 14px;border:none;border-radius:6px;background:#4f46e5;color:#fff;font-size:.82rem;font-weight:600;cursor:pointer;" },
+      ["Save note"]);
+    row.appendChild(save);
+    var status = el("span", { class: "uc-mm-status", style: "font-size:.75rem;color:#64748b;" });
+    row.appendChild(status);
+    save.onclick = function () {
+      var text = ta.value.trim();
+      if (!text) { status.textContent = "Nothing to save yet — dictate or type first."; return; }
+      save.disabled = true; status.textContent = "Saving…";
+      opts.getSession().then(function (sess) {
+        if (!sess) {
+          save.disabled = false;
+          status.textContent = "Sign in (magic link) to save doctrine notes.";
+          return;
+        }
+        var payload = {
+          created_by: sess.email, group_sig: opts.sig || "", lane: opts.lane || "anchored",
+          question_id: selectedQ || "Q-FREE", stance: stance.value, transcript: text,
+          members: mems.map(function (m) { return { id: m.id, t: m.t, u: m.u, d: m.d }; }),
+          page: "ccr-worklist"
+        };
+        saveDoctrineNote(payload, sess).then(function (resp) {
+          save.disabled = false;
+          if (!resp.ok) {
+            status.textContent = "Could not save (status " + resp.status + ") — allowed reviewers only.";
+            return;
+          }
+          ta.value = "";
+          status.textContent = "✓ Saved — this trains the doctrine. Keep going!";
+        }).catch(function () {
+          save.disabled = false;
+          status.textContent = "Could not save — network error.";
+        });
+      });
+    };
+    return root;
+  }
+  // Test hook (the report_generator.js pattern): the mind-meld pieces are
+  // self-contained pure/DOM functions — exposed for tests/uc_mind_meld.test.js.
+  window.CPL_UC_MINDMELD = {
+    features: doctrineFeatures, match: matchDoctrineQuestions,
+    panel: buildMindMeldPanel, loadQuestions: loadDoctrineQuestions,
+  };
+
   // All live curated descriptions (course_id -> value) — used to count
   // description edits not yet folded into git for the pending-sync badge.
   function fetchDescriptionOverlay() {
@@ -2483,6 +2685,13 @@
             // one checked course, then re-render this group so it reflects it.
             onRename: function (id, t, d, n) { doRename(id, t, d, n, function () { renderGroup(); }); },
           });
+          // 🧠 Mind-meld panel (CCR Convergence, 2026-07-03): contextual doctrine
+          // question(s) + voice/text capture for THIS group. Auto-opens when the
+          // group instantiates a specific doctrine fork (ladder, band mix, …).
+          box.appendChild(buildMindMeldPanel({
+            g: g, mems: mems, sig: groupSig(g),
+            lane: g._kind || "anchored", getSession: ensureFresh,
+          }));
           // ── Pager (Sam, S72 #1) ── A ‹ Prev · position · Next › selector at the
           // sidebar bottom so you can step BACKWARD/forward through the queue, not
           // only Skip-forward. Prev/Next jump to the adjacent PASSING group.
