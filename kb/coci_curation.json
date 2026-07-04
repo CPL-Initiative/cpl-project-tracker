@@ -1,8 +1,8 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-07-03T14:35:34Z",
-  "count": 28514,
+  "_synced_at": "2026-07-04T09:03:31Z",
+  "count": 28601,
   "curations": {
     "AERO M10BA": {
       "merge_into": "AERO Z1001",
@@ -12760,6 +12760,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ATHL M1227": {
+      "merge_into": "KINE M1504",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:08:19.684185+00:00"
+    },
     "ATHL M1228": {
       "merge_into": "ATHL M1047",
       "reviewed_by": "MAP@rccd.edu",
@@ -12845,6 +12850,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "ATHL M1263": {
+      "unified_title": "Baseball Beginning",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:16:19.698251+00:00"
+    },
     "ATHL M1264": {
       "merge_into": "ATHL M1028",
       "reviewed_by": "MAP@rccd.edu",
@@ -12864,6 +12874,11 @@
       "merge_into": "ATHL M1047",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1273": {
+      "merge_into": "ATHL M1263",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:16:19.698251+00:00"
     },
     "ATHL M1274": {
       "merge_into": "ATHL M1053",
@@ -12899,6 +12914,11 @@
       "unified_title": "Men Intrcol Bsktball Team",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ATHL M1281": {
+      "merge_into": "KINE Z1127",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:15:28.074277+00:00"
     },
     "ATHL M1282": {
       "merge_into": "ATHL M1195",
@@ -13010,10 +13030,20 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "ATHL M12QM": {
+      "merge_into": "KINE M1504",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:08:19.684185+00:00"
+    },
     "ATHL M12QS": {
       "merge_into": "KINE Z1139",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ATHL M12RA": {
+      "merge_into": "KINE M1504",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:08:19.684185+00:00"
     },
     "ATHL M12UJ": {
       "merge_into": "ATHL Z1004",
@@ -13035,6 +13065,16 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "ATHL M12VO": {
+      "merge_into": "KINE M1671",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:55:46.227752+00:00"
+    },
+    "ATHL M12VQ": {
+      "merge_into": "KINE M1672",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:45:59.762443+00:00"
+    },
     "ATHL M12WM": {
       "merge_into": "ATHL M1105",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -13055,6 +13095,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ATHL M1306": {
+      "merge_into": "KINE M1504",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:08:19.684185+00:00"
+    },
     "ATHL M1307": {
       "merge_into": "ATHL M1093",
       "reviewed_by": "MAP@rccd.edu",
@@ -13074,6 +13119,11 @@
       "merge_into": "ATHL M1101",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1312": {
+      "unified_title": "Swimming Beginning",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:18:27.328696+00:00"
     },
     "ATHL M1316": {
       "merge_into": "ATHL M1115",
@@ -13195,6 +13245,11 @@
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
     },
+    "ATHL M1351": {
+      "unified_title": "Soccer Beginning",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:16:49.071635+00:00"
+    },
     "ATHL M1352": {
       "merge_into": "ATHL M1194",
       "reviewed_by": "MAP@rccd.edu",
@@ -13205,6 +13260,11 @@
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
     },
+    "ATHL M1356": {
+      "unified_title": "Softball Beginning",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:17:38.242408+00:00"
+    },
     "ATHL M1357": {
       "merge_into": "ATHL M1195",
       "reviewed_by": "MAP@rccd.edu",
@@ -13214,6 +13274,11 @@
       "merge_into": "ATHL M1195",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1359": {
+      "unified_title": "Tennis Beginning",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:18:47.44417+00:00"
     },
     "ATHL M1360": {
       "unified_title": "Intercollegiate Swimming — Women",
@@ -13264,6 +13329,11 @@
       "merge_into": "KINE M1552",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ATHL M13JN": {
+      "merge_into": "KINE M1683",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:02:02.853159+00:00"
     },
     "ATHL M13KJ": {
       "merge_into": "KINE M1028",
@@ -13360,6 +13430,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ATHL M14BC": {
+      "merge_into": "KINE M1671",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:55:46.227752+00:00"
+    },
     "ATHL M14BZ": {
       "merge_into": "KINE Z1102",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -13404,6 +13479,11 @@
       "merge_into": "KINE M1890",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ATHL M14EX": {
+      "merge_into": "KINE M1671",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:55:46.227752+00:00"
     },
     "ATHL M14FO": {
       "merge_into": "KINE Z1174",
@@ -49150,6 +49230,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "DANC M11RN": {
+      "merge_into": "KINE Z1115",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:14:35.947076+00:00"
+    },
     "DANC M11RO": {
       "merge_into": "DANC Z1084",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -49616,6 +49701,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "DANC M1381": {
+      "merge_into": "KINE Z1115",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:14:35.947076+00:00"
+    },
     "DANC M1385": {
       "merge_into": "DANC M1099",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -49630,6 +49720,11 @@
       "unified_title": "Movement for the Theatre",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "DANC M1393": {
+      "merge_into": "KINE Z1115",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:14:35.947076+00:00"
     },
     "DANC M9010": {
       "unified_title": "East Coast Swing",
@@ -49744,9 +49839,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "DANC Z1020": {
-      "unified_title": "Pilates Methodology 1",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "KINE Z1115",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:14:35.947076+00:00",
+      "unified_title": "Pilates Methodology 1"
     },
     "DANC Z1021": {
       "unified_title": "Danc 101 F",
@@ -50069,9 +50165,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "DANC Z1085": {
-      "unified_title": "Pilates, Beginning",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "KINE Z1115",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:14:35.947076+00:00",
+      "unified_title": "Pilates, Beginning"
     },
     "DANC Z1086": {
       "unified_title": "Beginning Pointe Technique",
@@ -50114,9 +50211,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "DANC Z1094": {
-      "unified_title": "Clinic in Pilates",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "KINE Z1115",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:14:35.947076+00:00",
+      "unified_title": "Clinic in Pilates"
     },
     "DANC Z1095": {
       "unified_title": "Performing Dance Ensemble-Community Outreach",
@@ -55610,6 +55708,11 @@
       "merge_into": "KINE M1502",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "EDUC M10CR": {
+      "merge_into": "ATHL M1312",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:18:27.328696+00:00"
     },
     "EDUC M10CS": {
       "merge_into": "EDUC Z1013",
@@ -85087,9 +85190,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "HLTH M1001": {
-      "unified_title": "Pilates Level 1",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "KINE Z1115",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:14:35.947076+00:00",
+      "unified_title": "Pilates Level 1"
     },
     "HLTH M1004": {
       "merge_into": "HLTH M1053",
@@ -86937,6 +87041,11 @@
       "merge_into": "HLTH Z9010",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HLTH M90JM": {
+      "merge_into": "KINE M1683",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:02:02.853159+00:00"
     },
     "HLTH Z1001": {
       "unified_title": "Practical Applications in Athletic Training 1",
@@ -97724,10 +97833,30 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M10AT": {
+      "merge_into": "KINE Z1005",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:10:53.920001+00:00"
+    },
+    "KINE M10AW": {
+      "merge_into": "KINE Z1005",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:10:53.920001+00:00"
+    },
+    "KINE M10AY": {
+      "merge_into": "KINE Z1005",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:10:53.920001+00:00"
+    },
     "KINE M10AZ": {
       "merge_into": "KINE Z1002",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M10BB": {
+      "merge_into": "KINE Z1005",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:10:53.920001+00:00"
     },
     "KINE M10BH": {
       "merge_into": "KINE Z1164",
@@ -97739,10 +97868,20 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M10BJ": {
+      "merge_into": "KINE Z1005",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:10:53.920001+00:00"
+    },
     "KINE M10BK": {
       "merge_into": "KINE M1308",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M10BL": {
+      "merge_into": "KINE Z1005",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:10:53.920001+00:00"
     },
     "KINE M10BN": {
       "merge_into": "KINE M1609",
@@ -98459,6 +98598,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "KINE M10PS": {
+      "merge_into": "KINE M1910",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:48:20.491568+00:00"
+    },
     "KINE M10PT": {
       "merge_into": "KINE M1099",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -98899,6 +99043,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M10XG": {
+      "merge_into": "KINE M1910",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:48:20.491568+00:00"
+    },
     "KINE M10XK": {
       "merge_into": "KINE M1749",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -98919,10 +99068,20 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M10ZA": {
+      "merge_into": "KINE M1910",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:48:20.491568+00:00"
+    },
     "KINE M1103": {
       "unified_title": "Advanced Table Tennis",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "KINE M1106": {
+      "merge_into": "KINE M1910",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:48:20.491568+00:00"
     },
     "KINE M1107": {
       "merge_into": "ETHS M1028",
@@ -99031,8 +99190,8 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE M1140": {
-      "unified_title": "T'ai-Chi Ch'uan, Beginning",
-      "reviewed_by": "automerge-v1@bot",
+      "unified_title": "T'ai-Chi Beginning",
+      "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "KINE M1141": {
@@ -99755,6 +99914,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M11LW": {
+      "merge_into": "ATHL M1263",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:16:19.698251+00:00"
+    },
     "KINE M11LX": {
       "merge_into": "KINE M1869",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -100090,6 +100254,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M11RW": {
+      "merge_into": "KINE Z1127",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:15:28.074277+00:00"
+    },
     "KINE M11RX": {
       "merge_into": "KINE M1412",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -100275,6 +100444,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "KINE M11UU": {
+      "merge_into": "KINE M1861",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:03:06.542338+00:00"
+    },
     "KINE M11UV": {
       "merge_into": "KINE M1315",
       "reviewed_by": "automerge-v1@bot",
@@ -100385,6 +100559,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "KINE M11WS": {
+      "merge_into": "KINE M1848",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:49:59.25608+00:00"
+    },
     "KINE M11WT": {
       "merge_into": "KINE Z1047",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -100399,6 +100578,11 @@
       "merge_into": "ATHL M1150",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M11XB": {
+      "merge_into": "KINE M1669",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:05:07.762579+00:00"
     },
     "KINE M11XC": {
       "merge_into": "KINE M1334",
@@ -100419,6 +100603,11 @@
       "merge_into": "KINE M1340",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M11XJ": {
+      "merge_into": "KINE M1683",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:02:02.853159+00:00"
     },
     "KINE M11XN": {
       "merge_into": "KINE M1722",
@@ -100677,6 +100866,11 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00",
       "unified_title": "Beach Volleyball - Intermediate"
     },
+    "KINE M1279": {
+      "merge_into": "KINE M1910",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:48:20.491568+00:00"
+    },
     "KINE M1280": {
       "merge_into": "KINE M1281",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -100734,8 +100928,8 @@
       "unified_title": "Cardio Kickboxing - Beginning"
     },
     "KINE M1295": {
-      "merge_into": "KINE M1412",
-      "reviewed_by": "automerge-titlelane-v1@bot",
+      "merge_into": "KINE M1140",
+      "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00",
       "unified_title": "Beginning Tai Chi (Taiji)"
     },
@@ -100984,6 +101178,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M12DG": {
+      "merge_into": "KINE Z1005",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:10:53.920001+00:00"
+    },
     "KINE M12DJ": {
       "merge_into": "KINE Z1036",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -101229,6 +101428,16 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "KINE M12IB": {
+      "merge_into": "KINE M1376",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:43:17.291695+00:00"
+    },
+    "KINE M12IF": {
+      "merge_into": "KINE M1376",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:43:17.291695+00:00"
+    },
     "KINE M12IL": {
       "merge_into": "KINE M1615",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -101359,6 +101568,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M12LK": {
+      "merge_into": "KINE M1454",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:54:29.608026+00:00"
+    },
     "KINE M12LL": {
       "merge_into": "KINE Z1043",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -101368,6 +101582,11 @@
       "merge_into": "KINE M1916",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M12LO": {
+      "merge_into": "KINE Z1115",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:14:35.947076+00:00"
     },
     "KINE M12LT": {
       "merge_into": "KINE Z1066",
@@ -101418,6 +101637,11 @@
       "merge_into": "KINE M1802",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M12MV": {
+      "merge_into": "KINE M1454",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:54:29.608026+00:00"
     },
     "KINE M12NB": {
       "merge_into": "KINE Z1188",
@@ -101498,6 +101722,11 @@
       "merge_into": "ETHS M1187",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M12PF": {
+      "merge_into": "KINE M1861",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:03:06.542338+00:00"
     },
     "KINE M12PK": {
       "merge_into": "HVAC Z1014",
@@ -101955,6 +102184,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "KINE M1311": {
+      "merge_into": "KINE M1683",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:02:02.853159+00:00"
+    },
     "KINE M1312": {
       "unified_title": "Intercollegiate Women's Flag Football 1",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -101992,6 +102226,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M1321": {
+      "merge_into": "KINE M1671",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:34:17.352158+00:00"
+    },
     "KINE M1323": {
       "unified_title": "Tennis 2 - Beginning",
       "reviewed_by": "automerge-v1@bot",
@@ -102003,9 +102242,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE M1327": {
-      "unified_title": "Judo - Beginning",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "KINE Z1012",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:11:31.140867+00:00",
+      "unified_title": "Judo - Beginning"
     },
     "KINE M1328": {
       "unified_title": "Karate - Beginning",
@@ -102017,6 +102257,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "KINE M1332": {
+      "merge_into": "KINE M1671",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:34:17.352158+00:00"
+    },
     "KINE M1334": {
       "unified_title": "Beginning Spinning",
       "reviewed_by": "automerge-v1@bot",
@@ -102026,6 +102271,11 @@
       "unified_title": "Beginning Surfing - Techniques and Analysis",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M1337": {
+      "merge_into": "KINE M1672",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:45:59.762443+00:00"
     },
     "KINE M1338": {
       "unified_title": "Beginning Table Tennis",
@@ -102067,6 +102317,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M1349": {
+      "merge_into": "KINE M1454",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:54:29.608026+00:00"
+    },
     "KINE M1350": {
       "discipline": "Kinesiology",
       "reviewed_by": "map@rccd.edu",
@@ -102089,9 +102344,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE M1358": {
-      "unified_title": "Fitness (Walking or Jogging)",
+      "merge_into": "KINE Z1005",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-12T21:54:36.274485+00:00"
+      "reviewed_at": "2026-07-03T16:10:53.920001+00:00",
+      "unified_title": "Fitness (Walking or Jogging)"
     },
     "KINE M1359": {
       "unified_title": "Intermediate Cardiovascular Body Sculpting",
@@ -102158,6 +102414,16 @@
       "unified_title": "Intermediate Guts and Butts Workout",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M1376": {
+      "unified_title": "Sports Medicine Clinical 3",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:43:17.291695+00:00"
+    },
+    "KINE M1379": {
+      "merge_into": "KINE M1454",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:54:29.608026+00:00"
     },
     "KINE M1388": {
       "merge_into": "KINE M1609",
@@ -102244,6 +102510,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "KINE M13AZ": {
+      "merge_into": "KINE M1683",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:02:02.853159+00:00"
+    },
     "KINE M13BB": {
       "merge_into": "KINE Z1149",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -102319,6 +102590,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M13DD": {
+      "merge_into": "KINE M1861",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:03:06.542338+00:00"
+    },
     "KINE M13DN": {
       "merge_into": "KINE Z1168",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -102393,6 +102669,11 @@
       "merge_into": "KINE M1664",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M13FQ": {
+      "merge_into": "KINE M1683",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:02:02.853159+00:00"
     },
     "KINE M13FS": {
       "merge_into": "KINE M1686",
@@ -102629,6 +102910,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M13JR": {
+      "merge_into": "KINE M1861",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:03:06.542338+00:00"
+    },
     "KINE M13JU": {
       "merge_into": "KINE M1601",
       "reviewed_by": "automerge-v1@bot",
@@ -102859,6 +103145,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M13NX": {
+      "merge_into": "KINE M1861",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:03:06.542338+00:00"
+    },
     "KINE M13NZ": {
       "merge_into": "KINE M1797",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -103084,6 +103375,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M13SH": {
+      "merge_into": "KINE M1683",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:02:02.853159+00:00"
+    },
     "KINE M13SJ": {
       "merge_into": "KINE M1740",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -103178,6 +103474,11 @@
       "merge_into": "KINE M1013",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-25T20:51:42.855979+00:00"
+    },
+    "KINE M13UW": {
+      "merge_into": "KINE M1848",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:49:59.25608+00:00"
     },
     "KINE M13UZ": {
       "merge_into": "KINE Z1184",
@@ -103384,6 +103685,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "KINE M13YV": {
+      "merge_into": "KINE Z1012",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:11:31.140867+00:00"
+    },
     "KINE M13ZA": {
       "merge_into": "KINE Z1009",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -103445,9 +103751,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE M1412": {
-      "unified_title": "Beginning Tai Chi (Taiji)",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "KINE M1140",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:06:36.19495+00:00",
+      "unified_title": "Beginning Tai Chi (Taiji)"
     },
     "KINE M1413": {
       "unified_title": "Intermediate Tai Chi (Taiji)",
@@ -103500,6 +103807,16 @@
       "merge_into": "KINE M1827",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M1447": {
+      "merge_into": "KINE M1454",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:54:29.608026+00:00"
+    },
+    "KINE M1454": {
+      "unified_title": "Conditioning Beginning",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:54:29.608026+00:00"
     },
     "KINE M1455": {
       "merge_into": "KINE M1013",
@@ -103591,6 +103908,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M14AS": {
+      "merge_into": "KINE M1683",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:02:02.853159+00:00"
+    },
     "KINE M14BG": {
       "merge_into": "ATHL M1342",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -103656,6 +103978,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M14CN": {
+      "merge_into": "KINE M1848",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:49:59.25608+00:00"
+    },
     "KINE M14CO": {
       "merge_into": "KINE M1799",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -103680,6 +104007,11 @@
       "merge_into": "KINE M1843",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "KINE M14DK": {
+      "merge_into": "KINE M1683",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:02:02.853159+00:00"
     },
     "KINE M14DT": {
       "merge_into": "KINE M1849",
@@ -103706,6 +104038,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M14EV": {
+      "merge_into": "KINE M1671",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:34:17.352158+00:00"
+    },
     "KINE M14FA": {
       "merge_into": "KINE Z1174",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -103715,6 +104052,11 @@
       "merge_into": "KINE M1862",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "KINE M14FH": {
+      "merge_into": "KINE M1861",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:03:06.542338+00:00"
     },
     "KINE M14FI": {
       "merge_into": "KINE Z1187",
@@ -103756,6 +104098,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "KINE M14GS": {
+      "merge_into": "KINE M1683",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:02:02.853159+00:00"
+    },
     "KINE M14GZ": {
       "merge_into": "KINE M1615",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -103772,8 +104119,8 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE M1504": {
-      "unified_title": "Beginning Distance Running/Cross Country",
-      "reviewed_by": "automerge-titlelane-v1@bot",
+      "unified_title": "Running Beginning",
+      "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE M1505": {
@@ -104067,6 +104414,11 @@
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
     },
+    "KINE M1606": {
+      "merge_into": "KINE M1683",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:02:02.853159+00:00"
+    },
     "KINE M1607": {
       "merge_into": "KINE M1596",
       "reviewed_by": "MAP@rccd.edu",
@@ -104137,6 +104489,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00",
       "unified_title": "Ultimate Frisbee - Intermediate"
+    },
+    "KINE M1630": {
+      "merge_into": "KINE M1671",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:34:17.352158+00:00"
     },
     "KINE M1636": {
       "merge_into": "KINE M1007",
@@ -104221,14 +104578,30 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE M1667": {
-      "unified_title": "Pilates 1",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "KINE Z1115",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:14:35.947076+00:00",
+      "unified_title": "Pilates 1"
+    },
+    "KINE M1669": {
+      "unified_title": "Conditioning Beginning",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:05:07.762579+00:00"
     },
     "KINE M1670": {
       "unified_title": "Body Sculpt & Tone",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M1671": {
+      "unified_title": "Soccer Beginning",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:34:17.352158+00:00"
+    },
+    "KINE M1672": {
+      "unified_title": "Swimming Beginning",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:45:59.762443+00:00"
     },
     "KINE M1679": {
       "merge_into": "KINE M1338",
@@ -104239,6 +104612,11 @@
       "unified_title": "Volleyball 1",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "KINE M1683": {
+      "unified_title": "Walking Beginning",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:02:02.853159+00:00"
     },
     "KINE M1684": {
       "unified_title": "Soccer - Indoor 2",
@@ -104311,9 +104689,10 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "KINE M1726": {
-      "unified_title": "Volleyball 3",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "KINE M1909",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:48:20.491568+00:00",
+      "unified_title": "Volleyball 3"
     },
     "KINE M1728": {
       "unified_title": "Yoga Teacher Training 300HR Advanced Implementation",
@@ -104402,9 +104781,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE M1773": {
-      "unified_title": "Introduction to Sport and Society",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "KINE M1861",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:03:06.542338+00:00",
+      "unified_title": "Introduction to Sport and Society"
     },
     "KINE M1776": {
       "unified_title": "Introduction to Tennis",
@@ -104415,6 +104795,11 @@
       "merge_into": "KINE M1013",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M1780": {
+      "merge_into": "KINE M1671",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:34:17.352158+00:00"
     },
     "KINE M1783": {
       "unified_title": "Cardio Kickboxing 4",
@@ -104427,9 +104812,10 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "KINE M1790": {
-      "unified_title": "Volleyball 4",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "KINE M1910",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:48:20.491568+00:00",
+      "unified_title": "Volleyball 4"
     },
     "KINE M1793": {
       "merge_into": "KINE M1580",
@@ -104537,6 +104923,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "KINE M1848": {
+      "unified_title": "Racquetball Beginning",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:49:59.25608+00:00"
+    },
     "KINE M1849": {
       "unified_title": "Women's Advanced Recreational Soccer",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -104562,10 +104953,31 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-25T20:51:42.855979+00:00"
     },
+    "KINE M1856": {
+      "merge_into": "KINE M1671",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:34:17.352158+00:00"
+    },
+    "KINE M1861": {
+      "unified_title": "Sport in Society",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:03:06.542338+00:00"
+    },
     "KINE M1862": {
-      "unified_title": "Sport and the United States Society",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "KINE M1861",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:03:06.542338+00:00",
+      "unified_title": "Sport and the United States Society"
+    },
+    "KINE M1863": {
+      "merge_into": "KINE M1861",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:03:06.542338+00:00"
+    },
+    "KINE M1864": {
+      "unified_title": "Sociology of Sport",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:06:09.563584+00:00"
     },
     "KINE M1869": {
       "unified_title": "Sport-Specific Training for the Intercollegiate Athlete",
@@ -104577,6 +104989,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M1872": {
+      "merge_into": "KINE M1861",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:03:06.542338+00:00"
+    },
     "KINE M1873": {
       "unified_title": "Women and Sport",
       "reviewed_by": "automerge-v1@bot",
@@ -104586,6 +105003,11 @@
       "unified_title": "Strength Training (Nautilus-Strength Lab)",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "KINE M1879": {
+      "merge_into": "KINE M1672",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:45:59.762443+00:00"
     },
     "KINE M1882": {
       "unified_title": "Intermediate Table Tennis",
@@ -104601,6 +105023,11 @@
       "unified_title": "Out-Of-Season Intercollegiate Women's Wrestling & PE",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M1897": {
+      "unified_title": "Swim Intermediate",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:01:22.775593+00:00"
     },
     "KINE M1902": {
       "merge_into": "KINE M1517",
@@ -104621,6 +105048,16 @@
       "merge_into": "KINE M1714",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M1909": {
+      "unified_title": "Volleyball Advanced",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:48:20.491568+00:00"
+    },
+    "KINE M1910": {
+      "unified_title": "Volleyball Advanced",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:49:22.803848+00:00"
     },
     "KINE M1911": {
       "merge_into": "KINE M1568",
@@ -104648,9 +105085,10 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "KINE M1920": {
-      "unified_title": "Techniques and Stroke Development for Swimming",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "KINE M1897",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:01:22.775593+00:00",
+      "unified_title": "Techniques and Stroke Development for Swimming"
     },
     "KINE M1921": {
       "unified_title": "Jogging for Fitness",
@@ -104824,13 +105262,14 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE Z1004": {
-      "unified_title": "Body Toning 1",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "KINE M1669",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:05:07.762579+00:00",
+      "unified_title": "Body Toning 1"
     },
     "KINE Z1005": {
-      "unified_title": "Bootcamp Fitness - Level 1",
-      "reviewed_by": "automerge-titlelane-v1@bot",
+      "unified_title": "Conditioning Beginning",
+      "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE Z1006": {
@@ -104864,8 +105303,8 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "KINE Z1012": {
-      "unified_title": "Judo Skills 1",
-      "reviewed_by": "automerge-titlelane-v1@bot",
+      "unified_title": "Judo Beginning",
+      "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE Z1013": {
@@ -104899,9 +105338,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE Z1019": {
-      "unified_title": "Swimming 2 - Beginning",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "KINE M1672",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:45:59.762443+00:00",
+      "unified_title": "Swimming 2 - Beginning"
     },
     "KINE Z1020": {
       "unified_title": "Mind Body Fusion 2",
@@ -104924,9 +105364,10 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "KINE Z1024": {
-      "unified_title": "Theory and Conditioning of Swim and Dive 2",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "KINE M1897",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:01:22.775593+00:00",
+      "unified_title": "Theory and Conditioning of Swim and Dive 2"
     },
     "KINE Z1025": {
       "unified_title": "Flag Football League 2",
@@ -105129,8 +105570,8 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "KINE Z1065": {
-      "unified_title": "Advanced Hydro HIIT (High Intensity Interval Training)",
-      "reviewed_by": "automerge-titlelane-v1@bot",
+      "unified_title": "Conditioning Advanced",
+      "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE Z1066": {
@@ -105379,8 +105820,8 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE Z1115": {
-      "unified_title": "Pilates Matwork - Beginning",
-      "reviewed_by": "automerge-v1@bot",
+      "unified_title": "Pilates Beginning",
+      "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "KINE Z1116": {
@@ -105439,8 +105880,8 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE Z1127": {
-      "unified_title": "Introduction to Cheerleading Conditioning",
-      "reviewed_by": "automerge-titlelane-v1@bot",
+      "unified_title": "Cheerleading Beginning",
+      "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE Z1128": {
@@ -105744,9 +106185,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE Z1188": {
-      "unified_title": "Introduction to Pilates Mat",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "KINE Z1115",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:14:35.947076+00:00",
+      "unified_title": "Introduction to Pilates Mat"
     },
     "KINE Z1189": {
       "unified_title": "Pilates Matwork - Introduction",
@@ -105754,14 +106196,16 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE Z1190": {
-      "unified_title": "Introduction to Soccer",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "KINE M1671",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T15:55:46.227752+00:00",
+      "unified_title": "Introduction to Soccer"
     },
     "KINE Z1191": {
-      "unified_title": "Walking/Jogging",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "KINE M1683",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:02:02.853159+00:00",
+      "unified_title": "Walking/Jogging"
     },
     "KINE Z1192": {
       "unified_title": "Swimming, Lifeguard Training",
@@ -135120,6 +135564,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "SOCI M1085": {
+      "merge_into": "KINE M1864",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:03:06.542338+00:00"
+    },
     "SOCI M10AB": {
       "merge_into": "SOCI M1003",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -135234,6 +135683,11 @@
       "merge_into": "SOCI Z1003",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "SOCI M10EY": {
+      "merge_into": "KINE M1864",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-03T16:06:09.563584+00:00"
     },
     "SOCI M10EZ": {
       "merge_into": "SOCI Z1004",
