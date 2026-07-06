@@ -1,9 +1,9 @@
 {
-  "generated": "2026-06-29",
-  "total_reflections": 8,
-  "active_days": 8,
+  "generated": "2026-07-06",
+  "total_reflections": 11,
+  "active_days": 11,
   "first_day": "2026-06-12",
-  "latest_day": "2026-06-29",
+  "latest_day": "2026-07-03",
   "top_paintings": [
     {
       "painting": "California Poppy Field",
@@ -39,8 +39,16 @@
     }
   ],
   "min_sample_for_themes": 10,
-  "themes_suppressed": true,
-  "themes": [],
-  "positivity": null,
+  "themes_suppressed": false,
+  "themes": [
+    {
+      "term": "cpl",
+      "reflections": 3
+    }
+  ],
+  "positivity": {
+    "reflections_with_uplifting_words": 2,
+    "reflections_with_difficult_words": 2
+  },
   "note": "Aggregate, anonymous summary of First Light reflections. No individual reflection text is ever published."
 }
