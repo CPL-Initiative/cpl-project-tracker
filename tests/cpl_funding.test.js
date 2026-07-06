@@ -783,7 +783,23 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   check("badges never move dollars", Math.abs(T._alloc("Alameda").total - before) < 0.01);
 }
 
-// D5 — consumer wiring for the eligibility reads (static greps).
+// D5 — noncredit student counts are included in the totals (Sam, 2026-07-06):
+// the SYSTEM headcount total shows allocation basis + feeders = CCC total in
+// BOTH table views (the pool card already showed it).
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const feederSum = D.feeders.reduce(function (s, f) { return s + f.headcount; }, 0);
+  const combined = (D.system.headcount + feederSum).toLocaleString("en-US");
+  check("college-view SYSTEM row includes the noncredit feeders in the CCC total",
+    doc.querySelector("#cplFundTable tfoot").textContent.indexOf(combined) !== -1 &&
+    doc.querySelector("#cplFundTable tfoot").textContent.indexOf("noncredit") !== -1);
+  click(window, doc.querySelector('#cplFundView button[data-val="district"]'));
+  check("district-view SYSTEM row includes the noncredit feeders in the CCC total",
+    doc.querySelector("#cplFundTable tfoot").textContent.indexOf(combined) !== -1);
+}
+
+// D6 — consumer wiring for the eligibility reads (static greps).
 check("consumer reads the PII-free coordinator RPC (map_coordinator_summary)",
   /map_coordinator_summary/.test(consumerSrc));
 check("consumer reads/writes cpl_funding_participation",
