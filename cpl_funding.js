@@ -19,6 +19,28 @@
 //     (team-phrase editable, seen by everyone) ⊕ a per-browser what-if SCENARIO
 //     (anonymous — the Chancellor explores freely without the phrase).
 //
+// v3 (2026-07-06) — the equity refinements (team suggestions via Sam):
+//   • FRONT-LOAD toggle: disbursement Even ⇄ Front-load Year 1 — the full
+//     window total is available in Year 1 for startup capacity (1–2 FTE,
+//     faculty articulation work, local business process build-out); unspent
+//     funds roll forward, closing out one year past the window. Timing only —
+//     allocations + per-year performance targets unchanged.
+//   • MINIMUM-VIABLE FLOOR (pool.floor_window, default $150K/window): no
+//     college's window allocation falls below the floor. Funded WITHIN the
+//     pool by an iterative waterfall (floored colleges get exactly the floor;
+//     the remainder splits proportionally over the other colleges' headcount)
+//     so the balance stays $0 by construction.
+//   • RURAL ALLOWANCE (pool.rural_carveout, default $1M): a performance
+//     carve-out — each rural-flagged college (DRAFT roster; per-college
+//     `rural` flags + in-tab override) can earn an equal share by reaching
+//     ≥ rural_threshold (default 50%) of its measurable Year-1 priority
+//     targets (actuals from cpl_funding_performance.js).
+//   • BASELINE ELIGIBILITY badges (informational — dollars unchanged):
+//     ① a CPL Coordinator listed in MAP (live, PII-free boolean via the anon
+//     map_coordinator_summary() RPC) + ② a participation request by the
+//     deadline (default 2026-09-01; editable) recorded in the
+//     cpl_funding_participation table (anon read, team-phrase write).
+//
 // Self-contained behind this file: scoped CSS injected from JS. Requires
 // team_phrase.js (window.CPL_TEAM_PHRASE, loaded eagerly before this).
 (function () {
@@ -28,6 +50,8 @@
   var SUPABASE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co";
   var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
   var CONFIG_URL = SUPABASE_URL + "/rest/v1/cpl_funding_config";
+  var PART_URL = SUPABASE_URL + "/rest/v1/cpl_funding_participation";
+  var COORD_RPC_URL = SUPABASE_URL + "/rest/v1/rpc/map_coordinator_summary";
 
   var CSS_ID = "cpl-funding-css";
   var CSS = [
@@ -44,6 +68,8 @@
     ".cplfund-card.hero .v { color: var(--gold-accent); }",
     ".cplfund-card.hero .l { color: var(--light-blue); }",
     ".cplfund-card.feeder { border-left: 4px solid var(--green-progress); }",
+    ".cplfund-card.rural { border-left: 4px solid var(--gold-accent); }",
+    ".cplfund-card.floor { border-left: 4px solid var(--navy-secondary); }",
     ".cplfund-prio { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }",
     ".cplfund-prio .p { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--gold-accent); border-radius: 8px; padding: 14px 16px; }",
     ".cplfund-prio .p h4 { margin: 0 0 6px; color: var(--navy-primary); font-size: 1rem; }",
@@ -109,6 +135,12 @@
     ".cplfund-warn-text { color: var(--red-alert); font-weight: 600; }",
     ".cplfund .dk { color: var(--text-muted); font-weight: 400; }",
     ".cplfund-est { font-size: .72rem; color: var(--mustard-fill); font-weight: 600; }",
+    ".cplfund-chip { display: inline-block; font-size: .72rem; margin-left: 4px; font-weight: 400; cursor: help; }",
+    ".cplfund-carry { color: var(--text-faint); font-size: .75rem; font-weight: 400; }",
+    ".cplfund-elig { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--gold-accent); border-radius: 8px; padding: 12px 16px; font-size: .88rem; line-height: 1.55; }",
+    ".cplfund-elig .req { margin: 4px 0; }",
+    ".cplfund-optbtn { background: var(--surface-opaque); color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 8px; cursor: pointer; font-size: .75rem; font-family: inherit; margin-left: 6px; }",
+    ".cplfund-optbtn:hover { border-color: var(--gold-accent); }",
     ".cplfund-draftchip { display: inline-block; margin-left: 10px; vertical-align: middle; background: var(--mustard-fill); color: var(--text-strong); font-size: .42em; font-weight: 700; letter-spacing: .08em; padding: 3px 10px; border-radius: 12px; text-transform: uppercase; }",
     "@media (max-width: 700px) { .cplfund-toolbar input[type=search] { min-width: 140px; flex: 1; } }"
   ].join("\n");
@@ -195,11 +227,13 @@
     );
   }
   function feederCarveout() { return Math.max(0, Number(poolField("feeder_carveout")) || 0); }
+  function ruralCarve() { return Math.max(0, Number(poolField("rural_carveout")) || 0); }
+  function floorWindow() { return Math.max(0, Number(poolField("floor_window")) || 0); }
   function netBeforeFeeder() {
     return poolField("remaining_2025_26") + poolField("one_time_2026_27") -
       poolField("admin_cost") - poolField("scaling_projects_tech");
   }
-  function netCollege() { return netBeforeFeeder() - feederCarveout(); }
+  function netCollege() { return netBeforeFeeder() - feederCarveout() - ruralCarve(); }
   function perYear() { return netCollege() / nYears(); }
   function totalHeads() { return base().system.headcount; }
   function perStudent() { return totalHeads() ? perYear() / totalHeads() : 0; }
@@ -239,6 +273,38 @@
   function feederMetric() {
     return firstDefined(SCENARIO.feederMetric, SHARED.feederMetric, base().feeder_metric);
   }
+  // Disbursement timing: "even" annual tranches (default) or "frontload" —
+  // the whole window disburses in Year 1, unspent rolls forward.
+  function disbursement() {
+    var v = firstDefined(SCENARIO.disbursement, SHARED.disbursement, base().disbursement);
+    return v === "frontload" ? "frontload" : "even";
+  }
+  function frontloaded() { return disbursement() === "frontload"; }
+  function ruralThreshold() {
+    var v = firstDefined(SCENARIO.ruralThreshold, SHARED.ruralThreshold, base().rural_threshold);
+    var n = Number(v);
+    return isFinite(n) && n > 0 ? n : 0.5;
+  }
+  // rural flag = config override ?? the baked per-college flag (DRAFT roster).
+  function isRural(c) {
+    var o = firstDefined(
+      SCENARIO.ruralOverrides && SCENARIO.ruralOverrides[c.college],
+      SHARED.ruralOverrides && SHARED.ruralOverrides[c.college]);
+    return o != null ? !!o : !!c.rural;
+  }
+  function ruralColleges() { return base().colleges.filter(isRural); }
+  function participationDeadline() {
+    return firstDefined(SCENARIO.participationDeadline, SHARED.participationDeadline,
+      base().participation_deadline) || "2026-09-01";
+  }
+  // "2027-28" → "2028-29" (the close-out year one past the window).
+  function nextFy(fy) {
+    var m = String(fy || "").match(/^(\d{4})-(\d{2})$/);
+    if (!m) return "";
+    var a = Number(m[1]) + 1;
+    var b = String((a + 1) % 100);
+    return a + "-" + (b.length < 2 ? "0" + b : b);
+  }
 
   function isDirty() {
     var ov = activeOverride();
@@ -269,6 +335,15 @@
   }
   function setFeeders(list) { activeOverride().feeders = list; persistActive(); }
   function setFeederMetric(v) { activeOverride().feederMetric = v; persistActive(); }
+  function setDisbursement(v) { activeOverride().disbursement = v === "frontload" ? "frontload" : "even"; persistActive(); }
+  function setRuralThreshold(v) { activeOverride().ruralThreshold = v; persistActive(); }
+  function setDeadline(v) { activeOverride().participationDeadline = String(v || "").trim(); persistActive(); }
+  function setRuralOverride(college, flag) {
+    var ov = activeOverride();
+    ov.ruralOverrides = ov.ruralOverrides || {};
+    ov.ruralOverrides[college] = !!flag;
+    persistActive();
+  }
 
   function resetActive() {
     if (unlocked()) { SHARED = {}; saveShared(); }
@@ -334,6 +409,95 @@
       });
   }
 
+  // ── baseline eligibility (badges only — dollars unchanged) ────────────
+  // ① CPL Coordinator listed in MAP — live, PII-free boolean per college via
+  //    the anon map_coordinator_summary() RPC (the coordinator's name/email
+  //    stay reviewer-gated in map_college_contacts; the MAP Users tab is
+  //    where a signed-in team member sees WHO).
+  // ② Participation request by the deadline — cpl_funding_participation
+  //    (anon read; team-phrase/reviewer write via the drill-in toggle).
+  // College names join through cplCollegeShort() into short-name space —
+  // the funding roster already uses the short names.
+  var ELIG = { loaded: false, coordOk: false, coord: {}, coordN: 0, optin: {}, asOf: null };
+  function shortName(n) {
+    return (typeof window.cplCollegeShort === "function") ? window.cplCollegeShort(n, "short") : String(n || "");
+  }
+  function loadEligibility() {
+    if (!remoteEnabled()) return;
+    var h = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
+    var roster = {};
+    base().colleges.forEach(function (c) { roster[shortName(c.college)] = c.college; });
+    Promise.all([
+      fetch(COORD_RPC_URL, {
+        method: "POST", body: "{}",
+        headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" }
+      }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+      fetch(PART_URL + "?select=college,requested_at,noted_by", { headers: h })
+        .then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
+    ]).then(function (res) {
+      var coord = res[0], part = res[1];
+      if (Array.isArray(coord)) {
+        ELIG.coord = {}; ELIG.coordN = 0;
+        coord.forEach(function (row) {
+          var f = roster[shortName(row.college)];
+          if (f && row.has_coordinator && !ELIG.coord[f]) { ELIG.coord[f] = true; ELIG.coordN++; }
+          if (row.last_synced) ELIG.asOf = row.last_synced;
+        });
+        ELIG.coordOk = true;
+      }
+      if (Array.isArray(part)) {
+        ELIG.optin = {};
+        part.forEach(function (row) {
+          ELIG.optin[roster[shortName(row.college)] || row.college] = row;
+        });
+      }
+      ELIG.loaded = true;
+      render();
+    });
+  }
+  function eligScore(college) {
+    if (!ELIG.coordOk) return null;
+    return (ELIG.coord[college] ? 1 : 0) + (ELIG.optin[college] ? 1 : 0);
+  }
+  function eligGlyph(college) {
+    var s = eligScore(college);
+    if (s == null) return '<span class="dk">—</span>';
+    return s === 2 ? "✓" : s === 1 ? "◐" : '<span class="dk">○</span>';
+  }
+  function eligTitle(college) {
+    if (!ELIG.coordOk) return "eligibility status pending (MAP coordinator data not loaded)";
+    return "CPL Coordinator in MAP: " + (ELIG.coord[college] ? "yes" : "not on file") +
+      " · participation request by " + participationDeadline() + ": " +
+      (ELIG.optin[college] ? "opted in" : "not yet") + " — informational only in this draft";
+  }
+  // Opt-in writes (team-phrase / reviewer). Re-fetch after every write — a
+  // DELETE filtered out by RLS returns 2xx with nothing deleted, so the
+  // re-read (not the status) is the honest confirmation (#598 lesson).
+  function setOptIn(college, on) {
+    if (!remoteEnabled()) {
+      if (on) ELIG.optin[college] = { college: college };
+      else delete ELIG.optin[college];
+      render();
+      return;
+    }
+    var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" };
+    var t = tp();
+    if (t) t.decorateHeaders(headers, t.session());
+    var req = on
+      ? fetch(PART_URL + "?on_conflict=college", {
+          method: "POST",
+          headers: (function (x) { x.Prefer = "resolution=merge-duplicates"; return x; })(headers),
+          body: JSON.stringify({ college: college, noted_by: "(team)" })
+        })
+      : fetch(PART_URL + "?college=eq." + encodeURIComponent(college), { method: "DELETE", headers: headers });
+    req.then(function (r) { return t ? t.checkWrite(r) : { ok: r.ok, status: r.status }; })
+      .then(function (res) {
+        if (!res.ok && t) t.handleWriteFailure(t.session(), res.status);
+        loadEligibility();
+      })
+      .catch(function () { loadEligibility(); });
+  }
+
   // ── priority-metric actuals (cron artifact; may not exist yet) ─────────
   function perf() { return window.CPL_FUNDING_PERF || null; }
   function perfFor(collegeName) {
@@ -363,6 +527,7 @@
     var attrs = ' data-edit="' + esc(edit) + '"';
     if (opts.slot != null) attrs += ' data-slot="' + esc(opts.slot) + '"';
     if (opts.idx != null) attrs += ' data-idx="' + esc(opts.idx) + '"';
+    if (opts.small) attrs += ' style="width:110px;display:inline-block;"';
     return '<input type="text" class="cplfund-ed-t"' + attrs +
       ' value="' + esc(value) + '" aria-label="' + esc(opts.label || edit) + '">';
   }
@@ -406,15 +571,26 @@
   function yearControlsHtml() {
     var opts = base().year_options || [];
     var y = selectedYears();
+    var fl = frontloaded();
     var selects = y.map(function (yr, i) {
       var os = opts.map(function (o) {
         return '<option value="' + esc(o) + '"' + (o === yr ? " selected" : "") + ">" + esc(o) + "</option>";
       }).join("");
       return '<label>Year ' + (i + 1) + ' <select class="cplfund-ed-sel" data-edit="year" data-idx="' + i + '">' + os + "</select></label>";
     }).join("");
+    var note = fl
+      ? "front-loaded: the full window is available in Year 1 (" + esc(y[0]) + ") so every college can stand up CPL " +
+        "capacity immediately — staffing, faculty articulation work, local business processes; unspent funds roll " +
+        "forward" + (y.length > 1 ? " to " + esc(y[y.length - 1]) : "") +
+        (nextFy(y[y.length - 1]) ? " and close out by " + esc(nextFy(y[y.length - 1])) : "") +
+        ". Per-year performance targets are unchanged — only the cash timing moves."
+      : nYears() + "-year window · the pool splits into " + nYears() + " equal annual tranches";
     return '<div class="cplfund-years">' + selects +
-      '<span class="dk" style="font-size:.8rem;">' + nYears() + "-year window · the pool splits into " +
-      nYears() + " equal annual tranches</span></div>";
+      '<label>Disbursement ' + segHtml("cplFundDisb", [
+        { val: "even", label: "Even tranches" },
+        { val: "frontload", label: "Front-load Year 1" }
+      ], disbursement()) + "</label>" +
+      '<span class="dk" style="font-size:.8rem;flex:1 1 260px;">' + note + "</span></div>";
   }
 
   function yearFilterHtml() {
@@ -438,7 +614,18 @@
       { v: edNum("pool", fmtInt(poolField("admin_cost")), { field: "admin_cost", neg: true, label: "Admin cost (deducted)" }), l: esc(base().pool.admin_cost_label) + " &mdash; deducted" },
       { v: edNum("pool", fmtInt(poolField("scaling_projects_tech")), { field: "scaling_projects_tech", neg: true, label: "Scaling projects and tech (deducted)" }), l: "Scaling projects &amp; tech &mdash; deducted" },
       { v: edNum("pool", fmtInt(feederCarveout()), { field: "feeder_carveout", neg: true, label: "Noncredit feeder carve-out (deducted)" }), l: "Noncredit feeder support &mdash; carve-out (deducted)", feeder: true },
-      { v: fmtMoney(netCol), l: "Available college funding " + windowLabel() + " &mdash; " + nYears() + " annual tranches of " + fmtMoney(per) + " (" + esc(y[0]) + " &rarr; " + esc(y[y.length - 1]) + ")", hero: true },
+      { v: edNum("pool", fmtInt(ruralCarve()), { field: "rural_carveout", neg: true, label: "Rural college allowance carve-out (deducted)" }), l: "Rural college allowance &mdash; performance carve-out (deducted; earned at &ge;" + fmtPctTrim(ruralThreshold()) + " of Year-1 targets)", rural: true },
+      { v: fmtMoney(netCol),
+        l: frontloaded()
+          ? "Available college funding " + windowLabel() + " &mdash; disbursed up front in " + esc(y[0]) + " (front-loaded; unspent rolls forward)"
+          : "Available college funding " + windowLabel() + " &mdash; " + nYears() + " annual tranches of " + fmtMoney(per) + " (" + esc(y[0]) + " &rarr; " + esc(y[y.length - 1]) + ")",
+        hero: true },
+      { v: edNum("pool", fmtInt(floorWindow()), { field: "floor_window", label: "Minimum viable allocation per college (window floor)" }),
+        l: "Minimum viable allocation (floor) &mdash; no college below this for the " + windowLabel() + " window; " +
+           (allocModel().floorCount
+             ? "<strong>" + allocModel().floorCount + " colleges topped up</strong> (&asymp;" + fmtMoney(allocModel().floorCost) + ", funded within the pool)"
+             : "no top-ups needed at current settings"),
+        floor: true },
       { v: fmtInt(totalHeads()), l: "College headcount (allocation basis) &mdash; &Sigma; of the " + base().colleges.length +
           " college rows &middot; plus " + fmtInt(feederHeads()) + " noncredit-feeder students = <strong>" +
           fmtInt(totalHeads() + feederHeads()) + " CCC total</strong>" },
@@ -446,7 +633,8 @@
     ];
     // Data attributes: the pool edNum builder needs the field name — patch it in.
     return '<div class="cplfund-cards">' + cards.map(function (c, i) {
-      return '<div class="cplfund-card' + (c.hero ? " hero" : "") + (c.feeder ? " feeder" : "") + '">' +
+      return '<div class="cplfund-card' + (c.hero ? " hero" : "") + (c.feeder ? " feeder" : "") +
+        (c.rural ? " rural" : "") + (c.floor ? " floor" : "") + '">' +
         '<div class="v' + (c.neg ? " neg" : "") + '">' + c.v + "</div>" +
         '<div class="l">' + c.l + "</div></div>";
     }).join("") + "</div>";
@@ -507,6 +695,26 @@
     return (MEASURABILITY[slot] || MEASURABILITY["2"])[idx] || {};
   }
 
+  // ── rural performance attainment ──────────────────────────────────────
+  // Average attainment (actual ÷ target) across the Year-1 priorities the
+  // daily MAP feed can measure TODAY (see MEASURABILITY — currently P1 only;
+  // grows as feeds land). Suppressed (<5) or absent actuals → null =
+  // "pending data", never a silent zero.
+  function ruralAttainment(c) {
+    var rec = perfFor(c.college);
+    if (!rec) return null;
+    var fracs = [];
+    priorities("1").forEach(function (p, i) {
+      var meas = measurability("1", i);
+      if (!meas.src) return;
+      if (rec[meas.src] == null) return;   // absent or suppressed → not measurable
+      var target = (c.headcount || 0) * p.target_rate;
+      if (target > 0) fracs.push(rec[meas.src] / target);
+    });
+    if (!fracs.length) return null;
+    return fracs.reduce(function (s, x) { return s + x; }, 0) / fracs.length;
+  }
+
   function actualLineHtml(p, idx, targetHeads) {
     var meas = measurability(state.viewSlot, idx);
     if (meas.gap) {
@@ -538,13 +746,28 @@
         "-allocates the annual pool (see Balance)</span>";
     var bal = per * (1 - shareSum);
     var balStr = Math.abs(bal) < 0.5 ? "$0" : (bal < 0 ? "−" : "") + fmtMoney(Math.abs(bal));
+    var m = allocModel();
+    var floorSentence = (m.floor > 0 && m.floorCount)
+      ? " <strong>Minimum-viable floor:</strong> no college&#39;s window allocation falls below " + fmtMoney(m.floor) +
+        " &mdash; " + m.floorCount + " colleges are topped up (&asymp;" + fmtMoney(m.floorCost) +
+        ", " + fmtPctTrim(m.net > 0 ? m.floorCost / m.net : 0) + " of the pool), funded by renormalizing the " +
+        "proportional split over the remaining colleges, so the pool still balances."
+      : "";
+    var fl = frontloaded();
+    var flSentence = fl
+      ? " <strong>Front-loaded disbursement:</strong> the full window total is available in Year 1 &mdash; sized so " +
+        "smaller colleges can fund the 1&ndash;2 FTE the first-year lift needs &mdash; with unspent funds rolling " +
+        "forward" + (nextFy(selectedYears()[selectedYears().length - 1]) ? " and closing out by " +
+        esc(nextFy(selectedYears()[selectedYears().length - 1])) : "") + ". Timing only; allocations don&#39;t change."
+      : "";
     return '<div class="cplfund-formula">' +
       "Each college&#39;s potential allocation of one annual tranche is " +
       "<code>headcount share &times; priority share &times; " + fmtMoney(per) + "</code> " +
       "per priority. " + shareSentence + " &mdash; the same again in each of the " +
       nYears() + " years (" + windowLabel() + "). Balance for Year " + state.viewSlot + ": <strong>" +
       (balanced ? "$0 (exact)" : '<span class="cplfund-warn-text">' + balStr + "</span>") +
-      ". Projection percents are performance <em>targets</em>; they don&#39;t move dollars.</div>";
+      "</strong>. Projection percents are performance <em>targets</em>; they don&#39;t move dollars." +
+      floorSentence + flSentence + "</div>";
   }
 
   // ── college table state + shaping ─────────────────────────────────────
@@ -553,9 +776,13 @@
   // per-priority P1/P2/P3 math lives in the row drill-in for the active
   // filter year. Columns are built dynamically from the selected years.
   function yearColDefs() {
+    var fl = frontloaded();
     return selectedYears().map(function (yr, i) {
-      return { key: "y" + (i + 1), label: "Yr " + (i + 1), cls: "",
-               title: "Year " + (i + 1) + " (" + yr + ") potential allocation" };
+      var title = fl
+        ? (i === 0 ? "Year 1 (" + yr + ") — full window disbursed up front (front-loaded)"
+                   : "Year " + (i + 1) + " (" + yr + ") — carryover only: unspent Year-1 funds roll forward")
+        : "Year " + (i + 1) + " (" + yr + ") potential allocation";
+      return { key: "y" + (i + 1), label: "Yr " + (i + 1), cls: "", title: title };
     });
   }
   function COLS_COLLEGE() {
@@ -565,7 +792,9 @@
       { key: "district", label: "District", cls: "t" },
       { key: "county", label: "County", cls: "t" },
       { key: "headcount", label: "Headcount", cls: "" },
-      { key: "p3a", label: "CPL students†", cls: "" }
+      { key: "p3a", label: "CPL students†", cls: "" },
+      { key: "elig", label: "Elig", cls: "",
+        title: "Proposed baseline eligibility: ✓ both, ◐ one, ○ neither of — CPL Coordinator listed in MAP · participation request by " + participationDeadline() + ". Informational only in this draft." }
     ].concat(yearColDefs(), [
       { key: "total", label: "Total " + windowLabel(), cls: "" },
       { key: "working_adults", label: "Working adults*", cls: "" }
@@ -590,32 +819,86 @@
     sortKey: "order", sortDir: 1, open: {}
   };
 
-  // Per-year dollars (y1, y2, …: headcount share × tranche × that year's share
-  // sum — identical across years until a year's shares are edited), a window
-  // TOTAL, plus the active-year per-priority breakdown for the drill-in.
+  // ── allocation model: proportional split + minimum-viable floor ────────
+  // W (the college's window entitlement at balanced shares) starts as
+  // headcount share × net pool; the FLOOR waterfall then guarantees no
+  // college falls below pool.floor_window: floored colleges get exactly the
+  // floor, and the remainder re-splits proportionally over the OTHER
+  // colleges' headcount. Iterates (a re-split can push the next-smallest
+  // college under the floor) — converges in a few passes; Σ W = net pool by
+  // construction, so the balance stays $0. Cached per render.
+  var _allocCache = null;
+  function allocModel() {
+    if (_allocCache) return _allocCache;
+    var cols = base().colleges;
+    var net = netCollege();
+    var floor = floorWindow();
+    var F = {}, W = {};
+    var totHeads = 0;
+    cols.forEach(function (c) { totHeads += c.headcount || 0; });
+    if (floor > 0 && floor * cols.length >= net) {
+      // Floor set higher than the pool can honor — degrade to an equal split.
+      cols.forEach(function (c) { F[c.college] = true; W[c.college] = net > 0 ? net / cols.length : 0; });
+    } else {
+      var changed = true, guard = 0;
+      while (changed && guard++ < 30) {
+        changed = false;
+        var remaining = net - floor * Object.keys(F).length;
+        var baseHc = 0;
+        cols.forEach(function (c) { if (!F[c.college]) baseHc += c.headcount || 0; });
+        cols.forEach(function (c) {
+          if (F[c.college]) return;
+          var w = baseHc > 0 ? (c.headcount || 0) / baseHc * remaining : 0;
+          if (floor > 0 && w < floor) { F[c.college] = true; changed = true; }
+          else W[c.college] = w;
+        });
+      }
+      Object.keys(F).forEach(function (k) { W[k] = floor; });
+    }
+    // Display stat: total top-up vs a pure proportional split.
+    var cost = 0;
+    cols.forEach(function (c) {
+      if (F[c.college] && totHeads > 0) cost += Math.max(0, floor - (c.headcount || 0) / totHeads * net);
+    });
+    _allocCache = { W: W, floored: F, floor: floor, floorCount: Object.keys(F).length, floorCost: cost, net: net };
+    return _allocCache;
+  }
+
+  // Per-year dollars (y1, y2, … from the college's floor-aware window
+  // entitlement W × that year's share sum ÷ years), a window TOTAL, the
+  // floor/rural flags, plus the active-year per-priority breakdown for the
+  // drill-in. FRONT-LOAD mode re-times the same total into Year 1 (later
+  // years = carryover of unspent funds) — allocation itself is unchanged.
   function collegeAlloc(c) {
-    var per = perYear();
-    var pct = c.headcount_pct;
-    var out = { total: 0 };
+    var W = allocModel().W[c.college] || 0;
+    var ny = nYears();
+    var fl = frontloaded();
+    var out = { total: 0, w: W, floored: !!allocModel().floored[c.college] };
+    var ys = [];
     selectedYears().forEach(function (_, i) {
-      var v = pct * per * shareSum(String(i + 1));
-      out["y" + (i + 1)] = v;
+      var v = W * shareSum(String(i + 1)) / ny;
+      ys.push(v);
       out.total += v;
     });
+    ys.forEach(function (v, i) { out["y" + (i + 1)] = fl ? (i === 0 ? out.total : 0) : v; });
     priorities(state.viewSlot).forEach(function (p) {
-      out[p.key] = pct * p.share * per;
+      out[p.key] = W * p.share / ny;
       out[p.key + "_heads"] = c.headcount * p.target_rate;
     });
     return out;
   }
   function systemAlloc() {
-    var per = perYear();
+    var net = netCollege();
+    var ny = nYears();
+    var fl = frontloaded();
     var out = { total: 0, headcount: totalHeads() };
+    var ys = [];
     selectedYears().forEach(function (_, i) {
-      var v = per * shareSum(String(i + 1));
-      out["y" + (i + 1)] = v;
+      var v = net * shareSum(String(i + 1)) / ny;
+      ys.push(v);
       out.total += v;
     });
+    ys.forEach(function (v, i) { out["y" + (i + 1)] = fl ? (i === 0 ? out.total : 0) : v; });
     return out;
   }
 
@@ -659,7 +942,8 @@
       var r = {
         order: c.order, college: c.college, district: c.district, county: c.county,
         headcount: c.headcount, headcount_pct: c.headcount_pct, hc_vintage: c.hc_vintage,
-        working_adults: c.working_adults, county_pop_pct: c.county_pop_pct
+        working_adults: c.working_adults, county_pop_pct: c.county_pop_pct,
+        rural: isRural(c)
       };
       Object.keys(a).forEach(function (k) { r[k] = a[k]; });
       return r;
@@ -673,6 +957,7 @@
       });
     }
     function sortVal(r) {
+      if (state.sortKey === "elig") return eligScore(r.college);
       if (state.sortKey !== "p3a") return r[state.sortKey];
       var rec = perfFor(r.college);
       if (!rec) return null;
@@ -693,19 +978,34 @@
   // ── row + drill-in rendering ──────────────────────────────────────────
   function yearCellsHtml(row) {
     var ys = selectedYears();
+    var fl = frontloaded();
     return yearKeys().map(function (yk, i) {
-      return '<td title="Year ' + (i + 1) + " (" + esc(ys[i]) + ') potential allocation">' + fmtMoney(row[yk]) + "</td>";
+      if (fl && i > 0) {
+        return '<td class="cplfund-carry" title="Year ' + (i + 1) + " (" + esc(ys[i]) +
+          ') — carryover only: unspent Year-1 funds roll forward (front-loaded disbursement)">↻ carryover</td>';
+      }
+      var title = fl
+        ? "Year 1 (" + esc(ys[i]) + ") — full window disbursed up front (front-loaded)"
+        : "Year " + (i + 1) + " (" + esc(ys[i]) + ") potential allocation";
+      return '<td title="' + title + '">' + fmtMoney(row[yk]) + "</td>";
     }).join("");
+  }
+  function rowChips(c) {
+    var chips = "";
+    if (c.rural) chips += '<span class="cplfund-chip" title="Rural college (DRAFT roster) — eligible for the rural performance allowance below">🌲</span>';
+    if (c.floored) chips += '<span class="cplfund-chip" title="Minimum-viable floor applied — topped up to ' + fmtMoney(allocModel().floor) + ' for the window">⬆</span>';
+    return chips;
   }
   function collegeRowHtml(c) {
     var id = "c:" + c.order;
     return '<tr class="cplfund-row' + (state.open[id] ? " cplfund-open" : "") + '" data-id="' + esc(id) + '">' +
       "<td>" + esc(c.order) + "</td>" +
-      '<td class="t"><span class="cplfund-caret">▸</span><strong>' + esc(c.college) + "</strong></td>" +
+      '<td class="t"><span class="cplfund-caret">▸</span><strong>' + esc(c.college) + "</strong>" + rowChips(c) + "</td>" +
       '<td class="t trunc" title="' + esc(c.district || "") + '">' + esc(districtShort(c.district) || "—") + "</td>" +
       '<td class="t trunc" title="' + esc(c.county || "") + '">' + esc(c.county || "—") + "</td>" +
       '<td title="' + fmtPct(c.headcount_pct, 2) + ' of statewide headcount">' + fmtInt(c.headcount) + "</td>" +
       '<td title="distinct students with any transcribed CPL, per MAP (the Year-1 Priority-1 metric)">' + fmtActual(perfFor(c.college), "p3") + "</td>" +
+      '<td title="' + esc(eligTitle(c.college)) + '">' + eligGlyph(c.college) + "</td>" +
       yearCellsHtml(c) +
       '<td class="tot">' + fmtMoney(c.total) + "</td>" +
       "<td>" + (c.working_adults == null ? "—" : fmtInt(c.working_adults) +
@@ -717,6 +1017,8 @@
     var ps = priorities(state.viewSlot);
     var per = perYear();
     var rec = perfFor(c.college);
+    var m = allocModel();
+    var floorActive = m.floor > 0 && m.floorCount > 0;
     var prio = ps.map(function (p, i) {
       var meas = measurability(state.viewSlot, i);
       var actual = "";
@@ -728,9 +1030,14 @@
       } else if (meas.gap) {
         actual = ' &middot; actual: <span class="dk">' + esc(meas.gap_short || "data gap") + "</span>";
       }
+      // With the floor active the pure "headcount share × pool" identity no
+      // longer holds row-exactly (the split is renormalized) — show the
+      // college's own tranche instead.
+      var math = floorActive
+        ? fmtPctTrim(p.share) + " share &times; the college&#39;s " + fmtMoney((c.w || 0) / nYears()) + " annual tranche"
+        : fmtPctTrim(c.headcount_pct) + " headcount share &times; " + fmtPctTrim(p.share) + " share &times; " + fmtMoney(per);
       return '<div><span class="dk">' + esc(p.label) + " (Year " + esc(state.viewSlot) + "):</span> " +
-        fmtPctTrim(c.headcount_pct) + " headcount share &times; " + fmtPctTrim(p.share) + " share &times; " +
-        fmtMoney(per) + " = <strong>" + fmtMoney(c[p.key]) + "</strong>/yr" +
+        math + " = <strong>" + fmtMoney(c[p.key]) + "</strong>/yr" +
         " &middot; target " + fmtInt(c[p.key + "_heads"]) + " students (" + fmtPctTrim(p.target_rate) + ")" +
         "<br><span class='dk'>metric:</span> " + esc(p.metric) + actual + "</div>";
     }).join("");
@@ -738,13 +1045,47 @@
       ? '<div><span class="dk">County context:</span> not estimated (county &lt; 65K population)</div>'
       : '<div><span class="dk">County context (' + esc(c.county) + "):</span> " + fmtInt(c.working_adults) +
         " working adults with some college, no degree (" + fmtPct(c.county_pop_pct, 1) + " of county population)</div>";
+    var floorLine = c.floored
+      ? '<div><span class="dk">⬆ Floor applied:</span> a pure proportional share would be ' +
+        fmtMoney(c.headcount_pct * m.net) + " for the window &mdash; topped up to the " +
+        fmtMoney(m.floor) + " minimum-viable floor</div>"
+      : "";
+    var ruralLine = "";
+    if (c.rural) {
+      var rl = ruralColleges();
+      var perR = rl.length ? ruralCarve() / rl.length : 0;
+      var att = ruralAttainment(baseCollege(c.college) || c);
+      ruralLine = '<div><span class="dk">🌲 Rural allowance:</span> up to ' + fmtMoney(perR) +
+        " this window at &ge;" + fmtPctTrim(ruralThreshold()) + " of Year-1 priority targets &mdash; " +
+        (att == null ? '<span class="dk">attainment pending data</span>'
+          : "current attainment <strong>" + fmtPctTrim(att) + "</strong>" +
+            (att >= ruralThreshold() ? " ✓ qualifies (current data)" : " (below threshold so far)")) + "</div>";
+    }
+    var eligBtns = "";
+    if (unlocked()) {
+      eligBtns = '<button type="button" class="cplfund-optbtn" data-optin="' + esc(c.college) + '" data-on="' +
+        (ELIG.optin[c.college] ? "0" : "1") + '">' +
+        (ELIG.optin[c.college] ? "Clear opt-in" : "Mark opted-in") + "</button>" +
+        '<button type="button" class="cplfund-optbtn" data-ruralflag="' + esc(c.college) + '" data-on="' +
+        (c.rural ? "0" : "1") + '">' + (c.rural ? "Remove rural flag" : "Mark rural") + "</button>";
+    }
+    var eligLine = '<div><span class="dk">Eligibility (proposed):</span> CPL Coordinator in MAP &mdash; ' +
+      (!ELIG.coordOk ? '<span class="dk">pending</span>' : ELIG.coord[c.college] ? "✓" : '<span class="cplfund-warn-text">not on file</span>') +
+      " &middot; opted in by " + esc(participationDeadline()) + " &mdash; " +
+      (ELIG.optin[c.college] ? "✓" : '<span class="dk">not yet</span>') + eligBtns + "</div>";
     return '<tr class="cplfund-detail"><td colspan="' + COLS_COLLEGE().length + '">' +
       '<div class="cplfund-detail-grid">' +
       '<div><span class="dk">Headcount share:</span> ' + fmtInt(c.headcount) + " students = " +
       fmtPct(c.headcount_pct, 3) + " of the statewide " + fmtInt(totalHeads()) + "</div>" +
+      floorLine + ruralLine + eligLine +
       prio + county +
       '<div><span class="dk">District:</span> ' + esc(c.district || "—") + "</div>" +
       "</div></td></tr>";
+  }
+  function baseCollege(name) {
+    var hit = null;
+    base().colleges.forEach(function (c) { if (c.college === name) hit = c; });
+    return hit;
   }
 
   function districtRowHtml(g) {
@@ -786,7 +1127,7 @@
     } else {
       body = rows.map(function (c) { return collegeRowHtml(c); }).join("");
     }
-    var sysYearCells = yearKeys().map(function (yk) { return "<td>" + fmtMoney(sys[yk]) + "</td>"; }).join("");
+    var sysYearCells = yearCellsHtml(sys);
     var foot;
     if (state.view === "district") {
       foot = "<tr>" +
@@ -803,6 +1144,7 @@
         "<td>" + fmtInt(sys.headcount) + "</td>" +
         '<td title="statewide distinct students — deduplicated across colleges, not the column sum">' +
         (pf && pf.statewide && pf.statewide.p3 != null ? fmtInt(pf.statewide.p3) : "—") + "</td>" +
+        "<td>" + (ELIG.coordOk ? ELIG.coordN + "/" + base().colleges.length : "—") + "</td>" +
         sysYearCells +
         "<td>" + fmtMoney(sys.total) + "</td>" +
         "<td>" + (base().system.working_adults == null ? "—" : fmtInt(base().system.working_adults)) + "</td></tr>";
@@ -814,11 +1156,77 @@
       "</table></div>";
   }
 
+  // ── rural college allowance section ───────────────────────────────────
+  function ruralSectionHtml() {
+    var list = ruralColleges().slice().sort(function (a, b) { return a.college.localeCompare(b.college); });
+    var carve = ruralCarve();
+    if (!carve && !list.length) return "";
+    var thr = ruralThreshold();
+    var perR = list.length ? carve / list.length : 0;
+    var earned = 0;
+    var rows = list.map(function (c) {
+      var att = ruralAttainment(c);
+      var status, attCell;
+      if (att == null) { status = '<span class="dk">— pending data</span>'; attCell = '<span class="dk">—</span>'; }
+      else if (att >= thr) { status = "✓ qualifies (current data)"; attCell = fmtPctTrim(att); earned++; }
+      else { status = '<span class="dk">⏳ below threshold so far</span>'; attCell = fmtPctTrim(att); }
+      return "<tr>" +
+        '<td class="t"><strong>' + esc(c.college) + "</strong> 🌲</td>" +
+        "<td>" + fmtInt(c.headcount) + "</td>" +
+        "<td>" + fmtMoney(perR) + "</td>" +
+        '<td title="average of the measurable Year-1 priority attainments (actual ÷ target, per MAP)">' + attCell + "</td>" +
+        '<td class="t">' + status + "</td></tr>";
+    }).join("");
+    return '<h3>Rural college allowance ' +
+      '<span class="dk" style="font-size:.8rem;font-weight:400;">(performance carve-out &mdash; earned, not automatic)</span></h3>' +
+      '<div class="cplfund-formula" style="margin-bottom:10px;">' +
+      "Rural colleges carry the same first-year lift &mdash; faculty articulation work, local business processes &mdash; " +
+      "on far smaller allocations. A <strong>" + fmtMoney(carve) + "</strong> top-of-pool carve-out lets each of the " +
+      list.length + " rural-flagged colleges <strong>earn up to " + fmtMoney(perR) + "</strong> this window by reaching " +
+      "<strong>&ge;" + edNum("rural-threshold", fmtRatePct(thr), { small: true, label: "rural allowance threshold percent" }) +
+      "%</strong> of its Year-1 priority targets (measured from the same MAP actuals as the priority cards; unearned " +
+      "funds stay in the carve-out). <span class='dk'>Roster is a DRAFT &mdash; " + esc(base().rural_source || "edit the per-college rural flags") +
+      ".</span></div>" +
+      '<div class="cplfund-tablewrap"><table class="cplfund-table">' +
+      "<thead><tr><th class='t'>Rural college</th><th>Headcount</th><th>Potential allowance</th>" +
+      "<th>Yr-1 target attainment</th><th class='t'>Status</th></tr></thead>" +
+      "<tbody>" + (rows || '<tr><td colspan="5" class="t">No colleges are rural-flagged.</td></tr>') + "</tbody>" +
+      '<tfoot><tr><td class="t">RURAL POOL</td><td></td><td>' + fmtMoney(carve) + "</td><td></td>" +
+      '<td class="t">' + earned + " of " + list.length + " qualify on current data</td></tr></tfoot></table></div>";
+  }
+
+  // ── baseline eligibility section (badges only) ────────────────────────
+  function eligibilityHtml() {
+    var total = base().colleges.length;
+    var optN = 0;
+    base().colleges.forEach(function (c) { if (ELIG.optin[c.college]) optN++; });
+    var coordLine;
+    if (ELIG.coordOk) {
+      coordLine = "<strong>" + ELIG.coordN + " of " + total + "</strong> colleges have one on file " +
+        '<span class="dk">(live from MAP' + (ELIG.asOf ? ", synced " + esc(String(ELIG.asOf).slice(0, 10)) : "") +
+        " &mdash; update yours in the MAP platform&#39;s College Contacts)</span>";
+    } else if (ELIG.loaded) {
+      coordLine = '<span class="dk">status unavailable right now (MAP coordinator data not loaded)</span>';
+    } else {
+      coordLine = '<span class="dk">checking MAP&hellip;</span>';
+    }
+    return '<div class="cplfund-elig">' +
+      "<strong>Proposed baseline requirements</strong> to qualify for implementation funding " +
+      '<span class="dk">(badges are informational in this draft &mdash; no dollar figure changes yet)</span>:' +
+      '<div class="req">① <strong>CPL Coordinator listed in MAP</strong> &mdash; ' + coordLine + "</div>" +
+      '<div class="req">② <strong>Participation request by</strong> ' +
+      edText("deadline", participationDeadline(), { label: "participation deadline", small: true }) +
+      " &mdash; <strong>" + optN + "</strong> opted in so far" +
+      (unlocked() ? ' <span class="dk">(mark a college opted-in from its row drill-in)</span>'
+                  : ' <span class="dk">(team members record opt-ins after unlocking)</span>') + "</div>" +
+      "</div>";
+  }
+
   // ── noncredit feeder section ──────────────────────────────────────────
   function feederSectionHtml() {
     var list = feeders();
     var carve = feederCarveout();
-    var perYearPool = carve / nYears();
+    var perYearPool = frontloaded() ? carve : carve / nYears();
     var totalHc = list.reduce(function (s, f) { return s + (Number(f.headcount) || 0); }, 0) || 1;
     var anyEstimate = list.some(function (f) { return f.estimate; });
     var rows = list.map(function (f, i) {
@@ -838,13 +1246,15 @@
       "NOCE, San Diego Continuing Education, Mt. SAC Noncredit, and Calbright don&#39;t grant CPL " +
       "(their coursework is noncredit) but they <strong>prepare and feed CPL-ready students</strong> to credit " +
       "colleges. A <strong>" + fmtMoney(carve) + "</strong> top-of-pool carve-out (deducted before the college " +
-      "split above) funds a feeder pool of <strong>" + fmtMoney(perYearPool) + "/yr</strong>, split among them by " +
+      "split above) funds a feeder pool of <strong>" + fmtMoney(perYearPool) +
+      (frontloaded() ? " disbursed up front in Year 1 (front-loaded; unspent rolls forward)" : "/yr") +
+      "</strong>, split among them by " +
       "headcount &mdash; recognizing the feeder role without diluting the credit colleges&#39; allocations." +
       "<div style='margin-top:8px;'><span class='dk'>Feeder metric:</span> " +
       edText("feeder-metric", feederMetric(), { label: "Feeder metric" }) + "</div></div>" +
       '<div class="cplfund-tablewrap"><table class="cplfund-table">' +
       "<thead><tr><th class='t'>Feeder</th><th>Noncredit headcount</th><th>Share</th>" +
-      "<th>Support / yr</th><th>Total " + esc(windowLabel()) + "</th></tr></thead>" +
+      "<th>" + (frontloaded() ? "Support (Yr 1, front-loaded)" : "Support / yr") + "</th><th>Total " + esc(windowLabel()) + "</th></tr></thead>" +
       "<tbody>" + rows + "</tbody>" +
       '<tfoot><tr><td class="t">FEEDER POOL</td><td>' + fmtInt(totalHc) + "</td><td>100%</td>" +
       "<td>" + fmtMoney(perYearPool) + "</td>" +
@@ -911,6 +1321,7 @@
     ensureCss();
     ensureDraftChip();
     _districtsCache = null;
+    _allocCache = null;
     var d = base();
     if (!d || !d.colleges || !d.system) {
       mount.innerHTML = '<div class="cplfund-empty">Funding model data is unavailable right now (cpl_funding_data.js failed to load). Try a hard refresh.</div>';
@@ -923,6 +1334,7 @@
       authbarHtml() +
       "<h3>Funding window</h3>" + yearControlsHtml() +
       "<h3>Funding pools</h3>" + poolCardsHtml() +
+      "<h3>Baseline eligibility</h3>" + eligibilityHtml() +
       "<h3>The three funding priorities</h3>" + yearFilterHtml() + prioritiesHtml() +
       "<h3>How an allocation is computed</h3>" + formulaHtml() +
       "<h3>Potential allocation by college</h3>" +
@@ -932,10 +1344,19 @@
       '<span class="cplfund-count" id="cplFundCount"></span></div>' +
       '<div id="cplFundTable">' + tableHtml() + "</div>" +
       feederSectionHtml() +
+      ruralSectionHtml() +
       '<div class="cplfund-foot">' +
       "<div>Dollar cells round to whole dollars; click a row to expand its detail (the per-priority math for the " +
-      "year selected above). The Yr columns are each funding year&#39;s potential allocation &mdash; identical " +
-      "while both years&#39; priority shares sum to 100%; Total is the full " + esc(windowLabel()) + " window. " +
+      "year selected above). " +
+      (frontloaded()
+        ? "Front-loaded disbursement: the Yr 1 column is the full " + esc(windowLabel()) + " window available up " +
+          "front; later Yr columns show ↻ carryover &mdash; unspent Year-1 funds roll forward" +
+          (nextFy(selectedYears()[selectedYears().length - 1])
+            ? " and close out by " + esc(nextFy(selectedYears()[selectedYears().length - 1])) : "") + ". "
+        : "The Yr columns are each funding year&#39;s potential allocation &mdash; identical " +
+          "while both years&#39; priority shares sum to 100%; Total is the full " + esc(windowLabel()) + " window. ") +
+      "Elig = the proposed baseline requirements above (✓ both · ◐ one · ○ neither — informational only). " +
+      "🌲 = rural-flagged (allowance below); ⬆ = minimum-viable floor applied. " +
       "&ldquo;Working adults&rdquo; = 2022 estimated working adults with some college, no degree, in the college&#39;s county.</div>" +
       headcountSourceHtml() +
       actualsFootHtml() +
@@ -987,6 +1408,21 @@
         refreshTable();
       });
     });
+    // Drill-in team actions (opt-in + rural flag) — stop propagation so the
+    // click doesn't also toggle the row.
+    holder.querySelectorAll("[data-optin]").forEach(function (b) {
+      b.addEventListener("click", function (e) {
+        e.stopPropagation();
+        setOptIn(b.getAttribute("data-optin"), b.getAttribute("data-on") === "1");
+      });
+    });
+    holder.querySelectorAll("[data-ruralflag]").forEach(function (b) {
+      b.addEventListener("click", function (e) {
+        e.stopPropagation();
+        savingState = "";
+        setRuralOverride(b.getAttribute("data-ruralflag"), b.getAttribute("data-on") === "1");
+      });
+    });
   }
 
   // ── apply an edit from a [data-edit] control ──────────────────────────
@@ -1028,6 +1464,13 @@
       return;
     }
     if (edit === "feeder-metric") { setFeederMetric(raw); return; }
+    if (edit === "rural-threshold") {
+      var rt = parseNum(raw);
+      if (rt == null) { render(); return; }
+      setRuralThreshold(Math.max(0, rt) / 100);
+      return;
+    }
+    if (edit === "deadline") { setDeadline(raw); return; }
   }
 
   function wire() {
@@ -1051,6 +1494,11 @@
       render();
     });
     wireSeg("cplFundYear", function (v) { state.viewSlot = v; render(); });
+    wireSeg("cplFundDisb", function (v) {
+      if (v === disbursement()) return;
+      savingState = "";
+      setDisbursement(v);
+    });
 
     // Editable inputs — commit on change (blur/Enter). savingState clears so a
     // prior "saved" note doesn't linger across a fresh edit.
@@ -1115,13 +1563,13 @@
     if (booted) { render(); return; }
     booted = true;
     loadScenario();
-    if (window.CPL_FUNDING) { render(); loadShared(); loadPerf(); return; }
+    if (window.CPL_FUNDING) { render(); loadShared(); loadPerf(); loadEligibility(); return; }
     if (window.CPL_TABS && typeof window.CPL_TABS.loadScript === "function") {
-      window.CPL_TABS.loadScript("cpl_funding_data.js", "CPL_FUNDING", function () { render(); loadShared(); loadPerf(); });
+      window.CPL_TABS.loadScript("cpl_funding_data.js", "CPL_FUNDING", function () { render(); loadShared(); loadPerf(); loadEligibility(); });
     } else {
       var s = document.createElement("script");
       s.src = "cpl_funding_data.js";
-      s.onload = function () { render(); loadShared(); loadPerf(); };
+      s.onload = function () { render(); loadShared(); loadPerf(); loadEligibility(); };
       s.onerror = render;
       document.head.appendChild(s);
     }
@@ -1133,6 +1581,18 @@
     _setShared: function (o) { SHARED = o || {}; SHARED_SAVED = clone(SHARED); },
     _setScenario: function (o) { SCENARIO = o || {}; },
     _getScenario: function () { return SCENARIO; },
-    _getShared: function () { return SHARED; }
+    _getShared: function () { return SHARED; },
+    _model: function () { _allocCache = null; return allocModel(); },
+    _alloc: function (name) { var c = baseCollege(name); return c ? collegeAlloc(c) : null; },
+    _netCollege: netCollege,
+    _setElig: function (o) {
+      o = o || {};
+      ELIG.loaded = true;
+      ELIG.coordOk = !!o.coordOk;
+      ELIG.coord = o.coord || {};
+      ELIG.coordN = Object.keys(ELIG.coord).length;
+      ELIG.optin = o.optin || {};
+      ELIG.asOf = o.asOf || null;
+    }
   };
 })();

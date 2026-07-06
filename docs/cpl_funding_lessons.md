@@ -532,3 +532,71 @@ retired (both are columns now); the feeder table gains Support/yr + window
 Total. ④ Sam's future ask noted: a PUBLIC "current metrics + allocations vs
 potential" college view once the model finalizes — colleges see where they
 stand (and each other). Tests 125; suite green.
+
+## 2026-07-06 — Session 3 (StarHaarland: the equity refinements — front-load · floor · rural allowance · eligibility badges)
+
+**(a) Learned.** The team's "yearly allocations are too small for 1–2 FTE"
+complaint decomposed into a TIMING problem and a SIZE problem once the
+distribution was computed: 65 of 115 colleges sit under a ~$150K/yr 1-FTE
+grant **per year**, but only 23 under it **per window** — so front-loading
+(a pure re-timing) fixes 42 colleges for free, and a minimum-viable floor
+fixes the residual 23 for ~3% of the pool. Cheap floor math: a per-college
+minimum funded *within* the pool is an iterative waterfall (floored colleges
+get exactly the floor; the remainder renormalizes over the other colleges'
+headcount — a re-split can push the next-smallest college under, so iterate;
+converges in a few passes, Σ = net pool by construction). A flat base grant
+to all 115 would have cost 17–34% of the pool — rejected. Also: the "rural
+designation" has NO single authoritative CCCCO list (only 13 campuses meet
+the federal definition); the honest seed is the CCCCO **Rural College
+Transfer Collaborative** cohort (10 colleges), DRAFT-labeled + overridable.
+
+**(b) State.** Shipped in one PR (all four team asks, per Sam's "Build all 4"):
+- **Front-load toggle** (`disbursement` even ⇄ frontload, three-layer config):
+  Yr 1 column carries the full window; later years render `↻ carryover`;
+  feeder pool front-loads too; window note + formula + footer explain the
+  roll-forward + close-out year (window end + 1, computed by `nextFy`).
+  Timing only — totals + per-year targets unchanged.
+- **Minimum-viable floor** (`pool.floor_window`, default $150K, 0 disables):
+  `allocModel()` waterfall + floor pool card (live top-up count/cost),
+  ⬆ row chips, drill-in "Floor applied" line (proportional-vs-floored),
+  formula renormalization sentence. At current defaults: ~24 colleges topped
+  up for ≈$1.2M within the $32.8M pool.
+- **Rural allowance** (`pool.rural_carveout` $1M deducted top-of-pool,
+  `rural_threshold` 50% editable, per-college `rural` flags + in-tab
+  override when unlocked): each rural college can EARN carve-out ÷ #rural by
+  reaching ≥ threshold of its measurable Year-1 priority targets
+  (`ruralAttainment` — per-MAP actuals ÷ target, suppressed/absent = pending,
+  never a silent zero); rural section table + 🌲 chips; qualifier count in
+  the tfoot. Roster = the 10 RCTC colleges, DRAFT provenance in-data.
+- **Eligibility badges** (informational — dollars unchanged): ① CPL
+  Coordinator in MAP — live via the new PII-free anon
+  `map_coordinator_summary()` RPC (boolean per college; names/emails stay
+  reviewer-gated); the sync now pulls `CPL Coordinator (+Email)` from the
+  Contacts view (field-map + PII-safe coverage count). ② Participation
+  request by 2026-09-01 (editable) — new `cpl_funding_participation` table
+  (anon read; write + DELETE team-phrase/reviewer — the waa DELETE-widening
+  precedent; the tab re-fetches after every write per #598). Elig column
+  (✓/◐/○), summary block with live counts, drill-in opt-in + rural-flag
+  buttons when unlocked. Name join through `cplCollegeShort()` short-name
+  space on both sides.
+- Migrations applied live: `map_contacts_cpl_coordinator`,
+  `map_coordinator_summary_rpc`, `cpl_funding_participation`. Schemas of
+  record updated/added (`map/supabase_map_contacts.sql`,
+  `funding/supabase_cpl_funding_participation.sql`).
+- Tests: `tests/cpl_funding.test.js` 125 → **182** assertions (Part D:
+  waterfall conservation/floor/proportionality, front-load timing +
+  three-layer resolution, rural gate + threshold edit + overrides,
+  eligibility badges + never-move-dollars). Full suite green.
+
+**(c) Roadmap.** ① The rural roster is a DRAFT — Sam's team trues it up
+(in-tab override or the data file). ② The eligibility gate is badge-only;
+when the policy finalizes, an "exclude ineligible + hold in reserve" toggle
+is a small extension of `allocModel()`. ③ Coordinator coverage populates on
+the next `map-users-sync` run — the real N-of-115 number then informs how
+hard a Sept-1 deadline bites. ④ Rural attainment currently measures only
+Y1-P1 (the one measurable metric) — it widens automatically as
+MEASURABILITY feeds land.
+
+**(d) Next concrete step.** Dispatch `map-users-sync.yml` (done post-merge)
+→ read the coordinator coverage count → tell Sam whether Sept 1 is a cliff
+or a formality.
