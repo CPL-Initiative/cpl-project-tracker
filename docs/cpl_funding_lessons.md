@@ -600,3 +600,52 @@ MEASURABILITY feeds land.
 **(d) Next concrete step.** Dispatch `map-users-sync.yml` (done post-merge)
 → read the coordinator coverage count → tell Sam whether Sept 1 is a cliff
 or a formality.
+
+### 2026-07-06 evening — Session 3 continued (Sam's 8 + 3 refinements)
+
+One more batch, same session, all shipped together:
+
+1. **County column hidden** (college table) — the data stays in the drill-in
+   "County context" line, the search haystack, and the CSV export.
+2. **Count note** now reads "… · plus 4 noncredit campuses (74,968 students)
+   funded via the $1,000,000 carve-out" — computed live from the feeder
+   roster, never hardcoded.
+3. **Eligible† column** next to **Transcribed†** (relabeled from "CPL
+   students†"): the perf builder gained **PE = distinct students with
+   Eligible Credits > 0** (context metric, NOT a priority; same suppression);
+   "Eligible Credits" was already in the fetched view — zero new PII surface.
+   Cells show "—" until the next daily cron publishes the new artifact.
+4. **Floor ≠ higher targets, clarified in-tab** (Sam's SC): targets are
+   headcount-based (`target % × the college's own MAP headcount`) — the floor
+   raises funding, not the bar. Note added to the formula box + the floored
+   drill-in line.
+5. **⬇ Excel + ⬇ PDF** toolbar buttons: CSV (BOM, meta line, includes the
+   hidden County/working-adults + rural/floor/eligibility flags; SYSTEM row
+   carries the noncredit-inclusive headcount) and a **print-window** export
+   (clone the live tab, flatten inputs to text, strip chrome → browser
+   Print → Save as PDF — the fact-sheet pattern; literal seal-blue in the
+   transient doc since it can't see the app's tokens). No xlsx library added.
+6. **CO Monitor's note** per college in the drill-in — new gated
+   `cpl_funding_notes` table (**read AND write** reviewer/team-phrase; the
+   page is public, candid commentary isn't). Editable textarea when
+   team-editing is on; read-only text for phrase-holders; invisible to
+   anonymous visitors. Flip `cfn_select` to `using(true)` if the team ever
+   wants them public.
+7. **Seal-blue retheme**: the glass theme had redefined `--navy-primary` to
+   `#1C1C1A` (charcoal — reads black), so every "navy" background on the tab
+   was black. Backgrounds (hero card, table headers, active seg, authbar
+   buttons, tfoot rule) now use the existing **`--seal-blue` (#002F6D)**
+   token. Text usages stay charcoal per the theme.
+8. **Named scenarios**: localStorage store v2 (`cpl_funding_scenarios_v2`,
+   `{active, scenarios:{name → override}}`), v1 auto-migrates into
+   "Scenario 1"; authbar selector + ＋ New (blank slate = shared model) +
+   ✕ Delete; blank slots evaporate; the phrase-unlock promotion flow is
+   unchanged and promotes the ACTIVE scenario. Per-browser by design —
+   shared/team scenario slots would live in `cpl_funding_config` keyed by
+   name (recommended later if the team wants cross-device scenarios).
+9. **Alignment polish** (Sam's screenshot): pool-card values centered
+   (incl. the editable inputs), priority labels left with the tranche share
+   staying right, priority-box numeric inputs centered.
+
+Tests 184 → **218**. Post-merge: dispatch `daily-dashboard.yml` so the perf
+artifact picks up PE same-day.

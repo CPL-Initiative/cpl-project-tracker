@@ -165,6 +165,12 @@ function boot(window) {
 }
 function click(window, el) { el.dispatchEvent(new window.Event("click", { bubbles: true })); }
 function commit(window, el, v) { el.value = v; el.dispatchEvent(new window.Event("change")); }
+// Named-scenario store (v2): return the "Scenario 1" slot's override (or null).
+function scenSlot(window, name) {
+  const raw = window.localStorage.getItem("cpl_funding_scenarios_v2");
+  if (!raw) return null;
+  return JSON.parse(raw).scenarios[name || "Scenario 1"] || null;
+}
 // There can be >1 .cplfund-foot (the feeder note + the main footer); scan all.
 function footText(doc) {
   return Array.from(doc.querySelectorAll(".cplfund-foot")).map(function (e) { return e.textContent; }).join(" ");
@@ -274,7 +280,7 @@ function footText(doc) {
   check("still a 2-year window (per-year unchanged)",
     doc.querySelector(".cplfund-card.hero .l").textContent.indexOf("$" + Math.round(perYear).toLocaleString("en-US")) !== -1);
   check("year change persisted to the local scenario",
-    !!window.localStorage.getItem("cpl_funding_scenario_v1"));
+    !!scenSlot(window));
 }
 
 // C3 — year filter: switches priority metrics (and the college P1/P2/P3 columns
@@ -325,7 +331,7 @@ function footText(doc) {
   });
   check("editing NOCE headcount clears its est. flag", noceRow2.querySelector(".cplfund-est") === null);
   check("feeder headcount edit persisted to the scenario",
-    JSON.parse(window.localStorage.getItem("cpl_funding_scenario_v1")).feeders[0].headcount === 40000);
+    scenSlot(window).feeders[0].headcount === 40000);
 
   // Carve-out edit reduces the college tranche.
   const carveInput = doc.querySelector('input[data-edit="pool"][data-field="feeder_carveout"]');
@@ -342,7 +348,7 @@ function footText(doc) {
   // Edit P1 metric text.
   const metric = doc.querySelector('input[data-edit="metric"][data-slot="1"][data-idx="0"]');
   commit(window, metric, "Custom metric text");
-  const scen = JSON.parse(window.localStorage.getItem("cpl_funding_scenario_v1"));
+  const scen = scenSlot(window);
   check("editing a metric persists to the scenario", scen.yearPriorities["1"][0].metric === "Custom metric text");
   check("the edited metric re-renders",
     doc.querySelector('input[data-edit="metric"][data-slot="1"][data-idx="0"]').value === "Custom metric text");
@@ -362,10 +368,10 @@ function footText(doc) {
     doc.querySelector("#cplFundTable tbody tr td.tot").textContent === totalBefore);
 
   // Scenario status + reset.
-  check("auth bar shows the local-scenario mode when edited",
-    doc.querySelector(".cplfund-authbar .mode.scenario").textContent.indexOf("Local scenario") !== -1);
+  check("auth bar shows the local-scenario mode when edited (named slot)",
+    doc.querySelector(".cplfund-authbar .mode.scenario").textContent.indexOf("Scenario 1") !== -1);
   click(window, doc.getElementById("cplFundReset"));
-  check("reset clears the scenario (localStorage gone)", !window.localStorage.getItem("cpl_funding_scenario_v1"));
+  check("reset clears the scenario (localStorage slot gone)", !scenSlot(window));
   check("reset restores the baked P1 metric",
     doc.querySelector('input[data-edit="metric"][data-slot="1"][data-idx="0"]').value === "Headcount with any transcribed CPL");
 }
@@ -408,7 +414,7 @@ function footText(doc) {
   commit(window, doc.querySelector('input[data-edit="metric"][data-slot="1"][data-idx="0"]'), "TEAM edit");
   check("unlocked edit writes to the SHARED store",
     window.CPL_FUNDING_TAB._getShared().yearPriorities["1"]["0"].metric === "TEAM edit");
-  check("unlocked edit did NOT write a local scenario", !window.localStorage.getItem("cpl_funding_scenario_v1"));
+  check("unlocked edit did NOT write a local scenario", !scenSlot(window));
   // Reset clears the shared config, not a scenario.
   click(window, doc.getElementById("cplFundReset"));
   check("reset (unlocked) clears the shared config",
@@ -441,13 +447,12 @@ function footText(doc) {
   window.CPL_TEAM_PHRASE = mock;
   const doc = boot(window);   // locked (no pass) → scenario mode
   commit(window, doc.querySelector('input[data-edit="metric"][data-slot="1"][data-idx="0"]'), "explored metric");
-  check("locked edit is a local scenario", !!window.localStorage.getItem("cpl_funding_scenario_v1"));
+  check("locked edit is a local scenario", !!scenSlot(window));
   // Unlock → the scenario promotes into SHARED and clears.
   click(window, doc.querySelector(".mock-unlock"));
   check("unlock promotes the scenario into the shared config",
     window.CPL_FUNDING_TAB._getShared().yearPriorities["1"]["0"].metric === "explored metric");
-  check("unlock clears the local scenario after promotion",
-    !window.localStorage.getItem("cpl_funding_scenario_v1"));
+  check("unlock clears the local scenario after promotion", !scenSlot(window));
   check("promoted model still renders the edited value",
     doc.querySelector('input[data-edit="metric"][data-slot="1"][data-idx="0"]').value === "explored metric");
   delete window.CPL_TEAM_PHRASE;
@@ -530,7 +535,8 @@ function footText(doc) {
   check("tfoot carries the deduplicated statewide any-transcribed actual (20,000)",
     doc.querySelector("#cplFundTable tfoot").textContent.indexOf("20,000") !== -1);
   check("footer explains the actuals basis + suppression",
-    footText(doc).indexOf("deduplicates across colleges") !== -1);
+    footText(doc).indexOf("deduplicate across colleges") !== -1 &&
+    footText(doc).indexOf("ELIGIBLE") !== -1 && footText(doc).indexOf("TRANSCRIBED") !== -1);
   check("a non-empty unmatched bucket is surfaced in the footer",
     footText(doc).indexOf("Mystery University") !== -1);
   const rowsArr = Array.from(doc.querySelectorAll("#cplFundTable tbody tr"));
@@ -808,6 +814,155 @@ check("consumer joins college names through cplCollegeShort",
   /cplCollegeShort/.test(consumerSrc));
 check("PII guard: consumer never renders coordinator names/emails (boolean only)",
   /has_coordinator/.test(consumerSrc) && !/coordinator_email/.test(consumerSrc));
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Part E — the 2026-07-06 evening batch (Sam's 8+3): county hidden, eligible
+// column, count note, floor-targets note, seal-blue, scenarios, exports,
+// monitor notes, alignment polish.
+// ─────────────────────────────────────────────────────────────────────────────
+
+// E1 — table refinements.
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  check("County column is hidden (data stays in drill-in + CSV)",
+    !doc.querySelector('#cplFundTable th[data-sort="county"]'));
+  check("Eligible† column renders next to Transcribed†",
+    !!doc.querySelector('th[data-sort="pea"]') && !!doc.querySelector('th[data-sort="p3a"]') &&
+    doc.querySelector('th[data-sort="p3a"]').textContent.indexOf("Transcribed") !== -1);
+  check("count note includes the noncredit campuses",
+    doc.getElementById("cplFundCount").textContent.indexOf("noncredit campuses") !== -1 &&
+    doc.getElementById("cplFundCount").textContent.indexOf("carve-out") !== -1);
+  check("floor note: funding raised, targets not (formula)",
+    doc.querySelector(".cplfund-formula").textContent.indexOf("not its targets") !== -1);
+  // Drill-in county context survives the hidden column.
+  click(window, doc.querySelector("tr.cplfund-row"));
+  check("drill-in still shows the county context",
+    doc.querySelector("tr.cplfund-detail").textContent.indexOf("County context") !== -1);
+  // Eligible actuals render from the perf artifact when it carries pe.
+  window.CPL_FUNDING_PERF = {
+    as_of: "2026-07-06", suppress_below: 5,
+    statewide: { pe: 50000, p2: 100, p3: 20000 },
+    colleges: { "Alameda": { pe: 777, p2: 10, p3: 300 } }, unmatched: {}
+  };
+  window.CPL_FUNDING_TAB.render();
+  const alamedaRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr")).find(function (tr) {
+    return tr.textContent.indexOf("Alameda") !== -1;
+  });
+  check("Eligible cell shows the pe actual", alamedaRow.textContent.indexOf("777") !== -1);
+  check("SYSTEM row shows the statewide eligible figure",
+    doc.querySelector("#cplFundTable tfoot").textContent.indexOf("50,000") !== -1);
+  delete window.CPL_FUNDING_PERF;
+}
+
+// E2 — CO seal-blue on the previously-black backgrounds.
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const css = doc.getElementById("cpl-funding-css").textContent;
+  ["card.hero", "table th", "seg button.on"].forEach(function (which) {});
+  check("hero card background = seal blue", /cplfund-card\.hero \{ background: var\(--seal-blue\)/.test(css));
+  check("table header background = seal blue", /cplfund-table th \{ background: var\(--seal-blue\)/.test(css));
+  check("active seg button background = seal blue", /seg button\.on \{ background: var\(--seal-blue\)/.test(css));
+  check("no black/charcoal backgrounds remain (navy-primary only as text color)",
+    !/background: var\(--navy-primary\)/.test(css));
+  // Alignment polish (Sam's screenshot): pool values centered, priority labels
+  // left, small numeric inputs centered.
+  check("pool-card values are centered", /cplfund-card \.v \{[^}]*text-align: center/.test(css));
+  check("priority labels are left-aligned (share stays floated right)",
+    /cplfund-prio \.p h4 \{[^}]*text-align: left/.test(css) && /\.share \{ float: right/.test(css));
+  check("priority-box inputs are centered", /cplfund-ed-s \{[^}]*text-align: center/.test(css));
+}
+
+// E3 — named scenario slots.
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  check("scenario selector renders in locked mode",
+    !!doc.getElementById("cplFundScenSel") && !!doc.getElementById("cplFundScenNew"));
+  // Edit in Scenario 1, then create Scenario 2 — a blank slate.
+  commit(window, doc.querySelector('input[data-edit="pool"][data-field="feeder_carveout"]'), "2,000,000");
+  check("edit lands in the active slot", scenSlot(window, "Scenario 1").pool.feeder_carveout === 2000000);
+  click(window, doc.getElementById("cplFundScenNew"));
+  check("new scenario is active + blank (back to the shared/baked model)",
+    T._scenario().name === "Scenario 2" && Object.keys(T._getScenario()).length === 0);
+  check("hero pool shows baked value again in Scenario 2",
+    doc.querySelector(".cplfund-card.hero .v").textContent.indexOf(
+      (D.pool.college_funding_before_feeder - D.pool.feeder_carveout - D.pool.rural_carveout).toLocaleString("en-US")) !== -1);
+  // Give Scenario 2 its own edit so both slots persist in the store.
+  commit(window, doc.querySelector('input[data-edit="pool"][data-field="feeder_carveout"]'), "3,000,000");
+  check("Scenario 2 keeps its own edit", scenSlot(window, "Scenario 2").pool.feeder_carveout === 3000000);
+  // Switch back — Scenario 1's edits return.
+  const sel = doc.getElementById("cplFundScenSel");
+  sel.value = "Scenario 1";
+  sel.dispatchEvent(new window.Event("change"));
+  check("switching back restores Scenario 1's edits",
+    T._getScenario().pool.feeder_carveout === 2000000);
+  // Delete Scenario 1 → falls back to the remaining slot.
+  click(window, doc.getElementById("cplFundScenDel"));
+  check("delete removes the slot and switches away",
+    T._scenario().name === "Scenario 2" && !scenSlot(window, "Scenario 1") &&
+    T._getScenario().pool.feeder_carveout === 3000000);
+  // Legacy v1 migration.
+  const dom2 = freshDom();
+  dom2.window.localStorage.setItem("cpl_funding_scenario_v1", JSON.stringify({ disbursement: "frontload" }));
+  const doc2 = boot(dom2.window);
+  check("legacy v1 scenario migrates into Scenario 1",
+    dom2.window.CPL_FUNDING_TAB._getScenario().disbursement === "frontload" &&
+    doc2.querySelector('#cplFundDisb button[data-val="frontload"]').className === "on");
+}
+
+// E4 — exports.
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  check("toolbar renders ⬇ Excel + ⬇ PDF buttons",
+    !!doc.getElementById("cplFundCsv") && !!doc.getElementById("cplFundPdf"));
+  const csv = T._csv();
+  const lines = csv.split("\r\n");
+  check("CSV: meta line + header + one line per college + SYSTEM",
+    lines.length === 2 + D.colleges.length + 1 && lines[0].indexOf("DRAFT model") !== -1);
+  check("CSV: header carries County + Eligible/Transcribed + eligibility + rural/floor",
+    lines[1].indexOf("County") !== -1 && lines[1].indexOf("Eligible students") !== -1 &&
+    lines[1].indexOf("Rural") !== -1 && lines[1].indexOf("Floor applied") !== -1);
+  check("CSV: a rural floored college carries its flags",
+    lines.some(function (l) { return l.indexOf("Feather River") !== -1 && l.indexOf("rural") !== -1 && l.indexOf("floor") !== -1; }));
+  check("CSV: SYSTEM row includes the noncredit-inclusive headcount",
+    lines[lines.length - 1].indexOf(String(D.system.headcount + D.feeders.reduce(function (s, f) { return s + f.headcount; }, 0))) !== -1);
+  check("CSV: no HTML entities leak", csv.indexOf("&lt;") === -1 && csv.indexOf("<span") === -1);
+  const ph = T._printHtml();
+  check("print HTML: standalone doc with the seal-blue header style",
+    ph.indexOf("<!doctype html>") === 0 && ph.indexOf("#002F6D") !== -1);
+  check("print HTML: inputs flattened to text (no form controls)",
+    ph.indexOf("<input") === -1 && ph.indexOf("<select") === -1 && ph.indexOf("<button") === -1);
+  check("print HTML: the college table content survives",
+    ph.indexOf("SYSTEM (statewide)") !== -1);
+}
+
+// E5 — CO Monitor's notes (gated).
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  check("consumer targets the gated cpl_funding_notes table", /cpl_funding_notes/.test(consumerSrc));
+  // Anonymous: no notes fetched → no note line in the drill-in.
+  click(window, doc.querySelector("tr.cplfund-row"));
+  check("anonymous drill-in shows no monitor-note UI",
+    doc.querySelector("tr.cplfund-detail").textContent.indexOf("CO Monitor") === -1);
+  // Phrase-holder (read-only view): a fetched note renders as text.
+  T._setNotes({ "Alameda": { college: "Alameda", note: "Coordinator hire in progress.", updated_at: "2026-07-06T20:00:00Z" } });
+  T.render();
+  window.eval('CPL_FUNDING_TAB._state.open["c:' + D.colleges.find(function (c) { return c.college === "Alameda"; }).order + '"] = true;');
+  T.render();
+  const detail = Array.from(doc.querySelectorAll("tr.cplfund-detail")).find(function (tr) {
+    return tr.textContent.indexOf("Alameda") !== -1 || tr.textContent.indexOf("Coordinator hire") !== -1;
+  });
+  check("fetched note renders read-only in the drill-in",
+    detail && detail.textContent.indexOf("Coordinator hire in progress.") !== -1 &&
+    !detail.querySelector("textarea"));
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 let pass = 0;
