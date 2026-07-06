@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-06T15:57:50.769651+00:00",
+  "scraped_at": "2026-07-06T22:11:44.624061+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25047,
+    "jst": 25064,
     "star_colleges": 50
   },
   "computed_star_colleges": 50,
@@ -460,6 +460,16 @@
       "jst": 136,
       "star": false
     },
+    "MiraCosta College": {
+      "vets": 619,
+      "jst": 3,
+      "star": false
+    },
+    "Palomar College": {
+      "vets": 1019,
+      "jst": 1,
+      "star": false
+    },
     "Los Angeles City College": {
       "vets": 301,
       "jst": 150,
@@ -485,6 +495,11 @@
       "jst": 46,
       "star": false
     },
+    "Ohlone College": {
+      "vets": 49,
+      "jst": 27,
+      "star": false
+    },
     "Columbia College": {
       "vets": 33,
       "jst": 21,
@@ -500,11 +515,6 @@
       "jst": 10,
       "star": false
     },
-    "Ohlone College": {
-      "vets": 49,
-      "jst": 10,
-      "star": false
-    },
     "Taft College": {
       "vets": 23,
       "jst": 10,
@@ -513,11 +523,6 @@
     "Feather River College": {
       "vets": 13,
       "jst": 9,
-      "star": false
-    },
-    "MiraCosta College": {
-      "vets": 619,
-      "jst": 3,
       "star": false
     },
     "Imperial Valley College": {
@@ -550,21 +555,6 @@
       "jst": 1,
       "star": false
     },
-    "Palomar College": {
-      "vets": 1019,
-      "jst": 1,
-      "star": false
-    },
-    "College of Marin": {
-      "vets": 69,
-      "jst": 0,
-      "star": false
-    },
-    "College of the Siskiyous": {
-      "vets": 77,
-      "jst": 0,
-      "star": false
-    },
     "Lake Tahoe Community College": {
       "vets": 92,
       "jst": 0,
@@ -582,6 +572,16 @@
     },
     "Folsom Lake College": {
       "vets": 65,
+      "jst": 0,
+      "star": false
+    },
+    "College of Marin": {
+      "vets": 69,
+      "jst": 0,
+      "star": false
+    },
+    "College of the Siskiyous": {
+      "vets": 77,
       "jst": 0,
       "star": false
     }
