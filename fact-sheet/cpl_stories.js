@@ -6,7 +6,7 @@ window.CPL_STORIES = {
  "stories": [
   {
    "name": "Brody",
-   "img": "https://staging2.map.rccd.edu/wp-content/uploads/2026/05/Brody.png",
+   "img": "https://staging2.map.rccd.edu/wp-content/uploads/2026/07/Brody_withBG.png",
    "pathway": "Fire Technology Worker → Chaffey Graduate",
    "quote": "You don't know until you try. It's worth the conversation.",
    "meta": "Chaffey College"
@@ -20,7 +20,7 @@ window.CPL_STORIES = {
   },
   {
    "name": "Christian",
-   "img": "https://staging2.map.rccd.edu/wp-content/uploads/2026/05/Christian.png",
+   "img": "https://staging2.map.rccd.edu/wp-content/uploads/2026/07/Christian_withBG.png",
    "pathway": "High School Student → Chaffey College Student",
    "quote": "I was really happy and excited since I didn't have to take those classes again.",
    "meta": "Chaffey College"
