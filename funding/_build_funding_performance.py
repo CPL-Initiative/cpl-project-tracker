@@ -13,6 +13,10 @@ Metrics (per docs/funding_priority_metrics_scope.md; forks ratified by Sam
   P2 (access)   = distinct students with Transcribed Credits >= 6
   P3 (capacity) = distinct students with Transcribed Credits > 0  (MAP half;
                   the "and MIS" cross-check has no feed yet)
+  PE (context, added 2026-07-06 per Sam's funding-tab ask) = distinct students
+                  with Eligible Credits > 0 — credit identified in MAP, whether
+                  or not transcribed yet. NOT a priority metric; feeds the
+                  funding table's "Eligible†" column next to "Transcribed†".
   P1 (completion) is a deliberate data gap — see
   docs/kb-notes/reference-p1-completion-data-gap.md. Not emitted.
 
@@ -118,6 +122,7 @@ def main():
     cm = ds["col_map"]
     i_col = cm.get("College", 0)
     i_tcr = cm.get("Transcribed Credits")
+    i_ecr = cm.get("Eligible Credits")
     i_pot = cm.get("Potential Student")
     i_test = cm.get("Test Student")
     i_sid = cm.get("MAP Internal StudentID")
@@ -126,11 +131,12 @@ def main():
         return
 
     resolve = _name_resolver()
-    seen = {"p2": set(), "p3": set()}          # per-(college,sid) dedupe
-    state_seen = {"p2": set(), "p3": set()}    # statewide distinct (cross-college dedupe by sid)
-    counts = {}                                 # funding-name -> {p2,p3}
+    metrics = ("pe", "p2", "p3")
+    seen = {m: set() for m in metrics}          # per-(college,sid) dedupe
+    state_seen = {m: set() for m in metrics}    # statewide distinct (cross-college dedupe by sid)
+    counts = {}                                 # funding-name -> {pe,p2,p3}
     unmatched = {}
-    state = {"p2": 0, "p3": 0}
+    state = {m: 0 for m in metrics}
     rowno = 0
     for row in ds["rows"]:
         rowno += 1
@@ -145,14 +151,18 @@ def main():
             tcr = float((row[i_tcr] or "0").strip() or 0)
         except ValueError:
             continue
-        if tcr <= 0:
+        try:
+            ecr = float((row[i_ecr] or "0").strip() or 0) if i_ecr is not None else 0.0
+        except ValueError:
+            ecr = 0.0
+        if tcr <= 0 and ecr <= 0:
             continue
         sid = (row[i_sid] or "").strip()
         fname = resolve(college)
         bucket = counts if fname else unmatched
         key = fname or college
-        rec = bucket.setdefault(key, {"p2": 0, "p3": 0})
-        for metric, hit in (("p3", True), ("p2", tcr >= P2_MIN_UNITS)):
+        rec = bucket.setdefault(key, {m: 0 for m in metrics})
+        for metric, hit in (("pe", ecr > 0), ("p3", tcr > 0), ("p2", tcr >= P2_MIN_UNITS)):
             if not hit:
                 continue
             k = (key, sid) if sid else (key, f"row{rowno}")
@@ -168,8 +178,8 @@ def main():
         outb = {}
         for name, rec in sorted(bucket.items()):
             o = {}
-            for metric in ("p2", "p3"):
-                n = rec[metric]
+            for metric in metrics:
+                n = rec.get(metric, 0)
                 if 0 < n < SUPPRESS_BELOW:
                     o[metric] = None
                     o[metric + "_suppressed"] = True
@@ -182,7 +192,8 @@ def main():
         "as_of": (ds["generated_at"] or "").split("T")[0] or date.today().isoformat(),
         "basis": ("MAP " + VIEW + " — distinct students per college; "
                   "Test/Potential students and test colleges excluded; "
-                  "P2 = transcribed CPL units >= 6, P3 = any transcribed CPL (per MAP)"),
+                  "P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, "
+                  "PE = any eligible CPL units identified (context, not a priority metric) (per MAP)"),
         "suppress_below": SUPPRESS_BELOW,
         "statewide": state,
         "colleges": suppress(counts),
@@ -190,7 +201,8 @@ def main():
     }
     with open(out, "w", encoding="utf-8") as f:
         f.write(
-            "// CPL funding priority-metric actuals (P2/P3) — generated daily by\n"
+            "// CPL funding priority-metric actuals (P2/P3 + the PE eligible-students\n"
+            "// context column) — generated daily by\n"
             "// funding/_build_funding_performance.py from the transient CustomReport\n"
             "// pull. Aggregate, small-cell-suppressed counts ONLY (see\n"
             "// docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.\n"

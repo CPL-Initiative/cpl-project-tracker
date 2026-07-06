@@ -61,10 +61,10 @@
     ".cplfund h3 { color: var(--navy-primary); margin: 22px 0 10px; font-size: 1.15rem; }",
     ".cplfund-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }",
     ".cplfund-card { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }",
-    ".cplfund-card .v { font-size: 1.35rem; font-weight: 700; color: var(--navy-primary); }",
+    ".cplfund-card .v { font-size: 1.35rem; font-weight: 700; color: var(--navy-primary); text-align: center; }",
     ".cplfund-card .v.neg { color: var(--red-alert); }",
     ".cplfund-card .l { font-size: .8rem; color: var(--text-muted); margin-top: 2px; line-height: 1.35; }",
-    ".cplfund-card.hero { background: var(--navy-primary); border-color: var(--navy-primary); }",
+    ".cplfund-card.hero { background: var(--seal-blue); border-color: var(--seal-blue); }",
     ".cplfund-card.hero .v { color: var(--gold-accent); }",
     ".cplfund-card.hero .l { color: var(--light-blue); }",
     ".cplfund-card.feeder { border-left: 4px solid var(--green-progress); }",
@@ -72,7 +72,7 @@
     ".cplfund-card.floor { border-left: 4px solid var(--navy-secondary); }",
     ".cplfund-prio { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }",
     ".cplfund-prio .p { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--gold-accent); border-radius: 8px; padding: 14px 16px; }",
-    ".cplfund-prio .p h4 { margin: 0 0 6px; color: var(--navy-primary); font-size: 1rem; }",
+    ".cplfund-prio .p h4 { margin: 0 0 6px; color: var(--navy-primary); font-size: 1rem; text-align: left; }",
     ".cplfund-prio .p .share { float: right; font-weight: 700; color: var(--green-progress); }",
     ".cplfund-prio .p .desc { font-size: .9rem; margin: 0 0 8px; }",
     ".cplfund-prio .p .metric { font-size: .78rem; color: var(--text-muted); border-top: 1px dashed var(--border-strong); padding-top: 6px; }",
@@ -86,11 +86,11 @@
     ".cplfund-seg { display: inline-flex; border: 1px solid var(--border-strong); border-radius: 6px; overflow: hidden; }",
     ".cplfund-seg button { background: var(--surface-opaque); color: var(--text-body); border: none; padding: 8px 12px; font-size: .85rem; cursor: pointer; font-family: inherit; }",
     ".cplfund-seg button + button { border-left: 1px solid var(--border-strong); }",
-    ".cplfund-seg button.on { background: var(--navy-primary); color: var(--white); font-weight: 600; }",
+    ".cplfund-seg button.on { background: var(--seal-blue); color: var(--white); font-weight: 600; }",
     ".cplfund-count { font-size: .85rem; color: var(--text-muted); }",
     ".cplfund-tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-opaque); }",
     "table.cplfund-table { border-collapse: collapse; width: 100%; font-size: .82rem; }",
-    ".cplfund-table th { background: var(--navy-primary); color: var(--white); padding: 6px 7px; text-align: right; white-space: nowrap; cursor: pointer; user-select: none; position: sticky; top: 0; }",
+    ".cplfund-table th { background: var(--seal-blue); color: var(--white); padding: 6px 7px; text-align: right; white-space: nowrap; cursor: pointer; user-select: none; position: sticky; top: 0; }",
     ".cplfund-table th.t, .cplfund-table td.t { text-align: left; }",
     ".cplfund-table th .arr { font-size: .7rem; opacity: .85; }",
     ".cplfund-table td { padding: 5px 7px; border-top: 1px solid var(--border); text-align: right; white-space: nowrap; }",
@@ -99,7 +99,7 @@
     ".cplfund-table tbody tr:nth-child(even) { background: var(--surface-subtle); }",
     ".cplfund-table tbody tr:hover { background: var(--surface-muted); }",
     ".cplfund-table td.tot, .cplfund-table tfoot td { font-weight: 700; color: var(--navy-primary); }",
-    ".cplfund-table tfoot td { border-top: 2px solid var(--navy-primary); background: var(--surface-muted); }",
+    ".cplfund-table tfoot td { border-top: 2px solid var(--seal-blue); background: var(--surface-muted); }",
     ".cplfund-table td .sub { display: block; font-weight: 400; font-size: .75rem; color: var(--text-faint); }",
     ".cplfund-caret { display: inline-block; width: 1em; color: var(--text-faint); transition: transform .12s; }",
     "tr.cplfund-open .cplfund-caret { transform: rotate(90deg); }",
@@ -115,7 +115,7 @@
     ".cplfund-authbar .mode { font-weight: 600; }",
     ".cplfund-authbar .mode.shared { color: var(--green-progress); }",
     ".cplfund-authbar .mode.scenario { color: var(--navy-secondary); }",
-    ".cplfund-authbar button.rst, .cplfund-authbar button.lock { background: var(--navy-primary); color: var(--white); border: none; border-radius: 6px; padding: 4px 10px; cursor: pointer; font-size: .8rem; font-family: inherit; }",
+    ".cplfund-authbar button.rst, .cplfund-authbar button.lock { background: var(--seal-blue); color: var(--white); border: none; border-radius: 6px; padding: 4px 10px; cursor: pointer; font-size: .8rem; font-family: inherit; }",
     ".cplfund-authbar button.rst.warn { background: var(--red-alert); }",
     ".cplfund-saving { font-size: .78rem; color: var(--text-faint); }",
     ".cplfund-saving.err { color: var(--red-alert); font-weight: 600; }",
@@ -124,10 +124,10 @@
     ".cplfund-years label { font-size: .85rem; color: var(--text-muted); display: inline-flex; align-items: center; gap: 6px; }",
     ".cplfund-years select, .cplfund-ed-sel { padding: 5px 8px; border: 1px solid var(--border-strong); border-radius: 6px; font-size: .85rem; font-family: inherit; background: var(--surface-opaque); color: var(--text-body); }",
     // ── editable fields ──
-    ".cplfund-ed { font-size: 1.25rem; font-weight: 700; color: var(--navy-primary); border: none; border-bottom: 2px dashed var(--border-strong); background: transparent; width: 100%; padding: 0 0 2px; font-family: inherit; }",
+    ".cplfund-ed { font-size: 1.25rem; font-weight: 700; color: var(--navy-primary); border: none; border-bottom: 2px dashed var(--border-strong); background: transparent; width: 100%; padding: 0 0 2px; font-family: inherit; text-align: center; }",
     ".cplfund-ed:focus { outline: none; border-bottom-color: var(--gold-accent); background: var(--surface-subtle); }",
     ".cplfund-ed.neg { color: var(--red-alert); }",
-    ".cplfund-ed-s { width: 68px; font-size: .85rem; font-weight: 700; color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 4px; padding: 2px 6px; text-align: right; background: var(--surface-opaque); font-family: inherit; }",
+    ".cplfund-ed-s { width: 68px; font-size: .85rem; font-weight: 700; color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 4px; padding: 2px 6px; text-align: center; background: var(--surface-opaque); font-family: inherit; }",
     ".cplfund-ed-s:focus { outline: none; border-color: var(--gold-accent); }",
     ".cplfund-ed-t { width: 100%; font-size: inherit; color: inherit; border: 1px solid transparent; border-radius: 4px; padding: 2px 4px; background: var(--surface-opaque); font-family: inherit; }",
     ".cplfund-ed-t:hover { border-color: var(--border); }",
@@ -141,6 +141,9 @@
     ".cplfund-elig .req { margin: 4px 0; }",
     ".cplfund-optbtn { background: var(--surface-opaque); color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 8px; cursor: pointer; font-size: .75rem; font-family: inherit; margin-left: 6px; }",
     ".cplfund-optbtn:hover { border-color: var(--gold-accent); }",
+    ".cplfund-notewrap { grid-column: 1 / -1; }",
+    ".cplfund-note { width: 100%; max-width: 560px; font-family: inherit; font-size: .83rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 4px 8px; vertical-align: middle; }",
+    ".cplfund-note:focus { outline: none; border-color: var(--gold-accent); }",
     ".cplfund-draftchip { display: inline-block; margin-left: 10px; vertical-align: middle; background: var(--mustard-fill); color: var(--text-strong); font-size: .42em; font-weight: 700; letter-spacing: .08em; padding: 3px 10px; border-radius: 12px; text-transform: uppercase; }",
     "@media (max-width: 700px) { .cplfund-toolbar input[type=search] { min-width: 140px; flex: 1; } }"
   ].join("\n");
@@ -189,26 +192,73 @@
   // SHARED = the team-phrase-persisted model everyone sees; SCENARIO = an
   // anonymous per-browser what-if. An edit writes to SHARED when unlocked,
   // else to SCENARIO. Effective value per field = SCENARIO ?? SHARED ?? BASE.
-  var SCENARIO_KEY = "cpl_funding_scenario_v1";
+  var SCENARIO_KEY = "cpl_funding_scenario_v1";        // legacy single-slot key (migrated → v2)
+  var SCENARIOS_KEY = "cpl_funding_scenarios_v2";      // {active, scenarios:{name → override}}
   var SHARED = {};          // fetched from Supabase (or {})
   var SHARED_SAVED = {};    // last server-confirmed copy (for rollback)
-  var SCENARIO = {};        // localStorage
+  var SCENARIO = {};        // the ACTIVE scenario's override (localStorage-backed)
+  var scenarioName = "Scenario 1";
+  var scenarioStore = { active: "Scenario 1", scenarios: {} };
   var remoteLoaded = false; // whether the shared fetch has resolved
 
   function tp() { return window.CPL_TEAM_PHRASE || null; }
   function unlocked() { var t = tp(); return !!(t && t.session()); }
   function activeOverride() { return unlocked() ? SHARED : SCENARIO; }
 
+  // Named per-browser scenario slots (Sam, 2026-07-06). The v1 single slot
+  // migrates into "Scenario 1"; each slot is a full override object, so
+  // switching scenarios swaps the whole what-if layer at once. Per-browser
+  // by design — a scenario stays a personal exploration until the team
+  // phrase promotes it into the shared config (unchanged promotion flow).
   function loadScenario() {
-    try { SCENARIO = JSON.parse(localStorage.getItem(SCENARIO_KEY) || "{}") || {}; }
-    catch (e) { SCENARIO = {}; }
+    try {
+      var v2 = JSON.parse(localStorage.getItem(SCENARIOS_KEY) || "null");
+      if (v2 && v2.scenarios && typeof v2.scenarios === "object") {
+        scenarioStore = v2;
+      } else {
+        var v1 = JSON.parse(localStorage.getItem(SCENARIO_KEY) || "{}") || {};
+        scenarioStore = { active: "Scenario 1", scenarios: {} };
+        if (v1 && typeof v1 === "object" && Object.keys(v1).length) scenarioStore.scenarios["Scenario 1"] = v1;
+      }
+    } catch (e) { scenarioStore = { active: "Scenario 1", scenarios: {} }; }
+    scenarioName = scenarioStore.active || "Scenario 1";
+    SCENARIO = scenarioStore.scenarios[scenarioName] || {};
     if (!SCENARIO || typeof SCENARIO !== "object") SCENARIO = {};
   }
   function saveScenario() {
     try {
-      if (SCENARIO && Object.keys(SCENARIO).length) localStorage.setItem(SCENARIO_KEY, JSON.stringify(SCENARIO));
-      else localStorage.removeItem(SCENARIO_KEY);
+      if (SCENARIO && Object.keys(SCENARIO).length) scenarioStore.scenarios[scenarioName] = SCENARIO;
+      else delete scenarioStore.scenarios[scenarioName];
+      scenarioStore.active = scenarioName;
+      if (Object.keys(scenarioStore.scenarios).length || scenarioName !== "Scenario 1") {
+        localStorage.setItem(SCENARIOS_KEY, JSON.stringify(scenarioStore));
+      } else {
+        localStorage.removeItem(SCENARIOS_KEY);
+      }
+      localStorage.removeItem(SCENARIO_KEY);   // v1 retired once v2 owns the state
     } catch (e) { /* storage unavailable — still works this session */ }
+  }
+  function scenarioNames() {
+    var names = Object.keys(scenarioStore.scenarios);
+    if (names.indexOf(scenarioName) === -1) names.push(scenarioName);
+    return names.sort(function (a, b) { return a.localeCompare(b, undefined, { numeric: true }); });
+  }
+  function switchScenario(name) {
+    scenarioName = name;
+    scenarioStore.active = name;
+    SCENARIO = scenarioStore.scenarios[name] || {};
+    saveScenario();
+    render();
+  }
+  function newScenario() {
+    var i = 1;
+    while (scenarioStore.scenarios["Scenario " + i] || scenarioName === "Scenario " + i) i++;
+    switchScenario("Scenario " + i);
+  }
+  function deleteScenario() {
+    delete scenarioStore.scenarios[scenarioName];
+    var rest = Object.keys(scenarioStore.scenarios);
+    switchScenario(rest.length ? rest.sort()[0] : "Scenario 1");
   }
 
   // ── effective-config accessors ────────────────────────────────────────
@@ -498,6 +548,182 @@
       .catch(function () { loadEligibility(); });
   }
 
+  // ── CO Monitor's notes (gated — internal working commentary) ──────────
+  // One note per college in cpl_funding_notes. RLS gates BOTH read and write
+  // to reviewer/team-phrase (the page is public; candid monitor commentary
+  // about a college is not). decorateHeaders attaches the stored phrase, so
+  // notes load for phrase-holders and stay invisible to everyone else.
+  var NOTES = {};   // college -> {note, updated_by, updated_at}
+  var NOTES_URL = SUPABASE_URL + "/rest/v1/cpl_funding_notes";
+  function loadNotes() {
+    if (!remoteEnabled()) return;
+    var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
+    var t = tp();
+    if (t) t.decorateHeaders(headers, t.session());
+    fetch(NOTES_URL + "?select=college,note,updated_by,updated_at", { headers: headers })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (rows) {
+        if (!Array.isArray(rows)) return;
+        NOTES = {};
+        rows.forEach(function (r) { NOTES[r.college] = r; });
+        render();
+      }).catch(function () { /* gated or offline — fine */ });
+  }
+  function saveNote(college, note) {
+    note = String(note || "").trim();
+    if (!remoteEnabled()) {
+      if (note) NOTES[college] = { college: college, note: note };
+      else delete NOTES[college];
+      render();
+      return;
+    }
+    var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" };
+    var t = tp();
+    if (t) t.decorateHeaders(headers, t.session());
+    var req = note
+      ? fetch(NOTES_URL + "?on_conflict=college", {
+          method: "POST",
+          headers: (function (x) { x.Prefer = "resolution=merge-duplicates"; return x; })(headers),
+          body: JSON.stringify({ college: college, note: note, updated_by: "(team)" })
+        })
+      : fetch(NOTES_URL + "?college=eq." + encodeURIComponent(college), { method: "DELETE", headers: headers });
+    req.then(function (r) { return t ? t.checkWrite(r) : { ok: r.ok, status: r.status }; })
+      .then(function (res) {
+        if (!res.ok && t) t.handleWriteFailure(t.session(), res.status);
+        loadNotes();   // re-read = the honest confirmation (#598)
+      })
+      .catch(function () { loadNotes(); });
+  }
+
+  // ── exports: ⬇ Excel (CSV of the current view) + ⬇ PDF (print window) ──
+  function csvEscape(v) {
+    v = v == null ? "" : String(v);
+    return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+  }
+  function csvActual(college, key) {
+    var rec = perfFor(college);
+    if (!rec) return "";
+    if (rec[key] == null) return rec[key + "_suppressed"] ? "<5" : "";
+    return rec[key];
+  }
+  function csvEligText(college) {
+    var s = eligScore(college);
+    if (s == null) return "";
+    var parts = [];
+    parts.push(ELIG.coord[college] ? "coordinator: yes" : "coordinator: no");
+    parts.push(ELIG.optin[college] ? "opted in: yes" : "opted in: no");
+    return parts.join("; ");
+  }
+  // The CSV carries MORE than the screen: the hidden County + working-adults
+  // context plus rural/floor flags ride along.
+  function csvText() {
+    var fl = frontloaded();
+    var ys = selectedYears();
+    var yHead = ys.map(function (yr, i) {
+      return "Yr " + (i + 1) + " (" + yr + ")" + (fl ? (i === 0 ? " front-loaded" : " carryover") : "");
+    });
+    var lines = [];
+    if (state.view === "district") {
+      lines.push(["District", "Colleges", "Counties", "Headcount"].concat(yHead, ["Total " + windowLabel()]));
+      rowsFiltered().forEach(function (g) {
+        lines.push([g.district, g.n, (g.counties || []).join("; "), g.headcount].concat(
+          yearKeys().map(function (yk) { return Math.round(g[yk]); }), [Math.round(g.total)]));
+      });
+      var sysd = systemAlloc();
+      lines.push(["SYSTEM (statewide)", base().colleges.length, "", sysd.headcount + feederHeads()].concat(
+        yearKeys().map(function (yk) { return Math.round(sysd[yk]); }), [Math.round(sysd.total)]));
+    } else {
+      lines.push(["#", "College", "District", "County", "Headcount", "Eligible students", "Transcribed students",
+        "Eligibility (proposed)", "Rural", "Floor applied"].concat(yHead,
+        ["Total " + windowLabel(), "Working adults (county)"]));
+      rowsFiltered().forEach(function (c) {
+        lines.push([c.order, c.college, c.district, c.county, c.headcount,
+          csvActual(c.college, "pe"), csvActual(c.college, "p3"),
+          csvEligText(c.college), c.rural ? "rural" : "", c.floored ? "floor" : ""].concat(
+          yearKeys().map(function (yk) { return Math.round(c[yk]); }),
+          [Math.round(c.total), c.working_adults == null ? "" : c.working_adults]));
+      });
+      var sysc = systemAlloc();
+      lines.push(["", "SYSTEM (statewide)", "", "", sysc.headcount + feederHeads(),
+        perf() && perf().statewide.pe != null ? perf().statewide.pe : "",
+        perf() && perf().statewide.p3 != null ? perf().statewide.p3 : "",
+        "", "", ""].concat(
+        yearKeys().map(function (yk) { return Math.round(sysc[yk]); }),
+        [Math.round(sysc.total), ""]));
+    }
+    var meta = ["CPL Implementation Funding (DRAFT model " + base().model_version + ") — " + windowLabel() +
+      (fl ? " · front-loaded disbursement" : "") +
+      (isDirty() && !unlocked() ? " · local what-if: " + scenarioName : "")];
+    return [meta].concat(lines).map(function (r) { return r.map(csvEscape).join(","); }).join("\r\n");
+  }
+  function downloadCsv() {
+    var name = "CPL_Implementation_Funding_" + (state.view === "district" ? "districts" : "colleges") + ".csv";
+    var blob = new Blob(["﻿" + csvText()], { type: "text/csv;charset=utf-8" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 500);
+  }
+  // Print window: clone the live tab, flatten inputs to text, strip the
+  // interactive chrome, and let the browser's Print → Save as PDF do the
+  // export (the fact-sheet pattern). Literal colors are fine here — the
+  // transient print document can't see the app's :root tokens.
+  function buildPrintHtml() {
+    var mount = document.getElementById("cplFundingMount");
+    if (!mount) return "";
+    var clone = mount.cloneNode(true);
+    clone.querySelectorAll("select").forEach(function (el) {
+      var span = el.ownerDocument.createElement("strong");
+      var opt = el.querySelector("option[selected]") || el.querySelector("option");
+      span.textContent = opt ? opt.textContent : "";
+      el.parentNode.replaceChild(span, el);
+    });
+    clone.querySelectorAll("input").forEach(function (el) {
+      if ((el.getAttribute("type") || "text") === "search") { el.parentNode.removeChild(el); return; }
+      var span = el.ownerDocument.createElement("strong");
+      span.textContent = el.getAttribute("value") || "";
+      el.parentNode.replaceChild(span, el);
+    });
+    clone.querySelectorAll("textarea, button, .cplfund-authbar").forEach(function (el) {
+      if (el.parentNode) el.parentNode.removeChild(el);
+    });
+    clone.querySelectorAll(".cplfund-seg").forEach(function (el) {
+      el.textContent = "";   // seg buttons already removed; drop the empty shell
+      if (el.parentNode) el.parentNode.removeChild(el);
+    });
+    var css = "body{font-family:'Segoe UI',Arial,sans-serif;color:#1C1C1A;margin:24px;font-size:12px;}" +
+      "h2,h3{color:#002F6D;margin:16px 0 6px;}" +
+      "table{border-collapse:collapse;width:100%;font-size:9.5px;margin:6px 0;}" +
+      "th{background:#002F6D;color:#fff;padding:3px 5px;text-align:right;white-space:nowrap;}" +
+      "th.t,td.t{text-align:left;}" +
+      "td{border-top:1px solid #C8C5BD;padding:2px 5px;text-align:right;white-space:nowrap;}" +
+      "tfoot td{font-weight:700;border-top:2px solid #002F6D;}" +
+      ".cplfund-cards{display:flex;flex-wrap:wrap;gap:8px;}" +
+      ".cplfund-card{border:1px solid #C8C5BD;border-radius:6px;padding:8px 10px;flex:1 1 180px;}" +
+      ".cplfund-card .v{font-weight:700;color:#002F6D;}.cplfund-card .l{font-size:10px;color:#555;}" +
+      ".cplfund-card.hero{background:#002F6D;}.cplfund-card.hero .v,.cplfund-card.hero .l{color:#fff;}" +
+      ".cplfund-prio{display:flex;gap:8px;}.cplfund-prio .p{border:1px solid #C8C5BD;border-radius:6px;padding:8px 10px;flex:1;}" +
+      ".cplfund-formula,.cplfund-elig{border:1px solid #C8C5BD;border-radius:6px;padding:8px 10px;margin:6px 0;}" +
+      ".cplfund-foot{font-size:9px;color:#555;}.cplfund-src{font-size:9px;color:#555;}" +
+      ".dk{color:#555;}@media print{body{margin:8mm;}}";
+    return "<!doctype html><html><head><meta charset='utf-8'><title>CPL Implementation Funding — " +
+      esc(windowLabel()) + "</title><style>" + css + "</style></head><body>" +
+      "<h2>CPL Implementation Funding <small style='font-weight:400;'>(DRAFT scenario tool" +
+      (isDirty() && !unlocked() ? " · " + esc(scenarioName) : "") + ")</small></h2>" +
+      clone.innerHTML + "</body></html>";
+  }
+  function openPdf() {
+    var w = window.open("", "_blank");
+    if (!w) return;
+    w.document.write(buildPrintHtml());
+    w.document.close();
+    w.focus();
+    setTimeout(function () { try { w.print(); } catch (e) { /* user closes */ } }, 300);
+  }
+
   // ── priority-metric actuals (cron artifact; may not exist yet) ─────────
   function perf() { return window.CPL_FUNDING_PERF || null; }
   function perfFor(collegeName) {
@@ -551,11 +777,26 @@
       if (dirty) resetBtn = '<button type="button" class="rst warn" id="cplFundReset">Reset to defaults</button>';
       rightBtn = '<button type="button" class="lock" id="cplFundLock">Lock</button>';
     } else {
-      status = '<span class="mode scenario">' + (dirty ? "🧪 Local scenario (this browser only)" :
+      status = '<span class="mode scenario">' + (dirty ? "🧪 " + esc(scenarioName) + " (this browser only)" :
         "Viewing the shared model") + "</span> " +
         '<span class="dk">' + (dirty ? "edits are yours alone" :
           "just start editing to explore — or unlock to save for the team") + "</span>";
       if (dirty) resetBtn = '<button type="button" class="rst" id="cplFundReset">Reset scenario</button>';
+    }
+    // Scenario slots (locked mode only — unlocked edits go to the shared model).
+    var scenSel = "";
+    if (lockedMode) {
+      var opts = scenarioNames().map(function (n) {
+        var hasEdits = scenarioStore.scenarios[n] && Object.keys(scenarioStore.scenarios[n]).length;
+        return '<option value="' + esc(n) + '"' + (n === scenarioName ? " selected" : "") + ">" +
+          esc(n) + (hasEdits ? " ●" : "") + "</option>";
+      }).join("");
+      scenSel = '<label class="dk" style="font-size:.85rem;">Scenario ' +
+        '<select id="cplFundScenSel" class="cplfund-ed-sel" aria-label="Active scenario">' + opts + "</select></label>" +
+        '<button type="button" class="rst" id="cplFundScenNew" title="Start a new blank scenario (the shared model, unedited)">＋ New</button>' +
+        (scenarioNames().length > 1
+          ? '<button type="button" class="rst" id="cplFundScenDel" title="Delete this scenario — its local edits are discarded">✕</button>'
+          : "");
     }
     var saveLine = "";
     if (unlocked() && savingState) {
@@ -563,7 +804,7 @@
         (savingState === "saving" ? "saving…" : savingState === "saved" ? "✓ saved" :
           "⚠ couldn’t save — phrase may have changed") + "</span>";
     }
-    return '<div class="cplfund-authbar"><span class="grow">' + status + " " + saveLine + "</span>" +
+    return '<div class="cplfund-authbar">' + scenSel + '<span class="grow">' + status + " " + saveLine + "</span>" +
       resetBtn + '<span id="cplFundUnlockSlot"></span>' + rightBtn + "</div>";
   }
 
@@ -751,7 +992,10 @@
       ? " <strong>Minimum-viable floor:</strong> no college&#39;s window allocation falls below " + fmtMoney(m.floor) +
         " &mdash; " + m.floorCount + " colleges are topped up (&asymp;" + fmtMoney(m.floorCost) +
         ", " + fmtPctTrim(m.net > 0 ? m.floorCost / m.net : 0) + " of the pool), funded by renormalizing the " +
-        "proportional split over the remaining colleges, so the pool still balances."
+        "proportional split over the remaining colleges, so the pool still balances. <em>The floor raises a " +
+        "college&#39;s funding, not its targets:</em> performance targets stay proportional to headcount " +
+        "(target % &times; the college&#39;s own MAP headcount), so a floored college is NOT asked to exceed its " +
+        "size-appropriate numbers to receive the floor."
       : "";
     var fl = frontloaded();
     var flSentence = fl
@@ -790,9 +1034,11 @@
       { key: "order", label: "#", cls: "" },
       { key: "college", label: "College", cls: "t" },
       { key: "district", label: "District", cls: "t" },
-      { key: "county", label: "County", cls: "t" },
       { key: "headcount", label: "Headcount", cls: "" },
-      { key: "p3a", label: "CPL students†", cls: "" },
+      { key: "pea", label: "Eligible†", cls: "",
+        title: "distinct students with any ELIGIBLE CPL units identified in MAP (credit available, not yet transcribed)" },
+      { key: "p3a", label: "Transcribed†", cls: "",
+        title: "distinct students with any TRANSCRIBED CPL per MAP (the Year-1 Priority-1 metric)" },
       { key: "elig", label: "Elig", cls: "",
         title: "Proposed baseline eligibility: ✓ both, ◐ one, ○ neither of — CPL Coordinator listed in MAP · participation request by " + participationDeadline() + ". Informational only in this draft." }
     ].concat(yearColDefs(), [
@@ -958,11 +1204,12 @@
     }
     function sortVal(r) {
       if (state.sortKey === "elig") return eligScore(r.college);
-      if (state.sortKey !== "p3a") return r[state.sortKey];
+      if (state.sortKey !== "p3a" && state.sortKey !== "pea") return r[state.sortKey];
+      var m = state.sortKey === "pea" ? "pe" : "p3";
       var rec = perfFor(r.college);
       if (!rec) return null;
-      if (rec.p3 == null) return rec.p3_suppressed ? 0.5 : null;
-      return rec.p3;
+      if (rec[m] == null) return rec[m + "_suppressed"] ? 0.5 : null;
+      return rec[m];
     }
     rows = rows.slice().sort(function (a, b) {
       var ka = sortVal(a), kb = sortVal(b);
@@ -1002,8 +1249,8 @@
       "<td>" + esc(c.order) + "</td>" +
       '<td class="t"><span class="cplfund-caret">▸</span><strong>' + esc(c.college) + "</strong>" + rowChips(c) + "</td>" +
       '<td class="t trunc" title="' + esc(c.district || "") + '">' + esc(districtShort(c.district) || "—") + "</td>" +
-      '<td class="t trunc" title="' + esc(c.county || "") + '">' + esc(c.county || "—") + "</td>" +
       '<td title="' + fmtPct(c.headcount_pct, 2) + ' of statewide headcount">' + fmtInt(c.headcount) + "</td>" +
+      '<td title="distinct students with any eligible CPL units identified in MAP (credit available, not yet transcribed)">' + fmtActual(perfFor(c.college), "pe") + "</td>" +
       '<td title="distinct students with any transcribed CPL, per MAP (the Year-1 Priority-1 metric)">' + fmtActual(perfFor(c.college), "p3") + "</td>" +
       '<td title="' + esc(eligTitle(c.college)) + '">' + eligGlyph(c.college) + "</td>" +
       yearCellsHtml(c) +
@@ -1048,7 +1295,8 @@
     var floorLine = c.floored
       ? '<div><span class="dk">⬆ Floor applied:</span> a pure proportional share would be ' +
         fmtMoney(c.headcount_pct * m.net) + " for the window &mdash; topped up to the " +
-        fmtMoney(m.floor) + " minimum-viable floor</div>"
+        fmtMoney(m.floor) + " minimum-viable floor. Targets above stay scaled to this college&#39;s " +
+        "own headcount &mdash; the floor raises the funding, not the bar.</div>"
       : "";
     var ruralLine = "";
     if (c.rural) {
@@ -1073,11 +1321,28 @@
       (!ELIG.coordOk ? '<span class="dk">pending</span>' : ELIG.coord[c.college] ? "✓" : '<span class="cplfund-warn-text">not on file</span>') +
       " &middot; opted in by " + esc(participationDeadline()) + " &mdash; " +
       (ELIG.optin[c.college] ? "✓" : '<span class="dk">not yet</span>') + eligBtns + "</div>";
+    // CO Monitor's note — internal (gated read+write); editable when unlocked,
+    // read-only for phrase-holders who haven't flipped team-editing on.
+    var noteRec = NOTES[c.college];
+    var noteLine = "";
+    if (unlocked()) {
+      noteLine = '<div class="cplfund-notewrap"><span class="dk">CO Monitor&#39;s note (internal):</span><br>' +
+        '<textarea class="cplfund-note" rows="2" data-note="' + esc(c.college) +
+        '" placeholder="Visible to team-phrase / reviewer users only" aria-label="CO Monitor note for ' + esc(c.college) + '">' +
+        esc(noteRec && noteRec.note ? noteRec.note : "") + "</textarea>" +
+        '<button type="button" class="cplfund-optbtn" data-notesave="' + esc(c.college) + '">Save note</button>' +
+        (noteRec && noteRec.updated_at
+          ? ' <span class="dk">saved ' + esc(String(noteRec.updated_at).slice(0, 10)) +
+            (noteRec.updated_by ? " by " + esc(noteRec.updated_by) : "") + "</span>" : "") + "</div>";
+    } else if (noteRec && noteRec.note) {
+      noteLine = '<div class="cplfund-notewrap"><span class="dk">CO Monitor&#39;s note (internal):</span> ' +
+        esc(noteRec.note) + "</div>";
+    }
     return '<tr class="cplfund-detail"><td colspan="' + COLS_COLLEGE().length + '">' +
       '<div class="cplfund-detail-grid">' +
       '<div><span class="dk">Headcount share:</span> ' + fmtInt(c.headcount) + " students = " +
       fmtPct(c.headcount_pct, 3) + " of the statewide " + fmtInt(totalHeads()) + "</div>" +
-      floorLine + ruralLine + eligLine +
+      floorLine + ruralLine + eligLine + noteLine +
       prio + county +
       '<div><span class="dk">District:</span> ' + esc(c.district || "—") + "</div>" +
       "</div></td></tr>";
@@ -1149,8 +1414,10 @@
     } else {
       var pf = perf();
       foot = "<tr>" +
-        '<td></td><td class="t">SYSTEM (statewide)</td><td class="t">' + esc(base().system.district || "") + '</td><td class="t">' + esc(base().system.county || "") + "</td>" +
+        '<td></td><td class="t">SYSTEM (statewide)</td><td class="t">' + esc(base().system.district || "") + "</td>" +
         sysHeadCell +
+        '<td title="statewide distinct students with eligible CPL — deduplicated across colleges, not the column sum">' +
+        (pf && pf.statewide && pf.statewide.pe != null ? fmtInt(pf.statewide.pe) : "—") + "</td>" +
         '<td title="statewide distinct students — deduplicated across colleges, not the column sum">' +
         (pf && pf.statewide && pf.statewide.p3 != null ? fmtInt(pf.statewide.p3) : "—") + "</td>" +
         "<td>" + (ELIG.coordOk ? ELIG.coordN + "/" + base().colleges.length : "—") + "</td>" +
@@ -1298,9 +1565,10 @@
       ? "<div>&#9888; MAP activity for " + un.length + " college name(s) could not be matched to a funding row: " +
         un.map(esc).join(", ") + " &mdash; included in the statewide totals, not shown in any college row.</div>"
       : "";
-    return "<div>&dagger; CPL students = distinct students with transcribed CPL per MAP, as of " + esc(pf.as_of) +
+    return "<div>&dagger; Eligible = distinct students with any ELIGIBLE CPL units identified in MAP (credit " +
+      "available, not yet transcribed); Transcribed = distinct students with any TRANSCRIBED CPL. Both per MAP as of " + esc(pf.as_of) +
       "; test/potential records excluded; counts under " + pf.suppress_below + " show as &lt;5; the statewide " +
-      "figure deduplicates across colleges (not the column sum). Priority 1 awaits completion data " +
+      "figures deduplicate across colleges (not the column sum). Priority 1 awaits completion data " +
       "(deliberate incentive metric &mdash; completions live in college SIS).</div>" + unLine;
   }
 
@@ -1350,7 +1618,9 @@
       '<div class="cplfund-toolbar">' +
       segHtml("cplFundView", [{ val: "college", label: "Colleges" }, { val: "district", label: "Districts" }], state.view) +
       '<input type="search" id="cplFundSearch" placeholder="Search college / district / county&hellip;" aria-label="Search colleges">' +
-      '<span class="cplfund-count" id="cplFundCount"></span></div>' +
+      '<span class="cplfund-count" id="cplFundCount"></span>' +
+      '<button type="button" class="cplfund-optbtn" id="cplFundCsv" title="Download the current table as CSV — opens directly in Excel (includes the hidden County + working-adults context)">⬇ Excel</button>' +
+      '<button type="button" class="cplfund-optbtn" id="cplFundPdf" title="Open a print-ready view of the whole tab — use your browser&#39;s Print → Save as PDF">⬇ PDF</button></div>' +
       '<div id="cplFundTable">' + tableHtml() + "</div>" +
       feederSectionHtml() +
       ruralSectionHtml() +
@@ -1385,7 +1655,9 @@
       ? base().colleges.reduce(function (s, c) { return s + collegeAlloc(c).total; }, 0) / base().colleges.length
       : null;
     el.textContent = n + " of " + denom + " " + unit +
-      (avg != null ? " · average allocation " + fmtMoney(avg) + " over " + windowLabel() : "");
+      (avg != null ? " · average allocation " + fmtMoney(avg) + " over " + windowLabel() : "") +
+      " · plus " + feeders().length + " noncredit campuses (" + fmtInt(feederHeads()) +
+      " students) funded via the " + fmtMoney(feederCarveout()) + " carve-out";
   }
 
   function refreshTable() {
@@ -1430,6 +1702,14 @@
         e.stopPropagation();
         savingState = "";
         setRuralOverride(b.getAttribute("data-ruralflag"), b.getAttribute("data-on") === "1");
+      });
+    });
+    holder.querySelectorAll("[data-notesave]").forEach(function (b) {
+      b.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var college = b.getAttribute("data-notesave");
+        var ta = holder.querySelector('textarea[data-note="' + college.replace(/"/g, '\\"') + '"]');
+        if (ta) saveNote(college, ta.value);
       });
     });
   }
@@ -1508,6 +1788,16 @@
       savingState = "";
       setDisbursement(v);
     });
+    var scenSel = document.getElementById("cplFundScenSel");
+    if (scenSel) scenSel.addEventListener("change", function () { switchScenario(scenSel.value); });
+    var scenNew = document.getElementById("cplFundScenNew");
+    if (scenNew) scenNew.addEventListener("click", newScenario);
+    var scenDel = document.getElementById("cplFundScenDel");
+    if (scenDel) scenDel.addEventListener("click", deleteScenario);
+    var csvBtn = document.getElementById("cplFundCsv");
+    if (csvBtn) csvBtn.addEventListener("click", downloadCsv);
+    var pdfBtn = document.getElementById("cplFundPdf");
+    if (pdfBtn) pdfBtn.addEventListener("click", openPdf);
 
     // Editable inputs — commit on change (blur/Enter). savingState clears so a
     // prior "saved" note doesn't linger across a fresh edit.
@@ -1572,13 +1862,14 @@
     if (booted) { render(); return; }
     booted = true;
     loadScenario();
-    if (window.CPL_FUNDING) { render(); loadShared(); loadPerf(); loadEligibility(); return; }
+    function loadRemotes() { loadShared(); loadPerf(); loadEligibility(); loadNotes(); }
+    if (window.CPL_FUNDING) { render(); loadRemotes(); return; }
     if (window.CPL_TABS && typeof window.CPL_TABS.loadScript === "function") {
-      window.CPL_TABS.loadScript("cpl_funding_data.js", "CPL_FUNDING", function () { render(); loadShared(); loadPerf(); loadEligibility(); });
+      window.CPL_TABS.loadScript("cpl_funding_data.js", "CPL_FUNDING", function () { render(); loadRemotes(); });
     } else {
       var s = document.createElement("script");
       s.src = "cpl_funding_data.js";
-      s.onload = function () { render(); loadShared(); loadPerf(); loadEligibility(); };
+      s.onload = function () { render(); loadRemotes(); };
       s.onerror = render;
       document.head.appendChild(s);
     }
@@ -1594,6 +1885,10 @@
     _model: function () { _allocCache = null; return allocModel(); },
     _alloc: function (name) { var c = baseCollege(name); return c ? collegeAlloc(c) : null; },
     _netCollege: netCollege,
+    _csv: csvText,
+    _printHtml: buildPrintHtml,
+    _scenario: function () { return { name: scenarioName, store: scenarioStore }; },
+    _setNotes: function (o) { NOTES = o || {}; },
     _setElig: function (o) {
       o = o || {};
       ELIG.loaded = true;
