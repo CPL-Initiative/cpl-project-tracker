@@ -24,7 +24,7 @@
 // and bump model_version. The prior builder lives in git history if a full
 // workbook re-derive is ever needed again.
 window.CPL_FUNDING = {
- "model_version": "2026-07-06.1",
+ "model_version": "2026-07-06.2",
  "source": "committed data snapshot · MIS annual headcount (2025-26 update, 2026-07-03)",
  "headcount_label": "2025-2026 MIS ANNUAL HEADCOUNT (updated 2026-07-03; colleges not in the update carry 2022-2023)",
  "headcount_source": {
@@ -1196,7 +1196,7 @@ window.CPL_FUNDING = {
   },
   {
    "order": 28,
-   "college": "Deanza",
+   "college": "De Anza",
    "headcount": 27215,
    "district": "Foothill-De Anza Community College District",
    "county": "Santa Clara",

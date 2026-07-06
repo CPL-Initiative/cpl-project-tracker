@@ -1128,20 +1128,29 @@
       body = rows.map(function (c) { return collegeRowHtml(c); }).join("");
     }
     var sysYearCells = yearCellsHtml(sys);
+    // The SYSTEM headcount total INCLUDES the noncredit feeder students (Sam,
+    // 2026-07-06) — shown as allocation basis + feeders = the CCC total, so
+    // the noncredit students are never invisible in a total while staying out
+    // of the college split (their support is the feeder carve-out).
+    var fh = feederHeads();
+    var sysHeadCell = '<td title="Allocation basis = Σ of the ' + base().colleges.length +
+      ' college rows. The ' + fmtInt(fh) + ' noncredit-feeder students are counted in the CCC total; their support is the feeder carve-out, not the college split.">' +
+      fmtInt(sys.headcount) +
+      '<span class="sub">+ ' + fmtInt(fh) + " noncredit = " + fmtInt(sys.headcount + fh) + " CCC total</span></td>";
     var foot;
     if (state.view === "district") {
       foot = "<tr>" +
         '<td class="t">SYSTEM (statewide)</td>' +
         "<td>" + districts().reduce(function (s, g) { return s + g.n; }, 0) + "</td>" +
         '<td class="t"></td>' +
-        "<td>" + fmtInt(sys.headcount) + "</td>" +
+        sysHeadCell +
         sysYearCells +
         "<td>" + fmtMoney(sys.total) + "</td></tr>";
     } else {
       var pf = perf();
       foot = "<tr>" +
         '<td></td><td class="t">SYSTEM (statewide)</td><td class="t">' + esc(base().system.district || "") + '</td><td class="t">' + esc(base().system.county || "") + "</td>" +
-        "<td>" + fmtInt(sys.headcount) + "</td>" +
+        sysHeadCell +
         '<td title="statewide distinct students — deduplicated across colleges, not the column sum">' +
         (pf && pf.statewide && pf.statewide.p3 != null ? fmtInt(pf.statewide.p3) : "—") + "</td>" +
         "<td>" + (ELIG.coordOk ? ELIG.coordN + "/" + base().colleges.length : "—") + "</td>" +
