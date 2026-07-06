@@ -192,7 +192,7 @@ function footText(doc) {
   check("feeder carve-out card is a deduction", !!doc.querySelector(".cplfund-card.feeder"));
   check("renders 3 priority cards", doc.querySelectorAll(".cplfund-prio .p").length === 3);
   const tables = doc.querySelectorAll(".cplfund-table");
-  check("two tables: college + feeder", tables.length === 2);
+  check("three tables: college + feeder + rural allowance", tables.length === 3);
   check("renders one row per college", tables[0].querySelectorAll("tbody tr").length === D.colleges.length);
   check("renders one row per feeder (4)", tables[1].querySelectorAll("tbody tr").length === 4);
   check("SYSTEM pinned as tfoot total row (not a body row)",
@@ -259,9 +259,9 @@ function footText(doc) {
   const { window } = freshDom();
   const doc = boot(window);
   check("two year dropdowns (2-year window)", doc.querySelectorAll('select[data-edit="year"]').length === 2);
-  const net = D.pool.college_funding_before_feeder - D.pool.feeder_carveout;   // 34.8M − 1M
+  const net = D.pool.college_funding_before_feeder - D.pool.feeder_carveout - D.pool.rural_carveout;   // 34.8M − 1M − 1M
   const perYear = net / 2;
-  check("hero = college funding after feeder carve-out ($" + net.toLocaleString() + ")",
+  check("hero = college funding after feeder + rural carve-outs ($" + net.toLocaleString() + ")",
     doc.querySelector(".cplfund-card.hero .v").textContent.indexOf("$" + net.toLocaleString("en-US")) !== -1);
   check("hero label states 2 annual tranches of the per-year amount",
     doc.querySelector(".cplfund-card.hero .l").textContent.indexOf("$" + Math.round(perYear).toLocaleString("en-US")) !== -1);
@@ -330,7 +330,7 @@ function footText(doc) {
   // Carve-out edit reduces the college tranche.
   const carveInput = doc.querySelector('input[data-edit="pool"][data-field="feeder_carveout"]');
   commit(window, carveInput, "2,000,000");
-  const net2 = D.pool.college_funding_before_feeder - 2000000;
+  const net2 = D.pool.college_funding_before_feeder - 2000000 - D.pool.rural_carveout;
   check("raising the carve-out shrinks the college hero pool",
     doc.querySelector(".cplfund-card.hero .v").textContent.indexOf("$" + net2.toLocaleString("en-US")) !== -1);
 }
@@ -467,7 +467,7 @@ function footText(doc) {
   check("re-click collapses the drill-in", !doc.querySelector("tr.cplfund-detail"));
 
   // Year columns: SYSTEM tfoot carries each year's tranche + the window total.
-  const net = D.pool.college_funding_before_feeder - D.pool.feeder_carveout;
+  const net = D.pool.college_funding_before_feeder - D.pool.feeder_carveout - D.pool.rural_carveout;
   const tranche = net / 2;
   check("SYSTEM tfoot Total = the college pool ($" + net.toLocaleString() + ")",
     doc.querySelector("#cplFundTable tfoot").textContent.indexOf("$" + net.toLocaleString("en-US")) !== -1);
@@ -562,6 +562,236 @@ function footText(doc) {
     window.document.getElementById("cplFundingMount").textContent.indexOf("unavailable") !== -1);
   check("DRAFT chip shows even in the no-data state", !!window.document.getElementById("cplFundingDraftChip"));
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Part D — the 2026-07-06 equity refinements (front-load · floor · rural ·
+// eligibility). Data defaults first, then renderer behaviour.
+// ─────────────────────────────────────────────────────────────────────────────
+
+// D0 — data defaults for all four features.
+check("data: disbursement defaults to even tranches", D.disbursement === "even");
+check("data: minimum-viable floor default $150K/window", D.pool.floor_window === 150000);
+check("data: rural carve-out default $1M", D.pool.rural_carveout === 1000000);
+check("data: rural threshold default 50%", D.rural_threshold === 0.5);
+check("data: exactly the 10 RCTC colleges are rural-flagged",
+  D.colleges.filter(function (c) { return c.rural; }).length === 10 &&
+  ["Butte", "Redwoods", "Siskiyous", "Feather River", "Lassen",
+   "Lake Tahoe", "Mendocino", "Shasta", "Woodland", "Yuba"].every(function (n) {
+    return D.colleges.some(function (c) { return c.college === n && c.rural === true; });
+  }));
+check("data: rural roster carries a DRAFT provenance note", /DRAFT/.test(D.rural_source || ""));
+check("data: participation deadline default Sept 1, 2026", D.participation_deadline === "2026-09-01");
+
+// D1 — minimum-viable floor: waterfall math (model-level, via test hooks).
+{
+  const { window } = freshDom();
+  boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  const m = T._model();
+  const net = T._netCollege();
+  check("floor model: pool conserved (Σ window entitlements = net pool)",
+    Math.abs(Object.values(m.W).reduce(function (s, w) { return s + w; }, 0) - net) < 1);
+  check("floor model: no college below the $150K floor",
+    Object.values(m.W).every(function (w) { return w >= m.floor - 0.01; }));
+  check("floor model: floored set is non-empty and bounded (sub-scale colleges only)",
+    m.floorCount > 0 && m.floorCount < 40);
+  check("floor model: smallest college (Copper Mountain) sits exactly at the floor",
+    Math.abs(m.W["Copper Mountain"] - m.floor) < 0.01);
+  check("floor model: largest college (East LA) stays proportional (well above floor)",
+    m.W["East LA"] > 900000);
+  const cm = T._alloc("Copper Mountain");
+  check("floored college's window total = the floor", Math.abs(cm.total - m.floor) < 0.01);
+  check("floored college is flagged for the ⬆ chip", cm.floored === true);
+
+  // UI: floor pool card + chip + drill-in line.
+  const doc = window.document;
+  const floorCard = doc.querySelector(".cplfund-card.floor");
+  check("floor pool card renders with the top-up count", floorCard && /topped up/.test(floorCard.textContent));
+  check("formula explains the floor renormalization", /Minimum-viable floor/.test(doc.querySelector(".cplfund-formula").textContent));
+  const cmRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr")).find(function (tr) {
+    return tr.textContent.indexOf("Copper Mountain") !== -1;
+  });
+  check("floored row carries the ⬆ chip", cmRow && cmRow.innerHTML.indexOf("⬆") !== -1);
+  window.eval('CPL_FUNDING_TAB._state.open["c:' + D.colleges.find(function (c) { return c.college === "Copper Mountain"; }).order + '"] = true;');
+  T.render();
+  const detail = Array.from(doc.querySelectorAll("tr.cplfund-detail")).find(function (tr) {
+    return tr.textContent.indexOf("Floor applied") !== -1;
+  });
+  check("floored drill-in explains the top-up vs the proportional share", !!detail);
+
+  // Setting the floor to 0 disables it (pure proportional, no floored rows).
+  T._setScenario({ pool: { floor_window: 0 } });
+  const m0 = T._model();
+  check("floor 0 disables the waterfall (no floored colleges)", m0.floorCount === 0);
+  check("floor 0 → pure proportional (Copper Mountain ≈ headcount share × net)",
+    Math.abs(m0.W["Copper Mountain"] -
+      D.colleges.find(function (c) { return c.college === "Copper Mountain"; }).headcount_pct * net) < 1);
+}
+
+// D2 — front-load Year 1: timing changes, totals don't.
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  check("disbursement toggle renders (even ⇄ front-load)",
+    doc.querySelectorAll("#cplFundDisb button").length === 2 &&
+    doc.querySelector('#cplFundDisb button[data-val="even"]').className === "on");
+  const evenAlloc = T._alloc("Alameda");
+  check("even mode: Y1 ≈ half the window total", Math.abs(evenAlloc.y1 - evenAlloc.total / 2) < 1);
+
+  // Click Front-load Year 1.
+  click(window, doc.querySelector('#cplFundDisb button[data-val="frontload"]'));
+  check("front-load click persisted to the local scenario",
+    T._getScenario().disbursement === "frontload");
+  const fl = T._alloc("Alameda");
+  check("front-load: Y1 carries the FULL window total", Math.abs(fl.y1 - fl.total) < 0.01);
+  check("front-load: Y2 disbursement is $0 (carryover only)", fl.y2 === 0);
+  check("front-load: window total unchanged (timing only)", Math.abs(fl.total - evenAlloc.total) < 0.01);
+  const row = doc.querySelector("#cplFundTable tbody tr");
+  check("front-load: later year cells render ↻ carryover", row.textContent.indexOf("↻ carryover") !== -1);
+  check("front-load: SYSTEM tfoot Y2 is carryover too",
+    doc.querySelector("#cplFundTable tfoot").textContent.indexOf("↻ carryover") !== -1);
+  check("front-load: window note explains roll-forward + the close-out year",
+    doc.querySelector(".cplfund-years").textContent.indexOf("close out by 2028-29") !== -1);
+  check("front-load: footer explains the Yr-1 column + carryover",
+    footText(doc).indexOf("Front-loaded disbursement") !== -1);
+  const feederTable = doc.querySelectorAll(".cplfund-table")[1];
+  check("front-load: feeder pool disburses up front (full carve-out in Yr 1)",
+    feederTable.textContent.indexOf("$" + D.pool.feeder_carveout.toLocaleString("en-US")) !== -1 &&
+    feederTable.querySelector("thead").textContent.indexOf("front-loaded") !== -1);
+
+  // Three-layer resolution: SHARED frontload, SCENARIO even → even wins.
+  T._setScenario({ disbursement: "even" });
+  T._setShared({ disbursement: "frontload" });
+  T.render();
+  check("scenario disbursement shadows shared",
+    doc.querySelector('#cplFundDisb button[data-val="even"]').className === "on");
+  T._setScenario({});
+  T.render();
+  check("shared disbursement applies when no scenario",
+    doc.querySelector('#cplFundDisb button[data-val="frontload"]').className === "on");
+}
+
+// D3 — rural allowance: carve-out + roster + performance gate.
+{
+  const { window } = freshDom();
+  window.eval(fs.readFileSync("tests/fixtures" in {} ? "" : "cpl_funding_data.js", "utf8"));
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  const ruralCard = doc.querySelector(".cplfund-card.rural");
+  check("rural carve-out pool card renders as a deduction", ruralCard && /carve-out/.test(ruralCard.textContent));
+  const ruralTable = doc.querySelectorAll(".cplfund-table")[2];
+  check("rural section lists the 10 rural-flagged colleges",
+    ruralTable && ruralTable.querySelectorAll("tbody tr").length === 10);
+  const perRural = D.pool.rural_carveout / 10;
+  check("each rural college can earn an equal share ($" + perRural.toLocaleString() + ")",
+    ruralTable.textContent.indexOf("$" + perRural.toLocaleString("en-US")) !== -1);
+  check("no actuals loaded → every rural row is pending data",
+    Array.from(ruralTable.querySelectorAll("tbody tr")).every(function (tr) {
+      return tr.textContent.indexOf("pending data") !== -1;
+    }));
+  const butteRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr")).find(function (tr) {
+    return tr.textContent.indexOf("Butte") !== -1;
+  });
+  check("rural college row carries the 🌲 chip", butteRow && butteRow.innerHTML.indexOf("🌲") !== -1);
+
+  // With actuals: attainment vs targets gates the allowance.
+  const butte = D.colleges.find(function (c) { return c.college === "Butte"; });
+  const p1 = D.year_priorities["1"][0];
+  const target = butte.headcount * p1.target_rate;
+  window.CPL_FUNDING_PERF = {
+    as_of: "2026-07-06", suppress_below: 5,
+    statewide: { p2: 1000, p3: 1000 },
+    colleges: { "Butte": { p2: 10, p3: Math.ceil(target) } },   // ≥100% of the P1 target
+    unmatched: {}
+  };
+  T.render();
+  const ruralTable2 = doc.querySelectorAll(".cplfund-table")[2];
+  const butteRural = Array.from(ruralTable2.querySelectorAll("tbody tr")).find(function (tr) {
+    return tr.textContent.indexOf("Butte") !== -1;
+  });
+  check("rural college at ≥50% of measurable Yr-1 targets qualifies",
+    butteRural && butteRural.textContent.indexOf("✓ qualifies") !== -1);
+  check("rural tfoot counts qualifiers honestly (1 of 10)",
+    ruralTable2.querySelector("tfoot").textContent.indexOf("1 of 10 qualify") !== -1);
+
+  // Threshold is editable: raise it to 200% → Butte no longer qualifies.
+  const thr = doc.querySelector('input[data-edit="rural-threshold"]');
+  commit(window, thr, "200");
+  check("threshold edit persisted (scenario)", T._getScenario().ruralThreshold === 2);
+  const ruralTable3 = doc.querySelectorAll(".cplfund-table")[2];
+  check("raised threshold demotes the qualifier",
+    ruralTable3.querySelector("tfoot").textContent.indexOf("0 of 10 qualify") !== -1);
+
+  // Rural flag override via config (the drill-in button's write path).
+  T._setScenario({ ruralOverrides: { "Alameda": true, "Butte": false } });
+  T.render();
+  const ruralTable4 = doc.querySelectorAll(".cplfund-table")[2];
+  check("rural overrides add/remove colleges from the roster",
+    ruralTable4.textContent.indexOf("Alameda") !== -1 &&
+    Array.from(ruralTable4.querySelectorAll("tbody tr")).every(function (tr) {
+      return tr.textContent.indexOf("Butte") === -1;
+    }));
+  delete window.CPL_FUNDING_PERF;
+}
+
+// D4 — baseline eligibility badges (informational only).
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  check("eligibility block renders the two proposed requirements",
+    doc.querySelector(".cplfund-elig") &&
+    /CPL Coordinator listed in MAP/.test(doc.querySelector(".cplfund-elig").textContent) &&
+    /Participation request by/.test(doc.querySelector(".cplfund-elig").textContent));
+  check("deadline is editable and defaults to 2026-09-01",
+    doc.querySelector('input[data-edit="deadline"]').value === "2026-09-01");
+  check("Elig column renders with pending dashes before data loads",
+    doc.querySelector('th[data-sort="elig"]') &&
+    doc.querySelector("#cplFundTable tbody tr").innerHTML.indexOf("—") !== -1);
+
+  // Seed eligibility (the RPC + participation reads, minus the network).
+  T._setElig({
+    coordOk: true,
+    coord: { "Alameda": true, "Butte": true },
+    optin: { "Alameda": { college: "Alameda" } },
+    asOf: "2026-07-06T06:00:00Z"
+  });
+  T.render();
+  check("summary counts coordinators (2 of " + D.colleges.length + ")",
+    doc.querySelector(".cplfund-elig").textContent.indexOf("2 of " + D.colleges.length) !== -1);
+  check("summary counts opt-ins (1 opted in)",
+    doc.querySelector(".cplfund-elig").textContent.indexOf("1") !== -1);
+  const alamedaRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr")).find(function (tr) {
+    return tr.textContent.indexOf("Alameda") !== -1;
+  });
+  const butteRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr")).find(function (tr) {
+    return tr.textContent.indexOf("Butte") !== -1;
+  });
+  check("both requirements met → ✓", alamedaRow.textContent.indexOf("✓") !== -1);
+  check("one requirement met → ◐", butteRow.textContent.indexOf("◐") !== -1);
+  check("SYSTEM tfoot shows the coordinator coverage fraction",
+    doc.querySelector("#cplFundTable tfoot").textContent.indexOf("2/" + D.colleges.length) !== -1);
+  check("deadline edit writes to the scenario", (function () {
+    commit(window, doc.querySelector('input[data-edit="deadline"]'), "2026-10-01");
+    return T._getScenario().participationDeadline === "2026-10-01";
+  })());
+  // Dollars unchanged by badges: eligibility never enters the alloc model.
+  const before = T._alloc("Alameda").total;
+  T._setElig({ coordOk: true, coord: {}, optin: {} });
+  T.render();
+  check("badges never move dollars", Math.abs(T._alloc("Alameda").total - before) < 0.01);
+}
+
+// D5 — consumer wiring for the eligibility reads (static greps).
+check("consumer reads the PII-free coordinator RPC (map_coordinator_summary)",
+  /map_coordinator_summary/.test(consumerSrc));
+check("consumer reads/writes cpl_funding_participation",
+  /cpl_funding_participation/.test(consumerSrc));
+check("consumer joins college names through cplCollegeShort",
+  /cplCollegeShort/.test(consumerSrc));
+check("PII guard: consumer never renders coordinator names/emails (boolean only)",
+  /has_coordinator/.test(consumerSrc) && !/coordinator_email/.test(consumerSrc));
 
 // ─────────────────────────────────────────────────────────────────────────────
 let pass = 0;

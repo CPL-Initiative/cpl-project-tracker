@@ -11,12 +11,20 @@
 // renderer overlays that + a per-browser what-if scenario and computes every
 // dollar live. NOT part of the daily cron.
 //
+// 2026-07-06 policy defaults (all Chancellor-editable in-tab): `disbursement`
+// (even|frontload — front-load pulls the full window into Year 1 with
+// roll-forward), pool.floor_window (minimum viable per-college window
+// allocation, waterfall-funded within the pool), pool.rural_carveout + the
+// per-college `rural` flags (DRAFT roster = the CCCCO Rural College Transfer
+// Collaborative cohort) + rural_threshold (performance gate), and
+// participation_deadline (baseline-eligibility opt-in date).
+//
 // To refresh the headcount vintage: edit the `colleges` headcounts + SYSTEM
 // total here directly (a rare modeling decision), keep headcount_pct in sync,
 // and bump model_version. The prior builder lives in git history if a full
 // workbook re-derive is ever needed again.
 window.CPL_FUNDING = {
- "model_version": "2026-07-03.2",
+ "model_version": "2026-07-06.1",
  "source": "committed data snapshot · MIS annual headcount (2025-26 update, 2026-07-03)",
  "headcount_label": "2025-2026 MIS ANNUAL HEADCOUNT (updated 2026-07-03; colleges not in the update carry 2022-2023)",
  "headcount_source": {
@@ -34,6 +42,10 @@ window.CPL_FUNDING = {
   "college_funding_before_feeder_label": "26-30 TOTAL AVAILABLE COLLEGE FUNDING",
   "feeder_carveout": 1000000.0,
   "feeder_carveout_label": "NONCREDIT FEEDER SUPPORT (carve-out)",
+  "rural_carveout": 1000000.0,
+  "rural_carveout_label": "RURAL COLLEGE ALLOWANCE (performance carve-out)",
+  "floor_window": 150000.0,
+  "floor_window_label": "MINIMUM VIABLE ALLOCATION (per college, window floor)",
   "ccc_headcount": 2258784
  },
  "year_options": [
@@ -46,6 +58,7 @@ window.CPL_FUNDING = {
   "2026-27",
   "2027-28"
  ],
+ "disbursement": "even",
  "year_priorities": {
   "1": [
    {
@@ -127,6 +140,9 @@ window.CPL_FUNDING = {
   }
  ],
  "feeder_metric": "CPL-ready noncredit completions handed off to a partner credit college",
+ "rural_threshold": 0.5,
+ "rural_source": "DRAFT roster \u2014 seeded from the CCCCO Rural College Transfer Collaborative cohort (10 colleges); edit the per-college rural flags here (or via the in-tab override when unlocked) to true up",
+ "participation_deadline": "2026-09-01",
  "system": {
   "order": 0,
   "college": "SYSTEM",
@@ -218,6 +234,7 @@ window.CPL_FUNDING = {
   {
    "order": 8,
    "college": "Butte",
+   "rural": true,
    "headcount": 13448,
    "district": "Butte-Glenn Community College District",
    "county": "Butte",
@@ -262,6 +279,7 @@ window.CPL_FUNDING = {
   {
    "order": 53,
    "college": "Lake Tahoe",
+   "rural": true,
    "headcount": 9259,
    "district": "Lake Tahoe Community College District",
    "county": "El Dorado",
@@ -317,6 +335,7 @@ window.CPL_FUNDING = {
   {
    "order": 82,
    "college": "Redwoods",
+   "rural": true,
    "headcount": 8451,
    "district": "Redwoods Community College District",
    "county": "Humboldt",
@@ -383,6 +402,7 @@ window.CPL_FUNDING = {
   {
    "order": 56,
    "college": "Lassen",
+   "rural": true,
    "headcount": 3790,
    "district": "Lassen Community College District",
    "county": "Lassen",
@@ -647,6 +667,7 @@ window.CPL_FUNDING = {
   {
    "order": 61,
    "college": "Mendocino",
+   "rural": true,
    "headcount": 9311,
    "district": "Mendocino-Lake Community College District",
    "county": "Mendocino",
@@ -812,6 +833,7 @@ window.CPL_FUNDING = {
   {
    "order": 34,
    "college": "Feather River",
+   "rural": true,
    "headcount": 2739,
    "district": "Feather River Community College District",
    "county": "Plumas",
@@ -1263,6 +1285,7 @@ window.CPL_FUNDING = {
   {
    "order": 103,
    "college": "Shasta",
+   "rural": true,
    "headcount": 15232,
    "district": "Shasta-Tehama-Trinity Joint Community College District",
    "county": "Shasta",
@@ -1274,6 +1297,7 @@ window.CPL_FUNDING = {
   {
    "order": 105,
    "college": "Siskiyous",
+   "rural": true,
    "headcount": 4270,
    "district": "Siskiyou Joint Community College District",
    "county": "Siskiyou",
@@ -1384,6 +1408,7 @@ window.CPL_FUNDING = {
   {
    "order": 116,
    "college": "Woodland",
+   "rural": true,
    "headcount": 7319,
    "district": "Yuba Community College District",
    "county": "Yolo",
@@ -1395,6 +1420,7 @@ window.CPL_FUNDING = {
   {
    "order": 117,
    "college": "Yuba",
+   "rural": true,
    "headcount": 10797,
    "district": "Yuba Community College District",
    "county": "Yuba",

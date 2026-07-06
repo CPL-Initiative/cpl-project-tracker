@@ -28,6 +28,10 @@ create table if not exists public.map_college_contacts (
   vpss_email             text,
   ceo                    text,   -- College CEO / President (added Session 87 follow-up)
   ceo_email              text,
+  cpl_coordinator        text,   -- CPL Coordinator (added 2026-07-06) — feeds the
+  cpl_coordinator_email  text,   -- funding tab's eligibility badge via the PII-free
+                                 -- anon map_coordinator_summary() RPC (boolean only;
+                                 -- name/email stay gated here like every contact)
   landing_page_url       text,   -- the college's MAP CPL dashboard URL (joined from
                                  -- chatbox_college_profiles in the sync) → the nudge
                                  -- links the college straight to their MAP page so
@@ -54,13 +58,16 @@ begin
   delete from public.map_college_contacts where true;
   insert into public.map_college_contacts
         (college, primary_contact, primary_contact_email, vpaa, vpaa_email,
-         vpss, vpss_email, ceo, ceo_email, landing_page_url, last_updated_on, synced_at)
+         vpss, vpss_email, ceo, ceo_email, cpl_coordinator, cpl_coordinator_email,
+         landing_page_url, last_updated_on, synced_at)
   select r.college, r.primary_contact, r.primary_contact_email, r.vpaa, r.vpaa_email,
-         r.vpss, r.vpss_email, r.ceo, r.ceo_email, r.landing_page_url, r.last_updated_on, now()
+         r.vpss, r.vpss_email, r.ceo, r.ceo_email, r.cpl_coordinator, r.cpl_coordinator_email,
+         r.landing_page_url, r.last_updated_on, now()
   from jsonb_to_recordset(p_rows) as r(
          college text, primary_contact text, primary_contact_email text,
          vpaa text, vpaa_email text, vpss text, vpss_email text,
-         ceo text, ceo_email text, landing_page_url text, last_updated_on text)
+         ceo text, ceo_email text, cpl_coordinator text, cpl_coordinator_email text,
+         landing_page_url text, last_updated_on text)
   where coalesce(r.college, '') <> '';
   get diagnostics n = row_count;
   return n;
@@ -89,3 +96,20 @@ drop policy if exists mcn_update on public.map_college_nudges;
 create policy mcn_update on public.map_college_nudges for update
   using (is_allowed_reviewer() or team_pass_ok())
   with check (is_allowed_reviewer() or team_pass_ok());
+
+-- ── map_coordinator_summary — PII-free public eligibility aggregate ────────
+-- (added 2026-07-06, migration map_coordinator_summary_rpc) Per college, ONLY
+-- whether a CPL Coordinator is on file (boolean) + the sync timestamp — the
+-- Implementation Funding tab's baseline-eligibility badge ①. Mirrors the
+-- map_users_summary() SECURITY DEFINER pattern; the coordinator's name/email
+-- never leave the gated table via this path.
+create or replace function public.map_coordinator_summary()
+returns table (college text, has_coordinator boolean, last_synced timestamptz)
+language sql stable security definer set search_path = public as $$
+  select college,
+         (nullif(trim(coalesce(cpl_coordinator, '')), '') is not null
+          or nullif(trim(coalesce(cpl_coordinator_email, '')), '') is not null) as has_coordinator,
+         synced_at as last_synced
+  from public.map_college_contacts;
+$$;
+grant execute on function public.map_coordinator_summary() to anon, authenticated, service_role;
