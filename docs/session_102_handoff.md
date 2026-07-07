@@ -53,11 +53,16 @@ art fold. Read in order: CLAUDE.md §11 (Session 101 block),
 1. **Sam's triage continues** (~448 of 481 left). His pass is good — the QA
    items were family-consistency, not judgment errors. Nudge: pick existing
    dropdown families verbatim.
-2. **Next authority lane — Sam's pick queued in the To-Do feed:** military
-   COOL/MOC crosswalk (RECOMMENDED — veterans are the initiative's core; the
-   COS registry already carries ASE MIL1–8 as join points) vs CA License
-   Finder slice. Scope with the runner-as-proxy pattern
-   (`docs/kb-notes/playbook-runner-as-external-api-proxy.md`).
+2. **COOL/MOC crosswalk — REGISTRY LIVE (Sam picked it; #679/#680/#681 +
+   apply).** `kb/reference/moc_crosswalk.json`: 33,874 MOCs, 17,916 with
+   O*NET mappings; bridge leg PROVEN (cert finder takes a dotted O*NET code
+   as keyword — `49-3023.00` → 75 certs). **Next: the bridge artifact** —
+   batch distinct ONET codes through the cert-finder keyword leg on a runner,
+   join to COS cert Ids, emit `kb/moc_cos_bridge.json`, then the consumer
+   (Sierra veteran turns / CER military-pathway chip). Caveat: MOC codes are
+   REUSED across eras (91B medical→mechanic) — use STATUS/SDATE/EDATE + the
+   archive's Read Me.pdf (20 SVC branch letters) to filter current codes.
+   CA License Finder stays the queued alternative lane.
 3. **`--apply-issuers` dry-run** (2 fills possible) — deliberate manual
    step, never cron.
 4. **The 22 ambiguous COS matches** (`kb/cos_match_out/2026-07-07/report.json`)

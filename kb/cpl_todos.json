@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-07 pm · Session 101 (COS authority live + AP fold)",
+ "_as_of": "2026-07-07 eve · Session 101 (COS + MOC registries live)",
  "_session": 101,
- "_status": "CareerOneStop is LIVE: your API credentials checked out on the first probe, the full 6,490-certification registry synced, and 83 credentials on the CER now carry ✓/≈ COS authority chips (with the required USDOL/DEED attribution). Your triage pass got a QA sweep — the ASE and AP art assignments were retargeted to the existing house families (you approved all 10 fixes), and the stale 'AP Art and Design:' variants were merged into the College Board-current names (9 AP art families → 4). NEXT FOR YOU: keep triaging the ~448 remaining — when the dropdown already has a family (ASE, AP, Carpenters Apprenticeship…), pick it verbatim instead of typing a new spelling. NEXT LANE (your call queued): military COOL/MOC crosswalk vs CA License Finder.",
+ "_status": "CareerOneStop is LIVE: your API credentials checked out on the first probe, the full 6,490-certification registry synced, and 83 credentials on the CER now carry ✓/≈ COS authority chips (with the required USDOL/DEED attribution). Your triage pass got a QA sweep — the ASE and AP art assignments were retargeted to the existing house families (you approved all 10 fixes), and the stale 'AP Art and Design:' variants were merged into the College Board-current names (9 AP art families → 4). NEXT FOR YOU: keep triaging the ~448 remaining — when the dropdown already has a family (ASE, AP, Carpenters Apprenticeship…), pick it verbatim instead of typing a new spelling. AND the military COOL/MOC crosswalk you picked is live too: 33,874 military occupation codes synced with their civilian O*NET mappings, and we proved the full veteran chain works (military job code → civilian occupation → certifications → your CER credentials). Next build: the bridge file that pre-computes MOC → certifications for Sierra.",
  "items": [
   {
    "id": "cer-cos-chips",
@@ -41,10 +41,10 @@
    "text": "After Sam's triage session ends, dispatch daily-dashboard.yml so the fold + CER rebuild publish same-day (his 33 normalized assignments + the AP fold land together)."
   },
   {
-   "id": "fable-cool-moc-scope",
+   "id": "fable-moc-bridge",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "Scope the military COOL/MOC crosswalk lane (data sources, runner-as-proxy shape) so the build starts fast once Sam picks the lane."
+   "text": "Build kb/moc_cos_bridge.json: batch the distinct O*NET codes through the cert-finder keyword leg on a runner, join to COS cert Ids, then wire the consumer (Sierra veteran turns / CER military chip). Watch the MOC code-reuse caveat (STATUS/SDATE/EDATE)."
   }
  ]
 }
