@@ -16,7 +16,7 @@ Read in order: CLAUDE.md §11 (Session 103 block),
 `docs/exhibit_canonicalization_lessons.md` (2026-07-07 "continued 6"),
 skill Rules 5d/5e + "Authority sources", then this file.
 
-## What shipped (Session 103)
+## What shipped (Session 103 — Bruh SkyWay)
 
 1. **STAGED pre-seed lanes** — `kb/_preseed_unclassified.py --stage` →
    `kb/unclassified_preseed.json` (**163 rows staged**: cx 31 · hs 73 ·
@@ -72,4 +72,4 @@ skill Rules 5d/5e + "Authority sources", then this file.
   holds the receipts.
 - Rule 4 untouched again (all Session-103 work is kb/ + static JS + docs).
 
-Moniker suggestion: **SkyStage** — or claim your own.
+Session 103 claimed its name from Sam himself: **Bruh SkyWay**. Moniker suggestion for you: **SkyStage** — or claim your own.

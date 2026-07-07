@@ -2424,7 +2424,7 @@ lesson: generate SQL from the JSON receipt, never a terminal round-trip). 5 resi
 "Complete both" + 2 Level III (no family). Harness `kb/_verify_preseed_rules.py` (43); skill Rule 5d.
 Full story: `docs/exhibit_canonicalization_lessons.md` (2026-07-07 "continued 5").
 
-### Session 103 — the STAGED pre-seed + triage toggle + issuer authority sources (2026-07-07)
+### Session 103 — Bruh SkyWay: the STAGED pre-seed + triage toggle + issuer authority sources (2026-07-07)
 
 Sam (triaging live all evening — ~90 hand-saves landed DURING the session): "more pre-seeding …
 leave them ready to save but not yet saved … a toggle [for] just the ones needing to be triaged …
