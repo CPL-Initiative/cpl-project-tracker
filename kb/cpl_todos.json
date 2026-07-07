@@ -14,7 +14,7 @@
    "id": "cos-authority-decisions",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "AUTHORITY NAMING — the CareerOneStop lane is BUILT (your call; Credential Engine/CTDL follows after). Two things left for you: ① if the probe shows the bulk download needs an account, register a free CareerOneStop Web API key (decide RCCD vs CCCCO as owner) and add repo secrets COS_USER_ID + COS_API_TOKEN; ② tell Fable your priority for the CA License Finder slice (state licenses like Cosmetology/SMOG) and the military COOL/MOS crosswalk lane. Attribution is already handled in the UI as the terms require."
+   "text": "AUTHORITY NAMING — lane built + live-probed. FINDING: careeronestop.org's public download page intermittently blocks GitHub's runners (403), so the token API is the dependable path — your free CareerOneStop Web API registration is now REQUIRED to light this up: register at careeronestop.org/Developers (decide RCCD vs CCCCO as the account owner — the license renews every 36 months), then add repo Actions secrets COS_USER_ID + COS_API_TOKEN and tell Fable (or just dispatch the cos-authority-sync workflow with mode=apply yourself). Also still open: priority for the CA License Finder slice + the military COOL/MOS lane."
   },
   {
    "id": "cer-cx-batch-rule",

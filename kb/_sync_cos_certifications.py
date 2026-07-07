@@ -64,20 +64,54 @@ COS_USER_ID = os.environ.get("COS_USER_ID")
 COS_API_TOKEN = os.environ.get("COS_API_TOKEN")
 
 
-def _get(url, headers=None, timeout=60):
+def _get(url, headers=None, timeout=60, attempts=3):
+    # www.careeronestop.org's WAF INTERMITTENTLY 403s runner IPs (probe run 1
+    # got a 200, run 2 a 403, same UA, 2 minutes apart) — retry with backoff
+    # before declaring the lane down. api.careeronestop.org (Bearer token) is
+    # the reliable leg; the bulk lane is opportunistic.
+    import time
     req = urllib.request.Request(url, headers={"User-Agent": UA, **(headers or {})})
     ctx = ssl.create_default_context()
-    with urllib.request.urlopen(req, timeout=timeout, context=ctx) as r:
-        return r.read(), dict(r.headers)
+    last = None
+    for i in range(attempts):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout, context=ctx) as r:
+                return r.read(), dict(r.headers)
+        except urllib.error.HTTPError as e:
+            last = e
+            if e.code not in (403, 429, 500, 502, 503):
+                raise
+            if i < attempts - 1:
+                wait = 5 * (i + 1)
+                print(f"  HTTP {e.code} on {url.split('?')[0]} — retry in {wait}s")
+                time.sleep(wait)
+    raise last
 
 
 # ── Lane 1: bulk download ────────────────────────────────────────────────────
 
-def find_bulk_link(html):
+def find_bulk_link(html, probe=False):
     """The download page links ZIP_Certification_Finder_Data_<MMDDYYYY>.zip —
-    return the newest absolute URL, or None."""
+    return the newest absolute URL, or None. Accepts single/double-quoted or
+    JS-embedded hrefs; in probe mode dumps every candidate href so a pattern
+    drift is diagnosable straight from the run log."""
+    if probe:
+        print(f"  page bytes: {len(html):,}")
+        for marker in ("just a moment", "cf-challenge", "captcha", "access denied",
+                       "request unsuccessful", "incapsula"):
+            if marker in html.lower():
+                print(f"  ⚠ bot-challenge marker in page: {marker!r}")
+        cands = re.findall(r"""["']([^"']*(?:\.zip|\.xlsx|certif[^"']*))["']""",
+                           html, flags=re.I)
+        seen = []
+        for c in cands:
+            if c not in seen and re.search(r"\.(zip|xlsx)$|download|data", c, re.I):
+                seen.append(c)
+        print(f"  candidate hrefs ({len(seen)}):")
+        for c in seen[:40]:
+            print(f"    {c}")
     links = re.findall(
-        r'href="([^"]*ZIP_?Certification[^"]*\.zip)"', html, flags=re.I)
+        r"""["']([^"']*Certification[^"']*\.zip)["']""", html, flags=re.I)
     if not links:
         return None
     def date_key(u):
@@ -171,7 +205,7 @@ def lane_bulk(probe):
     print(f"BULK lane: GET {DATA_PAGE}")
     html, _ = _get(DATA_PAGE)
     html = html.decode("utf-8", errors="replace")
-    link = find_bulk_link(html)
+    link = find_bulk_link(html, probe)
     print(f"  bulk link found: {link}")
     if not link:
         return None
