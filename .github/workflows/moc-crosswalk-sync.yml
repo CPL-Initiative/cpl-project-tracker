@@ -1,0 +1,86 @@
+# Military COOL/MOC crosswalk sync (runner-as-proxy).
+#
+# The agent sandbox cannot reach onetcenter.org or careeronestop.org, so this
+# runner pulls the MOC → O*NET-SOC crosswalk (O*NET bulk file; the CareerOneStop
+# MOC API is probe-only until its path shape is confirmed) into
+# kb/reference/moc_crosswalk.json — the veteran-pathway bridge's first leg
+# (MOC → SOC → certifications → CER cos_cert_id anchors → college articulations).
+#
+# First use: dispatch with mode=probe and read the log (crosswalk link hunt +
+# candidate MOC endpoint statuses + the cert-finder occupation-filter position
+# test), then pin ONET_MOC_URL below if the auto-scrape missed, then dispatch
+# with mode=apply. Secrets (probe P2/P3 only): COS_USER_ID, COS_API_TOKEN.
+# Terms: O*NET is CC-BY (attribute USDOL/O*NET); COS data carries the USDOL
+# ETA + MN DEED attribution the CER already renders.
+name: moc-crosswalk-sync
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "probe (report only, write nothing) or apply"
+        required: true
+        default: probe
+        type: choice
+        options: [probe, apply]
+  schedule:
+    # Monthly refresh, offset from cos-authority-sync's day-3 cron. O*NET
+    # revises the crosswalk a few times a year; an unchanged pull is a no-op.
+    - cron: "17 8 5 * *"
+
+concurrency:
+  group: moc-crosswalk-sync
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      # No ref pin: the cron runs on main; a workflow_dispatch runs on the ref
+      # it's dispatched from (lets a feature branch probe before merging).
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install parser deps
+        run: pip install openpyxl
+
+      - name: Sync MOC crosswalk
+        env:
+          COS_USER_ID: ${{ secrets.COS_USER_ID }}
+          COS_API_TOKEN: ${{ secrets.COS_API_TOKEN }}
+          # Pin the exact O*NET file here if the crosswalks-page scrape drifts:
+          # ONET_MOC_URL: https://www.onetcenter.org/...
+        run: |
+          MODE="${{ github.event.inputs.mode || 'apply' }}"
+          echo "mode: $MODE"
+          if [ "$MODE" = "probe" ]; then
+            python3 kb/_sync_moc_crosswalk.py --probe
+          else
+            python3 kb/_sync_moc_crosswalk.py --apply
+          fi
+
+      - name: Commit + push
+        if: ${{ (github.event.inputs.mode || 'apply') == 'apply' }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add kb/reference/moc_crosswalk.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes — nothing to commit."
+            exit 0
+          fi
+          git commit -m "MOC crosswalk sync — $(date -u +%F)"
+          # Rebase-retry for races against the daily cron (daily-dashboard.yml
+          # pattern).
+          for i in 1 2 3; do
+            git push && exit 0
+            git pull --rebase && continue
+          done
+          git push
