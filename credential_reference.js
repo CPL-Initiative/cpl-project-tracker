@@ -130,6 +130,84 @@
   }
   function signOut() { sessionStorage.removeItem("cpl_sb"); }
 
+  // ─── Token refresh before every write (2026-07-07) ───────────────────────
+  // getSession() deliberately keeps an EXPIRED session alive whenever a
+  // refresh_token exists (so the tab can self-heal without another magic-link
+  // email) — but this file never renewed the access token, so ~1h after
+  // sign-in every kb_curation write started 401ing while the UI still showed
+  // signed-in: Save buttons died into an endless "retry", the worklist
+  // "clear" link silently no-opped, and the tab read as "stopped working"
+  // (2026-07-07, Sam's triage session). Same latent bug raci.js fixed in
+  // Session 77 — see docs/kb-notes/methodology-refresh-token-before-write.md.
+  // Port of that trio, plus SINGLE-FLIGHT: concurrent writes (the worklist
+  // saves title+issuer in a Promise.all) must share one refresh call, because
+  // GoTrue rotates refresh tokens and a second parallel exchange with the
+  // same token can kill the whole session.
+  function refreshToken(rt) {
+    return fetch(SUPABASE_URL + "/auth/v1/token?grant_type=refresh_token", {
+      method: "POST",
+      headers: { "apikey": SUPABASE_ANON, "Content-Type": "application/json" },
+      body: JSON.stringify({ refresh_token: rt })
+    }).then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("refresh " + r.status)); });
+  }
+  var _refreshing = null;
+  function ensureFresh() {
+    // Start from sessionStorage (not the init-time snapshot) so a token a
+    // sibling module (CCR/RACI) rotated is picked up instead of re-spending
+    // a consumed refresh token.
+    var s = getSession() || state.sess;
+    if (!s) return Promise.resolve(null);
+    state.sess = s;
+    if (!(s.exp && s.exp <= Date.now() + 60000 && s.refresh_token)) {
+      return Promise.resolve(s);
+    }
+    if (!_refreshing) {
+      _refreshing = refreshToken(s.refresh_token).then(function (tok) {
+        _refreshing = null;
+        if (!isValidJwt(tok.access_token)) throw new Error("bad refresh");
+        var ns = {
+          access_token: tok.access_token,
+          refresh_token: tok.refresh_token || s.refresh_token,
+          email: s.email,
+          exp: Date.now() + (parseInt(tok.expires_in || "3600", 10) * 1000)
+        };
+        state.sess = ns;
+        try { sessionStorage.setItem("cpl_sb", JSON.stringify(ns)); } catch (e) {}
+        renderAuth();
+        return ns;
+      }).catch(function () {
+        _refreshing = null;
+        state.sess = null;
+        try { sessionStorage.removeItem("cpl_sb"); } catch (e) {}
+        renderAuth();
+        return null;
+      });
+    }
+    return _refreshing;
+  }
+  // A 401/403 on a write whose session ensureFresh() just vouched for means
+  // the session is dead or unauthorized — drop it so the auth widget flips to
+  // "Sign in" instead of leaving dead "retry" buttons (the #598 lesson).
+  // Deliberately does NOT re-render the table/worklist: unsaved input typed in
+  // other worklist rows must survive.
+  function dropDeadSession(resp) {
+    if (resp && (resp.status === 401 || resp.status === 403)) {
+      state.sess = null;
+      try { sessionStorage.removeItem("cpl_sb"); } catch (e) {}
+      renderAuth();
+    }
+    return resp;
+  }
+  // Every write funnels through here: fresh session → do the write → drop the
+  // session on an auth failure. Rejects with "signed out" when no session can
+  // be produced (callers' existing .catch paths show their retry affordance).
+  function withFreshSession(work) {
+    return ensureFresh().then(function (s) {
+      if (!s) return Promise.reject(new Error("signed out"));
+      return work(s).then(dropDeadSession);
+    });
+  }
+
   // Fetch overlay — only rows in our namespace.
   function fetchOverlay() {
     var url = SUPABASE_URL + "/rest/v1/kb_curation"
@@ -169,22 +247,23 @@
       .catch(function () { return {}; });
   }
 
-  function saveInitiated(unifiedTitle, sess) {
-    var body = {
-      course_id: KEY_PREFIX + unifiedTitle,
-      field: FIELD_MARKER,
-      value: "1",
-      reviewer_email: sess.email
-    };
-    return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
-      method: "POST",
-      headers: {
-        "apikey": SUPABASE_ANON,
-        "Authorization": "Bearer " + sess.access_token,
-        "Content-Type": "application/json",
-        "Prefer": "resolution=merge-duplicates,return=minimal"
-      },
-      body: JSON.stringify(body)
+  function saveInitiated(unifiedTitle) {
+    return withFreshSession(function (sess) {
+      return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
+        method: "POST",
+        headers: {
+          "apikey": SUPABASE_ANON,
+          "Authorization": "Bearer " + sess.access_token,
+          "Content-Type": "application/json",
+          "Prefer": "resolution=merge-duplicates,return=minimal"
+        },
+        body: JSON.stringify({
+          course_id: KEY_PREFIX + unifiedTitle,
+          field: FIELD_MARKER,
+          value: "1",
+          reviewer_email: sess.email
+        })
+      });
     });
   }
 
@@ -193,34 +272,37 @@
   // `value` is a string; "" is meaningful (it overrides the original to empty —
   // useful for clearing an inferred issuer that's wrong). Use clearOverride()
   // to remove an override entirely (DELETE the row so the original shows again).
-  function saveOverride(unifiedTitle, field, value, sess) {
-    var body = {
-      course_id: KEY_PREFIX + unifiedTitle,
-      field: field,
-      value: value,
-      reviewer_email: sess.email
-    };
-    return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
-      method: "POST",
-      headers: {
-        "apikey": SUPABASE_ANON,
-        "Authorization": "Bearer " + sess.access_token,
-        "Content-Type": "application/json",
-        "Prefer": "resolution=merge-duplicates,return=minimal"
-      },
-      body: JSON.stringify(body)
+  function saveOverride(unifiedTitle, field, value) {
+    return withFreshSession(function (sess) {
+      return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
+        method: "POST",
+        headers: {
+          "apikey": SUPABASE_ANON,
+          "Authorization": "Bearer " + sess.access_token,
+          "Content-Type": "application/json",
+          "Prefer": "resolution=merge-duplicates,return=minimal"
+        },
+        body: JSON.stringify({
+          course_id: KEY_PREFIX + unifiedTitle,
+          field: field,
+          value: value,
+          reviewer_email: sess.email
+        })
+      });
     });
   }
-  function clearOverride(unifiedTitle, field, sess) {
+  function clearOverride(unifiedTitle, field) {
     var url = SUPABASE_URL + "/rest/v1/kb_curation"
       + "?course_id=eq." + encodeURIComponent(KEY_PREFIX + unifiedTitle)
       + "&field=eq." + encodeURIComponent(field);
-    return fetch(url, {
-      method: "DELETE",
-      headers: {
-        "apikey": SUPABASE_ANON,
-        "Authorization": "Bearer " + sess.access_token
-      }
+    return withFreshSession(function (sess) {
+      return fetch(url, {
+        method: "DELETE",
+        headers: {
+          "apikey": SUPABASE_ANON,
+          "Authorization": "Bearer " + sess.access_token
+        }
+      });
     });
   }
 
@@ -266,27 +348,32 @@
       })
       .catch(function () { return {}; });
   }
-  function saveUnclass(raw, field, value, sess) {
-    return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
-      method: "POST",
-      headers: {
-        "apikey": SUPABASE_ANON,
-        "Authorization": "Bearer " + sess.access_token,
-        "Content-Type": "application/json",
-        "Prefer": "resolution=merge-duplicates,return=minimal"
-      },
-      body: JSON.stringify({
-        course_id: UNCLASS_PREFIX + raw, field: field, value: value,
-        reviewer_email: sess.email
-      })
+  function saveUnclass(raw, field, value) {
+    return withFreshSession(function (sess) {
+      return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
+        method: "POST",
+        headers: {
+          "apikey": SUPABASE_ANON,
+          "Authorization": "Bearer " + sess.access_token,
+          "Content-Type": "application/json",
+          "Prefer": "resolution=merge-duplicates,return=minimal"
+        },
+        body: JSON.stringify({
+          course_id: UNCLASS_PREFIX + raw, field: field, value: value,
+          reviewer_email: sess.email
+        })
+      });
     });
   }
-  function clearUnclass(raw, sess) {
+  function clearUnclass(raw) {
     // Remove BOTH the title + issuer rows for this raw title (un-assign).
     var base = SUPABASE_URL + "/rest/v1/kb_curation"
       + "?course_id=eq." + encodeURIComponent(UNCLASS_PREFIX + raw);
-    var hdr = { "apikey": SUPABASE_ANON, "Authorization": "Bearer " + sess.access_token };
-    return fetch(base, { method: "DELETE", headers: hdr });
+    return withFreshSession(function (sess) {
+      return fetch(base, { method: "DELETE", headers: {
+        "apikey": SUPABASE_ANON, "Authorization": "Bearer " + sess.access_token
+      } });
+    });
   }
 
   // ─── data loading ───────────────────────────────────────────────────────
@@ -889,10 +976,24 @@
 
     // Unclassified-triage worklist toggle — opens a worklist over the raw MAP
     // exhibit titles the auditor flagged `unclassified_in_map` (no credential
-    // identity yet). Count fills in after the lazy fetch.
+    // identity yet). Count fills in after the lazy fetch and shows OPEN items
+    // (unassigned), not the raw queue size — an all-assigned queue reads
+    // "awaiting fold", not "5 still to do" (the 2026-07-07 stuck-feeling fix).
+    var wlLabel = "⚠ Triage unclassified";
+    if (state.unclassified) {
+      var wlOpen = state.unclassified.filter(function (it) {
+        var a = state.unclassAssign[it.raw_title];
+        return !(a && a.title);
+      }).length;
+      var wlAssigned = state.unclassified.length - wlOpen;
+      wlLabel = wlOpen ? ("⚠ Triage unclassified (" + wlOpen + ")")
+        : wlAssigned ? ("✓ Triage unclassified (" + wlAssigned + " awaiting fold)")
+        : "✓ Triage unclassified (0)";
+    }
     var triageBtn = el("button", { type: "button", class: "cr-triage-btn",
-      title: "Review raw MAP exhibit titles with no credential identity yet and assign each a unified title." },
-      [state.unclassified ? ("⚠ Triage unclassified (" + state.unclassified.length + ")") : "⚠ Triage unclassified"]);
+      title: "Review raw MAP exhibit titles with no credential identity yet and assign each a unified title. "
+           + "Saved assignments fold into the credential layer on the daily refresh." },
+      [wlLabel]);
     triageBtn.onclick = openWorklist;
     tb.appendChild(triageBtn);
 
@@ -968,7 +1069,7 @@
         return;
       }
       var r = rows[i];
-      saveInitiated(r.unified_title, state.sess)
+      saveInitiated(r.unified_title)
         .then(function (resp) {
           if (resp.ok) {
             ok += 1;
@@ -1458,7 +1559,7 @@
             + "This records that you've reviewed the AI classification + "
             + "issuer attribution. It doesn't change the underlying data.")) return;
         b.disabled = true; b.textContent = "Saving…";
-        saveInitiated(r.unified_title, state.sess)
+        saveInitiated(r.unified_title)
           .then(function (resp) {
             if (!resp.ok) {
               b.disabled = false; b.textContent = "Mark initiated";
@@ -1665,8 +1766,8 @@
         // If new value equals the original AND we have an existing override,
         // treat Save-as-original as a Clear — DELETE the override row.
         var op = (opts.isOverridden && newVal === opts.originalValue)
-          ? clearOverride(r.unified_title, opts.field, state.sess)
-          : saveOverride(r.unified_title, opts.field, newVal, state.sess);
+          ? clearOverride(r.unified_title, opts.field)
+          : saveOverride(r.unified_title, opts.field, newVal);
         op.then(function (resp) {
           if (!resp || !resp.ok) throw new Error("HTTP " + (resp && resp.status));
           // Update overlay + row state locally so the UI is immediately consistent.
@@ -1739,7 +1840,7 @@
           rec[opts.field] = "saving";
           state.curationEditing[r.unified_title] = rec;
           render();
-          clearOverride(r.unified_title, opts.field, state.sess)
+          clearOverride(r.unified_title, opts.field)
             .then(function (resp) {
               if (!resp || !resp.ok) throw new Error("HTTP " + (resp && resp.status));
               applyOverrideClear(r, opts.field);
@@ -2154,6 +2255,15 @@
     }
 
     var items = state.unclassified;
+    if (!items.length) {
+      panel.appendChild(el("p", { class: "cr-wl-note" }, [
+        "🎉 Queue clear — every raw MAP exhibit title currently has a credential "
+        + "identity. New unclassified titles appear here when the exhibit auditor "
+        + "next runs against fresh MAP data."
+      ]));
+      wrap.appendChild(panel);
+      return;
+    }
     panel.appendChild(el("p", { class: "cr-wl-intro" }, [
       "These " + items.length + " raw MAP exhibit titles have no credential identity in the "
       + "knowledge base yet. Assign each an existing unified title (start typing to pick one) or "
@@ -2165,6 +2275,12 @@
     prog.appendChild(el("strong", { id: "cr-wl-progress-count" }, [String(unclassAssignedCount())]));
     prog.appendChild(document.createTextNode(" of " + items.length + " assigned"));
     panel.appendChild(prog);
+    panel.appendChild(el("p", { class: "cr-wl-note" }, [
+      "Saved assignments fold into the credential layer automatically on the next "
+      + "daily refresh (clean assignments and supersedes of unreviewed machine drafts; "
+      + "anything conflicting with a human-reviewed classification waits for a manual "
+      + "fold). Rows leave this list once folded."
+    ]));
 
     ensureWorklistDatalists();
 
@@ -2216,8 +2332,8 @@
         var iss = (issInp.value || "").trim();
         saveBtn.disabled = true; saveBtn.textContent = "saving…";
         Promise.all([
-          saveUnclass(raw, FIELD_UNCLASS_TITLE, t, state.sess),
-          saveUnclass(raw, FIELD_UNCLASS_ISSUER, iss, state.sess)
+          saveUnclass(raw, FIELD_UNCLASS_TITLE, t),
+          saveUnclass(raw, FIELD_UNCLASS_ISSUER, iss)
         ]).then(function (rs) {
           saveBtn.disabled = false;
           if (rs.every(function (r) { return r.ok; })) {
@@ -2226,7 +2342,10 @@
             saveBtn.textContent = "✓ Saved";
             if (!actTd.querySelector(".cr-wl-clear")) actTd.appendChild(makeClearLink(raw, tr, actTd, saveBtn));
             updateWorklistProgress();
+            renderToolbar();  // triage-button count: open → awaiting-fold
           } else {
+            // dropDeadSession already flipped the auth widget on 401/403; the
+            // row-level affordance just offers the retry.
             saveBtn.textContent = "retry";
           }
         }).catch(function () { saveBtn.disabled = false; saveBtn.textContent = "retry"; });
@@ -2243,14 +2362,15 @@
     var clr = el("a", { class: "cr-wl-clear", href: "#", title: "Remove this assignment" }, ["clear"]);
     clr.onclick = function (e) {
       e.preventDefault();
-      clearUnclass(raw, state.sess).then(function (r) {
+      clearUnclass(raw).then(function (r) {
         if (!r.ok) return;
         delete state.unclassAssign[raw];
         tr.className = "cr-wl-row";
         if (saveBtn) saveBtn.textContent = "Save";
         if (clr.parentNode) clr.parentNode.removeChild(clr);
         updateWorklistProgress();
-      });
+        renderToolbar();  // triage-button count: awaiting-fold → open
+      }).catch(function () {});
     };
     return clr;
   }
@@ -2687,6 +2807,22 @@
     return any;
   }
 
+  // A failed boot used to leave the pane permanently blank (the lazy
+  // onActivate boot is once-per-page-load, so there was no second chance).
+  // Render an inline error card with a Retry that re-runs init().
+  function renderInitError(err) {
+    var wrap = document.getElementById("cr-table-wrap");
+    if (!wrap) return;
+    clearNode(wrap);
+    var card = el("div", { class: "cr-wl-note" }, [
+      "The Credential Reference failed to load (" + (err && err.message || "error") + "). "
+    ]);
+    var retry = el("button", { type: "button", class: "cr-triage-btn" }, ["↻ Retry"]);
+    retry.onclick = function () { init(); };
+    card.appendChild(retry);
+    wrap.appendChild(card);
+  }
+
   function init() {
     if (!document.getElementById("tab-credential-reference")) return;
     state.sess = getSession();
@@ -2719,7 +2855,7 @@
         state.discGeAreas = baked.disc_ge_areas || {};
         renderToolbar();
         render();
-      });
+      }).catch(renderInitError);
       return;
     }
 
@@ -2735,7 +2871,7 @@
       state.overlay = parts[1];
       renderToolbar();
       render();
-    });
+    }).catch(renderInitError);
   }
 
   // Lazy boot (perf): the ~2.6 MB baked CPL_CREDENTIAL_REFERENCE payload + the

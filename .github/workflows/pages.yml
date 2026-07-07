@@ -108,6 +108,10 @@ jobs:
             "_site/kb/row_audit/latest.json"
             "_site/kb/reference/cid_descriptors.json"
             "_site/kb/reference/ccn_courses.json"
+            "_site/credential_reference_data.js"
+            "_site/kb/exhibit_audit/latest.json"
+            "_site/kb/unified_titles.json"
+            "_site/kb/credentials.json"
           )
           missing=0
           for p in "${must[@]}"; do

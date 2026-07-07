@@ -8241,17 +8241,16 @@
     "_notes": null
   },
   "AP: History U.S. History ": {
-    "unified_title": "AP United States History",
-    "confidence_title": 0.94,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "AP U.S. History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AHUH-1-001"
     ],
-    "quality_flag": null,
-    "_notes": null
+    "_notes": "Curator triage superseded the unreviewed machine classification 'AP United States History' (conf 0.94)."
   },
   "AP: History: World  HIstory-Modern": {
     "unified_title": "AP World History: Modern",
@@ -9277,43 +9276,40 @@
     "_notes": "Local course; portfolio review mechanism."
   },
   "AUTO 600 Completion ": {
-    "unified_title": "AUTO 600 — Long Beach City College Auto Course",
-    "confidence_title": 0.45,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Introduction to Automotive Technology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T14:05:53.902684+00:00",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-A6C-1-001"
     ],
-    "quality_flag": "suspect_course_as_exhibit",
-    "_notes": "Generic course-code title with no subject; needs review."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'AUTO 600 — Long Beach City College Auto Course' (conf 0.45)."
   },
   "AUTO 601 Completion ": {
-    "unified_title": "AUTO 601 — Long Beach City College Auto Course",
-    "confidence_title": 0.45,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Automotive Lubrication Service",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T14:05:55.030166+00:00",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-A6C1-1-001"
     ],
-    "quality_flag": "suspect_course_as_exhibit",
-    "_notes": "Generic course-code title."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'AUTO 601 — Long Beach City College Auto Course' (conf 0.45)."
   },
   "AUTO 602 Completion ": {
-    "unified_title": "AUTO 602 — Long Beach City College Auto Course",
-    "confidence_title": 0.45,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Automotive Tire Service",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T14:05:55.831846+00:00",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-A6C2-1-001"
     ],
-    "quality_flag": "suspect_course_as_exhibit",
-    "_notes": "Generic course-code title."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'AUTO 602 — Long Beach City College Auto Course' (conf 0.45)."
   },
   "AUTO 60A: Electrical Schematic Diagnosis- Credit By Exam": {
     "unified_title": "Automotive Electrical Schematic Diagnosis",
@@ -10952,17 +10948,16 @@
     "_notes": null
   },
   "Automotive ": {
-    "unified_title": "Automotive (Generic)",
-    "confidence_title": 0.4,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Introduction to Automotive Technology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T14:05:56.388865+00:00",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPCXS-GA-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Generic bucket title; no specific credential identifiable."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Automotive (Generic)' (conf 0.4)."
   },
   "Automotive Brake Systems": {
     "unified_title": "Automotive Brake Systems",
@@ -16544,17 +16539,16 @@
     "_notes": "Only course number given; no articulating college clearly identified."
   },
   "CUL ART 041 ": {
-    "unified_title": "Generic Credit by Exam — San Bernardino Valley College Culinary",
-    "confidence_title": 0.45,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Culinary Arts (CUL ART 041)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPCXS-CA0-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Course code only; college-specific CBE bucket."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Generic Credit by Exam — San Bernardino Valley College Culinary' (conf 0.45)."
   },
   "CULART 011 CBE": {
     "unified_title": "Generic Credit by Exam — San Bernardino Valley College Culinary",
@@ -16609,17 +16603,16 @@
     "_notes": "Course code only; college-specific CBE bucket."
   },
   "CULART 250 CBE ": {
-    "unified_title": "Generic Credit by Exam — San Bernardino Valley College Culinary",
-    "confidence_title": 0.45,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Culinary Arts (CULART 250)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPCBES-1CA2-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Course code only; college-specific CBE bucket."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Generic Credit by Exam — San Bernardino Valley College Culinary' (conf 0.45)."
   },
   "CULART010": {
     "unified_title": "Generic Credit by Exam — San Bernardino Valley College Culinary",
@@ -19448,17 +19441,16 @@
     "_notes": "Local college course-level portfolio review."
   },
   "Cinema 24- Credit by Exam ": {
-    "unified_title": "Cinema 24 — Credit by Exam (CCSF)",
-    "confidence_title": 0.55,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Cinema 24",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPCBEA-C2-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Local CCSF course CBE; subject not identifiable beyond course number."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Cinema 24 — Credit by Exam (CCSF)' (conf 0.55)."
   },
   "Cisco CCNA Certification": {
     "unified_title": "Cisco Certified Network Associate (CCNA)",
@@ -28105,17 +28097,16 @@
     "_notes": "Title lists alternates; unified to Firefighter 1."
   },
   "Firefighter 1A Certification ": {
-    "unified_title": "Firefighter 1",
-    "confidence_title": 0.9,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Firefighter 1A",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-06-03T19:32:01.902138+00:00",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICA-F1C1-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "FF1A is the academy-portion designation; unifies under Firefighter 1."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Firefighter 1' (conf 0.9)."
   },
   "Firefighter Certificate 1 A": {
     "unified_title": "Firefighter 1",
@@ -32043,16 +32034,16 @@
     "_notes": "Title names only the issuing LEMSA; assumed EMT cert per Rule 5b. Low confidence — credential ambiguous."
   },
   "Inspection Portfolio Spring 2026 #1": {
-    "unified_title": "Generic Portfolio Review — San Bernardino Valley College (Inspection)",
-    "confidence_title": 0.45,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Construction Inspection",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T14:05:56.821738+00:00",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPPRI-IPS2-1-001"
     ],
-    "_notes": "Rule 5 generic-bucket portfolio entry; not a specific named credential."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Generic Portfolio Review — San Bernardino Valley College (Inspection)' (conf 0.45)."
   },
   "Intermediate 3D Animation": {
     "unified_title": "Intermediate 3D Animation",
@@ -35331,17 +35322,16 @@
     "_notes": "Articulated against LVN licensure as the underlying credential."
   },
   "Math 095 CBE ": {
-    "unified_title": "Generic Credit by Exam — San Bernardino Valley College (MATH 095)",
-    "confidence_title": 0.5,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Mathematics (MATH 095)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPCBES-M0C-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "No course title given; MATH 095 at SBVC; administrative mapping."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Generic Credit by Exam — San Bernardino Valley College (MATH 095)' (conf 0.5)."
   },
   "Math 102-CBE": {
     "unified_title": "Intermediate Algebra",
@@ -44043,6 +44033,38 @@
     "classified_at": "2026-06-03",
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-06-03T19:32:01.902138+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AUTO 600 Completion": {
+    "unified_title": "Introduction to Automotive Technology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T14:05:53.902684+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AUTO 601 Completion": {
+    "unified_title": "Automotive Lubrication Service",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T14:05:55.030166+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AUTO 602 Completion": {
+    "unified_title": "Automotive Tire Service",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T14:05:55.831846+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Automotive": {
+    "unified_title": "Introduction to Automotive Technology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T14:05:56.388865+00:00",
     "reviewed_by": "map@rccd.edu"
   }
 }

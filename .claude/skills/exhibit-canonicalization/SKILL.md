@@ -86,6 +86,35 @@ that the source title used prerequisite phrasing. Confidence should be
 The same applies to course-section titles like `EMT 1 Module A and B` — if
 the credential being referenced is identifiable, cluster with that cert.
 
+### Rule 5c — Credit-by-Exam / Portfolio exhibits name the COURSE CONTENT (Sam's Cx procedure, 2026-07-07)
+
+Many exhibits document a **credit-by-exam (Cx)** or **portfolio-review**
+opportunity rather than an external credential. Colleges name these freely for
+local reasons (`AUTO 601 Completion`, `Math 095 CBE`, `Cinema 24- Credit by
+Exam`, `Inspection Portfolio Spring 2026 #1`) — that local freedom stands; the
+unified title is the SEARCH layer on top, and it must read for a prospective
+student who knows the subject, not the college's naming scheme:
+
+1. **Single-course Cx/portfolio exhibit** → unified title = the plain-English
+   subject-matter title of the target course: `AUTO 601 Completion` →
+   `Automotive Lubrication Service`. When the course title is itself just a
+   code, fall back to `<Discipline> (<local course code>)`: `Math 095 CBE` →
+   `Mathematics (MATH 095)`, `CULART 250 CBE` → `Culinary Arts (CULART 250)`.
+   Never put the mechanism (`Credit by Exam`, `CBE`, `Portfolio`) in the
+   unified title — the CPL Type column carries it (Rules 1/2).
+2. **Batch Cx exhibit** (one exhibit spanning several courses) → name the
+   coherent program-area umbrella a student would search (e.g. an exhibit
+   bundling brake/suspension/electrical exams → `Automotive Maintenance
+   Fundamentals`), and let the credit recommendations enumerate the member
+   courses. If no honest umbrella exists, it's a Rule 5 generic bucket.
+3. **Issuing agency for Cx + portfolio = `California Community Colleges`**
+   (Sam, 2026-07-07). Cx/portfolio is a title 5 §55050 system instrument, not
+   an external issuer, and a uniform issuer makes these exhibits filterable as
+   one family. The AWARDING college is never lost — it lives on the
+   exhibit/articulation layer. This supersedes the old "local credential →
+   `issuing_agency = null`" line in Rule 6 for Cx/portfolio specifically.
+   Always the plural system name — never `California Community College`.
+
 ### Rule 6 — Issuing agency uses the longer recognizable canonical name
 
 Use the **longer, full canonical name with the common abbreviation in
@@ -112,7 +141,10 @@ and reports. Examples:
 - `Cisco` — vendor name
 - `American Council on Education (ACE)` — for JST military credit recommendations
 
-For credentials issued by a CCC college locally, set `issuing_agency = null` and explain in `_notes`.
+For credentials issued by a CCC college locally: Cx / portfolio-review exhibits
+take `issuing_agency = "California Community Colleges"` (Rule 5c); other
+genuinely local credentials keep `issuing_agency = null` with an explanation
+in `_notes`.
 
 ### Rule 7 — Training agency only if distinct
 

@@ -66,3 +66,15 @@ Two more guardrails that turn a silent failure into a visible one:
 `raci.js` (Session 77, PR #559) and `unified_courses.js` (the original, lines ~63–82). When you add a new
 authed-write surface, copy the `ensureFresh` + refresh-gated `sbWrite` + rollback trio — don't re-derive
 a format-only check.
+
+> **2026-07-07 adoption — credential_reference.js (CER).** The CER carried this
+> exact bug for another month after raci.js was fixed: its triage worklist +
+> Curate writes trusted the init-time `state.sess` snapshot, so ~1h after
+> sign-in every save died into a silent "retry" ("the tab stopped working",
+> Sam's triage session). Ported the trio as `withFreshSession()` around all 5
+> write fns, **plus one refinement worth copying: SINGLE-FLIGHT the refresh** —
+> the worklist saves two rows in a `Promise.all`, and two parallel
+> refresh-token exchanges on the same GoTrue token can kill the session.
+> Guard: `tests/cer_token_refresh.test.js`. Remaining known holder of the
+> pattern-without-refresh: none found (unified_courses.js has its own rolling
+> refresh; raci.js and CER now both ensureFresh).

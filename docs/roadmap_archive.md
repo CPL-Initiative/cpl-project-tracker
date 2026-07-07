@@ -2205,3 +2205,20 @@ schema `kb/supabase_merge_doctrine.sql`; tests `uc_mind_meld.test.js`, 31), and 
 Next: Sam's voice pass → distill v1 → batch pass 2 + ESL packaging pass per
 [`docs/ccr_convergence_handoff.md`](docs/ccr_convergence_handoff.md). Full story:
 `docs/ccr_convergence_lessons.md`.
+
+
+### Session 97 — BigSky: the Activities tab optimization + reports consolidation (2026-07-03)
+
+Sam's laundry list, one PR: the **Custom Report** gains a staged **progress bar**, **per-audience
+document titles**, the **Elevation slider** (0→30,000 ft detail control feeding an Altitude prompt
+block), and absorbs the **Master Report** as a Report-Type option (filter-bar button retired). The
+**slim actions bar** (Lead + Search + Element Map + Custom Report) moved to the TOP of the Activities
+pane — the Activity/Vision/Goal/Status selects, Apply/Reset, and the bar-level Attach Doc were
+retired (the generator's `<!-- Filter Bar -->` comment stays put as the injection anchor; the Lead
+dropdown is now rebuilt every run — it had been frozen since first populate). **Sidebar grouped**
+into 5 collapsible groups + Share (`nav_groups.js`, runtime-wrap, regen-proof) with the label renamed
+**Activities**; Where To now resets after each use; **MAP naming locked** (see Naming & terminology
+above) across prompts, footers, the KB repo (draft PR), and a `sierra_guidance` row; report models
+de-pinned to the `claude-sonnet-4-5` alias. Team-phrase expansion plan authored:
+[`docs/team_phrase_expansion_plan.md`](docs/team_phrase_expansion_plan.md) (recommendation: widen
+most, keep 4 reviewer-only). Suite 132 files green (+3 new). Full story: `docs/cobi_lessons.md` (S97).

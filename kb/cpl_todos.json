@@ -1,14 +1,26 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-03 · Session 98 (Implementation Funding rework) + MindMeld + Session 97",
- "_session": 98,
- "_status": "THREE lanes live today. NEWEST — the Implementation Funding tab is now a scenario tool ready for the Chancellor: pick the two funding years from dropdowns, flip a Year 1 / Year 2 filter to see that year's priority metrics (your six new metrics are in; every text field is editable), and a new $1M noncredit-feeder carve-out supports NOCE / SD Continuing Ed / Mt. SAC Noncredit / Calbright by headcount (they're out of the college table now — they can't earn CPL metrics). Anyone can play: edits without the team phrase stay in that browser only; unlock with the phrase and your edits become the shared model everyone opens to. The Excel workbook is retired; your 2025-26 headcounts are applied (74 colleges — 41 still show the old 2022-23 figure until you send the rest). STILL THE BIG ONE: the CCR Mind-meld voice pass — the doctrine only becomes YOUR rules when you talk to it.",
+ "_as_of": "2026-07-07 · Session 100 (CER triage loop unstuck)",
+ "_session": 100,
+ "_status": "CER IS BACK IN ACTION. The 'tab stopped working' after your 5 triage saves was a sign-in token that silently expired after ~1 hour — every save then failed into a dead 'retry'. Fixed: the tab now renews the token before every save, and if a session truly dies you get the sign-in box back instead of silence. Your 5 assignments (plus 6 old stragglers hiding under trailing-space twin spellings) are FOLDED into the credential layer — Introduction to Automotive Technology, Automotive Lubrication Service, Automotive Tire Service, and Construction Inspection are live credential identities, the garbage machine names are gone, and the triage queue reads 0. From now on the daily refresh folds clean assignments automatically and re-runs the exhibit audit, so triage → credential is a same-day loop. Issuing agency for credit-by-exam/portfolio is standardized to 'California Community Colleges' per your call (Rule 5c in the skill). NEW DECISIONS FOR YOU on the CareerOneStop/O*NET authority-naming strategy — see the to-dos.",
  "items": [
   {
-   "id": "funding-tryout",
+   "id": "cer-verify-fix",
    "who": "sam",
-   "tab": "implementation-funding",
-   "text": "NEW MODEL: open Implementation Funding — pick the two years, flip Year 1/Year 2 to see each year's metrics (all editable), check the feeder table at the bottom, and try editing a share or the $1M carve-out. Without the phrase it's your private sandbox; 🔓 Unlock team editing to save the base model for everyone (anything you were exploring is carried over when you unlock)."
+   "tab": "credential-reference",
+   "text": "CER: after the fix merges, reopen the Common Exhibit Reference — the Triage button should read '✓ Triage unclassified (0)' and your 4 new credentials (Intro to Automotive Technology, Automotive Lubrication Service, Automotive Tire Service, Construction Inspection) appear as rows after the next daily rebuild. If a save ever fails again you'll now SEE the sign-in box instead of a dead 'retry'."
+  },
+  {
+   "id": "cos-authority-decisions",
+   "who": "sam",
+   "tab": "credential-reference",
+   "text": "AUTHORITY NAMING (your CareerOneStop idea — verdict: yes, strong fit): 3 decisions unlock the build — ① register (or dig up) a free CareerOneStop Web API account (RCCD or CCCCO name?), ② confirm whether the MAP Initiative already has the Credential Engine account their California partnership page describes, ③ OK to show the required 'Source: CareerOneStop / USDOL' attribution line on the CER. Full plan: docs/kb-notes/reference-authority-anchored-credential-naming.md."
+  },
+  {
+   "id": "cer-cx-batch-rule",
+   "who": "fable",
+   "tab": "credential-reference",
+   "text": "Build the CareerOneStop bulk-sync + match-and-badge lane once Sam supplies the API account (runner-as-proxy workflow; probe the bulk-download URL first). Also wire Rule 5c batch-Cx umbrella naming into the next triage batch."
   },
   {
    "id": "funding-headcounts-41",
@@ -33,12 +45,6 @@
    "who": "fable",
    "tab": "unified-courses",
    "text": "AFTER Sam's voice pass: distill merge_doctrine_notes → Doctrine v1, re-measure agreement on a fresh sample (gate ≥90%), then batch pass 2 (doctrine-v1@bot, all six lanes, dry-run→skim→apply) + the ESL packaging pilot. Full queue: docs/ccr_convergence_handoff.md."
-  },
-  {
-   "id": "s97-tryout",
-   "who": "sam",
-   "tab": "activities-projects",
-   "text": "NEW LOOK: open the Activities tab (sidebar now says just 'Activities', inside the Workplan group). The slim bar sits at the top; 📊 Custom Report now holds BOTH reports — pick ⚡ narrative or 📋 Master, set the audience and the new Elevation slider (sea level = full detail, 30,000 ft = board brief), and watch the progress bar instead of 'Generating…'. Tell Fable if any band's length/detail feels off."
   },
   {
    "id": "kb-naming-pr",
