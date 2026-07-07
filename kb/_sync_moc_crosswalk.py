@@ -212,34 +212,52 @@ def lane_bulk(probe):
     mocs = {}  # (branch, code) -> rec
     for member, headers, rows in read_archive(blob, link.rsplit("/", 1)[-1], probe):
         idx = map_headers(headers)
+        # milx schema (pinned by probe round 2, run 28887367801): O*NET-SOC
+        # codes ride in NUMBERED columns ONET1..ONET4 (the dotted format the
+        # cert-finder keyword leg wants — P3 confirmed) + legacy SOC1..SOC4;
+        # '-' is the file's null sentinel; STATUS/SDATE/EDATE are change
+        # history (rows repeat per MOC — aggregate by (branch, code)).
+        low = [str(h).strip().lower() for h in headers]
+        onet_cols = [i for i, h in enumerate(low) if re.fullmatch(r"onet\d", h)]
+        soc_cols = [i for i, h in enumerate(low) if re.fullmatch(r"soc\d", h)]
+        code_cols = onet_cols or soc_cols or ([idx["soc"]] if "soc" in idx else [])
         # Probe prints EVERY header — the first probe truncated at 8 and hid the
-        # SOC column, which is exactly the drift this diagnostic exists to catch.
+        # SOC columns, which is exactly the drift this diagnostic exists to catch.
         shown = headers if probe else headers[:8] + (["…"] if len(headers) > 8 else [])
         print(f"  member: {member} | headers: {shown} | rows: {len(rows)} "
-              f"| mapped: {sorted(idx)}")
+              f"| mapped: {sorted(idx)} | onet cols: {len(onet_cols)} | "
+              f"soc cols: {len(soc_cols)}")
         if probe:
             for r in rows[:2]:
                 print(f"    sample: {r[:8]}")
             continue
-        if "code" not in idx or "soc" not in idx:
-            print(f"    (skipped — no code/soc columns; extend HEADER_MAP if this "
-                  f"member should parse)")
+        if "code" not in idx or not code_cols:
+            print("    (skipped — no code/ONET-SOC columns; extend HEADER_MAP / "
+                  "the numbered-column patterns if this member should parse)")
             continue
+
+        def val(row, i):
+            v = str(row[i]).strip() if i is not None and i < len(row) and row[i] is not None else ""
+            return "" if v in ("-", "None") else v
+
         for row in rows:
-            def cell(f):
-                i = idx.get(f)
-                return (str(row[i]).strip() if i is not None and i < len(row)
-                        and row[i] is not None else "")
-            code = cell("code")
+            code = val(row, idx.get("code"))
             if not code:
                 continue
-            key = (cell("branch"), code)
-            rec = mocs.setdefault(key, {
-                "branch": cell("branch"), "code": code, "title": cell("title"),
-                "socs": []})
-            soc = cell("soc")
-            if soc and soc not in rec["socs"]:
-                rec["socs"].append(soc)
+            branch = val(row, idx.get("branch"))
+            rec = mocs.setdefault((branch, code), {
+                "branch": branch, "code": code, "title": "", "socs": []})
+            title = val(row, idx.get("title"))
+            if title and not rec["title"]:
+                rec["title"] = title
+            for i in code_cols:
+                soc = val(row, i)
+                if soc and soc not in rec["socs"]:
+                    rec["socs"].append(soc)
+        # The csv and xlsx members carry the SAME dataset — one parse is the
+        # registry; stop rather than re-aggregating a duplicate member.
+        if mocs:
+            break
     if probe:
         return "PROBED"
     return sorted(mocs.values(), key=lambda m: (m["branch"], m["code"])) or None
