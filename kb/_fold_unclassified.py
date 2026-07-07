@@ -77,6 +77,7 @@ from datetime import date, datetime, timezone
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 OVERLAY = os.path.join(HERE, "unclassified_assignments.json")
+SUGGEST = os.path.join(HERE, "unclassified_suggestions.json")
 UT_PATH = os.path.join(HERE, "unified_titles.json")
 CR_PATH = os.path.join(HERE, "credentials.json")
 AUDIT_PATH = os.path.join(HERE, "exhibit_audit", "latest.json")
@@ -307,11 +308,29 @@ def main():
         sys.exit("APPLY BLOCKED — a V-gate failed (see report). Resolve conflicts/ripples first.")
 
     # ---- apply ----
+    # Phase-2 of the Rule-5c identity integration (2026-07-07): when the
+    # curator's assigned title matches an identity-anchored suggestion
+    # (CCN/C-ID tier) for that raw, stamp title_anchor on the new entry so a
+    # future re-key / M-ID→C-ID promotion can ripple CER titles mechanically.
+    try:
+        _suggest = load(SUGGEST).get("suggestions", {})
+    except (FileNotFoundError, ValueError):
+        _suggest = {}
+
+    def anchor_for(raw, assigned):
+        for s in _suggest.get(raw, []):
+            if s.get("kind") in ("ccn", "cid") \
+                    and (s.get("title") or "").strip().lower() == assigned.strip().lower():
+                return {"system": "CCN" if s["kind"] == "ccn" else "C-ID", "id": s.get("id")}
+        return None
+
     today = date.today().isoformat()
     ut_before = len(ut)
     supersede_adds = 0
-    for r in clean:
-        ut[r["raw"]] = {
+    anchored = 0
+    def new_entry(r):
+        nonlocal anchored
+        e = {
             "unified_title": r["assigned"],
             "confidence_title": 1.0,
             "classified_at": today,
@@ -319,6 +338,14 @@ def main():
             "reviewed_at": r["reviewed_at"],
             "reviewed_by": r["reviewed_by"],
         }
+        a = anchor_for(r["raw"], r["assigned"])
+        if a:
+            e["title_anchor"] = a
+            anchored += 1
+        return e
+
+    for r in clean:
+        ut[r["raw"]] = new_entry(r)
     for r in supersede:
         # Re-point only the DISAGREEING whitespace-twin spellings (an agreeing
         # spelling is usually an earlier curator fold — leave its provenance
@@ -326,29 +353,16 @@ def main():
         # displaced.
         for s in r["disagreeing"]:
             old = ut[s]
-            ut[s] = {
-                "unified_title": r["assigned"],
-                "confidence_title": 1.0,
-                "classified_at": today,
-                "classified_by": CLASSIFIED_BY,
-                "reviewed_at": r["reviewed_at"],
-                "reviewed_by": r["reviewed_by"],
-                "source_exhibit_ids": old.get("source_exhibit_ids"),
-                "_notes": (f"Curator triage superseded the unreviewed machine "
+            e = new_entry(r)
+            e["source_exhibit_ids"] = old.get("source_exhibit_ids")
+            e["_notes"] = (f"Curator triage superseded the unreviewed machine "
                            f"classification {old.get('unified_title')!r} "
-                           f"(conf {old.get('confidence_title')})."),
-            }
+                           f"(conf {old.get('confidence_title')}).")
+            ut[s] = e
         # The trimmed spelling itself may be absent (only padded twins existed)
         # — add it so the overlay-assigned key is a first-class entry.
         if r["raw"] not in ut:
-            ut[r["raw"]] = {
-                "unified_title": r["assigned"],
-                "confidence_title": 1.0,
-                "classified_at": today,
-                "classified_by": CLASSIFIED_BY,
-                "reviewed_at": r["reviewed_at"],
-                "reviewed_by": r["reviewed_by"],
-            }
+            ut[r["raw"]] = new_entry(r)
             supersede_adds += 1
     assert len(ut) == ut_before + len(clean) + supersede_adds, \
         "V3 violated: unexpected unified_titles delta"
@@ -426,6 +440,7 @@ def main():
                "credential_added": cred_adds, "credential_issuer_fills": issuer_fills,
                "credential_pruned": cred_prunes,
                "articulations_repointed": len(resolved_ripples),
+               "title_anchors_stamped": anchored,
                "audit_pruned": pruned,
                "unified_titles_count": len(ut)}
     with open(os.path.join(OUTDIR, "applied.json"), "w", encoding="utf-8") as f:
