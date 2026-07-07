@@ -1,0 +1,632 @@
+{
+ "_about": "CareerOneStop authority matches for CER unified titles (kb/_match_cos_authority.py). DERIVED overlay — the CER renders these as ✓ COS badges; display requires the attribution below.",
+ "_attribution": "Source: CareerOneStop (www.careeronestop.org), sponsored by the U.S. Department of Labor, Employment and Training Administration; data maintained by the Minnesota Department of Employment and Economic Development (DEED).",
+ "_authority_synced_at": "2026-07-07T17:04:23Z",
+ "_generated_at": "2026-07-07T17:04:27Z",
+ "count": 83,
+ "matches": {
+  "ACE Health Coach Certification": {
+   "name": "ACE Health Coach Certification",
+   "org": "American Council on Exercise",
+   "tier": "exact",
+   "id": "0788-C",
+   "type": "Specialty"
+  },
+  "ACSM Exercise Physiologist and NSCA Certified Strength and Conditioning Specialist (CSCS)": {
+   "name": "Certified Strength and Conditioning Specialist",
+   "org": "National Strength and Conditioning Association - Certification Commission",
+   "tier": "acronym",
+   "id": "1056-C",
+   "acronym": "CSCS",
+   "type": "Specialty"
+  },
+  "ANSI-Accredited Food Protection Manager Certification": {
+   "name": "Food Protection Manager Certification",
+   "org": "StateFoodSafety",
+   "tier": "contains",
+   "id": "12847-A",
+   "type": "Core"
+  },
+  "ASE L4 — Advanced Driver Assistance Systems (ADAS) Specialist": {
+   "name": "Advanced Driver Assistance Systems Certification",
+   "org": "Snap-on Industrial",
+   "tier": "acronym",
+   "id": "14482-A",
+   "acronym": "ADAS",
+   "type": "Core"
+  },
+  "AWS Certified Cloud Practitioner": {
+   "name": "AWS Certified Cloud Practitioner",
+   "org": "Amazon.com Web Services",
+   "tier": "exact",
+   "id": "11430-D",
+   "type": "Product/Equipment"
+  },
+  "AWS Certified Developer — Associate": {
+   "name": "AWS Certified Developer - Associate",
+   "org": "Amazon.com Web Services",
+   "tier": "exact",
+   "id": "11433-D",
+   "type": "Product/Equipment"
+  },
+  "AWS Certified Solutions Architect — Associate": {
+   "name": "AWS Certified Solutions Architect - Associate",
+   "org": "Amazon.com Web Services",
+   "tier": "exact",
+   "id": "11431-D",
+   "type": "Product/Equipment"
+  },
+  "AWS Certified SysOps Administrator": {
+   "name": "AWS Certified SysOps Administrator - Associate",
+   "org": "Amazon.com Web Services",
+   "tier": "contains",
+   "id": "11435-D",
+   "type": "Product/Equipment"
+  },
+  "AWS Certified SysOps Administrator — Associate": {
+   "name": "AWS Certified SysOps Administrator - Associate",
+   "org": "Amazon.com Web Services",
+   "tier": "exact",
+   "id": "11435-D",
+   "type": "Product/Equipment"
+  },
+  "Administrative Professional": {
+   "name": "Certified Administrative Professional",
+   "org": "International Association of Administrative Professionals",
+   "tier": "contains",
+   "id": "0385-A",
+   "acronym": "CAP",
+   "type": "Core"
+  },
+  "Advanced Medical Surgical Nursing": {
+   "name": "Medical-Surgical Nursing",
+   "org": "ANA Enterprise",
+   "tier": "contains",
+   "id": "6128-C",
+   "acronym": "MEDSURG-BC",
+   "type": "Specialty"
+  },
+  "Advanced Medical Surgical Nursing Lab": {
+   "name": "Medical-Surgical Nursing",
+   "org": "ANA Enterprise",
+   "tier": "contains",
+   "id": "6128-C",
+   "acronym": "MEDSURG-BC",
+   "type": "Specialty"
+  },
+  "Autodesk Certified User/Professional — AutoCAD": {
+   "name": "AutoCAD Certified Professional",
+   "org": "Autodesk, Inc.",
+   "tier": "contains",
+   "id": "10796-D",
+   "type": "Product/Equipment"
+  },
+  "Basic Life Support (BLS) Certification": {
+   "name": "Basic Life Support Certification",
+   "org": "American Red Cross",
+   "tier": "exact",
+   "id": "11715-E",
+   "type": "Skill"
+  },
+  "Beginning Medical Surgical Nursing": {
+   "name": "Medical-Surgical Nursing",
+   "org": "ANA Enterprise",
+   "tier": "contains",
+   "id": "6128-C",
+   "acronym": "MEDSURG-BC",
+   "type": "Specialty"
+  },
+  "Business Communication": {
+   "name": "Communication Skills for Business",
+   "org": "Pearson",
+   "tier": "contains",
+   "id": "13965-A",
+   "acronym": "CSB",
+   "type": "Core"
+  },
+  "C++ Certified Associate Programmer (CPA)": {
+   "name": "Certified Associate: Programmer",
+   "org": "Unity Technologies",
+   "tier": "contains",
+   "id": "15295-A",
+   "type": "Core"
+  },
+  "CLP — C Certified Professional Programmer": {
+   "name": "Certified Professional: Programmer",
+   "org": "Unity Technologies",
+   "tier": "contains",
+   "id": "15297-A",
+   "type": "Core"
+  },
+  "CPP — C++ Certified Professional Programmer": {
+   "name": "Certified Professional: Programmer",
+   "org": "Unity Technologies",
+   "tier": "contains",
+   "id": "15297-A",
+   "type": "Core"
+  },
+  "Certified Associate in Project Management (CAPM)": {
+   "name": "Certified Associate in Project Management",
+   "org": "Project Management Institute",
+   "tier": "exact",
+   "id": "3674-A",
+   "acronym": "CAPM",
+   "type": "Core"
+  },
+  "Certified Ethical Hacker (CEH)": {
+   "name": "Certified Ethical Hacker",
+   "org": "EC-Council",
+   "tier": "exact",
+   "id": "9224-A",
+   "acronym": "C/EH",
+   "type": "Core"
+  },
+  "Certified Nurse Assistant (CNA) Certification": {
+   "name": "Certified Nurse Assistant",
+   "org": "American Red Cross",
+   "tier": "contains",
+   "id": "7394-A",
+   "type": "Core"
+  },
+  "Certified Occupational Therapy Assistant (COTA)": {
+   "name": "Certified Occupational Therapy Assistant",
+   "org": "National Board for Certification in Occupational Therapy, Inc.",
+   "tier": "exact",
+   "id": "0318-A",
+   "acronym": "COTA",
+   "type": "Core"
+  },
+  "Certified Payroll Professional (CPP)": {
+   "name": "Certified Payroll Professional",
+   "org": "American Payroll Association",
+   "tier": "exact",
+   "id": "0486-A",
+   "acronym": "CPP",
+   "type": "Core"
+  },
+  "Certified Strength and Conditioning Specialist (CSCS)": {
+   "name": "Certified Strength and Conditioning Specialist",
+   "org": "National Strength and Conditioning Association - Certification Commission",
+   "tier": "exact",
+   "id": "1056-C",
+   "acronym": "CSCS",
+   "type": "Specialty"
+  },
+  "Child Development Associate (CDA) Credential": {
+   "name": "Child Development Associate",
+   "org": "Council for Professional Recognition",
+   "tier": "acronym",
+   "id": "0865-A",
+   "acronym": "CDA",
+   "type": "Core"
+  },
+  "Cisco Certified CyberOps Associate": {
+   "name": "Cisco Certified CyberOps Associate",
+   "org": "Cisco Systems, Inc.",
+   "tier": "exact",
+   "id": "10827-D",
+   "type": "Product/Equipment"
+  },
+  "Commercial Driver's License (CDL) Permit": {
+   "name": "Commercial Driver License (CDL)",
+   "org": "Federal Motor Carrier Safety Administration",
+   "tier": "acronym",
+   "id": "10936-B",
+   "acronym": "CDL",
+   "type": "Advanced"
+  },
+  "CompTIA Certification (unspecified)": {
+   "name": "CompTIA A+ Certification",
+   "org": "Computing Technology Industry Association (CompTIA)",
+   "tier": "contains",
+   "id": "0019-A",
+   "type": "Core"
+  },
+  "CompTIA Cloud+": {
+   "name": "CompTIA Cloud+",
+   "org": "Computing Technology Industry Association (CompTIA)",
+   "tier": "exact",
+   "id": "10153-A",
+   "type": "Core"
+  },
+  "CompTIA IT Fundamentals (ITF+)": {
+   "name": "CompTIA IT Fundamentals",
+   "org": "Computing Technology Industry Association (CompTIA)",
+   "tier": "exact",
+   "id": "10157-A",
+   "type": "Core"
+  },
+  "CompTIA Network+": {
+   "name": "CompTIA Network+",
+   "org": "Computing Technology Industry Association (CompTIA)",
+   "tier": "exact",
+   "id": "0642-A",
+   "type": "Core"
+  },
+  "CompTIA PenTest+": {
+   "name": "CompTIA PenTest+",
+   "org": "Computing Technology Industry Association (CompTIA)",
+   "tier": "exact",
+   "id": "11992-D",
+   "type": "Product/Equipment"
+  },
+  "CompTIA Project+": {
+   "name": "CompTIA Project+",
+   "org": "Computing Technology Industry Association (CompTIA)",
+   "tier": "exact",
+   "id": "2483-A",
+   "type": "Core"
+  },
+  "CompTIA Security+": {
+   "name": "CompTIA Security+",
+   "org": "Computing Technology Industry Association (CompTIA)",
+   "tier": "exact",
+   "id": "3497-A",
+   "type": "Core"
+  },
+  "CompTIA Server+": {
+   "name": "CompTIA Server+",
+   "org": "Computing Technology Industry Association (CompTIA)",
+   "tier": "exact",
+   "id": "2387-A",
+   "type": "Core"
+  },
+  "CompTIA Tech+": {
+   "name": "CompTIA Tech+",
+   "org": "Computing Technology Industry Association (CompTIA)",
+   "tier": "exact",
+   "id": "2388-A",
+   "type": "Core"
+  },
+  "Computer Hacking Forensic Investigator (CHFI)": {
+   "name": "Computer Hacking Forensic Investigator",
+   "org": "EC-Council",
+   "tier": "exact",
+   "id": "9225-D",
+   "acronym": "C/HFI",
+   "type": "Product/Equipment"
+  },
+  "Construction Inspection": {
+   "name": "Highway Construction Inspection",
+   "org": "National Institute for Certification in Engineering Technologies",
+   "tier": "contains",
+   "id": "5371-A",
+   "type": "Core"
+  },
+  "Emergency Medical Responder (EMR)": {
+   "name": "Emergency Medical Responder",
+   "org": "National Registry of Emergency Medical Technicians",
+   "tier": "exact",
+   "id": "0290-A",
+   "acronym": "EMR",
+   "type": "Core"
+  },
+  "Emergency Medical Responder (EMR) Certification": {
+   "name": "Emergency Medical Responder",
+   "org": "National Registry of Emergency Medical Technicians",
+   "tier": "acronym",
+   "id": "0290-A",
+   "acronym": "EMR",
+   "type": "Core"
+  },
+  "Emergency Medical Responder (High School Articulation)": {
+   "name": "Emergency Medical Responder",
+   "org": "National Registry of Emergency Medical Technicians",
+   "tier": "exact",
+   "id": "0290-A",
+   "acronym": "EMR",
+   "type": "Core"
+  },
+  "Emergency Medical Responder — Baldy View ROP": {
+   "name": "Emergency Medical Responder",
+   "org": "National Registry of Emergency Medical Technicians",
+   "tier": "contains",
+   "id": "0290-A",
+   "acronym": "EMR",
+   "type": "Core"
+  },
+  "Engineering Graphics": {
+   "name": "Certified in Engineering Graphics",
+   "org": "Association of Technology, Management, and Applied Engineering",
+   "tier": "contains",
+   "id": "8183-A",
+   "acronym": "CEG",
+   "type": "Core"
+  },
+  "Entrepreneurship and Small Business (ESB) Certification": {
+   "name": "Entrepreneurship and Small Business",
+   "org": "Pearson",
+   "tier": "contains",
+   "id": "13468-E",
+   "type": "Skill"
+  },
+  "FAA Certified Flight Instructor — Instrument (CFII)": {
+   "name": "Certified Flight Instrument Instructor Rating",
+   "org": "Federal Aviation Administration",
+   "tier": "acronym",
+   "id": "13231-B",
+   "acronym": "CFII",
+   "type": "Advanced"
+  },
+  "FAA Remote Pilot Certificate (Part 107)": {
+   "name": "Remote Pilot Certificate",
+   "org": "Federal Aviation Administration",
+   "tier": "contains",
+   "id": "12986-C",
+   "type": "Specialty"
+  },
+  "Fire Inspector I": {
+   "name": "Fire Inspector I",
+   "org": "International Code Council",
+   "tier": "exact",
+   "id": "5176-A",
+   "type": "Core"
+  },
+  "Firefighter 2": {
+   "name": "Firefighter Type 2",
+   "org": "National Wildfire Coordinating Group",
+   "tier": "contains",
+   "id": "13379-B",
+   "acronym": "FFT2",
+   "type": "Advanced"
+  },
+  "First Aid, CPR, and AED Certification": {
+   "name": "First Aid Certification",
+   "org": "American Red Cross",
+   "tier": "contains",
+   "id": "2302-E",
+   "type": "Skill"
+  },
+  "Fundamental Payroll Certification (FPC)": {
+   "name": "Fundamental Payroll Certification",
+   "org": "American Payroll Association",
+   "tier": "exact",
+   "id": "3935-A",
+   "acronym": "FPC",
+   "type": "Core"
+  },
+  "Fundamentals of Electricity and Electronics": {
+   "name": "Fundamentals of Electricity",
+   "org": "Festo",
+   "tier": "contains",
+   "id": "14512-A",
+   "acronym": "AC/DC",
+   "type": "Core"
+  },
+  "Intermediate Medical-Surgical Nursing": {
+   "name": "Medical-Surgical Nursing",
+   "org": "ANA Enterprise",
+   "tier": "contains",
+   "id": "6128-C",
+   "acronym": "MEDSURG-BC",
+   "type": "Specialty"
+  },
+  "Introduction to Electricity": {
+   "name": "Introduction to Exploring Electricity",
+   "org": "Festo",
+   "tier": "contains",
+   "id": "14507-A",
+   "type": "Core"
+  },
+  "Intuit Certified Bookkeeping Professional": {
+   "name": "Intuit Certified Bookkeeping Professional",
+   "org": "Intuit, Inc.",
+   "tier": "exact",
+   "id": "13963-D",
+   "acronym": "ICBP",
+   "type": "Product/Equipment"
+  },
+  "Intuit QuickBooks Certified User": {
+   "name": "Intuit QuickBooks Certified User",
+   "org": "Intuit, Inc.",
+   "tier": "exact",
+   "id": "13962-D",
+   "acronym": "IQC-CU",
+   "type": "Product/Equipment"
+  },
+  "Intuit QuickBooks Online Certified User": {
+   "name": "Intuit QuickBooks Certified User",
+   "org": "Intuit, Inc.",
+   "tier": "contains",
+   "id": "13962-D",
+   "acronym": "IQC-CU",
+   "type": "Product/Equipment"
+  },
+  "Irrigation System Installation and Maintenance": {
+   "name": "WaterSense for Irrigation System Installation and Maintenance",
+   "org": "Environmental Protection Agency",
+   "tier": "contains",
+   "id": "12099-A",
+   "type": "Core"
+  },
+  "LEED Green Associate": {
+   "name": "LEED Green Associate",
+   "org": "Green Business Certification Inc.",
+   "tier": "exact",
+   "id": "11110-A",
+   "acronym": "LEED",
+   "type": "Core"
+  },
+  "Law Enforcement (High School Articulation)": {
+   "name": "National Law Enforcement",
+   "org": "Law and Public Safety Education Network",
+   "tier": "contains",
+   "id": "14665-A",
+   "type": "Core"
+  },
+  "MSSC Certified Production Technician (CPT) — Machinist": {
+   "name": "Certified Production Technician",
+   "org": "Manufacturing Skill Standards Council",
+   "tier": "acronym",
+   "id": "6503-A",
+   "acronym": "CPT",
+   "type": "Core"
+  },
+  "Maternal-Newborn Nursing": {
+   "name": "Maternal Newborn Nursing",
+   "org": "The National Certification Corporation",
+   "tier": "exact",
+   "id": "0076-C",
+   "acronym": "RNC-MNN",
+   "type": "Specialty"
+  },
+  "Maternal/Newborn Nursing Care": {
+   "name": "Maternal Newborn Nursing",
+   "org": "The National Certification Corporation",
+   "tier": "contains",
+   "id": "0076-C",
+   "acronym": "RNC-MNN",
+   "type": "Specialty"
+  },
+  "Mental Health Nursing": {
+   "name": "Psychiatric-Mental Health Nursing (PMH-BC)",
+   "org": "American Nurses Credentialing Center",
+   "tier": "contains",
+   "id": "13751-C",
+   "type": "Specialty"
+  },
+  "Microsoft Certified: Azure AI Fundamentals (AI-900)": {
+   "name": "Microsoft Certified: Azure AI Fundamentals",
+   "org": "Microsoft Corporation",
+   "tier": "exact",
+   "id": "12362-D",
+   "type": "Product/Equipment"
+  },
+  "Microsoft Certified: Azure Administrator Associate": {
+   "name": "Microsoft Certified: Azure Administrator Associate",
+   "org": "Microsoft Corporation",
+   "tier": "exact",
+   "id": "12363-D",
+   "type": "Product/Equipment"
+  },
+  "Microsoft Certified: Azure Administrator Associate (AZ-104)": {
+   "name": "Microsoft Certified: Azure Administrator Associate",
+   "org": "Microsoft Corporation",
+   "tier": "exact",
+   "id": "12363-D",
+   "type": "Product/Equipment"
+  },
+  "Microsoft Certified: Azure Fundamentals (AZ-900)": {
+   "name": "Microsoft Certified: Azure Fundamentals",
+   "org": "Microsoft Corporation",
+   "tier": "exact",
+   "id": "14138-D",
+   "type": "Product/Equipment"
+  },
+  "Microsoft Certified: Endpoint Administrator Associate (MD-102)": {
+   "name": "Microsoft 365 Certified: Endpoint Administrator Associate",
+   "org": "Microsoft Corporation",
+   "tier": "contains",
+   "id": "14455-D",
+   "type": "Product/Equipment"
+  },
+  "NCCER Welding Level 1": {
+   "name": "Level 1 - Welding",
+   "org": "National Center for Construction Education and Research",
+   "tier": "contains",
+   "id": "13323-A",
+   "type": "Core"
+  },
+  "PMI Agile Certified Practitioner (PMI-ACP)": {
+   "name": "PMI Agile Certified Practitioner",
+   "org": "Project Management Institute",
+   "tier": "exact",
+   "id": "7419-B",
+   "acronym": "PMI-ACP",
+   "type": "Advanced"
+  },
+  "PMI Professional in Business Analysis (PMI-PBA)": {
+   "name": "PMI Professional in Business Analysis",
+   "org": "Project Management Institute",
+   "tier": "exact",
+   "id": "10790-B",
+   "acronym": "PMI-PBA",
+   "type": "Advanced"
+  },
+  "PMI Risk Management Professional (PMI-RMP)": {
+   "name": "PMI Risk Management Professional",
+   "org": "Project Management Institute",
+   "tier": "exact",
+   "id": "7420-B",
+   "acronym": "PMI-RMP",
+   "type": "Advanced"
+  },
+  "Personal Fitness Trainer Certification": {
+   "name": "Personal Fitness Trainer Certification",
+   "org": "AAAI/ISMA Fitness",
+   "tier": "exact",
+   "id": "14206-A",
+   "type": "Core"
+  },
+  "Portfolio Management Professional (PfMP)": {
+   "name": "Portfolio Management Professional",
+   "org": "Project Management Institute",
+   "tier": "exact",
+   "id": "10791-B",
+   "acronym": "PfMP",
+   "type": "Advanced"
+  },
+  "Program Management Professional (PgMP)": {
+   "name": "Program Management Professional",
+   "org": "Project Management Institute",
+   "tier": "exact",
+   "id": "5160-B",
+   "acronym": "PgMP",
+   "type": "Advanced"
+  },
+  "Project Management Professional (PMP)": {
+   "name": "Project Management Professional",
+   "org": "Project Management Institute",
+   "tier": "exact",
+   "id": "0487-B",
+   "acronym": "PMP",
+   "type": "Advanced"
+  },
+  "Red Hat Certified System Administrator (RHCSA)": {
+   "name": "Red Hat Certified System Administrator",
+   "org": "Red Hat, Inc.",
+   "tier": "exact",
+   "id": "7861-D",
+   "acronym": "RHCSA",
+   "type": "Product/Equipment"
+  },
+  "Registered Dental Assistant (RDA) License": {
+   "name": "Registered Dental Assistant",
+   "org": "American Medical Technologists",
+   "tier": "acronym",
+   "id": "0460-A",
+   "acronym": "RDA",
+   "type": "Core"
+  },
+  "ServSafe Food Protection Manager": {
+   "name": "ServSafe Food Protection Manager Certification",
+   "org": "National Restaurant Association Educational Foundation",
+   "tier": "contains",
+   "id": "3428-B",
+   "type": "Advanced"
+  },
+  "ServSafe Food Protection Manager Certification": {
+   "name": "ServSafe Food Protection Manager Certification",
+   "org": "National Restaurant Association Educational Foundation",
+   "tier": "exact",
+   "id": "3428-B",
+   "type": "Advanced"
+  },
+  "Traffic Control Technician": {
+   "name": "Traffic Control Technician",
+   "org": "American Traffic Safety Services Association",
+   "tier": "exact",
+   "id": "7349-A",
+   "acronym": "TCT",
+   "type": "Core"
+  },
+  "Wildland Fire Chainsaws (S-212)": {
+   "name": "Wildland Fire Chainsaws",
+   "org": "National Wildfire Coordinating Group",
+   "tier": "exact",
+   "id": "13378-B",
+   "acronym": "S-212",
+   "type": "Advanced"
+  }
+ }
+}

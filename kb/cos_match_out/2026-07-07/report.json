@@ -1,0 +1,585 @@
+{
+  "_generated_at": "2026-07-07T17:04:27Z",
+  "mode": "apply",
+  "authority_count": 6490,
+  "titles_scanned": 1969,
+  "match_count": 83,
+  "by_tier": {
+    "exact": 44,
+    "acronym": 8,
+    "contains": 31
+  },
+  "ambiguous": [
+    {
+      "title": "Certified Dietary Manager (CDM)",
+      "tier": "exact",
+      "candidates": [
+        {
+          "name": "Certified Dietary Manager",
+          "org": "Association of Nutrition and Food Service Professionals"
+        },
+        {
+          "name": "Certified Dietary Manager",
+          "org": "Certifying Board for Dietary Managers"
+        }
+      ]
+    },
+    {
+      "title": "Certified Footwear Examiner (CFE)",
+      "tier": "acronym",
+      "candidates": [
+        {
+          "name": "Certified Financial Examiner",
+          "org": "Society of Financial Examiners"
+        },
+        {
+          "name": "Certified Fraud Examiner",
+          "org": "Association of Certified Fraud Examiners"
+        }
+      ]
+    },
+    {
+      "title": "Certified Pharmacy Technician (CPhT)",
+      "tier": "exact",
+      "candidates": [
+        {
+          "name": "Certified Pharmacy Technician",
+          "org": "National Healthcareer Association"
+        },
+        {
+          "name": "Certified Pharmacy Technician",
+          "org": "Pharmacy Technician Certification Board"
+        }
+      ]
+    },
+    {
+      "title": "Commercial Refrigeration",
+      "tier": "contains",
+      "candidates": [
+        {
+          "name": "Light Commercial Refrigeration Service",
+          "org": "North American Technician Excellence, Inc."
+        },
+        {
+          "name": "STAR Commercial Refrigeration Mastery",
+          "org": "National Inspection, Testing and Certification Corporation"
+        }
+      ]
+    },
+    {
+      "title": "Defense Language Proficiency Test (DLPT) — Russian",
+      "tier": "acronym",
+      "candidates": [
+        {
+          "name": "Defense Language Proficiency Test",
+          "org": "Defense Intelligence Agency PMO"
+        },
+        {
+          "name": "Defense Language Proficiency Test",
+          "org": "Defense Language Institute"
+        }
+      ]
+    },
+    {
+      "title": "Defense Language Proficiency Test (DLPT) — Spanish",
+      "tier": "acronym",
+      "candidates": [
+        {
+          "name": "Defense Language Proficiency Test",
+          "org": "Defense Intelligence Agency PMO"
+        },
+        {
+          "name": "Defense Language Proficiency Test",
+          "org": "Defense Language Institute"
+        }
+      ]
+    },
+    {
+      "title": "EPA Section 608 Refrigerant Certification",
+      "tier": "contains",
+      "candidates": [
+        {
+          "name": "EPA Section 608 Certification",
+          "org": "ESCO Group"
+        },
+        {
+          "name": "EPA Section 608 Certification - Refrigerant Handling",
+          "org": "Air Conditioning Contractors of America"
+        }
+      ]
+    },
+    {
+      "title": "EPA Section 608 Technician Certification",
+      "tier": "contains",
+      "candidates": [
+        {
+          "name": "EPA Section 608 Certification",
+          "org": "ESCO Group"
+        },
+        {
+          "name": "Section 608 Technician Certification (Universal)",
+          "org": "Environmental Protection Agency"
+        }
+      ]
+    },
+    {
+      "title": "Microsoft Office Specialist (generic)",
+      "tier": "contains",
+      "candidates": [
+        {
+          "name": "Microsoft Office Specialist: Excel Associate (Excel and Excel 2019)",
+          "org": "Microsoft Corporation"
+        },
+        {
+          "name": "Microsoft Office Specialist: Associate (Office 365 and Office 2019)",
+          "org": "Microsoft Corporation"
+        },
+        {
+          "name": "Microsoft Office Specialist: Expert (Office 365 and Office 2019)",
+          "org": "Microsoft Corporation"
+        },
+        {
+          "name": "Microsoft Office Specialist: Outlook Associate (Outlook and Outlook 2019)",
+          "org": "Microsoft Corporation"
+        },
+        {
+          "name": "Microsoft Office Specialist: Word Associate (Word and Word 2019)",
+          "org": "Microsoft Corporation"
+        }
+      ]
+    },
+    {
+      "title": "Microsoft Office Specialist — Access",
+      "tier": "contains",
+      "candidates": [
+        {
+          "name": "Microsoft Office Specialist: Microsoft Access 2016",
+          "org": "Microsoft Corporation"
+        },
+        {
+          "name": "Microsoft Office Specialist: Microsoft Access Expert (Access and Access 2019)",
+          "org": "Microsoft Corporation"
+        },
+        {
+          "name": "Microsoft Office Specialist: Microsoft Access Expert (Office 2019)",
+          "org": "OpenText"
+        }
+      ]
+    },
+    {
+      "title": "Microsoft Office Specialist — Access Expert",
+      "tier": "contains",
+      "candidates": [
+        {
+          "name": "Microsoft Office Specialist: Expert (Office 365 and Office 2019)",
+          "org": "Microsoft Corporation"
+        },
+        {
+          "name": "Microsoft Office Specialist: Microsoft Access Expert (Access and Access 2019)",
+          "org": "Microsoft Corporation"
+        },
+        {
+          "name": "Microsoft Office Specialist: Microsoft Access Expert (Office 2019)",
+          "org": "OpenText"
+        }
+      ]
+    },
+    {
+      "title": "Microsoft Office Specialist — Excel",
+      "tier": "contains",
+      "candidates": [
+        {
+          "name": "Microsoft Office Specialist: Excel Associate (Excel and Excel 2019)",
+          "org": "Microsoft Corporation"
+        },
+        {
+          "name": "Microsoft Office Specialist (MOS): Microsoft Excel 2016",
+          "org": "Microsoft Corporation"
+        },
+        {
+          "name": "Microsoft Office Specialist: Microsoft Excel 2016 Expert",
+          "org": "Microsoft Corporation"
+        },
+        {
+          "name": "Microsoft Office Specialist: Microsoft Excel Expert (Office 2019)",
+          "org": "Microsoft Corporation"
+        }
+      ]
+    },
+    {
+      "title": "Microsoft Office Specialist — Excel Expert",
+      "tier": "contains",
+      "candidates": [
+        {
+          "name": "Microsoft Office Specialist: Expert (Office 365 and Office 2019)",
+          "org": "Microsoft Corporation"
+        },
+        {
+          "name": "Microsoft Office Specialist: Microsoft Excel 2016 Expert",
+          "org": "Microsoft Corporation"
+        },
+        {
+          "name": "Microsoft Office Specialist: Microsoft Excel Expert (Office 2019)",
+          "org": "Microsoft Corporation"
+        }
+      ]
+    },
+    {
+      "title": "Microsoft Office Specialist — Excel Expert and Access Expert (Office 2019)",
+      "tier": "contains",
+      "candidates": [
+        {
+          "name": "Microsoft Office Specialist: Microsoft Access Expert (Access and Access 2019)",
+          "org": "Microsoft Corporation"
+        },
+        {
+          "name": "Microsoft Office Specialist: Microsoft Access Expert (Office 2019)",
+          "org": "OpenText"
+        },
+        {
+          "name": "Microsoft Office Specialist: Microsoft Excel Expert (Office 2019)",
+          "org": "Microsoft Corporation"
+        }
+      ]
+    },
+    {
+      "title": "Microsoft Office Specialist — Outlook",
+      "tier": "contains",
+      "candidates": [
+        {
+          "name": "Microsoft Office Specialist: Microsoft Outlook 2016",
+          "org": "Microsoft Corporation"
+        },
+        {
+          "name": "Microsoft Office Specialist: Outlook Associate (Outlook and Outlook 2019)",
+          "org": "Microsoft Corporation"
+        }
+      ]
+    },
+    {
+      "title": "Microsoft Office Specialist — PowerPoint",
+      "tier": "contains",
+      "candidates": [
+        {
+          "name": "Microsoft Office Specialist: Microsoft PowerPoint 2016",
+          "org": "Microsoft Corporation"
+        },
+        {
+          "name": "Microsoft Office Specialist: PowerPoint Associate (PowerPoint and PowerPoint 2019)",
+          "org": "Microsoft Corporation"
+        },
+        {
+          "name": "Microsoft Office Specialist: PowerPoint Associate 2019",
+          "org": "Microsoft Corporation"
+        }
+      ]
+    },
+    {
+      "title": "Microsoft Office Specialist — Word",
+      "tier": "contains",
+      "candidates": [
+        {
+          "name": "Microsoft Office Specialist: Microsoft Word 2016",
+          "org": "Microsoft Corporation"
+        },
+        {
+          "name": "Microsoft Office Specialist: Microsoft Word Expert (Word and Word 2019)",
+          "org": "Microsoft Corporation"
+        },
+        {
+          "name": "Microsoft Office Specialist: Word Associate (Word and Word 2019)",
+          "org": "Microsoft Corporation"
+        }
+      ]
+    },
+    {
+      "title": "Microsoft Office Specialist — Word Expert",
+      "tier": "contains",
+      "candidates": [
+        {
+          "name": "Microsoft Office Specialist: Expert (Office 365 and Office 2019)",
+          "org": "Microsoft Corporation"
+        },
+        {
+          "name": "Microsoft Office Specialist: Microsoft Word 2016 Expert",
+          "org": "Microsoft Corporation"
+        },
+        {
+          "name": "Microsoft Office Specialist: Microsoft Word Expert (Word and Word 2019)",
+          "org": "Microsoft Corporation"
+        }
+      ]
+    },
+    {
+      "title": "Paramedic Certification",
+      "tier": "contains",
+      "candidates": [
+        {
+          "name": "Community Paramedic Certification",
+          "org": "Board for Critical Care Transport Paramedic Certification"
+        },
+        {
+          "name": "Flight Paramedic Certification",
+          "org": "Board for Critical Care Transport Paramedic Certification"
+        },
+        {
+          "name": "Tactical Paramedic Certification",
+          "org": "Board for Critical Care Transport Paramedic Certification"
+        }
+      ]
+    },
+    {
+      "title": "Personal Finance",
+      "tier": "contains",
+      "candidates": [
+        {
+          "name": "Intuit Personal Finance",
+          "org": "Intuit, Inc."
+        },
+        {
+          "name": "Stukent Personal Finance",
+          "org": "Stukent Inc"
+        }
+      ]
+    },
+    {
+      "title": "Personal Training Certification",
+      "tier": "contains",
+      "candidates": [
+        {
+          "name": "Advanced Personal Training Certification",
+          "org": "American Fitness Professionals and Associates"
+        },
+        {
+          "name": "ISCA Personal Training Certification",
+          "org": "International Sports Conditioning Association"
+        },
+        {
+          "name": "NAFC Personal Training Certification",
+          "org": "National Association for Fitness Certification"
+        }
+      ]
+    },
+    {
+      "title": "Safety Certification",
+      "tier": "contains",
+      "candidates": [
+        {
+          "name": "Food Safety Manager Certification",
+          "org": "National Registry of Food Safety Professionals"
+        },
+        {
+          "name": "Radiation Safety Certification",
+          "org": "Nuclear Medicine Technology Certification Board"
+        }
+      ]
+    }
+  ],
+  "divergent": [
+    {
+      "ours": "ACSM Exercise Physiologist and NSCA Certified Strength and Conditioning Specialist (CSCS)",
+      "authority": "Certified Strength and Conditioning Specialist",
+      "tier": "acronym"
+    },
+    {
+      "ours": "ANSI-Accredited Food Protection Manager Certification",
+      "authority": "Food Protection Manager Certification",
+      "tier": "contains"
+    },
+    {
+      "ours": "ASE L4 — Advanced Driver Assistance Systems (ADAS) Specialist",
+      "authority": "Advanced Driver Assistance Systems Certification",
+      "tier": "acronym"
+    },
+    {
+      "ours": "AWS Certified SysOps Administrator",
+      "authority": "AWS Certified SysOps Administrator - Associate",
+      "tier": "contains"
+    },
+    {
+      "ours": "Administrative Professional",
+      "authority": "Certified Administrative Professional",
+      "tier": "contains"
+    },
+    {
+      "ours": "Advanced Medical Surgical Nursing",
+      "authority": "Medical-Surgical Nursing",
+      "tier": "contains"
+    },
+    {
+      "ours": "Advanced Medical Surgical Nursing Lab",
+      "authority": "Medical-Surgical Nursing",
+      "tier": "contains"
+    },
+    {
+      "ours": "Autodesk Certified User/Professional — AutoCAD",
+      "authority": "AutoCAD Certified Professional",
+      "tier": "contains"
+    },
+    {
+      "ours": "Beginning Medical Surgical Nursing",
+      "authority": "Medical-Surgical Nursing",
+      "tier": "contains"
+    },
+    {
+      "ours": "Business Communication",
+      "authority": "Communication Skills for Business",
+      "tier": "contains"
+    },
+    {
+      "ours": "C++ Certified Associate Programmer (CPA)",
+      "authority": "Certified Associate: Programmer",
+      "tier": "contains"
+    },
+    {
+      "ours": "CLP — C Certified Professional Programmer",
+      "authority": "Certified Professional: Programmer",
+      "tier": "contains"
+    },
+    {
+      "ours": "CPP — C++ Certified Professional Programmer",
+      "authority": "Certified Professional: Programmer",
+      "tier": "contains"
+    },
+    {
+      "ours": "Certified Nurse Assistant (CNA) Certification",
+      "authority": "Certified Nurse Assistant",
+      "tier": "contains"
+    },
+    {
+      "ours": "Child Development Associate (CDA) Credential",
+      "authority": "Child Development Associate",
+      "tier": "acronym"
+    },
+    {
+      "ours": "Commercial Driver's License (CDL) Permit",
+      "authority": "Commercial Driver License (CDL)",
+      "tier": "acronym"
+    },
+    {
+      "ours": "CompTIA Certification (unspecified)",
+      "authority": "CompTIA A+ Certification",
+      "tier": "contains"
+    },
+    {
+      "ours": "Construction Inspection",
+      "authority": "Highway Construction Inspection",
+      "tier": "contains"
+    },
+    {
+      "ours": "Emergency Medical Responder (EMR) Certification",
+      "authority": "Emergency Medical Responder",
+      "tier": "acronym"
+    },
+    {
+      "ours": "Emergency Medical Responder — Baldy View ROP",
+      "authority": "Emergency Medical Responder",
+      "tier": "contains"
+    },
+    {
+      "ours": "Engineering Graphics",
+      "authority": "Certified in Engineering Graphics",
+      "tier": "contains"
+    },
+    {
+      "ours": "Entrepreneurship and Small Business (ESB) Certification",
+      "authority": "Entrepreneurship and Small Business",
+      "tier": "contains"
+    },
+    {
+      "ours": "FAA Certified Flight Instructor — Instrument (CFII)",
+      "authority": "Certified Flight Instrument Instructor Rating",
+      "tier": "acronym"
+    },
+    {
+      "ours": "FAA Remote Pilot Certificate (Part 107)",
+      "authority": "Remote Pilot Certificate",
+      "tier": "contains"
+    },
+    {
+      "ours": "Firefighter 2",
+      "authority": "Firefighter Type 2",
+      "tier": "contains"
+    },
+    {
+      "ours": "First Aid, CPR, and AED Certification",
+      "authority": "First Aid Certification",
+      "tier": "contains"
+    },
+    {
+      "ours": "Fundamentals of Electricity and Electronics",
+      "authority": "Fundamentals of Electricity",
+      "tier": "contains"
+    },
+    {
+      "ours": "Intermediate Medical-Surgical Nursing",
+      "authority": "Medical-Surgical Nursing",
+      "tier": "contains"
+    },
+    {
+      "ours": "Introduction to Electricity",
+      "authority": "Introduction to Exploring Electricity",
+      "tier": "contains"
+    },
+    {
+      "ours": "Intuit QuickBooks Online Certified User",
+      "authority": "Intuit QuickBooks Certified User",
+      "tier": "contains"
+    },
+    {
+      "ours": "Irrigation System Installation and Maintenance",
+      "authority": "WaterSense for Irrigation System Installation and Maintenance",
+      "tier": "contains"
+    },
+    {
+      "ours": "Law Enforcement (High School Articulation)",
+      "authority": "National Law Enforcement",
+      "tier": "contains"
+    },
+    {
+      "ours": "MSSC Certified Production Technician (CPT) — Machinist",
+      "authority": "Certified Production Technician",
+      "tier": "acronym"
+    },
+    {
+      "ours": "Maternal/Newborn Nursing Care",
+      "authority": "Maternal Newborn Nursing",
+      "tier": "contains"
+    },
+    {
+      "ours": "Mental Health Nursing",
+      "authority": "Psychiatric-Mental Health Nursing (PMH-BC)",
+      "tier": "contains"
+    },
+    {
+      "ours": "Microsoft Certified: Endpoint Administrator Associate (MD-102)",
+      "authority": "Microsoft 365 Certified: Endpoint Administrator Associate",
+      "tier": "contains"
+    },
+    {
+      "ours": "NCCER Welding Level 1",
+      "authority": "Level 1 - Welding",
+      "tier": "contains"
+    },
+    {
+      "ours": "Registered Dental Assistant (RDA) License",
+      "authority": "Registered Dental Assistant",
+      "tier": "acronym"
+    },
+    {
+      "ours": "ServSafe Food Protection Manager",
+      "authority": "ServSafe Food Protection Manager Certification",
+      "tier": "contains"
+    }
+  ],
+  "issuer_fill_plan": [
+    {
+      "title": "Emergency Medical Responder (High School Articulation)",
+      "issuer": "National Registry of Emergency Medical Technicians"
+    },
+    {
+      "title": "Personal Fitness Trainer Certification",
+      "issuer": "AAAI/ISMA Fitness"
+    }
+  ]
+}
