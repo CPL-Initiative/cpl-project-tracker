@@ -2403,21 +2403,9 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > scenario tool, PR #663) archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md).
 > Full story: `docs/cpl_funding_lessons.md` (Session 2).
 
-### Session 100 — SkyVault: the CER triage loop unstuck end-to-end (2026-07-07)
-
-Sam's "the tab stopped working" after saving 5 triage assignments = **CER never refreshed the
-magic-link token before writes** (the pre-Session-77 raci.js bug; adversarially CONFIRMED via a
-4-lane workflow + jsdom repro) — ported the trio as `withFreshSession()` + single-flight refresh +
-401 session-drop (`tests/cer_token_refresh.test.js`, 18). The deeper stall: the fold (PR-3) ran in
-NO workflow, the exhibit audit was frozen at 2026-05-24, and all 5 raws sat under stale machine
-drafts on **trailing-space twin spellings**. `kb/_fold_unclassified.py` gained SUPERSEDE (curator >
-unreviewed machine, twins included, articulations re-pointed) + STALE lanes + `--apply-if-safe`;
-applied: 11 supersedes, 8 art rows re-pointed, 7 orphan creds pruned, queue → 0 (receipts
-`kb/unclassified_fold/2026-07-07/`). Cron now runs fold + `kb/_audit_exhibits.py` daily; Pages
-asserts the 4 CER paths; skill Rule 5c = Sam's Cx/portfolio naming procedure (issuer **California
-Community Colleges**). Authority-anchoring strategy (CareerOneStop/O*NET/CE):
-`docs/kb-notes/reference-authority-anchored-credential-naming.md`. Full story:
-`docs/exhibit_canonicalization_lessons.md` (2026-07-07).
+> **Session 100 narrative (SkyVault — the CER triage loop unstuck: token-refresh trio, SUPERSEDE/STALE
+> fold lanes, queue → 0, cron fold+audit) archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md).
+> Full story: `docs/exhibit_canonicalization_lessons.md` (2026-07-07).
 
 ### Session 101 — SkyAnchor: CareerOneStop authority LIVE + triage QA + the AP fold (2026-07-07)
 
@@ -2431,6 +2419,19 @@ doctrine: retarget-to-existing-family verbatim beats authority-verbatim. **AP ar
 (`kb/_merge_credentials.py`): 5 colon variants → College Board-current, 18 raws + 20 articulations
 re-pointed, 9 families → 4. Full story: `docs/exhibit_canonicalization_lessons.md` (2026-07-07
 "continued 3"); next: `docs/session_102_handoff.md` (COOL/MOC vs License Finder is Sam's queued pick).
+
+### Session 102 — SkySeed: the brand-family PRE-SEED — 158 of 451 triage rows in one pass (2026-07-07)
+
+Sam: "pre-seed the common exhibit titles and issuing agencies — all the APs should be an easy win."
+Measured: the queue is 38 AP + 125 CLEP = **163 College Board exams (36%)**, and both house families
+already exist → `kb/_preseed_unclassified.py` maps each raw to its EXISTING family (cleanup →
+normalized key → exact/alias/insert-Language/era-subtitle ladder; twin-pick boosted by the run's own
+exact hits so same-exam raws converge; **NEVER invents a title** — residuals report for Sam).
+**Applied via MCP: 158 seeded** (`preseed-v1@bot`, on-conflict-do-nothing; md5 of live rows ==
+`kb/preseed_out/2026-07-07/plan.json` — the checksum caught 4 nbsp-dropped garbage rows, deleted;
+lesson: generate SQL from the JSON receipt, never a terminal round-trip). 5 residuals = 3 multi-level
+"Complete both" + 2 Level III (no family). Harness `kb/_verify_preseed_rules.py` (43); skill Rule 5d.
+Full story: `docs/exhibit_canonicalization_lessons.md` (2026-07-07 "continued 5").
 
 ---
 

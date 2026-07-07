@@ -1616,3 +1616,56 @@ through the cert-finder keyword leg on a runner (one-shot), join returned
 cert Ids to the COS registry, emit `kb/moc_cos_bridge.json`
 (MOC → [cos_cert_id]) → wire the consumer (Sierra's veteran turn / a CER
 military-pathway chip).
+
+### 2026-07-07 (continued 5) — SkySeed: the brand-family PRE-SEED, 158 of the 451-row queue in one pass
+
+Sam, looking at the triage list: "it would be helpful to have a procedure that
+pre-seeds the common exhibit titles and issuing agencies — all the APs should
+be an easy win, right?" Measured first: the 451-row queue is **38 AP + 125
+CLEP = 163 College Board exams (36%)** — and BOTH house families already exist
+(49 AP + 42 CLEP unified titles), so the whole pass is retarget-to-existing-
+family (the Session-101 doctrine), zero new credentials minted.
+
+Built `kb/_preseed_unclassified.py`: cleanup (score bands, policy notes
+`(after FA15)`/`(prior F11)`, the `(BIOSCI 101)`/`(MATH-100)` local-course
+parenthetical trap, footnote stars/brackets, nbsp/newline/tab collapse) →
+normalized match key (stopwords of/the/to dropped; US≡U.S.≡United States;
+2-D≡2D; intro≡introductory≡introduction; abbrevs civ/princ./devel./lit/trig/
+macroecon; `Level 2`≡`Level II`≡the lowercase-`ll` typo; glued footnote digits
+`German1`) → a match LADDER (exact → alias → insert-"Language" for CLEP
+language shorthands → era-subtitle truncation after the roman numeral, e.g.
+"…II: 1648 to Present"). **Twin hazard found in hand-review:** exact-tier rows
+anchored one twin ("CLEP Spanish with Writing Level II") while key-tier rows
+picked the other — fixed by boosting twin-pick weight with the run's own
+exact hits, so every same-exam raw converges on one target (passed-over twins
+receipted). NEVER-INVENT is structural: only existing families can be targets;
+residuals report as `ambiguous` (3 "Levels 1 and 2 — Complete both" spans) or
+`no_match` (2 "Level III" rows with no house family) for Sam.
+
+**Applied to Supabase via MCP** (`kb_curation` `_UNCLASSIFIED::` rows,
+reviewer `preseed-v1@bot` — the automerge-v1@bot cohort pattern; on-conflict
+DO NOTHING so a curator row always wins). Verified byte-perfect: md5 of
+`course_id→value` over the live 158 title rows == the committed plan
+(`kb/preseed_out/2026-07-07/plan.json`) — which caught + cleaned a real
+hazard: a terminal round-trip DROPPED a non-breaking space in two French
+Language raws, minting 4 garbage rows keyed to misspelled raws (deleted;
+**lesson: never round-trip raw titles through a terminal display — generate
+SQL from the JSON receipt and checksum the DB against the receipt after**).
+Committed no-network harness `kb/_verify_preseed_rules.py` (43 checks — run
+after ANY rule edit). Worklist shows 158/451 assigned immediately; the daily
+cron folds them tomorrow (Sam's review window: ✕ un-assign anything wrong
+before 06:17 UTC).
+
+### State / next
+- Sam's queue: 451 → ~288 truly-manual rows (mostly high-school articulation
+  course-as-exhibit rows, contractor licenses C-##, CA state certs — the next
+  pre-seed candidates are NOT obvious brand families; per-row judgment).
+- 5 residuals from this pass for Sam: 3× "CLEP <lang> (Levels 1 and 2) —
+  Complete both" (spans two house credentials) + CLEP French/German Level III
+  (no house family — new credential or fold into Level II? Sam's call).
+- Pre-existing twin families surfaced by the receipts (fold candidates, NOT
+  urgent): AP U.S./United States Government and Politics + History; AP
+  Physics 1 / AP Physics 1: Algebra-Based; CLEP Precalculus / Pre-Calculus;
+  CLEP Spanish with Writing {I,II} / {Level I,Level II}.
+- MOC→COS bridge (`kb/moc_cos_bridge.json`) still the queued build; then
+  `--apply-issuers` dry-run + the 22 ambiguous COS matches.

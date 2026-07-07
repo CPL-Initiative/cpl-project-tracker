@@ -1,0 +1,1493 @@
+{
+ "_about": "Pre-seed plan for the CER unclassified-triage worklist: brand-family raws mapped to EXISTING house families by deterministic normalization (kb/_preseed_unclassified.py). Applied rows carry reviewer_email 'preseed-v1@bot' in kb_curation's _UNCLASSIFIED:: namespace.",
+ "_generated_at": "2026-07-07T18:24:46Z",
+ "queue_count": 451,
+ "counts": {
+  "seeded": 158,
+  "ambiguous": 3,
+  "no_match": 2,
+  "skipped_assigned": 0
+ },
+ "seeded": [
+  {
+   "raw": "AP Biology (Score 3-5) (BIOSCI 101)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 3-5)",
+    "local-course (BIOSCI 101)"
+   ],
+   "target": "AP Biology",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Chemistry (Score 3-5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 3-5)"
+   ],
+   "target": "AP Chemistry",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Chinese Language and Culture (Score 4-5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 4-5)"
+   ],
+   "target": "AP Chinese Language and Culture",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Computer Science A (Score 4-5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 4-5)"
+   ],
+   "target": "AP Computer Science A",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Computer Science Principles (Score 4-5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 4-5)"
+   ],
+   "target": "AP Computer Science Principles",
+   "via": "exact"
+  },
+  {
+   "raw": "AP English Language and Composition (Score 3-5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 3-5)"
+   ],
+   "target": "AP English Language and Composition",
+   "via": "exact"
+  },
+  {
+   "raw": "AP English Literature and Composition (Score 3-5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 3-5)"
+   ],
+   "target": "AP English Literature and Composition",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Environmental Science (Score 3-5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 3-5)"
+   ],
+   "target": "AP Environmental Science",
+   "via": "exact"
+  },
+  {
+   "raw": "AP French Language and Culture (Score 3-5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 3-5)"
+   ],
+   "target": "AP French Language and Culture",
+   "via": "exact"
+  },
+  {
+   "raw": "AP German Language and Culture (Score 3-5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 3-5)"
+   ],
+   "target": "AP German Language and Culture",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Human Geography (Score 3-5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 3-5)"
+   ],
+   "target": "AP Human Geography",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Italian Language and Culture (Score 3-5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 3-5)"
+   ],
+   "target": "AP Italian Language and Culture",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Japanese Language and Culture (Score 3-5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 3-5)"
+   ],
+   "target": "AP Japanese Language and Culture",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Latin (Score 3-5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 3-5)"
+   ],
+   "target": "AP Latin",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Macroeconomics (Score 3-5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 3-5)"
+   ],
+   "target": "AP Macroeconomics",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Microeconomics (Score 3-5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 3-5)"
+   ],
+   "target": "AP Microeconomics",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Music Theory (Score 3-5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 3-5)"
+   ],
+   "target": "AP Music Theory",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Physics 1",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "AP Physics 1",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Precalculus (MATH-100)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "local-course (MATH-100)"
+   ],
+   "target": "AP Precalculus",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Precalculus (MATH-187)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "local-course (MATH-187)"
+   ],
+   "target": "AP Precalculus",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Psychology (Score 3-5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 3-5)"
+   ],
+   "target": "AP Psychology",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Seminar (Score 3-5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 3-5)"
+   ],
+   "target": "AP Seminar",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Spanish Language and Culture (Score 3)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 3)"
+   ],
+   "target": "AP Spanish Language and Culture",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Spanish Language and Culture (Score 4)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 4)"
+   ],
+   "target": "AP Spanish Language and Culture",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Spanish Language and Culture (Score 5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 5)"
+   ],
+   "target": "AP Spanish Language and Culture",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Spanish Literature and Culture (Score 3)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 3)"
+   ],
+   "target": "AP Spanish Literature and Culture",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Spanish Literature and Culture (Score 4)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 4)"
+   ],
+   "target": "AP Spanish Literature and Culture",
+   "via": "exact"
+  },
+  {
+   "raw": "AP Spanish Literature and Culture (Score 5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 5)"
+   ],
+   "target": "AP Spanish Literature and Culture",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP American Government (Score of 50)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 50)"
+   ],
+   "target": "CLEP American Government",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP American Literature (Score of 50)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 50)"
+   ],
+   "target": "CLEP American Literature",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Analyzing and Interpreting\nLiterature",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Analyzing and Interpreting Literature",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Biology (Score of 50)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 50)"
+   ],
+   "target": "CLEP Biology",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Calculus (F09 or prior)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "policy-note (F09 or prior)"
+   ],
+   "target": "CLEP Calculus",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Calculus (Score of 50)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 50)"
+   ],
+   "target": "CLEP Calculus",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Chemistry (Score of 50)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 50)"
+   ],
+   "target": "CLEP Chemistry",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP College Algebra (Score of 50)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 50)"
+   ],
+   "target": "CLEP College Algebra",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP College Algebra-Trigonometry",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP College Algebra-Trigonometry",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP College Composition",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP College Composition",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP English Literature (only if taken before F11)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "policy-note (only if taken before F11)"
+   ],
+   "target": "CLEP English Literature",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP English Literature (prior F11)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "policy-note (prior F11)"
+   ],
+   "target": "CLEP English Literature",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP History of the United States I",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP History of the United States I",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP History of the United States II",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP History of the United States II",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Human Growth and\nDevelopment",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Human Growth and Development",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Human Growth and Development**",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "footnote-mark"
+   ],
+   "target": "CLEP Human Growth and Development",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Humanities (Score of 50)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 50)"
+   ],
+   "target": "CLEP Humanities",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Introductory Business Law",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Introductory Business Law",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Introductory Psychology (Score of 50)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 50)"
+   ],
+   "target": "CLEP Introductory Psychology",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Introductory Sociology (Score of 50)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 50)"
+   ],
+   "target": "CLEP Introductory Sociology",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Natural Sciences (Score of 50)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 50)"
+   ],
+   "target": "CLEP Natural Sciences",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Pre-Calculus (Score of 50)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 50)"
+   ],
+   "target": "CLEP Pre-Calculus",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Precalculus",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Precalculus",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Principles of Macroeconomics (Score of 50)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 50)"
+   ],
+   "target": "CLEP Principles of Macroeconomics",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Principles of Microeconomics (Score of 50)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 50)"
+   ],
+   "target": "CLEP Principles of Microeconomics",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Social Sciences and History",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Social Sciences and History",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Spanish with Writing I",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Spanish with Writing I",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Spanish with Writing Level II",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Spanish with Writing Level II",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Spanish with Writing Level II (Score of 63)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 63)"
+   ],
+   "target": "CLEP Spanish with Writing Level II",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Spanish** with Writing II",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "footnote-mark"
+   ],
+   "target": "CLEP Spanish with Writing II",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Trigonometry (only if taken before F06)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "policy-note (only if taken before F06)"
+   ],
+   "target": "CLEP Trigonometry",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Trigonometry (prior F' 06)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "policy-note (prior F' 06)"
+   ],
+   "target": "CLEP Trigonometry",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Trigonometry (prior to Fall 2006)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "policy-note (prior to Fall 2006)"
+   ],
+   "target": "CLEP Trigonometry",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Western Civilization I (Score of 50)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 50)"
+   ],
+   "target": "CLEP Western Civilization I",
+   "via": "exact"
+  },
+  {
+   "raw": "CLEP Western Civilization II (Score of 50)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 50)"
+   ],
+   "target": "CLEP Western Civilization II",
+   "via": "exact"
+  },
+  {
+   "raw": "AP English Language (Score 3-5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 3-5)"
+   ],
+   "target": "AP English Language and Composition",
+   "via": "key"
+  },
+  {
+   "raw": "AP English Literature (Score 3-5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 3-5)"
+   ],
+   "target": "AP English Literature and Composition",
+   "via": "key"
+  },
+  {
+   "raw": "AP Exam Art History (Score of 3, 4 or 5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 3, 4 or 5)"
+   ],
+   "target": "AP Art History",
+   "via": "key"
+  },
+  {
+   "raw": "AP Exam Biology (Score of 3, 4 or 5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 3, 4 or 5)"
+   ],
+   "target": "AP Biology",
+   "via": "key"
+  },
+  {
+   "raw": "AP Government and Political: United States (Score 3-5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 3-5)"
+   ],
+   "target": "AP United States Government and Politics",
+   "via": "key",
+   "twins_passed_over": [
+    "AP U.S. Government and Politics"
+   ]
+  },
+  {
+   "raw": "AP Government and Politics: Comparative (Score 3-5)",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score 3-5)"
+   ],
+   "target": "AP Comparative Government and Politics",
+   "via": "key"
+  },
+  {
+   "raw": "AP Studio Art - 2D Design",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "AP 2-D Art and Design",
+   "via": "key"
+  },
+  {
+   "raw": "AP Studio Art - 3D Design",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "AP 3-D Art and Design",
+   "via": "key"
+  },
+  {
+   "raw": "AP US Government and Politics",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "AP United States Government and Politics",
+   "via": "key",
+   "twins_passed_over": [
+    "AP U.S. Government and Politics"
+   ]
+  },
+  {
+   "raw": "AP World History - Modern",
+   "family": "AP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "AP World History: Modern",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Analyzing & Interpreting Lit",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Analyzing and Interpreting Literature",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Analyzing & Interpreting Literature (Score of 50)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 50)"
+   ],
+   "target": "CLEP Analyzing and Interpreting Literature",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Analyzing and Interp. Literature",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Analyzing and Interpreting Literature",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP College Algebra -\nTrigonometry",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP College Algebra-Trigonometry",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP College Algebra -Trigonometry",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP College Algebra-Trigonometry",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP College Algebra Trigonometry",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP College Algebra-Trigonometry",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP College Algebra –\nTrigonometry",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP College Algebra-Trigonometry",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP College Algebra — Trigonometry",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP College Algebra-Trigonometry",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP College Algebra- Trigonometry (Score of 50)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 50)"
+   ],
+   "target": "CLEP College Algebra-Trigonometry",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP College Algebra-Trig",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP College Algebra-Trigonometry",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP College Algebra/Algebra-Trigonometry",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP College Algebra-Trigonometry",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP College Algebra/Trig",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP College Algebra-Trigonometry",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP College Algebra: Trigonometry",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP College Algebra-Trigonometry",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP French (max of 10 units awarded) Level II",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "policy-note (max of 10 units awarded)"
+   ],
+   "target": "CLEP French Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP French Language, Level 2",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP French Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP French Language: 2",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP French Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP French Language: Level 1",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP French Language Level I",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP French Language:  Level 1",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP French Language Level I",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP French Language:  Level 2",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP French Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP French Level 2",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP French Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP French Level II (Score of \t59)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of \t59)"
+   ],
+   "target": "CLEP French Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP French Level II*",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "footnote-mark"
+   ],
+   "target": "CLEP French Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP French [1] Level II",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "footnote-bracket"
+   ],
+   "target": "CLEP French Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP French – Level 2*",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "footnote-mark"
+   ],
+   "target": "CLEP French Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP French** Level II",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "footnote-mark"
+   ],
+   "target": "CLEP French Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP French, Level II",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP French Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP German (max of 10 units awarded) Level II",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "policy-note (max of 10 units awarded)"
+   ],
+   "target": "CLEP German Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP German II",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP German Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP German Language, Level 2",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP German Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP German Language: Level 1",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP German Language Level I",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP German Language: Level 2",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP German Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP German Level 2",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP German Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP German Level II (Score of 60)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 60)"
+   ],
+   "target": "CLEP German Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP German Level II*",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "footnote-mark"
+   ],
+   "target": "CLEP German Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP German – Level 2*",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "footnote-mark"
+   ],
+   "target": "CLEP German Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP German** Level II",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "footnote-mark"
+   ],
+   "target": "CLEP German Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP German, Level II",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP German Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP German1 Level II",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP German Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP HIstory of the US I: Early Colonization",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP History of the United States I",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP HIstory of the US II: 1865 to the present",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP History of the United States II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP History United States I",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP History of the United States I",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP History United States II",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP History of the United States II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP History of the United States I: Early Colonization to 1877",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP History of the United States I",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP History of the United States II: 1865 to the Present",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP History of the United States II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP History, U.S. I",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP History of the United States I",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP History, U.S. II",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP History of the United States II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP History, United States I (Score of 50)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 50)"
+   ],
+   "target": "CLEP History of the United States I",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP History, United States II (Score of 50)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 50)"
+   ],
+   "target": "CLEP History of the United States II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Human Growth &\nDevelopment",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Human Growth and Development",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Human Growth & Devel.",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Human Growth and Development",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Human Growth & Development",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Human Growth and Development",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Human Growth & Development (Score of 50)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 50)"
+   ],
+   "target": "CLEP Human Growth and Development",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Intro Psychology",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Introductory Psychology",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Intro to Sociology",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Introductory Sociology",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Intro. to Educational Psychology",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Introduction to Educational Psychology",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Introduction to Psychology",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Introductory Psychology",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Introduction to Sociology",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Introductory Sociology",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Pre Calculus",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Precalculus",
+   "via": "key",
+   "twins_passed_over": [
+    "CLEP Pre-Calculus"
+   ]
+  },
+  {
+   "raw": "CLEP Princ. of Macroecon",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Principles of Macroeconomics",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Princ. of Microecon",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Principles of Microeconomics",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Principles of Micro Economics",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Principles of Microeconomics",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Spanish (max of 10 units awarded) Level II",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "policy-note (max of 10 units awarded)"
+   ],
+   "target": "CLEP Spanish Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Spanish - Level 2*",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "footnote-mark"
+   ],
+   "target": "CLEP Spanish Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Spanish Language, Level 2",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Spanish Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Spanish Language: Level 1",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Spanish Language Level I",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Spanish Language: Level 2",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Spanish Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Spanish Level 2",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Spanish Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Spanish Level II (Score of 63)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "score-band (Score of 63)"
+   ],
+   "target": "CLEP Spanish Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Spanish Level II (after FA15)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "policy-note (after FA15)"
+   ],
+   "target": "CLEP Spanish Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Spanish Level II (until FA15)",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "policy-note (until FA15)"
+   ],
+   "target": "CLEP Spanish Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Spanish Level II*",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "footnote-mark"
+   ],
+   "target": "CLEP Spanish Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Spanish [1] Level II",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "footnote-bracket"
+   ],
+   "target": "CLEP Spanish Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Spanish and Writing Level II",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Spanish with Writing Level II",
+   "via": "key",
+   "twins_passed_over": [
+    "CLEP Spanish with Writing II"
+   ]
+  },
+  {
+   "raw": "CLEP Spanish with Writing Level 2",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Spanish with Writing Level II",
+   "via": "key",
+   "twins_passed_over": [
+    "CLEP Spanish with Writing II"
+   ]
+  },
+  {
+   "raw": "CLEP Spanish with Writing ll",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Spanish with Writing Level II",
+   "via": "key",
+   "twins_passed_over": [
+    "CLEP Spanish with Writing II"
+   ]
+  },
+  {
+   "raw": "CLEP Spanish with Writing: Level 2",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Spanish with Writing Level II",
+   "via": "key",
+   "twins_passed_over": [
+    "CLEP Spanish with Writing II"
+   ]
+  },
+  {
+   "raw": "CLEP Spanish** Level II",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [
+    "footnote-mark"
+   ],
+   "target": "CLEP Spanish Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Spanish, Level II",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Spanish Language Level II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP United States I",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP History of the United States I",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP United States II",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP History of the United States II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Western Civ I",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Western Civilization I",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Western Civ II",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Western Civilization II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Western Civilization I: Ancient Near East to 1648",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Western Civilization I",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Western Civilization II: 1648 to Present",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Western Civilization II",
+   "via": "key"
+  },
+  {
+   "raw": "CLEP Western Civilization II: 1648 to the Present",
+   "family": "CLEP",
+   "issuer": "College Board",
+   "stripped": [],
+   "target": "CLEP Western Civilization II",
+   "via": "key"
+  }
+ ],
+ "ambiguous": [
+  {
+   "raw": "CLEP French Language (Levels 1 and 2) - Complete both",
+   "family": "CLEP",
+   "reason": "multi-level parenthetical ('Levels 1 and 2')"
+  },
+  {
+   "raw": "CLEP German Language (Levels 1 and 2) - Complete both",
+   "family": "CLEP",
+   "reason": "multi-level parenthetical ('Levels 1 and 2')"
+  },
+  {
+   "raw": "CLEP Spanish Language (Levels 1 and 2) - Complete both",
+   "family": "CLEP",
+   "reason": "multi-level parenthetical ('Levels 1 and 2')"
+  }
+ ],
+ "no_match": [
+  {
+   "raw": "CLEP French Level III",
+   "family": "CLEP",
+   "clean": "CLEP French Level III",
+   "key": "clep french level iii"
+  },
+  {
+   "raw": "CLEP German Level III",
+   "family": "CLEP",
+   "clean": "CLEP German Level III",
+   "key": "clep german level iii"
+  }
+ ],
+ "skipped_assigned": []
+}

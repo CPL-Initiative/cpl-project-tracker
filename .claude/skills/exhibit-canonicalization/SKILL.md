@@ -126,6 +126,22 @@ student who knows the subject, not the college's naming scheme:
    `issuing_agency = null`" line in Rule 6 for Cx/portfolio specifically.
    Always the plural system name — never `California Community College`.
 
+### Rule 5d — Brand-family exams PRE-SEED to the existing house family (2026-07-07)
+
+Standardized-exam brands (AP, CLEP — both College Board; extensible) don't
+need per-row judgment: the raw title is the exam name wrapped in decoration
+(score bands `(Score 3-5)`/`(Score of 50)`, local-course parentheticals
+`(BIOSCI 101)`, policy notes `(prior F11)`, footnotes, whitespace twins).
+Run `kb/_preseed_unclassified.py` (dry-run first; receipts in
+`kb/preseed_out/<date>/plan.json`) — it maps each brand raw to an EXISTING
+house family by deterministic normalization and writes worklist assignments
+as `preseed-v1@bot`. It NEVER invents a unified title: no-family and
+multi-level ("Levels 1 and 2 — Complete both") rows are reported for the
+curator instead of seeded. First run (2026-07-07): 158 of 163 AP/CLEP queue
+rows seeded, 36% of the 451-row backlog. When adding a brand, extend the
+`FAMILIES` table + `ALIASES`, then run `kb/_verify_preseed_rules.py`
+(43 checks) before applying.
+
 ### Rule 6 — Issuing agency uses the longer recognizable canonical name
 
 Use the **longer, full canonical name with the common abbreviation in
