@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-06T22:32:35.727562+00:00",
+  "scraped_at": "2026-07-07T10:03:20.752187+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25066,
+    "jst": 25201,
     "star_colleges": 50
   },
   "computed_star_colleges": 50,
@@ -422,7 +422,7 @@
     },
     "College of the Canyons": {
       "vets": 382,
-      "jst": 123,
+      "jst": 258,
       "star": false
     },
     "Napa Valley College": {
