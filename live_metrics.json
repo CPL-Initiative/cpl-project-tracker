@@ -1,10 +1,10 @@
 {
-  "scraped_at": "2026-07-07T12:11:34.907Z",
+  "scraped_at": "2026-07-07T15:23:55.181Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
   "active_college_count": 102,
-  "star_college_count": 50,
+  "star_college_count": 51,
   "tiers": {
     "criteria": [
       "Students >= 500",
@@ -48,14 +48,14 @@
         },
         {
           "college": "Moreno Valley College",
-          "students": 1544,
+          "students": 1558,
           "units": 10120,
-          "avgUnits": 6.55440414507772,
+          "avgUnits": 6.495507060333761,
           "transcriptionRate": 91.6,
-          "avgTranscribed": 6.005181347150259,
+          "avgTranscribed": 5.951219512195122,
           "criteriaMetCount": 5,
-          "militaryStudents": 953,
-          "nonMilitaryStudents": 607,
+          "militaryStudents": 957,
+          "nonMilitaryStudents": 617,
           "apprenticeStudents": 0,
           "savings": 15376250,
           "yearImpact": 60065150,
@@ -308,13 +308,13 @@
         },
         {
           "college": "College of the Desert",
-          "students": 391,
+          "students": 392,
           "units": 2239.5,
-          "avgUnits": 5.727621483375959,
+          "avgUnits": 5.713010204081633,
           "transcriptionRate": 37.1,
-          "avgTranscribed": 2.126598465473146,
+          "avgTranscribed": 2.121173469387755,
           "criteriaMetCount": 2,
-          "militaryStudents": 355,
+          "militaryStudents": 356,
           "nonMilitaryStudents": 37,
           "apprenticeStudents": 0,
           "savings": 3260432.5,
@@ -1027,6 +1027,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Oxnard College",
+          "students": 151,
+          "units": 588,
+          "avgUnits": 3.8940397350993377,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 151,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 1010320,
+          "yearImpact": 3543128,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Los Angeles City College",
           "students": 151,
           "units": 0,
@@ -1039,21 +1054,6 @@
           "apprenticeStudents": 0,
           "savings": 0,
           "yearImpact": 0,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Oxnard College",
-          "students": 149,
-          "units": 588,
-          "avgUnits": 3.946308724832215,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 149,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 1010320,
-          "yearImpact": 3543128,
           "transcribedUnits": 0
         },
         {
@@ -1222,6 +1222,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Ohlone College",
+          "students": 84,
+          "units": 0,
+          "avgUnits": 0,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 84,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 0,
+          "yearImpact": 0,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Copper Mountain College",
           "students": 79,
           "units": 285,
@@ -1384,21 +1399,6 @@
           "apprenticeStudents": 0,
           "savings": 150510,
           "yearImpact": 527829,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Ohlone College",
-          "students": 27,
-          "units": 0,
-          "avgUnits": 0,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 27,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 0,
-          "yearImpact": 0,
           "transcribedUnits": 0
         },
         {
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "48,586",
+      "value": "48,660",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "25,201"
+          "value": "25,265"
         },
         {
           "label": "Workforce/Other",
-          "value": "23,462"
+          "value": "23,472"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 48586,
+    "Students": 48660,
     "Units": 232284.15000000002,
     "TranscribedUnits": 100769.45,
     "Savings": 321858135.25,
     "YearImpact": 1301987508.3999999,
-    "MilitaryStudents": 25201,
-    "NonMilitaryStudents": 23462,
+    "MilitaryStudents": 25265,
+    "NonMilitaryStudents": 23472,
     "AprenticeStudents": 755,
-    "AverageUnits": 4.780886469353312,
-    "TranscribedAverage": 2.07404293417857
+    "AverageUnits": 4.7736159062885335,
+    "TranscribedAverage": 2.070888820386354
   }
 }

@@ -1,28 +1,28 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-07-07T12:11:34.907Z",
+ "_as_of": "2026-07-07T15:23:55.181Z",
  "credit_recommendations": {
-  "total": "12,639",
+  "total": "12,653",
   "ccc": "1,297",
-  "local": "11,342",
+  "local": "11,356",
   "by_type": [
    "Standardized Assessment: 6,758",
    "Industry Certification: 3,602",
-   "Credit By Exam: 1,680",
+   "Credit By Exam: 1,694",
    "Portfolio Review: 395",
    "Military: 116"
   ]
  },
  "map_exhibits": {
-  "total": "2,691",
-  "ccc": "132",
-  "local": "2,559",
+  "total": "2,707",
+  "ccc": "133",
+  "local": "2,574",
   "originating_colleges": "88"
  },
  "statewide_exhibits": {
-  "total": "132",
+  "total": "133",
   "program_areas": "12",
-  "distinct_credit_recs": "1,096",
+  "distinct_credit_recs": "1,130",
   "adoptions": "1,291",
   "adopting_colleges": "61",
   "by_sector": [
@@ -42,8 +42,8 @@
    },
    {
     "sector": "Fire Technology",
-    "exhibits": 16,
-    "credit_recs": 260,
+    "exhibits": 17,
+    "credit_recs": 294,
     "adoptions": 342,
     "could_adopt": 45
    },
@@ -129,7 +129,7 @@
   "adopting_ccc": "61"
  },
  "veteran_sprint": {
-  "star_colleges": "50",
+  "star_colleges": "51",
   "basic_training_colleges": "89 Colleges"
  }
 }

@@ -1,14 +1,14 @@
 {
-  "scraped_at": "2026-07-07T12:11:35.051395+00:00",
+  "scraped_at": "2026-07-07T15:23:55.476727+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25201,
-    "star_colleges": 50
+    "jst": 25265,
+    "star_colleges": 51
   },
-  "computed_star_colleges": 50,
+  "computed_star_colleges": 51,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 296,
@@ -47,7 +47,7 @@
     },
     "Moreno Valley College": {
       "vets": 916,
-      "jst": 953,
+      "jst": 957,
       "star": true
     },
     "Bakersfield College": {
@@ -112,7 +112,7 @@
     },
     "College of the Desert": {
       "vets": 235,
-      "jst": 355,
+      "jst": 356,
       "star": true
     },
     "Cypress College": {
@@ -247,7 +247,7 @@
     },
     "Oxnard College": {
       "vets": 118,
-      "jst": 149,
+      "jst": 151,
       "star": true
     },
     "Allan Hancock College": {
@@ -485,6 +485,11 @@
       "jst": 86,
       "star": true
     },
+    "Ohlone College": {
+      "vets": 49,
+      "jst": 84,
+      "star": true
+    },
     "Sacramento City College": {
       "vets": 203,
       "jst": 66,
@@ -493,11 +498,6 @@
     "Gavilan College": {
       "vets": 352,
       "jst": 46,
-      "star": false
-    },
-    "Ohlone College": {
-      "vets": 49,
-      "jst": 27,
       "star": false
     },
     "Columbia College": {
