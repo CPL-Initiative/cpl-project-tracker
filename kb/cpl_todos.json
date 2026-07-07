@@ -1,56 +1,56 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-07 late night · Session 103 (staged pre-seeds + triage toggle)",
- "_session": 103,
- "_status": "MORE pre-seeding, your way: 163 of the remaining rows are now PRE-FILLED in the triage list (⚡ badge) but NOT saved — credit-by-exam and high-school articulation rows named from the course content with issuer California Community Colleges, the carpentry Journeyman family with the Southwest JATC issuer from the DIR site, the Cabrillo trades to CTCNC, NCCER rows verbatim with issuer NCCER, and the ironworker 416/433 period ladders. Review each row (the badge tooltip explains the reasoning) and click Save — or use the new '💾 Save all pre-filled shown' button after a skim. The list also has the toggle you asked for: it now opens on 'Needs triage' only; click 'All' to see saved rows too. The DIR + NCCER links are noted in the skill + a KB card for future exhibits. ~107 rows remain for hand-triage (contractor licenses, IC-*, fire certs).",
+ "_as_of": "2026-07-07 night · Session 104 (the statewide pass — 97 of the last 100 pre-filled)",
+ "_session": 104,
+ "_status": "The statewide pass you asked for is in: 97 of the last 100 triage rows are now ⚡ pre-filled — IC-Welding rows matched to the NCCER statewide certifications with the NCCER issuer, the fire certifications matched to your existing families (with IFSAC/Pro Board issuers where the row named them), the C-## contractor rows kept verbatim with CSLB as issuer, and the Mt. SAC credit-by-exam batch named from course content with issuer CCC. Only the 3 CLEP 'Complete both' spans need your judgment. Also new: each triage row now shows WHO entered the exhibit (college chips, live after tonight's refresh); a '＋ set' button on any credential missing an issuing agency (your 10-Key case — and your edit now lands in the permanent record, not just the display); a '+N' chip when a credential has multiple certifying bodies; and the list can no longer vanish on expand/collapse — a bad row shows a ⚠ placeholder naming itself instead.",
  "items": [
   {
-   "id": "preseed-staged-review",
+   "id": "preseed-statewide-review",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "Review the ⚡ pre-filled triage rows (163) — edit anything off, then Save per row or '💾 Save all pre-filled shown' per view. Nothing saves until you click."
+   "text": "Review the ⚡ pre-filled triage rows (97 — the statewide/fire/CSLB/Cx pass), edit anything off, then Save per row or '💾 Save all pre-filled shown'. This closes the worklist."
   },
   {
-   "id": "triage-toggle",
+   "id": "clep-complete-both",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "New: the triage list opens on 'Needs triage' only — the 'All' chip shows saved rows again."
+   "text": "Last 3 rows need your call: the CLEP French/German/Spanish 'Levels 1 and 2 — Complete both' spans (which family should a two-level span land in?)."
   },
   {
-   "id": "qa-theater-issuer",
+   "id": "ten-key-issuer",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "QA: 'THEATER 280 - Musical Theater Workshop' got the Sustainable-Materials issuer (copy-paste slip?) — probably California Community Colleges. 'SMM 4' issuer = its own title too."
+   "text": "10-Key Data Entry: use the new '＋ set' button on the issuer cell to enter your pick (e.g. 'Proctored Testing Center'); it now saves into the permanent credential record overnight. House alternative for Credit-by-Exam rows is 'California Community Colleges' — your call."
   },
   {
-   "id": "cslb-family-shape",
+   "id": "collapse-bug-watch",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "Decide the family shape for the C-## contractor-license rows (e.g. 'CSLB C-10 — Electrical Contractor License') and Fable can pre-seed the 10 of them."
+   "text": "If the list ever blanks/orphans again: note what search/filter was active + any red console error — the new ⚠ placeholder row will name the culprit."
   },
   {
-   "id": "clep-residuals",
-   "who": "sam",
+   "id": "fire-family-twins",
+   "who": "fable",
    "tab": "credential-reference",
-   "text": "Still open from last night: 3 'Levels 1 and 2 — Complete both' CLEP spans + CLEP French/German Level III (no house family)."
+   "text": "Near-duplicate families to fold in a cleanup pass: 'Firefighter 1' vs 'Firefighter I', 'Fire Instructor 2' vs 'Fire Instructor II' (the AP-art-fold pattern)."
   },
   {
    "id": "mojibake-families",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "Clean up the 3 'Generic Credit by Exam â€”' mojibake families in unified_titles.json (corrupted em-dash from an old fold) — merge into the proper '—' families."
+   "text": "3 mojibake 'Generic Credit by Exam â€”' families in unified_titles.json still need the rename/merge cleanup."
+  },
+  {
+   "id": "dispatch-verify",
+   "who": "fable",
+   "tab": "credential-reference",
+   "text": "Verify the post-merge dashboard run published: college chips live, issuers '+N' in the CER bake, suggestions regenerated with college scoping."
   },
   {
    "id": "moc-cos-bridge",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "MOC→COS bridge (carryover): batch O*NET codes through the cert-finder keyword leg on a runner; era-filter the MOC registry first."
-  },
-  {
-   "id": "cos-ambiguous",
-   "who": "fable",
-   "tab": "credential-reference",
-   "text": "Review the 22 ambiguous CareerOneStop matches (kb/cos_match_out/2026-07-07/report.json) + the --apply-issuers dry-run (2 fills)."
+   "text": "Carryover: the MOC→COS bridge (era-filter caveat) + the 22 ambiguous CareerOneStop matches."
   }
  ]
 }

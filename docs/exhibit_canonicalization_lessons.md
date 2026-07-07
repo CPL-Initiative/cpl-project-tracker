@@ -1740,3 +1740,115 @@ picks the family shape), IC-* rows (unknown "Industry Certification" issuer),
 fire/IFSAC/ProBoard certs, welding course-content rows, the 5 known CLEP
 residuals, one-off state certs. All still listed in the staged file's
 `_residual` for hand-triage.
+
+## 2026-07-07 (continued 7) — Session 104, Bruh SkyTime: the statewide-catalog pass — 97 of the last 100 staged, college chips, multi-issuer, live-Sam batch
+
+**Queue state re-measured** (Sam bulk-saved the Session-103 staged rows + kept
+hand-triaging): 451 queue → **351 live-assigned, 100 remaining**. Both
+Session-103 QA flubs (THEATER 280 / SMM 4 issuers) confirmed corrected by Sam.
+Fresh receipts written (`kb/preseed_out/2026-07-07/live_values.json` — 580
+titles; `assigned_md5.txt` — the `--assigned-md5` roster), delta fetched with
+per-row md5 pairs (0 mismatches — the Session-103 method held).
+
+**The statewide-catalog + family lanes (Sam: "use the MAP statewide CRs to
+match some of the exhibits … IC-Welding Level I … take another pre-seed pass
+to get all possible populated"):** `statewide_data.js` (committed daily)
+carries EVERY exhibit's `issuing_agency` + `cpl_type` + `raw_titles` — the 133
+`CCC Collaborative` records ARE the map.rccd.edu/statewidecpl catalog, NCCER
+Welding Levels 1–4 present with the NCCER issuer. All 100 remaining rows
+resolved in it. Five new STAGED lanes in `kb/_preseed_unclassified.py`
+(Rule 5e — zero Supabase writes):
+
+- **statewide/family match** (`stage_family` + `build_stage_indexes`): a
+  decoration-strip ladder (mojibake `_demoji`, `Certification:` lead,
+  acronym-echo `(CNA)`/`(FF1)`/`(MOS)` parens, IFSAC/Pro Board accreditor
+  parens → captured as the ISSUER, trailing `Certification` tokens,
+  `fire fighter`≡`firefighter`) + `stage_key` matching against the statewide
+  roster ∪ all 1,982 house families ∪ live values; issuers from the roster ∪
+  `kb/credentials.json` (best-confidence record). Brand-stripped statewide
+  aliases (`NCCER Welding Level 1` + issuer `…(NCCER)` ⇒ key `welding level i`)
+  are what bridge Sam's IC-Welding example.
+- **`stage_ic`**: `IC-<content>` → statewide (NCCER welding, 0.85) → family →
+  title-only proposal (the MSJC automotive ladder, issuer blank + ASE-EF note).
+- **`stage_cslb`**: C-##/Class A/B/B-2 kept VERBATIM (Rule 8b — the
+  classification code is identity) + issuer `Contractors State License Board
+  (CSLB)`; 1-2-digit guard so wildland C-190/C-290 bundles are never claimed.
+- **`stage_cx_type`**: the big unlock — rows whose MAP **CPL Type** is Credit
+  By Exam / Portfolio Review but whose TITLE carries no mechanism phrase (the
+  Mt. SAC/Santa Ana/Cabrillo batch, ~37 rows) — the S103 cx lane triggered on
+  phrases and never saw them. Title = the content verbatim (4 receipted typo
+  fixes: Combinded/Introduciton/Programing/Principals), issuer CCC.
+- **24 new JUDGMENT_SINGLES** (each receipted): the fire ladder
+  (Fire Company Officer 3 ambiguity flagged, Fire Inspector II parallel to the
+  Fire Inspector I family, Fire Control 4A house shape, NWCG S-190/S-339,
+  NIMS ICT3), CPA→CBA (self-declared in the raw), SWRCB D2–D5 OR-span,
+  BioTC, FCC GROL (the A+-Prep precedent), MOS Excel/Word OR-spans (the
+  'ASE C1 or G1' statewide shape), ECSI (names the body, not a credential),
+  Emergency Management Experience LD/UD, Clinical Embalming, the
+  Industry-Credentials-for-X suspect pattern, Discipline Exam ADM JUS 001 →
+  the COCI title, ICC for the CA Building/Residential Code certs, CLEP
+  French/German Level III ladder extensions.
+
+**Result: 97 of 100 staged** (`kb/unclassified_preseed.json` regenerated —
+by lane: cx 37 · single 24 · statewide 10 · family 12 · cslb 11 · ic 3);
+**residual = 3** (the genuinely ambiguous CLEP "Levels 1 and 2 — Complete
+both" spans). Fire fully covered per Sam's "hopefully all the Fire can be
+pre-seeded". Harness grown 76 → **100 checks** (v3 lane fixtures, hermetic —
+no statewide_data.js dependency).
+
+**Originating-college chips (Sam: "knowing their local title could help
+determine the common course title"):** the college was dropped at exactly one
+place — `kb/_audit_exhibits.py:_load_map_raw_titles()` read only the Exhibit
+Title column. It now also collects the **College** column (originating college
+— institutional data, no PII) and stamps `colleges` on every unclassified
+card; `credential_reference.js` renders them as chips in the raw-title cell
+(short name via `cplCollegeShort`, full name in the tooltip; soft-absent on
+pre-104 snapshots). Data lands when the auditor next runs with a CustomReport
+(post-merge dispatch). Tests: `tests/cer_worklist_college_chip.test.js` (7).
+
+**CCR⇄CER crossover (Sam ask #4):** the Rule 5c wire already existed
+(`kb/_suggest_unclassified.py` → 💡 chips) but covered only 19/451 —
+**mechanism-strip before code parsing** (reusing the preseed `_CX_*` patterns)
+doubled it to 39, and the new college stamps enable **college-scoped
+`(College, SUBJ, NUM)` COCI joins** (unique where the global key is ambiguous
+— the membership-join hazard, now bypassed at the source). Full analysis +
+ranked next integrations: `docs/kb-notes/cer-ccr-crossover-integrations.md`.
+
+**Multi-issuer (Sam live: "Some, like Fire, might have multiple issuing
+agencies"):** audited the fold — **the assigned issuer was silently DROPPED
+whenever the target title already had any credential record** ("existing =
+authoritative"; the Fire Inspector I case would lose IFSAC/Pro Board next to
+its ICC/NFPA/SFT/Cal-JAC records). `kb/_fold_unclassified.py` gained the
+**`issuer_adds` lane**: append a DISTINCT issuer record (never overwrite),
+deduped on normalized name + trailing-acronym + containment (the dry run
+caught 'NCCER' ≈ '…(NCCER)' as a near-dupe and correctly appended only the
+legitimate Construction Inspection CCC-lane second issuer); includes the SKIP
+lane so an issuer added to an already-classified raw still lands; receipted as
+`credential_issuer_adds`. The generator now bakes an `issuers[]` array (>1
+only) and the CER renders a **"+N" chip** listing all certifying bodies.
+
+**The 10-Key case (Sam live):** the main-tab ✎ Curate panel ALREADY had an
+Issuing-agency field — but it was a display-only override (never reached
+`credentials.json`), invisible at the point of need, and the table only showed
+`creds[0]`. Three fixes: a **"＋ set" affordance** on every null-issuer cell
+(signed-in; opens the row's Curate panel), **Mode A2 in
+`kb/_apply_credential_review.py`** (promotes `issuing_agency_override` into
+credentials.json — fill a null unreviewed-machine first record, else append a
+distinct record; the 10-Key record is exactly the null-machine case, so Sam's
+"Proctored Testing Center" will land canonically on the next cron), and the
+"+N" chip above. Doctrine note for Sam: 10-Key is typed Credit By Exam — the
+house Rule 5c.3 issuer would be `California Community Colleges`; his
+"Proctored Testing Center" reasoning (Cal HR 5-minute proctored requirement,
+no single certifier) is a legitimate curator call either way — the field is
+his.
+
+**Expand/collapse orphan bug (Sam live): NOT REPRODUCED.** An exhaustive jsdom
+hunt (committed payload + real cos_matches, signed-in, caret expand/collapse,
+Curate-open, ＋set, ALL 1,982 rows expanded) found no throw and no row loss.
+Open QA item — needs Sam's state (search/filter/sort active? console error?
+did a refresh fix it?). Tracked in the handoff.
+
+**Ops for next session:** post-merge `workflow_dispatch` of
+daily-dashboard.yml publishes the college stamps + regenerated suggestions +
+the credential_reference bake with `issuers[]`; `kb/unclassified_preseed.json`
+is committed in the PR itself (not a cron artifact).

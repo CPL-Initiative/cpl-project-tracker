@@ -1,7 +1,7 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-07-07T17:34:20Z",
- "count": 19,
+ "_generated_at": "2026-07-07T23:05:13Z",
+ "count": 39,
  "suggestions": {
   "AUTO 60D Ignition Analysis and Oscilloscope Diagnosis Credit By Exam": [
    {
@@ -52,6 +52,174 @@
     "id": "3392-A",
     "title": "Commercial Building Inspector",
     "org": "International Code Council"
+   }
+  ],
+  "Credit by Exam - WATER 140": [
+   {
+    "kind": "course",
+    "title": "Water Distribution Operator I",
+    "code": "WATER 140",
+    "share": 1.0,
+    "colleges": 1
+   }
+  ],
+  "Credit by Exam ACCTG 022 Payroll Accounting": [
+   {
+    "kind": "course",
+    "title": "Payroll Accounting",
+    "code": "ACCTG 22",
+    "share": 0.33,
+    "colleges": 3
+   }
+  ],
+  "Credit by Exam ACCTG 030 QuickBooks": [
+   {
+    "kind": "course",
+    "title": "QuickBooks",
+    "code": "ACCTG 30",
+    "share": 1.0,
+    "colleges": 1
+   }
+  ],
+  "Credit by Exam AUTO 102 Automotive System": [
+   {
+    "kind": "cid",
+    "id": "AUTO 110 X",
+    "title": "Introduction to Automotive Technology",
+    "code": "AUTO 102"
+   }
+  ],
+  "Credit by Exam AUTO 106 Automotive Brake System": [
+   {
+    "kind": "course",
+    "title": "Automotive Brake Systems",
+    "code": "AUTO 106",
+    "share": 0.33,
+    "colleges": 3
+   }
+  ],
+  "Credit by Exam AUTO 118 Fuel Systems/Emission Controls": [
+   {
+    "kind": "course",
+    "title": "Fuel Systems/Emission Controls",
+    "code": "AUTO 118",
+    "share": 0.5,
+    "colleges": 2
+   }
+  ],
+  "Credit by Exam BIS 012 Business Document Production": [
+   {
+    "kind": "course",
+    "title": "Business Document Production",
+    "code": "BIS 12",
+    "share": 1.0,
+    "colleges": 1
+   }
+  ],
+  "Credit by Exam CHEM 001B General Chemistry": [
+   {
+    "kind": "course",
+    "title": "General Chemistry",
+    "code": "CHEM 1B",
+    "share": 0.31,
+    "colleges": 32
+   }
+  ],
+  "Credit by Exam KINS 025 First Aid, CPR & AED": [
+   {
+    "kind": "cid",
+    "id": "KIN 101",
+    "title": "First Aid, CPR and AED",
+    "code": "KINS 25"
+   }
+  ],
+  "Credit by Exam MATH 025 Precalculus Algebra and Trigonometry": [
+   {
+    "kind": "course",
+    "title": "College Algebra",
+    "code": "MATH 25",
+    "share": 0.11,
+    "colleges": 9
+   }
+  ],
+  "Credit by Exam MATH 062 Calculus for Business and Social Science": [
+   {
+    "kind": "cid",
+    "id": "MATH 140",
+    "title": "Business Calculus",
+    "code": "MATH 62"
+   }
+  ],
+  "Credit by Exam SPAN 032 Spanish Grammar and Composition": [
+   {
+    "kind": "course",
+    "title": "Spanish for Heritage Speakers 2",
+    "code": "SPAN 32",
+    "share": 0.33,
+    "colleges": 3
+   }
+  ],
+  "Credit by Exam SPAN 033 Spanish/English Linguistics Analysis": [
+   {
+    "kind": "course",
+    "title": "Spanish/English LInguistics Analysis",
+    "code": "SPAN 33",
+    "share": 0.5,
+    "colleges": 2
+   }
+  ],
+  "Credit by Exam WWT 100 Calculations in Water/Wastewater Technology": [
+   {
+    "kind": "course",
+    "title": "Calculations in Water-Wastewater Technology",
+    "code": "WWT 100",
+    "share": 1.0,
+    "colleges": 1
+   }
+  ],
+  "Credit by Exam WWT 102 Introduction to Electrical and Instrumentation Processes": [
+   {
+    "kind": "course",
+    "title": "Introduction to Electrical and Instrumentation Processes",
+    "code": "WWT 102",
+    "share": 1.0,
+    "colleges": 1
+   }
+  ],
+  "Credit by Exam WWT 103 Basic Plant Operations: Water Treatment": [
+   {
+    "kind": "course",
+    "title": "Basic Plant Operations - Water Treatment",
+    "code": "WWT 103",
+    "share": 1.0,
+    "colleges": 1
+   }
+  ],
+  "Credit by Exam WWT 104 Basic Plant Operations: Wastewater Treatment": [
+   {
+    "kind": "course",
+    "title": "Basic Plant Operations - Wastewater Treatment",
+    "code": "WWT 104",
+    "share": 1.0,
+    "colleges": 1
+   }
+  ],
+  "Credit by Exam WWT 105 Water Distribution Systems": [
+   {
+    "kind": "course",
+    "title": "Water Distribution Systems",
+    "code": "WWT 105",
+    "share": 1.0,
+    "colleges": 1
+   }
+  ],
+  "Credit by Exam WWT 106 Wastewater Collection Systems": [
+   {
+    "kind": "course",
+    "title": "Wastewater Collection Systems",
+    "code": "WWT 106",
+    "share": 1.0,
+    "colleges": 1
    }
   ],
   "Emergency Medical Responder": [
@@ -111,6 +279,14 @@
     "code": "MUSIC 661",
     "share": 1.0,
     "colleges": 2
+   }
+  ],
+  "Portfolio Review - ART 125B": [
+   {
+    "kind": "cid",
+    "id": "ARTS 205",
+    "title": "Intermediate Drawing",
+    "code": "ART 125B"
    }
   ],
   "Residential Building Inspector": [

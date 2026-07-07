@@ -475,6 +475,133 @@ JUDGMENT_SINGLES = {
         "issuer": "", "confidence": 0.55,
         "note": "Electrical trade — identify the sponsoring JATC/program via the "
                 "DIR DAS occupational search (Electrician) before setting an issuer."},
+    # ── Session-104 singles (the statewide-pass residual sweep, 2026-07-07) ──
+    "Fire Company Officer 3 Certification (IFSAC or ProBoard Certifications)": {
+        "title": "Fire Company Officer 3",
+        "issuer": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+        "confidence": 0.5,
+        "note": "SFT-ladder ambiguity: Company Officer certs are level 2 and the "
+                "level-3 tier is Chief Fire Officer — confirm with Santa Ana "
+                "which certification '3' means before folding."},
+    "Fire Inspector 2 (IFSAC/ProBoard)": {
+        "title": "Fire Inspector II",
+        "issuer": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+        "confidence": 0.6,
+        "note": "Parallels the existing 'Fire Inspector I' family shape (full "
+                "level, not the SFT 2A–2D modules); issuer from the raw's "
+                "accreditor parenthetical."},
+    "Fire Fighter 1: Haz Mat + WMD": {
+        "title": "Firefighter 1 — Haz Mat + WMD",
+        "issuer": "", "confidence": 0.5,
+        "note": "FF1 curriculum embeds HazMat FRO + WMD; verify with Santa Ana "
+                "whether this is a distinct award or the 'Firefighter 1' family."},
+    "Cal Fire Fire Control 4A: Ignitable Liquids and Gases Awareness/Operations": {
+        "title": "Fire Control 4A — Ignitable Liquids and Gases Awareness/Operations",
+        "issuer": "California State Fire Training (SFT)", "confidence": 0.6,
+        "note": "House 'Fire Control 3B — …' shape; CAL FIRE is the deliverer, "
+                "SFT certifies the Fire Control curriculum."},
+    "National Wildfire Coordinating Group-S-190 Introduction to Windland Fire Behavior": {
+        "title": "NWCG S-190 — Introduction to Wildland Fire Behavior",
+        "issuer": "National Wildfire Coordinating Group (NWCG)", "confidence": 0.7,
+        "note": "House NWCG shape; 'Windland' typo fixed; S-code kept (Rule 8b)."},
+    "S-339 Division/Group Supervisor- ALL RISK (Wildland Fire Fighter)": {
+        "title": "NWCG S-339 — Division/Group Supervisor (All-Risk)",
+        "issuer": "National Wildfire Coordinating Group (NWCG)", "confidence": 0.6,
+        "note": "NWCG position course S-339; house NWCG shape, code kept."},
+    "NIMS ICS All-Hazards Incident Commander (ICT3)": {
+        "title": "NIMS ICS All-Hazards Incident Commander (ICT3)",
+        "issuer": "U.S. Federal Emergency Management Agency (FEMA)", "confidence": 0.55,
+        "note": "NIMS position credential (ICT3 code kept, Rule 8b); delivery "
+                "varies by agency — verify the certifying body."},
+    "California Certified Public Accountant (CPA) License, issued by the California Board of Accountancy (CBA).": {
+        "title": "California Certified Public Accountant (CPA) License",
+        "issuer": "California Board of Accountancy (CBA)", "confidence": 0.85,
+        "note": "Issuer self-declared in the raw title; issuance clause stripped."},
+    "California State Water Resources Control Board D2, D3, D4, or D5 certification": {
+        "title": "Water Distribution Operator Grade D2, D3, D4, or D5",
+        "issuer": "California State Water Resources Control Board (SWRCB)",
+        "confidence": 0.6,
+        "note": "House per-grade families exist ('Water Distribution Operator "
+                "Grade D2'); the OR-span kept as one exhibit per the 'ASE C1 or "
+                "G1' statewide precedent — split if Sam prefers per-grade."},
+    "Biocom Institute Technician Certification (BioTC) - This certification has no expiration": {
+        "title": "Biocom Institute Technician Certification (BioTC)",
+        "issuer": "Biocom California Institute", "confidence": 0.7,
+        "note": "No-expiration rider stripped; BioTC is the Biocom California "
+                "Institute's life-science technician credential."},
+    "FCC General Radiotelephone Operator License Preparation": {
+        "title": "FCC General Radiotelephone Operator License (GROL)",
+        "issuer": "U.S. Federal Communications Commission (FCC)", "confidence": 0.65,
+        "note": "Prep exhibits name the credential they prepare for — Sam's "
+                "'A+ Certification Preparation' → 'CompTIA A+' precedent."},
+    "Microsoft Office Specialist (MOS): Excel Associate or Microsoft Office Specialist (MOS): Excel Expert Certification.": {
+        "title": "Microsoft Office Specialist — Excel or Excel Expert",
+        "issuer": "Microsoft", "confidence": 0.6,
+        "note": "OR-span kept as one exhibit per the 'ASE C1 or G1' statewide "
+                "precedent; the house also has separate Excel / Excel Expert "
+                "families if Sam prefers a split."},
+    "Microsoft Office Specialist (MOS): Word Associate or MOS: Word Expert Certification.": {
+        "title": "Microsoft Office Specialist — Word or Word Expert",
+        "issuer": "Microsoft", "confidence": 0.6,
+        "note": "OR-span kept as one exhibit per the 'ASE C1 or G1' statewide "
+                "precedent; separate Word / Word Expert families also exist."},
+    "Emergency Care and Safety Institute": {
+        "title": "Emergency Care and Safety Institute", "issuer":
+        "Emergency Care and Safety Institute (ECSI)", "confidence": 0.4,
+        "note": "The raw names the certifying BODY, not a credential — ask "
+                "Chaffey which ECSI certification (CPR/First Aid/BLS…) this is."},
+    "Emergency Management Experience (LD)": {
+        "title": "Emergency Management Experience (Lower Division)",
+        "issuer": ISSUER_CCC, "confidence": 0.55,
+        "note": "Work-experience credit instrument (title 5 §55050) — LD/UD "
+                "division markers expanded; issuer CCC per Rule 5c.3."},
+    "Emergency Management Experience (UD)": {
+        "title": "Emergency Management Experience (Upper Division)",
+        "issuer": ISSUER_CCC, "confidence": 0.55,
+        "note": "Work-experience credit instrument (title 5 §55050) — LD/UD "
+                "division markers expanded; issuer CCC per Rule 5c.3."},
+    "Clinical Embalming (MORT 482 C)": {
+        "title": "Clinical Embalming", "issuer": "", "confidence": 0.5,
+        "note": "Course code MORT 482C stripped (Rule 5c); typed Industry "
+                "Certification at Cypress — certifying body unidentified "
+                "(possibly CFB/ABFSE); verify before setting an issuer."},
+    "Industry Credentials for Introduction to Computers": {
+        "title": "Introduction to Computers", "issuer": "", "confidence": 0.4,
+        "note": "'Industry Credentials for <course>' names the course, not the "
+                "credential — the suspect_course_as_exhibit pattern; ask LA "
+                "Pierce which credential this accepts."},
+    "Discipline Exam - ADM JUS 001": {
+        "title": "Introduction to Administration of Justice",
+        "issuer": ISSUER_CCC, "confidence": 0.75,
+        "note": "COCI course title for ADM JUS 001 at Los Angeles Mission "
+                "College (the adopting college) — Rule 5c course-content naming."},
+    "Internship and Work Experience": {
+        "title": "Internship and Work Experience", "issuer": ISSUER_CCC,
+        "confidence": 0.45,
+        "note": "Rule-5-adjacent generic bucket (Cabrillo CBE); issuer CCC per "
+                "Rule 5c.3 — consider a more specific award name with the college."},
+    "California Building Code Certification": {
+        "title": "California Building Code Certification",
+        "issuer": "International Code Council (ICC)", "confidence": 0.6,
+        "note": "Statewide CCC-collaborative exhibit kept verbatim; ICC "
+                "administers California-code certification exams — verify."},
+    "California Residential Code Certification": {
+        "title": "California Residential Code Certification",
+        "issuer": "International Code Council (ICC)", "confidence": 0.6,
+        "note": "Statewide CCC-collaborative exhibit kept verbatim; ICC "
+                "administers California-code certification exams — verify."},
+    "CLEP French Level III": {
+        "title": "CLEP French Language Level III", "issuer": "College Board",
+        "confidence": 0.5,
+        "note": "Extends the existing 'CLEP French Language Level I/II' ladder — "
+                "Santa Rosa awards a third credit tier for higher scores; verify "
+                "before folding."},
+    "CLEP German Level III": {
+        "title": "CLEP German Language Level III", "issuer": "College Board",
+        "confidence": 0.5,
+        "note": "Extends the existing 'CLEP German Language Level I/II' ladder — "
+                "Santa Rosa awards a third credit tier for higher scores; verify "
+                "before folding."},
 }
 
 
@@ -652,8 +779,328 @@ def build_family_index(weight, live_values=None):
     return idx
 
 
-def build_stage_plan(queue, families, assigned_raws):
-    """Run every staged lane over the queue. Returns (staged{raw→rec}, residual[])."""
+# ── v3 STATEWIDE-CATALOG + FAMILY lanes (Session 104, 2026-07-07) ────────────
+# Sam: "I want to see if you can use the MAP statewide CRs to match some of the
+# exhibits. Example IC-Welding Level I — the college used IC to indicate
+# industry certification and then listed the NCCER certificate title … take
+# another pre-seed pass throughout all the exhibits to get all possible
+# populated." Sources: statewide_data.js (the committed daily EACR dataset —
+# every exhibit record carries issuing_agency + cpl_type + collaborative_type;
+# the 133 `CCC Collaborative` records ARE the map.rccd.edu/statewidecpl
+# catalog) + kb/credentials.json (the curated issuer authority). All lanes
+# below are STAGE-ONLY (Rule 5e): proposals into kb/unclassified_preseed.json,
+# never Supabase.
+
+STATEWIDE_JS = os.path.join(os.path.dirname(HERE), "statewide_data.js")
+
+# cp1252-mojibake em-dash family seen in statewide titles + 3 KB families —
+# normalize before keying so decorated raws still land on their family.
+_MOJIBAKE = (("â€”", "—"), ("â€“", "–"), ("â€™", "'"), ("â€œ", '"'), ("â€\x9d", '"'))
+
+
+def _demoji(t):
+    for bad, good in _MOJIBAKE:
+        t = (t or "").replace(bad, good)
+    return t
+
+
+def load_statewide():
+    """Parse statewide_data.js → (ccc_roster, raw_meta). Soft-fails to
+    ([], {}) when the artifact is absent (the lanes then simply stage less).
+    ccc_roster: [{title, issuer}] — the statewide CCC-collaborative catalog.
+    raw_meta: raw exhibit title → {cpl_type, collab} across ALL exhibits (the
+    CPL-Type router for stage_cx_type)."""
+    try:
+        raw = open(STATEWIDE_JS, encoding="utf-8").read()
+        start = raw.index("{", raw.index("window.CPL_STATEWIDE"))
+        data = json.loads(raw[start:raw.rstrip().rstrip(";").rfind("}") + 1])
+    except (OSError, ValueError):
+        return [], {}
+    roster, meta = [], {}
+    for e in data.get("exhibits", []):
+        rec_meta = {"cpl_type": e.get("cpl_type") or "",
+                    "collab": e.get("collaborative_type") or ""}
+        for rt in (e.get("raw_titles") or []) + [e.get("title") or ""]:
+            if rt:
+                meta.setdefault(rt, rec_meta)
+        if e.get("collaborative_type") == "CCC Collaborative":
+            title = _demoji((e.get("unified_title") or e.get("title") or "").strip())
+            if title:
+                roster.append({"title": title,
+                               "issuer": (e.get("issuing_agency") or "").strip()})
+    return roster, meta
+
+
+def load_credential_issuers():
+    """unified_title → curated issuing agency (best record by confidence) from
+    kb/credentials.json — the same authority the dashboard generator reads."""
+    try:
+        creds = json.load(open(os.path.join(HERE, "credentials.json"), encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    out = {}
+    for title, recs in creds.items():
+        if isinstance(recs, list) and recs:
+            best = max(recs, key=lambda r: r.get("confidence_issuer") or 0)
+            iss = (best.get("issuing_agency") or "").strip()
+            if iss:
+                out[title] = iss
+    return out
+
+
+def stage_key(title):
+    """normalize_key + staged-lane folds: trailing credential words dropped
+    ('NCCER Welding Level 1 Certification' ≡ 'NCCER Welding Level 1'),
+    'fire fighter' ≡ 'firefighter'. Kept SEPARATE from normalize_key so the
+    brand-lane behavior (pinned by the verify harness) never drifts."""
+    toks = normalize_key(_demoji(title)).split()
+    while toks and toks[-1] in ("certification", "certifications", "certificate"):
+        toks.pop()
+    out, i = [], 0
+    while i < len(toks):
+        if toks[i] == "fire" and i + 1 < len(toks) and toks[i + 1] == "fighter":
+            out.append("firefighter")
+            i += 2
+            continue
+        out.append(toks[i])
+        i += 1
+    return " ".join(out)
+
+
+# Irreducible staged-lane aliases (authored; each receipted by the match note).
+STAGE_ALIASES = {
+    # roman-numeral house family vs arabic raw ('Fire Inspector I' family)
+    "fire inspector 1": "fire inspector i",
+    # spelled-out brand → the acronym family
+    "peace officer standards and training basic academy": "post basic academy",
+    # word-order flip on the ACE statewide exhibit
+    "military basic training": "basic military training",
+    # Sam's precedent: 'A+ Certification Preparation' → 'CompTIA A+' (prep
+    # exhibits name the credential they prepare for)
+    "network+ certification preparation": "comptia network+",
+}
+
+# Acronym-echo parentheticals — '(CNA)', '(MOS)', '(FF1)', '(BioTC)' — are
+# decoration on the raw side; families may carry them, so indexes carry BOTH
+# keys (with and without) via _stage_keys.
+_ACRONYM_PAREN = re.compile(r"\(\s*[A-Za-z][A-Za-z&.\-]{1,11}\d{0,2}\s*\)")
+# Fire-service accreditor parentheticals name the CERTIFYING system — captured
+# as the issuer, stripped from the title (Rule 4: same credential, issuer
+# discriminates).
+_ACCREDITOR_PAREN = re.compile(r"\(([^()]*(?:IFSAC|Pro\s*Board)[^()]*)\)", re.I)
+_CERT_LEAD = re.compile(r"^certif(?:ication|icate)s?\s*[:,-]+\s*", re.I)
+
+
+def _accreditor_issuer(hint):
+    h = hint.lower()
+    ifsac = "ifsac" in h
+    pro = re.search(r"pro\s*board", h)
+    if ifsac and pro:
+        return "International Fire Service Accreditation Congress (IFSAC) / Pro Board"
+    if pro:
+        return "Pro Board (National Board on Fire Service Professional Qualifications)"
+    if ifsac:
+        return "International Fire Service Accreditation Congress (IFSAC)"
+    return None
+
+
+def _stage_keys(title):
+    """The stage_key plus (when different) the acronym-paren-stripped twin."""
+    k1 = stage_key(title)
+    yield k1
+    stripped = _ACRONYM_PAREN.sub(" ", title)
+    if stripped != title:
+        k2 = stage_key(stripped)
+        if k2 != k1:
+            yield k2
+
+
+def build_stage_indexes(weight, live_values, roster):
+    """(sw_index, fam_index): stage_key → canonical title. The statewide index
+    also carries a brand-stripped alias when the title's lead token appears in
+    the record's issuer ('NCCER Welding Level 1' + issuer '…(NCCER)' ⇒ key
+    'welding level i') — the IC-Welding→NCCER bridge. First writer wins,
+    deterministic ordering."""
+    fam_index = {}
+    for title in sorted(weight, key=lambda t: (-weight.get(t, 0), t)):
+        for k in _stage_keys(title):
+            fam_index.setdefault(k, title)
+    for v in sorted(set((live_values or {}).values())):
+        for k in _stage_keys(v):
+            fam_index.setdefault(k, v)
+    sw_index = {}
+    for rec in sorted(roster, key=lambda r: r["title"]):
+        title, issuer = rec["title"], rec.get("issuer") or ""
+        keys = list(_stage_keys(title))
+        first = title.split()[0] if title.split() else ""
+        if first and issuer and first.lower() in issuer.lower():
+            rest = title[len(first):].strip()
+            if rest:
+                keys += list(_stage_keys(rest))
+        for k in keys:
+            sw_index.setdefault(k, title)
+    return sw_index, fam_index
+
+
+_IC_LEAD = re.compile(r"^IC\s*-\s*", re.I)
+
+
+def stage_ic(raw, sw_index, fam_index, issuer_of):
+    """'IC-<content>' rows — one college's 'Industry Certification' prefix
+    wrapping the credential name. Statewide/family match preferred (Sam's
+    IC-Welding Level I → NCCER Welding Level 1 example); unmatched content is
+    staged title-only for the curator."""
+    t = _norm_ws(raw)
+    m = _IC_LEAD.match(t)
+    if not m:
+        return None
+    content = t[m.end():].strip(" -–,;:")
+    if not content:
+        return None
+    key = stage_key(content)
+    key = STAGE_ALIASES.get(key, key)
+    hit = sw_index.get(key)
+    if hit:
+        return {"title": hit, "issuer": issuer_of(hit) or "", "via": "statewide",
+                "confidence": 0.85,
+                "note": "'IC-' (industry certification) prefix wraps the statewide "
+                        "credential %r — Sam's IC-Welding → NCCER example "
+                        "(2026-07-07, map.rccd.edu/statewidecpl)." % hit}
+    hit = fam_index.get(key)
+    if hit:
+        return {"title": hit, "issuer": issuer_of(hit) or "", "via": "family",
+                "confidence": 0.8,
+                "note": "'IC-' (industry certification) prefix stripped; the "
+                        "content matches the existing house family %r — "
+                        "retarget-to-family doctrine (S101)." % hit}
+    return {"title": content, "issuer": "", "via": "ic", "confidence": 0.5,
+            "note": "'IC-' prefix stripped; no statewide/family match — likely an "
+                    "ASE Education Foundation entry-level or local automotive "
+                    "certification; identify the certifying body before setting "
+                    "an issuer."}
+
+
+ISSUER_CSLB = "Contractors State License Board (CSLB)"
+_CSLB = re.compile(r"^(?:C-\d{1,2}\s.*\bContractor|Class\s[AB](?:-2)?\sContractor\sLicense)$", re.I)
+
+
+def stage_cslb(raw):
+    """CSLB contractor-license classifications (C-##/Class A/B/B-2) — statewide
+    CCC-collaborative exhibits whose titles ARE the credential names (Rule 8b:
+    the classification code is identity — keep verbatim); the pre-seed adds the
+    issuer. Authority: cslb.ca.gov Licensing_Classifications."""
+    t = _norm_ws(raw)
+    if not _CSLB.match(t):
+        return None
+    return {"title": t, "issuer": ISSUER_CSLB, "via": "cslb", "confidence": 0.85,
+            "note": "CSLB license classification kept verbatim (Rule 8b — the "
+                    "C-#/Class code is the credential's identity; "
+                    "cslb.ca.gov/About_Us/Library/Licensing_Classifications). "
+                    "A statewide CCC-collaborative exhibit."}
+
+
+def stage_family(raw, sw_index, fam_index, issuer_of):
+    """Match a residual raw against the statewide CCC catalog, then ALL existing
+    house families, after stripping non-identity decoration ('Certification:'
+    lead, acronym-echo + accreditor parentheticals). Issuer = the catalog's /
+    the family's curated issuer; an explicit IFSAC/Pro Board accreditor
+    parenthetical on the raw overrides it (Rule 4 — issuer discriminates)."""
+    t = _norm_ws(_demoji(raw))
+    stripped, issuer_hint = [], None
+    m = _ACCREDITOR_PAREN.search(t)
+    if m:
+        issuer_hint = _accreditor_issuer(m.group(1))
+        t = (t[:m.start()] + " " + t[m.end():]).strip()
+        stripped.append("accreditor parenthetical (%s)" % m.group(1))
+    t2 = _CERT_LEAD.sub("", t)
+    if t2 != t:
+        stripped.append("'Certification:' lead")
+        t = t2
+    t2 = _ACRONYM_PAREN.sub(" ", t)
+    if t2 != t:
+        stripped.append("acronym parenthetical")
+        t = t2
+    t = re.sub(r"\s+", " ", t).strip(" -–,;:.")
+    key = stage_key(t)
+    key = STAGE_ALIASES.get(key, key)
+    hit, via = sw_index.get(key), "statewide"
+    if not hit:
+        hit, via = fam_index.get(key), "family"
+    if not hit:
+        return None
+    issuer = issuer_hint or issuer_of(hit) or ""
+    if hit == _norm_ws(_demoji(raw)) and not issuer:
+        return None  # self-match with nothing to add — leave for the curator
+    conf = 0.85 if via == "statewide" else 0.8
+    if issuer_hint:
+        conf = min(conf, 0.7)
+    note = ("Matched the %s %r"
+            % ("statewide CCC-collaborative catalog entry" if via == "statewide"
+               else "existing house family", hit))
+    if stripped:
+        note += " (stripped: %s)" % ", ".join(stripped)
+    if issuer_hint:
+        note += ". Issuer from the raw's accreditor parenthetical — the family "
+        note += "default may differ; both certify the same credential (Rule 4)."
+    else:
+        note += "; issuer from the curated credential KB." if issuer else "."
+    return {"title": hit, "issuer": issuer, "via": via, "confidence": conf,
+            "note": note}
+
+
+# MAP CPL Types whose mechanism lives in the TYPE column, not the title — the
+# Session-103 cx lane (which triggers on mechanism PHRASES) couldn't see them.
+_CX_TYPES = {"Credit By Exam": "Credit by Exam", "Portfolio Review": "Portfolio Review"}
+
+# Receipted single-title typo repairs (applied by stage_cx_type only).
+TYPO_FIXES = {
+    "Combinded Processes I": "Combined Processes I",
+    "Introduciton to UNIX/Linux": "Introduction to UNIX/Linux",
+    "Introduction to CNC Programing": "Introduction to CNC Programming",
+    "Introduction to Mechanical Principals": "Introduction to Mechanical Principles",
+}
+
+
+def stage_cx_type(raw, families=None, raw_meta=None):
+    """Rows whose MAP CPL Type is Credit By Exam / Portfolio Review but whose
+    title carries NO mechanism phrase (the mechanism lives in the CPL Type
+    column — the Mt. SAC / Santa Ana / Cabrillo pattern). Rule 5c: the title
+    already IS the course content; issuer = CCC."""
+    meta = (raw_meta or {}).get(raw) or (raw_meta or {}).get(raw.strip())
+    if not meta or meta.get("cpl_type") not in _CX_TYPES:
+        return None
+    t = _norm_ws(raw)
+    note_bits = []
+    fixed = TYPO_FIXES.get(raw) or TYPO_FIXES.get(t)
+    if fixed:
+        note_bits.append("typo fixed (%r)" % t)
+        t = fixed
+    m = _COURSE_CODE.match(t)
+    if (m and not t[m.end():].strip()) or len(t) < 4:
+        return None  # code-only / degenerate → judgment single or residual
+    mech = _CX_TYPES[meta["cpl_type"]]
+    rec = {"title": t, "issuer": ISSUER_CCC, "via": "cx", "confidence": 0.7,
+           "note": "MAP CPL Type = %s — the mechanism lives in the type column "
+                   "and the title is already the course content (Rule 5c); "
+                   "issuer = CCC." % mech
+                   + ((" " + "; ".join(note_bits) + ".") if note_bits else "")}
+    fam = (families or {}).get(normalize_key(t))
+    if fam:
+        rec["title"] = fam
+        rec["confidence"] = 0.8
+        rec["note"] += " Matched the existing family %r." % fam
+    return rec
+
+
+def build_stage_plan(queue, families, assigned_raws, sw_index=None, fam_index=None,
+                     issuer_of=None, raw_meta=None):
+    """Run every staged lane over the queue. Returns (staged{raw→rec}, residual[]).
+    The v3 params (statewide/family indexes + issuer resolver + per-raw MAP
+    metadata) default to empty so the v2 harness fixtures stay valid."""
+    sw_index = sw_index or {}
+    fam_index = fam_index or {}
+    issuer_of = issuer_of or (lambda t: "")
+    raw_meta = raw_meta or {}
     staged, residual = {}, []
     # group hs rows by primary code so same-course variants converge on ONE title
     hs_groups = {}
@@ -668,6 +1115,12 @@ def build_stage_plan(queue, families, assigned_raws):
         if not rec and raw in JUDGMENT_SINGLES:
             rec = dict(JUDGMENT_SINGLES[raw], via="single")
         if not rec:
+            rec = stage_ic(raw, sw_index, fam_index, issuer_of)
+        if not rec:
+            rec = stage_cslb(raw)
+        if not rec:
+            rec = stage_family(raw, sw_index, fam_index, issuer_of)
+        if not rec:
             rec = stage_cx(raw, families)
         if not rec:
             rec = stage_hs(raw, families)
@@ -676,6 +1129,8 @@ def build_stage_plan(queue, families, assigned_raws):
                 gcode = rec["code"].replace("FIRTEC", "FIRETEC")
                 hs_groups.setdefault(gcode, []).append((raw, rec))
                 continue
+        if not rec:
+            rec = stage_cx_type(raw, families, raw_meta)
         if rec:
             staged[raw] = rec
         else:
@@ -801,7 +1256,17 @@ def main():
                   "kb/unified_titles.json only (fetch + verify a fresh receipt "
                   "via the Supabase MCP for best convergence)")
         families = build_family_index(weight, live_values)
-        staged, residual = build_stage_plan(queue, families, assigned)
+        roster, raw_meta = load_statewide()
+        issuers_cred = load_credential_issuers()
+        sw_issuer = {r["title"]: r["issuer"] for r in roster if r.get("issuer")}
+
+        def issuer_of(t):
+            return sw_issuer.get(t) or issuers_cred.get(t) or ""
+        sw_index, fam_index = build_stage_indexes(weight, live_values, roster)
+        print(f"statewide catalog: {len(roster)} CCC-collaborative records | "
+              f"raw-meta {len(raw_meta)} | curated issuers {len(issuers_cred)}")
+        staged, residual = build_stage_plan(queue, families, assigned,
+                                            sw_index, fam_index, issuer_of, raw_meta)
         by_via = {}
         for rec in staged.values():
             by_via[rec["via"]] = by_via.get(rec["via"], 0) + 1

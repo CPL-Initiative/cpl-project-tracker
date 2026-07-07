@@ -71,6 +71,7 @@ Run from repo root:
 """
 import json
 import os
+import re
 import sys
 from datetime import date, datetime, timezone
 
@@ -216,6 +217,56 @@ def main():
                                  "reviewed_by": r["reviewed_by"], "reviewed_at": r["reviewed_at"]})
             _fill_titles.add(r["assigned"])
 
+    # MULTI-ISSUER APPEND (Session 104 — Sam: "Some, like Fire, might have
+    # multiple issuing agencies… may need a solution for that"). A credential
+    # can be certified by several bodies (Rule 4: same credential, issuer
+    # discriminates — Fire Inspector I ⇒ ICC/NFPA/SFT/Cal-JAC/IFSAC-ProBoard),
+    # and credentials.json is a LIST per title for exactly this reason. Before
+    # this lane, an assigned issuer was silently DROPPED whenever the target
+    # already had any record ("existing = authoritative"). Now: when the
+    # assigned issuer differs (normalized) from every existing record's, APPEND
+    # a new record — additive only, existing records never touched. Includes
+    # the SKIP lane so an issuer added to an already-classified raw still lands.
+    def _norm_issuer(s):
+        return " ".join((s or "").split()).casefold()
+
+    def _issuer_present(iss_norm, recs):
+        """Same certifying body under any spelling: exact normalized match, the
+        existing record's trailing parenthetical acronym ('NCCER' ≡ '…(NCCER)'),
+        or outright containment for non-trivial strings (≥8 chars). Prevents a
+        short-form assignment minting a near-duplicate issuer record."""
+        for x in recs:
+            existing = x.get("issuing_agency") or ""
+            e = _norm_issuer(existing)
+            if not e:
+                continue
+            if iss_norm == e:
+                return True
+            m = re.search(r"\(([^()]+)\)\s*$", existing)
+            if m and _norm_issuer(m.group(1)) == iss_norm:
+                return True
+            if len(iss_norm) >= 8 and (iss_norm in e or e in iss_norm):
+                return True
+        return False
+
+    issuer_adds, _iadd_seen = [], set()
+    _filled = {(f_["title"], _norm_issuer(f_["issuer"])) for f_ in issuer_fills}
+    for r in fold_recs + skip:
+        t, iss = r["assigned"], r["issuer"]
+        if not iss:
+            continue
+        recs = cr.get(t)
+        if not recs:
+            continue  # no record yet → cred_adds mints it (with this issuer)
+        key = (t, _norm_issuer(iss))
+        if key in _filled or key in _iadd_seen:
+            continue
+        if _issuer_present(_norm_issuer(iss), recs):
+            continue
+        issuer_adds.append({"title": t, "issuer": iss, "raw": r["raw"],
+                            "reviewed_by": r["reviewed_by"], "reviewed_at": r["reviewed_at"]})
+        _iadd_seen.add(key)
+
     # Machine credential records ORPHANED by a supersede: no unified_titles entry
     # will map to the displaced title after the fold, and the record itself is an
     # unreviewed machine draft → prune (receipted). Reviewed records always stay.
@@ -265,6 +316,9 @@ def main():
         print(f"     ~ art[{x['idx']}] {x['raw']!r}: has {x['has']!r}, want {x['want']!r}")
     if issuer_fills:
         print(f"  issuer fills: {[(f['title'], f['issuer']) for f in issuer_fills]}")
+    if issuer_adds:
+        print(f"  issuer ADDS (multi-issuer append): "
+              f"{[(a['title'], a['issuer']) for a in issuer_adds]}")
     if cred_prunes:
         print(f"  orphaned machine credential records to prune: {cred_prunes}")
     print("  V-gates: " + ", ".join(f"{k}={'OK' if v else 'FAIL'}" for k, v in gates.items()))
@@ -275,7 +329,7 @@ def main():
     # _generated_at every day would defeat the workflow's "no staged diff →
     # no commit" idempotency), and (2) a same-day re-run must not clobber the
     # day's REAL apply receipt with an all-zeros one.
-    if apply and not (fold_recs or conflict or blocking_ripples):
+    if apply and not (fold_recs or conflict or blocking_ripples or issuer_adds):
         print("Nothing to fold — receipts left untouched.")
         return
 
@@ -287,6 +341,7 @@ def main():
         "clean": clean, "skip": skip, "supersede": supersede,
         "stale": stale, "conflict": conflict,
         "credential_adds": cred_adds, "credential_issuer_fills": issuer_fills,
+        "credential_issuer_adds": issuer_adds,
         "credential_prunes": cred_prunes,
         "articulation_ripples": ripples,
         "articulation_ripples_resolved": resolved_ripples,
@@ -384,6 +439,20 @@ def main():
         rec0["confidence_issuer"] = 1.0
         rec0["reviewed_at"] = f_["reviewed_at"]
         rec0["reviewed_by"] = f_["reviewed_by"]
+    for a in issuer_adds:
+        cr[a["title"]].append({
+            "issuing_agency": a["issuer"],
+            "training_agency": None,
+            "confidence_issuer": 1.0,
+            "confidence_trainer": 0.9,
+            "classified_at": today,
+            "classified_by": CLASSIFIED_BY,
+            "reviewed_at": a["reviewed_at"],
+            "reviewed_by": a["reviewed_by"],
+            "_notes": "Additional issuing agency from the CER triage assignment "
+                      "on %r — same credential, multiple certifying bodies "
+                      "(Rule 4)." % a["raw"],
+        })
     for t in cred_prunes:
         del cr[t]
 
@@ -431,13 +500,14 @@ def main():
     with open(UT_PATH, "w", encoding="utf-8") as f:
         json.dump(ut, f, indent=2, ensure_ascii=False)
         f.write("\n")
-    if cred_adds or issuer_fills or cred_prunes:
+    if cred_adds or issuer_fills or issuer_adds or cred_prunes:
         with open(CR_PATH, "w", encoding="utf-8") as f:
             json.dump(cr, f, indent=2, ensure_ascii=False)
             f.write("\n")
 
     applied = {"folded": clean, "superseded": supersede,
                "credential_added": cred_adds, "credential_issuer_fills": issuer_fills,
+               "credential_issuer_adds": issuer_adds,
                "credential_pruned": cred_prunes,
                "articulations_repointed": len(resolved_ripples),
                "title_anchors_stamped": anchored,
@@ -449,7 +519,8 @@ def main():
     print(f"\nAPPLIED — folded {len(clean)} + superseded {len(supersede)} into "
           f"unified_titles.json ({ut_before} -> {len(ut)}), "
           f"{len(cred_adds)} credential record(s) added, "
-          f"{len(issuer_fills)} issuer(s) filled, {len(cred_prunes)} orphan record(s) pruned, "
+          f"{len(issuer_fills)} issuer(s) filled, {len(issuer_adds)} additional "
+          f"issuer record(s) appended, {len(cred_prunes)} orphan record(s) pruned, "
           f"{len(resolved_ripples)} articulation row(s) re-pointed, "
           f"{pruned} audit card(s) pruned. Receipt: {os.path.relpath(OUTDIR, ROOT)}/")
 

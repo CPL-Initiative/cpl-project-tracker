@@ -80,30 +80,42 @@ def _load_json(path):
 def _load_map_raw_titles():
     """Read every distinct raw Exhibit Title from CustomReport_latest.json.
 
-    Returns the set of titles or None if the file is missing. The auditor
-    falls back to KB-only mode if CustomReport_latest.json is absent (e.g.
-    when running outside the daily cron context).
+    Returns (titles set, title → sorted ORIGINATING colleges) or (None, None)
+    if the file is missing. The "College" column (index 0) is the college that
+    CREATED the exhibit — surfaced on the triage worklist so a curator can
+    resolve Cx rows against that college's local catalog (Session 104; college
+    names are institutional data, not PII — they already appear on the public
+    analytics cards). The auditor falls back to KB-only mode if
+    CustomReport_latest.json is absent (e.g. when running outside the daily
+    cron context).
     """
     path = os.path.join(ROOT, "CustomReport_latest.json")
     if not os.path.exists(path):
-        return None
+        return None, None
     try:
         doc = _load_json(path)
     except Exception:
-        return None
+        return None, None
     reports = doc.get("reports", doc) if isinstance(doc, dict) else doc
-    titles = set()
+    titles, colleges = set(), {}
     for r in reports:
         if r.get("viewName") != "View_ArticulatedMAPExhibits_APIDataset":
             continue
         cm = {c: i for i, c in enumerate(r.get("columnName", []))}
         i_title = cm.get("Exhibit Title", 2)
+        i_college = cm.get("College", 0)
         for row in r.get("columnValue", []):
             t = (row[i_title] or "").strip()
-            if t:
-                titles.add(t)
+            if not t:
+                continue
+            titles.add(t)
+            c = ((row[i_college] if i_college < len(row) else "") or "").strip()
+            if c:
+                colleges.setdefault(t, set()).add(c)
         break
-    return titles or None
+    if not titles:
+        return None, None
+    return titles, {t: sorted(cs) for t, cs in colleges.items()}
 
 
 # ─── per-row rule classifiers ───────────────────────────────────────────
@@ -171,11 +183,12 @@ def main():
     cr = _load_json(os.path.join(HERE, "credentials.json"))
     print(f"  loaded: {len(ut)} unified_titles entries, {len(cr)} credential keys")
 
-    map_titles = _load_map_raw_titles()
+    map_titles, map_colleges = _load_map_raw_titles()
     if map_titles is None:
         print("  WARN: CustomReport_latest.json missing; drift checks skipped")
     else:
-        print(f"  loaded: {len(map_titles)} raw titles from current MAP data")
+        print(f"  loaded: {len(map_titles)} raw titles from current MAP data "
+              f"({len(map_colleges or {})} with originating colleges)")
 
     # Pre-compute peer agency tokens once for collision detection.
     all_agencies = {}
@@ -229,6 +242,10 @@ def main():
                 "quality_flag": None,
                 "reviewed_at": None,
                 "tags": ["unclassified_in_map"],
+                # originating college(s) — the triage worklist renders these as
+                # chips (Session 104); soft-absent when the CustomReport lacked
+                # the College column
+                "colleges": (map_colleges or {}).get(raw_title, []),
             })
             tag_counts["unclassified_in_map"] += 1
 

@@ -54,6 +54,22 @@ STOP = {"the", "of", "and", "in", "for", "a", "an", "to", "with", "on", "or",
         "credit", "by", "exam", "cbe", "portfolio", "review", "completion",
         "certification", "certificate", "course", "training"}
 
+# Mechanism-phrase strip (Session 104): 'Credit by Exam ACCTG 022 …'-style Cx
+# titles hide their course code behind the mechanism phrase, so the leading-
+# code parser never fired on them (19/451 coverage before this). Reuses the
+# pre-seed lane's patterns — one definition, no drift between the two scripts.
+sys.path.insert(0, HERE)
+try:
+    import _preseed_unclassified as _ps
+
+    def strip_mechanism(t):
+        for pat in (_ps._CX_LEAD, _ps._CX_TRAIL, _ps._CX_CBE,
+                    _ps._PORTFOLIO_LEAD, _ps._PORTFOLIO_TRAIL):
+            t = pat.sub(" ", t)
+        return re.sub(r"\s+", " ", t).strip(" -–,;:")
+except ImportError:  # standalone use — the parser simply sees fewer refs
+    strip_mechanism = None
+
 
 def load(path):
     with open(path, encoding="utf-8") as f:
@@ -62,6 +78,10 @@ def load(path):
 
 def norm_subj(s):
     return re.sub(r"[^A-Z0-9]", "", (s or "").upper())
+
+
+def norm_college(c):
+    return re.sub(r"[^A-Z0-9]", "", (c or "").upper())
 
 
 def norm_num(n):
@@ -101,15 +121,22 @@ def parse_course_refs(raw):
 
 
 def build_coci_index():
-    """(SUBJ, NUM) → {'cids': Counter, 'ccns': Counter, 'titles': Counter, 'n': int}"""
+    """Two indexes over one streaming read:
+      idx:  (SUBJ, NUM) → {'cids': Counter, 'ccns': Counter, 'titles': Counter, 'n': int}
+      cidx: (COLLEGE, SUBJ, NUM) → {'cids': set, 'ccns': set, 'titles': Counter}
+    The college-scoped index (Session 104) exists because the global
+    (subject, number) key is ambiguous across colleges — the documented CCR
+    membership-join hazard — while (College, SUBJ, NUM) is essentially unique;
+    the exhibit auditor now stamps originating colleges on each queue card."""
     from openpyxl import load_workbook
     wb = load_workbook(COCI, read_only=True)
     ws = wb[wb.sheetnames[0]]
     it = ws.iter_rows(values_only=True)
     hdr = [str(h) for h in next(it)]
     col = {name: hdr.index(name) for name in
-           ("Subject", "Course_Number", "CourseTitle", "CIDNumber", "CommonCourseNumber")}
-    idx = {}
+           ("College", "Subject", "Course_Number", "CourseTitle", "CIDNumber",
+            "CommonCourseNumber")}
+    idx, cidx = {}, {}
     for row in it:
         subj = norm_subj(str(row[col["Subject"]] or ""))
         num = norm_num(str(row[col["Course_Number"]] or ""))
@@ -117,27 +144,38 @@ def build_coci_index():
             continue
         e = idx.setdefault((subj, num), {"cids": Counter(), "ccns": Counter(),
                                          "titles": Counter(), "n": 0})
+        college = norm_college(str(row[col["College"]] or ""))
+        ce = cidx.setdefault((college, subj, num),
+                             {"cids": set(), "ccns": set(), "titles": Counter()}) \
+            if college else None
         e["n"] += 1
         title = str(row[col["CourseTitle"]] or "").strip()
         if title and title.lower() not in ("none", "n/a"):
             e["titles"][title] += 1
+            if ce is not None:
+                ce["titles"][title] += 1
         cid = str(row[col["CIDNumber"]] or "").strip()
         if cid and cid.lower() not in ("none", "n/a", "null", "not applicable"):
             for c in re.split(r"[,;]", cid):  # comma-joined values occur (tmc #642)
                 c = c.strip()
                 if c:
                     e["cids"][c] += 1
+                    if ce is not None:
+                        ce["cids"].add(c)
         ccn = str(row[col["CommonCourseNumber"]] or "").strip()
         if ccn and ccn.lower() not in ("none", "n/a", "null", "not applicable"):
             e["ccns"][ccn] += 1
-    return idx
+            if ce is not None:
+                ce["ccns"].add(ccn)
+    return idx, cidx
 
 
 def main():
     with_mids = "--with-mids" in sys.argv
 
     audit = load(AUDIT)
-    queue = [c["raw_title"] for c in audit.get("title_cards", [])
+    queue = [(c["raw_title"], c.get("colleges") or [])
+             for c in audit.get("title_cards", [])
              if not c.get("unified_title")
              and "unclassified_in_map" in (c.get("tags") or [])]
     print(f"unclassified queue: {len(queue)}")
@@ -165,19 +203,48 @@ def main():
         certs = load(COS).get("certifications", [])
         cos = (m, m.build_index(certs))
 
-    idx = build_coci_index()
-    print(f"coci (SUBJ,NUM) keys: {len(idx):,}")
+    idx, cidx = build_coci_index()
+    print(f"coci (SUBJ,NUM) keys: {len(idx):,} | college-scoped keys: {len(cidx):,}")
 
     suggestions = {}
     stats = Counter()
-    for raw in queue:
+    for raw, colleges in queue:
         out = []
-        for subj, num, rest in parse_course_refs(raw):
+        refs = parse_course_refs(raw)
+        if not refs and strip_mechanism:
+            # 'Credit by Exam ACCTG 022 …' — the code only leads once the
+            # mechanism phrase is gone (Session 104 coverage fix).
+            stripped_raw = strip_mechanism(raw)
+            if stripped_raw != raw:
+                refs = parse_course_refs(stripped_raw)
+                if refs:
+                    stats["mechanism_stripped"] += 1
+        for subj, num, rest in refs:
             key = (norm_subj(subj), norm_num(num))
             e = idx.get(key)
             if not e:
                 continue
-            modal_title, modal_n = (e["titles"].most_common(1) or [("", 0)])[0]
+            # College-scoped narrowing (Session 104): the exhibit auditor stamps
+            # originating colleges on each queue card; (College, SUBJ, NUM) is
+            # essentially unique where the global key is ambiguous, so prefer
+            # the originating colleges' own rows and fall back to the global
+            # view when they don't resolve.
+            scoped = None
+            if colleges:
+                agg = {"cids": set(), "ccns": set(), "titles": Counter()}
+                for cname in colleges:
+                    sub = cidx.get((norm_college(cname), key[0], key[1]))
+                    if sub:
+                        agg["cids"] |= sub["cids"]
+                        agg["ccns"] |= sub["ccns"]
+                        agg["titles"].update(sub["titles"])
+                if agg["titles"] or agg["cids"] or agg["ccns"]:
+                    scoped = agg
+                    stats["college_scoped"] += 1
+            ccn_set = set(scoped["ccns"]) if scoped else set(e["ccns"])
+            cid_set = set(scoped["cids"]) if scoped else set(e["cids"])
+            title_pool = scoped["titles"] if scoped and scoped["titles"] else e["titles"]
+            modal_title, modal_n = (title_pool.most_common(1) or [("", 0)])[0]
             # Title-sanity guard: a descriptive remainder must overlap the COCI
             # course title — else this (SUBJ, NUM) is a different course and the
             # join is noise (the CCR membership-join hazard).
@@ -188,13 +255,13 @@ def main():
             code = f"{subj.upper().strip()} {num.upper()}"
             # "Unanimous" = a single DISTINCT value among rows that carry one
             # (most rows carry none — only 58 CCNs exist); >1 distinct = ambiguous.
-            if len(e["ccns"]) == 1:
-                ccn = next(iter(e["ccns"]))
+            if len(ccn_set) == 1:
+                ccn = next(iter(ccn_set))
                 t = ccn_titles.get(ccn.upper()) or modal_title
                 if t:
                     out.append({"kind": "ccn", "id": ccn, "title": t, "code": code})
-            if len(e["cids"]) == 1:
-                cid_ = next(iter(e["cids"]))
+            if len(cid_set) == 1:
+                cid_ = next(iter(cid_set))
                 t = cid_titles.get(cid_.upper())
                 if t:
                     out.append({"kind": "cid", "id": cid_, "title": t, "code": code})
@@ -204,9 +271,12 @@ def main():
             if with_mids and not out:
                 pass  # M-ID tier lands here when unlocked; mid_titles is ready.
             if not any(s["kind"] in ("ccn", "cid") for s in out) and modal_title:
-                share = modal_n / max(1, sum(e["titles"].values()))
-                out.append({"kind": "course", "title": modal_title, "code": code,
-                            "share": round(share, 2), "colleges": e["n"]})
+                share = modal_n / max(1, sum(title_pool.values()))
+                rec = {"kind": "course", "title": modal_title, "code": code,
+                       "share": round(share, 2), "colleges": e["n"]}
+                if scoped:
+                    rec["scoped"] = True  # resolved from the originating college's own catalog
+                out.append(rec)
         if cos:
             m, (prepared, by_norm, by_acr) = cos
             tier, cands = m.match_title(raw, None, prepared, by_norm, by_acr)

@@ -323,7 +323,8 @@
           return c && !c.unified_title
             && (c.tags || []).indexOf("unclassified_in_map") >= 0;
         }).map(function (c) {
-          return { raw_title: c.raw_title, band: c.band || "", quality_flag: c.quality_flag || null };
+          return { raw_title: c.raw_title, band: c.band || "", quality_flag: c.quality_flag || null,
+                   colleges: c.colleges || [] };  // originating college(s), stamped by the auditor (Session 104)
         }).sort(function (a, b) { return (a.raw_title || "").localeCompare(b.raw_title || ""); });
       })
       .catch(function () { return []; });
@@ -467,7 +468,10 @@
           })
         : null,
       credentials: null,
-      issuer_count: b.issuer ? 1 : 0,
+      // All distinct issuing agencies (baked only when >1 — Rule 4 multi-issuer
+      // credentials like Fire Inspector I; renders as a "+N" chip).
+      issuers: Array.isArray(b.issuers) ? b.issuers : null,
+      issuer_count: Array.isArray(b.issuers) ? b.issuers.length : (b.issuer ? 1 : 0),
       confidences: [],
     };
     // PR-5a follow-up: surface baked curator overrides so applyOverlay() can
@@ -576,6 +580,13 @@
       row.primary_trainer = iss ? iss.training_agency : null;
       row.conf_issuer = iss ? iss.confidence_issuer : 0;
       row.issuer_count = row.credentials.length;
+      // Multi-issuer surface (Rule 4) — mirror the baked `issuers` field.
+      var issAll = [];
+      row.credentials.forEach(function (c) {
+        var a = (c.issuing_agency || "").trim();
+        if (a && issAll.indexOf(a) < 0) issAll.push(a);
+      });
+      row.issuers = issAll.length > 1 ? issAll : null;
       row.has_quality_flag = row.quality_flags.length > 0;
       row.flag_label = row.quality_flags[0] || null;
       // Audit tag total (sum across raw variants).
@@ -1347,12 +1358,7 @@
       tr.appendChild(td);
       tbody.appendChild(tr);
     } else if (state.groupBy === "none") {
-      filtered.forEach(function (r) {
-        tbody.appendChild(renderRow(r));
-        if (state.expanded[r.unified_title]) {
-          tbody.appendChild(renderExpandedRow(r, COLS.length));
-        }
-      });
+      filtered.forEach(function (r) { appendRowSafe(tbody, r, COLS.length); });
     } else {
       // Grouped render — bucket the filtered rows by the active group key(s)
       // (already filtered + sorted) and emit a collapsible header before each
@@ -1404,17 +1410,37 @@
         hdrTr.appendChild(hdrTd);
         tbody.appendChild(hdrTr);
         if (!collapsed) {
-          rowsInGroup.forEach(function (r) {
-            tbody.appendChild(renderRow(r));
-            if (state.expanded[r.unified_title]) {
-              tbody.appendChild(renderExpandedRow(r, COLS.length));
-            }
-          });
+          rowsInGroup.forEach(function (r) { appendRowSafe(tbody, r, COLS.length); });
         }
       });
     }
     table.appendChild(tbody);
     wrap.appendChild(table);
+  }
+
+  // Row-level error isolation (Session 104 — Sam reported the list vanishing
+  // around an expand/collapse of the first row). render() is all-or-nothing:
+  // it clears the wrap up front and re-attaches only at the end, so ONE row
+  // whose render throws (e.g. a malformed field in the daily-regenerated
+  // payload) would previously destroy the entire table. Now a bad row degrades
+  // to an inline ⚠ placeholder and every other row still renders.
+  function appendRowSafe(tbody, r, ncols) {
+    try {
+      tbody.appendChild(renderRow(r));
+      if (state.expanded[r.unified_title]) {
+        tbody.appendChild(renderExpandedRow(r, ncols));
+      }
+    } catch (e) {
+      if (window.console && console.error) {
+        console.error("CER row render failed:", r && r.unified_title, e);
+      }
+      tbody.appendChild(el("tr", { class: "cr-row-error" }, [
+        el("td", { colspan: String(ncols) },
+          ["⚠ Could not render “"
+           + ((r && (r.display_title || r.unified_title)) || "?")
+           + "” — see the console; the rest of the list is unaffected."])
+      ]));
+    }
   }
 
   function renderRow(r) {
@@ -1518,21 +1544,45 @@
     issuerTd.appendChild(r.primary_issuer
       ? document.createTextNode(r.primary_issuer)
       : el("span", { class: "cr-null" }, ["(none — local)"]));
+    // Multi-issuer chip (Rule 4 — same credential, several certifying bodies,
+    // e.g. Fire Inspector I ⇒ ICC/NFPA/SFT). Hover lists every recorded issuer.
+    if (r.issuers && r.issuers.length > 1) {
+      issuerTd.appendChild(el("span", { class: "cr-issuer-more",
+        title: "All recorded certifying bodies:\n" + r.issuers.join("\n")
+      }, ["+" + (r.issuers.length - 1)]));
+    }
     if (r.issuer_overridden_at) {
       issuerTd.appendChild(el("span", { class: "cr-override-marker",
         title: "Issuing agency curated · originally: " +
                (r.original_primary_issuer || "(none)")
       }, [" ✎"]));
     }
+    // Point-of-need issuer editing (Sam, 2026-07-07 — the '10-Key Data Entry'
+    // case: a null-issuer row offered no visible way to add an agency). A
+    // signed-in reviewer gets a "＋ set" affordance right in the cell that
+    // opens the row's Curate panel (which carries the Issuing agency field).
+    if (state.sess && !r.primary_issuer) {
+      var setBtn = el("button", { type: "button", class: "cr-issuer-set",
+        title: "Set the issuing agency — opens this row's Curate panel." },
+        ["＋ set"]);
+      setBtn.onclick = function (e) {
+        e.stopPropagation();
+        state.curateOpen[r.unified_title] = true;
+        state.expanded[r.unified_title] = true;
+        render();
+      };
+      issuerTd.appendChild(setBtn);
+    }
     tr.appendChild(issuerTd);
 
     // Merged Confidence cell — title / issuer (2026-06-03 economy: was two
     // columns). Band color keys off the title confidence (the primary signal);
     // the issuer figure rides muted alongside.
+    var _confTxt = (typeof r.conf_modal === "number") ? r.conf_modal.toFixed(2) : "—";
     var confTd = el("td", { class: "cr-conf-cell " + _bandCls(r.conf_modal),
-      title: "Title confidence " + r.conf_modal.toFixed(2)
-        + " · issuer confidence " + (r.conf_issuer ? r.conf_issuer.toFixed(2) : "—") });
-    confTd.appendChild(el("span", { class: "cr-conf-title" }, [r.conf_modal.toFixed(2)]));
+      title: "Title confidence " + _confTxt
+        + " · issuer confidence " + (typeof r.conf_issuer === "number" && r.conf_issuer ? r.conf_issuer.toFixed(2) : "—") });
+    confTd.appendChild(el("span", { class: "cr-conf-title" }, [_confTxt]));
     confTd.appendChild(el("span", { class: "cr-conf-sep" }, [" / "]));
     confTd.appendChild(el("span", { class: "cr-conf-issuer" },
       [r.conf_issuer ? r.conf_issuer.toFixed(2) : "—"]));
@@ -2075,6 +2125,15 @@
       "#tab-credential-reference .cr-wl-saveall:disabled{opacity:.6;cursor:default;}" +
       "#tab-credential-reference .cr-wl-row.cr-wl-preseeded{background:#fffdf5;}" +
       "#tab-credential-reference .cr-wl-preseed-badge{display:inline-block;margin-left:6px;font-size:.68rem;color:#92400e;background:#fef3c7;border:1px solid #fde68a;border-radius:9px;padding:0 6px;cursor:help;white-space:nowrap;}" +
+      // Originating-college chips (Session 104) — who ENTERED the exhibit, so a
+      // curator can resolve Cx rows against that college's local catalog.
+      "#tab-credential-reference .cr-wl-colleges{margin-top:3px;display:flex;flex-wrap:wrap;gap:4px;}" +
+      "#tab-credential-reference .cr-wl-college{display:inline-block;font-size:.68rem;color:#334155;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:9px;padding:0 6px;cursor:help;white-space:nowrap;}" +
+      // Multi-issuer "+N" chip + the point-of-need "＋ set" issuer affordance
+      // (Session 104 — Rule 4 multi-issuer families; the 10-Key null-issuer case).
+      "#tab-credential-reference .cr-issuer-more{display:inline-block;margin-left:5px;font-size:.68rem;color:#1e40af;background:#eff6ff;border:1px solid #bfdbfe;border-radius:9px;padding:0 6px;cursor:help;white-space:nowrap;}" +
+      "#tab-credential-reference .cr-issuer-set{margin-left:6px;font-size:.68rem;color:#92400e;background:#fef3c7;border:1px solid #fde68a;border-radius:9px;padding:0 6px;cursor:pointer;white-space:nowrap;}" +
+      "#tab-credential-reference .cr-issuer-set:hover{background:#fde68a;}" +
       // Item 4 (2026-06-04): the CCR identity runs on one line + muted inline
       // local-course units. The articulations table is LEFT-aligned (header +
       // data) — Sam's call 2026-06-04: the global center-align made the long
@@ -2525,6 +2584,19 @@
           + ", confidence " + (ps.confidence != null ? ps.confidence : "?") + ")."
           + (ps.note ? " " + ps.note : "") + " Review or edit, then Save." },
         ["⚡ pre-seed · " + (ps.via || "") ]));
+    }
+    // Originating-college chips — who entered the exhibit (Sam, 2026-07-07:
+    // "knowing their local title could help determine the common course title
+    // to use"). Short name on the chip, full name in the tooltip; soft-absent
+    // until the auditor next runs with MAP data.
+    if (it.colleges && it.colleges.length) {
+      var crow = el("div", { class: "cr-wl-colleges" });
+      it.colleges.forEach(function (name) {
+        var short = (typeof window.cplCollegeShort === "function" && window.cplCollegeShort(name)) || name;
+        crow.appendChild(el("span", { class: "cr-wl-college",
+          title: "Originating college: " + name }, [short]));
+      });
+      rawTd.appendChild(crow);
     }
     tr.appendChild(rawTd);
 
