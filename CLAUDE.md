@@ -2399,20 +2399,9 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > the Elevation slider + Master-Report absorb + nav groups) archived** →
 > [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full story: `docs/cobi_lessons.md` (S97).
 
-### Session 98 — the Implementation Funding rework: Chancellor-facing scenario tool (2026-07-03)
-
-Sam's funding-tab spec, one PR (#663, merged): **2-year selectable window** (year dropdowns; pool ÷
-selected years), **year-specific priorities** (Year 1/2 filter; Sam's six metrics seeded; all text
-editable), the **noncredit-feeder carve-out** ($1M editable → NOCE / SD Cont. Ed / Mt. SAC NC /
-Calbright split by headcount — the 4 moved OUT of the college table), and **3-layer editing**:
-per-browser scenario ⊕ shared Supabase **`cpl_funding_config`** (team-phrase write via
-`team_phrase.js`; unlock promotes an explored scenario) ⊕ baked defaults — resolution
-`SCENARIO ?? SHARED ?? BASE`. **Excel workbook RETIRED** (Sam: "we don't need that excel book
-anymore") — `cpl_funding_data.js` is now the hand-maintained snapshot; **2025-26 headcounts applied**
-(74 rows; 41 keep 2022-23 with per-row `hc_vintage` + a data-driven mixed-vintage note; roster 115,
-SYSTEM 2,258,784). Suite 134 green (funding test 119 assertions). Full story:
-`docs/cpl_funding_lessons.md` (Session 2); KB note
-`docs/kb-notes/methodology-three-layer-scenario-config.md`.
+> **Session 98 narrative (the Implementation Funding rework — Chancellor-facing
+> scenario tool, PR #663) archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md).
+> Full story: `docs/cpl_funding_lessons.md` (Session 2).
 
 ### Session 100 — SkyVault: the CER triage loop unstuck end-to-end (2026-07-07)
 
@@ -2429,6 +2418,19 @@ asserts the 4 CER paths; skill Rule 5c = Sam's Cx/portfolio naming procedure (is
 Community Colleges**). Authority-anchoring strategy (CareerOneStop/O*NET/CE):
 `docs/kb-notes/reference-authority-anchored-credential-naming.md`. Full story:
 `docs/exhibit_canonicalization_lessons.md` (2026-07-07).
+
+### Session 101 — SkyAnchor: CareerOneStop authority LIVE + triage QA + the AP fold (2026-07-07)
+
+Sam's COS credentials went live: probe → contract fixes (#676 — acronym-suffix split into both
+lanes, pagination hardening + `kb/_verify_cos_sync_lanes.py`, 23 checks) → apply: **6,490
+certifications, 83 CER ✓/≈ COS matches** (receipts `kb/cos_match_out/2026-07-07/`). Serving gap
+fixed (#677): `pages.yml` `workflow_run: cos-authority-sync` + the `kb/cos_matches.json` assert +
+the registry prune (tracker-internal per COS terms). Triage QA (all 10 fixes Sam-approved, applied
+in Supabase): ASE/AP/apprenticeship assignments retargeted to EXISTING house families — the
+doctrine: retarget-to-existing-family verbatim beats authority-verbatim. **AP art fold APPLIED**
+(`kb/_merge_credentials.py`): 5 colon variants → College Board-current, 18 raws + 20 articulations
+re-pointed, 9 families → 4. Full story: `docs/exhibit_canonicalization_lessons.md` (2026-07-07
+"continued 3"); next: `docs/session_102_handoff.md` (COOL/MOC vs License Finder is Sam's queued pick).
 
 ---
 

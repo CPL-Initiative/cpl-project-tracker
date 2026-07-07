@@ -5686,82 +5686,88 @@
     "_notes": "Abbreviated source title."
   },
   "AP Exam: Studio Art - 2D": {
-    "unified_title": "AP Art and Design: 2-D",
+    "unified_title": "AP 2-D Art and Design",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-07-07",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AESA4-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Older 'Studio Art' naming; College Board renamed to 'Art and Design'."
+    "_notes": "Older 'Studio Art' naming; College Board renamed to 'Art and Design'.",
+    "_merge_note": "merged from credential 'AP Art and Design: 2-D' (curator)"
   },
   "AP Exam: Studio Art - 3D": {
-    "unified_title": "AP Art and Design: 3-D",
+    "unified_title": "AP 3-D Art and Design",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-07-07",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AESA5-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Older 'Studio Art' naming."
+    "_notes": "Older 'Studio Art' naming.",
+    "_merge_note": "merged from credential 'AP Art and Design: 3-D' (curator)"
   },
   "AP Exam: Studio Art - Drawing": {
-    "unified_title": "AP Art and Design: Drawing",
+    "unified_title": "AP Drawing",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-07-07",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AESA6-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Older 'Studio Art' naming."
+    "_notes": "Older 'Studio Art' naming.",
+    "_merge_note": "merged from credential 'AP Art and Design: Drawing' (curator)"
   },
   "AP Exam: Studio Art: 2-D Art and Design": {
-    "unified_title": "AP Art and Design: 2-D",
+    "unified_title": "AP 2-D Art and Design",
     "confidence_title": 0.94,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-07-07",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AESA1-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Art and Design: 2-D' (curator)"
   },
   "AP Exam: Studio Art: 3-D Art and Design": {
-    "unified_title": "AP Art and Design: 3-D",
+    "unified_title": "AP 3-D Art and Design",
     "confidence_title": 0.94,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-07-07",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AESA2-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Art and Design: 3-D' (curator)"
   },
   "AP Exam: Studio Art: Drawing": {
-    "unified_title": "AP Art and Design: Drawing",
+    "unified_title": "AP Drawing",
     "confidence_title": 0.94,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-07-07",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AESA3-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Art and Design: Drawing' (curator)"
   },
   "AP Exam: U. S. History": {
     "unified_title": "AP United States History",
@@ -7659,122 +7665,131 @@
     "_notes": null
   },
   "AP Studio Art - 2-D Design / 2-D Art and Design": {
-    "unified_title": "AP Art and Design: 2-D Design",
+    "unified_title": "AP 2-D Art and Design",
     "confidence_title": 0.94,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-07-07",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAH-ASA-1-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Old (Studio Art 2-D) and new (2-D Art and Design) names unified."
+    "_notes": "Old (Studio Art 2-D) and new (2-D Art and Design) names unified.",
+    "_merge_note": "merged from credential 'AP Art and Design: 2-D Design' (curator)"
   },
   "AP Studio Art - 2D": {
-    "unified_title": "AP Art and Design: 2-D Design",
+    "unified_title": "AP 2-D Art and Design",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-07-07",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-ASA--1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Art and Design: 2-D Design' (curator)"
   },
   "AP Studio Art - 3-D Design / 3-D Art and Design": {
-    "unified_title": "AP Art and Design: 3-D Design",
+    "unified_title": "AP 3-D Art and Design",
     "confidence_title": 0.94,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-07-07",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAH-ASA-2-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Old and new exam names unified."
+    "_notes": "Old and new exam names unified.",
+    "_merge_note": "merged from credential 'AP Art and Design: 3-D Design' (curator)"
   },
   "AP Studio Art - 3D": {
-    "unified_title": "AP Art and Design: 3-D Design",
+    "unified_title": "AP 3-D Art and Design",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-07-07",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-ASA-1-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Art and Design: 3-D Design' (curator)"
   },
   "AP Studio Art - Drawing": {
-    "unified_title": "AP Art and Design: Drawing",
+    "unified_title": "AP Drawing",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-07-07",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-ASA-2-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Art and Design: Drawing' (curator)"
   },
   "AP Studio Art - Drawing / Drawing": {
-    "unified_title": "AP Art and Design: Drawing",
+    "unified_title": "AP Drawing",
     "confidence_title": 0.93,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-07-07",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAH-ASA--1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Art and Design: Drawing' (curator)"
   },
   "AP Studio Art- 2D Design": {
-    "unified_title": "AP Art and Design: 2-D Design",
+    "unified_title": "AP 2-D Art and Design",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-07-07",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-ASA2-1-001",
       "MAPSAS-ASA21-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Art and Design: 2-D Design' (curator)"
   },
   "AP Studio Art- 3D Design": {
-    "unified_title": "AP Art and Design: 3-D Design",
+    "unified_title": "AP 3-D Art and Design",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-07-07",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-ASA3-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Art and Design: 3-D Design' (curator)"
   },
   "AP Studio Art- Drawing": {
-    "unified_title": "AP Art and Design: Drawing",
+    "unified_title": "AP Drawing",
     "confidence_title": 0.93,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-07-07",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-ASAD-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Art and Design: Drawing' (curator)"
   },
   "AP U.S. Government & Politics": {
     "unified_title": "AP United States Government and Politics",
@@ -10560,43 +10575,46 @@
     "_notes": null
   },
   "Art Studio 2-D Design Portfolio AP": {
-    "unified_title": "AP Art and Design: 2-D Design",
+    "unified_title": "AP 2-D Art and Design",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-07-07",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPCXO-AS2D-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Art and Design: 2-D Design' (curator)"
   },
   "Art Studio 3-D Design Portfolio AP": {
-    "unified_title": "AP Art and Design: 3-D Design",
+    "unified_title": "AP 3-D Art and Design",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-07-07",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPCXO-AS3D-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Art and Design: 3-D Design' (curator)"
   },
   "Art Studio Drawing Portfolio AP": {
-    "unified_title": "AP Art and Design: Drawing",
+    "unified_title": "AP Drawing",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-07-07",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPCXO-ASDP-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Art and Design: Drawing' (curator)"
   },
   "Art of Graphic Design I (UC) - Canyon High School": {
     "unified_title": "Art of Graphic Design I (High School Articulation)",

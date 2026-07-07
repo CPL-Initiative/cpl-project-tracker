@@ -2222,3 +2222,21 @@ above) across prompts, footers, the KB repo (draft PR), and a `sierra_guidance` 
 de-pinned to the `claude-sonnet-4-5` alias. Team-phrase expansion plan authored:
 [`docs/team_phrase_expansion_plan.md`](docs/team_phrase_expansion_plan.md) (recommendation: widen
 most, keep 4 reviewer-only). Suite 132 files green (+3 new). Full story: `docs/cobi_lessons.md` (S97).
+
+
+<!-- Archived at the Session-101 checkpoint (2026-07-07) per Rule 8. -->
+
+### Session 98 — the Implementation Funding rework: Chancellor-facing scenario tool (2026-07-03)
+
+Sam's funding-tab spec, one PR (#663, merged): **2-year selectable window** (year dropdowns; pool ÷
+selected years), **year-specific priorities** (Year 1/2 filter; Sam's six metrics seeded; all text
+editable), the **noncredit-feeder carve-out** ($1M editable → NOCE / SD Cont. Ed / Mt. SAC NC /
+Calbright split by headcount — the 4 moved OUT of the college table), and **3-layer editing**:
+per-browser scenario ⊕ shared Supabase **`cpl_funding_config`** (team-phrase write via
+`team_phrase.js`; unlock promotes an explored scenario) ⊕ baked defaults — resolution
+`SCENARIO ?? SHARED ?? BASE`. **Excel workbook RETIRED** (Sam: "we don't need that excel book
+anymore") — `cpl_funding_data.js` is now the hand-maintained snapshot; **2025-26 headcounts applied**
+(74 rows; 41 keep 2022-23 with per-row `hc_vintage` + a data-driven mixed-vintage note; roster 115,
+SYSTEM 2,258,784). Suite 134 green (funding test 119 assertions). Full story:
+`docs/cpl_funding_lessons.md` (Session 2); KB note
+`docs/kb-notes/methodology-three-layer-scenario-config.md`.

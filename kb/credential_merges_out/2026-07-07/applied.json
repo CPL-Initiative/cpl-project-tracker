@@ -1,0 +1,42 @@
+{
+  "_generated_at": "2026-07-07T17:26:15Z",
+  "applied": [
+    {
+      "loser": "AP Art and Design: 2-D",
+      "winner": "AP 2-D Art and Design",
+      "raws_repointed": 2,
+      "articulations_repointed": 3,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP Art and Design: 2-D Design",
+      "winner": "AP 2-D Art and Design",
+      "raws_repointed": 4,
+      "articulations_repointed": 3,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP Art and Design: 3-D",
+      "winner": "AP 3-D Art and Design",
+      "raws_repointed": 2,
+      "articulations_repointed": 3,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP Art and Design: 3-D Design",
+      "winner": "AP 3-D Art and Design",
+      "raws_repointed": 4,
+      "articulations_repointed": 4,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP Art and Design: Drawing",
+      "winner": "AP Drawing",
+      "raws_repointed": 6,
+      "articulations_repointed": 7,
+      "loser_credential_dropped": true
+    }
+  ],
+  "unified_titles_count": 3415,
+  "credentials_count": 1964
+}
