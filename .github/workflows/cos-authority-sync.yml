@@ -1,0 +1,90 @@
+# CareerOneStop certification-authority sync (runner-as-proxy).
+#
+# The agent sandbox cannot reach any careeronestop.org host, so this runner
+# fetches the Certification Finder registry (bulk flat file first; the
+# token-authenticated API as fallback) into kb/reference/cos_certifications.json,
+# then re-runs the match ladder (kb/_match_cos_authority.py --apply) so
+# kb/cos_matches.json — the CER's ✓ COS badge overlay — stays current.
+# Issuer FILLS (--apply-issuers, which mutates credentials.json) are NOT run
+# here: that stays a deliberate dry-run-first manual step.
+#
+# First use: dispatch with mode=probe and read the log (archive members +
+# headers + API status), then dispatch with mode=apply. Secrets (optional —
+# only the API fallback lane needs them): COS_USER_ID, COS_API_TOKEN.
+# Terms: display requires USDOL ETA + MN DEED attribution (the CER carries it);
+# see docs/kb-notes/reference-authority-anchored-credential-naming.md.
+name: cos-authority-sync
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "probe (report only, write nothing) or apply"
+        required: true
+        default: probe
+        type: choice
+        options: [probe, apply]
+  schedule:
+    # Monthly refresh — the COS bulk file updates a few times a year; a monthly
+    # no-op costs nothing (both scripts are idempotent → no diff → no commit).
+    - cron: "17 8 3 * *"
+
+concurrency:
+  group: cos-authority-sync
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      # No ref pin: the cron runs on main; a workflow_dispatch runs on the ref
+      # it's dispatched from (lets a feature branch probe before merging).
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install parser deps
+        run: pip install openpyxl
+
+      - name: Sync CareerOneStop certifications
+        env:
+          COS_USER_ID: ${{ secrets.COS_USER_ID }}
+          COS_API_TOKEN: ${{ secrets.COS_API_TOKEN }}
+        run: |
+          MODE="${{ github.event.inputs.mode || 'apply' }}"
+          echo "mode: $MODE"
+          if [ "$MODE" = "probe" ]; then
+            python3 kb/_sync_cos_certifications.py --probe
+          else
+            python3 kb/_sync_cos_certifications.py --apply
+          fi
+
+      - name: Re-run the authority match ladder
+        if: ${{ (github.event.inputs.mode || 'apply') == 'apply' }}
+        run: python3 kb/_match_cos_authority.py --apply || echo "::warning title=COS match ladder failed::kb/_match_cos_authority.py exited non-zero — kb/cos_matches.json may be stale. Check the step log."
+
+      - name: Commit + push
+        if: ${{ (github.event.inputs.mode || 'apply') == 'apply' }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add kb/reference/cos_certifications.json kb/cos_matches.json \
+                  kb/cos_match_out/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes — nothing to commit."
+            exit 0
+          fi
+          git commit -m "COS authority sync — $(date -u +%F)"
+          # Rebase-retry for races against the daily cron (same pattern as
+          # daily-dashboard.yml).
+          for i in 1 2 3; do
+            git push && exit 0
+            git pull --rebase && continue
+          done
+          git push

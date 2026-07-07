@@ -782,6 +782,11 @@
     // PR-4: per-row, per-field edit-mode tracker for the curation panel.
     // shape: { "unified_title": { "field_name": "display" | "edit" | "saving" } }
     curationEditing: {},
+    // CareerOneStop authority matches (kb/cos_matches.json, lazy + optional):
+    // unified_title → {name, org, tier, in_demand, …}. null until the file
+    // exists + loads; renders the ✓/≈ COS chips + the summary attribution.
+    cosMatches: null,
+    cosAttribution: null,
   };
 
   // Group key for a row given the current state.groupBy mode (single-key modes).
@@ -1198,6 +1203,16 @@
     sum.appendChild(el("strong", null, [String(revCount)]));
     sum.appendChild(document.createTextNode(" initiated · audit baseline: "
       + (state.audit ? state.audit._generated_at.slice(0, 10) : "—")));
+    // Required data-use attribution whenever CareerOneStop-derived matches
+    // render (the ✓/≈ COS chips) — see the COS terms in
+    // docs/kb-notes/reference-authority-anchored-credential-naming.md.
+    if (state.cosMatches) {
+      var nCos = Object.keys(state.cosMatches).length;
+      sum.appendChild(el("span", { class: "cr-cos-attrib" },
+        ["✓/≈ COS badges (" + nCos + " titles): "
+         + (state.cosAttribution || "Source: CareerOneStop, sponsored by the "
+            + "U.S. Department of Labor ETA; data maintained by Minnesota DEED.")]));
+    }
   }
 
   function render() {
@@ -1956,6 +1971,8 @@
       "#tab-credential-reference .cr-scope-block{margin:2px 0 14px;}" +
       "#tab-credential-reference .cr-chip{display:inline-block;padding:2px 8px;border-radius:8px;font-size:.72rem;font-weight:600;background:rgba(255,255,255,.5);border:1px solid var(--border-strong);}" +
       "#tab-credential-reference .cr-chip-ccc{color:var(--hunter);}" +
+      "#tab-credential-reference .cr-chip-cos{color:var(--hunter);border-color:var(--hunter);}" +
+      "#tab-credential-reference .cr-cos-attrib{display:block;margin-top:2px;font-size:.68rem;color:var(--text-muted);}" +
       "#tab-credential-reference .cr-chip-local{color:var(--text-muted);}" +
       "#tab-credential-reference .cr-chip-gen{color:var(--violet);}" +
       "#tab-credential-reference .cr-chip-none{background:#f1f5f9;color:#94a3b8;}" +
@@ -2135,6 +2152,21 @@
     (r.cpl_types || []).forEach(function (t) {
       c.appendChild(el("span", { class: "cr-chip cr-chip-cpl", title: "CPL Type" }, [t]));
     });
+    // CareerOneStop authority anchor (kb/cos_matches.json, lazy — absent until
+    // the cos-authority-sync workflow first lands data). Green-lights that this
+    // unified title matches an entry in the national certification registry;
+    // the tooltip carries the certifying org + the REQUIRED USDOL/DEED
+    // attribution (per the COS data-use terms).
+    var cos = state.cosMatches && state.cosMatches[r.unified_title];
+    if (cos) {
+      c.appendChild(el("span", { class: "cr-chip cr-chip-cos",
+        title: "Matches the CareerOneStop certification registry"
+          + (cos.tier !== "exact" ? " (" + cos.tier + " match)" : "")
+          + ":\n" + cos.name + (cos.org ? " — " + cos.org : "")
+          + (cos.in_demand ? "\n★ Flagged in-demand nationally." : "")
+          + "\n\n" + (state.cosAttribution || "Source: CareerOneStop (USDOL ETA / MN DEED).")
+      }, [cos.tier === "exact" ? "✓ COS" : "≈ COS"]));
+    }
     return c.childNodes.length ? c : null;
   }
 
@@ -2823,6 +2855,23 @@
     wrap.appendChild(card);
   }
 
+  // CareerOneStop authority matches — optional overlay (absent until the
+  // cos-authority-sync workflow first lands kb/cos_matches.json). Loaded
+  // AFTER the first render so the table never waits on it; a successful load
+  // re-renders once to surface the ✓/≈ COS chips.
+  function fetchCosMatches() {
+    return fetch("kb/cos_matches.json", { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (d && d.matches && Object.keys(d.matches).length) {
+          state.cosMatches = d.matches;
+          state.cosAttribution = d._attribution || null;
+          if (!state.worklistOpen) render();
+        }
+      })
+      .catch(function () {});
+  }
+
   function init() {
     if (!document.getElementById("tab-credential-reference")) return;
     state.sess = getSession();
@@ -2855,6 +2904,7 @@
         state.discGeAreas = baked.disc_ge_areas || {};
         renderToolbar();
         render();
+        fetchCosMatches();
       }).catch(renderInitError);
       return;
     }
@@ -2871,6 +2921,7 @@
       state.overlay = parts[1];
       renderToolbar();
       render();
+      fetchCosMatches();
     }).catch(renderInitError);
   }
 
