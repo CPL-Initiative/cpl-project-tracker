@@ -1519,3 +1519,21 @@ chips + required USDOL/DEED attribution, `tests/cer_cos_badge.test.js` (11).
 Also: today's fresh audit surfaced **481 new unclassified titles** the frozen
 snapshot had hidden — the authority vocabulary is what makes that backlog
 tractable. Next: probe run → header-map confirm → apply → triage with Rule 5c.
+
+### 2026-07-07 (continued 2) — Rule 5c identity integration, Phases 1+2 SHIPPED
+Sam's refinement: Cx titles anchor to C-ID/CCN titles when they exist, M-ID
+titles later once that layer is declared stable. Precedence codified (CCN >
+C-ID > M-ID-when-stable > local course content — mirrors CCR identifier
+precedence). Measured first: **0/481 queue items have articulation rows**, so
+the join parses the LOCAL COURSE CODE from the raw title →
+`kb/_suggest_unclassified.py` (COCI (SUBJ,NUM) join with the membership-hazard
+guards: unanimous-identity requirement, remainder-title overlap check,
+exam-brand (AP/IB/CLEP) exclusions incl. the "(BIOSCI 100)" target-course
+parenthetical trap) → `kb/unclassified_suggestions.json` → 💡 one-click fill
+chips in the worklist (curator always confirms; `tests/cer_wl_suggestions.test.js`,
+12). First real run: 28/481 direct suggestions (5 C-ID incl. ADM JUS 003 →
+AJ 124 "Legal Aspects of Evidence", 23 modal-course); the COS tier joins the
+same chips once the registry syncs. Phase 2: the fold stamps `title_anchor`
+{system, id} on entries whose assigned title matches a CCN/C-ID suggestion —
+the hook that makes the M-ID phase-in + future re-key ripples mechanical.
+Phase 3 = flip `--with-mids` when Sam declares M-IDs stable.

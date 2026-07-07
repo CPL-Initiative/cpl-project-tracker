@@ -365,6 +365,17 @@
       });
     });
   }
+  // Identity-anchored title suggestions (kb/unclassified_suggestions.json,
+  // generated daily by kb/_suggest_unclassified.py — Rule 5c precedence:
+  // CCN > C-ID > COS authority > modal local course title). Optional; the
+  // worklist renders 💡 one-click fill chips. Curator always confirms.
+  function fetchUnclassSuggestions() {
+    return fetch("kb/unclassified_suggestions.json", { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) { return (d && d.suggestions) || {}; })
+      .catch(function () { return {}; });
+  }
+
   function clearUnclass(raw) {
     // Remove BOTH the title + issuer rows for this raw title (un-assign).
     var base = SUPABASE_URL + "/rest/v1/kb_curation"
@@ -758,6 +769,7 @@
     unclassified: null,   // lazy: [{raw_title, band, …}] from the audit
     unclassLoading: false,
     unclassAssign: {},    // raw_title → {title, issuer, by, at} (Supabase overlay + live edits)
+    unclassSuggest: {},   // raw_title → [{kind, id, title, org?}] (💡 fill chips)
     // Sign-in feedback lives IN the auth widget (not a corner toast) so
     // curators can't miss it. pendingSignInEmail = "user@example.com" after
     // a successful OTP request; pendingSignInError = "msg" after a failure.
@@ -2022,6 +2034,10 @@
       "#tab-credential-reference .cr-wl-row.cr-wl-done{background:#f0fdf4;}" +
       "#tab-credential-reference .cr-wl-raw{max-width:42ch;}" +
       "#tab-credential-reference .cr-wl-band{color:#94a3b8;font-size:.72rem;}" +
+      "#tab-credential-reference .cr-wl-suggs{margin-top:3px;display:flex;flex-wrap:wrap;gap:4px;}" +
+      "#tab-credential-reference .cr-wl-sugg{cursor:pointer;font-size:.68rem;text-align:left;color:var(--hunter);background:rgba(255,255,255,.6);}" +
+      "#tab-credential-reference .cr-wl-sugg:hover{background:#ecfdf5;}" +
+      "#tab-credential-reference .cr-wl-sugg:disabled{cursor:default;opacity:.55;}" +
       "#tab-credential-reference .cr-wl-input{width:100%;min-width:15ch;padding:4px 6px;border:1px solid #cbd5e1;border-radius:5px;font-size:.82rem;}" +
       "#tab-credential-reference .cr-wl-input:disabled{background:#f8fafc;color:#94a3b8;}" +
       "#tab-credential-reference .cr-wl-act{white-space:nowrap;}" +
@@ -2216,9 +2232,10 @@
     state.worklistOpen = true;
     if (!state.unclassified && !state.unclassLoading) {
       state.unclassLoading = true;
-      Promise.all([fetchUnclassified(), fetchUnclassOverlay()]).then(function (parts) {
+      Promise.all([fetchUnclassified(), fetchUnclassOverlay(), fetchUnclassSuggestions()]).then(function (parts) {
         state.unclassified = parts[0];
         state.unclassAssign = parts[1] || {};
+        state.unclassSuggest = parts[2] || {};
         state.unclassLoading = false;
         renderToolbar();  // refresh the button count
         render();
@@ -2346,7 +2363,42 @@
       list: "cr-unclass-titles", placeholder: "existing or new credential…",
       value: cur.title || "", autocomplete: "off" });
     titleInp.disabled = !state.sess;
-    var titleTd = el("td", {}); titleTd.appendChild(titleInp); tr.appendChild(titleTd);
+    var titleTd = el("td", {}); titleTd.appendChild(titleInp);
+    // 💡 identity-anchored fill chips (Rule 5c precedence — CCN > C-ID > COS
+    // > modal local course title). Click fills the inputs; the curator still
+    // reviews + Saves.
+    var suggs = state.unclassSuggest && state.unclassSuggest[raw];
+    if (suggs && suggs.length) {
+      var srow = el("div", { class: "cr-wl-suggs" });
+      suggs.forEach(function (s) {
+        var label =
+          s.kind === "ccn" ? "💡 CCN " + s.id + ": " + s.title :
+          s.kind === "cid" ? "💡 C-ID " + s.id + ": " + s.title :
+          s.kind === "cos" ? "💡 COS: " + s.title + (s.org ? " — " + s.org : "") :
+          "💡 course title: " + s.title;
+        var tip =
+          s.kind === "ccn" ? "Official AB-1111 Common Course Number title — the statewide student-facing name (Rule 5c tier 1). Click to fill." :
+          s.kind === "cid" ? "Official C-ID descriptor title" + (s.unverified ? " (code not in our descriptor extract — verify)" : "") + " (Rule 5c tier 2). Click to fill." :
+          s.kind === "cos" ? "CareerOneStop certification registry match — clicking also fills the certifying organization as the issuer." :
+          "Modal local course title across colleges teaching " + (s.code || "this course")
+            + (s.share ? " (" + Math.round(s.share * 100) + "% agreement)" : "")
+            + " — the Rule 5c fallback when no CCN/C-ID exists. Click to fill.";
+        var chip = el("button", { type: "button", class: "cr-chip cr-wl-sugg", title: tip }, [label]);
+        chip.disabled = !state.sess;
+        chip.onclick = function () {
+          titleInp.value = s.title;
+          titleInp.dispatchEvent(new Event("input", { bubbles: true }));
+          if (s.kind === "cos" && s.org) {
+            issInp.value = s.org;
+            issInp.dispatchEvent(new Event("input", { bubbles: true }));
+          }
+          titleInp.focus();
+        };
+        srow.appendChild(chip);
+      });
+      titleTd.appendChild(srow);
+    }
+    tr.appendChild(titleTd);
 
     var issInp = el("input", { class: "cr-wl-input cr-wl-iss-input", type: "text",
       list: "cr-unclass-issuers", placeholder: "issuer…", value: cur.issuer || "", autocomplete: "off" });
