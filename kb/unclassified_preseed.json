@@ -1,6 +1,6 @@
 {
  "_about": "STAGED pre-seed suggestions for the CER unclassified-triage worklist (kb/_preseed_unclassified.py --stage). NOT saved to Supabase: credential_reference.js PREFILLS each row's assign inputs from this file; the curator reviews and clicks Save (or 'Save all pre-filled'). Regenerate after queue/family changes; rows with a live assignment are never prefilled.",
- "_generated_at": "2026-07-07T19:57:15Z",
+ "_generated_at": "2026-07-07T20:25:38Z",
  "_queue_count": 451,
  "_counts": {
   "staged": 163,
@@ -162,8 +162,8 @@
    "title": "Anatomy and Physiology",
    "issuer": "California Community Colleges",
    "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for BIOL 424 (stripped: school name, Honors marker); issuer = CCC. Matched the existing family 'Anatomy and Physiology'."
+   "confidence": 0.65,
+   "note": "Course-content title for BIOL 424 (stripped: Honors marker); issuer = CCC. Converged on 'Anatomy and Physiology' (modal title for BIOL 424)."
   },
   "BIOL-424: COLTON HIGH SCHOOL- Anatomy and Physiology (Honors)": {
    "title": "Anatomy and Physiology",
@@ -211,8 +211,8 @@
    "title": "Introduction to Logistics Management",
    "issuer": "California Community Colleges",
    "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for BUSMGT 436 (stripped: school name); issuer = CCC. Matched the existing family 'Introduction to Logistics Management'."
+   "confidence": 0.65,
+   "note": "Course-content title for BUSMGT 436 (stripped: course code only); issuer = CCC. Converged on 'Introduction to Logistics Management' (modal title for BUSMGT 436)."
   },
   "BUSMGT-13: ARROYO VALLEY HIGH SCHOOL- Supply Chain and Logistics  IS260/IS261": {
    "title": "Supply Chain Management",

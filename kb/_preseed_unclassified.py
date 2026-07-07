@@ -85,11 +85,17 @@ _FOOTNOTE_BRACKET = re.compile(r"\[\d+\]")
 _DASHES = dict.fromkeys(map(ord, "‐‑‒–—―−"), "-")
 
 
+def _pre_norm(t):
+    """The ONE dash/nbsp normalizer - shared by cleanup() (brand lanes) and
+    _norm_ws() (staged lanes) so a future tweak can't drift between them."""
+    return (t or "").translate(_DASHES).replace(" ", " ")
+
+
 def cleanup(raw):
     """Normalize whitespace/punctuation decoration and strip non-identity
     parentheticals. Returns (clean_title, notes, ambiguous_reason)."""
     notes, ambiguous = [], None
-    t = (raw or "").translate(_DASHES).replace(" ", " ")
+    t = _pre_norm(raw)
     if _FOOTNOTE_BRACKET.search(t):
         t = _FOOTNOTE_BRACKET.sub(" ", t)
         notes.append("footnote-bracket")
@@ -417,11 +423,15 @@ _COURSE_CODE = re.compile(
     r"^(?P<subj>[A-Z]{2,10})\s*-?\s*(?P<num>\d{1,4}[A-Z]{0,2}(?:-\d)?)\b[\s:,.-]*")
 
 # HS-articulation decoration: school-name segments + section/IS-code riders.
+# A school-name segment must be FOLLOWED BY a separator ([-:]) so bare course
+# words are never deleted ('Unified Modeling Language', 'High School
+# Equivalency Preparation' stay intact; separator-less school prefixes like
+# 'BIOL-424 High School Anatomy...' converge via their code group instead).
 _HS_SCHOOL_SEG = re.compile(
     r"(?:^|[\s:,-]+)(?:[A-Z][A-Za-z.'’-]*\s+){0,4}?"
     r"(?:HIGH SCHOOL|High School|Adult School|ROP|Unified(?: School District)?|"
     r"Joint Union|Learn 4 Life|Jurupa Hills High|Fontana High|Kaiser HS|Rancho Cucamonga HS)"
-    r"\s*[:-]*\s*", )
+    r"\s*[:-]+\s*", )
 _HS_LEAD_WORDS = re.compile(r"^(?:High School(?: Articulation)?)\s*[:-]+\s*", re.I)
 _IS_CODES = re.compile(r"\(?\bIS\d+\w*(?:\s*/\s*IS\d+\w*)?\)?")
 _SECTION_RIDER = re.compile(r"\s*(?:\d[A-Z]\s*/\s*\d[A-Z]|H\s*1&2|1&2)\s*$")
@@ -469,7 +479,7 @@ JUDGMENT_SINGLES = {
 
 
 def _norm_ws(t):
-    return re.sub(r"\s+", " ", (t or "").translate(_DASHES).replace(" ", " ")).strip()
+    return re.sub(r"\s+", " ", _pre_norm(t)).strip()
 
 
 def stage_journeyman(raw):
@@ -540,6 +550,10 @@ def stage_cx(raw, families=None):
         if t2 != t:
             stripped.append(tag)
             t = t2
+    lead_school = _HS_SCHOOL_SEG.match(t)
+    if lead_school and lead_school.start() == 0:
+        stripped.append("school name")
+        t = t[lead_school.end():].strip(" -–,;:")
     code = None
     m = _COURSE_CODE.match(t)
     if m:
@@ -770,11 +784,22 @@ def main():
             r.encode("utf-8")).hexdigest() in hashes}
 
     if stage:
-        live_path = os.path.join(os.path.dirname(STAGE_PATH), "preseed_out",
-                                 date.today().isoformat(), "live_values.json")
+        # newest committed live-values receipt (not just today's) — a re-run on
+        # a later day must not silently drop the verified curator titles from
+        # family matching; say loudly which receipt (if any) was used.
+        out_root = os.path.join(os.path.dirname(STAGE_PATH), "preseed_out")
+        candidates = sorted(
+            p for p in (os.path.join(out_root, d, "live_values.json")
+                        for d in (os.listdir(out_root) if os.path.isdir(out_root) else []))
+            if os.path.exists(p))
         live_values = {}
-        if os.path.exists(live_path):
-            live_values = json.load(open(live_path, encoding="utf-8"))
+        if candidates:
+            live_values = json.load(open(candidates[-1], encoding="utf-8"))
+            print(f"live-values receipt: {candidates[-1]} ({len(live_values)} verified titles)")
+        else:
+            print("live-values receipt: NONE — family matching uses committed "
+                  "kb/unified_titles.json only (fetch + verify a fresh receipt "
+                  "via the Supabase MCP for best convergence)")
         families = build_family_index(weight, live_values)
         staged, residual = build_stage_plan(queue, families, assigned)
         by_via = {}

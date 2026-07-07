@@ -215,6 +215,15 @@ check("hs: dashed sub-number consumed (distinct course preserved)",
       (rec["title"], rec["code"]), ("Recording Arts Workshop II", "MUSIC 265-2"))
 check("hs: OSHA rows excluded (different issuer)", P.stage_hs("OSHA 10 and 1 yr Experience"), None)
 check("hs: IC- rows excluded", P.stage_hs("IC- Welding Level I"), None)
+rec = P.stage_hs("CIS 235 Unified Modeling Language")
+check("hs: bare 'Unified' inside a course name is NEVER deleted (separator required)",
+      rec["title"], "Unified Modeling Language")
+rec = P.stage_hs("ESL 500 High School Equivalency Preparation")
+check("hs: 'High School Equivalency' course content survives",
+      rec["title"], "High School Equivalency Preparation")
+rec = P.stage_cx("San Gorgonio High School - EGTECH-12: Principles of Engineering - Credit by Exam")
+check("cx: leading school segment stripped before code extraction",
+      rec["title"], "Principles of Engineering")
 
 print("build_stage_plan:")
 staged, residual = P.build_stage_plan(

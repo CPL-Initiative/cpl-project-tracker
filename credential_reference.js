@@ -69,6 +69,10 @@
       if (attrs.href != null) n.href = String(attrs.href);
       if (attrs.list != null) n.setAttribute("list", String(attrs.list));
       if (attrs.colspan != null) n.colSpan = parseInt(attrs.colspan, 10) || 1;
+      // fixed literal names only (never attacker-controlled); values String()d
+      if (attrs["data-raw"] != null) n.setAttribute("data-raw", String(attrs["data-raw"]));
+      if (attrs.role != null) n.setAttribute("role", String(attrs.role));
+      if (attrs["aria-label"] != null) n.setAttribute("aria-label", String(attrs["aria-label"]));
     }
     if (kids) for (var i = 0; i < kids.length; i++) {
       var c = kids[i];
@@ -2309,6 +2313,32 @@
   function updateWorklistProgress() {
     var el2 = document.getElementById("cr-wl-progress-count");
     if (el2) el2.textContent = String(unclassAssignedCount());
+    // keep the view-toggle chips + pre-seed bar honest after in-place
+    // saves/clears (they are only otherwise rebuilt on a full re-render)
+    var total = (state.unclassified || []).length;
+    var open = total - unclassAssignedCount();
+    var chips = document.querySelectorAll(".cr-wl-toggle-btn");
+    if (chips.length === 2) {
+      chips[0].textContent = "Needs triage (" + open + ")";
+      chips[1].textContent = "All (" + total + ")";
+    }
+  }
+
+  // Save-success bookkeeping shared by the per-row Save button and the bulk
+  // "Save all pre-filled" path: state write + IN-PLACE row update (never a
+  // full re-render — unsaved input typed in other rows must survive).
+  function applySavedAssignment(raw, tr, title, issuer) {
+    state.unclassAssign[raw] = { title: title, issuer: issuer,
+      by: state.sess && state.sess.email, at: new Date().toISOString() };
+    tr.className = "cr-wl-row cr-wl-done";
+    var saveBtn = tr.querySelector(".cr-wl-save");
+    if (saveBtn) saveBtn.textContent = "✓ Saved";
+    var actTd = tr.querySelector(".cr-wl-act");
+    if (actTd && !actTd.querySelector(".cr-wl-clear")) {
+      actTd.appendChild(makeClearLink(raw, tr, actTd, saveBtn));
+    }
+    updateWorklistProgress();
+    renderToolbar();  // triage-button count: open → awaiting-fold
   }
 
   function renderWorklist() {
@@ -2374,7 +2404,8 @@
         class: "cr-wl-toggle-btn" + (state.wlShowAll === opt.all ? " cr-wl-toggle-on" : "") },
         [opt.label]);
       b.onclick = function () {
-        if (state.wlShowAll === opt.all) return;
+        // clicking the ACTIVE chip re-renders too — after in-place saves the
+        // visible rows can lag the count, and this is the reconcile affordance
         state.wlShowAll = opt.all;
         renderWorklist();
       };
@@ -2403,6 +2434,18 @@
       panel.appendChild(psRow);
     }
 
+    if (!shown.length) {
+      // every row is assigned but not yet folded — say so instead of
+      // rendering a bare table (the queue-clear state above only covers a
+      // truly EMPTY queue)
+      panel.appendChild(el("p", { class: "cr-wl-note" }, [
+        "✓ Nothing needs triage — all " + items.length + " rows have saved "
+        + "assignments awaiting the next daily fold. Use the \"All\" view to "
+        + "review or clear them."
+      ]));
+      wrap.appendChild(panel);
+      return;
+    }
     var tbl = el("table", { class: "cr-wl-table" });
     tbl.appendChild(el("thead", null, [el("tr", null, [
       el("th", null, ["Raw MAP exhibit title"]),
@@ -2439,12 +2482,11 @@
     var done = 0, failed = 0;
     function step(i) {
       if (i >= todo.length) {
-        // renderWorklist() rebuilds the panel (the button included), so the
-        // final text only flashes; failures stay visible in the rebuilt bar.
-        btn.textContent = failed ? ("saved " + done + ", " + failed + " failed")
+        // rows were updated IN PLACE (applySavedAssignment) — no full
+        // re-render, so unsaved input typed in OTHER rows survives.
+        btn.textContent = failed ? ("saved " + done + ", " + failed + " failed — retry")
                                  : ("✓ saved " + done);
-        renderToolbar();
-        renderWorklist();
+        btn.disabled = !failed;  // re-enable only when there is something to retry
         return;
       }
       var job = todo[i];
@@ -2455,9 +2497,7 @@
       ]).then(function (rs) {
         if (rs.every(function (r) { return r.ok; })) {
           done++;
-          state.unclassAssign[job.raw] = { title: job.title, issuer: job.issuer,
-            by: state.sess && state.sess.email, at: new Date().toISOString() };
-          job.tr.className = "cr-wl-row cr-wl-done";
+          applySavedAssignment(job.raw, job.tr, job.title, job.issuer);
         } else { failed++; }
         step(i + 1);
       }).catch(function () { failed++; step(i + 1); });
@@ -2551,12 +2591,7 @@
         ]).then(function (rs) {
           saveBtn.disabled = false;
           if (rs.every(function (r) { return r.ok; })) {
-            state.unclassAssign[raw] = { title: t, issuer: iss, by: state.sess.email, at: new Date().toISOString() };
-            tr.className = "cr-wl-row cr-wl-done";
-            saveBtn.textContent = "✓ Saved";
-            if (!actTd.querySelector(".cr-wl-clear")) actTd.appendChild(makeClearLink(raw, tr, actTd, saveBtn));
-            updateWorklistProgress();
-            renderToolbar();  // triage-button count: open → awaiting-fold
+            applySavedAssignment(raw, tr, t, iss);
           } else {
             // dropDeadSession already flipped the auth widget on 401/403; the
             // row-level affordance just offers the retry.

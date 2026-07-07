@@ -54,6 +54,10 @@ const overlayRows = [
   { course_id: "_UNCLASSIFIED::Raw Preseeded Assigned", field: "unified_title_assignment",
     value: "Curator Pick", reviewer_email: "map@rccd.edu", reviewed_at: "2026-07-07T14:00:00+00:00" },
 ];
+const overlayAllRows = auditStub.title_cards.map((c) => ({
+  course_id: "_UNCLASSIFIED::" + c.raw_title, field: "unified_title_assignment",
+  value: "Some Family", reviewer_email: "map@rccd.edu", reviewed_at: "2026-07-07T14:00:00+00:00",
+}));
 
 function makeDom(opts) {
   const html = `<!DOCTYPE html><html><body>
@@ -81,7 +85,8 @@ function makeDom(opts) {
     if (url.indexOf("unclassified_preseed.json") >= 0)
       return opts.noPreseed ? respond(null, 404) : respond(preseedStub);
     if (url.indexOf("unclassified_suggestions.json") >= 0) return respond({ suggestions: {} });
-    if (url.indexOf("kb_curation") >= 0 && method === "GET") return respond(overlayRows);
+    if (url.indexOf("kb_curation") >= 0 && method === "GET")
+      return respond(opts.overlayAll ? overlayAllRows : overlayRows);
     if (method === "POST" || method === "DELETE") {
       log.writes.push({ url, body: o.body && JSON.parse(o.body) });
       return respond([], 201);
@@ -123,6 +128,32 @@ async function scenarioToggle() {
   await sleep(30);
   check("toggle: switching back re-hides assigned rows",
     Array.from(doc.querySelectorAll(".cr-wl-table tbody tr")).length === 2);
+  check("toggle: role=group + aria-label actually land in the DOM",
+    doc.querySelector(".cr-wl-toggle").getAttribute("role") === "group"
+    && doc.querySelector(".cr-wl-toggle").getAttribute("aria-label") === "Triage view");
+  // an in-place per-row save must refresh the chip counts (no full re-render)
+  const plain = Array.from(doc.querySelectorAll(".cr-wl-table tbody tr"))
+    .find((r) => txt(r.querySelector(".cr-wl-rawt")) === "Raw Plain");
+  const pin = plain.querySelector(".cr-wl-title-input");
+  pin.value = "Alpha Credential";
+  pin.dispatchEvent(new window.Event("input", { bubbles: true }));
+  plain.querySelector(".cr-wl-save").click();
+  await sleep(120);
+  const chips2 = Array.from(doc.querySelectorAll(".cr-wl-toggle-btn"));
+  check("toggle: chip counts refresh after an in-place save",
+    txt(chips2[0]) === "Needs triage (1)" && txt(chips2[1]) === "All (4)");
+}
+
+async function scenarioAllTriaged() {
+  const { window } = await open({ overlayAll: true });
+  const doc = window.document;
+  check("all-triaged: needs-triage view shows the awaiting-fold note, not a bare table",
+    /Nothing needs triage/.test(txt(doc.querySelector(".cr-worklist")))
+    && !doc.querySelector(".cr-wl-table"));
+  doc.querySelectorAll(".cr-wl-toggle-btn")[1].click();
+  await sleep(30);
+  check("all-triaged: the All view still lists every saved row",
+    doc.querySelectorAll(".cr-wl-table tbody tr").length === 4);
 }
 
 async function scenarioPrefill() {
@@ -170,6 +201,12 @@ async function scenarioBulkSave() {
   const inp = psRow.querySelector(".cr-wl-title-input");
   inp.value = "Water Distribution Operator I (edited)";
   inp.dispatchEvent(new window.Event("input", { bubbles: true }));
+  // type into ANOTHER row but don't save — bulk must not wipe it
+  const plainRow = Array.from(doc.querySelectorAll(".cr-wl-table tbody tr"))
+    .find((r) => txt(r.querySelector(".cr-wl-rawt")) === "Raw Plain");
+  const plainInp = plainRow.querySelector(".cr-wl-title-input");
+  plainInp.value = "Half-typed draft";
+  plainInp.dispatchEvent(new window.Event("input", { bubbles: true }));
   btn.click();
   await sleep(150);
   check("bulk: confirm dialog shown before saving", opts.confirms === 1);
@@ -177,6 +214,9 @@ async function scenarioBulkSave() {
     (b) => b && b.field === "unified_title_assignment");
   const issWrite = log.writes.map((w) => w.body).find(
     (b) => b && b.field === "issuing_agency_assignment");
+  check("bulk: writes target the ROW'S raw title (course_id), never null",
+    titleWrite && titleWrite.course_id === "_UNCLASSIFIED::Raw Preseeded"
+    && issWrite && issWrite.course_id === "_UNCLASSIFIED::Raw Preseeded");
   check("bulk: saves what the input SHOWS (hand-edit wins)",
     titleWrite && titleWrite.value === "Water Distribution Operator I (edited)");
   check("bulk: issuer saved alongside",
@@ -184,6 +224,12 @@ async function scenarioBulkSave() {
   check("bulk: exactly one row's 2 fields written", log.writes.length === 2);
   check("bulk: reviewer stamped from the session",
     titleWrite.reviewer_email === "map@rccd.edu");
+  check("bulk: unsaved input in OTHER rows survives (no full re-render)",
+    plainRow.isConnected && plainRow.querySelector(".cr-wl-title-input").value === "Half-typed draft");
+  check("bulk: saved row flipped to ✓ Saved in place",
+    psRow.className.indexOf("cr-wl-done") >= 0
+    && txt(psRow.querySelector(".cr-wl-save")) === "✓ Saved"
+    && !!psRow.querySelector(".cr-wl-clear"));
 }
 
 async function scenarioBulkDeclined() {
@@ -217,6 +263,7 @@ async function scenarioNoPreseedFile() {
 
 (async () => {
   await scenarioToggle();
+  await scenarioAllTriaged();
   await scenarioPrefill();
   await scenarioBulkSave();
   await scenarioBulkDeclined();
