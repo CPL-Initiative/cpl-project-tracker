@@ -41,7 +41,7 @@ jobs:
     steps:
       # No ref pin: the cron runs on main; a workflow_dispatch runs on the ref
       # it's dispatched from (lets a feature branch probe before merging).
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-python@v6
         with:
