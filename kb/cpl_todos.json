@@ -1,86 +1,50 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-07 · Session 100 (CER triage loop unstuck)",
- "_session": 100,
- "_status": "CER fully back in action + the assist layer is live. The 'tab stopped working' bug is fixed (sign-in now self-renews), your triage assignments fold into the credential layer automatically each day, and the worklist now shows 💡 one-click suggestion chips: official C-ID/CCN titles when the exhibit's course carries one (per your CCN > C-ID > M-ID-later rule), the college's own course title otherwise, and CareerOneStop certification matches once your API credentials land. NEXT FOR YOU: ① when the CareerOneStop email arrives, add the two repo secrets (COS_USER_ID + COS_API_TOKEN) and run the cos-authority-sync workflow (probe, then apply); ② keep triaging the 481 — prefer EXISTING titles from the dropdown (the AP Art & Design family is already split 6 ways; Fable will run the merges after your pass).",
+ "_as_of": "2026-07-07 pm · Session 101 (COS authority live + AP fold)",
+ "_session": 101,
+ "_status": "CareerOneStop is LIVE: your API credentials checked out on the first probe, the full 6,490-certification registry synced, and 83 credentials on the CER now carry ✓/≈ COS authority chips (with the required USDOL/DEED attribution). Your triage pass got a QA sweep — the ASE and AP art assignments were retargeted to the existing house families (you approved all 10 fixes), and the stale 'AP Art and Design:' variants were merged into the College Board-current names (9 AP art families → 4). NEXT FOR YOU: keep triaging the ~448 remaining — when the dropdown already has a family (ASE, AP, Carpenters Apprenticeship…), pick it verbatim instead of typing a new spelling. NEXT LANE (your call queued): military COOL/MOC crosswalk vs CA License Finder.",
  "items": [
   {
-   "id": "cer-verify-fix",
+   "id": "cer-cos-chips",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "CER: after the fix merges, reopen the Common Exhibit Reference — the Triage button should read '✓ Triage unclassified (0)' and your 4 new credentials (Intro to Automotive Technology, Automotive Lubrication Service, Automotive Tire Service, Construction Inspection) appear as rows after the next daily rebuild. If a save ever fails again you'll now SEE the sign-in box instead of a dead 'retry'."
+   "text": "CER: hard-refresh and spot-check the new ✓ COS / ≈ COS chips (83 credentials) — e.g. AWS Certified Cloud Practitioner (exact) and ACE Health Coach Certification. Hover shows the CareerOneStop attribution."
   },
   {
-   "id": "cos-authority-decisions",
+   "id": "triage-continue",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "AUTHORITY NAMING — lane built + live-probed. FINDING: careeronestop.org's public download page intermittently blocks GitHub's runners (403), so the token API is the dependable path — your free CareerOneStop Web API registration is now REQUIRED to light this up: register at careeronestop.org/Developers (decide RCCD vs CCCCO as the account owner — the license renews every 36 months), then add repo Actions secrets COS_USER_ID + COS_API_TOKEN and tell Fable (or just dispatch the cos-authority-sync workflow with mode=apply yourself). Also still open: priority for the CA License Finder slice + the military COOL/MOS lane."
+   "text": "Keep triaging the unclassified queue (~448 left). Tip from today's QA: pick EXISTING dropdown families verbatim (ASE / AP / Carpenters Apprenticeship) — new spellings split families; the 💡 chips and COS suggestions are your friends."
   },
   {
-   "id": "cer-cx-batch-rule",
+   "id": "triage-ambiguous-cos",
+   "who": "sam",
+   "tab": "credential-reference",
+   "text": "22 titles matched MULTIPLE CareerOneStop certifications (e.g. Certified Pharmacy Technician — PTCB vs NHA). They're listed in kb/cos_match_out/2026-07-07/report.json — worth a pass when convenient."
+  },
+  {
+   "id": "next-lane-pick",
+   "who": "sam",
+   "tab": "credential-reference",
+   "text": "Confirm the next authority lane when ready: military COOL/MOC crosswalk (recommended — veterans are the core mission, and the COS registry already holds ASE MIL1–8) or CA License Finder."
+  },
+  {
+   "id": "fable-issuer-fills",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "COS lane shipped: dispatch cos-authority-sync (mode=probe) → read the run log → finalize the bulk-file header map if needed → dispatch mode=apply → the CER lights up ✓/≈ COS badges automatically. Then triage the 481 newly-surfaced unclassified titles with Rule 5c + the authority vocabulary."
+   "text": "Run kb/_match_cos_authority.py --apply-issuers dry-run (2 null-issuer fills possible from COS) and review before applying — deliberate manual step, never cron."
   },
   {
-   "id": "funding-headcounts-41",
-   "who": "sam",
-   "tab": "implementation-funding",
-   "text": "HEADCOUNTS: 41 of 115 colleges still carry the 2022-23 figure (the tab footnote lists the count). Send the remaining Annual 2025-26 counts when you have them and Fable will drop them in — the mixed-vintage note disappears on its own once complete."
-  },
-  {
-   "id": "funding-admin-cost",
-   "who": "sam",
-   "tab": "implementation-funding",
-   "text": "QUICK CALL: the Admin cost still shows $1.2M ('2 FTE × 3 YRS') from the 3-year model — with a 2-year window you may want $800K. It's editable right on the card (unlock first if it should stick for everyone)."
-  },
-  {
-   "id": "ccr-mindmeld-voice",
-   "who": "sam",
-   "tab": "unified-courses",
-   "text": "MIND MELD (the big one, ~45 min when you can): open ✨ Suggested merges and work a handful of groups with the 🧠 Mind-meld panel — hit 🎤 Dictate and think aloud (why merge, why keep, where the ESL-style packaging line sits). Skim kb/doctrine_out/2026-07-03/calibration_review.md (78 pre-decided calls) and disagree out loud — disagreements are the gold. The KIN/Dance/Music 'one row per activity?' question (Q-TARGETCOUNT) is the single highest-leverage answer."
-  },
-  {
-   "id": "ccr-batch-pass2",
+   "id": "fable-fold-dispatch",
    "who": "fable",
-   "tab": "unified-courses",
-   "text": "AFTER Sam's voice pass: distill merge_doctrine_notes → Doctrine v1, re-measure agreement on a fresh sample (gate ≥90%), then batch pass 2 (doctrine-v1@bot, all six lanes, dry-run→skim→apply) + the ESL packaging pilot. Full queue: docs/ccr_convergence_handoff.md."
+   "tab": "credential-reference",
+   "text": "After Sam's triage session ends, dispatch daily-dashboard.yml so the fold + CER rebuild publish same-day (his 33 normalized assignments + the AP fold land together)."
   },
   {
-   "id": "kb-naming-pr",
-   "who": "sam",
-   "tab": "knowledge-base",
-   "text": "MERGE WHEN READY: a draft PR on cpl-knowledge-base fixes the wrong MAP expansion ('Map Academic Pathways') in the assistant instructions and adds the naming conventions (CPL Initiative / Mapping Articulated Pathways platform / old name history-only). Curation-gated — your review is the audit."
-  },
-  {
-   "id": "team-phrase-p1-try",
-   "who": "sam",
-   "tab": "raci",
-   "text": "LIVE NOW (your 'Go phase 1'): the team phrase unlocks editing on the Annual Workplan tab (values, titles, + Add row), the Budget dollar cells, the Activity↔Project ✎ links, and TMC curator notes — same phrase as RACI, one unlock covers all tabs. Approve/Return on TMC submissions still needs the magic link on purpose (it's a CO authority claim). Phase 2 (course-curation tabs with a name stamp) is specced — say 'go Phase 2' when you want it."
-  },
-  {
-   "id": "factsheet-naming",
-   "who": "sam",
-   "tab": "dashboard",
-   "text": "FACT SHEET NAMING: the public fact sheet still says 'MAP Initiative' in its footer/contact/resources boxes. Safest fix is YOU editing those via ✎ Curate (a code edit could orphan existing Curate overrides — the keys derive from the text). Or tell Fable to do the key-migration version."
-  },
-  {
-   "id": "attachments-build",
+   "id": "fable-cool-moc-scope",
    "who": "fable",
-   "tab": "activities-projects",
-   "text": "HEADLINE NEXT BUILD (decided, carried over): native team-only attachments — private Supabase Storage bucket + project_attachments table + per-card ⬆ Attach; spec in session_97_handoff.md. SharePoint 📎 stays until it lands."
-  },
-  {
-   "id": "coci-hours-extract",
-   "who": "sam",
-   "tab": "tmc-builder",
-   "text": "TOP DATA ASK (mid-July): fresh COCI course extract, ideally WITH contact-hours columns; and can the CO export the 200+ pending ADT submissions as a simple list (college, TMC, date)?"
-  },
-  {
-   "id": "malone-guardrails",
-   "who": "sam",
-   "tab": "chatbot",
-   "text": "Intro Fable to Malone when ready: the Sierra guardrails lane (durable usage limits, daily cost cap, spam protection) needs his thresholds — the cost cap should land BEFORE the endpoint gets publicized."
+   "tab": "credential-reference",
+   "text": "Scope the military COOL/MOC crosswalk lane (data sources, runner-as-proxy shape) so the build starts fast once Sam picks the lane."
   }
  ]
 }

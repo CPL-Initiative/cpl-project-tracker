@@ -1537,3 +1537,47 @@ same chips once the registry syncs. Phase 2: the fold stamps `title_anchor`
 {system, id} on entries whose assigned title matches a CCN/C-ID suggestion —
 the hook that makes the M-ID phase-in + future re-key ripples mechanical.
 Phase 3 = flip `--with-mids` when Sam declares M-IDs stable.
+
+### 2026-07-07 (continued 3) — SkyAnchor: COS authority LIVE end-to-end + triage QA + the AP art fold
+
+Sam's credentials landed (GitHub-secret gotcha: the Name box takes ONLY
+`COS_USER_ID` — no `=`, no value) → probe validated auth same-hour. **Probe
+findings that changed code before the first apply (#676):** the API embeds
+acronyms IN the name ("50001 Certified Professional - 50001 CP", no Acronym
+field) → `split_name_acronym()` in BOTH lanes (level/digit suffixes exempt);
+pagination hardened (advance by actual batch, stop at RecordCount, bail on
+non-advancing startRecord) since the API is now the PRIMARY lane (bulk 403s
+runners). Verified by the committed no-network harness
+`kb/_verify_cos_sync_lanes.py` (23 checks, mocked api_get). **Apply: 6,490
+certifications** (the `0` keyword enumerated nearly the whole registry;
+empty-keyword pass fail-softed as designed) → **match ladder: 83 matches**
+(44 exact · 8 acronym · 31 contains), 22 ambiguous reported, 2 issuer fills
+possible; receipts `kb/cos_match_out/2026-07-07/`. **Serving gap found+fixed
+(#677):** runner pushes don't fire push workflows, so `pages.yml` gained
+`workflow_run: cos-authority-sync`, the `kb/cos_matches.json` served-path
+assert, and the registry prune (tracker-internal per the COS terms).
+
+**Triage QA (Sam's 33-title day, all fixes Sam-approved, applied in Supabase):**
+the handoff's watch-items fired exactly as predicted — 3 ASE assignments had
+invented new shapes with 3 org spellings → retargeted to the EXISTING
+`ASE <code> — <content>` house family (the KB's 60+-record family beats
+COS-verbatim for consistency; issuer `National Institute for Automotive
+Service Excellence (ASE)`); 4 AP art assignments pointed at RETIRED College
+Board names → retargeted to current (`AP 2-D/3-D Art and Design`, `AP
+Drawing`); 1 double-space title (the whitespace-twin hazard); apprenticeship
+→ the existing `Carpenters Apprenticeship — Acoustical Installer` family
+(never CCC issuer); portfolio Cx issuer → CCC per Rule 5c (ICC issues
+nothing). **Lesson: when an existing family exists, retarget to it verbatim —
+consistency with the house family outranks authority-verbatim naming; the COS
+chip still lands via the contains tier.**
+
+**AP art fold APPLIED** (`kb/_merge_credentials.py`, 5 decisions appended to
+`kb/credential_merges.json`): the 5 stale `AP Art and Design: *` colon
+variants → the 3 College Board-current canonicals. 18 raws + 20 articulations
+re-pointed, 9 AP art families → 4 (incl. AP Art History), credentials 1,969 →
+1,964, all V-gates green, receipt `kb/credential_merges_out/2026-07-07/`.
+
+**Next:** Sam continues the ~448-title queue (existing-family-first!); the
+lane choice after = military COOL/MOC crosswalk (recommended — the COS
+registry already carries ASE MIL1–8 as join points) vs CA License Finder;
+`--apply-issuers` dry-run (2 fills) still a deliberate manual step.
