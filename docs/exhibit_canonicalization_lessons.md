@@ -1670,7 +1670,7 @@ before 06:17 UTC).
 - MOC→COS bridge (`kb/moc_cos_bridge.json`) still the queued build; then
   `--apply-issuers` dry-run + the 22 ambiguous COS matches.
 
-### 2026-07-07 (continued 6) — Session 103: STAGED pre-seed lanes + the triage toggle + issuer authority sources
+### 2026-07-07 (continued 6) — Session 103 (Bruh SkyWay): STAGED pre-seed lanes + the triage toggle + issuer authority sources
 
 Sam's evening asks, all shipped: *"look at what I've recently saved … do more
 pre-seeding … For pre-seeded items, leave them ready to save but not yet
