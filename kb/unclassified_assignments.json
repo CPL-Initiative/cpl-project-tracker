@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-06-03T18:34:14Z",
-  "count": 190,
+  "_synced_at": "2026-07-07T14:50:27Z",
+  "count": 195,
   "assignments": {
     "A S T 025 - Fundamentals of Auto Mechanics": {
       "unified_title": "Fundamentals of Auto Mechanics",
@@ -174,6 +174,24 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
+    "AUTO 600 Completion": {
+      "unified_title": "Introduction to Automotive Technology",
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:53.902684+00:00"
+    },
+    "AUTO 601 Completion": {
+      "unified_title": "Automotive Lubrication Service",
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:55.030166+00:00"
+    },
+    "AUTO 602 Completion": {
+      "unified_title": "Automotive Tire Service",
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:55.831846+00:00"
+    },
     "AUTO 60A: Electrical Schematic Diagnosis- Credit By Exam": {
       "unified_title": "Automotive Electrical Schematic Diagnosis",
       "reviewed_by": "map@rccd.edu",
@@ -223,6 +241,12 @@
       "unified_title": "ASE Master Automobile Technician",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:35:49.462088+00:00"
+    },
+    "Automotive": {
+      "unified_title": "Introduction to Automotive Technology",
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:56.388865+00:00"
     },
     "Automotive Service Excellence (ASE) A4 Certificate Suspension & Steering": {
       "unified_title": "ASE A4 — Suspension and Steering",
@@ -630,6 +654,12 @@
       "unified_title": "Ironworker Welding III",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:12:43.443936+00:00"
+    },
+    "Inspection Portfolio Spring 2026 #1": {
+      "unified_title": "Construction Inspection",
+      "issuing_agency": "International Code Council",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:56.821738+00:00"
     },
     "Intro to Entrepreneurship High School to College Articulatio": {
       "unified_title": "Introduction to Entrepreneurship",

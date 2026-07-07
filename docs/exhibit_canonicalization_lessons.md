@@ -1436,3 +1436,71 @@ the omitted fields properly — `raw_variants` + per-local-course `u` units — 
   manually); then the Session-31 carryover stands (3 audience views, EACR v2
   scope/generated-rec, MID curation, the 5 un-classifiable unclassifieds, the
   ~50 NEW-credential long tail).
+
+## 2026-07-07 — the stuck triage session: token-expiry root cause + the fold grows a supersede lane
+
+Sam assigned all 5 open triage items (AUTO 600/601/602 Completion, Automotive,
+Inspection Portfolio Spring 2026 #1) and "the tab stopped working." Two distinct
+problems, both fixed:
+
+### Learning 1 — the tab "stopped working" because CER never refreshed the token
+The 10 Supabase writes landed fine at 14:05 UTC; the breakage came AFTER. CER had
+the exact pre-Session-77 raci.js bug (`docs/kb-notes/methodology-refresh-token-before-write.md`):
+`getSession()` keeps an expired session alive whenever a `refresh_token` exists,
+but no write path ever renewed the access token — so ~1h after the magic-link
+sign-in every save 401'd silently into a dead "retry" (and the worklist "clear"
+link literally no-opped on `!r.ok`), while the auth widget still showed ✓ signed-in.
+Adversarially verified with an end-to-end jsdom repro (a 4-lane hypothesis workflow;
+the tab-plumbing / generator-bake / Pages-artifact lanes were all exonerated with
+receipts). Fix: the raci trio ported (`refreshToken` + single-flight `ensureFresh()`
++ 401/403 session-drop via `withFreshSession()` on all 5 write fns), init `.catch`
+retry card, and `tests/cer_token_refresh.test.js` (18 assertions) guards it.
+SINGLE-FLIGHT matters here: the worklist saves title+issuer in a `Promise.all`,
+and two parallel refresh-token exchanges can kill a GoTrue session outright.
+
+### Learning 2 — whitespace twins: the queue listed titles the KB "already had"
+All 5 triaged raws were ALREADY classified — 4 under trailing-space twin
+spellings (`'AUTO 600 Completion '`) that the Phase-3 batch had machine-classified
+to fallback non-credentials (`AUTO 600 — Long Beach City College Auto Course`,
+`Automotive (Generic)`), while the 2026-05-24 audit listed the TRIMMED spellings
+as unclassified. The June fold only matched exact keys, so twins were invisible.
+`kb/_fold_unclassified.py` now handles this as a class:
+- **SUPERSEDE lane** — a curator assignment beats an UNREVIEWED MACHINE draft
+  (reviewed_by empty + classified_by ≠ curator sentinel), across every
+  whitespace-twin spelling (`.strip()` match). Human-reviewed entries still CONFLICT.
+- **STALE lane** — an overlay assignment older than a curator KB decision (the 5
+  strategy-2 renames from June) reports but never gates; V1 stays meaningful.
+- **Ripple auto-resolution** — superseded raws' `coci_articulations.json` rows are
+  re-pointed in the same apply (methodology strategy 3 made mechanical for the one
+  unambiguous case); clean-lane ripples still block for the human call.
+- Orphaned machine credential records prune; a machine target record with a null
+  issuer gains the assignment's issuer (stamped curator).
+Applied 2026-07-07: 11 supersedes (Sam's 5 + 6 June twin stragglers), 8
+articulation rows re-pointed, 7 orphan records pruned, queue → 0. Receipts:
+`kb/unclassified_fold/2026-07-07/`.
+
+### Learning 3 — the pipeline was open-loop; now it closes itself
+The fold was a manual PR-3 nobody ran since 2026-06-03, and NOTHING refreshed
+`kb/exhibit_audit/latest.json` (the auditor was in no workflow — frozen at
+2026-05-24, which is exactly why already-classified titles sat in the worklist).
+Daily cron now runs `_fold_unclassified.py --apply-if-safe` (V-gates pass → fold;
+conflicts/blocking ripples → report + wait for the manual path) AND
+`kb/_audit_exhibits.py` after it, so triage → fold → fresh queue is a same-day
+loop. The CER worklist shows OPEN counts ("✓ N awaiting fold" when done), a
+queue-clear state, and the fold explainer. Pages deploy now asserts all 4
+CER-fetched paths; tabs.js loadScript no longer wedges on a once-failed script.
+
+### Cx naming procedure + issuing agency (Sam's calls, now Rule 5c in the skill)
+Single-course Cx/portfolio exhibits → the course-content title (`Automotive
+Lubrication Service`), code-only courses → `<Discipline> (<CODE>)`
+(`Mathematics (MATH 095)`); batch Cx → the program-area umbrella; mechanism never
+in the title; **issuing agency = `California Community Colleges`** (plural —
+the 4 singular records from today's saves were normalized in KB + Supabase).
+
+### State / next
+- Authority-anchoring strategy (CareerOneStop certifications bulk file + CA
+  License Finder + O*NET SOC codes + Credential Engine reconciliation):
+  `docs/kb-notes/reference-authority-anchored-credential-naming.md` — decisions
+  on Sam (COS API account, CE partnership status, attribution placement).
+- Carryover stands: CPL-type-duplicate detector, 3 audience views, the ~50
+  NEW-credential long tail.

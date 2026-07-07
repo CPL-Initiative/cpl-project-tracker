@@ -1,0 +1,1841 @@
+{
+  "_generated_at": "2026-07-07T15:18:25Z",
+  "mode": "apply",
+  "gates": {
+    "V1_apply_safe": true,
+    "V2_target_credential": true,
+    "V3_additive_plus_declared": true,
+    "V4_no_articulation_ripple": true
+  },
+  "apply_safe": true,
+  "clean": [],
+  "skip": [
+    {
+      "raw": "A S T 025 - Fundamentals of Auto Mechanics",
+      "assigned": "Fundamentals of Auto Mechanics",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "ADJU 232 - Juvenile Justice Procedures - Credit by Exam",
+      "assigned": "Juvenile Justice Procedures",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "ADM JUS 067",
+      "assigned": "Administration of Justice 067",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AERO 040 - Instrument Ground School - Training Log",
+      "assigned": "FAA Instrument Ground School",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP - Psychology",
+      "assigned": "AP Psychology",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP 2-D Art and Design",
+      "assigned": "AP 2-D Art and Design",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP English Language and Composition (IGETC)",
+      "assigned": "AP English Language and Composition",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Exam Calculus BC/AB Sub-score (Score 3-5)",
+      "assigned": "AP Calculus BC",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:13:24.442594+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Exam Physics 1: Algebra-Based Score of 4 or 5",
+      "assigned": "AP Physics 1: Algebra-Based",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Exam Physics 2: Algebra-Based (Score of 3)",
+      "assigned": "AP Physics 2: Algebra-Based",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Exam Physics C: Electricity and Magnetism (Score 4-5)",
+      "assigned": "AP Physics C: Electricity and Magnetism",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Exam Physics C: Electricity and Magnetism Score of 4 or 5",
+      "assigned": "AP Physics C: Electricity and Magnetism",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Exam Physics C: Mechanics (Score 4-5)",
+      "assigned": "AP Physics C: Mechanics",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Exam Precalculus (Score 3-5)",
+      "assigned": "AP Precalculus",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Exam Statistics (Score 3-5)",
+      "assigned": "AP Statistics",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Exam World History: Modern (prior to Fall 2025) (Score 3-5)",
+      "assigned": "AP World History: Modern",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Exam: Calculus AB (or Calculus BC/AB SubScore)",
+      "assigned": "AP Calculus AB",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Exam: Computer Science Principles",
+      "assigned": "AP Computer Science Principles",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Exam: English Language and Composition",
+      "assigned": "AP English Language and Composition",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Exam: Precalcululs",
+      "assigned": "AP Precalculus",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Physics 1\tNatural Sciences - 4\tCredit for PHYS 2A",
+      "assigned": "AP Physics 1",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP:  Human Geography",
+      "assigned": "AP Human Geography",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP: Art History",
+      "assigned": "AP Art History",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP: Chemistry",
+      "assigned": "AP Chemistry",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP: Environmental  Science",
+      "assigned": "AP Environmental Science",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP: History European",
+      "assigned": "AP European History",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP: Music Theory",
+      "assigned": "AP Music Theory",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP: Physics C- Electricity/ Magnetism",
+      "assigned": "AP Physics C: Electricity and Magnetism",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP: Physics C- Mechanics",
+      "assigned": "AP Physics C: Mechanics",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AUTO 60A: Electrical Schematic Diagnosis- Credit By Exam",
+      "assigned": "Automotive Electrical Schematic Diagnosis",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AUTO 60B: Automotive Electronics - Credit By Exam",
+      "assigned": "Automotive Electronics",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AUTO 62A: Automotive Suspension, Steering and Alignment - Credit By Exam",
+      "assigned": "Automotive Suspension, Steering and Alignment",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AUTO 62B: Wheel Alignment, Chassis Dynamics, ADAS - Credit By Exam",
+      "assigned": "Wheel Alignment, Chassis Dynamics, and ADAS",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Adobe Photoshop Certified Professional",
+      "assigned": "Adobe Certified Professional — Visual Design (Photoshop)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Advanced Metal Framing",
+      "assigned": "Advanced Metal Framing",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "American National Standard Institute (ANSI) Food Manager Certificate",
+      "assigned": "ANSI-Accredited Food Protection Manager Certification",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Artificial Intelligence: Prompt Engineering and AI Systems",
+      "assigned": "Artificial Intelligence: Prompt Engineering and AI Systems",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Auto Service Excellence A6",
+      "assigned": "ASE A6 — Electrical/Electronic Systems",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:35:49.462088+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Auto Service Excellence Master Auto Technician",
+      "assigned": "ASE Master Automobile Technician",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:35:49.462088+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Automotive Service Excellence (ASE) A4 Certificate Suspension & Steering",
+      "assigned": "ASE A4 — Suspension and Steering",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:33:50.363171+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Automotive Service Excellence (ASE) A5 Certificate Brakes",
+      "assigned": "ASE A5 — Brakes",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Automotive Service Excellence (ASE) L3: Light Duty Hybrid/Electric Vehicle Specialist Certiication",
+      "assigned": "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Automotive Services Excellence (A5: Brakes) Certificate",
+      "assigned": "ASE A5 — Brakes",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Automotive Technology MLR I & II - Irvine High School",
+      "assigned": "Automotive Technology MLR I and II — Irvine High School",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "BUSAD 210 Business Communication - Military Training",
+      "assigned": "Business Communication",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Basic Pharmacology",
+      "assigned": "Basic Pharmacology",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Building Construction for Fire Protection Credit by Exam",
+      "assigned": "Building Construction for Fire Protection",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Bus Operator",
+      "assigned": "Bus Operator",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "C-190, C-290, ICS 100 and ICS 700 Wildland Fire Certifications",
+      "assigned": "Wildland Fire Certifications (C-190, C-290, ICS-100, ICS-700)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "CA Smog Repair License",
+      "assigned": "California Smog Check Repair Technician License",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)",
+      "assigned": "Business Management and Entrepreneurship — Cajon High School",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "CIT 144 - Medical Terminology",
+      "assigned": "Medical Terminology",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "CIT 144 - Medical Terminology - BVNPT Licensure",
+      "assigned": "Medical Terminology",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "CLEP Analyzing & Interpreting Literature",
+      "assigned": "CLEP Analyzing and Interpreting Literature",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "CLEP Exam: Human Growth and Development",
+      "assigned": "CLEP Human Growth and Development",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "CLEP Principles Marketing",
+      "assigned": "CLEP Principles of Marketing",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "CLEP Principles of Management",
+      "assigned": "CLEP Principles of Management",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "CLEP Principles of Management (CSU Semester Units Earned Toward CSU Admission)",
+      "assigned": "CLEP Principles of Management",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "CLP – C CERTIFIED PROFESSIONAL PROGRAMMER",
+      "assigned": "CLP — C Certified Professional Programmer",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "COMM C1000 Portfolio Review",
+      "assigned": "Public Speaking (COMM C1000)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "COMPTIA LINUX+",
+      "assigned": "CompTIA Linux+",
+      "issuer": "CompTIA",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:02:32.590984+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "CPA – C++ CERTIFIED ASSOCIATE PROGRAMMER",
+      "assigned": "C++ Certified Associate Programmer (CPA)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "CPP – C++ CERTIFIED PROFESSIONAL PROGRAMMER",
+      "assigned": "CPP — C++ Certified Professional Programmer",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Cal Fire Hazardous Materials First Responder Operational Level, Decontamination",
+      "assigned": "Hazardous Materials First Responder Operational — Decontamination",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Cal Fire Instructor I",
+      "assigned": "Fire Instructor 1",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Cal-JAC Fire Fighter Paramedic Journeyperson Certificate",
+      "assigned": "Fire Fighter Paramedic Journeyperson Certificate",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Cal-JAC Firefighter EMT Certificate",
+      "assigned": "Firefighter EMT Certificate",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Cal-JAC Firefighter Journeyperson Certificate",
+      "assigned": "Firefighter Journeyperson Certificate",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Center for Financial Training: CFTA-0025 Human Resources Management;",
+      "assigned": "Center for Financial Training (CFT) — Human Resources Management (CFTA-0025)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Certified Bloodstain Pattern Analyst (CBPA) Certification",
+      "assigned": "Certified Bloodstain Pattern Analyst (CBPA)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Certified Crime Scene Investigator (CCSI) Certification",
+      "assigned": "Certified Crime Scene Investigator (CCSI)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Certified Footwear Examiner (CFE) Certification",
+      "assigned": "Certified Footwear Examiner (CFE)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Certified Forensic Photographer (CFP) Certification",
+      "assigned": "Certified Forensic Photographer (CFP)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Certified Latent Print Examiner (CLPE) Certification",
+      "assigned": "Certified Latent Print Examiner (CLPE)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Chaffey Joint Union - Rancho Cucamonga HS - Advanced Engineering Design II H 1&2",
+      "assigned": "High School Articulation — Advanced Engineering Design II Honors (Rancho Cucamonga HS)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors",
+      "assigned": "High School Articulation — Anatomy and Physiology Honors (Colton-Redlands-Yucaipa ROP)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Community and the Justice System",
+      "assigned": "Community and the Justice System",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Cooperative Education: Nursing A.D.N.",
+      "assigned": "Cooperative Education: Nursing (ADN)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Cosmetology License",
+      "assigned": "Cosmetology License",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Credit by Exam AUTO A1 Engine Repair",
+      "assigned": "ASE A1 — Engine Repair",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T19:32:01.902138+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Credit by Exam- Introduction to Legal Research and Terminology",
+      "assigned": "Introduction to Legal Research and Terminology",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Credit by Exam: History Of Architecture I",
+      "assigned": "History of Architecture I",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Crime Scene Management and Forensic Evidence",
+      "assigned": "Crime Scene Management and Forensic Evidence",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Crime and Delinquency",
+      "assigned": "Crime and Delinquency",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Criminal Court Process",
+      "assigned": "Criminal Court Process",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Criminal Investigation",
+      "assigned": "Criminal Investigation",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "DANCETQ 141 - Modern Dance Techniques I",
+      "assigned": "Modern Dance Techniques I",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "DEPT of VA POST",
+      "assigned": "Department of Veterans Affairs Police Officer (VA POST)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Digital Forensics Fundamentals",
+      "assigned": "Digital Forensics Fundamentals",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Digital Illustration with Adobe- Credit by Exam",
+      "assigned": "Digital Illustration with Adobe",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Dollar General Store Manager Training DLGC-0001 Store Manager Training",
+      "assigned": "Dollar General Store Manager Training",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "F.C.C. License",
+      "assigned": "FCC Commercial Radio Operator License",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "FTECH 302 Fire Prevention",
+      "assigned": "Fire Prevention",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "FTECH 324B - Fire Service In-ServiceTraining  Administration",
+      "assigned": "Fire Service In-Service Training — Administration",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Fire Inspector 2A: Fire Prevention Administration",
+      "assigned": "Fire Inspector 2A",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Fire Inspector 2B: Fire and Life Safety Requirements",
+      "assigned": "Fire Inspector 2B",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Fire Inspector 2D: Hazardous Materials, Operations, and Processes",
+      "assigned": "Fire Inspector 2D",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Firefighter 1 Certification",
+      "assigned": "Firefighter 1",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Forecasting Financial Statemen- Credit by Exam",
+      "assigned": "Forecasting Financial Statements",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Foreman Training",
+      "assigned": "Foreman Training",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Framing Ceilings and Soffits",
+      "assigned": "Framing Ceilings and Soffits",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "GEOG 025 - Introduction to Geographic Information Systems and Laboratory",
+      "assigned": "Introduction to Geographic Information Systems",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "GIS 025 - Introduction to Geographic Information Systems and Laboratory",
+      "assigned": "Introduction to Geographic Information Systems",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Human Resource Management",
+      "assigned": "Human Resource Management",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "ICS 100, IS 700, L-180, L-280, S-130, S-190, S-215 Wildland Fire Certifications",
+      "assigned": "Wildland Fire ICS/NWCG Certification Bundle",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "ICS 300: Intermediate Incident Command System for Expanding Incidents (2019)",
+      "assigned": "ICS 300 — Intermediate Incident Command System",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "ICS 400: Advanced Incident Command System for Command and General Staff Complex Incidents (2019)",
+      "assigned": "ICS 400 — Advanced Incident Command System",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "INSPEC 015 - Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
+      "assigned": "Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "INSPEC 017 - California State Energy Regulations for Residential Buildings - PORTFOLIO Review",
+      "assigned": "California State Energy Regulations for Residential Buildings",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "IW- Architectural II",
+      "assigned": "Ironworker Architectural II",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "IW- Architectural III",
+      "assigned": "Ironworker Architectural III",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "IW- Detailing",
+      "assigned": "Ironworker Apprenticeship — Detailing",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "IW- Structural Precast Concrete",
+      "assigned": "Ironworker Structural Precast Concrete",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "IW- Structural Steel II",
+      "assigned": "Ironworker Structural Steel II",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "IW- Welding III",
+      "assigned": "Ironworker Welding III",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Intro to Entrepreneurship High School to College Articulatio",
+      "assigned": "Introduction to Entrepreneurship",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Introduction to Computer Information Systems",
+      "assigned": "Introduction to Computer Information Systems",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Introduction to Computer Programming",
+      "assigned": "Introduction to Computer Programming",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Introduction to Energy Surveying",
+      "assigned": "Introduction to Energy Surveying",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Introduction to the Linux Operating System",
+      "assigned": "Introduction to the Linux Operating System",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Juvenile Procedures",
+      "assigned": "Juvenile Procedures",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "LA CITY (FCAW) D1.1 STRUCTURAL WELDING CERTIFICATION SEMI-AUTOMATIC",
+      "assigned": "LA City Certified Welder — AWS D1.1 FCAW",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Legal Aspects of Evidence",
+      "assigned": "Legal Aspects of Evidence",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "MDAST 320 - Introduction to Medical Assisting - Industry Certification",
+      "assigned": "Introduction to Medical Assisting",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "MDAST 322 Medical Assisting Administrative Procedures - Industry Certification",
+      "assigned": "Medical Assisting Administrative Procedures",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "MDAST 323 - Medical Assisting Clinical - Indsutry Certification",
+      "assigned": "Medical Assisting Clinical",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "MDAST 324 - Introduction to Disease & Pharmacology - Industrial Certification",
+      "assigned": "Introduction to Disease and Pharmacology",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "MDAST 325 - Medical Assisting Lab Procedures - Industry Certification",
+      "assigned": "Medical Assisting Lab Procedures",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "MDAST 326 Medical Assisting Practicum - Indsutry Certification",
+      "assigned": "Medical Assisting Practicum",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "MICROSOFT OFFICE SPECIALIST OUTLOOK CERTIFICATION",
+      "assigned": "Microsoft Office Specialist — Outlook",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "MUSIC 165 - Introduction to Recording Arts",
+      "assigned": "Introduction to Recording Arts",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "McDonald's Corporation MCD-0051 Business Leadership Practices;",
+      "assigned": "McDonald's MCD-0051 Business Leadership Practices",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "McDonald's Corporation: MCD-0074 Mid Management Foundations Curriculum: Getting Started & Transition to the Role;",
+      "assigned": "McDonald's MCD-0074 Mid-Management Foundations Curriculum",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Metal Building Erection I / Foreman Training",
+      "assigned": "Metal Building Erection I / Foreman Training",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Microsoft Azure Administrator",
+      "assigned": "Microsoft Certified: Azure Administrator Associate",
+      "issuer": "Microsoft",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:02:32.590984+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Music Skills II - Credit by Exam",
+      "assigned": "Music Skills II",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "NCCER Welding Level 1",
+      "assigned": "NCCER Welding Level 1",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:02:32.590984+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "NURSING 402 - Pharmacology",
+      "assigned": "Pharmacology (Nursing)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "National Center for Construction Education and Research (NCCER)",
+      "assigned": "NCCER Certification (unspecified)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "National Center for Construction Education and Research (NCCER) (10 Certificates)",
+      "assigned": "NCCER Certification Bundle (10 Certificates)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Nursing Process 2",
+      "assigned": "Nursing Process 2",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "OFADM 256 (change to BIT 250) Introduction to Microsoft Word - Military Training",
+      "assigned": "Microsoft Office Specialist — Word",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "PLNT SC 714 - Principles of Horticulture",
+      "assigned": "Principles of Horticulture",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "PLNT SC 812 - Landscape Installation and Maintenance I",
+      "assigned": "Landscape Installation and Maintenance I",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "PLNT SC 827 - Sustainable Gardening for Landscapes",
+      "assigned": "Sustainable Gardening for Landscapes",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "POST - Peace Officer Standards and Training",
+      "assigned": "POST Basic Academy",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T19:32:01.902138+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Paramedic NCTI (EMS-60/91)",
+      "assigned": "Paramedic License",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Pathophysiology for Nursing",
+      "assigned": "Pathophysiology for Nursing",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "PayrollOrg (PAYO) APAE-0001 Certified Payroll Professional Examination",
+      "assigned": "Certified Payroll Professional (CPP)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
+      "assigned": "POST Basic Academy",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Portfolio Production Studio- Credit by Exam",
+      "assigned": "Portfolio Production Studio",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Portfolio Review - Direct and Alternating Current Circuit Analysis and Laboratory",
+      "assigned": "DC and AC Circuit Analysis and Laboratory",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Portfolio: History Of Architecture I",
+      "assigned": "History of Architecture 1",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:33:50.363171+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Principles of Emergency Services Credit by Exam",
+      "assigned": "Principles of Emergency Services",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Principles of Emergency Services Safety and Survival Credit by Exam",
+      "assigned": "Principles of Fire and Emergency Services Safety and Survival",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Psych c1000 - Introduction to Psychology - AP Credit",
+      "assigned": "AP Psychology",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "QuickBooks: Online Software- Credit by Exam",
+      "assigned": "QuickBooks Online",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "REALES 1, Real Estate Principles",
+      "assigned": "Real Estate Principles",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "REALES 3, Real Estate Practice",
+      "assigned": "Real Estate Practice",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "S-110, IS 700, IS 800, P-101, FI 110, ICS 300 Wildland Fire Certifications",
+      "assigned": "NWCG Wildland Fire Certifications (S-110 / IS-700 / IS-800 / P-101 / FI-110 / ICS-300 bundle)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "S-130 and C-219 and S-230 and S-231 and S-270 Wildland Fire Certifications",
+      "assigned": "NWCG Wildland Fire Certifications (S-130/S-230/S-231/S-270)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:35:49.462088+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "SFT CFSTES Courses: Fire Inspector 1B and 1C (or former SFT Fire Marshal curriculum) OR Work Experience",
+      "assigned": "SFT Fire Inspector 1B and 1C",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "SFT Fire Inspector 1C + EXP",
+      "assigned": "SFT Fire Inspector 1C",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "SMOG Inspector and Repair License",
+      "assigned": "California BAR Smog Check Inspector and Repair Technician License",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "SPAN 103 - CBE",
+      "assigned": "Spanish 3",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "ServeSafe Managerial Certification and resume for CUL 003",
+      "assigned": "ServSafe Food Protection Manager Certification",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Social Equity and the Criminal Justice System",
+      "assigned": "Social Equity and the Criminal Justice System",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Spanish I",
+      "assigned": "Spanish I",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Spanish II",
+      "assigned": "Spanish II",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Structural Arch Orn I",
+      "assigned": "Ironworker Structural, Architectural and Ornamental I",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Structural Steel I",
+      "assigned": "Ironworker Structural Steel I",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Transportation Management",
+      "assigned": "Transportation Management",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Transportation Security Administration (HLS-1)",
+      "assigned": "Transportation Security Administration Training (HLS-1)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "U.S. HOMELAND SECURITY IS-200 Basic Incident Command System (ICS)",
+      "assigned": "FEMA IS-200 Basic Incident Command System (ICS)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Violence in America",
+      "assigned": "Violence in America",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "WELD 045 CBE",
+      "assigned": "Welding (WELD 045)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "WST 034 -  Introduction to Water Resource Management - Portfolio Review",
+      "assigned": "Introduction to Water Resource Management",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Water Supply Technology Portfolio Student 1",
+      "assigned": "Generic Portfolio Review — San Bernardino Valley College (Water Supply Technology)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:36:58.12663+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Web Page Development and Publishing",
+      "assigned": "Web Page Development and Publishing",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    }
+  ],
+  "supersede": [
+    {
+      "raw": "AP: History U.S. History",
+      "assigned": "AP U.S. History",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "spellings": [
+        "AP: History U.S. History ",
+        "AP: History U.S. History"
+      ],
+      "disagreeing": [
+        "AP: History U.S. History "
+      ],
+      "displaced": [
+        "AP United States History"
+      ]
+    },
+    {
+      "raw": "AUTO 600 Completion",
+      "assigned": "Introduction to Automotive Technology",
+      "issuer": "California Community College",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:53.902684+00:00",
+      "spellings": [
+        "AUTO 600 Completion "
+      ],
+      "disagreeing": [
+        "AUTO 600 Completion "
+      ],
+      "displaced": [
+        "AUTO 600 — Long Beach City College Auto Course"
+      ]
+    },
+    {
+      "raw": "AUTO 601 Completion",
+      "assigned": "Automotive Lubrication Service",
+      "issuer": "California Community College",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:55.030166+00:00",
+      "spellings": [
+        "AUTO 601 Completion "
+      ],
+      "disagreeing": [
+        "AUTO 601 Completion "
+      ],
+      "displaced": [
+        "AUTO 601 — Long Beach City College Auto Course"
+      ]
+    },
+    {
+      "raw": "AUTO 602 Completion",
+      "assigned": "Automotive Tire Service",
+      "issuer": "California Community College",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:55.831846+00:00",
+      "spellings": [
+        "AUTO 602 Completion "
+      ],
+      "disagreeing": [
+        "AUTO 602 Completion "
+      ],
+      "displaced": [
+        "AUTO 602 — Long Beach City College Auto Course"
+      ]
+    },
+    {
+      "raw": "Automotive",
+      "assigned": "Introduction to Automotive Technology",
+      "issuer": "California Community College",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:56.388865+00:00",
+      "spellings": [
+        "Automotive "
+      ],
+      "disagreeing": [
+        "Automotive "
+      ],
+      "displaced": [
+        "Automotive (Generic)"
+      ]
+    },
+    {
+      "raw": "CUL ART 041",
+      "assigned": "Culinary Arts (CUL ART 041)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "spellings": [
+        "CUL ART 041 ",
+        "CUL ART 041"
+      ],
+      "disagreeing": [
+        "CUL ART 041 "
+      ],
+      "displaced": [
+        "Generic Credit by Exam — San Bernardino Valley College Culinary"
+      ]
+    },
+    {
+      "raw": "CULART 250 CBE",
+      "assigned": "Culinary Arts (CULART 250)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "spellings": [
+        "CULART 250 CBE ",
+        "CULART 250 CBE"
+      ],
+      "disagreeing": [
+        "CULART 250 CBE "
+      ],
+      "displaced": [
+        "Generic Credit by Exam — San Bernardino Valley College Culinary"
+      ]
+    },
+    {
+      "raw": "Cinema 24- Credit by Exam",
+      "assigned": "Cinema 24",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "spellings": [
+        "Cinema 24- Credit by Exam ",
+        "Cinema 24- Credit by Exam"
+      ],
+      "disagreeing": [
+        "Cinema 24- Credit by Exam "
+      ],
+      "displaced": [
+        "Cinema 24 — Credit by Exam (CCSF)"
+      ]
+    },
+    {
+      "raw": "Firefighter 1A Certification",
+      "assigned": "Firefighter 1A",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T19:32:01.902138+00:00",
+      "spellings": [
+        "Firefighter 1A Certification ",
+        "Firefighter 1A Certification"
+      ],
+      "disagreeing": [
+        "Firefighter 1A Certification "
+      ],
+      "displaced": [
+        "Firefighter 1"
+      ]
+    },
+    {
+      "raw": "Inspection Portfolio Spring 2026 #1",
+      "assigned": "Construction Inspection",
+      "issuer": "International Code Council",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:56.821738+00:00",
+      "spellings": [
+        "Inspection Portfolio Spring 2026 #1"
+      ],
+      "disagreeing": [
+        "Inspection Portfolio Spring 2026 #1"
+      ],
+      "displaced": [
+        "Generic Portfolio Review — San Bernardino Valley College (Inspection)"
+      ]
+    },
+    {
+      "raw": "Math 095 CBE",
+      "assigned": "Mathematics (MATH 095)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "spellings": [
+        "Math 095 CBE ",
+        "Math 095 CBE"
+      ],
+      "disagreeing": [
+        "Math 095 CBE "
+      ],
+      "displaced": [
+        "Generic Credit by Exam — San Bernardino Valley College (MATH 095)"
+      ]
+    }
+  ],
+  "stale": [
+    {
+      "raw": "AP English Language Composition",
+      "assigned": "AP English Language & Composition",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "KB holds a newer curator decision: 'AP English Language Composition' -> 'AP English Language and Composition' (2026-06-04)"
+    },
+    {
+      "raw": "AP: Comparative Government & Politics",
+      "assigned": "AP Comparative Government & Politics",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "KB holds a newer curator decision: 'AP: Comparative Government & Politics' -> 'AP Comparative Government and Politics' (2026-06-04)"
+    },
+    {
+      "raw": "AP: English Language & Composition",
+      "assigned": "AP English Language & Composition",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "KB holds a newer curator decision: 'AP: English Language & Composition' -> 'AP English Language and Composition' (2026-06-04)"
+    },
+    {
+      "raw": "AP: German Language & Culture",
+      "assigned": "AP German Language & Culture",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "KB holds a newer curator decision: 'AP: German Language & Culture' -> 'AP German Language and Culture' (2026-06-04)"
+    },
+    {
+      "raw": "FTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship",
+      "assigned": "Fire Service In-Service Training: Command and Control",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:33:50.363171+00:00",
+      "why": "KB holds a newer curator decision: '\\tFTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship' -> 'Fire Service In-Service Training — Command & Control' (2026-06-04); 'FTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship' -> 'Fire Service In-Service Training — Command & Control' (2026-06-04)"
+    }
+  ],
+  "conflict": [],
+  "credential_adds": [
+    {
+      "raw": "AUTO 601 Completion",
+      "assigned": "Automotive Lubrication Service",
+      "issuer": "California Community College",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:55.030166+00:00",
+      "spellings": [
+        "AUTO 601 Completion "
+      ],
+      "disagreeing": [
+        "AUTO 601 Completion "
+      ],
+      "displaced": [
+        "AUTO 601 — Long Beach City College Auto Course"
+      ]
+    },
+    {
+      "raw": "AUTO 602 Completion",
+      "assigned": "Automotive Tire Service",
+      "issuer": "California Community College",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:55.831846+00:00",
+      "spellings": [
+        "AUTO 602 Completion "
+      ],
+      "disagreeing": [
+        "AUTO 602 Completion "
+      ],
+      "displaced": [
+        "AUTO 602 — Long Beach City College Auto Course"
+      ]
+    },
+    {
+      "raw": "Inspection Portfolio Spring 2026 #1",
+      "assigned": "Construction Inspection",
+      "issuer": "International Code Council",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:56.821738+00:00",
+      "spellings": [
+        "Inspection Portfolio Spring 2026 #1"
+      ],
+      "disagreeing": [
+        "Inspection Portfolio Spring 2026 #1"
+      ],
+      "displaced": [
+        "Generic Portfolio Review — San Bernardino Valley College (Inspection)"
+      ]
+    }
+  ],
+  "credential_issuer_fills": [
+    {
+      "title": "Introduction to Automotive Technology",
+      "issuer": "California Community College",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:53.902684+00:00"
+    }
+  ],
+  "credential_prunes": [
+    "AUTO 600 — Long Beach City College Auto Course",
+    "AUTO 601 — Long Beach City College Auto Course",
+    "AUTO 602 — Long Beach City College Auto Course",
+    "Automotive (Generic)",
+    "Cinema 24 — Credit by Exam (CCSF)",
+    "Generic Credit by Exam — San Bernardino Valley College (MATH 095)",
+    "Generic Portfolio Review — San Bernardino Valley College (Inspection)"
+  ],
+  "articulation_ripples": [
+    {
+      "idx": 717,
+      "raw": "Automotive",
+      "has": "Automotive (Generic)",
+      "want": "Introduction to Automotive Technology"
+    },
+    {
+      "idx": 760,
+      "raw": "AUTO 601 Completion",
+      "has": "AUTO 601 — Long Beach City College Auto Course",
+      "want": "Automotive Lubrication Service"
+    },
+    {
+      "idx": 762,
+      "raw": "Automotive",
+      "has": "Automotive (Generic)",
+      "want": "Introduction to Automotive Technology"
+    },
+    {
+      "idx": 776,
+      "raw": "AUTO 602 Completion",
+      "has": "AUTO 602 — Long Beach City College Auto Course",
+      "want": "Automotive Tire Service"
+    },
+    {
+      "idx": 811,
+      "raw": "Automotive",
+      "has": "Automotive (Generic)",
+      "want": "Introduction to Automotive Technology"
+    },
+    {
+      "idx": 826,
+      "raw": "Automotive",
+      "has": "Automotive (Generic)",
+      "want": "Introduction to Automotive Technology"
+    },
+    {
+      "idx": 928,
+      "raw": "AUTO 600 Completion",
+      "has": "AUTO 600 — Long Beach City College Auto Course",
+      "want": "Introduction to Automotive Technology"
+    },
+    {
+      "idx": 958,
+      "raw": "Automotive",
+      "has": "Automotive (Generic)",
+      "want": "Introduction to Automotive Technology"
+    }
+  ],
+  "articulation_ripples_resolved": [
+    {
+      "idx": 717,
+      "raw": "Automotive",
+      "has": "Automotive (Generic)",
+      "want": "Introduction to Automotive Technology"
+    },
+    {
+      "idx": 760,
+      "raw": "AUTO 601 Completion",
+      "has": "AUTO 601 — Long Beach City College Auto Course",
+      "want": "Automotive Lubrication Service"
+    },
+    {
+      "idx": 762,
+      "raw": "Automotive",
+      "has": "Automotive (Generic)",
+      "want": "Introduction to Automotive Technology"
+    },
+    {
+      "idx": 776,
+      "raw": "AUTO 602 Completion",
+      "has": "AUTO 602 — Long Beach City College Auto Course",
+      "want": "Automotive Tire Service"
+    },
+    {
+      "idx": 811,
+      "raw": "Automotive",
+      "has": "Automotive (Generic)",
+      "want": "Introduction to Automotive Technology"
+    },
+    {
+      "idx": 826,
+      "raw": "Automotive",
+      "has": "Automotive (Generic)",
+      "want": "Introduction to Automotive Technology"
+    },
+    {
+      "idx": 928,
+      "raw": "AUTO 600 Completion",
+      "has": "AUTO 600 — Long Beach City College Auto Course",
+      "want": "Introduction to Automotive Technology"
+    },
+    {
+      "idx": 958,
+      "raw": "Automotive",
+      "has": "Automotive (Generic)",
+      "want": "Introduction to Automotive Technology"
+    }
+  ],
+  "articulation_ripples_blocking": []
+}

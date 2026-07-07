@@ -2395,21 +2395,9 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > [`docs/ccr_convergence_handoff.md`](docs/ccr_convergence_handoff.md); full story
 > `docs/ccr_convergence_lessons.md`.
 
-### Session 97 — BigSky: the Activities tab optimization + reports consolidation (2026-07-03)
-
-Sam's laundry list, one PR: the **Custom Report** gains a staged **progress bar**, **per-audience
-document titles**, the **Elevation slider** (0→30,000 ft detail control feeding an Altitude prompt
-block), and absorbs the **Master Report** as a Report-Type option (filter-bar button retired). The
-**slim actions bar** (Lead + Search + Element Map + Custom Report) moved to the TOP of the Activities
-pane — the Activity/Vision/Goal/Status selects, Apply/Reset, and the bar-level Attach Doc were
-retired (the generator's `<!-- Filter Bar -->` comment stays put as the injection anchor; the Lead
-dropdown is now rebuilt every run — it had been frozen since first populate). **Sidebar grouped**
-into 5 collapsible groups + Share (`nav_groups.js`, runtime-wrap, regen-proof) with the label renamed
-**Activities**; Where To now resets after each use; **MAP naming locked** (see Naming & terminology
-above) across prompts, footers, the KB repo (draft PR), and a `sierra_guidance` row; report models
-de-pinned to the `claude-sonnet-4-5` alias. Team-phrase expansion plan authored:
-[`docs/team_phrase_expansion_plan.md`](docs/team_phrase_expansion_plan.md) (recommendation: widen
-most, keep 4 reviewer-only). Suite 132 files green (+3 new). Full story: `docs/cobi_lessons.md` (S97).
+> **Session 97 narrative (BigSky — Activities tab optimization + reports consolidation,
+> the Elevation slider + Master-Report absorb + nav groups) archived** →
+> [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full story: `docs/cobi_lessons.md` (S97).
 
 ### Session 98 — the Implementation Funding rework: Chancellor-facing scenario tool (2026-07-03)
 
@@ -2425,6 +2413,22 @@ anymore") — `cpl_funding_data.js` is now the hand-maintained snapshot; **2025-
 SYSTEM 2,258,784). Suite 134 green (funding test 119 assertions). Full story:
 `docs/cpl_funding_lessons.md` (Session 2); KB note
 `docs/kb-notes/methodology-three-layer-scenario-config.md`.
+
+### Session 100 — SkyVault: the CER triage loop unstuck end-to-end (2026-07-07)
+
+Sam's "the tab stopped working" after saving 5 triage assignments = **CER never refreshed the
+magic-link token before writes** (the pre-Session-77 raci.js bug; adversarially CONFIRMED via a
+4-lane workflow + jsdom repro) — ported the trio as `withFreshSession()` + single-flight refresh +
+401 session-drop (`tests/cer_token_refresh.test.js`, 18). The deeper stall: the fold (PR-3) ran in
+NO workflow, the exhibit audit was frozen at 2026-05-24, and all 5 raws sat under stale machine
+drafts on **trailing-space twin spellings**. `kb/_fold_unclassified.py` gained SUPERSEDE (curator >
+unreviewed machine, twins included, articulations re-pointed) + STALE lanes + `--apply-if-safe`;
+applied: 11 supersedes, 8 art rows re-pointed, 7 orphan creds pruned, queue → 0 (receipts
+`kb/unclassified_fold/2026-07-07/`). Cron now runs fold + `kb/_audit_exhibits.py` daily; Pages
+asserts the 4 CER paths; skill Rule 5c = Sam's Cx/portfolio naming procedure (issuer **California
+Community Colleges**). Authority-anchoring strategy (CareerOneStop/O*NET/CE):
+`docs/kb-notes/reference-authority-anchored-credential-naming.md`. Full story:
+`docs/exhibit_canonicalization_lessons.md` (2026-07-07).
 
 ---
 

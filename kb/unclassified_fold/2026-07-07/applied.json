@@ -1,0 +1,257 @@
+{
+  "folded": [],
+  "superseded": [
+    {
+      "raw": "AP: History U.S. History",
+      "assigned": "AP U.S. History",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "spellings": [
+        "AP: History U.S. History ",
+        "AP: History U.S. History"
+      ],
+      "disagreeing": [
+        "AP: History U.S. History "
+      ],
+      "displaced": [
+        "AP United States History"
+      ]
+    },
+    {
+      "raw": "AUTO 600 Completion",
+      "assigned": "Introduction to Automotive Technology",
+      "issuer": "California Community College",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:53.902684+00:00",
+      "spellings": [
+        "AUTO 600 Completion "
+      ],
+      "disagreeing": [
+        "AUTO 600 Completion "
+      ],
+      "displaced": [
+        "AUTO 600 — Long Beach City College Auto Course"
+      ]
+    },
+    {
+      "raw": "AUTO 601 Completion",
+      "assigned": "Automotive Lubrication Service",
+      "issuer": "California Community College",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:55.030166+00:00",
+      "spellings": [
+        "AUTO 601 Completion "
+      ],
+      "disagreeing": [
+        "AUTO 601 Completion "
+      ],
+      "displaced": [
+        "AUTO 601 — Long Beach City College Auto Course"
+      ]
+    },
+    {
+      "raw": "AUTO 602 Completion",
+      "assigned": "Automotive Tire Service",
+      "issuer": "California Community College",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:55.831846+00:00",
+      "spellings": [
+        "AUTO 602 Completion "
+      ],
+      "disagreeing": [
+        "AUTO 602 Completion "
+      ],
+      "displaced": [
+        "AUTO 602 — Long Beach City College Auto Course"
+      ]
+    },
+    {
+      "raw": "Automotive",
+      "assigned": "Introduction to Automotive Technology",
+      "issuer": "California Community College",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:56.388865+00:00",
+      "spellings": [
+        "Automotive "
+      ],
+      "disagreeing": [
+        "Automotive "
+      ],
+      "displaced": [
+        "Automotive (Generic)"
+      ]
+    },
+    {
+      "raw": "CUL ART 041",
+      "assigned": "Culinary Arts (CUL ART 041)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "spellings": [
+        "CUL ART 041 ",
+        "CUL ART 041"
+      ],
+      "disagreeing": [
+        "CUL ART 041 "
+      ],
+      "displaced": [
+        "Generic Credit by Exam — San Bernardino Valley College Culinary"
+      ]
+    },
+    {
+      "raw": "CULART 250 CBE",
+      "assigned": "Culinary Arts (CULART 250)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "spellings": [
+        "CULART 250 CBE ",
+        "CULART 250 CBE"
+      ],
+      "disagreeing": [
+        "CULART 250 CBE "
+      ],
+      "displaced": [
+        "Generic Credit by Exam — San Bernardino Valley College Culinary"
+      ]
+    },
+    {
+      "raw": "Cinema 24- Credit by Exam",
+      "assigned": "Cinema 24",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "spellings": [
+        "Cinema 24- Credit by Exam ",
+        "Cinema 24- Credit by Exam"
+      ],
+      "disagreeing": [
+        "Cinema 24- Credit by Exam "
+      ],
+      "displaced": [
+        "Cinema 24 — Credit by Exam (CCSF)"
+      ]
+    },
+    {
+      "raw": "Firefighter 1A Certification",
+      "assigned": "Firefighter 1A",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T19:32:01.902138+00:00",
+      "spellings": [
+        "Firefighter 1A Certification ",
+        "Firefighter 1A Certification"
+      ],
+      "disagreeing": [
+        "Firefighter 1A Certification "
+      ],
+      "displaced": [
+        "Firefighter 1"
+      ]
+    },
+    {
+      "raw": "Inspection Portfolio Spring 2026 #1",
+      "assigned": "Construction Inspection",
+      "issuer": "International Code Council",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:56.821738+00:00",
+      "spellings": [
+        "Inspection Portfolio Spring 2026 #1"
+      ],
+      "disagreeing": [
+        "Inspection Portfolio Spring 2026 #1"
+      ],
+      "displaced": [
+        "Generic Portfolio Review — San Bernardino Valley College (Inspection)"
+      ]
+    },
+    {
+      "raw": "Math 095 CBE",
+      "assigned": "Mathematics (MATH 095)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "spellings": [
+        "Math 095 CBE ",
+        "Math 095 CBE"
+      ],
+      "disagreeing": [
+        "Math 095 CBE "
+      ],
+      "displaced": [
+        "Generic Credit by Exam — San Bernardino Valley College (MATH 095)"
+      ]
+    }
+  ],
+  "credential_added": [
+    {
+      "raw": "AUTO 601 Completion",
+      "assigned": "Automotive Lubrication Service",
+      "issuer": "California Community College",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:55.030166+00:00",
+      "spellings": [
+        "AUTO 601 Completion "
+      ],
+      "disagreeing": [
+        "AUTO 601 Completion "
+      ],
+      "displaced": [
+        "AUTO 601 — Long Beach City College Auto Course"
+      ]
+    },
+    {
+      "raw": "AUTO 602 Completion",
+      "assigned": "Automotive Tire Service",
+      "issuer": "California Community College",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:55.831846+00:00",
+      "spellings": [
+        "AUTO 602 Completion "
+      ],
+      "disagreeing": [
+        "AUTO 602 Completion "
+      ],
+      "displaced": [
+        "AUTO 602 — Long Beach City College Auto Course"
+      ]
+    },
+    {
+      "raw": "Inspection Portfolio Spring 2026 #1",
+      "assigned": "Construction Inspection",
+      "issuer": "International Code Council",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:56.821738+00:00",
+      "spellings": [
+        "Inspection Portfolio Spring 2026 #1"
+      ],
+      "disagreeing": [
+        "Inspection Portfolio Spring 2026 #1"
+      ],
+      "displaced": [
+        "Generic Portfolio Review — San Bernardino Valley College (Inspection)"
+      ]
+    }
+  ],
+  "credential_issuer_fills": [
+    {
+      "title": "Introduction to Automotive Technology",
+      "issuer": "California Community College",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T14:05:53.902684+00:00"
+    }
+  ],
+  "credential_pruned": [
+    "AUTO 600 — Long Beach City College Auto Course",
+    "AUTO 601 — Long Beach City College Auto Course",
+    "AUTO 602 — Long Beach City College Auto Course",
+    "Automotive (Generic)",
+    "Cinema 24 — Credit by Exam (CCSF)",
+    "Generic Credit by Exam — San Bernardino Valley College (MATH 095)",
+    "Generic Portfolio Review — San Bernardino Valley College (Inspection)"
+  ],
+  "articulations_repointed": 8,
+  "audit_pruned": 5,
+  "unified_titles_count": 3415
+}

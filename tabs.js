@@ -284,15 +284,24 @@
     if (globalName && window[globalName]) { cb(); return; }
     var existing = document.querySelector('script[data-lazy-src="' + src + '"]');
     if (existing) {
-      if (existing.getAttribute('data-lazy-loaded') === '1') cb();
-      else existing.addEventListener('load', function () { cb(); });
-      return;
+      var st = existing.getAttribute('data-lazy-loaded');
+      if (st === '1') { cb(); return; }
+      if (st === 'error') {
+        // The first injection failed — a tag stuck in this state used to
+        // swallow every later loadScript call for the same src (the 'load'
+        // event on a failed script never fires). Drop it and re-inject.
+        existing.parentNode.removeChild(existing);
+      } else {
+        existing.addEventListener('load', function () { cb(); });
+        existing.addEventListener('error', function () { cb(); });
+        return;
+      }
     }
     var s = document.createElement('script');
     s.src = src;
     s.setAttribute('data-lazy-src', src);
     s.onload = function () { s.setAttribute('data-lazy-loaded', '1'); cb(); };
-    s.onerror = function () { cb(); };
+    s.onerror = function () { s.setAttribute('data-lazy-loaded', 'error'); cb(); };
     document.head.appendChild(s);
   }
 
