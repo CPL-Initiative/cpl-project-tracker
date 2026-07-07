@@ -140,7 +140,57 @@ multi-level ("Levels 1 and 2 — Complete both") rows are reported for the
 curator instead of seeded. First run (2026-07-07): 158 of 163 AP/CLEP queue
 rows seeded, 36% of the 451-row backlog. When adding a brand, extend the
 `FAMILIES` table + `ALIASES`, then run `kb/_verify_preseed_rules.py`
-(43 checks) before applying.
+(73 checks) before applying.
+
+### Rule 5e — STAGED pre-seed lanes: ready to save, NOT saved (2026-07-07)
+
+Lanes that must PROPOSE a title (rather than retarget to an existing family)
+never write to Supabase. `kb/_preseed_unclassified.py --stage` emits the
+committed **`kb/unclassified_preseed.json`**; the CER triage worklist PREFILLS
+each staged row's title/issuer inputs with an ⚡ badge (lane + confidence +
+note in the tooltip), and the curator clicks Save per row — or reviews and
+uses the bulk "💾 Save all pre-filled shown" button (confirm-gated; saves
+exactly what the inputs show). Sam: "For pre-seeded items, leave them ready to
+save but not yet saved." Lanes (Session 103):
+
+- **cx** — Credit-by-Exam / Portfolio rows: mechanism phrase + leading course
+  code stripped per Rule 5c, issuer `California Community Colleges`;
+  existing-family key match preferred over the stripped content.
+- **hs** — course-code-led high-school/ROP articulation rows: code + school
+  names + IS-codes + section/Honors riders stripped; same-code variants
+  CONVERGE on one title (existing family outranks the modal pick; converged
+  rows are capped at 0.65 confidence for review); issuer CCC.
+- **journeyman / carpenters / ironworker / nccer** — apprenticeship + NCCER
+  rows named from the authority sources below.
+- **JUDGMENT_SINGLES** — authored one-offs, each with its reasoning receipted
+  in the note.
+
+A row with a live assignment is never prefilled (a curator pick always wins),
+and rows no lane covers honestly stay in the file's `_residual` list for
+hand-triage. Regenerate after queue/family changes; live-assigned raws can be
+excluded via `--assigned-md5 <file>` (md5(raw) hashes — fetch them via the
+Supabase MCP when the sandbox can't reach Supabase directly).
+
+### Authority sources for exhibit + agency names
+
+Consult these when a row has NO house family yet (full link card:
+`docs/kb-notes/reference-issuing-agency-authority-sources.md`). All but COS
+403-block the agent sandbox — verify via a browser or a runner:
+
+- **CA DIR Division of Apprenticeship Standards (DAS)** — registered
+  apprenticeship program sponsors (the issuer for apprenticeship exhibits):
+  https://www.dir.ca.gov/databases/das/aigstart.asp — per-occupation detail at
+  `results_aigdetail.asp?varOccId=<id>` (Carpenter = **2180**, Sam's source
+  for `Southwest Carpenter And Affiliated Trade J.A.T.C.`; the Northern-CA
+  counterpart is `Carpenters Training Committee for Northern California
+  (CTCNC)`).
+- **NCCER assessments / craft catalog** — keep NCCER's naming verbatim,
+  issuer `NCCER`: https://www.nccer.org/assessments/
+- **CSLB license classifications** (the future C-## contractor-license lane):
+  https://www.cslb.ca.gov/About_Us/Library/Licensing_Classifications/
+- **CareerOneStop** — already synced live (the Session-101 COS authority).
+- **COCI course list** (`kb/reference/coci_course_list.xlsx`) — the Rule 5c
+  course-content title source for Cx/portfolio/HS-articulation exhibits.
 
 ### Rule 6 — Issuing agency uses the longer recognizable canonical name
 
