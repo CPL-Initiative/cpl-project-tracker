@@ -13,15 +13,19 @@ name: Deploy Pages (lean)
 #
 # Triggers (all three are load-bearing):
 #   • push to main      — human merges / PR merges (they use a real token → DO fire)
-#   • workflow_run       — the daily cron pushes with GITHUB_TOKEN, which by design
-#                          does NOT fire push workflows; so we also redeploy when
-#                          "Daily CPL Dashboard" completes.
+#   • workflow_run       — runner workflows push with GITHUB_TOKEN, which by design
+#                          does NOT fire push workflows; so we also redeploy when a
+#                          main-committing workflow completes ("Daily CPL Dashboard",
+#                          and since 2026-07-07 "cos-authority-sync" — its monthly
+#                          cron commits kb/cos_matches.json, the CER's COS-badge
+#                          overlay, which otherwise sat unserved until the next
+#                          daily deploy).
 #   • workflow_dispatch  — manual.
 on:
   push:
     branches: [main]
   workflow_run:
-    workflows: ["Daily CPL Dashboard"]
+    workflows: ["Daily CPL Dashboard", "cos-authority-sync"]
     types: [completed]
   workflow_dispatch:
 
@@ -68,6 +72,10 @@ jobs:
                  _site/kb/common_courses.json _site/kb/course_crosswalk.json \
                  _site/kb/discipline_inference.json
           rm -f  _site/kb/reference/*.xlsx
+          # COS Certification Finder registry — tracker-internal per the
+          # CareerOneStop terms (kb/_sync_cos_certifications.py header); the
+          # browser fetches only the derived kb/cos_matches.json overlay.
+          rm -f  _site/kb/reference/cos_certifications.json
           # Audit provenance — only the slim latest.json summaries are served.
           rm -f  _site/kb/row_audit/*.md _site/kb/row_audit/*.full.json _site/kb/exhibit_audit/*.md
           # Re-mint / fold / dry-run / apply output dirs (alias maps, collisions) — never served.
@@ -112,6 +120,7 @@ jobs:
             "_site/kb/exhibit_audit/latest.json"
             "_site/kb/unified_titles.json"
             "_site/kb/credentials.json"
+            "_site/kb/cos_matches.json"
           )
           missing=0
           for p in "${must[@]}"; do
