@@ -60,14 +60,34 @@ content per the skill's Rule 5c, issuer `California Community Colleges`; no exte
 registry will ever carry "Automotive Lubrication Service (MATH 095)"-class entries,
 and that's fine: the two vocabularies partition cleanly along the CPL Type axis.
 
+## Status (2026-07-07, Session 100 continued)
+
+**Sam's call: BUILD CareerOneStop now; Credential Engine comes afterward** — the
+MAP↔CE partnership will code all MAP CPL data with CTDL tags, and those tags will
+then canonicalize against CE's exhibit titles + issuing agencies (the
+`cos_cert_id` anchors minted by this lane become join keys at that point). Built:
+
+- `kb/_sync_cos_certifications.py` + `.github/workflows/cos-authority-sync.yml`
+  (runner-as-proxy; dispatch `mode=probe` first, read the log, then `mode=apply`;
+  monthly cron keeps it fresh; API-lane secrets `COS_USER_ID`/`COS_API_TOKEN`
+  optional — the bulk flat file needs no account if the probe confirms it).
+- `kb/_match_cos_authority.py` — the join ladder (exact → acronym → token-subset
+  contains with a LEVEL GUARD (Firefighter I ≠ II) and a `+`-folding normalizer
+  (CompTIA A+ ≠ Network+) → org-constrained fuzzy); writes `kb/cos_matches.json`
+  (derived overlay) + receipts `kb/cos_match_out/<date>/`; `--apply-issuers`
+  (fills null issuers on unreviewed records, T1/T2 only, V-gated) stays a
+  deliberate manual step.
+- CER renders `✓ COS` / `≈ COS` chips + the REQUIRED USDOL ETA / MN DEED
+  attribution (chip tooltip + summary line). `tests/cer_cos_badge.test.js`.
+
 ## Decisions Sam owns
 
 1. Register (or surface an existing) CareerOneStop Web API account — under RCCD or
    CCCCO? (36-month license renewal lives with that owner.)
-2. Does the MAP Initiative already hold a Credential Engine org account per CE's
-   California partnership page? Who owns it?
-3. OK to render the required "Source: CareerOneStop, sponsored by USDOL ETA /
-   MN DEED" attribution on the CER (and any public page showing COS-derived names)?
+2. ~~Credential Engine account~~ — ANSWERED 2026-07-07: partnership confirmed; CE/CTDL
+   integration sequenced AFTER this lane (CTDL tags will code all MAP CPL data).
+3. ~~Attribution~~ — implemented (required by the COS terms): chip tooltips + the
+   CER summary line carry it wherever COS-derived data renders.
 4. Synced authority files stay tracker-internal `kb/reference/` (recommended under
    the DEED click license) vs. asking COS about inclusion in the CC-BY public KB.
 5. Priority: certifications first vs CA licenses first vs both; where the military

@@ -2,7 +2,7 @@
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
  "_as_of": "2026-07-07 · Session 100 (CER triage loop unstuck)",
  "_session": 100,
- "_status": "CER IS BACK IN ACTION. The 'tab stopped working' after your 5 triage saves was a sign-in token that silently expired after ~1 hour — every save then failed into a dead 'retry'. Fixed: the tab now renews the token before every save, and if a session truly dies you get the sign-in box back instead of silence. Your 5 assignments (plus 6 old stragglers hiding under trailing-space twin spellings) are FOLDED into the credential layer — Introduction to Automotive Technology, Automotive Lubrication Service, Automotive Tire Service, and Construction Inspection are live credential identities, the garbage machine names are gone, and the triage queue reads 0. From now on the daily refresh folds clean assignments automatically and re-runs the exhibit audit, so triage → credential is a same-day loop. Issuing agency for credit-by-exam/portfolio is standardized to 'California Community Colleges' per your call (Rule 5c in the skill). NEW DECISIONS FOR YOU on the CareerOneStop/O*NET authority-naming strategy — see the to-dos.",
+ "_status": "CER IS BACK IN ACTION. The 'tab stopped working' after your 5 triage saves was a sign-in token that silently expired after ~1 hour — every save then failed into a dead 'retry'. Fixed: the tab now renews the token before every save, and if a session truly dies you get the sign-in box back instead of silence. Your 5 assignments (plus 6 old stragglers hiding under trailing-space twin spellings) are FOLDED into the credential layer — Introduction to Automotive Technology, Automotive Lubrication Service, Automotive Tire Service, and Construction Inspection are live credential identities, the garbage machine names are gone, and the triage queue reads 0. From now on the daily refresh folds clean assignments automatically and re-runs the exhibit audit, so triage → credential is a same-day loop. Issuing agency for credit-by-exam/portfolio is standardized to 'California Community Colleges' per your call (Rule 5c in the skill). NEW DECISIONS FOR YOU on the CareerOneStop/O*NET authority-naming strategy — see the to-dos. UPDATE: the CareerOneStop authority lane is built and awaiting its first probe run — see the updated to-dos.",
  "items": [
   {
    "id": "cer-verify-fix",
@@ -14,13 +14,13 @@
    "id": "cos-authority-decisions",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "AUTHORITY NAMING (your CareerOneStop idea — verdict: yes, strong fit): 3 decisions unlock the build — ① register (or dig up) a free CareerOneStop Web API account (RCCD or CCCCO name?), ② confirm whether the MAP Initiative already has the Credential Engine account their California partnership page describes, ③ OK to show the required 'Source: CareerOneStop / USDOL' attribution line on the CER. Full plan: docs/kb-notes/reference-authority-anchored-credential-naming.md."
+   "text": "AUTHORITY NAMING — the CareerOneStop lane is BUILT (your call; Credential Engine/CTDL follows after). Two things left for you: ① if the probe shows the bulk download needs an account, register a free CareerOneStop Web API key (decide RCCD vs CCCCO as owner) and add repo secrets COS_USER_ID + COS_API_TOKEN; ② tell Fable your priority for the CA License Finder slice (state licenses like Cosmetology/SMOG) and the military COOL/MOS crosswalk lane. Attribution is already handled in the UI as the terms require."
   },
   {
    "id": "cer-cx-batch-rule",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "Build the CareerOneStop bulk-sync + match-and-badge lane once Sam supplies the API account (runner-as-proxy workflow; probe the bulk-download URL first). Also wire Rule 5c batch-Cx umbrella naming into the next triage batch."
+   "text": "COS lane shipped: dispatch cos-authority-sync (mode=probe) → read the run log → finalize the bulk-file header map if needed → dispatch mode=apply → the CER lights up ✓/≈ COS badges automatically. Then triage the 481 newly-surfaced unclassified titles with Rule 5c + the authority vocabulary."
   },
   {
    "id": "funding-headcounts-41",

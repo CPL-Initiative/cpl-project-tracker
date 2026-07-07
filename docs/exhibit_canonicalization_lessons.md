@@ -1504,3 +1504,18 @@ the 4 singular records from today's saves were normalized in KB + Supabase).
   on Sam (COS API account, CE partnership status, attribution placement).
 - Carryover stands: CPL-type-duplicate detector, 3 audience views, the ~50
   NEW-credential long tail.
+
+### 2026-07-07 (continued) — the CareerOneStop authority lane BUILT
+Sam: "Build the CareerOneStop and we'll factor in our Credential Engine
+integration afterward" (the MAP↔CE partnership will CTDL-tag all MAP CPL data;
+those tags canonicalize against CE later — the `cos_cert_id` anchors minted now
+become the join keys). Shipped: `kb/_sync_cos_certifications.py` +
+`cos-authority-sync.yml` (runner-as-proxy, probe-first, monthly cron),
+`kb/_match_cos_authority.py` (join ladder with the fixture-caught precision
+guards: token-subset containment NOT substring — 'firefighter i' is a substring
+of 'firefighter ii'; a LEVEL GUARD; `+`→`plus` folding so CompTIA A+ never
+degenerates to the stopword 'a'; ≥2-token containment floor), the CER ✓/≈ COS
+chips + required USDOL/DEED attribution, `tests/cer_cos_badge.test.js` (11).
+Also: today's fresh audit surfaced **481 new unclassified titles** the frozen
+snapshot had hidden — the authority vocabulary is what makes that backlog
+tractable. Next: probe run → header-map confirm → apply → triage with Rule 5c.
