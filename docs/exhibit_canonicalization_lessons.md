@@ -1581,3 +1581,38 @@ re-pointed, 9 AP art families → 4 (incl. AP Art History), credentials 1,969 �
 lane choice after = military COOL/MOC crosswalk (recommended — the COS
 registry already carries ASE MIL1–8 as join points) vs CA License Finder;
 `--apply-issuers` dry-run (2 fills) still a deliberate manual step.
+
+### 2026-07-07 (continued 4) — the COOL/MOC crosswalk lane: registry LIVE, bridge proven
+
+Sam: "Let's wire in the COOL/MOC crosswalk too." **Measure-first finding that
+set the design:** the CER's military exhibit layer is tiny (25 raws / 16
+JST-course families, ZERO occupation codes) — so the lane is the **veteran
+PATHWAY bridge**, not an exhibit matcher: MOC → O*NET-SOC → certifications →
+CER `cos_cert_id` anchors → colleges with articulations.
+
+Built as `kb/_sync_moc_crosswalk.py` + `moc-crosswalk-sync.yml` (the COS
+architecture verbatim; same secrets; monthly cron day-5). **Three probe
+rounds pinned the contract** (#679/#680/#681): ① the O*NET crosswalks page
+auto-yields `dl_files/2019/military_crosswalk.zip` → `milx0724` (40,077
+change-history rows); ② O*NET-SOC codes ride in NUMBERED columns `ONET1..4`
+(+ legacy `SOC1..4`), `-` is the null sentinel — a single-column HEADER_MAP
+can't see them (and probe prints must NEVER truncate: round 1's 8-column
+header print hid exactly the column that mattered); ③ the four guessed
+CareerOneStop MOC endpoints don't exist (404), but **the cert finder takes a
+dotted O*NET code as its KEYWORD** — `49-3023.00` → 75 certs, first hit an
+auto-tech certification. **Bridge proven end-to-end.** Apply committed
+`kb/reference/moc_crosswalk.json`: **33,874 MOC records, 17,916 (52%) with
+O*NET mappings**; spot: Army 68W Combat Medic → 29-2043.00 (Paramedics) ✓.
+Registry tracker-internal (pages.yml prune, the COS precedent).
+
+**Caveat for the bridge phase:** MOC codes are REUSED across eras (Army 91B =
+"Medical Specialist" historically, vehicle mechanic today) and the v1
+aggregation unions all eras' SOCs per (branch, code). Refine with the
+STATUS/SDATE/EDATE fields (+ the archive's Read Me.pdf branch-letter
+vocabulary — 20 SVC codes, not 5) when building `moc_cos_bridge.json`.
+
+**Next concrete step:** the bridge artifact — batch the ~distinct ONET codes
+through the cert-finder keyword leg on a runner (one-shot), join returned
+cert Ids to the COS registry, emit `kb/moc_cos_bridge.json`
+(MOC → [cos_cert_id]) → wire the consumer (Sierra's veteran turn / a CER
+military-pathway chip).

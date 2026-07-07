@@ -75,7 +75,9 @@ jobs:
           # COS Certification Finder registry — tracker-internal per the
           # CareerOneStop terms (kb/_sync_cos_certifications.py header); the
           # browser fetches only the derived kb/cos_matches.json overlay.
-          rm -f  _site/kb/reference/cos_certifications.json
+          # Same for the MOC crosswalk registry (~9MB, no browser consumer yet).
+          rm -f  _site/kb/reference/cos_certifications.json \
+                 _site/kb/reference/moc_crosswalk.json
           # Audit provenance — only the slim latest.json summaries are served.
           rm -f  _site/kb/row_audit/*.md _site/kb/row_audit/*.full.json _site/kb/exhibit_audit/*.md
           # Re-mint / fold / dry-run / apply output dirs (alias maps, collisions) — never served.
