@@ -2258,3 +2258,16 @@ asserts the 4 CER paths; skill Rule 5c = Sam's Cx/portfolio naming procedure (is
 Community Colleges**). Authority-anchoring strategy (CareerOneStop/O*NET/CE):
 `docs/kb-notes/reference-authority-anchored-credential-naming.md`. Full story:
 `docs/exhibit_canonicalization_lessons.md` (2026-07-07).
+
+### Session 101 — SkyAnchor: CareerOneStop authority LIVE + triage QA + the AP fold (2026-07-07)
+
+Sam's COS credentials went live: probe → contract fixes (#676 — acronym-suffix split into both
+lanes, pagination hardening + `kb/_verify_cos_sync_lanes.py`, 23 checks) → apply: **6,490
+certifications, 83 CER ✓/≈ COS matches** (receipts `kb/cos_match_out/2026-07-07/`). Serving gap
+fixed (#677): `pages.yml` `workflow_run: cos-authority-sync` + the `kb/cos_matches.json` assert +
+the registry prune (tracker-internal per COS terms). Triage QA (all 10 fixes Sam-approved, applied
+in Supabase): ASE/AP/apprenticeship assignments retargeted to EXISTING house families — the
+doctrine: retarget-to-existing-family verbatim beats authority-verbatim. **AP art fold APPLIED**
+(`kb/_merge_credentials.py`): 5 colon variants → College Board-current, 18 raws + 20 articulations
+re-pointed, 9 families → 4. Full story: `docs/exhibit_canonicalization_lessons.md` (2026-07-07
+"continued 3"); next: `docs/session_102_handoff.md` (COOL/MOC vs License Finder is Sam's queued pick).

@@ -160,6 +160,85 @@ check("non-brand rows never enter the plan",
 check("NEVER-INVENT: every target is an existing family",
       all(r["target"] in weight for r in plan["seeded"]), True)
 
+# ── v2 STAGED lanes (Session 103) ────────────────────────────────────────────
+print("staged lanes:")
+rec = P.stage_journeyman("Journeyman Certificate- Apprenticeship Carpentry, Insulator, AS")
+check("journeyman: award suffix stripped, Sam's family shape",
+      rec["title"], "Journeyman Certificate- Apprenticeship Carpentry, Insulator")
+check("journeyman: Southwest JATC issuer (DIR DAS occ 2180)",
+      rec["issuer"], P.ISSUER_SW_JATC)
+rec = P.stage_journeyman(
+    "Journeyman Certificate-Apprenticeship Carpentry, Drywall/Lather (Interior Systems), AS (Active from Summer 2025)")
+check("journeyman: no-space variant + active-note normalize to the family",
+      rec["title"], "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)")
+check("journeyman: non-matching raw ignored", P.stage_journeyman("Carpentry Apprenticeship"), None)
+
+rec = P.stage_carpenters_trade("Cabinetmaker Apprenticeship")
+check("carpenters: house 'Carpenters Apprenticeship — <trade>' shape",
+      rec["title"], "Carpenters Apprenticeship — Cabinetmaker")
+check("carpenters: CTCNC issuer (Cabrillo = Northern CA)", rec["issuer"], P.ISSUER_CTCNC)
+check("carpenters: non-carpenters trade NOT claimed",
+      P.stage_carpenters_trade("Commercial Electrical Apprenticeship"), None)
+
+rec = P.stage_ironworker("Reinforcing Apprenticeship 416: Period 3")
+check("ironworker: house shape, PERIOD kept (Rule 8b analog)",
+      rec["title"], "Ironworker Apprenticeship — Reinforcing, Period 3")
+check("ironworker: issuer left blank (Sam's IW-* precedent)", rec["issuer"], "")
+
+rec = P.stage_nccer("NCCER Commercial Electrician Level 2")
+check("nccer: catalog naming kept verbatim", rec["title"], "NCCER Commercial Electrician Level 2")
+check("nccer: issuer 'NCCER' (Sam's house family precedent)", rec["issuer"], P.ISSUER_NCCER)
+
+fams = {P.normalize_key("Automotive Fuel Injection"): "Automotive Fuel Injection"}
+rec = P.stage_cx("Credit by Exam MATH 021 Precalculus Algebra")
+check("cx: mechanism + code stripped → course content", rec["title"], "Precalculus Algebra")
+check("cx: issuer = California Community Colleges (Rule 5c.3)", rec["issuer"], P.ISSUER_CCC)
+rec = P.stage_cx("AUTO 60E Automotive Fuel Injection Credit by Exam", fams)
+check("cx: trailing-mechanism form + existing-family match",
+      (rec["title"], rec["confidence"]), ("Automotive Fuel Injection", 0.85))
+rec = P.stage_cx("Credit by ExamSPAN 031 Introduction to Translation and Interpreting")
+check("cx: glued 'Credit by ExamSPAN' handled",
+      rec["title"], "Introduction to Translation and Interpreting")
+check("cx: code-only row NOT invented (residual/judgment single)",
+      P.stage_cx("Credit by Exam - WATER 140"), None)
+check("cx: non-Cx rows ignored", P.stage_cx("NCCER Welding Level 1"), None)
+
+rec = P.stage_hs("BIOL-424: COLTON HIGH SCHOOL- Anatomy and Physiology (Honors)")
+check("hs: school + Honors stripped → course content", rec["title"], "Anatomy and Physiology")
+check("hs: issuer = CCC", rec["issuer"], P.ISSUER_CCC)
+rec = P.stage_hs("EGTECH-10 SAN BERNARDINO HIGH SCHOOL- PLTW Intro to Engineering Design  IS414H/IS415H")
+check("hs: IS-codes + PLTW token stripped", rec["title"], "Intro to Engineering Design")
+rec = P.stage_hs("San Gorgonio High School - EGTECH-12: Principles of Engineering")
+check("hs: leading-school form handled", rec["title"], "Principles of Engineering")
+rec = P.stage_hs("MUSIC 265-2 - Recording Arts Workshop II")
+check("hs: dashed sub-number consumed (distinct course preserved)",
+      (rec["title"], rec["code"]), ("Recording Arts Workshop II", "MUSIC 265-2"))
+check("hs: OSHA rows excluded (different issuer)", P.stage_hs("OSHA 10 and 1 yr Experience"), None)
+check("hs: IC- rows excluded", P.stage_hs("IC- Welding Level I"), None)
+
+print("build_stage_plan:")
+staged, residual = P.build_stage_plan(
+    ["MUSIC 265-1 - Recording Arts Workshop I", "MUSIC 265-2 - Recording Arts Workshop II",
+     "CJ-1 Introduction to the Criminal Justice System", "CJ-1: Fontana High - Law Enforcement",
+     "NCCER Welding Level 1", "Some Unmatchable Row"],
+    {P.normalize_key("Introduction to the Criminal Justice System"):
+     "Introduction to the Criminal Justice System"},
+    assigned_raws={"NCCER Welding Level 1"})
+check("plan: distinct sub-numbered courses never converge",
+      (staged["MUSIC 265-1 - Recording Arts Workshop I"]["title"],
+       staged["MUSIC 265-2 - Recording Arts Workshop II"]["title"]),
+      ("Recording Arts Workshop I", "Recording Arts Workshop II"))
+check("plan: same-code variants converge (existing family outranks)",
+      staged["CJ-1: Fontana High - Law Enforcement"]["title"],
+      "Introduction to the Criminal Justice System")
+check("plan: converged row confidence capped for review",
+      staged["CJ-1: Fontana High - Law Enforcement"]["confidence"] <= 0.65, True)
+check("plan: assigned raws never staged", "NCCER Welding Level 1" in staged, False)
+check("plan: unmatchable rows land in residual", residual, ["Some Unmatchable Row"])
+check("plan: STAGE-ONLY invariant — no lane writes to Supabase "
+      "(apply_plan untouched by staged lanes)",
+      "staged" in P.apply_plan.__code__.co_names, False)
+
 # ── summary ──────────────────────────────────────────────────────────────────
 fails = [c for c in CHECKS if not c[1]]
 print(f"\n{len(CHECKS)} checks, {len(fails)} failed")

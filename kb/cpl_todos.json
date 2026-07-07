@@ -1,50 +1,56 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-07 night · Session 102 (AP/CLEP pre-seed applied)",
- "_session": 102,
- "_status": "The pre-seed you asked for is DONE: 158 of the 451 unclassified rows (every AP + almost every CLEP — 36% of the queue) were assigned automatically to their EXISTING house families with issuer College Board, verified byte-perfect against the committed receipt. Open the triage list and you'll see them filled in as 'preseed-v1@bot'. They fold into the credential layer on tomorrow morning's automatic refresh — so TONIGHT is the review window: ✕ un-assign anything that looks wrong. Only 5 rows needed your judgment (3 'Levels 1 and 2 — Complete both' spans + CLEP French/German Level III, which have no existing family). The remaining ~288 rows are the genuinely manual tail: high-school articulation courses, contractor licenses, CA state certs.",
+ "_as_of": "2026-07-07 late night · Session 103 (staged pre-seeds + triage toggle)",
+ "_session": 103,
+ "_status": "MORE pre-seeding, your way: 163 of the remaining rows are now PRE-FILLED in the triage list (⚡ badge) but NOT saved — credit-by-exam and high-school articulation rows named from the course content with issuer California Community Colleges, the carpentry Journeyman family with the Southwest JATC issuer from the DIR site, the Cabrillo trades to CTCNC, NCCER rows verbatim with issuer NCCER, and the ironworker 416/433 period ladders. Review each row (the badge tooltip explains the reasoning) and click Save — or use the new '💾 Save all pre-filled shown' button after a skim. The list also has the toggle you asked for: it now opens on 'Needs triage' only; click 'All' to see saved rows too. The DIR + NCCER links are noted in the skill + a KB card for future exhibits. ~107 rows remain for hand-triage (contractor licenses, IC-*, fire certs).",
  "items": [
   {
-   "id": "preseed-review",
+   "id": "preseed-staged-review",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "Triage list: spot-check the 158 pre-seeded AP/CLEP assignments (shown as preseed-v1@bot). Anything wrong → ✕ un-assign it tonight; the rest fold into the credential layer on tomorrow's daily refresh."
+   "text": "Review the ⚡ pre-filled triage rows (163) — edit anything off, then Save per row or '💾 Save all pre-filled shown' per view. Nothing saves until you click."
   },
   {
-   "id": "preseed-residuals",
+   "id": "triage-toggle",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "5 rows the pre-seed deliberately left for you: 3× 'CLEP <language> (Levels 1 and 2) - Complete both' (spans two credentials — pick one or split) and CLEP French/German Level III (no existing family — new credential, or fold into Level II?)."
+   "text": "New: the triage list opens on 'Needs triage' only — the 'All' chip shows saved rows again."
   },
   {
-   "id": "triage-continue",
+   "id": "qa-theater-issuer",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "Keep triaging the ~288 remaining manual rows (high-school articulation courses, C-## contractor licenses, CA state certs). Same tip: pick EXISTING dropdown families verbatim; the 💡 chips are your friends."
+   "text": "QA: 'THEATER 280 - Musical Theater Workshop' got the Sustainable-Materials issuer (copy-paste slip?) — probably California Community Colleges. 'SMM 4' issuer = its own title too."
   },
   {
-   "id": "triage-ambiguous-cos",
+   "id": "cslb-family-shape",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "22 titles matched MULTIPLE CareerOneStop certifications (e.g. Certified Pharmacy Technician — PTCB vs NHA). They're listed in kb/cos_match_out/2026-07-07/report.json — worth a pass when convenient."
+   "text": "Decide the family shape for the C-## contractor-license rows (e.g. 'CSLB C-10 — Electrical Contractor License') and Fable can pre-seed the 10 of them."
   },
   {
-   "id": "fable-moc-bridge",
+   "id": "clep-residuals",
+   "who": "sam",
+   "tab": "credential-reference",
+   "text": "Still open from last night: 3 'Levels 1 and 2 — Complete both' CLEP spans + CLEP French/German Level III (no house family)."
+  },
+  {
+   "id": "mojibake-families",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "Build kb/moc_cos_bridge.json: batch the distinct O*NET codes through the cert-finder keyword leg on a runner, join to COS cert Ids, then wire the consumer (Sierra veteran turns / CER military chip). Watch the MOC code-reuse caveat (STATUS/SDATE/EDATE)."
+   "text": "Clean up the 3 'Generic Credit by Exam â€”' mojibake families in unified_titles.json (corrupted em-dash from an old fold) — merge into the proper '—' families."
   },
   {
-   "id": "fable-issuer-fills",
+   "id": "moc-cos-bridge",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "Run kb/_match_cos_authority.py --apply-issuers dry-run (2 null-issuer fills possible from COS) and review before applying — deliberate manual step, never cron."
+   "text": "MOC→COS bridge (carryover): batch O*NET codes through the cert-finder keyword leg on a runner; era-filter the MOC registry first."
   },
   {
-   "id": "fable-twin-folds",
+   "id": "cos-ambiguous",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "Pre-existing twin families the pre-seed receipts surfaced (fold candidates via kb/_merge_credentials.py, not urgent): AP U.S./United States Gov+History, AP Physics 1 vs 1: Algebra-Based, CLEP Precalculus/Pre-Calculus, CLEP Spanish with Writing I/II vs Level I/II."
+   "text": "Review the 22 ambiguous CareerOneStop matches (kb/cos_match_out/2026-07-07/report.json) + the --apply-issuers dry-run (2 fills)."
   }
  ]
 }

@@ -349,6 +349,360 @@ def load_assigned():
         return set()
 
 
+# ── v2 STAGED lanes (Session 103, 2026-07-07) ────────────────────────────────
+# Sam: "For pre-seeded items, leave them ready to save but not yet saved."
+# These lanes NEVER write to Supabase. `--stage` emits kb/unclassified_preseed.json
+# (committed); the CER worklist PREFILLS each staged row's title/issuer inputs so
+# the curator reviews and clicks Save — the human keeps the trigger. Unlike the
+# brand lane (which only retargets to existing families), staged lanes may
+# PROPOSE a new title (Rule 5c course-content naming, apprenticeship/NCCER
+# authority naming) — that's why they stay stage-only: proposal ≠ assignment.
+#
+# Issuing-agency authority sources (see the skill's "Authority sources" section +
+# docs/kb-notes/reference-issuing-agency-authority-sources.md):
+#   DIR DAS:  https://www.dir.ca.gov/databases/das/aigstart.asp
+#             carpenter detail: .../results_aigdetail.asp?varOccId=2180
+#   NCCER:    https://www.nccer.org/assessments/  (journey-level assessments)
+# Both hosts 403 the agent sandbox — verify names via a browser or a runner.
+
+STAGE_PATH = os.path.join(HERE, "unclassified_preseed.json")
+
+ISSUER_CCC = "California Community Colleges"          # Rule 5c.3 — Cx/portfolio/HS-articulation
+# Verbatim Sam 2026-07-07 (from the DIR DAS carpenter page, varOccId=2180):
+ISSUER_SW_JATC = "Southwest Carpenter And Affiliated Trade J.A.T.C."
+# Northern-CA counterpart (CTCNC covers the 46 northern counties; the bare
+# "<Trade> Apprenticeship" raws are Cabrillo College = Northern CA):
+ISSUER_CTCNC = "Carpenters Training Committee for Northern California (CTCNC)"
+ISSUER_NCCER = "NCCER"  # Sam's house precedent ('NCCER Welding Level 1' family)
+
+# "Journeyman Certificate- Apprenticeship Carpentry, <trade>, AS|CA [(Active …)]"
+# → Sam's family = the prefix + trade (award suffix + active-note stripped).
+_JOURNEYMAN = re.compile(
+    r"^Journeyman Certificate-\s*Apprenticeship Carpentry,\s*(?P<trade>.+?),\s*"
+    r"(?:AS|CA)\b\s*(?:\(Active from [^)]*\))?\s*$", re.I)
+
+# Bare "<Trade> Apprenticeship" raws that are Carpenters-family trades (CTCNC's
+# published roster: Carpenters, Millwrights, Pile Drivers, Drywall/Lathers,
+# Insulators, Scaffolders, Floorlayers, Shinglers, Cabinetmakers, Modular).
+CTCNC_TRADES = {
+    "Cabinetmaker": "Cabinetmaker",
+    "Carpentry": "Carpenter",
+    "Drywall Applicator": "Drywall Applicator",
+    "Hardwood Floor Layer": "Hardwood Floor Layer",
+    "Insulator": "Insulator",
+    "Millwright": "Millwright",
+    "Modular Installer": "Modular Installer",
+    "Pile Driver": "Pile Driver",
+    "Scaffold Erector": "Scaffold Erector",
+    "Shingler": "Shingler",
+}
+
+# "Reinforcing Apprenticeship 416: Period N" / "Structural Apprenticeship 433:
+# Period N" — Ironworkers Locals 416/433 (Cerritos College area). Sam's IW-*
+# assignments carry NO issuer, so these stage title-only.
+_IRONWORKER = re.compile(
+    r"^(?P<kind>Reinforcing|Structural) Apprenticeship (?P<local>416|433):\s*"
+    r"Period (?P<period>\d+)$", re.I)
+
+# Cx mechanism decoration (Rule 5c) — stripped from the title, never kept.
+_CX_LEAD = re.compile(r"^credit\s*by\s*exam\s*[:,\s-]*", re.I)
+_CX_TRAIL = re.compile(r"[\s,:-]*credit\s*by\s*exam\s*$", re.I)
+_CX_CBE = re.compile(r"[\s,:-]*\bCBE\b[\s,:-]*", re.I)
+_PORTFOLIO_LEAD = re.compile(r"^portfolio(?:\s+review)?\s*[:,\s-]+", re.I)
+_PORTFOLIO_TRAIL = re.compile(r"[\s,:-]*(?:-\s*)?portfolio(?:\s+review)?\s*$", re.I)
+# leading local course code(s): "AUTO 60D", "WWT 100", "ACCTG 022", "SPAN-031",
+# "MUSIC 265-1" (dashed sub-number = a DISTINCT course — absorbed so levels
+# never converge)
+_COURSE_CODE = re.compile(
+    r"^(?P<subj>[A-Z]{2,10})\s*-?\s*(?P<num>\d{1,4}[A-Z]{0,2}(?:-\d)?)\b[\s:,.-]*")
+
+# HS-articulation decoration: school-name segments + section/IS-code riders.
+_HS_SCHOOL_SEG = re.compile(
+    r"(?:^|[\s:,-]+)(?:[A-Z][A-Za-z.'’-]*\s+){0,4}?"
+    r"(?:HIGH SCHOOL|High School|Adult School|ROP|Unified(?: School District)?|"
+    r"Joint Union|Learn 4 Life|Jurupa Hills High|Fontana High|Kaiser HS|Rancho Cucamonga HS)"
+    r"\s*[:-]*\s*", )
+_HS_LEAD_WORDS = re.compile(r"^(?:High School(?: Articulation)?)\s*[:-]+\s*", re.I)
+_IS_CODES = re.compile(r"\(?\bIS\d+\w*(?:\s*/\s*IS\d+\w*)?\)?")
+_SECTION_RIDER = re.compile(r"\s*(?:\d[A-Z]\s*/\s*\d[A-Z]|H\s*1&2|1&2)\s*$")
+_HONORS = re.compile(r"\s*\(?\bHonors\b\)?\s*$", re.I)
+_PLTW = re.compile(r"\bPLTW\b\s*", re.I)
+
+# Authored judgment singles — rows no mechanical lane covers honestly. Each is
+# a PROPOSAL (staged, curator-reviewed), receipted with its reasoning.
+JUDGMENT_SINGLES = {
+    "Credit By Exam Miramar": {
+        "title": "Generic Credit by Exam — San Diego Miramar College",
+        "issuer": ISSUER_CCC, "confidence": 0.5,
+        "note": "Rule 5 generic bucket (7 adopting colleges); follows the existing "
+                "'Generic Credit by Exam — <college>' family shape."},
+    "Credit by Exam - WATER 140": {
+        "title": "Water Distribution Operator I",
+        "issuer": ISSUER_CCC, "confidence": 0.75,
+        "note": "COCI course title for WATER 140 at College of the Canyons "
+                "(the adopting college) — Rule 5c course-content naming."},
+    "Portfolio Review - ART 125B": {
+        "title": "Intermediate Drawing",
+        "issuer": ISSUER_CCC, "confidence": 0.7,
+        "note": "COCI course title for ART 125B at College of the Canyons "
+                "(the adopting college) — Rule 5c course-content naming."},
+    "MC3 Pre-Apprenticeship Essentials": {
+        "title": "Multi-Craft Core Curriculum (MC3) Pre-Apprenticeship",
+        "issuer": "North America's Building Trades Unions (NABTU)", "confidence": 0.65,
+        "note": "MC3 is NABTU's multi-craft pre-apprenticeship curriculum."},
+    "Construction Craft Laborer Apprenticeship": {
+        "title": "Construction Craft Laborer Apprenticeship",
+        "issuer": "Laborers' International Union of North America (LiUNA)", "confidence": 0.6,
+        "note": "Construction Craft Laborer is LiUNA's registered trade; the CA "
+                "program sponsor is verifiable via DIR DAS occupational search."},
+    "Commercial Electrical Apprenticeship": {
+        "title": "Commercial Electrical Apprenticeship",
+        "issuer": "", "confidence": 0.55,
+        "note": "Electrical trade — identify the sponsoring JATC/program via the "
+                "DIR DAS occupational search (Electrician) before setting an issuer."},
+    "Residential Electrical Apprenticeship": {
+        "title": "Residential Electrical Apprenticeship",
+        "issuer": "", "confidence": 0.55,
+        "note": "Electrical trade — identify the sponsoring JATC/program via the "
+                "DIR DAS occupational search (Electrician) before setting an issuer."},
+}
+
+
+def _norm_ws(t):
+    return re.sub(r"\s+", " ", (t or "").translate(_DASHES).replace(" ", " ")).strip()
+
+
+def stage_journeyman(raw):
+    """Sam's 'Journeyman Certificate- Apprenticeship Carpentry, <trade>' family
+    (Southwest Carpenters JATC — the DIR DAS carpenter page, varOccId=2180)."""
+    m = _JOURNEYMAN.match(_norm_ws(raw))
+    if not m:
+        return None
+    trade = m.group("trade").strip()
+    return {"title": "Journeyman Certificate- Apprenticeship Carpentry, " + trade,
+            "issuer": ISSUER_SW_JATC, "via": "journeyman", "confidence": 0.9,
+            "note": "Mirrors Sam's 2026-07-07 family pattern (award suffix + "
+                    "active-note stripped); issuer per DIR DAS occ 2180."}
+
+
+def stage_carpenters_trade(raw):
+    """Bare '<Trade> Apprenticeship' (Cabrillo College — Northern CA) → the
+    'Carpenters Apprenticeship — <Trade>' house shape + CTCNC as issuer."""
+    m = re.match(r"^(?P<trade>[A-Za-z ]+?) Apprenticeship$", _norm_ws(raw))
+    if not m or m.group("trade") not in CTCNC_TRADES:
+        return None
+    trade = CTCNC_TRADES[m.group("trade")]
+    return {"title": "Carpenters Apprenticeship — " + trade,
+            "issuer": ISSUER_CTCNC, "via": "carpenters", "confidence": 0.7,
+            "note": "House 'Carpenters Apprenticeship — <trade>' shape; Cabrillo "
+                    "(Northern CA) → CTCNC per its published trade roster + DIR "
+                    "DAS occ 2180. Sam's Acoustical Installer family used a "
+                    "combined north/south issuer — adjust if preferred."}
+
+
+def stage_ironworker(raw):
+    m = _IRONWORKER.match(_norm_ws(raw))
+    if not m:
+        return None
+    kind = m.group("kind").capitalize()
+    return {"title": "Ironworker Apprenticeship — %s, Period %s" % (kind, m.group("period")),
+            "issuer": "", "via": "ironworker", "confidence": 0.6,
+            "note": "Ironworkers Local %s program (Cerritos College area); house "
+                    "'Ironworker Apprenticeship — <topic>' shape, PERIOD kept "
+                    "(Rule 8b analog). Issuer left blank to match Sam's IW-* "
+                    "precedent; program name verifiable via DIR DAS." % m.group("local")}
+
+
+def stage_nccer(raw):
+    """NCCER rows keep their (already NCCER-catalog) naming verbatim; issuer =
+    'NCCER' per Sam's 'NCCER Welding Level 1' family precedent."""
+    t = _norm_ws(raw)
+    if not re.match(r"^NCCER\b", t, re.I):
+        return None
+    return {"title": t, "issuer": ISSUER_NCCER, "via": "nccer", "confidence": 0.85,
+            "note": "NCCER catalog naming kept verbatim (nccer.org/assessments; "
+                    "curriculum levels + journey-level assessments are distinct "
+                    "credentials — never folded)."}
+
+
+def stage_cx(raw, families=None):
+    """Credit-by-Exam / Portfolio rows (Rule 5c): strip the mechanism phrase +
+    the leading local course code; the remaining content is the title; issuer =
+    California Community Colleges. Prefers an EXISTING family when the content
+    key matches one."""
+    t = _norm_ws(raw)
+    if not re.search(r"credit\s*by\s*exam|\bCBE\b|portfolio", t, re.I):
+        return None
+    stripped = []
+    for pat, tag in ((_CX_LEAD, "cx-lead"), (_CX_TRAIL, "cx-trail"), (_CX_CBE, "cbe"),
+                     (_PORTFOLIO_LEAD, "portfolio-lead"), (_PORTFOLIO_TRAIL, "portfolio-trail")):
+        t2 = pat.sub(" ", t).strip(" -–,;:")
+        if t2 != t:
+            stripped.append(tag)
+            t = t2
+    code = None
+    m = _COURSE_CODE.match(t)
+    if m:
+        code = "%s %s" % (m.group("subj"), m.group("num"))
+        t = t[m.end():].strip(" -–,;:")
+    t = re.sub(r"\s+", " ", t).strip()
+    if not t:
+        return None  # code-only → JUDGMENT_SINGLES or residual
+    rec = {"title": t, "issuer": ISSUER_CCC, "via": "cx", "confidence": 0.75,
+           "note": "Rule 5c: mechanism phrase" + (" + course code %s" % code if code else "")
+                   + " stripped; issuer = CCC (title 5 §55050 system instrument)."}
+    fam = (families or {}).get(normalize_key(t))
+    if fam:
+        rec["title"] = fam
+        rec["confidence"] = 0.85
+        rec["note"] += " Matched the existing family %r." % fam
+    return rec
+
+
+def stage_hs(raw, families=None):
+    """College-course-code-led rows (incl. high-school / ROP articulations):
+    strip the code + school-name decoration + section riders; the course-content
+    title remains; issuer = CCC (the college grants the credit)."""
+    t = _norm_ws(raw)
+    if re.match(r"^(?:OSHA|NCCER|IC-)", t, re.I):
+        return None  # other lanes / other issuers
+    codes = []
+    # leading school form ("San Gorgonio High School - EGTECH-10: …")
+    lead_school = _HS_SCHOOL_SEG.match(t)
+    if lead_school and lead_school.start() == 0:
+        t = t[lead_school.end():].strip(" :-")
+    while True:
+        m = _COURSE_CODE.match(t)
+        if not m:
+            break
+        codes.append("%s %s" % (m.group("subj"), m.group("num")))
+        t = t[m.end():].strip(" :,-")
+        joiner = re.match(r"^(?:and|/|&)\s*", t, re.I)
+        if joiner and _COURSE_CODE.match(t[joiner.end():]):
+            t = t[joiner.end():]
+            continue
+        break
+    if not codes:
+        return None
+    notes = []
+    t2 = _HS_LEAD_WORDS.sub("", t)
+    if t2 != t:
+        notes.append("high-school prefix")
+        t = t2
+    t2 = _HS_SCHOOL_SEG.sub(" ", t)
+    if t2 != t:
+        notes.append("school name")
+        t = t2
+    t2 = _IS_CODES.sub(" ", t)
+    if t2 != t:
+        notes.append("IS-codes")
+        t = t2
+    t = re.sub(r"\s+", " ", t).strip(" :,-")
+    t2 = _SECTION_RIDER.sub("", t)
+    if t2 != t:
+        notes.append("section rider")
+        t = t2
+    t2 = _HONORS.sub("", t)
+    if t2 != t:
+        notes.append("Honors marker")
+        t = t2
+    t2 = _PLTW.sub("", t).strip()
+    if t2 != t and t2:
+        notes.append("PLTW brand token")
+        t = t2
+    t = re.sub(r"\s+", " ", t).strip(" :,-")
+    if len(t) < 4:
+        return None  # nothing usable left — residual
+    rec = {"title": t, "issuer": ISSUER_CCC, "via": "hs", "confidence": 0.7,
+           "code": codes[0],
+           "note": "Course-content title for %s (stripped: %s); issuer = CCC."
+                   % ("/".join(codes), ", ".join(notes) if notes else "course code only")}
+    fam = (families or {}).get(normalize_key(t))
+    if fam:
+        rec["title"] = fam
+        rec["confidence"] = 0.8
+        rec["note"] += " Matched the existing family %r." % fam
+    return rec
+
+
+def build_family_index(weight, live_values=None):
+    """normalize_key(family) → family, over kb/unified_titles.json families ∪
+    verified live assignment values (Sam's not-yet-folded picks) — so staged
+    rows converge on his verbatim titles. First writer wins per key
+    (higher-raw-count families indexed first)."""
+    idx = {}
+    for title in sorted(weight, key=lambda t: (-weight.get(t, 0), t)):
+        idx.setdefault(normalize_key(title), title)
+    for v in sorted(set((live_values or {}).values())):
+        idx.setdefault(normalize_key(v), v)
+    return idx
+
+
+def build_stage_plan(queue, families, assigned_raws):
+    """Run every staged lane over the queue. Returns (staged{raw→rec}, residual[])."""
+    staged, residual = {}, []
+    # group hs rows by primary code so same-course variants converge on ONE title
+    hs_groups = {}
+    for raw in queue:
+        if raw in assigned_raws:
+            continue
+        rec = None
+        for lane in (stage_journeyman, stage_carpenters_trade, stage_ironworker, stage_nccer):
+            rec = lane(raw)
+            if rec:
+                break
+        if not rec and raw in JUDGMENT_SINGLES:
+            rec = dict(JUDGMENT_SINGLES[raw], via="single")
+        if not rec:
+            rec = stage_cx(raw, families)
+        if not rec:
+            rec = stage_hs(raw, families)
+            if rec:
+                # normalize the FIRTEC typo so it groups with FIRETEC
+                gcode = rec["code"].replace("FIRTEC", "FIRETEC")
+                hs_groups.setdefault(gcode, []).append((raw, rec))
+                continue
+        if rec:
+            staged[raw] = rec
+        else:
+            residual.append(raw)
+    # per-code convergence: modal title wins (existing-family matches outrank)
+    for gcode, rows in hs_groups.items():
+        counts = {}
+        for _raw, rec in rows:
+            key = rec["title"]
+            counts[key] = counts.get(key, 0) + (10 if "existing family" in rec["note"] else 1)
+        winner = sorted(counts.items(), key=lambda kv: (-kv[1], len(kv[0]), kv[0]))[0][0]
+        for raw, rec in rows:
+            if rec["title"] != winner:
+                rec["note"] += " Converged on %r (modal title for %s)." % (winner, gcode)
+                rec["title"] = winner
+                rec["confidence"] = min(rec["confidence"], 0.65)
+            rec.pop("code", None)
+            staged[raw] = rec
+    return staged, residual
+
+
+def write_stage(staged, residual, queue_count):
+    payload = {
+        "_about": ("STAGED pre-seed suggestions for the CER unclassified-triage "
+                   "worklist (kb/_preseed_unclassified.py --stage). NOT saved to "
+                   "Supabase: credential_reference.js PREFILLS each row's assign "
+                   "inputs from this file; the curator reviews and clicks Save "
+                   "(or 'Save all pre-filled'). Regenerate after queue/family "
+                   "changes; rows with a live assignment are never prefilled."),
+        "_generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "_queue_count": queue_count,
+        "_counts": {"staged": len(staged), "residual": len(residual)},
+        "_residual": sorted(residual),
+        "staged": {raw: staged[raw] for raw in sorted(staged)},
+    }
+    with open(STAGE_PATH, "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=1, ensure_ascii=False)
+        f.write("\n")
+    return STAGE_PATH
+
+
 # ── apply lane (service key; the sandbox uses the Supabase MCP instead) ──────
 
 def apply_plan(seeded):
@@ -391,11 +745,53 @@ def apply_plan(seeded):
 
 # ── main ─────────────────────────────────────────────────────────────────────
 
+def load_assigned_md5():
+    """Optional --assigned-md5 <file>: newline/comma-separated md5(raw) hashes of
+    LIVE-assigned raws (fetched via the Supabase MCP when the sandbox can't reach
+    Supabase directly). Falls back to the committed overlay when absent."""
+    if "--assigned-md5" not in sys.argv:
+        return None
+    import hashlib
+    path = sys.argv[sys.argv.index("--assigned-md5") + 1]
+    hashes = set(re.split(r"[\s,]+", open(path).read().strip()))
+    return hashes, hashlib
+
+
 def main():
     apply = "--apply" in sys.argv
+    stage = "--stage" in sys.argv
     queue = load_queue()
     weight = load_families()
-    plan = build_plan(queue, weight, load_assigned())
+    assigned = load_assigned()
+    md5set = load_assigned_md5()
+    if md5set:
+        hashes, hashlib_mod = md5set
+        assigned = assigned | {r for r in queue if hashlib_mod.md5(
+            r.encode("utf-8")).hexdigest() in hashes}
+
+    if stage:
+        live_path = os.path.join(os.path.dirname(STAGE_PATH), "preseed_out",
+                                 date.today().isoformat(), "live_values.json")
+        live_values = {}
+        if os.path.exists(live_path):
+            live_values = json.load(open(live_path, encoding="utf-8"))
+        families = build_family_index(weight, live_values)
+        staged, residual = build_stage_plan(queue, families, assigned)
+        by_via = {}
+        for rec in staged.values():
+            by_via[rec["via"]] = by_via.get(rec["via"], 0) + 1
+        print(f"queue: {len(queue)} | already-assigned: {len(assigned & set(queue))} | "
+              f"STAGED: {len(staged)} {by_via} | residual: {len(residual)}")
+        for raw in sorted(staged):
+            rec = staged[raw]
+            print(f"  STAGE [{rec['via']:10}] {raw!r}\n"
+                  f"        → {rec['title']!r} · {rec['issuer'] or '(no issuer)'} · {rec['confidence']}")
+        for raw in sorted(residual):
+            print(f"  RESIDUAL {raw!r}")
+        print("staged file:", write_stage(staged, residual, len(queue)))
+        return
+
+    plan = build_plan(queue, weight, assigned)
 
     print(f"queue: {len(queue)} unclassified | seeded: {len(plan['seeded'])} | "
           f"ambiguous: {len(plan['ambiguous'])} | no-match: {len(plan['no_match'])} | "

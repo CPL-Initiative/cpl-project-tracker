@@ -1669,3 +1669,74 @@ before 06:17 UTC).
   CLEP Spanish with Writing {I,II} / {Level I,Level II}.
 - MOC→COS bridge (`kb/moc_cos_bridge.json`) still the queued build; then
   `--apply-issuers` dry-run + the 22 ambiguous COS matches.
+
+### 2026-07-07 (continued 6) — Session 103: STAGED pre-seed lanes + the triage toggle + issuer authority sources
+
+Sam's evening asks, all shipped: *"look at what I've recently saved … do more
+pre-seeding … For pre-seeded items, leave them ready to save but not yet
+saved … shouldn't we have a toggle [for] just the ones needing to be triaged?
+… speed all the credit by exam still in the hopper — preseed the titles using
+your judgement and the issuing agency CCC."*
+
+**Queue math at build time:** 451 queue rows; ~181 live-assigned (Sam hand-
+triaged ~90 more today on top of the 158 Session-102 pre-seeds — he was saving
+WHILE this session ran); **163 STAGED** by the new lanes; ~107 residual.
+
+**What shipped:**
+
+1. **Staged lanes in `kb/_preseed_unclassified.py` (`--stage`)** → the
+   committed `kb/unclassified_preseed.json`. Zero Supabase writes — proposal ≠
+   assignment (Rule 5e in the skill). Lanes: `cx` (31 — mechanism + course
+   code stripped, issuer CCC per Rule 5c), `hs` (73 — high-school/ROP
+   articulation rows; school names / IS-codes / section + Honors riders
+   stripped; same-code variants converge, existing family outranks the modal
+   pick, converged rows capped at 0.65), `journeyman` (13 — Sam's verbatim
+   "Journeyman Certificate- Apprenticeship Carpentry, <trade>" family +
+   `Southwest Carpenter And Affiliated Trade J.A.T.C.`), `carpenters` (10 —
+   Cabrillo bare trades → "Carpenters Apprenticeship — <Trade>" + CTCNC),
+   `ironworker` (16 — Locals 416/433 period ladders, issuer blank per Sam's
+   IW-* precedent), `nccer` (13 — NCCER naming verbatim, issuer `NCCER`),
+   `single` (7 authored judgment rows incl. the COCI-resolved code-only Cx:
+   WATER 140 → "Water Distribution Operator I", ART 125B → "Intermediate
+   Drawing", both College of the Canyons).
+2. **Worklist toggle + prefill (`credential_reference.js`)** — "Needs triage
+   (N) / All (M)" chips (default hides saved rows); staged rows prefill both
+   inputs with an ⚡ badge (lane + confidence + note); a confirm-gated
+   **"💾 Save all pre-filled shown"** bulk button reads the VISIBLE inputs
+   (what-you-see-is-what-saves — a hand-edit wins over the staged value). A
+   live assignment always beats a stale preseed; missing file = soft no-op.
+   Tests: `tests/cer_worklist_preseed.test.js` (29); harness grown to
+   `kb/_verify_preseed_rules.py` (73).
+3. **Issuer authority sources noted for future exhibits** (Sam supplied the
+   links; both 403-block the sandbox — WebSearch-verified instead):
+   **DIR DAS** occupation detail `results_aigdetail.asp?varOccId=2180`
+   (Carpenter) → the SW-JATC + CTCNC program names; **NCCER**
+   nccer.org/assessments. Card: `docs/kb-notes/reference-issuing-agency-
+   authority-sources.md`; skill gained Rule 5e + an "Authority sources"
+   section (CSLB queued for the C-## contractor rows).
+
+**Methodology hardening (the Session-102 lesson, applied harder):** all live
+assignment VALUES used for family matching were fetched via the MCP and
+**verified per-row against server-side md5 pairs** — the concat-checksum
+mismatched because Sam was actively saving between queries (row-count drift,
+not corruption), and the pair-wise check isolated the 2 genuinely
+transit-corrupted rows (the nbsp CLEP French Language Level 1/2 raws), which
+were dropped from matching but kept in the assigned set. Never trust a
+terminal round-trip; verify keys AND values independently of row order.
+
+**QA flags for Sam (surfaced, not touched — curator rows win):**
+- `THEATER 280 - Musical Theater Workshop` carries issuer *"Sustainable
+  Materials Management and Zero Waste in Business"* — a copy-paste slip from
+  the SMM row saved seconds later; should presumably be CCC.
+- `SMM 4, Sustainable Materials Management and Zero Waste in Business` has
+  issuer == its own title (SMM 2 got CCC) — worth a second look.
+- `kb/unified_titles.json` holds **3 mojibake families** — `Generic Credit by
+  Exam â€” Saddleback College / San Diego City College / San Diego Mesa
+  College` (UTF-8 em-dash read as cp1252 somewhere in an earlier fold) —
+  merge/rename candidates for a cleanup pass.
+
+**Residual shape (~107):** C-## CSLB contractor licenses (lane ready once Sam
+picks the family shape), IC-* rows (unknown "Industry Certification" issuer),
+fire/IFSAC/ProBoard certs, welding course-content rows, the 5 known CLEP
+residuals, one-off state certs. All still listed in the staged file's
+`_residual` for hand-triage.
