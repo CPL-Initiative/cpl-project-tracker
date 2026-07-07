@@ -73,11 +73,28 @@ def _get(url, headers=None, timeout=60):
 
 # ── Lane 1: bulk download ────────────────────────────────────────────────────
 
-def find_bulk_link(html):
+def find_bulk_link(html, probe=False):
     """The download page links ZIP_Certification_Finder_Data_<MMDDYYYY>.zip —
-    return the newest absolute URL, or None."""
+    return the newest absolute URL, or None. Accepts single/double-quoted or
+    JS-embedded hrefs; in probe mode dumps every candidate href so a pattern
+    drift is diagnosable straight from the run log."""
+    if probe:
+        print(f"  page bytes: {len(html):,}")
+        for marker in ("just a moment", "cf-challenge", "captcha", "access denied",
+                       "request unsuccessful", "incapsula"):
+            if marker in html.lower():
+                print(f"  ⚠ bot-challenge marker in page: {marker!r}")
+        cands = re.findall(r"""["']([^"']*(?:\.zip|\.xlsx|certif[^"']*))["']""",
+                           html, flags=re.I)
+        seen = []
+        for c in cands:
+            if c not in seen and re.search(r"\.(zip|xlsx)$|download|data", c, re.I):
+                seen.append(c)
+        print(f"  candidate hrefs ({len(seen)}):")
+        for c in seen[:40]:
+            print(f"    {c}")
     links = re.findall(
-        r'href="([^"]*ZIP_?Certification[^"]*\.zip)"', html, flags=re.I)
+        r"""["']([^"']*Certification[^"']*\.zip)["']""", html, flags=re.I)
     if not links:
         return None
     def date_key(u):
@@ -171,7 +188,7 @@ def lane_bulk(probe):
     print(f"BULK lane: GET {DATA_PAGE}")
     html, _ = _get(DATA_PAGE)
     html = html.decode("utf-8", errors="replace")
-    link = find_bulk_link(html)
+    link = find_bulk_link(html, probe)
     print(f"  bulk link found: {link}")
     if not link:
         return None
