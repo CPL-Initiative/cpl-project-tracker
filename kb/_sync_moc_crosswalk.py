@@ -134,7 +134,8 @@ HEADER_MAP = {
     "title": ["moc title", "military occupation title", "title",
               "military title", "moc_title"],
     "soc": ["o*net-soc code", "onet soc code", "onetsoc code", "soc code",
-            "o*net-soc", "onet code", "onetsoc_code"],
+            "o*net-soc", "onet code", "onetsoc_code", "onetsoc", "onet_soc",
+            "onet-soc", "soc", "onet", "onet_soc_code", "onetcode"],
     "soc_title": ["o*net-soc title", "onet soc title", "soc title",
                   "onetsoc_title", "occupation"],
     "status": ["status", "active", "moc status"],
@@ -211,8 +212,11 @@ def lane_bulk(probe):
     mocs = {}  # (branch, code) -> rec
     for member, headers, rows in read_archive(blob, link.rsplit("/", 1)[-1], probe):
         idx = map_headers(headers)
-        print(f"  member: {member} | headers: {headers[:8]}{'…' if len(headers) > 8 else ''} "
-              f"| rows: {len(rows)} | mapped: {sorted(idx)}")
+        # Probe prints EVERY header — the first probe truncated at 8 and hid the
+        # SOC column, which is exactly the drift this diagnostic exists to catch.
+        shown = headers if probe else headers[:8] + (["…"] if len(headers) > 8 else [])
+        print(f"  member: {member} | headers: {shown} | rows: {len(rows)} "
+              f"| mapped: {sorted(idx)}")
         if probe:
             for r in rows[:2]:
                 print(f"    sample: {r[:8]}")
@@ -269,9 +273,13 @@ def probe_cos_moc():
     soc = "49-3023.00"
     base = f"/v1/certificationfinder/{COS_USER_ID}"
     trials = [
-        ("occ@pos3", f"{base}/%20/false/0/0/{soc}/0/0/Name/ASC/1/3"),
-        ("occ@pos4", f"{base}/%20/false/0/0/0/{soc}/0/Name/ASC/1/3"),
-        ("occ@pos5", f"{base}/%20/false/0/0/0/0/{soc}/Name/ASC/1/3"),
+        # Probe 1 finding: a dotted SOC in any positional-zero slot 404s (the
+        # API validates segment formats). Try the SOC as the KEYWORD instead —
+        # the finder's search understands occupation terms — plus the undotted
+        # and truncated code shapes in the likeliest filter slot.
+        ("occ-as-keyword", f"{base}/{urllib.parse.quote(soc)}/false/0/0/0/0/0/Name/ASC/1/3"),
+        ("occ-kw-undotted", f"{base}/49-3023/false/0/0/0/0/0/Name/ASC/1/3"),
+        ("occ@pos4-undotted", f"{base}/%20/false/0/0/0/493023/0/Name/ASC/1/3"),
     ]
     for label, path in trials:
         try:
