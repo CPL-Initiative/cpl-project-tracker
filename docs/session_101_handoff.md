@@ -37,19 +37,41 @@ the triage loop end-to-end. Read in order: CLAUDE.md §11 (Session 100 block),
    umbrella for batches, mechanism never in the title, issuer **California
    Community Colleges** (plural — 4 singular records normalized in KB + Supabase).
 
+## What shipped AFTER this handoff was first written (same session, PRs #673/#674 + Phases 1+2)
+
+- **CareerOneStop lane BUILT + merged** (Sam's call; Credential Engine/CTDL
+  comes after — the MAP↔CE partnership will CTDL-tag all MAP CPL data, and
+  the cos_cert_id anchors become join keys): `kb/_sync_cos_certifications.py`
+  + `cos-authority-sync.yml` (probe-first, monthly cron),
+  `kb/_match_cos_authority.py` (join ladder w/ level guard + `+`-folding),
+  CER ✓/≈ COS chips + required USDOL/DEED attribution
+  (`tests/cer_cos_badge.test.js`). **Live-probe finding:
+  www.careeronestop.org intermittently 403s runners — the token API is the
+  dependable leg.** Sam REGISTERED (owner CCCCO, org URL map.rccd.edu — both
+  fine); when his credentials email arrives he adds repo Actions secrets
+  `COS_USER_ID` + `COS_API_TOKEN`, then dispatch `cos-authority-sync`
+  mode=probe → read log (validates auth, shows the API field shape — fix
+  `lane_api` field names if they differ) → mode=apply → badges light up.
+- **Rule 5c precedence** (Sam): Cx titles anchor **CCN > C-ID > (M-ID once he
+  declares that layer stable) > local course content** — codified in the skill.
+- **Rule 5c Phases 1+2 BUILT**: `kb/_suggest_unclassified.py` (COCI (SUBJ,NUM)
+  join, membership-hazard guards, AP/IB/CLEP + target-course-parenthetical
+  exclusions; first run 28/481 — 5 C-ID incl. ADM JUS 003 → AJ 124) →
+  `kb/unclassified_suggestions.json` → worklist 💡 fill chips
+  (`tests/cer_wl_suggestions.test.js`); the fold stamps `title_anchor`
+  {system,id} on matches. **Phase 3 parked**: flip `--with-mids` when Sam
+  declares M-IDs stable — anchors make re-key ripples mechanical.
+
 ## Priority queue
 
-1. **CareerOneStop authority lane** — blocked on Sam's 3 decisions (COS API
-   account, Credential Engine account status, attribution OK — see the To-Do
-   feed + the KB note). When unblocked: runner-as-proxy bulk sync →
-   `kb/reference/cos_certifications.json` → match-and-badge join ladder over
-   `kb/credentials.json` (the #642 pattern) → "✓ COS-anchored" badge + CA
-   License Finder slice.
-2. **Verify the loop live**: after the first post-merge cron, confirm the CER
-   triage button reads (0), the 4 new credentials render as rows, and
-   `kb/exhibit_audit/latest.json` carries a fresh `_generated_at`. The auditor
-   may surface NEW unclassified titles from current MAP data — that's the loop
-   working; triage them with Rule 5c.
+1. **COS auth completion** (above) — then consider CA License Finder slice +
+   the military COOL/MOC crosswalk lane.
+2. **Sam's triage pass on the 481** — in progress. AFTER it: run
+   `kb/_merge_credentials.py` cleanup for the **AP Art & Design split** (KB
+   already holds 6 families; his 'AP Art Studio 2-D' assignments add more —
+   canonical = College Board current names, e.g. 'AP 2-D Art and Design').
+   Watch: apprenticeship exhibits should NOT get the CCC issuer (JAC/union
+   sponsors); keep level words ('Advanced X' ≠ 'X').
 3. **Carryover**: CPL-type-duplicate detector; the 3 audience views; the ~50
    NEW-credential long tail; CCR Convergence voice pass (still Sam's big one).
 
