@@ -64,11 +64,28 @@ COS_USER_ID = os.environ.get("COS_USER_ID")
 COS_API_TOKEN = os.environ.get("COS_API_TOKEN")
 
 
-def _get(url, headers=None, timeout=60):
+def _get(url, headers=None, timeout=60, attempts=3):
+    # www.careeronestop.org's WAF INTERMITTENTLY 403s runner IPs (probe run 1
+    # got a 200, run 2 a 403, same UA, 2 minutes apart) — retry with backoff
+    # before declaring the lane down. api.careeronestop.org (Bearer token) is
+    # the reliable leg; the bulk lane is opportunistic.
+    import time
     req = urllib.request.Request(url, headers={"User-Agent": UA, **(headers or {})})
     ctx = ssl.create_default_context()
-    with urllib.request.urlopen(req, timeout=timeout, context=ctx) as r:
-        return r.read(), dict(r.headers)
+    last = None
+    for i in range(attempts):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout, context=ctx) as r:
+                return r.read(), dict(r.headers)
+        except urllib.error.HTTPError as e:
+            last = e
+            if e.code not in (403, 429, 500, 502, 503):
+                raise
+            if i < attempts - 1:
+                wait = 5 * (i + 1)
+                print(f"  HTTP {e.code} on {url.split('?')[0]} — retry in {wait}s")
+                time.sleep(wait)
+    raise last
 
 
 # ── Lane 1: bulk download ────────────────────────────────────────────────────
