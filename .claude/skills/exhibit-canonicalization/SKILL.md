@@ -95,13 +95,24 @@ Exam`, `Inspection Portfolio Spring 2026 #1`) — that local freedom stands; the
 unified title is the SEARCH layer on top, and it must read for a prospective
 student who knows the subject, not the college's naming scheme:
 
-1. **Single-course Cx/portfolio exhibit** → unified title = the plain-English
-   subject-matter title of the target course: `AUTO 601 Completion` →
-   `Automotive Lubrication Service`. When the course title is itself just a
-   code, fall back to `<Discipline> (<local course code>)`: `Math 095 CBE` →
-   `Mathematics (MATH 095)`, `CULART 250 CBE` → `Culinary Arts (CULART 250)`.
-   Never put the mechanism (`Credit by Exam`, `CBE`, `Portfolio`) in the
-   unified title — the CPL Type column carries it (Rules 1/2).
+1. **Single-course Cx/portfolio exhibit** → unified title follows the
+   COURSE-IDENTITY precedence (Sam, 2026-07-07 — mirrors the CCR's
+   CCN-ID > C-ID > M-ID identifier precedence):
+   1. the **CCN title** when the target course carries an AB-1111 Common
+      Course Number (the student-facing statewide name — the strongest
+      possible search anchor);
+   2. else the **C-ID descriptor title** when it carries a C-ID;
+   3. else — ONCE SAM DECLARES THE M-ID LAYER STABLE, not yet — the **M-ID
+      consolidated title**; until then,
+   4. the plain-English subject-matter title of the target course:
+      `AUTO 601 Completion` → `Automotive Lubrication Service`; when the
+      course title is itself just a code, `<Discipline> (<local course code>)`:
+      `Math 095 CBE` → `Mathematics (MATH 095)`.
+   When an identity title (1–3) is used, note the anchoring identity in
+   `_notes` (e.g. "title anchored to C-ID AJ 200") so a future C-ID/CCN/M-ID
+   re-key can ripple the title mechanically. Never put the mechanism
+   (`Credit by Exam`, `CBE`, `Portfolio`) in the unified title — the CPL Type
+   column carries it (Rules 1/2).
 2. **Batch Cx exhibit** (one exhibit spanning several courses) → name the
    coherent program-area umbrella a student would search (e.g. an exhibit
    bundling brake/suspension/electrical exams → `Automotive Maintenance
