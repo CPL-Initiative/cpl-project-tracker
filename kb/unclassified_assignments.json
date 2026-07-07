@@ -1,28 +1,82 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-07-07T14:50:27Z",
-  "count": 195,
+  "_synced_at": "2026-07-07T17:33:05Z",
+  "count": 229,
   "assignments": {
     "A S T 025 - Fundamentals of Auto Mechanics": {
       "unified_title": "Fundamentals of Auto Mechanics",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:28:52.076094+00:00"
     },
+    "A+ Certification Preparation": {
+      "issuing_agency": "CompTIA",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T16:55:31.746235+00:00",
+      "unified_title": "CompTIA A+"
+    },
+    "ACCTG 15, Individual Income Taxes": {
+      "unified_title": "Individual Income Taxes",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T16:56:10.02836+00:00",
+      "issuing_agency": "California Community Colleges"
+    },
+    "ACCTG 16, Taxation of Corporations, Partnerships, Estates and Trusts": {
+      "unified_title": "Taxation of Corporations, Partnerships, Estates and Trusts",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T16:56:10.356678+00:00",
+      "issuing_agency": "California Community Colleges"
+    },
+    "ACCTG 19A, IRS Volunteer Income Assistant (VITA) Program - Tax Preparer": {
+      "unified_title": "IRS Volunteer Income Tax Assistance (VITA) Program - Tax Preparer",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:43.566358+00:00",
+      "issuing_agency": "California Community Colleges"
+    },
     "ADJU 232 - Juvenile Justice Procedures - Credit by Exam": {
       "unified_title": "Juvenile Justice Procedures",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
+    },
+    "ADM JUS 003 - Legal Aspects of Evidence": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:46.862459+00:00",
+      "unified_title": "Legal Aspects of Evidence"
     },
     "ADM JUS 067": {
       "unified_title": "Administration of Justice 067",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
     },
+    "ADM JUS 075 - Introduction to Corrections": {
+      "unified_title": "Introduction to Corrections",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:47.737539+00:00",
+      "issuing_agency": "California Community Colleges"
+    },
+    "ADM JUS 319 - Research Methods & Statistics in Criminal Justice": {
+      "unified_title": "Research Methods & Statistics in Criminal Justice",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:48.600531+00:00",
+      "issuing_agency": "California Community Colleges"
+    },
     "AERO 040 - Instrument Ground School - Training Log": {
       "unified_title": "FAA Instrument Ground School",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:28:52.076094+00:00"
+    },
+    "AG - 014: Tractor Operations": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:49.989111+00:00",
+      "unified_title": "Tractor Operations"
+    },
+    "AGBUS - 024: Agriculture Accounting": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:50.811188+00:00",
+      "unified_title": "Agriculture Accounting"
     },
     "AP - Psychology": {
       "unified_title": "AP Psychology",
@@ -33,6 +87,42 @@
       "unified_title": "AP 2-D Art and Design",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
+    },
+    "AP 2-D Art and Design (Score of 3 or higher)": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:33.786987+00:00",
+      "unified_title": "AP 2-D Art and Design"
+    },
+    "AP Art History (Score of 3 or higher)": {
+      "unified_title": "AP Art History",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:53.068991+00:00",
+      "issuing_agency": "College Board"
+    },
+    "AP Art Studio 2-D (Score 3-5)": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:33.786987+00:00",
+      "unified_title": "AP 2-D Art and Design"
+    },
+    "AP Art Studio 3-D (Score 3-5)": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:33.786987+00:00",
+      "unified_title": "AP 3-D Art and Design"
+    },
+    "AP Art-Studio Drawing (Score 3-5)": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:33.786987+00:00",
+      "unified_title": "AP Drawing"
+    },
+    "AP Biology (Score 3-5) (BIOSCI 100)": {
+      "unified_title": "AP Biology",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:56:00.688441+00:00",
+      "issuing_agency": "College Board"
     },
     "AP English Language Composition": {
       "unified_title": "AP English Language & Composition",
@@ -176,21 +266,21 @@
     },
     "AUTO 600 Completion": {
       "unified_title": "Introduction to Automotive Technology",
-      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T14:05:53.902684+00:00"
+      "reviewed_at": "2026-07-07T14:05:53.902684+00:00",
+      "issuing_agency": "California Community Colleges"
     },
     "AUTO 601 Completion": {
       "unified_title": "Automotive Lubrication Service",
-      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T14:05:55.030166+00:00"
+      "reviewed_at": "2026-07-07T14:05:55.030166+00:00",
+      "issuing_agency": "California Community Colleges"
     },
     "AUTO 602 Completion": {
       "unified_title": "Automotive Tire Service",
-      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T14:05:55.831846+00:00"
+      "reviewed_at": "2026-07-07T14:05:55.831846+00:00",
+      "issuing_agency": "California Community Colleges"
     },
     "AUTO 60A: Electrical Schematic Diagnosis- Credit By Exam": {
       "unified_title": "Automotive Electrical Schematic Diagnosis",
@@ -202,6 +292,48 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "AUTO 60E Automotive Fuel Injection Credit by Exam": {
+      "unified_title": "Automotive Fuel Injection",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:25.681671+00:00",
+      "issuing_agency": "California Community Colleges"
+    },
+    "AUTO 60F No-Start Diagnosis Credit by Exam": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:25.053357+00:00",
+      "unified_title": "No-Start Diagnosis"
+    },
+    "AUTO 60G Advanced Scan Tool Diagnosis Credit by Exam": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:24.507857+00:00",
+      "unified_title": "Advanced Scan Tool Diagnosis"
+    },
+    "AUTO 60H Advanced Drivability and Onboard Diagnostics Credit by Exam": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:23.467483+00:00",
+      "unified_title": "Advanced Drivability and Onboard Diagnostics"
+    },
+    "AUTO 60J Advanced Lab Scope and Waveform Diagnosis Credit by Exam": {
+      "unified_title": "Advanced Lab Scope and Waveform Diagnosis",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:22.446225+00:00",
+      "issuing_agency": "California Community Colleges"
+    },
+    "AUTO 61A-Automotive Brake Systems-Credit by Exam": {
+      "unified_title": "Automotive Brake Systems",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:21.698426+00:00",
+      "issuing_agency": "California Community Colleges"
+    },
+    "AUTO 61B-Electronically Controlled Brake Systems Credit by Exam": {
+      "unified_title": "Electronically Controlled Brake Systems",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:20.769531+00:00",
+      "issuing_agency": "California Community Colleges"
+    },
     "AUTO 62A: Automotive Suspension, Steering and Alignment - Credit By Exam": {
       "unified_title": "Automotive Suspension, Steering and Alignment",
       "reviewed_by": "map@rccd.edu",
@@ -211,6 +343,12 @@
       "unified_title": "Wheel Alignment, Chassis Dynamics, and ADAS",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
+    },
+    "Acoustical Installer Apprenticeship": {
+      "issuing_agency": "Carpenters Training Committee for Northern California / Southern California Carpenters Joint Apprenticeship",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:47.169802+00:00",
+      "unified_title": "Carpenters Apprenticeship — Acoustical Installer"
     },
     "Adobe Photoshop Certified Professional": {
       "unified_title": "Adobe Certified Professional — Visual Design (Photoshop)",
@@ -222,6 +360,18 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
+    "Advanced Surface Mount Assembly and Rework": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:33.786987+00:00",
+      "unified_title": "Surface Mount Assembly and Rework Advanced"
+    },
+    "Alternative Photographic Processes I": {
+      "unified_title": "Photography Alternative Processes Beginning",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:51.426635+00:00",
+      "issuing_agency": "California Community Colleges"
+    },
     "American National Standard Institute (ANSI) Food Manager Certificate": {
       "unified_title": "ANSI-Accredited Food Protection Manager Certification",
       "reviewed_by": "map@rccd.edu",
@@ -231,6 +381,12 @@
       "unified_title": "Artificial Intelligence: Prompt Engineering and AI Systems",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
+    },
+    "Auto Service Excellence (ASE) ASE A7 - Active Certification awarded in the past five years": {
+      "unified_title": "ASE A7 — Heating and Air Conditioning",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:47.169802+00:00",
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)"
     },
     "Auto Service Excellence A6": {
       "unified_title": "ASE A6 — Electrical/Electronic Systems",
@@ -242,11 +398,17 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:35:49.462088+00:00"
     },
+    "AutoCAD I": {
+      "unified_title": "AutoCAD Beginning",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:12:07.974147+00:00",
+      "issuing_agency": "Autodesk"
+    },
     "Automotive": {
       "unified_title": "Introduction to Automotive Technology",
-      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T14:05:56.388865+00:00"
+      "reviewed_at": "2026-07-07T14:05:56.388865+00:00",
+      "issuing_agency": "California Community Colleges"
     },
     "Automotive Service Excellence (ASE) A4 Certificate Suspension & Steering": {
       "unified_title": "ASE A4 — Suspension and Steering",
@@ -263,6 +425,18 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "Automotive Services Excellence  6 (A6) Certificate Electrical/Electronic Systems": {
+      "unified_title": "ASE A6 — Electrical/Electronic Systems",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:47.169802+00:00",
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)"
+    },
+    "Automotive Services Excellence  8 (T8) Certificate- Preventive Maintenance & Inspection (PMI)": {
+      "unified_title": "ASE T8 — Preventive Maintenance Inspection",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:47.169802+00:00",
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)"
+    },
     "Automotive Services Excellence (A5: Brakes) Certificate": {
       "unified_title": "ASE A5 — Brakes",
       "reviewed_by": "map@rccd.edu",
@@ -272,6 +446,36 @@
       "unified_title": "Automotive Technology MLR I and II — Irvine High School",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
+    },
+    "BIOL-424 Anatomy and Physiology": {
+      "unified_title": "Anatomy and Physiology",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:14:59.940142+00:00",
+      "issuing_agency": "California Community Colleges"
+    },
+    "BIOTECH 002 - Biotechnology I": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:13:03.073156+00:00",
+      "unified_title": "Introduction to Biotechnology"
+    },
+    "BIOTECH 003 - Biotechnology II": {
+      "unified_title": "Biotechnology Intermediate",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:14:01.6871+00:00",
+      "issuing_agency": "California Community Colleges"
+    },
+    "BIOTECH 006 - Biotechnology: Quality Control": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:14:10.157007+00:00",
+      "unified_title": "Biotechnology: Quality Control"
+    },
+    "BIOTECH 102 - Cell Culture": {
+      "unified_title": "Biotechnology: Cell Culture",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:14:36.000417+00:00",
+      "issuing_agency": "California Community Colleges"
     },
     "BUSAD 210 Business Communication - Military Training": {
       "unified_title": "Business Communication",
@@ -465,9 +669,9 @@
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
     "Credit by Exam AUTO A1 Engine Repair": {
-      "reviewed_at": "2026-06-03T19:32:01.902138+00:00",
+      "unified_title": "ASE A1 — Engine Repair",
       "reviewed_by": "map@rccd.edu",
-      "unified_title": "ASE A1 — Engine Repair"
+      "reviewed_at": "2026-06-03T19:32:01.902138+00:00"
     },
     "Credit by Exam- Introduction to Legal Research and Terminology": {
       "unified_title": "Introduction to Legal Research and Terminology",
@@ -565,9 +769,9 @@
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
     "Firefighter 1A Certification": {
-      "reviewed_at": "2026-06-03T19:32:01.902138+00:00",
-      "reviewed_by": "map@rccd.edu",
       "unified_title": "Firefighter 1A",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T19:32:01.902138+00:00",
       "issuing_agency": "California State Fire Training (SFT)"
     },
     "Forecasting Financial Statemen- Credit by Exam": {
@@ -656,10 +860,10 @@
       "reviewed_at": "2026-06-03T17:12:43.443936+00:00"
     },
     "Inspection Portfolio Spring 2026 #1": {
-      "unified_title": "Construction Inspection",
-      "issuing_agency": "International Code Council",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T14:05:56.821738+00:00"
+      "reviewed_at": "2026-07-07T17:24:47.169802+00:00",
+      "unified_title": "Construction Inspection"
     },
     "Intro to Entrepreneurship High School to College Articulatio": {
       "unified_title": "Introduction to Entrepreneurship",
@@ -819,9 +1023,9 @@
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
     "POST - Peace Officer Standards and Training": {
-      "reviewed_at": "2026-06-03T19:32:01.902138+00:00",
+      "unified_title": "POST Basic Academy",
       "reviewed_by": "map@rccd.edu",
-      "unified_title": "POST Basic Academy"
+      "reviewed_at": "2026-06-03T19:32:01.902138+00:00"
     },
     "Paramedic NCTI (EMS-60/91)": {
       "unified_title": "Paramedic License",

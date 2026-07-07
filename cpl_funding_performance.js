@@ -8,9 +8,9 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified (context, not a priority metric) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 40722,
-  "p2": 4735,
-  "p3": 16259
+  "pe": 40965,
+  "p2": 4766,
+  "p3": 16296
  },
  "colleges": {
   "Alameda": {
@@ -19,7 +19,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Allan Hancock": {
-   "pe": 137,
+   "pe": 138,
    "p2": 0,
    "p3": 0
   },
@@ -59,7 +59,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Canyons": {
-   "pe": 120,
+   "pe": 255,
    "p2": 0,
    "p3": 0
   },
@@ -149,7 +149,7 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Desert": {
-   "pe": 388,
+   "pe": 389,
    "p2": 37,
    "p3": 37
   },
@@ -218,7 +218,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Irvine": {
-   "pe": 122,
+   "pe": 124,
    "p2": 0,
    "p3": 0
   },
@@ -238,7 +238,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "LA Pierce": {
-   "pe": 1855,
+   "pe": 1859,
    "p2": 1309,
    "p3": 1736
   },
@@ -318,9 +318,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Moreno Valley": {
-   "pe": 1516,
-   "p2": 380,
-   "p3": 1416
+   "pe": 1557,
+   "p2": 411,
+   "p3": 1453
   },
   "Mt San Antonio": {
    "pe": 732,
@@ -343,12 +343,12 @@ window.CPL_FUNDING_PERF = {
    "p3": 438
   },
   "Ohlone": {
-   "pe": 26,
+   "pe": 82,
    "p2": 0,
    "p3": 0
   },
   "Oxnard": {
-   "pe": 148,
+   "pe": 150,
    "p2": 0,
    "p3": 0
   },
@@ -510,7 +510,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "West LA": {
-   "pe": 665,
+   "pe": 666,
    "p2": 485,
    "p3": 549
   },

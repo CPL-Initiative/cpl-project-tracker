@@ -1,58 +1,8 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-07-07T16:24:11Z",
- "count": 28,
+ "_generated_at": "2026-07-07T17:34:20Z",
+ "count": 19,
  "suggestions": {
-  "ACCTG 19A, IRS Volunteer Income Assistant (VITA) Program - Tax Preparer": [
-   {
-    "kind": "course",
-    "title": "IRS Volunteer Income Tax Assistance (VITA) Program - Tax Preparer",
-    "code": "ACCTG 19A",
-    "share": 1.0,
-    "colleges": 1
-   }
-  ],
-  "ADM JUS 003 - Legal Aspects of Evidence": [
-   {
-    "kind": "cid",
-    "id": "AJ 124",
-    "title": "Legal Aspects of Evidence",
-    "code": "ADM JUS 3"
-   }
-  ],
-  "ADM JUS 075 - Introduction to Corrections": [
-   {
-    "kind": "cid",
-    "id": "AJ 200",
-    "title": "Introduction to Corrections",
-    "code": "ADM JUS 75"
-   }
-  ],
-  "ADM JUS 319 - Research Methods & Statistics in Criminal Justice": [
-   {
-    "kind": "course",
-    "title": "RESEARCH METHODS & STATISTICS IN CRIMINAL JUSTICE",
-    "code": "ADM JUS 319",
-    "share": 0.5,
-    "colleges": 2
-   }
-  ],
-  "AG - 014: Tractor Operations": [
-   {
-    "kind": "cid",
-    "id": "AG-MA 108 L",
-    "title": "Tractor Operation",
-    "code": "AG 14"
-   }
-  ],
-  "AGBUS - 024: Agriculture Accounting": [
-   {
-    "kind": "cid",
-    "id": "AG-AB 128",
-    "title": "Agricultural Accounting",
-    "code": "AGBUS 24"
-   }
-  ],
   "AUTO 60D Ignition Analysis and Oscilloscope Diagnosis Credit By Exam": [
    {
     "kind": "course",
@@ -60,105 +10,6 @@
     "code": "AUTO 60D",
     "share": 1.0,
     "colleges": 1
-   }
-  ],
-  "AUTO 60E Automotive Fuel Injection Credit by Exam": [
-   {
-    "kind": "course",
-    "title": "Automotive Fuel Injection",
-    "code": "AUTO 60E",
-    "share": 1.0,
-    "colleges": 1
-   }
-  ],
-  "AUTO 60F No-Start Diagnosis Credit by Exam": [
-   {
-    "kind": "course",
-    "title": "No-Start Diagnosis",
-    "code": "AUTO 60F",
-    "share": 1.0,
-    "colleges": 1
-   }
-  ],
-  "AUTO 60G Advanced Scan Tool Diagnosis Credit by Exam": [
-   {
-    "kind": "course",
-    "title": "Advanced Scan Tool Diagnosis",
-    "code": "AUTO 60G",
-    "share": 1.0,
-    "colleges": 1
-   }
-  ],
-  "AUTO 60H Advanced Drivability and Onboard Diagnostics Credit by Exam": [
-   {
-    "kind": "course",
-    "title": "Advanced Drivability and Onboard Diagnostics",
-    "code": "AUTO 60H",
-    "share": 1.0,
-    "colleges": 1
-   }
-  ],
-  "AUTO 60J Advanced Lab Scope and Waveform Diagnosis Credit by Exam": [
-   {
-    "kind": "course",
-    "title": "Advanced Lab Scope and Waveform Diagnosis",
-    "code": "AUTO 60J",
-    "share": 1.0,
-    "colleges": 1
-   }
-  ],
-  "AUTO 61A-Automotive Brake Systems-Credit by Exam": [
-   {
-    "kind": "course",
-    "title": "Automotive Brake Systems",
-    "code": "AUTO 61A",
-    "share": 1.0,
-    "colleges": 1
-   }
-  ],
-  "AUTO 61B-Electronically Controlled Brake Systems Credit by Exam": [
-   {
-    "kind": "course",
-    "title": "Electronically Controlled Brake Systems",
-    "code": "AUTO 61B",
-    "share": 1.0,
-    "colleges": 1
-   }
-  ],
-  "BIOTECH 002 - Biotechnology I": [
-   {
-    "kind": "course",
-    "title": "BIOTECHNOLOGY I",
-    "code": "BIOTECH 2",
-    "share": 0.5,
-    "colleges": 4
-   }
-  ],
-  "BIOTECH 003 - Biotechnology II": [
-   {
-    "kind": "course",
-    "title": "BIOTECHNOLOGY II",
-    "code": "BIOTECH 3",
-    "share": 0.5,
-    "colleges": 4
-   }
-  ],
-  "BIOTECH 006 - Biotechnology: Quality Control": [
-   {
-    "kind": "course",
-    "title": "Biotechnology: Quality Control",
-    "code": "BIOTECH 6",
-    "share": 0.67,
-    "colleges": 3
-   }
-  ],
-  "BIOTECH 102 - Cell Culture": [
-   {
-    "kind": "course",
-    "title": "Cell Culture",
-    "code": "BIOTECH 102",
-    "share": 0.67,
-    "colleges": 3
    }
   ],
   "BUSMGT 14 - High School: Transportation Management": [
@@ -179,6 +30,46 @@
     "colleges": 1
    }
   ],
+  "Building Plans Examiner": [
+   {
+    "kind": "cos",
+    "id": "3403-A",
+    "title": "Building Plans Examiner",
+    "org": "International Code Council"
+   }
+  ],
+  "California Emergency Medical Technician (EMT)": [
+   {
+    "kind": "cos",
+    "id": "0291-A",
+    "title": "Emergency Medical Technician",
+    "org": "National Registry of Emergency Medical Technicians"
+   }
+  ],
+  "Commercial Building Inspector": [
+   {
+    "kind": "cos",
+    "id": "3392-A",
+    "title": "Commercial Building Inspector",
+    "org": "International Code Council"
+   }
+  ],
+  "Emergency Medical Responder": [
+   {
+    "kind": "cos",
+    "id": "0290-A",
+    "title": "Emergency Medical Responder",
+    "org": "National Registry of Emergency Medical Technicians"
+   }
+  ],
+  "Emergency Medical Technician (EMT) Certification": [
+   {
+    "kind": "cos",
+    "id": "0291-A",
+    "title": "Emergency Medical Technician",
+    "org": "National Registry of Emergency Medical Technicians"
+   }
+  ],
   "FILM 31, Digital Filmmaking": [
    {
     "kind": "course",
@@ -186,6 +77,14 @@
     "code": "FILM 31",
     "share": 1.0,
     "colleges": 1
+   }
+  ],
+  "Introduction to Mechatronics": [
+   {
+    "kind": "cos",
+    "id": "14506-A",
+    "title": "Introduction to Mechatronics",
+    "org": "Festo"
    }
   ],
   "MUSIC 261 - Electronic Music Workshop": [
@@ -212,6 +111,22 @@
     "code": "MUSIC 661",
     "share": 1.0,
     "colleges": 2
+   }
+  ],
+  "Residential Building Inspector": [
+   {
+    "kind": "cos",
+    "id": "3388-A",
+    "title": "Residential Building Inspector",
+    "org": "International Code Council"
+   }
+  ],
+  "Residential Plans Examiner": [
+   {
+    "kind": "cos",
+    "id": "6914-A",
+    "title": "Residential Plans Examiner",
+    "org": "International Code Council"
    }
   ],
   "SMM 2, Culture and Zero Waste": [

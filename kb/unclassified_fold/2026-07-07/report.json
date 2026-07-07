@@ -1,6 +1,6 @@
 {
-  "_generated_at": "2026-07-07T16:26:15Z",
-  "mode": "dry-run",
+  "_generated_at": "2026-07-07T17:33:05Z",
+  "mode": "apply",
   "gates": {
     "V1_apply_safe": true,
     "V2_target_credential": true,
@@ -8,7 +8,246 @@
     "V4_no_articulation_ripple": true
   },
   "apply_safe": true,
-  "clean": [],
+  "clean": [
+    {
+      "raw": "A+ Certification Preparation",
+      "assigned": "CompTIA A+",
+      "issuer": "CompTIA",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T16:55:31.746235+00:00"
+    },
+    {
+      "raw": "ACCTG 15, Individual Income Taxes",
+      "assigned": "Individual Income Taxes",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T16:56:10.02836+00:00"
+    },
+    {
+      "raw": "ACCTG 16, Taxation of Corporations, Partnerships, Estates and Trusts",
+      "assigned": "Taxation of Corporations, Partnerships, Estates and Trusts",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T16:56:10.356678+00:00"
+    },
+    {
+      "raw": "ACCTG 19A, IRS Volunteer Income Assistant (VITA) Program - Tax Preparer",
+      "assigned": "IRS Volunteer Income Tax Assistance (VITA) Program - Tax Preparer",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:43.566358+00:00"
+    },
+    {
+      "raw": "ADM JUS 003 - Legal Aspects of Evidence",
+      "assigned": "Legal Aspects of Evidence",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:46.862459+00:00"
+    },
+    {
+      "raw": "ADM JUS 075 - Introduction to Corrections",
+      "assigned": "Introduction to Corrections",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:47.737539+00:00"
+    },
+    {
+      "raw": "ADM JUS 319 - Research Methods & Statistics in Criminal Justice",
+      "assigned": "Research Methods & Statistics in Criminal Justice",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:48.600531+00:00"
+    },
+    {
+      "raw": "AG - 014: Tractor Operations",
+      "assigned": "Tractor Operations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:49.989111+00:00"
+    },
+    {
+      "raw": "AGBUS - 024: Agriculture Accounting",
+      "assigned": "Agriculture Accounting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:50.811188+00:00"
+    },
+    {
+      "raw": "AP 2-D Art and Design (Score of 3 or higher)",
+      "assigned": "AP 2-D Art and Design",
+      "issuer": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:33.786987+00:00"
+    },
+    {
+      "raw": "AP Art History (Score of 3 or higher)",
+      "assigned": "AP Art History",
+      "issuer": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:53.068991+00:00"
+    },
+    {
+      "raw": "AP Art Studio 2-D (Score 3-5)",
+      "assigned": "AP 2-D Art and Design",
+      "issuer": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:33.786987+00:00"
+    },
+    {
+      "raw": "AP Art Studio 3-D (Score 3-5)",
+      "assigned": "AP 3-D Art and Design",
+      "issuer": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:33.786987+00:00"
+    },
+    {
+      "raw": "AP Art-Studio Drawing (Score 3-5)",
+      "assigned": "AP Drawing",
+      "issuer": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:33.786987+00:00"
+    },
+    {
+      "raw": "AP Biology (Score 3-5) (BIOSCI 100)",
+      "assigned": "AP Biology",
+      "issuer": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:56:00.688441+00:00"
+    },
+    {
+      "raw": "AUTO 60E Automotive Fuel Injection Credit by Exam",
+      "assigned": "Automotive Fuel Injection",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:25.681671+00:00"
+    },
+    {
+      "raw": "AUTO 60F No-Start Diagnosis Credit by Exam",
+      "assigned": "No-Start Diagnosis",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:25.053357+00:00"
+    },
+    {
+      "raw": "AUTO 60G Advanced Scan Tool Diagnosis Credit by Exam",
+      "assigned": "Advanced Scan Tool Diagnosis",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:24.507857+00:00"
+    },
+    {
+      "raw": "AUTO 60H Advanced Drivability and Onboard Diagnostics Credit by Exam",
+      "assigned": "Advanced Drivability and Onboard Diagnostics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:23.467483+00:00"
+    },
+    {
+      "raw": "AUTO 60J Advanced Lab Scope and Waveform Diagnosis Credit by Exam",
+      "assigned": "Advanced Lab Scope and Waveform Diagnosis",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:22.446225+00:00"
+    },
+    {
+      "raw": "AUTO 61A-Automotive Brake Systems-Credit by Exam",
+      "assigned": "Automotive Brake Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:21.698426+00:00"
+    },
+    {
+      "raw": "AUTO 61B-Electronically Controlled Brake Systems Credit by Exam",
+      "assigned": "Electronically Controlled Brake Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:20.769531+00:00"
+    },
+    {
+      "raw": "Acoustical Installer Apprenticeship",
+      "assigned": "Carpenters Apprenticeship — Acoustical Installer",
+      "issuer": "Carpenters Training Committee for Northern California / Southern California Carpenters Joint Apprenticeship",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:47.169802+00:00"
+    },
+    {
+      "raw": "Advanced Surface Mount Assembly and Rework",
+      "assigned": "Surface Mount Assembly and Rework Advanced",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:33.786987+00:00"
+    },
+    {
+      "raw": "Alternative Photographic Processes I",
+      "assigned": "Photography Alternative Processes Beginning",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:51.426635+00:00"
+    },
+    {
+      "raw": "Auto Service Excellence (ASE) ASE A7 - Active Certification awarded in the past five years",
+      "assigned": "ASE A7 — Heating and Air Conditioning",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:47.169802+00:00"
+    },
+    {
+      "raw": "AutoCAD I",
+      "assigned": "AutoCAD Beginning",
+      "issuer": "Autodesk",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:12:07.974147+00:00"
+    },
+    {
+      "raw": "Automotive Services Excellence  6 (A6) Certificate Electrical/Electronic Systems",
+      "assigned": "ASE A6 — Electrical/Electronic Systems",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:47.169802+00:00"
+    },
+    {
+      "raw": "Automotive Services Excellence  8 (T8) Certificate- Preventive Maintenance & Inspection (PMI)",
+      "assigned": "ASE T8 — Preventive Maintenance Inspection",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:47.169802+00:00"
+    },
+    {
+      "raw": "BIOL-424 Anatomy and Physiology",
+      "assigned": "Anatomy and Physiology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:14:59.940142+00:00"
+    },
+    {
+      "raw": "BIOTECH 002 - Biotechnology I",
+      "assigned": "Introduction to Biotechnology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:13:03.073156+00:00"
+    },
+    {
+      "raw": "BIOTECH 003 - Biotechnology II",
+      "assigned": "Biotechnology Intermediate",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:14:01.6871+00:00"
+    },
+    {
+      "raw": "BIOTECH 006 - Biotechnology: Quality Control",
+      "assigned": "Biotechnology: Quality Control",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:14:10.157007+00:00"
+    },
+    {
+      "raw": "BIOTECH 102 - Cell Culture",
+      "assigned": "Biotechnology: Cell Culture",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:14:36.000417+00:00"
+    }
+  ],
   "skip": [
     {
       "raw": "A S T 025 - Fundamentals of Auto Mechanics",
@@ -1005,9 +1244,9 @@
     {
       "raw": "Inspection Portfolio Spring 2026 #1",
       "assigned": "Construction Inspection",
-      "issuer": "International Code Council",
+      "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T14:05:56.821738+00:00",
+      "reviewed_at": "2026-07-07T17:24:47.169802+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -1575,8 +1814,166 @@
     }
   ],
   "conflict": [],
-  "credential_adds": [],
-  "credential_issuer_fills": [],
+  "credential_adds": [
+    {
+      "raw": "ACCTG 15, Individual Income Taxes",
+      "assigned": "Individual Income Taxes",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T16:56:10.02836+00:00"
+    },
+    {
+      "raw": "ACCTG 16, Taxation of Corporations, Partnerships, Estates and Trusts",
+      "assigned": "Taxation of Corporations, Partnerships, Estates and Trusts",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T16:56:10.356678+00:00"
+    },
+    {
+      "raw": "ACCTG 19A, IRS Volunteer Income Assistant (VITA) Program - Tax Preparer",
+      "assigned": "IRS Volunteer Income Tax Assistance (VITA) Program - Tax Preparer",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:43.566358+00:00"
+    },
+    {
+      "raw": "ADM JUS 319 - Research Methods & Statistics in Criminal Justice",
+      "assigned": "Research Methods & Statistics in Criminal Justice",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:48.600531+00:00"
+    },
+    {
+      "raw": "AG - 014: Tractor Operations",
+      "assigned": "Tractor Operations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:49.989111+00:00"
+    },
+    {
+      "raw": "AGBUS - 024: Agriculture Accounting",
+      "assigned": "Agriculture Accounting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:50.811188+00:00"
+    },
+    {
+      "raw": "AUTO 60E Automotive Fuel Injection Credit by Exam",
+      "assigned": "Automotive Fuel Injection",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:25.681671+00:00"
+    },
+    {
+      "raw": "AUTO 60F No-Start Diagnosis Credit by Exam",
+      "assigned": "No-Start Diagnosis",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:25.053357+00:00"
+    },
+    {
+      "raw": "AUTO 60G Advanced Scan Tool Diagnosis Credit by Exam",
+      "assigned": "Advanced Scan Tool Diagnosis",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:24.507857+00:00"
+    },
+    {
+      "raw": "AUTO 60H Advanced Drivability and Onboard Diagnostics Credit by Exam",
+      "assigned": "Advanced Drivability and Onboard Diagnostics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:23.467483+00:00"
+    },
+    {
+      "raw": "AUTO 60J Advanced Lab Scope and Waveform Diagnosis Credit by Exam",
+      "assigned": "Advanced Lab Scope and Waveform Diagnosis",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:22.446225+00:00"
+    },
+    {
+      "raw": "AUTO 61B-Electronically Controlled Brake Systems Credit by Exam",
+      "assigned": "Electronically Controlled Brake Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:20.769531+00:00"
+    },
+    {
+      "raw": "Advanced Surface Mount Assembly and Rework",
+      "assigned": "Surface Mount Assembly and Rework Advanced",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:33.786987+00:00"
+    },
+    {
+      "raw": "Alternative Photographic Processes I",
+      "assigned": "Photography Alternative Processes Beginning",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:51.426635+00:00"
+    },
+    {
+      "raw": "AutoCAD I",
+      "assigned": "AutoCAD Beginning",
+      "issuer": "Autodesk",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:12:07.974147+00:00"
+    },
+    {
+      "raw": "BIOTECH 003 - Biotechnology II",
+      "assigned": "Biotechnology Intermediate",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:14:01.6871+00:00"
+    },
+    {
+      "raw": "BIOTECH 006 - Biotechnology: Quality Control",
+      "assigned": "Biotechnology: Quality Control",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:14:10.157007+00:00"
+    },
+    {
+      "raw": "BIOTECH 102 - Cell Culture",
+      "assigned": "Biotechnology: Cell Culture",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:14:36.000417+00:00"
+    }
+  ],
+  "credential_issuer_fills": [
+    {
+      "title": "Legal Aspects of Evidence",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:46.862459+00:00"
+    },
+    {
+      "title": "Introduction to Corrections",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:47.737539+00:00"
+    },
+    {
+      "title": "Automotive Brake Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:21.698426+00:00"
+    },
+    {
+      "title": "Anatomy and Physiology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:14:59.940142+00:00"
+    },
+    {
+      "title": "Introduction to Biotechnology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:13:03.073156+00:00"
+    }
+  ],
   "credential_prunes": [],
   "articulation_ripples": [],
   "articulation_ripples_resolved": [],

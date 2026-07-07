@@ -1,18 +1,18 @@
 {
-  "scraped_at": "2026-07-07T15:23:55.476727+00:00",
+  "scraped_at": "2026-07-07T17:32:58.075812+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25265,
+    "jst": 25270,
     "star_colleges": 51
   },
   "computed_star_colleges": 51,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 118,
+      "jst": 122,
       "star": false
     },
     "Merced College": {
@@ -252,7 +252,7 @@
     },
     "Allan Hancock College": {
       "vets": 392,
-      "jst": 137,
+      "jst": 138,
       "star": false
     },
     "College of San Mateo": {

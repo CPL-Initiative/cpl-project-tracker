@@ -44084,5 +44084,285 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-07-07T14:05:56.388865+00:00",
     "reviewed_by": "map@rccd.edu"
+  },
+  "A+ Certification Preparation": {
+    "unified_title": "CompTIA A+",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T16:55:31.746235+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "ACCTG 15, Individual Income Taxes": {
+    "unified_title": "Individual Income Taxes",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T16:56:10.02836+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "ACCTG 16, Taxation of Corporations, Partnerships, Estates and Trusts": {
+    "unified_title": "Taxation of Corporations, Partnerships, Estates and Trusts",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T16:56:10.356678+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "ACCTG 19A, IRS Volunteer Income Assistant (VITA) Program - Tax Preparer": {
+    "unified_title": "IRS Volunteer Income Tax Assistance (VITA) Program - Tax Preparer",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T15:55:43.566358+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "ADM JUS 003 - Legal Aspects of Evidence": {
+    "unified_title": "Legal Aspects of Evidence",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T15:55:46.862459+00:00",
+    "reviewed_by": "map@rccd.edu",
+    "title_anchor": {
+      "system": "C-ID",
+      "id": "AJ 124"
+    }
+  },
+  "ADM JUS 075 - Introduction to Corrections": {
+    "unified_title": "Introduction to Corrections",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T15:55:47.737539+00:00",
+    "reviewed_by": "map@rccd.edu",
+    "title_anchor": {
+      "system": "C-ID",
+      "id": "AJ 200"
+    }
+  },
+  "ADM JUS 319 - Research Methods & Statistics in Criminal Justice": {
+    "unified_title": "Research Methods & Statistics in Criminal Justice",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T15:55:48.600531+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AG - 014: Tractor Operations": {
+    "unified_title": "Tractor Operations",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T15:55:49.989111+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AGBUS - 024: Agriculture Accounting": {
+    "unified_title": "Agriculture Accounting",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T15:55:50.811188+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AP 2-D Art and Design (Score of 3 or higher)": {
+    "unified_title": "AP 2-D Art and Design",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T17:24:33.786987+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AP Art History (Score of 3 or higher)": {
+    "unified_title": "AP Art History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T15:55:53.068991+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AP Art Studio 2-D (Score 3-5)": {
+    "unified_title": "AP 2-D Art and Design",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T17:24:33.786987+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AP Art Studio 3-D (Score 3-5)": {
+    "unified_title": "AP 3-D Art and Design",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T17:24:33.786987+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AP Art-Studio Drawing (Score 3-5)": {
+    "unified_title": "AP Drawing",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T17:24:33.786987+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AP Biology (Score 3-5) (BIOSCI 100)": {
+    "unified_title": "AP Biology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T15:56:00.688441+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AUTO 60E Automotive Fuel Injection Credit by Exam": {
+    "unified_title": "Automotive Fuel Injection",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T17:00:25.681671+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AUTO 60F No-Start Diagnosis Credit by Exam": {
+    "unified_title": "No-Start Diagnosis",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T17:00:25.053357+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AUTO 60G Advanced Scan Tool Diagnosis Credit by Exam": {
+    "unified_title": "Advanced Scan Tool Diagnosis",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T17:00:24.507857+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AUTO 60H Advanced Drivability and Onboard Diagnostics Credit by Exam": {
+    "unified_title": "Advanced Drivability and Onboard Diagnostics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T17:00:23.467483+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AUTO 60J Advanced Lab Scope and Waveform Diagnosis Credit by Exam": {
+    "unified_title": "Advanced Lab Scope and Waveform Diagnosis",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T17:00:22.446225+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AUTO 61A-Automotive Brake Systems-Credit by Exam": {
+    "unified_title": "Automotive Brake Systems",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T17:00:21.698426+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AUTO 61B-Electronically Controlled Brake Systems Credit by Exam": {
+    "unified_title": "Electronically Controlled Brake Systems",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T17:00:20.769531+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Acoustical Installer Apprenticeship": {
+    "unified_title": "Carpenters Apprenticeship — Acoustical Installer",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T17:24:47.169802+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Advanced Surface Mount Assembly and Rework": {
+    "unified_title": "Surface Mount Assembly and Rework Advanced",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T17:24:33.786987+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Alternative Photographic Processes I": {
+    "unified_title": "Photography Alternative Processes Beginning",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T15:55:51.426635+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Auto Service Excellence (ASE) ASE A7 - Active Certification awarded in the past five years": {
+    "unified_title": "ASE A7 — Heating and Air Conditioning",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T17:24:47.169802+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AutoCAD I": {
+    "unified_title": "AutoCAD Beginning",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T17:12:07.974147+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Automotive Services Excellence  6 (A6) Certificate Electrical/Electronic Systems": {
+    "unified_title": "ASE A6 — Electrical/Electronic Systems",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T17:24:47.169802+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Automotive Services Excellence  8 (T8) Certificate- Preventive Maintenance & Inspection (PMI)": {
+    "unified_title": "ASE T8 — Preventive Maintenance Inspection",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T17:24:47.169802+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BIOL-424 Anatomy and Physiology": {
+    "unified_title": "Anatomy and Physiology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T17:14:59.940142+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BIOTECH 002 - Biotechnology I": {
+    "unified_title": "Introduction to Biotechnology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T17:13:03.073156+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BIOTECH 003 - Biotechnology II": {
+    "unified_title": "Biotechnology Intermediate",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T17:14:01.6871+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BIOTECH 006 - Biotechnology: Quality Control": {
+    "unified_title": "Biotechnology: Quality Control",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T17:14:10.157007+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BIOTECH 102 - Cell Culture": {
+    "unified_title": "Biotechnology: Cell Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T17:14:36.000417+00:00",
+    "reviewed_by": "map@rccd.edu"
   }
 }

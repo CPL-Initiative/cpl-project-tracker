@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-07T15:23:55.181Z",
+  "scraped_at": "2026-07-07T17:32:57.614Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -33,33 +33,33 @@
         },
         {
           "college": "Los Angeles Pierce College",
-          "students": 1860,
-          "units": 28426,
-          "avgUnits": 15.282795698924732,
+          "students": 1864,
+          "units": 28432,
+          "avgUnits": 15.253218884120171,
           "transcriptionRate": 98.7,
-          "avgTranscribed": 15.086021505376344,
+          "avgTranscribed": 15.053648068669528,
           "criteriaMetCount": 5,
-          "militaryStudents": 118,
+          "militaryStudents": 122,
           "nonMilitaryStudents": 1742,
           "apprenticeStudents": 173,
-          "savings": 27607825,
-          "yearImpact": 134550024,
+          "savings": 27618205,
+          "yearImpact": 134586426,
           "transcribedUnits": 28060
         },
         {
           "college": "Moreno Valley College",
-          "students": 1558,
-          "units": 10120,
-          "avgUnits": 6.495507060333761,
-          "transcriptionRate": 91.6,
-          "avgTranscribed": 5.951219512195122,
+          "students": 1586,
+          "units": 10678,
+          "avgUnits": 6.732660781841109,
+          "transcriptionRate": 92.1,
+          "avgTranscribed": 6.197982345523329,
           "criteriaMetCount": 5,
           "militaryStudents": 957,
-          "nonMilitaryStudents": 617,
+          "nonMilitaryStudents": 645,
           "apprenticeStudents": 0,
-          "savings": 15376250,
-          "yearImpact": 60065150,
-          "transcribedUnits": 9272
+          "savings": 15914720,
+          "yearImpact": 62706722,
+          "transcribedUnits": 9830
         },
         {
           "college": "Riverside City College",
@@ -94,16 +94,16 @@
         {
           "college": "West Los Angeles College",
           "students": 698,
-          "units": 7946.5,
-          "avgUnits": 11.384670487106018,
-          "transcriptionRate": 89.8,
+          "units": 7956.5,
+          "avgUnits": 11.398997134670488,
+          "transcriptionRate": 89.7,
           "avgTranscribed": 10.227077363896848,
           "criteriaMetCount": 5,
           "militaryStudents": 95,
           "nonMilitaryStudents": 605,
           "apprenticeStudents": 0,
-          "savings": 8768380,
-          "yearImpact": 42015635,
+          "savings": 8778030,
+          "yearImpact": 42062975,
           "transcribedUnits": 7138.5
         },
         {
@@ -1072,6 +1072,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Allan Hancock College",
+          "students": 138,
+          "units": 548,
+          "avgUnits": 3.971014492753623,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 138,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 948040,
+          "yearImpact": 3324716,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Los Angeles Harbor College",
           "students": 138,
           "units": 405,
@@ -1084,21 +1099,6 @@
           "apprenticeStudents": 0,
           "savings": 700650,
           "yearImpact": 2457135,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Allan Hancock College",
-          "students": 137,
-          "units": 548,
-          "avgUnits": 4,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 137,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 948040,
-          "yearImpact": 3324716,
           "transcribedUnits": 0
         },
         {
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "48,660",
+      "value": "48,693",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "25,265"
+          "value": "25,270"
         },
         {
           "label": "Workforce/Other",
-          "value": "23,472"
+          "value": "23,500"
         },
         {
           "label": "Apprentice",
@@ -1775,7 +1775,7 @@
     },
     {
       "title": "ELIGIBLE UNITS",
-      "value": "232k",
+      "value": "233k",
       "avg": "4.8 avg",
       "breakdowns": [
         {
@@ -1803,7 +1803,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "86k"
+          "value": "87k"
         },
         {
           "label": "Apprentice",
@@ -1817,11 +1817,11 @@
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$159M"
+          "value": "$158M"
         },
         {
           "label": "Workforce/Other",
-          "value": "$169M"
+          "value": "$170M"
         },
         {
           "label": "Apprentice",
@@ -1835,11 +1835,11 @@
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$642M"
+          "value": "$641M"
         },
         {
           "label": "Workforce/Other",
-          "value": "$683M"
+          "value": "$686M"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 48660,
-    "Units": 232284.15000000002,
-    "TranscribedUnits": 100769.45,
-    "Savings": 321858135.25,
-    "YearImpact": 1301987508.3999999,
-    "MilitaryStudents": 25265,
-    "NonMilitaryStudents": 23472,
+    "Students": 48693,
+    "Units": 232858.15000000002,
+    "TranscribedUnits": 101327.45,
+    "Savings": 322416635.25,
+    "YearImpact": 1304712822.3999999,
+    "MilitaryStudents": 25270,
+    "NonMilitaryStudents": 23500,
     "AprenticeStudents": 755,
-    "AverageUnits": 4.7736159062885335,
-    "TranscribedAverage": 2.070888820386354
+    "AverageUnits": 4.782168894913027,
+    "TranscribedAverage": 2.0809448996775717
   }
 }
