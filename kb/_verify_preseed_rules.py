@@ -248,6 +248,111 @@ check("plan: STAGE-ONLY invariant — no lane writes to Supabase "
       "(apply_plan untouched by staged lanes)",
       "staged" in P.apply_plan.__code__.co_names, False)
 
+# ── v3 statewide-catalog + family lanes (Session 104) ────────────────────────
+print("v3 statewide/family lanes:")
+check("stage_key: trailing 'Certification' dropped",
+      P.stage_key("NCCER Welding Level 1 Certification"), P.stage_key("NCCER Welding Level 1"))
+check("stage_key: 'Fire Fighter' ≡ 'Firefighter'",
+      P.stage_key("Fire Fighter 1"), P.stage_key("Firefighter 1"))
+check("demoji: cp1252 em-dash normalized",
+      P._demoji("Generic Credit by Exam â€” Saddleback College"),
+      "Generic Credit by Exam — Saddleback College")
+
+# Hermetic fixtures — the lanes never touch statewide_data.js in this harness.
+_roster = [
+    {"title": "NCCER Welding Level 1",
+     "issuer": "National Center for Construction Education and Research (NCCER)"},
+    {"title": "Firefighter 1", "issuer": "California State Fire Training (SFT)"},
+]
+_weight = {"Certified Nurse Assistant (CNA) Certification": 3,
+           "Microsoft Office Specialist — Excel": 2,
+           "Fire Inspector I": 2, "Engine Performance I": 1}
+_lv = {}
+_sw, _fam = P.build_stage_indexes(_weight, _lv, _roster)
+_issuers = {"Certified Nurse Assistant (CNA) Certification":
+            "California Department of Public Health (CDPH)",
+            "Microsoft Office Specialist — Excel": "Microsoft",
+            "Fire Inspector I": "International Code Council (ICC)",
+            "NCCER Welding Level 1":
+            "National Center for Construction Education and Research (NCCER)",
+            # mirrors the production issuer_of, which closes over the roster
+            # issuers too (sw_issuer ∪ credentials.json)
+            "Firefighter 1": "California State Fire Training (SFT)"}
+_issuer_of = lambda t: _issuers.get(t, "")  # noqa: E731
+
+check("index: statewide brand-stripped alias ('welding level i' → the NCCER entry)",
+      _sw.get(P.stage_key("Welding Level I")), "NCCER Welding Level 1")
+
+rec = P.stage_ic("IC-  Welding Level I", _sw, _fam, _issuer_of)
+check("ic: IC-Welding → the NCCER statewide credential (Sam's example)",
+      (rec["title"], rec["via"], rec["confidence"]),
+      ("NCCER Welding Level 1", "statewide", 0.85))
+check("ic: statewide issuer stamped",
+      rec["issuer"], "National Center for Construction Education and Research (NCCER)")
+rec = P.stage_ic("IC-Engine Performance I", _sw, _fam, _issuer_of)
+check("ic: family hit labeled via='family' (never claimed as statewide)",
+      (rec["title"], rec["via"]), ("Engine Performance I", "family"))
+rec = P.stage_ic("IC- Automotive Electrical/Electronics I", _sw, _fam, _issuer_of)
+check("ic: unmatched content staged title-only, issuer left blank",
+      (rec["title"], rec["via"], rec["issuer"]),
+      ("Automotive Electrical/Electronics I", "ic", ""))
+check("ic: non-IC rows ignored", P.stage_ic("NCCER Welding Level 1", _sw, _fam, _issuer_of), None)
+
+rec = P.stage_cslb("C-10 Electrical Contractor")
+check("cslb: classification kept verbatim + CSLB issuer (Rule 8b)",
+      (rec["title"], rec["issuer"]), ("C-10 Electrical Contractor", P.ISSUER_CSLB))
+check("cslb: 'Class B-2 Contractor License' form claimed",
+      P.stage_cslb("Class B-2 Contractor License")["title"], "Class B-2 Contractor License")
+check("cslb: wildland C-190/C-290 bundles NEVER claimed (1-2 digit guard)",
+      P.stage_cslb("C-190, C-290, ICS 100 and ICS 700 Wildland Fire Certifications"), None)
+
+rec = P.stage_family("Certified Nurse Assistant (CNA) Certification", _sw, _fam, _issuer_of)
+check("family: acronym-echo parenthetical + trailing-cert fold → the exact family",
+      (rec["title"], rec["issuer"], rec["via"]),
+      ("Certified Nurse Assistant (CNA) Certification",
+       "California Department of Public Health (CDPH)", "family"))
+rec = P.stage_family("Certification: Microsoft Office Specialist (MOS)- Excel", _sw, _fam, _issuer_of)
+check("family: 'Certification:' lead + (MOS) echo stripped → MOS Excel family",
+      (rec["title"], rec["issuer"]), ("Microsoft Office Specialist — Excel", "Microsoft"))
+rec = P.stage_family("Fire Inspector 1 Certification (IFSAC/ProBoard)", _sw, _fam, _issuer_of)
+check("family: arabic→roman alias lands on the 'Fire Inspector I' family",
+      rec["title"], "Fire Inspector I")
+check("family: accreditor parenthetical OVERRIDES the family issuer + caps confidence",
+      (rec["issuer"], rec["confidence"] <= 0.7),
+      ("International Fire Service Accreditation Congress (IFSAC) / Pro Board", True))
+rec = P.stage_family("Fire Fighter 1 (FF1) Certification", _sw, _fam, _issuer_of)
+check("family: FF1 echo + firefighter fold → the statewide roster entry",
+      (rec["title"], rec["via"], rec["issuer"]),
+      ("Firefighter 1", "statewide", "California State Fire Training (SFT)"))
+check("family: self-match with nothing to add returns None",
+      P.stage_family("Engine Performance I", _sw, _fam, lambda t: ""), None)
+
+_meta = {"CNC Operation": {"cpl_type": "Credit By Exam", "collab": "Local"},
+         "Combinded Processes I": {"cpl_type": "Credit By Exam", "collab": "Local"},
+         "WATER 140": {"cpl_type": "Credit By Exam", "collab": "Local"},
+         "CLEP French Level III": {"cpl_type": "Standardized Assessment", "collab": "Local"}}
+rec = P.stage_cx_type("CNC Operation", {}, _meta)
+check("cx-type: CPL-Type-routed row keeps its content title + CCC issuer",
+      (rec["title"], rec["issuer"], rec["via"]), ("CNC Operation", P.ISSUER_CCC, "cx"))
+rec = P.stage_cx_type("Combinded Processes I", {}, _meta)
+check("cx-type: typo fix applied + receipted",
+      (rec["title"], "typo fixed" in rec["note"]), ("Combined Processes I", True))
+check("cx-type: code-only rows guarded (judgment/residual, never invented)",
+      P.stage_cx_type("WATER 140", {}, _meta), None)
+check("cx-type: non-Cx CPL types ignored",
+      P.stage_cx_type("CLEP French Level III", {}, _meta), None)
+check("cx-type: rows absent from the MAP metadata ignored",
+      P.stage_cx_type("Some Unknown Row", {}, _meta), None)
+
+staged, residual = P.build_stage_plan(
+    ["MUSIC 265-9 - Recording Arts Workshop IX"], {}, set(),
+    _sw, _fam, _issuer_of,
+    {"MUSIC 265-9 - Recording Arts Workshop IX": {"cpl_type": "Credit By Exam", "collab": "Local"}})
+check("plan: a code-led CBE row still routes through the hs code-strip lane, "
+      "not cx-type (title = course content)",
+      staged["MUSIC 265-9 - Recording Arts Workshop IX"]["title"],
+      "Recording Arts Workshop IX")
+
 # ── summary ──────────────────────────────────────────────────────────────────
 fails = [c for c in CHECKS if not c[1]]
 print(f"\n{len(CHECKS)} checks, {len(fails)} failed")

@@ -59,17 +59,33 @@ House conventions: exhibit titles keep NCCER's own naming **verbatim**
 are distinct credentials, never folded); issuer = `NCCER` (Sam's existing
 `NCCER Welding Level 1` family precedent).
 
-## CSLB (future lane — the C-## contractor licenses)
+## CSLB (LANE LIVE — Session 104)
 
-The ~10 residual `C-## <Trade> Contractor` / `Class A|B` rows are California
+The `C-## <Trade> Contractor` / `Class A|B(-2)` rows are California
 **Contractors State License Board** license classifications:
 
 - License classifications list: <https://www.cslb.ca.gov/About_Us/Library/Licensing_Classifications/>
 
-Pre-seedable once Sam decides the house family shape (e.g. `CSLB C-10 —
-Electrical Contractor License`); issuer `Contractors State License Board
-(CSLB)`. Queue: C-5, C-6, C-8, C-10, C-29, C-36, C-46, C-47, Class A, Class B,
-Class B-2.
+House shape (staged Session 104, Sam reviews before saving): title kept
+**VERBATIM** (Rule 8b — the classification code is the credential's identity;
+they are also statewide CCC-collaborative exhibits under those exact titles);
+issuer `Contractors State License Board (CSLB)`. `stage_cslb` guards to 1-2
+digit codes so wildland C-190/C-290 course bundles are never claimed.
+
+## Fire-service accreditors (Session 104)
+
+Fire certification exhibits often name their **accreditation system** in a
+parenthetical — `(IFSAC/ProBoard)`, `(ProBoard)`. Rule 4: same credential,
+issuer discriminates; the staged family lane captures the parenthetical as the
+issuer (canonical long forms):
+
+- **International Fire Service Accreditation Congress (IFSAC)** —
+  <https://ifsac.org/>
+- **Pro Board (National Board on Fire Service Professional Qualifications)** —
+  <https://theproboard.org/>
+- California's own certifying body for the SFT ladder stays
+  `California State Fire Training (SFT)`; NWCG codes (S-###) →
+  `National Wildfire Coordinating Group (NWCG)`.
 
 ## Already-wired authorities (for completeness)
 

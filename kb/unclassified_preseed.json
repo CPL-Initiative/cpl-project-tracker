@@ -1,1261 +1,695 @@
 {
  "_about": "STAGED pre-seed suggestions for the CER unclassified-triage worklist (kb/_preseed_unclassified.py --stage). NOT saved to Supabase: credential_reference.js PREFILLS each row's assign inputs from this file; the curator reviews and clicks Save (or 'Save all pre-filled'). Regenerate after queue/family changes; rows with a live assignment are never prefilled.",
- "_generated_at": "2026-07-07T20:25:38Z",
+ "_generated_at": "2026-07-07T22:59:12Z",
  "_queue_count": 451,
  "_counts": {
-  "staged": 163,
-  "residual": 107
+  "staged": 97,
+  "residual": 3
  },
  "_residual": [
-  "Automotive Welding, Cutting, and Modification",
-  "Basic Electric Arc Welding",
-  "Basic Mechanical Blueprint Reading",
-  "Beginning Arc Welding",
-  "Biocom Institute Technician Certification (BioTC) - This certification has no expiration",
-  "Building Plans Examiner",
-  "C-10 Electrical Contractor",
-  "C-29 Masonry Contractor",
-  "C-36 Plumbing Contractor",
-  "C-46 Solar Contractor",
-  "C-47 General Manufactured Housing Contractor",
-  "C-5 Framing and Rough Carpentry Contractor",
-  "C-6 Cabinet, Millwork and Finish Carpentry Contractor",
-  "C-8 Concrete Contractor",
   "CLEP French Language (Levels 1 and 2) - Complete both",
-  "CLEP French Level III",
   "CLEP German Language (Levels 1 and 2) - Complete both",
-  "CLEP German Level III",
-  "CLEP Spanish Language (Levels 1 and 2) - Complete both",
-  "CNC Operation",
-  "Cal Fire Fire Control 4A: Ignitable Liquids and Gases Awareness/Operations",
-  "California Building Code Certification",
-  "California Certified Public Accountant (CPA) License, issued by the California Board of Accountancy (CBA).",
-  "California Emergency Medical Technician (EMT)",
-  "California Residential Code Certification",
-  "California State Water Resources Control Board D2, D3, D4, or D5 certification",
-  "Certification for Welders",
-  "Certification: Microsoft Office Specialist (MOS)- Excel",
-  "Certified Nurse Assistant (CNA) Certification",
-  "Class A Contractor License",
-  "Class B Contractor License",
-  "Class B-2 Contractor License",
-  "Clinical Embalming (MORT 482 C)",
-  "Combinded Processes I",
-  "Commercial Building Inspector",
-  "Communications Systems",
-  "Computer Networks",
-  "Computer Simulation and Troubleshooting",
-  "Construction Fabrication and Welding",
-  "Customer Relations for the Technician",
-  "Discipline Exam - ADM JUS 001",
-  "Emergency Care and Safety Institute",
-  "Emergency Management Experience (LD)",
-  "Emergency Management Experience (UD)",
-  "Engineering Drawing",
-  "FCC General Radiotelephone Operator License Preparation",
-  "Fire Company Officer 3 Certification (IFSAC or ProBoard Certifications)",
-  "Fire Fighter 1 (FF1) Certification",
-  "Fire Fighter 1: Haz Mat + WMD",
-  "Fire Fighter 2 (FF2) Certification",
-  "Fire Inspector 1 Certification (IFSAC/ProBoard)",
-  "Fire Inspector 2 (IFSAC/ProBoard)",
-  "Fire Instructor 2 (ProBoard)",
-  "Fire Officer II Certification (ProBoard)",
-  "Firefighter I",
-  "Firefighter II",
-  "IC-  Welding Level I",
-  "IC- Automotive Electrical/Electronics I",
-  "IC- Engine Performance II",
-  "IC- Introduction to Automotive Technology",
-  "IC- Introduction to Hybrid and Electric Vehicle Technology",
-  "IC- Welding Level I",
-  "IC- Welding Level II",
-  "IC-Automotive Brake Systems",
-  "IC-Automotive Electrical/Electronics II",
-  "IC-Automotive Suspension, Steering and Alignment Systems",
-  "IC-Engine Performance I",
-  "IC-Welding Level I",
-  "IC-Welding Level II",
-  "Industry Credentials for Introduction to Computers",
-  "Infant and Toddler Care and Curriculum",
-  "Intermediate Arc Welding",
-  "Internship and Work Experience",
-  "Intro to Managerial Accounting",
-  "Introduciton to UNIX/Linux",
-  "Introduction to CNC Programing",
-  "Introduction to Engineering",
-  "Introduction to Mechanical Principals",
-  "Introduction to Video Editing and Postproduction",
-  "Licensed Vocation Nurse (LVN) Certification",
-  "Medical Insurance Billing and Coding",
-  "Microsoft Office Specialist (MOS): Excel Associate or Microsoft Office Specialist (MOS): Excel Expert Certification.",
-  "Microsoft Office Specialist (MOS): Word Associate or MOS: Word Expert Certification.",
-  "Microwave Communications",
-  "Military Basic Training",
-  "Motion Graphics",
-  "NIMS ICS All-Hazards Incident Commander (ICT3)",
-  "National Wildfire Coordinating Group-S-190 Introduction to Windland Fire Behavior",
-  "Network+ Certification Preparation",
-  "Oxyacetylene Welding",
-  "PC Operating System",
-  "PC Troubleshooting",
-  "Peace Officer Standards and Training (POST) Basic Academy Certificate",
-  "Personal Computer Servicing",
-  "Pipe and Tube Welding",
-  "Print Reading and Computations for Workers",
-  "Print Reading and Shop Practice",
-  "Producing and Directing",
-  "Quality Improvement Associate Certification/CQIA (American Society for Quality/ASQ) -  This certification has no expiration",
-  "S-339 Division/Group Supervisor- ALL RISK (Wildland Fire Fighter)",
-  "Security+ Certification Preparation",
-  "Server Systems",
-  "Server+ Certificate Preparation",
-  "Solidworks Advanced Solid Modeling",
-  "Solidworks Intermediate Solid Modeling",
-  "Video Editing",
-  "Video I"
+  "CLEP Spanish Language (Levels 1 and 2) - Complete both"
  ],
  "staged": {
-  "AUTO 60D Ignition Analysis and Oscilloscope Diagnosis Credit By Exam": {
-   "title": "Ignition Analysis and Oscilloscope Diagnosis",
+  "Automotive Welding, Cutting, and Modification": {
+   "title": "Automotive Welding, Cutting, and Modification",
    "issuer": "California Community Colleges",
    "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code AUTO 60D stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "AUTOTEC-10 - High School: Intro to Automotive Technology": {
-   "title": "Introduction to Automotive Technology",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for AUTOTEC 10 (stripped: high-school prefix); issuer = CCC. Matched the existing family 'Introduction to Automotive Technology'."
-  },
-  "AUTOTEC-10: CORONA HIGH SCHOOL- Automotive Technology 3A/3B": {
-   "title": "Introduction to Automotive Technology",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for AUTOTEC 10 (stripped: school name, section rider); issuer = CCC. Converged on 'Introduction to Automotive Technology' (modal title for AUTOTEC 10)."
-  },
-  "AUTOTEC-10: Service and Repair (Intro to Automotive)": {
-   "title": "Introduction to Automotive Technology",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for AUTOTEC 10 (stripped: course code only); issuer = CCC. Converged on 'Introduction to Automotive Technology' (modal title for AUTOTEC 10)."
-  },
-  "AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics": {
-   "title": "Auto Electricity and Electronics",
-   "issuer": "California Community Colleges",
-   "via": "hs",
    "confidence": 0.7,
-   "note": "Course-content title for AUTOTEC 15 (stripped: school name); issuer = CCC."
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
   },
-  "AUTOTEC-15: Auto Electricity and Electronics": {
-   "title": "Auto Electricity and Electronics",
+  "Basic Electric Arc Welding": {
+   "title": "Basic Electric Arc Welding",
    "issuer": "California Community Colleges",
-   "via": "hs",
+   "via": "cx",
    "confidence": 0.7,
-   "note": "Course-content title for AUTOTEC 15 (stripped: course code only); issuer = CCC."
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
   },
-  "BIOL-424 High School Anatomy and Physiology Honors": {
-   "title": "Anatomy and Physiology",
+  "Basic Mechanical Blueprint Reading": {
+   "title": "Basic Mechanical Blueprint Reading",
    "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for BIOL 424 (stripped: Honors marker); issuer = CCC. Converged on 'Anatomy and Physiology' (modal title for BIOL 424)."
-  },
-  "BIOL-424: COLTON HIGH SCHOOL- Anatomy and Physiology (Honors)": {
-   "title": "Anatomy and Physiology",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for BIOL 424 (stripped: school name, Honors marker); issuer = CCC. Matched the existing family 'Anatomy and Physiology'."
-  },
-  "BUS-10 Introduction to Business": {
-   "title": "Introduction to Business",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for BUS 10 (stripped: course code only); issuer = CCC. Matched the existing family 'Introduction to Business'."
-  },
-  "BUS-10: AB MILLER HIGH SCHOOL- Business and Finance": {
-   "title": "Introduction to Business",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for BUS 10 (stripped: school name); issuer = CCC. Converged on 'Introduction to Business' (modal title for BUS 10)."
-  },
-  "BUS-10: CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)": {
-   "title": "Introduction to Business",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for BUS 10 (stripped: school name, IS-codes); issuer = CCC. Converged on 'Introduction to Business' (modal title for BUS 10)."
-  },
-  "BUS-10: SUMMIT HIGH SCHOOL- Business and Finance": {
-   "title": "Introduction to Business",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for BUS 10 (stripped: school name); issuer = CCC. Converged on 'Introduction to Business' (modal title for BUS 10)."
-  },
-  "BUSMGT 14 - High School: Transportation Management": {
-   "title": "Transportation Management",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for BUSMGT 14 (stripped: high-school prefix); issuer = CCC. Matched the existing family 'Transportation Management'."
-  },
-  "BUSMGT 436 - High School Intro to Logistics Management": {
-   "title": "Introduction to Logistics Management",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for BUSMGT 436 (stripped: course code only); issuer = CCC. Converged on 'Introduction to Logistics Management' (modal title for BUSMGT 436)."
-  },
-  "BUSMGT-13: ARROYO VALLEY HIGH SCHOOL- Supply Chain and Logistics  IS260/IS261": {
-   "title": "Supply Chain Management",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for BUSMGT 13 (stripped: school name, IS-codes); issuer = CCC. Converged on 'Supply Chain Management' (modal title for BUSMGT 13)."
-  },
-  "BUSMGT-13: Supply Chain Management": {
-   "title": "Supply Chain Management",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for BUSMGT 13 (stripped: course code only); issuer = CCC. Matched the existing family 'Supply Chain Management'."
-  },
-  "BUSMGT-14 High School - Transportation Management": {
-   "title": "Transportation Management",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for BUSMGT 14 (stripped: high-school prefix); issuer = CCC. Matched the existing family 'Transportation Management'."
-  },
-  "BUSMGT-14 Jurupa Hills High - Transportation Management": {
-   "title": "Transportation Management",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for BUSMGT 14 (stripped: school name); issuer = CCC. Matched the existing family 'Transportation Management'."
-  },
-  "BUSMGT-14: Transportation Management": {
-   "title": "Transportation Management",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for BUSMGT 14 (stripped: course code only); issuer = CCC. Matched the existing family 'Transportation Management'."
-  },
-  "BUSMGT-436: ARROYO VALLEY HIGH SCHOOL- Supply Chain and Logistics IS260/IS261": {
-   "title": "Introduction to Logistics Management",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for BUSMGT 436 (stripped: school name, IS-codes); issuer = CCC. Converged on 'Introduction to Logistics Management' (modal title for BUSMGT 436)."
-  },
-  "BUSMGT-436: Baldy View ROP - Transportation, Distribution and Logistics": {
-   "title": "Introduction to Logistics Management",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for BUSMGT 436 (stripped: school name); issuer = CCC. Converged on 'Introduction to Logistics Management' (modal title for BUSMGT 436)."
-  },
-  "BUSMGT-436: CAJON HIGH SCHOOL- Global Logistics & Concepts IS262/IS263": {
-   "title": "Introduction to Logistics Management",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for BUSMGT 436 (stripped: school name, IS-codes); issuer = CCC. Converged on 'Introduction to Logistics Management' (modal title for BUSMGT 436)."
-  },
-  "BUSMGT-436: Introduction to Logistics Management": {
-   "title": "Introduction to Logistics Management",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for BUSMGT 436 (stripped: course code only); issuer = CCC. Matched the existing family 'Introduction to Logistics Management'."
-  },
-  "BUSMGT-45: AB MILLER HIGH SCHOOL- Global Business Design": {
-   "title": "Small Business Ownership and Management",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for BUSMGT 45 (stripped: school name); issuer = CCC. Converged on 'Small Business Ownership and Management' (modal title for BUSMGT 45)."
-  },
-  "BUSMGT-45: SUMMIT HIGH SCHOOL- Global Business Design": {
-   "title": "Small Business Ownership and Management",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for BUSMGT 45 (stripped: school name); issuer = CCC. Converged on 'Small Business Ownership and Management' (modal title for BUSMGT 45)."
-  },
-  "BUSMGT-45: Small Business Ownership and Management": {
-   "title": "Small Business Ownership and Management",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for BUSMGT 45 (stripped: course code only); issuer = CCC. Matched the existing family 'Small Business Ownership and Management'."
-  },
-  "CIS-1/ITIS-10: Introduction to Computer Information Systems": {
-   "title": "Introduction to Computer Information Systems",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for CIS 1/ITIS 10 (stripped: course code only); issuer = CCC. Matched the existing family 'Introduction to Computer Information Systems'."
-  },
-  "CIS-1: CAJON HIGH SCHOOL- Introduction to Computer Information Systems  (IS662/IS663)": {
-   "title": "Introduction to Computer Information Systems",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for CIS 1 (stripped: school name, IS-codes); issuer = CCC. Matched the existing family 'Introduction to Computer Information Systems'."
-  },
-  "CJ-1 High School Articulation: Law Enforcement": {
-   "title": "Introduction to the Criminal Justice System",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for CJ 1 (stripped: high-school prefix); issuer = CCC. Converged on 'Introduction to the Criminal Justice System' (modal title for CJ 1)."
-  },
-  "CJ-1 High School: Advanced Law Enforcement": {
-   "title": "Introduction to the Criminal Justice System",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for CJ 1 (stripped: high-school prefix); issuer = CCC. Converged on 'Introduction to the Criminal Justice System' (modal title for CJ 1)."
-  },
-  "CJ-1 Introduction to the Criminal Justice System": {
-   "title": "Introduction to the Criminal Justice System",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for CJ 1 (stripped: course code only); issuer = CCC. Matched the existing family 'Introduction to the Criminal Justice System'."
-  },
-  "CJ-1: Fontana High - Law Enforcement": {
-   "title": "Introduction to the Criminal Justice System",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for CJ 1 (stripped: school name); issuer = CCC. Converged on 'Introduction to the Criminal Justice System' (modal title for CJ 1)."
-  },
-  "CJ-51: FONTANA HIGH SCHOOL- Advanced Law Enforcement (Corrections)": {
-   "title": "Introduction to Corrections",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for CJ 51 (stripped: school name); issuer = CCC. Converged on 'Introduction to Corrections' (modal title for CJ 51)."
-  },
-  "CJ-51: Introduction to Corrections": {
-   "title": "Introduction to Corrections",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for CJ 51 (stripped: course code only); issuer = CCC. Matched the existing family 'Introduction to Corrections'."
-  },
-  "CJ-9 High School - Crime Scene Management": {
-   "title": "Crime Scene Management and Forensic Evidence",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for CJ 9 (stripped: high-school prefix); issuer = CCC. Converged on 'Crime Scene Management and Forensic Evidence' (modal title for CJ 9)."
-  },
-  "CJ-9 SUMMIT HIGH SCHOOL- Cyber Scene Management": {
-   "title": "Crime Scene Management and Forensic Evidence",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for CJ 9 (stripped: school name); issuer = CCC. Converged on 'Crime Scene Management and Forensic Evidence' (modal title for CJ 9)."
-  },
-  "CJ-9: Crime Scene Management and Forensic Evidence": {
-   "title": "Crime Scene Management and Forensic Evidence",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for CJ 9 (stripped: course code only); issuer = CCC. Matched the existing family 'Crime Scene Management and Forensic Evidence'."
-  },
-  "Cabinetmaker Apprenticeship": {
-   "title": "Carpenters Apprenticeship — Cabinetmaker",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "carpenters",
+   "via": "cx",
    "confidence": 0.7,
-   "note": "House 'Carpenters Apprenticeship — <trade>' shape; Cabrillo (Northern CA) → CTCNC per its published trade roster + DIR DAS occ 2180. Sam's Acoustical Installer family used a combined north/south issuer — adjust if preferred."
+   "note": "MAP CPL Type = Portfolio Review — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
   },
-  "Carpentry Apprenticeship": {
-   "title": "Carpenters Apprenticeship — Carpenter",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "carpenters",
+  "Beginning Arc Welding": {
+   "title": "Beginning Arc Welding",
+   "issuer": "California Community Colleges",
+   "via": "cx",
    "confidence": 0.7,
-   "note": "House 'Carpenters Apprenticeship — <trade>' shape; Cabrillo (Northern CA) → CTCNC per its published trade roster + DIR DAS occ 2180. Sam's Acoustical Installer family used a combined north/south issuer — adjust if preferred."
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
   },
-  "Commercial Electrical Apprenticeship": {
-   "title": "Commercial Electrical Apprenticeship",
-   "issuer": "",
-   "confidence": 0.55,
-   "note": "Electrical trade — identify the sponsoring JATC/program via the DIR DAS occupational search (Electrician) before setting an issuer.",
+  "Biocom Institute Technician Certification (BioTC) - This certification has no expiration": {
+   "title": "Biocom Institute Technician Certification (BioTC)",
+   "issuer": "Biocom California Institute",
+   "confidence": 0.7,
+   "note": "No-expiration rider stripped; BioTC is the Biocom California Institute's life-science technician credential.",
    "via": "single"
   },
-  "Construction Craft Laborer Apprenticeship": {
-   "title": "Construction Craft Laborer Apprenticeship",
-   "issuer": "Laborers' International Union of North America (LiUNA)",
-   "confidence": 0.6,
-   "note": "Construction Craft Laborer is LiUNA's registered trade; the CA program sponsor is verifiable via DIR DAS occupational search.",
-   "via": "single"
+  "C-10 Electrical Contractor": {
+   "title": "C-10 Electrical Contractor",
+   "issuer": "Contractors State License Board (CSLB)",
+   "via": "cslb",
+   "confidence": 0.85,
+   "note": "CSLB license classification kept verbatim (Rule 8b — the C-#/Class code is the credential's identity; cslb.ca.gov/About_Us/Library/Licensing_Classifications). A statewide CCC-collaborative exhibit."
   },
-  "Credit By Exam Miramar": {
-   "title": "Generic Credit by Exam — San Diego Miramar College",
-   "issuer": "California Community Colleges",
+  "C-29 Masonry Contractor": {
+   "title": "C-29 Masonry Contractor",
+   "issuer": "Contractors State License Board (CSLB)",
+   "via": "cslb",
+   "confidence": 0.85,
+   "note": "CSLB license classification kept verbatim (Rule 8b — the C-#/Class code is the credential's identity; cslb.ca.gov/About_Us/Library/Licensing_Classifications). A statewide CCC-collaborative exhibit."
+  },
+  "C-36 Plumbing Contractor": {
+   "title": "C-36 Plumbing Contractor",
+   "issuer": "Contractors State License Board (CSLB)",
+   "via": "cslb",
+   "confidence": 0.85,
+   "note": "CSLB license classification kept verbatim (Rule 8b — the C-#/Class code is the credential's identity; cslb.ca.gov/About_Us/Library/Licensing_Classifications). A statewide CCC-collaborative exhibit."
+  },
+  "C-46 Solar Contractor": {
+   "title": "C-46 Solar Contractor",
+   "issuer": "Contractors State License Board (CSLB)",
+   "via": "cslb",
+   "confidence": 0.85,
+   "note": "CSLB license classification kept verbatim (Rule 8b — the C-#/Class code is the credential's identity; cslb.ca.gov/About_Us/Library/Licensing_Classifications). A statewide CCC-collaborative exhibit."
+  },
+  "C-47 General Manufactured Housing Contractor": {
+   "title": "C-47 General Manufactured Housing Contractor",
+   "issuer": "Contractors State License Board (CSLB)",
+   "via": "cslb",
+   "confidence": 0.85,
+   "note": "CSLB license classification kept verbatim (Rule 8b — the C-#/Class code is the credential's identity; cslb.ca.gov/About_Us/Library/Licensing_Classifications). A statewide CCC-collaborative exhibit."
+  },
+  "C-5 Framing and Rough Carpentry Contractor": {
+   "title": "C-5 Framing and Rough Carpentry Contractor",
+   "issuer": "Contractors State License Board (CSLB)",
+   "via": "cslb",
+   "confidence": 0.85,
+   "note": "CSLB license classification kept verbatim (Rule 8b — the C-#/Class code is the credential's identity; cslb.ca.gov/About_Us/Library/Licensing_Classifications). A statewide CCC-collaborative exhibit."
+  },
+  "C-6 Cabinet, Millwork and Finish Carpentry Contractor": {
+   "title": "C-6 Cabinet, Millwork and Finish Carpentry Contractor",
+   "issuer": "Contractors State License Board (CSLB)",
+   "via": "cslb",
+   "confidence": 0.85,
+   "note": "CSLB license classification kept verbatim (Rule 8b — the C-#/Class code is the credential's identity; cslb.ca.gov/About_Us/Library/Licensing_Classifications). A statewide CCC-collaborative exhibit."
+  },
+  "C-8 Concrete Contractor": {
+   "title": "C-8 Concrete Contractor",
+   "issuer": "Contractors State License Board (CSLB)",
+   "via": "cslb",
+   "confidence": 0.85,
+   "note": "CSLB license classification kept verbatim (Rule 8b — the C-#/Class code is the credential's identity; cslb.ca.gov/About_Us/Library/Licensing_Classifications). A statewide CCC-collaborative exhibit."
+  },
+  "CLEP French Level III": {
+   "title": "CLEP French Language Level III",
+   "issuer": "College Board",
    "confidence": 0.5,
-   "note": "Rule 5 generic bucket (7 adopting colleges); follows the existing 'Generic Credit by Exam — <college>' family shape.",
+   "note": "Extends the existing 'CLEP French Language Level I/II' ladder — Santa Rosa awards a third credit tier for higher scores; verify before folding.",
    "via": "single"
   },
-  "Credit by Exam - Intro to Process Technology": {
-   "title": "Intro to Process Technology",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam - WATER 140": {
-   "title": "Water Distribution Operator I",
-   "issuer": "California Community Colleges",
-   "confidence": 0.75,
-   "note": "COCI course title for WATER 140 at College of the Canyons (the adopting college) — Rule 5c course-content naming.",
+  "CLEP German Level III": {
+   "title": "CLEP German Language Level III",
+   "issuer": "College Board",
+   "confidence": 0.5,
+   "note": "Extends the existing 'CLEP German Language Level I/II' ladder — Santa Rosa awards a third credit tier for higher scores; verify before folding.",
    "via": "single"
   },
-  "Credit by Exam ACCTG 022 Payroll Accounting": {
-   "title": "Payroll Accounting",
+  "CNC Operation": {
+   "title": "CNC Operation",
    "issuer": "California Community Colleges",
    "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code ACCTG 022 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam ACCTG 030 QuickBooks": {
-   "title": "QuickBooks",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.85,
-   "note": "Rule 5c: mechanism phrase + course code ACCTG 030 stripped; issuer = CCC (title 5 §55050 system instrument). Matched the existing family 'QuickBooks'."
-  },
-  "Credit by Exam AUTO 102 Automotive System": {
-   "title": "Automotive System",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code AUTO 102 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam AUTO 106 Automotive Brake System": {
-   "title": "Automotive Brake System",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code AUTO 106 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam AUTO 117 Automotive Principles": {
-   "title": "Automotive Principles",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code AUTO 117 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam AUTO 118 Fuel Systems/Emission Controls": {
-   "title": "Fuel Systems/Emission Controls",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code AUTO 118 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam AUTO 171 Engine Systems": {
-   "title": "Engine Systems",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code AUTO 171 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam AUTO 204 Driver Assist Technology": {
-   "title": "Driver Assist Technology",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code AUTO 204 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam BIS 012 Business Document Production": {
-   "title": "Business Document Production",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code BIS 012 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam CHEM 001B General Chemistry": {
-   "title": "General Chemistry",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code CHEM 001B stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam KINS 025 First Aid, CPR & AED": {
-   "title": "First Aid, CPR & AED",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code KINS 025 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam MATH 021 Precalculus Algebra": {
-   "title": "Precalculus Algebra",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code MATH 021 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam MATH 022 Trigonometry": {
-   "title": "Trigonometry",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.85,
-   "note": "Rule 5c: mechanism phrase + course code MATH 022 stripped; issuer = CCC (title 5 §55050 system instrument). Matched the existing family 'Trigonometry'."
-  },
-  "Credit by Exam MATH 025 Precalculus Algebra and Trigonometry": {
-   "title": "Precalculus Algebra and Trigonometry",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code MATH 025 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam MATH 062 Calculus for Business and Social Science": {
-   "title": "Calculus for Business and Social Science",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code MATH 062 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam MATH 071 Calculus I With Analytic Geometry": {
-   "title": "Calculus I With Analytic Geometry",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code MATH 071 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam MATH 072 Calculus II With Analytic Geometry": {
-   "title": "Calculus II With Analytic Geometry",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code MATH 072 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam MATH 073 Multivariable Calculus": {
-   "title": "Multivariable Calculus",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.85,
-   "note": "Rule 5c: mechanism phrase + course code MATH 073 stripped; issuer = CCC (title 5 §55050 system instrument). Matched the existing family 'Multivariable Calculus'."
-  },
-  "Credit by Exam MATH 078 Differential Equations": {
-   "title": "Differential Equations",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code MATH 078 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam MATH 079 Linear Algebra": {
-   "title": "Linear Algebra",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.85,
-   "note": "Rule 5c: mechanism phrase + course code MATH 079 stripped; issuer = CCC (title 5 §55050 system instrument). Matched the existing family 'Linear Algebra'."
-  },
-  "Credit by Exam SPAN 032 Spanish Grammar and Composition": {
-   "title": "Spanish Grammar and Composition",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code SPAN 032 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam SPAN 033 Spanish/English Linguistics Analysis": {
-   "title": "Spanish/English Linguistics Analysis",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code SPAN 033 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam WWT 100 Calculations in Water/Wastewater Technology": {
-   "title": "Calculations in Water/Wastewater Technology",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.85,
-   "note": "Rule 5c: mechanism phrase + course code WWT 100 stripped; issuer = CCC (title 5 §55050 system instrument). Matched the existing family 'Calculations in Water/Wastewater Technology'."
-  },
-  "Credit by Exam WWT 102 Introduction to Electrical and Instrumentation Processes": {
-   "title": "Introduction to Electrical and Instrumentation Processes",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code WWT 102 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam WWT 103 Basic Plant Operations: Water Treatment": {
-   "title": "Basic Plant Operations: Water Treatment",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code WWT 103 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam WWT 104 Basic Plant Operations: Wastewater Treatment": {
-   "title": "Basic Plant Operations: Wastewater Treatment",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code WWT 104 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam WWT 105 Water Distribution Systems": {
-   "title": "Water Distribution Systems",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code WWT 105 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by Exam WWT 106 Wastewater Collection Systems": {
-   "title": "Wastewater Collection Systems",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code WWT 106 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "Credit by ExamSPAN 031 Introduction to Translation and Interpreting": {
-   "title": "Introduction to Translation and Interpreting",
-   "issuer": "California Community Colleges",
-   "via": "cx",
-   "confidence": 0.75,
-   "note": "Rule 5c: mechanism phrase + course code SPAN 031 stripped; issuer = CCC (title 5 §55050 system instrument)."
-  },
-  "DRAFT-43 High School- Advanced Engineering Design II H 1&2": {
-   "title": "Advanced CAD Modeling and Applications",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for DRAFT 43 (stripped: high-school prefix, section rider); issuer = CCC. Converged on 'Advanced CAD Modeling and Applications' (modal title for DRAFT 43)."
-  },
-  "DRAFT-43:  RANCHO HIGH SCHOOL- Advanced CAD Modeling and Applications": {
-   "title": "Advanced CAD Modeling and Applications",
-   "issuer": "California Community Colleges",
-   "via": "hs",
    "confidence": 0.7,
-   "note": "Course-content title for DRAFT 43 (stripped: school name); issuer = CCC."
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
   },
-  "DRAFT-43: Advanced CAD Modeling and Applications": {
-   "title": "Advanced CAD Modeling and Applications",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.7,
-   "note": "Course-content title for DRAFT 43 (stripped: course code only); issuer = CCC."
-  },
-  "DRAFT-50 Baldy View ROP - Civil Engineering & Architecture (CEA)": {
-   "title": "Architectural Design I",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for DRAFT 50 (stripped: school name); issuer = CCC. Converged on 'Architectural Design I' (modal title for DRAFT 50)."
-  },
-  "DRAFT-50 and DRAFT-43 Baldy View ROP - Civil Engineering and Architecture": {
-   "title": "Architectural Design I",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for DRAFT 50/DRAFT 43 (stripped: school name); issuer = CCC. Converged on 'Architectural Design I' (modal title for DRAFT 50)."
-  },
-  "DRAFT-50: Architectural Design I": {
-   "title": "Architectural Design I",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.7,
-   "note": "Course-content title for DRAFT 50 (stripped: course code only); issuer = CCC."
-  },
-  "Drywall Applicator Apprenticeship": {
-   "title": "Carpenters Apprenticeship — Drywall Applicator",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "carpenters",
-   "confidence": 0.7,
-   "note": "House 'Carpenters Apprenticeship — <trade>' shape; Cabrillo (Northern CA) → CTCNC per its published trade roster + DIR DAS occ 2180. Sam's Acoustical Installer family used a combined north/south issuer — adjust if preferred."
-  },
-  "EGTECH-10 - High School: Introduction to Engineering Design/Graphics": {
-   "title": "Introduction to Engineering Design/Graphics",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.7,
-   "note": "Course-content title for EGTECH 10 (stripped: high-school prefix); issuer = CCC."
-  },
-  "EGTECH-10 SAN BERNARDINO HIGH SCHOOL- PLTW Intro to Engineering Design  IS414H/IS415H": {
-   "title": "Introduction to Engineering Design/Graphics",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for EGTECH 10 (stripped: school name, IS-codes, PLTW brand token); issuer = CCC. Converged on 'Introduction to Engineering Design/Graphics' (modal title for EGTECH 10)."
-  },
-  "EGTECH-10: Baldy View ROP - Introduction to Engineering Design": {
-   "title": "Introduction to Engineering Design/Graphics",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for EGTECH 10 (stripped: school name); issuer = CCC. Converged on 'Introduction to Engineering Design/Graphics' (modal title for EGTECH 10)."
-  },
-  "EGTECH-10: Upland Unified School District - Introduction to Engineering Design PLTW": {
-   "title": "Introduction to Engineering Design/Graphics",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for EGTECH 10 (stripped: school name, PLTW brand token); issuer = CCC. Converged on 'Introduction to Engineering Design/Graphics' (modal title for EGTECH 10)."
-  },
-  "EGTECH-12 SAN BERNARDINO HIGH SCHOOL- PLTW Principles of Engineering  IS416H/IS417H": {
-   "title": "Principles of Engineering",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.7,
-   "note": "Course-content title for EGTECH 12 (stripped: school name, IS-codes, PLTW brand token); issuer = CCC."
-  },
-  "EGTECH-12: Principles of Engineering": {
-   "title": "Principles of Engineering",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.7,
-   "note": "Course-content title for EGTECH 12 (stripped: course code only); issuer = CCC."
-  },
-  "EGTECH-12: SAN GORGONIO HIGH SCHOOL- PLTW Intro to Engineering Design  IS414H/IS415H": {
-   "title": "Principles of Engineering",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for EGTECH 12 (stripped: school name, IS-codes, PLTW brand token); issuer = CCC. Converged on 'Principles of Engineering' (modal title for EGTECH 12)."
-  },
-  "EGTECH-12: SAN GORGONIO HIGH SCHOOL- PLTW Principles of Engineering  IS416H/IS417H": {
-   "title": "Principles of Engineering",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.7,
-   "note": "Course-content title for EGTECH 12 (stripped: school name, IS-codes, PLTW brand token); issuer = CCC."
-  },
-  "EGTECH-12: Upland Unified School District - Principles of Engineering (PLTW)": {
-   "title": "Principles of Engineering",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for EGTECH 12 (stripped: school name, PLTW brand token); issuer = CCC. Converged on 'Principles of Engineering' (modal title for EGTECH 12)."
-  },
-  "EMT-405 - Fontana Unified -Fontana HS Kaiser HS - EMT Fundamental": {
-   "title": "Emergency Medical Responder",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for EMT 405 (stripped: school name); issuer = CCC. Converged on 'Emergency Medical Responder' (modal title for EMT 405)."
-  },
-  "EMT-405 - High School: Emergency Medical Technician Preparation": {
-   "title": "Emergency Medical Responder",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for EMT 405 (stripped: high-school prefix); issuer = CCC. Converged on 'Emergency Medical Responder' (modal title for EMT 405)."
-  },
-  "EMT-405 FONTANA HIGH SCHOOL- Emergency Medical Responder": {
-   "title": "Emergency Medical Responder",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for EMT 405 (stripped: school name); issuer = CCC. Matched the existing family 'Emergency Medical Responder'."
-  },
-  "EMT-405: Baldy View ROP - EMERGENCY MEDICAL RESPONDER 1": {
-   "title": "Emergency Medical Responder",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for EMT 405 (stripped: school name); issuer = CCC. Converged on 'Emergency Medical Responder' (modal title for EMT 405)."
-  },
-  "EMT-405: FONTANA HIGH SCHOOL- Emergency Medical Technician": {
-   "title": "Emergency Medical Responder",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for EMT 405 (stripped: school name); issuer = CCC. Matched the existing family 'Emergency Medical Technician'. Converged on 'Emergency Medical Responder' (modal title for EMT 405)."
-  },
-  "EMT-405: Fontana Unified - Fontana Adult School - EMT Bridge": {
-   "title": "Emergency Medical Responder",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for EMT 405 (stripped: school name); issuer = CCC. Converged on 'Emergency Medical Responder' (modal title for EMT 405)."
-  },
-  "EMT-405: Fontana Unified - Fontana HS  Kaiser HS - Emergency Medical Responder": {
-   "title": "Emergency Medical Responder",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for EMT 405 (stripped: school name); issuer = CCC. Converged on 'Emergency Medical Responder' (modal title for EMT 405)."
-  },
-  "EMT-405: Learn 4 Life - Emergency Medical Responder": {
-   "title": "Emergency Medical Responder",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for EMT 405 (stripped: school name); issuer = CCC. Matched the existing family 'Emergency Medical Responder'."
-  },
-  "FIRETEC-12: FONTANA HIGH SCHOOL- Safety & Survival": {
-   "title": "Occupational Safety and Health for Emergency Services",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for FIRETEC 12 (stripped: school name); issuer = CCC. Converged on 'Occupational Safety and Health for Emergency Services' (modal title for FIRETEC 12)."
-  },
-  "FIRETEC-12: Occupational Safety and Health for Emergency Services": {
-   "title": "Occupational Safety and Health for Emergency Services",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for FIRETEC 12 (stripped: course code only); issuer = CCC. Matched the existing family 'Occupational Safety and Health for Emergency Services'."
-  },
-  "FIRETEC-1: Principles of Emergency Services": {
-   "title": "Principles of Emergency Services",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for FIRETEC 1 (stripped: course code only); issuer = CCC. Matched the existing family 'Principles of Emergency Services'."
-  },
-  "FIRETEC-2: FONTANA HIGH SCHOOL-  Fire Behavior": {
-   "title": "Fire Behavior and Combustion",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for FIRETEC 2 (stripped: school name); issuer = CCC. Converged on 'Fire Behavior and Combustion' (modal title for FIRETEC 2)."
-  },
-  "FIRETEC-2: Fire Behavior and Combustion": {
-   "title": "Fire Behavior and Combustion",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for FIRETEC 2 (stripped: course code only); issuer = CCC. Matched the existing family 'Fire Behavior and Combustion'."
-  },
-  "FIRETEC-3: Fire Protection Systems": {
-   "title": "Fire Protection Systems",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for FIRETEC 3 (stripped: course code only); issuer = CCC. Matched the existing family 'Fire Protection Systems'."
-  },
-  "FIRETEC-5: Fire Prevention": {
-   "title": "Fire Prevention",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.8,
-   "note": "Course-content title for FIRETEC 5 (stripped: course code only); issuer = CCC. Matched the existing family 'Fire Prevention'."
-  },
-  "FIRTEC -5 Fontana Unified - Fontana High - Fire Prevention": {
-   "title": "Fire Prevention",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.65,
-   "note": "Course-content title for FIRTEC 5 (stripped: school name); issuer = CCC. Converged on 'Fire Prevention' (modal title for FIRETEC 5)."
-  },
-  "Hardwood Floor Layer Apprenticeship": {
-   "title": "Carpenters Apprenticeship — Hardwood Floor Layer",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "carpenters",
-   "confidence": 0.7,
-   "note": "House 'Carpenters Apprenticeship — <trade>' shape; Cabrillo (Northern CA) → CTCNC per its published trade roster + DIR DAS occ 2180. Sam's Acoustical Installer family used a combined north/south issuer — adjust if preferred."
-  },
-  "Insulator Apprenticeship": {
-   "title": "Carpenters Apprenticeship — Insulator",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "carpenters",
-   "confidence": 0.7,
-   "note": "House 'Carpenters Apprenticeship — <trade>' shape; Cabrillo (Northern CA) → CTCNC per its published trade roster + DIR DAS occ 2180. Sam's Acoustical Installer family used a combined north/south issuer — adjust if preferred."
-  },
-  "Journeyman Certificate- Apprenticeship Carpentry, Insulator, AS": {
-   "title": "Journeyman Certificate- Apprenticeship Carpentry, Insulator",
-   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
-   "via": "journeyman",
-   "confidence": 0.9,
-   "note": "Mirrors Sam's 2026-07-07 family pattern (award suffix + active-note stripped); issuer per DIR DAS occ 2180."
-  },
-  "Journeyman Certificate- Apprenticeship Carpentry, Insulator, CA": {
-   "title": "Journeyman Certificate- Apprenticeship Carpentry, Insulator",
-   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
-   "via": "journeyman",
-   "confidence": 0.9,
-   "note": "Mirrors Sam's 2026-07-07 family pattern (award suffix + active-note stripped); issuer per DIR DAS occ 2180."
-  },
-  "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, AS": {
-   "title": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting",
-   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
-   "via": "journeyman",
-   "confidence": 0.9,
-   "note": "Mirrors Sam's 2026-07-07 family pattern (award suffix + active-note stripped); issuer per DIR DAS occ 2180."
-  },
-  "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, AS (Active from Fall 2025)": {
-   "title": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting",
-   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
-   "via": "journeyman",
-   "confidence": 0.9,
-   "note": "Mirrors Sam's 2026-07-07 family pattern (award suffix + active-note stripped); issuer per DIR DAS occ 2180."
-  },
-  "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, CA": {
-   "title": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting",
-   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
-   "via": "journeyman",
-   "confidence": 0.9,
-   "note": "Mirrors Sam's 2026-07-07 family pattern (award suffix + active-note stripped); issuer per DIR DAS occ 2180."
-  },
-  "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, CA (Active from Fall 2025)": {
-   "title": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting",
-   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
-   "via": "journeyman",
-   "confidence": 0.9,
-   "note": "Mirrors Sam's 2026-07-07 family pattern (award suffix + active-note stripped); issuer per DIR DAS occ 2180."
-  },
-  "Journeyman Certificate- Apprenticeship Carpentry, Pile Driver, AS": {
-   "title": "Journeyman Certificate- Apprenticeship Carpentry, Pile Driver",
-   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
-   "via": "journeyman",
-   "confidence": 0.9,
-   "note": "Mirrors Sam's 2026-07-07 family pattern (award suffix + active-note stripped); issuer per DIR DAS occ 2180."
-  },
-  "Journeyman Certificate- Apprenticeship Carpentry, Pile Driver, CA": {
-   "title": "Journeyman Certificate- Apprenticeship Carpentry, Pile Driver",
-   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
-   "via": "journeyman",
-   "confidence": 0.9,
-   "note": "Mirrors Sam's 2026-07-07 family pattern (award suffix + active-note stripped); issuer per DIR DAS occ 2180."
-  },
-  "Journeyman Certificate- Apprenticeship Carpentry, Plastering, AS": {
-   "title": "Journeyman Certificate- Apprenticeship Carpentry, Plastering",
-   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
-   "via": "journeyman",
-   "confidence": 0.9,
-   "note": "Mirrors Sam's 2026-07-07 family pattern (award suffix + active-note stripped); issuer per DIR DAS occ 2180."
-  },
-  "Journeyman Certificate- Apprenticeship Carpentry, Plastering, CA": {
-   "title": "Journeyman Certificate- Apprenticeship Carpentry, Plastering",
-   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
-   "via": "journeyman",
-   "confidence": 0.9,
-   "note": "Mirrors Sam's 2026-07-07 family pattern (award suffix + active-note stripped); issuer per DIR DAS occ 2180."
-  },
-  "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up, AS": {
-   "title": "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up",
-   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
-   "via": "journeyman",
-   "confidence": 0.9,
-   "note": "Mirrors Sam's 2026-07-07 family pattern (award suffix + active-note stripped); issuer per DIR DAS occ 2180."
-  },
-  "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up, CA": {
-   "title": "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up",
-   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
-   "via": "journeyman",
-   "confidence": 0.9,
-   "note": "Mirrors Sam's 2026-07-07 family pattern (award suffix + active-note stripped); issuer per DIR DAS occ 2180."
-  },
-  "Journeyman Certificate-Apprenticeship Carpentry, Drywall/Lather (Interior Systems), AS (Active from Summer 2025)": {
-   "title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)",
-   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
-   "via": "journeyman",
-   "confidence": 0.9,
-   "note": "Mirrors Sam's 2026-07-07 family pattern (award suffix + active-note stripped); issuer per DIR DAS occ 2180."
-  },
-  "MC3 Pre-Apprenticeship Essentials": {
-   "title": "Multi-Craft Core Curriculum (MC3) Pre-Apprenticeship",
-   "issuer": "North America's Building Trades Unions (NABTU)",
-   "confidence": 0.65,
-   "note": "MC3 is NABTU's multi-craft pre-apprenticeship curriculum.",
+  "Cal Fire Fire Control 4A: Ignitable Liquids and Gases Awareness/Operations": {
+   "title": "Fire Control 4A — Ignitable Liquids and Gases Awareness/Operations",
+   "issuer": "California State Fire Training (SFT)",
+   "confidence": 0.6,
+   "note": "House 'Fire Control 3B — …' shape; CAL FIRE is the deliverer, SFT certifies the Fire Control curriculum.",
    "via": "single"
   },
-  "MUSIC 265-1 - Recording Arts Workshop I": {
-   "title": "Recording Arts Workshop I",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.7,
-   "note": "Course-content title for MUSIC 265-1 (stripped: course code only); issuer = CCC."
-  },
-  "MUSIC 265-2 - Recording Arts Workshop II": {
-   "title": "Recording Arts Workshop II",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.7,
-   "note": "Course-content title for MUSIC 265-2 (stripped: course code only); issuer = CCC."
-  },
-  "MUSIC 265-3 - Recording Arts Workshop III": {
-   "title": "Recording Arts Workshop III",
-   "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.7,
-   "note": "Course-content title for MUSIC 265-3 (stripped: course code only); issuer = CCC."
-  },
-  "Millwright Apprenticeship": {
-   "title": "Carpenters Apprenticeship — Millwright",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "carpenters",
-   "confidence": 0.7,
-   "note": "House 'Carpenters Apprenticeship — <trade>' shape; Cabrillo (Northern CA) → CTCNC per its published trade roster + DIR DAS occ 2180. Sam's Acoustical Installer family used a combined north/south issuer — adjust if preferred."
-  },
-  "Modular Installer Apprenticeship": {
-   "title": "Carpenters Apprenticeship — Modular Installer",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "carpenters",
-   "confidence": 0.7,
-   "note": "House 'Carpenters Apprenticeship — <trade>' shape; Cabrillo (Northern CA) → CTCNC per its published trade roster + DIR DAS occ 2180. Sam's Acoustical Installer family used a combined north/south issuer — adjust if preferred."
-  },
-  "NCCER CORE Curriculum - Introduction to Basic Construction Skills": {
-   "title": "NCCER CORE Curriculum - Introduction to Basic Construction Skills",
-   "issuer": "NCCER",
-   "via": "nccer",
-   "confidence": 0.85,
-   "note": "NCCER catalog naming kept verbatim (nccer.org/assessments; curriculum levels + journey-level assessments are distinct credentials — never folded)."
-  },
-  "NCCER Commercial Carpenter Journey Level": {
-   "title": "NCCER Commercial Carpenter Journey Level",
-   "issuer": "NCCER",
-   "via": "nccer",
-   "confidence": 0.85,
-   "note": "NCCER catalog naming kept verbatim (nccer.org/assessments; curriculum levels + journey-level assessments are distinct credentials — never folded)."
-  },
-  "NCCER Commercial Electrician Level 1": {
-   "title": "NCCER Commercial Electrician Level 1",
-   "issuer": "NCCER",
-   "via": "nccer",
-   "confidence": 0.85,
-   "note": "NCCER catalog naming kept verbatim (nccer.org/assessments; curriculum levels + journey-level assessments are distinct credentials — never folded)."
-  },
-  "NCCER Commercial Electrician Level 2": {
-   "title": "NCCER Commercial Electrician Level 2",
-   "issuer": "NCCER",
-   "via": "nccer",
-   "confidence": 0.85,
-   "note": "NCCER catalog naming kept verbatim (nccer.org/assessments; curriculum levels + journey-level assessments are distinct credentials — never folded)."
-  },
-  "NCCER Commercial Electrician Level 3": {
-   "title": "NCCER Commercial Electrician Level 3",
-   "issuer": "NCCER",
-   "via": "nccer",
-   "confidence": 0.85,
-   "note": "NCCER catalog naming kept verbatim (nccer.org/assessments; curriculum levels + journey-level assessments are distinct credentials — never folded)."
-  },
-  "NCCER Commercial Electrician Level 4/Journey Level": {
-   "title": "NCCER Commercial Electrician Level 4/Journey Level",
-   "issuer": "NCCER",
-   "via": "nccer",
-   "confidence": 0.85,
-   "note": "NCCER catalog naming kept verbatim (nccer.org/assessments; curriculum levels + journey-level assessments are distinct credentials — never folded)."
-  },
-  "NCCER Construction Foreman Management": {
-   "title": "NCCER Construction Foreman Management",
-   "issuer": "NCCER",
-   "via": "nccer",
-   "confidence": 0.85,
-   "note": "NCCER catalog naming kept verbatim (nccer.org/assessments; curriculum levels + journey-level assessments are distinct credentials — never folded)."
-  },
-  "NCCER Construction Superintendent Management": {
-   "title": "NCCER Construction Superintendent Management",
-   "issuer": "NCCER",
-   "via": "nccer",
-   "confidence": 0.85,
-   "note": "NCCER catalog naming kept verbatim (nccer.org/assessments; curriculum levels + journey-level assessments are distinct credentials — never folded)."
-  },
-  "NCCER Industrial Carpenter Journey Level": {
-   "title": "NCCER Industrial Carpenter Journey Level",
-   "issuer": "NCCER",
-   "via": "nccer",
-   "confidence": 0.85,
-   "note": "NCCER catalog naming kept verbatim (nccer.org/assessments; curriculum levels + journey-level assessments are distinct credentials — never folded)."
-  },
-  "NCCER Industrial Electrician Level 1": {
-   "title": "NCCER Industrial Electrician Level 1",
-   "issuer": "NCCER",
-   "via": "nccer",
-   "confidence": 0.85,
-   "note": "NCCER catalog naming kept verbatim (nccer.org/assessments; curriculum levels + journey-level assessments are distinct credentials — never folded)."
-  },
-  "NCCER Industrial Electrician Level 2": {
-   "title": "NCCER Industrial Electrician Level 2",
-   "issuer": "NCCER",
-   "via": "nccer",
-   "confidence": 0.85,
-   "note": "NCCER catalog naming kept verbatim (nccer.org/assessments; curriculum levels + journey-level assessments are distinct credentials — never folded)."
-  },
-  "NCCER Industrial Electrician Level 3": {
-   "title": "NCCER Industrial Electrician Level 3",
-   "issuer": "NCCER",
-   "via": "nccer",
-   "confidence": 0.85,
-   "note": "NCCER catalog naming kept verbatim (nccer.org/assessments; curriculum levels + journey-level assessments are distinct credentials — never folded)."
-  },
-  "NCCER Industrial Electrician Level 4/Journey Level": {
-   "title": "NCCER Industrial Electrician Level 4/Journey Level",
-   "issuer": "NCCER",
-   "via": "nccer",
-   "confidence": 0.85,
-   "note": "NCCER catalog naming kept verbatim (nccer.org/assessments; curriculum levels + journey-level assessments are distinct credentials — never folded)."
-  },
-  "Pile Driver Apprenticeship": {
-   "title": "Carpenters Apprenticeship — Pile Driver",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "carpenters",
-   "confidence": 0.7,
-   "note": "House 'Carpenters Apprenticeship — <trade>' shape; Cabrillo (Northern CA) → CTCNC per its published trade roster + DIR DAS occ 2180. Sam's Acoustical Installer family used a combined north/south issuer — adjust if preferred."
-  },
-  "Portfolio Review - ART 125B": {
-   "title": "Intermediate Drawing",
-   "issuer": "California Community Colleges",
-   "confidence": 0.7,
-   "note": "COCI course title for ART 125B at College of the Canyons (the adopting college) — Rule 5c course-content naming.",
+  "California Building Code Certification": {
+   "title": "California Building Code Certification",
+   "issuer": "International Code Council (ICC)",
+   "confidence": 0.6,
+   "note": "Statewide CCC-collaborative exhibit kept verbatim; ICC administers California-code certification exams — verify.",
    "via": "single"
   },
-  "Reinforcing Apprenticeship 416: Period 1": {
-   "title": "Ironworker Apprenticeship — Reinforcing, Period 1",
-   "issuer": "",
-   "via": "ironworker",
-   "confidence": 0.6,
-   "note": "Ironworkers Local 416 program (Cerritos College area); house 'Ironworker Apprenticeship — <topic>' shape, PERIOD kept (Rule 8b analog). Issuer left blank to match Sam's IW-* precedent; program name verifiable via DIR DAS."
+  "California Certified Public Accountant (CPA) License, issued by the California Board of Accountancy (CBA).": {
+   "title": "California Certified Public Accountant (CPA) License",
+   "issuer": "California Board of Accountancy (CBA)",
+   "confidence": 0.85,
+   "note": "Issuer self-declared in the raw title; issuance clause stripped.",
+   "via": "single"
   },
-  "Reinforcing Apprenticeship 416: Period 2": {
-   "title": "Ironworker Apprenticeship — Reinforcing, Period 2",
-   "issuer": "",
-   "via": "ironworker",
+  "California Residential Code Certification": {
+   "title": "California Residential Code Certification",
+   "issuer": "International Code Council (ICC)",
    "confidence": 0.6,
-   "note": "Ironworkers Local 416 program (Cerritos College area); house 'Ironworker Apprenticeship — <topic>' shape, PERIOD kept (Rule 8b analog). Issuer left blank to match Sam's IW-* precedent; program name verifiable via DIR DAS."
+   "note": "Statewide CCC-collaborative exhibit kept verbatim; ICC administers California-code certification exams — verify.",
+   "via": "single"
   },
-  "Reinforcing Apprenticeship 416: Period 3": {
-   "title": "Ironworker Apprenticeship — Reinforcing, Period 3",
-   "issuer": "",
-   "via": "ironworker",
+  "California State Water Resources Control Board D2, D3, D4, or D5 certification": {
+   "title": "Water Distribution Operator Grade D2, D3, D4, or D5",
+   "issuer": "California State Water Resources Control Board (SWRCB)",
    "confidence": 0.6,
-   "note": "Ironworkers Local 416 program (Cerritos College area); house 'Ironworker Apprenticeship — <topic>' shape, PERIOD kept (Rule 8b analog). Issuer left blank to match Sam's IW-* precedent; program name verifiable via DIR DAS."
+   "note": "House per-grade families exist ('Water Distribution Operator Grade D2'); the OR-span kept as one exhibit per the 'ASE C1 or G1' statewide precedent — split if Sam prefers per-grade.",
+   "via": "single"
   },
-  "Reinforcing Apprenticeship 416: Period 4": {
-   "title": "Ironworker Apprenticeship — Reinforcing, Period 4",
-   "issuer": "",
-   "via": "ironworker",
-   "confidence": 0.6,
-   "note": "Ironworkers Local 416 program (Cerritos College area); house 'Ironworker Apprenticeship — <topic>' shape, PERIOD kept (Rule 8b analog). Issuer left blank to match Sam's IW-* precedent; program name verifiable via DIR DAS."
+  "Certification for Welders": {
+   "title": "Certification for Welders",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
   },
-  "Reinforcing Apprenticeship 416: Period 5": {
-   "title": "Ironworker Apprenticeship — Reinforcing, Period 5",
-   "issuer": "",
-   "via": "ironworker",
-   "confidence": 0.6,
-   "note": "Ironworkers Local 416 program (Cerritos College area); house 'Ironworker Apprenticeship — <topic>' shape, PERIOD kept (Rule 8b analog). Issuer left blank to match Sam's IW-* precedent; program name verifiable via DIR DAS."
+  "Certification: Microsoft Office Specialist (MOS)- Excel": {
+   "title": "Microsoft Office Specialist — Excel",
+   "issuer": "Microsoft",
+   "via": "family",
+   "confidence": 0.8,
+   "note": "Matched the existing house family 'Microsoft Office Specialist — Excel' (stripped: 'Certification:' lead, acronym parenthetical); issuer from the curated credential KB."
   },
-  "Reinforcing Apprenticeship 416: Period 6": {
-   "title": "Ironworker Apprenticeship — Reinforcing, Period 6",
-   "issuer": "",
-   "via": "ironworker",
-   "confidence": 0.6,
-   "note": "Ironworkers Local 416 program (Cerritos College area); house 'Ironworker Apprenticeship — <topic>' shape, PERIOD kept (Rule 8b analog). Issuer left blank to match Sam's IW-* precedent; program name verifiable via DIR DAS."
+  "Certified Nurse Assistant (CNA) Certification": {
+   "title": "Certified Nurse Assistant (CNA) Certification",
+   "issuer": "California Department of Public Health (CDPH)",
+   "via": "family",
+   "confidence": 0.8,
+   "note": "Matched the existing house family 'Certified Nurse Assistant (CNA) Certification' (stripped: acronym parenthetical); issuer from the curated credential KB."
   },
-  "Reinforcing Apprenticeship 416: Period 7": {
-   "title": "Ironworker Apprenticeship — Reinforcing, Period 7",
-   "issuer": "",
-   "via": "ironworker",
-   "confidence": 0.6,
-   "note": "Ironworkers Local 416 program (Cerritos College area); house 'Ironworker Apprenticeship — <topic>' shape, PERIOD kept (Rule 8b analog). Issuer left blank to match Sam's IW-* precedent; program name verifiable via DIR DAS."
+  "Class A Contractor License": {
+   "title": "Class A Contractor License",
+   "issuer": "Contractors State License Board (CSLB)",
+   "via": "cslb",
+   "confidence": 0.85,
+   "note": "CSLB license classification kept verbatim (Rule 8b — the C-#/Class code is the credential's identity; cslb.ca.gov/About_Us/Library/Licensing_Classifications). A statewide CCC-collaborative exhibit."
   },
-  "Reinforcing Apprenticeship 416: Period 8": {
-   "title": "Ironworker Apprenticeship — Reinforcing, Period 8",
-   "issuer": "",
-   "via": "ironworker",
-   "confidence": 0.6,
-   "note": "Ironworkers Local 416 program (Cerritos College area); house 'Ironworker Apprenticeship — <topic>' shape, PERIOD kept (Rule 8b analog). Issuer left blank to match Sam's IW-* precedent; program name verifiable via DIR DAS."
+  "Class B Contractor License": {
+   "title": "Class B Contractor License",
+   "issuer": "Contractors State License Board (CSLB)",
+   "via": "cslb",
+   "confidence": 0.85,
+   "note": "CSLB license classification kept verbatim (Rule 8b — the C-#/Class code is the credential's identity; cslb.ca.gov/About_Us/Library/Licensing_Classifications). A statewide CCC-collaborative exhibit."
   },
-  "Residential Electrical Apprenticeship": {
-   "title": "Residential Electrical Apprenticeship",
+  "Class B-2 Contractor License": {
+   "title": "Class B-2 Contractor License",
+   "issuer": "Contractors State License Board (CSLB)",
+   "via": "cslb",
+   "confidence": 0.85,
+   "note": "CSLB license classification kept verbatim (Rule 8b — the C-#/Class code is the credential's identity; cslb.ca.gov/About_Us/Library/Licensing_Classifications). A statewide CCC-collaborative exhibit."
+  },
+  "Clinical Embalming (MORT 482 C)": {
+   "title": "Clinical Embalming",
    "issuer": "",
+   "confidence": 0.5,
+   "note": "Course code MORT 482C stripped (Rule 5c); typed Industry Certification at Cypress — certifying body unidentified (possibly CFB/ABFSE); verify before setting an issuer.",
+   "via": "single"
+  },
+  "Combinded Processes I": {
+   "title": "Combined Processes I",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC. typo fixed ('Combinded Processes I')."
+  },
+  "Communications Systems": {
+   "title": "Communications Systems",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
+  },
+  "Computer Networks": {
+   "title": "Computer Networks",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
+  },
+  "Computer Simulation and Troubleshooting": {
+   "title": "Computer Simulation and Troubleshooting",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
+  },
+  "Construction Fabrication and Welding": {
+   "title": "Construction Fabrication and Welding",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
+  },
+  "Customer Relations for the Technician": {
+   "title": "Customer Relations for the Technician",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
+  },
+  "Discipline Exam - ADM JUS 001": {
+   "title": "Introduction to Administration of Justice",
+   "issuer": "California Community Colleges",
+   "confidence": 0.75,
+   "note": "COCI course title for ADM JUS 001 at Los Angeles Mission College (the adopting college) — Rule 5c course-content naming.",
+   "via": "single"
+  },
+  "Emergency Care and Safety Institute": {
+   "title": "Emergency Care and Safety Institute",
+   "issuer": "Emergency Care and Safety Institute (ECSI)",
+   "confidence": 0.4,
+   "note": "The raw names the certifying BODY, not a credential — ask Chaffey which ECSI certification (CPR/First Aid/BLS…) this is.",
+   "via": "single"
+  },
+  "Emergency Management Experience (LD)": {
+   "title": "Emergency Management Experience (Lower Division)",
+   "issuer": "California Community Colleges",
    "confidence": 0.55,
-   "note": "Electrical trade — identify the sponsoring JATC/program via the DIR DAS occupational search (Electrician) before setting an issuer.",
+   "note": "Work-experience credit instrument (title 5 §55050) — LD/UD division markers expanded; issuer CCC per Rule 5c.3.",
    "via": "single"
   },
-  "San Bernardino High School - EGTECH-10: Introduction to Engineering Design/Graphics": {
-   "title": "Introduction to Engineering Design/Graphics",
+  "Emergency Management Experience (UD)": {
+   "title": "Emergency Management Experience (Upper Division)",
    "issuer": "California Community Colleges",
-   "via": "hs",
-   "confidence": 0.7,
-   "note": "Course-content title for EGTECH 10 (stripped: course code only); issuer = CCC."
+   "confidence": 0.55,
+   "note": "Work-experience credit instrument (title 5 §55050) — LD/UD division markers expanded; issuer CCC per Rule 5c.3.",
+   "via": "single"
   },
-  "San Gorgonio High School - EGTECH-10: Introduction to Engineering Design/Graphics": {
-   "title": "Introduction to Engineering Design/Graphics",
+  "Engineering Drawing": {
+   "title": "Engineering Drawing",
    "issuer": "California Community Colleges",
-   "via": "hs",
+   "via": "cx",
    "confidence": 0.7,
-   "note": "Course-content title for EGTECH 10 (stripped: course code only); issuer = CCC."
+   "note": "MAP CPL Type = Portfolio Review — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
   },
-  "San Gorgonio High School - EGTECH-12: Principles of Engineering": {
-   "title": "Principles of Engineering",
+  "FCC General Radiotelephone Operator License Preparation": {
+   "title": "FCC General Radiotelephone Operator License (GROL)",
+   "issuer": "U.S. Federal Communications Commission (FCC)",
+   "confidence": 0.65,
+   "note": "Prep exhibits name the credential they prepare for — Sam's 'A+ Certification Preparation' → 'CompTIA A+' precedent.",
+   "via": "single"
+  },
+  "Fire Company Officer 3 Certification (IFSAC or ProBoard Certifications)": {
+   "title": "Fire Company Officer 3",
+   "issuer": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+   "confidence": 0.5,
+   "note": "SFT-ladder ambiguity: Company Officer certs are level 2 and the level-3 tier is Chief Fire Officer — confirm with Santa Ana which certification '3' means before folding.",
+   "via": "single"
+  },
+  "Fire Fighter 1 (FF1) Certification": {
+   "title": "Firefighter 1",
+   "issuer": "California State Fire Training (SFT)",
+   "via": "statewide",
+   "confidence": 0.85,
+   "note": "Matched the statewide CCC-collaborative catalog entry 'Firefighter 1' (stripped: acronym parenthetical); issuer from the curated credential KB."
+  },
+  "Fire Fighter 1: Haz Mat + WMD": {
+   "title": "Firefighter 1 — Haz Mat + WMD",
+   "issuer": "",
+   "confidence": 0.5,
+   "note": "FF1 curriculum embeds HazMat FRO + WMD; verify with Santa Ana whether this is a distinct award or the 'Firefighter 1' family.",
+   "via": "single"
+  },
+  "Fire Fighter 2 (FF2) Certification": {
+   "title": "Firefighter 2",
+   "issuer": "California State Fire Training (SFT)",
+   "via": "family",
+   "confidence": 0.8,
+   "note": "Matched the existing house family 'Firefighter 2' (stripped: acronym parenthetical); issuer from the curated credential KB."
+  },
+  "Fire Inspector 1 Certification (IFSAC/ProBoard)": {
+   "title": "Fire Inspector I",
+   "issuer": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+   "via": "statewide",
+   "confidence": 0.7,
+   "note": "Matched the statewide CCC-collaborative catalog entry 'Fire Inspector I' (stripped: accreditor parenthetical (IFSAC/ProBoard)). Issuer from the raw's accreditor parenthetical — the family default may differ; both certify the same credential (Rule 4)."
+  },
+  "Fire Inspector 2 (IFSAC/ProBoard)": {
+   "title": "Fire Inspector II",
+   "issuer": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+   "confidence": 0.6,
+   "note": "Parallels the existing 'Fire Inspector I' family shape (full level, not the SFT 2A–2D modules); issuer from the raw's accreditor parenthetical.",
+   "via": "single"
+  },
+  "Fire Instructor 2 (ProBoard)": {
+   "title": "Fire Instructor 2",
+   "issuer": "Pro Board (National Board on Fire Service Professional Qualifications)",
+   "via": "family",
+   "confidence": 0.7,
+   "note": "Matched the existing house family 'Fire Instructor 2' (stripped: accreditor parenthetical (ProBoard)). Issuer from the raw's accreditor parenthetical — the family default may differ; both certify the same credential (Rule 4)."
+  },
+  "Fire Officer II Certification (ProBoard)": {
+   "title": "Fire Officer II",
+   "issuer": "Pro Board (National Board on Fire Service Professional Qualifications)",
+   "via": "family",
+   "confidence": 0.7,
+   "note": "Matched the existing house family 'Fire Officer II' (stripped: accreditor parenthetical (ProBoard)). Issuer from the raw's accreditor parenthetical — the family default may differ; both certify the same credential (Rule 4)."
+  },
+  "Firefighter I": {
+   "title": "Firefighter I",
+   "issuer": "National Fire Protection Association (NFPA)",
+   "via": "family",
+   "confidence": 0.8,
+   "note": "Matched the existing house family 'Firefighter I'; issuer from the curated credential KB."
+  },
+  "Firefighter II": {
+   "title": "Firefighter II",
+   "issuer": "National Fire Protection Association (NFPA)",
+   "via": "family",
+   "confidence": 0.8,
+   "note": "Matched the existing house family 'Firefighter II'; issuer from the curated credential KB."
+  },
+  "IC-  Welding Level I": {
+   "title": "NCCER Welding Level 1",
+   "issuer": "National Center for Construction Education and Research (NCCER)",
+   "via": "statewide",
+   "confidence": 0.85,
+   "note": "'IC-' (industry certification) prefix wraps the statewide credential 'NCCER Welding Level 1' — Sam's IC-Welding → NCCER example (2026-07-07, map.rccd.edu/statewidecpl)."
+  },
+  "IC- Automotive Electrical/Electronics I": {
+   "title": "Automotive Electrical/Electronics I",
+   "issuer": "",
+   "via": "ic",
+   "confidence": 0.5,
+   "note": "'IC-' prefix stripped; no statewide/family match — likely an ASE Education Foundation entry-level or local automotive certification; identify the certifying body before setting an issuer."
+  },
+  "IC- Engine Performance II": {
+   "title": "Engine Performance II",
+   "issuer": "",
+   "via": "family",
+   "confidence": 0.8,
+   "note": "'IC-' (industry certification) prefix stripped; the content matches the existing house family 'Engine Performance II' — retarget-to-family doctrine (S101)."
+  },
+  "IC- Introduction to Automotive Technology": {
+   "title": "Introduction to Automotive Technology",
    "issuer": "California Community Colleges",
-   "via": "hs",
+   "via": "family",
+   "confidence": 0.8,
+   "note": "'IC-' (industry certification) prefix stripped; the content matches the existing house family 'Introduction to Automotive Technology' — retarget-to-family doctrine (S101)."
+  },
+  "IC- Introduction to Hybrid and Electric Vehicle Technology": {
+   "title": "Introduction to Hybrid and Electric Vehicle Technology",
+   "issuer": "",
+   "via": "family",
+   "confidence": 0.8,
+   "note": "'IC-' (industry certification) prefix stripped; the content matches the existing house family 'Introduction to Hybrid and Electric Vehicle Technology' — retarget-to-family doctrine (S101)."
+  },
+  "IC- Welding Level I": {
+   "title": "NCCER Welding Level 1",
+   "issuer": "National Center for Construction Education and Research (NCCER)",
+   "via": "statewide",
+   "confidence": 0.85,
+   "note": "'IC-' (industry certification) prefix wraps the statewide credential 'NCCER Welding Level 1' — Sam's IC-Welding → NCCER example (2026-07-07, map.rccd.edu/statewidecpl)."
+  },
+  "IC- Welding Level II": {
+   "title": "NCCER Welding Level 2",
+   "issuer": "National Center for Construction Education and Research (NCCER)",
+   "via": "statewide",
+   "confidence": 0.85,
+   "note": "'IC-' (industry certification) prefix wraps the statewide credential 'NCCER Welding Level 2' — Sam's IC-Welding → NCCER example (2026-07-07, map.rccd.edu/statewidecpl)."
+  },
+  "IC-Automotive Brake Systems": {
+   "title": "Automotive Brake Systems",
+   "issuer": "California Community Colleges",
+   "via": "family",
+   "confidence": 0.8,
+   "note": "'IC-' (industry certification) prefix stripped; the content matches the existing house family 'Automotive Brake Systems' — retarget-to-family doctrine (S101)."
+  },
+  "IC-Automotive Electrical/Electronics II": {
+   "title": "Automotive Electrical/Electronics II",
+   "issuer": "",
+   "via": "ic",
+   "confidence": 0.5,
+   "note": "'IC-' prefix stripped; no statewide/family match — likely an ASE Education Foundation entry-level or local automotive certification; identify the certifying body before setting an issuer."
+  },
+  "IC-Automotive Suspension, Steering and Alignment Systems": {
+   "title": "Automotive Suspension, Steering and Alignment Systems",
+   "issuer": "",
+   "via": "ic",
+   "confidence": 0.5,
+   "note": "'IC-' prefix stripped; no statewide/family match — likely an ASE Education Foundation entry-level or local automotive certification; identify the certifying body before setting an issuer."
+  },
+  "IC-Engine Performance I": {
+   "title": "Engine Performance I",
+   "issuer": "",
+   "via": "family",
+   "confidence": 0.8,
+   "note": "'IC-' (industry certification) prefix stripped; the content matches the existing house family 'Engine Performance I' — retarget-to-family doctrine (S101)."
+  },
+  "IC-Welding Level I": {
+   "title": "NCCER Welding Level 1",
+   "issuer": "National Center for Construction Education and Research (NCCER)",
+   "via": "statewide",
+   "confidence": 0.85,
+   "note": "'IC-' (industry certification) prefix wraps the statewide credential 'NCCER Welding Level 1' — Sam's IC-Welding → NCCER example (2026-07-07, map.rccd.edu/statewidecpl)."
+  },
+  "IC-Welding Level II": {
+   "title": "NCCER Welding Level 2",
+   "issuer": "National Center for Construction Education and Research (NCCER)",
+   "via": "statewide",
+   "confidence": 0.85,
+   "note": "'IC-' (industry certification) prefix wraps the statewide credential 'NCCER Welding Level 2' — Sam's IC-Welding → NCCER example (2026-07-07, map.rccd.edu/statewidecpl)."
+  },
+  "Industry Credentials for Introduction to Computers": {
+   "title": "Introduction to Computers",
+   "issuer": "",
+   "confidence": 0.4,
+   "note": "'Industry Credentials for <course>' names the course, not the credential — the suspect_course_as_exhibit pattern; ask LA Pierce which credential this accepts.",
+   "via": "single"
+  },
+  "Infant and Toddler Care and Curriculum": {
+   "title": "Infant and Toddler Care and Curriculum",
+   "issuer": "California Community Colleges",
+   "via": "cx",
    "confidence": 0.7,
-   "note": "Course-content title for EGTECH 12 (stripped: course code only); issuer = CCC."
+   "note": "MAP CPL Type = Portfolio Review — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
   },
-  "Scaffold Erector Apprenticeship": {
-   "title": "Carpenters Apprenticeship — Scaffold Erector",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "carpenters",
+  "Intermediate Arc Welding": {
+   "title": "Intermediate Arc Welding",
+   "issuer": "California Community Colleges",
+   "via": "cx",
    "confidence": 0.7,
-   "note": "House 'Carpenters Apprenticeship — <trade>' shape; Cabrillo (Northern CA) → CTCNC per its published trade roster + DIR DAS occ 2180. Sam's Acoustical Installer family used a combined north/south issuer — adjust if preferred."
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
   },
-  "Shingler Apprenticeship": {
-   "title": "Carpenters Apprenticeship — Shingler",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "carpenters",
+  "Internship and Work Experience": {
+   "title": "Internship and Work Experience",
+   "issuer": "California Community Colleges",
+   "confidence": 0.45,
+   "note": "Rule-5-adjacent generic bucket (Cabrillo CBE); issuer CCC per Rule 5c.3 — consider a more specific award name with the college.",
+   "via": "single"
+  },
+  "Intro to Managerial Accounting": {
+   "title": "Intro to Managerial Accounting",
+   "issuer": "California Community Colleges",
+   "via": "cx",
    "confidence": 0.7,
-   "note": "House 'Carpenters Apprenticeship — <trade>' shape; Cabrillo (Northern CA) → CTCNC per its published trade roster + DIR DAS occ 2180. Sam's Acoustical Installer family used a combined north/south issuer — adjust if preferred."
+   "note": "MAP CPL Type = Portfolio Review — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
   },
-  "Structural Apprenticeship 433: Period 1": {
-   "title": "Ironworker Apprenticeship — Structural, Period 1",
-   "issuer": "",
-   "via": "ironworker",
-   "confidence": 0.6,
-   "note": "Ironworkers Local 433 program (Cerritos College area); house 'Ironworker Apprenticeship — <topic>' shape, PERIOD kept (Rule 8b analog). Issuer left blank to match Sam's IW-* precedent; program name verifiable via DIR DAS."
+  "Introduciton to UNIX/Linux": {
+   "title": "Introduction to UNIX/Linux",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC. typo fixed ('Introduciton to UNIX/Linux')."
   },
-  "Structural Apprenticeship 433: Period 2": {
-   "title": "Ironworker Apprenticeship — Structural, Period 2",
-   "issuer": "",
-   "via": "ironworker",
-   "confidence": 0.6,
-   "note": "Ironworkers Local 433 program (Cerritos College area); house 'Ironworker Apprenticeship — <topic>' shape, PERIOD kept (Rule 8b analog). Issuer left blank to match Sam's IW-* precedent; program name verifiable via DIR DAS."
+  "Introduction to CNC Programing": {
+   "title": "Introduction to CNC Programming",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC. typo fixed ('Introduction to CNC Programing')."
   },
-  "Structural Apprenticeship 433: Period 3": {
-   "title": "Ironworker Apprenticeship — Structural, Period 3",
-   "issuer": "",
-   "via": "ironworker",
-   "confidence": 0.6,
-   "note": "Ironworkers Local 433 program (Cerritos College area); house 'Ironworker Apprenticeship — <topic>' shape, PERIOD kept (Rule 8b analog). Issuer left blank to match Sam's IW-* precedent; program name verifiable via DIR DAS."
+  "Introduction to Engineering": {
+   "title": "Introduction to Engineering",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Portfolio Review — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
   },
-  "Structural Apprenticeship 433: Period 4": {
-   "title": "Ironworker Apprenticeship — Structural, Period 4",
-   "issuer": "",
-   "via": "ironworker",
-   "confidence": 0.6,
-   "note": "Ironworkers Local 433 program (Cerritos College area); house 'Ironworker Apprenticeship — <topic>' shape, PERIOD kept (Rule 8b analog). Issuer left blank to match Sam's IW-* precedent; program name verifiable via DIR DAS."
+  "Introduction to Mechanical Principals": {
+   "title": "Introduction to Mechanical Principles",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC. typo fixed ('Introduction to Mechanical Principals')."
   },
-  "Structural Apprenticeship 433: Period 5": {
-   "title": "Ironworker Apprenticeship — Structural, Period 5",
-   "issuer": "",
-   "via": "ironworker",
-   "confidence": 0.6,
-   "note": "Ironworkers Local 433 program (Cerritos College area); house 'Ironworker Apprenticeship — <topic>' shape, PERIOD kept (Rule 8b analog). Issuer left blank to match Sam's IW-* precedent; program name verifiable via DIR DAS."
+  "Introduction to Video Editing and Postproduction": {
+   "title": "Introduction to Video Editing and Postproduction",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Portfolio Review — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
   },
-  "Structural Apprenticeship 433: Period 6": {
-   "title": "Ironworker Apprenticeship — Structural, Period 6",
-   "issuer": "",
-   "via": "ironworker",
-   "confidence": 0.6,
-   "note": "Ironworkers Local 433 program (Cerritos College area); house 'Ironworker Apprenticeship — <topic>' shape, PERIOD kept (Rule 8b analog). Issuer left blank to match Sam's IW-* precedent; program name verifiable via DIR DAS."
+  "Medical Insurance Billing and Coding": {
+   "title": "Medical Insurance Billing and Coding",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Portfolio Review — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
   },
-  "Structural Apprenticeship 433: Period 7": {
-   "title": "Ironworker Apprenticeship — Structural, Period 7",
-   "issuer": "",
-   "via": "ironworker",
+  "Microsoft Office Specialist (MOS): Excel Associate or Microsoft Office Specialist (MOS): Excel Expert Certification.": {
+   "title": "Microsoft Office Specialist — Excel or Excel Expert",
+   "issuer": "Microsoft",
    "confidence": 0.6,
-   "note": "Ironworkers Local 433 program (Cerritos College area); house 'Ironworker Apprenticeship — <topic>' shape, PERIOD kept (Rule 8b analog). Issuer left blank to match Sam's IW-* precedent; program name verifiable via DIR DAS."
+   "note": "OR-span kept as one exhibit per the 'ASE C1 or G1' statewide precedent; the house also has separate Excel / Excel Expert families if Sam prefers a split.",
+   "via": "single"
   },
-  "Structural Apprenticeship 433: Period 8": {
-   "title": "Ironworker Apprenticeship — Structural, Period 8",
-   "issuer": "",
-   "via": "ironworker",
+  "Microsoft Office Specialist (MOS): Word Associate or MOS: Word Expert Certification.": {
+   "title": "Microsoft Office Specialist — Word or Word Expert",
+   "issuer": "Microsoft",
    "confidence": 0.6,
-   "note": "Ironworkers Local 433 program (Cerritos College area); house 'Ironworker Apprenticeship — <topic>' shape, PERIOD kept (Rule 8b analog). Issuer left blank to match Sam's IW-* precedent; program name verifiable via DIR DAS."
+   "note": "OR-span kept as one exhibit per the 'ASE C1 or G1' statewide precedent; separate Word / Word Expert families also exist.",
+   "via": "single"
+  },
+  "Microwave Communications": {
+   "title": "Microwave Communications",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
+  },
+  "Military Basic Training": {
+   "title": "Basic Military Training",
+   "issuer": "American Council on Education (ACE)",
+   "via": "statewide",
+   "confidence": 0.85,
+   "note": "Matched the statewide CCC-collaborative catalog entry 'Basic Military Training'; issuer from the curated credential KB."
+  },
+  "Motion Graphics": {
+   "title": "Motion Graphics",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
+  },
+  "NIMS ICS All-Hazards Incident Commander (ICT3)": {
+   "title": "NIMS ICS All-Hazards Incident Commander (ICT3)",
+   "issuer": "U.S. Federal Emergency Management Agency (FEMA)",
+   "confidence": 0.55,
+   "note": "NIMS position credential (ICT3 code kept, Rule 8b); delivery varies by agency — verify the certifying body.",
+   "via": "single"
+  },
+  "National Wildfire Coordinating Group-S-190 Introduction to Windland Fire Behavior": {
+   "title": "NWCG S-190 — Introduction to Wildland Fire Behavior",
+   "issuer": "National Wildfire Coordinating Group (NWCG)",
+   "confidence": 0.7,
+   "note": "House NWCG shape; 'Windland' typo fixed; S-code kept (Rule 8b).",
+   "via": "single"
+  },
+  "Network+ Certification Preparation": {
+   "title": "CompTIA Network+",
+   "issuer": "CompTIA",
+   "via": "statewide",
+   "confidence": 0.85,
+   "note": "Matched the statewide CCC-collaborative catalog entry 'CompTIA Network+'; issuer from the curated credential KB."
+  },
+  "Oxyacetylene Welding": {
+   "title": "Oxyacetylene Welding",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
+  },
+  "PC Operating System": {
+   "title": "PC Operating System",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
+  },
+  "PC Troubleshooting": {
+   "title": "PC Troubleshooting",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
+  },
+  "Peace Officer Standards and Training (POST) Basic Academy Certificate": {
+   "title": "POST Basic Academy",
+   "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+   "via": "statewide",
+   "confidence": 0.85,
+   "note": "Matched the statewide CCC-collaborative catalog entry 'POST Basic Academy' (stripped: acronym parenthetical); issuer from the curated credential KB."
+  },
+  "Personal Computer Servicing": {
+   "title": "Personal Computer Servicing",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
+  },
+  "Pipe and Tube Welding": {
+   "title": "Pipe and Tube Welding",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
+  },
+  "Print Reading and Computations for Workers": {
+   "title": "Print Reading and Computations for Workers",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
+  },
+  "Print Reading and Shop Practice": {
+   "title": "Print Reading and Shop Practice",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
+  },
+  "Producing and Directing": {
+   "title": "Producing and Directing",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Portfolio Review — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
+  },
+  "S-339 Division/Group Supervisor- ALL RISK (Wildland Fire Fighter)": {
+   "title": "NWCG S-339 — Division/Group Supervisor (All-Risk)",
+   "issuer": "National Wildfire Coordinating Group (NWCG)",
+   "confidence": 0.6,
+   "note": "NWCG position course S-339; house NWCG shape, code kept.",
+   "via": "single"
+  },
+  "Server Systems": {
+   "title": "Server Systems",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
+  },
+  "Solidworks Advanced Solid Modeling": {
+   "title": "Solidworks Advanced Solid Modeling",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Portfolio Review — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
+  },
+  "Solidworks Intermediate Solid Modeling": {
+   "title": "Solidworks Intermediate Solid Modeling",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Portfolio Review — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
+  },
+  "Video Editing": {
+   "title": "Video Editing",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
+  },
+  "Video I": {
+   "title": "Video I",
+   "issuer": "California Community Colleges",
+   "via": "cx",
+   "confidence": 0.7,
+   "note": "MAP CPL Type = Credit by Exam — the mechanism lives in the type column and the title is already the course content (Rule 5c); issuer = CCC."
   }
  }
 }

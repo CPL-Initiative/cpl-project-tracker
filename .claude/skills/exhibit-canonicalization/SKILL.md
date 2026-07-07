@@ -162,6 +162,22 @@ save but not yet saved." Lanes (Session 103):
   rows are capped at 0.65 confidence for review); issuer CCC.
 - **journeyman / carpenters / ironworker / nccer** — apprenticeship + NCCER
   rows named from the authority sources below.
+- **statewide / family** (Session 104) — decoration-strip (`Certification:`
+  lead, acronym-echo `(CNA)`/`(FF1)` parens, IFSAC/Pro Board accreditor parens
+  → captured as the ISSUER, trailing `Certification` tokens, mojibake, `fire
+  fighter`≡`firefighter`) + `stage_key` match against the statewide
+  CCC-collaborative catalog (`statewide_data.js` — includes brand-stripped
+  aliases like `NCCER Welding Level 1` ⇒ `welding level i`) ∪ ALL house
+  families ∪ live values; issuer from the catalog ∪ `kb/credentials.json`.
+- **ic** (Session 104) — `IC-<content>` rows: statewide match first (Sam's
+  IC-Welding → NCCER example), then family, else a title-only proposal.
+- **cslb** (Session 104) — `C-##`/`Class A|B(-2)` contractor classifications
+  kept VERBATIM (Rule 8b) + issuer `Contractors State License Board (CSLB)`;
+  1-2-digit guard so wildland C-190/C-290 bundles are never claimed.
+- **cx-type routing** (Session 104) — rows whose MAP **CPL Type** is Credit By
+  Exam / Portfolio Review but whose TITLE has no mechanism phrase (the
+  mechanism lives in the type column): title = content verbatim (receipted
+  typo fixes only), issuer CCC.
 - **JUDGMENT_SINGLES** — authored one-offs, each with its reasoning receipted
   in the note.
 

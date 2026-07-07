@@ -6932,6 +6932,16 @@ def export_credential_reference():
 
         audit_tags = dict(audit_tags_by_ut.get(ut, {}))
         issuer_val = primary.get("issuing_agency")
+        # All distinct issuing agencies across this title's credential records —
+        # a credential can be certified by several bodies (Rule 4: Fire
+        # Inspector I ⇒ ICC/NFPA/SFT/…). Emitted only when >1 so the payload
+        # stays lean; the consumer renders a "+N" chip (Session 104).
+        issuer_all, _iseen = [], set()
+        for _cr in creds:
+            _ia = (_cr.get("issuing_agency") or "").strip()
+            if _ia and _ia not in _iseen:
+                issuer_all.append(_ia)
+                _iseen.add(_ia)
         trainer_val = primary.get("training_agency")
         qflag_val = quality_by_ut.get(ut)
         # System-level GE-Area credit for AP/IB/CLEP exams (ESLEI 24-35 charts).
@@ -6983,6 +6993,7 @@ def export_credential_reference():
             "raw_count": raw_count_by_ut[ut],
             "raw_variants": sorted(raw_variants_by_ut.get(ut, []), key=lambda v: v["r"]),
             "issuer": issuer_val,
+            **({"issuers": issuer_all} if len(issuer_all) > 1 else {}),
             "trainer": trainer_val,
             "conf_title": conf_modal,
             "conf_issuer": primary.get("confidence_issuer", 0),

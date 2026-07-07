@@ -34,6 +34,18 @@ What's RECORDED but NOT APPLIED (Mode B — Cred-Ref PR-5b):
     are recorded in the overlay (so curators get audit visibility) but not
     folded into the JSON files.
 
+Mode A2 — CANONICAL ISSUER PROMOTION (Session 104). An issuing_agency_override
+was previously display-only: the bake showed it while kb/credentials.json (the
+canonical issuer store every non-dashboard consumer reads) kept null. Now the
+sync also promotes the override into credentials.json, mirroring the fold's
+issuer semantics (kb/_fold_unclassified.py): FILL the first record when its
+issuer is null + unreviewed-machine; APPEND an additional record when the
+override names a certifying body no existing record carries (Rule 4 — same
+credential, multiple issuers); no-op when the issuer is already present under
+any spelling. Additive only — an existing record's issuer is never overwritten.
+Sam's motivating case (2026-07-07): '10-Key Data Entry' has a machine record
+with a null issuer that the Curate panel couldn't durably fill.
+
 Auth: uses the SERVICE-ROLE key (bypasses RLS) — keep it secret. NEVER put it
 in the dashboard page; only here, from the environment.
 
@@ -47,12 +59,14 @@ Then review the diff and commit kb/credential_review_overlay.json.
 """
 import json
 import os
+import re
 import sys
 import urllib.request
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "credential_review_overlay.json")
+CR_PATH = os.path.join(HERE, "credentials.json")
 URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co").rstrip("/")
 KEY = os.environ.get("SUPABASE_SERVICE_KEY")
 
@@ -79,6 +93,79 @@ def fetch_rows():
         "apikey": KEY, "Authorization": f"Bearer {KEY}", "Accept": "application/json"})
     with urllib.request.urlopen(req, timeout=30) as r:
         return json.load(r)
+
+
+# ── Mode A2 helpers — mirror kb/_fold_unclassified.py's issuer semantics;
+# keep the two in sync ─────────────────────────────────────────────────────────
+
+def _norm_issuer(s):
+    return " ".join((s or "").split()).casefold()
+
+
+def _issuer_present(iss_norm, recs):
+    """Same certifying body under any spelling: exact normalized match, the
+    existing record's trailing parenthetical acronym ('NCCER' ≡ '…(NCCER)'),
+    or outright containment for non-trivial strings (≥8 chars)."""
+    for x in recs:
+        existing = x.get("issuing_agency") or ""
+        e = _norm_issuer(existing)
+        if not e:
+            continue
+        if iss_norm == e:
+            return True
+        m = re.search(r"\(([^()]+)\)\s*$", existing)
+        if m and _norm_issuer(m.group(1)) == iss_norm:
+            return True
+        if len(iss_norm) >= 8 and (iss_norm in e or e in iss_norm):
+            return True
+    return False
+
+
+def promote_issuers(overrides):
+    """Mode A2: fold issuing_agency_override values into kb/credentials.json.
+    Returns (fills, adds, missing) for the run report; writes only on change."""
+    try:
+        cr = json.load(open(CR_PATH, encoding="utf-8"))
+    except (OSError, ValueError):
+        return [], [], []
+    today = date.today().isoformat()
+    fills, adds, missing = [], [], []
+    for ut, entry in overrides.items():
+        iss = (entry.get("issuing_agency_override") or "").strip()
+        if not iss:
+            continue
+        recs = cr.get(ut)
+        if not recs:
+            missing.append(ut)  # override on a title with no credential record —
+            continue            # report, never mint here (the fold owns minting)
+        rec0 = recs[0]
+        if (not rec0.get("issuing_agency")
+                and not (rec0.get("reviewed_by") or "")):
+            rec0["issuing_agency"] = iss
+            rec0["confidence_issuer"] = 1.0
+            rec0["reviewed_by"] = entry.get("reviewed_by")
+            rec0["reviewed_at"] = entry.get("reviewed_at")
+            fills.append({"title": ut, "issuer": iss})
+        elif not _issuer_present(_norm_issuer(iss), recs):
+            recs.append({
+                "issuing_agency": iss,
+                "training_agency": None,
+                "confidence_issuer": 1.0,
+                "confidence_trainer": 0.9,
+                "classified_at": today,
+                "classified_by": "curator (CER issuing-agency override)",
+                "reviewed_at": entry.get("reviewed_at"),
+                "reviewed_by": entry.get("reviewed_by"),
+                "_notes": "Additional issuing agency from a Curate-panel "
+                          "override — same credential, multiple certifying "
+                          "bodies (Rule 4).",
+            })
+            adds.append({"title": ut, "issuer": iss})
+    if fills or adds:
+        with open(CR_PATH, "w", encoding="utf-8") as f:
+            json.dump(cr, f, indent=2, ensure_ascii=False)
+            f.write("\n")
+    return fills, adds, missing
 
 
 def main():
@@ -132,7 +219,16 @@ def main():
           f"{skipped_field} unknown-field skipped, "
           f"{skipped_prefix} non-credential-review skipped, "
           f"{rename_count} rename overrides recorded-not-applied)")
-    print("Review the diff, then commit kb/credential_review_overlay.json.")
+
+    fills, adds, missing_cred = promote_issuers(overrides)
+    if fills or adds or missing_cred:
+        print(f"Mode A2 issuer promotion → credentials.json: "
+              f"{len(fills)} filled {[(f['title'], f['issuer']) for f in fills]}, "
+              f"{len(adds)} appended {[(a['title'], a['issuer']) for a in adds]}, "
+              f"{len(missing_cred)} title(s) with no credential record skipped "
+              f"{missing_cred[:5]}")
+    print("Review the diff, then commit kb/credential_review_overlay.json "
+          "(+ kb/credentials.json when Mode A2 promoted issuers).")
 
 
 if __name__ == "__main__":
