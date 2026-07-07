@@ -1,20 +1,26 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-07 eve · Session 101 (COS + MOC registries live)",
- "_session": 101,
- "_status": "CareerOneStop is LIVE: your API credentials checked out on the first probe, the full 6,490-certification registry synced, and 83 credentials on the CER now carry ✓/≈ COS authority chips (with the required USDOL/DEED attribution). Your triage pass got a QA sweep — the ASE and AP art assignments were retargeted to the existing house families (you approved all 10 fixes), and the stale 'AP Art and Design:' variants were merged into the College Board-current names (9 AP art families → 4). NEXT FOR YOU: keep triaging the ~448 remaining — when the dropdown already has a family (ASE, AP, Carpenters Apprenticeship…), pick it verbatim instead of typing a new spelling. AND the military COOL/MOC crosswalk you picked is live too: 33,874 military occupation codes synced with their civilian O*NET mappings, and we proved the full veteran chain works (military job code → civilian occupation → certifications → your CER credentials). Next build: the bridge file that pre-computes MOC → certifications for Sierra.",
+ "_as_of": "2026-07-07 night · Session 102 (AP/CLEP pre-seed applied)",
+ "_session": 102,
+ "_status": "The pre-seed you asked for is DONE: 158 of the 451 unclassified rows (every AP + almost every CLEP — 36% of the queue) were assigned automatically to their EXISTING house families with issuer College Board, verified byte-perfect against the committed receipt. Open the triage list and you'll see them filled in as 'preseed-v1@bot'. They fold into the credential layer on tomorrow morning's automatic refresh — so TONIGHT is the review window: ✕ un-assign anything that looks wrong. Only 5 rows needed your judgment (3 'Levels 1 and 2 — Complete both' spans + CLEP French/German Level III, which have no existing family). The remaining ~288 rows are the genuinely manual tail: high-school articulation courses, contractor licenses, CA state certs.",
  "items": [
   {
-   "id": "cer-cos-chips",
+   "id": "preseed-review",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "CER: hard-refresh and spot-check the new ✓ COS / ≈ COS chips (83 credentials) — e.g. AWS Certified Cloud Practitioner (exact) and ACE Health Coach Certification. Hover shows the CareerOneStop attribution."
+   "text": "Triage list: spot-check the 158 pre-seeded AP/CLEP assignments (shown as preseed-v1@bot). Anything wrong → ✕ un-assign it tonight; the rest fold into the credential layer on tomorrow's daily refresh."
+  },
+  {
+   "id": "preseed-residuals",
+   "who": "sam",
+   "tab": "credential-reference",
+   "text": "5 rows the pre-seed deliberately left for you: 3× 'CLEP <language> (Levels 1 and 2) - Complete both' (spans two credentials — pick one or split) and CLEP French/German Level III (no existing family — new credential, or fold into Level II?)."
   },
   {
    "id": "triage-continue",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "Keep triaging the unclassified queue (~448 left). Tip from today's QA: pick EXISTING dropdown families verbatim (ASE / AP / Carpenters Apprenticeship) — new spellings split families; the 💡 chips and COS suggestions are your friends."
+   "text": "Keep triaging the ~288 remaining manual rows (high-school articulation courses, C-## contractor licenses, CA state certs). Same tip: pick EXISTING dropdown families verbatim; the 💡 chips are your friends."
   },
   {
    "id": "triage-ambiguous-cos",
@@ -23,10 +29,10 @@
    "text": "22 titles matched MULTIPLE CareerOneStop certifications (e.g. Certified Pharmacy Technician — PTCB vs NHA). They're listed in kb/cos_match_out/2026-07-07/report.json — worth a pass when convenient."
   },
   {
-   "id": "next-lane-pick",
-   "who": "sam",
+   "id": "fable-moc-bridge",
+   "who": "fable",
    "tab": "credential-reference",
-   "text": "Confirm the next authority lane when ready: military COOL/MOC crosswalk (recommended — veterans are the core mission, and the COS registry already holds ASE MIL1–8) or CA License Finder."
+   "text": "Build kb/moc_cos_bridge.json: batch the distinct O*NET codes through the cert-finder keyword leg on a runner, join to COS cert Ids, then wire the consumer (Sierra veteran turns / CER military chip). Watch the MOC code-reuse caveat (STATUS/SDATE/EDATE)."
   },
   {
    "id": "fable-issuer-fills",
@@ -35,16 +41,10 @@
    "text": "Run kb/_match_cos_authority.py --apply-issuers dry-run (2 null-issuer fills possible from COS) and review before applying — deliberate manual step, never cron."
   },
   {
-   "id": "fable-fold-dispatch",
+   "id": "fable-twin-folds",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "After Sam's triage session ends, dispatch daily-dashboard.yml so the fold + CER rebuild publish same-day (his 33 normalized assignments + the AP fold land together)."
-  },
-  {
-   "id": "fable-moc-bridge",
-   "who": "fable",
-   "tab": "credential-reference",
-   "text": "Build kb/moc_cos_bridge.json: batch the distinct O*NET codes through the cert-finder keyword leg on a runner, join to COS cert Ids, then wire the consumer (Sierra veteran turns / CER military chip). Watch the MOC code-reuse caveat (STATUS/SDATE/EDATE)."
+   "text": "Pre-existing twin families the pre-seed receipts surfaced (fold candidates via kb/_merge_credentials.py, not urgent): AP U.S./United States Gov+History, AP Physics 1 vs 1: Algebra-Based, CLEP Precalculus/Pre-Calculus, CLEP Spanish with Writing I/II vs Level I/II."
   }
  ]
 }

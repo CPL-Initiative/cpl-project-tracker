@@ -2240,3 +2240,21 @@ anymore") — `cpl_funding_data.js` is now the hand-maintained snapshot; **2025-
 SYSTEM 2,258,784). Suite 134 green (funding test 119 assertions). Full story:
 `docs/cpl_funding_lessons.md` (Session 2); KB note
 `docs/kb-notes/methodology-three-layer-scenario-config.md`.
+
+<!-- Archived at the Session-102 checkpoint (2026-07-07) per Rule 8. -->
+
+### Session 100 — SkyVault: the CER triage loop unstuck end-to-end (2026-07-07)
+
+Sam's "the tab stopped working" after saving 5 triage assignments = **CER never refreshed the
+magic-link token before writes** (the pre-Session-77 raci.js bug; adversarially CONFIRMED via a
+4-lane workflow + jsdom repro) — ported the trio as `withFreshSession()` + single-flight refresh +
+401 session-drop (`tests/cer_token_refresh.test.js`, 18). The deeper stall: the fold (PR-3) ran in
+NO workflow, the exhibit audit was frozen at 2026-05-24, and all 5 raws sat under stale machine
+drafts on **trailing-space twin spellings**. `kb/_fold_unclassified.py` gained SUPERSEDE (curator >
+unreviewed machine, twins included, articulations re-pointed) + STALE lanes + `--apply-if-safe`;
+applied: 11 supersedes, 8 art rows re-pointed, 7 orphan creds pruned, queue → 0 (receipts
+`kb/unclassified_fold/2026-07-07/`). Cron now runs fold + `kb/_audit_exhibits.py` daily; Pages
+asserts the 4 CER paths; skill Rule 5c = Sam's Cx/portfolio naming procedure (issuer **California
+Community Colleges**). Authority-anchoring strategy (CareerOneStop/O*NET/CE):
+`docs/kb-notes/reference-authority-anchored-credential-naming.md`. Full story:
+`docs/exhibit_canonicalization_lessons.md` (2026-07-07).
