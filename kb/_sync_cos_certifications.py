@@ -125,6 +125,28 @@ def find_bulk_link(html, probe=False):
     return "https://www.careeronestop.org/Developers/Data/" + best
 
 
+# COS name convention embeds the acronym as a trailing " - ACR" (the first
+# authenticated probe, 2026-07-07: "50001 Certified Professional - 50001 CP")
+# while the matcher (kb/_match_cos_authority.py) expects a CLEAN name plus a
+# separate acronym field — the shape the bulk file's dedicated column gives.
+# Split the suffix out so both lanes emit the same record shape. Guards: every
+# suffix token must be caps/digits (never "…- AutoCAD"), and a pure roman
+# numeral / pure digit suffix is a LEVEL token, not an acronym ("Firefighter
+# - II" stays intact — the level-collapse lesson).
+_ACR_SUFFIX = re.compile(
+    r"^(?P<base>.*\S)\s+-\s+(?P<acr>[A-Z0-9+\-\./]{1,12}(?: [A-Z0-9+\-\./]{1,12}){0,2})$")
+
+
+def split_name_acronym(name):
+    m = _ACR_SUFFIX.match(name or "")
+    if not m:
+        return name, None
+    acr = m.group("acr")
+    if not re.search(r"[A-Z]", acr) or re.fullmatch(r"[IVX]+|\d+", acr):
+        return name, None
+    return m.group("base"), acr
+
+
 # Tolerant header → canonical field mapping (bulk-file headers are unverified
 # until the first probe run; extend here if the probe shows different names).
 HEADER_MAP = {
@@ -169,6 +191,10 @@ def parse_rows(headers, rows):
             v = cell(f)
             if v:
                 rec[f] = v
+        if "acronym" not in rec:
+            base, acr = split_name_acronym(name)
+            if acr:
+                rec["name"], rec["acronym"] = base, acr
         d = cell("in_demand").lower()
         if d in ("y", "yes", "true", "1"):
             rec["in_demand"] = True
@@ -228,6 +254,26 @@ def api_get(path):
     return json.loads(blob)
 
 
+def _api_rec(c):
+    """API record → the registry shape the matcher expects (clean name +
+    separate acronym; the API embeds acronyms as a 'Name - ACR' suffix and
+    the first authenticated probe showed no Acronym field)."""
+    rec = {"name": (c.get("Name") or "").strip(),
+           "org": (c.get("Organization") or "").strip(),
+           "id": c.get("Id")}
+    for src, dst in (("Acronym", "acronym"), ("Type", "type"),
+                     ("Url", "url"), ("OrganizationUrl", "org_url")):
+        if c.get(src):
+            rec[dst] = str(c[src]).strip()
+    if "acronym" not in rec:
+        base, acr = split_name_acronym(rec["name"])
+        if acr:
+            rec["name"], rec["acronym"] = base, acr
+    if str(c.get("InDemand", "")).strip().lower() in ("y", "yes", "true", "1"):
+        rec["in_demand"] = True
+    return rec
+
+
 def lane_api(probe):
     if not (COS_USER_ID and COS_API_TOKEN):
         print("API lane: COS_USER_ID / COS_API_TOKEN secrets not set — skipped.")
@@ -242,28 +288,57 @@ def lane_api(probe):
         print(f"API lane probe: 'building inspector' → RecordCount={n}; "
               f"first: {json.dumps((d.get('CertList') or [{}])[0])[:300]}")
         return "PROBED"
+
     seen, certs = {}, []
-    for kw in list("abcdefghijklmnopqrstuvwxyz0123456789"):
-        start = 1
+
+    def fetch_keyword(kw):
+        """Paginate one keyword search. Defensive on an unverified contract:
+        advance by ACTUAL batch size (a server page cap below our limit must
+        not end enumeration early), stop at RecordCount, and bail if two
+        pages open with the same Id (server ignoring startRecord) so a
+        >500-record keyword can never spin the runner / hammer the API."""
+        start, total, prev_first, added = 1, None, None, 0
         while True:
             d = api_get(q(kw, start, 500))
             batch = d.get("CertList") or []
+            if total is None:
+                total = d.get("RecordCount") or 0
+            if not batch:
+                break
+            first = batch[0].get("Id")
+            if first is not None and first == prev_first:
+                print(f"  keyword {kw!r}: startRecord={start} not advancing — "
+                      f"stopping this keyword")
+                break
+            prev_first = first
             for c in batch:
                 cid = c.get("Id")
                 if cid and cid not in seen:
                     seen[cid] = 1
-                    rec = {"name": (c.get("Name") or "").strip(),
-                           "org": (c.get("Organization") or "").strip(),
-                           "id": cid}
-                    for src, dst in (("Acronym", "acronym"), ("Type", "type"),
-                                     ("Url", "url"), ("OrganizationUrl", "org_url")):
-                        if c.get(src):
-                            rec[dst] = str(c[src]).strip()
-                    certs.append(rec)
-            if len(batch) < 500:
+                    certs.append(_api_rec(c))
+                    added += 1
+            if start - 1 + len(batch) >= total:
                 break
-            start += 500
-        print(f"  keyword {kw!r}: total {len(certs)}")
+            start += len(batch)
+        return total or 0, added
+
+    # The empty keyword ("%20") may enumerate the whole registry in one pass —
+    # the probe showed keyword search matches broadly ('building inspector' →
+    # 1,088 records). Try it first; the a-z/0-9 fan-out stays as the fallback
+    # (de-dupe by Id makes overlap free). Each keyword fails soft so one bad
+    # response can't zero the whole lane.
+    for kw in [""] + list("abcdefghijklmnopqrstuvwxyz0123456789"):
+        try:
+            total, added = fetch_keyword(kw)
+        except Exception as e:
+            print(f"  keyword {kw!r} failed: {type(e).__name__}: {e}")
+            continue
+        print(f"  keyword {kw or '<all>'}: RecordCount={total}, new={added}, "
+              f"cumulative {len(certs)}")
+        if kw == "" and total and len(certs) >= total:
+            print("  empty-keyword pass covered the full registry — "
+                  "skipping the a-z/0-9 fan-out")
+            break
     return certs
 
 
