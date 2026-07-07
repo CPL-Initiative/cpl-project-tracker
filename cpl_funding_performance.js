@@ -8,9 +8,9 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified (context, not a priority metric) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 40965,
-  "p2": 4766,
-  "p3": 16296
+  "pe": 41025,
+  "p2": 4775,
+  "p3": 16310
  },
  "colleges": {
   "Alameda": {
@@ -79,7 +79,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Chaffey": {
-   "pe": 1469,
+   "pe": 1473,
    "p2": 14,
    "p3": 28
   },
@@ -125,7 +125,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Cuesta": {
-   "pe": 83,
+   "pe": 85,
    "p2": null,
    "p2_suppressed": true,
    "p3": null,
@@ -137,12 +137,12 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Cypress": {
-   "pe": 641,
+   "pe": 640,
    "p2": 10,
    "p3": 19
   },
   "De Anza": {
-   "pe": 975,
+   "pe": 976,
    "p2": null,
    "p2_suppressed": true,
    "p3": null,
@@ -318,9 +318,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Moreno Valley": {
-   "pe": 1557,
-   "p2": 411,
-   "p3": 1453
+   "pe": 1570,
+   "p2": 419,
+   "p3": 1466
   },
   "Mt San Antonio": {
    "pe": 732,
@@ -343,7 +343,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 438
   },
   "Ohlone": {
-   "pe": 82,
+   "pe": 100,
    "p2": 0,
    "p3": 0
   },
@@ -413,9 +413,9 @@ window.CPL_FUNDING_PERF = {
    "p3": 1502
   },
   "San Francisco": {
-   "pe": 1076,
-   "p2": 7,
-   "p3": 14
+   "pe": 1088,
+   "p2": 8,
+   "p3": 15
   },
   "San Joaquin Delta": {
    "pe": 493,
@@ -479,7 +479,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Solano": {
-   "pe": 81,
+   "pe": 76,
    "p2": 0,
    "p3": 0
   },
@@ -510,7 +510,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "West LA": {
-   "pe": 666,
+   "pe": 682,
    "p2": 485,
    "p3": 549
   },

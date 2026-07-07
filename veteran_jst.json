@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-07T17:32:58.075812+00:00",
+  "scraped_at": "2026-07-07T23:40:31.181291+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25270,
+    "jst": 25321,
     "star_colleges": 51
   },
   "computed_star_colleges": 51,
@@ -22,7 +22,7 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 302,
+      "jst": 306,
       "star": true
     },
     "San Diego Mesa College": {
@@ -57,7 +57,7 @@
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1066,
+      "jst": 1078,
       "star": true
     },
     "Norco College": {
@@ -67,17 +67,17 @@
     },
     "West Los Angeles College": {
       "vets": 122,
-      "jst": 95,
+      "jst": 112,
       "star": true
     },
     "Long Beach City College": {
       "vets": 307,
-      "jst": 809,
+      "jst": 811,
       "star": true
     },
     "De Anza College": {
       "vets": 903,
-      "jst": 978,
+      "jst": 979,
       "star": true
     },
     "Riverside City College": {
@@ -117,7 +117,7 @@
     },
     "Cypress College": {
       "vets": 259,
-      "jst": 388,
+      "jst": 387,
       "star": true
     },
     "Modesto Junior College": {
@@ -267,7 +267,7 @@
     },
     "Solano Community College": {
       "vets": 278,
-      "jst": 83,
+      "jst": 78,
       "star": false
     },
     "Diablo Valley College": {
@@ -412,7 +412,7 @@
     },
     "Cuesta College": {
       "vets": 206,
-      "jst": 150,
+      "jst": 153,
       "star": false
     },
     "Los Medanos College": {
@@ -475,6 +475,11 @@
       "jst": 150,
       "star": false
     },
+    "Ohlone College": {
+      "vets": 49,
+      "jst": 102,
+      "star": true
+    },
     "Cuyamaca College": {
       "vets": 130,
       "jst": 94,
@@ -483,11 +488,6 @@
     "Santa Barbara City College": {
       "vets": 0,
       "jst": 86,
-      "star": true
-    },
-    "Ohlone College": {
-      "vets": 49,
-      "jst": 84,
       "star": true
     },
     "Sacramento City College": {

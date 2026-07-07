@@ -44364,5 +44364,2821 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-07-07T17:14:36.000417+00:00",
     "reviewed_by": "map@rccd.edu"
+  },
+  "AP Biology (Score 3-5) (BIOSCI 101)": {
+    "unified_title": "AP Biology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Chemistry (Score 3-5)": {
+    "unified_title": "AP Chemistry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Chinese Language and Culture (Score 4-5)": {
+    "unified_title": "AP Chinese Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Computer Science A (Score 4-5)": {
+    "unified_title": "AP Computer Science A",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Computer Science Principles (Score 4-5)": {
+    "unified_title": "AP Computer Science Principles",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP English Language (Score 3-5)": {
+    "unified_title": "AP English Language and Composition",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP English Language and Composition (Score 3-5)": {
+    "unified_title": "AP English Language and Composition",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP English Literature (Score 3-5)": {
+    "unified_title": "AP English Literature and Composition",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP English Literature and Composition (Score 3-5)": {
+    "unified_title": "AP English Literature and Composition",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Environmental Science (Score 3-5)": {
+    "unified_title": "AP Environmental Science",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Exam Art History (Score of 3, 4 or 5)": {
+    "unified_title": "AP Art History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Exam Biology (Score of 3, 4 or 5)": {
+    "unified_title": "AP Biology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP French Language and Culture (Score 3-5)": {
+    "unified_title": "AP French Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP German Language and Culture (Score 3-5)": {
+    "unified_title": "AP German Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Government and Political: United States (Score 3-5)": {
+    "unified_title": "AP United States Government and Politics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Government and Politics: Comparative (Score 3-5)": {
+    "unified_title": "AP Comparative Government and Politics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Human Geography (Score 3-5)": {
+    "unified_title": "AP Human Geography",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Italian Language and Culture (Score 3-5)": {
+    "unified_title": "AP Italian Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Japanese Language and Culture (Score 3-5)": {
+    "unified_title": "AP Japanese Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Latin (Score 3-5)": {
+    "unified_title": "AP Latin",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Macroeconomics (Score 3-5)": {
+    "unified_title": "AP Macroeconomics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Microeconomics (Score 3-5)": {
+    "unified_title": "AP Microeconomics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Music Theory (Score 3-5)": {
+    "unified_title": "AP Music Theory",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Physics 1": {
+    "unified_title": "AP Physics 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Precalculus (MATH-100)": {
+    "unified_title": "AP Precalculus",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Precalculus (MATH-187)": {
+    "unified_title": "AP Precalculus",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Psychology (Score 3-5)": {
+    "unified_title": "AP Psychology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Seminar (Score 3-5)": {
+    "unified_title": "AP Seminar",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Spanish Language and Culture (Score 3)": {
+    "unified_title": "AP Spanish Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Spanish Language and Culture (Score 4)": {
+    "unified_title": "AP Spanish Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Spanish Language and Culture (Score 5)": {
+    "unified_title": "AP Spanish Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Spanish Literature and Culture (Score 3)": {
+    "unified_title": "AP Spanish Literature and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Spanish Literature and Culture (Score 4)": {
+    "unified_title": "AP Spanish Literature and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Spanish Literature and Culture (Score 5)": {
+    "unified_title": "AP Spanish Literature and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Studio Art - 2D Design": {
+    "unified_title": "AP 2-D Art and Design",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP Studio Art - 3D Design": {
+    "unified_title": "AP 3-D Art and Design",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP US Government and Politics": {
+    "unified_title": "AP United States Government and Politics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AP World History - Modern": {
+    "unified_title": "AP World History: Modern",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "AUTO 60D Ignition Analysis and Oscilloscope Diagnosis Credit By Exam": {
+    "unified_title": "Ignition Analysis and Oscilloscope Diagnosis",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:33.390171+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AUTOTEC-10 - High School: Intro to Automotive Technology": {
+    "unified_title": "Introduction to Automotive Technology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:33.588773+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AUTOTEC-10: CORONA HIGH SCHOOL- Automotive Technology 3A/3B": {
+    "unified_title": "Introduction to Automotive Technology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:33.694285+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AUTOTEC-10: Service and Repair (Intro to Automotive)": {
+    "unified_title": "Introduction to Automotive Technology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:33.764401+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics": {
+    "unified_title": "Auto Electricity and Electronics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:33.863431+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "AUTOTEC-15: Auto Electricity and Electronics": {
+    "unified_title": "Auto Electricity and Electronics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:33.933262+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BIOL-424 High School Anatomy and Physiology Honors": {
+    "unified_title": "Anatomy and Physiology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:33.997316+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BIOL-424: COLTON HIGH SCHOOL- Anatomy and Physiology (Honors)": {
+    "unified_title": "Anatomy and Physiology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:34.057083+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BUS-10 Introduction to Business": {
+    "unified_title": "Introduction to Business",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:34.120831+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BUS-10: AB MILLER HIGH SCHOOL- Business and Finance": {
+    "unified_title": "Introduction to Business",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:34.175966+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BUS-10: CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)": {
+    "unified_title": "Introduction to Business",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:34.263735+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BUS-10: SUMMIT HIGH SCHOOL- Business and Finance": {
+    "unified_title": "Introduction to Business",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:34.358361+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BUSMGT 14 - High School: Transportation Management": {
+    "unified_title": "Transportation Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:34.438763+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BUSMGT 436 - High School Intro to Logistics Management": {
+    "unified_title": "Introduction to Logistics Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:34.516099+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BUSMGT-13: ARROYO VALLEY HIGH SCHOOL- Supply Chain and Logistics  IS260/IS261": {
+    "unified_title": "Supply Chain Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:34.590888+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BUSMGT-13: Supply Chain Management": {
+    "unified_title": "Supply Chain Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:34.651612+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BUSMGT-14 High School - Transportation Management": {
+    "unified_title": "Transportation Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:34.723801+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BUSMGT-14 Jurupa Hills High - Transportation Management": {
+    "unified_title": "Transportation Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:34.781813+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BUSMGT-14: Transportation Management": {
+    "unified_title": "Transportation Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:34.842655+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BUSMGT-436: ARROYO VALLEY HIGH SCHOOL- Supply Chain and Logistics IS260/IS261": {
+    "unified_title": "Introduction to Logistics Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:34.911346+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BUSMGT-436: Baldy View ROP - Transportation, Distribution and Logistics": {
+    "unified_title": "Introduction to Logistics Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:34.96873+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BUSMGT-436: CAJON HIGH SCHOOL- Global Logistics & Concepts IS262/IS263": {
+    "unified_title": "Introduction to Logistics Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:35.04104+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BUSMGT-436: Introduction to Logistics Management": {
+    "unified_title": "Introduction to Logistics Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:35.10847+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BUSMGT-45: AB MILLER HIGH SCHOOL- Global Business Design": {
+    "unified_title": "Small Business Ownership and Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:35.172975+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BUSMGT-45: SUMMIT HIGH SCHOOL- Global Business Design": {
+    "unified_title": "Small Business Ownership and Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:35.295966+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "BUSMGT-45: Small Business Ownership and Management": {
+    "unified_title": "Small Business Ownership and Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:35.233348+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Building Plans Examiner": {
+    "unified_title": "Building Plans Examiner",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:54.226844+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "CIS-1/ITIS-10: Introduction to Computer Information Systems": {
+    "unified_title": "Introduction to Computer Information Systems",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:35.561619+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "CIS-1: CAJON HIGH SCHOOL- Introduction to Computer Information Systems  (IS662/IS663)": {
+    "unified_title": "Introduction to Computer Information Systems",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:35.497473+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "CJ-1 High School Articulation: Law Enforcement": {
+    "unified_title": "Introduction to the Criminal Justice System",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:35.634789+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "CJ-1 High School: Advanced Law Enforcement": {
+    "unified_title": "Introduction to the Criminal Justice System",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:35.724479+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "CJ-1 Introduction to the Criminal Justice System": {
+    "unified_title": "Introduction to the Criminal Justice System",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:35.788125+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "CJ-1: Fontana High - Law Enforcement": {
+    "unified_title": "Introduction to the Criminal Justice System",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:35.859359+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "CJ-51: FONTANA HIGH SCHOOL- Advanced Law Enforcement (Corrections)": {
+    "unified_title": "Introduction to Corrections",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:35.916183+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "CJ-51: Introduction to Corrections": {
+    "unified_title": "Introduction to Corrections",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:35.969239+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "CJ-9 High School - Crime Scene Management": {
+    "unified_title": "Crime Scene Management and Forensic Evidence",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:36.023093+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "CJ-9 SUMMIT HIGH SCHOOL- Cyber Scene Management": {
+    "unified_title": "Crime Scene Management and Forensic Evidence",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:36.073444+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "CJ-9: Crime Scene Management and Forensic Evidence": {
+    "unified_title": "Crime Scene Management and Forensic Evidence",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:36.125816+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "CLEP American Government (Score of 50)": {
+    "unified_title": "CLEP American Government",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP American Literature (Score of 50)": {
+    "unified_title": "CLEP American Literature",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Analyzing & Interpreting Lit": {
+    "unified_title": "CLEP Analyzing and Interpreting Literature",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Analyzing & Interpreting Literature (Score of 50)": {
+    "unified_title": "CLEP Analyzing and Interpreting Literature",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Analyzing and Interp. Literature": {
+    "unified_title": "CLEP Analyzing and Interpreting Literature",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Analyzing and Interpreting\nLiterature": {
+    "unified_title": "CLEP Analyzing and Interpreting Literature",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Biology (Score of 50)": {
+    "unified_title": "CLEP Biology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Calculus (F09 or prior)": {
+    "unified_title": "CLEP Calculus",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Calculus (Score of 50)": {
+    "unified_title": "CLEP Calculus",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Chemistry (Score of 50)": {
+    "unified_title": "CLEP Chemistry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP College Algebra (Score of 50)": {
+    "unified_title": "CLEP College Algebra",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP College Algebra -\nTrigonometry": {
+    "unified_title": "CLEP College Algebra-Trigonometry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP College Algebra -Trigonometry": {
+    "unified_title": "CLEP College Algebra-Trigonometry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP College Algebra Trigonometry": {
+    "unified_title": "CLEP College Algebra-Trigonometry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP College Algebra –\nTrigonometry": {
+    "unified_title": "CLEP College Algebra-Trigonometry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP College Algebra — Trigonometry": {
+    "unified_title": "CLEP College Algebra-Trigonometry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP College Algebra- Trigonometry (Score of 50)": {
+    "unified_title": "CLEP College Algebra-Trigonometry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP College Algebra-Trig": {
+    "unified_title": "CLEP College Algebra-Trigonometry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP College Algebra-Trigonometry": {
+    "unified_title": "CLEP College Algebra-Trigonometry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP College Algebra/Algebra-Trigonometry": {
+    "unified_title": "CLEP College Algebra-Trigonometry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP College Algebra/Trig": {
+    "unified_title": "CLEP College Algebra-Trigonometry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP College Algebra: Trigonometry": {
+    "unified_title": "CLEP College Algebra-Trigonometry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP College Composition": {
+    "unified_title": "CLEP College Composition",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP English Literature (only if taken before F11)": {
+    "unified_title": "CLEP English Literature",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP English Literature (prior F11)": {
+    "unified_title": "CLEP English Literature",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP French (max of 10 units awarded) Level II": {
+    "unified_title": "CLEP French Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP French Language, Level 2": {
+    "unified_title": "CLEP French Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP French Language: 2": {
+    "unified_title": "CLEP French Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP French Language: Level 1": {
+    "unified_title": "CLEP French Language Level I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP French Language:  Level 1": {
+    "unified_title": "CLEP French Language Level I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP French Language:  Level 2": {
+    "unified_title": "CLEP French Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP French Level 2": {
+    "unified_title": "CLEP French Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP French Level II (Score of \t59)": {
+    "unified_title": "CLEP French Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP French Level II*": {
+    "unified_title": "CLEP French Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP French [1] Level II": {
+    "unified_title": "CLEP French Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP French – Level 2*": {
+    "unified_title": "CLEP French Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP French** Level II": {
+    "unified_title": "CLEP French Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP French, Level II": {
+    "unified_title": "CLEP French Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP German (max of 10 units awarded) Level II": {
+    "unified_title": "CLEP German Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP German II": {
+    "unified_title": "CLEP German Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP German Language, Level 2": {
+    "unified_title": "CLEP German Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP German Language: Level 1": {
+    "unified_title": "CLEP German Language Level I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP German Language: Level 2": {
+    "unified_title": "CLEP German Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP German Level 2": {
+    "unified_title": "CLEP German Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP German Level II (Score of 60)": {
+    "unified_title": "CLEP German Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP German Level II*": {
+    "unified_title": "CLEP German Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP German – Level 2*": {
+    "unified_title": "CLEP German Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP German** Level II": {
+    "unified_title": "CLEP German Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP German, Level II": {
+    "unified_title": "CLEP German Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP German1 Level II": {
+    "unified_title": "CLEP German Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP HIstory of the US I: Early Colonization": {
+    "unified_title": "CLEP History of the United States I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP HIstory of the US II: 1865 to the present": {
+    "unified_title": "CLEP History of the United States II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP History United States I": {
+    "unified_title": "CLEP History of the United States I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP History United States II": {
+    "unified_title": "CLEP History of the United States II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP History of the United States I": {
+    "unified_title": "CLEP History of the United States I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP History of the United States I: Early Colonization to 1877": {
+    "unified_title": "CLEP History of the United States I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP History of the United States II": {
+    "unified_title": "CLEP History of the United States II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP History of the United States II: 1865 to the Present": {
+    "unified_title": "CLEP History of the United States II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP History, U.S. I": {
+    "unified_title": "CLEP History of the United States I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP History, U.S. II": {
+    "unified_title": "CLEP History of the United States II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP History, United States I (Score of 50)": {
+    "unified_title": "CLEP History of the United States I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP History, United States II (Score of 50)": {
+    "unified_title": "CLEP History of the United States II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Human Growth &\nDevelopment": {
+    "unified_title": "CLEP Human Growth and Development",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Human Growth & Devel.": {
+    "unified_title": "CLEP Human Growth and Development",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Human Growth & Development": {
+    "unified_title": "CLEP Human Growth and Development",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Human Growth & Development (Score of 50)": {
+    "unified_title": "CLEP Human Growth and Development",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Human Growth and\nDevelopment": {
+    "unified_title": "CLEP Human Growth and Development",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Human Growth and Development**": {
+    "unified_title": "CLEP Human Growth and Development",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Humanities (Score of 50)": {
+    "unified_title": "CLEP Humanities",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Intro Psychology": {
+    "unified_title": "CLEP Introductory Psychology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Intro to Sociology": {
+    "unified_title": "CLEP Introductory Sociology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Intro. to Educational Psychology": {
+    "unified_title": "CLEP Introduction to Educational Psychology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Introduction to Psychology": {
+    "unified_title": "CLEP Introductory Psychology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Introduction to Sociology": {
+    "unified_title": "CLEP Introductory Sociology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Introductory Business Law": {
+    "unified_title": "CLEP Introductory Business Law",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Introductory Psychology (Score of 50)": {
+    "unified_title": "CLEP Introductory Psychology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Introductory Sociology (Score of 50)": {
+    "unified_title": "CLEP Introductory Sociology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Natural Sciences (Score of 50)": {
+    "unified_title": "CLEP Natural Sciences",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Pre Calculus": {
+    "unified_title": "CLEP Precalculus",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Pre-Calculus (Score of 50)": {
+    "unified_title": "CLEP Pre-Calculus",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Precalculus": {
+    "unified_title": "CLEP Precalculus",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Princ. of Macroecon": {
+    "unified_title": "CLEP Principles of Macroeconomics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Princ. of Microecon": {
+    "unified_title": "CLEP Principles of Microeconomics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Principles of Macroeconomics (Score of 50)": {
+    "unified_title": "CLEP Principles of Macroeconomics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Principles of Micro Economics": {
+    "unified_title": "CLEP Principles of Microeconomics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Principles of Microeconomics (Score of 50)": {
+    "unified_title": "CLEP Principles of Microeconomics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Social Sciences and History": {
+    "unified_title": "CLEP Social Sciences and History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Spanish (max of 10 units awarded) Level II": {
+    "unified_title": "CLEP Spanish Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Spanish - Level 2*": {
+    "unified_title": "CLEP Spanish Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Spanish Language, Level 2": {
+    "unified_title": "CLEP Spanish Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Spanish Language: Level 1": {
+    "unified_title": "CLEP Spanish Language Level I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Spanish Language: Level 2": {
+    "unified_title": "CLEP Spanish Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Spanish Level 2": {
+    "unified_title": "CLEP Spanish Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Spanish Level II (Score of 63)": {
+    "unified_title": "CLEP Spanish Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Spanish Level II (after FA15)": {
+    "unified_title": "CLEP Spanish Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Spanish Level II (until FA15)": {
+    "unified_title": "CLEP Spanish Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Spanish Level II*": {
+    "unified_title": "CLEP Spanish Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Spanish [1] Level II": {
+    "unified_title": "CLEP Spanish Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Spanish and Writing Level II": {
+    "unified_title": "CLEP Spanish with Writing Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Spanish with Writing I": {
+    "unified_title": "CLEP Spanish with Writing I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Spanish with Writing Level 2": {
+    "unified_title": "CLEP Spanish with Writing Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Spanish with Writing Level II": {
+    "unified_title": "CLEP Spanish with Writing Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Spanish with Writing Level II (Score of 63)": {
+    "unified_title": "CLEP Spanish with Writing Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Spanish with Writing ll": {
+    "unified_title": "CLEP Spanish with Writing Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Spanish with Writing: Level 2": {
+    "unified_title": "CLEP Spanish with Writing Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Spanish** Level II": {
+    "unified_title": "CLEP Spanish Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Spanish** with Writing II": {
+    "unified_title": "CLEP Spanish with Writing II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Spanish, Level II": {
+    "unified_title": "CLEP Spanish Language Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Trigonometry (only if taken before F06)": {
+    "unified_title": "CLEP Trigonometry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Trigonometry (prior F' 06)": {
+    "unified_title": "CLEP Trigonometry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Trigonometry (prior to Fall 2006)": {
+    "unified_title": "CLEP Trigonometry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP United States I": {
+    "unified_title": "CLEP History of the United States I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP United States II": {
+    "unified_title": "CLEP History of the United States II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Western Civ I": {
+    "unified_title": "CLEP Western Civilization I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Western Civ II": {
+    "unified_title": "CLEP Western Civilization II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Western Civilization I (Score of 50)": {
+    "unified_title": "CLEP Western Civilization I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Western Civilization I: Ancient Near East to 1648": {
+    "unified_title": "CLEP Western Civilization I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Western Civilization II (Score of 50)": {
+    "unified_title": "CLEP Western Civilization II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Western Civilization II: 1648 to Present": {
+    "unified_title": "CLEP Western Civilization II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "CLEP Western Civilization II: 1648 to the Present": {
+    "unified_title": "CLEP Western Civilization II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
+    "reviewed_by": "preseed-v1@bot"
+  },
+  "Cabinetmaker Apprenticeship": {
+    "unified_title": "Carpenters Apprenticeship — Cabinetmaker",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:35.369763+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "California Emergency Medical Technician (EMT)": {
+    "unified_title": "Emergency Medical Technician",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:45:01.402733+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Carpentry Apprenticeship": {
+    "unified_title": "Carpenters Apprenticeship — Carpenter",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:35.434251+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Commercial Building Inspector": {
+    "unified_title": "Commercial Building Inspector",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:45:07.350463+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Commercial Electrical Apprenticeship": {
+    "unified_title": "Commercial Electrical Apprenticeship",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:36.173769+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Construction Craft Laborer Apprenticeship": {
+    "unified_title": "Construction Craft Laborer Apprenticeship",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:36.226285+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit By Exam Miramar": {
+    "unified_title": "Generic Credit by Exam — San Diego Miramar College",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:37.8008+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam - Intro to Process Technology": {
+    "unified_title": "Intro to Process Technology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:36.336256+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam - WATER 140": {
+    "unified_title": "Water Distribution Operator I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:36.394656+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam ACCTG 022 Payroll Accounting": {
+    "unified_title": "Payroll Accounting",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:36.463044+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam ACCTG 030 QuickBooks": {
+    "unified_title": "QuickBooks",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:36.516835+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam AUTO 102 Automotive System": {
+    "unified_title": "Automotive System",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:36.569409+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam AUTO 106 Automotive Brake System": {
+    "unified_title": "Automotive Brake System",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:36.625581+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam AUTO 117 Automotive Principles": {
+    "unified_title": "Automotive Principles",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:36.680866+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam AUTO 118 Fuel Systems/Emission Controls": {
+    "unified_title": "Fuel Systems/Emission Controls",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:36.73789+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam AUTO 171 Engine Systems": {
+    "unified_title": "Engine Systems",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:36.790435+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam AUTO 204 Driver Assist Technology": {
+    "unified_title": "Driver Assist Technology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:36.848762+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam BIS 012 Business Document Production": {
+    "unified_title": "Business Document Production",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:36.90929+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam CHEM 001B General Chemistry": {
+    "unified_title": "General Chemistry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:36.965616+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam KINS 025 First Aid, CPR & AED": {
+    "unified_title": "First Aid, CPR & AED",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:37.020055+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam MATH 021 Precalculus Algebra": {
+    "unified_title": "Precalculus Algebra",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:37.073531+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam MATH 022 Trigonometry": {
+    "unified_title": "Trigonometry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:37.318598+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam MATH 025 Precalculus Algebra and Trigonometry": {
+    "unified_title": "Precalculus Algebra and Trigonometry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:37.371713+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam MATH 062 Calculus for Business and Social Science": {
+    "unified_title": "Calculus for Business and Social Science",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:37.440024+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam MATH 071 Calculus I With Analytic Geometry": {
+    "unified_title": "Calculus I With Analytic Geometry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:37.509751+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam MATH 072 Calculus II With Analytic Geometry": {
+    "unified_title": "Calculus II With Analytic Geometry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:37.581781+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam MATH 073 Multivariable Calculus": {
+    "unified_title": "Multivariable Calculus",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:37.648315+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam MATH 078 Differential Equations": {
+    "unified_title": "Differential Equations",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:37.706953+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam MATH 079 Linear Algebra": {
+    "unified_title": "Linear Algebra",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:37.757995+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam SPAN 032 Spanish Grammar and Composition": {
+    "unified_title": "Spanish Grammar and Composition",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:37.84292+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam SPAN 033 Spanish/English Linguistics Analysis": {
+    "unified_title": "Spanish/English Linguistics Analysis",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:37.895917+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam WWT 100 Calculations in Water/Wastewater Technology": {
+    "unified_title": "Calculations in Water/Wastewater Technology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:37.955799+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam WWT 102 Introduction to Electrical and Instrumentation Processes": {
+    "unified_title": "Introduction to Electrical and Instrumentation Processes",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:38.009313+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam WWT 103 Basic Plant Operations: Water Treatment": {
+    "unified_title": "Basic Plant Operations: Water Treatment",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:38.059092+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam WWT 104 Basic Plant Operations: Wastewater Treatment": {
+    "unified_title": "Basic Plant Operations: Wastewater Treatment",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:38.122532+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam WWT 105 Water Distribution Systems": {
+    "unified_title": "Water Distribution Systems",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:38.224795+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by Exam WWT 106 Wastewater Collection Systems": {
+    "unified_title": "Wastewater Collection Systems",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:38.280747+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Credit by ExamSPAN 031 Introduction to Translation and Interpreting": {
+    "unified_title": "Introduction to Translation and Interpreting",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:38.339556+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "DRAFT-43 High School- Advanced Engineering Design II H 1&2": {
+    "unified_title": "Advanced CAD Modeling and Applications",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:38.394484+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "DRAFT-43:  RANCHO HIGH SCHOOL- Advanced CAD Modeling and Applications": {
+    "unified_title": "Advanced CAD Modeling and Applications",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:38.445332+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "DRAFT-43: Advanced CAD Modeling and Applications": {
+    "unified_title": "Advanced CAD Modeling and Applications",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:38.514777+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "DRAFT-50 Baldy View ROP - Civil Engineering & Architecture (CEA)": {
+    "unified_title": "Architectural Design I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:38.635771+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "DRAFT-50 and DRAFT-43 Baldy View ROP - Civil Engineering and Architecture": {
+    "unified_title": "Architectural Design I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:38.577585+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "DRAFT-50: Architectural Design I": {
+    "unified_title": "Architectural Design I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:38.701781+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Drywall Applicator Apprenticeship": {
+    "unified_title": "Carpenters Apprenticeship — Drywall Applicator",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:38.757038+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "EGTECH-10 - High School: Introduction to Engineering Design/Graphics": {
+    "unified_title": "Introduction to Engineering Design/Graphics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:38.824626+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "EGTECH-10 SAN BERNARDINO HIGH SCHOOL- PLTW Intro to Engineering Design  IS414H/IS415H": {
+    "unified_title": "Introduction to Engineering Design/Graphics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:38.870622+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "EGTECH-10: Baldy View ROP - Introduction to Engineering Design": {
+    "unified_title": "Introduction to Engineering Design/Graphics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:38.919771+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "EGTECH-10: Upland Unified School District - Introduction to Engineering Design PLTW": {
+    "unified_title": "Introduction to Engineering Design/Graphics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:38.983124+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "EGTECH-12 SAN BERNARDINO HIGH SCHOOL- PLTW Principles of Engineering  IS416H/IS417H": {
+    "unified_title": "Principles of Engineering",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:39.033911+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "EGTECH-12: Principles of Engineering": {
+    "unified_title": "Principles of Engineering",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:39.094043+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "EGTECH-12: SAN GORGONIO HIGH SCHOOL- PLTW Intro to Engineering Design  IS414H/IS415H": {
+    "unified_title": "Principles of Engineering",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:39.149646+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "EGTECH-12: SAN GORGONIO HIGH SCHOOL- PLTW Principles of Engineering  IS416H/IS417H": {
+    "unified_title": "Principles of Engineering",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:39.208589+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "EGTECH-12: Upland Unified School District - Principles of Engineering (PLTW)": {
+    "unified_title": "Principles of Engineering",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:39.263201+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "EMT-405 - Fontana Unified -Fontana HS Kaiser HS - EMT Fundamental": {
+    "unified_title": "Emergency Medical Responder",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:39.310852+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "EMT-405 - High School: Emergency Medical Technician Preparation": {
+    "unified_title": "Emergency Medical Responder",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:39.357169+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "EMT-405 FONTANA HIGH SCHOOL- Emergency Medical Responder": {
+    "unified_title": "Emergency Medical Responder",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:39.406299+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "EMT-405: Baldy View ROP - EMERGENCY MEDICAL RESPONDER 1": {
+    "unified_title": "Emergency Medical Responder",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:39.452451+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "EMT-405: FONTANA HIGH SCHOOL- Emergency Medical Technician": {
+    "unified_title": "Emergency Medical Responder",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:39.508105+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "EMT-405: Fontana Unified - Fontana Adult School - EMT Bridge": {
+    "unified_title": "Emergency Medical Responder",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:39.589601+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "EMT-405: Fontana Unified - Fontana HS  Kaiser HS - Emergency Medical Responder": {
+    "unified_title": "Emergency Medical Responder",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:39.645089+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "EMT-405: Learn 4 Life - Emergency Medical Responder": {
+    "unified_title": "Emergency Medical Responder",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:39.696096+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Emergency Medical Responder": {
+    "unified_title": "Emergency Medical Responder",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:57:34.98676+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Emergency Medical Technician (EMT) Certification": {
+    "unified_title": "Emergency Medical Technician",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:57:35.052479+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "FILM 31, Digital Filmmaking": {
+    "unified_title": "Introduction To Digital Filmmaking",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:57:37.88026+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "FIRETEC-12: FONTANA HIGH SCHOOL- Safety & Survival": {
+    "unified_title": "Occupational Safety and Health for Emergency Services",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:39.797692+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "FIRETEC-12: Occupational Safety and Health for Emergency Services": {
+    "unified_title": "Occupational Safety and Health for Emergency Services",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:39.852184+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "FIRETEC-1: Principles of Emergency Services": {
+    "unified_title": "Principles of Emergency Services",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:39.75071+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "FIRETEC-2: FONTANA HIGH SCHOOL-  Fire Behavior": {
+    "unified_title": "Fire Behavior and Combustion",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:39.947425+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "FIRETEC-2: Fire Behavior and Combustion": {
+    "unified_title": "Fire Behavior and Combustion",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:39.896654+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "FIRETEC-3: Fire Protection Systems": {
+    "unified_title": "Fire Protection Systems",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:40.001588+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "FIRETEC-5: Fire Prevention": {
+    "unified_title": "Fire Prevention",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:40.053441+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "FIRTEC -5 Fontana Unified - Fontana High - Fire Prevention": {
+    "unified_title": "Fire Prevention",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:40.10299+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Hardwood Floor Layer Apprenticeship": {
+    "unified_title": "Carpenters Apprenticeship — Hardwood Floor Layer",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:40.154825+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Insulator Apprenticeship": {
+    "unified_title": "Carpenters Apprenticeship — Insulator",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:40.219145+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Introduction to Mechatronics": {
+    "unified_title": "Introduction to Mechatronics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:57:41.843525+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer, AS": {
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T19:04:35.646761+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer, CA": {
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T19:04:33.533042+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher, AS": {
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T19:04:32.727843+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems), CA (Active from Summer 2025)": {
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T19:04:32.124869+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, AS": {
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T19:04:31.400511+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, CA": {
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T19:04:30.827974+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Journeyman Certificate- Apprenticeship Carpentry, Insulator, AS": {
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Insulator",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:40.292058+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Journeyman Certificate- Apprenticeship Carpentry, Insulator, CA": {
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Insulator",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:40.346885+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, AS": {
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:40.40534+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, AS (Active from Fall 2025)": {
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:40.466677+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, CA": {
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:40.558771+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, CA (Active from Fall 2025)": {
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:40.607248+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Journeyman Certificate- Apprenticeship Carpentry, Pile Driver, AS": {
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Pile Driver",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:40.6562+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Journeyman Certificate- Apprenticeship Carpentry, Pile Driver, CA": {
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Pile Driver",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:40.711679+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Journeyman Certificate- Apprenticeship Carpentry, Plastering, AS": {
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Plastering",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:40.765681+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Journeyman Certificate- Apprenticeship Carpentry, Plastering, CA": {
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Plastering",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:40.819107+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up, AS": {
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:40.867133+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up, CA": {
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:40.920383+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Journeyman Certificate-Apprenticeship Carpentry, Drywall/Lather (Interior Systems), AS (Active from Summer 2025)": {
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:40.972964+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Licensed Vocation Nurse (LVN) Certification": {
+    "unified_title": "Licensed Vocation Nurse (LVN) Certification",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:43:14.920497+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "MC3 Pre-Apprenticeship Essentials": {
+    "unified_title": "Multi-Craft Core Curriculum (MC3) Pre-Apprenticeship",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:41.019608+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "MUSIC 261 - Electronic Music Workshop": {
+    "unified_title": "Electronic Music Workshop",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:57:45.348783+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "MUSIC 265-1 - Recording Arts Workshop I": {
+    "unified_title": "Recording Arts Workshop I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:41.16225+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "MUSIC 265-2 - Recording Arts Workshop II": {
+    "unified_title": "Recording Arts Workshop II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:41.208441+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "MUSIC 265-3 - Recording Arts Workshop III": {
+    "unified_title": "Recording Arts Workshop III",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:41.268768+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "MUSIC 322  - Elementary Piano II": {
+    "unified_title": "Piano II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:57:47.399608+00:00",
+    "reviewed_by": "map@rccd.edu",
+    "title_anchor": {
+      "system": "C-ID",
+      "id": "MUS 171"
+    }
+  },
+  "MUSIC 661 - Jazz and Popular Music Guitar I": {
+    "unified_title": "Jazz and Popular Music Guitar I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:57:48.425393+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Microsoft Office Specialist (MOS) Certification.": {
+    "unified_title": "Microsoft Office Specialist",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T19:04:29.004774+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Millwright Apprenticeship": {
+    "unified_title": "Carpenters Apprenticeship — Millwright",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:41.067422+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Modular Installer Apprenticeship": {
+    "unified_title": "Carpenters Apprenticeship — Modular Installer",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:41.114297+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "NCCER CORE Curriculum - Introduction to Basic Construction Skills": {
+    "unified_title": "NCCER CORE Curriculum - Introduction to Basic Construction Skills",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:41.659919+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "NCCER Commercial Carpenter Journey Level": {
+    "unified_title": "NCCER Commercial Carpenter Journey Level",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:41.320762+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "NCCER Commercial Electrician Level 1": {
+    "unified_title": "NCCER Commercial Electrician Level 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:41.365389+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "NCCER Commercial Electrician Level 2": {
+    "unified_title": "NCCER Commercial Electrician Level 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:41.416743+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "NCCER Commercial Electrician Level 3": {
+    "unified_title": "NCCER Commercial Electrician Level 3",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:41.462489+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "NCCER Commercial Electrician Level 4/Journey Level": {
+    "unified_title": "NCCER Commercial Electrician Level 4/Journey Level",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:41.516902+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "NCCER Construction Foreman Management": {
+    "unified_title": "NCCER Construction Foreman Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:41.563814+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "NCCER Construction Superintendent Management": {
+    "unified_title": "NCCER Construction Superintendent Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:41.61448+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "NCCER Industrial Carpenter Journey Level": {
+    "unified_title": "NCCER Industrial Carpenter Journey Level",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:41.701902+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "NCCER Industrial Electrician Level 1": {
+    "unified_title": "NCCER Industrial Electrician Level 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:41.748691+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "NCCER Industrial Electrician Level 2": {
+    "unified_title": "NCCER Industrial Electrician Level 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:41.801985+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "NCCER Industrial Electrician Level 3": {
+    "unified_title": "NCCER Industrial Electrician Level 3",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:41.848885+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "NCCER Industrial Electrician Level 4/Journey Level": {
+    "unified_title": "NCCER Industrial Electrician Level 4/Journey Level",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:41.895236+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "OSHA 10 and 1 yr Experience": {
+    "unified_title": "OSHA 10 Card",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T19:37:38.604109+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "OSHA 30 and 6 months Experience": {
+    "unified_title": "OSHA 30 Card",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T19:37:38.673291+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "OSHA Safety Training 30-Hour Card": {
+    "unified_title": "OSHA 30 Card",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T19:37:39.388594+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Pile Driver Apprenticeship": {
+    "unified_title": "Carpenters Apprenticeship — Pile Driver",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:41.942297+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Portfolio Review - ART 125B": {
+    "unified_title": "Intermediate Drawing",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:41.997146+00:00",
+    "reviewed_by": "map@rccd.edu",
+    "title_anchor": {
+      "system": "C-ID",
+      "id": "ARTS 205"
+    }
+  },
+  "Quality Improvement Associate Certification/CQIA (American Society for Quality/ASQ) -  This certification has no expiration": {
+    "unified_title": "Quality Improvement Associate Certification (CQIA)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T22:13:53.35158+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Reinforcing Apprenticeship 416: Period 1": {
+    "unified_title": "Ironworker Apprenticeship — Reinforcing, Period 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:42.054478+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Reinforcing Apprenticeship 416: Period 2": {
+    "unified_title": "Ironworker Apprenticeship — Reinforcing, Period 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:42.107903+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Reinforcing Apprenticeship 416: Period 3": {
+    "unified_title": "Ironworker Apprenticeship — Reinforcing, Period 3",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:42.153494+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Reinforcing Apprenticeship 416: Period 4": {
+    "unified_title": "Ironworker Apprenticeship — Reinforcing, Period 4",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:42.197912+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Reinforcing Apprenticeship 416: Period 5": {
+    "unified_title": "Ironworker Apprenticeship — Reinforcing, Period 5",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:42.24971+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Reinforcing Apprenticeship 416: Period 6": {
+    "unified_title": "Ironworker Apprenticeship — Reinforcing, Period 6",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:42.297781+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Reinforcing Apprenticeship 416: Period 7": {
+    "unified_title": "Ironworker Apprenticeship — Reinforcing, Period 7",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:42.34634+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Reinforcing Apprenticeship 416: Period 8": {
+    "unified_title": "Ironworker Apprenticeship — Reinforcing, Period 8",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:42.419277+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Residential Building Inspector": {
+    "unified_title": "Residential Building Inspector",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:57:56.287254+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Residential Electrical Apprenticeship": {
+    "unified_title": "Residential Electrical Apprenticeship",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:42.468113+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Residential Plans Examiner": {
+    "unified_title": "Residential Plans Examiner",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:57:57.000325+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "SMM 2, Culture and Zero Waste": {
+    "unified_title": "Culture and Zero Waste",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:58:08.499129+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "SMM 4, Sustainable Materials Management and Zero Waste in Business": {
+    "unified_title": "Sustainable Materials Management and Zero Waste in Business",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:59:05.321481+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "San Bernardino High School - EGTECH-10: Introduction to Engineering Design/Graphics": {
+    "unified_title": "Introduction to Engineering Design/Graphics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:42.516102+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "San Gorgonio High School - EGTECH-10: Introduction to Engineering Design/Graphics": {
+    "unified_title": "Introduction to Engineering Design/Graphics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:42.567092+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "San Gorgonio High School - EGTECH-12: Principles of Engineering": {
+    "unified_title": "Principles of Engineering",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:42.619703+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Scaffold Erector Apprenticeship": {
+    "unified_title": "Carpenters Apprenticeship — Scaffold Erector",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:42.671327+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Security+ Certification Preparation": {
+    "unified_title": "CompTIA Security+",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T22:11:54.554423+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Server+ Certificate Preparation": {
+    "unified_title": "CompTIA Server+",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T22:12:14.718714+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Shingler Apprenticeship": {
+    "unified_title": "Carpenters Apprenticeship — Shingler",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:42.718126+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Structural Apprenticeship 433: Period 1": {
+    "unified_title": "Ironworker Apprenticeship — Structural, Period 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:42.76723+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Structural Apprenticeship 433: Period 2": {
+    "unified_title": "Ironworker Apprenticeship — Structural, Period 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:42.81552+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Structural Apprenticeship 433: Period 3": {
+    "unified_title": "Ironworker Apprenticeship — Structural, Period 3",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:42.879605+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Structural Apprenticeship 433: Period 4": {
+    "unified_title": "Ironworker Apprenticeship — Structural, Period 4",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:42.94043+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Structural Apprenticeship 433: Period 5": {
+    "unified_title": "Ironworker Apprenticeship — Structural, Period 5",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:42.987648+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Structural Apprenticeship 433: Period 6": {
+    "unified_title": "Ironworker Apprenticeship — Structural, Period 6",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:43.035566+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Structural Apprenticeship 433: Period 7": {
+    "unified_title": "Ironworker Apprenticeship — Structural, Period 7",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:43.090416+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Structural Apprenticeship 433: Period 8": {
+    "unified_title": "Ironworker Apprenticeship — Structural, Period 8",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T20:44:43.137339+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "THEATER 280 - Musical Theater Workshop": {
+    "unified_title": "Musical Theater Workshop I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T18:59:11.757019+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "WST 045 & WST 145 Backflow Prevention Devices - American Water Work Association Backflow Prevention Certification": {
+    "unified_title": "Backflow Prevention Devices",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T19:00:08.573805+00:00",
+    "reviewed_by": "map@rccd.edu"
   }
 }

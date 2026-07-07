@@ -1,5 +1,5 @@
 {
-  "_generated_at": "2026-07-07T17:33:05Z",
+  "_generated_at": "2026-07-07T23:40:42Z",
   "mode": "apply",
   "gates": {
     "V1_apply_safe": true,
@@ -10,242 +10,2461 @@
   "apply_safe": true,
   "clean": [
     {
-      "raw": "A+ Certification Preparation",
-      "assigned": "CompTIA A+",
-      "issuer": "CompTIA",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T16:55:31.746235+00:00"
-    },
-    {
-      "raw": "ACCTG 15, Individual Income Taxes",
-      "assigned": "Individual Income Taxes",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T16:56:10.02836+00:00"
-    },
-    {
-      "raw": "ACCTG 16, Taxation of Corporations, Partnerships, Estates and Trusts",
-      "assigned": "Taxation of Corporations, Partnerships, Estates and Trusts",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T16:56:10.356678+00:00"
-    },
-    {
-      "raw": "ACCTG 19A, IRS Volunteer Income Assistant (VITA) Program - Tax Preparer",
-      "assigned": "IRS Volunteer Income Tax Assistance (VITA) Program - Tax Preparer",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T15:55:43.566358+00:00"
-    },
-    {
-      "raw": "ADM JUS 003 - Legal Aspects of Evidence",
-      "assigned": "Legal Aspects of Evidence",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T15:55:46.862459+00:00"
-    },
-    {
-      "raw": "ADM JUS 075 - Introduction to Corrections",
-      "assigned": "Introduction to Corrections",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T15:55:47.737539+00:00"
-    },
-    {
-      "raw": "ADM JUS 319 - Research Methods & Statistics in Criminal Justice",
-      "assigned": "Research Methods & Statistics in Criminal Justice",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T15:55:48.600531+00:00"
-    },
-    {
-      "raw": "AG - 014: Tractor Operations",
-      "assigned": "Tractor Operations",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T15:55:49.989111+00:00"
-    },
-    {
-      "raw": "AGBUS - 024: Agriculture Accounting",
-      "assigned": "Agriculture Accounting",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T15:55:50.811188+00:00"
-    },
-    {
-      "raw": "AP 2-D Art and Design (Score of 3 or higher)",
-      "assigned": "AP 2-D Art and Design",
-      "issuer": "College Board",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:24:33.786987+00:00"
-    },
-    {
-      "raw": "AP Art History (Score of 3 or higher)",
-      "assigned": "AP Art History",
-      "issuer": "College Board",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T15:55:53.068991+00:00"
-    },
-    {
-      "raw": "AP Art Studio 2-D (Score 3-5)",
-      "assigned": "AP 2-D Art and Design",
-      "issuer": "College Board",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:24:33.786987+00:00"
-    },
-    {
-      "raw": "AP Art Studio 3-D (Score 3-5)",
-      "assigned": "AP 3-D Art and Design",
-      "issuer": "College Board",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:24:33.786987+00:00"
-    },
-    {
-      "raw": "AP Art-Studio Drawing (Score 3-5)",
-      "assigned": "AP Drawing",
-      "issuer": "College Board",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:24:33.786987+00:00"
-    },
-    {
-      "raw": "AP Biology (Score 3-5) (BIOSCI 100)",
+      "raw": "AP Biology (Score 3-5) (BIOSCI 101)",
       "assigned": "AP Biology",
       "issuer": "College Board",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T15:56:00.688441+00:00"
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
     },
     {
-      "raw": "AUTO 60E Automotive Fuel Injection Credit by Exam",
-      "assigned": "Automotive Fuel Injection",
+      "raw": "AP Chemistry (Score 3-5)",
+      "assigned": "AP Chemistry",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Chinese Language and Culture (Score 4-5)",
+      "assigned": "AP Chinese Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Computer Science A (Score 4-5)",
+      "assigned": "AP Computer Science A",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Computer Science Principles (Score 4-5)",
+      "assigned": "AP Computer Science Principles",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP English Language (Score 3-5)",
+      "assigned": "AP English Language and Composition",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP English Language and Composition (Score 3-5)",
+      "assigned": "AP English Language and Composition",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP English Literature (Score 3-5)",
+      "assigned": "AP English Literature and Composition",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP English Literature and Composition (Score 3-5)",
+      "assigned": "AP English Literature and Composition",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Environmental Science (Score 3-5)",
+      "assigned": "AP Environmental Science",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Exam Art History (Score of 3, 4 or 5)",
+      "assigned": "AP Art History",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Exam Biology (Score of 3, 4 or 5)",
+      "assigned": "AP Biology",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP French Language and Culture (Score 3-5)",
+      "assigned": "AP French Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP German Language and Culture (Score 3-5)",
+      "assigned": "AP German Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Government and Political: United States (Score 3-5)",
+      "assigned": "AP United States Government and Politics",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Government and Politics: Comparative (Score 3-5)",
+      "assigned": "AP Comparative Government and Politics",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Human Geography (Score 3-5)",
+      "assigned": "AP Human Geography",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Italian Language and Culture (Score 3-5)",
+      "assigned": "AP Italian Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Japanese Language and Culture (Score 3-5)",
+      "assigned": "AP Japanese Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Latin (Score 3-5)",
+      "assigned": "AP Latin",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Macroeconomics (Score 3-5)",
+      "assigned": "AP Macroeconomics",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Microeconomics (Score 3-5)",
+      "assigned": "AP Microeconomics",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Music Theory (Score 3-5)",
+      "assigned": "AP Music Theory",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Physics 1",
+      "assigned": "AP Physics 1",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Precalculus (MATH-100)",
+      "assigned": "AP Precalculus",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Precalculus (MATH-187)",
+      "assigned": "AP Precalculus",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Psychology (Score 3-5)",
+      "assigned": "AP Psychology",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Seminar (Score 3-5)",
+      "assigned": "AP Seminar",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Spanish Language and Culture (Score 3)",
+      "assigned": "AP Spanish Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Spanish Language and Culture (Score 4)",
+      "assigned": "AP Spanish Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Spanish Language and Culture (Score 5)",
+      "assigned": "AP Spanish Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Spanish Literature and Culture (Score 3)",
+      "assigned": "AP Spanish Literature and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Spanish Literature and Culture (Score 4)",
+      "assigned": "AP Spanish Literature and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Spanish Literature and Culture (Score 5)",
+      "assigned": "AP Spanish Literature and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Studio Art - 2D Design",
+      "assigned": "AP 2-D Art and Design",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP Studio Art - 3D Design",
+      "assigned": "AP 3-D Art and Design",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP US Government and Politics",
+      "assigned": "AP United States Government and Politics",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AP World History - Modern",
+      "assigned": "AP World History: Modern",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "AUTO 60D Ignition Analysis and Oscilloscope Diagnosis Credit By Exam",
+      "assigned": "Ignition Analysis and Oscilloscope Diagnosis",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:00:25.681671+00:00"
+      "reviewed_at": "2026-07-07T20:44:33.390171+00:00"
     },
     {
-      "raw": "AUTO 60F No-Start Diagnosis Credit by Exam",
-      "assigned": "No-Start Diagnosis",
+      "raw": "AUTOTEC-10 - High School: Intro to Automotive Technology",
+      "assigned": "Introduction to Automotive Technology",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:00:25.053357+00:00"
+      "reviewed_at": "2026-07-07T20:44:33.588773+00:00"
     },
     {
-      "raw": "AUTO 60G Advanced Scan Tool Diagnosis Credit by Exam",
-      "assigned": "Advanced Scan Tool Diagnosis",
+      "raw": "AUTOTEC-10: CORONA HIGH SCHOOL- Automotive Technology 3A/3B",
+      "assigned": "Introduction to Automotive Technology",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:00:24.507857+00:00"
+      "reviewed_at": "2026-07-07T20:44:33.694285+00:00"
     },
     {
-      "raw": "AUTO 60H Advanced Drivability and Onboard Diagnostics Credit by Exam",
-      "assigned": "Advanced Drivability and Onboard Diagnostics",
+      "raw": "AUTOTEC-10: Service and Repair (Intro to Automotive)",
+      "assigned": "Introduction to Automotive Technology",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:00:23.467483+00:00"
+      "reviewed_at": "2026-07-07T20:44:33.764401+00:00"
     },
     {
-      "raw": "AUTO 60J Advanced Lab Scope and Waveform Diagnosis Credit by Exam",
-      "assigned": "Advanced Lab Scope and Waveform Diagnosis",
+      "raw": "AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics",
+      "assigned": "Auto Electricity and Electronics",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:00:22.446225+00:00"
+      "reviewed_at": "2026-07-07T20:44:33.863431+00:00"
     },
     {
-      "raw": "AUTO 61A-Automotive Brake Systems-Credit by Exam",
-      "assigned": "Automotive Brake Systems",
+      "raw": "AUTOTEC-15: Auto Electricity and Electronics",
+      "assigned": "Auto Electricity and Electronics",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:00:21.698426+00:00"
+      "reviewed_at": "2026-07-07T20:44:33.933262+00:00"
     },
     {
-      "raw": "AUTO 61B-Electronically Controlled Brake Systems Credit by Exam",
-      "assigned": "Electronically Controlled Brake Systems",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:00:20.769531+00:00"
-    },
-    {
-      "raw": "Acoustical Installer Apprenticeship",
-      "assigned": "Carpenters Apprenticeship — Acoustical Installer",
-      "issuer": "Carpenters Training Committee for Northern California / Southern California Carpenters Joint Apprenticeship",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:24:47.169802+00:00"
-    },
-    {
-      "raw": "Advanced Surface Mount Assembly and Rework",
-      "assigned": "Surface Mount Assembly and Rework Advanced",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:24:33.786987+00:00"
-    },
-    {
-      "raw": "Alternative Photographic Processes I",
-      "assigned": "Photography Alternative Processes Beginning",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T15:55:51.426635+00:00"
-    },
-    {
-      "raw": "Auto Service Excellence (ASE) ASE A7 - Active Certification awarded in the past five years",
-      "assigned": "ASE A7 — Heating and Air Conditioning",
-      "issuer": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:24:47.169802+00:00"
-    },
-    {
-      "raw": "AutoCAD I",
-      "assigned": "AutoCAD Beginning",
-      "issuer": "Autodesk",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:12:07.974147+00:00"
-    },
-    {
-      "raw": "Automotive Services Excellence  6 (A6) Certificate Electrical/Electronic Systems",
-      "assigned": "ASE A6 — Electrical/Electronic Systems",
-      "issuer": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:24:47.169802+00:00"
-    },
-    {
-      "raw": "Automotive Services Excellence  8 (T8) Certificate- Preventive Maintenance & Inspection (PMI)",
-      "assigned": "ASE T8 — Preventive Maintenance Inspection",
-      "issuer": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:24:47.169802+00:00"
-    },
-    {
-      "raw": "BIOL-424 Anatomy and Physiology",
+      "raw": "BIOL-424 High School Anatomy and Physiology Honors",
       "assigned": "Anatomy and Physiology",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:14:59.940142+00:00"
+      "reviewed_at": "2026-07-07T20:44:33.997316+00:00"
     },
     {
-      "raw": "BIOTECH 002 - Biotechnology I",
-      "assigned": "Introduction to Biotechnology",
+      "raw": "BIOL-424: COLTON HIGH SCHOOL- Anatomy and Physiology (Honors)",
+      "assigned": "Anatomy and Physiology",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:13:03.073156+00:00"
+      "reviewed_at": "2026-07-07T20:44:34.057083+00:00"
     },
     {
-      "raw": "BIOTECH 003 - Biotechnology II",
-      "assigned": "Biotechnology Intermediate",
+      "raw": "BUS-10 Introduction to Business",
+      "assigned": "Introduction to Business",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:14:01.6871+00:00"
+      "reviewed_at": "2026-07-07T20:44:34.120831+00:00"
     },
     {
-      "raw": "BIOTECH 006 - Biotechnology: Quality Control",
-      "assigned": "Biotechnology: Quality Control",
+      "raw": "BUS-10: AB MILLER HIGH SCHOOL- Business and Finance",
+      "assigned": "Introduction to Business",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:14:10.157007+00:00"
+      "reviewed_at": "2026-07-07T20:44:34.175966+00:00"
     },
     {
-      "raw": "BIOTECH 102 - Cell Culture",
-      "assigned": "Biotechnology: Cell Culture",
+      "raw": "BUS-10: CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)",
+      "assigned": "Introduction to Business",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:14:36.000417+00:00"
+      "reviewed_at": "2026-07-07T20:44:34.263735+00:00"
+    },
+    {
+      "raw": "BUS-10: SUMMIT HIGH SCHOOL- Business and Finance",
+      "assigned": "Introduction to Business",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:34.358361+00:00"
+    },
+    {
+      "raw": "BUSMGT 14 - High School: Transportation Management",
+      "assigned": "Transportation Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:34.438763+00:00"
+    },
+    {
+      "raw": "BUSMGT 436 - High School Intro to Logistics Management",
+      "assigned": "Introduction to Logistics Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:34.516099+00:00"
+    },
+    {
+      "raw": "BUSMGT-13: ARROYO VALLEY HIGH SCHOOL- Supply Chain and Logistics  IS260/IS261",
+      "assigned": "Supply Chain Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:34.590888+00:00"
+    },
+    {
+      "raw": "BUSMGT-13: Supply Chain Management",
+      "assigned": "Supply Chain Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:34.651612+00:00"
+    },
+    {
+      "raw": "BUSMGT-14 High School - Transportation Management",
+      "assigned": "Transportation Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:34.723801+00:00"
+    },
+    {
+      "raw": "BUSMGT-14 Jurupa Hills High - Transportation Management",
+      "assigned": "Transportation Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:34.781813+00:00"
+    },
+    {
+      "raw": "BUSMGT-14: Transportation Management",
+      "assigned": "Transportation Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:34.842655+00:00"
+    },
+    {
+      "raw": "BUSMGT-436: ARROYO VALLEY HIGH SCHOOL- Supply Chain and Logistics IS260/IS261",
+      "assigned": "Introduction to Logistics Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:34.911346+00:00"
+    },
+    {
+      "raw": "BUSMGT-436: Baldy View ROP - Transportation, Distribution and Logistics",
+      "assigned": "Introduction to Logistics Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:34.96873+00:00"
+    },
+    {
+      "raw": "BUSMGT-436: CAJON HIGH SCHOOL- Global Logistics & Concepts IS262/IS263",
+      "assigned": "Introduction to Logistics Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:35.04104+00:00"
+    },
+    {
+      "raw": "BUSMGT-436: Introduction to Logistics Management",
+      "assigned": "Introduction to Logistics Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:35.10847+00:00"
+    },
+    {
+      "raw": "BUSMGT-45: AB MILLER HIGH SCHOOL- Global Business Design",
+      "assigned": "Small Business Ownership and Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:35.172975+00:00"
+    },
+    {
+      "raw": "BUSMGT-45: SUMMIT HIGH SCHOOL- Global Business Design",
+      "assigned": "Small Business Ownership and Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:35.295966+00:00"
+    },
+    {
+      "raw": "BUSMGT-45: Small Business Ownership and Management",
+      "assigned": "Small Business Ownership and Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:35.233348+00:00"
+    },
+    {
+      "raw": "Building Plans Examiner",
+      "assigned": "Building Plans Examiner",
+      "issuer": "International Code Council",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:54.226844+00:00"
+    },
+    {
+      "raw": "CIS-1/ITIS-10: Introduction to Computer Information Systems",
+      "assigned": "Introduction to Computer Information Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:35.561619+00:00"
+    },
+    {
+      "raw": "CIS-1: CAJON HIGH SCHOOL- Introduction to Computer Information Systems  (IS662/IS663)",
+      "assigned": "Introduction to Computer Information Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:35.497473+00:00"
+    },
+    {
+      "raw": "CJ-1 High School Articulation: Law Enforcement",
+      "assigned": "Introduction to the Criminal Justice System",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:35.634789+00:00"
+    },
+    {
+      "raw": "CJ-1 High School: Advanced Law Enforcement",
+      "assigned": "Introduction to the Criminal Justice System",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:35.724479+00:00"
+    },
+    {
+      "raw": "CJ-1 Introduction to the Criminal Justice System",
+      "assigned": "Introduction to the Criminal Justice System",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:35.788125+00:00"
+    },
+    {
+      "raw": "CJ-1: Fontana High - Law Enforcement",
+      "assigned": "Introduction to the Criminal Justice System",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:35.859359+00:00"
+    },
+    {
+      "raw": "CJ-51: FONTANA HIGH SCHOOL- Advanced Law Enforcement (Corrections)",
+      "assigned": "Introduction to Corrections",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:35.916183+00:00"
+    },
+    {
+      "raw": "CJ-51: Introduction to Corrections",
+      "assigned": "Introduction to Corrections",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:35.969239+00:00"
+    },
+    {
+      "raw": "CJ-9 High School - Crime Scene Management",
+      "assigned": "Crime Scene Management and Forensic Evidence",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:36.023093+00:00"
+    },
+    {
+      "raw": "CJ-9 SUMMIT HIGH SCHOOL- Cyber Scene Management",
+      "assigned": "Crime Scene Management and Forensic Evidence",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:36.073444+00:00"
+    },
+    {
+      "raw": "CJ-9: Crime Scene Management and Forensic Evidence",
+      "assigned": "Crime Scene Management and Forensic Evidence",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:36.125816+00:00"
+    },
+    {
+      "raw": "CLEP American Government (Score of 50)",
+      "assigned": "CLEP American Government",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP American Literature (Score of 50)",
+      "assigned": "CLEP American Literature",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Analyzing & Interpreting Lit",
+      "assigned": "CLEP Analyzing and Interpreting Literature",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Analyzing & Interpreting Literature (Score of 50)",
+      "assigned": "CLEP Analyzing and Interpreting Literature",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Analyzing and Interp. Literature",
+      "assigned": "CLEP Analyzing and Interpreting Literature",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Analyzing and Interpreting\nLiterature",
+      "assigned": "CLEP Analyzing and Interpreting Literature",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Biology (Score of 50)",
+      "assigned": "CLEP Biology",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Calculus (F09 or prior)",
+      "assigned": "CLEP Calculus",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Calculus (Score of 50)",
+      "assigned": "CLEP Calculus",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Chemistry (Score of 50)",
+      "assigned": "CLEP Chemistry",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP College Algebra (Score of 50)",
+      "assigned": "CLEP College Algebra",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP College Algebra -\nTrigonometry",
+      "assigned": "CLEP College Algebra-Trigonometry",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP College Algebra -Trigonometry",
+      "assigned": "CLEP College Algebra-Trigonometry",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP College Algebra Trigonometry",
+      "assigned": "CLEP College Algebra-Trigonometry",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP College Algebra –\nTrigonometry",
+      "assigned": "CLEP College Algebra-Trigonometry",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:28:04.10796+00:00"
+    },
+    {
+      "raw": "CLEP College Algebra — Trigonometry",
+      "assigned": "CLEP College Algebra-Trigonometry",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:28:04.10796+00:00"
+    },
+    {
+      "raw": "CLEP College Algebra- Trigonometry (Score of 50)",
+      "assigned": "CLEP College Algebra-Trigonometry",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:28:04.10796+00:00"
+    },
+    {
+      "raw": "CLEP College Algebra-Trig",
+      "assigned": "CLEP College Algebra-Trigonometry",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:28:04.10796+00:00"
+    },
+    {
+      "raw": "CLEP College Algebra-Trigonometry",
+      "assigned": "CLEP College Algebra-Trigonometry",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP College Algebra/Algebra-Trigonometry",
+      "assigned": "CLEP College Algebra-Trigonometry",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:28:04.10796+00:00"
+    },
+    {
+      "raw": "CLEP College Algebra/Trig",
+      "assigned": "CLEP College Algebra-Trigonometry",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:28:04.10796+00:00"
+    },
+    {
+      "raw": "CLEP College Algebra: Trigonometry",
+      "assigned": "CLEP College Algebra-Trigonometry",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:28:04.10796+00:00"
+    },
+    {
+      "raw": "CLEP College Composition",
+      "assigned": "CLEP College Composition",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP English Literature (only if taken before F11)",
+      "assigned": "CLEP English Literature",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP English Literature (prior F11)",
+      "assigned": "CLEP English Literature",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP French (max of 10 units awarded) Level II",
+      "assigned": "CLEP French Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:28:04.10796+00:00"
+    },
+    {
+      "raw": "CLEP French Language, Level 2",
+      "assigned": "CLEP French Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:28:04.10796+00:00"
+    },
+    {
+      "raw": "CLEP French Language: 2",
+      "assigned": "CLEP French Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:28:04.10796+00:00"
+    },
+    {
+      "raw": "CLEP French Language: Level 1",
+      "assigned": "CLEP French Language Level I",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:28:04.10796+00:00"
+    },
+    {
+      "raw": "CLEP French Language:  Level 1",
+      "assigned": "CLEP French Language Level I",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:28:04.10796+00:00"
+    },
+    {
+      "raw": "CLEP French Language:  Level 2",
+      "assigned": "CLEP French Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:28:04.10796+00:00"
+    },
+    {
+      "raw": "CLEP French Level 2",
+      "assigned": "CLEP French Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:28:04.10796+00:00"
+    },
+    {
+      "raw": "CLEP French Level II (Score of \t59)",
+      "assigned": "CLEP French Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:28:04.10796+00:00"
+    },
+    {
+      "raw": "CLEP French Level II*",
+      "assigned": "CLEP French Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:28:04.10796+00:00"
+    },
+    {
+      "raw": "CLEP French [1] Level II",
+      "assigned": "CLEP French Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP French – Level 2*",
+      "assigned": "CLEP French Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP French** Level II",
+      "assigned": "CLEP French Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP French, Level II",
+      "assigned": "CLEP French Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP German (max of 10 units awarded) Level II",
+      "assigned": "CLEP German Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP German II",
+      "assigned": "CLEP German Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP German Language, Level 2",
+      "assigned": "CLEP German Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP German Language: Level 1",
+      "assigned": "CLEP German Language Level I",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP German Language: Level 2",
+      "assigned": "CLEP German Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP German Level 2",
+      "assigned": "CLEP German Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP German Level II (Score of 60)",
+      "assigned": "CLEP German Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP German Level II*",
+      "assigned": "CLEP German Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP German – Level 2*",
+      "assigned": "CLEP German Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP German** Level II",
+      "assigned": "CLEP German Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP German, Level II",
+      "assigned": "CLEP German Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP German1 Level II",
+      "assigned": "CLEP German Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP HIstory of the US I: Early Colonization",
+      "assigned": "CLEP History of the United States I",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP HIstory of the US II: 1865 to the present",
+      "assigned": "CLEP History of the United States II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP History United States I",
+      "assigned": "CLEP History of the United States I",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP History United States II",
+      "assigned": "CLEP History of the United States II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP History of the United States I",
+      "assigned": "CLEP History of the United States I",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP History of the United States I: Early Colonization to 1877",
+      "assigned": "CLEP History of the United States I",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP History of the United States II",
+      "assigned": "CLEP History of the United States II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP History of the United States II: 1865 to the Present",
+      "assigned": "CLEP History of the United States II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP History, U.S. I",
+      "assigned": "CLEP History of the United States I",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP History, U.S. II",
+      "assigned": "CLEP History of the United States II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP History, United States I (Score of 50)",
+      "assigned": "CLEP History of the United States I",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP History, United States II (Score of 50)",
+      "assigned": "CLEP History of the United States II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Human Growth &\nDevelopment",
+      "assigned": "CLEP Human Growth and Development",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Human Growth & Devel.",
+      "assigned": "CLEP Human Growth and Development",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Human Growth & Development",
+      "assigned": "CLEP Human Growth and Development",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Human Growth & Development (Score of 50)",
+      "assigned": "CLEP Human Growth and Development",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Human Growth and\nDevelopment",
+      "assigned": "CLEP Human Growth and Development",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Human Growth and Development**",
+      "assigned": "CLEP Human Growth and Development",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Humanities (Score of 50)",
+      "assigned": "CLEP Humanities",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Intro Psychology",
+      "assigned": "CLEP Introductory Psychology",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Intro to Sociology",
+      "assigned": "CLEP Introductory Sociology",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Intro. to Educational Psychology",
+      "assigned": "CLEP Introduction to Educational Psychology",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Introduction to Psychology",
+      "assigned": "CLEP Introductory Psychology",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Introduction to Sociology",
+      "assigned": "CLEP Introductory Sociology",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Introductory Business Law",
+      "assigned": "CLEP Introductory Business Law",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Introductory Psychology (Score of 50)",
+      "assigned": "CLEP Introductory Psychology",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Introductory Sociology (Score of 50)",
+      "assigned": "CLEP Introductory Sociology",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Natural Sciences (Score of 50)",
+      "assigned": "CLEP Natural Sciences",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Pre Calculus",
+      "assigned": "CLEP Precalculus",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Pre-Calculus (Score of 50)",
+      "assigned": "CLEP Pre-Calculus",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Precalculus",
+      "assigned": "CLEP Precalculus",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Princ. of Macroecon",
+      "assigned": "CLEP Principles of Macroeconomics",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Princ. of Microecon",
+      "assigned": "CLEP Principles of Microeconomics",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Principles of Macroeconomics (Score of 50)",
+      "assigned": "CLEP Principles of Macroeconomics",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Principles of Micro Economics",
+      "assigned": "CLEP Principles of Microeconomics",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Principles of Microeconomics (Score of 50)",
+      "assigned": "CLEP Principles of Microeconomics",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Social Sciences and History",
+      "assigned": "CLEP Social Sciences and History",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Spanish (max of 10 units awarded) Level II",
+      "assigned": "CLEP Spanish Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Spanish - Level 2*",
+      "assigned": "CLEP Spanish Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Spanish Language, Level 2",
+      "assigned": "CLEP Spanish Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Spanish Language: Level 1",
+      "assigned": "CLEP Spanish Language Level I",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Spanish Language: Level 2",
+      "assigned": "CLEP Spanish Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Spanish Level 2",
+      "assigned": "CLEP Spanish Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Spanish Level II (Score of 63)",
+      "assigned": "CLEP Spanish Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Spanish Level II (after FA15)",
+      "assigned": "CLEP Spanish Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Spanish Level II (until FA15)",
+      "assigned": "CLEP Spanish Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Spanish Level II*",
+      "assigned": "CLEP Spanish Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Spanish [1] Level II",
+      "assigned": "CLEP Spanish Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Spanish and Writing Level II",
+      "assigned": "CLEP Spanish with Writing Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Spanish with Writing I",
+      "assigned": "CLEP Spanish with Writing I",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Spanish with Writing Level 2",
+      "assigned": "CLEP Spanish with Writing Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Spanish with Writing Level II",
+      "assigned": "CLEP Spanish with Writing Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Spanish with Writing Level II (Score of 63)",
+      "assigned": "CLEP Spanish with Writing Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Spanish with Writing ll",
+      "assigned": "CLEP Spanish with Writing Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Spanish with Writing: Level 2",
+      "assigned": "CLEP Spanish with Writing Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Spanish** Level II",
+      "assigned": "CLEP Spanish Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Spanish** with Writing II",
+      "assigned": "CLEP Spanish with Writing II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Spanish, Level II",
+      "assigned": "CLEP Spanish Language Level II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Trigonometry (only if taken before F06)",
+      "assigned": "CLEP Trigonometry",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Trigonometry (prior F' 06)",
+      "assigned": "CLEP Trigonometry",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Trigonometry (prior to Fall 2006)",
+      "assigned": "CLEP Trigonometry",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP United States I",
+      "assigned": "CLEP History of the United States I",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP United States II",
+      "assigned": "CLEP History of the United States II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Western Civ I",
+      "assigned": "CLEP Western Civilization I",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Western Civ II",
+      "assigned": "CLEP Western Civilization II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Western Civilization I (Score of 50)",
+      "assigned": "CLEP Western Civilization I",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Western Civilization I: Ancient Near East to 1648",
+      "assigned": "CLEP Western Civilization I",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Western Civilization II (Score of 50)",
+      "assigned": "CLEP Western Civilization II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:27:01.567802+00:00"
+    },
+    {
+      "raw": "CLEP Western Civilization II: 1648 to Present",
+      "assigned": "CLEP Western Civilization II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "CLEP Western Civilization II: 1648 to the Present",
+      "assigned": "CLEP Western Civilization II",
+      "issuer": "College Board",
+      "reviewed_by": "preseed-v1@bot",
+      "reviewed_at": "2026-07-07T18:30:06.693747+00:00"
+    },
+    {
+      "raw": "Cabinetmaker Apprenticeship",
+      "assigned": "Carpenters Apprenticeship — Cabinetmaker",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:35.369763+00:00"
+    },
+    {
+      "raw": "California Emergency Medical Technician (EMT)",
+      "assigned": "Emergency Medical Technician",
+      "issuer": "National Registry of Emergency Medical Technicians",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:45:01.402733+00:00"
+    },
+    {
+      "raw": "Carpentry Apprenticeship",
+      "assigned": "Carpenters Apprenticeship — Carpenter",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:35.434251+00:00"
+    },
+    {
+      "raw": "Commercial Building Inspector",
+      "assigned": "Commercial Building Inspector",
+      "issuer": "International Code Council",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:45:07.350463+00:00"
+    },
+    {
+      "raw": "Commercial Electrical Apprenticeship",
+      "assigned": "Commercial Electrical Apprenticeship",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:36.173769+00:00"
+    },
+    {
+      "raw": "Construction Craft Laborer Apprenticeship",
+      "assigned": "Construction Craft Laborer Apprenticeship",
+      "issuer": "Laborers' International Union of North America (LiUNA)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:36.226285+00:00"
+    },
+    {
+      "raw": "Credit By Exam Miramar",
+      "assigned": "Generic Credit by Exam — San Diego Miramar College",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.8008+00:00"
+    },
+    {
+      "raw": "Credit by Exam - Intro to Process Technology",
+      "assigned": "Intro to Process Technology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:36.336256+00:00"
+    },
+    {
+      "raw": "Credit by Exam - WATER 140",
+      "assigned": "Water Distribution Operator I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:36.394656+00:00"
+    },
+    {
+      "raw": "Credit by Exam ACCTG 022 Payroll Accounting",
+      "assigned": "Payroll Accounting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:36.463044+00:00"
+    },
+    {
+      "raw": "Credit by Exam ACCTG 030 QuickBooks",
+      "assigned": "QuickBooks",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:36.516835+00:00"
+    },
+    {
+      "raw": "Credit by Exam AUTO 102 Automotive System",
+      "assigned": "Automotive System",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:36.569409+00:00"
+    },
+    {
+      "raw": "Credit by Exam AUTO 106 Automotive Brake System",
+      "assigned": "Automotive Brake System",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:36.625581+00:00"
+    },
+    {
+      "raw": "Credit by Exam AUTO 117 Automotive Principles",
+      "assigned": "Automotive Principles",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:36.680866+00:00"
+    },
+    {
+      "raw": "Credit by Exam AUTO 118 Fuel Systems/Emission Controls",
+      "assigned": "Fuel Systems/Emission Controls",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:36.73789+00:00"
+    },
+    {
+      "raw": "Credit by Exam AUTO 171 Engine Systems",
+      "assigned": "Engine Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:36.790435+00:00"
+    },
+    {
+      "raw": "Credit by Exam AUTO 204 Driver Assist Technology",
+      "assigned": "Driver Assist Technology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:36.848762+00:00"
+    },
+    {
+      "raw": "Credit by Exam BIS 012 Business Document Production",
+      "assigned": "Business Document Production",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:36.90929+00:00"
+    },
+    {
+      "raw": "Credit by Exam CHEM 001B General Chemistry",
+      "assigned": "General Chemistry",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:36.965616+00:00"
+    },
+    {
+      "raw": "Credit by Exam KINS 025 First Aid, CPR & AED",
+      "assigned": "First Aid, CPR & AED",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.020055+00:00"
+    },
+    {
+      "raw": "Credit by Exam MATH 021 Precalculus Algebra",
+      "assigned": "Precalculus Algebra",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.073531+00:00"
+    },
+    {
+      "raw": "Credit by Exam MATH 022 Trigonometry",
+      "assigned": "Trigonometry",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.318598+00:00"
+    },
+    {
+      "raw": "Credit by Exam MATH 025 Precalculus Algebra and Trigonometry",
+      "assigned": "Precalculus Algebra and Trigonometry",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.371713+00:00"
+    },
+    {
+      "raw": "Credit by Exam MATH 062 Calculus for Business and Social Science",
+      "assigned": "Calculus for Business and Social Science",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.440024+00:00"
+    },
+    {
+      "raw": "Credit by Exam MATH 071 Calculus I With Analytic Geometry",
+      "assigned": "Calculus I With Analytic Geometry",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.509751+00:00"
+    },
+    {
+      "raw": "Credit by Exam MATH 072 Calculus II With Analytic Geometry",
+      "assigned": "Calculus II With Analytic Geometry",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.581781+00:00"
+    },
+    {
+      "raw": "Credit by Exam MATH 073 Multivariable Calculus",
+      "assigned": "Multivariable Calculus",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.648315+00:00"
+    },
+    {
+      "raw": "Credit by Exam MATH 078 Differential Equations",
+      "assigned": "Differential Equations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.706953+00:00"
+    },
+    {
+      "raw": "Credit by Exam MATH 079 Linear Algebra",
+      "assigned": "Linear Algebra",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.757995+00:00"
+    },
+    {
+      "raw": "Credit by Exam SPAN 032 Spanish Grammar and Composition",
+      "assigned": "Spanish Grammar and Composition",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.84292+00:00"
+    },
+    {
+      "raw": "Credit by Exam SPAN 033 Spanish/English Linguistics Analysis",
+      "assigned": "Spanish/English Linguistics Analysis",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.895917+00:00"
+    },
+    {
+      "raw": "Credit by Exam WWT 100 Calculations in Water/Wastewater Technology",
+      "assigned": "Calculations in Water/Wastewater Technology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.955799+00:00"
+    },
+    {
+      "raw": "Credit by Exam WWT 102 Introduction to Electrical and Instrumentation Processes",
+      "assigned": "Introduction to Electrical and Instrumentation Processes",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.009313+00:00"
+    },
+    {
+      "raw": "Credit by Exam WWT 103 Basic Plant Operations: Water Treatment",
+      "assigned": "Basic Plant Operations: Water Treatment",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.059092+00:00"
+    },
+    {
+      "raw": "Credit by Exam WWT 104 Basic Plant Operations: Wastewater Treatment",
+      "assigned": "Basic Plant Operations: Wastewater Treatment",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.122532+00:00"
+    },
+    {
+      "raw": "Credit by Exam WWT 105 Water Distribution Systems",
+      "assigned": "Water Distribution Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.224795+00:00"
+    },
+    {
+      "raw": "Credit by Exam WWT 106 Wastewater Collection Systems",
+      "assigned": "Wastewater Collection Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.280747+00:00"
+    },
+    {
+      "raw": "Credit by ExamSPAN 031 Introduction to Translation and Interpreting",
+      "assigned": "Introduction to Translation and Interpreting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.339556+00:00"
+    },
+    {
+      "raw": "DRAFT-43 High School- Advanced Engineering Design II H 1&2",
+      "assigned": "Advanced CAD Modeling and Applications",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.394484+00:00"
+    },
+    {
+      "raw": "DRAFT-43:  RANCHO HIGH SCHOOL- Advanced CAD Modeling and Applications",
+      "assigned": "Advanced CAD Modeling and Applications",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.445332+00:00"
+    },
+    {
+      "raw": "DRAFT-43: Advanced CAD Modeling and Applications",
+      "assigned": "Advanced CAD Modeling and Applications",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.514777+00:00"
+    },
+    {
+      "raw": "DRAFT-50 Baldy View ROP - Civil Engineering & Architecture (CEA)",
+      "assigned": "Architectural Design I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.635771+00:00"
+    },
+    {
+      "raw": "DRAFT-50 and DRAFT-43 Baldy View ROP - Civil Engineering and Architecture",
+      "assigned": "Architectural Design I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.577585+00:00"
+    },
+    {
+      "raw": "DRAFT-50: Architectural Design I",
+      "assigned": "Architectural Design I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.701781+00:00"
+    },
+    {
+      "raw": "Drywall Applicator Apprenticeship",
+      "assigned": "Carpenters Apprenticeship — Drywall Applicator",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.757038+00:00"
+    },
+    {
+      "raw": "EGTECH-10 - High School: Introduction to Engineering Design/Graphics",
+      "assigned": "Introduction to Engineering Design/Graphics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.824626+00:00"
+    },
+    {
+      "raw": "EGTECH-10 SAN BERNARDINO HIGH SCHOOL- PLTW Intro to Engineering Design  IS414H/IS415H",
+      "assigned": "Introduction to Engineering Design/Graphics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.870622+00:00"
+    },
+    {
+      "raw": "EGTECH-10: Baldy View ROP - Introduction to Engineering Design",
+      "assigned": "Introduction to Engineering Design/Graphics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.919771+00:00"
+    },
+    {
+      "raw": "EGTECH-10: Upland Unified School District - Introduction to Engineering Design PLTW",
+      "assigned": "Introduction to Engineering Design/Graphics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.983124+00:00"
+    },
+    {
+      "raw": "EGTECH-12 SAN BERNARDINO HIGH SCHOOL- PLTW Principles of Engineering  IS416H/IS417H",
+      "assigned": "Principles of Engineering",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.033911+00:00"
+    },
+    {
+      "raw": "EGTECH-12: Principles of Engineering",
+      "assigned": "Principles of Engineering",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.094043+00:00"
+    },
+    {
+      "raw": "EGTECH-12: SAN GORGONIO HIGH SCHOOL- PLTW Intro to Engineering Design  IS414H/IS415H",
+      "assigned": "Principles of Engineering",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.149646+00:00"
+    },
+    {
+      "raw": "EGTECH-12: SAN GORGONIO HIGH SCHOOL- PLTW Principles of Engineering  IS416H/IS417H",
+      "assigned": "Principles of Engineering",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.208589+00:00"
+    },
+    {
+      "raw": "EGTECH-12: Upland Unified School District - Principles of Engineering (PLTW)",
+      "assigned": "Principles of Engineering",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.263201+00:00"
+    },
+    {
+      "raw": "EMT-405 - Fontana Unified -Fontana HS Kaiser HS - EMT Fundamental",
+      "assigned": "Emergency Medical Responder",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.310852+00:00"
+    },
+    {
+      "raw": "EMT-405 - High School: Emergency Medical Technician Preparation",
+      "assigned": "Emergency Medical Responder",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.357169+00:00"
+    },
+    {
+      "raw": "EMT-405 FONTANA HIGH SCHOOL- Emergency Medical Responder",
+      "assigned": "Emergency Medical Responder",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.406299+00:00"
+    },
+    {
+      "raw": "EMT-405: Baldy View ROP - EMERGENCY MEDICAL RESPONDER 1",
+      "assigned": "Emergency Medical Responder",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.452451+00:00"
+    },
+    {
+      "raw": "EMT-405: FONTANA HIGH SCHOOL- Emergency Medical Technician",
+      "assigned": "Emergency Medical Responder",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.508105+00:00"
+    },
+    {
+      "raw": "EMT-405: Fontana Unified - Fontana Adult School - EMT Bridge",
+      "assigned": "Emergency Medical Responder",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.589601+00:00"
+    },
+    {
+      "raw": "EMT-405: Fontana Unified - Fontana HS  Kaiser HS - Emergency Medical Responder",
+      "assigned": "Emergency Medical Responder",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.645089+00:00"
+    },
+    {
+      "raw": "EMT-405: Learn 4 Life - Emergency Medical Responder",
+      "assigned": "Emergency Medical Responder",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.696096+00:00"
+    },
+    {
+      "raw": "Emergency Medical Responder",
+      "assigned": "Emergency Medical Responder",
+      "issuer": "National Registry of Emergency Medical Technicians",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T18:57:34.98676+00:00"
+    },
+    {
+      "raw": "Emergency Medical Technician (EMT) Certification",
+      "assigned": "Emergency Medical Technician",
+      "issuer": "National Registry of Emergency Medical Technicians",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T18:57:35.052479+00:00"
+    },
+    {
+      "raw": "FILM 31, Digital Filmmaking",
+      "assigned": "Introduction To Digital Filmmaking",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T18:57:37.88026+00:00"
+    },
+    {
+      "raw": "FIRETEC-12: FONTANA HIGH SCHOOL- Safety & Survival",
+      "assigned": "Occupational Safety and Health for Emergency Services",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.797692+00:00"
+    },
+    {
+      "raw": "FIRETEC-12: Occupational Safety and Health for Emergency Services",
+      "assigned": "Occupational Safety and Health for Emergency Services",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.852184+00:00"
+    },
+    {
+      "raw": "FIRETEC-1: Principles of Emergency Services",
+      "assigned": "Principles of Emergency Services",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.75071+00:00"
+    },
+    {
+      "raw": "FIRETEC-2: FONTANA HIGH SCHOOL-  Fire Behavior",
+      "assigned": "Fire Behavior and Combustion",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.947425+00:00"
+    },
+    {
+      "raw": "FIRETEC-2: Fire Behavior and Combustion",
+      "assigned": "Fire Behavior and Combustion",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.896654+00:00"
+    },
+    {
+      "raw": "FIRETEC-3: Fire Protection Systems",
+      "assigned": "Fire Protection Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.001588+00:00"
+    },
+    {
+      "raw": "FIRETEC-5: Fire Prevention",
+      "assigned": "Fire Prevention",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.053441+00:00"
+    },
+    {
+      "raw": "FIRTEC -5 Fontana Unified - Fontana High - Fire Prevention",
+      "assigned": "Fire Prevention",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.10299+00:00"
+    },
+    {
+      "raw": "Hardwood Floor Layer Apprenticeship",
+      "assigned": "Carpenters Apprenticeship — Hardwood Floor Layer",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.154825+00:00"
+    },
+    {
+      "raw": "Insulator Apprenticeship",
+      "assigned": "Carpenters Apprenticeship — Insulator",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.219145+00:00"
+    },
+    {
+      "raw": "Introduction to Mechatronics",
+      "assigned": "Introduction to Mechatronics",
+      "issuer": "Festo",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T18:57:41.843525+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer, AS",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T19:04:35.646761+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer, CA",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T19:04:33.533042+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher, AS",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T19:04:32.727843+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems), CA (Active from Summer 2025)",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T19:04:32.124869+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, AS",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T19:04:31.400511+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, CA",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T19:04:30.827974+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Insulator, AS",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Insulator",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.292058+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Insulator, CA",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Insulator",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.346885+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, AS",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.40534+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, AS (Active from Fall 2025)",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.466677+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, CA",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.558771+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, CA (Active from Fall 2025)",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.607248+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Pile Driver, AS",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Pile Driver",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.6562+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Pile Driver, CA",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Pile Driver",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.711679+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Plastering, AS",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Plastering",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.765681+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Plastering, CA",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Plastering",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.819107+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up, AS",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.867133+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up, CA",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.920383+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate-Apprenticeship Carpentry, Drywall/Lather (Interior Systems), AS (Active from Summer 2025)",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.972964+00:00"
+    },
+    {
+      "raw": "Licensed Vocation Nurse (LVN) Certification",
+      "assigned": "Licensed Vocation Nurse (LVN) Certification",
+      "issuer": "Board of Vocational Nursing and Psychiatric Technicians (BVNPT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:43:14.920497+00:00"
+    },
+    {
+      "raw": "MC3 Pre-Apprenticeship Essentials",
+      "assigned": "Multi-Craft Core Curriculum (MC3) Pre-Apprenticeship",
+      "issuer": "North America's Building Trades Unions (NABTU)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.019608+00:00"
+    },
+    {
+      "raw": "MUSIC 261 - Electronic Music Workshop",
+      "assigned": "Electronic Music Workshop",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T18:57:45.348783+00:00"
+    },
+    {
+      "raw": "MUSIC 265-1 - Recording Arts Workshop I",
+      "assigned": "Recording Arts Workshop I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.16225+00:00"
+    },
+    {
+      "raw": "MUSIC 265-2 - Recording Arts Workshop II",
+      "assigned": "Recording Arts Workshop II",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.208441+00:00"
+    },
+    {
+      "raw": "MUSIC 265-3 - Recording Arts Workshop III",
+      "assigned": "Recording Arts Workshop III",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.268768+00:00"
+    },
+    {
+      "raw": "MUSIC 322  - Elementary Piano II",
+      "assigned": "Piano II",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T18:57:47.399608+00:00"
+    },
+    {
+      "raw": "MUSIC 661 - Jazz and Popular Music Guitar I",
+      "assigned": "Jazz and Popular Music Guitar I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T18:57:48.425393+00:00"
+    },
+    {
+      "raw": "Microsoft Office Specialist (MOS) Certification.",
+      "assigned": "Microsoft Office Specialist",
+      "issuer": "Microsoft",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T19:04:29.004774+00:00"
+    },
+    {
+      "raw": "Millwright Apprenticeship",
+      "assigned": "Carpenters Apprenticeship — Millwright",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.067422+00:00"
+    },
+    {
+      "raw": "Modular Installer Apprenticeship",
+      "assigned": "Carpenters Apprenticeship — Modular Installer",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.114297+00:00"
+    },
+    {
+      "raw": "NCCER CORE Curriculum - Introduction to Basic Construction Skills",
+      "assigned": "NCCER CORE Curriculum - Introduction to Basic Construction Skills",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.659919+00:00"
+    },
+    {
+      "raw": "NCCER Commercial Carpenter Journey Level",
+      "assigned": "NCCER Commercial Carpenter Journey Level",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.320762+00:00"
+    },
+    {
+      "raw": "NCCER Commercial Electrician Level 1",
+      "assigned": "NCCER Commercial Electrician Level 1",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.365389+00:00"
+    },
+    {
+      "raw": "NCCER Commercial Electrician Level 2",
+      "assigned": "NCCER Commercial Electrician Level 2",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.416743+00:00"
+    },
+    {
+      "raw": "NCCER Commercial Electrician Level 3",
+      "assigned": "NCCER Commercial Electrician Level 3",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.462489+00:00"
+    },
+    {
+      "raw": "NCCER Commercial Electrician Level 4/Journey Level",
+      "assigned": "NCCER Commercial Electrician Level 4/Journey Level",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.516902+00:00"
+    },
+    {
+      "raw": "NCCER Construction Foreman Management",
+      "assigned": "NCCER Construction Foreman Management",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.563814+00:00"
+    },
+    {
+      "raw": "NCCER Construction Superintendent Management",
+      "assigned": "NCCER Construction Superintendent Management",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.61448+00:00"
+    },
+    {
+      "raw": "NCCER Industrial Carpenter Journey Level",
+      "assigned": "NCCER Industrial Carpenter Journey Level",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.701902+00:00"
+    },
+    {
+      "raw": "NCCER Industrial Electrician Level 1",
+      "assigned": "NCCER Industrial Electrician Level 1",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.748691+00:00"
+    },
+    {
+      "raw": "NCCER Industrial Electrician Level 2",
+      "assigned": "NCCER Industrial Electrician Level 2",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.801985+00:00"
+    },
+    {
+      "raw": "NCCER Industrial Electrician Level 3",
+      "assigned": "NCCER Industrial Electrician Level 3",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.848885+00:00"
+    },
+    {
+      "raw": "NCCER Industrial Electrician Level 4/Journey Level",
+      "assigned": "NCCER Industrial Electrician Level 4/Journey Level",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.895236+00:00"
+    },
+    {
+      "raw": "OSHA 10 and 1 yr Experience",
+      "assigned": "OSHA 10 Card",
+      "issuer": "U.S. Department of Labor",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T19:37:38.604109+00:00"
+    },
+    {
+      "raw": "OSHA 30 and 6 months Experience",
+      "assigned": "OSHA 30 Card",
+      "issuer": "U.S. Department of Labor",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T19:37:38.673291+00:00"
+    },
+    {
+      "raw": "OSHA Safety Training 30-Hour Card",
+      "assigned": "OSHA 30 Card",
+      "issuer": "U.S. Department of Labor",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T19:37:39.388594+00:00"
+    },
+    {
+      "raw": "Pile Driver Apprenticeship",
+      "assigned": "Carpenters Apprenticeship — Pile Driver",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.942297+00:00"
+    },
+    {
+      "raw": "Portfolio Review - ART 125B",
+      "assigned": "Intermediate Drawing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.997146+00:00"
+    },
+    {
+      "raw": "Quality Improvement Associate Certification/CQIA (American Society for Quality/ASQ) -  This certification has no expiration",
+      "assigned": "Quality Improvement Associate Certification (CQIA)",
+      "issuer": "American Society for Quality",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T22:13:53.35158+00:00"
+    },
+    {
+      "raw": "Reinforcing Apprenticeship 416: Period 1",
+      "assigned": "Ironworker Apprenticeship — Reinforcing, Period 1",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.054478+00:00"
+    },
+    {
+      "raw": "Reinforcing Apprenticeship 416: Period 2",
+      "assigned": "Ironworker Apprenticeship — Reinforcing, Period 2",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.107903+00:00"
+    },
+    {
+      "raw": "Reinforcing Apprenticeship 416: Period 3",
+      "assigned": "Ironworker Apprenticeship — Reinforcing, Period 3",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.153494+00:00"
+    },
+    {
+      "raw": "Reinforcing Apprenticeship 416: Period 4",
+      "assigned": "Ironworker Apprenticeship — Reinforcing, Period 4",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.197912+00:00"
+    },
+    {
+      "raw": "Reinforcing Apprenticeship 416: Period 5",
+      "assigned": "Ironworker Apprenticeship — Reinforcing, Period 5",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.24971+00:00"
+    },
+    {
+      "raw": "Reinforcing Apprenticeship 416: Period 6",
+      "assigned": "Ironworker Apprenticeship — Reinforcing, Period 6",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.297781+00:00"
+    },
+    {
+      "raw": "Reinforcing Apprenticeship 416: Period 7",
+      "assigned": "Ironworker Apprenticeship — Reinforcing, Period 7",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.34634+00:00"
+    },
+    {
+      "raw": "Reinforcing Apprenticeship 416: Period 8",
+      "assigned": "Ironworker Apprenticeship — Reinforcing, Period 8",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.419277+00:00"
+    },
+    {
+      "raw": "Residential Building Inspector",
+      "assigned": "Residential Building Inspector",
+      "issuer": "International Code Council",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T18:57:56.287254+00:00"
+    },
+    {
+      "raw": "Residential Electrical Apprenticeship",
+      "assigned": "Residential Electrical Apprenticeship",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.468113+00:00"
+    },
+    {
+      "raw": "Residential Plans Examiner",
+      "assigned": "Residential Plans Examiner",
+      "issuer": "International Code Council",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T18:57:57.000325+00:00"
+    },
+    {
+      "raw": "SMM 2, Culture and Zero Waste",
+      "assigned": "Culture and Zero Waste",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T18:58:08.499129+00:00"
+    },
+    {
+      "raw": "SMM 4, Sustainable Materials Management and Zero Waste in Business",
+      "assigned": "Sustainable Materials Management and Zero Waste in Business",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T18:59:05.321481+00:00"
+    },
+    {
+      "raw": "San Bernardino High School - EGTECH-10: Introduction to Engineering Design/Graphics",
+      "assigned": "Introduction to Engineering Design/Graphics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.516102+00:00"
+    },
+    {
+      "raw": "San Gorgonio High School - EGTECH-10: Introduction to Engineering Design/Graphics",
+      "assigned": "Introduction to Engineering Design/Graphics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.567092+00:00"
+    },
+    {
+      "raw": "San Gorgonio High School - EGTECH-12: Principles of Engineering",
+      "assigned": "Principles of Engineering",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.619703+00:00"
+    },
+    {
+      "raw": "Scaffold Erector Apprenticeship",
+      "assigned": "Carpenters Apprenticeship — Scaffold Erector",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.671327+00:00"
+    },
+    {
+      "raw": "Security+ Certification Preparation",
+      "assigned": "CompTIA Security+",
+      "issuer": "CompTIA",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T22:11:54.554423+00:00"
+    },
+    {
+      "raw": "Server+ Certificate Preparation",
+      "assigned": "CompTIA Server+",
+      "issuer": "CompTIA",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T22:12:14.718714+00:00"
+    },
+    {
+      "raw": "Shingler Apprenticeship",
+      "assigned": "Carpenters Apprenticeship — Shingler",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.718126+00:00"
+    },
+    {
+      "raw": "Structural Apprenticeship 433: Period 1",
+      "assigned": "Ironworker Apprenticeship — Structural, Period 1",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.76723+00:00"
+    },
+    {
+      "raw": "Structural Apprenticeship 433: Period 2",
+      "assigned": "Ironworker Apprenticeship — Structural, Period 2",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.81552+00:00"
+    },
+    {
+      "raw": "Structural Apprenticeship 433: Period 3",
+      "assigned": "Ironworker Apprenticeship — Structural, Period 3",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.879605+00:00"
+    },
+    {
+      "raw": "Structural Apprenticeship 433: Period 4",
+      "assigned": "Ironworker Apprenticeship — Structural, Period 4",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.94043+00:00"
+    },
+    {
+      "raw": "Structural Apprenticeship 433: Period 5",
+      "assigned": "Ironworker Apprenticeship — Structural, Period 5",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.987648+00:00"
+    },
+    {
+      "raw": "Structural Apprenticeship 433: Period 6",
+      "assigned": "Ironworker Apprenticeship — Structural, Period 6",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:43.035566+00:00"
+    },
+    {
+      "raw": "Structural Apprenticeship 433: Period 7",
+      "assigned": "Ironworker Apprenticeship — Structural, Period 7",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:43.090416+00:00"
+    },
+    {
+      "raw": "Structural Apprenticeship 433: Period 8",
+      "assigned": "Ironworker Apprenticeship — Structural, Period 8",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:43.137339+00:00"
+    },
+    {
+      "raw": "THEATER 280 - Musical Theater Workshop",
+      "assigned": "Musical Theater Workshop I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T18:59:11.757019+00:00"
+    },
+    {
+      "raw": "WST 045 & WST 145 Backflow Prevention Devices - American Water Work Association Backflow Prevention Certification",
+      "assigned": "Backflow Prevention Devices",
+      "issuer": "American Water Works Association",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T19:00:08.573805+00:00"
     }
   ],
   "skip": [
@@ -258,11 +2477,51 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "A+ Certification Preparation",
+      "assigned": "CompTIA A+",
+      "issuer": "CompTIA",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T16:55:31.746235+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "ACCTG 15, Individual Income Taxes",
+      "assigned": "Individual Income Taxes",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T16:56:10.02836+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "ACCTG 16, Taxation of Corporations, Partnerships, Estates and Trusts",
+      "assigned": "Taxation of Corporations, Partnerships, Estates and Trusts",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T16:56:10.356678+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "ACCTG 19A, IRS Volunteer Income Assistant (VITA) Program - Tax Preparer",
+      "assigned": "IRS Volunteer Income Tax Assistance (VITA) Program - Tax Preparer",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:43.566358+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "ADJU 232 - Juvenile Justice Procedures - Credit by Exam",
       "assigned": "Juvenile Justice Procedures",
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "ADM JUS 003 - Legal Aspects of Evidence",
+      "assigned": "Legal Aspects of Evidence",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:46.862459+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -274,11 +2533,43 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "ADM JUS 075 - Introduction to Corrections",
+      "assigned": "Introduction to Corrections",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:47.737539+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "ADM JUS 319 - Research Methods & Statistics in Criminal Justice",
+      "assigned": "Research Methods & Statistics in Criminal Justice",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:48.600531+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "AERO 040 - Instrument Ground School - Training Log",
       "assigned": "FAA Instrument Ground School",
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AG - 014: Tractor Operations",
+      "assigned": "Tractor Operations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:49.989111+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AGBUS - 024: Agriculture Accounting",
+      "assigned": "Agriculture Accounting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:50.811188+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -295,6 +2586,54 @@
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP 2-D Art and Design (Score of 3 or higher)",
+      "assigned": "AP 2-D Art and Design",
+      "issuer": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:33.786987+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Art History (Score of 3 or higher)",
+      "assigned": "AP Art History",
+      "issuer": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:53.068991+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Art Studio 2-D (Score 3-5)",
+      "assigned": "AP 2-D Art and Design",
+      "issuer": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:33.786987+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Art Studio 3-D (Score 3-5)",
+      "assigned": "AP 3-D Art and Design",
+      "issuer": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:33.786987+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Art-Studio Drawing (Score 3-5)",
+      "assigned": "AP Drawing",
+      "issuer": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:33.786987+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AP Biology (Score 3-5) (BIOSCI 100)",
+      "assigned": "AP Biology",
+      "issuer": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:56:00.688441+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -530,6 +2869,62 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "AUTO 60E Automotive Fuel Injection Credit by Exam",
+      "assigned": "Automotive Fuel Injection",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:25.681671+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AUTO 60F No-Start Diagnosis Credit by Exam",
+      "assigned": "No-Start Diagnosis",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:25.053357+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AUTO 60G Advanced Scan Tool Diagnosis Credit by Exam",
+      "assigned": "Advanced Scan Tool Diagnosis",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:24.507857+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AUTO 60H Advanced Drivability and Onboard Diagnostics Credit by Exam",
+      "assigned": "Advanced Drivability and Onboard Diagnostics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:23.467483+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AUTO 60J Advanced Lab Scope and Waveform Diagnosis Credit by Exam",
+      "assigned": "Advanced Lab Scope and Waveform Diagnosis",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:22.446225+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AUTO 61A-Automotive Brake Systems-Credit by Exam",
+      "assigned": "Automotive Brake Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:21.698426+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AUTO 61B-Electronically Controlled Brake Systems Credit by Exam",
+      "assigned": "Electronically Controlled Brake Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:00:20.769531+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "AUTO 62A: Automotive Suspension, Steering and Alignment - Credit By Exam",
       "assigned": "Automotive Suspension, Steering and Alignment",
       "issuer": "",
@@ -543,6 +2938,14 @@
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Acoustical Installer Apprenticeship",
+      "assigned": "Carpenters Apprenticeship — Acoustical Installer",
+      "issuer": "Carpenters Training Committee for Northern California / Southern California Carpenters Joint Apprenticeship",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:47.169802+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -562,6 +2965,22 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "Advanced Surface Mount Assembly and Rework",
+      "assigned": "Surface Mount Assembly and Rework Advanced",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:33.786987+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Alternative Photographic Processes I",
+      "assigned": "Photography Alternative Processes Beginning",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T15:55:51.426635+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "American National Standard Institute (ANSI) Food Manager Certificate",
       "assigned": "ANSI-Accredited Food Protection Manager Certification",
       "issuer": "",
@@ -578,6 +2997,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "Auto Service Excellence (ASE) ASE A7 - Active Certification awarded in the past five years",
+      "assigned": "ASE A7 — Heating and Air Conditioning",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:47.169802+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "Auto Service Excellence A6",
       "assigned": "ASE A6 — Electrical/Electronic Systems",
       "issuer": "",
@@ -591,6 +3018,14 @@
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:35:49.462088+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "AutoCAD I",
+      "assigned": "AutoCAD Beginning",
+      "issuer": "Autodesk",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:12:07.974147+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -626,6 +3061,22 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "Automotive Services Excellence  6 (A6) Certificate Electrical/Electronic Systems",
+      "assigned": "ASE A6 — Electrical/Electronic Systems",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:47.169802+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Automotive Services Excellence  8 (T8) Certificate- Preventive Maintenance & Inspection (PMI)",
+      "assigned": "ASE T8 — Preventive Maintenance Inspection",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:47.169802+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "Automotive Services Excellence (A5: Brakes) Certificate",
       "assigned": "ASE A5 — Brakes",
       "issuer": "",
@@ -639,6 +3090,46 @@
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "BIOL-424 Anatomy and Physiology",
+      "assigned": "Anatomy and Physiology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:14:59.940142+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "BIOTECH 002 - Biotechnology I",
+      "assigned": "Introduction to Biotechnology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:13:03.073156+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "BIOTECH 003 - Biotechnology II",
+      "assigned": "Biotechnology Intermediate",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:14:01.6871+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "BIOTECH 006 - Biotechnology: Quality Control",
+      "assigned": "Biotechnology: Quality Control",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:14:10.157007+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "BIOTECH 102 - Cell Culture",
+      "assigned": "Biotechnology: Cell Culture",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:14:36.000417+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -1816,162 +4307,880 @@
   "conflict": [],
   "credential_adds": [
     {
-      "raw": "ACCTG 15, Individual Income Taxes",
-      "assigned": "Individual Income Taxes",
+      "raw": "AUTO 60D Ignition Analysis and Oscilloscope Diagnosis Credit By Exam",
+      "assigned": "Ignition Analysis and Oscilloscope Diagnosis",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T16:56:10.02836+00:00"
+      "reviewed_at": "2026-07-07T20:44:33.390171+00:00"
     },
     {
-      "raw": "ACCTG 16, Taxation of Corporations, Partnerships, Estates and Trusts",
-      "assigned": "Taxation of Corporations, Partnerships, Estates and Trusts",
+      "raw": "AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics",
+      "assigned": "Auto Electricity and Electronics",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T16:56:10.356678+00:00"
+      "reviewed_at": "2026-07-07T20:44:33.863431+00:00"
     },
     {
-      "raw": "ACCTG 19A, IRS Volunteer Income Assistant (VITA) Program - Tax Preparer",
-      "assigned": "IRS Volunteer Income Tax Assistance (VITA) Program - Tax Preparer",
+      "raw": "Building Plans Examiner",
+      "assigned": "Building Plans Examiner",
+      "issuer": "International Code Council",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:54.226844+00:00"
+    },
+    {
+      "raw": "Cabinetmaker Apprenticeship",
+      "assigned": "Carpenters Apprenticeship — Cabinetmaker",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:35.369763+00:00"
+    },
+    {
+      "raw": "California Emergency Medical Technician (EMT)",
+      "assigned": "Emergency Medical Technician",
+      "issuer": "National Registry of Emergency Medical Technicians",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:45:01.402733+00:00"
+    },
+    {
+      "raw": "Carpentry Apprenticeship",
+      "assigned": "Carpenters Apprenticeship — Carpenter",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:35.434251+00:00"
+    },
+    {
+      "raw": "Commercial Building Inspector",
+      "assigned": "Commercial Building Inspector",
+      "issuer": "International Code Council",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:45:07.350463+00:00"
+    },
+    {
+      "raw": "Commercial Electrical Apprenticeship",
+      "assigned": "Commercial Electrical Apprenticeship",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:36.173769+00:00"
+    },
+    {
+      "raw": "Construction Craft Laborer Apprenticeship",
+      "assigned": "Construction Craft Laborer Apprenticeship",
+      "issuer": "Laborers' International Union of North America (LiUNA)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:36.226285+00:00"
+    },
+    {
+      "raw": "Credit By Exam Miramar",
+      "assigned": "Generic Credit by Exam — San Diego Miramar College",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T15:55:43.566358+00:00"
+      "reviewed_at": "2026-07-07T20:44:37.8008+00:00"
     },
     {
-      "raw": "ADM JUS 319 - Research Methods & Statistics in Criminal Justice",
-      "assigned": "Research Methods & Statistics in Criminal Justice",
+      "raw": "Credit by Exam - Intro to Process Technology",
+      "assigned": "Intro to Process Technology",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T15:55:48.600531+00:00"
+      "reviewed_at": "2026-07-07T20:44:36.336256+00:00"
     },
     {
-      "raw": "AG - 014: Tractor Operations",
-      "assigned": "Tractor Operations",
+      "raw": "Credit by Exam - WATER 140",
+      "assigned": "Water Distribution Operator I",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T15:55:49.989111+00:00"
+      "reviewed_at": "2026-07-07T20:44:36.394656+00:00"
     },
     {
-      "raw": "AGBUS - 024: Agriculture Accounting",
-      "assigned": "Agriculture Accounting",
+      "raw": "Credit by Exam ACCTG 022 Payroll Accounting",
+      "assigned": "Payroll Accounting",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T15:55:50.811188+00:00"
+      "reviewed_at": "2026-07-07T20:44:36.463044+00:00"
     },
     {
-      "raw": "AUTO 60E Automotive Fuel Injection Credit by Exam",
-      "assigned": "Automotive Fuel Injection",
+      "raw": "Credit by Exam AUTO 102 Automotive System",
+      "assigned": "Automotive System",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:00:25.681671+00:00"
+      "reviewed_at": "2026-07-07T20:44:36.569409+00:00"
     },
     {
-      "raw": "AUTO 60F No-Start Diagnosis Credit by Exam",
-      "assigned": "No-Start Diagnosis",
+      "raw": "Credit by Exam AUTO 106 Automotive Brake System",
+      "assigned": "Automotive Brake System",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:00:25.053357+00:00"
+      "reviewed_at": "2026-07-07T20:44:36.625581+00:00"
     },
     {
-      "raw": "AUTO 60G Advanced Scan Tool Diagnosis Credit by Exam",
-      "assigned": "Advanced Scan Tool Diagnosis",
+      "raw": "Credit by Exam AUTO 117 Automotive Principles",
+      "assigned": "Automotive Principles",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:00:24.507857+00:00"
+      "reviewed_at": "2026-07-07T20:44:36.680866+00:00"
     },
     {
-      "raw": "AUTO 60H Advanced Drivability and Onboard Diagnostics Credit by Exam",
-      "assigned": "Advanced Drivability and Onboard Diagnostics",
+      "raw": "Credit by Exam AUTO 118 Fuel Systems/Emission Controls",
+      "assigned": "Fuel Systems/Emission Controls",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:00:23.467483+00:00"
+      "reviewed_at": "2026-07-07T20:44:36.73789+00:00"
     },
     {
-      "raw": "AUTO 60J Advanced Lab Scope and Waveform Diagnosis Credit by Exam",
-      "assigned": "Advanced Lab Scope and Waveform Diagnosis",
+      "raw": "Credit by Exam AUTO 171 Engine Systems",
+      "assigned": "Engine Systems",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:00:22.446225+00:00"
+      "reviewed_at": "2026-07-07T20:44:36.790435+00:00"
     },
     {
-      "raw": "AUTO 61B-Electronically Controlled Brake Systems Credit by Exam",
-      "assigned": "Electronically Controlled Brake Systems",
+      "raw": "Credit by Exam AUTO 204 Driver Assist Technology",
+      "assigned": "Driver Assist Technology",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:00:20.769531+00:00"
+      "reviewed_at": "2026-07-07T20:44:36.848762+00:00"
     },
     {
-      "raw": "Advanced Surface Mount Assembly and Rework",
-      "assigned": "Surface Mount Assembly and Rework Advanced",
+      "raw": "Credit by Exam BIS 012 Business Document Production",
+      "assigned": "Business Document Production",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:24:33.786987+00:00"
+      "reviewed_at": "2026-07-07T20:44:36.90929+00:00"
     },
     {
-      "raw": "Alternative Photographic Processes I",
-      "assigned": "Photography Alternative Processes Beginning",
+      "raw": "Credit by Exam CHEM 001B General Chemistry",
+      "assigned": "General Chemistry",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T15:55:51.426635+00:00"
+      "reviewed_at": "2026-07-07T20:44:36.965616+00:00"
     },
     {
-      "raw": "AutoCAD I",
-      "assigned": "AutoCAD Beginning",
-      "issuer": "Autodesk",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:12:07.974147+00:00"
-    },
-    {
-      "raw": "BIOTECH 003 - Biotechnology II",
-      "assigned": "Biotechnology Intermediate",
+      "raw": "Credit by Exam KINS 025 First Aid, CPR & AED",
+      "assigned": "First Aid, CPR & AED",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:14:01.6871+00:00"
+      "reviewed_at": "2026-07-07T20:44:37.020055+00:00"
     },
     {
-      "raw": "BIOTECH 006 - Biotechnology: Quality Control",
-      "assigned": "Biotechnology: Quality Control",
+      "raw": "Credit by Exam MATH 021 Precalculus Algebra",
+      "assigned": "Precalculus Algebra",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:14:10.157007+00:00"
+      "reviewed_at": "2026-07-07T20:44:37.073531+00:00"
     },
     {
-      "raw": "BIOTECH 102 - Cell Culture",
-      "assigned": "Biotechnology: Cell Culture",
+      "raw": "Credit by Exam MATH 025 Precalculus Algebra and Trigonometry",
+      "assigned": "Precalculus Algebra and Trigonometry",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:14:36.000417+00:00"
+      "reviewed_at": "2026-07-07T20:44:37.371713+00:00"
+    },
+    {
+      "raw": "Credit by Exam MATH 062 Calculus for Business and Social Science",
+      "assigned": "Calculus for Business and Social Science",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.440024+00:00"
+    },
+    {
+      "raw": "Credit by Exam MATH 071 Calculus I With Analytic Geometry",
+      "assigned": "Calculus I With Analytic Geometry",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.509751+00:00"
+    },
+    {
+      "raw": "Credit by Exam MATH 072 Calculus II With Analytic Geometry",
+      "assigned": "Calculus II With Analytic Geometry",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.581781+00:00"
+    },
+    {
+      "raw": "Credit by Exam MATH 078 Differential Equations",
+      "assigned": "Differential Equations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.706953+00:00"
+    },
+    {
+      "raw": "Credit by Exam SPAN 032 Spanish Grammar and Composition",
+      "assigned": "Spanish Grammar and Composition",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.84292+00:00"
+    },
+    {
+      "raw": "Credit by Exam SPAN 033 Spanish/English Linguistics Analysis",
+      "assigned": "Spanish/English Linguistics Analysis",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.895917+00:00"
+    },
+    {
+      "raw": "Credit by Exam WWT 102 Introduction to Electrical and Instrumentation Processes",
+      "assigned": "Introduction to Electrical and Instrumentation Processes",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.009313+00:00"
+    },
+    {
+      "raw": "Credit by Exam WWT 103 Basic Plant Operations: Water Treatment",
+      "assigned": "Basic Plant Operations: Water Treatment",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.059092+00:00"
+    },
+    {
+      "raw": "Credit by Exam WWT 104 Basic Plant Operations: Wastewater Treatment",
+      "assigned": "Basic Plant Operations: Wastewater Treatment",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.122532+00:00"
+    },
+    {
+      "raw": "Credit by Exam WWT 105 Water Distribution Systems",
+      "assigned": "Water Distribution Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.224795+00:00"
+    },
+    {
+      "raw": "Credit by Exam WWT 106 Wastewater Collection Systems",
+      "assigned": "Wastewater Collection Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.280747+00:00"
+    },
+    {
+      "raw": "Credit by ExamSPAN 031 Introduction to Translation and Interpreting",
+      "assigned": "Introduction to Translation and Interpreting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.339556+00:00"
+    },
+    {
+      "raw": "DRAFT-43 High School- Advanced Engineering Design II H 1&2",
+      "assigned": "Advanced CAD Modeling and Applications",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.394484+00:00"
+    },
+    {
+      "raw": "DRAFT-50 Baldy View ROP - Civil Engineering & Architecture (CEA)",
+      "assigned": "Architectural Design I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.635771+00:00"
+    },
+    {
+      "raw": "Drywall Applicator Apprenticeship",
+      "assigned": "Carpenters Apprenticeship — Drywall Applicator",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.757038+00:00"
+    },
+    {
+      "raw": "EGTECH-10 - High School: Introduction to Engineering Design/Graphics",
+      "assigned": "Introduction to Engineering Design/Graphics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:38.824626+00:00"
+    },
+    {
+      "raw": "EGTECH-12 SAN BERNARDINO HIGH SCHOOL- PLTW Principles of Engineering  IS416H/IS417H",
+      "assigned": "Principles of Engineering",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.033911+00:00"
+    },
+    {
+      "raw": "EMT-405 - Fontana Unified -Fontana HS Kaiser HS - EMT Fundamental",
+      "assigned": "Emergency Medical Responder",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.310852+00:00"
+    },
+    {
+      "raw": "FILM 31, Digital Filmmaking",
+      "assigned": "Introduction To Digital Filmmaking",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T18:57:37.88026+00:00"
+    },
+    {
+      "raw": "Hardwood Floor Layer Apprenticeship",
+      "assigned": "Carpenters Apprenticeship — Hardwood Floor Layer",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.154825+00:00"
+    },
+    {
+      "raw": "Insulator Apprenticeship",
+      "assigned": "Carpenters Apprenticeship — Insulator",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.219145+00:00"
+    },
+    {
+      "raw": "Introduction to Mechatronics",
+      "assigned": "Introduction to Mechatronics",
+      "issuer": "Festo",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T18:57:41.843525+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer, AS",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T19:04:35.646761+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher, AS",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T19:04:32.727843+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems), CA (Active from Summer 2025)",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T19:04:32.124869+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, AS",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T19:04:31.400511+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Insulator, AS",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Insulator",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.292058+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, AS",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.40534+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Pile Driver, AS",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Pile Driver",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.6562+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Plastering, AS",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Plastering",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.765681+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up, AS",
+      "assigned": "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.867133+00:00"
+    },
+    {
+      "raw": "Licensed Vocation Nurse (LVN) Certification",
+      "assigned": "Licensed Vocation Nurse (LVN) Certification",
+      "issuer": "Board of Vocational Nursing and Psychiatric Technicians (BVNPT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:43:14.920497+00:00"
+    },
+    {
+      "raw": "MUSIC 261 - Electronic Music Workshop",
+      "assigned": "Electronic Music Workshop",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T18:57:45.348783+00:00"
+    },
+    {
+      "raw": "MUSIC 265-1 - Recording Arts Workshop I",
+      "assigned": "Recording Arts Workshop I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.16225+00:00"
+    },
+    {
+      "raw": "MUSIC 265-2 - Recording Arts Workshop II",
+      "assigned": "Recording Arts Workshop II",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.208441+00:00"
+    },
+    {
+      "raw": "MUSIC 265-3 - Recording Arts Workshop III",
+      "assigned": "Recording Arts Workshop III",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.268768+00:00"
+    },
+    {
+      "raw": "MUSIC 322  - Elementary Piano II",
+      "assigned": "Piano II",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T18:57:47.399608+00:00"
+    },
+    {
+      "raw": "MUSIC 661 - Jazz and Popular Music Guitar I",
+      "assigned": "Jazz and Popular Music Guitar I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T18:57:48.425393+00:00"
+    },
+    {
+      "raw": "Microsoft Office Specialist (MOS) Certification.",
+      "assigned": "Microsoft Office Specialist",
+      "issuer": "Microsoft",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T19:04:29.004774+00:00"
+    },
+    {
+      "raw": "Modular Installer Apprenticeship",
+      "assigned": "Carpenters Apprenticeship — Modular Installer",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.114297+00:00"
+    },
+    {
+      "raw": "NCCER CORE Curriculum - Introduction to Basic Construction Skills",
+      "assigned": "NCCER CORE Curriculum - Introduction to Basic Construction Skills",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.659919+00:00"
+    },
+    {
+      "raw": "NCCER Commercial Carpenter Journey Level",
+      "assigned": "NCCER Commercial Carpenter Journey Level",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.320762+00:00"
+    },
+    {
+      "raw": "NCCER Commercial Electrician Level 1",
+      "assigned": "NCCER Commercial Electrician Level 1",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.365389+00:00"
+    },
+    {
+      "raw": "NCCER Commercial Electrician Level 2",
+      "assigned": "NCCER Commercial Electrician Level 2",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.416743+00:00"
+    },
+    {
+      "raw": "NCCER Commercial Electrician Level 3",
+      "assigned": "NCCER Commercial Electrician Level 3",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.462489+00:00"
+    },
+    {
+      "raw": "NCCER Commercial Electrician Level 4/Journey Level",
+      "assigned": "NCCER Commercial Electrician Level 4/Journey Level",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.516902+00:00"
+    },
+    {
+      "raw": "NCCER Construction Foreman Management",
+      "assigned": "NCCER Construction Foreman Management",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.563814+00:00"
+    },
+    {
+      "raw": "NCCER Construction Superintendent Management",
+      "assigned": "NCCER Construction Superintendent Management",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.61448+00:00"
+    },
+    {
+      "raw": "NCCER Industrial Carpenter Journey Level",
+      "assigned": "NCCER Industrial Carpenter Journey Level",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.701902+00:00"
+    },
+    {
+      "raw": "NCCER Industrial Electrician Level 1",
+      "assigned": "NCCER Industrial Electrician Level 1",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.748691+00:00"
+    },
+    {
+      "raw": "NCCER Industrial Electrician Level 2",
+      "assigned": "NCCER Industrial Electrician Level 2",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.801985+00:00"
+    },
+    {
+      "raw": "NCCER Industrial Electrician Level 3",
+      "assigned": "NCCER Industrial Electrician Level 3",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.848885+00:00"
+    },
+    {
+      "raw": "NCCER Industrial Electrician Level 4/Journey Level",
+      "assigned": "NCCER Industrial Electrician Level 4/Journey Level",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.895236+00:00"
+    },
+    {
+      "raw": "OSHA 10 and 1 yr Experience",
+      "assigned": "OSHA 10 Card",
+      "issuer": "U.S. Department of Labor",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T19:37:38.604109+00:00"
+    },
+    {
+      "raw": "OSHA 30 and 6 months Experience",
+      "assigned": "OSHA 30 Card",
+      "issuer": "U.S. Department of Labor",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T19:37:38.673291+00:00"
+    },
+    {
+      "raw": "Pile Driver Apprenticeship",
+      "assigned": "Carpenters Apprenticeship — Pile Driver",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.942297+00:00"
+    },
+    {
+      "raw": "Portfolio Review - ART 125B",
+      "assigned": "Intermediate Drawing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.997146+00:00"
+    },
+    {
+      "raw": "Quality Improvement Associate Certification/CQIA (American Society for Quality/ASQ) -  This certification has no expiration",
+      "assigned": "Quality Improvement Associate Certification (CQIA)",
+      "issuer": "American Society for Quality",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T22:13:53.35158+00:00"
+    },
+    {
+      "raw": "Reinforcing Apprenticeship 416: Period 1",
+      "assigned": "Ironworker Apprenticeship — Reinforcing, Period 1",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.054478+00:00"
+    },
+    {
+      "raw": "Reinforcing Apprenticeship 416: Period 2",
+      "assigned": "Ironworker Apprenticeship — Reinforcing, Period 2",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.107903+00:00"
+    },
+    {
+      "raw": "Reinforcing Apprenticeship 416: Period 3",
+      "assigned": "Ironworker Apprenticeship — Reinforcing, Period 3",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.153494+00:00"
+    },
+    {
+      "raw": "Reinforcing Apprenticeship 416: Period 4",
+      "assigned": "Ironworker Apprenticeship — Reinforcing, Period 4",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.197912+00:00"
+    },
+    {
+      "raw": "Reinforcing Apprenticeship 416: Period 5",
+      "assigned": "Ironworker Apprenticeship — Reinforcing, Period 5",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.24971+00:00"
+    },
+    {
+      "raw": "Reinforcing Apprenticeship 416: Period 6",
+      "assigned": "Ironworker Apprenticeship — Reinforcing, Period 6",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.297781+00:00"
+    },
+    {
+      "raw": "Reinforcing Apprenticeship 416: Period 7",
+      "assigned": "Ironworker Apprenticeship — Reinforcing, Period 7",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.34634+00:00"
+    },
+    {
+      "raw": "Reinforcing Apprenticeship 416: Period 8",
+      "assigned": "Ironworker Apprenticeship — Reinforcing, Period 8",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.419277+00:00"
+    },
+    {
+      "raw": "Residential Building Inspector",
+      "assigned": "Residential Building Inspector",
+      "issuer": "International Code Council",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T18:57:56.287254+00:00"
+    },
+    {
+      "raw": "Residential Electrical Apprenticeship",
+      "assigned": "Residential Electrical Apprenticeship",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.468113+00:00"
+    },
+    {
+      "raw": "Residential Plans Examiner",
+      "assigned": "Residential Plans Examiner",
+      "issuer": "International Code Council",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T18:57:57.000325+00:00"
+    },
+    {
+      "raw": "SMM 2, Culture and Zero Waste",
+      "assigned": "Culture and Zero Waste",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T18:58:08.499129+00:00"
+    },
+    {
+      "raw": "SMM 4, Sustainable Materials Management and Zero Waste in Business",
+      "assigned": "Sustainable Materials Management and Zero Waste in Business",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T18:59:05.321481+00:00"
+    },
+    {
+      "raw": "Scaffold Erector Apprenticeship",
+      "assigned": "Carpenters Apprenticeship — Scaffold Erector",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.671327+00:00"
+    },
+    {
+      "raw": "Shingler Apprenticeship",
+      "assigned": "Carpenters Apprenticeship — Shingler",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.718126+00:00"
+    },
+    {
+      "raw": "Structural Apprenticeship 433: Period 1",
+      "assigned": "Ironworker Apprenticeship — Structural, Period 1",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.76723+00:00"
+    },
+    {
+      "raw": "Structural Apprenticeship 433: Period 2",
+      "assigned": "Ironworker Apprenticeship — Structural, Period 2",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.81552+00:00"
+    },
+    {
+      "raw": "Structural Apprenticeship 433: Period 3",
+      "assigned": "Ironworker Apprenticeship — Structural, Period 3",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.879605+00:00"
+    },
+    {
+      "raw": "Structural Apprenticeship 433: Period 4",
+      "assigned": "Ironworker Apprenticeship — Structural, Period 4",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.94043+00:00"
+    },
+    {
+      "raw": "Structural Apprenticeship 433: Period 5",
+      "assigned": "Ironworker Apprenticeship — Structural, Period 5",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:42.987648+00:00"
+    },
+    {
+      "raw": "Structural Apprenticeship 433: Period 6",
+      "assigned": "Ironworker Apprenticeship — Structural, Period 6",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:43.035566+00:00"
+    },
+    {
+      "raw": "Structural Apprenticeship 433: Period 7",
+      "assigned": "Ironworker Apprenticeship — Structural, Period 7",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:43.090416+00:00"
+    },
+    {
+      "raw": "Structural Apprenticeship 433: Period 8",
+      "assigned": "Ironworker Apprenticeship — Structural, Period 8",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:43.137339+00:00"
+    },
+    {
+      "raw": "THEATER 280 - Musical Theater Workshop",
+      "assigned": "Musical Theater Workshop I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T18:59:11.757019+00:00"
+    },
+    {
+      "raw": "WST 045 & WST 145 Backflow Prevention Devices - American Water Work Association Backflow Prevention Certification",
+      "assigned": "Backflow Prevention Devices",
+      "issuer": "American Water Works Association",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T19:00:08.573805+00:00"
     }
   ],
   "credential_issuer_fills": [
     {
-      "title": "Legal Aspects of Evidence",
+      "title": "Introduction to Business",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T15:55:46.862459+00:00"
+      "reviewed_at": "2026-07-07T20:44:34.120831+00:00"
     },
     {
-      "title": "Introduction to Corrections",
+      "title": "Transportation Management",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T15:55:47.737539+00:00"
+      "reviewed_at": "2026-07-07T20:44:34.438763+00:00"
     },
     {
-      "title": "Automotive Brake Systems",
+      "title": "Introduction to Logistics Management",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:00:21.698426+00:00"
+      "reviewed_at": "2026-07-07T20:44:34.516099+00:00"
     },
     {
-      "title": "Anatomy and Physiology",
+      "title": "Supply Chain Management",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:14:59.940142+00:00"
+      "reviewed_at": "2026-07-07T20:44:34.590888+00:00"
     },
     {
-      "title": "Introduction to Biotechnology",
+      "title": "Small Business Ownership and Management",
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:13:03.073156+00:00"
+      "reviewed_at": "2026-07-07T20:44:35.172975+00:00"
+    },
+    {
+      "title": "Introduction to Computer Information Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:35.561619+00:00"
+    },
+    {
+      "title": "Introduction to the Criminal Justice System",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:35.634789+00:00"
+    },
+    {
+      "title": "Crime Scene Management and Forensic Evidence",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:36.023093+00:00"
+    },
+    {
+      "title": "Trigonometry",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.318598+00:00"
+    },
+    {
+      "title": "Multivariable Calculus",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.648315+00:00"
+    },
+    {
+      "title": "Linear Algebra",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.757995+00:00"
+    },
+    {
+      "title": "Calculations in Water/Wastewater Technology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:37.955799+00:00"
+    },
+    {
+      "title": "Occupational Safety and Health for Emergency Services",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.797692+00:00"
+    },
+    {
+      "title": "Principles of Emergency Services",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.75071+00:00"
+    },
+    {
+      "title": "Fire Behavior and Combustion",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:39.947425+00:00"
+    },
+    {
+      "title": "Fire Protection Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.001588+00:00"
+    },
+    {
+      "title": "Fire Prevention",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:40.053441+00:00"
+    }
+  ],
+  "credential_issuer_adds": [
+    {
+      "title": "QuickBooks",
+      "issuer": "California Community Colleges",
+      "raw": "Credit by Exam ACCTG 030 QuickBooks",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:36.516835+00:00"
+    },
+    {
+      "title": "Carpenters Apprenticeship — Millwright",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "raw": "Millwright Apprenticeship",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T20:44:41.067422+00:00"
+    },
+    {
+      "title": "Construction Inspection",
+      "issuer": "California Community Colleges",
+      "raw": "Inspection Portfolio Spring 2026 #1",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T17:24:47.169802+00:00"
     }
   ],
   "credential_prunes": [],
