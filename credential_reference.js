@@ -33,6 +33,11 @@
   // overrides into real KB renames with an alias map + sync script.
   var FIELD_UTITLE_OVERRIDE  = "unified_title_override";
   var FIELD_ISSUER_OVERRIDE  = "issuing_agency_override";
+  // An ADDITIONAL issuing agency (Rule 4 — same credential, multiple
+  // certifying bodies). Its own kb_curation field so a second agency never
+  // clobbers the primary override; Mode A2 promotes it ADDITIVELY into
+  // kb/credentials.json (fill-or-append, never overwrite). Sam, 2026-07-08.
+  var FIELD_ISSUER2_OVERRIDE = "issuing_agency_additional_override";
   var FIELD_TRAINER_OVERRIDE = "training_agency_override";
   var FIELD_QFLAG_OVERRIDE   = "quality_flag_override";
   var QFLAG_OPTIONS = ["", "suspect_course_as_exhibit", "not_a_credential", "duplicate_of_other"];
@@ -265,6 +270,10 @@
             rec.issuer_override = row.value || "";
             rec.issuer_overridden_by = row.reviewer_email;
             rec.issuer_overridden_at = row.reviewed_at;
+          } else if (row.field === FIELD_ISSUER2_OVERRIDE) {
+            rec.issuer2_override = row.value || "";
+            rec.issuer2_overridden_by = row.reviewer_email;
+            rec.issuer2_overridden_at = row.reviewed_at;
           } else if (row.field === FIELD_TRAINER_OVERRIDE) {
             rec.trainer_override = row.value || "";
             rec.trainer_overridden_by = row.reviewer_email;
@@ -2057,6 +2066,7 @@
   function overlayKeyFor(field) {
     if (field === FIELD_UTITLE_OVERRIDE)  return "utitle_override";
     if (field === FIELD_ISSUER_OVERRIDE)  return "issuer_override";
+    if (field === FIELD_ISSUER2_OVERRIDE) return "issuer2_override";
     if (field === FIELD_TRAINER_OVERRIDE) return "trainer_override";
     if (field === FIELD_QFLAG_OVERRIDE)   return "qflag_override";
     return null;
@@ -2077,6 +2087,10 @@
       r.primary_issuer = value || null;
       r.issuer_overridden_by = email;
       r.issuer_overridden_at = nowIso;
+    } else if (field === FIELD_ISSUER2_OVERRIDE) {
+      r.additional_issuer = value || null;
+      r.issuer2_overridden_by = email;
+      r.issuer2_overridden_at = nowIso;
     } else if (field === FIELD_TRAINER_OVERRIDE) {
       if (r.original_primary_trainer === undefined) r.original_primary_trainer = r.primary_trainer;
       r.primary_trainer = value || null;
@@ -2295,7 +2309,10 @@
       // Session 106 — raw-title/college context + editable title in the lane.
       "#tab-credential-reference .cr-ni-table td.cr-wl-raw{width:34%;}" +
       "#tab-credential-reference .cr-ni-rawline{margin-top:3px;font-size:.72rem;color:#64748b;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}" +
-      "#tab-credential-reference .cr-ni-trainer-chip{display:inline-block;margin-top:3px;font-size:.68rem;color:var(--hunter,#166534);background:#ecfdf5;border:1px solid #a7f3d0;border-radius:9px;padding:0 6px;cursor:help;white-space:nowrap;}";
+      "#tab-credential-reference .cr-ni-trainer-chip{display:inline-block;margin-top:3px;font-size:.68rem;color:var(--hunter,#166534);background:#ecfdf5;border:1px solid #a7f3d0;border-radius:9px;padding:0 6px;cursor:help;white-space:nowrap;}" +
+      "#tab-credential-reference .cr-ni-add-issuer{display:inline-block;margin-top:3px;font-size:.72rem;color:var(--seal-blue,#1e40af);text-decoration:none;}" +
+      "#tab-credential-reference .cr-ni-add-issuer:hover{text-decoration:underline;}" +
+      "#tab-credential-reference .cr-ni-iss2{margin-top:4px;}";
     document.head.appendChild(st);
   }
 
@@ -2855,7 +2872,35 @@
       value: (draft.issuer !== undefined ? draft.issuer : baseIssuer) || "",
       autocomplete: "off" });
     inp.disabled = !state.sess;
-    var inpTd = el("td", {}); inpTd.appendChild(inp); tr.appendChild(inpTd);
+    var inpTd = el("td", {}); inpTd.appendChild(inp);
+    // ── ADDITIONAL issuing agency (Rule 4 multi-issuer — Sam, 2026-07-08):
+    // a "＋" reveal keeps the common single-issuer row clean; the second
+    // agency saves to its own override field and Mode A2 APPENDS it as a
+    // second credential record (the primary is never clobbered). ──
+    var ov0 = state.overlay[ut] || {};
+    var iss2Base = (draft.issuer2 !== undefined) ? draft.issuer2
+                                                 : (ov0.issuer2_override || "");
+    var inp2 = el("input", { class: "cr-wl-input cr-ni-input2", type: "text",
+      list: "cr-unclass-issuers", placeholder: "additional issuing agency…",
+      value: iss2Base || "", autocomplete: "off" });
+    inp2.disabled = !state.sess;
+    var inp2Wrap = el("div", { class: "cr-ni-iss2" });
+    inp2Wrap.appendChild(inp2);
+    var addLink = el("a", { class: "cr-ni-add-issuer", href: "#",
+      title: "Some credentials are certified by more than one body (Rule 4). "
+        + "Record a second issuing agency — it's ADDED alongside the one above, "
+        + "never replacing it." }, ["＋ add issuing agency"]);
+    addLink.onclick = function (e) {
+      e.preventDefault();
+      addLink.style.display = "none";
+      inp2Wrap.style.display = "";
+      inp2.focus();
+    };
+    if (iss2Base) { addLink.style.display = "none"; }
+    else { inp2Wrap.style.display = "none"; }
+    inpTd.appendChild(addLink);
+    inpTd.appendChild(inp2Wrap);
+    tr.appendChild(inpTd);
 
     var actTd = el("td", { class: "cr-wl-act" });
     if (state.sess) {
@@ -2870,7 +2915,8 @@
       }
       syncLabel();
       function noteDraft() {
-        state.niDraft[ut] = { title: titleInp.value, issuer: inp.value };
+        state.niDraft[ut] = { title: titleInp.value, issuer: inp.value,
+                              issuer2: inp2.value };
         // Re-editing a saved row makes it dirty again — RE-ARM the button.
         // applySavedLane disables it as "✓ Saved" while the inputs stay
         // live; syncLabel() then relabeled the still-DISABLED button back
@@ -2886,7 +2932,8 @@
       }
       titleInp.oninput = noteDraft;
       inp.oninput = noteDraft;
-      saveBtn.onclick = function () { saveIssuerLaneRow(r, tr, titleInp, inp, saveBtn); };
+      inp2.oninput = noteDraft;
+      saveBtn.onclick = function () { saveIssuerLaneRow(r, tr, titleInp, inp, inp2, saveBtn); };
       actTd.appendChild(saveBtn);
     }
     tr.appendChild(actTd);
@@ -2901,8 +2948,11 @@
   //    stands (the Rule-5f resurface cohort must never accidentally blank a
   //    real issuer like PLTW);
   //  - training_agency_override when the plan staged a trainer (Rule 5f:
-  //    defaults to the school; follows an issuer edit when staged the same).
-  function laneJobsFor(r, titleVal, issVal) {
+  //    defaults to the school; follows an issuer edit when staged the same);
+  //  - issuing_agency_additional_override when the ＋-revealed second input
+  //    differs from the recorded additional (Rule 4 multi-issuer — Mode A2
+  //    APPENDS it as its own credential record; "" clears the recorded one).
+  function laneJobsFor(r, titleVal, issVal, iss2Val) {
     var ut = r.unified_title;
     var jobs = [];
     var baseTitle = r.display_title || ut;
@@ -2912,6 +2962,11 @@
     var issuerRequired = !r.primary_issuer && !r.issuer_overridden_at;
     if (issuerRequired || iv !== (r.primary_issuer || "")) {
       jobs.push({ field: FIELD_ISSUER_OVERRIDE, value: iv });
+    }
+    var i2 = (iss2Val || "").trim();
+    var cur2 = (state.overlay[ut] || {}).issuer2_override || "";
+    if (i2 !== cur2 && (i2 || cur2)) {
+      jobs.push({ field: FIELD_ISSUER2_OVERRIDE, value: i2 });
     }
     var ps = state.issuerPreseed[ut];
     if (ps && ps.trainer) {
@@ -2923,8 +2978,8 @@
     return jobs;
   }
 
-  function saveIssuerLaneRow(r, tr, titleInp, inp, saveBtn) {
-    var jobs = laneJobsFor(r, titleInp.value, inp.value);
+  function saveIssuerLaneRow(r, tr, titleInp, inp, inp2, saveBtn) {
+    var jobs = laneJobsFor(r, titleInp.value, inp.value, inp2 ? inp2.value : "");
     if (!jobs.length) {          // nothing changed — treat as reviewed-OK
       applySavedLane(r, tr, jobs);
       return;
@@ -2954,6 +3009,7 @@
       ov[overlayMetaKeyFor(j.field, "by")] = email;
       ov[overlayMetaKeyFor(j.field, "at")] = nowIso;
       if (j.field === FIELD_ISSUER_OVERRIDE) issuerJob = j;
+      if (j.field === FIELD_ISSUER2_OVERRIDE && j.value) addIssuerOption(j.value);
     });
     state.overlay[ut] = ov;
     state.niSaved[ut] = true;
@@ -2991,9 +3047,11 @@
       if (!ut || state.niSaved[ut] || !byUt[ut]) return;
       var inp = tr.querySelector(".cr-ni-input");
       var titleInp = tr.querySelector(".cr-ni-title-input");
+      var inp2 = tr.querySelector(".cr-ni-input2");
       if (!inp) return;
       var ps = state.issuerPreseed[ut];
-      var jobs = laneJobsFor(byUt[ut], titleInp ? titleInp.value : "", inp.value);
+      var jobs = laneJobsFor(byUt[ut], titleInp ? titleInp.value : "", inp.value,
+                             inp2 ? inp2.value : "");
       jobs = jobs.filter(function (j) {
         if (j.field !== FIELD_ISSUER_OVERRIDE) return true;
         return !!j.value || (ps && ps.issuer === "");

@@ -310,6 +310,16 @@ Consult these when a row has NO house family yet (full link card:
   title ("(Norco Apprenticeship)"). The Northern-CA carpentry counterpart is
   `Carpenters Training Committee for Northern California (CTCNC)`. Mechanized
   as the `apprenticeship` lane in `kb/_preseed_null_issuers.py`.
+- **FAA — Federal Aviation Administration** (Sam, 2026-07-08): the certifying
+  body behind the aviation family — Mechanic Certificate (A&P / Airframe /
+  Powerplant, 14 CFR Parts 65/147), pilot certificates (Parts 61/141), Remote
+  Pilot (Part 107). House spelling `Federal Aviation Administration (FAA)`
+  (the existing 12-record family). The family's COURSE-SIDE rows (Part-147
+  AMT curriculum, pilot ground school, FLGHT flight-training ladders,
+  drone-pilot courses) pre-seed FAA via the `cert-family` lane — the
+  welding/AWS precedent. Precision: `drone pilot`, never bare `drone`
+  ("Drone Photography" is a photography course).
+  https://www.faa.gov/licenses_certificates/airmen_certification
 - **NCCER assessments / craft catalog** — keep NCCER's naming verbatim,
   issuer `NCCER`: https://www.nccer.org/assessments/
 - **CSLB license classifications** (the future C-## contractor-license lane):

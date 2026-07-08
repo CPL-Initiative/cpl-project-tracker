@@ -77,6 +77,7 @@ KEY_PREFIX = "_CREDENTIAL_REVIEW::"
 FIELDS = {
     "unified_title_override",
     "issuing_agency_override",
+    "issuing_agency_additional_override",
     "training_agency_override",
     "quality_flag_override",
     "reviewed_marker",
@@ -130,37 +131,45 @@ def promote_issuers(overrides):
         return [], [], []
     today = date.today().isoformat()
     fills, adds, missing = [], [], []
+    # The primary override first (it gets the rec0 fill when eligible), then
+    # the ADDITIONAL override (the Triage lane's "＋ add issuing agency" —
+    # Rule 4 multi-issuer, Sam 2026-07-08) with the same fill-or-append,
+    # never-overwrite semantics.
     for ut, entry in overrides.items():
-        iss = (entry.get("issuing_agency_override") or "").strip()
-        if not iss:
-            continue
-        recs = cr.get(ut)
-        if not recs:
-            missing.append(ut)  # override on a title with no credential record —
-            continue            # report, never mint here (the fold owns minting)
-        rec0 = recs[0]
-        if (not rec0.get("issuing_agency")
-                and not (rec0.get("reviewed_by") or "")):
-            rec0["issuing_agency"] = iss
-            rec0["confidence_issuer"] = 1.0
-            rec0["reviewed_by"] = entry.get("reviewed_by")
-            rec0["reviewed_at"] = entry.get("reviewed_at")
-            fills.append({"title": ut, "issuer": iss})
-        elif not _issuer_present(_norm_issuer(iss), recs):
-            recs.append({
-                "issuing_agency": iss,
-                "training_agency": None,
-                "confidence_issuer": 1.0,
-                "confidence_trainer": 0.9,
-                "classified_at": today,
-                "classified_by": "curator (CER issuing-agency override)",
-                "reviewed_at": entry.get("reviewed_at"),
-                "reviewed_by": entry.get("reviewed_by"),
-                "_notes": "Additional issuing agency from a Curate-panel "
-                          "override — same credential, multiple certifying "
-                          "bodies (Rule 4).",
-            })
-            adds.append({"title": ut, "issuer": iss})
+        recs = None
+        for field in ("issuing_agency_override",
+                      "issuing_agency_additional_override"):
+            iss = (entry.get(field) or "").strip()
+            if not iss:
+                continue
+            if recs is None:
+                recs = cr.get(ut)
+            if not recs:
+                missing.append(ut)  # override on a title with no credential
+                break               # record — report, never mint here
+            rec0 = recs[0]
+            if (not rec0.get("issuing_agency")
+                    and not (rec0.get("reviewed_by") or "")):
+                rec0["issuing_agency"] = iss
+                rec0["confidence_issuer"] = 1.0
+                rec0["reviewed_by"] = entry.get("reviewed_by")
+                rec0["reviewed_at"] = entry.get("reviewed_at")
+                fills.append({"title": ut, "issuer": iss})
+            elif not _issuer_present(_norm_issuer(iss), recs):
+                recs.append({
+                    "issuing_agency": iss,
+                    "training_agency": None,
+                    "confidence_issuer": 1.0,
+                    "confidence_trainer": 0.9,
+                    "classified_at": today,
+                    "classified_by": "curator (CER issuing-agency override)",
+                    "reviewed_at": entry.get("reviewed_at"),
+                    "reviewed_by": entry.get("reviewed_by"),
+                    "_notes": "Additional issuing agency from a Curate-panel "
+                              "override — same credential, multiple certifying "
+                              "bodies (Rule 4).",
+                })
+                adds.append({"title": ut, "issuer": iss})
     if fills or adds:
         with open(CR_PATH, "w", encoding="utf-8") as f:
             json.dump(cr, f, indent=2, ensure_ascii=False)

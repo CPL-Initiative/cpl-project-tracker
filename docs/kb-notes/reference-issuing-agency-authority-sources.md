@@ -116,6 +116,27 @@ issuer (canonical long forms):
   `California State Fire Training (SFT)`; NWCG codes (S-###) →
   `National Wildfire Coordinating Group (NWCG)`.
 
+## FAA — Federal Aviation Administration (LANE LIVE — 2026-07-08)
+
+The certifying body behind the aviation exhibit family. House spelling:
+**`Federal Aviation Administration (FAA)`** (the existing 12-record house
+family in `kb/credentials.json` — Mechanic Certificate A&P / Airframe /
+Powerplant ratings, pilot certificates, CFI/CFII, Remote Pilot Part 107).
+
+- Airmen certification overview: <https://www.faa.gov/licenses_certificates/airmen_certification>
+- Mechanic (A&P) certification — 14 CFR Part 65; Part 147 school curriculum
+  (Airframe / Powerplant subjects): <https://www.faa.gov/mechanics/become>
+- Pilot certificates — 14 CFR Parts 61/141; Remote Pilot — Part 107.
+
+The **cert-family pre-seed lane** (`CERT_FAMILIES` in
+`kb/_preseed_null_issuers.py`) stages FAA on the family's **course-side**
+rows — Part-147 AMT curriculum courses (Airframe Structures, Powerplant:
+Reciprocating and Turbine Engines, Basic Electricity for Airframe and
+Powerplant), pilot ground school + the Reedley FLGHT flight-training ladder,
+drone-pilot courses — the welding/AWS precedent: the exam/portfolio evidence
+behind the Cx row is the family's own credential. Precision guard: `drone
+pilot`, never bare `drone` ("Drone Photography" is a photography course).
+
 ## Already-wired authorities (for completeness)
 
 - **CareerOneStop (COS)** certification registry — synced live

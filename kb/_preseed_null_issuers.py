@@ -812,6 +812,31 @@ def statewide_blank_issuer(ut):
     return None, None
 
 
+# ── Curated certification families (Sam, 2026-07-08 — the FAA pass) ──
+# Cx/Portfolio exhibits that are the COURSE SIDE of a recognized
+# certification family: the exam/portfolio evidence behind them is that
+# family's own credential, so the certifying body pre-seeds as issuer (the
+# welding/AWS precedent). FAA: the Part-147 AMT curriculum (airframe /
+# powerplant), pilot ground school + flight training (Parts 61/141), and
+# remote-pilot (Part 107) rows join the existing 12-row FAA house family in
+# kb/credentials.json. "drone pilot" NOT bare "drone" — "Drone Photography"
+# is a photography course, not an FAA certification.
+CERT_FAMILIES = [
+    (re.compile(r"airframe|powerplant|aircraft|aeronaut|avionic|"
+                r"flight\s+training|\bflght\b|\bpilot|drone\s+pilot", re.I),
+     "Federal Aviation Administration (FAA)",
+     "the FAA airman/mechanic certification family (14 CFR Parts 61/65/107/147; "
+     "house FAA family in kb/credentials.json)"),
+]
+
+
+def cert_family_issuer(ut):
+    for rx, issuer, receipt in CERT_FAMILIES:
+        if rx.search(ut):
+            return issuer, receipt
+    return None, None
+
+
 def load_statewide_blank_titles():
     """Every statewide-dataset exhibit (ANY collaborative type) whose record
     carries a blank issuer — the corroboration set for the curated
@@ -987,7 +1012,18 @@ def stage_all(rows, sw_roster, issuer_of):
                        "issuer in kb/credentials.json (e.g. “" + fam["sample"] + "”).")
             continue
 
-        # 3. cx-typed rows with NO identifiable trainer — the mechanism lives
+        # 3. curated certification families — the exam/portfolio behind these
+        #    course-side rows IS a known certifying body's credential (the
+        #    welding/AWS precedent; the FAA pass — Sam, 2026-07-08). Runs
+        #    BEFORE cx so the family's body, not CCC, prefills.
+        cf_iss, cf_receipt = cert_family_issuer(ut)
+        if cf_iss:
+            put_issuer(ut, cf_iss, "cert-family", 0.7,
+                       "Course-side exhibit of " + cf_receipt
+                       + " — Sam, 2026-07-08.")
+            continue
+
+        # 4. cx-typed rows with NO identifiable trainer — the mechanism lives
         #    in the type column; issuer = CCC
         if types and types <= CX_TYPES:
             put_issuer(ut, CCC, "cx", 0.7,
@@ -998,7 +1034,7 @@ def stage_all(rows, sw_roster, issuer_of):
                        "(Sam's Session-103 credit-by-exam rule).")
             continue
 
-        # 4. flagged course-as-exhibit — a course with no credential has no issuer
+        # 5. flagged course-as-exhibit — a course with no credential has no issuer
         if row["quality_flag"] == "suspect_course_as_exhibit":
             put_issuer(ut, "", "course-as-exhibit", 0.6,
                        "Flagged suspect_course_as_exhibit — a local course entered as an "
