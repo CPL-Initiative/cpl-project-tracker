@@ -1,97 +1,67 @@
 {
   "_about": "Credential rename collisions detected by the dry-run. Each entry is a proposed rename whose target already exists as a key in credentials.json. Policy: NON-BLOCKING decision queue — the entry waits here (clean renames apply without it) until the curator picks a non-colliding target or explicitly confirms a merge (PR-5b/2). NEVER auto-merged; NEVER auto-disambiguated.",
-  "_generated_at": "2026-07-08T21:01:14Z",
-  "count": 6,
+  "_generated_at": "2026-07-08T22:31:12Z",
+  "count": 4,
   "collisions": [
     {
-      "old_unified_title": "Administration of Justice 067",
-      "proposed_new_title": "Community and the Justice System",
-      "reason": "collision_with_existing_credential",
-      "existing_credential_records": 1,
-      "merge_confirm_recorded": null,
+      "old_unified_title": "C++ Programming II",
+      "proposed_new_title": "C++ Programming",
+      "reason": "intra_batch_same_target",
+      "first_of_group": "C++ Programming I",
+      "existing_credential_records": 0,
       "rename_would_touch": {
-        "raw_titles_in_unified_titles_json": 2,
+        "raw_titles_in_unified_titles_json": 1,
         "articulation_records": 1,
         "credentials_json_key_exists": true
       },
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T16:45:16.048897+00:00",
-      "policy": "queued_pending_curator_decision"
+      "reviewed_at": "2026-07-08T22:02:43.008948+00:00",
+      "policy": "queued_pending_curator_decision — becomes a regular collision (confirmable in the CER strip) once the group's first rename lands"
     },
     {
-      "old_unified_title": "Administration of Justice 075",
-      "proposed_new_title": "Introduction to Corrections",
-      "reason": "collision_with_existing_credential",
-      "existing_credential_records": 1,
-      "merge_confirm_recorded": null,
+      "old_unified_title": "Child Growth and Development",
+      "proposed_new_title": "Child Development",
+      "reason": "intra_batch_same_target",
+      "first_of_group": "CD-005 — Lemoore High School Articulation",
+      "existing_credential_records": 0,
       "rename_would_touch": {
-        "raw_titles_in_unified_titles_json": 1,
+        "raw_titles_in_unified_titles_json": 2,
         "articulation_records": 2,
         "credentials_json_key_exists": true
       },
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T16:45:16.596791+00:00",
-      "policy": "queued_pending_curator_decision"
+      "reviewed_at": "2026-07-08T22:06:50.870014+00:00",
+      "policy": "queued_pending_curator_decision — becomes a regular collision (confirmable in the CER strip) once the group's first rename lands"
     },
     {
-      "old_unified_title": "Administration of Justice 102",
-      "proposed_new_title": "Principles and Procedures of the Justice System",
-      "reason": "collision_with_existing_credential",
-      "existing_credential_records": 1,
-      "merge_confirm_recorded": null,
-      "rename_would_touch": {
-        "raw_titles_in_unified_titles_json": 1,
-        "articulation_records": 0,
-        "credentials_json_key_exists": true
-      },
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T16:45:17.105512+00:00",
-      "policy": "queued_pending_curator_decision"
-    },
-    {
-      "old_unified_title": "Administration of Justice 103",
-      "proposed_new_title": "Concepts of Criminal Law",
-      "reason": "collision_with_existing_credential",
-      "existing_credential_records": 1,
-      "merge_confirm_recorded": null,
-      "rename_would_touch": {
-        "raw_titles_in_unified_titles_json": 1,
-        "articulation_records": 0,
-        "credentials_json_key_exists": true
-      },
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T16:45:17.615357+00:00",
-      "policy": "queued_pending_curator_decision"
-    },
-    {
-      "old_unified_title": "Administration of Justice — Community and the Justice System",
-      "proposed_new_title": "Community and the Justice System",
-      "reason": "collision_with_existing_credential",
-      "existing_credential_records": 1,
-      "merge_confirm_recorded": null,
-      "rename_would_touch": {
-        "raw_titles_in_unified_titles_json": 2,
-        "articulation_records": 1,
-        "credentials_json_key_exists": true
-      },
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T16:45:19.434942+00:00",
-      "policy": "queued_pending_curator_decision"
-    },
-    {
-      "old_unified_title": "American Politics",
-      "proposed_new_title": "American Government and Politics",
-      "reason": "collision_with_existing_credential",
-      "existing_credential_records": 1,
-      "merge_confirm_recorded": null,
+      "old_unified_title": "Choreography II",
+      "proposed_new_title": "Choreography",
+      "reason": "intra_batch_same_target",
+      "first_of_group": "Choreography I",
+      "existing_credential_records": 0,
       "rename_would_touch": {
         "raw_titles_in_unified_titles_json": 1,
         "articulation_records": 1,
         "credentials_json_key_exists": true
       },
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T18:43:31.571431+00:00",
-      "policy": "queued_pending_curator_decision"
+      "reviewed_at": "2026-07-08T22:07:02.800088+00:00",
+      "policy": "queued_pending_curator_decision — becomes a regular collision (confirmable in the CER strip) once the group's first rename lands"
+    },
+    {
+      "old_unified_title": "Critical Thinking and the Nursing Process II",
+      "proposed_new_title": "Critical Thinking and the Nursing Process",
+      "reason": "intra_batch_same_target",
+      "first_of_group": "Critical Thinking and the Nursing Process I",
+      "existing_credential_records": 0,
+      "rename_would_touch": {
+        "raw_titles_in_unified_titles_json": 1,
+        "articulation_records": 1,
+        "credentials_json_key_exists": true
+      },
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T22:30:50.788528+00:00",
+      "policy": "queued_pending_curator_decision — becomes a regular collision (confirmable in the CER strip) once the group's first rename lands"
     }
   ]
 }

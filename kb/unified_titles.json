@@ -327,7 +327,7 @@
     "_notes": null
   },
   "ADJU 205\tCommunity Relations - Credit by Exam": {
-    "unified_title": "Community Relations in Criminal Justice",
+    "unified_title": "Community and the Justice System",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -340,7 +340,7 @@
     "_notes": null
   },
   "ADJU 205\tCommunity Relations - Portfolio": {
-    "unified_title": "Community Relations in Criminal Justice",
+    "unified_title": "Community and the Justice System",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -600,7 +600,7 @@
     "_notes": "POST Training Record indicates Basic Academy completion."
   },
   "ADJUS 102 +": {
-    "unified_title": "Administration of Justice 102",
+    "unified_title": "Principles and Procedures of the Justice System",
     "confidence_title": 0.45,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -613,7 +613,7 @@
     "_notes": "Uninterpretable beyond course number; no college context."
   },
   "ADJUS 103": {
-    "unified_title": "Administration of Justice 103",
+    "unified_title": "Concepts of Criminal Law",
     "confidence_title": 0.45,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -665,7 +665,7 @@
     "_notes": "Course number only; no topic."
   },
   "ADM JUS 067 ": {
-    "unified_title": "Administration of Justice 067",
+    "unified_title": "Community and the Justice System",
     "confidence_title": 0.45,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -678,7 +678,7 @@
     "_notes": "Course number only."
   },
   "ADM JUS 075": {
-    "unified_title": "Administration of Justice 075",
+    "unified_title": "Introduction to Corrections",
     "confidence_title": 0.45,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -1783,7 +1783,7 @@
     "_notes": "Local college course credential."
   },
   "ANTHR 110\tBiological Anthropology With Laboratory - Credit by Exam": {
-    "unified_title": "Biological Anthropology with Laboratory",
+    "unified_title": "Introduction to Biological Anthropology",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8515,7 +8515,7 @@
     "_notes": "Local college course; CPL mechanism stripped."
   },
   "ART 120\tBasic Drawing 1 - Portfolio": {
-    "unified_title": "Basic Drawing 1",
+    "unified_title": "Fundamentals of Drawing",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9061,7 +9061,7 @@
     "_notes": null
   },
   "ASHS 280 Credit by Exam": {
-    "unified_title": "ASHS 280 (Cuesta College Credit by Exam)",
+    "unified_title": "Counseling Skills, Law and Ethics",
     "confidence_title": 0.45,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9198,7 +9198,7 @@
     "_notes": "Geometric Dimensioning & Tolerancing Professional certification."
   },
   "AUBDY 301\tAutomotive Collision Repair 1 - Credit by Exam": {
-    "unified_title": "Automotive Collision Repair 1",
+    "unified_title": "Automotive Collision Repair",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9211,7 +9211,7 @@
     "_notes": "Local college course."
   },
   "AUBDY 301\tAutomotive Collision Repair 1 - Industry Certification": {
-    "unified_title": "Automotive Collision Repair 1",
+    "unified_title": "Automotive Collision Repair",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9327,7 +9327,7 @@
     "_notes": "Curator triage superseded the unreviewed machine classification 'AUTO 602 — Long Beach City College Auto Course' (conf 0.45)."
   },
   "AUTO 60A: Electrical Schematic Diagnosis- Credit By Exam": {
-    "unified_title": "Automotive Electrical Schematic Diagnosis",
+    "unified_title": "ASE A6 — Electrical/Electronic Systems",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9339,7 +9339,7 @@
     "_notes": "Local De Anza college course; no external issuer."
   },
   "AUTO 60B: Automotive Electronics - Credit By Exam": {
-    "unified_title": "Automotive Electronics",
+    "unified_title": "ASE A6 — Electrical/Electronic Systems",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9351,7 +9351,7 @@
     "_notes": "Local De Anza college course."
   },
   "AUTO 62A: Automotive Suspension, Steering and Alignment - Credit By Exam": {
-    "unified_title": "Automotive Suspension, Steering and Alignment",
+    "unified_title": "ASE A4 — Suspension and Steering",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9545,7 +9545,7 @@
     "_notes": "Local AJ 1 course (typically Intro to AJ); CBE mechanism stripped."
   },
   "Admin Just 2 CBE": {
-    "unified_title": "Concepts of Criminal Law (Administration of Justice 2)",
+    "unified_title": "Concepts of Criminal Law",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9585,7 +9585,7 @@
     "_notes": "AJ 4 commonly maps to Principles & Procedures."
   },
   "Admin Just 5 X": {
-    "unified_title": "Community Relations (Administration of Justice 5)",
+    "unified_title": "Community and the Justice System",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9598,7 +9598,7 @@
     "_notes": "AJ 5 commonly Community Relations."
   },
   "Admin Just 6 CBE": {
-    "unified_title": "Criminal Investigation (Administration of Justice 6)",
+    "unified_title": "Criminal Investigation",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9938,7 +9938,7 @@
     "_notes": "Local college lab; kept distinct from lecture per registry convention."
   },
   "Advanced Nursing Skills/Clinical Simulation Laboratory": {
-    "unified_title": "Advanced Nursing Skills / Clinical Simulation Laboratory",
+    "unified_title": "Nursing Skills / Clinical Simulation Laboratory Advanced",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10617,7 +10617,7 @@
     "_merge_note": "merged from credential 'AP Art and Design: Drawing' (curator)"
   },
   "Art of Graphic Design I (UC) - Canyon High School": {
-    "unified_title": "Art of Graphic Design I (High School Articulation)",
+    "unified_title": "Art of Graphic Design I",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10630,7 +10630,7 @@
     "_notes": "HS articulated course."
   },
   "Art of Graphic Design I (UC) - Orange High School": {
-    "unified_title": "Art of Graphic Design I (High School Articulation)",
+    "unified_title": "Art of Graphic Design I",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10695,7 +10695,7 @@
     "_notes": "Course code stripped."
   },
   "Astronomy High School to College Articulation": {
-    "unified_title": "Astronomy (High School Articulation)",
+    "unified_title": "Astronomy",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10851,7 +10851,7 @@
     "_notes": "Numbered completion cert; topic unclear."
   },
   "Auto Electricity and Electronics": {
-    "unified_title": "Automotive Electricity and Electronics",
+    "unified_title": "ASE A6 — Electrical/Electronic Systems",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10864,7 +10864,7 @@
     "_notes": "Local college automotive course."
   },
   "Auto LMR I & II (UC) -Rancho Alamitos High School": {
-    "unified_title": "Automotive Maintenance & Light Repair I & II (High School Articulation)",
+    "unified_title": "Automotive Maintenance & Light Repair",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11017,7 +11017,7 @@
     "_notes": "Course code stripped; same as local Brake Systems course."
   },
   "Automotive Electrical Systems I AUTO 020 Cx": {
-    "unified_title": "Automotive Electrical Systems I",
+    "unified_title": "ASE A6 — Electrical/Electronic Systems",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11030,7 +11030,7 @@
     "_notes": "Course code stripped."
   },
   "Automotive Maintenance Light Repair I & II - Los Amigos High School": {
-    "unified_title": "Automotive Maintenance & Light Repair I & II (High School Articulation)",
+    "unified_title": "Automotive Maintenance & Light Repair",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11043,7 +11043,7 @@
     "_notes": "HS articulated auto course."
   },
   "Automotive Maintenance Light Repair I & II-Santiago High School": {
-    "unified_title": "Automotive Maintenance & Light Repair I & II (High School Articulation)",
+    "unified_title": "Automotive Maintenance & Light Repair",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11851,7 +11851,7 @@
     "_notes": "Generic apprenticeship label; specific sponsoring trust/JATC unknown from text alone."
   },
   "Automotive Technology Electrical Fundamentals (116)": {
-    "unified_title": "Automotive Technology — Electrical Fundamentals",
+    "unified_title": "ASE A6 — Electrical/Electronic Systems",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11864,7 +11864,7 @@
     "_notes": "Looks like a local course/exhibit reference at Santa Ana; not a named industry cert."
   },
   "Automotive Technology Electrical Fundamentals (116A/B)": {
-    "unified_title": "Automotive Technology — Electrical Fundamentals",
+    "unified_title": "ASE A6 — Electrical/Electronic Systems",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11877,7 +11877,7 @@
     "_notes": "Same as 116 above with course-section variant."
   },
   "Automotive Technology Internship - University High School": {
-    "unified_title": "Automotive Technology Internship — University High School",
+    "unified_title": "Automotive Technology Internship",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11890,7 +11890,7 @@
     "_notes": "High school internship-based CBE; treated as locally articulated."
   },
   "Automotive Technology MLR I & II - Irvine High School ": {
-    "unified_title": "Automotive Technology MLR I and II — Irvine High School",
+    "unified_title": "Automotive Technology Maintenance and Light Repair (MLR)",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11942,7 +11942,7 @@
     "_notes": "Reads as a local course; no specific industry cert identifiable."
   },
   "BIO 101 Biological Principles - Credit by Exam": {
-    "unified_title": "Biological Principles",
+    "unified_title": "Cell and Molecular Biology",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -12179,7 +12179,7 @@
     "_notes": "Local course CBE at Copper Mountain; basic ECG/arrhythmia content."
   },
   "Basic Automotive Air Conditioning Systems": {
-    "unified_title": "Basic Automotive Air Conditioning Systems",
+    "unified_title": "ASE A7 — Heating and Air Conditioning",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -12569,7 +12569,7 @@
     "_notes": "Local college construction portfolio topic."
   },
   "Beginning Computer Keyboarding": {
-    "unified_title": "Beginning Computer Keyboarding",
+    "unified_title": "Computer Keyboarding Beginning",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -12582,7 +12582,7 @@
     "_notes": "Local CBE for keyboarding skill."
   },
   "Beginning Digital Fabrication for Studio Arts": {
-    "unified_title": "Beginning Digital Fabrication for Studio Arts",
+    "unified_title": "Digital Fabrication for Studio Arts Beginning",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -12595,7 +12595,7 @@
     "_notes": "Local college CBE."
   },
   "Beginning Guitar": {
-    "unified_title": "Beginning Guitar",
+    "unified_title": "Guitar Beginning",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -12608,7 +12608,7 @@
     "_notes": "Local CBE for guitar."
   },
   "Beginning Medical Surgical Nursing": {
-    "unified_title": "Beginning Medical Surgical Nursing",
+    "unified_title": "Medical Surgical Nursing Beginning",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -12621,7 +12621,7 @@
     "_notes": "Local nursing course CBE."
   },
   "Beginning Medical Surgical Nursing Laboratory": {
-    "unified_title": "Beginning Medical Surgical Nursing Laboratory",
+    "unified_title": "Medical Surgical Nursing Laboratory Beginning",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -12634,7 +12634,7 @@
     "_notes": "Lab companion to Med-Surg Nursing; kept distinct."
   },
   "Beginning Microsoft Access": {
-    "unified_title": "Beginning Microsoft Access",
+    "unified_title": "Microsoft Access Beginning",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -12647,7 +12647,7 @@
     "_notes": "Local CBE for Access; not specifically MOS cert."
   },
   "Beginning Microsoft Excel": {
-    "unified_title": "Beginning Microsoft Excel",
+    "unified_title": "Microsoft Excel Beginning",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -12660,7 +12660,7 @@
     "_notes": "Local CBE; distinct from MOS Excel certification."
   },
   "Beginning Microsoft PowerPoint": {
-    "unified_title": "Beginning Microsoft PowerPoint",
+    "unified_title": "Microsoft PowerPoint Beginning",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -12673,7 +12673,7 @@
     "_notes": "Local CBE; not vendor cert."
   },
   "Beginning Microsoft Word": {
-    "unified_title": "Beginning Microsoft Word",
+    "unified_title": "Microsoft Word Beginning",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -12686,7 +12686,7 @@
     "_notes": "Local CBE; not vendor cert."
   },
   "Beginning Nursing Skills/Clinical Simulation Laboratory": {
-    "unified_title": "Beginning Nursing Skills/Clinical Simulation Laboratory",
+    "unified_title": "Nursing Skills/Clinical Simulation Laboratory Beginning",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -12699,7 +12699,7 @@
     "_notes": "Local nursing lab course."
   },
   "Beginning Stagecraft": {
-    "unified_title": "Beginning Stagecraft",
+    "unified_title": "Stagecraft Beginning",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -12751,7 +12751,7 @@
     "_notes": null
   },
   "Biology, Human Anatomy & Physiology - Mater Dei High School": {
-    "unified_title": "Biology, Human Anatomy & Physiology — Mater Dei High School",
+    "unified_title": "Biology, Human Anatomy & Physiology",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -12855,7 +12855,7 @@
     "_notes": "Local kinesiology course; CPL type 'Other'."
   },
   "Brakes": {
-    "unified_title": "Automotive Brakes",
+    "unified_title": "ASE A5 — Brakes",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -13024,7 +13024,7 @@
     "_notes": "Stripped course code and CBE marker."
   },
   "C++ Programming I CS 089 Cx": {
-    "unified_title": "C++ Programming I",
+    "unified_title": "C++ Programming",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -13193,7 +13193,7 @@
     "_notes": null
   },
   "CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267) ": {
-    "unified_title": "Business Management and Entrepreneurship — Cajon High School",
+    "unified_title": "Business Management and Entrepreneurship",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -13245,7 +13245,7 @@
     "_notes": "CAL FIRE training course."
   },
   "CART 20 Baking experience": {
-    "unified_title": "Baking Experience",
+    "unified_title": "Baking and Pastry",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -13271,7 +13271,7 @@
     "_notes": "Portfolio of line cook work experience."
   },
   "CART 42 Catering Experience": {
-    "unified_title": "Catering Experience",
+    "unified_title": "Catering and Production Cooking",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -13324,7 +13324,7 @@
     "_notes": "Composite of multiple HD diesel certifications; CARB administers Clean Truck Check, SP/2 is industry."
   },
   "CD-005 articulation Lemoore High  (FA25-SU27)": {
-    "unified_title": "CD-005 — Lemoore High School Articulation",
+    "unified_title": "Child Development",
     "confidence_title": 0.45,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15959,7 +15959,7 @@
     "_notes": "Local college course exhibit."
   },
   "CMPGR 215\tBusiness Presentation Graphics - Portfolio Review": {
-    "unified_title": "Business Presentation Graphics",
+    "unified_title": "Digital Presentation Design",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15972,7 +15972,7 @@
     "_notes": "Local college course exhibit."
   },
   "CMPGR 235\tBeginning Photoshop - Credit by Exam": {
-    "unified_title": "Beginning Photoshop",
+    "unified_title": "Photoshop Beginning",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15985,7 +15985,7 @@
     "_notes": "Local college course exhibit."
   },
   "CMPGR 235\tBeginning Photoshop - Industry Certificate": {
-    "unified_title": "Beginning Photoshop",
+    "unified_title": "Photoshop Beginning",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15998,7 +15998,7 @@
     "_notes": "Same course as CBE/Portfolio mappings; Industry Certificate path likely Adobe Certified Professional in Photoshop but title is generic."
   },
   "CMPGR 235\tBeginning Photoshop - Portfolio": {
-    "unified_title": "Beginning Photoshop",
+    "unified_title": "Photoshop Beginning",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -16011,7 +16011,7 @@
     "_notes": "Local college course exhibit."
   },
   "CMPGR 284\tBeginning After Effects": {
-    "unified_title": "Beginning After Effects",
+    "unified_title": "After Effects",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -16024,7 +16024,7 @@
     "_notes": "Local college course exhibit."
   },
   "CMPGR 284\tBeginning After Effects - Portfolio": {
-    "unified_title": "Beginning After Effects",
+    "unified_title": "After Effects",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -16076,7 +16076,7 @@
     "_notes": "Course code only; no credential name. Treated as administrative bucket per Rule 5."
   },
   "CNSTR 117 Industry Certification": {
-    "unified_title": "Construction Industry Certification (CNSTR 117)",
+    "unified_title": "Construction Industry Certification",
     "confidence_title": 0.45,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -16492,7 +16492,7 @@
     "_notes": "Local college course exhibit."
   },
   "CSCI 273\tAssembly Language Programming - Credit by Exam": {
-    "unified_title": "Assembly Language Programming",
+    "unified_title": "Computer Architecture and Organization",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19149,7 +19149,7 @@
     "_notes": "CTCNC apprenticeship work-experience component."
   },
   "Carpentry Acoustical Ceilings": {
-    "unified_title": "Carpentry — Acoustical Ceilings",
+    "unified_title": "Acoustical Ceilings",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19162,7 +19162,7 @@
     "_notes": "Local college portfolio-review credential for trade carpentry skill."
   },
   "Ceiling and Soffit Finishing": {
-    "unified_title": "Carpentry — Ceiling and Soffit Finishing",
+    "unified_title": "Ceiling and Soffit Finishing",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19459,7 +19459,7 @@
     "_notes": "Local college course-level portfolio review."
   },
   "Cinema 24- Credit by Exam ": {
-    "unified_title": "Cinema 24",
+    "unified_title": "Basic Film Production",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -19701,7 +19701,7 @@
     "_notes": "ROP-articulated high school course CBE."
   },
   "Commercial Floor Framing": {
-    "unified_title": "Carpentry — Commercial Floor Framing",
+    "unified_title": "Commercial Floor Framing",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19727,7 +19727,7 @@
     "_notes": "Local AC/R course portfolio review."
   },
   "Commercial Roof Framing": {
-    "unified_title": "Carpentry — Commercial Roof Framing",
+    "unified_title": "Commercial Roof Framing",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19791,7 +19791,7 @@
     "_notes": "Local Chaffey administration-of-justice course."
   },
   "Community and the Justice System (AJ 160 C)": {
-    "unified_title": "Administration of Justice — Community and the Justice System",
+    "unified_title": "Community and the Justice System",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19804,7 +19804,7 @@
     "_notes": "Local AJ course portfolio review."
   },
   "Community and the Justice System CJ 005A Cx": {
-    "unified_title": "Administration of Justice — Community and the Justice System",
+    "unified_title": "Community and the Justice System",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -20461,7 +20461,7 @@
     "_notes": "Trailing whitespace variant of above."
   },
   "Computer Keyboarding: Speed and Accuracy Development": {
-    "unified_title": "Computer Keyboarding — Speed and Accuracy",
+    "unified_title": "Computer Keyboarding",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -20487,7 +20487,7 @@
     "_notes": "Course-mapping noise stripped; refers to CompTIA Network+ training/cert."
   },
   "Computer Science 111B-Credit by Exam": {
-    "unified_title": "Computer Science 111B — Credit by Exam (CCSF)",
+    "unified_title": "Programming Fundamentals: Java",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -20513,7 +20513,7 @@
     "_notes": "Course-mapping language; likely Security+ training based on naming pattern with sibling CS 003 (Net+) and CS 005 (CEH)."
   },
   "Concealed/Glue-Up/Staple-Up Systems": {
-    "unified_title": "Carpentry — Concealed/Glue-Up/Staple-Up Ceiling Systems",
+    "unified_title": "Concealed/Glue-Up/Staple-Up Ceiling Systems",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -20604,7 +20604,7 @@
     "_notes": "Local college course (CNST 050) via CBE."
   },
   "Construction Fundamentals Lab: Principles and Practices": {
-    "unified_title": "Construction Fundamentals Lab",
+    "unified_title": "Construction Fundamentals",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -20839,7 +20839,7 @@
     "_notes": "Course title not provided; only course code. Low confidence; flag for review."
   },
   "Credit By Exam Auto 102": {
-    "unified_title": "Automotive 102",
+    "unified_title": "Basic Automotive Systems",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21217,7 +21217,7 @@
     "_notes": "Same course content as PHTO 72 below; unified."
   },
   "Credit by Exam MATH 1 Calculus I": {
-    "unified_title": "Calculus I",
+    "unified_title": "Single Variable Calculus I Early Transcendentals",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21256,7 +21256,7 @@
     "_notes": null
   },
   "Credit by Exam MUS 21A Beginning Piano": {
-    "unified_title": "Beginning Piano",
+    "unified_title": "Piano Beginning",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -22370,7 +22370,7 @@
     "_notes": "Local Chaffey AJ course."
   },
   "Criminal Investigations ADJ 13 Cx": {
-    "unified_title": "Criminal Investigations",
+    "unified_title": "Criminal Investigation",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -22409,7 +22409,7 @@
     "_notes": null
   },
   "Critical Thinking and the Nursing Process I": {
-    "unified_title": "Critical Thinking and the Nursing Process I",
+    "unified_title": "Critical Thinking and the Nursing Process",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -22799,7 +22799,7 @@
     "_notes": null
   },
   "DANCEST 301 - Choreography I": {
-    "unified_title": "Choreography I",
+    "unified_title": "Choreography",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -24176,7 +24176,7 @@
     "_notes": null
   },
   "ELTEC 229\tCommercial & Industrial Wiring  - Portfolio": {
-    "unified_title": "Commercial and Industrial Wiring",
+    "unified_title": "Commercial & Industrial Wiring",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -24189,7 +24189,7 @@
     "_notes": null
   },
   "ELTEC 229\tCommercial & Industrial Wiring - Credit by Exam": {
-    "unified_title": "Commercial and Industrial Wiring",
+    "unified_title": "Commercial & Industrial Wiring",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -24618,7 +24618,7 @@
     "_notes": "Local college course exhibit."
   },
   "ENGL C1000 (ENGL 101)\tComposition and Reading - Credit by Exam": {
-    "unified_title": "Composition and Reading",
+    "unified_title": "English Composition and Reading",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -24631,7 +24631,7 @@
     "_notes": "Local college course (Cal-GETC C1000)."
   },
   "ENGL C1000 (ENGL 101)\tComposition and Reading - Portfolio Review": {
-    "unified_title": "Composition and Reading",
+    "unified_title": "English Composition and Reading",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -29226,7 +29226,7 @@
     "_notes": null
   },
   "HIGH SCHOOL ARTICULATION - BIRMINGHAM CCHS: ART 501 Beginning Two-Dimensional Design": {
-    "unified_title": "Beginning Two-Dimensional Design",
+    "unified_title": "Two-Dimensional Design Beginning",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -34569,7 +34569,7 @@
     "_notes": null
   },
   "MATH 138\tCalculus for Business & Social Sciences - Credit by Exam": {
-    "unified_title": "Calculus for Business and Social Sciences",
+    "unified_title": "Business Calculus",
     "confidence_title": 0.88,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -34608,7 +34608,7 @@
     "_notes": null
   },
   "MATH 171\tCalculus: First Course - Advanced Placement": {
-    "unified_title": "Calculus I",
+    "unified_title": "Single Variable Calculus I Early Transcendentals",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -34621,7 +34621,7 @@
     "_notes": "AP Calculus AB articulated to first calculus course."
   },
   "MATH 171\tCalculus: First Course - Credit by Exam": {
-    "unified_title": "Calculus I",
+    "unified_title": "Single Variable Calculus I Early Transcendentals",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -34634,7 +34634,7 @@
     "_notes": null
   },
   "MATH 171\tCalculus: First Course - Industry Certificate": {
-    "unified_title": "Calculus I",
+    "unified_title": "Single Variable Calculus I Early Transcendentals",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36856,7 +36856,7 @@
     "_notes": null
   },
   "OFADM 301 ( change to BIT 301)\tBeginning Keyboarding - Credit by Exam": {
-    "unified_title": "Beginning Keyboarding",
+    "unified_title": "Keyboarding Beginning",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36869,7 +36869,7 @@
     "_notes": "Local course CBE; no external credential."
   },
   "OFADM 302 (Change to BIT 302)\tBeginning Document Processing - Credit by Exam": {
-    "unified_title": "Beginning Document Processing",
+    "unified_title": "Document Processing Beginning",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -37521,7 +37521,7 @@
     "_notes": null
   },
   "POLS C1000 (POLSC 101) American Politics - Credit by Exam": {
-    "unified_title": "American Politics",
+    "unified_title": "American Government and Politics",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -39013,7 +39013,7 @@
     "_notes": null
   },
   "READ 82\tCollege Reading - Comprehension - Credit by Exam": {
-    "unified_title": "College Reading Comprehension",
+    "unified_title": "College Reading - Comprehension",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -39115,7 +39115,7 @@
     "_notes": null
   },
   "RLES 392\tBasic Escrow Procedure - Industry Certification": {
-    "unified_title": "Basic Escrow Procedure",
+    "unified_title": "Basic Escrow Procedures",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -40069,7 +40069,7 @@
     "_notes": "Local work-experience credit."
   },
   "SUMMIT HIGH SCHOOL- Automotive Maintenance Light Repair 3": {
-    "unified_title": "Automotive Maintenance and Light Repair 3",
+    "unified_title": "Automotive Maintenance and Light Repair",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -40082,7 +40082,7 @@
     "_notes": "High school CTE articulation; possibly aligned to NATEF/ASE MLR."
   },
   "SUMMIT HIGH SCHOOL- Business and Finance": {
-    "unified_title": "Business and Finance (High School Articulation)",
+    "unified_title": "Business and Finance",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -42045,7 +42045,7 @@
     "_notes": "HS articulation exhibit; course code stripped."
   },
   "VAUTO 676: Automatic & Manual Transmissions & Transaxles": {
-    "unified_title": "Automatic and Manual Transmissions and Transaxles",
+    "unified_title": "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -42123,7 +42123,7 @@
     "_notes": null
   },
   "VFDM-105 Beginning Sewing": {
-    "unified_title": "Beginning Sewing",
+    "unified_title": "Sewing Beginning",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -42369,7 +42369,7 @@
     "_notes": "Course title unclear from code; local welding course CBE."
   },
   "WELD 200\tArc & Gas Welding - Industry Certificate": {
-    "unified_title": "Arc and Gas Welding",
+    "unified_title": "Arc & Gas Welding",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -42382,7 +42382,7 @@
     "_notes": "Stripped CPL mechanism per Rule 2."
   },
   "WELD 200 \tArc & Gas Welding - Credit by Exam": {
-    "unified_title": "Arc and Gas Welding",
+    "unified_title": "Arc & Gas Welding",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -42395,7 +42395,7 @@
     "_notes": "Same credential as the Industry Cert variant; CPL Type discriminates."
   },
   "WELD 200 \tArc & Gas Welding - Portfolio": {
-    "unified_title": "Arc and Gas Welding",
+    "unified_title": "Arc & Gas Welding",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -43269,7 +43269,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Automotive Technology MLR I & II - Irvine High School": {
-    "unified_title": "Automotive Technology MLR I and II — Irvine High School",
+    "unified_title": "Automotive Technology Maintenance and Light Repair (MLR)",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
@@ -43293,7 +43293,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)": {
-    "unified_title": "Business Management and Entrepreneurship — Cajon High School",
+    "unified_title": "Business Management and Entrepreneurship",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
@@ -43974,7 +43974,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "ADM JUS 067": {
-    "unified_title": "Administration of Justice 067",
+    "unified_title": "Community and the Justice System",
     "confidence_title": 1.0,
     "classified_at": "2026-06-03",
     "classified_by": "curator (CER unclassified-triage)",
@@ -43998,7 +43998,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Cinema 24- Credit by Exam": {
-    "unified_title": "Cinema 24",
+    "unified_title": "Basic Film Production",
     "confidence_title": 1.0,
     "classified_at": "2026-06-03",
     "classified_by": "curator (CER unclassified-triage)",
