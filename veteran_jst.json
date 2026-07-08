@@ -1,18 +1,18 @@
 {
-  "scraped_at": "2026-07-08T14:44:51.857241+00:00",
+  "scraped_at": "2026-07-08T19:57:38.470344+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25333,
+    "jst": 25334,
     "star_colleges": 52
   },
   "computed_star_colleges": 52,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 122,
+      "jst": 120,
       "star": false
     },
     "Merced College": {
@@ -147,7 +147,7 @@
     },
     "Cabrillo College": {
       "vets": 102,
-      "jst": 179,
+      "jst": 180,
       "star": true
     },
     "Mt. San Jacinto College": {
@@ -207,7 +207,7 @@
     },
     "Citrus College": {
       "vets": 181,
-      "jst": 204,
+      "jst": 205,
       "star": true
     },
     "Ventura College": {
@@ -232,7 +232,7 @@
     },
     "Glendale Community College": {
       "vets": 196,
-      "jst": 213,
+      "jst": 214,
       "star": true
     },
     "San Jose City College": {

@@ -7283,10 +7283,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Composition and Introduction to Literature",
       "unified_title": "Advanced Composition and Introduction to Literature",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ENGL 102\tAdvanced Composition & Introduction to Literature - Credit by Exam"
@@ -7428,10 +7428,10 @@ window.CPL_STATEWIDE = {
       "title": "American Politics",
       "unified_title": "American Politics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "POLS C1000 (POLSC 101) American Politics - Credit by Exam"
@@ -7573,10 +7573,10 @@ window.CPL_STATEWIDE = {
       "title": "American Government and Politics",
       "unified_title": "American Government and Politics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "American Government and Politics POLS C1000 Cx"
@@ -25438,10 +25438,10 @@ window.CPL_STATEWIDE = {
       "title": "Administration of Justice 067",
       "unified_title": "Administration of Justice 067",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
       "confidence_title": 0.45,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ADM JUS 067"
@@ -25982,10 +25982,10 @@ window.CPL_STATEWIDE = {
       "title": "Administration of Justice — Community and the Justice System",
       "unified_title": "Administration of Justice — Community and the Justice System",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.55,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Community and the Justice System (AJ 160 C)"
@@ -28584,10 +28584,10 @@ window.CPL_STATEWIDE = {
       "title": "Administration of Justice 049",
       "unified_title": "Administration of Justice 049",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
       "confidence_title": 0.45,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ADM JUS 049"
@@ -28719,10 +28719,10 @@ window.CPL_STATEWIDE = {
       "title": "Administration of Justice 160",
       "unified_title": "Administration of Justice 160",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
       "confidence_title": 0.45,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ADM JUS 160 CBE"
@@ -30879,10 +30879,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Firearms and Range Application",
       "unified_title": "Advanced Firearms and Range Application",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "ADJU 216 Advanced Firearms & Range Application - Industry Certification"
@@ -31284,10 +31284,10 @@ window.CPL_STATEWIDE = {
       "title": "Administration of Justice 68 (CCSF)",
       "unified_title": "Administration of Justice 68 (CCSF)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
       "confidence_title": 0.45,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Administration of Justice 68-Industry Certification"
@@ -31419,10 +31419,10 @@ window.CPL_STATEWIDE = {
       "title": "Administration of Justice 85 (CCSF)",
       "unified_title": "Administration of Justice 85 (CCSF)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
       "confidence_title": 0.45,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Administration of Justice 85-Industry Certification"
@@ -33800,10 +33800,10 @@ window.CPL_STATEWIDE = {
       "title": "Administration of Justice 105",
       "unified_title": "Administration of Justice 105",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
       "confidence_title": 0.45,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ADJUS 105"
@@ -34090,10 +34090,10 @@ window.CPL_STATEWIDE = {
       "title": "Administration of Justice — Community Relations",
       "unified_title": "Administration of Justice — Community Relations",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.55,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Community Relations ADJ 5 Cx"
@@ -39380,10 +39380,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Academic Reading & Writing I (ESL)",
       "unified_title": "Advanced Academic Reading & Writing I (ESL)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Adv Acad. Reading & Writing I (ESL 108 C)"
@@ -40431,10 +40431,10 @@ window.CPL_STATEWIDE = {
       "title": "Administration of Justice 075",
       "unified_title": "Administration of Justice 075",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
       "confidence_title": 0.45,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ADM JUS 075"
@@ -48135,10 +48135,10 @@ window.CPL_STATEWIDE = {
       "title": "Administrative Professional",
       "unified_title": "Administrative Professional",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Administrative Professional BUAA 001 Cx"
@@ -57774,272 +57774,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "CPLICI-CA-1-001|MAPICI-CA(-1-001|MAPICI-CA-1-001|MAPICI-CA1-1-001|MAPICI-CA3-1-001|MAPICI-CA4-1-001|MAPICI-CA5-1-001|MAPICI-CAC-1-001|MAPICI-CAC1-1-001|MAPICI-CAC2-1-001|MAPICI-CAC4-1-001|MAPICI-CAFC-1-001|MAPICS-I8-1-001",
-      "exhibit_ids": [
-        "CPLICI-CA-1-001",
-        "MAPICI-CA(-1-001",
-        "MAPICI-CA-1-001",
-        "MAPICI-CA1-1-001",
-        "MAPICI-CA3-1-001",
-        "MAPICI-CA4-1-001",
-        "MAPICI-CA5-1-001",
-        "MAPICI-CAC-1-001",
-        "MAPICI-CAC1-1-001",
-        "MAPICI-CAC2-1-001",
-        "MAPICI-CAC4-1-001",
-        "MAPICI-CAFC-1-001",
-        "MAPICS-I8-1-001"
-      ],
-      "title": "CompTIA A+",
-      "unified_title": "CompTIA A+",
-      "is_classified": true,
-      "issuing_agency": "CompTIA",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 0.97,
-      "quality_flag": "",
-      "raw_titles": [
-        "COMPTIA A+ Certification",
-        "CompTIA A+",
-        "CompTIA A+ (CIS-25)",
-        "CompTIA A+ Certification",
-        "CompTIA A+ for CIS 040"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Information Technology",
-      "sector": "ICT/Digital Media",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 21,
-      "adopter_names": [
-        "Chaffey College",
-        "Clovis Community College",
-        "College of the Desert",
-        "Compton College",
-        "Contra Costa College",
-        "De Anza College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Los Angeles Mission College",
-        "Los Angeles Trade Technical College",
-        "Modesto Junior College",
-        "Moreno Valley College",
-        "Reedley College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Sierra College",
-        "West Los Angeles College"
-      ],
-      "potential": 89,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Calbright College Credit",
-        "Calbright College Non-Credit",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Laney College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Skyline College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Valley College"
-      ],
-      "total_addressable": 110,
-      "credit_recs": [
-        {
-          "course": "CIS 25",
-          "credit": "4 hours in Info Comm Tech Essentials"
-        },
-        {
-          "course": "CIS 212",
-          "credit": "3 hours in A+ Certification Preparation-Hardware"
-        },
-        {
-          "course": "CIS 213",
-          "credit": "3 hours in A+ Certification Preparation-Software"
-        },
-        {
-          "course": "CIMN 110",
-          "credit": "3 hours in NETWORKING ESSENTIALS AND TECHNOLOGIES FOR IT CYBERSECURITY"
-        },
-        {
-          "course": "CISHDSP 40",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "CIT 110",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "CMPR 153",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "CNT 51",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "CIS 222",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "INWT 100",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "CMPR 155",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "IS 62",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "CIS 104",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "CIS 132",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "Computer Information Systems (CIS) 062A",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "CIS 101",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "IT 0100",
-          "credit": "4 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "CIS 069A",
-          "credit": "4.5 hours in Technical Support Fundamentals"
-        },
-        {
-          "course": "CIS 069E",
-          "credit": "4.5 hours in IT Security: Defense Against the Digital Dark Arts"
-        },
-        {
-          "course": "CMPET 313",
-          "credit": "2.5 hours in IT Support Fundamentals 3"
-        },
-        {
-          "course": "CMPET 314",
-          "credit": "2.5 hours in IT Support Fundamentals 4"
-        },
-        {
-          "course": "MICROTK 160",
-          "credit": "2 hours in IT ESSENTIALS APPLICATION SOFTWARE FUNDAMENTALS"
-        },
-        {
-          "course": "MICROTK 162",
-          "credit": "4 hours in IT ESSENTIALS NETWORKING PERSONAL COMPUTERS"
-        },
-        {
-          "course": "MICROTK 164",
-          "credit": "5 hours in IT ESSENTIALS  MICROCOMPUTER THEORY AND SERVICING"
-        },
-        {
-          "course": "IS 80",
-          "credit": "6 hours in Information Technology Support Technician Training"
-        },
-        {
-          "course": "CIS 040",
-          "credit": "4 hours in Information and Communication Technology Essentials"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 hours in Information and Communication Technology Essentials",
-          "cid": "ITIS 110"
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPCBEN-MT-1-001|MAPCxS-MTH0-1-001",
       "exhibit_ids": [
         "MAPCBEN-MT-1-001",
@@ -62076,6 +61810,276 @@ window.CPL_STATEWIDE = {
         }
       ],
       "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "CPLICI-CA-1-001|MAPICI-CA(-1-001|MAPICI-CA-1-001|MAPICI-CA1-1-001|MAPICI-CA3-1-001|MAPICI-CA4-1-001|MAPICI-CA5-1-001|MAPICI-CAC-1-001|MAPICI-CAC1-1-001|MAPICI-CAC2-1-001|MAPICI-CAC4-1-001|MAPICI-CAFC-1-001|MAPICS-I8-1-001",
+      "exhibit_ids": [
+        "CPLICI-CA-1-001",
+        "MAPICI-CA(-1-001",
+        "MAPICI-CA-1-001",
+        "MAPICI-CA1-1-001",
+        "MAPICI-CA3-1-001",
+        "MAPICI-CA4-1-001",
+        "MAPICI-CA5-1-001",
+        "MAPICI-CAC-1-001",
+        "MAPICI-CAC1-1-001",
+        "MAPICI-CAC2-1-001",
+        "MAPICI-CAC4-1-001",
+        "MAPICI-CAFC-1-001",
+        "MAPICS-I8-1-001"
+      ],
+      "title": "CompTIA A+",
+      "unified_title": "CompTIA A+",
+      "is_classified": true,
+      "issuing_agency": "CompTIA",
+      "training_agency": "",
+      "confidence_title": 0.98,
+      "confidence_issuer": 0.97,
+      "quality_flag": "",
+      "raw_titles": [
+        "COMPTIA A+ Certification",
+        "CompTIA A+",
+        "CompTIA A+ (CIS-25)",
+        "CompTIA A+ Certification",
+        "CompTIA A+ for CIS 040"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 22,
+      "adopter_names": [
+        "Cabrillo College",
+        "Chaffey College",
+        "Clovis Community College",
+        "College of the Desert",
+        "Compton College",
+        "Contra Costa College",
+        "De Anza College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Modesto Junior College",
+        "Moreno Valley College",
+        "Reedley College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Sierra College",
+        "West Los Angeles College"
+      ],
+      "potential": 88,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Calbright College Credit",
+        "Calbright College Non-Credit",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Laney College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Skyline College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Valley College"
+      ],
+      "total_addressable": 110,
+      "credit_recs": [
+        {
+          "course": "CIS 25",
+          "credit": "4 hours in Info Comm Tech Essentials"
+        },
+        {
+          "course": "CIS 212",
+          "credit": "3 hours in A+ Certification Preparation-Hardware"
+        },
+        {
+          "course": "CIS 213",
+          "credit": "3 hours in A+ Certification Preparation-Software"
+        },
+        {
+          "course": "CIMN 110",
+          "credit": "3 hours in NETWORKING ESSENTIALS AND TECHNOLOGIES FOR IT CYBERSECURITY"
+        },
+        {
+          "course": "CISHDSP 40",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CIT 110",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CMPR 153",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CNT 51",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CIS 222",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "INWT 100",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CMPR 155",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "IS 62",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CIS 104",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CIS 132",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CIS 71",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "Computer Information Systems (CIS) 062A",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CIS 101",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "IT 0100",
+          "credit": "4 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CIS 069A",
+          "credit": "4.5 hours in Technical Support Fundamentals"
+        },
+        {
+          "course": "CIS 069E",
+          "credit": "4.5 hours in IT Security: Defense Against the Digital Dark Arts"
+        },
+        {
+          "course": "CMPET 313",
+          "credit": "2.5 hours in IT Support Fundamentals 3"
+        },
+        {
+          "course": "CMPET 314",
+          "credit": "2.5 hours in IT Support Fundamentals 4"
+        },
+        {
+          "course": "MICROTK 160",
+          "credit": "2 hours in IT ESSENTIALS APPLICATION SOFTWARE FUNDAMENTALS"
+        },
+        {
+          "course": "MICROTK 162",
+          "credit": "4 hours in IT ESSENTIALS NETWORKING PERSONAL COMPUTERS"
+        },
+        {
+          "course": "MICROTK 164",
+          "credit": "5 hours in IT ESSENTIALS  MICROCOMPUTER THEORY AND SERVICING"
+        },
+        {
+          "course": "IS 80",
+          "credit": "6 hours in Information Technology Support Technician Training"
+        },
+        {
+          "course": "CIS 040",
+          "credit": "4 hours in Information and Communication Technology Essentials"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Information and Communication Technology Essentials",
+          "cid": "ITIS 110"
+        }
+      ]
     },
     {
       "exhibit_id": "MAPICI-CEMT1-1-001",
@@ -69474,10 +69478,10 @@ window.CPL_STATEWIDE = {
       "title": "Administration of Justice — Lemoore HS Articulation",
       "unified_title": "Administration of Justice — Lemoore HS Articulation",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Lemoore High School",
       "training_agency": "Lemoore High School",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AOJ-001 Articulation with Lemoore HS (FA25-SU27)"
@@ -75161,10 +75165,10 @@ window.CPL_STATEWIDE = {
       "title": "Adult Health Care I (Nursing)",
       "unified_title": "Adult Health Care I (Nursing)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "NURSING 400 - Adult Health Care I"
@@ -75387,10 +75391,10 @@ window.CPL_STATEWIDE = {
       "title": "Adult Health Care II (Nursing)",
       "unified_title": "Adult Health Care II (Nursing)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "NURSING 403 - Adult Health Care II"
@@ -75726,10 +75730,10 @@ window.CPL_STATEWIDE = {
       "title": "Adult Health Care III (Nursing)",
       "unified_title": "Adult Health Care III (Nursing)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "NURSING 406 -  Adult Health Care III"
@@ -76065,10 +76069,10 @@ window.CPL_STATEWIDE = {
       "title": "Adult Health Care IV (Nursing)",
       "unified_title": "Adult Health Care IV (Nursing)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "NURSING 414 - Adult Health Care IV"
@@ -87559,10 +87563,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Automotive Electrical Systems",
       "unified_title": "Advanced Automotive Electrical Systems",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AUTO 065 - Advanced Automotive Electrical Systems"
@@ -94359,10 +94363,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Automotive Electrical Systems",
       "unified_title": "Advanced Automotive Electrical Systems",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Advanced Automotive Electrical Systems"
@@ -102397,10 +102401,10 @@ window.CPL_STATEWIDE = {
       "title": "Advertising for Small Business",
       "unified_title": "Advertising for Small Business",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Advertising for Small Business"
@@ -112583,10 +112587,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Gas Tungsten Arc Welding (GTAW)",
       "unified_title": "Advanced Gas Tungsten Arc Welding (GTAW)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "American Welding Society",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Advanced Gas Tungsten Arc Welding (GTAW) - Credit by Exam"
@@ -140794,10 +140798,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Desserts and Pastry",
       "unified_title": "Advanced Desserts and Pastry",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "CULART 043 - Advanced Desserts and Pastry/Chocolate/Sugar"
@@ -141055,10 +141059,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Digital Photography",
       "unified_title": "Advanced Digital Photography",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Advanced Digital Photography"
@@ -150547,10 +150551,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Engineering & Design (High School Articulation)",
       "unified_title": "Advanced Engineering & Design (High School Articulation)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "El Modena High School",
       "training_agency": "El Modena High School",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Advanced Engineering & Design (Formerly 3D Computer Aided Design) - Valley High School",
@@ -151034,10 +151038,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced CAD, Rendering & Animation",
       "unified_title": "Advanced CAD, Rendering & Animation",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Advanced Computer-Aided Design and Drafting, Rendering & Animation CADD 003 Cx"
@@ -157086,10 +157090,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Medical Surgical Nursing",
       "unified_title": "Advanced Medical Surgical Nursing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Advanced Medical Surgical Nursing"
@@ -157161,10 +157165,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Medical Surgical Nursing Lab",
       "unified_title": "Advanced Medical Surgical Nursing Lab",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Advanced Medical Surgical Nursing Lab"
@@ -178678,10 +178682,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Machine Tool Technology Lab",
       "unified_title": "Advanced Machine Tool Technology Lab",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "MACH 395B\tAdvanced Mach Tool Technology Lab - Portfolio Review"
@@ -181123,10 +181127,10 @@ window.CPL_STATEWIDE = {
       "title": "Agriculture Computer Applications",
       "unified_title": "Agriculture Computer Applications",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGEC 225\tAgriculture Computer Applications - Credit by Exam"
@@ -191103,10 +191107,10 @@ window.CPL_STATEWIDE = {
       "title": "Agriculture Education Early Field Experience",
       "unified_title": "Agriculture Education Early Field Experience",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AG 130\tAgriculture Education Early Field Experience - Credit by Exam"
@@ -191162,10 +191166,10 @@ window.CPL_STATEWIDE = {
       "title": "Agriculture Education Early Field Experience",
       "unified_title": "Agriculture Education Early Field Experience",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "AG 130\tAgriculture Education Early Field Experience - Industry Certification"
@@ -191280,10 +191284,10 @@ window.CPL_STATEWIDE = {
       "title": "Agriculture, Environment and Society",
       "unified_title": "Agriculture, Environment and Society",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Occupational Safety and Health Administration (OSHA)",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGGE 146\tAgriculture, Environment and Society - Credit by Exam"
@@ -191634,10 +191638,10 @@ window.CPL_STATEWIDE = {
       "title": "Agricultural Work Experience",
       "unified_title": "Agricultural Work Experience",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AG 259D\tAgricultural Work Experience - Portfolio Review"
@@ -191693,10 +191697,10 @@ window.CPL_STATEWIDE = {
       "title": "Agricultural Work Experience",
       "unified_title": "Agricultural Work Experience",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "AG 259A\tAgricultural Work Experience - Industry Certificate"
@@ -198919,10 +198923,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Construction Inspection: International Building Code (IBC)",
       "unified_title": "Advanced Construction Inspection: International Building Code (IBC)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "International Code Council (ICC)",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "INSPEC 013 - Advanced Construction Inspection: International Building Code (IBC)"
@@ -199127,10 +199131,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
       "unified_title": "Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "International Code Council (ICC)",
       "training_agency": "",
       "confidence_title": 0.72,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "INSPEC 015 - Advanced Construction Inspection: Uniform Plumbing Code (UPC)"
@@ -199179,10 +199183,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Construction Inspection: International Building Code (IBC)",
       "unified_title": "Advanced Construction Inspection: International Building Code (IBC)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "International Code Council (ICC)",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "INSPEC 013 - Advanced Construction Inspection: International Building Code (IBC) - PORTFOLIO"
@@ -202237,10 +202241,10 @@ window.CPL_STATEWIDE = {
       "title": "Agricultural Welding",
       "unified_title": "Agricultural Welding",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGM 210\tAgricultural Welding - Credit by Exam"
@@ -202286,10 +202290,10 @@ window.CPL_STATEWIDE = {
       "title": "Agricultural Welding",
       "unified_title": "Agricultural Welding",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "AGM 210\tAgricultural Welding - Industry Certification"
@@ -202433,10 +202437,10 @@ window.CPL_STATEWIDE = {
       "title": "Agricultural Mechanical Systems Design and Evaluation 1",
       "unified_title": "Agricultural Mechanical Systems Design and Evaluation 1",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Agriculture Education Services and Technology (AEST)",
       "training_agency": "",
       "confidence_title": 0.72,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGM 212\tMechanical Systems Design & Evaluation 1 - Credit by Exam"
@@ -202482,10 +202486,10 @@ window.CPL_STATEWIDE = {
       "title": "Agricultural Mechanical Systems Design and Evaluation 2",
       "unified_title": "Agricultural Mechanical Systems Design and Evaluation 2",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Agriculture Education Services and Technology (AEST)",
       "training_agency": "",
       "confidence_title": 0.72,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGM 213\tMechanical Systems Design & Evaluation 2 - Credit by Exam"
@@ -202531,10 +202535,10 @@ window.CPL_STATEWIDE = {
       "title": "Agricultural Equipment Service and Safety",
       "unified_title": "Agricultural Equipment Service and Safety",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGM 214\tEquipment Service and Safety - Credit by Exam"
@@ -202580,10 +202584,10 @@ window.CPL_STATEWIDE = {
       "title": "Agricultural Equipment Service and Safety",
       "unified_title": "Agricultural Equipment Service and Safety",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "AGM 214\tEquipment Service and Safety - Industry Certification"
@@ -202629,10 +202633,10 @@ window.CPL_STATEWIDE = {
       "title": "Agricultural Machinery Management",
       "unified_title": "Agricultural Machinery Management",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Agriculture Education Services and Technology (AEST)",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGM 215\tMachinery Management - Credit by Exam"
@@ -202678,10 +202682,10 @@ window.CPL_STATEWIDE = {
       "title": "Agricultural Equipment Diagnosis and Repair",
       "unified_title": "Agricultural Equipment Diagnosis and Repair",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGM 221\tEquipment Diagnosis & Repair - Credit by Exam"
@@ -202825,10 +202829,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Irrigation and Drainage",
       "unified_title": "Advanced Irrigation and Drainage",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGM 236\tAdvanced Irrigation and Drainage - Credit by Exam"
@@ -203903,10 +203907,10 @@ window.CPL_STATEWIDE = {
       "title": "Aircraft Powerplant: Reciprocating and Turbine Engines",
       "unified_title": "Aircraft Powerplant: Reciprocating and Turbine Engines",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Federal Aviation Administration (FAA)",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Powerplant: Aircraft Reciprocating and Turbine Engines"
@@ -203952,10 +203956,10 @@ window.CPL_STATEWIDE = {
       "title": "Aircraft Powerplant: Reciprocating and Turbine Engines Laboratory",
       "unified_title": "Aircraft Powerplant: Reciprocating and Turbine Engines Laboratory",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Federal Aviation Administration (FAA)",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Powerplant: Aircraft Reciprocating and Turbine Engines Lab"
@@ -204003,10 +204007,10 @@ window.CPL_STATEWIDE = {
       "title": "Airframe Structures: Primary and Secondary Systems Lab",
       "unified_title": "Airframe Structures: Primary and Secondary Systems Lab",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Federal Aviation Administration (FAA)",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Airframe Structures: Primary and Secondary Systems Lab"
@@ -205220,10 +205224,10 @@ window.CPL_STATEWIDE = {
       "title": "Acoustical Soffits (Norco Apprenticeship Articulation)",
       "unified_title": "Acoustical Soffits (Norco Apprenticeship Articulation)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "Joint Apprenticeship Training Committee (JATC)",
       "confidence_title": 0.4,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Acoustical Soffits"
@@ -205643,10 +205647,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Acoustical Ceiling Layout (Norco Apprenticeship)",
       "unified_title": "Advanced Acoustical Ceiling Layout (Norco Apprenticeship)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "Joint Apprenticeship Training Committee (JATC)",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Advanced Acoustical Ceiling Layout"
@@ -205690,10 +205694,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Acoustical Ceiling Installation (Norco Apprenticeship)",
       "unified_title": "Advanced Acoustical Ceiling Installation (Norco Apprenticeship)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "Joint Apprenticeship Training Committee (JATC)",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Advanced Acoustical Ceiling Installation"
@@ -206301,10 +206305,10 @@ window.CPL_STATEWIDE = {
       "title": "Abutments (Carpentry — Norco IBEW/Carpenters Articulation)",
       "unified_title": "Abutments (Carpentry — Norco IBEW/Carpenters Articulation)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
       "confidence_title": 0.4,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Abutments"
@@ -206724,10 +206728,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Print Reading — Digital Planning",
       "unified_title": "Advanced Print Reading — Digital Planning",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Advanced Print Reading - Digital Planning"
@@ -208040,10 +208044,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Commercial Framing (Norco Apprenticeship)",
       "unified_title": "Advanced Commercial Framing (Norco Apprenticeship)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "Joint Apprenticeship Training Committee (JATC)",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Advanced Commercial Framing"
@@ -208087,10 +208091,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Stairs",
       "unified_title": "Advanced Stairs",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Advanced Stairs"
@@ -208134,10 +208138,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Roof Framing",
       "unified_title": "Advanced Roof Framing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Advanced Roof Framing"
@@ -208651,10 +208655,10 @@ window.CPL_STATEWIDE = {
       "title": "Agriculture Occupational Safety",
       "unified_title": "Agriculture Occupational Safety",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Occupational Safety and Health Administration (OSHA)",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGM 216\tAgriculture Occupational Safety - Credit by Exam"
@@ -208698,10 +208702,10 @@ window.CPL_STATEWIDE = {
       "title": "Agriculture Occupational Safety",
       "unified_title": "Agriculture Occupational Safety",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Occupational Safety and Health Administration (OSHA)",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "AGM 216\tAgriculture Occupational Safety - Industry Certification"
@@ -209359,108 +209363,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 707",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 707",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 707"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 162",
-          "credit": "1.5 hours in Blueprint Reading-Commercial"
-        },
-        {
-          "course": "CARPT 190",
-          "credit": "1.5 hours in Introduction to Welding and Cutting"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC1-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC1-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 710",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 710",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 710"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 162",
-          "credit": "1.5 hours in Blueprint Reading-Commercial"
-        },
-        {
-          "course": "CARPT 190",
-          "credit": "1.5 hours in Introduction to Welding and Cutting"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPICA-CTCC2-1-001",
       "exhibit_ids": [
         "MAPICA-CTCC2-1-001"
@@ -209500,10 +209402,6 @@ window.CPL_STATEWIDE = {
       ],
       "total_addressable": 12,
       "credit_recs": [
-        {
-          "course": "CARPT 213",
-          "credit": "1.5 hours in Acoustical Exterior Systems"
-        },
         {
           "course": "CARPT 261",
           "credit": "1.5 hours in Welded Frame and Mobile Tower Scaffold"
@@ -209558,3860 +209456,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "DRLTH 298",
           "credit": "0.5 hours in Work Experience Drywall/Lathing Apprenticeship"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC4-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC4-1-001"
-      ],
-      "title": "Carpenters Apprenticeship — CARP 002",
-      "unified_title": "Carpenters Apprenticeship — CARP 002",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 002"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 101",
-          "credit": "1.5 hours in Introduction to Apprenticeship II"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC5-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC5-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California (CTCNC) — OSHA Training",
-      "unified_title": "Carpenters Training Committee for Northern California (CTCNC) — OSHA Training",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC OSHA"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 103",
-          "credit": "0.5 hours in OSHA 10-hour Construction Training Course"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC6-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC6-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — FA/C",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — FA/C",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.6,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC FA/C"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 105",
-          "credit": "0.5 hours in CPR for Carpenters Apprentices"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC7-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC7-1-001"
-      ],
-      "title": "Carpenters Apprenticeship — CARP 019",
-      "unified_title": "Carpenters Apprenticeship — CARP 019",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 019"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 107",
-          "credit": "1.5 hours in Rigging"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC8-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC8-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 312",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 312",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 312"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 107",
-          "credit": "1.5 hours in Rigging"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC9-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC9-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 608",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 608",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 608"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 107",
-          "credit": "1.5 hours in Rigging"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC10-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC10-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1201",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1201",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 1201"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 108",
-          "credit": "1.5 hours in Modular System Installer Safety"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC11-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC11-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1202",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1202",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 1202"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 109",
-          "credit": "1.5 hours in Introduction to Office Modular Systems Installation"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC12-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC12-1-001"
-      ],
-      "title": "Carpenters Apprenticeship — CARP 004",
-      "unified_title": "Carpenters Apprenticeship — CARP 004",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 004"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 110",
-          "credit": "1.5 hours in Foundations and Floors"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC13-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC13-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1203",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1203",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 1203"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 111",
-          "credit": "1.5 hours in Tool and Equipment Applications"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC14-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC14-1-001"
-      ],
-      "title": "Carpenters Apprenticeship — CARP 006",
-      "unified_title": "Carpenters Apprenticeship — CARP 006",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 006"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 112",
-          "credit": "1.5 hours in Structural Framing"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC15-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC15-1-001"
-      ],
-      "title": "Carpenters Apprenticeship — CARP 007",
-      "unified_title": "Carpenters Apprenticeship — CARP 007",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 007"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 114",
-          "credit": "1.5 hours in Form Detailing, Construction & Erection"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC16-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC16-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1208",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1208",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 1208"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 115",
-          "credit": "1.5 hours in Floor to Ceiling Wall System Construction"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC17-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC17-1-001"
-      ],
-      "title": "Carpenters Apprenticeship — CARP 008",
-      "unified_title": "Carpenters Apprenticeship — CARP 008",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 008"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 120",
-          "credit": "1.5 hours in Exterior Finish"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC18-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC18-1-001"
-      ],
-      "title": "Carpenters Apprenticeship — CARP 011",
-      "unified_title": "Carpenters Apprenticeship — CARP 011",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 011"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 122",
-          "credit": "1.5 hours in Interior Finish"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC19-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC19-1-001"
-      ],
-      "title": "Carpenters Apprenticeship — CARP 020",
-      "unified_title": "Carpenters Apprenticeship — CARP 020",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 020"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 124",
-          "credit": "1.5 hours in Commercial Door Hardware"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC20-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC20-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1207",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1207",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 1207"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 125",
-          "credit": "1.5 hours in Drapery, Window Coverings, and Fine Furnishings"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC21-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC21-1-001"
-      ],
-      "title": "Carpenters Apprenticeship — CARP 012",
-      "unified_title": "Carpenters Apprenticeship — CARP 012",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 012"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 130",
-          "credit": "1.5 hours in Layout/Leveling Construction Site Practice"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC22-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC22-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 310",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 310",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 310"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 130",
-          "credit": "1.5 hours in Layout/Leveling Construction Site Practice"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC23-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC23-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 503",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 503",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 503"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 131",
-          "credit": "1.5 hours in Introduction to Working Drawings, Construction Math and Fire Stop Installation"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC24-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC24-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 504",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 504",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 504"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 132",
-          "credit": "1.5 hours in Residential Blueprint Reading and Forklift Safety"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC25-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC25-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 505",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 505",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 505"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 133",
-          "credit": "1.5 hours in Residential Insulation and Weatherization"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC26-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC26-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 506",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 506",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 506"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 134",
-          "credit": "1.5 hours in Commercial Blueprint Reading and Mobile Tower Scaffolds"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC27-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC27-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 507",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 507",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 507"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 135",
-          "credit": "1.5 hours in Commercial and Industrial Insulation and Aerial Lift"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC28-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC28-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 508",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 508",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 508"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 136",
-          "credit": "1.5 hours in Energy Conservation Codes and Standards"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC29-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC29-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1205",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1205",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 1205"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 137",
-          "credit": "1.5 hours in Modular Systems Construction and Quality Control I"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC30-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC30-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1206",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1206",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 1206"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 138",
-          "credit": "1.5 hours in Modular System Construction and Quality Control II"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC31-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC31-1-001"
-      ],
-      "title": "Carpenters Apprenticeship — CARP 014",
-      "unified_title": "Carpenters Apprenticeship — CARP 014",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 014"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 140",
-          "credit": "1.5 hours in Interior Systems"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC32-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC32-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 704",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 704",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 704"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 140",
-          "credit": "1.5 hours in Interior Systems"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC33-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC33-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 708",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 708",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 708"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 141",
-          "credit": "1.5 hours in Suspended Framing Ceiling Systems"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC34-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC34-1-001"
-      ],
-      "title": "Carpenters Apprenticeship — CARP 013",
-      "unified_title": "Carpenters Apprenticeship — CARP 013",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 013"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 142",
-          "credit": "1.5 hours in Engineered Structural Systems"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC35-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC35-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 703",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 703",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 703"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 144",
-          "credit": "1.5 hours in Introduction to Grid Ceiling Installation"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC36-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC36-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 705",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 705",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 705"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 145",
-          "credit": "1.5 hours in Specialty Ceiling Systems"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC37-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC37-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 711",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 711",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 711"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 146",
-          "credit": "1.5 hours in Integrated Ceilings and Special Techniques"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC38-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC38-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 712",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 712",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 712"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 147",
-          "credit": "1.5 hours in Advanced Grid Ceilings"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC39-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC39-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 706",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 706",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 706"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 148",
-          "credit": "1.5 hours in Access Floor Systems"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC40-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC40-1-001"
-      ],
-      "title": "Carpenters Apprenticeship — CARP 010",
-      "unified_title": "Carpenters Apprenticeship — CARP 010",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 010"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 150",
-          "credit": "1.5 hours in Concrete - Precast and Prestressed"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC41-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC41-1-001"
-      ],
-      "title": "Carpenters Apprenticeship — CARP 018",
-      "unified_title": "Carpenters Apprenticeship — CARP 018",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 018"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 155",
-          "credit": "1.5 hours in Commercial Concrete"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC42-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC42-1-001"
-      ],
-      "title": "Carpenters Apprenticeship — CARP 005",
-      "unified_title": "Carpenters Apprenticeship — CARP 005",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 005"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 160",
-          "credit": "1.5 hours in Blueprint Reading-Residential"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC43-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC43-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 306",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 306",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 306"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 160",
-          "credit": "1.5 hours in Blueprint Reading-Residential"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC44-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC44-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 605",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 605",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 605"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 160",
-          "credit": "1.5 hours in Blueprint Reading-Residential"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC45-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC45-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 702",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 702",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 702"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 160",
-          "credit": "1.5 hours in Blueprint Reading-Residential"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC46-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC46-1-001"
-      ],
-      "title": "Carpenters Apprenticeship — CARP 009",
-      "unified_title": "Carpenters Apprenticeship — CARP 009",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 009"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 162",
-          "credit": "1.5 hours in Blueprint Reading-Commercial"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC47-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC47-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 315",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 315",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 315"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 162",
-          "credit": "1.5 hours in Blueprint Reading-Commercial"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC48-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC48-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1204",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1204",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 1204"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 163",
-          "credit": "1.5 hours in Print Reading Measurement and Layout"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC49-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC49-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 714",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 714",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 714"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 164",
-          "credit": "1.5 hours in Acoustical Blueprint Reading"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC50-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC50-1-001"
-      ],
-      "title": "Carpenters Apprenticeship — CARP 016",
-      "unified_title": "Carpenters Apprenticeship — CARP 016",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 016"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 170",
-          "credit": "1.5 hours in Roof Framing"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC51-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC51-1-001"
-      ],
-      "title": "Carpenters Apprenticeship — CARP 015",
-      "unified_title": "Carpenters Apprenticeship — CARP 015",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 015"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 180",
-          "credit": "1.5 hours in Stair Building"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC52-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC52-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 404",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 404",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 404"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 181",
-          "credit": "1.5 hours in Tools of the Trade and Installation of Hardwood Floors"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC53-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC53-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 405",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 405",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 405"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 182",
-          "credit": "1.5 hours in Finishing and Repairing Floors"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC54-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC54-1-001"
-      ],
-      "title": "Carpenters Apprenticeship — CARP 017",
-      "unified_title": "Carpenters Apprenticeship — CARP 017",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 017"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 190",
-          "credit": "1.5 hours in Introduction to Welding and Cutting"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC55-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC55-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 313",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 313",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 313"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 190",
-          "credit": "1.5 hours in Introduction to Welding and Cutting"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC56-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC56-1-001"
-      ],
-      "title": "Carpenters Apprenticeship — CARP 001",
-      "unified_title": "Carpenters Apprenticeship — CARP 001",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 001"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 210",
-          "credit": "1.5 hours in The Acoustical Apprentice, Safety, and the Trade"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC57-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC57-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 701",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 701",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 701"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 211",
-          "credit": "1.5 hours in Introduction to Acoustical Apprenticeship II"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC58-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC58-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 709",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 709",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 709"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 212",
-          "credit": "1.5 hours in Infection Control Risk Assessment and Hospital Code for Acoustical Installers"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC59-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC59-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 715",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 715",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 715"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 215",
-          "credit": "1 hour in Specialty Systems"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC60-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC60-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 856",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 856",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 856"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 220",
-          "credit": "1.5 hours in Millwright Safety and Tool Skills"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC61-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC61-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 857",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 857",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 857"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 221",
-          "credit": "1.5 hours in The Millwright Apprentice, the Trade, and 16 Hour Safety"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC62-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC62-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 858",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 858",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 858"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 222",
-          "credit": "1.5 hours in Millwright Math Applications"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC63-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC63-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 864",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 864",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 864"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 223",
-          "credit": "1.5 hours in Cutting and Welding I"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC64-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC64-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 860",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 860",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 860"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 224",
-          "credit": "1.5 hours in Materials of Construction"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC65-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC65-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 861",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 861",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 861"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 225",
-          "credit": "1.5 hours in Layout Procedures for Millwrights"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC66-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC66-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 862",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 862",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 862"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 226",
-          "credit": "1.5 hours in Precision Optical Instruments"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC67-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC67-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 863",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 863",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 863"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 227",
-          "credit": "1.5 hours in Blueprint Reading and Aerial Lift"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC68-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC68-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 859",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 859",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 859"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 228",
-          "credit": "1.5 hours in Millwright Rigging"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC69-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC69-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 865",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 865",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 865"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 229",
-          "credit": "1.5 hours in Welding II SMAW"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC70-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC70-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 866",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 866",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 866"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 230",
-          "credit": "1.5 hours in Monorails"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC71-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC71-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 867",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 867",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 867"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 231",
-          "credit": "1.5 hours in Conveyors for Millwrights"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC72-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC72-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 868",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 868",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 868"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 232",
-          "credit": "1.5 hours in Machinery Installation"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC73-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC73-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 869",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 869",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 869"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 233",
-          "credit": "1.5 hours in Machinery Maintenance for Millwrights"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC74-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC74-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 870",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 870",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 870"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 234",
-          "credit": "1.5 hours in Precision Tools for Millwrights"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC75-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC75-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 871",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 871",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 871"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 235",
-          "credit": "1.5 hours in Turbines"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC76-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC76-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 872",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 872",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 872"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 236",
-          "credit": "1.5 hours in Cutting and Welding III"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC77-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC77-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 278",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 278",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 278"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 240",
-          "credit": "1.5 hours in Worker Safety and Tool Skills for Pile Drivers"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC78-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC78-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 279",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 279",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 279"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 241",
-          "credit": "2 hours in Pile Driver Math Applications"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC79-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC79-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 280",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 280",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 280"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 242",
-          "credit": "1.5 hours in Pile Driver Rigging"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC80-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC80-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 281",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 281",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 281"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 243",
-          "credit": "1.5 hours in Form Detailing, Construction, and Erection for Pile Drivers"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC81-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC81-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 282",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 282",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 282"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 244",
-          "credit": "1.5 hours in Welding I: Introduction to SMAW"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC82-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC82-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 283",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 283",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 283"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 245",
-          "credit": "1.5 hours in Introduction to Land and Water Pile Driving"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC83-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC83-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 284",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 284",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 284"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 246",
-          "credit": "1.5 hours in Welding II SMAW"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC84-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC84-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 285",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 285",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 285"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 247",
-          "credit": "1.5 hours in Advanced Pile Driving Land and Water"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC85-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC85-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 286",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 286",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 286"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 11,
-      "potential_names": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 12,
-      "credit_recs": [
-        {
-          "course": "CARPT 248",
-          "credit": "1.5 hours in Wharfage and Marine Structures"
         }
       ],
       "authoritative_recs": []
@@ -215057,6 +211101,276 @@ window.CPL_STATEWIDE = {
         {
           "course": "SPAN 033",
           "credit": "3 hours in Spanish/English LInguistics Analysis"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-JCAC9-1-001",
+      "exhibit_ids": [
+        "MAPICA-JCAC9-1-001"
+      ],
+      "title": "Journeyman Certificate- Apprenticeship Carpentry, General Carpenter, AS",
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, General Carpenter, AS",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Journeyman Certificate- Apprenticeship Carpentry, General Carpenter, AS"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Santiago Canyon College"
+      ],
+      "potential": 11,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "College of the Redwoods",
+        "Laney College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Norco College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Santa Rosa Junior College"
+      ],
+      "total_addressable": 12,
+      "credit_recs": [
+        {
+          "course": "ACA 005",
+          "credit": "1.5 hours in Mass Timber Framing"
+        },
+        {
+          "course": "ACA 021A",
+          "credit": "2 hours in Orientation"
+        },
+        {
+          "course": "ACA 021B",
+          "credit": "2 hours in Safety and Health"
+        },
+        {
+          "course": "ACA 021C",
+          "credit": "1.5 hours in Basic Wall Framing"
+        },
+        {
+          "course": "ACA 021E",
+          "credit": "1.5 hours in Tool and Equipment Applications"
+        },
+        {
+          "course": "ACA 022A",
+          "credit": "1.5 hours in Commercial Floor Framing"
+        },
+        {
+          "course": "ACA 022B",
+          "credit": "1.5 hours in Basic Stairs"
+        },
+        {
+          "course": "ACA 022D",
+          "credit": "1.5 hours in Exterior Finish Details"
+        },
+        {
+          "course": "ACA 023B",
+          "credit": "1.5 hours in Basic Roof Framing"
+        },
+        {
+          "course": "ACA 023C",
+          "credit": "1.5 hours in Advanced Roof Framing"
+        },
+        {
+          "course": "ACA 024A",
+          "credit": "1.5 hours in Basic Commercial Framing"
+        },
+        {
+          "course": "ACA 024D",
+          "credit": "2 hours in Transit Level and Laser"
+        },
+        {
+          "course": "ACA 025A",
+          "credit": "1.5 hours in Foundations and Flatwork"
+        },
+        {
+          "course": "ACA 025C",
+          "credit": "1.5 hours in Advanced Stairs"
+        },
+        {
+          "course": "ACA 025D",
+          "credit": "2 hours in Advanced Printreading"
+        },
+        {
+          "course": "ACA 026A",
+          "credit": "1.5 hours in Tilt-Up Panel Construction"
+        },
+        {
+          "course": "ACA 026B",
+          "credit": "1.5 hours in Wall Forming"
+        },
+        {
+          "course": "ACA 026C",
+          "credit": "1.5 hours in Gang Forms and Columns"
+        },
+        {
+          "course": "ACA 026D",
+          "credit": "1.5 hours in Abutments"
+        },
+        {
+          "course": "ACA 027C",
+          "credit": "1.5 hours in Beam and Deck Forming"
+        },
+        {
+          "course": "ACA 027D",
+          "credit": "1.5 hours in Stairs and Ramp Forming"
+        },
+        {
+          "course": "ACA 028A",
+          "credit": "1.5 hours in Bridge Construction"
+        },
+        {
+          "course": "ACA 033A",
+          "credit": "1.5 hours in Cabinet Millwork and Assembly"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-JCAC10-1-001",
+      "exhibit_ids": [
+        "MAPICA-JCAC10-1-001"
+      ],
+      "title": "Journeyman Certificate- Apprenticeship Carpentry, General Carpenter, CA",
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, General Carpenter, CA",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Journeyman Certificate- Apprenticeship Carpentry, General Carpenter, CA"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Santiago Canyon College"
+      ],
+      "potential": 11,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "College of the Redwoods",
+        "Laney College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Norco College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Santa Rosa Junior College"
+      ],
+      "total_addressable": 12,
+      "credit_recs": [
+        {
+          "course": "ACA 005",
+          "credit": "1.5 hours in Mass Timber Framing"
+        },
+        {
+          "course": "ACA 021A",
+          "credit": "2 hours in Orientation"
+        },
+        {
+          "course": "ACA 021B",
+          "credit": "2 hours in Safety and Health"
+        },
+        {
+          "course": "ACA 021C",
+          "credit": "1.5 hours in Basic Wall Framing"
+        },
+        {
+          "course": "ACA 021E",
+          "credit": "1.5 hours in Tool and Equipment Applications"
+        },
+        {
+          "course": "ACA 022A",
+          "credit": "1.5 hours in Commercial Floor Framing"
+        },
+        {
+          "course": "ACA 022B",
+          "credit": "1.5 hours in Basic Stairs"
+        },
+        {
+          "course": "ACA 022D",
+          "credit": "1.5 hours in Exterior Finish Details"
+        },
+        {
+          "course": "ACA 023B",
+          "credit": "1.5 hours in Basic Roof Framing"
+        },
+        {
+          "course": "ACA 023C",
+          "credit": "1.5 hours in Advanced Roof Framing"
+        },
+        {
+          "course": "ACA 024A",
+          "credit": "1.5 hours in Basic Commercial Framing"
+        },
+        {
+          "course": "ACA 024D",
+          "credit": "2 hours in Transit Level and Laser"
+        },
+        {
+          "course": "ACA 025A",
+          "credit": "1.5 hours in Foundations and Flatwork"
+        },
+        {
+          "course": "ACA 025C",
+          "credit": "1.5 hours in Advanced Stairs"
+        },
+        {
+          "course": "ACA 025D",
+          "credit": "2 hours in Advanced Printreading"
+        },
+        {
+          "course": "ACA 026A",
+          "credit": "1.5 hours in Tilt-Up Panel Construction"
+        },
+        {
+          "course": "ACA 026B",
+          "credit": "1.5 hours in Wall Forming"
+        },
+        {
+          "course": "ACA 026C",
+          "credit": "1.5 hours in Gang Forms and Columns"
+        },
+        {
+          "course": "ACA 026D",
+          "credit": "1.5 hours in Abutments"
+        },
+        {
+          "course": "ACA 027C",
+          "credit": "1.5 hours in Beam and Deck Forming"
+        },
+        {
+          "course": "ACA 027D",
+          "credit": "1.5 hours in Stairs and Ramp Forming"
+        },
+        {
+          "course": "ACA 028A",
+          "credit": "1.5 hours in Bridge Construction"
+        },
+        {
+          "course": "ACA 033A",
+          "credit": "1.5 hours in Cabinet Millwork and Assembly"
         }
       ],
       "authoritative_recs": []
@@ -216801,10 +213115,10 @@ window.CPL_STATEWIDE = {
       "title": "Aircraft and Engines",
       "unified_title": "Aircraft and Engines",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Federal Aviation Administration (FAA)",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Aircraft and Engines (ATC 144 C)"
@@ -218083,10 +214397,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Floral Design",
       "unified_title": "Advanced Floral Design",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "EHS 281\tAdvanced Floral Design - Credit by Exam"
@@ -218127,10 +214441,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Floral Design",
       "unified_title": "Advanced Floral Design",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "EHS 281\tAdvanced Floral Design - Portfolio"
@@ -218171,10 +214485,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Floral Design",
       "unified_title": "Advanced Floral Design",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "EHS 281\tAdvanced Floral Design - Industry Certification"
@@ -220840,10 +217154,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Print Reading — Digital Application",
       "unified_title": "Advanced Print Reading — Digital Application",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Advanced Print Reading – Digital Application"
@@ -220960,10 +217274,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Hand Finishing",
       "unified_title": "Advanced Hand Finishing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Advanced Hand Finishing"
@@ -221000,10 +217314,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Automatic Finishing Tools (Norco Apprenticeship)",
       "unified_title": "Advanced Automatic Finishing Tools (Norco Apprenticeship)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "Joint Apprenticeship Training Committee (JATC)",
       "confidence_title": 0.5,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Advanced Automatic Finishing Tools"
@@ -221040,10 +217354,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Metal Framing",
       "unified_title": "Advanced Metal Framing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Advanced Metal Framing"
@@ -221120,10 +217434,10 @@ window.CPL_STATEWIDE = {
       "title": "Air, Moisture, and Thermal Barriers",
       "unified_title": "Air, Moisture, and Thermal Barriers",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "CalCERTS, Inc.",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Air, Moisture, and Thermal Barriers"
@@ -223308,10 +219622,10 @@ window.CPL_STATEWIDE = {
       "title": "Administration of Justice 72 (CCSF)",
       "unified_title": "Administration of Justice 72 (CCSF)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
       "confidence_title": 0.45,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Administration of Justice 72-Portfolio Review"
@@ -225924,10 +222238,10 @@ window.CPL_STATEWIDE = {
       "title": "Air Conditioning Principles",
       "unified_title": "Air Conditioning Principles",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "CalCERTS, Inc.",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Air Conditioning Principles"
@@ -228588,10 +224902,10 @@ window.CPL_STATEWIDE = {
       "title": "Administration of Justice 102",
       "unified_title": "Administration of Justice 102",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
       "confidence_title": 0.45,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ADJUS 102 +"
@@ -228616,10 +224930,10 @@ window.CPL_STATEWIDE = {
       "title": "Administration of Justice 103",
       "unified_title": "Administration of Justice 103",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
       "confidence_title": 0.45,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ADJUS 103"
@@ -228644,10 +224958,10 @@ window.CPL_STATEWIDE = {
       "title": "Administration of Justice 106",
       "unified_title": "Administration of Justice 106",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
       "confidence_title": 0.45,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ADJUS 106"
@@ -228672,10 +224986,10 @@ window.CPL_STATEWIDE = {
       "title": "Administration of Justice 14",
       "unified_title": "Administration of Justice 14",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
       "confidence_title": 0.45,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ADM JUS 14 CBE"
@@ -229238,10 +225552,10 @@ window.CPL_STATEWIDE = {
       "title": "Administration of Justice — Community and the Justice System",
       "unified_title": "Administration of Justice — Community and the Justice System",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.55,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Community and the Justice System CJ 005A Cx"
@@ -229679,6 +225993,2358 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPICA-CTCC-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 707",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 707",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 707"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC1-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC1-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 710",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 710",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 710"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC4-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC4-1-001"
+      ],
+      "title": "Carpenters Apprenticeship — CARP 002",
+      "unified_title": "Carpenters Apprenticeship — CARP 002",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 002"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC5-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC5-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California (CTCNC) — OSHA Training",
+      "unified_title": "Carpenters Training Committee for Northern California (CTCNC) — OSHA Training",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC OSHA"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC6-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC6-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — FA/C",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — FA/C",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.6,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC FA/C"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC7-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC7-1-001"
+      ],
+      "title": "Carpenters Apprenticeship — CARP 019",
+      "unified_title": "Carpenters Apprenticeship — CARP 019",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 019"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC8-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC8-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 312",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 312",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 312"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC9-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC9-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 608",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 608",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 608"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC10-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC10-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1201",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1201",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 1201"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC11-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC11-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1202",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1202",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 1202"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC12-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC12-1-001"
+      ],
+      "title": "Carpenters Apprenticeship — CARP 004",
+      "unified_title": "Carpenters Apprenticeship — CARP 004",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 004"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC13-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC13-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1203",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1203",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 1203"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC14-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC14-1-001"
+      ],
+      "title": "Carpenters Apprenticeship — CARP 006",
+      "unified_title": "Carpenters Apprenticeship — CARP 006",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 006"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC15-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC15-1-001"
+      ],
+      "title": "Carpenters Apprenticeship — CARP 007",
+      "unified_title": "Carpenters Apprenticeship — CARP 007",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 007"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC16-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC16-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1208",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1208",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 1208"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC17-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC17-1-001"
+      ],
+      "title": "Carpenters Apprenticeship — CARP 008",
+      "unified_title": "Carpenters Apprenticeship — CARP 008",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 008"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC18-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC18-1-001"
+      ],
+      "title": "Carpenters Apprenticeship — CARP 011",
+      "unified_title": "Carpenters Apprenticeship — CARP 011",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 011"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC19-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC19-1-001"
+      ],
+      "title": "Carpenters Apprenticeship — CARP 020",
+      "unified_title": "Carpenters Apprenticeship — CARP 020",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 020"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC20-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC20-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1207",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1207",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 1207"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC21-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC21-1-001"
+      ],
+      "title": "Carpenters Apprenticeship — CARP 012",
+      "unified_title": "Carpenters Apprenticeship — CARP 012",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 012"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC22-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC22-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 310",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 310",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 310"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC23-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC23-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 503",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 503",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 503"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC24-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC24-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 504",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 504",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 504"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC25-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC25-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 505",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 505",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 505"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC26-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC26-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 506",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 506",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 506"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC27-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC27-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 507",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 507",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 507"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC28-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC28-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 508",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 508",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 508"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC29-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC29-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1205",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1205",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 1205"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC30-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC30-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1206",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1206",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 1206"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC31-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC31-1-001"
+      ],
+      "title": "Carpenters Apprenticeship — CARP 014",
+      "unified_title": "Carpenters Apprenticeship — CARP 014",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 014"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC32-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC32-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 704",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 704",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 704"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC33-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC33-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 708",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 708",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 708"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC34-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC34-1-001"
+      ],
+      "title": "Carpenters Apprenticeship — CARP 013",
+      "unified_title": "Carpenters Apprenticeship — CARP 013",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 013"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC35-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC35-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 703",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 703",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 703"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC36-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC36-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 705",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 705",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 705"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC37-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC37-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 711",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 711",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 711"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC38-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC38-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 712",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 712",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 712"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC39-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC39-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 706",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 706",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 706"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC40-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC40-1-001"
+      ],
+      "title": "Carpenters Apprenticeship — CARP 010",
+      "unified_title": "Carpenters Apprenticeship — CARP 010",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 010"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC41-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC41-1-001"
+      ],
+      "title": "Carpenters Apprenticeship — CARP 018",
+      "unified_title": "Carpenters Apprenticeship — CARP 018",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 018"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC42-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC42-1-001"
+      ],
+      "title": "Carpenters Apprenticeship — CARP 005",
+      "unified_title": "Carpenters Apprenticeship — CARP 005",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 005"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC43-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC43-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 306",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 306",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 306"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC44-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC44-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 605",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 605",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 605"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC45-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC45-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 702",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 702",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 702"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC46-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC46-1-001"
+      ],
+      "title": "Carpenters Apprenticeship — CARP 009",
+      "unified_title": "Carpenters Apprenticeship — CARP 009",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 009"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC47-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC47-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 315",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 315",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 315"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC48-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC48-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1204",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1204",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 1204"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC49-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC49-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 714",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 714",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 714"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC50-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC50-1-001"
+      ],
+      "title": "Carpenters Apprenticeship — CARP 016",
+      "unified_title": "Carpenters Apprenticeship — CARP 016",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 016"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC51-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC51-1-001"
+      ],
+      "title": "Carpenters Apprenticeship — CARP 015",
+      "unified_title": "Carpenters Apprenticeship — CARP 015",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 015"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC52-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC52-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 404",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 404",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 404"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC53-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC53-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 405",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 405",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 405"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC54-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC54-1-001"
+      ],
+      "title": "Carpenters Apprenticeship — CARP 017",
+      "unified_title": "Carpenters Apprenticeship — CARP 017",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 017"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC55-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC55-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 313",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 313",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 313"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC56-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC56-1-001"
+      ],
+      "title": "Carpenters Apprenticeship — CARP 001",
+      "unified_title": "Carpenters Apprenticeship — CARP 001",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 001"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC57-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC57-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 701",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 701",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 701"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC58-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC58-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 709",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 709",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 709"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC59-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC59-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 715",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 715",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 715"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC60-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC60-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 856",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 856",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 856"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC61-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC61-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 857",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 857",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 857"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC62-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC62-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 858",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 858",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 858"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC63-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC63-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 864",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 864",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 864"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC64-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC64-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 860",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 860",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 860"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC65-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC65-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 861",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 861",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 861"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC66-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC66-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 862",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 862",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 862"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC67-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC67-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 863",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 863",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 863"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC68-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC68-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 859",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 859",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 859"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC69-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC69-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 865",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 865",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 865"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC70-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC70-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 866",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 866",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 866"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC71-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC71-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 867",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 867",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 867"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC72-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC72-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 868",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 868",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 868"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC73-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC73-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 869",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 869",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 869"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC74-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC74-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 870",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 870",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 870"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC75-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC75-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 871",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 871",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 871"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC76-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC76-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 872",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 872",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 872"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC77-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC77-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 278",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 278",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 278"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC78-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC78-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 279",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 279",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 279"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC79-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC79-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 280",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 280",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 280"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC80-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC80-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 281",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 281",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 281"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC81-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC81-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 282",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 282",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 282"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC82-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC82-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 283",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 283",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 283"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC83-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC83-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 284",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 284",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 284"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC84-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC84-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 285",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 285",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 285"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-CTCC85-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC85-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 286",
+      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 286",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 286"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPICI-ASEM-1-001",
       "exhibit_ids": [
         "MAPICI-ASEM-1-001"
@@ -229990,12 +228656,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Santiago Canyon College",
-        "credit_recs": 403,
-        "exhibits": 19,
+        "credit_recs": 449,
+        "exhibits": 21,
         "disciplines": 2,
         "ccc_collaborative": 0,
-        "industry_certs": 403,
-        "pct": 3.2
+        "industry_certs": 449,
+        "pct": 3.5
       },
       {
         "college": "San Diego Miramar College",
@@ -230017,11 +228683,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Cabrillo College",
-        "credit_recs": 345,
-        "exhibits": 242,
+        "credit_recs": 346,
+        "exhibits": 243,
         "disciplines": 13,
-        "ccc_collaborative": 125,
-        "industry_certs": 193,
+        "ccc_collaborative": 126,
+        "industry_certs": 194,
         "pct": 2.7
       },
       {
@@ -230041,15 +228707,6 @@ window.CPL_STATEWIDE = {
         "ccc_collaborative": 0,
         "industry_certs": 15,
         "pct": 2.5
-      },
-      {
-        "college": "American River College",
-        "credit_recs": 280,
-        "exhibits": 266,
-        "disciplines": 6,
-        "ccc_collaborative": 2,
-        "industry_certs": 202,
-        "pct": 2.2
       },
       {
         "college": "Saddleback College",
@@ -230121,6 +228778,15 @@ window.CPL_STATEWIDE = {
         "disciplines": 6,
         "ccc_collaborative": 1,
         "industry_certs": 53,
+        "pct": 1.5
+      },
+      {
+        "college": "American River College",
+        "credit_recs": 193,
+        "exhibits": 182,
+        "disciplines": 6,
+        "ccc_collaborative": 2,
+        "industry_certs": 115,
         "pct": 1.5
       },
       {
@@ -230883,21 +229549,21 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 5388,
-        "exhibits": 1673,
+        "credit_recs": 5472,
+        "exhibits": 1757,
         "courses": 202,
         "colleges": 84,
         "ccc_collaborative": 25,
-        "pct": 42.5
+        "pct": 43.0
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 2226,
-        "exhibits": 1077,
-        "courses": 1171,
+        "credit_recs": 2185,
+        "exhibits": 995,
+        "courses": 1111,
         "colleges": 53,
         "ccc_collaborative": 499,
-        "pct": 17.6
+        "pct": 17.2
       },
       {
         "discipline": "Public and Protective Services",
@@ -230937,11 +229603,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Information Technology",
-        "credit_recs": 363,
+        "credit_recs": 364,
         "exhibits": 206,
-        "courses": 250,
+        "courses": 251,
         "colleges": 43,
-        "ccc_collaborative": 105,
+        "ccc_collaborative": 106,
         "pct": 2.9
       },
       {
@@ -230951,7 +229617,7 @@ window.CPL_STATEWIDE = {
         "courses": 117,
         "colleges": 29,
         "ccc_collaborative": 23,
-        "pct": 2.1
+        "pct": 2.0
       },
       {
         "discipline": "Fine and Applied Arts",
@@ -231095,14 +229761,14 @@ window.CPL_STATEWIDE = {
         "credit_recs": 6758,
         "exhibits": 2094,
         "colleges": 85,
-        "pct": 53.3
+        "pct": 53.2
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3614,
-        "exhibits": 1211,
+        "credit_recs": 3658,
+        "exhibits": 1213,
         "colleges": 80,
-        "pct": 28.5
+        "pct": 28.8
       },
       {
         "cpl_type": "Credit By Exam",
@@ -231139,21 +229805,21 @@ window.CPL_STATEWIDE = {
         "credit_recs": 7817,
         "exhibits": 2813,
         "colleges": 91,
-        "pct": 61.7
+        "pct": 61.5
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2610,
+        "credit_recs": 2611,
         "exhibits": 965,
         "colleges": 76,
-        "pct": 20.6
+        "pct": 20.5
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1453,
-        "exhibits": 585,
+        "credit_recs": 1496,
+        "exhibits": 587,
         "colleges": 41,
-        "pct": 11.5
+        "pct": 11.8
       },
       {
         "mode": "High school coursework (H)",
@@ -231208,15 +229874,15 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11148,
-        "exhibits": 4725,
+        "credit_recs": 11191,
+        "exhibits": 4727,
         "colleges": 98,
         "disciplines": 23,
         "pct": 88.0
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1297,
+        "credit_recs": 1298,
         "exhibits": 163,
         "colleges": 62,
         "disciplines": 9,
@@ -231634,6 +230300,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-07-08T14:44:15",
-  "total_credit_recs": 12670
+  "generated_at": "2026-07-08T19:57:04",
+  "total_credit_recs": 12714
 };

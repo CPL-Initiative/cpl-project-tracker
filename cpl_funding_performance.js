@@ -8,7 +8,7 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified (context, not a priority metric) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 41037,
+  "pe": 41039,
   "p2": 4775,
   "p3": 16310
  },
@@ -49,7 +49,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Cabrillo": {
-   "pe": 206,
+   "pe": 208,
    "p2": 17,
    "p3": 44
   },
@@ -84,7 +84,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 28
   },
   "Citrus": {
-   "pe": 199,
+   "pe": 200,
    "p2": 0,
    "p3": 0
   },
@@ -203,7 +203,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Glendale": {
-   "pe": 213,
+   "pe": 214,
    "p2": 0,
    "p3": 0
   },
@@ -238,7 +238,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "LA Pierce": {
-   "pe": 1859,
+   "pe": 1857,
    "p2": 1309,
    "p3": 1736
   },
