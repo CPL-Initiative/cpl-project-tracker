@@ -1,0 +1,1021 @@
+{
+  "_applied_at": "2026-07-08T20:11:28Z",
+  "alias_map_snapshot": "/home/runner/work/cpl-project-tracker/cpl-project-tracker/kb/cred_rename_out/2026-07-08/alias_map.json",
+  "renames_processed": 49,
+  "ok": 106,
+  "fail": 0,
+  "no_op": 0,
+  "log": [
+    {
+      "old_ut": "AB Miller High School Pathway — Business and Finance",
+      "new_ut": "Business and Finance Pathway",
+      "old_course_id": "_CREDENTIAL_REVIEW::AB Miller High School Pathway — Business and Finance",
+      "new_course_id": "_CREDENTIAL_REVIEW::Business and Finance Pathway",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "AB Miller High School Pathway — Business and Finance",
+      "new_ut": "Business and Finance Pathway",
+      "old_course_id": "_CREDENTIAL_REVIEW::AB Miller High School Pathway — Business and Finance",
+      "new_course_id": "_CREDENTIAL_REVIEW::Business and Finance Pathway",
+      "field": "training_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "AB Miller High School Pathway — Business and Finance",
+      "new_ut": "Business and Finance Pathway",
+      "course_id": "_CREDENTIAL_REVIEW::AB Miller High School Pathway — Business and Finance",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "AB Miller High School Pathway — Global Business Design",
+      "new_ut": "Global Business Design Pathway",
+      "old_course_id": "_CREDENTIAL_REVIEW::AB Miller High School Pathway — Global Business Design",
+      "new_course_id": "_CREDENTIAL_REVIEW::Global Business Design Pathway",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "AB Miller High School Pathway — Global Business Design",
+      "new_ut": "Global Business Design Pathway",
+      "old_course_id": "_CREDENTIAL_REVIEW::AB Miller High School Pathway — Global Business Design",
+      "new_course_id": "_CREDENTIAL_REVIEW::Global Business Design Pathway",
+      "field": "training_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "AB Miller High School Pathway — Global Business Design",
+      "new_ut": "Global Business Design Pathway",
+      "course_id": "_CREDENTIAL_REVIEW::AB Miller High School Pathway — Global Business Design",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Abutments (Carpentry — Norco IBEW/Carpenters Articulation)",
+      "new_ut": "Abutments",
+      "old_course_id": "_CREDENTIAL_REVIEW::Abutments (Carpentry — Norco IBEW/Carpenters Articulation)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Abutments",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Abutments (Carpentry — Norco IBEW/Carpenters Articulation)",
+      "new_ut": "Abutments",
+      "old_course_id": "_CREDENTIAL_REVIEW::Abutments (Carpentry — Norco IBEW/Carpenters Articulation)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Abutments",
+      "field": "training_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Abutments (Carpentry — Norco IBEW/Carpenters Articulation)",
+      "new_ut": "Abutments",
+      "course_id": "_CREDENTIAL_REVIEW::Abutments (Carpentry — Norco IBEW/Carpenters Articulation)",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Acoustical Soffits (Norco Apprenticeship Articulation)",
+      "new_ut": "Acoustical Soffits",
+      "old_course_id": "_CREDENTIAL_REVIEW::Acoustical Soffits (Norco Apprenticeship Articulation)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Acoustical Soffits",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Acoustical Soffits (Norco Apprenticeship Articulation)",
+      "new_ut": "Acoustical Soffits",
+      "old_course_id": "_CREDENTIAL_REVIEW::Acoustical Soffits (Norco Apprenticeship Articulation)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Acoustical Soffits",
+      "field": "training_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Acoustical Soffits (Norco Apprenticeship Articulation)",
+      "new_ut": "Acoustical Soffits",
+      "course_id": "_CREDENTIAL_REVIEW::Acoustical Soffits (Norco Apprenticeship Articulation)",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Administration of Justice 049",
+      "new_ut": "Narcotics and Vice Control",
+      "old_course_id": "_CREDENTIAL_REVIEW::Administration of Justice 049",
+      "new_course_id": "_CREDENTIAL_REVIEW::Narcotics and Vice Control",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Administration of Justice 049",
+      "new_ut": "Narcotics and Vice Control",
+      "course_id": "_CREDENTIAL_REVIEW::Administration of Justice 049",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Administration of Justice 106",
+      "new_ut": "Principles of Investigation",
+      "old_course_id": "_CREDENTIAL_REVIEW::Administration of Justice 106",
+      "new_course_id": "_CREDENTIAL_REVIEW::Principles of Investigation",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Administration of Justice 106",
+      "new_ut": "Principles of Investigation",
+      "course_id": "_CREDENTIAL_REVIEW::Administration of Justice 106",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Administration of Justice 14",
+      "new_ut": "Report Writing for Peace Officers",
+      "old_course_id": "_CREDENTIAL_REVIEW::Administration of Justice 14",
+      "new_course_id": "_CREDENTIAL_REVIEW::Report Writing for Peace Officers",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Administration of Justice 14",
+      "new_ut": "Report Writing for Peace Officers",
+      "course_id": "_CREDENTIAL_REVIEW::Administration of Justice 14",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Administration of Justice 160",
+      "new_ut": "Police Organization and Administration",
+      "old_course_id": "_CREDENTIAL_REVIEW::Administration of Justice 160",
+      "new_course_id": "_CREDENTIAL_REVIEW::Police Organization and Administration",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Administration of Justice 160",
+      "new_ut": "Police Organization and Administration",
+      "course_id": "_CREDENTIAL_REVIEW::Administration of Justice 160",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Administration of Justice 68 (CCSF)",
+      "new_ut": "Criminal Justice Report Writing",
+      "old_course_id": "_CREDENTIAL_REVIEW::Administration of Justice 68 (CCSF)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Criminal Justice Report Writing",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Administration of Justice 68 (CCSF)",
+      "new_ut": "Criminal Justice Report Writing",
+      "course_id": "_CREDENTIAL_REVIEW::Administration of Justice 68 (CCSF)",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Administration of Justice 72 (CCSF)",
+      "new_ut": "Police Work Experience",
+      "old_course_id": "_CREDENTIAL_REVIEW::Administration of Justice 72 (CCSF)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Police Work Experience",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Administration of Justice 72 (CCSF)",
+      "new_ut": "Police Work Experience",
+      "course_id": "_CREDENTIAL_REVIEW::Administration of Justice 72 (CCSF)",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Administration of Justice 85 (CCSF)",
+      "new_ut": "P.C. 832 Arrest and Control Certification",
+      "old_course_id": "_CREDENTIAL_REVIEW::Administration of Justice 85 (CCSF)",
+      "new_course_id": "_CREDENTIAL_REVIEW::P.C. 832 Arrest and Control Certification",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Administration of Justice 85 (CCSF)",
+      "new_ut": "P.C. 832 Arrest and Control Certification",
+      "course_id": "_CREDENTIAL_REVIEW::Administration of Justice 85 (CCSF)",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Administration of Justice — Community Relations",
+      "new_ut": "Community Relations",
+      "old_course_id": "_CREDENTIAL_REVIEW::Administration of Justice — Community Relations",
+      "new_course_id": "_CREDENTIAL_REVIEW::Community Relations",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Administration of Justice — Community Relations",
+      "new_ut": "Community Relations",
+      "course_id": "_CREDENTIAL_REVIEW::Administration of Justice — Community Relations",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Administration of Justice — Lemoore HS Articulation",
+      "new_ut": "Administration of Justice",
+      "old_course_id": "_CREDENTIAL_REVIEW::Administration of Justice — Lemoore HS Articulation",
+      "new_course_id": "_CREDENTIAL_REVIEW::Administration of Justice",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Administration of Justice — Lemoore HS Articulation",
+      "new_ut": "Administration of Justice",
+      "course_id": "_CREDENTIAL_REVIEW::Administration of Justice — Lemoore HS Articulation",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Adult Health Care I (Nursing)",
+      "new_ut": "Adult Health Care I",
+      "old_course_id": "_CREDENTIAL_REVIEW::Adult Health Care I (Nursing)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Adult Health Care I",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Adult Health Care I (Nursing)",
+      "new_ut": "Adult Health Care I",
+      "course_id": "_CREDENTIAL_REVIEW::Adult Health Care I (Nursing)",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Adult Health Care II (Nursing)",
+      "new_ut": "Adult Health Care II",
+      "old_course_id": "_CREDENTIAL_REVIEW::Adult Health Care II (Nursing)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Adult Health Care II",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Adult Health Care II (Nursing)",
+      "new_ut": "Adult Health Care II",
+      "course_id": "_CREDENTIAL_REVIEW::Adult Health Care II (Nursing)",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Adult Health Care III (Nursing)",
+      "new_ut": "Adult Health Care III",
+      "old_course_id": "_CREDENTIAL_REVIEW::Adult Health Care III (Nursing)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Adult Health Care III",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Adult Health Care III (Nursing)",
+      "new_ut": "Adult Health Care III",
+      "course_id": "_CREDENTIAL_REVIEW::Adult Health Care III (Nursing)",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Adult Health Care IV (Nursing)",
+      "new_ut": "Adult Health Care IV",
+      "old_course_id": "_CREDENTIAL_REVIEW::Adult Health Care IV (Nursing)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Adult Health Care IV",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Adult Health Care IV (Nursing)",
+      "new_ut": "Adult Health Care IV",
+      "course_id": "_CREDENTIAL_REVIEW::Adult Health Care IV (Nursing)",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Academic Reading & Writing I (ESL)",
+      "new_ut": "Academic Reading & Writing I (ESL) Advanced",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Academic Reading & Writing I (ESL)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Academic Reading & Writing I (ESL) Advanced",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Academic Reading & Writing I (ESL)",
+      "new_ut": "Academic Reading & Writing I (ESL) Advanced",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Academic Reading & Writing I (ESL)",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Acoustical Ceiling Installation (Norco Apprenticeship)",
+      "new_ut": "Advanced Acoustical Ceiling Installation",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Acoustical Ceiling Installation (Norco Apprenticeship)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Advanced Acoustical Ceiling Installation",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Acoustical Ceiling Installation (Norco Apprenticeship)",
+      "new_ut": "Advanced Acoustical Ceiling Installation",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Acoustical Ceiling Installation (Norco Apprenticeship)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Advanced Acoustical Ceiling Installation",
+      "field": "training_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Acoustical Ceiling Installation (Norco Apprenticeship)",
+      "new_ut": "Advanced Acoustical Ceiling Installation",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Acoustical Ceiling Installation (Norco Apprenticeship)",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Acoustical Ceiling Layout (Norco Apprenticeship)",
+      "new_ut": "Advanced Acoustical Ceiling Layout",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Acoustical Ceiling Layout (Norco Apprenticeship)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Advanced Acoustical Ceiling Layout",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Acoustical Ceiling Layout (Norco Apprenticeship)",
+      "new_ut": "Advanced Acoustical Ceiling Layout",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Acoustical Ceiling Layout (Norco Apprenticeship)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Advanced Acoustical Ceiling Layout",
+      "field": "training_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Acoustical Ceiling Layout (Norco Apprenticeship)",
+      "new_ut": "Advanced Acoustical Ceiling Layout",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Acoustical Ceiling Layout (Norco Apprenticeship)",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Automatic Finishing Tools (Norco Apprenticeship)",
+      "new_ut": "Advanced Automatic Finishing Tools",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Automatic Finishing Tools (Norco Apprenticeship)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Advanced Automatic Finishing Tools",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Automatic Finishing Tools (Norco Apprenticeship)",
+      "new_ut": "Advanced Automatic Finishing Tools",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Automatic Finishing Tools (Norco Apprenticeship)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Advanced Automatic Finishing Tools",
+      "field": "training_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Automatic Finishing Tools (Norco Apprenticeship)",
+      "new_ut": "Advanced Automatic Finishing Tools",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Automatic Finishing Tools (Norco Apprenticeship)",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Automotive Electrical Systems",
+      "new_ut": "Automotive Electrical Systems Advanced",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Automotive Electrical Systems",
+      "new_course_id": "_CREDENTIAL_REVIEW::Automotive Electrical Systems Advanced",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Automotive Electrical Systems",
+      "new_ut": "Automotive Electrical Systems Advanced",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Automotive Electrical Systems",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced CAD, Rendering & Animation",
+      "new_ut": "CAD, Rendering & Animation Advanced",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced CAD, Rendering & Animation",
+      "new_course_id": "_CREDENTIAL_REVIEW::CAD, Rendering & Animation Advanced",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced CAD, Rendering & Animation",
+      "new_ut": "CAD, Rendering & Animation Advanced",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced CAD, Rendering & Animation",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Commercial Framing (Norco Apprenticeship)",
+      "new_ut": "Advanced Commercial Framing",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Commercial Framing (Norco Apprenticeship)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Advanced Commercial Framing",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Commercial Framing (Norco Apprenticeship)",
+      "new_ut": "Advanced Commercial Framing",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Commercial Framing (Norco Apprenticeship)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Advanced Commercial Framing",
+      "field": "training_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Commercial Framing (Norco Apprenticeship)",
+      "new_ut": "Advanced Commercial Framing",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Commercial Framing (Norco Apprenticeship)",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Composition and Introduction to Literature",
+      "new_ut": "Introduction to Literature and Composition",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Composition and Introduction to Literature",
+      "new_course_id": "_CREDENTIAL_REVIEW::Introduction to Literature and Composition",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Composition and Introduction to Literature",
+      "new_ut": "Introduction to Literature and Composition",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Composition and Introduction to Literature",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Construction Inspection: International Building Code (IBC)",
+      "new_ut": "Construction Inspection: International Building Code (IBC) Advanced",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Construction Inspection: International Building Code (IBC)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Construction Inspection: International Building Code (IBC) Advanced",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Construction Inspection: International Building Code (IBC)",
+      "new_ut": "Construction Inspection: International Building Code (IBC) Advanced",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Construction Inspection: International Building Code (IBC)",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
+      "new_ut": "Construction Inspection: Uniform Plumbing Code (UPC) Advanced",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Construction Inspection: Uniform Plumbing Code (UPC) Advanced",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
+      "new_ut": "Construction Inspection: Uniform Plumbing Code (UPC) Advanced",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Desserts and Pastry",
+      "new_ut": "Advanced Desserts and Pastry/Chocolate/Sugar",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Desserts and Pastry",
+      "new_course_id": "_CREDENTIAL_REVIEW::Advanced Desserts and Pastry/Chocolate/Sugar",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Desserts and Pastry",
+      "new_ut": "Advanced Desserts and Pastry/Chocolate/Sugar",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Desserts and Pastry",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Digital Photography",
+      "new_ut": "Digital Photography Advanced",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Digital Photography",
+      "new_course_id": "_CREDENTIAL_REVIEW::Digital Photography Advanced",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Digital Photography",
+      "new_ut": "Digital Photography Advanced",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Digital Photography",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Engineering & Design (High School Articulation)",
+      "new_ut": "Engineering & Design Advanced",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Engineering & Design (High School Articulation)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Engineering & Design Advanced",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Engineering & Design (High School Articulation)",
+      "new_ut": "Engineering & Design Advanced",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Engineering & Design (High School Articulation)",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Firearms and Range Application",
+      "new_ut": "Firearms and Range Application Advanced",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Firearms and Range Application",
+      "new_course_id": "_CREDENTIAL_REVIEW::Firearms and Range Application Advanced",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Firearms and Range Application",
+      "new_ut": "Firearms and Range Application Advanced",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Firearms and Range Application",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Floral Design",
+      "new_ut": "Floral Design Advanced",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Floral Design",
+      "new_course_id": "_CREDENTIAL_REVIEW::Floral Design Advanced",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Floral Design",
+      "new_ut": "Floral Design Advanced",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Floral Design",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Gas Tungsten Arc Welding (GTAW)",
+      "new_ut": "Gas Tungsten Arc Welding (GTAW) Advanced",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Gas Tungsten Arc Welding (GTAW)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Gas Tungsten Arc Welding (GTAW) Advanced",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Gas Tungsten Arc Welding (GTAW)",
+      "new_ut": "Gas Tungsten Arc Welding (GTAW) Advanced",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Gas Tungsten Arc Welding (GTAW)",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Hand Finishing",
+      "new_ut": "Hand Finishing Advanced",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Hand Finishing",
+      "new_course_id": "_CREDENTIAL_REVIEW::Hand Finishing Advanced",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Hand Finishing",
+      "new_ut": "Hand Finishing Advanced",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Hand Finishing",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Irrigation and Drainage",
+      "new_ut": "Irrigation and Drainage Advanced",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Irrigation and Drainage",
+      "new_course_id": "_CREDENTIAL_REVIEW::Irrigation and Drainage Advanced",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Irrigation and Drainage",
+      "new_ut": "Irrigation and Drainage Advanced",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Irrigation and Drainage",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Machine Tool Technology Lab",
+      "new_ut": "Mach Tool Technology Lab Advanced",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Machine Tool Technology Lab",
+      "new_course_id": "_CREDENTIAL_REVIEW::Mach Tool Technology Lab Advanced",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Machine Tool Technology Lab",
+      "new_ut": "Mach Tool Technology Lab Advanced",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Machine Tool Technology Lab",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Medical Surgical Nursing",
+      "new_ut": "Medical Surgical Nursing Advanced",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Medical Surgical Nursing",
+      "new_course_id": "_CREDENTIAL_REVIEW::Medical Surgical Nursing Advanced",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Medical Surgical Nursing",
+      "new_ut": "Medical Surgical Nursing Advanced",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Medical Surgical Nursing",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Medical Surgical Nursing Lab",
+      "new_ut": "Medical Surgical Nursing Lab Advanced",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Medical Surgical Nursing Lab",
+      "new_course_id": "_CREDENTIAL_REVIEW::Medical Surgical Nursing Lab Advanced",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Medical Surgical Nursing Lab",
+      "new_ut": "Medical Surgical Nursing Lab Advanced",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Medical Surgical Nursing Lab",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Metal Framing",
+      "new_ut": "Metal Framing Advanced",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Metal Framing",
+      "new_course_id": "_CREDENTIAL_REVIEW::Metal Framing Advanced",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Metal Framing",
+      "new_ut": "Metal Framing Advanced",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Metal Framing",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Print Reading — Digital Application",
+      "new_ut": "Print Reading — Digital Application Advanced",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Print Reading — Digital Application",
+      "new_course_id": "_CREDENTIAL_REVIEW::Print Reading — Digital Application Advanced",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Print Reading — Digital Application",
+      "new_ut": "Print Reading — Digital Application Advanced",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Print Reading — Digital Application",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Print Reading — Digital Planning",
+      "new_ut": "Print Reading — Digital Planning Advanced",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Print Reading — Digital Planning",
+      "new_course_id": "_CREDENTIAL_REVIEW::Print Reading — Digital Planning Advanced",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Print Reading — Digital Planning",
+      "new_ut": "Print Reading — Digital Planning Advanced",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Print Reading — Digital Planning",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Roof Framing",
+      "new_ut": "Roof Framing Advanced",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Roof Framing",
+      "new_course_id": "_CREDENTIAL_REVIEW::Roof Framing Advanced",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Roof Framing",
+      "new_ut": "Roof Framing Advanced",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Roof Framing",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Stairs",
+      "new_ut": "Stairs Advanced",
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Stairs",
+      "new_course_id": "_CREDENTIAL_REVIEW::Stairs Advanced",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Advanced Stairs",
+      "new_ut": "Stairs Advanced",
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Stairs",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Agricultural Equipment Diagnosis and Repair",
+      "new_ut": "Equipment Diagnosis & Repair",
+      "old_course_id": "_CREDENTIAL_REVIEW::Agricultural Equipment Diagnosis and Repair",
+      "new_course_id": "_CREDENTIAL_REVIEW::Equipment Diagnosis & Repair",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Agricultural Equipment Diagnosis and Repair",
+      "new_ut": "Equipment Diagnosis & Repair",
+      "course_id": "_CREDENTIAL_REVIEW::Agricultural Equipment Diagnosis and Repair",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Agricultural Equipment Service and Safety",
+      "new_ut": "Equipment Service and Safety",
+      "old_course_id": "_CREDENTIAL_REVIEW::Agricultural Equipment Service and Safety",
+      "new_course_id": "_CREDENTIAL_REVIEW::Equipment Service and Safety",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Agricultural Equipment Service and Safety",
+      "new_ut": "Equipment Service and Safety",
+      "course_id": "_CREDENTIAL_REVIEW::Agricultural Equipment Service and Safety",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Agricultural Machinery Management",
+      "new_ut": "Machinery Management",
+      "old_course_id": "_CREDENTIAL_REVIEW::Agricultural Machinery Management",
+      "new_course_id": "_CREDENTIAL_REVIEW::Machinery Management",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Agricultural Machinery Management",
+      "new_ut": "Machinery Management",
+      "course_id": "_CREDENTIAL_REVIEW::Agricultural Machinery Management",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Agricultural Mechanical Systems Design and Evaluation 1",
+      "new_ut": "Mechanical Systems Design & Evaluation 1",
+      "old_course_id": "_CREDENTIAL_REVIEW::Agricultural Mechanical Systems Design and Evaluation 1",
+      "new_course_id": "_CREDENTIAL_REVIEW::Mechanical Systems Design & Evaluation 1",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Agricultural Mechanical Systems Design and Evaluation 1",
+      "new_ut": "Mechanical Systems Design & Evaluation 1",
+      "course_id": "_CREDENTIAL_REVIEW::Agricultural Mechanical Systems Design and Evaluation 1",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Agricultural Mechanical Systems Design and Evaluation 2",
+      "new_ut": "Mechanical Systems Design & Evaluation 2",
+      "old_course_id": "_CREDENTIAL_REVIEW::Agricultural Mechanical Systems Design and Evaluation 2",
+      "new_course_id": "_CREDENTIAL_REVIEW::Mechanical Systems Design & Evaluation 2",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Agricultural Mechanical Systems Design and Evaluation 2",
+      "new_ut": "Mechanical Systems Design & Evaluation 2",
+      "course_id": "_CREDENTIAL_REVIEW::Agricultural Mechanical Systems Design and Evaluation 2",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Agriculture Computer Applications",
+      "new_ut": "Agricultural Computer Applications",
+      "old_course_id": "_CREDENTIAL_REVIEW::Agriculture Computer Applications",
+      "new_course_id": "_CREDENTIAL_REVIEW::Agricultural Computer Applications",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Agriculture Computer Applications",
+      "new_ut": "Agricultural Computer Applications",
+      "course_id": "_CREDENTIAL_REVIEW::Agriculture Computer Applications",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    }
+  ]
+}

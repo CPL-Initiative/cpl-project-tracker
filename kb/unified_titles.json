@@ -14,7 +14,7 @@
     "_merge_note": "merged from credential 'Fire Service In-Service Training: Command and Control' (curator)"
   },
   " Advanced Metal Framing": {
-    "unified_title": "Advanced Metal Framing",
+    "unified_title": "Metal Framing Advanced",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -171,7 +171,7 @@
     "_notes": "Local college course; stripped prefix."
   },
   "AB MILLER HIGH SCHOOL- Business and Finance": {
-    "unified_title": "AB Miller High School Pathway — Business and Finance",
+    "unified_title": "Business and Finance Pathway",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -184,7 +184,7 @@
     "_notes": "High school dual-enrollment/pathway exhibit."
   },
   "AB MILLER HIGH SCHOOL- Global Business Design": {
-    "unified_title": "AB Miller High School Pathway — Global Business Design",
+    "unified_title": "Global Business Design Pathway",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -418,7 +418,7 @@
     "_notes": null
   },
   "ADJU 216 Advanced Firearms & Range Application - Industry Certification": {
-    "unified_title": "Advanced Firearms and Range Application",
+    "unified_title": "Firearms and Range Application Advanced",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -639,7 +639,7 @@
     "_notes": "Course number only; topic unknown."
   },
   "ADJUS 106": {
-    "unified_title": "Administration of Justice 106",
+    "unified_title": "Principles of Investigation",
     "confidence_title": 0.45,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -652,7 +652,7 @@
     "_notes": "Course number only."
   },
   "ADM JUS 049": {
-    "unified_title": "Administration of Justice 049",
+    "unified_title": "Narcotics and Vice Control",
     "confidence_title": 0.45,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -691,7 +691,7 @@
     "_notes": "Course number only."
   },
   "ADM JUS 14 CBE": {
-    "unified_title": "Administration of Justice 14",
+    "unified_title": "Report Writing for Peace Officers",
     "confidence_title": 0.45,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -704,7 +704,7 @@
     "_notes": "CBE mechanism stripped; course number only."
   },
   "ADM JUS 160 CBE": {
-    "unified_title": "Administration of Justice 160",
+    "unified_title": "Police Organization and Administration",
     "confidence_title": 0.45,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -964,7 +964,7 @@
     "_notes": null
   },
   "AGEC 225\tAgriculture Computer Applications - Credit by Exam": {
-    "unified_title": "Agriculture Computer Applications",
+    "unified_title": "Agricultural Computer Applications",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -1107,7 +1107,7 @@
     "_notes": "Military credit pathway via JST/ACE evaluation."
   },
   "AGM 212\tMechanical Systems Design & Evaluation 1 - Credit by Exam": {
-    "unified_title": "Agricultural Mechanical Systems Design and Evaluation 1",
+    "unified_title": "Mechanical Systems Design & Evaluation 1",
     "confidence_title": 0.72,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -1120,7 +1120,7 @@
     "_notes": null
   },
   "AGM 213\tMechanical Systems Design & Evaluation 2 - Credit by Exam": {
-    "unified_title": "Agricultural Mechanical Systems Design and Evaluation 2",
+    "unified_title": "Mechanical Systems Design & Evaluation 2",
     "confidence_title": 0.72,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -1133,7 +1133,7 @@
     "_notes": null
   },
   "AGM 214\tEquipment Service and Safety - Credit by Exam": {
-    "unified_title": "Agricultural Equipment Service and Safety",
+    "unified_title": "Equipment Service and Safety",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -1146,7 +1146,7 @@
     "_notes": null
   },
   "AGM 214\tEquipment Service and Safety - Industry Certification": {
-    "unified_title": "Agricultural Equipment Service and Safety",
+    "unified_title": "Equipment Service and Safety",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -1159,7 +1159,7 @@
     "_notes": null
   },
   "AGM 215\tMachinery Management - Credit by Exam": {
-    "unified_title": "Agricultural Machinery Management",
+    "unified_title": "Machinery Management",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -1198,7 +1198,7 @@
     "_notes": "Likely OSHA-aligned safety cert."
   },
   "AGM 221\tEquipment Diagnosis & Repair - Credit by Exam": {
-    "unified_title": "Agricultural Equipment Diagnosis and Repair",
+    "unified_title": "Equipment Diagnosis & Repair",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -1237,7 +1237,7 @@
     "_notes": null
   },
   "AGM 236\tAdvanced Irrigation and Drainage - Credit by Exam": {
-    "unified_title": "Advanced Irrigation and Drainage",
+    "unified_title": "Irrigation and Drainage Advanced",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -1796,7 +1796,7 @@
     "_notes": "Local college course credential."
   },
   "AOJ-001 Articulation with Lemoore HS (FA25-SU27)": {
-    "unified_title": "Administration of Justice — Lemoore HS Articulation",
+    "unified_title": "Administration of Justice",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9278,7 +9278,7 @@
     "_merge_note": "merged from credential 'ASE A4 — Suspension & Steering' (curator)"
   },
   "AUTO 065 - Advanced Automotive Electrical Systems": {
-    "unified_title": "Advanced Automotive Electrical Systems",
+    "unified_title": "Automotive Electrical Systems Advanced",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9493,7 +9493,7 @@
     "_notes": null
   },
   "Abutments": {
-    "unified_title": "Abutments (Carpentry — Norco IBEW/Carpenters Articulation)",
+    "unified_title": "Abutments",
     "confidence_title": 0.4,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9506,7 +9506,7 @@
     "_notes": "One-word topic name; Norco apprenticeship articulation context — needs review."
   },
   "Acoustical Soffits": {
-    "unified_title": "Acoustical Soffits (Norco Apprenticeship Articulation)",
+    "unified_title": "Acoustical Soffits",
     "confidence_title": 0.4,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9611,7 +9611,7 @@
     "_notes": "AJ 6 commonly Criminal Investigation."
   },
   "Administration of Justice 68-Industry Certification": {
-    "unified_title": "Administration of Justice 68 (CCSF)",
+    "unified_title": "Criminal Justice Report Writing",
     "confidence_title": 0.45,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9624,7 +9624,7 @@
     "_notes": "Local CCSF course; subject unknown from title."
   },
   "Administration of Justice 72-Portfolio Review": {
-    "unified_title": "Administration of Justice 72 (CCSF)",
+    "unified_title": "Police Work Experience",
     "confidence_title": 0.45,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9637,7 +9637,7 @@
     "_notes": "Local CCSF course; subject unknown."
   },
   "Administration of Justice 85-Industry Certification": {
-    "unified_title": "Administration of Justice 85 (CCSF)",
+    "unified_title": "P.C. 832 Arrest and Control Certification",
     "confidence_title": 0.45,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9715,7 +9715,7 @@
     "_notes": "Likely adult school dental assisting course; provider unspecified."
   },
   "Adv Acad. Reading & Writing I (ESL 108 C)": {
-    "unified_title": "Advanced Academic Reading & Writing I (ESL)",
+    "unified_title": "Academic Reading & Writing I (ESL) Advanced",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9728,7 +9728,7 @@
     "_notes": "Local ESL course."
   },
   "Advanced Acoustical Ceiling Installation": {
-    "unified_title": "Advanced Acoustical Ceiling Installation (Norco Apprenticeship)",
+    "unified_title": "Advanced Acoustical Ceiling Installation",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9741,7 +9741,7 @@
     "_notes": "Apprenticeship module/topic."
   },
   "Advanced Acoustical Ceiling Layout": {
-    "unified_title": "Advanced Acoustical Ceiling Layout (Norco Apprenticeship)",
+    "unified_title": "Advanced Acoustical Ceiling Layout",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9769,7 +9769,7 @@
     "_notes": "Could be vendor certification or local course; issuer assumed Autodesk if cert."
   },
   "Advanced Automatic Finishing Tools": {
-    "unified_title": "Advanced Automatic Finishing Tools (Norco Apprenticeship)",
+    "unified_title": "Advanced Automatic Finishing Tools",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9782,7 +9782,7 @@
     "_notes": "Apprenticeship topic module."
   },
   "Advanced Automotive Electrical Systems": {
-    "unified_title": "Advanced Automotive Electrical Systems",
+    "unified_title": "Automotive Electrical Systems Advanced",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9795,7 +9795,7 @@
     "_notes": "Local automotive course (Chaffey CBE)."
   },
   "Advanced Commercial Framing": {
-    "unified_title": "Advanced Commercial Framing (Norco Apprenticeship)",
+    "unified_title": "Advanced Commercial Framing",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9808,7 +9808,7 @@
     "_notes": "Apprenticeship topic."
   },
   "Advanced Computer-Aided Design and Drafting, Rendering & Animation CADD 003 Cx": {
-    "unified_title": "Advanced CAD, Rendering & Animation",
+    "unified_title": "CAD, Rendering & Animation Advanced",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9834,7 +9834,7 @@
     "_notes": "NVC = Napa Valley Cooking School; local culinary program graduation."
   },
   "Advanced Digital Photography": {
-    "unified_title": "Advanced Digital Photography",
+    "unified_title": "Digital Photography Advanced",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9860,7 +9860,7 @@
     "_notes": null
   },
   "Advanced Engineering & Design (Formerly 3D Computer Aided Design) - Valley High School": {
-    "unified_title": "Advanced Engineering & Design (High School Articulation)",
+    "unified_title": "Engineering & Design Advanced",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9873,7 +9873,7 @@
     "_notes": "High school articulated course; no external issuer."
   },
   "Advanced Engineering & Design - El Modena High School": {
-    "unified_title": "Advanced Engineering & Design (High School Articulation)",
+    "unified_title": "Engineering & Design Advanced",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9886,7 +9886,7 @@
     "_notes": "High school articulated course."
   },
   "Advanced Gas Tungsten Arc Welding (GTAW) - Credit by Exam": {
-    "unified_title": "Advanced Gas Tungsten Arc Welding (GTAW)",
+    "unified_title": "Gas Tungsten Arc Welding (GTAW) Advanced",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9899,7 +9899,7 @@
     "_notes": "Local college course; CBE phrasing stripped."
   },
   "Advanced Hand Finishing": {
-    "unified_title": "Advanced Hand Finishing",
+    "unified_title": "Hand Finishing Advanced",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9912,7 +9912,7 @@
     "_notes": "Trades-specific course (likely drywall/carpentry); local college exhibit."
   },
   "Advanced Medical Surgical Nursing": {
-    "unified_title": "Advanced Medical Surgical Nursing",
+    "unified_title": "Medical Surgical Nursing Advanced",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9925,7 +9925,7 @@
     "_notes": "Local college nursing course."
   },
   "Advanced Medical Surgical Nursing Lab": {
-    "unified_title": "Advanced Medical Surgical Nursing Lab",
+    "unified_title": "Medical Surgical Nursing Lab Advanced",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9977,7 +9977,7 @@
     "_notes": "Version suffix stripped per Rule 3."
   },
   "Advanced Print Reading - Digital Planning": {
-    "unified_title": "Advanced Print Reading — Digital Planning",
+    "unified_title": "Print Reading — Digital Planning Advanced",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9990,7 +9990,7 @@
     "_notes": "Local trades course; kept distinct from Digital Application variant as scope appears different."
   },
   "Advanced Print Reading – Digital Application": {
-    "unified_title": "Advanced Print Reading — Digital Application",
+    "unified_title": "Print Reading — Digital Application Advanced",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10003,7 +10003,7 @@
     "_notes": "Local trades course."
   },
   "Advanced Roof Framing": {
-    "unified_title": "Advanced Roof Framing",
+    "unified_title": "Roof Framing Advanced",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10016,7 +10016,7 @@
     "_notes": "Local carpentry course."
   },
   "Advanced Stairs": {
-    "unified_title": "Advanced Stairs",
+    "unified_title": "Stairs Advanced",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -16582,7 +16582,7 @@
     "_notes": "Course code only; college-specific CBE bucket."
   },
   "CULART 043 - Advanced Desserts and Pastry/Chocolate/Sugar": {
-    "unified_title": "Advanced Desserts and Pastry",
+    "unified_title": "Advanced Desserts and Pastry/Chocolate/Sugar",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19766,7 +19766,7 @@
     "_notes": "Local course CBE."
   },
   "Community Relations ADJ 5 Cx": {
-    "unified_title": "Administration of Justice — Community Relations",
+    "unified_title": "Community Relations",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -23994,7 +23994,7 @@
     "_notes": "Mechanism variant."
   },
   "EHS 281\tAdvanced Floral Design - Credit by Exam": {
-    "unified_title": "Advanced Floral Design",
+    "unified_title": "Floral Design Advanced",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -24007,7 +24007,7 @@
     "_notes": "Local EHS 281 course."
   },
   "EHS 281\tAdvanced Floral Design - Industry Certification": {
-    "unified_title": "Advanced Floral Design",
+    "unified_title": "Floral Design Advanced",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -24020,7 +24020,7 @@
     "_notes": "Industry cert variant; possibly AIFD-aligned."
   },
   "EHS 281\tAdvanced Floral Design - Portfolio": {
-    "unified_title": "Advanced Floral Design",
+    "unified_title": "Floral Design Advanced",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -24605,7 +24605,7 @@
     "_notes": "Local college course; unusual CPL Type pairing noted."
   },
   "ENGL 102\tAdvanced Composition & Introduction to Literature - Credit by Exam": {
-    "unified_title": "Advanced Composition and Introduction to Literature",
+    "unified_title": "Introduction to Literature and Composition",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -31600,7 +31600,7 @@
     "_notes": "Local college course code stripped; appears to be SBVC course content, possibly aligned with ICC inspector exams."
   },
   "INSPEC 013 - Advanced Construction Inspection: International Building Code (IBC)": {
-    "unified_title": "Advanced Construction Inspection: International Building Code (IBC)",
+    "unified_title": "Construction Inspection: International Building Code (IBC) Advanced",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -31613,7 +31613,7 @@
     "_notes": "Local course; likely aligns with ICC B1/B2 exams."
   },
   "INSPEC 013 - Advanced Construction Inspection: International Building Code (IBC) - PORTFOLIO": {
-    "unified_title": "Advanced Construction Inspection: International Building Code (IBC)",
+    "unified_title": "Construction Inspection: International Building Code (IBC) Advanced",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -31626,7 +31626,7 @@
     "_notes": "Mechanism suffix stripped per Rule 2."
   },
   "INSPEC 015 - Advanced Construction Inspection: Uniform Plumbing Code (UPC)\t": {
-    "unified_title": "Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
+    "unified_title": "Construction Inspection: Uniform Plumbing Code (UPC) Advanced",
     "confidence_title": 0.72,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -34452,7 +34452,7 @@
     "_notes": null
   },
   "MACH 395B\tAdvanced Mach Tool Technology Lab - Portfolio Review": {
-    "unified_title": "Advanced Machine Tool Technology Lab",
+    "unified_title": "Mach Tool Technology Lab Advanced",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36428,7 +36428,7 @@
     "_notes": null
   },
   "NURSING 400 - Adult Health Care I": {
-    "unified_title": "Adult Health Care I (Nursing)",
+    "unified_title": "Adult Health Care I",
     "confidence_title": 0.88,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36454,7 +36454,7 @@
     "_notes": null
   },
   "NURSING 403 - Adult Health Care II": {
-    "unified_title": "Adult Health Care II (Nursing)",
+    "unified_title": "Adult Health Care II",
     "confidence_title": 0.88,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36493,7 +36493,7 @@
     "_notes": null
   },
   "NURSING 406 -  Adult Health Care III": {
-    "unified_title": "Adult Health Care III (Nursing)",
+    "unified_title": "Adult Health Care III",
     "confidence_title": 0.88,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36532,7 +36532,7 @@
     "_notes": null
   },
   "NURSING 414 - Adult Health Care IV": {
-    "unified_title": "Adult Health Care IV (Nursing)",
+    "unified_title": "Adult Health Care IV",
     "confidence_title": 0.88,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -43085,7 +43085,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Advanced Metal Framing": {
-    "unified_title": "Advanced Metal Framing",
+    "unified_title": "Metal Framing Advanced",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
@@ -43478,7 +43478,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "INSPEC 015 - Advanced Construction Inspection: Uniform Plumbing Code (UPC)": {
-    "unified_title": "Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
+    "unified_title": "Construction Inspection: Uniform Plumbing Code (UPC) Advanced",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
