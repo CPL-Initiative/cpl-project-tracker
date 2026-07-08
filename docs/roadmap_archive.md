@@ -2323,3 +2323,19 @@ in `_apply_credential_review.py` promotes issuer overrides into `credentials.jso
 chip, "＋ set" on null-issuer cells, **`appendRowSafe`** row-error isolation (+3 test files, suite
 140 green). Full story: `docs/exhibit_canonicalization_lessons.md` (2026-07-07 "continued 7"); next:
 `docs/session_105_handoff.md`.
+
+
+### Session 105 — SkyClose: the truncated-read fix + the missing-issuer lane + the seal-blue pass (2026-07-08)
+
+Sam's "fire certs didn't save" + "113 still showing" were ONE bug: 1,200 overlay rows vs
+PostgREST's 1,000-row unordered cap — saves were fine, the READ truncated a different tail
+per load. `fetchAllRows()` Range-pagination now backs both CER overlay fetchers
+(`docs/kb-notes/methodology-paginate-postgrest-reads.md`). Save-All broadened to every
+FILLED shown row (hand-typed included) + loud per-row failures + `wlDraft` survival + live
+issuer datalists. `_CREDENTIAL_REVIEW::` held ZERO rows — Sam's 10-Key pick had never
+landed; "＋ set" now opens the issuer input DIRECTLY and the pick was seeded
+(`session105-skyclose@bot`, Mode A2 folds it). New **missing-issuer triage lane** (1,130
+null-issuer credentials; `kb/_preseed_null_issuers.py` staged 978 → `kb/issuer_preseed.json`,
+verifier 19 checks; empty-Save = explicit no-formal-issuer). COBI-wide: black ink headers →
+`--seal-blue`; Curate-panel black-box bleed fixed; CER title/chip row-height pass. Suite 142
+green (+2 files). Full story: lessons "continued 8"; next: `docs/session_106_handoff.md`.
