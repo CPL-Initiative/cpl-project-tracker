@@ -79,10 +79,11 @@ jobs:
                     f"v3={summary.get('v3_target_collision_free_pass')} "
                     f"collisions={summary.get('collisions')}")
               sys.exit(1)
-          n = len(doc.get('renames') or {})
+          n = len(doc.get('renames') or {}) + len(doc.get('merges') or {})
           if n == 0:
-              print("::warning::Dry-run produced 0 renames — apply is a no-op")
-          print(f"apply gate OK — {n} renames to apply")
+              print("::warning::Dry-run produced 0 renames/merges — apply is a no-op")
+          print(f"apply gate OK — {len(doc.get('renames') or {})} renames "
+                f"+ {len(doc.get('merges') or {})} confirmed merges to apply")
           EOF
 
       # ── Step 3: apply JSON file mutations ─────────────────────────

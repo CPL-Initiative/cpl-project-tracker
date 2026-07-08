@@ -15,6 +15,15 @@ public.kb_curation:
        on '_CREDENTIAL_REVIEW::<OLD>' to course_id = '_CREDENTIAL_REVIEW::<NEW>'
        so curator intent on OTHER fields carries over to the new identity.
 
+  For each (old_unified_title ⇒ target) confirmed MERGE (PR-5b/2, Session 107):
+    1. DELETE the fulfilled decision rows on <OLD>: unified_title_override
+       AND unified_title_merge_confirm.
+    2. For every OTHER field on <OLD>: PATCH to '_CREDENTIAL_REVIEW::<TARGET>'
+       — UNLESS the target already carries a row for the same field, in which
+       case DELETE the old row instead (the target's own curator data wins;
+       the composite PK (course_id, field) would reject the PATCH anyway, and
+       the frozen alias_map snapshot preserves the superseded value).
+
 Why DELETE + PATCH (not single PATCH-all):
   * The unified_title_override row's PURPOSE is fulfilled by the apply —
     keeping it under the new key would re-fire on the next dry-run as a
@@ -192,11 +201,12 @@ def main():
     with open(alias_path, encoding="utf-8") as f:
         doc = json.load(f)
     renames = doc.get("renames") or {}
-    if not renames:
-        sys.exit(f"No renames in {alias_path}.")
+    merges = doc.get("merges") or {}
+    if not renames and not merges:
+        sys.exit(f"No renames or merges in {alias_path}.")
 
     print(f"[cred_rename_apply_supabase] {datetime.now(timezone.utc).isoformat()}")
-    print(f"  snapshot: {date_stamp} ({len(renames)} renames)")
+    print(f"  snapshot: {date_stamp} ({len(renames)} renames, {len(merges)} merges)")
 
     existing = fetch_credential_review_rows()
     print(f"  existing _CREDENTIAL_REVIEW::* course_ids in Supabase: {len(existing)}")
@@ -205,28 +215,39 @@ def main():
     ok = 0
     fail = 0
     no_op = 0
-    for old_ut, new_ut in renames.items():
+    # (kind, old, new): merges additionally drop the fulfilled merge-confirm
+    # row and never PATCH into a field the target already carries.
+    work = [("rename", o, n) for o, n in renames.items()] \
+         + [("merge", o, t) for o, t in merges.items()]
+    for kind, old_ut, new_ut in work:
         old_cid = f"{KEY_PREFIX}{old_ut}"
         new_cid = f"{KEY_PREFIX}{new_ut}"
         rows_for_old = existing.get(old_cid, [])
         if not rows_for_old:
             no_op += 1
-            log.append({"old_ut": old_ut, "new_ut": new_ut, "op": "skip",
-                        "reason": "no_rows_in_supabase"})
+            log.append({"old_ut": old_ut, "new_ut": new_ut, "kind": kind,
+                        "op": "skip", "reason": "no_rows_in_supabase"})
             continue
+        target_fields = {r.get("field") for r in existing.get(new_cid, [])}
         for row in rows_for_old:
             field = row.get("field") or ""
-            if field == "unified_title_override":
-                # Override fulfilled — drop it. Per the ADR, the alias_map
+            if field == "unified_title_override" or (
+                    kind == "merge" and field == "unified_title_merge_confirm"):
+                # Decision fulfilled — drop it. Per the ADR, the alias_map
                 # snapshot at kb/cred_rename_out/<date>/ is the canonical
-                # audit trail of "this rename happened on this date."
+                # audit trail of "this rename/merge happened on this date."
                 res = delete_row(old_cid, field)
+            elif kind == "merge" and field in target_fields:
+                # The merge target already carries this field — its curator
+                # data wins; a PATCH would violate the (course_id, field) PK.
+                res = delete_row(old_cid, field)
+                res["superseded_by_target"] = True
             else:
                 # Migrate non-rename override to the new key (curator intent
                 # on issuer/trainer/quality_flag/reviewed_marker travels with
                 # the credential's identity).
                 res = patch_row(old_cid, new_cid, field)
-            log.append({"old_ut": old_ut, "new_ut": new_ut, **res})
+            log.append({"old_ut": old_ut, "new_ut": new_ut, "kind": kind, **res})
             if res.get("status") == "ok":
                 ok += 1
             else:
@@ -239,6 +260,7 @@ def main():
         "_applied_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "alias_map_snapshot": alias_path,
         "renames_processed": len(renames),
+        "merges_processed": len(merges),
         "ok": ok,
         "fail": fail,
         "no_op": no_op,
