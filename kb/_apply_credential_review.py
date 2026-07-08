@@ -168,6 +168,40 @@ def promote_issuers(overrides):
     return fills, adds, missing
 
 
+def promote_trainers(overrides):
+    """Mode A3 (Session 106 — Sam's Rule 5f: HS/ROP/adult-school Cx exhibits
+    carry the school as BOTH issuer and trainer): fold training_agency_override
+    values into kb/credentials.json. FILL-when-null-and-unreviewed only —
+    mirrors Mode A2's first-record fill; an existing trainer is never
+    overwritten (the override still shows on the dashboard via the overlay)."""
+    try:
+        cr = json.load(open(CR_PATH, encoding="utf-8"))
+    except (OSError, ValueError):
+        return [], []
+    fills, missing = [], []
+    for ut, entry in overrides.items():
+        tr = (entry.get("training_agency_override") or "").strip()
+        if not tr:
+            continue
+        recs = cr.get(ut)
+        if not recs:
+            missing.append(ut)
+            continue
+        rec0 = recs[0]
+        if not (rec0.get("training_agency") or "").strip():
+            rec0["training_agency"] = tr
+            rec0["confidence_trainer"] = 1.0
+            if not rec0.get("reviewed_by"):
+                rec0["reviewed_by"] = entry.get("reviewed_by")
+                rec0["reviewed_at"] = entry.get("reviewed_at")
+            fills.append({"title": ut, "trainer": tr})
+    if fills:
+        with open(CR_PATH, "w", encoding="utf-8") as f:
+            json.dump(cr, f, indent=2, ensure_ascii=False)
+            f.write("\n")
+    return fills, missing
+
+
 def main():
     if not KEY:
         sys.exit("Set SUPABASE_SERVICE_KEY (service_role key) in the environment.")
@@ -227,8 +261,14 @@ def main():
               f"{len(adds)} appended {[(a['title'], a['issuer']) for a in adds]}, "
               f"{len(missing_cred)} title(s) with no credential record skipped "
               f"{missing_cred[:5]}")
+    t_fills, t_missing = promote_trainers(overrides)
+    if t_fills or t_missing:
+        print(f"Mode A3 trainer promotion → credentials.json: "
+              f"{len(t_fills)} filled {[(f['title'], f['trainer']) for f in t_fills]}, "
+              f"{len(t_missing)} title(s) with no credential record skipped "
+              f"{t_missing[:5]}")
     print("Review the diff, then commit kb/credential_review_overlay.json "
-          "(+ kb/credentials.json when Mode A2 promoted issuers).")
+          "(+ kb/credentials.json when Modes A2/A3 promoted agencies).")
 
 
 if __name__ == "__main__":

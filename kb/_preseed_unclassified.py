@@ -703,7 +703,14 @@ def stage_cx(raw, families=None):
 def stage_hs(raw, families=None):
     """College-course-code-led rows (incl. high-school / ROP articulations):
     strip the code + school-name decoration + section riders; the course-content
-    title remains; issuer = CCC (the college grants the credit)."""
+    title remains; issuer = CCC (the college grants the credit).
+
+    ⚠ Rule 5f (Sam, 2026-07-08 — SKILL.md): when the stripped school/trainer is
+    IDENTIFIABLE, the school — not CCC — should be staged as issuer AND trainer
+    (both default the same). The unclassified queue was empty when the rule
+    landed, so this lane still stages CCC; on the next queue drop with
+    school-led rows, capture the school segment this function already strips
+    and stage it per the local-trainer lane in kb/_preseed_null_issuers.py."""
     t = _norm_ws(raw)
     if re.match(r"^(?:OSHA|NCCER|IC-)", t, re.I):
         return None  # other lanes / other issuers

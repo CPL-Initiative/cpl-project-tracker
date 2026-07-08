@@ -1,6 +1,11 @@
 """
 Verify kb/issuer_preseed.json against its generation rules — the
-kb/_verify_preseed_rules.py pattern for the missing-issuer lane.
+kb/_verify_preseed_rules.py pattern for the CER issuer-lane pre-seed.
+
+Plan schema v2 (Session 106, Sam's Rule 5f): entries may stage `title` +
+`trainer` alongside `issuer`; `issuer: null` = no issuer change (title/trainer
+cleanup only); `resurface: true` = the row already carries an issuer and is
+surfaced for cleanup, never for an issuer rewrite.
 
 Run from repo root:  python3 kb/_verify_issuer_preseed.py
 Exits non-zero on any failure.
@@ -32,21 +37,28 @@ def main():
     residual = d.get("_residual", [])
     rows = load_queue_index()
 
+    resurface = {k: v for k, v in staged.items() if v.get("resurface")}
+    core = {k: v for k, v in staged.items() if not v.get("resurface")}
+
     # ── structural ──
     check("payload has _about naming the stage-only contract",
           "prefill-only" in (d.get("_about") or "").lower())
-    check("staged + residual == queue count",
-          len(staged) + len(residual) == d.get("_queue_count"))
+    check("non-resurface staged + residual == null-issuer queue count",
+          len(core) + len(residual) == d.get("_queue_count"))
     check("every staged entry carries issuer/via/confidence/note keys",
           all({"issuer", "via", "confidence", "note"} <= set(v) for v in staged.values()))
     check("_counts sums to staged size",
           sum(d.get("_counts", {}).values()) == len(staged))
+    check("_resurface_count matches",
+          d.get("_resurface_count") == len(resurface))
 
-    # ── queue integrity: only null-issuer CER rows are staged ──
+    # ── queue integrity ──
     check("every staged title exists in the baked CER payload",
           all(ut in rows for ut in staged))
-    check("no staged title already carries an issuer (never overwrite)",
-          all(not rows[ut].get("issuer") for ut in staged if ut in rows))
+    check("no non-resurface entry targets a row that already carries an issuer",
+          all(not rows[ut].get("issuer") for ut in core if ut in rows))
+    check("resurface entries NEVER stage an issuer rewrite (issuer is null)",
+          all(v.get("issuer") is None for v in resurface.values()))
 
     # ── lane rules ──
     cx = {k: v for k, v in staged.items() if v["via"] == "cx"}
@@ -56,11 +68,24 @@ def main():
           all(set(rows[k].get("cpl_types") or []) <= {"Credit By Exam", "Portfolio Review"}
               and rows[k].get("cpl_types") for k in cx))
 
-    hs = {k: v for k, v in staged.items() if v["via"] == "local-hs"}
-    check("local-hs lane stages the empty no-formal-issuer verdict",
-          all(v["issuer"] == "" for v in hs.values()))
-    check("local-hs titles all say High School Pathway/Articulation",
-          all(re.search(r"high\s+school\s+(pathway|articulation)", k, re.I) for k in hs))
+    # Rule 5f — trainer-named local pathway exhibits (supersedes the Session-105
+    # local-hs ""-verdict lane).
+    lt = {k: v for k, v in staged.items() if v["via"] == "local-trainer"}
+    check("local-trainer lane exists (the local-hs \"\" lane is retired)",
+          len(lt) > 0 and not any(v["via"] == "local-hs" for v in staged.values()))
+    check("local-trainer: a staged school issuer always stages the SAME trainer "
+          "(Rule 5f — both default the same)",
+          all(v.get("trainer") == v["issuer"] for v in lt.values() if v.get("issuer")))
+    check("local-trainer: staged titles carry no school/pathway decoration",
+          all(not re.search(r"\((?:[^)]*(?:High School|HS|Adult School|ROP)[^)]*)\)\s*$"
+                            r"|High School Pathway|—\s*[^—]*(?:High School|ROP)\s*$",
+                            v["title"])
+              for v in lt.values() if v.get("title")))
+    check("local-trainer: every entry stages SOMETHING (title, trainer, or issuer)",
+          all(v.get("title") or v.get("trainer") or v.get("issuer") is not None
+              for v in lt.values()))
+    check("local-trainer notes are receipted (each cites Rule 5f)",
+          all("Rule 5f" in v["note"] for v in lt.values()))
 
     cae = {k: v for k, v in staged.items() if v["via"] == "course-as-exhibit"}
     check("course-as-exhibit lane stages the empty verdict",
@@ -80,7 +105,8 @@ def main():
     appr = [ut for ut in rows
             if not rows[ut].get("issuer")
             and re.search(r"\([^)]*articulation[^)]*\)\s*$", ut, re.I)
-            and not re.search(r"high\s+school", ut, re.I)]
+            and not re.search(r"high\s*school|\bHS\b|adult\s+(school|education|ed)|"
+                              r"\bROP\b|\bROC\b", ut, re.I)]
     check("apprenticeship-articulation rows are ALL residual (DIR-pending precedent)",
           all(ut in res_uts for ut in appr))
     check("Military-typed rows are never staged",
@@ -90,9 +116,15 @@ def main():
     check("spot: an Ironworker row stages the Iron Workers international",
           any(k.startswith("Ironworker") and "Iron Workers" in v["issuer"]
               for k, v in fam.items()))
-    check("spot: 'AB Miller High School Pathway — Business and Finance' staged no-issuer",
-          (staged.get("AB Miller High School Pathway — Business and Finance") or {}).get("issuer") == ""
-          if "AB Miller High School Pathway — Business and Finance" in staged else True)
+    ab = staged.get("AB Miller High School Pathway — Business and Finance")
+    check("spot: the AB Miller pathway row stages school-as-issuer + the stripped title (Rule 5f)",
+          (ab is None) or (ab.get("issuer") == "AB Miller High School"
+                           and ab.get("trainer") == "AB Miller High School"
+                           and ab.get("title") == "Business and Finance"))
+    summit = staged.get("Business and Finance (High School Articulation)")
+    check("spot: the Summit HS row stages school-as-issuer + the stripped title (Rule 5f)",
+          (summit is None) or (summit.get("issuer") == "Summit High School"
+                               and summit.get("title") == "Business and Finance"))
 
     ok = sum(1 for _, c in results if c)
     for name, cond in results:

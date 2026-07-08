@@ -1926,3 +1926,74 @@ higher-specificity injected CSS. Row height: `.cr-title-cell` max-width:32ch
 lifted (min-width:30ch), title chips forced onto ONE hidden-scrollbar row,
 td padding tightened. Suite: **142 files green** (2 new; preseed test
 rewritten to the new bulk contract).
+
+## 2026-07-08 — continued 9 (Session 106, SkySeal): Rule 5f — the school IS the agency, and the issuer lane grows title editing + context
+
+**Sam's four asks (verbatim intent):** (1) edit the pre-seeded exhibit title
+IN Triage — "quite a lot of trouble" to flip to the main CER, search, and
+Curate; (2) see the original (raw) title and originating college in Triage so
+the process completes in one place; (3) a standing rule for HS-course
+Cx exhibits: strip the school from the title, make it the ISSUING agency —
+and generalize to any HS / noncredit / ROP / adult-school course earning
+credit via Cx or portfolio, with issuer and training agency **defaulting to
+the same school**; (4) re-run the pre-seed over all such rows.
+
+**Rule 5f codified** (SKILL.md, after Rule 5e): strip the trainer from the
+title (the course/pathway remains — `AB MILLER HIGH SCHOOL- Business and
+Finance` → `Business and Finance`), school = issuer = trainer by default, an
+EXISTING real issuer (PLTW via an ROP) is never overwritten (school stays
+trainer-only), Rule 5c's issuer-CCC line now yields to 5f whenever a school
+is identifiable, and two schools entering the same course = ONE title with
+issuer as the discriminator (Rule 4 multi-issuer shape). **Per-credential
+grain caution baked into the rule:** a unified identity whose raw variants
+span SEVERAL schools (EMT-405: Fontana HS + Kaiser HS + Baldy View ROP +
+Learn 4 Life) takes NO single-school default — the first-draft extractor
+"found" Fontana because it could only parse 2 of the 9 variants, a
+partial-signal trap now guarded by the unanimity check (`school_of()`:
+every variant must name the SAME school, else raw-conflict/raw-partial →
+no default).
+
+**The pre-seed redo (ask 4):** `kb/_preseed_null_issuers.py` rewritten to
+plan schema v2 — entries may stage `title` + `trainer` beside `issuer`;
+`issuer: null` = "don't touch the issuer" (the `resurface: true` cohort:
+issuer-carrying rows surfaced for title/trainer cleanup only). The
+Session-105 `local-hs` ""-verdict lane is RETIRED — its rows now stage the
+school. Run: **989 staged** over the 1,129-row null-issuer queue —
+local-trainer **74** (59 school-as-issuer+trainer, 51 title strips, 3
+resurface) · cx→CCC 717 (now explicitly "no local trainer identifiable") ·
+course-as-exhibit "" 167 · family 31 · residual 143. Title derivation strips
+decoration from the EXISTING unified title (safer than re-parsing raws);
+school extraction precedence trainer-field > unanimous-raw-parse >
+title-decoration; "HS" counts only after a proper noun and never before a
+digit (`Basic Arrhythmias HS 081 Cx` — Health Science, not a school).
+Verifier rewritten: `kb/_verify_issuer_preseed.py` (25 checks, incl. the
+issuer==trainer invariant and never-rewrite-a-real-issuer).
+
+**The issuer lane grows up (asks 1+2, credential_reference.js):** each
+`cr-ni-row` now carries an editable **unified-title input** (prefilled staged
+title > current display; saves `unified_title_override` — display-only until
+PR-5b), the **raw college-entered title(s)** (mono `cr-ni-rawline`), and
+**originating-college chips** (auditor-stamped per raw title — classified
+`title_cards` now carry `colleges` too, populating at the next auditor run
+with the PII-purged CustomReport; falls back to articulation-derived earning
+colleges meanwhile). One Save writes up to three overrides
+(title/issuer/trainer — `laneJobsFor()`); the staged trainer FOLLOWS an
+issuer edit when the plan staged them the same ("both default the same");
+a resurface row's Save never writes an issuer unless Sam actually changed
+it; bulk save inherits all of it and reports per-kind counts in its confirm
+(empty issuers still bulk-save ONLY when ""-staged). `issuerQueue()` widened
+with a convergence rule: a resurface row leaves the lane once its staged
+title/trainer match reality or an override lands.
+
+**Canonical promotion:** Mode A2 (issuer) already existed; added **Mode A3 —
+trainer promotion** to `kb/_apply_credential_review.py`: fill
+`training_agency` when null on the first record, never overwrite, receipted
+in the run report. Title renames stay recorded-not-applied (Mode B) — the
+CER shows the display rename; the real KB re-key remains PR-5b with the
+re-mint playbook. Display-title duplicates across schools ("Business and
+Finance" ×2 with different issuers) are the intended Rule-4 interim shape
+until that re-key merges them.
+
+**Suite: 142 files green** (`cer_issuer_lane.test.js` rewritten — 38
+assertions covering title-edit save, the three-override write, the
+resurface never-rewrite guard, raw/college context, and the widened queue).

@@ -119,7 +119,9 @@ student who knows the subject, not the college's naming scheme:
    Fundamentals`), and let the credit recommendations enumerate the member
    courses. If no honest umbrella exists, it's a Rule 5 generic bucket.
 3. **Issuing agency for Cx + portfolio = `California Community Colleges`**
-   (Sam, 2026-07-07). Cx/portfolio is a title 5 §55050 system instrument, not
+   (Sam, 2026-07-07) — **UNLESS Rule 5f applies** (a named local trainer:
+   high school, ROP, adult school, noncredit provider — then the school is
+   the issuer). Cx/portfolio is a title 5 §55050 system instrument, not
    an external issuer, and a uniform issuer makes these exhibits filterable as
    one family. The AWARDING college is never lost — it lives on the
    exhibit/articulation layer. This supersedes the old "local credential →
@@ -186,6 +188,45 @@ and rows no lane covers honestly stay in the file's `_residual` list for
 hand-triage. Regenerate after queue/family changes; live-assigned raws can be
 excluded via `--assigned-md5 <file>` (md5(raw) hashes — fetch them via the
 Supabase MCP when the sandbox can't reach Supabase directly).
+
+### Rule 5f — Trainer-named local pathway exhibits: strip the school, make it the agency (Sam, 2026-07-08)
+
+High school, noncredit, ROP, and adult-school courses that earn college credit
+via **Credit By Exam or Portfolio Review** are routinely entered with the
+training provider's name embedded in the title
+(`AB MILLER HIGH SCHOOL- Business and Finance`,
+`SUMMIT HIGH SCHOOL- Business and Finance`,
+`Baldy View ROP - Civil Engineering and Architecture`). For these:
+
+1. **Strip the trainer/school name from the title.** What remains — the
+   course or pathway — is the unified title (`Business and Finance`).
+   Never carry the school, "Pathway", "(High School Articulation)", or any
+   mechanism phrasing into the unified title (Rules 1/2 still apply).
+2. **The school becomes the `issuing_agency` AND the `training_agency` —
+   both default to the same value.** The local provider both trains and
+   attests; split them only when a genuinely distinct issuer exists (e.g.
+   a PLTW-branded course taught by an ROP keeps `issuing_agency = Project
+   Lead The Way (PLTW)` with the ROP as `training_agency` — an existing real
+   issuer is NEVER overwritten by the school default).
+3. This **overrides Rule 5c item 3** (issuer = CCC) whenever a school/trainer
+   is identifiable: the CCC issuer stays only for college-internal Cx rows
+   with no named external trainer.
+4. Two schools entering the same course stay ONE unified title with the
+   issuer as the discriminator (Rule 4's multi-issuer shape): `Business and
+   Finance` from A.B. Miller HS and Summit HS are two credential records under
+   one title, never two title variants.
+5. **Per-credential grain caution:** stamp a school as trainer only when the
+   credential's raw variants are UNANIMOUS about it. A unified identity whose
+   variants span several schools (the EMT-405 case: Fontana HS + Kaiser HS +
+   Baldy View ROP + Learn 4 Life) takes NO single-school default — leave
+   issuer/trainer for per-variant judgment.
+
+Mechanized in `kb/_preseed_null_issuers.py`'s **local-trainer** lane (staged
+prefills for the CER issuer lane — Rule 5e contract; supersedes the retired
+`local-hs` ""-verdict lane) and verified by `kb/_verify_issuer_preseed.py`.
+Title changes save as `unified_title_override` (display-only until the PR-5b
+rename re-key); issuer/trainer promote canonically via Modes A2/A3 in
+`kb/_apply_credential_review.py`.
 
 ### Authority sources for exhibit + agency names
 
