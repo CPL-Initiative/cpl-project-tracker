@@ -5,7 +5,10 @@ kb/_verify_preseed_rules.py pattern for the CER issuer-lane pre-seed.
 Plan schema v2 (Session 106, Sam's Rule 5f): entries may stage `title` +
 `trainer` alongside `issuer`; `issuer: null` = no issuer change (title/trainer
 cleanup only); `resurface: true` = the row already carries an issuer and is
-surfaced for cleanup, never for an issuer rewrite.
+surfaced for cleanup, never for an issuer rewrite. Rule 5g (same day) styles
+every staged title — leading Beginning/Intermediate/Advanced moves to the END,
+"Intro" expands to "Introduction" (official proper names exempt); the
+`title-style` lane stages that styling alone.
 
 Run from repo root:  python3 kb/_verify_issuer_preseed.py
 Exits non-zero on any failure.
@@ -72,16 +75,36 @@ def main():
     check("course-title rows keep their _residual record (issuer still open)",
           all(k in {r["ut"] for r in residual} for k in ct))
     titled = {k: v for k, v in staged.items() if v.get("title")}
-    check("_titles_staged == count of Rule-5c-titled entries",
-          d.get("_titles_staged") == sum(1 for v in staged.values()
-                                         if "Rule 5c" in v.get("note", "")))
-    check("every staged title cites its source in the note (Rule 5c/5f or DIR DAS)",
+    check("_titles_staged == count of ALL titled entries",
+          d.get("_titles_staged") == len(titled))
+    check("every staged title cites its source in the note "
+          "(Rule 5c/5f/5g or DIR DAS)",
           all(("Rule 5c" in v["note"] or "Rule 5f" in v["note"]
-               or "DIR DAS" in v["note"])
+               or "Rule 5g" in v["note"] or "DIR DAS" in v["note"])
               for v in titled.values()))
     check("no staged title equals the row's current display title",
           all(v["title"] != (rows[k].get("display_title") or k)
               for k, v in titled.items() if k in rows))
+
+    # ── Rule 5g title styling ──
+    LEVEL_KEEP = re.compile(
+        r"^Advanced\s+(?:Placement\b|EMT\b|Cardiac\b|Cardiovascular\b)", re.I)
+    check("Rule 5g: no staged title LEADS with a level word "
+          "(official proper names exempt)",
+          all(not re.match(r"^(Beginning|Intermediate|Advanced)\s", v["title"],
+                           re.I)
+              or LEVEL_KEEP.match(v["title"])
+              for v in titled.values()))
+    check("Rule 5g: no staged title carries the bare abbreviation “Intro”",
+          all(not re.search(r"\bIntro\b", v["title"]) for v in titled.values()))
+    ts = {k: v for k, v in staged.items() if v["via"] == "title-style"}
+    check("title-style lane stages ONLY a title (issuer null, never resurface)",
+          all(v.get("issuer") is None and v.get("title") and not v.get("resurface")
+              for v in ts.values()))
+    check("title-style rows keep their _residual record (issuer still open)",
+          all(k in {r["ut"] for r in residual} for k in ts))
+    check("title-style notes cite Rule 5g",
+          all("Rule 5g" in v["note"] for v in ts.values()))
 
     # ── lane rules ──
     cx = {k: v for k, v in staged.items() if v["via"] == "cx"}
@@ -122,6 +145,19 @@ def main():
     check("family lane never stages an empty issuer",
           all(v["issuer"] for v in fam.values()))
     check("family lane stays small/high-precision (≤ 60 rows)", len(fam) <= 60)
+
+    # ── statewide-agency lane (blank statewide issuer resolved via the
+    #    Faculty-Collaborative agency rules — Sam 2026-07-08) ──
+    swa = {k: v for k, v in staged.items() if v["via"] == "statewide-agency"}
+    check("statewide-agency lane never stages an empty issuer",
+          all(v["issuer"] for v in swa.values()))
+    check("statewide-agency notes carry the statewidecpl receipt",
+          all("statewidecpl" in v["note"] for v in swa.values()))
+    gtaw_adv = staged.get("Advanced Gas Tungsten Arc Welding (GTAW)")
+    check("spot: the welding Cx family stages the American Welding Society "
+          "(house AWS spelling)",
+          (gtaw_adv is None)
+          or gtaw_adv.get("issuer") == "American Welding Society (AWS)")
 
     # ── apprenticeship lane (Norco / Santiago Canyon sponsors — Sam 2026-07-08) ──
     appr_staged = {k: v for k, v in staged.items() if v["via"] == "apprenticeship"}
@@ -171,6 +207,16 @@ def main():
     check("spot: the code-titled 'Administration of Justice 049' gains a COCI-"
           "aligned title (Rule 5c lookup)",
           (aoj49 is None) or bool(aoj49.get("title")))
+    # Sam's 2026-07-08 Rule 5g examples:
+    gtaw = staged.get("Advanced Gas Tungsten Arc Welding (GTAW)")
+    check("spot: 'Advanced Gas Tungsten Arc Welding (GTAW)' restyles "
+          "level-to-end (Rule 5g)",
+          (gtaw is None)
+          or gtaw.get("title") == "Gas Tungsten Arc Welding (GTAW) Advanced")
+    check("spot: Advanced Placement titles are never level-moved "
+          "(Rule 5g proper-name exemption)",
+          all((v.get("title") or k).startswith("Advanced Placement")
+              for k, v in staged.items() if k.startswith("Advanced Placement")))
 
     ok = sum(1 for _, c in results if c)
     for name, cond in results:

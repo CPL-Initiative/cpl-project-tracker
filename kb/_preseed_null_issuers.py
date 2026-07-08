@@ -81,7 +81,8 @@ CRD_JS = os.path.join(os.path.dirname(HERE), "credential_reference_data.js")
 OUT = os.path.join(HERE, "issuer_preseed.json")
 
 sys.path.insert(0, HERE)
-from _preseed_unclassified import load_statewide, load_credential_issuers, _pre_norm  # noqa: E402
+from _preseed_unclassified import (  # noqa: E402
+    load_statewide, load_credential_issuers, _pre_norm, _demoji, STATEWIDE_JS)
 # Rule 5c title machinery (Session 106 follow-up) — ONE definition, shared with
 # the unclassified worklist's 💡 suggestions so the two scripts never drift.
 from _suggest_unclassified import (  # noqa: E402
@@ -559,6 +560,30 @@ def _polish_title(t):
     return " ".join(out)
 
 
+# ── Rule 5g — student-searchable title styling (Sam, 2026-07-08) ──
+# A leading level word buries the subject in alphabetical browsing, so it
+# moves to the END ("Advanced Floral Design" → "Floral Design Advanced").
+# "Introduction…" titles stay as-is; the abbreviation "Intro" expands to
+# "Introduction" (word-boundary — "Introduction"/"Introductory" untouched).
+_LEVEL_LEAD = re.compile(r"^(Beginning|Intermediate|Advanced)\s+(.+)$", re.I)
+# Official proper names where the level word IS the credential's name —
+# Rule 8b outranks 5g. Extend as cases surface.
+_LEVEL_KEEP = re.compile(
+    r"^Advanced\s+(?:Placement\b|EMT\b|Cardiac\b|Cardiovascular\b)", re.I)
+_INTRO_ABBREV = re.compile(r"\bIntro\b\.?", re.I)
+
+
+def restyle_title(t):
+    """Rule 5g styling. Returns the (possibly unchanged) title."""
+    if not t:
+        return t
+    out = _INTRO_ABBREV.sub("Introduction", t)
+    m = _LEVEL_LEAD.match(out)
+    if m and not _LEVEL_KEEP.match(out):
+        out = m.group(2).strip() + " " + m.group(1).strip().capitalize()
+    return " ".join(out.split())
+
+
 _DISC_PREFIX = re.compile(r"^(.{3,60}?)\s+—\s+(.+)$")
 
 
@@ -764,11 +789,107 @@ def enrich_titles(rows, staged, residual, counts):
     return enriched
 
 
+# ── Statewide CCC-collaborative exhibits with a BLANK statewide issuer ──
+# The statewide dataset's issuing_agency comes from kb/credentials.json — the
+# very credentials sitting in this null-issuer queue (circular), so those
+# records can't seed themselves. The MAP Faculty Collaborative Recommendation
+# PDFs (map.rccd.edu/statewidecpl — the AGENCY row) name the agency; curated
+# pattern → issuer rules resolve them. Sam 2026-07-08: the welding Cx family's
+# agency is the American Welding Society (the PDF's "America Welding Society"
+# is a source typo; house canonical per Rule 6 + the existing AWS D1.x family).
+STATEWIDE_BLANK_ISSUERS = [
+    (re.compile(r"\((?:GTAW|GMAW|SMAW|FCAW)\)", re.I),
+     "American Welding Society (AWS)",
+     "the MAP Faculty Collaborative welding recommendations "
+     "(map.rccd.edu/statewidecpl/#welding)"),
+]
+
+
+def statewide_blank_issuer(ut):
+    for rx, issuer, receipt in STATEWIDE_BLANK_ISSUERS:
+        if rx.search(ut):
+            return issuer, receipt
+    return None, None
+
+
+def load_statewide_blank_titles():
+    """Every statewide-dataset exhibit (ANY collaborative type) whose record
+    carries a blank issuer — the corroboration set for the curated
+    STATEWIDE_BLANK_ISSUERS rules. The collab label is NOT the gate (MAP
+    types the FCAW Cx record 'Local' while its process siblings are CCC
+    Collaborative); presence in the statewide dataset is. Soft-fails empty."""
+    try:
+        raw = open(STATEWIDE_JS, encoding="utf-8").read()
+        start = raw.index("{", raw.index("window.CPL_STATEWIDE"))
+        data = json.loads(raw[start:raw.rstrip().rstrip(";").rfind("}") + 1])
+    except (OSError, ValueError):
+        return set()
+    out = set()
+    for e in data.get("exhibits", []):
+        if not (e.get("issuing_agency") or "").strip():
+            t = _demoji((e.get("unified_title") or e.get("title") or "").strip())
+            if t:
+                out.add(norm_title(t))
+    return out
+
+
+def restyle_pass(rows, staged, residual, counts):
+    """Rule 5g pass (runs LAST): restyle every already-staged title, then
+    stage title-only `title-style` entries for triage rows whose display
+    title changes under the rule (leading level word to the end / "Intro" →
+    "Introduction"). Scope = the triage cohort only (staged entries + the
+    null-issuer residual) — already-issuered rows are never mass-resurfaced
+    for styling alone. Military rows stay unstaged."""
+    residual_uts = {r["ut"] for r in residual}
+    n = 0
+    for entry in staged.values():
+        t = entry.get("title")
+        if t:
+            styled = restyle_title(t)
+            if styled != t:
+                entry["title"] = styled
+                entry["note"] += (" Styled per Rule 5g (level word to the "
+                                  "end / “Intro” → “Introduction”).")
+                n += 1
+    note = ("Title styled per Rule 5g: leading level word moved to the end / "
+            "“Intro” expanded, so subject families sort together for "
+            "student browsing (Sam, 2026-07-08).")
+    for row in rows:
+        ut = row["ut"]
+        if "Military" in set(row["cpl_types"]):
+            continue
+        entry = staged.get(ut)
+        if entry is not None and entry.get("title"):
+            continue  # already titled (restyled above)
+        if entry is None and ut not in residual_uts:
+            continue  # not in triage
+        if entry is None and is_apprenticeship_residual(ut):
+            continue  # DIR-pending — titles strip WITH the sponsor resolution
+        if restyle_title(row["display"]) == row["display"]:
+            continue  # Rule 5g itself changes nothing — never stage a
+            # polish-only case tweak (the ESL 108C → "108c" trap)
+        styled = restyle_title(_polish_title(row["display"]))
+        if not styled or styled == row["display"]:
+            continue
+        if entry is not None:
+            entry["title"] = styled
+            entry["note"] += " " + note
+        else:
+            staged[ut] = {"issuer": None, "title": styled, "via": "title-style",
+                          "confidence": 0.75,
+                          "note": note + " Issuer still needs judgment (see "
+                                  "_residual)."}
+            counts["title-style"] = counts.get("title-style", 0) + 1
+        n += 1
+    return n
+
+
 def stage_all(rows, sw_roster, issuer_of):
     sw_index = {}
     for rec in sw_roster:
         if rec.get("issuer"):
             sw_index.setdefault(norm_title(rec["title"]), rec["issuer"])
+    sw_blank = load_statewide_blank_titles()
     fam_index = build_family_index(issuer_of)
 
     staged, residual, counts = {}, [], {}
@@ -833,6 +954,18 @@ def stage_all(rows, sw_roster, issuer_of):
                        "carrying this issuer (statewide_data.js).")
             continue
 
+        # 1b. statewide CCC record with a BLANK issuer — the statewide
+        # dataset's issuer is circular with this queue, so resolve via the
+        # curated Faculty-Collaborative agency rules (Sam, 2026-07-08).
+        if norm_title(ut) in sw_blank:
+            iss, receipt = statewide_blank_issuer(ut)
+            if iss:
+                put_issuer(ut, iss, "statewide-agency", 0.75,
+                           "Statewide CCC-collaborative exhibit whose statewide "
+                           "record carries no issuer yet; agency per " + receipt
+                           + " — Sam, 2026-07-08.")
+                continue
+
         # 2. family with a unanimous issuer — brand-shaped leading token, else
         #    a leading-BIGRAM anchor (a bare generic word never anchors)
         toks = lead_tokens(ut)
@@ -876,16 +1009,21 @@ def stage_all(rows, sw_roster, issuer_of):
                          + (", ".join(sorted(types)) or "none") + ")"})
 
     # ── Rule 5c title pass over the triage cohort ──
-    n_titles = enrich_titles(rows, staged, residual, counts)
+    enrich_titles(rows, staged, residual, counts)
 
-    return staged, residual, counts, len(queue), n_titles
+    # ── Rule 5g styling pass (LAST — restyles 5c/5f/DAS titles too) ──
+    n_restyled = restyle_pass(rows, staged, residual, counts)
+
+    n_titles = sum(1 for v in staged.values() if v.get("title"))
+    return staged, residual, counts, len(queue), n_titles, n_restyled
 
 
 def main():
     rows = load_rows()
     sw_roster, _meta = load_statewide()
     issuer_of = load_credential_issuers()
-    staged, residual, counts, queue_n, n_titles = stage_all(rows, sw_roster, issuer_of)
+    staged, residual, counts, queue_n, n_titles, n_restyled = stage_all(
+        rows, sw_roster, issuer_of)
 
     n_resurface = sum(1 for v in staged.values() if v.get("resurface"))
     payload = {
@@ -901,13 +1039,19 @@ def main():
                   "course-identity precedence (CCN > C-ID > local COCI course "
                   "title; M-IDs excluded until stable) + the MQ-discipline-prefix "
                   "strip; `course-title` entries stage ONLY a title (their issuer "
-                  "stays in _residual for judgment). Generated by "
-                  "kb/_preseed_null_issuers.py; verify with kb/_verify_issuer_preseed.py.",
+                  "stays in _residual for judgment). Every staged title is then "
+                  "styled per Rule 5g (leading Beginning/Intermediate/Advanced "
+                  "moves to the END; \"Intro\" expands to \"Introduction\"; "
+                  "official proper names like Advanced Placement / Advanced EMT / "
+                  "ACLS exempt); `title-style` entries stage ONLY that styling. "
+                  "Generated by kb/_preseed_null_issuers.py; verify with "
+                  "kb/_verify_issuer_preseed.py.",
         "_generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "_queue_count": queue_n,
         "_counts": {k: counts[k] for k in sorted(counts)},
         "_resurface_count": n_resurface,
         "_titles_staged": n_titles,
+        "_restyled": n_restyled,
         "_residual_count": len(residual),
         "_residual": sorted(residual, key=lambda r: r["ut"]),
         "staged": {ut: staged[ut] for ut in sorted(staged)},
@@ -919,7 +1063,8 @@ def main():
     print(f"rows: {len(rows)}  null-issuer queue: {queue_n}")
     print(f"staged: {len(staged)}  " + json.dumps(payload["_counts"]))
     print(f"  resurface (issuer kept, title/trainer cleanup): {n_resurface}")
-    print(f"  Rule 5c titles staged: {n_titles}")
+    print(f"  titles staged (all rules): {n_titles}")
+    print(f"  Rule 5g restyles applied: {n_restyled}")
     print(f"residual: {len(residual)}")
     for r in payload["_residual"][:12]:
         print("  ·", r["ut"], "—", r["why"])

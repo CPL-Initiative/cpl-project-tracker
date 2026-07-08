@@ -208,6 +208,27 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-ni-row"))
   check("datalist: the NEW agency is immediately pickable",
     !!dl && Array.from(dl.children).some((o) => o.value === "Proctored Testing Center"));
 
+  // ── save → re-edit → re-save (the unresponsive-firearms trap, 2026-07-08):
+  // applySavedLane disables the button "✓ Saved" while the inputs stay live;
+  // a keystroke used to relabel the still-DISABLED button "Save" — dead. ──
+  const tkBtn = tenKey.querySelector(".cr-ni-save");
+  check("re-edit trap: saved row's button starts disabled ✓",
+    tkBtn.disabled && /Saved/.test(txt(tkBtn)));
+  log.writes.length = 0;
+  inp.value = "American Welding Society (AWS)";
+  inp.dispatchEvent(new window.Event("input", { bubbles: true }));
+  check("re-edit trap: editing a saved row RE-ARMS its Save button",
+    !tkBtn.disabled && txt(tkBtn) === "Save");
+  check("re-edit trap: the row leaves the done state",
+    tenKey.className.indexOf("cr-wl-done") < 0);
+  tkBtn.click();
+  await sleep(120);
+  check("re-edit trap: the re-save writes the corrected issuer",
+    log.writes.some((x) => x.body.field === "issuing_agency_override"
+      && x.body.value === "American Welding Society (AWS)"));
+  check("re-edit trap: row flips back to ✓ Saved",
+    tkBtn.disabled && /Saved/.test(txt(tkBtn)));
+
   // ── bulk save: the remaining ⚡ cx row saves its issuer ──
   const bulkBtns = Array.from(doc.querySelectorAll(".cr-wl-saveall"));
   const niBulk = bulkBtns[bulkBtns.length - 1];
