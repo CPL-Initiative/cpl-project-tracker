@@ -2339,3 +2339,18 @@ null-issuer credentials; `kb/_preseed_null_issuers.py` staged 978 → `kb/issuer
 verifier 19 checks; empty-Save = explicit no-formal-issuer). COBI-wide: black ink headers →
 `--seal-blue`; Curate-panel black-box bleed fixed; CER title/chip row-height pass. Suite 142
 green (+2 files). Full story: lessons "continued 8"; next: `docs/session_106_handoff.md`.
+
+### Session 106 — SkySeal: the Triage rules day — 5f / 5c-mech / 5g + four new issuer lanes + multi-issuer (2026-07-08)
+
+Six PRs merged live against Sam's triage pass (#690–#695). **Rules:** 5f (school = issuer =
+trainer, title stripped; the EMT-405 unanimity guard), 5c MECHANIZED (CCN > C-ID > COCI course
+titles, discipline-prefix strip, code-led + CCSF name-led lookups), **5g** (leading
+Beginning/Intermediate/Advanced → END of the title; "Intro" → "Introduction"; AP / Advanced EMT /
+ACLS exempt — 68 restyled). **Lanes:** apprenticeship (Norco/Santiago DIR-DAS sponsors, occId
+82/490), statewide-agency (blank statewide issuer → AWS, the 5 welding rows), **cert-family**
+(FAA ×22 — Part-147 AMT + the Reedley FLGHT ladder), title-style. **Lane UX:** editable titles +
+raw/college context; the save→re-edit dead-button trap FIXED (re-arm on input, `data-busy`
+in-flight guard); **＋ add issuing agency** → new `issuing_agency_additional_override`, Mode A2
+promotes BOTH issuer fields additively (+ Mode A3 trainer). Plan: **1,009 staged / 1,125 queue**,
+284 titles, 152 residual; verifier 50 checks; suite 142 green. Full story:
+`docs/exhibit_canonicalization_lessons.md` (2026-07-08 "continued 9" – "continued 11 addendum").

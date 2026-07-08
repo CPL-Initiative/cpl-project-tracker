@@ -2428,21 +2428,10 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > lane + the seal-blue pass) archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md).
 > Full story: `docs/exhibit_canonicalization_lessons.md` (2026-07-08 "continued 8").
 
-### Session 106 — SkySeal: the Triage rules day — 5f / 5c-mech / 5g + four new issuer lanes + multi-issuer (2026-07-08)
-
-Six PRs merged live against Sam's triage pass (#690–#695). **Rules:** 5f (school = issuer =
-trainer, title stripped; the EMT-405 unanimity guard), 5c MECHANIZED (CCN > C-ID > COCI course
-titles, discipline-prefix strip, code-led + CCSF name-led lookups), **5g** (leading
-Beginning/Intermediate/Advanced → END of the title; "Intro" → "Introduction"; AP / Advanced EMT /
-ACLS exempt — 68 restyled). **Lanes:** apprenticeship (Norco/Santiago DIR-DAS sponsors, occId
-82/490), statewide-agency (blank statewide issuer → AWS, the 5 welding rows), **cert-family**
-(FAA ×22 — Part-147 AMT + the Reedley FLGHT ladder), title-style. **Lane UX:** editable titles +
-raw/college context; the save→re-edit dead-button trap FIXED (re-arm on input, `data-busy`
-in-flight guard); **＋ add issuing agency** → new `issuing_agency_additional_override`, Mode A2
-promotes BOTH issuer fields additively (+ Mode A3 trainer). Plan: **1,009 staged / 1,125 queue**,
-284 titles, 152 residual; verifier 50 checks; suite 142 green. Full story:
-`docs/exhibit_canonicalization_lessons.md` (2026-07-08 "continued 9" – "continued 11 addendum").
-
+> **Session 106 narrative (SkySeal — the Triage rules day: 5f / 5c-mech / 5g + four
+> new issuer lanes + multi-issuer, PRs #690–#695) archived** →
+> [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full story:
+> `docs/exhibit_canonicalization_lessons.md` (2026-07-08 "continued 9"–"continued 11 addendum").
 
 ### Session 107 — SkyKey: the PR-5b re-key goes LIVE — 49 renames applied, the confirm-merge lane, and Sam's four evening asks (2026-07-08)
 
@@ -2459,6 +2448,19 @@ through the new confirm-merge), 🔎/✨ issuer lookup via the report proxy (#70
 daily-run push-race fix (#700 — unstaged regen discarded before the retry rebase). Suite 145;
 verifier 56. Sam's calls pending: confirm the 6 merges · ASE/AWS/OSHA spellings · IBEW re-point.
 Full story: `docs/exhibit_canonicalization_lessons.md` ("continued 12"); next: `docs/session_108_handoff.md`.
+
+
+### Session 108 — SkyPhilo: code-titled exhibits resolve from COCI + the 🔎/✨ title lookup (2026-07-08)
+
+Sam's live-triage ask ("CD-005", "Cinema 24" — he was hand-searching COCI for real titles)
+shipped in one merged PR (#707). Rule 5c mech gaps closed: tight-hyphen parse ("CD-005"),
+decoration-immune sanity guard, the college-scoped subject-PREFIX hop ("Cinema 24" → CCSF
+CINE 24), and code-shaped staged titles UPGRADED to the resolved CCN > C-ID > COCI title
+(CD-005 → "Child Growth and Development" via C-ID CDEV 100 — one tier above Sam's manual
+find). Plan regen: +6 titles / 1 upgrade / 0 regressions. The TITLE column of the
+missing-issuer lane gained the #701-pattern 🔎 "what is this?" + ✨ suggest (click-to-fill,
+never auto-saved; disjoint cr-ni-t* hooks). Verifier 61; suite 145 + `cer_title_lookup` (12).
+Full story: `docs/exhibit_canonicalization_lessons.md` ("continued 14"); next: `docs/session_109_handoff.md`.
 
 
 ---
