@@ -2162,3 +2162,18 @@ semantics — the second agency lands as its own credential record in
 kb/credentials.json on the daily sync. Empty second input = unused; clearing
 a recorded one writes "" (recorded, never promoted). Tests: the multi-issuer
 block in `tests/cer_issuer_lane.test.js` (46 assertions). Verifier 50 checks.
+
+**Session 106 close-out (Rule 8 checkpoint, 2026-07-08 evening).** The session's
+full arc: six merged PRs (#690–#695) turned Sam's live triage feedback into
+three codified rules (5f school-as-agency · 5c title mechanization with the
+CCSF name-led extension · 5g level-to-end styling), four new pre-seed lanes
+(apprenticeship / statewide-agency / cert-family / title-style), the
+save→re-edit dead-button fix (KB note:
+`methodology-rearm-disabled-save-on-edit.md`), and the ＋ add-issuing-agency
+multi-issuer affordance (new `issuing_agency_additional_override` field; Mode
+A2 promotes both issuer fields additively). Working rhythm that made it work:
+Sam triages live on the deployed page → screenshots + rulings arrive →
+mechanize the ruling as a rule + lane + verifier checks + jsdom test → merge on
+green → Pages deploy → he continues on fresher prefills, usually within the
+hour. Plan state at close: 1,009 of the 1,125-row null-issuer queue staged,
+284 titles, 152 residual; verifier 50 checks; suite 142 files.

@@ -1,26 +1,38 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-08 · Session 106b (Rule 5c titles mechanized — the pre-seed now stages student-searchable titles)",
+ "_as_of": "2026-07-08 · Session 106 close (the triage rules day — 6 PRs: Rules 5f/5c/5g, four new pre-seed lanes, multi-issuer, the Save fix)",
  "_session": 106,
- "_status": "Triage now pre-fills TITLES per your Rule 5c examples, not just agencies: discipline prefixes stripped (“Administration of Justice — Community Relations” → “Community Relations”), and code-titled rows looked up in the college's own COCI catalog (“ADM JUS 049” @ East LA → “Narcotics and Vice Control”; aligned C-ID/CCN titles win when they exist — M-IDs stay excluded until stable). 131 titles staged across the lane, plus the 72 school rows and 985 issuer pre-fills. Everything is still prefill-only — review and Save.",
+ "_status": "Triage now pre-fills smarter across the board: titles restyled per your new Rule 5g (level words moved to the end, “Intro” → “Introduction”; AP/EMT/ACLS names untouched), the welding Cx rows pre-seed American Welding Society (AWS), the 22 aviation rows pre-seed the FAA, and the Norco carpentry apprenticeships pre-seed the Southwest Carpenters JATC. A ＋ add-issuing-agency link records a second certifying body without touching the first. The dead Save button on saved-then-re-edited rows is fixed. 1,009 of the 1,125 no-issuer rows carry a prefill — everything still saves only on your click.",
  "items": [
-  {
-   "id": "local-trainer-review",
-   "who": "sam",
-   "tab": "credential-reference",
-   "text": "Triage → the ⚡ school rows (72, sorted first): title pre-stripped, issuer + trainer pre-set to the school. Review, edit anything off, Save per row or 💾 Save all."
-  },
   {
    "id": "issuer-lane-review",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "Then the rest of the pre-filled lane (716 cx→CCC · 166 course-as-exhibit “no issuer” · 31 family · 20 title-only) — many now carry Rule-5c titles (C-ID/CCN/COCI-aligned). Bulk-save per view once eyeballed."
+   "text": "Keep working the ⚡ pre-filled lane (1,009 prefills: 686 cx→CCC · 166 “no issuer” · 72 school rows · 31 family · 22 FAA aviation · 20 titled · 6 apprenticeship · 5 AWS welding). Review, tweak, Save per row or bulk per view."
+  },
+  {
+   "id": "welding-aws-spelling",
+   "who": "sam",
+   "tab": "credential-reference",
+   "text": "Small consistency call: your saved GTAW row says “American Welding Society” but the house family uses “American Welding Society (AWS)” — re-save that one row if you want them unified."
+  },
+  {
+   "id": "ibew-repoint",
+   "who": "sam",
+   "tab": "credential-reference",
+   "text": "Your call: the 6 Electrician rows still carry the generic “IBEW” issuer (never auto-overwritten) — re-point them to Riverside Area Electrical J. A. C. if that's the right sponsor."
+  },
+  {
+   "id": "modesto-engl102",
+   "who": "sam",
+   "tab": "credential-reference",
+   "text": "The Modesto ENGL 102 exhibit: both C-ID (ENGL 120) and CCN say “Introduction to Literature” — your hand-saved title adds “and Composition”. Re-title if you want the authority spelling."
   },
   {
    "id": "issuer-lane-residual",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "143 issuer rows stay un-prefilled on purpose: apprenticeship articulations (DIR DAS lookup pending), Military-typed, odd ones. Type issuers as you know them — new names become pickable instantly."
+   "text": "152 rows stay un-prefilled on purpose (apprenticeships at other colleges pending DIR DAS, Military-typed, odd ones) — type issuers as you know them; new names become pickable instantly."
   },
   {
    "id": "clep-complete-both",
@@ -29,34 +41,28 @@
    "text": "Still the last 3 unclassified rows: the CLEP French/German/Spanish “Levels 1 and 2 — Complete both” spans (which family should a two-level span land in?)."
   },
   {
-   "id": "audit-rerun-colleges",
-   "who": "fable",
-   "tab": "credential-reference",
-   "text": "Re-run kb/_audit_exhibits.py with a fresh PII-purged CustomReport so originating-college chips populate on CLASSIFIED Triage rows (falls back to articulating colleges until then)."
-  },
-  {
    "id": "pr5b-rename-rekey",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "Scope Cred-Ref PR-5b: promote the recorded unified_title_override renames into REAL KB re-keys (alias map, re-mint playbook) so same-course-different-school cards actually merge."
+   "text": "Scope Cred-Ref PR-5b: promote the recorded unified-title renames (Rule 5g just queued ~68 more) into REAL KB re-keys (alias map, re-mint playbook) so restyled titles become the actual card keys."
+  },
+  {
+   "id": "audit-rerun-colleges",
+   "who": "fable",
+   "tab": "credential-reference",
+   "text": "Re-run kb/_audit_exhibits.py with a fresh PII-purged CustomReport so originating-college chips populate on CLASSIFIED Triage rows (articulating-college fallback until then)."
   },
   {
    "id": "apprenticeship-issuers",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "Resolve the apprenticeship-articulation issuer residual via the DIR DAS occupation lookup (runner-as-proxy; authority-sources kb-note) — then re-run the issuer pre-seed."
+   "text": "Resolve the ~146 DIR-pending apprenticeship residuals at other colleges (DAS occupation pages + region matching; the Tableau Completion Dashboard lacks the CCC-affiliation join Sam is still hunting)."
   },
   {
    "id": "fire-family-twins",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "Near-duplicate families to fold in a cleanup pass: “Firefighter 1” vs “Firefighter I”, “Fire Instructor 2” vs “Fire Instructor II” (the AP-art-fold pattern)."
-  },
-  {
-   "id": "mojibake-families",
-   "who": "fable",
-   "tab": "credential-reference",
-   "text": "3 mojibake “Generic Credit by Exam â€”” families in unified_titles.json still need the rename/merge cleanup."
+   "text": "Near-duplicate families to fold in a cleanup pass: “Firefighter 1” vs “Firefighter I”, “Fire Instructor 2” vs “Fire Instructor II” + the 3 mojibake “Generic Credit by Exam â€”” families."
   },
   {
    "id": "moc-cos-bridge",
