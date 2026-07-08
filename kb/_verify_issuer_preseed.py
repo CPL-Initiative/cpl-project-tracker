@@ -87,6 +87,35 @@ def main():
           all(v["title"] != (rows[k].get("display_title") or k)
               for k, v in titled.items() if k in rows))
 
+    # ── Rule 5c code-shaped upgrades + the subject-prefix hop (Session 108:
+    #    Sam's CD-005 / Cinema 24 ask — a staged title that is still a bare
+    #    course code gets the COCI/CCN/C-ID resolution instead) ──
+    CODE_SHAPED = re.compile(
+        r"^\s*[A-Za-z][A-Za-z&/\.]{0,9}(?:\s+[A-Za-z]{1,6})?\s*[-–— ]\s*"
+        r"0*\d{1,4}[A-Za-z]{0,2}\s*$")
+    upgraded = {k: v for k, v in staged.items()
+                if "Code-shaped staged title" in v["note"]}
+    check("code-shaped upgrades: the resolved title is never itself a bare code",
+          all(v.get("title") and not CODE_SHAPED.match(v["title"])
+              for v in upgraded.values()))
+    check("code-shaped upgrades cite Rule 5c with the original code in the note",
+          all("Rule 5c" in v["note"] and "“" in v["note"]
+              for v in upgraded.values()))
+    hopped = {k: v for k, v in staged.items()
+              if "resolved from" in v["note"] and "catalog" in v["note"]}
+    check("subject-prefix hop receipts name BOTH the resolved and written subject",
+          all(re.search(r"subject [A-Z0-9]+ resolved from “", v["note"])
+              for v in hopped.values()))
+    cd5 = staged.get("CD-005 — Lemoore High School Articulation")
+    check("spot: CD-005 (Lemoore HS articulation) stages the C-ID CDEV 100 "
+          "descriptor title, not the bare code",
+          (cd5 is None) or cd5.get("title") == "Child Growth and Development")
+    cin24 = staged.get("Cinema 24")
+    check("spot: Cinema 24 stages CCSF's CINE 24 title via the subject-prefix hop",
+          (cin24 is None)
+          or (cin24.get("title") == "Basic Film Production"
+              and "resolved from" in cin24["note"]))
+
     # ── Rule 5g title styling ──
     LEVEL_KEEP = re.compile(
         r"^Advanced\s+(?:Placement\b|EMT\b|Cardiac\b|Cardiovascular\b)", re.I)
