@@ -1,5 +1,5 @@
 {
-  "_generated_at": "2026-07-08T21:00:13Z",
+  "_generated_at": "2026-07-08T22:39:54Z",
   "mode": "apply",
   "gates": {
     "V1_apply_safe": false,
@@ -64,14 +64,6 @@
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T15:55:46.862459+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "ADM JUS 067",
-      "assigned": "Administration of Justice 067",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -699,22 +691,6 @@
       "why": "already classified to the same target"
     },
     {
-      "raw": "AUTO 60A: Electrical Schematic Diagnosis- Credit By Exam",
-      "assigned": "Automotive Electrical Schematic Diagnosis",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "AUTO 60B: Automotive Electronics - Credit By Exam",
-      "assigned": "Automotive Electronics",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
-      "why": "already classified to the same target"
-    },
-    {
       "raw": "AUTO 60D Ignition Analysis and Oscilloscope Diagnosis Credit By Exam",
       "assigned": "Ignition Analysis and Oscilloscope Diagnosis",
       "issuer": "California Community Colleges",
@@ -776,14 +752,6 @@
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T17:00:20.769531+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "AUTO 62A: Automotive Suspension, Steering and Alignment - Credit By Exam",
-      "assigned": "Automotive Suspension, Steering and Alignment",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -968,14 +936,6 @@
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Automotive Technology MLR I & II - Irvine High School",
-      "assigned": "Automotive Technology MLR I and II — Irvine High School",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -1328,14 +1288,6 @@
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)",
-      "assigned": "Business Management and Entrepreneurship — Cajon High School",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -2616,14 +2568,6 @@
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Cinema 24- Credit by Exam",
-      "assigned": "Cinema 24",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -4699,8 +4643,65 @@
       "why": "already classified to the same target"
     }
   ],
-  "supersede": [],
+  "supersede": [
+    {
+      "raw": "AUTO 60A: Electrical Schematic Diagnosis- Credit By Exam",
+      "assigned": "Automotive Electrical Schematic Diagnosis",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "spellings": [
+        "AUTO 60A: Electrical Schematic Diagnosis- Credit By Exam"
+      ],
+      "disagreeing": [
+        "AUTO 60A: Electrical Schematic Diagnosis- Credit By Exam"
+      ],
+      "displaced": [
+        "ASE A6 — Electrical/Electronic Systems"
+      ]
+    },
+    {
+      "raw": "AUTO 60B: Automotive Electronics - Credit By Exam",
+      "assigned": "Automotive Electronics",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "spellings": [
+        "AUTO 60B: Automotive Electronics - Credit By Exam"
+      ],
+      "disagreeing": [
+        "AUTO 60B: Automotive Electronics - Credit By Exam"
+      ],
+      "displaced": [
+        "ASE A6 — Electrical/Electronic Systems"
+      ]
+    },
+    {
+      "raw": "AUTO 62A: Automotive Suspension, Steering and Alignment - Credit By Exam",
+      "assigned": "Automotive Suspension, Steering and Alignment",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "spellings": [
+        "AUTO 62A: Automotive Suspension, Steering and Alignment - Credit By Exam"
+      ],
+      "disagreeing": [
+        "AUTO 62A: Automotive Suspension, Steering and Alignment - Credit By Exam"
+      ],
+      "displaced": [
+        "ASE A4 — Suspension and Steering"
+      ]
+    }
+  ],
   "stale": [
+    {
+      "raw": "ADM JUS 067",
+      "assigned": "Administration of Justice 067",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "why": "KB holds a newer curator decision: 'ADM JUS 067' -> 'Community and the Justice System' (2026-06-03T17:55:58.840521+00:00)"
+    },
     {
       "raw": "AP English Language Composition",
       "assigned": "AP English Language & Composition",
@@ -4742,6 +4743,14 @@
       "why": "KB holds a newer curator decision: 'Advanced Metal Framing' -> 'Metal Framing Advanced' (2026-06-02T18:25:47Z)"
     },
     {
+      "raw": "Cinema 24- Credit by Exam",
+      "assigned": "Cinema 24",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "why": "KB holds a newer curator decision: 'Cinema 24- Credit by Exam ' -> 'Basic Film Production' (2026-07-07); 'Cinema 24- Credit by Exam' -> 'Basic Film Production' (2026-06-03T17:55:58.840521+00:00)"
+    },
+    {
       "raw": "FTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship",
       "assigned": "Fire Service In-Service Training: Command and Control",
       "issuer": "",
@@ -4752,6 +4761,22 @@
   ],
   "conflict": [
     {
+      "raw": "Automotive Technology MLR I & II - Irvine High School",
+      "assigned": "Automotive Technology MLR I and II — Irvine High School",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "human-reviewed classification stands: 'Automotive Technology MLR I & II - Irvine High School' -> 'Automotive Technology Maintenance and Light Repair (MLR)'"
+    },
+    {
+      "raw": "CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)",
+      "assigned": "Business Management and Entrepreneurship — Cajon High School",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "human-reviewed classification stands: 'CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)' -> 'Business Management and Entrepreneurship'"
+    },
+    {
       "raw": "INSPEC 015 - Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
       "assigned": "Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
       "issuer": "",
@@ -4760,7 +4785,56 @@
       "why": "human-reviewed classification stands: 'INSPEC 015 - Advanced Construction Inspection: Uniform Plumbing Code (UPC)' -> 'Construction Inspection: Uniform Plumbing Code (UPC) Advanced'"
     }
   ],
-  "credential_adds": [],
+  "credential_adds": [
+    {
+      "raw": "AUTO 60A: Electrical Schematic Diagnosis- Credit By Exam",
+      "assigned": "Automotive Electrical Schematic Diagnosis",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "spellings": [
+        "AUTO 60A: Electrical Schematic Diagnosis- Credit By Exam"
+      ],
+      "disagreeing": [
+        "AUTO 60A: Electrical Schematic Diagnosis- Credit By Exam"
+      ],
+      "displaced": [
+        "ASE A6 — Electrical/Electronic Systems"
+      ]
+    },
+    {
+      "raw": "AUTO 60B: Automotive Electronics - Credit By Exam",
+      "assigned": "Automotive Electronics",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "spellings": [
+        "AUTO 60B: Automotive Electronics - Credit By Exam"
+      ],
+      "disagreeing": [
+        "AUTO 60B: Automotive Electronics - Credit By Exam"
+      ],
+      "displaced": [
+        "ASE A6 — Electrical/Electronic Systems"
+      ]
+    },
+    {
+      "raw": "AUTO 62A: Automotive Suspension, Steering and Alignment - Credit By Exam",
+      "assigned": "Automotive Suspension, Steering and Alignment",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "spellings": [
+        "AUTO 62A: Automotive Suspension, Steering and Alignment - Credit By Exam"
+      ],
+      "disagreeing": [
+        "AUTO 62A: Automotive Suspension, Steering and Alignment - Credit By Exam"
+      ],
+      "displaced": [
+        "ASE A4 — Suspension and Steering"
+      ]
+    }
+  ],
   "credential_issuer_fills": [],
   "credential_issuer_adds": [],
   "credential_prunes": [],

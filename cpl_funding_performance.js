@@ -8,7 +8,7 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified (context, not a priority metric) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 41068,
+  "pe": 41095,
   "p2": 4775,
   "p3": 16310
  },
@@ -186,7 +186,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Fresno City": {
-   "pe": 485,
+   "pe": 486,
    "p2": 0,
    "p3": 0
   },
@@ -343,7 +343,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 438
   },
   "Ohlone": {
-   "pe": 128,
+   "pe": 130,
    "p2": 0,
    "p3": 0
   },
@@ -510,7 +510,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "West LA": {
-   "pe": 682,
+   "pe": 706,
    "p2": 485,
    "p3": 549
   },

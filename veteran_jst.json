@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-08T21:00:05.635924+00:00",
+  "scraped_at": "2026-07-08T22:39:47.282341+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25364,
+    "jst": 25391,
     "star_colleges": 52
   },
   "computed_star_colleges": 52,
@@ -67,7 +67,7 @@
     },
     "West Los Angeles College": {
       "vets": 122,
-      "jst": 112,
+      "jst": 136,
       "star": true
     },
     "Long Beach City College": {
@@ -162,7 +162,7 @@
     },
     "Fresno City College": {
       "vets": 724,
-      "jst": 490,
+      "jst": 491,
       "star": false
     },
     "Clovis Community College": {
@@ -477,7 +477,7 @@
     },
     "Ohlone College": {
       "vets": 49,
-      "jst": 130,
+      "jst": 132,
       "star": true
     },
     "Cuyamaca College": {
