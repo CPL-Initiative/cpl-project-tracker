@@ -311,6 +311,13 @@ jobs:
             fi
             echo "Push attempt $attempt failed — rebasing onto origin/main and retrying."
             git fetch origin main
+            # The run leaves UNSTAGED regenerated files (everything not in the
+            # git add list) in the tree, and `git rebase` refuses with
+            # "You have unstaged changes" — which is exactly how the
+            # 2026-07-08 20:23 run died when PR #698 merged mid-run. That
+            # output is disposable (the next run regenerates it): discard it
+            # so the committed snapshot rebases cleanly.
+            git checkout -- .
             git rebase origin/main || { git rebase --abort; exit 1; }
             sleep $((attempt * 2))
           done
