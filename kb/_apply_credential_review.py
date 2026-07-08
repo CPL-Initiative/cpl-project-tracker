@@ -76,6 +76,11 @@ KEY_PREFIX = "_CREDENTIAL_REVIEW::"
 # (excel_to_dashboard.py:export_credential_reference()) — see Mode B above.
 FIELDS = {
     "unified_title_override",
+    # PR-5b/2 (Session 107): the curator's explicit ✓ Confirm-merge record —
+    # value = the EXACT existing credential key the colliding rename folds
+    # into. Recorded in the overlay for the rename dry-run to consume; never
+    # promoted by Modes A2/A3 (it's a decision record, not an agency).
+    "unified_title_merge_confirm",
     "issuing_agency_override",
     "issuing_agency_additional_override",
     "training_agency_override",

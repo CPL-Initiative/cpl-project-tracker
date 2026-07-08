@@ -32,6 +32,13 @@
   // the KB key (and the articulation join target). A future PR-5 will promote
   // overrides into real KB renames with an alias map + sync script.
   var FIELD_UTITLE_OVERRIDE  = "unified_title_override";
+  // PR-5b/2 (Session 107) — the curator's explicit merge confirmation. When a
+  // saved rename's target equals an EXISTING credential key, the rename apply
+  // queues it as a collision until this row exists naming that exact target;
+  // then the apply FOLDS the old credential's records into the existing key.
+  // Its own kb_curation field (the additional-issuer pattern) so a confirm
+  // never clobbers the rename override itself. NEVER inferred server-side.
+  var FIELD_UTITLE_MERGE_CONFIRM = "unified_title_merge_confirm";
   var FIELD_ISSUER_OVERRIDE  = "issuing_agency_override";
   // An ADDITIONAL issuing agency (Rule 4 — same credential, multiple
   // certifying bodies). Its own kb_curation field so a second agency never
@@ -266,6 +273,10 @@
             rec.utitle_override   = row.value || "";
             rec.utitle_overridden_by = row.reviewer_email;
             rec.utitle_overridden_at = row.reviewed_at;
+          } else if (row.field === FIELD_UTITLE_MERGE_CONFIRM) {
+            rec.merge_confirm = row.value || "";
+            rec.merge_confirmed_by = row.reviewer_email;
+            rec.merge_confirmed_at = row.reviewed_at;
           } else if (row.field === FIELD_ISSUER_OVERRIDE) {
             rec.issuer_override = row.value || "";
             rec.issuer_overridden_by = row.reviewer_email;
@@ -2065,6 +2076,7 @@
   // full overlay re-fetch.
   function overlayKeyFor(field) {
     if (field === FIELD_UTITLE_OVERRIDE)  return "utitle_override";
+    if (field === FIELD_UTITLE_MERGE_CONFIRM) return "merge_confirm";
     if (field === FIELD_ISSUER_OVERRIDE)  return "issuer_override";
     if (field === FIELD_ISSUER2_OVERRIDE) return "issuer2_override";
     if (field === FIELD_TRAINER_OVERRIDE) return "trainer_override";
@@ -2072,6 +2084,7 @@
     return null;
   }
   function overlayMetaKeyFor(field, suffix) {
+    if (field === FIELD_UTITLE_MERGE_CONFIRM) return "merge_confirmed_" + suffix;
     var prefix = overlayKeyFor(field).replace("_override", "");
     return prefix + "_overridden_" + suffix;
   }
@@ -2304,6 +2317,13 @@
       "#tab-credential-reference .cr-ni-table th{text-align:left;background:var(--seal-blue);color:#fff;padding:7px 10px;position:sticky;top:0;}" +
       "#tab-credential-reference .cr-ni-table td{padding:6px 10px;border-top:1px solid #eef2f7;vertical-align:top;}" +
       "#tab-credential-reference .cr-ni-row.cr-wl-done{background:#f0fdf4;}" +
+      "#tab-credential-reference .cr-mg-table{width:100%;border-collapse:collapse;margin:.4em 0 1em;}" +
+      "#tab-credential-reference .cr-mg-row td{padding:.3em .5em;border-bottom:1px solid var(--border-soft,#e5e7eb);vertical-align:middle;}" +
+      "#tab-credential-reference .cr-mg-old{font-weight:600;max-width:26em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}" +
+      "#tab-credential-reference .cr-mg-arrow{color:var(--text-soft,#6b7280);}" +
+      "#tab-credential-reference .cr-mg-input{width:100%;min-width:16em;box-sizing:border-box;}" +
+      "#tab-credential-reference .cr-mg-row.cr-wl-done{background:#f0fdf4;}" +
+      "#tab-credential-reference .cr-mg-row.cr-wl-save-failed{background:#fef2f2;outline:1px solid #fca5a5;}" +
       "#tab-credential-reference .cr-ni-row.cr-wl-preseeded{background:#fffdf5;}" +
       "#tab-credential-reference .cr-ni-row.cr-wl-save-failed{background:#fef2f2;outline:1px solid #fca5a5;}" +
       // Session 106 — raw-title/college context + editable title in the lane.
@@ -2718,8 +2738,97 @@
       return needsIssuer || needsTitle || needsTrainer;
     });
   }
+  // ── PR-5b/2 — the pending-merges strip (Session 107) ─────────────────────
+  // Saved renames whose target equals an EXISTING credential key sit in the
+  // rename dry-run's collision queue until confirmed. These rows usually
+  // carry an issuer already (so they've left the issuer queue) — this strip
+  // is their confirm surface: ✓ Confirm merge writes the
+  // unified_title_merge_confirm row; ✎ re-title saves a different target
+  // instead (and clears a stale confirm).
+  function pendingMerges() {
+    var out = [];
+    (state.rows || []).forEach(function (r) {
+      var ov = state.overlay[r.unified_title] || {};
+      var t = (ov.utitle_override || "").trim();
+      if (!t) return;
+      var target = mergeTargetFor(r, t);
+      if (!target) return;
+      if ((ov.merge_confirm || "") === t) return;  // already confirmed
+      out.push({ r: r, target: target, title: t });
+    });
+    return out.sort(function (a, b) {
+      return (a.r.unified_title || "").localeCompare(b.r.unified_title || "");
+    });
+  }
+  function renderPendingMergesInto(panel) {
+    var pending = pendingMerges();
+    if (!pending.length) return;
+    panel.appendChild(el("h3", { class: "cr-wl-title cr-mg-title" },
+      ["Merge confirmations (" + pending.length + ")"]));
+    panel.appendChild(el("p", { class: "cr-wl-note" }, [
+      "These saved unified titles match an EXISTING credential — the rename "
+      + "apply holds each one in its collision queue until you decide. "
+      + "✓ Confirm merge folds the credential's records into the existing one "
+      + "on the next rename apply; or re-title it to something that doesn't "
+      + "collide."
+    ]));
+    var tbl = el("table", { class: "cr-mg-table" });
+    var tbody = el("tbody");
+    pending.forEach(function (p) {
+      var tr = el("tr", { class: "cr-mg-row", "data-ut": p.r.unified_title });
+      tr.appendChild(el("td", { class: "cr-mg-old" }, [p.r.unified_title]));
+      tr.appendChild(el("td", { class: "cr-mg-arrow" }, ["⇒"]));
+      var inp = el("input", { type: "text", class: "cr-mg-input",
+        value: p.title, title: "Edit to re-title instead of merging" });
+      tr.appendChild(el("td", null, [inp]));
+      var actTd = el("td", { class: "cr-mg-act" });
+      var btn = el("button", { type: "button", class: "cr-mg-confirm" },
+        ["✓ Confirm merge"]);
+      inp.oninput = function () {
+        var again = mergeTargetFor(p.r, inp.value);
+        btn.textContent = again ? "✓ Confirm merge" : "Save re-title";
+      };
+      btn.onclick = function () {
+        var ut = p.r.unified_title;
+        var val = (inp.value || "").trim();
+        if (!val) return;
+        var target = mergeTargetFor(p.r, val);
+        if (target && !window.confirm(mergeConfirmMessage(p.r, val))) return;
+        btn.disabled = true; btn.textContent = "saving…";
+        var writes = [saveOverride(ut, FIELD_UTITLE_OVERRIDE, val)];
+        if (target) {
+          writes.push(saveOverride(ut, FIELD_UTITLE_MERGE_CONFIRM, val));
+        } else if ((state.overlay[ut] || {}).merge_confirm) {
+          writes.push(clearOverride(ut, FIELD_UTITLE_MERGE_CONFIRM));
+        }
+        Promise.all(writes).then(function (rs) {
+          if (!rs.every(function (resp) { return resp && resp.ok; })) {
+            btn.disabled = false; btn.textContent = "retry";
+            tr.classList.add("cr-wl-save-failed");
+            return;
+          }
+          var ov = state.overlay[ut] = state.overlay[ut] || {};
+          ov.utitle_override = val;
+          ov.merge_confirm = target ? val : "";
+          tr.classList.remove("cr-wl-save-failed");
+          tr.classList.add("cr-wl-done");
+          btn.textContent = target ? "✓ merge confirmed" : "✓ re-titled";
+        }).catch(function () {
+          btn.disabled = false; btn.textContent = "retry";
+          tr.classList.add("cr-wl-save-failed");
+        });
+      };
+      actTd.appendChild(btn);
+      tr.appendChild(actTd);
+      tbody.appendChild(tr);
+    });
+    tbl.appendChild(tbody);
+    panel.appendChild(tbl);
+  }
+
   function renderIssuerLaneInto(panel) {
     ensureWorklistDatalists();  // the queue-clear early path skips the main list's call
+    renderPendingMergesInto(panel);
     var queue = issuerQueue().slice().sort(function (a, b) {
       // staged pre-seeds first (they're one click from done), then A→Z
       var pa = state.issuerPreseed[a.unified_title] ? 0 : 1;
@@ -2978,11 +3087,54 @@
     return jobs;
   }
 
+  // ── PR-5b/2 — merge-collision detection (Session 107) ────────────────────
+  // A typed unified title that EXACTLY matches a DIFFERENT credential's key
+  // (r.unified_title — the credentials.json key, not the display label) is a
+  // merge in the making: the rename dry-run queues it as a collision until
+  // the curator confirms. Mirrors the dry-run's `new_ut in credentials` test.
+  function credKeyIndex() {
+    if (!state._credKeyIndex) {
+      var m = {};
+      (state.rows || []).forEach(function (r) { m[r.unified_title] = r; });
+      state._credKeyIndex = m;
+    }
+    return state._credKeyIndex;
+  }
+  function mergeTargetFor(r, titleVal) {
+    var t = (titleVal || "").trim();
+    if (!t || t === r.unified_title) return null;
+    var hit = credKeyIndex()[t];
+    return (hit && hit !== r) ? hit : null;
+  }
+  // Append the merge-confirm job when the row's title job collides and the
+  // curator has said yes. Returns the (possibly grown) jobs array.
+  function withMergeConfirmJob(r, jobs) {
+    var titleJob = null;
+    jobs.forEach(function (j) { if (j.field === FIELD_UTITLE_OVERRIDE) titleJob = j; });
+    if (!titleJob) return jobs;
+    var target = mergeTargetFor(r, titleJob.value);
+    if (!target) return jobs;
+    return jobs.concat([{ field: FIELD_UTITLE_MERGE_CONFIRM, value: titleJob.value }]);
+  }
+  function mergeConfirmMessage(r, targetTitle) {
+    return "“" + targetTitle + "” already exists as its own credential.\n\n"
+      + "Saving CONFIRMS A MERGE: on the next rename apply, “"
+      + (r.display_title || r.unified_title)
+      + "”’s records fold into the existing “" + targetTitle
+      + "” and the two become one credential.\n\nContinue?";
+  }
+
   function saveIssuerLaneRow(r, tr, titleInp, inp, inp2, saveBtn) {
     var jobs = laneJobsFor(r, titleInp.value, inp.value, inp2 ? inp2.value : "");
     if (!jobs.length) {          // nothing changed — treat as reviewed-OK
       applySavedLane(r, tr, jobs);
       return;
+    }
+    var grown = withMergeConfirmJob(r, jobs);
+    if (grown.length !== jobs.length) {
+      var target = grown[grown.length - 1].value;
+      if (!window.confirm(mergeConfirmMessage(r, target))) return;  // curator declined — inputs stay editable
+      jobs = grown;
     }
     saveBtn.disabled = true; saveBtn.textContent = "saving…";
     saveBtn.setAttribute("data-busy", "1");
@@ -3041,7 +3193,7 @@
     var byUt = {};
     (state.rows || []).forEach(function (r) { byUt[r.unified_title] = r; });
     var todo = [];
-    var nEmpty = 0, nTitle = 0, nTrainer = 0, nIssuer = 0;
+    var nEmpty = 0, nTitle = 0, nTrainer = 0, nIssuer = 0, nMerge = 0;
     rows.forEach(function (tr) {
       var ut = tr.getAttribute("data-ut");
       if (!ut || state.niSaved[ut] || !byUt[ut]) return;
@@ -3057,10 +3209,12 @@
         return !!j.value || (ps && ps.issuer === "");
       });
       if (!jobs.length) return;
+      jobs = withMergeConfirmJob(byUt[ut], jobs);
       jobs.forEach(function (j) {
         if (j.field === FIELD_ISSUER_OVERRIDE) { nIssuer++; if (!j.value) nEmpty++; }
         if (j.field === FIELD_UTITLE_OVERRIDE) nTitle++;
         if (j.field === FIELD_TRAINER_OVERRIDE) nTrainer++;
+        if (j.field === FIELD_UTITLE_MERGE_CONFIRM) nMerge++;
       });
       todo.push({ ut: ut, tr: tr, jobs: jobs });
     });
@@ -3072,6 +3226,11 @@
     var msg = "Save " + todo.length + " row" + (todo.length === 1 ? "" : "s")
       + " — " + parts.join(" · ") + " assignment"
       + (nIssuer + nTitle + nTrainer === 1 ? "" : "s")
+      + (nMerge ? " — ⚠ " + nMerge + " title" + (nMerge === 1 ? " matches" : "s match")
+                + " an EXISTING credential and will save as CONFIRMED MERGE"
+                + (nMerge === 1 ? "" : "s")
+                + " (records fold into the existing credential on the next rename apply)"
+        : "")
       + " — exactly as shown in the inputs?";
     if (!window.confirm(msg)) return;
     btn.disabled = true;

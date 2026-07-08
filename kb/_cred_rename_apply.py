@@ -89,8 +89,9 @@ def load_alias_map():
         doc = json.load(f)
     summary = doc.get("summary") or {}
     renames = doc.get("renames") or {}
-    if not renames:
-        sys.exit(f"{ALIAS_PATH} has no renames — nothing to apply.")
+    merges = doc.get("merges") or {}
+    if not renames and not merges:
+        sys.exit(f"{ALIAS_PATH} has no renames or merges — nothing to apply.")
     # V1 — refuse if dry-run flagged unsafe
     if not summary.get("apply_safe"):
         sys.exit(
@@ -103,7 +104,7 @@ def load_alias_map():
             f"v3={summary.get('v3_target_collision_free_pass')} "
             f"collisions={summary.get('collisions')}"
         )
-    return doc, renames
+    return doc, renames, merges
 
 
 def rekey_credentials(renames: dict):
@@ -154,6 +155,73 @@ def rekey_credentials(renames: dict):
         "rekeyed": rekeyed,
         "already_applied": already_applied,
         "not_found": not_found,
+    }
+
+
+def _norm_agency(s):
+    return " ".join((s or "").split()).casefold()
+
+
+def fold_credentials(merges: dict):
+    """PR-5b/2 — fold each merge source's credential records into the
+    EXISTING target key (curator-confirmed; Rule 4 multi-record shape).
+
+    Dedupe: a moving record whose normalized (issuing_agency, training_agency)
+    pair already exists on the target is dropped (the target's own curator
+    data wins; the frozen alias_map snapshot preserves everything).
+
+    Gates: the target must still exist (drift check — a target renamed away
+    between dry-run and apply aborts); the post-fold key count must equal
+    before − (sources actually folded).
+    """
+    with open(CREDENTIALS, encoding="utf-8") as f:
+        creds = json.load(f)
+    before_count = len(creds)
+    folded = 0
+    already_applied = 0
+    records_moved = 0
+    records_deduped = 0
+    drift = [t for o, t in merges.items() if o in creds and t not in creds]
+    if drift:
+        sys.exit(
+            f"Merge-target drift: {drift[:3]} no longer exist in "
+            f"credentials.json (renamed away between dry-run and apply?). "
+            f"Re-run the dry-run and resolve."
+        )
+    for old, target in merges.items():
+        if old not in creds:
+            already_applied += 1  # re-run idempotency (or V2-warned ghost)
+            continue
+        moving = creds.pop(old) or []
+        existing = creds.get(target) or []
+        have = {( _norm_agency(x.get("issuing_agency")),
+                  _norm_agency(x.get("training_agency")) ) for x in existing}
+        for rec in moving:
+            key = (_norm_agency(rec.get("issuing_agency")),
+                   _norm_agency(rec.get("training_agency")))
+            if key in have:
+                records_deduped += 1
+                continue
+            existing.append(rec)
+            have.add(key)
+            records_moved += 1
+        creds[target] = existing
+        folded += 1
+    after_count = len(creds)
+    if after_count != before_count - folded:
+        sys.exit(
+            f"credentials.json fold count check failed: before={before_count}, "
+            f"after={after_count}, folded={folded}. Aborting to prevent "
+            f"data loss."
+        )
+    _atomic_write_json(CREDENTIALS, creds)
+    return {
+        "before_count": before_count,
+        "after_count": after_count,
+        "keys_folded": folded,
+        "already_applied": already_applied,
+        "records_moved": records_moved,
+        "records_deduped": records_deduped,
     }
 
 
@@ -253,7 +321,8 @@ def _render_validation_md(snap, results):
     lines.append("")
     lines.append(f"Applied: `{NOW_ISO}`")
     lines.append("")
-    lines.append(f"**{len(snap.get('renames') or {})} renames applied** "
+    lines.append(f"**{len(snap.get('renames') or {})} renames + "
+                 f"{len(snap.get('merges') or {})} confirmed merges applied** "
                  f"across credentials.json + unified_titles.json + "
                  f"coci_articulations.json.")
     lines.append("")
@@ -266,6 +335,16 @@ def _render_validation_md(snap, results):
         lines.append("|---|---|---|")
         for old, new in sorted((snap.get("renames") or {}).items()):
             lines.append(f"| `{old}` | → | `{new}` |")
+    lines.append("")
+    lines.append("## Confirmed merges applied (records folded into the existing key)")
+    lines.append("")
+    if not snap.get("merges"):
+        lines.append("_None._")
+    else:
+        lines.append("| Old unified_title | ⇒ folded into |")
+        lines.append("|---|---|")
+        for old, target in sorted((snap.get("merges") or {}).items()):
+            lines.append(f"| `{old}` | ⇒ `{target}` |")
     lines.append("")
     lines.append("## Per-file results")
     lines.append("")
@@ -280,31 +359,42 @@ def _render_validation_md(snap, results):
         lines.append("")
     lines.append("## Rollback")
     lines.append("")
-    lines.append("To revert, swap `old` and `new` in the frozen alias_map.json "
+    lines.append("To revert RENAMES, swap `old` and `new` in the frozen alias_map.json "
                  "at this path and re-run `kb/_cred_rename_apply.py`. The "
-                 "supersede-don't-mutate ADR preserves the round-trip.")
+                 "supersede-don't-mutate ADR preserves the round-trip. "
+                 "MERGES are not swap-reversible (records fold + dedupe): revert "
+                 "them from git history using this receipt's merge list as the map.")
     lines.append("")
     return "\n".join(lines) + "\n"
 
 
 def main():
-    alias_doc, renames = load_alias_map()
-    print(f"[cred_rename_apply] {TODAY} — applying {len(renames)} rename(s)")
+    alias_doc, renames, merges = load_alias_map()
+    print(f"[cred_rename_apply] {TODAY} — applying {len(renames)} rename(s) "
+          f"+ {len(merges)} confirmed merge(s)")
     creds_res = rekey_credentials(renames)
     print(f"  credentials.json:        rekeyed={creds_res['rekeyed']}, "
           f"already_applied={creds_res['already_applied']}, "
           f"not_found={creds_res['not_found']}")
-    ut_res = rewrite_unified_titles_values(renames)
+    results = {"credentials.json": creds_res}
+    if merges:
+        fold_res = fold_credentials(merges)
+        print(f"  credentials.json fold:   keys_folded={fold_res['keys_folded']}, "
+              f"records_moved={fold_res['records_moved']}, "
+              f"records_deduped={fold_res['records_deduped']}")
+        results["credentials.json (merge fold)"] = fold_res
+    # Renames and merges are both old→new value rewrites downstream — the V4
+    # cardinality formula (old_pre + new_pre) is additive-correct for merges.
+    combined = dict(renames)
+    combined.update(merges)
+    ut_res = rewrite_unified_titles_values(combined)
     print(f"  unified_titles.json:     value-rewrites={ut_res['rewrites']}, "
           f"untouched={ut_res['untouched']}")
-    art_res = rewrite_articulations_values(renames)
+    art_res = rewrite_articulations_values(combined)
     print(f"  coci_articulations.json: value-rewrites={art_res['rewrites']} "
           f"(V4 gate passed)")
-    results = {
-        "credentials.json": creds_res,
-        "unified_titles.json": ut_res,
-        "coci_articulations.json": art_res,
-    }
+    results["unified_titles.json"] = ut_res
+    results["coci_articulations.json"] = art_res
     out_dir = write_snapshot(alias_doc, results)
     print(f"  receipt: {out_dir}/{{alias_map.json, validation.md}}")
 

@@ -18,6 +18,15 @@ artifacts under `kb/cred_rename_dryrun/`:
                      collision stranded 49 recorded renames behind Sam's 6
                      deliberate merge-shaped retitles on 2026-07-08.)
 
+PR-5b/2 (Session 107) — curator-confirmed MERGES: when the CER triage lane's
+✓ Confirm merge writes a `unified_title_merge_confirm` row naming the exact
+colliding target, the collision graduates into the alias map's `merges`
+section and the apply FOLDS the old title's credential records into the
+existing key (dedupe on issuer+trainer; raws + articulations re-keyed like a
+rename). A confirm naming a DIFFERENT target than the current override is
+stale and stays queued; a merge whose target is itself retitled in the same
+batch stays queued (chain hazard). NEVER inferred, never auto-merged.
+
 Re-runnable. Daily cron runs this as a report-only step so the queue stays
 visible (and the artifact gets committed daily). Apply is a separate
 manual `workflow_dispatch` event (Cred-Ref PR-5b/1).
@@ -80,17 +89,35 @@ def main():
             art_records_by_ut[ut] += 1
 
     # ── Walk overrides and classify each rename ───────────────────────────────
-    # Three outcomes per override:
+    # Four outcomes per override:
     #   * skipped     — no override value, no-op (override cleared), or
     #                   override equals the original (curator entered the
     #                   same name — display change but no rename)
+    #   * merge       — new name already exists as a key in credentials.json
+    #                   AND the curator explicitly confirmed the merge
+    #                   (unified_title_merge_confirm == the same target —
+    #                   PR-5b/2, Session 107): the apply FOLDS the old
+    #                   title's credential records into the existing key.
     #   * collision   — new name already exists as a key in credentials.json
-    #                   (apply would clobber; reject + decision queue)
+    #                   with NO matching merge confirm (non-blocking decision
+    #                   queue — curator confirms the merge or re-titles)
     #   * clean       — safe rename; goes into alias_map
     renames_clean = {}        # old_ut -> new_ut
+    merges_confirmed = {}     # old_ut -> existing target key (fold on apply)
+    merge_details = []        # report rows for confirmed merges
     collisions = []           # list of dicts with the collision detail
     skipped = []              # list of dicts with skip reason
     no_credential_record = [] # rename of a unified_title with no credentials.json entry
+
+    # Every override that carries a title rename, keyed by source — used by
+    # the merge-target chain guard below (a confirmed merge must not target a
+    # credential that is itself being renamed/merged away in the same batch).
+    retitled_sources = {
+        o: (v or {}).get("unified_title_override")
+        for o, v in overrides.items()
+        if (v or {}).get("unified_title_override")
+        and (v or {}).get("unified_title_override") != o
+    }
 
     for old_ut, ov in sorted(overrides.items()):
         new_ut = (ov or {}).get("unified_title_override")
@@ -110,11 +137,33 @@ def main():
         if old_ut not in credentials:
             no_credential_record.append(old_ut)
         if new_ut in credentials:
+            confirm = (ov or {}).get("unified_title_merge_confirm")
+            target_also_retitled = new_ut in retitled_sources
+            if confirm == new_ut and not target_also_retitled:
+                # Curator-confirmed merge (PR-5b/2). NEVER inferred — the
+                # confirm row must name this exact target.
+                merges_confirmed[old_ut] = new_ut
+                merge_details.append({
+                    "old_unified_title": old_ut,
+                    "merge_into": new_ut,
+                    "records_folding": len(credentials.get(old_ut) or []),
+                    "existing_records_on_target": len(credentials.get(new_ut) or []),
+                    "raw_titles": len(raw_titles_by_ut.get(old_ut, [])),
+                    "articulations": art_records_by_ut.get(old_ut, 0),
+                    "confirmed_by": ov.get("reviewed_by"),
+                    "confirmed_at": ov.get("reviewed_at"),
+                })
+                continue
             collisions.append({
                 "old_unified_title": old_ut,
                 "proposed_new_title": new_ut,
-                "reason": "collision_with_existing_credential",
+                "reason": ("merge_target_itself_retitled_this_batch"
+                           if (confirm == new_ut and target_also_retitled)
+                           else ("stale_merge_confirm"
+                                 if confirm else
+                                 "collision_with_existing_credential")),
                 "existing_credential_records": len(credentials.get(new_ut) or []),
+                "merge_confirm_recorded": confirm or None,
                 "rename_would_touch": {
                     "raw_titles_in_unified_titles_json": len(raw_titles_by_ut.get(old_ut, [])),
                     "articulation_records": art_records_by_ut.get(old_ut, 0),
@@ -122,7 +171,7 @@ def main():
                 },
                 "reviewed_by": ov.get("reviewed_by"),
                 "reviewed_at": ov.get("reviewed_at"),
-                "policy": "reject_pending_curator_decision",
+                "policy": "queued_pending_curator_decision",
             })
             continue
         renames_clean[old_ut] = new_ut
@@ -156,8 +205,10 @@ def main():
     # Queued collisions do NOT gate the clean set (Session 107): a collision
     # source always exists as a credentials.json key while a clean target
     # never does, so the two sets are disjoint — applying the clean renames
-    # can't touch a queued collision's source or target.
-    apply_safe = bool(v1_pass and v2_pass and v3_pass and renames_clean)
+    # can't touch a queued collision's source or target. Confirmed merges
+    # count as applicable work alongside clean renames.
+    apply_safe = bool(v1_pass and v2_pass and v3_pass
+                      and (renames_clean or merges_confirmed))
 
     # ── Write artifacts ───────────────────────────────────────────────────────
     if not os.path.isdir(OUT_DIR):
@@ -176,6 +227,7 @@ def main():
             "total_overrides_in_overlay": sum(
                 1 for v in overrides.values() if (v or {}).get("unified_title_override")),
             "clean_renames": len(renames_clean),
+            "confirmed_merges": len(merges_confirmed),
             "collisions": len(collisions),
             "skipped": len(skipped),
             "renames_of_titles_with_no_credentials_record": len(no_credential_record),
@@ -185,6 +237,11 @@ def main():
             "v3_target_collision_free_pass": v3_pass,
         },
         "renames": renames_clean,
+        # Curator-CONFIRMED merges (PR-5b/2): old title → EXISTING credential
+        # key. The apply FOLDS the old title's credential records into the
+        # target (dedupe on issuer+trainer) and re-keys raws + articulations.
+        "merges": merges_confirmed,
+        "merge_details": merge_details,
     }
     with open(os.path.join(OUT_DIR, "alias_map.json"), "w", encoding="utf-8") as f:
         json.dump(alias_map_payload, f, indent=2, ensure_ascii=False)
@@ -207,7 +264,8 @@ def main():
         json.dump(collisions_payload, f, indent=2, ensure_ascii=False)
         f.write("\n")
 
-    md = _render_md(renames_clean, collisions, skipped, no_credential_record,
+    md = _render_md(renames_clean, merge_details, collisions, skipped,
+                    no_credential_record,
                     intra_batch_collisions, v2_blocked, v3_blocked,
                     raw_titles_by_ut, art_records_by_ut, credentials,
                     apply_safe)
@@ -218,6 +276,7 @@ def main():
     print(f"[cred_rename_dryrun] {TODAY}")
     print(f"  overrides in overlay:    {sum(1 for v in overrides.values() if (v or {}).get('unified_title_override'))}")
     print(f"  clean renames:           {len(renames_clean)}")
+    print(f"  confirmed merges:        {len(merges_confirmed)}")
     print(f"  collisions:              {len(collisions)}")
     print(f"  skipped (no-op):         {len(skipped)}")
     print(f"  V1 (intra-batch):        {'PASS' if v1_pass else f'FAIL ({len(intra_batch_collisions)})'}")
@@ -227,7 +286,8 @@ def main():
     print(f"  wrote: {OUT_DIR}/{{report.md, alias_map.json, collisions.json}}")
 
 
-def _render_md(renames_clean, collisions, skipped, no_credential_record,
+def _render_md(renames_clean, merge_details, collisions, skipped,
+               no_credential_record,
                intra_batch_collisions, v2_blocked, v3_blocked_report,
                raw_titles_by_ut, art_records_by_ut, credentials,
                apply_safe):
@@ -254,8 +314,22 @@ def _render_md(renames_clean, collisions, skipped, no_credential_record,
                  f"{'PASS ✓' if not v3_blocked_report else f'FAIL ({len(v3_blocked_report)}) ✗'} |")
     lines.append(f"| — | Queued collisions (non-blocking — wait for a curator decision) | "
                  f"{len(collisions) if collisions else '0'} |")
-    lines.append(f"| **Apply safe** | V1–V3 pass + at least one clean rename (queued collisions don't block) | "
+    lines.append(f"| **Apply safe** | V1–V3 pass + at least one clean rename or confirmed merge (queued collisions don't block) | "
                  f"{'**YES — PR-5b/1 can dispatch**' if apply_safe else '**NO**'} |")
+    lines.append("")
+    lines.append("## Confirmed merges (would FOLD on apply — PR-5b/2)")
+    lines.append("")
+    if not merge_details:
+        lines.append("_None._ A queued collision becomes a confirmed merge when the curator "
+                     "clicks **✓ Confirm merge** in the CER triage lane (writes "
+                     "`unified_title_merge_confirm` naming the exact target).")
+    else:
+        lines.append("| Old unified_title | ⇒ folds into | Records folding | Already on target | raw_titles | articulations |")
+        lines.append("|---|---|---:|---:|---:|---:|")
+        for m in merge_details:
+            lines.append(f"| `{m['old_unified_title']}` | ⇒ `{m['merge_into']}` "
+                         f"| {m['records_folding']} | {m['existing_records_on_target']} "
+                         f"| {m['raw_titles']} | {m['articulations']} |")
     lines.append("")
     lines.append("## Clean renames (would land on apply)")
     lines.append("")
@@ -276,15 +350,15 @@ def _render_md(renames_clean, collisions, skipped, no_credential_record,
         lines.append("_None._")
     else:
         lines.append("Each row's proposed new title already exists as a key in `credentials.json`. "
-                     "Policy: non-blocking decision queue — these wait (clean renames apply without "
-                     "them) until the curator picks a non-colliding target or explicitly confirms "
-                     "the merge (PR-5b/2).")
+                     "Policy: non-blocking decision queue — these wait (clean renames + confirmed "
+                     "merges apply without them) until the curator picks a non-colliding target or "
+                     "explicitly confirms the merge in the CER triage lane (PR-5b/2).")
         lines.append("")
-        lines.append("| Old | → | New (collides) | Existing records on target |")
-        lines.append("|---|---|---|---:|")
+        lines.append("| Old | → | New (collides) | Existing records on target | Why queued |")
+        lines.append("|---|---|---|---:|---|")
         for c in collisions:
             lines.append(f"| `{c['old_unified_title']}` | → | `{c['proposed_new_title']}` "
-                         f"| {c['existing_credential_records']} |")
+                         f"| {c['existing_credential_records']} | {c.get('reason', '')} |")
     lines.append("")
     lines.append("## Skipped")
     lines.append("")
