@@ -188,48 +188,77 @@ async function scenarioPrefill() {
 }
 
 async function scenarioBulkSave() {
+  // Session 105 contract: "Save all filled shown" saves EVERY shown,
+  // still-unassigned row with a filled title — pre-seeded AND hand-typed
+  // (the 2026-07-08 fire-cert fix: hand-completed rows were silently
+  // skipped by the old pre-seeded-only bulk).
   const opts = {};
   const { window, log } = await open(opts);
   const doc = window.document;
   const bar = doc.querySelector(".cr-wl-preseed-bar");
-  check("bulk: pre-seed bar announces the pre-filled count", /1 row pre-filled/.test(txt(bar)));
+  check("bulk: pre-seed bar announces the pre-filled count", /1 row/.test(txt(bar)) && /pre-filled/.test(txt(bar)));
   const btn = doc.querySelector(".cr-wl-saveall");
-  check("bulk: save-all button visible when signed in", !!btn && /\(1\)/.test(txt(btn)));
+  check("bulk: save-all button visible when signed in", !!btn && /filled shown/.test(txt(btn)));
   // hand-edit the prefill first — bulk must save the EDITED value
   const psRow = Array.from(doc.querySelectorAll(".cr-wl-table tbody tr"))
     .find((r) => txt(r.querySelector(".cr-wl-rawt")) === "Raw Preseeded");
   const inp = psRow.querySelector(".cr-wl-title-input");
   inp.value = "Water Distribution Operator I (edited)";
   inp.dispatchEvent(new window.Event("input", { bubbles: true }));
-  // type into ANOTHER row but don't save — bulk must not wipe it
+  // type into ANOTHER (non-preseeded) row — bulk must save it too now
   const plainRow = Array.from(doc.querySelectorAll(".cr-wl-table tbody tr"))
     .find((r) => txt(r.querySelector(".cr-wl-rawt")) === "Raw Plain");
   const plainInp = plainRow.querySelector(".cr-wl-title-input");
-  plainInp.value = "Half-typed draft";
+  plainInp.value = "Hand-typed Credential";
   plainInp.dispatchEvent(new window.Event("input", { bubbles: true }));
   btn.click();
-  await sleep(150);
+  await sleep(200);
   check("bulk: confirm dialog shown before saving", opts.confirms === 1);
-  const titleWrite = log.writes.map((w) => w.body).find(
-    (b) => b && b.field === "unified_title_assignment");
-  const issWrite = log.writes.map((w) => w.body).find(
-    (b) => b && b.field === "issuing_agency_assignment");
+  const bodies = log.writes.map((w) => w.body);
+  const psTitle = bodies.find((b) => b && b.field === "unified_title_assignment"
+    && b.course_id === "_UNCLASSIFIED::Raw Preseeded");
+  const psIss = bodies.find((b) => b && b.field === "issuing_agency_assignment"
+    && b.course_id === "_UNCLASSIFIED::Raw Preseeded");
+  const plainTitle = bodies.find((b) => b && b.field === "unified_title_assignment"
+    && b.course_id === "_UNCLASSIFIED::Raw Plain");
   check("bulk: writes target the ROW'S raw title (course_id), never null",
-    titleWrite && titleWrite.course_id === "_UNCLASSIFIED::Raw Preseeded"
-    && issWrite && issWrite.course_id === "_UNCLASSIFIED::Raw Preseeded");
+    !!psTitle && !!psIss);
   check("bulk: saves what the input SHOWS (hand-edit wins)",
-    titleWrite && titleWrite.value === "Water Distribution Operator I (edited)");
+    psTitle && psTitle.value === "Water Distribution Operator I (edited)");
   check("bulk: issuer saved alongside",
-    issWrite && issWrite.value === "California Community Colleges");
-  check("bulk: exactly one row's 2 fields written", log.writes.length === 2);
+    psIss && psIss.value === "California Community Colleges");
+  check("bulk: hand-typed row saved too (the fire-cert fix)",
+    plainTitle && plainTitle.value === "Hand-typed Credential");
+  check("bulk: exactly the two filled rows' fields written (2 rows × 2 fields)",
+    log.writes.length === 4);
   check("bulk: reviewer stamped from the session",
-    titleWrite.reviewer_email === "map@rccd.edu");
-  check("bulk: unsaved input in OTHER rows survives (no full re-render)",
-    plainRow.isConnected && plainRow.querySelector(".cr-wl-title-input").value === "Half-typed draft");
+    psTitle.reviewer_email === "map@rccd.edu");
+  check("bulk: hand-typed row flipped to ✓ Saved in place",
+    plainRow.className.indexOf("cr-wl-done") >= 0);
   check("bulk: saved row flipped to ✓ Saved in place",
     psRow.className.indexOf("cr-wl-done") >= 0
     && txt(psRow.querySelector(".cr-wl-save")) === "✓ Saved"
     && !!psRow.querySelector(".cr-wl-clear"));
+}
+
+async function scenarioDraftSurvivesRerender() {
+  // Typed-but-unsaved input must survive a full re-render (the view toggle
+  // wiped hand-completed rows on 2026-07-07 — state.wlDraft now keeps them).
+  const { window } = await open({});
+  const doc = window.document;
+  const plainRow = () => Array.from(doc.querySelectorAll(".cr-wl-table tbody tr"))
+    .find((r) => txt(r.querySelector(".cr-wl-rawt")) === "Raw Plain");
+  const inp = plainRow().querySelector(".cr-wl-title-input");
+  inp.value = "Draft In Progress";
+  inp.dispatchEvent(new window.Event("input", { bubbles: true }));
+  // toggle All → Needs triage = two full re-renders
+  const chips = () => doc.querySelectorAll(".cr-wl-toggle-btn");
+  chips()[1].click();
+  await sleep(40);
+  chips()[0].click();
+  await sleep(40);
+  check("draft: typed title survives view-toggle re-renders",
+    plainRow().querySelector(".cr-wl-title-input").value === "Draft In Progress");
 }
 
 async function scenarioBulkDeclined() {
@@ -258,7 +287,12 @@ async function scenarioNoPreseedFile() {
   const doc = window.document;
   check("no-file: worklist renders without the preseed file (soft-fail)",
     doc.querySelectorAll(".cr-wl-table tbody tr").length === 2);
-  check("no-file: no pre-seed bar", !doc.querySelector(".cr-wl-preseed-bar"));
+  // Session 105: the bar is now the SAVE-ALL bar — it renders whenever open
+  // rows are shown to a signed-in curator (hand-typed rows are bulk-savable
+  // even with no pre-seed plan), just without any ⚡ pre-filled announcement.
+  const noBar = doc.querySelector(".cr-wl-preseed-bar");
+  check("no-file: save-all bar renders WITHOUT a ⚡ pre-filled count",
+    !!noBar && txt(noBar).indexOf("⚡") < 0 && !!noBar.querySelector(".cr-wl-saveall"));
 }
 
 (async () => {
@@ -266,6 +300,7 @@ async function scenarioNoPreseedFile() {
   await scenarioAllTriaged();
   await scenarioPrefill();
   await scenarioBulkSave();
+  await scenarioDraftSurvivesRerender();
   await scenarioBulkDeclined();
   await scenarioSignedOut();
   await scenarioNoPreseedFile();

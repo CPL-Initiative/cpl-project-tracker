@@ -1296,7 +1296,7 @@ def render_annual_goals_table_html(annual_goals, activities=None):
             <div style="overflow-x:auto;">
             <table style="width:100%;border-collapse:collapse;font-size:0.82rem;">
                 <thead>
-                    <tr style="background:var(--navy-primary);color:#fff;">
+                    <tr style="background:var(--seal-blue);color:#fff;">
                         <th style="padding:0.5rem 0.6rem;text-align:left;white-space:nowrap;border:1px solid var(--navy-secondary);">Sub-Activity</th>
                         <th style="padding:0.5rem 0.4rem;text-align:center;width:55px;border:1px solid var(--navy-secondary);">Type</th>
 '''

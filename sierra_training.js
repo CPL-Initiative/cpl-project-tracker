@@ -165,7 +165,7 @@
       ".sit-btn { background: var(--surface-subtle); border:1px solid var(--border-strong); border-radius:5px; padding:3px 10px; cursor:pointer; color: var(--text-body); font-size:.76rem; }",
       ".sit-btn:hover { background: var(--surface-muted); }",
       ".sit-btn[disabled] { opacity:.5; cursor:default; }",
-      ".sit-btn.on { background: var(--navy-primary); color:#fff; border-color: var(--navy-primary); }",
+      ".sit-btn.on { background: var(--seal-blue); color:#fff; border-color: var(--seal-blue); }",
       ".sit-themes { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px; }",
       ".sit-theme { font-size:.76rem; background: var(--surface-muted); color: var(--text-body); border:1px solid var(--border); border-radius:12px; padding:2px 10px; }",
       ".sit-theme b { color: var(--navy-primary); }",

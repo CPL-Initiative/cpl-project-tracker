@@ -125,6 +125,7 @@ jobs:
             "_site/kb/cos_matches.json"
             "_site/kb/unclassified_preseed.json"
             "_site/kb/unclassified_suggestions.json"
+            "_site/kb/issuer_preseed.json"
           )
           missing=0
           for p in "${must[@]}"; do

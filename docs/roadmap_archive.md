@@ -2287,3 +2287,22 @@ exact hits so same-exam raws converge; **NEVER invents a title** — residuals r
 lesson: generate SQL from the JSON receipt, never a terminal round-trip). 5 residuals = 3 multi-level
 "Complete both" + 2 Level III (no family). Harness `kb/_verify_preseed_rules.py` (43); skill Rule 5d.
 Full story: `docs/exhibit_canonicalization_lessons.md` (2026-07-07 "continued 5").
+
+### Session 103 — Bruh SkyWay: the STAGED pre-seed + triage toggle + issuer authority sources (2026-07-07)
+
+Sam (triaging live all evening — ~90 hand-saves landed DURING the session): "more pre-seeding …
+leave them ready to save but not yet saved … a toggle [for] just the ones needing to be triaged …
+preseed the credit-by-exam titles using your judgement and the issuing agency CCC."
+`kb/_preseed_unclassified.py --stage` → the committed `kb/unclassified_preseed.json`: **163 rows
+staged, ZERO Supabase writes** (cx 31 · hs 73 · journeyman 13 · carpenters 10 · ironworker 16 ·
+nccer 13 · singles 7; 107 residual — C-##/CSLB, IC-*, fire certs). The CER worklist gained the
+**Needs-triage/All toggle** (default hides saved rows), **⚡ prefilled inputs** + badge, and a
+confirm-gated **"Save all pre-filled shown"** (saves what the inputs SHOW; live assignment always
+wins). Authority links noted for future exhibits (DIR DAS occ 2180 → SW-JATC/CTCNC; NCCER
+assessments; CSLB queued): `docs/kb-notes/reference-issuing-agency-authority-sources.md` + skill
+Rule 5e. Curator VALUES fetched via MCP are now verified per-row (md5 pairs, order-independent) —
+caught 2 nbsp-corrupted rows + Sam's concurrent saves. Tests: `tests/cer_worklist_preseed.test.js`
+(29) + `kb/_verify_preseed_rules.py` grown to 73. QA flags for Sam: the THEATER-280 issuer slip,
+SMM 4 issuer==title, 3 mojibake `â€”` Generic-CBE families. Full story:
+`docs/exhibit_canonicalization_lessons.md` (2026-07-07 "continued 6"); next:
+`docs/session_104_handoff.md`.

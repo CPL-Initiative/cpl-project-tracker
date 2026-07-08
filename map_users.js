@@ -77,7 +77,7 @@
       ".mapu-auth { font-size:.78rem; color: var(--text-muted); }",
       ".mapu-auth b { color: var(--hunter, #2c601a); }",
       ".mapu-table { width:100%; border-collapse:collapse; font-size:.88rem; }",
-      ".mapu-table th { text-align:left; background: var(--navy-primary); color:#fff; padding:7px 10px; font-size:.74rem; text-transform:uppercase; letter-spacing:.04em; position:sticky; top:0; }",
+      ".mapu-table th { text-align:left; background: var(--seal-blue); color:#fff; padding:7px 10px; font-size:.74rem; text-transform:uppercase; letter-spacing:.04em; position:sticky; top:0; }",
       ".mapu-table th.num, .mapu-table td.num { text-align:right; }",
       ".mapu-table td { padding:7px 10px; border-bottom:1px solid var(--border); vertical-align:top; }",
       ".mapu-table tr:hover { background: var(--surface-subtle); }",
@@ -113,7 +113,7 @@
       ".mapu-pick .mapu-pick-n { font-size:.78rem; color: var(--text-body); }",
       ".mapu-pick .mapu-pick-e { grid-column:2; font-size:.74rem; color: var(--text-muted); }",
       ".mapu-pick-actions { display:flex; justify-content:flex-end; gap:8px; }",
-      ".mapu-pick-go { background: var(--navy-primary); color:#fff; border-color: var(--navy-primary); }",
+      ".mapu-pick-go { background: var(--seal-blue); color:#fff; border-color: var(--seal-blue); }",
       ".mapu-pick-go:hover { background: var(--navy-secondary); }",
       // user-roster checklist (Check-All header + per-user rows, scroll-capped)
       ".mapu-roster-pick { margin:0 0 14px; }",
