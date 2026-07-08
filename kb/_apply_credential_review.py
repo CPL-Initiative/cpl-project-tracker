@@ -142,11 +142,18 @@ def promote_issuers(overrides):
     # never-overwrite semantics.
     for ut, entry in overrides.items():
         recs = None
-        for field in ("issuing_agency_override",
-                      "issuing_agency_additional_override"):
-            iss = (entry.get(field) or "").strip()
-            if not iss:
-                continue
+        # The additional field may carry SEVERAL agencies " | "-delimited
+        # (Session 107 — unlimited ＋ in the Triage lane; one kb_curation row,
+        # each agency promoted with the same fill-or-append semantics).
+        queue = []
+        primary = (entry.get("issuing_agency_override") or "").strip()
+        if primary:
+            queue.append(primary)
+        for extra in (entry.get("issuing_agency_additional_override") or "").split("|"):
+            extra = extra.strip()
+            if extra:
+                queue.append(extra)
+        for iss in queue:
             if recs is None:
                 recs = cr.get(ut)
             if not recs:
