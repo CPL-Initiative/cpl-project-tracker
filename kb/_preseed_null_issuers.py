@@ -292,6 +292,18 @@ _SCHOOL_WORDS = (r"(?:High\s+School|Adult\s+School|Adult\s+Education|"
 _SCHOOL_SHAPE = re.compile(
     r"(?:[A-Z][A-Za-z.'’&-]*[ .]+){0,5}" + _SCHOOL_WORDS + r"\b", re.I)
 _HS_ABBREV = re.compile(r"\b([A-Z][A-Za-z.'’-]{2,})\s+HS\b(?!\s*\d)")
+# Dotted "Santa Ana H.S." (the Santa Ana College pattern — Sam's HS rule,
+# 2026-07-08 late) and FUSED "**HS" abbreviation tokens ("BIRMINGHAM CCHS" =
+# Birmingham Community Charter High School): a capitalized name followed by a
+# token ENDING in HS is a fair bet it's a high school (Sam). Both require a
+# preceding proper noun; never before a digit ("HS 081" is a subject code).
+_HS_DOTTED_ABBREV = re.compile(
+    r"\b((?:[A-Z][A-Za-z'’-]+\s+){1,4}H\.S\.?)(?!\s*\d)")
+# Prefix words exclude "." so a sentence boundary never joins the school name
+# ("LC Faculty: Ana Carrizales. HWHS: …" must not extract "Carrizales. HWHS").
+_FUSED_HS = re.compile(r"\b((?:[A-Z][A-Za-z'’&-]+\s+){1,4}([A-Z]{2,4}HS))\b(?!\s*\d)")
+# ends-in-HS acronyms that are NOT high schools (agencies) — never a school
+_FUSED_HS_BLOCK = {"USPHS", "NCHS", "DHHS"}
 
 # Leading "SUMMIT HIGH SCHOOL- Business and Finance" (separator required).
 _LEAD_SCHOOL = re.compile(
@@ -332,12 +344,12 @@ def _canon_school(s):
         return ""
     words = []
     for w in s.split(" "):
-        if w.isupper() and len(w) > 3:
-            words.append(w.title())
+        if w.isupper() and len(w) > 3 and not re.fullmatch(r"[A-Z]{2,4}HS", w):
+            words.append(w.title())   # fused **HS tokens (CCHS) stay uppercase
         else:
             words.append(w)
     s = " ".join(words)
-    s = re.sub(r"\bHS$", "High School", s)
+    s = re.sub(r"\bH\.?S\.?$", "High School", s)
     return s
 
 
@@ -355,6 +367,12 @@ def _school_from_raw(raw):
     m = _HS_ABBREV.search(raw or "")
     if m:
         return _canon_school(m.group(0))
+    m = _HS_DOTTED_ABBREV.search(raw or "")
+    if m:
+        return _canon_school(m.group(1))
+    m = _FUSED_HS.search(raw or "")
+    if m and m.group(2) not in _FUSED_HS_BLOCK:
+        return _canon_school(m.group(1))
     return ""
 
 
@@ -423,23 +441,42 @@ def title_is_decorated(row):
 # School"/"HS" means a NAMED school the extractor may simply have missed —
 # never genericize those.
 LOCAL_HS = "Local High School"
-_HS_GENERIC = re.compile(r"\bhigh\s*school\b|\bH\.?S\.?\b(?![a-z])")
+# Case-INSENSITIVE "high school" (the LA Pierce "HIGH SCHOOL ARTICULATION"
+# raws are all-caps — the old case-sensitive check missed them, Sam's HS pass
+# 2026-07-08 late) + the bare HS abbrev with a DIGIT GUARD ("Basic Arrhythmias
+# HS 081 Cx" — HS = Health Science, a Copper Mountain subject code, never a
+# school) + fused **HS tokens (blocklist-guarded).
+_HS_GENERIC_WORD = re.compile(r"\bhigh\s*school\b", re.I)
+_HS_GENERIC_ABBR = re.compile(r"\bH\.?S\.?\b(?![a-z])(?!\s*\d)")
+_HS_FUSED_TOKEN = re.compile(r"\b[A-Z]{2,4}HS\b(?!\s*\d)")
 _HS_NAMED_SHAPE = re.compile(
-    r"[A-Z][A-Za-z.&'’-]+(?:\s+[A-Z][A-Za-z.&'’-]+)*\s+(?:High\s*School|H\.?S\.?)\b")
+    r"[A-Z][A-Za-z.&'’-]+(?:\s+[A-Z][A-Za-z.&'’-]+)*\s+(?:High\s*School|H\.?S\.?)\b"
+    r"|[A-Z][A-Za-z.&'’-]+\s+[A-Z]{2,4}HS\b")
+
+
+def _hs_signal(t):
+    """One text carries a high-school indication (subject codes excluded)."""
+    if not t:
+        return False
+    if _HS_GENERIC_WORD.search(t) or _HS_GENERIC_ABBR.search(t):
+        return True
+    return any(m.group(0) not in _FUSED_HS_BLOCK
+               for m in _HS_FUSED_TOKEN.finditer(t))
 
 
 def hs_generic(row):
-    """True when the row's text says 'high school' WITHOUT naming one."""
-    texts = [row["display"]] + list(row["raws"])
-    saw = False
-    for t in texts:
-        if not t:
-            continue
-        if _HS_NAMED_SHAPE.search(t):
+    """True when the row's text says 'high school' WITHOUT naming one —
+    measured over the RAW variants with a ≥half grain guard, so a single
+    HS-pathway variant among many non-HS variants (the Medical Terminology
+    case: 2 of 9 raws) never flips a whole credential's agency."""
+    for t in [row["display"]] + list(row["raws"]):
+        if t and _HS_NAMED_SHAPE.search(t):
             return False          # a named school somewhere — 5f judgment
-        if _HS_GENERIC.search(t) or _HS_GENERIC.search(t.title()):
-            saw = True
-    return saw
+    if _hs_signal(row["display"]):
+        return True   # the credential's own NAME says HS ("… (HS Articulation)")
+    pool = [r for r in row["raws"] if r] or [row["display"]]
+    n_sig = sum(1 for t in pool if _hs_signal(t))
+    return n_sig > 0 and n_sig * 2 >= len(pool)
 
 
 def stage_local_trainer(row):
@@ -451,9 +488,24 @@ def stage_local_trainer(row):
     decorated = title_is_decorated(row)
     generic_hs = (not school and src not in ("raw-conflict", "raw-partial")
                   and not row["issuer"]
-                  and bool(types & CX_TYPES or not types)
+                  and bool(not types or types & CX_TYPES
+                           or types <= TRAINER_OK_TYPES)
                   and hs_generic(row))
-    if not school and not decorated and not generic_hs:
+    # Several NAMED high schools under ONE credential (the Santa Ana pattern:
+    # "Intermediate Patient Care - Godinez/Valley/Segerstrom High School…") —
+    # the EMT-405 unanimity guard rightly refuses to pick one school, but the
+    # AGENCY-grain verdict is still Sam's generic "Local High School"
+    # placeholder (Rule 5f addendum + his HS pass, 2026-07-08 late); the
+    # per-school detail stays in the raw variants. Only when every extracted
+    # school is high-school-shaped — an HS + ROP mix stays a judgment call.
+    hs_conflict = None
+    if (not school and src == "raw-conflict" and not row["issuer"]
+            and bool(not types or types & CX_TYPES
+                     or types <= TRAINER_OK_TYPES)):
+        named = sorted({s for s in (_school_from_raw(x) for x in row["raws"]) if s})
+        if named and all(re.search(r"High School$|\bHS$", s) for s in named):
+            hs_conflict = named
+    if not school and not decorated and not generic_hs and not hs_conflict:
         return None
     # Type gate: mechanism must be Cx/Portfolio (blank + Other ride along when
     # the title itself is school-decorated — the curator confirms).
@@ -488,6 +540,16 @@ def stage_local_trainer(row):
         note_bits.append("generic high-school articulation with no named "
                          "school — agency = “" + LOCAL_HS + "” (Rule 5f "
                          "addendum, Sam 2026-07-08)")
+    elif hs_conflict:
+        # Several named high schools under one credential — the agency-grain
+        # verdict is the generic placeholder; no single trainer is honest.
+        entry["issuer"] = LOCAL_HS
+        entry["via"] = "hs-generic"
+        entry["confidence"] = 0.6
+        note_bits.append("one credential articulated by SEVERAL high schools ("
+                         + ", ".join(hs_conflict) + ") — agency = “" + LOCAL_HS
+                         + "” (Rule 5f addendum); no single trainer staged, the "
+                         "per-school detail stays in the raw variants")
     else:
         entry["issuer"] = None          # decorated title, school unknown —
         entry["resurface"] = bool(row["issuer"])  # title cleanup only

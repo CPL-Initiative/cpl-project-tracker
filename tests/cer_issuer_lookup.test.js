@@ -78,11 +78,18 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       !row.querySelector(".cr-ni-suggest"));
     row.querySelector(".cr-ni-title-input").value = "Aspects of Building & Safety";
     row.querySelector(".cr-ni-search").click();
-    check("🔎 opens Sam's exact question with the CURRENT title input",
+    check("🔎 opens Sam's exact question with the CURRENT title input, CA-scoped",
       log.opened.length === 1
       && log.opened[0].indexOf("google.com/search") >= 0
       && decodeURIComponent(log.opened[0]).indexOf(
-           'who is the agency that issues a "Aspects of Building & Safety" certificate?') >= 0);
+           'who is the agency that issues a "Aspects of Building & Safety" certificate in CA?') >= 0);
+    // Sam (2026-07-08 late): course-lead decoration is dropped from the query
+    row.querySelector(".cr-ni-title-input").value = "Introduction to Warehouse Management";
+    row.querySelector(".cr-ni-search").click();
+    check("🔎 strips 'Introduction to' from the search question",
+      log.opened.length === 2
+      && decodeURIComponent(log.opened[1]).indexOf(
+           'who is the agency that issues a "Warehouse Management" certificate in CA?') >= 0);
   }
 
   // ── B. ✨ suggestion via the proxy — chip fills the issuer input ──
