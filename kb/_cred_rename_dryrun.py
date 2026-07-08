@@ -176,9 +176,49 @@ def main():
             continue
         renames_clean[old_ut] = new_ut
 
+    # ── Intra-batch same-target twins (Session 107, evening) ─────────────────
+    # Sam retitled PAIRS of different rows to the same NEW name ("C++
+    # Programming I" + "II" → "C++ Programming") — a Rule-3 level convergence
+    # whose merge target doesn't exist yet, so the collision lane can't see
+    # it. Applying both would clobber (the second re-key overwrites the
+    # first). Resolution WITHOUT inferring a merge: the EARLIEST-saved source
+    # proceeds as a plain rename (its target exists nowhere — safe); the
+    # REST move to the non-blocking decision queue. After the first lands +
+    # the next bake, the queued twins become ORDINARY collisions against the
+    # now-existing credential → the CER pending-merges strip surfaces them →
+    # the curator's ✓ Confirm merge folds them (never automatic).
+    target_groups = defaultdict(list)
+    for o, n in renames_clean.items():
+        target_groups[n].append(o)
+    for new_ut, sources in target_groups.items():
+        if len(sources) < 2:
+            continue
+        sources.sort(key=lambda o: ((overrides.get(o) or {}).get("reviewed_at")
+                                    or "", o))
+        for o in sources[1:]:
+            del renames_clean[o]
+            ov = overrides.get(o) or {}
+            collisions.append({
+                "old_unified_title": o,
+                "proposed_new_title": new_ut,
+                "reason": "intra_batch_same_target",
+                "first_of_group": sources[0],
+                "existing_credential_records": 0,
+                "rename_would_touch": {
+                    "raw_titles_in_unified_titles_json": len(raw_titles_by_ut.get(o, [])),
+                    "articulation_records": art_records_by_ut.get(o, 0),
+                    "credentials_json_key_exists": o in credentials,
+                },
+                "reviewed_by": ov.get("reviewed_by"),
+                "reviewed_at": ov.get("reviewed_at"),
+                "policy": ("queued_pending_curator_decision — becomes a "
+                           "regular collision (confirmable in the CER strip) "
+                           "once the group's first rename lands"),
+            })
+
     # ── V1/V2/V3 validation gates ─────────────────────────────────────────────
-    # V1 — every clean rename target is unique among the proposed set (two
-    #      curators can't both rename to "Foo" in one batch).
+    # V1 — every clean rename target is unique among the proposed set
+    #      (defensive; the twin-group pruning above guarantees it).
     target_counts = defaultdict(list)
     for old_ut, new_ut in renames_clean.items():
         target_counts[new_ut].append(old_ut)
