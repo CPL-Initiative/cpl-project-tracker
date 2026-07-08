@@ -247,12 +247,27 @@ training provider's name embedded in the title
    variants span several schools (the EMT-405 case: Fontana HS + Kaiser HS +
    Baldy View ROP + Learn 4 Life) takes NO single-school default — leave
    issuer/trainer for per-variant judgment.
+6. **GENERIC high-school rows (Sam, 2026-07-08 evening):** when the row's
+   text says "high school" WITHOUT naming one ("(High School Articulation)",
+   "High School to College Articulation") and no school is identifiable,
+   the issuing agency is the literal placeholder **`Local High School`**
+   (Sam's Astronomy save set the convention). A proper noun immediately
+   before "High School"/"HS" means a NAMED school — never genericize those,
+   and a multi-school identity (item 5) stays per-variant judgment. The
+   trainer stays open (the placeholder is an agency verdict, not a training
+   entity). Mechanized as the `hs-generic` lane.
 
 Mechanized in `kb/_preseed_null_issuers.py`'s **local-trainer** lane (staged
 prefills for the CER issuer lane — Rule 5e contract; supersedes the retired
 `local-hs` ""-verdict lane) and verified by `kb/_verify_issuer_preseed.py`.
-Title changes save as `unified_title_override` (display-only until the PR-5b
-rename re-key); issuer/trainer promote canonically via Modes A2/A3 in
+Title changes save as `unified_title_override`; **the rename re-key is LIVE
+(Session 107)** — the PR-5b/1 apply workflow (`cred-rename-apply.yml`, manual
+dispatch, V1–V4 gated + receipted) re-keys clean renames into the KB, and a
+rename whose target matches an EXISTING credential needs the curator's
+**✓ Confirm merge** in the triage lane (writes `unified_title_merge_confirm`;
+the apply then folds the records into the existing credential — see
+`docs/kb-notes/methodology-confirmed-merge-via-decision-row.md`).
+Issuer/trainer promote canonically via Modes A2/A3 in
 `kb/_apply_credential_review.py`.
 
 ### Rule 5g — Level words move to the END of the title; "Intro" expands (Sam, 2026-07-08)
@@ -320,6 +335,18 @@ Consult these when a row has NO house family yet (full link card:
   welding/AWS precedent. Precision: `drone pilot`, never bare `drone`
   ("Drone Photography" is a photography course).
   https://www.faa.gov/licenses_certificates/airmen_certification
+- **ASE — National Institute for Automotive Service Excellence** (Sam,
+  2026-07-08 evening): automotive exhibits whose competency aligns with one
+  ASE cert take the ASE title (Rule 8b form — `ASE A5 — Brakes`) and the
+  house-canonical issuer `National Institute for Automotive Service
+  Excellence (ASE)` (Rule 6 — Sam's message said "Automotive Services
+  Excellence"; the 55-record house family spells it canonically). Mechanized
+  as the `ase-align` lane (context-gated on automotive wording so building-
+  trades A/C never maps to A7; single-competency matches only — ambiguous
+  multi-competency rows stay for judgment). The staged titles are usually
+  EXISTING credential keys, so the Save flows through the PR-5b/2
+  confirm-merge and the exhibit folds under the ASE credential.
+  https://www.ase.com/test-series
 - **NCCER assessments / craft catalog** — keep NCCER's naming verbatim,
   issuer `NCCER`: https://www.nccer.org/assessments/
 - **CSLB license classifications** (the future C-## contractor-license lane):

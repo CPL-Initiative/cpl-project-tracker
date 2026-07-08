@@ -415,6 +415,33 @@ def title_is_decorated(row):
     return strip_title(row["display"]) not in ("", row["display"])
 
 
+# ── Rule 5f addendum — GENERIC high-school rows (Sam, 2026-07-08 evening):
+# "if it refers to just high school [no named school], set agency to
+# 'Local High School'". A named local school keeps the 5f school-as-agency
+# behavior; only the anonymous "(High School Articulation)"-style rows take
+# the generic placeholder. Guard: a proper noun immediately before "High
+# School"/"HS" means a NAMED school the extractor may simply have missed —
+# never genericize those.
+LOCAL_HS = "Local High School"
+_HS_GENERIC = re.compile(r"\bhigh\s*school\b|\bH\.?S\.?\b(?![a-z])")
+_HS_NAMED_SHAPE = re.compile(
+    r"[A-Z][A-Za-z.&'’-]+(?:\s+[A-Z][A-Za-z.&'’-]+)*\s+(?:High\s*School|H\.?S\.?)\b")
+
+
+def hs_generic(row):
+    """True when the row's text says 'high school' WITHOUT naming one."""
+    texts = [row["display"]] + list(row["raws"])
+    saw = False
+    for t in texts:
+        if not t:
+            continue
+        if _HS_NAMED_SHAPE.search(t):
+            return False          # a named school somewhere — 5f judgment
+        if _HS_GENERIC.search(t) or _HS_GENERIC.search(t.title()):
+            saw = True
+    return saw
+
+
 def stage_local_trainer(row):
     """Rule 5f: returns a staged entry or None."""
     types = set(row["cpl_types"])
@@ -422,7 +449,11 @@ def stage_local_trainer(row):
         return None   # ACE/service-branch judgment — never a school default
     school, src = school_of(row)
     decorated = title_is_decorated(row)
-    if not school and not decorated:
+    generic_hs = (not school and src not in ("raw-conflict", "raw-partial")
+                  and not row["issuer"]
+                  and bool(types & CX_TYPES or not types)
+                  and hs_generic(row))
+    if not school and not decorated and not generic_hs:
         return None
     # Type gate: mechanism must be Cx/Portfolio (blank + Other ride along when
     # the title itself is school-decorated — the curator confirms).
@@ -446,6 +477,17 @@ def stage_local_trainer(row):
             entry["issuer"] = school
             note_bits.append("issuer & trainer default to the school: " + school
                              + " (from " + (src or "?") + ")")
+    elif generic_hs:
+        # Rule 5f addendum: anonymous high-school wording, no named school →
+        # the generic "Local High School" agency (Sam, 2026-07-08 evening —
+        # his Astronomy save set the convention). Trainer stays open (the
+        # placeholder is an agency verdict, not a training entity).
+        entry["issuer"] = LOCAL_HS
+        entry["via"] = "hs-generic"
+        entry["confidence"] = 0.65
+        note_bits.append("generic high-school articulation with no named "
+                         "school — agency = “" + LOCAL_HS + "” (Rule 5f "
+                         "addendum, Sam 2026-07-08)")
     else:
         entry["issuer"] = None          # decorated title, school unknown —
         entry["resurface"] = bool(row["issuer"])  # title cleanup only
@@ -837,6 +879,93 @@ def cert_family_issuer(ut):
     return None, None
 
 
+# ── ASE alignment lane (Sam, 2026-07-08 evening): "Scan all the auto
+# exhibits and look for alignment with ASE certs and where there is similar
+# alignment, set the exhibit title to the ASE title and the agency to ASE."
+# House canonical spelling per Rule 6 + the existing 55-record family:
+# "National Institute for Automotive Service Excellence (ASE)" (Sam's message
+# said "Automotive Services Excellence" — flagged; the house family wins
+# unless he re-rules). The staged titles ARE existing credential keys, so
+# Sam's Save fires the PR-5b/2 merge-confirm dialog and the exhibit's record
+# folds under the ASE credential — the intended shape (Rule 4: same
+# credential, the exhibit is its course side). Patterns most-specific-first;
+# ambiguous/multi-competency rows stay unstaged (precision over recall —
+# extend the map as Sam rules).
+ASE_ISSUER = "National Institute for Automotive Service Excellence (ASE)"
+# Context gate: the row must read automotive — an "auto" token, or an
+# inherently-automotive competency word (transaxle / drive train). Keeps
+# "Air Conditioning Principles" (building trades, CalCERTS) out of A7.
+_ASE_CONTEXT = re.compile(r"\bauto(?:motive)?\b|transaxle|drive\s*train", re.I)
+ASE_MAP = [
+    (re.compile(r"automatic\b.{0,30}\bmanual\b.{0,40}trans", re.I),
+     "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)"),
+    (re.compile(r"automatic\s+trans(mission)?s?\b|transaxle", re.I),
+     "ASE A2 — Automatic Transmission/Transaxle"),
+    (re.compile(r"manual\b.{0,30}(trans|drive\s*train|axle)", re.I),
+     "ASE A3 — Manual Drive Train and Axles"),
+    (re.compile(r"suspension|steering", re.I),
+     "ASE A4 — Suspension and Steering"),
+    (re.compile(r"\bbrakes?\b", re.I),
+     "ASE A5 — Brakes"),
+    (re.compile(r"hybrid|electric\s+vehicle", re.I),
+     "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist"),
+    (re.compile(r"electric(al|ity)?\b|electronic", re.I),
+     "ASE A6 — Electrical/Electronic Systems"),
+    (re.compile(r"heating|air\s*conditioning|climate\s*control|\bhvac\b", re.I),
+     "ASE A7 — Heating and Air Conditioning"),
+    (re.compile(r"engine\s+performance|driveab", re.I),
+     "ASE A8 — Engine Performance"),
+    (re.compile(r"engine\s+(repair|rebuild|overhaul|service)", re.I),
+     "ASE A1 — Engine Repair"),
+    (re.compile(r"\bdiesel\b", re.I),
+     "ASE A9 — Light Vehicle Diesel Engines"),
+    (re.compile(r"maintenance\b.{0,20}light\s+repair|light\s+repair\b|\bMLR\b", re.I),
+     "ASE G1 — Auto Maintenance and Light Repair"),
+]
+ASE_OK_TYPES = CX_TYPES | {"Industry Certification"}
+
+
+def stage_ase(row, credential_keys):
+    """ASE alignment: returns a staged entry or None. Requires automotive
+    context + exactly ONE competency match; the mapped title must exist in
+    kb/credentials.json (the fold target) or the entry stages issuer-only."""
+    types = set(row["cpl_types"])
+    if types and not (types & ASE_OK_TYPES):
+        return None
+    texts = " · ".join([row["display"]] + list(row["raws"]))
+    if not _ASE_CONTEXT.search(texts):
+        return None
+    hits = []
+    for rx, title in ASE_MAP:
+        if rx.search(texts):
+            hits.append(title)
+            if len(hits) > 1:
+                break
+    # Ordered-subsumption collapse: the map is specific-first, and two
+    # firsts inherently shadow a later broad pattern — A2+A3 subsumes the
+    # separate A2/A3 hits, and L3's "electric vehicle" text always also
+    # trips A6's bare "electric".
+    if len(hits) > 1 and (hits[0].startswith("ASE A2+A3")
+                          or hits[0].startswith("ASE L3")):
+        hits = hits[:1]
+    if len(hits) != 1:
+        return None   # no alignment, or ambiguous multi-competency — judgment
+    title = hits[0]
+    entry = {"issuer": ASE_ISSUER, "via": "ase-align", "confidence": 0.6,
+             "note": "Automotive exhibit aligned to the ASE certification "
+                     "family (Sam, 2026-07-08): title = the ASE cert per "
+                     "Rule 8b, agency = the house-canonical ASE (Rule 6). "}
+    if title in credential_keys:
+        entry["title"] = title
+        entry["note"] += ("Saving will offer to MERGE this exhibit into the "
+                          "existing “" + title + "” credential (PR-5b/2 "
+                          "confirm) — the intended fold.")
+    else:
+        entry["title"] = title
+        entry["note"] += "New ASE cert title for the family."
+    return entry
+
+
 def load_statewide_blank_titles():
     """Every statewide-dataset exhibit (ANY collaborative type) whose record
     carries a blank issuer — the corroboration set for the curated
@@ -1021,6 +1150,16 @@ def stage_all(rows, sw_roster, issuer_of):
             put_issuer(ut, cf_iss, "cert-family", 0.7,
                        "Course-side exhibit of " + cf_receipt
                        + " — Sam, 2026-07-08.")
+            continue
+
+        # 3b. ASE alignment — auto exhibits whose competency maps to one ASE
+        #     cert take the ASE title + agency (Sam, 2026-07-08 evening).
+        #     Runs before cx so ASE, not CCC, prefills; the staged title is
+        #     usually an EXISTING credential key, so the Save flows through
+        #     the PR-5b/2 merge confirm.
+        ase = stage_ase(row, issuer_of)
+        if ase:
+            put(ut, ase)
             continue
 
         # 4. cx-typed rows with NO identifiable trainer — the mechanism lives

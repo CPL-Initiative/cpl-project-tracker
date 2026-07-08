@@ -78,9 +78,10 @@ def main():
     check("_titles_staged == count of ALL titled entries",
           d.get("_titles_staged") == len(titled))
     check("every staged title cites its source in the note "
-          "(Rule 5c/5f/5g or DIR DAS)",
+          "(Rule 5c/5f/5g/8b or DIR DAS)",
           all(("Rule 5c" in v["note"] or "Rule 5f" in v["note"]
-               or "Rule 5g" in v["note"] or "DIR DAS" in v["note"])
+               or "Rule 5g" in v["note"] or "Rule 8b" in v["note"]
+               or "DIR DAS" in v["note"])
               for v in titled.values()))
     check("no staged title equals the row's current display title",
           all(v["title"] != (rows[k].get("display_title") or k)
@@ -231,6 +232,26 @@ def main():
           "(Rule 5g proper-name exemption)",
           all((v.get("title") or k).startswith("Advanced Placement")
               for k, v in staged.items() if k.startswith("Advanced Placement")))
+
+    # ── Session 107 lanes (Sam's evening asks 2+3) ──
+    hs_rows = {k: v for k, v in staged.items() if v.get("via") == "hs-generic"}
+    check("hs-generic: every entry stages issuer 'Local High School'",
+          all(v.get("issuer") == "Local High School" for v in hs_rows.values()))
+    check("hs-generic: no entry stages a trainer (placeholder is an agency "
+          "verdict, not a training entity)",
+          all(not v.get("trainer") for v in hs_rows.values()))
+    ase_rows = {k: v for k, v in staged.items() if v.get("via") == "ase-align"}
+    ASE_HOUSE = "National Institute for Automotive Service Excellence (ASE)"
+    check("ase-align: every entry stages the house-canonical ASE issuer (Rule 6)",
+          all(v.get("issuer") == ASE_HOUSE for v in ase_rows.values()))
+    check("ase-align: every entry stages an 'ASE …' Rule-8b title",
+          all((v.get("title") or "").startswith("ASE ") for v in ase_rows.values()))
+    check("ase-align: negative spot — 'Air Conditioning Principles' (building "
+          "trades, CalCERTS) never maps to ASE A7",
+          staged.get("Air Conditioning Principles", {}).get("via") != "ase-align")
+    check("ase-align: negative spot — aviation rows stay FAA, never ASE",
+          all(v.get("via") != "ase-align" for k, v in staged.items()
+              if "aircraft" in k.lower() or "airframe" in k.lower()))
 
     ok = sum(1 for _, c in results if c)
     for name, cond in results:
