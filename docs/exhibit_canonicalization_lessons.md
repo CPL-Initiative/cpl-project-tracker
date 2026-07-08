@@ -2177,3 +2177,123 @@ mechanize the ruling as a rule + lane + verifier checks + jsdom test → merge o
 green → Pages deploy → he continues on fresher prefills, usually within the
 hour. Plan state at close: 1,009 of the 1,125-row null-issuer queue staged,
 284 titles, 152 residual; verifier 50 checks; suite 142 files.
+
+## 2026-07-08 — continued 12 (Session 107, SkyKey): the PR-5b re-key goes LIVE — 49 renames applied + the confirm-merge lane
+
+The handoff named this session "the one that turns the recorded renames into
+the PR-5b re-key," and that is exactly what happened — plus the collision case
+PR-5b/2 had been deferred for finally materialized, six times at once.
+
+**The state at pickup.** Sam saved **137 overrides** during/after Session 106
+(72 issuers · 55 titles · 8 trainers · 2 uses of the brand-new ＋
+additional-issuer — both `CalCERTS, Inc.`, a new-to-the-vocabulary HERS
+certification body), ALL after the day's last cron bake. A dispatched
+daily-dashboard run folded them (Modes A2/A3 promoted the agencies), and the
+refreshed PR-5b/0 dry-run projected the batch: **49 clean renames + 6
+collisions**, apply_safe=false.
+
+**The blanket hold (#697).** `apply_safe` carried a `not collisions` term, so
+Sam's 6 deliberate merge-shaped retitles (AoJ code rows → C-ID-anchored titles
+that already exist as credential keys) held the other 49 renames hostage —
+contradicting collisions.json's own "decision queue" policy text. Fixed:
+queued collisions no longer gate the clean set (safe by construction — a
+collision source always exists as a credentials key, a clean target never
+does, so the sets are disjoint). Same PR: the Supabase-apply pre-fetch got
+Range pagination (the Session-105 PostgREST 1,000-row lesson, applied
+server-side before it bit — the slice is at 138 rows).
+
+**The first production rename apply (PR-5b/1, run #1).** Dispatched
+`cred-rename-apply.yml` → **49 renames landed**: credentials.json re-keyed,
+2,000+ unified_titles values + articulations rewritten, V1–V4 gates passed,
+Supabase row migration **106 ops / 0 failures** (fulfilled override rows
+deleted; issuer/trainer/marker rows re-keyed to the new identities). Receipts:
+`kb/cred_rename_out/2026-07-08/{alias_map.json, validation.md, supabase_log.json}`.
+The batch had been semantically reviewed first: overwhelmingly Rule-5g
+restyles + Rule-5c code→title lookups + school/decoration strips; "Mach Tool"
+turned out to be the college's own raw truncation (kept faithfully), the
+Desserts rename has no near-dup target. Watch item: five early Norco carpentry
+saves kept a leading "Advanced" (saved before 5g deployed) — restylable in a
+later batch.
+
+**PR-5b/2 ships the day a curator hit it (#698).** The deferred confirm-merge
+lane, end to end: the issuer lane's Save now DETECTS a typed title that
+exactly matches a different credential's key and asks the curator to confirm;
+accepting writes the new **`unified_title_merge_confirm`** kb_curation field
+(the additional-issuer pattern — its own row, names the EXACT target) beside
+the rename override. A **pending-merges strip** at the top of the triage
+worklist surfaces already-saved colliding renames (Sam's six) with ✓ Confirm
+merge / re-title-instead (a re-title clears a stale confirm). Pipeline: the
+dry-run graduates a confirmed collision into the alias map's `merges` section
+(stale confirms + chain hazards — target itself retitled in-batch — stay
+queued); the apply **folds** the old title's records into the existing key
+(dedupe on normalized issuer+trainer, count gate, target-drift abort) and
+re-keys raws + articulations via the combined renames∪merges map (the V4
+cardinality formula is additive-correct for merges); the Supabase migration
+deletes the fulfilled decision rows and yields to the target's own curator
+data on field conflicts. Tests: `tests/cer_merge_confirm.test.js` (17) + a
+python fixture exercise (15 checks incl. idempotent re-run); suite 143 files.
+KB note: `docs/kb-notes/methodology-confirmed-merge-via-decision-row.md`.
+
+**Sam's three watched rulings, resolved or framed:**
+1. **Modesto ENGL 102** — his save "Introduction to Literature and
+   Composition" (matching neither the C-ID ENGL 120 nor CCN C1002 title,
+   both "Introduction to Literature") STOOD and was applied in the 49. His
+   curator save wins; re-titling later is one lane edit.
+2. **AWS spelling** — he saved "American Welding Society" (no parenthetical)
+   again on Advanced GTAW; the house family holds 13 records as "American
+   Welding Society (AWS)". 13-vs-1 → recommend aligning the one row, his call.
+   Same shape: 2 saves of "Occupational Safety and Health Administration
+   (OSHA)" vs the 9-record house "U.S. Occupational Safety and Health
+   Administration (OSHA)".
+3. **IBEW Electrician re-point** — NOT done; the 6 rows keep the generic IBEW
+   issuer + JATC trainer (never-overwrite holds). Still his call.
+
+**Working note:** Sam was saving live THROUGH this session (5 more titles
+20:11–20:18 while the apply ran) — the fold → dry-run → apply loop coexisted
+with live triage cleanly because every step re-reads fresh state and the
+collision queue absorbs timing races. The pending-merges strip reached his
+deployed page within the same hour, per the Session-106 rhythm.
+
+**Continued-12 addendum (same evening — Sam's four asks, the Session-106 rhythm
+again).** Sam, mid-triage: "Note that I'm working on triage as you chug away."
+Four asks, four PRs within the hour (#699–#702), plus a pipeline save (#700):
+
+1. **Unlimited ＋ agencies (#699).** The Session-106 ＋ capped at one
+   additional agency. Now each click stacks another input; all extras join
+   into the SAME `issuing_agency_additional_override` row " | "-delimited
+   (one kb_curation row — the (course_id, field) PK stays honest), and Mode
+   A2 splits + promotes each fill-or-append. Backward compatible.
+2. **hs-generic lane (#702).** "If it refers to just high school, set agency
+   to 'Local High School'" — his Astronomy save set the convention. Generic
+   HS wording + no named school → the placeholder agency; a proper noun
+   before "High School"/"HS" is a NAMED school and keeps 5f; trainer stays
+   open. SKILL.md Rule 5f item 6.
+3. **ase-align lane (#702).** Auto exhibits aligned to ONE ASE cert stage
+   the ASE title + the HOUSE-canonical issuer ("National Institute for
+   Automotive Service Excellence (ASE)" ×55 — Sam's message said "Automotive
+   Services Excellence"; flagged, house family wins pending his word).
+   Context-gated (building-trades A/C never → A7; aviation stays FAA);
+   ordered-subsumption collapse (A2+A3; L3 Hybrid/EV shadows A6's bare
+   "electric" — caught by eyeballing the staged rows); ambiguous
+   multi-competency rows stay for judgment. 12 staged — and each staged
+   title IS an existing credential key, so the Save flows through the
+   brand-new PR-5b/2 confirm-merge and the exhibit FOLDS under the ASE
+   credential. The machinery composed the same evening it shipped.
+4. **🔎 + ✨ issuer lookup (#701).** His manual workflow ("who is the agency
+   that issues an Aspects of Building and Safety certificate?" → ICC) as a
+   one-click 🔎 (opens the exact question, built from the CURRENT title
+   input) and an ✨ AI suggestion via the existing Custom-Report Cloudflare
+   proxy (`window.CPL_REPORT_PROXY_URL`; claude-sonnet-4-5; Rule-6
+   long-canonical answer as a click-to-fill chip — a recommendation, never
+   auto-saved; none/unknown render honestly).
+
+**The daily-run race (#700).** The 20:23 dispatch died: #698 merged mid-run,
+push rejected, and the retry loop's rebase refused on the tree's UNSTAGED
+regenerated files ("You have unstaged changes"). Fix: `git checkout -- .`
+before the retry rebase — that output is disposable. The race fires whenever
+a PR merges during a daily run; a session that merges 5 PRs in an evening
+finds it fast.
+
+Plan state after the fresh-bake regen: queue **1,036** · staged 922
+(`ase-align 12 · hs-generic 3` + the standing lanes) · titles 236 ·
+residual 140 · verifier **56 checks** · suite **145 test files**.

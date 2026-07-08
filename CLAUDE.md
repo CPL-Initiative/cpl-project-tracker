@@ -2077,7 +2077,7 @@ repo root: `python3 kb/_row_audit.py`.
 |---|---|---|
 | 1b (3/3) | Curate-write Repair-from-members action (Supabase schema migration + fresh-read + cron-window) | parked (low immediate value — 1 cluster; build when ≥5 clusters exist) |
 | 1c | More audit rules — **8 of 9 landed:** `discipline_title_mismatch`, `generic_title_concrete_discipline`, `top_discipline_disagreement` (+ SISTER_PAIRS suppression), `description_discipline_disagreement`, `subject_collision_signal` (Phase 1e diagnostic — **7,203 flags pre-re-mint**, target 0 post-re-mint), `unit_anomaly` (2026-05-26, 4,385 flags — first member-level cross-validation, also first non-discipline penalty via `TAG_PENALTY_ON_UNITS`; surfaces possible over-merges across credit-vs-noncredit unit-load variants), and **`merge_into_orphan`** (2026-05-27, **0 flags on current data** — preventive data-integrity detector for dangling `merge_into` pointers; valid targets = courses ∪ singletons ∪ `UC-CUR-*`; fires symmetrically on M-IDs + clusters with bad curation pointers). **`member_top_divergence`** (2026-05-29, **1,299 flags** — the cross-discipline over-merge detector; member colleges' TOP codes span ≥2 broad divisions, ≥30% minority; 736 carry no other strong signal; second member-level rule after `unit_anomaly`). **Still queued:** `cluster_title_drift` (low yield until more clusters mint) | in progress |
-| **Cred-Ref PR-5b/2** | Collision-resolution UX in the Credential Reference tab — "Confirm merge" affordance when a rename target collides with an existing credential key. Deferred until a curator actually hits a collision (zero today). | deferred (zero demand) |
+| **Cred-Ref PR-5b/2** | Collision-resolution UX in the Credential Reference tab — "Confirm merge" affordance when a rename target collides with an existing credential key. | ✅ **DONE Session 107 (#698)** — Sam hit 6 collisions on 2026-07-08; shipped same-day: Save-time detect + confirm dialog → `unified_title_merge_confirm` row, pending-merges strip, dry-run `merges` lane, apply fold. His 6 await ✓ Confirm merge in the lane. |
 | **Activity↔Project PR-D** | (Optional) split Workplan Goals into its own top-level tab if the page gets dense (Sam's prior preference: one page with two sections). | parked unless curator usage signals demand |
 | **Excel→Supabase Phase 2-4** | Migrate remaining Excel-driven tabs (Dashboard project cards, Budget, Vision 2030, Personnel). Per-tab inline editors. Excel file retires once Phase 4 cuts over; periodic Supabase→xlsx export retained as backup. **Phase 2 (projects) is COMPLETE: seeded + cut over + editor all landed (Session 15 build → Session 16 seed/cutover/editor).** Phases 3-5 (Budget/Vision/Personnel) follow the same five-step shape + the RLS-tighten step; Personnel already has 26 rows so its PR-3 has UPDATEs. | **Phase 2 DONE** (Session 16); **Phase 3 Budget read-path DONE** (PR #189); **Excel-retirement scope DONE** (PR #210, Session 23 — `docs/kb-notes/excel-retirement-final-scope.md`; corrected the surface: Personnel already Supabase, Vision 2030 is static/computed — neither needs migration); **Excel PR-1 (KPI-ladder keystone) DONE** (PR #211, Session 23 — ladder now sourced from `workplan_goals` not Excel, parity-exact across 49 projects; live 11-cell blank-vs-0 fix on `workplan_goals`, 1.4's real 0s kept); **Excel PR-2 (D.* rows RETIRED, not migrated) DONE** (PR #213, Session 24 — the 15 `D.*` sub-population helper rows were **100% vestigial**: sole value-reader `populate_current_metrics()` dead since 2026-05-28, every other ref excludes them, all 3 JS report gens skip them. Deleted the rows + the dead `populate_current_metrics()`/`_override_int`/`_pmetric_int`/`_ppct`/`_pcount` cluster; generator-only, proven parity-minus-D.* on snapshot + Excel-fallback paths. Method: `docs/kb-notes/methodology-verify-consumer-before-migrating.md`); **KPI-ladder editor = ALREADY DONE** (Session 24 measure-first — PR-1 sourced the ladder from `workplan_goals`, which `workplan_goals.js` already edits; 27 ladder-bearing projects all editable, 0 gaps — no build needed); **Budget inline editor DONE** (PR #215, Session 24 — click-to-edit dollar cells on the 5-Year Funding Plan, `budget_editor.js`; 7 cells/row PATCH `budget_funding`; no `total=Σyears`/`avg` formula yet per Sam; **budget_funding/budget_expenditures/personnel RLS tightened** to `is_allowed_reviewer()` live, `kb/supabase_budget_rls_tighten.sql`). **Excel-dependency audit + fix queue DONE** (PR #217, Session 24 — `docs/kb-notes/excel-dependency-audit.md`, the authoritative remaining-work catalog; triggered by a curator hitting the card "Update" button → it opened Excel-for-the-Web). **Excel retirement — Session 25 (Bruh 25) shipped P1+P2+P4, all merged:** **P1 ✅ (#219)** the "Update→Excel" card button now triggers the inline Latest Update editor (akpi copy dropped; `excel_row` no longer emitted; `dashboard_filters.js` rewire + toolbar button removed); **P2 ✅ (#221)** config tables moved to committed `kb/dashboard_config.json` via new `load_dashboard_config()` (`read_project_config`/`read_config_overrides`/`read_kpi_parameters` rewritten, all drop their `wb` param) + the `ensure_kpi_config_sheet` **WRITER deleted** — the master `.xlsx` is **no longer written on any run** (writer-blockers 2→1); measure-first found Col AG empty + KPI_Config == code defaults, so the JSON carries only the 4 real `project_config` fields; parity-proven (byte-identical readers + full A/B regen); **P4 ✅ (#220)** dead readers `read_annual_goals`/`read_workplan_goals` deleted (148 lines). **Remaining:** **P3** Update Log history (product fork — Sam **dismissed/parked** the decision 2026-06-01; measured: 38 projects / 120 stale entries (latest 2026-04-08); options = read-only **snapshot** / **retire** (keep `latest_update`) / **Supabase `project_update_log`** table); **P5** drop the `.xlsx` — now blocked only by `read_projects` (KPI-ladder + outage fallback), `read_budget_plan` (+ the carved-out budget `factors`/`year_labels`), and `read_update_log`/`archive_updates_to_log` (the **1 remaining writer**, gated on P3) + the `.bak`; keep a Supabase→xlsx backup. Independent: Budget `total`/`avg` formula layer (+ total read-only) + personnel editor (fix the 26→13 dedupe row-identity first). **Also Session 25:** new **daily data-pipeline reference doc** (`docs/kb-notes/reference-daily-dashboard-data-pipeline.md`, #222/#223) — accounts for all **7 data sources** + every headline KPI's lineage + the committed daily dataset; confirmed (via Sam's screenshot) the **MAP Custom Reporting Module's 9 categories are pulled in full** (151 fields), with **College Contacts + College Users & Roles fetched-but-unused** (drop-or-wire decision pending). |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
@@ -2424,21 +2424,9 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > staged + college chips + multi-issuer) archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md).
 > Full story: `docs/exhibit_canonicalization_lessons.md` (2026-07-07 "continued 7").
 
-### Session 105 — SkyClose: the truncated-read fix + the missing-issuer lane + the seal-blue pass (2026-07-08)
-
-Sam's "fire certs didn't save" + "113 still showing" were ONE bug: 1,200 overlay rows vs
-PostgREST's 1,000-row unordered cap — saves were fine, the READ truncated a different tail
-per load. `fetchAllRows()` Range-pagination now backs both CER overlay fetchers
-(`docs/kb-notes/methodology-paginate-postgrest-reads.md`). Save-All broadened to every
-FILLED shown row (hand-typed included) + loud per-row failures + `wlDraft` survival + live
-issuer datalists. `_CREDENTIAL_REVIEW::` held ZERO rows — Sam's 10-Key pick had never
-landed; "＋ set" now opens the issuer input DIRECTLY and the pick was seeded
-(`session105-skyclose@bot`, Mode A2 folds it). New **missing-issuer triage lane** (1,130
-null-issuer credentials; `kb/_preseed_null_issuers.py` staged 978 → `kb/issuer_preseed.json`,
-verifier 19 checks; empty-Save = explicit no-formal-issuer). COBI-wide: black ink headers →
-`--seal-blue`; Curate-panel black-box bleed fixed; CER title/chip row-height pass. Suite 142
-green (+2 files). Full story: lessons "continued 8"; next: `docs/session_106_handoff.md`.
-
+> **Session 105 narrative (SkyClose — the truncated-read fix + the missing-issuer
+> lane + the seal-blue pass) archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md).
+> Full story: `docs/exhibit_canonicalization_lessons.md` (2026-07-08 "continued 8").
 
 ### Session 106 — SkySeal: the Triage rules day — 5f / 5c-mech / 5g + four new issuer lanes + multi-issuer (2026-07-08)
 
@@ -2454,6 +2442,24 @@ in-flight guard); **＋ add issuing agency** → new `issuing_agency_additional_
 promotes BOTH issuer fields additively (+ Mode A3 trainer). Plan: **1,009 staged / 1,125 queue**,
 284 titles, 152 residual; verifier 50 checks; suite 142 green. Full story:
 `docs/exhibit_canonicalization_lessons.md` (2026-07-08 "continued 9" – "continued 11 addendum").
+
+
+### Session 107 — SkyKey: the PR-5b re-key goes LIVE — 49 renames applied, the confirm-merge lane, and Sam's four evening asks (2026-07-08)
+
+Sam's 137 Session-106-day saves folded (dispatch); the refreshed dry-run showed 49 clean
+renames held hostage by his 6 merge-shaped collisions (AoJ code rows → existing C-ID-anchored
+credentials — the case PR-5b/2 was deferred for). #697 made the collision queue NON-BLOCKING;
+the **first production rename apply** (PR-5b/1 run #1) landed all 49 (V1–V4 green; Supabase
+106 ops/0 fail; receipts `kb/cred_rename_out/2026-07-08/`). #698 shipped **PR-5b/2**: Save-time
+collision detect + confirm → the new `unified_title_merge_confirm` row; a pending-merges strip
+for the saved six; dry-run `merges` lane; apply FOLD with dedupe + drift abort. Sam's four
+evening asks landed within the hour: unlimited ＋ agencies (#699, " | "-joined + Mode A2 split),
+the hs-generic "Local High School" + ase-align lanes (#702 — 12 ASE rows whose Saves flow
+through the new confirm-merge), 🔎/✨ issuer lookup via the report proxy (#701); plus the
+daily-run push-race fix (#700 — unstaged regen discarded before the retry rebase). Suite 145;
+verifier 56. Sam's calls pending: confirm the 6 merges · ASE/AWS/OSHA spellings · IBEW re-point.
+Full story: `docs/exhibit_canonicalization_lessons.md` ("continued 12"); next: `docs/session_108_handoff.md`.
+
 
 ---
 

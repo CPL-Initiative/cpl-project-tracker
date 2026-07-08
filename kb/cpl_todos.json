@@ -1,50 +1,62 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-08 · Session 106 close (the triage rules day — 6 PRs: Rules 5f/5c/5g, four new pre-seed lanes, multi-issuer, the Save fix)",
- "_session": 106,
- "_status": "Triage now pre-fills smarter across the board: titles restyled per your new Rule 5g (level words moved to the end, “Intro” → “Introduction”; AP/EMT/ACLS names untouched), the welding Cx rows pre-seed American Welding Society (AWS), the 22 aviation rows pre-seed the FAA, and the Norco carpentry apprenticeships pre-seed the Southwest Carpenters JATC. A ＋ add-issuing-agency link records a second certifying body without touching the first. The dead Save button on saved-then-re-edited rows is fixed. 1,009 of the 1,125 no-issuer rows carry a prefill — everything still saves only on your click.",
+ "_as_of": "2026-07-08 · Session 107 close (the rename key turned — 49 renames LIVE, the confirm-merge lane, and your four evening asks shipped)",
+ "_session": 107,
+ "_status": "Your 49 saved retitles are now the real knowledge-base names (the first production rename apply — receipts committed). Six of your retitles matched an EXISTING credential; they wait in a new “Merge confirmations” strip at the top of Triage — one ✓ click each folds the two into one credential. Your four evening asks are live: ＋ add as many agencies as needed, generic HS rows pre-fill “Local High School”, 12 auto rows pre-fill their ASE cert (title + agency), and every row now has 🔎 who-issues-this? + ✨ suggest buttons. 922 of the 1,036 no-issuer rows carry a prefill — everything still saves only on your click.",
  "items": [
+  {
+   "id": "confirm-merges",
+   "who": "sam",
+   "tab": "credential-reference",
+   "text": "NEW: the “Merge confirmations (6)” strip at the top of Triage — your AoJ retitles + “American Politics” matched existing credentials. ✓ Confirm merge folds each into the existing one (or edit the title to keep them separate). After your picks, the next rename apply lands them."
+  },
   {
    "id": "issuer-lane-review",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "Keep working the ⚡ pre-filled lane (1,009 prefills: 686 cx→CCC · 166 “no issuer” · 72 school rows · 31 family · 22 FAA aviation · 20 titled · 6 apprenticeship · 5 AWS welding). Review, tweak, Save per row or bulk per view."
+   "text": "Keep working the ⚡ pre-filled lane (922 prefills: 623 cx→CCC · 149 “no issuer” · 65 school rows · 33 family · 18 FAA/cert-family · 12 ASE auto rows · 3 “Local High School” · 4 AWS welding). The 12 ASE rows will ask you to confirm a merge — that's the intended fold."
   },
   {
-   "id": "welding-aws-spelling",
+   "id": "ase-spelling",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "Small consistency call: your saved GTAW row says “American Welding Society” but the house family uses “American Welding Society (AWS)” — re-save that one row if you want them unified."
+   "text": "Spelling call: you wrote “Automotive Services Excellence (ASE)” — the existing 55-record family says “National Institute for Automotive Service Excellence (ASE)”, so the prefills use that. Say the word if you prefer the short form."
+  },
+  {
+   "id": "issuer-spellings",
+   "who": "sam",
+   "tab": "credential-reference",
+   "text": "Two more consistency calls: your GTAW row says “American Welding Society” (house: “… (AWS)”, 13 records) and two rows say “Occupational Safety and Health Administration (OSHA)” (house: “U.S. …”, 9 records) — re-save those three rows to unify, or tell Fable to re-key the families your way."
   },
   {
    "id": "ibew-repoint",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "Your call: the 6 Electrician rows still carry the generic “IBEW” issuer (never auto-overwritten) — re-point them to Riverside Area Electrical J. A. C. if that's the right sponsor."
+   "text": "Still your call: the 6 Electrician rows carry the generic “IBEW” issuer (never auto-overwritten) — re-point them to Riverside Area Electrical J. A. C. if that's the right sponsor."
   },
   {
-   "id": "modesto-engl102",
+   "id": "engl102-title",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "The Modesto ENGL 102 exhibit: both C-ID (ENGL 120) and CCN say “Introduction to Literature” — your hand-saved title adds “and Composition”. Re-title if you want the authority spelling."
-  },
-  {
-   "id": "issuer-lane-residual",
-   "who": "sam",
-   "tab": "credential-reference",
-   "text": "152 rows stay un-prefilled on purpose (apprenticeships at other colleges pending DIR DAS, Military-typed, odd ones) — type issuers as you know them; new names become pickable instantly."
+   "text": "FYI: your Modesto ENGL 102 title “Introduction to Literature and Composition” is now the KB name — both authorities (C-ID ENGL 120, CCN ENGL C1002) say “Introduction to Literature”. One lane edit re-titles it if you want the authority name."
   },
   {
    "id": "clep-complete-both",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "Still the last 3 unclassified rows: the CLEP French/German/Spanish “Levels 1 and 2 — Complete both” spans (which family should a two-level span land in?)."
+   "text": "Still the last unclassified rows: the CLEP French/German/Spanish “Levels 1 and 2 — Complete both” spans (which family should a two-level span land in?)."
   },
   {
-   "id": "pr5b-rename-rekey",
+   "id": "rename-apply-next",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "Scope Cred-Ref PR-5b: promote the recorded unified-title renames (Rule 5g just queued ~68 more) into REAL KB re-keys (alias map, re-mint playbook) so restyled titles become the actual card keys."
+   "text": "After Sam confirms merges (any subset), dispatch cred-rename-apply.yml — it re-checks its own gates and folds the confirmed ones with receipts."
+  },
+  {
+   "id": "preseed-refresh",
+   "who": "fable",
+   "tab": "credential-reference",
+   "text": "After Sam's next triage pass + daily fold: re-run kb/_preseed_null_issuers.py (pip install openpyxl first) + the 56-check verifier; saved rows drop out."
   },
   {
    "id": "audit-rerun-colleges",
@@ -56,19 +68,7 @@
    "id": "apprenticeship-issuers",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "Resolve the ~146 DIR-pending apprenticeship residuals at other colleges (DAS occupation pages + region matching; the Tableau Completion Dashboard lacks the CCC-affiliation join Sam is still hunting)."
-  },
-  {
-   "id": "fire-family-twins",
-   "who": "fable",
-   "tab": "credential-reference",
-   "text": "Near-duplicate families to fold in a cleanup pass: “Firefighter 1” vs “Firefighter I”, “Fire Instructor 2” vs “Fire Instructor II” + the 3 mojibake “Generic Credit by Exam â€”” families."
-  },
-  {
-   "id": "moc-cos-bridge",
-   "who": "fable",
-   "tab": "credential-reference",
-   "text": "Carryover: the MOC→COS bridge (era-filter caveat) + the 22 ambiguous CareerOneStop matches."
+   "text": "Carryover: the DIR-pending apprenticeship residuals at other colleges (DAS occupation pages + region matching; the Tableau dashboard still lacks the CCC-affiliation join Sam is hunting) + the fire-family twins + 3 mojibake families + the MOC→COS bridge."
   }
  ]
 }
