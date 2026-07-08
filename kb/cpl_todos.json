@@ -1,9 +1,15 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-08 · Session 105 (SkyClose — the truncated-read fix + the missing-issuer lane)",
+ "_as_of": "2026-07-08 · Session 105 post-merge check (the 97 staged rows still need one Save-All)",
  "_session": 105,
- "_status": "Mystery solved: your fire certs DID save — the list was silently cut off at 1,000 database rows per load (a different chunk each time), which is also the '113 still showing' you saw. Reads are now paginated, so what you saved stays saved on screen. Save All now saves EVERY row you filled in (typed or pre-filled), failures glow red instead of passing silently, half-typed rows survive view switches, and a new agency you type becomes pickable immediately. The Triage list gained the section you asked for: 'Missing issuing agency' — all 1,130 credentials with no issuer, 978 of them ⚡ pre-filled (credit-by-exam → CCC; course-as-exhibit and high-school pathways → explicit 'no formal issuer'; a small receipted brand pass). The 10-Key '＋ set' now drops you straight into the issuer box — and your 'Proctored Testing Center' pick is already entered (it had never actually landed; it folds into the permanent record overnight). Look-wise: no more black headers anywhere — dark chrome now rides the CO seal blue, the Curate panel's black label boxes are fixed, exhibit titles get room to breathe, and the chips sit on one row.",
+ "_status": "Post-merge verification: everything landed — your saved assignments folded overnight (593 in the record), 10-Key now carries 'Proctored Testing Center' permanently, and the new issuer lane + pre-fills are live. ONE surprise the old display bug had hidden: the last 97 ⚡ pre-filled unclassified rows from yesterday were staged but never actually saved (pre-fills don't save themselves — and the truncated list made it impossible to see). Open Triage and hit '💾 Save all filled shown' once — that closes the unclassified queue to just the 3 CLEP judgment calls. Then the 'Missing issuing agency' section (978 pre-filled) is the last lap before students.",
  "items": [
+  {
+   "id": "staged-97-save",
+   "who": "sam",
+   "tab": "credential-reference",
+   "text": "The 97 ⚡ pre-filled unclassified rows from the statewide pass were never saved (staged only — the old display bug hid it). One '💾 Save all filled shown' in Triage closes the queue to the 3 CLEP spans."
+  },
   {
    "id": "issuer-lane-review",
    "who": "sam",
@@ -27,12 +33,6 @@
    "who": "sam",
    "tab": "credential-reference",
    "text": "10-Key Data Entry: 'Proctored Testing Center' is entered on your behalf (your earlier save had never landed — sorry!). Check it reads right; '＋ set' now opens the input directly if you want to change it."
-  },
-  {
-   "id": "dispatch-verify",
-   "who": "fable",
-   "tab": "credential-reference",
-   "text": "Verify the post-merge dashboard run published: the CER bake with Mode-A2-promoted issuers (10-Key included) + the folded worklist assignments."
   },
   {
    "id": "apprenticeship-issuers",
