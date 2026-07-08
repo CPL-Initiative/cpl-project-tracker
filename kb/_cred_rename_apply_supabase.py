@@ -84,24 +84,36 @@ def fetch_credential_review_rows() -> dict:
 
     Pre-fetching lets us skip aliases whose source rows don't exist in
     Supabase at all (idempotency on re-runs) and detect the unified_title_override
-    rows to DELETE vs. PATCH others. PostgREST default page size is 1000;
-    this slice is small (today: 0 rows). Add a Range header if the slice
-    ever grows past 1000.
+    rows to DELETE vs. PATCH others. Range-paginated with a stable order so
+    the slice can grow past PostgREST's 1,000-row unordered cap without
+    silently truncating (the Session-105 lesson —
+    docs/kb-notes/methodology-paginate-postgrest-reads.md; 138 rows today).
     """
     qs = urllib.parse.urlencode({
         "select": "course_id,field,value,reviewer_email,reviewed_at",
         "course_id": f"like.{KEY_PREFIX}%",
+        "order": "course_id.asc,field.asc",
     })
-    req = urllib.request.Request(
-        f"{URL}/rest/v1/kb_curation?{qs}",
-        headers={
-            "apikey": KEY,
-            "Authorization": f"Bearer {KEY}",
-            "Accept": "application/json",
-        },
-    )
-    with urllib.request.urlopen(req, timeout=30) as r:
-        rows = json.load(r)
+    page_size = 1000
+    rows = []
+    start = 0
+    while True:
+        req = urllib.request.Request(
+            f"{URL}/rest/v1/kb_curation?{qs}",
+            headers={
+                "apikey": KEY,
+                "Authorization": f"Bearer {KEY}",
+                "Accept": "application/json",
+                "Range-Unit": "items",
+                "Range": f"{start}-{start + page_size - 1}",
+            },
+        )
+        with urllib.request.urlopen(req, timeout=30) as r:
+            page = json.load(r)
+        rows.extend(page or [])
+        if not page or len(page) < page_size:
+            break
+        start += page_size
     grouped = {}
     for row in rows:
         cid = row.get("course_id") or ""

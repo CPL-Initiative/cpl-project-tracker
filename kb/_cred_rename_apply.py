@@ -94,9 +94,10 @@ def load_alias_map():
     # V1 — refuse if dry-run flagged unsafe
     if not summary.get("apply_safe"):
         sys.exit(
-            f"Dry-run reported apply_safe=false (V1/V2/V3 gates failed). "
-            f"Re-run kb/_cred_rename_dryrun.py, resolve collisions or intra-"
-            f"batch conflicts, then re-run apply.\n"
+            f"Dry-run reported apply_safe=false (a V1/V2/V3 gate failed, or "
+            f"there are no clean renames — queued collisions alone never "
+            f"gate). Re-run kb/_cred_rename_dryrun.py, resolve the gate "
+            f"failures, then re-run apply.\n"
             f"Gate status: v1={summary.get('v1_intra_batch_collisions_pass')} "
             f"v2={summary.get('v2_source_exists_pass')} "
             f"v3={summary.get('v3_target_collision_free_pass')} "
