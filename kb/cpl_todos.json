@@ -1,38 +1,44 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-08 · Session 105 post-merge check (the 97 staged rows still need one Save-All)",
- "_session": 105,
- "_status": "Post-merge verification: everything landed — your saved assignments folded overnight (593 in the record), 10-Key now carries 'Proctored Testing Center' permanently, and the new issuer lane + pre-fills are live. ONE surprise the old display bug had hidden: the last 97 ⚡ pre-filled unclassified rows from yesterday were staged but never actually saved (pre-fills don't save themselves — and the truncated list made it impossible to see). Open Triage and hit '💾 Save all filled shown' once — that closes the unclassified queue to just the 3 CLEP judgment calls. Then the 'Missing issuing agency' section (978 pre-filled) is the last lap before students.",
+ "_as_of": "2026-07-08 · Session 106 (Rule 5f — HS/ROP schools become the agency; titles editable in Triage)",
+ "_session": 106,
+ "_status": "The Triage issuer lane is now a complete workbench: you can edit the exhibit TITLE right there, and every row shows the raw college-entered title + originating college — no more flipping to the main list. New rule (5f) is live: HS/ROP/adult-school credit-by-exam exhibits get the school stripped from the title and set as BOTH issuing and training agency. The pre-seed re-ran under the rule: 989 rows pre-filled, including 74 school rows (AB Miller, Summit, Baldy View ROP…) with title + issuer + trainer all staged — one Save each, or bulk-save per view. Nothing saves without your click.",
  "items": [
   {
-   "id": "staged-97-save",
+   "id": "local-trainer-review",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "The 97 ⚡ pre-filled unclassified rows from the statewide pass were never saved (staged only — the old display bug hid it). One '💾 Save all filled shown' in Triage closes the queue to the 3 CLEP spans."
+   "text": "Triage → the ⚡ school rows (74, sorted first): title is pre-stripped (“Business and Finance”), issuer + trainer pre-set to the school. Review, edit anything off, Save per row or 💾 Save all."
   },
   {
    "id": "issuer-lane-review",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "Open Triage → the new 'Missing issuing agency' section: review the ⚡ pre-filled issuers (978), edit anything off, then Save per row or '💾 Save all filled shown'. Empty box + Save = the explicit 'no formal issuer (local)' verdict."
+   "text": "Then the rest of the pre-filled issuer lane (717 cx→CCC · 167 course-as-exhibit “no issuer” · 31 family) — bulk-save per view once eyeballed."
   },
   {
    "id": "issuer-lane-residual",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "152 issuer rows were deliberately NOT pre-filled: apprenticeship articulations (need the DIR DAS sponsor lookup), Military-typed, and a few odd ones. Type issuers as you know them — new names become pickable instantly."
+   "text": "143 issuer rows stay un-prefilled on purpose: apprenticeship articulations (DIR DAS lookup pending), Military-typed, odd ones. Type issuers as you know them — new names become pickable instantly."
   },
   {
    "id": "clep-complete-both",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "Still the last 3 unclassified rows: the CLEP French/German/Spanish 'Levels 1 and 2 — Complete both' spans (which family should a two-level span land in?)."
+   "text": "Still the last 3 unclassified rows: the CLEP French/German/Spanish “Levels 1 and 2 — Complete both” spans (which family should a two-level span land in?)."
   },
   {
-   "id": "ten-key-verify",
-   "who": "sam",
+   "id": "audit-rerun-colleges",
+   "who": "fable",
    "tab": "credential-reference",
-   "text": "10-Key Data Entry: 'Proctored Testing Center' is entered on your behalf (your earlier save had never landed — sorry!). Check it reads right; '＋ set' now opens the input directly if you want to change it."
+   "text": "Re-run kb/_audit_exhibits.py with a fresh PII-purged CustomReport so originating-college chips populate on CLASSIFIED Triage rows (falls back to articulating colleges until then)."
+  },
+  {
+   "id": "pr5b-rename-rekey",
+   "who": "fable",
+   "tab": "credential-reference",
+   "text": "Scope Cred-Ref PR-5b: promote the recorded unified_title_override renames into REAL KB re-keys (alias map, re-mint playbook) so same-course-different-school cards actually merge."
   },
   {
    "id": "apprenticeship-issuers",
@@ -44,13 +50,13 @@
    "id": "fire-family-twins",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "Near-duplicate families to fold in a cleanup pass: 'Firefighter 1' vs 'Firefighter I', 'Fire Instructor 2' vs 'Fire Instructor II' (the AP-art-fold pattern)."
+   "text": "Near-duplicate families to fold in a cleanup pass: “Firefighter 1” vs “Firefighter I”, “Fire Instructor 2” vs “Fire Instructor II” (the AP-art-fold pattern)."
   },
   {
    "id": "mojibake-families",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "3 mojibake 'Generic Credit by Exam â€”' families in unified_titles.json still need the rename/merge cleanup."
+   "text": "3 mojibake “Generic Credit by Exam â€”” families in unified_titles.json still need the rename/merge cleanup."
   },
   {
    "id": "moc-cos-bridge",

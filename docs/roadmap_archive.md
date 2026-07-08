@@ -2306,3 +2306,20 @@ caught 2 nbsp-corrupted rows + Sam's concurrent saves. Tests: `tests/cer_worklis
 SMM 4 issuer==title, 3 mojibake `â€”` Generic-CBE families. Full story:
 `docs/exhibit_canonicalization_lessons.md` (2026-07-07 "continued 6"); next:
 `docs/session_104_handoff.md`.
+
+
+### Session 104 — Bruh SkyTime: the statewide-catalog pass — 97 of the last 100 staged + college chips + multi-issuer (2026-07-07)
+
+Sam (live, 4 asks): statewide-CR matching ("IC-Welding Level I → NCCER"), originating-college chips,
+the CCR crossover think, a blindspot pass — plus 10-Key's missing issuer edit + multi-issuer Fire +
+a list-vanish bug. Queue re-measured 451→351 assigned→**100 left → 97 STAGED** (residual = the 3
+CLEP "Complete both" spans): v3 lanes in `kb/_preseed_unclassified.py` — statewide/family match over
+`statewide_data.js` (133 CCC records, issuers) ∪ house families, `stage_ic`, `stage_cslb` (verbatim +
+CSLB), `stage_cx_type` (CPL-Type-routed), +24 receipted singles; harness 76→**100**. Auditor stamps
+`colleges` on queue cards → worklist chips; `_suggest_unclassified.py` mechanism-strip (💡 19→39) +
+college-scoped COCI joins (`docs/kb-notes/cer-ccr-crossover-integrations.md`). Fold gained the
+**`issuer_adds`** multi-issuer lane (append distinct, never overwrite; acronym-dupe guard); Mode A2
+in `_apply_credential_review.py` promotes issuer overrides into `credentials.json`; CER: "+N" issuer
+chip, "＋ set" on null-issuer cells, **`appendRowSafe`** row-error isolation (+3 test files, suite
+140 green). Full story: `docs/exhibit_canonicalization_lessons.md` (2026-07-07 "continued 7"); next:
+`docs/session_105_handoff.md`.

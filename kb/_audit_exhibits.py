@@ -220,7 +220,7 @@ def main():
             tags.append("stale_kb_entry")
         for t in tags:
             tag_counts[t] += 1
-        title_cards.append({
+        card = {
             "raw_title": raw_title,
             "unified_title": unified,
             "confidence_title": c,
@@ -228,7 +228,14 @@ def main():
             "quality_flag": rec.get("quality_flag"),
             "reviewed_at": rec.get("reviewed_at"),
             "tags": tags,
-        })
+        }
+        # Originating college(s) on CLASSIFIED cards too (Session 106) — the
+        # CER issuer lane renders them so title/agency triage completes without
+        # flipping to the main list. Only stamped when non-empty (size).
+        cols = (map_colleges or {}).get(raw_title)
+        if cols:
+            card["colleges"] = cols
+        title_cards.append(card)
 
     # ─── unclassified-in-MAP rows (titles in MAP but not in KB) ──
     unclassified = []

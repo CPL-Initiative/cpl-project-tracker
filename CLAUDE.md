@@ -2420,22 +2420,9 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > authority sources) archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md).
 > Full story: `docs/exhibit_canonicalization_lessons.md` (2026-07-07 "continued 6").
 
-### Session 104 — Bruh SkyTime: the statewide-catalog pass — 97 of the last 100 staged + college chips + multi-issuer (2026-07-07)
-
-Sam (live, 4 asks): statewide-CR matching ("IC-Welding Level I → NCCER"), originating-college chips,
-the CCR crossover think, a blindspot pass — plus 10-Key's missing issuer edit + multi-issuer Fire +
-a list-vanish bug. Queue re-measured 451→351 assigned→**100 left → 97 STAGED** (residual = the 3
-CLEP "Complete both" spans): v3 lanes in `kb/_preseed_unclassified.py` — statewide/family match over
-`statewide_data.js` (133 CCC records, issuers) ∪ house families, `stage_ic`, `stage_cslb` (verbatim +
-CSLB), `stage_cx_type` (CPL-Type-routed), +24 receipted singles; harness 76→**100**. Auditor stamps
-`colleges` on queue cards → worklist chips; `_suggest_unclassified.py` mechanism-strip (💡 19→39) +
-college-scoped COCI joins (`docs/kb-notes/cer-ccr-crossover-integrations.md`). Fold gained the
-**`issuer_adds`** multi-issuer lane (append distinct, never overwrite; acronym-dupe guard); Mode A2
-in `_apply_credential_review.py` promotes issuer overrides into `credentials.json`; CER: "+N" issuer
-chip, "＋ set" on null-issuer cells, **`appendRowSafe`** row-error isolation (+3 test files, suite
-140 green). Full story: `docs/exhibit_canonicalization_lessons.md` (2026-07-07 "continued 7"); next:
-`docs/session_105_handoff.md`.
-
+> **Session 104 narrative (Bruh SkyTime — the statewide-catalog pass: 97 of the last 100
+> staged + college chips + multi-issuer) archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md).
+> Full story: `docs/exhibit_canonicalization_lessons.md` (2026-07-07 "continued 7").
 
 ### Session 105 — SkyClose: the truncated-read fix + the missing-issuer lane + the seal-blue pass (2026-07-08)
 
@@ -2451,6 +2438,20 @@ null-issuer credentials; `kb/_preseed_null_issuers.py` staged 978 → `kb/issuer
 verifier 19 checks; empty-Save = explicit no-formal-issuer). COBI-wide: black ink headers →
 `--seal-blue`; Curate-panel black-box bleed fixed; CER title/chip row-height pass. Suite 142
 green (+2 files). Full story: lessons "continued 8"; next: `docs/session_106_handoff.md`.
+
+
+### Session 106 — SkySeal: Rule 5f (the school IS the agency) + the issuer lane grows title editing (2026-07-08)
+
+Sam's 4 asks: edit pre-seeded titles IN Triage; show raw title + originating college there; a
+standing rule for HS/ROP/adult-school Cx exhibits; re-run the pre-seed. **Rule 5f** (SKILL.md):
+strip the school from the title, school = issuer = trainer by default, never overwrite a real
+issuer (PLTW), multi-school identities take no default (the EMT-405 unanimity guard).
+`kb/_preseed_null_issuers.py` → plan schema v2 (`title`/`trainer`/`issuer:null`/`resurface`):
+**989 staged** (local-trainer 74 · cx 717 · course-as-exhibit 167 · family 31), verifier 25 checks.
+The CER issuer lane: editable title input + raw-variant lines + college chips (auditor now stamps
+`colleges` on classified cards), one Save writes up to 3 overrides, resurface rows never rewrite a
+real issuer; **Mode A3** (trainer promotion) added to `_apply_credential_review.py`. Suite 142
+green. Full story: `docs/exhibit_canonicalization_lessons.md` (2026-07-08 "continued 9").
 
 ---
 

@@ -348,6 +348,16 @@
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (d) {
         var cards = (d && d.title_cards) || [];
+        // Originating-college index over ALL cards (classified included, once
+        // the auditor stamps them — Session 106) so the issuer lane can show
+        // who entered each raw title without flipping to the main CER row.
+        var colIdx = {};
+        cards.forEach(function (c) {
+          if (c && c.raw_title && c.colleges && c.colleges.length) {
+            colIdx[c.raw_title] = c.colleges;
+          }
+        });
+        state.rawColleges = colIdx;
         return cards.filter(function (c) {
           return c && !c.unified_title
             && (c.tags || []).indexOf("unclassified_in_map") >= 0;
@@ -845,8 +855,9 @@
     issuerPreseed: {},    // unified_title → {issuer, via, confidence, note} — ⚡ STAGED
                           // issuer pre-seeds (kb/issuer_preseed.json) for the
                           // missing-issuer triage lane; prefill-only, curator saves
-    niDraft: {},          // unified_title → issuer draft for the missing-issuer lane
-    niSaved: {},          // unified_title → true — issuer saved this session (in-place ✓)
+    niDraft: {},          // unified_title → {issuer, title} drafts for the issuer lane
+    niSaved: {},          // unified_title → true — lane row saved this session (in-place ✓)
+    rawColleges: {},      // raw_title → [originating colleges] (auditor-stamped)
     // Sign-in feedback lives IN the auth widget (not a corner toast) so
     // curators can't miss it. pendingSignInEmail = "user@example.com" after
     // a successful OTP request; pendingSignInError = "msg" after a failure.
@@ -2280,7 +2291,11 @@
       "#tab-credential-reference .cr-ni-table td{padding:6px 10px;border-top:1px solid #eef2f7;vertical-align:top;}" +
       "#tab-credential-reference .cr-ni-row.cr-wl-done{background:#f0fdf4;}" +
       "#tab-credential-reference .cr-ni-row.cr-wl-preseeded{background:#fffdf5;}" +
-      "#tab-credential-reference .cr-ni-row.cr-wl-save-failed{background:#fef2f2;outline:1px solid #fca5a5;}";
+      "#tab-credential-reference .cr-ni-row.cr-wl-save-failed{background:#fef2f2;outline:1px solid #fca5a5;}" +
+      // Session 106 — raw-title/college context + editable title in the lane.
+      "#tab-credential-reference .cr-ni-table td.cr-wl-raw{width:34%;}" +
+      "#tab-credential-reference .cr-ni-rawline{margin-top:3px;font-size:.72rem;color:#64748b;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}" +
+      "#tab-credential-reference .cr-ni-trainer-chip{display:inline-block;margin-top:3px;font-size:.68rem;color:var(--hunter,#166534);background:#ecfdf5;border:1px solid #a7f3d0;border-radius:9px;padding:0 6px;cursor:help;white-space:nowrap;}";
     document.head.appendChild(st);
   }
 
@@ -2667,9 +2682,23 @@
   // on the daily sync, so a saved row leaves this queue canonically. Saving an
   // EMPTY input is the explicit "no formal issuer (local exhibit)" verdict —
   // the override-to-"" semantic the Curate panel already documents.
+  // Session 106 (Sam's Rule 5f): the lane also surfaces rows the staged plan
+  // marks for TITLE/TRAINER cleanup even when their issuer is already set
+  // (`resurface` entries — e.g. PLTW-issued ROP rows whose display title still
+  // carries the school suffix). Convergence: a row leaves the queue once its
+  // staged title/trainer match reality or an override lands.
   function issuerQueue() {
     return (state.rows || []).filter(function (r) {
-      return !r.primary_issuer && !r.issuer_overridden_at && !state.niSaved[r.unified_title];
+      var ut = r.unified_title;
+      if (state.niSaved[ut]) return false;
+      var needsIssuer = !r.primary_issuer && !r.issuer_overridden_at;
+      var ps = state.issuerPreseed[ut];
+      var ovr = state.overlay[ut] || {};
+      var needsTitle = !!(ps && ps.title && ovr.utitle_override === undefined
+        && ps.title !== (r.display_title || ut));
+      var needsTrainer = !!(ps && ps.trainer && ovr.trainer_override === undefined
+        && ps.trainer !== (r.primary_trainer || ""));
+      return needsIssuer || needsTitle || needsTrainer;
     });
   }
   function renderIssuerLaneInto(panel) {
@@ -2693,10 +2722,14 @@
       return;
     }
     panel.appendChild(el("p", { class: "cr-wl-intro" }, [
-      "These classified credentials have no issuing agency yet. Type one (or pick "
-      + "from the list), or Save an empty box to record “no formal issuer — local "
-      + "exhibit”. Saves are curation overrides that fold into the knowledge base "
-      + "on the next daily sync. ⚡ rows are pre-filled from the staged issuer "
+      "These classified credentials still need agency/title triage. Edit the "
+      + "unified title right here (Rule 5f: strip a school/trainer name from the "
+      + "title — it belongs in the agency fields), type an issuer (or pick from "
+      + "the list), or Save an empty issuer box to record “no formal issuer — "
+      + "local exhibit”. Each row shows the raw college-entered title(s) and the "
+      + "originating college so you can complete triage without flipping to the "
+      + "main list. Saves are curation overrides that fold into the knowledge "
+      + "base on the next daily sync. ⚡ rows are pre-filled from the staged "
       + "pre-seed plan — nothing is saved until you save it."
     ]));
     var staged = queue.filter(function (r) { return state.issuerPreseed[r.unified_title]; });
@@ -2704,7 +2737,8 @@
       var bar = el("div", { class: "cr-wl-preseed-bar" });
       bar.appendChild(el("span", null, [
         (staged.length ? "⚡ " + staged.length + " pre-filled. " : "")
-        + "Save all saves every shown row with a filled-in issuer"
+        + "Save all saves every shown row with a filled-in issuer or an edited "
+        + "title/trainer"
         + (staged.length ? " — plus the pre-seeded “no formal issuer” rows" : "") + "."
       ]));
       var saveAll = el("button", { type: "button", class: "cr-wl-saveall" },
@@ -2717,7 +2751,8 @@
     // queries, bulk save, and tests never mix the two lanes up.
     var tbl = el("table", { class: "cr-ni-table" });
     tbl.appendChild(el("thead", null, [el("tr", null, [
-      el("th", null, ["Credential"]),
+      el("th", null, ["Credential (raw title · colleges)"]),
+      el("th", null, ["Unified title"]),
       el("th", null, ["Issuing agency"]),
       el("th", null, [""]),
     ])]));
@@ -2727,29 +2762,97 @@
     panel.appendChild(tbl);
   }
 
+  // Originating colleges for a lane row: auditor-stamped per raw title when
+  // available (exact "who entered this exhibit" semantics), else the earning
+  // colleges from the row's articulations (for a local single-college exhibit
+  // they coincide).
+  function niColleges(r) {
+    var seen = {}, names = [], src = "originating";
+    (r.raw_variants || []).forEach(function (v) {
+      (state.rawColleges[v.raw_title] || []).forEach(function (c) {
+        if (c && !seen[c]) { seen[c] = 1; names.push(c); }
+      });
+    });
+    if (!names.length) {
+      src = "articulating";
+      (r.articulations || []).forEach(function (a) {
+        ((a && a.local) || []).forEach(function (lc) {
+          ((lc && lc.colleges) || []).forEach(function (c) {
+            if (c && !seen[c]) { seen[c] = 1; names.push(c); }
+          });
+        });
+      });
+    }
+    return { names: names.sort(), src: src };
+  }
+
   function renderIssuerLaneRow(r) {
     var ut = r.unified_title;
     var ps = state.issuerPreseed[ut];
-    var draft = state.niDraft[ut];
+    var draft = state.niDraft[ut] || {};
     var tr = el("tr", { class: "cr-ni-row" + (ps ? " cr-wl-preseeded" : ""),
       "data-ut": ut });
 
+    // ── credential context: name + ⚡ badge + raw title(s) + colleges ──
     var nameTd = el("td", { class: "cr-wl-raw" });
     nameTd.appendChild(el("span", { class: "cr-wl-rawt" }, [r.display_title || ut]));
     if (ps) {
       var psLabel = ps.issuer === ""
         ? "⚡ pre-seed · no formal issuer" : "⚡ pre-seed · " + (ps.via || "");
       nameTd.appendChild(el("span", { class: "cr-wl-preseed-badge",
-        title: "Pre-filled by the staged issuer pre-seed plan (lane: " + (ps.via || "?")
+        title: "Pre-filled by the staged pre-seed plan (lane: " + (ps.via || "?")
           + ", confidence " + (ps.confidence != null ? ps.confidence : "?") + ")."
+          + (ps.title ? " Staged title: “" + ps.title + "”." : "")
+          + (ps.trainer ? " Staged training agency: “" + ps.trainer + "”." : "")
           + (ps.note ? " " + ps.note : "") + " Review or edit, then Save." },
         [psLabel]));
     }
+    // Raw college-entered title(s) + originating college — the context Sam
+    // was flipping to the main CER row for (2026-07-08). Both render inline
+    // so triage completes in one place.
+    (r.raw_variants || []).forEach(function (v) {
+      nameTd.appendChild(el("div", { class: "cr-ni-rawline",
+        title: "Raw college-entered MAP exhibit title" }, [v.raw_title]));
+    });
+    var cols = niColleges(r);
+    if (cols.names.length) {
+      var crow = el("div", { class: "cr-wl-colleges" });
+      cols.names.forEach(function (name) {
+        var short = (typeof window.cplCollegeShort === "function"
+          && window.cplCollegeShort(name)) || name;
+        crow.appendChild(el("span", { class: "cr-wl-college",
+          title: (cols.src === "originating" ? "Originating college: "
+            : "Articulating college: ") + name }, [short]));
+      });
+      nameTd.appendChild(crow);
+    }
     tr.appendChild(nameTd);
 
+    // ── unified-title input (Sam, 2026-07-08: edit the pre-seeded exhibit
+    // title right here, not via the main-tab Curate panel) ──
+    var baseTitle = r.display_title || ut;
+    var titleInp = el("input", { class: "cr-wl-input cr-ni-title-input", type: "text",
+      list: "cr-unclass-titles", placeholder: "unified title…",
+      value: (draft.title !== undefined ? draft.title : ((ps && ps.title) || baseTitle)),
+      autocomplete: "off" });
+    titleInp.disabled = !state.sess;
+    var titleTd = el("td", {});
+    titleTd.appendChild(titleInp);
+    if (ps && ps.trainer) {
+      titleTd.appendChild(el("div", { class: "cr-ni-trainer-chip",
+        title: "Rule 5f: the training agency defaults to the same school as the "
+          + "issuer. Saving this row also records training agency “" + ps.trainer
+          + "” (following your issuer edit when they were staged the same). "
+          + "Fine-tune later via the row's Curate panel if needed." },
+        ["trainer ⇒ " + ps.trainer]));
+    }
+    tr.appendChild(titleTd);
+
+    // ── issuer input (null staged issuer = keep the current one) ──
+    var baseIssuer = (ps && ps.issuer != null) ? ps.issuer : (r.primary_issuer || "");
     var inp = el("input", { class: "cr-wl-input cr-ni-input", type: "text",
       list: "cr-unclass-issuers", placeholder: "issuer… (empty = no formal issuer)",
-      value: (draft !== undefined ? draft : (ps ? ps.issuer : "")) || "",
+      value: (draft.issuer !== undefined ? draft.issuer : baseIssuer) || "",
       autocomplete: "off" });
     inp.disabled = !state.sess;
     var inpTd = el("td", {}); inpTd.appendChild(inp); tr.appendChild(inpTd);
@@ -2758,52 +2861,98 @@
     if (state.sess) {
       var saveBtn = el("button", { type: "button", class: "cr-wl-save cr-ni-save" }, ["Save"]);
       function syncLabel() {
-        saveBtn.textContent = (inp.value || "").trim() ? "Save" : "Save “no issuer”";
-        saveBtn.title = (inp.value || "").trim()
-          ? "Save this issuing agency for the credential."
-          : "Record the explicit verdict that this credential has no formal issuer (local exhibit, portfolio).";
+        var issuerRequired = !r.primary_issuer && !r.issuer_overridden_at;
+        var noIssuer = issuerRequired && !(inp.value || "").trim();
+        saveBtn.textContent = noIssuer ? "Save “no issuer”" : "Save";
+        saveBtn.title = noIssuer
+          ? "Record the explicit verdict that this credential has no formal issuer (local exhibit, portfolio)."
+          : "Save the title/issuer exactly as shown in the inputs.";
       }
       syncLabel();
-      inp.oninput = function () { state.niDraft[ut] = inp.value; syncLabel(); };
-      saveBtn.onclick = function () { saveIssuerLaneRow(r, tr, inp, saveBtn); };
+      function noteDraft() {
+        state.niDraft[ut] = { title: titleInp.value, issuer: inp.value };
+        syncLabel();
+      }
+      titleInp.oninput = noteDraft;
+      inp.oninput = noteDraft;
+      saveBtn.onclick = function () { saveIssuerLaneRow(r, tr, titleInp, inp, saveBtn); };
       actTd.appendChild(saveBtn);
     }
     tr.appendChild(actTd);
     return tr;
   }
 
-  function saveIssuerLaneRow(r, tr, inp, saveBtn) {
+  // The overrides one lane save writes, from the row's current input values:
+  //  - unified_title_override when the title input differs from the display
+  //    baseline (display-only rename per Mode B — the KB key stays);
+  //  - issuing_agency_override always on a null-issuer row ("" = the explicit
+  //    no-formal-issuer verdict), but only-on-change when an issuer already
+  //    stands (the Rule-5f resurface cohort must never accidentally blank a
+  //    real issuer like PLTW);
+  //  - training_agency_override when the plan staged a trainer (Rule 5f:
+  //    defaults to the school; follows an issuer edit when staged the same).
+  function laneJobsFor(r, titleVal, issVal) {
     var ut = r.unified_title;
-    var val = (inp.value || "").trim();
+    var jobs = [];
+    var baseTitle = r.display_title || ut;
+    var t = (titleVal || "").trim();
+    if (t && t !== baseTitle) jobs.push({ field: FIELD_UTITLE_OVERRIDE, value: t });
+    var iv = (issVal || "").trim();
+    var issuerRequired = !r.primary_issuer && !r.issuer_overridden_at;
+    if (issuerRequired || iv !== (r.primary_issuer || "")) {
+      jobs.push({ field: FIELD_ISSUER_OVERRIDE, value: iv });
+    }
+    var ps = state.issuerPreseed[ut];
+    if (ps && ps.trainer) {
+      var tv = (ps.issuer != null && ps.trainer === ps.issuer && iv) ? iv : ps.trainer;
+      if (tv && tv !== (r.primary_trainer || "")) {
+        jobs.push({ field: FIELD_TRAINER_OVERRIDE, value: tv });
+      }
+    }
+    return jobs;
+  }
+
+  function saveIssuerLaneRow(r, tr, titleInp, inp, saveBtn) {
+    var jobs = laneJobsFor(r, titleInp.value, inp.value);
+    if (!jobs.length) {          // nothing changed — treat as reviewed-OK
+      applySavedLane(r, tr, jobs);
+      return;
+    }
     saveBtn.disabled = true; saveBtn.textContent = "saving…";
-    saveOverride(ut, FIELD_ISSUER_OVERRIDE, val).then(function (resp) {
-      if (!resp || !resp.ok) { markRowFailed(tr); return; }
-      applySavedIssuer(r, tr, val);
+    Promise.all(jobs.map(function (j) {
+      return saveOverride(r.unified_title, j.field, j.value);
+    })).then(function (rs) {
+      if (!rs.every(function (resp) { return resp && resp.ok; })) { markRowFailed(tr); return; }
+      applySavedLane(r, tr, jobs);
     }).catch(function () { markRowFailed(tr); });
   }
   // In-place success bookkeeping (never a full re-render — unsaved input in
   // other rows must survive): the row leaves the queue on the NEXT render;
   // right now it goes green with a ✓ so the curator sees the progress.
-  function applySavedIssuer(r, tr, val) {
+  function applySavedLane(r, tr, jobs) {
     var ut = r.unified_title;
-    var baseline = (r._original_primary_issuer !== undefined)
-      ? r._original_primary_issuer : (r.primary_issuer || null);
-    r.original_primary_issuer = baseline;
-    r.primary_issuer = val;
-    r.issuer_overridden_at = new Date().toISOString();
-    r.issuer_overridden_by = state.sess && state.sess.email;
     var ov = state.overlay[ut] || {};
-    ov.issuer_override = val;
-    ov.issuer_overridden_by = r.issuer_overridden_by;
-    ov.issuer_overridden_at = r.issuer_overridden_at;
+    var nowIso = new Date().toISOString();
+    var email = state.sess && state.sess.email;
+    var issuerJob = null;
+    jobs.forEach(function (j) {
+      applyOverrideLocally(r, j.field, j.value);
+      ov[overlayKeyFor(j.field)] = j.value;
+      ov[overlayMetaKeyFor(j.field, "by")] = email;
+      ov[overlayMetaKeyFor(j.field, "at")] = nowIso;
+      if (j.field === FIELD_ISSUER_OVERRIDE) issuerJob = j;
+    });
     state.overlay[ut] = ov;
     state.niSaved[ut] = true;
     delete state.niDraft[ut];
-    addIssuerOption(val);
+    if (issuerJob && issuerJob.value) addIssuerOption(issuerJob.value);
     tr.classList.remove("cr-wl-save-failed");
     tr.className = "cr-ni-row cr-wl-done";
     var sb = tr.querySelector(".cr-ni-save");
-    if (sb) { sb.disabled = true; sb.textContent = val ? "✓ Saved" : "✓ no issuer"; }
+    if (sb) {
+      sb.disabled = true;
+      sb.textContent = (issuerJob && issuerJob.value === "") ? "✓ no issuer" : "✓ Saved";
+    }
     updateIssuerLaneCount();
     renderToolbar();
   }
@@ -2812,34 +2961,50 @@
     if (h) h.textContent = "Missing issuing agency (" + issuerQueue().length + ")";
   }
 
-  // Bulk-save the issuer lane: every shown, unsaved row with a NON-EMPTY
-  // issuer input, PLUS empty-input rows whose staged pre-seed explicitly
-  // stages "" (the no-formal-issuer lane) — an empty box the plan did NOT
-  // stage is never bulk-saved (deliberate: mass "no issuer" needs intent).
+  // Bulk-save the issuer lane: every shown, unsaved row with something to
+  // write — a NON-EMPTY issuer input, a title/trainer change, or an empty
+  // issuer whose staged pre-seed explicitly stages "" (the no-formal-issuer
+  // verdict). An empty issuer box the plan did NOT stage is never bulk-saved
+  // (deliberate: mass "no issuer" needs staged intent) — its title/trainer
+  // changes still save, and the row stays in the issuer queue.
   function bulkSaveIssuers(btn) {
     var rows = Array.prototype.slice.call(document.querySelectorAll(".cr-ni-row"));
+    var byUt = {};
+    (state.rows || []).forEach(function (r) { byUt[r.unified_title] = r; });
     var todo = [];
+    var nEmpty = 0, nTitle = 0, nTrainer = 0, nIssuer = 0;
     rows.forEach(function (tr) {
       var ut = tr.getAttribute("data-ut");
-      if (!ut || state.niSaved[ut]) return;
+      if (!ut || state.niSaved[ut] || !byUt[ut]) return;
       var inp = tr.querySelector(".cr-ni-input");
+      var titleInp = tr.querySelector(".cr-ni-title-input");
       if (!inp) return;
-      var val = (inp.value || "").trim();
       var ps = state.issuerPreseed[ut];
-      if (val || (ps && ps.issuer === "")) {
-        todo.push({ ut: ut, tr: tr, val: val });
-      }
+      var jobs = laneJobsFor(byUt[ut], titleInp ? titleInp.value : "", inp.value);
+      jobs = jobs.filter(function (j) {
+        if (j.field !== FIELD_ISSUER_OVERRIDE) return true;
+        return !!j.value || (ps && ps.issuer === "");
+      });
+      if (!jobs.length) return;
+      jobs.forEach(function (j) {
+        if (j.field === FIELD_ISSUER_OVERRIDE) { nIssuer++; if (!j.value) nEmpty++; }
+        if (j.field === FIELD_UTITLE_OVERRIDE) nTitle++;
+        if (j.field === FIELD_TRAINER_OVERRIDE) nTrainer++;
+      });
+      todo.push({ ut: ut, tr: tr, jobs: jobs });
     });
     if (!todo.length) return;
-    var nEmpty = todo.filter(function (j) { return !j.val; }).length;
-    var msg = "Save " + todo.length + " issuer assignment" + (todo.length === 1 ? "" : "s")
-      + (nEmpty ? " (" + nEmpty + " as “no formal issuer”)" : "")
-      + " exactly as shown in the inputs?";
+    var parts = [];
+    if (nIssuer) parts.push(nIssuer + " issuer" + (nEmpty ? " (" + nEmpty + " as “no formal issuer”)" : ""));
+    if (nTitle) parts.push(nTitle + " unified-title");
+    if (nTrainer) parts.push(nTrainer + " training-agency");
+    var msg = "Save " + todo.length + " row" + (todo.length === 1 ? "" : "s")
+      + " — " + parts.join(" · ") + " assignment"
+      + (nIssuer + nTitle + nTrainer === 1 ? "" : "s")
+      + " — exactly as shown in the inputs?";
     if (!window.confirm(msg)) return;
     btn.disabled = true;
     var done = 0, failed = 0;
-    var byUt = {};
-    (state.rows || []).forEach(function (r) { byUt[r.unified_title] = r; });
     function step(i) {
       if (i >= todo.length) {
         btn.textContent = failed ? ("saved " + done + ", " + failed + " failed — retry")
@@ -2849,11 +3014,13 @@
       }
       var job = todo[i];
       btn.textContent = "saving " + (i + 1) + " / " + todo.length + "…";
-      saveOverride(job.ut, FIELD_ISSUER_OVERRIDE, job.val).then(function (resp) {
-        if (resp && resp.ok) {
+      Promise.all(job.jobs.map(function (j) {
+        return saveOverride(job.ut, j.field, j.value);
+      })).then(function (rs) {
+        if (rs.every(function (resp) { return resp && resp.ok; })) {
           done++;
           job.tr.classList.remove("cr-wl-save-failed");
-          if (byUt[job.ut]) applySavedIssuer(byUt[job.ut], job.tr, job.val);
+          applySavedLane(byUt[job.ut], job.tr, job.jobs);
         } else { failed++; markRowFailed(job.tr); }
         step(i + 1);
       }).catch(function () { failed++; markRowFailed(job.tr); step(i + 1); });
