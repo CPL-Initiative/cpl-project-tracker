@@ -2324,6 +2324,13 @@
       "#tab-credential-reference .cr-mg-input{width:100%;min-width:16em;box-sizing:border-box;}" +
       "#tab-credential-reference .cr-mg-row.cr-wl-done{background:#f0fdf4;}" +
       "#tab-credential-reference .cr-mg-row.cr-wl-save-failed{background:#fef2f2;outline:1px solid #fca5a5;}" +
+      "#tab-credential-reference .cr-ni-lookup{margin-top:.25em;display:flex;align-items:center;gap:.5em;flex-wrap:wrap;}" +
+      "#tab-credential-reference .cr-ni-search,#tab-credential-reference .cr-ni-suggest{" +
+        "background:none;border:none;padding:0;cursor:pointer;font-size:.78em;color:var(--link,#2563eb);text-decoration:underline;}" +
+      "#tab-credential-reference .cr-ni-suggest:disabled{opacity:.5;cursor:wait;}" +
+      "#tab-credential-reference .cr-ni-suggest-out{font-size:.78em;color:var(--text-soft,#6b7280);}" +
+      "#tab-credential-reference .cr-ni-suggest-chip{background:#eff6ff;border:1px solid var(--link,#2563eb);" +
+        "border-radius:1em;padding:.05em .6em;cursor:pointer;font-size:1em;color:var(--link,#2563eb);}" +
       "#tab-credential-reference .cr-ni-row.cr-wl-preseeded{background:#fffdf5;}" +
       "#tab-credential-reference .cr-ni-row.cr-wl-save-failed{background:#fef2f2;outline:1px solid #fca5a5;}" +
       // Session 106 — raw-title/college context + editable title in the lane.
@@ -3017,6 +3024,7 @@
     inp2Wrap.style.display = inp2Wrap.childNodes.length ? "" : "none";
     inpTd.appendChild(inp2Wrap);
     inpTd.appendChild(addLink);
+    inpTd.appendChild(buildIssuerLookup(r, titleInp, inp));
     tr.appendChild(inpTd);
 
     var actTd = el("td", { class: "cr-wl-act" });
@@ -3055,6 +3063,97 @@
     }
     tr.appendChild(actTd);
     return tr;
+  }
+
+  // ── Issuer lookup — 🔎 web search + ✨ AI suggestion (Sam's ask 4,
+  // 2026-07-08 evening: "I've been doing a web search with the question
+  // 'who is the agency that issues an Aspects of Building and Safety
+  // certificate?' … Is there a way to add a search button that grabs the
+  // useful part of the title and does a search and recommendation?").
+  // 🔎 opens that exact question in a new tab (his manual workflow, one
+  // click, uses the CURRENT title input so an edited title searches right).
+  // ✨ asks Claude through the existing report proxy
+  // (window.CPL_REPORT_PROXY_URL — the Custom Report path; renders only when
+  // configured) and offers the answer as a click-to-fill chip. A suggestion
+  // is a RECOMMENDATION for the curator's judgment, never auto-saved. ──
+  function issuerSearchQuery(title) {
+    return "who is the agency that issues a \"" + title + "\" certificate?";
+  }
+  function buildIssuerLookup(r, titleInp, issuerInp) {
+    var wrap = el("div", { class: "cr-ni-lookup" });
+    var searchBtn = el("button", { type: "button", class: "cr-ni-search",
+      title: "Open a web search asking who issues this credential (uses the "
+        + "current unified-title input)" }, ["🔎 who issues this?"]);
+    searchBtn.onclick = function () {
+      var t = (titleInp && titleInp.value || "").trim()
+        || r.display_title || r.unified_title;
+      window.open("https://www.google.com/search?q="
+        + encodeURIComponent(issuerSearchQuery(t)), "_blank", "noopener");
+    };
+    wrap.appendChild(searchBtn);
+    if (window.CPL_REPORT_PROXY_URL) {
+      var aiBtn = el("button", { type: "button", class: "cr-ni-suggest",
+        title: "Ask Claude (via the report proxy) who issues this credential — "
+          + "the answer is a recommendation to review, never auto-saved" },
+        ["✨ suggest"]);
+      var out = el("span", { class: "cr-ni-suggest-out" });
+      aiBtn.onclick = function () {
+        var t = (titleInp && titleInp.value || "").trim()
+          || r.display_title || r.unified_title;
+        var raws = (r.raw_variants || []).slice(0, 3)
+          .map(function (v) { return v.r || v.raw_title || ""; })
+          .filter(Boolean);
+        aiBtn.disabled = true; out.textContent = "asking…";
+        var prompt = "A California community college awards credit for prior "
+          + "learning documented by an exhibit titled: \"" + t + "\"."
+          + (raws.length ? " The college-entered raw title(s): "
+             + raws.map(function (x) { return "\"" + x + "\""; }).join(", ") + "."
+             : "")
+          + " Which organization issues or governs this credential or "
+          + "certificate? Reply with ONLY the agency name, preferring the "
+          + "long canonical form with the common abbreviation in parentheses "
+          + "(e.g. \"International Code Council (ICC)\"). If it is a local "
+          + "college course with no external issuer, reply exactly: none. "
+          + "If you are not reasonably sure, reply exactly: unknown.";
+        fetch(window.CPL_REPORT_PROXY_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json",
+                     "anthropic-version": "2023-06-01" },
+          body: JSON.stringify({ model: "claude-sonnet-4-5", max_tokens: 100,
+            messages: [{ role: "user", content: prompt }] })
+        }).then(function (resp) { return resp.ok ? resp.json() : null; })
+          .then(function (json) {
+            aiBtn.disabled = false;
+            var text = (json && json.content && json.content[0]
+                        && json.content[0].text || "").trim();
+            if (!text || text.length > 120 || /^unknown\b/i.test(text)) {
+              out.textContent = "no confident suggestion — try 🔎";
+              return;
+            }
+            if (/^none\b/i.test(text)) {
+              out.textContent = "suggests: no external issuer (local exhibit)";
+              return;
+            }
+            out.textContent = "";
+            var chip = el("button", { type: "button", class: "cr-ni-suggest-chip",
+              title: "Click to fill the issuer input with this suggestion "
+                + "(review before saving)" }, ["→ " + text]);
+            chip.onclick = function () {
+              issuerInp.value = text;
+              issuerInp.dispatchEvent(new Event("input", { bubbles: true }));
+              issuerInp.focus();
+            };
+            out.appendChild(chip);
+          })
+          .catch(function () {
+            aiBtn.disabled = false;
+            out.textContent = "suggestion failed — try 🔎";
+          });
+      };
+      wrap.appendChild(aiBtn);
+      wrap.appendChild(out);
+    }
+    return wrap;
   }
 
   // The overrides one lane save writes, from the row's current input values:
