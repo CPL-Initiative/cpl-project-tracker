@@ -35,14 +35,43 @@ The registry of every California-registered apprenticeship **program sponsor**
 - Per-occupation program list: `https://www.dir.ca.gov/databases/das/results_aigdetail.asp?varOccId=<id>`
   - **Carpenter = `varOccId=2180`** (the page Sam used 2026-07-07 for the
     carpentry exhibits): <https://www.dir.ca.gov/databases/das/results_aigdetail.asp?varOccId=2180>
+  - **Carpenter (JATC detail) = `varOccId=82`** (Sam, 2026-07-08 — resolves the
+    Southwest Carpenters sponsor for the Norco/Santiago Canyon rows):
+    <https://www.dir.ca.gov/databases/das/results_aigdetail.asp?varOccId=82>
+  - **Electrician = `varOccId=490`** (Sam, 2026-07-08 — Riverside Area
+    Electrical J. A. C. for Norco/Santiago Canyon electrician exhibits):
+    <https://www.dir.ca.gov/databases/das/results_aigdetail.asp?varOccId=490>
+  - The search is **not exact** — prepopulate the best option **by college
+    region** and let the curator confirm (Sam, 2026-07-08; implemented as the
+    `apprenticeship` lane in `kb/_preseed_null_issuers.py`).
 
 Names in use (verbatim, per Sam's saves + the CTCNC/SAT-JATC public sites):
 
 | Region | Program / committee | Used on |
 |---|---|---|
-| Southern CA | `Southwest Carpenter And Affiliated Trade J.A.T.C.` | the "Journeyman Certificate- Apprenticeship Carpentry, *" family |
+| Southern CA | `Southwest Carpenter And Affiliated Trade J.A.T.C.` | the "Journeyman Certificate- Apprenticeship Carpentry, *" family + the Norco carpentry-module rows (pre-seeded 2026-07-08) |
+| Riverside area | `Riverside Area Electrical J. A. C.` | Electrician exhibits at Norco / Santiago Canyon (armed in the pre-seed's electrical branch; the 6 existing IBEW-issuered rows were NOT re-pointed — never-overwrite guard, curator's call) |
 | Northern CA (46 counties) | `Carpenters Training Committee for Northern California (CTCNC)` | the Cabrillo "Carpenters Apprenticeship — *" trades (Millwright, Pile Driver, Drywall/Lather, Insulator, Scaffold Erector, Hardwood Floor Layer, Shingler, Cabinetmaker, Modular Installer) |
 | — | Ironworkers Locals **416 / 433** (LA area) | the Cerritos "Reinforcing/Structural Apprenticeship 416/433: Period N" rows (issuer left blank pending DIR confirmation, matching Sam's IW-* precedent) |
+
+### DAS Completion Dashboard (Tableau) — statistics, not (yet) a sponsor resolver
+
+Sam found (2026-07-08) the statewide **CA Apprenticeship Completion Dashboard**
+— all registered apprenticeship programs in California:
+
+- <https://public.tableau.com/app/profile/california.apprenticeship/viz/CompletionDashboard_16301020658110/CompletionDashboard>
+
+Caveats before wiring it into the DIR-pending residual lane (~143 rows):
+
+- **No CCC affiliation field** — it lists programs/sponsors + completions but
+  does not tie a program to its partnering community college, which is the
+  join we need to resolve a college's apprenticeship exhibit to its sponsor.
+  Sam is still searching for a source that carries that affiliation.
+- Tableau Public embeds are JS-rendered — bulk extraction would need the
+  runner-as-proxy pattern against Tableau's data endpoints (or a manual CSV
+  download via the dashboard's export), not a plain fetch.
+- Until an affiliation source lands, the per-occupation `results_aigdetail`
+  pages + college-region matching (above) remain the resolution path.
 
 ## NCCER
 

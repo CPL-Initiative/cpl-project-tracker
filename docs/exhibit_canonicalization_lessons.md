@@ -2080,3 +2080,14 @@ title — our COCI extract is stale-mid-CCN so the C-ID tier caught it). His
 screenshot predated the #691 Pages deploy, so the input wasn't yet prefilled
 and he hand-saved "Introduction to Literature and Composition" — a title that
 matches neither authority; flagged for his re-title call.
+
+**Continued-10 addendum 3 (same day):** Sam found the statewide **CA
+Apprenticeship Completion Dashboard** (Tableau Public — all registered CA
+apprenticeship programs). Recorded in
+`docs/kb-notes/reference-issuing-agency-authority-sources.md` under the DIR DAS
+section. It's a statistics surface, **not yet a sponsor resolver**: it carries
+no CCC-affiliation field (the join we need for the ~143 DIR-pending
+apprenticeship residuals), and Tableau Public is JS-rendered so bulk use would
+need runner-as-proxy or a manual export. Sam is still searching for a source
+with the college affiliation; until then the per-occupation
+`results_aigdetail` pages + region matching remain the path.
