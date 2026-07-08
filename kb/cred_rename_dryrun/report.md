@@ -1,6 +1,6 @@
 # Credential Rename Dry-Run — 2026-07-08
 
-Generated: `2026-07-08T11:20:32Z`
+Generated: `2026-07-08T14:46:16Z`
 
 **Mode B preview** — projects `unified_title_override` curator entries from `kb/credential_review_overlay.json` onto the post-rename state of the three credential-identity files (`unified_titles.json`, `credentials.json`, `coci_articulations.json`). Reports collisions + downstream impact. **Does NOT apply.** Apply is Cred-Ref PR-5b/1, manual workflow_dispatch.
 
@@ -11,11 +11,14 @@ Generated: `2026-07-08T11:20:32Z`
 | V1 | No two renames target the same new name | PASS ✓ |
 | V2 | Every source unified_title exists somewhere | PASS ✓ |
 | V3 | No target collides with existing credentials.json key | PASS ✓ |
-| **Apply safe** | All gates pass + at least one clean rename | **NO** |
+| **Apply safe** | All gates pass + at least one clean rename | **YES — PR-5b/1 can dispatch** |
 
 ## Clean renames (would land on apply)
 
-_None today._ Infrastructure populates the moment a curator enters a rename.
+| Old unified_title | → | New unified_title | raw_titles | articulations | credentials.json |
+|---|---|---|---:|---:|---|
+| `AB Miller High School Pathway — Business and Finance` | → | `Business and Finance Pathway` | 1 | 1 | ✓ |
+| `AB Miller High School Pathway — Global Business Design` | → | `Global Business Design Pathway` | 1 | 1 | ✓ |
 
 ## Collisions (rejected — curator decision required)
 

@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-08T11:19:12.928900+00:00",
+  "scraped_at": "2026-07-08T14:44:51.857241+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25332,
+    "jst": 25333,
     "star_colleges": 52
   },
   "computed_star_colleges": 52,
@@ -52,7 +52,7 @@
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 542,
+      "jst": 543,
       "star": true
     },
     "City College of San Francisco": {
