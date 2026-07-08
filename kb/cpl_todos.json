@@ -1,14 +1,14 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-08 · Session 107 close (the rename key turned — 49 renames LIVE, the confirm-merge lane, and your four evening asks shipped)",
+ "_as_of": "2026-07-08 · Session 107 evening (your merge confirms LANDED — 56 more renames + 23 folds are live in the knowledge base)",
  "_session": 107,
- "_status": "Your 49 saved retitles are now the real knowledge-base names (the first production rename apply — receipts committed). Six of your retitles matched an EXISTING credential; they wait in a new “Merge confirmations” strip at the top of Triage — one ✓ click each folds the two into one credential. Your four evening asks are live: ＋ add as many agencies as needed, generic HS rows pre-fill “Local High School”, 12 auto rows pre-fill their ASE cert (title + agency), and every row now has 🔎 who-issues-this? + ✨ suggest buttons. 922 of the 1,036 no-issuer rows carry a prefill — everything still saves only on your click.",
+ "_status": "Everything you confirmed tonight landed: 56 more retitles + all 23 confirmed merges applied (the AoJ folds, the ASE folds, and your organic ones — receipts committed). Four of your retitles were PAIRS converging on one new name (C++ Programming I+II, Choreography I+II, Child Development, Critical Thinking and the Nursing Process I+II) — the first of each pair renamed, and the second now waits in the “Merge confirmations” strip for your ✓ (one click folds it in). The dashboard was re-baked so Triage reflects the new names.",
  "items": [
   {
-   "id": "confirm-merges",
+   "id": "confirm-twin-merges",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "NEW: the “Merge confirmations (6)” strip at the top of Triage — your AoJ retitles + “American Politics” matched existing credentials. ✓ Confirm merge folds each into the existing one (or edit the title to keep them separate). After your picks, the next rename apply lands them."
+   "text": "Four “twin” rows wait in the Merge confirmations strip: you retitled BOTH halves of a pair to the same new name (e.g. C++ Programming I and II → “C++ Programming”). The first half renamed; ✓ Confirm merge folds the second into it. After your picks, Fable dispatches the apply."
   },
   {
    "id": "issuer-lane-review",
@@ -50,7 +50,7 @@
    "id": "rename-apply-next",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "After Sam confirms merges (any subset), dispatch cred-rename-apply.yml — it re-checks its own gates and folds the confirmed ones with receipts."
+   "text": "After Sam's next confirms/saves, dispatch cred-rename-apply.yml again — the fan-in fixes (twin pruning, per-target V4, live Supabase claims) are all in, so batches with converging retitles now land clean."
   },
   {
    "id": "preseed-refresh",
