@@ -572,7 +572,11 @@ def load_title_authorities():
         idx, cidx = build_coci_index()
     except Exception:
         idx, cidx = {}, {}
-    return mq, ccn_titles, cid_titles, idx, cidx, inv_subj
+    # college → its COCI subject codes (the subject-prefix hop's search space)
+    college_subjects = {}
+    for (cn, subj, _num) in cidx:
+        college_subjects.setdefault(cn, set()).add(subj)
+    return mq, ccn_titles, cid_titles, idx, cidx, inv_subj, college_subjects
 
 
 _SMALL_WORDS = {"a", "an", "and", "as", "at", "by", "for", "in", "of", "on",
@@ -679,7 +683,35 @@ def name_led_refs(texts, inv_subj):
     return out
 
 
-def coci_title_lookup(row, idx, cidx, ccn_titles, cid_titles, inv_subj=None):
+# Term-code parentheticals riding raw pathway titles — "(FA25-SU27)" on the
+# Lemoore CD-005 articulation (2026-07-08). Stripped before code parsing.
+_TERM_PAREN = re.compile(r"\(\s*(?:FA|SP|SU|WI)\s*\d{2}[^)]*\)", re.I)
+# Pathway/mechanism words in the text AFTER a course code are decoration, not
+# course description — they must never fail the title-sanity guard ("CD-005
+# articulation Lemoore High" describes the pathway, not Child Development).
+_PATHWAY_NOISE = {"articulation", "articulated", "pathway", "credit", "exam",
+                  "cbe", "portfolio", "review", "high", "school", "hs", "rop",
+                  "academy", "college", "dual", "enrollment", "course"}
+
+
+def _row_noise_tokens(row):
+    """Pathway noise + the row's own college/school names — tokens in a raw
+    title's remainder that describe WHERE the pathway runs, not WHAT the
+    course is. Filtered out before the title-sanity guard."""
+    noise = set(_PATHWAY_NOISE)
+    for cname in row["colleges"]:
+        noise |= tokens(cname)
+    if row.get("trainer"):
+        noise |= tokens(row["trainer"])
+    for raw in row["raws"]:
+        s = _school_from_raw(raw)
+        if s:
+            noise |= tokens(s)
+    return noise
+
+
+def coci_title_lookup(row, idx, cidx, ccn_titles, cid_titles, inv_subj=None,
+                      college_subjects=None):
     """Rule 5c course-identity title for a Cx row whose raw variant embeds a
     local course code. College-scoped ((College, SUBJ, NUM) — the articulating
     college's own catalog row) with the global (SUBJ, NUM) view as the
@@ -687,10 +719,41 @@ def coci_title_lookup(row, idx, cidx, ccn_titles, cid_titles, inv_subj=None):
     pattern), which are COLLEGE-SCOPED ONLY — resolving a spelled-out
     discipline to a subject code is safe only inside one college's catalog.
     Returns (title, tier, receipt) or ("", "", "")."""
+    noise = _row_noise_tokens(row)
+
+    def rest_tokens(rest):
+        return {t for t in tokens(rest)
+                if t not in noise and not re.fullmatch(r"(?:fa|sp|su|wi)\d{2}", t)}
+
     for raw in row["raws"]:
+        raw = _TERM_PAREN.sub(" ", _MECH_TRAIL.sub("", raw or ""))
         for subj, num, rest in parse_course_refs(raw):
+            subj_note = ""
             key = (norm_subj(subj), norm_num(num))
             e = idx.get(key)
+            if not e and college_subjects:
+                # College-scoped subject-PREFIX hop (the CCSF "Cinema 24"
+                # pattern, 2026-07-08): the written subject exists NOWHERE in
+                # COCI as-is, but ONE subject code the row's own college
+                # teaches under is a prefix of it (CINEMA → CINE). Unique
+                # (code, college) resolution only — ambiguity never guesses.
+                sn = key[0]
+                hops = set()
+                if len(sn) >= 4:
+                    for cname in row["colleges"]:
+                        cn = norm_college(cname)
+                        for cs in college_subjects.get(cn, ()):
+                            if len(cs) >= 3 and cs != sn \
+                                    and sn.startswith(cs) \
+                                    and (cn, cs, key[1]) in cidx:
+                                hops.add((cn, cs))
+                if len(hops) == 1:
+                    hopped = next(iter(hops))[1]
+                    subj_note = (" (subject " + hopped + " resolved from “"
+                                 + subj.strip() + "” in the college's catalog)")
+                    subj = hopped
+                    key = (hopped, key[1])
+                    e = idx.get(key)
             if not e:
                 continue
             scoped = None
@@ -710,12 +773,15 @@ def coci_title_lookup(row, idx, cidx, ccn_titles, cid_titles, inv_subj=None):
             # Title-sanity guard (the CCR membership-join hazard): descriptive
             # text beyond the code must overlap the COCI title, else this
             # (SUBJ, NUM) is a different course and the join is noise.
-            rt = tokens(rest)
+            # Pathway decoration and the row's own college/school names are
+            # filtered first — they describe the pathway, not the course.
+            rt = rest_tokens(rest)
             if rt and modal and not (rt & tokens(modal)):
                 continue
             code = subj.upper().strip() + " " + num.upper()
             where = (" at " + row["colleges"][0]
                      if scoped and len(row["colleges"]) == 1 else "")
+            where += subj_note
             # CCN > C-ID (unanimity-gated, so the authority tiers are safe
             # even without a college scope) > the local COCI course title
             # (scoped, or unscoped only when it clearly dominates).
@@ -778,14 +844,29 @@ def coci_title_lookup(row, idx, cidx, ccn_titles, cid_titles, inv_subj=None):
     return "", "", ""
 
 
+# A title that is STILL nothing but a course code ("CD-005", "Cinema 24") —
+# the unhelpful-title cohort Sam kept hand-searching in COCI (2026-07-08).
+# Such a staged title never blocks the Rule 5c lookup: a resolved
+# course-identity title strictly beats the bare code.
+_CODE_SHAPED = re.compile(
+    r"^\s*[A-Za-z][A-Za-z&/\.]{0,9}(?:\s+[A-Za-z]{1,6})?\s*[-–— ]\s*"
+    r"0*\d{1,4}[A-Za-z]{0,2}\s*$")
+
+
+def code_shaped_title(t):
+    return bool(_CODE_SHAPED.match(t or ""))
+
+
 def enrich_titles(rows, staged, residual, counts):
     """Stage Rule 5c titles onto Cx-family rows: add `title` to entries the
     issuer lanes already staged, and mint title-only `course-title` entries
     (issuer: null) for queue rows no issuer lane matched — those keep their
     `_residual` record (the issuer still needs judgment; only the title is
     staged). Skips Military rows, resurface entries, and anything Rule 5f
-    already titled."""
-    mq, ccn_titles, cid_titles, idx, cidx, inv_subj = load_title_authorities()
+    already titled — UNLESS that staged title is still a bare course code
+    (code-shaped), where a resolved COCI/CCN/C-ID title overrides it."""
+    (mq, ccn_titles, cid_titles, idx, cidx, inv_subj,
+     college_subjects) = load_title_authorities()
     if not idx and not mq:
         return 0
     residual_uts = {r["ut"] for r in residual}
@@ -802,22 +883,31 @@ def enrich_titles(rows, staged, residual, counts):
                 or row["quality_flag"] == "suspect_course_as_exhibit"):
             continue
         entry = staged.get(ut)
-        if entry and (entry.get("title") or entry.get("resurface")):
+        staged_title = entry.get("title") if entry else None
+        if entry and entry.get("resurface"):
+            continue
+        if staged_title and not code_shaped_title(staged_title):
             continue
         if not entry and ut not in residual_uts:
             continue  # not in triage at all (issuer already set, nothing staged)
-        title, tier, receipt = coci_title_lookup(row, idx, cidx,
-                                                 ccn_titles, cid_titles, inv_subj)
+        title, tier, receipt = coci_title_lookup(
+            row, idx, cidx, ccn_titles, cid_titles, inv_subj, college_subjects)
         title = _polish_title(title)
         via_bits = tier
-        if not title and mq:
+        if not title and not staged_title and mq:
+            # the discipline-strip fallback fills BLANKS only — it must never
+            # replace a code-shaped staged title with more decoration
             title = strip_discipline_prefix(row["display"], mq)
             via_bits = "discipline-strip"
             receipt = ("the leading MQ discipline is row metadata, not part of "
                        "the student-facing credential name")
-        if not title or title == row["display"]:
+        if not title or title == row["display"] or title == staged_title:
             continue
         note = ("Title staged per Rule 5c (" + via_bits + "): " + receipt + ".")
+        if staged_title:
+            note = ("Code-shaped staged title “" + staged_title
+                    + "” upgraded per Rule 5c (" + via_bits + "): "
+                    + receipt + ".")
         if entry:
             entry["title"] = title
             entry["note"] += " " + note

@@ -103,6 +103,14 @@ def parse_course_refs(raw):
     lead = re.match(
         r"^\s*([A-Za-z][A-Za-z&/\.]{0,9}(?:\s+[A-Za-z]{1,6})?)\s*[-–—:,]?\s+"
         r"[-–—:,]?\s*0*(\d{1,4}[A-Za-z]{0,2})\b[\s\-–—:,\.]*(.*)$", raw or "")
+    if not lead:
+        # Tight-hyphen form "CD-005" (no whitespace at all — the Lemoore HS
+        # articulation pattern, 2026-07-08). Subject needs ≥2 letters so a
+        # stray initial never reads as a subject; the COCI join + the
+        # title-sanity guard gate anything this over-matches.
+        lead = re.match(
+            r"^\s*([A-Za-z]{2,10})[-–—]0*(\d{1,4}[A-Za-z]{0,2})\b"
+            r"[\s\-–—:,\.]*(.*)$", raw or "")
     if lead:
         subj, num, rest = lead.group(1), lead.group(2), lead.group(3)
         if norm_subj(subj) not in EXAM_BRANDS:

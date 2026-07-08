@@ -2325,10 +2325,11 @@
       "#tab-credential-reference .cr-mg-row.cr-wl-done{background:#f0fdf4;}" +
       "#tab-credential-reference .cr-mg-row.cr-wl-save-failed{background:#fef2f2;outline:1px solid #fca5a5;}" +
       "#tab-credential-reference .cr-ni-lookup{margin-top:.25em;display:flex;align-items:center;gap:.5em;flex-wrap:wrap;}" +
-      "#tab-credential-reference .cr-ni-search,#tab-credential-reference .cr-ni-suggest{" +
+      "#tab-credential-reference .cr-ni-search,#tab-credential-reference .cr-ni-suggest," +
+      "#tab-credential-reference .cr-ni-tsearch,#tab-credential-reference .cr-ni-tsuggest{" +
         "background:none;border:none;padding:0;cursor:pointer;font-size:.78em;color:var(--link,#2563eb);text-decoration:underline;}" +
-      "#tab-credential-reference .cr-ni-suggest:disabled{opacity:.5;cursor:wait;}" +
-      "#tab-credential-reference .cr-ni-suggest-out{font-size:.78em;color:var(--text-soft,#6b7280);}" +
+      "#tab-credential-reference .cr-ni-suggest:disabled,#tab-credential-reference .cr-ni-tsuggest:disabled{opacity:.5;cursor:wait;}" +
+      "#tab-credential-reference .cr-ni-suggest-out,#tab-credential-reference .cr-ni-tsuggest-out{font-size:.78em;color:var(--text-soft,#6b7280);}" +
       "#tab-credential-reference .cr-ni-suggest-chip{background:#eff6ff;border:1px solid var(--link,#2563eb);" +
         "border-radius:1em;padding:.05em .6em;cursor:pointer;font-size:1em;color:var(--link,#2563eb);}" +
       "#tab-credential-reference .cr-ni-row.cr-wl-preseeded{background:#fffdf5;}" +
@@ -2979,6 +2980,7 @@
           + "Fine-tune later via the row's Curate panel if needed." },
         ["trainer ⇒ " + ps.trainer]));
     }
+    titleTd.appendChild(buildTitleLookup(r, titleInp));
     tr.appendChild(titleTd);
 
     // ── issuer input (null staged issuer = keep the current one) ──
@@ -3142,6 +3144,97 @@
               issuerInp.value = text;
               issuerInp.dispatchEvent(new Event("input", { bubbles: true }));
               issuerInp.focus();
+            };
+            out.appendChild(chip);
+          })
+          .catch(function () {
+            aiBtn.disabled = false;
+            out.textContent = "suggestion failed — try 🔎";
+          });
+      };
+      wrap.appendChild(aiBtn);
+      wrap.appendChild(out);
+    }
+    return wrap;
+  }
+
+  // ── Title lookup — 🔎 web search + ✨ AI suggestion for UNHELPFUL titles
+  // (Sam, 2026-07-08 late: exhibits titled by a bare course code — "CD-005",
+  // "Cinema 24" — "I just look them up with 'CD-005 West Hills Lemoore' and
+  // it gives me the title 'Child Development'. Can you add the Suggest or
+  // what is this feature here too?"). The #701 issuer-lookup pattern on the
+  // title column: 🔎 opens his exact code-plus-college search in a new tab;
+  // ✨ asks Claude via the report proxy and offers a click-to-fill chip —
+  // a RECOMMENDATION for the curator's judgment, never auto-saved. (The bulk
+  // path is server-side: kb/_preseed_null_issuers.py resolves code-shaped
+  // titles against COCI and stages the real course title.) ──
+  function buildTitleLookup(r, titleInp) {
+    var wrap = el("div", { class: "cr-ni-lookup" });
+    function ctx() {
+      var t = (titleInp && titleInp.value || "").trim()
+        || r.display_title || r.unified_title;
+      var cols = niColleges(r).names;
+      return { t: t, college: cols[0] || "" };
+    }
+    var searchBtn = el("button", { type: "button", class: "cr-ni-tsearch",
+      title: "Open a web search for this course code at its college — Sam's "
+        + "manual lookup, one click (uses the current title input)" },
+      ["🔎 what is this?"]);
+    searchBtn.onclick = function () {
+      var c = ctx();
+      window.open("https://www.google.com/search?q="
+        + encodeURIComponent("\"" + c.t + "\" "
+          + (c.college ? c.college + " " : "") + "course"),
+        "_blank", "noopener");
+    };
+    wrap.appendChild(searchBtn);
+    if (window.CPL_REPORT_PROXY_URL) {
+      var aiBtn = el("button", { type: "button", class: "cr-ni-tsuggest",
+        title: "Ask Claude (via the report proxy) what course or credential "
+          + "this code refers to — the answer is a recommendation to review, "
+          + "never auto-saved" },
+        ["✨ suggest"]);
+      var out = el("span", { class: "cr-ni-tsuggest-out" });
+      aiBtn.onclick = function () {
+        var c = ctx();
+        var raws = (r.raw_variants || []).slice(0, 3)
+          .map(function (v) { return v.r || v.raw_title || ""; })
+          .filter(Boolean);
+        aiBtn.disabled = true; out.textContent = "asking…";
+        var prompt = "A California community college recorded a credit-for-"
+          + "prior-learning exhibit under an unhelpful title — usually a bare "
+          + "local course code. Current title: \"" + c.t + "\"."
+          + (raws.length ? " Raw college-entered title(s): "
+             + raws.map(function (x) { return "\"" + x + "\""; }).join(", ") + "."
+             : "")
+          + (c.college ? " Recorded at: " + c.college + "." : "")
+          + " What descriptive course or credential title does this refer to? "
+          + "Reply with ONLY the title (e.g. \"Child Development\") — no code, "
+          + "no college name. If you are not reasonably sure, reply exactly: "
+          + "unknown.";
+        fetch(window.CPL_REPORT_PROXY_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json",
+                     "anthropic-version": "2023-06-01" },
+          body: JSON.stringify({ model: "claude-sonnet-4-5", max_tokens: 100,
+            messages: [{ role: "user", content: prompt }] })
+        }).then(function (resp) { return resp.ok ? resp.json() : null; })
+          .then(function (json) {
+            aiBtn.disabled = false;
+            var text = (json && json.content && json.content[0]
+                        && json.content[0].text || "").trim();
+            if (!text || text.length > 120 || /^unknown\b/i.test(text)) {
+              out.textContent = "no confident suggestion — try 🔎";
+              return;
+            }
+            out.textContent = "";
+            var chip = el("button", { type: "button", class: "cr-ni-suggest-chip",
+              title: "Click to fill the title input with this suggestion "
+                + "(review before saving)" }, ["→ " + text]);
+            chip.onclick = function () {
+              titleInp.value = text;
+              titleInp.dispatchEvent(new Event("input", { bubbles: true }));
+              titleInp.focus();
             };
             out.appendChild(chip);
           })
