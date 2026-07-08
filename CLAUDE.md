@@ -2416,24 +2416,9 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > `docs/exhibit_canonicalization_lessons.md` (2026-07-07 "continued 5").
 
 
-### Session 103 — Bruh SkyWay: the STAGED pre-seed + triage toggle + issuer authority sources (2026-07-07)
-
-Sam (triaging live all evening — ~90 hand-saves landed DURING the session): "more pre-seeding …
-leave them ready to save but not yet saved … a toggle [for] just the ones needing to be triaged …
-preseed the credit-by-exam titles using your judgement and the issuing agency CCC."
-`kb/_preseed_unclassified.py --stage` → the committed `kb/unclassified_preseed.json`: **163 rows
-staged, ZERO Supabase writes** (cx 31 · hs 73 · journeyman 13 · carpenters 10 · ironworker 16 ·
-nccer 13 · singles 7; 107 residual — C-##/CSLB, IC-*, fire certs). The CER worklist gained the
-**Needs-triage/All toggle** (default hides saved rows), **⚡ prefilled inputs** + badge, and a
-confirm-gated **"Save all pre-filled shown"** (saves what the inputs SHOW; live assignment always
-wins). Authority links noted for future exhibits (DIR DAS occ 2180 → SW-JATC/CTCNC; NCCER
-assessments; CSLB queued): `docs/kb-notes/reference-issuing-agency-authority-sources.md` + skill
-Rule 5e. Curator VALUES fetched via MCP are now verified per-row (md5 pairs, order-independent) —
-caught 2 nbsp-corrupted rows + Sam's concurrent saves. Tests: `tests/cer_worklist_preseed.test.js`
-(29) + `kb/_verify_preseed_rules.py` grown to 73. QA flags for Sam: the THEATER-280 issuer slip,
-SMM 4 issuer==title, 3 mojibake `â€”` Generic-CBE families. Full story:
-`docs/exhibit_canonicalization_lessons.md` (2026-07-07 "continued 6"); next:
-`docs/session_104_handoff.md`.
+> **Session 103 narrative (Bruh SkyWay — the STAGED pre-seed + triage toggle + issuer
+> authority sources) archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md).
+> Full story: `docs/exhibit_canonicalization_lessons.md` (2026-07-07 "continued 6").
 
 ### Session 104 — Bruh SkyTime: the statewide-catalog pass — 97 of the last 100 staged + college chips + multi-issuer (2026-07-07)
 
@@ -2451,6 +2436,21 @@ chip, "＋ set" on null-issuer cells, **`appendRowSafe`** row-error isolation (+
 140 green). Full story: `docs/exhibit_canonicalization_lessons.md` (2026-07-07 "continued 7"); next:
 `docs/session_105_handoff.md`.
 
+
+### Session 105 — SkyClose: the truncated-read fix + the missing-issuer lane + the seal-blue pass (2026-07-08)
+
+Sam's "fire certs didn't save" + "113 still showing" were ONE bug: 1,200 overlay rows vs
+PostgREST's 1,000-row unordered cap — saves were fine, the READ truncated a different tail
+per load. `fetchAllRows()` Range-pagination now backs both CER overlay fetchers
+(`docs/kb-notes/methodology-paginate-postgrest-reads.md`). Save-All broadened to every
+FILLED shown row (hand-typed included) + loud per-row failures + `wlDraft` survival + live
+issuer datalists. `_CREDENTIAL_REVIEW::` held ZERO rows — Sam's 10-Key pick had never
+landed; "＋ set" now opens the issuer input DIRECTLY and the pick was seeded
+(`session105-skyclose@bot`, Mode A2 folds it). New **missing-issuer triage lane** (1,130
+null-issuer credentials; `kb/_preseed_null_issuers.py` staged 978 → `kb/issuer_preseed.json`,
+verifier 19 checks; empty-Save = explicit no-formal-issuer). COBI-wide: black ink headers →
+`--seal-blue`; Curate-panel black-box bleed fixed; CER title/chip row-height pass. Suite 142
+green (+2 files). Full story: lessons "continued 8"; next: `docs/session_106_handoff.md`.
 
 ---
 

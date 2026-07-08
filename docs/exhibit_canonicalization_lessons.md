@@ -1852,3 +1852,77 @@ did a refresh fix it?). Tracked in the handoff.
 daily-dashboard.yml publishes the college stamps + regenerated suggestions +
 the credential_reference bake with `issuers[]`; `kb/unclassified_preseed.json`
 is committed in the PR itself (not a cron artifact).
+
+## 2026-07-08 — continued 8 (Session 105, SkyClose): the truncated-read bug, the missing-issuer lane, and the glass pass
+
+**The "didn't save" mystery — one bug, three symptoms.** Sam reported (a) a
+set of hand-completed fire certs that "did not save" via Save All, (b) "113
+show on the list even though they've been saved", and (c) the 10-Key "＋ set
+doesn't work". Root cause for (a)+(b): **PostgREST caps every response at
+1,000 rows and returns them in ARBITRARY order** — the worklist overlay had
+grown to **1,200 `_UNCLASSIFIED::` rows**, so each unpaginated
+`fetchUnclassOverlay()` silently dropped a *different* ~200-row tail and
+already-saved assignments rendered as "needs triage". The fire certs HAD
+saved. Fix: `fetchAllRows()` — Range-header pagination over a stable
+`order=course_id.asc,field.asc` until a short page — wired into BOTH overlay
+fetchers (the `_CREDENTIAL_REVIEW::` one would have hit the same wall the
+moment the new issuer lane started writing hundreds of overrides).
+`tests/cer_overlay_pagination.test.js` pins it with a 1,200-row fixture.
+Durable pattern: `docs/kb-notes/methodology-paginate-postgrest-reads.md`.
+
+**(c) was real and worse than it looked:** the `_CREDENTIAL_REVIEW::`
+namespace held **ZERO rows** — Sam's Session-104 "Proctored Testing Center"
+save never landed anywhere (Supabase 0, overlay `count: 0`, credentials.json
+still null), even though the whole path passes in jsdom. Production cause
+unrecoverable (most likely an auth-window blip during his 4-hour triage);
+response: made the path *observable and direct* — "＋ set" now jumps STRAIGHT
+into the Curate panel's issuer edit input (previously a click with the panel
+already open did nothing = "the + doesn't work"), edit-mode scrollIntoView +
+focus, and his 10-Key pick was seeded server-side
+(`session105-skyclose@bot`) so Mode A2 folds it canonically on the next cron.
+
+**Save-All contract corrected:** the old bulk read only `.cr-wl-preseeded`
+rows, silently skipping hand-completed ones — exactly Sam's fire-cert
+workflow. Now **"Save all filled shown"** saves every shown, still-unassigned
+row with a filled title (what-you-see-is-what-saves), failures mark the row
+`⚠ cr-wl-save-failed` + flip its button to *retry* (a partial batch can never
+pass silently), typed-but-unsaved input survives re-renders via
+`state.wlDraft`, and a newly typed issuer lands in the datalists immediately
+(`addIssuerOption`) — Sam's "the list should update dynamically".
+
+**The missing-issuer triage lane (Sam: "exhibits that don't have an issuing
+agency [should] pop on the Triage list"):** the worklist gained a second
+section over the **1,130 null-issuer classified credentials** (own
+`cr-ni-table`/`cr-ni-row` classes so the two lanes never mix). Saves write
+the standard `issuing_agency_override` → Mode A2 promotes into
+credentials.json; **an empty-box Save is the explicit "no formal issuer
+(local exhibit)" verdict** (button relabels to *Save "no issuer"*).
+`kb/_preseed_null_issuers.py` staged **978 of 1,130** into
+`kb/issuer_preseed.json` (cx→CCC 749 · course-as-exhibit "" 169 · family 31
+receipted · local-hs "" 29; **residual 152** = apprenticeship-articulation
+rows held for DIR DAS confirmation per the Ironworkers precedent + Military/
+Standardized-Assessment judgment calls). The family lane was tightened twice
+during authoring — single-token anchors only for brand-shaped tokens, bigrams
+need ≥2 corroborating siblings — after "Child…"→CDA-council and
+"Database…"→ACE over-reaches surfaced in the receipt. Verifier:
+`kb/_verify_issuer_preseed.py` (19 checks). Bulk save in the lane saves
+filled rows + only the ""-STAGED empties (mass no-issuer needs staged
+intent). ⚠ el() allowlist gotcha rediscovered: a new `data-*` attribute must
+be added to the builder's fixed-name list or it silently never renders
+(`data-ut` cost an hour).
+
+**The glass/light pass (Sam: "no black headers or chips; dark headers → dark
+CO blue" + "the triage form is nicer than the main CER" + "rows are too
+tall"):** `--navy-primary` remaps to INK (#1C1C1A) since the retheme, so
+every `background:var(--navy-primary)` header rendered black — swapped to
+`var(--seal-blue)` (#002F6D) across both HTMLs (CER/CCR/CSR table th, export/
+action buttons, toasts, kbcs chrome, hamburger, Element-Map button), the
+generator's budget-table header row, and the injected CSS of cpl_news/
+map_users/sierra_training/tmc_builder (the funding tab's Session-3 precedent,
+now COBI-wide). The **Curate panel's black label boxes** were the main
+table's sticky `th` rule bleeding into the panel's `<th>` labels
+(`.cr-table th` background + slate text = black-on-black) — neutralized via
+higher-specificity injected CSS. Row height: `.cr-title-cell` max-width:32ch
+lifted (min-width:30ch), title chips forced onto ONE hidden-scrollbar row,
+td padding tightened. Suite: **142 files green** (2 new; preseed test
+rewritten to the new bulk contract).

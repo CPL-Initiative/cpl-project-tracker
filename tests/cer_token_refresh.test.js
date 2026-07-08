@@ -153,7 +153,7 @@ async function scenario4() {
   const doc = window.document;
   doc.querySelector(".cr-triage-btn").click();
   await sleep(80);
-  check("s4: button counts OPEN items only", txt(doc.querySelector(".cr-triage-btn")) === "⚠ Triage unclassified (1)");
+  check("s4: button counts OPEN items only", /^⚠ Triage unclassified \(1\)/.test(txt(doc.querySelector(".cr-triage-btn"))));
   check("s4: awaiting-fold note rendered", /fold into the credential layer/.test(txt(doc.querySelector(".cr-worklist"))));
   const rows = Array.from(doc.querySelectorAll(".cr-wl-table tbody tr"));
   const openRow = rows.find((r) => txt(r.querySelector(".cr-wl-rawt")) === "Raw Two");
@@ -162,7 +162,7 @@ async function scenario4() {
   openRow.querySelector(".cr-wl-save").click();
   await sleep(120);
   check("s4: all-assigned flips the button to awaiting-fold",
-    txt(doc.querySelector(".cr-triage-btn")) === "✓ Triage unclassified (2 awaiting fold)");
+    /^✓ Triage unclassified \(2 awaiting fold\)/.test(txt(doc.querySelector(".cr-triage-btn"))));
 
   const empty = makeDom({ expired: false, emptyAudit: true });
   await sleep(80);
@@ -171,7 +171,7 @@ async function scenario4() {
   check("s4: empty queue renders the queue-clear state",
     /Queue clear/.test(txt(empty.window.document.querySelector(".cr-worklist"))));
   check("s4: empty queue button reads (0)",
-    txt(empty.window.document.querySelector(".cr-triage-btn")) === "✓ Triage unclassified (0)");
+    /^✓ Triage unclassified \(0\)/.test(txt(empty.window.document.querySelector(".cr-triage-btn"))));
 }
 
 (async () => {
