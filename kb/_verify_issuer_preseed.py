@@ -116,6 +116,20 @@ def main():
           or (cin24.get("title") == "Basic Film Production"
               and "resolved from" in cin24["note"]))
 
+    # ── Sam's HS pass (Session 108 late): **HS / high-school indications move
+    #    the school to the agency field; multi-school rows take the generic
+    #    Local High School placeholder; 'HS ###' subject codes never do ──
+    ipc = staged.get("Intermediate Patient Care")
+    check("spot: a multi-school HS articulation stages the Local High School "
+          "placeholder with the schools receipted",
+          (ipc is None) or (ipc["via"] == "hs-generic"
+                            and ipc["issuer"] == "Local High School"
+                            and "SEVERAL high schools" in ipc["note"]))
+    gn = staged.get("General Nutrition")
+    check("spot: 'HS ###' subject-code rows (Copper Mountain Health Science) "
+          "stay cx→CCC — bare HS before digits is never a school",
+          (gn is None) or gn["via"] == "cx")
+
     # ── Rule 5g title styling ──
     LEVEL_KEEP = re.compile(
         r"^Advanced\s+(?:Placement\b|EMT\b|Cardiac\b|Cardiovascular\b)", re.I)

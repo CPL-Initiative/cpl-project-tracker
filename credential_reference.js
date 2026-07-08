@@ -3078,8 +3078,14 @@
   // (window.CPL_REPORT_PROXY_URL — the Custom Report path; renders only when
   // configured) and offers the answer as a click-to-fill chip. A suggestion
   // is a RECOMMENDATION for the curator's judgment, never auto-saved. ──
+  // Sam (2026-07-08 late): drop course-lead decoration from the query ("
+  // Introduction to Warehouse Management" searches as "Warehouse Management")
+  // and scope it to California — the exact shape of his productive searches:
+  // `who is the agency that issues a "Warehouse Management" certificate in CA?`
+  var QUERY_LEAD_RX = /^(?:an?\s+)?(?:introduction\s+to|intro\s+to|fundamentals?\s+of|principles?\s+of|essentials?\s+of|basics?\s+of)\s+/i;
   function issuerSearchQuery(title) {
-    return "who is the agency that issues a \"" + title + "\" certificate?";
+    var core = (title || "").replace(QUERY_LEAD_RX, "").trim() || title;
+    return "who is the agency that issues a \"" + core + "\" certificate in CA?";
   }
   function buildIssuerLookup(r, titleInp, issuerInp) {
     var wrap = el("div", { class: "cr-ni-lookup" });
