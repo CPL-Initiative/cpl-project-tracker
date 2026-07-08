@@ -1,6 +1,6 @@
 # Credential Rename Dry-Run — 2026-07-08
 
-Generated: `2026-07-08T19:59:11Z`
+Generated: `2026-07-08T20:07:20Z`
 
 **Mode B preview** — projects `unified_title_override` curator entries from `kb/credential_review_overlay.json` onto the post-rename state of the three credential-identity files (`unified_titles.json`, `credentials.json`, `coci_articulations.json`). Reports collisions + downstream impact. **Does NOT apply.** Apply is Cred-Ref PR-5b/1, manual workflow_dispatch.
 
@@ -10,8 +10,9 @@ Generated: `2026-07-08T19:59:11Z`
 |---|---|---|
 | V1 | No two renames target the same new name | PASS ✓ |
 | V2 | Every source unified_title exists somewhere | PASS ✓ |
-| V3 | No target collides with existing credentials.json key | FAIL (6) ✗ |
-| **Apply safe** | All gates pass + at least one clean rename | **NO** |
+| V3 | No CLEAN rename target collides with an existing credentials.json key | PASS ✓ |
+| — | Queued collisions (non-blocking — wait for a curator decision) | 6 |
+| **Apply safe** | V1–V3 pass + at least one clean rename (queued collisions don't block) | **YES — PR-5b/1 can dispatch** |
 
 ## Clean renames (would land on apply)
 
@@ -67,9 +68,9 @@ Generated: `2026-07-08T19:59:11Z`
 | `Agricultural Mechanical Systems Design and Evaluation 2` | → | `Mechanical Systems Design & Evaluation 2` | 1 | 1 | ✓ |
 | `Agriculture Computer Applications` | → | `Agricultural Computer Applications` | 1 | 1 | ✓ |
 
-## Collisions (rejected — curator decision required)
+## Collisions (queued, non-blocking — curator decision required)
 
-Each row's proposed new title already exists as a key in `credentials.json`. Policy: reject + decision queue (PR-5b/2 deferred until a curator hits one).
+Each row's proposed new title already exists as a key in `credentials.json`. Policy: non-blocking decision queue — these wait (clean renames apply without them) until the curator picks a non-colliding target or explicitly confirms the merge (PR-5b/2).
 
 | Old | → | New (collides) | Existing records on target |
 |---|---|---|---:|

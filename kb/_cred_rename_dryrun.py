@@ -11,8 +11,12 @@ artifacts under `kb/cred_rename_dryrun/`:
   alias_map.json   — old unified_title → new unified_title (only clean
                      non-colliding renames; collisions live in collisions.json).
   collisions.json  — rename targets that collide with an existing credential
-                     key (curator must pick a non-colliding target or
-                     explicitly confirm a merge via the deferred PR-5b/2 UX).
+                     key. NON-BLOCKING decision queue (Session 107): a queued
+                     collision waits for the curator to pick a non-colliding
+                     target or explicitly confirm a merge; the CLEAN renames
+                     apply regardless. (Blanket-holding the whole batch on any
+                     collision stranded 49 recorded renames behind Sam's 6
+                     deliberate merge-shaped retitles on 2026-07-08.)
 
 Re-runnable. Daily cron runs this as a report-only step so the queue stays
 visible (and the artifact gets committed daily). Apply is a separate
@@ -149,7 +153,11 @@ def main():
     v3_blocked = [k for k in renames_clean.values() if k in credentials]
     v3_pass = len(v3_blocked) == 0
 
-    apply_safe = bool(v1_pass and v2_pass and v3_pass and not collisions and renames_clean)
+    # Queued collisions do NOT gate the clean set (Session 107): a collision
+    # source always exists as a credentials.json key while a clean target
+    # never does, so the two sets are disjoint — applying the clean renames
+    # can't touch a queued collision's source or target.
+    apply_safe = bool(v1_pass and v2_pass and v3_pass and renames_clean)
 
     # ── Write artifacts ───────────────────────────────────────────────────────
     if not os.path.isdir(OUT_DIR):
@@ -186,9 +194,10 @@ def main():
         "_about": (
             "Credential rename collisions detected by the dry-run. Each entry "
             "is a proposed rename whose target already exists as a key in "
-            "credentials.json. Policy: reject + decision queue — curator picks "
-            "a non-colliding target, or explicitly confirms a merge via the "
-            "deferred PR-5b/2 UX. NEVER auto-merged; NEVER auto-disambiguated."
+            "credentials.json. Policy: NON-BLOCKING decision queue — the entry "
+            "waits here (clean renames apply without it) until the curator "
+            "picks a non-colliding target or explicitly confirms a merge "
+            "(PR-5b/2). NEVER auto-merged; NEVER auto-disambiguated."
         ),
         "_generated_at": NOW_ISO,
         "count": len(collisions),
@@ -199,7 +208,7 @@ def main():
         f.write("\n")
 
     md = _render_md(renames_clean, collisions, skipped, no_credential_record,
-                    intra_batch_collisions, v2_blocked,
+                    intra_batch_collisions, v2_blocked, v3_blocked,
                     raw_titles_by_ut, art_records_by_ut, credentials,
                     apply_safe)
     with open(os.path.join(OUT_DIR, "report.md"), "w", encoding="utf-8") as f:
@@ -219,7 +228,7 @@ def main():
 
 
 def _render_md(renames_clean, collisions, skipped, no_credential_record,
-               intra_batch_collisions, v2_blocked,
+               intra_batch_collisions, v2_blocked, v3_blocked_report,
                raw_titles_by_ut, art_records_by_ut, credentials,
                apply_safe):
     lines = []
@@ -241,9 +250,11 @@ def _render_md(renames_clean, collisions, skipped, no_credential_record,
                  f"{'PASS ✓' if not intra_batch_collisions else f'FAIL ({len(intra_batch_collisions)}) ✗'} |")
     lines.append(f"| V2 | Every source unified_title exists somewhere | "
                  f"{'PASS ✓' if not v2_blocked else f'FAIL ({len(v2_blocked)}) ✗'} |")
-    lines.append(f"| V3 | No target collides with existing credentials.json key | "
-                 f"{'PASS ✓' if not collisions else f'FAIL ({len(collisions)}) ✗'} |")
-    lines.append(f"| **Apply safe** | All gates pass + at least one clean rename | "
+    lines.append(f"| V3 | No CLEAN rename target collides with an existing credentials.json key | "
+                 f"{'PASS ✓' if not v3_blocked_report else f'FAIL ({len(v3_blocked_report)}) ✗'} |")
+    lines.append(f"| — | Queued collisions (non-blocking — wait for a curator decision) | "
+                 f"{len(collisions) if collisions else '0'} |")
+    lines.append(f"| **Apply safe** | V1–V3 pass + at least one clean rename (queued collisions don't block) | "
                  f"{'**YES — PR-5b/1 can dispatch**' if apply_safe else '**NO**'} |")
     lines.append("")
     lines.append("## Clean renames (would land on apply)")
@@ -259,13 +270,15 @@ def _render_md(renames_clean, collisions, skipped, no_credential_record,
             has_cr = "✓" if old_ut in credentials else "—"
             lines.append(f"| `{old_ut}` | → | `{new_ut}` | {n_raw} | {n_art} | {has_cr} |")
     lines.append("")
-    lines.append("## Collisions (rejected — curator decision required)")
+    lines.append("## Collisions (queued, non-blocking — curator decision required)")
     lines.append("")
     if not collisions:
         lines.append("_None._")
     else:
         lines.append("Each row's proposed new title already exists as a key in `credentials.json`. "
-                     "Policy: reject + decision queue (PR-5b/2 deferred until a curator hits one).")
+                     "Policy: non-blocking decision queue — these wait (clean renames apply without "
+                     "them) until the curator picks a non-colliding target or explicitly confirms "
+                     "the merge (PR-5b/2).")
         lines.append("")
         lines.append("| Old | → | New (collides) | Existing records on target |")
         lines.append("|---|---|---|---:|")
