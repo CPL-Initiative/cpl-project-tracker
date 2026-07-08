@@ -2297,3 +2297,67 @@ finds it fast.
 Plan state after the fresh-bake regen: queue **1,036** · staged 922
 (`ase-align 12 · hs-generic 3` + the standing lanes) · titles 236 ·
 residual 140 · verifier **56 checks** · suite **145 test files**.
+
+## 2026-07-08 — continued 13 (Session 107, SkyKey evening): the fan-in night — twins, V4, and the 409s
+
+Sam kept saving after "Sam Out!" (187+ rows between 21:00 and 22:07, then
+more), and the 22:13 self check-in found 17 merge confirms waiting. Landing
+them took THREE fixes, each one layer deeper into the same phenomenon:
+**fan-in** — several sources converging on one target — which the rename
+pipeline had never seen before PR-5b/2 made it expressible.
+
+1. **Run #2 (22:14) — V1 FAIL, the intra-batch twins (#704).** Sam retitled
+   PAIRS of rows to the same NEW name in one batch ("C++ Programming I" +
+   "II" → "C++ Programming"; Choreography I/II; CD-005 + Child Growth →
+   "Child Development") — Rule-3 level convergences whose target exists
+   NOWHERE yet, so the collision/merge lane can't see them, and V1's
+   post-rename uniqueness check blanket-held the whole batch (the #697
+   lesson, one gate over). Fix: twin-group pruning BEFORE V1 — the
+   earliest-saved source (by `reviewed_at`) proceeds as a plain rename, the
+   rest queue as `intra_batch_same_target` with a `first_of_group` receipt.
+   After the first lands + a bake, the queued twins become ORDINARY
+   collisions in the CER strip → Sam's ✓ folds them. Never inferred.
+   (4 twin groups by the time run #4 ran — Critical Thinking and the
+   Nursing Process I/II appeared while the fix was being written.)
+2. **Run #3 (22:24) — V4 FAIL, per-source cardinality (#705).** The dry-run
+   now passed (54 renames + 20 merges) but the apply's V4 articulation gate
+   computed `expected = old_pre + new_pre` PER SOURCE — a confirmed-merge
+   fan-in (two AoJ rows ⇒ "Community and the Justice System") makes every
+   source under-expect the target's post-count. The rewrite was
+   cardinality-preserving all along; only the check was wrong. Fix: group
+   V4 by TARGET (`expected(new) = Σ old_pre + new_pre`). A chained mapping
+   (P→Q while Q→R) still aborts — V4 stays the defensive backstop. Nothing
+   landed from either failed run (fail-closed; Supabase step never reached).
+3. **Run #4 (22:30) — SUCCESS with 8 Supabase 409s (#706).** 56 renames +
+   23 merges applied (credentials 2101→2078 = −23 exactly; 92 articulation
+   rewrites; receipts `kb/cred_rename_out/2026-07-08/`). But the row
+   migration's `target_fields` was a STATIC pre-fetch snapshot: the first
+   fan-in source's `issuing_agency_override` PATCH created the target row,
+   and every later sibling 409'd (the 4-source ASE A6 fold + the 3-source
+   Community-and-the-Justice-System fold = all 8). The workflow's
+   deliberate `continue-on-error` kept the run green — correct call: the
+   file-side KB is the source of truth and the log is replayable. Fix:
+   LIVE target-field claims (a successful PATCH claims the field; later
+   siblings supersede-DELETE) + a 409→supersede-DELETE fallback for
+   mid-run curator-save drift. The 8 stranded orphan rows were verified
+   (5 byte-identical to the surviving target row, 3 superseded per the
+   documented target-wins rule — every value preserved in the frozen alias
+   map + the folded credentials.json records) and deleted directly.
+
+**The meta-lesson:** PR-5b/2 didn't just add a confirm row — it added a
+CARDINALITY class (N→1) that every downstream per-source assumption had
+been free to ignore. Three of them fell in one evening: V1's uniqueness
+check, V4's count formula, and the Supabase claims set. When a pipeline
+gains fan-in, audit every "for each old → new" loop for hidden
+one-source-per-target assumptions.
+
+**Receipt-dir gap (noted, not fixed):** `kb/cred_rename_out/<date>/` keys
+by DATE, so run #4's receipt overwrote run #1's same-day receipt at HEAD
+(both recoverable from git history — the frozen alias maps are commits).
+Same-day multi-apply is clearly now a real pattern; a `<date>-runN/` or
+timestamp suffix is a small future hardening.
+
+Post-fix state: 4 twins queued for the strip; a fresh bake dispatched so
+the CER reflects the re-keyed KB and surfaces them. Suite 145 green;
+fixtures for both fixes live in the session scratchpad (twin pruning 15,
+V4 fan-in 8/8, Supabase fan-in 10/10).
