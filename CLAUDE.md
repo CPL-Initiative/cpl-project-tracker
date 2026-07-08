@@ -2440,18 +2440,20 @@ verifier 19 checks; empty-Save = explicit no-formal-issuer). COBI-wide: black in
 green (+2 files). Full story: lessons "continued 8"; next: `docs/session_106_handoff.md`.
 
 
-### Session 106 — SkySeal: Rule 5f (the school IS the agency) + the issuer lane grows title editing (2026-07-08)
+### Session 106 — SkySeal: the Triage rules day — 5f / 5c-mech / 5g + four new issuer lanes + multi-issuer (2026-07-08)
 
-Sam's 4 asks: edit pre-seeded titles IN Triage; show raw title + originating college there; a
-standing rule for HS/ROP/adult-school Cx exhibits; re-run the pre-seed. **Rule 5f** (SKILL.md):
-strip the school from the title, school = issuer = trainer by default, never overwrite a real
-issuer (PLTW), multi-school identities take no default (the EMT-405 unanimity guard).
-`kb/_preseed_null_issuers.py` → plan schema v2 (`title`/`trainer`/`issuer:null`/`resurface`):
-**989 staged** (local-trainer 74 · cx 717 · course-as-exhibit 167 · family 31), verifier 25 checks.
-The CER issuer lane: editable title input + raw-variant lines + college chips (auditor now stamps
-`colleges` on classified cards), one Save writes up to 3 overrides, resurface rows never rewrite a
-real issuer; **Mode A3** (trainer promotion) added to `_apply_credential_review.py`. Suite 142
-green. Full story: `docs/exhibit_canonicalization_lessons.md` (2026-07-08 "continued 9").
+Six PRs merged live against Sam's triage pass (#690–#695). **Rules:** 5f (school = issuer =
+trainer, title stripped; the EMT-405 unanimity guard), 5c MECHANIZED (CCN > C-ID > COCI course
+titles, discipline-prefix strip, code-led + CCSF name-led lookups), **5g** (leading
+Beginning/Intermediate/Advanced → END of the title; "Intro" → "Introduction"; AP / Advanced EMT /
+ACLS exempt — 68 restyled). **Lanes:** apprenticeship (Norco/Santiago DIR-DAS sponsors, occId
+82/490), statewide-agency (blank statewide issuer → AWS, the 5 welding rows), **cert-family**
+(FAA ×22 — Part-147 AMT + the Reedley FLGHT ladder), title-style. **Lane UX:** editable titles +
+raw/college context; the save→re-edit dead-button trap FIXED (re-arm on input, `data-busy`
+in-flight guard); **＋ add issuing agency** → new `issuing_agency_additional_override`, Mode A2
+promotes BOTH issuer fields additively (+ Mode A3 trainer). Plan: **1,009 staged / 1,125 queue**,
+284 titles, 152 residual; verifier 50 checks; suite 142 green. Full story:
+`docs/exhibit_canonicalization_lessons.md` (2026-07-08 "continued 9" – "continued 11 addendum").
 
 ---
 
