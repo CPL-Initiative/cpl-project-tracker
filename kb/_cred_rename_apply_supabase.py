@@ -22,7 +22,12 @@ public.kb_curation:
        — UNLESS the target already carries a row for the same field, in which
        case DELETE the old row instead (the target's own curator data wins;
        the composite PK (course_id, field) would reject the PATCH anyway, and
-       the frozen alias_map snapshot preserves the superseded value).
+       the frozen alias_map snapshot preserves the superseded value). The
+       target's field set is tracked LIVE across the run: fan-in (several
+       sources folding into one target) means the first source's PATCH
+       creates a target row the pre-fetch never saw — later siblings must
+       DELETE, not PATCH (run #4's 8×409 lesson). A 409 on a merge PATCH
+       falls back to the same supersede-DELETE.
 
 Why DELETE + PATCH (not single PATCH-all):
   * The unified_title_override row's PURPOSE is fulfilled by the apply —
@@ -219,6 +224,13 @@ def main():
     # row and never PATCH into a field the target already carries.
     work = [("rename", o, n) for o, n in renames.items()] \
          + [("merge", o, t) for o, t in merges.items()]
+    # LIVE per-target field claims. Seeded from the pre-fetch, updated as
+    # PATCHes land — several sources folding into ONE target (fan-in) is
+    # normal for confirmed merges, and the first source's PATCH creates the
+    # target row the pre-fetch never saw. A static set 409'd every later
+    # sibling (run #4, 2026-07-08: the 4-source ASE A6 fold, 8 fails).
+    claimed = {cid: {r.get("field") for r in rows}
+               for cid, rows in existing.items()}
     for kind, old_ut, new_ut in work:
         old_cid = f"{KEY_PREFIX}{old_ut}"
         new_cid = f"{KEY_PREFIX}{new_ut}"
@@ -228,7 +240,7 @@ def main():
             log.append({"old_ut": old_ut, "new_ut": new_ut, "kind": kind,
                         "op": "skip", "reason": "no_rows_in_supabase"})
             continue
-        target_fields = {r.get("field") for r in existing.get(new_cid, [])}
+        target_fields = claimed.setdefault(new_cid, set())
         for row in rows_for_old:
             field = row.get("field") or ""
             if field == "unified_title_override" or (
@@ -247,6 +259,17 @@ def main():
                 # on issuer/trainer/quality_flag/reviewed_marker travels with
                 # the credential's identity).
                 res = patch_row(old_cid, new_cid, field)
+                if res.get("status") == "ok":
+                    target_fields.add(field)
+                elif kind == "merge" and "409" in str(res.get("error") or ""):
+                    # Defensive backstop for live-claim drift (e.g. a curator
+                    # save landing mid-run): the target row exists, so the
+                    # source row is superseded — drop it instead of stranding
+                    # an orphan under a dead key.
+                    res = delete_row(old_cid, field)
+                    res["superseded_by_target"] = True
+                    res["via"] = "409_fallback"
+                    target_fields.add(field)
             log.append({"old_ut": old_ut, "new_ut": new_ut, "kind": kind, **res})
             if res.get("status") == "ok":
                 ok += 1
