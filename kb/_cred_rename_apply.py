@@ -34,8 +34,10 @@ Apply gates (V1–V4):
   V3 — Target unified_title is collision-free in credentials.json
        (a stale collision the dry-run missed because credentials.json
        drifted between dry-run and apply).
-  V4 — Articulation record count for each old name BEFORE matches the
-       count of NEW name records AFTER (rename, not delete/duplicate).
+  V4 — Articulation record counts are cardinality-preserved, grouped by
+       TARGET: each new name's AFTER count == Σ of its source names'
+       BEFORE counts + its own BEFORE count (rename/fold, not
+       delete/duplicate — fan-in from confirmed merges sums correctly).
 
 Safety:
   * Refuses to run if alias_map.json is missing or empty.
@@ -57,7 +59,7 @@ from __future__ import annotations
 import json
 import os
 import sys
-from collections import Counter
+from collections import Counter, defaultdict
 from datetime import date, datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -275,16 +277,24 @@ def rewrite_articulations_values(renames: dict):
             r["unified_title"] = renames[ut]
             rewrites += 1
     # V4 post-counts: every new name's record count should equal
-    # (old_pre_count + new_pre_count).
+    # (Σ old_pre_count over ALL sources mapping to it + new_pre_count).
+    # Grouped by TARGET, not per-source: confirmed merges (and a rename +
+    # merges converging) legitimately fan several olds into one new — a
+    # per-source check under-expects on every fan-in target and falsely
+    # aborts (rename-apply run #3, 2026-07-08: the AoJ folds).
     post_counts_new = Counter(
         r.get("unified_title") for r in arts if r.get("unified_title") in set(renames.values())
     )
-    v4_failures = []
+    by_target = defaultdict(list)
     for old, new in renames.items():
-        expected = pre_counts_old.get(old, 0) + pre_counts_new.get(new, 0)
+        by_target[new].append(old)
+    v4_failures = []
+    for new, olds in sorted(by_target.items()):
+        expected = sum(pre_counts_old.get(o, 0) for o in olds) + pre_counts_new.get(new, 0)
         actual = post_counts_new.get(new, 0)
         if expected != actual:
-            v4_failures.append({"old": old, "new": new, "expected": expected, "actual": actual})
+            v4_failures.append({"olds": sorted(olds), "new": new,
+                                "expected": expected, "actual": actual})
     if v4_failures:
         sys.exit(
             f"V4 articulation count mismatch — apply would have changed "
@@ -384,7 +394,8 @@ def main():
               f"records_deduped={fold_res['records_deduped']}")
         results["credentials.json (merge fold)"] = fold_res
     # Renames and merges are both old→new value rewrites downstream — the V4
-    # cardinality formula (old_pre + new_pre) is additive-correct for merges.
+    # cardinality gate groups by TARGET so fan-in (several olds folding into
+    # one confirmed-merge target) sums correctly.
     combined = dict(renames)
     combined.update(merges)
     ut_res = rewrite_unified_titles_values(combined)
