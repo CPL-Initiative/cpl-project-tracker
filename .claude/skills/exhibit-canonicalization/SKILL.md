@@ -140,10 +140,16 @@ student who knows the subject, not the college's naming scheme:
 (`kb/_preseed_null_issuers.py` — `enrich_titles()`) stages Rule-5c titles for
 already-classified Cx rows using the SAME lookup machinery as the unclassified
 worklist's 💡 chips (`kb/_suggest_unclassified.py` — one definition, no
-drift): parse the local course code from the raw variant, join it
-COLLEGE-SCOPED into COCI via the articulating colleges, take CCN > C-ID >
-local COCI course title (SHOUTING-CASE catalog titles get title-cased), with
-the title-sanity guard against the (SUBJ, NUM) join hazard. **M-ID titles
+drift): parse the local course code from the raw variant — including
+discipline-NAME-led codes ("Administration of Justice 68" resolves to the
+college's real subject via `kb/reference/subject_discipline_map.json`: ADMJ 68
+@ CCSF → "Criminal Justice Report Writing"; college-scoped ONLY, exactly one
+(code, college) resolution or no guess) — join it COLLEGE-SCOPED into COCI via
+the articulating colleges, take CCN > C-ID > local COCI course title
+(SHOUTING-CASE catalog titles get title-cased), with the title-sanity guard
+against the (SUBJ, NUM) join hazard. The lookup covers the Cx/Portfolio type
+family AND `suspect_course_as_exhibit`-flagged rows regardless of CPL type
+(an IC-typed exhibit that IS a course gets the course title). **M-ID titles
 stay excluded until Sam declares the M-ID layer stable** — many M-IDs aren't
 merged with their common titles yet. Rows no issuer lane matched can still
 stage a title (`via: "course-title"`, issuer left null + residual-recorded).

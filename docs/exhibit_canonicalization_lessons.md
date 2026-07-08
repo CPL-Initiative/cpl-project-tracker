@@ -2045,3 +2045,15 @@ soft-fails, so a missing module silently yields 7 titles instead of 131
 (`pip install openpyxl` first; the count line "Rule 5c titles staged: N" is
 the tell). SKILL.md Rule 5c now carries the discipline-prefix + code-lookup
 items and the mechanization note.
+
+**Continued-10 addendum (same day):** Sam's CCSF screenshot exposed two
+lookup blind spots, both fixed: (1) discipline-NAME-led course codes —
+"Administration of Justice 68 (CCSF)" spells the subject as the full
+discipline name while CCSF's COCI subject is ADMJ; `name_led_refs()` resolves
+the name → candidate codes via the inverse `subject_discipline_map.json`
+(99 disciplines → 309 codes) and accepts only an EXACTLY-ONE (code, college)
+scoped resolution — ADMJ 68 → "Criminal Justice Report Writing", ADMJ 72 →
+"Police Work Experience", ADMJ 85 → "P.C. 832 Arrest and Control
+Certification", CS 111B → "Programming Fundamentals: Java". (2) The title
+gate now includes `suspect_course_as_exhibit`-flagged rows regardless of CPL
+type (rows 68/85 are IC-typed courses-as-exhibits). Titles staged 131 → 171.

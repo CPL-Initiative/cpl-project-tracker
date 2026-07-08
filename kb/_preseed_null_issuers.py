@@ -427,6 +427,7 @@ def stage_local_trainer(row):
 MQ_PATH = os.path.join(HERE, "reference", "mq_disciplines.json")
 CID_PATH = os.path.join(HERE, "reference", "cid_descriptors.json")
 CCN_PATH = os.path.join(HERE, "reference", "ccn_courses.json")
+SUBJ_MAP_PATH = os.path.join(HERE, "reference", "subject_discipline_map.json")
 
 # Type gate for title enrichment: the Cx/Portfolio mechanism family (blank +
 # "Other" ride along — the code-titled AoJ rows predate the type column).
@@ -442,8 +443,12 @@ def _load_json_soft(path):
 
 
 def load_title_authorities():
-    """(mq set, ccn_titles, cid_titles, coci idx, coci college-scoped idx) —
-    every piece soft-fails so the issuer lanes still run without them."""
+    """(mq set, ccn_titles, cid_titles, coci idx, coci college-scoped idx,
+    inverse subject map) — every piece soft-fails so the issuer lanes still
+    run without them. The inverse subject map (discipline name → candidate
+    COCI subject codes, from kb/reference/subject_discipline_map.json)
+    resolves discipline-NAME-led course refs — the CCSF pattern
+    'Administration of Justice 68' whose real COCI subject is ADMJ."""
     mq = set()
     d = _load_json_soft(MQ_PATH)
     if d:
@@ -457,11 +462,19 @@ def load_title_authorities():
     if d:
         cid_titles = {x["descriptor"].strip().upper(): x["title"]
                       for x in d.get("descriptors", []) if x.get("descriptor")}
+    inv_subj = {}
+    d = _load_json_soft(SUBJ_MAP_PATH)
+    if d:
+        for code, v in (d.get("map") or {}).items():
+            disc = v if isinstance(v, str) else (
+                v.get("discipline") if isinstance(v, dict) else None)
+            if disc:
+                inv_subj.setdefault(disc.casefold(), set()).add(code)
     try:
         idx, cidx = build_coci_index()
     except Exception:
         idx, cidx = {}, {}
-    return mq, ccn_titles, cid_titles, idx, cidx
+    return mq, ccn_titles, cid_titles, idx, cidx, inv_subj
 
 
 _SMALL_WORDS = {"a", "an", "and", "as", "at", "by", "for", "in", "of", "on",
@@ -512,11 +525,46 @@ def strip_discipline_prefix(title, mq):
     return content
 
 
-def coci_title_lookup(row, idx, cidx, ccn_titles, cid_titles):
+# Trailing CPL-mechanism decoration on raw titles ("Administration of Justice
+# 68-Industry Certification") — stripped before code parsing; the CPL Type
+# column already carries the mechanism (Rules 1/2).
+_MECH_TRAIL = re.compile(
+    r"\s*[-–—]?\s*(?:Industry Certification|Portfolio Review|"
+    r"Credit\s*by\s*Exam|CBE|Cx)\s*$", re.I)
+# Trailing "(CCSF)"-style college parenthetical on display titles.
+_PAREN_TAIL = re.compile(r"\s*\([^()]{1,30}\)\s*$")
+
+_NAME_LED_REF = re.compile(
+    r"^([A-Za-z][A-Za-z /&'.,-]{4,50}?)\s+(\d{1,4}[A-Za-z]{0,2})\s*$")
+
+
+def name_led_refs(texts, inv_subj):
+    """Course refs whose 'subject' is a full DISCIPLINE NAME (the CCSF
+    pattern: 'Administration of Justice 68' — real COCI subject ADMJ).
+    Resolves the name to candidate subject codes via the inverse subject map;
+    the college-scoped join later picks the code the college actually uses.
+    Returns [(candidate_codes, num, name)]."""
+    out = []
+    for t in texts:
+        t = _MECH_TRAIL.sub("", _PAREN_TAIL.sub("", " ".join((t or "").split())))
+        m = _NAME_LED_REF.match(t)
+        if not m:
+            continue
+        name, num = m.group(1).strip(" ,.-"), m.group(2)
+        codes = inv_subj.get(name.casefold())
+        if codes:
+            out.append((sorted(codes), num, name))
+    return out
+
+
+def coci_title_lookup(row, idx, cidx, ccn_titles, cid_titles, inv_subj=None):
     """Rule 5c course-identity title for a Cx row whose raw variant embeds a
     local course code. College-scoped ((College, SUBJ, NUM) — the articulating
     college's own catalog row) with the global (SUBJ, NUM) view as the
-    authority fallback. Returns (title, tier, receipt) or ("", "", "")."""
+    authority fallback. Falls through to discipline-NAME-led refs (CCSF
+    pattern), which are COLLEGE-SCOPED ONLY — resolving a spelled-out
+    discipline to a subject code is safe only inside one college's catalog.
+    Returns (title, tier, receipt) or ("", "", "")."""
     for raw in row["raws"]:
         for subj, num, rest in parse_course_refs(raw):
             key = (norm_subj(subj), norm_num(num))
@@ -569,6 +617,42 @@ def coci_title_lookup(row, idx, cidx, ccn_titles, cid_titles):
                     return modal, "course", ("modal COCI title for " + code + " ("
                                              + str(round(share * 100))
                                              + "% of colleges teaching it)")
+
+    # ── discipline-NAME-led refs (the CCSF pattern) — college-scoped ONLY ──
+    if inv_subj and row["colleges"]:
+        for codes, num, name in name_led_refs(row["raws"] + [row["display"]],
+                                              inv_subj):
+            hits = []
+            for code in codes:
+                key = (norm_subj(code), norm_num(num))
+                for cname in row["colleges"]:
+                    sub = cidx.get((norm_college(cname), key[0], key[1]))
+                    if sub and sub["titles"]:
+                        hits.append((code, cname, sub))
+            # exactly ONE (code, college) resolution — ambiguity never guesses
+            if len(hits) != 1:
+                continue
+            code, cname, sub = hits[0]
+            modal, _n = sub["titles"].most_common(1)[0]
+            full_code = code + " " + num.upper()
+            where = " at " + cname
+            if len(sub["ccns"]) == 1:
+                t = ccn_titles.get(next(iter(sub["ccns"])).upper())
+                if t:
+                    return t, "ccn", ("CCN " + next(iter(sub["ccns"]))
+                                      + " statewide title, aligned to local course "
+                                      + full_code + where
+                                      + " (subject resolved from “" + name + "”)")
+            if len(sub["cids"]) == 1:
+                t = cid_titles.get(next(iter(sub["cids"])).upper())
+                if t:
+                    return t, "cid", ("C-ID " + next(iter(sub["cids"]))
+                                      + " descriptor title, aligned to local course "
+                                      + full_code + where
+                                      + " (subject resolved from “" + name + "”)")
+            return modal, "course", ("COCI local course title for " + full_code
+                                     + where + " (subject resolved from “"
+                                     + name + "”)")
     return "", "", ""
 
 
@@ -579,7 +663,7 @@ def enrich_titles(rows, staged, residual, counts):
     `_residual` record (the issuer still needs judgment; only the title is
     staged). Skips Military rows, resurface entries, and anything Rule 5f
     already titled."""
-    mq, ccn_titles, cid_titles, idx, cidx = load_title_authorities()
+    mq, ccn_titles, cid_titles, idx, cidx, inv_subj = load_title_authorities()
     if not idx and not mq:
         return 0
     residual_uts = {r["ut"] for r in residual}
@@ -587,7 +671,13 @@ def enrich_titles(rows, staged, residual, counts):
     for row in rows:
         ut = row["ut"]
         types = set(row["cpl_types"])
-        if "Military" in types or not (types <= TITLE_OK_TYPES):
+        if "Military" in types:
+            continue
+        # Cx/Portfolio mechanism family — PLUS the suspect course-as-exhibit
+        # cohort regardless of type (Sam's CCSF rows: an IC-typed exhibit
+        # that IS a course gets the Rule 5c course title, 2026-07-08).
+        if not (types <= TITLE_OK_TYPES
+                or row["quality_flag"] == "suspect_course_as_exhibit"):
             continue
         entry = staged.get(ut)
         if entry and (entry.get("title") or entry.get("resurface")):
@@ -595,7 +685,7 @@ def enrich_titles(rows, staged, residual, counts):
         if not entry and ut not in residual_uts:
             continue  # not in triage at all (issuer already set, nothing staged)
         title, tier, receipt = coci_title_lookup(row, idx, cidx,
-                                                 ccn_titles, cid_titles)
+                                                 ccn_titles, cid_titles, inv_subj)
         title = _polish_title(title)
         via_bits = tier
         if not title and mq:
