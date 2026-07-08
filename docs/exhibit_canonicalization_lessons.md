@@ -2361,3 +2361,72 @@ Post-fix state: 4 twins queued for the strip; a fresh bake dispatched so
 the CER reflects the re-keyed KB and surfaces them. Suite 145 green;
 fixtures for both fixes live in the session scratchpad (twin pruning 15,
 V4 fan-in 8/8, Supabase fan-in 10/10).
+
+## 2026-07-08 — continued 14 (Session 108, SkyPhilo): unhelpful code-titles — COCI resolution + the 🔎/✨ title lookup (#707)
+
+Sam, mid-triage: exhibits titled by a bare course code ("CD-005 — Lemoore
+High School Articulation", "Cinema 24") made him hand-search COCI — "I just
+look them up with 'CD-005 West Hills Lemoore' and it gives me the title
+'Child Development'. Can you add the Suggest or what is this feature here
+too? If you had a routine that could look these up in COCI and pre-seed,
+that would be a bonus!" Both shipped in one PR (#707), merged while he kept
+saving.
+
+**The diagnosis — three gaps in the Session-106 5c mech, one per example:**
+
+1. **Tight-hyphen codes never parsed.** `parse_course_refs`'s lead regex
+   required whitespace between subject and number, so "CD-005" yielded ZERO
+   refs — the lookup never ran. Fix: a second lead alternative for the
+   `SUBJ-NUM` no-whitespace form (subject ≥2 letters; the COCI join + the
+   sanity guard gate anything it over-matches). Shared parser
+   (`_suggest_unclassified.py`), so the 💡 worklist suggestions inherit it
+   on the next cron.
+2. **Decoration poisoned the title-sanity guard.** The guard demands the
+   text AFTER the code overlap the COCI title — right defense for the
+   MATH-31 join hazard, but "articulation Lemoore High (FA25-SU27)" and
+   "- Credit by Exam" describe the PATHWAY, not the course, so every
+   decorated raw failed it. Fix: pre-strip `_MECH_TRAIL` + term parens
+   ("(FA25-SU27)") from the raw, and filter pathway noise + the row's own
+   college/school tokens out of the remainder before the guard.
+3. **The written subject isn't always a COCI subject.** CCSF enters
+   "Cinema 24"; its COCI subject is `CINE`. Fix: a college-scoped
+   subject-PREFIX hop — when the written subject exists NOWHERE in COCI,
+   hop to the unique subject code the row's own college teaches under
+   ((CINE, 24) at CCSF); unique (code, college) resolution only, both
+   subjects named in the receipt. One-directional (written ⊇ code) so a
+   short written subject never fans out.
+
+Plus the blocker that hid gap 1: **`enrich_titles` skipped any entry with a
+staged title** — and Rule 5f had staged the bare residue "CD-005" as the
+title after stripping the school. New carve-out: a staged title that is
+still CODE-SHAPED (`_CODE_SHAPED` — subject-ish + number, no real words)
+never blocks the lookup; a resolved CCN > C-ID > COCI title strictly beats
+the code, receipted as "Code-shaped staged title “CD-005” upgraded…".
+
+**The receipts (same post-fold bake as #702's regen — safe mid-triage,
+prefill-only + the lane skips live-assigned rows): +6 titles, 1 upgrade, 0
+regressions.** CD-005 → **"Child Growth and Development"** — the authority
+ladder went ONE TIER ABOVE Sam's manual find (Lemoore's CD 5 carries C-ID
+CDEV 100; descriptor title > local catalog title). Cinema 24 → **"Basic
+Film Production"** (CINE 24, hop receipted). Bonus catches: Hanford West
+HS-005/HS-061 (Lemoore's actual `HS` Health-Science subject!) → Medical
+Terminology / Nurse Assistant Training; MUS-3 → the C-ID MUS 110 descriptor
+title; CUL 003 / HUMSR-147 mech-trail unlocks.
+
+**The in-tab affordance:** the #701 issuer-lookup pattern applied to the
+TITLE column of the missing-issuer lane — 🔎 "what is this?" opens the
+code-plus-college search from the CURRENT title input (`"CD-005" Lemoore
+College course` — Sam's exact manual flow); ✨ suggest asks Claude via the
+report proxy, click-to-fill chip into the title input (re-arms Save; never
+auto-saved; honest "no confident suggestion — try 🔎" on unknown). Distinct
+`cr-ni-tsearch`/`cr-ni-tsuggest`/`cr-ni-tsuggest-out` hooks — the first cut
+reused `.cr-ni-suggest-out` and the title column's span SHADOWED the issuer
+test's row-scoped `querySelector` (test C went 9/10). Lesson repeated:
+**two instances of one affordance pattern in the same row need disjoint
+class hooks, sharing style via the CSS selector list, never via a shared
+class.**
+
+Verifier +5 → **61 checks** (upgrades never leave a bare code; hop receipts
+name both subjects; CD-005/Cinema-24 spot checks kept PRESENCE-CONDITIONAL
+so post-fold regens — where Sam's saves drop the rows — stay green). New
+`tests/cer_title_lookup.test.js` (12); suite 145 files green.

@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-08 · Session 107 evening (your merge confirms LANDED — 56 more renames + 23 folds are live in the knowledge base)",
- "_session": 107,
- "_status": "Everything you confirmed tonight landed: 56 more retitles + all 23 confirmed merges applied (the AoJ folds, the ASE folds, and your organic ones — receipts committed). Four of your retitles were PAIRS converging on one new name (C++ Programming I+II, Choreography I+II, Child Development, Critical Thinking and the Nursing Process I+II) — the first of each pair renamed, and the second now waits in the “Merge confirmations” strip for your ✓ (one click folds it in). The dashboard was re-baked so Triage reflects the new names.",
+ "_as_of": "2026-07-08 · Session 108 (code-titled exhibits now resolve from COCI + a 🔎/✨ lookup on the title box)",
+ "_session": 108,
+ "_status": "Your CD-005 / Cinema 24 ask shipped (#707): the pre-seed routine now looks bare course codes up in COCI itself — “Cinema 24” prefills as “Basic Film Production” (CCSF's CINE 24), the Hanford West HS-005/HS-061 rows as Medical Terminology / Nurse Assistant Training, and CD-005-style rows get the official C-ID title. Plus every lane row's TITLE box now has its own 🔎 “what is this?” (your code-plus-college web search, one click) and ✨ suggest (AI recommendation, click-to-fill, never auto-saved). Reload the tab to pick both up. The Session-107-evening state stands: the twin merges still wait for your ✓ in the Merge confirmations strip.",
  "items": [
   {
    "id": "confirm-twin-merges",
@@ -53,10 +53,16 @@
    "text": "After Sam's next confirms/saves, dispatch cred-rename-apply.yml again — the fan-in fixes (twin pruning, per-target V4, live Supabase claims) are all in, so batches with converging retitles now land clean."
   },
   {
+   "id": "title-lookup-live",
+   "who": "sam",
+   "tab": "credential-reference",
+   "text": "Reload the tab: rows titled by a bare course code now prefill the real COCI course title (Cinema 24 → “Basic Film Production”, the Hanford West HS-00x rows, and more), and the title box has its own 🔎 “what is this?” + ✨ suggest for the leftovers."
+  },
+  {
    "id": "preseed-refresh",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "After Sam's next triage pass + daily fold: re-run kb/_preseed_null_issuers.py (pip install openpyxl first) + the 56-check verifier; saved rows drop out."
+   "text": "After Sam's next triage pass + daily fold: re-run kb/_preseed_null_issuers.py (pip install openpyxl first) + the 61-check verifier; saved rows drop out."
   },
   {
    "id": "audit-rerun-colleges",
