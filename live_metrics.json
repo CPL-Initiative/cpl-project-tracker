@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-08T19:57:37.931Z",
+  "scraped_at": "2026-07-08T21:00:05.225Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -248,14 +248,14 @@
       "colleges": [
         {
           "college": "City College of San Francisco",
-          "students": 1882,
+          "students": 1891,
           "units": 6873,
-          "avgUnits": 3.6519659936238043,
+          "avgUnits": 3.6345848757271284,
           "transcriptionRate": 1.7,
-          "avgTranscribed": 0.06269925611052073,
+          "avgTranscribed": 0.06240084611316764,
           "criteriaMetCount": 2,
           "militaryStudents": 1078,
-          "nonMilitaryStudents": 805,
+          "nonMilitaryStudents": 814,
           "apprenticeStudents": 7,
           "savings": 11896455,
           "yearImpact": 41791651,
@@ -803,13 +803,13 @@
         },
         {
           "college": "Fresno City College",
-          "students": 489,
+          "students": 491,
           "units": 1108,
-          "avgUnits": 2.2658486707566463,
+          "avgUnits": 2.256619144602851,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 488,
+          "militaryStudents": 490,
           "nonMilitaryStudents": 1,
           "apprenticeStudents": 0,
           "savings": 1916840,
@@ -1132,6 +1132,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Ohlone College",
+          "students": 130,
+          "units": 0,
+          "avgUnits": 0,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 130,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 0,
+          "yearImpact": 0,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Barstow Community College",
           "students": 129,
           "units": 381,
@@ -1189,21 +1204,6 @@
           "apprenticeStudents": 0,
           "savings": 544950,
           "yearImpact": 1911105,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Ohlone College",
-          "students": 102,
-          "units": 0,
-          "avgUnits": 0,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 102,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 0,
-          "yearImpact": 0,
           "transcribedUnits": 0
         },
         {
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "48,839",
+      "value": "48,878",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "25,334"
+          "value": "25,364"
         },
         {
           "label": "Workforce/Other",
-          "value": "23,582"
+          "value": "23,591"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 48839,
+    "Students": 48878,
     "Units": 233068.15000000002,
     "TranscribedUnits": 101500.95,
     "Savings": 322649885.25,
     "YearImpact": 1305760282.3999999,
-    "MilitaryStudents": 25334,
-    "NonMilitaryStudents": 23582,
+    "MilitaryStudents": 25364,
+    "NonMilitaryStudents": 23591,
     "AprenticeStudents": 755,
-    "AverageUnits": 4.772172853662033,
-    "TranscribedAverage": 2.0782765822396034
+    "AverageUnits": 4.768365113138836,
+    "TranscribedAverage": 2.0766183149883384
   }
 }

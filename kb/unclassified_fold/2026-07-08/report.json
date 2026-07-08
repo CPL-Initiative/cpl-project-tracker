@@ -1,106 +1,14 @@
 {
-  "_generated_at": "2026-07-08T01:12:17Z",
+  "_generated_at": "2026-07-08T21:00:13Z",
   "mode": "apply",
   "gates": {
-    "V1_apply_safe": true,
+    "V1_apply_safe": false,
     "V2_target_credential": true,
     "V3_additive_plus_declared": true,
     "V4_no_articulation_ripple": true
   },
-  "apply_safe": true,
-  "clean": [
-    {
-      "raw": "Automotive Welding, Cutting, and Modification",
-      "assigned": "Automotive Welding, Cutting, and Modification",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T23:44:36.130524+00:00"
-    },
-    {
-      "raw": "Basic Electric Arc Welding",
-      "assigned": "Basic Electric Arc Welding",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T23:44:45.791157+00:00"
-    },
-    {
-      "raw": "Basic Fire Academy-Firefighter II",
-      "assigned": "Firefighter 2",
-      "issuer": "California State Fire Training (SFT)",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T23:45:49.166329+00:00"
-    },
-    {
-      "raw": "Basic Mechanical Blueprint Reading",
-      "assigned": "Basic Mechanical Blueprint Reading",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:26.143575+00:00"
-    },
-    {
-      "raw": "Beginning Arc Welding",
-      "assigned": "Beginning Arc Welding",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:26.570655+00:00"
-    },
-    {
-      "raw": "Biocom Institute Technician Certification (BioTC) - This certification has no expiration",
-      "assigned": "Biocom Institute Technician Certification (BioTC)",
-      "issuer": "Biocom California Institute",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:26.631833+00:00"
-    },
-    {
-      "raw": "C-10 Electrical Contractor",
-      "assigned": "C-10 Electrical Contractor",
-      "issuer": "Contractors State License Board (CSLB)",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:26.679595+00:00"
-    },
-    {
-      "raw": "C-29 Masonry Contractor",
-      "assigned": "C-29 Masonry Contractor",
-      "issuer": "Contractors State License Board (CSLB)",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:26.733991+00:00"
-    },
-    {
-      "raw": "C-36 Plumbing Contractor",
-      "assigned": "C-36 Plumbing Contractor",
-      "issuer": "Contractors State License Board (CSLB)",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:26.780139+00:00"
-    },
-    {
-      "raw": "C-46 Solar Contractor",
-      "assigned": "C-46 Solar Contractor",
-      "issuer": "Contractors State License Board (CSLB)",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:26.836614+00:00"
-    },
-    {
-      "raw": "C-47 General Manufactured Housing Contractor",
-      "assigned": "C-47 General Manufactured Housing Contractor",
-      "issuer": "Contractors State License Board (CSLB)",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:26.889365+00:00"
-    },
-    {
-      "raw": "C-5 Framing and Rough Carpentry Contractor",
-      "assigned": "C-5 Framing and Rough Carpentry Contractor",
-      "issuer": "Contractors State License Board (CSLB)",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:26.938166+00:00"
-    },
-    {
-      "raw": "Industry Credentials for Introduction to Computers",
-      "assigned": "Introduction to Computers",
-      "issuer": "CompTIA",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T23:55:50.236714+00:00"
-    }
-  ],
+  "apply_safe": false,
+  "clean": [],
   "skip": [
     {
       "raw": "A S T 025 - Fundamentals of Auto Mechanics",
@@ -943,14 +851,6 @@
       "why": "already classified to the same target"
     },
     {
-      "raw": "Advanced Metal Framing",
-      "assigned": "Advanced Metal Framing",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
-      "why": "already classified to the same target"
-    },
-    {
       "raw": "Advanced Surface Mount Assembly and Rework",
       "assigned": "Surface Mount Assembly and Rework Advanced",
       "issuer": "California Community Colleges",
@@ -1076,6 +976,14 @@
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Automotive Welding, Cutting, and Modification",
+      "assigned": "Automotive Welding, Cutting, and Modification",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T23:44:36.130524+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -1287,11 +1195,51 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "Basic Electric Arc Welding",
+      "assigned": "Basic Electric Arc Welding",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T23:44:45.791157+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Basic Fire Academy-Firefighter II",
+      "assigned": "Firefighter 2",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T23:45:49.166329+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Basic Mechanical Blueprint Reading",
+      "assigned": "Basic Mechanical Blueprint Reading",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:26.143575+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "Basic Pharmacology",
       "assigned": "Basic Pharmacology",
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Beginning Arc Welding",
+      "assigned": "Beginning Arc Welding",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:26.570655+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Biocom Institute Technician Certification (BioTC) - This certification has no expiration",
+      "assigned": "Biocom Institute Technician Certification (BioTC)",
+      "issuer": "Biocom California Institute",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:26.631833+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -1319,11 +1267,59 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "C-10 Electrical Contractor",
+      "assigned": "C-10 Electrical Contractor",
+      "issuer": "Contractors State License Board (CSLB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:26.679595+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "C-190, C-290, ICS 100 and ICS 700 Wildland Fire Certifications",
       "assigned": "Wildland Fire Certifications (C-190, C-290, ICS-100, ICS-700)",
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "C-29 Masonry Contractor",
+      "assigned": "C-29 Masonry Contractor",
+      "issuer": "Contractors State License Board (CSLB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:26.733991+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "C-36 Plumbing Contractor",
+      "assigned": "C-36 Plumbing Contractor",
+      "issuer": "Contractors State License Board (CSLB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:26.780139+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "C-46 Solar Contractor",
+      "assigned": "C-46 Solar Contractor",
+      "issuer": "Contractors State License Board (CSLB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:26.836614+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "C-47 General Manufactured Housing Contractor",
+      "assigned": "C-47 General Manufactured Housing Contractor",
+      "issuer": "Contractors State License Board (CSLB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:26.889365+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "C-5 Framing and Rough Carpentry Contractor",
+      "assigned": "C-5 Framing and Rough Carpentry Contractor",
+      "issuer": "Contractors State License Board (CSLB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:26.938166+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -3463,14 +3459,6 @@
       "why": "already classified to the same target"
     },
     {
-      "raw": "INSPEC 015 - Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
-      "assigned": "Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
-      "why": "already classified to the same target"
-    },
-    {
       "raw": "INSPEC 017 - California State Energy Regulations for Residential Buildings - PORTFOLIO Review",
       "assigned": "California State Energy Regulations for Residential Buildings",
       "issuer": "",
@@ -3524,6 +3512,14 @@
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Industry Credentials for Introduction to Computers",
+      "assigned": "Introduction to Computers",
+      "issuer": "CompTIA",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-07T23:55:50.236714+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -4738,6 +4734,14 @@
       "why": "KB holds a newer curator decision: 'AP: German Language & Culture' -> 'AP German Language and Culture' (2026-06-04)"
     },
     {
+      "raw": "Advanced Metal Framing",
+      "assigned": "Advanced Metal Framing",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+      "why": "KB holds a newer curator decision: 'Advanced Metal Framing' -> 'Metal Framing Advanced' (2026-06-02T18:25:47Z)"
+    },
+    {
       "raw": "FTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship",
       "assigned": "Fire Service In-Service Training: Command and Control",
       "issuer": "",
@@ -4746,103 +4750,19 @@
       "why": "KB holds a newer curator decision: '\\tFTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship' -> 'Fire Service In-Service Training — Command & Control' (2026-06-04); 'FTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship' -> 'Fire Service In-Service Training — Command & Control' (2026-06-04)"
     }
   ],
-  "conflict": [],
-  "credential_adds": [
+  "conflict": [
     {
-      "raw": "Automotive Welding, Cutting, and Modification",
-      "assigned": "Automotive Welding, Cutting, and Modification",
-      "issuer": "California Community Colleges",
+      "raw": "INSPEC 015 - Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
+      "assigned": "Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
+      "issuer": "",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T23:44:36.130524+00:00"
-    },
-    {
-      "raw": "Basic Electric Arc Welding",
-      "assigned": "Basic Electric Arc Welding",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T23:44:45.791157+00:00"
-    },
-    {
-      "raw": "Basic Mechanical Blueprint Reading",
-      "assigned": "Basic Mechanical Blueprint Reading",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:26.143575+00:00"
-    },
-    {
-      "raw": "Beginning Arc Welding",
-      "assigned": "Beginning Arc Welding",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:26.570655+00:00"
-    },
-    {
-      "raw": "Biocom Institute Technician Certification (BioTC) - This certification has no expiration",
-      "assigned": "Biocom Institute Technician Certification (BioTC)",
-      "issuer": "Biocom California Institute",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:26.631833+00:00"
-    },
-    {
-      "raw": "C-10 Electrical Contractor",
-      "assigned": "C-10 Electrical Contractor",
-      "issuer": "Contractors State License Board (CSLB)",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:26.679595+00:00"
-    },
-    {
-      "raw": "C-29 Masonry Contractor",
-      "assigned": "C-29 Masonry Contractor",
-      "issuer": "Contractors State License Board (CSLB)",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:26.733991+00:00"
-    },
-    {
-      "raw": "C-36 Plumbing Contractor",
-      "assigned": "C-36 Plumbing Contractor",
-      "issuer": "Contractors State License Board (CSLB)",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:26.780139+00:00"
-    },
-    {
-      "raw": "C-46 Solar Contractor",
-      "assigned": "C-46 Solar Contractor",
-      "issuer": "Contractors State License Board (CSLB)",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:26.836614+00:00"
-    },
-    {
-      "raw": "C-47 General Manufactured Housing Contractor",
-      "assigned": "C-47 General Manufactured Housing Contractor",
-      "issuer": "Contractors State License Board (CSLB)",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:26.889365+00:00"
-    },
-    {
-      "raw": "C-5 Framing and Rough Carpentry Contractor",
-      "assigned": "C-5 Framing and Rough Carpentry Contractor",
-      "issuer": "Contractors State License Board (CSLB)",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:26.938166+00:00"
-    },
-    {
-      "raw": "Industry Credentials for Introduction to Computers",
-      "assigned": "Introduction to Computers",
-      "issuer": "CompTIA",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T23:55:50.236714+00:00"
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "human-reviewed classification stands: 'INSPEC 015 - Advanced Construction Inspection: Uniform Plumbing Code (UPC)' -> 'Construction Inspection: Uniform Plumbing Code (UPC) Advanced'"
     }
   ],
+  "credential_adds": [],
   "credential_issuer_fills": [],
-  "credential_issuer_adds": [
-    {
-      "title": "Emergency Medical Responder",
-      "issuer": "National Registry of Emergency Medical Technicians",
-      "raw": "Emergency Medical Responder",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T18:57:34.98676+00:00"
-    }
-  ],
+  "credential_issuer_adds": [],
   "credential_prunes": [],
   "articulation_ripples": [],
   "articulation_ripples_resolved": [],

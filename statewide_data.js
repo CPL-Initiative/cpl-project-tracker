@@ -7280,8 +7280,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-EC&I-1-001"
       ],
-      "title": "Advanced Composition and Introduction to Literature",
-      "unified_title": "Advanced Composition and Introduction to Literature",
+      "title": "Introduction to Literature and Composition",
+      "unified_title": "Introduction to Literature and Composition",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -28581,8 +28581,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-AJ0-1-001"
       ],
-      "title": "Administration of Justice 049",
-      "unified_title": "Administration of Justice 049",
+      "title": "Narcotics and Vice Control",
+      "unified_title": "Narcotics and Vice Control",
       "is_classified": true,
       "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
@@ -28716,8 +28716,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-AJ1C2-1-001"
       ],
-      "title": "Administration of Justice 160",
-      "unified_title": "Administration of Justice 160",
+      "title": "Police Organization and Administration",
+      "unified_title": "Police Organization and Administration",
       "is_classified": true,
       "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
@@ -30876,8 +30876,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-A2AF-1-001"
       ],
-      "title": "Advanced Firearms and Range Application",
-      "unified_title": "Advanced Firearms and Range Application",
+      "title": "Firearms and Range Application Advanced",
+      "unified_title": "Firearms and Range Application Advanced",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -31281,8 +31281,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-AOJ6-1-001"
       ],
-      "title": "Administration of Justice 68 (CCSF)",
-      "unified_title": "Administration of Justice 68 (CCSF)",
+      "title": "Criminal Justice Report Writing",
+      "unified_title": "Criminal Justice Report Writing",
       "is_classified": true,
       "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
@@ -31416,8 +31416,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-AOJ8-1-001"
       ],
-      "title": "Administration of Justice 85 (CCSF)",
-      "unified_title": "Administration of Justice 85 (CCSF)",
+      "title": "P.C. 832 Arrest and Control Certification",
+      "unified_title": "P.C. 832 Arrest and Control Certification",
       "is_classified": true,
       "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
@@ -34087,8 +34087,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCxS-CRA5-1-001"
       ],
-      "title": "Administration of Justice — Community Relations",
-      "unified_title": "Administration of Justice — Community Relations",
+      "title": "Community Relations",
+      "unified_title": "Community Relations",
       "is_classified": true,
       "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
@@ -39377,8 +39377,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRS-AAR&-1-001"
       ],
-      "title": "Advanced Academic Reading & Writing I (ESL)",
-      "unified_title": "Advanced Academic Reading & Writing I (ESL)",
+      "title": "Academic Reading & Writing I (ESL) Advanced",
+      "unified_title": "Academic Reading & Writing I (ESL) Advanced",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -53187,10 +53187,10 @@ window.CPL_STATEWIDE = {
       "title": "Archaeology: An Introduction to Prehistory",
       "unified_title": "Archaeology: An Introduction to Prehistory",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Archaeology: An Introduction to Prehistory ANTH 003 Cx"
@@ -65820,10 +65820,10 @@ window.CPL_STATEWIDE = {
       "title": "Arts of Africa, Oceania, and Indigenous North America",
       "unified_title": "Arts of Africa, Oceania, and Indigenous North America",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Arts of Africa, Oceania, and Indigenous North America",
@@ -69000,10 +69000,10 @@ window.CPL_STATEWIDE = {
       "title": "Art of the Ancient Americas",
       "unified_title": "Art of the Ancient Americas",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Art of the Ancient Americas",
@@ -69475,8 +69475,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXH-AAWL-1-001"
       ],
-      "title": "Administration of Justice — Lemoore HS Articulation",
-      "unified_title": "Administration of Justice — Lemoore HS Articulation",
+      "title": "Administration of Justice",
+      "unified_title": "Administration of Justice",
       "is_classified": true,
       "issuing_agency": "Lemoore High School",
       "training_agency": "Lemoore High School",
@@ -70919,10 +70919,10 @@ window.CPL_STATEWIDE = {
       "title": "Art Appreciation",
       "unified_title": "Art Appreciation",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam- Art appreciation"
@@ -75162,8 +75162,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-N4-A-1-001"
       ],
-      "title": "Adult Health Care I (Nursing)",
-      "unified_title": "Adult Health Care I (Nursing)",
+      "title": "Adult Health Care I",
+      "unified_title": "Adult Health Care I",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -75388,8 +75388,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-N4-A1-1-001"
       ],
-      "title": "Adult Health Care II (Nursing)",
-      "unified_title": "Adult Health Care II (Nursing)",
+      "title": "Adult Health Care II",
+      "unified_title": "Adult Health Care II",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -75727,8 +75727,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-N4-A2-1-001"
       ],
-      "title": "Adult Health Care III (Nursing)",
-      "unified_title": "Adult Health Care III (Nursing)",
+      "title": "Adult Health Care III",
+      "unified_title": "Adult Health Care III",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -76066,8 +76066,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-N4-A3-1-001"
       ],
-      "title": "Adult Health Care IV (Nursing)",
-      "unified_title": "Adult Health Care IV (Nursing)",
+      "title": "Adult Health Care IV",
+      "unified_title": "Adult Health Care IV",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -87560,8 +87560,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-A0-A-1-001"
       ],
-      "title": "Advanced Automotive Electrical Systems",
-      "unified_title": "Advanced Automotive Electrical Systems",
+      "title": "Automotive Electrical Systems Advanced",
+      "unified_title": "Automotive Electrical Systems Advanced",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -94360,8 +94360,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-AAES-1-001"
       ],
-      "title": "Advanced Automotive Electrical Systems",
-      "unified_title": "Advanced Automotive Electrical Systems",
+      "title": "Automotive Electrical Systems Advanced",
+      "unified_title": "Automotive Electrical Systems Advanced",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -106749,10 +106749,10 @@ window.CPL_STATEWIDE = {
       "title": "Arc and Gas Welding",
       "unified_title": "Arc and Gas Welding",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "WELD 200 \tArc & Gas Welding - Credit by Exam"
@@ -106847,10 +106847,10 @@ window.CPL_STATEWIDE = {
       "title": "Arc and Gas Welding",
       "unified_title": "Arc and Gas Welding",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "WELD 200 \tArc & Gas Welding - Portfolio"
@@ -107435,10 +107435,10 @@ window.CPL_STATEWIDE = {
       "title": "Arc and Gas Welding",
       "unified_title": "Arc and Gas Welding",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "WELD 200\tArc & Gas Welding - Industry Certificate"
@@ -112584,8 +112584,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-AGTA-1-001"
       ],
-      "title": "Advanced Gas Tungsten Arc Welding (GTAW)",
-      "unified_title": "Advanced Gas Tungsten Arc Welding (GTAW)",
+      "title": "Gas Tungsten Arc Welding (GTAW) Advanced",
+      "unified_title": "Gas Tungsten Arc Welding (GTAW) Advanced",
       "is_classified": true,
       "issuing_agency": "American Welding Society",
       "training_agency": "",
@@ -135735,10 +135735,10 @@ window.CPL_STATEWIDE = {
       "title": "Applications of Digital Audio Workstations",
       "unified_title": "Applications of Digital Audio Workstations",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Applications of Digital Audio Workstations"
@@ -140795,8 +140795,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-C0-A-1-001"
       ],
-      "title": "Advanced Desserts and Pastry",
-      "unified_title": "Advanced Desserts and Pastry",
+      "title": "Advanced Desserts and Pastry/Chocolate/Sugar",
+      "unified_title": "Advanced Desserts and Pastry/Chocolate/Sugar",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -141056,8 +141056,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCBEH-ADP-1-001"
       ],
-      "title": "Advanced Digital Photography",
-      "unified_title": "Advanced Digital Photography",
+      "title": "Digital Photography Advanced",
+      "unified_title": "Digital Photography Advanced",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -150548,8 +150548,8 @@ window.CPL_STATEWIDE = {
         "MAPCXH-AE&D1-1-001",
         "MAPCXH-AE&D2-1-001"
       ],
-      "title": "Advanced Engineering & Design (High School Articulation)",
-      "unified_title": "Advanced Engineering & Design (High School Articulation)",
+      "title": "Engineering & Design Advanced",
+      "unified_title": "Engineering & Design Advanced",
       "is_classified": true,
       "issuing_agency": "El Modena High School",
       "training_agency": "El Modena High School",
@@ -151035,8 +151035,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCxS-ACDA-1-001"
       ],
-      "title": "Advanced CAD, Rendering & Animation",
-      "unified_title": "Advanced CAD, Rendering & Animation",
+      "title": "CAD, Rendering & Animation Advanced",
+      "unified_title": "CAD, Rendering & Animation Advanced",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -151921,10 +151921,10 @@ window.CPL_STATEWIDE = {
       "title": "Art of Graphic Design I (High School Articulation)",
       "unified_title": "Art of Graphic Design I (High School Articulation)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Orange High School",
       "training_agency": "Orange High School",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Art of Graphic Design I (UC) - Canyon High School",
@@ -152954,10 +152954,10 @@ window.CPL_STATEWIDE = {
       "title": "ASHS 280 (Cuesta College Credit by Exam)",
       "unified_title": "ASHS 280 (Cuesta College Credit by Exam)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.45,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ASHS 280 Credit by Exam"
@@ -154672,10 +154672,10 @@ window.CPL_STATEWIDE = {
       "title": "Architectural Drawing I",
       "unified_title": "Architectural Drawing I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ARC 172 - Architectural Drawing I",
@@ -156190,10 +156190,10 @@ window.CPL_STATEWIDE = {
       "title": "ASL Classifiers and Depicting Verbs",
       "unified_title": "ASL Classifiers and Depicting Verbs",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam: Classifiers/Depicting Verbs"
@@ -156865,10 +156865,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Nursing Skills / Clinical Simulation Laboratory",
       "unified_title": "Advanced Nursing Skills / Clinical Simulation Laboratory",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Advanced Nursing Skills/Clinical Simulation Laboratory"
@@ -157087,8 +157087,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-AMSN-1-001"
       ],
-      "title": "Advanced Medical Surgical Nursing",
-      "unified_title": "Advanced Medical Surgical Nursing",
+      "title": "Medical Surgical Nursing Advanced",
+      "unified_title": "Medical Surgical Nursing Advanced",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -157162,8 +157162,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-AMSN1-1-001"
       ],
-      "title": "Advanced Medical Surgical Nursing Lab",
-      "unified_title": "Advanced Medical Surgical Nursing Lab",
+      "title": "Medical Surgical Nursing Lab Advanced",
+      "unified_title": "Medical Surgical Nursing Lab Advanced",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -160902,10 +160902,10 @@ window.CPL_STATEWIDE = {
       "title": "Applied Biotechnology I",
       "unified_title": "Applied Biotechnology I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Applied Biotechnology I"
@@ -178679,8 +178679,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-M3MT-1-001"
       ],
-      "title": "Advanced Machine Tool Technology Lab",
-      "unified_title": "Advanced Machine Tool Technology Lab",
+      "title": "Mach Tool Technology Lab Advanced",
+      "unified_title": "Mach Tool Technology Lab Advanced",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -181124,8 +181124,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-A2CA-1-001"
       ],
-      "title": "Agriculture Computer Applications",
-      "unified_title": "Agriculture Computer Applications",
+      "title": "Agricultural Computer Applications",
+      "unified_title": "Agricultural Computer Applications",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -190027,10 +190027,10 @@ window.CPL_STATEWIDE = {
       "title": "Architecture/Green Design: Planning and Construction",
       "unified_title": "Architecture/Green Design: Planning and Construction",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Green Business Certification Inc. (GBCI)",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Architecture/Green Design: Planning and Construction"
@@ -190087,10 +190087,10 @@ window.CPL_STATEWIDE = {
       "title": "Architecture/Green Design: Implementation using AutoCAD",
       "unified_title": "Architecture/Green Design: Implementation using AutoCAD",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Green Business Certification Inc. (GBCI)",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Architecture/Green Design: Implementation using AutoCAD"
@@ -190327,10 +190327,10 @@ window.CPL_STATEWIDE = {
       "title": "Architecture/Green Design: Principles and Practices",
       "unified_title": "Architecture/Green Design: Principles and Practices",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Green Business Certification Inc. (GBCI)",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Architecture/Green Design: Principles and Practices"
@@ -193242,10 +193242,10 @@ window.CPL_STATEWIDE = {
       "title": "ASL Fingerspelling and Numbers",
       "unified_title": "ASL Fingerspelling and Numbers",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.72,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam: Fingerspelling/Numbers"
@@ -193482,10 +193482,10 @@ window.CPL_STATEWIDE = {
       "title": "Architectural Drafting for Interior Designers",
       "unified_title": "Architectural Drafting for Interior Designers",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Architectural Drafting for Interior Designers"
@@ -198920,8 +198920,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-I0-A-1-001"
       ],
-      "title": "Advanced Construction Inspection: International Building Code (IBC)",
-      "unified_title": "Advanced Construction Inspection: International Building Code (IBC)",
+      "title": "Construction Inspection: International Building Code (IBC) Advanced",
+      "unified_title": "Construction Inspection: International Building Code (IBC) Advanced",
       "is_classified": true,
       "issuing_agency": "International Code Council (ICC)",
       "training_agency": "",
@@ -199079,10 +199079,10 @@ window.CPL_STATEWIDE = {
       "title": "Aspects of Building and Safety",
       "unified_title": "Aspects of Building and Safety",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "International Code Council (ICC)",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "INSPEC 030 - Aspects of Building and Safety"
@@ -199128,8 +199128,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-I0-A-1-001"
       ],
-      "title": "Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
-      "unified_title": "Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
+      "title": "Construction Inspection: Uniform Plumbing Code (UPC) Advanced",
+      "unified_title": "Construction Inspection: Uniform Plumbing Code (UPC) Advanced",
       "is_classified": true,
       "issuing_agency": "International Code Council (ICC)",
       "training_agency": "",
@@ -199180,8 +199180,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-I0-A-1-001"
       ],
-      "title": "Advanced Construction Inspection: International Building Code (IBC)",
-      "unified_title": "Advanced Construction Inspection: International Building Code (IBC)",
+      "title": "Construction Inspection: International Building Code (IBC) Advanced",
+      "unified_title": "Construction Inspection: International Building Code (IBC) Advanced",
       "is_classified": true,
       "issuing_agency": "International Code Council (ICC)",
       "training_agency": "",
@@ -199495,10 +199495,10 @@ window.CPL_STATEWIDE = {
       "title": "Astronomy (High School Articulation)",
       "unified_title": "Astronomy (High School Articulation)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Local High School",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Astronomy High School to College Articulation"
@@ -201095,10 +201095,10 @@ window.CPL_STATEWIDE = {
       "title": "Apparel Construction I",
       "unified_title": "Apparel Construction I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Apparel Construction I"
@@ -201145,10 +201145,10 @@ window.CPL_STATEWIDE = {
       "title": "Apparel Construction I Lab",
       "unified_title": "Apparel Construction I Lab",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Apparel Construction I Lab"
@@ -202434,8 +202434,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-A2SD-1-001"
       ],
-      "title": "Agricultural Mechanical Systems Design and Evaluation 1",
-      "unified_title": "Agricultural Mechanical Systems Design and Evaluation 1",
+      "title": "Mechanical Systems Design & Evaluation 1",
+      "unified_title": "Mechanical Systems Design & Evaluation 1",
       "is_classified": true,
       "issuing_agency": "Agriculture Education Services and Technology (AEST)",
       "training_agency": "",
@@ -202483,8 +202483,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-A2SD1-1-001"
       ],
-      "title": "Agricultural Mechanical Systems Design and Evaluation 2",
-      "unified_title": "Agricultural Mechanical Systems Design and Evaluation 2",
+      "title": "Mechanical Systems Design & Evaluation 2",
+      "unified_title": "Mechanical Systems Design & Evaluation 2",
       "is_classified": true,
       "issuing_agency": "Agriculture Education Services and Technology (AEST)",
       "training_agency": "",
@@ -202532,8 +202532,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-A2SA-1-001"
       ],
-      "title": "Agricultural Equipment Service and Safety",
-      "unified_title": "Agricultural Equipment Service and Safety",
+      "title": "Equipment Service and Safety",
+      "unified_title": "Equipment Service and Safety",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -202581,8 +202581,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-A2SA-1-001"
       ],
-      "title": "Agricultural Equipment Service and Safety",
-      "unified_title": "Agricultural Equipment Service and Safety",
+      "title": "Equipment Service and Safety",
+      "unified_title": "Equipment Service and Safety",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -202630,8 +202630,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-A2M--1-001"
       ],
-      "title": "Agricultural Machinery Management",
-      "unified_title": "Agricultural Machinery Management",
+      "title": "Machinery Management",
+      "unified_title": "Machinery Management",
       "is_classified": true,
       "issuing_agency": "Agriculture Education Services and Technology (AEST)",
       "training_agency": "",
@@ -202679,8 +202679,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-A2D&-1-001"
       ],
-      "title": "Agricultural Equipment Diagnosis and Repair",
-      "unified_title": "Agricultural Equipment Diagnosis and Repair",
+      "title": "Equipment Diagnosis & Repair",
+      "unified_title": "Equipment Diagnosis & Repair",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -202826,8 +202826,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-A2IA-1-001"
       ],
-      "title": "Advanced Irrigation and Drainage",
-      "unified_title": "Advanced Irrigation and Drainage",
+      "title": "Irrigation and Drainage Advanced",
+      "unified_title": "Irrigation and Drainage Advanced",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -205221,8 +205221,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-AS-1-001"
       ],
-      "title": "Acoustical Soffits (Norco Apprenticeship Articulation)",
-      "unified_title": "Acoustical Soffits (Norco Apprenticeship Articulation)",
+      "title": "Acoustical Soffits",
+      "unified_title": "Acoustical Soffits",
       "is_classified": true,
       "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "Joint Apprenticeship Training Committee (JATC)",
@@ -205644,8 +205644,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-AACL-1-001"
       ],
-      "title": "Advanced Acoustical Ceiling Layout (Norco Apprenticeship)",
-      "unified_title": "Advanced Acoustical Ceiling Layout (Norco Apprenticeship)",
+      "title": "Advanced Acoustical Ceiling Layout",
+      "unified_title": "Advanced Acoustical Ceiling Layout",
       "is_classified": true,
       "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "Joint Apprenticeship Training Committee (JATC)",
@@ -205691,8 +205691,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-AACI-1-001"
       ],
-      "title": "Advanced Acoustical Ceiling Installation (Norco Apprenticeship)",
-      "unified_title": "Advanced Acoustical Ceiling Installation (Norco Apprenticeship)",
+      "title": "Advanced Acoustical Ceiling Installation",
+      "unified_title": "Advanced Acoustical Ceiling Installation",
       "is_classified": true,
       "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "Joint Apprenticeship Training Committee (JATC)",
@@ -206302,8 +206302,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-A1-1-001"
       ],
-      "title": "Abutments (Carpentry — Norco IBEW/Carpenters Articulation)",
-      "unified_title": "Abutments (Carpentry — Norco IBEW/Carpenters Articulation)",
+      "title": "Abutments",
+      "unified_title": "Abutments",
       "is_classified": true,
       "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
@@ -206725,8 +206725,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-APR--1-001"
       ],
-      "title": "Advanced Print Reading — Digital Planning",
-      "unified_title": "Advanced Print Reading — Digital Planning",
+      "title": "Print Reading — Digital Planning Advanced",
+      "unified_title": "Print Reading — Digital Planning Advanced",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -208041,8 +208041,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-ACF-1-001"
       ],
-      "title": "Advanced Commercial Framing (Norco Apprenticeship)",
-      "unified_title": "Advanced Commercial Framing (Norco Apprenticeship)",
+      "title": "Advanced Commercial Framing",
+      "unified_title": "Advanced Commercial Framing",
       "is_classified": true,
       "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "Joint Apprenticeship Training Committee (JATC)",
@@ -208088,8 +208088,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-AS1-1-001"
       ],
-      "title": "Advanced Stairs",
-      "unified_title": "Advanced Stairs",
+      "title": "Stairs Advanced",
+      "unified_title": "Stairs Advanced",
       "is_classified": true,
       "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
@@ -208135,8 +208135,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-ARF-1-001"
       ],
-      "title": "Advanced Roof Framing",
-      "unified_title": "Advanced Roof Framing",
+      "title": "Roof Framing Advanced",
+      "unified_title": "Roof Framing Advanced",
       "is_classified": true,
       "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
@@ -214394,8 +214394,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-E2FD-1-001"
       ],
-      "title": "Advanced Floral Design",
-      "unified_title": "Advanced Floral Design",
+      "title": "Floral Design Advanced",
+      "unified_title": "Floral Design Advanced",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -214438,8 +214438,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-E2FD-1-001"
       ],
-      "title": "Advanced Floral Design",
-      "unified_title": "Advanced Floral Design",
+      "title": "Floral Design Advanced",
+      "unified_title": "Floral Design Advanced",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -214482,8 +214482,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-E2FD-1-001"
       ],
-      "title": "Advanced Floral Design",
-      "unified_title": "Advanced Floral Design",
+      "title": "Floral Design Advanced",
+      "unified_title": "Floral Design Advanced",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -217151,8 +217151,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-APR–-1-001"
       ],
-      "title": "Advanced Print Reading — Digital Application",
-      "unified_title": "Advanced Print Reading — Digital Application",
+      "title": "Print Reading — Digital Application Advanced",
+      "unified_title": "Print Reading — Digital Application Advanced",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -217271,8 +217271,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-AHF-1-001"
       ],
-      "title": "Advanced Hand Finishing",
-      "unified_title": "Advanced Hand Finishing",
+      "title": "Hand Finishing Advanced",
+      "unified_title": "Hand Finishing Advanced",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -217311,8 +217311,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-AAFT-1-001"
       ],
-      "title": "Advanced Automatic Finishing Tools (Norco Apprenticeship)",
-      "unified_title": "Advanced Automatic Finishing Tools (Norco Apprenticeship)",
+      "title": "Advanced Automatic Finishing Tools",
+      "unified_title": "Advanced Automatic Finishing Tools",
       "is_classified": true,
       "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "Joint Apprenticeship Training Committee (JATC)",
@@ -217351,8 +217351,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-AMF-1-001"
       ],
-      "title": "Advanced Metal Framing",
-      "unified_title": "Advanced Metal Framing",
+      "title": "Metal Framing Advanced",
+      "unified_title": "Metal Framing Advanced",
       "is_classified": true,
       "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
@@ -219619,8 +219619,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-AOJ-1-001"
       ],
-      "title": "Administration of Justice 72 (CCSF)",
-      "unified_title": "Administration of Justice 72 (CCSF)",
+      "title": "Police Work Experience",
+      "unified_title": "Police Work Experience",
       "is_classified": true,
       "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
@@ -224955,8 +224955,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRS-A13-1-001"
       ],
-      "title": "Administration of Justice 106",
-      "unified_title": "Administration of Justice 106",
+      "title": "Principles of Investigation",
+      "unified_title": "Principles of Investigation",
       "is_classified": true,
       "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
@@ -224983,8 +224983,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-AJ1C1-1-001"
       ],
-      "title": "Administration of Justice 14",
-      "unified_title": "Administration of Justice 14",
+      "title": "Report Writing for Peace Officers",
+      "unified_title": "Report Writing for Peace Officers",
       "is_classified": true,
       "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
@@ -230300,6 +230300,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-07-08T19:57:04",
+  "generated_at": "2026-07-08T20:59:34",
   "total_credit_recs": 12714
 };
