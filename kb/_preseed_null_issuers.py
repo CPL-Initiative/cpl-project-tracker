@@ -82,6 +82,11 @@ OUT = os.path.join(HERE, "issuer_preseed.json")
 
 sys.path.insert(0, HERE)
 from _preseed_unclassified import load_statewide, load_credential_issuers, _pre_norm  # noqa: E402
+# Rule 5c title machinery (Session 106 follow-up) — ONE definition, shared with
+# the unclassified worklist's 💡 suggestions so the two scripts never drift.
+from _suggest_unclassified import (  # noqa: E402
+    build_coci_index, parse_course_refs, norm_subj, norm_num, norm_college, tokens)
+from collections import Counter  # noqa: E402
 
 CCC = "California Community Colleges"
 
@@ -117,7 +122,10 @@ def norm_title(t):
 
 def load_rows():
     """Every baked CER row the lanes need:
-    [{ut, display, issuer, trainer, cpl_types, quality_flag, raws}]."""
+    [{ut, display, issuer, trainer, cpl_types, quality_flag, raws, colleges}].
+    colleges = the articulating colleges from the baked articulations — the
+    Rule 5c COCI lookup's college scope (for a local single-college Cx exhibit
+    the articulating college IS the college whose catalog names the course)."""
     raw = open(CRD_JS, encoding="utf-8").read()
     start = raw.index("{", raw.index("window.CPL_CREDENTIAL_REFERENCE"))
     data = json.loads(raw[start:raw.rstrip().rstrip(";").rfind("}") + 1])
@@ -126,6 +134,12 @@ def load_rows():
         ut = r.get("ut") or ""
         if not ut:
             continue
+        colleges = []
+        for a in (r.get("articulations") or []):
+            for lc in ((a or {}).get("local") or []):
+                for c in ((lc or {}).get("colleges") or []):
+                    if c and c not in colleges:
+                        colleges.append(c)
         out.append({
             "ut": ut,
             "display": r.get("display_title") or ut,
@@ -134,6 +148,7 @@ def load_rows():
             "cpl_types": r.get("cpl_types") or [],
             "quality_flag": r.get("quality_flag") or None,
             "raws": [v.get("r") or "" for v in (r.get("raw_variants") or [])],
+            "colleges": colleges,
         })
     return out
 
@@ -395,6 +410,215 @@ def stage_local_trainer(row):
     return entry
 
 
+# ── Rule 5c title enrichment (Session 106 follow-up — Sam, 2026-07-08:
+# "make it as easy and simple as possible for prospective students to find CPL
+# that matches their experience"). For Cx exhibits, stage a SEARCHABLE title:
+#   a. course-identity lookup — parse the local course code from the raw
+#      variant ("ADM JUS 049"), join it COLLEGE-SCOPED into COCI, and take the
+#      CCN title > C-ID descriptor title > the local COCI course title.
+#      M-ID titles are deliberately EXCLUDED until Sam declares that layer
+#      stable (many M-IDs aren't merged with common titles yet — Rule 5c).
+#   b. discipline-prefix strip — "<MQ discipline> — <content>" sheds the
+#      discipline decoration ("Administration of Justice — Community
+#      Relations" → "Community Relations"); the discipline stays on the row's
+#      metadata, not in the student-facing title.
+# Prefill-only like everything else here (Rule 5e). ────────────────────────
+
+MQ_PATH = os.path.join(HERE, "reference", "mq_disciplines.json")
+CID_PATH = os.path.join(HERE, "reference", "cid_descriptors.json")
+CCN_PATH = os.path.join(HERE, "reference", "ccn_courses.json")
+
+# Type gate for title enrichment: the Cx/Portfolio mechanism family (blank +
+# "Other" ride along — the code-titled AoJ rows predate the type column).
+TITLE_OK_TYPES = CX_TYPES | {"Other"}
+
+
+def _load_json_soft(path):
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return None
+
+
+def load_title_authorities():
+    """(mq set, ccn_titles, cid_titles, coci idx, coci college-scoped idx) —
+    every piece soft-fails so the issuer lanes still run without them."""
+    mq = set()
+    d = _load_json_soft(MQ_PATH)
+    if d:
+        mq = {x.casefold() for x in d.get("disciplines", []) if x}
+    ccn_titles, cid_titles = {}, {}
+    d = _load_json_soft(CCN_PATH)
+    if d:
+        ccn_titles = {c["ccn"].strip().upper(): c["title"]
+                      for c in d.get("courses", []) if c.get("ccn")}
+    d = _load_json_soft(CID_PATH)
+    if d:
+        cid_titles = {x["descriptor"].strip().upper(): x["title"]
+                      for x in d.get("descriptors", []) if x.get("descriptor")}
+    try:
+        idx, cidx = build_coci_index()
+    except Exception:
+        idx, cidx = {}, {}
+    return mq, ccn_titles, cid_titles, idx, cidx
+
+
+_SMALL_WORDS = {"a", "an", "and", "as", "at", "by", "for", "in", "of", "on",
+                "or", "the", "to", "with"}
+_CAPS_KEEP = {"CPR", "EMT", "EMS", "EMR", "HVAC", "CNC", "CNA", "RN", "LVN",
+              "OSHA", "ASE", "AWS", "GIS", "CAD", "CIS", "IT", "ESL", "EKG",
+              "ICU", "BLS", "ACLS", "MIG", "TIG", "AC", "DC"}
+
+
+def _polish_title(t):
+    """SHOUTING-CASE COCI catalog titles ('NARCOTICS AND VICE CONTROL') read
+    poorly as a student-facing prefill — title-case them (small words lowered,
+    roman numerals + known acronyms preserved). Mixed-case titles pass through
+    verbatim."""
+    letters = [c for c in (t or "") if c.isalpha()]
+    if not letters or sum(1 for c in letters if c.isupper()) / len(letters) < 0.8:
+        return t
+    out = []
+    for i, w in enumerate(t.split()):
+        core = re.sub(r"[^A-Za-z]", "", w)
+        if core in _CAPS_KEEP or re.fullmatch(r"[IVX]{1,4}", core or " "):
+            out.append(w)
+            continue
+        lw = w.lower()
+        out.append(lw if (i > 0 and lw in _SMALL_WORDS)
+                   else lw[:1].upper() + lw[1:])
+    return " ".join(out)
+
+
+_DISC_PREFIX = re.compile(r"^(.{3,60}?)\s+—\s+(.+)$")
+
+
+def strip_discipline_prefix(title, mq):
+    """'<MQ discipline> — <content>' → content, or "" when it doesn't apply.
+    Guards: the prefix must be an EXACT MQ discipline; the content must carry
+    real words (a bare course number never becomes a title); school-decorated
+    content stays Rule 5f's business."""
+    m = _DISC_PREFIX.match(title or "")
+    if not m:
+        return ""
+    disc, content = m.group(1).strip(), m.group(2).strip()
+    if disc.casefold() not in mq:
+        return ""
+    if not re.search(r"[A-Za-z]{3}", content):
+        return ""
+    if _SCHOOL_SHAPE.search(content):
+        return ""
+    return content
+
+
+def coci_title_lookup(row, idx, cidx, ccn_titles, cid_titles):
+    """Rule 5c course-identity title for a Cx row whose raw variant embeds a
+    local course code. College-scoped ((College, SUBJ, NUM) — the articulating
+    college's own catalog row) with the global (SUBJ, NUM) view as the
+    authority fallback. Returns (title, tier, receipt) or ("", "", "")."""
+    for raw in row["raws"]:
+        for subj, num, rest in parse_course_refs(raw):
+            key = (norm_subj(subj), norm_num(num))
+            e = idx.get(key)
+            if not e:
+                continue
+            scoped = None
+            for cname in row["colleges"]:
+                sub = cidx.get((norm_college(cname), key[0], key[1]))
+                if sub:
+                    scoped = scoped or {"cids": set(), "ccns": set(),
+                                        "titles": Counter()}
+                    scoped["cids"] |= sub["cids"]
+                    scoped["ccns"] |= sub["ccns"]
+                    scoped["titles"].update(sub["titles"])
+            ccn_set = set(scoped["ccns"]) if scoped else set(e["ccns"])
+            cid_set = set(scoped["cids"]) if scoped else set(e["cids"])
+            pool = (scoped["titles"] if scoped and scoped["titles"]
+                    else e["titles"])
+            modal, modal_n = (pool.most_common(1) or [("", 0)])[0]
+            # Title-sanity guard (the CCR membership-join hazard): descriptive
+            # text beyond the code must overlap the COCI title, else this
+            # (SUBJ, NUM) is a different course and the join is noise.
+            rt = tokens(rest)
+            if rt and modal and not (rt & tokens(modal)):
+                continue
+            code = subj.upper().strip() + " " + num.upper()
+            where = (" at " + row["colleges"][0]
+                     if scoped and len(row["colleges"]) == 1 else "")
+            # CCN > C-ID (unanimity-gated, so the authority tiers are safe
+            # even without a college scope) > the local COCI course title
+            # (scoped, or unscoped only when it clearly dominates).
+            if len(ccn_set) == 1:
+                t = ccn_titles.get(next(iter(ccn_set)).upper())
+                if t:
+                    return t, "ccn", ("CCN " + next(iter(ccn_set))
+                                      + " statewide title, aligned to local course "
+                                      + code + where)
+            if len(cid_set) == 1:
+                t = cid_titles.get(next(iter(cid_set)).upper())
+                if t:
+                    return t, "cid", ("C-ID " + next(iter(cid_set))
+                                      + " descriptor title, aligned to local course "
+                                      + code + where)
+            if modal and scoped:
+                return modal, "course", ("COCI local course title for " + code + where)
+            if modal and not row["colleges"]:
+                share = modal_n / max(1, sum(pool.values()))
+                if share >= 0.6:
+                    return modal, "course", ("modal COCI title for " + code + " ("
+                                             + str(round(share * 100))
+                                             + "% of colleges teaching it)")
+    return "", "", ""
+
+
+def enrich_titles(rows, staged, residual, counts):
+    """Stage Rule 5c titles onto Cx-family rows: add `title` to entries the
+    issuer lanes already staged, and mint title-only `course-title` entries
+    (issuer: null) for queue rows no issuer lane matched — those keep their
+    `_residual` record (the issuer still needs judgment; only the title is
+    staged). Skips Military rows, resurface entries, and anything Rule 5f
+    already titled."""
+    mq, ccn_titles, cid_titles, idx, cidx = load_title_authorities()
+    if not idx and not mq:
+        return 0
+    residual_uts = {r["ut"] for r in residual}
+    enriched = 0
+    for row in rows:
+        ut = row["ut"]
+        types = set(row["cpl_types"])
+        if "Military" in types or not (types <= TITLE_OK_TYPES):
+            continue
+        entry = staged.get(ut)
+        if entry and (entry.get("title") or entry.get("resurface")):
+            continue
+        if not entry and ut not in residual_uts:
+            continue  # not in triage at all (issuer already set, nothing staged)
+        title, tier, receipt = coci_title_lookup(row, idx, cidx,
+                                                 ccn_titles, cid_titles)
+        title = _polish_title(title)
+        via_bits = tier
+        if not title and mq:
+            title = strip_discipline_prefix(row["display"], mq)
+            via_bits = "discipline-strip"
+            receipt = ("the leading MQ discipline is row metadata, not part of "
+                       "the student-facing credential name")
+        if not title or title == row["display"]:
+            continue
+        note = ("Title staged per Rule 5c (" + via_bits + "): " + receipt + ".")
+        if entry:
+            entry["title"] = title
+            entry["note"] += " " + note
+        else:
+            staged[ut] = {"issuer": None, "title": title, "via": "course-title",
+                          "confidence": 0.7,
+                          "note": note + " Issuer still needs judgment (no "
+                                  "issuer lane matched — see _residual)."}
+            counts["course-title"] = counts.get("course-title", 0) + 1
+        enriched += 1
+    return enriched
+
+
 def stage_all(rows, sw_roster, issuer_of):
     sw_index = {}
     for rec in sw_roster:
@@ -421,6 +645,14 @@ def stage_all(rows, sw_roster, issuer_of):
         entry = stage_local_trainer(row)
         if entry:
             put(ut, entry)
+            # A 5f title-cleanup entry that stages NO issuer on a null-issuer
+            # row keeps a residual record — the local trainer exists but is
+            # unidentifiable, so the issuer still needs the curator's judgment
+            # (staging CCC would contradict Rule 5f's spirit).
+            if entry.get("issuer") is None and not entry.get("resurface"):
+                residual.append({"ut": ut, "why": "Rule 5f school-decorated row "
+                                 "with an unidentifiable school — title staged; "
+                                 "issuer needs judgment"})
 
     # ── the null-issuer lanes (skip rows Rule 5f already claimed) ──
     for row in queue:
@@ -489,14 +721,17 @@ def stage_all(rows, sw_roster, issuer_of):
         residual.append({"ut": ut, "why": "no lane matched (types: "
                          + (", ".join(sorted(types)) or "none") + ")"})
 
-    return staged, residual, counts, len(queue)
+    # ── Rule 5c title pass over the triage cohort ──
+    n_titles = enrich_titles(rows, staged, residual, counts)
+
+    return staged, residual, counts, len(queue), n_titles
 
 
 def main():
     rows = load_rows()
     sw_roster, _meta = load_statewide()
     issuer_of = load_credential_issuers()
-    staged, residual, counts, queue_n = stage_all(rows, sw_roster, issuer_of)
+    staged, residual, counts, queue_n, n_titles = stage_all(rows, sw_roster, issuer_of)
 
     n_resurface = sum(1 for v in staged.values() if v.get("resurface"))
     payload = {
@@ -508,12 +743,17 @@ def main():
                   "into kb/credentials.json on the daily sync. issuer == \"\" stages "
                   "the explicit no-formal-issuer (local exhibit) verdict; issuer == "
                   "null stages NO issuer change (title/trainer cleanup only — the "
-                  "Rule-5f resurface cohort). Generated by "
+                  "Rule-5f resurface cohort). Titles are staged per Rule 5c — "
+                  "course-identity precedence (CCN > C-ID > local COCI course "
+                  "title; M-IDs excluded until stable) + the MQ-discipline-prefix "
+                  "strip; `course-title` entries stage ONLY a title (their issuer "
+                  "stays in _residual for judgment). Generated by "
                   "kb/_preseed_null_issuers.py; verify with kb/_verify_issuer_preseed.py.",
         "_generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "_queue_count": queue_n,
         "_counts": {k: counts[k] for k in sorted(counts)},
         "_resurface_count": n_resurface,
+        "_titles_staged": n_titles,
         "_residual_count": len(residual),
         "_residual": sorted(residual, key=lambda r: r["ut"]),
         "staged": {ut: staged[ut] for ut in sorted(staged)},
@@ -525,6 +765,7 @@ def main():
     print(f"rows: {len(rows)}  null-issuer queue: {queue_n}")
     print(f"staged: {len(staged)}  " + json.dumps(payload["_counts"]))
     print(f"  resurface (issuer kept, title/trainer cleanup): {n_resurface}")
+    print(f"  Rule 5c titles staged: {n_titles}")
     print(f"residual: {len(residual)}")
     for r in payload["_residual"][:12]:
         print("  ·", r["ut"], "—", r["why"])
