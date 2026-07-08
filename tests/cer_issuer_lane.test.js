@@ -208,6 +208,27 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-ni-row"))
   check("datalist: the NEW agency is immediately pickable",
     !!dl && Array.from(dl.children).some((o) => o.value === "Proctored Testing Center"));
 
+  // ── the "＋ add issuing agency" affordance (Rule 4 multi-issuer, 2026-07-08):
+  // a second agency saves to its OWN override field so it never clobbers the
+  // primary; Mode A2 promotes it additively. ──
+  const addLink = tenKey.querySelector(".cr-ni-add-issuer");
+  const inp2 = tenKey.querySelector(".cr-ni-input2");
+  check("multi-issuer: ＋ link renders; second input hidden until clicked",
+    !!addLink && !!inp2 && inp2.parentElement.style.display === "none");
+  addLink.click();
+  check("multi-issuer: click reveals the second input and hides the link",
+    inp2.parentElement.style.display === "" && addLink.style.display === "none");
+  log.writes.length = 0;
+  inp2.value = "Federal Aviation Administration (FAA)";
+  inp2.dispatchEvent(new window.Event("input", { bubbles: true }));
+  tenKey.querySelector(".cr-ni-save").click();
+  await sleep(120);
+  check("multi-issuer: saves issuing_agency_additional_override (never the primary field)",
+    log.writes.some((x) => x.body.field === "issuing_agency_additional_override"
+      && x.body.value === "Federal Aviation Administration (FAA)")
+    && !log.writes.some((x) => x.body.field === "issuing_agency_override"
+      && x.body.value === "Federal Aviation Administration (FAA)"));
+
   // ── save → re-edit → re-save (the unresponsive-firearms trap, 2026-07-08):
   // applySavedLane disables the button "✓ Saved" while the inputs stay live;
   // a keystroke used to relabel the still-DISABLED button "Save" — dead. ──

@@ -2139,3 +2139,26 @@ Collaborative — the label is not the gate). 5 rows staged via
 "American Welding Society (AWS)" family — worth aligning on one spelling.
 
 Verifier now 46 checks; suite 142 files green.
+
+**Continued-11 addendum (same day):** two more asks. (1) **The FAA
+cert-family lane** — the aircraft/airframe/powerplant Cx rows ARE the course
+side of the FAA certification family: the queue's 22 aviation rows (Part-147
+AMT curriculum at Chaffey, the 14-course Reedley FLGHT flight-training
+ladder, pilot ground school, drone-pilot Cx) sit beside an EXISTING 12-record
+"Federal Aviation Administration (FAA)" house family (Mechanic A&P/Airframe/
+Powerplant, pilot certs, CFI/CFII, Part-107 Remote Pilot). New generic
+`CERT_FAMILIES` lane (the welding/AWS precedent, runs before cx): pattern →
+certifying body; FAA staged on all 22 at 0.7. Precision guard: `drone pilot`
+never bare `drone` — "Drone Photography" is a photography course (negative
+spot check pins it). FAA added to the authority-sources KB note + SKILL.
+Bonus: Rule 5c had already resolved several opaque FLGHT codes to real COCI
+titles ("Remote Pilot Ground School for sUAS"). (2) **The "＋ add issuing
+agency" affordance** — Rule 4 multi-issuer straight from Triage: a ＋ link
+under the issuer input reveals a second input that saves to the NEW
+`issuing_agency_additional_override` field (its own kb_curation row, so it
+never clobbers the primary override), and `_apply_credential_review.py`
+Mode A2 promotes BOTH fields with the same fill-or-append / never-overwrite
+semantics — the second agency lands as its own credential record in
+kb/credentials.json on the daily sync. Empty second input = unused; clearing
+a recorded one writes "" (recorded, never promoted). Tests: the multi-issuer
+block in `tests/cer_issuer_lane.test.js` (46 assertions). Verifier 50 checks.

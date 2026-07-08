@@ -159,6 +159,20 @@ def main():
           (gtaw_adv is None)
           or gtaw_adv.get("issuer") == "American Welding Society (AWS)")
 
+    # ── cert-family lane (the FAA pass — Sam 2026-07-08) ──
+    cf = {k: v for k, v in staged.items() if v["via"] == "cert-family"}
+    check("cert-family lane never stages an empty issuer",
+          all(v["issuer"] for v in cf.values()))
+    check("cert-family notes name the certification family",
+          all("certification family" in v["note"] for v in cf.values()))
+    afr = staged.get("Airframe Structures: Primary and Secondary Systems Lab")
+    check("spot: the Part-147 airframe course stages the FAA (house spelling)",
+          (afr is None)
+          or afr.get("issuer") == "Federal Aviation Administration (FAA)")
+    dp = staged.get("Drone Photography")
+    check("spot: 'Drone Photography' is NOT an FAA row (precision guard)",
+          (dp is None) or dp["via"] != "cert-family")
+
     # ── apprenticeship lane (Norco / Santiago Canyon sponsors — Sam 2026-07-08) ──
     appr_staged = {k: v for k, v in staged.items() if v["via"] == "apprenticeship"}
     SPONSORS = {"Southwest Carpenter And Affiliated Trade J.A.T.C.",
