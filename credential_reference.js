@@ -2871,6 +2871,17 @@
       syncLabel();
       function noteDraft() {
         state.niDraft[ut] = { title: titleInp.value, issuer: inp.value };
+        // Re-editing a saved row makes it dirty again — RE-ARM the button.
+        // applySavedLane disables it as "✓ Saved" while the inputs stay
+        // live; syncLabel() then relabeled the still-DISABLED button back
+        // to "Save" on the next keystroke — the unresponsive firearms Save
+        // (Sam, 2026-07-08). Never re-arm a save that's mid-flight.
+        if (saveBtn.disabled && !saveBtn.getAttribute("data-busy")) {
+          saveBtn.disabled = false;
+          delete state.niSaved[ut];
+          tr.classList.remove("cr-wl-done");
+          updateIssuerLaneCount();
+        }
         syncLabel();
       }
       titleInp.oninput = noteDraft;
@@ -2919,12 +2930,14 @@
       return;
     }
     saveBtn.disabled = true; saveBtn.textContent = "saving…";
+    saveBtn.setAttribute("data-busy", "1");
     Promise.all(jobs.map(function (j) {
       return saveOverride(r.unified_title, j.field, j.value);
     })).then(function (rs) {
+      saveBtn.removeAttribute("data-busy");
       if (!rs.every(function (resp) { return resp && resp.ok; })) { markRowFailed(tr); return; }
       applySavedLane(r, tr, jobs);
-    }).catch(function () { markRowFailed(tr); });
+    }).catch(function () { saveBtn.removeAttribute("data-busy"); markRowFailed(tr); });
   }
   // In-place success bookkeeping (never a full re-render — unsaved input in
   // other rows must survive): the row leaves the queue on the NEXT render;

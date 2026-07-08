@@ -255,6 +255,40 @@ Title changes save as `unified_title_override` (display-only until the PR-5b
 rename re-key); issuer/trainer promote canonically via Modes A2/A3 in
 `kb/_apply_credential_review.py`.
 
+### Rule 5g — Level words move to the END of the title; "Intro" expands (Sam, 2026-07-08)
+
+Students browse/search the CER alphabetically by SUBJECT, so a leading level
+word buries the subject ("Advanced Floral Design" files under A, away from
+"Floral Design"). Styling rules for every unified title we stage or save:
+
+1. **A leading level word — `Beginning`, `Intermediate`, `Advanced` — moves to
+   the END of the title**: "Advanced Floral Design" → "Floral Design Advanced";
+   "Advanced Desserts and Pastry/Chocolate/Sugar" → "Desserts and
+   Pastry/Chocolate/Sugar Advanced". Subject families now sort together with
+   the level as the trailing differentiator.
+2. **Titles that start with "Introduction" stay as-is** — "Introduction to
+   Literature" is the natural (and often authority-verbatim) course name, not
+   a level prefix.
+3. **The abbreviation "Intro" expands to "Introduction" everywhere** ("Intro
+   to Sculpture" → "Introduction to Sculpture"). Word-boundary only —
+   "Introduction"/"Introductory" are never touched.
+4. **Official proper names are exempt from the level move** when the level
+   word is part of the credential's own name, not a course level: **Advanced
+   Placement (AP)**, **Advanced EMT** (the NREMT license level), **Advanced
+   Cardiac/Cardiovascular Life Support (ACLS)**. Rule 8b (verbatim official
+   titles) outranks 5g; extend the exemption list (`_LEVEL_KEEP` in
+   `kb/_preseed_null_issuers.py`) as cases surface.
+5. Applies AFTER the Rule 5c authority lookup — a C-ID/CCN/COCI-aligned title
+   is styled too (the note keeps the authority receipt verbatim, so alignment
+   provenance survives the reorder).
+
+Mechanized as `restyle_title()` + the `title-style` pre-seed lane in
+`kb/_preseed_null_issuers.py` (restyles every staged title; stages title-only
+entries for triage rows whose display title changes under the rule); verified
+by `kb/_verify_issuer_preseed.py`. Scope: the CER triage cohort (null-issuer
+queue + staged/resurface rows) — already-issuered credentials are NOT
+mass-resurfaced for styling alone.
+
 ### Authority sources for exhibit + agency names
 
 Consult these when a row has NO house family yet (full link card:

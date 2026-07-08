@@ -2091,3 +2091,51 @@ apprenticeship residuals), and Tableau Public is JS-rendered so bulk use would
 need runner-as-proxy or a manual export. Sam is still searching for a source
 with the college affiliation; until then the per-occupation
 `results_aigdetail` pages + region matching remain the path.
+
+## 2026-07-08 — continued 11 (SkySeal): Rule 5g title styling + the unresponsive-Save trap + the welding statewide-agency lane
+
+Three live-triage items from Sam, one wave:
+
+**Rule 5g (SKILL.md).** Students browse the CER by SUBJECT, so a leading level
+word buries it. Every staged/saved unified title: leading
+Beginning/Intermediate/Advanced moves to the END ("Advanced Floral Design" →
+"Floral Design Advanced"); "Introduction…" titles stay as-is; the abbreviation
+"Intro" expands to "Introduction" (word-boundary — Introduction/Introductory
+untouched). **Official proper names are exempt** (`_LEVEL_KEEP`): Advanced
+Placement, Advanced EMT (NREMT level), Advanced Cardiac/Cardiovascular Life
+Support — Rule 8b outranks 5g. Mechanized as `restyle_title()` + a LAST
+`restyle_pass()` in `kb/_preseed_null_issuers.py` (restyles every staged
+title including 5c/DAS ones — the authority receipt stays in the note; stages
+`title-style` entries for triage rows the rule alone changes). **68 restyles**
+this run. Pitfall found + guarded: gating new stagings on
+`restyle_title(display) != display` — without it, `_polish_title`'s SHOUTING
+detector staged a junk case-tweak ("ESL 108C" → "ESL 108c"). Scope: the triage
+cohort only — already-issuered rows are never mass-resurfaced for styling.
+
+**The unresponsive firearms Save = the save→re-edit trap.** The lane's
+`applySavedLane` disables the button ("✓ Saved") but the INPUTS stay live;
+`syncLabel()` on the next keystroke relabeled the still-disabled button back
+to "Save" — a dead, slightly-faded button (`.cr-wl-save:disabled{opacity:.6}`
+— the "light blue Save" in Sam's screenshot; Desserts had it too). Fix:
+`noteDraft()` RE-ARMS the button on any edit of a saved row (re-enable, drop
+`niSaved`, leave the done state) unless a save is mid-flight (`data-busy`
+guards the in-flight window). jsdom repro confirmed the base flow was sound —
+the trap needed save-then-re-edit in one page session. Regression:
+`tests/cer_issuer_lane.test.js` "re-edit trap" block (43 assertions total).
+
+**The welding statewide-agency lane.** The 5 welding-process Cx rows
+(GTAW ×2 / GMAW / SMAW / FCAW) are statewide exhibits whose statewide record
+carries a BLANK issuer — circular: `statewide_data.js` issuers come from
+`kb/credentials.json`, i.e. from this very queue. Sam: the agency is the
+American Welding Society (the Faculty Collaborative PDF's AGENCY row —
+"America Welding Society" is a source typo; house canonical **"American
+Welding Society (AWS)"** per Rule 6 + the AWS D1.x family). New curated
+`STATEWIDE_BLANK_ISSUERS` rules + `load_statewide_blank_titles()` — the gate
+is presence in the statewide DATASET with a blank issuer, **any collaborative
+type** (MAP types the FCAW record "Local" while its process siblings are CCC
+Collaborative — the label is not the gate). 5 rows staged via
+`statewide-agency` at 0.75. NOTE for Sam: his hand-saved welding issuer
+"American Welding Society" (no parenthetical) differs from the house
+"American Welding Society (AWS)" family — worth aligning on one spelling.
+
+Verifier now 46 checks; suite 142 files green.
