@@ -1997,3 +1997,51 @@ until that re-key merges them.
 **Suite: 142 files green** (`cer_issuer_lane.test.js` rewritten — 38
 assertions covering title-edit save, the three-override write, the
 resurface never-rewrite guard, raw/college context, and the widened queue).
+
+## 2026-07-08 — continued 10 (Session 106, SkySeal): Rule 5c mechanized — the pre-seed now stages student-searchable TITLES
+
+Sam, poking the new Triage equipment: "We are doing this work to make it as
+easy and simple as possible for prospective students to find CPL that matches
+their experience" — so the cx-lane pre-seeds should stage TITLES too, per the
+Rule 5c course-identity precedence (C-ID/CCN/common-COCI title FIRST; M-IDs
+still excluded — "many MIDs are not merged with common titles yet"). His four
+worked examples became the spec: discipline-prefix strip ("Administration of
+Justice — Community Relations" → "Community Relations"), the Lemoore HS row
+validated Rule 5f, and the East-LA code rows ("Administration of Justice 049",
+raw "ADM JUS 049") demanded a COCI lookup → local title or aligned C-ID/CCN.
+
+**Built as `enrich_titles()` in `kb/_preseed_null_issuers.py`, REUSING the
+`_suggest_unclassified.py` machinery** (one definition of `build_coci_index` /
+`parse_course_refs` / the title-sanity guard — the two scripts can't drift):
+
+- **COCI code lookup, college-scoped**: parse the local course code from the
+  raw variant, join `(College, SUBJ, NUM)` via the row's ARTICULATING colleges
+  (for a local Cx exhibit the articulating college IS whose catalog names the
+  course), fall back to the global key only for unanimity-gated CCN/C-ID tiers
+  or a ≥60%-dominant modal title. Tier order CCN > C-ID > local COCI title.
+  SHOUTING-CASE catalog titles are title-cased (`_polish_title` — roman
+  numerals + a small acronym allowlist preserved): "NARCOTICS AND VICE
+  CONTROL" → "Narcotics and Vice Control".
+- **Discipline-prefix strip**: `<exact MQ discipline> — <content>` sheds the
+  prefix (240-name MQ vocabulary; content must carry real words; school-
+  decorated content stays Rule 5f's).
+- **`course-title` lane**: queue rows NO issuer lane matched (the types-none
+  "Administration of Justice 102" family) still stage a title — issuer stays
+  null AND the row keeps its `_residual` record (title staged; issuer still
+  needs judgment). Same for 5f rows with unidentifiable schools.
+
+Run: **131 titles staged** (111 onto existing cx/family entries + 20
+course-title) — AoJ 049 → "Narcotics and Vice Control" (East LA local title),
+AoJ 067 → C-ID "Community and the Justice System", AoJ 075 → C-ID
+"Introduction to Corrections". Verifier grew to **32 checks** (arithmetic
+redefined: issuer-STAGING entries + residual == queue; titled entries cite
+their rule; staged title ≠ current display; Sam's example spot-anchors).
+ZERO client changes needed — the Session-106 lane UI already prefills
+`ps.title` and saves the override.
+
+**Gotcha for future sandbox runs:** `build_coci_index()` needs `openpyxl`,
+absent in a fresh sandbox — and `load_title_authorities()` deliberately
+soft-fails, so a missing module silently yields 7 titles instead of 131
+(`pip install openpyxl` first; the count line "Rule 5c titles staged: N" is
+the tell). SKILL.md Rule 5c now carries the discipline-prefix + code-lookup
+items and the mechanization note.

@@ -38,12 +38,16 @@ def main():
     rows = load_queue_index()
 
     resurface = {k: v for k, v in staged.items() if v.get("resurface")}
-    core = {k: v for k, v in staged.items() if not v.get("resurface")}
+    # core = entries that STAGE AN ISSUER (issuer != null) on a queue row —
+    # the arithmetic cohort. Title-only `course-title` entries keep their
+    # _residual record (the issuer still needs judgment) so they are neither.
+    core = {k: v for k, v in staged.items()
+            if not v.get("resurface") and v.get("issuer") is not None}
 
     # ── structural ──
     check("payload has _about naming the stage-only contract",
           "prefill-only" in (d.get("_about") or "").lower())
-    check("non-resurface staged + residual == null-issuer queue count",
+    check("issuer-staging entries + residual == null-issuer queue count",
           len(core) + len(residual) == d.get("_queue_count"))
     check("every staged entry carries issuer/via/confidence/note keys",
           all({"issuer", "via", "confidence", "note"} <= set(v) for v in staged.values()))
@@ -55,10 +59,28 @@ def main():
     # ── queue integrity ──
     check("every staged title exists in the baked CER payload",
           all(ut in rows for ut in staged))
-    check("no non-resurface entry targets a row that already carries an issuer",
+    check("no issuer-staging entry targets a row that already carries an issuer",
           all(not rows[ut].get("issuer") for ut in core if ut in rows))
     check("resurface entries NEVER stage an issuer rewrite (issuer is null)",
           all(v.get("issuer") is None for v in resurface.values()))
+
+    # ── Rule 5c title enrichment ──
+    ct = {k: v for k, v in staged.items() if v["via"] == "course-title"}
+    check("course-title lane stages ONLY a title (issuer null, never resurface)",
+          all(v.get("issuer") is None and v.get("title") and not v.get("resurface")
+              for v in ct.values()))
+    check("course-title rows keep their _residual record (issuer still open)",
+          all(k in {r["ut"] for r in residual} for k in ct))
+    titled = {k: v for k, v in staged.items() if v.get("title")}
+    check("_titles_staged == count of Rule-5c-titled entries",
+          d.get("_titles_staged") == sum(1 for v in staged.values()
+                                         if "Rule 5c" in v.get("note", "")))
+    check("every staged title cites its rule in the note (5c or 5f)",
+          all(("Rule 5c" in v["note"] or "Rule 5f" in v["note"])
+              for v in titled.values()))
+    check("no staged title equals the row's current display title",
+          all(v["title"] != (rows[k].get("display_title") or k)
+              for k, v in titled.items() if k in rows))
 
     # ── lane rules ──
     cx = {k: v for k, v in staged.items() if v["via"] == "cx"}
@@ -125,6 +147,14 @@ def main():
     check("spot: the Summit HS row stages school-as-issuer + the stripped title (Rule 5f)",
           (summit is None) or (summit.get("issuer") == "Summit High School"
                                and summit.get("title") == "Business and Finance"))
+    # Sam's 2026-07-08 Rule 5c examples (skip silently if the data moved):
+    cr_row = staged.get("Administration of Justice — Community Relations")
+    check("spot: 'AoJ — Community Relations' sheds its discipline prefix (Rule 5c)",
+          (cr_row is None) or cr_row.get("title") == "Community Relations")
+    aoj49 = staged.get("Administration of Justice 049")
+    check("spot: the code-titled 'Administration of Justice 049' gains a COCI-"
+          "aligned title (Rule 5c lookup)",
+          (aoj49 is None) or bool(aoj49.get("title")))
 
     ok = sum(1 for _, c in results if c)
     for name, cond in results:

@@ -1,20 +1,20 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-08 · Session 106 (Rule 5f — HS/ROP schools become the agency; titles editable in Triage)",
+ "_as_of": "2026-07-08 · Session 106b (Rule 5c titles mechanized — the pre-seed now stages student-searchable titles)",
  "_session": 106,
- "_status": "The Triage issuer lane is now a complete workbench: you can edit the exhibit TITLE right there, and every row shows the raw college-entered title + originating college — no more flipping to the main list. New rule (5f) is live: HS/ROP/adult-school credit-by-exam exhibits get the school stripped from the title and set as BOTH issuing and training agency. The pre-seed re-ran under the rule: 989 rows pre-filled, including 74 school rows (AB Miller, Summit, Baldy View ROP…) with title + issuer + trainer all staged — one Save each, or bulk-save per view. Nothing saves without your click.",
+ "_status": "Triage now pre-fills TITLES per your Rule 5c examples, not just agencies: discipline prefixes stripped (“Administration of Justice — Community Relations” → “Community Relations”), and code-titled rows looked up in the college's own COCI catalog (“ADM JUS 049” @ East LA → “Narcotics and Vice Control”; aligned C-ID/CCN titles win when they exist — M-IDs stay excluded until stable). 131 titles staged across the lane, plus the 72 school rows and 985 issuer pre-fills. Everything is still prefill-only — review and Save.",
  "items": [
   {
    "id": "local-trainer-review",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "Triage → the ⚡ school rows (74, sorted first): title is pre-stripped (“Business and Finance”), issuer + trainer pre-set to the school. Review, edit anything off, Save per row or 💾 Save all."
+   "text": "Triage → the ⚡ school rows (72, sorted first): title pre-stripped, issuer + trainer pre-set to the school. Review, edit anything off, Save per row or 💾 Save all."
   },
   {
    "id": "issuer-lane-review",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "Then the rest of the pre-filled issuer lane (717 cx→CCC · 167 course-as-exhibit “no issuer” · 31 family) — bulk-save per view once eyeballed."
+   "text": "Then the rest of the pre-filled lane (716 cx→CCC · 166 course-as-exhibit “no issuer” · 31 family · 20 title-only) — many now carry Rule-5c titles (C-ID/CCN/COCI-aligned). Bulk-save per view once eyeballed."
   },
   {
    "id": "issuer-lane-residual",

@@ -112,7 +112,15 @@ student who knows the subject, not the college's naming scheme:
    `_notes` (e.g. "title anchored to C-ID AJ 200") so a future C-ID/CCN/M-ID
    re-key can ripple the title mechanically. Never put the mechanism
    (`Credit by Exam`, `CBE`, `Portfolio`) in the unified title — the CPL Type
-   column carries it (Rules 1/2).
+   column carries it (Rules 1/2). **Never a discipline prefix either** (Sam,
+   2026-07-08): `<MQ discipline> — <content>` decoration sheds the discipline
+   (`Administration of Justice — Community Relations` → `Community
+   Relations`) — the discipline lives on the row's metadata, not in the
+   student-facing search title. And a **code-only title invokes the lookup**:
+   `Administration of Justice 049` (raw `ADM JUS 049`, East LA) → find the
+   articulating college's own COCI row for that code → use its aligned CCN/
+   C-ID title if one exists, else its local course title (`Narcotics and Vice
+   Control`).
 2. **Batch Cx exhibit** (one exhibit spanning several courses) → name the
    coherent program-area umbrella a student would search (e.g. an exhibit
    bundling brake/suspension/electrical exams → `Automotive Maintenance
@@ -127,6 +135,19 @@ student who knows the subject, not the college's naming scheme:
    exhibit/articulation layer. This supersedes the old "local credential →
    `issuing_agency = null`" line in Rule 6 for Cx/portfolio specifically.
    Always the plural system name — never `California Community College`.
+
+**Mechanized (2026-07-08):** the issuer-lane pre-seed
+(`kb/_preseed_null_issuers.py` — `enrich_titles()`) stages Rule-5c titles for
+already-classified Cx rows using the SAME lookup machinery as the unclassified
+worklist's 💡 chips (`kb/_suggest_unclassified.py` — one definition, no
+drift): parse the local course code from the raw variant, join it
+COLLEGE-SCOPED into COCI via the articulating colleges, take CCN > C-ID >
+local COCI course title (SHOUTING-CASE catalog titles get title-cased), with
+the title-sanity guard against the (SUBJ, NUM) join hazard. **M-ID titles
+stay excluded until Sam declares the M-ID layer stable** — many M-IDs aren't
+merged with their common titles yet. Rows no issuer lane matched can still
+stage a title (`via: "course-title"`, issuer left null + residual-recorded).
+Prefill-only per Rule 5e; verify with `kb/_verify_issuer_preseed.py`.
 
 ### Rule 5d — Brand-family exams PRE-SEED to the existing house family (2026-07-07)
 
