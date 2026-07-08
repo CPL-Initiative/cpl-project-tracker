@@ -1,10 +1,10 @@
 {
-  "scraped_at": "2026-07-07T23:40:30.654Z",
+  "scraped_at": "2026-07-08T01:12:06.985Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
   "active_college_count": 102,
-  "star_college_count": 51,
+  "star_college_count": 52,
   "tiers": {
     "criteria": [
       "Students >= 500",
@@ -93,14 +93,14 @@
         },
         {
           "college": "West Los Angeles College",
-          "students": 715,
+          "students": 714,
           "units": 7958.5,
-          "avgUnits": 11.13076923076923,
+          "avgUnits": 11.146358543417367,
           "transcriptionRate": 89.7,
-          "avgTranscribed": 9.983916083916084,
+          "avgTranscribed": 9.997899159663865,
           "criteriaMetCount": 5,
           "militaryStudents": 112,
-          "nonMilitaryStudents": 605,
+          "nonMilitaryStudents": 604,
           "apprenticeStudents": 0,
           "savings": 8781490,
           "yearImpact": 42075109,
@@ -248,14 +248,14 @@
       "colleges": [
         {
           "college": "City College of San Francisco",
-          "students": 1856,
+          "students": 1857,
           "units": 6873,
-          "avgUnits": 3.703125,
+          "avgUnits": 3.7011308562197094,
           "transcriptionRate": 1.7,
-          "avgTranscribed": 0.06357758620689655,
+          "avgTranscribed": 0.06354334948842219,
           "criteriaMetCount": 2,
           "militaryStudents": 1078,
-          "nonMilitaryStudents": 779,
+          "nonMilitaryStudents": 780,
           "apprenticeStudents": 7,
           "savings": 11896455,
           "yearImpact": 41791651,
@@ -443,13 +443,13 @@
         },
         {
           "college": "Cuesta College",
-          "students": 246,
+          "students": 254,
           "units": 61.5,
-          "avgUnits": 0.25,
+          "avgUnits": 0.2421259842519685,
           "transcriptionRate": 95.1,
-          "avgTranscribed": 0.23780487804878048,
+          "avgTranscribed": 0.23031496062992127,
           "criteriaMetCount": 1,
-          "militaryStudents": 153,
+          "militaryStudents": 161,
           "nonMilitaryStudents": 93,
           "apprenticeStudents": 1,
           "savings": 61942.5,
@@ -833,13 +833,13 @@
         },
         {
           "college": "Santa Rosa Junior College",
-          "students": 430,
+          "students": 433,
           "units": 1720,
-          "avgUnits": 4,
+          "avgUnits": 3.972286374133949,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 430,
+          "militaryStudents": 433,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 2968680,
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "48,801",
+      "value": "48,812",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "25,321"
+          "value": "25,332"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 48801,
+    "Students": 48812,
     "Units": 233054.15000000002,
     "TranscribedUnits": 101500.95,
     "Savings": 322625065.25,
     "YearImpact": 1305665141.3999999,
-    "MilitaryStudents": 25321,
+    "MilitaryStudents": 25332,
     "NonMilitaryStudents": 23557,
     "AprenticeStudents": 755,
-    "AverageUnits": 4.775601934386591,
-    "TranscribedAverage": 2.079894879203295
+    "AverageUnits": 4.774525731377531,
+    "TranscribedAverage": 2.0794261656969595
   }
 }

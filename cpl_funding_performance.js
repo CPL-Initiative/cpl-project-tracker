@@ -4,11 +4,11 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-07-07",
+ "as_of": "2026-07-08",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified (context, not a priority metric) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 41025,
+  "pe": 41036,
   "p2": 4775,
   "p3": 16310
  },
@@ -125,7 +125,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Cuesta": {
-   "pe": 85,
+   "pe": 93,
    "p2": null,
    "p2_suppressed": true,
    "p3": null,
@@ -449,7 +449,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Santa Rosa": {
-   "pe": 429,
+   "pe": 432,
    "p2": 0,
    "p3": 0
   },

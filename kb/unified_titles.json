@@ -47180,5 +47180,109 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-07-07T19:00:08.573805+00:00",
     "reviewed_by": "map@rccd.edu"
+  },
+  "Automotive Welding, Cutting, and Modification": {
+    "unified_title": "Automotive Welding, Cutting, and Modification",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-08",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T23:44:36.130524+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Basic Electric Arc Welding": {
+    "unified_title": "Basic Electric Arc Welding",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-08",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T23:44:45.791157+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Basic Fire Academy-Firefighter II": {
+    "unified_title": "Firefighter 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-08",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T23:45:49.166329+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Basic Mechanical Blueprint Reading": {
+    "unified_title": "Basic Mechanical Blueprint Reading",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-08",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-08T00:04:26.143575+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Beginning Arc Welding": {
+    "unified_title": "Beginning Arc Welding",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-08",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-08T00:04:26.570655+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Biocom Institute Technician Certification (BioTC) - This certification has no expiration": {
+    "unified_title": "Biocom Institute Technician Certification (BioTC)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-08",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-08T00:04:26.631833+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "C-10 Electrical Contractor": {
+    "unified_title": "C-10 Electrical Contractor",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-08",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-08T00:04:26.679595+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "C-29 Masonry Contractor": {
+    "unified_title": "C-29 Masonry Contractor",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-08",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-08T00:04:26.733991+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "C-36 Plumbing Contractor": {
+    "unified_title": "C-36 Plumbing Contractor",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-08",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-08T00:04:26.780139+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "C-46 Solar Contractor": {
+    "unified_title": "C-46 Solar Contractor",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-08",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-08T00:04:26.836614+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "C-47 General Manufactured Housing Contractor": {
+    "unified_title": "C-47 General Manufactured Housing Contractor",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-08",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-08T00:04:26.889365+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "C-5 Framing and Rough Carpentry Contractor": {
+    "unified_title": "C-5 Framing and Rough Carpentry Contractor",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-08",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-08T00:04:26.938166+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Industry Credentials for Introduction to Computers": {
+    "unified_title": "Introduction to Computers",
+    "confidence_title": 1.0,
+    "classified_at": "2026-07-08",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-07-07T23:55:50.236714+00:00",
+    "reviewed_by": "map@rccd.edu"
   }
 }

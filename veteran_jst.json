@@ -1,14 +1,14 @@
 {
-  "scraped_at": "2026-07-07T23:40:31.181291+00:00",
+  "scraped_at": "2026-07-08T01:12:07.543164+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25321,
-    "star_colleges": 51
+    "jst": 25332,
+    "star_colleges": 52
   },
-  "computed_star_colleges": 51,
+  "computed_star_colleges": 52,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 296,
@@ -137,7 +137,7 @@
     },
     "Santa Rosa Junior College": {
       "vets": 523,
-      "jst": 430,
+      "jst": 433,
       "star": true
     },
     "Sierra College": {
@@ -412,8 +412,8 @@
     },
     "Cuesta College": {
       "vets": 206,
-      "jst": 153,
-      "star": false
+      "jst": 161,
+      "star": true
     },
     "Los Medanos College": {
       "vets": 146,
