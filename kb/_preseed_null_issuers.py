@@ -213,6 +213,61 @@ def _bigram_ok(toks):
 
 APPR_RX = re.compile(r"\([^)]*articulation[^)]*\)\s*$", re.I)
 
+# ── Apprenticeship sponsors by region (Sam, 2026-07-08) ────────────────────
+# The DIR DAS program-sponsor search is not exact, so these are BEST-OPTION
+# prefills by college region (Sam: "prepopulating with best option is good
+# for now"). Norco + Santiago Canyon apprenticeship exhibits:
+#   carpentry (the default — "This will be the case for Norco and Santiago
+#   Canyon"): Southwest Carpenter And Affiliated Trade J.A.T.C. (the existing
+#   house spelling, 9 records) — DAS occId=82.
+#   electrician: Riverside Area Electrical J. A. C. — DAS occId=490.
+# ⚠ "IBEW" alone is NOT an electrical signal here: the Norco "IBEW/Carpenters
+# Articulation" rows are CARPENTRY (curated correction, 2026-05-20) — the
+# electrical branch requires an electric token AND no carpentry token.
+CARPENTERS_JATC = "Southwest Carpenter And Affiliated Trade J.A.T.C."
+RIVERSIDE_ELEC_JAC = "Riverside Area Electrical J. A. C."
+_DAS_URL = "https://www.dir.ca.gov/databases/das/results_aigdetail.asp?varOccId="
+
+_APPR_BLOB = re.compile(r"apprentice", re.I)
+_APPR_PAREN = re.compile(
+    r"\s*\([^)]*(?:apprenticeship|articulation)[^)]*\)\s*$", re.I)
+_ELEC_RX = re.compile(r"electric|IBEW|conduit|wir(?:e|ing)\b|volt", re.I)
+_CARP_RX = re.compile(r"carpent", re.I)
+_NORCO_RX = re.compile(r"\bNorco\b", re.I)
+_SANTIAGO_RX = re.compile(r"Santiago\s+Canyon", re.I)
+
+
+def stage_apprenticeship(row):
+    """Norco / Santiago Canyon apprenticeship exhibits: strip the
+    college/program decoration from the title and prefill the DIR-DAS-
+    registered sponsor as issuer + trainer. Returns an entry or None."""
+    blob = row["ut"] + " " + " ".join(row["raws"])
+    if not (_APPR_BLOB.search(blob) or _APPR_PAREN.search(row["display"])):
+        return None
+    if _NORCO_RX.search(blob) or "Norco College" in row["colleges"]:
+        region = "Norco"
+    elif _SANTIAGO_RX.search(blob) or "Santiago Canyon College" in row["colleges"]:
+        region = "Santiago Canyon"
+    else:
+        return None
+    if _ELEC_RX.search(blob) and not _CARP_RX.search(blob):
+        sponsor, occ, trade = RIVERSIDE_ELEC_JAC, "490", "electrician"
+    else:
+        sponsor, occ, trade = CARPENTERS_JATC, "82", "carpentry"
+    entry = {"issuer": sponsor, "trainer": sponsor, "via": "apprenticeship",
+             "confidence": 0.6}
+    clean = _APPR_PAREN.sub("", row["display"]).strip(" -–—:,")
+    note_bits = []
+    if clean and clean != row["display"]:
+        entry["title"] = clean
+        note_bits.append("college/program decoration stripped from the title")
+    entry["note"] = ("DIR DAS " + trade + " program sponsor for the " + region
+                     + " apprenticeships (Sam, 2026-07-08): " + sponsor
+                     + " — " + _DAS_URL + occ + ". Best-option prefill by "
+                     "college region (the DAS search is not exact)"
+                     + ("; " + "; ".join(note_bits) if note_bits else "") + ".")
+    return entry
+
 
 def is_apprenticeship_residual(ut):
     """The '(… Articulation)' parenthetical marks the DIR-pending apprenticeship
@@ -750,6 +805,15 @@ def stage_all(rows, sw_roster, issuer_of):
         if ut in staged:
             continue
         types = set(row["cpl_types"])
+
+        # Norco / Santiago Canyon apprenticeship exhibits — sponsor known
+        # (Sam, 2026-07-08); MUST run before the DIR-pending residual routing
+        # and before cx (these rows are Cx-typed but the sponsor, not CCC,
+        # is the issuer).
+        appr = stage_apprenticeship(row)
+        if appr:
+            put(ut, appr)
+            continue
 
         # deliberate residual families — never staged
         if is_apprenticeship_residual(ut):

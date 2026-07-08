@@ -2057,3 +2057,37 @@ scoped resolution — ADMJ 68 → "Criminal Justice Report Writing", ADMJ 72 →
 Certification", CS 111B → "Programming Fundamentals: Java". (2) The title
 gate now includes `suspect_course_as_exhibit`-flagged rows regardless of CPL
 type (rows 68/85 are IC-typed courses-as-exhibits). Titles staged 131 → 171.
+
+**Continued-10 addendum 2 (same day):** two more live-triage rulings from Sam.
+(1) **The apprenticeship lane** — Norco/Santiago Canyon apprenticeship exhibits
+strip the college/program decoration from the title and prefill the DIR-DAS-
+registered sponsor as issuer AND trainer: carpentry (the regional default) →
+"Southwest Carpenter And Affiliated Trade J.A.T.C." (DAS occId=82, the existing
+house spelling), electrician → "Riverside Area Electrical J. A. C." (occId=490).
+Best-option-by-region prefills at 0.6 confidence (Sam: "the search … is not
+exact, so prepopulating with best option is good for now"). ⚠ "IBEW" alone is
+NOT an electrical signal — the Norco "IBEW/Carpenters Articulation" rows are
+carpentry (the 2026-05-20 curated correction); electrical routes only on an
+electric token with no carpentry token. 6 Norco rows staged; the residual
+apprenticeship family at OTHER colleges stays DIR-pending. The 6 IBEW
+Electrician rows already carry a generic IBEW issuer — the never-overwrite
+guard leaves them; re-pointing them to the Riverside JAC is a curator call.
+(2) **The Modesto ENGL 102 verification** — Sam expected a C-ID/CCN title on
+"Advanced Composition and Introduction to Literature"; the lookup HAD staged
+exactly that (C-ID ENGL 120 "Introduction to Literature", unanimous across all
+4 colleges teaching ENGL 102; the AB-1111 CCN ENGL C1002 carries the SAME
+title — our COCI extract is stale-mid-CCN so the C-ID tier caught it). His
+screenshot predated the #691 Pages deploy, so the input wasn't yet prefilled
+and he hand-saved "Introduction to Literature and Composition" — a title that
+matches neither authority; flagged for his re-title call.
+
+**Continued-10 addendum 3 (same day):** Sam found the statewide **CA
+Apprenticeship Completion Dashboard** (Tableau Public — all registered CA
+apprenticeship programs). Recorded in
+`docs/kb-notes/reference-issuing-agency-authority-sources.md` under the DIR DAS
+section. It's a statistics surface, **not yet a sponsor resolver**: it carries
+no CCC-affiliation field (the join we need for the ~143 DIR-pending
+apprenticeship residuals), and Tableau Public is JS-rendered so bulk use would
+need runner-as-proxy or a manual export. Sam is still searching for a source
+with the college affiliation; until then the per-occupation
+`results_aigdetail` pages + region matching remain the path.

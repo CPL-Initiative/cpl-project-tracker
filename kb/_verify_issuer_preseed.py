@@ -75,8 +75,9 @@ def main():
     check("_titles_staged == count of Rule-5c-titled entries",
           d.get("_titles_staged") == sum(1 for v in staged.values()
                                          if "Rule 5c" in v.get("note", "")))
-    check("every staged title cites its rule in the note (5c or 5f)",
-          all(("Rule 5c" in v["note"] or "Rule 5f" in v["note"])
+    check("every staged title cites its source in the note (Rule 5c/5f or DIR DAS)",
+          all(("Rule 5c" in v["note"] or "Rule 5f" in v["note"]
+               or "DIR DAS" in v["note"])
               for v in titled.values()))
     check("no staged title equals the row's current display title",
           all(v["title"] != (rows[k].get("display_title") or k)
@@ -122,6 +123,20 @@ def main():
           all(v["issuer"] for v in fam.values()))
     check("family lane stays small/high-precision (≤ 60 rows)", len(fam) <= 60)
 
+    # ── apprenticeship lane (Norco / Santiago Canyon sponsors — Sam 2026-07-08) ──
+    appr_staged = {k: v for k, v in staged.items() if v["via"] == "apprenticeship"}
+    SPONSORS = {"Southwest Carpenter And Affiliated Trade J.A.T.C.",
+                "Riverside Area Electrical J. A. C."}
+    check("apprenticeship lane stages only the two DIR DAS sponsors",
+          all(v["issuer"] in SPONSORS for v in appr_staged.values()))
+    check("apprenticeship lane: trainer == issuer (the JATC/JAC trains)",
+          all(v.get("trainer") == v["issuer"] for v in appr_staged.values()))
+    check("apprenticeship lane notes carry the DIR DAS receipt link",
+          all("dir.ca.gov" in v["note"] for v in appr_staged.values()))
+    check("apprenticeship lane: staged titles carry no apprenticeship/articulation parens",
+          all(not re.search(r"\([^)]*(?:apprenticeship|articulation)[^)]*\)", v["title"], re.I)
+              for v in appr_staged.values() if v.get("title")))
+
     # ── deliberate residuals stay residual ──
     res_uts = {r["ut"] for r in residual}
     appr = [ut for ut in rows
@@ -129,8 +144,9 @@ def main():
             and re.search(r"\([^)]*articulation[^)]*\)\s*$", ut, re.I)
             and not re.search(r"high\s*school|\bHS\b|adult\s+(school|education|ed)|"
                               r"\bROP\b|\bROC\b", ut, re.I)]
-    check("apprenticeship-articulation rows are ALL residual (DIR-pending precedent)",
-          all(ut in res_uts for ut in appr))
+    check("apprenticeship-articulation rows are residual (DIR-pending) OR staged "
+          "via the region-sponsor lane",
+          all(ut in res_uts or ut in appr_staged for ut in appr))
     check("Military-typed rows are never staged",
           all("Military" not in (rows[k].get("cpl_types") or []) for k in staged))
 

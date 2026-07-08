@@ -264,10 +264,18 @@ Consult these when a row has NO house family yet (full link card:
 - **CA DIR Division of Apprenticeship Standards (DAS)** — registered
   apprenticeship program sponsors (the issuer for apprenticeship exhibits):
   https://www.dir.ca.gov/databases/das/aigstart.asp — per-occupation detail at
-  `results_aigdetail.asp?varOccId=<id>` (Carpenter = **2180**, Sam's source
-  for `Southwest Carpenter And Affiliated Trade J.A.T.C.`; the Northern-CA
-  counterpart is `Carpenters Training Committee for Northern California
-  (CTCNC)`).
+  `results_aigdetail.asp?varOccId=<id>`. **Resolved sponsors (Sam,
+  2026-07-08 — the DAS search is not exact, so these are BEST-OPTION prefills
+  by college region):** Norco + Santiago Canyon **carpentry** apprenticeships
+  → `Southwest Carpenter And Affiliated Trade J.A.T.C.` (occId **82**);
+  Norco + Santiago Canyon **electrician** apprenticeships → `Riverside Area
+  Electrical J. A. C.` (occId **490**). ⚠ "IBEW" alone is not an electrical
+  signal — the Norco "IBEW/Carpenters Articulation" rows are CARPENTRY
+  (curated correction 2026-05-20); route electrical only on an electric token
+  with no carpentry token. Strip the college/program parenthetical from the
+  title ("(Norco Apprenticeship)"). The Northern-CA carpentry counterpart is
+  `Carpenters Training Committee for Northern California (CTCNC)`. Mechanized
+  as the `apprenticeship` lane in `kb/_preseed_null_issuers.py`.
 - **NCCER assessments / craft catalog** — keep NCCER's naming verbatim,
   issuer `NCCER`: https://www.nccer.org/assessments/
 - **CSLB license classifications** (the future C-## contractor-license lane):
