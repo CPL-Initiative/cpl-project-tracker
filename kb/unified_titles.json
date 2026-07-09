@@ -17407,7 +17407,7 @@
     "_notes": "Module-level apprenticeship coursework."
   },
   "Carpenter’s Training Center CTCNC CARP 002": {
-    "unified_title": "Carpenters Apprenticeship — CARP 002",
+    "unified_title": "Introduction to Apprenticeship II",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17615,7 +17615,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 019": {
-    "unified_title": "Carpenters Apprenticeship — CARP 019",
+    "unified_title": "Rigging",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17641,7 +17641,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 101": {
-    "unified_title": "Carpenters Apprenticeship — CARP 101",
+    "unified_title": "Introduction to Apprenticeship I",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17745,7 +17745,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 109": {
-    "unified_title": "Carpenters Apprenticeship — CARP 109",
+    "unified_title": "Welding II",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17888,7 +17888,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 1203": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1203",
+    "unified_title": "Tool and Equipment Applications",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18044,7 +18044,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 284": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 284",
+    "unified_title": "Welding II SMAW",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18291,7 +18291,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 312": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 312",
+    "unified_title": "Rigging",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18473,7 +18473,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 608": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 608",
+    "unified_title": "Rigging",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18486,7 +18486,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 701": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 701",
+    "unified_title": "Introduction to Acoustical Apprenticeship II",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19110,7 +19110,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC FA/C": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — FA/C",
+    "unified_title": "CPR for Carpenters Apprentices",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19123,7 +19123,7 @@
     "_notes": "FA/C designator (likely 'Foreman/Apprentice Coordinator' or similar) preserved; meaning of suffix unclear from text alone, flag for review."
   },
   "Carpenter’s Training Center CTCNC OSHA": {
-    "unified_title": "Carpenters Training Committee for Northern California (CTCNC) — OSHA Training",
+    "unified_title": "OSHA 10-hour Construction Training Course",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",

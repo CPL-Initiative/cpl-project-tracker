@@ -1,6 +1,6 @@
 # Credential Rename Dry-Run — 2026-07-09
 
-Generated: `2026-07-09T23:07:09Z`
+Generated: `2026-07-09T23:26:09Z`
 
 **Mode B preview** — projects `unified_title_override` curator entries from `kb/credential_review_overlay.json` onto the post-rename state of the three credential-identity files (`unified_titles.json`, `credentials.json`, `coci_articulations.json`). Reports collisions + downstream impact. **Does NOT apply.** Apply is Cred-Ref PR-5b/1, manual workflow_dispatch.
 
@@ -11,12 +11,16 @@ Generated: `2026-07-09T23:07:09Z`
 | V1 | No two renames target the same new name | PASS ✓ |
 | V2 | Every source unified_title exists somewhere | PASS ✓ |
 | V3 | No CLEAN rename target collides with an existing credentials.json key | PASS ✓ |
-| — | Queued collisions (non-blocking — wait for a curator decision) | 16 |
+| — | Queued collisions (non-blocking — wait for a curator decision) | 13 |
 | **Apply safe** | V1–V3 pass + at least one clean rename or confirmed merge (queued collisions don't block) | **YES — PR-5b/1 can dispatch** |
 
 ## Confirmed merges (would FOLD on apply — PR-5b/2)
 
-_None._ A queued collision becomes a confirmed merge when the curator clicks **✓ Confirm merge** in the CER triage lane (writes `unified_title_merge_confirm` naming the exact target).
+| Old unified_title | ⇒ folds into | Records folding | Already on target | raw_titles | articulations |
+|---|---|---:|---:|---:|---:|
+| `Carpenters Apprenticeship — CARP 019` | ⇒ `Rigging` | 1 | 2 | 1 | 1 |
+| `Carpenters Training Committee for Northern California Apprenticeship — CARP 312` | ⇒ `Rigging` | 1 | 2 | 1 | 1 |
+| `Carpenters Training Committee for Northern California Apprenticeship — CARP 608` | ⇒ `Rigging` | 1 | 2 | 1 | 1 |
 
 ## Clean renames (would land on apply)
 
@@ -39,12 +43,9 @@ Each row's proposed new title already exists as a key in `credentials.json`. Pol
 |---|---|---|---:|---|
 | `Carpenters Apprenticeship — CARP 005` | → | `Blueprint Reading-Residential` | 1 | collision_with_existing_credential |
 | `Carpenters Apprenticeship — CARP 017` | → | `Introduction to Welding and Cutting` | 1 | collision_with_existing_credential |
-| `Carpenters Apprenticeship — CARP 019` | → | `Rigging` | 1 | collision_with_existing_credential |
 | `Carpenters Training Committee for Northern California Apprenticeship — CARP 310` | → | `Layout/Leveling Construction Site Practice` | 1 | collision_with_existing_credential |
-| `Carpenters Training Committee for Northern California Apprenticeship — CARP 312` | → | `Rigging` | 1 | collision_with_existing_credential |
 | `Carpenters Training Committee for Northern California Apprenticeship — CARP 315` | → | `Blueprint Reading-Commercial` | 1 | collision_with_existing_credential |
 | `Carpenters Training Committee for Northern California Apprenticeship — CARP 605` | → | `Blueprint Reading-Residential` | 1 | collision_with_existing_credential |
-| `Carpenters Training Committee for Northern California Apprenticeship — CARP 608` | → | `Rigging` | 1 | collision_with_existing_credential |
 | `Carpenters Training Committee for Northern California Apprenticeship — CARP 702` | → | `Blueprint Reading-Residential` | 1 | collision_with_existing_credential |
 | `Carpenters Training Committee for Northern California Apprenticeship — CARP 704` | → | `Interior Systems` | 1 | collision_with_existing_credential |
 | `Medical Core (High School Articulation) — El Modena High School` | → | `Medical Core` | 1 | collision_with_existing_credential |
