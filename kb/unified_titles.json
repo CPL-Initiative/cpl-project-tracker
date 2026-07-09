@@ -496,7 +496,7 @@
     "_notes": null
   },
   "ADJU 232 - Juvenile Justice Procedures - Credit by Exam ": {
-    "unified_title": "Juvenile Justice Procedures",
+    "unified_title": "Juvenile Law and Procedures",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -808,7 +808,7 @@
     "_notes": "Instrument pilot flight lab tied to FAA instrument rating."
   },
   "AG 101\tLeadership in Agriculture B - Credit by Exam": {
-    "unified_title": "Leadership in Agriculture",
+    "unified_title": "Leadership in Agriculture B",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -821,7 +821,7 @@
     "_notes": null
   },
   "AG 101\tLeadership in Agriculture B - Industry Certification": {
-    "unified_title": "Leadership in Agriculture",
+    "unified_title": "Leadership in Agriculture B",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8541,7 +8541,7 @@
     "_notes": "Local college course."
   },
   "ART 170 Basic Photography": {
-    "unified_title": "Basic Photography",
+    "unified_title": "Photography Beginning",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10721,7 +10721,7 @@
     "_notes": "Course code stripped."
   },
   "Auto 603 Completion": {
-    "unified_title": "Long Beach City College Auto 603",
+    "unified_title": "Automotive Brake Inspection",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10734,7 +10734,7 @@
     "_notes": "Numbered auto-trade completion certificate; specific topic unclear; flagged for review."
   },
   "Auto 611 Completion": {
-    "unified_title": "Long Beach City College Auto 611",
+    "unified_title": "Automative Engine Repair",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10747,7 +10747,7 @@
     "_notes": "Numbered completion cert; topic unclear."
   },
   "Auto 612 Completion": {
-    "unified_title": "Long Beach City College Auto 612",
+    "unified_title": "Automative Automatic Transmissions",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10760,7 +10760,7 @@
     "_notes": "Numbered completion cert; topic unclear."
   },
   "Auto 613 Completion": {
-    "unified_title": "Long Beach City College Auto 613",
+    "unified_title": "Automative Manual Transmission",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10773,7 +10773,7 @@
     "_notes": "Numbered completion cert; topic unclear."
   },
   "Auto 614 Completion": {
-    "unified_title": "Long Beach City College Auto 614",
+    "unified_title": "Automative Wheel Alignment",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10786,7 +10786,7 @@
     "_notes": "Numbered completion cert; topic unclear."
   },
   "Auto 615 Completion": {
-    "unified_title": "Long Beach City College Auto 615",
+    "unified_title": "Automative Brake System",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10799,7 +10799,7 @@
     "_notes": "Numbered completion cert; topic unclear."
   },
   "Auto 616": {
-    "unified_title": "Long Beach City College Auto 616",
+    "unified_title": "Automative Electrical Systems",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10812,7 +10812,7 @@
     "_notes": "Numbered course; topic unclear."
   },
   "Auto 617 Completion": {
-    "unified_title": "Long Beach City College Auto 617",
+    "unified_title": "Automotive Air Conditioner",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10825,7 +10825,7 @@
     "_notes": "Numbered completion cert; topic unclear."
   },
   "Auto 618 Completion": {
-    "unified_title": "Long Beach City College Auto 618",
+    "unified_title": "Automative Fuel Systems",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10838,7 +10838,7 @@
     "_notes": "Numbered completion cert; topic unclear."
   },
   "Auto 619 Completion": {
-    "unified_title": "Long Beach City College Auto 619",
+    "unified_title": "Automotive Light Diesel Engines",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -20930,7 +20930,7 @@
     "_notes": null
   },
   "Credit by Exam - Mexican Folklorico II": {
-    "unified_title": "Mexican Folklorico II",
+    "unified_title": "Mexican Folklorico 2",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21633,7 +21633,7 @@
     "_notes": null
   },
   "Credit by Exam- Mexican Folklorico IV": {
-    "unified_title": "Mexican Folklorico IV",
+    "unified_title": "Mexican Folklorico 4",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21802,7 +21802,7 @@
     "_notes": null
   },
   "Credit by Exam-Mexican Folklorico I": {
-    "unified_title": "Mexican Folklorico I",
+    "unified_title": "Mexican Folklorico 1",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21815,7 +21815,7 @@
     "_notes": null
   },
   "Credit by Exam-Mexican Folklorico III": {
-    "unified_title": "Mexican Folklorico III",
+    "unified_title": "Mexican Folklorico 3",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -22049,7 +22049,7 @@
     "_notes": "First-semester Spanish course."
   },
   "Credit by Exam: Spanish 2 (SPA-2)": {
-    "unified_title": "Spanish 2",
+    "unified_title": "Elementary Spanish 2",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -25546,7 +25546,7 @@
     "_notes": "Local college course; code stripped."
   },
   "Excel I CIS 072D Cx": {
-    "unified_title": "Microsoft Excel I",
+    "unified_title": "Microsoft Excel 1",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -33855,7 +33855,7 @@
     "_notes": "Local fire recruit academy."
   },
   "Keyboarding": {
-    "unified_title": "Keyboarding",
+    "unified_title": "Music Keyboards 1",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -34154,7 +34154,7 @@
     "_notes": "Local college course."
   },
   "Leadership High School to College Articulation": {
-    "unified_title": "Leadership (High School Articulation)",
+    "unified_title": "Leadership",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -34777,7 +34777,7 @@
     "_notes": "Local MA course."
   },
   "MDAST 323 - Medical Assisting Clinical - Indsutry Certification ": {
-    "unified_title": "Medical Assisting Clinical",
+    "unified_title": "Medical Assisting Clinical Procedures",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -34803,7 +34803,7 @@
     "_notes": "Local MA course."
   },
   "MDAST 325 - Medical Assisting Lab Procedures - Industry Certification ": {
-    "unified_title": "Medical Assisting Lab Procedures",
+    "unified_title": "Medical Assisting Laboratory Procedures",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -35340,7 +35340,7 @@
     "_notes": "Articulated against LVN licensure as the underlying credential."
   },
   "Math 095 CBE ": {
-    "unified_title": "Mathematics (MATH 095)",
+    "unified_title": "Intermediate Algebra",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -35482,7 +35482,7 @@
     "_notes": "FAA Part 65 A&P mechanic certificate; raw title doesn't say FAA but no other issuer fits."
   },
   "Medical Core - Canyon High School": {
-    "unified_title": "Medical Core (High School Articulation) — Canyon High School",
+    "unified_title": "Medical Core",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36441,7 +36441,7 @@
     "_notes": null
   },
   "NURSING 402 - Pharmacology ": {
-    "unified_title": "Pharmacology (Nursing)",
+    "unified_title": "Pharmacology",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36467,7 +36467,7 @@
     "_notes": null
   },
   "NURSING 404 - Maternal and Newborn Health Care": {
-    "unified_title": "Maternal and Newborn Health Care (Nursing)",
+    "unified_title": "Maternal and Newborn Health Care",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -39913,7 +39913,7 @@
     "_notes": null
   },
   "SPAN 102\tSpanish 2 - Industry Certification": {
-    "unified_title": "Spanish 2",
+    "unified_title": "Elementary Spanish 2",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -39926,7 +39926,7 @@
     "_notes": null
   },
   "SPAN 102 CBE": {
-    "unified_title": "Spanish 2",
+    "unified_title": "Elementary Spanish 2",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -40030,7 +40030,7 @@
     "_notes": "Local course number; no descriptive title."
   },
   "SPAN 2": {
-    "unified_title": "Spanish 2",
+    "unified_title": "Elementary Spanish 2",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -43181,7 +43181,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "ADJU 232 - Juvenile Justice Procedures - Credit by Exam": {
-    "unified_title": "Juvenile Justice Procedures",
+    "unified_title": "Juvenile Law and Procedures",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
@@ -43510,7 +43510,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "MDAST 323 - Medical Assisting Clinical - Indsutry Certification": {
-    "unified_title": "Medical Assisting Clinical",
+    "unified_title": "Medical Assisting Clinical Procedures",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
@@ -43518,7 +43518,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "MDAST 325 - Medical Assisting Lab Procedures - Industry Certification": {
-    "unified_title": "Medical Assisting Lab Procedures",
+    "unified_title": "Medical Assisting Laboratory Procedures",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
@@ -43566,7 +43566,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "NURSING 402 - Pharmacology": {
-    "unified_title": "Pharmacology (Nursing)",
+    "unified_title": "Pharmacology",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
@@ -44006,7 +44006,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Math 095 CBE": {
-    "unified_title": "Mathematics (MATH 095)",
+    "unified_title": "Intermediate Algebra",
     "confidence_title": 1.0,
     "classified_at": "2026-06-03",
     "classified_by": "curator (CER unclassified-triage)",
