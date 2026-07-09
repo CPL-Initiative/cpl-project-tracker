@@ -1,0 +1,19 @@
+{
+ "_executed_at": "2026-07-09T22:22:45+00:00",
+ "_via": "Supabase MCP execute_sql (project hvuwhnbuahrtptokpqfh)",
+ "applied": {
+  "subj_override=CARP": 12,
+  "discipline_override=Carpentry": 12
+ },
+ "conflicts_skipped": 0,
+ "post_verify": "select by cohort reviewer_email -> 12 + 12 rows, reviewed_at 2026-07-09 22:22:45+00",
+ "_wave2": {
+  "_executed_at": "2026-07-09 (same session, ~22:40 UTC)",
+  "applied": {
+   "subj_override=CARP": 114,
+   "discipline_override=Carpentry": 114
+  },
+  "conflicts_skipped": 0,
+  "post_verify": "cohort totals now 126 + 126 (wave1 12 + wave2 114)"
+ }
+}

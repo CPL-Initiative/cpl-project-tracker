@@ -130,6 +130,16 @@ M-ID — is the shared key that makes an articulation **systemically
 adoptable** from one college to many. When a course later earns a CCN or
 C-ID, re-key it from its M-ID and set `id_system` accordingly.
 
+## COCI Lookup tab data (added Session 110)
+
+`kb/_build_coci_lookup.py` builds the **COCI Lookup** tab's static files from
+`kb/reference/coci_course_list.xlsx` ⊕ the minted M-ID join
+(`coci_minted_memberships.json` + `coci_minted_singletons.json`, keyed by
+`control_number`): root `coci_lookup_data.js` (compact row array, ~17 MB,
+lazy on first tab open) + 25 `coci_lookup_desc_<A-Z>.js` description shards
+(fetched per expanded row). STATIC — rebuild on a fresh COCI extract; NOT
+daily-cron artifacts. The tab renderer is root `coci_lookup.js`.
+
 ## Status
 
 **Phase 2 seed — hand-curated, 50 raw titles** (credential layer) plus

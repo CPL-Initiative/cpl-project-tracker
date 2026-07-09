@@ -224,3 +224,66 @@ Tests: `tests/cer_v2_round3.test.js` (24); grid + round-2 tests updated for
 the ↺ reset button sharing `.cr-export-btn` (find export buttons by label,
 never index). Suite 150 files green.
 
+
+## 2026-07-09 (Session 110) — carpentry pass 2 CLOSED + the stale identities-map find + the COCI Lookup tab
+
+Sam drove this one live (three mid-session messages + the decisive MAP export).
+
+1. **SUBJ/Discipline fills (252 rows, receipted).** Sam's calls: queue rows →
+   **SUBJ CARP / Discipline Carpentry** (Carpentry is a curator-reviewed CCR
+   canonical: SUBJ4 `CARP`, reviewed 2026-05-23 — so the pair is
+   registry-consistent), then (screenshot) the whole CTCNC family deriving
+   CNST/Construction Technology → CARP/Carpentry too. Wave 1 = the 12
+   zero-articulation queue rows; wave 2 = 104 CNST-deriving family rows + the
+   10 blank trade-program rows (Cabinetmaker/Carpenter/Pile Driver/… — flagged
+   in the receipt for spot-review, e.g. Drywall Applicator's course siblings
+   derive INDT). INDT/DRAF/MACH/CNSC/ARCH/ELEC-deriving family rows kept their
+   honest derivations. Cohorts `carp-subj-s110@bot` / `carp-disc-s110@bot`,
+   INSERT-only, fresh-read precheck (zero collisions). Receipts:
+   `kb/carp_fill_out/2026-07-09/`.
+2. **The title dig ENDED — Sam's MAP export is the authority.** He pulled the
+   MAP Dashboard "Collaborative Exhibits" export for American River (committed
+   in the receipt dir) and gave the derivation rule: *title = Credit
+   Recommendation minus the "N hours in " prefix* (the same data rides the
+   daily Custom Report pull). **18 titles written** (cohort
+   `carp-title-s110@bot`): the 12 unresolvables + the 3 Riggings + CARP 1203 +
+   FA/C ("CPR for Carpenters Apprentices") + OSHA Training ("OSHA 10-hour
+   Construction Training Course"). MAP itself does NOT differentiate the 3
+   Riggings (019/312/608 are all just "Rigging" — trade-band lanes:
+   0xx carpenter · 3xx scaffold erector · 6xx); collision folds (Rigging ×3,
+   Blueprint Reading-Residential ×3 incl. an existing key, etc.) queue in the
+   **⇒ Merge confirms lane for Sam's per-row ✓** — the PR-5b gate, never
+   auto-folded. Excluded as still-ambiguous: 707/710/713 + CTCNC Work
+   Experience (two distinct credit recs each in MAP). Bonus receipt:
+   `ctcnc_equivalence_crosswalk.json` — ARC's catalog descriptions literally
+   say "equivalent of course number NNN for the Carpenters Training
+   Committee…" (86 mappings; corroborates the MAP titles).
+3. **ROOT-CAUSE FIND — Sam's "where does CARP 1203 come from?"** The CER
+   drawer said CNST M1009 = "Finish Carpentry", but all 3 of M1009's members
+   are "Tool and Equipment Applications". The **`identities` map inside
+   `kb/coci_articulations.json` was never re-keyed by the 2026-06-12 fold's
+   slot-reuse permutation — 681 of its 693 catalog-shared keys still describe
+   each slot's PRE-fold occupant.** Fixed generator-side in
+   `export_credential_reference()`: the minted/singleton catalogs (re-keyed by
+   every apply) now REPLACE identities-sourced title/discipline/TOP on
+   overlap; identities still covers C-ID/CCN anchor keys. Verified: M1009 now
+   derives "Tool and Equipment Applications" + TOP 0952.10. The S109 renames
+   were unaffected (0/113 mismatches — their via-M-IDs postdate the fold).
+   Residual: `_build_statewide_prescriptive()` reads only `over_merged` from
+   the stale map (low stakes, noted); the durable fix is adding the identities
+   rebuild to the re-mint post-apply chain. KB note:
+   `docs/kb-notes/methodology-rekey-derived-identity-maps.md`.
+4. **SUBJ Code filter (CER).** Datalist input beside Discipline over distinct
+   `subjOf(r)` — override-aware (the overlay pre-seeds `_subj`, so the CARP
+   fills are first-class). `tests/cer_subj_filter.test.js` (11).
+5. **COCI Lookup tab** (`#coci-lookup`, Reference & Curation group) — Sam's
+   ask mid-dig: the raw COCI catalog as a lookup surface. 141,738 rows ·
+   120 colleges, key fields + **M-ID/C-ID/CCN chips per row** (control-number
+   join via memberships + singletons; 119,977 rows carry an M-ID), catalog
+   description on row expand. Sortable headers, search/College/Subject/
+   identity/credit filters, drag-resizable widths (`cplCociColWidths.v1`),
+   ⬇ CSV of the filtered set. Builder `kb/_build_coci_lookup.py` →
+   `coci_lookup_data.js` (17 MB, lazy on first open) + 25 per-subject-letter
+   description shards (56 MB, fetched per expanded row). STATIC artifacts —
+   rebuild on a fresh COCI extract; NOT in the daily git add list.
+   `tests/coci_lookup.test.js` (20). Suite: **152 files green**.

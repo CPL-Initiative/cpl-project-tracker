@@ -1,0 +1,85 @@
+{
+ "_job": "carp-title-s110",
+ "_stamp": "2026-07-09",
+ "_cohort": "carp-title-s110@bot",
+ "_source": "Sam's MAP Dashboard 'Collaborative Exhibits' export filtered to American River College (uploaded 2026-07-09; committed as map_export_titles.json). Derivation rule per Sam: title = Credit Recommendation minus the '<N> hours in ' prefix. Same data rides the daily MAP Custom Report pull (Articulations & Exhibits) — re-derivable from the pipeline.",
+ "_collision_semantics": "INSERT-only unified_title_override on all 18. Rows whose target collides with an existing credential key (005/017/019/310/312/315/605/608/702/704 + the Rigging/Blueprint batch-dups) surface in the CER '⇒ Merge confirms' lane for Sam's per-row ✓ — the apply script only folds a collision with a confirmed merge row (PR-5b #698). Non-colliding renames fold as plain renames on the next apply.",
+ "_excluded": {
+  "CARP 707/710/713": "two distinct credit recs each in the MAP export (two exhibit versions) — still ambiguous, left for Sam",
+  "CTCNC Work Experience": "two distinct credit recs (Drywall/Lathing vs Carpenters) — ambiguous, left for Sam"
+ },
+ "applied": [
+  {
+   "ut": "Carpenters Apprenticeship — CARP 002",
+   "new_title": "Introduction to Apprenticeship II"
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 005",
+   "new_title": "Blueprint Reading-Residential"
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 017",
+   "new_title": "Introduction to Welding and Cutting"
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 019",
+   "new_title": "Rigging"
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 101",
+   "new_title": "Introduction to Apprenticeship I"
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 109",
+   "new_title": "Welding II"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 284",
+   "new_title": "Welding II SMAW"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 310",
+   "new_title": "Layout/Leveling Construction Site Practice"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 312",
+   "new_title": "Rigging"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 315",
+   "new_title": "Blueprint Reading-Commercial"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 605",
+   "new_title": "Blueprint Reading-Residential"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 608",
+   "new_title": "Rigging"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 701",
+   "new_title": "Introduction to Acoustical Apprenticeship II"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 702",
+   "new_title": "Blueprint Reading-Residential"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 704",
+   "new_title": "Interior Systems"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1203",
+   "new_title": "Tool and Equipment Applications"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — FA/C",
+   "new_title": "CPR for Carpenters Apprentices"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California (CTCNC) — OSHA Training",
+   "new_title": "OSHA 10-hour Construction Training Course"
+  }
+ ]
+}
