@@ -184,9 +184,14 @@ const rowByTitle = (doc, needle) => Array.from(doc.querySelectorAll("tr.cr-row")
     JSON.parse(window.localStorage.getItem("cplCerCols.v1")).elig === true);
 
   // ── E. extract buttons: live CSV + JSON ──
-  const exportBtns = Array.from(doc.querySelectorAll(".cr-export-btn"));
+  // Find by label — round 3's ↺ reset-widths button shares .cr-export-btn
+  // (it precedes them in DOM order inside the ⚙ panel), so positional
+  // indexes are no longer stable.
+  const exportBtns = Array.from(doc.querySelectorAll(".cr-export-btn"))
+    .filter((b) => !b.classList.contains("cr-resetw-btn"));
   check("exports: both buttons render", exportBtns.length === 2);
-  exportBtns[1].click();  // ⬇ JSON
+  const jsonBtnE = exportBtns.find((b) => txt(b) === "⬇ JSON");
+  jsonBtnE.click();
   await sleep(30);
   check("exports: JSON download produced", log.blobs.length >= 1);
   const jsonText = await log.blobs[log.blobs.length - 1].text();
@@ -197,7 +202,7 @@ const rowByTitle = (doc, needle) => Array.from(doc.querySelectorAll("tr.cr-row")
     compRec.unified_title === "CompTIA A+ (Core 1 + Core 2)");
   check("exports: JSON carries SUBJ + raw variants",
     compRec.subj === "CISC" && compRec.raw_variants.length === 2);
-  exportBtns[0].click();  // ⬇ Excel (CSV)
+  exportBtns.find((b) => txt(b) === "⬇ Excel (CSV)").click();
   await sleep(30);
   const csvText = await log.blobs[log.blobs.length - 1].text();
   check("exports: CSV header row present", /Unified Title,Issuing Agency/.test(csvText));

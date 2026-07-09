@@ -53,6 +53,7 @@
   // precedent): they live in Supabase, render live, and ride the ⬇ extracts.
   var FIELD_DISC_OVERRIDE    = "discipline_override";
   var FIELD_SUBJ_OVERRIDE    = "subj_override";
+  var FIELD_CPLTYPE_OVERRIDE = "cpl_type_override";
   var QFLAG_OPTIONS = ["", "suspect_course_as_exhibit", "not_a_credential", "duplicate_of_other"];
 
   // ── Unclassified-triage worklist ──────────────────────────────────────────
@@ -307,6 +308,10 @@
             rec.subj_override = row.value || "";
             rec.subj_overridden_by = row.reviewer_email;
             rec.subj_overridden_at = row.reviewed_at;
+          } else if (row.field === FIELD_CPLTYPE_OVERRIDE) {
+            rec.cpltype_override = row.value || "";
+            rec.cpltype_overridden_by = row.reviewer_email;
+            rec.cpltype_overridden_at = row.reviewed_at;
           }
         });
         return m;
@@ -818,8 +823,13 @@
     if (state.flagOnly && !row.has_quality_flag) return false;
     // CER v2 lean filters + grid lanes (2026-07-09)
     if (state.cplTypeFilter !== "all"
-        && (row.cpl_types || []).indexOf(state.cplTypeFilter) < 0) return false;
+        && cplTypesOf(row).indexOf(state.cplTypeFilter) < 0) return false;
     if (state.discFilter !== "all" && row.disc_modal !== state.discFilter) return false;
+    if (state.collegeFilter !== "all") {
+      if (state.collegeFilter === "__ccc__") {
+        if (!row.statewide) return false;
+      } else if (collegesOf(row).indexOf(state.collegeFilter) < 0) return false;
+    }
     if (!inLane(row, state.lane)) return false;
     if (state.search) {
       var q = state.search;
@@ -896,6 +906,8 @@
     lane: "all",           // all | unc | noiss | merge | open | done
     cplTypeFilter: "all",  // new lean-filter row
     discFilter: "all",
+    collegeFilter: "all",  // originating college; "__ccc__" = CCC statewide
+    colWidths: null,       // th drag-resize widths (localStorage)
     rowDraft: {},          // ut → {title, issuer, extra:[..], trainer} UNSAVED grid edits
     rowSaved: {},          // ut → true — grid row saved this session (✓ saved)
     mergeSugOpen: {},      // ut → true — the ⇆ merge-suggestion panel open
@@ -1036,6 +1048,44 @@
     if (!state.visCols) state.visCols = loadColPrefs();
     return state.visCols;
   }
+  // Column drag-resize (v2 round 3) — widths keyed by the column's sort key
+  // (stable across regens), persisted per-browser.
+  var COL_WIDTHS_KEY = "cplCerColWidths.v1";
+  function colWidths() {
+    if (!state.colWidths) {
+      try { state.colWidths = JSON.parse(localStorage.getItem(COL_WIDTHS_KEY)) || {}; }
+      catch (e) { state.colWidths = {}; }
+    }
+    return state.colWidths;
+  }
+  function saveColWidths() {
+    try { localStorage.setItem(COL_WIDTHS_KEY, JSON.stringify(state.colWidths)); }
+    catch (e) { /* private mode */ }
+  }
+  function attachResize(th, key, table) {
+    var h = el("span", { class: "cr-resize",
+      title: "Drag to resize this column (saved per-browser)." });
+    h.onmousedown = function (e) {
+      e.preventDefault(); e.stopPropagation();
+      var startX = e.clientX, startW = th.offsetWidth;
+      table.style.tableLayout = "fixed";
+      function move(ev) {
+        var w = Math.max(48, startW + (ev.clientX - startX));
+        th.style.width = w + "px";
+      }
+      function up(ev) {
+        document.removeEventListener("mousemove", move);
+        document.removeEventListener("mouseup", up);
+        colWidths()[key] = Math.max(48, startW + (ev.clientX - startX));
+        saveColWidths();
+      }
+      document.addEventListener("mousemove", move);
+      document.addEventListener("mouseup", up);
+    };
+    // A resize drag must never trigger the th's sort handler.
+    h.onclick = function (e) { e.stopPropagation(); };
+    th.appendChild(h);
+  }
 
   // Modal SUBJ4 across a credential's articulated common courses — the CCR
   // identity's subject token ("CNSR M10AA" → CNSR, "EMS 100" → EMS,
@@ -1051,6 +1101,23 @@
     });
     r._subj = best || null;
     return r._subj;
+  }
+
+  // CPL types with the curated override applied (v2 round 3 — the
+  // apprenticeship tagging lane; cpl_type_override is overlay-only like
+  // discipline/subj).
+  function cplTypesOf(r) {
+    var ov = state.overlay[r.unified_title] || {};
+    if (ov.cpltype_override) return [ov.cpltype_override];
+    return r.cpl_types || [];
+  }
+
+  // Originating colleges for a row (cached) — the audit-stamped entering
+  // college(s), falling back to articulating colleges (niColleges).
+  function collegesOf(r) {
+    if (r._colleges) return r._colleges;
+    r._colleges = niColleges(r).names;
+    return r._colleges;
   }
 
   // Lane membership for the main-grid lanes ("unc"/"noiss"/"merge" render the
@@ -1123,7 +1190,7 @@
         subj: subjOf(r),
         discipline: r.disc_modal || null,
         top_code: r.top_modal || null,
-        cpl_types: r.cpl_types || [],
+        cpl_types: cplTypesOf(r),
         statewide_ccc: !!r.statewide,
         students_served: (typeof r.students_served === "number") ? r.students_served
           : (r.served_suppressed ? "<5" : null),
@@ -1217,7 +1284,7 @@
     // CPL type (new) — union of the rows' cpl_types.
     var cplSet = {};
     state.rows.forEach(function (r) {
-      (r.cpl_types || []).forEach(function (t) { if (t) cplSet[t] = true; });
+      cplTypesOf(r).forEach(function (t) { if (t) cplSet[t] = true; });
     });
     var cplSel = el("select", { class: "cr-filter", id: "cr-cpltype-filter", title: "CPL type" });
     cplSel.appendChild(el("option", { value: "all" }, ["CPL type: any"]));
@@ -1249,6 +1316,45 @@
       });
       tb.appendChild(discDl);
     }
+
+    // Originating-college filter (v2 round 3) — audit-stamped entering
+    // college(s), falling back to articulating; "CCC (statewide)" = the
+    // statewide-collaborative rows.
+    var collegeSet = {};
+    state.rows.forEach(function (r) {
+      collegesOf(r).forEach(function (c2) { if (c2) collegeSet[c2] = true; });
+    });
+    var colDlId = "cr-college-list";
+    var colDl = document.getElementById(colDlId);
+    if (!colDl) {
+      colDl = document.createElement("datalist");
+      colDl.id = colDlId;
+      tb.appendChild(colDl);
+    }
+    clearNode(colDl);
+    colDl.appendChild(el("option", { value: "CCC (statewide)" }));
+    Object.keys(collegeSet).sort().forEach(function (c3) {
+      colDl.appendChild(el("option", { value: c3 }));
+    });
+    var collegeInput = el("input", {
+      class: "cr-filter", id: "cr-college-filter", type: "search",
+      placeholder: "College… (originating)",
+      list: colDlId, autocomplete: "off",
+      title: "Filter to credentials entered by (or articulated at) one college. Pick \"CCC (statewide)\" for the statewide-collaborative rows.",
+    });
+    if (state.collegeFilter !== "all") {
+      collegeInput.value = state.collegeFilter === "__ccc__"
+        ? "CCC (statewide)" : state.collegeFilter;
+    }
+    collegeInput.oninput = function () {
+      var v = this.value.trim();
+      if (!v) state.collegeFilter = "all";
+      else if (v === "CCC (statewide)") state.collegeFilter = "__ccc__";
+      else if (collegeSet[v]) state.collegeFilter = v;
+      else state.collegeFilter = "all";
+      render();
+    };
+    tb.appendChild(collegeInput);
 
     // Issuer typeahead — many issuers, so a datalist-backed input.
     var issuerSet = {};
@@ -1343,6 +1449,15 @@
       lab.appendChild(document.createTextNode(" " + c[1]));
       colsPanel.appendChild(lab);
     });
+    var resetW = el("button", { type: "button", class: "cr-export-btn cr-resetw-btn",
+      title: "Reset all column widths to automatic." }, ["↺ reset widths"]);
+    resetW.onclick = function () {
+      state.colWidths = {};
+      saveColWidths();
+      render();
+    };
+    resetW.style.marginTop = "6px";
+    colsPanel.appendChild(resetW);
     colsDd.appendChild(colsPanel);
     tb.appendChild(colsDd);
 
@@ -1621,7 +1736,7 @@
     if (vc.elig) COLS.push({ key: "eligible", label: "Elig. units",
       title: "Statewide CPL credit-UNITS eligible for this credential (MAP Exhibit CRs Catalog). Credit units, not a headcount." });
     COLS.push({ key: "reviewed", label: "Status",
-      title: "💾 Save appears on rows with unsaved in-cell edits; ✓ Init marks the row curator-initiated; ✎ opens the full Curate panel." });
+      title: "💾 Save appears on rows with unsaved in-cell edits. ✓ Init = a one-time review sign-off recording that you checked the AI classification (who + when) — it changes nothing in the data and is never required. ✎ opens the full Curate panel." });
 
     var headerRow = el("tr");
     COLS.forEach(function (col, idx) {
@@ -1664,6 +1779,12 @@
         }, [indicator]));
       }
       var th = el("th", attrs, children);
+      var wsaved = col.key && colWidths()[col.key];
+      if (wsaved) {
+        th.style.width = wsaved + "px";
+        table.style.tableLayout = "fixed";
+      }
+      if (col.key) attachResize(th, col.key, table);
       if (col.key) {
         th.classList.add("sortable");
         (function (k) {
@@ -1854,9 +1975,9 @@
       { k: "merge", label: "⇒ Merge confirms", n: pendingMerges().length,
         title: "Saved renames that match an EXISTING credential — confirm the merge or re-title." },
       { k: "open",  label: "○ Not initiated", n: state.rows.length - doneN,
-        title: "Rows you haven't marked initiated yet." },
+        title: "Awaiting a one-time curator sign-off. \"Initiated\" only records that a human reviewed the AI classification (who + when) — it never changes the data, and no other action is required. Work these at your own pace." },
       { k: "done",  label: "✓ Initiated", n: doneN,
-        title: "Curator-initiated rows." },
+        title: "A curator has signed off on the AI classification (the ✓ name · date stamp on the row). Purely a review receipt — the data is identical either way." },
     ];
     lanes.forEach(function (l) {
       var active = state.lane === l.k && !state.worklistOpen;
@@ -3072,7 +3193,9 @@
       "#tab-credential-reference table.cr-grid-v2 .cr-action-cell{flex-direction:row;align-items:center;gap:6px;white-space:nowrap;}" +
       // ── v2 round 2 (Sam, 2026-07-09) ──
       // The tab's overall background: cream, not gray (scoped token).
-      "#tab-credential-reference{--cer-cream:#FEF9DA;background:var(--cer-cream);}" +
+      // Cream TINT, not opaque — the First Light ghost painting shows
+      // through like the other tabs (Sam, round 3).
+      "#tab-credential-reference{--cer-cream:rgba(254,249,218,.8);background:var(--cer-cream);}" +
       "#tab-credential-reference .cr-table-wrap{background:var(--surface-opaque,#fff);}" +
       // In-cell SUBJ (uppercase display) + Discipline inputs.
       "#tab-credential-reference .cr-subj-in{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:700;text-transform:uppercase;max-width:9ch;}" +
@@ -3087,7 +3210,20 @@
       "#tab-credential-reference .cr-mergesug-warn{color:var(--mustard-text,#8B6800);font-weight:600;cursor:help;}" +
       "#tab-credential-reference .cr-mergesug-btn{border:1px solid var(--violet,#6D28D9);background:var(--violet,#6D28D9);color:#fff;border-radius:5px;font-size:.72rem;font-weight:600;padding:2px 8px;cursor:pointer;}" +
       "#tab-credential-reference .cr-mergesug-btn:disabled{opacity:.6;}" +
-      "#tab-credential-reference .cr-mergesug-close{border:none;background:none;color:var(--text-muted,#5C5C55);font-size:.7rem;cursor:pointer;text-decoration:underline;padding:2px 0 0;}";
+      "#tab-credential-reference .cr-mergesug-close{border:none;background:none;color:var(--text-muted,#5C5C55);font-size:.7rem;cursor:pointer;text-decoration:underline;padding:2px 0 0;}" +
+      // ── v2 round 3 (Sam, 2026-07-09 evening) ──
+      // Violet chip TEXT → CO seal blue (Sam's call; the violet
+      // machine-suggested coding yields to the CO palette on this tab).
+      "#tab-credential-reference .cr-chip-gen{color:var(--seal-blue,#1e40af);}" +
+      "#tab-credential-reference .cr-chip-mergesug{color:var(--seal-blue,#1e40af);border-color:var(--seal-blue,#1e40af);}" +
+      "#tab-credential-reference .cr-mergesug-h{color:var(--seal-blue,#1e40af);}" +
+      // Header row text: white, not gold.
+      "#tab-credential-reference .cr-table th{color:#fff;}" +
+      "#tab-credential-reference .cr-sort-indicator.active{color:#fff;}" +
+      // Column drag-resize handles (widths persist per-browser).
+      "#tab-credential-reference .cr-table th{position:sticky;}" +
+      "#tab-credential-reference .cr-resize{position:absolute;right:0;top:0;bottom:0;width:7px;cursor:col-resize;user-select:none;}" +
+      "#tab-credential-reference .cr-resize:hover{background:rgba(255,255,255,.35);}";
     document.head.appendChild(st);
   }
 
@@ -3153,8 +3289,9 @@
     if (!r.statewide && !r.has_local && !(r.articulations && r.articulations.length)) {
       c.appendChild(el("span", { class: "cr-chip cr-chip-none", title: "No common-course articulations resolved." }, ["— no articulations"]));
     }
-    (r.cpl_types || []).forEach(function (t) {
-      c.appendChild(el("span", { class: "cr-chip cr-chip-cpl", title: "CPL Type" }, [t]));
+    cplTypesOf(r).forEach(function (t) {
+      c.appendChild(el("span", { class: "cr-chip cr-chip-cpl",
+        title: "CPL Type" + ((state.overlay[r.unified_title] || {}).cpltype_override ? " (curated)" : "") }, [t]));
     });
     // CareerOneStop authority anchor (kb/cos_matches.json, lazy — absent until
     // the cos-authority-sync workflow first lands data). Green-lights that this
