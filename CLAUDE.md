@@ -2450,17 +2450,19 @@ verifier 56. Sam's calls pending: confirm the 6 merges · ASE/AWS/OSHA spellings
 Full story: `docs/exhibit_canonicalization_lessons.md` ("continued 12"); next: `docs/session_108_handoff.md`.
 
 
-### Session 108 — SkyPhilo: code-titled exhibits resolve from COCI + the 🔎/✨ title lookup (2026-07-08)
+### Session 108 — SkyPhilo: the big triage night — COCI code-titles, the HS rule, and the bulk-CCC close-out (2026-07-08/09)
 
-Sam's live-triage ask ("CD-005", "Cinema 24" — he was hand-searching COCI for real titles)
-shipped in one merged PR (#707). Rule 5c mech gaps closed: tight-hyphen parse ("CD-005"),
-decoration-immune sanity guard, the college-scoped subject-PREFIX hop ("Cinema 24" → CCSF
-CINE 24), and code-shaped staged titles UPGRADED to the resolved CCN > C-ID > COCI title
-(CD-005 → "Child Growth and Development" via C-ID CDEV 100 — one tier above Sam's manual
-find). Plan regen: +6 titles / 1 upgrade / 0 regressions. The TITLE column of the
-missing-issuer lane gained the #701-pattern 🔎 "what is this?" + ✨ suggest (click-to-fill,
-never auto-saved; disjoint cr-ni-t* hooks). Verifier 61; suite 145 + `cer_title_lookup` (12).
-Full story: `docs/exhibit_canonicalization_lessons.md` ("continued 14"); next: `docs/session_109_handoff.md`.
+Four merged PRs + a receipted bulk write, all beside Sam's live ~800-save pass. **#707**:
+Rule 5c mech resolves code-titled exhibits from COCI (tight-hyphen "CD-005", the
+subject-PREFIX hop "Cinema 24"→CINE 24, code-shaped staged titles upgraded to CCN > C-ID >
+COCI) + the 🔎/✨ TITLE lookup. **#710**: Sam's **HS rule — fused CCHS tokens, dotted H.S.,
+multi-school rows → "Local High School"; bare `HS ###` = subject code, never a school.
+The 17-row CCC/HS audit wrote NOTHING — his split pattern had them (audit the LIVE overlay,
+not the bake). **#711**: scoped bulk-CCC close-out — 339 rows as `ccc-bulk-s108@bot`,
+INSERT-only, 29 lost the race to his saves as designed. Fold + rename apply landed: queue
+**1,036 → 233** (200 re-prefilled). Verifier 63 (queue spots presence-conditional). Full story:
+`docs/exhibit_canonicalization_lessons.md` ("continued 14"–"15 + addendum") +
+`docs/kb-notes/methodology-live-curation-concurrency.md`; next: `docs/session_109_handoff.md`.
 
 
 ---
