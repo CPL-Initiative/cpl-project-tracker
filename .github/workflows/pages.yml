@@ -60,7 +60,9 @@ jobs:
           # served-path audit — docs/pages_lean_deploy_scope.md). The served-file
           # ASSERTION step below fails the build if any of these removed a served
           # asset, so an over-aggressive prune can never silently ship a broken site.
-          rm -rf _site/docs _site/tests _site/prototype _site/tools _site/archive \
+          # prototype/ IS served (2026-07-09): the versioned prototype gallery is
+          # the design-lock surface Sam reviews in the browser (172K, static).
+          rm -rf _site/docs _site/tests _site/tools _site/archive \
                  _site/chatbox _site/funding _site/reflections _site/nudges _site/news \
                  _site/scripts _site/.github _site/tmc/source_data
           rm -f  _site/*.xlsx _site/*.bak
@@ -126,6 +128,7 @@ jobs:
             "_site/kb/unclassified_preseed.json"
             "_site/kb/unclassified_suggestions.json"
             "_site/kb/issuer_preseed.json"
+            "_site/prototype/cer_triage_redesign_v1.html"
           )
           missing=0
           for p in "${must[@]}"; do

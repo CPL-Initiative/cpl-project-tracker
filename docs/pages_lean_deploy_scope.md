@@ -36,7 +36,7 @@ merging `pages.yml` is zero-risk. Once flipped, `pages.yml` is the deployer.
 - **`git archive HEAD | tar -x`** into `_site` — exports only committed files (no
   `.git`, `node_modules`, or gitignored junk like `*.full.json`).
 - **`rm`** the internal-only paths (default-INCLUDE, explicit-remove — so a *new*
-  served file is never accidentally dropped). Removed: `docs/ tests/ prototype/
+  served file is never accidentally dropped). Removed: `docs/ tests/
   tools/ archive/ chatbox/ funding/ reflections/ nudges/ news/ scripts/ .github/
   tmc/source_data/`, root `*.xlsx`/`*.bak`, `kb/reference/*.xlsx`, the big
   `kb/coci_minted_*.json` / `kb/cid_articulation_joins.json` staging + curated
