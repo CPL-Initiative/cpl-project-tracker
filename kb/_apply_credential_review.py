@@ -92,13 +92,32 @@ FIELDS = {
 def fetch_rows():
     # PostgREST: ?course_id=like.PREFIX%25 filters server-side so we don't pull
     # every row in kb_curation (which includes the discipline overlay too).
+    # Range-paginated with a stable order — the namespace crossed PostgREST's
+    # 1,000-row unordered cap on 2026-07-09 (1,743 rows), and a single
+    # unpaginated GET silently dropped the tail: the overlay recorded only 50
+    # of 224 live unified_title_override rows, starving the rename dry-run.
+    # Same fix as _cred_rename_apply_supabase.py / the Session-105 lesson
+    # (docs/kb-notes/methodology-paginate-postgrest-reads.md).
     endpoint = (f"{URL}/rest/v1/kb_curation"
                 "?select=course_id,field,value,reviewer_email,reviewed_at"
-                f"&course_id=like.{KEY_PREFIX}%25")
-    req = urllib.request.Request(endpoint, headers={
-        "apikey": KEY, "Authorization": f"Bearer {KEY}", "Accept": "application/json"})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return json.load(r)
+                f"&course_id=like.{KEY_PREFIX}%25"
+                "&order=course_id.asc,field.asc")
+    page_size = 1000
+    rows = []
+    start = 0
+    while True:
+        req = urllib.request.Request(endpoint, headers={
+            "apikey": KEY, "Authorization": f"Bearer {KEY}",
+            "Accept": "application/json",
+            "Range-Unit": "items",
+            "Range": f"{start}-{start + page_size - 1}"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            page = json.load(r)
+        rows.extend(page or [])
+        if not page or len(page) < page_size:
+            break
+        start += page_size
+    return rows
 
 
 # ── Mode A2 helpers — mirror kb/_fold_unclassified.py's issuer semantics;
