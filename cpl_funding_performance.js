@@ -4,11 +4,11 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-07-08",
+ "as_of": "2026-07-09",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified (context, not a priority metric) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 41095,
+  "pe": 41192,
   "p2": 4775,
   "p3": 16310
  },
@@ -59,7 +59,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Canyons": {
-   "pe": 255,
+   "pe": 330,
    "p2": 0,
    "p3": 0
   },
@@ -398,17 +398,17 @@ window.CPL_FUNDING_PERF = {
    "p3": 78
   },
   "San Diego City": {
-   "pe": 4197,
+   "pe": 4203,
    "p2": 121,
    "p3": 2837
   },
   "San Diego Mesa": {
-   "pe": 4556,
+   "pe": 4564,
    "p2": 117,
    "p3": 3095
   },
   "San Diego Miramar": {
-   "pe": 3035,
+   "pe": 3041,
    "p2": 85,
    "p3": 1502
   },
@@ -510,7 +510,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "West LA": {
-   "pe": 706,
+   "pe": 708,
    "p2": 485,
    "p3": 549
   },

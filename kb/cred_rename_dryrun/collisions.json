@@ -1,68 +1,8 @@
 {
   "_about": "Credential rename collisions detected by the dry-run. Each entry is a proposed rename whose target already exists as a key in credentials.json. Policy: NON-BLOCKING decision queue — the entry waits here (clean renames apply without it) until the curator picks a non-colliding target or explicitly confirms a merge (PR-5b/2). NEVER auto-merged; NEVER auto-disambiguated.",
-  "_generated_at": "2026-07-08T22:41:15Z",
-  "count": 11,
+  "_generated_at": "2026-07-09T00:21:40Z",
+  "count": 18,
   "collisions": [
-    {
-      "old_unified_title": "C++ Programming II",
-      "proposed_new_title": "C++ Programming",
-      "reason": "collision_with_existing_credential",
-      "existing_credential_records": 1,
-      "merge_confirm_recorded": null,
-      "rename_would_touch": {
-        "raw_titles_in_unified_titles_json": 1,
-        "articulation_records": 1,
-        "credentials_json_key_exists": true
-      },
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T22:02:43.008948+00:00",
-      "policy": "queued_pending_curator_decision"
-    },
-    {
-      "old_unified_title": "Child Growth and Development",
-      "proposed_new_title": "Child Development",
-      "reason": "collision_with_existing_credential",
-      "existing_credential_records": 1,
-      "merge_confirm_recorded": null,
-      "rename_would_touch": {
-        "raw_titles_in_unified_titles_json": 2,
-        "articulation_records": 2,
-        "credentials_json_key_exists": true
-      },
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T22:06:50.870014+00:00",
-      "policy": "queued_pending_curator_decision"
-    },
-    {
-      "old_unified_title": "Choreography II",
-      "proposed_new_title": "Choreography",
-      "reason": "collision_with_existing_credential",
-      "existing_credential_records": 1,
-      "merge_confirm_recorded": null,
-      "rename_would_touch": {
-        "raw_titles_in_unified_titles_json": 1,
-        "articulation_records": 1,
-        "credentials_json_key_exists": true
-      },
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T22:07:02.800088+00:00",
-      "policy": "queued_pending_curator_decision"
-    },
-    {
-      "old_unified_title": "Critical Thinking and the Nursing Process II",
-      "proposed_new_title": "Critical Thinking and the Nursing Process",
-      "reason": "collision_with_existing_credential",
-      "existing_credential_records": 1,
-      "merge_confirm_recorded": null,
-      "rename_would_touch": {
-        "raw_titles_in_unified_titles_json": 1,
-        "articulation_records": 1,
-        "credentials_json_key_exists": true
-      },
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T22:30:50.788528+00:00",
-      "policy": "queued_pending_curator_decision"
-    },
     {
       "old_unified_title": "Culinary Fundamentals I",
       "proposed_new_title": "Culinary Fundamentals",
@@ -166,6 +106,171 @@
       },
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-08T22:32:45.263293+00:00",
+      "policy": "queued_pending_curator_decision — becomes a regular collision (confirmable in the CER strip) once the group's first rename lands"
+    },
+    {
+      "old_unified_title": "ESL — High-Beginning Grammar for Reading and Writing",
+      "proposed_new_title": "ESL Grammar for Reading and Writing Beginning",
+      "reason": "intra_batch_same_target",
+      "first_of_group": "ESL — Beginning Grammar for Reading and Writing",
+      "existing_credential_records": 0,
+      "rename_would_touch": {
+        "raw_titles_in_unified_titles_json": 1,
+        "articulation_records": 1,
+        "credentials_json_key_exists": true
+      },
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T22:53:23.300806+00:00",
+      "policy": "queued_pending_curator_decision — becomes a regular collision (confirmable in the CER strip) once the group's first rename lands"
+    },
+    {
+      "old_unified_title": "ESL — High-Beginning Reading and Writing",
+      "proposed_new_title": "ESL Reading and Writing Beginning",
+      "reason": "intra_batch_same_target",
+      "first_of_group": "ESL — Beginning Reading and Writing",
+      "existing_credential_records": 0,
+      "rename_would_touch": {
+        "raw_titles_in_unified_titles_json": 1,
+        "articulation_records": 1,
+        "credentials_json_key_exists": true
+      },
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T22:53:24.409859+00:00",
+      "policy": "queued_pending_curator_decision — becomes a regular collision (confirmable in the CER strip) once the group's first rename lands"
+    },
+    {
+      "old_unified_title": "ESL — Intermediate Grammar for Reading and Writing",
+      "proposed_new_title": "ESL Grammar for Reading and Writing Intermediate",
+      "reason": "intra_batch_same_target",
+      "first_of_group": "ESL — High-Intermediate Grammar for Reading and Writing",
+      "existing_credential_records": 0,
+      "rename_would_touch": {
+        "raw_titles_in_unified_titles_json": 1,
+        "articulation_records": 1,
+        "credentials_json_key_exists": true
+      },
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T22:54:03.664316+00:00",
+      "policy": "queued_pending_curator_decision — becomes a regular collision (confirmable in the CER strip) once the group's first rename lands"
+    },
+    {
+      "old_unified_title": "ESL — Intermediate Reading and Writing",
+      "proposed_new_title": "ESL Reading and Writing Intermediate",
+      "reason": "intra_batch_same_target",
+      "first_of_group": "ESL — High-Intermediate Reading and Writing",
+      "existing_credential_records": 0,
+      "rename_would_touch": {
+        "raw_titles_in_unified_titles_json": 1,
+        "articulation_records": 1,
+        "credentials_json_key_exists": true
+      },
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T22:54:15.60358+00:00",
+      "policy": "queued_pending_curator_decision — becomes a regular collision (confirmable in the CER strip) once the group's first rename lands"
+    },
+    {
+      "old_unified_title": "Elementary American Sign Language I",
+      "proposed_new_title": "American Sign Language 1",
+      "reason": "intra_batch_same_target",
+      "first_of_group": "Elementary American Sign Language 1",
+      "existing_credential_records": 0,
+      "rename_would_touch": {
+        "raw_titles_in_unified_titles_json": 1,
+        "articulation_records": 1,
+        "credentials_json_key_exists": true
+      },
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T22:45:18.742251+00:00",
+      "policy": "queued_pending_curator_decision — becomes a regular collision (confirmable in the CER strip) once the group's first rename lands"
+    },
+    {
+      "old_unified_title": "Fire Science 34C",
+      "proposed_new_title": "Fire Science",
+      "reason": "intra_batch_same_target",
+      "first_of_group": "Fire Science (High School Articulation)",
+      "existing_credential_records": 0,
+      "rename_would_touch": {
+        "raw_titles_in_unified_titles_json": 1,
+        "articulation_records": 1,
+        "credentials_json_key_exists": true
+      },
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T23:08:17.975996+00:00",
+      "policy": "queued_pending_curator_decision — becomes a regular collision (confirmable in the CER strip) once the group's first rename lands"
+    },
+    {
+      "old_unified_title": "Generic Credit by Exam â€” San Diego City College",
+      "proposed_new_title": "Credit by Exam",
+      "reason": "intra_batch_same_target",
+      "first_of_group": "Generic Credit by Exam â€” Saddleback College",
+      "existing_credential_records": 0,
+      "rename_would_touch": {
+        "raw_titles_in_unified_titles_json": 1,
+        "articulation_records": 24,
+        "credentials_json_key_exists": true
+      },
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T23:23:58.686742+00:00",
+      "policy": "queued_pending_curator_decision — becomes a regular collision (confirmable in the CER strip) once the group's first rename lands"
+    },
+    {
+      "old_unified_title": "Generic Credit by Exam â€” San Diego Mesa College",
+      "proposed_new_title": "Credit by Exam",
+      "reason": "intra_batch_same_target",
+      "first_of_group": "Generic Credit by Exam â€” Saddleback College",
+      "existing_credential_records": 0,
+      "rename_would_touch": {
+        "raw_titles_in_unified_titles_json": 1,
+        "articulation_records": 34,
+        "credentials_json_key_exists": true
+      },
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T23:24:03.317219+00:00",
+      "policy": "queued_pending_curator_decision — becomes a regular collision (confirmable in the CER strip) once the group's first rename lands"
+    },
+    {
+      "old_unified_title": "High School Articulation — Anatomy and Physiology Honors (Colton-Redlands-Yucaipa ROP)",
+      "proposed_new_title": "Anatomy and Physiology Honors",
+      "reason": "intra_batch_same_target",
+      "first_of_group": "High School Articulation — Anatomy and Physiology (Honors)",
+      "existing_credential_records": 0,
+      "rename_would_touch": {
+        "raw_titles_in_unified_titles_json": 2,
+        "articulation_records": 1,
+        "credentials_json_key_exists": true
+      },
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T23:28:16.913036+00:00",
+      "policy": "queued_pending_curator_decision — becomes a regular collision (confirmable in the CER strip) once the group's first rename lands"
+    },
+    {
+      "old_unified_title": "Intermediate American Sign Language II",
+      "proposed_new_title": "American Sign Language Intermediate",
+      "reason": "intra_batch_same_target",
+      "first_of_group": "Intermediate American Sign Language I",
+      "existing_credential_records": 0,
+      "rename_would_touch": {
+        "raw_titles_in_unified_titles_json": 1,
+        "articulation_records": 1,
+        "credentials_json_key_exists": true
+      },
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T23:33:22.41269+00:00",
+      "policy": "queued_pending_curator_decision — becomes a regular collision (confirmable in the CER strip) once the group's first rename lands"
+    },
+    {
+      "old_unified_title": "Intermediate Spanish I",
+      "proposed_new_title": "Spanish Intermediate",
+      "reason": "intra_batch_same_target",
+      "first_of_group": "Intermediate Spanish",
+      "existing_credential_records": 0,
+      "rename_would_touch": {
+        "raw_titles_in_unified_titles_json": 2,
+        "articulation_records": 3,
+        "credentials_json_key_exists": true
+      },
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T23:36:04.811411+00:00",
       "policy": "queued_pending_curator_decision — becomes a regular collision (confirmable in the CER strip) once the group's first rename lands"
     }
   ]

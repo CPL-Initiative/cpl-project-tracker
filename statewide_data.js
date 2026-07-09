@@ -9,10 +9,10 @@ window.CPL_STATEWIDE = {
       "title": "Generic Credit by Exam â€” San Diego City College",
       "unified_title": "Generic Credit by Exam â€” San Diego City College",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.55,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit By Exam San Diego City College"
@@ -281,10 +281,10 @@ window.CPL_STATEWIDE = {
       "title": "Generic Credit by Exam â€” Saddleback College",
       "unified_title": "Generic Credit by Exam â€” Saddleback College",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.55,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit By Exam at Saddleback College"
@@ -843,10 +843,10 @@ window.CPL_STATEWIDE = {
       "title": "Generic Credit by Exam â€” San Diego Mesa College",
       "unified_title": "Generic Credit by Exam â€” San Diego Mesa College",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.5,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit By Exam at Mesa"
@@ -1493,10 +1493,10 @@ window.CPL_STATEWIDE = {
       "title": "Intensive Reading, Writing, and Reasoning",
       "unified_title": "Intensive Reading, Writing, and Reasoning",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "ENGL 100\tIntensive Reading, Writing, & Reasoning - Industry Certificate"
@@ -2603,10 +2603,10 @@ window.CPL_STATEWIDE = {
       "title": "Generic Credit by Exam — San Bernardino Valley College (MATH 108)",
       "unified_title": "Generic Credit by Exam — San Bernardino Valley College (MATH 108)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.5,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "MATH 108 CBE"
@@ -3343,10 +3343,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Statistics",
       "unified_title": "Introduction to Statistics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.95,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Statistics STAT C1000 Cx"
@@ -3947,10 +3947,10 @@ window.CPL_STATEWIDE = {
       "title": "General Psychology",
       "unified_title": "General Psychology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "PSYCH 101\tIntro to Psycholoy - Credit by Exam"
@@ -4094,10 +4094,10 @@ window.CPL_STATEWIDE = {
       "title": "General Psychology",
       "unified_title": "General Psychology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "PSYCH 101\tGeneral Psychology - Portfolio Review"
@@ -4243,10 +4243,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate Child Development",
       "unified_title": "Intermediate Child Development",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intermediate Child Development (Formerly Child Development) - Century High School",
@@ -4833,10 +4833,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate Education / Careers in Education",
       "unified_title": "Intermediate Education / Careers in Education",
       "is_classified": true,
-      "issuing_agency": "",
-      "training_agency": "",
+      "issuing_agency": "Century High School",
+      "training_agency": "Century High School",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intermediate Education or Careers in Education - Century High School"
@@ -4984,10 +4984,10 @@ window.CPL_STATEWIDE = {
       "title": "General Psychology (high school articulation)",
       "unified_title": "General Psychology (high school articulation)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Hanford Joint Union High School District (HJUHSD)",
       "training_agency": "Hanford Joint Union High School District (HJUHSD)",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "PSYC-C1000 articulation with HJUHSD (FA25-SU27)"
@@ -5446,10 +5446,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Psychology",
       "unified_title": "Introduction to Psychology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.95,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Psychology (CCN: PSYC C1000)",
@@ -5741,10 +5741,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Differential Equations and Linear Algebra",
       "unified_title": "Introduction to Differential Equations and Linear Algebra",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "MATH 174\tIntroduction to Differential Equations & Linear Algebra - Credit by Exam"
@@ -5891,10 +5891,10 @@ window.CPL_STATEWIDE = {
       "title": "History of the United States Since 1865",
       "unified_title": "History of the United States Since 1865",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "HIST 102\tHistory of the United States Since 1865 - Credit by Exam"
@@ -6684,10 +6684,10 @@ window.CPL_STATEWIDE = {
       "title": "Financial Accounting",
       "unified_title": "Financial Accounting",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam- ACCT 1A: Financial Accounting I",
@@ -6993,10 +6993,10 @@ window.CPL_STATEWIDE = {
       "title": "Calculus III",
       "unified_title": "Calculus III",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "MATH 173\tCalculus: Third Course - Credit by Exam"
@@ -7428,10 +7428,10 @@ window.CPL_STATEWIDE = {
       "title": "Human Sexuality",
       "unified_title": "Human Sexuality",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Human Sexuality PSY 012 Cx"
@@ -9127,10 +9127,10 @@ window.CPL_STATEWIDE = {
       "title": "Finite Mathematics",
       "unified_title": "Finite Mathematics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "MATH 130\tFinite Mathematics - Credit by Exam"
@@ -9271,10 +9271,10 @@ window.CPL_STATEWIDE = {
       "title": "Fundamentals of Public Speaking",
       "unified_title": "Fundamentals of Public Speaking",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "COMM 1000 (COMM 100) \tFundamentals of Public Speaking - Industry Certificate"
@@ -12215,10 +12215,10 @@ window.CPL_STATEWIDE = {
       "title": "History of World Civilizations I",
       "unified_title": "History of World Civilizations I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "History of World Civilizations - I HIST 003 Cx"
@@ -12648,10 +12648,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Curriculum (Early Childhood Education)",
       "unified_title": "Introduction to Curriculum (Early Childhood Education)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "CLDDV207 Introduction to Curriculum"
@@ -13374,10 +13374,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Sociology",
       "unified_title": "Introduction to Sociology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "SOCIO 101 \tIntro to Sociology - Credit by Exam"
@@ -13516,10 +13516,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Sociology",
       "unified_title": "Introduction to Sociology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "SOCIO 101\tIntroduction to Sociology - Portfolio Review"
@@ -13800,10 +13800,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Kinesiology",
       "unified_title": "Introduction to Kinesiology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.92,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Kinesiology KIN 001 Cx"
@@ -14084,10 +14084,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Accounting: Bookkeeping Concepts",
       "unified_title": "Introduction to Accounting: Bookkeeping Concepts",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Accounting: Bookkeeping Concepts"
@@ -14366,10 +14366,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate Algebra",
       "unified_title": "Intermediate Algebra",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Math 102-CBE"
@@ -15212,10 +15212,10 @@ window.CPL_STATEWIDE = {
       "title": "General Accounting",
       "unified_title": "General Accounting",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam - General Accounting"
@@ -15776,10 +15776,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Accounting",
       "unified_title": "Introduction to Accounting",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam- Introduction to Accounting"
@@ -15917,10 +15917,10 @@ window.CPL_STATEWIDE = {
       "title": "Elementary Statistics with Applications for Health Care Professionals",
       "unified_title": "Elementary Statistics with Applications for Health Care Professionals",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Elementary Statistics with Applications for Health Care Professionals"
@@ -16622,10 +16622,10 @@ window.CPL_STATEWIDE = {
       "title": "History of World Civilizations II",
       "unified_title": "History of World Civilizations II",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "History of World Civilizations - II HIST 004 Cx"
@@ -17045,10 +17045,10 @@ window.CPL_STATEWIDE = {
       "title": "Forecasting Financial Statements",
       "unified_title": "Forecasting Financial Statements",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Forecasting Financial Statemen- Credit by Exam"
@@ -22905,10 +22905,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Crime and Criminology",
       "unified_title": "Introduction to Crime and Criminology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "ADJU234 Introduction to Crime"
@@ -23708,10 +23708,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Biology",
       "unified_title": "Introduction to Biology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Local High School",
       "training_agency": "",
       "confidence_title": 0.72,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intro to Biology-High School Articulation"
@@ -23845,10 +23845,10 @@ window.CPL_STATEWIDE = {
       "title": "General Biology",
       "unified_title": "General Biology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "BIO 111\tGeneral Biology - Credit by Exam"
@@ -25433,10 +25433,10 @@ window.CPL_STATEWIDE = {
       "title": "Juvenile Justice Procedures",
       "unified_title": "Juvenile Justice Procedures",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ADJU 232 - Juvenile Justice Procedures - Credit by Exam"
@@ -25713,10 +25713,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Administration of Justice",
       "unified_title": "Introduction to Administration of Justice",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "ADJU201 Introduction to Administration of Justice"
@@ -27077,10 +27077,10 @@ window.CPL_STATEWIDE = {
       "title": "Juvenile Law and Procedures",
       "unified_title": "Juvenile Law and Procedures",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Juvenile Law and Procedures ADJ 8 Cx"
@@ -29379,10 +29379,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Firearms",
       "unified_title": "Introduction to Firearms",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "ADJU 215\tIntroduction to Firearms - Industry Certificate"
@@ -30054,10 +30054,10 @@ window.CPL_STATEWIDE = {
       "title": "Investigative Report Writing",
       "unified_title": "Investigative Report Writing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Portfolio AJ 54 Investigative Report Writing"
@@ -30999,10 +30999,10 @@ window.CPL_STATEWIDE = {
       "title": "Interview and Interrogation",
       "unified_title": "Interview and Interrogation",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Interview and Interrogation ADJ 24 Cx"
@@ -32985,10 +32985,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Administration of Justice",
       "unified_title": "Introduction to Administration of Justice",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Admin Just 1 CBE",
@@ -33563,10 +33563,10 @@ window.CPL_STATEWIDE = {
       "title": "Introductory College Chemistry",
       "unified_title": "Introductory College Chemistry",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "CHEM 143\tIntroductory College Chemistry - Industry Certification"
@@ -33697,10 +33697,10 @@ window.CPL_STATEWIDE = {
       "title": "Introductory College Chemistry",
       "unified_title": "Introductory College Chemistry",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "CHEM 143\tIntroductory College Chemistry - Advanced Placement"
@@ -33831,10 +33831,10 @@ window.CPL_STATEWIDE = {
       "title": "Introductory College Chemistry",
       "unified_title": "Introductory College Chemistry",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "CHEM 143\tIntroductory College Chemistry"
@@ -36239,10 +36239,10 @@ window.CPL_STATEWIDE = {
       "title": "ESL — Intermediate Grammar for Reading and Writing",
       "unified_title": "ESL — Intermediate Grammar for Reading and Writing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam ESL 120A Intermediate Grammar for Reading and Writing"
@@ -36372,10 +36372,10 @@ window.CPL_STATEWIDE = {
       "title": "ESL — High-Intermediate Grammar for Reading and Writing",
       "unified_title": "ESL — High-Intermediate Grammar for Reading and Writing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam ESL 120B High-Intermediate Grammar for Reading and Writing"
@@ -36505,10 +36505,10 @@ window.CPL_STATEWIDE = {
       "title": "ESL — Intermediate Reading and Writing",
       "unified_title": "ESL — Intermediate Reading and Writing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam ESL 121A Intermediate Reading and Writing"
@@ -36638,10 +36638,10 @@ window.CPL_STATEWIDE = {
       "title": "ESL — High-Intermediate Reading and Writing",
       "unified_title": "ESL — High-Intermediate Reading and Writing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam ESL 121B High-Intermediate Reading and Writing"
@@ -36771,10 +36771,10 @@ window.CPL_STATEWIDE = {
       "title": "ESL — Beginning Grammar for Reading and Writing",
       "unified_title": "ESL — Beginning Grammar for Reading and Writing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam ESL 130A Beginning Grammar for Reading and Writing"
@@ -36904,10 +36904,10 @@ window.CPL_STATEWIDE = {
       "title": "ESL — High-Beginning Grammar for Reading and Writing",
       "unified_title": "ESL — High-Beginning Grammar for Reading and Writing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam ESL 130B High-Beginning Grammar for Reading and Writing"
@@ -37037,10 +37037,10 @@ window.CPL_STATEWIDE = {
       "title": "ESL — Beginning Reading and Writing",
       "unified_title": "ESL — Beginning Reading and Writing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam ESL 131A Beginning Reading and Writing"
@@ -37170,10 +37170,10 @@ window.CPL_STATEWIDE = {
       "title": "ESL — High-Beginning Reading and Writing",
       "unified_title": "ESL — High-Beginning Reading and Writing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam ESL 131B High-Beginning Reading and Writing"
@@ -43619,10 +43619,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate Spanish I",
       "unified_title": "Intermediate Spanish I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam: Spanish 3 (SPA-3)",
@@ -44410,10 +44410,10 @@ window.CPL_STATEWIDE = {
       "title": "General Physics: Mechanics",
       "unified_title": "General Physics: Mechanics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.5,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "PHYS 101\tGeneral Physics: Mechanics - Credit by Exam"
@@ -45543,10 +45543,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate Word Processing",
       "unified_title": "Intermediate Word Processing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "OFADM 231 (change to BIT 231)\tIntermediate Word Processing - Industry Certification"
@@ -46439,10 +46439,10 @@ window.CPL_STATEWIDE = {
       "title": "Elementary Spanish",
       "unified_title": "Elementary Spanish",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam SPAN 1B Elementary Spanish"
@@ -46567,10 +46567,10 @@ window.CPL_STATEWIDE = {
       "title": "Keyboards I",
       "unified_title": "Keyboards I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam- Keyboards I"
@@ -46823,10 +46823,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate Spanish",
       "unified_title": "Intermediate Spanish",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intermediate Spanish"
@@ -48096,10 +48096,10 @@ window.CPL_STATEWIDE = {
       "title": "Elementary Spanish I",
       "unified_title": "Elementary Spanish I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam: Spanish 1 (SPA-1)",
@@ -49844,10 +49844,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Computers and Windows",
       "unified_title": "Introduction to Computers and Windows",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "OFADM 353 ( Change to BIT 353) \tIntroduction to Computers and Windows - Credit by Exam"
@@ -50860,10 +50860,10 @@ window.CPL_STATEWIDE = {
       "title": "Generic Portfolio Review — Madera College",
       "unified_title": "Generic Portfolio Review — Madera College",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.4,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Portfolio"
@@ -51622,10 +51622,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Archaeology",
       "unified_title": "Introduction to Archaeology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam- Introduction to Archaeology"
@@ -52130,10 +52130,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Physical Anthropology",
       "unified_title": "Introduction to Physical Anthropology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.92,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Physical Anthropology ANTH 001 Cx"
@@ -52511,10 +52511,10 @@ window.CPL_STATEWIDE = {
       "title": "Fundamentals of English for Business",
       "unified_title": "Fundamentals of English for Business",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Fundamentals of English for Business"
@@ -54522,10 +54522,10 @@ window.CPL_STATEWIDE = {
       "title": "Fundamentals of Music",
       "unified_title": "Fundamentals of Music",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "MUS-3 FUNDAMENTALS OF MUSIC",
@@ -55178,10 +55178,10 @@ window.CPL_STATEWIDE = {
       "title": "Elementary Spanish II",
       "unified_title": "Elementary Spanish II",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam: Spanish 2 (SPA-2)"
@@ -55439,10 +55439,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate Microsoft Word",
       "unified_title": "Intermediate Microsoft Word",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intermediate Microsoft Word"
@@ -56219,10 +56219,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate Piano",
       "unified_title": "Intermediate Piano",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam MUS 21B Intermediate Piano"
@@ -56345,10 +56345,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Art",
       "unified_title": "Introduction to Art",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.92,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Art ART 010 Cx"
@@ -57120,10 +57120,10 @@ window.CPL_STATEWIDE = {
       "title": "Basic Musicianship",
       "unified_title": "Basic Musicianship",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Basic Musicianship"
@@ -57385,10 +57385,10 @@ window.CPL_STATEWIDE = {
       "title": "Ear Training III",
       "unified_title": "Ear Training III",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Ear Training III"
@@ -57885,10 +57885,10 @@ window.CPL_STATEWIDE = {
       "title": "Elementary Piano I",
       "unified_title": "Elementary Piano I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "MUSIC 321 -Elementary Piano I"
@@ -58885,10 +58885,10 @@ window.CPL_STATEWIDE = {
       "title": "Guitar I",
       "unified_title": "Guitar I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam- Guitar I"
@@ -59010,10 +59010,10 @@ window.CPL_STATEWIDE = {
       "title": "Guitar II",
       "unified_title": "Guitar II",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam- Guitar II"
@@ -59135,10 +59135,10 @@ window.CPL_STATEWIDE = {
       "title": "Guitar III",
       "unified_title": "Guitar III",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam- Guitar III"
@@ -59260,10 +59260,10 @@ window.CPL_STATEWIDE = {
       "title": "Guitar IV",
       "unified_title": "Guitar IV",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam- Guitar IV"
@@ -60260,10 +60260,10 @@ window.CPL_STATEWIDE = {
       "title": "Hip-Hop Dance",
       "unified_title": "Hip-Hop Dance",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Hip-Hop"
@@ -63625,10 +63625,10 @@ window.CPL_STATEWIDE = {
       "title": "General Logic",
       "unified_title": "General Logic",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "General Logic PHIL 010 Cx"
@@ -63747,10 +63747,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Logic",
       "unified_title": "Introduction to Logic",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.92,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Logic PHIL 010 Cx"
@@ -63869,10 +63869,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Data Science",
       "unified_title": "Introduction to Data Science",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Data Science"
@@ -66196,10 +66196,10 @@ window.CPL_STATEWIDE = {
       "title": "Generic Portfolio Review — San Bernardino Valley College (Water Supply Technology)",
       "unified_title": "Generic Portfolio Review — San Bernardino Valley College (Water Supply Technology)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.45,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Water Supply Technology Portfolio Student 1"
@@ -68178,10 +68178,10 @@ window.CPL_STATEWIDE = {
       "title": "Historical Geology",
       "unified_title": "Historical Geology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "GEOL 166\tHistorical Geology - Credit by Exam"
@@ -69390,10 +69390,10 @@ window.CPL_STATEWIDE = {
       "title": "Engineering Design Graphics",
       "unified_title": "Engineering Design Graphics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Engineering Design Graphics"
@@ -70013,10 +70013,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Philosophy",
       "unified_title": "Introduction to Philosophy",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.92,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Philosophy PHIL 006 Cx"
@@ -72732,10 +72732,10 @@ window.CPL_STATEWIDE = {
       "title": "Economic Geography",
       "unified_title": "Economic Geography",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "GEOG 105\tEconomic Geography - Credit by Exam"
@@ -73299,10 +73299,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction for Nursing Majors",
       "unified_title": "Introduction for Nursing Majors",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "NURSE 115\tIntroduction for Nursing Majors - Industry Training"
@@ -74659,10 +74659,10 @@ window.CPL_STATEWIDE = {
       "title": "Geriatric Health Care (Nursing)",
       "unified_title": "Geriatric Health Care (Nursing)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "NURSING 407 - Geriatric Health Care"
@@ -75111,10 +75111,10 @@ window.CPL_STATEWIDE = {
       "title": "History, Trends and Issues of Nursing",
       "unified_title": "History, Trends and Issues of Nursing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "NURSING 441 - History, Trends and Issues of Nursing"
@@ -75337,10 +75337,10 @@ window.CPL_STATEWIDE = {
       "title": "Foundations of Nursing Practice",
       "unified_title": "Foundations of Nursing Practice",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam- Foundations of Nursing Practice"
@@ -75914,10 +75914,10 @@ window.CPL_STATEWIDE = {
       "title": "General Nutrition",
       "unified_title": "General Nutrition",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "General Nutrition HS 013 Cx"
@@ -76366,10 +76366,10 @@ window.CPL_STATEWIDE = {
       "title": "Family-Child Nursing",
       "unified_title": "Family-Child Nursing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Family-Child Nursing"
@@ -77672,10 +77672,10 @@ window.CPL_STATEWIDE = {
       "title": "Foods for Healthy Lifestyles",
       "unified_title": "Foods for Healthy Lifestyles",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Foods for Healthy Lifestyles"
@@ -78126,10 +78126,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Baking and Pastry",
       "unified_title": "Introduction to Baking and Pastry",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "VFOOD 220: Introduction to Baking & Pastry"
@@ -78239,10 +78239,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate Culinary Arts",
       "unified_title": "Intermediate Culinary Arts",
       "is_classified": true,
-      "issuing_agency": "",
-      "training_agency": "",
+      "issuing_agency": "Valley High School",
+      "training_agency": "Valley High School",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intermediate Culinary Arts (Formerly Culinary Arts) - Valley High School"
@@ -78463,10 +78463,10 @@ window.CPL_STATEWIDE = {
       "title": "Global Climate Change — Introduction to Weather and Climate",
       "unified_title": "Global Climate Change — Introduction to Weather and Climate",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Global Climate Change: An Introduction to Weather and Climate"
@@ -79584,10 +79584,10 @@ window.CPL_STATEWIDE = {
       "title": "Field Geography: Mountains",
       "unified_title": "Field Geography: Mountains",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Field Geography: Mountains"
@@ -79702,10 +79702,10 @@ window.CPL_STATEWIDE = {
       "title": "Environmental Geography",
       "unified_title": "Environmental Geography",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Environmental Geography"
@@ -81270,10 +81270,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Computer Networks",
       "unified_title": "Introduction to Computer Networks",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Computer Networks"
@@ -85854,10 +85854,10 @@ window.CPL_STATEWIDE = {
       "title": "Engine and Related Systems",
       "unified_title": "Engine and Related Systems",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Engine and Related Systems"
@@ -86064,10 +86064,10 @@ window.CPL_STATEWIDE = {
       "title": "Engine Performance",
       "unified_title": "Engine Performance",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Engine Performance"
@@ -88382,10 +88382,10 @@ window.CPL_STATEWIDE = {
       "title": "Fundamentals of Auto Mechanics",
       "unified_title": "Fundamentals of Auto Mechanics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "A S T 025 - Fundamentals of Auto Mechanics"
@@ -88594,10 +88594,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Automotive Vehicle Systems (HS Articulation)",
       "unified_title": "Introduction to Automotive Vehicle Systems (HS Articulation)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Lincoln Education Center",
       "training_agency": "Lincoln Education Center",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "VAUTO 668: Introduction to Automotive Vehicle Systems - Lincoln Education Center"
@@ -88699,10 +88699,10 @@ window.CPL_STATEWIDE = {
       "title": "Engine Repair (HS Articulation)",
       "unified_title": "Engine Repair (HS Articulation)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Local High School",
       "training_agency": "Lincoln Education Center",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "VAUTO 672: Engine Repair - Lincoln Education Center"
@@ -91384,10 +91384,10 @@ window.CPL_STATEWIDE = {
       "title": "Engine Performance II",
       "unified_title": "Engine Performance II",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Engine Performance II AUTO 029 Cx"
@@ -91699,10 +91699,10 @@ window.CPL_STATEWIDE = {
       "title": "Engine Performance I",
       "unified_title": "Engine Performance I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Engine Performance I AUTO 018 Cx"
@@ -91804,10 +91804,10 @@ window.CPL_STATEWIDE = {
       "title": "Fuel, Ignition, and Emission Control Systems",
       "unified_title": "Fuel, Ignition, and Emission Control Systems",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Fuel, Ignition, and Emission Control Systems"
@@ -91909,10 +91909,10 @@ window.CPL_STATEWIDE = {
       "title": "Engine Management Systems and Drivability",
       "unified_title": "Engine Management Systems and Drivability",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Engine Management Systems and Drivability"
@@ -92014,10 +92014,10 @@ window.CPL_STATEWIDE = {
       "title": "Engine Operation and Service",
       "unified_title": "Engine Operation and Service",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Engine Operation and Service"
@@ -98471,10 +98471,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Computer Graphics",
       "unified_title": "Introduction to Computer Graphics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ART 102\tIntroduction to Computer Graphics - Portfolio"
@@ -102646,10 +102646,10 @@ window.CPL_STATEWIDE = {
       "title": "Introductory Human Physiology",
       "unified_title": "Introductory Human Physiology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "PHYSO 101\tIntroductory Human Physiology - Portfolio Review"
@@ -102946,10 +102946,10 @@ window.CPL_STATEWIDE = {
       "title": "Drugs and Human Behavior",
       "unified_title": "Drugs and Human Behavior",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.5,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "PSYCH118 Drugs and Human Behavior"
@@ -105246,10 +105246,10 @@ window.CPL_STATEWIDE = {
       "title": "Human Services Field Studies and Seminar I",
       "unified_title": "Human Services Field Studies and Seminar I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "HUMSR-147\tField Studies & Seminar I - Industry Certificate"
@@ -105442,10 +105442,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Welding",
       "unified_title": "Introduction to Welding",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "VCNST 101: Introduction to Welding"
@@ -106716,10 +106716,10 @@ window.CPL_STATEWIDE = {
       "title": "Foreman Training",
       "unified_title": "Foreman Training",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Field Ironworkers Local 416",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Foreman Training"
@@ -106814,10 +106814,10 @@ window.CPL_STATEWIDE = {
       "title": "Ext & Review",
       "unified_title": "Ext & Review",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.2,
-      "confidence_issuer": 0.4,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Ext & Review"
@@ -106912,10 +106912,10 @@ window.CPL_STATEWIDE = {
       "title": "Ironworker Structural Steel I",
       "unified_title": "Ironworker Structural Steel I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
       "training_agency": "Ironworkers Joint Apprenticeship and Training Committee",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.55,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Structural Steel I"
@@ -107010,10 +107010,10 @@ window.CPL_STATEWIDE = {
       "title": "Ironworker Structural Steel II",
       "unified_title": "Ironworker Structural Steel II",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
       "training_agency": "Ironworkers Joint Apprenticeship and Training Committee",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "IW- Structural Steel II"
@@ -107108,10 +107108,10 @@ window.CPL_STATEWIDE = {
       "title": "Ironworker Welding III",
       "unified_title": "Ironworker Welding III",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
       "training_agency": "Ironworkers Joint Apprenticeship and Training Committee",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "IW- Welding III"
@@ -107206,10 +107206,10 @@ window.CPL_STATEWIDE = {
       "title": "Ironworker Structural, Architectural and Ornamental I",
       "unified_title": "Ironworker Structural, Architectural and Ornamental I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
       "training_agency": "Ironworkers Joint Apprenticeship and Training Committee",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.55,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Structural Arch Orn I"
@@ -107304,10 +107304,10 @@ window.CPL_STATEWIDE = {
       "title": "Ironworker Architectural II",
       "unified_title": "Ironworker Architectural II",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
       "training_agency": "Ironworkers Joint Apprenticeship and Training Committee",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "IW- Architectural II"
@@ -107402,10 +107402,10 @@ window.CPL_STATEWIDE = {
       "title": "Ironworker Architectural III",
       "unified_title": "Ironworker Architectural III",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
       "training_agency": "Ironworkers Joint Apprenticeship and Training Committee",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "IW- Architectural III"
@@ -110274,10 +110274,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Gas Tungsten Arc Welding (GTAW)",
       "unified_title": "Introduction to Gas Tungsten Arc Welding (GTAW)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "American Welding Society (AWS)",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction Gas Tungsten Arc Welding (GTAW) - Credit by Exam"
@@ -110381,10 +110381,10 @@ window.CPL_STATEWIDE = {
       "title": "Gas Metal Arc Welding (GMAW)",
       "unified_title": "Gas Metal Arc Welding (GMAW)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "American Welding Society (AWS)",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Gas Metal Arc Welding (GMAW) - Credit by Exam"
@@ -112809,10 +112809,10 @@ window.CPL_STATEWIDE = {
       "title": "Flux Cored Arc Welding (FCAW)",
       "unified_title": "Flux Cored Arc Welding (FCAW)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "American Welding Society (AWS)",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Flux Cored Arc Welding (FCAW) - Credit by Exam"
@@ -113177,10 +113177,10 @@ window.CPL_STATEWIDE = {
       "title": "Fundamentals of Business",
       "unified_title": "Fundamentals of Business",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Valley High School",
       "training_agency": "Valley High School",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Fundamentals of Business - Valley High School (Mr. Scanlon)",
@@ -114338,10 +114338,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Python Programming",
       "unified_title": "Introduction to Python Programming",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction Python Programming"
@@ -114435,10 +114435,10 @@ window.CPL_STATEWIDE = {
       "title": "Environmental Conservation",
       "unified_title": "Environmental Conservation",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ENSCI 108\tEnvironmental Conservation - Credit by Exam"
@@ -114530,10 +114530,10 @@ window.CPL_STATEWIDE = {
       "title": "Environmental Conservation",
       "unified_title": "Environmental Conservation",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "ENSCI 108\tEnvironmental Conservation - Industry Certification"
@@ -114720,10 +114720,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Environmental Science",
       "unified_title": "Introduction to Environmental Science",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.92,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Environmental Science ENV 001 Cx"
@@ -114815,10 +114815,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Protection Equipment and Systems",
       "unified_title": "Fire Protection Equipment and Systems",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Fire Protection Equipment and Systems FIRE 003 Cx"
@@ -114910,10 +114910,10 @@ window.CPL_STATEWIDE = {
       "title": "Generic Credit by Exam — Laney College (JOURN 21)",
       "unified_title": "Generic Credit by Exam — Laney College (JOURN 21)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "JOURN 21 - Credit by Exam"
@@ -117239,10 +117239,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Protection Equipment and Systems",
       "unified_title": "Fire Protection Equipment and Systems",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Fire Protection Equipment and Systems"
@@ -117333,10 +117333,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Prevention Technology",
       "unified_title": "Fire Prevention Technology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Fire Prevention Technology"
@@ -117719,10 +117719,10 @@ window.CPL_STATEWIDE = {
       "title": "Ethical Leadership in the Classroom",
       "unified_title": "Ethical Leadership in the Classroom",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Ethical Leadership in the Classroom"
@@ -117908,10 +117908,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Service Career Development",
       "unified_title": "Fire Service Career Development",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.4,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FTECH 308\tFire Service Career Development/Promotions - Credit by Exam",
@@ -118285,10 +118285,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Service Career Development",
       "unified_title": "Fire Service Career Development",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.4,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "FTECH 308\tFire Service Career Development/Promotions - Industry Certification"
@@ -118382,10 +118382,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Service In-Service Training — EMS",
       "unified_title": "Fire Service In-Service Training — EMS",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FTECH 321A\tFire Service In-Service Training/EMS - Credit by Exam",
@@ -118482,10 +118482,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Service In-Service Training — EMS",
       "unified_title": "Fire Service In-Service Training — EMS",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "FTECH 321A\tFire Service In-Service Training/EMS - Industry Certification",
@@ -118582,10 +118582,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Service In-Service Training — Special Operations",
       "unified_title": "Fire Service In-Service Training — Special Operations",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FTECH 322A\tFire Service In-Service Training/Special Operations - Credit by Exam",
@@ -118682,10 +118682,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Service In-Service Training — Special Operations",
       "unified_title": "Fire Service In-Service Training — Special Operations",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "FTECH 322A\tFire Service In-Service Training/Special Operations - Industry Certification",
@@ -118782,10 +118782,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Service In-Service Training — Command & Control",
       "unified_title": "Fire Service In-Service Training — Command & Control",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FTECH 323A\tFire Service In-Service Training/Command & Control - Credit by Exam",
@@ -118886,10 +118886,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Service In-Service Training — Command & Control",
       "unified_title": "Fire Service In-Service Training — Command & Control",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "FTECH 323A\tFire Service In-Service Training/Command & Control - Industry Certification",
@@ -118990,10 +118990,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Service In-Service Training — Administration",
       "unified_title": "Fire Service In-Service Training — Administration",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FTECH 324A\tFire Service In-Service Training/Administration - Credit by Exam",
@@ -119091,10 +119091,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Service In-Service Training — Administration",
       "unified_title": "Fire Service In-Service Training — Administration",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "FTECH 324A\tFire Service In-Service Training/Administration - Industry Certification",
@@ -119200,10 +119200,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Service In-Service Training — Operations",
       "unified_title": "Fire Service In-Service Training — Operations",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FTECH 325A\tFire Service In-Service Training/Operations - Credit by Exam",
@@ -119300,10 +119300,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Service In-Service Training — Operations",
       "unified_title": "Fire Service In-Service Training — Operations",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "FTECH 325A\tFire Service In-Service Training/Operations - Industry Certification",
@@ -119867,10 +119867,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Service Tactics and Strategy",
       "unified_title": "Fire Service Tactics and Strategy",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "FTECH 307\tFire Science Tactics & Strategy - Industry Certification"
@@ -120055,10 +120055,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Service In-Service Training — Administration",
       "unified_title": "Fire Service In-Service Training — Administration",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FTECH 324B\tFire Service In-Service Training/Administration - Internship/Apprenticeship"
@@ -120149,10 +120149,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Service In-Service Training — Administration",
       "unified_title": "Fire Service In-Service Training — Administration",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FTECH 324A\tFire Service In-Service Training/Administration - Internship/Apprenticeship"
@@ -120243,10 +120243,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Service In-Service Training — Special Operations",
       "unified_title": "Fire Service In-Service Training — Special Operations",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FTECH 322B\tFire Service In-Service Training/Special Operations - Internship/Apprenticeship"
@@ -120338,10 +120338,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Service In-Service Training — Command & Control",
       "unified_title": "Fire Service In-Service Training — Command & Control",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FTECH 323B Fire Service In-Service Training/Command & Control - Internship/Apprenticeship",
@@ -122914,10 +122914,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Science 34A",
       "unified_title": "Fire Science 34A",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.5,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Fire Science 34A-Industry Certification"
@@ -123008,10 +123008,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Science 34B",
       "unified_title": "Fire Science 34B",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.5,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Fire Science 34B-Industry Certification"
@@ -123102,10 +123102,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Science 34C",
       "unified_title": "Fire Science 34C",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.5,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Fire Science 34C-Industry Certification"
@@ -123196,10 +123196,10 @@ window.CPL_STATEWIDE = {
       "title": "Firefighting Technology — Baldy View ROP",
       "unified_title": "Firefighting Technology — Baldy View ROP",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Baldy View Regional Occupational Program",
       "training_agency": "Baldy View Regional Occupational Program",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Baldy View Regional Occupational Program Firefighting Technology"
@@ -123768,10 +123768,10 @@ window.CPL_STATEWIDE = {
       "title": "Hazardous Materials Operations",
       "unified_title": "Hazardous Materials Operations",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Hazardous Materials Operations FIRE 006 Cx"
@@ -123862,10 +123862,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Hydraulics and Water Supply",
       "unified_title": "Fire Hydraulics and Water Supply",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Fire Hydraulics & Water Supply FIRE 058 Cx"
@@ -126683,10 +126683,10 @@ window.CPL_STATEWIDE = {
       "title": "FIT Academy Experience",
       "unified_title": "FIT Academy Experience",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.5,
-      "confidence_issuer": 0.4,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "FIT Academy Experience (FIT-S3A, FIT-S3. FIT-1/2/4)"
@@ -126908,10 +126908,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Protection Organization",
       "unified_title": "Fire Protection Organization",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.4,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Fire Protection Organization"
@@ -127108,10 +127108,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Service Tactics and Strategy",
       "unified_title": "Fire Service Tactics and Strategy",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FTECH 307\tFire Science Tactics & Strategy - Credit by Exam",
@@ -127740,10 +127740,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Science (High School Articulation)",
       "unified_title": "Fire Science (High School Articulation)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Local High School",
       "training_agency": "College and Career Advantage",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Fire Science- College and Career Advantage"
@@ -127839,10 +127839,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Technology (High School Articulation)",
       "unified_title": "Fire Technology (High School Articulation)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "North Orange County ROP (NOCROP) — Los Alamitos HS",
       "training_agency": "North Orange County ROP (NOCROP) — Los Alamitos HS",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Fire Technology - La Habra HS / NOCROP",
@@ -127938,10 +127938,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Service (High School/Local Articulation)",
       "unified_title": "Fire Service (High School/Local Articulation)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Local High School",
       "training_agency": "Orange Fire Station",
       "confidence_title": 0.5,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Fire Service I & II - Orange Fire Station"
@@ -128251,10 +128251,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Apparatus and Equipment",
       "unified_title": "Fire Apparatus and Equipment",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Fire Apparatus and Equipment",
@@ -128350,10 +128350,10 @@ window.CPL_STATEWIDE = {
       "title": "Fundamental Recording Techniques 1",
       "unified_title": "Fundamental Recording Techniques 1",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Fundamental Recording Techniques 1"
@@ -128634,10 +128634,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Adobe Photoshop",
       "unified_title": "Introduction to Adobe Photoshop",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Adobe Photoshop- Credit by Exam"
@@ -129364,10 +129364,10 @@ window.CPL_STATEWIDE = {
       "title": "Graphic Design I",
       "unified_title": "Graphic Design I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Cleveland High School",
       "training_agency": "Cleveland High School",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Graphic Design I (MAD 116 C)",
@@ -129466,10 +129466,10 @@ window.CPL_STATEWIDE = {
       "title": "Generic Credit by Exam — San Bernardino Valley College Culinary",
       "unified_title": "Generic Credit by Exam — San Bernardino Valley College Culinary",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.45,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "CULART 011 CBE",
@@ -129574,10 +129574,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Photojournalism",
       "unified_title": "Introduction to Photojournalism",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam JAMS 12 Introduction to Photojournalism",
@@ -129672,10 +129672,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Photojournalism",
       "unified_title": "Introduction to Photojournalism",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Portfolio JAMS 12 Introduction to Photojournalism",
@@ -129980,10 +129980,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Protection Organization",
       "unified_title": "Fire Protection Organization",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.4,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "FTC 101 Fire Protection Organization (A)",
@@ -131122,10 +131122,10 @@ window.CPL_STATEWIDE = {
       "title": "Fundamental Recording Techniques 2",
       "unified_title": "Fundamental Recording Techniques 2",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Fundamental Recording Techniques 2"
@@ -131392,10 +131392,10 @@ window.CPL_STATEWIDE = {
       "title": "Game Audio Production 1",
       "unified_title": "Game Audio Production 1",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Game Audio Production 1"
@@ -131482,10 +131482,10 @@ window.CPL_STATEWIDE = {
       "title": "Game Audio Production 2",
       "unified_title": "Game Audio Production 2",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Game Audio Production 2"
@@ -132744,10 +132744,10 @@ window.CPL_STATEWIDE = {
       "title": "IT Support Fundamentals",
       "unified_title": "IT Support Fundamentals",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "CMPET 311\tIT Support Fundamentals 1 - Industry Certificate"
@@ -133104,10 +133104,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Music Technology",
       "unified_title": "Introduction to Music Technology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Portfolio MUS 35 Introduction to Music Technology"
@@ -133284,10 +133284,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Recording Arts",
       "unified_title": "Introduction to Recording Arts",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "MUSIC 165 - Introduction to Recording Arts"
@@ -133464,10 +133464,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Network Security",
       "unified_title": "Introduction to Network Security",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Introduction to Network Security"
@@ -135018,10 +135018,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Music Technology",
       "unified_title": "Introduction to Music Technology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam MUS 35 Introduction to Music Technology",
@@ -136806,10 +136806,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Drone Piloting",
       "unified_title": "Introduction to Drone Piloting",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Federal Aviation Administration (FAA)",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "VDMA 320: Introduction to Drone Pilot"
@@ -138620,10 +138620,10 @@ window.CPL_STATEWIDE = {
       "title": "HOSP 100",
       "unified_title": "HOSP 100",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.3,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "HOSP 100-CBE"
@@ -138794,10 +138794,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Digital Photography",
       "unified_title": "Introduction to Digital Photography",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intro. to Digital Photography"
@@ -139316,10 +139316,10 @@ window.CPL_STATEWIDE = {
       "title": "Fundamentals of Baking Theory",
       "unified_title": "Fundamentals of Baking Theory",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Fundamental of Baking Theory"
@@ -139403,10 +139403,10 @@ window.CPL_STATEWIDE = {
       "title": "Garde Manger II",
       "unified_title": "Garde Manger II",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Garde Manger II"
@@ -140012,10 +140012,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Baking and Pastry",
       "unified_title": "Introduction to Baking and Pastry",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Introduction to Baking & Pastry Graduate of NVC Cooking School"
@@ -140099,10 +140099,10 @@ window.CPL_STATEWIDE = {
       "title": "Garde Manger — Intermediate Professional Culinary Cookery",
       "unified_title": "Garde Manger — Intermediate Professional Culinary Cookery",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "Napa Valley Cooking School",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Garde Manger: Intermediate Professional Culinary Cookery Graduate of NVC Cooking School"
@@ -140795,10 +140795,10 @@ window.CPL_STATEWIDE = {
       "title": "Essential Baking and Meat, Poultry and Seafood Cooking Methods",
       "unified_title": "Essential Baking and Meat, Poultry and Seafood Cooking Methods",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Essential Baking and Meat, Poultry & Seafood Cooking Methods CULN 002B  Cx"
@@ -141491,10 +141491,10 @@ window.CPL_STATEWIDE = {
       "title": "Front of House and Dining Services",
       "unified_title": "Front of House and Dining Services",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Culinary: Front of House/Dining Services"
@@ -142265,10 +142265,10 @@ window.CPL_STATEWIDE = {
       "title": "Generic Industry Certification — Culinary",
       "unified_title": "Generic Industry Certification — Culinary",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.45,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "CUL 003 Industry Certification"
@@ -142872,10 +142872,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Cameras and Composition",
       "unified_title": "Introduction to Cameras and Composition",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "PHOTO 009 - Introduction to Cameras and Composition"
@@ -143479,10 +143479,10 @@ window.CPL_STATEWIDE = {
       "title": "Drone Photography",
       "unified_title": "Drone Photography",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Drone Photography"
@@ -144557,10 +144557,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Hospitality Management",
       "unified_title": "Introduction to Hospitality Management",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Hospitality Management HOSP 001 Cx"
@@ -144642,10 +144642,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Hospitality",
       "unified_title": "Introduction to Hospitality",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Hospitality"
@@ -144727,10 +144727,10 @@ window.CPL_STATEWIDE = {
       "title": "Hospitality Cost Control",
       "unified_title": "Hospitality Cost Control",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Hospitality Cost Controls"
@@ -145595,10 +145595,10 @@ window.CPL_STATEWIDE = {
       "title": "Hospitality Cost Control",
       "unified_title": "Hospitality Cost Control",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Hospitality Cost Control HOSP 002 Cx",
@@ -146021,10 +146021,10 @@ window.CPL_STATEWIDE = {
       "title": "Hospitality Supervision and Guest Relations",
       "unified_title": "Hospitality Supervision and Guest Relations",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Hospitality Supervision & Guest Relations"
@@ -146105,10 +146105,10 @@ window.CPL_STATEWIDE = {
       "title": "Event Management",
       "unified_title": "Event Management",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Event Management"
@@ -146189,10 +146189,10 @@ window.CPL_STATEWIDE = {
       "title": "Hospitality Supervision and Guest Relations",
       "unified_title": "Hospitality Supervision and Guest Relations",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Hospitality Supervision & Guest Relations"
@@ -146273,10 +146273,10 @@ window.CPL_STATEWIDE = {
       "title": "Event Management",
       "unified_title": "Event Management",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Event Management"
@@ -147414,10 +147414,10 @@ window.CPL_STATEWIDE = {
       "title": "Human Anatomy and Physiology",
       "unified_title": "Human Anatomy and Physiology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Human Anatomy and Physiology"
@@ -147495,10 +147495,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Programming",
       "unified_title": "Introduction to Programming",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "CSCI 270\tIntroduction to Programming - Credit by Exam"
@@ -148062,10 +148062,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Disease and Pharmacology",
       "unified_title": "Introduction to Disease and Pharmacology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "MDAST 324 - Introduction to Disease & Pharmacology - Industrial Certification"
@@ -148305,10 +148305,10 @@ window.CPL_STATEWIDE = {
       "title": "Engineering Graphics with CAD",
       "unified_title": "Engineering Graphics with CAD",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "EGD TEK 101 - Engineering Graphics with CAD"
@@ -148797,10 +148797,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Computer-Aided Design and Drafting",
       "unified_title": "Introduction to Computer-Aided Design and Drafting",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Computer-Aided Design and Drafting Fundamentals CADD 001 Cx"
@@ -148878,10 +148878,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate Computer-Aided Design and Drafting",
       "unified_title": "Intermediate Computer-Aided Design and Drafting",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intermediate Computer-Aided Design and Drafting CADD 002 Cx"
@@ -149923,10 +149923,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Digital Media Arts",
       "unified_title": "Introduction to Digital Media Arts",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "VDMA 310: Introduction to Digital Media Arts"
@@ -150083,10 +150083,10 @@ window.CPL_STATEWIDE = {
       "title": "Hanford West High School Articulated Course (HS-005)",
       "unified_title": "Hanford West High School Articulated Course (HS-005)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Hanford West High School",
       "training_agency": "Hanford West High School",
       "confidence_title": 0.4,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "HS-005 Articulation with Hanford West High School (SP25-SP27)"
@@ -150243,10 +150243,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Web Design and Development",
       "unified_title": "Introduction to Web Design and Development",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Web Design Development"
@@ -150322,10 +150322,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate Web Design and Development",
       "unified_title": "Intermediate Web Design and Development",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intermediate Web Design Development"
@@ -150401,10 +150401,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to UI/UX Design",
       "unified_title": "Introduction to UI/UX Design",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to UI/UX Design"
@@ -150559,10 +150559,10 @@ window.CPL_STATEWIDE = {
       "title": "HTML and CSS — Beginning",
       "unified_title": "HTML and CSS — Beginning",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "HTML and CSS - Beginning"
@@ -150717,10 +150717,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate HTML and CSS",
       "unified_title": "Intermediate HTML and CSS",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intermediate HTML and CSS"
@@ -151115,10 +151115,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Computer and Information Science",
       "unified_title": "Introduction to Computer and Information Science",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Computer and Information Science"
@@ -151271,10 +151271,10 @@ window.CPL_STATEWIDE = {
       "title": "General Machine Shop and Theory of Machining",
       "unified_title": "General Machine Shop and Theory of Machining",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "General Machine Shop and Theory of Machining"
@@ -151502,10 +151502,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Manufacturing Engineering Technology",
       "unified_title": "Introduction to Manufacturing Engineering Technology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intro to Manufac Engineer Tech"
@@ -151810,10 +151810,10 @@ window.CPL_STATEWIDE = {
       "title": "Ironworker Structural Precast Concrete",
       "unified_title": "Ironworker Structural Precast Concrete",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
       "training_agency": "Ironworkers Joint Apprenticeship and Training Committee",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "IW- Structural Precast Concrete"
@@ -152516,10 +152516,10 @@ window.CPL_STATEWIDE = {
       "title": "Generic Credit by Exam — East Los Angeles College (ARC 161)",
       "unified_title": "Generic Credit by Exam — East Los Angeles College (ARC 161)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.5,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ARC 161 CBE"
@@ -152746,10 +152746,10 @@ window.CPL_STATEWIDE = {
       "title": "History of Architecture I",
       "unified_title": "History of Architecture I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam: History Of Architecture I"
@@ -152822,10 +152822,10 @@ window.CPL_STATEWIDE = {
       "title": "History of Architecture 1",
       "unified_title": "History of Architecture 1",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Portfolio: History Of Architecture I"
@@ -152898,10 +152898,10 @@ window.CPL_STATEWIDE = {
       "title": "Elementary American Sign Language 1",
       "unified_title": "Elementary American Sign Language 1",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam-Elementary American Sign Language 1"
@@ -153126,10 +153126,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate American Sign Language I",
       "unified_title": "Intermediate American Sign Language I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intermediate American Sign Language I ASL 003 Cx"
@@ -153202,10 +153202,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate American Sign Language II",
       "unified_title": "Intermediate American Sign Language II",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intermediate American Sign Language II ASL 004 Cx"
@@ -153278,10 +153278,10 @@ window.CPL_STATEWIDE = {
       "title": "Elementary American Sign Language I",
       "unified_title": "Elementary American Sign Language I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Elementary American Sign Language I ASL 001 Cx"
@@ -153355,10 +153355,10 @@ window.CPL_STATEWIDE = {
       "title": "Elementary American Sign Language II",
       "unified_title": "Elementary American Sign Language II",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam: Elementary American Sign Language II",
@@ -153661,10 +153661,10 @@ window.CPL_STATEWIDE = {
       "title": "Infant and Toddler Development",
       "unified_title": "Infant and Toddler Development",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Infant & Toddler Development"
@@ -153961,10 +153961,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Computers and Their Uses",
       "unified_title": "Introduction to Computers and Their Uses",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Birmingham Community Charter High School",
       "training_agency": "Birmingham Community Charter High School",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "HIGH SCHOOL ARTICULATION - BIRMINGHAM CCHS: CIS 101 Introduction to Computers and Their Uses"
@@ -154336,10 +154336,10 @@ window.CPL_STATEWIDE = {
       "title": "Fundamentals of Nursing",
       "unified_title": "Fundamentals of Nursing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Fundamentals of Nursing"
@@ -154411,10 +154411,10 @@ window.CPL_STATEWIDE = {
       "title": "Fundamentals of Nursing Laboratory",
       "unified_title": "Fundamentals of Nursing Laboratory",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Fundamentals of Nursing Laboratory"
@@ -154711,10 +154711,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate Nursing Skills / Clinical Simulation Laboratory",
       "unified_title": "Intermediate Nursing Skills / Clinical Simulation Laboratory",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.72,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intermediate Nursing Skills/Clinical Simulation Laboratory"
@@ -154861,10 +154861,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate Medical-Surgical Nursing",
       "unified_title": "Intermediate Medical-Surgical Nursing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intermediate Medical Surgical Nursing"
@@ -154936,10 +154936,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate Medical-Surgical Nursing Laboratory",
       "unified_title": "Intermediate Medical-Surgical Nursing Laboratory",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intermediate Medical Surgical Nursing Laboratory"
@@ -155386,10 +155386,10 @@ window.CPL_STATEWIDE = {
       "title": "Growth and Development — Adult and Geriatric Psychology",
       "unified_title": "Growth and Development — Adult and Geriatric Psychology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Growth/Development: Psychology Adult - Geriatric"
@@ -155461,10 +155461,10 @@ window.CPL_STATEWIDE = {
       "title": "Growth and Development of the Child",
       "unified_title": "Growth and Development of the Child",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Growth and Development of the Child"
@@ -156063,10 +156063,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Computer Science",
       "unified_title": "Introduction to Computer Science",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intro to Computer Science",
@@ -156439,10 +156439,10 @@ window.CPL_STATEWIDE = {
       "title": "General Computer Literacy",
       "unified_title": "General Computer Literacy",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "CSCI 201\tGeneral Computer Literacy - Credit by Exam"
@@ -156513,10 +156513,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to UNIX/Linux System and Programming",
       "unified_title": "Introduction to UNIX/Linux System and Programming",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "CSCI 210\tIntroduction to UNIX/Linux System and Programming - Credit by Exam"
@@ -157550,10 +157550,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Food and Beverage Management",
       "unified_title": "Introduction to Food and Beverage Management",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Introduction to Food and Beverage Management"
@@ -157624,10 +157624,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Food and Beverage Management",
       "unified_title": "Introduction to Food and Beverage Management",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Introduction to Food and Beverage Management"
@@ -158965,10 +158965,10 @@ window.CPL_STATEWIDE = {
       "title": "Fundamentals of Electricity and Electronics",
       "unified_title": "Fundamentals of Electricity and Electronics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ELTEC 208\tFundamentals of Electricity and Electronics - Credit by Exam"
@@ -159249,10 +159249,10 @@ window.CPL_STATEWIDE = {
       "title": "Instrumentation Devices and Systems",
       "unified_title": "Instrumentation Devices and Systems",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ELTEC 221\tInstrumentation Devices and Systems - Credit by Exam"
@@ -159320,10 +159320,10 @@ window.CPL_STATEWIDE = {
       "title": "Instrumentation Devices and Systems",
       "unified_title": "Instrumentation Devices and Systems",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ELTEC 221\tInstrumentation Devices and Systems - Portfolio"
@@ -159391,10 +159391,10 @@ window.CPL_STATEWIDE = {
       "title": "Instrumentation Devices and Systems",
       "unified_title": "Instrumentation Devices and Systems",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "ELTEC 221\tInstrumentation Devices and Systems - Industry Certification"
@@ -159604,10 +159604,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Programmable Logic Controllers",
       "unified_title": "Introduction to Programmable Logic Controllers",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ELTEC 232\tIntroduction to Programmable Logic Controllers - Credit by Exam"
@@ -159675,10 +159675,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Programmable Logic Controllers",
       "unified_title": "Introduction to Programmable Logic Controllers",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "ELTEC 232\tIntroduction to Programmable Logic Controllers - Industry Certification"
@@ -159746,10 +159746,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Programmable Logic Controllers",
       "unified_title": "Introduction to Programmable Logic Controllers",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ELTEC 232\tIntroduction to Programmable Logic Controllers - Portfolio"
@@ -159817,10 +159817,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Programmable Automation Controllers (PACs)",
       "unified_title": "Introduction to Programmable Automation Controllers (PACs)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ELTEC 234\tIntroduction to PACs:Programmable Automation Controllers"
@@ -159888,10 +159888,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Programmable Automation Controllers (PACs)",
       "unified_title": "Introduction to Programmable Automation Controllers (PACs)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ELTEC 234\tIntroduction to PACs:Programmable Automation Controllers - Portfolio"
@@ -159959,10 +159959,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Programmable Automation Controllers (PACs)",
       "unified_title": "Introduction to Programmable Automation Controllers (PACs)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "ELTEC 234\tIntroduction to PACs:Programmable Automation Controllers - Industry Certification"
@@ -160030,10 +160030,10 @@ window.CPL_STATEWIDE = {
       "title": "Electrical Troubleshooting Techniques",
       "unified_title": "Electrical Troubleshooting Techniques",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ELTEC 265\tTroubleshooting Techniques - Credit by Exam"
@@ -160101,10 +160101,10 @@ window.CPL_STATEWIDE = {
       "title": "Electrical Troubleshooting Techniques",
       "unified_title": "Electrical Troubleshooting Techniques",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ELTEC 265\tTroubleshooting Techniques - Portfolio"
@@ -160172,10 +160172,10 @@ window.CPL_STATEWIDE = {
       "title": "Electrical Troubleshooting Techniques",
       "unified_title": "Electrical Troubleshooting Techniques",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "ELTEC 265\tTroubleshooting Techniques - Industry Certification"
@@ -160385,10 +160385,10 @@ window.CPL_STATEWIDE = {
       "title": "Fundamentals of Electricity and Electronics",
       "unified_title": "Fundamentals of Electricity and Electronics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ELTEC 208\tFundamentals of Electricity and Electronics - Portfolio Review"
@@ -160456,10 +160456,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Professional Culinary Arts and Kitchen Operations",
       "unified_title": "Introduction to Professional Culinary Arts and Kitchen Operations",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "Napa Valley Cooking School",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Introduction to Professional Culinary Arts & Kitchen Operations Graduate of NVC Cooking School"
@@ -160527,10 +160527,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Biotechnology (with Lab)",
       "unified_title": "Introduction to Biotechnology (with Lab)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "VHLTH 704 & 705: Introduction to Biotechnology & Introduction to Biotechnology Lab"
@@ -161113,10 +161113,10 @@ window.CPL_STATEWIDE = {
       "title": "Honors Biology and Human Anatomy & Physiology — Mater Dei High School",
       "unified_title": "Honors Biology and Human Anatomy & Physiology — Mater Dei High School",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Mater Dei High School",
       "training_agency": "Mater Dei High School",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Honors Biology & Honors Human Anatomy and Physiology - Mater Dei High School"
@@ -166776,10 +166776,10 @@ window.CPL_STATEWIDE = {
       "title": "Healthful Living",
       "unified_title": "Healthful Living",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "HE 110\tHealthful Living - Industry Certificate"
@@ -169142,10 +169142,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Nonlinear Editing",
       "unified_title": "Introduction to Nonlinear Editing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intro to Nonlinear Editing"
@@ -169354,10 +169354,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Digital Film Production",
       "unified_title": "Introduction to Digital Film Production",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Cleveland High School",
       "training_agency": "Cleveland High School",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "HIGH SCHOOL ARTICULATION - CANOGA HS: MEDIART 101 Introduction to Digital Film Production",
@@ -169424,10 +169424,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Digital Media Arts",
       "unified_title": "Introduction to Digital Media Arts",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intro to Digital Media Arts"
@@ -171371,10 +171371,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Video Game Design",
       "unified_title": "Introduction to Video Game Design",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intro to Video Game Design"
@@ -172603,10 +172603,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Service Strength and Conditioning",
       "unified_title": "Fire Service Strength and Conditioning",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.75,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Fire Service Strength and Conditioning"
@@ -172670,10 +172670,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Service Physical Fitness",
       "unified_title": "Fire Service Physical Fitness",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.75,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Fire Service Physical Fitness"
@@ -172804,10 +172804,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Project Management",
       "unified_title": "Introduction to Project Management",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Project Management"
@@ -174514,10 +174514,10 @@ window.CPL_STATEWIDE = {
       "title": "FIT Academy Conditioning",
       "unified_title": "FIT Academy Conditioning",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.4,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "FIT Academy Conditioning (FIT-S3A)"
@@ -175114,10 +175114,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate Patient Care",
       "unified_title": "Intermediate Patient Care",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intermediate Patient Care (Formerly Medical Core) - CTE at Valley High School",
@@ -175868,10 +175868,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Mapping and Geographic Information Systems",
       "unified_title": "Introduction to Mapping and Geographic Information Systems",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Mapping and Geog Information Systems"
@@ -175936,10 +175936,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Geographic Information Systems",
       "unified_title": "Introduction to Geographic Information Systems",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "GEOG 025 - Introduction to Geographic Information Systems and Laboratory",
@@ -176012,10 +176012,10 @@ window.CPL_STATEWIDE = {
       "title": "Introductory Berry Production",
       "unified_title": "Introductory Berry Production",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introductory Berry Production (1)"
@@ -176077,10 +176077,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate Berry Production",
       "unified_title": "Intermediate Berry Production",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intermediate Berry Production (2)"
@@ -176208,10 +176208,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Manual Machining",
       "unified_title": "Introduction to Manual Machining",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "MACH 200D\tIntroduction to Manual Machining - Portfolio",
@@ -176278,10 +176278,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to CNC Machining",
       "unified_title": "Introduction to CNC Machining",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "MACH 205\tIntro to CNC Machining - Credit by Exam"
@@ -176343,10 +176343,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to CNC Machining",
       "unified_title": "Introduction to CNC Machining",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "MACH 205\tIntro to CNC Machining - Portfolio"
@@ -176669,10 +176669,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Global Positioning Systems",
       "unified_title": "Introduction to Global Positioning Systems",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "GEOG 037 - Introduction to Global Positioning Systems",
@@ -178251,10 +178251,10 @@ window.CPL_STATEWIDE = {
       "title": "Introductory Statistics for the Social and Behavioral Sciences",
       "unified_title": "Introductory Statistics for the Social and Behavioral Sciences",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam- Introductory Statistics for the Social and Behavioral Sciences"
@@ -178920,10 +178920,10 @@ window.CPL_STATEWIDE = {
       "title": "Elements of Agricultural Economics",
       "unified_title": "Elements of Agricultural Economics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGEC 210\tElements of Agricultural Economics - Credit by Exam"
@@ -178984,10 +178984,10 @@ window.CPL_STATEWIDE = {
       "title": "Elements of Agricultural Economics",
       "unified_title": "Elements of Agricultural Economics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGEC 210\tElements of Agricultural Economics - Portfolio"
@@ -179941,10 +179941,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Community Health Work",
       "unified_title": "Introduction to Community Health Work",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Community Health Work"
@@ -182288,10 +182288,10 @@ window.CPL_STATEWIDE = {
       "title": "Construction Apprenticeship",
       "unified_title": "Construction Apprenticeship",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.4,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Construction Apprenticeship 2 units",
@@ -182784,10 +182784,10 @@ window.CPL_STATEWIDE = {
       "title": "Infection Control in Dentistry",
       "unified_title": "Infection Control in Dentistry",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Infection Control in Dentistry"
@@ -185413,10 +185413,10 @@ window.CPL_STATEWIDE = {
       "title": "Engineering Graphics",
       "unified_title": "Engineering Graphics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ENGINEERING GRAPHICS"
@@ -185596,10 +185596,10 @@ window.CPL_STATEWIDE = {
       "title": "Electrical Safety",
       "unified_title": "Electrical Safety",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ELTEC 320\tElectrical Safety - Credit by Exam"
@@ -185657,10 +185657,10 @@ window.CPL_STATEWIDE = {
       "title": "Electrical Safety",
       "unified_title": "Electrical Safety",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ELTEC 320\tElectrical Safety - Portfolio"
@@ -185901,10 +185901,10 @@ window.CPL_STATEWIDE = {
       "title": "Electrical Safety",
       "unified_title": "Electrical Safety",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "ELTEC 320\tElectrical Safety - Industry Certification"
@@ -185962,10 +185962,10 @@ window.CPL_STATEWIDE = {
       "title": "Event Management",
       "unified_title": "Event Management",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Event Management (HRC 232 C)"
@@ -187264,10 +187264,10 @@ window.CPL_STATEWIDE = {
       "title": "Food Service Management Supervision",
       "unified_title": "Food Service Management Supervision",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Food Service Management Supervision"
@@ -187325,10 +187325,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Visual Communication",
       "unified_title": "Introduction to Visual Communication",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intro to Visual Communication"
@@ -187385,10 +187385,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to AutoCAD",
       "unified_title": "Introduction to AutoCAD",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to AutoCAD"
@@ -187651,10 +187651,10 @@ window.CPL_STATEWIDE = {
       "title": "Engineering Design and CAD",
       "unified_title": "Engineering Design and CAD",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Engineering Design/CAD"
@@ -187712,10 +187712,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate Creo and SolidWorks",
       "unified_title": "Intermediate Creo and SolidWorks",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Intermediate Creo and Solidworks"
@@ -187772,10 +187772,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Electronic Circuit and Schematic Design",
       "unified_title": "Introduction to Electronic Circuit and Schematic Design",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "American Council on Education (ACE)",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Introduction to Electronic Circuit and Schematic Design"
@@ -188072,10 +188072,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Creo and SolidWorks",
       "unified_title": "Introduction to Creo and SolidWorks",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Introduction to Creo and Solidworks"
@@ -188252,10 +188252,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate 3D Animation",
       "unified_title": "Intermediate 3D Animation",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Intermediate 3D Animation"
@@ -188312,10 +188312,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate Creo and SolidWorks",
       "unified_title": "Intermediate Creo and SolidWorks",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Intermediate Creo and Solidworks"
@@ -188432,10 +188432,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate 3D Animation",
       "unified_title": "Intermediate 3D Animation",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Intermediate 3D Animation"
@@ -188612,10 +188612,10 @@ window.CPL_STATEWIDE = {
       "title": "FMT 100 (San Jose City College)",
       "unified_title": "FMT 100 (San Jose City College)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.35,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FMT 100 Credit by Exam"
@@ -188672,10 +188672,10 @@ window.CPL_STATEWIDE = {
       "title": "Elementary Japanese",
       "unified_title": "Elementary Japanese",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Elementary Japanese",
@@ -188854,10 +188854,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Agriculture Education",
       "unified_title": "Introduction to Agriculture Education",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AG 120\tIntroduction to Agriculture Education - Credit by Exam"
@@ -188913,10 +188913,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Agriculture Education",
       "unified_title": "Introduction to Agriculture Education",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "AG 120\tIntroduction to Agriculture Education - Industry Certification"
@@ -189090,10 +189090,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Agribusiness Management",
       "unified_title": "Introduction to Agribusiness Management",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGEC 220\tIntroduction to Agribusiness Management - Credit by Exam"
@@ -189267,10 +189267,10 @@ window.CPL_STATEWIDE = {
       "title": "Evaluation of Agricultural Products",
       "unified_title": "Evaluation of Agricultural Products",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGGE 320\tEvaluation of Agricultural Products - Credit by Exam"
@@ -189326,10 +189326,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Animal Science",
       "unified_title": "Introduction to Animal Science",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ANSC 200\tIntroduction to Animal Science - Credit by Exam"
@@ -189385,10 +189385,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Animal Science",
       "unified_title": "Introduction to Animal Science",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ANSC 200\tIntroduction to Animal Science - Portfolio"
@@ -189444,10 +189444,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Animal Science",
       "unified_title": "Introduction to Animal Science",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "ANSC 200\tIntroduction to Animal Science - Industry Certification"
@@ -189798,10 +189798,10 @@ window.CPL_STATEWIDE = {
       "title": "Hanford West High School Articulated Course (HS-061)",
       "unified_title": "Hanford West High School Articulated Course (HS-061)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Hanford West High School",
       "training_agency": "Hanford West High School",
       "confidence_title": 0.4,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "HS-061 Articulation with Hanford West High School (FA25-SU27)"
@@ -190195,10 +190195,10 @@ window.CPL_STATEWIDE = {
       "title": "Landscape Design",
       "unified_title": "Landscape Design",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "EHS 215\tLandscape Design - Credit by Exam"
@@ -190253,10 +190253,10 @@ window.CPL_STATEWIDE = {
       "title": "Landscape Design",
       "unified_title": "Landscape Design",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "EHS 215\tLandscape Design - Portfolio"
@@ -191165,10 +191165,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Hybrid and Electric Vehicle Technology",
       "unified_title": "Introduction to Hybrid and Electric Vehicle Technology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Hybrid and Electric Vehicle Technology AUTO 028 Cx"
@@ -191289,10 +191289,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Interior Design",
       "unified_title": "Introduction to Interior Design",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Interior Design"
@@ -191405,10 +191405,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Transportation Management",
       "unified_title": "Introduction to Transportation Management",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "LOGST 203\tIntroduction to Transportation Management - Credit by Exam"
@@ -191462,10 +191462,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Transportation Management",
       "unified_title": "Introduction to Transportation Management",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "LOGST 203\tIntroduction to Transportation Management - Portfolio"
@@ -191519,10 +191519,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Transportation Management",
       "unified_title": "Introduction to Transportation Management",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "LOGST 203\tIntroduction to Transportation Management - Industry Certification"
@@ -191576,10 +191576,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Warehouse Management",
       "unified_title": "Introduction to Warehouse Management",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Association for Supply Chain Management (ASCM)",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "LOGST 205\tIntroduction to Warehouse Management - Credit by Exam"
@@ -191633,10 +191633,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Warehouse Management",
       "unified_title": "Introduction to Warehouse Management",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Association for Supply Chain Management (ASCM)",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "LOGST 205\tIntroduction to Warehouse Management - Portfolio"
@@ -191690,10 +191690,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Warehouse Management",
       "unified_title": "Introduction to Warehouse Management",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Association for Supply Chain Management (ASCM)",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "LOGST 205\tIntroduction to Warehouse Management - Industry Certificate"
@@ -191747,10 +191747,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Purchasing and Contracting",
       "unified_title": "Introduction to Purchasing and Contracting",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "LOGST 206\tIntroduction to Purchasing and Contracting - Credit by Exam"
@@ -191804,10 +191804,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Purchasing and Contracting",
       "unified_title": "Introduction to Purchasing and Contracting",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "LOGST 206\tIntroduction to Purchasing and Contracting - Portfolio"
@@ -191861,10 +191861,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Purchasing and Contracting",
       "unified_title": "Introduction to Purchasing and Contracting",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "LOGST 206\tIntroduction to Purchasing and Contracting - Industry Certification"
@@ -191918,10 +191918,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Customer Service",
       "unified_title": "Introduction to Customer Service",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "LOGST 207\tIntroduction to Customer Service - Credit by Exam"
@@ -191975,10 +191975,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Customer Service",
       "unified_title": "Introduction to Customer Service",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "LOGST 207\tIntroduction to Customer Service - Portfolio"
@@ -192032,10 +192032,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Customer Service",
       "unified_title": "Introduction to Customer Service",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "LOGST 207\tIntroduction to Customer Service - Industry Certification"
@@ -192953,10 +192953,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Hotel Management",
       "unified_title": "Introduction to Hotel Management",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Introduction to Hotel Management"
@@ -193008,10 +193008,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Hotel Management",
       "unified_title": "Introduction to Hotel Management",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Introduction to Hotel Management"
@@ -193939,10 +193939,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Preventative Maintenance Inspection (HS Articulation)",
       "unified_title": "Introduction to Preventative Maintenance Inspection (HS Articulation)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Local High School",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "VAUTO 670: Introduction to Preventative Maintenance Inspection"
@@ -195024,10 +195024,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Heavy-Duty Diesel Repair",
       "unified_title": "Introduction to Heavy-Duty Diesel Repair",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam- Introduction to Heavy-Duty Diesel Repair"
@@ -195240,10 +195240,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Water Resource Management",
       "unified_title": "Introduction to Water Resource Management",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "WST 034 -  Introduction to Water Resource Management - Portfolio Review"
@@ -195732,10 +195732,10 @@ window.CPL_STATEWIDE = {
       "title": "Drawing I",
       "unified_title": "Drawing I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Birmingham Community Charter High School",
       "training_agency": "Birmingham Community Charter High School",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "HIGH SCHOOL ARTICULATION - BIRMINGHAM CCHS: ART 201 Drawing I"
@@ -195838,10 +195838,10 @@ window.CPL_STATEWIDE = {
       "title": "Film (High School Articulation)",
       "unified_title": "Film (High School Articulation)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Local High School",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Film High School to College Articulation"
@@ -196736,10 +196736,10 @@ window.CPL_STATEWIDE = {
       "title": "Fundamentals of Construction Inspection: Wood, Steel, Masonry",
       "unified_title": "Fundamentals of Construction Inspection: Wood, Steel, Masonry",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "International Code Council (ICC)",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "INSPEC 012 - Fundamentals of Construction Inspection: Wood, Steel, Masonry"
@@ -197308,10 +197308,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Pharmacy Technician",
       "unified_title": "Introduction to Pharmacy Technician",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "VHLTH-799 Intro to Pharm Tech"
@@ -198501,10 +198501,10 @@ window.CPL_STATEWIDE = {
       "title": "Foundation for First-Year College Success",
       "unified_title": "Foundation for First-Year College Success",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "COLSK 100\tFoundation for 1st Year College Success - Credit by Exam"
@@ -198603,10 +198603,10 @@ window.CPL_STATEWIDE = {
       "title": "Fire Technology",
       "unified_title": "Fire Technology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Fire Technology"
@@ -199210,10 +199210,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Veterinary Technology",
       "unified_title": "Introduction to Veterinary Technology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ANSC 55\tIntroduction to Veterinary Technology - Credit by Exam"
@@ -199260,10 +199260,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Veterinary Technology",
       "unified_title": "Introduction to Veterinary Technology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ANSC 55\tIntroduction to Veterinary Technology - Portfolio"
@@ -199310,10 +199310,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Veterinary Technology",
       "unified_title": "Introduction to Veterinary Technology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "ANSC 55\tIntroduction to Veterinary Technology - Industry Certification"
@@ -199810,10 +199810,10 @@ window.CPL_STATEWIDE = {
       "title": "Horsemanship",
       "unified_title": "Horsemanship",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ANSC258 Horsemanship"
@@ -200008,10 +200008,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Agricultural Mechanical Technology",
       "unified_title": "Introduction to Agricultural Mechanical Technology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGM 200\tIntroduction to Mechanical Technology - Credit by Exam"
@@ -200057,10 +200057,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Agricultural Mechanical Technology",
       "unified_title": "Introduction to Agricultural Mechanical Technology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "AGM 200\tIntroduction to Mechanical Technology - Industry Certification"
@@ -200596,10 +200596,10 @@ window.CPL_STATEWIDE = {
       "title": "Irrigation and Drainage",
       "unified_title": "Irrigation and Drainage",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGM 235\tIrrigation and Drainage - Credit by Exam"
@@ -200645,10 +200645,10 @@ window.CPL_STATEWIDE = {
       "title": "Irrigation and Drainage",
       "unified_title": "Irrigation and Drainage",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "AGM 235\tIrrigation and Drainage"
@@ -200743,10 +200743,10 @@ window.CPL_STATEWIDE = {
       "title": "Irrigation Wells, Pumps, and Drive Systems",
       "unified_title": "Irrigation Wells, Pumps, and Drive Systems",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGM 237\tIrrigation Wells, Pumps, and Drive Systems - Credit by Exam"
@@ -200792,10 +200792,10 @@ window.CPL_STATEWIDE = {
       "title": "Irrigation Wells, Pumps, and Drive Systems",
       "unified_title": "Irrigation Wells, Pumps, and Drive Systems",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "AGM 237\tIrrigation Wells, Pumps, and Drive Systems - Industry Certification"
@@ -200841,10 +200841,10 @@ window.CPL_STATEWIDE = {
       "title": "Irrigation System Design",
       "unified_title": "Irrigation System Design",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGM 238\tIrrigation System Design - Credit by Exam"
@@ -200890,10 +200890,10 @@ window.CPL_STATEWIDE = {
       "title": "Irrigation System Installation and Maintenance",
       "unified_title": "Irrigation System Installation and Maintenance",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGM 239\tIrrigation System Installation and Maintenance - Credit by Exam"
@@ -201135,10 +201135,10 @@ window.CPL_STATEWIDE = {
       "title": "Heavy Machinery Electrical Systems",
       "unified_title": "Heavy Machinery Electrical Systems",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGM 243\tHeavy Machinery Electrical Systems - Credit by Exam"
@@ -201233,10 +201233,10 @@ window.CPL_STATEWIDE = {
       "title": "Farm Construction and Materials",
       "unified_title": "Farm Construction and Materials",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGM 251\tFarm Construction and Materials - Credit by Exam"
@@ -201282,10 +201282,10 @@ window.CPL_STATEWIDE = {
       "title": "Hydraulics and Pneumatics",
       "unified_title": "Hydraulics and Pneumatics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGM 262\tHydraulics/Pneumatics - Credit by Exam"
@@ -201331,10 +201331,10 @@ window.CPL_STATEWIDE = {
       "title": "Hydraulics and Pneumatics",
       "unified_title": "Hydraulics and Pneumatics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "AGM 262\tHydraulics/Pneumatics - Industry Certification"
@@ -201674,10 +201674,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to the Fashion Industry",
       "unified_title": "Introduction to the Fashion Industry",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "VFDM-100: Intro to the Fashion Industry"
@@ -201723,10 +201723,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate Fashion Design and Merchandising",
       "unified_title": "Intermediate Fashion Design and Merchandising",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intermediate Fashion Design Merchandising (Formerly Fashion Design & Merchandising) - Santa Ana H.S."
@@ -201921,10 +201921,10 @@ window.CPL_STATEWIDE = {
       "title": "Hydraulic Fundamentals",
       "unified_title": "Hydraulic Fundamentals",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Hydraulic Fundamentals"
@@ -201970,10 +201970,10 @@ window.CPL_STATEWIDE = {
       "title": "Electrical Control of Hydraulic Systems",
       "unified_title": "Electrical Control of Hydraulic Systems",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Electrical Control of Hydraulic Systems"
@@ -202068,10 +202068,10 @@ window.CPL_STATEWIDE = {
       "title": "Electrical Control of Pneumatic Systems",
       "unified_title": "Electrical Control of Pneumatic Systems",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Electrical Control of Pneumatic Systems"
@@ -202312,10 +202312,10 @@ window.CPL_STATEWIDE = {
       "title": "Exercise and Nutrition for Healthy Living",
       "unified_title": "Exercise and Nutrition for Healthy Living",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "HE 118\tExercise and Nutrition for Healthy Living - Portfolio Review"
@@ -202360,10 +202360,10 @@ window.CPL_STATEWIDE = {
       "title": "Exploration of Health Professions",
       "unified_title": "Exploration of Health Professions",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "HE 105\t Exploration of Health Professions - Portfolio Review"
@@ -202408,10 +202408,10 @@ window.CPL_STATEWIDE = {
       "title": "Exploration of Health Professions",
       "unified_title": "Exploration of Health Professions",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "HE 105\t Exploration of Health Professions - Industry Certificate"
@@ -202600,10 +202600,10 @@ window.CPL_STATEWIDE = {
       "title": "Finish Carpentry",
       "unified_title": "Finish Carpentry",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Finish Carpentry CNST 080 Cx"
@@ -203465,10 +203465,10 @@ window.CPL_STATEWIDE = {
       "title": "Drywall and Acoustical Ceilings",
       "unified_title": "Drywall and Acoustical Ceilings",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Drywall and Acoustical Ceilings"
@@ -203700,10 +203700,10 @@ window.CPL_STATEWIDE = {
       "title": "Framing Curves and Arches (Carpentry)",
       "unified_title": "Framing Curves and Arches (Carpentry)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
       "confidence_title": 0.5,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Framing Curves and Arches"
@@ -203841,10 +203841,10 @@ window.CPL_STATEWIDE = {
       "title": "Hand Tools Safety Orientation",
       "unified_title": "Hand Tools Safety Orientation",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Orientation - Hand Tools Safety"
@@ -203888,10 +203888,10 @@ window.CPL_STATEWIDE = {
       "title": "Hand and Power Tools Safety",
       "unified_title": "Hand and Power Tools Safety",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Safety and Health Certifications - Hand & Power Tools Applications"
@@ -203982,10 +203982,10 @@ window.CPL_STATEWIDE = {
       "title": "Foundations and Flatwork (Carpentry)",
       "unified_title": "Foundations and Flatwork (Carpentry)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
       "confidence_title": 0.5,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Foundations and Flatwork"
@@ -204123,10 +204123,10 @@ window.CPL_STATEWIDE = {
       "title": "Gang Forms and Columns",
       "unified_title": "Gang Forms and Columns",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Gang Forms/Columns"
@@ -204828,10 +204828,10 @@ window.CPL_STATEWIDE = {
       "title": "Drywall Installation and Finish Trims",
       "unified_title": "Drywall Installation and Finish Trims",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Drywall Installation/Finish Trims"
@@ -204969,10 +204969,10 @@ window.CPL_STATEWIDE = {
       "title": "Firestop and Fireproofing Procedures",
       "unified_title": "Firestop and Fireproofing Procedures",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "S/B Firestop/Fireproofing Procedures"
@@ -205063,10 +205063,10 @@ window.CPL_STATEWIDE = {
       "title": "Framing Ceilings and Soffits",
       "unified_title": "Framing Ceilings and Soffits",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Framing Ceilings and Soffits"
@@ -205110,10 +205110,10 @@ window.CPL_STATEWIDE = {
       "title": "Framing Suspended Ceilings (Carpentry)",
       "unified_title": "Framing Suspended Ceilings (Carpentry)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
       "confidence_title": 0.5,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Framing Suspended Ceilings"
@@ -205298,10 +205298,10 @@ window.CPL_STATEWIDE = {
       "title": "Drywall Applications — Production Drywall Hanging",
       "unified_title": "Drywall Applications — Production Drywall Hanging",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Drywall Applications - Production Drywall Hanging"
@@ -205345,10 +205345,10 @@ window.CPL_STATEWIDE = {
       "title": "Freeform Lathing",
       "unified_title": "Freeform Lathing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Freeform Lathing"
@@ -205721,10 +205721,10 @@ window.CPL_STATEWIDE = {
       "title": "Doors and Door Hardware",
       "unified_title": "Doors and Door Hardware",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Doors and Door Hardware"
@@ -205768,10 +205768,10 @@ window.CPL_STATEWIDE = {
       "title": "Exit and Electrical Security Devices",
       "unified_title": "Exit and Electrical Security Devices",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Exit and Electrical Security Devices"
@@ -205862,10 +205862,10 @@ window.CPL_STATEWIDE = {
       "title": "Exterior Finish Details",
       "unified_title": "Exterior Finish Details",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Exterior Finish Details"
@@ -209406,10 +209406,10 @@ window.CPL_STATEWIDE = {
       "title": "Electrical and Electronics Technology 223",
       "unified_title": "Electrical and Electronics Technology 223",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "CAL-OSHA",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Electrical & Electronics Technology 223 - Industry Certification"
@@ -209544,10 +209544,10 @@ window.CPL_STATEWIDE = {
       "title": "Filing and Records Management",
       "unified_title": "Filing and Records Management",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Filing and Records Management"
@@ -209590,10 +209590,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Electricity",
       "unified_title": "Introduction to Electricity",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "American Council on Education (ACE)",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Introduction to Electricity"
@@ -209636,10 +209636,10 @@ window.CPL_STATEWIDE = {
       "title": "Industrial Basic Controls",
       "unified_title": "Industrial Basic Controls",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Industrial Basic Controls"
@@ -209682,10 +209682,10 @@ window.CPL_STATEWIDE = {
       "title": "Electrical Motors and Controls I",
       "unified_title": "Electrical Motors and Controls I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Electrical Motors and Controls I"
@@ -209728,10 +209728,10 @@ window.CPL_STATEWIDE = {
       "title": "Electrical Motors and Controls II",
       "unified_title": "Electrical Motors and Controls II",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Electrical Motors and Controls II"
@@ -210348,10 +210348,10 @@ window.CPL_STATEWIDE = {
       "title": "Italian Wines",
       "unified_title": "Italian Wines",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Italian Wines"
@@ -210393,10 +210393,10 @@ window.CPL_STATEWIDE = {
       "title": "French Wines",
       "unified_title": "French Wines",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "French Wines"
@@ -210800,10 +210800,10 @@ window.CPL_STATEWIDE = {
       "title": "Flight Training — FLGHT 101 (Reedley)",
       "unified_title": "Flight Training — FLGHT 101 (Reedley)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Federal Aviation Administration (FAA)",
       "training_agency": "",
       "confidence_title": 0.4,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FLIGHT 101"
@@ -211070,10 +211070,10 @@ window.CPL_STATEWIDE = {
       "title": "Flight Training — FLGHT 105 (Reedley)",
       "unified_title": "Flight Training — FLGHT 105 (Reedley)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Federal Aviation Administration (FAA)",
       "training_agency": "",
       "confidence_title": 0.35,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FLGHT 105"
@@ -211115,10 +211115,10 @@ window.CPL_STATEWIDE = {
       "title": "Flight Training — FLGHT 106 (Reedley)",
       "unified_title": "Flight Training — FLGHT 106 (Reedley)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Federal Aviation Administration (FAA)",
       "training_agency": "",
       "confidence_title": 0.35,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FLGHT 106"
@@ -211160,10 +211160,10 @@ window.CPL_STATEWIDE = {
       "title": "Flight Training — FLGHT 107 (Reedley)",
       "unified_title": "Flight Training — FLGHT 107 (Reedley)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Federal Aviation Administration (FAA)",
       "training_agency": "",
       "confidence_title": 0.35,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FLGHT 107"
@@ -211205,10 +211205,10 @@ window.CPL_STATEWIDE = {
       "title": "Flight Training — FLGHT 108 (Reedley)",
       "unified_title": "Flight Training — FLGHT 108 (Reedley)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Federal Aviation Administration (FAA)",
       "training_agency": "",
       "confidence_title": 0.35,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FLGHT 108"
@@ -211250,10 +211250,10 @@ window.CPL_STATEWIDE = {
       "title": "Flight Training — FLGHT 109 (Reedley)",
       "unified_title": "Flight Training — FLGHT 109 (Reedley)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Federal Aviation Administration (FAA)",
       "training_agency": "",
       "confidence_title": 0.35,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FLGHT 109"
@@ -211295,10 +211295,10 @@ window.CPL_STATEWIDE = {
       "title": "Flight Training — FLGHT 125 (Reedley)",
       "unified_title": "Flight Training — FLGHT 125 (Reedley)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Federal Aviation Administration (FAA)",
       "training_agency": "",
       "confidence_title": 0.35,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FLGHT 125"
@@ -211340,10 +211340,10 @@ window.CPL_STATEWIDE = {
       "title": "Flight Training — FLGHT 111 (Reedley)",
       "unified_title": "Flight Training — FLGHT 111 (Reedley)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Federal Aviation Administration (FAA)",
       "training_agency": "",
       "confidence_title": 0.35,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FLGHT 111"
@@ -211385,10 +211385,10 @@ window.CPL_STATEWIDE = {
       "title": "Flight Training — FLGHT 115 (Reedley)",
       "unified_title": "Flight Training — FLGHT 115 (Reedley)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Federal Aviation Administration (FAA)",
       "training_agency": "",
       "confidence_title": 0.35,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FLGHT 115"
@@ -211430,10 +211430,10 @@ window.CPL_STATEWIDE = {
       "title": "Flight Training — FLGHT 117 (Reedley)",
       "unified_title": "Flight Training — FLGHT 117 (Reedley)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Federal Aviation Administration (FAA)",
       "training_agency": "",
       "confidence_title": 0.35,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FLGHT 117"
@@ -211475,10 +211475,10 @@ window.CPL_STATEWIDE = {
       "title": "Flight Training — FLGHT 121 (Reedley)",
       "unified_title": "Flight Training — FLGHT 121 (Reedley)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Federal Aviation Administration (FAA)",
       "training_agency": "",
       "confidence_title": 0.35,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FLGHT 121"
@@ -211520,10 +211520,10 @@ window.CPL_STATEWIDE = {
       "title": "Flight Training — FLGHT 126 (Reedley)",
       "unified_title": "Flight Training — FLGHT 126 (Reedley)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Federal Aviation Administration (FAA)",
       "training_agency": "",
       "confidence_title": 0.35,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FLGHT 126"
@@ -211565,10 +211565,10 @@ window.CPL_STATEWIDE = {
       "title": "Flight Training — FLGHT 131 (Reedley)",
       "unified_title": "Flight Training — FLGHT 131 (Reedley)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Federal Aviation Administration (FAA)",
       "training_agency": "",
       "confidence_title": 0.35,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FLGHT 131"
@@ -211610,10 +211610,10 @@ window.CPL_STATEWIDE = {
       "title": "Flight Training — FLGHT 135 (Reedley)",
       "unified_title": "Flight Training — FLGHT 135 (Reedley)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Federal Aviation Administration (FAA)",
       "training_agency": "",
       "confidence_title": 0.35,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FLGHT 135"
@@ -211655,10 +211655,10 @@ window.CPL_STATEWIDE = {
       "title": "Flight Training — FLGHT 104 (Reedley)",
       "unified_title": "Flight Training — FLGHT 104 (Reedley)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Federal Aviation Administration (FAA)",
       "training_agency": "",
       "confidence_title": 0.35,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FLGHT 104"
@@ -212394,10 +212394,10 @@ window.CPL_STATEWIDE = {
       "title": "Floral Design and Practices I",
       "unified_title": "Floral Design and Practices I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "PLNT SC 701 - Floral Design and Practices I"
@@ -212608,10 +212608,10 @@ window.CPL_STATEWIDE = {
       "title": "Homeland Security Recovery",
       "unified_title": "Homeland Security Recovery",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Federal Emergency Management Agency (FEMA)",
       "training_agency": "",
       "confidence_title": 0.5,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Homeland Security Recovery (HLS-4)"
@@ -212932,10 +212932,10 @@ window.CPL_STATEWIDE = {
       "title": "HVAC — Sheet Metal",
       "unified_title": "HVAC — Sheet Metal",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "HVAC: Sheet Metal"
@@ -212974,10 +212974,10 @@ window.CPL_STATEWIDE = {
       "title": "FIW Orientation",
       "unified_title": "FIW Orientation",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Field Ironworkers Local 416",
       "training_agency": "",
       "confidence_title": 0.4,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FIW Orientation"
@@ -219683,10 +219683,10 @@ window.CPL_STATEWIDE = {
       "title": "HVAC/R 007",
       "unified_title": "HVAC/R 007",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.3,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "HVAC/R 007 CBE"
@@ -219788,10 +219788,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Hospitality and Tourism",
       "unified_title": "Introduction to Hospitality and Tourism",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intro to Hospitality and Tourism"
@@ -219858,10 +219858,10 @@ window.CPL_STATEWIDE = {
       "title": "Elementary Hmong I",
       "unified_title": "Elementary Hmong I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Elementary Hmong I"
@@ -219893,10 +219893,10 @@ window.CPL_STATEWIDE = {
       "title": "Elementary Hmong II",
       "unified_title": "Elementary Hmong II",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Elementary Hmong II"
@@ -220352,10 +220352,10 @@ window.CPL_STATEWIDE = {
       "title": "Intermediate Air Conditioning",
       "unified_title": "Intermediate Air Conditioning",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Intermediate Air Conditioning"
@@ -220457,10 +220457,10 @@ window.CPL_STATEWIDE = {
       "title": "HVAC — Hydronics and Air Distribution",
       "unified_title": "HVAC — Hydronics and Air Distribution",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "HVAC: Hydronics and Air Distribution"
@@ -222941,10 +222941,10 @@ window.CPL_STATEWIDE = {
       "title": "Introduction to Medical Assisting",
       "unified_title": "Introduction to Medical Assisting",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Certifying Board for Medical Assistants (CCBMA)",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "MDAST 320 - Introduction to Medical Assisting - Industry Certification"
@@ -223025,10 +223025,10 @@ window.CPL_STATEWIDE = {
       "title": "HRCM 001",
       "unified_title": "HRCM 001",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.3,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "HRCM 001"
@@ -223053,10 +223053,10 @@ window.CPL_STATEWIDE = {
       "title": "Generic Credit by Exam — Culinary CUL 007",
       "unified_title": "Generic Credit by Exam — Culinary CUL 007",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.4,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "CUL 007"
@@ -223305,10 +223305,10 @@ window.CPL_STATEWIDE = {
       "title": "GIST 12",
       "unified_title": "GIST 12",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.3,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "GIST 12"
@@ -223333,10 +223333,10 @@ window.CPL_STATEWIDE = {
       "title": "GIST 58",
       "unified_title": "GIST 58",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.3,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "GIST 58"
@@ -223557,10 +223557,10 @@ window.CPL_STATEWIDE = {
       "title": "HORT 60D",
       "unified_title": "HORT 60D",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.3,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "HORT 60D"
@@ -223585,10 +223585,10 @@ window.CPL_STATEWIDE = {
       "title": "HORT 60J",
       "unified_title": "HORT 60J",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.3,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "HORT 60J"
@@ -223613,10 +223613,10 @@ window.CPL_STATEWIDE = {
       "title": "HORT 90E",
       "unified_title": "HORT 90E",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.3,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "HORT 90E"
@@ -223641,10 +223641,10 @@ window.CPL_STATEWIDE = {
       "title": "HORT 90K",
       "unified_title": "HORT 90K",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.3,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "HORT 90K"
@@ -223669,10 +223669,10 @@ window.CPL_STATEWIDE = {
       "title": "HORT 90U",
       "unified_title": "HORT 90U",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.3,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "HORT 90U"
@@ -228081,6 +228081,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-07-08T22:39:13",
+  "generated_at": "2026-07-09T00:19:46",
   "total_credit_recs": 12714
 };
