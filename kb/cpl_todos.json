@@ -1,80 +1,74 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-08 · Session 108 (code-titled exhibits now resolve from COCI + a 🔎/✨ lookup on the title box)",
+ "_as_of": "2026-07-09 · Session 108 close (HUGE night: queue 1,036 → 233 — your saves + the HS rule + the bulk-CCC close-out all folded)",
  "_session": 108,
- "_status": "Your CD-005 / Cinema 24 ask shipped (#707): the pre-seed routine now looks bare course codes up in COCI itself — “Cinema 24” prefills as “Basic Film Production” (CCSF's CINE 24), the Hanford West HS-005/HS-061 rows as Medical Terminology / Nurse Assistant Training, and CD-005-style rows get the official C-ID title. Plus every lane row's TITLE box now has its own 🔎 “what is this?” (your code-plus-college web search, one click) and ✨ suggest (AI recommendation, click-to-fill, never auto-saved). Reload the tab to pick both up. The Session-107-evening state stands: the twin merges still wait for your ✓ in the Merge confirmations strip.",
+ "_status": "Tonight all landed: the COCI title resolution + 🔎/✨ title lookup (#707), your **HS rule (#710 — fused CCHS tokens, dotted H.S., multi-school rows → “Local High School”; bare “HS ###” correctly stays a subject code), and the bulk-CCC close-out you scoped (339 rows as ccc-bulk-s108@bot; your own saves always won the race). Everything folded and the tab re-baked: the blank-agency queue is down to 233 — almost all NEW rows minted by tonight's renames/splits, 200 of them pre-filled and waiting for you.",
  "items": [
   {
-   "id": "confirm-twin-merges",
+   "id": "next-lane-pass",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "Four “twin” rows wait in the Merge confirmations strip: you retitled BOTH halves of a pair to the same new name (e.g. C++ Programming I and II → “C++ Programming”). The first half renamed; ✓ Confirm merge folds the second into it. After your picks, Fable dispatches the apply."
+   "text": "The missing-agency lane has 200 fresh prefills (mostly rename/split residue from tonight): 155 cx→CCC · 20 no-formal-issuer · 10 school rows · 9 family · 3 Local High School · 1 AWS. Same flow as tonight — say the word for another bulk close-out when you've picked the interesting ones."
   },
   {
-   "id": "issuer-lane-review",
+   "id": "military-residuals",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "Keep working the ⚡ pre-filled lane (922 prefills: 623 cx→CCC · 149 “no issuer” · 65 school rows · 33 family · 18 FAA/cert-family · 12 ASE auto rows · 3 “Local High School” · 4 AWS welding). The 12 ASE rows will ask you to confirm a merge — that's the intended fold."
+   "text": "13 Military-typed rows stayed out of the CCC blast (ACE/service-branch judgment) — they're the last deliberate residuals."
   },
   {
-   "id": "ase-spelling",
+   "id": "unsplit-hs-variants",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "Spelling call: you wrote “Automotive Services Excellence (ASE)” — the existing 55-record family says “National Institute for Automotive Service Excellence (ASE)”, so the prefills use that. Say the word if you prefer the short form."
+   "text": "Two HS variants may still want their own split rows (your call): Crime Scene Management's Summit “Cyber Scene Management” and Auto Electricity's Summit variant."
+  },
+  {
+   "id": "microsoft-family",
+   "who": "sam",
+   "tab": "credential-reference",
+   "text": "FYI: your 4 CCC saves on Microsoft-titled Cx rows split that family's evidence (18 Microsoft vs 4 CCC), so Excel I/II + Publisher prefilled CCC following your lead — shout if you'd rather they stay Microsoft."
   },
   {
    "id": "issuer-spellings",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "Two more consistency calls: your GTAW row says “American Welding Society” (house: “… (AWS)”, 13 records) and two rows say “Occupational Safety and Health Administration (OSHA)” (house: “U.S. …”, 9 records) — re-save those three rows to unify, or tell Fable to re-key the families your way."
-  },
-  {
-   "id": "ibew-repoint",
-   "who": "sam",
-   "tab": "credential-reference",
-   "text": "Still your call: the 6 Electrician rows carry the generic “IBEW” issuer (never auto-overwritten) — re-point them to Riverside Area Electrical J. A. C. if that's the right sponsor."
-  },
-  {
-   "id": "engl102-title",
-   "who": "sam",
-   "tab": "credential-reference",
-   "text": "FYI: your Modesto ENGL 102 title “Introduction to Literature and Composition” is now the KB name — both authorities (C-ID ENGL 120, CCN ENGL C1002) say “Introduction to Literature”. One lane edit re-titles it if you want the authority name."
+   "text": "Still pending your spelling calls: ASE long-vs-short form · AWS “(AWS)” suffix · OSHA “U.S.” prefix · the IBEW → Riverside JAC re-point."
   },
   {
    "id": "clep-complete-both",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "Still the last unclassified rows: the CLEP French/German/Spanish “Levels 1 and 2 — Complete both” spans (which family should a two-level span land in?)."
+   "text": "Still the last unclassified rows: the CLEP French/German/Spanish “Levels 1 and 2 — Complete both” spans."
   },
   {
    "id": "rename-apply-next",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "After Sam's next confirms/saves, dispatch cred-rename-apply.yml again — the fan-in fixes (twin pruning, per-target V4, live Supabase claims) are all in, so batches with converging retitles now land clean."
-  },
-  {
-   "id": "title-lookup-live",
-   "who": "sam",
-   "tab": "credential-reference",
-   "text": "Reload the tab: rows titled by a bare course code now prefill the real COCI course title (Cinema 24 → “Basic Film Production”, the Hanford West HS-00x rows, and more), and the title box has its own 🔎 “what is this?” + ✨ suggest for the leftovers."
+   "text": "After Sam's next confirms/saves, dispatch cred-rename-apply.yml — the fan-in fixes are in; converging batches land clean."
   },
   {
    "id": "preseed-refresh",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "After Sam's next triage pass + daily fold: re-run kb/_preseed_null_issuers.py (pip install openpyxl first) + the 61-check verifier; saved rows drop out."
+   "text": "After Sam's next pass + fold: re-run kb/_preseed_null_issuers.py (pip install openpyxl first) + the 63-check verifier; saved rows drop out."
+  },
+  {
+   "id": "bulk-ccc-repeat",
+   "who": "fable",
+   "tab": "credential-reference",
+   "text": "If Sam asks for another bulk-CCC set: follow docs/kb-notes/methodology-live-curation-concurrency.md — fresh live diff, INSERT-only ON CONFLICT DO NOTHING, receipt cohort."
   },
   {
    "id": "audit-rerun-colleges",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "Re-run kb/_audit_exhibits.py with a fresh PII-purged CustomReport so originating-college chips populate on CLASSIFIED Triage rows (articulating-college fallback until then)."
+   "text": "Re-run kb/_audit_exhibits.py with a fresh PII-purged CustomReport so originating-college chips populate on CLASSIFIED Triage rows."
   },
   {
    "id": "apprenticeship-issuers",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "Carryover: the DIR-pending apprenticeship residuals at other colleges (DAS occupation pages + region matching; the Tableau dashboard still lacks the CCC-affiliation join Sam is hunting) + the fire-family twins + 3 mojibake families + the MOC→COS bridge."
+   "text": "Carryover: DIR-pending apprenticeship residuals + fire-family twins + 3 mojibake families + MOC→COS bridge + the receipt-dir <date>-runN hardening."
   }
  ]
 }

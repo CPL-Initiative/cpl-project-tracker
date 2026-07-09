@@ -2472,3 +2472,17 @@ LAST-SECOND live diff + conflict-yielding writes. Between my first pending
 count (430) and the insert, Sam had saved another ~60 rows — three snapshots
 in one hour, each staler than the last. The bake is history; kb_curation is
 the present.
+
+### continued 15 addendum — the fold receipt (Session 108 close)
+
+The dispatched daily run + Sam's confirmed-merge apply (PR-5b/1 Mode B run)
+landed within minutes: null-issuer queue **830 → 233**. The 233 are almost
+entirely NEW rows minted by tonight's rename/split applies (only 1 of them
+had an override in the pre-fold snapshot) — retitle residue + split-out
+per-school rows awaiting agencies — and the regenerated plan stages **200**
+of them (cx 155 · course-as-exhibit 20 · local-trainer 10 · family 9 ·
+hs-generic 3 · statewide-agency 1 · course-title 2). Verifier note: the
+Ironworker family spot check went PRESENCE-CONDITIONAL (Sam folded every
+Ironworker row tonight — an unconditional spot on a triage queue is a latent
+failure the moment the curator finishes; the CD-005/Cinema-24 convention is
+the right default for ALL queue-anchored spots).

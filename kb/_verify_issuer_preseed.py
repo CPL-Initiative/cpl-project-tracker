@@ -245,9 +245,14 @@ def main():
           all("Military" not in (rows[k].get("cpl_types") or []) for k in staged))
 
     # ── spot anchors (regenerate the plan if the data moved) ──
-    check("spot: an Ironworker row stages the Iron Workers international",
-          any(k.startswith("Ironworker") and "Iron Workers" in v["issuer"]
-              for k, v in fam.items()))
+    # Presence-conditional since 2026-07-09 — Sam's triage pass folded every
+    # Ironworker row into credentials.json, so the family lane may legitimately
+    # have none left to stage (the CD-005/Cinema-24 spot-check convention).
+    iron_fam = [v for k, v in fam.items() if k.startswith("Ironworker")]
+    check("spot: Ironworker family rows (when present) stage the Iron Workers "
+          "international",
+          (not iron_fam)
+          or any("Iron Workers" in v["issuer"] for v in iron_fam))
     ab = staged.get("AB Miller High School Pathway — Business and Finance")
     check("spot: the AB Miller pathway row stages school-as-issuer + the stripped title (Rule 5f)",
           (ab is None) or (ab.get("issuer") == "AB Miller High School"

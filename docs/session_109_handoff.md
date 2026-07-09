@@ -1,92 +1,86 @@
 ---
-title: Session 109 handoff — after SkyPhilo's code-title resolution day (Session 108)
-date: 2026-07-08
-tags: [handoff, session-109, cer, preseed, title-lookup, coci]
+title: Session 109 handoff — after SkyPhilo's big triage night (Session 108)
+date: 2026-07-09
+tags: [handoff, session-109, cer, preseed, hs-rule, bulk-ccc, title-lookup]
 related:
   - "[[CLAUDE]]"
   - "[[docs/exhibit_canonicalization_lessons]]"
-  - "[[docs/session_108_handoff]]"
+  - "[[docs/kb-notes/methodology-live-curation-concurrency]]"
 ---
 
 # You are Session 109
 
-Session 108 (SkyPhilo) worked Sam's live-triage ask of the night: exhibits
-titled by a bare course code ("CD-005", "Cinema 24") that he was hand-searching
-in COCI. Both halves of the ask shipped in one merged PR (#707) while he kept
-saving. Note: Session 107 (SkyKey) ran LONG in parallel — its evening arc (the
-fan-in fixes #704–#706, "continued 13") landed AFTER the 108 handoff was
-written, so read both.
+Session 108 (SkyPhilo) ran the whole evening BESIDE Sam's live triage — he
+saved ~800 rows while the session shipped four merged PRs and a receipted
+bulk write. The blank-agency queue went **1,036 → 233**, and the 233 are
+almost all NEW rows minted by the night's rename/split applies. Read in
+order: CLAUDE.md §11 (Sessions 107–108), `docs/exhibit_canonicalization_lessons.md`
+("continued 13" → "continued 15" + addendum),
+`docs/kb-notes/methodology-live-curation-concurrency.md`, then this.
 
-Read in order: CLAUDE.md §11 (Sessions 107–108 blocks),
-`docs/exhibit_canonicalization_lessons.md` (2026-07-08 "continued 13" — the
-fan-in night — then "continued 14"), then this.
+## What shipped (Session 108 — SkyPhilo, PRs #707/#709/#710/#711 + a bulk write)
 
-## What shipped (Session 108 — SkyPhilo, PR #707, merged)
-
-1. **Rule 5c mech now resolves code-shaped titles against COCI** in
-   `kb/_preseed_null_issuers.py`: tight-hyphen parse ("CD-005" — shared
-   `parse_course_refs`, so the 💡 worklist suggestions inherit it via cron),
-   decoration-immune title-sanity guard (mech trails, "(FA25-SU27)" term
-   parens, pathway/college/school noise filtered from the remainder), a
-   college-scoped subject-PREFIX hop ("Cinema 24" → CCSF's CINE 24; unique
-   (code, college) only, receipted), and the code-shaped OVERRIDE — a staged
-   title that is still a bare code (the 5f "CD-005" residue) is upgraded to
-   the resolved CCN > C-ID > COCI title.
-2. **Plan regen** (same post-fold bake as #702): +6 titles, 1 upgrade, 0
-   regressions. CD-005 → "Child Growth and Development" (C-ID CDEV 100 — one
-   authority tier above Sam's manual COCI find); Cinema 24 → "Basic Film
-   Production"; Hanford West HS-005/HS-061 → Medical Terminology / Nurse
-   Assistant Training; MUS-3 → the C-ID MUS 110 descriptor title.
-3. **🔎/✨ on the TITLE column** of the missing-issuer lane (the #701 issuer
-   pattern): 🔎 "what is this?" opens the code-plus-college search from the
-   CURRENT title input; ✨ suggest → report proxy → click-to-fill chip
-   (re-arms Save, never auto-saved). Distinct `cr-ni-tsearch`/`cr-ni-tsuggest`
-   /`cr-ni-tsuggest-out` hooks — a shared out-class SHADOWED the issuer
-   test's row-scoped query on the first cut (lesson: two instances of one
-   affordance pattern in a row need disjoint hooks; share style via the CSS
-   selector list).
-4. Verifier +5 → **61 checks** (spot checks presence-CONDITIONAL so post-fold
-   regens stay green); `tests/cer_title_lookup.test.js` (12); suite 145 green.
+1. **#707 — code-titled exhibits resolve from COCI**: tight-hyphen parse
+   ("CD-005"), decoration-immune sanity guard, college-scoped subject-PREFIX
+   hop ("Cinema 24" → CCSF CINE 24), code-shaped staged titles UPGRADED to
+   the CCN > C-ID > COCI title (CD-005 → "Child Growth and Development" via
+   C-ID CDEV 100). Plus the 🔎 "what is this?" + ✨ suggest on the TITLE
+   column (disjoint `cr-ni-t*` hooks — a shared out-class shadowed the
+   issuer test's row-scoped query on the first cut).
+2. **#710 — Sam's HS rule**: fused `**HS` tokens (BIRMINGHAM CCHS), dotted
+   "Santa Ana H.S.", all-caps "HIGH SCHOOL ARTICULATION", display-title
+   signals, multi-school rows → the "Local High School" placeholder (schools
+   receipted, NO single trainer — the EMT-405 guard stands). Critical
+   negative: bare `HS ###` before digits = a SUBJECT code (Copper Mountain
+   Health Science), never a school. Also his 🔎 query ask: lead-strip + "in
+   CA" scope.
+3. **The audit that wrote nothing**: 17 CCC rows with HS signals were Sam's
+   own SPLIT pattern already at work (per-school credentials minted;
+   aggregates stay CCC deliberately). Audit the LIVE overlay, not the bake.
+4. **#711 + the bulk write**: 339 blank-agency rows → CCC (cohort
+   `ccc-bulk-s108@bot`, INSERT-only, 29 lost the race to Sam's saves — as
+   designed; Military 13 excluded per his scope pick; receipt
+   `kb/ccc_bulk_out/2026-07-09/`).
+5. **Post-fold regen**: dispatched daily run + the Mode-B rename apply landed;
+   plan regenerated off the fresh bake (queue 233, 200 staged); verifier 64
+   with the Ironworker spot gone presence-conditional.
 
 ## Priority queue
 
-1. **Sam's twin merges** — the Merge-confirmations strip still holds the
-   Session-107-evening twins (C++ Programming, Choreography, Child
-   Development, Critical Thinking and the Nursing Process). After his ✓s,
-   dispatch `cred-rename-apply.yml` — the fan-in fixes (#704–#706: twin
-   pruning, per-target V4, live Supabase claims) are in; converging batches
-   land clean now.
-2. **After his next pass + daily fold:** re-run `kb/_preseed_null_issuers.py`
-   (`pip install openpyxl` FIRST) + `kb/_verify_issuer_preseed.py` (now 61
-   checks — CD-005/Cinema-24 spot checks are conditional and stay green once
-   those rows fold out). Saved rows drop from the plan.
-3. **Spelling calls still pending (Sam):** ASE long-vs-short form · AWS
-   "(AWS)" suffix · OSHA "U.S." prefix · the IBEW → Riverside JAC re-point.
-4. Carryover: CLEP "Complete both" spans · DIR-pending apprenticeship
-   residuals · fire-family twins · 3 mojibake families · MOC→COS bridge ·
-   auditor re-run for originating-college chips (needs the runner's
-   PII-purged CustomReport) · the receipt-dir same-day-overwrite hardening
-   (`kb/cred_rename_out/<date>-runN/`) · CCR Convergence voice pass (still
-   the active CCR lane).
+1. **Sam's next lane pass** — 200 fresh prefills (cx 155 · course-as-exhibit
+   20 · local-trainer 10 · family 9 · hs-generic 3 · statewide-agency 1),
+   largely the rename/split residue. If he asks for another bulk-CCC
+   close-out, follow `methodology-live-curation-concurrency.md` (fresh live
+   diff + ON CONFLICT DO NOTHING + receipt cohort).
+2. **Military-typed residuals (13)** — still open, ACE/service-branch
+   judgment (deliberately excluded from the bulk set).
+3. **Possibly-unsplit HS variants** (reported, splits are Sam's): Crime Scene
+   Management's Summit "Cyber Scene Management"; Auto Electricity's Summit
+   variant.
+4. **Microsoft family split** — Sam's 4 CCC saves vs 18 Microsoft records;
+   Excel I/II + Publisher went cx→CCC following his lead. Flagged; his call.
+5. Carryover: ASE/AWS/OSHA spelling calls · IBEW → Riverside JAC re-point ·
+   CLEP "Complete both" spans · fire-family twins · 3 mojibake families ·
+   MOC→COS bridge · auditor re-run for college chips · receipt-dir
+   `<date>-runN/` hardening · CCR Convergence voice pass (still the active
+   CCR lane).
 
 ## Safety patterns to honor
 
-- Merges are NEVER inferred; the ✓ is Sam's. Staged pre-seeds stay
-  UI-prefill-only (Rule 5e); Modes A2/A3 fill-or-append, never overwrite.
-- The code-shaped override in `enrich_titles` replaces ONLY a title that is
-  still a bare course code, receipted in the note — never widen it to
-  descriptive titles.
-- The subject-prefix hop must stay college-scoped + unique-resolution-only;
-  never let it guess across colleges or fan out from short subjects.
-- Regenerate `kb/issuer_preseed.json` only off a fresh post-fold bake — a
-  same-bake regen (what #707 did) is fine; a STALE-bake regen re-stages rows
-  Sam already resolved.
-- Concurrent sessions are real (107 ran into 108's window): rebase-restart
-  the branch from origin/main before a checkpoint commit, and check the
-  lessons doc's latest "continued N" before claiming the next number.
-- Poll CI via the MCP github tools, never curl; merge on `unstable` per the
-  branch policy. `git reset --hard` eats riding edits — stash first.
+- **Every bulk decision beside a live curator**: last-second live diff,
+  INSERT-only with conflict-yield, receipt cohort, curator rows always win.
+- **Audit the live overlay, not the bake** — and check the fold mode before
+  "correcting" (Mode A2 fill-or-append: overrides on issuer-carrying rows
+  APPEND, they never replace).
+- Queue-anchored verifier spots are presence-conditional, always.
+- Staged pre-seeds stay UI-prefill-only (Rule 5e); merges/splits are NEVER
+  inferred — the click is Sam's.
+- Regenerate `kb/issuer_preseed.json` only off a fresh post-fold bake.
+- Poll CI via MCP github tools; merge on `unstable`; `git reset --hard` eats
+  riding edits — stash first. Concurrent sessions are real: rebase-restart
+  the branch from origin/main before each PR and check the lessons doc's
+  latest "continued N" before claiming the next.
 
-Session 108 claimed **SkyPhilo** (Sam's greeting named it). Moniker
-suggestion for you: **SkyFold** — the session that lands Sam's confirmed
-twin merges — or claim your own.
+Session 108 was **SkyPhilo** (Sam's greeting named it). Moniker suggestion
+for you: **SkyFinish** — the session that closes the last 233 — or claim
+your own.
