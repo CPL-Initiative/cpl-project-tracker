@@ -76,21 +76,19 @@ blank SUBJ + blank Discipline. His asks:
   display **CNST** (the CCR canonical SUBJ4 for Construction Technology from
   the Session-50 fold; drywall/millwright rows derive INDT/DRAF/MACH).
 
-### The SUBJ decision to put to Sam (pushback prepared)
+### The SUBJ decision — RESOLVED by Sam (2026-07-09, end of Session 109)
 
-Since SUBJ = our synthetic SUBJ4 convention, two coherent options:
-
-- **A. CNST** — matches the existing CCR canonical (Construction Technology →
-  CNST; the renamed siblings already display it). Zero divergence; but reads
-  less specific than Sam wants.
-- **B. CARP as a carpentry SUBJ4** — treat Construction Technology like an
-  UMBRELLA discipline (the FLNG→FL** / KIN precedent): carpentry courses get
-  their own SUBJ4. Honest + specific, but doing it PROPERLY is a CCR-level
-  carve-out (re-key the carpentry M-IDs CNST→CARP under Rule 7's playbook +
-  add to `UMBRELLA_DISCIPLINES`), not just a CER overlay fill — otherwise the
-  CER shows CARP while the CCR shows CNST for the same courses.
-- Cheap interim: `subj_override="CARP"` on the CER rows only (display layer),
-  explicitly noted as ahead of the CCR. Sam picks A, B, or interim-B.
+Sam: *"From CCR CARP is Carpentry and CNST is Construction Technology, so
+whichever matches COCI best for these is fine."* COCI's local subjects for
+this content are literally **CARP** (Rio Hondo + Laney) and **CARPT**
+(American River) → **use `subj_override = "CARP"`** on the carpentry
+apprenticeship family (a display-layer overlay fill; cohort
+`carp-subj-s110@bot`). Verify first whether the CCR actually carries CARP as
+a SUBJ4 (check `kb/discipline_canonical_subj4.json` for a Carpentry entry) —
+if it does, consider also filling the articulated rows so the family reads
+uniformly (they currently derive CNST/INDT); if not, CARP-on-the-CER-only is
+what Sam approved, note it in the receipt. REMAINING open question for Sam:
+fold the 3 "Rigging" rows (019/312/608) into one credential or keep separate.
 
 ### Build list
 
