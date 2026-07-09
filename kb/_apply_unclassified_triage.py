@@ -58,13 +58,32 @@ FIELD_ISSUER = "issuing_agency_assignment"
 def fetch_rows():
     # PostgREST: server-side filter so we only pull our namespace, not all of
     # kb_curation (which also holds the discipline + credential-review overlays).
+    # Range-paginated with a stable order — the namespace crossed PostgREST's
+    # 1,000-row unordered cap (1,204 rows on 2026-07-09), and a single
+    # unpaginated GET silently drops the tail: saved assignments then never
+    # fold and sit "awaiting fold" forever. Same fix as
+    # _cred_rename_apply_supabase.py / the Session-105 lesson
+    # (docs/kb-notes/methodology-paginate-postgrest-reads.md).
     endpoint = (f"{URL}/rest/v1/kb_curation"
                 "?select=course_id,field,value,reviewer_email,reviewed_at"
-                f"&course_id=like.{KEY_PREFIX}%25")
-    req = urllib.request.Request(endpoint, headers={
-        "apikey": KEY, "Authorization": f"Bearer {KEY}", "Accept": "application/json"})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return json.load(r)
+                f"&course_id=like.{KEY_PREFIX}%25"
+                "&order=course_id.asc,field.asc")
+    page_size = 1000
+    rows = []
+    start = 0
+    while True:
+        req = urllib.request.Request(endpoint, headers={
+            "apikey": KEY, "Authorization": f"Bearer {KEY}",
+            "Accept": "application/json",
+            "Range-Unit": "items",
+            "Range": f"{start}-{start + page_size - 1}"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            page = json.load(r)
+        rows.extend(page or [])
+        if not page or len(page) < page_size:
+            break
+        start += page_size
+    return rows
 
 
 def build_assignments(rows):
