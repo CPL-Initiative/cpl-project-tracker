@@ -1,5 +1,5 @@
 {
-  "_generated_at": "2026-07-09T00:20:21Z",
+  "_generated_at": "2026-07-09T00:28:59Z",
   "mode": "apply",
   "gates": {
     "V1_apply_safe": false,
@@ -2435,22 +2435,6 @@
       "why": "already classified to the same target"
     },
     {
-      "raw": "CUL ART 041",
-      "assigned": "Culinary Arts (CUL ART 041)",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "CULART 250 CBE",
-      "assigned": "Culinary Arts (CULART 250)",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
-      "why": "already classified to the same target"
-    },
-    {
       "raw": "Cabinetmaker Apprenticeship",
       "assigned": "Carpenters Apprenticeship — Cabinetmaker",
       "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -2560,14 +2544,6 @@
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Chaffey Joint Union - Rancho Cucamonga HS - Advanced Engineering Design II H 1&2",
-      "assigned": "High School Articulation — Advanced Engineering Design II Honors (Rancho Cucamonga HS)",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -2885,14 +2861,6 @@
     {
       "raw": "Credit by Exam- Introduction to Legal Research and Terminology",
       "assigned": "Introduction to Legal Research and Terminology",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Credit by Exam: History Of Architecture I",
-      "assigned": "History of Architecture I",
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
@@ -3344,22 +3312,6 @@
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "GEOG 025 - Introduction to Geographic Information Systems and Laboratory",
-      "assigned": "Introduction to Geographic Information Systems",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "GIS 025 - Introduction to Geographic Information Systems and Laboratory",
-      "assigned": "Introduction to Geographic Information Systems",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -3899,14 +3851,6 @@
       "why": "already classified to the same target"
     },
     {
-      "raw": "Music Skills II - Credit by Exam",
-      "assigned": "Music Skills II",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
-      "why": "already classified to the same target"
-    },
-    {
       "raw": "NCCER CORE Curriculum - Introduction to Basic Construction Skills",
       "assigned": "NCCER CORE Curriculum - Introduction to Basic Construction Skills",
       "issuer": "NCCER",
@@ -4168,14 +4112,6 @@
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:41.997146+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Portfolio Review - Direct and Alternating Current Circuit Analysis and Laboratory",
-      "assigned": "DC and AC Circuit Analysis and Laboratory",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -4627,14 +4563,6 @@
       "why": "already classified to the same target"
     },
     {
-      "raw": "Water Supply Technology Portfolio Student 1",
-      "assigned": "Generic Portfolio Review — San Bernardino Valley College (Water Supply Technology)",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:36:58.12663+00:00",
-      "why": "already classified to the same target"
-    },
-    {
       "raw": "Web Page Development and Publishing",
       "assigned": "Web Page Development and Publishing",
       "issuer": "",
@@ -4691,6 +4619,22 @@
       "displaced": [
         "ASE A4 — Suspension and Steering"
       ]
+    },
+    {
+      "raw": "Water Supply Technology Portfolio Student 1",
+      "assigned": "Generic Portfolio Review — San Bernardino Valley College (Water Supply Technology)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:36:58.12663+00:00",
+      "spellings": [
+        "Water Supply Technology Portfolio Student 1"
+      ],
+      "disagreeing": [
+        "Water Supply Technology Portfolio Student 1"
+      ],
+      "displaced": [
+        "Water Supply Technology"
+      ]
     }
   ],
   "stale": [
@@ -4743,6 +4687,30 @@
       "why": "KB holds a newer curator decision: 'Advanced Metal Framing' -> 'Metal Framing Advanced' (2026-06-02T18:25:47Z)"
     },
     {
+      "raw": "CUL ART 041",
+      "assigned": "Culinary Arts (CUL ART 041)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "why": "KB holds a newer curator decision: 'CUL ART 041 ' -> 'Desserts and Pastries' (2026-07-07); 'CUL ART 041' -> 'Desserts and Pastries' (2026-06-03T17:55:58.840521+00:00)"
+    },
+    {
+      "raw": "CULART 250 CBE",
+      "assigned": "Culinary Arts (CULART 250)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "why": "KB holds a newer curator decision: 'CULART 250 CBE ' -> 'Wine, Beverage, and Food Pairing Concepts' (2026-07-07); 'CULART 250 CBE' -> 'Wine, Beverage, and Food Pairing Concepts' (2026-06-03T17:55:58.840521+00:00)"
+    },
+    {
+      "raw": "Chaffey Joint Union - Rancho Cucamonga HS - Advanced Engineering Design II H 1&2",
+      "assigned": "High School Articulation — Advanced Engineering Design II Honors (Rancho Cucamonga HS)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "why": "KB holds a newer curator decision: 'Chaffey Joint Union - Rancho Cucamonga HS - Advanced Engineering Design II H 1&2' -> 'Engineering Design II Honors Advanced' (2026-06-03T17:28:52.076094+00:00)"
+    },
+    {
       "raw": "Cinema 24- Credit by Exam",
       "assigned": "Cinema 24",
       "issuer": "",
@@ -4757,6 +4725,14 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:33:50.363171+00:00",
       "why": "KB holds a newer curator decision: '\\tFTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship' -> 'Fire Service In-Service Training — Command & Control' (2026-06-04); 'FTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship' -> 'Fire Service In-Service Training — Command & Control' (2026-06-04)"
+    },
+    {
+      "raw": "Portfolio Review - Direct and Alternating Current Circuit Analysis and Laboratory",
+      "assigned": "DC and AC Circuit Analysis and Laboratory",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "why": "KB holds a newer curator decision: 'Portfolio Review - Direct and Alternating Current Circuit Analysis and Laboratory' -> 'DC and AC Circuit Analysis' (2026-06-03T17:28:52.076094+00:00)"
     }
   ],
   "conflict": [
@@ -4777,12 +4753,44 @@
       "why": "human-reviewed classification stands: 'CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)' -> 'Business Management and Entrepreneurship'"
     },
     {
+      "raw": "Credit by Exam: History Of Architecture I",
+      "assigned": "History of Architecture I",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "human-reviewed classification stands: 'Credit by Exam: History Of Architecture I' -> 'History of Architecture 1'"
+    },
+    {
+      "raw": "GEOG 025 - Introduction to Geographic Information Systems and Laboratory",
+      "assigned": "Introduction to Geographic Information Systems",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "human-reviewed classification stands: 'GEOG 025 - Introduction to Geographic Information Systems and Laboratory' -> 'Introduction to Geographic Information Systems and Laboratory'"
+    },
+    {
+      "raw": "GIS 025 - Introduction to Geographic Information Systems and Laboratory",
+      "assigned": "Introduction to Geographic Information Systems",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "human-reviewed classification stands: 'GIS 025 - Introduction to Geographic Information Systems and Laboratory' -> 'Introduction to Geographic Information Systems and Laboratory'"
+    },
+    {
       "raw": "INSPEC 015 - Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
       "assigned": "Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
       "why": "human-reviewed classification stands: 'INSPEC 015 - Advanced Construction Inspection: Uniform Plumbing Code (UPC)' -> 'Construction Inspection: Uniform Plumbing Code (UPC) Advanced'"
+    },
+    {
+      "raw": "Music Skills II - Credit by Exam",
+      "assigned": "Music Skills II",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "human-reviewed classification stands: 'Music Skills II - Credit by Exam' -> 'Music Skills 2'"
     }
   ],
   "credential_adds": [
@@ -4833,12 +4841,42 @@
       "displaced": [
         "ASE A4 — Suspension and Steering"
       ]
+    },
+    {
+      "raw": "Water Supply Technology Portfolio Student 1",
+      "assigned": "Generic Portfolio Review — San Bernardino Valley College (Water Supply Technology)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:36:58.12663+00:00",
+      "spellings": [
+        "Water Supply Technology Portfolio Student 1"
+      ],
+      "disagreeing": [
+        "Water Supply Technology Portfolio Student 1"
+      ],
+      "displaced": [
+        "Water Supply Technology"
+      ]
     }
   ],
   "credential_issuer_fills": [],
   "credential_issuer_adds": [],
   "credential_prunes": [],
-  "articulation_ripples": [],
-  "articulation_ripples_resolved": [],
+  "articulation_ripples": [
+    {
+      "idx": 3817,
+      "raw": "Water Supply Technology Portfolio Student 1",
+      "has": "Water Supply Technology",
+      "want": "Generic Portfolio Review — San Bernardino Valley College (Water Supply Technology)"
+    }
+  ],
+  "articulation_ripples_resolved": [
+    {
+      "idx": 3817,
+      "raw": "Water Supply Technology Portfolio Student 1",
+      "has": "Water Supply Technology",
+      "want": "Generic Portfolio Review — San Bernardino Valley College (Water Supply Technology)"
+    }
+  ],
   "articulation_ripples_blocking": []
 }
