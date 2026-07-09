@@ -1,5 +1,5 @@
 {
-  "_generated_at": "2026-07-09T19:02:59Z",
+  "_generated_at": "2026-07-09T19:34:02Z",
   "mode": "apply",
   "gates": {
     "V1_apply_safe": false,
@@ -8,7 +8,722 @@
     "V4_no_articulation_ripple": true
   },
   "apply_safe": false,
-  "clean": [],
+  "clean": [
+    {
+      "raw": "C-6 Cabinet, Millwork and Finish Carpentry Contractor",
+      "assigned": "C-6 Cabinet, Millwork and Finish Carpentry Contractor",
+      "issuer": "Contractors State License Board (CSLB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:26.986586+00:00"
+    },
+    {
+      "raw": "C-8 Concrete Contractor",
+      "assigned": "C-8 Concrete Contractor",
+      "issuer": "Contractors State License Board (CSLB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.038759+00:00"
+    },
+    {
+      "raw": "CLEP French Language (Levels 1 and 2) - Complete both",
+      "assigned": "French Language (Levels 1 and 2)",
+      "issuer": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:05:06.780863+00:00"
+    },
+    {
+      "raw": "CLEP French Level III",
+      "assigned": "CLEP French Language Level III",
+      "issuer": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.601452+00:00"
+    },
+    {
+      "raw": "CLEP German Language (Levels 1 and 2) - Complete both",
+      "assigned": "German Language (Levels 1 and 2)",
+      "issuer": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:05:07.643378+00:00"
+    },
+    {
+      "raw": "CLEP German Level III",
+      "assigned": "CLEP German Language Level III",
+      "issuer": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.64725+00:00"
+    },
+    {
+      "raw": "CLEP Spanish Language (Levels 1 and 2) - Complete both",
+      "assigned": "Spanish Language (Levels 1 and 2)",
+      "issuer": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:05:25.195447+00:00"
+    },
+    {
+      "raw": "CNC Operation",
+      "assigned": "CNC Operation",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.750204+00:00"
+    },
+    {
+      "raw": "Cal Fire Fire Control 4A: Ignitable Liquids and Gases Awareness/Operations",
+      "assigned": "Fire Control 4A — Ignitable Liquids and Gases Awareness/Operations",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.087971+00:00"
+    },
+    {
+      "raw": "California Building Code Certification",
+      "assigned": "California Building Code Certification",
+      "issuer": "International Code Council (ICC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.136045+00:00"
+    },
+    {
+      "raw": "California Certified Public Accountant (CPA) License, issued by the California Board of Accountancy (CBA).",
+      "assigned": "California Certified Public Accountant (CPA) License",
+      "issuer": "California Board of Accountancy (CBA)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.183963+00:00"
+    },
+    {
+      "raw": "California Residential Code Certification",
+      "assigned": "California Residential Code Certification",
+      "issuer": "International Code Council (ICC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.243741+00:00"
+    },
+    {
+      "raw": "California State Water Resources Control Board D2, D3, D4, or D5 certification",
+      "assigned": "Water Distribution Operator Grade D2, D3, D4, or D5",
+      "issuer": "California State Water Resources Control Board (SWRCB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.289183+00:00"
+    },
+    {
+      "raw": "Certification for Welders",
+      "assigned": "Certification for Welders",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.335459+00:00"
+    },
+    {
+      "raw": "Certification: Microsoft Office Specialist (MOS)- Excel",
+      "assigned": "Microsoft Office Specialist — Excel",
+      "issuer": "Microsoft",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.375992+00:00"
+    },
+    {
+      "raw": "Certified Nurse Assistant (CNA) Certification",
+      "assigned": "Certified Nurse Assistant (CNA) Certification",
+      "issuer": "California Department of Public Health (CDPH)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.425427+00:00"
+    },
+    {
+      "raw": "Class A Contractor License",
+      "assigned": "Class A Contractor License",
+      "issuer": "Contractors State License Board (CSLB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.46972+00:00"
+    },
+    {
+      "raw": "Class B Contractor License",
+      "assigned": "Class B Contractor License",
+      "issuer": "Contractors State License Board (CSLB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.509947+00:00"
+    },
+    {
+      "raw": "Class B-2 Contractor License",
+      "assigned": "Class B-2 Contractor License",
+      "issuer": "Contractors State License Board (CSLB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.552746+00:00"
+    },
+    {
+      "raw": "Clinical Embalming (MORT 482 C)",
+      "assigned": "Clinical Embalming",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.701463+00:00"
+    },
+    {
+      "raw": "Combinded Processes I",
+      "assigned": "Combined Processes I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.79676+00:00"
+    },
+    {
+      "raw": "Communications Systems",
+      "assigned": "Communications Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.846196+00:00"
+    },
+    {
+      "raw": "Company Officer 2A: Human Resource Management for Company Officer",
+      "assigned": "Company Officer 2A: Human Resource Management for Company Officer",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:05:24.362868+00:00"
+    },
+    {
+      "raw": "Company Officer 2B: General Administrative Functions for Company Officers",
+      "assigned": "Company Officer 2B: General Administrative Functions for Company Officers",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:05:52.989244+00:00"
+    },
+    {
+      "raw": "Company Officer 2C: Fire Inspections and Investigations for Company Officers",
+      "assigned": "Company Officer 2C: Fire Inspections and Investigations for Company Officers",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:05:52.212271+00:00"
+    },
+    {
+      "raw": "Company Officer 2D: All-Risk Command Operations for Company Officers",
+      "assigned": "Company Officer 2D: All-Risk Command Operations for Company Officers",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:06:27.580389+00:00"
+    },
+    {
+      "raw": "Company Officer 2E: Wildland Incident Operations for Company Officers",
+      "assigned": "Company Officer 2E: Wildland Incident Operations for Company Officers",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:06:27.030792+00:00"
+    },
+    {
+      "raw": "Computer Networks",
+      "assigned": "Computer Networks",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.890894+00:00"
+    },
+    {
+      "raw": "Computer Simulation and Troubleshooting",
+      "assigned": "Computer Simulation and Troubleshooting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.936416+00:00"
+    },
+    {
+      "raw": "Confined Space Rescue Technician",
+      "assigned": "Confined Space Rescue Technician",
+      "issuer": "Office of the State Fire Marshall",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:07:50.832783+00:00"
+    },
+    {
+      "raw": "Construction Fabrication and Welding",
+      "assigned": "Construction Fabrication and Welding",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.976111+00:00"
+    },
+    {
+      "raw": "Customer Relations for the Technician",
+      "assigned": "Customer Relations for the Technician",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.01849+00:00"
+    },
+    {
+      "raw": "Discipline Exam - ADM JUS 001",
+      "assigned": "Introduction to Administration of Justice",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.063291+00:00"
+    },
+    {
+      "raw": "Emergency Care and Safety Institute",
+      "assigned": "Emergency Care and Safety Institute",
+      "issuer": "Emergency Care and Safety Institute (ECSI)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.105654+00:00"
+    },
+    {
+      "raw": "Emergency Management Experience (LD)",
+      "assigned": "Emergency Management Experience (Lower Division)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.150837+00:00"
+    },
+    {
+      "raw": "Emergency Management Experience (UD)",
+      "assigned": "Emergency Management Experience (Upper Division)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.199243+00:00"
+    },
+    {
+      "raw": "Engineering Drawing",
+      "assigned": "Engineering Drawing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.240515+00:00"
+    },
+    {
+      "raw": "FCC General Radiotelephone Operator License Preparation",
+      "assigned": "FCC General Radiotelephone Operator License (GROL)",
+      "issuer": "U.S. Federal Communications Commission (FCC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.285798+00:00"
+    },
+    {
+      "raw": "Fire Company Officer 3 Certification (IFSAC or ProBoard Certifications)",
+      "assigned": "Fire Company Officer 3",
+      "issuer": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.326418+00:00"
+    },
+    {
+      "raw": "Fire Fighter 1 (FF1) Certification",
+      "assigned": "Firefighter 1",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.374375+00:00"
+    },
+    {
+      "raw": "Fire Fighter 1: Haz Mat + WMD",
+      "assigned": "Firefighter 1 — Haz Mat + WMD",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.41808+00:00"
+    },
+    {
+      "raw": "Fire Fighter 2 (FF2) Certification",
+      "assigned": "Firefighter 2",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.460969+00:00"
+    },
+    {
+      "raw": "Fire Inspector 1 Certification (IFSAC/ProBoard)",
+      "assigned": "Fire Inspector I",
+      "issuer": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.504286+00:00"
+    },
+    {
+      "raw": "Fire Inspector 2 (IFSAC/ProBoard)",
+      "assigned": "Fire Inspector II",
+      "issuer": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.543783+00:00"
+    },
+    {
+      "raw": "Fire Instructor 2 (ProBoard)",
+      "assigned": "Fire Instructor 2",
+      "issuer": "Pro Board (National Board on Fire Service Professional Qualifications)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.586052+00:00"
+    },
+    {
+      "raw": "Fire Officer 2A: Human Resource Management",
+      "assigned": "Fire Officer 2A: Human Resource Management",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:07:54.572489+00:00"
+    },
+    {
+      "raw": "Fire Officer II Certification (ProBoard)",
+      "assigned": "Fire Officer II",
+      "issuer": "Pro Board (National Board on Fire Service Professional Qualifications)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.629876+00:00"
+    },
+    {
+      "raw": "Firefighter I",
+      "assigned": "Firefighter I",
+      "issuer": "National Fire Protection Association (NFPA)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.669403+00:00"
+    },
+    {
+      "raw": "Firefighter II",
+      "assigned": "Firefighter II",
+      "issuer": "National Fire Protection Association (NFPA)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.712759+00:00"
+    },
+    {
+      "raw": "IC-  Welding Level I",
+      "assigned": "NCCER Welding Level 1",
+      "issuer": "National Center for Construction Education and Research (NCCER)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.75256+00:00"
+    },
+    {
+      "raw": "IC- Automotive Electrical/Electronics I",
+      "assigned": "Automotive Electrical/Electronics I",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.796211+00:00"
+    },
+    {
+      "raw": "IC- Engine Performance II",
+      "assigned": "Engine Performance II",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.838412+00:00"
+    },
+    {
+      "raw": "IC- Introduction to Automotive Technology",
+      "assigned": "Introduction to Automotive Technology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.880674+00:00"
+    },
+    {
+      "raw": "IC- Introduction to Hybrid and Electric Vehicle Technology",
+      "assigned": "Introduction to Hybrid and Electric Vehicle Technology",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.92324+00:00"
+    },
+    {
+      "raw": "IC- Welding Level I",
+      "assigned": "NCCER Welding Level 1",
+      "issuer": "National Center for Construction Education and Research (NCCER)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.967004+00:00"
+    },
+    {
+      "raw": "IC- Welding Level II",
+      "assigned": "NCCER Welding Level 2",
+      "issuer": "National Center for Construction Education and Research (NCCER)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.016328+00:00"
+    },
+    {
+      "raw": "IC-Automotive Brake Systems",
+      "assigned": "Automotive Brake Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.062288+00:00"
+    },
+    {
+      "raw": "IC-Automotive Electrical/Electronics II",
+      "assigned": "Automotive Electrical/Electronics II",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.103869+00:00"
+    },
+    {
+      "raw": "IC-Automotive Suspension, Steering and Alignment Systems",
+      "assigned": "Automotive Suspension, Steering and Alignment Systems",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.151474+00:00"
+    },
+    {
+      "raw": "IC-Engine Performance I",
+      "assigned": "Engine Performance I",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.194398+00:00"
+    },
+    {
+      "raw": "IC-Welding Level I",
+      "assigned": "NCCER Welding Level 1",
+      "issuer": "National Center for Construction Education and Research (NCCER)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.243806+00:00"
+    },
+    {
+      "raw": "IC-Welding Level II",
+      "assigned": "NCCER Welding Level 2",
+      "issuer": "National Center for Construction Education and Research (NCCER)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.289355+00:00"
+    },
+    {
+      "raw": "Incident Commander HAZMAT",
+      "assigned": "Incident Commander HAZMAT",
+      "issuer": "National Association of Safety Professionals",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:08:51.124454+00:00"
+    },
+    {
+      "raw": "Infant and Toddler Care and Curriculum",
+      "assigned": "Infant and Toddler Care and Curriculum",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.332708+00:00"
+    },
+    {
+      "raw": "Instructor I Instructional Methodology",
+      "assigned": "Instructor I Instructional Methodology",
+      "issuer": "Office of the State Fire Marshall",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:09:13.046288+00:00"
+    },
+    {
+      "raw": "Instructor II Instructional Development",
+      "assigned": "Instructor II Instructional Development",
+      "issuer": "Office of the State Fire Marshall",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:09:16.074098+00:00"
+    },
+    {
+      "raw": "Intermediate Arc Welding",
+      "assigned": "Intermediate Arc Welding",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.380889+00:00"
+    },
+    {
+      "raw": "Intermediate Wildland Fire Behavior",
+      "assigned": "Intermediate Wildland Fire Behavior",
+      "issuer": "Office of the State Fire Marshall",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:09:21.63317+00:00"
+    },
+    {
+      "raw": "Internship and Work Experience",
+      "assigned": "Internship and Work Experience",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.434895+00:00"
+    },
+    {
+      "raw": "Intro to Managerial Accounting",
+      "assigned": "Introduction to Managerial Accounting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.478369+00:00"
+    },
+    {
+      "raw": "Introduciton to UNIX/Linux",
+      "assigned": "Introduction to UNIX/Linux",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.525568+00:00"
+    },
+    {
+      "raw": "Introduction to CNC Programing",
+      "assigned": "Introduction to CNC Programming",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.566524+00:00"
+    },
+    {
+      "raw": "Introduction to Engineering",
+      "assigned": "Introduction to Engineering",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.612345+00:00"
+    },
+    {
+      "raw": "Introduction to Mechanical Principals",
+      "assigned": "Introduction to Mechanical Principles",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.65957+00:00"
+    },
+    {
+      "raw": "Introduction to Video Editing and Postproduction",
+      "assigned": "Introduction to Video Editing and Postproduction",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.700833+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, General Carpenter, AS",
+      "assigned": "Carpentry General Carpenter Journeyman Certificate",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T21:36:05.412892+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, General Carpenter, CA",
+      "assigned": "Carpentry General Carpenter Journeyman Certificate",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T21:36:43.976962+00:00"
+    },
+    {
+      "raw": "Medical Insurance Billing and Coding",
+      "assigned": "Medical Insurance Billing and Coding",
+      "issuer": "National Healthcareer Association",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.745542+00:00"
+    },
+    {
+      "raw": "Microsoft Office Specialist (MOS): Excel Associate or Microsoft Office Specialist (MOS): Excel Expert Certification.",
+      "assigned": "Microsoft Office Specialist — Excel or Excel Expert",
+      "issuer": "Microsoft",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.79025+00:00"
+    },
+    {
+      "raw": "Microsoft Office Specialist (MOS): Word Associate or MOS: Word Expert Certification.",
+      "assigned": "Microsoft Office Specialist — Word or Word Expert",
+      "issuer": "Microsoft",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.833788+00:00"
+    },
+    {
+      "raw": "Microwave Communications",
+      "assigned": "Microwave Communications",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.880935+00:00"
+    },
+    {
+      "raw": "Military Basic Training",
+      "assigned": "Basic Military Training",
+      "issuer": "American Council on Education (ACE)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.923228+00:00"
+    },
+    {
+      "raw": "Motion Graphics",
+      "assigned": "Motion Graphics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.968813+00:00"
+    },
+    {
+      "raw": "NIMS ICS All-Hazards Incident Commander (ICT3)",
+      "assigned": "NIMS ICS All-Hazards Incident Commander (ICT3)",
+      "issuer": "U.S. Federal Emergency Management Agency (FEMA)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.097329+00:00"
+    },
+    {
+      "raw": "National Wildfire Coordinating Group-S-190 Introduction to Windland Fire Behavior",
+      "assigned": "NWCG S-190 — Introduction to Wildland Fire Behavior",
+      "issuer": "National Wildfire Coordinating Group (NWCG)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.012969+00:00"
+    },
+    {
+      "raw": "Network+ Certification Preparation",
+      "assigned": "CompTIA Network+",
+      "issuer": "CompTIA",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.058347+00:00"
+    },
+    {
+      "raw": "Oxyacetylene Welding",
+      "assigned": "Oxyacetylene Welding",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.138378+00:00"
+    },
+    {
+      "raw": "PC Operating System",
+      "assigned": "PC Operating System",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.178708+00:00"
+    },
+    {
+      "raw": "PC Troubleshooting",
+      "assigned": "PC Troubleshooting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.223476+00:00"
+    },
+    {
+      "raw": "Peace Officer Standards and Training (POST) Basic Academy Certificate",
+      "assigned": "POST Basic Academy",
+      "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.266164+00:00"
+    },
+    {
+      "raw": "Personal Computer Servicing",
+      "assigned": "Personal Computer Servicing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.305139+00:00"
+    },
+    {
+      "raw": "Pipe and Tube Welding",
+      "assigned": "Pipe and Tube Welding",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.353939+00:00"
+    },
+    {
+      "raw": "Print Reading and Computations for Workers",
+      "assigned": "Print Reading and Computations for Workers",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.398124+00:00"
+    },
+    {
+      "raw": "Print Reading and Shop Practice",
+      "assigned": "Print Reading and Shop Practice",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.443676+00:00"
+    },
+    {
+      "raw": "Producing and Directing",
+      "assigned": "Producing and Directing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.487339+00:00"
+    },
+    {
+      "raw": "Rope Rescue Operations",
+      "assigned": "Rope Rescue Operations",
+      "issuer": "Office of the State Fire Marshall",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:08:17.564273+00:00"
+    },
+    {
+      "raw": "S-339 Division/Group Supervisor- ALL RISK (Wildland Fire Fighter)",
+      "assigned": "NWCG S-339 — Division/Group Supervisor (All-Risk)",
+      "issuer": "National Wildfire Coordinating Group (NWCG)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.53243+00:00"
+    },
+    {
+      "raw": "Server Systems",
+      "assigned": "Server Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.575443+00:00"
+    },
+    {
+      "raw": "Solidworks Advanced Solid Modeling",
+      "assigned": "Solidworks Advanced Solid Modeling",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.615902+00:00"
+    },
+    {
+      "raw": "Solidworks Intermediate Solid Modeling",
+      "assigned": "Solidworks Intermediate Solid Modeling",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.66912+00:00"
+    },
+    {
+      "raw": "Video Editing",
+      "assigned": "Video Editing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.7174+00:00"
+    },
+    {
+      "raw": "Video I",
+      "assigned": "Video I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.764822+00:00"
+    }
+  ],
   "skip": [
     {
       "raw": "A S T 025 - Fundamentals of Auto Mechanics",
@@ -48,14 +763,6 @@
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T15:55:43.566358+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "ADJU 232 - Juvenile Justice Procedures - Credit by Exam",
-      "assigned": "Juvenile Justice Procedures",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -752,14 +1459,6 @@
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T17:00:20.769531+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "AUTO 62B: Wheel Alignment, Chassis Dynamics, ADAS - Credit By Exam",
-      "assigned": "Wheel Alignment, Chassis Dynamics, and ADAS",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -2547,14 +3246,6 @@
       "why": "already classified to the same target"
     },
     {
-      "raw": "Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors",
-      "assigned": "High School Articulation — Anatomy and Physiology Honors (Colton-Redlands-Yucaipa ROP)",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
-      "why": "already classified to the same target"
-    },
-    {
       "raw": "Commercial Building Inspector",
       "assigned": "Commercial Building Inspector",
       "issuer": "International Code Council",
@@ -2904,14 +3595,6 @@
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "DANCETQ 141 - Modern Dance Techniques I",
-      "assigned": "Modern Dance Techniques I",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -3691,27 +4374,11 @@
       "why": "already classified to the same target"
     },
     {
-      "raw": "MDAST 323 - Medical Assisting Clinical - Indsutry Certification",
-      "assigned": "Medical Assisting Clinical",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
-      "why": "already classified to the same target"
-    },
-    {
       "raw": "MDAST 324 - Introduction to Disease & Pharmacology - Industrial Certification",
       "assigned": "Introduction to Disease and Pharmacology",
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "MDAST 325 - Medical Assisting Lab Procedures - Industry Certification",
-      "assigned": "Medical Assisting Lab Procedures",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -3784,14 +4451,6 @@
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T18:57:48.425393+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Math 095 CBE",
-      "assigned": "Mathematics (MATH 095)",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -3963,14 +4622,6 @@
       "why": "already classified to the same target"
     },
     {
-      "raw": "NURSING 402 - Pharmacology",
-      "assigned": "Pharmacology (Nursing)",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
-      "why": "already classified to the same target"
-    },
-    {
       "raw": "National Center for Construction Education and Research (NCCER)",
       "assigned": "NCCER Certification (unspecified)",
       "issuer": "",
@@ -4037,14 +4688,6 @@
     {
       "raw": "PLNT SC 812 - Landscape Installation and Maintenance I",
       "assigned": "Landscape Installation and Maintenance I",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "PLNT SC 827 - Sustainable Gardening for Landscapes",
-      "assigned": "Sustainable Gardening for Landscapes",
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
@@ -4539,14 +5182,6 @@
       "why": "already classified to the same target"
     },
     {
-      "raw": "WELD 045 CBE",
-      "assigned": "Welding (WELD 045)",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
-      "why": "already classified to the same target"
-    },
-    {
       "raw": "WST 034 -  Introduction to Water Resource Management - Portfolio Review",
       "assigned": "Introduction to Water Resource Management",
       "issuer": "",
@@ -4618,6 +5253,22 @@
       ],
       "displaced": [
         "ASE A4 — Suspension and Steering"
+      ]
+    },
+    {
+      "raw": "AUTO 62B: Wheel Alignment, Chassis Dynamics, ADAS - Credit By Exam",
+      "assigned": "Wheel Alignment, Chassis Dynamics, and ADAS",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "spellings": [
+        "AUTO 62B: Wheel Alignment, Chassis Dynamics, ADAS - Credit By Exam"
+      ],
+      "disagreeing": [
+        "AUTO 62B: Wheel Alignment, Chassis Dynamics, ADAS - Credit By Exam"
+      ],
+      "displaced": [
+        "Wheel Alignment, Chassis Dynamics, ADAS"
       ]
     },
     {
@@ -4727,15 +5378,39 @@
       "why": "KB holds a newer curator decision: '\\tFTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship' -> 'Fire Service In-Service Training — Command & Control' (2026-06-04); 'FTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship' -> 'Fire Service In-Service Training — Command & Control' (2026-06-04)"
     },
     {
+      "raw": "Math 095 CBE",
+      "assigned": "Mathematics (MATH 095)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "why": "KB holds a newer curator decision: 'Math 095 CBE ' -> 'Intermediate Algebra' (2026-07-07); 'Math 095 CBE' -> 'Intermediate Algebra' (2026-06-03T17:55:58.840521+00:00)"
+    },
+    {
       "raw": "Portfolio Review - Direct and Alternating Current Circuit Analysis and Laboratory",
       "assigned": "DC and AC Circuit Analysis and Laboratory",
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
       "why": "KB holds a newer curator decision: 'Portfolio Review - Direct and Alternating Current Circuit Analysis and Laboratory' -> 'DC and AC Circuit Analysis' (2026-06-03T17:28:52.076094+00:00)"
+    },
+    {
+      "raw": "WELD 045 CBE",
+      "assigned": "Welding (WELD 045)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "why": "KB holds a newer curator decision: 'WELD 045 CBE' -> 'Shielded Metal Arc Welding Beginning' (2026-06-03T17:55:58.840521+00:00)"
     }
   ],
   "conflict": [
+    {
+      "raw": "ADJU 232 - Juvenile Justice Procedures - Credit by Exam",
+      "assigned": "Juvenile Justice Procedures",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "human-reviewed classification stands: 'ADJU 232 - Juvenile Justice Procedures - Credit by Exam' -> 'Juvenile Law and Procedures'"
+    },
     {
       "raw": "Automotive Technology MLR I & II - Irvine High School",
       "assigned": "Automotive Technology MLR I and II — Irvine High School",
@@ -4753,12 +5428,28 @@
       "why": "human-reviewed classification stands: 'CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)' -> 'Business Management and Entrepreneurship'"
     },
     {
+      "raw": "Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors",
+      "assigned": "High School Articulation — Anatomy and Physiology Honors (Colton-Redlands-Yucaipa ROP)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "human-reviewed classification stands: 'Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors' -> 'Anatomy and Physiology Honors'"
+    },
+    {
       "raw": "Credit by Exam: History Of Architecture I",
       "assigned": "History of Architecture I",
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
       "why": "human-reviewed classification stands: 'Credit by Exam: History Of Architecture I' -> 'History of Architecture 1'"
+    },
+    {
+      "raw": "DANCETQ 141 - Modern Dance Techniques I",
+      "assigned": "Modern Dance Techniques I",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "human-reviewed classification stands: 'DANCETQ 141 - Modern Dance Techniques I' -> 'Modern Dance Techniques 1'"
     },
     {
       "raw": "GEOG 025 - Introduction to Geographic Information Systems and Laboratory",
@@ -4785,15 +5476,614 @@
       "why": "human-reviewed classification stands: 'INSPEC 015 - Advanced Construction Inspection: Uniform Plumbing Code (UPC)' -> 'Construction Inspection: Uniform Plumbing Code (UPC) Advanced'"
     },
     {
+      "raw": "MDAST 323 - Medical Assisting Clinical - Indsutry Certification",
+      "assigned": "Medical Assisting Clinical",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "human-reviewed classification stands: 'MDAST 323 - Medical Assisting Clinical - Indsutry Certification' -> 'Medical Assisting Clinical Procedures'"
+    },
+    {
+      "raw": "MDAST 325 - Medical Assisting Lab Procedures - Industry Certification",
+      "assigned": "Medical Assisting Lab Procedures",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "human-reviewed classification stands: 'MDAST 325 - Medical Assisting Lab Procedures - Industry Certification' -> 'Medical Assisting Laboratory Procedures'"
+    },
+    {
       "raw": "Music Skills II - Credit by Exam",
       "assigned": "Music Skills II",
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
       "why": "human-reviewed classification stands: 'Music Skills II - Credit by Exam' -> 'Music Skills 2'"
+    },
+    {
+      "raw": "NURSING 402 - Pharmacology",
+      "assigned": "Pharmacology (Nursing)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "human-reviewed classification stands: 'NURSING 402 - Pharmacology' -> 'Pharmacology'"
+    },
+    {
+      "raw": "PLNT SC 827 - Sustainable Gardening for Landscapes",
+      "assigned": "Sustainable Gardening for Landscapes",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "human-reviewed classification stands: 'PLNT SC 827 - Sustainable Gardening for Landscapes' -> 'Sustainable Gardening for Landscapes (Horticulture)'"
     }
   ],
   "credential_adds": [
+    {
+      "raw": "C-6 Cabinet, Millwork and Finish Carpentry Contractor",
+      "assigned": "C-6 Cabinet, Millwork and Finish Carpentry Contractor",
+      "issuer": "Contractors State License Board (CSLB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:26.986586+00:00"
+    },
+    {
+      "raw": "C-8 Concrete Contractor",
+      "assigned": "C-8 Concrete Contractor",
+      "issuer": "Contractors State License Board (CSLB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.038759+00:00"
+    },
+    {
+      "raw": "CLEP French Language (Levels 1 and 2) - Complete both",
+      "assigned": "French Language (Levels 1 and 2)",
+      "issuer": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:05:06.780863+00:00"
+    },
+    {
+      "raw": "CLEP French Level III",
+      "assigned": "CLEP French Language Level III",
+      "issuer": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.601452+00:00"
+    },
+    {
+      "raw": "CLEP German Language (Levels 1 and 2) - Complete both",
+      "assigned": "German Language (Levels 1 and 2)",
+      "issuer": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:05:07.643378+00:00"
+    },
+    {
+      "raw": "CLEP German Level III",
+      "assigned": "CLEP German Language Level III",
+      "issuer": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.64725+00:00"
+    },
+    {
+      "raw": "CLEP Spanish Language (Levels 1 and 2) - Complete both",
+      "assigned": "Spanish Language (Levels 1 and 2)",
+      "issuer": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:05:25.195447+00:00"
+    },
+    {
+      "raw": "CNC Operation",
+      "assigned": "CNC Operation",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.750204+00:00"
+    },
+    {
+      "raw": "Cal Fire Fire Control 4A: Ignitable Liquids and Gases Awareness/Operations",
+      "assigned": "Fire Control 4A — Ignitable Liquids and Gases Awareness/Operations",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.087971+00:00"
+    },
+    {
+      "raw": "California Building Code Certification",
+      "assigned": "California Building Code Certification",
+      "issuer": "International Code Council (ICC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.136045+00:00"
+    },
+    {
+      "raw": "California Certified Public Accountant (CPA) License, issued by the California Board of Accountancy (CBA).",
+      "assigned": "California Certified Public Accountant (CPA) License",
+      "issuer": "California Board of Accountancy (CBA)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.183963+00:00"
+    },
+    {
+      "raw": "California Residential Code Certification",
+      "assigned": "California Residential Code Certification",
+      "issuer": "International Code Council (ICC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.243741+00:00"
+    },
+    {
+      "raw": "California State Water Resources Control Board D2, D3, D4, or D5 certification",
+      "assigned": "Water Distribution Operator Grade D2, D3, D4, or D5",
+      "issuer": "California State Water Resources Control Board (SWRCB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.289183+00:00"
+    },
+    {
+      "raw": "Certification for Welders",
+      "assigned": "Certification for Welders",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.335459+00:00"
+    },
+    {
+      "raw": "Class A Contractor License",
+      "assigned": "Class A Contractor License",
+      "issuer": "Contractors State License Board (CSLB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.46972+00:00"
+    },
+    {
+      "raw": "Class B Contractor License",
+      "assigned": "Class B Contractor License",
+      "issuer": "Contractors State License Board (CSLB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.509947+00:00"
+    },
+    {
+      "raw": "Class B-2 Contractor License",
+      "assigned": "Class B-2 Contractor License",
+      "issuer": "Contractors State License Board (CSLB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.552746+00:00"
+    },
+    {
+      "raw": "Clinical Embalming (MORT 482 C)",
+      "assigned": "Clinical Embalming",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.701463+00:00"
+    },
+    {
+      "raw": "Combinded Processes I",
+      "assigned": "Combined Processes I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.79676+00:00"
+    },
+    {
+      "raw": "Communications Systems",
+      "assigned": "Communications Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.846196+00:00"
+    },
+    {
+      "raw": "Company Officer 2A: Human Resource Management for Company Officer",
+      "assigned": "Company Officer 2A: Human Resource Management for Company Officer",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:05:24.362868+00:00"
+    },
+    {
+      "raw": "Company Officer 2B: General Administrative Functions for Company Officers",
+      "assigned": "Company Officer 2B: General Administrative Functions for Company Officers",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:05:52.989244+00:00"
+    },
+    {
+      "raw": "Company Officer 2C: Fire Inspections and Investigations for Company Officers",
+      "assigned": "Company Officer 2C: Fire Inspections and Investigations for Company Officers",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:05:52.212271+00:00"
+    },
+    {
+      "raw": "Company Officer 2D: All-Risk Command Operations for Company Officers",
+      "assigned": "Company Officer 2D: All-Risk Command Operations for Company Officers",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:06:27.580389+00:00"
+    },
+    {
+      "raw": "Company Officer 2E: Wildland Incident Operations for Company Officers",
+      "assigned": "Company Officer 2E: Wildland Incident Operations for Company Officers",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:06:27.030792+00:00"
+    },
+    {
+      "raw": "Computer Networks",
+      "assigned": "Computer Networks",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.890894+00:00"
+    },
+    {
+      "raw": "Computer Simulation and Troubleshooting",
+      "assigned": "Computer Simulation and Troubleshooting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.936416+00:00"
+    },
+    {
+      "raw": "Confined Space Rescue Technician",
+      "assigned": "Confined Space Rescue Technician",
+      "issuer": "Office of the State Fire Marshall",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:07:50.832783+00:00"
+    },
+    {
+      "raw": "Construction Fabrication and Welding",
+      "assigned": "Construction Fabrication and Welding",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.976111+00:00"
+    },
+    {
+      "raw": "Customer Relations for the Technician",
+      "assigned": "Customer Relations for the Technician",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.01849+00:00"
+    },
+    {
+      "raw": "Emergency Care and Safety Institute",
+      "assigned": "Emergency Care and Safety Institute",
+      "issuer": "Emergency Care and Safety Institute (ECSI)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.105654+00:00"
+    },
+    {
+      "raw": "Emergency Management Experience (LD)",
+      "assigned": "Emergency Management Experience (Lower Division)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.150837+00:00"
+    },
+    {
+      "raw": "Emergency Management Experience (UD)",
+      "assigned": "Emergency Management Experience (Upper Division)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.199243+00:00"
+    },
+    {
+      "raw": "Engineering Drawing",
+      "assigned": "Engineering Drawing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.240515+00:00"
+    },
+    {
+      "raw": "FCC General Radiotelephone Operator License Preparation",
+      "assigned": "FCC General Radiotelephone Operator License (GROL)",
+      "issuer": "U.S. Federal Communications Commission (FCC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.285798+00:00"
+    },
+    {
+      "raw": "Fire Company Officer 3 Certification (IFSAC or ProBoard Certifications)",
+      "assigned": "Fire Company Officer 3",
+      "issuer": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.326418+00:00"
+    },
+    {
+      "raw": "Fire Fighter 1: Haz Mat + WMD",
+      "assigned": "Firefighter 1 — Haz Mat + WMD",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.41808+00:00"
+    },
+    {
+      "raw": "Fire Inspector 2 (IFSAC/ProBoard)",
+      "assigned": "Fire Inspector II",
+      "issuer": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.543783+00:00"
+    },
+    {
+      "raw": "Fire Officer 2A: Human Resource Management",
+      "assigned": "Fire Officer 2A: Human Resource Management",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:07:54.572489+00:00"
+    },
+    {
+      "raw": "IC- Automotive Electrical/Electronics I",
+      "assigned": "Automotive Electrical/Electronics I",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.796211+00:00"
+    },
+    {
+      "raw": "IC- Engine Performance II",
+      "assigned": "Engine Performance II",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.838412+00:00"
+    },
+    {
+      "raw": "IC- Introduction to Hybrid and Electric Vehicle Technology",
+      "assigned": "Introduction to Hybrid and Electric Vehicle Technology",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.92324+00:00"
+    },
+    {
+      "raw": "IC-Automotive Electrical/Electronics II",
+      "assigned": "Automotive Electrical/Electronics II",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.103869+00:00"
+    },
+    {
+      "raw": "IC-Automotive Suspension, Steering and Alignment Systems",
+      "assigned": "Automotive Suspension, Steering and Alignment Systems",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.151474+00:00"
+    },
+    {
+      "raw": "IC-Engine Performance I",
+      "assigned": "Engine Performance I",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.194398+00:00"
+    },
+    {
+      "raw": "Incident Commander HAZMAT",
+      "assigned": "Incident Commander HAZMAT",
+      "issuer": "National Association of Safety Professionals",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:08:51.124454+00:00"
+    },
+    {
+      "raw": "Infant and Toddler Care and Curriculum",
+      "assigned": "Infant and Toddler Care and Curriculum",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.332708+00:00"
+    },
+    {
+      "raw": "Instructor I Instructional Methodology",
+      "assigned": "Instructor I Instructional Methodology",
+      "issuer": "Office of the State Fire Marshall",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:09:13.046288+00:00"
+    },
+    {
+      "raw": "Instructor II Instructional Development",
+      "assigned": "Instructor II Instructional Development",
+      "issuer": "Office of the State Fire Marshall",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:09:16.074098+00:00"
+    },
+    {
+      "raw": "Intermediate Arc Welding",
+      "assigned": "Intermediate Arc Welding",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.380889+00:00"
+    },
+    {
+      "raw": "Intermediate Wildland Fire Behavior",
+      "assigned": "Intermediate Wildland Fire Behavior",
+      "issuer": "Office of the State Fire Marshall",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:09:21.63317+00:00"
+    },
+    {
+      "raw": "Internship and Work Experience",
+      "assigned": "Internship and Work Experience",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.434895+00:00"
+    },
+    {
+      "raw": "Intro to Managerial Accounting",
+      "assigned": "Introduction to Managerial Accounting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.478369+00:00"
+    },
+    {
+      "raw": "Introduciton to UNIX/Linux",
+      "assigned": "Introduction to UNIX/Linux",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.525568+00:00"
+    },
+    {
+      "raw": "Introduction to CNC Programing",
+      "assigned": "Introduction to CNC Programming",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.566524+00:00"
+    },
+    {
+      "raw": "Introduction to Engineering",
+      "assigned": "Introduction to Engineering",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.612345+00:00"
+    },
+    {
+      "raw": "Introduction to Mechanical Principals",
+      "assigned": "Introduction to Mechanical Principles",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.65957+00:00"
+    },
+    {
+      "raw": "Introduction to Video Editing and Postproduction",
+      "assigned": "Introduction to Video Editing and Postproduction",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.700833+00:00"
+    },
+    {
+      "raw": "Journeyman Certificate- Apprenticeship Carpentry, General Carpenter, AS",
+      "assigned": "Carpentry General Carpenter Journeyman Certificate",
+      "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T21:36:05.412892+00:00"
+    },
+    {
+      "raw": "Medical Insurance Billing and Coding",
+      "assigned": "Medical Insurance Billing and Coding",
+      "issuer": "National Healthcareer Association",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.745542+00:00"
+    },
+    {
+      "raw": "Microsoft Office Specialist (MOS): Excel Associate or Microsoft Office Specialist (MOS): Excel Expert Certification.",
+      "assigned": "Microsoft Office Specialist — Excel or Excel Expert",
+      "issuer": "Microsoft",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.79025+00:00"
+    },
+    {
+      "raw": "Microsoft Office Specialist (MOS): Word Associate or MOS: Word Expert Certification.",
+      "assigned": "Microsoft Office Specialist — Word or Word Expert",
+      "issuer": "Microsoft",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.833788+00:00"
+    },
+    {
+      "raw": "Microwave Communications",
+      "assigned": "Microwave Communications",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.880935+00:00"
+    },
+    {
+      "raw": "Motion Graphics",
+      "assigned": "Motion Graphics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.968813+00:00"
+    },
+    {
+      "raw": "NIMS ICS All-Hazards Incident Commander (ICT3)",
+      "assigned": "NIMS ICS All-Hazards Incident Commander (ICT3)",
+      "issuer": "U.S. Federal Emergency Management Agency (FEMA)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.097329+00:00"
+    },
+    {
+      "raw": "National Wildfire Coordinating Group-S-190 Introduction to Windland Fire Behavior",
+      "assigned": "NWCG S-190 — Introduction to Wildland Fire Behavior",
+      "issuer": "National Wildfire Coordinating Group (NWCG)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.012969+00:00"
+    },
+    {
+      "raw": "Oxyacetylene Welding",
+      "assigned": "Oxyacetylene Welding",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.138378+00:00"
+    },
+    {
+      "raw": "PC Operating System",
+      "assigned": "PC Operating System",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.178708+00:00"
+    },
+    {
+      "raw": "PC Troubleshooting",
+      "assigned": "PC Troubleshooting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.223476+00:00"
+    },
+    {
+      "raw": "Personal Computer Servicing",
+      "assigned": "Personal Computer Servicing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.305139+00:00"
+    },
+    {
+      "raw": "Pipe and Tube Welding",
+      "assigned": "Pipe and Tube Welding",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.353939+00:00"
+    },
+    {
+      "raw": "Print Reading and Computations for Workers",
+      "assigned": "Print Reading and Computations for Workers",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.398124+00:00"
+    },
+    {
+      "raw": "Print Reading and Shop Practice",
+      "assigned": "Print Reading and Shop Practice",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.443676+00:00"
+    },
+    {
+      "raw": "Producing and Directing",
+      "assigned": "Producing and Directing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.487339+00:00"
+    },
+    {
+      "raw": "Rope Rescue Operations",
+      "assigned": "Rope Rescue Operations",
+      "issuer": "Office of the State Fire Marshall",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:08:17.564273+00:00"
+    },
+    {
+      "raw": "S-339 Division/Group Supervisor- ALL RISK (Wildland Fire Fighter)",
+      "assigned": "NWCG S-339 — Division/Group Supervisor (All-Risk)",
+      "issuer": "National Wildfire Coordinating Group (NWCG)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.53243+00:00"
+    },
+    {
+      "raw": "Server Systems",
+      "assigned": "Server Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.575443+00:00"
+    },
+    {
+      "raw": "Solidworks Advanced Solid Modeling",
+      "assigned": "Solidworks Advanced Solid Modeling",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.615902+00:00"
+    },
+    {
+      "raw": "Solidworks Intermediate Solid Modeling",
+      "assigned": "Solidworks Intermediate Solid Modeling",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.66912+00:00"
+    },
+    {
+      "raw": "Video Editing",
+      "assigned": "Video Editing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.7174+00:00"
+    },
+    {
+      "raw": "Video I",
+      "assigned": "Video I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.764822+00:00"
+    },
     {
       "raw": "AUTO 60A: Electrical Schematic Diagnosis- Credit By Exam",
       "assigned": "Automotive Electrical Schematic Diagnosis",
@@ -4843,6 +6133,22 @@
       ]
     },
     {
+      "raw": "AUTO 62B: Wheel Alignment, Chassis Dynamics, ADAS - Credit By Exam",
+      "assigned": "Wheel Alignment, Chassis Dynamics, and ADAS",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "spellings": [
+        "AUTO 62B: Wheel Alignment, Chassis Dynamics, ADAS - Credit By Exam"
+      ],
+      "disagreeing": [
+        "AUTO 62B: Wheel Alignment, Chassis Dynamics, ADAS - Credit By Exam"
+      ],
+      "displaced": [
+        "Wheel Alignment, Chassis Dynamics, ADAS"
+      ]
+    },
+    {
       "raw": "Water Supply Technology Portfolio Student 1",
       "assigned": "Generic Portfolio Review — San Bernardino Valley College (Water Supply Technology)",
       "issuer": "",
@@ -4860,7 +6166,29 @@
     }
   ],
   "credential_issuer_fills": [],
-  "credential_issuer_adds": [],
+  "credential_issuer_adds": [
+    {
+      "title": "Fire Inspector I",
+      "issuer": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+      "raw": "Fire Inspector 1 Certification (IFSAC/ProBoard)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.504286+00:00"
+    },
+    {
+      "title": "Fire Instructor 2",
+      "issuer": "Pro Board (National Board on Fire Service Professional Qualifications)",
+      "raw": "Fire Instructor 2 (ProBoard)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.586052+00:00"
+    },
+    {
+      "title": "Fire Officer II",
+      "issuer": "Pro Board (National Board on Fire Service Professional Qualifications)",
+      "raw": "Fire Officer II Certification (ProBoard)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.629876+00:00"
+    }
+  ],
   "credential_prunes": [],
   "articulation_ripples": [
     {

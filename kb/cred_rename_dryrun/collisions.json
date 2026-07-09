@@ -1,6 +1,6 @@
 {
   "_about": "Credential rename collisions detected by the dry-run. Each entry is a proposed rename whose target already exists as a key in credentials.json. Policy: NON-BLOCKING decision queue — the entry waits here (clean renames apply without it) until the curator picks a non-colliding target or explicitly confirms a merge (PR-5b/2). NEVER auto-merged; NEVER auto-disambiguated.",
-  "_generated_at": "2026-07-09T19:29:31Z",
+  "_generated_at": "2026-07-09T19:35:16Z",
   "count": 6,
   "collisions": [
     {
@@ -66,9 +66,9 @@
     {
       "old_unified_title": "Spanish for Spanish Speakers 1",
       "proposed_new_title": "Spanish for Heritage Speakers 1",
-      "reason": "intra_batch_same_target",
-      "first_of_group": "Spanish 157 (Local Course)",
-      "existing_credential_records": 0,
+      "reason": "collision_with_existing_credential",
+      "existing_credential_records": 1,
+      "merge_confirm_recorded": null,
       "rename_would_touch": {
         "raw_titles_in_unified_titles_json": 1,
         "articulation_records": 1,
@@ -76,14 +76,14 @@
       },
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-09T00:36:32.648227+00:00",
-      "policy": "queued_pending_curator_decision — becomes a regular collision (confirmable in the CER strip) once the group's first rename lands"
+      "policy": "queued_pending_curator_decision"
     },
     {
       "old_unified_title": "Spanish for Spanish Speakers 2",
       "proposed_new_title": "Spanish for Heritage Speakers 2",
-      "reason": "intra_batch_same_target",
-      "first_of_group": "Spanish 158 (Local Course)",
-      "existing_credential_records": 0,
+      "reason": "collision_with_existing_credential",
+      "existing_credential_records": 1,
+      "merge_confirm_recorded": null,
       "rename_would_touch": {
         "raw_titles_in_unified_titles_json": 2,
         "articulation_records": 2,
@@ -91,7 +91,7 @@
       },
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-09T00:36:33.36157+00:00",
-      "policy": "queued_pending_curator_decision — becomes a regular collision (confirmable in the CER strip) once the group's first rename lands"
+      "policy": "queued_pending_curator_decision"
     }
   ]
 }

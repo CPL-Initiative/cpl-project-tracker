@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-07-08T01:12:17Z",
-  "count": 593,
+  "_synced_at": "2026-07-09T19:34:02Z",
+  "count": 695,
   "assignments": {
     "A S T 025 - Fundamentals of Auto Mechanics": {
       "unified_title": "Fundamentals of Auto Mechanics",
@@ -16,22 +16,22 @@
       "unified_title": "CompTIA A+"
     },
     "ACCTG 15, Individual Income Taxes": {
-      "unified_title": "Individual Income Taxes",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T16:56:10.02836+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Individual Income Taxes"
     },
     "ACCTG 16, Taxation of Corporations, Partnerships, Estates and Trusts": {
-      "unified_title": "Taxation of Corporations, Partnerships, Estates and Trusts",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T16:56:10.356678+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Taxation of Corporations, Partnerships, Estates and Trusts"
     },
     "ACCTG 19A, IRS Volunteer Income Assistant (VITA) Program - Tax Preparer": {
-      "unified_title": "IRS Volunteer Income Tax Assistance (VITA) Program - Tax Preparer",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T15:55:43.566358+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "IRS Volunteer Income Tax Assistance (VITA) Program - Tax Preparer"
     },
     "ADJU 232 - Juvenile Justice Procedures - Credit by Exam": {
       "unified_title": "Juvenile Justice Procedures",
@@ -50,16 +50,16 @@
       "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
     },
     "ADM JUS 075 - Introduction to Corrections": {
-      "unified_title": "Introduction to Corrections",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T15:55:47.737539+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Introduction to Corrections"
     },
     "ADM JUS 319 - Research Methods & Statistics in Criminal Justice": {
-      "unified_title": "Research Methods & Statistics in Criminal Justice",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T15:55:48.600531+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Research Methods & Statistics in Criminal Justice"
     },
     "AERO 040 - Instrument Ground School - Training Log": {
       "unified_title": "FAA Instrument Ground School",
@@ -95,10 +95,10 @@
       "unified_title": "AP 2-D Art and Design"
     },
     "AP Art History (Score of 3 or higher)": {
-      "unified_title": "AP Art History",
+      "issuing_agency": "College Board",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T15:55:53.068991+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Art History"
     },
     "AP Art Studio 2-D (Score 3-5)": {
       "issuing_agency": "College Board",
@@ -119,46 +119,46 @@
       "unified_title": "AP Drawing"
     },
     "AP Biology (Score 3-5) (BIOSCI 100)": {
-      "unified_title": "AP Biology",
+      "issuing_agency": "College Board",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T15:56:00.688441+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Biology"
     },
     "AP Biology (Score 3-5) (BIOSCI 101)": {
-      "unified_title": "AP Biology",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Biology"
     },
     "AP Chemistry (Score 3-5)": {
-      "unified_title": "AP Chemistry",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Chemistry"
     },
     "AP Chinese Language and Culture (Score 4-5)": {
-      "unified_title": "AP Chinese Language and Culture",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Chinese Language and Culture"
     },
     "AP Computer Science A (Score 4-5)": {
-      "unified_title": "AP Computer Science A",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Computer Science A"
     },
     "AP Computer Science Principles (Score 4-5)": {
-      "unified_title": "AP Computer Science Principles",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Computer Science Principles"
     },
     "AP English Language (Score 3-5)": {
-      "unified_title": "AP English Language and Composition",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP English Language and Composition"
     },
     "AP English Language Composition": {
       "unified_title": "AP English Language & Composition",
@@ -171,40 +171,40 @@
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
     "AP English Language and Composition (Score 3-5)": {
-      "unified_title": "AP English Language and Composition",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP English Language and Composition"
     },
     "AP English Literature (Score 3-5)": {
-      "unified_title": "AP English Literature and Composition",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP English Literature and Composition"
     },
     "AP English Literature and Composition (Score 3-5)": {
-      "unified_title": "AP English Literature and Composition",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP English Literature and Composition"
     },
     "AP Environmental Science (Score 3-5)": {
-      "unified_title": "AP Environmental Science",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Environmental Science"
     },
     "AP Exam Art History (Score of 3, 4 or 5)": {
-      "unified_title": "AP Art History",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Art History"
     },
     "AP Exam Biology (Score of 3, 4 or 5)": {
-      "unified_title": "AP Biology",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Biology"
     },
     "AP Exam Calculus BC/AB Sub-score (Score 3-5)": {
       "unified_title": "AP Calculus BC",
@@ -272,76 +272,76 @@
       "reviewed_at": "2026-06-03T17:12:43.443936+00:00"
     },
     "AP French Language and Culture (Score 3-5)": {
-      "unified_title": "AP French Language and Culture",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP French Language and Culture"
     },
     "AP German Language and Culture (Score 3-5)": {
-      "unified_title": "AP German Language and Culture",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP German Language and Culture"
     },
     "AP Government and Political: United States (Score 3-5)": {
-      "unified_title": "AP United States Government and Politics",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP United States Government and Politics"
     },
     "AP Government and Politics: Comparative (Score 3-5)": {
-      "unified_title": "AP Comparative Government and Politics",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Comparative Government and Politics"
     },
     "AP Human Geography (Score 3-5)": {
-      "unified_title": "AP Human Geography",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Human Geography"
     },
     "AP Italian Language and Culture (Score 3-5)": {
-      "unified_title": "AP Italian Language and Culture",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Italian Language and Culture"
     },
     "AP Japanese Language and Culture (Score 3-5)": {
-      "unified_title": "AP Japanese Language and Culture",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Japanese Language and Culture"
     },
     "AP Latin (Score 3-5)": {
-      "unified_title": "AP Latin",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Latin"
     },
     "AP Macroeconomics (Score 3-5)": {
-      "unified_title": "AP Macroeconomics",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Macroeconomics"
     },
     "AP Microeconomics (Score 3-5)": {
-      "unified_title": "AP Microeconomics",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Microeconomics"
     },
     "AP Music Theory (Score 3-5)": {
-      "unified_title": "AP Music Theory",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Music Theory"
     },
     "AP Physics 1": {
-      "unified_title": "AP Physics 1",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Physics 1"
     },
     "AP Physics 1\tNatural Sciences - 4\tCredit for PHYS 2A": {
       "unified_title": "AP Physics 1",
@@ -349,88 +349,88 @@
       "reviewed_at": "2026-06-03T17:12:43.443936+00:00"
     },
     "AP Precalculus (MATH-100)": {
-      "unified_title": "AP Precalculus",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Precalculus"
     },
     "AP Precalculus (MATH-187)": {
-      "unified_title": "AP Precalculus",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Precalculus"
     },
     "AP Psychology (Score 3-5)": {
-      "unified_title": "AP Psychology",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Psychology"
     },
     "AP Seminar (Score 3-5)": {
-      "unified_title": "AP Seminar",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Seminar"
     },
     "AP Spanish Language and Culture (Score 3)": {
-      "unified_title": "AP Spanish Language and Culture",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Spanish Language and Culture"
     },
     "AP Spanish Language and Culture (Score 4)": {
-      "unified_title": "AP Spanish Language and Culture",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Spanish Language and Culture"
     },
     "AP Spanish Language and Culture (Score 5)": {
-      "unified_title": "AP Spanish Language and Culture",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Spanish Language and Culture"
     },
     "AP Spanish Literature and Culture (Score 3)": {
-      "unified_title": "AP Spanish Literature and Culture",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Spanish Literature and Culture"
     },
     "AP Spanish Literature and Culture (Score 4)": {
-      "unified_title": "AP Spanish Literature and Culture",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Spanish Literature and Culture"
     },
     "AP Spanish Literature and Culture (Score 5)": {
-      "unified_title": "AP Spanish Literature and Culture",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP Spanish Literature and Culture"
     },
     "AP Studio Art - 2D Design": {
-      "unified_title": "AP 2-D Art and Design",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP 2-D Art and Design"
     },
     "AP Studio Art - 3D Design": {
-      "unified_title": "AP 3-D Art and Design",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP 3-D Art and Design"
     },
     "AP US Government and Politics": {
-      "unified_title": "AP United States Government and Politics",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP United States Government and Politics"
     },
     "AP World History - Modern": {
-      "unified_title": "AP World History: Modern",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "AP World History: Modern"
     },
     "AP:  Human Geography": {
       "unified_title": "AP Human Geography",
@@ -493,22 +493,22 @@
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
     "AUTO 600 Completion": {
-      "unified_title": "Introduction to Automotive Technology",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T14:05:53.902684+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Introduction to Automotive Technology"
     },
     "AUTO 601 Completion": {
-      "unified_title": "Automotive Lubrication Service",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T14:05:55.030166+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Automotive Lubrication Service"
     },
     "AUTO 602 Completion": {
-      "unified_title": "Automotive Tire Service",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T14:05:55.831846+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Automotive Tire Service"
     },
     "AUTO 60A: Electrical Schematic Diagnosis- Credit By Exam": {
       "unified_title": "Automotive Electrical Schematic Diagnosis",
@@ -521,16 +521,16 @@
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
     "AUTO 60D Ignition Analysis and Oscilloscope Diagnosis Credit By Exam": {
-      "unified_title": "Ignition Analysis and Oscilloscope Diagnosis",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:33.390171+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Ignition Analysis and Oscilloscope Diagnosis"
     },
     "AUTO 60E Automotive Fuel Injection Credit by Exam": {
-      "unified_title": "Automotive Fuel Injection",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T17:00:25.681671+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Automotive Fuel Injection"
     },
     "AUTO 60F No-Start Diagnosis Credit by Exam": {
       "issuing_agency": "California Community Colleges",
@@ -551,22 +551,22 @@
       "unified_title": "Advanced Drivability and Onboard Diagnostics"
     },
     "AUTO 60J Advanced Lab Scope and Waveform Diagnosis Credit by Exam": {
-      "unified_title": "Advanced Lab Scope and Waveform Diagnosis",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T17:00:22.446225+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Advanced Lab Scope and Waveform Diagnosis"
     },
     "AUTO 61A-Automotive Brake Systems-Credit by Exam": {
-      "unified_title": "Automotive Brake Systems",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T17:00:21.698426+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Automotive Brake Systems"
     },
     "AUTO 61B-Electronically Controlled Brake Systems Credit by Exam": {
-      "unified_title": "Electronically Controlled Brake Systems",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T17:00:20.769531+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Electronically Controlled Brake Systems"
     },
     "AUTO 62A: Automotive Suspension, Steering and Alignment - Credit By Exam": {
       "unified_title": "Automotive Suspension, Steering and Alignment",
@@ -579,10 +579,10 @@
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
     "AUTOTEC-10 - High School: Intro to Automotive Technology": {
-      "unified_title": "Introduction to Automotive Technology",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:33.588773+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Introduction to Automotive Technology"
     },
     "AUTOTEC-10: CORONA HIGH SCHOOL- Automotive Technology 3A/3B": {
       "issuing_agency": "California Community Colleges",
@@ -591,10 +591,10 @@
       "unified_title": "Introduction to Automotive Technology"
     },
     "AUTOTEC-10: Service and Repair (Intro to Automotive)": {
-      "unified_title": "Introduction to Automotive Technology",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:33.764401+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Introduction to Automotive Technology"
     },
     "AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics": {
       "issuing_agency": "California Community Colleges",
@@ -603,10 +603,10 @@
       "unified_title": "Auto Electricity and Electronics"
     },
     "AUTOTEC-15: Auto Electricity and Electronics": {
-      "unified_title": "Auto Electricity and Electronics",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:33.933262+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Auto Electricity and Electronics"
     },
     "Acoustical Installer Apprenticeship": {
       "issuing_agency": "Carpenters Training Committee for Northern California / Southern California Carpenters Joint Apprenticeship",
@@ -631,10 +631,10 @@
       "unified_title": "Surface Mount Assembly and Rework Advanced"
     },
     "Alternative Photographic Processes I": {
-      "unified_title": "Photography Alternative Processes Beginning",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T15:55:51.426635+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Photography Alternative Processes Beginning"
     },
     "American National Standard Institute (ANSI) Food Manager Certificate": {
       "unified_title": "ANSI-Accredited Food Protection Manager Certification",
@@ -647,10 +647,10 @@
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
     "Auto Service Excellence (ASE) ASE A7 - Active Certification awarded in the past five years": {
-      "unified_title": "ASE A7 — Heating and Air Conditioning",
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T17:24:47.169802+00:00",
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)"
+      "unified_title": "ASE A7 — Heating and Air Conditioning"
     },
     "Auto Service Excellence A6": {
       "unified_title": "ASE A6 — Electrical/Electronic Systems",
@@ -663,16 +663,16 @@
       "reviewed_at": "2026-06-03T17:35:49.462088+00:00"
     },
     "AutoCAD I": {
-      "unified_title": "AutoCAD Beginning",
+      "issuing_agency": "Autodesk",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T17:12:07.974147+00:00",
-      "issuing_agency": "Autodesk"
+      "unified_title": "AutoCAD Beginning"
     },
     "Automotive": {
-      "unified_title": "Introduction to Automotive Technology",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T14:05:56.388865+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Introduction to Automotive Technology"
     },
     "Automotive Service Excellence (ASE) A4 Certificate Suspension & Steering": {
       "unified_title": "ASE A4 — Suspension and Steering",
@@ -690,16 +690,16 @@
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
     "Automotive Services Excellence  6 (A6) Certificate Electrical/Electronic Systems": {
-      "unified_title": "ASE A6 — Electrical/Electronic Systems",
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T17:24:47.169802+00:00",
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)"
+      "unified_title": "ASE A6 — Electrical/Electronic Systems"
     },
     "Automotive Services Excellence  8 (T8) Certificate- Preventive Maintenance & Inspection (PMI)": {
-      "unified_title": "ASE T8 — Preventive Maintenance Inspection",
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T17:24:47.169802+00:00",
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)"
+      "unified_title": "ASE T8 — Preventive Maintenance Inspection"
     },
     "Automotive Services Excellence (A5: Brakes) Certificate": {
       "unified_title": "ASE A5 — Brakes",
@@ -718,10 +718,10 @@
       "unified_title": "Automotive Welding, Cutting, and Modification"
     },
     "BIOL-424 Anatomy and Physiology": {
-      "unified_title": "Anatomy and Physiology",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T17:14:59.940142+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Anatomy and Physiology"
     },
     "BIOL-424 High School Anatomy and Physiology Honors": {
       "issuing_agency": "California Community Colleges",
@@ -742,10 +742,10 @@
       "unified_title": "Introduction to Biotechnology"
     },
     "BIOTECH 003 - Biotechnology II": {
-      "unified_title": "Biotechnology Intermediate",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T17:14:01.6871+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Biotechnology Intermediate"
     },
     "BIOTECH 006 - Biotechnology: Quality Control": {
       "issuing_agency": "California Community Colleges",
@@ -754,16 +754,16 @@
       "unified_title": "Biotechnology: Quality Control"
     },
     "BIOTECH 102 - Cell Culture": {
-      "unified_title": "Biotechnology: Cell Culture",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T17:14:36.000417+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Biotechnology: Cell Culture"
     },
     "BUS-10 Introduction to Business": {
-      "unified_title": "Introduction to Business",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:34.120831+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Introduction to Business"
     },
     "BUS-10: AB MILLER HIGH SCHOOL- Business and Finance": {
       "issuing_agency": "California Community Colleges",
@@ -772,10 +772,10 @@
       "unified_title": "Introduction to Business"
     },
     "BUS-10: CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)": {
-      "unified_title": "Introduction to Business",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:34.263735+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Introduction to Business"
     },
     "BUS-10: SUMMIT HIGH SCHOOL- Business and Finance": {
       "issuing_agency": "California Community Colleges",
@@ -789,10 +789,10 @@
       "reviewed_at": "2026-06-03T17:28:52.076094+00:00"
     },
     "BUSMGT 14 - High School: Transportation Management": {
-      "unified_title": "Transportation Management",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:34.438763+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Transportation Management"
     },
     "BUSMGT 436 - High School Intro to Logistics Management": {
       "issuing_agency": "California Community Colleges",
@@ -813,34 +813,34 @@
       "unified_title": "Supply Chain Management"
     },
     "BUSMGT-14 High School - Transportation Management": {
-      "unified_title": "Transportation Management",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:34.723801+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Transportation Management"
     },
     "BUSMGT-14 Jurupa Hills High - Transportation Management": {
-      "unified_title": "Transportation Management",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:34.781813+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Transportation Management"
     },
     "BUSMGT-14: Transportation Management": {
-      "unified_title": "Transportation Management",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:34.842655+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Transportation Management"
     },
     "BUSMGT-436: ARROYO VALLEY HIGH SCHOOL- Supply Chain and Logistics IS260/IS261": {
-      "unified_title": "Introduction to Logistics Management",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:34.911346+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Introduction to Logistics Management"
     },
     "BUSMGT-436: Baldy View ROP - Transportation, Distribution and Logistics": {
-      "unified_title": "Introduction to Logistics Management",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:34.96873+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Introduction to Logistics Management"
     },
     "BUSMGT-436: CAJON HIGH SCHOOL- Global Logistics & Concepts IS262/IS263": {
       "issuing_agency": "California Community Colleges",
@@ -861,10 +861,10 @@
       "unified_title": "Small Business Ownership and Management"
     },
     "BUSMGT-45: SUMMIT HIGH SCHOOL- Global Business Design": {
-      "unified_title": "Small Business Ownership and Management",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:35.295966+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Small Business Ownership and Management"
     },
     "BUSMGT-45: Small Business Ownership and Management": {
       "issuing_agency": "California Community Colleges",
@@ -885,10 +885,10 @@
       "unified_title": "Firefighter 2"
     },
     "Basic Mechanical Blueprint Reading": {
-      "unified_title": "Basic Mechanical Blueprint Reading",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-08T00:04:26.143575+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Basic Mechanical Blueprint Reading"
     },
     "Basic Pharmacology": {
       "unified_title": "Basic Pharmacology",
@@ -896,16 +896,16 @@
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
     "Beginning Arc Welding": {
-      "unified_title": "Beginning Arc Welding",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-08T00:04:26.570655+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Beginning Arc Welding"
     },
     "Biocom Institute Technician Certification (BioTC) - This certification has no expiration": {
-      "unified_title": "Biocom Institute Technician Certification (BioTC)",
+      "issuing_agency": "Biocom California Institute",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-08T00:04:26.631833+00:00",
-      "issuing_agency": "Biocom California Institute"
+      "unified_title": "Biocom Institute Technician Certification (BioTC)"
     },
     "Building Construction for Fire Protection Credit by Exam": {
       "unified_title": "Building Construction for Fire Protection",
@@ -913,10 +913,10 @@
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
     "Building Plans Examiner": {
-      "unified_title": "Building Plans Examiner",
+      "issuing_agency": "International Code Council",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:54.226844+00:00",
-      "issuing_agency": "International Code Council"
+      "unified_title": "Building Plans Examiner"
     },
     "Bus Operator": {
       "unified_title": "Bus Operator",
@@ -924,10 +924,10 @@
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
     "C-10 Electrical Contractor": {
-      "unified_title": "C-10 Electrical Contractor",
+      "issuing_agency": "Contractors State License Board (CSLB)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-08T00:04:26.679595+00:00",
-      "issuing_agency": "Contractors State License Board (CSLB)"
+      "unified_title": "C-10 Electrical Contractor"
     },
     "C-190, C-290, ICS 100 and ICS 700 Wildland Fire Certifications": {
       "unified_title": "Wildland Fire Certifications (C-190, C-290, ICS-100, ICS-700)",
@@ -935,16 +935,16 @@
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
     "C-29 Masonry Contractor": {
-      "unified_title": "C-29 Masonry Contractor",
+      "issuing_agency": "Contractors State License Board (CSLB)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-08T00:04:26.733991+00:00",
-      "issuing_agency": "Contractors State License Board (CSLB)"
+      "unified_title": "C-29 Masonry Contractor"
     },
     "C-36 Plumbing Contractor": {
-      "unified_title": "C-36 Plumbing Contractor",
+      "issuing_agency": "Contractors State License Board (CSLB)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-08T00:04:26.780139+00:00",
-      "issuing_agency": "Contractors State License Board (CSLB)"
+      "unified_title": "C-36 Plumbing Contractor"
     },
     "C-46 Solar Contractor": {
       "issuing_agency": "Contractors State License Board (CSLB)",
@@ -953,16 +953,28 @@
       "unified_title": "C-46 Solar Contractor"
     },
     "C-47 General Manufactured Housing Contractor": {
-      "unified_title": "C-47 General Manufactured Housing Contractor",
+      "issuing_agency": "Contractors State License Board (CSLB)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-08T00:04:26.889365+00:00",
-      "issuing_agency": "Contractors State License Board (CSLB)"
+      "unified_title": "C-47 General Manufactured Housing Contractor"
     },
     "C-5 Framing and Rough Carpentry Contractor": {
-      "unified_title": "C-5 Framing and Rough Carpentry Contractor",
+      "issuing_agency": "Contractors State License Board (CSLB)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-08T00:04:26.938166+00:00",
-      "issuing_agency": "Contractors State License Board (CSLB)"
+      "unified_title": "C-5 Framing and Rough Carpentry Contractor"
+    },
+    "C-6 Cabinet, Millwork and Finish Carpentry Contractor": {
+      "issuing_agency": "Contractors State License Board (CSLB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:26.986586+00:00",
+      "unified_title": "C-6 Cabinet, Millwork and Finish Carpentry Contractor"
+    },
+    "C-8 Concrete Contractor": {
+      "issuing_agency": "Contractors State License Board (CSLB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.038759+00:00",
+      "unified_title": "C-8 Concrete Contractor"
     },
     "CA Smog Repair License": {
       "unified_title": "California Smog Check Repair Technician License",
@@ -975,16 +987,16 @@
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
     "CIS-1/ITIS-10: Introduction to Computer Information Systems": {
-      "unified_title": "Introduction to Computer Information Systems",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:35.561619+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Introduction to Computer Information Systems"
     },
     "CIS-1: CAJON HIGH SCHOOL- Introduction to Computer Information Systems  (IS662/IS663)": {
-      "unified_title": "Introduction to Computer Information Systems",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:35.497473+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Introduction to Computer Information Systems"
     },
     "CIT 144 - Medical Terminology": {
       "unified_title": "Medical Terminology",
@@ -1003,34 +1015,34 @@
       "unified_title": "Introduction to the Criminal Justice System"
     },
     "CJ-1 High School: Advanced Law Enforcement": {
-      "unified_title": "Introduction to the Criminal Justice System",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:35.724479+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Introduction to the Criminal Justice System"
     },
     "CJ-1 Introduction to the Criminal Justice System": {
-      "unified_title": "Introduction to the Criminal Justice System",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:35.788125+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Introduction to the Criminal Justice System"
     },
     "CJ-1: Fontana High - Law Enforcement": {
-      "unified_title": "Introduction to the Criminal Justice System",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:35.859359+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Introduction to the Criminal Justice System"
     },
     "CJ-51: FONTANA HIGH SCHOOL- Advanced Law Enforcement (Corrections)": {
-      "unified_title": "Introduction to Corrections",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:35.916183+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Introduction to Corrections"
     },
     "CJ-51: Introduction to Corrections": {
-      "unified_title": "Introduction to Corrections",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:35.969239+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Introduction to Corrections"
     },
     "CJ-9 High School - Crime Scene Management": {
       "issuing_agency": "California Community Colleges",
@@ -1045,28 +1057,28 @@
       "unified_title": "Crime Scene Management and Forensic Evidence"
     },
     "CJ-9: Crime Scene Management and Forensic Evidence": {
-      "unified_title": "Crime Scene Management and Forensic Evidence",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:36.125816+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Crime Scene Management and Forensic Evidence"
     },
     "CLEP American Government (Score of 50)": {
-      "unified_title": "CLEP American Government",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP American Government"
     },
     "CLEP American Literature (Score of 50)": {
-      "unified_title": "CLEP American Literature",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP American Literature"
     },
     "CLEP Analyzing & Interpreting Lit": {
-      "unified_title": "CLEP Analyzing and Interpreting Literature",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Analyzing and Interpreting Literature"
     },
     "CLEP Analyzing & Interpreting Literature": {
       "unified_title": "CLEP Analyzing and Interpreting Literature",
@@ -1074,136 +1086,136 @@
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
     "CLEP Analyzing & Interpreting Literature (Score of 50)": {
-      "unified_title": "CLEP Analyzing and Interpreting Literature",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Analyzing and Interpreting Literature"
     },
     "CLEP Analyzing and Interp. Literature": {
-      "unified_title": "CLEP Analyzing and Interpreting Literature",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Analyzing and Interpreting Literature"
     },
     "CLEP Analyzing and Interpreting\nLiterature": {
-      "unified_title": "CLEP Analyzing and Interpreting Literature",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Analyzing and Interpreting Literature"
     },
     "CLEP Biology (Score of 50)": {
-      "unified_title": "CLEP Biology",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Biology"
     },
     "CLEP Calculus (F09 or prior)": {
-      "unified_title": "CLEP Calculus",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Calculus"
     },
     "CLEP Calculus (Score of 50)": {
-      "unified_title": "CLEP Calculus",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Calculus"
     },
     "CLEP Chemistry (Score of 50)": {
-      "unified_title": "CLEP Chemistry",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Chemistry"
     },
     "CLEP College Algebra (Score of 50)": {
-      "unified_title": "CLEP College Algebra",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP College Algebra"
     },
     "CLEP College Algebra -\nTrigonometry": {
-      "unified_title": "CLEP College Algebra-Trigonometry",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP College Algebra-Trigonometry"
     },
     "CLEP College Algebra -Trigonometry": {
-      "unified_title": "CLEP College Algebra-Trigonometry",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP College Algebra-Trigonometry"
     },
     "CLEP College Algebra Trigonometry": {
-      "unified_title": "CLEP College Algebra-Trigonometry",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP College Algebra-Trigonometry"
     },
     "CLEP College Algebra –\nTrigonometry": {
-      "unified_title": "CLEP College Algebra-Trigonometry",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP College Algebra-Trigonometry"
     },
     "CLEP College Algebra — Trigonometry": {
-      "unified_title": "CLEP College Algebra-Trigonometry",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP College Algebra-Trigonometry"
     },
     "CLEP College Algebra- Trigonometry (Score of 50)": {
-      "unified_title": "CLEP College Algebra-Trigonometry",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP College Algebra-Trigonometry"
     },
     "CLEP College Algebra-Trig": {
-      "unified_title": "CLEP College Algebra-Trigonometry",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP College Algebra-Trigonometry"
     },
     "CLEP College Algebra-Trigonometry": {
-      "unified_title": "CLEP College Algebra-Trigonometry",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP College Algebra-Trigonometry"
     },
     "CLEP College Algebra/Algebra-Trigonometry": {
-      "unified_title": "CLEP College Algebra-Trigonometry",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP College Algebra-Trigonometry"
     },
     "CLEP College Algebra/Trig": {
-      "unified_title": "CLEP College Algebra-Trigonometry",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP College Algebra-Trigonometry"
     },
     "CLEP College Algebra: Trigonometry": {
-      "unified_title": "CLEP College Algebra-Trigonometry",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP College Algebra-Trigonometry"
     },
     "CLEP College Composition": {
-      "unified_title": "CLEP College Composition",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP College Composition"
     },
     "CLEP English Literature (only if taken before F11)": {
-      "unified_title": "CLEP English Literature",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP English Literature"
     },
     "CLEP English Literature (prior F11)": {
-      "unified_title": "CLEP English Literature",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP English Literature"
     },
     "CLEP Exam: Human Growth and Development": {
       "unified_title": "CLEP Human Growth and Development",
@@ -1211,352 +1223,376 @@
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
     "CLEP French (max of 10 units awarded) Level II": {
-      "unified_title": "CLEP French Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP French Language Level II"
+    },
+    "CLEP French Language (Levels 1 and 2) - Complete both": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:05:06.780863+00:00",
+      "unified_title": "French Language (Levels 1 and 2)"
     },
     "CLEP French Language, Level 2": {
-      "unified_title": "CLEP French Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP French Language Level II"
     },
     "CLEP French Language: 2": {
-      "unified_title": "CLEP French Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP French Language Level II"
     },
     "CLEP French Language: Level 1": {
-      "unified_title": "CLEP French Language Level I",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP French Language Level I"
     },
     "CLEP French Language:  Level 1": {
-      "unified_title": "CLEP French Language Level I",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP French Language Level I"
     },
     "CLEP French Language:  Level 2": {
-      "unified_title": "CLEP French Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP French Language Level II"
     },
     "CLEP French Level 2": {
-      "unified_title": "CLEP French Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP French Language Level II"
     },
     "CLEP French Level II (Score of \t59)": {
-      "unified_title": "CLEP French Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP French Language Level II"
     },
     "CLEP French Level II*": {
-      "unified_title": "CLEP French Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP French Language Level II"
+    },
+    "CLEP French Level III": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.601452+00:00",
+      "unified_title": "CLEP French Language Level III"
     },
     "CLEP French [1] Level II": {
-      "unified_title": "CLEP French Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP French Language Level II"
     },
     "CLEP French – Level 2*": {
-      "unified_title": "CLEP French Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP French Language Level II"
     },
     "CLEP French** Level II": {
-      "unified_title": "CLEP French Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP French Language Level II"
     },
     "CLEP French, Level II": {
-      "unified_title": "CLEP French Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP French Language Level II"
     },
     "CLEP German (max of 10 units awarded) Level II": {
-      "unified_title": "CLEP German Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP German Language Level II"
     },
     "CLEP German II": {
-      "unified_title": "CLEP German Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP German Language Level II"
+    },
+    "CLEP German Language (Levels 1 and 2) - Complete both": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:05:07.643378+00:00",
+      "unified_title": "German Language (Levels 1 and 2)"
     },
     "CLEP German Language, Level 2": {
-      "unified_title": "CLEP German Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP German Language Level II"
     },
     "CLEP German Language: Level 1": {
-      "unified_title": "CLEP German Language Level I",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP German Language Level I"
     },
     "CLEP German Language: Level 2": {
-      "unified_title": "CLEP German Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP German Language Level II"
     },
     "CLEP German Level 2": {
-      "unified_title": "CLEP German Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP German Language Level II"
     },
     "CLEP German Level II (Score of 60)": {
-      "unified_title": "CLEP German Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP German Language Level II"
     },
     "CLEP German Level II*": {
-      "unified_title": "CLEP German Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP German Language Level II"
+    },
+    "CLEP German Level III": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.64725+00:00",
+      "unified_title": "CLEP German Language Level III"
     },
     "CLEP German – Level 2*": {
-      "unified_title": "CLEP German Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP German Language Level II"
     },
     "CLEP German** Level II": {
-      "unified_title": "CLEP German Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP German Language Level II"
     },
     "CLEP German, Level II": {
-      "unified_title": "CLEP German Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP German Language Level II"
     },
     "CLEP German1 Level II": {
-      "unified_title": "CLEP German Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP German Language Level II"
     },
     "CLEP HIstory of the US I: Early Colonization": {
-      "unified_title": "CLEP History of the United States I",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP History of the United States I"
     },
     "CLEP HIstory of the US II: 1865 to the present": {
-      "unified_title": "CLEP History of the United States II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP History of the United States II"
     },
     "CLEP History United States I": {
-      "unified_title": "CLEP History of the United States I",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP History of the United States I"
     },
     "CLEP History United States II": {
-      "unified_title": "CLEP History of the United States II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP History of the United States II"
     },
     "CLEP History of the United States I": {
-      "unified_title": "CLEP History of the United States I",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP History of the United States I"
     },
     "CLEP History of the United States I: Early Colonization to 1877": {
-      "unified_title": "CLEP History of the United States I",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP History of the United States I"
     },
     "CLEP History of the United States II": {
-      "unified_title": "CLEP History of the United States II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP History of the United States II"
     },
     "CLEP History of the United States II: 1865 to the Present": {
-      "unified_title": "CLEP History of the United States II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP History of the United States II"
     },
     "CLEP History, U.S. I": {
-      "unified_title": "CLEP History of the United States I",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP History of the United States I"
     },
     "CLEP History, U.S. II": {
-      "unified_title": "CLEP History of the United States II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP History of the United States II"
     },
     "CLEP History, United States I (Score of 50)": {
-      "unified_title": "CLEP History of the United States I",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP History of the United States I"
     },
     "CLEP History, United States II (Score of 50)": {
-      "unified_title": "CLEP History of the United States II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP History of the United States II"
     },
     "CLEP Human Growth &\nDevelopment": {
-      "unified_title": "CLEP Human Growth and Development",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Human Growth and Development"
     },
     "CLEP Human Growth & Devel.": {
-      "unified_title": "CLEP Human Growth and Development",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Human Growth and Development"
     },
     "CLEP Human Growth & Development": {
-      "unified_title": "CLEP Human Growth and Development",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Human Growth and Development"
     },
     "CLEP Human Growth & Development (Score of 50)": {
-      "unified_title": "CLEP Human Growth and Development",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Human Growth and Development"
     },
     "CLEP Human Growth and\nDevelopment": {
-      "unified_title": "CLEP Human Growth and Development",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Human Growth and Development"
     },
     "CLEP Human Growth and Development**": {
-      "unified_title": "CLEP Human Growth and Development",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Human Growth and Development"
     },
     "CLEP Humanities (Score of 50)": {
-      "unified_title": "CLEP Humanities",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Humanities"
     },
     "CLEP Intro Psychology": {
-      "unified_title": "CLEP Introductory Psychology",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Introductory Psychology"
     },
     "CLEP Intro to Sociology": {
-      "unified_title": "CLEP Introductory Sociology",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Introductory Sociology"
     },
     "CLEP Intro. to Educational Psychology": {
-      "unified_title": "CLEP Introduction to Educational Psychology",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Introduction to Educational Psychology"
     },
     "CLEP Introduction to Psychology": {
-      "unified_title": "CLEP Introductory Psychology",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Introductory Psychology"
     },
     "CLEP Introduction to Sociology": {
-      "unified_title": "CLEP Introductory Sociology",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Introductory Sociology"
     },
     "CLEP Introductory Business Law": {
-      "unified_title": "CLEP Introductory Business Law",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Introductory Business Law"
     },
     "CLEP Introductory Psychology (Score of 50)": {
-      "unified_title": "CLEP Introductory Psychology",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Introductory Psychology"
     },
     "CLEP Introductory Sociology (Score of 50)": {
-      "unified_title": "CLEP Introductory Sociology",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Introductory Sociology"
     },
     "CLEP Natural Sciences (Score of 50)": {
-      "unified_title": "CLEP Natural Sciences",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Natural Sciences"
     },
     "CLEP Pre Calculus": {
-      "unified_title": "CLEP Precalculus",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Precalculus"
     },
     "CLEP Pre-Calculus (Score of 50)": {
-      "unified_title": "CLEP Pre-Calculus",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Pre-Calculus"
     },
     "CLEP Precalculus": {
-      "unified_title": "CLEP Precalculus",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Precalculus"
     },
     "CLEP Princ. of Macroecon": {
-      "unified_title": "CLEP Principles of Macroeconomics",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Principles of Macroeconomics"
     },
     "CLEP Princ. of Microecon": {
-      "unified_title": "CLEP Principles of Microeconomics",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Principles of Microeconomics"
     },
     "CLEP Principles Marketing": {
       "unified_title": "CLEP Principles of Marketing",
@@ -1564,10 +1600,10 @@
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
     "CLEP Principles of Macroeconomics (Score of 50)": {
-      "unified_title": "CLEP Principles of Macroeconomics",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Principles of Macroeconomics"
     },
     "CLEP Principles of Management": {
       "unified_title": "CLEP Principles of Management",
@@ -1580,225 +1616,237 @@
       "reviewed_at": "2026-06-03T17:28:52.076094+00:00"
     },
     "CLEP Principles of Micro Economics": {
-      "unified_title": "CLEP Principles of Microeconomics",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Principles of Microeconomics"
     },
     "CLEP Principles of Microeconomics (Score of 50)": {
-      "unified_title": "CLEP Principles of Microeconomics",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Principles of Microeconomics"
     },
     "CLEP Social Sciences and History": {
-      "unified_title": "CLEP Social Sciences and History",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Social Sciences and History"
     },
     "CLEP Spanish (max of 10 units awarded) Level II": {
-      "unified_title": "CLEP Spanish Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Spanish Language Level II"
     },
     "CLEP Spanish - Level 2*": {
-      "unified_title": "CLEP Spanish Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Spanish Language Level II"
+    },
+    "CLEP Spanish Language (Levels 1 and 2) - Complete both": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:05:25.195447+00:00",
+      "unified_title": "Spanish Language (Levels 1 and 2)"
     },
     "CLEP Spanish Language, Level 2": {
-      "unified_title": "CLEP Spanish Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Spanish Language Level II"
     },
     "CLEP Spanish Language: Level 1": {
-      "unified_title": "CLEP Spanish Language Level I",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Spanish Language Level I"
     },
     "CLEP Spanish Language: Level 2": {
-      "unified_title": "CLEP Spanish Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Spanish Language Level II"
     },
     "CLEP Spanish Level 2": {
-      "unified_title": "CLEP Spanish Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Spanish Language Level II"
     },
     "CLEP Spanish Level II (Score of 63)": {
-      "unified_title": "CLEP Spanish Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Spanish Language Level II"
     },
     "CLEP Spanish Level II (after FA15)": {
-      "unified_title": "CLEP Spanish Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Spanish Language Level II"
     },
     "CLEP Spanish Level II (until FA15)": {
-      "unified_title": "CLEP Spanish Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Spanish Language Level II"
     },
     "CLEP Spanish Level II*": {
-      "unified_title": "CLEP Spanish Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Spanish Language Level II"
     },
     "CLEP Spanish [1] Level II": {
-      "unified_title": "CLEP Spanish Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Spanish Language Level II"
     },
     "CLEP Spanish and Writing Level II": {
-      "unified_title": "CLEP Spanish with Writing Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Spanish with Writing Level II"
     },
     "CLEP Spanish with Writing I": {
-      "unified_title": "CLEP Spanish with Writing I",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Spanish with Writing I"
     },
     "CLEP Spanish with Writing Level 2": {
-      "unified_title": "CLEP Spanish with Writing Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Spanish with Writing Level II"
     },
     "CLEP Spanish with Writing Level II": {
-      "unified_title": "CLEP Spanish with Writing Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Spanish with Writing Level II"
     },
     "CLEP Spanish with Writing Level II (Score of 63)": {
-      "unified_title": "CLEP Spanish with Writing Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Spanish with Writing Level II"
     },
     "CLEP Spanish with Writing ll": {
-      "unified_title": "CLEP Spanish with Writing Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Spanish with Writing Level II"
     },
     "CLEP Spanish with Writing: Level 2": {
-      "unified_title": "CLEP Spanish with Writing Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Spanish with Writing Level II"
     },
     "CLEP Spanish** Level II": {
-      "unified_title": "CLEP Spanish Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Spanish Language Level II"
     },
     "CLEP Spanish** with Writing II": {
-      "unified_title": "CLEP Spanish with Writing II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Spanish with Writing II"
     },
     "CLEP Spanish, Level II": {
-      "unified_title": "CLEP Spanish Language Level II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Spanish Language Level II"
     },
     "CLEP Trigonometry (only if taken before F06)": {
-      "unified_title": "CLEP Trigonometry",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Trigonometry"
     },
     "CLEP Trigonometry (prior F' 06)": {
-      "unified_title": "CLEP Trigonometry",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Trigonometry"
     },
     "CLEP Trigonometry (prior to Fall 2006)": {
-      "unified_title": "CLEP Trigonometry",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Trigonometry"
     },
     "CLEP United States I": {
-      "unified_title": "CLEP History of the United States I",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP History of the United States I"
     },
     "CLEP United States II": {
-      "unified_title": "CLEP History of the United States II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP History of the United States II"
     },
     "CLEP Western Civ I": {
-      "unified_title": "CLEP Western Civilization I",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Western Civilization I"
     },
     "CLEP Western Civ II": {
-      "unified_title": "CLEP Western Civilization II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Western Civilization II"
     },
     "CLEP Western Civilization I (Score of 50)": {
-      "unified_title": "CLEP Western Civilization I",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Western Civilization I"
     },
     "CLEP Western Civilization I: Ancient Near East to 1648": {
-      "unified_title": "CLEP Western Civilization I",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Western Civilization I"
     },
     "CLEP Western Civilization II (Score of 50)": {
-      "unified_title": "CLEP Western Civilization II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Western Civilization II"
     },
     "CLEP Western Civilization II: 1648 to Present": {
-      "unified_title": "CLEP Western Civilization II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Western Civilization II"
     },
     "CLEP Western Civilization II: 1648 to the Present": {
-      "unified_title": "CLEP Western Civilization II",
+      "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "issuing_agency": "College Board"
+      "unified_title": "CLEP Western Civilization II"
     },
     "CLP – C CERTIFIED PROFESSIONAL PROGRAMMER": {
       "unified_title": "CLP — C Certified Professional Programmer",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
+    },
+    "CNC Operation": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.750204+00:00",
+      "unified_title": "CNC Operation"
     },
     "COMM C1000 Portfolio Review": {
       "unified_title": "Public Speaking (COMM C1000)",
@@ -1806,10 +1854,10 @@
       "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
     },
     "COMPTIA LINUX+": {
-      "unified_title": "CompTIA Linux+",
+      "issuing_agency": "CompTIA",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:02:32.590984+00:00",
-      "issuing_agency": "CompTIA"
+      "unified_title": "CompTIA Linux+"
     },
     "CPA – C++ CERTIFIED ASSOCIATE PROGRAMMER": {
       "unified_title": "C++ Certified Associate Programmer (CPA)",
@@ -1837,6 +1885,12 @@
       "reviewed_at": "2026-07-07T20:44:35.369763+00:00",
       "unified_title": "Carpenters Apprenticeship — Cabinetmaker"
     },
+    "Cal Fire Fire Control 4A: Ignitable Liquids and Gases Awareness/Operations": {
+      "issuing_agency": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.087971+00:00",
+      "unified_title": "Fire Control 4A — Ignitable Liquids and Gases Awareness/Operations"
+    },
     "Cal Fire Hazardous Materials First Responder Operational Level, Decontamination": {
       "unified_title": "Hazardous Materials First Responder Operational — Decontamination",
       "reviewed_by": "map@rccd.edu",
@@ -1862,22 +1916,58 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "California Building Code Certification": {
+      "issuing_agency": "International Code Council (ICC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.136045+00:00",
+      "unified_title": "California Building Code Certification"
+    },
+    "California Certified Public Accountant (CPA) License, issued by the California Board of Accountancy (CBA).": {
+      "issuing_agency": "California Board of Accountancy (CBA)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.183963+00:00",
+      "unified_title": "California Certified Public Accountant (CPA) License"
+    },
     "California Emergency Medical Technician (EMT)": {
       "issuing_agency": "National Registry of Emergency Medical Technicians",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:45:01.402733+00:00",
       "unified_title": "Emergency Medical Technician"
     },
+    "California Residential Code Certification": {
+      "issuing_agency": "International Code Council (ICC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.243741+00:00",
+      "unified_title": "California Residential Code Certification"
+    },
+    "California State Water Resources Control Board D2, D3, D4, or D5 certification": {
+      "issuing_agency": "California State Water Resources Control Board (SWRCB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.289183+00:00",
+      "unified_title": "Water Distribution Operator Grade D2, D3, D4, or D5"
+    },
     "Carpentry Apprenticeship": {
-      "unified_title": "Carpenters Apprenticeship — Carpenter",
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:35.434251+00:00",
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)"
+      "unified_title": "Carpenters Apprenticeship — Carpenter"
     },
     "Center for Financial Training: CFTA-0025 Human Resources Management;": {
       "unified_title": "Center for Financial Training (CFT) — Human Resources Management (CFTA-0025)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
+    },
+    "Certification for Welders": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.335459+00:00",
+      "unified_title": "Certification for Welders"
+    },
+    "Certification: Microsoft Office Specialist (MOS)- Excel": {
+      "issuing_agency": "Microsoft",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.375992+00:00",
+      "unified_title": "Microsoft Office Specialist — Excel"
     },
     "Certified Bloodstain Pattern Analyst (CBPA) Certification": {
       "unified_title": "Certified Bloodstain Pattern Analyst (CBPA)",
@@ -1904,6 +1994,12 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
+    "Certified Nurse Assistant (CNA) Certification": {
+      "issuing_agency": "California Department of Public Health (CDPH)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.425427+00:00",
+      "unified_title": "Certified Nurse Assistant (CNA) Certification"
+    },
     "Chaffey Joint Union - Rancho Cucamonga HS - Advanced Engineering Design II H 1&2": {
       "unified_title": "High School Articulation — Advanced Engineering Design II Honors (Rancho Cucamonga HS)",
       "reviewed_by": "map@rccd.edu",
@@ -1914,10 +2010,40 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
     },
+    "Class A Contractor License": {
+      "issuing_agency": "Contractors State License Board (CSLB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.46972+00:00",
+      "unified_title": "Class A Contractor License"
+    },
+    "Class B Contractor License": {
+      "issuing_agency": "Contractors State License Board (CSLB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.509947+00:00",
+      "unified_title": "Class B Contractor License"
+    },
+    "Class B-2 Contractor License": {
+      "issuing_agency": "Contractors State License Board (CSLB)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.552746+00:00",
+      "unified_title": "Class B-2 Contractor License"
+    },
+    "Clinical Embalming (MORT 482 C)": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.701463+00:00",
+      "unified_title": "Clinical Embalming"
+    },
     "Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors": {
       "unified_title": "High School Articulation — Anatomy and Physiology Honors (Colton-Redlands-Yucaipa ROP)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
+    },
+    "Combinded Processes I": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.79676+00:00",
+      "unified_title": "Combined Processes I"
     },
     "Commercial Building Inspector": {
       "issuing_agency": "International Code Council",
@@ -1931,16 +2057,76 @@
       "reviewed_at": "2026-07-07T20:44:36.173769+00:00",
       "unified_title": "Commercial Electrical Apprenticeship"
     },
+    "Communications Systems": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.846196+00:00",
+      "unified_title": "Communications Systems"
+    },
     "Community and the Justice System": {
       "unified_title": "Community and the Justice System",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
+    "Company Officer 2A: Human Resource Management for Company Officer": {
+      "issuing_agency": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:05:24.362868+00:00",
+      "unified_title": "Company Officer 2A: Human Resource Management for Company Officer"
+    },
+    "Company Officer 2B: General Administrative Functions for Company Officers": {
+      "issuing_agency": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:05:52.989244+00:00",
+      "unified_title": "Company Officer 2B: General Administrative Functions for Company Officers"
+    },
+    "Company Officer 2C: Fire Inspections and Investigations for Company Officers": {
+      "issuing_agency": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:05:52.212271+00:00",
+      "unified_title": "Company Officer 2C: Fire Inspections and Investigations for Company Officers"
+    },
+    "Company Officer 2D: All-Risk Command Operations for Company Officers": {
+      "issuing_agency": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:06:27.580389+00:00",
+      "unified_title": "Company Officer 2D: All-Risk Command Operations for Company Officers"
+    },
+    "Company Officer 2E: Wildland Incident Operations for Company Officers": {
+      "issuing_agency": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:06:27.030792+00:00",
+      "unified_title": "Company Officer 2E: Wildland Incident Operations for Company Officers"
+    },
+    "Computer Networks": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.890894+00:00",
+      "unified_title": "Computer Networks"
+    },
+    "Computer Simulation and Troubleshooting": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.936416+00:00",
+      "unified_title": "Computer Simulation and Troubleshooting"
+    },
+    "Confined Space Rescue Technician": {
+      "issuing_agency": "Office of the State Fire Marshall",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:07:50.832783+00:00",
+      "unified_title": "Confined Space Rescue Technician"
+    },
     "Construction Craft Laborer Apprenticeship": {
-      "unified_title": "Construction Craft Laborer Apprenticeship",
+      "issuing_agency": "Laborers' International Union of North America (LiUNA)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:36.226285+00:00",
-      "issuing_agency": "Laborers' International Union of North America (LiUNA)"
+      "unified_title": "Construction Craft Laborer Apprenticeship"
+    },
+    "Construction Fabrication and Welding": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:27.976111+00:00",
+      "unified_title": "Construction Fabrication and Welding"
     },
     "Cooperative Education: Nursing A.D.N.": {
       "unified_title": "Cooperative Education: Nursing (ADN)",
@@ -1953,16 +2139,16 @@
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
     "Credit By Exam Miramar": {
-      "unified_title": "Generic Credit by Exam — San Diego Miramar College",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:37.8008+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Generic Credit by Exam — San Diego Miramar College"
     },
     "Credit by Exam - Intro to Process Technology": {
-      "unified_title": "Intro to Process Technology",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:36.336256+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Intro to Process Technology"
     },
     "Credit by Exam - WATER 140": {
       "issuing_agency": "California Community Colleges",
@@ -1977,10 +2163,10 @@
       "unified_title": "Payroll Accounting"
     },
     "Credit by Exam ACCTG 030 QuickBooks": {
-      "unified_title": "QuickBooks",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:36.516835+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "QuickBooks"
     },
     "Credit by Exam AUTO 102 Automotive System": {
       "issuing_agency": "California Community Colleges",
@@ -2001,22 +2187,22 @@
       "unified_title": "Automotive Principles"
     },
     "Credit by Exam AUTO 118 Fuel Systems/Emission Controls": {
-      "unified_title": "Fuel Systems/Emission Controls",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:36.73789+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Fuel Systems/Emission Controls"
     },
     "Credit by Exam AUTO 171 Engine Systems": {
-      "unified_title": "Engine Systems",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:36.790435+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Engine Systems"
     },
     "Credit by Exam AUTO 204 Driver Assist Technology": {
-      "unified_title": "Driver Assist Technology",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:36.848762+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Driver Assist Technology"
     },
     "Credit by Exam AUTO A1 Engine Repair": {
       "unified_title": "ASE A1 — Engine Repair",
@@ -2030,40 +2216,40 @@
       "unified_title": "Business Document Production"
     },
     "Credit by Exam CHEM 001B General Chemistry": {
-      "unified_title": "General Chemistry",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:36.965616+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "General Chemistry"
     },
     "Credit by Exam KINS 025 First Aid, CPR & AED": {
-      "unified_title": "First Aid, CPR & AED",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:37.020055+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "First Aid, CPR & AED"
     },
     "Credit by Exam MATH 021 Precalculus Algebra": {
-      "unified_title": "Precalculus Algebra",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:37.073531+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Precalculus Algebra"
     },
     "Credit by Exam MATH 022 Trigonometry": {
-      "unified_title": "Trigonometry",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:37.318598+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Trigonometry"
     },
     "Credit by Exam MATH 025 Precalculus Algebra and Trigonometry": {
-      "unified_title": "Precalculus Algebra and Trigonometry",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:37.371713+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Precalculus Algebra and Trigonometry"
     },
     "Credit by Exam MATH 062 Calculus for Business and Social Science": {
-      "unified_title": "Calculus for Business and Social Science",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:37.440024+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Calculus for Business and Social Science"
     },
     "Credit by Exam MATH 071 Calculus I With Analytic Geometry": {
       "issuing_agency": "California Community Colleges",
@@ -2084,10 +2270,10 @@
       "unified_title": "Multivariable Calculus"
     },
     "Credit by Exam MATH 078 Differential Equations": {
-      "unified_title": "Differential Equations",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:37.706953+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Differential Equations"
     },
     "Credit by Exam MATH 079 Linear Algebra": {
       "issuing_agency": "California Community Colleges",
@@ -2120,10 +2306,10 @@
       "unified_title": "Introduction to Electrical and Instrumentation Processes"
     },
     "Credit by Exam WWT 103 Basic Plant Operations: Water Treatment": {
-      "unified_title": "Basic Plant Operations: Water Treatment",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:38.059092+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Basic Plant Operations: Water Treatment"
     },
     "Credit by Exam WWT 104 Basic Plant Operations: Wastewater Treatment": {
       "issuing_agency": "California Community Colleges",
@@ -2138,10 +2324,10 @@
       "unified_title": "Water Distribution Systems"
     },
     "Credit by Exam WWT 106 Wastewater Collection Systems": {
-      "unified_title": "Wastewater Collection Systems",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:38.280747+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Wastewater Collection Systems"
     },
     "Credit by Exam- Introduction to Legal Research and Terminology": {
       "unified_title": "Introduction to Legal Research and Terminology",
@@ -2179,6 +2365,12 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
+    "Customer Relations for the Technician": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.01849+00:00",
+      "unified_title": "Customer Relations for the Technician"
+    },
     "DANCETQ 141 - Modern Dance Techniques I": {
       "unified_title": "Modern Dance Techniques I",
       "reviewed_by": "map@rccd.edu",
@@ -2190,10 +2382,10 @@
       "reviewed_at": "2026-06-03T17:12:43.443936+00:00"
     },
     "DRAFT-43 High School- Advanced Engineering Design II H 1&2": {
-      "unified_title": "Advanced CAD Modeling and Applications",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:38.394484+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Advanced CAD Modeling and Applications"
     },
     "DRAFT-43:  RANCHO HIGH SCHOOL- Advanced CAD Modeling and Applications": {
       "issuing_agency": "California Community Colleges",
@@ -2202,22 +2394,22 @@
       "unified_title": "Advanced CAD Modeling and Applications"
     },
     "DRAFT-43: Advanced CAD Modeling and Applications": {
-      "unified_title": "Advanced CAD Modeling and Applications",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:38.514777+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Advanced CAD Modeling and Applications"
     },
     "DRAFT-50 Baldy View ROP - Civil Engineering & Architecture (CEA)": {
-      "unified_title": "Architectural Design I",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:38.635771+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Architectural Design I"
     },
     "DRAFT-50 and DRAFT-43 Baldy View ROP - Civil Engineering and Architecture": {
-      "unified_title": "Architectural Design I",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:38.577585+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Architectural Design I"
     },
     "DRAFT-50: Architectural Design I": {
       "issuing_agency": "California Community Colleges",
@@ -2235,6 +2427,12 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "Discipline Exam - ADM JUS 001": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.063291+00:00",
+      "unified_title": "Introduction to Administration of Justice"
+    },
     "Dollar General Store Manager Training DLGC-0001 Store Manager Training": {
       "unified_title": "Dollar General Store Manager Training",
       "reviewed_by": "map@rccd.edu",
@@ -2247,16 +2445,16 @@
       "unified_title": "Carpenters Apprenticeship — Drywall Applicator"
     },
     "EGTECH-10 - High School: Introduction to Engineering Design/Graphics": {
-      "unified_title": "Introduction to Engineering Design/Graphics",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:38.824626+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Introduction to Engineering Design/Graphics"
     },
     "EGTECH-10 SAN BERNARDINO HIGH SCHOOL- PLTW Intro to Engineering Design  IS414H/IS415H": {
-      "unified_title": "Introduction to Engineering Design/Graphics",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:38.870622+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Introduction to Engineering Design/Graphics"
     },
     "EGTECH-10: Baldy View ROP - Introduction to Engineering Design": {
       "issuing_agency": "California Community Colleges",
@@ -2265,10 +2463,10 @@
       "unified_title": "Introduction to Engineering Design/Graphics"
     },
     "EGTECH-10: Upland Unified School District - Introduction to Engineering Design PLTW": {
-      "unified_title": "Introduction to Engineering Design/Graphics",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:38.983124+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Introduction to Engineering Design/Graphics"
     },
     "EGTECH-12 SAN BERNARDINO HIGH SCHOOL- PLTW Principles of Engineering  IS416H/IS417H": {
       "issuing_agency": "California Community Colleges",
@@ -2277,10 +2475,10 @@
       "unified_title": "Principles of Engineering"
     },
     "EGTECH-12: Principles of Engineering": {
-      "unified_title": "Principles of Engineering",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:39.094043+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Principles of Engineering"
     },
     "EGTECH-12: SAN GORGONIO HIGH SCHOOL- PLTW Intro to Engineering Design  IS414H/IS415H": {
       "issuing_agency": "California Community Colleges",
@@ -2289,10 +2487,10 @@
       "unified_title": "Principles of Engineering"
     },
     "EGTECH-12: SAN GORGONIO HIGH SCHOOL- PLTW Principles of Engineering  IS416H/IS417H": {
-      "unified_title": "Principles of Engineering",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:39.208589+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Principles of Engineering"
     },
     "EGTECH-12: Upland Unified School District - Principles of Engineering (PLTW)": {
       "issuing_agency": "California Community Colleges",
@@ -2301,28 +2499,28 @@
       "unified_title": "Principles of Engineering"
     },
     "EMT-405 - Fontana Unified -Fontana HS Kaiser HS - EMT Fundamental": {
-      "unified_title": "Emergency Medical Responder",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:39.310852+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Emergency Medical Responder"
     },
     "EMT-405 - High School: Emergency Medical Technician Preparation": {
-      "unified_title": "Emergency Medical Responder",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:39.357169+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Emergency Medical Responder"
     },
     "EMT-405 FONTANA HIGH SCHOOL- Emergency Medical Responder": {
-      "unified_title": "Emergency Medical Responder",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:39.406299+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Emergency Medical Responder"
     },
     "EMT-405: Baldy View ROP - EMERGENCY MEDICAL RESPONDER 1": {
-      "unified_title": "Emergency Medical Responder",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:39.452451+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Emergency Medical Responder"
     },
     "EMT-405: FONTANA HIGH SCHOOL- Emergency Medical Technician": {
       "issuing_agency": "California Community Colleges",
@@ -2337,16 +2535,34 @@
       "unified_title": "Emergency Medical Responder"
     },
     "EMT-405: Fontana Unified - Fontana HS  Kaiser HS - Emergency Medical Responder": {
-      "unified_title": "Emergency Medical Responder",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:39.645089+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Emergency Medical Responder"
     },
     "EMT-405: Learn 4 Life - Emergency Medical Responder": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:39.696096+00:00",
       "unified_title": "Emergency Medical Responder"
+    },
+    "Emergency Care and Safety Institute": {
+      "issuing_agency": "Emergency Care and Safety Institute (ECSI)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.105654+00:00",
+      "unified_title": "Emergency Care and Safety Institute"
+    },
+    "Emergency Management Experience (LD)": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.150837+00:00",
+      "unified_title": "Emergency Management Experience (Lower Division)"
+    },
+    "Emergency Management Experience (UD)": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.199243+00:00",
+      "unified_title": "Emergency Management Experience (Upper Division)"
     },
     "Emergency Medical Responder": {
       "issuing_agency": "National Registry of Emergency Medical Technicians",
@@ -2355,21 +2571,33 @@
       "unified_title": "Emergency Medical Responder"
     },
     "Emergency Medical Technician (EMT) Certification": {
-      "unified_title": "Emergency Medical Technician",
+      "issuing_agency": "National Registry of Emergency Medical Technicians",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T18:57:35.052479+00:00",
-      "issuing_agency": "National Registry of Emergency Medical Technicians"
+      "unified_title": "Emergency Medical Technician"
+    },
+    "Engineering Drawing": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.240515+00:00",
+      "unified_title": "Engineering Drawing"
     },
     "F.C.C. License": {
       "unified_title": "FCC Commercial Radio Operator License",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:28:52.076094+00:00"
     },
+    "FCC General Radiotelephone Operator License Preparation": {
+      "issuing_agency": "U.S. Federal Communications Commission (FCC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.285798+00:00",
+      "unified_title": "FCC General Radiotelephone Operator License (GROL)"
+    },
     "FILM 31, Digital Filmmaking": {
-      "unified_title": "Introduction To Digital Filmmaking",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T18:57:37.88026+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Introduction To Digital Filmmaking"
     },
     "FIRETEC-12: FONTANA HIGH SCHOOL- Safety & Survival": {
       "issuing_agency": "California Community Colleges",
@@ -2434,6 +2662,42 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:12:43.443936+00:00"
     },
+    "Fire Company Officer 3 Certification (IFSAC or ProBoard Certifications)": {
+      "issuing_agency": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.326418+00:00",
+      "unified_title": "Fire Company Officer 3"
+    },
+    "Fire Fighter 1 (FF1) Certification": {
+      "issuing_agency": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.374375+00:00",
+      "unified_title": "Firefighter 1"
+    },
+    "Fire Fighter 1: Haz Mat + WMD": {
+      "issuing_agency": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.41808+00:00",
+      "unified_title": "Firefighter 1 — Haz Mat + WMD"
+    },
+    "Fire Fighter 2 (FF2) Certification": {
+      "issuing_agency": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.460969+00:00",
+      "unified_title": "Firefighter 2"
+    },
+    "Fire Inspector 1 Certification (IFSAC/ProBoard)": {
+      "issuing_agency": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.504286+00:00",
+      "unified_title": "Fire Inspector I"
+    },
+    "Fire Inspector 2 (IFSAC/ProBoard)": {
+      "issuing_agency": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.543783+00:00",
+      "unified_title": "Fire Inspector II"
+    },
     "Fire Inspector 2A: Fire Prevention Administration": {
       "unified_title": "Fire Inspector 2A",
       "reviewed_by": "map@rccd.edu",
@@ -2449,16 +2713,46 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:12:43.443936+00:00"
     },
+    "Fire Instructor 2 (ProBoard)": {
+      "issuing_agency": "Pro Board (National Board on Fire Service Professional Qualifications)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.586052+00:00",
+      "unified_title": "Fire Instructor 2"
+    },
+    "Fire Officer 2A: Human Resource Management": {
+      "issuing_agency": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:07:54.572489+00:00",
+      "unified_title": "Fire Officer 2A: Human Resource Management"
+    },
+    "Fire Officer II Certification (ProBoard)": {
+      "issuing_agency": "Pro Board (National Board on Fire Service Professional Qualifications)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.629876+00:00",
+      "unified_title": "Fire Officer II"
+    },
     "Firefighter 1 Certification": {
       "unified_title": "Firefighter 1",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
     "Firefighter 1A Certification": {
-      "unified_title": "Firefighter 1A",
+      "issuing_agency": "California State Fire Training (SFT)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T19:32:01.902138+00:00",
-      "issuing_agency": "California State Fire Training (SFT)"
+      "unified_title": "Firefighter 1A"
+    },
+    "Firefighter I": {
+      "issuing_agency": "National Fire Protection Association (NFPA)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.669403+00:00",
+      "unified_title": "Firefighter I"
+    },
+    "Firefighter II": {
+      "issuing_agency": "National Fire Protection Association (NFPA)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.712759+00:00",
+      "unified_title": "Firefighter II"
     },
     "Forecasting Financial Statemen- Credit by Exam": {
       "unified_title": "Forecasting Financial Statements",
@@ -2486,15 +2780,93 @@
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
     "Hardwood Floor Layer Apprenticeship": {
-      "unified_title": "Carpenters Apprenticeship — Hardwood Floor Layer",
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:40.154825+00:00",
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)"
+      "unified_title": "Carpenters Apprenticeship — Hardwood Floor Layer"
     },
     "Human Resource Management": {
       "unified_title": "Human Resource Management",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
+    },
+    "IC-  Welding Level I": {
+      "issuing_agency": "National Center for Construction Education and Research (NCCER)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.75256+00:00",
+      "unified_title": "NCCER Welding Level 1"
+    },
+    "IC- Automotive Electrical/Electronics I": {
+      "issuing_agency": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.796211+00:00",
+      "unified_title": "Automotive Electrical/Electronics I"
+    },
+    "IC- Engine Performance II": {
+      "issuing_agency": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.838412+00:00",
+      "unified_title": "Engine Performance II"
+    },
+    "IC- Introduction to Automotive Technology": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.880674+00:00",
+      "unified_title": "Introduction to Automotive Technology"
+    },
+    "IC- Introduction to Hybrid and Electric Vehicle Technology": {
+      "issuing_agency": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.92324+00:00",
+      "unified_title": "Introduction to Hybrid and Electric Vehicle Technology"
+    },
+    "IC- Welding Level I": {
+      "issuing_agency": "National Center for Construction Education and Research (NCCER)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:28.967004+00:00",
+      "unified_title": "NCCER Welding Level 1"
+    },
+    "IC- Welding Level II": {
+      "issuing_agency": "National Center for Construction Education and Research (NCCER)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.016328+00:00",
+      "unified_title": "NCCER Welding Level 2"
+    },
+    "IC-Automotive Brake Systems": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.062288+00:00",
+      "unified_title": "Automotive Brake Systems"
+    },
+    "IC-Automotive Electrical/Electronics II": {
+      "issuing_agency": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.103869+00:00",
+      "unified_title": "Automotive Electrical/Electronics II"
+    },
+    "IC-Automotive Suspension, Steering and Alignment Systems": {
+      "issuing_agency": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.151474+00:00",
+      "unified_title": "Automotive Suspension, Steering and Alignment Systems"
+    },
+    "IC-Engine Performance I": {
+      "issuing_agency": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.194398+00:00",
+      "unified_title": "Engine Performance I"
+    },
+    "IC-Welding Level I": {
+      "issuing_agency": "National Center for Construction Education and Research (NCCER)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.243806+00:00",
+      "unified_title": "NCCER Welding Level 1"
+    },
+    "IC-Welding Level II": {
+      "issuing_agency": "National Center for Construction Education and Research (NCCER)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.289355+00:00",
+      "unified_title": "NCCER Welding Level 2"
     },
     "ICS 100, IS 700, L-180, L-280, S-130, S-190, S-215 Wildland Fire Certifications": {
       "unified_title": "Wildland Fire ICS/NWCG Certification Bundle",
@@ -2551,11 +2923,23 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:12:43.443936+00:00"
     },
+    "Incident Commander HAZMAT": {
+      "issuing_agency": "National Association of Safety Professionals",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:08:51.124454+00:00",
+      "unified_title": "Incident Commander HAZMAT"
+    },
     "Industry Credentials for Introduction to Computers": {
-      "unified_title": "Introduction to Computers",
+      "issuing_agency": "CompTIA",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T23:55:50.236714+00:00",
-      "issuing_agency": "CompTIA"
+      "unified_title": "Introduction to Computers"
+    },
+    "Infant and Toddler Care and Curriculum": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.332708+00:00",
+      "unified_title": "Infant and Toddler Care and Curriculum"
     },
     "Inspection Portfolio Spring 2026 #1": {
       "issuing_agency": "California Community Colleges",
@@ -2563,16 +2947,64 @@
       "reviewed_at": "2026-07-07T17:24:47.169802+00:00",
       "unified_title": "Construction Inspection"
     },
+    "Instructor I Instructional Methodology": {
+      "issuing_agency": "Office of the State Fire Marshall",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:09:13.046288+00:00",
+      "unified_title": "Instructor I Instructional Methodology"
+    },
+    "Instructor II Instructional Development": {
+      "issuing_agency": "Office of the State Fire Marshall",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:09:16.074098+00:00",
+      "unified_title": "Instructor II Instructional Development"
+    },
     "Insulator Apprenticeship": {
-      "unified_title": "Carpenters Apprenticeship — Insulator",
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:40.219145+00:00",
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)"
+      "unified_title": "Carpenters Apprenticeship — Insulator"
+    },
+    "Intermediate Arc Welding": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.380889+00:00",
+      "unified_title": "Intermediate Arc Welding"
+    },
+    "Intermediate Wildland Fire Behavior": {
+      "issuing_agency": "Office of the State Fire Marshall",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:09:21.63317+00:00",
+      "unified_title": "Intermediate Wildland Fire Behavior"
+    },
+    "Internship and Work Experience": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.434895+00:00",
+      "unified_title": "Internship and Work Experience"
     },
     "Intro to Entrepreneurship High School to College Articulatio": {
       "unified_title": "Introduction to Entrepreneurship",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:28:52.076094+00:00"
+    },
+    "Intro to Managerial Accounting": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.478369+00:00",
+      "unified_title": "Introduction to Managerial Accounting"
+    },
+    "Introduciton to UNIX/Linux": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.525568+00:00",
+      "unified_title": "Introduction to UNIX/Linux"
+    },
+    "Introduction to CNC Programing": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.566524+00:00",
+      "unified_title": "Introduction to CNC Programming"
     },
     "Introduction to Computer Information Systems": {
       "unified_title": "Introduction to Computer Information Systems",
@@ -2589,11 +3021,29 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
+    "Introduction to Engineering": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.612345+00:00",
+      "unified_title": "Introduction to Engineering"
+    },
+    "Introduction to Mechanical Principals": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.65957+00:00",
+      "unified_title": "Introduction to Mechanical Principles"
+    },
     "Introduction to Mechatronics": {
       "issuing_agency": "Festo",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T18:57:41.843525+00:00",
       "unified_title": "Introduction to Mechatronics"
+    },
+    "Introduction to Video Editing and Postproduction": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.700833+00:00",
+      "unified_title": "Introduction to Video Editing and Postproduction"
     },
     "Introduction to the Linux Operating System": {
       "unified_title": "Introduction to the Linux Operating System",
@@ -2607,16 +3057,16 @@
       "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer"
     },
     "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer, CA": {
-      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T19:04:33.533042+00:00",
-      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C."
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer"
     },
     "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher, AS": {
-      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T19:04:32.727843+00:00",
-      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C."
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher"
     },
     "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems), CA (Active from Summer 2025)": {
       "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
@@ -2631,22 +3081,34 @@
       "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather"
     },
     "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, CA": {
-      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T19:04:30.827974+00:00",
-      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C."
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather"
+    },
+    "Journeyman Certificate- Apprenticeship Carpentry, General Carpenter, AS": {
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T21:36:05.412892+00:00",
+      "unified_title": "Carpentry General Carpenter Journeyman Certificate"
+    },
+    "Journeyman Certificate- Apprenticeship Carpentry, General Carpenter, CA": {
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T21:36:43.976962+00:00",
+      "unified_title": "Carpentry General Carpenter Journeyman Certificate"
     },
     "Journeyman Certificate- Apprenticeship Carpentry, Insulator, AS": {
-      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Insulator",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:40.292058+00:00",
-      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C."
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Insulator"
     },
     "Journeyman Certificate- Apprenticeship Carpentry, Insulator, CA": {
-      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Insulator",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:40.346885+00:00",
-      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C."
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Insulator"
     },
     "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, AS": {
       "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
@@ -2655,10 +3117,10 @@
       "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting"
     },
     "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, AS (Active from Fall 2025)": {
-      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:40.466677+00:00",
-      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C."
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting"
     },
     "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, CA": {
       "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
@@ -2679,28 +3141,28 @@
       "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Pile Driver"
     },
     "Journeyman Certificate- Apprenticeship Carpentry, Pile Driver, CA": {
-      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Pile Driver",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:40.711679+00:00",
-      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C."
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Pile Driver"
     },
     "Journeyman Certificate- Apprenticeship Carpentry, Plastering, AS": {
-      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Plastering",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:40.765681+00:00",
-      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C."
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Plastering"
     },
     "Journeyman Certificate- Apprenticeship Carpentry, Plastering, CA": {
-      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Plastering",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:40.819107+00:00",
-      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C."
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Plastering"
     },
     "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up, AS": {
-      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:40.867133+00:00",
-      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C."
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up"
     },
     "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up, CA": {
       "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
@@ -2788,10 +3250,10 @@
       "unified_title": "Electronic Music Workshop"
     },
     "MUSIC 265-1 - Recording Arts Workshop I": {
-      "unified_title": "Recording Arts Workshop I",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:41.16225+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Recording Arts Workshop I"
     },
     "MUSIC 265-2 - Recording Arts Workshop II": {
       "issuing_agency": "California Community Colleges",
@@ -2806,10 +3268,10 @@
       "unified_title": "Recording Arts Workshop III"
     },
     "MUSIC 322  - Elementary Piano II": {
-      "unified_title": "Piano II",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T18:57:47.399608+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Piano II"
     },
     "MUSIC 661 - Jazz and Popular Music Guitar I": {
       "issuing_agency": "California Community Colleges",
@@ -2832,16 +3294,22 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "Medical Insurance Billing and Coding": {
+      "issuing_agency": "National Healthcareer Association",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.745542+00:00",
+      "unified_title": "Medical Insurance Billing and Coding"
+    },
     "Metal Building Erection I / Foreman Training": {
       "unified_title": "Metal Building Erection I / Foreman Training",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
     "Microsoft Azure Administrator": {
-      "unified_title": "Microsoft Certified: Azure Administrator Associate",
+      "issuing_agency": "Microsoft",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:02:32.590984+00:00",
-      "issuing_agency": "Microsoft"
+      "unified_title": "Microsoft Certified: Azure Administrator Associate"
     },
     "Microsoft Office Specialist (MOS) Certification.": {
       "issuing_agency": "Microsoft",
@@ -2849,11 +3317,35 @@
       "reviewed_at": "2026-07-07T19:04:29.004774+00:00",
       "unified_title": "Microsoft Office Specialist"
     },
+    "Microsoft Office Specialist (MOS): Excel Associate or Microsoft Office Specialist (MOS): Excel Expert Certification.": {
+      "issuing_agency": "Microsoft",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.79025+00:00",
+      "unified_title": "Microsoft Office Specialist — Excel or Excel Expert"
+    },
+    "Microsoft Office Specialist (MOS): Word Associate or MOS: Word Expert Certification.": {
+      "issuing_agency": "Microsoft",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.833788+00:00",
+      "unified_title": "Microsoft Office Specialist — Word or Word Expert"
+    },
+    "Microwave Communications": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.880935+00:00",
+      "unified_title": "Microwave Communications"
+    },
+    "Military Basic Training": {
+      "issuing_agency": "American Council on Education (ACE)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.923228+00:00",
+      "unified_title": "Basic Military Training"
+    },
     "Millwright Apprenticeship": {
-      "unified_title": "Carpenters Apprenticeship — Millwright",
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:41.067422+00:00",
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)"
+      "unified_title": "Carpenters Apprenticeship — Millwright"
     },
     "Modular Installer Apprenticeship": {
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -2861,22 +3353,28 @@
       "reviewed_at": "2026-07-07T20:44:41.114297+00:00",
       "unified_title": "Carpenters Apprenticeship — Modular Installer"
     },
+    "Motion Graphics": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:29.968813+00:00",
+      "unified_title": "Motion Graphics"
+    },
     "Music Skills II - Credit by Exam": {
       "unified_title": "Music Skills II",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
     "NCCER CORE Curriculum - Introduction to Basic Construction Skills": {
-      "unified_title": "NCCER CORE Curriculum - Introduction to Basic Construction Skills",
+      "issuing_agency": "NCCER",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:41.659919+00:00",
-      "issuing_agency": "NCCER"
+      "unified_title": "NCCER CORE Curriculum - Introduction to Basic Construction Skills"
     },
     "NCCER Commercial Carpenter Journey Level": {
-      "unified_title": "NCCER Commercial Carpenter Journey Level",
+      "issuing_agency": "NCCER",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:41.320762+00:00",
-      "issuing_agency": "NCCER"
+      "unified_title": "NCCER Commercial Carpenter Journey Level"
     },
     "NCCER Commercial Electrician Level 1": {
       "issuing_agency": "NCCER",
@@ -2885,22 +3383,22 @@
       "unified_title": "NCCER Commercial Electrician Level 1"
     },
     "NCCER Commercial Electrician Level 2": {
-      "unified_title": "NCCER Commercial Electrician Level 2",
+      "issuing_agency": "NCCER",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:41.416743+00:00",
-      "issuing_agency": "NCCER"
+      "unified_title": "NCCER Commercial Electrician Level 2"
     },
     "NCCER Commercial Electrician Level 3": {
-      "unified_title": "NCCER Commercial Electrician Level 3",
+      "issuing_agency": "NCCER",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:41.462489+00:00",
-      "issuing_agency": "NCCER"
+      "unified_title": "NCCER Commercial Electrician Level 3"
     },
     "NCCER Commercial Electrician Level 4/Journey Level": {
-      "unified_title": "NCCER Commercial Electrician Level 4/Journey Level",
+      "issuing_agency": "NCCER",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:41.516902+00:00",
-      "issuing_agency": "NCCER"
+      "unified_title": "NCCER Commercial Electrician Level 4/Journey Level"
     },
     "NCCER Construction Foreman Management": {
       "issuing_agency": "NCCER",
@@ -2915,10 +3413,10 @@
       "unified_title": "NCCER Construction Superintendent Management"
     },
     "NCCER Industrial Carpenter Journey Level": {
-      "unified_title": "NCCER Industrial Carpenter Journey Level",
+      "issuing_agency": "NCCER",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:41.701902+00:00",
-      "issuing_agency": "NCCER"
+      "unified_title": "NCCER Industrial Carpenter Journey Level"
     },
     "NCCER Industrial Electrician Level 1": {
       "issuing_agency": "NCCER",
@@ -2939,16 +3437,22 @@
       "unified_title": "NCCER Industrial Electrician Level 3"
     },
     "NCCER Industrial Electrician Level 4/Journey Level": {
-      "unified_title": "NCCER Industrial Electrician Level 4/Journey Level",
+      "issuing_agency": "NCCER",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:41.895236+00:00",
-      "issuing_agency": "NCCER"
+      "unified_title": "NCCER Industrial Electrician Level 4/Journey Level"
     },
     "NCCER Welding Level 1": {
-      "unified_title": "NCCER Welding Level 1",
+      "issuing_agency": "NCCER",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:02:32.590984+00:00",
-      "issuing_agency": "NCCER"
+      "unified_title": "NCCER Welding Level 1"
+    },
+    "NIMS ICS All-Hazards Incident Commander (ICT3)": {
+      "issuing_agency": "U.S. Federal Emergency Management Agency (FEMA)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.097329+00:00",
+      "unified_title": "NIMS ICS All-Hazards Incident Commander (ICT3)"
     },
     "NURSING 402 - Pharmacology": {
       "unified_title": "Pharmacology (Nursing)",
@@ -2964,6 +3468,18 @@
       "unified_title": "NCCER Certification Bundle (10 Certificates)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:12:43.443936+00:00"
+    },
+    "National Wildfire Coordinating Group-S-190 Introduction to Windland Fire Behavior": {
+      "issuing_agency": "National Wildfire Coordinating Group (NWCG)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.012969+00:00",
+      "unified_title": "NWCG S-190 — Introduction to Wildland Fire Behavior"
+    },
+    "Network+ Certification Preparation": {
+      "issuing_agency": "CompTIA",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.058347+00:00",
+      "unified_title": "CompTIA Network+"
     },
     "Nursing Process 2": {
       "unified_title": "Nursing Process 2",
@@ -2988,10 +3504,28 @@
       "unified_title": "OSHA 30 Card"
     },
     "OSHA Safety Training 30-Hour Card": {
-      "unified_title": "OSHA 30 Card",
+      "issuing_agency": "U.S. Department of Labor",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T19:37:39.388594+00:00",
-      "issuing_agency": "U.S. Department of Labor"
+      "unified_title": "OSHA 30 Card"
+    },
+    "Oxyacetylene Welding": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.138378+00:00",
+      "unified_title": "Oxyacetylene Welding"
+    },
+    "PC Operating System": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.178708+00:00",
+      "unified_title": "PC Operating System"
+    },
+    "PC Troubleshooting": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.223476+00:00",
+      "unified_title": "PC Troubleshooting"
     },
     "PLNT SC 714 - Principles of Horticulture": {
       "unified_title": "Principles of Horticulture",
@@ -3028,16 +3562,34 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:12:43.443936+00:00"
     },
+    "Peace Officer Standards and Training (POST) Basic Academy Certificate": {
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.266164+00:00",
+      "unified_title": "POST Basic Academy"
+    },
     "Peace Officer Standards and Training Basic Academy Certificate (POST)": {
       "unified_title": "POST Basic Academy",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:12:43.443936+00:00"
+    },
+    "Personal Computer Servicing": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.305139+00:00",
+      "unified_title": "Personal Computer Servicing"
     },
     "Pile Driver Apprenticeship": {
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:41.942297+00:00",
       "unified_title": "Carpenters Apprenticeship — Pile Driver"
+    },
+    "Pipe and Tube Welding": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.353939+00:00",
+      "unified_title": "Pipe and Tube Welding"
     },
     "Portfolio Production Studio- Credit by Exam": {
       "unified_title": "Portfolio Production Studio",
@@ -3069,6 +3621,24 @@
       "unified_title": "Principles of Fire and Emergency Services Safety and Survival",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
+    },
+    "Print Reading and Computations for Workers": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.398124+00:00",
+      "unified_title": "Print Reading and Computations for Workers"
+    },
+    "Print Reading and Shop Practice": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.443676+00:00",
+      "unified_title": "Print Reading and Shop Practice"
+    },
+    "Producing and Directing": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.487339+00:00",
+      "unified_title": "Producing and Directing"
     },
     "Psych c1000 - Introduction to Psychology - AP Credit": {
       "unified_title": "AP Psychology",
@@ -3109,16 +3679,16 @@
       "unified_title": "Ironworker Apprenticeship — Reinforcing, Period 2"
     },
     "Reinforcing Apprenticeship 416: Period 3": {
-      "unified_title": "Ironworker Apprenticeship — Reinforcing, Period 3",
+      "issuing_agency": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:42.153494+00:00",
-      "issuing_agency": ""
+      "unified_title": "Ironworker Apprenticeship — Reinforcing, Period 3"
     },
     "Reinforcing Apprenticeship 416: Period 4": {
-      "unified_title": "Ironworker Apprenticeship — Reinforcing, Period 4",
+      "issuing_agency": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:42.197912+00:00",
-      "issuing_agency": ""
+      "unified_title": "Ironworker Apprenticeship — Reinforcing, Period 4"
     },
     "Reinforcing Apprenticeship 416: Period 5": {
       "issuing_agency": "",
@@ -3127,40 +3697,46 @@
       "unified_title": "Ironworker Apprenticeship — Reinforcing, Period 5"
     },
     "Reinforcing Apprenticeship 416: Period 6": {
-      "unified_title": "Ironworker Apprenticeship — Reinforcing, Period 6",
+      "issuing_agency": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:42.297781+00:00",
-      "issuing_agency": ""
+      "unified_title": "Ironworker Apprenticeship — Reinforcing, Period 6"
     },
     "Reinforcing Apprenticeship 416: Period 7": {
-      "unified_title": "Ironworker Apprenticeship — Reinforcing, Period 7",
+      "issuing_agency": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:42.34634+00:00",
-      "issuing_agency": ""
+      "unified_title": "Ironworker Apprenticeship — Reinforcing, Period 7"
     },
     "Reinforcing Apprenticeship 416: Period 8": {
-      "unified_title": "Ironworker Apprenticeship — Reinforcing, Period 8",
+      "issuing_agency": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:42.419277+00:00",
-      "issuing_agency": ""
+      "unified_title": "Ironworker Apprenticeship — Reinforcing, Period 8"
     },
     "Residential Building Inspector": {
-      "unified_title": "Residential Building Inspector",
+      "issuing_agency": "International Code Council",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T18:57:56.287254+00:00",
-      "issuing_agency": "International Code Council"
+      "unified_title": "Residential Building Inspector"
     },
     "Residential Electrical Apprenticeship": {
-      "unified_title": "Residential Electrical Apprenticeship",
+      "issuing_agency": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:42.468113+00:00",
-      "issuing_agency": ""
+      "unified_title": "Residential Electrical Apprenticeship"
     },
     "Residential Plans Examiner": {
       "issuing_agency": "International Code Council",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T18:57:57.000325+00:00",
       "unified_title": "Residential Plans Examiner"
+    },
+    "Rope Rescue Operations": {
+      "issuing_agency": "Office of the State Fire Marshall",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:08:17.564273+00:00",
+      "unified_title": "Rope Rescue Operations"
     },
     "S-110, IS 700, IS 800, P-101, FI 110, ICS 300 Wildland Fire Certifications": {
       "unified_title": "NWCG Wildland Fire Certifications (S-110 / IS-700 / IS-800 / P-101 / FI-110 / ICS-300 bundle)",
@@ -3171,6 +3747,12 @@
       "unified_title": "NWCG Wildland Fire Certifications (S-130/S-230/S-231/S-270)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:35:49.462088+00:00"
+    },
+    "S-339 Division/Group Supervisor- ALL RISK (Wildland Fire Fighter)": {
+      "issuing_agency": "National Wildfire Coordinating Group (NWCG)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.53243+00:00",
+      "unified_title": "NWCG S-339 — Division/Group Supervisor (All-Risk)"
     },
     "SFT CFSTES Courses: Fire Inspector 1B and 1C (or former SFT Fire Marshal curriculum) OR Work Experience": {
       "unified_title": "SFT Fire Inspector 1B and 1C",
@@ -3183,10 +3765,10 @@
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
     "SMM 2, Culture and Zero Waste": {
-      "unified_title": "Culture and Zero Waste",
+      "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T18:58:08.499129+00:00",
-      "issuing_agency": "California Community Colleges"
+      "unified_title": "Culture and Zero Waste"
     },
     "SMM 4, Sustainable Materials Management and Zero Waste in Business": {
       "issuing_agency": "California Community Colleges",
@@ -3239,6 +3821,12 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:12:43.443936+00:00"
     },
+    "Server Systems": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.575443+00:00",
+      "unified_title": "Server Systems"
+    },
     "Server+ Certificate Preparation": {
       "issuing_agency": "CompTIA",
       "reviewed_by": "map@rccd.edu",
@@ -3246,15 +3834,27 @@
       "unified_title": "CompTIA Server+"
     },
     "Shingler Apprenticeship": {
-      "unified_title": "Carpenters Apprenticeship — Shingler",
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:42.718126+00:00",
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)"
+      "unified_title": "Carpenters Apprenticeship — Shingler"
     },
     "Social Equity and the Criminal Justice System": {
       "unified_title": "Social Equity and the Criminal Justice System",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
+    },
+    "Solidworks Advanced Solid Modeling": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.615902+00:00",
+      "unified_title": "Solidworks Advanced Solid Modeling"
+    },
+    "Solidworks Intermediate Solid Modeling": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.66912+00:00",
+      "unified_title": "Solidworks Intermediate Solid Modeling"
     },
     "Spanish I": {
       "unified_title": "Spanish I",
@@ -3285,16 +3885,16 @@
       "unified_title": "Ironworker Apprenticeship — Structural, Period 3"
     },
     "Structural Apprenticeship 433: Period 4": {
-      "unified_title": "Ironworker Apprenticeship — Structural, Period 4",
+      "issuing_agency": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:42.94043+00:00",
-      "issuing_agency": ""
+      "unified_title": "Ironworker Apprenticeship — Structural, Period 4"
     },
     "Structural Apprenticeship 433: Period 5": {
-      "unified_title": "Ironworker Apprenticeship — Structural, Period 5",
+      "issuing_agency": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:42.987648+00:00",
-      "issuing_agency": ""
+      "unified_title": "Ironworker Apprenticeship — Structural, Period 5"
     },
     "Structural Apprenticeship 433: Period 6": {
       "issuing_agency": "",
@@ -3303,16 +3903,16 @@
       "unified_title": "Ironworker Apprenticeship — Structural, Period 6"
     },
     "Structural Apprenticeship 433: Period 7": {
-      "unified_title": "Ironworker Apprenticeship — Structural, Period 7",
+      "issuing_agency": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:43.090416+00:00",
-      "issuing_agency": ""
+      "unified_title": "Ironworker Apprenticeship — Structural, Period 7"
     },
     "Structural Apprenticeship 433: Period 8": {
-      "unified_title": "Ironworker Apprenticeship — Structural, Period 8",
+      "issuing_agency": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:43.137339+00:00",
-      "issuing_agency": ""
+      "unified_title": "Ironworker Apprenticeship — Structural, Period 8"
     },
     "Structural Arch Orn I": {
       "unified_title": "Ironworker Structural, Architectural and Ornamental I",
@@ -3345,6 +3945,18 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "Video Editing": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.7174+00:00",
+      "unified_title": "Video Editing"
+    },
+    "Video I": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-08T00:04:30.764822+00:00",
+      "unified_title": "Video I"
+    },
     "Violence in America": {
       "unified_title": "Violence in America",
       "reviewed_by": "map@rccd.edu",
@@ -3361,10 +3973,10 @@
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
     "WST 045 & WST 145 Backflow Prevention Devices - American Water Work Association Backflow Prevention Certification": {
-      "unified_title": "Backflow Prevention Devices",
+      "issuing_agency": "American Water Works Association",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T19:00:08.573805+00:00",
-      "issuing_agency": "American Water Works Association"
+      "unified_title": "Backflow Prevention Devices"
     },
     "Water Supply Technology Portfolio Student 1": {
       "unified_title": "Generic Portfolio Review — San Bernardino Valley College (Water Supply Technology)",

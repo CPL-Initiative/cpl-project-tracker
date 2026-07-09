@@ -2,12 +2,200 @@
 window.CPL_STATEWIDE = {
   "exhibits": [
     {
-      "exhibit_id": "MAPCBES-CBES-1-001",
+      "exhibit_id": "MAPOA-HDTT-1-001",
       "exhibit_ids": [
+        "MAPOA-HDTT-1-001"
+      ],
+      "title": "Heavy/Medium Duty Truck Technology Apprenticeship",
+      "unified_title": "Heavy/Medium Duty Truck Technology Apprenticeship",
+      "is_classified": true,
+      "issuing_agency": "California Division of Apprenticeship Standards (DAS)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.6,
+      "quality_flag": "",
+      "raw_titles": [
+        "Heavy/Medium Duty Truck Technology Apprenticeship Program"
+      ],
+      "cpl_type": "Other",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "collaborative_type": "Apprenticeship",
+      "adopters": 1,
+      "adopter_names": [
+        "San Bernardino Valley College"
+      ],
+      "potential": 114,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cabrillo College",
+        "Calbright College Credit",
+        "Calbright College Non-Credit",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 115,
+      "credit_recs": [
+        {
+          "course": "AUTO 064",
+          "credit": "4 hours in Auto/Truck Electrical Systems"
+        },
+        {
+          "course": "CIT 101",
+          "credit": "3 hours in Introduction to Computer Literacy"
+        },
+        {
+          "course": "HMDT 021",
+          "credit": "4 hours in Heavy-Duty Truck Engines"
+        },
+        {
+          "course": "HMDT 022",
+          "credit": "4 hours in Heavy-Duty Truck Brakes"
+        },
+        {
+          "course": "HMDT 023",
+          "credit": "4 hours in Heavy-Duty Truck Suspension and Steering"
+        },
+        {
+          "course": "HMDT 024",
+          "credit": "4 hours in Advanced Heavy-Duty Truck Engines"
+        },
+        {
+          "course": "HMDT 026",
+          "credit": "4 hours in Computer Controlled Truck Engines"
+        },
+        {
+          "course": "HMDT 028",
+          "credit": "4 hours in Heavy-Duty Truck Systems"
+        },
+        {
+          "course": "WELD 010",
+          "credit": "2 hours in Introduction to Welding"
+        },
+        {
+          "course": "HMDT 098",
+          "credit": "4 hours in Heavy/Medium Duty Truck Work Experience"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCBES-CBEA-1-001|MAPCBES-CBEA2-1-001|MAPCBES-CBES-1-001",
+      "exhibit_ids": [
+        "MAPCBES-CBEA-1-001",
+        "MAPCBES-CBEA2-1-001",
         "MAPCBES-CBES-1-001"
       ],
-      "title": "Generic Credit by Exam â€” San Diego City College",
-      "unified_title": "Generic Credit by Exam â€” San Diego City College",
+      "title": "Credit by Exam",
+      "unified_title": "Credit by Exam",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -15,19 +203,26 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
-        "Credit By Exam San Diego City College"
+        "Credit By Exam San Diego City College",
+        "Credit By Exam at Mesa",
+        "Credit By Exam at Saddleback College"
       ],
       "cpl_type": "Credit By Exam",
       "discipline": "Family and Consumer Sciences",
-      "sector": "ICT/Digital Media",
+      "sector": "Academic Transfer & General Education",
       "collaborative_type": "Local",
-      "adopters": 3,
+      "adopters": 8,
       "adopter_names": [
+        "Glendale Community College",
+        "Lemoore College",
+        "Mendocino College",
+        "Norco College",
+        "Saddleback College",
         "San Diego City College",
         "San Diego Mesa College",
         "San Diego Miramar College"
       ],
-      "potential": 118,
+      "potential": 113,
       "potential_names": [
         "Allan Hancock College",
         "American River College",
@@ -77,7 +272,6 @@ window.CPL_STATEWIDE = {
         "Fresno City College",
         "Fullerton College",
         "Gavilan College",
-        "Glendale Community College",
         "Golden West College",
         "Grossmont College",
         "Hartnell College",
@@ -87,7 +281,6 @@ window.CPL_STATEWIDE = {
         "Laney College",
         "Las Positas College",
         "Lassen College",
-        "Lemoore College",
         "Long Beach City College",
         "Los Angeles City College",
         "Los Angeles Harbor College",
@@ -98,7 +291,6 @@ window.CPL_STATEWIDE = {
         "Los Angeles Valley College",
         "Los Medanos College",
         "Madera College",
-        "Mendocino College",
         "Merced College",
         "Merritt College",
         "MiraCosta College",
@@ -110,7 +302,6 @@ window.CPL_STATEWIDE = {
         "Mt. San Antonio College",
         "Mt. San Jacinto College",
         "Napa Valley College",
-        "Norco College",
         "North Orange Continuing Education",
         "North Orange Continuing Education Credit",
         "Ohlone College",
@@ -124,7 +315,6 @@ window.CPL_STATEWIDE = {
         "Rio Hondo College",
         "Riverside City College",
         "Sacramento City College",
-        "Saddleback College",
         "San Bernardino Valley College",
         "San Diego College of Continuing Education",
         "San Diego College of Continuing Education Credit",
@@ -151,6 +341,170 @@ window.CPL_STATEWIDE = {
       "total_addressable": 121,
       "credit_recs": [
         {
+          "course": "CBTE 140",
+          "credit": "1.5 hours in Beginning Microsoft Excel"
+        },
+        {
+          "course": "CHIL 291A",
+          "credit": "1 hour in Child Development Center Practicum"
+        },
+        {
+          "course": "CHIL 291B",
+          "credit": "1 hour in Child Development Center Practicum"
+        },
+        {
+          "course": "CHIL 291D",
+          "credit": "1 hour in Child Development Center Practicum"
+        },
+        {
+          "course": "EDUC 200",
+          "credit": "2 hours in Teaching as a Profession"
+        },
+        {
+          "course": "ARCH 107",
+          "credit": "3 hours in Revit"
+        },
+        {
+          "course": "CACM 102",
+          "credit": "2 hours in Sanitation"
+        },
+        {
+          "course": "CACM 103",
+          "credit": "1 hour in Organization of Food"
+        },
+        {
+          "course": "CACM 106",
+          "credit": "2.5 hours in Theory of Food Principles"
+        },
+        {
+          "course": "CACM 160",
+          "credit": "3 hours in Fundamental of Baking Theory"
+        },
+        {
+          "course": "CACM 206B",
+          "credit": "1 hour in Garde Manger II"
+        },
+        {
+          "course": "CACM 212",
+          "credit": "3 hours in Baking and Pastry"
+        },
+        {
+          "course": "CBTE 101",
+          "credit": "1 hour in Basic Computer Keyboarding"
+        },
+        {
+          "course": "CHIL 160",
+          "credit": "1 hour in Observation and Assessment of Children"
+        },
+        {
+          "course": "CHIL 161",
+          "credit": "1 hour in Observations and Issues in Child Development"
+        },
+        {
+          "course": "CHIL 176",
+          "credit": "3 hours in Principles of Infant-Toddler Caregiving"
+        },
+        {
+          "course": "CHIL 291C",
+          "credit": "1 hour in Child Development Center Practicum"
+        },
+        {
+          "course": "CISC 150",
+          "credit": "3 hours in Introduction to Computer and Information Sciences"
+        },
+        {
+          "course": "CISC 179",
+          "credit": "3 hours in Python Programming"
+        },
+        {
+          "course": "EDUC 200",
+          "credit": "2 hours in Introduction to Elementary Classroom Teaching"
+        },
+        {
+          "course": "EDUC 203",
+          "credit": "1 hour in Introduction to Elementary Classroom Teaching"
+        },
+        {
+          "course": "FASH 130",
+          "credit": "3 hours in Apparel Construction I"
+        },
+        {
+          "course": "FASH 130L",
+          "credit": "1 hour in Apparel Construction I Laboratory"
+        },
+        {
+          "course": "GISG 104",
+          "credit": "2.5 hours in Introduction to Geographic Information Systems and Techniques, with Lab"
+        },
+        {
+          "course": "GISG 110",
+          "credit": "2.5 hours in Introduction to Geographic Information Systems and Techniques, with Lab"
+        },
+        {
+          "course": "HOSP 101",
+          "credit": "3 hours in Introduction to Hospitality & Tourism"
+        },
+        {
+          "course": "MEDA 110",
+          "credit": "3 hours in Medical Terminology"
+        },
+        {
+          "course": "MEDA 55",
+          "credit": "3 hours in Fundamentals Human Anatomy and Physiology"
+        },
+        {
+          "course": "MULT 100",
+          "credit": "2 hours in Introduction to Visual Communication"
+        },
+        {
+          "course": "MULT 120",
+          "credit": "3 hours in Introduction to Video Game Design"
+        },
+        {
+          "course": "MULT 123",
+          "credit": "3 hours in Digital Video I"
+        },
+        {
+          "course": "MUSI 124A",
+          "credit": "1 hour in Piano Class I"
+        },
+        {
+          "course": "MUSI 150A",
+          "credit": "3 hours in Basic Musicianship"
+        },
+        {
+          "course": "MUSI 269A",
+          "credit": "1 hour in Ear Training III"
+        },
+        {
+          "course": "NUTR 160",
+          "credit": "3 hours in Foods for Healthy Lifestyles"
+        },
+        {
+          "course": "WEBD 127",
+          "credit": "2.5 hours in Creating User-Centered Content"
+        },
+        {
+          "course": "WEBD 152",
+          "credit": "2.5 hours in Beginning Web Development: HyperText Markup Language (HTML) and Cascading Style Sheets (CSS)"
+        },
+        {
+          "course": "WEBD 164",
+          "credit": "2.5 hours in Javascript Fundamentals for Web Development"
+        },
+        {
+          "course": "WEBD 169",
+          "credit": "2.5 hours in Website Development Using Open Source Content Management Systems"
+        },
+        {
+          "course": "HLH 104",
+          "credit": "3 hours in Medical Terminology"
+        },
+        {
+          "course": "MOA 182",
+          "credit": "3 hours in Medical Terminology"
+        },
+        {
           "course": "AIRE 100",
           "credit": "4 hours in Basic Refrigeration & AC Theory"
         },
@@ -163,10 +517,6 @@ window.CPL_STATEWIDE = {
           "credit": "1.5 hours in Digital Media"
         },
         {
-          "course": "CBTE 140",
-          "credit": "1.5 hours in Beginning Microsoft Excel"
-        },
-        {
           "course": "CHIL 160",
           "credit": "2 hours in Observation and Assessment of Children"
         },
@@ -175,24 +525,8 @@ window.CPL_STATEWIDE = {
           "credit": "2 hours in Observations and Issues in Child Development"
         },
         {
-          "course": "CHIL 176",
-          "credit": "3 hours in Principles of Infant-Toddler Caregiving"
-        },
-        {
-          "course": "CHIL 291A",
-          "credit": "1 hour in Child Development Center Practicum"
-        },
-        {
-          "course": "CHIL 291C",
-          "credit": "1 hour in Child Development Center Practicum"
-        },
-        {
           "course": "DRAM 123",
           "credit": "2 hours in Beginning Stagecraft"
-        },
-        {
-          "course": "EDUC 200",
-          "credit": "2 hours in Teaching as a Profession"
         },
         {
           "course": "ELDT 124",
@@ -262,164 +596,6 @@ window.CPL_STATEWIDE = {
           "course": "RTVF 153",
           "credit": "2 hours in Introduction to Nonlinear Editing"
         },
-        {
-          "course": "CHIL 160",
-          "credit": "1 hour in Observation and Assessment of Children"
-        },
-        {
-          "course": "EDUC 200",
-          "credit": "2 hours in Introduction to Elementary Classroom Teaching"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPCBES-CBEA2-1-001",
-      "exhibit_ids": [
-        "MAPCBES-CBEA2-1-001"
-      ],
-      "title": "Credit by Exam",
-      "unified_title": "Credit by Exam",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.55,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Credit By Exam at Saddleback College"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Family and Consumer Sciences",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 3,
-      "adopter_names": [
-        "Lemoore College",
-        "Norco College",
-        "Saddleback College"
-      ],
-      "potential": 116,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 119,
-      "credit_recs": [
         {
           "course": "ARAB 2",
           "credit": "5 hours in ELEMENTARY ARABIC"
@@ -831,507 +1007,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "RCCD GE-A RCCD GE Area 3",
           "credit": "5 hours in ELEMENTARY SPANISH"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPCBES-CBEA-1-001",
-      "exhibit_ids": [
-        "MAPCBES-CBEA-1-001"
-      ],
-      "title": "Generic Credit by Exam â€” San Diego Mesa College",
-      "unified_title": "Generic Credit by Exam â€” San Diego Mesa College",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.5,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Credit By Exam at Mesa"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Family and Consumer Sciences",
-      "sector": "ICT/Digital Media",
-      "collaborative_type": "Local",
-      "adopters": 5,
-      "adopter_names": [
-        "Glendale Community College",
-        "Mendocino College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College"
-      ],
-      "potential": 115,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Calbright College Non-Credit",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 120,
-      "credit_recs": [
-        {
-          "course": "CBTE 140",
-          "credit": "1.5 hours in Beginning Microsoft Excel"
-        },
-        {
-          "course": "CHIL 291A",
-          "credit": "1 hour in Child Development Center Practicum"
-        },
-        {
-          "course": "CHIL 291B",
-          "credit": "1 hour in Child Development Center Practicum"
-        },
-        {
-          "course": "CHIL 291D",
-          "credit": "1 hour in Child Development Center Practicum"
-        },
-        {
-          "course": "EDUC 200",
-          "credit": "2 hours in Teaching as a Profession"
-        },
-        {
-          "course": "ARCH 107",
-          "credit": "3 hours in Revit"
-        },
-        {
-          "course": "CACM 102",
-          "credit": "2 hours in Sanitation"
-        },
-        {
-          "course": "CACM 103",
-          "credit": "1 hour in Organization of Food"
-        },
-        {
-          "course": "CACM 106",
-          "credit": "2.5 hours in Theory of Food Principles"
-        },
-        {
-          "course": "CACM 160",
-          "credit": "3 hours in Fundamental of Baking Theory"
-        },
-        {
-          "course": "CACM 206B",
-          "credit": "1 hour in Garde Manger II"
-        },
-        {
-          "course": "CACM 212",
-          "credit": "3 hours in Baking and Pastry"
-        },
-        {
-          "course": "CBTE 101",
-          "credit": "1 hour in Basic Computer Keyboarding"
-        },
-        {
-          "course": "CHIL 160",
-          "credit": "1 hour in Observation and Assessment of Children"
-        },
-        {
-          "course": "CHIL 161",
-          "credit": "1 hour in Observations and Issues in Child Development"
-        },
-        {
-          "course": "CHIL 176",
-          "credit": "3 hours in Principles of Infant-Toddler Caregiving"
-        },
-        {
-          "course": "CHIL 291C",
-          "credit": "1 hour in Child Development Center Practicum"
-        },
-        {
-          "course": "CISC 150",
-          "credit": "3 hours in Introduction to Computer and Information Sciences"
-        },
-        {
-          "course": "CISC 179",
-          "credit": "3 hours in Python Programming"
-        },
-        {
-          "course": "EDUC 200",
-          "credit": "2 hours in Introduction to Elementary Classroom Teaching"
-        },
-        {
-          "course": "EDUC 203",
-          "credit": "1 hour in Introduction to Elementary Classroom Teaching"
-        },
-        {
-          "course": "FASH 130",
-          "credit": "3 hours in Apparel Construction I"
-        },
-        {
-          "course": "FASH 130L",
-          "credit": "1 hour in Apparel Construction I Laboratory"
-        },
-        {
-          "course": "GISG 104",
-          "credit": "2.5 hours in Introduction to Geographic Information Systems and Techniques, with Lab"
-        },
-        {
-          "course": "GISG 110",
-          "credit": "2.5 hours in Introduction to Geographic Information Systems and Techniques, with Lab"
-        },
-        {
-          "course": "HOSP 101",
-          "credit": "3 hours in Introduction to Hospitality & Tourism"
-        },
-        {
-          "course": "MEDA 110",
-          "credit": "3 hours in Medical Terminology"
-        },
-        {
-          "course": "MEDA 55",
-          "credit": "3 hours in Fundamentals Human Anatomy and Physiology"
-        },
-        {
-          "course": "MULT 100",
-          "credit": "2 hours in Introduction to Visual Communication"
-        },
-        {
-          "course": "MULT 120",
-          "credit": "3 hours in Introduction to Video Game Design"
-        },
-        {
-          "course": "MULT 123",
-          "credit": "3 hours in Digital Video I"
-        },
-        {
-          "course": "MUSI 124A",
-          "credit": "1 hour in Piano Class I"
-        },
-        {
-          "course": "MUSI 150A",
-          "credit": "3 hours in Basic Musicianship"
-        },
-        {
-          "course": "MUSI 269A",
-          "credit": "1 hour in Ear Training III"
-        },
-        {
-          "course": "NUTR 160",
-          "credit": "3 hours in Foods for Healthy Lifestyles"
-        },
-        {
-          "course": "WEBD 127",
-          "credit": "2.5 hours in Creating User-Centered Content"
-        },
-        {
-          "course": "WEBD 152",
-          "credit": "2.5 hours in Beginning Web Development: HyperText Markup Language (HTML) and Cascading Style Sheets (CSS)"
-        },
-        {
-          "course": "WEBD 164",
-          "credit": "2.5 hours in Javascript Fundamentals for Web Development"
-        },
-        {
-          "course": "WEBD 169",
-          "credit": "2.5 hours in Website Development Using Open Source Content Management Systems"
-        },
-        {
-          "course": "HLH 104",
-          "credit": "3 hours in Medical Terminology"
-        },
-        {
-          "course": "MOA 182",
-          "credit": "3 hours in Medical Terminology"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPOA-HDTT-1-001",
-      "exhibit_ids": [
-        "MAPOA-HDTT-1-001"
-      ],
-      "title": "Heavy/Medium Duty Truck Technology Apprenticeship",
-      "unified_title": "Heavy/Medium Duty Truck Technology Apprenticeship",
-      "is_classified": true,
-      "issuing_agency": "California Division of Apprenticeship Standards (DAS)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.6,
-      "quality_flag": "",
-      "raw_titles": [
-        "Heavy/Medium Duty Truck Technology Apprenticeship Program"
-      ],
-      "cpl_type": "Other",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "Apprenticeship",
-      "adopters": 1,
-      "adopter_names": [
-        "San Bernardino Valley College"
-      ],
-      "potential": 114,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cabrillo College",
-        "Calbright College Credit",
-        "Calbright College Non-Credit",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 115,
-      "credit_recs": [
-        {
-          "course": "AUTO 064",
-          "credit": "4 hours in Auto/Truck Electrical Systems"
-        },
-        {
-          "course": "CIT 101",
-          "credit": "3 hours in Introduction to Computer Literacy"
-        },
-        {
-          "course": "HMDT 021",
-          "credit": "4 hours in Heavy-Duty Truck Engines"
-        },
-        {
-          "course": "HMDT 022",
-          "credit": "4 hours in Heavy-Duty Truck Brakes"
-        },
-        {
-          "course": "HMDT 023",
-          "credit": "4 hours in Heavy-Duty Truck Suspension and Steering"
-        },
-        {
-          "course": "HMDT 024",
-          "credit": "4 hours in Advanced Heavy-Duty Truck Engines"
-        },
-        {
-          "course": "HMDT 026",
-          "credit": "4 hours in Computer Controlled Truck Engines"
-        },
-        {
-          "course": "HMDT 028",
-          "credit": "4 hours in Heavy-Duty Truck Systems"
-        },
-        {
-          "course": "WELD 010",
-          "credit": "2 hours in Introduction to Welding"
-        },
-        {
-          "course": "HMDT 098",
-          "credit": "4 hours in Heavy/Medium Duty Truck Work Experience"
         }
       ],
       "authoritative_recs": []
@@ -7647,10 +7322,10 @@ window.CPL_STATEWIDE = {
       "title": "Principles of Infant/Toddler Caregiving",
       "unified_title": "Principles of Infant/Toddler Caregiving",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Principles of Infant Toddler Caregiver"
@@ -9415,10 +9090,10 @@ window.CPL_STATEWIDE = {
       "title": "Human Anatomy",
       "unified_title": "Human Anatomy",
       "is_classified": true,
-      "issuing_agency": "American Council on Education (ACE)",
-      "training_agency": "U.S. Armed Forces",
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.75,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Human Anatomy"
@@ -9991,10 +9666,10 @@ window.CPL_STATEWIDE = {
       "title": "Public Speaking (COMM C1000)",
       "unified_title": "Public Speaking (COMM C1000)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "COMM C1000 Portfolio Review"
@@ -10475,6 +10150,156 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCXS-CBEK-1-001|MAPCXS-K-1-001",
+      "exhibit_ids": [
+        "MAPCXS-CBEK-1-001",
+        "MAPCXS-K-1-001"
+      ],
+      "title": "Music Keyboards 1",
+      "unified_title": "Music Keyboards 1",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.85,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Credit by Exam- Keyboards I",
+        "Keyboarding"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "collaborative_type": "Local",
+      "adopters": 2,
+      "adopter_names": [
+        "Monterey Peninsula College",
+        "Ventura College"
+      ],
+      "potential": 107,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 109,
+      "credit_recs": [
+        {
+          "course": "BUSC 109",
+          "credit": "1 hour in Keyboarding for Computers"
+        },
+        {
+          "course": "MUS V24A",
+          "credit": "2 hours in Keyboards I"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPCXS-M1FB-1-001",
       "exhibit_ids": [
         "MAPCXS-M1FB-1-001"
@@ -10908,8 +10733,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-P1T--1-001"
       ],
-      "title": "Political Theory",
-      "unified_title": "Political Theory",
+      "title": "Introduction to Political Theory and Thought",
+      "unified_title": "Introduction to Political Theory and Thought",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -11194,13 +11019,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-H1CS-1-001"
       ],
-      "title": "Western Civilization Since 1648",
-      "unified_title": "Western Civilization Since 1648",
+      "title": "Western Civilization 2",
+      "unified_title": "Western Civilization 2",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "HIST 105\tWestern Civilization Since 1648 - Credit by Exam"
@@ -13796,8 +13621,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCBES-M0C-1-001"
       ],
-      "title": "Mathematics (MATH 095)",
-      "unified_title": "Mathematics (MATH 095)",
+      "title": "Intermediate Algebra",
+      "unified_title": "Intermediate Algebra",
       "is_classified": true,
       "issuing_agency": "",
       "training_agency": "",
@@ -16055,10 +15880,10 @@ window.CPL_STATEWIDE = {
       "title": "Small Business Accounting",
       "unified_title": "Small Business Accounting",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Small Business Accounting- Credit by Exam"
@@ -18877,10 +18702,10 @@ window.CPL_STATEWIDE = {
       "title": "Tax Accounting — Individuals",
       "unified_title": "Tax Accounting — Individuals",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Tax Accounting 1 - Individuals ACCT 004 Cx",
@@ -19024,10 +18849,10 @@ window.CPL_STATEWIDE = {
       "title": "Tax Accounting — Business Entities",
       "unified_title": "Tax Accounting — Business Entities",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Tax Accounting II - Business Entities ACCT 005 Cx",
@@ -24730,142 +24555,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPCXS-A2-J-1-001",
-      "exhibit_ids": [
-        "MAPCXS-A2-J-1-001"
-      ],
-      "title": "Juvenile Justice Procedures",
-      "unified_title": "Juvenile Justice Procedures",
-      "is_classified": true,
-      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
-      "training_agency": "",
-      "confidence_title": 0.78,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "ADJU 232 - Juvenile Justice Procedures - Credit by Exam"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Modesto Junior College"
-      ],
-      "potential": 100,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 101,
-      "credit_recs": [
-        {
-          "course": "ADJU 232",
-          "credit": "3 hours in Juvenile Justice Procedures"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPCXH-C2-1-001|MAPCXH-CHSA1-1-001|MAPCXH-FH-L-1-001|MAPCXH-FUSD1-1-001|MAPCXS-ITTC-1-001",
       "exhibit_ids": [
         "MAPCXH-C2-1-001",
@@ -26374,146 +26063,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPCxS-JLAP-1-001",
-      "exhibit_ids": [
-        "MAPCxS-JLAP-1-001"
-      ],
-      "title": "Juvenile Law and Procedures",
-      "unified_title": "Juvenile Law and Procedures",
-      "is_classified": true,
-      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
-      "training_agency": "",
-      "confidence_title": 0.9,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Juvenile Law and Procedures ADJ 8 Cx"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 2,
-      "adopter_names": [
-        "Copper Mountain College",
-        "Norco College"
-      ],
-      "potential": 99,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Compton College",
-        "Contra Costa College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Ohlone College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 101,
-      "credit_recs": [
-        {
-          "course": "ADJ 8",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "CJ 010",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPCBEN-SFLE-1-001",
       "exhibit_ids": [
         "MAPCBEN-SFLE-1-001"
@@ -26521,10 +26070,10 @@ window.CPL_STATEWIDE = {
       "title": "Self-Defense for Law Enforcement",
       "unified_title": "Self-Defense for Law Enforcement",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Self-Defense for Law Enforcement"
@@ -26928,10 +26477,10 @@ window.CPL_STATEWIDE = {
       "title": "Principles & Procedures of the Justice System (Administration of Justice 4)",
       "unified_title": "Principles & Procedures of the Justice System (Administration of Justice 4)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Admin Just 4 CBE"
@@ -27870,13 +27419,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-A2A--1-001"
       ],
-      "title": "Substance Abuse in Criminal Justice",
-      "unified_title": "Substance Abuse in Criminal Justice",
+      "title": "Substance Abuse",
+      "unified_title": "Substance Abuse",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ADJU 217\tSubstance Abuse - Credit by Exam"
@@ -28140,8 +27689,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-S12--1-001"
       ],
-      "title": "Spanish 2",
-      "unified_title": "Spanish 2",
+      "title": "Elementary Spanish 2",
+      "unified_title": "Elementary Spanish 2",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -28278,10 +27827,10 @@ window.CPL_STATEWIDE = {
       "title": "Profiling Terrorism",
       "unified_title": "Profiling Terrorism",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ADJU 222\tProfiling Terrorism"
@@ -28413,10 +27962,10 @@ window.CPL_STATEWIDE = {
       "title": "Profiling Terrorism",
       "unified_title": "Profiling Terrorism",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "ADJU 222\tProfiling Terrorism - Industry Certificate"
@@ -28815,13 +28364,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-A2A--1-001"
       ],
-      "title": "Substance Abuse in Criminal Justice",
-      "unified_title": "Substance Abuse in Criminal Justice",
+      "title": "Substance Abuse",
+      "unified_title": "Substance Abuse",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "ADJU 217\tSubstance Abuse - Industry Certificate"
@@ -29898,10 +29447,10 @@ window.CPL_STATEWIDE = {
       "title": "Principles and Procedures of the Criminal Justice System",
       "unified_title": "Principles and Procedures of the Criminal Justice System",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Principles and Procedures of the Criminal Justice Sys ADJ 2 Cx"
@@ -30438,10 +29987,10 @@ window.CPL_STATEWIDE = {
       "title": "Spanish II",
       "unified_title": "Spanish II",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Spanish II"
@@ -32141,8 +31690,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRS-A12-1-001"
       ],
-      "title": "Administration of Justice 105",
-      "unified_title": "Administration of Justice 105",
+      "title": "Administration of Justice",
+      "unified_title": "Administration of Justice",
       "is_classified": true,
       "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
@@ -32570,6 +32119,152 @@ window.CPL_STATEWIDE = {
         {
           "course": "CJ 2",
           "credit": "3 hours in Concepts of Criminal Law"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-A2-J-1-001|MAPCxS-JLAP-1-001",
+      "exhibit_ids": [
+        "MAPCXS-A2-J-1-001",
+        "MAPCxS-JLAP-1-001"
+      ],
+      "title": "Juvenile Law and Procedures",
+      "unified_title": "Juvenile Law and Procedures",
+      "is_classified": true,
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+      "training_agency": "",
+      "confidence_title": 0.9,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "ADJU 232 - Juvenile Justice Procedures - Credit by Exam",
+        "Juvenile Law and Procedures ADJ 8 Cx"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 3,
+      "adopter_names": [
+        "Copper Mountain College",
+        "Modesto Junior College",
+        "Norco College"
+      ],
+      "potential": 98,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Compton College",
+        "Contra Costa College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 101,
+      "credit_recs": [
+        {
+          "course": "ADJU 232",
+          "credit": "3 hours in Juvenile Justice Procedures"
+        },
+        {
+          "course": "ADJ 8",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "CJ 010",
+          "credit": "3 hours in Juvenile Law and Procedures"
         }
       ],
       "authoritative_recs": []
@@ -35166,10 +34861,10 @@ window.CPL_STATEWIDE = {
       "title": "Spanish",
       "unified_title": "Spanish",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Spanish Credit by Exam"
@@ -35296,8 +34991,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-S11--1-001"
       ],
-      "title": "Spanish 1",
-      "unified_title": "Spanish 1",
+      "title": "Elementary Spanish I",
+      "unified_title": "Elementary Spanish I",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -35429,8 +35124,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPSAP-S1-S-1-001"
       ],
-      "title": "Spanish 1",
-      "unified_title": "Spanish 1",
+      "title": "Elementary Spanish I",
+      "unified_title": "Elementary Spanish I",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -35558,12 +35253,13 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPCXS-CBEE-1-001",
+      "exhibit_id": "MAPCXS-CBEE-1-001|MAPCXS-CBEE1-1-001",
       "exhibit_ids": [
-        "MAPCXS-CBEE-1-001"
+        "MAPCXS-CBEE-1-001",
+        "MAPCXS-CBEE1-1-001"
       ],
-      "title": "ESL — Intermediate Grammar for Reading and Writing",
-      "unified_title": "ESL — Intermediate Grammar for Reading and Writing",
+      "title": "ESL Grammar for Reading and Writing Intermediate",
+      "unified_title": "ESL Grammar for Reading and Writing Intermediate",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -35571,7 +35267,8 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
-        "Credit by Exam ESL 120A Intermediate Grammar for Reading and Writing"
+        "Credit by Exam ESL 120A Intermediate Grammar for Reading and Writing",
+        "Credit by Exam ESL 120B High-Intermediate Grammar for Reading and Writing"
       ],
       "cpl_type": "Credit By Exam",
       "discipline": "Humanities (Letters)",
@@ -35686,136 +35383,7 @@ window.CPL_STATEWIDE = {
         {
           "course": "ESL 120A",
           "credit": "3 hours in Intermediate Grammar for Reading and Writing"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPCXS-CBEE1-1-001",
-      "exhibit_ids": [
-        "MAPCXS-CBEE1-1-001"
-      ],
-      "title": "ESL Grammar for Reading and Writing Intermediate",
-      "unified_title": "ESL Grammar for Reading and Writing Intermediate",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.8,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Credit by Exam ESL 120B High-Intermediate Grammar for Reading and Writing"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Humanities (Letters)",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 97,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Laney College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 98,
-      "credit_recs": [
+        },
         {
           "course": "ESL 120B",
           "credit": "3 hours in High-Intermediate Grammar for Reading and Writing"
@@ -35824,12 +35392,13 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPCXS-CBEE2-1-001",
+      "exhibit_id": "MAPCXS-CBEE2-1-001|MAPCXS-CBEE3-1-001",
       "exhibit_ids": [
-        "MAPCXS-CBEE2-1-001"
+        "MAPCXS-CBEE2-1-001",
+        "MAPCXS-CBEE3-1-001"
       ],
-      "title": "ESL — Intermediate Reading and Writing",
-      "unified_title": "ESL — Intermediate Reading and Writing",
+      "title": "ESL Reading and Writing Intermediate",
+      "unified_title": "ESL Reading and Writing Intermediate",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -35837,7 +35406,8 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
-        "Credit by Exam ESL 121A Intermediate Reading and Writing"
+        "Credit by Exam ESL 121A Intermediate Reading and Writing",
+        "Credit by Exam ESL 121B High-Intermediate Reading and Writing"
       ],
       "cpl_type": "Credit By Exam",
       "discipline": "Humanities (Letters)",
@@ -35952,136 +35522,7 @@ window.CPL_STATEWIDE = {
         {
           "course": "ESL 121A",
           "credit": "6 hours in Intermediate Reading and Writing"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPCXS-CBEE3-1-001",
-      "exhibit_ids": [
-        "MAPCXS-CBEE3-1-001"
-      ],
-      "title": "ESL Reading and Writing Intermediate",
-      "unified_title": "ESL Reading and Writing Intermediate",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.8,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Credit by Exam ESL 121B High-Intermediate Reading and Writing"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Humanities (Letters)",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 97,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Laney College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 98,
-      "credit_recs": [
+        },
         {
           "course": "ESL 121B",
           "credit": "6 hours in High-Intermediate Reading and Writing"
@@ -36090,9 +35531,10 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPCXS-CBEE4-1-001",
+      "exhibit_id": "MAPCXS-CBEE4-1-001|MAPCXS-CBEE5-1-001",
       "exhibit_ids": [
-        "MAPCXS-CBEE4-1-001"
+        "MAPCXS-CBEE4-1-001",
+        "MAPCXS-CBEE5-1-001"
       ],
       "title": "ESL Grammar for Reading and Writing Beginning",
       "unified_title": "ESL Grammar for Reading and Writing Beginning",
@@ -36103,7 +35545,8 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
-        "Credit by Exam ESL 130A Beginning Grammar for Reading and Writing"
+        "Credit by Exam ESL 130A Beginning Grammar for Reading and Writing",
+        "Credit by Exam ESL 130B High-Beginning Grammar for Reading and Writing"
       ],
       "cpl_type": "Credit By Exam",
       "discipline": "Humanities (Letters)",
@@ -36218,136 +35661,7 @@ window.CPL_STATEWIDE = {
         {
           "course": "ESL 130A",
           "credit": "3 hours in Beginning Grammar for Reading and Writing"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPCXS-CBEE5-1-001",
-      "exhibit_ids": [
-        "MAPCXS-CBEE5-1-001"
-      ],
-      "title": "ESL — High-Beginning Grammar for Reading and Writing",
-      "unified_title": "ESL — High-Beginning Grammar for Reading and Writing",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.8,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Credit by Exam ESL 130B High-Beginning Grammar for Reading and Writing"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Humanities (Letters)",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 97,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Laney College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 98,
-      "credit_recs": [
+        },
         {
           "course": "ESL 130B",
           "credit": "3 hours in High-Beginning Grammar for Reading and Writing"
@@ -36356,9 +35670,10 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPCXS-CBEE6-1-001",
+      "exhibit_id": "MAPCXS-CBEE6-1-001|MAPCXS-CBEE7-1-001",
       "exhibit_ids": [
-        "MAPCXS-CBEE6-1-001"
+        "MAPCXS-CBEE6-1-001",
+        "MAPCXS-CBEE7-1-001"
       ],
       "title": "ESL Reading and Writing Beginning",
       "unified_title": "ESL Reading and Writing Beginning",
@@ -36369,7 +35684,8 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
-        "Credit by Exam ESL 131A Beginning Reading and Writing"
+        "Credit by Exam ESL 131A Beginning Reading and Writing",
+        "Credit by Exam ESL 131B High-Beginning Reading and Writing"
       ],
       "cpl_type": "Credit By Exam",
       "discipline": "Humanities (Letters)",
@@ -36484,136 +35800,7 @@ window.CPL_STATEWIDE = {
         {
           "course": "ESL 131A",
           "credit": "6 hours in Beginning Reading and Writing"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPCXS-CBEE7-1-001",
-      "exhibit_ids": [
-        "MAPCXS-CBEE7-1-001"
-      ],
-      "title": "ESL — High-Beginning Reading and Writing",
-      "unified_title": "ESL — High-Beginning Reading and Writing",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.8,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Credit by Exam ESL 131B High-Beginning Reading and Writing"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Humanities (Letters)",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 97,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Laney College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 98,
-      "credit_recs": [
+        },
         {
           "course": "ESL 131B",
           "credit": "6 hours in High-Beginning Reading and Writing"
@@ -36629,10 +35816,10 @@ window.CPL_STATEWIDE = {
       "title": "Spanish I",
       "unified_title": "Spanish I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Spanish I"
@@ -37303,8 +36490,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRS-AAR&-1-001"
       ],
-      "title": "Academic Reading & Writing I (ESL) Advanced",
-      "unified_title": "Academic Reading & Writing I (ESL) Advanced",
+      "title": "ESL Academic Reading & Writing Advanced",
+      "unified_title": "ESL Academic Reading & Writing Advanced",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -37439,10 +36626,10 @@ window.CPL_STATEWIDE = {
       "title": "Survey of Art from Prehistory to the Medieval Era",
       "unified_title": "Survey of Art from Prehistory to the Medieval Era",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam- Survey of Art from Prehistory to the Medieval Era"
@@ -37707,10 +36894,10 @@ window.CPL_STATEWIDE = {
       "title": "Survey of Art: Renaissance to Contemporary",
       "unified_title": "Survey of Art: Renaissance to Contemporary",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Survey of Art from the Renaissance to Contemporary (CCN: ARTH C1200)"
@@ -42937,160 +42124,17 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPCXS-CBES2-1-001|MAPCxS-ISIS-1-001",
-      "exhibit_ids": [
-        "MAPCXS-CBES2-1-001",
-        "MAPCxS-ISIS-1-001"
-      ],
-      "title": "Intermediate Spanish I",
-      "unified_title": "Intermediate Spanish I",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.8,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Credit by Exam: Spanish 3 (SPA-3)",
-        "Intermediate Spanish I SPAN 003 Cx"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Foreign Languages",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 5,
-      "adopter_names": [
-        "College of the Redwoods",
-        "Copper Mountain College",
-        "Moreno Valley College",
-        "Norco College",
-        "Riverside City College"
-      ],
-      "potential": 93,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Compton College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College"
-      ],
-      "total_addressable": 98,
-      "credit_recs": [
-        {
-          "course": "SPA 3",
-          "credit": "5 hours in Spanish 3"
-        },
-        {
-          "course": "SPAN 003",
-          "credit": "4 hours in Intermediate Spanish I"
-        },
-        {
-          "course": "SPAN 2A",
-          "credit": "4 hours in Intermediate Spanish I"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPCBES-1S1C-1-001",
       "exhibit_ids": [
         "MAPCBES-1S1C-1-001"
       ],
-      "title": "Spanish 157 (Local Course)",
-      "unified_title": "Spanish 157 (Local Course)",
+      "title": "Spanish for Heritage Speakers 1",
+      "unified_title": "Spanish for Heritage Speakers 1",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "SPAN 157 CBE"
@@ -43213,13 +42257,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCBES-S1C2-1-001"
       ],
-      "title": "Spanish 158 (Local Course)",
-      "unified_title": "Spanish 158 (Local Course)",
+      "title": "Spanish for Heritage Speakers 2",
+      "unified_title": "Spanish for Heritage Speakers 2",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "SPAN 158 CBE"
@@ -43346,10 +42390,10 @@ window.CPL_STATEWIDE = {
       "title": "Spanish 3",
       "unified_title": "Spanish 3",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "SPAN 103 - CBE",
@@ -43476,10 +42520,10 @@ window.CPL_STATEWIDE = {
       "title": "Spanish for Spanish Speakers 1",
       "unified_title": "Spanish for Spanish Speakers 1",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "SPAN 109\tSpanish for Spanish Speakers 1 - Industry Certification"
@@ -44603,6 +43647,155 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCXS-CBES2-1-001|MAPCXS-IS-1-001|MAPCxS-ISIS-1-001",
+      "exhibit_ids": [
+        "MAPCXS-CBES2-1-001",
+        "MAPCXS-IS-1-001",
+        "MAPCxS-ISIS-1-001"
+      ],
+      "title": "Spanish Intermediate",
+      "unified_title": "Spanish Intermediate",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.8,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Credit by Exam: Spanish 3 (SPA-3)",
+        "Intermediate Spanish",
+        "Intermediate Spanish I SPAN 003 Cx"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 6,
+      "adopter_names": [
+        "College of the Redwoods",
+        "Copper Mountain College",
+        "Moreno Valley College",
+        "Norco College",
+        "Riverside City College",
+        "San Jose City College"
+      ],
+      "potential": 92,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Compton College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 98,
+      "credit_recs": [
+        {
+          "course": "SPA 3",
+          "credit": "5 hours in Spanish 3"
+        },
+        {
+          "course": "Spanish (SPAN) 002A",
+          "credit": "5 hours in Intermediate Spanish 1"
+        },
+        {
+          "course": "SPAN 003",
+          "credit": "4 hours in Intermediate Spanish I"
+        },
+        {
+          "course": "SPAN 2A",
+          "credit": "4 hours in Intermediate Spanish I"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPCXS-M1S1-1-001",
       "exhibit_ids": [
         "MAPCXS-M1S1-1-001"
@@ -44866,10 +44059,10 @@ window.CPL_STATEWIDE = {
       "title": "Spanish 3",
       "unified_title": "Spanish 3",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "SPAN 103\tSpanish 3 - Industry  Certification"
@@ -44994,10 +44187,10 @@ window.CPL_STATEWIDE = {
       "title": "Spanish for Spanish Speakers 2",
       "unified_title": "Spanish for Spanish Speakers 2",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "SPAN 110\tSpanish for Spanish Speakers 2 - Industry Certification"
@@ -45122,10 +44315,10 @@ window.CPL_STATEWIDE = {
       "title": "Spanish for Spanish Speakers 2",
       "unified_title": "Spanish for Spanish Speakers 2",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "SPAN 110\tSpanish for Spanish Speakers 2 - Credit by Exam"
@@ -45627,134 +44820,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPCXS-CBEK-1-001",
-      "exhibit_ids": [
-        "MAPCXS-CBEK-1-001"
-      ],
-      "title": "Music Keyboards 1",
-      "unified_title": "Music Keyboards 1",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.85,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Credit by Exam- Keyboards I"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Fine and Applied Arts",
-      "sector": "ICT/Digital Media",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Ventura College"
-      ],
-      "potential": 92,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "West Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 93,
-      "credit_recs": [
-        {
-          "course": "MUS V24A",
-          "credit": "2 hours in Keyboards I"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPMM-ACAM-1-001",
       "exhibit_ids": [
         "MAPMM-ACAM-1-001"
@@ -45878,134 +44943,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "COMS 101",
           "credit": "3 hours in Computer Information Systems"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPCXS-IS-1-001",
-      "exhibit_ids": [
-        "MAPCXS-IS-1-001"
-      ],
-      "title": "Spanish Intermediate",
-      "unified_title": "Spanish Intermediate",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.7,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Intermediate Spanish"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Foreign Languages",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "San Jose City College"
-      ],
-      "potential": 92,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Sequoias",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College"
-      ],
-      "total_addressable": 93,
-      "credit_recs": [
-        {
-          "course": "Spanish (SPAN) 002A",
-          "credit": "5 hours in Intermediate Spanish 1"
         }
       ],
       "authoritative_recs": []
@@ -46146,10 +45083,10 @@ window.CPL_STATEWIDE = {
       "title": "Programming Concepts and Methodology 1 (C++)",
       "unified_title": "Programming Concepts and Methodology 1 (C++)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Programming Concepts and Methodology I (C++)"
@@ -47989,133 +46926,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPCXS-K-1-001",
-      "exhibit_ids": [
-        "MAPCXS-K-1-001"
-      ],
-      "title": "Keyboarding",
-      "unified_title": "Keyboarding",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.85,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Keyboarding"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Business and Management",
-      "sector": "Business & Entrepreneurship",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Monterey Peninsula College"
-      ],
-      "potential": 91,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Coastline Community College",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Sequoias",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 92,
-      "credit_recs": [
-        {
-          "course": "BUSC 109",
-          "credit": "1 hour in Keyboarding for Computers"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPICI-O2(T3-1-001",
       "exhibit_ids": [
         "MAPICI-O2(T3-1-001"
@@ -48504,10 +47314,10 @@ window.CPL_STATEWIDE = {
       "title": "Workplace Preparation and Internship",
       "unified_title": "Workplace Preparation and Internship",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "OFADM 315 ( Change to BIT 315) \tToday's Office (Change to Workplace Preparation & Internship)  - Portfolio"
@@ -50028,10 +48838,10 @@ window.CPL_STATEWIDE = {
       "title": "Skills Certificate (Generic)",
       "unified_title": "Skills Certificate (Generic)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.35,
-      "confidence_issuer": 0.4,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Skills Certificate"
@@ -50282,10 +49092,10 @@ window.CPL_STATEWIDE = {
       "title": "Work-Based Learning",
       "unified_title": "Work-Based Learning",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Work Based Learning"
@@ -50409,10 +49219,10 @@ window.CPL_STATEWIDE = {
       "title": "Spreadsheets",
       "unified_title": "Spreadsheets",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam: Spreadsheets"
@@ -51552,10 +50362,10 @@ window.CPL_STATEWIDE = {
       "title": "Proofreading and Text-Editing Skills",
       "unified_title": "Proofreading and Text-Editing Skills",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Proofreading: Text-Editing Skills"
@@ -53285,8 +52095,8 @@ window.CPL_STATEWIDE = {
         "MAPCXS-S12-1-001",
         "MAPCxS-ESIS-1-001"
       ],
-      "title": "Spanish 1",
-      "unified_title": "Spanish 1",
+      "title": "Elementary Spanish I",
+      "unified_title": "Elementary Spanish I",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -53601,8 +52411,8 @@ window.CPL_STATEWIDE = {
         "MAPCXS-CBES1-1-001",
         "MAPCXS-S2-1-001"
       ],
-      "title": "Spanish 2",
-      "unified_title": "Spanish 2",
+      "title": "Elementary Spanish 2",
+      "unified_title": "Elementary Spanish 2",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -54256,8 +53066,8 @@ window.CPL_STATEWIDE = {
         "MAPCXS-MTI-3-1-001",
         "MAPCXS-MTI1-1-001"
       ],
-      "title": "Music Theory II",
-      "unified_title": "Music Theory II",
+      "title": "Music Theory 2",
+      "unified_title": "Music Theory 2",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -54397,10 +53207,10 @@ window.CPL_STATEWIDE = {
       "title": "Using Microsoft Windows",
       "unified_title": "Using Microsoft Windows",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Using MS Windows- Credit by Exam",
@@ -55941,10 +54751,10 @@ window.CPL_STATEWIDE = {
       "title": "Work-Based Learning — Computer Information Systems",
       "unified_title": "Work-Based Learning — Computer Information Systems",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.55,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Work Based Learning Computer Information Systems\tCIP:110101"
@@ -57083,10 +55893,10 @@ window.CPL_STATEWIDE = {
       "title": "Voice Technique I",
       "unified_title": "Voice Technique I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam- Voice Technique I"
@@ -57208,10 +56018,10 @@ window.CPL_STATEWIDE = {
       "title": "Voice Technique II",
       "unified_title": "Voice Technique II",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam- Voice Technique II"
@@ -57333,10 +56143,10 @@ window.CPL_STATEWIDE = {
       "title": "Voice Development I",
       "unified_title": "Voice Development I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam- Voice Development I"
@@ -57458,10 +56268,10 @@ window.CPL_STATEWIDE = {
       "title": "Voice Development II",
       "unified_title": "Voice Development II",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam- Voice Development II"
@@ -58083,10 +56893,10 @@ window.CPL_STATEWIDE = {
       "title": "Principles of Management",
       "unified_title": "Principles of Management",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Principles of Management BUMA 001 Cx"
@@ -58580,8 +57390,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-MSI-2-1-001"
       ],
-      "title": "Music Skills III",
-      "unified_title": "Music Skills III",
+      "title": "Music Skills 3",
+      "unified_title": "Music Skills 3",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -58833,10 +57643,10 @@ window.CPL_STATEWIDE = {
       "title": "Physical Geography",
       "unified_title": "Physical Geography",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.95,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Physical Geography"
@@ -60743,8 +59553,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPOH-LHST-1-001"
       ],
-      "title": "Leadership (High School Articulation)",
-      "unified_title": "Leadership (High School Articulation)",
+      "title": "Leadership",
+      "unified_title": "Leadership",
       "is_classified": true,
       "issuing_agency": "Local High School",
       "training_agency": "",
@@ -61124,10 +59934,10 @@ window.CPL_STATEWIDE = {
       "title": "Quality Management Principles",
       "unified_title": "Quality Management Principles",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Quality Management Principles"
@@ -61705,10 +60515,10 @@ window.CPL_STATEWIDE = {
       "title": "World Regional Geography",
       "unified_title": "World Regional Geography",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "World Regional Geography",
@@ -61834,10 +60644,10 @@ window.CPL_STATEWIDE = {
       "title": "Starting and Operating a New Small Business",
       "unified_title": "Starting and Operating a New Small Business",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Starting and Operating a New Small Business"
@@ -65037,6 +63847,132 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPCBES-N1-C-1-001|MAPCXS-BMSN-1-001",
+      "exhibit_ids": [
+        "MAPCBES-N1-C-1-001",
+        "MAPCXS-BMSN-1-001"
+      ],
+      "title": "Medical Surgical Nursing Beginning",
+      "unified_title": "Medical Surgical Nursing Beginning",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.4,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Beginning Medical Surgical Nursing",
+        "NURS 161 - CBE"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Health",
+      "sector": "Health",
+      "collaborative_type": "Other",
+      "adopters": 2,
+      "adopter_names": [
+        "Chaffey College",
+        "San Bernardino Valley College"
+      ],
+      "potential": 83,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Calbright College Credit",
+        "Calbright College Non-Credit",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 85,
+      "credit_recs": [
+        {
+          "course": "NURS 161",
+          "credit": "5 hours in Beginning Medical Surgical Nursing"
+        },
+        {
+          "course": "NURVN 405",
+          "credit": "4 hours in Beginning Medical Surgical Nursing"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPPRI-WSTP-1-001",
       "exhibit_ids": [
         "MAPPRI-WSTP-1-001"
@@ -66078,10 +65014,10 @@ window.CPL_STATEWIDE = {
       "title": "Business Communication",
       "unified_title": "Business Communication",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "U.S. Armed Forces",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "BUSAD 210\tBusiness Communication - Credit by Exam"
@@ -66195,10 +65131,10 @@ window.CPL_STATEWIDE = {
       "title": "Business Communication",
       "unified_title": "Business Communication",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "U.S. Armed Forces",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "BUSAD 210\tBusiness Communication - Portfolio"
@@ -66312,10 +65248,10 @@ window.CPL_STATEWIDE = {
       "title": "Business Communication",
       "unified_title": "Business Communication",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "U.S. Armed Forces",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "BUSAD 210 Business Communication - Military Training"
@@ -66429,10 +65365,10 @@ window.CPL_STATEWIDE = {
       "title": "Tour Ensemble",
       "unified_title": "Tour Ensemble",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "VFPA 152: Tour Ensemble"
@@ -66546,10 +65482,10 @@ window.CPL_STATEWIDE = {
       "title": "World Prehistory",
       "unified_title": "World Prehistory",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam- World Prehistory"
@@ -67142,8 +66078,8 @@ window.CPL_STATEWIDE = {
       "title": "Administration of Justice",
       "unified_title": "Administration of Justice",
       "is_classified": true,
-      "issuing_agency": "Lemoore High School",
-      "training_agency": "Lemoore High School",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+      "training_agency": "",
       "confidence_title": 0.55,
       "confidence_issuer": 1.0,
       "quality_flag": "",
@@ -67258,10 +66194,10 @@ window.CPL_STATEWIDE = {
       "title": "Physical Geography Laboratory",
       "unified_title": "Physical Geography Laboratory",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.95,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Physical Geography Laboratory"
@@ -68238,10 +67174,10 @@ window.CPL_STATEWIDE = {
       "title": "Rehearsal and Performance in Production",
       "unified_title": "Rehearsal and Performance in Production",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "VFPA 150A: Rehearsal and Performance in Production"
@@ -68353,10 +67289,10 @@ window.CPL_STATEWIDE = {
       "title": "Motion Picture Performance Production",
       "unified_title": "Motion Picture Performance Production",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "VFPA 255: Motion Picture Performance Production"
@@ -68861,10 +67797,10 @@ window.CPL_STATEWIDE = {
       "title": "World Religions",
       "unified_title": "World Religions",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Religions World PHIL 012 Cx"
@@ -68976,10 +67912,10 @@ window.CPL_STATEWIDE = {
       "title": "Theatre History: Ancient to 1700",
       "unified_title": "Theatre History: Ancient to 1700",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.95,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Theatre History: Ancient to 1700"
@@ -69091,10 +68027,10 @@ window.CPL_STATEWIDE = {
       "title": "Theatre History: 1700-Present",
       "unified_title": "Theatre History: 1700-Present",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.95,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Theatre History: 1700-Present"
@@ -69632,13 +68568,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-C2SA1-1-001"
       ],
-      "title": "Problem Solving and Programming 1",
-      "unified_title": "Problem Solving and Programming 1",
+      "title": "Programming Concepts and Methodology I",
+      "unified_title": "Programming Concepts and Methodology I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "CSCI 271\tProblem Solving and Programming 1 - Credit by Exam"
@@ -70215,125 +69151,12 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPCBES-N1-C-1-001",
-      "exhibit_ids": [
-        "MAPCBES-N1-C-1-001"
-      ],
-      "title": "Nursing Course CBE — NURS 161 (SBVC)",
-      "unified_title": "Nursing Course CBE — NURS 161 (SBVC)",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.4,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "NURS 161 - CBE"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Health",
-      "sector": "Health",
-      "collaborative_type": "Other",
-      "adopters": 1,
-      "adopter_names": [
-        "San Bernardino Valley College"
-      ],
-      "potential": 77,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Ohlone College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego City College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 78,
-      "credit_recs": [
-        {
-          "course": "NURS 161",
-          "credit": "5 hours in Beginning Medical Surgical Nursing"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPCBES-N1-1-001",
       "exhibit_ids": [
         "MAPCBES-N1-1-001"
       ],
-      "title": "Nursing Course CBE — NURS 150 (SBVC)",
-      "unified_title": "Nursing Course CBE — NURS 150 (SBVC)",
+      "title": "Foundations of Nursing",
+      "unified_title": "Foundations of Nursing",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -70445,8 +69268,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCBEA-0-1-001"
       ],
-      "title": "Nursing Course CBE — NURS 160 (SBVC)",
-      "unified_title": "Nursing Course CBE — NURS 160 (SBVC)",
+      "title": "Nursing Care of the Childbearing Family and Newborn",
+      "unified_title": "Nursing Care of the Childbearing Family and Newborn",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -70558,8 +69381,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCBES-N1C-1-001"
       ],
-      "title": "Nursing Course CBE — NURS 151 (SBVC)",
-      "unified_title": "Nursing Course CBE — NURS 151 (SBVC)",
+      "title": "Introduction to Medical Surgical Nursing",
+      "unified_title": "Introduction to Medical Surgical Nursing",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -70674,10 +69497,10 @@ window.CPL_STATEWIDE = {
       "title": "Python Programming Fundamentals",
       "unified_title": "Python Programming Fundamentals",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Python  Programming Fundamentals"
@@ -70787,10 +69610,10 @@ window.CPL_STATEWIDE = {
       "title": "Nursing Process: Pharmacology",
       "unified_title": "Nursing Process: Pharmacology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "NURSE 270\tNursing Process: Pharmacology - Credit by Exam"
@@ -70900,10 +69723,10 @@ window.CPL_STATEWIDE = {
       "title": "Nursing Process: Fundamentals",
       "unified_title": "Nursing Process: Fundamentals",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "NURSE 271\tNursing Process: Fundamentals - Credit by Exam"
@@ -71013,10 +69836,10 @@ window.CPL_STATEWIDE = {
       "title": "Nursing Process: Geriatrics",
       "unified_title": "Nursing Process: Geriatrics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "NURSE 272\tNursing Process: Geriatrics - Credit by Exam"
@@ -71578,10 +70401,10 @@ window.CPL_STATEWIDE = {
       "title": "Nursing Process: Fundamentals",
       "unified_title": "Nursing Process: Fundamentals",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "NURSE 271\tNursing Process: Fundamentals - Portfolio Review"
@@ -72145,10 +70968,10 @@ window.CPL_STATEWIDE = {
       "title": "Nursing Process: Pharmacology",
       "unified_title": "Nursing Process: Pharmacology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "NURSE 270 Nursing Process: Pharmacology - Military"
@@ -72258,10 +71081,10 @@ window.CPL_STATEWIDE = {
       "title": "Nursing Process: Fundamentals",
       "unified_title": "Nursing Process: Fundamentals",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "NURSE 271 Nursing Process: Fundamentals"
@@ -72375,10 +71198,10 @@ window.CPL_STATEWIDE = {
       "title": "Nursing Process: Geriatrics",
       "unified_title": "Nursing Process: Geriatrics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "NURSE 272 Nursing Process: Geriatrics"
@@ -72711,8 +71534,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-N4-A-1-001"
       ],
-      "title": "Adult Health Care I",
-      "unified_title": "Adult Health Care I",
+      "title": "Adult Health Care 1",
+      "unified_title": "Adult Health Care 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -72824,8 +71647,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-N4-P-1-001"
       ],
-      "title": "Pharmacology (Nursing)",
-      "unified_title": "Pharmacology (Nursing)",
+      "title": "Pharmacology",
+      "unified_title": "Pharmacology",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -72937,8 +71760,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-N4-A1-1-001"
       ],
-      "title": "Adult Health Care II",
-      "unified_title": "Adult Health Care II",
+      "title": "Adult Health Care 2",
+      "unified_title": "Adult Health Care 2",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -73050,8 +71873,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-N4-M-1-001"
       ],
-      "title": "Maternal and Newborn Health Care (Nursing)",
-      "unified_title": "Maternal and Newborn Health Care (Nursing)",
+      "title": "Maternal and Newborn Health Care",
+      "unified_title": "Maternal and Newborn Health Care",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -73163,13 +71986,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-N4-P1-1-001"
       ],
-      "title": "Psychiatric Health Care (Nursing)",
-      "unified_title": "Psychiatric Health Care (Nursing)",
+      "title": "Psychiatric Health Care",
+      "unified_title": "Psychiatric Health Care",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "NURSING 405 - Psychiatric Health Care"
@@ -73276,8 +72099,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-N4-A2-1-001"
       ],
-      "title": "Adult Health Care III",
-      "unified_title": "Adult Health Care III",
+      "title": "Adult Health Care 3",
+      "unified_title": "Adult Health Care 3",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -73502,13 +72325,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-N4-P2-1-001"
       ],
-      "title": "Psychological Aspects of Health Care (Nursing)",
-      "unified_title": "Psychological Aspects of Health Care (Nursing)",
+      "title": "Psychological Aspects of Health Care",
+      "unified_title": "Psychological Aspects of Health Care",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "NURSING 408 - Psychological Aspects of Health Care"
@@ -73615,8 +72438,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-N4-A3-1-001"
       ],
-      "title": "Adult Health Care IV",
-      "unified_title": "Adult Health Care IV",
+      "title": "Adult Health Care 4",
+      "unified_title": "Adult Health Care 4",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -73728,8 +72551,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-N4-P3-1-001"
       ],
-      "title": "Pediatric Health Care (Nursing)",
-      "unified_title": "Pediatric Health Care (Nursing)",
+      "title": "Pediatric Health Care",
+      "unified_title": "Pediatric Health Care",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -73957,10 +72780,10 @@ window.CPL_STATEWIDE = {
       "title": "Role Transition to RN",
       "unified_title": "Role Transition to RN",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "NURSING 442 - Role Transition to RN"
@@ -74873,10 +73696,10 @@ window.CPL_STATEWIDE = {
       "title": "Transition in Nursing",
       "unified_title": "Transition in Nursing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Transition in Nursing"
@@ -75212,10 +74035,10 @@ window.CPL_STATEWIDE = {
       "title": "Transition in Nursing Laboratory",
       "unified_title": "Transition in Nursing Laboratory",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Transition in Nursing Laboratory"
@@ -77081,13 +75904,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPMM-WHGR-1-001"
       ],
-      "title": "Health Education Graduation Requirement — Woodland Community College",
-      "unified_title": "Health Education Graduation Requirement — Woodland Community College",
+      "title": "Health Education Graduation Requirement",
+      "unified_title": "Health Education Graduation Requirement",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "WCC Health Graduation Requirement"
@@ -84689,8 +83512,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCBEN-BESF-1-001"
       ],
-      "title": "Basic Electrical System Fundamentals",
-      "unified_title": "Basic Electrical System Fundamentals",
+      "title": "Basic Automotive Electrical System Fundamentals",
+      "unified_title": "Basic Automotive Electrical System Fundamentals",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -89799,13 +88622,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-CBES6-1-001"
       ],
-      "title": "Service and Repair",
-      "unified_title": "Service and Repair",
+      "title": "Automotive Service and Repair",
+      "unified_title": "Automotive Service and Repair",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam: Service and Repair"
@@ -89907,10 +88730,10 @@ window.CPL_STATEWIDE = {
       "title": "Principles of Automotive Technology",
       "unified_title": "Principles of Automotive Technology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Principles of Automotive Technology AUTO 004 Cx"
@@ -90954,8 +89777,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-A6C3-1-001"
       ],
-      "title": "Long Beach City College Auto 603",
-      "unified_title": "Long Beach City College Auto 603",
+      "title": "Automotive Brake Inspection",
+      "unified_title": "Automotive Brake Inspection",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -91059,8 +89882,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-A6C4-1-001"
       ],
-      "title": "Long Beach City College Auto 611",
-      "unified_title": "Long Beach City College Auto 611",
+      "title": "Automative Engine Repair",
+      "unified_title": "Automative Engine Repair",
       "is_classified": true,
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
@@ -91164,8 +89987,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-A6C5-1-001"
       ],
-      "title": "Long Beach City College Auto 612",
-      "unified_title": "Long Beach City College Auto 612",
+      "title": "Automative Automatic Transmissions",
+      "unified_title": "Automative Automatic Transmissions",
       "is_classified": true,
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
@@ -91269,8 +90092,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-A6C6-1-001"
       ],
-      "title": "Long Beach City College Auto 613",
-      "unified_title": "Long Beach City College Auto 613",
+      "title": "Automative Manual Transmission",
+      "unified_title": "Automative Manual Transmission",
       "is_classified": true,
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
@@ -91374,8 +90197,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-A6C7-1-001"
       ],
-      "title": "Long Beach City College Auto 614",
-      "unified_title": "Long Beach City College Auto 614",
+      "title": "Automative Wheel Alignment",
+      "unified_title": "Automative Wheel Alignment",
       "is_classified": true,
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
@@ -91479,8 +90302,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-A6C8-1-001"
       ],
-      "title": "Long Beach City College Auto 615",
-      "unified_title": "Long Beach City College Auto 615",
+      "title": "Automative Brake System",
+      "unified_title": "Automative Brake System",
       "is_classified": true,
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
@@ -91584,8 +90407,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-A61-1-001"
       ],
-      "title": "Long Beach City College Auto 616",
-      "unified_title": "Long Beach City College Auto 616",
+      "title": "Automative Electrical Systems",
+      "unified_title": "Automative Electrical Systems",
       "is_classified": true,
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
@@ -91689,8 +90512,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-A6C9-1-001"
       ],
-      "title": "Long Beach City College Auto 617",
-      "unified_title": "Long Beach City College Auto 617",
+      "title": "Automotive Air Conditioner",
+      "unified_title": "Automotive Air Conditioner",
       "is_classified": true,
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
@@ -91794,8 +90617,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-A6C10-1-001"
       ],
-      "title": "Long Beach City College Auto 618",
-      "unified_title": "Long Beach City College Auto 618",
+      "title": "Automative Fuel Systems",
+      "unified_title": "Automative Fuel Systems",
       "is_classified": true,
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
@@ -91899,8 +90722,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-A6C11-1-001"
       ],
-      "title": "Long Beach City College Auto 619",
-      "unified_title": "Long Beach City College Auto 619",
+      "title": "Automotive Light Diesel Engines",
+      "unified_title": "Automotive Light Diesel Engines",
       "is_classified": true,
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
@@ -92004,13 +90827,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-A6WA-1-001"
       ],
-      "title": "Wheel Alignment, Chassis Dynamics, and ADAS",
-      "unified_title": "Wheel Alignment, Chassis Dynamics, and ADAS",
+      "title": "Wheel Alignment, Chassis Dynamics, ADAS",
+      "unified_title": "Wheel Alignment, Chassis Dynamics, ADAS",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AUTO 62B: Wheel Alignment, Chassis Dynamics, ADAS - Credit By Exam"
@@ -95204,10 +94027,10 @@ window.CPL_STATEWIDE = {
       "title": "Suspension and Steering",
       "unified_title": "Suspension and Steering",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Suspension and Steering",
@@ -95758,10 +94581,10 @@ window.CPL_STATEWIDE = {
       "title": "Human Anatomy",
       "unified_title": "Human Anatomy",
       "is_classified": true,
-      "issuing_agency": "American Council on Education (ACE)",
-      "training_agency": "U.S. Armed Forces",
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.75,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ANAT 125\tHuman Anatomy - Portfolio Review"
@@ -95862,10 +94685,10 @@ window.CPL_STATEWIDE = {
       "title": "Human Anatomy",
       "unified_title": "Human Anatomy",
       "is_classified": true,
-      "issuing_agency": "American Council on Education (ACE)",
-      "training_agency": "U.S. Armed Forces",
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.75,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ANAT 125 Human Anatomy - Military"
@@ -98713,10 +97536,10 @@ window.CPL_STATEWIDE = {
       "title": "Stagecraft",
       "unified_title": "Stagecraft",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Stagecraft"
@@ -100489,10 +99312,10 @@ window.CPL_STATEWIDE = {
       "title": "Theatre Practicum — Technical Theatre in Production",
       "unified_title": "Theatre Practicum — Technical Theatre in Production",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Theatre Practicum - Technical Theatre in Production"
@@ -101282,10 +100105,10 @@ window.CPL_STATEWIDE = {
       "title": "Principles of Real Estate Appraising",
       "unified_title": "Principles of Real Estate Appraising",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Principles of Appraising REAL 086 Cx"
@@ -102363,10 +101186,10 @@ window.CPL_STATEWIDE = {
       "title": "Real Estate Principles",
       "unified_title": "Real Estate Principles",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "REALES 1, Real Estate Principles",
@@ -102781,13 +101604,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCBES-W0C-1-001"
       ],
-      "title": "Welding (WELD 046)",
-      "unified_title": "Welding (WELD 046)",
+      "title": "Shielded Metal Arc Welding Intermediate",
+      "unified_title": "Shielded Metal Arc Welding Intermediate",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "WELD 046 CBE"
@@ -102879,13 +101702,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCBES-W0C1-1-001"
       ],
-      "title": "Welding (WELD 045)",
-      "unified_title": "Welding (WELD 045)",
+      "title": "Shielded Metal Arc Welding Beginning",
+      "unified_title": "Shielded Metal Arc Welding Beginning",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "WELD 045 CBE"
@@ -102980,10 +101803,10 @@ window.CPL_STATEWIDE = {
       "title": "Welding Certification",
       "unified_title": "Welding Certification",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.4,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Welding Certificates"
@@ -103976,10 +102799,10 @@ window.CPL_STATEWIDE = {
       "title": "Welding Theory 1",
       "unified_title": "Welding Theory 1",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Local High School",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Welding Theory 1 High School to College Articulation"
@@ -104074,10 +102897,10 @@ window.CPL_STATEWIDE = {
       "title": "Welding Theory 2",
       "unified_title": "Welding Theory 2",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Local High School",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Welding Theory 2 High School to College Articulation"
@@ -104270,10 +103093,10 @@ window.CPL_STATEWIDE = {
       "title": "Reinforcing 1",
       "unified_title": "Reinforcing 1",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Reinforcing I"
@@ -109342,10 +108165,10 @@ window.CPL_STATEWIDE = {
       "title": "Visual Basic Programming I",
       "unified_title": "Visual Basic Programming I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Visual Basic Programming I CS 086 Cx"
@@ -109536,10 +108359,10 @@ window.CPL_STATEWIDE = {
       "title": "Web Page Development and Publishing",
       "unified_title": "Web Page Development and Publishing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Web Page Development and Publishing"
@@ -112111,10 +110934,10 @@ window.CPL_STATEWIDE = {
       "title": "Real Estate Principles",
       "unified_title": "Real Estate Principles",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Principles of Real Estate REAL 081 Cx",
@@ -113251,10 +112074,10 @@ window.CPL_STATEWIDE = {
       "title": "Stage Costuming",
       "unified_title": "Stage Costuming",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Stage Costuming"
@@ -113346,10 +112169,10 @@ window.CPL_STATEWIDE = {
       "title": "Theatrical Makeup",
       "unified_title": "Theatrical Makeup",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.95,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Theatrical Makeup"
@@ -121258,8 +120081,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-FS3C2-1-001"
       ],
-      "title": "Fire Science 34C",
-      "unified_title": "Fire Science 34C",
+      "title": "Fire Science",
+      "unified_title": "Fire Science",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -122961,10 +121784,10 @@ window.CPL_STATEWIDE = {
       "title": "Strategies and Tactics",
       "unified_title": "Strategies and Tactics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Strategies and Tactics"
@@ -125166,10 +123989,10 @@ window.CPL_STATEWIDE = {
       "title": "Principles of Fire and Emergency Services Safety and Survival",
       "unified_title": "Principles of Fire and Emergency Services Safety and Survival",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.95,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "FTECH 306\tPrinciples of Fire and Emergency Services Safety and Survival - Industry Certification",
@@ -125777,10 +124600,10 @@ window.CPL_STATEWIDE = {
       "title": "Professional Fire Service Experience",
       "unified_title": "Professional Fire Service Experience",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Professional fire experience"
@@ -125899,8 +124722,8 @@ window.CPL_STATEWIDE = {
       "title": "Fire Science",
       "unified_title": "Fire Science",
       "is_classified": true,
-      "issuing_agency": "Local High School",
-      "training_agency": "College and Career Advantage",
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
       "confidence_title": 0.55,
       "confidence_issuer": 1.0,
       "quality_flag": "",
@@ -127414,10 +126237,10 @@ window.CPL_STATEWIDE = {
       "title": "Principles of Fire and Emergency Services Safety and Survival",
       "unified_title": "Principles of Fire and Emergency Services Safety and Survival",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FTECH 306\tPrinciples of Fire and Emergency Services Safety and Survival",
@@ -128699,10 +127522,10 @@ window.CPL_STATEWIDE = {
       "title": "Teaching as a Profession",
       "unified_title": "Teaching as a Profession",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Teaching as a Profession"
@@ -128985,8 +127808,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-A11(-1-001"
       ],
-      "title": "Painting 1 (Oil)",
-      "unified_title": "Painting 1 (Oil)",
+      "title": "Introduction to Painting",
+      "unified_title": "Introduction to Painting",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -129079,10 +127902,10 @@ window.CPL_STATEWIDE = {
       "title": "Restaurant Management",
       "unified_title": "Restaurant Management",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Restaurant Management (HRC 125 C)"
@@ -129927,9 +128750,14 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPCBEN-CC1-1-001",
+      "exhibit_id": "MAPCBEN-CC1-1-001|MAPCBEN-CC1B-1-001|MAPCBEN-CC2A-1-001|MAPCBEN-CC2B-1-001|MAPCBEN-CC3A-1-001|MAPCBEN-CC3B-1-001",
       "exhibit_ids": [
-        "MAPCBEN-CC1-1-001"
+        "MAPCBEN-CC1-1-001",
+        "MAPCBEN-CC1B-1-001",
+        "MAPCBEN-CC2A-1-001",
+        "MAPCBEN-CC2B-1-001",
+        "MAPCBEN-CC3A-1-001",
+        "MAPCBEN-CC3B-1-001"
       ],
       "title": "Cybersecurity Competition",
       "unified_title": "Cybersecurity Competition",
@@ -129940,7 +128768,12 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
-        "Cybersecurity Competition 1A"
+        "Cybersecurity Competition 1 B",
+        "Cybersecurity Competition 1A",
+        "Cybersecurity Competition 2 A",
+        "Cybersecurity Competition 2 B",
+        "Cybersecurity Competition 3 A",
+        "Cybersecurity Competitions 3 B"
       ],
       "cpl_type": "Credit By Exam",
       "discipline": "Information Technology",
@@ -130012,453 +128845,23 @@ window.CPL_STATEWIDE = {
         {
           "course": "CIS 133A",
           "credit": "1 hour in Cybersecurity Competitions 1A"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPCBEN-CC2A-1-001",
-      "exhibit_ids": [
-        "MAPCBEN-CC2A-1-001"
-      ],
-      "title": "Cybersecurity Competition 2A",
-      "unified_title": "Cybersecurity Competition 2A",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Cybersecurity Competition 2 A"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Information Technology",
-      "sector": "ICT/Digital Media",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Cabrillo College"
-      ],
-      "potential": 54,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Bakersfield College",
-        "Cerritos College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "Coastline Community College",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Hartnell College",
-        "Las Positas College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Medanos College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego City College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santiago Canyon College",
-        "Sierra College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 55,
-      "credit_recs": [
+        },
         {
           "course": "CIS 134A",
           "credit": "1 hour in Cybersecurity Competitions 2A"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPCBEN-CC1B-1-001",
-      "exhibit_ids": [
-        "MAPCBEN-CC1B-1-001"
-      ],
-      "title": "Cybersecurity Competition 1B",
-      "unified_title": "Cybersecurity Competition 1B",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Cybersecurity Competition 1 B"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Information Technology",
-      "sector": "ICT/Digital Media",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Cabrillo College"
-      ],
-      "potential": 54,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Bakersfield College",
-        "Cerritos College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "Coastline Community College",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Hartnell College",
-        "Las Positas College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Medanos College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego City College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santiago Canyon College",
-        "Sierra College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 55,
-      "credit_recs": [
+        },
         {
           "course": "CIS 133B",
           "credit": "1 hour in Cybersecurity Competitions 1B"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPCBEN-CC2B-1-001",
-      "exhibit_ids": [
-        "MAPCBEN-CC2B-1-001"
-      ],
-      "title": "Cybersecurity Competition 2B",
-      "unified_title": "Cybersecurity Competition 2B",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Cybersecurity Competition 2 B"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Information Technology",
-      "sector": "ICT/Digital Media",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Cabrillo College"
-      ],
-      "potential": 54,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Bakersfield College",
-        "Cerritos College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "Coastline Community College",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Hartnell College",
-        "Las Positas College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Medanos College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego City College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santiago Canyon College",
-        "Sierra College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 55,
-      "credit_recs": [
+        },
         {
           "course": "CIS 134B",
           "credit": "1 hour in Cybersecurity Competitions 2B"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPCBEN-CC3A-1-001",
-      "exhibit_ids": [
-        "MAPCBEN-CC3A-1-001"
-      ],
-      "title": "Cybersecurity Competition 3A",
-      "unified_title": "Cybersecurity Competition 3A",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Cybersecurity Competition 3 A"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Information Technology",
-      "sector": "ICT/Digital Media",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Cabrillo College"
-      ],
-      "potential": 54,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Bakersfield College",
-        "Cerritos College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "Coastline Community College",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Hartnell College",
-        "Las Positas College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Medanos College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego City College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santiago Canyon College",
-        "Sierra College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 55,
-      "credit_recs": [
+        },
         {
           "course": "CIS 135A",
           "credit": "1 hour in Cybersecurity Competitions 3A"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPCBEN-CC3B-1-001",
-      "exhibit_ids": [
-        "MAPCBEN-CC3B-1-001"
-      ],
-      "title": "Cybersecurity Competition 3B",
-      "unified_title": "Cybersecurity Competition 3B",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Cybersecurity Competitions 3 B"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Information Technology",
-      "sector": "ICT/Digital Media",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Cabrillo College"
-      ],
-      "potential": 54,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Bakersfield College",
-        "Cerritos College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "Coastline Community College",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Hartnell College",
-        "Las Positas College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Medanos College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego City College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santiago Canyon College",
-        "Sierra College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 55,
-      "credit_recs": [
+        },
         {
           "course": "CIS 135B",
           "credit": "1 hour in Cybersecurity Competitions 3B"
@@ -131376,10 +129779,10 @@ window.CPL_STATEWIDE = {
       "title": "Teaching Beginning Piano",
       "unified_title": "Teaching Beginning Piano",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Portfolio MUS 25 Teaching Beginning Piano"
@@ -131556,10 +129959,10 @@ window.CPL_STATEWIDE = {
       "title": "Teaching Intermediate Piano",
       "unified_title": "Teaching Intermediate Piano",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Portfolio MUS 27 Teaching Intermediate Piano"
@@ -134638,10 +133041,10 @@ window.CPL_STATEWIDE = {
       "title": "Single Camera Production",
       "unified_title": "Single Camera Production",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Single Camera Production"
@@ -134817,8 +133220,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-D1-M-1-001"
       ],
-      "title": "Modern Dance Techniques I",
-      "unified_title": "Modern Dance Techniques I",
+      "title": "Modern Dance Techniques 1",
+      "unified_title": "Modern Dance Techniques 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -134906,13 +133309,13 @@ window.CPL_STATEWIDE = {
         "MAPCXS-D1-M1-1-001",
         "MAPCXS-HSA-1-1-001"
       ],
-      "title": "Modern Dance Techniques II",
-      "unified_title": "Modern Dance Techniques II",
+      "title": "Modern Dance Techniques 2",
+      "unified_title": "Modern Dance Techniques 2",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "DANCETQ 142 - Modern Dance Techniques II",
@@ -134998,10 +133401,10 @@ window.CPL_STATEWIDE = {
       "title": "Modern Dance Techniques",
       "unified_title": "Modern Dance Techniques",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "CHAMPS High School",
       "training_agency": "CHAMPS High School",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "HIGH SCHOOL ARTICULATION - CHAMPS HIGH SCHOOL: DANCETQ 141 Modern Dance techniques"
@@ -135171,8 +133574,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-CBEM6-1-001"
       ],
-      "title": "Mexican Folklorico IV",
-      "unified_title": "Mexican Folklorico IV",
+      "title": "Mexican Folklorico 4",
+      "unified_title": "Mexican Folklorico 4",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -135262,10 +133665,10 @@ window.CPL_STATEWIDE = {
       "title": "Street Dance I",
       "unified_title": "Street Dance I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam-Street Dance I"
@@ -135350,10 +133753,10 @@ window.CPL_STATEWIDE = {
       "title": "Street Dance II",
       "unified_title": "Street Dance II",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam-Street Dance II"
@@ -135438,10 +133841,10 @@ window.CPL_STATEWIDE = {
       "title": "Street Dance III",
       "unified_title": "Street Dance III",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam-Street Dance III"
@@ -135526,10 +133929,10 @@ window.CPL_STATEWIDE = {
       "title": "Street Dance IV",
       "unified_title": "Street Dance IV",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam-Street Dance IV"
@@ -135611,8 +134014,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-CBEF2-1-001"
       ],
-      "title": "Mexican Folklorico I",
-      "unified_title": "Mexican Folklorico I",
+      "title": "Mexican Folklorico 1",
+      "unified_title": "Mexican Folklorico 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -135699,8 +134102,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-CBE-2-1-001"
       ],
-      "title": "Mexican Folklorico II",
-      "unified_title": "Mexican Folklorico II",
+      "title": "Mexican Folklorico 2",
+      "unified_title": "Mexican Folklorico 2",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -135787,8 +134190,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-CBEF3-1-001"
       ],
-      "title": "Mexican Folklorico III",
-      "unified_title": "Mexican Folklorico III",
+      "title": "Mexican Folklorico 3",
+      "unified_title": "Mexican Folklorico 3",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -137335,10 +135738,10 @@ window.CPL_STATEWIDE = {
       "title": "Sanitation",
       "unified_title": "Sanitation",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Sanitation"
@@ -137509,10 +135912,10 @@ window.CPL_STATEWIDE = {
       "title": "Theory of Food Principles",
       "unified_title": "Theory of Food Principles",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Theory of Food Principles"
@@ -137944,10 +136347,10 @@ window.CPL_STATEWIDE = {
       "title": "Basic Digital Photography",
       "unified_title": "Basic Digital Photography",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ART 173\tBasic Digital Photography - Portfolio"
@@ -138028,8 +136431,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-C2E--1-001"
       ],
-      "title": "Networking Essentials",
-      "unified_title": "Networking Essentials",
+      "title": "Computer Network Fundamentals",
+      "unified_title": "Computer Network Fundamentals",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -138118,10 +136521,10 @@ window.CPL_STATEWIDE = {
       "title": "Basic Digital Photography",
       "unified_title": "Basic Digital Photography",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ART 173 Basic Digital Photography - Military"
@@ -138459,20 +136862,22 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICI-CI1G-1-001",
+      "exhibit_id": "MAPICI-CI1G-1-001|MAPICI-CI2G-1-001",
       "exhibit_ids": [
-        "MAPICI-CI1G-1-001"
+        "MAPICI-CI1G-1-001",
+        "MAPICI-CI2G-1-001"
       ],
       "title": "Culinary Internship",
       "unified_title": "Culinary Internship",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "Napa Valley Cooking School",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
-        "Culinary Internship 1 Graduate of NVC Cooking School"
+        "Culinary Internship 1 Graduate of NVC Cooking School",
+        "Culinary Internship 2 Graduate of NVC Cooking School"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Family and Consumer Sciences",
@@ -138541,6 +136946,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "HCTM 190",
           "credit": "3 hours in Culinary Internship 1"
+        },
+        {
+          "course": "HCTM 290",
+          "credit": "3 hours in Culinary Internship 2"
         }
       ],
       "authoritative_recs": []
@@ -138550,11 +136959,11 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-ACGO-1-001"
       ],
-      "title": "Napa Valley Cooking School — Advanced Culinary Graduate",
-      "unified_title": "Napa Valley Cooking School — Advanced Culinary Graduate",
+      "title": "Culinary Graduate Advanced",
+      "unified_title": "Culinary Graduate Advanced",
       "is_classified": true,
-      "issuing_agency": "Napa Valley Cooking School",
-      "training_agency": "Napa Valley Cooking School (Napa Valley College)",
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
       "confidence_title": 0.8,
       "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
@@ -138633,93 +137042,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICI-CI2G-1-001",
-      "exhibit_ids": [
-        "MAPICI-CI2G-1-001"
-      ],
-      "title": "Culinary Internship II",
-      "unified_title": "Culinary Internship II",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "Napa Valley Cooking School",
-      "confidence_title": 0.7,
-      "confidence_issuer": 1.0,
-      "quality_flag": "suspect_course_as_exhibit",
-      "raw_titles": [
-        "Culinary Internship 2 Graduate of NVC Cooking School"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Family and Consumer Sciences",
-      "sector": "Retail, Hospitality & Tourism",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Napa Valley College"
-      ],
-      "potential": 51,
-      "potential_names": [
-        "American River College",
-        "Bakersfield College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "Coastline Community College",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "Diablo Valley College",
-        "Fresno City College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Trade Technical College",
-        "Mendocino College",
-        "Merced College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Porterville College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Southwestern College",
-        "Woodland Community College"
-      ],
-      "total_addressable": 52,
-      "credit_recs": [
-        {
-          "course": "HCTM 290",
-          "credit": "3 hours in Culinary Internship 2"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPCXS-HSA-3-1-001",
       "exhibit_ids": [
         "MAPCXS-HSA-3-1-001"
@@ -138727,10 +137049,10 @@ window.CPL_STATEWIDE = {
       "title": "Technical Stage Production",
       "unified_title": "Technical Stage Production",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Birmingham Community Charter High School",
       "training_agency": "Birmingham Community Charter High School",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "HIGH SCHOOL ARTICULATION - BIRMINGHAM CCHS: TECTHTR 342 Technical Stage Production"
@@ -138811,8 +137133,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRS-CFI-1-001"
       ],
-      "title": "Culinary Fundamentals I",
-      "unified_title": "Culinary Fundamentals I",
+      "title": "Culinary Fundamentals",
+      "unified_title": "Culinary Fundamentals",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -138901,10 +137223,10 @@ window.CPL_STATEWIDE = {
       "title": "Technical Theatre in Production",
       "unified_title": "Technical Theatre in Production",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "VFPA 150B: Technical Theatre in Production"
@@ -139162,10 +137484,10 @@ window.CPL_STATEWIDE = {
       "title": "Vegetables, Legumes, and Other Starches",
       "unified_title": "Vegetables, Legumes, and Other Starches",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Vegetables, Legumes, and Other Starches CULN 001B Cx"
@@ -139423,10 +137745,10 @@ window.CPL_STATEWIDE = {
       "title": "Restaurant Experience",
       "unified_title": "Restaurant Experience",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Restaurant Experience"
@@ -139858,10 +138180,10 @@ window.CPL_STATEWIDE = {
       "title": "Theatre Design — Lighting",
       "unified_title": "Theatre Design — Lighting",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Theatre Design-Lighting"
@@ -140545,10 +138867,10 @@ window.CPL_STATEWIDE = {
       "title": "Photoshop for Photography 1",
       "unified_title": "Photoshop for Photography 1",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Photoshop for Photography I"
@@ -140631,10 +138953,10 @@ window.CPL_STATEWIDE = {
       "title": "Photoshop for Photography 2",
       "unified_title": "Photoshop for Photography 2",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Photoshop for Photography 2"
@@ -140717,10 +139039,10 @@ window.CPL_STATEWIDE = {
       "title": "Photoshop for Photography 3",
       "unified_title": "Photoshop for Photography 3",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Photoshop for Photography 3"
@@ -140803,10 +139125,10 @@ window.CPL_STATEWIDE = {
       "title": "Studio Portrait Photography",
       "unified_title": "Studio Portrait Photography",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Studio Portrait Photography"
@@ -140889,10 +139211,10 @@ window.CPL_STATEWIDE = {
       "title": "Visual Storytelling",
       "unified_title": "Visual Storytelling",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Visual Story Telling"
@@ -141147,10 +139469,10 @@ window.CPL_STATEWIDE = {
       "title": "Yoga Teacher Certification",
       "unified_title": "Yoga Teacher Certification",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.4,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Yoga Certificate"
@@ -141233,7 +139555,7 @@ window.CPL_STATEWIDE = {
       "title": "Personal Training Certification",
       "unified_title": "Personal Training Certification",
       "is_classified": true,
-      "issuing_agency": "California Community Colleges",
+      "issuing_agency": "American Council on Exercise",
       "training_agency": "",
       "confidence_title": 0.7,
       "confidence_issuer": 1.0,
@@ -141493,13 +139815,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPMM-VWJR-1-001"
       ],
-      "title": "Walk, Jog, Run (Kinesiology)",
-      "unified_title": "Walk, Jog, Run (Kinesiology)",
+      "title": "Fitness",
+      "unified_title": "Fitness",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Veteran Walk Jog Run KINE 068"
@@ -144044,10 +142366,10 @@ window.CPL_STATEWIDE = {
       "title": "Self Defense",
       "unified_title": "Self Defense",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.4,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Self-Defense (KIN 121 C)"
@@ -146169,8 +144491,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-M3-M1-1-001"
       ],
-      "title": "Medical Assisting Clinical",
-      "unified_title": "Medical Assisting Clinical",
+      "title": "Medical Assisting Clinical Procedures",
+      "unified_title": "Medical Assisting Clinical Procedures",
       "is_classified": true,
       "issuing_agency": "California Certifying Board for Medical Assistants (CCBMA)",
       "training_agency": "",
@@ -146331,8 +144653,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-M3-M2-1-001"
       ],
-      "title": "Medical Assisting Lab Procedures",
-      "unified_title": "Medical Assisting Lab Procedures",
+      "title": "Medical Assisting Laboratory Procedures",
+      "unified_title": "Medical Assisting Laboratory Procedures",
       "is_classified": true,
       "issuing_agency": "California Certifying Board for Medical Assistants (CCBMA)",
       "training_agency": "",
@@ -146661,13 +144983,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPOH-TDHS-1-001"
       ],
-      "title": "Technical Drawing (High School Articulation)",
-      "unified_title": "Technical Drawing (High School Articulation)",
+      "title": "Technical Drawing",
+      "unified_title": "Technical Drawing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Technical Drawing High School to College Articulation"
@@ -147231,10 +145553,10 @@ window.CPL_STATEWIDE = {
       "title": "Social Media and Self-Promotion",
       "unified_title": "Social Media and Self-Promotion",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Social Media, Self-Promotion"
@@ -148113,10 +146435,10 @@ window.CPL_STATEWIDE = {
       "title": "Web Publishing I",
       "unified_title": "Web Publishing I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Web Publishing I CIS 082C Cx"
@@ -148510,10 +146832,10 @@ window.CPL_STATEWIDE = {
       "title": "Web Design with WordPress",
       "unified_title": "Web Design with WordPress",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Web Design Using WordPress"
@@ -148826,10 +147148,10 @@ window.CPL_STATEWIDE = {
       "title": "Website Development Using CMS",
       "unified_title": "Website Development Using CMS",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Website Development Using CMS"
@@ -148984,10 +147306,10 @@ window.CPL_STATEWIDE = {
       "title": "Web Design",
       "unified_title": "Web Design",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "VDMA 302: Web Design"
@@ -150463,6 +148785,89 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCXS-CBEA15-1-001|MAPCxS-EASL1-1-001",
+      "exhibit_ids": [
+        "MAPCXS-CBEA15-1-001",
+        "MAPCxS-EASL1-1-001"
+      ],
+      "title": "American Sign Language 1",
+      "unified_title": "American Sign Language 1",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.9,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Credit by Exam-Elementary American Sign Language 1",
+        "Elementary American Sign Language I ASL 001 Cx"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 2,
+      "adopter_names": [
+        "Copper Mountain College",
+        "Ventura College"
+      ],
+      "potential": 40,
+      "potential_names": [
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Berkeley City College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Clovis Community College",
+        "College of the Sequoias",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuyamaca College",
+        "Fresno City College",
+        "Fullerton College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Pierce College",
+        "Los Medanos College",
+        "Madera College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 42,
+      "credit_recs": [
+        {
+          "course": "ASL V01",
+          "credit": "4 hours in Elementary American Sign Language I"
+        },
+        {
+          "course": "ASL 001",
+          "credit": "5 hours in Elementary American Sign Language I"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPCBES-R1-1-001",
       "exhibit_ids": [
         "MAPCBES-R1-1-001"
@@ -150700,10 +149105,10 @@ window.CPL_STATEWIDE = {
       "title": "Strength of Architectural Materials I",
       "unified_title": "Strength of Architectural Materials I",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ARC 291 - Strength of Architectural Materials I"
@@ -150921,82 +149326,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPCXS-CBEA15-1-001",
-      "exhibit_ids": [
-        "MAPCXS-CBEA15-1-001"
-      ],
-      "title": "American Sign Language 1",
-      "unified_title": "American Sign Language 1",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.9,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Credit by Exam-Elementary American Sign Language 1"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Foreign Languages",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Ventura College"
-      ],
-      "potential": 40,
-      "potential_names": [
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Berkeley City College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Clovis Community College",
-        "College of the Sequoias",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuyamaca College",
-        "Fresno City College",
-        "Fullerton College",
-        "Grossmont College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Pierce College",
-        "Los Medanos College",
-        "Madera College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Antonio College",
-        "Ohlone College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Solano Community College",
-        "Southwestern College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 41,
-      "credit_recs": [
-        {
-          "course": "ASL V01",
-          "credit": "4 hours in Elementary American Sign Language I"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPICI-ACFA-1-001",
       "exhibit_ids": [
         "MAPICI-ACFA-1-001"
@@ -151149,9 +149478,10 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPCxS-IASL-1-001",
+      "exhibit_id": "MAPCxS-IASL-1-001|MAPCxS-IASL1-1-001",
       "exhibit_ids": [
-        "MAPCxS-IASL-1-001"
+        "MAPCxS-IASL-1-001",
+        "MAPCxS-IASL1-1-001"
       ],
       "title": "American Sign Language Intermediate",
       "unified_title": "American Sign Language Intermediate",
@@ -151162,7 +149492,8 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
-        "Intermediate American Sign Language I ASL 003 Cx"
+        "Intermediate American Sign Language I ASL 003 Cx",
+        "Intermediate American Sign Language II ASL 004 Cx"
       ],
       "cpl_type": "Credit By Exam",
       "discipline": "Foreign Languages",
@@ -151220,158 +149551,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "ASL 003",
           "credit": "4 hours in Intermediate American Sign Language I"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPCxS-IASL1-1-001",
-      "exhibit_ids": [
-        "MAPCxS-IASL1-1-001"
-      ],
-      "title": "Intermediate American Sign Language II",
-      "unified_title": "Intermediate American Sign Language II",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.78,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Intermediate American Sign Language II ASL 004 Cx"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Foreign Languages",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Copper Mountain College"
-      ],
-      "potential": 40,
-      "potential_names": [
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Berkeley City College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Clovis Community College",
-        "College of the Sequoias",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuyamaca College",
-        "Fresno City College",
-        "Fullerton College",
-        "Grossmont College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Pierce College",
-        "Los Medanos College",
-        "Madera College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Antonio College",
-        "Ohlone College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Solano Community College",
-        "Southwestern College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 41,
-      "credit_recs": [
+        },
         {
           "course": "ASL 004",
           "credit": "4 hours in Intermediate American Sign Language II"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPCxS-EASL1-1-001",
-      "exhibit_ids": [
-        "MAPCxS-EASL1-1-001"
-      ],
-      "title": "Elementary American Sign Language I",
-      "unified_title": "Elementary American Sign Language I",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.88,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Elementary American Sign Language I ASL 001 Cx"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Foreign Languages",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Copper Mountain College"
-      ],
-      "potential": 40,
-      "potential_names": [
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Berkeley City College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Clovis Community College",
-        "College of the Sequoias",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuyamaca College",
-        "Fresno City College",
-        "Fullerton College",
-        "Grossmont College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Pierce College",
-        "Los Medanos College",
-        "Madera College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Antonio College",
-        "Ohlone College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Solano Community College",
-        "Southwestern College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 41,
-      "credit_recs": [
-        {
-          "course": "ASL 001",
-          "credit": "5 hours in Elementary American Sign Language I"
         }
       ],
       "authoritative_recs": []
@@ -151466,10 +149649,10 @@ window.CPL_STATEWIDE = {
       "title": "Understanding Infant Development",
       "unified_title": "Understanding Infant Development",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Understanding Infant Development"
@@ -151541,10 +149724,10 @@ window.CPL_STATEWIDE = {
       "title": "Understanding Toddler Development",
       "unified_title": "Understanding Toddler Development",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Understanding Toddler Development"
@@ -152216,10 +150399,10 @@ window.CPL_STATEWIDE = {
       "title": "Sanitation, Safety, and Equipment Management",
       "unified_title": "Sanitation, Safety, and Equipment Management",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Sanitation, Safety, and Equipment Management"
@@ -152429,81 +150612,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "NURVN 403L",
           "credit": "2 hours in Fundamentals of Nursing Laboratory"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPCXS-BMSN-1-001",
-      "exhibit_ids": [
-        "MAPCXS-BMSN-1-001"
-      ],
-      "title": "Medical Surgical Nursing Beginning",
-      "unified_title": "Medical Surgical Nursing Beginning",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Beginning Medical Surgical Nursing"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Chaffey College"
-      ],
-      "potential": 39,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Butte College",
-        "Calbright College Credit",
-        "Calbright College Non-Credit",
-        "Cerro Coso Community College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Siskiyous",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Feather River College",
-        "Gavilan College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Long Beach City College",
-        "Los Angeles Mission College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Napa Valley College",
-        "Palo Verde College",
-        "Pasadena City College",
-        "Porterville College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "Santa Barbara City College",
-        "Shasta College",
-        "Southwestern College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 40,
-      "credit_recs": [
-        {
-          "course": "NURVN 405",
-          "credit": "4 hours in Beginning Medical Surgical Nursing"
         }
       ],
       "authoritative_recs": []
@@ -154177,7 +152285,7 @@ window.CPL_STATEWIDE = {
       "title": "Paralegal Computers in the Law Office",
       "unified_title": "Paralegal Computers in the Law Office",
       "is_classified": true,
-      "issuing_agency": "California Community Colleges",
+      "issuing_agency": "California Alliance of Paralegal Associations",
       "training_agency": "",
       "confidence_title": 0.45,
       "confidence_issuer": 1.0,
@@ -154251,10 +152359,10 @@ window.CPL_STATEWIDE = {
       "title": "Technical Computer Literacy",
       "unified_title": "Technical Computer Literacy",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "CSCI 200\tTechnical Computer Literacy - Credit by Exam"
@@ -154470,13 +152578,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-C2SO-1-001"
       ],
-      "title": "Windows Server Operating System",
-      "unified_title": "Windows Server Operating System",
+      "title": "Windows Server OS",
+      "unified_title": "Windows Server OS",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "CSCI 213\tWindows Server OS - Credit by Exam"
@@ -154544,13 +152652,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-C2WV-1-001"
       ],
-      "title": "Programming with Visual BASIC",
-      "unified_title": "Programming with Visual BASIC",
+      "title": "Programming With Visual BASIC",
+      "unified_title": "Programming With Visual BASIC",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "CSCI 221\tProgramming With Visual BASIC - Credit by Exam"
@@ -154621,10 +152729,10 @@ window.CPL_STATEWIDE = {
       "title": "Spreadsheet Software",
       "unified_title": "Spreadsheet Software",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "CSCI 223\tSpreadsheet Software - Credit by Exam"
@@ -155284,8 +153392,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCxS-EIC0-1-001"
       ],
-      "title": "Microsoft Excel I",
-      "unified_title": "Microsoft Excel I",
+      "title": "Microsoft Excel 1",
+      "unified_title": "Microsoft Excel 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -155900,10 +154008,10 @@ window.CPL_STATEWIDE = {
       "title": "Web-Based Animation with Adobe Animate",
       "unified_title": "Web-Based Animation with Adobe Animate",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Web-Based Animation with Animate CIS 082H Cx"
@@ -156638,10 +154746,10 @@ window.CPL_STATEWIDE = {
       "title": "Semiconductor Devices Lab",
       "unified_title": "Semiconductor Devices Lab",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Semiconductor Devices Lab"
@@ -156780,10 +154888,10 @@ window.CPL_STATEWIDE = {
       "title": "Semiconductor Devices",
       "unified_title": "Semiconductor Devices",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Semiconductor Devices"
@@ -158197,8 +156305,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-E2CA-1-001"
       ],
-      "title": "Motors, Controls, and Controllers",
-      "unified_title": "Motors, Controls, and Controllers",
+      "title": "Motors, Controls and Controllers",
+      "unified_title": "Motors, Controls and Controllers",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -160515,10 +158623,10 @@ window.CPL_STATEWIDE = {
       "title": "Safety Certification",
       "unified_title": "Safety Certification",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.4,
-      "confidence_issuer": 0.4,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Safety Certification"
@@ -160655,10 +158763,10 @@ window.CPL_STATEWIDE = {
       "title": "Rigging and Signaling",
       "unified_title": "Rigging and Signaling",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Rigging and Signaling"
@@ -160725,10 +158833,10 @@ window.CPL_STATEWIDE = {
       "title": "Skid Steer Loader Operator",
       "unified_title": "Skid Steer Loader Operator",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Skid Steer Loader Orientation Initial"
@@ -161075,10 +159183,10 @@ window.CPL_STATEWIDE = {
       "title": "Traffic Control",
       "unified_title": "Traffic Control",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "American Traffic Safety Services Association (ATSSA)",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Traffic Control"
@@ -161355,10 +159463,10 @@ window.CPL_STATEWIDE = {
       "title": "Site Preparation and Layout",
       "unified_title": "Site Preparation and Layout",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Site Preparation and Layout CNST 020 Cx"
@@ -164459,10 +162567,10 @@ window.CPL_STATEWIDE = {
       "title": "Universal Design for Learning",
       "unified_title": "Universal Design for Learning",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Universal Design for Learning"
@@ -164528,10 +162636,10 @@ window.CPL_STATEWIDE = {
       "title": "STEM Field Teaching Experience",
       "unified_title": "STEM Field Teaching Experience",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "STEM Field Teaching"
@@ -164873,10 +162981,10 @@ window.CPL_STATEWIDE = {
       "title": "Social Equity and the Criminal Justice System",
       "unified_title": "Social Equity and the Criminal Justice System",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Social Equity and the Criminal Justice System"
@@ -164942,10 +163050,10 @@ window.CPL_STATEWIDE = {
       "title": "Violence in America",
       "unified_title": "Violence in America",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Violence in America"
@@ -165818,8 +163926,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-ABM-1-001"
       ],
-      "title": "ABA Bank Management (ABAN-0181)",
-      "unified_title": "ABA Bank Management (ABAN-0181)",
+      "title": "ABA Bank Management",
+      "unified_title": "ABA Bank Management",
       "is_classified": true,
       "issuing_agency": "American Bankers Association (ABA)",
       "training_agency": "",
@@ -166889,10 +164997,10 @@ window.CPL_STATEWIDE = {
       "title": "Probation and Parole",
       "unified_title": "Probation and Parole",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Probation and Parole",
@@ -168947,8 +167055,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCBES-PCBE-1-001"
       ],
-      "title": "Paramedicine (Credit by Exam)",
-      "unified_title": "Paramedicine (Credit by Exam)",
+      "title": "Paramedicine",
+      "unified_title": "Paramedicine",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -170692,10 +168800,10 @@ window.CPL_STATEWIDE = {
       "title": "Principles of Supervision",
       "unified_title": "Principles of Supervision",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Principles of Supervision"
@@ -172794,8 +170902,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXH-MC-C-1-001"
       ],
-      "title": "Medical Core (High School Articulation) — Canyon High School",
-      "unified_title": "Medical Core (High School Articulation) — Canyon High School",
+      "title": "Medical Core",
+      "unified_title": "Medical Core",
       "is_classified": true,
       "issuing_agency": "Canyon High School",
       "training_agency": "Canyon High School",
@@ -174560,10 +172668,10 @@ window.CPL_STATEWIDE = {
       "title": "Principles of Horticulture",
       "unified_title": "Principles of Horticulture",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "PLNT SC 714 - Principles of Horticulture"
@@ -174622,13 +172730,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-PS8--1-001"
       ],
-      "title": "Sustainable Gardening for Landscapes",
-      "unified_title": "Sustainable Gardening for Landscapes",
+      "title": "Sustainable Gardening for Landscapes (Horticulture)",
+      "unified_title": "Sustainable Gardening for Landscapes (Horticulture)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "PLNT SC 827 - Sustainable Gardening for Landscapes"
@@ -175793,13 +173901,13 @@ window.CPL_STATEWIDE = {
         "MAPCXI-PLTO-1-001",
         "MAPCXI-PLTO1-1-001"
       ],
-      "title": "Trigonometry or Higher Math (Prior Coursework)",
-      "unified_title": "Trigonometry or Higher Math (Prior Coursework)",
+      "title": "Trigonometry or Higher Mathematics",
+      "unified_title": "Trigonometry or Higher Mathematics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.4,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Previous level Trigonametry or higher math completion+ Residency Units"
@@ -175860,13 +173968,13 @@ window.CPL_STATEWIDE = {
         "MAPICI-PLTO1-1-001",
         "MAPICI-PLTO2-1-001"
       ],
-      "title": "Trigonometry or Higher Math (Prior Coursework)",
-      "unified_title": "Trigonometry or Higher Math (Prior Coursework)",
+      "title": "Trigonometry or Higher Mathematics",
+      "unified_title": "Trigonometry or Higher Mathematics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.4,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Previous level Trigonametry or higher math completion+ Residency Units"
@@ -175930,13 +174038,13 @@ window.CPL_STATEWIDE = {
         "MAPPRI-PLTO-1-001",
         "MAPPRI-PLTO1-1-001"
       ],
-      "title": "Trigonometry or Higher Math (Prior Coursework)",
-      "unified_title": "Trigonometry or Higher Math (Prior Coursework)",
+      "title": "Trigonometry or Higher Mathematics",
+      "unified_title": "Trigonometry or Higher Mathematics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.4,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Previous level Trigonametry or higher math completion+ Residency Units"
@@ -176000,13 +174108,13 @@ window.CPL_STATEWIDE = {
         "MAPMM-PLTO-1-001",
         "MAPMM-PLTO1-1-001"
       ],
-      "title": "Trigonometry or Higher Math (Prior Coursework)",
-      "unified_title": "Trigonometry or Higher Math (Prior Coursework)",
+      "title": "Trigonometry or Higher Mathematics",
+      "unified_title": "Trigonometry or Higher Mathematics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.4,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Previous level Trigonametry or higher math completion+ Residency Units"
@@ -176933,10 +175041,10 @@ window.CPL_STATEWIDE = {
       "title": "Resume Review (Work Experience)",
       "unified_title": "Resume Review (Work Experience)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.5,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Resume"
@@ -176997,10 +175105,10 @@ window.CPL_STATEWIDE = {
       "title": "Public Health Career Experience Internship",
       "unified_title": "Public Health Career Experience Internship",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Public Health Career Experience Internship"
@@ -179983,10 +178091,10 @@ window.CPL_STATEWIDE = {
       "title": "Residential Framing",
       "unified_title": "Residential Framing",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Residential Framing"
@@ -180045,10 +178153,10 @@ window.CPL_STATEWIDE = {
       "title": "Residential Construction Front End",
       "unified_title": "Residential Construction Front End",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Residential Construction Front End"
@@ -180796,10 +178904,10 @@ window.CPL_STATEWIDE = {
       "title": "Ultrasonic Scaling",
       "unified_title": "Ultrasonic Scaling",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Ultrasonic Scaling"
@@ -183295,10 +181403,10 @@ window.CPL_STATEWIDE = {
       "title": "Residential Wiring",
       "unified_title": "Residential Wiring",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ELTEC 225\tResidental Wiring - Credit by Exam"
@@ -183356,10 +181464,10 @@ window.CPL_STATEWIDE = {
       "title": "Residential Wiring",
       "unified_title": "Residential Wiring",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ELTEC 225\tResidental Wiring - Portfolio"
@@ -183539,10 +181647,10 @@ window.CPL_STATEWIDE = {
       "title": "Technical Measurements",
       "unified_title": "Technical Measurements",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ELTEC 322\tTechnical Measurements - Credit by Exam"
@@ -183600,10 +181708,10 @@ window.CPL_STATEWIDE = {
       "title": "Technical Measurements",
       "unified_title": "Technical Measurements",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ELTEC 322\tTechnical Measurements - Portfolio"
@@ -183844,7 +181952,7 @@ window.CPL_STATEWIDE = {
       "title": "Patient Care in Imaging Technology",
       "unified_title": "Patient Care in Imaging Technology",
       "is_classified": true,
-      "issuing_agency": "California Community Colleges",
+      "issuing_agency": "American Registry of Radiologic Technologists (ARRT)",
       "training_agency": "",
       "confidence_title": 0.5,
       "confidence_issuer": 1.0,
@@ -183905,10 +182013,10 @@ window.CPL_STATEWIDE = {
       "title": "Radiation Physics",
       "unified_title": "Radiation Physics",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Radiation Physics"
@@ -183966,10 +182074,10 @@ window.CPL_STATEWIDE = {
       "title": "Principles of Radiation Protection",
       "unified_title": "Principles of Radiation Protection",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Principles of Radiation Protection"
@@ -184028,10 +182136,10 @@ window.CPL_STATEWIDE = {
       "title": "Principles of Radiographic Imaging",
       "unified_title": "Principles of Radiographic Imaging",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "Principles of Radiographic Imaging"
@@ -186554,8 +184662,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-A1IA-1-001"
       ],
-      "title": "Leadership in Agriculture",
-      "unified_title": "Leadership in Agriculture",
+      "title": "Leadership in Agriculture B",
+      "unified_title": "Leadership in Agriculture B",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -186613,8 +184721,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-A1IA-1-001"
       ],
-      "title": "Leadership in Agriculture",
-      "unified_title": "Leadership in Agriculture",
+      "title": "Leadership in Agriculture B",
+      "unified_title": "Leadership in Agriculture B",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -187029,10 +185137,10 @@ window.CPL_STATEWIDE = {
       "title": "Sustainable Production Systems",
       "unified_title": "Sustainable Production Systems",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGGE 150\tSustainable Production Systems - Credit by Exam"
@@ -190108,10 +188216,10 @@ window.CPL_STATEWIDE = {
       "title": "Systems Analysis and Design",
       "unified_title": "Systems Analysis and Design",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Systems Analysis and Design CS 080 Cx"
@@ -190222,10 +188330,10 @@ window.CPL_STATEWIDE = {
       "title": "Warehouse Management and Material Handling",
       "unified_title": "Warehouse Management and Material Handling",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.75,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Warehouse Management and Material Handling"
@@ -190474,10 +188582,10 @@ window.CPL_STATEWIDE = {
       "title": "Sustainable Construction, Building Performance, and the Environment",
       "unified_title": "Sustainable Construction, Building Performance, and the Environment",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Sustainable Construction, Building Performance, and the Environment"
@@ -194921,10 +193029,10 @@ window.CPL_STATEWIDE = {
       "title": "Structural Plan Review",
       "unified_title": "Structural Plan Review",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "INSPEC 027 - Structural Plan Review - PORTFOLIO"
@@ -195285,10 +193393,10 @@ window.CPL_STATEWIDE = {
       "title": "Stars and Galaxies",
       "unified_title": "Stars and Galaxies",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam: Stars and Galaxies"
@@ -195441,10 +193549,10 @@ window.CPL_STATEWIDE = {
       "title": "Planets and the Solar System with Lab",
       "unified_title": "Planets and the Solar System with Lab",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam: Planets and the Solar System with Lab"
@@ -196474,10 +194582,10 @@ window.CPL_STATEWIDE = {
       "title": "Wildland Fire Control",
       "unified_title": "Wildland Fire Control",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.55,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Wildland Fire Control"
@@ -197179,10 +195287,10 @@ window.CPL_STATEWIDE = {
       "title": "Wildland Fire Control",
       "unified_title": "Wildland Fire Control",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.55,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Wildland Fire Control"
@@ -197379,10 +195487,10 @@ window.CPL_STATEWIDE = {
       "title": "Wildland Firefighter Safety and Survival",
       "unified_title": "Wildland Firefighter Safety and Survival",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Wildland Firefighter Safety & Survival FIRE WFT 102 Cx"
@@ -197429,10 +195537,10 @@ window.CPL_STATEWIDE = {
       "title": "Wildland Fire Operations",
       "unified_title": "Wildland Fire Operations",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Wildland Fire Operations FIRE WFT 103 Cx"
@@ -197479,10 +195587,10 @@ window.CPL_STATEWIDE = {
       "title": "Wildland Fire Investigation, Prevention, and Public Information",
       "unified_title": "Wildland Fire Investigation, Prevention, and Public Information",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Wildland Fire Investigation, Prevention, and Public Information FIRE WFT 104 Cx"
@@ -197529,10 +195637,10 @@ window.CPL_STATEWIDE = {
       "title": "Wildland Fire Logistics, Finance, and Planning",
       "unified_title": "Wildland Fire Logistics, Finance, and Planning",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Wildland Fire Logistics, Finance, and Planning FIRE WFT 105 Cx"
@@ -197679,10 +195787,10 @@ window.CPL_STATEWIDE = {
       "title": "Survey of Digital Fabrication for Studio Arts",
       "unified_title": "Survey of Digital Fabrication for Studio Arts",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Survey of Digital Fabrication for Studio Arts"
@@ -197973,10 +196081,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Agricultural Welding",
       "unified_title": "Advanced Agricultural Welding",
       "is_classified": true,
-      "issuing_agency": "American Council on Education (ACE)",
-      "training_agency": "U.S. Armed Forces",
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
       "confidence_title": 0.78,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGM 211\tAdvanced Agricultural Welding - Credit by Exam"
@@ -198022,10 +196130,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Agricultural Welding",
       "unified_title": "Advanced Agricultural Welding",
       "is_classified": true,
-      "issuing_agency": "American Council on Education (ACE)",
-      "training_agency": "U.S. Armed Forces",
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGM 211\tAdvanced Agricultural Welding - Industry Certification"
@@ -198708,10 +196816,10 @@ window.CPL_STATEWIDE = {
       "title": "Truck and Tractor Power Trains",
       "unified_title": "Truck and Tractor Power Trains",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGM 240\tTruck and Tractor Power Trains - Credit by Exam"
@@ -199195,13 +197303,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-A2OP-1-001"
       ],
-      "title": "Principles of Power Mechanics and Small Engines",
-      "unified_title": "Principles of Power Mechanics and Small Engines",
+      "title": "Principles of Power Mechanics/Small Engines",
+      "unified_title": "Principles of Power Mechanics/Small Engines",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGM 289\tPrinciples of Power Mechanics/Small Engines - Credit by Exam"
@@ -199247,10 +197355,10 @@ window.CPL_STATEWIDE = {
       "title": "Preparation for Mechanical Technology",
       "unified_title": "Preparation for Mechanical Technology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGM 50\tPreparation for Mechanical Technology"
@@ -199296,10 +197404,10 @@ window.CPL_STATEWIDE = {
       "title": "Preparation for Mechanical Technology",
       "unified_title": "Preparation for Mechanical Technology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "AGM 50\tPreparation for Mechanical Technology - Industry Certification"
@@ -199342,13 +197450,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-A2IA-1-001"
       ],
-      "title": "Supervision in Agriculture Equipment Operation",
-      "unified_title": "Supervision in Agriculture Equipment Operation",
+      "title": "Supervision In Agriculture Equipment Operation",
+      "unified_title": "Supervision In Agriculture Equipment Operation",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AG 200\tSupervision In Agriculture Equipment Operation - Portfolio"
@@ -199394,10 +197502,10 @@ window.CPL_STATEWIDE = {
       "title": "Advanced Agricultural Welding",
       "unified_title": "Advanced Agricultural Welding",
       "is_classified": true,
-      "issuing_agency": "American Council on Education (ACE)",
-      "training_agency": "U.S. Armed Forces",
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AGM 211 Advanced Agricultural Welding - Military"
@@ -199493,7 +197601,7 @@ window.CPL_STATEWIDE = {
       "unified_title": "Fashion Design and Merchandising Intermediate",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
-      "training_agency": "",
+      "training_agency": "Santa Ana High School",
       "confidence_title": 0.75,
       "confidence_issuer": 1.0,
       "quality_flag": "",
@@ -199587,8 +197695,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-PARA1-1-001"
       ],
-      "title": "Aircraft Powerplant: Reciprocating and Turbine Engines Laboratory",
-      "unified_title": "Aircraft Powerplant: Reciprocating and Turbine Engines Laboratory",
+      "title": "Aircraft Powerplant: Reciprocating and Turbine Engines Lab",
+      "unified_title": "Aircraft Powerplant: Reciprocating and Turbine Engines Lab",
       "is_classified": true,
       "issuing_agency": "Federal Aviation Administration (FAA)",
       "training_agency": "",
@@ -200033,10 +198141,10 @@ window.CPL_STATEWIDE = {
       "title": "Personal Health and Wellness (Military)",
       "unified_title": "Personal Health and Wellness (Military)",
       "is_classified": true,
-      "issuing_agency": "",
-      "training_agency": "U.S. Armed Forces",
+      "issuing_agency": "American Council on Education (ACE)",
+      "training_agency": "",
       "confidence_title": 0.5,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Personal Health and Wellness"
@@ -200764,10 +198872,10 @@ window.CPL_STATEWIDE = {
       "title": "Standard Acoustical Grids",
       "unified_title": "Standard Acoustical Grids",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Standard Acoustical Grids"
@@ -200811,10 +198919,10 @@ window.CPL_STATEWIDE = {
       "title": "Suspended Ceilings",
       "unified_title": "Suspended Ceilings",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Suspended Ceilings"
@@ -201093,10 +199201,10 @@ window.CPL_STATEWIDE = {
       "title": "Scaffold Safety",
       "unified_title": "Scaffold Safety",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Safety and Health Certifications - Scaffold"
@@ -201140,10 +199248,10 @@ window.CPL_STATEWIDE = {
       "title": "Tool/Equipment Applications — Fall Protection",
       "unified_title": "Tool/Equipment Applications — Fall Protection",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Tool/Equipment Applications - Fall Protection"
@@ -201563,10 +199671,10 @@ window.CPL_STATEWIDE = {
       "title": "Print Reading — Symbols",
       "unified_title": "Print Reading — Symbols",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Print Reading - Symbols"
@@ -201704,10 +199812,10 @@ window.CPL_STATEWIDE = {
       "title": "Tool/Equipment Applications — Emergency Response Procedures",
       "unified_title": "Tool/Equipment Applications — Emergency Response Procedures",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Tool/Equipment Applications - Emergency Response Procedures"
@@ -201798,10 +199906,10 @@ window.CPL_STATEWIDE = {
       "title": "Tilt-Up Panel Construction",
       "unified_title": "Tilt-Up Panel Construction",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Tilt-Up Panel Construction"
@@ -201845,10 +199953,10 @@ window.CPL_STATEWIDE = {
       "title": "Wall Forming (Carpentry)",
       "unified_title": "Wall Forming (Carpentry)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Wall Forming"
@@ -202033,10 +200141,10 @@ window.CPL_STATEWIDE = {
       "title": "Stairs and Ramp Forming",
       "unified_title": "Stairs and Ramp Forming",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Stairs and Ramp Forming"
@@ -202315,10 +200423,10 @@ window.CPL_STATEWIDE = {
       "title": "Transit Level/Laser",
       "unified_title": "Transit Level/Laser",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Transit Level/Laser"
@@ -202456,10 +200564,10 @@ window.CPL_STATEWIDE = {
       "title": "Rigging",
       "unified_title": "Rigging",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Rigging"
@@ -202503,10 +200611,10 @@ window.CPL_STATEWIDE = {
       "title": "Solar Installer Level 1",
       "unified_title": "Solar Installer Level 1",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.55,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Solar Installer Level 1"
@@ -202550,10 +200658,10 @@ window.CPL_STATEWIDE = {
       "title": "Water Treatment Facilities",
       "unified_title": "Water Treatment Facilities",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California State Water Resources Control Board (SWRCB)",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.55,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Water Treatment Facilities"
@@ -202644,10 +200752,10 @@ window.CPL_STATEWIDE = {
       "title": "Wet Wall Finishes (Carpentry)",
       "unified_title": "Wet Wall Finishes (Carpentry)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.55,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Wet Wall Finishes"
@@ -203255,10 +201363,10 @@ window.CPL_STATEWIDE = {
       "title": "Showcase and Loose Store Fixtures",
       "unified_title": "Showcase and Loose Store Fixtures",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.8,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Show Case and Loose Store Fixtures"
@@ -203349,10 +201457,10 @@ window.CPL_STATEWIDE = {
       "title": "Plastic Laminates",
       "unified_title": "Plastic Laminates",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Plastic Laminates"
@@ -203396,10 +201504,10 @@ window.CPL_STATEWIDE = {
       "title": "Solid and Stone Surfaces",
       "unified_title": "Solid and Stone Surfaces",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Solid and Stone Surfaces"
@@ -203443,10 +201551,10 @@ window.CPL_STATEWIDE = {
       "title": "Stair Trim",
       "unified_title": "Stair Trim",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Stair Trim"
@@ -203913,10 +202021,10 @@ window.CPL_STATEWIDE = {
       "title": "Tilt-Up Introduction",
       "unified_title": "Tilt-Up Introduction",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Tilt-Up Introduction"
@@ -204007,10 +202115,10 @@ window.CPL_STATEWIDE = {
       "title": "Wall and Column Forms / Cutting and Burning (Carpentry)",
       "unified_title": "Wall and Column Forms / Cutting and Burning (Carpentry)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.55,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Wall-Column Forms/Cutting and Burning"
@@ -204054,10 +202162,10 @@ window.CPL_STATEWIDE = {
       "title": "Specialized Forms and Rigging",
       "unified_title": "Specialized Forms and Rigging",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.65,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Specialized Forms and Rigging"
@@ -204148,10 +202256,10 @@ window.CPL_STATEWIDE = {
       "title": "Site Work, Curb and Gutter",
       "unified_title": "Site Work, Curb and Gutter",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Site Work/Curb and Gutter"
@@ -205099,8 +203207,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC86-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 287",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 287",
+      "title": "Welding 3: Advanced SMAW",
+      "unified_title": "Welding 3: Advanced SMAW",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -205146,8 +203254,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC87-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 288",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 288",
+      "title": "Introduction to Structural Blueprints and Layout Instruments",
+      "unified_title": "Introduction to Structural Blueprints and Layout Instruments",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -205193,8 +203301,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC88-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 289",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 289",
+      "title": "Advanced Structural Blueprints and Bridge Building",
+      "unified_title": "Advanced Structural Blueprints and Bridge Building",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -205240,8 +203348,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC89-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 290",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 290",
+      "title": "Falsework, Shoring, and Heavy Timber Framing",
+      "unified_title": "Falsework, Shoring, and Heavy Timber Framing",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -205287,8 +203395,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC90-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 291",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 291",
+      "title": "Advanced Formwork",
+      "unified_title": "Advanced Formwork",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -205334,8 +203442,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC91-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 292",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 292",
+      "title": "Welding 3 FCAW",
+      "unified_title": "Welding 3 FCAW",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -205381,8 +203489,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC92-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 293",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 293",
+      "title": "Welding 4 FCAW Pipe",
+      "unified_title": "Welding 4 FCAW Pipe",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -205428,8 +203536,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC93-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 294",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 294",
+      "title": "Welding 6: FCAW 4G Certification",
+      "unified_title": "Welding 6: FCAW 4G Certification",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -205475,8 +203583,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC94-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 302",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 302",
+      "title": "Introduction to Scaffolds and Confined Space",
+      "unified_title": "Introduction to Scaffolds and Confined Space",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -205522,8 +203630,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC95-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 305",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 305",
+      "title": "Welded Frame and Mobile Tower Scaffold",
+      "unified_title": "Welded Frame and Mobile Tower Scaffold",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -205569,8 +203677,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC96-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 307",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 307",
+      "title": "System Scaffold",
+      "unified_title": "System Scaffold",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -205616,8 +203724,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC97-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 316",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 316",
+      "title": "Hazard Awareness for Scaffold Erectors",
+      "unified_title": "Hazard Awareness for Scaffold Erectors",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -205663,8 +203771,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC98-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 308",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 308",
+      "title": "Suspended Scaffolds and Shoring Systems",
+      "unified_title": "Suspended Scaffolds and Shoring Systems",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -205710,8 +203818,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC99-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 309",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 309",
+      "title": "Tube and Clamp Scaffold",
+      "unified_title": "Tube and Clamp Scaffold",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -205757,8 +203865,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC100-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 311",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 311",
+      "title": "Blueprint Reading for Scaffold Erectors",
+      "unified_title": "Blueprint Reading for Scaffold Erectors",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -205804,8 +203912,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC101-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 314",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 314",
+      "title": "Welding 2",
+      "unified_title": "Welding 2",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -205851,8 +203959,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC102-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 901",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 901",
+      "title": "Mill Cabinet Safety and Tool Skills",
+      "unified_title": "Mill Cabinet Safety and Tool Skills",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -205898,8 +204006,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC103-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 902",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 902",
+      "title": "The Mill Cabinet Apprentice and the Trade",
+      "unified_title": "The Mill Cabinet Apprentice and the Trade",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -205945,8 +204053,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC104-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 903",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 903",
+      "title": "Math for the Mill Cabinet Trade",
+      "unified_title": "Math for the Mill Cabinet Trade",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -205992,8 +204100,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC105-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 904",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 904",
+      "title": "Basic Cabinet Making",
+      "unified_title": "Basic Cabinet Making",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -206039,8 +204147,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC106-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 905",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 905",
+      "title": "Basic Blueprint Reading Mill Cabinet",
+      "unified_title": "Basic Blueprint Reading Mill Cabinet",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -206086,8 +204194,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC107-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 906",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 906",
+      "title": "Machinery Maintenance for Mill Cabinet",
+      "unified_title": "Machinery Maintenance for Mill Cabinet",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -206133,8 +204241,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC108-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 907",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 907",
+      "title": "Cabinet Hardware Installation",
+      "unified_title": "Cabinet Hardware Installation",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -206180,8 +204288,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC109-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 908",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 908",
+      "title": "Sanding, Stains, and Finish Preparation",
+      "unified_title": "Sanding, Stains, and Finish Preparation",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -206227,8 +204335,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC110-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 909",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 909",
+      "title": "Advanced Machinery Operation",
+      "unified_title": "Advanced Machinery Operation",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -206274,8 +204382,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC111-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 910",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 910",
+      "title": "Advanced Blueprint Reading for Mill Cabinet",
+      "unified_title": "Advanced Blueprint Reading for Mill Cabinet",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -206321,8 +204429,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC112-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 911",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 911",
+      "title": "Advanced Cabinet Making",
+      "unified_title": "Advanced Cabinet Making",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -206368,8 +204476,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC113-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 912",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 912",
+      "title": "Veneers, Laminate, and Finishing",
+      "unified_title": "Veneers, Laminate, and Finishing",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -206415,8 +204523,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC114-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 913",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 913",
+      "title": "CAD Basics for Mill Cabinetry",
+      "unified_title": "CAD Basics for Mill Cabinetry",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -206462,8 +204570,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC115-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 914",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 914",
+      "title": "Introduction to CNC",
+      "unified_title": "Introduction to CNC",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -206509,8 +204617,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC116-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 915",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 915",
+      "title": "Solid Surface Material, Fabrication, and Installation",
+      "unified_title": "Solid Surface Material, Fabrication, and Installation",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -206556,8 +204664,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC117-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 916",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 916",
+      "title": "Advanced Project for Mill Cabinet",
+      "unified_title": "Advanced Project for Mill Cabinet",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -207017,10 +205125,10 @@ window.CPL_STATEWIDE = {
       "title": "Starting and Operating an E-commerce Business",
       "unified_title": "Starting and Operating an E-commerce Business",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Starting Operating an E-commerce Business"
@@ -207221,10 +205329,10 @@ window.CPL_STATEWIDE = {
       "title": "SIC Solution Summit Certification",
       "unified_title": "SIC Solution Summit Certification",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.4,
-      "confidence_issuer": 0.4,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "SIC Solution Summit Certification"
@@ -207267,7 +205375,7 @@ window.CPL_STATEWIDE = {
       "title": "Microsoft Publisher Comprehensive",
       "unified_title": "Microsoft Publisher Comprehensive",
       "is_classified": true,
-      "issuing_agency": "Microsoft",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
       "confidence_issuer": 1.0,
@@ -207543,10 +205651,10 @@ window.CPL_STATEWIDE = {
       "title": "Programmable Logic Controllers",
       "unified_title": "Programmable Logic Controllers",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Programmable Logic Controllers"
@@ -208072,10 +206180,10 @@ window.CPL_STATEWIDE = {
       "title": "Spanish Wines",
       "unified_title": "Spanish Wines",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Spanish Wines"
@@ -208296,13 +206404,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-A2EO2-1-001"
       ],
-      "title": "Veterinary Equipment: Operation, Instrumentation, and Safety",
-      "unified_title": "Veterinary Equipment: Operation, Instrumentation, and Safety",
+      "title": "Veterinary Equipment, Operation, Instrumentation and Safety",
+      "unified_title": "Veterinary Equipment, Operation, Instrumentation and Safety",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ANSC 252\tVeterinary Equipment: Operation, Instrumentation, and Safety - Credit by Exam"
@@ -208344,10 +206452,10 @@ window.CPL_STATEWIDE = {
       "title": "Veterinary Laboratory Procedures",
       "unified_title": "Veterinary Laboratory Procedures",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ANSC 253\tVeterinary Laboratory Procedures - Credit by Exam"
@@ -208389,10 +206497,10 @@ window.CPL_STATEWIDE = {
       "title": "Preparation for Veterinary Surgical and Dental Assistance",
       "unified_title": "Preparation for Veterinary Surgical and Dental Assistance",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ANSC 255\tPreparation for Veterinary Surgical and Dental Assistance - Credit by Exam"
@@ -208431,13 +206539,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-A2A&-1-001"
       ],
-      "title": "Veterinary Assistance and Nursing: Emergency Procedures",
-      "unified_title": "Veterinary Assistance and Nursing: Emergency Procedures",
+      "title": "Veterinary Assistance & Nursing: Emergency Procedures",
+      "unified_title": "Veterinary Assistance & Nursing: Emergency Procedures",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.88,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ANSC 256\tVeterinary Assistance & Nursing: Emergency Procedures - Credit by Exam"
@@ -208479,10 +206587,10 @@ window.CPL_STATEWIDE = {
       "title": "Veterinary Assistance and Nursing: Animal Handling",
       "unified_title": "Veterinary Assistance and Nursing: Animal Handling",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.82,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ANSC 257\tVet Assistance & Nurs: Anim Handling - Credit by Exam"
@@ -208524,10 +206632,10 @@ window.CPL_STATEWIDE = {
       "title": "Veterinary Medical Office Procedures",
       "unified_title": "Veterinary Medical Office Procedures",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ANSC 254\tVeterinary Medical Office Procedures - Credit by Exam"
@@ -208659,10 +206767,10 @@ window.CPL_STATEWIDE = {
       "title": "UAV/UAS Basic",
       "unified_title": "UAV/UAS Basic",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "UAV-UAS Basic (ATC 160 C)"
@@ -208791,13 +206899,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRI-F11-1-001"
       ],
-      "title": "Private Pilot Ground School",
-      "unified_title": "Private Pilot Ground School",
+      "title": "Private Pilot 1 Ground School",
+      "unified_title": "Private Pilot 1 Ground School",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Federal Aviation Administration (FAA)",
       "training_agency": "",
       "confidence_title": 0.5,
-      "confidence_issuer": 0.3,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "FLGHT 101"
@@ -209899,10 +208007,10 @@ window.CPL_STATEWIDE = {
       "title": "Principles of Floral Art and Design",
       "unified_title": "Principles of Floral Art and Design",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "EHS 280\tPrinciples of Floral Art and Design - Credit by Exam"
@@ -209943,10 +208051,10 @@ window.CPL_STATEWIDE = {
       "title": "Principles of Floral Art and Design",
       "unified_title": "Principles of Floral Art and Design",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "EHS 280\tPrinciples of Floral Art and Design - Portfolio"
@@ -209987,10 +208095,10 @@ window.CPL_STATEWIDE = {
       "title": "Principles of Floral Art and Design",
       "unified_title": "Principles of Floral Art and Design",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "EHS 280\tPrinciples of Floral Art and Design - Industry Certification"
@@ -210251,10 +208359,10 @@ window.CPL_STATEWIDE = {
       "title": "Teacher Training Practicum",
       "unified_title": "Teacher Training Practicum",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.6,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "CE Teacher Training 3: Practicum (CE 295 C)"
@@ -210559,10 +208667,10 @@ window.CPL_STATEWIDE = {
       "title": "Sheet Metal and Installation 1",
       "unified_title": "Sheet Metal and Installation 1",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "SM 331\tSheet Metal and Installation 1 - Portfolio Review"
@@ -210952,10 +209060,10 @@ window.CPL_STATEWIDE = {
       "title": "TV News Field Report",
       "unified_title": "TV News Field Report",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "The TV News Field Report"
@@ -213287,8 +211395,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC119-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 102",
-      "unified_title": "Carpenters Apprenticeship — CARP 102",
+      "title": "Basic Applications",
+      "unified_title": "Basic Applications",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -213327,8 +211435,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC120-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 117",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 117",
+      "title": "Drywall Lathing Trade Safety",
+      "unified_title": "Drywall Lathing Trade Safety",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -213367,8 +211475,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC121-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 103",
-      "unified_title": "Carpenters Apprenticeship — CARP 103",
+      "title": "Mathematics for Drywall/Lathers",
+      "unified_title": "Mathematics for Drywall/Lathers",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -213407,8 +211515,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC122-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 111",
-      "unified_title": "Carpenters Apprenticeship — CARP 111",
+      "title": "Residential Metal Framing",
+      "unified_title": "Residential Metal Framing",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -213447,8 +211555,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC123-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 105",
-      "unified_title": "Carpenters Apprenticeship — CARP 105",
+      "title": "Doors, Windows, Exterior Systems/Building Documents",
+      "unified_title": "Doors, Windows, Exterior Systems/Building Documents",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -213487,8 +211595,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC124-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 106",
-      "unified_title": "Carpenters Apprenticeship — CARP 106",
+      "title": "Blueprint Reading 1",
+      "unified_title": "Blueprint Reading 1",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -213527,8 +211635,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC125-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 107",
-      "unified_title": "Carpenters Apprenticeship — CARP 107",
+      "title": "Blueprint Reading 2",
+      "unified_title": "Blueprint Reading 2",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -213567,8 +211675,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC126-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 108",
-      "unified_title": "Carpenters Apprenticeship — CARP 108",
+      "title": "Blueprint Reading 3",
+      "unified_title": "Blueprint Reading 3",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -213607,8 +211715,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC127-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 110",
-      "unified_title": "Carpenters Apprenticeship — CARP 110",
+      "title": "Welding 1",
+      "unified_title": "Welding 1",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -213687,8 +211795,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC129-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 104",
-      "unified_title": "Carpenters Apprenticeship — CARP 104",
+      "title": "Exterior/Advanced Fire Control System and Partitions",
+      "unified_title": "Exterior/Advanced Fire Control System and Partitions",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -213727,8 +211835,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC130-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 112",
-      "unified_title": "Carpenters Apprenticeship — CARP 112",
+      "title": "Exterior Systems and Trims",
+      "unified_title": "Exterior Systems and Trims",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -213767,8 +211875,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC131-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 113",
-      "unified_title": "Carpenters Apprenticeship — CARP 113",
+      "title": "Interior Metal Lathing System, Sound Control",
+      "unified_title": "Interior Metal Lathing System, Sound Control",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -213807,8 +211915,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC132-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 114",
-      "unified_title": "Carpenters Apprenticeship — CARP 114",
+      "title": "Ceilings, Shaft Protection and Demountable Partitions",
+      "unified_title": "Ceilings, Shaft Protection and Demountable Partitions",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -213847,8 +211955,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC133-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 115",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 115",
+      "title": "Arches, Furring and Advanced Systems",
+      "unified_title": "Arches, Furring and Advanced Systems",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -213887,8 +211995,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC134-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 116",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 116",
+      "title": "Advanced Construction Techniques",
+      "unified_title": "Advanced Construction Techniques",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -214148,10 +212256,10 @@ window.CPL_STATEWIDE = {
       "title": "Self Defense",
       "unified_title": "Self Defense",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.5,
-      "confidence_issuer": 0.4,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "PEC 164\tSelf Defense"
@@ -214187,10 +212295,10 @@ window.CPL_STATEWIDE = {
       "title": "Self Defense",
       "unified_title": "Self Defense",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.45,
-      "confidence_issuer": 0.4,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "PEC 164\tSelf Defense - Industry Certificate"
@@ -214223,8 +212331,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-P1FF-1-001"
       ],
-      "title": "Personal Fitness Trainer Certification",
-      "unified_title": "Personal Fitness Trainer Certification",
+      "title": "Exercise for Fitness",
+      "unified_title": "Exercise for Fitness",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -214265,10 +212373,10 @@ window.CPL_STATEWIDE = {
       "title": "Exercise for Fitness (Military)",
       "unified_title": "Exercise for Fitness (Military)",
       "is_classified": true,
-      "issuing_agency": "",
-      "training_agency": "U.S. Armed Forces",
+      "issuing_agency": "American Council on Education (ACE)",
+      "training_agency": "",
       "confidence_title": 0.45,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "PEC 140 Exercise for Fitness"
@@ -214838,10 +212946,10 @@ window.CPL_STATEWIDE = {
       "title": "Vietnamese Language",
       "unified_title": "Vietnamese Language",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Vietnamese Credit by Exam"
@@ -214914,10 +213022,10 @@ window.CPL_STATEWIDE = {
       "title": "Reading Comprehension",
       "unified_title": "Reading Comprehension",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "READ 40\tReading Comprehension - Credit by Exam"
@@ -215101,13 +213209,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPOH-WEHS-1-001"
       ],
-      "title": "Work Experience (High School Articulation)",
-      "unified_title": "Work Experience (High School Articulation)",
+      "title": "Work Experience",
+      "unified_title": "Work Experience",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Work Experience High School to College Articulation"
@@ -215294,10 +213402,10 @@ window.CPL_STATEWIDE = {
       "title": "Vietnamese — First Semester",
       "unified_title": "Vietnamese — First Semester",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "First Semester Vietnamese- Credit by Exam"
@@ -217799,13 +215907,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPMM-A1BP-1-001"
       ],
-      "title": "Basic Photography",
-      "unified_title": "Basic Photography",
+      "title": "Photography Beginning",
+      "unified_title": "Photography Beginning",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ART 170 Basic Photography"
@@ -217907,10 +216015,10 @@ window.CPL_STATEWIDE = {
       "title": "Refrigeration Principles",
       "unified_title": "Refrigeration Principles",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Refrigeration Principles"
@@ -218156,10 +216264,10 @@ window.CPL_STATEWIDE = {
       "title": "Refrigeration Service",
       "unified_title": "Refrigeration Service",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Refrigeration Service"
@@ -220480,10 +218588,10 @@ window.CPL_STATEWIDE = {
       "title": "Theatre Arts",
       "unified_title": "Theatre Arts",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Creative Careers Theatre Art"
@@ -220654,10 +218762,10 @@ window.CPL_STATEWIDE = {
       "title": "Nursing Process: Pharmacology",
       "unified_title": "Nursing Process: Pharmacology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "NURSE 270\tNursing Process: Pharmacology - Portfolio Review"
@@ -220679,8 +218787,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-N2PA-1-001"
       ],
-      "title": "Nursing Process: Advanced Medical-Surgical",
-      "unified_title": "Nursing Process: Advanced Medical-Surgical",
+      "title": "Nursing Process Advanced Medical-Surgical",
+      "unified_title": "Nursing Process Advanced Medical-Surgical",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -221127,8 +219235,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRS-P71-1-001"
       ],
-      "title": "Photography (PHOTO 74A — local)",
-      "unified_title": "Photography (PHOTO 74A — local)",
+      "title": "DSLR and Lighting for Professional Production I Beginning",
+      "unified_title": "DSLR and Lighting for Professional Production I Beginning",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -221211,8 +219319,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRS-P72-1-001"
       ],
-      "title": "Photography (PHOT 7A — local)",
-      "unified_title": "Photography (PHOT 7A — local)",
+      "title": "Darkroom 1",
+      "unified_title": "Darkroom 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -221239,8 +219347,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRS-P2-1-001"
       ],
-      "title": "Photography (PHOT 22 — local)",
-      "unified_title": "Photography (PHOT 22 — local)",
+      "title": "Photojournalism",
+      "unified_title": "Photojournalism",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -221267,8 +219375,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRS-P73-1-001"
       ],
-      "title": "Photography (PHOT 74A — local)",
-      "unified_title": "Photography (PHOT 74A — local)",
+      "title": "Studio Photography Techniques 1",
+      "unified_title": "Studio Photography Techniques 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -221439,7 +219547,7 @@ window.CPL_STATEWIDE = {
       "unified_title": "Professional Internship Education",
       "is_classified": true,
       "issuing_agency": "Century High School",
-      "training_agency": "",
+      "training_agency": "Century High School",
       "confidence_title": 0.55,
       "confidence_issuer": 1.0,
       "quality_flag": "",
@@ -221466,10 +219574,10 @@ window.CPL_STATEWIDE = {
       "title": "Veterinary Physiology, Anatomy, and Terminology",
       "unified_title": "Veterinary Physiology, Anatomy, and Terminology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ANSC250 Veterinary Physiology, Anatomy, & Terminology"
@@ -221494,10 +219602,10 @@ window.CPL_STATEWIDE = {
       "title": "Wildland Fire Technology",
       "unified_title": "Wildland Fire Technology",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.6,
+      "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "WIldland Fire Technology"
@@ -221743,8 +219851,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC10-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1201",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1201",
+      "title": "Modular System Installer Safety",
+      "unified_title": "Modular System Installer Safety",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -221771,8 +219879,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC11-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1202",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1202",
+      "title": "Introduction to Office Modular Systems Installation",
+      "unified_title": "Introduction to Office Modular Systems Installation",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -221799,8 +219907,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC12-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 004",
-      "unified_title": "Carpenters Apprenticeship — CARP 004",
+      "title": "Foundations and Floors",
+      "unified_title": "Foundations and Floors",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -221855,8 +219963,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC14-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 006",
-      "unified_title": "Carpenters Apprenticeship — CARP 006",
+      "title": "Structural Framing",
+      "unified_title": "Structural Framing",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -221883,8 +219991,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC15-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 007",
-      "unified_title": "Carpenters Apprenticeship — CARP 007",
+      "title": "Form Detailing, Construction & Erection",
+      "unified_title": "Form Detailing, Construction & Erection",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -221911,8 +220019,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC16-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1208",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1208",
+      "title": "Floor to Ceiling Wall System Construction",
+      "unified_title": "Floor to Ceiling Wall System Construction",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -221939,8 +220047,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC17-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 008",
-      "unified_title": "Carpenters Apprenticeship — CARP 008",
+      "title": "Exterior Finish",
+      "unified_title": "Exterior Finish",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -221967,8 +220075,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC18-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 011",
-      "unified_title": "Carpenters Apprenticeship — CARP 011",
+      "title": "Interior Finish",
+      "unified_title": "Interior Finish",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -221995,8 +220103,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC19-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 020",
-      "unified_title": "Carpenters Apprenticeship — CARP 020",
+      "title": "Commercial Door Hardware",
+      "unified_title": "Commercial Door Hardware",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -222023,8 +220131,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC20-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1207",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1207",
+      "title": "Drapery, Window Coverings, and Fine Furnishings",
+      "unified_title": "Drapery, Window Coverings, and Fine Furnishings",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -222051,8 +220159,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC21-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 012",
-      "unified_title": "Carpenters Apprenticeship — CARP 012",
+      "title": "Layout/Leveling Construction Site Practice",
+      "unified_title": "Layout/Leveling Construction Site Practice",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -222107,8 +220215,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC23-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 503",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 503",
+      "title": "Introduction to Working Drawings, Construction Math and Fire Stop Installation",
+      "unified_title": "Introduction to Working Drawings, Construction Math and Fire Stop Installation",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -222135,8 +220243,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC24-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 504",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 504",
+      "title": "Residential Blueprint Reading and Forklift Safety",
+      "unified_title": "Residential Blueprint Reading and Forklift Safety",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -222163,8 +220271,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC25-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 505",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 505",
+      "title": "Residential Insulation and Weatherization",
+      "unified_title": "Residential Insulation and Weatherization",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -222191,8 +220299,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC26-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 506",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 506",
+      "title": "Commercial Blueprint Reading and Mobile Tower Scaffolds",
+      "unified_title": "Commercial Blueprint Reading and Mobile Tower Scaffolds",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -222219,8 +220327,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC27-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 507",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 507",
+      "title": "Commercial and Industrial Insulation and Aerial Lift",
+      "unified_title": "Commercial and Industrial Insulation and Aerial Lift",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -222247,8 +220355,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC28-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 508",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 508",
+      "title": "Energy Conservation Codes and Standards",
+      "unified_title": "Energy Conservation Codes and Standards",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -222275,8 +220383,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC29-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1205",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1205",
+      "title": "Modular Systems Construction and Quality Control 1",
+      "unified_title": "Modular Systems Construction and Quality Control 1",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -222303,8 +220411,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC30-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1206",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1206",
+      "title": "Modular System Construction and Quality Control 2",
+      "unified_title": "Modular System Construction and Quality Control 2",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -222331,8 +220439,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC31-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 014",
-      "unified_title": "Carpenters Apprenticeship — CARP 014",
+      "title": "Interior Systems",
+      "unified_title": "Interior Systems",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -222387,8 +220495,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC33-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 708",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 708",
+      "title": "Suspended Framing Ceiling Systems",
+      "unified_title": "Suspended Framing Ceiling Systems",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -222415,8 +220523,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC34-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 013",
-      "unified_title": "Carpenters Apprenticeship — CARP 013",
+      "title": "Engineered Structural Systems",
+      "unified_title": "Engineered Structural Systems",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -222443,8 +220551,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC35-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 703",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 703",
+      "title": "Introduction to Grid Ceiling Installation",
+      "unified_title": "Introduction to Grid Ceiling Installation",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -222471,8 +220579,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC36-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 705",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 705",
+      "title": "Specialty Ceiling Systems",
+      "unified_title": "Specialty Ceiling Systems",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -222499,8 +220607,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC37-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 711",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 711",
+      "title": "Integrated Ceilings and Special Techniques",
+      "unified_title": "Integrated Ceilings and Special Techniques",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -222527,8 +220635,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC38-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 712",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 712",
+      "title": "Advanced Grid Ceilings",
+      "unified_title": "Advanced Grid Ceilings",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -222555,8 +220663,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC39-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 706",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 706",
+      "title": "Access Floor Systems",
+      "unified_title": "Access Floor Systems",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -222583,8 +220691,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC40-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 010",
-      "unified_title": "Carpenters Apprenticeship — CARP 010",
+      "title": "Concrete - Precast and Prestressed",
+      "unified_title": "Concrete - Precast and Prestressed",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -222611,8 +220719,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC41-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 018",
-      "unified_title": "Carpenters Apprenticeship — CARP 018",
+      "title": "Commercial Concrete",
+      "unified_title": "Commercial Concrete",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -222667,8 +220775,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC43-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 306",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 306",
+      "title": "Blueprint Reading-Residential",
+      "unified_title": "Blueprint Reading-Residential",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -222751,8 +220859,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC46-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 009",
-      "unified_title": "Carpenters Apprenticeship — CARP 009",
+      "title": "Blueprint Reading-Commercial",
+      "unified_title": "Blueprint Reading-Commercial",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -222807,8 +220915,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC48-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1204",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1204",
+      "title": "Print Reading Measurement and Layout",
+      "unified_title": "Print Reading Measurement and Layout",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -222835,8 +220943,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC49-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 714",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 714",
+      "title": "Acoustical Blueprint Reading",
+      "unified_title": "Acoustical Blueprint Reading",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -222863,8 +220971,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC50-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 016",
-      "unified_title": "Carpenters Apprenticeship — CARP 016",
+      "title": "Roof Framing",
+      "unified_title": "Roof Framing",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -222891,8 +220999,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC51-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 015",
-      "unified_title": "Carpenters Apprenticeship — CARP 015",
+      "title": "Stair Building",
+      "unified_title": "Stair Building",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -222919,8 +221027,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC52-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 404",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 404",
+      "title": "Tools of the Trade and Installation of Hardwood Floors",
+      "unified_title": "Tools of the Trade and Installation of Hardwood Floors",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -222947,8 +221055,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC53-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 405",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 405",
+      "title": "Finishing and Repairing Floors",
+      "unified_title": "Finishing and Repairing Floors",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223003,8 +221111,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC55-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 313",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 313",
+      "title": "Introduction to Welding and Cutting",
+      "unified_title": "Introduction to Welding and Cutting",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223031,8 +221139,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC56-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 001",
-      "unified_title": "Carpenters Apprenticeship — CARP 001",
+      "title": "The Acoustical Apprentice, Safety, and the Trade",
+      "unified_title": "The Acoustical Apprentice, Safety, and the Trade",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -223087,8 +221195,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC58-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 709",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 709",
+      "title": "Infection Control Risk Assessment and Hospital Code for Acoustical Installers",
+      "unified_title": "Infection Control Risk Assessment and Hospital Code for Acoustical Installers",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223115,8 +221223,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC59-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 715",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 715",
+      "title": "Specialty Systems",
+      "unified_title": "Specialty Systems",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223143,8 +221251,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC60-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 856",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 856",
+      "title": "Millwright Safety and Tool Skills",
+      "unified_title": "Millwright Safety and Tool Skills",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223171,8 +221279,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC61-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 857",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 857",
+      "title": "The Millwright Apprentice, the Trade, and 16 Hour Safety",
+      "unified_title": "The Millwright Apprentice, the Trade, and 16 Hour Safety",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223199,8 +221307,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC62-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 858",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 858",
+      "title": "Millwright Math Applications",
+      "unified_title": "Millwright Math Applications",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223227,8 +221335,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC63-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 864",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 864",
+      "title": "Cutting and Welding 1",
+      "unified_title": "Cutting and Welding 1",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223255,8 +221363,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC64-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 860",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 860",
+      "title": "Materials of Construction",
+      "unified_title": "Materials of Construction",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223283,8 +221391,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC65-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 861",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 861",
+      "title": "Layout Procedures for Millwrights",
+      "unified_title": "Layout Procedures for Millwrights",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223311,8 +221419,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC66-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 862",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 862",
+      "title": "Precision Optical Instruments",
+      "unified_title": "Precision Optical Instruments",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223339,8 +221447,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC67-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 863",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 863",
+      "title": "Blueprint Reading and Aerial Lift",
+      "unified_title": "Blueprint Reading and Aerial Lift",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223367,8 +221475,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC68-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 859",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 859",
+      "title": "Millwright Rigging",
+      "unified_title": "Millwright Rigging",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223395,8 +221503,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC69-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 865",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 865",
+      "title": "Welding 2 SMAW",
+      "unified_title": "Welding 2 SMAW",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223423,8 +221531,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC70-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 866",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 866",
+      "title": "Monorails",
+      "unified_title": "Monorails",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223451,8 +221559,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC71-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 867",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 867",
+      "title": "Conveyors for Millwrights",
+      "unified_title": "Conveyors for Millwrights",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223479,8 +221587,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC72-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 868",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 868",
+      "title": "Machinery Installation",
+      "unified_title": "Machinery Installation",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223507,8 +221615,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC73-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 869",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 869",
+      "title": "Machinery Maintenance for Millwrights",
+      "unified_title": "Machinery Maintenance for Millwrights",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223535,8 +221643,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC74-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 870",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 870",
+      "title": "Precision Tools for Millwrights",
+      "unified_title": "Precision Tools for Millwrights",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223563,8 +221671,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC75-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 871",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 871",
+      "title": "Turbines",
+      "unified_title": "Turbines",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223591,8 +221699,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC76-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 872",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 872",
+      "title": "Cutting and Welding 3",
+      "unified_title": "Cutting and Welding 3",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223619,8 +221727,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC77-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 278",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 278",
+      "title": "Worker Safety and Tool Skills for Pile Drivers",
+      "unified_title": "Worker Safety and Tool Skills for Pile Drivers",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223647,8 +221755,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC78-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 279",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 279",
+      "title": "Pile Driver Math Applications",
+      "unified_title": "Pile Driver Math Applications",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223675,8 +221783,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC79-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 280",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 280",
+      "title": "Pile Driver Rigging",
+      "unified_title": "Pile Driver Rigging",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223703,8 +221811,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC80-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 281",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 281",
+      "title": "Form Detailing, Construction, and Erection for Pile Drivers",
+      "unified_title": "Form Detailing, Construction, and Erection for Pile Drivers",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223731,8 +221839,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC81-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 282",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 282",
+      "title": "Welding 1: Introduction to SMAW",
+      "unified_title": "Welding 1: Introduction to SMAW",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223759,8 +221867,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC82-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 283",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 283",
+      "title": "Introduction to Land and Water Pile Driving",
+      "unified_title": "Introduction to Land and Water Pile Driving",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223815,8 +221923,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC84-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 285",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 285",
+      "title": "Advanced Pile Driving Land and Water",
+      "unified_title": "Advanced Pile Driving Land and Water",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223843,8 +221951,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC85-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 286",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 286",
+      "title": "Wharfage and Marine Structures",
+      "unified_title": "Wharfage and Marine Structures",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -225822,6 +223930,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-07-09T19:02:12",
+  "generated_at": "2026-07-09T19:33:27",
   "total_credit_recs": 12714
 };
