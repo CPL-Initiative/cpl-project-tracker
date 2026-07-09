@@ -2354,3 +2354,20 @@ in-flight guard); **＋ add issuing agency** → new `issuing_agency_additional_
 promotes BOTH issuer fields additively (+ Mode A3 trainer). Plan: **1,009 staged / 1,125 queue**,
 284 titles, 152 residual; verifier 50 checks; suite 142 green. Full story:
 `docs/exhibit_canonicalization_lessons.md` (2026-07-08 "continued 9" – "continued 11 addendum").
+
+
+### Session 107 — SkyKey: the PR-5b re-key goes LIVE — 49 renames applied, the confirm-merge lane, and Sam's four evening asks (2026-07-08)
+
+Sam's 137 Session-106-day saves folded (dispatch); the refreshed dry-run showed 49 clean
+renames held hostage by his 6 merge-shaped collisions (AoJ code rows → existing C-ID-anchored
+credentials — the case PR-5b/2 was deferred for). #697 made the collision queue NON-BLOCKING;
+the **first production rename apply** (PR-5b/1 run #1) landed all 49 (V1–V4 green; Supabase
+106 ops/0 fail; receipts `kb/cred_rename_out/2026-07-08/`). #698 shipped **PR-5b/2**: Save-time
+collision detect + confirm → the new `unified_title_merge_confirm` row; a pending-merges strip
+for the saved six; dry-run `merges` lane; apply FOLD with dedupe + drift abort. Sam's four
+evening asks landed within the hour: unlimited ＋ agencies (#699, " | "-joined + Mode A2 split),
+the hs-generic "Local High School" + ase-align lanes (#702 — 12 ASE rows whose Saves flow
+through the new confirm-merge), 🔎/✨ issuer lookup via the report proxy (#701); plus the
+daily-run push-race fix (#700 — unstaged regen discarded before the retry rebase). Suite 145;
+verifier 56. Sam's calls pending: confirm the 6 merges · ASE/AWS/OSHA spellings · IBEW re-point.
+Full story: `docs/exhibit_canonicalization_lessons.md` ("continued 12"); next: `docs/session_108_handoff.md`.

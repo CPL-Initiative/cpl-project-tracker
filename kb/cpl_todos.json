@@ -1,9 +1,21 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-09 · Session 108 close (HUGE night: queue 1,036 → 233 — your saves + the HS rule + the bulk-CCC close-out all folded)",
- "_session": 108,
- "_status": "Tonight all landed: the COCI title resolution + 🔎/✨ title lookup (#707), your **HS rule (#710 — fused CCHS tokens, dotted H.S., multi-school rows → “Local High School”; bare “HS ###” correctly stays a subject code), and the bulk-CCC close-out you scoped (339 rows as ccc-bulk-s108@bot; your own saves always won the race). Everything folded and the tab re-baked: the blank-agency queue is down to 233 — almost all NEW rows minted by tonight's renames/splits, 200 of them pre-filled and waiting for you.",
+ "_as_of": "2026-07-09 · Session 109 close (CER v2 LIVE — one surface, edits in-cell; MAP Export tab for Malone)",
+ "_session": 109,
+ "_status": "The CER got the face you asked for: lane chips (All / 📥 Unclassified / 🏷 No issuer / ⇒ Merge confirms / ○ Not initiated / ✓ Initiated) over ONE full-width table where the title, issuer(s), and trainer edit right in the cell — mustard stripe + 💾 Save per row, 💾 Save all in the bar, Enter saves. SUBJ sits beside Discipline; audit/quality-flag columns are gone (still in the ▸ drawer); Variants/Confidence/Eligible-units live under ⚙ Columns. ⬇ Excel (CSV) and ⬇ JSON pull the live canonical layer. New 🗺 MAP Export tab renders every credential in Malone's FullExhibitJSON shape with the raw local titles under each — his integration feed. Your 233-row data queue is untouched and waiting in the 🏷 No issuer lane.",
  "items": [
+  {
+   "id": "cer-v2-shakedown",
+   "who": "sam",
+   "tab": "credential-reference",
+   "text": "Drive the new CER surface on your next pass — everything you used to open the Curate panel for (title, issuer, ＋ extra issuers, trainer) now edits in-cell. Tell Fable what to tune (row height, column widths, lane order)."
+  },
+  {
+   "id": "map-export-malone",
+   "who": "sam",
+   "tab": "map-export",
+   "text": "Send Malone the 🗺 MAP Export tab (or its ⬇ Download all JSON) — every canonical credential in his FullExhibitJSON shape with the local title variants underneath. His schema feedback lands in one mapping function."
+  },
   {
    "id": "next-lane-pass",
    "who": "sam",
@@ -29,46 +41,10 @@
    "text": "FYI: your 4 CCC saves on Microsoft-titled Cx rows split that family's evidence (18 Microsoft vs 4 CCC), so Excel I/II + Publisher prefilled CCC following your lead — shout if you'd rather they stay Microsoft."
   },
   {
-   "id": "issuer-spellings",
-   "who": "sam",
-   "tab": "credential-reference",
-   "text": "Still pending your spelling calls: ASE long-vs-short form · AWS “(AWS)” suffix · OSHA “U.S.” prefix · the IBEW → Riverside JAC re-point."
-  },
-  {
-   "id": "clep-complete-both",
-   "who": "sam",
-   "tab": "credential-reference",
-   "text": "Still the last unclassified rows: the CLEP French/German/Spanish “Levels 1 and 2 — Complete both” spans."
-  },
-  {
-   "id": "rename-apply-next",
+   "id": "fable-v2-tuning",
    "who": "fable",
    "tab": "credential-reference",
-   "text": "After Sam's next confirms/saves, dispatch cred-rename-apply.yml — the fan-in fixes are in; converging batches land clean."
-  },
-  {
-   "id": "preseed-refresh",
-   "who": "fable",
-   "tab": "credential-reference",
-   "text": "After Sam's next pass + fold: re-run kb/_preseed_null_issuers.py (pip install openpyxl first) + the 63-check verifier; saved rows drop out."
-  },
-  {
-   "id": "bulk-ccc-repeat",
-   "who": "fable",
-   "tab": "credential-reference",
-   "text": "If Sam asks for another bulk-CCC set: follow docs/kb-notes/methodology-live-curation-concurrency.md — fresh live diff, INSERT-only ON CONFLICT DO NOTHING, receipt cohort."
-  },
-  {
-   "id": "audit-rerun-colleges",
-   "who": "fable",
-   "tab": "credential-reference",
-   "text": "Re-run kb/_audit_exhibits.py with a fresh PII-purged CustomReport so originating-college chips populate on CLASSIFIED Triage rows."
-  },
-  {
-   "id": "apprenticeship-issuers",
-   "who": "fable",
-   "tab": "credential-reference",
-   "text": "Carryover: DIR-pending apprenticeship residuals + fire-family twins + 3 mojibake families + MOC→COS bridge + the receipt-dir <date>-runN hardening."
+   "text": "Fold Sam's v2 shakedown feedback + Malone's MAP Export schema deltas; then back to the standing data lanes (bulk-CCC close-outs on request, CCR Convergence voice pass)."
   }
  ]
 }

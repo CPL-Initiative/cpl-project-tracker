@@ -816,6 +816,7 @@ detailed in §7c):
 | `cpl-news` | CPL News | **Auto-curated** CPL news feed (CA-first, then national; + adjacent systems Career Passport / CA Master Plan / workforce-upskilling + CA budget items). Live-reads `public.cpl_news` (filled daily by the `cpl-news-harvest` Edge Function); filters, suggest-a-story (the path closed socials enter), reviewer feature/hide. Renderer `cpl_news.js` (static, lazy). **Added Session 67 (Skywatch), PR #481.** Docs: `docs/cpl_news_lessons.md`. |
 | `raci` | Team & RACI | Ownership spine for the workplan — a **3-tier RACI Matrix** (Activity → sub-activity → project/work item, each RACI-able × R/A/C/I) + an editable **Team Directory** + per-member update-**nudge** toggle, over Supabase `team_members` + `item_raci` (public read, reviewer write). Matrix has a **hierarchical scope filter** (Activity / sub-activity optgroups) + per-card **`👥 RACI` deep-links** (Session 76). Renderer `raci.js` (static, lazy). **Added Session 75 (SkyMaster), PRs #546–#548; nav PR #550 + 3-tier PR #553 (Session 76).** Docs: `docs/cobi_raci_nudge_lessons.md`. |
 | `map-users` | MAP Users | Manage the MAP platform's per-college **user roster** (MAP "College Users & Roles", staff PII) + a per-college refresh **nudge**. Public view = counts + role mix (anon `map_users_summary()`); roster (names/emails) reviewer/team-phrase-gated; 📣 nudge = mailto to Primary Contact + VPAA + VPSS. Renderer `map_users.js` (static, lazy). Gated Supabase `map_college_users` + `map_college_contacts`, synced by `map/sync_map_users.py` (`map-users-sync.yml`). **Added Session 87 (StarMax), PRs #618–#621.** Scope: `docs/map_users_tab_scope.md`. |
+| `map-export` | 🗺 MAP Export | The **canonical credential layer shaped to the MAP Exhibit Module** (Malone's FullExhibitJSON — sample committed at `kb/reference/map_full_exhibit_sample.json`): one record per unified title with honest nulls, live kb_curation overrides applied, additive `localVariants` (the raw college-entered titles) + `trainingAgency` extension fields; search + master-detail JSON viewer + ⬇ Download all (JSON) / ⬇ CSV / per-record ⬇⧉. Renderer `map_export.js` (static, lazy — loads `credential_reference_data.js` on demand). **Added Session 109 (SkyBreak).** Tests: `tests/map_export.test.js` (70). Docs: `docs/cer_v2_redesign_lessons.md`. |
 | `sierra-training` | Sierra Training | **Team-only** improvement loop for Sierra (Phases 1+2 of `docs/sierra_training_tab_scope.md`): the 👍/👎 **feedback queue** (`sierra_feedback`, triage `new→triaged→addressed` via the `sierra_feedback_set_status` RPC; **Session 94 P1**: 🧪 Test-in-Sierra prefill handoff → `#chatbot`, ⧉ copy, 24h/7d/30d date filters, bulk triage, and a per-row **chat-turn telemetry link** — similarity/topic-match/gap chips) + a **gap miner** over `chat_interactions` (low-similarity turns, punt-signature answers, recurring themes, audience slice) + the **🧭 GUIDANCE pane** (Session 94 Phase 2 — author short directives in `sierra_guidance`; cpl-chat v26 appends the newest 10 active to every prompt INCLUDING the production widget; deactivate, never delete; honest "sent / beyond top-10" chips). Renderer `sierra_training.js` (static, lazy, the `map_users.js` pattern); reviewer/team-phrase gated server-side by RLS — logged out sees only the sign-in gate. NEVER writes to the public KB (curation pipeline only). **Added Session 93 (SkyReach); P1+P2 Session 94 (SkySierra, #650/#651).** Tests: `tests/sierra_training.test.js` (38) + `tests/sierra_training_p1.test.js` (26) + `tests/sierra_guidance.test.js` (23). |
 
 **Not a tab, but launched from the rail:** the **public CPL Fact Sheet**
@@ -2433,22 +2434,11 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full story:
 > `docs/exhibit_canonicalization_lessons.md` (2026-07-08 "continued 9"–"continued 11 addendum").
 
-### Session 107 — SkyKey: the PR-5b re-key goes LIVE — 49 renames applied, the confirm-merge lane, and Sam's four evening asks (2026-07-08)
-
-Sam's 137 Session-106-day saves folded (dispatch); the refreshed dry-run showed 49 clean
-renames held hostage by his 6 merge-shaped collisions (AoJ code rows → existing C-ID-anchored
-credentials — the case PR-5b/2 was deferred for). #697 made the collision queue NON-BLOCKING;
-the **first production rename apply** (PR-5b/1 run #1) landed all 49 (V1–V4 green; Supabase
-106 ops/0 fail; receipts `kb/cred_rename_out/2026-07-08/`). #698 shipped **PR-5b/2**: Save-time
-collision detect + confirm → the new `unified_title_merge_confirm` row; a pending-merges strip
-for the saved six; dry-run `merges` lane; apply FOLD with dedupe + drift abort. Sam's four
-evening asks landed within the hour: unlimited ＋ agencies (#699, " | "-joined + Mode A2 split),
-the hs-generic "Local High School" + ase-align lanes (#702 — 12 ASE rows whose Saves flow
-through the new confirm-merge), 🔎/✨ issuer lookup via the report proxy (#701); plus the
-daily-run push-race fix (#700 — unstaged regen discarded before the retry rebase). Suite 145;
-verifier 56. Sam's calls pending: confirm the 6 merges · ASE/AWS/OSHA spellings · IBEW re-point.
-Full story: `docs/exhibit_canonicalization_lessons.md` ("continued 12"); next: `docs/session_108_handoff.md`.
-
+> **Session 107 narrative (SkyKey — the PR-5b re-key LIVE: 49 renames applied, the
+> confirm-merge lane #698, unlimited ＋ agencies #699, hs-generic/ase-align #702,
+> 🔎/✨ issuer lookup #701, the push-race fix #700) archived** →
+> [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full story:
+> `docs/exhibit_canonicalization_lessons.md` ("continued 12").
 
 ### Session 108 — SkyPhilo: the big triage night — COCI code-titles, the HS rule, and the bulk-CCC close-out (2026-07-08/09)
 
@@ -2463,6 +2453,22 @@ INSERT-only, 29 lost the race to his saves as designed. Fold + rename apply land
 **1,036 → 233** (200 re-prefilled). Verifier 63 (queue spots presence-conditional). Full story:
 `docs/exhibit_canonicalization_lessons.md` ("continued 14"–"15 + addendum") +
 `docs/kb-notes/methodology-live-curation-concurrency.md`; next: `docs/session_109_handoff.md`.
+
+
+### Session 109 — SkyBreak: CER v2 — one surface, edits in-cell + the MAP Export feed (2026-07-09)
+
+Sam design-locked a morning mockup (#713; #714 made Pages serve `prototype/`) and the port
+landed same-day: the CER main list now edits IN-CELL (title / issuer + unlimited ＋ agencies /
+trainer → the same kb_curation overrides as the old Curate panel, merge-collision confirm
+inline), with the Triage queues as **lane chips** over one full-width surface (All / 📥
+Unclassified / 🏷 No issuer / ⇒ Merge confirms / ○ Not initiated / ✓ Initiated — the ⚠ Triage
+button retired), a new **SUBJ** column, Students rename, audit/quality-flag columns retired to
+the drawer, Variants/Conf/Elig-units behind ⚙ Columns (`cplCerCols.v1`), lean filters (+CPL
+type +Discipline), and **⬇ Excel (CSV) / ⬇ JSON** live extracts. New **🗺 MAP Export tab**
+(`map_export.js`) shapes every canonical credential to Malone's MAP Exhibit Module
+FullExhibitJSON (sample: `kb/reference/map_full_exhibit_sample.json`) for the MAP integration.
+Suite 147 (+`cer_v2_grid` 35 + `map_export`). Full story: `docs/cer_v2_redesign_lessons.md`;
+next: `docs/session_110_handoff.md`.
 
 
 ---

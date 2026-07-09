@@ -101,7 +101,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function open(opts) {
   const ctx = makeDom(opts || {});
   await sleep(80);
-  ctx.window.document.querySelector(".cr-triage-btn").click();
+  Array.from(ctx.window.document.querySelectorAll(".cr-lane")).find((b) => /Unclassified/.test(b.textContent)).click();
   await sleep(80);
   return ctx;
 }

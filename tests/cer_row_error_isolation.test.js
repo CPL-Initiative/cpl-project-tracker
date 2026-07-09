@@ -28,7 +28,7 @@ const payload = {
     { ut: "Alpha Credential", raw_count: 1, conf_title: 0.9, audit_tags: {},
       audit_tag_total: 0, raw_variants: [{ r: "Alpha Raw", c: 0.9 }], articulations: [] },
     { ut: "Broken Row", raw_count: 1, conf_title: 0.5, audit_tags: {},
-      audit_tag_total: 0, quality_flag: 5, articulations: [] },  // numeric flag → renderRow throws
+      audit_tag_total: 0, conf_title_poison: 1, conf_title: "bogus", articulations: [] },  // string conf → crTitleChips .toFixed throws in renderRow
     { ut: "Gamma Credential", raw_count: 1, conf_title: 0.8, audit_tags: {},
       audit_tag_total: 0, articulations: [] },
   ],

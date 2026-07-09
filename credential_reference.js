@@ -791,6 +791,11 @@
       if (!row.audit_tags[state.tagFilter]) return false;
     }
     if (state.flagOnly && !row.has_quality_flag) return false;
+    // CER v2 lean filters + grid lanes (2026-07-09)
+    if (state.cplTypeFilter !== "all"
+        && (row.cpl_types || []).indexOf(state.cplTypeFilter) < 0) return false;
+    if (state.discFilter !== "all" && row.disc_modal !== state.discFilter) return false;
+    if (!inLane(row, state.lane)) return false;
     if (state.search) {
       var q = state.search;
       // raw_variants is null on baked rows until the payload carries them, so
@@ -819,6 +824,8 @@
       primary_issuer:  function (r) { return (r.primary_issuer || "~").toLowerCase(); },
       conf_modal:      function (r) { return r.conf_modal; },
       conf_issuer:     function (r) { return r.conf_issuer; },
+      subj:            function (r) { return subjOf(r) || "~"; },
+      primary_trainer: function (r) { return (r.primary_trainer || "~").toLowerCase(); },
       audit_tag_total: function (r) { return r.audit_tag_total; },
       flag_label:      function (r) { return r.flag_label || "~"; },
       reviewed:        function (r) { return r.curator_reviewed_at ? 1 : 0; },
@@ -857,6 +864,16 @@
     issuerFilter: "all",
     tagFilter: "all",
     flagOnly: false,
+    // ── CER v2 (2026-07-09, design locked on prototype/cer_triage_redesign_v1.html) ──
+    // One editable surface: `lane` picks a queue chip; "unc"/"noiss"/"merge"
+    // render the (already in-cell) triage sections, everything else is the
+    // main grid — which now edits in-cell too.
+    lane: "all",           // all | unc | noiss | merge | open | done
+    cplTypeFilter: "all",  // new lean-filter row
+    discFilter: "all",
+    rowDraft: {},          // ut → {title, issuer, extra:[..], trainer} UNSAVED grid edits
+    rowSaved: {},          // ut → true — grid row saved this session (✓ saved)
+    visCols: null,         // column-picker prefs (loaded from localStorage in init)
     sort: { key: "unified_title", dir: "asc" },
     expanded: {},  // unified_title → bool (row body open)
     curateOpen: {},  // unified_title → bool (per-row Curate panel open; default collapsed)
@@ -967,6 +984,181 @@
   }
   function selectedCount() { return selectedRows().length; }
 
+  // ─── CER v2 helpers (2026-07-09) ────────────────────────────────────────
+
+  // Column-picker prefs — per-browser, label-stable across regens.
+  var COL_PREFS_KEY = "cplCerCols.v1";
+  var COL_DEFAULTS = { subj: true, disc: true, issuer: true, trainer: true,
+    students: true, variants: false, conf: false, elig: false };
+  function loadColPrefs() {
+    try {
+      var raw = localStorage.getItem(COL_PREFS_KEY);
+      if (!raw) return Object.assign({}, COL_DEFAULTS);
+      var got = JSON.parse(raw);
+      var out = Object.assign({}, COL_DEFAULTS);
+      Object.keys(COL_DEFAULTS).forEach(function (k) {
+        if (typeof got[k] === "boolean") out[k] = got[k];
+      });
+      return out;
+    } catch (e) { return Object.assign({}, COL_DEFAULTS); }
+  }
+  function saveColPrefs() {
+    try { localStorage.setItem(COL_PREFS_KEY, JSON.stringify(state.visCols)); }
+    catch (e) { /* private mode — session-only prefs */ }
+  }
+  function visCols() {
+    if (!state.visCols) state.visCols = loadColPrefs();
+    return state.visCols;
+  }
+
+  // Modal SUBJ4 across a credential's articulated common courses — the CCR
+  // identity's subject token ("CNSR M10AA" → CNSR, "EMS 100" → EMS,
+  // "BIOL C1000" → BIOL). Representative, cached per row.
+  function subjOf(r) {
+    if (r._subj !== undefined) return r._subj;
+    var counts = {}, best = "", bestN = 0;
+    (r.articulations || []).forEach(function (a) {
+      var tok = a && a.cid ? String(a.cid).split(/\s+/)[0] : "";
+      if (!/^[A-Za-z][A-Za-z-]{1,7}$/.test(tok)) return;
+      counts[tok] = (counts[tok] || 0) + 1;
+      if (counts[tok] > bestN) { bestN = counts[tok]; best = tok; }
+    });
+    r._subj = best || null;
+    return r._subj;
+  }
+
+  // Lane membership for the main-grid lanes ("unc"/"noiss"/"merge" render the
+  // triage sections instead — see render()).
+  function inLane(r, lane) {
+    if (lane === "open") return !r.curator_reviewed_at;
+    if (lane === "done") return !!r.curator_reviewed_at;
+    return true;  // "all"
+  }
+
+  // Draft plumbing — the grid's unsaved in-cell edits. Baselines come from
+  // the overlay-applied row so an untouched input is never "dirty".
+  function draftOf(r) {
+    var ut = r.unified_title;
+    if (!state.rowDraft[ut]) {
+      var ov = state.overlay[ut] || {};
+      state.rowDraft[ut] = {
+        title: r.display_title || ut,
+        issuer: r.primary_issuer || "",
+        extra: splitIssuers(ov.issuer2_override || ""),
+        trainer: r.primary_trainer || "",
+      };
+    }
+    return state.rowDraft[ut];
+  }
+  function rowIsDirty(r) {
+    var ut = r.unified_title;
+    if (!state.rowDraft[ut] || state.rowSaved[ut]) return false;
+    var d = state.rowDraft[ut];
+    var ov = state.overlay[ut] || {};
+    var extraBase = splitIssuers(ov.issuer2_override || "").join(" | ");
+    return d.title !== (r.display_title || ut)
+      || d.issuer !== (r.primary_issuer || "")
+      || d.extra.filter(function (x) { return x.trim(); }).join(" | ") !== extraBase
+      || d.trainer !== (r.primary_trainer || "");
+  }
+  function dirtyRows() {
+    return state.rows.filter(function (r) { return rowIsDirty(r); });
+  }
+
+  // ── ⬇ extract buttons (2026-07-09, Sam) — live credential layer, overlay
+  // included. CSV opens in Excel (the funding-tab precedent); JSON is the
+  // full canonical record set.
+  function downloadBlob(name, mime, text) {
+    var blob = new Blob([text], { type: mime });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function () {
+      URL.revokeObjectURL(a.href);
+      if (a.parentNode) a.parentNode.removeChild(a);
+    }, 0);
+  }
+  function exportRecords() {
+    return state.rows.map(function (r) {
+      var ov = state.overlay[r.unified_title] || {};
+      return {
+        unified_title: r.display_title || r.unified_title,
+        kb_key: r.unified_title,
+        issuing_agency: r.primary_issuer || null,
+        additional_issuing_agencies: splitIssuers(ov.issuer2_override || ""),
+        all_recorded_issuers: r.issuers || (r.primary_issuer ? [r.primary_issuer] : []),
+        training_agency: r.primary_trainer || null,
+        subj: subjOf(r),
+        discipline: r.disc_modal || null,
+        top_code: r.top_modal || null,
+        cpl_types: r.cpl_types || [],
+        statewide_ccc: !!r.statewide,
+        students_served: (typeof r.students_served === "number") ? r.students_served
+          : (r.served_suppressed ? "<5" : null),
+        eligible_credit_units: (typeof r.eligible_credits === "number") ? r.eligible_credits : null,
+        quality_flag: r.flag_label || null,
+        confidence_title: (typeof r.conf_modal === "number") ? r.conf_modal : null,
+        initiated_by: r.curator_reviewed_by || null,
+        initiated_at: r.curator_reviewed_at || null,
+        raw_variants: (r.raw_variants || []).map(function (v) { return v.raw_title; }),
+        articulations: (r.articulations || []).map(function (a) {
+          return {
+            course_id: a.cid, id_system: a.sys, title: a.t,
+            discipline: a.disc || null,
+            local_courses: (a.local || []).map(function (lc) {
+              return { code: ((lc.subj || "") + " " + (lc.num || "")).trim(),
+                       title: lc.t || null, units: (lc.u != null ? lc.u : null),
+                       colleges: lc.colleges || [] };
+            }),
+          };
+        }),
+      };
+    });
+  }
+  function csvCell(v) {
+    if (v == null) v = "";
+    v = String(v);
+    return (/[",\n]/.test(v)) ? '"' + v.replace(/"/g, '""') + '"' : v;
+  }
+  function exportCsv() {
+    var head = ["Unified Title", "Issuing Agency", "Additional Issuers", "Training Agency",
+      "SUBJ", "Discipline", "TOP", "CPL Types", "Statewide (CCC)", "Students",
+      "Eligible Units", "Quality Flag", "Confidence", "Initiated By", "Initiated On",
+      "Raw Variants", "Articulated Courses"];
+    var lines = [head.join(",")];
+    exportRecords().forEach(function (x) {
+      lines.push([
+        x.unified_title, x.issuing_agency, x.additional_issuing_agencies.join(" | "),
+        x.training_agency, x.subj, x.discipline, x.top_code,
+        x.cpl_types.join(" | "), x.statewide_ccc ? "yes" : "",
+        x.students_served, x.eligible_credit_units, x.quality_flag,
+        x.confidence_title, x.initiated_by,
+        x.initiated_at ? x.initiated_at.slice(0, 10) : "",
+        x.raw_variants.join(" | "),
+        x.articulations.map(function (a) { return a.course_id; }).join(" | "),
+      ].map(csvCell).join(","));
+    });
+    var d = new Date().toISOString().slice(0, 10);
+    downloadBlob("credential_reference_" + d + ".csv",
+      "text/csv;charset=utf-8", "\uFEFF" + lines.join("\r\n"));
+  }
+  function exportJson() {
+    var d = new Date().toISOString().slice(0, 10);
+    var payload = {
+      _meta: {
+        generated_at: new Date().toISOString(),
+        source: "COBI Credential Reference (canonical credential layer)",
+        rows: state.rows.length,
+        note: "Live view — includes Supabase curation overrides applied at export time.",
+      },
+      credentials: exportRecords(),
+    };
+    downloadBlob("credential_reference_" + d + ".json",
+      "application/json", JSON.stringify(payload, null, 2));
+  }
+
   // ─── rendering ──────────────────────────────────────────────────────────
 
   function renderToolbar() {
@@ -974,23 +1166,53 @@
     if (!tb) return;
     clearNode(tb);
 
-    var bandSel = el("select", { class: "cr-filter", id: "cr-band-filter" });
-    [
-      ["all", "Confidence: any"],
-      ["0.95-1.00", "Confidence: 0.95–1.00"],
-      ["0.80-0.94", "Confidence: 0.80–0.94"],
-      ["0.60-0.79", "Confidence: 0.60–0.79 (review queue)"],
-      ["0.40-0.59", "Confidence: 0.40–0.59 (high priority)"],
-      ["<0.40",     "Confidence: <0.40 (lowest)"],
-    ].forEach(function (opt) {
-      var o = el("option", { value: opt[0] }, [opt[1]]);
-      if (opt[0] === state.bandFilter) o.selected = true;
-      bandSel.appendChild(o);
-    });
-    bandSel.onchange = function () { state.bandFilter = this.value; render(); };
-    tb.appendChild(bandSel);
+    // ── CER v2 lean bar (2026-07-09): Search · CPL type · Discipline ·
+    // Issuer · Conf · Group · ⚙ Columns · ⬇ CSV · ⬇ JSON · bulk · Save all ·
+    // auth. The audit-tag dropdown + quality-flag checkbox retired from the
+    // bar (both live on in the drawer); the ⚠ Triage button became lanes.
 
-    // Issuer typeahead — many issuers (126), so use a datalist-backed input.
+    // Search first — the highest-frequency control.
+    var search = el("input", {
+      class: "cr-filter cr-search-wide", id: "cr-search", type: "search",
+      placeholder: "Search title, raw variant, issuer…",
+      autocomplete: "off",
+    });
+    search.value = state.search;
+    search.oninput = function () {
+      state.search = this.value.toLowerCase();
+      render();
+    };
+    tb.appendChild(search);
+
+    // CPL type (new) — union of the rows' cpl_types.
+    var cplSet = {};
+    state.rows.forEach(function (r) {
+      (r.cpl_types || []).forEach(function (t) { if (t) cplSet[t] = true; });
+    });
+    var cplSel = el("select", { class: "cr-filter", id: "cr-cpltype-filter", title: "CPL type" });
+    cplSel.appendChild(el("option", { value: "all" }, ["CPL type: any"]));
+    Object.keys(cplSet).sort().forEach(function (t) {
+      var o = el("option", { value: t }, [t]);
+      if (t === state.cplTypeFilter) o.selected = true;
+      cplSel.appendChild(o);
+    });
+    cplSel.onchange = function () { state.cplTypeFilter = this.value; render(); };
+    tb.appendChild(cplSel);
+
+    // Discipline (new) — union of disc_modal.
+    var discSet = {};
+    state.rows.forEach(function (r) { if (r.disc_modal) discSet[r.disc_modal] = true; });
+    var discSel = el("select", { class: "cr-filter", id: "cr-disc-filter", title: "Discipline" });
+    discSel.appendChild(el("option", { value: "all" }, ["Discipline: any"]));
+    Object.keys(discSet).sort().forEach(function (d) {
+      var o = el("option", { value: d }, [d]);
+      if (d === state.discFilter) o.selected = true;
+      discSel.appendChild(o);
+    });
+    discSel.onchange = function () { state.discFilter = this.value; render(); };
+    tb.appendChild(discSel);
+
+    // Issuer typeahead — many issuers, so a datalist-backed input.
     var issuerSet = {};
     state.rows.forEach(function (r) {
       if (r.primary_issuer) issuerSet[r.primary_issuer] = true;
@@ -1007,7 +1229,7 @@
     }
     var issuerInput = el("input", {
       class: "cr-filter", id: "cr-issuer-filter", type: "search",
-      placeholder: "Issuer: any (type to filter; \"(none)\" = local exhibits)",
+      placeholder: "Issuer… (\"(none)\" = local)",
       list: dlId, autocomplete: "off",
     });
     if (state.issuerFilter !== "all") {
@@ -1024,32 +1246,24 @@
     };
     tb.appendChild(issuerInput);
 
-    // Audit-tag triage dropdown — populated from the live audit if present.
-    var tagSel = el("select", { class: "cr-filter", id: "cr-tag-filter" });
-    var tagOpts = [["all", "Audit tag: any"]];
-    if (state.audit && state.audit._rules_active) {
-      state.audit._rules_active.forEach(function (rule) {
-        tagOpts.push([rule, "Tag: " + rule]);
-      });
-    } else {
-      // Fallback to commonly-observed tags from the data.
-      var seen = {};
-      state.rows.forEach(function (r) {
-        Object.keys(r.audit_tags).forEach(function (t) { seen[t] = true; });
-      });
-      Object.keys(seen).sort().forEach(function (t) {
-        tagOpts.push([t, "Tag: " + t]);
-      });
-    }
-    tagOpts.forEach(function (opt) {
+    // Confidence band — compact labels.
+    var bandSel = el("select", { class: "cr-filter", id: "cr-band-filter", title: "Title-confidence band" });
+    [
+      ["all", "Conf: any"],
+      ["0.95-1.00", "Conf: 0.95–1.00"],
+      ["0.80-0.94", "Conf: 0.80–0.94"],
+      ["0.60-0.79", "Conf: 0.60–0.79"],
+      ["0.40-0.59", "Conf: 0.40–0.59"],
+      ["<0.40",     "Conf: <0.40"],
+    ].forEach(function (opt) {
       var o = el("option", { value: opt[0] }, [opt[1]]);
-      if (opt[0] === state.tagFilter) o.selected = true;
-      tagSel.appendChild(o);
+      if (opt[0] === state.bandFilter) o.selected = true;
+      bandSel.appendChild(o);
     });
-    tagSel.onchange = function () { state.tagFilter = this.value; render(); };
-    tb.appendChild(tagSel);
+    bandSel.onchange = function () { state.bandFilter = this.value; render(); };
+    tb.appendChild(bandSel);
 
-    // PR-3: group-by dropdown.
+    // Group-by (unchanged behavior).
     var groupSel = el("select", { class: "cr-filter", id: "cr-group-by",
       title: "Group rows under collapsible headers: TOP category, MQ discipline, "
            + "or GE Area (the statewide AP/IB/CLEP exam-credit rollup)." });
@@ -1065,68 +1279,46 @@
     });
     groupSel.onchange = function () {
       state.groupBy = this.value;
-      // Don't carry collapsed-state across grouping modes — the keys are
-      // namespaced by mode (e.g. "top:12" vs "disc:Health") to avoid clashes.
-      // Reset to "all expanded", except: in GE-Area mode the big "not a
-      // standardized exam" catch-all starts collapsed so the exam buckets lead.
       state.collapsedGroups = (this.value === "gearea") ? { "gearea:~~none": true } : {};
       render();
     };
     tb.appendChild(groupSel);
 
-    // Quality-flag-only checkbox.
-    var flagLabel = el("label", {
-      class: "cr-flag-toggle",
-      title: "Show only rows where any raw variant carries quality_flag (e.g. suspect_course_as_exhibit)."
+    // ⚙ Columns picker — per-browser (cplCerCols.v1).
+    var colsDd = el("details", { class: "cr-cols-dd", id: "cr-cols-dd" });
+    colsDd.appendChild(el("summary", { title: "Show/hide columns (saved per-browser)" }, ["⚙ Columns"]));
+    var colsPanel = el("div", { class: "cr-cols-panel" });
+    [
+      ["subj", "SUBJ"], ["disc", "Discipline"], ["issuer", "Issuing agency"],
+      ["trainer", "Trainer"], ["students", "Students"],
+      ["variants", "Variants #"], ["conf", "Confidence"], ["elig", "Eligible units"],
+    ].forEach(function (c) {
+      var lab = el("label", null);
+      var cb = el("input", { type: "checkbox" });
+      cb.checked = !!visCols()[c[0]];
+      cb.onchange = function () {
+        state.visCols[c[0]] = cb.checked;
+        saveColPrefs();
+        render();
+      };
+      lab.appendChild(cb);
+      lab.appendChild(document.createTextNode(" " + c[1]));
+      colsPanel.appendChild(lab);
     });
-    var flagCb = el("input", { type: "checkbox", id: "cr-flag-only" });
-    flagCb.checked = !!state.flagOnly;
-    flagCb.onchange = function () { state.flagOnly = this.checked; render(); };
-    flagLabel.appendChild(flagCb);
-    flagLabel.appendChild(document.createTextNode(" quality-flag only"));
-    tb.appendChild(flagLabel);
+    colsDd.appendChild(colsPanel);
+    tb.appendChild(colsDd);
 
-    // Search (unified_title OR raw_title OR issuer).
-    var search = el("input", {
-      class: "cr-filter cr-search-wide", id: "cr-search", type: "search",
-      placeholder: "Search title or raw variant…",
-      autocomplete: "off",
-    });
-    search.value = state.search;
-    search.oninput = function () {
-      state.search = this.value.toLowerCase();
-      render();
-    };
-    tb.appendChild(search);
-
-    // Unclassified-triage worklist toggle — opens a worklist over the raw MAP
-    // exhibit titles the auditor flagged `unclassified_in_map` (no credential
-    // identity yet). Count fills in after the lazy fetch and shows OPEN items
-    // (unassigned), not the raw queue size — an all-assigned queue reads
-    // "awaiting fold", not "5 still to do" (the 2026-07-07 stuck-feeling fix).
-    var wlLabel = "⚠ Triage unclassified";
-    // The missing-issuer lane count rides on the same button — its queue is
-    // derived from the always-loaded rows, so it shows before the worklist's
-    // lazy fetch completes (Session 105).
-    var niOpen = issuerQueue().length;
-    if (state.unclassified) {
-      var wlOpen = state.unclassified.filter(function (it) {
-        var a = state.unclassAssign[it.raw_title];
-        return !(a && a.title);
-      }).length;
-      var wlAssigned = state.unclassified.length - wlOpen;
-      wlLabel = wlOpen ? ("⚠ Triage unclassified (" + wlOpen + ")")
-        : wlAssigned ? ("✓ Triage unclassified (" + wlAssigned + " awaiting fold)")
-        : "✓ Triage unclassified (0)";
-    }
-    if (niOpen) wlLabel += " · " + niOpen + " no-issuer";
-    var triageBtn = el("button", { type: "button", class: "cr-triage-btn",
-      title: "Review raw MAP exhibit titles with no credential identity yet and assign each a unified title; "
-           + "plus classified credentials still missing an issuing agency. "
-           + "Saved assignments fold into the credential layer on the daily refresh." },
-      [wlLabel]);
-    triageBtn.onclick = openWorklist;
-    tb.appendChild(triageBtn);
+    // ⬇ extract buttons — the live canonical layer (overlay applied).
+    var csvBtn = el("button", { type: "button", class: "cr-export-btn",
+      title: "Download the full credential layer as CSV (opens in Excel). Live — curation overrides included." },
+      ["⬇ Excel (CSV)"]);
+    csvBtn.onclick = exportCsv;
+    tb.appendChild(csvBtn);
+    var jsonBtn = el("button", { type: "button", class: "cr-export-btn",
+      title: "Download the full credential layer as JSON. Live — curation overrides included." },
+      ["⬇ JSON"]);
+    jsonBtn.onclick = exportJson;
+    tb.appendChild(jsonBtn);
 
     // Bulk-action button — refreshed in place by renderBulkAction() so the
     // toolbar doesn't rebuild on every selection change (preserves focus +
@@ -1134,10 +1326,15 @@
     tb.appendChild(el("span", { id: "cr-bulk", class: "cr-bulk" }));
     renderBulkAction();
 
+    // 💾 Save all — appears only with unsaved grid edits; refreshed in place.
+    tb.appendChild(el("span", { id: "cr-saveall-slot" }));
+    refreshSaveAll();
+
     // Auth widget — separate so renderAuth() can refresh in place
     // without rebuilding the toolbar (keeps search focus).
     tb.appendChild(el("span", { id: "cr-auth", class: "cr-auth" }));
     renderAuth();
+    renderLanes();  // lane counts ride every toolbar refresh (in-place saves)
   }
 
   // Refresh ONLY the bulk-action widget. Called from render() after any
@@ -1343,37 +1540,50 @@
 
   function render() {
     ensureCerScopeCss();  // scope/CPL chip styles now also used at the title level (collapsed rows)
+    renderLanes();
     if (state.worklistOpen) { renderWorklist(); return; }
+    // v2 triage lanes reuse the (already in-cell) worklist sections.
+    if (state.lane === "unc" || state.lane === "noiss" || state.lane === "merge") {
+      renderWorklist(state.lane === "unc" ? "unc" : state.lane);
+      return;
+    }
     var filtered = state.rows.filter(function (r) { return passesFilter(r, state); });
     filtered = sortRows(filtered, state.sort);
     renderSummary(state.rows, filtered);
     renderBulkAction();
+    refreshSaveAll();
 
     var wrap = document.getElementById("cr-table-wrap");
     if (!wrap) return;
     clearNode(wrap);
+    ensureWorklistDatalists();  // grid inputs share the title/issuer datalists
 
-    var table = el("table", { class: "cr-table" });
+    var table = el("table", { class: "cr-table cr-grid-v2" });
+    var vc = visCols();
     var COLS = [
-      { key: null,              label: "" },  // checkbox column — header rendered separately below
-      { key: "unified_title",   label: "Unified Title" },
-      { key: "raw_count",       label: "Variants",
-        title: "Number of distinct college-entered MAP exhibit titles collapsed under this unified title. Expand the row to see them — \"1\" means a single college title maps here, which may differ from the generated unified title." },
-      { key: "students",        label: "Eligible students",
-        title: "Students eligible for CPL credit recommendations for this credential, statewide (MAP Exhibit CRs Catalog, TotalStudentsForCR) — a volume signal for prioritizing curation, not a distinct headcount. Sort to surface the highest-impact credentials. Counts below 5 are masked as \"<5\" for privacy; \"—\" = no catalog match yet. Populates on the daily MAP pull." },
-      { key: "eligible",        label: "Eligible (units)",
-        title: "Statewide CPL credit-UNITS eligible for this credential, from MAP's Exhibit CRs Catalog (the per-exhibit credit funnel, JST-aggregated for military). Credit waiting to be unlocked = eligible − transcribed (shown on hover). Credit units, not a headcount. \"—\" = no catalog data yet; populates on the daily MAP pull." },
-      { key: "disc_modal",      label: "Discipline",
-        title: "Predominant MQ discipline across this credential's articulated common courses." },
-      { key: "primary_issuer",  label: "Issuing Agency" },
-      { key: "conf_modal",      label: "Confidence",
-        title: "Modal title confidence / issuer confidence across the raw variants (title · issuer)." },
-      { key: "audit_tag_total", label: "Audit",
-        title: "Sum of audit tag firings across the raw variants. Hover a chip for details." },
-      { key: "flag_label",      label: "Quality flag" },
-      { key: "reviewed",        label: "Initiated",
-        title: "Curator-initiated state + the Mark-initiated / Curate actions." },
+      { key: null,            label: "" },  // checkbox — header rendered separately below
+      { key: null,            label: "" },  // expand caret
+      { key: "unified_title", label: "Credential",
+        title: "The canonical unified credential name. Edit right here (signed-in); the line beneath shows scope chips + the raw college-entered title(s)." },
     ];
+    if (vc.subj) COLS.push({ key: "subj", label: "SUBJ",
+      title: "Modal SUBJ4 across this credential's articulated common courses (the CCR identity's subject token)." });
+    if (vc.disc) COLS.push({ key: "disc_modal", label: "Discipline",
+      title: "Predominant MQ discipline across this credential's articulated common courses." });
+    if (vc.issuer) COLS.push({ key: "primary_issuer", label: "Issuing Agency",
+      title: "The certifying body. Edit right here; ＋ issuer records additional certifying bodies (never replacing the primary). Empty + Save = \"no formal issuer (local exhibit)\"." });
+    if (vc.trainer) COLS.push({ key: "primary_trainer", label: "Trainer",
+      title: "Training agency (when distinct from the issuer — Rule 5f)." });
+    if (vc.students) COLS.push({ key: "students", label: "Students",
+      title: "Students eligible for CPL credit recommendations for this credential, statewide — a volume signal for prioritizing curation, not a distinct headcount. <5 masked for privacy; populates on the daily MAP pull." });
+    if (vc.variants) COLS.push({ key: "raw_count", label: "Var",
+      title: "Number of distinct college-entered MAP exhibit titles collapsed under this unified title." });
+    if (vc.conf) COLS.push({ key: "conf_modal", label: "Conf",
+      title: "Modal title confidence / issuer confidence across the raw variants (title · issuer)." });
+    if (vc.elig) COLS.push({ key: "eligible", label: "Elig. units",
+      title: "Statewide CPL credit-UNITS eligible for this credential (MAP Exhibit CRs Catalog). Credit units, not a headcount." });
+    COLS.push({ key: "reviewed", label: "Status",
+      title: "💾 Save appears on rows with unsaved in-cell edits; ✓ Init marks the row curator-initiated; ✎ opens the full Curate panel." });
 
     var headerRow = el("tr");
     COLS.forEach(function (col, idx) {
@@ -1527,11 +1737,307 @@
     }
   }
 
-  function renderRow(r) {
-    var tr = el("tr", { class: "cr-row" });
+  // ─── CER v2 lane chips (2026-07-09) — the Triage queues as filters over
+  // one surface. Injected before the toolbar (regen-proof).
+  function renderLanes() {
+    var tbEl = document.getElementById("cr-toolbar");
+    if (!tbEl) return;
+    var host = document.getElementById("cr-lanes");
+    if (!host) {
+      host = el("div", { id: "cr-lanes", class: "cr-lanes" });
+      tbEl.parentNode.insertBefore(host, tbEl);
+    }
+    clearNode(host);
+    var uncN = "(…)";
+    if (state.unclassified) {
+      var uncOpen = state.unclassified.filter(function (it) {
+        var a = state.unclassAssign[it.raw_title];
+        return !(a && a.title);
+      }).length;
+      var uncAssigned = state.unclassified.length - uncOpen;
+      uncN = uncOpen ? "(" + uncOpen + ")"
+        : uncAssigned ? "(" + uncAssigned + " awaiting fold)" : "(0)";
+    }
+    var doneN = 0;
+    state.rows.forEach(function (r) { if (r.curator_reviewed_at) doneN++; });
+    var niQueue = issuerQueue();
+    var staged = niQueue.filter(function (r) { return state.issuerPreseed[r.unified_title]; }).length;
+    var lanes = [
+      { k: "all",   label: "All", n: state.rows.length,
+        title: "Every canonical credential." },
+      { k: "unc",   label: "📥 Unclassified", nText: uncN,
+        title: "Raw MAP exhibit titles with no credential identity yet — assign each a unified title. Saved assignments fold on the daily sync (\"awaiting fold\")." },
+      { k: "noiss", label: "🏷 No issuer", n: niQueue.length,
+        title: "Classified credentials still needing agency/title triage."
+          + (staged ? " ⚡ " + staged + " pre-filled from the staged plan." : "") },
+      { k: "merge", label: "⇒ Merge confirms", n: pendingMerges().length,
+        title: "Saved renames that match an EXISTING credential — confirm the merge or re-title." },
+      { k: "open",  label: "○ Not initiated", n: state.rows.length - doneN,
+        title: "Rows you haven't marked initiated yet." },
+      { k: "done",  label: "✓ Initiated", n: doneN,
+        title: "Curator-initiated rows." },
+    ];
+    lanes.forEach(function (l) {
+      var active = state.lane === l.k && !state.worklistOpen;
+      var b = el("button", { type: "button", title: l.title,
+        class: "cr-lane" + (active ? " active" : "") });
+      b.appendChild(document.createTextNode(l.label + " "));
+      b.appendChild(el("span", { class: "cr-lane-n" },
+        [l.nText || (l.n == null ? "(…)" : "(" + l.n + ")")]));
+      b.onclick = function () { setLane(l.k); };
+      host.appendChild(b);
+    });
+  }
 
-    // Per-row checkbox (auth-gated). Disabled for already-initiated rows AND
-    // while a bulk save is in flight (so the UI is locked during the batch).
+  // 💾 Save all (N) — toolbar slot, refreshed in place on every edit/save.
+  function refreshSaveAll() {
+    var slot = document.getElementById("cr-saveall-slot");
+    if (!slot) return;
+    clearNode(slot);
+    if (!state.sess) return;
+    var dirty = dirtyRows();
+    if (!dirty.length) return;
+    var b = el("button", { type: "button", class: "cr-saveall",
+      title: "Save every row with unsaved in-cell edits." },
+      ["💾 Save all (" + dirty.length + ")"]);
+    b.onclick = function () {
+      b.disabled = true; b.textContent = "saving…";
+      Promise.all(dirtyRows().map(function (r) { return saveGridRowCore(r); }))
+        .then(function (results) {
+          var failed = results.filter(function (x) { return !x.ok; }).length;
+          if (failed) toast(failed + " row(s) failed to save — retry from the row", true);
+          else toast("Saved " + results.length + " rows");
+          render();
+        });
+    };
+    slot.appendChild(b);
+  }
+
+  // Data-level row save shared by the per-row 💾 and Save-all. Diffs the
+  // draft against the overlay-applied baseline and writes ONLY changed
+  // fields via the existing override lanes (so Mode A2 / the rename apply
+  // see exactly the rows the Curate panel would have written).
+  function saveGridRowCore(r) {
+    var ut = r.unified_title;
+    if (!state.sess || !rowIsDirty(r)) return Promise.resolve({ ok: true, noop: true });
+    var d = draftOf(r);
+    var ov = state.overlay[ut] || {};
+    var writes = [];
+    var titleVal = (d.title || "").trim();
+    var titleChanged = titleVal !== (r.display_title || ut);
+    var target = null;
+    if (titleChanged) {
+      if (!titleVal) return Promise.resolve({ ok: false, err: "empty title" });
+      target = mergeTargetFor(r, titleVal);
+      if (target && !window.confirm(mergeConfirmMessage(r, titleVal))) {
+        return Promise.resolve({ ok: false, err: "merge declined" });
+      }
+      writes.push(saveOverride(ut, FIELD_UTITLE_OVERRIDE, titleVal));
+      if (target) writes.push(saveOverride(ut, FIELD_UTITLE_MERGE_CONFIRM, titleVal));
+      else if (ov.merge_confirm) writes.push(clearOverride(ut, FIELD_UTITLE_MERGE_CONFIRM));
+    }
+    var issuerVal = (d.issuer || "").trim();
+    var issuerChanged = issuerVal !== (r.primary_issuer || "");
+    if (issuerChanged) writes.push(saveOverride(ut, FIELD_ISSUER_OVERRIDE, issuerVal));
+    var extraJoined = (d.extra || []).map(function (s) { return (s || "").trim(); })
+      .filter(function (s) { return s; }).join(" | ");
+    var extraBase = splitIssuers(ov.issuer2_override || "").join(" | ");
+    var extraChanged = extraJoined !== extraBase;
+    if (extraChanged) {
+      writes.push(extraJoined
+        ? saveOverride(ut, FIELD_ISSUER2_OVERRIDE, extraJoined)
+        : clearOverride(ut, FIELD_ISSUER2_OVERRIDE));
+    }
+    var trainerVal = (d.trainer || "").trim();
+    var trainerChanged = trainerVal !== (r.primary_trainer || "");
+    if (trainerChanged) writes.push(saveOverride(ut, FIELD_TRAINER_OVERRIDE, trainerVal));
+    if (!writes.length) { delete state.rowDraft[ut]; return Promise.resolve({ ok: true, noop: true }); }
+    return Promise.all(writes).then(function (rs) {
+      if (!rs.every(function (resp) { return resp && resp.ok; })) return { ok: false };
+      var now = new Date().toISOString();
+      var o = state.overlay[ut] = state.overlay[ut] || {};
+      if (titleChanged) {
+        o.utitle_override = titleVal;
+        o.merge_confirm = target ? titleVal : "";
+        r.display_title = titleVal;
+        r.utitle_overridden_at = now;
+      }
+      if (issuerChanged) {
+        o.issuer_override = issuerVal;
+        if (r.original_primary_issuer === undefined) r.original_primary_issuer = r.primary_issuer;
+        r.primary_issuer = issuerVal || null;
+        r.issuer_overridden_at = now;
+        addIssuerOption(issuerVal);
+      }
+      if (extraChanged) o.issuer2_override = extraJoined;
+      if (trainerChanged) {
+        o.trainer_override = trainerVal;
+        r.primary_trainer = trainerVal || null;
+        r.trainer_overridden_at = now;
+      }
+      delete state.rowDraft[ut];
+      state.rowSaved[ut] = true;
+      return { ok: true };
+    }).catch(function () { return { ok: false }; });
+  }
+  // DOM wrapper — in-place row feedback, never a full re-render (typed input
+  // in OTHER rows must survive; the worklist's applySavedAssignment lesson).
+  function saveGridRow(r, tr) {
+    var btn = tr.querySelector(".cr-grid-save");
+    if (btn) { btn.disabled = true; btn.textContent = "saving…"; }
+    saveGridRowCore(r).then(function (res) {
+      if (!res.ok) {
+        tr.classList.add("cr-save-failed");
+        if (btn) { btn.disabled = false; btn.textContent = "retry"; }
+        if (res.err !== "merge declined") toast("Save failed", true);
+        return;
+      }
+      tr.classList.remove("cr-dirty", "cr-save-failed");
+      tr.classList.add("cr-saved");
+      refreshRowStatus(r, tr);
+      refreshSaveAll();
+      renderLanes();
+      toast("Saved · " + (r.display_title || r.unified_title));
+    });
+  }
+  function markRowDirty(r, tr) {
+    delete state.rowSaved[r.unified_title];
+    tr.classList.remove("cr-saved", "cr-save-failed");
+    if (rowIsDirty(r)) tr.classList.add("cr-dirty");
+    else tr.classList.remove("cr-dirty");
+    refreshRowStatus(r, tr);
+    refreshSaveAll();
+  }
+
+  // Status/action cell — rebuilt in place as the row moves through
+  // clean → dirty → saved. Keeps the Mark-initiated flow + a compact ✎
+  // (quality flag + the rest live in the drawer's Curate panel).
+  function refreshRowStatus(r, tr) {
+    var td = tr.querySelector(".cr-action-cell");
+    if (!td) return;
+    clearNode(td);
+    var ut = r.unified_title;
+    if (state.sess && rowIsDirty(r)) {
+      var sv = el("button", { type: "button", class: "cr-grid-save",
+        title: "Save this row's edits (Enter in any cell also saves)." },
+        ["💾 Save"]);
+      sv.onclick = function () { saveGridRow(r, tr); };
+      td.appendChild(sv);
+      return;
+    }
+    if (state.rowSaved[ut]) {
+      td.appendChild(el("span", { class: "cr-rev-on" }, ["✓ saved"]));
+    }
+    if (r.curator_reviewed_at) {
+      var who = (r.curator_reviewed_by || "").split("@")[0];
+      var when = r.curator_reviewed_at.slice(0, 10);
+      td.appendChild(el("span", {
+        class: "cr-rev-on",
+        title: "Initiated by " + (r.curator_reviewed_by || "?") + " on " + when
+      }, ["✓ " + who + " · " + when]));
+    } else if (state.sess) {
+      var b = el("button", {
+        type: "button", class: "cr-action-btn",
+        title: "Mark this unified title as initiated (curator-acknowledged classification)."
+      }, ["✓ Init"]);
+      b.onclick = function () {
+        if (!confirm("Mark \"" + r.unified_title + "\" initiated?\n\n"
+            + "This records that you've reviewed the AI classification + "
+            + "issuer attribution. It doesn't change the underlying data.")) return;
+        b.disabled = true; b.textContent = "Saving…";
+        saveInitiated(r.unified_title)
+          .then(function (resp) {
+            if (!resp.ok) {
+              b.disabled = false; b.textContent = "✓ Init";
+              toast("Save failed (" + resp.status + ")", true); return;
+            }
+            r.curator_reviewed_at = new Date().toISOString();
+            r.curator_reviewed_by = state.sess.email;
+            state.overlay[r.unified_title] = state.overlay[r.unified_title] || {};
+            state.overlay[r.unified_title].reviewed_at = r.curator_reviewed_at;
+            state.overlay[r.unified_title].reviewed_by = r.curator_reviewed_by;
+            toast("Initiated · " + r.unified_title);
+            render();
+          })
+          .catch(function () {
+            b.disabled = false; b.textContent = "✓ Init";
+            toast("Save failed (network)", true);
+          });
+      };
+      td.appendChild(b);
+    }
+    if (state.sess) {
+      var curOpenNow = !!state.curateOpen[ut];
+      var more = el("button", {
+        type: "button",
+        class: "cr-curate-toggle cr-action-curate" + (curOpenNow ? " is-open" : ""),
+        title: "More fields — quality flag, per-field history (opens the row's Curate panel)."
+      }, ["✎"]);
+      more.onclick = function () {
+        var open = !state.curateOpen[ut];
+        state.curateOpen[ut] = open;
+        if (open) state.expanded[ut] = true;
+        render();
+      };
+      td.appendChild(more);
+    }
+  }
+
+  // In-cell input factory for the grid (the missing-issuer-lane pattern
+  // promoted to the whole list). Enter saves, Escape reverts the field.
+  function gridInput(r, tr, key, cls, placeholder, listId) {
+    var d = draftOf(r);
+    var attrs = { class: "cr-cellin " + (cls || ""), type: "text",
+      value: d[key] || "", autocomplete: "off" };
+    if (placeholder) attrs.placeholder = placeholder;
+    if (listId && document.getElementById(listId)) attrs.list = listId;
+    var inp = el("input", attrs);
+    inp.disabled = !state.sess;
+    inp.oninput = function () {
+      d[key] = inp.value;
+      markRowDirty(r, tr);
+      if (key === "title") refreshMergeStrip(r, tr);
+    };
+    inp.onkeydown = function (e) {
+      if (e.key === "Enter") { e.preventDefault(); saveGridRow(r, tr); }
+      if (e.key === "Escape") {
+        d[key] = key === "title" ? (r.display_title || r.unified_title)
+          : key === "issuer" ? (r.primary_issuer || "")
+          : key === "trainer" ? (r.primary_trainer || "") : "";
+        inp.value = d[key];
+        markRowDirty(r, tr);
+        if (key === "title") refreshMergeStrip(r, tr);
+      }
+    };
+    return inp;
+  }
+
+  // Inline merge-collision strip under the title input (PR-5b/2 surfaced at
+  // the point of edit): typing a title that equals an EXISTING credential
+  // key shows ⇒ + ✓ Confirm merge right there.
+  function refreshMergeStrip(r, tr) {
+    var holder = tr.querySelector(".cr-merge-slot");
+    if (!holder) return;
+    clearNode(holder);
+    var d = draftOf(r);
+    var val = (d.title || "").trim();
+    if (!val || val === (r.display_title || r.unified_title)) return;
+    var target = mergeTargetFor(r, val);
+    if (!target) return;
+    var strip = el("div", { class: "cr-merge-strip" });
+    strip.appendChild(el("span", null, ["⇒ matches existing “" + val + "”"]));
+    var okb = el("button", { type: "button", class: "cr-merge-confirm" }, ["✓ Confirm merge"]);
+    okb.onclick = function () { saveGridRow(r, tr); };
+    strip.appendChild(okb);
+    holder.appendChild(strip);
+  }
+
+  function renderRow(r) {
+    var ut = r.unified_title;
+    var tr = el("tr", { class: "cr-row" + (rowIsDirty(r) ? " cr-dirty" : "")
+      + (state.rowSaved[ut] ? " cr-saved" : "") });
+
+    // Per-row checkbox (auth-gated) — bulk Mark-initiated.
     var chkTd = el("td", { class: "cr-chk-cell" });
     if (state.sess) {
       var elig = selectionEligible(r);
@@ -1544,235 +2050,211 @@
       chk.onchange = function () {
         if (chk.checked) state.selected[r.unified_title] = true;
         else delete state.selected[r.unified_title];
-        // Re-render to refresh the header indeterminate state + toolbar count.
         render();
       };
       chkTd.appendChild(chk);
     }
     tr.appendChild(chkTd);
 
-    // Unified title — clickable to expand.
-    var titleTd = el("td", { class: "cr-title-cell" });
-    var caret = state.expanded[r.unified_title] ? "▾" : "▸";
-    var displayLabel = r.display_title || r.unified_title;
-    var titleBtn = el("button", {
-      type: "button", class: "cr-title-toggle",
-      title: r.utitle_overridden_at
-        ? "Curated label · originally: " + r.unified_title
-          + " · expand for raw variants + curation panel"
-        : "Show raw-title variants + curation panel + credential record(s)"
-    }, [caret + " " + displayLabel]);
-    titleBtn.onclick = function () {
-      state.expanded[r.unified_title] = !state.expanded[r.unified_title];
+    // Expand caret — the "dig in" affordance (drawer: variants, aligned
+    // courses, Curate panel with the retired columns).
+    var caretTd = el("td", { class: "cr-caret-cell" });
+    var caret = el("button", { type: "button", class: "cr-caret",
+      title: "Open the full record — raw variants, aligned common courses, curation panel."
+    }, [state.expanded[ut] ? "▾" : "▸"]);
+    caret.onclick = function () {
+      state.expanded[ut] = !state.expanded[ut];
       render();
     };
-    titleTd.appendChild(titleBtn);
+    caretTd.appendChild(caret);
+    tr.appendChild(caretTd);
+
+    // Credential — in-cell editable unified title + one context line.
+    var titleTd = el("td", { class: "cr-title-cell" });
+    if (state.sess) {
+      titleTd.appendChild(gridInput(r, tr, "title", "cr-title-in",
+        "unified title…", "cr-unclass-titles"));
+    } else {
+      var displayLabel = r.display_title || r.unified_title;
+      var titleBtn = el("button", {
+        type: "button", class: "cr-title-toggle",
+        title: r.utitle_overridden_at
+          ? "Curated label · originally: " + r.unified_title
+            + " · expand for raw variants + credential record(s)"
+          : "Show raw-title variants + credential record(s)"
+      }, [displayLabel]);
+      titleBtn.onclick = function () {
+        state.expanded[r.unified_title] = !state.expanded[r.unified_title];
+        render();
+      };
+      titleTd.appendChild(titleBtn);
+    }
     if (r.utitle_overridden_at) {
       titleTd.appendChild(el("span", { class: "cr-override-marker",
         title: "Display label curated · originally: " + r.unified_title
       }, [" ✎"]));
     }
-    // Scope + CPL chips at the title level (the Scope column was folded into
-    // these — same chips the curator liked from the expanded enrichment block).
+    // Context line: scope/CPL/COS chips + first raw variant (full list on
+    // hover) — one nowrap row so grid rows stay short.
     var tchips = crTitleChips(r);
-    if (tchips) titleTd.appendChild(tchips);
+    if (!tchips) tchips = el("span", { class: "cr-title-chips" });
+    if (r.raw_variants && r.raw_variants.length) {
+      var rawFirst = r.raw_variants[0].raw_title || "";
+      var rawMore = r.raw_variants.length > 1 ? "  ＋" + (r.raw_variants.length - 1) : "";
+      tchips.appendChild(el("span", { class: "cr-ctx-raw",
+        title: "Raw college-entered title(s):\n" + r.raw_variants.map(function (v) {
+          return v.raw_title;
+        }).join("\n") }, [rawFirst + rawMore]));
+    }
+    titleTd.appendChild(tchips);
+    titleTd.appendChild(el("div", { class: "cr-merge-slot" }));
     tr.appendChild(titleTd);
 
-    tr.appendChild(el("td", null, [String(r.raw_count)]));
+    var vc = visCols();
 
-    // Students-served column (path 1) — the curation-prioritization signal.
-    // Exact count ≥5; "<5" masked (small-cell suppression); "—" no data.
-    var servedTd = el("td", { class: "cr-served-cell" });
-    if (typeof r.students_served === "number") {
-      servedTd.appendChild(el("span", { class: "cr-served-n",
-        title: "Total CPL students served across articulating colleges." },
-        [r.students_served.toLocaleString()]));
-    } else if (r.served_suppressed) {
-      servedTd.appendChild(el("span", { class: "cr-served-sup",
-        title: "Fewer than 5 students — exact count withheld (small-cell privacy suppression)." },
-        ["<5"]));
-    } else {
-      servedTd.appendChild(el("span", { class: "cr-null" }, ["—"]));
+    // SUBJ — modal SUBJ4 across the aligned common courses.
+    if (vc.subj) {
+      var subjTd = el("td", { class: "cr-subj-cell" });
+      var s = subjOf(r);
+      subjTd.appendChild(s
+        ? el("span", { class: "cr-subj",
+            title: "Modal SUBJ4 across this credential's articulated common courses." }, [s])
+        : el("span", { class: "cr-null" }, ["—"]));
+      tr.appendChild(subjTd);
     }
-    tr.appendChild(servedTd);
 
-    // Eligible-credits column — statewide CPL credit UNITS eligible (Exhibit CRs
-    // Catalog). Credit units, not a headcount → no suppression. Hover shows the
-    // funnel + "credit waiting to be unlocked" (eligible − transcribed). "—" = no
-    // catalog data yet.
-    var eligTd = el("td", { class: "cr-served-cell" });
-    if (typeof r.eligible_credits === "number") {
-      var _waiting = (typeof r.transcribed_credits === "number")
-        ? Math.max(0, r.eligible_credits - r.transcribed_credits) : null;
-      var _tip = "Statewide eligible CPL credit units."
-        + (typeof r.transcribed_credits === "number" ? " Transcribed: " + r.transcribed_credits.toLocaleString() + " units." : "")
-        + (typeof r.applied_credits === "number" ? " Applied: " + r.applied_credits.toLocaleString() + "." : "")
-        + (typeof r.in_review_credits === "number" ? " In review: " + r.in_review_credits.toLocaleString() + "." : "")
-        + (_waiting != null ? " Credit waiting to be unlocked (eligible − transcribed): " + _waiting.toLocaleString() + " units." : "");
-      eligTd.appendChild(el("span", { class: "cr-served-n", title: _tip },
-        [r.eligible_credits.toLocaleString()]));
-    } else {
-      eligTd.appendChild(el("span", { class: "cr-null" }, ["—"]));
+    // Discipline (derived — read-only).
+    if (vc.disc) {
+      var discTd = el("td", { class: "cr-disc-cell" });
+      discTd.appendChild(r.disc_modal
+        ? document.createTextNode(r.disc_modal)
+        : el("span", { class: "cr-null" }, ["—"]));
+      tr.appendChild(discTd);
     }
-    tr.appendChild(eligTd);
 
-    // Discipline column — modal MQ discipline across this credential's
-    // articulations (blank if no articulations).
-    var discTd = el("td", { class: "cr-disc-cell" });
-    discTd.appendChild(r.disc_modal
-      ? document.createTextNode(r.disc_modal)
-      : el("span", { class: "cr-null" }, ["—"]));
-    tr.appendChild(discTd);
+    // Issuing agency — in-cell editable + unlimited additional agencies.
+    if (vc.issuer) {
+      var issuerTd = el("td", { class: "cr-issuer-cell" });
+      if (state.sess) {
+        issuerTd.appendChild(gridInput(r, tr, "issuer", "cr-issuer-in",
+          "issuer… (empty = no formal issuer)", "cr-issuer-list"));
+        var d = draftOf(r);
+        (d.extra || []).forEach(function (x, xi) {
+          var attrs2 = { class: "cr-cellin cr-issuer-in2", type: "text",
+            value: x || "", placeholder: "additional issuing agency…", autocomplete: "off" };
+          if (document.getElementById("cr-issuer-list")) attrs2.list = "cr-issuer-list";
+          var inp2 = el("input", attrs2);
+          inp2.oninput = function () { d.extra[xi] = inp2.value; markRowDirty(r, tr); };
+          inp2.onkeydown = function (e) {
+            if (e.key === "Enter") { e.preventDefault(); saveGridRow(r, tr); }
+          };
+          issuerTd.appendChild(inp2);
+        });
+        var add = el("button", { type: "button", class: "cr-issuer-add",
+          title: "Some credentials are certified by more than one body (Rule 4). "
+            + "Each is ADDED alongside the primary, never replacing it." },
+          ["＋ issuer"]);
+        add.onclick = function () {
+          draftOf(r).extra.push("");
+          markRowDirty(r, tr);
+          render();
+        };
+        issuerTd.appendChild(add);
+      } else {
+        issuerTd.appendChild(r.primary_issuer
+          ? document.createTextNode(r.primary_issuer)
+          : el("span", { class: "cr-null" }, ["(none — local)"]));
+      }
+      if (r.issuers && r.issuers.length > 1) {
+        issuerTd.appendChild(el("span", { class: "cr-issuer-more",
+          title: "All recorded certifying bodies:\n" + r.issuers.join("\n")
+        }, ["+" + (r.issuers.length - 1)]));
+      }
+      if (r.issuer_overridden_at) {
+        issuerTd.appendChild(el("span", { class: "cr-override-marker",
+          title: "Issuing agency curated · originally: " +
+                 (r.original_primary_issuer || "(none)")
+        }, [" ✎"]));
+      }
+      tr.appendChild(issuerTd);
+    }
 
-    var issuerTd = el("td", { class: "cr-issuer-cell" });
-    issuerTd.appendChild(r.primary_issuer
-      ? document.createTextNode(r.primary_issuer)
-      : el("span", { class: "cr-null" }, ["(none — local)"]));
-    // Multi-issuer chip (Rule 4 — same credential, several certifying bodies,
-    // e.g. Fire Inspector I ⇒ ICC/NFPA/SFT). Hover lists every recorded issuer.
-    if (r.issuers && r.issuers.length > 1) {
-      issuerTd.appendChild(el("span", { class: "cr-issuer-more",
-        title: "All recorded certifying bodies:\n" + r.issuers.join("\n")
-      }, ["+" + (r.issuers.length - 1)]));
+    // Trainer — in-cell editable.
+    if (vc.trainer) {
+      var trTd = el("td", { class: "cr-trainer-cell" });
+      if (state.sess) {
+        trTd.appendChild(gridInput(r, tr, "trainer", "cr-trainer-in", "training agency…"));
+      } else {
+        trTd.appendChild(r.primary_trainer
+          ? document.createTextNode(r.primary_trainer)
+          : el("span", { class: "cr-null" }, ["—"]));
+      }
+      if (r.trainer_overridden_at) {
+        trTd.appendChild(el("span", { class: "cr-override-marker",
+          title: "Training agency curated" }, [" ✎"]));
+      }
+      tr.appendChild(trTd);
     }
-    if (r.issuer_overridden_at) {
-      issuerTd.appendChild(el("span", { class: "cr-override-marker",
-        title: "Issuing agency curated · originally: " +
-               (r.original_primary_issuer || "(none)")
-      }, [" ✎"]));
-    }
-    // Point-of-need issuer editing (Sam, 2026-07-07 — the '10-Key Data Entry'
-    // case: a null-issuer row offered no visible way to add an agency). A
-    // signed-in reviewer gets a "＋ set" affordance right in the cell that
-    // opens the row's Curate panel (which carries the Issuing agency field).
-    if (state.sess && !r.primary_issuer) {
-      var setBtn = el("button", { type: "button", class: "cr-issuer-set",
-        title: "Set the issuing agency — opens this row's Curate panel." },
-        ["＋ set"]);
-      setBtn.onclick = function (e) {
-        e.stopPropagation();
-        state.curateOpen[r.unified_title] = true;
-        state.expanded[r.unified_title] = true;
-        // Jump STRAIGHT into the Issuing-agency edit input (2026-07-08 —
-        // previously this only opened the panel, so clicking "＋ set" when
-        // the panel was already open did nothing visible, which read as
-        // "the + doesn't work" (Sam, 10-Key). Edit mode auto-focuses.
-        var rec = state.curationEditing[r.unified_title] || {};
-        rec[FIELD_ISSUER_OVERRIDE] = "edit";
-        state.curationEditing[r.unified_title] = rec;
-        render();
-      };
-      issuerTd.appendChild(setBtn);
-    }
-    tr.appendChild(issuerTd);
 
-    // Merged Confidence cell — title / issuer (2026-06-03 economy: was two
-    // columns). Band color keys off the title confidence (the primary signal);
-    // the issuer figure rides muted alongside.
-    var _confTxt = (typeof r.conf_modal === "number") ? r.conf_modal.toFixed(2) : "—";
-    var confTd = el("td", { class: "cr-conf-cell " + _bandCls(r.conf_modal),
-      title: "Title confidence " + _confTxt
-        + " · issuer confidence " + (typeof r.conf_issuer === "number" && r.conf_issuer ? r.conf_issuer.toFixed(2) : "—") });
-    confTd.appendChild(el("span", { class: "cr-conf-title" }, [_confTxt]));
-    confTd.appendChild(el("span", { class: "cr-conf-sep" }, [" / "]));
-    confTd.appendChild(el("span", { class: "cr-conf-issuer" },
-      [r.conf_issuer ? r.conf_issuer.toFixed(2) : "—"]));
-    tr.appendChild(confTd);
-
-    // Audit-tag chip — count + hover tooltip listing the firing rules.
-    var auditTd = el("td", { class: "cr-audit-cell" });
-    if (r.audit_tag_total) {
-      var auditTitle = Object.keys(r.audit_tags)
-        .map(function (t) { return t + " ×" + r.audit_tags[t]; }).join("\n");
-      var chipCls = r.conf_modal < 0.60 ? "warn" :
-                    r.conf_modal < 0.80 ? "mix" : "muted";
-      auditTd.appendChild(el("span", {
-        class: "cr-audit-chip " + chipCls,
-        title: auditTitle,
-      }, ["⚠ " + r.audit_tag_total]));
+    // Students (renamed from "Eligible students") — the volume signal.
+    if (vc.students) {
+      var servedTd = el("td", { class: "cr-served-cell" });
+      if (typeof r.students_served === "number") {
+        servedTd.appendChild(el("span", { class: "cr-served-n",
+          title: "Total CPL students served across articulating colleges." },
+          [r.students_served.toLocaleString()]));
+      } else if (r.served_suppressed) {
+        servedTd.appendChild(el("span", { class: "cr-served-sup",
+          title: "Fewer than 5 students — exact count withheld (small-cell privacy suppression)." },
+          ["<5"]));
+      } else {
+        servedTd.appendChild(el("span", { class: "cr-null" }, ["—"]));
+      }
+      tr.appendChild(servedTd);
     }
-    tr.appendChild(auditTd);
 
-    var flagTd = el("td", { class: "cr-flag-cell" });
-    if (r.flag_label) {
-      flagTd.appendChild(el("span", {
-        class: "cr-flag-badge", title: r.flag_label
-      }, [r.flag_label.replace(/_/g, " ")]));
+    // Variants # (hidable, default off).
+    if (vc.variants) {
+      tr.appendChild(el("td", { class: "cr-var-cell" }, [String(r.raw_count)]));
     }
-    if (r.qflag_overridden_at) {
-      flagTd.appendChild(el("span", { class: "cr-override-marker",
-        title: "Quality flag curated · originally: " +
-               (r.original_flag_label || "(none)")
-      }, [" ✎"]));
-    }
-    tr.appendChild(flagTd);
 
-    // Merged "Initiated" cell (2026-06-03 economy: the standalone Reviewed
-    // column was folded in here). Shows the ✓ who · date stamp once initiated
-    // (visible to everyone), else the ✎ Curate + Mark-initiated actions for
-    // signed-in reviewers. The Curate toggle was moved up from the expanded body
-    // 2026-06-03 so a reviewer can jump straight into editing without the panel
-    // eating a row of vertical space on every expand.
+    // Confidence (hidable, default off).
+    if (vc.conf) {
+      var _confTxt = (typeof r.conf_modal === "number") ? r.conf_modal.toFixed(2) : "—";
+      var confTd = el("td", { class: "cr-conf-cell " + _bandCls(r.conf_modal),
+        title: "Title confidence " + _confTxt
+          + " · issuer confidence " + (typeof r.conf_issuer === "number" && r.conf_issuer ? r.conf_issuer.toFixed(2) : "—") });
+      confTd.appendChild(el("span", { class: "cr-conf-title" }, [_confTxt]));
+      confTd.appendChild(el("span", { class: "cr-conf-sep" }, [" / "]));
+      confTd.appendChild(el("span", { class: "cr-conf-issuer" },
+        [r.conf_issuer ? r.conf_issuer.toFixed(2) : "—"]));
+      tr.appendChild(confTd);
+    }
+
+    // Eligible credit units (hidable, default off).
+    if (vc.elig) {
+      var eligTd = el("td", { class: "cr-served-cell" });
+      if (typeof r.eligible_credits === "number") {
+        var _waiting = (typeof r.transcribed_credits === "number")
+          ? Math.max(0, r.eligible_credits - r.transcribed_credits) : null;
+        var _tip = "Statewide eligible CPL credit units."
+          + (typeof r.transcribed_credits === "number" ? " Transcribed: " + r.transcribed_credits.toLocaleString() + " units." : "")
+          + (typeof r.applied_credits === "number" ? " Applied: " + r.applied_credits.toLocaleString() + "." : "")
+          + (typeof r.in_review_credits === "number" ? " In review: " + r.in_review_credits.toLocaleString() + "." : "")
+          + (_waiting != null ? " Credit waiting to be unlocked (eligible − transcribed): " + _waiting.toLocaleString() + " units." : "");
+        eligTd.appendChild(el("span", { class: "cr-served-n", title: _tip },
+          [r.eligible_credits.toLocaleString()]));
+      } else {
+        eligTd.appendChild(el("span", { class: "cr-null" }, ["—"]));
+      }
+      tr.appendChild(eligTd);
+    }
+
+    // Status / actions — 💾 Save (dirty) · ✓ stamp/Init · ✎ more.
     var actionTd = el("td", { class: "cr-action-cell" });
-    if (state.sess) {
-      var curOpenNow = !!state.curateOpen[r.unified_title];
-      var curateBtn = el("button", {
-        type: "button",
-        class: "cr-curate-toggle cr-action-curate" + (curOpenNow ? " is-open" : ""),
-        title: "Show/hide the curation panel (display title, issuing agency, training agency, quality flag)."
-      }, [curOpenNow ? "▾ ✎ Curate" : "✎ Curate"]);
-      curateBtn.onclick = function () {
-        var open = !state.curateOpen[r.unified_title];
-        state.curateOpen[r.unified_title] = open;
-        if (open) state.expanded[r.unified_title] = true;  // reveal the panel
-        render();
-      };
-      actionTd.appendChild(curateBtn);
-    }
-    if (r.curator_reviewed_at) {
-      var who = (r.curator_reviewed_by || "").split("@")[0];
-      var when = r.curator_reviewed_at.slice(0, 10);
-      actionTd.appendChild(el("span", {
-        class: "cr-rev-on",
-        title: "Initiated by " + (r.curator_reviewed_by || "?") + " on " + when
-      }, ["✓ " + who + " · " + when]));
-    } else if (state.sess) {
-      var b = el("button", {
-        type: "button", class: "cr-action-btn",
-        title: "Mark this unified title as initiated (curator-acknowledged classification)."
-      }, ["Mark initiated"]);
-      b.onclick = function () {
-        if (!confirm("Mark \"" + r.unified_title + "\" initiated?\n\n"
-            + "This records that you've reviewed the AI classification + "
-            + "issuer attribution. It doesn't change the underlying data.")) return;
-        b.disabled = true; b.textContent = "Saving…";
-        saveInitiated(r.unified_title)
-          .then(function (resp) {
-            if (!resp.ok) {
-              b.disabled = false; b.textContent = "Mark initiated";
-              toast("Save failed (" + resp.status + ")", true); return;
-            }
-            r.curator_reviewed_at = new Date().toISOString();
-            r.curator_reviewed_by = state.sess.email;
-            state.overlay[r.unified_title] = {
-              reviewed_at: r.curator_reviewed_at,
-              reviewed_by: r.curator_reviewed_by,
-            };
-            toast("Initiated · " + r.unified_title);
-            render();
-          })
-          .catch(function () {
-            b.disabled = false; b.textContent = "Mark initiated";
-            toast("Save failed (network)", true);
-          });
-      };
-      actionTd.appendChild(b);
-    } else {
-      actionTd.appendChild(el("span", {
-        class: "cr-action-noop", title: "Sign in to mark initiated"
-      }, ["—"]));
-    }
     tr.appendChild(actionTd);
+    refreshRowStatus(r, tr);
+    refreshMergeStrip(r, tr);
     return tr;
   }
 
@@ -2340,7 +2822,60 @@
       "#tab-credential-reference .cr-ni-trainer-chip{display:inline-block;margin-top:3px;font-size:.68rem;color:var(--hunter,#166534);background:#ecfdf5;border:1px solid #a7f3d0;border-radius:9px;padding:0 6px;cursor:help;white-space:nowrap;}" +
       "#tab-credential-reference .cr-ni-add-issuer{display:inline-block;margin-top:3px;font-size:.72rem;color:var(--seal-blue,#1e40af);text-decoration:none;}" +
       "#tab-credential-reference .cr-ni-add-issuer:hover{text-decoration:underline;}" +
-      "#tab-credential-reference .cr-ni-iss2{margin-top:4px;}";
+      "#tab-credential-reference .cr-ni-iss2{margin-top:4px;}" +
+      // ── CER v2 (2026-07-09) — one editable surface, full width ──
+      // Full-bleed: the CER pane escapes the main-container max-width (Sam:
+      // horizontal real estate is valuable; PC/laptop is the target).
+      "#tab-credential-reference > .main-container{max-width:none;}" +
+      // Lane chips (the Triage queues as filters over one surface).
+      "#tab-credential-reference .cr-lanes{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px;}" +
+      "#tab-credential-reference .cr-lane{border:1px solid var(--border-strong);background:var(--surface-opaque,#fff);color:var(--text-body,#3A3A36);border-radius:16px;padding:4px 12px;font-size:.78rem;font-weight:600;cursor:pointer;}" +
+      "#tab-credential-reference .cr-lane:hover{background:var(--surface-muted,#ECE9E2);}" +
+      "#tab-credential-reference .cr-lane.active{background:var(--seal-blue);color:#fff;border-color:var(--seal-blue);}" +
+      "#tab-credential-reference .cr-lane-n{color:var(--text-muted,#5C5C55);font-variant-numeric:tabular-nums;}" +
+      "#tab-credential-reference .cr-lane.active .cr-lane-n{color:var(--mustard-on-dark,#E3B341);}" +
+      // In-cell inputs — quiet until hover/focus (the issuer-lane pattern
+      // promoted to the whole grid).
+      "#tab-credential-reference .cr-cellin{width:100%;font-size:.82rem;color:var(--text-strong,#1C1C1A);border:1px solid transparent;border-radius:5px;padding:4px 6px;background:transparent;font-family:inherit;box-sizing:border-box;text-align:left;}" +
+      "#tab-credential-reference .cr-cellin:hover{border-color:var(--border,#d4d4d0);background:var(--surface-opaque,#fff);}" +
+      "#tab-credential-reference .cr-cellin:focus{border-color:var(--cobalt,#0047AB);background:var(--surface-opaque,#fff);outline:none;}" +
+      "#tab-credential-reference .cr-cellin:disabled{background:transparent;color:var(--text-muted,#5C5C55);}" +
+      "#tab-credential-reference .cr-title-in{font-weight:600;}" +
+      "#tab-credential-reference .cr-issuer-in2{margin-top:3px;}" +
+      "#tab-credential-reference .cr-issuer-add{background:none;border:none;color:var(--cobalt,#0047AB);font-size:.7rem;font-weight:600;cursor:pointer;padding:1px 4px;}" +
+      "#tab-credential-reference .cr-issuer-add:hover{text-decoration:underline;}" +
+      // Dirty / saved / failed row states — the left stripe is the signal.
+      "#tab-credential-reference tr.cr-dirty td:first-child{box-shadow:inset 3px 0 0 var(--mustard-fill,#E3B341);}" +
+      "#tab-credential-reference tr.cr-saved td:first-child{box-shadow:inset 3px 0 0 var(--hunter,#2C601A);}" +
+      "#tab-credential-reference tr.cr-save-failed{background:#fef2f2;outline:1px solid #fca5a5;}" +
+      "#tab-credential-reference .cr-grid-save{background:var(--cobalt,#0047AB);color:#fff;border:none;border-radius:6px;font-size:.76rem;font-weight:600;padding:4px 10px;cursor:pointer;}" +
+      "#tab-credential-reference .cr-grid-save:disabled{opacity:.6;cursor:default;}" +
+      "#tab-credential-reference .cr-saveall{background:var(--cobalt,#0047AB);color:#fff;border:none;border-radius:7px;font-size:.8rem;font-weight:600;padding:6px 12px;cursor:pointer;}" +
+      // Expand caret.
+      "#tab-credential-reference .cr-caret{background:none;border:none;cursor:pointer;font-size:.8rem;color:var(--text-muted,#5C5C55);padding:2px 4px;line-height:1;}" +
+      "#tab-credential-reference .cr-caret:hover{color:var(--cobalt,#0047AB);}" +
+      // Context line bits (chips row reused from cr-title-chips).
+      "#tab-credential-reference .cr-ctx-raw{font-size:.68rem;color:var(--text-muted,#5C5C55);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;max-width:46ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:0 1 auto;cursor:help;}" +
+      // SUBJ — mono, compact.
+      "#tab-credential-reference .cr-subj{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.78rem;font-weight:700;color:var(--text-strong,#1C1C1A);}" +
+      // Inline merge-collision strip under the title input (PR-5b/2 at the
+      // point of edit).
+      "#tab-credential-reference .cr-merge-strip{margin:4px 0 0;padding:4px 8px;border:1px solid var(--crimson,#920000);border-radius:6px;background:#FBF1F1;font-size:.72rem;color:var(--crimson,#920000);display:flex;gap:8px;align-items:center;flex-wrap:wrap;text-align:left;}" +
+      "#tab-credential-reference .cr-merge-confirm{border:1px solid var(--crimson,#920000);background:var(--crimson,#920000);color:#fff;border-radius:5px;font-size:.7rem;font-weight:600;padding:2px 8px;cursor:pointer;}" +
+      // ⚙ Columns popover.
+      "#tab-credential-reference .cr-cols-dd{position:relative;display:inline-block;}" +
+      "#tab-credential-reference .cr-cols-dd>summary{list-style:none;cursor:pointer;font-size:.8rem;font-weight:600;border:1px solid var(--border-strong);border-radius:6px;padding:6px 10px;background:var(--surface-opaque,#fff);color:var(--text-body,#3A3A36);user-select:none;}" +
+      "#tab-credential-reference .cr-cols-dd>summary::-webkit-details-marker{display:none;}" +
+      "#tab-credential-reference .cr-cols-dd[open]>summary{background:var(--surface-muted,#ECE9E2);}" +
+      "#tab-credential-reference .cr-cols-panel{position:absolute;left:0;top:calc(100% + 4px);z-index:30;background:var(--surface-opaque,#fff);border:1px solid var(--border-strong);border-radius:8px;box-shadow:0 8px 22px rgba(28,28,26,.18);padding:10px 12px;min-width:170px;}" +
+      "#tab-credential-reference .cr-cols-panel label{display:flex;gap:7px;align-items:center;font-size:.8rem;padding:3px 0;cursor:pointer;white-space:nowrap;text-align:left;}" +
+      // ⬇ extract buttons.
+      "#tab-credential-reference .cr-export-btn{border:1px solid var(--border-strong);background:var(--surface-opaque,#fff);border-radius:6px;font-size:.78rem;font-weight:600;padding:6px 10px;cursor:pointer;color:var(--text-body,#3A3A36);}" +
+      "#tab-credential-reference .cr-export-btn:hover{border-color:var(--cobalt,#0047AB);color:var(--cobalt,#0047AB);}" +
+      // v2 grid ergonomics: left-align the editable cells; compact status col.
+      "#tab-credential-reference table.cr-grid-v2 td.cr-issuer-cell,#tab-credential-reference table.cr-grid-v2 td.cr-trainer-cell{text-align:left;max-width:none;}" +
+      "#tab-credential-reference table.cr-grid-v2 td.cr-caret-cell{width:30px;}" +
+      "#tab-credential-reference table.cr-grid-v2 .cr-action-cell{flex-direction:row;align-items:center;gap:6px;white-space:nowrap;}";
     document.head.appendChild(st);
   }
 
@@ -2469,27 +3004,40 @@
   }
 
   // ─── Unclassified-triage worklist ─────────────────────────────────────────
+  // Lazy worklist-data load, shared by the legacy openWorklist path and the
+  // v2 lane chips (unc / noiss / merge all need preseeds + rawColleges).
+  function ensureWorklistData() {
+    if (state.unclassified || state.unclassLoading) return;
+    state.unclassLoading = true;
+    Promise.all([fetchUnclassified(), fetchUnclassOverlay(), fetchUnclassSuggestions(), fetchUnclassPreseed(), fetchIssuerPreseed()]).then(function (parts) {
+      state.unclassified = parts[0];
+      state.unclassAssign = parts[1] || {};
+      state.unclassSuggest = parts[2] || {};
+      state.unclassPreseed = parts[3] || {};
+      state.issuerPreseed = parts[4] || {};
+      state.unclassLoading = false;
+      renderToolbar();  // refresh counts
+      render();
+    });
+  }
   function openWorklist() {
     state.worklistOpen = true;
-    if (!state.unclassified && !state.unclassLoading) {
-      state.unclassLoading = true;
-      Promise.all([fetchUnclassified(), fetchUnclassOverlay(), fetchUnclassSuggestions(), fetchUnclassPreseed(), fetchIssuerPreseed()]).then(function (parts) {
-        state.unclassified = parts[0];
-        state.unclassAssign = parts[1] || {};
-        state.unclassSuggest = parts[2] || {};
-        state.unclassPreseed = parts[3] || {};
-        state.issuerPreseed = parts[4] || {};
-        state.unclassLoading = false;
-        renderToolbar();  // refresh the button count
-        render();
-      });
-    }
+    ensureWorklistData();
     renderToolbar();
     render();
   }
   function closeWorklist() {
     state.worklistOpen = false;
+    state.lane = "all";
     renderToolbar();
+    render();
+  }
+  // v2 lane switch — the triage lanes reuse the worklist sections (already
+  // in-cell editable); the rest filter the main grid.
+  function setLane(k) {
+    state.lane = k;
+    state.worklistOpen = false;
+    if (k === "unc" || k === "noiss" || k === "merge") ensureWorklistData();
     render();
   }
 
@@ -2583,16 +3131,36 @@
     renderToolbar();  // triage-button count: open → awaiting-fold
   }
 
-  function renderWorklist() {
+  function renderWorklist(section) {
     var wrap = document.getElementById("cr-table-wrap");
     if (!wrap) return;
     clearNode(wrap);
     var sum = document.getElementById("cr-summary"); if (sum) clearNode(sum);
 
+    // v2 lane sections — each renders alone (the lane chips are the nav).
+    if (section === "noiss" || section === "merge") {
+      var lanePanel = el("div", { class: "cr-worklist" });
+      if (state.unclassLoading && !state.unclassified) {
+        lanePanel.appendChild(el("p", { class: "cr-wl-note" }, ["Loading…"]));
+      } else if (section === "merge") {
+        renderPendingMergesInto(lanePanel);
+        if (!pendingMerges().length) {
+          lanePanel.appendChild(el("p", { class: "cr-wl-note" },
+            ["✓ No pending merge confirmations."]));
+        }
+      } else {
+        renderIssuerLaneInto(lanePanel, { skipMerges: true });
+      }
+      wrap.appendChild(lanePanel);
+      return;
+    }
+
     var panel = el("div", { class: "cr-worklist" });
-    var back = el("a", { class: "cr-wl-back", href: "#" }, ["← back to credentials"]);
-    back.onclick = function (e) { e.preventDefault(); closeWorklist(); };
-    panel.appendChild(back);
+    if (!section) {
+      var back = el("a", { class: "cr-wl-back", href: "#" }, ["← back to credentials"]);
+      back.onclick = function (e) { e.preventDefault(); closeWorklist(); };
+      panel.appendChild(back);
+    }
     panel.appendChild(el("h3", { class: "cr-wl-title" }, ["Unclassified exhibit triage"]));
 
     if (state.unclassLoading || !state.unclassified) {
@@ -2608,7 +3176,7 @@
         + "identity. New unclassified titles appear here when the exhibit auditor "
         + "next runs against fresh MAP data."
       ]));
-      renderIssuerLaneInto(panel);   // the missing-issuer lane still applies
+      if (!section) renderIssuerLaneInto(panel);   // the missing-issuer lane still applies
       wrap.appendChild(panel);
       return;
     }
@@ -2699,7 +3267,7 @@
         + "assignments awaiting the next daily fold. Use the \"All\" view to "
         + "review or clear them."
       ]));
-      renderIssuerLaneInto(panel);
+      if (!section) renderIssuerLaneInto(panel);
       wrap.appendChild(panel);
       return;
     }
@@ -2714,7 +3282,7 @@
     shown.forEach(function (it) { tbody.appendChild(renderWorklistRow(it)); });
     tbl.appendChild(tbody);
     panel.appendChild(tbl);
-    renderIssuerLaneInto(panel);
+    if (!section) renderIssuerLaneInto(panel);
     wrap.appendChild(panel);
   }
 
@@ -2834,9 +3402,9 @@
     panel.appendChild(tbl);
   }
 
-  function renderIssuerLaneInto(panel) {
+  function renderIssuerLaneInto(panel, opts) {
     ensureWorklistDatalists();  // the queue-clear early path skips the main list's call
-    renderPendingMergesInto(panel);
+    if (!(opts && opts.skipMerges)) renderPendingMergesInto(panel);
     var queue = issuerQueue().slice().sort(function (a, b) {
       // staged pre-seeds first (they're one click from done), then A→Z
       var pa = state.issuerPreseed[a.unified_title] ? 0 : 1;
@@ -4176,6 +4744,7 @@
         renderToolbar();
         render();
         fetchCosMatches();
+        ensureWorklistData();  // v2 lanes — populate queue counts up front
       }).catch(renderInitError);
       return;
     }

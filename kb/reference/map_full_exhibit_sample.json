@@ -1,0 +1,224 @@
+{
+  "exhibitId": 56423,
+  "exhibitCollegeRecordId": 33334,
+  "aceId": "MAPICI-CAC1-1-001",
+  "title": "CompTIA A+ Certification",
+  "description": null,
+  "sourceId": 4,
+  "originatorCollege": {
+    "collegeId": 68,
+    "collegeName": "Long Beach City College",
+    "updatedByFullName": "Pedro Campos",
+    "updatedOn": "2025-07-10T17:17:09.157"
+  },
+  "adoptingCollege": {
+    "collegeId": 120,
+    "collegeName": "CA MAP INITIATIVE COLLEGE",
+    "masterRecord": false,
+    "collegeVersionNumber": null,
+    "collegeRevision": null,
+    "hasActiveRubric": false
+  },
+  "status": {
+    "combinedStatus": 0,
+    "combinedStatusName": "Active",
+    "exhibitStatus": 0,
+    "exhibitStatusName": "Active",
+    "collegeStatus": 0,
+    "collegeStatusName": "Active",
+    "exhibitIsDenied": false,
+    "exhibitDeniedNotes": ""
+  },
+  "versioning": {
+    "exhibitVersionNumber": "1",
+    "exhibitRevision": "001"
+  },
+  "classification": {
+    "cplTypeId": 2,
+    "cplTypeDescription": "Industry Certification",
+    "learningModeId": 2,
+    "learningModeDescription": "Industry training (I)",
+    "estimatedUnits": null,
+    "agency": null,
+    "cipCodeID": null,
+    "cipCodeName": null,
+    "socCodeID": null,
+    "socCodeName": null,
+    "topCodeID": null,
+    "topCodeName": null,
+    "industrySectorID": null,
+    "industrySectorName": ""
+  },
+  "dates": {
+    "startDate": "2024-09-16T00:00:00",
+    "endDate": "2031-12-31T00:00:00",
+    "teamRevd": "2024-09-16T00:00:00"
+  },
+  "workgroup": {
+    "ccFacultyWorkgroup": false,
+    "facultyWorkgroupId": null,
+    "collaborativeNotes": "Statewide Faculty Workgroup",
+    "facultyNames": null,
+    "facilitatorNames": null,
+    "adminOrPointOfContact": null,
+    "reviewProcessSummaryNotes": null,
+    "administrativeParticipants": null,
+    "agencyParticipants": null,
+    "tradesParticipants": null,
+    "facultyLeadID": null,
+    "collaboratives": [
+      {
+        "id": 5182,
+        "collaborativeId": 1
+      }
+    ]
+  },
+  "notes": "A current CompTIA A+ certificate is an industry-recognized certification that examines a student's understanding of the information technology landscape. Certificate holders will have met qualifying skills in IT hardware, operating systems, computer networking, mobile devices, visualization/cloud computing, security, and systems troubleshooting. Due to the ever changing objectives of the CompTIA exams, students should hold a current CompTIA A+ certification with exam scores posted within the last 6 years for the current or previous exam version. For more information about this certification, visit https://comptia.org/certifications/a.",
+  "adoptions": {
+    "adoptedByColleges": [
+      {
+        "collegeId": 120,
+        "collegeName": "CA MAP INITIATIVE COLLEGE"
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criteriaId": 4586339,
+      "criteria": "3 hours in Information and Communication Technology Essentials",
+      "criteriaNormalized": "3 hours in Information and Communication Technology Essentials",
+      "minUnits": 3.0,
+      "maxUnits": 3.0,
+      "course": {
+        "courseNumber": "COSN 5",
+        "title": "Information and Communication Technology Essentials",
+        "courseType": 1,
+        "localCourseCollegeId": 68,
+        "subjectId": 18514,
+        "outlineId": 147680,
+        "cidDisciplineId": null,
+        "cidDescriptorId": null,
+        "cidDisplayText": "",
+        "mccnDisplayText": ""
+      },
+      "isArticulated": false,
+      "competencyIds": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mccns": []
+    }
+  ],
+  "articulations": [
+	{
+		"exhibitArticulationId": 0,
+		"exhibitId": 56423,
+		"collegeId": 68,
+		"outlineId": 147680,
+		"articulationId": null,
+		"articulationStatus": "Not Started",
+		"exhibitCriteria": {
+			"criteriaId": 4586339,
+			"exhibitId": 56423,
+			"criteria": "3 hours in Information and Communication Technology Essentials",
+			"courseNumber": "COSN 5",
+			"title": "Information and Communication Technology Essentials",
+			"isArticulated": false,
+			"aceId": null,
+			"criteriaNormalized": "3 hours in Information and Communication Technology Essentials",
+			"minUnits": 3.00,
+			"maxUnits": 3.00,
+			"subjectId": 18514,
+			"outlineId": 147680,
+			"cidDescriptorId": null,
+			"cidDisciplineId": null,
+			"courseType": 1,
+			"localCourseCollegeId": 68,
+			"competencies": [],
+			"exhibitCriteriaMccns": []
+		},
+		"courseName": "Computer Hardware Fundamentals"
+	}
+],
+  "competencies": [
+    {
+      "exhibitCompetencyId": 4,
+      "title": "Vendor-neutral background to maintain any operating system",
+      "description": "",
+      "credentialEngineCtid": "ce-12f0fa03-17a5-46f6-88c2-79fbbf639f68",
+      "criteriaIds": [
+        4586339
+      ]
+    },
+    {
+      "exhibitCompetencyId": 5,
+      "title": "Core networking skills along with basic cloud computing and virtualization concepts",
+      "description": "",
+      "credentialEngineCtid": "ce-24e45d26-f5a0-456a-a545-579c233d9062",
+      "criteriaIds": [
+        4586339
+      ]
+    },
+    {
+      "exhibitCompetencyId": 6,
+      "title": "Evaluate and select appropriate components for a custom hardware configuration",
+      "description": "",
+      "credentialEngineCtid": "ce-533c9745-01ef-4637-8aef-e907d17dc134",
+      "criteriaIds": [
+        4586339
+      ]
+    },
+    {
+      "exhibitCompetencyId": 7,
+      "title": "Ability to spot security breaches, identify their origins and escalate threats",
+      "description": "",
+      "credentialEngineCtid": "ce-8f97169a-2fcb-47e0-a31f-3e7c3ffd70ca",
+      "criteriaIds": [
+        4586339
+      ]
+    },
+    {
+      "exhibitCompetencyId": 8,
+      "title": "Manage installing, configuring and maintaining Windows operating systems across a variety of devices",
+      "description": "",
+      "credentialEngineCtid": "ce-bf68f2a1-8af1-4f5c-8459-e296f1098be1",
+      "criteriaIds": [
+        4586339
+      ]
+    },
+    {
+      "exhibitCompetencyId": 9,
+      "title": "Identify technical problems, test theories and prevent further issues",
+      "description": "",
+      "credentialEngineCtid": "ce-da38753e-4436-4f45-8c21-e9c2ae414567",
+      "criteriaIds": [
+        4586339
+      ]
+    },
+    {
+      "exhibitCompetencyId": 10,
+      "title": "Manage and maintain mobile devices from updates to repairs",
+      "description": "",
+      "credentialEngineCtid": "ce-dfa2bca3-78b5-44dc-8ba9-40d15e7bc0d9",
+      "criteriaIds": [
+        4586339
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "exhibitEvidenceId": 3785,
+      "evidenceTypeId": 1,
+      "evidenceTypeName": "Certificate",
+      "description": "Certificate",
+      "submissionGuidelines": "Current CompTIA A+ certification",
+      "issuer": "Comptia",
+      "competencyIds": []
+    }
+  ]
+}
