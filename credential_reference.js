@@ -47,6 +47,12 @@
   var FIELD_ISSUER2_OVERRIDE = "issuing_agency_additional_override";
   var FIELD_TRAINER_OVERRIDE = "training_agency_override";
   var FIELD_QFLAG_OVERRIDE   = "quality_flag_override";
+  // CER v2 round 2 (2026-07-09, Sam): credential-grain Discipline + SUBJ
+  // in-cell overrides. OVERLAY/DISPLAY-ONLY for now — deliberately NOT in
+  // the kb/_apply_credential_review.py promotion lanes (the anchor-proposal
+  // precedent): they live in Supabase, render live, and ride the ⬇ extracts.
+  var FIELD_DISC_OVERRIDE    = "discipline_override";
+  var FIELD_SUBJ_OVERRIDE    = "subj_override";
   var QFLAG_OPTIONS = ["", "suspect_course_as_exhibit", "not_a_credential", "duplicate_of_other"];
 
   // ── Unclassified-triage worklist ──────────────────────────────────────────
@@ -293,6 +299,14 @@
             rec.qflag_override = row.value || "";
             rec.qflag_overridden_by = row.reviewer_email;
             rec.qflag_overridden_at = row.reviewed_at;
+          } else if (row.field === FIELD_DISC_OVERRIDE) {
+            rec.disc_override = row.value || "";
+            rec.disc_overridden_by = row.reviewer_email;
+            rec.disc_overridden_at = row.reviewed_at;
+          } else if (row.field === FIELD_SUBJ_OVERRIDE) {
+            rec.subj_override = row.value || "";
+            rec.subj_overridden_by = row.reviewer_email;
+            rec.subj_overridden_at = row.reviewed_at;
           }
         });
         return m;
@@ -761,6 +775,17 @@
         r.flag_label = r._original_flag_label;
         delete r.original_flag_label;
       }
+      // discipline_override + subj_override (v2 round 2) — overlay-only;
+      // the bake doesn't carry these yet, so no bake-aware revert path.
+      if (ov.disc_override !== undefined && ov.disc_override !== "") {
+        if (r.original_disc_modal === undefined) r.original_disc_modal = r.disc_modal;
+        r.disc_modal = ov.disc_override;
+        r.disc_overridden_at = ov.disc_overridden_at;
+      }
+      if (ov.subj_override !== undefined && ov.subj_override !== "") {
+        r._subj = ov.subj_override;   // pre-seeds the subjOf() cache
+        r.subj_overridden_at = ov.subj_overridden_at;
+      }
     });
     return rows;
   }
@@ -873,6 +898,7 @@
     discFilter: "all",
     rowDraft: {},          // ut → {title, issuer, extra:[..], trainer} UNSAVED grid edits
     rowSaved: {},          // ut → true — grid row saved this session (✓ saved)
+    mergeSugOpen: {},      // ut → true — the ⇆ merge-suggestion panel open
     visCols: null,         // column-picker prefs (loaded from localStorage in init)
     sort: { key: "unified_title", dir: "asc" },
     expanded: {},  // unified_title → bool (row body open)
@@ -1046,6 +1072,8 @@
         issuer: r.primary_issuer || "",
         extra: splitIssuers(ov.issuer2_override || ""),
         trainer: r.primary_trainer || "",
+        disc: r.disc_modal || "",
+        subj: subjOf(r) || "",
       };
     }
     return state.rowDraft[ut];
@@ -1059,7 +1087,9 @@
     return d.title !== (r.display_title || ut)
       || d.issuer !== (r.primary_issuer || "")
       || d.extra.filter(function (x) { return x.trim(); }).join(" | ") !== extraBase
-      || d.trainer !== (r.primary_trainer || "");
+      || d.trainer !== (r.primary_trainer || "")
+      || d.disc !== (r.disc_modal || "")
+      || d.subj.trim().toUpperCase() !== (subjOf(r) || "");
   }
   function dirtyRows() {
     return state.rows.filter(function (r) { return rowIsDirty(r); });
@@ -1211,6 +1241,14 @@
     });
     discSel.onchange = function () { state.discFilter = this.value; render(); };
     tb.appendChild(discSel);
+    if (!document.getElementById("cr-disc-datalist")) {
+      var discDl = document.createElement("datalist");
+      discDl.id = "cr-disc-datalist";
+      Object.keys(discSet).sort().forEach(function (d2) {
+        discDl.appendChild(el("option", { value: d2 }));
+      });
+      tb.appendChild(discDl);
+    }
 
     // Issuer typeahead — many issuers, so a datalist-backed input.
     var issuerSet = {};
@@ -1737,6 +1775,49 @@
     }
   }
 
+  // ── Merge-suggestion engine (v2 round 2, 2026-07-09 — Sam: "add a chip
+  // for any title that you think should be merged"). Rows whose NORMALIZED
+  // title signature collides are likely the same credential entered twice
+  // (the exhibit-unification analog of the CCR's _sug_sig): lowercase,
+  // parentheticals dropped, cert/license/exam-family stopwords dropped,
+  // roman numerals folded to digits, tokens sorted. NEVER auto-applied —
+  // the ⇆ chip opens a panel and the click routes through the standard
+  // PR-5b/2 confirm-merge flow (rename to the existing key + merge_confirm).
+  var _MERGE_STOP = { certification:1, certificate:1, cert:1, certified:1,
+    license:1, licensure:1, licensed:1, exam:1, examination:1, credential:1,
+    the:1, a:1, an:1, of:1, "for":1, "in":1, and:1 };
+  var _MERGE_ROMAN = { i:"1", ii:"2", iii:"3", iv:"4", v:"5" };
+  function mergeSig(title) {
+    var toks = String(title || "").toLowerCase()
+      .replace(/\(.*?\)/g, " ")
+      .replace(/[^a-z0-9+#]+/g, " ")
+      .split(/\s+/)
+      .filter(Boolean)
+      .map(function (w) { return _MERGE_ROMAN[w] || w; })
+      .filter(function (w) { return !_MERGE_STOP[w]; });
+    return toks.length ? toks.sort().join(" ") : null;
+  }
+  function mergeSuggestions() {
+    if (state._mergeSug) return state._mergeSug;
+    var buckets = {};
+    (state.rows || []).forEach(function (r) {
+      var ov = state.overlay[r.unified_title] || {};
+      if ((ov.utitle_override || "").trim()
+          && mergeTargetFor(r, ov.utitle_override)) return;  // already merging
+      var sig = mergeSig(r.display_title || r.unified_title);
+      if (!sig) return;
+      (buckets[sig] = buckets[sig] || []).push(r.unified_title);
+    });
+    var map = {};
+    Object.keys(buckets).forEach(function (sig) {
+      if (buckets[sig].length > 1) {
+        buckets[sig].forEach(function (ut) { map[ut] = buckets[sig]; });
+      }
+    });
+    state._mergeSug = map;
+    return map;
+  }
+
   // ─── CER v2 lane chips (2026-07-09) — the Triage queues as filters over
   // one surface. Injected before the toolbar (regen-proof).
   function renderLanes() {
@@ -1851,6 +1932,16 @@
     var trainerVal = (d.trainer || "").trim();
     var trainerChanged = trainerVal !== (r.primary_trainer || "");
     if (trainerChanged) writes.push(saveOverride(ut, FIELD_TRAINER_OVERRIDE, trainerVal));
+    var discVal = (d.disc || "").trim();
+    var discChanged = discVal !== (r.disc_modal || "");
+    if (discChanged) writes.push(discVal
+      ? saveOverride(ut, FIELD_DISC_OVERRIDE, discVal)
+      : clearOverride(ut, FIELD_DISC_OVERRIDE));
+    var subjVal = (d.subj || "").trim().toUpperCase();
+    var subjChanged = subjVal !== (subjOf(r) || "");
+    if (subjChanged) writes.push(subjVal
+      ? saveOverride(ut, FIELD_SUBJ_OVERRIDE, subjVal)
+      : clearOverride(ut, FIELD_SUBJ_OVERRIDE));
     if (!writes.length) { delete state.rowDraft[ut]; return Promise.resolve({ ok: true, noop: true }); }
     return Promise.all(writes).then(function (rs) {
       if (!rs.every(function (resp) { return resp && resp.ok; })) return { ok: false };
@@ -1875,6 +1966,18 @@
         r.primary_trainer = trainerVal || null;
         r.trainer_overridden_at = now;
       }
+      if (discChanged) {
+        o.disc_override = discVal;
+        if (r.original_disc_modal === undefined) r.original_disc_modal = r.disc_modal;
+        r.disc_modal = discVal || r.original_disc_modal;
+        r.disc_overridden_at = discVal ? now : undefined;
+      }
+      if (subjChanged) {
+        o.subj_override = subjVal;
+        if (subjVal) { r._subj = subjVal; r.subj_overridden_at = now; }
+        else { delete r._subj; r.subj_overridden_at = undefined; }
+      }
+      if (titleChanged) state._mergeSug = null;  // signatures moved
       delete state.rowDraft[ut];
       state.rowSaved[ut] = true;
       return { ok: true };
@@ -2003,7 +2106,9 @@
       if (e.key === "Escape") {
         d[key] = key === "title" ? (r.display_title || r.unified_title)
           : key === "issuer" ? (r.primary_issuer || "")
-          : key === "trainer" ? (r.primary_trainer || "") : "";
+          : key === "trainer" ? (r.primary_trainer || "")
+          : key === "disc" ? (r.disc_modal || "")
+          : key === "subj" ? (subjOf(r) || "") : "";
         inp.value = d[key];
         markRowDirty(r, tr);
         if (key === "title") refreshMergeStrip(r, tr);
@@ -2030,6 +2135,56 @@
     okb.onclick = function () { saveGridRow(r, tr); };
     strip.appendChild(okb);
     holder.appendChild(strip);
+  }
+
+  // The ⇆ panel: the row's look-alikes, each with a "Merge into this"
+  // action that reuses the PR-5b/2 flow (unified_title_override = the
+  // target's KB key + unified_title_merge_confirm; the fold does the rest).
+  function renderMergeSugPanel(r, group) {
+    var panel = el("div", { class: "cr-mergesug-panel" });
+    panel.appendChild(el("div", { class: "cr-mergesug-h" },
+      ["Looks like the same credential — pick the row that SURVIVES:"]));
+    var myIssuer = (r.primary_issuer || "").toLowerCase();
+    group.forEach(function (ut2) {
+      if (ut2 === r.unified_title) return;
+      var cand = credKeyIndex()[ut2];
+      if (!cand) return;
+      var line = el("div", { class: "cr-mergesug-row" });
+      var meta = [];
+      if (cand.primary_issuer) meta.push(cand.primary_issuer);
+      if (typeof cand.students_served === "number") meta.push(cand.students_served.toLocaleString() + " students");
+      meta.push(cand.raw_count + " variant" + (cand.raw_count === 1 ? "" : "s"));
+      line.appendChild(el("span", { class: "cr-mergesug-title" },
+        [cand.display_title || ut2]));
+      line.appendChild(el("span", { class: "cr-mergesug-meta" },
+        [" · " + meta.join(" · ")]));
+      var candIssuer = (cand.primary_issuer || "").toLowerCase();
+      if (myIssuer && candIssuer && myIssuer !== candIssuer) {
+        line.appendChild(el("span", { class: "cr-mergesug-warn",
+          title: "The issuers differ (" + r.primary_issuer + " vs "
+            + cand.primary_issuer + ") — these may be genuinely different credentials."
+        }, [" ⚠ different issuer"]));
+      }
+      if (state.sess) {
+        var btn = el("button", { type: "button", class: "cr-mergesug-btn",
+          title: "Merge “" + (r.display_title || r.unified_title)
+            + "” INTO “" + (cand.display_title || ut2)
+            + "” — you'll get the standard merge confirmation." },
+          ["⇆ Merge into this"]);
+        btn.onclick = function () {
+          var tr2 = btn.closest("tr");
+          draftOf(r).title = ut2;      // the target's KB key — the fold's join
+          delete state.rowSaved[r.unified_title];
+          saveGridRow(r, tr2);
+        };
+        line.appendChild(btn);
+      }
+      panel.appendChild(line);
+    });
+    var close = el("button", { type: "button", class: "cr-mergesug-close" }, ["dismiss"]);
+    close.onclick = function () { delete state.mergeSugOpen[r.unified_title]; render(); };
+    panel.appendChild(close);
+    return panel;
   }
 
   function renderRow(r) {
@@ -2106,29 +2261,68 @@
           return v.raw_title;
         }).join("\n") }, [rawFirst + rawMore]));
     }
+    // ⇆ merge-suggestion chip — titles whose normalized signature collides
+    // (likely the same credential entered twice). Click → inline panel;
+    // merging routes through the standard confirm-merge flow.
+    var sugGroup = mergeSuggestions()[ut];
+    if (sugGroup && sugGroup.length > 1) {
+      var nOthers = sugGroup.length - 1;
+      var sugChip = el("button", { type: "button", class: "cr-chip cr-chip-mergesug",
+        title: "This title looks like the same credential as " + nOthers
+          + " other row" + (nOthers === 1 ? "" : "s") + " — click to review and merge."
+      }, ["⇆ " + nOthers + " similar"]);
+      sugChip.onclick = function (e) {
+        e.stopPropagation();
+        state.mergeSugOpen[ut] = !state.mergeSugOpen[ut];
+        render();
+      };
+      tchips.appendChild(sugChip);
+    }
     titleTd.appendChild(tchips);
     titleTd.appendChild(el("div", { class: "cr-merge-slot" }));
+    if (sugGroup && state.mergeSugOpen[ut]) {
+      titleTd.appendChild(renderMergeSugPanel(r, sugGroup));
+    }
     tr.appendChild(titleTd);
 
     var vc = visCols();
 
-    // SUBJ — modal SUBJ4 across the aligned common courses.
+    // SUBJ — modal SUBJ4 across the aligned common courses; in-cell
+    // overridable at the credential grain (v2 round 2).
     if (vc.subj) {
       var subjTd = el("td", { class: "cr-subj-cell" });
-      var s = subjOf(r);
-      subjTd.appendChild(s
-        ? el("span", { class: "cr-subj",
-            title: "Modal SUBJ4 across this credential's articulated common courses." }, [s])
-        : el("span", { class: "cr-null" }, ["—"]));
+      if (state.sess) {
+        subjTd.appendChild(gridInput(r, tr, "subj", "cr-subj-in", "SUBJ"));
+      } else {
+        var s = subjOf(r);
+        subjTd.appendChild(s
+          ? el("span", { class: "cr-subj",
+              title: "Modal SUBJ4 across this credential's articulated common courses." }, [s])
+          : el("span", { class: "cr-null" }, ["—"]));
+      }
+      if (r.subj_overridden_at) {
+        subjTd.appendChild(el("span", { class: "cr-override-marker",
+          title: "SUBJ curated at the credential grain" }, ["✎"]));
+      }
       tr.appendChild(subjTd);
     }
 
-    // Discipline (derived — read-only).
+    // Discipline — modal MQ discipline; in-cell overridable (v2 round 2).
     if (vc.disc) {
       var discTd = el("td", { class: "cr-disc-cell" });
-      discTd.appendChild(r.disc_modal
-        ? document.createTextNode(r.disc_modal)
-        : el("span", { class: "cr-null" }, ["—"]));
+      if (state.sess) {
+        discTd.appendChild(gridInput(r, tr, "disc", "cr-disc-in",
+          "discipline…", "cr-disc-datalist"));
+      } else {
+        discTd.appendChild(r.disc_modal
+          ? document.createTextNode(r.disc_modal)
+          : el("span", { class: "cr-null" }, ["—"]));
+      }
+      if (r.disc_overridden_at) {
+        discTd.appendChild(el("span", { class: "cr-override-marker",
+          title: "Discipline curated at the credential grain · originally: "
+            + (r.original_disc_modal || "(blank)") }, ["✎"]));
+      }
       tr.appendChild(discTd);
     }
 
@@ -2875,7 +3069,25 @@
       // v2 grid ergonomics: left-align the editable cells; compact status col.
       "#tab-credential-reference table.cr-grid-v2 td.cr-issuer-cell,#tab-credential-reference table.cr-grid-v2 td.cr-trainer-cell{text-align:left;max-width:none;}" +
       "#tab-credential-reference table.cr-grid-v2 td.cr-caret-cell{width:30px;}" +
-      "#tab-credential-reference table.cr-grid-v2 .cr-action-cell{flex-direction:row;align-items:center;gap:6px;white-space:nowrap;}";
+      "#tab-credential-reference table.cr-grid-v2 .cr-action-cell{flex-direction:row;align-items:center;gap:6px;white-space:nowrap;}" +
+      // ── v2 round 2 (Sam, 2026-07-09) ──
+      // The tab's overall background: cream, not gray (scoped token).
+      "#tab-credential-reference{--cer-cream:#FEF9DA;background:var(--cer-cream);}" +
+      "#tab-credential-reference .cr-table-wrap{background:var(--surface-opaque,#fff);}" +
+      // In-cell SUBJ (uppercase display) + Discipline inputs.
+      "#tab-credential-reference .cr-subj-in{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:700;text-transform:uppercase;max-width:9ch;}" +
+      // ⇆ merge-suggestion chip (violet = machine-suggested) + panel.
+      "#tab-credential-reference .cr-chip-mergesug{color:var(--violet,#6D28D9);border-color:var(--violet,#6D28D9);background:#F6F2FD;cursor:pointer;}" +
+      "#tab-credential-reference .cr-chip-mergesug:hover{background:#EDE4FB;}" +
+      "#tab-credential-reference .cr-mergesug-panel{margin:5px 0 0;padding:7px 10px;border:1px solid var(--violet,#6D28D9);border-radius:6px;background:#F6F2FD;font-size:.76rem;text-align:left;}" +
+      "#tab-credential-reference .cr-mergesug-h{font-weight:700;color:var(--violet,#6D28D9);margin-bottom:4px;}" +
+      "#tab-credential-reference .cr-mergesug-row{padding:3px 0;display:flex;gap:6px;align-items:center;flex-wrap:wrap;}" +
+      "#tab-credential-reference .cr-mergesug-title{font-weight:600;color:var(--text-strong,#1C1C1A);}" +
+      "#tab-credential-reference .cr-mergesug-meta{color:var(--text-muted,#5C5C55);}" +
+      "#tab-credential-reference .cr-mergesug-warn{color:var(--mustard-text,#8B6800);font-weight:600;cursor:help;}" +
+      "#tab-credential-reference .cr-mergesug-btn{border:1px solid var(--violet,#6D28D9);background:var(--violet,#6D28D9);color:#fff;border-radius:5px;font-size:.72rem;font-weight:600;padding:2px 8px;cursor:pointer;}" +
+      "#tab-credential-reference .cr-mergesug-btn:disabled{opacity:.6;}" +
+      "#tab-credential-reference .cr-mergesug-close{border:none;background:none;color:var(--text-muted,#5C5C55);font-size:.7rem;cursor:pointer;text-decoration:underline;padding:2px 0 0;}";
     document.head.appendChild(st);
   }
 

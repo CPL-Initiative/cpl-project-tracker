@@ -132,3 +132,32 @@ save wiring, SUBJ, column retirement/resurrection, extracts, anon).
   mapping (one function, documented field-by-field).
 - Candidate follow-ups: unclassified rows folded INTO the main grid (v2.1),
   datalist-backed trainer input, per-lane keyboard nav.
+
+## Round 2 — same day (Sam's shakedown asks)
+
+1. **Cream tab background** — `#tab-credential-reference{--cer-cream:#FEF9DA;
+   background:var(--cer-cream)}` as a SCOPED token in the injected CSS (no
+   :root/Rule-4 mirror needed for a one-tab role); the table wrap stays
+   opaque white (data never sits on tint — design-system rule).
+2. **Discipline + SUBJ edit in-cell** at the credential grain — NEW
+   kb_curation fields `discipline_override` + `subj_override` (SUBJ
+   normalizes UPPERCASE at save; discipline gets a datalist of known
+   disciplines). **Overlay/display-only for now** — deliberately NOT in the
+   `_apply_credential_review.py` promotion lanes (the anchor-proposal
+   precedent): they persist in Supabase, render live, and ride the ⬇
+   extracts + exports. Wire a promotion lane when/if Sam wants them folded
+   into `kb/credentials.json`.
+3. **⇆ merge-suggestion chip** — normalized-title-signature collisions
+   (lowercase · parentheticals dropped · cert/license/exam-family stopwords
+   dropped · roman numerals folded · tokens sorted; the exhibit-layer analog
+   of the CCR's `_sug_sig`). The chip opens an inline panel listing the
+   look-alikes (issuer/students/variants; ⚠ different-issuer warning when
+   certifying bodies conflict — First Aid AHA vs Red Cross stays Sam's
+   judgment); "⇆ Merge into this" sets the row's title to the TARGET'S KB
+   KEY and routes through the standard PR-5b/2 confirm-merge flow — zero new
+   merge machinery, never auto-applied.
+
+Also: Sam asked why saved unclassified rows still show — they're "awaiting
+fold" (the lane chip says so); dispatched `daily-dashboard.yml` to fold his
+102 on the spot. Tests: `tests/cer_v2_round2.test.js` (25); suite 148.
+
