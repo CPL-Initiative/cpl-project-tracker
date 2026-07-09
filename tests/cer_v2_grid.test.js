@@ -125,8 +125,9 @@ const rowByTitle = (doc, needle) => Array.from(doc.querySelectorAll("tr.cr-row")
 
   // SUBJ derivation: modal across articulations.
   const comptia = rowByTitle(doc, "CompTIA A+");
+  // (round 2 made SUBJ an in-cell input for signed-in curators)
   check("SUBJ: CompTIA row shows modal SUBJ4 CISC",
-    !!comptia && txt(comptia.querySelector(".cr-subj")) === "CISC");
+    !!comptia && comptia.querySelector(".cr-subj-in").value === "CISC");
 
   // ── B. in-cell editing: title + trainer, dirty → Save → overrides ──
   const titleInp = comptia.querySelector(".cr-title-in");
