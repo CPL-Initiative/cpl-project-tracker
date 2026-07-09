@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CER v2 — Triage-first mockup</title>
+</head>
+<body style="margin:0">
+<style>
+  /* ── First Light tokens (verbatim from the dashboard :root) ─────────── */
+  #cer2 {
+    --paper:#F4F2ED; --text-strong:#1C1C1A; --text-body:#3A3A36;
+    --text-muted:#5C5C55; --text-faint:#87877F;
+    --surface:rgba(255,255,255,.78); --surface-opaque:#FFFFFF;
+    --surface-subtle:#F7F5F1; --surface-muted:#ECE9E2;
+    --border:rgba(28,28,26,.14); --border-strong:rgba(28,28,26,.30);
+    --cobalt:#0047AB; --crimson:#920000; --hunter:#2C601A;
+    --violet:#6D28D9; --mustard-fill:#E3B341; --mustard-text:#8B6800;
+    --mono:ui-monospace,'Cascadia Mono','Segoe UI Mono',Menlo,Consolas,monospace;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+    color:var(--text-body);
+    background:var(--paper);
+    display:block; min-height:100vh;
+    padding:14px 16px 40px;   /* full-bleed: no max-width container */
+    box-sizing:border-box;
+  }
+  #cer2 *, #cer2 *::before, #cer2 *::after { box-sizing:border-box; }
+
+  /* ── header line (one line, no prose) ───────────────────────────────── */
+  .c2-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:10px; }
+  .c2-head h2 { margin:0; font-size:1.05rem; color:var(--text-strong); letter-spacing:.01em; }
+  .c2-sum { font-size:.8rem; color:var(--text-muted); }
+  .c2-sum strong { color:var(--text-strong); font-variant-numeric:tabular-nums; }
+  .c2-spacer { flex:1 1 auto; }
+  .c2-saveall {
+    background:var(--cobalt); color:#fff; border:none; border-radius:7px;
+    font-size:.82rem; font-weight:600; padding:7px 14px; cursor:pointer;
+    display:none;
+  }
+  .c2-saveall.show { display:inline-block; }
+  .c2-saveall:focus-visible { outline:2px solid var(--cobalt); outline-offset:2px; }
+  .c2-auth { font-size:.75rem; color:var(--hunter); font-weight:600; }
+
+  /* ── lane chips (the Triage "subtabs", now filters over one table) ──── */
+  .c2-lanes { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px; }
+  .c2-lane {
+    border:1px solid var(--border-strong); background:var(--surface-opaque);
+    color:var(--text-body); border-radius:16px; padding:4px 12px;
+    font-size:.78rem; font-weight:600; cursor:pointer;
+  }
+  .c2-lane .n { color:var(--text-muted); font-weight:600; font-variant-numeric:tabular-nums; }
+  .c2-lane:hover { background:var(--surface-muted); }
+  .c2-lane.active { background:var(--text-strong); color:#fff; border-color:var(--text-strong); }
+  .c2-lane.active .n { color:var(--mustard-fill); }
+  .c2-lane:focus-visible { outline:2px solid var(--cobalt); outline-offset:2px; }
+
+  /* ── filter row ─────────────────────────────────────────────────────── */
+  .c2-filters { display:flex; gap:6px; flex-wrap:wrap; align-items:center; margin-bottom:10px; }
+  .c2-filters input[type=search], .c2-filters select {
+    font-size:.8rem; padding:6px 8px; border:1px solid var(--border-strong);
+    border-radius:6px; background:var(--surface-opaque); color:var(--text-body);
+  }
+  .c2-filters input:focus-visible, .c2-filters select:focus-visible,
+  .c2-grid input:focus-visible, .c2-grid select:focus-visible, .c2-grid button:focus-visible {
+    outline:2px solid var(--cobalt); outline-offset:1px;
+  }
+  .c2-search { flex:1 1 260px; min-width:200px; }
+  .c2-cols { position:relative; }
+  .c2-cols > summary {
+    list-style:none; cursor:pointer; font-size:.8rem; font-weight:600;
+    border:1px solid var(--border-strong); border-radius:6px; padding:6px 10px;
+    background:var(--surface-opaque); color:var(--text-body); user-select:none;
+  }
+  .c2-cols > summary::-webkit-details-marker { display:none; }
+  .c2-cols[open] > summary { background:var(--surface-muted); }
+  .c2-cols-panel {
+    position:absolute; right:0; top:calc(100% + 4px); z-index:30;
+    background:var(--surface-opaque); border:1px solid var(--border-strong);
+    border-radius:8px; box-shadow:0 8px 22px rgba(28,28,26,.18);
+    padding:10px 12px; min-width:190px;
+  }
+  .c2-cols-panel label { display:flex; gap:7px; align-items:center; font-size:.8rem; padding:3px 0; cursor:pointer; white-space:nowrap; }
+
+  /* ── the grid ───────────────────────────────────────────────────────── */
+  .c2-wrap { overflow-x:auto; }   /* narrow-screen safety net only */
+  table.c2-grid {
+    width:100%; border-collapse:collapse; table-layout:fixed;
+    background:var(--surface-opaque); font-size:.82rem;
+    border:1px solid var(--border); border-radius:8px; overflow:hidden;
+  }
+  .c2-grid thead th {
+    position:sticky; top:0; z-index:5;
+    background:var(--text-strong); color:var(--mustard-fill);
+    font-size:.72rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase;
+    padding:8px 8px; text-align:left; white-space:nowrap; cursor:default;
+  }
+  .c2-grid thead th.sortable { cursor:pointer; }
+  .c2-grid thead th.sortable:hover { color:#fff; }
+  .c2-grid thead th .arr { opacity:.55; font-size:.68rem; margin-left:3px; }
+  .c2-grid thead th .arr.on { opacity:1; }
+  .c2-grid td { padding:7px 8px; border-top:1px solid var(--border); vertical-align:top; }
+  .c2-grid tbody tr.c2-row:hover td { background:var(--surface-subtle); }
+  .c2-grid td.num, .c2-grid th.num { text-align:right; font-variant-numeric:tabular-nums; }
+
+  /* dirty + saved row states */
+  tr.c2-row.dirty td:first-child { box-shadow:inset 3px 0 0 var(--mustard-fill); }
+  tr.c2-row.saved td:first-child { box-shadow:inset 3px 0 0 var(--hunter); }
+
+  /* column hiding — [data-col] cells toggled by table-level classes */
+  table.hide-trainer  [data-col=trainer]  { display:none; }
+  table.hide-students [data-col=students] { display:none; }
+  table.hide-variants [data-col=variants] { display:none; }
+  table.hide-conf     [data-col=conf]     { display:none; }
+  table.hide-elig     [data-col=elig]     { display:none; }
+  table.hide-subj     [data-col=subj]     { display:none; }
+
+  /* caret + checkbox */
+  .c2-caret {
+    background:none; border:none; cursor:pointer; font-size:.8rem;
+    color:var(--text-muted); padding:2px 4px; line-height:1;
+  }
+  .c2-caret:hover { color:var(--cobalt); }
+
+  /* in-cell inputs — quiet until focus (in-cell like Triage) */
+  .c2-cellin {
+    width:100%; font-size:.82rem; color:var(--text-strong);
+    border:1px solid transparent; border-radius:5px; padding:4px 6px;
+    background:transparent; font-family:inherit;
+  }
+  .c2-cellin:hover { border-color:var(--border); background:var(--surface-opaque); }
+  .c2-cellin:focus { border-color:var(--cobalt); background:var(--surface-opaque); }
+  .c2-cellin::placeholder { color:var(--text-faint); }
+  .c2-title-in { font-weight:600; }
+
+  /* context line under the title input */
+  .c2-ctx { display:flex; gap:5px; flex-wrap:wrap; align-items:center; margin:3px 0 0 6px; }
+  .c2-raw { font-size:.72rem; color:var(--text-muted); font-family:var(--mono);
+    max-width:46ch; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .c2-chip {
+    border-radius:10px; font-size:.66rem; font-weight:600; padding:1px 7px;
+    border:1px solid var(--border-strong); color:var(--text-muted); background:var(--surface-subtle);
+    white-space:nowrap;
+  }
+  .c2-chip.ccc { background:var(--text-strong); color:var(--mustard-fill); border-color:var(--text-strong); }
+  .c2-chip.pre { color:var(--violet); border-color:var(--violet); background:#F6F2FD; }
+  .c2-chip.edit { color:var(--mustard-text); border-color:var(--mustard-text); background:#FBF6E7; }
+  .c2-chip.college { background:var(--surface-muted); }
+  .c2-chip.unc { color:var(--crimson); border-color:var(--crimson); background:#FBF1F1; }
+
+  /* merge-collision strip (inline, under the title input) */
+  .c2-merge {
+    margin:4px 0 0 6px; padding:5px 8px; border:1px solid var(--crimson);
+    border-radius:6px; background:#FBF1F1; font-size:.74rem; color:var(--crimson);
+    display:flex; gap:8px; align-items:center; flex-wrap:wrap;
+  }
+  .c2-merge button {
+    border:1px solid var(--crimson); background:var(--crimson); color:#fff;
+    border-radius:5px; font-size:.72rem; font-weight:600; padding:3px 8px; cursor:pointer;
+  }
+  .c2-merge .alt { background:none; color:var(--crimson); }
+
+  /* SUBJ cell */
+  .c2-subj { font-family:var(--mono); font-size:.78rem; color:var(--text-strong); font-weight:600; }
+
+  /* issuer cell extras */
+  .c2-addiss {
+    background:none; border:none; color:var(--cobalt); font-size:.72rem;
+    cursor:pointer; padding:2px 4px; margin-left:2px; font-weight:600;
+  }
+  .c2-addiss:hover { text-decoration:underline; }
+
+  /* status cell */
+  .c2-save {
+    background:var(--cobalt); color:#fff; border:none; border-radius:6px;
+    font-size:.76rem; font-weight:600; padding:4px 10px; cursor:pointer;
+  }
+  .c2-init {
+    background:none; border:1px solid var(--border-strong); color:var(--text-body);
+    border-radius:6px; font-size:.74rem; font-weight:600; padding:3px 9px; cursor:pointer;
+  }
+  .c2-init:hover { border-color:var(--hunter); color:var(--hunter); }
+  .c2-stamp { font-size:.74rem; color:var(--hunter); font-weight:600; white-space:nowrap; }
+  .c2-savedok { font-size:.74rem; color:var(--hunter); font-weight:700; }
+  .c2-null { color:var(--text-faint); }
+
+  /* drill-in drawer */
+  tr.c2-drawer > td {
+    background:var(--surface-subtle); border-top:1px solid var(--border);
+    padding:12px 14px 14px 46px;
+  }
+  .c2-drawer-grid { display:grid; grid-template-columns:minmax(280px,5fr) minmax(320px,7fr); gap:18px; }
+  @media (max-width:900px){ .c2-drawer-grid { grid-template-columns:1fr; } }
+  .c2-dh { font-size:.68rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+    color:var(--text-muted); margin:0 0 6px; }
+  .c2-dsec + .c2-dsec { margin-top:14px; }
+  .c2-varline { font-size:.78rem; padding:3px 0; color:var(--text-body); display:flex; gap:8px; align-items:baseline; flex-wrap:wrap; }
+  .c2-varline .rt { font-family:var(--mono); font-size:.74rem; }
+  .c2-varline .cf { font-size:.68rem; color:var(--text-faint); font-variant-numeric:tabular-nums; }
+  .c2-art { font-size:.78rem; padding:4px 0; border-top:1px dashed var(--border); }
+  .c2-art:first-of-type { border-top:none; }
+  .c2-art .cid { font-family:var(--mono); font-weight:700; color:var(--cobalt); margin-right:6px; }
+  .c2-art .loc { margin:2px 0 0 14px; color:var(--text-muted); font-size:.74rem; }
+  .c2-art .loc .code { font-family:var(--mono); }
+  .c2-dfield { display:flex; gap:8px; align-items:center; margin:4px 0; font-size:.78rem; }
+  .c2-dfield label { min-width:96px; color:var(--text-muted); font-size:.72rem; font-weight:600; }
+  .c2-dfield select, .c2-dfield input {
+    font-size:.78rem; padding:4px 6px; border:1px solid var(--border-strong);
+    border-radius:5px; background:var(--surface-opaque); color:var(--text-body);
+  }
+  .c2-lookups { display:flex; gap:6px; margin-top:10px; }
+  .c2-lk { border:1px solid var(--border-strong); background:var(--surface-opaque);
+    border-radius:6px; font-size:.74rem; padding:4px 9px; cursor:pointer; color:var(--text-body); }
+  .c2-lk:hover { border-color:var(--cobalt); color:var(--cobalt); }
+  .c2-audit-muted { display:flex; gap:5px; flex-wrap:wrap; margin-top:6px; }
+
+  .c2-empty { text-align:center; color:var(--text-muted); padding:22px 0; }
+  .c2-foot { font-size:.7rem; color:var(--text-faint); margin-top:10px; }
+  @media (prefers-reduced-motion: no-preference) {
+    tr.c2-row.saved td { transition: box-shadow .3s ease; }
+  }
+</style>
+
+<div id="cer2">
+  <div class="c2-head">
+    <h2>Credential Reference</h2>
+    <span class="c2-sum" id="c2sum"></span>
+    <span class="c2-spacer"></span>
+    <button class="c2-saveall" id="c2saveall" type="button">💾 Save all (0)</button>
+    <span class="c2-auth" title="Signed in — edits write curation overrides, folded on the daily sync">✓ map@rccd.edu</span>
+  </div>
+
+  <div class="c2-lanes" id="c2lanes"></div>
+
+  <div class="c2-filters">
+    <input class="c2-search" id="c2q" type="search" placeholder="Search title, raw variant, issuer…" autocomplete="off">
+    <select id="c2cpl" title="CPL type"></select>
+    <select id="c2disc" title="Discipline"></select>
+    <input id="c2iss" type="search" list="c2isslist" placeholder="Issuer… ((none) = local)" autocomplete="off" title="Issuing agency">
+    <datalist id="c2isslist"></datalist>
+    <select id="c2conf" title="Confidence band">
+      <option value="all">Conf: any</option>
+      <option value="lo">Conf: &lt;0.60</option>
+      <option value="mid">Conf: 0.60–0.79</option>
+      <option value="hi">Conf: ≥0.80</option>
+    </select>
+    <select id="c2group" title="Group rows">
+      <option value="none">Group: none</option>
+      <option value="disc">Group: Discipline</option>
+      <option value="top">Group: TOP category</option>
+      <option value="gearea">Group: GE Area</option>
+    </select>
+    <details class="c2-cols" id="c2colsdd">
+      <summary>⚙ Columns</summary>
+      <div class="c2-cols-panel" id="c2colspanel"></div>
+    </details>
+  </div>
+
+  <div class="c2-wrap">
+    <table class="c2-grid hide-variants hide-conf hide-elig" id="c2table">
+      <colgroup>
+        <col style="width:30px"><col style="width:30px">
+        <col><!-- credential -->
+        <col data-col="subj" style="width:64px">
+        <col data-col="disc" style="width:150px">
+        <col style="width:215px"><!-- issuer -->
+        <col data-col="trainer" style="width:165px">
+        <col data-col="students" style="width:84px">
+        <col data-col="variants" style="width:58px">
+        <col data-col="conf" style="width:64px">
+        <col data-col="elig" style="width:78px">
+        <col style="width:132px"><!-- status -->
+      </colgroup>
+      <thead>
+        <tr>
+          <th><input type="checkbox" id="c2selall" title="Select all shown (not initiated)"></th>
+          <th></th>
+          <th class="sortable" data-sort="title">Credential <span class="arr">↕</span></th>
+          <th class="sortable" data-col="subj" data-sort="subj" title="Modal SUBJ4 across this credential's articulated common courses">SUBJ <span class="arr">↕</span></th>
+          <th class="sortable" data-col="disc" data-sort="disc">Discipline <span class="arr">↕</span></th>
+          <th class="sortable" data-sort="issuer">Issuing agency <span class="arr">↕</span></th>
+          <th data-col="trainer">Trainer</th>
+          <th class="sortable num" data-col="students" data-sort="students" title="Students eligible for CPL credit recs, statewide. <5 masked.">Students <span class="arr">↕</span></th>
+          <th class="num" data-col="variants" title="Distinct raw college-entered titles">Var</th>
+          <th class="num" data-col="conf" title="Modal title confidence">Conf</th>
+          <th class="num" data-col="elig" title="Statewide eligible CPL credit units">Elig. units</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="c2body"></tbody>
+    </table>
+  </div>
+  <div class="c2-foot">Mockup — 12 sample rows standing in for 2,042. Enter saves a row · Esc reverts · click ▸ to dig in.</div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // ── sample rows (realistic shapes from credential_reference_data.js) ──
+  var ROWS = [
+    { ut:"AP Biology", subj:"BIOL", disc:"Biological Sciences", issuer:"College Board",
+      trainer:"", students:8942, conf:0.98, elig:28450, statewide:true, cpl:["Credit By Exam"],
+      variants:["AP Biology","AP BIOLOGY EXAM"], colleges:["Statewide"], init:{by:"sam",on:"07-01"},
+      arts:[{cid:"BIOL C1000", t:"General Biology", local:[{c:"Statewide (CCC)", code:"—", u:4}]}] },
+    { ut:"EMT — Emergency Medical Technician", subj:"EMSE", disc:"Emergency Medical Services", issuer:"CA EMS Authority",
+      trainer:"", students:2861, conf:0.94, elig:11210, statewide:true, cpl:["Industry Certification"],
+      variants:["EMT Certification","EMT-B License","Emergency Medical Technician Cert"], colleges:["Statewide"], init:{by:"sam",on:"07-05"},
+      arts:[{cid:"EMS 100", t:"Emergency Medical Technician", local:[{c:"Norco", code:"EMS 55", u:8},{c:"Barstow", code:"EMT 101", u:7.5}]}] },
+    { ut:"American Red Cross CPR/First Aid", subj:"HESC", disc:"Health", issuer:"American Red Cross",
+      trainer:"", students:1204, conf:0.91, elig:1420, statewide:false, cpl:["Industry Certification"],
+      variants:["CPR/First Aid - Red Cross","American Red Cross CPR & First Aid","BLS/CPR Certification"], colleges:["Mt. SAC","Rio Hondo","Merced"], init:null,
+      arts:[{cid:"HESC M1044", t:"First Aid and CPR", local:[{c:"Mt. SAC", code:"HLTH 31", u:1},{c:"Rio Hondo", code:"HS 140", u:1.5}]}] },
+    { ut:"CompTIA A+ Certification", subj:"CISC", disc:"Computer Information Systems", issuer:"CompTIA",
+      trainer:"", students:412, conf:0.96, elig:3110, statewide:false, cpl:["Industry Certification"],
+      variants:["CompTIA A+","COMPTIA A+ Cert (220-1101/1102)"], colleges:["Coastline","Palomar","Norco"], init:{by:"sam",on:"07-08"},
+      arts:[{cid:"CISC M1210", t:"Computer Hardware Fundamentals", local:[{c:"Coastline", code:"CST C104", u:3},{c:"Palomar", code:"CSNT 110", u:3.5}]}] },
+    { ut:"Fire Inspector I", subj:"FIRE", disc:"Fire Technology", issuer:"ICC", issuers:["ICC","NFPA","State Fire Training"],
+      trainer:"", students:128, conf:0.88, elig:940, statewide:false, cpl:["Industry Certification"],
+      variants:["Fire Inspector 1 - ICC","SFT Fire Inspector I","Fire Inspector I (NFPA 1031)"], colleges:["Santa Ana","Bakersfield"], init:null,
+      arts:[{cid:"FIRE M1032", t:"Fire Prevention Technology", local:[{c:"Santa Ana", code:"FIRE 105", u:3}]}] },
+    { ut:"Child Growth and Development", subj:"CDEV", disc:"Child Development", issuer:"", preseed:{issuer:"Local High School", trainer:"Colton-Redlands-Yucaipa ROP", via:"hs-generic"},
+      trainer:"", students:76, conf:0.62, elig:310, statewide:false, cpl:["High School Articulation"],
+      variants:["CD-005 Child Development ROP","CRY-ROP Child Dev / CD-005"], colleges:["San Bernardino Vly"], init:null,
+      arts:[{cid:"CDEV 100", t:"Child Growth and Development", local:[{c:"San Bernardino Vly", code:"CD 105", u:3}]}] },
+    { ut:"ASE Brakes (A5)", subj:"AUTO", disc:"Automotive Technology", issuer:"ASE",
+      trainer:"", students:64, conf:0.79, elig:280, statewide:false, cpl:["Industry Certification"],
+      variants:["ASE A5 Brakes Cert","Automotive Service Excellence - Brakes"], colleges:["Cerritos","Rio Hondo"], init:null,
+      mergeTarget:"ASE Brakes Certification",
+      arts:[{cid:"AUTO M1150", t:"Automotive Brake Systems", local:[{c:"Cerritos", code:"AT 52", u:4}]}] },
+    { ut:"Retail Management Certificate", subj:"BUSI", disc:"Business", issuer:"",
+      trainer:"Western Association of Food Chains", students:58, conf:0.71, elig:620, statewide:false, cpl:["Industry Certification"],
+      variants:["WAFC Retail Management Cert"], colleges:["Cypress"], init:null,
+      arts:[{cid:"BUSI M9021", t:"Retail Management", local:[{c:"Cypress", code:"MGT 163", u:3}]}] },
+    { ut:"Microsoft Excel Associate", subj:"CISA", disc:"Computer Applications", issuer:"Microsoft",
+      trainer:"Certiport", students:96, conf:0.85, elig:410, statewide:false, cpl:["Industry Certification"],
+      variants:["MOS Excel Associate","Microsoft Office Specialist: Excel"], colleges:["Modesto","Merced"], init:null,
+      arts:[{cid:"CISA M1030", t:"Spreadsheet Applications", local:[{c:"Modesto", code:"CMPGR 214", u:3}]}] },
+    { ut:"Cosmetology License", subj:"COSM", disc:"Cosmetology and Barbering", issuer:"CA Board of Barbering & Cosmetology",
+      trainer:"", students:342, conf:0.93, elig:5230, statewide:false, cpl:["State/Federal License"],
+      variants:["CA Cosmetology License","Cosmetologist License - BBC"], colleges:["Golden West","San Joaquin Delta"], init:{by:"sam",on:"07-06"},
+      arts:[{cid:"COSM M1001", t:"Cosmetology I", local:[{c:"Golden West", code:"COSM G100", u:10}]}] },
+    { ut:"10-Key Data Entry", subj:"CNSR", disc:"Building Codes and Regulations", issuer:"Proctored Testing Center",
+      trainer:"", students:null, sup:true, conf:0.45, elig:1, statewide:false, cpl:["Credit By Exam","Industry Certification"],
+      variants:["BIT 375  10-KEY on the Computer - Industry Certificate","OFADM 375  10-Key on the Computer - Credit by Exam"], colleges:["Modesto"], init:null,
+      arts:[{cid:"CNSR M10AA", t:"10-Key on the Computer", local:[{c:"Modesto", code:"BIT 375", u:1}]}] },
+    { ut:"", subj:"WELD", disc:"Welding", issuer:"", unclassified:true, rawKey:"WELD 140 Cert - Flux Core",
+      trainer:"", students:null, conf:null, elig:null, statewide:false, cpl:["Industry Certification"],
+      variants:["WELD 140 Cert - Flux Core"], colleges:["Lassen"], init:null,
+      arts:[] }
+  ];
+
+  // per-row live state
+  ROWS.forEach(function (r, i) {
+    r.id = i;
+    r.draft = { title:(r.preseed && r.preseed.issuer !== undefined && r.preseed.title) || r.ut,
+                issuer:(r.preseed ? r.preseed.issuer : r.issuer),
+                trainer:(r.preseed && r.preseed.trainer) || r.trainer,
+                extraIssuers:(r.issuers || []).slice(1) };
+    r.dirty = !!r.preseed;             // pre-seeds arrive pre-filled (⚡) = ready to save
+    r.saved = false; r.expanded = false; r.selected = false;
+    r.mergeConfirmed = false;
+  });
+
+  var state = { lane:"all", q:"", cpl:"all", disc:"all", iss:"", conf:"all",
+                sort:{key:"students", dir:"desc"} };
+
+  // ── lanes ──
+  function laneOf(r) {
+    var lanes = ["all"];
+    if (r.unclassified) lanes.push("unc");
+    if (!r.unclassified && !r.issuer && !(r.saved && r.draft.issuer)) lanes.push("noiss");
+    if (r.preseed && !r.saved) lanes.push("pre");
+    if (r.mergeTarget && !r.mergeConfirmed) lanes.push("merge");
+    if (!r.init) lanes.push("open"); else lanes.push("done");
+    return lanes;
+  }
+  var LANES = [
+    { k:"all",   label:"All" },
+    { k:"unc",   label:"📥 Unclassified" },
+    { k:"noiss", label:"🏷 No issuer" },
+    { k:"pre",   label:"⚡ Pre-filled" },
+    { k:"merge", label:"⇒ Merge confirms" },
+    { k:"open",  label:"○ Not initiated" },
+    { k:"done",  label:"✓ Initiated" }
+  ];
+
+  // ── filtering + sorting ──
+  function shownRows() {
+    var out = ROWS.filter(function (r) {
+      if (laneOf(r).indexOf(state.lane) < 0) return false;
+      if (state.cpl !== "all" && (r.cpl || []).indexOf(state.cpl) < 0) return false;
+      if (state.disc !== "all" && r.disc !== state.disc) return false;
+      if (state.iss) {
+        if (state.iss === "(none)") { if (r.draft.issuer) return false; }
+        else if ((r.draft.issuer || "").toLowerCase().indexOf(state.iss.toLowerCase()) < 0) return false;
+      }
+      if (state.conf !== "all") {
+        var c = r.conf;
+        if (c == null) return false;
+        if (state.conf === "lo"  && !(c < 0.60)) return false;
+        if (state.conf === "mid" && !(c >= 0.60 && c < 0.80)) return false;
+        if (state.conf === "hi"  && !(c >= 0.80)) return false;
+      }
+      if (state.q) {
+        var q = state.q.toLowerCase();
+        var hit = (r.draft.title || "").toLowerCase().indexOf(q) >= 0
+          || (r.ut || "").toLowerCase().indexOf(q) >= 0
+          || (r.draft.issuer || "").toLowerCase().indexOf(q) >= 0
+          || (r.variants || []).some(function (v) { return v.toLowerCase().indexOf(q) >= 0; });
+        if (!hit) return false;
+      }
+      return true;
+    });
+    var k = state.sort.key, dir = state.sort.dir === "asc" ? 1 : -1;
+    var get = {
+      title:    function (r) { return (r.draft.title || "~").toLowerCase(); },
+      subj:     function (r) { return r.subj || "~"; },
+      disc:     function (r) { return r.disc || "~"; },
+      issuer:   function (r) { return (r.draft.issuer || "~").toLowerCase(); },
+      students: function (r) { return typeof r.students === "number" ? r.students : (r.sup ? 0.5 : 0); }
+    }[k] || function (r) { return r.id; };
+    out.sort(function (a, b) {
+      var va = get(a), vb = get(b);
+      return va < vb ? -dir : va > vb ? dir : a.id - b.id;
+    });
+    return out;
+  }
+
+  // ── tiny helpers ──
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+  function dirtyCount() { return ROWS.filter(function (r) { return r.dirty && !r.saved; }).length; }
+
+  // ── render: lanes ──
+  function renderLanes() {
+    var host = document.getElementById("c2lanes");
+    host.textContent = "";
+    LANES.forEach(function (l) {
+      var n = ROWS.filter(function (r) { return laneOf(r).indexOf(l.k) >= 0; }).length;
+      var b = el("button", "c2-lane" + (state.lane === l.k ? " active" : ""));
+      b.type = "button";
+      b.appendChild(document.createTextNode(l.label + " "));
+      var c = el("span", "n", "(" + n + ")");
+      b.appendChild(c);
+      b.onclick = function () { state.lane = l.k; render(); };
+      host.appendChild(b);
+    });
+  }
+
+  // ── render: filter option lists (built once) ──
+  function buildFilterOptions() {
+    var cplSet = {}, discSet = {}, issSet = {};
+    ROWS.forEach(function (r) {
+      (r.cpl || []).forEach(function (t) { cplSet[t] = 1; });
+      if (r.disc) discSet[r.disc] = 1;
+      if (r.issuer) issSet[r.issuer] = 1;
+    });
+    var cpl = document.getElementById("c2cpl");
+    cpl.appendChild(new Option("CPL type: any", "all"));
+    Object.keys(cplSet).sort().forEach(function (t) { cpl.appendChild(new Option(t, t)); });
+    cpl.onchange = function () { state.cpl = this.value; render(); };
+    var disc = document.getElementById("c2disc");
+    disc.appendChild(new Option("Discipline: any", "all"));
+    Object.keys(discSet).sort().forEach(function (d) { disc.appendChild(new Option(d, d)); });
+    disc.onchange = function () { state.disc = this.value; render(); };
+    var dl = document.getElementById("c2isslist");
+    Object.keys(issSet).sort().forEach(function (i) { dl.appendChild(new Option(i)); });
+    dl.appendChild(new Option("(none)"));
+    document.getElementById("c2iss").oninput = function () { state.iss = this.value.trim(); render(); };
+    document.getElementById("c2q").oninput = function () { state.q = this.value; render(); };
+    document.getElementById("c2conf").onchange = function () { state.conf = this.value; render(); };
+    document.getElementById("c2group").onchange = function () { render(); };
+  }
+
+  // ── render: column picker ──
+  var COLTOGGLES = [
+    { cls:"hide-subj",     label:"SUBJ",        on:true  },
+    { cls:"hide-disc",     label:"Discipline",  on:true, fixed:true },
+    { cls:"hide-trainer",  label:"Trainer",     on:true  },
+    { cls:"hide-students", label:"Students",    on:true  },
+    { cls:"hide-variants", label:"Variants #",  on:false },
+    { cls:"hide-conf",     label:"Confidence",  on:false },
+    { cls:"hide-elig",     label:"Eligible units", on:false }
+  ];
+  function buildColPicker() {
+    var panel = document.getElementById("c2colspanel");
+    COLTOGGLES.forEach(function (t) {
+      if (t.fixed) return;
+      var lab = el("label");
+      var cb = document.createElement("input");
+      cb.type = "checkbox"; cb.checked = t.on;
+      cb.onchange = function () {
+        document.getElementById("c2table").classList.toggle(t.cls, !cb.checked);
+      };
+      lab.appendChild(cb);
+      lab.appendChild(document.createTextNode(t.label));
+      panel.appendChild(lab);
+    });
+    var note = el("div", null, "Saved per-browser");
+    note.style.cssText = "font-size:.68rem;color:var(--text-faint);padding-top:6px;";
+    panel.appendChild(note);
+  }
+
+  // ── render: one row ──
+  function markDirty(r, tr) {
+    r.dirty = true; r.saved = false;
+    tr.classList.add("dirty"); tr.classList.remove("saved");
+    refreshStatusCell(r, tr);
+    refreshSaveAll();
+  }
+  function cellInput(r, tr, key, cls, placeholder) {
+    var inp = el("input", "c2-cellin " + (cls || ""));
+    inp.type = "text"; inp.value = r.draft[key] || "";
+    if (placeholder) inp.placeholder = placeholder;
+    inp.oninput = function () { r.draft[key] = inp.value; markDirty(r, tr); };
+    inp.onkeydown = function (e) {
+      if (e.key === "Enter") saveRow(r, tr);
+      if (e.key === "Escape") {
+        r.draft[key] = key === "title" ? r.ut : (r[key === "issuer" ? "issuer" : "trainer"] || "");
+        inp.value = r.draft[key];
+      }
+    };
+    return inp;
+  }
+  function saveRow(r, tr) {
+    if (!r.dirty || r.saved) return;
+    r.saved = true; r.dirty = false;
+    if (r.mergeTarget && r.draft.title === r.mergeTarget) r.mergeConfirmed = true;
+    tr.classList.remove("dirty"); tr.classList.add("saved");
+    refreshStatusCell(r, tr);
+    refreshSaveAll(); renderLanes(); renderSummary();
+  }
+  function refreshStatusCell(r, tr) {
+    var td = tr.querySelector(".c2-status");
+    td.textContent = "";
+    if (r.dirty && !r.saved) {
+      var b = el("button", "c2-save", "💾 Save");
+      b.type = "button"; b.onclick = function () { saveRow(r, tr); };
+      td.appendChild(b);
+    } else if (r.saved) {
+      td.appendChild(el("span", "c2-savedok", "✓ saved"));
+    } else if (r.init) {
+      var s = el("span", "c2-stamp", "✓ " + r.init.by + " · " + r.init.on);
+      s.title = "Initiated by " + r.init.by + "@rccd.edu on 2026-" + r.init.on;
+      td.appendChild(s);
+    } else {
+      var ib = el("button", "c2-init", "✓ Init");
+      ib.type = "button"; ib.title = "Mark initiated";
+      ib.onclick = function () { r.init = { by:"sam", on:"07-09" }; render(); };
+      td.appendChild(ib);
+    }
+  }
+  function refreshSaveAll() {
+    var n = dirtyCount();
+    var b = document.getElementById("c2saveall");
+    b.textContent = "💾 Save all (" + n + ")";
+    b.classList.toggle("show", n > 0);
+  }
+
+  function renderRow(r, tbody) {
+    var tr = el("tr", "c2-row" + (r.dirty && !r.saved ? " dirty" : "") + (r.saved ? " saved" : ""));
+
+    // checkbox
+    var tdc = el("td");
+    var cb = document.createElement("input");
+    cb.type = "checkbox"; cb.checked = r.selected; cb.disabled = !!r.init;
+    cb.title = r.init ? "Already initiated" : "Select for bulk Mark-initiated";
+    cb.onchange = function () { r.selected = cb.checked; };
+    tdc.appendChild(cb); tr.appendChild(tdc);
+
+    // caret
+    var tdo = el("td");
+    var caret = el("button", "c2-caret", r.expanded ? "▾" : "▸");
+    caret.type = "button"; caret.title = "Open the full record — variants, articulations, extra fields";
+    caret.onclick = function () { r.expanded = !r.expanded; render(); };
+    tdo.appendChild(caret); tr.appendChild(tdo);
+
+    // credential (title input + context)
+    var tdt = el("td");
+    var tin = cellInput(r, tr, "title", "c2-title-in", r.unclassified ? "assign unified title…" : "unified title…");
+    tdt.appendChild(tin);
+    var ctx = el("div", "c2-ctx");
+    if (r.statewide) { var cc = el("span", "c2-chip ccc", "CCC"); cc.title = "Statewide CCC-collaborative standard"; ctx.appendChild(cc); }
+    if (r.unclassified) { var uc = el("span", "c2-chip unc", "unclassified"); uc.title = "Raw MAP exhibit — no credential identity yet"; ctx.appendChild(uc); }
+    if (r.preseed && !r.saved) {
+      var pc = el("span", "c2-chip pre", "⚡ " + r.preseed.via);
+      pc.title = "Pre-filled by the staged plan — nothing saves until you save";
+      ctx.appendChild(pc);
+    }
+    if (r.saved) { ctx.appendChild(el("span", "c2-chip edit", "✎ edited")); }
+    var raw = el("span", "c2-raw", r.variants[0] + (r.variants.length > 1 ? "  ＋" + (r.variants.length - 1) : ""));
+    raw.title = r.variants.join("\n");
+    ctx.appendChild(raw);
+    (r.colleges || []).forEach(function (c) {
+      var chip = el("span", "c2-chip college", c);
+      chip.title = "Originating college: " + c;
+      ctx.appendChild(chip);
+    });
+    tdt.appendChild(ctx);
+    // merge collision strip
+    if (r.mergeTarget && !r.mergeConfirmed) {
+      var mg = el("div", "c2-merge");
+      mg.appendChild(el("span", null, "⇒ matches existing “" + r.mergeTarget + "”"));
+      var okb = el("button", null, "✓ Confirm merge");
+      okb.type = "button";
+      okb.onclick = function () { r.draft.title = r.mergeTarget; r.dirty = true; saveRow(r, tr); render(); };
+      mg.appendChild(okb);
+      var keep = el("button", "alt", "keep as new title");
+      keep.type = "button";
+      keep.onclick = function () { r.mergeTarget = null; render(); };
+      mg.appendChild(keep);
+      tdt.appendChild(mg);
+    }
+    tr.appendChild(tdt);
+
+    // SUBJ
+    var tds = el("td"); tds.setAttribute("data-col", "subj");
+    tds.appendChild(r.subj ? el("span", "c2-subj", r.subj) : el("span", "c2-null", "—"));
+    if (r.subj) tds.firstChild.title = "Modal SUBJ4 across articulated common courses";
+    tr.appendChild(tds);
+
+    // Discipline (derived, read-only)
+    var tdd = el("td"); tdd.setAttribute("data-col", "disc");
+    tdd.appendChild(r.disc ? document.createTextNode(r.disc) : el("span", "c2-null", "—"));
+    tr.appendChild(tdd);
+
+    // Issuer (input + add)
+    var tdi = el("td");
+    tdi.appendChild(cellInput(r, tr, "issuer", "", "issuer… (empty = no formal issuer)"));
+    (r.draft.extraIssuers || []).forEach(function (x, xi) {
+      var inp2 = el("input", "c2-cellin");
+      inp2.type = "text"; inp2.value = x; inp2.placeholder = "additional issuer…";
+      inp2.oninput = function () { r.draft.extraIssuers[xi] = inp2.value; markDirty(r, tr); };
+      tdi.appendChild(inp2);
+    });
+    var add = el("button", "c2-addiss", "＋ issuer");
+    add.type = "button"; add.title = "Add another certifying body (never replaces the first)";
+    add.onclick = function () { r.draft.extraIssuers.push(""); markDirty(r, tr); render(); };
+    tdi.appendChild(add);
+    tr.appendChild(tdi);
+
+    // Trainer
+    var tdtr = el("td"); tdtr.setAttribute("data-col", "trainer");
+    tdtr.appendChild(cellInput(r, tr, "trainer", "", "training agency…"));
+    tr.appendChild(tdtr);
+
+    // Students
+    var tdn = el("td", "num"); tdn.setAttribute("data-col", "students");
+    if (typeof r.students === "number") tdn.textContent = r.students.toLocaleString();
+    else if (r.sup) { tdn.textContent = "<5"; tdn.title = "Fewer than 5 — masked for privacy"; }
+    else tdn.appendChild(el("span", "c2-null", "—"));
+    tr.appendChild(tdn);
+
+    // Variants # (hidable)
+    var tdv = el("td", "num"); tdv.setAttribute("data-col", "variants");
+    tdv.textContent = String(r.variants.length);
+    tr.appendChild(tdv);
+
+    // Conf (hidable)
+    var tdcf = el("td", "num"); tdcf.setAttribute("data-col", "conf");
+    tdcf.textContent = r.conf == null ? "—" : r.conf.toFixed(2);
+    tr.appendChild(tdcf);
+
+    // Elig units (hidable)
+    var tde = el("td", "num"); tde.setAttribute("data-col", "elig");
+    tde.textContent = r.elig == null ? "—" : r.elig.toLocaleString();
+    tr.appendChild(tde);
+
+    // status / actions
+    var tdst = el("td", "c2-status");
+    tr.appendChild(tdst);
+
+    tbody.appendChild(tr);
+    refreshStatusCell(r, tr);
+
+    if (r.expanded) renderDrawer(r, tbody);
+  }
+
+  // ── drill-in drawer ──
+  function renderDrawer(r, tbody) {
+    var tr = el("tr", "c2-drawer");
+    var td = el("td");
+    td.colSpan = 12;
+    var grid = el("div", "c2-drawer-grid");
+
+    // left: variants + extra curation fields
+    var left = el("div");
+    var s1 = el("div", "c2-dsec");
+    s1.appendChild(el("p", "c2-dh", "Raw variants (" + r.variants.length + ")"));
+    r.variants.forEach(function (v) {
+      var line = el("div", "c2-varline");
+      line.appendChild(el("span", "rt", v));
+      if (r.conf != null) line.appendChild(el("span", "cf", r.conf.toFixed(2)));
+      s1.appendChild(line);
+    });
+    left.appendChild(s1);
+    var s2 = el("div", "c2-dsec");
+    s2.appendChild(el("p", "c2-dh", "More fields"));
+    var f1 = el("div", "c2-dfield");
+    f1.appendChild(el("label", null, "Quality flag"));
+    var sel = document.createElement("select");
+    ["", "suspect_course_as_exhibit", "not_a_credential", "duplicate_of_other"].forEach(function (o) {
+      sel.appendChild(new Option(o || "(none)", o));
+    });
+    s2.appendChild(f1); f1.appendChild(sel);
+    var f2 = el("div", "c2-dfield");
+    f2.appendChild(el("label", null, "CPL type(s)"));
+    f2.appendChild(el("span", null, (r.cpl || []).join(" · ")));
+    s2.appendChild(f2);
+    if (r.conf != null) {
+      var f3 = el("div", "c2-dfield");
+      f3.appendChild(el("label", null, "Audit"));
+      var au = el("div", "c2-audit-muted");
+      au.appendChild(el("span", "c2-chip", r.conf < 0.6 ? "⚠ very_low_confidence_title ×" + r.variants.length : "no findings"));
+      f3.appendChild(au);
+      s2.appendChild(f3);
+    }
+    var lks = el("div", "c2-lookups");
+    ["🔎 what is this?", "✨ suggest title/issuer"].forEach(function (t) {
+      var b = el("button", "c2-lk", t); b.type = "button"; lks.appendChild(b);
+    });
+    s2.appendChild(lks);
+    left.appendChild(s2);
+    grid.appendChild(left);
+
+    // right: articulations
+    var right = el("div");
+    var s3 = el("div", "c2-dsec");
+    s3.appendChild(el("p", "c2-dh", "Aligned common courses (" + (r.arts || []).length + ")"));
+    if (!(r.arts || []).length) {
+      s3.appendChild(el("div", "c2-varline", "— none yet (unclassified)"));
+    }
+    (r.arts || []).forEach(function (a) {
+      var d = el("div", "c2-art");
+      var cid = el("span", "cid", a.cid); d.appendChild(cid);
+      d.appendChild(document.createTextNode(a.t));
+      (a.local || []).forEach(function (lc) {
+        var loc = el("div", "loc");
+        var code = el("span", "code", lc.code);
+        loc.appendChild(code);
+        loc.appendChild(document.createTextNode("  ·  " + lc.c + "  ·  " + lc.u + " units"));
+        d.appendChild(loc);
+      });
+      s3.appendChild(d);
+    });
+    right.appendChild(s3);
+    grid.appendChild(right);
+
+    td.appendChild(grid);
+    tr.appendChild(td);
+    tbody.appendChild(tr);
+  }
+
+  // ── summary + master render ──
+  function renderSummary() {
+    var host = document.getElementById("c2sum");
+    var shown = shownRows().length;
+    var done = ROWS.filter(function (r) { return r.init; }).length;
+    host.innerHTML = "<strong>" + shown + "</strong> of <strong>" + ROWS.length +
+      "</strong> shown (sample of 2,042) · <strong>" + done + "</strong> initiated";
+  }
+  function renderSortArrows() {
+    document.querySelectorAll("#c2table thead th.sortable").forEach(function (th) {
+      var arr = th.querySelector(".arr");
+      var on = th.getAttribute("data-sort") === state.sort.key;
+      arr.textContent = on ? (state.sort.dir === "asc" ? "▲" : "▼") : "↕";
+      arr.classList.toggle("on", on);
+    });
+  }
+  function render() {
+    renderLanes(); renderSummary(); renderSortArrows(); refreshSaveAll();
+    var tbody = document.getElementById("c2body");
+    tbody.textContent = "";
+    var rows = shownRows();
+    if (!rows.length) {
+      var tr = el("tr");
+      var td = el("td", "c2-empty", "Nothing in this lane 🎉");
+      td.colSpan = 12; tr.appendChild(td); tbody.appendChild(tr);
+      return;
+    }
+    rows.forEach(function (r) { renderRow(r, tbody); });
+  }
+
+  // sort handlers
+  document.querySelectorAll("#c2table thead th.sortable").forEach(function (th) {
+    th.onclick = function () {
+      var k = th.getAttribute("data-sort");
+      if (state.sort.key === k) state.sort.dir = state.sort.dir === "asc" ? "desc" : "asc";
+      else state.sort = { key:k, dir:(k === "title" || k === "subj" || k === "disc" || k === "issuer") ? "asc" : "desc" };
+      render();
+    };
+  });
+  // save all
+  document.getElementById("c2saveall").onclick = function () {
+    document.querySelectorAll("#c2body tr.c2-row").forEach(function (tr) { tr.classList.remove("dirty"); });
+    ROWS.forEach(function (r) { if (r.dirty && !r.saved) { r.saved = true; r.dirty = false;
+      if (r.mergeTarget && r.draft.title === r.mergeTarget) r.mergeConfirmed = true; } });
+    render();
+  };
+  // select all
+  document.getElementById("c2selall").onchange = function () {
+    var v = this.checked;
+    shownRows().forEach(function (r) { if (!r.init) r.selected = v; });
+    render();
+  };
+  // close the columns dropdown on outside click
+  document.addEventListener("click", function (e) {
+    var dd = document.getElementById("c2colsdd");
+    if (dd && dd.open && !dd.contains(e.target)) dd.open = false;
+  });
+
+  buildFilterOptions();
+  buildColPicker();
+  render();
+})();
+</script>
+
+</body>
+</html>
