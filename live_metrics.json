@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-09T23:05:39.008Z",
+  "scraped_at": "2026-07-09T23:32:11.582Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -248,14 +248,14 @@
       "colleges": [
         {
           "college": "City College of San Francisco",
-          "students": 1930,
+          "students": 1932,
           "units": 6873,
-          "avgUnits": 3.561139896373057,
+          "avgUnits": 3.5574534161490683,
           "transcriptionRate": 1.7,
-          "avgTranscribed": 0.061139896373056994,
+          "avgTranscribed": 0.061076604554865424,
           "criteriaMetCount": 2,
           "militaryStudents": 1078,
-          "nonMilitaryStudents": 853,
+          "nonMilitaryStudents": 855,
           "apprenticeStudents": 7,
           "savings": 11896455,
           "yearImpact": 41791651,
@@ -1757,7 +1757,7 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "49,227",
+      "value": "49,229",
       "breakdowns": [
         {
           "label": "Military",
@@ -1765,7 +1765,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "23,634"
+          "value": "23,636"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 49227,
+    "Students": 49229,
     "Units": 233132.15000000002,
     "TranscribedUnits": 101500.95,
     "Savings": 322736125.25,
     "YearImpact": 1306105914.3999999,
     "MilitaryStudents": 25670,
-    "NonMilitaryStudents": 23634,
+    "NonMilitaryStudents": 23636,
     "AprenticeStudents": 755,
-    "AverageUnits": 4.735859386109249,
-    "TranscribedAverage": 2.061895910780669
+    "AverageUnits": 4.735666984907271,
+    "TranscribedAverage": 2.061812143248898
   }
 }

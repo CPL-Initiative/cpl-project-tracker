@@ -213040,8 +213040,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC118-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 101",
-      "unified_title": "Carpenters Apprenticeship — CARP 101",
+      "title": "Introduction to Apprenticeship I",
+      "unified_title": "Introduction to Apprenticeship I",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -213440,8 +213440,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC128-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 109",
-      "unified_title": "Carpenters Apprenticeship — CARP 109",
+      "title": "Welding II",
+      "unified_title": "Welding II",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -221543,8 +221543,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC4-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 002",
-      "unified_title": "Carpenters Apprenticeship — CARP 002",
+      "title": "Introduction to Apprenticeship II",
+      "unified_title": "Introduction to Apprenticeship II",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -221571,8 +221571,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC5-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California (CTCNC) — OSHA Training",
-      "unified_title": "Carpenters Training Committee for Northern California (CTCNC) — OSHA Training",
+      "title": "OSHA 10-hour Construction Training Course",
+      "unified_title": "OSHA 10-hour Construction Training Course",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -221599,8 +221599,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC6-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — FA/C",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — FA/C",
+      "title": "CPR for Carpenters Apprentices",
+      "unified_title": "CPR for Carpenters Apprentices",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -221623,75 +221623,23 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC7-1-001",
+      "exhibit_id": "MAPICA-CTCC7-1-001|MAPICA-CTCC8-1-001|MAPICA-CTCC9-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC7-1-001"
-      ],
-      "title": "Carpenters Apprenticeship — CARP 019",
-      "unified_title": "Carpenters Apprenticeship — CARP 019",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 019"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "collaborative_type": "Local",
-      "adopters": 0,
-      "adopter_names": [],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 0,
-      "credit_recs": [],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC8-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC8-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 312",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 312",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 312"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "collaborative_type": "Local",
-      "adopters": 0,
-      "adopter_names": [],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 0,
-      "credit_recs": [],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC9-1-001",
-      "exhibit_ids": [
+        "MAPICA-CTCC7-1-001",
+        "MAPICA-CTCC8-1-001",
         "MAPICA-CTCC9-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 608",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 608",
+      "title": "Rigging",
+      "unified_title": "Rigging",
       "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 019",
+        "Carpenter’s Training Center CTCNC CARP 312",
         "Carpenter’s Training Center CTCNC CARP 608"
       ],
       "cpl_type": "Industry Certification",
@@ -221795,8 +221743,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC13-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1203",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1203",
+      "title": "Tool and Equipment Applications",
+      "unified_title": "Tool and Equipment Applications",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223027,8 +222975,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC57-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 701",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 701",
+      "title": "Introduction to Acoustical Apprenticeship II",
+      "unified_title": "Introduction to Acoustical Apprenticeship II",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -223755,8 +223703,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC83-1-001"
       ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 284",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 284",
+      "title": "Welding II SMAW",
+      "unified_title": "Welding II SMAW",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -225790,6 +225738,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-07-09T23:05:09",
+  "generated_at": "2026-07-09T23:31:40",
   "total_credit_recs": 12749
 };
