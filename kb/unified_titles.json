@@ -431,7 +431,7 @@
     "_notes": null
   },
   "ADJU 217\tSubstance Abuse - Credit by Exam": {
-    "unified_title": "Substance Abuse in Criminal Justice",
+    "unified_title": "Substance Abuse",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -444,7 +444,7 @@
     "_notes": null
   },
   "ADJU 217\tSubstance Abuse - Industry Certificate": {
-    "unified_title": "Substance Abuse in Criminal Justice",
+    "unified_title": "Substance Abuse",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -626,7 +626,7 @@
     "_notes": "Course number only; no context."
   },
   "ADJUS 105": {
-    "unified_title": "Administration of Justice 105",
+    "unified_title": "Administration of Justice",
     "confidence_title": 0.45,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -886,7 +886,7 @@
     "_notes": null
   },
   "AG 200\tSupervision In Agriculture Equipment Operation - Portfolio": {
-    "unified_title": "Supervision in Agriculture Equipment Operation",
+    "unified_title": "Supervision In Agriculture Equipment Operation",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -1432,7 +1432,7 @@
     "_notes": "Local college course credential."
   },
   "AGM 289\tPrinciples of Power Mechanics/Small Engines - Credit by Exam": {
-    "unified_title": "Principles of Power Mechanics and Small Engines",
+    "unified_title": "Principles of Power Mechanics/Small Engines",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -1640,7 +1640,7 @@
     "_notes": "Portfolio pathway."
   },
   "ANSC 252\tVeterinary Equipment: Operation, Instrumentation, and Safety - Credit by Exam": {
-    "unified_title": "Veterinary Equipment: Operation, Instrumentation, and Safety",
+    "unified_title": "Veterinary Equipment, Operation, Instrumentation and Safety",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -1692,7 +1692,7 @@
     "_notes": "Local college course credential."
   },
   "ANSC 256\tVeterinary Assistance & Nursing: Emergency Procedures - Credit by Exam": {
-    "unified_title": "Veterinary Assistance and Nursing: Emergency Procedures",
+    "unified_title": "Veterinary Assistance & Nursing: Emergency Procedures",
     "confidence_title": 0.88,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8476,7 +8476,7 @@
     "_notes": "Local college CBE; mapped to course-name credential."
   },
   "ARROYO VALLEY HIGH SCHOOL- Supply Chain and Logistics  IS260/IS261": {
-    "unified_title": "Supply Chain and Logistics (Arroyo Valley HS Articulation)",
+    "unified_title": "Supply Chain and Logistics",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8489,7 +8489,7 @@
     "_notes": "High school articulation; credential is local CTE pathway in Supply Chain/Logistics."
   },
   "ARROYO VALLEY HIGH SCHOOL- Supply Chain and Logistics IS260/IS261": {
-    "unified_title": "Supply Chain and Logistics (Arroyo Valley HS Articulation)",
+    "unified_title": "Supply Chain and Logistics",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8528,7 +8528,7 @@
     "_notes": "Local college course."
   },
   "ART 148\tPainting 1 (in Oil) - Portfolio Review": {
-    "unified_title": "Painting 1 (Oil)",
+    "unified_title": "Introduction to Painting",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9363,7 +9363,7 @@
     "_notes": "Local De Anza college course."
   },
   "AUTO 62B: Wheel Alignment, Chassis Dynamics, ADAS - Credit By Exam": {
-    "unified_title": "Wheel Alignment, Chassis Dynamics, and ADAS",
+    "unified_title": "Wheel Alignment, Chassis Dynamics, ADAS",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9715,7 +9715,7 @@
     "_notes": "Likely adult school dental assisting course; provider unspecified."
   },
   "Adv Acad. Reading & Writing I (ESL 108 C)": {
-    "unified_title": "Academic Reading & Writing I (ESL) Advanced",
+    "unified_title": "ESL Academic Reading & Writing Advanced",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9821,7 +9821,7 @@
     "_notes": "Local CADD course."
   },
   "Advanced Culinary Graduate of NVC Cooking School": {
-    "unified_title": "Napa Valley Cooking School — Advanced Culinary Graduate",
+    "unified_title": "Culinary Graduate Advanced",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10139,7 +10139,7 @@
     "_notes": null
   },
   "American Bankers Association: ABAN-0181 Bank Management": {
-    "unified_title": "ABA Bank Management (ABAN-0181)",
+    "unified_title": "ABA Bank Management",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -12073,7 +12073,7 @@
     "_notes": "Local adult-ed program; specific to Baldwin Park."
   },
   "Baldy View ROP - Civil Engineering & Architecture (CEA)": {
-    "unified_title": "PLTW Civil Engineering and Architecture — Baldy View ROP",
+    "unified_title": "PLTW Civil Engineering and Architecture",
     "confidence_title": 0.72,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -12086,7 +12086,7 @@
     "_notes": "Course title matches PLTW CEA course; delivered through Baldy View ROP."
   },
   "Baldy View ROP - Civil Engineering and Architecture": {
-    "unified_title": "PLTW Civil Engineering and Architecture — Baldy View ROP",
+    "unified_title": "PLTW Civil Engineering and Architecture",
     "confidence_title": 0.72,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -12127,7 +12127,7 @@
     "_merge_note": "merged from credential 'PLTW Introduction to Engineering Design — Baldy View ROP' (curator)"
   },
   "Baldy View ROP - Transportation, Distribution and Logistics": {
-    "unified_title": "Transportation, Distribution and Logistics — Baldy View ROP",
+    "unified_title": "Transportation, Distribution and Logistics",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -12296,7 +12296,7 @@
     "_notes": "Local course CBE."
   },
   "Basic Electrical System Fundamentals": {
-    "unified_title": "Basic Electrical System Fundamentals",
+    "unified_title": "Basic Automotive Electrical System Fundamentals",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -16297,7 +16297,7 @@
     "_notes": "Local college course exhibit."
   },
   "CSCI 213\tWindows Server OS - Credit by Exam": {
-    "unified_title": "Windows Server Operating System",
+    "unified_title": "Windows Server OS",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -16323,7 +16323,7 @@
     "_notes": "Local college course exhibit."
   },
   "CSCI 221\tProgramming With Visual BASIC - Credit by Exam": {
-    "unified_title": "Programming with Visual BASIC",
+    "unified_title": "Programming With Visual BASIC",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -16401,7 +16401,7 @@
     "_notes": "Military CPL type implies JST/ACE recommendation."
   },
   "CSCI 240\tNetworking Essentials - Credit by Exam": {
-    "unified_title": "Networking Essentials",
+    "unified_title": "Computer Network Fundamentals",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -16479,7 +16479,7 @@
     "_notes": "AP credit articulating to a programming course; likely AP CS A."
   },
   "CSCI 271\tProblem Solving and Programming 1 - Credit by Exam": {
-    "unified_title": "Problem Solving and Programming 1",
+    "unified_title": "Programming Concepts and Methodology I",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17394,7 +17394,7 @@
     "_notes": "Likely local course content; no clear issuing body."
   },
   "Carpenter’s Training Center CTCNC CARP 001": {
-    "unified_title": "Carpenters Apprenticeship — CARP 001",
+    "unified_title": "The Acoustical Apprentice, Safety, and the Trade",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17420,7 +17420,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 004": {
-    "unified_title": "Carpenters Apprenticeship — CARP 004",
+    "unified_title": "Foundations and Floors",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17446,7 +17446,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 006": {
-    "unified_title": "Carpenters Apprenticeship — CARP 006",
+    "unified_title": "Structural Framing",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17459,7 +17459,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 007": {
-    "unified_title": "Carpenters Apprenticeship — CARP 007",
+    "unified_title": "Form Detailing, Construction & Erection",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17472,7 +17472,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 008": {
-    "unified_title": "Carpenters Apprenticeship — CARP 008",
+    "unified_title": "Exterior Finish",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17485,7 +17485,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 009": {
-    "unified_title": "Carpenters Apprenticeship — CARP 009",
+    "unified_title": "Blueprint Reading-Commercial",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17498,7 +17498,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 010": {
-    "unified_title": "Carpenters Apprenticeship — CARP 010",
+    "unified_title": "Concrete - Precast and Prestressed",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17511,7 +17511,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 011": {
-    "unified_title": "Carpenters Apprenticeship — CARP 011",
+    "unified_title": "Interior Finish",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17524,7 +17524,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 012": {
-    "unified_title": "Carpenters Apprenticeship — CARP 012",
+    "unified_title": "Layout/Leveling Construction Site Practice",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17537,7 +17537,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 013": {
-    "unified_title": "Carpenters Apprenticeship — CARP 013",
+    "unified_title": "Engineered Structural Systems",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17550,7 +17550,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 014": {
-    "unified_title": "Carpenters Apprenticeship — CARP 014",
+    "unified_title": "Interior Systems",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17563,7 +17563,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 015": {
-    "unified_title": "Carpenters Apprenticeship — CARP 015",
+    "unified_title": "Stair Building",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17576,7 +17576,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 016": {
-    "unified_title": "Carpenters Apprenticeship — CARP 016",
+    "unified_title": "Roof Framing",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17602,7 +17602,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 018": {
-    "unified_title": "Carpenters Apprenticeship — CARP 018",
+    "unified_title": "Commercial Concrete",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17628,7 +17628,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 020": {
-    "unified_title": "Carpenters Apprenticeship — CARP 020",
+    "unified_title": "Commercial Door Hardware",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17654,7 +17654,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 102": {
-    "unified_title": "Carpenters Apprenticeship — CARP 102",
+    "unified_title": "Basic Applications",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17667,7 +17667,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 103": {
-    "unified_title": "Carpenters Apprenticeship — CARP 103",
+    "unified_title": "Mathematics for Drywall/Lathers",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17680,7 +17680,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 104": {
-    "unified_title": "Carpenters Apprenticeship — CARP 104",
+    "unified_title": "Exterior/Advanced Fire Control System and Partitions",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17693,7 +17693,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 105": {
-    "unified_title": "Carpenters Apprenticeship — CARP 105",
+    "unified_title": "Doors, Windows, Exterior Systems/Building Documents",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17706,7 +17706,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 106": {
-    "unified_title": "Carpenters Apprenticeship — CARP 106",
+    "unified_title": "Blueprint Reading 1",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17719,7 +17719,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 107": {
-    "unified_title": "Carpenters Apprenticeship — CARP 107",
+    "unified_title": "Blueprint Reading 2",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17732,7 +17732,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 108": {
-    "unified_title": "Carpenters Apprenticeship — CARP 108",
+    "unified_title": "Blueprint Reading 3",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17758,7 +17758,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 110": {
-    "unified_title": "Carpenters Apprenticeship — CARP 110",
+    "unified_title": "Welding 1",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17771,7 +17771,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 111": {
-    "unified_title": "Carpenters Apprenticeship — CARP 111",
+    "unified_title": "Residential Metal Framing",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17784,7 +17784,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 112": {
-    "unified_title": "Carpenters Apprenticeship — CARP 112",
+    "unified_title": "Exterior Systems and Trims",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17797,7 +17797,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 113": {
-    "unified_title": "Carpenters Apprenticeship — CARP 113",
+    "unified_title": "Interior Metal Lathing System, Sound Control",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17810,7 +17810,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 114": {
-    "unified_title": "Carpenters Apprenticeship — CARP 114",
+    "unified_title": "Ceilings, Shaft Protection and Demountable Partitions",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17823,7 +17823,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 115": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 115",
+    "unified_title": "Arches, Furring and Advanced Systems",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17836,7 +17836,7 @@
     "_notes": "CTCNC course-coded apprenticeship module; preserving the specific course code as it identifies a distinct training unit in the carpenters apprenticeship curriculum."
   },
   "Carpenter’s Training Center CTCNC CARP 116": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 116",
+    "unified_title": "Advanced Construction Techniques",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17849,7 +17849,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 117": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 117",
+    "unified_title": "Drywall Lathing Trade Safety",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17862,7 +17862,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 1201": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1201",
+    "unified_title": "Modular System Installer Safety",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17875,7 +17875,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 1202": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1202",
+    "unified_title": "Introduction to Office Modular Systems Installation",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17901,7 +17901,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 1204": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1204",
+    "unified_title": "Print Reading Measurement and Layout",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17914,7 +17914,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 1205": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1205",
+    "unified_title": "Modular Systems Construction and Quality Control 1",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17927,7 +17927,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 1206": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1206",
+    "unified_title": "Modular System Construction and Quality Control 2",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17940,7 +17940,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 1207": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1207",
+    "unified_title": "Drapery, Window Coverings, and Fine Furnishings",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17953,7 +17953,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 1208": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1208",
+    "unified_title": "Floor to Ceiling Wall System Construction",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17966,7 +17966,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 278": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 278",
+    "unified_title": "Worker Safety and Tool Skills for Pile Drivers",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17979,7 +17979,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 279": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 279",
+    "unified_title": "Pile Driver Math Applications",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17992,7 +17992,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 280": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 280",
+    "unified_title": "Pile Driver Rigging",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18005,7 +18005,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 281": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 281",
+    "unified_title": "Form Detailing, Construction, and Erection for Pile Drivers",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18018,7 +18018,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 282": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 282",
+    "unified_title": "Welding 1: Introduction to SMAW",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18031,7 +18031,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 283": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 283",
+    "unified_title": "Introduction to Land and Water Pile Driving",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18057,7 +18057,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 285": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 285",
+    "unified_title": "Advanced Pile Driving Land and Water",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18070,7 +18070,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 286": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 286",
+    "unified_title": "Wharfage and Marine Structures",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18083,7 +18083,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 287": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 287",
+    "unified_title": "Welding 3: Advanced SMAW",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18096,7 +18096,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 288": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 288",
+    "unified_title": "Introduction to Structural Blueprints and Layout Instruments",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18109,7 +18109,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 289": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 289",
+    "unified_title": "Advanced Structural Blueprints and Bridge Building",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18122,7 +18122,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 290": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 290",
+    "unified_title": "Falsework, Shoring, and Heavy Timber Framing",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18135,7 +18135,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 291": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 291",
+    "unified_title": "Advanced Formwork",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18148,7 +18148,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 292": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 292",
+    "unified_title": "Welding 3 FCAW",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18161,7 +18161,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 293": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 293",
+    "unified_title": "Welding 4 FCAW Pipe",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18174,7 +18174,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 294": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 294",
+    "unified_title": "Welding 6: FCAW 4G Certification",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18187,7 +18187,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 302": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 302",
+    "unified_title": "Introduction to Scaffolds and Confined Space",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18200,7 +18200,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 305": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 305",
+    "unified_title": "Welded Frame and Mobile Tower Scaffold",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18213,7 +18213,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 306": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 306",
+    "unified_title": "Blueprint Reading-Residential",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18226,7 +18226,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 307": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 307",
+    "unified_title": "System Scaffold",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18239,7 +18239,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 308": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 308",
+    "unified_title": "Suspended Scaffolds and Shoring Systems",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18252,7 +18252,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 309": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 309",
+    "unified_title": "Tube and Clamp Scaffold",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18278,7 +18278,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 311": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 311",
+    "unified_title": "Blueprint Reading for Scaffold Erectors",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18304,7 +18304,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 313": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 313",
+    "unified_title": "Introduction to Welding and Cutting",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18317,7 +18317,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 314": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 314",
+    "unified_title": "Welding 2",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18343,7 +18343,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 316": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 316",
+    "unified_title": "Hazard Awareness for Scaffold Erectors",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18356,7 +18356,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 404": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 404",
+    "unified_title": "Tools of the Trade and Installation of Hardwood Floors",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18369,7 +18369,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 405": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 405",
+    "unified_title": "Finishing and Repairing Floors",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18382,7 +18382,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 503": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 503",
+    "unified_title": "Introduction to Working Drawings, Construction Math and Fire Stop Installation",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18395,7 +18395,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 504": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 504",
+    "unified_title": "Residential Blueprint Reading and Forklift Safety",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18408,7 +18408,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 505": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 505",
+    "unified_title": "Residential Insulation and Weatherization",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18421,7 +18421,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 506": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 506",
+    "unified_title": "Commercial Blueprint Reading and Mobile Tower Scaffolds",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18434,7 +18434,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 507": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 507",
+    "unified_title": "Commercial and Industrial Insulation and Aerial Lift",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18447,7 +18447,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 508": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 508",
+    "unified_title": "Energy Conservation Codes and Standards",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18512,7 +18512,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 703": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 703",
+    "unified_title": "Introduction to Grid Ceiling Installation",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18538,7 +18538,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 705": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 705",
+    "unified_title": "Specialty Ceiling Systems",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18551,7 +18551,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 706": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 706",
+    "unified_title": "Access Floor Systems",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18577,7 +18577,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 708": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 708",
+    "unified_title": "Suspended Framing Ceiling Systems",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18590,7 +18590,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 709": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 709",
+    "unified_title": "Infection Control Risk Assessment and Hospital Code for Acoustical Installers",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18616,7 +18616,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 711": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 711",
+    "unified_title": "Integrated Ceilings and Special Techniques",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18629,7 +18629,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 712": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 712",
+    "unified_title": "Advanced Grid Ceilings",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18655,7 +18655,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 714": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 714",
+    "unified_title": "Acoustical Blueprint Reading",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18668,7 +18668,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 715": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 715",
+    "unified_title": "Specialty Systems",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18681,7 +18681,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 856": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 856",
+    "unified_title": "Millwright Safety and Tool Skills",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18694,7 +18694,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 857": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 857",
+    "unified_title": "The Millwright Apprentice, the Trade, and 16 Hour Safety",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18707,7 +18707,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 858": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 858",
+    "unified_title": "Millwright Math Applications",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18720,7 +18720,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 859": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 859",
+    "unified_title": "Millwright Rigging",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18733,7 +18733,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 860": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 860",
+    "unified_title": "Materials of Construction",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18746,7 +18746,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 861": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 861",
+    "unified_title": "Layout Procedures for Millwrights",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18759,7 +18759,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 862": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 862",
+    "unified_title": "Precision Optical Instruments",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18772,7 +18772,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 863": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 863",
+    "unified_title": "Blueprint Reading and Aerial Lift",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18785,7 +18785,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 864": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 864",
+    "unified_title": "Cutting and Welding 1",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18798,7 +18798,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 865": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 865",
+    "unified_title": "Welding 2 SMAW",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18811,7 +18811,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 866": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 866",
+    "unified_title": "Monorails",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18824,7 +18824,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 867": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 867",
+    "unified_title": "Conveyors for Millwrights",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18837,7 +18837,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 868": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 868",
+    "unified_title": "Machinery Installation",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18850,7 +18850,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 869": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 869",
+    "unified_title": "Machinery Maintenance for Millwrights",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18863,7 +18863,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 870": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 870",
+    "unified_title": "Precision Tools for Millwrights",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18876,7 +18876,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 871": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 871",
+    "unified_title": "Turbines",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18889,7 +18889,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 872": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 872",
+    "unified_title": "Cutting and Welding 3",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18902,7 +18902,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 901": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 901",
+    "unified_title": "Mill Cabinet Safety and Tool Skills",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18915,7 +18915,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 902": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 902",
+    "unified_title": "The Mill Cabinet Apprentice and the Trade",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18928,7 +18928,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 903": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 903",
+    "unified_title": "Math for the Mill Cabinet Trade",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18941,7 +18941,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 904": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 904",
+    "unified_title": "Basic Cabinet Making",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18954,7 +18954,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 905": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 905",
+    "unified_title": "Basic Blueprint Reading Mill Cabinet",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18967,7 +18967,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 906": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 906",
+    "unified_title": "Machinery Maintenance for Mill Cabinet",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18980,7 +18980,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 907": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 907",
+    "unified_title": "Cabinet Hardware Installation",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18993,7 +18993,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 908": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 908",
+    "unified_title": "Sanding, Stains, and Finish Preparation",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19006,7 +19006,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 909": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 909",
+    "unified_title": "Advanced Machinery Operation",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19019,7 +19019,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 910": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 910",
+    "unified_title": "Advanced Blueprint Reading for Mill Cabinet",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19032,7 +19032,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 911": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 911",
+    "unified_title": "Advanced Cabinet Making",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19045,7 +19045,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 912": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 912",
+    "unified_title": "Veneers, Laminate, and Finishing",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19058,7 +19058,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 913": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 913",
+    "unified_title": "CAD Basics for Mill Cabinetry",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19071,7 +19071,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 914": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 914",
+    "unified_title": "Introduction to CNC",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19084,7 +19084,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 915": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 915",
+    "unified_title": "Solid Surface Material, Fabrication, and Installation",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19097,7 +19097,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 916": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 916",
+    "unified_title": "Advanced Project for Mill Cabinet",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19688,7 +19688,7 @@
     "_notes": "Local college math course CBE."
   },
   "Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors ": {
-    "unified_title": "High School Articulation — Anatomy and Physiology Honors (Colton-Redlands-Yucaipa ROP)",
+    "unified_title": "Anatomy and Physiology Honors",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -20852,7 +20852,7 @@
     "_notes": "Only course number given; specific topic unknown."
   },
   "Credit By Exam San Diego City College": {
-    "unified_title": "Generic Credit by Exam â€” San Diego City College",
+    "unified_title": "Credit by Exam",
     "confidence_title": 0.55,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
@@ -20865,7 +20865,7 @@
     "_notes": "Skill Rule 5: administrative bucket â€” San Diego City registers multiple CBE awards under one MAP ExhibitID. Not a single credential; flagged for review."
   },
   "Credit By Exam at Mesa": {
-    "unified_title": "Generic Credit by Exam â€” San Diego Mesa College",
+    "unified_title": "Credit by Exam",
     "confidence_title": 0.5,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
@@ -21100,7 +21100,7 @@
     "_notes": null
   },
   "Credit by Exam ESL 120A Intermediate Grammar for Reading and Writing": {
-    "unified_title": "ESL — Intermediate Grammar for Reading and Writing",
+    "unified_title": "ESL Grammar for Reading and Writing Intermediate",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21126,7 +21126,7 @@
     "_notes": null
   },
   "Credit by Exam ESL 121A Intermediate Reading and Writing": {
-    "unified_title": "ESL — Intermediate Reading and Writing",
+    "unified_title": "ESL Reading and Writing Intermediate",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21165,7 +21165,7 @@
     "_notes": null
   },
   "Credit by Exam ESL 130B High-Beginning Grammar for Reading and Writing": {
-    "unified_title": "ESL — High-Beginning Grammar for Reading and Writing",
+    "unified_title": "ESL Grammar for Reading and Writing Beginning",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21191,7 +21191,7 @@
     "_notes": null
   },
   "Credit by Exam ESL 131B High-Beginning Reading and Writing": {
-    "unified_title": "ESL — High-Beginning Reading and Writing",
+    "unified_title": "ESL Reading and Writing Beginning",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21308,7 +21308,7 @@
     "_notes": "Same as JAMS 12 — unified."
   },
   "Credit by Exam SPAN 1B Elementary Spanish": {
-    "unified_title": "Spanish 1",
+    "unified_title": "Elementary Spanish I",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -22023,7 +22023,7 @@
     "_notes": null
   },
   "Credit by Exam: Service and Repair": {
-    "unified_title": "Service and Repair",
+    "unified_title": "Automotive Service and Repair",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -22036,7 +22036,7 @@
     "_notes": "Generic title; likely automotive service/repair course but unclear."
   },
   "Credit by Exam: Spanish 1 (SPA-1)": {
-    "unified_title": "Spanish 1",
+    "unified_title": "Elementary Spanish I",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -22062,7 +22062,7 @@
     "_notes": null
   },
   "Credit by Exam: Spanish 3 (SPA-3)": {
-    "unified_title": "Intermediate Spanish I",
+    "unified_title": "Spanish Intermediate",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -22500,7 +22500,7 @@
     "_notes": null
   },
   "Culinary Fundamentals I (HRC 135 C)": {
-    "unified_title": "Culinary Fundamentals I",
+    "unified_title": "Culinary Fundamentals",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -22526,7 +22526,7 @@
     "_notes": "NVC = Napa Valley Cooking School; internship awarded based on graduation."
   },
   "Culinary Internship 2 Graduate of NVC Cooking School": {
-    "unified_title": "Culinary Internship II",
+    "unified_title": "Culinary Internship",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -22617,7 +22617,7 @@
     "_notes": "Prerequisite-language title combining EMT + BLS; cluster primarily with EMT (Rule 5b)."
   },
   "Cybersecurity Competition 1 B": {
-    "unified_title": "Cybersecurity Competition 1B",
+    "unified_title": "Cybersecurity Competition",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -22643,7 +22643,7 @@
     "_notes": null
   },
   "Cybersecurity Competition 2 A": {
-    "unified_title": "Cybersecurity Competition 2A",
+    "unified_title": "Cybersecurity Competition",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -22656,7 +22656,7 @@
     "_notes": null
   },
   "Cybersecurity Competition 2 B": {
-    "unified_title": "Cybersecurity Competition 2B",
+    "unified_title": "Cybersecurity Competition",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -22669,7 +22669,7 @@
     "_notes": null
   },
   "Cybersecurity Competition 3 A": {
-    "unified_title": "Cybersecurity Competition 3A",
+    "unified_title": "Cybersecurity Competition",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -22682,7 +22682,7 @@
     "_notes": null
   },
   "Cybersecurity Competitions 3 B": {
-    "unified_title": "Cybersecurity Competition 3B",
+    "unified_title": "Cybersecurity Competition",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -22825,7 +22825,7 @@
     "_notes": null
   },
   "DANCETQ 141 - Modern Dance Techniques I ": {
-    "unified_title": "Modern Dance Techniques I",
+    "unified_title": "Modern Dance Techniques 1",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -22838,7 +22838,7 @@
     "_notes": null
   },
   "DANCETQ 142 - Modern Dance Techniques II": {
-    "unified_title": "Modern Dance Techniques II",
+    "unified_title": "Modern Dance Techniques 2",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -24163,7 +24163,7 @@
     "_notes": "Mechanism variant."
   },
   "ELTEC 226\tMotors, Controls, and Controllers - Portfolio Review": {
-    "unified_title": "Motors, Controls, and Controllers",
+    "unified_title": "Motors, Controls and Controllers",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -24827,7 +24827,7 @@
     "_notes": "Local college course."
   },
   "Elementary American Sign Language I ASL 001 Cx": {
-    "unified_title": "Elementary American Sign Language I",
+    "unified_title": "American Sign Language 1",
     "confidence_title": 0.88,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -24905,7 +24905,7 @@
     "_notes": "Course-section variant; unified with general Elementary Japanese."
   },
   "Elementary Spanish I": {
-    "unified_title": "Spanish 1",
+    "unified_title": "Elementary Spanish I",
     "confidence_title": 0.88,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -24918,7 +24918,7 @@
     "_notes": "Local college language course."
   },
   "Elementary Spanish I SPAN 001 Cx": {
-    "unified_title": "Spanish 1",
+    "unified_title": "Elementary Spanish I",
     "confidence_title": 0.88,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -25898,7 +25898,7 @@
     "_notes": "Cerritos-local course; abbreviation unclear (possibly Fashion Industry Workshop)."
   },
   "FLGHT 101": {
-    "unified_title": "Private Pilot Ground School",
+    "unified_title": "Private Pilot 1 Ground School",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -27919,7 +27919,7 @@
     "_notes": "CCSF-specific course code; review needed."
   },
   "Fire Science 34C-Industry Certification": {
-    "unified_title": "Fire Science 34C",
+    "unified_title": "Fire Science",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -28245,7 +28245,7 @@
     "_notes": "Welding process course CBE."
   },
   "Fontana High - Law Enforcement": {
-    "unified_title": "Law Enforcement (High School Articulation)",
+    "unified_title": "Law Enforcement",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -28323,7 +28323,7 @@
     "_notes": "HS articulation pathway."
   },
   "Fontana Unified School District - Fontana HS - Advanced Law Enforcement": {
-    "unified_title": "Law Enforcement (High School Articulation)",
+    "unified_title": "Law Enforcement",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -29187,7 +29187,7 @@
     "_notes": null
   },
   "HIGH SCHOOL ARTICULATION  – DANCETQ 142 - Modern Dance Techniques II": {
-    "unified_title": "Modern Dance Techniques II",
+    "unified_title": "Modern Dance Techniques 2",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -29369,7 +29369,7 @@
     "_notes": null
   },
   "HIST 105\tWestern Civilization Since 1648 - Credit by Exam": {
-    "unified_title": "Western Civilization Since 1648",
+    "unified_title": "Western Civilization 2",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -32104,7 +32104,7 @@
     "_notes": "Course code and CBE mechanism stripped."
   },
   "Intermediate American Sign Language II ASL 004 Cx": {
-    "unified_title": "Intermediate American Sign Language II",
+    "unified_title": "American Sign Language Intermediate",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -32394,7 +32394,7 @@
     "_notes": "Local college Spanish course."
   },
   "Intermediate Spanish I SPAN 003 Cx": {
-    "unified_title": "Intermediate Spanish I",
+    "unified_title": "Spanish Intermediate",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -35090,7 +35090,7 @@
     "_notes": null
   },
   "MUSIC 216-2 - Music Theory II": {
-    "unified_title": "Music Theory II",
+    "unified_title": "Music Theory 2",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -35946,7 +35946,7 @@
     "_notes": null
   },
   "Music Skills III - Credit by Exam": {
-    "unified_title": "Music Skills III",
+    "unified_title": "Music Skills 3",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36011,7 +36011,7 @@
     "_notes": null
   },
   "Music Theory II - Credit by Exam": {
-    "unified_title": "Music Theory II",
+    "unified_title": "Music Theory 2",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36194,7 +36194,7 @@
     "_notes": "NFPA 1072 HazMat Technician."
   },
   "NURS 150-CBE": {
-    "unified_title": "Nursing Course CBE — NURS 150 (SBVC)",
+    "unified_title": "Foundations of Nursing",
     "confidence_title": 0.4,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36207,7 +36207,7 @@
     "_notes": "Course-number-only; specific nursing content not stated."
   },
   "NURS 151 CBE": {
-    "unified_title": "Nursing Course CBE — NURS 151 (SBVC)",
+    "unified_title": "Introduction to Medical Surgical Nursing",
     "confidence_title": 0.4,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36220,7 +36220,7 @@
     "_notes": "Course-number-only."
   },
   "NURS 160 CBE": {
-    "unified_title": "Nursing Course CBE — NURS 160 (SBVC)",
+    "unified_title": "Nursing Care of the Childbearing Family and Newborn",
     "confidence_title": 0.4,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36233,7 +36233,7 @@
     "_notes": "Course-number-only."
   },
   "NURS 161 - CBE": {
-    "unified_title": "Nursing Course CBE — NURS 161 (SBVC)",
+    "unified_title": "Medical Surgical Nursing Beginning",
     "confidence_title": 0.4,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36402,7 +36402,7 @@
     "_notes": null
   },
   "NURSE 278\tNursing Process Advanced Medical-Surgical - Portfolio Review": {
-    "unified_title": "Nursing Process: Advanced Medical-Surgical",
+    "unified_title": "Nursing Process Advanced Medical-Surgical",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36428,7 +36428,7 @@
     "_notes": null
   },
   "NURSING 400 - Adult Health Care I": {
-    "unified_title": "Adult Health Care I",
+    "unified_title": "Adult Health Care 1",
     "confidence_title": 0.88,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36454,7 +36454,7 @@
     "_notes": null
   },
   "NURSING 403 - Adult Health Care II": {
-    "unified_title": "Adult Health Care II",
+    "unified_title": "Adult Health Care 2",
     "confidence_title": 0.88,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36480,7 +36480,7 @@
     "_notes": null
   },
   "NURSING 405 - Psychiatric Health Care": {
-    "unified_title": "Psychiatric Health Care (Nursing)",
+    "unified_title": "Psychiatric Health Care",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36493,7 +36493,7 @@
     "_notes": null
   },
   "NURSING 406 -  Adult Health Care III": {
-    "unified_title": "Adult Health Care III",
+    "unified_title": "Adult Health Care 3",
     "confidence_title": 0.88,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36519,7 +36519,7 @@
     "_notes": null
   },
   "NURSING 408 - Psychological Aspects of Health Care": {
-    "unified_title": "Psychological Aspects of Health Care (Nursing)",
+    "unified_title": "Psychological Aspects of Health Care",
     "confidence_title": 0.88,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36532,7 +36532,7 @@
     "_notes": null
   },
   "NURSING 414 - Adult Health Care IV": {
-    "unified_title": "Adult Health Care IV",
+    "unified_title": "Adult Health Care 4",
     "confidence_title": 0.88,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36545,7 +36545,7 @@
     "_notes": null
   },
   "NURSING 415 - Pediatric Health Care": {
-    "unified_title": "Pediatric Health Care (Nursing)",
+    "unified_title": "Pediatric Health Care",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -37222,7 +37222,7 @@
     "_notes": null
   },
   "PEC 140\tExercise for Fitness - Industry Certificate": {
-    "unified_title": "Personal Fitness Trainer Certification",
+    "unified_title": "Exercise for Fitness",
     "confidence_title": 0.4,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -37274,7 +37274,7 @@
     "_notes": "Specific self-defense industry cert (e.g., R.A.D.) not identified."
   },
   "PHOT 22": {
-    "unified_title": "Photography (PHOT 22 — local)",
+    "unified_title": "Photojournalism",
     "confidence_title": 0.3,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -37313,7 +37313,7 @@
     "_notes": "Bare course code."
   },
   "PHOT 74A": {
-    "unified_title": "Photography (PHOT 74A — local)",
+    "unified_title": "Studio Photography Techniques 1",
     "confidence_title": 0.3,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -37326,7 +37326,7 @@
     "_notes": "Bare course code."
   },
   "PHOT 7A": {
-    "unified_title": "Photography (PHOT 7A — local)",
+    "unified_title": "Darkroom 1",
     "confidence_title": 0.3,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -37352,7 +37352,7 @@
     "_notes": "Local photography course CBE."
   },
   "PHOTO 74A": {
-    "unified_title": "Photography (PHOTO 74A — local)",
+    "unified_title": "DSLR and Lighting for Professional Production I Beginning",
     "confidence_title": 0.3,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -37495,7 +37495,7 @@
     "_notes": "Local horticulture course CBE."
   },
   "PLNT SC 827 - Sustainable Gardening for Landscapes ": {
-    "unified_title": "Sustainable Gardening for Landscapes",
+    "unified_title": "Sustainable Gardening for Landscapes (Horticulture)",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -37534,7 +37534,7 @@
     "_notes": "Local CBE for American politics course."
   },
   "POLSC 130\tPolitical Theory - Credit by Exam": {
-    "unified_title": "Political Theory",
+    "unified_title": "Introduction to Political Theory and Thought",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -37796,7 +37796,7 @@
     "_notes": "NCTI is a paramedic training provider."
   },
   "Paramedicine Credit by Exam": {
-    "unified_title": "Paramedicine (Credit by Exam)",
+    "unified_title": "Paramedicine",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -38431,7 +38431,7 @@
     "_notes": "A&P-aligned local course."
   },
   "Powerplant: Aircraft Reciprocating and Turbine Engines Lab": {
-    "unified_title": "Aircraft Powerplant: Reciprocating and Turbine Engines Laboratory",
+    "unified_title": "Aircraft Powerplant: Reciprocating and Turbine Engines Lab",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -38496,7 +38496,7 @@
     "_notes": "Local Norco carpentry topic."
   },
   "Previous level Trigonametry or higher math completion+ Residency Units": {
-    "unified_title": "Trigonometry or Higher Math (Prior Coursework)",
+    "unified_title": "Trigonometry or Higher Mathematics",
     "confidence_title": 0.4,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -39861,7 +39861,7 @@
     "_notes": null
   },
   "SPAN 1": {
-    "unified_title": "Spanish 1",
+    "unified_title": "Elementary Spanish I",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -39874,7 +39874,7 @@
     "_notes": "Elementary Spanish course CBE."
   },
   "SPAN 101\tSpanish 1 - Credit by Exam": {
-    "unified_title": "Spanish 1",
+    "unified_title": "Elementary Spanish I",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -39887,7 +39887,7 @@
     "_notes": null
   },
   "SPAN 101\tSpanish 1 - Industry Certification": {
-    "unified_title": "Spanish 1",
+    "unified_title": "Elementary Spanish I",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -39900,7 +39900,7 @@
     "_notes": "Likely awarded for an external language certification."
   },
   "SPAN 101\tSpanish 1 - Standardized Assessment": {
-    "unified_title": "Spanish 1",
+    "unified_title": "Elementary Spanish I",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -40004,7 +40004,7 @@
     "_notes": null
   },
   "SPAN 157 CBE": {
-    "unified_title": "Spanish 157 (Local Course)",
+    "unified_title": "Spanish for Heritage Speakers 1",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -40017,7 +40017,7 @@
     "_notes": "Local course number; no descriptive title."
   },
   "SPAN 158 CBE": {
-    "unified_title": "Spanish 158 (Local Course)",
+    "unified_title": "Spanish for Heritage Speakers 2",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41292,7 +41292,7 @@
     "_notes": "Local CBE."
   },
   "Technical Drawing High School to College Articulation": {
-    "unified_title": "Technical Drawing (High School Articulation)",
+    "unified_title": "Technical Drawing",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41889,7 +41889,7 @@
     "_notes": "Could relate to FAA Part 107 but exhibit appears to be local course."
   },
   "UPLAND HIGH SCHOOL- Automotive Technology": {
-    "unified_title": "Upland High School — Automotive Technology (HS Articulation)",
+    "unified_title": "Automotive Technology",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -42266,7 +42266,7 @@
     "_notes": null
   },
   "Veteran Walk Jog Run KINE 068": {
-    "unified_title": "Walk, Jog, Run (Kinesiology)",
+    "unified_title": "Fitness",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -42330,7 +42330,7 @@
     "_notes": null
   },
   "WCC Health Graduation Requirement": {
-    "unified_title": "Health Education Graduation Requirement — Woodland Community College",
+    "unified_title": "Health Education Graduation Requirement",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -42343,7 +42343,7 @@
     "_notes": "Generic admin bucket for health grad requirement satisfied via military experience."
   },
   "WELD 045 CBE ": {
-    "unified_title": "Welding (WELD 045)",
+    "unified_title": "Shielded Metal Arc Welding Beginning",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -42356,7 +42356,7 @@
     "_notes": "Course title unclear from code; local welding course CBE."
   },
   "WELD 046 CBE": {
-    "unified_title": "Welding (WELD 046)",
+    "unified_title": "Shielded Metal Arc Welding Intermediate",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -42888,7 +42888,7 @@
     "_notes": null
   },
   "Work Experience High School to College Articulation": {
-    "unified_title": "Work Experience (High School Articulation)",
+    "unified_title": "Work Experience",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -43373,7 +43373,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors": {
-    "unified_title": "High School Articulation — Anatomy and Physiology Honors (Colton-Redlands-Yucaipa ROP)",
+    "unified_title": "Anatomy and Physiology Honors",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
@@ -43397,7 +43397,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "DANCETQ 141 - Modern Dance Techniques I": {
-    "unified_title": "Modern Dance Techniques I",
+    "unified_title": "Modern Dance Techniques 1",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
@@ -43582,7 +43582,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "PLNT SC 827 - Sustainable Gardening for Landscapes": {
-    "unified_title": "Sustainable Gardening for Landscapes",
+    "unified_title": "Sustainable Gardening for Landscapes (Horticulture)",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
@@ -44022,7 +44022,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "WELD 045 CBE": {
-    "unified_title": "Welding (WELD 045)",
+    "unified_title": "Shielded Metal Arc Welding Beginning",
     "confidence_title": 1.0,
     "classified_at": "2026-06-03",
     "classified_by": "curator (CER unclassified-triage)",
