@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-09T15:38:39.749636+00:00",
+  "scraped_at": "2026-07-09T19:02:46.715783+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25490,
+    "jst": 25493,
     "star_colleges": 53
   },
   "computed_star_colleges": 53,
@@ -52,7 +52,7 @@
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 543,
+      "jst": 545,
       "star": true
     },
     "City College of San Francisco": {
@@ -122,7 +122,7 @@
     },
     "Modesto Junior College": {
       "vets": 80,
-      "jst": 141,
+      "jst": 142,
       "star": true
     },
     "Los Angeles Valley College": {
