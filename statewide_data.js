@@ -122811,6 +122811,100 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPICI-BH&C-1-001",
+      "exhibit_ids": [
+        "MAPICI-BH&C-1-001"
+      ],
+      "title": "Behavorial Health & Cancer Awareness 2A First-Level Supervisor",
+      "unified_title": "Behavorial Health & Cancer Awareness 2A First-Level Supervisor",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Behavorial Health & Cancer Awareness 2A First-Level Supervisor"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 58,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 59,
+      "credit_recs": [
+        {
+          "course": "FIRET 155B",
+          "credit": "2 hours in Behavior Health and Cancer Awareness 2A-First-Level Supervisor"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPICI-FO2H-1-001",
       "exhibit_ids": [
         "MAPICI-FO2H-1-001"
@@ -122900,6 +122994,382 @@ window.CPL_STATEWIDE = {
         {
           "course": "FIRET 59B",
           "credit": "3 hours in Fire Officer 2B: Administration & Community Risk Reduction"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICI-FO2I-1-001",
+      "exhibit_ids": [
+        "MAPICI-FO2I-1-001"
+      ],
+      "title": "Fire Officer 2C: Initial Incident Command",
+      "unified_title": "Fire Officer 2C: Initial Incident Command",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Fire Officer 2C: Initial Incident Command"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 58,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 59,
+      "credit_recs": [
+        {
+          "course": "FIRET 59C",
+          "credit": "3 hours in Fire Officer 2C: Initial Incident Command"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICI-FADO-1-001",
+      "exhibit_ids": [
+        "MAPICI-FADO-1-001"
+      ],
+      "title": "Fire Apparatus Driver Operator 1A",
+      "unified_title": "Fire Apparatus Driver Operator 1A",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Fire Apparatus Driver Operator 1A"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 58,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 59,
+      "credit_recs": [
+        {
+          "course": "FIRET 120A",
+          "credit": "1 hour in Fire Apparatus Driver Operator 1A"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICI-FADO1-1-001",
+      "exhibit_ids": [
+        "MAPICI-FADO1-1-001"
+      ],
+      "title": "Fire Apparatus Driver Operator 1B",
+      "unified_title": "Fire Apparatus Driver Operator 1B",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Fire Apparatus Driver Operator 1B"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 58,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 59,
+      "credit_recs": [
+        {
+          "course": "FIRET 120B",
+          "credit": "1 hour in Fire Apparatus Driver Operator 1B"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICI-F1ET-1-001",
+      "exhibit_ids": [
+        "MAPICI-F1ET-1-001"
+      ],
+      "title": "FIRET 129: Emergency Technician Preparation",
+      "unified_title": "FIRET 129: Emergency Technician Preparation",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "FIRET 129: Emergency Technician Preparation"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 58,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 59,
+      "credit_recs": [
+        {
+          "course": "FIRET 129",
+          "credit": "4 hours in Emergency Medical Technician Preparation (EMT Prep)"
         }
       ],
       "authoritative_recs": []
@@ -140413,6 +140883,92 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCXS-P6DI1-1-001",
+      "exhibit_ids": [
+        "MAPCXS-P6DI1-1-001"
+      ],
+      "title": "PHOTO 6: Digital Imaging Fundamentals",
+      "unified_title": "PHOTO 6: Digital Imaging Fundamentals",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "PHOTO 6: Digital Imaging Fundamentals"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Fine and Applied Arts",
+      "sector": "ICT/Digital Media",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 50,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "Cosumnes River College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Foothill College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Laney College",
+        "Las Positas College",
+        "Los Angeles City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Valley College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Pasadena City College",
+        "Riverside City College",
+        "Sacramento City College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Yuba College"
+      ],
+      "total_addressable": 51,
+      "credit_recs": [
+        {
+          "course": "PHOTO 6",
+          "credit": "3 hours in Digital Imaging Fundamentals"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "CPLICI-ASE2-1-001|MAPICI-AC(A1-1-001|MAPICI-ASE(17-1-001|MAPICI-ASE(28-1-001|MAPICI-ASE(29-1-001|MAPICI-ATAA-1-001",
       "exhibit_ids": [
         "CPLICI-ASE2-1-001",
@@ -145546,6 +146102,249 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCXS-C12C-1-001",
+      "exhibit_ids": [
+        "MAPCXS-C12C-1-001"
+      ],
+      "title": "CADD 14: 2D CAD I",
+      "unified_title": "CADD 14: 2D CAD I",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CADD 14: 2D CAD I"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 45,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cerritos College",
+        "Chaffey College",
+        "Citrus College",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "Copper Mountain College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Golden West College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Valley College",
+        "MiraCosta College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Valley College"
+      ],
+      "total_addressable": 46,
+      "credit_recs": [
+        {
+          "course": "CADD 14",
+          "credit": "3 hours in 2D CAD I"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-C13S-1-001",
+      "exhibit_ids": [
+        "MAPCXS-C13S-1-001"
+      ],
+      "title": "CADD 16: 3D Solid Modeling I",
+      "unified_title": "CADD 16: 3D Solid Modeling I",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CADD 16: 3D Solid Modeling I"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 45,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cerritos College",
+        "Chaffey College",
+        "Citrus College",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "Copper Mountain College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Golden West College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Valley College",
+        "MiraCosta College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Valley College"
+      ],
+      "total_addressable": 46,
+      "credit_recs": [
+        {
+          "course": "CADD 16",
+          "credit": "3 hours in 3D Solid Modeling I"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-C2AO-1-001",
+      "exhibit_ids": [
+        "MAPCXS-C2AO-1-001"
+      ],
+      "title": "CADD 24: Applications of 2D CAD",
+      "unified_title": "CADD 24: Applications of 2D CAD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CADD 24: Applications of 2D CAD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 45,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cerritos College",
+        "Chaffey College",
+        "Citrus College",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "Copper Mountain College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Golden West College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Valley College",
+        "MiraCosta College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Valley College"
+      ],
+      "total_addressable": 46,
+      "credit_recs": [
+        {
+          "course": "CADD 24",
+          "credit": "2 hours in Applications of 2D CAD"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPCBEN-SMS-1-001",
       "exhibit_ids": [
         "MAPCBEN-SMS-1-001"
@@ -148539,6 +149338,83 @@ window.CPL_STATEWIDE = {
         {
           "course": "IWAP 40.56",
           "credit": "2 hours in IW - Trade Science/Ironworker History"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-A1PM-1-001",
+      "exhibit_ids": [
+        "MAPCXS-A1PM-1-001"
+      ],
+      "title": "AT 130: Precision Measurements",
+      "unified_title": "AT 130: Precision Measurements",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AT 130: Precision Measurements"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 41,
+      "potential_names": [
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Clovis Community College",
+        "College of Alameda",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Hartnell College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mission College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Ohlone College",
+        "Porterville College",
+        "Reedley College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "Santa Ana College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 42,
+      "credit_recs": [
+        {
+          "course": "AT 130",
+          "credit": "3 hours in Precision Measurements"
         }
       ],
       "authoritative_recs": []
@@ -151968,6 +152844,81 @@ window.CPL_STATEWIDE = {
         {
           "course": "AP 14A",
           "credit": "3 hours in Video I"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-A4PF-1-001",
+      "exhibit_ids": [
+        "MAPCXS-A4PF-1-001"
+      ],
+      "title": "AT 40: Preparing for Employment Opportunities",
+      "unified_title": "AT 40: Preparing for Employment Opportunities",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AT 40: Preparing for Employment Opportunities"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 39,
+      "potential_names": [
+        "Allan Hancock College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Coastline Community College",
+        "College of the Desert",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Gavilan College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Mendocino College",
+        "Merced College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Ohlone College",
+        "Palomar College",
+        "Pasadena City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santiago Canyon College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 40,
+      "credit_recs": [
+        {
+          "course": "AT 40",
+          "credit": "3 hours in Preparing for Employment Opportunities"
         }
       ],
       "authoritative_recs": []
@@ -157827,6 +158778,77 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCXS-A1TC-1-001",
+      "exhibit_ids": [
+        "MAPCXS-A1TC-1-001"
+      ],
+      "title": "AT 10: Technical Computer Applications",
+      "unified_title": "AT 10: Technical Computer Applications",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AT 10: Technical Computer Applications"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Chabot College",
+        "City College of San Francisco",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Laney College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Merced College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Orange Coast College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Joaquin Delta College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "AT 10",
+          "credit": "3 hours in Technical Computer Applications"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPSAH-IPH1-1-001|MAPSAS-I:PH1-1-001|MAPSAS-IEPH1-1-001|MAPSAS-IEPH3-1-001|MAPSAS-IPH1-1-001|MAPSAS-IPH2-1-001|MAPSAS-IPH4-1-001|MAPSAS-IPH7-1-001",
       "exhibit_ids": [
         "MAPSAH-IPH1-1-001",
@@ -160291,6 +161313,216 @@ window.CPL_STATEWIDE = {
         {
           "course": "FRENCH 102",
           "credit": "5 hours in College French II"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICI-C5BR-1-001",
+      "exhibit_ids": [
+        "MAPICI-C5BR-1-001"
+      ],
+      "title": "CONS 50A: Basic Residential Construction",
+      "unified_title": "CONS 50A: Basic Residential Construction",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CONS 50A: Basic Residential Construction"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 34,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 35,
+      "credit_recs": [
+        {
+          "course": "CONS 50A",
+          "credit": "3 hours in Basic Residential Construction"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICI-F1EM1-1-001",
+      "exhibit_ids": [
+        "MAPICI-F1EM1-1-001"
+      ],
+      "title": "FIRET 133: Emergency Medical Technician-Paramedic-Didactic",
+      "unified_title": "FIRET 133: Emergency Medical Technician-Paramedic-Didactic",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "FIRET 133: Emergency Medical Technician-Paramedic-Didactic"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Health",
+      "sector": "Health",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 34,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Contra Costa College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Foothill College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lemoore College",
+        "Merced College",
+        "Merritt College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Palomar College",
+        "Saddleback College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 35,
+      "credit_recs": [
+        {
+          "course": "FIRET 133",
+          "credit": "21.5 hours in Emergency Medical Technician-Paramedic-Didactic"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICI-F1EM2-1-001",
+      "exhibit_ids": [
+        "MAPICI-F1EM2-1-001"
+      ],
+      "title": "FIRET 136: Emergency Medical Technician-Paramedic Clinical and Field Work",
+      "unified_title": "FIRET 136: Emergency Medical Technician-Paramedic Clinical and Field Work",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "FIRET 136: Emergency Medical Technician-Paramedic Clinical and Field Work"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Health",
+      "sector": "Health",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 34,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Contra Costa College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Foothill College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lemoore College",
+        "Merced College",
+        "Merritt College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Palomar College",
+        "Saddleback College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 35,
+      "credit_recs": [
+        {
+          "course": "FIRET 136",
+          "credit": "13 hours in Emergency Medical Technician-Paramedic Clinical and Field Work"
         }
       ],
       "authoritative_recs": []
@@ -165477,6 +166709,74 @@ window.CPL_STATEWIDE = {
         {
           "course": "EMR  001",
           "credit": "3 hours in Emergency Medical Responder"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICI-F1EM-1-001",
+      "exhibit_ids": [
+        "MAPICI-F1EM-1-001"
+      ],
+      "title": "FIRET 131: Emergency Medical Technician Basic",
+      "unified_title": "FIRET 131: Emergency Medical Technician Basic",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "FIRET 131: Emergency Medical Technician Basic"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Health",
+      "sector": "Health",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 32,
+      "potential_names": [
+        "Barstow Community College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of Marin",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "East Los Angeles College",
+        "Foothill College",
+        "Las Positas College",
+        "Los Angeles Harbor College",
+        "Los Angeles Southwest College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 33,
+      "credit_recs": [
+        {
+          "course": "FIRET 131",
+          "credit": "9.5 hours in Emergency Medical Technician Basic"
         }
       ],
       "authoritative_recs": []
@@ -188496,6 +189796,118 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCXS-C2CF-1-001",
+      "exhibit_ids": [
+        "MAPCXS-C2CF-1-001"
+      ],
+      "title": "CADD 22: CAD for Fabrication",
+      "unified_title": "CADD 22: CAD for Fabrication",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CADD 22: CAD for Fabrication"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 20,
+      "potential_names": [
+        "Chaffey College",
+        "College of the Sequoias",
+        "Cuyamaca College",
+        "Glendale Community College",
+        "Long Beach City College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Merced College",
+        "MiraCosta College",
+        "Napa Valley College",
+        "Norco College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Sierra College",
+        "Ventura College"
+      ],
+      "total_addressable": 21,
+      "credit_recs": [
+        {
+          "course": "CADD 22",
+          "credit": "3 hours in CAD for Fabrication"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-C3RE-1-001",
+      "exhibit_ids": [
+        "MAPCXS-C3RE-1-001"
+      ],
+      "title": "CADD 32: Reverse Engineering I",
+      "unified_title": "CADD 32: Reverse Engineering I",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CADD 32: Reverse Engineering I"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 20,
+      "potential_names": [
+        "Chaffey College",
+        "College of the Sequoias",
+        "Cuyamaca College",
+        "Glendale Community College",
+        "Long Beach City College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Merced College",
+        "MiraCosta College",
+        "Napa Valley College",
+        "Norco College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Sierra College",
+        "Ventura College"
+      ],
+      "total_addressable": 21,
+      "credit_recs": [
+        {
+          "course": "CADD 32",
+          "credit": "3 hours in Reverse Engineering I"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPICI-MCWA-1-001",
       "exhibit_ids": [
         "MAPICI-MCWA-1-001"
@@ -193977,6 +195389,58 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPCXS-H1MT-1-001",
+      "exhibit_ids": [
+        "MAPCXS-H1MT-1-001"
+      ],
+      "title": "HIT 10: Medical Terminology",
+      "unified_title": "HIT 10: Medical Terminology",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "HIT 10: Medical Terminology"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 16,
+      "potential_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "City College of San Francisco",
+        "Coastline Community College",
+        "Columbia College",
+        "Cosumnes River College",
+        "Cypress College",
+        "East Los Angeles College",
+        "Glendale Community College",
+        "Madera College",
+        "Palo Verde College",
+        "Saddleback College",
+        "San Diego Mesa College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Ventura College"
+      ],
+      "total_addressable": 17,
+      "credit_recs": [
+        {
+          "course": "HIT 10",
+          "credit": "3 hours in Medical Terminology"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPSAH-AES-1-001|MAPSAS-A-ES-1-001|MAPSAS-A:ES-1-001|MAPSAS-AE-E1-1-001|MAPSAS-AEES-1-001|MAPSAS-AEES1-1-001|MAPSAS-AES(-1-001|MAPSAS-AES-1-001|MAPSAS-AES1-1-001|MAPSAS-AES10-1-001|MAPSAS-AES11-1-001|MAPSAS-AES14-1-001|MAPSAS-AES3-1-001|MAPSAS-AES7-1-001|MAPSAS-AES8-1-001|MAPSAS-AES9-1-001",
       "exhibit_ids": [
         "MAPSAH-AES-1-001",
@@ -195775,6 +197239,56 @@ window.CPL_STATEWIDE = {
         {
           "course": "ELEC 10",
           "credit": "2 hours in Intro to Mechatronics"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-F1WE-1-001",
+      "exhibit_ids": [
+        "MAPICA-F1WE-1-001"
+      ],
+      "title": "FSM 19: Work Experience",
+      "unified_title": "FSM 19: Work Experience",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "FSM 19: Work Experience"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Health",
+      "sector": "Health",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 14,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Chaffey College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Merced College",
+        "Merritt College",
+        "Monterey Peninsula College",
+        "Orange Coast College",
+        "San Bernardino Valley College",
+        "Santa Rosa Junior College",
+        "Shasta College"
+      ],
+      "total_addressable": 15,
+      "credit_recs": [
+        {
+          "course": "FSM 19",
+          "credit": "1 hour in Work Experience Education"
         }
       ],
       "authoritative_recs": []
@@ -198813,6 +200327,130 @@ window.CPL_STATEWIDE = {
         {
           "course": "AMF 030",
           "credit": "2.5 hours in Crew Lead Customer Service Training"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICI-DHBD-1-001",
+      "exhibit_ids": [
+        "MAPICI-DHBD-1-001"
+      ],
+      "title": "Dental Hygiene Bachelors Degree Completion",
+      "unified_title": "Dental Hygiene Bachelors Degree Completion",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Dental Hygiene Bachelors Degree Completion"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Health",
+      "sector": "Health",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 12,
+      "potential_names": [
+        "Cabrillo College",
+        "Chabot College",
+        "Cypress College",
+        "Diablo Valley College",
+        "Moreno Valley College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Sacramento City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Southwestern College",
+        "Taft College"
+      ],
+      "total_addressable": 13,
+      "credit_recs": [
+        {
+          "course": "DH 707",
+          "credit": "1 hour in Oral Health Education"
+        },
+        {
+          "course": "DH 710",
+          "credit": "1 hour in Special Needs Patients"
+        },
+        {
+          "course": "DH 715",
+          "credit": "3 hours in Periodontology"
+        },
+        {
+          "course": "DH 717",
+          "credit": "2 hours in Community Dental Health I"
+        },
+        {
+          "course": "DH 718",
+          "credit": "1.5 hours in Clinical Seminar Topics II"
+        },
+        {
+          "course": "DH 719",
+          "credit": "2 hours in Applied Specialties"
+        },
+        {
+          "course": "DH 721",
+          "credit": "1 hour in Law, Ethics, & Practice Management"
+        },
+        {
+          "course": "DH 723",
+          "credit": "2 hours in Community Dental Health II"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICI-H3PT-1-001",
+      "exhibit_ids": [
+        "MAPICI-H3PT-1-001"
+      ],
+      "title": "HLTH 3: Personal Training",
+      "unified_title": "HLTH 3: Personal Training",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "HLTH 3: Personal Training"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Health",
+      "sector": "Health",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 12,
+      "potential_names": [
+        "Cabrillo College",
+        "Cerritos College",
+        "City College of San Francisco",
+        "Coastline Community College",
+        "College of the Canyons",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "Grossmont College",
+        "Los Angeles Mission College",
+        "Rio Hondo College",
+        "Shasta College",
+        "Ventura College"
+      ],
+      "total_addressable": 13,
+      "credit_recs": [
+        {
+          "course": "HLTH 3",
+          "credit": "3 hours in Personal Training"
         }
       ],
       "authoritative_recs": []
@@ -205113,6 +206751,53 @@ window.CPL_STATEWIDE = {
         {
           "course": "ACA 033A",
           "credit": "1.5 hours in Cabinet Millwork and Assembly"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-A2OS1-1-001",
+      "exhibit_ids": [
+        "MAPCXS-A2OS1-1-001"
+      ],
+      "title": "AT 21: Occupational Safety and Health",
+      "unified_title": "AT 21: Occupational Safety and Health",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AT 21: Occupational Safety and Health"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 11,
+      "potential_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "College of the Canyons",
+        "Cuyamaca College",
+        "Las Positas College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Napa Valley College",
+        "Palomar College",
+        "Southwestern College",
+        "Taft College"
+      ],
+      "total_addressable": 12,
+      "credit_recs": [
+        {
+          "course": "AT 21",
+          "credit": "2 hours in Occupational Safety and Health"
         }
       ],
       "authoritative_recs": []
@@ -218497,6 +220182,181 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCXS-H5PO-1-001",
+      "exhibit_ids": [
+        "MAPCXS-H5PO-1-001"
+      ],
+      "title": "HVAC 50: Principles of HVAC",
+      "unified_title": "HVAC 50: Principles of HVAC",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "HVAC 50: Principles of HVAC"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "HVAC 50",
+          "credit": "2.5 hours in Principles of HVAC"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-H5EF-1-001",
+      "exhibit_ids": [
+        "MAPCXS-H5EF-1-001"
+      ],
+      "title": "HVAC 51: Electricty for HVAC",
+      "unified_title": "HVAC 51: Electricty for HVAC",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "HVAC 51: Electricty for HVAC"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "HVAC 51",
+          "credit": "6.5 hours in Electricity for HVAC"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-H5HS-1-001",
+      "exhibit_ids": [
+        "MAPCXS-H5HS-1-001"
+      ],
+      "title": "HVAC 52: Heating Systems",
+      "unified_title": "HVAC 52: Heating Systems",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "HVAC 52: Heating Systems"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "HVAC 52",
+          "credit": "6.5 hours in Heating Systems"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-H5SA-1-001",
+      "exhibit_ids": [
+        "MAPCXS-H5SA-1-001"
+      ],
+      "title": "HVAC 53: System Analysis and Regulations",
+      "unified_title": "HVAC 53: System Analysis and Regulations",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "HVAC 53: System Analysis and Regulations"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "HVAC 53",
+          "credit": "6.5 hours in System Analysis and Regulations"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-H5BA-1-001",
+      "exhibit_ids": [
+        "MAPCXS-H5BA-1-001"
+      ],
+      "title": "HVAC 54: Brazing and Motor Technology",
+      "unified_title": "HVAC 54: Brazing and Motor Technology",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "HVAC 54: Brazing and Motor Technology"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "HVAC 54",
+          "credit": "6.5 hours in Brazing and Motor Technology"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPCBEN-PP-1-001",
       "exhibit_ids": [
         "MAPCBEN-PP-1-001"
@@ -222282,7 +224142,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 18,
         "ccc_collaborative": 59,
         "industry_certs": 92,
-        "pct": 3.6
+        "pct": 3.5
       },
       {
         "college": "Santiago Canyon College",
@@ -222372,7 +224232,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 16,
         "ccc_collaborative": 13,
         "industry_certs": 106,
-        "pct": 2.0
+        "pct": 1.9
       },
       {
         "college": "Merced College",
@@ -222471,7 +224331,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 3,
         "ccc_collaborative": 0,
         "industry_certs": 0,
-        "pct": 1.3
+        "pct": 1.2
       },
       {
         "college": "De Anza College",
@@ -222651,6 +224511,15 @@ window.CPL_STATEWIDE = {
         "disciplines": 6,
         "ccc_collaborative": 18,
         "industry_certs": 76,
+        "pct": 0.8
+      },
+      {
+        "college": "Fresno City College",
+        "credit_recs": 104,
+        "exhibits": 88,
+        "disciplines": 7,
+        "ccc_collaborative": 2,
+        "industry_certs": 34,
         "pct": 0.8
       },
       {
@@ -222915,15 +224784,6 @@ window.CPL_STATEWIDE = {
         "pct": 0.6
       },
       {
-        "college": "Fresno City College",
-        "credit_recs": 69,
-        "exhibits": 60,
-        "disciplines": 5,
-        "ccc_collaborative": 2,
-        "industry_certs": 15,
-        "pct": 0.5
-      },
-      {
         "college": "Coalinga College",
         "credit_recs": 69,
         "exhibits": 62,
@@ -223179,27 +225039,27 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 5472,
-        "exhibits": 1757,
-        "courses": 202,
+        "credit_recs": 5476,
+        "exhibits": 1761,
+        "courses": 206,
         "colleges": 84,
         "ccc_collaborative": 25,
         "pct": 43.0
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 2185,
-        "exhibits": 995,
-        "courses": 1111,
+        "credit_recs": 2197,
+        "exhibits": 1007,
+        "courses": 1123,
         "colleges": 53,
         "ccc_collaborative": 499,
         "pct": 17.2
       },
       {
         "discipline": "Public and Protective Services",
-        "credit_recs": 1368,
-        "exhibits": 429,
-        "courses": 567,
+        "credit_recs": 1373,
+        "exhibits": 434,
+        "courses": 572,
         "colleges": 51,
         "ccc_collaborative": 542,
         "pct": 10.8
@@ -223211,7 +225071,16 @@ window.CPL_STATEWIDE = {
         "courses": 28,
         "colleges": 81,
         "ccc_collaborative": 1,
-        "pct": 5.1
+        "pct": 5.0
+      },
+      {
+        "discipline": "Health",
+        "credit_recs": 437,
+        "exhibits": 203,
+        "courses": 287,
+        "colleges": 45,
+        "ccc_collaborative": 31,
+        "pct": 3.4
       },
       {
         "discipline": "Business and Management",
@@ -223221,15 +225090,6 @@ window.CPL_STATEWIDE = {
         "colleges": 40,
         "ccc_collaborative": 46,
         "pct": 3.4
-      },
-      {
-        "discipline": "Health",
-        "credit_recs": 424,
-        "exhibits": 197,
-        "courses": 274,
-        "colleges": 44,
-        "ccc_collaborative": 31,
-        "pct": 3.3
       },
       {
         "discipline": "Information Technology",
@@ -223251,10 +225111,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Fine and Applied Arts",
-        "credit_recs": 227,
-        "exhibits": 183,
-        "courses": 183,
-        "colleges": 32,
+        "credit_recs": 228,
+        "exhibits": 184,
+        "courses": 184,
+        "colleges": 33,
         "ccc_collaborative": 0,
         "pct": 1.8
       },
@@ -223391,21 +225251,21 @@ window.CPL_STATEWIDE = {
         "credit_recs": 6758,
         "exhibits": 2094,
         "colleges": 85,
-        "pct": 53.2
+        "pct": 53.0
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3658,
-        "exhibits": 1213,
+        "credit_recs": 3677,
+        "exhibits": 1225,
         "colleges": 80,
         "pct": 28.8
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 1699,
-        "exhibits": 1232,
-        "colleges": 57,
-        "pct": 13.4
+        "credit_recs": 1715,
+        "exhibits": 1248,
+        "colleges": 58,
+        "pct": 13.5
       },
       {
         "cpl_type": "Portfolio Review",
@@ -223432,24 +225292,24 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 7817,
-        "exhibits": 2813,
+        "credit_recs": 7833,
+        "exhibits": 2829,
         "colleges": 91,
-        "pct": 61.5
+        "pct": 61.4
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2611,
-        "exhibits": 965,
+        "credit_recs": 2629,
+        "exhibits": 976,
         "colleges": 76,
-        "pct": 20.5
+        "pct": 20.6
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1496,
-        "exhibits": 587,
+        "credit_recs": 1497,
+        "exhibits": 588,
         "colleges": 41,
-        "pct": 11.8
+        "pct": 11.7
       },
       {
         "mode": "High school coursework (H)",
@@ -223463,7 +225323,7 @@ window.CPL_STATEWIDE = {
         "credit_recs": 210,
         "exhibits": 175,
         "colleges": 11,
-        "pct": 1.7
+        "pct": 1.6
       },
       {
         "mode": "Military training (M)",
@@ -223504,11 +225364,11 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11191,
-        "exhibits": 4727,
+        "credit_recs": 11226,
+        "exhibits": 4755,
         "colleges": 98,
         "disciplines": 23,
-        "pct": 88.0
+        "pct": 88.1
       },
       {
         "category": "CCC Collaborative",
@@ -223930,6 +225790,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-07-09T20:15:48",
-  "total_credit_recs": 12714
+  "generated_at": "2026-07-09T23:05:09",
+  "total_credit_recs": 12749
 };

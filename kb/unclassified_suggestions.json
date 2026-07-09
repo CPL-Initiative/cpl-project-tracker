@@ -1,6 +1,235 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-07-07T23:42:04Z",
- "count": 0,
- "suggestions": {}
+ "_generated_at": "2026-07-09T23:07:09Z",
+ "count": 23,
+ "suggestions": {
+  "AT 10: Technical Computer Applications": [
+   {
+    "kind": "course",
+    "title": "Technical Computer Applications",
+    "code": "AT 10",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "AT 130: Precision Measurements": [
+   {
+    "kind": "course",
+    "title": "Precision Measurements",
+    "code": "AT 130",
+    "share": 1.0,
+    "colleges": 5,
+    "scoped": true
+   }
+  ],
+  "AT 21: Occupational Safety and Health": [
+   {
+    "kind": "course",
+    "title": "Occupational Safety and Health",
+    "code": "AT 21",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "AT 40: Preparing for Employment Opportunities": [
+   {
+    "kind": "course",
+    "title": "Preparing for Employment Opportunities",
+    "code": "AT 40",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "CADD 14: 2D CAD I": [
+   {
+    "kind": "course",
+    "title": "2D CAD I",
+    "code": "CADD 14",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "CADD 16: 3D Solid Modeling I": [
+   {
+    "kind": "course",
+    "title": "3D Solid Modeling I",
+    "code": "CADD 16",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "CADD 22: CAD for Fabrication": [
+   {
+    "kind": "course",
+    "title": "CAD for Fabrication",
+    "code": "CADD 22",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "CADD 24: Applications of 2D CAD": [
+   {
+    "kind": "course",
+    "title": "Applications of 2D CAD",
+    "code": "CADD 24",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "CADD 32: Reverse Engineering I": [
+   {
+    "kind": "course",
+    "title": "Reverse Engineering I",
+    "code": "CADD 32",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "CONS 50A: Basic Residential Construction": [
+   {
+    "kind": "course",
+    "title": "Basic Residential Construction",
+    "code": "CONS 50A",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "FIRET 129: Emergency Technician Preparation": [
+   {
+    "kind": "course",
+    "title": "Emergency Medical Technician Preparation (EMT Prep)",
+    "code": "FIRET 129",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "FIRET 131: Emergency Medical Technician Basic": [
+   {
+    "kind": "course",
+    "title": "Emergency Medical Technician Basic",
+    "code": "FIRET 131",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "FIRET 133: Emergency Medical Technician-Paramedic-Didactic": [
+   {
+    "kind": "course",
+    "title": "Emergency Medical Technician-Paramedic-Didactic",
+    "code": "FIRET 133",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "FIRET 136: Emergency Medical Technician-Paramedic Clinical and Field Work": [
+   {
+    "kind": "course",
+    "title": "Emergency Medical Technician-Paramedic Clinical and Field Work",
+    "code": "FIRET 136",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "FSM 19: Work Experience": [
+   {
+    "kind": "course",
+    "title": "Work Experience Education",
+    "code": "FSM 19",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "HIT 10: Medical Terminology": [
+   {
+    "kind": "cid",
+    "id": "HIT 103 X",
+    "title": "Medical Terminology",
+    "code": "HIT 10"
+   }
+  ],
+  "HLTH 3: Personal Training": [
+   {
+    "kind": "course",
+    "title": "Personal Training",
+    "code": "HLTH 3",
+    "share": 1.0,
+    "colleges": 6,
+    "scoped": true
+   }
+  ],
+  "HVAC 50: Principles of HVAC": [
+   {
+    "kind": "course",
+    "title": "Principles of HVAC",
+    "code": "HVAC 50",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "HVAC 51: Electricty for HVAC": [
+   {
+    "kind": "course",
+    "title": "Electricity for HVAC",
+    "code": "HVAC 51",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "HVAC 52: Heating Systems": [
+   {
+    "kind": "course",
+    "title": "Heating Systems",
+    "code": "HVAC 52",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "HVAC 53: System Analysis and Regulations": [
+   {
+    "kind": "course",
+    "title": "System Analysis and Regulations",
+    "code": "HVAC 53",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "HVAC 54: Brazing and Motor Technology": [
+   {
+    "kind": "course",
+    "title": "Brazing and Motor Technology",
+    "code": "HVAC 54",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "PHOTO 6: Digital Imaging Fundamentals": [
+   {
+    "kind": "course",
+    "title": "Digital Imaging Fundamentals",
+    "code": "PHOTO 6",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ]
+ }
 }

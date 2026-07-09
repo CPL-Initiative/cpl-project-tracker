@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-09T20:16:18.954446+00:00",
+  "scraped_at": "2026-07-09T23:05:39.297301+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25650,
+    "jst": 25670,
     "star_colleges": 53
   },
   "computed_star_colleges": 53,
@@ -67,7 +67,7 @@
     },
     "West Los Angeles College": {
       "vets": 122,
-      "jst": 136,
+      "jst": 155,
       "star": true
     },
     "Long Beach City College": {
@@ -132,7 +132,7 @@
     },
     "Santa Ana College": {
       "vets": 334,
-      "jst": 353,
+      "jst": 354,
       "star": true
     },
     "Santa Rosa Junior College": {

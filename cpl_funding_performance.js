@@ -8,7 +8,7 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified (context, not a priority metric) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 41355,
+  "pe": 41372,
   "p2": 4775,
   "p3": 16310
  },
@@ -433,7 +433,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Santa Ana": {
-   "pe": 408,
+   "pe": 409,
    "p2": 0,
    "p3": 0
   },
@@ -510,7 +510,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "West LA": {
-   "pe": 708,
+   "pe": 724,
    "p2": 485,
    "p3": 549
   },

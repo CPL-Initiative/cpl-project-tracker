@@ -1,8 +1,158 @@
 {
   "_about": "Credential rename collisions detected by the dry-run. Each entry is a proposed rename whose target already exists as a key in credentials.json. Policy: NON-BLOCKING decision queue — the entry waits here (clean renames apply without it) until the curator picks a non-colliding target or explicitly confirms a merge (PR-5b/2). NEVER auto-merged; NEVER auto-disambiguated.",
-  "_generated_at": "2026-07-09T20:17:37Z",
-  "count": 6,
+  "_generated_at": "2026-07-09T23:07:09Z",
+  "count": 16,
   "collisions": [
+    {
+      "old_unified_title": "Carpenters Apprenticeship — CARP 005",
+      "proposed_new_title": "Blueprint Reading-Residential",
+      "reason": "collision_with_existing_credential",
+      "existing_credential_records": 1,
+      "merge_confirm_recorded": null,
+      "rename_would_touch": {
+        "raw_titles_in_unified_titles_json": 1,
+        "articulation_records": 0,
+        "credentials_json_key_exists": true
+      },
+      "reviewed_by": "carp-title-s110@bot",
+      "reviewed_at": "2026-07-09T22:48:45.493815+00:00",
+      "policy": "queued_pending_curator_decision"
+    },
+    {
+      "old_unified_title": "Carpenters Apprenticeship — CARP 017",
+      "proposed_new_title": "Introduction to Welding and Cutting",
+      "reason": "collision_with_existing_credential",
+      "existing_credential_records": 1,
+      "merge_confirm_recorded": null,
+      "rename_would_touch": {
+        "raw_titles_in_unified_titles_json": 1,
+        "articulation_records": 0,
+        "credentials_json_key_exists": true
+      },
+      "reviewed_by": "carp-title-s110@bot",
+      "reviewed_at": "2026-07-09T22:48:45.493815+00:00",
+      "policy": "queued_pending_curator_decision"
+    },
+    {
+      "old_unified_title": "Carpenters Apprenticeship — CARP 019",
+      "proposed_new_title": "Rigging",
+      "reason": "collision_with_existing_credential",
+      "existing_credential_records": 1,
+      "merge_confirm_recorded": null,
+      "rename_would_touch": {
+        "raw_titles_in_unified_titles_json": 1,
+        "articulation_records": 1,
+        "credentials_json_key_exists": true
+      },
+      "reviewed_by": "carp-title-s110@bot",
+      "reviewed_at": "2026-07-09T22:48:45.493815+00:00",
+      "policy": "queued_pending_curator_decision"
+    },
+    {
+      "old_unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 310",
+      "proposed_new_title": "Layout/Leveling Construction Site Practice",
+      "reason": "collision_with_existing_credential",
+      "existing_credential_records": 1,
+      "merge_confirm_recorded": null,
+      "rename_would_touch": {
+        "raw_titles_in_unified_titles_json": 1,
+        "articulation_records": 0,
+        "credentials_json_key_exists": true
+      },
+      "reviewed_by": "carp-title-s110@bot",
+      "reviewed_at": "2026-07-09T22:48:45.493815+00:00",
+      "policy": "queued_pending_curator_decision"
+    },
+    {
+      "old_unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 312",
+      "proposed_new_title": "Rigging",
+      "reason": "collision_with_existing_credential",
+      "existing_credential_records": 1,
+      "merge_confirm_recorded": null,
+      "rename_would_touch": {
+        "raw_titles_in_unified_titles_json": 1,
+        "articulation_records": 1,
+        "credentials_json_key_exists": true
+      },
+      "reviewed_by": "carp-title-s110@bot",
+      "reviewed_at": "2026-07-09T22:48:45.493815+00:00",
+      "policy": "queued_pending_curator_decision"
+    },
+    {
+      "old_unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 315",
+      "proposed_new_title": "Blueprint Reading-Commercial",
+      "reason": "collision_with_existing_credential",
+      "existing_credential_records": 1,
+      "merge_confirm_recorded": null,
+      "rename_would_touch": {
+        "raw_titles_in_unified_titles_json": 1,
+        "articulation_records": 0,
+        "credentials_json_key_exists": true
+      },
+      "reviewed_by": "carp-title-s110@bot",
+      "reviewed_at": "2026-07-09T22:48:45.493815+00:00",
+      "policy": "queued_pending_curator_decision"
+    },
+    {
+      "old_unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 605",
+      "proposed_new_title": "Blueprint Reading-Residential",
+      "reason": "collision_with_existing_credential",
+      "existing_credential_records": 1,
+      "merge_confirm_recorded": null,
+      "rename_would_touch": {
+        "raw_titles_in_unified_titles_json": 1,
+        "articulation_records": 0,
+        "credentials_json_key_exists": true
+      },
+      "reviewed_by": "carp-title-s110@bot",
+      "reviewed_at": "2026-07-09T22:48:45.493815+00:00",
+      "policy": "queued_pending_curator_decision"
+    },
+    {
+      "old_unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 608",
+      "proposed_new_title": "Rigging",
+      "reason": "collision_with_existing_credential",
+      "existing_credential_records": 1,
+      "merge_confirm_recorded": null,
+      "rename_would_touch": {
+        "raw_titles_in_unified_titles_json": 1,
+        "articulation_records": 1,
+        "credentials_json_key_exists": true
+      },
+      "reviewed_by": "carp-title-s110@bot",
+      "reviewed_at": "2026-07-09T22:48:45.493815+00:00",
+      "policy": "queued_pending_curator_decision"
+    },
+    {
+      "old_unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 702",
+      "proposed_new_title": "Blueprint Reading-Residential",
+      "reason": "collision_with_existing_credential",
+      "existing_credential_records": 1,
+      "merge_confirm_recorded": null,
+      "rename_would_touch": {
+        "raw_titles_in_unified_titles_json": 1,
+        "articulation_records": 0,
+        "credentials_json_key_exists": true
+      },
+      "reviewed_by": "carp-title-s110@bot",
+      "reviewed_at": "2026-07-09T22:48:45.493815+00:00",
+      "policy": "queued_pending_curator_decision"
+    },
+    {
+      "old_unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 704",
+      "proposed_new_title": "Interior Systems",
+      "reason": "collision_with_existing_credential",
+      "existing_credential_records": 1,
+      "merge_confirm_recorded": null,
+      "rename_would_touch": {
+        "raw_titles_in_unified_titles_json": 1,
+        "articulation_records": 0,
+        "credentials_json_key_exists": true
+      },
+      "reviewed_by": "carp-title-s110@bot",
+      "reviewed_at": "2026-07-09T22:48:45.493815+00:00",
+      "policy": "queued_pending_curator_decision"
+    },
     {
       "old_unified_title": "Medical Core (High School Articulation) — El Modena High School",
       "proposed_new_title": "Medical Core",
