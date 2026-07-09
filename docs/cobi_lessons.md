@@ -628,3 +628,39 @@ Sam ratified the plan same-session. Shipped in a follow-up PR:
 - **Tests:** `tests/team_phrase_p1.test.js` (41 — helper functional coverage +
   per-consumer pins incl. the sbHeaders isolation + DELETE-not-widened schema
   pins). Adversarial review workflow (3 lenses → refute pass) run pre-PR.
+
+## Session 109 addendum — Common Exhibit Titles: the headline re-grain (2026-07-09)
+
+Sam: *"Let's start counting the common exhibit titles rather than the raw
+exhibits"* → a full audit of every exhibit-quantification site (three grains:
+raw ExhibitIDs · issuer/CPL-type GROUPS · canonical unified TITLES), then the
+re-grain, label per Sam: **"Common Exhibit Titles."**
+
+- **`_parse_exhibits()`** gained `common_titles` / `ccc_common_titles`
+  accumulators (pure distinct-`unified_title` sets beside the existing group
+  key — the group key itself is UNCHANGED, so `_build_statewide_adoption`
+  lockstep is preserved). Local breakdown = total − CCC so the card sums.
+- **KPI card** (`kpis["map_exhibits"]` — KEY unchanged, CPL_Data.js + the
+  fact-sheet writer read it by key): label → "Common Exhibit Titles", value →
+  the title count, sub carries the raw-exhibit + originating-college counts,
+  and the old group count stays visible as the **"Issuer/type variants"**
+  breakdown. Statewide Exhibits card headline → CCC common titles (~84); its
+  per-category rollup re-grained to titles-per-category (a title maps to one
+  category, so categories now sum to the headline).
+- **kpi_history**: NEW keys `common_titles` + `ccc_common_titles` per the
+  Session-88 precedent (never repurpose a key to a different grain — the
+  1d/7d/30d deltas would splice incompatible series and print a fake ▼769).
+  Old keys keep recording for provenance; Trends rows repointed
+  ("Common Exhibit Titles" / "CCC Common Titles", deltas "—" until accrual).
+- **EACR header** now leads with the common-title count; the CARDS stay at
+  the (title, issuer, CPL type) grain deliberately — AHA vs Red Cross First
+  Aid are distinct credential records a curator acts on. Fact Sheet follows
+  the KPI card automatically (labels/fallbacks refreshed).
+- **Verified two ways**: a synthetic-dataset import test of
+  `_parse_exhibits` + `merge_exhibit_metrics` (groups=3 / titles=2 /
+  CCC+Local sum / fallback-dataset path falls back to the raw count) and the
+  committed `tests/eacr_common_titles.test.js` (header leads with 2, cards
+  stay 3). Deferred (secondary): CPL Analytics per-college/discipline
+  "Exhibits" columns + Top-50 stay raw-ID/raw-title grain; the college custom
+  report prints those buckets — re-key in a follow-up if Sam wants the
+  per-college numbers on the same grain.
