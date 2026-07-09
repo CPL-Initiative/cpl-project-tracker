@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-09 · Session 109 round 3 (CER polish: cream ghost, college filter, resizable columns, seal-blue; 113 CARP titles renamed + 318 apprenticeships tagged)",
+ "_as_of": "2026-07-09 · Session 109 close (common-titles headline LIVE; carpentry pass 2 queued for S110)",
  "_session": 109,
- "_status": "Round 3 landed on the CER: the cream background is now ghosted like the other tabs, chips went CO dark blue, headers white, every column drag-resizes (↺ reset in ⚙ Columns), and a College filter (incl. CCC statewide) joined the bar. Two bulk data jobs ran with receipts: the 132 CTCNC \"CARP NNN\" exhibits got their real COCI course titles (113 applied, 19 skipped with reasons — see kb/carp_title_out/), and 318 apprenticeship exhibits now carry an Apprenticeship type tag filterable in the CPL-type dropdown (kb/apprentice_tag_out/). Everything shows live in the tab; the title re-keys ride the next rename apply. Your 233-row issuer queue is untouched.",
+ "_status": "Big day: the CER got its round-3 polish, 113 carpentry titles + 318 apprenticeship tags landed with receipts, the PR-5b apply folded 170 renames + 21 merges (after fixing a silent 1,000-row read cap that was starving the fold), and the dashboard now counts COMMON EXHIBIT TITLES (~1,649) with the old 2,418 kept as the Issuer/type variants breakdown. Trends' two new rows read \"—\" until their history accrues — expected. NEXT SESSION picks up carpentry pass 2 with your clarified spec: the 12 leftover CARP-numbered rows aren't in COCI under any number (CTCNC-internal numbering), so they need judgment or a Rio Hondo title-match; your SUBJ choice (CARP as a new carpentry SUBJ4 vs the existing CNST canonical) is the one open decision; plus the SUBJ filter build.",
  "items": [
   {
    "id": "cer-v2-shakedown",
@@ -11,10 +11,16 @@
    "text": "Drive the round-3 CER: drag a column edge to resize (↺ reset in ⚙ Columns), try the College filter (pick \"CCC (statewide)\"), and filter CPL type → Apprenticeship to see the 318 tagged rows."
   },
   {
-   "id": "carp-skips",
+   "id": "carp-pass2-decision",
    "who": "sam",
    "tab": "credential-reference",
-   "text": "19 CARP exhibits could NOT be auto-renamed: 12 have no articulated course to read the title from, 3 all resolve to \"Rigging\" (merging them is your call), 3 articulate to multiple courses, 1 collides with an existing credential. List: kb/carp_title_out/2026-07-09/plan.json."
+   "text": "Carpentry pass 2 (next session has the full spec): pick the SUBJ for the apprenticeship family — CARP as a new carpentry SUBJ4 (specific, but the CCR canon says Construction Technology → CNST, so a proper carve-out re-keys the CCR too) or CNST (matches the renamed siblings today). Also: fold the 3 \"Rigging\" rows (CARP 019/312/608) into one credential, or keep separate?"
+  },
+  {
+   "id": "carp-unresolvable",
+   "who": "sam",
+   "tab": "credential-reference",
+   "text": "The 12 leftover \"CARP NNN\" rows have no COCI course under ANY subject with those numbers (CTCNC-internal numbering; the resolvable ones came via American River's CARPT articulations). They need your in-cell judgment or a verified title-match against Rio Hondo's CARP catalog — next session will stage options."
   },
   {
    "id": "apprentice-review-only",
