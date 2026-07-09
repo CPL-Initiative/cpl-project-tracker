@@ -549,19 +549,28 @@
 
   // ── Build DOM ──
   function buildCard() {
+    // Header count leads with COMMON EXHIBIT TITLES (2026-07-09 re-grain,
+    // Sam's call) — distinct unified titles across the cards. The cards
+    // themselves deliberately STAY at the (title, issuer, CPL type) grain:
+    // AHA vs Red Cross First Aid are different credential records a curator
+    // acts on; only the headline count collapses to the canonical grain.
     var totalPotential = 0, withPotential = 0, totalRecs = 0, statewide = 0, local = 0;
+    var titleSet = {};
     exhibits.forEach(function (e) {
       totalPotential += (e.potential || 0);
       if (e.potential > 0) withPotential++;
       totalRecs += (e.credit_recs || []).length;
       if (e.collaborative_type === "CCC Collaborative") statewide++; else local++;
+      titleSet[e.unified_title || e.title || ""] = 1;
     });
+    var nCommonTitles = Object.keys(titleSet).length;
 
     var html = '<div class="sw-interactive">';
 
     html += '<div class="exhibit-card-header">' +
       '<div class="exhibit-card-title">Exhibit Adoption &amp; Credit Recommendations</div>' +
-      '<div class="exhibit-card-subtitle">' + fmt(exhibits.length) + ' exhibits (' +
+      '<div class="exhibit-card-subtitle">' + fmt(nCommonTitles) + ' common exhibit titles · ' +
+      fmt(exhibits.length) + ' issuer/type cards (' +
       fmt(statewide) + ' CCC Collaborative, ' + fmt(local) + ' Local) | ' +
       fmt(withPotential) + ' with growth potential | ' +
       fmt(totalPotential) + ' potential new adoptions | ' +

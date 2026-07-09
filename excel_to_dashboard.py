@@ -3665,6 +3665,17 @@ def log_daily_snapshot(live_data, exhibit_data):
         "star_colleges":         int((live_data or {}).get("star_college_count", 0)),
         # Exhibit / CustomReport metrics
         "credit_recs":           int((exhibit_data or {}).get("total_credit_recs", 0)),
+        # COMMON EXHIBIT TITLES (2026-07-09 re-grain, Sam's call) — distinct
+        # canonical unified titles, the new headline grain. NEW keys per the
+        # Session-88 precedent (ccc_exhibits, below): never repurpose an
+        # existing key to a different grain — the 1d/7d/30d deltas would
+        # splice two incompatible series and show a fake ▼769-style drop.
+        # These read "—" on Trends until their own history accrues.
+        "common_titles":         int((exhibit_data or {}).get("common_titles", 0)),
+        "ccc_common_titles":     int((exhibit_data or {}).get("ccc_collaborative", {}).get("common_titles", 0)),
+        # Retained for provenance (the issuer/CPL-type GROUP grain — the old
+        # "MAP Exhibits" headline; now the card's "Issuer/type variants"
+        # breakdown). Keeps recording so the series stays unbroken.
         "map_exhibits":          int((exhibit_data or {}).get("unique_exhibits", 0)),
         # CCC Collaborative EXHIBITS — the statewide-exhibit count, so the KPI
         # Trends "CCC Collaborative" row matches the MAP Exhibits card's "CCC
@@ -3800,13 +3811,13 @@ def render_kpi_history_card(history, kpi_params=None):
         ("credit_recs",           "Credit Recs",            _fmt_recs,    False),
         ("active_colleges",       "Active Colleges",        _fmt_int,      True),
         ("savings_m",             "Est. Savings",           _fmt_savings,  False),
-        ("map_exhibits",          "MAP Exhibits",           _fmt_int,      True),
-        # Statewide CCC Collaborative EXHIBIT count — matches the MAP Exhibits
-        # card's "CCC Collaborative" breakdown (Sam, 2026-06-30). A new history
-        # key (NOT the legacy adopting-colleges `ccc_collaborative`), so the
-        # deltas read "—" until its own series accrues rather than jumping off a
-        # different metric's values.
-        ("ccc_exhibits",          "CCC Collaborative",      _fmt_int,      True),
+        # Re-grained to COMMON EXHIBIT TITLES (2026-07-09, Sam's call) — the
+        # rows read the NEW history keys (Session-88 pattern: never repoint a
+        # label onto a different grain's series; deltas read "—" until the new
+        # series accrues). The old group-grain keys (map_exhibits,
+        # ccc_exhibits) keep recording for provenance but leave Trends.
+        ("common_titles",         "Common Exhibit Titles",  _fmt_int,      True),
+        ("ccc_common_titles",     "CCC Common Titles",      _fmt_int,      True),
         ("articulating_colleges", "Articulating Colleges",  _fmt_int,      True),
         ("star_colleges",         "Veteran Star Colleges",  _fmt_int,      True),
     ]
@@ -4529,6 +4540,14 @@ def _parse_exhibits(datasets):
         unified_lookup, issuer_pick = _load_credential_kb()
         exhibit_groups = set()
         ccc_exhibit_groups = set()
+        # COMMON EXHIBIT TITLES (Sam, 2026-07-09): the pure canonical-title
+        # grain — one per unified_title, NOT re-split by issuer/CPL type like
+        # exhibit_groups. This is the headline count ("count the common
+        # exhibit titles rather than the raw exhibits"); exhibit_groups stays
+        # as the issuer/type-variant count (EACR card grain) and exhibit_ids
+        # as the raw grain, both retained for provenance.
+        common_titles = set()
+        ccc_common_titles = set()
 
         # Statewide (CCC Collaborative) per-group accumulators for the
         # Statewide Exhibits KPI card (the ASCCC collaborative-focus card).
@@ -4558,11 +4577,13 @@ def _parse_exhibits(datasets):
                 # mixed group counts as CCC and drops out of the Local tally.
                 grp = (ident["unified_title"], ident["issuing_agency"], cpl_type)
                 exhibit_groups.add(grp)
+                common_titles.add(ident["unified_title"])
                 top = (row[i_top] or "").strip()
                 if top:
                     grp_tops.setdefault(grp, set()).add(top)
                 if "CCC" in collab_type:
                     ccc_exhibit_groups.add(grp)
+                    ccc_common_titles.add(ident["unified_title"])
                     # Only CCC rows feed the statewide rec/adoption counts — a
                     # mixed group's Local articulations of the same credential
                     # are not part of the statewide standard.
@@ -4608,21 +4629,29 @@ def _parse_exhibits(datasets):
             else:
                 tops = sorted(grp_tops.get(grp, ()))
                 disc = _top_disc(top_lookup, tops[0] if tops else "")
-            d = sw_by_disc.setdefault(disc, {"exhibits": 0, "credit_recs": 0, "adoptions": 0})
-            d["exhibits"] += 1
+            d = sw_by_disc.setdefault(disc, {"titles": set(), "credit_recs": 0, "adoptions": 0})
+            # Per-category count is COMMON TITLES (2026-07-09 re-grain) — the
+            # same title's issuer/CPL-type variants collapse; a title maps to
+            # exactly one category, so category title-counts sum to the card
+            # headline. Recs/adoptions stay summed per group (they're rec
+            # counts, not exhibit counts).
+            d["titles"].add(grp[0])
             d["credit_recs"] += len(ccc_grp_recs.get(grp, ()))
             d["adoptions"] += ccc_grp_adoptions.get(grp, 0)
         sw_disc_rows = [
-            {"category": k, "exhibits": v["exhibits"],
+            {"category": k, "exhibits": len(v["titles"]),
              "credit_recs": v["credit_recs"], "adoptions": v["adoptions"]}
             for k, v in sorted(sw_by_disc.items(),
-                               key=lambda kv: (kv[0] in sw_residual, -kv[1]["exhibits"], kv[0]))
+                               key=lambda kv: (kv[0] in sw_residual, -len(kv[1]["titles"]), kv[0]))
         ]
 
         return {
             "total_credit_recs": len(rows),
             "unique_exhibits": len(exhibit_groups),
             "unique_exhibits_raw_ids": len(exhibit_ids),
+            # Common Exhibit Titles — distinct unified titles (the canonical
+            # grain; 2026-07-09). The headline the KPI card + Trends read.
+            "common_titles": len(common_titles),
             "originating_colleges": len(originating_colleges),
             "articulation_colleges": len(articulation_colleges),
             "articulation_college_names": sorted(articulation_colleges),
@@ -4630,6 +4659,7 @@ def _parse_exhibits(datasets):
                 "credit_recs": ccc_credit_recs,
                 "unique_exhibits": len(ccc_exhibit_groups),
                 "unique_exhibits_raw_ids": len(ccc_exhibit_ids),
+                "common_titles": len(ccc_common_titles),
                 "adopting_colleges": len(ccc_artic_colleges),
                 "college_names": sorted(ccc_artic_colleges),
                 # Statewide Exhibits KPI card payload. distinct_credit_recs
@@ -4646,6 +4676,10 @@ def _parse_exhibits(datasets):
                 "credit_recs": local_credit_recs,
                 "unique_exhibits": len(local_exhibit_groups),
                 "unique_exhibits_raw_ids": len(exhibit_ids - ccc_exhibit_ids),
+                # Local-ONLY common titles (total − CCC), so the card's
+                # CCC + Local breakdowns sum to the headline even though a
+                # title can carry both statewide and local variants.
+                "common_titles": len(common_titles - ccc_common_titles),
             },
             "cpl_type_breakdown": cpl_type_counts,
         }
@@ -4678,12 +4712,16 @@ def _parse_exhibits(datasets):
         return {
             "total_credit_recs": len(rows),
             "unique_exhibits": len(exhibit_ids),
+            # Fallback dataset carries no credential-identity join — 0 tells
+            # merge_exhibit_metrics to fall back to the group/raw count.
+            "common_titles": 0,
             "originating_colleges": len(colleges),
             "articulation_colleges": len(colleges),
             "articulation_college_names": sorted(colleges),
             "ccc_collaborative": {
                 "credit_recs": 0,
                 "unique_exhibits": 0,
+                "common_titles": 0,
                 "adopting_colleges": 0,
                 "college_names": [],
                 "category_count": 0,
@@ -4695,6 +4733,7 @@ def _parse_exhibits(datasets):
             "local": {
                 "credit_recs": len(rows),
                 "unique_exhibits": len(exhibit_ids),
+                "common_titles": 0,
             },
             "cpl_type_breakdown": cpl_type_counts,
         }
@@ -4849,7 +4888,8 @@ def _write_fact_sheet_metrics(kpis, exhibit_data, live_data=None):
             "originating_colleges": _fmt_int(exhibit_data.get("originating_colleges", 0)),
         },
         "statewide_exhibits": {
-            "total": _cv("statewide_exhibits") or _fmt_int(ccc.get("unique_exhibits", 0)),
+            "total": _cv("statewide_exhibits")
+                     or _fmt_int(ccc.get("common_titles") or ccc.get("unique_exhibits", 0)),
             "program_areas": _bd("statewide_exhibits", "Program Areas") or _fmt_int(ccc.get("category_count", 0)),
             "distinct_credit_recs": _bd("statewide_exhibits", "Credit Recommendations") or _fmt_int(ccc.get("distinct_credit_recs", 0)),
             "adoptions": _bd("statewide_exhibits", "Adoptions") or _fmt_int(ccc.get("rec_adoptions", 0)),
@@ -4909,16 +4949,30 @@ def merge_exhibit_metrics(kpis, exhibit_data):
         "live": True,
     }
 
-    # ── 2. MAP EXHIBITS KPI ──
+    # ── 2. COMMON EXHIBIT TITLES KPI (was "MAP Exhibits", re-grained
+    # 2026-07-09 per Sam: "count the common exhibit titles rather than the
+    # raw exhibits"). Headline = distinct canonical unified titles; the old
+    # issuer/CPL-type group count (2,418-era) stays visible as a breakdown so
+    # the collapse reads as the achievement it is. The kpi KEY stays
+    # "map_exhibits" — CPL_Data.js + the fact-sheet metrics writer read it by
+    # key. Falls back to the group count when the credential-identity join is
+    # unavailable (the ArticulatedCollegeCourses fallback dataset).
+    common_total = exhibit_data.get("common_titles") or 0
     kpis["map_exhibits"] = {
-        "value": _fmt_int(exhibit_data["unique_exhibits"]),
-        "label": "MAP Exhibits",
-        "sub": f"{_fmt_int(exhibit_data['originating_colleges'])} originating colleges",
+        "value": _fmt_int(common_total or exhibit_data["unique_exhibits"]),
+        "label": "Common Exhibit Titles",
+        "sub": (f"from {_fmt_int(exhibit_data.get('unique_exhibits_raw_ids') or exhibit_data['unique_exhibits'])} "
+                f"raw MAP exhibits · {_fmt_int(exhibit_data['originating_colleges'])} originating colleges"),
         "breakdowns": [
-            {"label": "CCC Collaborative", "value": _fmt_int(ccc["unique_exhibits"]),
-             "note": "statewide exhibits"},
-            {"label": "Local", "value": _fmt_int(exhibit_data["local"]["unique_exhibits"]),
-             "note": "college-created exhibits"},
+            {"label": "CCC Collaborative",
+             "value": _fmt_int(ccc.get("common_titles") if common_total else ccc["unique_exhibits"]),
+             "note": "statewide titles"},
+            {"label": "Local",
+             "value": _fmt_int(exhibit_data["local"].get("common_titles")
+                               if common_total else exhibit_data["local"]["unique_exhibits"]),
+             "note": "local-only titles"},
+            {"label": "Issuer/type variants", "value": _fmt_int(exhibit_data["unique_exhibits"]),
+             "note": "same title split by issuer + CPL type"},
         ],
         "live": True,
     }
@@ -4933,7 +4987,7 @@ def merge_exhibit_metrics(kpis, exhibit_data):
     # is absent (fallback dataset has no Collaborative Type column).
     sw_disc = ccc.get("by_category") or []
     if sw_disc:
-        fn = ["By program area — exhibits · credit recs · adoptions"]
+        fn = ["By program area — common titles · credit recs · adoptions"]
         for r in sw_disc:
             fn.append(f'{r["category"]}: {_fmt_int(r["exhibits"])} · '
                       f'{_fmt_int(r["credit_recs"])} · {_fmt_int(r["adoptions"])}')
@@ -4941,13 +4995,18 @@ def merge_exhibit_metrics(kpis, exhibit_data):
         # the categories JSON — mirrors the statewide CPL page's listing.
         for item in ccc.get("in_progress", []):
             fn.append(f'<em>{item}</em>')
+        # Headline re-grained to COMMON TITLES (2026-07-09) — the same
+        # statewide credential's issuer/CPL-type variants collapse; the old
+        # group count stays as the "Issuer/type variants" breakdown.
         kpis["statewide_exhibits"] = {
-            "value": _fmt_int(ccc["unique_exhibits"]),
+            "value": _fmt_int(ccc.get("common_titles") or ccc["unique_exhibits"]),
             "label": "Statewide Exhibits",
             "sub": "CCC Collaborative standards in MAP",
             "breakdowns": [
                 {"label": "Program Areas", "value": _fmt_int(ccc.get("category_count", 0)),
                  "note": "statewide workgroup categories"},
+                {"label": "Issuer/type variants", "value": _fmt_int(ccc["unique_exhibits"]),
+                 "note": "same title split by issuer + CPL type"},
                 {"label": "Credit Recommendations", "value": _fmt_int(ccc.get("distinct_credit_recs", 0)),
                  "note": "distinct course recs"},
                 {"label": "Adoptions", "value": _fmt_int(ccc.get("rec_adoptions", 0)),
