@@ -1,0 +1,16 @@
+{
+ "_job": "carp-rigging-merge-s110",
+ "_stamp": "2026-07-09",
+ "_cohort": "carp-merge-s110@bot",
+ "_authorized_by": "Sam, 2026-07-09 evening: 'Remember those 3 Rigging outliers? Can you fix them with the new procedure?' + screenshot of the 9-row rigging filter",
+ "_spec": "Fold the 3 CTCNC Rigging rows (CARP 019/312/608 — trade-band lanes of the same course; MAP's own credit recs do not differentiate them) into the existing 'Rigging' credential via the PR-5b confirm-merge flow: unified_title_merge_confirm='Rigging' written on all 3 (their unified_title_override='Rigging' rows landed earlier tonight, carp-title-s110@bot). All four rows articulate to the SAME identity (CNST M1093 via ARC CARPT 107), so the fold is content-verified, not title-coincidence.",
+ "_target_alignment": "The surviving '_CREDENTIAL_REVIEW::Rigging' row was aligned with the family: subj_override=CARP + discipline_override=Carpentry (INSERT-only) and its issuing_agency_override corrected 'California Community Colleges' → 'Carpenters Training Committee for Northern California (CTCNC)' via a GUARDED UPDATE (matched only the ccc-bulk-s108@bot bot-fill value — a Sam edit would not have been touched; evidence: the raw 'Rigging' exhibit is ARC's own entry of the CTCNC course, and the CTCNC rows carry issuer confidence 0.90).",
+ "_not_in_scope": "Millwright Rigging (CARP 859) and Pile Driver Rigging (CARP 280) stay separate — properly differentiated per-trade titles. The other pending collision folds (Blueprint Reading-Residential ×3 etc.) remain in the ⇒ Merge confirms lane for Sam's ✓.",
+ "confirmed": [
+  "Carpenters Apprenticeship — CARP 019",
+  "Carpenters Training Committee for Northern California Apprenticeship — CARP 312",
+  "Carpenters Training Committee for Northern California Apprenticeship — CARP 608"
+ ],
+ "merge_into": "Rigging",
+ "_apply": "cred-rename-apply.yml dispatched 2026-07-09 (post-write); daily-dashboard re-bake dispatched after apply success"
+}
