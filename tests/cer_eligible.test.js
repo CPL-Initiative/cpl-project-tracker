@@ -47,6 +47,9 @@ const html = `<!DOCTYPE html><html><head></head><body>
 
 const dom = new JSDOM(html, { runScripts: "dangerously", url: "https://example.org/" });
 const { window } = dom;
+// v2: the Eligible-units column is hidable and OFF by default — enable it
+// via the ⚙ Columns pref (cplCerCols.v1) before the tab boots.
+window.localStorage.setItem("cplCerCols.v1", JSON.stringify({ elig: true }));
 window.fetch = () => Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve([]) });
 
 let threwOnInit = false;
@@ -70,7 +73,7 @@ function runAssertions() {
   check("table rendered", !!wrap.querySelector("table.cr-table"));
 
   const ths = Array.from(wrap.querySelectorAll("th"));
-  const eligTh = ths.find((th) => /^Eligible/.test(txt(th)));
+  const eligTh = ths.find((th) => /^Elig/.test(txt(th)));
   check("Eligible column header present", !!eligTh);
   check("Eligible header is sortable", !!eligTh && eligTh.classList.contains("sortable"));
 

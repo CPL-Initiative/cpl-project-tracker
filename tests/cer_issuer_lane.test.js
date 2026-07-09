@@ -114,10 +114,12 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-ni-row"))
   const doc = window.document;
   await sleep(120);
 
-  check("toolbar: triage button carries the no-issuer count (preseed not yet loaded)",
-    /· 3 no-issuer/.test(txt(doc.querySelector(".cr-triage-btn"))));
+  // v2 preloads worklist data at init, so by now the preseed's resurface row
+  // is already counted (3 null-issuer + 1 staged-title resurface = 4).
+  check("lanes: No-issuer chip carries the live queue count",
+    /No issuer \(4\)/.test(txt(Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /No issuer/.test(b.textContent)))));
 
-  doc.querySelector(".cr-triage-btn").click();
+  Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /No issuer/.test(b.textContent)).click();
   await sleep(120);
 
   const laneTitle = doc.querySelector(".cr-ni-title");
@@ -130,7 +132,7 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-ni-row"))
   check("lane: staged pre-seeds sort first",
     txt(rows[0].querySelector(".cr-wl-rawt")) !== "10-Key Data Entry");
   check("toolbar: count follows the widened queue",
-    /· 4 no-issuer/.test(txt(doc.querySelector(".cr-triage-btn"))));
+    /No issuer \(4\)/.test(txt(Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /No issuer/.test(b.textContent)))));
 
   const psRow = rowFor(doc, "Basic Welding CBE");
   check("lane: issuer input pre-filled from the staged plan",
@@ -203,7 +205,7 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-ni-row"))
   check("save: lane count decrements in place",
     /Missing issuing agency \(1\)/.test(txt(doc.querySelector(".cr-ni-title"))));
   check("save: toolbar no-issuer count follows",
-    /· 1 no-issuer/.test(txt(doc.querySelector(".cr-triage-btn"))));
+    /No issuer \(1\)/.test(txt(Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /No issuer/.test(b.textContent)))));
   const dl = doc.getElementById("cr-unclass-issuers");
   check("datalist: the NEW agency is immediately pickable",
     !!dl && Array.from(dl.children).some((o) => o.value === "Proctored Testing Center"));
@@ -280,27 +282,30 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-ni-row"))
   check("bulk: lane empties",
     /Missing issuing agency \(0\)/.test(txt(doc.querySelector(".cr-ni-title"))));
 
-  // ── B. the "＋ set" direct-to-edit path on the main table ──
+  // ── B. v2 in-cell issuer editing on the main grid (supersedes "＋ set" —
+  // the null-issuer cell IS an input now; typing + 💾 Save writes the same
+  // issuing_agency_override the Curate panel wrote) ──
   const b = makeDom({});
   await sleep(120);
   const bdoc = b.window.document;
-  const setBtn = bdoc.querySelector(".cr-issuer-set");
-  check("＋set: affordance renders on a null-issuer cell", !!setBtn);
-  setBtn.click();
-  await sleep(80);
-  const panel = bdoc.querySelector(".cr-curation-panel");
-  check("＋set: opens the Curate panel", !!panel);
-  const editInput = panel && panel.querySelector(".cr-curation-input");
-  check("＋set: lands DIRECTLY in the issuer edit input (no second click needed)",
-    !!editInput && editInput.tagName === "INPUT");
-  if (editInput) {
-    editInput.value = "Proctored Testing Center";
-    panel.querySelector(".cr-curation-save").click();
-    await sleep(120);
-    const bw = b.log.writes[0] && b.log.writes[0].body;
-    check("＋set: Save POSTs the issuer override",
-      bw && bw.field === "issuing_agency_override"
-        && bw.value === "Proctored Testing Center");
+  const nullRow = Array.from(bdoc.querySelectorAll("tr.cr-row"))
+    .find((tr) => tr.querySelector(".cr-issuer-in") && !tr.querySelector(".cr-issuer-in").value);
+  check("in-cell: a null-issuer row renders an editable issuer input", !!nullRow);
+  const cellInp = nullRow && nullRow.querySelector(".cr-issuer-in");
+  if (cellInp) {
+    cellInp.value = "Proctored Testing Center";
+    cellInp.dispatchEvent(new b.window.Event("input"));
+    await sleep(20);
+    const saveBtn = nullRow.querySelector(".cr-grid-save");
+    check("in-cell: edit marks the row dirty (💾 Save appears)", !!saveBtn);
+    if (saveBtn) {
+      saveBtn.click();
+      await sleep(120);
+      const bw = b.log.writes[0] && b.log.writes[0].body;
+      check("in-cell: Save POSTs the issuer override",
+        bw && bw.field === "issuing_agency_override"
+          && bw.value === "Proctored Testing Center");
+    }
   }
 
   // ── C. the curation-panel style neutralizer is injected (black-box fix) ──

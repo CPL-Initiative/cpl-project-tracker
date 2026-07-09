@@ -65,7 +65,7 @@ function runAssertions() {
 
   // Header present + sortable.
   const ths = Array.from(wrap.querySelectorAll("th"));
-  const studentsTh = ths.find((th) => /Eligible students/.test(txt(th)));
+  const studentsTh = ths.find((th) => /Students/.test(txt(th)));
   check("Eligible-students column header present", !!studentsTh);
   check("Eligible-students header is sortable", !!studentsTh && studentsTh.classList.contains("sortable"));
 

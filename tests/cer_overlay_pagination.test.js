@@ -75,7 +75,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const { window } = makeDom();
   await sleep(120);
   const doc = window.document;
-  doc.querySelector(".cr-triage-btn").click();
+  Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /Unclassified/.test(b.textContent)).click();
   await sleep(250);
 
   check("pagination: more than one Range page was requested",
@@ -85,9 +85,9 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
   // Every one of the 1,200 assignments must land — the button flips to
   // "awaiting fold" ONLY when zero rows read as open.
-  const label = txt(doc.querySelector(".cr-triage-btn"));
+  const label = txt(Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /Unclassified/.test(b.textContent)));
   check("pagination: ALL 1,200 saved assignments visible (button reads awaiting-fold, not open)",
-    /✓ Triage unclassified \(1200 awaiting fold\)/.test(label));
+    /\(1200 awaiting fold\)/.test(label));
 
   const prog = txt(doc.querySelector(".cr-wl-progress"));
   check("pagination: progress reads 1200 of 1200 assigned",
