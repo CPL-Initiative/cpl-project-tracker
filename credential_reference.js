@@ -825,6 +825,10 @@
     if (state.cplTypeFilter !== "all"
         && cplTypesOf(row).indexOf(state.cplTypeFilter) < 0) return false;
     if (state.discFilter !== "all" && row.disc_modal !== state.discFilter) return false;
+    // SUBJ code (S110) — matches the derived modal SUBJ4 OR the overlay
+    // subj_override (both flow through subjOf's _subj cache).
+    if (state.subjFilter !== "all"
+        && (subjOf(row) || "").toUpperCase() !== state.subjFilter) return false;
     if (state.collegeFilter !== "all") {
       if (state.collegeFilter === "__ccc__") {
         if (!row.statewide) return false;
@@ -906,6 +910,7 @@
     lane: "all",           // all | unc | noiss | merge | open | done
     cplTypeFilter: "all",  // new lean-filter row
     discFilter: "all",
+    subjFilter: "all",     // SUBJ4 code (S110) — derived or subj_override
     collegeFilter: "all",  // originating college; "__ccc__" = CCC statewide
     colWidths: null,       // th drag-resize widths (localStorage)
     rowDraft: {},          // ut → {title, issuer, extra:[..], trainer} UNSAVED grid edits
@@ -1316,6 +1321,39 @@
       });
       tb.appendChild(discDl);
     }
+
+    // SUBJ code filter (S110) — datalist-backed input like the college
+    // filter (hundreds of distinct SUBJ4s). Matches subjOf(), so overlay
+    // subj_override values (e.g. the CARP queue fills) are first-class.
+    var subjSet = {};
+    state.rows.forEach(function (r) {
+      var s = subjOf(r);
+      if (s) subjSet[String(s).toUpperCase()] = true;
+    });
+    var subjDlId = "cr-subj-list";
+    var subjDl = document.getElementById(subjDlId);
+    if (!subjDl) {
+      subjDl = document.createElement("datalist");
+      subjDl.id = subjDlId;
+      tb.appendChild(subjDl);
+    }
+    clearNode(subjDl);
+    Object.keys(subjSet).sort().forEach(function (s2) {
+      subjDl.appendChild(el("option", { value: s2 }));
+    });
+    var subjInput = el("input", {
+      class: "cr-filter cr-subj-filter", id: "cr-subj-filter", type: "search",
+      placeholder: "SUBJ…",
+      list: subjDlId, autocomplete: "off",
+      title: "Filter by SUBJ code (the CCR canonical SUBJ4 — derived from articulations, or the curated SUBJ override).",
+    });
+    if (state.subjFilter !== "all") subjInput.value = state.subjFilter;
+    subjInput.oninput = function () {
+      var v = this.value.trim().toUpperCase();
+      state.subjFilter = (v && subjSet[v]) ? v : "all";
+      render();
+    };
+    tb.appendChild(subjInput);
 
     // Originating-college filter (v2 round 3) — audit-stamped entering
     // college(s), falling back to articulating; "CCC (statewide)" = the
@@ -2951,6 +2989,7 @@
     st.id = "cr-scope-css";
     st.textContent =
       "#tab-credential-reference .cr-scope-block{margin:2px 0 14px;}" +
+      "#tab-credential-reference #cr-subj-filter{max-width:6.5em;}" +
       "#tab-credential-reference .cr-chip{display:inline-block;padding:2px 8px;border-radius:8px;font-size:.72rem;font-weight:600;background:rgba(255,255,255,.5);border:1px solid var(--border-strong);}" +
       "#tab-credential-reference .cr-chip-ccc{color:var(--hunter);}" +
       "#tab-credential-reference .cr-chip-cos{color:var(--hunter);border-color:var(--hunter);}" +

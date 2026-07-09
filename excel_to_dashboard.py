@@ -6717,9 +6717,18 @@ def export_credential_reference():
         doc = _load(name) or {}
         is_singletons = (name == "coci_minted_singletons.json")
         for cid, rec in (doc.get(top_key) or {}).items():
-            if cid not in course_meta:
+            _fresh_title = rec.get("common_title") or rec.get("title") or rec.get("unified_title") or ""
+            # The minted/singleton catalogs are the CCR source of truth and are
+            # re-keyed by every re-mint apply. The articulation doc's `identities`
+            # map is NOT: the 2026-06-12 fold's slot-reuse permutation left 681 of
+            # its 693 catalog-shared keys describing each slot's PRE-fold occupant
+            # (S110 finding — CNST M1009 read "Finish Carpentry" while all three
+            # members are "Tool and Equipment Applications"). So on overlap the
+            # fresh catalog REPLACES the identities-sourced meta; identities still
+            # covers keys absent from the catalogs (C-ID/CCN anchors).
+            if cid not in course_meta or _fresh_title:
                 course_meta[cid] = {
-                    "title": rec.get("common_title") or rec.get("title") or rec.get("unified_title") or "",
+                    "title": _fresh_title,
                     "discipline": rec.get("discipline", "") or "",
                     "top": rec.get("top_code", "") or "",
                     "sys": rec.get("id_system") or rec.get("identity_system")

@@ -1,0 +1,27 @@
+insert into kb_curation (course_id, field, value, reviewer_email, reviewed_at)
+values
+('_CREDENTIAL_REVIEW::Carpenters Apprenticeship — CARP 002', 'subj_override', 'CARP', 'carp-subj-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Apprenticeship — CARP 005', 'subj_override', 'CARP', 'carp-subj-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Apprenticeship — CARP 017', 'subj_override', 'CARP', 'carp-subj-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Apprenticeship — CARP 101', 'subj_override', 'CARP', 'carp-subj-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Apprenticeship — CARP 109', 'subj_override', 'CARP', 'carp-subj-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Training Committee for Northern California Apprenticeship — CARP 284', 'subj_override', 'CARP', 'carp-subj-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Training Committee for Northern California Apprenticeship — CARP 310', 'subj_override', 'CARP', 'carp-subj-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Training Committee for Northern California Apprenticeship — CARP 315', 'subj_override', 'CARP', 'carp-subj-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Training Committee for Northern California Apprenticeship — CARP 605', 'subj_override', 'CARP', 'carp-subj-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Training Committee for Northern California Apprenticeship — CARP 701', 'subj_override', 'CARP', 'carp-subj-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Training Committee for Northern California Apprenticeship — CARP 702', 'subj_override', 'CARP', 'carp-subj-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Training Committee for Northern California Apprenticeship — CARP 704', 'subj_override', 'CARP', 'carp-subj-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Apprenticeship — CARP 002', 'discipline_override', 'Carpentry', 'carp-disc-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Apprenticeship — CARP 005', 'discipline_override', 'Carpentry', 'carp-disc-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Apprenticeship — CARP 017', 'discipline_override', 'Carpentry', 'carp-disc-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Apprenticeship — CARP 101', 'discipline_override', 'Carpentry', 'carp-disc-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Apprenticeship — CARP 109', 'discipline_override', 'Carpentry', 'carp-disc-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Training Committee for Northern California Apprenticeship — CARP 284', 'discipline_override', 'Carpentry', 'carp-disc-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Training Committee for Northern California Apprenticeship — CARP 310', 'discipline_override', 'Carpentry', 'carp-disc-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Training Committee for Northern California Apprenticeship — CARP 315', 'discipline_override', 'Carpentry', 'carp-disc-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Training Committee for Northern California Apprenticeship — CARP 605', 'discipline_override', 'Carpentry', 'carp-disc-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Training Committee for Northern California Apprenticeship — CARP 701', 'discipline_override', 'Carpentry', 'carp-disc-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Training Committee for Northern California Apprenticeship — CARP 702', 'discipline_override', 'Carpentry', 'carp-disc-s110@bot', now()),
+('_CREDENTIAL_REVIEW::Carpenters Training Committee for Northern California Apprenticeship — CARP 704', 'discipline_override', 'Carpentry', 'carp-disc-s110@bot', now())
+on conflict (course_id, field) do nothing;

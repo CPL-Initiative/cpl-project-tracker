@@ -2371,3 +2371,19 @@ through the new confirm-merge), 🔎/✨ issuer lookup via the report proxy (#70
 daily-run push-race fix (#700 — unstaged regen discarded before the retry rebase). Suite 145;
 verifier 56. Sam's calls pending: confirm the 6 merges · ASE/AWS/OSHA spellings · IBEW re-point.
 Full story: `docs/exhibit_canonicalization_lessons.md` ("continued 12"); next: `docs/session_108_handoff.md`.
+
+## Archived session narrative — Session 108 (moved from CLAUDE.md §11 at the Session-110 checkpoint)
+
+### Session 108 — SkyPhilo: the big triage night — COCI code-titles, the HS rule, and the bulk-CCC close-out (2026-07-08/09)
+
+Four merged PRs + a receipted bulk write, all beside Sam's live ~800-save pass. **#707**:
+Rule 5c mech resolves code-titled exhibits from COCI (tight-hyphen "CD-005", the
+subject-PREFIX hop "Cinema 24"→CINE 24, code-shaped staged titles upgraded to CCN > C-ID >
+COCI) + the 🔎/✨ TITLE lookup. **#710**: Sam's **HS rule — fused CCHS tokens, dotted H.S.,
+multi-school rows → "Local High School"; bare `HS ###` = subject code, never a school.
+The 17-row CCC/HS audit wrote NOTHING — his split pattern had them (audit the LIVE overlay,
+not the bake). **#711**: scoped bulk-CCC close-out — 339 rows as `ccc-bulk-s108@bot`,
+INSERT-only, 29 lost the race to his saves as designed. Fold + rename apply landed: queue
+**1,036 → 233** (200 re-prefilled). Verifier 63 (queue spots presence-conditional). Full story:
+`docs/exhibit_canonicalization_lessons.md` ("continued 14"–"15 + addendum") +
+`docs/kb-notes/methodology-live-curation-concurrency.md`; next: `docs/session_109_handoff.md`.

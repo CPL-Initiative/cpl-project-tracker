@@ -31,7 +31,7 @@
     { id: 'workplan', label: 'Workplan', tabs: ['activities-projects', 'workplan-goals', 'raci', 'annual-report'] },
     { id: 'funding', label: 'Funding', tabs: ['budget', 'implementation-funding'] },
     { id: 'strategy', label: 'Strategy & Impact', tabs: ['vision-2030', 'military-partnerships', 'cpl-news'] },
-    { id: 'reference', label: 'Reference & Curation', tabs: ['unified-courses', 'canonical-subj4', 'credential-reference', 'exhibit-adoption', 'tmc-builder', 'pipeline'] },
+    { id: 'reference', label: 'Reference & Curation', tabs: ['unified-courses', 'canonical-subj4', 'coci-lookup', 'credential-reference', 'exhibit-adoption', 'tmc-builder', 'pipeline'] },
     { id: 'sierra', label: 'Sierra & Team Tools', tabs: ['chatbot', 'sierra-training', 'map-users', 'knowledge-base', 'letters'] },
   ];
   // Groups open by default on a first visit (the daily-driver lane).

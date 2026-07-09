@@ -1,0 +1,232 @@
+{
+ "_job": "carp-fill-s110",
+ "_stamp": "2026-07-09",
+ "_cohorts": {
+  "subj": "carp-subj-s110@bot",
+  "disc": "carp-disc-s110@bot"
+ },
+ "_spec": "Sam 2026-07-09: 'SUBJ codes for courses in the Queue should be CARP and the Discipline Carpentry.' Scope = the 12 carpentry-apprenticeship queue rows with ZERO articulations (blank derived SUBJ + blank discipline) — the 12 no_articulation_to_resolve_from skips from kb/carp_title_out/2026-07-09/. Verified: 'Carpentry' is a curator-reviewed CCR canonical entry with SUBJ4=CARP (kb/discipline_canonical_subj4.json, reviewed 2026-05-23 by map@rccd.edu), so the pair is registry-consistent. Articulated family rows keep their honestly-derived SUBJ/discipline (CARP/CNST/INDT M-IDs). The 3 Rigging rows (019/312/608) are UNTOUCHED — Sam is differentiating their titles.",
+ "_precheck": "Fresh live kb_curation read 2026-07-09 (post-20:17 bake): the 12 keys carry only cpl_type_override rows (apprentice-tag-s109@bot). No subj_override / discipline_override existed — no curator collision possible; INSERT-only ON CONFLICT DO NOTHING guards any race with Sam's live saves.",
+ "subj_fill": [
+  {
+   "ut": "Carpenters Apprenticeship — CARP 002",
+   "value": "CARP"
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 005",
+   "value": "CARP"
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 017",
+   "value": "CARP"
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 101",
+   "value": "CARP"
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 109",
+   "value": "CARP"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 284",
+   "value": "CARP"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 310",
+   "value": "CARP"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 315",
+   "value": "CARP"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 605",
+   "value": "CARP"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 701",
+   "value": "CARP"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 702",
+   "value": "CARP"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 704",
+   "value": "CARP"
+  }
+ ],
+ "disc_fill": [
+  {
+   "ut": "Carpenters Apprenticeship — CARP 002",
+   "value": "Carpentry"
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 005",
+   "value": "Carpentry"
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 017",
+   "value": "Carpentry"
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 101",
+   "value": "Carpentry"
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 109",
+   "value": "Carpentry"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 284",
+   "value": "Carpentry"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 310",
+   "value": "Carpentry"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 315",
+   "value": "Carpentry"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 605",
+   "value": "Carpentry"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 701",
+   "value": "Carpentry"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 702",
+   "value": "Carpentry"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 704",
+   "value": "Carpentry"
+  }
+ ],
+ "_wave2": {
+  "_spec": "Sam 2026-07-09 (screenshot, Discipline=Construction Technology filter): the CTCNC carpentry-family rows deriving CNST + Construction Technology 'should all be CARP and Carpentry.' Scope = 104 family rows with effective SUBJ=CNST AND disc=Construction Technology (bake 2026-07-09T20:17 + live overlay), plus the 10 blank trade-program rows (Cabinetmaker/Carpenter/Pile Driver/Scaffold Erector/Shingler/Drywall Applicator/Hardwood Floor Layer/Insulator/Modular Installer/Work Experience) — queue-shaped blanks in the same family, FLAGGED for Sam's spot-review (e.g. Drywall Applicator's course siblings derive INDT). NOT in scope: family rows deriving INDT (15) / DRAF (2) / MACH (2) / CNSC / ARCH / ELEC — they keep their honest derivations. Titles untouched everywhere; the 3 Rigging rows got SUBJ/disc only (Sam is differentiating their titles).",
+  "_precheck": "Fresh live kb_curation read: ZERO subj_override/discipline_override rows on all 114 keys — no curator collision; INSERT-only ON CONFLICT DO NOTHING.",
+  "cnst_family": [
+   "Access Floor Systems",
+   "Acoustical Blueprint Reading",
+   "Advanced Blueprint Reading for Mill Cabinet",
+   "Advanced Cabinet Making",
+   "Advanced Formwork",
+   "Advanced Grid Ceilings",
+   "Advanced Machinery Operation",
+   "Advanced Pile Driving Land and Water",
+   "Advanced Project for Mill Cabinet",
+   "Advanced Structural Blueprints and Bridge Building",
+   "Basic Blueprint Reading Mill Cabinet",
+   "Basic Cabinet Making",
+   "Blueprint Reading and Aerial Lift",
+   "Blueprint Reading for Scaffold Erectors",
+   "Blueprint Reading-Commercial",
+   "Blueprint Reading-Residential",
+   "CAD Basics for Mill Cabinetry",
+   "Cabinet Hardware Installation",
+   "Carpenters Apprenticeship — CARP 019",
+   "Carpenters Training Committee for Northern California (CTCNC) — OSHA Training",
+   "Carpenters Training Committee for Northern California Apprenticeship — CARP 1203",
+   "Carpenters Training Committee for Northern California Apprenticeship — CARP 312",
+   "Carpenters Training Committee for Northern California Apprenticeship — CARP 608",
+   "Carpenters Training Committee for Northern California Apprenticeship — CARP 707",
+   "Carpenters Training Committee for Northern California Apprenticeship — CARP 710",
+   "Carpenters Training Committee for Northern California Apprenticeship — CARP 713",
+   "Carpenters Training Committee for Northern California Apprenticeship — FA/C",
+   "Commercial Blueprint Reading and Mobile Tower Scaffolds",
+   "Commercial Concrete",
+   "Commercial Door Hardware",
+   "Commercial and Industrial Insulation and Aerial Lift",
+   "Concrete - Precast and Prestressed",
+   "Conveyors for Millwrights",
+   "Cutting and Welding 1",
+   "Cutting and Welding 3",
+   "Drapery, Window Coverings, and Fine Furnishings",
+   "Energy Conservation Codes and Standards",
+   "Engineered Structural Systems",
+   "Exterior Finish",
+   "Falsework, Shoring, and Heavy Timber Framing",
+   "Finishing and Repairing Floors",
+   "Floor to Ceiling Wall System Construction",
+   "Form Detailing, Construction & Erection",
+   "Form Detailing, Construction, and Erection for Pile Drivers",
+   "Foundations and Floors",
+   "Hazard Awareness for Scaffold Erectors",
+   "Infection Control Risk Assessment and Hospital Code for Acoustical Installers",
+   "Integrated Ceilings and Special Techniques",
+   "Interior Finish",
+   "Interior Systems",
+   "Introduction to CNC",
+   "Introduction to Grid Ceiling Installation",
+   "Introduction to Land and Water Pile Driving",
+   "Introduction to Office Modular Systems Installation",
+   "Introduction to Scaffolds and Confined Space",
+   "Introduction to Structural Blueprints and Layout Instruments",
+   "Introduction to Welding and Cutting",
+   "Introduction to Working Drawings, Construction Math and Fire Stop Installation",
+   "Layout Procedures for Millwrights",
+   "Layout/Leveling Construction Site Practice",
+   "Machinery Installation",
+   "Machinery Maintenance for Mill Cabinet",
+   "Machinery Maintenance for Millwrights",
+   "Math for the Mill Cabinet Trade",
+   "Mill Cabinet Safety and Tool Skills",
+   "Millwright Math Applications",
+   "Millwright Rigging",
+   "Millwright Safety and Tool Skills",
+   "Modular System Construction and Quality Control 2",
+   "Modular System Installer Safety",
+   "Modular Systems Construction and Quality Control 1",
+   "Monorails",
+   "Pile Driver Math Applications",
+   "Pile Driver Rigging",
+   "Precision Optical Instruments",
+   "Precision Tools for Millwrights",
+   "Print Reading Measurement and Layout",
+   "Residential Blueprint Reading and Forklift Safety",
+   "Residential Insulation and Weatherization",
+   "Roof Framing",
+   "Sanding, Stains, and Finish Preparation",
+   "Solid Surface Material, Fabrication, and Installation",
+   "Specialty Ceiling Systems",
+   "Stair Building",
+   "Structural Framing",
+   "Suspended Framing Ceiling Systems",
+   "Suspended Scaffolds and Shoring Systems",
+   "System Scaffold",
+   "The Acoustical Apprentice, Safety, and the Trade",
+   "The Mill Cabinet Apprentice and the Trade",
+   "The Millwright Apprentice, the Trade, and 16 Hour Safety",
+   "Tools of the Trade and Installation of Hardwood Floors",
+   "Tube and Clamp Scaffold",
+   "Turbines",
+   "Veneers, Laminate, and Finishing",
+   "Welded Frame and Mobile Tower Scaffold",
+   "Welding 1: Introduction to SMAW",
+   "Welding 2 SMAW",
+   "Welding 3 FCAW",
+   "Welding 3: Advanced SMAW",
+   "Welding 4 FCAW Pipe",
+   "Welding 6: FCAW 4G Certification",
+   "Wharfage and Marine Structures",
+   "Worker Safety and Tool Skills for Pile Drivers"
+  ],
+  "blank_trade_programs": [
+   "Carpenters Apprenticeship — Cabinetmaker",
+   "Carpenters Apprenticeship — Carpenter",
+   "Carpenters Apprenticeship — Drywall Applicator",
+   "Carpenters Apprenticeship — Hardwood Floor Layer",
+   "Carpenters Apprenticeship — Insulator",
+   "Carpenters Apprenticeship — Modular Installer",
+   "Carpenters Apprenticeship — Pile Driver",
+   "Carpenters Apprenticeship — Scaffold Erector",
+   "Carpenters Apprenticeship — Shingler",
+   "Carpenters Training Committee for Northern California (CTCNC) — Work Experience"
+  ]
+ }
+}

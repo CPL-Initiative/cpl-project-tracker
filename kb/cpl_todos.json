@@ -1,56 +1,50 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-09 · Session 109 close (common-titles headline LIVE; carpentry pass 2 queued for S110)",
- "_session": 109,
- "_status": "Big day: the CER got its round-3 polish, 113 carpentry titles + 318 apprenticeship tags landed with receipts, the PR-5b apply folded 170 renames + 21 merges (after fixing a silent 1,000-row read cap that was starving the fold), and the dashboard now counts COMMON EXHIBIT TITLES (~1,649) with the old 2,418 kept as the Issuer/type variants breakdown. Trends' two new rows read \"—\" until their history accrues — expected. NEXT SESSION picks up carpentry pass 2 with your clarified spec: the 12 leftover CARP-numbered rows aren't in COCI under any number (CTCNC-internal numbering), so they need judgment or a Rio Hondo title-match; your SUBJ choice (CARP as a new carpentry SUBJ4 vs the existing CNST canonical) is the one open decision; plus the SUBJ filter build.",
+ "_as_of": "2026-07-09 · Session 110 close (carpentry pass 2 CLOSED; COCI Lookup tab live)",
+ "_session": 110,
+ "_status": "Carpentry pass 2 closed live with you: 252 SUBJ/Discipline fills (CARP / Carpentry) + 18 titles derived from your MAP export landed with receipts. Your 'where does CARP 1203 come from?' cracked a real bug — the articulations file's identities map was never re-keyed by the June 12 fold (681 stale keys); the CER now reads titles from the always-fresh minted catalogs. Also new: a SUBJ filter on the CER bar and the COCI Lookup tab (the raw 141,738-row COCI catalog with M-ID/C-ID/CCN chips, sortable/filterable/resizable, descriptions on expand).",
  "items": [
   {
-   "id": "cer-v2-shakedown",
-   "who": "sam",
+   "id": "carp-merge-confirms",
+   "for": "sam",
    "tab": "credential-reference",
-   "text": "Drive the round-3 CER: drag a column edge to resize (↺ reset in ⚙ Columns), try the College filter (pick \"CCC (statewide)\"), and filter CPL type → Apprenticeship to see the 318 tagged rows."
+   "text": "Carpentry folds: the 3 Rigging rows + 3 Blueprint Reading-Residential + a few existing-key collisions sit in the ⇒ Merge confirms lane — ✓ Confirm merge (or rename apart) per row."
   },
   {
-   "id": "carp-pass2-decision",
-   "who": "sam",
+   "id": "carp-ambiguous-4",
+   "for": "sam",
    "tab": "credential-reference",
-   "text": "Carpentry pass 2: SUBJ decided — CARP (your call: \"whichever matches COCI best\"; Rio Hondo + Laney literally use CARP). One question left: fold the 3 \"Rigging\" rows (CARP 019/312/608) into one credential, or keep them separate?"
+   "text": "4 still-ambiguous CTCNC rows (CARP 707 / 710 / 713 + Work Experience): MAP carries TWO credit recs each — pick the right title in-cell when you know the answer."
   },
   {
-   "id": "carp-unresolvable",
-   "who": "sam",
+   "id": "carp-trade-programs",
+   "for": "sam",
    "tab": "credential-reference",
-   "text": "The 12 leftover \"CARP NNN\" rows have no COCI course under ANY subject with those numbers (CTCNC-internal numbering; the resolvable ones came via American River's CARPT articulations). They need your in-cell judgment or a verified title-match against Rio Hondo's CARP catalog — next session will stage options."
+   "text": "Spot-check the 10 trade-program rows filled CARP/Carpentry (Drywall Applicator, Pile Driver, …) — receipt flags them in kb/carp_fill_out/2026-07-09/plan.json."
   },
   {
-   "id": "apprentice-review-only",
-   "who": "sam",
-   "tab": "credential-reference",
-   "text": "5 rows say \"apprenticeship\" only in one college's raw title and were NOT bulk-tagged (Basic Correctional Officer Academy + 4 Fire Service rows) — tag any that really are apprenticeships in-cell."
+   "id": "coci-lookup-feedback",
+   "for": "sam",
+   "tab": "coci-lookup",
+   "text": "Kick the tires on the new COCI Lookup tab (Reference & Curation group) — search, chips, column resize, CSV. What's missing for your lookups?"
   },
   {
-   "id": "map-export-malone",
-   "who": "sam",
-   "tab": "map-export",
-   "text": "Send Malone the 🗺 MAP Export tab (or its ⬇ Download all JSON) — every canonical credential in his FullExhibitJSON shape with the local title variants underneath. His schema feedback lands in one mapping function."
+   "id": "identities-rebuild",
+   "for": "fable",
+   "tab": "unified-courses",
+   "text": "Producer-side fix: add the coci_articulations identities-map rebuild to the re-mint post-apply chain (the consumer-side preference shipped S110)."
   },
   {
-   "id": "next-lane-pass",
-   "who": "sam",
+   "id": "carp-validate-fold",
+   "for": "fable",
    "tab": "credential-reference",
-   "text": "The missing-agency lane has 200 fresh prefills (mostly rename/split residue): 155 cx→CCC · 20 no-formal-issuer · 10 school rows · 9 family · 3 Local High School · 1 AWS. Same flow as before — say the word for another bulk close-out when you've picked the interesting ones."
+   "text": "After Sam's ✓ pass + the next rename apply: verify the carpentry family reads clean end-to-end and close the receipt with a validation note."
   },
   {
-   "id": "military-residuals",
-   "who": "sam",
+   "id": "issuer-lane",
+   "for": "sam",
    "tab": "credential-reference",
-   "text": "13 Military-typed rows stayed out of the CCC blast (ACE/service-branch judgment) — they're the last deliberate residuals."
-  },
-  {
-   "id": "fable-v2-tuning",
-   "who": "fable",
-   "tab": "credential-reference",
-   "text": "Run the PR-5b rename apply when Sam's ready (folds the 113 CARP renames into the KB keys); fold Malone's MAP Export schema deltas; then back to the standing lanes (bulk-CCC close-outs on request, CCR Convergence voice pass)."
+   "text": "The issuer lane continues: 233 rows, 200 prefilled — confirm/correct in-cell."
   }
  ]
 }
