@@ -1,5 +1,6 @@
 // CER v2 round 2 (2026-07-09 — Sam's three asks after the v2 shakedown):
-//   1. the tab's background is CREAM (#FEF9DA), scoped to the CER pane
+//   1. the tab's background is CREAM, scoped to the CER pane (round 3 made
+//      it a ghosted rgba so the First Light painting shows through)
 //   2. Discipline + SUBJ edit in-cell at the top layer → NEW overlay-only
 //      kb_curation fields discipline_override / subj_override (deliberately
 //      NOT in the apply lanes yet), reflected live + in the extracts
@@ -114,10 +115,10 @@ const rowByTitle = (doc, needle) => Array.from(doc.querySelectorAll("tr.cr-row")
 
   // ── 1. cream background ──
   const css = doc.getElementById("cr-scope-css").textContent;
-  check("cream: scoped --cer-cream token defined as #FEF9DA",
-    css.indexOf("--cer-cream:#FEF9DA") >= 0);
+  check("cream: scoped --cer-cream token defined (ghosted rgba since round 3)",
+    css.indexOf("--cer-cream:rgba(254,249,218,.8)") >= 0);
   check("cream: the CER pane background rides the token",
-    css.indexOf("#tab-credential-reference{--cer-cream:#FEF9DA;background:var(--cer-cream);}") >= 0);
+    css.indexOf("#tab-credential-reference{--cer-cream:rgba(254,249,218,.8);background:var(--cer-cream);}") >= 0);
   check("cream: the table wrap stays opaque white (data never on cream)",
     css.indexOf(".cr-table-wrap{background:var(--surface-opaque") >= 0);
 
@@ -154,9 +155,12 @@ const rowByTitle = (doc, needle) => Array.from(doc.querySelectorAll("tr.cr-row")
   check("overlay: ✎ marker shows the curated discipline",
     !!cosmo.querySelector(".cr-disc-cell .cr-override-marker"));
 
-  // extracts reflect the overrides (live layer).
-  const exportBtns = Array.from(doc.querySelectorAll(".cr-export-btn"));
-  exportBtns[1].click();  // ⬇ JSON
+  // extracts reflect the overrides (live layer). Find ⬇ JSON by label —
+  // round 3's ↺ reset-widths button shares the cr-export-btn class, so a
+  // positional index is no longer stable.
+  const jsonBtn = Array.from(doc.querySelectorAll(".cr-export-btn"))
+    .find((b) => txt(b) === "⬇ JSON");
+  jsonBtn.click();
   await sleep(30);
   const parsed = JSON.parse(await log.blobs[log.blobs.length - 1].text());
   const aseRec = parsed.credentials.find((c) => c.kb_key === "ASE Brakes (A5)");

@@ -1,0 +1,2430 @@
+{
+ "_job": "apprentice-tag-s109",
+ "_stamp": "2026-07-09",
+ "_cohort": "apprentice-tag-s109@bot",
+ "_value": "Apprenticeship (CER canonical-layer cpl_type_override — overlay-only, not a MAP CPL type)",
+ "applied_count": 318,
+ "review_only_count": 5,
+ "applied": [
+  {
+   "ut": "Abutments",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Acoustical Ceilings",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Acoustical Soffits",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Advanced Acoustical Ceiling Installation",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Advanced Acoustical Ceiling Layout",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Advanced Automatic Finishing Tools",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Advanced Commercial Framing",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Apprenticeship Work Experience",
+   "issuer": "California Community Colleges",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Automotive Technology Apprenticeship",
+   "issuer": "California Community Colleges",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Other"
+   ]
+  },
+  {
+   "ut": "Basic Hand Finishing",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Basic Lathing",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Basic Metal Framing",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Basic Roof Framing",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Basic Stairs",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Basic Wall Framing",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Beam and Deck Forming",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Bridge Construction",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Bridge Falsework",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Cabinet Installation",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Cabinet Millwork and Assembly",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — Acoustical Installer",
+   "issuer": "Carpenters Training Committee for Northern California / Southern California Carpenters Joint Apprenticeship",
+   "signal": "title+issuer",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — Cabinetmaker",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 001",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 002",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 004",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 005",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 006",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 007",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 008",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 009",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 010",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 011",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 012",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 013",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 014",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 015",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 016",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 017",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 018",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 019",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 020",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 101",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 102",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 103",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 104",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 105",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 106",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 107",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 108",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 109",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 110",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 111",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 112",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 113",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 114",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — Carpenter",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Carpenters Apprenticeship — Drywall Applicator",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Carpenters Apprenticeship — Drywall Finisher",
+   "issuer": "Carpenters Training Committee for Northern California / Southern California Carpenters Joint Apprenticeship",
+   "signal": "title+issuer",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — Drywall/Lather",
+   "issuer": "Carpenters Training Committee for Northern California / Southern California Carpenters Joint Apprenticeship",
+   "signal": "title+issuer",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — Hardwood Floor Layer",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Carpenters Apprenticeship — Insulator",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Carpenters Apprenticeship — Millwright",
+   "issuer": "Carpenters Training Committee for Northern California / Southern California Carpenters Joint Apprenticeship",
+   "signal": "title+issuer",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — Modular Installer",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Carpenters Apprenticeship — Pile Driver",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Carpenters Apprenticeship — Scaffold Erector",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Carpenters Apprenticeship — Shingler",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Carpenters Apprenticeship — Tilt-Up",
+   "issuer": "Carpenters Training Committee for Northern California / Southern California Carpenters Joint Apprenticeship",
+   "signal": "title+issuer",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 115",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 116",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 117",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1201",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1202",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1203",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1204",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1205",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1206",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1207",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1208",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 278",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 279",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 280",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 281",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 282",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 283",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 284",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 285",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 286",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 287",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 288",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 289",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 290",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 291",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 292",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 293",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 294",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 302",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 305",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 306",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 307",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 308",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 309",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 310",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 311",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 312",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 313",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 314",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 315",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 316",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 404",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 405",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 503",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 504",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 505",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 506",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 507",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 508",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 605",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 608",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 701",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 702",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 703",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 704",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 705",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 706",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 707",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 708",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 709",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 710",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 711",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 712",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 713",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 714",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 715",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 856",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 857",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 858",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 859",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 860",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 861",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 862",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 863",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 864",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 865",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 866",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 867",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 868",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 869",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 870",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 871",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 872",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 901",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 902",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 903",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 904",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 905",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 906",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 907",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 908",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 909",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 910",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 911",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 912",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 913",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 914",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 915",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 916",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — FA/C",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Ceiling and Soffit Finishing",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Chef Ann Foundation Pre-Apprenticeship",
+   "issuer": "Chef Ann Foundation",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Other"
+   ]
+  },
+  {
+   "ut": "Commercial Electrical Apprenticeship",
+   "issuer": "California Community Colleges",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Commercial Floor Framing",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Commercial Roof Framing",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Concealed/Glue-Up/Staple-Up Ceiling Systems",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Concrete Slabs and Footings",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Construction Apprenticeship",
+   "issuer": "California Community Colleges",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Construction Craft Laborer Apprenticeship",
+   "issuer": "Laborers' International Union of North America (LiUNA)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Designer and Specialty Trims",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Door and Door Frames — Layout and Frame",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Doors and Door Hardware",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Drywall and Acoustical Ceilings",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Drywall Applications — Production Drywall Hanging",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Drywall Installation and Finish Trims",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Elevator Constructor Apprenticeship — Orientation",
+   "issuer": "National Elevator Industry Educational Program (NEIEP)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Elevator Constructor Apprenticeship — RC100",
+   "issuer": "National Elevator Industry Educational Program (NEIEP)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Elevator Constructor Apprenticeship — RC200",
+   "issuer": "National Elevator Industry Educational Program (NEIEP)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Elevator Constructor Apprenticeship — RC300",
+   "issuer": "National Elevator Industry Educational Program (NEIEP)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Elevator Constructor Apprenticeship — RC400",
+   "issuer": "National Elevator Industry Educational Program (NEIEP)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Elevator Constructor Apprenticeship — RC500",
+   "issuer": "National Elevator Industry Educational Program (NEIEP)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Elevator Constructor Apprenticeship — RC600",
+   "issuer": "National Elevator Industry Educational Program (NEIEP)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Elevator Constructor Apprenticeship — RC700",
+   "issuer": "National Elevator Industry Educational Program (NEIEP)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Elevator Constructor Apprenticeship — RC800",
+   "issuer": "National Elevator Industry Educational Program (NEIEP)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Elevator Constructor Apprenticeship — Work Experience",
+   "issuer": "National Elevator Industry Educational Program (NEIEP)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Exit and Electrical Security Devices",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Exterior Finish Details",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Fire Fighter Paramedic Journeyperson Certificate",
+   "issuer": "California Joint Apprenticeship Committee (Cal-JAC)",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Fire Officer Journeyperson Certificate",
+   "issuer": "California Joint Apprenticeship Committee (Cal-JAC)",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Firefighter EMT Certificate",
+   "issuer": "California Joint Apprenticeship Committee (Cal-JAC)",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Firefighter Journeyperson Certificate",
+   "issuer": "California Joint Apprenticeship Committee (Cal-JAC)",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Firestop and Fireproofing Procedures",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Foundations and Flatwork (Carpentry)",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Framing Ceilings and Soffits",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Framing Curves and Arches (Carpentry)",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Framing Suspended Ceilings (Carpentry)",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Freeform Lathing",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Gang Forms and Columns",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Hand and Power Tools Safety",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Hand Tools Safety Orientation",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Heavy/Medium Duty Truck Technology Apprenticeship",
+   "issuer": "California Division of Apprenticeship Standards (DAS)",
+   "signal": "title+issuer",
+   "raw_cpl_types": [
+    "Other"
+   ]
+  },
+  {
+   "ut": "IBEW Electrician Apprenticeship",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "IBEW Electrician Apprenticeship — Year 1",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification",
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "IBEW Electrician Apprenticeship — Year 2",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification",
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "IBEW Electrician Apprenticeship — Year 3",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification",
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "IBEW Electrician Apprenticeship — Year 4",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification",
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "IBEW Electrician Apprenticeship — Year 5",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification",
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "IBEW/NECA Electrical Apprenticeship — ELECT 110",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "IBEW/NECA Electrical Apprenticeship — ELECT 111",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "IBEW/NECA Electrical Apprenticeship — ELECT 120",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "IBEW/NECA Electrical Apprenticeship — ELECT 121",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "IBEW/NECA Electrical Apprenticeship — ELECT 130",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "IBEW/NECA Electrical Apprenticeship — ELECT 131",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "IBEW/NECA Electrical Apprenticeship — ELECT 140",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "IBEW/NECA Electrical Apprenticeship — ELECT 141",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "IBEW/NECA Electrical Apprenticeship — ELECT 150",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "IBEW/NECA Electrical Apprenticeship — ELECT 151",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "IBEW/NECA Electrical Apprenticeship — Work Experience",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Iron Workers Apprenticeship — H01",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Iron Workers Apprenticeship — H07/H47/H75/H77",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Iron Workers Apprenticeship — H08/H97",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Iron Workers Apprenticeship — H15",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Iron Workers Apprenticeship — H20",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Iron Workers Apprenticeship — H25",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Iron Workers Apprenticeship — H28",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Iron Workers Apprenticeship — H30",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Iron Workers Apprenticeship — H36",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Iron Workers Apprenticeship — H40",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Iron Workers Apprenticeship — H45/B87",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Iron Workers Apprenticeship — H52",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Iron Workers Apprenticeship — H54",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Iron Workers Apprenticeship — H62/H18/H95",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Iron Workers Apprenticeship — H65/H70",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Iron Workers Apprenticeship — Saturday Classes",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Iron Workers Apprenticeship — Work Experience",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Cranes",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Credit By Exam"
+   ]
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Detailing",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Credit By Exam"
+   ]
+  },
+  {
+   "ut": "Ironworker Apprenticeship — General Rigging",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Credit By Exam"
+   ]
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Ironworker History",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Credit By Exam"
+   ]
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Lead Hazard",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Credit By Exam"
+   ]
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Mixed Base",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Credit By Exam"
+   ]
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Post Tensioning I",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Credit By Exam"
+   ]
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Post Tensioning II",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Credit By Exam"
+   ]
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Reinforcing II",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Credit By Exam"
+   ]
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Reinforcing, Period 1",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Reinforcing, Period 2",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Reinforcing, Period 3",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Reinforcing, Period 4",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Reinforcing, Period 5",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Reinforcing, Period 6",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Reinforcing, Period 7",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Reinforcing, Period 8",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Structural, Period 1",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Structural, Period 2",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Structural, Period 3",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Structural, Period 4",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Structural, Period 5",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Structural, Period 6",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Structural, Period 7",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Structural, Period 8",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Welding I",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Ironworker Apprenticeship — Welding II",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Credit By Exam"
+   ]
+  },
+  {
+   "ut": "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "title+issuer",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "title+issuer",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "title+issuer",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "title+issuer",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Journeyman Certificate- Apprenticeship Carpentry, Insulator",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "title+issuer",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "title+issuer",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Journeyman Certificate- Apprenticeship Carpentry, Pile Driver",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "title+issuer",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Journeyman Certificate- Apprenticeship Carpentry, Plastering",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "title+issuer",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "title+issuer",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "LiUNA Laborers' Construction Apprenticeship",
+   "issuer": "Laborers' International Union of North America (LiUNA)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Marine Technology Apprenticeship Work Experience",
+   "issuer": "California Community Colleges",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Metal Framing Advanced",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Metal Pan and Security Systems",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Molding and Trims",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Multi-Craft Core Curriculum (MC3) Pre-Apprenticeship",
+   "issuer": "North America's Building Trades Unions (NABTU)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Nursing Apprenticeship Program",
+   "issuer": "California Community Colleges",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Other"
+   ]
+  },
+  {
+   "ut": "Panelized Roofing",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Paramedic Journeyperson Certificate",
+   "issuer": "California Joint Apprenticeship Committee (Cal-JAC)",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "Pharmacy Technology Apprenticeship",
+   "issuer": "California Community Colleges",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Other"
+   ]
+  },
+  {
+   "ut": "Print Reading — Specifications",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Residential Electrical Apprenticeship",
+   "issuer": null,
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Roof Framing Advanced",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Social and Human Services Apprenticeship",
+   "issuer": "California Division of Apprenticeship Standards (DAS)",
+   "signal": "title+issuer",
+   "raw_cpl_types": [
+    "Other"
+   ]
+  },
+  {
+   "ut": "Sound and Communication Systems Installer Apprenticeship",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "Sprinkler Fitter Apprenticeship",
+   "issuer": "United Association (UA)",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "Stairs Advanced",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "signal": "issuer",
+   "raw_cpl_types": [
+    "Portfolio Review"
+   ]
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship Work Experience",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 100",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 101",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 110",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 111",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 120",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 121",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 130",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 131",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 140",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 141",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 150",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 151",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 100",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 101",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 110",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 111",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 120",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 121",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 130",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 131",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 140",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": []
+  },
+  {
+   "ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 141",
+   "issuer": "United Association (UA) Local 342",
+   "signal": "title",
+   "raw_cpl_types": [
+    "Industry Certification"
+   ]
+  }
+ ],
+ "review_only": [
+  {
+   "ut": "Basic Correctional Officer Academy",
+   "issuer": "California Department of Corrections and Rehabilitation (CDCR) / Commission on Correctional Peace Officer Standards and Training (CPOST)",
+   "variants": [
+    "CDCR/CPOST - Apprenticeship program certificate of completion"
+   ],
+   "reason": "apprentice appears only in a raw college-entered variant — review, not bulk-tagged"
+  },
+  {
+   "ut": "Fire Instructor 1",
+   "issuer": "California State Fire Training (SFT)",
+   "variants": [
+    "FTECH 376 Fire Instructional Methodology 1 - Internship/Apprenticeship"
+   ],
+   "reason": "apprentice appears only in a raw college-entered variant — review, not bulk-tagged"
+  },
+  {
+   "ut": "Fire Service In-Service Training — Administration",
+   "issuer": "California State Fire Training (SFT)",
+   "variants": [
+    "FTECH 324A\tFire Service In-Service Training/Administration - Internship/Apprenticeship",
+    "FTECH 324B\tFire Service In-Service Training/Administration - Internship/Apprenticeship"
+   ],
+   "reason": "apprentice appears only in a raw college-entered variant — review, not bulk-tagged"
+  },
+  {
+   "ut": "Fire Service In-Service Training — Command & Control",
+   "issuer": "California State Fire Training (SFT)",
+   "variants": [
+    "\tFTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship",
+    "FTECH 323B Fire Service In-Service Training/Command & Control - Internship/Apprenticeship",
+    "FTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship"
+   ],
+   "reason": "apprentice appears only in a raw college-entered variant — review, not bulk-tagged"
+  },
+  {
+   "ut": "Fire Service In-Service Training — Special Operations",
+   "issuer": "California State Fire Training (SFT)",
+   "variants": [
+    "FTECH 322B\tFire Service In-Service Training/Special Operations - Internship/Apprenticeship"
+   ],
+   "reason": "apprentice appears only in a raw college-entered variant — review, not bulk-tagged"
+  }
+ ]
+}

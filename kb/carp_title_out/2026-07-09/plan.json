@@ -1,0 +1,1011 @@
+{
+ "_job": "carp-title-s109",
+ "_stamp": "2026-07-09",
+ "_cohort": "carp-title-s109@bot",
+ "_source": "credential_reference_data.js articulations (COCI-derived common-course titles)",
+ "applied_count": 113,
+ "skipped_count": 19,
+ "applied": [
+  {
+   "ut": "Carpenters Apprenticeship — CARP 001",
+   "new_title": "The Acoustical Apprentice, Safety, and the Trade",
+   "via": "CNST M10BD (M-ID)",
+   "local": [
+    "CARPT 210 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 004",
+   "new_title": "Foundations and Floors",
+   "via": "CNST M10PN (M-ID)",
+   "local": [
+    "CARPT 110 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 006",
+   "new_title": "Structural Framing",
+   "via": "CNST M10PY (M-ID)",
+   "local": [
+    "CARPT 112 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 007",
+   "new_title": "Form Detailing, Construction & Erection",
+   "via": "CNST M10KK (M-ID)",
+   "local": [
+    "CARPT 114 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 008",
+   "new_title": "Exterior Finish",
+   "via": "CNST M1065 (M-ID)",
+   "local": [
+    "CARPT 120 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 009",
+   "new_title": "Blueprint Reading-Commercial",
+   "via": "CNST M10FH (M-ID)",
+   "local": [
+    "CARPT 162 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 010",
+   "new_title": "Concrete - Precast and Prestressed",
+   "via": "CNST M10JT (M-ID)",
+   "local": [
+    "CARPT 150 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 011",
+   "new_title": "Interior Finish",
+   "via": "CNST M10PI (M-ID)",
+   "local": [
+    "CARPT 122 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 012",
+   "new_title": "Layout/Leveling Construction Site Practice",
+   "via": "CNST M10MA (M-ID)",
+   "local": [
+    "CARPT 130 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 013",
+   "new_title": "Engineered Structural Systems",
+   "via": "CNST M10OM (M-ID)",
+   "local": [
+    "CARPT 142 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 014",
+   "new_title": "Interior Systems",
+   "via": "CNST M10RE (M-ID)",
+   "local": [
+    "CARPT 140 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 015",
+   "new_title": "Stair Building",
+   "via": "CNST M10GP (M-ID)",
+   "local": [
+    "CARPT 180 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 016",
+   "new_title": "Roof Framing",
+   "via": "CNST M1072 (M-ID)",
+   "local": [
+    "CARPT 170 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 018",
+   "new_title": "Commercial Concrete",
+   "via": "CNST M10JD (M-ID)",
+   "local": [
+    "CARPT 155 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 020",
+   "new_title": "Commercial Door Hardware",
+   "via": "CNST M10JF (M-ID)",
+   "local": [
+    "CARPT 124 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 102",
+   "new_title": "Basic Applications",
+   "via": "INDT M10GB (M-ID)",
+   "local": [
+    "DRLTH 102 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 103",
+   "new_title": "Mathematics for Drywall/Lathers",
+   "via": "INDT M10PZ (M-ID)",
+   "local": [
+    "DRLTH 105 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 104",
+   "new_title": "Exterior/Advanced Fire Control System and Partitions",
+   "via": "INDT M10DY (M-ID)",
+   "local": [
+    "DRLTH 140 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 105",
+   "new_title": "Doors, Windows, Exterior Systems/Building Documents",
+   "via": "INDT M10JS (M-ID)",
+   "local": [
+    "DRLTH 112 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 106",
+   "new_title": "Blueprint Reading 1",
+   "via": "DRAF M1029 (M-ID)",
+   "local": [
+    "DRLTH 120 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 107",
+   "new_title": "Blueprint Reading 2",
+   "via": "DRAF M1030 (M-ID)",
+   "local": [
+    "DRLTH 121 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 108",
+   "new_title": "Blueprint Reading 3",
+   "via": "INDT M10JH (M-ID)",
+   "local": [
+    "DRLTH 122 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 110",
+   "new_title": "Welding 1",
+   "via": "MACH M1041 (M-ID)",
+   "local": [
+    "DRLTH 130 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 111",
+   "new_title": "Residential Metal Framing",
+   "via": "INDT M10UA (M-ID)",
+   "local": [
+    "DRLTH 110 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 112",
+   "new_title": "Exterior Systems and Trims",
+   "via": "INDT M10TB (M-ID)",
+   "local": [
+    "DRLTH 142 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 113",
+   "new_title": "Interior Metal Lathing System, Sound Control",
+   "via": "INDT M10NL (M-ID)",
+   "local": [
+    "DRLTH 150 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 114",
+   "new_title": "Ceilings, Shaft Protection and Demountable Partitions",
+   "via": "INDT M10KL (M-ID)",
+   "local": [
+    "DRLTH 160 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 115",
+   "new_title": "Arches, Furring and Advanced Systems",
+   "via": "INDT M10DS (M-ID)",
+   "local": [
+    "DRLTH 162 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 116",
+   "new_title": "Advanced Construction Techniques",
+   "via": "INDT M10DX (M-ID)",
+   "local": [
+    "DRLTH 170 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 117",
+   "new_title": "Drywall Lathing Trade Safety",
+   "via": "INDT M10QA (M-ID)",
+   "local": [
+    "DRLTH 103 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1201",
+   "new_title": "Modular System Installer Safety",
+   "via": "CNST M10QZ (M-ID)",
+   "local": [
+    "CARPT 108 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1202",
+   "new_title": "Introduction to Office Modular Systems Installation",
+   "via": "CNST M10QT (M-ID)",
+   "local": [
+    "CARPT 109 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1204",
+   "new_title": "Print Reading Measurement and Layout",
+   "via": "CNST M10RM (M-ID)",
+   "local": [
+    "CARPT 163 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1205",
+   "new_title": "Modular Systems Construction and Quality Control 1",
+   "via": "CNST M10KE (M-ID)",
+   "local": [
+    "CARPT 137 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1206",
+   "new_title": "Modular System Construction and Quality Control 2",
+   "via": "CNST M10KF (M-ID)",
+   "local": [
+    "CARPT 138 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1207",
+   "new_title": "Drapery, Window Coverings, and Fine Furnishings",
+   "via": "CNST M10NC (M-ID)",
+   "local": [
+    "CARPT 125 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1208",
+   "new_title": "Floor to Ceiling Wall System Construction",
+   "via": "CNST M10IB (M-ID)",
+   "local": [
+    "CARPT 115 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 278",
+   "new_title": "Worker Safety and Tool Skills for Pile Drivers",
+   "via": "CNST M10NO (M-ID)",
+   "local": [
+    "CARPT 240 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 279",
+   "new_title": "Pile Driver Math Applications",
+   "via": "CNST M10DK (M-ID)",
+   "local": [
+    "CARPT 241 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 280",
+   "new_title": "Pile Driver Rigging",
+   "via": "CNST M10NN (M-ID)",
+   "local": [
+    "CARPT 242 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 281",
+   "new_title": "Form Detailing, Construction, and Erection for Pile Drivers",
+   "via": "CNST M10KJ (M-ID)",
+   "local": [
+    "CARPT 243 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 282",
+   "new_title": "Welding 1: Introduction to SMAW",
+   "via": "CNST M10QK (M-ID)",
+   "local": [
+    "CARPT 244 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 283",
+   "new_title": "Introduction to Land and Water Pile Driving",
+   "via": "CNST M10NQ (M-ID)",
+   "local": [
+    "CARPT 245 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 285",
+   "new_title": "Advanced Pile Driving Land and Water",
+   "via": "CNST M10CJ (M-ID)",
+   "local": [
+    "CARPT 247 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 286",
+   "new_title": "Wharfage and Marine Structures",
+   "via": "CNST M10RR (M-ID)",
+   "local": [
+    "CARPT 248 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 287",
+   "new_title": "Welding 3: Advanced SMAW",
+   "via": "CNST M10CN (M-ID)",
+   "local": [
+    "CARPT 249 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 288",
+   "new_title": "Introduction to Structural Blueprints and Layout Instruments",
+   "via": "CNST M10FO (M-ID)",
+   "local": [
+    "CARPT 250 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 289",
+   "new_title": "Advanced Structural Blueprints and Bridge Building",
+   "via": "CNST M10BR (M-ID)",
+   "local": [
+    "CARPT 251 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 290",
+   "new_title": "Falsework, Shoring, and Heavy Timber Framing",
+   "via": "CNST M10PD (M-ID)",
+   "local": [
+    "CARPT 252 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 291",
+   "new_title": "Advanced Formwork",
+   "via": "CNST M10CL (M-ID)",
+   "local": [
+    "CARPT 253 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 292",
+   "new_title": "Welding 3 FCAW",
+   "via": "CNST M10PE (M-ID)",
+   "local": [
+    "CARPT 254 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 293",
+   "new_title": "Welding 4 FCAW Pipe",
+   "via": "CNST M10PF (M-ID)",
+   "local": [
+    "CARPT 255 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 294",
+   "new_title": "Welding 6: FCAW 4G Certification",
+   "via": "CNST M10AY (M-ID)",
+   "local": [
+    "CARPT 256 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 302",
+   "new_title": "Introduction to Scaffolds and Confined Space",
+   "via": "CNST M10JV (M-ID)",
+   "local": [
+    "CARPT 260 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 305",
+   "new_title": "Welded Frame and Mobile Tower Scaffold",
+   "via": "CNST M1070 (M-ID)",
+   "local": [
+    "CARPT 261 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 306",
+   "new_title": "Blueprint Reading-Residential",
+   "via": "CNST M10FM (M-ID)",
+   "local": [
+    "CARPT 160 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 307",
+   "new_title": "System Scaffold",
+   "via": "CNST M10SI (M-ID)",
+   "local": [
+    "CARPT 262 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 308",
+   "new_title": "Suspended Scaffolds and Shoring Systems",
+   "via": "CNST M10SJ (M-ID)",
+   "local": [
+    "CARPT 264 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 309",
+   "new_title": "Tube and Clamp Scaffold",
+   "via": "CNST M10IO (M-ID)",
+   "local": [
+    "CARPT 265 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 311",
+   "new_title": "Blueprint Reading for Scaffold Erectors",
+   "via": "CNST M10FJ (M-ID)",
+   "local": [
+    "CARPT 266 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 313",
+   "new_title": "Introduction to Welding and Cutting",
+   "via": "CNST M10NF (M-ID)",
+   "local": [
+    "CARPT 190 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 314",
+   "new_title": "Welding 2",
+   "via": "MACH M1044 (M-ID)",
+   "local": [
+    "CARPT 268 @ American River College",
+    "DRLTH 131 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 316",
+   "new_title": "Hazard Awareness for Scaffold Erectors",
+   "via": "CNST M10EL (M-ID)",
+   "local": [
+    "CARPT 263 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 404",
+   "new_title": "Tools of the Trade and Installation of Hardwood Floors",
+   "via": "CNST M10PO (M-ID)",
+   "local": [
+    "CARPT 181 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 405",
+   "new_title": "Finishing and Repairing Floors",
+   "via": "CNST M10PK (M-ID)",
+   "local": [
+    "CARPT 182 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 503",
+   "new_title": "Introduction to Working Drawings, Construction Math and Fire Stop Installation",
+   "via": "CNST M10KN (M-ID)",
+   "local": [
+    "CARPT 131 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 504",
+   "new_title": "Residential Blueprint Reading and Forklift Safety",
+   "via": "CNST M10FK (M-ID)",
+   "local": [
+    "CARPT 132 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 505",
+   "new_title": "Residential Insulation and Weatherization",
+   "via": "CNST M10RB (M-ID)",
+   "local": [
+    "CARPT 133 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 506",
+   "new_title": "Commercial Blueprint Reading and Mobile Tower Scaffolds",
+   "via": "CNST M10FG (M-ID)",
+   "local": [
+    "CARPT 134 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 507",
+   "new_title": "Commercial and Industrial Insulation and Aerial Lift",
+   "via": "CNST M10CT (M-ID)",
+   "local": [
+    "CARPT 135 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 508",
+   "new_title": "Energy Conservation Codes and Standards",
+   "via": "CNST M10IY (M-ID)",
+   "local": [
+    "CARPT 136 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 703",
+   "new_title": "Introduction to Grid Ceiling Installation",
+   "via": "CNST M10IE (M-ID)",
+   "local": [
+    "CARPT 144 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 705",
+   "new_title": "Specialty Ceiling Systems",
+   "via": "CNST M10IF (M-ID)",
+   "local": [
+    "CARPT 145 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 706",
+   "new_title": "Access Floor Systems",
+   "via": "CNST M10BA (M-ID)",
+   "local": [
+    "CARPT 148 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 708",
+   "new_title": "Suspended Framing Ceiling Systems",
+   "via": "CNST M10ID (M-ID)",
+   "local": [
+    "CARPT 141 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 709",
+   "new_title": "Infection Control Risk Assessment and Hospital Code for Acoustical Installers",
+   "via": "CNST M10BE (M-ID)",
+   "local": [
+    "CARPT 212 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 711",
+   "new_title": "Integrated Ceilings and Special Techniques",
+   "via": "CNST M10IG (M-ID)",
+   "local": [
+    "CARPT 146 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 712",
+   "new_title": "Advanced Grid Ceilings",
+   "via": "CNST M10CA (M-ID)",
+   "local": [
+    "CARPT 147 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 714",
+   "new_title": "Acoustical Blueprint Reading",
+   "via": "CNST M10BG (M-ID)",
+   "local": [
+    "CARPT 164 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 715",
+   "new_title": "Specialty Systems",
+   "via": "ELEC M1047 (M-ID)",
+   "local": [
+    "CARPT 215 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 856",
+   "new_title": "Millwright Safety and Tool Skills",
+   "via": "CNST M10RW (M-ID)",
+   "local": [
+    "CARPT 220 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 857",
+   "new_title": "The Millwright Apprentice, the Trade, and 16 Hour Safety",
+   "via": "CNST M10AL (M-ID)",
+   "local": [
+    "CARPT 221 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 858",
+   "new_title": "Millwright Math Applications",
+   "via": "CNST M10DL (M-ID)",
+   "local": [
+    "CARPT 222 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 859",
+   "new_title": "Millwright Rigging",
+   "via": "CNST M10RV (M-ID)",
+   "local": [
+    "CARPT 228 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 860",
+   "new_title": "Materials of Construction",
+   "via": "ARCH M1107 (M-ID)",
+   "local": [
+    "CARPT 224 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 861",
+   "new_title": "Layout Procedures for Millwrights",
+   "via": "CNST M10RN (M-ID)",
+   "local": [
+    "CARPT 225 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 862",
+   "new_title": "Precision Optical Instruments",
+   "via": "CNST M10RA (M-ID)",
+   "local": [
+    "CARPT 226 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 863",
+   "new_title": "Blueprint Reading and Aerial Lift",
+   "via": "CNST M10CS (M-ID)",
+   "local": [
+    "CARPT 227 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 864",
+   "new_title": "Cutting and Welding 1",
+   "via": "CNST M10ND (M-ID)",
+   "local": [
+    "CARPT 223 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 865",
+   "new_title": "Welding 2 SMAW",
+   "via": "CNST M1079 (M-ID)",
+   "local": [
+    "CARPT 229 @ American River College",
+    "CARPT 246 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 866",
+   "new_title": "Monorails",
+   "via": "CNST M10RZ (M-ID)",
+   "local": [
+    "CARPT 230 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 867",
+   "new_title": "Conveyors for Millwrights",
+   "via": "CNST M10NA (M-ID)",
+   "local": [
+    "CARPT 231 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 868",
+   "new_title": "Machinery Installation",
+   "via": "CNST M10QV (M-ID)",
+   "local": [
+    "CARPT 232 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 869",
+   "new_title": "Machinery Maintenance for Millwrights",
+   "via": "CNST M10RO (M-ID)",
+   "local": [
+    "CARPT 233 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 870",
+   "new_title": "Precision Tools for Millwrights",
+   "via": "CNST M10RX (M-ID)",
+   "local": [
+    "CARPT 234 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 871",
+   "new_title": "Turbines",
+   "via": "CNST M10SS (M-ID)",
+   "local": [
+    "CARPT 235 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 872",
+   "new_title": "Cutting and Welding 3",
+   "via": "CNST M10NE (M-ID)",
+   "local": [
+    "CARPT 236 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 901",
+   "new_title": "Mill Cabinet Safety and Tool Skills",
+   "via": "CNST M10HA (M-ID)",
+   "local": [
+    "CARPT 270 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 902",
+   "new_title": "The Mill Cabinet Apprentice and the Trade",
+   "via": "CNST M10DQ (M-ID)",
+   "local": [
+    "CARPT 271 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 903",
+   "new_title": "Math for the Mill Cabinet Trade",
+   "via": "CNST M10GZ (M-ID)",
+   "local": [
+    "CARPT 272 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 904",
+   "new_title": "Basic Cabinet Making",
+   "via": "CNST M10ET (M-ID)",
+   "local": [
+    "CARPT 273 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 905",
+   "new_title": "Basic Blueprint Reading Mill Cabinet",
+   "via": "CNST M10EQ (M-ID)",
+   "local": [
+    "CARPT 274 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 906",
+   "new_title": "Machinery Maintenance for Mill Cabinet",
+   "via": "CNST M10GX (M-ID)",
+   "local": [
+    "CARPT 275 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 907",
+   "new_title": "Cabinet Hardware Installation",
+   "via": "CNST M10GW (M-ID)",
+   "local": [
+    "CARPT 276 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 908",
+   "new_title": "Sanding, Stains, and Finish Preparation",
+   "via": "CNST M10PJ (M-ID)",
+   "local": [
+    "CARPT 277 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 909",
+   "new_title": "Advanced Machinery Operation",
+   "via": "CNST M10CO (M-ID)",
+   "local": [
+    "CARPT 278 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 910",
+   "new_title": "Advanced Blueprint Reading for Mill Cabinet",
+   "via": "CNST M10BQ (M-ID)",
+   "local": [
+    "CARPT 279 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 911",
+   "new_title": "Advanced Cabinet Making",
+   "via": "CNST M10BU (M-ID)",
+   "local": [
+    "CARPT 280 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 912",
+   "new_title": "Veneers, Laminate, and Finishing",
+   "via": "CNST M10PL (M-ID)",
+   "local": [
+    "CARPT 281 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 913",
+   "new_title": "CAD Basics for Mill Cabinetry",
+   "via": "CNST M10EX (M-ID)",
+   "local": [
+    "CARPT 282 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 914",
+   "new_title": "Introduction to CNC",
+   "via": "CNST M10IQ (M-ID)",
+   "local": [
+    "CARPT 283 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 915",
+   "new_title": "Solid Surface Material, Fabrication, and Installation",
+   "via": "CNST M10PB (M-ID)",
+   "local": [
+    "CARPT 284 @ American River College"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 916",
+   "new_title": "Advanced Project for Mill Cabinet",
+   "via": "CNST M10BV (M-ID)",
+   "local": [
+    "CARPT 285 @ American River College"
+   ]
+  }
+ ],
+ "skipped": [
+  {
+   "ut": "Carpenters Apprenticeship — CARP 002",
+   "reason": "no_articulation_to_resolve_from"
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 005",
+   "reason": "no_articulation_to_resolve_from"
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 017",
+   "reason": "no_articulation_to_resolve_from"
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 019",
+   "new_title": "Rigging",
+   "reason": "duplicate_target_in_batch (3 CARP rows resolve to this title — folding them is Sam's call)"
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 101",
+   "reason": "no_articulation_to_resolve_from"
+  },
+  {
+   "ut": "Carpenters Apprenticeship — CARP 109",
+   "reason": "no_articulation_to_resolve_from"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 1203",
+   "new_title": "Finish Carpentry",
+   "reason": "collides_with_existing_credential_key",
+   "existing_key": "Finish Carpentry"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 284",
+   "reason": "no_articulation_to_resolve_from"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 310",
+   "reason": "no_articulation_to_resolve_from"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 312",
+   "new_title": "Rigging",
+   "reason": "duplicate_target_in_batch (3 CARP rows resolve to this title — folding them is Sam's call)"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 315",
+   "reason": "no_articulation_to_resolve_from"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 605",
+   "reason": "no_articulation_to_resolve_from"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 608",
+   "new_title": "Rigging",
+   "reason": "duplicate_target_in_batch (3 CARP rows resolve to this title — folding them is Sam's call)"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 701",
+   "reason": "no_articulation_to_resolve_from"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 702",
+   "reason": "no_articulation_to_resolve_from"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 704",
+   "reason": "no_articulation_to_resolve_from"
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 707",
+   "reason": "multiple_articulations_ambiguous",
+   "titles": [
+    "Blueprint Reading-Commercial",
+    "Introduction to Welding and Cutting"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 710",
+   "reason": "multiple_articulations_ambiguous",
+   "titles": [
+    "Blueprint Reading-Commercial",
+    "Introduction to Welding and Cutting"
+   ]
+  },
+  {
+   "ut": "Carpenters Training Committee for Northern California Apprenticeship — CARP 713",
+   "reason": "multiple_articulations_ambiguous",
+   "titles": [
+    "Welded Frame and Mobile Tower Scaffold",
+    "Acoustical Exterior Systems"
+   ]
+  }
+ ]
+}

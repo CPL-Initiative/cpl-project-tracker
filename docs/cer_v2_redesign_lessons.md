@@ -161,3 +161,66 @@ Also: Sam asked why saved unclassified rows still show — they're "awaiting
 fold" (the lane chip says so); dispatched `daily-dashboard.yml` to fold his
 102 on the spot. Tests: `tests/cer_v2_round2.test.js` (25); suite 148.
 
+## Round 3 — same day (the nine-item shakedown)
+
+UI batch (all in `credential_reference.js`'s injected CSS/render layers):
+
+1. **Ghosted cream** — `--cer-cream` went `#FEF9DA` → `rgba(254,249,218,.8)`
+   so the First Light painting shows through the tint, matching the other
+   tabs' translucency. Kept SCOPED to the CER pane (a global `--paper`
+   re-theme would alter the Sam-blessed First Light v1.6 spec + the
+   contrast-lint baselines — pushed back, offered as a follow-up decision).
+2. **Originating-College filter** — datalist-backed input; options = union of
+   each row's `collegesOf()` (audit-stamped entering colleges, falling back
+   to articulating); a reserved **"CCC (statewide)"** first option filters to
+   `row.statewide`.
+4. **User-adjustable column widths** — a `.cr-resize` drag handle on every
+   sortable th (`attachResize`); widths keyed by the column's SORT KEY
+   (stable across regens), persisted in `cplCerColWidths.v1`; saved widths
+   flip the table to `table-layout:fixed`; **↺ reset widths** lives in the
+   ⚙ Columns panel. Handle clicks `stopPropagation()` so a resize never
+   fires the th's sort.
+5. **Violet → CO dark blue** — `.cr-chip-gen` / `.cr-chip-mergesug` /
+   `.cr-mergesug-h` text (+ chip border) now ride `var(--seal-blue)`. The
+   design system's violet = "machine-suggested" semantic cedes to the CO
+   palette on this tab per Sam's call.
+6. **Header row text white** — `.cr-table th{color:#fff}` (+ active sort
+   indicator), replacing the gold.
+7. **Initiated clarified in-product** — the ○/✓ lane chips + the Status
+   column th now carry full tooltips: *Initiated = a one-time curator
+   sign-off recording who checked the AI classification and when; it changes
+   nothing in the data and is never required.*
+
+Data batch (receipted INSERT-only bulk writes via the Supabase MCP, per
+`docs/kb-notes/methodology-live-curation-concurrency.md`):
+
+3. **CARP course-code titles → COCI course titles** — 132 CTCNC exhibits
+   titled "…Apprenticeship — CARP NNN"; each row's own single articulation
+   carries the COCI-derived course title, so resolution needed no xlsx
+   lookup. **113 applied** as `unified_title_override` (cohort
+   `carp-title-s109@bot`), **19 skipped with reasons**: 12 no-articulation
+   (CARP numbers are CTCNC-internal, not COCI keys — unresolvable), 3
+   duplicate-target ("Rigging" ×3 — folding them is a merge, Sam's call), 3
+   multi-articulation ambiguous, 1 existing-key collision. Plan + SQL:
+   `kb/carp_title_out/2026-07-09/`. Renames display live in the tab; the KB
+   re-key rides the next PR-5b rename apply (dry-run already in the cron).
+8. **Apprenticeship tagging** — new overlay-only kb_curation field
+   **`cpl_type_override`** (fetched/applied/saved like discipline/subj;
+   `cplTypesOf(r)` feeds chips, the CPL-type filter, and both extracts).
+   "Apprenticeship" is a CER canonical-layer type, NOT in MAP's CPL-type
+   vocabulary (Credit By Exam / Industry Certification / Portfolio Review /
+   Military / Standardized Assessment / Other) — the raw MAP types stay in
+   the data underneath, and the override REPLACES the type on this surface
+   (a tagged row leaves the Industry-Certification filter). **318 applied**
+   (cohort `apprentice-tag-s109@bot`): title matches /apprentice/i OR issuer
+   is an apprenticeship body (JATC/CTCNC/IBEW/UA/NEIEP/…). **5
+   variant-only matches receipted for review, not written** (one college's
+   label doesn't reclassify a credential): BCOA + Fire In-Service rows.
+   Plan + SQL: `kb/apprentice_tag_out/2026-07-09/`.
+
+Both jobs verified in Supabase (113 + 318 rows under their cohort emails).
+Plan builder committed as `kb/_carp_apprentice_plan_s109.js` (provenance).
+Tests: `tests/cer_v2_round3.test.js` (24); grid + round-2 tests updated for
+the ↺ reset button sharing `.cr-export-btn` (find export buttons by label,
+never index). Suite 150 files green.
+
