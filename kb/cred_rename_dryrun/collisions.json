@@ -1,7 +1,7 @@
 {
   "_about": "Credential rename collisions detected by the dry-run. Each entry is a proposed rename whose target already exists as a key in credentials.json. Policy: NON-BLOCKING decision queue — the entry waits here (clean renames apply without it) until the curator picks a non-colliding target or explicitly confirms a merge (PR-5b/2). NEVER auto-merged; NEVER auto-disambiguated.",
-  "_generated_at": "2026-07-09T00:30:42Z",
-  "count": 24,
+  "_generated_at": "2026-07-09T10:06:23Z",
+  "count": 23,
   "collisions": [
     {
       "old_unified_title": "Culinary Fundamentals I",
@@ -271,21 +271,6 @@
       },
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-08T23:36:04.811411+00:00",
-      "policy": "queued_pending_curator_decision"
-    },
-    {
-      "old_unified_title": "Keyboarding",
-      "proposed_new_title": "Music Keyboards 1",
-      "reason": "collision_with_existing_credential",
-      "existing_credential_records": 1,
-      "merge_confirm_recorded": null,
-      "rename_would_touch": {
-        "raw_titles_in_unified_titles_json": 1,
-        "articulation_records": 1,
-        "credentials_json_key_exists": true
-      },
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-09T00:02:01.528441+00:00",
       "policy": "queued_pending_curator_decision"
     },
     {

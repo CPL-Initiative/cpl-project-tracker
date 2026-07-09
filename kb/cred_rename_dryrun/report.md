@@ -1,6 +1,6 @@
 # Credential Rename Dry-Run — 2026-07-09
 
-Generated: `2026-07-09T00:30:42Z`
+Generated: `2026-07-09T10:06:23Z`
 
 **Mode B preview** — projects `unified_title_override` curator entries from `kb/credential_review_overlay.json` onto the post-rename state of the three credential-identity files (`unified_titles.json`, `credentials.json`, `coci_articulations.json`). Reports collisions + downstream impact. **Does NOT apply.** Apply is Cred-Ref PR-5b/1, manual workflow_dispatch.
 
@@ -11,7 +11,7 @@ Generated: `2026-07-09T00:30:42Z`
 | V1 | No two renames target the same new name | PASS ✓ |
 | V2 | Every source unified_title exists somewhere | PASS ✓ |
 | V3 | No CLEAN rename target collides with an existing credentials.json key | PASS ✓ |
-| — | Queued collisions (non-blocking — wait for a curator decision) | 24 |
+| — | Queued collisions (non-blocking — wait for a curator decision) | 23 |
 | **Apply safe** | V1–V3 pass + at least one clean rename or confirmed merge (queued collisions don't block) | **YES — PR-5b/1 can dispatch** |
 
 ## Confirmed merges (would FOLD on apply — PR-5b/2)
@@ -19,11 +19,13 @@ Generated: `2026-07-09T00:30:42Z`
 | Old unified_title | ⇒ folds into | Records folding | Already on target | raw_titles | articulations |
 |---|---|---:|---:|---:|---:|
 | `Juvenile Justice Procedures` | ⇒ `Juvenile Law and Procedures` | 2 | 2 | 2 | 1 |
+| `Keyboarding` | ⇒ `Music Keyboards 1` | 1 | 1 | 1 | 1 |
 
 ## Clean renames (would land on apply)
 
 | Old unified_title | → | New unified_title | raw_titles | articulations | credentials.json |
 |---|---|---|---:|---:|---|
+| `Basic Photography` | → | `Photography Beginning` | 1 | 1 | ✓ |
 | `Leadership (High School Articulation)` | → | `Leadership` | 1 | 1 | ✓ |
 | `Leadership in Agriculture` | → | `Leadership in Agriculture B` | 2 | 2 | ✓ |
 | `Long Beach City College Auto 603` | → | `Automotive Brake Inspection` | 1 | 1 | ✓ |
@@ -47,6 +49,7 @@ Generated: `2026-07-09T00:30:42Z`
 | `Mexican Folklorico IV` | → | `Mexican Folklorico 4` | 1 | 1 | ✓ |
 | `Microsoft Excel I` | → | `Microsoft Excel 1` | 1 | 1 | ✓ |
 | `Pharmacology (Nursing)` | → | `Pharmacology` | 2 | 1 | ✓ |
+| `Spanish 2` | → | `Elementary Spanish 2` | 4 | 3 | ✓ |
 
 ## Collisions (queued, non-blocking — curator decision required)
 
@@ -72,7 +75,6 @@ Each row's proposed new title already exists as a key in `credentials.json`. Pol
 | `High School Articulation — Anatomy and Physiology Honors (Colton-Redlands-Yucaipa ROP)` | → | `Anatomy and Physiology Honors` | 1 | collision_with_existing_credential |
 | `Intermediate American Sign Language II` | → | `American Sign Language Intermediate` | 1 | collision_with_existing_credential |
 | `Intermediate Spanish I` | → | `Spanish Intermediate` | 1 | collision_with_existing_credential |
-| `Keyboarding` | → | `Music Keyboards 1` | 1 | collision_with_existing_credential |
 | `Law Enforcement (High School Articulation)` | → | `Law Enforcement` | 1 | collision_with_existing_credential |
 | `Medical Core (High School Articulation) — El Modena High School` | → | `Medical Core` | 0 | intra_batch_same_target |
 | `Medical Core (High School Articulation) — Orange High School` | → | `Medical Core` | 0 | intra_batch_same_target |

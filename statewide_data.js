@@ -112639,10 +112639,10 @@ window.CPL_STATEWIDE = {
       "title": "Shielded Metal Arc Welding (SMAW)",
       "unified_title": "Shielded Metal Arc Welding (SMAW)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "American Welding Society (AWS)",
       "training_agency": "",
       "confidence_title": 0.85,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Shield Metal Arc Welding (SMAW) - Credit by Exam"
@@ -201187,10 +201187,10 @@ window.CPL_STATEWIDE = {
       "title": "Print Reading — Specifications",
       "unified_title": "Print Reading — Specifications",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
       "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Print Reading - Specifications"
@@ -221130,10 +221130,10 @@ window.CPL_STATEWIDE = {
       "title": "Photography (PHOTO 74A — local)",
       "unified_title": "Photography (PHOTO 74A — local)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.3,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "PHOTO 74A"
@@ -221214,10 +221214,10 @@ window.CPL_STATEWIDE = {
       "title": "Photography (PHOT 7A — local)",
       "unified_title": "Photography (PHOT 7A — local)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.3,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "PHOT 7A"
@@ -221242,10 +221242,10 @@ window.CPL_STATEWIDE = {
       "title": "Photography (PHOT 22 — local)",
       "unified_title": "Photography (PHOT 22 — local)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.3,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "PHOT 22"
@@ -221270,10 +221270,10 @@ window.CPL_STATEWIDE = {
       "title": "Photography (PHOT 74A — local)",
       "unified_title": "Photography (PHOT 74A — local)",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.3,
-      "confidence_issuer": 0.7,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "PHOT 74A"
@@ -221438,10 +221438,10 @@ window.CPL_STATEWIDE = {
       "title": "Professional Internship Education",
       "unified_title": "Professional Internship Education",
       "is_classified": true,
-      "issuing_agency": "",
+      "issuing_agency": "Century High School",
       "training_agency": "",
       "confidence_title": 0.55,
-      "confidence_issuer": 0.5,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Professional Internship Education or Professional Internship Education 132 - Century High School"
@@ -225822,6 +225822,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-07-09T00:28:17",
+  "generated_at": "2026-07-09T10:04:25",
   "total_credit_recs": 12714
 };
