@@ -2430,3 +2430,45 @@ Verifier +5 → **61 checks** (upgrades never leave a bare code; hop receipts
 name both subjects; CD-005/Cinema-24 spot checks kept PRESENCE-CONDITIONAL
 so post-fold regens — where Sam's saves drop the rows — stay green). New
 `tests/cer_title_lookup.test.js` (12); suite 145 files green.
+
+## 2026-07-09 — continued 15 (Session 108, SkyPhilo): the HS pass lands + the bulk-CCC close-out
+
+Sam's three-part late-night ask, all landed while he kept saving:
+
+1. **The HS rule (#710, merged).** Rule 5f learned his "**HS" heuristic —
+   fused tokens (BIRMINGHAM CCHS), dotted "Santa Ana H.S.", all-caps "HIGH
+   SCHOOL ARTICULATION", multi-school rows → the "Local High School"
+   placeholder (schools receipted, no single trainer — the EMT-405 guard
+   stands), with the critical NEGATIVE: bare `HS ###` before digits is a
+   SUBJECT code (Copper Mountain's Health Science — COCI-verified), never a
+   school. hs-generic lane 3 → 11 on the fresh post-fold bake.
+2. **The audit answered itself.** The 17 CCC-saved rows with HS signals
+   turned out to be Sam's own SPLIT pattern in action — his rename/split
+   pass had already minted per-school credentials ("High School Articulation
+   — Anatomy and Physiology Honors (Colton-Redlands-Yucaipa ROP)", the
+   Fontana Articulated-CTE family) while the aggregates stay CCC
+   deliberately. NO corrections written — correcting the aggregates would
+   have FOUGHT the split pattern. Lesson: **audit against the LIVE overlay,
+   not the bake** — the stale bake made handled rows look like misses. Only
+   2-3 variants look possibly unsplit (Crime Scene Mgmt's Summit "Cyber
+   Scene Management", Auto Electricity's Summit) — reported; splits are
+   curator moves.
+3. **The bulk-CCC close-out (Sam's scope pick: cx + residuals +
+   no-formal-issuer; Military excluded).** 368 targets → **339 INSERTed**
+   (cohort `ccc-bulk-s108@bot`, receipt `kb/ccc_bulk_out/2026-07-09/`);
+   29 lost the race to Sam's own saves — ON CONFLICT DO NOTHING let his
+   rows win, exactly as designed. Mode-A2 semantics checked FIRST: these
+   rows have no credentials.json issuer, so the fold FILLS rec0 (the
+   overwrite hazard only exists for issuer-carrying rows). The 22
+   HS/agency-staged lane rows (Medical Core × 5 schools, FAA, AWS…) were
+   deliberately left prefilled for his review.
+
+Also his query ask (in #710): the 🔎 who-issues-this search drops
+course-lead decoration and scopes to CA — `who is the agency that issues a
+"Warehouse Management" certificate in CA?`.
+
+**The meta-lesson:** with a curator saving live, every bulk decision needs a
+LAST-SECOND live diff + conflict-yielding writes. Between my first pending
+count (430) and the insert, Sam had saved another ~60 rows — three snapshots
+in one hour, each staler than the last. The bake is history; kb_curation is
+the present.
