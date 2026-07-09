@@ -8,7 +8,7 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified (context, not a priority metric) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 41192,
+  "pe": 41196,
   "p2": 4775,
   "p3": 16310
  },
@@ -312,7 +312,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Moorpark": {
-   "pe": 126,
+   "pe": 128,
    "p2": 0,
    "p3": null,
    "p3_suppressed": true
@@ -373,7 +373,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Reedley College": {
-   "pe": 119,
+   "pe": 120,
    "p2": 0,
    "p3": 0
   },
