@@ -1,0 +1,749 @@
+{
+ "_receipt": "Trail Crew 🥾 clean-renames firing — Session 111 (SkyMighty)",
+ "_fired_at": "2026-07-10T13:39:55Z",
+ "_cohort": "trailcrew-clean-s111@bot",
+ "_plan": "kb/trail_crew_out/2026-07-10/staged_fixes.json :: clean_renames (105)",
+ "_write_pattern": "fresh live read -> INSERT-only ON CONFLICT (course_id,field) DO NOTHING -> cohort reviewer_email -> this committed receipt",
+ "_verification": "SELECT count(*)=103 WHERE reviewer_email='trailcrew-clean-s111@bot' (0 conflict-skips)",
+ "_rollback": "DELETE FROM kb_curation WHERE reviewer_email='trailcrew-clean-s111@bot' (cohort-scoped; no curator rows touched)",
+ "_preflight": {
+  "lane_internal": "no dup keys, no dup targets, no no-ops, no rename chains",
+  "live_overlap": "0 lane keys curator-overridden; 0 targets equal to live override values",
+  "bake_collision_check": "targets vs credentials.json ∪ unified_titles.json (5,377 keys)",
+  "live_merge_confirm_cross_check": "lane keys vs pending merge-confirm targets"
+ },
+ "_excluded": [
+  {
+   "key": "CLEP Spanish with Writing Level II",
+   "reason": "pre-flight collision: target 'CLEP Spanish with Writing Level 2' already an existing unified_titles.json key (assemble only checked credentials.json) -> merge-confirm lane"
+  },
+  {
+   "key": "Medical Core",
+   "reason": "pre-flight live-read conflict: Sam's 2026-07-09 23:40 merge-confirms fold 4 HS-variant keys INTO bare 'Medical Core' (opposite doctrine to the crew's differentiate-to-Canyon-HS rename) -> judgment queue; Sam's rows win"
+  }
+ ],
+ "fired_count": 103,
+ "fired": [
+  {
+   "id": "F0001",
+   "key": "Apparel Construction I",
+   "proposed": "Apparel Construction 1",
+   "rule": "roman_level",
+   "confidence": 0.97
+  },
+  {
+   "id": "F0002",
+   "key": "Apparel Construction I Lab",
+   "proposed": "Apparel Construction 1 Lab",
+   "rule": "roman_level",
+   "confidence": 0.96
+  },
+  {
+   "id": "F0003",
+   "key": "Applied Biotechnology I",
+   "proposed": "Applied Biotechnology 1",
+   "rule": "roman_level",
+   "confidence": 0.97
+  },
+  {
+   "id": "F0004",
+   "key": "Architectural Design I",
+   "proposed": "Architectural Design 1",
+   "rule": "roman_level",
+   "confidence": 0.97
+  },
+  {
+   "id": "F0005",
+   "key": "Architectural Drawing I",
+   "proposed": "Architectural Drawing 1",
+   "rule": "roman_level",
+   "confidence": 0.97
+  },
+  {
+   "id": "F0006",
+   "key": "Art of Graphic Design I",
+   "proposed": "Art of Graphic Design 1",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0014",
+   "key": "BIM and Sustainable Design Strategies I",
+   "proposed": "BIM and Sustainable Design Strategies 1",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0015",
+   "key": "Calculus I With Analytic Geometry",
+   "proposed": "Calculus 1 With Analytic Geometry",
+   "rule": "roman_level",
+   "confidence": 0.97
+  },
+  {
+   "id": "F0016",
+   "key": "Calculus II",
+   "proposed": "Calculus 2",
+   "rule": "roman_level",
+   "confidence": 0.97
+  },
+  {
+   "id": "F0017",
+   "key": "Calculus II With Analytic Geometry",
+   "proposed": "Calculus 2 With Analytic Geometry",
+   "rule": "roman_level",
+   "confidence": 0.97
+  },
+  {
+   "id": "F0018",
+   "key": "Class Piano — Beginning II",
+   "proposed": "Class Piano — Beginning 2",
+   "rule": "roman_level",
+   "confidence": 0.96
+  },
+  {
+   "id": "F0019",
+   "key": "CLEP French Language Level I",
+   "proposed": "CLEP French Language Level 1",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0020",
+   "key": "CLEP French Language Level II",
+   "proposed": "CLEP French Language Level 2",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0021",
+   "key": "CLEP German Language Level I",
+   "proposed": "CLEP German Language Level 1",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0022",
+   "key": "CLEP German Language Level II",
+   "proposed": "CLEP German Language Level 2",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0023",
+   "key": "CLEP History of the United States I",
+   "proposed": "CLEP History of the United States 1",
+   "rule": "roman_level",
+   "confidence": 0.85
+  },
+  {
+   "id": "F0024",
+   "key": "CLEP History of the United States II",
+   "proposed": "CLEP History of the United States 2",
+   "rule": "roman_level",
+   "confidence": 0.85
+  },
+  {
+   "id": "F0025",
+   "key": "CLEP Spanish Language Level I",
+   "proposed": "CLEP Spanish Language Level 1",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0026",
+   "key": "CLEP Spanish Language Level II",
+   "proposed": "CLEP Spanish Language Level 2",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0027",
+   "key": "CLEP Spanish with Writing I",
+   "proposed": "CLEP Spanish with Writing 1",
+   "rule": "roman_level",
+   "confidence": 0.92
+  },
+  {
+   "id": "F0028",
+   "key": "CLEP Spanish with Writing II",
+   "proposed": "CLEP Spanish with Writing 2",
+   "rule": "roman_level",
+   "confidence": 0.92
+  },
+  {
+   "id": "F0029",
+   "key": "CLEP Spanish with Writing Level I",
+   "proposed": "CLEP Spanish with Writing Level 1",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0031",
+   "key": "CLEP Western Civilization I",
+   "proposed": "CLEP Western Civilization 1",
+   "rule": "roman_level",
+   "confidence": 0.85
+  },
+  {
+   "id": "F0032",
+   "key": "CLEP Western Civilization II",
+   "proposed": "CLEP Western Civilization 2",
+   "rule": "roman_level",
+   "confidence": 0.85
+  },
+  {
+   "id": "F0033",
+   "key": "Diagnostic Medical Sonography — Clinical Education IV",
+   "proposed": "Diagnostic Medical Sonography — Clinical Education 4",
+   "rule": "roman_level",
+   "confidence": 0.9
+  },
+  {
+   "id": "F0034",
+   "key": "Digital Video I",
+   "proposed": "Digital Video 1",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0035",
+   "key": "DSLR and Lighting for Professional Production I Beginning",
+   "proposed": "DSLR and Lighting for Professional Production 1 Beginning",
+   "rule": "roman_level",
+   "confidence": 0.8
+  },
+  {
+   "id": "F0036",
+   "key": "DSST Principles of Physical Science I",
+   "proposed": "DSST Principles of Physical Science 1",
+   "rule": "roman_level",
+   "confidence": 0.85
+  },
+  {
+   "id": "F0037",
+   "key": "Elementary Spanish I",
+   "proposed": "Elementary Spanish 1",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0038",
+   "key": "EMT-II Certification",
+   "proposed": "EMT-2 Certification",
+   "rule": "roman_level",
+   "confidence": 0.78
+  },
+  {
+   "id": "F0039",
+   "key": "Engineering Design II Honors Advanced",
+   "proposed": "Engineering Design 2 Honors Advanced",
+   "rule": "roman_level",
+   "confidence": 0.92
+  },
+  {
+   "id": "F0040",
+   "key": "Exploring Culture through Academic Discourse I",
+   "proposed": "Exploring Culture through Academic Discourse 1",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0041",
+   "key": "Exploring Culture through Academic Discourse II",
+   "proposed": "Exploring Culture through Academic Discourse 2",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0042",
+   "key": "Field Studies & Seminar I",
+   "proposed": "Field Studies & Seminar 1",
+   "rule": "roman_level",
+   "confidence": 0.93
+  },
+  {
+   "id": "F0043",
+   "key": "Fire Inspector I",
+   "proposed": "Fire Inspector 1",
+   "rule": "roman_level",
+   "confidence": 0.92
+  },
+  {
+   "id": "F0045",
+   "key": "Fire Officer II",
+   "proposed": "Fire Officer 2",
+   "rule": "roman_level",
+   "confidence": 0.93
+  },
+  {
+   "id": "F0049",
+   "key": "Floral Design and Practices I",
+   "proposed": "Floral Design and Practices 1",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0050",
+   "key": "French — Level II",
+   "proposed": "French — Level 2",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0051",
+   "key": "Funeral Service Administration II",
+   "proposed": "Funeral Service Administration 2",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0052",
+   "key": "Funeral Service Ethics and Laws I",
+   "proposed": "Funeral Service Ethics and Laws 1",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0053",
+   "key": "Funeral Service Ethics and Laws II",
+   "proposed": "Funeral Service Ethics and Laws 2",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0054",
+   "key": "Garde Manger II",
+   "proposed": "Garde Manger 2",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0055",
+   "key": "Graphic Design I",
+   "proposed": "Graphic Design 1",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0060",
+   "key": "Introduction to Acoustical Apprenticeship II",
+   "proposed": "Introduction to Acoustical Apprenticeship 2",
+   "rule": "roman_level",
+   "confidence": 0.93
+  },
+  {
+   "id": "F0061",
+   "key": "Introduction to Apprenticeship I",
+   "proposed": "Introduction to Apprenticeship 1",
+   "rule": "roman_level",
+   "confidence": 0.93
+  },
+  {
+   "id": "F0062",
+   "key": "Introduction to Apprenticeship II",
+   "proposed": "Introduction to Apprenticeship 2",
+   "rule": "roman_level",
+   "confidence": 0.93
+  },
+  {
+   "id": "F0063",
+   "key": "Ironworker Apprenticeship — Post Tensioning I",
+   "proposed": "Ironworker Apprenticeship — Post Tensioning 1",
+   "rule": "roman_level",
+   "confidence": 0.94
+  },
+  {
+   "id": "F0064",
+   "key": "Ironworker Apprenticeship — Post Tensioning II",
+   "proposed": "Ironworker Apprenticeship — Post Tensioning 2",
+   "rule": "roman_level",
+   "confidence": 0.94
+  },
+  {
+   "id": "F0065",
+   "key": "Ironworker Apprenticeship — Reinforcing II",
+   "proposed": "Ironworker Apprenticeship — Reinforcing 2",
+   "rule": "roman_level",
+   "confidence": 0.94
+  },
+  {
+   "id": "F0066",
+   "key": "Ironworker Apprenticeship — Welding I",
+   "proposed": "Ironworker Apprenticeship — Welding 1",
+   "rule": "roman_level",
+   "confidence": 0.94
+  },
+  {
+   "id": "F0067",
+   "key": "Ironworker Apprenticeship — Welding II",
+   "proposed": "Ironworker Apprenticeship — Welding 2",
+   "rule": "roman_level",
+   "confidence": 0.94
+  },
+  {
+   "id": "F0068",
+   "key": "Ironworker Architectural II",
+   "proposed": "Ironworker Architectural 2",
+   "rule": "roman_level",
+   "confidence": 0.94
+  },
+  {
+   "id": "F0069",
+   "key": "Ironworker Architectural III",
+   "proposed": "Ironworker Architectural 3",
+   "rule": "roman_level",
+   "confidence": 0.94
+  },
+  {
+   "id": "F0070",
+   "key": "Ironworker Structural Steel I",
+   "proposed": "Ironworker Structural Steel 1",
+   "rule": "roman_level",
+   "confidence": 0.94
+  },
+  {
+   "id": "F0071",
+   "key": "Ironworker Structural Steel II",
+   "proposed": "Ironworker Structural Steel 2",
+   "rule": "roman_level",
+   "confidence": 0.94
+  },
+  {
+   "id": "F0072",
+   "key": "Ironworker Structural, Architectural and Ornamental I",
+   "proposed": "Ironworker Structural, Architectural and Ornamental 1",
+   "rule": "roman_level",
+   "confidence": 0.92
+  },
+  {
+   "id": "F0073",
+   "key": "Ironworker Welding III",
+   "proposed": "Ironworker Welding 3",
+   "rule": "roman_level",
+   "confidence": 0.94
+  },
+  {
+   "id": "F0074",
+   "key": "Jazz and Popular Music Guitar I",
+   "proposed": "Jazz and Popular Music Guitar 1",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0075",
+   "key": "Landscape Installation and Maintenance I",
+   "proposed": "Landscape Installation and Maintenance 1",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0076",
+   "key": "Metal Building Erection I / Foreman Training",
+   "proposed": "Metal Building Erection 1 / Foreman Training",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0077",
+   "key": "Musical Theater Workshop I",
+   "proposed": "Musical Theater Workshop 1",
+   "rule": "roman_level",
+   "confidence": 0.97
+  },
+  {
+   "id": "F0078",
+   "key": "Patient-Centered Care I and Family-Centered Care of Children",
+   "proposed": "Patient-Centered Care 1 and Family-Centered Care of Children",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0079",
+   "key": "Patient-Centered Care II and Maternal Newborn and Mental Health Nursing",
+   "proposed": "Patient-Centered Care 2 and Maternal Newborn and Mental Health Nursing",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0080",
+   "key": "Patient-Centered Care III and Transition to Professional Practice",
+   "proposed": "Patient-Centered Care 3 and Transition to Professional Practice",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0081",
+   "key": "Piano II",
+   "proposed": "Piano 2",
+   "rule": "roman_level",
+   "confidence": 0.97
+  },
+  {
+   "id": "F0082",
+   "key": "Programming Concepts and Methodology I",
+   "proposed": "Programming Concepts and Methodology 1",
+   "rule": "roman_level",
+   "confidence": 0.9
+  },
+  {
+   "id": "F0083",
+   "key": "Recording Arts Workshop I",
+   "proposed": "Recording Arts Workshop 1",
+   "rule": "roman_level",
+   "confidence": 0.97
+  },
+  {
+   "id": "F0084",
+   "key": "Recording Arts Workshop II",
+   "proposed": "Recording Arts Workshop 2",
+   "rule": "roman_level",
+   "confidence": 0.97
+  },
+  {
+   "id": "F0085",
+   "key": "Recording Arts Workshop III",
+   "proposed": "Recording Arts Workshop 3",
+   "rule": "roman_level",
+   "confidence": 0.97
+  },
+  {
+   "id": "F0086",
+   "key": "Red Hat Linux Administration I",
+   "proposed": "Red Hat Linux Administration 1",
+   "rule": "roman_level",
+   "confidence": 0.9
+  },
+  {
+   "id": "F0087",
+   "key": "Restaurant Service and Catering II",
+   "proposed": "Restaurant Service and Catering 2",
+   "rule": "roman_level",
+   "confidence": 0.96
+  },
+  {
+   "id": "F0088",
+   "key": "SFT Firefighter II",
+   "proposed": "SFT Firefighter 2",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0089",
+   "key": "Single Variable Calculus I Early Transcendentals",
+   "proposed": "Single Variable Calculus 1 Early Transcendentals",
+   "rule": "roman_level",
+   "confidence": 0.93
+  },
+  {
+   "id": "F0090",
+   "key": "SolidWorks I",
+   "proposed": "SolidWorks 1",
+   "rule": "roman_level",
+   "confidence": 0.94
+  },
+  {
+   "id": "F0091",
+   "key": "Spanish I",
+   "proposed": "Spanish 1",
+   "rule": "roman_level",
+   "confidence": 0.98
+  },
+  {
+   "id": "F0092",
+   "key": "Spanish II",
+   "proposed": "Spanish 2",
+   "rule": "roman_level",
+   "confidence": 0.98
+  },
+  {
+   "id": "F0093",
+   "key": "Street Dance I",
+   "proposed": "Street Dance 1",
+   "rule": "roman_level",
+   "confidence": 0.97
+  },
+  {
+   "id": "F0094",
+   "key": "Street Dance II",
+   "proposed": "Street Dance 2",
+   "rule": "roman_level",
+   "confidence": 0.97
+  },
+  {
+   "id": "F0095",
+   "key": "Street Dance III",
+   "proposed": "Street Dance 3",
+   "rule": "roman_level",
+   "confidence": 0.97
+  },
+  {
+   "id": "F0096",
+   "key": "Street Dance IV",
+   "proposed": "Street Dance 4",
+   "rule": "roman_level",
+   "confidence": 0.95
+  },
+  {
+   "id": "F0097",
+   "key": "Strength of Architectural Materials I",
+   "proposed": "Strength of Architectural Materials 1",
+   "rule": "roman_level",
+   "confidence": 0.96
+  },
+  {
+   "id": "F0098",
+   "key": "Swiftwater Rescue Technician I",
+   "proposed": "Swiftwater Rescue Technician 1",
+   "rule": "roman_level",
+   "confidence": 0.9
+  },
+  {
+   "id": "F0099",
+   "key": "Visual Basic Programming I",
+   "proposed": "Visual Basic Programming 1",
+   "rule": "roman_level",
+   "confidence": 0.97
+  },
+  {
+   "id": "F0100",
+   "key": "Voice Development I",
+   "proposed": "Voice Development 1",
+   "rule": "roman_level",
+   "confidence": 0.97
+  },
+  {
+   "id": "F0101",
+   "key": "Voice Development II",
+   "proposed": "Voice Development 2",
+   "rule": "roman_level",
+   "confidence": 0.97
+  },
+  {
+   "id": "F0102",
+   "key": "Voice Technique I",
+   "proposed": "Voice Technique 1",
+   "rule": "roman_level",
+   "confidence": 0.97
+  },
+  {
+   "id": "F0103",
+   "key": "Voice Technique II",
+   "proposed": "Voice Technique 2",
+   "rule": "roman_level",
+   "confidence": 0.97
+  },
+  {
+   "id": "F0104",
+   "key": "Wastewater Treatment Plant Operator Grade I",
+   "proposed": "Wastewater Treatment Plant Operator Grade 1",
+   "rule": "roman_level",
+   "confidence": 0.9
+  },
+  {
+   "id": "F0105",
+   "key": "Wastewater Treatment Plant Operator Grade II",
+   "proposed": "Wastewater Treatment Plant Operator Grade 2",
+   "rule": "roman_level",
+   "confidence": 0.9
+  },
+  {
+   "id": "F0106",
+   "key": "Water Distribution Operator I",
+   "proposed": "Water Distribution Operator 1",
+   "rule": "roman_level",
+   "confidence": 0.9
+  },
+  {
+   "id": "F0107",
+   "key": "Web Publishing I",
+   "proposed": "Web Publishing 1",
+   "rule": "roman_level",
+   "confidence": 0.97
+  },
+  {
+   "id": "F0173",
+   "key": "Center for Financial Training (CFT) — Human Relations (CFTA-0009)",
+   "proposed": "Center for Financial Training (CFT) — Human Relations",
+   "rule": "style_nits",
+   "confidence": 0.85
+  },
+  {
+   "id": "F0174",
+   "key": "Center for Financial Training (CFT) — Human Resources Management (CFTA-0025)",
+   "proposed": "Center for Financial Training (CFT) — Human Resources Management",
+   "rule": "style_nits",
+   "confidence": 0.85
+  },
+  {
+   "id": "F0175",
+   "key": "Center for Financial Training (CFT) — Management (CFTA-0019)",
+   "proposed": "Center for Financial Training (CFT) — Management",
+   "rule": "style_nits",
+   "confidence": 0.85
+  },
+  {
+   "id": "F0176",
+   "key": "Center for Financial Training (CFT) — Marketing (CFTA-0012)",
+   "proposed": "Center for Financial Training (CFT) — Marketing",
+   "rule": "style_nits",
+   "confidence": 0.85
+  },
+  {
+   "id": "F0177",
+   "key": "Center for Financial Training (CFT) — Supervision (CFTA-0015)",
+   "proposed": "Center for Financial Training (CFT) — Supervision",
+   "rule": "style_nits",
+   "confidence": 0.85
+  },
+  {
+   "id": "F0195",
+   "key": "McDonald's MCD-0051 Business Leadership Practices",
+   "proposed": "McDonald's Business Leadership Practices",
+   "rule": "style_nits",
+   "confidence": 0.75
+  },
+  {
+   "id": "F0196",
+   "key": "McDonald's MCD-0056 Business Management",
+   "proposed": "McDonald's Business Management",
+   "rule": "style_nits",
+   "confidence": 0.75
+  },
+  {
+   "id": "F0197",
+   "key": "McDonald's MCD-0057 Operations Supervisor MDP",
+   "proposed": "McDonald's Operations Supervisor MDP",
+   "rule": "style_nits",
+   "confidence": 0.7
+  },
+  {
+   "id": "F0198",
+   "key": "McDonald's MCD-0069 General Manager Business Leader Capstone",
+   "proposed": "McDonald's General Manager Business Leader Capstone",
+   "rule": "style_nits",
+   "confidence": 0.75
+  },
+  {
+   "id": "F0199",
+   "key": "McDonald's MCD-0072 Mid-Management Development Advanced Curriculum",
+   "proposed": "McDonald's Mid-Management Development Advanced Curriculum",
+   "rule": "style_nits",
+   "confidence": 0.75
+  },
+  {
+   "id": "F0200",
+   "key": "McDonald's MCD-0074 Mid-Management Foundations Curriculum",
+   "proposed": "McDonald's Mid-Management Foundations Curriculum",
+   "rule": "style_nits",
+   "confidence": 0.75
+  },
+  {
+   "id": "F0207",
+   "key": "OSHA 030 — Construction Industry Outreach (30-hour)",
+   "proposed": "OSHA 30 — Construction Industry Outreach (30-hour)",
+   "rule": "style_nits",
+   "confidence": 0.6
+  }
+ ]
+}

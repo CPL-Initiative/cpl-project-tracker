@@ -118,3 +118,19 @@ candidates. Strategy:
 - Findings must know about **held curator decisions** (parked merge
   confirms) or the adjudicators will re-propose what the curator
   deliberately deferred.
+
+## Pitfalls learned on the first FIRING (2026-07-10, Session 111 — 103/105 clean renames, cohort `trailcrew-clean-s111@bot`)
+
+- **Collision-classify against BOTH key registries.** `_trail_crew_assemble.py`
+  checked rename targets against `credentials.json` only; `CLEP Spanish with
+  Writing Level II → Level 2` collided with an existing **`unified_titles.json`**
+  key and had to be pulled to the merge lane at fire time. Fix the assemble
+  check to use `credentials.json ∪ unified_titles.json`.
+- **Fresh-read must cross-check pending `unified_title_merge_confirm` TARGETS,
+  not just existing override rows.** The bare `Medical Core → … Canyon High
+  School` rename passed every static check but fought Sam's live 23:40
+  merge-confirms folding four HS variants INTO `Medical Core` — opposite
+  doctrines (differentiate-per-school vs consolidate). Pulled to the judgment
+  queue; the curator's live rows always win. Any future fire: lane keys ∩
+  pending merge-confirm values ⇒ hold.
+- Receipt: `kb/trail_crew_out/2026-07-10/fired_clean_renames_s111.json`.
