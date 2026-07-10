@@ -110,6 +110,25 @@ come from the ESLEI 24-35 systemwide chart already baked into CER rows
 5. **Next pathways** — the model generalizes: add a program object per
    pathway (carpentry → construction management BS is the obvious #2).
 
+### Same-day iteration 2 (Sam's feedback): status stages + PDF extract
+
+Sam: *"I want them to see that this is discussion draft only — a mock-up of
+what it could be — and use it to ask for feedback."*
+
+- **Status stages** — `discussion-draft` (mustard, 📝) / `active` (hunter, ✓) /
+  `tabled` (neutral, ⏸). The published default is the pathway's `stage` in
+  `cpl_pathways_data.js` (fallback discussion-draft — a mock-up can never
+  accidentally present as Active). The above-the-fold **selector is a
+  per-browser VIEW override** (localStorage `cplPathwaysStage.<id>`) so Sam can
+  flip the label live while presenting; changing the published default = edit
+  the data file. Big banner above the hero + a matching stage chip in the hero
+  meta row (so a cropped hero screenshot still carries the label).
+- **⬇ PDF** — opens a print window with a clone of the map (toolbar stripped,
+  CLEP exam panels expanded for the handout) and calls `print()` → save as
+  PDF. The print window has no `:root`, so `var()` can't resolve — a
+  literal-hex First Light token block is injected there (the sanctioned
+  canvas/SVG-style exception).
+
 ### Safety patterns honored
 
 - Rule 4: tab shell mirrored in both HTMLs (test enforces byte-identity).
