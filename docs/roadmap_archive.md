@@ -2387,3 +2387,20 @@ INSERT-only, 29 lost the race to his saves as designed. Fold + rename apply land
 **1,036 → 233** (200 re-prefilled). Verifier 63 (queue spots presence-conditional). Full story:
 `docs/exhibit_canonicalization_lessons.md` ("continued 14"–"15 + addendum") +
 `docs/kb-notes/methodology-live-curation-concurrency.md`; next: `docs/session_109_handoff.md`.
+
+## Archived session narrative — Session 109 (moved from CLAUDE.md §11 at the SkyIron side-lane checkpoint, 2026-07-10)
+
+### Session 109 — SkyBreak: CER v2 — one surface, edits in-cell + the MAP Export feed (2026-07-09)
+
+Sam design-locked a morning mockup (#713; #714 made Pages serve `prototype/`) and the port
+landed same-day: the CER main list now edits IN-CELL (title / issuer + unlimited ＋ agencies /
+trainer → the same kb_curation overrides as the old Curate panel, merge-collision confirm
+inline), with the Triage queues as **lane chips** over one full-width surface (All / 📥
+Unclassified / 🏷 No issuer / ⇒ Merge confirms / ○ Not initiated / ✓ Initiated — the ⚠ Triage
+button retired), a new **SUBJ** column, Students rename, audit/quality-flag columns retired to
+the drawer, Variants/Conf/Elig-units behind ⚙ Columns (`cplCerCols.v1`), lean filters (+CPL
+type +Discipline), and **⬇ Excel (CSV) / ⬇ JSON** live extracts. New **🗺 MAP Export tab**
+(`map_export.js`) shapes every canonical credential to Malone's MAP Exhibit Module
+FullExhibitJSON (sample: `kb/reference/map_full_exhibit_sample.json`) for the MAP integration.
+Suite 147 (+`cer_v2_grid` 35 + `map_export`). Full story: `docs/cer_v2_redesign_lessons.md`;
+next: `docs/session_110_handoff.md`.

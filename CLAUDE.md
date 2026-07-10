@@ -538,21 +538,18 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### Session 109 — SkyBreak: CER v2 — one surface, edits in-cell + the MAP Export feed (2026-07-09)
+### SkyIron side-lane — 🎓 CPL Pathways: the Cerritos ironworker course map (2026-07-10)
 
-Sam design-locked a morning mockup (#713; #714 made Pages serve `prototype/`) and the port
-landed same-day: the CER main list now edits IN-CELL (title / issuer + unlimited ＋ agencies /
-trainer → the same kb_curation overrides as the old Curate panel, merge-collision confirm
-inline), with the Triage queues as **lane chips** over one full-width surface (All / 📥
-Unclassified / 🏷 No issuer / ⇒ Merge confirms / ○ Not initiated / ✓ Initiated — the ⚠ Triage
-button retired), a new **SUBJ** column, Students rename, audit/quality-flag columns retired to
-the drawer, Variants/Conf/Elig-units behind ⚙ Columns (`cplCerCols.v1`), lean filters (+CPL
-type +Discipline), and **⬇ Excel (CSV) / ⬇ JSON** live extracts. New **🗺 MAP Export tab**
-(`map_export.js`) shapes every canonical credential to Malone's MAP Exhibit Module
-FullExhibitJSON (sample: `kb/reference/map_full_exhibit_sample.json`) for the MAP integration.
-Suite 147 (+`cer_v2_grid` 35 + `map_export`). Full story: `docs/cer_v2_redesign_lessons.md`;
-next: `docs/session_110_handoff.md`.
-
+New top-level **🎓 CPL Pathways tab** for the **California Apprenticeship Council (Aug 13)**
+deck: the full course map of **Cerritos's Field Ironworker Supervisor BS** (approved Feb 2026
+under AB 927 after CSU withdrew; first cohort fall 2027) with CPL check-offs **derived live
+from the CER dataset** — 15 IWAP courses ✓ (**31.5 units**, the billboard number), the CLEP ◆
+GE options (ESLEI 24-35; 15u eligible → **39% of the 120u degree** with no seat time), the
+Structural-track "articulations in progress" card that flips ✓ as Cerritos adds MAP
+articulations (`no_count` — never double-counts the major), and "The billboard" outreach
+callout. `cpl_pathways.js` + `cpl_pathways_data.js` (static, lazy); suite +`cpl_pathways` 50.
+Model generalizes: one data-file object per future program. Full story + open items (start-term
+confirm, real upper-div course list): `docs/cpl_pathways_lessons.md`.
 
 ### Session 110 — the carpentry close-out, the stale identities-map find, and the COCI Lookup tab (2026-07-09)
 
