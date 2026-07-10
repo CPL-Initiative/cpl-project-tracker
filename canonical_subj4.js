@@ -152,6 +152,16 @@
       .catch(function () { return { byDiscipline: {} }; });
   }
 
+  // MQ Handbook (19th ed.) section per discipline — which minimum-quals list
+  // the discipline sits on (master's vs experience vs noncredit CCR §53412).
+  // Extracted 2026-07-10 from the CCCCO Disciplines Index (Sam-supplied PDF);
+  // kb/reference/mq_sections.json is the committed reference. Empty-on-404.
+  function fetchMqSections() {
+    return fetch("kb/reference/mq_sections.json", { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : { disciplines: {} }; })
+      .catch(function () { return { disciplines: {} }; });
+  }
+
   // Per-language SUBJ4 split for umbrella disciplines (currently Foreign
   // Languages → FLSP/FLFR/FLGE/…). MQ has no per-language discipline, so the
   // discipline stays one row but carries MANY synthetic subjects. We surface
@@ -1431,6 +1441,28 @@
       aliasChip.style.cursor = "help";
       tdDisc.appendChild(aliasChip);
     }
+    // MQ-list chip (19th ed. handbook) — 🎓 master's list · 🔧 experience list
+    // (any bachelor's + 2 yrs OR associate + 6 yrs) · 🎓🔧 both · 📋 noncredit
+    // CCR §53412. Added 2026-07-10 after Sam's Vocational/Business question:
+    // re-disciplining a row changes the implied faculty-qualification pool —
+    // this chip makes that visible at the point of decision.
+    var mq = state.mq && state.mq[entry.discipline];
+    if (mq) {
+      var mqIcon = mq.mq_list === "masters" ? "🎓"
+        : mq.mq_list === "not_masters" ? "🔧"
+        : mq.mq_list === "both_lists" ? "🎓🔧" : "📋";
+      var mqChip = el("span", {
+        class: "cs-badge muted",
+        title: "MQ Handbook (19th ed.): " + (mq.mq_list_label || mq.mq_list)
+          + (mq.special_ccr ? " · " + mq.special_ccr : "")
+          + (mq.flags ? " · " + mq.flags.join(", ") : "")
+          + ". 🎓 = master's in the discipline; 🔧 = any bachelor's + 2 yrs"
+          + " professional experience OR any associate + 6 yrs.",
+      }, [mqIcon]);
+      mqChip.style.marginLeft = "6px";
+      mqChip.style.cursor = "help";
+      tdDisc.appendChild(mqChip);
+    }
     tr.appendChild(tdDisc);
     tr.appendChild(el("td", { class: "cs-mono" }, [String(entry.total_mids || 0)]));
     tr.appendChild(variantsCell(entry));
@@ -1832,7 +1864,7 @@
     state.sess = getSession();
     wireGuidelinesModal();
     wireVariantsModal();
-    Promise.all([fetchSeed(), fetchOverlay(), fetchCidCcn(), fetchCplRollup(), fetchFLSplit(), fetchAliases()]).then(function (parts) {
+    Promise.all([fetchSeed(), fetchOverlay(), fetchCidCcn(), fetchCplRollup(), fetchFLSplit(), fetchAliases(), fetchMqSections()]).then(function (parts) {
       state.seed = parts[0];
       state.overlay = parts[1];
       state.cidBySubj = parts[2].cidBySubj || {};
@@ -1840,6 +1872,7 @@
       state.cpl = (parts[3] || {}).byDiscipline || {};
       state.split = buildSplit(parts[4]);
       state.aliases = (parts[5] || {}).aliases || {};
+      state.mq = (parts[6] || {}).disciplines || {};
       // Stamp the discipline name onto every seed entry (the entries are keyed
       // by name but don't carry it) so splitFor()/status() can resolve it from
       // the raw entry too, not just from built rows.
