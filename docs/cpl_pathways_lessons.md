@@ -173,6 +173,22 @@ I'm thinking of West LA and their solid work on Dental Hygiene."*
 - Parked (Sam, for another day): a looping harvest of all CCC catalog
   course/program data into Supabase — see the handoff's open items.
 
+### Same-day iteration 4 (Sam): ⚡ Quick Adopt v1 — the intake queue
+
+Sam picked "intake queue in COBI" from the v1 fork (vs MAP deep-link / both /
+design-doc-first). Every ⊕ adoption panel now carries **⚡ Quick Adopt**: an
+inline form (college* / name / work email* / note) POSTing to the new
+**`cpl_adoption_interest`** table stamped with the full pathway context
+(program, course, credentials, the other-college precedent lines). RLS = the
+cpl_reflections write-only pattern: anon INSERT-only (`status='new'` check),
+NO public SELECT (contact info never publicly readable), team SELECT via
+`is_allowed_reviewer() OR team_pass_ok()`; rows immutable to the public after
+insert (triage RPC comes with the lane build). Schema of record:
+`kb/supabase_adoption_interest.sql`; migration `cpl_adoption_interest_intake`
+applied 2026-07-10. Suite 84 → 97. **Next step on this thread:** a small
+adoption-queue lane (team-gated) + re-point the button at the MAP Exhibit
+Module's authenticated adoption flow when Malone exposes one.
+
 ### Safety patterns honored
 
 - Rule 4: tab shell mirrored in both HTMLs (test enforces byte-identity).
