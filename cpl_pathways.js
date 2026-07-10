@@ -371,13 +371,17 @@
           if (p) m = live.artIdx[courseKey(p.subj, p.num)] || null;
         }
         if (!m && c.cpl && c.cpl.credential) {
-          m = { credential: c.cpl.credential, units: row.units, cpl_types: c.cpl.types || [], local_title: row.title };
+          // Baked stamp — either the fallback for a live-match miss, or CPL a
+          // college awards outside MAP (c.cpl.source names where it's granted,
+          // e.g. "Awarded by the college per its catalog").
+          m = { credential: c.cpl.credential, units: row.units, cpl_types: c.cpl.types || [],
+                local_title: row.title, source: c.cpl.source || null };
         }
         if (m) {
           row.status = "cpl";
           var viaTypes = (m.cpl_types && m.cpl_types.length) ? m.cpl_types.join(", ") : "CPL";
           row.how = "✓ CPL";
-          row.detail = "Articulated in the MAP platform: “" + m.credential + "” → " + (row.code || row.title) + " (" + viaTypes + ")";
+          row.detail = (m.source || "Articulated in the MAP platform") + ": “" + m.credential + "” → " + (row.code || row.title) + " (" + viaTypes + ")";
           if (typeof m.units === "number" && row.units == null) row.units = m.units;
         }
         // 2) CLEP option — GE slots declare a `clep_area`; qualifying exams
@@ -471,7 +475,7 @@
     }
     tiles.appendChild(tile("cpl", "✓ " + fmtU(model.cplUnits), unitWord, prog.cpl_tile_label || "CPL on day one — prior-learning credit already articulated in MAP"));
     tiles.appendChild(tile("clep", "◆ " + fmtU(model.clepUnits), unitWord, "more GE units available by CLEP exam — no classroom seat time"));
-    tiles.appendChild(tile(null, fmtU(model.totalUnits), unitWord, "total for the " + (prog.degree || "degree")));
+    tiles.appendChild(tile(null, fmtU(model.totalUnits), unitWord, prog.total_tile_label || ("total for the " + (prog.degree || "degree"))));
     var pct = model.totalUnits ? Math.round(((model.cplUnits + model.clepUnits) / model.totalUnits) * 100) : 0;
     tiles.appendChild(tile(null, pct + "%", null, "of the degree reachable without repeating training you already have"));
     return tiles;

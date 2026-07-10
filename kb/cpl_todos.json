@@ -74,7 +74,13 @@
    "id": "pathways-next",
    "for": "fable",
    "tab": "cpl-pathways",
-   "text": "🎓 CPL Pathways continuation (read docs/cpl_pathways_handoff.md): fold colleague feedback → swap real upper-div courses into cpl_pathways_data.js when Sam supplies the screenshot → pathway #2 (carpentry) once the model proves out."
+   "text": "🎓 CPL Pathways continuation (read docs/cpl_pathways_handoff.md): fold colleague feedback → swap real upper-div courses into cpl_pathways_data.js when Sam supplies the screenshot → more pathways (carpentry next). Foothill DH + RC views shipped with ⊕ adoption chips; verify the flagged unit values (CHEM/ENGL/COMM, RSPT 300/304) when the catalog is reachable."
+  },
+  {
+   "id": "ccc-catalog-harvest",
+   "for": "fable",
+   "tab": "cpl-pathways",
+   "text": "Sam's parked mission: a recurring agent pipeline harvesting ALL CCC catalog course + program key data into Supabase (COCI already covers courses — the gap is PROGRAMS/curricula; CourseLeaf catalogs bot-block, so the path is per-college waves + structured sources like ProgramMapper/Curriculum Inventory). Scope it before building."
   }
  ]
 }

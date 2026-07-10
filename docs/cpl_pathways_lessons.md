@@ -142,6 +142,37 @@ asks first; the continuation capsule is `docs/cpl_pathways_handoff.md`
 Durable learning distilled to
 `docs/kb-notes/methodology-live-derived-pathway-checkoffs.md`.
 
+### Same-day iteration 3 (Sam): Foothill BS views + the ⊕ adoption-option chips
+
+Sam: *"They don't have as much CPL identified, but maybe this is an opportunity
+to add in adoption option chips to courses where others have articulated…
+I'm thinking of West LA and their solid work on Dental Hygiene."*
+
+- **⊕ adoption-option chips** (violet, `adopt:{credentials|disc}` curated stamp
+  → live-derived from every CER articulation line at OTHER colleges, home
+  college excluded; expandable credential → college: course (units) panel;
+  opportunity-not-credit — buckets untouched, ✓ rows never chip, legend line
+  conditional). The chips turn a sparse map into an adoption menu.
+- **Foothill Dental Hygiene BS** (SB 850 pilot original, fall 2016; quarter
+  system): Foothill's MAP presence = 12 AP lines only → tiles read ✓0 / ◆17 /
+  9%, and six ⊕ chips carry the story — West LA's RDA License (11 courses) +
+  RDH License (capstone · pharmacology · nutrition) are the adoption model.
+  Includes the 44-unit online RDH completion track card (`no_count`).
+- **Foothill Respiratory Care BS** (AB 927 first cycle, fall 2024,
+  RRT-to-BS completion, one online year): **the find — Foothill's catalog
+  already awards 24 quarter units of CPL for the NBRC TMC (high cut) + CSE +
+  RCP licensure + Law & Ethics**, so the map is scoped to the 68-unit
+  completion path (24 CPL ✓ + 44 coursework) and the campaign line writes
+  itself: catalog CPL nobody can see vs MAP CPL every counselor sees.
+  New renderer knobs: `cpl.source` (college-awarded-outside-MAP phrasing),
+  `total_tile_label`, `unit_system:"quarter"` (tile unit word + the CLEP
+  panel's 4-quarter-unit chart minimum).
+- Suite 69 → 84. Research: two agents, WebSearch-only again (Foothill's
+  CourseLeaf bot-blocks like Cerritos's); unit values for CHEM/ENGL/COMM and
+  RSPT 300/304 unverified — flagged in footnotes on the page itself.
+- Parked (Sam, for another day): a looping harvest of all CCC catalog
+  course/program data into Supabase — see the handoff's open items.
+
 ### Safety patterns honored
 
 - Rule 4: tab shell mirrored in both HTMLs (test enforces byte-identity).
