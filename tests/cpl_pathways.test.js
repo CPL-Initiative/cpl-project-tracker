@@ -368,8 +368,66 @@ const PROGRAM_STUB = {
   check("live-unavailable note renders", /unavailable/.test(root.textContent));
 }
 
-// ── Report ──
-let fail = 0;
-results.forEach(([name, ok]) => { if (!ok) fail++; console.log((ok ? "  ✓ " : "  ✗ ") + name); });
-console.log(`cpl_pathways: ${results.length - fail}/${results.length} passed`);
-if (fail) process.exit(1);
+// (j) ⚡ Quick Adopt intake — form, validation, POST payload, success/error
+{
+  const w = freshWindow();
+  w.CPL_PATHWAYS = { programs: [PROGRAM_STUB] };
+  w.CPL_TABS = { loadScript: function (s, g, cb) { w.CPL_CREDENTIAL_REFERENCE = CER_STUB; cb(); } };
+  const calls = [];
+  w.fetch = function (url, opts) { calls.push({ url, opts }); return Promise.resolve({ ok: true }); };
+  w.CPL_PATHWAYS_TAB.activate();
+  const root = w.document.getElementById("cpl-pathways-root");
+  const qa = root.querySelector(".cplpw-adoptopts .cplpw-qa");
+  check("Quick Adopt block renders inside the adopt panel", !!qa);
+  const goBtn = qa.querySelector("button.go");
+  check("⚡ Quick Adopt button present", !!goBtn && /Quick Adopt/.test(goBtn.textContent));
+  const form = qa.querySelector("form");
+  check("intake form hidden until clicked", !!form && form.style.display === "none");
+  goBtn.dispatchEvent(new w.Event("click", { bubbles: true }));
+  check("intake form opens", form.style.display !== "none");
+  check("privacy note present (write-only intake)", /not publicly readable/.test(form.textContent));
+  form.dispatchEvent(new w.Event("submit", { bubbles: true, cancelable: true }));
+  check("invalid submit blocked — no fetch fired", calls.length === 0);
+  check("validation error shown", /required/.test(qa.querySelector(".cplpw-qa-err").textContent));
+  form.querySelector("input[name=adopter_college]").value = "Foothill College";
+  form.querySelector("input[name=contact_email]").value = "dean@foothill.edu";
+  form.dispatchEvent(new w.Event("submit", { bubbles: true, cancelable: true }));
+  check("valid submit fires ONE intake POST", calls.length === 1 && /cpl_adoption_interest/.test(calls[0].url));
+  if (calls.length === 1) {
+    const body = JSON.parse(calls[0].opts.body);
+    check("payload stamped with pathway + precedent context",
+      body.program_id === "test-prog" && /Registered Dental Hygienist/.test(body.credentials) &&
+      /West Los Angeles/.test(body.precedent) && body.course_code === "DH 300");
+    check("payload carries the requester", body.adopter_college === "Foothill College" && body.contact_email === "dean@foothill.edu");
+    check("POST uses the anon key + minimal return", calls[0].opts.headers.apikey && calls[0].opts.headers.Prefer === "return=minimal");
+  }
+  Promise.resolve().then(() => {}).then(() => {
+    check("success message replaces the form", /Request recorded/.test(qa.textContent) && !qa.contains(form));
+  });
+}
+// (j2) intake failure keeps the form + shows the error
+{
+  const w = freshWindow();
+  w.CPL_PATHWAYS = { programs: [PROGRAM_STUB] };
+  w.CPL_TABS = { loadScript: function (s, g, cb) { w.CPL_CREDENTIAL_REFERENCE = CER_STUB; cb(); } };
+  w.fetch = function () { return Promise.reject(new Error("down")); };
+  w.CPL_PATHWAYS_TAB.activate();
+  const qa = w.document.querySelector(".cplpw-adoptopts .cplpw-qa");
+  const form = qa.querySelector("form");
+  qa.querySelector("button.go").dispatchEvent(new w.Event("click", { bubbles: true }));
+  form.querySelector("input[name=adopter_college]").value = "Foothill College";
+  form.querySelector("input[name=contact_email]").value = "dean@foothill.edu";
+  form.dispatchEvent(new w.Event("submit", { bubbles: true, cancelable: true }));
+  Promise.resolve().then(() => {}).then(() => {}).then(() => {
+    check("intake failure shows the error + keeps the form",
+      /Could not record/.test(qa.querySelector(".cplpw-qa-err").textContent) && qa.contains(form));
+  });
+}
+
+// ── Report (deferred one macrotask so the async intake checks land first) ──
+setTimeout(() => {
+  let fail = 0;
+  results.forEach(([name, ok]) => { if (!ok) fail++; console.log((ok ? "  ✓ " : "  ✗ ") + name); });
+  console.log(`cpl_pathways: ${results.length - fail}/${results.length} passed`);
+  if (fail) process.exit(1);
+}, 0);

@@ -26,6 +26,103 @@
 
   var ROOT_ID = "cpl-pathways-root";
 
+  // ── Config (anon key is public + RLS-gated; mirrors map_export.js) ──────
+  // Quick-Adopt intake: cpl_adoption_interest is anon INSERT-only (no public
+  // SELECT — contact info is never publicly readable). Schema of record:
+  // kb/supabase_adoption_interest.sql.
+  var SUPABASE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co";
+  var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
+  var ADOPT_INTAKE = SUPABASE_URL + "/rest/v1/cpl_adoption_interest";
+
+  // ── ⚡ Quick Adopt intake (v1: records the request; the CPL team routes it.
+  //    Re-point at the MAP platform's authenticated adoption flow when the
+  //    Exhibit Module exposes one.) ──────────────────────────────────────────
+  function buildQuickAdopt(prog, row) {
+    var wrap; // assigned below (el() is declared later; function hoisting covers calls)
+    wrap = el("div", "cplpw-qa");
+    var go = document.createElement("button");
+    go.type = "button";
+    go.className = "go";
+    go.textContent = "⚡ Quick Adopt";
+    go.title = "Ask the CPL team to bring this articulation to your college — records a request they follow up with your curriculum office.";
+    var form = el("form", "cplpw-qa-form");
+    form.style.display = "none";
+    function input(name, ph, required, type) {
+      var i = document.createElement("input");
+      i.type = type || "text";
+      i.name = name;
+      i.placeholder = ph + (required ? " *" : "");
+      i.setAttribute("maxlength", "200");
+      return i;
+    }
+    var college = input("adopter_college", "Your college", true);
+    var name = input("contact_name", "Your name", false);
+    var email = input("contact_email", "Work email", true, "email");
+    var note = document.createElement("textarea");
+    note.name = "note";
+    note.placeholder = "Anything the team should know (optional)";
+    note.setAttribute("maxlength", "2000");
+    var err = el("span", "cplpw-qa-err", "");
+    var send = document.createElement("button");
+    send.type = "submit";
+    send.className = "go";
+    send.textContent = "Send adoption request";
+    var rowEl = el("div", "row", [send, err]);
+    form.appendChild(college); form.appendChild(name); form.appendChild(email);
+    form.appendChild(note);
+    form.appendChild(el("div", "cplpw-qa-note",
+      "v1: this records the request for the CPL team (contact info goes only to them — it is not publicly readable). The one-click in-MAP adoption lands when the MAP Exhibit Module exposes its authenticated flow."));
+    form.appendChild(rowEl);
+    go.addEventListener("click", function () {
+      form.style.display = form.style.display === "none" ? "" : "none";
+    });
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      err.textContent = "";
+      if (String(college.value).trim().length < 2) { err.textContent = "College is required."; return; }
+      if (String(email.value).indexOf("@") < 1) { err.textContent = "A work email is required."; return; }
+      var creds = (row.adoptOptions || []).map(function (o) { return o.credential; });
+      var precedent = (row.adoptOptions || []).map(function (o) {
+        return o.credential + ": " + o.lines.map(function (l) {
+          return l.college + " " + l.code + (l.units != null ? " (" + fmtU(l.units) + "u)" : "");
+        }).join("; ");
+      }).join(" | ").slice(0, 1200);
+      send.disabled = true;
+      fetch(ADOPT_INTAKE, {
+        method: "POST",
+        headers: {
+          "apikey": SUPABASE_ANON,
+          "Authorization": "Bearer " + SUPABASE_ANON,
+          "Content-Type": "application/json",
+          "Prefer": "return=minimal",
+        },
+        body: JSON.stringify({
+          program_id: prog.id || "unknown",
+          program_label: (prog.college ? prog.college + " — " : "") + (prog.program || ""),
+          course_code: row.code || null,
+          course_title: row.title || "(course)",
+          credentials: creds.join(" | ").slice(0, 600) || "(unspecified)",
+          precedent: precedent || null,
+          adopter_college: String(college.value).trim().slice(0, 120),
+          contact_name: String(name.value).trim().slice(0, 120) || null,
+          contact_email: String(email.value).trim().slice(0, 200),
+          note: String(note.value).trim().slice(0, 2000) || null,
+        }),
+      }).then(function (r) {
+        if (!r.ok) throw new Error("intake " + r.status);
+        var ok = el("div", "cplpw-qa-ok", "✓ Request recorded — the CPL team will follow up with your curriculum office.");
+        wrap.replaceChild(ok, form);
+        go.style.display = "none";
+      }).catch(function () {
+        send.disabled = false;
+        err.textContent = "Could not record the request — try again, or email the CPL team.";
+      });
+    });
+    wrap.appendChild(go);
+    wrap.appendChild(form);
+    return wrap;
+  }
+
   // ── Pathway status stages ─────────────────────────────────────────────────
   // The shipped default comes from the pathway's `stage` in cpl_pathways_data.js
   // (falling back to discussion-draft — never accidentally present a mock-up as
@@ -148,6 +245,17 @@
     ".cplpw-adoptopts .cred { margin-top:4px; font-weight:600; color: var(--violet); }",
     ".cplpw-adoptopts ul { margin:2px 0 2px; padding-left:16px; }",
     ".cplpw-adoptopts li { margin:1px 0; }",
+    /* ⚡ Quick Adopt intake */
+    ".cplpw-qa { margin-top:8px; }",
+    ".cplpw-qa .go { background: var(--seal-blue, var(--navy-primary)); color: var(--surface-opaque); border:none; border-radius:6px; padding:5px 12px; font-weight:700; font-size:.74rem; cursor:pointer; font-family:inherit; }",
+    ".cplpw-qa .go:hover { opacity:.92; }",
+    ".cplpw-qa-form { margin-top:8px; display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:6px; max-width:640px; }",
+    ".cplpw-qa-form input, .cplpw-qa-form textarea { padding:6px 9px; border:1px solid var(--border-strong); border-radius:6px; font-size:.78rem; font-family:inherit; background: var(--surface-opaque); color: var(--text-body); }",
+    ".cplpw-qa-form textarea { grid-column: 1 / -1; min-height:44px; }",
+    ".cplpw-qa-form .row { grid-column: 1 / -1; display:flex; gap:8px; align-items:center; }",
+    ".cplpw-qa-note { font-size:.72rem; color: var(--text-muted); grid-column: 1 / -1; }",
+    ".cplpw-qa-err { font-size:.74rem; color: var(--crimson, var(--red-alert)); font-weight:600; }",
+    ".cplpw-qa-ok { font-size:.78rem; color: var(--hunter, var(--green-progress)); font-weight:700; margin-top:8px; }",
     /* Campaign callout */
     ".cplpw-callout { background: var(--navy-primary); color: var(--paper, var(--surface-opaque)); border-radius:12px; padding:18px 22px; margin: 14px 0; }",
     ".cplpw-callout .k { font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color: var(--mustard-on-dark, var(--gold-accent)); }",
@@ -536,6 +644,7 @@
           adoptPanel.appendChild(el("div", "cred", "⊕ " + o.credential));
           adoptPanel.appendChild(ul);
         });
+        adoptPanel.appendChild(buildQuickAdopt(prog, r));
       }
       var optsPanel = null;
       if (r.status === "clep" && r.clepOptions) {
