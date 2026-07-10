@@ -11556,8 +11556,14 @@ def main():
         # masthead reads "COBI" while the project keeps its own title elsewhere.
         # The rotating "Mamba" subtitle + 8→24 wink are layered on at runtime by
         # cobi_brand.js (static, regen-proof).
+        # "ᶜᴾᴸ" = Unicode modifier-letter superscripts (U+1D9C/U+1D3E/U+1D38) —
+        # they survive plain-text link unfurls (Teams/Slack read <title>/og:title),
+        # matching the gold superscript CPL in the on-page brand mark.
         import re
-        html = re.sub(r'<title>[^<]*</title>', "<title>COBI — Chancellor's Office Business Intelligence</title>", html)
+        COBI_TITLE = "COBI ᶜᴾᴸ — Chancellor's Office Business Intelligence"
+        html = re.sub(r'<title>[^<]*</title>', "<title>" + COBI_TITLE + "</title>", html)
+        html = re.sub(r'<meta property="og:title" content="[^"]*"',
+                      '<meta property="og:title" content="' + COBI_TITLE + '"', html)
         # Replace <h1> in header
         html = re.sub(
             r'<h1>[^<]*</h1>',
@@ -11632,7 +11638,7 @@ def main():
             insert_pos = subtitle_end + len('</div>')
             html = html[:insert_pos] + '\n        ' + proj_info_html + html[insert_pos:]
 
-        print("  Updated dashboard title: COBI — Chancellor's Office Business Intelligence")
+        print("  Updated dashboard title: " + COBI_TITLE)
 
         # ── Inject attachments URL from Excel config into JS global ──
         att_script_marker = '<script src="dashboard_filters.js">'
