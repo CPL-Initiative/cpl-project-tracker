@@ -1,0 +1,626 @@
+{
+ "_receipt": "Trail Crew 🥾 CCR wave-1 fixes firing — Session 111 (SkyMighty)",
+ "_fired_at": "2026-07-10T19:19Z",
+ "_cohort": "trailcrew-ccr1-s111@bot",
+ "_plan": "kb/ccr_out/2026-07-10/wave1_verdicts.json :: title_fix (58) + discipline_correct (53)",
+ "_write_pattern": "Rule 9: fresh live read -> merge_into cross-check -> INSERT-only ON CONFLICT DO NOTHING -> cohort -> this receipt",
+ "_verification": "SELECT count(*)=56 for the cohort",
+ "_rollback": "DELETE FROM kb_curation WHERE reviewer_email='trailcrew-ccr1-s111@bot'",
+ "fired_count": 56,
+ "fired": [
+  {
+   "id": "AGRI M1115",
+   "field": "unified_title",
+   "value": "Integrated Pest Management",
+   "conf": 0.9
+  },
+  {
+   "id": "HVAC M10DM",
+   "field": "unified_title",
+   "value": "Basic Refrigeration and Air Conditioning Laboratory",
+   "conf": 0.75
+  },
+  {
+   "id": "HVAC M10DN",
+   "field": "unified_title",
+   "value": "Basic Refrigeration and Air Conditioning Theory",
+   "conf": 0.6
+  },
+  {
+   "id": "AUTB M10EG",
+   "field": "unified_title",
+   "value": "Intermediate Collision Repair: Parts, Metal, and Frame",
+   "conf": 0.55
+  },
+  {
+   "id": "AVIA M10PH",
+   "field": "unified_title",
+   "value": "Private Pilot Ground School",
+   "conf": 0.95
+  },
+  {
+   "id": "CSIS M10TT",
+   "field": "unified_title",
+   "value": "Computer Business Applications for Windows",
+   "conf": 0.7
+  },
+  {
+   "id": "CSIS M12BX",
+   "field": "unified_title",
+   "value": "Network Fundamentals",
+   "conf": 0.65
+  },
+  {
+   "id": "CSIS M11MF",
+   "field": "unified_title",
+   "value": "Computing Fundamentals",
+   "conf": 0.65
+  },
+  {
+   "id": "CNST M10FH",
+   "field": "unified_title",
+   "value": "Commercial Blueprint Reading",
+   "conf": 0.55
+  },
+  {
+   "id": "CNST M10CZ",
+   "field": "unified_title",
+   "value": "Air and Moisture Barrier Installation",
+   "conf": 0.55
+  },
+  {
+   "id": "CNST M10EM",
+   "field": "unified_title",
+   "value": "Light Gauge Welding (AWS) B",
+   "conf": 0.45
+  },
+  {
+   "id": "CULN M10GH",
+   "field": "unified_title",
+   "value": "Fundamentals of Baking Theory",
+   "conf": 0.7
+  },
+  {
+   "id": "DRAF M10IH",
+   "field": "unified_title",
+   "value": "Introduction to Engineering Design",
+   "conf": 0.65
+  },
+  {
+   "id": "FIRE M10UE",
+   "field": "unified_title",
+   "value": "Fire Service In-Service Training: Administration",
+   "conf": 0.8
+  },
+  {
+   "id": "FIRE M11BR",
+   "field": "unified_title",
+   "value": "Fire Service In-Service Training: Command and Control",
+   "conf": 0.8
+  },
+  {
+   "id": "FIRE M11JW",
+   "field": "unified_title",
+   "value": "Fire Service In-Service Training: Special Operations",
+   "conf": 0.8
+  },
+  {
+   "id": "FIRE M11JX",
+   "field": "unified_title",
+   "value": "Fire Service In-Service Training: Operations",
+   "conf": 0.8
+  },
+  {
+   "id": "FIRE M10TU",
+   "field": "unified_title",
+   "value": "Firefighter Pre-Service Academy",
+   "conf": 0.6
+  },
+  {
+   "id": "FIRE M11AC",
+   "field": "unified_title",
+   "value": "Fire Service Career Development and Promotions",
+   "conf": 0.85
+  },
+  {
+   "id": "INDT M10CY",
+   "field": "unified_title",
+   "value": "Introduction to Networks",
+   "conf": 0.65
+  },
+  {
+   "id": "MACH M10CZ",
+   "field": "unified_title",
+   "value": "Technology and Application of Machining 1A",
+   "conf": 0.8
+  },
+  {
+   "id": "MACH M10DA",
+   "field": "unified_title",
+   "value": "Technology and Application of Machining 2A",
+   "conf": 0.85
+  },
+  {
+   "id": "MGMT M1023",
+   "field": "unified_title",
+   "value": "Human Resources Management",
+   "conf": 0.85
+  },
+  {
+   "id": "MATH M10ND",
+   "field": "unified_title",
+   "value": "Calculus 1",
+   "conf": 0.75
+  },
+  {
+   "id": "OTEC M1222",
+   "field": "unified_title",
+   "value": "Microsoft Word",
+   "conf": 0.75
+  },
+  {
+   "id": "WELD M10GI",
+   "field": "unified_title",
+   "value": "Introduction to Gas Metal Arc Welding (GMAW) and Flux Cored Arc Welding (FCAW)",
+   "conf": 0.85
+  },
+  {
+   "id": "WELD M10IK",
+   "field": "unified_title",
+   "value": "Shielded Metal Arc Welding and Cutting",
+   "conf": 0.7
+  },
+  {
+   "id": "HVAC M1039",
+   "field": "discipline",
+   "value": "Construction Technology",
+   "conf": 0.85
+  },
+  {
+   "id": "HVAC M1038",
+   "field": "discipline",
+   "value": "Construction Technology",
+   "conf": 0.85
+  },
+  {
+   "id": "ARTS M1166",
+   "field": "discipline",
+   "value": "Multimedia",
+   "conf": 0.7
+  },
+  {
+   "id": "ARTS M1043",
+   "field": "discipline",
+   "value": "Photography",
+   "conf": 0.8
+  },
+  {
+   "id": "ARTS M1300",
+   "field": "discipline",
+   "value": "Graphic Arts",
+   "conf": 0.6
+  },
+  {
+   "id": "AVIA M1022",
+   "field": "discipline",
+   "value": "Automotive Technology",
+   "conf": 0.95
+  },
+  {
+   "id": "CNSC M10BN",
+   "field": "discipline",
+   "value": "Carpentry",
+   "conf": 0.75
+  },
+  {
+   "id": "CNSC M10AV",
+   "field": "discipline",
+   "value": "Carpentry",
+   "conf": 0.75
+  },
+  {
+   "id": "CNSC M10BX",
+   "field": "discipline",
+   "value": "Carpentry",
+   "conf": 0.8
+  },
+  {
+   "id": "CNSC M10BY",
+   "field": "discipline",
+   "value": "Carpentry",
+   "conf": 0.7
+  },
+  {
+   "id": "CNSC M10AR",
+   "field": "discipline",
+   "value": "Carpentry",
+   "conf": 0.75
+  },
+  {
+   "id": "CNSC M10AK",
+   "field": "discipline",
+   "value": "Carpentry",
+   "conf": 0.8
+  },
+  {
+   "id": "CNSC M10AS",
+   "field": "discipline",
+   "value": "Carpentry",
+   "conf": 0.85
+  },
+  {
+   "id": "CNSC M10BS",
+   "field": "discipline",
+   "value": "Carpentry",
+   "conf": 0.8
+  },
+  {
+   "id": "CNSC M10CA",
+   "field": "discipline",
+   "value": "Carpentry",
+   "conf": 0.75
+  },
+  {
+   "id": "CISC M1090",
+   "field": "discipline",
+   "value": "Computer Information Systems",
+   "conf": 0.65
+  },
+  {
+   "id": "CISC M10BP",
+   "field": "discipline",
+   "value": "Computer Information Systems",
+   "conf": 0.55
+  },
+  {
+   "id": "THEA M1087",
+   "field": "discipline",
+   "value": "Stagecraft",
+   "conf": 0.6
+  },
+  {
+   "id": "ELET M1074",
+   "field": "discipline",
+   "value": "Construction Technology",
+   "conf": 0.6
+  },
+  {
+   "id": "ESCI M1001",
+   "field": "discipline",
+   "value": "Construction Technology",
+   "conf": 0.7
+  },
+  {
+   "id": "INDT M10RV",
+   "field": "discipline",
+   "value": "Engineering Technology",
+   "conf": 0.55
+  },
+  {
+   "id": "INDT M10FZ",
+   "field": "discipline",
+   "value": "Auto Body Technology",
+   "conf": 0.6
+  },
+  {
+   "id": "MANU M1028",
+   "field": "discipline",
+   "value": "Machine Tool Technology",
+   "conf": 0.8
+  },
+  {
+   "id": "WELD M1092",
+   "field": "discipline",
+   "value": "Carpentry",
+   "conf": 0.75
+  },
+  {
+   "id": "WELD M1121",
+   "field": "discipline",
+   "value": "Carpentry",
+   "conf": 0.7
+  },
+  {
+   "id": "WELD M1066",
+   "field": "discipline",
+   "value": "Carpentry",
+   "conf": 0.7
+  },
+  {
+   "id": "WELD M10VS",
+   "field": "discipline",
+   "value": "Agriculture",
+   "conf": 0.7
+  },
+  {
+   "id": "WELD M10WW",
+   "field": "discipline",
+   "value": "Agriculture",
+   "conf": 0.7
+  },
+  {
+   "id": "WELD M10FI",
+   "field": "discipline",
+   "value": "Auto Body Technology",
+   "conf": 0.8
+  }
+ ],
+ "eyeball_pulls": [
+  {
+   "id": "AUTO M1088",
+   "reason": "proposal was adjudicator prose, not a title"
+  },
+  {
+   "id": "AUTO M10MB",
+   "reason": "proposal was prose-wrapped"
+  },
+  {
+   "id": "ECED M1105",
+   "reason": "proposal contained leaked deliberation text"
+  },
+  {
+   "id": "EMST M10OY",
+   "reason": "retitle TO generic \"Special Topics\" is a P-7 anti-pattern — curator call"
+  }
+ ],
+ "rule9_skips": [
+  [
+   "CRIM M1265",
+   "unified_title",
+   "existing decision on same field"
+  ],
+  [
+   "CRIM M11DW",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "AGRI M10UC",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "AUTO M10GS",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "AUTO M11IA",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "AUTO M11BG",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "AVIA M10HC",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "AVIA M10HB",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "AVIA M10HU",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "AVIA M10HV",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "AVIA M10PQ",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "CSIS M12CC",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "CSIS M11IU",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "CSIS M11IT",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "CNST M10FP",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "CNST M10EN",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "EMST M10JM",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "FIRE M11GF",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "FIRE M11KI",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "FIRE M10LJ",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "FIRE M10FP",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "FIRE M10LX",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "FLCH M1013",
+   "unified_title",
+   "existing decision on same field"
+  ],
+  [
+   "FLCH M1015",
+   "unified_title",
+   "existing decision on same field"
+  ],
+  [
+   "INDT M1071",
+   "unified_title",
+   "existing decision on same field"
+  ],
+  [
+   "INDT M1031",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "WELD M10GG",
+   "unified_title",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "HVAC M10FR",
+   "discipline",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "CNSR M10AA",
+   "discipline",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "CNSC M10AZ",
+   "discipline",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "CNSC M10BR",
+   "discipline",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "CNSC M10CH",
+   "discipline",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "CNSM M10CZ",
+   "discipline",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "ELET M10EG",
+   "discipline",
+   "id being merged away (merge_into row)"
+  ],
+  [
+   "INDT M10JN",
+   "discipline",
+   "id being merged away (merge_into row)"
+  ]
+ ],
+ "validation_skips": [
+  [
+   "BUSI M1082",
+   "discipline",
+   "not-exact-MQ-name"
+  ],
+  [
+   "BUSI M1219",
+   "discipline",
+   "not-exact-MQ-name"
+  ],
+  [
+   "BUSI M1027",
+   "discipline",
+   "not-exact-MQ-name"
+  ],
+  [
+   "CSIS M1272",
+   "discipline",
+   "not-exact-MQ-name"
+  ],
+  [
+   "CSIS M10UP",
+   "discipline",
+   "not-exact-MQ-name"
+  ],
+  [
+   "CULN M1050",
+   "discipline",
+   "not-exact-MQ-name"
+  ],
+  [
+   "DENT M1059",
+   "discipline",
+   "not-exact-MQ-name"
+  ],
+  [
+   "ELET M10HI",
+   "discipline",
+   "not-exact-MQ-name"
+  ],
+  [
+   "INDT M10IF",
+   "discipline",
+   "not-exact-MQ-name"
+  ],
+  [
+   "INDT M10IE",
+   "discipline",
+   "not-exact-MQ-name"
+  ],
+  [
+   "INDT M10HU",
+   "discipline",
+   "not-exact-MQ-name"
+  ],
+  [
+   "INDT M10UC",
+   "discipline",
+   "not-exact-MQ-name"
+  ],
+  [
+   "INDT M10UB",
+   "discipline",
+   "not-exact-MQ-name"
+  ],
+  [
+   "INDT M10ZH",
+   "discipline",
+   "not-exact-MQ-name"
+  ],
+  [
+   "INDT M10ZF",
+   "discipline",
+   "not-exact-MQ-name"
+  ],
+  [
+   "INDT M10XH",
+   "discipline",
+   "not-exact-MQ-name"
+  ]
+ ],
+ "_skip_summary": "111 lane items -> 95 validated -> 60 after Rule-9 fresh-read (30 merged-away ids, 7 existing same-field rows dropped 35) -> 56 fired after 4 final-eyeball pulls. Every skip logged above; skipped items return via wave 2 re-adjudication or the curator queue."
+}
