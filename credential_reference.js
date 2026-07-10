@@ -3054,6 +3054,12 @@
       "#tab-credential-reference .cr-wl-sugg{cursor:pointer;font-size:.68rem;text-align:left;color:var(--hunter);background:rgba(255,255,255,.6);}" +
       "#tab-credential-reference .cr-wl-sugg:hover{background:#ecfdf5;}" +
       "#tab-credential-reference .cr-wl-sugg:disabled{cursor:default;opacity:.55;}" +
+      // ⤷ use-raw-title chip (S110) — the .cr-wl-sugg look in the muted-text
+      // role (it's a fallback, not an identity-anchored recommendation); its
+      // OWN class so suggestion-chip selectors/tests never count it.
+      "#tab-credential-reference .cr-wl-rawfill{cursor:pointer;font-size:.68rem;text-align:left;color:var(--text-muted);background:rgba(255,255,255,.6);}" +
+      "#tab-credential-reference .cr-wl-rawfill:hover{background:var(--surface-subtle);}" +
+      "#tab-credential-reference .cr-wl-rawfill:disabled{cursor:default;opacity:.55;}" +
       "#tab-credential-reference .cr-wl-input{width:100%;min-width:15ch;padding:4px 6px;border:1px solid #cbd5e1;border-radius:5px;font-size:.82rem;}" +
       "#tab-credential-reference .cr-wl-input:disabled{background:#f8fafc;color:#94a3b8;}" +
       "#tab-credential-reference .cr-wl-act{white-space:nowrap;}" +
@@ -3646,6 +3652,78 @@
       ]));
     }
 
+    // ✓ Initiate all assigned (S110, Sam's pick: "pre-initiate assignments").
+    // Every ASSIGNED (awaiting-fold) row's TARGET credential gets the
+    // reviewed_marker now, so when the fold lands those credentials arrive
+    // ✓ Initiated instead of piling into the ○ Not initiated lane. Targets
+    // resolve to an existing row's KEY when the assigned title matches one
+    // (already-initiated ones are skipped); brand-new titles key by the
+    // assigned title — the fold mints that exact key.
+    if (state.sess) {
+      var seenT = {}, initTargets = [];
+      items.forEach(function (it2) {
+        var a2 = state.unclassAssign[it2.raw_title];
+        var t2 = a2 && a2.title;
+        if (!t2 || seenT[t2]) return;
+        seenT[t2] = true;
+        var match = null;
+        for (var ri = 0; ri < state.rows.length; ri++) {
+          var rr = state.rows[ri];
+          if (rr.unified_title === t2 || rr.display_title === t2) { match = rr; break; }
+        }
+        if (match) {
+          if (!match.curator_reviewed_at) initTargets.push({ key: match.unified_title, row: match });
+        } else {
+          initTargets.push({ key: t2, row: null });
+        }
+      });
+      if (initTargets.length) {
+        var initBar = el("div", { class: "cr-wl-preseed-bar" });
+        initBar.appendChild(el("span", null, [
+          "Initiate all marks the " + initTargets.length + " credential"
+          + (initTargets.length === 1 ? "" : "s") + " targeted by saved "
+          + "assignments as ✓ Initiated (already-initiated targets are skipped), "
+          + "so they don't land in ○ Not initiated after the fold."
+        ]));
+        var initAll = el("button", { type: "button", class: "cr-wl-saveall",
+          id: "cr-wl-initall" }, ["✓ Initiate all assigned (" + initTargets.length + ")"]);
+        initAll.onclick = function () {
+          if (!window.confirm("Mark " + initTargets.length + " assigned credential"
+              + (initTargets.length === 1 ? "" : "s") + " as Initiated?")) return;
+          initAll.disabled = true;
+          var done = 0, failed = 0, queue = initTargets.slice();
+          function step() {
+            if (!queue.length) {
+              initAll.textContent = failed
+                ? "✓ " + done + " initiated · " + failed + " failed — retry"
+                : "✓ " + done + " initiated";
+              initAll.disabled = !failed;
+              renderToolbar();
+              renderLanes();
+              return;
+            }
+            var batch = queue.splice(0, 8);
+            Promise.all(batch.map(function (tg) {
+              return saveInitiated(tg.key).then(function (resp) {
+                if (resp && resp.ok) {
+                  done++;
+                  if (tg.row) {
+                    tg.row.curator_reviewed_at = new Date().toISOString();
+                    tg.row.curator_reviewed_by = (state.sess && state.sess.email) || "";
+                  }
+                } else { failed++; }
+              }).catch(function () { failed++; });
+            })).then(function () {
+              initAll.textContent = "initiating… " + done + "/" + initTargets.length;
+              step();
+            });
+          }
+          step();
+        };
+        initBar.appendChild(initAll);
+        panel.appendChild(initBar);
+      }
+    }
     if (!shown.length) {
       // every row is assigned but not yet folded — say so instead of
       // rendering a bare table (the queue-clear state above only covers a
@@ -4131,13 +4209,21 @@
   // path is server-side: kb/_preseed_null_issuers.py resolves code-shaped
   // titles against COCI and stages the real course title.) ──
   function buildTitleLookup(r, titleInp) {
-    var wrap = el("div", { class: "cr-ni-lookup" });
-    function ctx() {
+    return buildTitleLookupCtx(function () {
       var t = (titleInp && titleInp.value || "").trim()
         || r.display_title || r.unified_title;
       var cols = niColleges(r).names;
-      return { t: t, college: cols[0] || "" };
-    }
+      var raws = (r.raw_variants || []).slice(0, 3)
+        .map(function (v) { return v.r || v.raw_title || ""; })
+        .filter(Boolean);
+      return { t: t, college: cols[0] || "", raws: raws };
+    }, titleInp);
+  }
+  // Core shared with the Unclassified worklist rows (S110, Sam: "add the What
+  // is this and Suggested functions to the Unclassified view") — the ctx
+  // closure supplies {t, college, raws} so any surface can mount the pair.
+  function buildTitleLookupCtx(ctx, titleInp) {
+    var wrap = el("div", { class: "cr-ni-lookup" });
     var searchBtn = el("button", { type: "button", class: "cr-ni-tsearch",
       title: "Open a web search for this course code at its college — Sam's "
         + "manual lookup, one click (uses the current title input)" },
@@ -4159,9 +4245,7 @@
       var out = el("span", { class: "cr-ni-tsuggest-out" });
       aiBtn.onclick = function () {
         var c = ctx();
-        var raws = (r.raw_variants || []).slice(0, 3)
-          .map(function (v) { return v.r || v.raw_title || ""; })
-          .filter(Boolean);
+        var raws = c.raws || [];
         aiBtn.disabled = true; out.textContent = "asking…";
         var prompt = "A California community college recorded a credit-for-"
           + "prior-learning exhibit under an unhelpful title — usually a bare "
@@ -4495,6 +4579,26 @@
 
   // One worklist row. Saves update the row IN PLACE (no full re-render) so
   // unsaved input typed in other rows isn't wiped.
+  // Raw title minus any course-code text (S110, Sam: "a chip that adds the
+  // raw title minus any course number text to the Exhibit title when it's
+  // blank and there is no green course title recommendation"). Conservative:
+  // strips a trailing UPPERCASE subj+number token (" CARP 019", " - FIRE 101A",
+  // "(ACCT 1A)") up to twice, and a leading code ("CD-005 — …") when real
+  // words follow. If stripping leaves nothing useful, the chip offers the raw
+  // title verbatim — still one click instead of highlight-copy-paste.
+  function stripCourseCode(t) {
+    var s = (t || "").trim();
+    for (var i = 0; i < 2; i++) {
+      var n = s.replace(/[\s\-–—:·,]*\(?[A-Z][A-Z&]{1,4}[- ]?\d{1,4}[A-Za-z]{0,2}\)?\s*$/, "");
+      if (n === s) break;
+      s = n.trim();
+    }
+    var lead = s.replace(/^[A-Za-z]{1,8}[- ]?\d{1,4}[A-Za-z]{0,2}[\s\-–—:·]+(?=\S+\s+\S)/, "");
+    if (lead !== s) s = lead.trim();
+    s = s.replace(/^[\s\-–—:·,]+|[\s\-–—:·,]+$/g, "");
+    return (s && s.length >= 3) ? s : (t || "").trim();
+  }
+
   function renderWorklistRow(it) {
     var raw = it.raw_title;
     var cur = state.unclassAssign[raw] || {};
@@ -4572,6 +4676,38 @@
       });
       titleTd.appendChild(srow);
     }
+    // ⤷ use-raw-title chip (S110) — ONLY when the row is truly bare: no saved
+    // assignment, no 💡 suggestion, no ⚡ pre-seed. One click fills the title
+    // input with the raw title minus any course-code text (review, then Save).
+    if (!cur.title && !(suggs && suggs.length) && !ps) {
+      var rawFill = stripCourseCode(raw);
+      var rawChip = el("button", { type: "button",
+        class: "cr-chip cr-wl-rawfill",
+        title: "No suggestion available for this row — click to fill the "
+          + "Exhibit title with the raw college-entered title"
+          + (rawFill !== raw ? " (course-code text stripped)" : "")
+          + ". Review or edit, then Save." },
+        ["⤷ " + rawFill]);
+      rawChip.disabled = !state.sess;
+      rawChip.onclick = function () {
+        titleInp.value = rawFill;
+        titleInp.dispatchEvent(new Event("input", { bubbles: true }));
+        titleInp.focus();
+      };
+      var rrow = el("div", { class: "cr-wl-suggs" });
+      rrow.appendChild(rawChip);
+      titleTd.appendChild(rrow);
+    }
+    // 🔎 what is this? + ✨ suggest (S110 — the #701/#707 lookup pair, now on
+    // Unclassified rows too; ctx = the typed title (else the raw title) + the
+    // originating college).
+    titleTd.appendChild(buildTitleLookupCtx(function () {
+      return {
+        t: (titleInp.value || "").trim() || raw,
+        college: (it.colleges && it.colleges[0]) || "",
+        raws: [raw],
+      };
+    }, titleInp));
     tr.appendChild(titleTd);
 
     var issInp = el("input", { class: "cr-wl-input cr-wl-iss-input", type: "text",
