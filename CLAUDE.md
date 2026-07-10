@@ -538,7 +538,7 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyIron side-lane — 🎓 CPL Pathways: the Cerritos ironworker course map (2026-07-10)
+### SkyIron side-lane — 🎓 CPL Pathways: the Cerritos ironworker course map (2026-07-10, #732/#733 MERGED)
 
 New top-level **🎓 CPL Pathways tab** for the **California Apprenticeship Council (Aug 13)**
 deck: the full course map of **Cerritos's Field Ironworker Supervisor BS** (approved Feb 2026
@@ -546,10 +546,12 @@ under AB 927 after CSU withdrew; first cohort fall 2027) with CPL check-offs **d
 from the CER dataset** — 15 IWAP courses ✓ (**31.5 units**, the billboard number), the CLEP ◆
 GE options (ESLEI 24-35; 15u eligible → **39% of the 120u degree** with no seat time), the
 Structural-track "articulations in progress" card that flips ✓ as Cerritos adds MAP
-articulations (`no_count` — never double-counts the major), and "The billboard" outreach
-callout. `cpl_pathways.js` + `cpl_pathways_data.js` (static, lazy); suite +`cpl_pathways` 50.
-Model generalizes: one data-file object per future program. Full story + open items (start-term
-confirm, real upper-div course list): `docs/cpl_pathways_lessons.md`.
+articulations (`no_count` — never double-counts the major), and "The billboard" callout.
+**#733 same-day:** status stages (📝 Discussion Draft default / ✓ Active / ⏸ Tabled — big
+banner + hero chip; selector = per-browser view override, data `stage` = published default)
++ **⬇ PDF** print extract. Suite +`cpl_pathways` 69. Sam sent the link to colleagues for
+feedback 2026-07-10. Model generalizes: one data-file object per program. Full story + open
+items + continuation: `docs/cpl_pathways_lessons.md` · `docs/cpl_pathways_handoff.md`.
 
 ### Session 110 — the carpentry close-out, the stale identities-map find, and the COCI Lookup tab (2026-07-09)
 

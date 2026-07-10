@@ -80,7 +80,12 @@ The whole ecosystem, end-to-end:
    a **Sierra Training** tab (team-only: the assistant's improvement loop —
    the 👍/👎 feedback queue from both chat surfaces with a triage status, and
    a gap miner over the chat logs surfacing the questions the knowledge base
-   had no good source for), an **Implementation Funding** tab (the DRAFT
+   had no good source for), a **🎓 CPL Pathways** tab (audience-facing
+   apprenticeship-to-baccalaureate course maps with CPL check-offs derived
+   live from the MAP articulation data — first pathway: Cerritos College's
+   Field Ironworker Supervisor BS, where journeyworkers arrive with 31.5
+   units of CPL; status stages (Discussion Draft / Active / Tabled) + a
+   print-ready ⬇ PDF extract), an **Implementation Funding** tab (the DRAFT
    CPL funding model as a scenario tool: a selectable 2-year window,
    **year-specific funding priorities** (Year 1 / Year 2 filter; every metric
    and description editable), a **noncredit-feeder carve-out** (NOCE / SD
