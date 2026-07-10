@@ -287,3 +287,32 @@ Sam drove this one live (three mid-session messages + the decisive MAP export).
    description shards (56 MB, fetched per expanded row). STATIC artifacts —
    rebuild on a fresh COCI extract; NOT in the daily git add list.
    `tests/coci_lookup.test.js` (20). Suite: **152 files green**.
+
+## 2026-07-10 (Session 110 close) — Trail Crew 🥾 runs: 239 findings adjudicated
+
+The first full method+magic run (28 agents: 15 canon-guided adjudicators + 13
+adversarial merge skeptics, 0 errors). Receipts: `kb/trail_crew_out/2026-07-10/`.
+
+- **105 clean renames (fire-ready)** — roman→numeric levels + style fixes with
+  zero key collisions ("Apparel Construction I → 1", the CLEP/DSST official
+  roman stylings converted per Sam's canon-wins rule).
+- **18 merge candidates** → the ⇒ Merge-confirm lane (Firefighter I/1,
+  Fire Instructor II/2, Welding II/2 — notation twins that survived the
+  skeptics; collisions with existing keys).
+- **7 issuer canon picks** (ICC/AWS/DBC/BVNPT/NCCER/OSHA long-forms) — these
+  UPDATE curator-authored override rows, so per-cluster approval.
+- **7 judgment queue** — the genuinely human calls (bare "AP Physics" — the
+  College Board issues no such exam, a level was stripped; bare "Spanish" vs
+  its leveled siblings; "ESL 108C" all-code title).
+- **102 rejected/keep** — the magic half doing its job: ASME "BPVC Section IX"
+  protected as a code-section designation (never "Section 9"), "OSHA 30"
+  recognized as the credential's own name (not a course code), Sam's 14 parked
+  merge confirms untouched.
+
+Nothing auto-applies — firing each lane is Sam-authorized, via the standing
+bulk-write pattern. Pattern + the CCR/CSR scaling strategy:
+`docs/kb-notes/playbook-trail-crew-method-magic-audit.md`. NEXT (Sam's call,
+2026-07-10): **CSR pass first** ("they are used to mint MIDs… get it right now
+and we have an amazing foundation") — small surface (148 curator-reviewed
+entries), key-generating layer, includes the official-CCN-subject collision
+check that exists nowhere else; then the CCR mountain in leverage-ordered waves.

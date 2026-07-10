@@ -42,6 +42,27 @@ Read `docs/cer_v2_redesign_lessons.md` (S110 section) first.
    sortable/filterable/drag-resizable, desc shards, ⬇ CSV; builder
    `kb/_build_coci_lookup.py`; Reference & Curation nav group). Suite 152.
 
+## ── Trail Crew 🥾 (LANDED after this handoff was first written) ──
+
+Sam commissioned + named the CER canon audit; it ran end-to-end (S110 close):
+`kb/_trail_crew.py` (method) → `kb/_trail_crew_magic.workflow.js` (magic — 15
+adjudicators + 13 merge skeptics) → `kb/_trail_crew_assemble.py` →
+`kb/trail_crew_out/2026-07-10/` (findings/adjudicated/staged_fixes/report).
+Lanes awaiting Sam: 105 clean renames (fire-ready) · 18 merge candidates ·
+7 issuer canon picks · 7 judgment calls. FIRING is Sam-authorized only — the
+standing bulk-write pattern (fresh read, INSERT-only, cohort, receipt); issuer
+canon fixes are guarded UPDATEs of curator-authored rows (per-cluster nod).
+Playbook + scaling strategy: `docs/kb-notes/playbook-trail-crew-method-magic-audit.md`.
+
+**Sam's sequencing call (2026-07-10): CSR pass FIRST** ("they are used to mint
+MIDs… the CSR, CCR, CER constitute the heart of our ability to scale CPL
+statewide then nationwide") — ~148 curator-reviewed entries, the key-generating
+layer; include the official-CCN-subject collision check (`ccn_courses.json`
+carries real ENGL/PSYC/STAT codes — our synthetic SUBJ4s must not
+semantically squat on official subjects). Then the CCR mountain in
+leverage-ordered waves (articulated identities first). SUBJ4 re-keys stage
+evidence only — applies are Rule-7 re-mints.
+
 ## ── Priority queue ──
 
 1. **Watch the carpentry folds land.** The 18 renames + collision folds ride
