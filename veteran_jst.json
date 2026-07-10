@@ -1,18 +1,18 @@
 {
-  "scraped_at": "2026-07-10T15:06:41.646136+00:00",
+  "scraped_at": "2026-07-10T16:09:07.152935+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25671,
+    "jst": 25683,
     "star_colleges": 53
   },
   "computed_star_colleges": 53,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 120,
+      "jst": 121,
       "star": false
     },
     "Merced College": {
@@ -177,7 +177,7 @@
     },
     "Antelope Valley College": {
       "vets": 281,
-      "jst": 266,
+      "jst": 267,
       "star": true
     },
     "Shasta College": {
@@ -212,7 +212,7 @@
     },
     "Ventura College": {
       "vets": 254,
-      "jst": 154,
+      "jst": 164,
       "star": false
     },
     "Cerro Coso Community College": {

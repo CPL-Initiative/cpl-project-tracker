@@ -8,7 +8,7 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified (context, not a priority metric) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 41372,
+  "pe": 41384,
   "p2": 4775,
   "p3": 16310
  },
@@ -29,7 +29,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Antelope Valley": {
-   "pe": 264,
+   "pe": 265,
    "p2": 0,
    "p3": 0
   },
@@ -238,7 +238,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "LA Pierce": {
-   "pe": 1857,
+   "pe": 1858,
    "p2": 1309,
    "p3": 1736
   },
@@ -489,7 +489,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Ventura": {
-   "pe": 154,
+   "pe": 164,
    "p2": 0,
    "p3": 0
   },

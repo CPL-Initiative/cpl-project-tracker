@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-10T15:06:41.461Z",
+  "scraped_at": "2026-07-10T16:09:06.612Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -33,17 +33,17 @@
         },
         {
           "college": "Los Angeles Pierce College",
-          "students": 1862,
-          "units": 28429,
-          "avgUnits": 15.267991407089152,
+          "students": 1863,
+          "units": 28432,
+          "avgUnits": 15.261406333870102,
           "transcriptionRate": 98.7,
-          "avgTranscribed": 15.06981740064447,
+          "avgTranscribed": 15.061728395061728,
           "criteriaMetCount": 5,
-          "militaryStudents": 120,
+          "militaryStudents": 121,
           "nonMilitaryStudents": 1742,
           "apprenticeStudents": 173,
-          "savings": 27613015,
-          "yearImpact": 134568225,
+          "savings": 27618205,
+          "yearImpact": 134586426,
           "transcribedUnits": 28060
         },
         {
@@ -532,21 +532,6 @@
           "transcribedUnits": 0
         },
         {
-          "college": "Ventura College",
-          "students": 154,
-          "units": 785,
-          "avgUnits": 5.097402597402597,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 1,
-          "militaryStudents": 154,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 1358050,
-          "yearImpact": 4762595,
-          "transcribedUnits": 0
-        },
-        {
           "college": "Mission College",
           "students": 146,
           "units": 876,
@@ -893,13 +878,13 @@
         },
         {
           "college": "Antelope Valley College",
-          "students": 266,
+          "students": 267,
           "units": 1075,
-          "avgUnits": 4.041353383458647,
+          "avgUnits": 4.02621722846442,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 266,
+          "militaryStudents": 267,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 1852830,
@@ -1009,6 +994,21 @@
           "apprenticeStudents": 0,
           "savings": 922090,
           "yearImpact": 3233711,
+          "transcribedUnits": 0
+        },
+        {
+          "college": "Ventura College",
+          "students": 164,
+          "units": 785,
+          "avgUnits": 4.786585365853658,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 164,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 1358050,
+          "yearImpact": 4762595,
           "transcribedUnits": 0
         },
         {
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "49,231",
+      "value": "49,243",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "25,671"
+          "value": "25,683"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 49231,
-    "Units": 233132.15000000002,
+    "Students": 49243,
+    "Units": 233135.15000000002,
     "TranscribedUnits": 101500.95,
-    "Savings": 322736125.25,
-    "YearImpact": 1306105914.3999999,
-    "MilitaryStudents": 25671,
+    "Savings": 322741315.25,
+    "YearImpact": 1306124115.3999999,
+    "MilitaryStudents": 25683,
     "NonMilitaryStudents": 23637,
     "AprenticeStudents": 755,
-    "AverageUnits": 4.735474599337816,
-    "TranscribedAverage": 2.061728382523207
+    "AverageUnits": 4.734381536462036,
+    "TranscribedAverage": 2.0612259610503014
   }
 }

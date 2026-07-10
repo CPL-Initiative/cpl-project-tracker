@@ -1461,11 +1461,11 @@
       "cte_unknown_n": 2,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-05-23T17:28:50.721584+00:00",
-      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-10T15:58:36.55856+00:00",
+      "reviewed_by": "csr-doctrine-s111@bot",
       "validated_at": null,
       "validated_by": null,
-      "_notes": null
+      "_notes": "CS4 divergence recorded (Sam, 2026-07-10): official CCN prefix CDEV has nominal adoption (2 official rows); field is fragmented (ECE/CD/CDEV/CHLD, no CS1-valid modal); discipline name supports ECED; re-mint would touch 1,349 M-IDs. Keep ECED; revisit if CCN CDEV adoption grows. Ref: kb/csr_out/2026-07-10 CSR0013."
     },
     "Commercial Art": {
       "canonical_subj4": "ARTD",
@@ -1555,11 +1555,11 @@
       "cte_unknown_n": 4,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-05-23T17:42:21.195087+00:00",
-      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-10T15:58:36.55856+00:00",
+      "reviewed_by": "csr-doctrine-s111@bot",
       "validated_at": null,
       "validated_by": null,
-      "_notes": null
+      "_notes": "CS4 divergence recorded (Sam, 2026-07-10): anchor-official prefix CMUS has zero COCI adoption; MUSC is the established canonical. Revisit if CCN CMUS lands. Ref: CSR0013 sibling."
     },
     "Communication Studies": {
       "canonical_subj4": "COMM",
@@ -1698,11 +1698,11 @@
       "cte_unknown_n": 49,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-05-23T17:25:14.419498+00:00",
-      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-10T15:58:36.55856+00:00",
+      "reviewed_by": "csr-doctrine-s111@bot",
       "validated_at": null,
       "validated_by": null,
-      "_notes": null
+      "_notes": "CS4 divergence recorded (Sam, 2026-07-10): anchor-official prefix ITIS has zero COCI adoption; CSIS is the established canonical. Revisit if CCN ITIS lands. Ref: CSR0013 sibling."
     },
     "Computer Science": {
       "canonical_subj4": "CISC",
@@ -4588,11 +4588,11 @@
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-05-23T17:43:48.932113+00:00",
-      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-10T15:58:36.55856+00:00",
+      "reviewed_by": "csr-doctrine-s111@bot",
       "validated_at": null,
       "validated_by": null,
-      "_notes": null
+      "_notes": "CS4 divergence recorded (Sam, 2026-07-10): official prefix HIT is 3 letters — CS1-invalid as a canonical; HEIT is the CS1-valid canonical. Permanent divergence unless CCN publishes a 4-letter form. Ref: CSR0013 sibling."
     },
     "Heavy Duty Equipment Mechanics": {
       "canonical_subj4": "HMDT",
@@ -5033,11 +5033,11 @@
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-05-23T17:47:08.814394+00:00",
-      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-10T15:58:36.55856+00:00",
+      "reviewed_by": "csr-doctrine-s111@bot",
       "validated_at": null,
       "validated_by": null,
-      "_notes": null
+      "_notes": "CS5 note (2026-07-10): modal LINC (0.55) diverges deliberately — EDTC is the forward-looking code for the discipline. Ref: CSR0018 bless."
     },
     "Interdisciplinary Studies": {
       "canonical_subj4": "IDST",
@@ -6544,11 +6544,11 @@
       "cte_unknown_n": 32,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-05-23T17:27:17.864983+00:00",
-      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-10T15:58:36.55856+00:00",
+      "reviewed_by": "csr-doctrine-s111@bot",
       "validated_at": null,
       "validated_by": null,
-      "_notes": null
+      "_notes": "CS4 divergence recorded (Sam, 2026-07-10): anchor-official prefix BSOT has zero COCI adoption; OTEC is the established canonical. Revisit if CCN BSOT lands. Ref: CSR0013 sibling."
     },
     "Older Adults: Noncredit": {
       "canonical_subj4": "OLAD",
@@ -7271,11 +7271,11 @@
       "cte_unknown_n": 1,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-05-23T17:37:29.151508+00:00",
-      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-10T16:05:11.748313+00:00",
+      "reviewed_by": "csr-doctrine-s111@bot",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "CS4 convergence applied (Sam, 2026-07-10): POSC -> POLS. Official CCN prefix POLS (144 official rows) + field modal; no rationale was recorded for POSC. Re-mint: kb/_pols_remint.py; receipt kb/pols_remint_out/. Ref: kb/csr_out/2026-07-10 CSR0006."
+      "_notes": "CS4 convergence applied (Sam, 2026-07-10): POSC -> POLS. Official CCN prefix POLS (144 official rows) + field modal; no rationale was on record for POSC. Re-mint receipt: kb/pols_remint_out/2026-07-10/ (293 ids: 86 M + 197 singletons + 10 Z; 3 stale pre-fold identity ghosts healed). Ref: kb/csr_out/2026-07-10 CSR0006."
     },
     "Psychiatric Technician": {
       "canonical_subj4": "NURP",
@@ -8208,11 +8208,11 @@
       "cte_unknown_n": 214,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-05-23T17:43:03.388823+00:00",
-      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-10T15:58:36.55856+00:00",
+      "reviewed_by": "csr-doctrine-s111@bot",
       "validated_at": null,
       "validated_by": null,
-      "_notes": null
+      "_notes": "CS5 note (2026-07-10): data modal SOC fails CS1 (3 letters); SOCI is the official CCN prefix and the deliberate pick. Ref: CSR0012."
     },
     "Speech Language Pathology": {
       "canonical_subj4": "SLPA",
@@ -8697,5 +8697,7 @@
       "validated_by": null,
       "_notes": null
     }
-  }
+  },
+  "_synced_at": "2026-07-10T16:09:22Z",
+  "_synced_from": "Supabase project (kb_curation, course_id like '_CANON_SUBJ4::%')"
 }
