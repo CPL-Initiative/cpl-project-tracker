@@ -1,0 +1,186 @@
+id,rule,item,evidence,suggestion,needs_judgment,group
+CSR0001,cs4_aligned,English,"canonical ENGL == official CCN prefix (451 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0002,cs4_aligned,Economics,"canonical ECON == official CCN prefix (206 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0003,cs4_aligned,Communication Studies,"canonical COMM == official CCN prefix (192 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0004,cs4_aligned,History,"canonical HIST == official CCN prefix (189 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0005,cs4_aligned,Psychology,"canonical PSYC == official CCN prefix (150 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0006,cs4_missed_alignment,Political Science,official CCN prefix POLS (144 rows) unused; twin discipline uses POSC,curator call: converge POSC → POLS (Rule-7 re-mint) or record divergence reason,True,ccn
+CSR0007,cs4_aligned,Mathematics,"canonical MATH == official CCN prefix (97 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0008,cs4_aligned,Anthropology,"canonical ANTH == official CCN prefix (50 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0009,cs4_aligned,Art History,"canonical ARTH == official CCN prefix (48 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0010,cs4_aligned,Biological Sciences,"canonical BIOL == official CCN prefix (37 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0011,cs4_aligned,Astronomy,"canonical ASTR == official CCN prefix (33 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0012,cs4_aligned,Sociology,"canonical SOCI == official CCN prefix (7 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0013,cs4_missed_alignment,Child Development/Early Childhood Education,official CCN prefix CDEV (2 rows) unused; twin discipline uses ECED,curator call: converge ECED → CDEV (Rule-7 re-mint) or record divergence reason,True,ccn
+CSR0014,cs4_missed_alignment,Office Technologies,official CCN prefix BSOT (0 rows) unused; twin discipline uses OTEC,curator call: converge OTEC → BSOT (Rule-7 re-mint) or record divergence reason,True,ccn
+CSR0015,cs4_missed_alignment,Commercial Music,official CCN prefix CMUS (0 rows) unused; twin discipline uses MUSC,curator call: converge MUSC → CMUS (Rule-7 re-mint) or record divergence reason,True,ccn
+CSR0016,cs4_aligned,Education,"canonical EDUC == official CCN prefix (0 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0017,cs4_aligned,Engineering,"canonical ENGR == official CCN prefix (0 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0018,cs4_aligned,Geography,"canonical GEOG == official CCN prefix (0 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0019,cs4_missed_alignment,Health Information Technology,official CCN prefix HIT (0 rows) unused; twin discipline uses HEIT,curator call: converge HEIT → HIT (Rule-7 re-mint) or record divergence reason,True,ccn
+CSR0020,cs4_missed_alignment,Computer Information Systems,official CCN prefix ITIS (0 rows) unused; twin discipline uses CSIS,curator call: converge CSIS → ITIS (Rule-7 re-mint) or record divergence reason,True,ccn
+CSR0021,cs4_aligned,Journalism,"canonical JOUR == official CCN prefix (0 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0022,cs5_modal_diverge,Instructional Design/Technology,"modal LINC (share 0.55) but canonical EDTC, no _notes",confirm choice + record a note,True,
+CSR0023,cs6_weak_mnemonic,Artificial Intelligence,canonical CSAI not derivable from name and absent from 29 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0024,cs6_weak_mnemonic,Building Codes and Regulations,canonical CNSR not derivable from name and absent from 9 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0025,cs6_weak_mnemonic,Cabinet Making,canonical CNSC not derivable from name and absent from 10 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0026,cs6_weak_mnemonic,Diesel Mechanics,canonical AUTD not derivable from name and absent from 37 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0027,cs6_weak_mnemonic,Electromechanical Technology,canonical ELMT not derivable from name and absent from 1 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0028,cs6_weak_mnemonic,Environmental Technologies,canonical ESCI not derivable from name and absent from 40 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0029,cs6_weak_mnemonic,Film and Media Studies,canonical FIMS not derivable from name and absent from 40 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0030,cs6_weak_mnemonic,Furniture Making,canonical CSTF not derivable from name and absent from 3 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0031,cs6_weak_mnemonic,Graphic Arts,canonical GRAF not derivable from name and absent from 40 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0032,cs6_weak_mnemonic,Licensed Vocational Nursing,canonical NRSV not derivable from name and absent from 21 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0033,cs6_weak_mnemonic,Masonry,canonical CNMA not derivable from name and absent from 6 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0034,cs6_weak_mnemonic,Media Production,canonical FIMP not derivable from name and absent from 31 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0035,cs6_weak_mnemonic,Native American/American Indian Studies,canonical ETHA not derivable from name and absent from 8 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0036,cs6_weak_mnemonic,Psychiatric Technician,canonical NURP not derivable from name and absent from 10 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0037,cs7_unreviewed,Anthropology,no reviewed_by stamp,,True,
+CSR0038,cs7_unreviewed,Astronomy,no reviewed_by stamp,,True,
+CSR0039,cs7_unreviewed,Chemistry,no reviewed_by stamp,,True,
+CSR0040,cs7_unreviewed,Commercial Art,no reviewed_by stamp,,True,
+CSR0041,cs7_unreviewed,Communication Studies,no reviewed_by stamp,,True,
+CSR0042,cs7_unreviewed,Cosmetology,no reviewed_by stamp,,True,
+CSR0043,cs7_unreviewed,Court Reporting,no reviewed_by stamp,,True,
+CSR0044,cs7_unreviewed,Digital Fabrication Technician,no reviewed_by stamp,,True,
+CSR0045,cs7_unreviewed,Disabled Student Programs and,no reviewed_by stamp,,True,
+CSR0046,cs7_unreviewed,Earth Science,no reviewed_by stamp,,True,
+CSR0047,cs7_unreviewed,Economics,no reviewed_by stamp,,True,
+CSR0048,cs7_unreviewed,Electronic Technology,no reviewed_by stamp,,True,
+CSR0049,cs7_unreviewed,Engineering,no reviewed_by stamp,,True,
+CSR0050,cs7_unreviewed,English,no reviewed_by stamp,,True,
+CSR0051,cs7_unreviewed,Equine Science,no reviewed_by stamp,,True,
+CSR0052,cs7_unreviewed,Geography,no reviewed_by stamp,,True,
+CSR0053,cs7_unreviewed,Heavy Duty Equipment Mechanics,no reviewed_by stamp,,True,
+CSR0054,cs7_unreviewed,History,no reviewed_by stamp,,True,
+CSR0055,cs7_unreviewed,Mathematics,no reviewed_by stamp,,True,
+CSR0056,cs7_unreviewed,Parent Education: Noncredit,no reviewed_by stamp,,True,
+CSR0057,cs7_unreviewed,Philosophy,no reviewed_by stamp,,True,
+CSR0058,cs7_unreviewed,Physics/Astronomy,no reviewed_by stamp,,True,
+CSR0059,cs7_unreviewed,Speech Language Pathology,no reviewed_by stamp,,True,
+CSR0060,cs7_unreviewed,Upholstering,no reviewed_by stamp,,True,
+CSR0061,cs8_seeder_bypass,kb/_seed_coci_minted_mids.py,Rule 7 says new mints consult discipline_canonical_subj4.json; the seeder numbers per MODAL subject via reference/subject_discipline_map.json and never references the canonical registry — new mints can re-introduce folded variants,"wire the seeder: after discipline resolution, key new M-IDs under the canonical SUBJ4",True,
+CSR0062,cs9_anchor_dead_format,common_courses.json,221 anchor entries keyed in the dead pre-remint 'M-ID SUBJ NNN' format,promote-time re-key plan (Rule-7); anchor stays firewalled until then,True,anchor
+CSR0063,cs9_anchor_subj_diverge,M-ID ACCT 100,anchor subject ACCT vs CSR canonical BUSI,fold to BUSI at promote-time,True,anchor
+CSR0064,cs9_anchor_subj_diverge,M-ID ACCT 102,anchor subject ACCT vs CSR canonical BUSI,fold to BUSI at promote-time,True,anchor
+CSR0065,cs9_anchor_subj_diverge,M-ID AJ 100,anchor subject AJ vs CSR canonical CRIM,fold to CRIM at promote-time,True,anchor
+CSR0066,cs9_anchor_subj_diverge,M-ID AJ 102,anchor subject AJ vs CSR canonical CRIM,fold to CRIM at promote-time,True,anchor
+CSR0067,cs9_anchor_subj_diverge,M-ID AJ 104,anchor subject AJ vs CSR canonical CRIM,fold to CRIM at promote-time,True,anchor
+CSR0068,cs9_anchor_subj_diverge,M-ID ARAB 100,anchor subject ARAB vs CSR canonical FLNG,fold to FLNG at promote-time,True,anchor
+CSR0069,cs9_anchor_subj_diverge,M-ID ARAB 102,anchor subject ARAB vs CSR canonical FLNG,fold to FLNG at promote-time,True,anchor
+CSR0070,cs9_anchor_subj_diverge,M-ID ART 100,anchor subject ART vs CSR canonical ARTS,fold to ARTS at promote-time,True,anchor
+CSR0071,cs9_anchor_subj_diverge,M-ID ART 102,anchor subject ART vs CSR canonical ARTS,fold to ARTS at promote-time,True,anchor
+CSR0072,cs9_anchor_subj_diverge,M-ID ASL 100,anchor subject ASL vs CSR canonical SLNA,fold to SLNA at promote-time,True,anchor
+CSR0073,cs9_anchor_subj_diverge,M-ID ASL 102,anchor subject ASL vs CSR canonical SLNA,fold to SLNA at promote-time,True,anchor
+CSR0074,cs9_anchor_subj_diverge,M-ID ASL 104,anchor subject ASL vs CSR canonical SLNA,fold to SLNA at promote-time,True,anchor
+CSR0075,cs9_anchor_subj_diverge,M-ID ASL 106,anchor subject ASL vs CSR canonical SLNA,fold to SLNA at promote-time,True,anchor
+CSR0076,cs9_anchor_subj_diverge,M-ID BCIT 100,anchor subject BCIT vs CSR canonical CNSR,fold to CNSR at promote-time,True,anchor
+CSR0077,cs9_anchor_subj_diverge,M-ID BCIT 102,anchor subject BCIT vs CSR canonical CNSR,fold to CNSR at promote-time,True,anchor
+CSR0078,cs9_anchor_subj_diverge,M-ID BCIT 104,anchor subject BCIT vs CSR canonical CNSR,fold to CNSR at promote-time,True,anchor
+CSR0079,cs9_anchor_subj_diverge,M-ID BCIT 106,anchor subject BCIT vs CSR canonical CNSR,fold to CNSR at promote-time,True,anchor
+CSR0080,cs9_anchor_subj_diverge,M-ID BCIT 108,anchor subject BCIT vs CSR canonical CNSR,fold to CNSR at promote-time,True,anchor
+CSR0081,cs9_anchor_subj_diverge,M-ID BCIT 110,anchor subject BCIT vs CSR canonical CNSR,fold to CNSR at promote-time,True,anchor
+CSR0082,cs9_anchor_subj_diverge,M-ID BCIT 112,anchor subject BCIT vs CSR canonical CNSR,fold to CNSR at promote-time,True,anchor
+CSR0083,cs9_anchor_subj_diverge,M-ID BUS 100,anchor subject BUS vs CSR canonical BUSI,fold to BUSI at promote-time,True,anchor
+CSR0084,cs9_anchor_subj_diverge,M-ID CAOT 100,anchor subject CAOT vs CSR canonical OTEC,fold to OTEC at promote-time,True,anchor
+CSR0085,cs9_anchor_subj_diverge,M-ID CAOT 102,anchor subject CAOT vs CSR canonical OTEC,fold to OTEC at promote-time,True,anchor
+CSR0086,cs9_anchor_subj_diverge,M-ID CAOT 104,anchor subject CAOT vs CSR canonical OTEC,fold to OTEC at promote-time,True,anchor
+CSR0087,cs9_anchor_subj_diverge,M-ID CAOT 106,anchor subject CAOT vs CSR canonical OTEC,fold to OTEC at promote-time,True,anchor
+CSR0088,cs9_anchor_subj_diverge,M-ID CAOT 108,anchor subject CAOT vs CSR canonical OTEC,fold to OTEC at promote-time,True,anchor
+CSR0089,cs9_anchor_subj_diverge,M-ID CHIN 100,anchor subject CHIN vs CSR canonical FLNG,fold to FLNG at promote-time,True,anchor
+CSR0090,cs9_anchor_subj_diverge,M-ID CHIN 102,anchor subject CHIN vs CSR canonical FLNG,fold to FLNG at promote-time,True,anchor
+CSR0091,cs9_anchor_subj_diverge,M-ID CIS 100,anchor subject CIS vs CSR canonical CSIS,fold to CSIS at promote-time,True,anchor
+CSR0092,cs9_anchor_subj_diverge,M-ID CIS 102,anchor subject CIS vs CSR canonical CSIS,fold to CSIS at promote-time,True,anchor
+CSR0093,cs9_anchor_subj_diverge,M-ID CIS 104,anchor subject CIS vs CSR canonical CSIS,fold to CSIS at promote-time,True,anchor
+CSR0094,cs9_anchor_subj_diverge,M-ID CIS 106,anchor subject CIS vs CSR canonical CSIS,fold to CSIS at promote-time,True,anchor
+CSR0095,cs9_anchor_subj_diverge,M-ID CIS 108,anchor subject CIS vs CSR canonical CSIS,fold to CSIS at promote-time,True,anchor
+CSR0096,cs9_anchor_subj_diverge,M-ID CIS 110,anchor subject CIS vs CSR canonical CSIS,fold to CSIS at promote-time,True,anchor
+CSR0097,cs9_anchor_subj_diverge,M-ID CIS 112,anchor subject CIS vs CSR canonical CSIS,fold to CSIS at promote-time,True,anchor
+CSR0098,cs9_anchor_subj_diverge,M-ID DRFT 100,anchor subject DRFT vs CSR canonical DRAF,fold to DRAF at promote-time,True,anchor
+CSR0099,cs9_anchor_subj_diverge,M-ID DRFT 102,anchor subject DRFT vs CSR canonical DRAF,fold to DRAF at promote-time,True,anchor
+CSR0100,cs9_anchor_subj_diverge,M-ID DRFT 104,anchor subject DRFT vs CSR canonical DRAF,fold to DRAF at promote-time,True,anchor
+CSR0101,cs9_anchor_subj_diverge,M-ID DRFT 106,anchor subject DRFT vs CSR canonical DRAF,fold to DRAF at promote-time,True,anchor
+CSR0102,cs9_anchor_subj_diverge,M-ID DRFT 108,anchor subject DRFT vs CSR canonical DRAF,fold to DRAF at promote-time,True,anchor
+CSR0103,cs9_anchor_subj_diverge,M-ID DSL 100,anchor subject DSL vs CSR canonical AUTD,fold to AUTD at promote-time,True,anchor
+CSR0104,cs9_anchor_subj_diverge,M-ID DSL 102,anchor subject DSL vs CSR canonical AUTD,fold to AUTD at promote-time,True,anchor
+CSR0105,cs9_anchor_subj_diverge,M-ID DSL 104,anchor subject DSL vs CSR canonical AUTD,fold to AUTD at promote-time,True,anchor
+CSR0106,cs9_anchor_subj_diverge,M-ID ECE 100,anchor subject ECE vs CSR canonical ECED,fold to ECED at promote-time,True,anchor
+CSR0107,cs9_anchor_subj_diverge,M-ID ECE 102,anchor subject ECE vs CSR canonical ECED,fold to ECED at promote-time,True,anchor
+CSR0108,cs9_anchor_subj_diverge,M-ID ECE 104,anchor subject ECE vs CSR canonical ECED,fold to ECED at promote-time,True,anchor
+CSR0109,cs9_anchor_subj_diverge,M-ID ECE 106,anchor subject ECE vs CSR canonical ECED,fold to ECED at promote-time,True,anchor
+CSR0110,cs9_anchor_subj_diverge,M-ID ELEC 100,anchor subject ELEC vs CSR canonical ELCT,fold to ELCT at promote-time,True,anchor
+CSR0111,cs9_anchor_subj_diverge,M-ID ELEC 102,anchor subject ELEC vs CSR canonical ELCT,fold to ELCT at promote-time,True,anchor
+CSR0112,cs9_anchor_subj_diverge,M-ID ELEC 104,anchor subject ELEC vs CSR canonical ELCT,fold to ELCT at promote-time,True,anchor
+CSR0113,cs9_anchor_subj_diverge,M-ID FREN 100,anchor subject FREN vs CSR canonical FLNG,fold to FLNG at promote-time,True,anchor
+CSR0114,cs9_anchor_subj_diverge,M-ID FREN 102,anchor subject FREN vs CSR canonical FLNG,fold to FLNG at promote-time,True,anchor
+CSR0115,cs9_anchor_subj_diverge,M-ID FTVE 100,anchor subject FTVE vs CSR canonical FIMP,fold to FIMP at promote-time,True,anchor
+CSR0116,cs9_anchor_subj_diverge,M-ID FTVE 102,anchor subject FTVE vs CSR canonical FIMP,fold to FIMP at promote-time,True,anchor
+CSR0117,cs9_anchor_subj_diverge,M-ID FTVE 104,anchor subject FTVE vs CSR canonical FIMP,fold to FIMP at promote-time,True,anchor
+CSR0118,cs9_anchor_subj_diverge,M-ID GERM 100,anchor subject GERM vs CSR canonical FLNG,fold to FLNG at promote-time,True,anchor
+CSR0119,cs9_anchor_subj_diverge,M-ID GERM 102,anchor subject GERM vs CSR canonical FLNG,fold to FLNG at promote-time,True,anchor
+CSR0120,cs9_anchor_subj_diverge,M-ID GRA 100,anchor subject GRA vs CSR canonical GRAF,fold to GRAF at promote-time,True,anchor
+CSR0121,cs9_anchor_subj_diverge,M-ID GRA 102,anchor subject GRA vs CSR canonical GRAF,fold to GRAF at promote-time,True,anchor
+CSR0122,cs9_anchor_subj_diverge,M-ID GRA 104,anchor subject GRA vs CSR canonical GRAF,fold to GRAF at promote-time,True,anchor
+CSR0123,cs9_anchor_subj_diverge,M-ID GRA 106,anchor subject GRA vs CSR canonical GRAF,fold to GRAF at promote-time,True,anchor
+CSR0124,cs9_anchor_subj_diverge,M-ID GRA 108,anchor subject GRA vs CSR canonical GRAF,fold to GRAF at promote-time,True,anchor
+CSR0125,cs9_anchor_subj_diverge,M-ID HEBR 100,anchor subject HEBR vs CSR canonical FLNG,fold to FLNG at promote-time,True,anchor
+CSR0126,cs9_anchor_subj_diverge,M-ID HSER 100,anchor subject HSER vs CSR canonical COUN,fold to COUN at promote-time,True,anchor
+CSR0127,cs9_anchor_subj_diverge,M-ID HSER 102,anchor subject HSER vs CSR canonical COUN,fold to COUN at promote-time,True,anchor
+CSR0128,cs9_anchor_subj_diverge,M-ID HSER 104,anchor subject HSER vs CSR canonical COUN,fold to COUN at promote-time,True,anchor
+CSR0129,cs9_anchor_subj_diverge,M-ID HSER 106,anchor subject HSER vs CSR canonical COUN,fold to COUN at promote-time,True,anchor
+CSR0130,cs9_anchor_subj_diverge,M-ID HSER 108,anchor subject HSER vs CSR canonical COUN,fold to COUN at promote-time,True,anchor
+CSR0131,cs9_anchor_subj_diverge,M-ID ITAL 100,anchor subject ITAL vs CSR canonical FLNG,fold to FLNG at promote-time,True,anchor
+CSR0132,cs9_anchor_subj_diverge,M-ID ITAL 102,anchor subject ITAL vs CSR canonical FLNG,fold to FLNG at promote-time,True,anchor
+CSR0133,cs9_anchor_subj_diverge,M-ID JPN 100,anchor subject JPN vs CSR canonical FLNG,fold to FLNG at promote-time,True,anchor
+CSR0134,cs9_anchor_subj_diverge,M-ID JPN 102,anchor subject JPN vs CSR canonical FLNG,fold to FLNG at promote-time,True,anchor
+CSR0135,cs9_anchor_subj_diverge,M-ID KOR 100,anchor subject KOR vs CSR canonical FLNG,fold to FLNG at promote-time,True,anchor
+CSR0136,cs9_anchor_subj_diverge,M-ID KOR 102,anchor subject KOR vs CSR canonical FLNG,fold to FLNG at promote-time,True,anchor
+CSR0137,cs9_anchor_subj_diverge,M-ID LRNS 100,anchor subject LRNS vs CSR canonical LSKL,fold to LSKL at promote-time,True,anchor
+CSR0138,cs9_anchor_subj_diverge,M-ID MEDA 100,anchor subject MEDA vs CSR canonical BIOL,fold to BIOL at promote-time,True,anchor
+CSR0139,cs9_anchor_subj_diverge,M-ID MFG 100,anchor subject MFG vs CSR canonical MANU,fold to MANU at promote-time,True,anchor
+CSR0140,cs9_anchor_subj_diverge,M-ID MFG 102,anchor subject MFG vs CSR canonical MANU,fold to MANU at promote-time,True,anchor
+CSR0141,cs9_anchor_subj_diverge,M-ID MFG 104,anchor subject MFG vs CSR canonical MANU,fold to MANU at promote-time,True,anchor
+CSR0142,cs9_anchor_subj_diverge,M-ID MMED 100,anchor subject MMED vs CSR canonical MULT,fold to MULT at promote-time,True,anchor
+CSR0143,cs9_anchor_subj_diverge,M-ID MMED 102,anchor subject MMED vs CSR canonical MULT,fold to MULT at promote-time,True,anchor
+CSR0144,cs9_anchor_subj_diverge,M-ID MUS 100,anchor subject MUS vs CSR canonical MUSI,fold to MUSI at promote-time,True,anchor
+CSR0145,cs9_anchor_subj_diverge,M-ID MUS 102,anchor subject MUS vs CSR canonical MUSI,fold to MUSI at promote-time,True,anchor
+CSR0146,cs9_anchor_subj_diverge,M-ID MUS 104,anchor subject MUS vs CSR canonical MUSI,fold to MUSI at promote-time,True,anchor
+CSR0147,cs9_anchor_subj_diverge,M-ID MUS 106,anchor subject MUS vs CSR canonical MUSI,fold to MUSI at promote-time,True,anchor
+CSR0148,cs9_anchor_subj_diverge,M-ID MUS 108,anchor subject MUS vs CSR canonical MUSI,fold to MUSI at promote-time,True,anchor
+CSR0149,cs9_anchor_subj_diverge,M-ID MUS 110,anchor subject MUS vs CSR canonical MUSI,fold to MUSI at promote-time,True,anchor
+CSR0150,cs9_anchor_subj_diverge,M-ID MUS 112,anchor subject MUS vs CSR canonical MUSI,fold to MUSI at promote-time,True,anchor
+CSR0151,cs9_anchor_subj_diverge,M-ID MUS 114,anchor subject MUS vs CSR canonical MUSI,fold to MUSI at promote-time,True,anchor
+CSR0152,cs9_anchor_subj_diverge,M-ID MUS 116,anchor subject MUS vs CSR canonical MUSI,fold to MUSI at promote-time,True,anchor
+CSR0153,cs9_anchor_subj_diverge,M-ID MUS 118,anchor subject MUS vs CSR canonical MUSI,fold to MUSI at promote-time,True,anchor
+CSR0154,cs9_anchor_subj_diverge,M-ID MUS 120,anchor subject MUS vs CSR canonical MUSI,fold to MUSI at promote-time,True,anchor
+CSR0155,cs9_anchor_subj_diverge,M-ID MUS 122,anchor subject MUS vs CSR canonical MUSI,fold to MUSI at promote-time,True,anchor
+CSR0156,cs9_anchor_subj_diverge,M-ID MUS 124,anchor subject MUS vs CSR canonical MUSI,fold to MUSI at promote-time,True,anchor
+CSR0157,cs9_anchor_subj_diverge,M-ID MUS 126,anchor subject MUS vs CSR canonical MUSI,fold to MUSI at promote-time,True,anchor
+CSR0158,cs9_anchor_subj_diverge,M-ID MUS 128,anchor subject MUS vs CSR canonical MUSI,fold to MUSI at promote-time,True,anchor
+CSR0159,cs9_anchor_subj_diverge,M-ID MUS 130,anchor subject MUS vs CSR canonical MUSI,fold to MUSI at promote-time,True,anchor
+CSR0160,cs9_anchor_subj_diverge,M-ID MUS 132,anchor subject MUS vs CSR canonical MUSI,fold to MUSI at promote-time,True,anchor
+CSR0161,cs9_anchor_subj_diverge,M-ID MUS 134,anchor subject MUS vs CSR canonical MUSI,fold to MUSI at promote-time,True,anchor
+CSR0162,cs9_anchor_subj_diverge,M-ID MUS 136,anchor subject MUS vs CSR canonical MUSI,fold to MUSI at promote-time,True,anchor
+CSR0163,cs9_anchor_subj_diverge,M-ID MUS 138,anchor subject MUS vs CSR canonical MUSI,fold to MUSI at promote-time,True,anchor
+CSR0164,cs9_anchor_subj_diverge,M-ID MUS 140,anchor subject MUS vs CSR canonical MUSI,fold to MUSI at promote-time,True,anchor
+CSR0165,cs9_anchor_subj_diverge,M-ID NURS 100,anchor subject NURS vs CSR canonical NRSR,fold to NRSR at promote-time,True,anchor
+CSR0166,cs9_anchor_subj_diverge,M-ID NURS 102,anchor subject NURS vs CSR canonical NRSR,fold to NRSR at promote-time,True,anchor
+CSR0167,cs9_anchor_subj_diverge,M-ID NURS 104,anchor subject NURS vs CSR canonical NRSR,fold to NRSR at promote-time,True,anchor
+CSR0168,cs9_anchor_subj_diverge,M-ID NURS 106,anchor subject NURS vs CSR canonical NRSR,fold to NRSR at promote-time,True,anchor
+CSR0169,cs9_anchor_subj_diverge,M-ID NURS 108,anchor subject NURS vs CSR canonical NRSR,fold to NRSR at promote-time,True,anchor
+CSR0170,cs9_anchor_subj_diverge,M-ID NURS 110,anchor subject NURS vs CSR canonical NRSR,fold to NRSR at promote-time,True,anchor
+CSR0171,cs9_anchor_subj_diverge,M-ID NURS 112,anchor subject NURS vs CSR canonical NRSR,fold to NRSR at promote-time,True,anchor
+CSR0172,cs9_anchor_subj_diverge,M-ID NUTR 100,anchor subject NUTR vs CSR canonical FDNT,fold to FDNT at promote-time,True,anchor
+CSR0173,cs9_anchor_subj_diverge,M-ID NUTR 102,anchor subject NUTR vs CSR canonical FDNT,fold to FDNT at promote-time,True,anchor
+CSR0174,cs9_anchor_subj_diverge,M-ID NUTR 104,anchor subject NUTR vs CSR canonical FDNT,fold to FDNT at promote-time,True,anchor
+CSR0175,cs9_anchor_subj_diverge,M-ID PARA 100,anchor subject PARA vs CSR canonical PLGL,fold to PLGL at promote-time,True,anchor
+CSR0176,cs9_anchor_subj_diverge,M-ID PARA 102,anchor subject PARA vs CSR canonical PLGL,fold to PLGL at promote-time,True,anchor
+CSR0177,cs9_anchor_subj_diverge,M-ID PERS 100,anchor subject PERS vs CSR canonical FLNG,fold to FLNG at promote-time,True,anchor
+CSR0178,cs9_anchor_subj_diverge,M-ID PERS 102,anchor subject PERS vs CSR canonical FLNG,fold to FLNG at promote-time,True,anchor
+CSR0179,cs9_anchor_subj_diverge,M-ID PORT 100,anchor subject PORT vs CSR canonical FLNG,fold to FLNG at promote-time,True,anchor
+CSR0180,cs9_anchor_subj_diverge,M-ID SPAN 100,anchor subject SPAN vs CSR canonical FLNG,fold to FLNG at promote-time,True,anchor
+CSR0181,cs9_anchor_subj_diverge,M-ID SPAN 102,anchor subject SPAN vs CSR canonical FLNG,fold to FLNG at promote-time,True,anchor
+CSR0182,cs9_anchor_subj_diverge,M-ID WEB 100,anchor subject WEB vs CSR canonical CSIS,fold to CSIS at promote-time,True,anchor
+CSR0183,cs9_anchor_subj_diverge,M-ID WEB 102,anchor subject WEB vs CSR canonical CSIS,fold to CSIS at promote-time,True,anchor
+CSR0184,cs9_anchor_subj_diverge,M-ID WEB 104,anchor subject WEB vs CSR canonical CSIS,fold to CSIS at promote-time,True,anchor
+CSR0185,cs9_anchor_subj_diverge,M-ID WEB 106,anchor subject WEB vs CSR canonical CSIS,fold to CSIS at promote-time,True,anchor

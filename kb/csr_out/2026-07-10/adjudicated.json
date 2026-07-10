@@ -1,0 +1,1097 @@
+{
+ "_adjudicated_at": "2026-07-10",
+ "_by": "csr-trail-magic workflow (6 adjudicators + 5 skeptics)",
+ "verdicts": [
+  {
+   "id": "CSR0001",
+   "verdict": "bless",
+   "reason": "ENGL is the official CCN prefix (451 rows, highest adoption statewide), the semantic twin, and the dominant data modal (0.651). Alignment doctrine: CS3 reserves an official prefix for its semantic twin and CS4 prefers the twin actually use it — when discipline, official prefix, and field usage all agree, the key is maximally legible statewide and the M-ID namespace matches what AB 1111 CCN colleges already print in catalogs. This is the steady state the CSR exists to reach; bless and record as the alignment exemplar.",
+   "confidence": 0.98,
+   "batch": "ccn",
+   "finding": {
+    "id": "CSR0001",
+    "rule": "cs4_aligned",
+    "item": "English",
+    "evidence": "canonical ENGL == official CCN prefix (451 official rows) — semantic twin, ALIGNED",
+    "suggestion": "bless as aligned; record alignment doctrine",
+    "needs_judgment": true,
+    "group": "ccn"
+   }
+  },
+  {
+   "id": "CSR0002",
+   "verdict": "bless",
+   "reason": "ECON == official CCN prefix (206 rows) == data modal (0.697). Semantic twin fully aligned per CS3/CS4 doctrine articulated in CSR0001.",
+   "confidence": 0.98,
+   "batch": "ccn",
+   "finding": {
+    "id": "CSR0002",
+    "rule": "cs4_aligned",
+    "item": "Economics",
+    "evidence": "canonical ECON == official CCN prefix (206 official rows) — semantic twin, ALIGNED",
+    "suggestion": "bless as aligned; record alignment doctrine",
+    "needs_judgment": true,
+    "group": "ccn"
+   }
+  },
+  {
+   "id": "CSR0003",
+   "verdict": "bless",
+   "reason": "COMM == official CCN prefix (192 rows) == data modal (0.69). Semantic twin aligned. The legacy SPCH/CMST/COMS variants in the field are exactly what CCN alignment is consolidating; top_modal_title 'Speech Communication' is a historical title, not a twin mismatch.",
+   "confidence": 0.95,
+   "batch": "ccn",
+   "finding": {
+    "id": "CSR0003",
+    "rule": "cs4_aligned",
+    "item": "Communication Studies",
+    "evidence": "canonical COMM == official CCN prefix (192 official rows) — semantic twin, ALIGNED",
+    "suggestion": "bless as aligned; record alignment doctrine",
+    "needs_judgment": true,
+    "group": "ccn"
+   }
+  },
+  {
+   "id": "CSR0004",
+   "verdict": "bless",
+   "reason": "HIST == official CCN prefix (189 rows) == data modal (0.798, strongest modal share in batch). Semantic twin aligned per CS3/CS4.",
+   "confidence": 0.98,
+   "batch": "ccn",
+   "finding": {
+    "id": "CSR0004",
+    "rule": "cs4_aligned",
+    "item": "History",
+    "evidence": "canonical HIST == official CCN prefix (189 official rows) — semantic twin, ALIGNED",
+    "suggestion": "bless as aligned; record alignment doctrine",
+    "needs_judgment": true,
+    "group": "ccn"
+   }
+  },
+  {
+   "id": "CSR0005",
+   "verdict": "bless",
+   "reason": "PSYC == official CCN prefix (150 rows) == data modal. Curator override already reviewed (map@rccd.edu) and landed on the aligned pick over PSYCH/PSY variants — the override converges toward the official prefix, which is exactly the CS4-preferred direction.",
+   "confidence": 0.98,
+   "batch": "ccn",
+   "finding": {
+    "id": "CSR0005",
+    "rule": "cs4_aligned",
+    "item": "Psychology",
+    "evidence": "canonical PSYC == official CCN prefix (150 official rows) — semantic twin, ALIGNED",
+    "suggestion": "bless as aligned; record alignment doctrine",
+    "needs_judgment": true,
+    "group": "ccn"
+   }
+  },
+  {
+   "id": "CSR0006",
+   "verdict": "rekey_evidence",
+   "proposed": "Converge canonical POSC → POLS via Rule-7 re-mint evidence (no direct write). Evidence: POLS is the official CCN prefix with 144 official rows (heavy statewide adoption); POLS is also the field data modal (223 occurrences vs POSC 42, POSC is only the 3rd variant); the existing curator override to POSC has notes: null, so neither the CS4 divergence reason nor the CS5 modal-divergence reason is recorded. Re-mint scope: 283 M-IDs.",
+   "reason": "This is the missed alignment CS4 targets: official prefix and data modal both point to POLS, the divergent canonical is a curator override with no recorded rationale, and re-mint cost (283 M-IDs) is modest. Staging as evidence rather than blessing-with-reason because there is no reason on record to bless; the Rule-7 process puts the final call back in Sam's hands, where any unrecorded deliberate rationale can surface.",
+   "confidence": 0.8,
+   "batch": "ccn",
+   "finding": {
+    "id": "CSR0006",
+    "rule": "cs4_missed_alignment",
+    "item": "Political Science",
+    "evidence": "official CCN prefix POLS (144 rows) unused; twin discipline uses POSC",
+    "suggestion": "curator call: converge POSC → POLS (Rule-7 re-mint) or record divergence reason",
+    "needs_judgment": true,
+    "group": "ccn"
+   },
+   "skeptic_upheld": true,
+   "skeptic_reason": "Every factual claim verified against primary sources: registry shows POSC canonical via curator_override with data_modal POLS, notes null, 283 M-IDs; recomputing official CCN prefixes from coci_lookup_data.js col 9 gives POLS=144 rows and POSC=0; field variants confirm POLS 223 vs POSC 42 (3rd variant); no discipline collides on POLS; the CSR0006 finding exists verbatim in batch_ccn.json with the trail's own suggestion being exactly this curator call. Consumer risk is nil at this stage — the proposal stages Rule-7 re-mint evidence with no direct write, and tracker CLAUDE.md Rule 7 explicitly permits staging-phase re-mints under the documented playbook (alias maps, articulation + promotions re-key), so an approved re-mint would not orphan the 2,618 existing POSC references. Value (alignment with the official AB 1111 CCN prefix, the CSR pass's core purpose) exceeds the modest 283 M-ID churn, and the one legitimate counterargument — the override was a reviewed curator decision — is neutralized because no rationale is recorded anywhere (registry notes null, nothing in docs/ or merge_doctrine.md) and the proposal routes the final call back to the curator, where any unrecorded rationale can surface. Only nit: batch_modal.json has no CS5 finding for Political Science, so the CS5 phrasing slightly overstates the trail output, but that claim is not load-bearing."
+  },
+  {
+   "id": "CSR0007",
+   "verdict": "bless",
+   "reason": "MATH == official CCN prefix (97 rows) == data modal (0.788). Semantic twin aligned per CS3/CS4. The STAT variant rows belong to the separate STAT official prefix, not to this key.",
+   "confidence": 0.98,
+   "batch": "ccn",
+   "finding": {
+    "id": "CSR0007",
+    "rule": "cs4_aligned",
+    "item": "Mathematics",
+    "evidence": "canonical MATH == official CCN prefix (97 official rows) — semantic twin, ALIGNED",
+    "suggestion": "bless as aligned; record alignment doctrine",
+    "needs_judgment": true,
+    "group": "ccn"
+   }
+  },
+  {
+   "id": "CSR0008",
+   "verdict": "bless",
+   "reason": "ANTH == official CCN prefix (50 rows) == data modal (0.635). Semantic twin aligned. Seeded-but-unreviewed is acceptable hygiene here — the pick is obviously right.",
+   "confidence": 0.98,
+   "batch": "ccn",
+   "finding": {
+    "id": "CSR0008",
+    "rule": "cs4_aligned",
+    "item": "Anthropology",
+    "evidence": "canonical ANTH == official CCN prefix (50 official rows) — semantic twin, ALIGNED",
+    "suggestion": "bless as aligned; record alignment doctrine",
+    "needs_judgment": true,
+    "group": "ccn"
+   }
+  },
+  {
+   "id": "CSR0009",
+   "verdict": "bless",
+   "reason": "ARTH == official CCN prefix (48 rows) == data modal (0.57). Curator-reviewed override aligned with the official prefix; top_modal_title 'Fine Arts, General' reflects TOP-code granularity, not a twin mismatch — Art History is ARTH's semantic twin.",
+   "confidence": 0.93,
+   "batch": "ccn",
+   "finding": {
+    "id": "CSR0009",
+    "rule": "cs4_aligned",
+    "item": "Art History",
+    "evidence": "canonical ARTH == official CCN prefix (48 official rows) — semantic twin, ALIGNED",
+    "suggestion": "bless as aligned; record alignment doctrine",
+    "needs_judgment": true,
+    "group": "ccn"
+   }
+  },
+  {
+   "id": "CSR0010",
+   "verdict": "bless",
+   "reason": "BIOL == official CCN prefix (37 rows) == data modal (0.528). Curator-reviewed, semantic twin aligned per CS3/CS4.",
+   "confidence": 0.97,
+   "batch": "ccn",
+   "finding": {
+    "id": "CSR0010",
+    "rule": "cs4_aligned",
+    "item": "Biological Sciences",
+    "evidence": "canonical BIOL == official CCN prefix (37 official rows) — semantic twin, ALIGNED",
+    "suggestion": "bless as aligned; record alignment doctrine",
+    "needs_judgment": true,
+    "group": "ccn"
+   }
+  },
+  {
+   "id": "CSR0011",
+   "verdict": "bless",
+   "reason": "ASTR == official CCN prefix (33 rows) == data modal (0.649). Semantic twin aligned; obviously-right seeded pick.",
+   "confidence": 0.98,
+   "batch": "ccn",
+   "finding": {
+    "id": "CSR0011",
+    "rule": "cs4_aligned",
+    "item": "Astronomy",
+    "evidence": "canonical ASTR == official CCN prefix (33 official rows) — semantic twin, ALIGNED",
+    "suggestion": "bless as aligned; record alignment doctrine",
+    "needs_judgment": true,
+    "group": "ccn"
+   }
+  },
+  {
+   "id": "CSR0012",
+   "verdict": "bless",
+   "reason": "SOCI == official CCN prefix (7 rows), semantic twin. The canonical diverges from the raw data modal SOC (0.615), but SOC is three letters and fails CS1's four-uppercase-letter rule, and CCN alignment itself is the CS5 recorded reason for preferring SOCI over the modal. Curator-reviewed. Suggest adding a one-line note ('modal SOC fails CS1; SOCI is official CCN prefix') to the notes field for the record, but the pick is correct.",
+   "confidence": 0.92,
+   "batch": "ccn",
+   "finding": {
+    "id": "CSR0012",
+    "rule": "cs4_aligned",
+    "item": "Sociology",
+    "evidence": "canonical SOCI == official CCN prefix (7 official rows) — semantic twin, ALIGNED",
+    "suggestion": "bless as aligned; record alignment doctrine",
+    "needs_judgment": true,
+    "group": "ccn"
+   }
+  },
+  {
+   "id": "CSR0013",
+   "verdict": "doctrine_question",
+   "proposed": "Sam's call: does an official CCN prefix with near-zero adoption (CDEV, 2 official rows) carry the same CS4 convergence pull as a heavily adopted one? Recommended resolution: keep ECED and record the divergence reason (CS4 'deliberate reason' clause) — grounds: CDEV has only 2 official rows vs POLS's 144; re-mint cost is the largest in the registry segment (1,349 M-IDs, cte_flag: all); the raw data modal ECE (0.22, fragmented field: ECE/CD/CDEV/CHLD/CHDV all substantial) is CS1-invalid at 3 letters; and the MQ discipline name 'Child Development/Early Childhood Education' supports ECED on its second half. Alternatively converge to CDEV now if Sam judges CCN adoption of CDEV will grow and wants to re-mint once before ECED entrenches.",
+   "reason": "Unlike POSC→POLS, the evidence here is genuinely split: official prefix says CDEV, but its adoption is nominal (2 rows), the field is fragmented with no CS1-valid modal, the discipline name supports ECED, and the re-mint touches 1,349 M-IDs. Whether weakly adopted official prefixes command convergence is a doctrine gap the canon does not settle — CS4's 'deliberate reason' escape hatch fits, but only Sam can ratify it and record the reason (notes is currently null despite the curator override).",
+   "confidence": 0.7,
+   "batch": "ccn",
+   "finding": {
+    "id": "CSR0013",
+    "rule": "cs4_missed_alignment",
+    "item": "Child Development/Early Childhood Education",
+    "evidence": "official CCN prefix CDEV (2 rows) unused; twin discipline uses ECED",
+    "suggestion": "curator call: converge ECED → CDEV (Rule-7 re-mint) or record divergence reason",
+    "needs_judgment": true,
+    "group": "ccn"
+   }
+  },
+  {
+   "id": "CSR0014",
+   "verdict": "bless",
+   "reason": "Scanner false positive: Education IS the semantic twin of anchor-official EDUC — the canon's own worked example of a legitimate twin. This is CS3/CS4 alignment, not squatting; the 0-row count just means CDEV-style CCN adoption hasn't started for this anchor official yet. Curator-reviewed and modal-consistent (EDUC is the data modal). Note for the pipeline: the scanner's twin-matcher appears to fail whenever the official prefix has 0 rows (all four false positives in this batch are 0-row anchor officials) — worth a wiring fix upstream.",
+   "confidence": 0.97,
+   "batch": "ccn",
+   "finding": {
+    "id": "CSR0014",
+    "rule": "cs3_squat",
+    "item": "Education",
+    "evidence": "canonical EDUC == official CCN prefix (0 rows) but discipline 'Education' is NOT its semantic twin",
+    "suggestion": "re-key evidence (Rule-7 re-mint) — official prefixes are reserved",
+    "needs_judgment": true,
+    "group": "ccn"
+   }
+  },
+  {
+   "id": "CSR0015",
+   "verdict": "bless",
+   "reason": "Scanner false positive: Engineering is unambiguously the semantic twin of anchor-official ENGR, and ENGR is also the strong data modal (0.73). Twin use of a reserved prefix is alignment (CS3/CS4), not squatting. Same 0-row twin-matcher defect as CSR0014.",
+   "confidence": 0.98,
+   "batch": "ccn",
+   "finding": {
+    "id": "CSR0015",
+    "rule": "cs3_squat",
+    "item": "Engineering",
+    "evidence": "canonical ENGR == official CCN prefix (0 rows) but discipline 'Engineering' is NOT its semantic twin",
+    "suggestion": "re-key evidence (Rule-7 re-mint) — official prefixes are reserved",
+    "needs_judgment": true,
+    "group": "ccn"
+   }
+  },
+  {
+   "id": "CSR0016",
+   "verdict": "bless",
+   "reason": "Scanner false positive: Geography is the semantic twin of anchor-official GEOG, which is also the data modal (0.674). Aligned per CS3/CS4, not a squat. Same 0-row twin-matcher defect as CSR0014.",
+   "confidence": 0.98,
+   "batch": "ccn",
+   "finding": {
+    "id": "CSR0016",
+    "rule": "cs3_squat",
+    "item": "Geography",
+    "evidence": "canonical GEOG == official CCN prefix (0 rows) but discipline 'Geography' is NOT its semantic twin",
+    "suggestion": "re-key evidence (Rule-7 re-mint) — official prefixes are reserved",
+    "needs_judgment": true,
+    "group": "ccn"
+   }
+  },
+  {
+   "id": "CSR0017",
+   "verdict": "bless",
+   "reason": "Scanner false positive: Journalism is the semantic twin of anchor-official JOUR, which is also the data modal (0.499, with JOURNAL/JOURN/JOU as the trailing variants). Curator-reviewed. Aligned per CS3/CS4, not a squat. Same 0-row twin-matcher defect as CSR0014.",
+   "confidence": 0.98,
+   "batch": "ccn",
+   "finding": {
+    "id": "CSR0017",
+    "rule": "cs3_squat",
+    "item": "Journalism",
+    "evidence": "canonical JOUR == official CCN prefix (0 rows) but discipline 'Journalism' is NOT its semantic twin",
+    "suggestion": "re-key evidence (Rule-7 re-mint) — official prefixes are reserved",
+    "needs_judgment": true,
+    "group": "ccn"
+   }
+  },
+  {
+   "id": "CSR0019",
+   "verdict": "bless",
+   "reason": "CSAI reads directly as CS+AI (Computer Science / Artificial Intelligence) — a widely recognized pairing (cf. university 'CSAI' programs). Curator override with review; the scanner's derivability heuristic just can't see the CS- family prefix. Not arbitrary.",
+   "confidence": 0.9,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0019",
+    "rule": "cs6_weak_mnemonic",
+    "item": "Artificial Intelligence",
+    "evidence": "canonical CSAI not derivable from name and absent from 29 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0020",
+   "verdict": "bless",
+   "reason": "CNSR fits the deliberate CNS* construction-family scheme (CNSR/CNSC/CNSM/CNMA all curator overrides): CoNStruction + Regulations/inspection. Recognizable within the family convention; modal BIT (0.637) divergence is a CS5 matter already covered by the deliberate family scheme.",
+   "confidence": 0.8,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0020",
+    "rule": "cs6_weak_mnemonic",
+    "item": "Building Codes and Regulations",
+    "evidence": "canonical CNSR not derivable from name and absent from 9 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0021",
+   "verdict": "bless",
+   "reason": "CNSC = CoNStruction family + Cabinet, consistent with the curator's CNS* family scheme. Recognizable within the convention; not arbitrary.",
+   "confidence": 0.8,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0021",
+    "rule": "cs6_weak_mnemonic",
+    "item": "Cabinet Making",
+    "evidence": "canonical CNSC not derivable from name and absent from 10 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0022",
+   "verdict": "bless",
+   "reason": "CNSM is directly derivable: CoNStruction Management (and anchors the CNS* family). Scanner heuristic miss, not a weak mnemonic.",
+   "confidence": 0.92,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0022",
+    "rule": "cs6_weak_mnemonic",
+    "item": "Construction Management",
+    "evidence": "canonical CNSM not derivable from name and absent from 33 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0023",
+   "verdict": "bless",
+   "reason": "AUTD = AUTomotive family + Diesel — recognizable family-prefix mnemonic placing diesel mechanics under the automotive cluster. Deliberate curator override; not arbitrary.",
+   "confidence": 0.85,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0023",
+    "rule": "cs6_weak_mnemonic",
+    "item": "Diesel Mechanics",
+    "evidence": "canonical AUTD not derivable from name and absent from 37 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0024",
+   "verdict": "bless",
+   "reason": "ELMT is directly derivable: ELectro-Mechanical Technology. Scanner miss. (The 100%-modal ECONMT is a single-college artifact and a worse code.)",
+   "confidence": 0.92,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0024",
+    "rule": "cs6_weak_mnemonic",
+    "item": "Electromechanical Technology",
+    "evidence": "canonical ELMT not derivable from name and absent from 1 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0025",
+   "verdict": "bless",
+   "reason": "ESLN = ESL + Noncredit, and it appears in variant form in the data (modal 'ESL NC' at 0.778 and 'ESLNC'). Under the pass rule for variant-form presence this should not have fired.",
+   "confidence": 0.95,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0025",
+    "rule": "cs6_weak_mnemonic",
+    "item": "English as a Second Language Noncredit 53412",
+    "evidence": "canonical ESLN not derivable from name and absent from 15 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0026",
+   "verdict": "rekey_evidence",
+   "proposed": "Stage Rule-7 re-mint evidence to converge Environmental Technologies canonical from ESCI to ENVT: ESCI reads as Environmental/Earth SCIence — misleading for a mostly-CTE technologies discipline (top modal: Water and Wastewater Technology) and risks confusion with an Environmental Science identity; ENVT is observed (33 M-IDs) and derivable (ENVironmental Technologies). Evidence only — no direct write.",
+   "reason": "This clears the high bar: not merely imperfect but actively misleading — ESCI signals a science discipline while the registry entry is a CTE technologies cluster, and ENVS/ENVST in the variants show colleges use similar codes for environmental *studies/science*, inviting cross-discipline confusion at the key layer.",
+   "confidence": 0.6,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0026",
+    "rule": "cs6_weak_mnemonic",
+    "item": "Environmental Technologies",
+    "evidence": "canonical ESCI not derivable from name and absent from 40 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   },
+   "skeptic_upheld": false,
+   "skeptic_reason": "Refuted on evidence and cost. (1) Factual error: the proposal claims \"ENVT is observed (33 M-IDs)\" but the registry shows variants_observed = {\"ESCI\": 590} — all 590 M-IDs are keyed ESCI; ENVT's 33 is a local_subject_variants count (33/775 = 4.3% of local subject rows, behind WATR 69, ENVS 61, WST 54). (2) Data does not support ENVT: the modal is WATR (Water and Wastewater Technology); ENVT is a minority code, so the swap is taste, not evidence. (3) It silently overturns an explicit human decision: source=curator_override, reviewed_by map@rccd.edu 2026-05-23, needs_review=false. (4) Consumer churn is severe: ESCI is embedded in ~2,900 downstream rows (coci_minted_singletons 2076, coci_minted_courses 316, coci_curation 287, coci_minted_memberships 123, cid_articulation_joins 60, coci_articulations 15, promotions 4) — a 590-M-ID re-mint rippling through articulations and promotions for zero functional gain. (5) The confusion argument backfires: ENVT is one letter from ENVR, the existing canonical for Forestry/Natural Resources, creating a new cross-discipline collision risk, whereas ESCI is distinct from all other canonicals. Value nowhere near re-key churn cost."
+  },
+  {
+   "id": "CSR0027",
+   "verdict": "bless",
+   "reason": "FIMS is derivable: FIlm & Media Studies, and pairs with FIMP as a deliberate FIM* film-family scheme. Recognizable; scanner miss.",
+   "confidence": 0.88,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0027",
+    "rule": "cs6_weak_mnemonic",
+    "item": "Film and Media Studies",
+    "evidence": "canonical FIMS not derivable from name and absent from 40 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0028",
+   "verdict": "needs_curator",
+   "reason": "CSTF is the one genuinely opaque code in this batch: it breaks the curator's own CNS* construction family (CNSR/CNSC/CNSM/CNMA) and is not derivable from 'Furniture Making' nor present in the 3 variants (CFT, WMT, MAKR). It looks like a possible transposition of CNSF (construction+furniture) or an unrecorded 'Custom Furniture' intent. Curator should confirm intent or record the reason; if it is a typo, that becomes Rule-7 re-mint evidence toward CNSF.",
+   "confidence": 0.65,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0028",
+    "rule": "cs6_weak_mnemonic",
+    "item": "Furniture Making",
+    "evidence": "canonical CSTF not derivable from name and absent from 3 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0029",
+   "verdict": "bless",
+   "reason": "GRAF is a recognizable variant spelling of 'graphic' (phonetic graph-/GRAF, as in graphic-arts tradition). CS6 explicitly passes variant spellings; not arbitrary.",
+   "confidence": 0.85,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0029",
+    "rule": "cs6_weak_mnemonic",
+    "item": "Graphic Arts",
+    "evidence": "canonical GRAF not derivable from name and absent from 40 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0030",
+   "verdict": "bless",
+   "reason": "GSMI is directly derivable: GunSMIthing (G+SMI). Scanner miss; recognizable.",
+   "confidence": 0.88,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0030",
+    "rule": "cs6_weak_mnemonic",
+    "item": "Gunsmithing",
+    "evidence": "canonical GSMI not derivable from name and absent from 1 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0031",
+   "verdict": "bless",
+   "reason": "INDT is directly derivable: INDustrial Technology. Scanner miss. The chaotic variant field (852 M-IDs, 3.7% modal) makes a clean derivable canonical exactly right.",
+   "confidence": 0.93,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0031",
+    "rule": "cs6_weak_mnemonic",
+    "item": "Industrial Technology",
+    "evidence": "canonical INDT not derivable from name and absent from 40 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0032",
+   "verdict": "bless",
+   "reason": "LSKL is derivable: Learning SKiLls (L+SKL), matching the discipline's own 'Learning Skills' title. Recognizable; scanner miss.",
+   "confidence": 0.88,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0032",
+    "rule": "cs6_weak_mnemonic",
+    "item": "Learning Assistance or Learning Skills",
+    "evidence": "canonical LSKL not derivable from name and absent from 17 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0033",
+   "verdict": "bless",
+   "reason": "NRSV = NuRSing family + Vocational; recognizable and consistent with nursing-cluster keying (VN/LVN/VNRS variants confirm the semantic space). Minor note: nursing family prefix is NRS here but NUR in NURP (Psychiatric Technician) — a cosmetic inconsistency, not a rekey-worthy defect.",
+   "confidence": 0.82,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0033",
+    "rule": "cs6_weak_mnemonic",
+    "item": "Licensed Vocational Nursing",
+    "evidence": "canonical NRSV not derivable from name and absent from 21 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0034",
+   "verdict": "bless",
+   "reason": "CNMA = CoNstruction family + MAsonry, consistent with the CNS*/CN* construction cluster. Only 5 M-IDs with no coherent modal, so a family-scheme canonical is the right call.",
+   "confidence": 0.8,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0034",
+    "rule": "cs6_weak_mnemonic",
+    "item": "Masonry",
+    "evidence": "canonical CNMA not derivable from name and absent from 6 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0035",
+   "verdict": "bless",
+   "reason": "FIMP = FIlm/Media family + Production, deliberately paired with FIMS (Film and Media Studies). Recognizable within the FIM* family scheme; top modal 'Film Production' confirms the semantic fit.",
+   "confidence": 0.85,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0035",
+    "rule": "cs6_weak_mnemonic",
+    "item": "Media Production",
+    "evidence": "canonical FIMP not derivable from name and absent from 31 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0036",
+   "verdict": "bless",
+   "reason": "ETHA = ETHnic-studies family + American Indian, consistent with an ETH* ethnic-studies cluster (ETHS/ETHN appear in variants). Recognizable within the family scheme. The strong AIS modal (0.81) is a CS5 divergence already made deliberately via curator override; a one-line recorded reason would be nice-to-have but is not a CS6 defect.",
+   "confidence": 0.75,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0036",
+    "rule": "cs6_weak_mnemonic",
+    "item": "Native American/American Indian Studies",
+    "evidence": "canonical ETHA not derivable from name and absent from 8 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0037",
+   "verdict": "bless",
+   "reason": "OCTA is directly derivable: OCcupational Therapy Assisting, and contains the universal modal OTA (1.0 share) as a subsequence. Scanner miss; should not have fired.",
+   "confidence": 0.95,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0037",
+    "rule": "cs6_weak_mnemonic",
+    "item": "Occupational Therapy Assisting",
+    "evidence": "canonical OCTA not derivable from name and absent from 1 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0038",
+   "verdict": "bless",
+   "reason": "NURP = NURsing family + Psychiatric — semantically apt (psych techs are licensed alongside vocational nurses under the BVNPT) and recognizable within the nursing cluster keying. Deliberate curator override; not arbitrary.",
+   "confidence": 0.75,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0038",
+    "rule": "cs6_weak_mnemonic",
+    "item": "Psychiatric Technician",
+    "evidence": "canonical NURP not derivable from name and absent from 10 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0039",
+   "verdict": "bless",
+   "reason": "THES = THEatre family + Stagecraft (and reads as 'thespian'), placing stagecraft under the theatre cluster where variants (TECTHTR, THAR, DRMA, THART) confirm it belongs. Recognizable family mnemonic.",
+   "confidence": 0.82,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0039",
+    "rule": "cs6_weak_mnemonic",
+    "item": "Stagecraft",
+    "evidence": "canonical THES not derivable from name and absent from 28 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0040",
+   "verdict": "fix_wiring",
+   "proposed": "Scanner heuristic fix: treat a canonical as passing CS6 when it (a) is a subsequence of the discipline name after stopword removal, or (b) is a substring/whitespace-stripped prefix of any observed variant. STMF is both derivable (STeaMFitting) and contained in the 0.91-share modal variant STMFT — this finding, and siblings like ESLN/OCTA/TRNS/CNSM/INDT/ELMT, are false positives from exact-match-only variant comparison.",
+   "reason": "STMF is unambiguously fine (STeaM Fitting; modal STMFT at 91% contains it verbatim), so the defect is in the scanner, not the key. Blessing alone would leave the heuristic generating the same low-value churn every run — over a third of this batch are the same false-positive class.",
+   "confidence": 0.9,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0040",
+    "rule": "cs6_weak_mnemonic",
+    "item": "Steamfitting",
+    "evidence": "canonical STMF not derivable from name and absent from 4 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   },
+   "skeptic_upheld": true,
+   "skeptic_reason": "Attempted refutation failed on all three tests. (1) Evidence is real and reproduces: I re-implemented the actual mnemonic_ok() from /workspace/cpl-project-tracker/kb/_csr_trail.py (lines 69-92) and confirmed it fails STMF for \"Steamfitting\" — variants are compared exact-match-only ({STMFT,PLUMB,INST,AMW} contains no exact STMF), single-token names can't use the 2+2 split, and startswith goes the wrong direction (token.startswith(canon), so STEAMFITTING vs STMF fails). Registry context confirms STMFT is the modal at 0.91 share (61 obs) and top_modal_title is literally \"Plumbing, Pipefitting, and Steamfitting\" — STMF is an unambiguous mnemonic, so CSR0040 is a genuine scanner false positive, not a key defect. (2) No consumer breakage: _csr_trail.py is explicitly READ-ONLY; its findings.json feeds only the human adjudication half (_trail_crew.py/_trail_crew_assemble.py). CS6 findings are needs_judgment=true evidence — nothing applies them mechanically, and fix_wiring touches no canonical key, so zero re-mint/re-key churn. (3) Value exceeds cost: simulating the proposed heuristic against the batch clears STMF, ESLN, OCTA, TRNS, CNSM, INDT, GSMI, LSKL (~8/23, matching \"over a third\") while correctly leaving genuinely non-derivable family-scheme codes flagged (CSAI, AUTD, ESCI, NRSV, GRAF, THES, CNSR, CNMA, FIMP, ETHA, NURP) — the loosened rule does not mask the real judgment items. One minor overclaim: ELMT is NOT fixed by the proposal as stated, because the scanner's STOP set strips \"technology\" and ELECTROMECHANICAL has no T after M; the implementer should either exempt this rule from stopword removal or accept ELMT staying flagged. That detail does not undermine the CSR0040 verdict or the fix_wiring rationale."
+  },
+  {
+   "id": "CSR0041",
+   "verdict": "bless",
+   "reason": "TRNS is directly derivable: TRaNSportation, and the modal variant TRN (0.417) is contained within it. Scanner exact-match miss (see CSR0040 fix_wiring); the key is sound.",
+   "confidence": 0.93,
+   "batch": "mnemonic",
+   "finding": {
+    "id": "CSR0041",
+    "rule": "cs6_weak_mnemonic",
+    "item": "Transportation",
+    "evidence": "canonical TRNS not derivable from name and absent from 17 observed variants",
+    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0042",
+   "verdict": "bless",
+   "reason": "Anthropology->ANTH: official CCN prefix used by its semantic twin, 63.5% data modal, obviously right seed.",
+   "confidence": 0.98,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0042",
+    "rule": "cs7_unreviewed",
+    "item": "Anthropology",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0043",
+   "verdict": "bless",
+   "reason": "Astronomy->ASTR: official CCN prefix, semantic twin, 64.9% modal. Obviously right.",
+   "confidence": 0.98,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0043",
+    "rule": "cs7_unreviewed",
+    "item": "Astronomy",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0044",
+   "verdict": "bless",
+   "reason": "Chemistry->CHEM: 90.4% data modal, universally recognizable. Obviously right.",
+   "confidence": 0.98,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0044",
+    "rule": "cs7_unreviewed",
+    "item": "Chemistry",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0045",
+   "verdict": "bless",
+   "reason": "Commercial Art->ARTD: 89.7% data modal, ARTD (Art & Design) is a recognizable mnemonic. Top-modal-title 'Jewelry' is a data quirk of the discipline's course mix, not a keying problem.",
+   "confidence": 0.85,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0045",
+    "rule": "cs7_unreviewed",
+    "item": "Commercial Art",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0046",
+   "verdict": "bless",
+   "reason": "Communication Studies->COMM: official CCN prefix used by its semantic twin, 69% modal. Obviously right.",
+   "confidence": 0.98,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0046",
+    "rule": "cs7_unreviewed",
+    "item": "Communication Studies",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0047",
+   "verdict": "bless",
+   "reason": "Cosmetology->COSM: 62.8% modal, clear mnemonic. Obviously right.",
+   "confidence": 0.97,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0047",
+    "rule": "cs7_unreviewed",
+    "item": "Cosmetology",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0048",
+   "verdict": "bless",
+   "reason": "Court Reporting->CTRP: 66% modal (CTRP 68 vs CORT 13), recognizable CourT RePorting mnemonic. Fine.",
+   "confidence": 0.9,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0048",
+    "rule": "cs7_unreviewed",
+    "item": "Court Reporting",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0049",
+   "verdict": "bless",
+   "reason": "Digital Fabrication Technician->MAKR: 85.7% modal; MAKR is the recognizable makerspace convention the colleges themselves use. Follows CS5 (honor strong modal).",
+   "confidence": 0.88,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0049",
+    "rule": "cs7_unreviewed",
+    "item": "Digital Fabrication Technician",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0050",
+   "verdict": "fix_wiring",
+   "proposed": "Clean the truncated discipline name 'Disabled Student Programs and' -> 'Disabled Student Programs and Services' in the registry/ingestion (same treatment as the documented '53414' garbled-MQ-name cleanup in docs/kin_pe_convergence_scope.md), and fold the 13 singleton rows carrying the variant string 'Disabled Students Programs and Services (DSPS)' into the same discipline identity so the name isn't split. The canonical key DSPS itself needs no change.",
+   "reason": "The name is truncated in the upstream minted-course data (68 minted + 64 singleton rows carry the cut string; 13 rows carry the full '(DSPS)' name as a separate discipline). This is a data-hygiene/wiring defect with direct cleanup precedent, not a keying issue — DSPS is 95.1% modal and the standard CCC abbreviation, so the code is correct.",
+   "confidence": 0.92,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0050",
+    "rule": "cs7_unreviewed",
+    "item": "Disabled Student Programs and",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   },
+   "skeptic_upheld": false,
+   "skeptic_reason": "REFUTED — the proposal's core factual claim about the 13 rows is wrong, and the fold it prescribes would mis-key already-reminted identities. (1) Misread evidence: the 13 singleton rows carrying 'Disabled Students Programs and Services (DSPS)' (kb/coci_minted_singletons.json: IDST M10OW, M10QZ, M90HS, M91DG–DI, etc., all San Jose City College) do NOT carry that string as a discipline. It is their local college `subject` field; their discipline is 'Interdisciplinary Studies' (discipline_source=top_division, confidence 0.4), subject_4letter=IDST. There is no split discipline identity to fold — the registry (kb/discipline_canonical_subj4.json) confirms no such discipline key exists. (2) The fold would break policy and stability: per docs/kin_pe_convergence_scope.md, local college subject strings are deliberately 'preserved at the member level' — folding on a local subject string contradicts that. These 13 rows were ALREADY reminted once (`_remint_from`: 'M-ID DisabledStudentsProgramsandServices(DSPS) …') and subj4-folded (`_subj4_fold_from`: 'DISA M10AA'); a second re-key on a misdiagnosis is exactly the wrong-re-key identity-stability hazard. Their fold destination is also uncertain: top_code 4930.32 ('Learning Skills, Learning Disabled') matches a separate, human-reviewed registry discipline (reviewed_by map@rccd.edu 2026-05-23), and the MQ vocab (kb/reference/mq_disciplines.json) has distinct specialized DSPS disciplines ('Learning Disabilities: Disabled Student Programs and Services…'), so 'same discipline identity' as generic DSPS is an unverified curation judgment, not wiring. (3) Scope mismatch: the actual batch finding CSR0050 (batch_hygiene.json) is rule 'cs7_unreviewed' — evidence is only 'no reviewed_by stamp' on the entry; the proposal invents a fix_wiring change the finding never evidenced. (4) The truncation half is partially real — 'Disabled Student Programs and' does appear cut in kb/reference/mq_disciplines.json alongside five sibling DSPS entries garbled with stray '53414', with the PEDS cleanup as precedent — but kin_pe_convergence_scope.md §8 explicitly scoped those DSPS vocab bugs OUT as 'a separate pre-existing vocab bug', and the discipline name is the registry key and appears verbatim in ~68 minted rows, 64 singletons, subject_discipline_map.json, alias maps, and shipped frontend data files (unified_courses_*.js), so a rename is a multi-consumer re-key, not a free hygiene edit. A narrower proposal (vocab-name cleanup only, via the established alias-map machinery, leaving the 13 IDST rows alone) could survive; this one, bundling a misdiagnosed fold, does not."
+  },
+  {
+   "id": "CSR0051",
+   "verdict": "bless",
+   "reason": "Earth Science->GEOL: 69% data modal (GEOL 427 vs ESCI 82), top modal title 'Geology'. The field is taught overwhelmingly as GEOL; canonical follows the modal per CS5, and GEOL is fully recognizable.",
+   "confidence": 0.9,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0051",
+    "rule": "cs7_unreviewed",
+    "item": "Earth Science",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0052",
+   "verdict": "bless",
+   "reason": "Economics->ECON: official CCN prefix, semantic twin, 69.7% modal. Obviously right.",
+   "confidence": 0.98,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0052",
+    "rule": "cs7_unreviewed",
+    "item": "Economics",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0053",
+   "verdict": "bless",
+   "reason": "Electronic Technology->ELCT: 62.8% modal, recognizable ELeCTronic contraction. Fine.",
+   "confidence": 0.88,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0053",
+    "rule": "cs7_unreviewed",
+    "item": "Electronic Technology",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0054",
+   "verdict": "bless",
+   "reason": "Engineering->ENGR: official anchor prefix used by its semantic twin, 73% modal. Obviously right.",
+   "confidence": 0.98,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0054",
+    "rule": "cs7_unreviewed",
+    "item": "Engineering",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0055",
+   "verdict": "bless",
+   "reason": "English->ENGL: official CCN prefix, semantic twin, dominant modal (1923 ENGL). The textbook obviously-right seed.",
+   "confidence": 0.99,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0055",
+    "rule": "cs7_unreviewed",
+    "item": "English",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0056",
+   "verdict": "bless",
+   "reason": "Equine Science->AGEQ: 81% modal; AG+EQuine is a recognizable agriculture-family mnemonic the colleges already use. Fine.",
+   "confidence": 0.9,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0056",
+    "rule": "cs7_unreviewed",
+    "item": "Equine Science",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0057",
+   "verdict": "bless",
+   "reason": "Geography->GEOG: official anchor prefix, semantic twin, 67.4% modal. Obviously right.",
+   "confidence": 0.98,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0057",
+    "rule": "cs7_unreviewed",
+    "item": "Geography",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0058",
+   "verdict": "bless",
+   "reason": "Heavy Duty Equipment Mechanics->HMDT: 95.8% modal (23 of 24 records). Near-unanimous field usage; CS5 says honor the modal, and weak-mnemonic re-keys are low-value churn. Small population noted but the pick is what the sector actually uses.",
+   "confidence": 0.85,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0058",
+    "rule": "cs7_unreviewed",
+    "item": "Heavy Duty Equipment Mechanics",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0059",
+   "verdict": "bless",
+   "reason": "History->HIST: official CCN prefix, semantic twin, 79.8% modal. Obviously right.",
+   "confidence": 0.99,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0059",
+    "rule": "cs7_unreviewed",
+    "item": "History",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0060",
+   "verdict": "bless",
+   "reason": "Mathematics->MATH: official CCN prefix, semantic twin, 78.8% modal (2244 MATH). Obviously right.",
+   "confidence": 0.99,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0060",
+    "rule": "cs7_unreviewed",
+    "item": "Mathematics",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0061",
+   "verdict": "bless",
+   "reason": "Parent Education: Noncredit->PARN: 100% modal (147/147), recognizable PAReNt contraction. Obviously right.",
+   "confidence": 0.95,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0061",
+    "rule": "cs7_unreviewed",
+    "item": "Parent Education: Noncredit",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0062",
+   "verdict": "bless",
+   "reason": "Philosophy->PHIL: 69.4% modal, universally recognizable. Obviously right.",
+   "confidence": 0.98,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0062",
+    "rule": "cs7_unreviewed",
+    "item": "Philosophy",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0063",
+   "verdict": "bless",
+   "reason": "Physics/Astronomy->PHYS: 73.4% modal, clear mnemonic. No CS2 conflict with the separate Astronomy->ASTR entry (distinct canonicals). The compound discipline name is the state MQ list's convention, not a registry defect.",
+   "confidence": 0.95,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0063",
+    "rule": "cs7_unreviewed",
+    "item": "Physics/Astronomy",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0064",
+   "verdict": "bless",
+   "reason": "Speech Language Pathology->SLPA: 86.4% modal; SLPA is the standard sector term (SLP Assistant programs). Obviously right.",
+   "confidence": 0.93,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0064",
+    "rule": "cs7_unreviewed",
+    "item": "Speech Language Pathology",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0065",
+   "verdict": "needs_curator",
+   "reason": "Upholstering->THAR is a questionable seed: the '100% modal' is a single row, and repo evidence (subj4_canonicalization_remint_lessons.md line 176; alias map) shows that lone course is 'Properties Workshop: Furniture and Upholstery' — a technical theater course carrying a theater-arts code. THAR is no mnemonic for Upholstering, and the deeper question is whether this n=1 course belongs under Drama/Theater Arts (canonical THEA, curator-reviewed) rather than sustaining a standalone Upholstering discipline — while real upholstery programs (RCCD, San Bernardino, TOP 0949.10) live under auto-trades. Discipline-assignment call for Sam, not a mechanical re-key.",
+   "confidence": 0.9,
+   "batch": "hygiene",
+   "finding": {
+    "id": "CSR0065",
+    "rule": "cs7_unreviewed",
+    "item": "Upholstering",
+    "evidence": "no reviewed_by stamp",
+    "suggestion": null,
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0018",
+   "verdict": "bless",
+   "reason": "EDTC is the right forward-looking canonical despite the LINC modal (0.546, 83/143 M-IDs). LINC is not a recognizable mnemonic for Instructional Design/Technology — it reads as a program-brand acronym concentrated in a subset of colleges, and the variant spread (EDT 28, DLIT 17, EDIT 15) shows the field itself gravitates toward ED*/*T* codes. EDTC ('EDucational TeChnology', matching the top modal title) is the clear mnemonic, sits naturally beside the EDUC family, and the entry is a curator_override already reviewed by map@rccd.edu — a deliberate pick, not an unreviewed seed. Per CS5 the divergence needs a recorded reason, not a change: suggest the curator add a _notes entry such as 'EDTC chosen over data-modal LINC: LINC is a local program acronym, not a discipline mnemonic; EDTC matches the modal title Educational Technology and the EDT/EDIT/DLIT variant cluster.' No re-key warranted.",
+   "confidence": 0.85,
+   "batch": "modal",
+   "finding": {
+    "id": "CSR0018",
+    "rule": "cs5_modal_diverge",
+    "item": "Instructional Design/Technology",
+    "evidence": "modal LINC (share 0.55) but canonical EDTC, no _notes",
+    "suggestion": "confirm choice + record a note",
+    "needs_judgment": true,
+    "group": null
+   }
+  },
+  {
+   "id": "CSR0066",
+   "verdict": "fix_wiring",
+   "reason": "Confirmed after reading the full seeder and the post-apply chain: kb/_seed_coci_minted_mids.py keys M-IDs from the raw modal subject token (lines 206-208 corroborated, 261-263 singletons) and never loads kb/discipline_canonical_subj4.json; the consultation does NOT happen downstream — _post_apply_chain.py's csr-seed step runs _seed_canonical_subj4.py, which re-seeds the registry FROM the KB (observation direction), and _apply_canonical_subj4.py only syncs curator picks from Supabase into the registry file. Rule 7's claim is currently aspirational: the convention is real and implemented by the Z-scheme re-mint (kb/uc_cur_zscheme_out/2026-06-15/report.md documents 'the new-mint convention: canonical SUBJ4 of the members' modal discipline, umbrella FL/KIN excepted') but not by the named producer. Mitigating: the minter is one-shot (docstring + docs/unverified_mid_renumber_scope.md: 'provenance only — never re-run over reviewer edits'), so there is no live bleed today; however docs/kb-notes/over-merge-remint-scope.md PR-3 already plans a minter source fix and future re-seed, at which point an unwired seeder would re-introduce folded variants — exactly the CS8 'decoration' failure.",
+   "proposed": "Wire the seeder per the documented new-mint convention: (1) at startup load kb/discipline_canonical_subj4.json alongside subject_discipline_map.json; (2) in both mint loops, after resolving disc = DISCIPLINE_MAP.get(normsubj(modal_subject)), look up the discipline's curator-reviewed canonical_subj4 and use it as subj_token for the 'M-ID <token> <n>' key — EXCEPT umbrella disciplines (Foreign Languages, Kinesiology), which keep the members' own split code (FLSP/FLFR/.../KINE/ATHL) per the convention in kb/uc_cur_zscheme_out/2026-06-15/report.md; (3) fall back to the current raw modal-subject token only when the discipline is unmapped, and keep the raw modal subject in the record's 'subject' field for provenance; (4) continue per-token numbering from common_courses.json under the canonical token so keys never collide. Land this together with the PR-3 grouping-key fix from docs/kb-notes/over-merge-remint-scope.md, since both only take effect on the next re-seed (the current output files are one-shot provenance and must not be regenerated over reviewer edits). Also update Rule 7's wording ('consult' -> 'will consult on next re-seed') if the code fix is deferred, so doctrine and code do not disagree in the interim.",
+   "confidence": 0.92,
+   "batch": "seeder",
+   "finding": {
+    "id": "CSR0066",
+    "rule": "cs8_seeder_bypass",
+    "item": "kb/_seed_coci_minted_mids.py",
+    "evidence": "Rule 7 says new mints consult discipline_canonical_subj4.json; the seeder numbers per MODAL subject via reference/subject_discipline_map.json and never references the canonical registry — new mints can re-introduce folded variants",
+    "suggestion": "wire the seeder: after discipline resolution, key new M-IDs under the canonical SUBJ4",
+    "needs_judgment": true,
+    "group": null
+   },
+   "skeptic_upheld": true,
+   "skeptic_reason": "Verified against source: kb/_seed_coci_minted_mids.py never references discipline_canonical_subj4.json and keys both mint loops (lines 206-208, 261-263) from the raw modal subject token, exactly as claimed. The claimed consultation does not happen downstream: _post_apply_chain.py's csr-seed step (line 51) runs _seed_canonical_subj4.py, which seeds the registry FROM the minted files, and _apply_canonical_subj4.py only syncs Supabase curator edits. The doctrine/code contradiction is explicit — _uc_cur_zscheme_dryrun.py lines 29-30/532 and uc_cur_zscheme_out/2026-06-15/report.md line 45 assert '(_seed_coci_minted_mids.py consults discipline_canonical_subj4.json)', which is false today, and _csr_trail.py CS8 (lines 192-199) fires on every trail run until fixed. The seeder is not dead code: docs/kb-notes/over-merge-remint-scope.md PR-3 (lines 97-98, 152-153) already plans a minter grouping-key fix explicitly so 'a future re-seed can't re-introduce the bug'. Consumer safety: the change is script-only — the one-shot JSON outputs are not regenerated (proposal says so; docstring and docs/unverified_mid_renumber_scope.md line 49 forbid re-running), so no keys move and identity stability is untouched; the only code consumer of the seeder's text is the CS8 grep, which flips to pass as intended. Numbering continuation (step 4) matches the existing next_num mechanism, so no collisions. Minor caveat for implementation: the umbrella exception needs the foreign_language_subj4.json classifier (raw rows carry local codes like SPAN, not FLSP), a refinement handled by the PR-3 human review the proposal couples the fix to. Value (closes a recurring CS8 doctrine violation, future-proofs the anticipated re-seed) clearly exceeds cost (zero data churn now)."
+  },
+  {
+   "id": "CSR0067",
+   "verdict": "rekey_evidence",
+   "proposed": "Stage a single promote-time Rule-7 re-key plan for the 221 dead-format 'M-ID SUBJ NNN' anchor keys in kb/common_courses.json (anchor stays firewalled until promote; no bulk edit now). Plan: (1) strip the literal 'M-ID ' placeholder prefix; (2) fold each anchor subject to its curator-confirmed discipline canonical per kb/discipline_canonical_subj4.json — spot-checked folds all match registry curator_override entries (MUS→MUSI, CIS→CSIS, NURS→NRSR, HSER→COUN, BCIT→CNSR, ASL→SLNA, 9 language subjects→FLNG, MEDA→BIOL, BUS→BUSI); (3) renumber on collision within a canonical (e.g. nine FLNG language pairs will collide at shared NNN values — reserve per-language number bands or suffixing before fold); (4) carve-out: official CCN prefixes already present in the anchor's live-format rows (ACCT 110/120, and any other anchor-official subjects like BSOT/CMUS/EDUC) keep their official prefix rather than folding to the discipline canonical (ACCT rows must NOT silently become BUSI while live-format ACCT 110/120 stay ACCT in the same file) — confirm this carve-out list with Sam at promote time; (5) emit an old-key→new-key crosswalk alongside the re-key so downstream references to dead keys remain resolvable.",
+   "reason": "Verified in the anchor file: 221/243 keys carry the literal dead 'M-ID ' prefix while newer entries use clean 'SUBJ NNN' keys, so the dead format is real and coexists inconsistently with the live format. All 35 folds sanity-check clean against curator-confirmed registry canonicals, so the fold map is safe to stage as evidence rather than escalate. The only judgment point (official-prefix subjects like ACCT folding to BUSI vs keeping the CS3-official prefix, matching the file's own live-format ACCT rows) is handled as an explicit carve-out for curator confirmation inside the staged plan rather than per-row churn. Firewall respected: evidence-only, no direct writes.",
+   "confidence": 0.85,
+   "batch": "anchor",
+   "finding": {
+    "id": "CSR0067",
+    "rule": "cs9_anchor_dead_format",
+    "item": "common_courses.json",
+    "evidence": "221 anchor entries keyed in the dead pre-remint 'M-ID SUBJ NNN' format",
+    "suggestion": "promote-time re-key plan (Rule-7); anchor stays firewalled until then",
+    "needs_judgment": true,
+    "group": "anchor"
+   },
+   "skeptic_upheld": true,
+   "skeptic_reason": "Verified against the files: 221/243 keys in kb/common_courses.json carry the literal dead 'M-ID ' prefix alongside 22 live-format keys (ACCT 110/120, BSOT/CMUS/EDUC present as claimed); all 35 batch folds match discipline_canonical_subj4.json exactly, including every spot-checked pair (MUS→MUSI, CIS→CSIS, NURS→NRSR, HSER→COUN, BCIT→CNSR, ASL→SLNA, MEDA→BIOL, BUS→BUSI); Rule 7, the cs9_anchor_dead_format CSR rule, and the anchor firewall in unified_courses.js are real; and the crosswalk step is load-bearing since 257/296 rows in kb/course_crosswalk.json reference the dead M-ID keys. The proposal is stage-only (no writes, firewall respected, curator-gated at promote), so churn cost now is ~zero while the identity-stability risk is deferred to a human gate. Caveats the staged plan should absorb before promote: it is 11 FLNG language subjects (not 9), with an 11-way collision at FLNG 100 and 9-way at FLNG 102; collisions extend beyond FLNG (CIS+WEB→CSIS x4, HSER→COUN collides with existing anchor COUN keys x4, ACCT+BUS→BUSI 100) plus one prefix-strip collision with a DIFFERENT live course (M-ID HOSP 100 'Airline Computer Training' vs live HOSP 100 'Introduction to Hospitality Management') — renumber-on-collision must cover cross-subject and live-key collisions, not just language pairs; 19 of 54 anchor subjects have no fold entry (strip-only); and the ELEC→ELCT fold is data_modal-seeded rather than curator_override (34/35 curator-confirmed, not all). These are refinements handled by the plan's own collision and carve-out steps, not refutations."
+  }
+ ]
+}

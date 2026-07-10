@@ -134,3 +134,24 @@ candidates. Strategy:
   queue; the curator's live rows always win. Any future fire: lane keys ∩
   pending merge-confirm values ⇒ hold.
 - Receipt: `kb/trail_crew_out/2026-07-10/fired_clean_renames_s111.json`.
+
+## Second run — the CSR pass (2026-07-10, Session 111, same day)
+
+The method+magic pattern generalized cleanly to the **Common Subject
+Reference** (`kb/_csr_trail.py` → 6 adjudicators + 5 skeptics →
+`kb/csr_out/2026-07-10/`). New lessons:
+
+- **Encode the canon as named rules in the scanner docstring** (CS1–CS9) and
+  hand each adjudicator batch a rule-specific hint — verdict quality jumped
+  versus the generic prompt of run 1.
+- **Skeptics must re-derive the numbers, not re-read the claim.** Both kills
+  this run (ESCI→ENVT, the DSPS fold) came from skeptics recomputing
+  variant counts / re-key targets from the registry and catching factual
+  errors in otherwise-plausible proposals.
+- **Feed scanner-defect findings back into the scanner the same day** (the
+  CS6 mnemonic heuristic and the 0-row twin-matcher both got adjudicator-
+  specified fixes, applied and re-run before the PR) — the committed harness
+  is part of the deliverable.
+- **Registry passes surface WIRING findings, not just data findings** — the
+  biggest catch (CSR0066) was that the mint path never consults the registry
+  it's documented to consult. Scan the producers, not only the rows.

@@ -1,0 +1,1699 @@
+{
+ "_scanned_at": "2026-07-10",
+ "_registry_synced_at": "2026-07-10T15:06:46Z",
+ "_disciplines": 146,
+ "_official_ccn_prefixes": {
+  "ANTH": 50,
+  "COMM": 192,
+  "ECON": 206,
+  "ENGL": 451,
+  "HIST": 189,
+  "POLS": 144,
+  "PSYC": 150,
+  "STAT": 169,
+  "ASTR": 33,
+  "BIOL": 37,
+  "MATH": 97,
+  "SOCI": 7,
+  "ARTH": 48,
+  "CDEV": 2,
+  "ACCT": 0,
+  "BSOT": 0,
+  "CMUS": 0,
+  "EDUC": 0,
+  "ENGR": 0,
+  "GEOG": 0,
+  "HIT": 0,
+  "HOSP": 0,
+  "ITIS": 0,
+  "JOUR": 0,
+  "SPAN": 0
+ },
+ "findings": [
+  {
+   "id": "CSR0001",
+   "rule": "cs4_aligned",
+   "item": "English",
+   "evidence": "canonical ENGL == official CCN prefix (451 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0002",
+   "rule": "cs4_aligned",
+   "item": "Economics",
+   "evidence": "canonical ECON == official CCN prefix (206 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0003",
+   "rule": "cs4_aligned",
+   "item": "Communication Studies",
+   "evidence": "canonical COMM == official CCN prefix (192 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0004",
+   "rule": "cs4_aligned",
+   "item": "History",
+   "evidence": "canonical HIST == official CCN prefix (189 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0005",
+   "rule": "cs4_aligned",
+   "item": "Psychology",
+   "evidence": "canonical PSYC == official CCN prefix (150 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0006",
+   "rule": "cs4_missed_alignment",
+   "item": "Political Science",
+   "evidence": "official CCN prefix POLS (144 rows) unused; twin discipline uses POSC",
+   "suggestion": "curator call: converge POSC → POLS (Rule-7 re-mint) or record divergence reason",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0007",
+   "rule": "cs4_aligned",
+   "item": "Mathematics",
+   "evidence": "canonical MATH == official CCN prefix (97 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0008",
+   "rule": "cs4_aligned",
+   "item": "Anthropology",
+   "evidence": "canonical ANTH == official CCN prefix (50 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0009",
+   "rule": "cs4_aligned",
+   "item": "Art History",
+   "evidence": "canonical ARTH == official CCN prefix (48 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0010",
+   "rule": "cs4_aligned",
+   "item": "Biological Sciences",
+   "evidence": "canonical BIOL == official CCN prefix (37 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0011",
+   "rule": "cs4_aligned",
+   "item": "Astronomy",
+   "evidence": "canonical ASTR == official CCN prefix (33 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0012",
+   "rule": "cs4_aligned",
+   "item": "Sociology",
+   "evidence": "canonical SOCI == official CCN prefix (7 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0013",
+   "rule": "cs4_missed_alignment",
+   "item": "Child Development/Early Childhood Education",
+   "evidence": "official CCN prefix CDEV (2 rows) unused; twin discipline uses ECED",
+   "suggestion": "curator call: converge ECED → CDEV (Rule-7 re-mint) or record divergence reason",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0014",
+   "rule": "cs4_missed_alignment",
+   "item": "Office Technologies",
+   "evidence": "official CCN prefix BSOT (0 rows) unused; twin discipline uses OTEC",
+   "suggestion": "curator call: converge OTEC → BSOT (Rule-7 re-mint) or record divergence reason",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0015",
+   "rule": "cs4_missed_alignment",
+   "item": "Commercial Music",
+   "evidence": "official CCN prefix CMUS (0 rows) unused; twin discipline uses MUSC",
+   "suggestion": "curator call: converge MUSC → CMUS (Rule-7 re-mint) or record divergence reason",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0016",
+   "rule": "cs4_aligned",
+   "item": "Education",
+   "evidence": "canonical EDUC == official CCN prefix (0 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0017",
+   "rule": "cs4_aligned",
+   "item": "Engineering",
+   "evidence": "canonical ENGR == official CCN prefix (0 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0018",
+   "rule": "cs4_aligned",
+   "item": "Geography",
+   "evidence": "canonical GEOG == official CCN prefix (0 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0019",
+   "rule": "cs4_missed_alignment",
+   "item": "Health Information Technology",
+   "evidence": "official CCN prefix HIT (0 rows) unused; twin discipline uses HEIT",
+   "suggestion": "curator call: converge HEIT → HIT (Rule-7 re-mint) or record divergence reason",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0020",
+   "rule": "cs4_missed_alignment",
+   "item": "Computer Information Systems",
+   "evidence": "official CCN prefix ITIS (0 rows) unused; twin discipline uses CSIS",
+   "suggestion": "curator call: converge CSIS → ITIS (Rule-7 re-mint) or record divergence reason",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0021",
+   "rule": "cs4_aligned",
+   "item": "Journalism",
+   "evidence": "canonical JOUR == official CCN prefix (0 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0022",
+   "rule": "cs5_modal_diverge",
+   "item": "Instructional Design/Technology",
+   "evidence": "modal LINC (share 0.55) but canonical EDTC, no _notes",
+   "suggestion": "confirm choice + record a note",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0023",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Artificial Intelligence",
+   "evidence": "canonical CSAI not derivable from name and absent from 29 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0024",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Building Codes and Regulations",
+   "evidence": "canonical CNSR not derivable from name and absent from 9 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0025",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Cabinet Making",
+   "evidence": "canonical CNSC not derivable from name and absent from 10 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0026",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Diesel Mechanics",
+   "evidence": "canonical AUTD not derivable from name and absent from 37 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0027",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Electromechanical Technology",
+   "evidence": "canonical ELMT not derivable from name and absent from 1 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0028",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Environmental Technologies",
+   "evidence": "canonical ESCI not derivable from name and absent from 40 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0029",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Film and Media Studies",
+   "evidence": "canonical FIMS not derivable from name and absent from 40 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0030",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Furniture Making",
+   "evidence": "canonical CSTF not derivable from name and absent from 3 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0031",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Graphic Arts",
+   "evidence": "canonical GRAF not derivable from name and absent from 40 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0032",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Licensed Vocational Nursing",
+   "evidence": "canonical NRSV not derivable from name and absent from 21 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0033",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Masonry",
+   "evidence": "canonical CNMA not derivable from name and absent from 6 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0034",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Media Production",
+   "evidence": "canonical FIMP not derivable from name and absent from 31 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0035",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Native American/American Indian Studies",
+   "evidence": "canonical ETHA not derivable from name and absent from 8 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0036",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Psychiatric Technician",
+   "evidence": "canonical NURP not derivable from name and absent from 10 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0037",
+   "rule": "cs7_unreviewed",
+   "item": "Anthropology",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0038",
+   "rule": "cs7_unreviewed",
+   "item": "Astronomy",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0039",
+   "rule": "cs7_unreviewed",
+   "item": "Chemistry",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0040",
+   "rule": "cs7_unreviewed",
+   "item": "Commercial Art",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0041",
+   "rule": "cs7_unreviewed",
+   "item": "Communication Studies",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0042",
+   "rule": "cs7_unreviewed",
+   "item": "Cosmetology",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0043",
+   "rule": "cs7_unreviewed",
+   "item": "Court Reporting",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0044",
+   "rule": "cs7_unreviewed",
+   "item": "Digital Fabrication Technician",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0045",
+   "rule": "cs7_unreviewed",
+   "item": "Disabled Student Programs and",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0046",
+   "rule": "cs7_unreviewed",
+   "item": "Earth Science",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0047",
+   "rule": "cs7_unreviewed",
+   "item": "Economics",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0048",
+   "rule": "cs7_unreviewed",
+   "item": "Electronic Technology",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0049",
+   "rule": "cs7_unreviewed",
+   "item": "Engineering",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0050",
+   "rule": "cs7_unreviewed",
+   "item": "English",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0051",
+   "rule": "cs7_unreviewed",
+   "item": "Equine Science",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0052",
+   "rule": "cs7_unreviewed",
+   "item": "Geography",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0053",
+   "rule": "cs7_unreviewed",
+   "item": "Heavy Duty Equipment Mechanics",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0054",
+   "rule": "cs7_unreviewed",
+   "item": "History",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0055",
+   "rule": "cs7_unreviewed",
+   "item": "Mathematics",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0056",
+   "rule": "cs7_unreviewed",
+   "item": "Parent Education: Noncredit",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0057",
+   "rule": "cs7_unreviewed",
+   "item": "Philosophy",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0058",
+   "rule": "cs7_unreviewed",
+   "item": "Physics/Astronomy",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0059",
+   "rule": "cs7_unreviewed",
+   "item": "Speech Language Pathology",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0060",
+   "rule": "cs7_unreviewed",
+   "item": "Upholstering",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0061",
+   "rule": "cs8_seeder_bypass",
+   "item": "kb/_seed_coci_minted_mids.py",
+   "evidence": "Rule 7 says new mints consult discipline_canonical_subj4.json; the seeder numbers per MODAL subject via reference/subject_discipline_map.json and never references the canonical registry — new mints can re-introduce folded variants",
+   "suggestion": "wire the seeder: after discipline resolution, key new M-IDs under the canonical SUBJ4",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0062",
+   "rule": "cs9_anchor_dead_format",
+   "item": "common_courses.json",
+   "evidence": "221 anchor entries keyed in the dead pre-remint 'M-ID SUBJ NNN' format",
+   "suggestion": "promote-time re-key plan (Rule-7); anchor stays firewalled until then",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0063",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID ACCT 100",
+   "evidence": "anchor subject ACCT vs CSR canonical BUSI",
+   "suggestion": "fold to BUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0064",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID ACCT 102",
+   "evidence": "anchor subject ACCT vs CSR canonical BUSI",
+   "suggestion": "fold to BUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0065",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID AJ 100",
+   "evidence": "anchor subject AJ vs CSR canonical CRIM",
+   "suggestion": "fold to CRIM at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0066",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID AJ 102",
+   "evidence": "anchor subject AJ vs CSR canonical CRIM",
+   "suggestion": "fold to CRIM at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0067",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID AJ 104",
+   "evidence": "anchor subject AJ vs CSR canonical CRIM",
+   "suggestion": "fold to CRIM at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0068",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID ARAB 100",
+   "evidence": "anchor subject ARAB vs CSR canonical FLNG",
+   "suggestion": "fold to FLNG at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0069",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID ARAB 102",
+   "evidence": "anchor subject ARAB vs CSR canonical FLNG",
+   "suggestion": "fold to FLNG at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0070",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID ART 100",
+   "evidence": "anchor subject ART vs CSR canonical ARTS",
+   "suggestion": "fold to ARTS at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0071",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID ART 102",
+   "evidence": "anchor subject ART vs CSR canonical ARTS",
+   "suggestion": "fold to ARTS at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0072",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID ASL 100",
+   "evidence": "anchor subject ASL vs CSR canonical SLNA",
+   "suggestion": "fold to SLNA at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0073",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID ASL 102",
+   "evidence": "anchor subject ASL vs CSR canonical SLNA",
+   "suggestion": "fold to SLNA at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0074",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID ASL 104",
+   "evidence": "anchor subject ASL vs CSR canonical SLNA",
+   "suggestion": "fold to SLNA at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0075",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID ASL 106",
+   "evidence": "anchor subject ASL vs CSR canonical SLNA",
+   "suggestion": "fold to SLNA at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0076",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID BCIT 100",
+   "evidence": "anchor subject BCIT vs CSR canonical CNSR",
+   "suggestion": "fold to CNSR at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0077",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID BCIT 102",
+   "evidence": "anchor subject BCIT vs CSR canonical CNSR",
+   "suggestion": "fold to CNSR at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0078",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID BCIT 104",
+   "evidence": "anchor subject BCIT vs CSR canonical CNSR",
+   "suggestion": "fold to CNSR at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0079",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID BCIT 106",
+   "evidence": "anchor subject BCIT vs CSR canonical CNSR",
+   "suggestion": "fold to CNSR at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0080",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID BCIT 108",
+   "evidence": "anchor subject BCIT vs CSR canonical CNSR",
+   "suggestion": "fold to CNSR at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0081",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID BCIT 110",
+   "evidence": "anchor subject BCIT vs CSR canonical CNSR",
+   "suggestion": "fold to CNSR at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0082",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID BCIT 112",
+   "evidence": "anchor subject BCIT vs CSR canonical CNSR",
+   "suggestion": "fold to CNSR at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0083",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID BUS 100",
+   "evidence": "anchor subject BUS vs CSR canonical BUSI",
+   "suggestion": "fold to BUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0084",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID CAOT 100",
+   "evidence": "anchor subject CAOT vs CSR canonical OTEC",
+   "suggestion": "fold to OTEC at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0085",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID CAOT 102",
+   "evidence": "anchor subject CAOT vs CSR canonical OTEC",
+   "suggestion": "fold to OTEC at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0086",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID CAOT 104",
+   "evidence": "anchor subject CAOT vs CSR canonical OTEC",
+   "suggestion": "fold to OTEC at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0087",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID CAOT 106",
+   "evidence": "anchor subject CAOT vs CSR canonical OTEC",
+   "suggestion": "fold to OTEC at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0088",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID CAOT 108",
+   "evidence": "anchor subject CAOT vs CSR canonical OTEC",
+   "suggestion": "fold to OTEC at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0089",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID CHIN 100",
+   "evidence": "anchor subject CHIN vs CSR canonical FLNG",
+   "suggestion": "fold to FLNG at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0090",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID CHIN 102",
+   "evidence": "anchor subject CHIN vs CSR canonical FLNG",
+   "suggestion": "fold to FLNG at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0091",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID CIS 100",
+   "evidence": "anchor subject CIS vs CSR canonical CSIS",
+   "suggestion": "fold to CSIS at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0092",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID CIS 102",
+   "evidence": "anchor subject CIS vs CSR canonical CSIS",
+   "suggestion": "fold to CSIS at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0093",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID CIS 104",
+   "evidence": "anchor subject CIS vs CSR canonical CSIS",
+   "suggestion": "fold to CSIS at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0094",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID CIS 106",
+   "evidence": "anchor subject CIS vs CSR canonical CSIS",
+   "suggestion": "fold to CSIS at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0095",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID CIS 108",
+   "evidence": "anchor subject CIS vs CSR canonical CSIS",
+   "suggestion": "fold to CSIS at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0096",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID CIS 110",
+   "evidence": "anchor subject CIS vs CSR canonical CSIS",
+   "suggestion": "fold to CSIS at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0097",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID CIS 112",
+   "evidence": "anchor subject CIS vs CSR canonical CSIS",
+   "suggestion": "fold to CSIS at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0098",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID DRFT 100",
+   "evidence": "anchor subject DRFT vs CSR canonical DRAF",
+   "suggestion": "fold to DRAF at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0099",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID DRFT 102",
+   "evidence": "anchor subject DRFT vs CSR canonical DRAF",
+   "suggestion": "fold to DRAF at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0100",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID DRFT 104",
+   "evidence": "anchor subject DRFT vs CSR canonical DRAF",
+   "suggestion": "fold to DRAF at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0101",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID DRFT 106",
+   "evidence": "anchor subject DRFT vs CSR canonical DRAF",
+   "suggestion": "fold to DRAF at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0102",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID DRFT 108",
+   "evidence": "anchor subject DRFT vs CSR canonical DRAF",
+   "suggestion": "fold to DRAF at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0103",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID DSL 100",
+   "evidence": "anchor subject DSL vs CSR canonical AUTD",
+   "suggestion": "fold to AUTD at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0104",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID DSL 102",
+   "evidence": "anchor subject DSL vs CSR canonical AUTD",
+   "suggestion": "fold to AUTD at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0105",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID DSL 104",
+   "evidence": "anchor subject DSL vs CSR canonical AUTD",
+   "suggestion": "fold to AUTD at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0106",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID ECE 100",
+   "evidence": "anchor subject ECE vs CSR canonical ECED",
+   "suggestion": "fold to ECED at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0107",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID ECE 102",
+   "evidence": "anchor subject ECE vs CSR canonical ECED",
+   "suggestion": "fold to ECED at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0108",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID ECE 104",
+   "evidence": "anchor subject ECE vs CSR canonical ECED",
+   "suggestion": "fold to ECED at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0109",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID ECE 106",
+   "evidence": "anchor subject ECE vs CSR canonical ECED",
+   "suggestion": "fold to ECED at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0110",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID ELEC 100",
+   "evidence": "anchor subject ELEC vs CSR canonical ELCT",
+   "suggestion": "fold to ELCT at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0111",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID ELEC 102",
+   "evidence": "anchor subject ELEC vs CSR canonical ELCT",
+   "suggestion": "fold to ELCT at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0112",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID ELEC 104",
+   "evidence": "anchor subject ELEC vs CSR canonical ELCT",
+   "suggestion": "fold to ELCT at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0113",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID FREN 100",
+   "evidence": "anchor subject FREN vs CSR canonical FLNG",
+   "suggestion": "fold to FLNG at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0114",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID FREN 102",
+   "evidence": "anchor subject FREN vs CSR canonical FLNG",
+   "suggestion": "fold to FLNG at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0115",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID FTVE 100",
+   "evidence": "anchor subject FTVE vs CSR canonical FIMP",
+   "suggestion": "fold to FIMP at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0116",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID FTVE 102",
+   "evidence": "anchor subject FTVE vs CSR canonical FIMP",
+   "suggestion": "fold to FIMP at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0117",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID FTVE 104",
+   "evidence": "anchor subject FTVE vs CSR canonical FIMP",
+   "suggestion": "fold to FIMP at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0118",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID GERM 100",
+   "evidence": "anchor subject GERM vs CSR canonical FLNG",
+   "suggestion": "fold to FLNG at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0119",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID GERM 102",
+   "evidence": "anchor subject GERM vs CSR canonical FLNG",
+   "suggestion": "fold to FLNG at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0120",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID GRA 100",
+   "evidence": "anchor subject GRA vs CSR canonical GRAF",
+   "suggestion": "fold to GRAF at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0121",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID GRA 102",
+   "evidence": "anchor subject GRA vs CSR canonical GRAF",
+   "suggestion": "fold to GRAF at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0122",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID GRA 104",
+   "evidence": "anchor subject GRA vs CSR canonical GRAF",
+   "suggestion": "fold to GRAF at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0123",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID GRA 106",
+   "evidence": "anchor subject GRA vs CSR canonical GRAF",
+   "suggestion": "fold to GRAF at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0124",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID GRA 108",
+   "evidence": "anchor subject GRA vs CSR canonical GRAF",
+   "suggestion": "fold to GRAF at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0125",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID HEBR 100",
+   "evidence": "anchor subject HEBR vs CSR canonical FLNG",
+   "suggestion": "fold to FLNG at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0126",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID HSER 100",
+   "evidence": "anchor subject HSER vs CSR canonical COUN",
+   "suggestion": "fold to COUN at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0127",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID HSER 102",
+   "evidence": "anchor subject HSER vs CSR canonical COUN",
+   "suggestion": "fold to COUN at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0128",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID HSER 104",
+   "evidence": "anchor subject HSER vs CSR canonical COUN",
+   "suggestion": "fold to COUN at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0129",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID HSER 106",
+   "evidence": "anchor subject HSER vs CSR canonical COUN",
+   "suggestion": "fold to COUN at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0130",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID HSER 108",
+   "evidence": "anchor subject HSER vs CSR canonical COUN",
+   "suggestion": "fold to COUN at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0131",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID ITAL 100",
+   "evidence": "anchor subject ITAL vs CSR canonical FLNG",
+   "suggestion": "fold to FLNG at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0132",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID ITAL 102",
+   "evidence": "anchor subject ITAL vs CSR canonical FLNG",
+   "suggestion": "fold to FLNG at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0133",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID JPN 100",
+   "evidence": "anchor subject JPN vs CSR canonical FLNG",
+   "suggestion": "fold to FLNG at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0134",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID JPN 102",
+   "evidence": "anchor subject JPN vs CSR canonical FLNG",
+   "suggestion": "fold to FLNG at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0135",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID KOR 100",
+   "evidence": "anchor subject KOR vs CSR canonical FLNG",
+   "suggestion": "fold to FLNG at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0136",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID KOR 102",
+   "evidence": "anchor subject KOR vs CSR canonical FLNG",
+   "suggestion": "fold to FLNG at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0137",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID LRNS 100",
+   "evidence": "anchor subject LRNS vs CSR canonical LSKL",
+   "suggestion": "fold to LSKL at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0138",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MEDA 100",
+   "evidence": "anchor subject MEDA vs CSR canonical BIOL",
+   "suggestion": "fold to BIOL at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0139",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MFG 100",
+   "evidence": "anchor subject MFG vs CSR canonical MANU",
+   "suggestion": "fold to MANU at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0140",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MFG 102",
+   "evidence": "anchor subject MFG vs CSR canonical MANU",
+   "suggestion": "fold to MANU at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0141",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MFG 104",
+   "evidence": "anchor subject MFG vs CSR canonical MANU",
+   "suggestion": "fold to MANU at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0142",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MMED 100",
+   "evidence": "anchor subject MMED vs CSR canonical MULT",
+   "suggestion": "fold to MULT at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0143",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MMED 102",
+   "evidence": "anchor subject MMED vs CSR canonical MULT",
+   "suggestion": "fold to MULT at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0144",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MUS 100",
+   "evidence": "anchor subject MUS vs CSR canonical MUSI",
+   "suggestion": "fold to MUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0145",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MUS 102",
+   "evidence": "anchor subject MUS vs CSR canonical MUSI",
+   "suggestion": "fold to MUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0146",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MUS 104",
+   "evidence": "anchor subject MUS vs CSR canonical MUSI",
+   "suggestion": "fold to MUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0147",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MUS 106",
+   "evidence": "anchor subject MUS vs CSR canonical MUSI",
+   "suggestion": "fold to MUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0148",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MUS 108",
+   "evidence": "anchor subject MUS vs CSR canonical MUSI",
+   "suggestion": "fold to MUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0149",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MUS 110",
+   "evidence": "anchor subject MUS vs CSR canonical MUSI",
+   "suggestion": "fold to MUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0150",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MUS 112",
+   "evidence": "anchor subject MUS vs CSR canonical MUSI",
+   "suggestion": "fold to MUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0151",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MUS 114",
+   "evidence": "anchor subject MUS vs CSR canonical MUSI",
+   "suggestion": "fold to MUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0152",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MUS 116",
+   "evidence": "anchor subject MUS vs CSR canonical MUSI",
+   "suggestion": "fold to MUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0153",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MUS 118",
+   "evidence": "anchor subject MUS vs CSR canonical MUSI",
+   "suggestion": "fold to MUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0154",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MUS 120",
+   "evidence": "anchor subject MUS vs CSR canonical MUSI",
+   "suggestion": "fold to MUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0155",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MUS 122",
+   "evidence": "anchor subject MUS vs CSR canonical MUSI",
+   "suggestion": "fold to MUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0156",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MUS 124",
+   "evidence": "anchor subject MUS vs CSR canonical MUSI",
+   "suggestion": "fold to MUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0157",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MUS 126",
+   "evidence": "anchor subject MUS vs CSR canonical MUSI",
+   "suggestion": "fold to MUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0158",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MUS 128",
+   "evidence": "anchor subject MUS vs CSR canonical MUSI",
+   "suggestion": "fold to MUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0159",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MUS 130",
+   "evidence": "anchor subject MUS vs CSR canonical MUSI",
+   "suggestion": "fold to MUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0160",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MUS 132",
+   "evidence": "anchor subject MUS vs CSR canonical MUSI",
+   "suggestion": "fold to MUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0161",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MUS 134",
+   "evidence": "anchor subject MUS vs CSR canonical MUSI",
+   "suggestion": "fold to MUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0162",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MUS 136",
+   "evidence": "anchor subject MUS vs CSR canonical MUSI",
+   "suggestion": "fold to MUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0163",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MUS 138",
+   "evidence": "anchor subject MUS vs CSR canonical MUSI",
+   "suggestion": "fold to MUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0164",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID MUS 140",
+   "evidence": "anchor subject MUS vs CSR canonical MUSI",
+   "suggestion": "fold to MUSI at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0165",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID NURS 100",
+   "evidence": "anchor subject NURS vs CSR canonical NRSR",
+   "suggestion": "fold to NRSR at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0166",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID NURS 102",
+   "evidence": "anchor subject NURS vs CSR canonical NRSR",
+   "suggestion": "fold to NRSR at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0167",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID NURS 104",
+   "evidence": "anchor subject NURS vs CSR canonical NRSR",
+   "suggestion": "fold to NRSR at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0168",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID NURS 106",
+   "evidence": "anchor subject NURS vs CSR canonical NRSR",
+   "suggestion": "fold to NRSR at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0169",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID NURS 108",
+   "evidence": "anchor subject NURS vs CSR canonical NRSR",
+   "suggestion": "fold to NRSR at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0170",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID NURS 110",
+   "evidence": "anchor subject NURS vs CSR canonical NRSR",
+   "suggestion": "fold to NRSR at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0171",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID NURS 112",
+   "evidence": "anchor subject NURS vs CSR canonical NRSR",
+   "suggestion": "fold to NRSR at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0172",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID NUTR 100",
+   "evidence": "anchor subject NUTR vs CSR canonical FDNT",
+   "suggestion": "fold to FDNT at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0173",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID NUTR 102",
+   "evidence": "anchor subject NUTR vs CSR canonical FDNT",
+   "suggestion": "fold to FDNT at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0174",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID NUTR 104",
+   "evidence": "anchor subject NUTR vs CSR canonical FDNT",
+   "suggestion": "fold to FDNT at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0175",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID PARA 100",
+   "evidence": "anchor subject PARA vs CSR canonical PLGL",
+   "suggestion": "fold to PLGL at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0176",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID PARA 102",
+   "evidence": "anchor subject PARA vs CSR canonical PLGL",
+   "suggestion": "fold to PLGL at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0177",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID PERS 100",
+   "evidence": "anchor subject PERS vs CSR canonical FLNG",
+   "suggestion": "fold to FLNG at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0178",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID PERS 102",
+   "evidence": "anchor subject PERS vs CSR canonical FLNG",
+   "suggestion": "fold to FLNG at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0179",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID PORT 100",
+   "evidence": "anchor subject PORT vs CSR canonical FLNG",
+   "suggestion": "fold to FLNG at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0180",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID SPAN 100",
+   "evidence": "anchor subject SPAN vs CSR canonical FLNG",
+   "suggestion": "fold to FLNG at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0181",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID SPAN 102",
+   "evidence": "anchor subject SPAN vs CSR canonical FLNG",
+   "suggestion": "fold to FLNG at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0182",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID WEB 100",
+   "evidence": "anchor subject WEB vs CSR canonical CSIS",
+   "suggestion": "fold to CSIS at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0183",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID WEB 102",
+   "evidence": "anchor subject WEB vs CSR canonical CSIS",
+   "suggestion": "fold to CSIS at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0184",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID WEB 104",
+   "evidence": "anchor subject WEB vs CSR canonical CSIS",
+   "suggestion": "fold to CSIS at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0185",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID WEB 106",
+   "evidence": "anchor subject WEB vs CSR canonical CSIS",
+   "suggestion": "fold to CSIS at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  }
+ ]
+}
