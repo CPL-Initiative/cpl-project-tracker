@@ -1,0 +1,2227 @@
+{
+ "_source": "19th Edition Minimum Qualifications for Faculty and Administrators in California Community Colleges (CCCCO), Disciplines Index pp.6-18",
+ "_extracted_at": "2026-07-10",
+ "_extracted_by": "Session 111 (SkyMighty) — text row-grammar parse of the Disciplines Index + 31 hand-adjudicated rows; Sam-supplied PDF",
+ "_semantics": {
+  "masters": "Requires a master's degree in the discipline (or listed equivalents)",
+  "not_masters": "Master's not generally expected/available: any bachelor's + 2 years professional experience, OR any associate + 6 years (CCR 53404 formula); see the handbook row for specifics",
+  "both_lists": "Appears on both the master's and the experience lists (area-dependent)",
+  "noncredit_53412": "Noncredit instructor minimum qualifications per CCR 53412 subsections"
+ },
+ "_note": "Companion to mq_disciplines.json (same 240 titles). printed_pages are the handbook's printed page numbers (PDF page = printed + 6).",
+ "count": 240,
+ "disciplines": {
+  "Administration of Justice": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    45
+   ]
+  },
+  "Agricultural Engineering": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    45
+   ]
+  },
+  "Agricultural Production": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    45
+   ]
+  },
+  "Agriculture": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    20
+   ]
+  },
+  "Air Conditioning, Refrigeration, Heating": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    45
+   ]
+  },
+  "Animal Training and Management": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    45
+   ]
+  },
+  "Anthropology": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    21
+   ]
+  },
+  "Appliance Repair": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    45
+   ]
+  },
+  "Archaeological Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    45
+   ]
+  },
+  "Architecture": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    45
+   ]
+  },
+  "Art": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    21
+   ]
+  },
+  "Art History": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    21
+   ]
+  },
+  "Artificial Intelligence": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    22
+   ]
+  },
+  "Asian American Studies": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    22
+   ]
+  },
+  "Astronomy": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    22
+   ]
+  },
+  "Athletic Training": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    45
+   ]
+  },
+  "Auto Body Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    45
+   ]
+  },
+  "Automotive Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    45
+   ]
+  },
+  "Aviation": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    45
+   ]
+  },
+  "Banking and Finance": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    45
+   ]
+  },
+  "Barbering": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    45
+   ]
+  },
+  "Bicycle Repair": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    45
+   ]
+  },
+  "Biological Sciences": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    22
+   ]
+  },
+  "Biotechnology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    54
+   ]
+  },
+  "Bookbinding": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    46
+   ]
+  },
+  "Broadcasting Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    46
+   ]
+  },
+  "Building Codes and Regulations": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    46
+   ]
+  },
+  "Building Maintenance": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    46
+   ]
+  },
+  "Business": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    23
+   ]
+  },
+  "Business Education": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    23
+   ]
+  },
+  "Business Machine Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    46
+   ]
+  },
+  "Cabinet Making": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    46
+   ]
+  },
+  "Cardiovascular Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    46
+   ]
+  },
+  "Carpentry": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    46
+   ]
+  },
+  "Ceramic Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    46
+   ]
+  },
+  "Chemistry": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    23
+   ]
+  },
+  "Chicano Studies": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    24
+   ]
+  },
+  "Child Development/Early Childhood Education": {
+   "mq_list": "both_lists",
+   "mq_list_label": "On BOTH lists",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    24
+   ]
+  },
+  "Classics": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    24
+   ]
+  },
+  "Coaching": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    46
+   ]
+  },
+  "Commercial Art": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    46
+   ]
+  },
+  "Commercial Music": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    46
+   ]
+  },
+  "Communication Studies": {
+   "mq_list": "both_lists",
+   "mq_list_label": "On BOTH lists",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    24,
+    52
+   ]
+  },
+  "Community College Counselor of Students with Disabilities 53414": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": "CCR 53414(a)",
+   "flags": [
+    "dsps_53414"
+   ],
+   "printed_pages": [
+    25
+   ]
+  },
+  "Computer Information Systems": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    46
+   ]
+  },
+  "Computer Science": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    26
+   ]
+  },
+  "Computer Service Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    46
+   ]
+  },
+  "Construction Management": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    46
+   ]
+  },
+  "Construction Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    46
+   ]
+  },
+  "Cosmetology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    46
+   ]
+  },
+  "Counseling": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": "CCR 53410.1",
+   "flags": [
+    "ccr_53410_1"
+   ],
+   "printed_pages": [
+    26
+   ]
+  },
+  "Counseling: Extended Opportunity": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": "CCR 56264(a-c)",
+   "flags": null,
+   "printed_pages": [
+    27
+   ]
+  },
+  "Court Interpreting": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    46
+   ]
+  },
+  "Court Reporting": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    46
+   ]
+  },
+  "Culinary Arts/Food Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    46
+   ]
+  },
+  "Dance": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    27
+   ]
+  },
+  "Deaf and Hearing Impaired: Disabled Students Programs 53414": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": "CCR 53414(d)(1)(2)(C)",
+   "flags": [
+    "dsps_53414"
+   ],
+   "printed_pages": [
+    28
+   ]
+  },
+  "Dental Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    46
+   ]
+  },
+  "Developmental Disabilities: Disabled Students Programs and Services 53414": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": "CCR 53414(d)(1)(2)(B)",
+   "flags": [
+    "dsps_53414"
+   ],
+   "printed_pages": [
+    28
+   ]
+  },
+  "Diagnostic Medical Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    46
+   ]
+  },
+  "Diesel Mechanics": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    47
+   ]
+  },
+  "Dietetic Technician": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    47
+   ]
+  },
+  "Dietetics/Nutritional Science": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    28
+   ]
+  },
+  "Digital Fabrication Technician": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    47
+   ]
+  },
+  "Disabled Student Programs and": {
+   "mq_list": "both_lists",
+   "mq_list_label": "On BOTH lists",
+   "special_ccr": "CCR 53414(d)(1)(2)(e)(1-3)(f)",
+   "flags": [
+    "dsps_53414"
+   ],
+   "printed_pages": [
+    28,
+    47,
+    62
+   ]
+  },
+  "Drafting/CADD": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    47
+   ]
+  },
+  "Drama/Theater Arts": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    29
+   ]
+  },
+  "Earth Science": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    29
+   ]
+  },
+  "Ecology": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    29
+   ]
+  },
+  "Economics": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    29
+   ]
+  },
+  "Education": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    29
+   ]
+  },
+  "Electricity": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    47
+   ]
+  },
+  "Electromechanical Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    47
+   ]
+  },
+  "Electromicroscopy": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    47
+   ]
+  },
+  "Electronic Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    47
+   ]
+  },
+  "Electronics": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    47
+   ]
+  },
+  "Electroplating": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    47
+   ]
+  },
+  "Emergency Medical Technologies": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    47
+   ]
+  },
+  "Engineering": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": "CCR 53410.1",
+   "flags": [
+    "ccr_53410_1"
+   ],
+   "printed_pages": [
+    30
+   ]
+  },
+  "Engineering Support": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    47
+   ]
+  },
+  "Engineering Technology": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    30
+   ]
+  },
+  "English": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    30
+   ]
+  },
+  "English as a Second Language": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    31
+   ]
+  },
+  "English as a Second Language Noncredit 53412": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": "CCR 53412(e)",
+   "flags": [
+    "noncredit_53412"
+   ],
+   "printed_pages": [
+    55
+   ]
+  },
+  "Environmental Technologies": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    47
+   ]
+  },
+  "Equine Science": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    47
+   ]
+  },
+  "Estimating": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    47
+   ]
+  },
+  "Ethnic Studies": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    31
+   ]
+  },
+  "Fabric Care": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    47
+   ]
+  },
+  "Family and Consumer Studies/ Home Economics": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    31
+   ]
+  },
+  "Fashion and Related Technologies": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    47
+   ]
+  },
+  "Film and Media Studies": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    32
+   ]
+  },
+  "Fire Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Flight Attendant Training": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Fluid Mechanics Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Folk Dance": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Foreign Languages": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    32
+   ]
+  },
+  "Forestry/Natural Resources": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Furniture Making": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Geography": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    32
+   ]
+  },
+  "Gerontology": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    32
+   ]
+  },
+  "Graphic Arts": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Gunsmithing": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Health": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    33
+   ]
+  },
+  "Health Care Ancillaries": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Health Information Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Health Services Director/Health": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": "CCR 53411",
+   "flags": null,
+   "printed_pages": [
+    33
+   ]
+  },
+  "Health and Safety: Noncredit": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": "CCR 53412(f)",
+   "flags": [
+    "noncredit_53412"
+   ],
+   "printed_pages": [
+    55
+   ]
+  },
+  "Heavy Duty Equipment Mechanics": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "History": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    33
+   ]
+  },
+  "Home Economics: Noncredit": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": "CCR 53412(g)",
+   "flags": [
+    "noncredit_53412"
+   ],
+   "printed_pages": [
+    53
+   ]
+  },
+  "Homeland Security": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    33
+   ]
+  },
+  "Hotel and Motel Services": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Humanities": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Industrial Design": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Industrial Maintenance": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Industrial Relations": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Industrial Safety": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Industrial Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Instructional Design/Technology": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    34
+   ]
+  },
+  "Insurance": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Interdisciplinary Studies": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    34
+   ]
+  },
+  "Interdisciplinary-Basic Skills: Noncredit 53412": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": "CCR 53412(a)",
+   "flags": [
+    "noncredit_53412"
+   ],
+   "printed_pages": [
+    55
+   ]
+  },
+  "Interior Design": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Janitorial Services": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Jewelry": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Journalism": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    34
+   ]
+  },
+  "Kinesiology": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    34
+   ]
+  },
+  "Labor Relations": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Law": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": "CCR 53415",
+   "flags": [
+    "ccr_53415"
+   ],
+   "printed_pages": [
+    35
+   ]
+  },
+  "Learning Assistance or Learning Skills": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    35
+   ]
+  },
+  "Learning Disabilities: Disabled Student Programs and Services 53414": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": "CCR 53414(d)(1)(2)",
+   "flags": [
+    "dsps_53414"
+   ],
+   "printed_pages": [
+    35
+   ]
+  },
+  "Learning Disabilities: Specialist": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": "CCR 53414(f)",
+   "flags": [
+    "dsps_53414"
+   ],
+   "printed_pages": [
+    35
+   ]
+  },
+  "Legal Assisting": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Library Science": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    35
+   ]
+  },
+  "Library Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Licensed Vocational Nursing": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Linguistics": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    36
+   ]
+  },
+  "Locksmithing": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Machine Tool Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Management": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    36
+   ]
+  },
+  "Manufacturing Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Marine Diving Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Marine Engine Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Marketing": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    36
+   ]
+  },
+  "Martial Arts/Self-Defense": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Masonry": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Mass Communication": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    36
+   ]
+  },
+  "Materials Testing Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Mathematics": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    37
+   ]
+  },
+  "Mathematics-Basic Skills: Noncredit": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": "CCR 53412(b)",
+   "flags": [
+    "noncredit_53412"
+   ],
+   "printed_pages": [
+    56
+   ]
+  },
+  "Media Production": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Medical Instrument Repair": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Military Studies": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Mining and Metallurgy": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Mortuary Science": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Motorcycle Repair": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Multimedia": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Music": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    37
+   ]
+  },
+  "Music Management": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Music Merchandising": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Musical Instrument Repair": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Nanotechnology": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    37
+   ]
+  },
+  "Native American/American Indian Studies": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    37
+   ]
+  },
+  "Nursing": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    38
+   ]
+  },
+  "Nursing Science/Clinical Practice": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Nutritional Science/Dietetics": {
+   "mq_list": "both_lists",
+   "mq_list_label": "On BOTH lists",
+   "special_ccr": "CCR 53410.1",
+   "flags": [
+    "ccr_53410_1"
+   ],
+   "printed_pages": [
+    35,
+    47
+   ]
+  },
+  "Occupational Therapy Assisting": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Office Technologies": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    49
+   ]
+  },
+  "Older Adults: Noncredit": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": "CCR 53412(h)",
+   "flags": [
+    "noncredit_53412"
+   ],
+   "printed_pages": [
+    56
+   ]
+  },
+  "Ornamental Horticulture": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Parent Education: Noncredit": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": "CCR 53412(i)",
+   "flags": [
+    "noncredit_53412"
+   ],
+   "printed_pages": [
+    56
+   ]
+  },
+  "Peace Studies": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    38
+   ]
+  },
+  "Pharmacy Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    56
+   ]
+  },
+  "Philosophy": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    38
+   ]
+  },
+  "Photographic Technology/ Commercial Photography": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Photography": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    39
+   ]
+  },
+  "Physical Disabilities: Disabled Student Programs and Services 53414": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": "CCR 53414(d)",
+   "flags": [
+    "dsps_53414"
+   ],
+   "printed_pages": [
+    39
+   ]
+  },
+  "Physical Education": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Physical Education Disabled Students": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    48
+   ]
+  },
+  "Physical Sciences": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    40
+   ]
+  },
+  "Physical Therapy Assisting": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Physics/Astronomy": {
+   "mq_list": "both_lists",
+   "mq_list_label": "On BOTH lists",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    40,
+    49
+   ]
+  },
+  "Piano Tuning and Repair": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Plastics": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Plumbing": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Political Science": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    40
+   ]
+  },
+  "Printing Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Private Security": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Prosthetics and Orthotics": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Psychiatric Technician": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Psychology": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    41
+   ]
+  },
+  "Public Relations": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Public Safety": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Radiation Therapy": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Radiological Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Reading": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    41
+   ]
+  },
+  "Reading-Basic Skills: Noncredit": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": "CCR 53412(c)",
+   "flags": [
+    "noncredit_53412"
+   ],
+   "printed_pages": [
+    57
+   ]
+  },
+  "Real Estate": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Recreation Administration": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    41
+   ]
+  },
+  "Registered Behavior Technician": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    41
+   ]
+  },
+  "Registered Veterinary Technician": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Rehabilitation Technician": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Religious Studies": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    42
+   ]
+  },
+  "Respiratory Technician": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Respiratory Technologies": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Restaurant Management": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Retailing": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Robotics": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Sanitation and Public Health Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    50
+   ]
+  },
+  "Search and Rescue": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    51
+   ]
+  },
+  "Sheet Metal": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    51
+   ]
+  },
+  "Ship and Boat Building and Repair": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    51
+   ]
+  },
+  "Shoe Rebuilding": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    51
+   ]
+  },
+  "Sign Language, American": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    51
+   ]
+  },
+  "Sign Language/ English Interpreting": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    51
+   ]
+  },
+  "Small Business Development": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    51
+   ]
+  },
+  "Small Engine Mechanics": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    51
+   ]
+  },
+  "Social Science": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    42
+   ]
+  },
+  "Sociology": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    42
+   ]
+  },
+  "Specialized Instruction": {
+   "mq_list": "both_lists",
+   "mq_list_label": "On BOTH lists",
+   "special_ccr": "CCR 53414(e)(3)",
+   "flags": [
+    "dsps_53414"
+   ],
+   "printed_pages": [
+    42,
+    57
+   ]
+  },
+  "Speech Communication": {
+   "mq_list": "both_lists",
+   "mq_list_label": "On BOTH lists",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    32,
+    52
+   ]
+  },
+  "Speech Language Pathology": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    43
+   ]
+  },
+  "Speech Language Pathology: Disabled Student Programs and 53414 Services": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": "CCR 53414(c)",
+   "flags": [
+    "dsps_53414"
+   ],
+   "printed_pages": [
+    43
+   ]
+  },
+  "Stagecraft": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    51
+   ]
+  },
+  "Steamfitting": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    51
+   ]
+  },
+  "Supply Chain Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    51
+   ]
+  },
+  "Surgical Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    51
+   ]
+  },
+  "Telecommunication Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    51
+   ]
+  },
+  "Theater Arts": {
+   "mq_list": "both_lists",
+   "mq_list_label": "On BOTH lists",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    43,
+    52
+   ]
+  },
+  "Transportation": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    51
+   ]
+  },
+  "Travel Services": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    51
+   ]
+  },
+  "Upholstering": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    51
+   ]
+  },
+  "Vision Care Technology": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    51
+   ]
+  },
+  "Vocational": {
+   "mq_list": "noncredit_53412",
+   "mq_list_label": "Noncredit instructor MQs (CCR §53412)",
+   "special_ccr": "CCR 53412(j)",
+   "flags": null,
+   "printed_pages": [
+    58
+   ]
+  },
+  "Watch and Clock Repair": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    51
+   ]
+  },
+  "Welding": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    51
+   ]
+  },
+  "Women’s Studies": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    43
+   ]
+  },
+  "Work Experience Instructors": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": "CCR 53416",
+   "flags": null,
+   "printed_pages": [
+    43
+   ]
+  },
+  "Writing-Basic Skills: Noncredit": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": "CCR 53412(c)",
+   "flags": [
+    "noncredit_53412"
+   ],
+   "printed_pages": [
+    58
+   ]
+  }
+ }
+}
