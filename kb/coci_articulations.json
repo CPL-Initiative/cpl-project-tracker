@@ -47598,7 +47598,7 @@
       ],
       "colleges_offering_count": 2
     },
-    "POSC M9001": {
+    "POLS M9001": {
       "identity_system": "M-ID",
       "title": "Orientation for P.O.S.T. Regular and Modular Academy",
       "discipline": "Political Science",
@@ -218999,7 +218999,7 @@
       "adoption_leverage_count": 62
     },
     {
-      "course_id": "POSC M1035",
+      "course_id": "POLS M1035",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -219043,7 +219043,7 @@
       "_remint_from": "M-ID POLS 118"
     },
     {
-      "course_id": "POSC M1034",
+      "course_id": "POLS M1034",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -219087,7 +219087,7 @@
       "_remint_from": "M-ID POLSCI 102"
     },
     {
-      "course_id": "POSC M10BC",
+      "course_id": "POLS M10BC",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -219119,7 +219119,7 @@
       "_remint_from": "M-ID POLS 188"
     },
     {
-      "course_id": "POSC M10BC",
+      "course_id": "POLS M10BC",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -219188,7 +219188,7 @@
       "_remint_from": "M-ID PORT 104"
     },
     {
-      "course_id": "POSC M9001",
+      "course_id": "POLS M9001",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,

@@ -97,6 +97,7 @@ ALIAS_MAPS = [
     "kb/subj4_fold_out/2026-06-12/alias_map.json",        # 2026-06-12 (the canonical SUBJ4 fold, Session 50 — stamps: _subj4_fold_from)
     "kb/twin_merge_out/2026-06-12-postfold/alias_map.json",  # 2026-06-12 (post-fold statewide twins, Session 50)
     "kb/kin_pe_pass2_out/2026-06-12/alias_map.json",      # 2026-06-12 (KIN/PE pass 2, Session 51 — stamps: _kin_pe_pass2_from; no V5 stamp-era hookup needed: applied after the fold map was already folded in)
+    "kb/pols_remint_out/2026-07-10/alias_map.json",     # 2026-07-10 (POSC->POLS CCN convergence, Session 111 — CSR pass CSR0006)
 ]
 
 

@@ -400,7 +400,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "AGPR M10DI": {
-      "merge_into": "POSC Z1005",
+      "merge_into": "POLS Z1005",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -28223,7 +28223,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "CISC M1021": {
-      "merge_into": "POSC M1075",
+      "merge_into": "POLS M1075",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -67269,7 +67269,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ETHN M1030": {
-      "merge_into": "POSC M1076",
+      "merge_into": "POLS M1076",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -67917,7 +67917,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ETHS M10FR": {
-      "merge_into": "POSC M1014",
+      "merge_into": "POLS M1014",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -68387,7 +68387,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ETHS M10OA": {
-      "merge_into": "POSC M1075",
+      "merge_into": "POLS M1075",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -68432,7 +68432,7 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "ETHS M10OQ": {
-      "merge_into": "POSC M1076",
+      "merge_into": "POLS M1076",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -68737,7 +68737,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ETHS M10UO": {
-      "merge_into": "POSC M1075",
+      "merge_into": "POLS M1075",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -68918,7 +68918,7 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "ETHS M1175": {
-      "merge_into": "POSC M1076",
+      "merge_into": "POLS M1076",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -80693,7 +80693,7 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "GEOG M10AZ": {
-      "merge_into": "POSC M1006",
+      "merge_into": "POLS M1006",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -83286,12 +83286,12 @@
       "reviewed_at": "2026-06-12T21:55:25.581799+00:00"
     },
     "HIST M10AH": {
-      "merge_into": "POSC M1076",
+      "merge_into": "POLS M1076",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "HIST M10AI": {
-      "merge_into": "POSC M1076",
+      "merge_into": "POLS M1076",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -83886,7 +83886,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "HIST M10JD": {
-      "merge_into": "POSC M1006",
+      "merge_into": "POLS M1006",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -84496,7 +84496,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "HIST M10SW": {
-      "merge_into": "POSC M1039",
+      "merge_into": "POLS M1039",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -129035,483 +129035,483 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M1001": {
+    "POLS M1001": {
       "unified_title": "Pol Sc 189",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M1003": {
+    "POLS M1003": {
       "merge_into": "BUSI M1092",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "POSC M1004": {
+    "POLS M1004": {
       "unified_title": "Introduction to Community Organizing",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M1006": {
+    "POLS M1006": {
       "unified_title": "Geography of the Middle East/North Africa and Southwest Asia",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M1009": {
-      "merge_into": "POSC M1010",
+    "POLS M1009": {
+      "merge_into": "POLS M1010",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M1010": {
+    "POLS M1010": {
       "unified_title": "Introduction American Foreign Policy",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M1014": {
+    "POLS M1014": {
       "unified_title": "Introduction to Analysis of American Political Institutions",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M1022": {
-      "merge_into": "POSC M1056",
+    "POLS M1022": {
+      "merge_into": "POLS M1056",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M1023": {
-      "merge_into": "POSC M1056",
+    "POLS M1023": {
+      "merge_into": "POLS M1056",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00",
       "unified_title": "California State and Local Government"
     },
-    "POSC M1024": {
+    "POLS M1024": {
       "unified_title": "California Government and Politics",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "POSC M1025": {
+    "POLS M1025": {
       "unified_title": "Introduction to California Governments and Politics",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M1027": {
+    "POLS M1027": {
       "unified_title": "Campaigns, Parties and Elections",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M1029": {
-      "merge_into": "POSC M1004",
+    "POLS M1029": {
+      "merge_into": "POLS M1004",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M1039": {
+    "POLS M1039": {
       "unified_title": "The Modern Far East",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M1041": {
+    "POLS M1041": {
       "unified_title": "Government and Politics in the Middle East",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "POSC M1043": {
+    "POLS M1043": {
       "merge_into": "ECON M1026",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M1048": {
+    "POLS M1048": {
       "merge_into": "ETHS M1218",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "POSC M1056": {
+    "POLS M1056": {
       "unified_title": "Contemporary Issues in California State and Local Government",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M1075": {
+    "POLS M1075": {
       "unified_title": "History of Mexican and Latino Americans in the United States",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M1076": {
+    "POLS M1076": {
       "unified_title": "History of Chicanx and Latinx from 1400 to the Present",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M1079": {
+    "POLS M1079": {
       "unified_title": "Understanding the United Nations: Theory and Practice",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M1081": {
+    "POLS M1081": {
       "unified_title": "Topics in Political Science",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "POSC M1084": {
+    "POLS M1084": {
       "unified_title": "Women and Politics",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "POSC M10AD": {
+    "POLS M10AD": {
       "merge_into": "SOCI M1003",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10AK": {
-      "merge_into": "POSC M1079",
+    "POLS M10AK": {
+      "merge_into": "POLS M1079",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10AM": {
-      "merge_into": "POSC M1025",
+    "POLS M10AM": {
+      "merge_into": "POLS M1025",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10AS": {
+    "POLS M10AS": {
       "merge_into": "ETHS M1218",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10AX": {
+    "POLS M10AX": {
       "merge_into": "ETHS M1218",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10BB": {
-      "merge_into": "POSC M1056",
+    "POLS M10BB": {
+      "merge_into": "POLS M1056",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10BO": {
+    "POLS M10BO": {
       "merge_into": "HIST M1172",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10BQ": {
+    "POLS M10BQ": {
       "merge_into": "HIST M1172",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10BS": {
+    "POLS M10BS": {
       "merge_into": "LEGL M1037",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10BU": {
-      "merge_into": "POSC Z1001",
+    "POLS M10BU": {
+      "merge_into": "POLS Z1001",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10BW": {
-      "merge_into": "POSC M1056",
+    "POLS M10BW": {
+      "merge_into": "POLS M1056",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10CB": {
-      "merge_into": "POSC M1023",
+    "POLS M10CB": {
+      "merge_into": "POLS M1023",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "POSC M10CC": {
-      "merge_into": "POSC M1024",
+    "POLS M10CC": {
+      "merge_into": "POLS M1024",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "POSC M10CD": {
-      "merge_into": "POSC Z1008",
+    "POLS M10CD": {
+      "merge_into": "POLS Z1008",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10CE": {
-      "merge_into": "POSC Z1009",
+    "POLS M10CE": {
+      "merge_into": "POLS Z1009",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10CF": {
-      "merge_into": "POSC M1056",
+    "POLS M10CF": {
+      "merge_into": "POLS M1056",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10CI": {
-      "merge_into": "POSC M1027",
+    "POLS M10CI": {
+      "merge_into": "POLS M1027",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10CL": {
-      "merge_into": "POSC Z1002",
+    "POLS M10CL": {
+      "merge_into": "POLS Z1002",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10CM": {
-      "merge_into": "POSC Z1002",
+    "POLS M10CM": {
+      "merge_into": "POLS Z1002",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10CW": {
-      "merge_into": "POSC Z1003",
+    "POLS M10CW": {
+      "merge_into": "POLS Z1003",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10CY": {
-      "merge_into": "POSC Z1003",
+    "POLS M10CY": {
+      "merge_into": "POLS Z1003",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10CZ": {
-      "merge_into": "POSC Z1004",
+    "POLS M10CZ": {
+      "merge_into": "POLS Z1004",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10DA": {
-      "merge_into": "POSC Z1004",
+    "POLS M10DA": {
+      "merge_into": "POLS Z1004",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10DB": {
-      "merge_into": "POSC Z1004",
+    "POLS M10DB": {
+      "merge_into": "POLS Z1004",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10DE": {
+    "POLS M10DE": {
       "merge_into": "PHIL M1042",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10DO": {
+    "POLS M10DO": {
       "merge_into": "HORT Z1034",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10DP": {
-      "merge_into": "POSC Z1005",
+    "POLS M10DP": {
+      "merge_into": "POLS Z1005",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10DQ": {
-      "merge_into": "POSC Z1005",
+    "POLS M10DQ": {
+      "merge_into": "POLS Z1005",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10DS": {
-      "merge_into": "POSC Z1001",
+    "POLS M10DS": {
+      "merge_into": "POLS Z1001",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10DT": {
+    "POLS M10DT": {
       "merge_into": "SOCS M1040",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10DV": {
+    "POLS M10DV": {
       "merge_into": "ETHS M1218",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10EA": {
-      "merge_into": "POSC M1041",
+    "POLS M10EA": {
+      "merge_into": "POLS M1041",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "POSC M10EB": {
-      "merge_into": "POSC M1041",
+    "POLS M10EB": {
+      "merge_into": "POLS M1041",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "POSC M10EC": {
-      "merge_into": "POSC M1041",
+    "POLS M10EC": {
+      "merge_into": "POLS M1041",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "POSC M10ED": {
-      "merge_into": "POSC M1025",
+    "POLS M10ED": {
+      "merge_into": "POLS M1025",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10EE": {
+    "POLS M10EE": {
       "merge_into": "ECON M1029",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "POSC M10EG": {
-      "merge_into": "POSC Z1006",
+    "POLS M10EG": {
+      "merge_into": "POLS Z1006",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "POSC M10EH": {
-      "merge_into": "POSC Z1006",
+    "POLS M10EH": {
+      "merge_into": "POLS Z1006",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "POSC M10EM": {
+    "POLS M10EM": {
       "merge_into": "ETHS Z1037",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10EN": {
+    "POLS M10EN": {
       "merge_into": "ETHS M1216",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10EO": {
+    "POLS M10EO": {
       "merge_into": "ETHS M1218",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10ER": {
-      "merge_into": "POSC Z1007",
+    "POLS M10ER": {
+      "merge_into": "POLS Z1007",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10ES": {
-      "merge_into": "POSC Z1007",
+    "POLS M10ES": {
+      "merge_into": "POLS Z1007",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10EU": {
+    "POLS M10EU": {
       "merge_into": "AGRI Z1045",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10EZ": {
+    "POLS M10EZ": {
       "merge_into": "ETHS Z1037",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10FB": {
+    "POLS M10FB": {
       "merge_into": "ANTH M1090",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10FH": {
-      "merge_into": "POSC Z1008",
+    "POLS M10FH": {
+      "merge_into": "POLS Z1008",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10FJ": {
-      "merge_into": "POSC Z1009",
+    "POLS M10FJ": {
+      "merge_into": "POLS Z1009",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10FT": {
+    "POLS M10FT": {
       "merge_into": "SOCI M1055",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10FU": {
+    "POLS M10FU": {
       "merge_into": "SOCI M1055",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10FX": {
+    "POLS M10FX": {
       "merge_into": "SOCS Z1007",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10GN": {
-      "merge_into": "POSC M1056",
+    "POLS M10GN": {
+      "merge_into": "POLS M1056",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10GO": {
-      "merge_into": "POSC M1056",
+    "POLS M10GO": {
+      "merge_into": "POLS M1056",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10GR": {
+    "POLS M10GR": {
       "merge_into": "ETHS M1071",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10GS": {
+    "POLS M10GS": {
       "merge_into": "LEGL M1037",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "POSC M10GT": {
-      "merge_into": "POSC M1079",
+    "POLS M10GT": {
+      "merge_into": "POLS M1079",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10GU": {
-      "merge_into": "POSC M1079",
+    "POLS M10GU": {
+      "merge_into": "POLS M1079",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10GV": {
-      "merge_into": "POSC M1079",
+    "POLS M10GV": {
+      "merge_into": "POLS M1079",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10GW": {
-      "merge_into": "POSC M1079",
+    "POLS M10GW": {
+      "merge_into": "POLS M1079",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10GZ": {
-      "merge_into": "POSC Z1010",
+    "POLS M10GZ": {
+      "merge_into": "POLS Z1010",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10HA": {
-      "merge_into": "POSC Z1010",
+    "POLS M10HA": {
+      "merge_into": "POLS Z1010",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC M10HC": {
-      "merge_into": "POSC M1081",
+    "POLS M10HC": {
+      "merge_into": "POLS M1081",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "POSC M10HG": {
-      "merge_into": "POSC Z1010",
+    "POLS M10HG": {
+      "merge_into": "POLS Z1010",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC Z1001": {
+    "POLS Z1001": {
       "unified_title": "Mock Trial C",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC Z1002": {
+    "POLS Z1002": {
       "unified_title": "Civil Rights and Liberties in the United States",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC Z1003": {
+    "POLS Z1003": {
       "unified_title": "The Constitution and Individual Rights",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC Z1004": {
+    "POLS Z1004": {
       "unified_title": "Introduction to Constitutional Law: Your Liberties and Rights",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC Z1005": {
+    "POLS Z1005": {
       "unified_title": "Field and Vegetable Crops",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC Z1006": {
+    "POLS Z1006": {
       "unified_title": "Environmental Policy and Politics",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "POSC Z1007": {
+    "POLS Z1007": {
       "unified_title": "Law - Experiential Learning",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC Z1008": {
+    "POLS Z1008": {
       "unified_title": "Introduction to State and Local Governments",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC Z1009": {
+    "POLS Z1009": {
       "unified_title": "National, State & Local Govt",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "POSC Z1010": {
+    "POLS Z1010": {
       "unified_title": "U.s. Public and Private Partnerships:",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
@@ -135841,7 +135841,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "SOCS M10AG": {
-      "merge_into": "POSC M1001",
+      "merge_into": "POLS M1001",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -135861,7 +135861,7 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "SOCS M10AQ": {
-      "merge_into": "POSC M1004",
+      "merge_into": "POLS M1004",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -136106,7 +136106,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "SOCS M10HY": {
-      "merge_into": "POSC M1084",
+      "merge_into": "POLS M1084",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
