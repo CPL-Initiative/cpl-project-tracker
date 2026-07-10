@@ -1,0 +1,168 @@
+# Trail Crew 🥾 — run report (2026-07-10)
+
+The crew walked 2016 canonical credentials (bake 2026-07-09T23:33:16+00:00 ⊕ live overlay). Method findings: 239 · adjudicated: 239.
+
+## Clean renames (fire-ready) — 105
+- `Apparel Construction I` Apparel Construction I → Apparel Construction 1  — Roman I is a plain level indicator; mechanical C1 conversion.
+- `Apparel Construction I Lab` Apparel Construction I Lab → Apparel Construction 1 Lab  — Level roman before 'Lab'; straightforward C1 numeric conversion.
+- `Applied Biotechnology I` Applied Biotechnology I → Applied Biotechnology 1  — Roman I is a course level; mechanical C1 conversion.
+- `Architectural Design I` Architectural Design I → Architectural Design 1  — Level roman; mechanical C1 conversion.
+- `Architectural Drawing I` Architectural Drawing I → Architectural Drawing 1  — Level roman; mechanical C1 conversion.
+- `Art of Graphic Design I` Art of Graphic Design I → Art of Graphic Design 1  — HS course level roman; C1 conversion applies regardless of issuer.
+- `BIM and Sustainable Design Strategies I` BIM and Sustainable Design Strategies I → BIM and Sustainable Design Strategies 1  — Trailing roman I is a level; mechanical C1 conversion.
+- `Calculus I With Analytic Geometry` Calculus I With Analytic Geometry → Calculus 1 With Analytic Geometry  — Calculus sequence level; mechanical C1 conversion.
+- `Calculus II` Calculus II → Calculus 2  — Calculus sequence level; mechanical C1 conversion.
+- `Calculus II With Analytic Geometry` Calculus II With Analytic Geometry → Calculus 2 With Analytic Geometry  — Calculus sequence level; mechanical C1 conversion.
+- `Class Piano — Beginning II` Class Piano — Beginning II → Class Piano — Beginning 2  — Level roman after 'Beginning'; mechanical C1 conversion.
+- `CLEP French Language Level I` CLEP French Language Level I → CLEP French Language Level 1  — Explicit 'Level' roman; CLEP officially uses numerals for language levels anyway.
+- `CLEP French Language Level II` CLEP French Language Level II → CLEP French Language Level 2  — Explicit 'Level' roman; CLEP officially uses numerals for language levels anyway.
+- `CLEP German Language Level I` CLEP German Language Level I → CLEP German Language Level 1  — Explicit 'Level' roman; CLEP officially uses numerals for language levels anyway.
+- `CLEP German Language Level II` CLEP German Language Level II → CLEP German Language Level 2  — Explicit 'Level' roman; CLEP officially uses numerals for language levels anyway.
+- `CLEP History of the United States I` CLEP History of the United States I → CLEP History of the United States 1  — Sequence level; College Board's official roman styling converts per canon note (C1 wins).
+- `CLEP History of the United States II` CLEP History of the United States II → CLEP History of the United States 2  — Sequence level; College Board's official roman styling converts per canon note (C1 wins).
+- `CLEP Spanish Language Level I` CLEP Spanish Language Level I → CLEP Spanish Language Level 1  — Explicit 'Level' roman; CLEP officially uses numerals for language levels anyway.
+- `CLEP Spanish Language Level II` CLEP Spanish Language Level II → CLEP Spanish Language Level 2  — Roman II is a level indicator; numeric per C1.
+- `CLEP Spanish with Writing I` CLEP Spanish with Writing I → CLEP Spanish with Writing 1  — Roman I is a level; numeric per C1. May later merge with 'Level 1' sibling.
+- `CLEP Spanish with Writing II` CLEP Spanish with Writing II → CLEP Spanish with Writing 2  — Roman II is a level; numeric per C1.
+- `CLEP Spanish with Writing Level I` CLEP Spanish with Writing Level I → CLEP Spanish with Writing Level 1  — Explicit 'Level I' → numeric per C1.
+- `CLEP Spanish with Writing Level II` CLEP Spanish with Writing Level II → CLEP Spanish with Writing Level 2  — Explicit 'Level II' → numeric per C1.
+- `CLEP Western Civilization I` CLEP Western Civilization I → CLEP Western Civilization 1  — College Board styles exam 'Western Civilization I' officially; sequence level, canon wins 
+- `CLEP Western Civilization II` CLEP Western Civilization II → CLEP Western Civilization 2  — Official roman exam styling, but sequence level; canon numeric wins.
+- `Diagnostic Medical Sonography — Clinical Education IV` Diagnostic Medical Sonography — Clinical Education IV → Diagnostic Medical Sonography — Clinical Education 4  — IV here is course sequence level 4, not intravenous; C1 exception doesn't apply.
+- `Digital Video I` Digital Video I → Digital Video 1  — Roman I is a course level; numeric per C1.
+- `DSLR and Lighting for Professional Production I Beginning` DSLR and Lighting for Professional Production I Beginning → DSLR and Lighting for Professional Production 1 Beginning  — Roman I is a level; conversion correct. Trailing 'Beginning' is a separate quality questio
+- `DSST Principles of Physical Science I` DSST Principles of Physical Science I → DSST Principles of Physical Science 1  — DANTES styles exam with roman I officially; sequence level, canon numeric wins.
+- `Elementary Spanish I` Elementary Spanish I → Elementary Spanish 1  — Roman I is a level; numeric per C1.
+- `EMT-II Certification` EMT-II Certification → EMT-2 Certification  — EMT-II is a certification level (vs EMT-I); official CA EMSA roman styling, canon wins.
+- `Engineering Design II Honors Advanced` Engineering Design II Honors Advanced → Engineering Design 2 Honors Advanced  — Roman II is a course level; numeric per C1.
+- `Exploring Culture through Academic Discourse I` Exploring Culture through Academic Discourse I → Exploring Culture through Academic Discourse 1  — Roman I is a level; numeric per C1.
+- `Exploring Culture through Academic Discourse II` Exploring Culture through Academic Discourse II → Exploring Culture through Academic Discourse 2  — Roman II is a level; numeric per C1.
+- `Field Studies & Seminar I` Field Studies & Seminar I → Field Studies & Seminar 1  — Roman I is a level; numeric per C1.
+- `Fire Inspector I` Fire Inspector I → Fire Inspector 1  — NFPA 1031 styles it 'Fire Inspector I' officially; level, canon numeric wins.
+- `Fire Officer II` Fire Officer II → Fire Officer 2  — NFPA official roman styling; certification level, canon numeric wins.
+- `Floral Design and Practices I` Floral Design and Practices I → Floral Design and Practices 1  — Roman I is a level; numeric per C1.
+- `French — Level II` French — Level II → French — Level 2  — Explicit 'Level II' → numeric per C1.
+- `Funeral Service Administration II` Funeral Service Administration II → Funeral Service Administration 2  — Roman level II converts to numeric per C1; mechanical.
+- `Funeral Service Ethics and Laws I` Funeral Service Ethics and Laws I → Funeral Service Ethics and Laws 1  — Roman level I converts to numeric per C1; mechanical.
+- `Funeral Service Ethics and Laws II` Funeral Service Ethics and Laws II → Funeral Service Ethics and Laws 2  — Roman level II converts to numeric per C1; keeps distinct from level 1 per C2.
+- `Garde Manger II` Garde Manger II → Garde Manger 2  — Roman level II converts to numeric per C1; mechanical.
+- `Graphic Design I` Graphic Design I → Graphic Design 1  — Roman level I converts to numeric per C1; mechanical.
+- `Introduction to Acoustical Apprenticeship II` Introduction to Acoustical Apprenticeship II → Introduction to Acoustical Apprenticeship 2  — Roman level II converts per C1; title not in the parked CARP list.
+- `Introduction to Apprenticeship I` Introduction to Apprenticeship I → Introduction to Apprenticeship 1  — Roman level I converts per C1; not a parked title.
+- `Introduction to Apprenticeship II` Introduction to Apprenticeship II → Introduction to Apprenticeship 2  — Roman level II converts per C1; distinct level from 1 stays separate per C2.
+- `Ironworker Apprenticeship — Post Tensioning I` Ironworker Apprenticeship — Post Tensioning I → Ironworker Apprenticeship — Post Tensioning 1  — Roman level I converts per C1; "Post Tensioning" carries no roman meaning itself.
+- `Ironworker Apprenticeship — Post Tensioning II` Ironworker Apprenticeship — Post Tensioning II → Ironworker Apprenticeship — Post Tensioning 2  — Roman level II converts per C1; different level value from 1, kept separate per C2.
+- `Ironworker Apprenticeship — Reinforcing II` Ironworker Apprenticeship — Reinforcing II → Ironworker Apprenticeship — Reinforcing 2  — Roman level II converts per C1; mechanical.
+- `Ironworker Apprenticeship — Welding I` Ironworker Apprenticeship — Welding I → Ironworker Apprenticeship — Welding 1  — Roman level I converts per C1; mechanical.
+- `Ironworker Apprenticeship — Welding II` Ironworker Apprenticeship — Welding II → Ironworker Apprenticeship — Welding 2  — Roman level II converts per C1; mechanical.
+- `Ironworker Architectural II` Ironworker Architectural II → Ironworker Architectural 2  — Roman level II converts per C1 even if issuer styles it roman; canon wins.
+- `Ironworker Architectural III` Ironworker Architectural III → Ironworker Architectural 3  — Roman level III converts per C1; distinct level from 2 per C2.
+- `Ironworker Structural Steel I` Ironworker Structural Steel I → Ironworker Structural Steel 1  — Roman level I converts per C1; mechanical.
+- `Ironworker Structural Steel II` Ironworker Structural Steel II → Ironworker Structural Steel 2  — Roman level II converts per C1; mechanical.
+- `Ironworker Structural, Architectural and Ornamental I` Ironworker Structural, Architectural and Ornamental I → Ironworker Structural, Architectural and Ornamental 1  — Trailing roman I is a level, not part of the trade name; converts per C1.
+- `Ironworker Welding III` Ironworker Welding III → Ironworker Welding 3  — Roman level III converts per C1; check for a bare "Ironworker Welding" sibling later (C3).
+- `Jazz and Popular Music Guitar I` Jazz and Popular Music Guitar I → Jazz and Popular Music Guitar 1  — Roman level I converts per C1; mechanical.
+- `Landscape Installation and Maintenance I` Landscape Installation and Maintenance I → Landscape Installation and Maintenance 1  — Roman level I converts per C1; mechanical.
+- … +45 more (see staged_fixes.json)
+
+## Merge candidates (fire via the ⇒ Merge-confirm lane) — 18
+- `Fire Instructor II` Fire Instructor II → Fire Instructor 2  — Same credential: NFPA 1041 is the standard SFT certifies to; roman merges into numeric sur
+- `Firefighter I` Firefighter I → Firefighter 1  — C2's own example; NFPA 1001 is the standard behind SFT certification — same credential, ro
+- `Firefighter I Academy` Firefighter I Academy → Firefighter 1 Academy  — Same SFT credential differing only in level notation; mechanical C2 merge, numeric survive
+- `Firefighter II` Firefighter II → Firefighter 2  — Same credential — NFPA standard vs SFT certifier attribution; roman merges into numeric de
+- `Welding II` Welding II → Welding 2  — Same CTCNC credential, notation-only difference; mechanical C2 merge into numeric.
+- `Spanish for Heritage Speakers 1` Spanish for Heritage Speakers 1 → Spanish for Heritage Speakers 1  — Same credential as F0136; this key matches the canonical title and survives the merge.
+- `Spanish for Spanish Speakers 1` Spanish for Heritage Speakers 1 → Spanish for Heritage Speakers 1  — 'Spanish Speakers' is the older name for the same course; already retitled — fold key into
+- `Spanish for Heritage Speakers 2` Spanish for Heritage Speakers 2 → Spanish for Heritage Speakers 2  — Same credential as F0138; this key matches the canonical title and survives. Level 2 stays
+- `Spanish for Spanish Speakers 2` Spanish for Heritage Speakers 2 → Spanish for Heritage Speakers 2  — Synonym key of the same credential, display title already identical — fold into heritage k
+- `Fire Instructor II` Fire Instructor II → Fire Instructor 2 — California State Fire Training (SFT)  — NFPA writes standard 1041 but certifies nobody; SFT issues the cert. Merge roman NFPA vari
+- `Firefighter I` Firefighter I → Firefighter 1 — California State Fire Training (SFT)  — NFPA 1001 is a standard, not a credential; issuer misattributed. Same credential as SFT ro
+- `Firefighter II` Firefighter II → Firefighter 2 — California State Fire Training (SFT)  — Same misattribution: NFPA is standards body, SFT the certifier. Merge roman variant into n
+- `Fire Instructor II` Fire Instructor II → Fire Instructor 2  — Canon's own worked example: official roman styling still converts to numeric.
+- `Firefighter I` Firefighter I → Firefighter 1  — C2's canonical example; numeric form survives.
+- `Firefighter I Academy` Firefighter I Academy → Firefighter 1 Academy  — SFT roman styling; certification level, canon numeric wins.
+- `Firefighter II` Firefighter II → Firefighter 2  — Level II → 2 per C1; distinct level from Firefighter 1, both kept.
+- `Welding II` Welding II → Welding 2  — II is a level; not in parked list; distinct from Welding 2 SMAW per C2.
+- `Welding II SMAW` Welding II SMAW → Welding 2 SMAW  — II is a level; SMAW is process name, kept; numeric per C1.
+
+## Issuer canon consolidations (per-cluster approval) — 7
+- `` International Code Council (5 rows) | International Code Council (ICC) → International Code Council (ICC)  — Same agency; C4 canonical is long form plus short form in parens.
+- `` American Welding Society (1 rows) | American Welding Society (AWS) (18 → American Welding Society (AWS)  — Same agency; the (AWS) form already dominates (18 rows) and matches C4.
+- `` California Department of Corrections and Rehabilitation (CDCR) / Commi → California Department of Corrections and Rehabilitation (CDCR) / Commission o  — One joint CDCR/CPOST issuer; per-component parens is the cleaner C4 form.
+- `` Dental Board of California (1 rows) | Dental Board of California (DBC) → Dental Board of California (DBC)  — Same state board; C4 form adds the DBC short form in parens.
+- `` Board of Vocational Nursing and Psychiatric Technicians (BVNPT) (1 row → California Board of Vocational Nursing and Psychiatric Technicians (BVNPT)  — Same California state board; majority form with California prefix disambiguates and matche
+- `` NCCER (13 rows) | National Center for Construction Education and Resea → National Center for Construction Education and Research (NCCER)  — Mechanical C4 case: bare acronym vs long form, one agency; canonical is long form with (NC
+- `` Occupational Safety and Health Administration (OSHA) (2 rows) | U.S. O → U.S. Occupational Safety and Health Administration (OSHA)  — One federal agency; majority U.S.-prefixed form kept to distinguish from Cal/OSHA in Calif
+
+## Judgment queue (Sam's eyes) — 7
+- `Welding II SMAW` Welding II SMAW → Welding 2 SMAW  — Same CTCNC credential, notation-only; SMAW is an acronym, not a numeral — merge into numer
+- `AP Physics` AP Physics  — College Board issues no bare AP Physics exam (only 1, 2, C); level was stripped but target
+- `Blueprint Reading` Blueprint Reading  — Bare survey Blueprint Reading course is plausible and row is initiated; ask curator: disti
+- `Modern Dance Techniques` Modern Dance Techniques  — HS 1/2 ladder suggests stripped level, but standalone techniques course plausible; ask whi
+- `Spanish` Spanish  — Stripped level or generic entry — unclear; ask curator. Siblings Spanish I/II separately n
+- `ESL 108C` ESL 108C  — Entire title is a course code; stripping leaves nothing. Resolve real title from COCI (Rul
+- `OSHA 035 — General Industry Outreach (30-hour)` OSHA 035 — General Industry Outreach (30-hour) → OSHA 30 — General Industry Outreach (30-hour)  — Leading-zero '035' is a course-numbering artifact; credential is OSHA 30 General Industry.
+
+## Rejected / keep-as-is — 102
+- `ASME BPVC Section IX Pipe Welder Qualification — GMAW & FCAW` ASME BPVC Section IX Pipe Welder Qualification — GMAW & FCAW  — Section IX names the BPVC code section, not a level — C1 exception like Type II.
+- `ASME BPVC Section IX Pipe Welder Qualification — GTAW` ASME BPVC Section IX Pipe Welder Qualification — GTAW  — BPVC Section IX is an official code-section designation, part of the subject, not a level.
+- `ASME BPVC Section IX Pipe Welder Qualification — SMAW` ASME BPVC Section IX Pipe Welder Qualification — SMAW  — Section IX is the ASME code section's name; 'Section 9' would misname the standard.
+- `ASME BPVC Section IX — FCAW Welder Qualification` ASME BPVC Section IX — FCAW Welder Qualification  — Roman denotes the BPVC document section, not credential level — C1 exception.
+- `ASME BPVC Section IX — GMAW Welder Qualification` ASME BPVC Section IX — GMAW Welder Qualification  — Roman denotes the BPVC document section, not credential level — C1 exception.
+- `ASME BPVC Section IX — GTAW Welder Qualification` ASME BPVC Section IX — GTAW Welder Qualification  — Roman denotes the BPVC document section, not credential level — C1 exception.
+- `ASME BPVC Section IX — SMAW Welder Qualification` ASME BPVC Section IX — SMAW Welder Qualification  — Roman denotes the BPVC document section, not credential level — C1 exception.
+- `I-CAR Estimating Certification` I-CAR Estimating Certification  — "I" is the issuer's brand (I-CAR = Inter-Industry Conference on Auto Collision Repair), no
+- `I-CAR Platinum Certification (Structural, Non-Structural, Refinish, Estimating)` I-CAR Platinum Certification (Structural, Non-Structural, Refinish, Es  — I-CAR is an organization name, not a level token; "1-CAR" would corrupt it. C1 exception.
+- `I-CAR Refinish Certification` I-CAR Refinish Certification  — I-CAR is the issuer's brand name, not a level; C1 exception.
+- `I-CAR Structural Certification` I-CAR Structural Certification  — I-CAR is the issuer's brand name, not a level; C1 exception.
+- `Fire Instructor 2` Fire Instructor 2  — Numeric survivor per C2; SFT's official roman styling converts to numeric — canon wins ove
+- `Firefighter 1` Firefighter 1  — Numeric survivor — C2's literal example (Firefighter I vs 1); numeric form survives.
+- `Firefighter 1 Academy` Firefighter 1 Academy  — Numeric survivor of same-issuer (SFT) notation twins.
+- `Firefighter 2` Firefighter 2  — Numeric survivor per C2; level 2 stays distinct from Firefighter 1.
+- `Welding 2` Welding 2  — Numeric survivor of same-issuer (CTCNC) notation twins; title not on the parked list.
+- `Welding 2 SMAW` Welding 2 SMAW  — Numeric survivor; SMAW variant correctly grouped separately from bare Welding 2.
+- `Blueprint Reading-Commercial` Blueprint Reading-Commercial  — held by curator
+- `Carpenters Training Committee for Northern California Apprenticeship — CARP 315` Blueprint Reading-Commercial  — held by curator
+- `Blueprint Reading-Residential` Blueprint Reading-Residential  — held by curator
+- `Carpenters Apprenticeship — CARP 005` Blueprint Reading-Residential  — held by curator
+- `Carpenters Training Committee for Northern California Apprenticeship — CARP 605` Blueprint Reading-Residential  — held by curator
+- `Carpenters Training Committee for Northern California Apprenticeship — CARP 702` Blueprint Reading-Residential  — held by curator
+- `Carpenters Apprenticeship — CARP 017` Introduction to Welding and Cutting  — held by curator (CARP 017 is on the parked list)
+- `Introduction to Welding and Cutting` Introduction to Welding and Cutting  — only merge counterpart (CARP 017) is held by curator; acting would touch the parked merge
+- `Carpenters Training Committee for Northern California Apprenticeship — CARP 310` Layout/Leveling Construction Site Practice  — held by curator
+- `Layout/Leveling Construction Site Practice` Layout/Leveling Construction Site Practice  — held by curator
+- `Carpenters Training Committee for Northern California Apprenticeship — CARP 704` Interior Systems  — held by curator (CARP 704 is on the parked list)
+- `Interior Systems` Interior Systems  — only merge counterpart (CARP 704) is held by curator; acting would touch the parked merge
+- `Medical Core (High School Articulation) — El Modena High School` Medical Core  — distinct issuer (El Modena HS); key already differentiated per the HS articulation pattern
+- `Medical Core (High School Articulation) — Orange High School` Medical Core  — distinct issuer (Orange HS); key already differentiated per the HS articulation pattern
+- `Medical Core (High School Articulation) — Santiago High School` Medical Core  — distinct issuer (Santiago HS); key already differentiated per the HS articulation pattern
+- `Medical Core (High School Articulation) — Villa Park High School` Medical Core  — distinct issuer (Villa Park HS); key already differentiated per the HS articulation patter
+- `` American Payroll Association (APA) (1 rows) | American Payroll Associa  — APA renamed itself PayrollOrg (2023) — an era rename, not spelling drift; curator judgment
+- `` Amazon Web Services (AWS) (5 rows) | American Welding Society (AWS) (1  — Different agencies sharing the AWS acronym — cloud vendor vs welding society. Never merge.
+- `` American College of Sports Medicine (ACSM) (1 rows) | American College  — Not variants: one is ACSM alone, the other a joint ACSM/NSCA issuance — distinct issuer fa
+- `` American Council on Education (ACE) (21 rows) | American Council on Ex  — Different agencies sharing ACE — Education (credit recs) vs Exercise (fitness certs). Keep
+- `` American Heart Association (AHA) (2 rows) | American Heart Association  — AHA and American Red Cross are different agencies; the slash row is dual-issuer, not a spe
+- `` National Wildfire Coordinating Group (NWCG) (9 rows) | National Wildfi  — NWCG and FEMA are different agencies (ICS courses are FEMA co-issued); slash row is dual-i
+- `` U.S. Green Building Council (USGBC) (3 rows) | U.S. Green Building Cou  — GBCI is a distinct credentialing body (administers LEED credentials for USGBC); slash row 
+- `` United Association (UA) (1 rows) | United Association (UA) Local 342 (  — UA international vs UA Local 342 (local training trust) are different issuing entities; ap
+- `Fire Instructor 1` Fire Instructor 1  — SFT is California's actual certifying body (official styling 'Fire Instructor I'); this nu
+- `Fire Instructor 2` Fire Instructor 2  — Correct canonical: SFT certifies Fire Instructor 2 (official 'II' converts to numeric per 
+- `Firefighter 1` Firefighter 1  — SFT is the California certifying entity for Firefighter 1 (IFSAC/Pro Board accredited); co
+- `Firefighter 2` Firefighter 2  — Correct canonical: SFT Firefighter 2, numeric form per C1. Different level value than Fire
+- `CAL-OSHA 30-Hour Construction Industry Training for Electrical & Electronics Technology` CAL-OSHA 30-Hour Construction Industry Training for Electrical & Elect  — OSHA 30-Hour is the credential's own name, not a course code — C5 explicitly exempts it.
+- `Carpenters Training Committee for Northern California Apprenticeship — CARP 707` Carpenters Training Committee for Northern California Apprenticeship —  — CARP 707 is known-ambiguous, deliberately code-titled pending curator resolution; never pr
+- `Carpenters Training Committee for Northern California Apprenticeship — CARP 710` Carpenters Training Committee for Northern California Apprenticeship —  — CARP 710 is known-ambiguous, deliberately code-titled pending curator resolution; never pr
+- `Carpenters Training Committee for Northern California Apprenticeship — CARP 713` Carpenters Training Committee for Northern California Apprenticeship —  — CARP 713 is known-ambiguous, deliberately code-titled pending curator resolution; never pr
+- `FEMA IS-200 Basic Incident Command System (ICS)` FEMA IS-200 Basic Incident Command System (ICS)  — IS-200 is FEMA's official credential designation (like OSHA 30), not a course code.
+- `FEMA IS-200 — Incident Command System for Single Resources and Initial Action Incidents` FEMA IS-200 — Incident Command System for Single Resources and Initial  — IS-200 is the credential's own designation; the F0179/F0180 duplicate is a merge-lane ques
+- `IBEW/NECA Electrical Apprenticeship — ELECT 110` IBEW/NECA Electrical Apprenticeship — ELECT 110  — ELECT 110 distinguishes distinct apprenticeship course records; stripping collapses ten ro
+- `IBEW/NECA Electrical Apprenticeship — ELECT 111` IBEW/NECA Electrical Apprenticeship — ELECT 111  — ELECT 111 distinguishes distinct apprenticeship course records; stripping collapses ten ro
+- `IBEW/NECA Electrical Apprenticeship — ELECT 120` IBEW/NECA Electrical Apprenticeship — ELECT 120  — ELECT 120 distinguishes distinct apprenticeship course records; stripping collapses ten ro
+- `IBEW/NECA Electrical Apprenticeship — ELECT 121` IBEW/NECA Electrical Apprenticeship — ELECT 121  — ELECT 121 distinguishes distinct apprenticeship course records; stripping collapses ten ro
+- `IBEW/NECA Electrical Apprenticeship — ELECT 130` IBEW/NECA Electrical Apprenticeship — ELECT 130  — ELECT 130 distinguishes distinct apprenticeship course records; stripping collapses ten ro
+- `IBEW/NECA Electrical Apprenticeship — ELECT 131` IBEW/NECA Electrical Apprenticeship — ELECT 131  — ELECT 131 distinguishes distinct apprenticeship course records; stripping collapses ten ro
+- `IBEW/NECA Electrical Apprenticeship — ELECT 140` IBEW/NECA Electrical Apprenticeship — ELECT 140  — ELECT 140 distinguishes distinct apprenticeship course records; stripping collapses ten ro
+- `IBEW/NECA Electrical Apprenticeship — ELECT 141` IBEW/NECA Electrical Apprenticeship — ELECT 141  — ELECT 141 distinguishes distinct apprenticeship course records; stripping collapses ten ro
+- `IBEW/NECA Electrical Apprenticeship — ELECT 150` IBEW/NECA Electrical Apprenticeship — ELECT 150  — ELECT 150 distinguishes distinct apprenticeship course records; stripping collapses ten ro
+- … +42 more (see staged_fixes.json)
+

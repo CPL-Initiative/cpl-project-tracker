@@ -1,9 +1,21 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-09 · Session 110 close (carpentry pass 2 CLOSED; COCI Lookup tab live)",
+ "_as_of": "2026-07-10 · Session 110 close (Trail Crew's first run adjudicated — review lanes ready)",
  "_session": 110,
- "_status": "Carpentry pass 2 closed live with you: 252 SUBJ/Discipline fills (CARP / Carpentry) + 18 titles derived from your MAP export landed with receipts. Your 'where does CARP 1203 come from?' cracked a real bug — the articulations file's identities map was never re-keyed by the June 12 fold (681 stale keys); the CER now reads titles from the always-fresh minted catalogs. Also new: a SUBJ filter on the CER bar and the COCI Lookup tab (the raw 141,738-row COCI catalog with M-ID/C-ID/CCN chips, sortable/filterable/resizable, descriptions on expand).",
+ "_status": "Trail Crew 🥾 (your happy-named audit) ran end-to-end tonight: 239 findings over the 2,016 canonical credentials, adjudicated by 15 canon-guided AI reviewers + 13 adversarial merge skeptics. Ready for you: 105 fire-ready roman→numeric renames, 18 merge candidates for the ⇒ lane, 7 issuer canon picks, 7 judgment calls only you can make (kb/trail_crew_out/2026-07-10/trail_report.md). Nothing applies without your word. Next per your call: the CSR pass (the M-ID minting layer), then the CCR mountain.",
  "items": [
+  {
+   "id": "trail-crew-fire",
+   "for": "sam",
+   "tab": "credential-reference",
+   "text": "Trail Crew results: say the word and I fire the 105 clean roman→numeric renames (receipted, INSERT-only). Then review the 18 merge candidates + 7 issuer canon picks + 7 judgment calls in kb/trail_crew_out/2026-07-10/trail_report.md."
+  },
+  {
+   "id": "csr-trail-crew",
+   "for": "fable",
+   "tab": "canonical-subj4",
+   "text": "CSR Trail Crew pass (Sam: foundation first): method rules incl. the official-CCN-subject collision check + magic mnemonic review over the 148 canonical SUBJ4 entries."
+  },
   {
    "id": "carp-merge-confirms",
    "for": "sam",
@@ -21,12 +33,6 @@
    "for": "sam",
    "tab": "credential-reference",
    "text": "Spot-check the 10 trade-program rows filled CARP/Carpentry (Drywall Applicator, Pile Driver, …) — receipt flags them in kb/carp_fill_out/2026-07-09/plan.json."
-  },
-  {
-   "id": "coci-lookup-feedback",
-   "for": "sam",
-   "tab": "coci-lookup",
-   "text": "Kick the tires on the new COCI Lookup tab (Reference & Curation group) — search, chips, column resize, CSV. What's missing for your lookups?"
   },
   {
    "id": "identities-rebuild",
