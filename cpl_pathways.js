@@ -26,10 +26,64 @@
 
   var ROOT_ID = "cpl-pathways-root";
 
+  // ── Pathway status stages ─────────────────────────────────────────────────
+  // The shipped default comes from the pathway's `stage` in cpl_pathways_data.js
+  // (falling back to discussion-draft — never accidentally present a mock-up as
+  // Active). The on-page selector is a per-browser VIEW override (localStorage)
+  // so Sam can flip the label live while presenting; the published default only
+  // changes by editing the data file.
+  var STAGES = [
+    { id: "discussion-draft", label: "Discussion Draft", glyph: "📝", cls: "draft",
+      big: "DISCUSSION DRAFT",
+      note: "A mock-up for feedback — not an official college publication. The CPL ✓ marks are live from the MAP platform; the pathway itself is a concept for discussion." },
+    { id: "active", label: "Active", glyph: "✓", cls: "active",
+      big: "ACTIVE PATHWAY",
+      note: "This pathway is live — students are advised under it." },
+    { id: "tabled", label: "Tabled", glyph: "⏸", cls: "tabled",
+      big: "TABLED",
+      note: "This pathway is parked — kept for reference, not currently moving." },
+  ];
+  var STAGE_BY_ID = {};
+  STAGES.forEach(function (s) { STAGE_BY_ID[s.id] = s; });
+
+  function stageKey(prog) { return "cplPathwaysStage." + (prog.id || "default"); }
+  function getStage(prog) {
+    try {
+      var v = window.localStorage.getItem(stageKey(prog));
+      if (v && STAGE_BY_ID[v]) return v;
+    } catch (e) { /* storage unavailable — fall through to the shipped default */ }
+    return (prog.stage && STAGE_BY_ID[prog.stage]) ? prog.stage : "discussion-draft";
+  }
+  function setStage(prog, id) {
+    try { window.localStorage.setItem(stageKey(prog), id); } catch (e) { /* view-only nicety */ }
+  }
+
   // ── Scoped CSS (var(--token) only — no raw hex) ──────────────────────────
   var CSS_ID = "cpl-pathways-css";
   var CSS = [
     ".cplpw { color: var(--text-body); max-width: 1080px; margin: 0 auto; }",
+    /* Status toolbar (selector + PDF) — above the fold */
+    ".cplpw-toolbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin: 12px 0 4px; }",
+    ".cplpw-toolbar .lbl { font-size:.76rem; font-weight:700; color: var(--text-muted); letter-spacing:.04em; text-transform:uppercase; }",
+    ".cplpw-stagesel { display:inline-flex; border:1px solid var(--border-strong); border-radius:8px; overflow:hidden; }",
+    ".cplpw-stagesel button { background: var(--surface-opaque); border:none; border-right:1px solid var(--border); padding:6px 13px; font-size:.78rem; font-weight:600; color: var(--text-body); cursor:pointer; font-family:inherit; }",
+    ".cplpw-stagesel button:last-child { border-right:none; }",
+    ".cplpw-stagesel button.on.draft { background: var(--mustard-fill); color: var(--text-strong); }",
+    ".cplpw-stagesel button.on.active { background: var(--hunter, var(--green-progress)); color: var(--surface-opaque); }",
+    ".cplpw-stagesel button.on.tabled { background: var(--surface-muted); color: var(--text-strong); }",
+    ".cplpw-pdfbtn { margin-left:auto; background: var(--seal-blue, var(--navy-primary)); color: var(--surface-opaque); border:none; border-radius:8px; padding:7px 14px; font-weight:600; font-size:.8rem; cursor:pointer; font-family:inherit; }",
+    ".cplpw-pdfbtn:hover { opacity:.92; }",
+    /* The BIG status banner */
+    ".cplpw-stagebanner { display:flex; align-items:center; gap:14px; border-radius:10px; padding:12px 18px; margin: 8px 0 12px; }",
+    ".cplpw-stagebanner .glyph { font-size:1.5rem; line-height:1; }",
+    ".cplpw-stagebanner .big { font-size:1.18rem; font-weight:800; letter-spacing:.16em; }",
+    ".cplpw-stagebanner .note { font-size:.8rem; margin-top:2px; opacity:.92; }",
+    ".cplpw-stagebanner.draft { background: var(--mustard-fill); color: var(--text-strong); }",
+    ".cplpw-stagebanner.active { background: var(--hunter, var(--green-progress)); color: var(--surface-opaque); }",
+    ".cplpw-stagebanner.tabled { background: var(--surface-muted); color: var(--text-muted); border:1px solid var(--border-strong); }",
+    ".cplpw-chip.stage-draft { background: var(--mustard-fill); color: var(--text-strong); border-color: transparent; font-weight:700; }",
+    ".cplpw-chip.stage-active { background: var(--hunter, var(--green-progress)); color: var(--surface-opaque); border-color: transparent; font-weight:700; }",
+    ".cplpw-chip.stage-tabled { background: var(--surface-muted); color: var(--text-muted); font-weight:700; }",
     ".cplpw-progrow { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin: 14px 0 4px; }",
     ".cplpw-progbtn { background: var(--surface-opaque); border:1px solid var(--border-strong); border-radius:18px; padding:6px 14px; font-size:.82rem; font-weight:600; color: var(--text-body); cursor:pointer; }",
     ".cplpw-progbtn.on { background: var(--seal-blue, var(--navy-primary)); color: var(--surface-opaque); border-color: transparent; }",
@@ -106,6 +160,47 @@
     s.id = CSS_ID;
     s.textContent = CSS;
     document.head.appendChild(s);
+  }
+
+  // ── PDF extract (print window) ────────────────────────────────────────────
+  // The print window is a fresh document with NO :root token block, so var()
+  // can't resolve there — this literal-hex block is the sanctioned exception
+  // (same rule as canvas fillStyle / SVG presentation attrs: where var() can't
+  // reach, use the resolved First Light literals).
+  var PRINT_TOKENS = ":root { --paper:#F4F2ED; --text-strong:#1C1C1A; --text-body:#3A3A36; --text-muted:#5C5C55; --text-faint:#87877F; --surface-opaque:#FFFFFF; --surface-subtle:#F7F5F1; --surface-muted:#ECE9E2; --border:rgba(28,28,26,.14); --border-strong:rgba(28,28,26,.30); --cobalt:#0047AB; --accent-link:#0047AB; --crimson:#920000; --hunter:#2C601A; --green-progress:#2C601A; --violet:#6D28D9; --mustard-fill:#E3B341; --mustard-text:#8B6800; --yellow-warning:#8B6800; --mustard-on-dark:#E3B341; --gold-accent:#E3B341; --navy-primary:#1C1C1A; --seal-blue:#0b3d61; }";
+  var PRINT_CSS = [
+    "@page { margin: 12mm; }",
+    "body { margin: 0; padding: 10px 14px; background: var(--surface-opaque); color: var(--text-body); font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }",
+    ".cplpw { max-width: none; }",
+    ".cplpw-stagebanner, .cplpw-tile, .cplpw-sec, .cplpw-callout { break-inside: avoid; }",
+    ".cplpw-course .how.clep { cursor: default; }",
+  ].join("\n");
+
+  function exportPdf(container, prog, stagedef) {
+    var w = window.open("", "_blank");
+    if (!w || !w.document) return; // pop-up blocked — the button title says to allow pop-ups
+    var d = w.document;
+    d.title = (prog.college ? prog.college + " — " : "") + (prog.program || "CPL Pathway")
+      + " (" + stagedef.label + ")";
+    var st = d.createElement("style");
+    st.textContent = PRINT_TOKENS + "\n" + CSS + "\n" + PRINT_CSS;
+    d.head.appendChild(st);
+    var clone = container.cloneNode(true);
+    Array.prototype.forEach.call(clone.querySelectorAll(".cplpw-toolbar, .cplpw-progrow"), function (n) {
+      n.parentNode.removeChild(n);
+    });
+    // A handout should show the CLEP exam lists that are click-to-expand on screen.
+    Array.prototype.forEach.call(clone.querySelectorAll(".cplpw-clepopts"), function (n) {
+      n.style.display = "";
+    });
+    var wrap = d.createElement("div");
+    wrap.className = "cplpw";
+    while (clone.firstChild) wrap.appendChild(clone.firstChild);
+    d.body.appendChild(d.adoptNode ? d.adoptNode(wrap) : wrap);
+    if (typeof w.focus === "function") w.focus();
+    // Give the new window a beat to lay out before the print dialog opens.
+    if (typeof w.setTimeout === "function") w.setTimeout(function () { w.print(); }, 300);
+    else w.print();
   }
 
   // ── DOM helper — createElement/textContent only (no innerHTML with data) ──
@@ -365,11 +460,53 @@
     var model = resolvePathway(prog, live);
     var frag = document.createDocumentFragment();
 
+    // Status toolbar — selector (per-browser view override) + PDF extract
+    var stage = getStage(prog);
+    var stagedef = STAGE_BY_ID[stage] || STAGES[0];
+    var bar = el("div", "cplpw-toolbar");
+    bar.appendChild(el("span", "lbl", "Status:"));
+    var sel = el("div", "cplpw-stagesel");
+    sel.setAttribute("role", "radiogroup");
+    sel.setAttribute("aria-label", "Pathway status");
+    STAGES.forEach(function (s) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = (s.id === stage) ? ("on " + s.cls) : "";
+      b.textContent = s.glyph + " " + s.label;
+      b.setAttribute("role", "radio");
+      b.setAttribute("aria-checked", s.id === stage ? "true" : "false");
+      b.title = s.note + " (Changes how this pathway is labeled in THIS browser; the published default is set in cpl_pathways_data.js.)";
+      b.addEventListener("click", function () {
+        setStage(prog, s.id);
+        renderProgram(root, prog, live, liveNote);
+      });
+      sel.appendChild(b);
+    });
+    bar.appendChild(sel);
+    var pdf = document.createElement("button");
+    pdf.type = "button";
+    pdf.className = "cplpw-pdfbtn";
+    pdf.textContent = "⬇ PDF";
+    pdf.title = "Open a print-ready extract of this course map (save as PDF from the print dialog; allow pop-ups)";
+    pdf.addEventListener("click", function () { exportPdf(root, prog, stagedef); });
+    bar.appendChild(pdf);
+    frag.appendChild(bar);
+
+    // The BIG status label
+    var banner = el("div", "cplpw-stagebanner " + stagedef.cls);
+    banner.appendChild(el("span", "glyph", stagedef.glyph));
+    banner.appendChild(el("div", null, [
+      el("div", "big", stagedef.big),
+      el("div", "note", stagedef.note),
+    ]));
+    frag.appendChild(banner);
+
     // Hero
     var hero = el("div", "cplpw-hero");
     hero.appendChild(el("div", "college", prog.college || ""));
     hero.appendChild(el("h2", null, (prog.program || "") + (prog.degree ? " — " + prog.degree : "")));
     var meta = el("div", "meta");
+    meta.appendChild(el("span", "cplpw-chip stage-" + stagedef.cls, stagedef.glyph + " " + stagedef.label));
     if (prog.start) meta.appendChild(el("span", "cplpw-chip start", "First cohort: " + prog.start));
     if (prog.status) meta.appendChild(el("span", "cplpw-chip", prog.status));
     if (prog.audience) meta.appendChild(el("span", "cplpw-chip", prog.audience));
@@ -501,5 +638,7 @@
     _buildLiveIndexes: buildLiveIndexes,
     _resolvePathway: resolvePathway,
     _courseKey: courseKey,
+    _exportPdf: exportPdf,
+    _stages: STAGES,
   };
 })();

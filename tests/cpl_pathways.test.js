@@ -228,6 +228,79 @@ const PROGRAM_STUB = {
   check("activate() is idempotent", root.querySelectorAll(".cplpw-hero").length === 1);
 }
 
+// (h) status stages — banner, selector, persistence, data default
+{
+  const w = freshWindow();
+  w.CPL_PATHWAYS = { programs: [PROGRAM_STUB] };
+  w.CPL_TABS = { loadScript: function (src, g, cb) { w.CPL_CREDENTIAL_REFERENCE = CER_STUB; cb(); } };
+  w.CPL_PATHWAYS_TAB.activate();
+  const root = w.document.getElementById("cpl-pathways-root");
+  const banner = root.querySelector(".cplpw-stagebanner");
+  check("status banner renders", !!banner);
+  check("default stage is DISCUSSION DRAFT (no stage in stub → safe default)",
+    banner.classList.contains("draft") && /DISCUSSION DRAFT/.test(banner.textContent));
+  check("banner carries the feedback note", /mock-up for feedback/.test(banner.textContent));
+  check("hero carries a stage chip", !!root.querySelector(".cplpw-chip.stage-draft"));
+  const selBtns = root.querySelectorAll(".cplpw-stagesel button");
+  check("selector offers the 3 stages", selBtns.length === 3);
+  check("Discussion Draft selected by default", selBtns[0].className.indexOf("on") === 0);
+  // flip to Active
+  selBtns[1].dispatchEvent(new w.Event("click", { bubbles: true }));
+  const banner2 = root.querySelector(".cplpw-stagebanner");
+  check("selecting Active swaps the banner", banner2.classList.contains("active") && /ACTIVE PATHWAY/.test(banner2.textContent));
+  check("stage persisted to localStorage", w.localStorage.getItem("cplPathwaysStage.test-prog") === "active");
+  check("hero chip follows the stage", !!root.querySelector(".cplpw-chip.stage-active"));
+}
+// (h2) localStorage override wins over the data default in a fresh window
+{
+  const w = freshWindow();
+  w.localStorage.setItem("cplPathwaysStage.test-prog", "tabled");
+  w.CPL_PATHWAYS = { programs: [Object.assign({}, PROGRAM_STUB, { stage: "active" })] };
+  w.CPL_TABS = { loadScript: function (src, g, cb) { w.CPL_CREDENTIAL_REFERENCE = CER_STUB; cb(); } };
+  w.CPL_PATHWAYS_TAB.activate();
+  const banner = w.document.querySelector(".cplpw-stagebanner");
+  check("localStorage view override wins over data stage", banner.classList.contains("tabled") && /TABLED/.test(banner.textContent));
+}
+// (h3) data stage field respected when no override
+{
+  const w = freshWindow();
+  w.CPL_PATHWAYS = { programs: [Object.assign({}, PROGRAM_STUB, { stage: "active" })] };
+  w.CPL_TABS = { loadScript: function (src, g, cb) { w.CPL_CREDENTIAL_REFERENCE = CER_STUB; cb(); } };
+  w.CPL_PATHWAYS_TAB.activate();
+  check("data stage=active renders the Active banner",
+    w.document.querySelector(".cplpw-stagebanner").classList.contains("active"));
+}
+
+// (i) PDF extract — opens a print window with the map, banner, no toolbar
+{
+  const w = freshWindow();
+  w.CPL_PATHWAYS = { programs: [PROGRAM_STUB] };
+  w.CPL_TABS = { loadScript: function (src, g, cb) { w.CPL_CREDENTIAL_REFERENCE = CER_STUB; cb(); } };
+  let printed = 0, opened = null;
+  w.open = function () {
+    const d = w.document.implementation.createHTMLDocument("print");
+    opened = { document: d, focus: function () {}, setTimeout: function (fn) { fn(); }, print: function () { printed++; } };
+    return opened;
+  };
+  w.CPL_PATHWAYS_TAB.activate();
+  const root = w.document.getElementById("cpl-pathways-root");
+  const pdfBtn = root.querySelector(".cplpw-pdfbtn");
+  check("PDF button present in the toolbar", !!pdfBtn);
+  pdfBtn.dispatchEvent(new w.Event("click", { bubbles: true }));
+  check("PDF window opened + print() called", !!opened && printed === 1);
+  const pbody = opened ? opened.document.body : null;
+  check("print doc carries the program name", !!pbody && /Field Ironworker Supervisor/.test(pbody.textContent));
+  check("print doc carries the status banner", !!pbody && /DISCUSSION DRAFT/.test(pbody.textContent));
+  check("print doc strips the toolbar", !!pbody && !pbody.querySelector(".cplpw-toolbar"));
+  check("print doc expands CLEP panels", !!pbody && (function () {
+    const p = pbody.querySelector(".cplpw-clepopts");
+    return p && p.style.display !== "none";
+  })());
+  check("print title names program + stage", /Field Ironworker Supervisor \(Discussion Draft\)/.test(opened.document.title));
+  check("print doc has the token block (var() can't resolve without :root)",
+    /--hunter:#2C601A/.test(opened.document.head.textContent));
+}
+
 // (e2) render note when CER unavailable
 {
   const w = freshWindow();

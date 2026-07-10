@@ -34,6 +34,10 @@ window.CPL_PATHWAYS = {
       college: "Cerritos College",
       program: "Field Ironworker Supervisor",
       degree: "Bachelor of Science",
+      // Publication stage — drives the big status banner + hero chip. One of
+      // "discussion-draft" | "active" | "tabled". The on-page selector is a
+      // per-browser view override; THIS is the published default.
+      stage: "discussion-draft",
       start: "Fall 2027",
       status: "Approved Feb 2026 — AB 927 CCC baccalaureate",
       audience: "Ironworker journeyworkers — any JATC, anywhere",
