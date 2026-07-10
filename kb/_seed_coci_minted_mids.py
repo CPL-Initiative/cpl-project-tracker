@@ -50,9 +50,18 @@ EXPLICIT FOLLOW-ONS (not done here):
   5. Merge into curated kb/common_courses.json + crosswalk MAP articulations
      (CustomReport, which carries the college) through these M-IDs.
 
-NUMBERING: M-IDs are numbered per modal subject continuing from the highest
+NUMBERING: M-IDs are numbered per subject token continuing from the highest
 existing number in kb/common_courses.json (step 2, matching the seed style),
 so a future merge never collides with existing M-IDs.
+
+CSR WIRING (2026-07-10, Sam-authorized — CSR pass CSR0066): the subject token
+is now the discipline's CANONICAL SUBJ4 from kb/discipline_canonical_subj4.json
+(Rule 7), so new mints can never re-introduce the local-subject variants the
+2026-06-12 canonical fold eliminated. Umbrella disciplines (Foreign Languages,
+Kinesiology — kb/_row_audit.py UMBRELLA_DISCIPLINES) keep the modal token:
+their codes split per subject/language, never collapse to one. Unmapped
+disciplines fall back to the modal token. Verifier:
+kb/_verify_seeder_canonical.py.
 
 This is an AI-assisted DRAFT for human review. Do NOT re-run over reviewer
 edits; kept for provenance.
@@ -115,6 +124,32 @@ CODE_RE = re.compile(r"^[a-z]{1,6} ?\d{1,4}[a-z]?$")  # title that is just a cou
 # reference/subject_discipline_map.json (built by _seed_subject_discipline_map.py).
 # Keys there are normalized; normsubj() applies the same normalization here.
 DISC_MAP_PATH = os.path.join(REF, "subject_discipline_map.json")
+CANON_PATH = os.path.join(HERE, "discipline_canonical_subj4.json")
+# Umbrella disciplines mint per-subject/per-language — never collapse to one
+# code (kb/_row_audit.py UMBRELLA_DISCIPLINES; Sessions 37/50 scopes).
+UMBRELLA_DISCIPLINES = {"Foreign Languages", "Kinesiology"}
+
+
+def load_canonical_map():
+    """discipline -> canonical SUBJ4, umbrellas and CS1-invalid picks excluded."""
+    doc = json.load(open(CANON_PATH))
+    out = {}
+    for disc, e in (doc.get("disciplines") or {}).items():
+        c = e.get("canonical_subj4")
+        if disc in UMBRELLA_DISCIPLINES or e.get("is_umbrella"):
+            continue
+        if c and re.fullmatch(r"[A-Z]{4}", c):
+            out[disc] = c
+    return out
+
+
+def canonical_subj_token(disc, modal_token, canon_map):
+    """CSR wiring (Rule 7; CSR0066, Sam 2026-07-10): key new mints under the
+    discipline's canonical SUBJ4 so they can't re-introduce folded variants.
+    Umbrellas and unmapped disciplines keep the modal token."""
+    if disc is None:
+        return modal_token
+    return canon_map.get(disc) or modal_token
 
 
 def is_blank(v):
@@ -154,6 +189,7 @@ def main():
 
     mq_set = set(json.load(open(os.path.join(REF, "mq_disciplines.json")))["disciplines"])
     DISCIPLINE_MAP = json.load(open(DISC_MAP_PATH))["map"]
+    CANON_MAP = load_canonical_map()  # CSR wiring — Rule 7 / CSR0066
     for s, disc in DISCIPLINE_MAP.items():
         if disc not in mq_set:
             sys.exit(f"BUG: discipline '{disc}' for subject '{s}' not in MQ list")
@@ -201,9 +237,13 @@ def main():
         modal_subject = subj_counts.most_common(1)[0][0]
         n_subjects = len(subj_counts)
 
+        disc = DISCIPLINE_MAP.get(normsubj(modal_subject))
         # ID token must be space-free so "M-ID <token> <n>" stays parseable;
-        # the readable modal subject is kept in the `subject` field.
-        subj_token = re.sub(r"\s+", "", modal_subject) or "MISC"
+        # the readable modal subject is kept in the `subject` field. The token
+        # itself is the CANONICAL SUBJ4 when the discipline has one (CSR
+        # wiring — Rule 7 / CSR0066); umbrellas/unmapped keep the modal.
+        raw_token = re.sub(r"\s+", "", modal_subject) or "MISC"
+        subj_token = canonical_subj_token(disc, raw_token, CANON_MAP)
         next_num[subj_token] = next_num.get(subj_token, 98) + 2
         course_id = f"M-ID {subj_token} {next_num[subj_token]}"
         max_num_by_token[subj_token] = next_num[subj_token]
@@ -213,7 +253,6 @@ def main():
         desc_counts = Counter(m[3] for m in members if m[3])
         description = desc_counts.most_common(1)[0][0] if desc_counts else None
 
-        disc = DISCIPLINE_MAP.get(normsubj(modal_subject))
         conf = confidence(len(members), n_subjects)
 
         notes = []
@@ -258,12 +297,12 @@ def main():
     singletons = {}
     for nt in sorted(singleton_titles):
         (subject, num, title, desc) = singleton_titles[nt][0]
-        subj_token = re.sub(r"\s+", "", subject) or "MISC"
+        disc = DISCIPLINE_MAP.get(normsubj(subject))
+        raw_token = re.sub(r"\s+", "", subject) or "MISC"
+        subj_token = canonical_subj_token(disc, raw_token, CANON_MAP)  # CSR wiring
         next_num[subj_token] = next_num.get(subj_token, 98) + 2
         course_id = f"M-ID {subj_token} {next_num[subj_token]}"
         max_num_by_token[subj_token] = next_num[subj_token]
-
-        disc = DISCIPLINE_MAP.get(normsubj(subject))
         # Lean record: ONLY the per-row variable fields. Every constant (id_system,
         # confidence 0.5, corroboration 1, null description/credit_status, provenance,
         # the shared note, etc.) lives once in the file's _record_defaults header —
