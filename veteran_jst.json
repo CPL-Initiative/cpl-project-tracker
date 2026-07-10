@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-09T23:32:12.156125+00:00",
+  "scraped_at": "2026-07-10T09:55:37.203670+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25670,
+    "jst": 25671,
     "star_colleges": 53
   },
   "computed_star_colleges": 53,
@@ -122,7 +122,7 @@
     },
     "Modesto Junior College": {
       "vets": 80,
-      "jst": 142,
+      "jst": 143,
       "star": true
     },
     "Los Angeles Valley College": {

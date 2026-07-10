@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-09T23:32:11.582Z",
+  "scraped_at": "2026-07-10T09:55:36.646Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -213,13 +213,13 @@
         },
         {
           "college": "Modesto Junior College",
-          "students": 380,
+          "students": 381,
           "units": 2212,
-          "avgUnits": 5.821052631578947,
+          "avgUnits": 5.805774278215223,
           "transcriptionRate": 64.5,
-          "avgTranscribed": 3.7565789473684212,
+          "avgTranscribed": 3.7467191601049867,
           "criteriaMetCount": 3,
-          "militaryStudents": 142,
+          "militaryStudents": 143,
           "nonMilitaryStudents": 241,
           "apprenticeStudents": 38,
           "savings": 2968832.5,
@@ -248,14 +248,14 @@
       "colleges": [
         {
           "college": "City College of San Francisco",
-          "students": 1932,
+          "students": 1933,
           "units": 6873,
-          "avgUnits": 3.5574534161490683,
+          "avgUnits": 3.555613036730471,
           "transcriptionRate": 1.7,
-          "avgTranscribed": 0.061076604554865424,
+          "avgTranscribed": 0.061045007759958615,
           "criteriaMetCount": 2,
           "militaryStudents": 1078,
-          "nonMilitaryStudents": 855,
+          "nonMilitaryStudents": 856,
           "apprenticeStudents": 7,
           "savings": 11896455,
           "yearImpact": 41791651,
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "49,229",
+      "value": "49,231",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "25,670"
+          "value": "25,671"
         },
         {
           "label": "Workforce/Other",
-          "value": "23,636"
+          "value": "23,637"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 49229,
+    "Students": 49231,
     "Units": 233132.15000000002,
     "TranscribedUnits": 101500.95,
     "Savings": 322736125.25,
     "YearImpact": 1306105914.3999999,
-    "MilitaryStudents": 25670,
-    "NonMilitaryStudents": 23636,
+    "MilitaryStudents": 25671,
+    "NonMilitaryStudents": 23637,
     "AprenticeStudents": 755,
-    "AverageUnits": 4.735666984907271,
-    "TranscribedAverage": 2.061812143248898
+    "AverageUnits": 4.735474599337816,
+    "TranscribedAverage": 2.061728382523207
   }
 }

@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-07-09T19:34:02Z",
-  "count": 695,
+  "_synced_at": "2026-07-10T09:55:50Z",
+  "count": 723,
   "assignments": {
     "A S T 025 - Fundamentals of Auto Mechanics": {
       "unified_title": "Fundamentals of Auto Mechanics",
@@ -492,6 +492,30 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
+    "AT 10: Technical Computer Applications": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:17.073342+00:00",
+      "unified_title": "Technical Computer Applications"
+    },
+    "AT 130: Precision Measurements": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:17.233369+00:00",
+      "unified_title": "Precision Measurements"
+    },
+    "AT 21: Occupational Safety and Health": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:17.312161+00:00",
+      "unified_title": "Occupational Safety and Health"
+    },
+    "AT 40: Preparing for Employment Opportunities": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:17.371947+00:00",
+      "unified_title": "Preparing for Employment Opportunities"
+    },
     "AUTO 600 Completion": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
@@ -901,6 +925,12 @@
       "reviewed_at": "2026-07-08T00:04:26.570655+00:00",
       "unified_title": "Beginning Arc Welding"
     },
+    "Behavorial Health & Cancer Awareness 2A First-Level Supervisor": {
+      "issuing_agency": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:17.433307+00:00",
+      "unified_title": "Behavorial Health & Cancer Awareness 2A First-Level Supervisor"
+    },
     "Biocom Institute Technician Certification (BioTC) - This certification has no expiration": {
       "issuing_agency": "Biocom California Institute",
       "reviewed_by": "map@rccd.edu",
@@ -980,6 +1010,36 @@
       "unified_title": "California Smog Check Repair Technician License",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:12:43.443936+00:00"
+    },
+    "CADD 14: 2D CAD I": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:17.490108+00:00",
+      "unified_title": "2D CAD 1"
+    },
+    "CADD 16: 3D Solid Modeling I": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:17.550452+00:00",
+      "unified_title": "3D Solid Modeling 1"
+    },
+    "CADD 22: CAD for Fabrication": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:17.610202+00:00",
+      "unified_title": "CAD for Fabrication"
+    },
+    "CADD 24: Applications of 2D CAD": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:17.667034+00:00",
+      "unified_title": "Applications of 2D CAD"
+    },
+    "CADD 32: Reverse Engineering I": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:17.744121+00:00",
+      "unified_title": "Reverse Engineering 1"
     },
     "CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)": {
       "unified_title": "Business Management and Entrepreneurship — Cajon High School",
@@ -1859,6 +1919,12 @@
       "reviewed_at": "2026-06-02T18:02:32.590984+00:00",
       "unified_title": "CompTIA Linux+"
     },
+    "CONS 50A: Basic Residential Construction": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:17.801762+00:00",
+      "unified_title": "Basic Residential Construction"
+    },
     "CPA – C++ CERTIFIED ASSOCIATE PROGRAMMER": {
       "unified_title": "C++ Certified Associate Programmer (CPA)",
       "reviewed_by": "map@rccd.edu",
@@ -2417,6 +2483,12 @@
       "reviewed_at": "2026-07-07T20:44:38.701781+00:00",
       "unified_title": "Architectural Design I"
     },
+    "Dental Hygiene Bachelors Degree Completion": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:17.858232+00:00",
+      "unified_title": "Dental Hygiene Bachelors Degree Completion"
+    },
     "Digital Forensics Fundamentals": {
       "unified_title": "Digital Forensics Fundamentals",
       "reviewed_by": "map@rccd.edu",
@@ -2599,6 +2671,30 @@
       "reviewed_at": "2026-07-07T18:57:37.88026+00:00",
       "unified_title": "Introduction To Digital Filmmaking"
     },
+    "FIRET 129: Emergency Technician Preparation": {
+      "issuing_agency": "California Emergency Medical Services Authority (EMSA)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:18.085396+00:00",
+      "unified_title": "Emergency Medical Technician Preparation (EMT Prep)"
+    },
+    "FIRET 131: Emergency Medical Technician Basic": {
+      "issuing_agency": "California Emergency Medical Services Authority (EMSA)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:18.144535+00:00",
+      "unified_title": "Emergency Medical Technician Basic"
+    },
+    "FIRET 133: Emergency Medical Technician-Paramedic-Didactic": {
+      "issuing_agency": "Emergency Medical Technician-Paramedic-Didactic",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:18.201101+00:00",
+      "unified_title": "mergency Medical Technician-Paramedic-Didactic"
+    },
+    "FIRET 136: Emergency Medical Technician-Paramedic Clinical and Field Work": {
+      "issuing_agency": "Emergency Medical Technician-Paramedic-Didactic",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:18.267306+00:00",
+      "unified_title": "Emergency Medical Technician-Paramedic Clinical and Field"
+    },
     "FIRETEC-12: FONTANA HIGH SCHOOL- Safety & Survival": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
@@ -2647,6 +2743,12 @@
       "reviewed_at": "2026-07-07T20:44:40.10299+00:00",
       "unified_title": "Fire Prevention"
     },
+    "FSM 19: Work Experience": {
+      "issuing_agency": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:18.329718+00:00",
+      "unified_title": "Work Experience"
+    },
     "FTECH 302 Fire Prevention": {
       "unified_title": "Fire Prevention",
       "reviewed_by": "map@rccd.edu",
@@ -2661,6 +2763,18 @@
       "unified_title": "Fire Service In-Service Training — Administration",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:12:43.443936+00:00"
+    },
+    "Fire Apparatus Driver Operator 1A": {
+      "issuing_agency": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:17.912366+00:00",
+      "unified_title": "Fire Apparatus Driver/Operator 1A"
+    },
+    "Fire Apparatus Driver Operator 1B": {
+      "issuing_agency": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:17.966388+00:00",
+      "unified_title": "Fire Apparatus Driver/Operator 1B"
     },
     "Fire Company Officer 3 Certification (IFSAC or ProBoard Certifications)": {
       "issuing_agency": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
@@ -2725,6 +2839,12 @@
       "reviewed_at": "2026-07-08T00:07:54.572489+00:00",
       "unified_title": "Fire Officer 2A: Human Resource Management"
     },
+    "Fire Officer 2C: Initial Incident Command": {
+      "issuing_agency": "California State Fire Training (SFT)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:18.024602+00:00",
+      "unified_title": "Fire Officer 2C: Initial Incident Command"
+    },
     "Fire Officer II Certification (ProBoard)": {
       "issuing_agency": "Pro Board (National Board on Fire Service Professional Qualifications)",
       "reviewed_by": "map@rccd.edu",
@@ -2779,6 +2899,48 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "HIT 10: Medical Terminology": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:18.385505+00:00",
+      "unified_title": "Medical Terminology"
+    },
+    "HLTH 3: Personal Training": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:18.44023+00:00",
+      "unified_title": "Personal Training"
+    },
+    "HVAC 50: Principles of HVAC": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:18.492552+00:00",
+      "unified_title": "Principles of HVAC"
+    },
+    "HVAC 51: Electricty for HVAC": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:18.562751+00:00",
+      "unified_title": "Electricity for HVAC"
+    },
+    "HVAC 52: Heating Systems": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:18.618397+00:00",
+      "unified_title": "Heating Systems"
+    },
+    "HVAC 53: System Analysis and Regulations": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:18.671498+00:00",
+      "unified_title": "System Analysis and Regulations"
+    },
+    "HVAC 54: Brazing and Motor Technology": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:18.719527+00:00",
+      "unified_title": "Brazing and Motor Technology"
+    },
     "Hardwood Floor Layer Apprenticeship": {
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "reviewed_by": "map@rccd.edu",
@@ -2794,7 +2956,7 @@
       "issuing_agency": "National Center for Construction Education and Research (NCCER)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-08T00:04:28.75256+00:00",
-      "unified_title": "NCCER Welding Level 1"
+      "unified_title": "Welding Level 1"
     },
     "IC- Automotive Electrical/Electronics I": {
       "issuing_agency": "",
@@ -3526,6 +3688,12 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-08T00:04:30.223476+00:00",
       "unified_title": "PC Troubleshooting"
+    },
+    "PHOTO 6: Digital Imaging Fundamentals": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T23:38:18.780568+00:00",
+      "unified_title": "Digital Imaging Fundamentals"
     },
     "PLNT SC 714 - Principles of Horticulture": {
       "unified_title": "Principles of Horticulture",
