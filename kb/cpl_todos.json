@@ -1,9 +1,33 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-10 · Session 111 (SkyMighty) + SkyIron close-out — 🎓 CPL Pathways live w/ status stages + PDF; link out to colleagues",
+ "_as_of": "2026-07-10 · Session 111 (SkyMighty) close — the Everest day 🗻",
  "_session": 111,
- "_status": "Big day: the 103 Trail Crew renames are LIVE in the CER (receipted cohort, undo-able). The CSR pass ran end-to-end — your key-minting registry is immaculate (zero official-CCN squats, 15 aligned twins); its one clean convergence POSC→POLS is APPLIED (293 ids, Rule-7 playbook, receipts in kb/pols_remint_out/) and the seeder now consults the canonical registry (7/7 verifier). Doctrine notes recorded for CDEV + 4 siblings. Also: CLAUDE.md pared 2,514→~600 lines + truth-audited across all three stores. PLUS the SkyIron side-lane shipped AND closed the 🎓 CPL Pathways tab (#732–#736, #740): THREE course maps — Cerritos ironworker (31.5u journeyworker CPL live from MAP, the billboard), Foothill Dental Hygiene (the ADOPTION map — ⊕ chips showing West LA's RDA/RDH precedent), Foothill Respiratory Care (the VISIBILITY map — Foothill's catalog already awards 24qu CPL for RCP licensure, invisible to MAP) — plus ⚡ Quick Adopt intake (new cpl_adoption_interest table, live), status stages + ⬇ PDF, and Teams links now unfurl as COBI ᶜᴾᴸ. The link is out to colleagues; continuation capsule = docs/cpl_pathways_handoff.md. Next: your CER lanes + the CCR mountain.",
+ "_status": "The triple-R day: CER 103 renames LIVE · CSR pass done + POSC→POLS re-minted (293 ids) + seeder wired · CCR wave 1 adjudicated (600 ids) with 56 fixes LIVE · wave 2 (1,544 ids) launched in-flight — Session 112 assembles it. Doctrine v0.2 from your 7/3 voice notes; 52 fresh calibration groups pre-decided and waiting for YOUR sitting (the ≥90% gate for batch pass 2). MQ Handbook folded into all three stores — the CSR now shows 🎓/🔧 faculty-qual chips. Plus: CLAUDE.md pared + truth-audited across all three stores, Critical Rule 9 born. Undo anything: every write is a receipted trailcrew-*@bot cohort.",
  "items": [
+  {
+   "id": "wave2-assembly",
+   "for": "fable",
+   "tab": "unified-courses",
+   "text": "CCR wave 2 (1,544 ids + 34 re-verifies) is in flight — assemble lanes, act on refuted-and-fired rows (delete cohort rows), receipts + PR. Firing awaits Sam."
+  },
+  {
+   "id": "calibration-sitting",
+   "for": "sam",
+   "tab": "unified-courses",
+   "text": "🧠 Your next mind-meld sitting: 52 fresh calibration groups pre-decided under Doctrine v0.2 (kb/doctrine_out/2026-07-10/predecisions.json). Your reactions = the ≥90% gate for batch pass 2."
+  },
+  {
+   "id": "drafts-1820",
+   "for": "sam",
+   "tab": null,
+   "text": "Two drafts await your merge: cpl-knowledge-base #20 (CLAUDE.md truth-audit + MQ reference) and CPLBrain #18 (session note + vault fixes + MQ note)."
+  },
+  {
+   "id": "pipeline-tab-refresh",
+   "for": "fable",
+   "tab": null,
+   "text": "Rule-8 deferral: refresh the Pipeline tab (BOTH HTMLs) — S111 moved everything (CSR pass, POLS re-mint, CCR waves, Rule 9)."
+  },
   {
    "id": "cer-trail-lanes",
    "for": "sam",
@@ -41,46 +65,16 @@
    "text": "Producer-side fix: add the coci_articulations identities-map rebuild to the re-mint post-apply chain (the consumer-side preference shipped S110)."
   },
   {
-   "id": "carp-validate-fold",
-   "for": "fable",
-   "tab": "credential-reference",
-   "text": "After Sam's ✓ pass + the next rename apply: verify the carpentry family reads clean end-to-end and close the receipt with a validation note."
-  },
-  {
    "id": "issuer-lane",
    "for": "sam",
    "tab": "credential-reference",
    "text": "The issuer lane continues: 233 rows, 200 prefilled — confirm/correct in-cell."
   },
   {
-   "id": "ccr-mountain",
-   "for": "fable",
-   "tab": "unified-courses",
-   "text": "The CCR mountain (Sam's 'big burrito'): leverage-ordered Trail-Crew waves per the playbook — ~2,355 ARTICULATED identities first, Trust-Card-enriched batches, trailcrew-*@bot cohorts, cron-window pacing."
-  },
-  {
    "id": "anchor-promote-rekey",
    "for": "fable",
    "tab": "credential-reference",
    "text": "common_courses.json anchor: 221 dead-format 'M-ID SUBJ NNN' keys + 35 subject folds staged as a promote-time re-key plan (CSR0067) — apply per-entry at promote time, never bulk."
-  },
-  {
-   "id": "pathways-feedback",
-   "for": "sam",
-   "tab": "cpl-pathways",
-   "text": "🎓 CPL Pathways: collect the colleague feedback (link went out 2026-07-10) and bring the asks back for iteration. Two facts to confirm with Cerritos while you wait: the fall-2027 first cohort, and the real upper-division course list (open regionalcte.org/browse/ZyxAg in a browser and screenshot section 4 — the table is JS-only, invisible to crawlers)."
-  },
-  {
-   "id": "pathways-next",
-   "for": "fable",
-   "tab": "cpl-pathways",
-   "text": "🎓 CPL Pathways continuation (read docs/cpl_pathways_handoff.md): fold colleague feedback → swap real upper-div courses into cpl_pathways_data.js when Sam supplies the screenshot → more pathways (carpentry next). Foothill DH + RC views shipped with ⊕ adoption chips; verify the flagged unit values (CHEM/ENGL/COMM, RSPT 300/304) when the catalog is reachable."
-  },
-  {
-   "id": "ccc-catalog-harvest",
-   "for": "fable",
-   "tab": "cpl-pathways",
-   "text": "Sam's parked mission: a recurring agent pipeline harvesting ALL CCC catalog course + program key data into Supabase (COCI already covers courses — the gap is PROGRAMS/curricula; CourseLeaf catalogs bot-block, so the path is per-college waves + structured sources like ProgramMapper/Curriculum Inventory). Scope it before building."
   }
  ]
 }
