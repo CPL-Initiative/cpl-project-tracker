@@ -1,20 +1,20 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-10 · Session 110 close (Trail Crew's first run adjudicated — review lanes ready)",
- "_session": 110,
- "_status": "Trail Crew 🥾 (your happy-named audit) ran end-to-end tonight: 239 findings over the 2,016 canonical credentials, adjudicated by 15 canon-guided AI reviewers + 13 adversarial merge skeptics. Ready for you: 105 fire-ready roman→numeric renames, 18 merge candidates for the ⇒ lane, 7 issuer canon picks, 7 judgment calls only you can make (kb/trail_crew_out/2026-07-10/trail_report.md). Nothing applies without your word. Next per your call: the CSR pass (the M-ID minting layer), then the CCR mountain.",
+ "_as_of": "2026-07-10 · Session 111 (SkyMighty) — renames FIRED, CSR pass done, POSC→POLS re-minted",
+ "_session": 111,
+ "_status": "Big day: the 103 Trail Crew renames are LIVE in the CER (receipted cohort, undo-able). The CSR pass ran end-to-end — your key-minting registry is immaculate (zero official-CCN squats, 15 aligned twins); its one clean convergence POSC→POLS is APPLIED (293 ids, Rule-7 playbook, receipts in kb/pols_remint_out/) and the seeder now consults the canonical registry (7/7 verifier). Doctrine notes recorded for CDEV + 4 siblings. Also: CLAUDE.md pared 2,514→~600 lines + truth-audited across all three stores. Next: your CER lanes + the CCR mountain.",
  "items": [
   {
-   "id": "trail-crew-fire",
+   "id": "cer-trail-lanes",
    "for": "sam",
    "tab": "credential-reference",
-   "text": "Trail Crew results: say the word and I fire the 105 clean roman→numeric renames (receipted, INSERT-only). Then review the 18 merge candidates + 7 issuer canon picks + 7 judgment calls in kb/trail_crew_out/2026-07-10/trail_report.md."
+   "text": "Trail Crew CER lanes await your ✓: 18+1 merge candidates (incl. the CLEP 'Spanish with Writing Level II' pre-flight pull) in the ⇒ lane · 7 issuer-canon clusters · 7 judgment calls (trail_report.md). The 103 clean renames are LIVE (cohort trailcrew-clean-s111@bot) and fold into credentials.json on the next cron."
   },
   {
-   "id": "csr-trail-crew",
-   "for": "fable",
+   "id": "csr-curator-3",
+   "for": "sam",
    "tab": "canonical-subj4",
-   "text": "CSR Trail Crew pass (Sam: foundation first): method rules incl. the official-CCN-subject collision check + magic mnemonic review over the 148 canonical SUBJ4 entries."
+   "text": "CSR curator queue (3): Furniture Making→CSTF (opaque; breaks your CNS* family) · Upholstering→THAR (single-row seed tied to a theater course) · the truncated 'Disabled Student Programs and' name — see kb/csr_out/2026-07-10/csr_report.md."
   },
   {
    "id": "carp-merge-confirms",
@@ -51,6 +51,18 @@
    "for": "sam",
    "tab": "credential-reference",
    "text": "The issuer lane continues: 233 rows, 200 prefilled — confirm/correct in-cell."
+  },
+  {
+   "id": "ccr-mountain",
+   "for": "fable",
+   "tab": "unified-courses",
+   "text": "The CCR mountain (Sam's 'big burrito'): leverage-ordered Trail-Crew waves per the playbook — ~2,355 ARTICULATED identities first, Trust-Card-enriched batches, trailcrew-*@bot cohorts, cron-window pacing."
+  },
+  {
+   "id": "anchor-promote-rekey",
+   "for": "fable",
+   "tab": "credential-reference",
+   "text": "common_courses.json anchor: 221 dead-format 'M-ID SUBJ NNN' keys + 35 subject folds staged as a promote-time re-key plan (CSR0067) — apply per-entry at promote time, never bulk."
   }
  ]
 }
