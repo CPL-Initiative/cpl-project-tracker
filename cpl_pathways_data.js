@@ -55,6 +55,7 @@ window.CPL_PATHWAYS = {
         "Upper-division coursework online — built for working ironworkers",
       ],
       total_units: 120,
+      cpl_tile_label: "CPL on day one — journeyworker apprenticeship credit already articulated in MAP",
       campaign: {
         kicker: "The billboard",
         headline: "Iron workers: your journeyworker training is already worth {cpl_units}+ units at Cerritos College. Finish the bachelor's the way you built your trade.",

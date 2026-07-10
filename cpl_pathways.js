@@ -118,6 +118,7 @@
     ".cplpw-glyph.cpl { color: var(--hunter, var(--green-progress)); }",
     ".cplpw-glyph.clep { color: var(--cobalt, var(--accent-link)); }",
     ".cplpw-glyph.rest { color: var(--text-faint); }",
+    ".cplpw-glyph.adopt { color: var(--violet); }",
     /* Section cards */
     ".cplpw-sections { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:12px; margin: 12px 0; align-items:start; }",
     ".cplpw-sec { background: var(--surface-opaque); border:1px solid var(--border); border-radius:10px; overflow:hidden; }",
@@ -141,6 +142,12 @@
     ".cplpw-clepopts { padding:4px 14px 8px 40px; font-size:.76rem; color: var(--text-body); border-bottom:1px solid var(--border); }",
     ".cplpw-clepopts ul { margin:4px 0 2px; padding-left:16px; }",
     ".cplpw-clepopts li { margin:1px 0; }",
+    ".cplpw-course .how.adopt { color: var(--violet); border:1px solid var(--violet); cursor:pointer; background:none; font-family:inherit; }",
+    ".cplpw-adoptopts { padding:4px 14px 8px 40px; font-size:.76rem; color: var(--text-body); border-bottom:1px solid var(--border); }",
+    ".cplpw-adoptopts .h { font-weight:600; }",
+    ".cplpw-adoptopts .cred { margin-top:4px; font-weight:600; color: var(--violet); }",
+    ".cplpw-adoptopts ul { margin:2px 0 2px; padding-left:16px; }",
+    ".cplpw-adoptopts li { margin:1px 0; }",
     /* Campaign callout */
     ".cplpw-callout { background: var(--navy-primary); color: var(--paper, var(--surface-opaque)); border-radius:12px; padding:18px 22px; margin: 14px 0; }",
     ".cplpw-callout .k { font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color: var(--mustard-on-dark, var(--gold-accent)); }",
@@ -246,9 +253,14 @@
   // Build the live lookup indexes from the CER payload:
   //  artIdx:  "SUBJ N.NN" (per college) -> {credential, units, cpl_types}
   //  clepByArea: GE-area name -> [{exam, units, ut}] (system exam-credit chart)
+  //  credIdx: unified-title (lowercased) -> every articulation line ANYWHERE
+  //           (college + course + units) — feeds the ⊕ adoption-option chips
+  //  discIdx: identity discipline -> [unified titles] articulated in it
   function buildLiveIndexes(payload, collegeName) {
     var artIdx = {};
     var clepByArea = {};
+    var credIdx = {};
+    var discIdx = {};
     if (!payload || !Array.isArray(payload.unified_titles)) return null;
     payload.unified_titles.forEach(function (u) {
       var ut = u && u.ut != null ? String(u.ut) : "";
@@ -256,6 +268,22 @@
         (a && a.local || []).forEach(function (loc) {
           if (!loc) return;
           var colleges = loc.colleges || [];
+          // Every line enters the adoption index (per college).
+          colleges.forEach(function (cn) {
+            var k = ut.toLowerCase();
+            if (!credIdx[k]) credIdx[k] = { ut: ut, lines: [] };
+            credIdx[k].lines.push({
+              college: String(cn),
+              code: (loc.subj != null ? String(loc.subj) : "") + " " + (loc.num != null ? String(loc.num) : ""),
+              title: loc.t != null ? String(loc.t) : "",
+              units: (typeof loc.u === "number") ? loc.u : null,
+            });
+          });
+          var disc = a.disc != null ? String(a.disc) : "";
+          if (disc) {
+            if (!discIdx[disc]) discIdx[disc] = [];
+            if (discIdx[disc].indexOf(ut) === -1) discIdx[disc].push(ut);
+          }
           var hit = colleges.some(function (c) {
             return String(c).toUpperCase().indexOf(String(collegeName).toUpperCase()) !== -1;
           });
@@ -286,7 +314,36 @@
     Object.keys(clepByArea).forEach(function (k) {
       clepByArea[k].sort(function (a, b) { return a.exam < b.exam ? -1 : 1; });
     });
-    return { artIdx: artIdx, clepByArea: clepByArea, generatedAt: payload._generated_at || null };
+    return { artIdx: artIdx, clepByArea: clepByArea, credIdx: credIdx, discIdx: discIdx,
+             college: String(collegeName || ""), generatedAt: payload._generated_at || null };
+  }
+
+  // ⊕ Adoption options — for a course the pathway college has NOT articulated,
+  // surface where OTHER colleges already articulate the named credentials (or
+  // any credential in the named identity discipline): the "someone already did
+  // this — adopt it" chip. Purely live-derived; no baked fallback.
+  function collectAdoptOptions(adopt, live) {
+    if (!adopt || !live || !live.credIdx) return null;
+    var wanted = [];
+    (adopt.credentials || []).forEach(function (name) {
+      var hit = live.credIdx[String(name).toLowerCase()];
+      if (hit) wanted.push(hit);
+    });
+    if (adopt.disc && live.discIdx[adopt.disc]) {
+      live.discIdx[adopt.disc].forEach(function (ut) {
+        var hit = live.credIdx[ut.toLowerCase()];
+        if (hit && wanted.indexOf(hit) === -1) wanted.push(hit);
+      });
+    }
+    var homeUC = live.college.toUpperCase();
+    var out = [];
+    wanted.forEach(function (cred) {
+      var lines = cred.lines.filter(function (l) {
+        return l.college.toUpperCase().indexOf(homeUC) === -1;
+      });
+      if (lines.length) out.push({ credential: cred.ut, lines: lines });
+    });
+    return out.length ? out : null;
   }
 
   // ── Pathway resolution ────────────────────────────────────────────────────
@@ -334,6 +391,16 @@
             row.detail = opts.length + " CLEP exam(s) carry systemwide GE credit in “" + c.clep_area + "” (ESLEI 24-35)";
           }
         }
+        // 3) ⊕ Adoption option — this college hasn't articulated the course,
+        //    but other colleges articulate the named credential(s)/discipline.
+        //    Doesn't change status or units — it's an opportunity, not credit.
+        if (row.status !== "cpl" && c.adopt) {
+          var adoptions = collectAdoptOptions(c.adopt, live);
+          if (adoptions) {
+            row.adoptOptions = adoptions;
+            row.adoptNote = c.adopt.note || null;
+          }
+        }
         // `no_count` sections (e.g. alternate-track course lists) render and
         // live-resolve, but never enter the unit buckets — a student takes ONE
         // track, so counting both would overstate the CPL number.
@@ -349,12 +416,16 @@
       return { def: sec, rows: rows, cplUnits: secCpl, allUnits: secAll };
     });
     var total = (typeof prog.total_units === "number") ? prog.total_units : totalListed;
+    var hasAdopt = sections.some(function (s) {
+      return s.rows.some(function (r) { return !!r.adoptOptions; });
+    });
     return {
       sections: sections,
       cplUnits: Math.round(cplUnits * 10) / 10,
       clepUnits: Math.round(clepUnits * 10) / 10,
       totalUnits: total,
       restUnits: Math.max(0, Math.round((total - cplUnits - clepUnits) * 10) / 10),
+      hasAdopt: hasAdopt,
     };
   }
 
@@ -375,16 +446,21 @@
     });
     wrap.appendChild(bar);
     var legend = el("div", "cplpw-legend", [
-      el("span", "k", [el("span", "cplpw-glyph cpl", "✓"), " CPL from journeyworker training — already articulated in the MAP platform"]),
+      el("span", "k", [el("span", "cplpw-glyph cpl", "✓"), " CPL already articulated by this college in the MAP platform"]),
       el("span", "k", [el("span", "cplpw-glyph clep", "◆"), " GE requirement a CLEP exam can satisfy (systemwide chart; college applies it)"]),
       el("span", "k", [el("span", "cplpw-glyph rest", "○"), " remaining classroom coursework"]),
     ]);
+    if (model.hasAdopt) {
+      legend.appendChild(el("span", "k", [el("span", "cplpw-glyph adopt", "⊕"),
+        " articulated at ANOTHER college — an adoption opportunity here"]));
+    }
     wrap.appendChild(legend);
     return wrap;
   }
 
   function renderTiles(model, prog) {
     var tiles = el("div", "cplpw-tiles");
+    var unitWord = prog.unit_system === "quarter" ? "qtr units" : "units";
     function tile(cls, num, unit, label) {
       var t = el("div", "cplpw-tile" + (cls ? " " + cls : ""));
       var n = el("div", "n", num);
@@ -393,15 +469,16 @@
       t.appendChild(el("div", "l", label));
       return t;
     }
-    tiles.appendChild(tile("cpl", "✓ " + fmtU(model.cplUnits), "units", "CPL on day one — journeyworker apprenticeship credit already articulated in MAP"));
-    tiles.appendChild(tile("clep", "◆ " + fmtU(model.clepUnits), "units", "more GE units available by CLEP exam — no classroom seat time"));
-    tiles.appendChild(tile(null, fmtU(model.totalUnits), "units", "total for the " + (prog.degree || "degree")));
+    tiles.appendChild(tile("cpl", "✓ " + fmtU(model.cplUnits), unitWord, prog.cpl_tile_label || "CPL on day one — prior-learning credit already articulated in MAP"));
+    tiles.appendChild(tile("clep", "◆ " + fmtU(model.clepUnits), unitWord, "more GE units available by CLEP exam — no classroom seat time"));
+    tiles.appendChild(tile(null, fmtU(model.totalUnits), unitWord, "total for the " + (prog.degree || "degree")));
     var pct = model.totalUnits ? Math.round(((model.cplUnits + model.clepUnits) / model.totalUnits) * 100) : 0;
     tiles.appendChild(tile(null, pct + "%", null, "of the degree reachable without repeating training you already have"));
     return tiles;
   }
 
-  function renderSection(secModel) {
+  function renderSection(secModel, prog) {
+    var isQuarter = prog && prog.unit_system === "quarter";
     var sec = el("div", "cplpw-sec" + (secModel.def.wide ? " wide" : ""));
     var head = el("div", "cplpw-sec-head");
     if (secModel.cplUnits > 0) {
@@ -426,6 +503,36 @@
         chip.title = r.detail || "";
         row.appendChild(chip);
       }
+      var adoptPanel = null;
+      if (r.adoptOptions) {
+        var nCred = r.adoptOptions.length;
+        var abtn = document.createElement("button");
+        abtn.className = "how adopt";
+        abtn.type = "button";
+        abtn.textContent = "⊕ adopted elsewhere × " + nCred;
+        abtn.title = nCred + " credential(s) already articulated to equivalent coursework at other colleges — an adoption opportunity for this college. Click to list.";
+        abtn.setAttribute("aria-expanded", "false");
+        abtn.addEventListener("click", function () {
+          var open = adoptPanel.style.display !== "none";
+          adoptPanel.style.display = open ? "none" : "";
+          abtn.setAttribute("aria-expanded", open ? "false" : "true");
+        });
+        row.appendChild(abtn);
+        adoptPanel = el("div", "cplpw-adoptopts");
+        adoptPanel.style.display = "none";
+        adoptPanel.appendChild(el("div", "h",
+          "Already articulated at other colleges — CPL this college could adopt" +
+          (r.adoptNote ? " (" + r.adoptNote + ")" : "") + ":"));
+        r.adoptOptions.forEach(function (o) {
+          var ul = el("ul");
+          o.lines.forEach(function (l) {
+            ul.appendChild(el("li", null, l.college + ": " + l.code + " — " + l.title +
+              (l.units != null ? " (" + fmtU(l.units) + "u)" : "")));
+          });
+          adoptPanel.appendChild(el("div", "cred", "⊕ " + o.credential));
+          adoptPanel.appendChild(ul);
+        });
+      }
       var optsPanel = null;
       if (r.status === "clep" && r.clepOptions) {
         var btn = document.createElement("button");
@@ -443,14 +550,19 @@
         optsPanel = el("div", "cplpw-clepopts");
         optsPanel.style.display = "none";
         optsPanel.appendChild(el("div", null, "CLEP exams carrying systemwide GE credit here (min " +
-          "3 semester units each; passing score 50 — ESLEI 24-35):"));
+          (isQuarter ? "4 quarter units each" : "3 semester units each") +
+          "; passing score 50 — ESLEI 24-35):"));
         var ul = el("ul");
         r.clepOptions.forEach(function (o) {
-          ul.appendChild(el("li", null, o.exam + (o.units ? " — " + fmtU(o.units) + "u" : "")));
+          // The chart's per-exam minimums are semester-grained; on a quarter
+          // campus show just the exam names (the header carries the minimum).
+          ul.appendChild(el("li", null, o.exam +
+            (!isQuarter && o.units ? " — " + fmtU(o.units) + "u" : "")));
         });
         optsPanel.appendChild(ul);
       }
       sec.appendChild(row);
+      if (adoptPanel) sec.appendChild(adoptPanel);
       if (optsPanel) sec.appendChild(optsPanel);
     });
     return sec;
@@ -526,7 +638,7 @@
 
     // Section cards
     var grid = el("div", "cplpw-sections");
-    model.sections.forEach(function (s) { grid.appendChild(renderSection(s)); });
+    model.sections.forEach(function (s) { grid.appendChild(renderSection(s, prog)); });
     frag.appendChild(grid);
 
     // Campaign callout
