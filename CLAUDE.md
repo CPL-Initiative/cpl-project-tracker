@@ -538,20 +538,21 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyIron side-lane — 🎓 CPL Pathways: the Cerritos ironworker course map (2026-07-10, #732/#733 MERGED)
+### SkyIron side-lane — 🎓 CPL Pathways: three course maps + Quick Adopt (2026-07-10, #732–#736 + #740 MERGED)
 
 New top-level **🎓 CPL Pathways tab** for the **California Apprenticeship Council (Aug 13)**
-deck: the full course map of **Cerritos's Field Ironworker Supervisor BS** (approved Feb 2026
-under AB 927 after CSU withdrew; first cohort fall 2027) with CPL check-offs **derived live
-from the CER dataset** — 15 IWAP courses ✓ (**31.5 units**, the billboard number), the CLEP ◆
-GE options (ESLEI 24-35; 15u eligible → **39% of the 120u degree** with no seat time), the
-Structural-track "articulations in progress" card that flips ✓ as Cerritos adds MAP
-articulations (`no_count` — never double-counts the major), and "The billboard" callout.
-**#733 same-day:** status stages (📝 Discussion Draft default / ✓ Active / ⏸ Tabled — big
-banner + hero chip; selector = per-browser view override, data `stage` = published default)
-+ **⬇ PDF** print extract. Suite +`cpl_pathways` 69. Sam sent the link to colleagues for
-feedback 2026-07-10. Model generalizes: one data-file object per program. Full story + open
-items + continuation: `docs/cpl_pathways_lessons.md` · `docs/cpl_pathways_handoff.md`.
+deck — CPL check-offs **derived live from the CER dataset**, one data-file object per program.
+Three views on the picker: **Cerritos Field Ironworker Supervisor BS** (#732/#733 — 15 IWAP
+courses ✓ **31.5u**, the billboard number; ◆15u CLEP → **39%** of 120u; status stages 📝
+Discussion Draft default + ⬇ PDF); **Foothill Dental Hygiene BS** (#735 — ✓0/◆17qu/9%, the
+ADOPTION map: violet **⊕ chips** live-derive where OTHER colleges articulate — West LA's
+RDA (11 courses) + RDH precedent); **Foothill Respiratory Care BS** (#735 — the VISIBILITY
+map: Foothill's catalog already awards **24qu CPL** for NBRC+RCP licensure, invisible to MAP).
+**#736 ⚡ Quick Adopt v1:** every ⊕ panel takes an adoption request → new Supabase
+`cpl_adoption_interest` (anon INSERT-only, no public SELECT; team lane pending). **#740:**
+page title/og → "COBI ᶜᴾᴸ" (generator-owned) for Teams unfurls. Suite +`cpl_pathways` 97;
+Sam's link out to colleagues. Full story + continuation: `docs/cpl_pathways_lessons.md` ·
+`docs/cpl_pathways_handoff.md`. Parked: the CCC catalog→Supabase harvest (todos).
 
 ### Session 110 — the carpentry close-out, the stale identities-map find, and the COCI Lookup tab (2026-07-09)
 

@@ -61,7 +61,18 @@ Consequences that made this pay off on day one:
 - **Fail soft** — baked fallback stamps + an honest "showing the curated
   snapshot" note when the live payload fails to load.
 
-Two supporting patterns shipped with it:
+Supporting patterns shipped with it (⊕/⚡ added same-day, #735/#736):
+
+- **⊕ adoption-option chips** — the inverse derivation: a curated
+  `adopt:{credentials|disc}` stamp on a course the home college has NOT
+  articulated pulls every OTHER college's articulation lines for those
+  credentials from the same live dataset (home college excluded) — the
+  precedent menu. Opportunity, not credit: buckets untouched, ✓ rows never
+  chip. A sparse map becomes a recruiting tool for articulation adoption.
+- **⚡ intake at the point of precedent** — each ⊕ panel carries a
+  request form POSTing to a write-only table (anon INSERT, no public SELECT
+  — contact info never publicly readable) auto-stamped with the full
+  context; the ask is made where the evidence is shown.
 
 - **Published default vs view override** — the pathway's publication stage
   (Discussion Draft / Active / Tabled) ships as a field in the data file (the

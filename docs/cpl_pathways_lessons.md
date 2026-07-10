@@ -189,6 +189,18 @@ applied 2026-07-10. Suite 84 → 97. **Next step on this thread:** a small
 adoption-queue lane (team-gated) + re-point the button at the MAP Exhibit
 Module's authenticated adoption flow when Malone exposes one.
 
+### Day close (2026-07-10, the SkyIron high-rise)
+
+Final riders: **#740** — Teams unfurls now read **"COBI ᶜᴾᴸ — …"** (Unicode
+modifier-letter superscripts in the GENERATOR-owned title, `COBI_TITLE` in
+`excel_to_dashboard.py`, + og:title/og:description in both HTMLs; the rewrite
+proved idempotent so the daily cron won't churn). And the **uc_desc_lane red-X
+saga**: diagnosed the pinned ECED fixture drift, raced the mainline to the
+same presence-conditional fix — SkyMighty's #739 won by minutes; #738 closed
+as superseded; **suite fully green (154/154)** for the first time in days.
+Six SkyIron PRs merged (#732–#736, #740), one superseded (#738). The lane
+rests in feedback-collection; continuation = `docs/cpl_pathways_handoff.md`.
+
 ### Safety patterns honored
 
 - Rule 4: tab shell mirrored in both HTMLs (test enforces byte-identity).
