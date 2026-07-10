@@ -82,10 +82,12 @@ The whole ecosystem, end-to-end:
    a gap miner over the chat logs surfacing the questions the knowledge base
    had no good source for), a **🎓 CPL Pathways** tab (audience-facing
    apprenticeship-to-baccalaureate course maps with CPL check-offs derived
-   live from the MAP articulation data — first pathway: Cerritos College's
-   Field Ironworker Supervisor BS, where journeyworkers arrive with 31.5
-   units of CPL; status stages (Discussion Draft / Active / Tabled) + a
-   print-ready ⬇ PDF extract), an **Implementation Funding** tab (the DRAFT
+   live from the MAP articulation data — Cerritos's Field Ironworker
+   Supervisor BS (31.5 units of journeyworker CPL) plus Foothill's Dental
+   Hygiene & Respiratory Care BS views; violet ⊕ adoption-option chips show
+   where OTHER colleges already articulate a credential, each with a ⚡
+   Quick Adopt request form; status stages (Discussion Draft / Active /
+   Tabled) + a print-ready ⬇ PDF extract), an **Implementation Funding** tab (the DRAFT
    CPL funding model as a scenario tool: a selectable 2-year window,
    **year-specific funding priorities** (Year 1 / Year 2 filter; every metric
    and description editable), a **noncredit-feeder carve-out** (NOCE / SD
