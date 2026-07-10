@@ -91,6 +91,16 @@ const CER_STUB = {
     { ut: "AP Psychology", cpl_types: ["Standardized Assessment"],
       ge_credit: { program: "AP", exam: "Psychology", areas: ["Social/Behavioral Sciences"], units: 3, na: false },
       articulations: [] },
+    // Adoption-option material: a credential articulated at ANOTHER college
+    // (WLAC) + one line at the home college (must be excluded from ⊕), and a
+    // second same-discipline credential at Chaffey (disc-matching).
+    { ut: "Registered Dental Hygienist (RDH) License", cpl_types: ["Industry Certification"],
+      articulations: [{ cid: "DENT M10HK", sys: "M-ID", disc: "Dental Technology", local: [
+        { subj: "DEN HY", num: "421", t: "Dental Hygiene Capstone", colleges: ["West Los Angeles College"], u: 5.0 },
+        { subj: "DH", num: "99", t: "Home-college line", colleges: ["Cerritos College"], u: 1.0 }] }] },
+    { ut: "Dental Office Procedures", cpl_types: ["Credit By Exam"],
+      articulations: [{ cid: "DENT M1081", sys: "M-ID", disc: "Dental Technology", local: [
+        { subj: "DENTAL", num: "455", t: "Dental Office Procedures", colleges: ["Chaffey College"], u: 2.0 }] }] },
   ],
 };
 
@@ -104,8 +114,10 @@ const PROGRAM_STUB = {
   campaign: { headline: "Your card is worth {cpl_units} units.", sub: "sub line" },
   sections: [
     { id: "major", title: "Apprenticeship major", courses: [
-      // catalog spells 40.5; MAP entered 40.50 — must still match (b)
-      { code: "IWAP 40.5", title: "IW - Cranes", units: 2.0 },
+      // catalog spells 40.5; MAP entered 40.50 — must still match (b).
+      // Also adopt-stamped: a ✓ row must NOT grow an ⊕ chip (covered > adopt).
+      { code: "IWAP 40.5", title: "IW - Cranes", units: 2.0,
+        adopt: { disc: "Dental Technology" } },
       // catalog spells 41.50; MAP entered 41.5 — reverse direction, and the
       // MAP line's college is SHOUTING-CASE (case-insensitive match guard)
       { code: "IWAP 41.50", title: "IW - Detailing", units: 2.0 },
@@ -118,6 +130,10 @@ const PROGRAM_STUB = {
     ]},
     { id: "upper", title: "Upper division", courses: [
       { code: "FIWS 401", title: "<img src=x onerror=window.__xss=1>Hostile", units: 3 },
+      { code: "DH 300", title: "Adopt by credential", units: 3,
+        adopt: { credentials: ["Registered Dental Hygienist (RDH) License"], note: "WLAC precedent" } },
+      { code: "DH 301", title: "Adopt by discipline", units: 3,
+        adopt: { disc: "Dental Technology" } },
     ]},
   ],
 };
@@ -182,6 +198,34 @@ const PROGRAM_STUB = {
   check("no_count: rest bucket unchanged", m.restUnits === 20 - 4 - 3);
 }
 
+// (d3) ⊕ adoption options — live-derived from OTHER colleges' articulations
+{
+  const w = freshWindow();
+  const T = w.CPL_PATHWAYS_TAB;
+  const live = T._buildLiveIndexes(CER_STUB, "Cerritos");
+  const m = T._resolvePathway(PROGRAM_STUB, live);
+  const upper = m.sections[2].rows;
+  const byCred = upper[1], byDisc = upper[2], covered = m.sections[0].rows[0];
+  check("adopt-by-credential collects the WLAC line", !!byCred.adoptOptions &&
+    byCred.adoptOptions.length === 1 && byCred.adoptOptions[0].credential === "Registered Dental Hygienist (RDH) License");
+  check("home-college line EXCLUDED from adoption options",
+    !!byCred.adoptOptions && byCred.adoptOptions[0].lines.every(l => !/Cerritos/.test(l.college)));
+  check("adoption line carries college + code + units", (function () {
+    const l = byCred.adoptOptions[0].lines[0];
+    return /West Los Angeles/.test(l.college) && l.code === "DEN HY 421" && l.units === 5;
+  })());
+  check("adopt-by-discipline pulls BOTH Dental Technology credentials",
+    !!byDisc.adoptOptions && byDisc.adoptOptions.length === 2);
+  check("adopt rows keep status rest (opportunity, not credit)",
+    byCred.status === "rest" && byDisc.status === "rest");
+  check("adopt does not change the unit buckets", m.cplUnits === 4 && m.clepUnits === 3);
+  check("✓-covered row gets NO adoption options even when stamped", !covered.adoptOptions);
+  check("model.hasAdopt flags the legend line", m.hasAdopt === true);
+  // live=null → no adoption chips (purely live-derived)
+  const m0 = T._resolvePathway(PROGRAM_STUB, null);
+  check("no live data → no adoption options", !m0.sections[2].rows[1].adoptOptions && m0.hasAdopt === false);
+}
+
 // (e) baked fallback when live is null
 {
   const w = freshWindow();
@@ -220,6 +264,19 @@ const PROGRAM_STUB = {
   btn.dispatchEvent(new w.Event("click", { bubbles: true }));
   check("options panel opens on click", panel && panel.style.display !== "none");
   check("panel lists the exam", /Introductory Sociology/.test(panel.textContent));
+  // ⊕ adoption chip rendering
+  const adoptBtns = root.querySelectorAll("button.how.adopt");
+  check("⊕ chips render on the two adopt rows only", adoptBtns.length === 2);
+  check("⊕ chip labels the count", /⊕ adopted elsewhere × 1/.test(adoptBtns[0].textContent));
+  const adoptPanel = root.querySelector(".cplpw-adoptopts");
+  check("adopt panel hidden initially", adoptPanel && adoptPanel.style.display === "none");
+  adoptBtns[0].dispatchEvent(new w.Event("click", { bubbles: true }));
+  check("adopt panel opens on click", adoptPanel.style.display !== "none");
+  check("adopt panel names credential + college + note",
+    /Registered Dental Hygienist/.test(adoptPanel.textContent) &&
+    /West Los Angeles College: DEN HY 421/.test(adoptPanel.textContent) &&
+    /WLAC precedent/.test(adoptPanel.textContent));
+  check("legend gains the ⊕ line", /adoption opportunity/.test(root.querySelector(".cplpw-legend").textContent));
   // XSS
   check("hostile title rendered inert (no <img>)", root.querySelectorAll("img").length === 0 && !w.__xss);
   check("hostile title visible as text", /Hostile/.test(text));
