@@ -92,3 +92,34 @@ and the same-college rule. That's the empirical case for doctrine-then-batch.
 5. Next-session prompt: `docs/ccr_convergence_handoff.md` (workstream
    handoff — named per-workstream instead of session_99 to avoid colliding
    with the concurrent Activities-tab session's numbering).
+
+## 2026-07-10 — Session 111 (SkyMighty): first mind-meld distillation → Doctrine v0.2
+
+Sam's Phase-1 voice sitting happened 2026-07-03 (8 notes, all `anchored` lane,
+KINE + ESL) and sat undistilled for a week — the gate was OPEN and nobody
+checked. Distilled today; all 8 rows stamped `distilled_at`.
+
+**Doctrine diff (v0 → v0.2):**
+- **P-3 RATIFIED** with the concrete ESL mapping (3–4 → Intermediate 1–2 —
+  sub-bands allowed; 5–6/7 → Advanced; unnumbered/"Skills Development" →
+  Beginning) + the ESL-credit ⋃ ESL-noncredit one-family packaging call.
+- **NEW P-11** (settles Q-TARGETCOUNT for KINE): athletics-vs-general split;
+  general fitness merges modality-agnostically into Conditioning B/I/A;
+  sport-first vs fitness-first title test; venue marks fold; combo-level
+  precedents (int–adv → adv, beg–int → beg); Sports Medicine Experience ≡
+  Clinical.
+- **P-10 addendum**: modality/venue-agnostic package names.
+- Q-LADDER partially settled; Q-TARGETCOUNT settled for KINE, open for
+  Dance/Music.
+
+**Tooling findings from the sitting (work items, not doctrine):**
+1. Discipline selector can't multi-select (Sam wants ESL + ESL-Noncredit
+   together) — either multi-select or a discipline-family filter.
+2. **Discipline-filter leak**: an HVAC course surfaced in KINE-filtered
+   suggestions ("conditioning" title match ignored the discipline filter).
+3. **Find-similar looseness anomaly**: at +25% looser, EXPECTED same-family
+   matches (sports-medicine clinical/experience) dropped out while unrelated
+   rows appeared — ranking behavior needs investigation.
+
+Next per the handoff queue: agreement measurement (blind re-decide vs Sam's 8
+calls under v0.2), then batch pass 2 gated on ≥90%.

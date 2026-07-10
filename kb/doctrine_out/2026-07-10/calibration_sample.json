@@ -1,0 +1,2240 @@
+{
+ "generated_from": "2026-07-10 16:09",
+ "seed": 20260710,
+ "per_stratum": 4,
+ "universe_groups": 7604,
+ "stratum_sizes": {
+  "level_ladder": 1521,
+  "skill_strands": 78,
+  "credit_noncredit": 776,
+  "activity_ladder": 123,
+  "generic_title": 16,
+  "honors_variant": 23,
+  "same_college": 1715,
+  "cross_discipline": 1208,
+  "units_spread": 294,
+  "evidence_lane": 130,
+  "plain_anchored": 887,
+  "plain_singleton": 250,
+  "plain_similarity": 583
+ },
+ "sample": [
+  {
+   "stratum": "level_ladder",
+   "lane": "singleton",
+   "features": [
+    "activity_ladder",
+    "level_ladder",
+    "same_college"
+   ],
+   "sig": "appl cond country cross theory",
+   "score": 0.86,
+   "same_college": true,
+   "credential": null,
+   "members": [
+    {
+     "id": "KINE M10YO",
+     "t": "Theory and Application of Conditioning: Cross Country 1",
+     "s": "ES/T",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Kinesiology"
+    },
+    {
+     "id": "KINE M10YP",
+     "t": "Theory and Application of Conditioning: Cross Country 2",
+     "s": "ES/T",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Kinesiology"
+    },
+    {
+     "id": "KINE M10YQ",
+     "t": "Theory and Application of Conditioning: Cross Country 3",
+     "s": "ES/T",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Kinesiology"
+    }
+   ]
+  },
+  {
+   "stratum": "level_ladder",
+   "lane": "anchored",
+   "features": [
+    "activity_ladder",
+    "big_group",
+    "credit_noncredit_mix",
+    "cross_discipline",
+    "level_ladder"
+   ],
+   "sig": "ballroom dance",
+   "score": 0.725,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "DANC M1090",
+     "t": "Ballroom Dance 2",
+     "s": "DANC",
+     "u": 1.0,
+     "k": "M-ID",
+     "d": "Dance"
+    },
+    {
+     "id": "DANC M1091",
+     "t": "Ballroom Dance 3",
+     "s": "DANC",
+     "u": 0.5,
+     "k": "M-ID",
+     "d": "Dance"
+    },
+    {
+     "id": "DANC M1094",
+     "t": "Ballroom Dance 4",
+     "s": "DANC",
+     "u": 0.5,
+     "k": "M-ID",
+     "d": "Dance"
+    },
+    {
+     "id": "DANC M1088",
+     "t": "Beginning Ballroom Dance",
+     "s": "DANC",
+     "u": 0.5,
+     "k": "M-ID",
+     "d": "Dance"
+    },
+    {
+     "id": "DANC M1093",
+     "t": "Introduction to Ballroom Dance",
+     "s": "DANC",
+     "u": 2.0,
+     "k": "M-ID",
+     "d": "Dance"
+    },
+    {
+     "id": "DANC M1092",
+     "t": "Ballroom Dance - Intermediate",
+     "s": "DNCE",
+     "u": 1.0,
+     "k": "M-ID",
+     "d": "Dance"
+    },
+    {
+     "id": "DANC M1089",
+     "t": "Dance, Ballroom (Social & Latin)",
+     "s": "DANC;KINE",
+     "u": 1.0,
+     "k": "M-ID",
+     "d": "Dance"
+    },
+    {
+     "id": "DANC Z1028",
+     "t": "Ballroom Dance 2 - Beginning",
+     "s": "DANC",
+     "u": null,
+     "k": "Unified",
+     "d": "Dance"
+    },
+    {
+     "id": "DANC M10DW",
+     "t": "Ballroom Dance 3 - Intermediate",
+     "s": "DANC",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Dance"
+    },
+    {
+     "id": "DANC M10EL",
+     "t": "Ballroom Dance 4 - Advanced",
+     "s": "DANC",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Dance"
+    },
+    {
+     "id": "KINE M11LZ",
+     "t": "Ballroom Dance: Basic",
+     "s": "HES",
+     "u": 0.5,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Kinesiology"
+    },
+    {
+     "id": "KINE M10LH",
+     "t": "Ballroom Dance - Advanced",
+     "s": "KIN",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Kinesiology"
+    }
+   ]
+  },
+  {
+   "stratum": "level_ladder",
+   "lane": "singleton",
+   "features": [
+    "activity_ladder",
+    "level_ladder",
+    "same_college"
+   ],
+   "sig": "cardiovascular core fitness train",
+   "score": 0.86,
+   "same_college": true,
+   "credential": null,
+   "members": [
+    {
+     "id": "KINE M11HR",
+     "t": "Advanced Core Training and Cardiovascular Fitness",
+     "s": "PEF",
+     "u": 1.8,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Kinesiology"
+    },
+    {
+     "id": "KINE M11NX",
+     "t": "Beginning Core Training and Cardiovascular Fitness",
+     "s": "PEF",
+     "u": 1.8,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Kinesiology"
+    },
+    {
+     "id": "KINE M11PP",
+     "t": "Intermediate Core Training and Cardiovascular Fitness",
+     "s": "PEF",
+     "u": 1.8,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Kinesiology"
+    }
+   ]
+  },
+  {
+   "stratum": "level_ladder",
+   "lane": "singleton",
+   "features": [
+    "activity_ladder",
+    "level_ladder",
+    "same_college"
+   ],
+   "sig": "crew repertory workshop",
+   "score": 0.88,
+   "same_college": true,
+   "credential": null,
+   "members": [
+    {
+     "id": "THEA M11EF",
+     "t": "Repertory Workshop: Crew 1",
+     "s": "DRAMA",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Drama/Theater Arts"
+    },
+    {
+     "id": "THEA M11EI",
+     "t": "Repertory Workshop: Crew 2",
+     "s": "DRAMA",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Drama/Theater Arts"
+    },
+    {
+     "id": "THEA M11EM",
+     "t": "Repertory Workshop: Crew 3",
+     "s": "DRAMA",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Drama/Theater Arts"
+    },
+    {
+     "id": "THEA M11EP",
+     "t": "Repertory Workshop: Crew 4",
+     "s": "DRAMA",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Drama/Theater Arts"
+    }
+   ]
+  },
+  {
+   "stratum": "skill_strands",
+   "lane": "title",
+   "features": [
+    "big_group",
+    "esl_language",
+    "skill_strands"
+   ],
+   "sig": "Introduction to German Culture",
+   "score": 0.643,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "FLGE M1014",
+     "t": "Introduction to German Culture",
+     "s": "GRMN",
+     "u": 3.0,
+     "k": "M-ID",
+     "d": "Foreign Languages"
+    },
+    {
+     "id": "FLGE M10AY",
+     "t": "German Conversation",
+     "s": "GRMN",
+     "u": 2.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Foreign Languages"
+    },
+    {
+     "id": "FLGE M10AZ",
+     "t": "German Conversation 1",
+     "s": "GRMN",
+     "u": 2.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Foreign Languages"
+    },
+    {
+     "id": "FLGE M10AS",
+     "t": "German Culture Through Cinema",
+     "s": "GERM",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Foreign Languages"
+    },
+    {
+     "id": "FLGE M10BD",
+     "t": "Introduction to German Conversation",
+     "s": "GRMN",
+     "u": 2.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Foreign Languages"
+    },
+    {
+     "id": "FLGE M10BE",
+     "t": "German Reading and Conversation",
+     "s": "GERM",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Foreign Languages"
+    },
+    {
+     "id": "FLGE M10CB",
+     "t": "Introduction to German Literature",
+     "s": "GRMN",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Foreign Languages"
+    },
+    {
+     "id": "FLGE M10CC",
+     "t": "German Literature in Translation",
+     "s": "GRMN",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Foreign Languages"
+    },
+    {
+     "id": "FLGE M10AT",
+     "t": "German Conversation and Composition 1",
+     "s": "GERM",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Foreign Languages"
+    },
+    {
+     "id": "FLGE M10BA",
+     "t": "Introduction to German Conversation 1",
+     "s": "GRMN",
+     "u": 2.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Foreign Languages"
+    }
+   ]
+  },
+  {
+   "stratum": "skill_strands",
+   "lane": "singleton",
+   "features": [
+    "credit_noncredit_mix",
+    "skill_strands",
+    "units_spread"
+   ],
+   "sig": "business english writ",
+   "score": 0.593,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "BUSI M90DF",
+     "t": "Basic Business English Writing 1",
+     "s": "BA",
+     "u": 0.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Business"
+    },
+    {
+     "id": "BUSI M90DG",
+     "t": "Basic Business English Writing 2",
+     "s": "BA",
+     "u": 0.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Business"
+    },
+    {
+     "id": "BUSI M10RV",
+     "t": "Business English and Writing",
+     "s": "Business (BUS)",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Business"
+    }
+   ]
+  },
+  {
+   "stratum": "skill_strands",
+   "lane": "anchored",
+   "features": [
+    "credit_noncredit_mix",
+    "esl_language",
+    "skill_strands",
+    "units_spread"
+   ],
+   "sig": "conv high",
+   "score": 0.493,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "ESOL M1244",
+     "t": "High Intermediate Conversation",
+     "s": "ELD",
+     "u": 3.0,
+     "k": "M-ID",
+     "d": "English as a Second Language"
+    },
+    {
+     "id": "ESOL M90UH",
+     "t": "Beginning High Conversation",
+     "s": "ESLF",
+     "u": 0.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "English as a Second Language"
+    },
+    {
+     "id": "ESOL M91DL",
+     "t": "Intermediate High Conversation",
+     "s": "ESLF",
+     "u": 0.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "English as a Second Language"
+    }
+   ]
+  },
+  {
+   "stratum": "skill_strands",
+   "lane": "singleton",
+   "features": [
+    "big_group",
+    "esl_language",
+    "same_college",
+    "skill_strands",
+    "units_spread"
+   ],
+   "sig": "edit grammar review",
+   "score": 0.735,
+   "same_college": true,
+   "credential": null,
+   "members": [
+    {
+     "id": "ESOL M10JD",
+     "t": "Advanced Editing and Grammar Review",
+     "s": "ESL",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "English as a Second Language"
+    },
+    {
+     "id": "ESOL M10JE",
+     "t": "Advanced Editing and Grammar Review A",
+     "s": "ESL",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "English as a Second Language"
+    },
+    {
+     "id": "ESOL M10HT",
+     "t": "Advanced Editing and Grammar Review B",
+     "s": "ESL",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "English as a Second Language"
+    },
+    {
+     "id": "ESOL M10HW",
+     "t": "Advanced Editing and Grammar Review C",
+     "s": "ESL",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "English as a Second Language"
+    },
+    {
+     "id": "ESOL M10QX",
+     "t": "Intermediate Editing and Grammar Review",
+     "s": "ESL",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "English as a Second Language"
+    },
+    {
+     "id": "ESOL M10QY",
+     "t": "Intermediate Editing and Grammar Review A",
+     "s": "ESL",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "English as a Second Language"
+    },
+    {
+     "id": "ESOL M10LC",
+     "t": "Intermediate Editing and Grammar Review B",
+     "s": "ESL",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "English as a Second Language"
+    },
+    {
+     "id": "ESOL M10MM",
+     "t": "Intermediate Editing and Grammar Review C",
+     "s": "ESL",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "English as a Second Language"
+    }
+   ]
+  },
+  {
+   "stratum": "credit_noncredit",
+   "lane": "anchored",
+   "features": [
+    "credit_noncredit_mix"
+   ],
+   "sig": "arithmet numb ration",
+   "score": 0.84,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "MATH M9006",
+     "t": "Arithmetic of Rational Numbers-Module 2",
+     "s": "MATH",
+     "u": 0.0,
+     "k": "M-ID",
+     "d": "Mathematics"
+    },
+    {
+     "id": "MATH Z9002",
+     "t": "Arithmetic of Rational Numbers-Module 1",
+     "s": "MATH",
+     "u": 0.0,
+     "k": "Unified",
+     "d": "Mathematics"
+    }
+   ]
+  },
+  {
+   "stratum": "credit_noncredit",
+   "lane": "singleton",
+   "features": [
+    "credit_noncredit_mix",
+    "cross_discipline",
+    "units_spread"
+   ],
+   "sig": "arts wellness",
+   "score": 0.44,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "IDST M90NB",
+     "t": "Arts for Wellness",
+     "s": "NCSPC",
+     "u": 0.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Interdisciplinary Studies"
+    },
+    {
+     "id": "FCSH M10BV",
+     "t": "Wellness Arts",
+     "s": "PDS",
+     "u": 2.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Family and Consumer Studies/ Home Economics"
+    }
+   ]
+  },
+  {
+   "stratum": "credit_noncredit",
+   "lane": "anchored",
+   "features": [
+    "credit_noncredit_mix",
+    "cross_discipline"
+   ],
+   "sig": "emergency medic respond",
+   "score": 0.493,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "EMST M1056",
+     "t": "Emergency Medical Responder (EMR)",
+     "s": "EMT;FAID",
+     "u": null,
+     "k": "M-ID",
+     "d": "Emergency Medical Technologies"
+    },
+    {
+     "id": "EMST M10KN",
+     "t": "Emergency Medical Responder/First Responder",
+     "s": "EMT",
+     "u": 1.3,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Emergency Medical Technologies"
+    },
+    {
+     "id": "VOCE M90NJ",
+     "t": "Emergency Medical Responder Introduction",
+     "s": "VOC ED",
+     "u": 0.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Vocational"
+    }
+   ]
+  },
+  {
+   "stratum": "credit_noncredit",
+   "lane": "anchored",
+   "features": [
+    "credit_noncredit_mix"
+   ],
+   "sig": "preserv scene search seizure",
+   "score": 0.44,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "CRIM M1303",
+     "t": "Search, Seizure, and Preservation of the Scene",
+     "s": "ADMJ",
+     "u": 0.5,
+     "k": "M-ID",
+     "d": "Administration of Justice"
+    },
+    {
+     "id": "CRIM M90BU",
+     "t": "Search, Seizure, Scene Preservation",
+     "s": "ADJUS",
+     "u": 0.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Administration of Justice"
+    }
+   ]
+  },
+  {
+   "stratum": "activity_ladder",
+   "lane": "title",
+   "features": [
+    "activity_ladder",
+    "big_group",
+    "cross_discipline"
+   ],
+   "sig": "Asian & Pacific Music",
+   "score": 0.524,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "MUSI M1086",
+     "t": "Asian & Pacific Music",
+     "s": "MUSI",
+     "u": 3.0,
+     "k": "M-ID",
+     "d": "Music"
+    },
+    {
+     "id": "ARTS M10ZB",
+     "t": "East Asian Landscape Painting",
+     "s": "ART",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Art"
+    },
+    {
+     "id": "DANC M10LC",
+     "t": "Intermediate Asian Pacific Dance",
+     "s": "DANCE",
+     "u": 2.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Dance"
+    },
+    {
+     "id": "DANC M11JA",
+     "t": "Pacific Island Dance 2",
+     "s": "DNCE",
+     "u": 1.5,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Dance"
+    },
+    {
+     "id": "ARTH M10CA",
+     "t": "Introduction to Asian Art: East and the Pacific",
+     "s": "ARTHIST",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Art History"
+    },
+    {
+     "id": "ARTS M10PH",
+     "t": "Painting and Appreciation of East Asian Art and Culture",
+     "s": "ART",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Art"
+    }
+   ]
+  },
+  {
+   "stratum": "activity_ladder",
+   "lane": "title",
+   "features": [
+    "activity_ladder",
+    "big_group",
+    "cross_discipline"
+   ],
+   "sig": "Healthy Aging",
+   "score": 0.554,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "HLTH M1015",
+     "t": "Healthy Aging",
+     "s": "AGNG",
+     "u": 3.0,
+     "k": "M-ID",
+     "d": "Health"
+    },
+    {
+     "id": "HLTH M10CR",
+     "t": "Stress and Healthy Adaptation",
+     "s": "HLTED",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Health"
+    },
+    {
+     "id": "HLTH M10FP",
+     "t": "Introduction to Healthy Aging",
+     "s": "HE",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Health"
+    },
+    {
+     "id": "KINE M13AB",
+     "t": "Exercise for Healthy Living",
+     "s": "PE",
+     "u": 2.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Kinesiology"
+    },
+    {
+     "id": "ATHL M13QS",
+     "t": "Stress Management for Healthy Living",
+     "s": "PE",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Kinesiology"
+    },
+    {
+     "id": "FDNT M10BL",
+     "t": "Exercise and Nutrition for Healthy Living",
+     "s": "HE",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Nutritional Science/Dietetics"
+    },
+    {
+     "id": "HLTH M10FM",
+     "t": "Exercise and Nutrition for Healthy Aging",
+     "s": "HEALTH",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Health"
+    },
+    {
+     "id": "HLTH M10TI",
+     "t": "Healthy Eating, Stress Management, and Weight Control",
+     "s": "HEED",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Health"
+    }
+   ]
+  },
+  {
+   "stratum": "activity_ladder",
+   "lane": "title",
+   "features": [
+    "activity_ladder",
+    "cross_discipline",
+    "units_spread"
+   ],
+   "sig": "Musical Choreography",
+   "score": 0.599,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "THEA M10YD",
+     "t": "Musical Choreography",
+     "s": "THEA",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Drama/Theater Arts"
+    },
+    {
+     "id": "DANC M10WE",
+     "t": "Choreography for Performance",
+     "s": "DANC",
+     "u": 2.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Dance"
+    },
+    {
+     "id": "DANC M10VV",
+     "t": "Choreography for Performance 2",
+     "s": "DANC",
+     "u": 4.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Dance"
+    },
+    {
+     "id": "THEA M10XY",
+     "t": "Choreography for Musical Theatre 2",
+     "s": "TA",
+     "u": 0.5,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Drama/Theater Arts"
+    }
+   ]
+  },
+  {
+   "stratum": "activity_ladder",
+   "lane": "anchored",
+   "features": [
+    "activity_ladder",
+    "cross_discipline"
+   ],
+   "sig": "cinema world",
+   "score": 0.505,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "FIMS M1052",
+     "t": "World Cinema",
+     "s": "R TV",
+     "u": 3.0,
+     "k": "M-ID",
+     "d": "Film and Media Studies"
+    },
+    {
+     "id": "FIMS M10AP",
+     "t": "World Cinema to 1945",
+     "s": "CRTV",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Film and Media Studies"
+    },
+    {
+     "id": "FIMS M10AM",
+     "t": "World Cinema 1900-1960",
+     "s": "FTVE",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Film and Media Studies"
+    },
+    {
+     "id": "THEA M10YJ",
+     "t": "Introduction to World Cinema",
+     "s": "THA",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Drama/Theater Arts"
+    }
+   ]
+  },
+  {
+   "stratum": "generic_title",
+   "lane": "title",
+   "features": [
+    "big_group",
+    "cross_discipline",
+    "generic_title",
+    "units_spread"
+   ],
+   "sig": "Experimental Offering in Automotive Mechanics Technology",
+   "score": 0.553,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "AVIA M1025",
+     "t": "Experimental Offering in Automotive Mechanics Technology",
+     "s": "AMT",
+     "u": 0.5,
+     "k": "M-ID",
+     "d": "Aviation"
+    },
+    {
+     "id": "AUTO M10XK",
+     "t": "Automotive Mechanics",
+     "s": "AUTO",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Automotive Technology"
+    },
+    {
+     "id": "AUTO M10MP",
+     "t": "Intro Auto Mechanics",
+     "s": "ATECH",
+     "u": 4.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Automotive Technology"
+    },
+    {
+     "id": "AUTO M10ML",
+     "t": "Fundamentals of Auto Mechanics",
+     "s": "A S T",
+     "u": 4.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Automotive Technology"
+    },
+    {
+     "id": "AUTO M10MR",
+     "t": "Introduction to Auto Mechanics",
+     "s": "AUTO",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Automotive Technology"
+    },
+    {
+     "id": "AUTO M10WE",
+     "t": "Intro to Automotive Mechanics",
+     "s": "AUTO",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Automotive Technology"
+    },
+    {
+     "id": "AUTO M10XL",
+     "t": "Survey of Automotive Mechanics",
+     "s": "ATCH",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Automotive Technology"
+    },
+    {
+     "id": "AUTO M10PG",
+     "t": "Automotive Science and Basic Mechanics",
+     "s": "AT",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Automotive Technology"
+    },
+    {
+     "id": "AVIA M10JX",
+     "t": "Topics in Automotive Mechanics Technology",
+     "s": "AMT",
+     "u": 0.5,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Aviation"
+    }
+   ]
+  },
+  {
+   "stratum": "generic_title",
+   "lane": "desc",
+   "features": [
+    "cross_discipline",
+    "esl_language",
+    "generic_title",
+    "same_college"
+   ],
+   "sig": "Topics in Anthropology",
+   "score": 0.902,
+   "same_college": true,
+   "credential": null,
+   "members": [
+    {
+     "id": "ANTH M1060",
+     "t": "Topics in Anthropology",
+     "s": "ANTHR",
+     "u": 0.5,
+     "k": "M-ID",
+     "d": "Anthropology"
+    },
+    {
+     "id": "COMM M1063",
+     "t": "Topics in Communication",
+     "s": "COMM",
+     "u": 0.5,
+     "k": "M-ID",
+     "d": "Communication Studies"
+    },
+    {
+     "id": "COUN M1098",
+     "t": "Topics in Counseling",
+     "s": "COUNS",
+     "u": 0.5,
+     "k": "M-ID",
+     "d": "Counseling"
+    },
+    {
+     "id": "FLSP M1109",
+     "t": "Topics in Spanish",
+     "s": "SPAN",
+     "u": 0.5,
+     "k": "M-ID",
+     "d": "Foreign Languages"
+    },
+    {
+     "id": "LIBR M1029",
+     "t": "Topics in Library Science",
+     "s": "LIBR",
+     "u": 0.5,
+     "k": "M-ID",
+     "d": "Library Science"
+    }
+   ]
+  },
+  {
+   "stratum": "generic_title",
+   "lane": "desc",
+   "features": [
+    "cross_discipline",
+    "generic_title",
+    "same_college"
+   ],
+   "sig": "Topics in Automotive Technology",
+   "score": 0.891,
+   "same_college": true,
+   "credential": null,
+   "members": [
+    {
+     "id": "AUTO M1135",
+     "t": "Topics in Automotive Technology",
+     "s": "AT",
+     "u": 0.5,
+     "k": "M-ID",
+     "d": "Automotive Technology"
+    },
+    {
+     "id": "ELET M1065",
+     "t": "Topics in Electronics Technology",
+     "s": "ET",
+     "u": 0.5,
+     "k": "M-ID",
+     "d": "Electronics"
+    }
+   ]
+  },
+  {
+   "stratum": "generic_title",
+   "lane": "singleton",
+   "features": [
+    "generic_title"
+   ],
+   "sig": "honor math seminar",
+   "score": 0.69,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "MATH M11DQ",
+     "t": "Honors Seminar in Math",
+     "s": "MATH",
+     "u": 0.5,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Mathematics"
+    },
+    {
+     "id": "MATH M11DT",
+     "t": "Honors Seminar in Mathematics",
+     "s": "MATH",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Mathematics"
+    }
+   ]
+  },
+  {
+   "stratum": "honors_variant",
+   "lane": "evidence",
+   "features": [
+    "evidence_lane",
+    "honors_variant"
+   ],
+   "sig": "BIOL 110 B",
+   "score": 1,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "BIOL 110 B",
+     "t": "Human Anatomy with Lab",
+     "s": "BIOL",
+     "u": null,
+     "k": "C-ID"
+    },
+    {
+     "id": "DENT M1105",
+     "t": "Pharmacology",
+     "s": "DH",
+     "u": 3.0,
+     "k": "M-ID",
+     "d": "Dental Technology",
+     "ev": {
+      "BIOL 110 B": 1,
+      "HIT 107 X": 1
+     },
+     "x": 1
+    }
+   ]
+  },
+  {
+   "stratum": "honors_variant",
+   "lane": "evidence",
+   "features": [
+    "evidence_lane",
+    "honors_variant"
+   ],
+   "sig": "GEOL 121",
+   "score": 7,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "GEOL 121",
+     "t": "Earth Science with Lab",
+     "s": "GEOL",
+     "u": null,
+     "k": "C-ID"
+    },
+    {
+     "id": "GEOL M1017",
+     "t": "Introduction to Earth Science",
+     "s": "ESCI",
+     "u": 4.0,
+     "k": "M-ID",
+     "d": "Earth Science",
+     "ev": {
+      "GEOL 121": 7,
+      "GEOL 120": 3
+     },
+     "x": 1
+    }
+   ]
+  },
+  {
+   "stratum": "honors_variant",
+   "lane": "evidence",
+   "features": [
+    "evidence_lane",
+    "honors_variant",
+    "units_spread"
+   ],
+   "sig": "PHYS 110",
+   "score": 3,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "PHYS 110",
+     "t": "Algebra/Trigonometry-Based Physics B",
+     "s": "PHYS",
+     "u": null,
+     "k": "C-ID"
+    },
+    {
+     "id": "PHYS M10AW",
+     "t": "General Physics 2",
+     "s": "PHYS",
+     "u": 5.0,
+     "k": "M-ID",
+     "d": null,
+     "ev": {
+      "PHYS 110": 2,
+      "PHYS 100 S": 1
+     },
+     "g": 1,
+     "x": 1
+    },
+    {
+     "id": "PHYS M1046",
+     "t": "General Physics Laboratory 2",
+     "s": "PHYS",
+     "u": 1.0,
+     "k": "M-ID",
+     "d": "Physics/Astronomy",
+     "ev": {
+      "PHYS 110": 1
+     }
+    }
+   ]
+  },
+  {
+   "stratum": "honors_variant",
+   "lane": "singleton",
+   "features": [
+    "honors_variant",
+    "same_college",
+    "units_spread"
+   ],
+   "sig": "chemistry major non science society",
+   "score": 0.69,
+   "same_college": true,
+   "credential": null,
+   "members": [
+    {
+     "id": "CHEM M10GH",
+     "t": "Chemistry and Society: For Non-Science Majors",
+     "s": "CHEM",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Chemistry"
+    },
+    {
+     "id": "CHEM M10GC",
+     "t": "Chemistry and Society: For Non-Science Majors (Lab)",
+     "s": "CHEM",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Chemistry"
+    }
+   ]
+  },
+  {
+   "stratum": "same_college",
+   "lane": "title",
+   "features": [
+    "same_college"
+   ],
+   "sig": "Intermediate Ballet 3A",
+   "score": 0.577,
+   "same_college": true,
+   "credential": null,
+   "members": [
+    {
+     "id": "DANC M10EG",
+     "t": "Intermediate Ballet 3A",
+     "s": "DANCE",
+     "u": 2.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Dance"
+    },
+    {
+     "id": "DANC M10EH",
+     "t": "Intermediate Contemporary Modern Dance 3A",
+     "s": "DANCE",
+     "u": 2.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Dance"
+    }
+   ]
+  },
+  {
+   "stratum": "same_college",
+   "lane": "singleton",
+   "features": [
+    "same_college"
+   ],
+   "sig": "anim design graph motion",
+   "score": 0.84,
+   "same_college": true,
+   "credential": null,
+   "members": [
+    {
+     "id": "FIMP M10AX",
+     "t": "Motion Graphic Design and Animation",
+     "s": "MEDIA",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Media Production"
+    },
+    {
+     "id": "FIMP M10AW",
+     "t": "Motion Graphic Design and Animation 2",
+     "s": "MEDIA",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Media Production"
+    }
+   ]
+  },
+  {
+   "stratum": "same_college",
+   "lane": "singleton",
+   "features": [
+    "same_college"
+   ],
+   "sig": "custodi report writ",
+   "score": 0.84,
+   "same_college": true,
+   "credential": null,
+   "members": [
+    {
+     "id": "PUBS M10LV",
+     "t": "Custodial Report Writing 1",
+     "s": "PUBSERV",
+     "u": 0.5,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Public Safety"
+    },
+    {
+     "id": "PUBS M10LW",
+     "t": "Custodial Report Writing 2",
+     "s": "PUBSERV",
+     "u": 0.5,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Public Safety"
+    }
+   ]
+  },
+  {
+   "stratum": "same_college",
+   "lane": "singleton",
+   "features": [
+    "same_college"
+   ],
+   "sig": "lab print skill",
+   "score": 0.59,
+   "same_college": true,
+   "credential": null,
+   "members": [
+    {
+     "id": "INDT M10WX",
+     "t": "Printing Skills Lab",
+     "s": "F",
+     "u": 0.5,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Industrial Technology"
+    },
+    {
+     "id": "INDT M10WN",
+     "t": "Introductory Printing Skills Lab",
+     "s": "PRNT",
+     "u": 0.5,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Industrial Technology"
+    }
+   ]
+  },
+  {
+   "stratum": "cross_discipline",
+   "lane": "title",
+   "features": [
+    "cross_discipline"
+   ],
+   "sig": "Disaster Planning",
+   "score": 0.57,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "FIRE M11EH",
+     "t": "Disaster Planning",
+     "s": "FT",
+     "u": 2.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Fire Technology"
+    },
+    {
+     "id": "PUBS M10KV",
+     "t": "Disaster Planning and Control, Recovery in EmergencyManagement",
+     "s": "PSMA",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Public Safety"
+    }
+   ]
+  },
+  {
+   "stratum": "cross_discipline",
+   "lane": "title",
+   "features": [
+    "cross_discipline"
+   ],
+   "sig": "Management: People Skills",
+   "score": 0.525,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "BUSI M11QN",
+     "t": "Management: People Skills",
+     "s": "BUS",
+     "u": 0.5,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Business"
+    },
+    {
+     "id": "ENTR M10CE",
+     "t": "People Skills for the Freelancer",
+     "s": "ENTR",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Small Business Development"
+    }
+   ]
+  },
+  {
+   "stratum": "cross_discipline",
+   "lane": "anchored",
+   "features": [
+    "cross_discipline",
+    "units_spread"
+   ],
+   "sig": "assist certif medic review",
+   "score": 0.44,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "HTEC M1021",
+     "t": "Medical Assisting Certification Review",
+     "s": "MEDA",
+     "u": 2.0,
+     "k": "M-ID",
+     "d": "Health Care Ancillaries"
+    },
+    {
+     "id": "HLTH M10JC",
+     "t": "Review for Certification for Medical Assistants",
+     "s": "MEDAS",
+     "u": 4.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Health"
+    }
+   ]
+  },
+  {
+   "stratum": "cross_discipline",
+   "lane": "anchored",
+   "features": [
+    "cross_discipline"
+   ],
+   "sig": "digit sculpt",
+   "score": 0.59,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "MULT M1104",
+     "t": "Advanced Digital Sculpting",
+     "s": "DAID;GAME",
+     "u": 3.0,
+     "k": "M-ID",
+     "d": "Multimedia"
+    },
+    {
+     "id": "DRAF M10JK",
+     "t": "Intermediate Digital Sculpting (RVPA)",
+     "s": "APTE",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Drafting/CADD"
+    }
+   ]
+  },
+  {
+   "stratum": "units_spread",
+   "lane": "title",
+   "features": [
+    "big_group",
+    "units_spread"
+   ],
+   "sig": "Hazardous Materials - ICS",
+   "score": 0.512,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "FIRE M1373",
+     "t": "Hazardous Materials - ICS",
+     "s": "FIRE",
+     "u": 3.0,
+     "k": "M-ID",
+     "d": "Fire Technology"
+    },
+    {
+     "id": "FIRE M1374",
+     "t": "Introduction to Hazardous Materials",
+     "s": "FT",
+     "u": 3.0,
+     "k": "M-ID",
+     "d": "Fire Technology"
+    },
+    {
+     "id": "FIRE M10ET",
+     "t": "Hazardous Materials 1B",
+     "s": "FAC",
+     "u": 2.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Fire Technology"
+    },
+    {
+     "id": "FIRE M11NB",
+     "t": "Hazardous Materials Operations",
+     "s": "FIRE",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Fire Technology"
+    },
+    {
+     "id": "FIRE M11ND",
+     "t": "Hazardous Materials Technology",
+     "s": "FPT",
+     "u": 2.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Fire Technology"
+    },
+    {
+     "id": "FIRE M11MZ",
+     "t": "Hazardous Materials, Incident Organizatn",
+     "s": "FTEC",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Fire Technology"
+    },
+    {
+     "id": "FIRE M10XI",
+     "t": "Introduction to Hazardous Materials Awareness",
+     "s": "FIRE",
+     "u": 0.5,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Fire Technology"
+    },
+    {
+     "id": "FIRE M11NC",
+     "t": "Hazardous Materials Response for Public Safety",
+     "s": "FSC",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Fire Technology"
+    }
+   ]
+  },
+  {
+   "stratum": "units_spread",
+   "lane": "anchored",
+   "features": [
+    "units_spread"
+   ],
+   "sig": "care funda respiratory",
+   "score": 0.493,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "RSPT M1027",
+     "t": "Fundamentals of Respiratory Care",
+     "s": "RCP",
+     "u": 6.0,
+     "k": "M-ID",
+     "d": "Respiratory Technologies"
+    },
+    {
+     "id": "RSPT M10GZ",
+     "t": "Fundamentals of Respiratory Care 1",
+     "s": "RESP",
+     "u": 3.5,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Respiratory Technologies"
+    },
+    {
+     "id": "RSPT M10HB",
+     "t": "Fundamentals of Respiratory Care 2",
+     "s": "RESP",
+     "u": 3.5,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Respiratory Technologies"
+    }
+   ]
+  },
+  {
+   "stratum": "units_spread",
+   "lane": "singleton",
+   "features": [
+    "units_spread"
+   ],
+   "sig": "clin experi pharmacy",
+   "score": 0.44,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "PHMT M10AW",
+     "t": "Pharmacy Clinical Experience 1",
+     "s": "PHRMTEC",
+     "u": 2.5,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Pharmacy Technology"
+    },
+    {
+     "id": "PHMT M10AX",
+     "t": "Pharmacy Clinical Experience",
+     "s": "PHT",
+     "u": 5.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Pharmacy Technology"
+    }
+   ]
+  },
+  {
+   "stratum": "units_spread",
+   "lane": "anchored",
+   "features": [
+    "units_spread"
+   ],
+   "sig": "design landscape principl",
+   "score": 0.593,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "HORT M1038",
+     "t": "Principles of Landscape Design",
+     "s": "O H",
+     "u": 3.0,
+     "k": "M-ID",
+     "d": "Ornamental Horticulture"
+    },
+    {
+     "id": "HORT M10CQ",
+     "t": "Landscape Design: Basic Principles",
+     "s": "HORT",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Ornamental Horticulture"
+    },
+    {
+     "id": "HORT M10AW",
+     "t": "Advanced Principles of Landscape Design",
+     "s": "O H",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Ornamental Horticulture"
+    }
+   ]
+  },
+  {
+   "stratum": "evidence_lane",
+   "lane": "evidence",
+   "features": [
+    "evidence_lane"
+   ],
+   "sig": "AJ 122",
+   "score": 2,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "AJ 122",
+     "t": "Criminal Court Process",
+     "s": "AJ",
+     "u": null,
+     "k": "C-ID"
+    },
+    {
+     "id": "CRIM M11DS",
+     "t": "Principles and Procedures of the Criminal Justice System",
+     "s": "CJ",
+     "u": 3.0,
+     "k": "M-ID",
+     "d": null,
+     "ev": {
+      "AJ 122": 2,
+      "AJ 200": 1
+     },
+     "g": 1,
+     "x": 1
+    }
+   ]
+  },
+  {
+   "stratum": "evidence_lane",
+   "lane": "evidence",
+   "features": [
+    "evidence_lane"
+   ],
+   "sig": "FIRE 232 X",
+   "score": 2,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "FIRE 232 X",
+     "t": "Hazardous Materials Incident Commander",
+     "s": "FIRE",
+     "u": null,
+     "k": "C-ID"
+    },
+    {
+     "id": "FIRE M1285",
+     "t": "Hazardous Materials Incident Commander",
+     "s": "FIRE",
+     "u": 0.5,
+     "k": "M-ID",
+     "d": "Fire Technology",
+     "ev": {
+      "FIRE 232 X": 2
+     }
+    }
+   ]
+  },
+  {
+   "stratum": "evidence_lane",
+   "lane": "evidence",
+   "features": [
+    "evidence_lane"
+   ],
+   "sig": "FTVE 130",
+   "score": 1,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "FTVE 130",
+     "t": "Beginning Single Camera Production",
+     "s": "FTVE",
+     "u": null,
+     "k": "C-ID"
+    },
+    {
+     "id": "ARTS M1487",
+     "t": "Motion Picture Production",
+     "s": "HUM",
+     "u": 3.0,
+     "k": "M-ID",
+     "d": "Art",
+     "ev": {
+      "FTVE 130": 1,
+      "FTVE 150": 1
+     },
+     "x": 1
+    }
+   ]
+  },
+  {
+   "stratum": "evidence_lane",
+   "lane": "evidence",
+   "features": [
+    "evidence_lane"
+   ],
+   "sig": "MATH 150",
+   "score": 9,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "MATH 150",
+     "t": "College Algebra for Liberal Arts",
+     "s": "MATH",
+     "u": null,
+     "k": "C-ID"
+    },
+    {
+     "id": "MATH M1036",
+     "t": "College Algebra",
+     "s": "MATH",
+     "u": 4.0,
+     "k": "M-ID",
+     "d": "Mathematics",
+     "ev": {
+      "MATH 150": 6,
+      "MATH 151": 6
+     },
+     "x": 1
+    },
+    {
+     "id": "MATH M1027",
+     "t": "College Algebra for Liberal Arts",
+     "s": "MATH",
+     "u": 3.0,
+     "k": "M-ID",
+     "d": "Mathematics",
+     "ev": {
+      "MATH 150": 3
+     }
+    }
+   ]
+  },
+  {
+   "stratum": "plain_anchored",
+   "lane": "anchored",
+   "features": [],
+   "sig": "administr network system",
+   "score": 0.84,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "CSIS M1041",
+     "t": "Advanced Network Systems Administration",
+     "s": "CISN",
+     "u": 3.0,
+     "k": "M-ID",
+     "d": "Computer Information Systems"
+    },
+    {
+     "id": "CSIS M1047",
+     "t": "Intermediate Network Systems Administration",
+     "s": "CISN",
+     "u": 3.0,
+     "k": "M-ID",
+     "d": "Computer Information Systems"
+    }
+   ]
+  },
+  {
+   "stratum": "plain_anchored",
+   "lane": "anchored",
+   "features": [],
+   "sig": "cook skill",
+   "score": 0.84,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "IDST M9072",
+     "t": "Basic Cooking: Advanced Skills",
+     "s": "DSSS",
+     "u": 0.0,
+     "k": "M-ID",
+     "d": "Interdisciplinary Studies"
+    },
+    {
+     "id": "IDST M9111",
+     "t": "Basic Cooking: Beginning Skills",
+     "s": "DSSS",
+     "u": 0.0,
+     "k": "M-ID",
+     "d": "Interdisciplinary Studies"
+    }
+   ]
+  },
+  {
+   "stratum": "plain_anchored",
+   "lane": "anchored",
+   "features": [],
+   "sig": "edit staff techniqu",
+   "score": 0.84,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "JOUR M1048",
+     "t": "Techniques for Staff Editors 1",
+     "s": "JOURNAL",
+     "u": 1.0,
+     "k": "M-ID",
+     "d": "Journalism"
+    },
+    {
+     "id": "JOUR M1051",
+     "t": "Techniques for Staff Editors 3",
+     "s": "JOURNAL",
+     "u": 1.0,
+     "k": "M-ID",
+     "d": "Journalism"
+    }
+   ]
+  },
+  {
+   "stratum": "plain_anchored",
+   "lane": "anchored",
+   "features": [],
+   "sig": "individu problem sculpture",
+   "score": 0.69,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "ARTS Z1007",
+     "t": "Individual Problems in Sculpture 1",
+     "s": "ART",
+     "u": 3.0,
+     "k": "Unified",
+     "d": "Art"
+    },
+    {
+     "id": "ARTS Z1033",
+     "t": "Individual Problems in Sculpture 2",
+     "s": "ART",
+     "u": null,
+     "k": "Unified",
+     "d": "Art"
+    }
+   ]
+  },
+  {
+   "stratum": "plain_singleton",
+   "lane": "singleton",
+   "features": [],
+   "sig": "adapt exercise fitness",
+   "score": 0.44,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "PEDS M10DB",
+     "t": "Exercise and Fitness-Adaptive",
+     "s": "ADAPT",
+     "u": 0.5,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Physical Education Disabled Students"
+    },
+    {
+     "id": "PEDS M10BS",
+     "t": "Adapted Fitness Exercise",
+     "s": "PEAD",
+     "u": 1.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Physical Education Disabled Students"
+    }
+   ]
+  },
+  {
+   "stratum": "plain_singleton",
+   "lane": "singleton",
+   "features": [],
+   "sig": "anatomy draw figure",
+   "score": 0.69,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "ARTS M10NN",
+     "t": "Beginning Figure Drawing: Anatomy",
+     "s": "ART",
+     "u": 2.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Art"
+    },
+    {
+     "id": "ARTS M10NP",
+     "t": "Intermediate Figure Drawing and Anatomy",
+     "s": "ART",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Art"
+    }
+   ]
+  },
+  {
+   "stratum": "plain_singleton",
+   "lane": "singleton",
+   "features": [],
+   "sig": "automot mechan",
+   "score": 0.84,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "AUTO M10XK",
+     "t": "Automotive Mechanics",
+     "s": "AUTO",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Automotive Technology"
+    },
+    {
+     "id": "AUTO M10WE",
+     "t": "Intro to Automotive Mechanics",
+     "s": "AUTO",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Automotive Technology"
+    }
+   ]
+  },
+  {
+   "stratum": "plain_singleton",
+   "lane": "singleton",
+   "features": [],
+   "sig": "lithography",
+   "score": 0.84,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "ARTS M12EN",
+     "t": "Lithography",
+     "s": "ART",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Art"
+    },
+    {
+     "id": "ARTS M12AC",
+     "t": "Lithography 2",
+     "s": "ART",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Art"
+    }
+   ]
+  },
+  {
+   "stratum": "plain_similarity",
+   "lane": "title",
+   "features": [
+    "esl_language"
+   ],
+   "sig": "ESL Bridge to College",
+   "score": 0.76,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "ESOL M90XB",
+     "t": "ESL Bridge to College",
+     "s": "ESL",
+     "u": 0.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "English as a Second Language"
+    },
+    {
+     "id": "ESOL M90XF",
+     "t": "Bridge to ESL College Success",
+     "s": "NCE",
+     "u": 0.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "English as a Second Language"
+    },
+    {
+     "id": "ESOL M90XE",
+     "t": "Bridge to College for ESL Students",
+     "s": "ESLN",
+     "u": 0.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "English as a Second Language"
+    },
+    {
+     "id": "ESOL M90ML",
+     "t": "Bridge to College and Career ESL (Advanced)",
+     "s": "NCESL",
+     "u": 0.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "English as a Second Language"
+    }
+   ]
+  },
+  {
+   "stratum": "plain_similarity",
+   "lane": "title",
+   "features": [],
+   "sig": "Joyful Parent-Art/Music/Movemt",
+   "score": 0.505,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "PARN M90AI",
+     "t": "Joyful Parent-Art/Music/Movemt",
+     "s": "PARN",
+     "u": 0.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Parent Education: Noncredit"
+    },
+    {
+     "id": "PARN M90AA",
+     "t": "Joyful Parenting-Art, Music and Movement (Ages 1.5 - 2.5 Years)",
+     "s": "PARN",
+     "u": 0.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Parent Education: Noncredit"
+    }
+   ]
+  },
+  {
+   "stratum": "plain_similarity",
+   "lane": "title",
+   "features": [],
+   "sig": "Principles of Pumps & Irrigation",
+   "score": 0.6,
+   "same_college": false,
+   "credential": null,
+   "members": [
+    {
+     "id": "AGRI M10VG",
+     "t": "Principles of Pumps & Irrigation",
+     "s": "AGRI",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Agriculture"
+    },
+    {
+     "id": "AGRI M10OL",
+     "t": "Irrigation Wells, Pumps, and Drive Systems",
+     "s": "AGM",
+     "u": 3.0,
+     "k": "Stand-Alone",
+     "g": 1,
+     "d": "Agriculture"
+    }
+   ]
+  },
+  {
+   "stratum": "plain_similarity",
+   "lane": "family",
+   "features": [],
+   "sig": "structural welding",
+   "score": 0.84,
+   "same_college": false,
+   "credential": "Carpenters Apprenticeship — Millwright",
+   "members": [
+    {
+     "id": "WELD M1066",
+     "t": "Structural Welding B",
+     "s": "ACPD",
+     "u": 1.5,
+     "k": "M-ID",
+     "d": "Welding"
+    },
+    {
+     "id": "WELD M1121",
+     "t": "Structural Welding A",
+     "s": "ACPD",
+     "u": 1.5,
+     "k": "M-ID",
+     "d": "Welding"
+    }
+   ]
+  }
+ ]
+}
