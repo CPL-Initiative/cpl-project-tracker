@@ -17,9 +17,11 @@ into `docs/reference/` (pipeline_reference · kb_build_status · mid_lifecycle �
    regenerated sections is overwritten on the next run. **If something needs to
    change, change the generator — not the HTML.**
 
-2. **CSS-injection idempotency guard (`excel_to_dashboard.py` around line 5093)
-   must not be removed.** The generator injects `EXHIBIT_ANALYSIS_CSS` before
-   the first `</style>` tag. A guard strips any pre-existing copy before
+2. **CSS-injection idempotency guard in `excel_to_dashboard.py` must not be
+   removed.** The generator injects `EXHIBIT_ANALYSIS_CSS` before the first
+   `</style>` tag; the guard (search for the
+   `/* ═══ MAP Articulation Analysis Cards ═══ */` start/end markers — line
+   numbers rot, markers don't) strips any pre-existing copy before
    re-inserting so repeat runs don't accumulate duplicates. Before this guard
    existed, 34 copies (~6,500 lines) had piled up. See PR #4.
 
@@ -209,6 +211,13 @@ into `docs/reference/` (pipeline_reference · kb_build_status · mid_lifecycle �
      (Bruh Quad → Session 6, the first instance of this practice). Keep it long
      enough to be useful (~4500 chars / 170 lines is the sweet spot) — the next
      session is starting cold.
+     **The authoritative handoff is the HIGHEST-numbered
+     `docs/session_<N>_handoff.md`.** A greeting citing a lower number is stale
+     (2026-07-10: "105" vs actual 111) — `ls docs/session_*_handoff.md`, read
+     the highest, and confirm the number with Sam if they diverge. Sam's
+     greeting sometimes names the session's moniker (SkyTime S104, SkyPhilo
+     S108 precedent) — claim it and carry it in the §11 narrative + handoff;
+     otherwise take the handoff's suggestion or coin your own.
 
    - **`kb/cpl_todos.json`** — **the dashboard To-Do feed (added Session 47),
      refreshed on EVERY checkpoint alongside the handoff** (it is the handoff
@@ -223,6 +232,20 @@ into `docs/reference/` (pipeline_reference · kb_build_status · mid_lifecycle �
    end abruptly and what's not in a markdown file is effectively lost. The
    user can trigger a checkpoint at any time with the **`/checkpoint`**
    slash command (`.claude/commands/checkpoint.md`).
+
+9. **Supabase live-curation safety.** Sam curates LIVE beside sessions — his
+   rows always win. (a) Before ANY bulk `kb_curation` write: fresh live read
+   at write-time, re-measure any queue/worklist staged earlier in the session,
+   and cross-check pending `unified_title_merge_confirm` TARGETS (a rename
+   whose key is a pending merge target fights the curator — hold it). Then
+   INSERT-only `ON CONFLICT DO NOTHING` under a cohort `reviewer_email`
+   (`<lane>-s<N>@bot`) with a committed receipt; guarded UPDATEs only where a
+   reviewed plan explicitly says so. (b) `kb_curation` reads via PostgREST
+   MUST be Range-paginated (#718). (c) The sandbox cannot reach
+   `*.supabase.co` — all Supabase access goes through the MCP tools.
+   (Promoted 2026-07-10 from the rotating handoff "Safety patterns" blocks —
+   these are standing production-safety orders, not session lore. Worked
+   examples: `docs/kb-notes/playbook-trail-crew-method-magic-audit.md`.)
 
 ## Naming & terminology (Sam's conventions — honor in ALL output)
 
@@ -336,22 +359,18 @@ into `docs/reference/` (pipeline_reference · kb_build_status · mid_lifecycle �
     ending the turn to "wait." Draft-parking is the sin (#202 left in draft during
     recon, 2026-05-30); a *ready* PR held briefly for Sam's input on a deliverable
     he commissioned is fine (#222).
-  - **Backstop once the repo allows it (RECOMMENDED — Sam to enable):** turn on
-    repo **Settings → General → Pull Requests → Allow auto-merge**, then a session
-    can call `mcp__github__enable_pr_auto_merge` (squash) right after marking ready,
-    and GitHub merges the instant required checks pass — no turn-ending wait, no
-    nudge needed. (Tried on #220, 2026-06-01 — failed: "Auto-merge is not enabled
-    for this repository." Until it's on, merge manually per the rules above.)
+  - **Backstop — auto-merge is ENABLED (Sam's toggle ①, 2026-06-11):** after
+    marking ready, call `mcp__github__enable_pr_auto_merge` (squash) and GitHub
+    merges the instant required checks pass — no turn-ending wait, no nudge
+    needed. Note it refuses while a required check is still in-progress; poll
+    checks via the MCP github tools and retry, or squash-merge manually per the
+    rules above.
   - **Method: squash and merge** — collapses to one commit on `main` with
     the PR title + body. Matches the existing `Merge pull request #N`
     history pattern.
-  - **Delete the feature branch on merge.** ⚠ **Known limitation (2026-05-30):**
-    deleting the remote branch from a session via `git push origin --delete`
-    returns **HTTP 403** — the session's git token can't delete branches (the
-    squash-merge itself still succeeds). Durable fix: enable repo Settings →
-    **"Automatically delete head branches"** so GitHub deletes it on merge. Until
-    that's on, a merged feature branch is a harmless cosmetic leftover (delete via
-    the PR's "Delete branch" button); don't burn retries on the 403.
+  - **Feature branches auto-delete on merge** (Sam's toggle ②, 2026-06-11).
+    Don't run `git push origin --delete` from a session — the session token
+    403s on branch deletes; GitHub's auto-delete handles it.
   - **Never force-push `main`** (Rule 5 — Pages serves from it).
   - Use `mcp__github__merge_pull_request` with `merge_method: "squash"`.
   - The session-end handoff still notes any architecturally-significant
@@ -573,8 +592,10 @@ Receipts `kb/carp_fill_out/2026-07-09/`; suite 152. Full story: `docs/cer_v2_red
 
 ### "Duplicate sections" / HTML growing on every run
 - You've likely removed or broken the idempotency guard in
-  `excel_to_dashboard.py`. Verify the block around the
-  `EXHIBIT_CSS_MARKER` check still strips existing copies before re-injecting.
+  `excel_to_dashboard.py`. Verify the strip block anchored on the
+  `/* ═══ MAP Articulation Analysis Cards ═══ */` start/end markers (plus the
+  legacy "MAP Exhibit Analysis Cards" pattern) still runs before re-injection.
+  (There is no `EXHIBIT_CSS_MARKER` symbol in the code — don't grep for it.)
 
 ### `kpi_history.json` 1d delta shows stale comparison
 - Check for date gaps in the JSON. If yesterday is missing, backfill with
