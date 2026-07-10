@@ -1,0 +1,213 @@
+{
+ "date": "2026-07-10",
+ "baseline": "kb/promotions.json",
+ "maps_applied": [
+  "kb/pols_remint_out/2026-07-10/alias_map.json"
+ ],
+ "witness_total": 9826,
+ "targets": 446,
+ "stamp_gate": {
+  "checked": 0,
+  "conflicts": 0
+ },
+ "counts": {
+  "rekeyed": 27,
+  "folded": 0,
+  "unresolved": 0,
+  "unchanged": 1959
+ },
+ "rekeyed": [
+  {
+   "old": "POSC M1030",
+   "new": "POLS M1030",
+   "hops": [
+    "POLS M1030"
+   ]
+  },
+  {
+   "old": "POSC M1031",
+   "new": "POLS M1031",
+   "hops": [
+    "POLS M1031"
+   ]
+  },
+  {
+   "old": "POSC M1032",
+   "new": "POLS M1032",
+   "hops": [
+    "POLS M1032"
+   ]
+  },
+  {
+   "old": "POSC M1034",
+   "new": "POLS M1034",
+   "hops": [
+    "POLS M1034"
+   ]
+  },
+  {
+   "old": "POSC M1035",
+   "new": "POLS M1035",
+   "hops": [
+    "POLS M1035"
+   ]
+  },
+  {
+   "old": "POSC M1051",
+   "new": "POLS M1051",
+   "hops": [
+    "POLS M1051"
+   ]
+  },
+  {
+   "old": "POSC M1055",
+   "new": "POLS M1055",
+   "hops": [
+    "POLS M1055"
+   ]
+  },
+  {
+   "old": "POSC M1057",
+   "new": "POLS M1057",
+   "hops": [
+    "POLS M1057"
+   ]
+  },
+  {
+   "old": "POSC M1058",
+   "new": "POLS M1058",
+   "hops": [
+    "POLS M1058"
+   ]
+  },
+  {
+   "old": "POSC M1062",
+   "new": "POLS M1062",
+   "hops": [
+    "POLS M1062"
+   ]
+  },
+  {
+   "old": "POSC M1063",
+   "new": "POLS M1063",
+   "hops": [
+    "POLS M1063"
+   ]
+  },
+  {
+   "old": "POSC M1065",
+   "new": "POLS M1065",
+   "hops": [
+    "POLS M1065"
+   ]
+  },
+  {
+   "old": "POSC M1066",
+   "new": "POLS M1066",
+   "hops": [
+    "POLS M1066"
+   ]
+  },
+  {
+   "old": "POSC M1067",
+   "new": "POLS M1067",
+   "hops": [
+    "POLS M1067"
+   ]
+  },
+  {
+   "old": "POSC M1070",
+   "new": "POLS M1070",
+   "hops": [
+    "POLS M1070"
+   ]
+  },
+  {
+   "old": "POSC M1071",
+   "new": "POLS M1071",
+   "hops": [
+    "POLS M1071"
+   ]
+  },
+  {
+   "old": "POSC M1072",
+   "new": "POLS M1072",
+   "hops": [
+    "POLS M1072"
+   ]
+  },
+  {
+   "old": "POSC M1073",
+   "new": "POLS M1073",
+   "hops": [
+    "POLS M1073"
+   ]
+  },
+  {
+   "old": "POSC M1082",
+   "new": "POLS M1082",
+   "hops": [
+    "POLS M1082"
+   ]
+  },
+  {
+   "old": "POSC M1085",
+   "new": "POLS M1085",
+   "hops": [
+    "POLS M1085"
+   ]
+  },
+  {
+   "old": "POSC M10BC",
+   "new": "POLS M10BC",
+   "hops": [
+    "POLS M10BC"
+   ]
+  },
+  {
+   "old": "POSC M10DH",
+   "new": "POLS M10DH",
+   "hops": [
+    "POLS M10DH"
+   ]
+  },
+  {
+   "old": "POSC M10FL",
+   "new": "POLS M10FL",
+   "hops": [
+    "POLS M10FL"
+   ]
+  },
+  {
+   "old": "POSC M10FP",
+   "new": "POLS M10FP",
+   "hops": [
+    "POLS M10FP"
+   ]
+  },
+  {
+   "old": "POSC M10FY",
+   "new": "POLS M10FY",
+   "hops": [
+    "POLS M10FY"
+   ]
+  },
+  {
+   "old": "POSC M10GA",
+   "new": "POLS M10GA",
+   "hops": [
+    "POLS M10GA"
+   ]
+  },
+  {
+   "old": "POSC M10HB",
+   "new": "POLS M10HB",
+   "hops": [
+    "POLS M10HB"
+   ]
+  }
+ ],
+ "folded": [],
+ "unresolved": [],
+ "unchanged": 1959
+}
