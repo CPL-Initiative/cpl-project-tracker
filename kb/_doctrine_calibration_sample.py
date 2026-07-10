@@ -25,8 +25,8 @@ import re
 
 SD = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(SD)
-SEED = 20260703          # fixed — the sample must be reproducible
-DATE = "2026-07-03"
+SEED = 20260710          # fixed — the sample must be reproducible (fresh sitting, Session 111)
+DATE = "2026-07-10"
 
 LEVEL_WORDS = {"beginning", "beginner", "elementary", "introductory", "basic",
                "intermediate", "advanced", "first", "second", "third", "fourth"}

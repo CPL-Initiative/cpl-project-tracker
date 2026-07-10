@@ -1,0 +1,646 @@
+{
+ "_at": "2026-07-10",
+ "_purpose": "AI pre-decisions on the FRESH calibration sample (seed 20260710) under Doctrine v0.2 — for Sam's next mind-meld sitting; the ≥90% agreement gate for batch pass 2 measures against THESE.",
+ "decisions": [
+  {
+   "sig": "appl cond country cross theory",
+   "call": "package",
+   "survivor_title": "Cross Country Conditioning",
+   "reason": "Sport-specific athletic conditioning stays per-sport (P-11), but the 1/2/3 rungs are repeat-enrollment levels at one college, not distinct credit targets — a workgroup maps to ONE Cross Country conditioning row (P-1). Same-college groups route to the packaging pass, never a duplicate merge (P-6). Fold rungs with merge_note per P-3 mechanics; venue/level marks drop from the unified name per P-10.",
+   "doctrine": [
+    "P-11",
+    "P-6",
+    "P-3",
+    "P-1",
+    "P-10",
+    "P-9"
+   ],
+   "confidence": 0.75
+  },
+  {
+   "sig": "ballroom dance",
+   "call": "package",
+   "survivor_title": "Ballroom Dance Beginning / Intermediate / Advanced (band packages)",
+   "reason": "One activity, 12 titles, cross-college, with a clear Beginning→Advanced ladder — the P-11 shape, which the doctrine says Dance is 'presumed to follow' though not yet sat (Q-TARGETCOUNT open for Dance). Applying as written: three band packages, modality/venue-agnostic names (P-10), rungs and section variants folded with merge_note (P-3), staging default merge-and-flag (P-9). The DANC/KINE cross-discipline members are plainly the same activity (second signal = identical activity word), survivor discipline picked deliberately as Dance (D-8). Confidence tempered because Q-TARGETCOUNT is formally unsettled for Dance.",
+   "doctrine": [
+    "P-11",
+    "P-3",
+    "P-9",
+    "P-10",
+    "D-8"
+   ],
+   "confidence": 0.6
+  },
+  {
+   "sig": "cardiovascular core fitness train",
+   "call": "package",
+   "survivor_title": "Conditioning Beginning / Intermediate / Advanced",
+   "reason": "Textbook P-11 general-fitness case: Core Training and Cardiovascular Fitness is fitness-first, not sport-specific or intercollegiate, so it consolidates modality-agnostically into the Conditioning bands Sam ratified. Same-college ladder correctly resolved via the packaging pass, not a duplicate merge (P-6). Names per the P-10 mind-meld addendum ('Conditioning Advanced', not 'Advanced Core Training and Cardiovascular Fitness').",
+   "doctrine": [
+    "P-11",
+    "P-6",
+    "P-3",
+    "P-10"
+   ],
+   "confidence": 0.92
+  },
+  {
+   "sig": "crew repertory workshop",
+   "call": "package",
+   "survivor_title": "Repertory Workshop: Crew",
+   "reason": "Same-college repeatable production-crew ladder (1–4, 1 unit each) — the rungs are repetition levels, not distinct credit outcomes, so a credential workgroup would treat them as one target (P-1). P-6 routes same-college variant ladders to packaging; P-9 staging default is merge-and-flag with merge_note recording each rung. Not the P-3 degree-sequence boundary case (this is not a Calculus-I/II-style sequence where the rung is the credit target).",
+   "doctrine": [
+    "P-6",
+    "P-3",
+    "P-1",
+    "P-9",
+    "P-10"
+   ],
+   "confidence": 0.7
+  },
+  {
+   "sig": "Introduction to German Culture",
+   "call": "keep_separate",
+   "reason": "Loose title-lane grab, not one course: Culture, Culture-through-Cinema, Conversation, Conversation-and-Composition, and Literature are distinct credit targets a workgroup would never map as one recommendation — the P-1 purpose test fails, and degree-applicable language coursework sits on the precision side of the P-3 boundary (rungs/strands ARE the credit target). D-7: this is aggressive suggestion doing its job; confirmation declines. Note for the worklist: the four 2-unit GRMN Conversation titles (M10AY/M10AZ/M10BD/M10BA) are a plausible sub-merge to re-surface as their own group.",
+   "doctrine": [
+    "P-1",
+    "P-3",
+    "D-7"
+   ],
+   "confidence": 0.75
+  },
+  {
+   "sig": "business english writ",
+   "call": "keep_separate",
+   "reason": "The 3-unit credit 'Business English and Writing' (M10RV) sits across the band from the two noncredit Basic modules (M90DF/DG) — D-3 band purity is a hard carve-out that P-9's merge default never softens, and whether noncredit twins ever fold under a credit target is exactly the open Q-CREDITNC fork. The two noncredit modules themselves are a fair future P-3 mini-package ('Basic Business English Writing'), but as constituted this group cannot merge.",
+   "doctrine": [
+    "D-3",
+    "P-9",
+    "P-3"
+   ],
+   "confidence": 0.8
+  },
+  {
+   "sig": "conv high",
+   "call": "package",
+   "survivor_title": "Beginning ESL / Intermediate ESL (band packages)",
+   "reason": "ESL is the one family where band packaging across credit/noncredit is RATIFIED: Sam treats ESL and ESL-noncredit disciplines as one packaging family (P-3 ratification, via the D-3 explicit-package carve-out), and Conversation is a skill strand that folds into the band (P-4). Per the pinned mapping: 'Beginning High Conversation' → Beginning ESL; 'Intermediate High' and 'High Intermediate Conversation' → Intermediate ESL. Original levels/strand recorded in merge_note; names per P-10 (band, not rungs).",
+   "doctrine": [
+    "P-3",
+    "P-4",
+    "D-3",
+    "P-10"
+   ],
+   "confidence": 0.85
+  },
+  {
+   "sig": "edit grammar review",
+   "call": "package",
+   "survivor_title": "Intermediate ESL / Advanced ESL (band packages)",
+   "reason": "The ratified ESL move applied exactly as Sam sat it: A/B/C module rungs and the Editing-and-Grammar skill strand fold into their bands (P-3 ratified; P-4), with original module letters in merge_note. Same-college resolution belongs to the packaging pass, not duplicate-merging (P-6). Unit spread (1u modules vs 3u full course) is expected module arithmetic, not a P-5 anomaly.",
+   "doctrine": [
+    "P-3",
+    "P-4",
+    "P-6",
+    "P-5",
+    "P-10"
+   ],
+   "confidence": 0.9
+  },
+  {
+   "sig": "arithmet numb ration",
+   "call": "package",
+   "survivor_title": "Arithmetic of Rational Numbers",
+   "reason": "Both members are noncredit (0u) modules of one basic-skills family — P-3 names modules explicitly among the ladder forms that package when rungs don't change the credit outcome, and no band is crossed (both M9xxx/noncredit, so D-3 is satisfied). Module numbers fold with merge_note per P-3; D-4's module gate governs suggestion, and this doctrine-cited confirmation is the deliberate act D-7 requires over it.",
+   "doctrine": [
+    "P-3",
+    "D-3",
+    "D-4",
+    "D-7",
+    "P-10"
+   ],
+   "confidence": 0.7
+  },
+  {
+   "sig": "arts wellness",
+   "call": "keep_separate",
+   "reason": "Two independent blockers: the pair spans the credit/noncredit band (noncredit IDST vs 2-unit credit FCSH) — D-3 hard carve-out — and it is a cross-discipline group (Interdisciplinary Studies vs Family & Consumer Studies) on word-order title similarity alone, which P-9 says never merges without a human or second signal (potential near-homonym: art-therapy-style wellness vs consumer-studies wellness). Low score (0.44) corroborates. Not an ESL-style ratified packaging family, so no explicit-package path applies.",
+   "doctrine": [
+    "D-3",
+    "P-9",
+    "P-1"
+   ],
+   "confidence": 0.85
+  },
+  {
+   "sig": "emergency medic respond",
+   "call": "merge",
+   "survivor_title": "Emergency Medical Responder",
+   "reason": "The two credit members merge: EMR is an externally standardized curriculum (NREMT scope), so the CTE/credential bias to converge applies with full force (P-8) and the unit oddity (null vs 1.3u) is P-5-tolerated standardized-packaging variance — store modal units, flag unit_anomaly. Survivor is the anchored M-ID M1056 per identity precedence (D-1); unified name per P-10 drops the '/First Responder' college-ism. The noncredit VOCE M90NJ 'Introduction' member is EXCLUDED from the merge — D-3 band purity — and left standalone with a merge_note pointer; the VOCE/EMST cross-discipline pick re-disciplines explicitly to Emergency Medical Technologies (D-8) is therefore moot for the survivor.",
+   "doctrine": [
+    "P-8",
+    "P-5",
+    "D-1",
+    "D-3",
+    "D-8",
+    "P-10"
+   ],
+   "confidence": 0.8
+  },
+  {
+   "sig": "preserv scene search seizure",
+   "call": "keep_separate",
+   "reason": "Same course textually, but a credit/noncredit twin pair (0.5u ADMJ credit vs 0u noncredit) — D-3 band purity is an ESTABLISHED never-merge, and whether the noncredit twin folds under the credit target with a band note is precisely the open Q-CREDITNC fork that only Sam can settle. No ratified packaging family (unlike ESL) authorizes the explicit-package carve-out here, so the written doctrine's answer is separate, receipted, and queued behind Q-CREDITNC. (Flag: likely POST-standardized content — a P-8 convergence candidate the moment Q-CREDITNC resolves.)",
+   "doctrine": [
+    "D-3",
+    "P-8",
+    "P-9"
+   ],
+   "confidence": 0.85
+  },
+  {
+   "sig": "Asian & Pacific Music",
+   "call": "keep_separate",
+   "reason": "A region-word title collision, not a course family: music appreciation, landscape painting, art history, and two dance activity courses share only 'Asian/Pacific'. Fails the P-1 purpose test outright (no workgroup maps one credential to painting AND dance AND music survey), and it is a cross-discipline group merging on title similarity alone — the P-9 homonym carve-out that never softens. D-7: suggestion layer being aggressive by design; confirmation declines. The two dance members could re-surface later under a Dance P-11-shaped ladder pass once Q-TARGETCOUNT is sat for Dance.",
+   "doctrine": [
+    "P-1",
+    "P-9",
+    "D-7",
+    "P-11"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "sig": "Healthy Aging",
+   "call": "keep_separate",
+   "reason": "Homonym-style word-overlap group, not one course: 'Healthy Aging', 'Stress and Healthy Adaptation', 'Exercise for Healthy Living', 'Exercise and Nutrition...', 'Healthy Eating, Stress Management, and Weight Control' share only the word 'Healthy'. Fails the P-1 test — no faculty workgroup would treat gerontology, stress management, and exercise/nutrition as ONE credit target. Cross-discipline (Health/Kinesiology/Nutrition) with title-similarity as the only signal trips P-9's third hard carve-out (suspected homonym / cross-discipline needs a second signal), and any survivor would force a D-8 re-discipline with no evidence to pick one.",
+   "doctrine": [
+    "P-1",
+    "P-9",
+    "D-8",
+    "D-2"
+   ],
+   "confidence": 0.85
+  },
+  {
+   "sig": "Musical Choreography",
+   "call": "keep_separate",
+   "reason": "Unshared digit-level marks gate: the group mixes base choreography courses with 'Choreography for Performance 2' and 'Choreography for Musical Theatre 2' — merging level 1 and level 2 rungs violates the D-4 level-mark gate, and these are degree-applicable creative-arts rungs where P-3's boundary keeps rungs as credit targets. Add cross-discipline (Drama vs Dance, Q-XDISC open) and a 3.5-unit spread on a non-standardized course (P-5) with no evidence-ladder support. The base pair (THEA Musical Choreography + DANC Choreography for Performance) is a plausible future merge on a second signal, but as a group this stays split.",
+   "doctrine": [
+    "D-4",
+    "P-3",
+    "P-5",
+    "P-9",
+    "D-8"
+   ],
+   "confidence": 0.7
+  },
+  {
+   "sig": "cinema world",
+   "call": "keep_separate",
+   "reason": "The 4-digit year marks ('to 1945', '1900-1960') are D-4 edition/period marks unshared with the plain 'World Cinema' members — period-half surveys are different credit targets, not title drift. This is a transfer-facing academic family, so P-8's precision-over-concision bias applies (its identity work belongs to C-ID anyway), overriding the P-9 merge default. The clean pair (FIMS M1052 'World Cinema' + THEA 'Introduction to World Cinema') could fold later with description/COCI evidence, but the anchored group as suggested does not merge.",
+   "doctrine": [
+    "D-4",
+    "P-8",
+    "P-9",
+    "D-2"
+   ],
+   "confidence": 0.65
+  },
+  {
+   "sig": "Experimental Offering in Automotive Mechanics Technology",
+   "call": "merge",
+   "survivor_title": "Introduction to Automotive Mechanics",
+   "reason": "Two-part group. The six AUTO members (Automotive Mechanics / Intro Auto Mechanics / Fundamentals of Auto Mechanics / Introduction to Auto Mechanics / Intro to Automotive Mechanics / Survey of Automotive Mechanics) are one intro CTE course under title drift — exactly the P-8 credential-aligned convergence case (the CompTIA-A+ failure mode in reverse), P-9 staging default merge, with a 1–4 unit spread tolerated under P-5 (store modal 3.0, flag unit_anomaly for the 1-unit Survey). The two AVIA generic-title members ('Experimental Offering in...' M1025 and 'Topics in Automotive Mechanics Technology', both 0.5u) are excluded per P-7 — generic vehicles never merge on title alone — recorded in merge_note. Survivor named per P-10 normalizer (Title Case, spelled-out, no college-isms).",
+   "doctrine": [
+    "P-8",
+    "P-9",
+    "P-5",
+    "P-7",
+    "P-10",
+    "D-8"
+   ],
+   "confidence": 0.75
+  },
+  {
+   "sig": "Topics in Anthropology",
+   "call": "keep_separate",
+   "reason": "Textbook P-7: 'Topics in X' across five unrelated disciplines (Anthropology, Communication, Counseling, Spanish, Library Science) — the title carries no course identity, so title/description similarity never merges these. Same-college corroboration is absent by definition (P-6: this is one college's family of topics shells, variants not duplicates), and cross-discipline merging here would be the homonym carve-out P-9 explicitly forbids. Whether these umbrella-mint per discipline or leave the CPL tier is the open Q-GENERIC fork, but 'do not merge' is settled either way.",
+   "doctrine": [
+    "P-7",
+    "P-6",
+    "P-9",
+    "D-8"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "sig": "Topics in Automotive Technology",
+   "call": "keep_separate",
+   "reason": "Same P-7 case as the Anthropology group: 'Topics in Automotive Technology' vs 'Topics in Electronics Technology' are generic-title vehicles in two different disciplines at one college. Generic titles never merge on similarity alone; the disciplines differ so this is also the P-9 cross-discipline carve-out and a P-6 same-college non-duplicate. Q-GENERIC governs their eventual disposition (umbrella mint vs exclusion from the CPL-facing tier), not a merge.",
+   "doctrine": [
+    "P-7",
+    "P-6",
+    "P-9",
+    "D-8"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "sig": "honor math seminar",
+   "call": "keep_separate",
+   "reason": "P-7's principle governs: an 'Honors Seminar' is a rotating-topics vehicle whose title carries no course identity — same family as Special Topics/Directed Studies even though 'Seminar' isn't on the written list. Fails the P-1 test: a faculty workgroup cannot map a credential to a seminar whose content changes per offering. No second signal is present (both Stand-Alone, no COCI/registry/receipt evidence), so the P-7 second-signal requirement blocks the merge despite near-identical titles and the shared (therefore non-gating, D-4) Honors mark. Flag for Q-GENERIC — likely leaves the CPL-facing tier entirely (Q-FLOOR adjacent).",
+   "doctrine": [
+    "P-7",
+    "P-1",
+    "D-4",
+    "P-2"
+   ],
+   "confidence": 0.65
+  },
+  {
+   "sig": "BIOL 110 B",
+   "call": "keep_separate",
+   "reason": "Bad evidence, not a course match: DENT 'Pharmacology' carries a count-1 receipt against C-ID BIOL 110 B 'Human Anatomy with Lab', but the D-2 evidence ladder requires historical receipts to pass the kinship (title-freshness) check and Pharmacology-vs-Human-Anatomy fails it outright — the titles share no course identity. Count-1 stale evidence cannot fold an M-ID into an official identity (D-1 folds are alias-tracked and must be justified); confirming this would be exactly what D-7 warns against (confirming over the guards on a loose suggestion).",
+   "doctrine": [
+    "D-2",
+    "D-1",
+    "D-7",
+    "P-1"
+   ],
+   "confidence": 0.9
+  },
+  {
+   "sig": "GEOL 121",
+   "call": "merge",
+   "survivor_title": "Earth Science with Lab",
+   "reason": "Clean D-1 fold: M-ID GEOL M1017 'Introduction to Earth Science' (4u, lecture+lab-consistent) carries 7 receipts to C-ID GEOL 121 vs 3 to GEOL 120, titles pass the D-2 kinship check, and an official identity always absorbs the M-ID (alias-tracked). Survivor is the C-ID verbatim per D-1 — never re-titled. P-9 staging default reinforces; the minority GEOL 120 receipts go in merge_note for faculty validation to inspect.",
+   "doctrine": [
+    "D-1",
+    "D-2",
+    "P-9",
+    "D-6"
+   ],
+   "confidence": 0.85
+  },
+  {
+   "sig": "PHYS 110",
+   "call": "hold_for_curator",
+   "reason": "Split verdict only Sam/faculty can settle. 'General Physics 2' (5u, ev PHYS 110 x2) folds cleanly into C-ID PHYS 110 per D-1/D-2. But 'General Physics Laboratory 2' (1u) carries the Lab variant-type mark unshared with the group; its single receipt is member-level evidence per the P-9 carve-out, yet whether a lab-only component course can claim the combined lecture+lab C-ID identity is a Q-HONORS/Q-CREDITNC-shaped component question the doctrine hasn't written down. The 4-unit spread on a non-standardized course is P-5's explicit 'genuine stop-and-look'. Only Sam can rule whether lecture/lab component splits fold under the combined C-ID or stay as strands.",
+   "doctrine": [
+    "D-1",
+    "D-2",
+    "D-4",
+    "P-5",
+    "P-9"
+   ],
+   "confidence": 0.6
+  },
+  {
+   "sig": "chemistry major non science society",
+   "call": "keep_separate",
+   "reason": "Same-college lecture + its companion lab: P-6 says a group resolving to one college is a variant ladder, never cross-college corroboration — do not merge as duplicates. The '(Lab)' member carries an unshared D-4 variant-type mark (Lab is on the explicit gate list), and P-9's second hard carve-out forbids merging across unshared variant marks without member-level evidence (none here — both Stand-Alone, title lane only). Lecture (3u) and lab (1u) are distinct credit components; leave for any future packaging decision, not a same-course merge.",
+   "doctrine": [
+    "P-6",
+    "D-4",
+    "P-9"
+   ],
+   "confidence": 0.9
+  },
+  {
+   "sig": "Intermediate Ballet 3A",
+   "call": "keep_separate",
+   "reason": "Different activities, not one course: Ballet vs Contemporary Modern Dance are per-activity skill ladders. P-11's line — one row per activity per band for skill ladders — presumably extends to dance, and even though Q-TARGETCOUNT is explicitly NOT yet sat for Dance, both open outcomes keep these apart (per-activity rows, or held for the dance sitting); neither is a fitness-first course that would fold modality-agnostically into Conditioning. Also same-college (P-6: variants, never duplicates). The shared 'Intermediate 3A' band/rung marks don't gate but don't create identity either.",
+   "doctrine": [
+    "P-11",
+    "P-6",
+    "P-1"
+   ],
+   "confidence": 0.8
+  },
+  {
+   "sig": "anim design graph motion",
+   "call": "keep_separate",
+   "reason": "Same-college sequence rungs: 'Motion Graphic Design and Animation' vs '... 2' differ on a digit-level mark, gated by D-4 and never merged without member-level evidence (P-9 carve-out; none present). P-6 says a same-college group is a variant ladder, not duplicates. These are credit-band (M1xxx) CTE-ish sequenced courses where the rung IS the credit target per P-3's boundary — a CPL student earns course 1 or course 2 credit specifically — so no band package applies either.",
+   "doctrine": [
+    "D-4",
+    "P-6",
+    "P-3",
+    "P-9"
+   ],
+   "confidence": 0.85
+  },
+  {
+   "sig": "custodi report writ",
+   "call": "keep_separate",
+   "reason": "Same-college pair (P-6: variants, not duplicates) AND a digit-level ladder (Report Writing 1 vs 2) — D-4 gates unshared digit-level marks. The rungs are sequential credit targets, not duplicates; if anything they belong to a future packaging pass, not a same-course merge.",
+   "doctrine": [
+    "P-6",
+    "D-4",
+    "Q-SAMECOLL"
+   ],
+   "confidence": 0.85
+  },
+  {
+   "sig": "lab print skill",
+   "call": "keep_separate",
+   "reason": "Same-college group — P-6 says default is leave to the packaging pass or keep as-is, never merge as duplicates. 'Introductory' is a level mark unshared with the base title (D-4 word-level gate). Only Sam can answer Q-SAMECOLL's exception (renumbering/catalog edition), but the written default is decisive: keep separate.",
+   "doctrine": [
+    "P-6",
+    "D-4",
+    "Q-SAMECOLL"
+   ],
+   "confidence": 0.8
+  },
+  {
+   "sig": "Disaster Planning",
+   "call": "merge",
+   "survivor_title": "Disaster Planning",
+   "reason": "Not a homonym — both are emergency-management content in adjacent public-safety disciplines, so the P-9 cross-discipline carve-out (same words, different field) does not apply. P-1 test: a workgroup mapping a FEMA/ICS credential would treat these as one credit target. 2u vs 3u spread is within P-5 tolerance (flag unit_anomaly). D-8: pick the survivor's discipline deliberately (Fire Technology, where the clean title lives); P-10 strips the long-form college-ism. Merge-and-flag with receipts per P-9.",
+   "doctrine": [
+    "P-1",
+    "P-9",
+    "P-5",
+    "D-8",
+    "P-10"
+   ],
+   "confidence": 0.65
+  },
+  {
+   "sig": "Management: People Skills",
+   "call": "merge",
+   "survivor_title": "People Skills",
+   "reason": "Same soft-skills content, two audience framings (manager vs freelancer) — audience framing is not a doctrine carve-out, and neither title is on the P-7 generic list. P-1: one credit target for any credential mapping interpersonal-skills outcomes. 0.5u vs 1u spread trivial under P-5. P-10 unified name drops both college-isms ('Management:' prefix, 'for the Freelancer'). Staging default P-9: merge with merge_note so faculty can split if the freelance framing turns out to matter.",
+   "doctrine": [
+    "P-9",
+    "P-1",
+    "P-10",
+    "P-5",
+    "Q-XDISC"
+   ],
+   "confidence": 0.55
+  },
+  {
+   "sig": "assist certif medic review",
+   "call": "merge",
+   "survivor_title": "Medical Assisting Certification Review",
+   "reason": "Textbook P-8: both courses exist solely to prep an external certification (CMA/CCMA exam review) — credential-aligned families bias strongly to one common course. P-5(a): externally standardized curriculum, so the 2u-vs-4u spread does not block (store modal units, flag unit_anomaly). D-1: fold the stand-alone into the existing M-ID anchor HTEC M1021. The cross-discipline tag (Health vs Health Care Ancillaries) is inconsistent tagging, resolved per D-8 to the survivor's discipline.",
+   "doctrine": [
+    "P-8",
+    "P-5",
+    "D-1",
+    "D-8",
+    "P-9"
+   ],
+   "confidence": 0.85
+  },
+  {
+   "sig": "digit sculpt",
+   "call": "keep_separate",
+   "reason": "'Advanced' vs 'Intermediate' are unshared word-level marks — D-4 gates and P-9's second hard carve-out says never merge across unshared level/variant marks without member-level evidence, which this group lacks. These are two rungs of a skills ladder, i.e. two distinct credit targets (P-1). The '(RVPA)' college-ism would be stripped at naming time (P-10) but doesn't change the level split.",
+   "doctrine": [
+    "D-4",
+    "P-9",
+    "P-1"
+   ],
+   "confidence": 0.85
+  },
+  {
+   "sig": "Hazardous Materials - ICS",
+   "call": "keep_separate",
+   "reason": "The hazmat family is externally tiered by SFT/CSTI certification level — Awareness, Operations, Technician, 1B, ICS/Incident Commander are DIFFERENT credit outcomes, so per P-1 they are different rows even with near-identical title stems. D-4 level/variant marks (Introduction, Awareness, 1B, Operations) gate throughout, and the group contains two distinct M-ID anchors (M1373, M1374) that must not collapse (D-1/D-5 anchor firewall). This is a suggestion-layer looseness artifact (D-7), not one common course. Pairwise sub-merges within a tier (e.g. Operations vs Response for Public Safety) can be re-suggested individually.",
+   "doctrine": [
+    "P-1",
+    "D-4",
+    "D-1",
+    "D-7"
+   ],
+   "confidence": 0.75
+  },
+  {
+   "sig": "care funda respiratory",
+   "call": "merge",
+   "survivor_title": "Fundamentals of Respiratory Care",
+   "reason": "One college split the standard NBRC-track fundamentals course into 1+2 (3.5+3.5=7u ≈ the anchor's 6u) — P-5(a) externally standardized curriculum packaged differently, so unit spread doesn't block. The units-sum + identical title stem + same discipline is exactly the member-level evidence P-9 requires to confirm over the D-4 digit-level gate. P-8: credentialed CTE program biases to merge. Fold both rungs into the M-ID anchor RSPT M1027 (D-1) with merge_note recording the 1/2 split and unit_anomaly flag.",
+   "doctrine": [
+    "P-5",
+    "P-8",
+    "P-9",
+    "D-1",
+    "D-4"
+   ],
+   "confidence": 0.65
+  },
+  {
+   "sig": "clin experi pharmacy",
+   "call": "merge",
+   "survivor_title": "Pharmacy Clinical Experience",
+   "reason": "Same externship packaged differently: the '1' rung (2.5u) is half of the unnumbered whole (5u) — P-5(a) applies because pharmacy-tech externship hours are externally standardized (PTCB/BPPE), so the spread flags rather than blocks. 'Clinical Experience' carries the discipline in the title, so it escapes the P-7 generic-title bar (unlike bare 'Work Experience'). Staging default P-9: merge with merge_note recording the rung and unit_anomaly, reversible if a missing 'Experience 2' surfaces at faculty validation.",
+   "doctrine": [
+    "P-5",
+    "P-9",
+    "P-7",
+    "P-1"
+   ],
+   "confidence": 0.55
+  },
+  {
+   "sig": "design landscape principl",
+   "call": "keep_separate",
+   "reason": "'Advanced Principles of Landscape Design' carries an unshared level mark against the unnumbered anchor — D-4/P-9 carve-out: never merge across level marks without member-level evidence, and Advanced is plainly a distinct rung/credit target (P-1). 'Basic Principles' at 1u vs the 3u anchor is both a level-marked variant and a 2u spread on a NON-standardized course (P-5's stop-and-look side). No credential alignment to invoke P-8. All three stay separate rows.",
+   "doctrine": [
+    "D-4",
+    "P-9",
+    "P-1",
+    "P-5"
+   ],
+   "confidence": 0.7
+  },
+  {
+   "sig": "AJ 122",
+   "call": "hold_for_curator",
+   "reason": "Evidence lane but the ladder is dirty: receipts split 2:1 between AJ 122 (Criminal Court Process) and AJ 200, and the M-ID title 'Principles and Procedures of the Criminal Justice System' reads like an intro-survey course, not a court-process course — likely fails D-2's kinship/title-freshness check (rung 3), which drops placement to rung 4: human confirmation. Folding into the wrong C-ID would mis-key an official identity (D-1), which is not reversible-cheap. Only Sam (or the college's COCI filing) can settle which C-ID this course actually is.",
+   "doctrine": [
+    "D-2",
+    "D-1",
+    "P-9"
+   ],
+   "confidence": 0.8
+  },
+  {
+   "sig": "FIRE 232 X",
+   "call": "merge",
+   "survivor_title": "Hazardous Materials Incident Commander",
+   "reason": "Cleanest case in the batch: verbatim-identical titles, same discipline/SUBJ4, and 2 unambiguous historical receipts pointing FIRE M1285 at C-ID FIRE 232X — D-2 rung 3 satisfied with the kinship check trivially passing. D-1: the M-ID folds into the official C-ID identity, alias-tracked; survivor title stays the official one verbatim.",
+   "doctrine": [
+    "D-1",
+    "D-2"
+   ],
+   "confidence": 0.95
+  },
+  {
+   "sig": "FTVE 130",
+   "call": "hold_for_curator",
+   "reason": "Evidence is tied 1:1 between FTVE 130 (Beginning Single Camera Production) and FTVE 150 — the ladder cannot pick a C-ID, and 'Motion Picture Production' matches neither title cleanly, so the D-2 kinship check is at best ambiguous → rung 4, human confirmation. The cross-listing flag (x) and cross-discipline tag (Art hosting a film-production course) add D-8 questions only a curator can settle. Mis-folding an M-ID into the wrong official C-ID violates D-1, so this cannot ride the P-9 merge default.",
+   "doctrine": [
+    "D-2",
+    "D-1",
+    "D-8"
+   ],
+   "confidence": 0.75
+  },
+  {
+   "sig": "MATH 150",
+   "call": "merge",
+   "survivor_title": "College Algebra for Liberal Arts",
+   "reason": "C-ID MATH 150 is the authoritative identity; MATH M1027 has clean evidence (MATH 150: 3) and an identical title, so it folds in verbatim under the official identity. MATH M1036 ('College Algebra', evidence split 6/6 between MATH 150 and MATH 151) is a doubt-merge: fold it under MATH 150 with a merge_note flagging the split evidence and title drift so faculty validation can split it back — staging-phase default is over-merge with receipts, and none of P-9's three hard carve-outs (band, variant marks, homonym) apply.",
+   "doctrine": [
+    "D-1",
+    "D-2",
+    "P-9",
+    "P-1"
+   ],
+   "confidence": 0.65
+  },
+  {
+   "sig": "administr network system",
+   "call": "keep_separate",
+   "reason": "Unshared level words: 'Advanced' vs 'Intermediate' Network Systems Administration are distinct rungs of a credit (M1xxx) CTE sequence. D-4's word-level gate applies, and P-3's boundary says credit sequenced courses keep their rungs because the rung IS the credit target. Carve-out: level-mark mismatch on a credit sequence.",
+   "doctrine": [
+    "D-4",
+    "P-3"
+   ],
+   "confidence": 0.85
+  },
+  {
+   "sig": "cook skill",
+   "call": "keep_separate",
+   "reason": "Beginning Skills vs Advanced Skills are opposite ends of a noncredit ladder — D-4 word-level marks gate, and even under P-3 band packaging these two would land in different bands (Beginning vs Advanced), so there is nothing to fold together here. Carve-out: unshared level marks. Side flag: whether 0-unit noncredit basic cooking belongs in the CPL-facing tier at all is Q-FLOOR — note it, but the merge call itself doesn't depend on it.",
+   "doctrine": [
+    "D-4",
+    "P-3",
+    "P-2"
+   ],
+   "confidence": 0.8
+  },
+  {
+   "sig": "edit staff techniqu",
+   "call": "keep_separate",
+   "reason": "Techniques for Staff Editors 1 vs 3 — unshared digit-level marks on credit (M1xxx) journalism courses. D-4's digit-level axis gates, and P-3's boundary keeps rungs on credit sequences where the rung is the credit target. Carve-out: digit-level mismatch.",
+   "doctrine": [
+    "D-4",
+    "P-3"
+   ],
+   "confidence": 0.85
+  },
+  {
+   "sig": "individu problem sculpture",
+   "call": "keep_separate",
+   "reason": "Two blockers: digit-level marks (1 vs 2) gate under D-4, and 'Individual Problems in X' is a generic-title family in the Independent Study / Directed Studies mold — P-7 says these never merge on title similarity alone because the title carries no course identity. Carve-out: generic-title family plus level-mark mismatch.",
+   "doctrine": [
+    "D-4",
+    "P-7"
+   ],
+   "confidence": 0.85
+  },
+  {
+   "sig": "adapt exercise fitness",
+   "call": "merge",
+   "survivor_title": "Adapted Fitness Exercise",
+   "reason": "Same course with drifted word order at two colleges: 'Exercise and Fitness-Adaptive' ≡ 'Adapted Fitness Exercise', both stand-alone adapted-PE fitness courses. No level marks, no variant-type marks, no band crossing, no homonym risk — a faculty workgroup would treat these as one credit target. The 0.5→1.0 unit spread is well under P-5's stop-and-look threshold; store modal units and flag the spread. Fitness-first consolidation is exactly P-11's general-conditioning direction. Survivor named per P-10 (clean Title Case, no hyphenated college-ism).",
+   "doctrine": [
+    "P-1",
+    "P-9",
+    "P-5",
+    "P-11",
+    "P-10"
+   ],
+   "confidence": 0.8
+  },
+  {
+   "sig": "anatomy draw figure",
+   "call": "keep_separate",
+   "reason": "Beginning vs Intermediate Figure Drawing — unshared word-level marks gate under D-4, and these are credit, degree-applicable-shaped studio art rungs where P-3's boundary keeps the rungs as distinct credit targets. Carve-out: level-mark mismatch on a credit sequence.",
+   "doctrine": [
+    "D-4",
+    "P-3"
+   ],
+   "confidence": 0.85
+  },
+  {
+   "sig": "automot mechan",
+   "call": "merge",
+   "survivor_title": "Automotive Mechanics",
+   "reason": "'Automotive Mechanics' (3u) and 'Intro to Automotive Mechanics' (3u) at different colleges are one credit target: an unnumbered base title is the entry course (Sam's KINE precedent — unnumbered base → beginning), so 'Intro to' adds no distinguishing level against it. CTE automotive courses bias to merge under P-8 so a credential rec lands on one common course; identical units; none of P-9's hard carve-outs apply. Merge with a merge_note recording the 'Intro' phrasing. Survivor per P-10: clean base title, no 'Intro to'.",
+   "doctrine": [
+    "P-8",
+    "P-9",
+    "P-10",
+    "P-1"
+   ],
+   "confidence": 0.7
+  },
+  {
+   "sig": "lithography",
+   "call": "keep_separate",
+   "reason": "'Lithography' vs 'Lithography 2' — the digit-level mark gates under D-4 (unmarked base reads as course 1 of a sequence, so the members are rungs 1 and 2), and credit studio-art sequences keep their rungs per P-3's boundary. Carve-out: digit-level mismatch on a credit sequence.",
+   "doctrine": [
+    "D-4",
+    "P-3"
+   ],
+   "confidence": 0.75
+  },
+  {
+   "sig": "ESL Bridge to College",
+   "call": "merge",
+   "survivor_title": "ESL Bridge to College",
+   "reason": "Four noncredit (M90xx, 0-unit) ESL bridge-to-college courses across colleges are one CPL target with drifted titles — exactly the ratified ESL family P-3 covers, and a faculty workgroup mapping an ESL certificate would pick one 'bridge' row, never four. Subject-code drift (ESL/NCE/ESLN/NCESL) is college-ism noise. The '(Advanced)' parenthetical on M90ML gets a merge_note per P-9's doubt-merge receipts rather than blocking — within the ratified ESL packaging family, bridge courses converge. Survivor per P-10: clean band-free plain name, no parentheticals.",
+   "doctrine": [
+    "P-3",
+    "P-1",
+    "P-9",
+    "P-10"
+   ],
+   "confidence": 0.75
+  },
+  {
+   "sig": "Joyful Parent-Art/Music/Movemt",
+   "call": "merge",
+   "survivor_title": "Joyful Parenting: Art, Music, and Movement",
+   "reason": "One noncredit parent-ed course, one truncated catalog title ('Movemt') and one with an age-range parenthetical — textbook title drift, same credit outcome, same band (M90xx), no level or variant marks, no homonym. P-9 staging default: merge with receipts. Survivor per P-10 strips the truncation and the '(Ages 1.5–2.5 Years)' parenthetical, recording the age range in merge_note. Whether parent-ed noncredit belongs in the CPL-facing tier at all is Q-FLOOR — flag it, but that governs tier membership, not this merge.",
+   "doctrine": [
+    "P-9",
+    "P-10",
+    "P-1",
+    "P-2"
+   ],
+   "confidence": 0.7
+  },
+  {
+   "sig": "Principles of Pumps & Irrigation",
+   "call": "merge",
+   "survivor_title": "Principles of Pumps and Irrigation",
+   "reason": "Two 3-unit agriculture pump/irrigation courses at different colleges — 'Principles of Pumps & Irrigation' vs 'Irrigation Wells, Pumps, and Drive Systems' — are the same CTE credit target packaged under different catalog names (P-1: credit equivalence, not textual identity). Identical units, same discipline, no band/level/variant/homonym carve-out, so P-9's staging default is merge with a merge_note on the scope wording ('wells and drive systems') for faculty to split back if the content genuinely diverges. Survivor per P-10 (Title Case, ampersand spelled out).",
+   "doctrine": [
+    "P-1",
+    "P-9",
+    "P-10",
+    "P-8"
+   ],
+   "confidence": 0.6
+  },
+  {
+   "sig": "structural welding",
+   "call": "keep_separate",
+   "reason": "Structural Welding A vs B are sequence rungs, not drifted duplicates: P-11's ratified synonym ruling treats section letters as level numbers (A/B ↔ 1/2), so D-4's level gate applies, and these credit (M1xxx) welding rungs are each real credit targets under P-3's boundary. The attached Carpenters Apprenticeship credential does invoke P-8's convergence bias, but P-8 targets the same course scattered under many M-IDs — it does not license collapsing a two-rung ladder into one row, which would erase the credit distinction (P-1). Carve-out: letter-as-level mismatch on a credit sequence; the credential alignment should be recorded on both rungs for the exhibit crosswalk.",
+   "doctrine": [
+    "D-4",
+    "P-11",
+    "P-3",
+    "P-1",
+    "P-8"
+   ],
+   "confidence": 0.65
+  }
+ ]
+}

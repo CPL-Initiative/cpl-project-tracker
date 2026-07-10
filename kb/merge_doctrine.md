@@ -1,7 +1,7 @@
 ---
 title: "CCR Merge/Mint Doctrine — the decision policy for course convergence"
 created: 2026-07-03
-version: "0 (seed — pre-calibration)"
+version: "0.2 (first mind-meld distillation — 8 voice notes of 2026-07-03, distilled 2026-07-10)"
 tags: [ccr, doctrine, merge, mint, m-id, mind-meld]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -165,6 +165,16 @@ rungs in with their original level recorded in `merge_note`.
 - Rationale: a certification or JST skill maps to "Intermediate ESL," never
   to "ESL Level 4 Grammar Module B." Rung-level rows are noise to a faculty
   workgroup and an equity obstacle to a student.
+- **RATIFIED by mind-meld (Sam, 2026-07-03; distilled 2026-07-10).** Sam's
+  ESL sitting enacted exactly this move and pinned the mapping: **levels 3–4
+  → Intermediate 1 and 2** (a band may carry numbered SUB-BANDS when the
+  ladder is long), **levels 5–6/7 → Advanced**; unnumbered base titles and
+  "Skills Development" variants → Beginning. CPL frame confirmed verbatim:
+  the package backs "an ESL certificate … used to clear a prerequisite."
+  He also treats the **"English as a Second Language" and "ESL Noncredit"
+  DISCIPLINES as one family for packaging** ("much of the content will be
+  the same type of preparation") — a P-3/P-4 packaging decision that spans
+  the band per D-3's explicit-package carve-out, recorded per member.
 - Faculty framing: not a curricular judgment — a **CPL-feasibility** decision
   under Title 5 §55050. The rungs still exist at every college; the CCR
   packages them for credit-recommendation purposes only.
@@ -213,6 +223,35 @@ strongly toward convergence so the credit recommendation lands on ONE common
 course. Transfer-sequence academic courses get the opposite bias: precision
 over concision (their identity work belongs to C-ID/CCN anyway).
 
+### P-11 · Kinesiology activity doctrine — PROPOSED (distilled from the 2026-07-03 mind-meld; settles Q-TARGETCOUNT for KINE)
+
+Sam's five KINE sittings draw one consistent line — **athletics vs general**:
+
+- **General fitness/conditioning consolidates modality-agnostically.** All
+  fitness-first courses — Individual/Cardio/Core/Body Conditioning, Bootcamp
+  Fitness, Walk/Run, Fitness-through-Dance, Cardiovascular Fitness,
+  Swimming-for-Fitness, Hydro HIIT — merge into **Conditioning Beginning /
+  Intermediate / Advanced**, "regardless of the sport as long as it's not an
+  intercollegiate or athletic" course.
+- **Sport-specific stays per-sport.** Athletic conditioning splits per sport
+  ("we'll probably need to keep the different athletic courses separate …
+  since they are sports specific"); sport skill ladders get one row per
+  activity per band (Volleyball Beginning/Intermediate/Advanced).
+- **The title's PRIMARY FRAME decides the boundary**: "Swimming for Fitness"
+  is a fitness course → Conditioning; "Individual Swim Conditioning" is a
+  swim course → the sport. Fitness-first → Conditioning; sport-first → sport.
+- **Venue/format marks fold**: indoor/outdoor not differentiated for CPL
+  ("Volleyball Advanced", not "Outdoor Volleyball Advanced").
+- **Combination-level courses (Sam's precedents, flagged "a tough one")**:
+  Intermediate–Advanced combo → Advanced; Beginning–Intermediate combo →
+  Beginning.
+- **Synonym ruling**: Sports Medicine "Experience" ≡ "Clinical" (one course
+  family; letters A/B/C/D ↔ numbers; unified name "Sports Medicine
+  Clinical N"). Add to the synonym map.
+
+Dance/Music activity ladders: presumed to follow the same shape but NOT yet
+sat — Q-TARGETCOUNT remains open for those two.
+
 ### P-10 · Unified-title naming — PROPOSED
 
 Student-facing plain names: Title Case; no college-isms, section letters,
@@ -220,7 +259,10 @@ Student-facing plain names: Title Case; no college-isms, section letters,
 ("Beginning", not "Beg" or "I"); the deterministic normalizer
 (`kb/_normalize_common_titles.py`) is the base, curator override wins.
 Package mints name the band, not the rungs: "Beginning ESL", "Intermediate
-Welding". (→ Q-MINTNAME)
+Welding". (→ Q-MINTNAME) **Mind-meld addendum (2026-07-03/10): names are
+modality- and venue-agnostic for CPL** — "Volleyball Advanced" (not
+"Advanced Outdoor Volleyball"), "Conditioning Advanced" (not "Advanced
+Hydro HIIT"); Sam renamed both live.
 
 ---
 
@@ -233,7 +275,7 @@ checkpoint. Current forks:
 
 | id | Fork | Doctrine it settles |
 |---|---|---|
-| Q-LADDER | Where exactly is the package-vs-rungs line? Is degree-applicability the test, or credit status, or transferability? | P-3 |
+| Q-LADDER | **Partially settled 2026-07-10** (P-3 ratified with the ESL band mapping; sub-bands allowed). Remaining fork: the exact package-vs-rungs TEST WORDING (degree-applicability vs credit status vs transferability) for edge families. | P-3 |
 | Q-STRANDS | Do skill strands ever survive packaging (ESL Writing as its own target)? | P-4 |
 | Q-UNITS | How much unit spread stops a merge on a non-standardized course? | P-5 |
 | Q-SAMECOLL | Is there ANY same-college pair you'd merge outright (catalog editions? renumberings?) | P-6 |
@@ -241,7 +283,7 @@ checkpoint. Current forks:
 | Q-HONORS | For CPL purposes, does an Honors variant fold under the base course (the credit rec ignores honors) or stay distinct? | D-4/P-3 |
 | Q-CREDITNC | Credit + noncredit twins of one course: separate targets forever, or noncredit folds under the credit target with a band note? | D-3/P-3 |
 | Q-XDISC | Cross-discipline groups that are really one course tagged inconsistently: merge-and-pick-discipline, or hold for faculty? | D-8/P-9 |
-| Q-TARGETCOUNT | Kinesiology/Dance/Music activity ladders: one row per activity (Basketball, Ballet) regardless of level/gender/season? | P-3 |
+| Q-TARGETCOUNT | **Settled for KINE 2026-07-10 → P-11** (athletics-vs-general split; per-sport rows; modality-agnostic conditioning). Still open for Dance/Music ladders. | P-11 |
 | Q-MINTNAME | Naming for packages: "Beginning ESL" clean, or "ESL — Beginning (Levels 1–2)" explicit? | P-10 |
 | Q-FLOOR | What is *never* a CPL credit target (and can leave the CPL-facing tier entirely)? Recreational PE? Older-adult noncredit? | P-2 |
 
