@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-07-02 (Session 95 — the Activity ⇄ Project separation day: sub-activities IMMUNE to Table/Archive + grid dedup + the Archive-radio fix (#652); then Sam's poke-around wave — Path-to-2030 charts → CPL Analytics, the 4.1 phantom-row fix, the ＋ Add-project flow (`project_add.js`), the AWG Projects section, and the +1-blank-line/run grid-replace accretion fixed (regen now byte-idempotent modulo timestamps))
+updated: 2026-07-10 (Session 111 — SkyMighty: Trail Crew firing receipt #726; the CLAUDE.md pare-down — three whales moved to docs/reference/)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -27,6 +27,18 @@ Refreshed at every checkpoint (per `CLAUDE.md` Rule 8).
 | **Session handoffs** | "Fattyfat" capsules for the next session | `docs/session_<N>_handoff.md` |
 
 See [`docs/kb-notes/README.md`](kb-notes/README.md) for the lane contract.
+
+## CLAUDE.md reference offloads (`docs/reference/`) — added 2026-07-10 (Session 111, the pare-down)
+
+Always-current project memory moved out of `CLAUDE.md` (2,514 → ~590 lines);
+**Rule 8 checkpoints update these files now**, and `CLAUDE.md` keeps read-before
+stubs pointing here.
+
+| Doc | Was | Read before |
+|---|---|---|
+| [Pipeline Reference](reference/pipeline_reference.md) | `CLAUDE.md` §Pipeline Reference (1,087 lines) | generator/workflow/tabs/Supabase/EACR/C-ID work |
+| [KB Build Status](reference/kb_build_status.md) | `CLAUDE.md` §KB & Unified Courses (421 lines) | KB/CCR curation work, build-phase history |
+| [M-ID Lifecycle & CID/CIDx](reference/mid_lifecycle.md) | `CLAUDE.md` §11 prose + strategic roadmap (449 lines) | re-mints, MC/TMC calls, auditor, pathway decisions |
 
 ---
 
