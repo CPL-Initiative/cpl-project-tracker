@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-10 · Session 111 (SkyMighty) + SkyIron side-lane — renames FIRED, CSR pass done, POSC→POLS re-minted, 🎓 CPL Pathways tab shipped",
+ "_as_of": "2026-07-10 · Session 111 (SkyMighty) + SkyIron close-out — 🎓 CPL Pathways live w/ status stages + PDF; link out to colleagues",
  "_session": 111,
- "_status": "Big day: the 103 Trail Crew renames are LIVE in the CER (receipted cohort, undo-able). The CSR pass ran end-to-end — your key-minting registry is immaculate (zero official-CCN squats, 15 aligned twins); its one clean convergence POSC→POLS is APPLIED (293 ids, Rule-7 playbook, receipts in kb/pols_remint_out/) and the seeder now consults the canonical registry (7/7 verifier). Doctrine notes recorded for CDEV + 4 siblings. Also: CLAUDE.md pared 2,514→~600 lines + truth-audited across all three stores. PLUS the SkyIron side-lane shipped the 🎓 CPL Pathways tab for the Aug-13 California Apprenticeship Council deck: the Cerritos Field Ironworker Supervisor BS course map — 31.5 units of journeyworker CPL checked off live from MAP, CLEP GE options, the billboard callout. Next: your CER lanes + the CCR mountain.",
+ "_status": "Big day: the 103 Trail Crew renames are LIVE in the CER (receipted cohort, undo-able). The CSR pass ran end-to-end — your key-minting registry is immaculate (zero official-CCN squats, 15 aligned twins); its one clean convergence POSC→POLS is APPLIED (293 ids, Rule-7 playbook, receipts in kb/pols_remint_out/) and the seeder now consults the canonical registry (7/7 verifier). Doctrine notes recorded for CDEV + 4 siblings. Also: CLAUDE.md pared 2,514→~600 lines + truth-audited across all three stores. PLUS the SkyIron side-lane shipped AND closed the 🎓 CPL Pathways tab for the Aug-13 California Apprenticeship Council deck (#732/#733): the Cerritos Field Ironworker Supervisor BS course map — 31.5 units of journeyworker CPL checked off live from MAP, CLEP GE options, the billboard callout, status stages (ships as Discussion Draft) + a ⬇ PDF extract. The link is out to colleagues for a first look; continuation capsule = docs/cpl_pathways_handoff.md. Next: your CER lanes + the CCR mountain.",
  "items": [
   {
    "id": "cer-trail-lanes",
@@ -65,10 +65,16 @@
    "text": "common_courses.json anchor: 221 dead-format 'M-ID SUBJ NNN' keys + 35 subject folds staged as a promote-time re-key plan (CSR0067) — apply per-entry at promote time, never bulk."
   },
   {
-   "id": "pathways-review",
+   "id": "pathways-feedback",
    "for": "sam",
    "tab": "cpl-pathways",
-   "text": "NEW 🎓 CPL Pathways tab (the CAC Aug-13 visual): review the Cerritos ironworker course map — hero numbers (31.5u CPL / 15u CLEP / 39%), the billboard line, and the GE unit spread. Two facts to confirm with Cerritos: the fall-2027 first cohort, and the real upper-division course list (grab it from regionalcte.org/browse/ZyxAg in a browser — the table is JS-only; screenshot works)."
+   "text": "🎓 CPL Pathways: collect the colleague feedback (link went out 2026-07-10) and bring the asks back for iteration. Two facts to confirm with Cerritos while you wait: the fall-2027 first cohort, and the real upper-division course list (open regionalcte.org/browse/ZyxAg in a browser and screenshot section 4 — the table is JS-only, invisible to crawlers)."
+  },
+  {
+   "id": "pathways-next",
+   "for": "fable",
+   "tab": "cpl-pathways",
+   "text": "🎓 CPL Pathways continuation (read docs/cpl_pathways_handoff.md): fold colleague feedback → swap real upper-div courses into cpl_pathways_data.js when Sam supplies the screenshot → pathway #2 (carpentry) once the model proves out."
   }
  ]
 }

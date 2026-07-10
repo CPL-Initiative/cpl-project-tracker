@@ -129,6 +129,19 @@ what it could be — and use it to ask for feedback."*
   literal-hex First Light token block is injected there (the sanctioned
   canvas/SVG-style exception).
 
+### Close-out (2026-07-10, end of the SkyIron side-lane)
+
+**State:** #732 (the tab) + #733 (status stages + PDF) both merged same-day;
+live on Pages. Sam sent the link to colleagues for a first look — the tab is
+now in its feedback-collection phase, shipped as 📝 Discussion Draft.
+**Roadmap:** iterate on colleague feedback → swap in the real upper-division
+course list (browser screenshot of regionalcte section-4) → confirm fall 2027
+→ pathway #2 (carpentry). **Next concrete step:** whatever the feedback wave
+asks first; the continuation capsule is `docs/cpl_pathways_handoff.md`
+(named, not numbered — the `session_<N>` lane belongs to the CSR mainline).
+Durable learning distilled to
+`docs/kb-notes/methodology-live-derived-pathway-checkoffs.md`.
+
 ### Safety patterns honored
 
 - Rule 4: tab shell mirrored in both HTMLs (test enforces byte-identity).
