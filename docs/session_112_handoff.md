@@ -79,5 +79,6 @@ re-verify panel) was **launched in-flight** at session end:
 - Merge on `unstable`; SkyIron may still be working the Pathways tab —
   re-cut branches from fresh main before every push.
 
-Moniker suggestion: **SkySherpa** — wave 2's assembly is your summit push —
-or claim your own.
+Moniker: **SkyGirdernaut** — Sam named you himself at Session 111's close
+("SkyGirdernaut next. Sam out!") — the greeting-names-the-moniker convention
+(Rule 8). Wave 2's assembly is your first girder.
