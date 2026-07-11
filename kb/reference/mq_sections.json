@@ -8,9 +8,42 @@
   "both_lists": "Appears on both the master's and the experience lists (area-dependent)",
   "noncredit_53412": "Noncredit instructor minimum qualifications per CCR 53412 subsections"
  },
- "_note": "Companion to mq_disciplines.json (same 240 titles). printed_pages are the handbook's printed page numbers (PDF page = printed + 6).",
- "count": 240,
+ "_note": "Companion to mq_disciplines.json (same 248 titles). printed_pages are the handbook's printed page numbers (PDF page = printed + 6).",
+ "count": 248,
  "disciplines": {
+  "Accounting": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": "CCR 53410.1",
+   "flags": [
+    "ccr_53410_1"
+   ],
+   "printed_pages": [
+    20
+   ]
+  },
+  "Adapted Computer Technology: Disabled Students Programs and Services": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": "CCR 53414(d)(1)(2)",
+   "flags": [
+    "dsps_53414"
+   ],
+   "printed_pages": [
+    20
+   ]
+  },
+  "Addiction Paraprofessional Training": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    45,
+    53
+   ],
+   "pages_note": "index cites the page range 45-53"
+  },
   "Administration of Justice": {
    "mq_list": "not_masters",
    "mq_list_label": "Bachelor's/Associate + professional experience list",
@@ -19,6 +52,35 @@
    "printed_pages": [
     45
    ]
+  },
+  "Aeronautics": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    45
+   ],
+   "index_name": "Aeronautics (Airframe and power plant, aircraft mechanics, aeronautical engineering technology)"
+  },
+  "African American Studies": {
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    20
+   ]
+  },
+  "Agricultural Business and Related Services": {
+   "mq_list": "not_masters",
+   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "special_ccr": null,
+   "flags": null,
+   "printed_pages": [
+    45
+   ],
+   "index_name": "Agricultural Business and Related Services (Inspection, pest control, food processing)"
   },
   "Agricultural Engineering": {
    "mq_list": "not_masters",
@@ -353,6 +415,17 @@
     24
    ]
   },
+  "Citizenship: Noncredit": {
+   "mq_list": "noncredit_53412",
+   "mq_list_label": "Noncredit instructor MQs (CCR §53412)",
+   "special_ccr": "CCR 53412(d)",
+   "flags": [
+    "noncredit_53412"
+   ],
+   "printed_pages": [
+    54
+   ]
+  },
   "Classics": {
    "mq_list": "masters",
    "mq_list_label": "Master's degree list",
@@ -408,7 +481,8 @@
    ],
    "printed_pages": [
     25
-   ]
+   ],
+   "index_name": "Community College Counselor of Students with Disabilities"
   },
   "Computer Information Systems": {
    "mq_list": "not_masters",
@@ -482,7 +556,8 @@
    "flags": null,
    "printed_pages": [
     27
-   ]
+   ],
+   "index_name": "Counseling: Extended Opportunity Programs and Services (EOPS)"
   },
   "Court Interpreting": {
    "mq_list": "not_masters",
@@ -529,7 +604,8 @@
    ],
    "printed_pages": [
     28
-   ]
+   ],
+   "index_name": "Deaf and Hearing Impaired: Disabled Students Programs and Services"
   },
   "Dental Technology": {
    "mq_list": "not_masters",
@@ -549,7 +625,8 @@
    ],
    "printed_pages": [
     28
-   ]
+   ],
+   "index_name": "Developmental Disabilities: Disabled Students Programs and Services"
   },
   "Diagnostic Medical Technology": {
    "mq_list": "not_masters",
@@ -607,7 +684,8 @@
     28,
     47,
     62
-   ]
+   ],
+   "index_name": "Disabled Student Programs and Services (DSPS)"
   },
   "Drafting/CADD": {
    "mq_list": "not_masters",
@@ -616,7 +694,8 @@
    "flags": null,
    "printed_pages": [
     47
-   ]
+   ],
+   "index_name": "Drafting/CADD (Computer Aided Drafting/Design), CAD (Computer Aided Design), CAD (Computer Aided Drafting)"
   },
   "Drama/Theater Arts": {
    "mq_list": "masters",
@@ -782,7 +861,8 @@
    ],
    "printed_pages": [
     55
-   ]
+   ],
+   "index_name": "English as a Second Language (ESL): Noncredit"
   },
   "Environmental Technologies": {
    "mq_list": "not_masters",
@@ -989,7 +1069,8 @@
    "flags": null,
    "printed_pages": [
     33
-   ]
+   ],
+   "index_name": "Health Services Director/Health Services Coordinator/College Nurse"
   },
   "Health and Safety: Noncredit": {
    "mq_list": "not_masters",
@@ -1050,13 +1131,14 @@
    ]
   },
   "Humanities": {
-   "mq_list": "not_masters",
-   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
    "special_ccr": null,
    "flags": null,
    "printed_pages": [
     48
-   ]
+   ],
+   "pages_note": "index page cite (48) falls in the any-degree section range; the index X column and curator (Sam, 2026-07-11) confirm master's"
   },
   "Industrial Design": {
    "mq_list": "not_masters",
@@ -1139,7 +1221,8 @@
    ],
    "printed_pages": [
     55
-   ]
+   ],
+   "index_name": "Interdisciplinary-Basic Skills: Noncredit"
   },
   "Interior Design": {
    "mq_list": "not_masters",
@@ -1213,7 +1296,8 @@
    "flags": null,
    "printed_pages": [
     35
-   ]
+   ],
+   "index_name": "Learning Assistance or Learning Skills Coordinators or Instructors, and Tutoring Coordinators"
   },
   "Learning Disabilities: Disabled Student Programs and Services 53414": {
    "mq_list": "masters",
@@ -1224,7 +1308,8 @@
    ],
    "printed_pages": [
     35
-   ]
+   ],
+   "index_name": "Learning Disabilities: Disabled Student Programs and Services"
   },
   "Learning Disabilities: Specialist": {
    "mq_list": "masters",
@@ -1651,25 +1736,30 @@
    ],
    "printed_pages": [
     39
-   ]
+   ],
+   "index_name": "Physical Disabilities: Disabled Student Programs and Services"
   },
   "Physical Education": {
-   "mq_list": "not_masters",
-   "mq_list_label": "Bachelor's/Associate + professional experience list",
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
    "special_ccr": null,
    "flags": null,
    "printed_pages": [
     48
-   ]
+   ],
+   "pages_note": "index page cite (48) falls in the any-degree section range; the index X column and curator (Sam, 2026-07-11) confirm master's"
   },
   "Physical Education Disabled Students": {
-   "mq_list": "not_masters",
-   "mq_list_label": "Bachelor's/Associate + professional experience list",
-   "special_ccr": null,
-   "flags": null,
+   "mq_list": "masters",
+   "mq_list_label": "Master's degree list",
+   "special_ccr": "CCR 53414(b)",
+   "flags": [
+    "dsps_53414"
+   ],
    "printed_pages": [
-    48
-   ]
+    40
+   ],
+   "index_name": "Physical Education (Adapted): Disabled Student Programs and Services"
   },
   "Physical Sciences": {
    "mq_list": "masters",
@@ -2044,7 +2134,21 @@
    "printed_pages": [
     42,
     57
-   ]
+   ],
+   "index_name": "Specialized Instruction (Disabled Student Programs and Services): Noncredit"
+  },
+  "Specialized Instruction: Vocational Noncredit": {
+   "mq_list": "both_lists",
+   "mq_list_label": "On BOTH lists",
+   "special_ccr": "CCR 53414(e)(3)",
+   "flags": [
+    "dsps_53414"
+   ],
+   "printed_pages": [
+    43,
+    57
+   ],
+   "index_name": "Specialized Instruction (Disabled Student Programs and Services): Vocational Noncredit"
   },
   "Speech Communication": {
    "mq_list": "both_lists",
@@ -2074,7 +2178,8 @@
    ],
    "printed_pages": [
     43
-   ]
+   ],
+   "index_name": "Speech Language Pathology: Disabled Student Programs and Services"
   },
   "Stagecraft": {
    "mq_list": "not_masters",
@@ -2174,7 +2279,8 @@
    "flags": null,
    "printed_pages": [
     58
-   ]
+   ],
+   "index_name": "Vocational (short-term): Noncredit"
   },
   "Watch and Clock Repair": {
    "mq_list": "not_masters",
@@ -2210,7 +2316,8 @@
    "flags": null,
    "printed_pages": [
     43
-   ]
+   ],
+   "index_name": "Work Experience Instructors or Coordinators"
   },
   "Writing-Basic Skills: Noncredit": {
    "mq_list": "not_masters",
@@ -2223,5 +2330,12 @@
     58
    ]
   }
+ },
+ "_validated": {
+  "at": "2026-07-11",
+  "by": "Session 112 (SkyEmpyrean) — positional re-parse (pdfminer x/y) of the Sam-supplied 19th-ed Disciplines Index PDF (20260711_MQ_Index.pdf)",
+  "method": "page-number tokens as row anchors; X-column x0 267.0/335.5/414.3 = master's / specific-BA / any-degree; dual-page cites spanning the master's (pp.20-43) and experience (pp.45-58) sections confirm both_lists",
+  "corrections": "mq_list not_masters→masters: Humanities, Physical Education (both curator-confirmed by Sam), Physical Education Disabled Students (+CCR 53414(b), p.40); 8 disciplines added that the 2026-07-10 parse dropped; index_name recorded where the key is an operational rename of the official index name",
+  "receipt": "kb/mq_validation_out/2026-07-11/validation_report.json"
  }
 }

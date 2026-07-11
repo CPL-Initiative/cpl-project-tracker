@@ -1,0 +1,3054 @@
+{
+  "_what": "Full re-validation of kb/reference/mq_sections.json against the authoritative 19th-ed MQ Disciplines Index (Sam-supplied PDF, 2026-07-11), triggered by Sam correcting Humanities + Physical Education to master's.",
+  "_method": "pdfminer positional extraction; page-number tokens (incl. comma lists, ranges, wrapped continuations) as row anchors; X marks classified by x0: 267.0=masters, 335.5=specific_ba, 414.3=any_degree; empirical section page ranges masters 20-43, any-degree 45-51, specific-BA/noncredit 51-58.",
+  "_row_count_index": 248,
+  "_mq_list_distribution_after": {
+    "masters": 81,
+    "not_masters": 156,
+    "both_lists": 9,
+    "noncredit_53412": 2
+  },
+  "_changes": {
+    "mq_list_fixed": {
+      "Humanities": "not_masters -> masters (Sam-confirmed; index X in masters column)",
+      "Physical Education": "not_masters -> masters (Sam-confirmed; index X in masters column)",
+      "Physical Education Disabled Students": "not_masters -> masters + special_ccr CCR 53414(b) + flags [dsps_53414] + pages [40] (index row 'Physical Education (Adapted): Disabled Student Programs and Services')"
+    },
+    "added": [
+      "Accounting",
+      "Adapted Computer Technology: Disabled Students Programs and Services",
+      "Addiction Paraprofessional Training",
+      "Aeronautics",
+      "African American Studies",
+      "Agricultural Business and Related Services",
+      "Citizenship: Noncredit",
+      "Specialized Instruction: Vocational Noncredit"
+    ],
+    "kept_both_lists": [
+      "Child Development/Early Childhood Education",
+      "Communication Studies",
+      "Disabled Student Programs and",
+      "Nutritional Science/Dietetics",
+      "Physics/Astronomy",
+      "Specialized Instruction",
+      "Speech Communication",
+      "Theater Arts"
+    ],
+    "kept_both_lists_rationale": "Two-X rows (Child Dev, Specialized Instruction, DSPS tri-X) or single masters-X with dual page cites spanning the master's and any-degree sections (Communication Studies 24+52, Nutritional Science/Dietetics 35+47, Physics/Astronomy 40+49, Speech Communication 32+52, Theater Arts 43+52).",
+    "index_name_recorded": [
+      "Community College Counselor of Students with Disabilities 53414",
+      "Counseling: Extended Opportunity",
+      "Deaf and Hearing Impaired: Disabled Students Programs 53414",
+      "Developmental Disabilities: Disabled Students Programs and Services 53414",
+      "Disabled Student Programs and",
+      "Drafting/CADD",
+      "English as a Second Language Noncredit 53412",
+      "Health Services Director/Health",
+      "Interdisciplinary-Basic Skills: Noncredit 53412",
+      "Learning Assistance or Learning Skills",
+      "Learning Disabilities: Disabled Student Programs and Services 53414",
+      "Physical Disabilities: Disabled Student Programs and Services 53414",
+      "Physical Education Disabled Students",
+      "Specialized Instruction",
+      "Speech Language Pathology: Disabled Student Programs and 53414 Services",
+      "Vocational",
+      "Work Experience Instructors"
+    ]
+  },
+  "_anomalies": [
+    "Humanities and Physical Education are the only masters-X rows whose page cite (48) falls in the any-degree section range 45-51 — treated as a handbook index quirk; X column + curator confirmation govern.",
+    "The DSPS row cites page 62, beyond the index's stated 20-58 span.",
+    "'Addiction Paraprofessional Training' cites the page range 45-53."
+  ],
+  "_parsed_rows": [
+    {
+      "name_raw": "Accounting",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "CCR 53410.1",
+      "pages": [
+        20
+      ],
+      "pages_token": "20",
+      "match": null
+    },
+    {
+      "name_raw": "Adapted Computer Technology: Disabled Students Programs and Services",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "CCR 53414(d) (1)(2)",
+      "pages": [
+        20
+      ],
+      "pages_token": "20",
+      "match": null
+    },
+    {
+      "name_raw": "Addiction Paraprofessional Training",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        45,
+        53
+      ],
+      "pages_token": "45-53",
+      "match": null
+    },
+    {
+      "name_raw": "Administration of Justice (Police science, corrections, law enforcement)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        45
+      ],
+      "pages_token": "45",
+      "match": "Administration of Justice"
+    },
+    {
+      "name_raw": "Aeronautics (Airframe and power plant, aircraft mechanics, aeronautical engineering technician, avionics)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        45
+      ],
+      "pages_token": "45",
+      "match": null
+    },
+    {
+      "name_raw": "African American Studies",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        20
+      ],
+      "pages_token": "20",
+      "match": null
+    },
+    {
+      "name_raw": "Agricultural Business and Related Services (Inspection, pest control, food processing/meat cutting)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        45
+      ],
+      "pages_token": "45",
+      "match": null
+    },
+    {
+      "name_raw": "Agricultural Engineering (Equipment and machinery, farm mechanics)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        45
+      ],
+      "pages_token": "45",
+      "match": "Agricultural Engineering"
+    },
+    {
+      "name_raw": "Agricultural Production (Animal science, plant science, beekeeping, aquaculture)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        45
+      ],
+      "pages_token": "45",
+      "match": "Agricultural Production"
+    },
+    {
+      "name_raw": "Agriculture",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        20
+      ],
+      "pages_token": "20",
+      "match": "Agriculture"
+    },
+    {
+      "name_raw": "Air Conditioning, Refrigeration, Heating (Solar energy technician)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        45
+      ],
+      "pages_token": "45",
+      "match": "Air Conditioning, Refrigeration, Heating"
+    },
+    {
+      "name_raw": "Animal Training and Management (Exotic Animal Training)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        45
+      ],
+      "pages_token": "45",
+      "match": "Animal Training and Management"
+    },
+    {
+      "name_raw": "Anthropology",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        21
+      ],
+      "pages_token": "21",
+      "match": "Anthropology"
+    },
+    {
+      "name_raw": "Appliance Repair (Vending Machines)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        45
+      ],
+      "pages_token": "45",
+      "match": "Appliance Repair"
+    },
+    {
+      "name_raw": "Archaeological Technology",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        45
+      ],
+      "pages_token": "45",
+      "match": "Archaeological Technology"
+    },
+    {
+      "name_raw": "Architecture",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        45
+      ],
+      "pages_token": "45",
+      "match": "Architecture"
+    },
+    {
+      "name_raw": "Art",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        21
+      ],
+      "pages_token": "21",
+      "match": "Art"
+    },
+    {
+      "name_raw": "Art History",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        21
+      ],
+      "pages_token": "21",
+      "match": "Art History"
+    },
+    {
+      "name_raw": "Asian American Studies",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        22
+      ],
+      "pages_token": "22",
+      "match": "Asian American Studies"
+    },
+    {
+      "name_raw": "Artificial Intelligence (AI)",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        22
+      ],
+      "pages_token": "22",
+      "match": "Artificial Intelligence"
+    },
+    {
+      "name_raw": "Astronomy",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        22
+      ],
+      "pages_token": "22",
+      "match": "Astronomy"
+    },
+    {
+      "name_raw": "Athletic Training",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        45
+      ],
+      "pages_token": "45",
+      "match": "Athletic Training"
+    },
+    {
+      "name_raw": "Auto Body Technology (Antique and classic auto restoration)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        45
+      ],
+      "pages_token": "45",
+      "match": "Auto Body Technology"
+    },
+    {
+      "name_raw": "Automotive Technology",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        45
+      ],
+      "pages_token": "45",
+      "match": "Automotive Technology"
+    },
+    {
+      "name_raw": "Aviation (Flight, navigation, ground school,  air traffic control)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        45
+      ],
+      "pages_token": "45",
+      "match": "Aviation"
+    },
+    {
+      "name_raw": "Banking and Finance",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        45
+      ],
+      "pages_token": "45",
+      "match": "Banking and Finance"
+    },
+    {
+      "name_raw": "Barbering",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        45
+      ],
+      "pages_token": "45",
+      "match": "Barbering"
+    },
+    {
+      "name_raw": "Bicycle Repair",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        45
+      ],
+      "pages_token": "45",
+      "match": "Bicycle Repair"
+    },
+    {
+      "name_raw": "Biological Sciences",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        22
+      ],
+      "pages_token": "22",
+      "match": "Biological Sciences"
+    },
+    {
+      "name_raw": "Biotechnology",
+      "cols": [
+        "specific_ba"
+      ],
+      "ccr": "",
+      "pages": [
+        54
+      ],
+      "pages_token": "54",
+      "match": "Biotechnology"
+    },
+    {
+      "name_raw": "Bookbinding",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        46
+      ],
+      "pages_token": "46",
+      "match": "Bookbinding"
+    },
+    {
+      "name_raw": "Broadcasting Technology (Film making/video, media production, radio/TV)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        46
+      ],
+      "pages_token": "46",
+      "match": "Broadcasting Technology"
+    },
+    {
+      "name_raw": "Building Codes and Regulations (Inspecting of construction, building codes, contractor training)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        46
+      ],
+      "pages_token": "46",
+      "match": "Building Codes and Regulations"
+    },
+    {
+      "name_raw": "Building Maintenance",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        46
+      ],
+      "pages_token": "46",
+      "match": "Building Maintenance"
+    },
+    {
+      "name_raw": "Business",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        23
+      ],
+      "pages_token": "23",
+      "match": "Business"
+    },
+    {
+      "name_raw": "Business Education",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        23
+      ],
+      "pages_token": "23",
+      "match": "Business Education"
+    },
+    {
+      "name_raw": "Business Machine Technology",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        46
+      ],
+      "pages_token": "46",
+      "match": "Business Machine Technology"
+    },
+    {
+      "name_raw": "Cabinet Making",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        46
+      ],
+      "pages_token": "46",
+      "match": "Cabinet Making"
+    },
+    {
+      "name_raw": "Cardiovascular Technology",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        46
+      ],
+      "pages_token": "46",
+      "match": "Cardiovascular Technology"
+    },
+    {
+      "name_raw": "Carpentry",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        46
+      ],
+      "pages_token": "46",
+      "match": "Carpentry"
+    },
+    {
+      "name_raw": "Ceramic Technology",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        46
+      ],
+      "pages_token": "46",
+      "match": "Ceramic Technology"
+    },
+    {
+      "name_raw": "Chemistry",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        23
+      ],
+      "pages_token": "23",
+      "match": "Chemistry"
+    },
+    {
+      "name_raw": "Chicano Studies",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        24
+      ],
+      "pages_token": "24",
+      "match": "Chicano Studies"
+    },
+    {
+      "name_raw": "Child Development/Early Childhood Education",
+      "cols": [
+        "masters",
+        "specific_ba"
+      ],
+      "ccr": "",
+      "pages": [
+        24
+      ],
+      "pages_token": "24",
+      "match": "Child Development/Early Childhood Education"
+    },
+    {
+      "name_raw": "Citizenship: Noncredit",
+      "cols": [],
+      "ccr": "CCR 53412(d)",
+      "pages": [
+        54
+      ],
+      "pages_token": "54",
+      "match": null
+    },
+    {
+      "name_raw": "Classics",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        24
+      ],
+      "pages_token": "24",
+      "match": "Classics"
+    },
+    {
+      "name_raw": "Coaching",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        46
+      ],
+      "pages_token": "46",
+      "match": "Coaching"
+    },
+    {
+      "name_raw": "Commercial Art (Sign making, lettering, packaging, rendering)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        46
+      ],
+      "pages_token": "46",
+      "match": "Commercial Art"
+    },
+    {
+      "name_raw": "Commercial Music",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        46
+      ],
+      "pages_token": "46",
+      "match": "Commercial Music"
+    },
+    {
+      "name_raw": "Communication Studies (Speech Communication)",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        24,
+        52
+      ],
+      "pages_token": "24, 52",
+      "match": "Communication Studies"
+    },
+    {
+      "name_raw": "Community College Counselor of Students with Disabilities",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "CCR 53414(a)",
+      "pages": [
+        25
+      ],
+      "pages_token": "25",
+      "match": "Community College Counselor of Students with Disabilities 53414"
+    },
+    {
+      "name_raw": "Computer Information Systems (Computer network installation, microcomputer technology, computer applications)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        46
+      ],
+      "pages_token": "46",
+      "match": "Computer Information Systems"
+    },
+    {
+      "name_raw": "Computer Science",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        26
+      ],
+      "pages_token": "26",
+      "match": "Computer Science"
+    },
+    {
+      "name_raw": "Computer Service Technology",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        46
+      ],
+      "pages_token": "46",
+      "match": "Computer Service Technology"
+    },
+    {
+      "name_raw": "Construction Management",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        46
+      ],
+      "pages_token": "46",
+      "match": "Construction Management"
+    },
+    {
+      "name_raw": "Construction Technology",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        46
+      ],
+      "pages_token": "46",
+      "match": "Construction Technology"
+    },
+    {
+      "name_raw": "Cosmetology",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        46
+      ],
+      "pages_token": "46",
+      "match": "Cosmetology"
+    },
+    {
+      "name_raw": "Counseling",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "CCR 53410.1",
+      "pages": [
+        26
+      ],
+      "pages_token": "26",
+      "match": "Counseling"
+    },
+    {
+      "name_raw": "Counseling: Extended Opportunity Programs and Services (EOPS)",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "CCR 56264 (a-c)",
+      "pages": [
+        27
+      ],
+      "pages_token": "27",
+      "match": "Counseling: Extended Opportunity"
+    },
+    {
+      "name_raw": "Court Interpreting",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        46
+      ],
+      "pages_token": "46",
+      "match": "Court Interpreting"
+    },
+    {
+      "name_raw": "Court Reporting",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        46
+      ],
+      "pages_token": "46",
+      "match": "Court Reporting"
+    },
+    {
+      "name_raw": "Culinary Arts/Food Technology (Food service, meat cutting, baking,  waiter/ waitressing, bartending)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        46
+      ],
+      "pages_token": "46",
+      "match": "Culinary Arts/Food Technology"
+    },
+    {
+      "name_raw": "Dance",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        27
+      ],
+      "pages_token": "27",
+      "match": "Dance"
+    },
+    {
+      "name_raw": "Deaf and Hearing Impaired: Disabled Students Programs and Services",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "CCR 53414(d) (1)(2)(C)",
+      "pages": [
+        28
+      ],
+      "pages_token": "28",
+      "match": "Deaf and Hearing Impaired: Disabled Students Programs 53414"
+    },
+    {
+      "name_raw": "Dental Technology (Dental assisting, dental hygiene)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        46
+      ],
+      "pages_token": "46",
+      "match": "Dental Technology"
+    },
+    {
+      "name_raw": "Developmental Disabilities: Disabled Students Programs and Services",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "CCR 53414(d) (1)(2)(B)",
+      "pages": [
+        28
+      ],
+      "pages_token": "28",
+      "match": "Developmental Disabilities: Disabled Students Programs and Services 53414"
+    },
+    {
+      "name_raw": "Diagnostic Medical Technology (Diagnostic medical sonography, neurodiagnostic technology, polysonographic technology)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        46
+      ],
+      "pages_token": "46",
+      "match": "Diagnostic Medical Technology"
+    },
+    {
+      "name_raw": "Diesel Mechanics",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        47
+      ],
+      "pages_token": "47",
+      "match": "Diesel Mechanics"
+    },
+    {
+      "name_raw": "Dietetic Technician",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        47
+      ],
+      "pages_token": "47",
+      "match": "Dietetic Technician"
+    },
+    {
+      "name_raw": "Dietetics/Nutritional Science",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        28
+      ],
+      "pages_token": "28",
+      "match": "Dietetics/Nutritional Science"
+    },
+    {
+      "name_raw": "Digital Fabrication Technician",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        47
+      ],
+      "pages_token": "47",
+      "match": "Digital Fabrication Technician"
+    },
+    {
+      "name_raw": "Disabled Student Programs and Services (DSPS)",
+      "cols": [
+        "any_degree",
+        "masters",
+        "specific_ba"
+      ],
+      "ccr": "CCR 53414(d) (1)(2)(e) (1-3)(f)",
+      "pages": [
+        28,
+        47,
+        62
+      ],
+      "pages_token": "28, 47, 62",
+      "match": "Disabled Student Programs and"
+    },
+    {
+      "name_raw": "Drafting/CADD (Computer Aided Drafting/Design), CAD (Computer Aided Design), CAD (Computer Aided Drafting)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        47
+      ],
+      "pages_token": "47",
+      "match": null
+    },
+    {
+      "name_raw": "Drama/Theater Arts",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        29
+      ],
+      "pages_token": "29",
+      "match": "Drama/Theater Arts"
+    },
+    {
+      "name_raw": "Earth Science",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        29
+      ],
+      "pages_token": "29",
+      "match": "Earth Science"
+    },
+    {
+      "name_raw": "Ecology",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        29
+      ],
+      "pages_token": "29",
+      "match": "Ecology"
+    },
+    {
+      "name_raw": "Economics",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        29
+      ],
+      "pages_token": "29",
+      "match": "Economics"
+    },
+    {
+      "name_raw": "Education",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        29
+      ],
+      "pages_token": "29",
+      "match": "Education"
+    },
+    {
+      "name_raw": "Electricity (Electrical power distribution)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        47
+      ],
+      "pages_token": "47",
+      "match": "Electricity"
+    },
+    {
+      "name_raw": "Electromechanical Technology (Industrial mechanical technology)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        47
+      ],
+      "pages_token": "47",
+      "match": "Electromechanical Technology"
+    },
+    {
+      "name_raw": "Electromicroscopy",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        47
+      ],
+      "pages_token": "47",
+      "match": "Electromicroscopy"
+    },
+    {
+      "name_raw": "Electronic Technology (Radio, television, computer repair, avionics)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        47
+      ],
+      "pages_token": "47",
+      "match": "Electronic Technology"
+    },
+    {
+      "name_raw": "Electronics",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        47
+      ],
+      "pages_token": "47",
+      "match": "Electronics"
+    },
+    {
+      "name_raw": "Electroplating",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        47
+      ],
+      "pages_token": "47",
+      "match": "Electroplating"
+    },
+    {
+      "name_raw": "Emergency Medical Technologies",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        47
+      ],
+      "pages_token": "47",
+      "match": "Emergency Medical Technologies"
+    },
+    {
+      "name_raw": "Engineering",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "CCR 53410.1",
+      "pages": [
+        30
+      ],
+      "pages_token": "30",
+      "match": "Engineering"
+    },
+    {
+      "name_raw": "Engineering Support (Surveying, engineering aides)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        47
+      ],
+      "pages_token": "47",
+      "match": "Engineering Support"
+    },
+    {
+      "name_raw": "Engineering Technology",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        30
+      ],
+      "pages_token": "30",
+      "match": "Engineering Technology"
+    },
+    {
+      "name_raw": "English",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        30
+      ],
+      "pages_token": "30",
+      "match": "English"
+    },
+    {
+      "name_raw": "English as a Second Language (ESL)",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        31
+      ],
+      "pages_token": "31",
+      "match": "English as a Second Language"
+    },
+    {
+      "name_raw": "English as a Second Language (ESL): Noncredit",
+      "cols": [
+        "specific_ba"
+      ],
+      "ccr": "CCR 53412(e)",
+      "pages": [
+        55
+      ],
+      "pages_token": "55",
+      "match": "English as a Second Language Noncredit 53412"
+    },
+    {
+      "name_raw": "Environmental Technologies (Environmental hazardous material technology, hazardous material abatement, environmentally conscious manufacturing, waste water pretreatment, air pollution control technology,  integrated waste management, water treatment, sewage treatment)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        47
+      ],
+      "pages_token": "47",
+      "match": "Environmental Technologies"
+    },
+    {
+      "name_raw": "Equine Science (Equine training, equitation, farrier science, pack horse management)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        47
+      ],
+      "pages_token": "47",
+      "match": "Equine Science"
+    },
+    {
+      "name_raw": "Estimating",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        47
+      ],
+      "pages_token": "47",
+      "match": "Estimating"
+    },
+    {
+      "name_raw": "Ethnic Studies",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        31
+      ],
+      "pages_token": "31",
+      "match": "Ethnic Studies"
+    },
+    {
+      "name_raw": "Fabric Care (Laundry and dry cleaning)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        47
+      ],
+      "pages_token": "47",
+      "match": "Fabric Care"
+    },
+    {
+      "name_raw": "Family and Consumer Studies/ Home Economics",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        31
+      ],
+      "pages_token": "31",
+      "match": "Family and Consumer Studies/ Home Economics"
+    },
+    {
+      "name_raw": "Fashion and Related Technologies (Merchandising, design, production)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        47
+      ],
+      "pages_token": "47",
+      "match": "Fashion and Related Technologies"
+    },
+    {
+      "name_raw": "Film and Media Studies",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        32
+      ],
+      "pages_token": "32",
+      "match": "Film and Media Studies"
+    },
+    {
+      "name_raw": "Fire Technology",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Fire Technology"
+    },
+    {
+      "name_raw": "Flight Attendant Training",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Flight Attendant Training"
+    },
+    {
+      "name_raw": "Fluid Mechanics Technology",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Fluid Mechanics Technology"
+    },
+    {
+      "name_raw": "Folk Dance",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Folk Dance"
+    },
+    {
+      "name_raw": "Foreign Languages",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        32
+      ],
+      "pages_token": "32",
+      "match": "Foreign Languages"
+    },
+    {
+      "name_raw": "Forestry/Natural Resources (Range management; soil, air and water resources; fish/wildlife management; parks and recreation)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Forestry/Natural Resources"
+    },
+    {
+      "name_raw": "Furniture Making",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Furniture Making"
+    },
+    {
+      "name_raw": "Geography",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        32
+      ],
+      "pages_token": "32",
+      "match": "Geography"
+    },
+    {
+      "name_raw": "Gerontology",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        32
+      ],
+      "pages_token": "32",
+      "match": "Gerontology"
+    },
+    {
+      "name_raw": "Graphic Arts (Desktop publishing)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Graphic Arts"
+    },
+    {
+      "name_raw": "Gunsmithing",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Gunsmithing"
+    },
+    {
+      "name_raw": "Health",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        33
+      ],
+      "pages_token": "33",
+      "match": "Health"
+    },
+    {
+      "name_raw": "Health and Safety: Noncredit",
+      "cols": [
+        "specific_ba"
+      ],
+      "ccr": "CCR 53412(f)",
+      "pages": [
+        55
+      ],
+      "pages_token": "55",
+      "match": "Health and Safety: Noncredit"
+    },
+    {
+      "name_raw": "Health Care Ancillaries (Medical assisting, hospice worker, home care aide, certified nurse aide, health aide, ward clerk, central service technology, childbirth educator, primary care associate, massage therapy)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Health Care Ancillaries"
+    },
+    {
+      "name_raw": "Health Information Technology (Medical record technology)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Health Information Technology"
+    },
+    {
+      "name_raw": "Health Services Director/Health Services Coordinator/College Nurse",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "CCR 53411",
+      "pages": [
+        33
+      ],
+      "pages_token": "33",
+      "match": "Health Services Director/Health"
+    },
+    {
+      "name_raw": "Heavy Duty Equipment Mechanics",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Heavy Duty Equipment Mechanics"
+    },
+    {
+      "name_raw": "History",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        33
+      ],
+      "pages_token": "33",
+      "match": "History"
+    },
+    {
+      "name_raw": "Home Economics: Noncredit",
+      "cols": [
+        "specific_ba"
+      ],
+      "ccr": "CCR 53412(g)",
+      "pages": [
+        53
+      ],
+      "pages_token": "53",
+      "match": "Home Economics: Noncredit"
+    },
+    {
+      "name_raw": "Homeland Security",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        33
+      ],
+      "pages_token": "33",
+      "match": "Homeland Security"
+    },
+    {
+      "name_raw": "Hotel and Motel Services",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Hotel and Motel Services"
+    },
+    {
+      "name_raw": "Humanities",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Humanities"
+    },
+    {
+      "name_raw": "Industrial Design",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Industrial Design"
+    },
+    {
+      "name_raw": "Industrial Maintenance",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Industrial Maintenance"
+    },
+    {
+      "name_raw": "Industrial Relations",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Industrial Relations"
+    },
+    {
+      "name_raw": "Industrial Safety",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Industrial Safety"
+    },
+    {
+      "name_raw": "Industrial Technology (Foundry occupations)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Industrial Technology"
+    },
+    {
+      "name_raw": "Instructional Design/Technology",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        34
+      ],
+      "pages_token": "34",
+      "match": "Instructional Design/Technology"
+    },
+    {
+      "name_raw": "Insurance",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Insurance"
+    },
+    {
+      "name_raw": "Interdisciplinary Studies",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        34
+      ],
+      "pages_token": "34",
+      "match": "Interdisciplinary Studies"
+    },
+    {
+      "name_raw": "Interdisciplinary-Basic Skills: Noncredit",
+      "cols": [
+        "specific_ba"
+      ],
+      "ccr": "CCR 53412(a)",
+      "pages": [
+        55
+      ],
+      "pages_token": "55",
+      "match": "Interdisciplinary-Basic Skills: Noncredit 53412"
+    },
+    {
+      "name_raw": "Interior Design",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Interior Design"
+    },
+    {
+      "name_raw": "Janitorial Services",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Janitorial Services"
+    },
+    {
+      "name_raw": "Jewelry",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Jewelry"
+    },
+    {
+      "name_raw": "Journalism",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        34
+      ],
+      "pages_token": "34",
+      "match": "Journalism"
+    },
+    {
+      "name_raw": "Kinesiology",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        34
+      ],
+      "pages_token": "34",
+      "match": "Kinesiology"
+    },
+    {
+      "name_raw": "Labor Relations",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Labor Relations"
+    },
+    {
+      "name_raw": "Law",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "CCR 53415",
+      "pages": [
+        35
+      ],
+      "pages_token": "35",
+      "match": "Law"
+    },
+    {
+      "name_raw": "Learning Assistance or Learning Skills Coordinators or Instructors, and Tutoring Coordinators",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        35
+      ],
+      "pages_token": "35",
+      "match": "Learning Assistance or Learning Skills"
+    },
+    {
+      "name_raw": "Learning Disabilities: Disabled Student Programs and Services",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "CCR 53414(d) (1)(2)",
+      "pages": [
+        35
+      ],
+      "pages_token": "35",
+      "match": "Learning Disabilities: Disabled Student Programs and Services 53414"
+    },
+    {
+      "name_raw": "Learning Disabilities: Specialist",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "CCR 53414(f)",
+      "pages": [
+        35
+      ],
+      "pages_token": "35",
+      "match": "Learning Disabilities: Specialist"
+    },
+    {
+      "name_raw": "Legal Assisting (Paralegal)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Legal Assisting"
+    },
+    {
+      "name_raw": "Library Science",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        35
+      ],
+      "pages_token": "35",
+      "match": "Library Science"
+    },
+    {
+      "name_raw": "Library Technology",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Library Technology"
+    },
+    {
+      "name_raw": "Licensed Vocational Nursing",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Licensed Vocational Nursing"
+    },
+    {
+      "name_raw": "Linguistics",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        36
+      ],
+      "pages_token": "36",
+      "match": "Linguistics"
+    },
+    {
+      "name_raw": "Locksmithing",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Locksmithing"
+    },
+    {
+      "name_raw": "Machine Tool Technology (Tool and die making)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Machine Tool Technology"
+    },
+    {
+      "name_raw": "Management",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        36
+      ],
+      "pages_token": "36",
+      "match": "Management"
+    },
+    {
+      "name_raw": "Manufacturing Technology (Quality control, process control)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Manufacturing Technology"
+    },
+    {
+      "name_raw": "Marine Diving Technology",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Marine Diving Technology"
+    },
+    {
+      "name_raw": "Marine Engine Technology",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Marine Engine Technology"
+    },
+    {
+      "name_raw": "Marketing",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        36
+      ],
+      "pages_token": "36",
+      "match": "Marketing"
+    },
+    {
+      "name_raw": "Martial Arts/Self-Defense",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Martial Arts/Self-Defense"
+    },
+    {
+      "name_raw": "Masonry (Concrete, cement work, bricklaying)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Masonry"
+    },
+    {
+      "name_raw": "Mass Communication",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        36
+      ],
+      "pages_token": "36",
+      "match": "Mass Communication"
+    },
+    {
+      "name_raw": "Materials Testing Technology (Destructive testing or nondestructive examination)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Materials Testing Technology"
+    },
+    {
+      "name_raw": "Mathematics",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        37
+      ],
+      "pages_token": "37",
+      "match": "Mathematics"
+    },
+    {
+      "name_raw": "Mathematics-Basic Skills: Noncredit",
+      "cols": [
+        "specific_ba"
+      ],
+      "ccr": "CCR 53412(b)",
+      "pages": [
+        56
+      ],
+      "pages_token": "56",
+      "match": "Mathematics-Basic Skills: Noncredit"
+    },
+    {
+      "name_raw": "Media Production (Broadcasting Technology)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Media Production"
+    },
+    {
+      "name_raw": "Medical Instrument Repair",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Medical Instrument Repair"
+    },
+    {
+      "name_raw": "Military Studies (Military Science)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Military Studies"
+    },
+    {
+      "name_raw": "Mining and Metallurgy (Oil field operations)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Mining and Metallurgy"
+    },
+    {
+      "name_raw": "Mortuary Science",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Mortuary Science"
+    },
+    {
+      "name_raw": "Motorcycle Repair",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Motorcycle Repair"
+    },
+    {
+      "name_raw": "Multimedia",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Multimedia"
+    },
+    {
+      "name_raw": "Music",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        37
+      ],
+      "pages_token": "37",
+      "match": "Music"
+    },
+    {
+      "name_raw": "Musical Instrument Repair",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Musical Instrument Repair"
+    },
+    {
+      "name_raw": "Music Management",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Music Management"
+    },
+    {
+      "name_raw": "Music Merchandising",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Music Merchandising"
+    },
+    {
+      "name_raw": "Nanotechnology",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        37
+      ],
+      "pages_token": "37",
+      "match": "Nanotechnology"
+    },
+    {
+      "name_raw": "Native American/American Indian Studies",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        37
+      ],
+      "pages_token": "37",
+      "match": "Native American/American Indian Studies"
+    },
+    {
+      "name_raw": "Nursing",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        38
+      ],
+      "pages_token": "38",
+      "match": "Nursing"
+    },
+    {
+      "name_raw": "Nursing Science/Clinical Practice",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Nursing Science/Clinical Practice"
+    },
+    {
+      "name_raw": "Nutritional Science/Dietetics",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "CCR 53410.1",
+      "pages": [
+        35,
+        47
+      ],
+      "pages_token": "35, 47",
+      "match": "Nutritional Science/Dietetics"
+    },
+    {
+      "name_raw": "Occupational Therapy Assisting",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Occupational Therapy Assisting"
+    },
+    {
+      "name_raw": "Office Technologies (Secretarial skills, office systems, word processing, computer  applications, automated office training)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        49
+      ],
+      "pages_token": "49",
+      "match": "Office Technologies"
+    },
+    {
+      "name_raw": "Older Adults: Noncredit",
+      "cols": [
+        "specific_ba"
+      ],
+      "ccr": "CCR 53412(h)",
+      "pages": [
+        56
+      ],
+      "pages_token": "56",
+      "match": "Older Adults: Noncredit"
+    },
+    {
+      "name_raw": "Ornamental Horticulture (Landscape horticulture, design, maintenance, landscape architecture, floristry, floral design)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Ornamental Horticulture"
+    },
+    {
+      "name_raw": "Parent Education: Noncredit",
+      "cols": [
+        "specific_ba"
+      ],
+      "ccr": "CCR 53412(i)",
+      "pages": [
+        56
+      ],
+      "pages_token": "56",
+      "match": "Parent Education: Noncredit"
+    },
+    {
+      "name_raw": "Peace Studies",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        38
+      ],
+      "pages_token": "38",
+      "match": "Peace Studies"
+    },
+    {
+      "name_raw": "Pharmacy Technology",
+      "cols": [
+        "specific_ba"
+      ],
+      "ccr": "",
+      "pages": [
+        56
+      ],
+      "pages_token": "56",
+      "match": "Pharmacy Technology"
+    },
+    {
+      "name_raw": "Philosophy",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        38
+      ],
+      "pages_token": "38",
+      "match": "Philosophy"
+    },
+    {
+      "name_raw": "Photographic Technology/ Commercial Photography",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Photographic Technology/ Commercial Photography"
+    },
+    {
+      "name_raw": "Photography",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        39
+      ],
+      "pages_token": "39",
+      "match": "Photography"
+    },
+    {
+      "name_raw": "Physical Disabilities: Disabled Student Programs and Services",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "CCR 53414(d)",
+      "pages": [
+        39
+      ],
+      "pages_token": "39",
+      "match": "Physical Disabilities: Disabled Student Programs and Services 53414"
+    },
+    {
+      "name_raw": "Physical Education",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        48
+      ],
+      "pages_token": "48",
+      "match": "Physical Education"
+    },
+    {
+      "name_raw": "Physical Education (Adapted): Disabled Student Programs and Services",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "CCR 53414(b)",
+      "pages": [
+        40
+      ],
+      "pages_token": "40",
+      "match": "Physical Education Disabled Students"
+    },
+    {
+      "name_raw": "Physical Sciences",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        40
+      ],
+      "pages_token": "40",
+      "match": "Physical Sciences"
+    },
+    {
+      "name_raw": "Physical Therapy Assisting",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Physical Therapy Assisting"
+    },
+    {
+      "name_raw": "Physics/Astronomy",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        40,
+        49
+      ],
+      "pages_token": "40, 49",
+      "match": "Physics/Astronomy"
+    },
+    {
+      "name_raw": "Piano Tuning and Repair",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Piano Tuning and Repair"
+    },
+    {
+      "name_raw": "Plastics",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Plastics"
+    },
+    {
+      "name_raw": "Plumbing",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Plumbing"
+    },
+    {
+      "name_raw": "Political Science",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        40
+      ],
+      "pages_token": "40",
+      "match": "Political Science"
+    },
+    {
+      "name_raw": "Printing Technology (Typography, composition, printing)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Printing Technology"
+    },
+    {
+      "name_raw": "Private Security (Security management, safety/ accident control, hazardous substance management crime prevention)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Private Security"
+    },
+    {
+      "name_raw": "Prosthetics and Orthotics",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Prosthetics and Orthotics"
+    },
+    {
+      "name_raw": "Psychiatric Technician",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Psychiatric Technician"
+    },
+    {
+      "name_raw": "Psychology",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        41
+      ],
+      "pages_token": "41",
+      "match": "Psychology"
+    },
+    {
+      "name_raw": "Public Relations",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Public Relations"
+    },
+    {
+      "name_raw": "Public Safety",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Public Safety"
+    },
+    {
+      "name_raw": "Radiation Therapy",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Radiation Therapy"
+    },
+    {
+      "name_raw": "Radiological Technology",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Radiological Technology"
+    },
+    {
+      "name_raw": "Reading",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        41
+      ],
+      "pages_token": "41",
+      "match": "Reading"
+    },
+    {
+      "name_raw": "Reading-Basic Skills: Noncredit",
+      "cols": [
+        "specific_ba"
+      ],
+      "ccr": "CCR 53412(c)",
+      "pages": [
+        57
+      ],
+      "pages_token": "57",
+      "match": "Reading-Basic Skills: Noncredit"
+    },
+    {
+      "name_raw": "Real Estate",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Real Estate"
+    },
+    {
+      "name_raw": "Recreation Administration",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        41
+      ],
+      "pages_token": "41",
+      "match": "Recreation Administration"
+    },
+    {
+      "name_raw": "Registered Behavior Technician",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        41
+      ],
+      "pages_token": "41",
+      "match": "Registered Behavior Technician"
+    },
+    {
+      "name_raw": "Registered Veterinary Technician",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Registered Veterinary Technician"
+    },
+    {
+      "name_raw": "Rehabilitation Technician",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Rehabilitation Technician"
+    },
+    {
+      "name_raw": "Religious Studies",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        42
+      ],
+      "pages_token": "42",
+      "match": "Religious Studies"
+    },
+    {
+      "name_raw": "Respiratory Technician",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Respiratory Technician"
+    },
+    {
+      "name_raw": "Respiratory Technologies",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Respiratory Technologies"
+    },
+    {
+      "name_raw": "Restaurant Management",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Restaurant Management"
+    },
+    {
+      "name_raw": "Retailing (Purchasing, merchandising, sales)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Retailing"
+    },
+    {
+      "name_raw": "Robotics (Computer integrated manufacturing)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Robotics"
+    },
+    {
+      "name_raw": "Sanitation and Public Health Technology",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        50
+      ],
+      "pages_token": "50",
+      "match": "Sanitation and Public Health Technology"
+    },
+    {
+      "name_raw": "Search and Rescue",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        51
+      ],
+      "pages_token": "51",
+      "match": "Search and Rescue"
+    },
+    {
+      "name_raw": "Sheet Metal",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        51
+      ],
+      "pages_token": "51",
+      "match": "Sheet Metal"
+    },
+    {
+      "name_raw": "Ship and Boat Building and Repair",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        51
+      ],
+      "pages_token": "51",
+      "match": "Ship and Boat Building and Repair"
+    },
+    {
+      "name_raw": "Shoe Rebuilding",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        51
+      ],
+      "pages_token": "51",
+      "match": "Shoe Rebuilding"
+    },
+    {
+      "name_raw": "Sign Language, American",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        51
+      ],
+      "pages_token": "51",
+      "match": "Sign Language, American"
+    },
+    {
+      "name_raw": "Sign Language/ English Interpreting",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        51
+      ],
+      "pages_token": "51",
+      "match": "Sign Language/ English Interpreting"
+    },
+    {
+      "name_raw": "Small Business Development (Entrepreneurship)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        51
+      ],
+      "pages_token": "51",
+      "match": "Small Business Development"
+    },
+    {
+      "name_raw": "Small Engine Mechanics",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        51
+      ],
+      "pages_token": "51",
+      "match": "Small Engine Mechanics"
+    },
+    {
+      "name_raw": "Social Science",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        42
+      ],
+      "pages_token": "42",
+      "match": "Social Science"
+    },
+    {
+      "name_raw": "Sociology",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        42
+      ],
+      "pages_token": "42",
+      "match": "Sociology"
+    },
+    {
+      "name_raw": "Specialized Instruction (Disabled Student Programs and Services): Noncredit",
+      "cols": [
+        "masters",
+        "specific_ba"
+      ],
+      "ccr": "CCR 53414(e) (3)",
+      "pages": [
+        42,
+        57
+      ],
+      "pages_token": "42, 57",
+      "match": "Specialized Instruction"
+    },
+    {
+      "name_raw": "Specialized Instruction (Disabled Student Programs and Services): Vocational Noncredit",
+      "cols": [
+        "masters",
+        "specific_ba"
+      ],
+      "ccr": "CCR 53414(e) (3)",
+      "pages": [
+        43,
+        57
+      ],
+      "pages_token": "43, 57",
+      "match": null
+    },
+    {
+      "name_raw": "Speech Communication (Communication Studies)",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        32,
+        52
+      ],
+      "pages_token": "32, 52",
+      "match": "Speech Communication"
+    },
+    {
+      "name_raw": "Speech Language Pathology",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        43
+      ],
+      "pages_token": "43",
+      "match": "Speech Language Pathology"
+    },
+    {
+      "name_raw": "Speech Language Pathology: Disabled Student Programs and Services",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "CCR 53414(c)",
+      "pages": [
+        43
+      ],
+      "pages_token": "43",
+      "match": "Speech Language Pathology: Disabled Student Programs and 53414 Services"
+    },
+    {
+      "name_raw": "Stagecraft",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        51
+      ],
+      "pages_token": "51",
+      "match": "Stagecraft"
+    },
+    {
+      "name_raw": "Steamfitting",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        51
+      ],
+      "pages_token": "51",
+      "match": "Steamfitting"
+    },
+    {
+      "name_raw": "Supply Chain Technology",
+      "cols": [
+        "specific_ba"
+      ],
+      "ccr": "",
+      "pages": [
+        51
+      ],
+      "pages_token": "51",
+      "match": "Supply Chain Technology"
+    },
+    {
+      "name_raw": "Surgical Technology",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        51
+      ],
+      "pages_token": "51",
+      "match": "Surgical Technology"
+    },
+    {
+      "name_raw": "Telecommunication Technology",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        51
+      ],
+      "pages_token": "51",
+      "match": "Telecommunication Technology"
+    },
+    {
+      "name_raw": "Theater Arts",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        43,
+        52
+      ],
+      "pages_token": "43, 52",
+      "match": "Theater Arts"
+    },
+    {
+      "name_raw": "Transportation",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        51
+      ],
+      "pages_token": "51",
+      "match": "Transportation"
+    },
+    {
+      "name_raw": "Travel Services (Dispatching)",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        51
+      ],
+      "pages_token": "51",
+      "match": "Travel Services"
+    },
+    {
+      "name_raw": "Upholstering",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        51
+      ],
+      "pages_token": "51",
+      "match": "Upholstering"
+    },
+    {
+      "name_raw": "Vision Care Technology",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        51
+      ],
+      "pages_token": "51",
+      "match": "Vision Care Technology"
+    },
+    {
+      "name_raw": "Vocational (short-term): Noncredit",
+      "cols": [
+        "specific_ba"
+      ],
+      "ccr": "CCR 53412(j)",
+      "pages": [
+        58
+      ],
+      "pages_token": "58",
+      "match": "Vocational"
+    },
+    {
+      "name_raw": "Watch and Clock Repair",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        51
+      ],
+      "pages_token": "51",
+      "match": "Watch and Clock Repair"
+    },
+    {
+      "name_raw": "Welding",
+      "cols": [
+        "any_degree"
+      ],
+      "ccr": "",
+      "pages": [
+        51
+      ],
+      "pages_token": "51",
+      "match": "Welding"
+    },
+    {
+      "name_raw": "Women’s Studies",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "",
+      "pages": [
+        43
+      ],
+      "pages_token": "43",
+      "match": "Women’s Studies"
+    },
+    {
+      "name_raw": "Work Experience Instructors or Coordinators",
+      "cols": [
+        "masters"
+      ],
+      "ccr": "CCR 53416",
+      "pages": [
+        43
+      ],
+      "pages_token": "43",
+      "match": "Work Experience Instructors"
+    },
+    {
+      "name_raw": "Writing-Basic Skills: Noncredit",
+      "cols": [
+        "specific_ba"
+      ],
+      "ccr": "CCR 53412(c)",
+      "pages": [
+        58
+      ],
+      "pages_token": "58",
+      "match": "Writing-Basic Skills: Noncredit"
+    }
+  ]
+}
