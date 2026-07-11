@@ -1,8 +1,8 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-07-10T16:09:22Z",
-  "count": 28601,
+  "_synced_at": "2026-07-11T08:16:44Z",
+  "count": 28653,
   "curations": {
     "AERO M10BA": {
       "merge_into": "AERO Z1001",
@@ -1944,6 +1944,11 @@
       "unified_title": "Hydraulics (Fluid Power)",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "AGRI M1115": {
+      "unified_title": "Integrated Pest Management",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "AGRI M1119": {
       "unified_title": "The Wines of Italy",
@@ -5069,6 +5074,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-24T14:22:04.109275+00:00"
     },
+    "ARTS M1043": {
+      "discipline": "Photography",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
     "ARTS M1045": {
       "unified_title": "Advanced Figure Drawing",
       "reviewed_by": "map@rccd.edu",
@@ -6319,6 +6329,11 @@
       "unified_title": "Bookbinding & Book Arts 2",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M1166": {
+      "discipline": "Multimedia",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "ARTS M1169": {
       "unified_title": "Advanced Photography/Graphic Arts Newspaper Staff",
@@ -8552,6 +8567,11 @@
       "merge_into": "ARTS M1506",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:44:13.007346+00:00"
+    },
+    "ARTS M1300": {
+      "discipline": "Graphic Arts",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "ARTS M1301": {
       "unified_title": "Graphic Design 2",
@@ -14305,6 +14325,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "AUTB M10EG": {
+      "unified_title": "Intermediate Collision Repair: Parts, Metal, and Frame",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
     "AUTB M10EL": {
       "merge_into": "AUTB M1038",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -19058,6 +19083,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "AVIA M1022": {
+      "discipline": "Automotive Technology",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
     "AVIA M1027": {
       "unified_title": "Human Factors and Risk Management in Aviation",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -20017,6 +20047,11 @@
       "merge_into": "AVIA M1045",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "AVIA M10PH": {
+      "unified_title": "Private Pilot Ground School",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "AVIA M10PI": {
       "merge_into": "AVIA Z1003",
@@ -28302,6 +28337,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "CISC M1090": {
+      "discipline": "Computer Information Systems",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
     "CISC M1092": {
       "merge_into": "GRAF M1051",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -29393,6 +29433,26 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "CNSC M10AK": {
+      "discipline": "Carpentry",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
+    "CNSC M10AR": {
+      "discipline": "Carpentry",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
+    "CNSC M10AS": {
+      "discipline": "Carpentry",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
+    "CNSC M10AV": {
+      "discipline": "Carpentry",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
     "CNSC M10AY": {
       "merge_into": "CNSC Z1003",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -29423,6 +29483,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "CNSC M10BN": {
+      "discipline": "Carpentry",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
     "CNSC M10BO": {
       "merge_into": "CNSC Z1003",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -29438,10 +29503,30 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "CNSC M10BS": {
+      "discipline": "Carpentry",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
+    "CNSC M10BX": {
+      "discipline": "Carpentry",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
+    "CNSC M10BY": {
+      "discipline": "Carpentry",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
     "CNSC M10BZ": {
       "merge_into": "CNSC Z1002",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "CNSC M10CA": {
+      "discipline": "Carpentry",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "CNSC M10CB": {
       "merge_into": "MACH Z1018",
@@ -30350,6 +30435,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "CNST M10CZ": {
+      "unified_title": "Air and Moisture Barrier Installation",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
     "CNST M10DA": {
       "merge_into": "HVAC Z1019",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -30430,6 +30520,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "CNST M10EM": {
+      "unified_title": "Light Gauge Welding (AWS) B",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
     "CNST M10EN": {
       "merge_into": "WELD M1092",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -30454,6 +30549,11 @@
       "merge_into": "WELD M1074",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "CNST M10FH": {
+      "unified_title": "Commercial Blueprint Reading",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "CNST M10FJ": {
       "merge_into": "CNST Z1020",
@@ -39991,6 +40091,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "CSIS M10TT": {
+      "unified_title": "Computer Business Applications for Windows",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
     "CSIS M10TU": {
       "merge_into": "CSIS Z1060",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -41062,6 +41167,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "CSIS M11MF": {
+      "unified_title": "Computing Fundamentals",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
     "CSIS M11ML": {
       "merge_into": "CSIS M1318",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -42068,6 +42178,11 @@
       "merge_into": "CSIS M1050",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "CSIS M12BX": {
+      "unified_title": "Network Fundamentals",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "CSIS M12BZ": {
       "merge_into": "CSIS Z1138",
@@ -45415,6 +45530,11 @@
       "merge_into": "CULN M1045",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "CULN M10GH": {
+      "unified_title": "Fundamentals of Baking Theory",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "CULN M10GI": {
       "merge_into": "CULN M1039",
@@ -52219,6 +52339,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "DRAF M10IH": {
+      "unified_title": "Introduction to Engineering Design",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
     "DRAF M10IK": {
       "merge_into": "DRAF Z1028",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -57359,6 +57484,11 @@
       "unified_title": "Introduction to Microcontrollers and Embedded Design",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ELET M1074": {
+      "discipline": "Construction Technology",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "ELET M10AC": {
       "merge_into": "IMNT M1006",
@@ -63550,9 +63680,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ESCI M1001": {
-      "unified_title": "Solar Installer Level 1 - Journeyman",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Construction Technology",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00",
+      "unified_title": "Solar Installer Level 1 - Journeyman"
     },
     "ESCI M1002": {
       "unified_title": "Env St 101",
@@ -74784,6 +74915,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "FIRE M10TU": {
+      "unified_title": "Firefighter Pre-Service Academy",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
     "FIRE M10TZ": {
       "merge_into": "FIRE Z1059",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -74798,6 +74934,11 @@
       "merge_into": "FIRE M1326",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FIRE M10UE": {
+      "unified_title": "Fire Service In-Service Training: Administration",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "FIRE M10UG": {
       "merge_into": "FIRE Z1079",
@@ -75463,6 +75604,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "FIRE M11AC": {
+      "unified_title": "Fire Service Career Development and Promotions",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
     "FIRE M11AJ": {
       "merge_into": "FIRE M1069",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -75512,6 +75658,11 @@
       "merge_into": "FIRE M1193",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FIRE M11BR": {
+      "unified_title": "Fire Service In-Service Training: Command and Control",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "FIRE M11BT": {
       "merge_into": "FIRE M1325",
@@ -75957,6 +76108,16 @@
       "merge_into": "FIRE M1385",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FIRE M11JW": {
+      "unified_title": "Fire Service In-Service Training: Special Operations",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
+    "FIRE M11JX": {
+      "unified_title": "Fire Service In-Service Training: Operations",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "FIRE M11JY": {
       "merge_into": "FIRE Z1078",
@@ -90744,6 +90905,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HVAC M1038": {
+      "discipline": "Construction Technology",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
+    "HVAC M1039": {
+      "discipline": "Construction Technology",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
     "HVAC M1041": {
       "unified_title": "Introduction to Direct Digital HVAC Controls",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -90843,6 +91014,16 @@
       "merge_into": "HVAC Z1009",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HVAC M10DM": {
+      "unified_title": "Basic Refrigeration and Air Conditioning Laboratory",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
+    "HVAC M10DN": {
+      "unified_title": "Basic Refrigeration and Air Conditioning Theory",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "HVAC M10DO": {
       "merge_into": "ELET M1004",
@@ -95223,6 +95404,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "INDT M10CY": {
+      "unified_title": "Introduction to Networks",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
     "INDT M10DC": {
       "merge_into": "AUTD Z1003",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -95372,6 +95558,11 @@
       "merge_into": "INDT Z1010",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "INDT M10FZ": {
+      "discipline": "Auto Body Technology",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "INDT M10GD": {
       "merge_into": "INDT Z1017",
@@ -95892,6 +96083,11 @@
       "merge_into": "INDT M1076",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "INDT M10RV": {
+      "discipline": "Engineering Technology",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "INDT M10RZ": {
       "merge_into": "INDT Z1006",
@@ -107506,6 +107702,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "MACH M10CZ": {
+      "unified_title": "Technology and Application of Machining 1A",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
+    "MACH M10DA": {
+      "unified_title": "Technology and Application of Machining 2A",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
     "MACH M10DE": {
       "merge_into": "MACH Z1013",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -108312,9 +108518,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "MANU M1028": {
-      "unified_title": "Print Interpretation & Sketching (Blueprint 1)",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Machine Tool Technology",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00",
+      "unified_title": "Print Interpretation & Sketching (Blueprint 1)"
     },
     "MANU M1031": {
       "unified_title": "Advanced CNC Mill Programming, Set-Up, and Operation",
@@ -109530,6 +109737,11 @@
       "merge_into": "MATH Z1026",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "MATH M10ND": {
+      "unified_title": "Calculus 1",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "MATH M10NF": {
       "merge_into": "MATH Z1001",
@@ -111843,6 +112055,11 @@
       "merge_into": "BUSI M1291",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "MGMT M1023": {
+      "unified_title": "Human Resources Management",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "MGMT M1025": {
       "unified_title": "Human Relations (Developing Supervisory Leadership)",
@@ -124238,6 +124455,11 @@
       "merge_into": "OTEC M1006",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "OTEC M1222": {
+      "unified_title": "Microsoft Word",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "OTEC M1224": {
       "unified_title": "Microcomputer Office Applications: Desktop Publishing",
@@ -136905,6 +137127,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "THEA M1087": {
+      "discipline": "Stagecraft",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
     "THEA M1088": {
       "unified_title": "Rep of Emma to Book of Will Stagecraft",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -140814,6 +141041,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "WELD M1066": {
+      "discipline": "Carpentry",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
     "WELD M1069": {
       "unified_title": "Beginning TIG, MIG, and Blueprint Reading",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -140855,9 +141087,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "WELD M1092": {
-      "unified_title": "Light Gage Welding AWS (B)",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Carpentry",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00",
+      "unified_title": "Light Gage Welding AWS (B)"
     },
     "WELD M1093": {
       "unified_title": "Tungsten Inert Gas (TIG) Welding",
@@ -141144,6 +141377,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "WELD M10FI": {
+      "discipline": "Auto Body Technology",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
     "WELD M10FJ": {
       "merge_into": "WELD Z1015",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -141208,6 +141446,11 @@
       "merge_into": "WELD Z1018",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "WELD M10GI": {
+      "unified_title": "Introduction to Gas Metal Arc Welding (GMAW) and Flux Cored Arc Welding (FCAW)",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "WELD M10GJ": {
       "merge_into": "WELD M1037",
@@ -141413,6 +141656,11 @@
       "merge_into": "WELD M1041",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "WELD M10IK": {
+      "unified_title": "Shielded Metal Arc Welding and Cutting",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "WELD M10IP": {
       "merge_into": "WELD M1061",
@@ -142304,6 +142552,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "WELD M10VS": {
+      "discipline": "Agriculture",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
     "WELD M10VU": {
       "merge_into": "WELD Z1055",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -142353,6 +142606,11 @@
       "merge_into": "INDT Z1045",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "WELD M10WW": {
+      "discipline": "Agriculture",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "WELD M10WZ": {
       "merge_into": "WELD Z1014",
@@ -142473,6 +142731,11 @@
       "unified_title": "Heavy Plate, Structural Steel and Welding Certification",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "WELD M1121": {
+      "discipline": "Carpentry",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "WELD M1123": {
       "unified_title": "Welding (General)",

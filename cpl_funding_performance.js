@@ -4,11 +4,11 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-07-10",
+ "as_of": "2026-07-11",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified (context, not a priority metric) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 41384,
+  "pe": 41452,
   "p2": 4775,
   "p3": 16310
  },
@@ -125,7 +125,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Cuesta": {
-   "pe": 93,
+   "pe": 96,
    "p2": null,
    "p2_suppressed": true,
    "p3": null,
@@ -149,7 +149,7 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Desert": {
-   "pe": 389,
+   "pe": 391,
    "p2": 37,
    "p3": 37
   },
@@ -186,7 +186,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Fresno City": {
-   "pe": 486,
+   "pe": 549,
    "p2": 0,
    "p3": 0
   },

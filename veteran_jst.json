@@ -1,14 +1,14 @@
 {
-  "scraped_at": "2026-07-10T16:09:07.152935+00:00",
+  "scraped_at": "2026-07-11T08:16:36.710935+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25683,
-    "star_colleges": 53
+    "jst": 25753,
+    "star_colleges": 54
   },
-  "computed_star_colleges": 53,
+  "computed_star_colleges": 54,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 296,
@@ -112,7 +112,7 @@
     },
     "College of the Desert": {
       "vets": 235,
-      "jst": 356,
+      "jst": 358,
       "star": true
     },
     "Cypress College": {
@@ -160,14 +160,14 @@
       "jst": 494,
       "star": true
     },
-    "Fresno City College": {
-      "vets": 724,
-      "jst": 491,
-      "star": false
-    },
     "Clovis Community College": {
       "vets": 117,
       "jst": 187,
+      "star": true
+    },
+    "Fresno City College": {
+      "vets": 724,
+      "jst": 556,
       "star": true
     },
     "Fullerton College": {
@@ -412,7 +412,7 @@
     },
     "Cuesta College": {
       "vets": 206,
-      "jst": 161,
+      "jst": 164,
       "star": true
     },
     "Los Medanos College": {

@@ -1,8 +1,48 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-07-09T23:07:09Z",
- "count": 23,
+ "_generated_at": "2026-07-11T08:17:46Z",
+ "count": 57,
  "suggestions": {
+  "ARMEN 1: Beginning Armenian": [
+   {
+    "kind": "course",
+    "title": "Beginning Armenian",
+    "code": "ARMEN 1",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "ARMEN 2: High-Beginning Armenian": [
+   {
+    "kind": "course",
+    "title": "High-Beginning Armenian",
+    "code": "ARMEN 2",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "ASL 1: Beginning American Sign Language": [
+   {
+    "kind": "course",
+    "title": "Beginning American Sign Language",
+    "code": "ASL 1",
+    "share": 1.0,
+    "colleges": 26,
+    "scoped": true
+   }
+  ],
+  "ASL 2: High-Beginning American Sign Language": [
+   {
+    "kind": "course",
+    "title": "High-Beginning American Sign Language",
+    "code": "ASL 2",
+    "share": 1.0,
+    "colleges": 24,
+    "scoped": true
+   }
+  ],
   "AT 10: Technical Computer Applications": [
    {
     "kind": "course",
@@ -40,6 +80,86 @@
     "code": "AT 40",
     "share": 1.0,
     "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "BIOL 55: Introduction to the Biology of Humans": [
+   {
+    "kind": "course",
+    "title": "Introduction to the Biology of Humans",
+    "code": "BIOL 55",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "BT 104: Ten-Key Calculations": [
+   {
+    "kind": "course",
+    "title": "Ten-Key Calculations",
+    "code": "BT 104",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "BT 106: Computer Keyboarding": [
+   {
+    "kind": "course",
+    "title": "Computer Keyboarding",
+    "code": "BT 106",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "BT 112: Business English": [
+   {
+    "kind": "course",
+    "title": "Business English",
+    "code": "BT 112",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "BT 115: Refresher Math": [
+   {
+    "kind": "course",
+    "title": "Refresher Math",
+    "code": "BT 115",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "BT 1: Computer Document Processing I": [
+   {
+    "kind": "course",
+    "title": "Computer Document Processing I",
+    "code": "BT 1",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "BT 28: Microsoft Word I": [
+   {
+    "kind": "course",
+    "title": "Microsoft Word I",
+    "code": "BT 28",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "BT 29: Microsoft Word II": [
+   {
+    "kind": "course",
+    "title": "Microsoft Word II",
+    "code": "BT 29",
+    "share": 1.0,
+    "colleges": 2,
     "scoped": true
    }
   ],
@@ -93,6 +213,26 @@
     "scoped": true
    }
   ],
+  "CHIN 1: Beginning Chinese": [
+   {
+    "kind": "course",
+    "title": "Beginning Chinese",
+    "code": "CHIN 1",
+    "share": 1.0,
+    "colleges": 13,
+    "scoped": true
+   }
+  ],
+  "CHIN 2: High-Beginning Chinese": [
+   {
+    "kind": "course",
+    "title": "High-Beginning Chinese",
+    "code": "CHIN 2",
+    "share": 1.0,
+    "colleges": 11,
+    "scoped": true
+   }
+  ],
   "CONS 50A: Basic Residential Construction": [
    {
     "kind": "course",
@@ -100,6 +240,16 @@
     "code": "CONS 50A",
     "share": 1.0,
     "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ECON 25: Introduction to Economics": [
+   {
+    "kind": "course",
+    "title": "Introduction to Economics",
+    "code": "ECON 25",
+    "share": 1.0,
+    "colleges": 5,
     "scoped": true
    }
   ],
@@ -143,6 +293,26 @@
     "scoped": true
    }
   ],
+  "FRENCH 1: Beginning French": [
+   {
+    "kind": "course",
+    "title": "Beginning French",
+    "code": "FRENCH 1",
+    "share": 1.0,
+    "colleges": 13,
+    "scoped": true
+   }
+  ],
+  "FRENCH 2: High-Beginning French": [
+   {
+    "kind": "course",
+    "title": "High-Beginning French",
+    "code": "FRENCH 2",
+    "share": 1.0,
+    "colleges": 13,
+    "scoped": true
+   }
+  ],
   "FSM 19: Work Experience": [
    {
     "kind": "course",
@@ -150,6 +320,26 @@
     "code": "FSM 19",
     "share": 1.0,
     "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "GERMAN 1: Beginning German": [
+   {
+    "kind": "course",
+    "title": "Beginning German",
+    "code": "GERMAN 1",
+    "share": 1.0,
+    "colleges": 4,
+    "scoped": true
+   }
+  ],
+  "GERMAN 2: High-Beginning German": [
+   {
+    "kind": "course",
+    "title": "High-Beginning German",
+    "code": "GERMAN 2",
+    "share": 1.0,
+    "colleges": 4,
     "scoped": true
    }
   ],
@@ -168,6 +358,26 @@
     "code": "HLTH 3",
     "share": 1.0,
     "colleges": 6,
+    "scoped": true
+   }
+  ],
+  "HMONG 1: Beginning Hmong": [
+   {
+    "kind": "course",
+    "title": "Beginning Hmong",
+    "code": "HMONG 1",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "HMONG 2: High-Beginning Hmong": [
+   {
+    "kind": "course",
+    "title": "High-Beginning Hmong",
+    "code": "HMONG 2",
+    "share": 1.0,
+    "colleges": 1,
     "scoped": true
    }
   ],
@@ -221,6 +431,84 @@
     "scoped": true
    }
   ],
+  "JAPAN 1: Beginning Japanese": [
+   {
+    "kind": "course",
+    "title": "Beginning Japanese",
+    "code": "JAPAN 1",
+    "share": 1.0,
+    "colleges": 10,
+    "scoped": true
+   }
+  ],
+  "JAPAN 2: High-Beginning Japanese": [
+   {
+    "kind": "course",
+    "title": "High-Beginning Japanese",
+    "code": "JAPAN 2",
+    "share": 1.0,
+    "colleges": 9,
+    "scoped": true
+   }
+  ],
+  "PHIL 1A: Theories of Knowledge and Reality": [
+   {
+    "kind": "cid",
+    "id": "PHIL 100",
+    "title": "Introduction to Philosophy",
+    "code": "PHIL 1A"
+   }
+  ],
+  "PHIL 1B: Social and Political Philosophy": [
+   {
+    "kind": "cid",
+    "id": "POLS 120",
+    "title": "Introduction to Political Theory and Thought",
+    "code": "PHIL 1B"
+   }
+  ],
+  "PHIL 1C: Ethics": [
+   {
+    "kind": "cid",
+    "id": "PHIL 120",
+    "title": "Introduction to Ethics",
+    "code": "PHIL 1C"
+   }
+  ],
+  "PHIL 2: Critical Reasoning and Analytical Writing": [
+   {
+    "kind": "course",
+    "title": "Critical Reasoning and Analytic Writing",
+    "code": "PHIL 2",
+    "share": 1.0,
+    "colleges": 25,
+    "scoped": true
+   }
+  ],
+  "PHIL 3A: Ancient Philosophy": [
+   {
+    "kind": "cid",
+    "id": "PHIL 130",
+    "title": "History of Ancient Philosophy",
+    "code": "PHIL 3A"
+   }
+  ],
+  "PHIL 3B: Modern Philosophy": [
+   {
+    "kind": "cid",
+    "id": "PHIL 140",
+    "title": "History of Modern Philosophy",
+    "code": "PHIL 3B"
+   }
+  ],
+  "PHIL 6: Introduction to Logic": [
+   {
+    "kind": "cid",
+    "id": "PHIL 210",
+    "title": "Symbolic Logic",
+    "code": "PHIL 6"
+   }
+  ],
   "PHOTO 6: Digital Imaging Fundamentals": [
    {
     "kind": "course",
@@ -229,6 +517,42 @@
     "share": 1.0,
     "colleges": 1,
     "scoped": true
+   }
+  ],
+  "PORT 1: Beginning Portuguese": [
+   {
+    "kind": "course",
+    "title": "BEGINNING PORTUGUESE",
+    "code": "PORT 1",
+    "share": 1.0,
+    "colleges": 4,
+    "scoped": true
+   }
+  ],
+  "PORT 2: High-Beginning Portuguese": [
+   {
+    "kind": "course",
+    "title": "HIGH-BEGINNING PORTUGUESE",
+    "code": "PORT 2",
+    "share": 1.0,
+    "colleges": 4,
+    "scoped": true
+   }
+  ],
+  "SPAN 1: Beginning Spanish": [
+   {
+    "kind": "cid",
+    "id": "SPAN 100",
+    "title": "Elementary Spanish I",
+    "code": "SPAN 1"
+   }
+  ],
+  "SPAN 2: High-Beginning Spanish": [
+   {
+    "kind": "cid",
+    "id": "SPAN 110",
+    "title": "Elementary Spanish II",
+    "code": "SPAN 2"
    }
   ]
  }
