@@ -34,6 +34,7 @@ kb/remint_out/coci_unified_courses.json
 # Row audit: full per-row breakdown is local-only for debugging; latest.json
 # (slim summary + full cluster cards) and <date>.md are the gitted artifacts.
 kb/row_audit/*.full.json
+kb/ccr_out/*/batches/
 
 # Exhibit audit: same shape as row_audit — full per-row breakdown is the
 # local-only debugging artifact; latest.json + <date>.md are gitted.
