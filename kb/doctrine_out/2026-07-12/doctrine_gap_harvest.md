@@ -32,9 +32,12 @@ v0.3.
 > instructor, bridged to credit via **Credit-by-Exam**. It's a **CPL
 > mechanism**, not a band-purity defect. Codified as the **D-3 mirror
 > carve-out** (Doctrine v0.3). Catalog-wide impact (via `kb/_detect_crnc_mirrors.py`):
-> **1,337 identities are pure CR/NC mirrors** (D-3 suppressed → kept as one CPL
-> pairing), 200 partial (curator), 1,299 genuine band-mix (split stands). The
-> 707 wave split_candidates re-adjudicated under the new rule (`kb/crnc_out/2026-07-12/`).
+> **968 identities are pure CR/NC mirrors** (D-3 suppressed → CPL Credit-by-Exam
+> pairings; the naive first count of 1,337 was inflated by same-subject/different-
+> number false pairs — the detector was hardened to be number-aware). 143 partial,
+> 1,725 genuine band-mix. The 296 hard cross-college split_candidates were
+> re-adjudicated per-item: **230 genuine over-merges** (229/230 skeptic-confirmed),
+> **54 distributed mirrors kept**, 12 curator. Receipt: `kb/crnc_out/2026-07-12/`.
 
 
 **The pattern.** A college offers the *same course* in both a **Credit** band and

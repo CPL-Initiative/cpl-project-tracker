@@ -1,0 +1,1847 @@
+{
+ "_about": "CR/NC mirror re-adjudication under Doctrine v0.3 (Q-CREDITNC resolved). The 296 cross-college ambiguous CR/NC split_candidates from waves 1-3, re-judged per-item by agents reading real memberships, with skeptics guarding against UNDER-splitting. Plus the detector-verify that hardened kb/_detect_crnc_mirrors.py (subject-exact -> number-aware matching).",
+ "_at": "2026-07-12",
+ "_scope": "296 cross-college CR/NC split_candidates (the same-college ones are mechanically settled by the detector)",
+ "_agent_calls": {
+  "genuine_split": 230,
+  "mirror_keep": 54,
+  "needs_curator": 12
+ },
+ "_skeptic": {
+  "checked": 230,
+  "upheld": 229,
+  "refuted": [
+   "CSIS M1459"
+  ]
+ },
+ "_detector_verify": [
+  {
+   "checked": 10,
+   "true_mirrors": 8,
+   "false_positives": [
+    "CULN M1070",
+    "AGRI M1011"
+   ],
+   "notes": "Slice = odd indices of strong_sample: ELET M1002, SLNA M1061, CNST M1065, CSIS M1196, CULN M1070, PHOT M1009, AGRI M1011, AUTO M1100, WELD M1106, BUSI M9067. Test applied: does EVERY noncredit member have a same-college, same-subject credit sibling (D-3 mirror carve-out)?\n\nTRUE mirrors (8): ELET M1002 (SJ Delta ELECT 11 CR ⟷ ELECT 111 NC 0.0u, same TOP 0934.00); CNST M1065 (COD ACT 27 CR ⟷ ACT 327 NC, TOP 0957.00); CSIS M1196 (De Anza CIS 064E CR ⟷ CIS 364E NC, TOP 0707.20); PHOT M1009 (De Anza PHTG 3 CR ⟷ PHTG 303 NC, TOP 1012.00); AUTO M1100 (De Anza AUTO 060B CR ⟷ AUTO 360B NC, TOP 0948.00); WELD M1106 (Bakersfield WELD B1B CR ⟷ B1BNC NC, TOP 0956.50, NC-suffix); BUSI M9067 (Cabrillo BUS 89 CR ⟷ BUS 489 NC, TOP 0509.70); SLNA M1061 (Reedley ASL 5 CR ⟷ ASL 305 NC, 5→305 +3 prefix). All follow the credit#+prefix / 0.0u pattern. Note the +3 prefix (NN→3NN) is by far the most common mirror-numbering convention in this sample.\n\nCAVEAT on SLNA M1061 (still counted TRUE): the sole NC member Reedley ASL 305 carries TOP 1305.20 'Children with Special Needs' vs ASL 5's 0850.00 'Sign Language'. It passes the mechanical same-college/same-subject/CR↔NC test with the canonical 5→305 numbering, but the TOP-code divergence is the single spot where a per-item reviewer might disagree. Did not flip it to false positive because the doctrine's mechanical test is satisfied.\n\nFALSE POSITIVES (2): CULN M1070 — contains a real mirror (Monterey Peninsula HOSP 20 CR ⟷ HOSP 420 NC) but ALSO two NC members with no same-college credit sibling: 'San Diego College of Continuing Education' FDNT 630 (NC) + 'San Diego College of Continuing Education Credit' FDNT 630 (NC), a noncredit-only continuing-ed course swept into a credit culinary identity. AGRI M1011 — has three clean AG mirrors (Clovis/Fresno/Reedley AG NN ⟷ AG 3NN) but ALSO Coalinga 'NC' 193 + Lemoore 'NC' 193 (subject literally 'NC', noncredit-only, no credit twin) and Merced AGT 703 NC whose only same-college credit is AGAT 53 — a DIFFERENT subject. Both are genuine cross-band over-merges D-3 still gates.\n\nIMPLICATION for mechanically keeping the 271: the two false positives both satisfy a weak 'identity contains >=1 same-college mirror pair' rule yet fail the strict 'EVERY NC member mirrors' rule. So the strong-triage cannot rely on presence-of-any-mirror; it must require that every noncredit member has a same-college same-subject credit sibling, else ~20% (2/10 here) leak through as preserved over-merges. Failure signature to gate on: NC members from noncredit-only continuing-ed colleges or with a bare 'NC' subject, and NC members whose same-college credit twin has a different subject code."
+  },
+  {
+   "checked": 10,
+   "true_mirrors": 7,
+   "false_positives": [
+    "OTEC M9033",
+    "BUSI M1286",
+    "BUSI M1150"
+   ],
+   "notes": "Slice = even indices of strong_sample: FIRE M1076, CSIS M1422, AUTO M1041, OTEC M9033, BUSI M1286, ENTR M1006, CSIS M1220, AUTO M1182, BUSI M1150, REAL M1036. Test applied per D-3 mirror carve-out: an identity is a TRUE keep-whole mirror only if EVERY noncredit member has a same-college credit sibling of the same (or NC-prefixed) subject.\n\nTRUE (7): FIRE M1076 (Reedley WLF 354<->119), CSIS M1422 (Reedley IS 352<->52), AUTO M1041 (LBCC AUTO 692<->292), ENTR M1006 (Moreno/Norco/Riverside ENP 854<->54, all 3 NC mirror), CSIS M1220 (Reedley IS 315<->15), AUTO M1182 (De Anza AUTO 367A<->067A + Chabot ATEC 294<->94), REAL M1036 (De Anza REST 355<->55).\n\nFALSE POSITIVES (3), two distinct failure modes:\n- OTEC M9033 = genuine D-3 over-merge, NOT a mirror family. M9xxx noncredit-survivor key, 1 CR + 6 NC; only Shasta (CALS 154<->354) mirrors. Other 5 NC (Coalinga NC 110, Lemoore NC 110, Mendocino LRS 531, Palomar N AEWP 906, Santa Monica CIS 902) are standalone noncredit from colleges with no credit member, divergent subjects/TOP codes (0514, 4930.12 Job-Seeking, 0702.10). Mirror is incidental; split should stand.\n- BUSI M1286 & BUSI M1150 = impure mirror families. Both contain multiple genuine same-college mirrors (M1286: Canyons NC.BUS 117A<->BUS 117A, Moreno/Norco/Riverside ENP 850<->50, Reedley BA 352<->52; M1150: LBCC BCOM 615<->15, Los Medanos BUS 059N<->59) but ALSO carry orphan NC members with no same-college same-subject credit sibling: M1286 -> Bakersfield OFFT B66NC + Siskiyous WORK 513 (Siskiyous only has BA credit); M1150 -> CCSF BOSS 4510 (no CCSF credit at all) + generic-subject Citrus NC 664 & Mt.SAC VOC BO25. D-3 should still peel these orphans off.\n\nImplication for the 271: a mechanical keep-whole rule is safe ONLY with an orphan-NC guard requiring EACH NC member to have a same-college same-subject(or NC-prefixed) credit sibling. \"Contains >=1 mirror pair\" is too loose — it lets over-merges (OTEC M9033) and contaminated clusters (BUSI M1286/M1150) ride along. 7/10 pass the strict guard; the 3 misses are exactly what the per-NC-member universal test catches, so no per-item agent is needed if the guard is per-member rather than per-identity. Subject match treated NC./N /VOC prefixes as noncredit variants of the credit stem (e.g. NC.BUS==BUS)."
+  }
+ ],
+ "_detector_counts_after_hardening": {
+  "mirror": 957,
+  "partial_mirror": 146,
+  "band_mix": 1733,
+  "_was_naive": 1337
+ },
+ "_reconciliation": {
+  "agent_mirror_vs_detector": {
+   "mirror": 44,
+   "band_mix": 8,
+   "partial_mirror": 3
+  },
+  "agent_split_vs_detector": {
+   "band_mix": 222,
+   "mirror": 1,
+   "partial_mirror": 6
+  },
+  "agent_confirmed_mirrors_detector_missed": [
+   "NUTR M1016",
+   "OTEC M1168",
+   "PEDS M1034",
+   "BIOL M1227",
+   "CSIS M1459",
+   "MATH M1062",
+   "GEOG M1087",
+   "PEDS M1027",
+   "MUSI M1293",
+   "ECED M1090",
+   "DANC M1378"
+  ]
+ },
+ "verdicts": {
+  "FIRE M1014": {
+   "agent_call": "genuine_split",
+   "reason": "Lone NC member is College of the Canyons NC.FIRT 70 (0.0u, Fire Tech); Canyons contributes no credit member to the group. The 3 credit members (Bakersfield, East LA, Modesto) are at different colleges. NC has no same-college same-subject credit sibling -> cross-college band mix, not a mirror. D-3 split stands.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "DANC M1250": {
+   "agent_call": "mirror_keep",
+   "reason": "Single NC member Santa Ana VFPA 206B (0.0u, Commercial Dance) mirrors Santa Ana's own credit member DNCE 206B (2.0u, Dance) - SAME college, SAME course number 206B, noncredit routed through the VFPA (Visual/Fine/Performing Arts) noncredit umbrella prefix. Textbook CR/NC mirror pair; the other 29 members are all credit. CPL mechanism, not an over-merge.",
+   "confidence": 0.85,
+   "detector_class": "mirror"
+  },
+  "FIRE M1285": {
+   "agent_call": "genuine_split",
+   "reason": "Lone NC member is College of the Canyons NC.FIRT 091A (0.0u, Fire Tech); Canyons has no credit member in the group. The 6 credit members are at other colleges. No same-college credit sibling -> cross-college band mix. D-3 split stands.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "DRAF M1053": {
+   "agent_call": "genuine_split",
+   "reason": "Lone NC member is Ohlone ENGI 916 (0.0u Noncredit Enhanced, Drafting Tech); Ohlone contributes no credit member. All 6 credit members are at other colleges. No same-college credit sibling -> not a mirror. D-3 split stands.",
+   "confidence": 0.92,
+   "detector_class": "band_mix"
+  },
+  "FIRE M1255": {
+   "agent_call": "genuine_split",
+   "reason": "College of the Siskiyous is the only college with both bands (FIRE 9011 credit + WORK 533 noncredit), but this is NOT a mirror: different subject (WORK vs FIRE), no course-number correspondence (533 vs 9011), and WORK 533 is a work-experience noncredit course - a genuinely different course from the fire-tech credit course, sharing only the 2133 TOP. No same-college same-subject credit sibling. D-3",
+   "confidence": 0.68,
+   "detector_class": "band_mix"
+  },
+  "REAL M1043": {
+   "agent_call": "mirror_keep",
+   "reason": "Single NC member West Valley NCRL 99 (0.0u Noncredit Enhanced, Real Estate) mirrors West Valley's credit member RLST 99 (3.0u) - SAME college, SAME course number 99, NCRL = literal NonCredit Real estate prefix (the doctrine's exact NC-prefix pattern). All 22 other members are credit. Distributed credit family with one same-college mirror; CPL mechanism, keep.",
+   "confidence": 0.95,
+   "detector_class": "mirror"
+  },
+  "PHOT M1081": {
+   "agent_call": "mirror_keep",
+   "reason": "Single NC member Mt. San Antonio VOC PHO15 (0.0u Noncredit, Applied Photography) mirrors Mt. SAC's credit member PHOT 15 (3.0u, Applied Photography) - SAME college, SAME course number 15 (PHO15 = PHOT 15), noncredit routed through the VOC prefix, SAME TOP 1012. Only NC member among 53 credit members; the CR/NC flag is a false positive. (Any other over-merge concerns in this large 46-college group ",
+   "confidence": 0.9,
+   "detector_class": "mirror"
+  },
+  "IDST M1068": {
+   "agent_call": "genuine_split",
+   "reason": "3 NC members at 3 different colleges - Clovis ESC 351 (Learning Skills), Las Positas NPCN 211 (Career Guidance), Lemoore NC 15 (Career Guidance) - none of which contributes a credit member to the group. The credit members are EDEV (Compton/El Camino) and AGBS (Madera/Reedley). No NC member has a same-college credit sibling; the cluster is a mixed over-merge across career-guidance/ag-business/learn",
+   "confidence": 0.92,
+   "detector_class": "band_mix"
+  },
+  "ENGL M1091": {
+   "agent_call": "genuine_split",
+   "reason": "2 NC members at 2 different colleges - Cuesta ECOL 428 (Fine Arts) and Glendale LLS 72 (Film History) - neither college contributes a credit member. Credit members are drama/English/film courses at other colleges. No same-college credit siblings; a messy cross-discipline lump. D-3 split stands.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "NRSR M1136": {
+   "agent_call": "genuine_split",
+   "reason": "All 4 NC members are at North Orange Continuing Education (MEOC 122 + PTEC 120, each in both Noncredit and Noncredit Enhanced) - a noncredit-only continuing-ed district with NO credit members, and they are Pharmacy Technology (TOP 1221), a different field from the Registered/Vocational/Psych nursing credit courses. No same-college credit siblings; cross-college cross-field band mix. D-3 split stan",
+   "confidence": 0.95,
+   "detector_class": "band_mix"
+  },
+  "AGRI M1139": {
+   "agent_call": "mirror_keep",
+   "reason": "Single NC member Mt. San Antonio VOC ASC14 (0.0u Noncredit, Animal Science) mirrors Mt. SAC's credit member ASCI 14 (3.0u) - SAME college, SAME course number 14 (ASC14 = ASCI 14), noncredit via the VOC prefix, SAME TOP 0102. Only NC member among 4 credit members; CPL mirror, keep.",
+   "confidence": 0.92,
+   "detector_class": "mirror"
+  },
+  "NUTR M1016": {
+   "agent_call": "mirror_keep",
+   "reason": "Single NC member Palomar N NUTR 920 (0.0u Noncredit Enhanced, Nutrition) mirrors Palomar's credit member NUTR 120 (3.0u) - SAME college, SAME subject (N NUTR = Noncredit NUTR prefix), 900-series noncredit renumber of 120 (the IS 52 <-> IS 352 pattern), SAME TOP 1306. Only NC member among 9; CPL mirror, keep. (Southwestern CA 173 Culinary and LAVC GEOG 45 are unrelated credit-band over-merge noise,",
+   "confidence": 0.88,
+   "detector_class": "band_mix"
+  },
+  "FIMS M1074": {
+   "agent_call": "needs_curator",
+   "reason": "10 colleges of clean credit Film Studies + 1 NC (Irvine Valley HUM 435C, 0.0u, top Film Studies). Its would-be same-college companion is IVC ENG 435 (credit, 0.0u, top English) — same #435, both 0.0u (the credit-by-exam signature), but different subject label (ENG vs HUM) and different TOP (English vs Film). Probable cross-subject credit-by-exam mirror per IVC's filing convention, but the strict s",
+   "confidence": 0.5,
+   "detector_class": "mirror"
+  },
+  "PEDS M1026": {
+   "agent_call": "needs_curator",
+   "reason": "All 8 members are Adapted Physical Education (uniform top 0835.80) — one coherent course. The lone NC (West Valley NCPE 1.34, 0.0u, Adapted PE) has NO West Valley credit twin, so it is not a mirror; but it is also not a 'different course' (identical TOP to the 7 credit members). Coherent single course merely band-mixed. Adapted-PE noncredit may also be a Q-FLOOR question. Faculty call.",
+   "confidence": 0.55,
+   "detector_class": "band_mix"
+  },
+  "JOUR M9001": {
+   "agent_call": "genuine_split",
+   "reason": "Junk over-merge of unrelated courses across the band. 3 NC: Barstow CBIS 101 (Office Tech), CCSF DSPS 4422 (Living Skills, Handicapped), Copper Mtn AE 303 (Office Tech). 2 CR: Palomar JOUR 200 (Journalism), San Jose LIB 10 (Library Science). Five different fields, zero same-college mirrors. D-3 split stands.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "OTEC M1168": {
+   "agent_call": "mirror_keep",
+   "reason": "Five colleges of credit CAOT 85 (Office Tech, top 0514.00) + 1 NC at LA City (VOC ED 229CE, Noncredit Enhanced, same top 0514.00). LA City offers BOTH the credit CAOT 85 and the noncredit-enhanced Office Tech section (LACCD files NC under the generic 'VOC ED' subject) — same college, same field, CR+NC. Functional mirror = the CPL mechanism. Strict same-subject count is 0 (VOC ED != CAOT) and cours",
+   "confidence": 0.58,
+   "detector_class": "band_mix"
+  },
+  "BUSI M1259": {
+   "agent_call": "genuine_split",
+   "reason": "Different courses lumped across the band. 2 NC: College of Marin VOCH 91 (Hospitality 1307), Orange Coast COS A001N (Consumer Services 1301.10). 3 CR: Modesto LOGST 207 (Logistics 0510), San Diego City/Miramar BUSE 102 (Business Mgmt 0506). Four unrelated TOP fields, no same-college mirror. Over-merge split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "EDUC M1044": {
+   "agent_call": "genuine_split",
+   "reason": "Loose heterogeneous cluster, no same-college mirror. 3 NC: identical VOC ED 088CE (Educational Aide) at three LACCD colleges (LA City, LA Pierce, West LA) — legit noncredit convergence among themselves but none has a same-college credit twin. Credit side is a grab-bag: American River LRC 300 (Job Seeking 4930.12), Moreno Valley/Norco ILA 1 (Supervised Tutoring 4930.09), Riverside ILA 1 (Educationa",
+   "confidence": 0.6,
+   "detector_class": "band_mix"
+  },
+  "CRIM M1016": {
+   "agent_call": "genuine_split",
+   "reason": "Three unrelated courses. CR: Modesto ADJU 217 (Admin of Justice 2105), Yuba PSYCT 61 (Psychiatric Technician 1239). NC: Santiago Canyon SAFE 898 (Alcohol and Controlled Substances 2104.40). The NC is a different field with no same-college credit sibling. Over-merge split stands.",
+   "confidence": 0.88,
+   "detector_class": "band_mix"
+  },
+  "ENGL M1289": {
+   "agent_call": "genuine_split",
+   "reason": "17 credit English/Literature/Classics courses (top 1501/1503/1504) + 1 NC: College of the Desert ABE 323B (0.0u, top 4930.62 Secondary Education / G.E.D.). ABE = Adult Basic Education / GED prep — a genuinely different course from credit English composition/lit. COD's credit ENG 012A (top 1501) is a different subject and different TOP, not a same-subject mirror. Over-merge split stands.",
+   "confidence": 0.82,
+   "detector_class": "band_mix"
+  },
+  "ARTS M1206": {
+   "agent_call": "needs_curator",
+   "reason": "Coherent Art/Painting-Drawing family (subject ART; tops 1002.00/1002.10). The lone NC (Irvine Valley ART 430C, 0.0u, Painting and Drawing 1002.10) is the SAME course/subject/TOP as the credit members but IVC has no credit twin in the group, so it isn't a mirror — yet it isn't a 'different course' either. Same course, band-mixed, no same-college correspondence. Faculty call.",
+   "confidence": 0.55,
+   "detector_class": "band_mix"
+  },
+  "AUTO M1217": {
+   "agent_call": "mirror_keep",
+   "reason": "Textbook mirror. Las Positas offers AUTO A4 (credit, 4.0u, top 0948) AND NAUT A4 (Noncredit Enhanced, 0.0u, top 0948) — same college, IDENTICAL course number A4, same TOP, NAUT being the explicit noncredit-prefix variant of AUTO (exactly the doctrine's 'credit number plus a noncredit prefix' pattern). The single NC member mirrors a same-college credit sibling. The rest is a clean cross-college cre",
+   "confidence": 0.85,
+   "detector_class": "mirror"
+  },
+  "MULT M9031": {
+   "agent_call": "genuine_split",
+   "reason": "Loose multimedia grab-bag spanning three subfields, no same-college mirror. 3 NC: Berkeley MM/DI 510 (Desktop Publishing 0614.50), SBCC MATNC 3 + MATW NC003 (Digital Media 0614) — none has a same-college credit twin. 3 CR: Chabot DIGM 6A (Digital Media 0614), Chabot PHOT 6A + Glendale PHOTO 160 (Applied Photography 1012). Digital Media vs Photography vs Desktop Publishing are distinct CPL targets;",
+   "confidence": 0.6,
+   "detector_class": "band_mix"
+  },
+  "COMM M1056": {
+   "agent_call": "genuine_split",
+   "reason": "5 credit Speech Communication courses (top 1506) + 1 NC: Reedley COMM 305 (0.0u, top 4930.72 Leadership Skills Development). Shared subject label 'COMM' but the NC is a different course/TOP (Leadership Skills, not Speech Communication) and Reedley has no credit COMM sibling. Different course lumped across the band → split stands.",
+   "confidence": 0.75,
+   "detector_class": "band_mix"
+  },
+  "ETHS M1206": {
+   "agent_call": "genuine_split",
+   "reason": "64 credit Ethnic Studies members (top 2203.00, 3.0u). The lone NC member is MiraCosta HSETHN 10, 0.0u, top 4930.62 Secondary Education (Grades 9-12) — a noncredit adult-HS-diploma ethnic-studies course, NOT a mirror of college-transfer Ethnic Studies. MiraCosta does have a credit member but under a different subject/TOP (same-subject sibling absent; TOP diverges), so the same-college presence is c",
+   "confidence": 0.9,
+   "detector_class": "mirror"
+  },
+  "ENGL M1360": {
+   "agent_call": "genuine_split",
+   "reason": "9 credit English members. Lone NC = Santiago Canyon HSENG 72, 0.0u, top 4930.62 Secondary Education — a noncredit high-school-completion English course. No same-college credit member at all (same-col-any False). Different course, no mirror -> D-3 split stands.",
+   "confidence": 0.92,
+   "detector_class": "band_mix"
+  },
+  "ENGL M1202": {
+   "agent_call": "genuine_split",
+   "reason": "38 credit English members. 3 NC members are all different courses with NO same-college credit sibling: Foothill ALCB 463Y (top 4930.30 Learning Skills/Handicapped), MiraCosta NCWRT 10 (top 1507.00 Creative Writing), Santa Monica ENGL E30 (top 1507.00 Creative Writing; Santa Monica has no in-cluster credit member). Noncredit creative-writing/learning-skills courses folded into a credit English clus",
+   "confidence": 0.88,
+   "detector_class": "band_mix"
+  },
+  "OTEC M1212": {
+   "agent_call": "genuine_split",
+   "reason": "5 credit office-tech members. Lone NC = Allan Hancock VOCE 7110, 0.0u, top 0701.00 Information Technology General (a noncredit vocational-ed umbrella course, and a different TOP than the credit office-tech members). Allan Hancock has no in-cluster credit member, so no same-college mirror possible. Orphan NC across the band -> D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "BUSI M1090": {
+   "agent_call": "genuine_split",
+   "reason": "4 credit members. Lone NC = Oxnard CAOT R802, 0.0u, top 0514.00 Office Technology (Oxnard R-prefix noncredit). Oxnard has no in-cluster credit member, so no same-college credit sibling to mirror. Orphan noncredit member -> D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "SLNA M1028": {
+   "agent_call": "genuine_split",
+   "reason": "56 credit American Sign Language members. Lone NC = El Camino SLAN 500, 0.0u, top 0850.10 Sign Language INTERPRETING — a distinct subfield (interpreting vs ASL language instruction) and El Camino has no in-cluster credit member. No same-college mirror; different course -> D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "FASH M1099": {
+   "agent_call": "mirror_keep",
+   "reason": "21 credit Fashion members + 1 NC. The NC is Mt. San Antonio VOC FSH17, 0.0u, top 1303.00 Fashion — and Mt SAC ALSO has credit FASH 17, 3.0u, top 1303.00 Fashion, present in-cluster. This is a textbook CR/NC mirror: same college, identical TOP, and the noncredit course-number 'FSH17' literally encodes 'FASH 17'. The subject-code differs ONLY because Mt SAC files noncredit under a 'VOC' umbrella pre",
+   "confidence": 0.85,
+   "detector_class": "mirror"
+  },
+  "HTEC M1086": {
+   "agent_call": "needs_curator",
+   "reason": "10 credit phlebotomy members (top 1205.10). Lone NC = Saddleback MLT 412NC, 0.0u, top 1205.10 Phlebotomy. Saddleback's in-cluster credit member is PHLB 240 (different subject and number). Strict same-subject test fails, but same-college + identical Phlebotomy TOP + the 'NC' course-number suffix make it plausibly the free-noncredit / credit-by-exam companion of Saddleback's credit phlebotomy — OR t",
+   "confidence": 0.6,
+   "detector_class": "band_mix"
+  },
+  "BUSI M1189": {
+   "agent_call": "needs_curator",
+   "reason": "Mixed identity (3 credit + 2 NC, all top 0508.00 International Business & Trade). NC #1 = Mt SAC VOC BM51 mirrors in-cluster credit BUSM 51 (same college, same TOP, BM51 encodes BUSM 51) -> a TRUE mirror, keep. NC #2 = Citrus NC 662, 0.0u, is an ORPHAN noncredit member (Citrus has no in-cluster credit sibling). So the cluster is neither a clean mirror_keep nor a clean genuine_split: the Mt SAC mir",
+   "confidence": 0.62,
+   "detector_class": "partial_mirror"
+  },
+  "CNST M1042": {
+   "agent_call": "genuine_split",
+   "reason": "6 credit construction members. 3 NC members (CCSF CNST 1000, Long Beach CONST 601, Mt. San Jacinto CEP 954), all top 0952.00 Construction Crafts Technology, all 0.0u — but each is at a college with NO in-cluster credit member, so none has a same-college credit sibling to mirror. Same field, but all three are orphan noncredit courses folded across the band -> D-3 split stands (they can form their o",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "THEA M1024": {
+   "agent_call": "genuine_split",
+   "reason": "11 credit Dramatic Arts members. Lone NC = College of the Siskiyous OLAD 514, 0.0u, top 1007.00 — an 'OLAD' (Older Adults) noncredit drama course, no in-cluster credit member at Siskiyous. A distinct older-adult/recreational noncredit offering, not a credit-by-exam mirror of a same-college credit theater course -> D-3 split stands.",
+   "confidence": 0.88,
+   "detector_class": "band_mix"
+  },
+  "BIOL M1136": {
+   "agent_call": "genuine_split",
+   "reason": "4 credit Biology-General members (top 0401.00). Lone NC = Rio Hondo NSCI 52, 0.0u, top 0115.20 Wildlife and Fisheries — different subject and different TOP, no in-cluster credit member at Rio Hondo. Clearly a different course folded across the band -> D-3 split stands.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "FLSP M1004": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member is Santa Ana HSOTH 743 (0.0u Noncredit Enhanced, top 4930.62 Secondary Education/G.E.D.) — a high-school-completion/GED course, not transfer Spanish (credit members are SPAN/SPA level-3/201, top 1105.00). No Santa Ana credit member; different subject and different top division. Not a mirror; D-3 over-merge split stands.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "DANC M1243": {
+   "agent_call": "mirror_keep",
+   "reason": "Sole NC member Santa Ana VFPA 219B (0.0u Noncredit Enhanced, top 1008.10 Commercial Dance) mirrors same-college credit member Santa Ana DNCE 219B (2.0u) — exact same course number 219B, same college, same dance discipline. VFPA is Santa Ana's noncredit-enhanced performing-arts prefix; counted as a same-course sibling despite the DNCE→VFPA prefix change (the classic CPL free-NC/Credit-by-Exam mirro",
+   "confidence": 0.75,
+   "detector_class": "mirror"
+  },
+  "DANC M1071": {
+   "agent_call": "mirror_keep",
+   "reason": "Both NC members have same-college credit counterparts in the identity: Santa Ana VFPA 201A (0.0u NC Enhanced) mirrors Santa Ana DNCE 201A (exact number, strong — same VFPA convention as M1243); Southwestern NC 2113 (0.0u Noncredit, top 1008.00 Dance) mirrors Southwestern DANC 113 (noncredit renumber 113→2113, plausible but weaker). Nearly-every-NC-has-a-sibling → mirror family, keep. The Southwest",
+   "confidence": 0.65,
+   "detector_class": "mirror"
+  },
+  "NRSR M1044": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member Chaffey College NURVN 604 (0.0u Noncredit, top 1230.20 LVN) has no Chaffey credit member in this identity (credit members are Bakersfield, Siskiyous, Pasadena x2, Sacramento). No same-college credit sibling → not a mirror; D-3 split stands.",
+   "confidence": 0.88,
+   "detector_class": "band_mix"
+  },
+  "FIRE M1125": {
+   "agent_call": "mirror_keep",
+   "reason": "Clean textbook mirror: College of the Canyons offers FIRET 123 (2.0u Credit) AND NC.FIRT 123 (0.0u Noncredit Enhanced) — same college, identical course number 123, 'NC.' noncredit prefix on the same Fire Technology discipline (top 2133.00). Exactly the doctrine's credit-number-plus-noncredit-prefix mirror pattern. Keep.",
+   "confidence": 0.85,
+   "detector_class": "mirror"
+  },
+  "EMST M1055": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member Antelope Valley College EMT 950 (0.0u Noncredit, top 1250.00 EMS) has no Antelope Valley credit member in this 23-credit-member identity. No same-college credit sibling → not a mirror; D-3 split stands.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "MUSI M1476": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member Irvine Valley College MUS 451 (0.0u Noncredit, top 1004.00 Music) has no Irvine Valley credit member in this identity. No same-college credit sibling → not a mirror; D-3 split stands.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "GEOG M1041": {
+   "agent_call": "genuine_split",
+   "reason": "Both NC members are North Orange Continuing Education GPHY 130 (0.0u Noncredit, top 4930.60 Elementary Education Grades 1-8) — a teacher-prep geography course, not transfer Geography (credit members top 2206.00 Geography). No North Orange credit member; different top division. Duplicate-harvest pair, neither a mirror; D-3 split stands.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "KINE M1596": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member Santiago Canyon College OAP 894 (0.0u Noncredit, top 0835.10 Physical Fitness) — OAP is an Older Adults Program course; no Santiago Canyon credit member in this identity. No same-college credit sibling → not a mirror; D-3 split stands (also a likely Q-FLOOR non-CPL-target).",
+   "confidence": 0.87,
+   "detector_class": "band_mix"
+  },
+  "PSYC M1009": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member College of the Siskiyous PSY 503 (0.0u Noncredit, top 2001.00 Psychology) has no Siskiyous credit member in this identity (credit members are Chabot, Mendocino, Pasadena, Santa Rosa, Shasta). No same-college credit sibling → not a mirror; D-3 split stands.",
+   "confidence": 0.89,
+   "detector_class": "band_mix"
+  },
+  "FIRE M1389": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member College of the Canyons NC.FIRT 66 (0.0u Noncredit, top 2133.00 Fire Technology) has NO College of the Canyons credit member in THIS identity (credit members: American River, East LA, El Camino, Fresno, Moreno Valley, Palo Verde, San Diego Miramar, Santa Ana). Unlike FIRE M1125 where COC had a FIRET 123 credit twin, here the COC credit sibling is absent → not a mirror within this ide",
+   "confidence": 0.83,
+   "detector_class": "band_mix"
+  },
+  "HTEC M1081": {
+   "agent_call": "genuine_split",
+   "reason": "Both NC members are San Diego College of Continuing Education OFSY 550 (0.0u, top 0514.20 Medical Office Tech) — a duplicate-harvest pair, both credit_status Noncredit. No San Diego credit member in this identity (credit members are East LA, LA Trade Tech, Ventura, Victor Valley, West LA — mostly HLTHOCC 61 Medical Assisting). No same-college credit sibling → not a mirror; D-3 split stands.",
+   "confidence": 0.86,
+   "detector_class": "band_mix"
+  },
+  "DANC M1217": {
+   "agent_call": "mirror_keep",
+   "reason": "Sole NC member (Southwestern College NC 2141, 0.0u, Dance TOP 1008.00) mirrors same-college credit DANC 141 (1.5u, Dance) via credit#+2000 noncredit-prefix numbering (2141=2000+141). Textbook CR/NC mirror; D-3 split does not apply. KEEP as one identity (survivor = credit DANC 141, NC mirror + Credit-by-Exam bridge noted).",
+   "confidence": 0.9,
+   "detector_class": "mirror"
+  },
+  "ARTS M1455": {
+   "agent_call": "genuine_split",
+   "reason": "NC member (Allan Hancock College OLDR 7200A, 0.0u, older-adults painting) has NO same-college credit sibling — Allan Hancock has no credit member in this identity. It is a different (older-adult noncredit) course lumped with a 15-college credit ART painting/drawing family. D-3 over-merge split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "CULN M1006": {
+   "agent_call": "genuine_split",
+   "reason": "All 3 NC members are from noncredit-only institutions with no same-college credit sibling: CCSF CSST 9651 (0.0u) and North Orange Continuing Ed HOSM 145 x2 (0.0u, TOP 1399 Family/Consumer Sciences — different TOP from the credit culinary family). Different courses across the band, not mirrors. D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "OTEC M1054": {
+   "agent_call": "genuine_split",
+   "reason": "Both NC members are North Orange Continuing Ed COMP 600 (0.0u, TOP 0701 IT-General) — a noncredit-only district with no credit member in the identity, so no same-college credit sibling. Different course from the credit office-tech family (Fresno BT 9, Lassen CA 31, Ohlone CAOT/CS 101A). D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "MANU M1029": {
+   "agent_call": "genuine_split",
+   "reason": "MIXED: Reedley NC WELD 363 (0.0u) IS a clean mirror of same-college credit MFGT 63 (363=300+63, same Welding TOP) — but Antelope Valley NC WELD 900 (0.0u) has NO same-college credit sibling (Antelope Valley has no credit member here). Not every NC member is mirrored, so the D-3 over-merge is real for the Antelope Valley orphan; split stands (curator should preserve the Reedley CR/NC pair when spli",
+   "confidence": 0.58,
+   "detector_class": "band_mix"
+  },
+  "FIRE M1295": {
+   "agent_call": "mirror_keep",
+   "reason": "Sole NC member (College of the Canyons NC.FIRT 73, 0.0u, Fire Tech) mirrors same-college credit FIRET 73 (0.3u) — identical course number 73 with an 'NC.'-prefixed subject. Textbook CR/NC mirror at the same college; D-3 split does not apply. KEEP.",
+   "confidence": 0.9,
+   "detector_class": "mirror"
+  },
+  "BSKL M1002": {
+   "agent_call": "genuine_split",
+   "reason": "All 4 NC members are noncredit basic-skills courses with no same-college credit sibling: three LA-district BSICSKL 035CE (0.0u) and Mt SAC ACCS BMS (0.0u, TOP 4930.32 Learning Skills/Learning Disabled). The only 2 credit members (Marin MATH 095X, Evergreen MATH 300) share no college with any NC member. Different courses across the band; D-3 split stands.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "BUSI M1328": {
+   "agent_call": "mirror_keep",
+   "reason": "Sole NC member (Mt SAC VOC BM62, 0.0u, TOP 0516 Labor/Industrial Relations) mirrors same-college credit BUSM 62 (3.0u, same TOP 0516) — number 62 shared. Clean CR/NC mirror; D-3 band split does not apply, KEEP. (Separate, non-CR/NC concern: Moreno Valley FIT CO2A is a CREDIT Fire-Academy outlier = a wrong-discipline over-merge for a different lane, not this band adjudication.)",
+   "confidence": 0.8,
+   "detector_class": "mirror"
+  },
+  "PEDS M1034": {
+   "agent_call": "mirror_keep",
+   "reason": "Sole NC member (Gavilan College AE 636, 0.0u, Adapted PE TOP 0835.80) mirrors same-college credit APE 36 (0.5u, same Adapted-PE TOP) via 636=600+36 noncredit-prefix numbering; Gavilan also has credit APE 536. Same-college CR/NC adapted-PE mirror; D-3 split does not apply. KEEP.",
+   "confidence": 0.76,
+   "detector_class": "band_mix"
+  },
+  "ARTS M1093": {
+   "agent_call": "genuine_split",
+   "reason": "All 3 NC members are unrelated noncredit courses with no same-college credit sibling AND off-discipline TOPs: Cuesta ECOL 425 (0.0u), Foothill ALCB 408Y (0.0u, TOP 4930.31 Living Skills/Handicapped), Glendale DSL 08006BF (0.0u, TOP 4930.62 Secondary Ed/GED) — none is a painting/fine-arts mirror of the 31-college credit ART family. Genuine cross-band (and cross-discipline) over-merge; D-3 split sta",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "PEDS M1036": {
+   "agent_call": "genuine_split",
+   "reason": "NC member (Santa Rosa JC APE 701, 0.0u, TOP 4930.31 Living Skills/Handicapped) has no same-college credit sibling — Santa Rosa has no credit member here, and its TOP differs from the credit Adapted-PE family (0835.80). Different noncredit course, not a mirror; D-3 split stands.",
+   "confidence": 0.82,
+   "detector_class": "band_mix"
+  },
+  "ARTS M1417": {
+   "agent_call": "genuine_split",
+   "reason": "NC member (Southwestern College NC 84, 0.0u, TOP 1030.00 Graphic Art & Design) shares a college with credit ART 116 (3.0u) but is NOT its mirror: different number (84 vs 116) and different TOP subfield (Graphic Design vs Art 1002.00). No same-college same-subject/number credit sibling; it is a distinct noncredit graphic-design course (belongs with Orange Coast ART A170 graphic-design lane, not thi",
+   "confidence": 0.7,
+   "detector_class": "band_mix"
+  },
+  "IDST M1147": {
+   "agent_call": "genuine_split",
+   "reason": "Incoherent interdisciplinary catch-all. Both NC members are CCSF (CRER 1062 Job-Seeking Skills 4930.12; DSPS 4023 Living Skills Handicapped 4930.31); credit members are Foothill ALTW 212/123 and Sacramento LIBT 110. No same-college CR overlap; NC members are entirely different courses. D-3 split stands.",
+   "confidence": 0.95,
+   "detector_class": "band_mix"
+  },
+  "ELEC M1017": {
+   "agent_call": "genuine_split",
+   "reason": "NC = Santa Barbara CTV NC121, a construction-crafts course (0952.00) with no same-college credit sibling; credit members are electrical/electronics (0934/0952.20) at other colleges. Stray band-crosser, not a mirror. D-3 split stands.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "MUSI M1143": {
+   "agent_call": "genuine_split",
+   "reason": "NC = Irvine Valley MUS 450 (Music 1004.00). Same music field as the 6 credit members, but IVC has no credit MUS sibling in the cluster, so no same-college same-subject mirror. D-3 split stands.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "CRIM M1281": {
+   "agent_call": "genuine_split",
+   "reason": "NC = Mt. San Antonio VOC ADJ02 (Admin of Justice 2105.00), a vocational noncredit intro. Same field as the 10 credit ADJ/CRIM members, but Mt. SAC has no credit sibling here — not a same-college mirror. D-3 split stands.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "GEOG M1084": {
+   "agent_call": "genuine_split",
+   "reason": "NC members are adult-ed/HSE geography-for-diploma courses: NOCE GPHY 100 (Elementary Ed 4930.60, appears in both NOCE and NOCE-Credit entries) and Pasadena AHSD 6417 (Secondary Ed/GED 4930.62). Credit members are transfer Geography (2206.00). Different field entirely; no same-college sibling. D-3 split stands.",
+   "confidence": 0.92,
+   "detector_class": "band_mix"
+  },
+  "CNST M1039": {
+   "agent_call": "genuine_split",
+   "reason": "NC = El Camino CTEC 501 (Construction Crafts 0952.00). Same TOP as Las Positas credit member but different college; no same-college credit sibling. Not a mirror. D-3 split stands.",
+   "confidence": 0.82,
+   "detector_class": "band_mix"
+  },
+  "ARTS M9023": {
+   "agent_call": "genuine_split",
+   "reason": "Noncredit-band M-ID that absorbed a genuine credit ART 332 pair (Folsom Lake + Sacramento, Los Rios). NC members = Mt. SAC OAD FNA03 (Painting/Drawing 1002.10) and NOCE CRAE 204 (Family & Consumer Sci 1399.00), neither with a same-college credit sibling. D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "MUSI M1103": {
+   "agent_call": "genuine_split",
+   "reason": "NC = NOCE and NOCE-Credit MUSC 306 (Other Education 0899.00), noncredit community music, no same-college credit sibling. The 11 credit members are applied-music (1004.00). Not mirrors. D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "ARTS M1273": {
+   "agent_call": "genuine_split",
+   "reason": "NC = San Bernardino Valley CIT 619, an Information Technology course (0701.00, subject CIT) — a different field from the digital-media/computer-graphics art family (0614.x). No same-college credit sibling. D-3 split stands.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "NRSR M1152": {
+   "agent_call": "genuine_split",
+   "reason": "NC = Merritt MEDAS 505 (Medical Assisting 1208.00). Merritt has no credit sibling in the cluster; the credit family is itself a heterogeneous allied-health mix (MA/RN/LVN/HIT). Not a same-college mirror. D-3 split stands.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "BUSI M1329": {
+   "agent_call": "genuine_split",
+   "reason": "NC = NOCE and NOCE-Credit BMGR 450 (Labor & Industrial Relations 0516.00) — a different TOP from the 29-college Business Management family (0506.x). No same-college credit sibling. Stray band-crossers. D-3 split stands.",
+   "confidence": 0.88,
+   "detector_class": "band_mix"
+  },
+  "KINE M1800": {
+   "agent_call": "needs_curator",
+   "reason": "Aquatics/lifeguard-certification family (16 credit + 4 NC, mostly TOP 0835.70). Contra Costa (PUBSR 129 credit ⟷ KINES 882N noncredit) and Southwestern (ES/A 235 credit ⟷ NC 70 noncredit) each offer same-college, same-TOP credit+noncredit aquatics but under DIFFERENT subject codes — failing the literal same-subject mirror test yet a plausible distributed vocational CPL/credit-by-exam mirror. The o",
+   "confidence": 0.6,
+   "detector_class": "band_mix"
+  },
+  "CSIS M9015": {
+   "agent_call": "genuine_split",
+   "reason": "Both NC members are North Orange Continuing Education CIST 110 (0.0u, top 0708.00) — the sole credit member is San Jose City College CIS 142 (different college). No NC member has a same-college same-subject credit sibling, so the cross-college band mix has no mirror. Same topic (Computer Infrastructure and Support) but D-3 band purity applies without a within-college mirror; split stands.",
+   "confidence": 0.72,
+   "detector_class": "band_mix"
+  },
+  "OTEC M1033": {
+   "agent_call": "genuine_split",
+   "reason": "Six credit members are computer-applications courses (CIS/CAT 79, top 0702.00/0702.10). The lone NC member (Santa Barbara City College GDPW NC010) is a Digital Media course (top 0614.00) with no same-college credit sibling — a genuinely different course lumped across the band. D-3 split stands.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "ESCI M1007": {
+   "agent_call": "genuine_split",
+   "reason": "Six credit members are water/wastewater-technology lecture courses (top 0958.00). The lone NC member (College of the Siskiyous WORK 545, a noncredit work-experience course) shares the TOP code but has no same-college credit sibling and is a different course type. No mirror → D-3 split stands.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "ENGL M1304": {
+   "agent_call": "genuine_split",
+   "reason": "Four NC members, only one is a mirror: Palomar N READ 990 ⟷ Palomar READ 50 (same college, top 1520.00 Reading). The other three are different courses — Ohlone ENGL 902 (top 1501.00 English, no sibling) and two San Diego CCE HSDP 415 (top 4930.62 Secondary Ed/GED, no sibling). Heterogeneous over-merge mixing a GED/high-school-diploma program; the mirror does not rescue the whole identity, D-3 spli",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "ARTS M1415": {
+   "agent_call": "genuine_split",
+   "reason": "Nineteen credit painting/drawing courses (ART, top 1002.00/1002.10). The lone NC member (Santa Monica College ART E19, top 1002.10) is topically the same but Santa Monica has no credit member in the identity — no same-college mirror. D-3 band purity splits the single NC member from the credit cluster.",
+   "confidence": 0.75,
+   "detector_class": "band_mix"
+  },
+  "CNST M1014": {
+   "agent_call": "genuine_split",
+   "reason": "Five credit construction-crafts-technology courses (top 0952.00). The lone NC member (Mt. San Jacinto College CEP 955) shares the topic but has no same-college credit sibling — no within-college mirror. D-3 split stands.",
+   "confidence": 0.78,
+   "detector_class": "band_mix"
+  },
+  "ARTS M9011": {
+   "agent_call": "genuine_split",
+   "reason": "Single credit member (Gavilan ART 1A, Fine Arts) has no same-college NC mirror. The four NC members are heterogeneous — Glendale LLS 90, Irvine Valley ART 400/400C (Fine Arts 1001.00) and Pasadena AHSD 6432 (top 4930.62 Secondary Ed/GED). No NC member has a same-college credit sibling; a GED course is mixed in. Clear over-merge, D-3 split stands.",
+   "confidence": 0.88,
+   "detector_class": "band_mix"
+  },
+  "FIRE M1096": {
+   "agent_call": "genuine_split",
+   "reason": "Five credit fire-technology courses across five colleges (top 2133.00/2133.10). The two NC members (College of the Canyons NC.FIRT 26; El Camino FTEC 502) are the same field but sit at colleges with no credit member in the identity — no same-college mirror. D-3 split stands.",
+   "confidence": 0.75,
+   "detector_class": "band_mix"
+  },
+  "DANC M1377": {
+   "agent_call": "genuine_split",
+   "reason": "Eleven credit dance/dramatic-arts courses. The lone NC member (Santa Monica College TH ART E20, Dramatic Arts top 1007.00) has no same-college credit sibling — no within-college mirror. D-3 band purity splits it from the credit cluster.",
+   "confidence": 0.77,
+   "detector_class": "band_mix"
+  },
+  "THEA M1044": {
+   "agent_call": "genuine_split",
+   "reason": "Four credit members are Gavilan THEA 13A-D (Dramatic Arts, top 1007.00). The two NC members are North Orange Continuing Education DSSS 381 (top 4930.32 Learning Skills, Learning Disabled) — a Disabled-Student-Services course, a completely different subject with no same-college credit sibling. Clear over-merge across unrelated courses, D-3 split stands.",
+   "confidence": 0.92,
+   "detector_class": "band_mix"
+  },
+  "PHIL M1087": {
+   "agent_call": "genuine_split",
+   "reason": "Forty-nine credit philosophy courses (top 1509.00). The two NC members are North Orange Continuing Education PHSY 100 (top 4930.60 Elementary Education Grades 1-8) — an elementary-education course, not philosophy, with no same-college credit sibling. Clear over-merge of a different course, D-3 split stands.",
+   "confidence": 0.93,
+   "detector_class": "band_mix"
+  },
+  "DANC M1319": {
+   "agent_call": "mirror_keep",
+   "reason": "The lone NC member (Southwestern College NC 2181, top 1008.00 Dance) mirrors the same-college credit member Southwestern DANC 181 (top 1008.00 Dance) — same college, same subject-matter, classic credit#⟷noncredit-prefixed numbering (181 ⟷ 2181). This is a genuine same-college CR/NC mirror (Credit-by-Exam pathway) per the D-3 carve-out; the band mix does NOT trigger an over-merge split. Keep as one",
+   "confidence": 0.85,
+   "detector_class": "mirror"
+  },
+  "ARTS M1023": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member (MiraCosta NCART 13, Noncredit 0.0u). MiraCosta has no credit member in this identity, so the NC has no same-college same-subject credit sibling. The identity is otherwise a distributed credit painting/drawing cluster (mostly ART 304); the lone NC is a standalone noncredit art course with no mirror correspondence. D-3 split stands.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "FIRE M1258": {
+   "agent_call": "mirror_keep",
+   "reason": "1 NC member (College of the Canyons NC.FIRT 75, 0.0u) mirrors the same-college credit FIRET 75 (0.5u): identical course number 75, same fire-technology field, 'NC.' subject prefix is the noncredit marker (abbrev FIRT vs FIRET). Textbook CR/NC mirror per D-3 carve-out; every NC member (1/1) has a same-college credit sibling. Keep as one identity, tag crnc_mirror.",
+   "confidence": 0.9,
+   "detector_class": "mirror"
+  },
+  "IMNT M1011": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member (LA Trade Tech VOC ED 604CE, Noncredit Enhanced, top 0947.40 Railroad/Light Rail). LA Trade Tech has no credit member here; the NC is a different field (railroad ops) from the industrial-maintenance credit cluster. No same-college same-subject credit sibling. D-3 split stands.",
+   "confidence": 0.95,
+   "detector_class": "band_mix"
+  },
+  "OTEC M1226": {
+   "agent_call": "genuine_split",
+   "reason": "4 NC members (Allan Hancock VOCE 7109; Glendale STV 80; San Diego CCE OFSY 527; San Diego CCE 'Credit' OFSY 527 — the latter is credit_status Noncredit despite the name). None has a same-college CREDIT sibling; the 3 credit members (Canyons CAWT, MiraCosta CSIT, San Joaquin CSA) are at other colleges. Different office/software courses lumped across the band, no per-college mirror. D-3 split stands",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "BIOL M1126": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member (Santa Barbara City College HSSC NC010, Noncredit Enhanced, top 4930.62 Secondary Ed/GED). SBCC's credit member is BIOL 125 (top 0401 Biology) — different subject, number, and field. The NC is a misfiled GED course, not a mirror of the credit Biology cluster (53 credit members). D-3 split stands.",
+   "confidence": 0.95,
+   "detector_class": "band_mix"
+  },
+  "IDST M1165": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member (Victor Valley GUID 49, Noncredit, top 4930.13 Academic Guidance). Victor Valley has no credit member; the credit cluster is COUNSEL 22 (Career Guidance) at LA-area colleges. No same-college same-subject credit sibling. D-3 split stands.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "ROBO M1003": {
+   "agent_call": "genuine_split",
+   "reason": "2 NC members. Antelope Valley ENGR 905 (Noncredit Enhanced, top 0924 Engineering Tech) vs its own credit ELTE 105 (top 0934 Electronics) — different subject and field, so NOT a same-subject mirror. Siskiyous WORK 524 has no same-college credit member. Neither NC mirrors a same-college same-subject credit course. D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "FIRE M1388": {
+   "agent_call": "mirror_keep",
+   "reason": "1 NC member (College of the Canyons NC.FIRT 77, 0.0u) mirrors the same-college credit FIRET 77 (1.0u): identical course number 77, same fire-technology field, 'NC.' noncredit-prefix pattern (FIRT/FIRET abbrev). Same mirror pattern as FIRE M1258; 1/1 NC members have a same-college credit sibling. Keep, tag crnc_mirror.",
+   "confidence": 0.9,
+   "detector_class": "mirror"
+  },
+  "OTEC M1230": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member (Bakersfield OFFT B51NC, Noncredit Enhanced, top 0505 Business Admin). Bakersfield's credit member is BSAD B88 (top 0514.40 Office Management) — different subject and course number, so not a same-subject mirror; there is no credit OFFT course at Bakersfield to mirror. Fails the same-college same-subject test. D-3 split stands.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "FIRE M1265": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member (College of the Canyons NC.LFGD 22, Noncredit, top 0835.70 Aquatics/Lifesaving). Canyons has no credit member here; the 2 credit members are Fire Technology (Palo Verde FST 276, Miramar FIPT 322G). The NC is a lifeguarding course misfiled into a Fire Tech identity — not a mirror. D-3 split stands.",
+   "confidence": 0.95,
+   "detector_class": "band_mix"
+  },
+  "COUN M1115": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member (Oxnard PG R850, Noncredit, top 1301 Family & Consumer Sciences). Oxnard has no credit member; the credit cluster is Human Services / Management / Community Health at other colleges. Different subject and field, no same-college same-subject credit sibling. D-3 split stands.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "BUSI M1193": {
+   "agent_call": "genuine_split",
+   "reason": "2 NC members: North Orange Continuing Education BMGR 446 and North Orange Continuing Education 'Credit' BMGR 446 — BOTH credit_status Noncredit (the '…Credit'-named record is still noncredit). Neither has a same-college CREDIT sibling; the 29 credit members are BUS/LAW/BADM at entirely different colleges. No mirror correspondence. D-3 split stands.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "PHOT M1063": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member Santa Monica College PHOTO E10 (0.0u) has no Santa Monica credit member in the identity — the credit members are all other colleges (Chabot, Cuesta, Glendale, Lake Tahoe, Pasadena, Saddleback). No same-college same-subject credit sibling → not a mirror; D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "CSIS M1355": {
+   "agent_call": "genuine_split",
+   "reason": "NC member Glendale OSC 05220CB (Other Business & Mgmt, TOP 0599.00) vs the single credit member Copper Mountain CIS 74 (Software Apps, TOP 0702.10) — different college, subject, and TOP. No same-college credit sibling → genuine cross-band over-merge.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "CISC M9011": {
+   "agent_call": "genuine_split",
+   "reason": "Six North Orange Continuing Education NC members (DIG/COMP/EMER, all credit_status Noncredit including the '…Credit'-named campus, Digital Media/Multimedia TOP 0614/0799) vs one Diablo Valley credit CIS 130 (Software Apps, TOP 0702.10). No same-college credit pairing; different field. Genuine over-merge across the band.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "HLTH M1103": {
+   "agent_call": "genuine_split",
+   "reason": "Two NC members — CCSF TRST 2533 (GED/secondary-ed, TOP 4930.62) and College of the Siskiyous HEA 525 (Health Ed) — neither college has a credit member in this identity. No same-college same-subject sibling; CCSF's is a different field entirely. D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "BUSI M1076": {
+   "agent_call": "mirror_keep",
+   "reason": "Textbook CR/NC mirror: sole NC member College of the Canyons NC.BUS 204 (0.0u, Accounting TOP 0502.00) exactly mirrors same-college credit BUS 204 (Accounting). 'NC.BUS' is the BUS subject with a noncredit prefix — same subject, same number, same TOP. The NC mirror is CPL evidence (Credit-by-Exam bridge), not an over-merge. Keep as one identity.",
+   "confidence": 0.95,
+   "detector_class": "mirror"
+  },
+  "PHSC M1045": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member College of the Desert ABE 348B (Adult Basic Ed / GED, TOP 4930.62) has no COD credit member; every credit member is Physical Sciences (TOP 1901.00) at other colleges. Different field, no same-college sibling → genuine over-merge.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "OTEC M1194": {
+   "agent_call": "genuine_split",
+   "reason": "Two NC members are both North Orange DSPS 420 (Learning Skills/Handicapped, TOP 4930.30) — a disabled-student-programs course. No North Orange credit member exists; the credit members are software/office courses (TOP 0702/0514/0701) at other colleges. No same-college sibling, different field → D-3 split stands.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "HLTH M1011": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member Santa Rosa ADED 730 (Adult Ed, Health Occupations) has no Santa Rosa credit member; the credit members are a scattered mix (EMT, EMS, construction, kinesiology, health occupations) at other colleges. No same-college same-subject sibling → not a mirror.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "THEA M1280": {
+   "agent_call": "genuine_split",
+   "reason": "Two NC members. Butte DRAM 312 has zero Butte credit member — an unambiguous non-mirror — so the carve-out (requires EVERY NC to mirror a same-college credit) fails and the split stands. The other, Santa Ana VFPA 150A, plausibly mirrors same-college THEA 150A (same number) but different subject prefix and TOP (VFPA/1099 vs THEA/1007); preserve that pair when splitting. strict same-subject siblings",
+   "confidence": 0.6,
+   "detector_class": "partial_mirror"
+  },
+  "AVIA M1045": {
+   "agent_call": "needs_curator",
+   "reason": "Sole NC member Southwestern College NC 327 (generic noncredit prefix, Aviation & Airport Mgmt TOP 3020.00) sits at a college that DOES offer same-TOP credit aviation-management (Southwestern AERO 107 and GEOG 107). Genuine faculty call whether the NC section mirrors those credit courses — same college and field, but generic 'NC' subject and a different number (327 vs 107) block a clean same-subjec",
+   "confidence": 0.55,
+   "detector_class": "band_mix"
+  },
+  "GEOG M1077": {
+   "agent_call": "genuine_split",
+   "reason": "Two NC members are both North Orange GPHY 121 (Elementary Education geography, TOP 4930.60). No North Orange credit member; the credit members are college geography lab courses (TOP 2206.00, plus one Earth Science) at other colleges. No same-college sibling, different field → genuine over-merge.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "BUSI M1423": {
+   "agent_call": "genuine_split",
+   "reason": "Five NC members. Four are clearly non-mirror — Glendale OBT 111, Glendale STV 111, MiraCosta NCVOC 37, West Valley NCWP 216 — none has a same-college credit member. Only Mt. San Antonio VOC CSB51 plausibly mirrors same-college credit CISB 51 (encoded number, same TOP 0702.10) but generic 'VOC' subject differs. Carve-out requires ALL NC to mirror; 4/5 fail → split stands (preserve the Mt. SAC pair ",
+   "confidence": 0.75,
+   "detector_class": "partial_mirror"
+  },
+  "KINE M1808": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member (College of the Siskiyous PEFI 525, 0.0u fitness); Siskiyous appears only once with no same-college credit sibling. Broad fitness/dance KINE cluster, not a mirror pair. D-3 split of the orphan NC member stands (absent an explicit P-4 conditioning package).",
+   "confidence": 0.63,
+   "detector_class": "band_mix"
+  },
+  "BIOL M1227": {
+   "agent_call": "mirror_keep",
+   "reason": "Sole NC member Palomar 'N NUTR' 965 (0.0u) mirrors Palomar 'NUTR 165' (CR 3.0u): same college, NC-dept prefix, credit#165->965 noncredit numbering, same TOP 1306. Textbook CR/NC mirror -> keep.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "MATH M1089": {
+   "agent_call": "genuine_split",
+   "reason": "4 NC members; only LA Mission 'ACAD PR' 112CE mirrors LA Mission MATH 112 (course 112/112CE). The other 3 (Imperial Valley 871 orphan, LA Southwest BSICKL 028CE basic-skills, Santa Ana HSMTH 152 GED top 4930.62) lack same-college credit siblings / are different courses. Not a mirror family; D-3 split stands.",
+   "confidence": 0.72,
+   "detector_class": "partial_mirror"
+  },
+  "MATH M1292": {
+   "agent_call": "genuine_split",
+   "reason": "Both NC members (Coalinga NC 203, LA Mission 'MATH NC' 260CE) are same-college orphans with no credit twin in the cluster. Not mirrors; genuine cross-band over-merge, split stands.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "READ M1017": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member Chabot LNSK 217 (0.0u, top 4930.32 Learning Skills Learning-Disabled); Chabot appears only once, no credit sibling, and it is a different course from the Reading credit members (LA Harbor/Pierce LRNSKIL, top 1520). Not a mirror.",
+   "confidence": 0.75,
+   "detector_class": "band_mix"
+  },
+  "FIRE M1022": {
+   "agent_call": "mirror_keep",
+   "reason": "Sole NC member College of the Canyons 'NC.FIRT' 047A (0.0u) mirrors Canyons 'FIRET' 047A (CR 1.0u): same college, identical course number, NC prefix. Textbook Fire-Tech CR/NC mirror -> keep.",
+   "confidence": 0.92,
+   "detector_class": "mirror"
+  },
+  "CNST M9022": {
+   "agent_call": "genuine_split",
+   "reason": "Only 2 members; NC member College of the Desert ACT 323 (top 0957 construction mgmt) has no same-college credit sibling and differs from the sole CR member Copper Mountain CNST 50 (top 0952.10 carpentry). Cross-college, different field, not a mirror. Split stands.",
+   "confidence": 0.75,
+   "detector_class": "band_mix"
+  },
+  "KINE M1875": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member Feather River HES 1 (0.0u fitness); Feather River appears only once with no same-college credit sibling. General-fitness KINE cluster, not a mirror pair. Orphan NC split stands.",
+   "confidence": 0.63,
+   "detector_class": "band_mix"
+  },
+  "FIRE M1134": {
+   "agent_call": "mirror_keep",
+   "reason": "Sole NC member College of the Canyons 'NC.FIRT' 124 (0.0u) mirrors Canyons 'FIRET' 124 (CR 2.0u): same college, identical course number, NC prefix, same TOP 2133. Textbook mirror -> keep.",
+   "confidence": 0.92,
+   "detector_class": "mirror"
+  },
+  "CRIM M1063": {
+   "agent_call": "genuine_split",
+   "reason": "Cross-discipline over-merge. 2 NC members (Bakersfield KINS B52FN aquatics/lifesaving top 0835.70; Porterville KIN P99Z health-occ top 1299) are same-college orphans and unrelated to the credit members (health-ed top 0837, corrections top 2105). No mirrors; split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "MUSI M1173": {
+   "agent_call": "genuine_split",
+   "reason": "2 NC members both at North Orange Continuing Education (MUSC 300, dup rows), a noncredit-only institution with no credit member to mirror (top 0899 Other Education vs the credit music top 1004). No same-college credit sibling possible; band-mix without mirror, D-3 split stands.",
+   "confidence": 0.68,
+   "detector_class": "band_mix"
+  },
+  "LEGL M1035": {
+   "agent_call": "genuine_split",
+   "reason": "3 NC members (San Diego Continuing Ed OFSY 542 legal-office-tech top 0514.10, dup row; West Valley NCCC 21 court-reporting top 0514.30) have no same-college credit sibling and are different fields from the Paralegal credit members (PARA/LAW/LEGL top 1402). Not mirrors; split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "WELD M1050": {
+   "agent_call": "genuine_split",
+   "reason": "Both NC members lack a same-college credit sibling: Mt.SAC VOC WL90A is the lone Mt.SAC member, SDCCE-Credit INDT 621 is a standalone continuing-ed noncredit row. No mirror pairs — real cross-band over-merge, D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "HLTH M1091": {
+   "agent_call": "genuine_split",
+   "reason": "NC = CCSF HLTH 5440 (no CCSF credit member) and Saddleback HLTH 401NC Enhanced (no Saddleback credit; also diverges to top 1261 Community Health Worker vs 0837 Health Ed). 0/2 siblings, different courses across band → split.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "DANC M1221": {
+   "agent_call": "mirror_keep",
+   "reason": "Both NC members mirror a same-college credit dance course by number: Santa Ana VFPA 206A ⟷ DNCE 206A (identical number), Southwestern NC 2109 ⟷ DANC 109 (2109 = NC-prefixed 109). Subject codes differ only because NC sections use generic umbrella prefixes (VFPA/NC) — exactly the carve-out pattern. Distributed mirror family; band mix is not the over-merge reason.",
+   "confidence": 0.7,
+   "detector_class": "mirror"
+  },
+  "KINE M1827": {
+   "agent_call": "genuine_split",
+   "reason": "Two SDCCE noncredit PHYE 500 rows (a continuing-ed institution), neither with a same-college credit sibling, and both drift to top 0115.10 Parks/Outdoor Rec vs the credit members' 0835/1270 Kinesiology. No mirror correspondence → D-3 split stands.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "PEDS M1017": {
+   "agent_call": "genuine_split",
+   "reason": "NC = Coastline SPED C030N and West Valley NCPE 1.3, each the lone member at its college with no credit sibling. Different courses lumped across the band → split.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "NRSR M1034": {
+   "agent_call": "genuine_split",
+   "reason": "NC = Golden West NURS G060N and LA Valley VOC ED 342CE, each the only member at its college; no same-college credit CNA sibling for either. No mirror → split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "SOCI M1053": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member LA Southwest SOC 31 (0.0u) is the only LA-Southwest row; the SOC 31 credit courses live at other colleges (West LA, LA Trade Tech, LA Pierce). Same-college test fails → genuine cross-band lump, not a mirror.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "CNSM M1013": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member Gavilan CMGT 700 has no Gavilan credit member. No mirror correspondence → D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "CSIS M1469": {
+   "agent_call": "genuine_split",
+   "reason": "Both COMP 640 members are SDCCE noncredit (continuing-ed institution) with no same-college credit sibling. No CR/NC mirror pair → split.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "BUSI M1181": {
+   "agent_call": "mirror_keep",
+   "reason": "Sole NC member Mt.SAC VOC BM60 (0.0u) mirrors Mt.SAC BUSM 60 credit — same college, same top 0516.00 Labor/Industrial Relations, number BM60↔60. Textbook Credit-by-Exam mirror; NC member belongs → not an over-merge on the band axis.",
+   "confidence": 0.85,
+   "detector_class": "mirror"
+  },
+  "ENGL M1200": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member Reedley ENGL 315A is the only Reedley row; no same-college credit sibling. No mirror → D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "MULT M1092": {
+   "agent_call": "genuine_split",
+   "reason": "Both OFSY 603 members are SDCCE noncredit with no same-college credit sibling, and drift to top 0514 Office Technology vs the credit members' Digital Media/Film/TV. Genuinely different courses across the band → split.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "SLNA M1033": {
+   "agent_call": "genuine_split",
+   "reason": "~52 credit ASL members; the sole NC member (El Camino SLAN 501, Sign Language Interpreting 0850.10) has NO El Camino credit sibling. Not a mirror pair — lone noncredit-only contributor. Same field but fails the same-college test, so D-3 split stands.",
+   "confidence": 0.6,
+   "detector_class": "band_mix"
+  },
+  "EMST M1024": {
+   "agent_call": "genuine_split",
+   "reason": "Two credit EMS members (CCSF EMT 12, SJDC H ED 32); NC members East LA VOC ED 359CE and Feather River CPR 1 are DIFFERENT courses (CPR/generic voc-ed) with no same-college credit sibling. Real cross-band over-merge.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "BUSI M1199": {
+   "agent_call": "genuine_split",
+   "reason": "Small-business family; only Mt.SAC VOC BM66 mirrors its BUSM 66 credit. Monterey Peninsula BUSI 444 and both San Diego Continuing-Ed BUSN 510 rows are noncredit-only with no same-college credit sibling; Ventura CD V38 (child-dev, TOP 1305) is a separate mis-merge. Majority NC unmirrored.",
+   "confidence": 0.65,
+   "detector_class": "partial_mirror"
+  },
+  "FLSP M1001": {
+   "agent_call": "genuine_split",
+   "reason": "Spanish-1 credit family; the NC member (Santa Ana HSOTH 740, 4930.62 Secondary Ed/GED) is a completely different subject with no Santa Ana credit sibling. Clear mis-merge, not a mirror.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "AUTO M1137": {
+   "agent_call": "mirror_keep",
+   "reason": "Las Positas NAUT A3 (0.0u Noncredit Enhanced) mirrors Las Positas AUTO A3 (4.0u Credit) — same college, same course number A3, same automotive TOP 0948. Textbook credit-by-exam mirror. Sole NC member has a same-college credit sibling.",
+   "confidence": 0.9,
+   "detector_class": "mirror"
+  },
+  "READ M1012": {
+   "agent_call": "genuine_split",
+   "reason": "Distributed Reading family; NC member Antelope Valley READ 990 has no AVC credit sibling. Same subject/TOP but noncredit-only at that college — fails same-college mirror test, D-3 split stands.",
+   "confidence": 0.6,
+   "detector_class": "band_mix"
+  },
+  "JOUR M1093": {
+   "agent_call": "genuine_split",
+   "reason": "Journalism credit family; NC member Santa Monica ENGL E34 (Creative Writing, TOP 1507) is a different subject with no Santa Monica credit sibling. Genuine over-merge.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "MUSI M1198": {
+   "agent_call": "genuine_split",
+   "reason": "Music family; NC member Ohlone MUS 161A has no Ohlone credit sibling. Same subject/TOP but noncredit-only at that college — not a mirror pair.",
+   "confidence": 0.6,
+   "detector_class": "band_mix"
+  },
+  "CSIS M1459": {
+   "agent_call": "mirror_keep",
+   "reason": "Office/computer-apps cluster spanning several TOP codes. Mt.SAC VOC CSB31 mirrors CISB 31 and LACC VOC ED 228CE plausibly mirrors CAOT 84, but West Valley NCWP 210 is noncredit-only with no same-college credit sibling. Not every NC member mirrors, so split stands.",
+   "confidence": 0.55,
+   "detector_class": "partial_mirror"
+  },
+  "BIOL M1251": {
+   "agent_call": "mirror_keep",
+   "reason": "For the CR/NC band question: the sole NC member Mt.SAC VOC AGR50 mirrors Mt.SAC AGOR 50 credit (same college, same course number 50, agriculture TOP 0101). Every NC member has a same-college credit sibling — mirror family on the band axis.",
+   "confidence": 0.7,
+   "detector_class": "mirror"
+  },
+  "DANC M1198": {
+   "agent_call": "mirror_keep",
+   "reason": "Santa Ana VFPA 250A (0.0u Noncredit Enhanced) mirrors Santa Ana DNCE 250A (2.0u Credit) — same college, same course number 250A, dance. Sole NC member has a same-college credit sibling. Clean mirror pair.",
+   "confidence": 0.9,
+   "detector_class": "mirror"
+  },
+  "BUSI M1143": {
+   "agent_call": "genuine_split",
+   "reason": "Accounting family; NC members East LA VOC ED 627CE and LA Harbor VOC ED 549CE are noncredit-only with no same-college credit siblings. Same TOP 0502 but neither is a mirror pair — D-3 cross-band split stands.",
+   "confidence": 0.6,
+   "detector_class": "band_mix"
+  },
+  "DANC M1227": {
+   "agent_call": "mirror_keep",
+   "reason": "Sole NC member Santa Ana VFPA 204A (0.0u Noncredit Enhanced) mirrors same-college credit Santa Ana DNCE 204A — identical course number 204A; Rancho Santiago district's VFPA noncredit-umbrella prefix. CR/NC mirror; D-3 split suppressed, keep as distributed dance family.",
+   "confidence": 0.85,
+   "detector_class": "mirror"
+  },
+  "EDUC M1038": {
+   "agent_call": "genuine_split",
+   "reason": "3 NC members are Educational-Aide (0802.00) courses at Berkeley City/Alameda/Merritt with no same-college credit siblings; credit members are Leadership-Skills/Supervised-Tutoring at Foothill/Southwestern. Different courses across the band, no mirror.",
+   "confidence": 0.88,
+   "detector_class": "band_mix"
+  },
+  "MATH M1118": {
+   "agent_call": "genuine_split",
+   "reason": "NC Cuesta MATH 703 and Gavilan MATH 700 have no same-college credit sibling; credit members are at 5 other colleges. No CR/NC mirror pair; D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "GEOL M1056": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member Santa Barbara City HSSC NC020 is a Secondary-Education/GED course (top 4930.62) mis-merged into a geology/oceanography family; no SBCC credit sibling. Clear over-merge.",
+   "confidence": 0.93,
+   "detector_class": "band_mix"
+  },
+  "MUSI M9031": {
+   "agent_call": "genuine_split",
+   "reason": "6 NC members across 6 colleges (LA Harbor, LA Valley, Madera, Reedley, Victor Valley, Yuba); credit only at Cerritos/College of Marin. No NC member has a same-college credit sibling — no mirror pairs.",
+   "confidence": 0.83,
+   "detector_class": "band_mix"
+  },
+  "OTEC M1108": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC Butte OLS 324 is an Interpersonal-Skills course (4930.11) with no Butte credit sibling; credit members span Office-Mgmt/Speech/Office-Tech at other colleges. No mirror; also a broader over-merge.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "MGMT M1013": {
+   "agent_call": "genuine_split",
+   "reason": "NC Las Positas NBUS 207 and Ohlone BSM 910I have no same-college credit siblings; credit members at Cuesta/Golden West/Merced/Shasta/Taft. No CR/NC mirror.",
+   "confidence": 0.84,
+   "detector_class": "band_mix"
+  },
+  "DANC M1200": {
+   "agent_call": "mirror_keep",
+   "reason": "Sole NC member Santa Ana VFPA 250B (0.0u Noncredit Enhanced) mirrors same-college credit Santa Ana DNCE 250B — identical course number 250B, Rancho Santiago VFPA noncredit-prefix mirror. D-3 split suppressed.",
+   "confidence": 0.85,
+   "detector_class": "mirror"
+  },
+  "FIRE M1108": {
+   "agent_call": "mirror_keep",
+   "reason": "Sole NC member College of the Canyons NC.FIRT 121 (0.0u) is a textbook noncredit-prefix mirror of same-college credit College of the Canyons FIRET 121 — same number 121, same top 2133.00 Fire Technology. Classic CR/NC mirror; keep.",
+   "confidence": 0.9,
+   "detector_class": "mirror"
+  },
+  "IDST M1067": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC Pasadena City DSPS 1002 is a Disabled-Students-Programs support course; Pasadena's credit member is COUN 17 (different subject and number) — not a mirror pair. One lone NC in a 22-member counseling/career-guidance family. D-3 split stands.",
+   "confidence": 0.72,
+   "detector_class": "band_mix"
+  },
+  "PHIL M1048": {
+   "agent_call": "genuine_split",
+   "reason": "3 NC members are Special-Ed/Learning-Disability support courses (Coastline SPED, North Orange DSSS ×2, top 4930.12/4930.32) mis-merged into a 28-member Philosophy family; no same-college credit siblings. Clear over-merge.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "PHOT M1064": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC Glendale NCCS 25007CP is an Information-Technology course (0701.00) with no Glendale credit sibling; credit members are photography/digital-media. No mirror; over-merge.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "PHIL M1063": {
+   "agent_call": "genuine_split",
+   "reason": "2 NC members, both at North Orange Continuing Education (a noncredit-only continuing-ed institution, subject PHSY 120). No same-college credit sibling exists — every credit member is intro-philosophy at a DIFFERENT college. Cross-band mix with no mirror correspondence; D-3 split stands.",
+   "confidence": 0.7,
+   "detector_class": "band_mix"
+  },
+  "FASH M1031": {
+   "agent_call": "genuine_split",
+   "reason": "2 NC members (Victor Valley AHOM 20.1, credit + enhanced). Victor Valley has no FASH credit member; subject AHOM (home ec) differs from the FASH/CLO credit courses at other colleges. No same-college same-subject credit sibling → genuine over-merge.",
+   "confidence": 0.75,
+   "detector_class": "band_mix"
+  },
+  "BUSI M1303": {
+   "agent_call": "needs_curator",
+   "reason": "1 NC member: Citrus NC 651 (generic noncredit prefix). Citrus also has a credit member OFF 281 (office admin) — plausibly its credit/noncredit office mirror, but subject and number differ and the NC prefix is a generic catch-all, so a same-course mirror cannot be confirmed strictly. Faculty call.",
+   "confidence": 0.5,
+   "detector_class": "band_mix"
+  },
+  "SOCS M1062": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member: LA Southwest SOC 50 (noncredit). LA Southwest has no credit member. West LA College and LA Trade Tech offer SOC 50 as CREDIT but they are different colleges — no same-college mirror. Split stands.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "COUN M1080": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member: Santa Ana CNSL 307 (noncredit). Santa Ana has no credit counseling member; all credit members (COUN/GUID/DSPS/PD/LS) are other colleges. No same-college same-subject credit sibling.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "MATH M1303": {
+   "agent_call": "genuine_split",
+   "reason": "3 NC members (Citrus MATH 355A, College of the Desert MATH 355A, LA Mission MATH NC 240CE — noncredit math support). None of those three colleges has a same-college credit member; the credit support courses (Clovis 204S, El Camino 170S, Merced 95T) are all different colleges. No same-college mirror.",
+   "confidence": 0.75,
+   "detector_class": "band_mix"
+  },
+  "KINE M1733": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member: LA Trade Tech VOC ED 314CE (generic vocational-ed noncredit). LATTC also has KIN MAJ 135 (credit) but VOC ED is a different domain than a kinesiology-major transfer course — not a plausible same-course mirror. Split stands.",
+   "confidence": 0.6,
+   "detector_class": "band_mix"
+  },
+  "HORT M1021": {
+   "agent_call": "genuine_split",
+   "reason": "2 NC members: Allan Hancock VOCE 7603A (noncredit; Allan Hancock has NO credit member at all) and Southwestern NC 3083 (generic noncredit prefix, differs from Southwestern's LNT 124 credit). At least one NC has no possible sibling, so not a full mirror family; D-3 split stands.",
+   "confidence": 0.7,
+   "detector_class": "band_mix"
+  },
+  "FIRE M1363": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member: El Camino FTEC 504 (noncredit enhanced). El Camino has no credit member here; the credit members (Palo Verde FST 150, Santa Ana FAC 84) are different colleges. No same-college mirror.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "FIRE M1055": {
+   "agent_call": "mirror_keep",
+   "reason": "1 NC member: College of the Canyons NC.FIRT 047C (Noncredit Enhanced) mirrors College of the Canyons FIRET 047C (Credit) — SAME college, SAME course number 047C, subject literally the credit subject with an 'NC.' prefix. Textbook CR/NC mirror (credit-by-exam mechanism). Keep as one identity.",
+   "confidence": 0.9,
+   "detector_class": "mirror"
+  },
+  "CULN M1092": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member: Riverside City College CUL 842 (noncredit). RCC has no credit culinary member; all credit members (College of the Canyons, Contra Costa, Laney, Mission, Santa Ana) are different colleges. No same-college mirror.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "MRKT M1012": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member: LA Trade Tech VOC ED 386CE (generic vocational-ed noncredit). LATTC has FASHMER 10 (credit) but the core cluster is MARKET 31 across LA colleges; VOC ED 386CE is a generic vocational prefix, not a same-course mirror of any credit member. Split stands.",
+   "confidence": 0.65,
+   "detector_class": "band_mix"
+  },
+  "COUN M1113": {
+   "agent_call": "genuine_split",
+   "reason": "5 NC members (Moreno Valley GUI 847B, North Orange IHSS 990 x2, Riverside City GUI 847B, Victor Valley GUID 42) — none of those 4 colleges contribute a credit member. No same-college same-subject credit sibling for any NC member; credit cohort is a distinct set of guidance colleges (Bakersfield, Cerritos, Cypress, etc.). D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "CSIS M1310": {
+   "agent_call": "genuine_split",
+   "reason": "Only NC member Ohlone DAID 918 (Animation, 0614.40); Ohlone has no credit member. The 3 credit members are unrelated courses across colleges (Cañada game design, Saddleback software dev, San Diego Mesa multimedia) — no mirror correspondence, no same-college sibling.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "KINE M1586": {
+   "agent_call": "genuine_split",
+   "reason": "Only NC member Coalinga NC 157 (0835.10); Coalinga has no credit member. Credit cohort is KIN/KINE at other colleges. No same-college credit sibling.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "OTEC M1050": {
+   "agent_call": "genuine_split",
+   "reason": "Only NC member LACC VOC ED 226CE. LACC also has CAOT 1 (Credit) at same college/top, but subject differs (VOC ED vs CAOT) and course number 226CE does not encode CAOT 1 — no mirror correspondence (unlike a true VOC-prefix mirror where the number maps). Under the same-subject test, no qualifying sibling; the NC member is over-merged into a clean cross-college CAOT 1 consolidation.",
+   "confidence": 0.6,
+   "detector_class": "band_mix"
+  },
+  "OTEC M1102": {
+   "agent_call": "genuine_split",
+   "reason": "Only NC member Santa Ana VBUS 290 (Noncredit Enhanced, top 0506.40 Small Business — different top from the CAOT 34 credit cohort's 0514.00). Santa Ana contributes no credit member. No same-college same-subject sibling; a different course lumped across the band.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "ARTS M1374": {
+   "agent_call": "genuine_split",
+   "reason": "2 NC members (Cerro Coso ART C821, Reedley ART 317, both 1002.10 painting/drawing). Neither Cerro Coso nor Reedley contributes a credit member — no same-college credit sibling. Credit cohort is a large cross-college painting/drawing consolidation; the two NC members are over-merged in.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "COUN M1048": {
+   "agent_call": "genuine_split",
+   "reason": "2 NC members, both North Orange Continuing Education CRPL 345 (top 0899.00). North Orange has no credit member; credit members are Cypress/Fullerton COUN 110. No same-college same-subject sibling — over-merge across the band.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "OTEC M1037": {
+   "agent_call": "genuine_split",
+   "reason": "Only NC member West Valley NCWP 214 (Noncredit Enhanced, 0514.00). West Valley has no credit member; credit members are Modesto BIT 262, Santa Ana BA 189, Yuba BCA 34. No same-college sibling.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "FASH M1080": {
+   "agent_call": "mirror_keep",
+   "reason": "The single NC member Mt. San Antonio VOC FSH63 (0.0u, top 1303.20) MIRRORS same-college credit member Mt. San Antonio FASH 63 (3.0u, top 1303.20): same college, same top, course number 'FSH63' literally encodes FASH 63 with a VOC noncredit prefix — the textbook Credit-by-Exam vocational mirror. Every NC member (1/1) has a same-college credit sibling → mirror family, keep as one canonical CR/NC pai",
+   "confidence": 0.72,
+   "detector_class": "mirror"
+  },
+  "PEDS M1007": {
+   "agent_call": "needs_curator",
+   "reason": "Heterogeneous. College of Marin has a clean 3-way mirror: PE 70/070A/070B (Credit) ⟷ PEN 70/070A/070B (Noncredit), same college, same top 0835.80, matching numbers with PEN = PE-noncredit prefix. BUT two other NC members lack any same-college sibling: Cuesta WELL 1 (top 0835.10 physical fitness — different topic) and West Valley NCPE 1.33 (no West Valley credit member). Only 3/5 NC members mirror;",
+   "confidence": 0.6,
+   "detector_class": "partial_mirror"
+  },
+  "MUSI M1534": {
+   "agent_call": "genuine_split",
+   "reason": "3 NC members: Butte MUS 360 (no Butte credit member), Columbia MUSIC 303 (no Columbia credit member), Southwestern NC 3071 (Southwestern has MUS 175 credit, but subject NC vs MUS and number 3071 does not encode MUS 175 — a generic noncredit number, not a mirror). No NC member has a qualifying same-college same-subject sibling; distinct music courses lumped across the band.",
+   "confidence": 0.72,
+   "detector_class": "band_mix"
+  },
+  "MATH M1031": {
+   "agent_call": "genuine_split",
+   "reason": "Only NC member Citrus MATH 374 (1701.00); Citrus contributes no credit member. Credit cohort is general-math courses at other colleges (Butte MATH 108, Desert MATH 54, etc.). No same-college credit sibling — over-merge across the band.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "MATH M1062": {
+   "agent_call": "mirror_keep",
+   "reason": "Coherent single elementary/intermediate-algebra course (36 members, all TOP 1701, all subject MATH). 2 NC members: LA Mission ACAD PR 115CE (0.0u) mirrors same-college MATH 115 credit (num 115⟷115CE, ACAD PR is a noncredit-prep prefix) — a mirror; Santa Rosa MATH 450 is the same algebra course taught noncredit-only. Not different courses lumped across the band — it is one canonical course with a C",
+   "confidence": 0.7,
+   "detector_class": "partial_mirror"
+  },
+  "BUSI M9102": {
+   "agent_call": "genuine_split",
+   "reason": "Grab-bag noncredit-workforce identity (M9xxx). 8 NC members across scattered topics — general work experience (4932), interpersonal skills (4930.11), job-seeking (4930.12), customer service (0518), business supervision — NONE share a college with the 3 credit MGMT/BUS members. No mirror correspondence; genuinely different courses across the band. D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "ENGL M1359": {
+   "agent_call": "genuine_split",
+   "reason": "5 credit college-English/lit members plus 1 NC member (Santiago Canyon HSENG 76, 0.0u, TOP 4930.62 Secondary Education/G.E.D.) — high-school-English/GED prep, a different course from college composition, at a college with no credit sibling. No mirror. D-3 split stands.",
+   "confidence": 0.75,
+   "detector_class": "band_mix"
+  },
+  "GEOG M1087": {
+   "agent_call": "mirror_keep",
+   "reason": "Coherent GIS course (all TOP 2206.10). Sole NC member LA Pierce VOC ED 127CE (0.0u) mirrors the same college's credit GIS courses GEOG 37 / GIS 37 — VOC ED is a noncredit CE prefix, same college, same GIS field. This is a same-college CR/NC mirror, not a genuine over-merge.",
+   "confidence": 0.68,
+   "detector_class": "band_mix"
+  },
+  "MATH M1270": {
+   "agent_call": "genuine_split",
+   "reason": "Developmental math/stat-support family (mixes TOP 1701 & 1702). 2 NC members — Madera MATH 311L (0.0u) and San Bernardino Valley STAT 608 (0.0u) — are each the only member at their college, so neither has a same-college credit sibling. No mirror correspondence; per the operational test the CR/NC split stands.",
+   "confidence": 0.55,
+   "detector_class": "band_mix"
+  },
+  "ENGR M1004": {
+   "agent_call": "genuine_split",
+   "reason": "Cross-field grab bag — engineering-general-transfer (0901), engineering tech (0924), drafting (0953), architecture (0201). Sole NC member Chabot ENGR 222 (0.0u, 0924) has no same-college credit sibling. Different courses lumped across the band; D-3 split stands.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "KINE M1806": {
+   "agent_call": "genuine_split",
+   "reason": "Large heterogeneous over-merge spanning health-ed (0837), PE (0835), psychology (2001), business management (0506/0506.30), massage therapy (1262), study/learning skills (4930.14/.30). 4 NC members (Allan Hancock HEAL 7104, Redwoods WORK 221, Siskiyous HEA 521, Foothill ALCB 414Y) — none has a same-college credit sibling. No mirrors; clear over-merge. D-3 split stands.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "CSIS M1389": {
+   "agent_call": "genuine_split",
+   "reason": "Otherwise-credit intro-computing family; sole NC member Rio Hondo NBIZ 7 (0.0u, 0701) is a noncredit orphan with no same-college credit sibling. No mirror correspondence — the NC member is not a same-college CR/NC pair, so D-3 split of the noncredit member stands.",
+   "confidence": 0.68,
+   "detector_class": "band_mix"
+  },
+  "HTEC M1024": {
+   "agent_call": "genuine_split",
+   "reason": "Clinical medical-assisting family (TOP 1208.10/1208). Sole NC member Glendale STV 216 (0.0u) is TOP 0514.20 Medical Office Technology — a different course — with no Glendale credit sibling. No mirror; D-3 split stands.",
+   "confidence": 0.72,
+   "detector_class": "band_mix"
+  },
+  "PEDS M1027": {
+   "agent_call": "mirror_keep",
+   "reason": "Coherent Adapted PE course (nearly all TOP 0835.80). College of Marin shows textbook mirrors: PEN 074A/074B (0.0u NC) mirror same-college PE 074A/074B (0.5u credit), matching numbers. Coastline SPED C034N (0.0u) is the same adapted-PE course taught noncredit-only. 2 of 3 NC members are demonstrated same-college mirrors and the identity is one course, not different courses across the band — D-3 spl",
+   "confidence": 0.7,
+   "detector_class": "partial_mirror"
+  },
+  "BUSI M1405": {
+   "agent_call": "genuine_split",
+   "reason": "Business/project-management family with off-topic strays (environmental control 0946, civil construction mgmt 0957, CIS). Both NC members are San Diego College of Continuing Education BUSN 621 (0.0u) — a noncredit-only college that structurally cannot have a same-college credit sibling; no mirror correspondence. D-3 split stands.",
+   "confidence": 0.6,
+   "detector_class": "band_mix"
+  },
+  "CSIS M1401": {
+   "agent_call": "genuine_split",
+   "reason": "Computer-applications family with 5 NC members: Allan Hancock VOCE 7103/7103A (0.0u) and LA City/LA Harbor/West LA VOC ED 129CE (0.0u, TOP 0514 Office Technology). None has a same-college credit sibling, and the 129CE office-tech courses diverge from the credit CIS/IT members. No mirrors; clear over-merge. D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "MGMT M1016": {
+   "agent_call": "genuine_split",
+   "reason": "3 NC members (Redwoods WORK 225, Las Positas NBUS 203, Ohlone BSM 910D) are each the SOLE member from their college — none has a same-college same-subject credit sibling. Credit members (Cuesta PDS 178, Merced MGMT 50G, Shasta BUAD 86, Taft MGMT 1535) are different courses at other colleges. No mirror pairs; D-3 split stands.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "BUSI M1384": {
+   "agent_call": "genuine_split",
+   "reason": "Only 1 NC member (College of the Canyons NC.CSKL 23) — sole Canyons member, no same-college credit sibling. Identity is a cross-field over-merge anyway (Fire Tech, Police Academy, Business Mgmt). No mirror.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "ESCI M1078": {
+   "agent_call": "genuine_split",
+   "reason": "2 NC members (Siskiyous WORK 541, San Bernardino Valley WST 691) each sole from their college — no same-college credit sibling. Credit water/wastewater courses live at other colleges (Merced, Santiago Canyon, Shasta). Same field but no CR/NC mirror pair.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "CSIS M1246": {
+   "agent_call": "genuine_split",
+   "reason": "Only 1 NC member (Mt. San Antonio VOC CSB11) — sole Mt SAC member, no same-college credit sibling. The rest is a giant same-college Merritt credit cluster + scattered credit courses. No mirror.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "CSIS M1448": {
+   "agent_call": "genuine_split",
+   "reason": "Only 1 NC member (San Diego College of Continuing Education COMP 690) — sole SDCCE member, no same-college credit sibling. All other members are credit courses at other colleges. No mirror.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "COUN M9015": {
+   "agent_call": "genuine_split",
+   "reason": "3 NC members (Clovis ESC 340, College of the Desert DSPS 315, Santa Monica COUNS 901) each sole from their college — none has a same-college credit sibling. Credit members (Sequoias LS 315, Ohlone COUN 171) are different courses elsewhere. No mirror pairs.",
+   "confidence": 0.88,
+   "detector_class": "band_mix"
+  },
+  "CULN M1042": {
+   "agent_call": "genuine_split",
+   "reason": "Only 1 NC member (Allan Hancock VOCE 7702) — sole Hancock member, no same-college credit sibling. Credit culinary courses are Chaffey CUL 440 and SBVC CULART 40 at other colleges. No mirror.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "ELEC M1016": {
+   "agent_call": "genuine_split",
+   "reason": "2 NC members are both North Orange Continuing Education ELET 102 (one under 'Continuing Education', one under 'Continuing Education Credit') — BOTH are noncredit status, duplicate NC listings, not a CR/NC mirror. Neither North Orange entry is a credit course, so no same-college credit sibling exists. Credit members are at Irvine Valley, Laney, Palo Verde, San Joaquin Delta. No mirror.",
+   "confidence": 0.82,
+   "detector_class": "band_mix"
+  },
+  "FIRE M1012": {
+   "agent_call": "mirror_keep",
+   "reason": "College of the Canyons has BOTH FIRET 16 (Credit, Fire Academy) AND NC.FIRT 16 (Noncredit Enhanced, Fire Technology) — a textbook same-college CR/NC mirror: same subject (Fire), same number 16, NC prefix pattern (NC.FIRT mirrors FIRET). The single NC member has its same-college credit sibling. Las Positas FST 25 is cross-college credit corroboration. Mirror family, KEEP.",
+   "confidence": 0.92,
+   "detector_class": "mirror"
+  },
+  "CSIS M1358": {
+   "agent_call": "genuine_split",
+   "reason": "4 NC members: Glendale's 3 (OSC 05150CA, OBT 90, STV 90) have NO same-college credit sibling (Glendale contributes only noncredit). Mt. San Antonio VOC CSB21 has an arguable Mt SAC credit course CISB 21 but under a DIFFERENT subject (VOC vs CISB), so it fails the same-subject test. At most 0 clean mirrors of 4; large office-tech over-merge. D-3 split stands.",
+   "confidence": 0.8,
+   "detector_class": "partial_mirror"
+  },
+  "OTEC M1217": {
+   "agent_call": "genuine_split",
+   "reason": "Only 1 NC member (LA City College VOC ED 227CE). LACC does have a credit CAOT 82, but it is a DIFFERENT subject (VOC ED vs CAOT) and non-mirror numbering — fails the same-subject mirror test. The rest is a clean cross-college CAOT 82 credit cluster; the lone NC voc-ed course is a different course. Split stands.",
+   "confidence": 0.78,
+   "detector_class": "band_mix"
+  },
+  "HLTH M1116": {
+   "agent_call": "genuine_split",
+   "reason": "3 NC members (Glendale RET S00207AG + RET S00207CF Gerontology, Rio Hondo NCHS 1 Physical Fitness) — none has a same-college same-subject credit sibling; they are different fields (gerontology, fitness) from the credit HEALTH 2 / PE cluster. Cross-field over-merge (Health Ed, PE, Gerontology). No mirror.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "ENGL M1187": {
+   "agent_call": "genuine_split",
+   "reason": "9 credit Creative-Writing members + 1 lone NC (Reedley ENGL 315B, 0.0u). Reedley has no same-college credit sibling in the identity (its credit peers 15B are at Clovis/Madera, cross-college). No mirror pair -> D-3 split stands, though same subject/TOP.",
+   "confidence": 0.65,
+   "detector_class": "band_mix"
+  },
+  "FIRE M1027": {
+   "agent_call": "mirror_keep",
+   "reason": "College of the Canyons FIRET 009A (2.0u Credit) mirrored by same-college NC.FIRT 009A (0.0u NC Enhanced) — identical course number, same Fire Tech discipline. Textbook same-college CR/NC mirror -> keep.",
+   "confidence": 0.9,
+   "detector_class": "mirror"
+  },
+  "MATH M1300": {
+   "agent_call": "genuine_split",
+   "reason": "3 NC members (Citrus MATH 310, COD MATH 310, LA Mission MATH NC 227CE) none with a same-college MATH credit sibling (COD's only credit is STAT, different subject). Also cross-discipline over-merge (STAT + PSYC 2001.00). No mirror -> split stands.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "FIRE M1116": {
+   "agent_call": "mirror_keep",
+   "reason": "College of the Canyons FIRET 122 (2.0u Credit) mirrored by same-college NC.FIRT 122 (0.0u NC) — same course number, same Fire Tech TOP. Same-college CR/NC mirror -> keep.",
+   "confidence": 0.9,
+   "detector_class": "mirror"
+  },
+  "KINE M1501": {
+   "agent_call": "genuine_split",
+   "reason": "2 NC members (CCSF WGST 2501 - Women's/Gender Studies, Health-Ed TOP; Siskiyous OLAD 535) neither with a same-college PE/KIN credit sibling. Different courses/discipline lumped across band -> split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "NRSR M9017": {
+   "agent_call": "genuine_split",
+   "reason": "5 NC nursing/health members (COD HS 300, Sequoias NURS 400, Grossmont NURS 99, Lemoore NC 304L, Rio Hondo NHSL 30) — none has a same-college credit sibling; credit members (CCSF, Merritt, Yuba) are different colleges. No mirror -> split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "VOCE M9008": {
+   "agent_call": "genuine_split",
+   "reason": "4 NC Educational-Aide members (LA City/Pierce/West LA VOC ED 089CE, Rio Hondo NTTR 20) — none with same-college credit sibling; credit (Merritt LRNRE, SD City/Mesa EDUC 150) are separate colleges. No same-college mirror -> split stands.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "MUSI M9038": {
+   "agent_call": "genuine_split",
+   "reason": "8 NC music members across 8 colleges + 1 stray credit (Ohlone MUS 374). None of the NC colleges matches Ohlone, so no same-college mirror pair. The lone credit does not mirror any NC -> D-3 split stands.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "BUSI M1283": {
+   "agent_call": "genuine_split",
+   "reason": "11 credit Business/Entrepreneurship members + 1 lone NC (Gavilan BUS 700, 0.0u NC Enhanced). Gavilan has no same-college credit sibling in the identity. Same subject BUS but no mirror -> split stands.",
+   "confidence": 0.65,
+   "detector_class": "band_mix"
+  },
+  "ELCT M1016": {
+   "agent_call": "mirror_keep",
+   "reason": "Mt. San Antonio ELEC 54A (4.0u Credit) mirrored by same-college VOC EL54A (0.0u NC) — same course number 54A, same Electronics TOP 0934.00. Vocational noncredit mirror of the credit section -> keep.",
+   "confidence": 0.85,
+   "detector_class": "mirror"
+  },
+  "COUN M9023": {
+   "agent_call": "genuine_split",
+   "reason": "4 NC members (Coastline SPED, Cuesta NAWD, MiraCosta NCWFP, Santa Ana VBUS) across varied subjects/TOP; none has a same-college credit sibling. Only credit is Golden West COUN G199. No mirror -> split stands.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "MATH M1254": {
+   "agent_call": "genuine_split",
+   "reason": "11 credit General-Math members + 2 lone NC (Las Positas NMAT 256, West LA ACAD PR 017CE); neither college has a same-college credit MATH sibling in the identity. No mirror pair -> split stands.",
+   "confidence": 0.75,
+   "detector_class": "band_mix"
+  },
+  "CULN M1147": {
+   "agent_call": "genuine_split",
+   "reason": "3 NC members (Riverside CUL 825; SDCCE FDNT 610; SDCCE-Credit FDNT 610 also marked Noncredit) — none has a same-college credit sibling. Credit members are CART@Desert, CLN ART@LA Mission, FDR@Mission, HRM@Mt SAC — different courses across colleges. No mirror correspondence; D-3 split stands.",
+   "confidence": 0.82,
+   "detector_class": "band_mix"
+  },
+  "BUSI M1396": {
+   "agent_call": "genuine_split",
+   "reason": "2 NC members: EVC ACCTG 510 (no EVC credit sibling), Glendale LLS 101 (Glendale's only credit member is BUSAD 136 — different subject). Grab-bag mixing General Business, Living Skills, Accounting, Banking/Finance across colleges. No same-college same-subject mirror.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "ANTH M1064": {
+   "agent_call": "genuine_split",
+   "reason": "Single NC member North Orange CE ARC 100 (Archaeology) has no same-college credit sibling; the credit members are ANTH courses at other colleges. Band mix is between different courses across colleges, not a same-college CR/NC mirror. D-3 split stands.",
+   "confidence": 0.72,
+   "detector_class": "band_mix"
+  },
+  "AUTO M1184": {
+   "agent_call": "mirror_keep",
+   "reason": "The sole NC member Las Positas NAUT A6 (Noncredit Enhanced, 0.0u) mirrors Las Positas AUTO A6 (Credit, 5.0u) — same college, identical course number A6, NAUT is Las Positas's noncredit-prefix twin of AUTO. Classic CR/NC mirror pair; the NC member's D-3 signal is suppressed. (Santa Ana DETT 161 diesel is a separate credit member but does not affect the NC test.)",
+   "confidence": 0.85,
+   "detector_class": "mirror"
+  },
+  "AUTO M1185": {
+   "agent_call": "genuine_split",
+   "reason": "Single NC member Lemoore NC 170 has no same-college credit sibling. Members span Automotive, Electrical, Diesel, Industrial Systems TOP codes across 6 colleges — a genuine cross-discipline over-merge, not a mirror.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "PEDS M1014": {
+   "agent_call": "mirror_keep",
+   "reason": "Both NC members mirror same-college credit siblings: College of Marin PEN 072A (NC) ⟷ PE 072A (Credit), and PEN 072B (NC) ⟷ PE 072B (Credit) — identical course numbers, PEN is Marin's noncredit-prefix twin of PE, all Adapted PE (top 0835.80). Clean distributed mirror family (also College of San Mateo ADAP 110 credit). Keep.",
+   "confidence": 0.9,
+   "detector_class": "mirror"
+  },
+  "BUSI M1127": {
+   "agent_call": "genuine_split",
+   "reason": "3 NC members (Antelope Valley BUS 911; Las Positas NBUS 202; Ohlone BSM 910C) — each is the only member at its college, so none has a same-college credit sibling. Management/supervision/customer-service grab-bag across colleges; no mirror pairs.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "COUN M1159": {
+   "agent_call": "genuine_split",
+   "reason": "2 NC members (Moreno Valley GUI 848; Riverside City GUI 848) — each is the only member at its college, no same-college credit sibling. Credit members are COUNS/COUN/EDUC at other colleges. Topically academic guidance but the band mix is across colleges with no CR/NC mirror correspondence; D-3 split stands.",
+   "confidence": 0.75,
+   "detector_class": "band_mix"
+  },
+  "BUSI M1093": {
+   "agent_call": "genuine_split",
+   "reason": "Single NC member Rio Hondo NHSN 43 has no same-college credit sibling; credit members are MA/HCA/MOA/BUS medical-assisting courses at other colleges. No same-college mirror; D-3 split stands.",
+   "confidence": 0.82,
+   "detector_class": "band_mix"
+  },
+  "IDST M1140": {
+   "agent_call": "genuine_split",
+   "reason": "2 NC members (Allan Hancock DISA 7001B; Lake Tahoe GES 551) — each the sole member at its college, no same-college credit sibling. Living-skills/disabled-student family across colleges; no CR/NC mirror.",
+   "confidence": 0.83,
+   "detector_class": "band_mix"
+  },
+  "INDT M1100": {
+   "agent_call": "genuine_split",
+   "reason": "Single NC member Mt. San Antonio VOC EL10 has no same-college credit sibling. Members span Electronics, Electro-Mechanical, Industrial Systems, Manufacturing TOP codes across 6 colleges — cross-discipline over-merge, not a mirror.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "ECED M1099": {
+   "agent_call": "genuine_split",
+   "reason": "Single NC member Mt. San Antonio VOC CD has no same-college credit sibling. 57-member grab-bag mixing Child Development (Merritt CHDEV variants et al.) with General Psychology courses — a broad over-merge; the lone NC member has no CR/NC mirror. D-3 split stands.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "CNST M9029": {
+   "agent_call": "genuine_split",
+   "reason": "2-member cross-discipline over-merge: NC College of the Desert ACT 331A (Construction Mgmt, top 0957) + CR Santa Ana AUTO 116B (Automotive, top 0948). Different colleges, subjects, disciplines. NC member has no same-college credit sibling. Not a mirror.",
+   "confidence": 0.95,
+   "detector_class": "band_mix"
+  },
+  "MRKT M1009": {
+   "agent_call": "genuine_split",
+   "reason": "Coherent Marketing family (top 0509) but the lone NC member (Santiago Canyon VBUS 150) has no Santiago Canyon credit member to mirror. The 9 credit members are all at OTHER colleges. Orphan noncredit → D-3 split peels it.",
+   "confidence": 0.82,
+   "detector_class": "band_mix"
+  },
+  "ECED M9017": {
+   "agent_call": "genuine_split",
+   "reason": "4 NC members (Allan Hancock ELDV 7301=Vocational ESL off-discipline, Allan Hancock ECSN 7301, North Orange ECED x2) — none has a same-college credit sibling. Credit members are El Camino + Feather River. No mirror correspondence.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "FASH M1098": {
+   "agent_call": "genuine_split",
+   "reason": "Fashion family (top 1303) with 7 credit members across colleges + 1 orphan NC (Allan Hancock FASN 7004) that has no Allan Hancock credit member. No mirror.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "OTEC M1202": {
+   "agent_call": "genuine_split",
+   "reason": "3 NC members (Fresno City BT 307, LA City & West LA VOC ED 103CE) — each at a college with no credit member here. Credit members are Allan Hancock + Foothill x2 (one Foothill row is Living Skills Handicapped, itself off). No same-college NC/CR mirror.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "ECON M1021": {
+   "agent_call": "genuine_split",
+   "reason": "14 credit college-Economics members (top 2204) + 3 NC members that are adult-HS-diploma social studies (Pasadena AHSD 6414, Santa Ana & Santiago Canyon HSSOC 215; top 4930.62 Secondary Ed/GED). Different courses, no same-college credit sibling. Clear over-merge.",
+   "confidence": 0.93,
+   "detector_class": "band_mix"
+  },
+  "EDUC M1031": {
+   "agent_call": "genuine_split",
+   "reason": "Ed-Tech credit family + 1 orphan NC (Southwestern NC 1092, top 0802 Educational Aide/Teacher Assistant — off-discipline). No Southwestern credit member to mirror.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "PHMT M1008": {
+   "agent_call": "needs_curator",
+   "reason": "4-member Pharmacy Tech family (top 1221). NC Santa Ana VHLTH 799 sits at the SAME college as CR Santa Ana PHAR 48, same discipline — plausibly a V-prefix vocational-noncredit mirror (Credit-by-Exam mechanism). But subject (VHLTH vs PHAR) and number (799 vs 48) do not correspond, unlike a clean N-prefix mirror. Faculty call on whether it's a true mirror.",
+   "confidence": 0.55,
+   "detector_class": "band_mix"
+  },
+  "BUSI M1202": {
+   "agent_call": "needs_curator",
+   "reason": "45-member heterogeneous business grab-bag (top codes 0501/0505/0506/0502/0514/1701/1799). Mixed NC signal: Mt. San Antonio VOC BA68 IS a mirror of same-college BUSA 68 (same number 68, top 0502 Accounting) → keep; but Citrus NC 661 (top 0599) is an orphan noncredit with no Citrus credit member. Not all NC members mirror, so neither clean keep nor clean split — curator should preserve the Mt SAC mi",
+   "confidence": 0.6,
+   "detector_class": "partial_mirror"
+  },
+  "KINE M1529": {
+   "agent_call": "genuine_split",
+   "reason": "Fitness Trainer family (top 0835.20) + 1 orphan NC (Crafton Hills KIN/N 960) — Crafton has no credit member here, so the N-suffix noncredit has nothing to mirror at its own college. Credit members are all other colleges.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "AUTO M1172": {
+   "agent_call": "mirror_keep",
+   "reason": "Textbook N-prefix mirror: Las Positas NAUT A9 (NC, 0.0u) ⟷ Las Positas AUTO A9 (CR, 4.0u) — SAME college, SAME course number A9, SAME top 0948 Automotive. NAUT = noncredit AUTO section (Credit-by-Exam). The one NC member is a same-college mirror of its credit sibling; Santa Ana AUTO 119 rounds out the Automotive family. Keep as one identity.",
+   "confidence": 0.9,
+   "detector_class": "mirror"
+  },
+  "CSIS M9045": {
+   "agent_call": "genuine_split",
+   "reason": "4 NC members (Allan Hancock VOCE 7105A, Cerro Coso IT C810, Santa Ana VBUS 260, Southwestern NC 198) — none shares a college with the 2 credit members (Las Positas CIS 88A, Santa Barbara COMP 123). Spans top codes 0702/0701/0514. No same-college NC/CR mirror; over-merge split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "GEOL M1022": {
+   "agent_call": "genuine_split",
+   "reason": "2 NC members are GED/secondary-ed prep (College of the Desert ABE 348C top 4930.62; Santa Barbara HSSC NC040 top 4930.62) — different subject, different field, no same-college geology credit sibling. Not mirrors of the Earth Science/Geology credit body.",
+   "confidence": 0.9,
+   "detector_class": "band_mix"
+  },
+  "BUSI M9087": {
+   "agent_call": "genuine_split",
+   "reason": "4 NC members (North Orange BUSN 104, Pasadena BUSN 4001, North Orange BUSN 118 x2) all at continuing-ed colleges with no same-college credit section; the lone credit member is Shasta BUAD 120 (different college). No mirror correspondence.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "DANC M1362": {
+   "agent_call": "mirror_keep",
+   "reason": "Sole NC member (Southwestern NC 2150, 0.0u) mirrors Southwestern's own credit DANC 150 — matching course number 150 with the '2' noncredit prefix, same college. Classic CR/NC mirror pair; CR/NC split does not stand.",
+   "confidence": 0.85,
+   "detector_class": "mirror"
+  },
+  "BUSI M1401": {
+   "agent_call": "genuine_split",
+   "reason": "Both NC members are North Orange Continuing Ed BMGR 414 (continuing-ed only, no same-college credit section). Credit members (Barstow, Laney, Ventura) are different colleges. No mirror.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "CULN M1039": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member College of the Canyons NC.CUL 2 appears once with no same-college credit sibling; all credit members (Cypress, Saddleback, Santa Ana) are other colleges. Standalone noncredit, not a mirror.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "BUSI M1228": {
+   "agent_call": "mirror_keep",
+   "reason": "Sole NC member Mt. San Antonio VOC BM53 (0.0u) mirrors Mt. SAC's own credit BUSM 53 — matching course number 53 with a VOC noncredit prefix, same college, same TOP 0510.00. CR/NC split does not stand.",
+   "confidence": 0.85,
+   "detector_class": "mirror"
+  },
+  "THEA M1026": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member College of the Siskiyous OLAD 515 (0.0u, OLAD = older-adult/community-ed prefix) appears once, no same-college drama credit sibling. All 13 other members are credit at other colleges. Standalone NC, not a mirror.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "OTEC M9099": {
+   "agent_call": "genuine_split",
+   "reason": "6 NC members across LA City, Monterey Peninsula, and North Orange (incl. IHSS 126 which is top 4930.62 GED, a different field) with no same-college credit siblings; the lone credit member Allan Hancock CBOT 100 shares no college. No mirror correspondence.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "DANC M1214": {
+   "agent_call": "mirror_keep",
+   "reason": "Both NC members mirror a same-college credit sibling: Santa Ana VFPA 219A (0.0u) ⟷ Santa Ana DNCE 219A (course 219A), and Southwestern NC 2117 (0.0u) ⟷ Southwestern DANC 117 (course 117 + '2' NC prefix). CR/NC mix fully explained by mirrors; split does not stand. (PE/Kinesiology cross-discipline members are a separate, non-CR/NC concern.)",
+   "confidence": 0.8,
+   "detector_class": "mirror"
+  },
+  "MULT M9006": {
+   "agent_call": "genuine_split",
+   "reason": "Both NC members are North Orange Continuing Ed DIG 114 (continuing-ed only, no same-college credit); lone credit member Modesto CMPGR 284 is a different college. No mirror.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "CSIS M1034": {
+   "agent_call": "genuine_split",
+   "reason": "Only 1 of 3 NC members mirrors (Riverside CIS 862 ⟷ Riverside CSC 62, course 62 + '8' prefix, TOP 0707.20). The 2 Glendale NC members (OBT 113, STV 113) have no same-college credit sibling. Identity is also topically heterogeneous (Software Apps / Office Tech / Database / IT), so the over-merge is real; split stands.",
+   "confidence": 0.6,
+   "detector_class": "band_mix"
+  },
+  "HORT M1036": {
+   "agent_call": "genuine_split",
+   "reason": "Only 1 of 2 NC members mirrors (Mt. San Antonio VOC AGR13 ⟷ Mt. SAC AGOR 13, course 13, TOP 0109.10). Allan Hancock VOCE 7620 is a standalone noncredit with no same-college horticulture credit sibling. Not every NC member mirrors → over-merge stands per D-3 test.",
+   "confidence": 0.6,
+   "detector_class": "partial_mirror"
+  },
+  "MUSI M1293": {
+   "agent_call": "mirror_keep",
+   "reason": "20-college distributed credit Music family (TOP 1004). The single NC member, Southwestern College NC 3077 (0.0u), is Southwestern's OWN noncredit version of the same course — Southwestern is also in the group with a credit member (MUS 163A, TOP 1004 Music). Subject shows as generic 'NC' bucket rather than 'MUS' but the discipline/TOP match and same-college credit presence make this a credit-by-exa",
+   "confidence": 0.6,
+   "detector_class": "band_mix"
+  },
+  "HLTH M1143": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member (College of the Canyons NC.LSKL 100, a noncredit Life-Skills course, 0.0u) has NO credit member from College of the Canyons in the identity. It is lumped with 8 credit Health-Education courses from other colleges. No same-college mirror → D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "MUSI M1310": {
+   "agent_call": "genuine_split",
+   "reason": "2 NC members, neither a clean same-college mirror: Allan Hancock OLDR 7401 is an Older-Adults community-ed noncredit course (subject OLDR, not the credit MUS 146 it would need to mirror — older-adult noncredit is not a credit-by-exam mirror), and Butte College MUS 364 (NC) has no Butte credit sibling in the group. No qualifying mirrors → split stands.",
+   "confidence": 0.7,
+   "detector_class": "band_mix"
+  },
+  "CSIS M1252": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member (Oxnard College CAOT R803, noncredit Office Tech) has no Oxnard credit sibling. The identity is already a cross-TOP grab-bag (telecom, CIS, office tech, software); the NC office-tech course is lumped with credit courses from other colleges. No same-college mirror → split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "ARTS M1260": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member (Monterey Peninsula College ART 431, noncredit Painting/Drawing) has no Monterey Peninsula credit sibling in the group — a standalone noncredit art course lumped with credit drawing/painting courses from other colleges. No same-college mirror → split stands.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "PHMT M1002": {
+   "agent_call": "genuine_split",
+   "reason": "2 Noncredit-Enhanced Pharmacy-Tech members (Mission College PHT 805, Orange Coast PHMT A060N) — neither college has a credit sibling in the identity. Though CTE/credential-aligned (P-8 bias-to-merge tension), the strict mirror test fails: these NC-Enhanced courses mirror no SAME-college credit course here, they are folded with credit pharmacy courses from other colleges. D-3 split stands.",
+   "confidence": 0.6,
+   "detector_class": "band_mix"
+  },
+  "REAL M1044": {
+   "agent_call": "mirror_keep",
+   "reason": "Textbook CR/NC mirror: Santiago Canyon College VRE 112 (Noncredit Enhanced, 0.0u) mirrors Santiago Canyon College RE 112 (credit, 3.0u) — SAME college, SAME course number 112, V-prefix vocational noncredit twin, same TOP 0511 Real Estate. This is the free NC / credit-by-exam mechanism. Keep as one identity.",
+   "confidence": 0.95,
+   "detector_class": "mirror"
+  },
+  "CSIS M1319": {
+   "agent_call": "genuine_split",
+   "reason": "Both NC members are San Diego Continuing Education entries of OFSY 520 (one Noncredit Enhanced, one Noncredit under the '...Credit' campus name but credit_status=Noncredit). Neither has a credit sibling — no CREDIT course from those units in the group. They are lumped with credit Desktop-Publishing/Software courses from other colleges. No same-college credit mirror → split stands.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "FIMS M1035": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member (College of the Siskiyous OLAD 519 — an Older-Adults community-ed noncredit Film course) has no Siskiyous credit sibling. Standalone older-adult noncredit course lumped with credit film/TV courses from other colleges. Not a credit-by-exam mirror. Split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "OTEC M9059": {
+   "agent_call": "genuine_split",
+   "reason": "2-member noncredit-primary identity mixing CCSF BOSS 5500 (Noncredit Office Tech) with Monterey Peninsula BUSC 109 (Credit, 1.0u) — two different courses at two different colleges. The NC member has no same-college credit sibling. Cross-band mix of distinct courses → split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "CULN M1129": {
+   "agent_call": "genuine_split",
+   "reason": "2 Noncredit-Enhanced Culinary members (College of the Siskiyous HOSP 502, Cuesta College NCTE 713) — neither college has a credit sibling in the identity. They are folded with credit Nutrition/Foods/Culinary courses from other colleges. No same-college mirror → split stands.",
+   "confidence": 0.75,
+   "detector_class": "band_mix"
+  },
+  "KINE M1138": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member (Citrus College NC 901, noncredit Physical Fitness) has no Citrus credit sibling in this mixed fitness/aquatics/PE identity. Lumped with credit PE courses from other colleges; no same-college credit-by-exam mirror. (Any P-11 conditioning consolidation is a separate packaging question.) D-3 split stands.",
+   "confidence": 0.75,
+   "detector_class": "band_mix"
+  },
+  "EMST M1075": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member (Antelope Valley EMT 905, 0.0u EMS) has no same-college credit sibling — AVC appears only once. Credit members are paramedic courses (top 1251) at other colleges; the NC is a basic-EMT with no mirror. D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "COUN M1147": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member (Santa Rosa DRD 700, 0.0u, top=Language Arts) has no same-college credit sibling. Cluster mixes COUN/GUID/ENGL/LSK/DRD across disciplines; the NC is a different course, not a mirror. D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "BSKL M1001": {
+   "agent_call": "genuine_split",
+   "reason": "2 NC members (LA Harbor + LA Trade Tech BSICSKL 060CE, Study Skills) — neither college has a same-college credit sibling. Credit members are Cerritos CIS 50 and Victor Valley ESL 12A/B, unrelated courses. Not a mirror; D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "ARTS M1182": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member (College of Alameda ART 520, 0.0u Painting/Drawing) — Alameda appears only once, no same-college credit ART sibling. Credit members are ART 20/125/001A at other colleges. No same-college mirror; D-3 split stands.",
+   "confidence": 0.75,
+   "detector_class": "band_mix"
+  },
+  "DANC M1074": {
+   "agent_call": "mirror_keep",
+   "reason": "33-member dance family, all credit except 1 NC: Santa Ana VFPA 201B (0.0u Noncredit Enhanced, Commercial Dance) mirrors Santa Ana's own DNCE 201B (2.0u credit) — same college, same number 201B, same topic. VFPA is the noncredit-umbrella subject code for the mirrored credit DNCE section. Same-college CR/NC mirror; carve-out applies, split does NOT stand.",
+   "confidence": 0.72,
+   "detector_class": "mirror"
+  },
+  "COUN M1143": {
+   "agent_call": "genuine_split",
+   "reason": "3 NC members (Coastline SPED C065N, San Bernardino VOCED 602, Santa Rosa DRD 761) — each college appears once, none has a same-college credit sibling. Disciplines scattered (Living Skills/Job-Seeking/Career/Academic). Different courses across the band; D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "ENGL M1135": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member (Long Beach CDECE 634, 0.0u Child Development) has no same-college credit sibling. Cluster is a mess (English/Comp Lit/Classics/Child Development mixed); the NC is a different course entirely. D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "ENGL M1114": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member (Foothill NCEN 400, 0.0u English) — Foothill appears only once, no same-college credit sibling. Credit members are ENGLISH 72 at LA colleges + CCSF ENGL 12; Foothill's NCEN 400 has no same-college mirror. D-3 split stands.",
+   "confidence": 0.78,
+   "detector_class": "band_mix"
+  },
+  "NRSR M1036": {
+   "agent_call": "genuine_split",
+   "reason": "3 NC members (Chaffey NURAST 600; College of the Desert 'NURSING AND HEALTH' + NNA 364) — Chaffey once, COD twice but both NC. No same-college CR/NC mirror. All CNA-adjacent but no college pairs credit+noncredit; D-3 split stands.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "BUSI M1137": {
+   "agent_call": "genuine_split",
+   "reason": "3 NC members (Glendale OBT 100 + STV 100; MiraCosta NCVOC 31, all Software Apps) — Glendale twice (both NC), MiraCosta once, none with same-college credit sibling. Credit members are Merritt BUS 253A-D and San Diego CBTE 120, different course numbers. Not a mirror; D-3 split stands.",
+   "confidence": 0.82,
+   "detector_class": "band_mix"
+  },
+  "ECED M1090": {
+   "agent_call": "mirror_keep",
+   "reason": "Coherent single-course family: 5 LA-district colleges offer CH DEV 172 (credit, 1.0u, top 1305) and LA Trade Tech offers VOC ED 172 CE (0.0u Noncredit Enhanced, same number 172, same discipline 1305) — the district's noncredit version of the SAME course. Not different courses; per 'mirror ≠ keep separate' this distributed CR/NC same-course (172) family merges to one canonical pair. Strict same-col",
+   "confidence": 0.65,
+   "detector_class": "band_mix"
+  },
+  "PHIL M1116": {
+   "agent_call": "genuine_split",
+   "reason": "2 NC members at Glendale (LLS 95 Religious Studies; LLS 140 Gerontology) — both NC, no same-college credit LLS sibling; LLS 140 is off-topic (Gerontology). Large Philosophy/Religious-Studies credit cluster; the NC members are different courses with no mirror. D-3 split stands.",
+   "confidence": 0.83,
+   "detector_class": "band_mix"
+  },
+  "MUSI M1401": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member (Butte College MUS 340, 0.0u) among 15 cross-college credit music courses. Butte appears only once; no same-college MUS credit sibling. Not a mirror pair → D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "CSIS M1330": {
+   "agent_call": "genuine_split",
+   "reason": "2 NC members are the same course COMP 644 under two SD Continuing-Ed name variants (CCE + CCE Credit), both noncredit 0.0u — a within-NC duplicate, not a CR/NC mirror. No credit COMP at SD CCE. Credit members are unrelated (Pasadena CIS, Delta CSW, Santa Rosa CS) with scattered top codes. Genuine over-merge.",
+   "confidence": 0.82,
+   "detector_class": "band_mix"
+  },
+  "ENGL M1369": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member (Santiago Canyon HSENG 70, top 4930.62 Secondary Ed/GED) is a high-school-English/GED noncredit course, not a college English course. Santiago Canyon appears once; no same-college credit sibling. Not a mirror → split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "PHOT M1049": {
+   "agent_call": "mirror_keep",
+   "reason": "Sole NC member Mt. San Antonio College VOC PHO20 (0.0u, top 1012.00) mirrors same-college credit PHOT 20 (3.0u, top 1012.00) — same college, same subject, credit#/NC naming pattern. Classic CR/NC mirror pair → keep as one identity, tag crnc_mirror.",
+   "confidence": 0.9,
+   "detector_class": "mirror"
+  },
+  "WELD M1049": {
+   "agent_call": "genuine_split",
+   "reason": "2 NC members are San Diego CCE INDT 605 under two name variants (CCE + CCE Credit), both noncredit 0.0u — within-NC duplicate, not a CR/NC mirror. No credit welding at SD CCE. Discipline coherent (all 0956.50) but NC members lack same-college credit siblings → D-3 split stands.",
+   "confidence": 0.72,
+   "detector_class": "band_mix"
+  },
+  "BUSI M1191": {
+   "agent_call": "genuine_split",
+   "reason": "3 NC members (Fresno City BA 310, Reedley BA 310, Monterey Peninsula BUSI 401) each appear once as noncredit business courses among 44 credit members. None has a same-college credit sibling. No mirror correspondence → over-merge split stands.",
+   "confidence": 0.83,
+   "detector_class": "band_mix"
+  },
+  "MATH M1191": {
+   "agent_call": "genuine_split",
+   "reason": "1 NC member (Butte College MATH 330, top 1702.00 Mathematics Skills) is a basic-skills noncredit math among credit Math-General (1701.00) courses. Butte appears once; no same-college credit sibling; different top band → genuine split.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "NRSR M1128": {
+   "agent_call": "genuine_split",
+   "reason": "Broad over-merge spanning Vocational Nursing, Registered Nursing, Psychiatric Technician, and Pharmacy Technology. 4 NC members (North Orange CE MEOC 121/PTEC 115, both under CE + CE Credit variants) are pharmacy-tech noncredit with no same-college credit sibling; credit pharmacy tech is a different college (San Bernardino PHT 62). Not a mirror → split stands.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "DANC M1378": {
+   "agent_call": "mirror_keep",
+   "reason": "Sole NC member Southwestern College NC 3079 (0.0u, top 1004 Music) mirrors Southwestern's own credit member MUS 162 (1.0u, top 1004 Music) — same college, same Music discipline/top code; the 'NC' subject is Southwestern's uniform noncredit prefix. Classic CR/NC mirror pair.",
+   "confidence": 0.62,
+   "detector_class": "band_mix"
+  },
+  "FIRE M1099": {
+   "agent_call": "mirror_keep",
+   "reason": "Sole NC member College of the Canyons NC.FIRT 120 (0.0u) mirrors that same college's credit FIRET 120 (2.0u) — identical course number 120, same Fire Technology subject/top code (2133). Textbook noncredit-prefix mirror.",
+   "confidence": 0.95,
+   "detector_class": "mirror"
+  },
+  "CSIS M1036": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member Santiago Canyon College VBUS 117 (Office Tech) is the only member from its college — no same-college credit sibling. It is lumped with unrelated credit courses (BIP, CBOT, IT, CIS across other colleges). Real cross-band over-merge; D-3 split stands.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "INTD M1022": {
+   "agent_call": "mirror_keep",
+   "reason": "Sole NC member Mt. San Antonio College VOC ID10 (0.0u Noncredit Enhanced, Interior Design 1302) mirrors that same college's credit ID 10 (2.0u, Interior Design 1302) — same college, same subject/course number. Clean mirror.",
+   "confidence": 0.93,
+   "detector_class": "mirror"
+  },
+  "MUSI M1538": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member Monterey Peninsula College THEA 440 (Dramatic Arts) is the only member from its college — no same-college credit sibling. Grouped with credit dramatic-arts/music courses at other colleges. No mirror; D-3 split stands.",
+   "confidence": 0.82,
+   "detector_class": "band_mix"
+  },
+  "VOCE M1002": {
+   "agent_call": "genuine_split",
+   "reason": "All 4 NC members are generic 'VOC ED 104CE' noncredit courses at East LA, LA City, LA Harbor, West LA — none of those colleges has a credit member here. Credit members (Coalinga/Lemoore CIS 34, Foothill ALTW) are different courses at different colleges. No same-college mirrors; genuine over-merge.",
+   "confidence": 0.88,
+   "detector_class": "band_mix"
+  },
+  "IDST M9086": {
+   "agent_call": "genuine_split",
+   "reason": "M9 noncredit identity of ABE/GED high-school-equivalency courses (top 4930.62) with one stray credit intruder — El Camino Poli 16 (Political Science, top 2207). The 5 NC members have no same-college credit siblings; the lone credit member is a different-field over-merge. Split stands.",
+   "confidence": 0.83,
+   "detector_class": "band_mix"
+  },
+  "OTEC M1072": {
+   "agent_call": "genuine_split",
+   "reason": "3 NC members (Cuesta VOCE 597, Santa Barbara City CMPW NC022, West Valley NCWP 202) are each the only member from their college — no same-college credit siblings. Credit cluster is a distinct RCCD-area CIS/CAT 93 group. No mirrors; genuine over-merge.",
+   "confidence": 0.85,
+   "detector_class": "band_mix"
+  },
+  "MRKT M1003": {
+   "agent_call": "mirror_keep",
+   "reason": "Sole NC member Mt. San Antonio College VOC BS33 (0.0u Noncredit Enhanced, Advertising 0509.10) mirrors that same college's credit BUSS 33 (3.0u, Advertising 0509.10) — same college, same subject, VOC-prefixed course number matches BS33/BUSS 33. Mirror pair.",
+   "confidence": 0.9,
+   "detector_class": "mirror"
+  },
+  "PSYC M1112": {
+   "agent_call": "genuine_split",
+   "reason": "Sole NC member Fullerton College F PSY202 is the only member from its college — no same-college credit sibling. It sits in a large intro-Psychology credit transfer cluster (16 credit members). Per the literal test no mirror exists; removing the lone NC member is a clean split.",
+   "confidence": 0.7,
+   "detector_class": "band_mix"
+  },
+  "MUSI M1148": {
+   "agent_call": "genuine_split",
+   "reason": "NC members are North Orange Continuing Education MUSC 315 (noncredit-only institution, listed twice) — no credit member from that district, so no same-college credit sibling. All other members are credit applied-music courses at separate colleges. No mirror; D-3 split stands.",
+   "confidence": 0.8,
+   "detector_class": "band_mix"
+  },
+  "EMST M1023": {
+   "agent_call": "needs_curator",
+   "reason": "West LA College co-occurs with BOTH a credit member (ALD HTH 21, EMS/Health, top 1250/1201) and an NC member (VOC ED 475CE, top 1201). Same college, allied-health context — suggestive of a credit-by-exam pairing — BUT different subject codes (generic VOC ED vs ALD HTH) and mismatched top codes prevent a clean same-subject mirror determination. Faculty call.",
+   "confidence": 0.5,
+   "detector_class": "band_mix"
+  }
+ }
+}
