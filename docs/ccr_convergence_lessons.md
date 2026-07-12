@@ -186,3 +186,56 @@ word.
 
 **Next:** Sam decides which wave-3 lanes fire; wave 4 = multi-college ranks
 2,001–4,000. Sam's calibration sitting (52 groups) still gates batch pass 2.
+
+## 2026-07-13 — Wave 3 FIRED, the WELD-in-Carpentry revert, and the calibration sitting → Doctrine v0.6
+
+**Wave 3 fired (Sam: "Yes to all 3").** After the Rule-9 pre-flight (fresh read
+confirmed the 3 WELD overrides unchanged; the 14 pending `unified_title_merge_confirm`
+targets were all `_CREDENTIAL_REVIEW::` keys with **zero** overlap with the 39 M-ID
+title fixes; 0 D-10 suspects; verified the CCR consumer reads `field==='discipline'`
+/ `'unified_title'`, NOT `'discipline_override'`), fired the `trailcrew-ccr3-s112@bot`
+cohort INSERT-only `ON CONFLICT (course_id,field) DO NOTHING`: **137 discipline landed
+(all), 25 title landed (39 − 14 pre-existing, incl. Sam's own `ATHL M1178`, left
+intact).** 6 D-9 tighteners held for faculty. Receipt: `kb/ccr_out/2026-07-12/fire_receipt_wave3.json`.
+
+**WELD-in-Carpentry revert = D-10 in production.** Sam's catch: 3 Welding courses
+(`WELD M1066/M1092/M1121`) were fired to *Carpentry* by wave 1 because they carry a
+Carpentry-program TOP + articulate to the Carpenters Apprenticeship. **D-10 (new
+v0.5): discipline is the FIELD, not the program.** They're Welding; the apprenticeship
+link lives in the articulation layer. Deleted the 3 overrides → baseline Welding.
+
+**The calibration sitting → Doctrine v0.6 — the session's capstone.** Sam walked
+the 52-group v0.2 calibration. **30 non-CR/NC calls agreed 100%.** The CR/NC calls
+looked inverted only because the v0.2 seed pre-dates his Q-CREDITNC resolution and I
+had mislabeled mirrors as "keep separate + tag" (a mirror MERGES — the noncredit twin
+IS the Credit-by-Exam on-ramp). Asked to name the theme, Sam gave the **lens** that
+now organizes the whole policy:
+
+> *"If a student showed up with evidence they'd already done it, would you make them
+> repeat your local course under its local name?"  No → merge. Yes → keep separate.*
+
+Ratified as **P-1** (v0.6, #758), anchored to **CA Title 5 §55050**'s *"similar to"*
+(not identical) standard — the legal window to err on the student's side — plus
+**learning-equivalence beats subject-code matching** (same content, different
+department = one identity; homonym guard survives on "different skills → would
+repeat") and four folded refinements: **P-1a** (homonym group with a mergeable core →
+split the outlier, merge the core — #30 Healthy Aging), **P-7a** (reclassify a real
+course wearing a generic coat — #36 → Sculpture Skills 1/2), **P-9a** (region/theme-word
+groups → umbrella on a co-articulation second signal — #23 → *A&P Culture
+(Music/Dance/Art)*), **P-10a** (strip rung-codes like "3A" from unified titles).
+Sitting record: `kb/doctrine_out/2026-07-10/calibration_sitting_results.md`.
+
+**CER Unclassified-triage fixes (#757):** multi-issuer `＋ add issuing agency` on the
+triage row (new `issuing_agency_assignment2` field, split back in the sync — read-back,
+not the "written but never read" trap) + C-ID/CCN title pre-seed (top authoritative
+suggestion prefills the title; fuzzy/unverified stay click-only).
+
+**Method lesson — the seed goes stale.** A calibration seed is only valid against the
+doctrine version it was drawn under. Four doctrine questions resolved between the v0.2
+draw and the sitting, so the CR/NC pre-decisions were stale *by design* — measure the
+≥90% graduate gate against a **fresh re-seed under current doctrine**, not the old draw.
+
+**Next:** the **v0.6 calibration re-seed** — `kb/_doctrine_calibration_sample.py` +
+`unified_courses_suggestions.js` are both present; draw a fresh 52-group sample, run
+the magic-half adjudication through the student-repeat lens, measure the ≥90% gate.
+Then wave 4 (multi-college ranks 2,001–4,000).

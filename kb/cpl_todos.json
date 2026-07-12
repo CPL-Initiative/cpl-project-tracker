@@ -1,20 +1,20 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-12 · Session 112 (SkyEmpyrean) — wave 3 FIRED (137 disc + 25 titles) · WELD reverted · CER multi-issuer + C-ID pre-seed shipped",
+ "_as_of": "2026-07-13 · Session 112 (SkyEmpyrean) — Doctrine v0.6 shipped (student-repeat test = P-1, anchored to Title 5 §55050) · calibration sitting done · wave 3 fired",
  "_session": 112,
- "_status": "Executed your 'Yes to all 3': ① reverted the 3 WELD-in-Carpentry overrides back to Welding (D-10 — the discipline is the FIELD; the Carpenters-apprenticeship link lives in the articulation, not the discipline); ② FIRED wave 3 — 137 discipline corrections + 25 title fixes landed live as the trailcrew-ccr3-s112@bot cohort (14 titles already carried a value and were left intact, including your own ATHL M1178; the 6 MQ-tighteners stay held for faculty per your D-9 gate); ③ shipped the two CER Unclassified-triage fixes you flagged — you can now add MULTIPLE issuing agencies per exhibit (＋ add issuing agency), and a row with a reliable CCN/C-ID now PRE-SEEDS the title instead of leaving it a click-only chip. Still open below: the calibration sitting, the homonym re-check, and the CER/CSR/carpentry curator queues.",
+ "_status": "The capstone of a big session: you sat the calibration and it produced the doctrine's north star — 'If a student showed up with evidence they'd already done it, would you make them repeat your local course?' No → merge; Yes → keep separate. It's now P-1, anchored to CA Title 5 §55050's 'similar' (not identical) standard — the legal window to err on the student's side. 30 non-CR/NC calls agreed 100%; the CR/NC ones just needed the mirror rule straight (mirrors MERGE — the free noncredit twin is the Credit-by-Exam on-ramp). Also this session: wave 3 fired (137 discipline + 25 title fixes live), the WELD-in-Carpentry mis-discipline reverted (D-10), and the CER multi-issuer + C-ID pre-seed shipped. Next session re-seeds a fresh v0.6 calibration to graduate the doctrine and unlock batch-apply at scale.",
  "items": [
   {
-   "id": "calibration-sitting",
-   "for": "sam",
+   "id": "v06-reseed",
+   "for": "fable",
    "tab": "unified-courses",
-   "text": "🧠 Calibration sitting is now PRE-LOADED and ready: kb/doctrine_out/2026-07-10/calibration_review.md — 52 groups with real member courses + Fable's pre-decided call (🔗15 merge · 📦7 package · ⛔27 keep-separate · ✋3 hold). Go down the list, mark A/D (+ why if D). ≤5 disagreements = the doctrine graduates and batch-apply unlocks. This is the critical path to confident scale."
+   "text": "🧠 v0.6 calibration RE-SEED (next session): the v0.2 calibration went stale (it pre-dated the CR/NC mirror rule + D-9/P-12/D-10). Draw a fresh 52-group sample (kb/_doctrine_calibration_sample.py + unified_courses_suggestions.js both present), re-adjudicate through Sam's student-repeat lens, and measure the ≥90% graduate gate against CURRENT doctrine. ≥90% = doctrine graduates, batch-apply unlocks. (Sam sat the v0.2 pass: 30 non-CR/NC calls agreed 100%.)"
   },
   {
-   "id": "doctrine-gap-harvest",
+   "id": "homonym-recheck",
    "for": "sam",
    "tab": "unified-courses",
-   "text": "📋 Doctrine-gap harvest — ALL 3 top gaps now RESOLVED (Doctrine v0.4): #1 Q-CREDITNC (CR/NC mirror = CPL, 968 identities); #2 D-9 MQ-tightening gate (hold voc→master's re-disciplines); #3 P-12 homonym test (evidence over TOP — TOP only tips the scales when title/description/exhibit are inconclusive). Follow-up: the ~100 TOP-driven homonym splits need re-check against title/desc/exhibit before firing."
+   "text": "📋 ~100 TOP-driven homonym splits still need a re-check against title/description/aligned-exhibit (P-12: TOP only tips the scales when the other three are inconclusive) before they fire. Ride into a wave-4 re-verify pass."
   },
   {
    "id": "crnc-detector-wire",

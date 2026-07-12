@@ -569,24 +569,24 @@ all 3 stores** (#737 + KB #20 + vault #18; CSR 🎓/🔧 chip). Same day:
 CLAUDE.md pared 2,514→~600 (#727) + 52-agent truth-audit (#728) + **NEW Rule 9**.
 Receipts: `kb/{trail_crew,csr,pols_remint,ccr}_out/2026-07-10/`. Handoff: `docs/session_112_handoff.md`.
 
-### Session 112 — SkyEmpyrean: the vocational wire-up, the MQ re-validation, and CCR wave 3 (2026-07-11→12)
+### Session 112 — SkyEmpyrean: vocational wire-up · MQ re-validation · wave 3 FIRED · Doctrine v0.6 (2026-07-11→13)
 
-Sam asked whether we needed a **new vocational identifier** (he recalled COCI's
-TOP-code `*` and floated a `V`-prefix on SUBJ4). A 6-agent audit: we already
-have the signal three ways (`cte` · `mq_list` · `noncredit_category`) + CSR
-🎓/🔧 chips; the V-prefix was a hard no (collides with VOCE/VETT/VIET, bakes a
-mutable attribute into an immutable key). **#746** — Sam's HUM/PE catch grew
-into a full **MQ 19th-ed re-validation** (positional PDF re-parse): HUM/PE/PEDS
-re-binned to master's + **8 disciplines the S111 text parse had DROPPED restored**
-(incl. Accounting — also missing from the CCR fire-gate vocab), 240→248, guarded
-by `tests/mq_sections.test.js`. **#747** wired `cte`+`mq_list` into the CCR
-scanner + added `--stratum multi`. **#749** — **CCR wave 3**: 2,000 corroborated
-multi-college identities adjudicated (539 agents, 0 errors, nothing fired). The
-wire-up validated itself day one — top discipline fix is **"Accounting" (×23)**,
-a name only restored the day before. Survived a silent task death (×2) + Fable's
-monthly spend cap via `resumeFromRunId` on Opus 4.8. Lanes fire-ready:
-title_fix 39 + discipline_correct 143. Full story: `docs/ccr_convergence_lessons.md`
-(2026-07-12). Handoff: `docs/session_113_handoff.md`.
+Sam asked whether the dataset needed a **new vocational identifier** — a 6-agent
+audit said no (the signal already exists 3 ways: `cte` · `mq_list` ·
+`noncredit_category` + CSR 🎓/🔧 chips; a `V`-prefix collides with VOCE/VETT/VIET
+and bakes a mutable attribute into an immutable key). His HUM/PE catch became a
+full **MQ 19th-ed re-validation** (**#746** — positional PDF re-parse; HUM/PE/PEDS
+→ master's + **8 dropped disciplines restored incl. Accounting**, 240→248). The
+signal wired into the CCR scanner (**#747**) and **wave 3 fired** — 137 discipline
++ 25 title corrections live (`trailcrew-ccr3-s112@bot`; 14 pre-existing titles
+left intact, 6 MQ-tighteners held for faculty per D-9). **WELD-in-Carpentry
+reverted** (D-10 — discipline is the FIELD, not the program). **CER multi-issuer +
+C-ID pre-seed** shipped (**#757**). Capstone: a **calibration sitting** →
+**Doctrine v0.6** (**#758**) — Sam's **student-repeat test** ratified as P-1,
+anchored to **CA Title 5 §55050** ("similar," not identical), + learning-equivalence
++ refinements P-1a/7a/9a/10a; 30 non-CR/NC calls agreed 100%. Full story:
+`docs/ccr_convergence_lessons.md`. **Next: the v0.6 calibration re-seed** (staged —
+sampler + payload present). Handoff: `docs/session_113_handoff.md`.
 
 ---
 
