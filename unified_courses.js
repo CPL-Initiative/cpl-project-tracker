@@ -3294,7 +3294,14 @@
     }
 
     function confTier(c) { if (c == null) return ""; if (c >= 0.85) return "high"; if (c >= 0.7) return "medium"; return "low"; }
-    function rowFlagged(r) { var f = r.flags || {}; return !!(f.over_merged || f.credit_mixed || f.top_mixed || f.ncc_mixed); }
+    // A full CR/NC mirror is a CPL feature, not a warning: its credit_mixed is
+    // explained by the intentional mirror (Doctrine v0.3), so don't count it as
+    // a flag. A partial mirror still warrants a look, so credit_mixed stands.
+    function rowFlagged(r) {
+      var f = r.flags || {};
+      var creditMixWarn = f.credit_mixed && f.crnc_mirror !== "mirror";
+      return !!(f.over_merged || creditMixWarn || f.top_mixed || f.ncc_mixed);
+    }
     function passes(r) {
       if (r._mergedAway) return false;
       if (state.kind && r.kind !== state.kind) return false;
@@ -3354,7 +3361,20 @@
       // #6 (Sam, S69): the row's PRIMARY credit status is already in the Credit
       // column, so credit_mixed surfaces the OTHER status the row ALSO carries —
       // a "+ NC" / "+ CR" addition (abbrev per Sam), not a redundant status word.
-      if (f.credit_mixed) {
+      // Doctrine v0.3 (Q-CREDITNC): when the mix is an intentional CR/NC MIRROR
+      // (a CPL Credit-by-Exam pairing — same course, free noncredit section
+      // taught by voc-MQ faculty), it is a FEATURE, not a warning — render the
+      // 🔁 mirror chip instead of the amber "+ NC/CR" and reframe the tooltip.
+      if (f.crnc_mirror === "mirror" || f.crnc_mirror === "partial") {
+        var full = f.crnc_mirror === "mirror";
+        out.appendChild(el("span", { class: "uc-badge ok",
+          title: (full
+            ? "CR/NC mirror pair — the same course is offered for both Credit and (free) Noncredit. "
+            : "Partial CR/NC mirror — some noncredit members mirror a same-college credit sibling. ")
+            + "A CPL Credit-by-Exam pathway (the noncredit section is taught by a vocationally-qualified "
+            + "instructor; students bridge to credit by exam), not an over-merge. Doctrine v0.3 / Q-CREDITNC." },
+          ["🔁 " + (full ? "CR/NC mirror" : "CR/NC mirror?")]));
+      } else if (f.credit_mixed) {
         var primCredit = /^credit/i.test(r.credit || "");
         out.appendChild(el("span", { class: "uc-badge mix",
           title: primCredit

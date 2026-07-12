@@ -37,6 +37,12 @@ const html = `<!DOCTYPE html><html><head></head><body>
         members: 2, adopted: [], potential: [], conf: 0.7, locked: false,
         flags: mkRow({ credit_mixed: true }),
       },
+      { // CR/NC MIRROR (Doctrine v0.3): credit_mixed is a CPL feature, not a warning
+        kind: "Course", id: "ELET M1002", title: "Industrial Electricity", id_system: "M-ID",
+        disc: "Electronics", credit: "Credit", units: 4.0, top: "0934.00", subj: ["ELET"],
+        members: 2, adopted: [], potential: [], conf: 0.8, locked: false,
+        flags: mkRow({ credit_mixed: true, crnc_mirror: "mirror" }),
+      },
     ],
     colleges: ["A"], mq_disciplines: ["Art"], topmap: {},
   })};
@@ -59,12 +65,16 @@ function badgesFor(d, titleRe) {
 
   const a = badgesFor(d, /Digital Imaging A/);
   const b = badgesFor(d, /Digital Imaging B/);
+  const m = badgesFor(d, /Industrial Electricity/);
 
   check("primary-Credit row shows '+ NC' (also has noncredit)", a.indexOf("+ NC") >= 0);
   check("primary-Credit row has NO redundant bare 'credit' chip", a.indexOf("credit") < 0);
   check("noncredit-category mix shows 'NC type'", a.indexOf("NC type") >= 0);
   check("no bare 'noncredit' chip remains", a.indexOf("noncredit") < 0 && b.indexOf("noncredit") < 0);
   check("primary-Noncredit row shows '+ CR' (also has credit)", b.indexOf("+ CR") >= 0);
+  // Doctrine v0.3 CR/NC mirror: shows the 🔁 chip, NOT the amber "+ NC/CR" warning
+  check("mirror row shows the 🔁 CR/NC mirror chip", m.some((t) => /🔁 CR\/NC mirror/.test(t)));
+  check("mirror row does NOT show the amber '+ NC'/'+ CR' warning", m.indexOf("+ NC") < 0 && m.indexOf("+ CR") < 0);
 
   let pass = 0;
   for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }

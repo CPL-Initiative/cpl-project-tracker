@@ -7322,6 +7322,11 @@ def export_unified_courses():
             merge_into[_cid] = _t
             merge_members.setdefault(_t, []).append(_cid)
 
+    # CR/NC mirror classification (Doctrine v0.3 Q-CREDITNC) — id -> {class,...}.
+    # Lets flags_of() mark an intentional CR/NC mirror pair (a CPL Credit-by-Exam
+    # pathway) distinctly from a genuine band-mix over-merge. Absent file = no marks.
+    crnc_mirror = (_load("crnc_mirrors.json") or {}).get("mirrors", {})
+
     # Auto-merge cohorts: folds applied by the gated auto-curation bot
     # (kb/_auto_merge_worklist.py) rather than a human carry a bot reviewed_by on
     # their merge_into curation — pass 1 "automerge-v1@bot" (Session 53), the
@@ -7383,9 +7388,16 @@ def export_unified_courses():
 
     def flags_of(v, cid, use_spread=True):
         sp = v.get("subject_spread", 1) or 1
+        # crnc_mirror (Doctrine v0.3, Q-CREDITNC): "mirror" | "partial" | "" —
+        # a credit/noncredit member mix that is an intentional CR/NC mirror
+        # (same-college same-subject sibling; a CPL Credit-by-Exam pairing), NOT
+        # a band-purity over-merge. Consumers reframe credit_mixed accordingly.
+        _cm = crnc_mirror.get(cid)
+        mirror = {"mirror": "mirror", "partial_mirror": "partial"}.get((_cm or {}).get("class"), "")
         return {
             "over_merged": bool(use_spread and sp >= 8),
             "credit_mixed": bool(v.get("credit_status_mixed")),
+            "crnc_mirror": mirror,
             "top_mixed": bool(v.get("top_code_mixed")),
             "ncc_mixed": bool(v.get("noncredit_category_mixed")),
             "reviewed": bool(v.get("reviewed_at") or substantive_curation(cid)),
