@@ -1,6 +1,6 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-12 · Session 112 (SkyEmpyrean) close — the vocational climb 🏔️",
+ "_as_of": "2026-07-12 · Session 112 (SkyEmpyrean) — calibration pre-loaded + doctrine-gap harvest",
  "_session": 112,
  "_status": "You asked whether we needed a NEW vocational identifier — turns out we already have it three ways (the CTE flag, the MQ faculty-qual list, and the noncredit-category), and the CSR already shows 🎓/🔧 chips; a V-prefix on SUBJ codes would've been a mistake (collides with real subjects, bakes a changeable label into a permanent key). Along the way your HUM/PE catch grew into a full MQ Handbook re-validation — 3 disciplines re-binned + 8 that the first parse had DROPPED entirely restored (incl. Accounting), 240→248. Then we wired that vocational signal into the CCR pipeline and ran wave 3: 2,000 corroborated multi-college identities adjudicated. The wire-up paid off on day one — the #1 discipline fix is 'Accounting,' a name that only existed again because of yesterday's restore. Nothing fired — the wave-3 title + discipline lanes are staged and waiting for your word.",
  "items": [
@@ -14,7 +14,13 @@
    "id": "calibration-sitting",
    "for": "sam",
    "tab": "unified-courses",
-   "text": "🧠 Your mind-meld sitting still pending: 52 fresh calibration groups pre-decided under Doctrine v0.2 (kb/doctrine_out/2026-07-10/predecisions.json). Your reactions = the ≥90% gate for batch pass 2."
+   "text": "🧠 Calibration sitting is now PRE-LOADED and ready: kb/doctrine_out/2026-07-10/calibration_review.md — 52 groups with real member courses + Fable's pre-decided call (🔗15 merge · 📦7 package · ⛔27 keep-separate · ✋3 hold). Go down the list, mark A/D (+ why if D). ≤5 disagreements = the doctrine graduates and batch-apply unlocks. This is the critical path to confident scale."
+  },
+  {
+   "id": "doctrine-gap-harvest",
+   "for": "sam",
+   "tab": "unified-courses",
+   "text": "📋 Doctrine-gap harvest (kb/doctrine_out/2026-07-12/doctrine_gap_harvest.md): waves 1–3 kept hitting patterns the doctrine doesn't settle. Top 2 touch 602 verdicts — (1) Q-CREDITNC: credit⋃noncredit twins (313 stuck on 'split'); (2) the MQ faculty-qual gate on re-disciplines. Answer these in the sitting; #4/#5 I can just codify on your word."
   },
   {
    "id": "carp-merge-confirms",
