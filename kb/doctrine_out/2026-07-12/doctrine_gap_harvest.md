@@ -25,7 +25,17 @@ v0.3.
 
 ---
 
-## 1. 🔴 Credit ⋃ Noncredit twins — the biggest unsettled pattern (374 verdicts, 313 forced to "split")
+## 1. ✅ Credit ⋃ Noncredit twins — RESOLVED 2026-07-12 (was 374 verdicts, 313 forced to "split")
+
+> **Sam's ruling (Q-CREDITNC resolved).** A mirrored CR/NC pair is the *same
+> course* — the free noncredit section, taught by a vocationally-qualified
+> instructor, bridged to credit via **Credit-by-Exam**. It's a **CPL
+> mechanism**, not a band-purity defect. Codified as the **D-3 mirror
+> carve-out** (Doctrine v0.3). Catalog-wide impact (via `kb/_detect_crnc_mirrors.py`):
+> **1,337 identities are pure CR/NC mirrors** (D-3 suppressed → kept as one CPL
+> pairing), 200 partial (curator), 1,299 genuine band-mix (split stands). The
+> 707 wave split_candidates re-adjudicated under the new rule (`kb/crnc_out/2026-07-12/`).
+
 
 **The pattern.** A college offers the *same course* in both a **Credit** band and
 a **Noncredit-Enhanced (0.0u)** band (e.g. Cabrillo `ACCT 151A` Credit 4u +

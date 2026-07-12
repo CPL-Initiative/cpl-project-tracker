@@ -1,7 +1,7 @@
 ---
 title: "CCR Merge/Mint Doctrine — the decision policy for course convergence"
 created: 2026-07-03
-version: "0.2 (first mind-meld distillation — 8 voice notes of 2026-07-03, distilled 2026-07-10)"
+version: "0.3 (2026-07-12 — Q-CREDITNC RESOLVED: the CR/NC mirror carve-out on D-3, from Sam's Credit-by-Exam framing)"
 tags: [ccr, doctrine, merge, mint, m-id, mind-meld]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -108,12 +108,38 @@ the kinship (title-freshness) check → (4) a human confirmation. Title/
 description *similarity* only ever produces suggestions. (Full plain-language
 statement: `docs/ccr_rules_brief.md`.)
 
-### D-3 · Band purity — ESTABLISHED
+### D-3 · Band purity — ESTABLISHED (mirror carve-out added 2026-07-12)
 
 Credit (`M1xxx`) and noncredit (`M9xxx`) identities never merge across the
 band in a *same-course* merge. (A deliberate level-band **package** that
 spans funding types is a different operation — P-4 — and must be explicit,
 never an auto-merge side effect.)
+
+**Mirror carve-out — Q-CREDITNC RESOLVED (Sam, 2026-07-12).** Colleges
+routinely offer a **mirrored CR/NC pair**: the *same course* taught in both a
+credit and a **noncredit** section. The noncredit section is **free**, has an
+easier onboarding path, and — critically — **is itself a CPL mechanism**: a
+vocationally-qualified (experience-list / `not_masters` MQ) instructor teaches
+the noncredit section, and the student earns credit for the mirrored course
+through the **Credit-by-Exam** process. This pairing is a *feature*, not a
+band-purity violation.
+
+Therefore a **same-college noncredit member that mirrors a same-college credit
+member** (same subject; the NC section is typically 0.0u and often numbered as
+the credit number plus a noncredit prefix, e.g. `IS 52` ⟷ `IS 352`, `ELECT 11`
+⟷ `ELECT 111`) **belongs in the SAME identity** and does **not** trigger an
+over-merge split. The presence of the NC mirror is *expected evidence of a CPL
+pathway*, and the merge records the pair with a `merge_note` (the credit member
+is the survivor; the NC mirror + its Credit-by-Exam bridge are noted for
+faculty). This closes the loop with the MQ lane: the CR/NC mirror is precisely
+*where* a vocational-discipline's faculty teach.
+
+D-3 still gates credit/noncredit mixes that are **not** mirror pairs — genuinely
+different courses lumped across the band with no same-college credit⟷noncredit
+correspondence (those remain over-merge splits). The test is: *does each
+noncredit member have a same-college credit sibling of the same subject?* If
+yes → mirror, keep. If the band mix is between different courses → D-3 split
+stands.
 
 ### D-4 · The guard suite — ESTABLISHED
 
@@ -281,7 +307,7 @@ checkpoint. Current forks:
 | Q-SAMECOLL | Is there ANY same-college pair you'd merge outright (catalog editions? renumberings?) | P-6 |
 | Q-GENERIC | Work Experience / Special Topics / Independent Study: umbrella-mint per discipline, or exclude from the CPL tier? | P-7 |
 | Q-HONORS | For CPL purposes, does an Honors variant fold under the base course (the credit rec ignores honors) or stay distinct? | D-4/P-3 |
-| Q-CREDITNC | Credit + noncredit twins of one course: separate targets forever, or noncredit folds under the credit target with a band note? | D-3/P-3 |
+| Q-CREDITNC | ~~Credit + noncredit twins of one course: separate targets forever, or noncredit folds under the credit target with a band note?~~ **RESOLVED 2026-07-12 (Sam):** a same-college CR/NC *mirror* is the SAME course — a CPL mechanism (free NC section, voc-MQ instructor, Credit-by-Exam bridge). The NC mirror folds under the credit survivor with a band note; NOT a D-3 split. See the D-3 mirror carve-out. | D-3 |
 | Q-XDISC | Cross-discipline groups that are really one course tagged inconsistently: merge-and-pick-discipline, or hold for faculty? | D-8/P-9 |
 | Q-TARGETCOUNT | **Settled for KINE 2026-07-10 → P-11** (athletics-vs-general split; per-sport rows; modality-agnostic conditioning). Still open for Dance/Music ladders. | P-11 |
 | Q-MINTNAME | Naming for packages: "Beginning ESL" clean, or "ESL — Beginning (Levels 1–2)" explicit? | P-10 |
