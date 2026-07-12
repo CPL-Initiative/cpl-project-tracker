@@ -141,6 +141,17 @@ noncredit member have a same-college credit sibling of the same subject?* If
 yes → mirror, keep. If the band mix is between different courses → D-3 split
 stands.
 
+**Mirror ≠ "keep everything separate" (Sam, 2026-07-12).** The carve-out
+suppresses the D-3 *split* signal; it does **not** suppress cross-college
+*consolidation*. A mirror is a **property of one canonical identity**, not a
+license to keep every college's copy of the same mirrored course as its own
+row. So the same mirrored course taught at N colleges still merges to **one
+canonical CR/NC pair** (credit member the survivor, the NC mirror + its
+Credit-by-Exam bridge recorded in a `merge_note`), *tagged* as a mirror. The
+goal is exactly one canonical version of the pair — the mirror tag rides that
+canonical row. (Materialized as the `crnc_mirror` flag on each identity, from
+`kb/_detect_crnc_mirrors.py`.)
+
 ### D-4 · The guard suite — ESTABLISHED
 
 `kb/_consolidation_guards.py`: level marks gate on two independent axes
