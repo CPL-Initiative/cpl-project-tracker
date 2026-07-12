@@ -112,9 +112,11 @@ into `docs/reference/` (pipeline_reference · kb_build_status · mid_lifecycle �
      `ANTH C1000`). Never re-key.
    - New M-IDs minted by `_seed_coci_minted_mids.py` (or curator
      consolidation via the Suggested-merges worklist) consult
-     `kb/discipline_canonical_subj4.json` (live — 148 disciplines, all
+     `kb/discipline_canonical_subj4.json` (live — 146 disciplines, all
      curator-reviewed; synced from Supabase `_CANON_SUBJ4::` picks) for
-     the canonical SUBJ4 per discipline.
+     the canonical SUBJ4 per discipline. (The MQ vocabulary
+     `kb/reference/mq_disciplines.json` is the broader 248-title superset —
+     re-discipline proposals must be exact-MQ-name; Session 112, #746.)
 
    Authoritative old→new aliases for every re-mint live at
    `kb/remint_out/<date>/alias_map.json`. Rollback notes per the playbook.
@@ -554,19 +556,6 @@ page title/og → "COBI ᶜᴾᴸ" (generator-owned) for Teams unfurls. Suite +`
 Sam's link out to colleagues. Full story + continuation: `docs/cpl_pathways_lessons.md` ·
 `docs/cpl_pathways_handoff.md`. Parked: the CCC catalog→Supabase harvest (todos).
 
-### Session 110 — the carpentry close-out, the stale identities-map find, and the COCI Lookup tab (2026-07-09)
-
-Sam drove live (4 mid-session messages + the decisive MAP export). **252 SUBJ/Discipline
-fills** (CARP/Carpentry — 12 queue + 104 CNST-deriving CTCNC family + 10 trade programs;
-cohorts `carp-*-s110@bot`) + **18 titles** from Sam's MAP export (rule: Credit Rec minus
-"N hours in"; collision folds await his ✓ in the Merge-confirms lane; 707/710/713 + Work
-Experience still ambiguous). **Root cause of "CARP 1203"**: `coci_articulations.json`'s
-`identities` map was never re-keyed by the 2026-06-12 fold — 681/693 shared keys stale;
-CER exporter now prefers the minted catalogs (`docs/kb-notes/methodology-rekey-derived-identity-maps.md`).
-Plus the **CER SUBJ filter** and the **COCI Lookup tab** (`#coci-lookup` — 141,738 rows,
-M-ID/C-ID/CCN chips, sortable/filterable/resizable, desc shards; `kb/_build_coci_lookup.py`).
-Receipts `kb/carp_fill_out/2026-07-09/`; suite 152. Full story: `docs/cer_v2_redesign_lessons.md` (S110).
-
 ### Session 111 — SkyMighty: the triple-R day (renames · re-mint · the mountain) + the truth audits (2026-07-10)
 
 **Trail Crew fired across all three R's**: CER 103 clean renames live (#726,
@@ -579,6 +568,25 @@ fresh calibration seed 20260710 awaits his sitting). **MQ Handbook folded into
 all 3 stores** (#737 + KB #20 + vault #18; CSR 🎓/🔧 chip). Same day:
 CLAUDE.md pared 2,514→~600 (#727) + 52-agent truth-audit (#728) + **NEW Rule 9**.
 Receipts: `kb/{trail_crew,csr,pols_remint,ccr}_out/2026-07-10/`. Handoff: `docs/session_112_handoff.md`.
+
+### Session 112 — SkyEmpyrean: the vocational wire-up, the MQ re-validation, and CCR wave 3 (2026-07-11→12)
+
+Sam asked whether we needed a **new vocational identifier** (he recalled COCI's
+TOP-code `*` and floated a `V`-prefix on SUBJ4). A 6-agent audit: we already
+have the signal three ways (`cte` · `mq_list` · `noncredit_category`) + CSR
+🎓/🔧 chips; the V-prefix was a hard no (collides with VOCE/VETT/VIET, bakes a
+mutable attribute into an immutable key). **#746** — Sam's HUM/PE catch grew
+into a full **MQ 19th-ed re-validation** (positional PDF re-parse): HUM/PE/PEDS
+re-binned to master's + **8 disciplines the S111 text parse had DROPPED restored**
+(incl. Accounting — also missing from the CCR fire-gate vocab), 240→248, guarded
+by `tests/mq_sections.test.js`. **#747** wired `cte`+`mq_list` into the CCR
+scanner + added `--stratum multi`. **#749** — **CCR wave 3**: 2,000 corroborated
+multi-college identities adjudicated (539 agents, 0 errors, nothing fired). The
+wire-up validated itself day one — top discipline fix is **"Accounting" (×23)**,
+a name only restored the day before. Survived a silent task death (×2) + Fable's
+monthly spend cap via `resumeFromRunId` on Opus 4.8. Lanes fire-ready:
+title_fix 39 + discipline_correct 143. Full story: `docs/ccr_convergence_lessons.md`
+(2026-07-12). Handoff: `docs/session_113_handoff.md`.
 
 ---
 

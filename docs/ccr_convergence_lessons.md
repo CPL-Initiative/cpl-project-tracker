@@ -123,3 +123,66 @@ checked. Distilled today; all 8 rows stamped `distilled_at`.
 
 Next per the handoff queue: agreement measurement (blind re-decide vs Sam's 8
 calls under v0.2), then batch pass 2 gated on ≥90%.
+
+## 2026-07-12 — Session 112 (SkyEmpyrean): the vocational wire-up, wave 3, and surviving the spend cap
+
+Sam opened asking whether we needed a *new* vocational identifier (he'd
+half-remembered COCI's TOP-code asterisk and wondered about a `V`-prefix on
+SUBJ4). A 6-agent audit answered: **we already have the signal three ways** —
+per-row `cte` (TOP-Manual CTE designation, stamped by `kb/_join_cte_from_top.py`),
+discipline-level `mq_list` (MQ 19th-ed faculty-qual list), and
+`noncredit_category=="Short-term Vocational"` — plus the CSR already renders
+🎓/🔧 chips. The V-prefix was a hard no (VOCE/VETT/VIET already occupy
+V-initial SUBJ4 space; it bakes a *mutable* attribute into an *immutable* key).
+So: no new identifier; extend the existing cue + feed it to the pipeline.
+
+**What shipped (3 PRs):**
+1. **#746 — MQ 19th-ed re-validation.** Sam corrected Humanities + Physical
+   Education to master's-list; rather than patch two rows we re-parsed the
+   whole Disciplines Index **positionally** (pdfminer x/y; page-number tokens
+   as row anchors; X-marks classified by column x0). Found the S111 text parse
+   had mis-binned HUM/PE/PEDS *and dropped 8 disciplines entirely* (Accounting,
+   African American Studies, Aeronautics, Addiction Paraprofessional Training,
+   Agricultural Business, Adapted Computer Tech: DSPS, Citizenship: Noncredit,
+   Specialized Instruction: Vocational). Those 8 were also missing from
+   `mq_disciplines.json` — the **CCR fire-gate vocabulary** — so a legit
+   "Accounting" proposal would have bounced forever. 240→248 titles.
+2. **#747 — CCR scanner wire-up.** `enrich()` now emits `cte` + `mq_list` +
+   `mq_special_ccr` per identity; new `--stratum multi` (corroborated
+   ≥2-member, prior waves excluded) + `--wave K`; manifest gains mq/cte mix.
+3. **#749 — CCR wave 3.** 2,000 multi-college identities adjudicated. **The
+   wire-up validated itself day one: the top discipline correction is
+   "Accounting" (23 ids)** — a name that didn't exist in the vocabulary until
+   #746 restored it the day before. Loop closed.
+
+**Lessons:**
+- **Parse column-grid PDFs positionally, never from linearized text** — a lone
+  X loses its column and the row silently mis-bins. Full method in the new KB
+  note `methodology-positional-pdf-column-grids.md`. Validate the full row
+  census against an authoritative count; a plausible-looking count (240) hid 8
+  drops behind artifact keys.
+- **The MQ vocabulary check is necessary but not sufficient.** The wave-2
+  re-verify caught 4 "Aeronautics" proposals — a *real* MQ discipline, but one
+  with no rows and no canonical SUBJ4; firing it would fan-in-break a field
+  already registered as "Aviation." The skeptic's canonical-registry
+  cross-check is what caught it. Both checks needed: MQ-name-exact AND
+  canonical-SUBJ4-exists.
+- **Long workflows survive task death and spend caps via `resumeFromRunId`.**
+  This wave's task died silently twice (0-byte output, gone from the registry,
+  no notification — SkyMighty's warned-of failure mode) and Fable hit its
+  monthly spend cap mid-skeptic-phase (~240/486, 426 calls bounced). Each time,
+  resume replayed every completed agent from cache and re-ran only the
+  failures — the second resume on **Opus 4.8** (after Sam switched the session
+  model) closed all 100 gaps, 0 errors final. The wave is honestly mixed-model
+  (adjudicators+early skeptics Fable 5 / late skeptics Opus 4.8); skeptics
+  verify against committed files so it doesn't bias the verdict set. Playbook:
+  `playbook-resume-long-workflow-across-failures.md`.
+
+**Wave-3 lanes (nothing fired):** bless 980 · split 483 (34 killed) · package
+182 · discipline 143 (3 killed) · unit 104 · title 39 · curator 32; 486
+skeptics (449 upheld / 37 killed); 177 capped-by-design. Fire-ready:
+title_fix (39) + discipline_correct (143) as `trailcrew-ccr3-s112@bot` on Sam's
+word.
+
+**Next:** Sam decides which wave-3 lanes fire; wave 4 = multi-college ranks
+2,001–4,000. Sam's calibration sitting (52 groups) still gates batch pass 2.
