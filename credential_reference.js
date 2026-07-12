@@ -68,6 +68,13 @@
   var UNCLASS_PREFIX = "_UNCLASSIFIED::";
   var FIELD_UNCLASS_TITLE  = "unified_title_assignment";
   var FIELD_UNCLASS_ISSUER = "issuing_agency_assignment";
+  // ADDITIONAL issuing agencies for a triaged exhibit (Rule 4 multi-issuer —
+  // Sam, 2026-07-11: "I need to be able to add multiple issuing agencies and
+  // can only add one"). Mirrors the No-issuer lane's issuer2_override: extras
+  // join into ONE " | "-delimited value (a single kb_curation row, honest PK)
+  // and _apply_unclassified_triage.py splits them into the overlay's
+  // additional_issuing_agencies list, ready for the PR-3 credential fold.
+  var FIELD_UNCLASS_ISSUER2 = "issuing_agency_assignment2";
   var AUDIT_URL = "kb/exhibit_audit/latest.json";
 
   // Allowlist-driven element builder. CodeQL's js/xss query flags dynamic
@@ -424,6 +431,8 @@
             rec.by = row.reviewer_email; rec.at = row.reviewed_at;
           } else if (row.field === FIELD_UNCLASS_ISSUER) {
             rec.issuer = row.value || "";
+          } else if (row.field === FIELD_UNCLASS_ISSUER2) {
+            rec.issuer2 = row.value || "";   // " | "-delimited additional agencies
           }
         });
         return m;
@@ -3054,6 +3063,9 @@
       "#tab-credential-reference .cr-wl-sugg{cursor:pointer;font-size:.68rem;text-align:left;color:var(--hunter);background:rgba(255,255,255,.6);}" +
       "#tab-credential-reference .cr-wl-sugg:hover{background:#ecfdf5;}" +
       "#tab-credential-reference .cr-wl-sugg:disabled{cursor:default;opacity:.55;}" +
+      // The chip that seeded the C-ID/CCN title pre-fill (2026-07-11) — filled look.
+      "#tab-credential-reference .cr-wl-sugg-active{background:#ecfdf5;border-color:var(--hunter);font-weight:600;}" +
+      "#tab-credential-reference .cr-wl-preseed-hint{margin-top:3px;font-size:.68rem;color:var(--hunter,#166534);cursor:help;white-space:nowrap;}" +
       // ⤷ use-raw-title chip (S110) — the .cr-wl-sugg look in the muted-text
       // role (it's a fallback, not an identity-anchored recommendation); its
       // OWN class so suggestion-chip selectors/tests never count it.
@@ -3509,8 +3521,8 @@
   // Save-success bookkeeping shared by the per-row Save button and the bulk
   // "Save all pre-filled" path: state write + IN-PLACE row update (never a
   // full re-render — unsaved input typed in other rows must survive).
-  function applySavedAssignment(raw, tr, title, issuer) {
-    state.unclassAssign[raw] = { title: title, issuer: issuer,
+  function applySavedAssignment(raw, tr, title, issuer, issuer2) {
+    state.unclassAssign[raw] = { title: title, issuer: issuer, issuer2: issuer2 || "",
       by: state.sess && state.sess.email, at: new Date().toISOString() };
     delete state.wlDraft[raw];       // draft superseded by the saved assignment
     addIssuerOption(issuer);         // a NEW agency becomes pickable on the next row
@@ -4539,7 +4551,8 @@
       if (a && a.title) return;
       var t = (tr.querySelector(".cr-wl-title-input") || {}).value || "";
       var iss = (tr.querySelector(".cr-wl-iss-input") || {}).value || "";
-      if (t.trim()) todo.push({ raw: raw, tr: tr, title: t.trim(), issuer: iss.trim() });
+      var iss2 = joinIssuers(tr.querySelector(".cr-ni-iss2"));  // additional agencies, if any
+      if (t.trim()) todo.push({ raw: raw, tr: tr, title: t.trim(), issuer: iss.trim(), issuer2: iss2 });
     });
     if (!todo.length) return;
     if (!window.confirm("Save " + todo.length + " assignment"
@@ -4557,14 +4570,18 @@
       }
       var job = todo[i];
       btn.textContent = "saving " + (i + 1) + " / " + todo.length + "…";
-      Promise.all([
+      var bjobs = [
         saveUnclass(job.raw, FIELD_UNCLASS_TITLE, job.title),
         saveUnclass(job.raw, FIELD_UNCLASS_ISSUER, job.issuer)
-      ]).then(function (rs) {
+      ];
+      // Bulk rows are unassigned pre-fills (no prior save to clear), so write
+      // issuer2 only when the curator actually added extra agencies.
+      if (job.issuer2) bjobs.push(saveUnclass(job.raw, FIELD_UNCLASS_ISSUER2, job.issuer2));
+      Promise.all(bjobs).then(function (rs) {
         if (rs.every(function (r) { return r.ok; })) {
           done++;
           job.tr.classList.remove("cr-wl-save-failed");
-          applySavedAssignment(job.raw, job.tr, job.title, job.issuer);
+          applySavedAssignment(job.raw, job.tr, job.title, job.issuer, job.issuer2);
         } else { failed++; markRowFailed(job.tr); }
         step(i + 1);
       }).catch(function () { failed++; markRowFailed(job.tr); step(i + 1); });
@@ -4637,15 +4654,39 @@
     }
     tr.appendChild(rawTd);
 
+    // 💡 identity-anchored fill suggestions (Rule 5c precedence — CCN > C-ID >
+    // COS > modal local course title), loaded once so the title pre-seed and
+    // the click-chips below share the same list.
+    var suggs = state.unclassSuggest && state.unclassSuggest[raw];
+    // C-ID/CCN title PRE-SEED (Sam, 2026-07-11: "many had reliable recommended
+    // C-ID titles and would have expected those to pre-seed"). When the row is
+    // otherwise bare, prefill the title from the top AUTHORITATIVE suggestion —
+    // an official CCN, else a VERIFIED C-ID. Fuzzy COS/modal matches stay
+    // click-only (they need a human pick). Prefill only; Save stays the click.
+    var authSugg = null;
+    if (!cur.title && !(draft && draft.title) && !(ps && ps.title) && suggs) {
+      authSugg = suggs.filter(function (s) {
+        return s.kind === "ccn" || (s.kind === "cid" && !s.unverified);
+      })[0] || null;
+    }
     var titleInp = el("input", { class: "cr-wl-input cr-wl-title-input", type: "text",
       list: "cr-unclass-titles", placeholder: "existing or new credential…",
-      value: cur.title || (draft && draft.title) || (ps && ps.title) || "", autocomplete: "off" });
+      value: cur.title || (draft && draft.title) || (ps && ps.title)
+        || (authSugg && authSugg.title) || "", autocomplete: "off" });
     titleInp.disabled = !state.sess;
     var titleTd = el("td", {}); titleTd.appendChild(titleInp);
+    if (authSugg) {
+      titleTd.appendChild(el("div", { class: "cr-wl-preseed-hint",
+        title: "Pre-filled from the top authoritative identity match — an "
+          + (authSugg.kind === "ccn" ? "official AB-1111 Common Course Number"
+             : "official C-ID descriptor")
+          + ". Review or edit, then Save (nothing is saved until you click)." },
+        ["↦ pre-filled from " + (authSugg.kind === "ccn" ? "CCN " : "C-ID ")
+          + (authSugg.id || "identity match")]));
+    }
     // 💡 identity-anchored fill chips (Rule 5c precedence — CCN > C-ID > COS
     // > modal local course title). Click fills the inputs; the curator still
-    // reviews + Saves.
-    var suggs = state.unclassSuggest && state.unclassSuggest[raw];
+    // reviews + Saves. The chip that seeded the pre-fill above renders active.
     if (suggs && suggs.length) {
       var srow = el("div", { class: "cr-wl-suggs" });
       suggs.forEach(function (s) {
@@ -4661,7 +4702,9 @@
           "Modal local course title across colleges teaching " + (s.code || "this course")
             + (s.share ? " (" + Math.round(s.share * 100) + "% agreement)" : "")
             + " — the Rule 5c fallback when no CCN/C-ID exists. Click to fill.";
-        var chip = el("button", { type: "button", class: "cr-chip cr-wl-sugg", title: tip }, [label]);
+        var chip = el("button", { type: "button",
+          class: "cr-chip cr-wl-sugg" + (authSugg && s === authSugg ? " cr-wl-sugg-active" : ""),
+          title: tip }, [label]);
         chip.disabled = !state.sess;
         chip.onclick = function () {
           titleInp.value = s.title;
@@ -4714,7 +4757,44 @@
       list: "cr-unclass-issuers", placeholder: "issuer…",
       value: cur.issuer || (draft && draft.issuer !== undefined ? draft.issuer : (ps && ps.issuer)) || "", autocomplete: "off" });
     issInp.disabled = !state.sess;
-    var issTd = el("td", {}); issTd.appendChild(issInp); tr.appendChild(issTd);
+    var issTd = el("td", {}); issTd.appendChild(issInp);
+    // ── ADDITIONAL issuing agencies (Rule 4 multi-issuer — Sam, 2026-07-11:
+    // "I need to be able to add multiple issuing agencies and can only add
+    // one"): the same "＋" reveal the No-issuer lane carries, ported here so a
+    // triaged exhibit can record more than one certifying body (e.g. a foreign-
+    // language exhibit honored via AP + DLPT + local credit-by-exam). Reuses
+    // the ni-lane classes (.cr-ni-iss2 / .cr-ni-input2 / .cr-ni-add-issuer) so
+    // joinIssuers() reads them and no new CSS is needed. Extras join into ONE
+    // " | "-delimited value; the sync splits them into the overlay's
+    // additional_issuing_agencies list. ──
+    var wlNoteDraft = null;  // assigned once the Save block wires noteDraft
+    var iss2Base = (draft && draft.issuer2 !== undefined) ? draft.issuer2
+                 : (cur.issuer2 != null ? cur.issuer2 : ((ps && ps.issuer2) || ""));
+    var iss2Wrap = el("div", { class: "cr-ni-iss2" });
+    function addExtraIss(val) {
+      var x = el("input", { class: "cr-wl-input cr-ni-input2", type: "text",
+        list: "cr-unclass-issuers", placeholder: "additional issuing agency…",
+        value: val || "", autocomplete: "off" });
+      x.disabled = !state.sess;
+      x.oninput = function () { if (wlNoteDraft) wlNoteDraft(); };
+      iss2Wrap.appendChild(x);
+      return x;
+    }
+    splitIssuers(iss2Base).forEach(addExtraIss);
+    var addIssLink = el("a", { class: "cr-ni-add-issuer", href: "#",
+      title: "Some credentials are certified by more than one body (Rule 4). "
+        + "Record additional issuing agencies — each is ADDED alongside the one "
+        + "above, never replacing it. Click again for another." },
+      ["＋ add issuing agency"]);
+    addIssLink.onclick = function (e) {
+      e.preventDefault();
+      iss2Wrap.style.display = "";
+      addExtraIss("").focus();
+    };
+    iss2Wrap.style.display = iss2Wrap.childNodes.length ? "" : "none";
+    issTd.appendChild(iss2Wrap);
+    if (state.sess) issTd.appendChild(addIssLink);
+    tr.appendChild(issTd);
 
     var actTd = el("td", { class: "cr-wl-act" });
     if (state.sess) {
@@ -4722,22 +4802,30 @@
       function noteDraft() {
         if (saveBtn.textContent !== "Save") saveBtn.textContent = "Save";
         // capture unsaved input so a re-render can't wipe it (2026-07-08)
-        state.wlDraft[raw] = { title: titleInp.value, issuer: issInp.value };
+        state.wlDraft[raw] = { title: titleInp.value, issuer: issInp.value,
+                               issuer2: joinIssuers(iss2Wrap) };
       }
+      wlNoteDraft = noteDraft;   // the extra-issuer inputs re-arm Save via this
       titleInp.oninput = noteDraft;
       issInp.oninput   = noteDraft;
       saveBtn.onclick = function () {
         var t = (titleInp.value || "").trim();
         if (!t) { titleInp.focus(); return; }
         var iss = (issInp.value || "").trim();
+        var iss2 = joinIssuers(iss2Wrap);
         saveBtn.disabled = true; saveBtn.textContent = "saving…";
-        Promise.all([
+        var jobs = [
           saveUnclass(raw, FIELD_UNCLASS_TITLE, t),
           saveUnclass(raw, FIELD_UNCLASS_ISSUER, iss)
-        ]).then(function (rs) {
+        ];
+        // Only touch issuer2 when there ARE extras, or when CLEARING extras a
+        // prior save recorded — never an empty write on a plain single-issuer row.
+        if (iss2 || (cur.issuer2 && cur.issuer2.trim()))
+          jobs.push(saveUnclass(raw, FIELD_UNCLASS_ISSUER2, iss2));
+        Promise.all(jobs).then(function (rs) {
           saveBtn.disabled = false;
           if (rs.every(function (r) { return r.ok; })) {
-            applySavedAssignment(raw, tr, t, iss);
+            applySavedAssignment(raw, tr, t, iss, iss2);
           } else {
             // dropDeadSession already flipped the auth widget on 401/403; the
             // row-level affordance just offers the retry.

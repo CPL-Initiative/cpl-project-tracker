@@ -9,8 +9,10 @@ reviewers assign a unified credential title (+ optional issuing agency) to each
 raw MAP exhibit title the auditor flagged `unclassified_in_map` (a title with no
 entry in kb/unified_titles.json yet). Those assignments live in kb_curation
 under a dedicated `_UNCLASSIFIED::<raw_title>` namespace:
-  - unified_title_assignment    (the credential the reviewer chose / typed)
-  - issuing_agency_assignment   (optional)
+  - unified_title_assignment      (the credential the reviewer chose / typed)
+  - issuing_agency_assignment     (optional, the primary certifying body)
+  - issuing_agency_assignment2    (optional, " | "-delimited ADDITIONAL agencies
+                                   — Rule 4 multi-issuer, split into a list here)
 
 The dashboard reads them live from Supabase, so the worklist shows progress
 immediately. This script keeps a GIT-CANONICAL overlay in sync so the
@@ -53,6 +55,15 @@ KEY = os.environ.get("SUPABASE_SERVICE_KEY")
 KEY_PREFIX = "_UNCLASSIFIED::"
 FIELD_TITLE = "unified_title_assignment"
 FIELD_ISSUER = "issuing_agency_assignment"
+# ADDITIONAL issuing agencies (Rule 4 multi-issuer — Sam, 2026-07-11). The CER
+# triage row joins extras into ONE " | "-delimited value; we split them into an
+# additional_issuing_agencies list on the overlay entry, ready for the PR-3
+# credential fold to append each alongside the primary (never clobbering it).
+FIELD_ISSUER2 = "issuing_agency_assignment2"
+
+
+def split_issuers(s):
+    return [x.strip() for x in (s or "").split("|") if x.strip()]
 
 
 def fetch_rows():
@@ -99,7 +110,7 @@ def build_assignments(rows):
             continue
         raw = cid[len(KEY_PREFIX):]
         field = (row.get("field") or "").strip()
-        if field not in (FIELD_TITLE, FIELD_ISSUER):
+        if field not in (FIELD_TITLE, FIELD_ISSUER, FIELD_ISSUER2):
             skipped_field += 1
             continue
         entry = acc.setdefault(raw, {})
@@ -107,6 +118,12 @@ def build_assignments(rows):
             entry["unified_title"] = (row.get("value") or "").strip()
         elif field == FIELD_ISSUER:
             entry["issuing_agency"] = (row.get("value") or "").strip()
+        elif field == FIELD_ISSUER2:
+            extras = split_issuers(row.get("value"))
+            if extras:
+                entry["additional_issuing_agencies"] = extras
+            else:
+                entry.pop("additional_issuing_agencies", None)
         # Latest reviewer/timestamp wins (matches _apply_curation.py).
         if (row.get("reviewed_at") or "") >= (entry.get("reviewed_at") or ""):
             entry["reviewed_by"] = row.get("reviewer_email")
