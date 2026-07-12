@@ -1,15 +1,9 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-12 · Session 112 (SkyEmpyrean) — doctrine v0.5 (D-10) + CSR Fix-on-CCR + CER feedback",
+ "_as_of": "2026-07-12 · Session 112 (SkyEmpyrean) — wave 3 FIRED (137 disc + 25 titles) · WELD reverted · CER multi-issuer + C-ID pre-seed shipped",
  "_session": 112,
- "_status": "You asked whether we needed a NEW vocational identifier — turns out we already have it three ways (the CTE flag, the MQ faculty-qual list, and the noncredit-category), and the CSR already shows 🎓/🔧 chips; a V-prefix on SUBJ codes would've been a mistake (collides with real subjects, bakes a changeable label into a permanent key). Along the way your HUM/PE catch grew into a full MQ Handbook re-validation — 3 disciplines re-binned + 8 that the first parse had DROPPED entirely restored (incl. Accounting), 240→248. Then we wired that vocational signal into the CCR pipeline and ran wave 3: 2,000 corroborated multi-college identities adjudicated. The wire-up paid off on day one — the #1 discipline fix is 'Accounting,' a name that only existed again because of yesterday's restore. Nothing fired — the wave-3 title + discipline lanes are staged and waiting for your word.",
+ "_status": "Executed your 'Yes to all 3': ① reverted the 3 WELD-in-Carpentry overrides back to Welding (D-10 — the discipline is the FIELD; the Carpenters-apprenticeship link lives in the articulation, not the discipline); ② FIRED wave 3 — 137 discipline corrections + 25 title fixes landed live as the trailcrew-ccr3-s112@bot cohort (14 titles already carried a value and were left intact, including your own ATHL M1178; the 6 MQ-tighteners stay held for faculty per your D-9 gate); ③ shipped the two CER Unclassified-triage fixes you flagged — you can now add MULTIPLE issuing agencies per exhibit (＋ add issuing agency), and a row with a reliable CCN/C-ID now PRE-SEEDS the title instead of leaving it a click-only chip. Still open below: the calibration sitting, the homonym re-check, and the CER/CSR/carpentry curator queues.",
  "items": [
-  {
-   "id": "wave3-fire",
-   "for": "sam",
-   "tab": "unified-courses",
-   "text": "🔥 Wave 3 fire-ready (D-9-gated): 39 title fixes + 137 discipline corrections. Your new D-9 MQ gate HELD 6 tighteners (4× CIS→Computer Science + Industrial Tech→Engineering + Public Safety→Political Science — they'd need a master's-qualified instructor) for faculty. Say go and I stage the 176 as a receipted trailcrew-ccr3-s112@bot cohort (undoable per row). Receipt: kb/ccr_out/2026-07-12/d9_gate_wave3.json."
-  },
   {
    "id": "calibration-sitting",
    "for": "sam",
@@ -71,16 +65,10 @@
    "text": "Wave 4 when ready: multi-college ranks 2,001–4,000 (kb/_ccr_trail.py 2000 40 <out> 2000 --stratum multi --wave 4). Re-run the auditor first; inject held decisions + pending merge-confirms. Heads-up: Fable's monthly spend cap was hit this session — a big fan-out may need Opus or a fresh cap window."
   },
   {
-   "id": "weld-carp-revert",
+   "id": "cer-assessment-pathway",
    "for": "sam",
-   "tab": "unified-courses",
-   "text": "🪵→🔥 Your WELD-in-Carpentry catch: 3 Welding courses (WELD M1066/M1092/M1121, 'Structural Welding A/B') were fired to Carpentry by wave 1 because they carry a Carpentry-program TOP + articulate to the Carpenters Apprenticeship. Per NEW rule D-10 (discipline = the FIELD, not the program), they're Welding — the carpentry link stays in the articulation. Say go and I revert the 3 overrides. Receipt: kb/ccr_out/2026-07-12/discipline_vs_program_revert.json."
-  },
-  {
-   "id": "cer-triage-fixes",
-   "for": "fable",
    "tab": "credential-reference",
-   "text": "CER Unclassified-triage feedback (both confirmed SMALL fixes): (1) multi-issuer add — port the existing '＋ add issuing agency' widget from the missing-issuer lane into the triage row; (2) C-ID title pre-seed — fall the title pre-fill back to the top-ranked C-ID suggestion (already loaded, currently a click-only chip). Design note incl. the future assessment-pathway model: docs/cer_assessment_pathways_design.md."
+   "text": "📐 Future-phase (design staged, not built): course-based exhibits need a 'most-aligned certificate / assessment test name' field, separate from the issuing agency — e.g. FL courses accept local credit-by-exam OR an AP language score OR the DLI/DLPT exam (one exhibit, N pathways each with its own issuer + assessment). Model written up in docs/cer_assessment_pathways_design.md; flag when you want it built."
   },
   {
    "id": "aviation-restage",
