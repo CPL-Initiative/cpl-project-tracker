@@ -1,7 +1,7 @@
 ---
 title: "CCR Merge/Mint Doctrine — the decision policy for course convergence"
 created: 2026-07-03
-version: "0.6 (2026-07-13 — P-1 RATIFIED as Sam's student-repeat test + learning-equivalence-beats-subject-code; folded the 2026-07-13 calibration refinements P-1a/P-7a/P-9a/P-10a. v0.5 was D-10; v0.4 was D-9 + P-12)"
+version: "0.6 (2026-07-13 — P-1 RATIFIED as Sam's student-repeat test, anchored to CA Title 5 §55050's 'similar to' standard + learning-equivalence-beats-subject-code; folded the 2026-07-13 calibration refinements P-1a/P-7a/P-9a/P-10a. v0.5 was D-10; v0.4 was D-9 + P-12)"
 tags: [ccr, doctrine, merge, mint, m-id, mind-meld]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -63,6 +63,19 @@ when a sub-rule and this test disagree, **the student-repeat test wins**:
 - **CR/NC mirror** (a course taught credit + free-noncredit): the noncredit
   twin **is** the Credit-by-Exam on-ramp — you'd never make the student repeat
   it → **merge to one identity** (credit is the face, noncredit tagged).
+
+**Legal foundation — CA Title 5 §55050 (Sam, 2026-07-13).** California's Title 5
+§55050 authorizes Credit for Prior Learning for skills **"similar to"** the
+course outcomes — *not identical*. That "similar" standard is the statutory
+window that lets faculty **err on the side of the student**: an obviously
+qualified learner should not have to sit through a course to earn credit they
+could arguably teach. The student-repeat test is the faculty-judgment form of
+§55050 — *"would you make them repeat it?"* ≈ *"are their skills similar enough
+to the outcomes?"* This is why the staging default is **merge / grant, with
+receipts** (P-9): under-serving a qualified student is the worse error, and the
+"similar" bar — not an "identical" bar — is the one the law actually sets. The
+mission it serves: give faculty the tools to save students time and money, and
+to welcome the learners who assumed *"college isn't for me."*
 
 Equivalent faculty-facing phrasing (same test, curator voice): *"Would a
 faculty workgroup mapping a credential treat these as ONE credit target?"* The
