@@ -62,7 +62,16 @@ vs. carries its own units?
 
 ---
 
-## 2. 🟠 Faculty-qualification / MQ implication — 228 verdicts, no rule at all
+## 2. ✅ Faculty-qualification / MQ gate — RESOLVED 2026-07-12 (was 228 verdicts, no rule)
+
+> **Sam's ruling → D-9 MQ-tightening gate (Doctrine v0.4).** Only the
+> *tightening* direction gates: a re-discipline that moves a course TO the
+> master's list (`not_masters → masters/both_lists`) can disqualify current
+> instructors → **hold for faculty** (`needs_curator`). Loosening/lateral moves
+> auto-apply. Applied to the wave-3 lane: **6 of 143** discipline corrections
+> are tighteners (4× CIS→Computer Science, Industrial Tech→Engineering, Public
+> Safety→Political Science) → held; 137 fire-OK. Receipt: `kb/ccr_out/2026-07-12/d9_gate_wave3.json`.
+
 
 **The pattern.** 228 verdicts reason about the discipline's *faculty-qualification
 pool* (masters-list vs. experience-list), mostly on `discipline_correct` (120).
@@ -79,7 +88,18 @@ settled.)
 
 ---
 
-## 3. 🟡 Homonym splits — same title, different field (155 verdicts, 100 "split")
+## 3. ✅ Homonym splits — RESOLVED 2026-07-12 (was 155 verdicts, 100 "split")
+
+> **Sam's ruling → P-12 homonym test (evidence over TOP).** TOP code is a WEAK
+> signal (colleges mis-enter it) — it SURFACES a homonym but doesn't decide one.
+> Reliable evidence in order: **title · course/catalog description · aligned
+> exhibit/credential**; TOP is used **only to tip the scales when those are
+> inconclusive**. Never split on TOP divergence alone; hard credential/exhibit
+> evidence that ties members OVERRIDES a TOP split. **Implication:** the ~100
+> wave splits driven mainly by `member_top_divergence` must be re-checked
+> against title/description/exhibit before they fire (a re-adjudication, like
+> the CR/NC one).
+
 
 **The pattern.** "Electrical Fundamentals" (construction vs. automotive),
 "Blueprint Reading" (13 subjects), paralegal-vs-criminal-law `1402.00` — a

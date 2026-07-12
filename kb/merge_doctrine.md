@@ -1,7 +1,7 @@
 ---
 title: "CCR Merge/Mint Doctrine — the decision policy for course convergence"
 created: 2026-07-03
-version: "0.3 (2026-07-12 — Q-CREDITNC RESOLVED: the CR/NC mirror carve-out on D-3, from Sam's Credit-by-Exam framing)"
+version: "0.4 (2026-07-12 — + D-9 MQ-tightening gate + P-12 homonym evidence-over-TOP, from Sam; v0.3 was Q-CREDITNC / the CR/NC mirror carve-out)"
 tags: [ccr, doctrine, merge, mint, m-id, mind-meld]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -187,6 +187,23 @@ Kinesiology). A merge whose survivor changes discipline re-disciplines
 explicitly (never silently); cross-discipline merges pick the survivor's
 discipline deliberately.
 
+### D-9 · MQ-tightening gate — ESTABLISHED (Sam, 2026-07-12)
+
+A re-discipline changes the *implied faculty-qualification pool* — the MQ list
+(`mq_list` in `kb/reference/mq_sections.json`) of the new discipline vs. the
+old. **Direction matters, and only the tightening direction gates:**
+
+- **Loosening or lateral** — moving a course TO the experience/vocational list
+  (`not_masters`), or a move within the same list — **expands or preserves**
+  the teachable pool. **Auto-apply** as normal.
+- **Tightening** — moving a course TO the master's list (a `not_masters` →
+  `masters`/`both_lists` move) can **disqualify current instructors**. **Gate
+  it: route to `needs_curator`** for faculty; never auto-fire.
+
+This closes the D-8 gap the MQ wire-up exposed (a discipline change is also a
+who-can-teach change). It applies at fire-time to every `discipline_correct`
+lane — the proposal's old→new `mq_list` transition is checked before staging.
+
 ---
 
 ## Part III — Proposed judgment rules (the mind-meld draft)
@@ -288,6 +305,25 @@ Sam's five KINE sittings draw one consistent line — **athletics vs general**:
 
 Dance/Music activity ladders: presumed to follow the same shape but NOT yet
 sat — Q-TARGETCOUNT remains open for those two.
+
+### P-12 · Homonym test — evidence over TOP — ESTABLISHED (Sam, 2026-07-12)
+
+A string-identical title can span genuinely different fields ("Electrical
+Fundamentals": construction vs. automotive; "Blueprint Reading" across 13
+subjects). **TOP code is a WEAK signal — colleges frequently mis-enter it** —
+so a TOP-division divergence (`member_top_divergence`) **SURFACES** a homonym
+for review; it does **not decide** one. The reliable evidence, in order:
+
+1. **Title** · 2. **Course/catalog description** · 3. **Aligned exhibit /
+   credential** (a shared C-ID or exhibit target is the strongest tie) ·
+4. TOP code — **used only to tip the scales when 1–3 are inconclusive.**
+
+Decision: **split** a homonym only when title + description + exhibit evidence
+shows genuinely different courses; hard credential/articulation evidence that
+ties the members **overrides** a TOP-division split. **Never split on TOP
+divergence alone.** (Implication: the ~100 wave `split_candidate`s driven mainly
+by `member_top_divergence` must be re-checked against title/description/exhibit
+before they fire — TOP alone no longer justifies the split.)
 
 ### P-10 · Unified-title naming — PROPOSED
 
