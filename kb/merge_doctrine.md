@@ -1,7 +1,7 @@
 ---
 title: "CCR Merge/Mint Doctrine — the decision policy for course convergence"
 created: 2026-07-03
-version: "0.4 (2026-07-12 — + D-9 MQ-tightening gate + P-12 homonym evidence-over-TOP, from Sam; v0.3 was Q-CREDITNC / the CR/NC mirror carve-out)"
+version: "0.5 (2026-07-12 — + D-10 discipline-is-the-field-not-the-program, from Sam's WELD-in-Carpentry catch; v0.4 was D-9 MQ gate + P-12 homonym)"
 tags: [ccr, doctrine, merge, mint, m-id, mind-meld]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -203,6 +203,35 @@ old. **Direction matters, and only the tightening direction gates:**
 This closes the D-8 gap the MQ wire-up exposed (a discipline change is also a
 who-can-teach change). It applies at fire-time to every `discipline_correct`
 lane — the proposal's old→new `mq_list` transition is checked before staging.
+
+### D-10 · Discipline is the course's FIELD, not its program — ESTABLISHED (Sam, 2026-07-12)
+
+A course's **discipline** is the *field it belongs to* — what it teaches and who
+is MQ-qualified to teach it (**title + description + content**). It is **NOT** the
+program, apprenticeship, or pathway that *requires* the course. Vocational /
+apprenticeship programs are **cross-disciplinary**: the Carpenters Apprenticeship,
+for one, includes Welding, Industrial Technology, Steamfitting, and Construction
+Technology courses alongside Carpentry ones. Each course keeps **its own
+discipline**; its membership in a program lives in the **articulation / pathway
+layer** (the exhibit it articulates to), never in the discipline field.
+
+- **The tell:** a course whose title/description are clearly field X (e.g.
+  "Structural Welding," AWS processes → Welding) but that carries a program's
+  TOP code (0952.10 Carpentry) and articulates to that program's apprenticeship.
+  Per **P-12**, the program-driven TOP is the *weak* signal; title + description
+  govern → discipline = the field (Welding), not the program (Carpentry).
+- **Worked case (2026-07-12):** `WELD M1066 / M1092 / M1121` ("Structural
+  Welding A/B," "Light Gage Welding") were fired **Welding → Carpentry** by the
+  wave-1 lane because they carry TOP 0952.x and articulate to "Carpenters
+  Apprenticeship — Millwright / Drywall/Lather." That is exactly this error —
+  they are *Welding courses included in* carpentry apprenticeships. Correct
+  discipline = Welding; the carpentry link is preserved in the articulation.
+  (Revert staged: `kb/ccr_out/2026-07-12/discipline_vs_program_revert.json`.)
+- **Rule for adjudicators:** never re-discipline a course to match a
+  program/apprenticeship it articulates to. When the course's field and its
+  program differ, keep the **field** as the discipline; the articulation carries
+  the program membership. (Connects to D-9 — a welding course needs a
+  welding-qualified instructor regardless of which program uses it.)
 
 ---
 

@@ -200,6 +200,30 @@ setTimeout(() => {
       !!peDrift && peDrift.indexOf("KINE") >= 0 && peDrift.indexOf("×5") >= 0 &&
       peDrift.indexOf("= Kinesiology") < 0);
 
+    // ── the "Fix on CCR →" cure for owned-code drift ─────────────────────
+    // Auto Body carries AUTO (Automotive Technology's Common SUBJ) → those
+    // rows are likely mis-disciplined, so the drift row offers a recommendation
+    // + a button that deep-links the Common Course Reference (CPL_QS hint bus +
+    // CPL_TABS router), filtered to the discipline + code.
+    const abDrift = [...doc.querySelectorAll("#cs-check-body .cs-check-list li")]
+      .find((li) => li.textContent.indexOf("Auto Body Technology") === 0);
+    const fixBtn = abDrift && abDrift.querySelector(".cs-check-fix");
+    check("owned-code drift offers a 'Fix on CCR →' button", !!fixBtn && /Fix on CCR/.test(fixBtn.textContent));
+    check("owned-code drift shows a re-discipline recommendation",
+      !!abDrift && /likely Automotive Technology/.test(abDrift.textContent));
+    let qsHint = null, ccrActivated = null;
+    window.addEventListener("cpl-qs-hint", (e) => { qsHint = e.detail; });
+    window.CPL_TABS = { activate: (t) => { ccrActivated = t; } };
+    if (fixBtn) fixBtn.click();
+    check("Fix-on-CCR dispatches a CCR hint filtered to the discipline + code",
+      qsHint && qsHint.tab === "unified-courses" && qsHint.hint &&
+      qsHint.hint.disc === "Auto Body Technology" && qsHint.hint.search === "AUTO");
+    check("Fix-on-CCR activates the Common Course Reference tab", ccrActivated === "unified-courses");
+    check("Fix-on-CCR stashes the hint for a cold-loaded tab",
+      !!window.sessionStorage.getItem("cpl_qs_hint_unified-courses"));
+    check("Fix-on-CCR closes the check modal", !modal.classList.contains("show"));
+    btn.click(); // re-open the modal for the jump-cure assertions below
+
     // ── the jump cure ────────────────────────────────────────────────────
     const jumps = [...doc.querySelectorAll(".cs-check-jump")].filter((b) => b.textContent.indexOf("Mystery Studies") >= 0);
     check("jump button exists for Mystery Studies", jumps.length > 0);
