@@ -1,7 +1,7 @@
 ---
 title: "CCR Merge/Mint Doctrine — the decision policy for course convergence"
 created: 2026-07-03
-version: "0.5 (2026-07-12 — + D-10 discipline-is-the-field-not-the-program, from Sam's WELD-in-Carpentry catch; v0.4 was D-9 MQ gate + P-12 homonym)"
+version: "0.6 (2026-07-13 — P-1 RATIFIED as Sam's student-repeat test + learning-equivalence-beats-subject-code; folded the 2026-07-13 calibration refinements P-1a/P-7a/P-9a/P-10a. v0.5 was D-10; v0.4 was D-9 + P-12)"
 tags: [ccr, doctrine, merge, mint, m-id, mind-meld]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -39,21 +39,77 @@ policy change identifies exactly the cohort to revisit.
 
 ## Part I — The purpose test (reading order matters)
 
-### P-1 · CPL utility is the organizing principle — PROPOSED
+### P-1 · CPL utility is the organizing principle — RATIFIED (Sam, 2026-07-13)
 
-The CCR catalog exists so that faculty workgroups aligning certification /
-training / military skills to course outcomes can pick a credit
-recommendation by **common course name** instead of 116 local names. Every
-merge/mint question is therefore:
+**The one test every other rule serves — Sam's lens (2026-07-13 calibration
+sitting):**
 
-> *"Would a faculty workgroup mapping a credential treat these as ONE credit
-> target?"*
+> *"If a student showed up with evidence they'd already completed it — or that
+> they have the skills — would you make them repeat your local course under its
+> local name?"*
+>
+> **No → it's ONE identity (merge). Yes → keep it separate.**
 
-— **not** *"are these catalog entries textually identical?"* Two courses with
-drifted titles but the same credit outcome are one CCR row. Two courses with
-identical titles but different credit outcomes (level, band,
-degree-applicability) are two rows. Catalog fidelity is the *evidence*; credit
-equivalence is the *question*.
+This is pure CPL equivalence: the question is about **learning**, not textual
+similarity and not discipline codes. It reproduces every sub-rule below — and
+when a sub-rule and this test disagree, **the student-repeat test wins**:
+
+- **Rungs** (Intermediate → Advanced): a student with Intermediate *would* be
+  sent to repeat Advanced → **keep separate.**
+- **Homonyms** (music "keyboard" vs office "keyboard"): the skills differ, so
+  the student *would* repeat → **keep separate.**
+- **Title drift** (Intro Auto Mechanics ≡ Fundamentals of Auto Mechanics):
+  same learning, *wouldn't* repeat → **merge.**
+- **CR/NC mirror** (a course taught credit + free-noncredit): the noncredit
+  twin **is** the Credit-by-Exam on-ramp — you'd never make the student repeat
+  it → **merge to one identity** (credit is the face, noncredit tagged).
+
+Equivalent faculty-facing phrasing (same test, curator voice): *"Would a
+faculty workgroup mapping a credential treat these as ONE credit target?"* The
+CCR catalog exists so those workgroups pick a credit recommendation by **common
+course name** instead of 116 local names. Catalog fidelity is the *evidence*;
+credit/learning equivalence is the *question*.
+
+**Learning-equivalence beats subject-code matching (Sam, 2026-07-13).** The
+student doesn't care which **department** owns the course. If the *learning* is
+the same, same-content courses in **different disciplines are one identity** —
+the department is a taxonomy artifact, not a separator. (Worked case: *Wellness
+Arts* in Family & Consumer Sciences ≡ *Arts for Wellness* in Interdisciplinary
+Studies — a student with one is never sent to repeat the other.) This
+deliberately relaxes the old "different discipline → keep separate" reflex, and
+it is **safe** because the homonym guard survives on its own terms: different
+*skills* means the student WOULD repeat, so music-"keyboard" vs office-
+"keyboard" still splits. In one line: **learning-equivalence merges
+same-content-different-department; the homonym guard splits
+same-word-different-skill.**
+
+#### Calibration refinements folded from the 2026-07-13 sitting
+
+Deltas ratified while walking the 52-group calibration through the lens above.
+Each amends a named rule and is cited by its id in receipts:
+
+- **P-1a — Homonym group with a mergeable core.** A shared-word group is not
+  all-or-nothing. When a "same word" cluster contains a genuine sub-family plus
+  an outlier, **split the outlier and merge the core** — do not default the
+  whole group to keep-separate. (Case #30 *Healthy Aging*: merge the
+  Healthy-Living/wellness core — stress/nutrition/exercise/weight — and keep
+  the substantive **gerontology** "Healthy Aging" as its own identity.)
+- **P-7a — Reclassify a real course wearing a generic coat.** A title that
+  *looks* generic ("Individual Problems in Sculpture") but is really a nameable
+  skills course gets **reclassified/renamed**, not dismissed as a generic shell.
+  (Case #36 → rename to *Sculpture Skills 1 / 2*, kept as a 2-rung sequence.)
+- **P-9a — Region/theme-word groups: umbrella on a second signal.** A
+  region-or-theme-word collision (case #23 *Asian & Pacific* across
+  music/dance/art) stays **separate by default**, but if the members actually
+  **co-articulate** (cross-topic evidence — a credential maps A&P music *and*
+  dance *and* culture together), merge to a named **umbrella** identity (e.g.
+  *Asian & Pacific Culture (Music/Dance/Art)*). The second signal is the
+  co-articulation evidence, not the shared word.
+- **P-10a — Strip catalog rung-codes from unified titles.** Local rung
+  notations like "3A" / "1B" never survive into a unified title; express level
+  as the plain word (*Beginning / Intermediate / Advanced*) and record the
+  original code in `merge_note`. (Case #39 *Intermediate Ballet 3A* → the "3A"
+  drops.)
 
 ### P-2 · The two-number goal — PROPOSED
 
