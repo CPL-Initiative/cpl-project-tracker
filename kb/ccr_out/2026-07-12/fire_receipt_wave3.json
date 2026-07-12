@@ -1,0 +1,771 @@
+{
+ "_about": "Wave-3 FIRE receipt (Rule 9). Sam: 'Yes to all 3' (2026-07-12) — ① revert 3 WELD Carpentry overrides (D-10), ② fire the D-9-gated wave-3 discipline_correct + title_fix lanes as an INSERT-only ON CONFLICT DO NOTHING cohort, ③ CER triage fixes (separate PR).",
+ "_fired_at": "2026-07-12T21:18:19Z",
+ "_cohort_reviewer_email": "trailcrew-ccr3-s112@bot",
+ "_project": "hvuwhnbuahrtptokpqfh (Work Plan)",
+ "_table": "kb_curation",
+ "_rule9_preflight": {
+  "fresh_read_weld": "3 WELD overrides confirmed = Carpentry, reviewer trailcrew-ccr1-s111@bot, reviewed_at 2026-07-10 19:23:34 — unchanged since wave 1, safe to revert.",
+  "pending_merge_confirm_crosscheck": "14 pending unified_title_merge_confirm rows are all _CREDENTIAL_REVIEW:: keys (CER namespace) — zero overlap with the 39 M-ID title fixes. PASS.",
+  "existing_target_rows": "0 of 137 discipline course_ids and 14 of 39 unified_title course_ids already carried a curator row — the 14 are protected by the (course_id,field) PK ON CONFLICT DO NOTHING.",
+  "d10_suspects": 0,
+  "field_name_verified": "CCR consumer reads field==='discipline' (unified_courses.js:147) and field==='unified_title' (line 149) — NOT 'discipline_override'."
+ },
+ "action_1_revert_weld": {
+  "op": "DELETE ... WHERE field='discipline' AND reviewer_email='trailcrew-ccr1-s111@bot' AND course_id IN (...)",
+  "reason": "D-10 — discipline is the FIELD, not the program. These are Welding courses required by the Carpenters Apprenticeship; the program membership lives in the articulation layer, not the discipline. Reverting the override restores the WELD-SUBJ4 baseline discipline (Welding).",
+  "deleted": [
+   "WELD M1066",
+   "WELD M1092",
+   "WELD M1121"
+  ],
+  "deleted_count": 3,
+  "post_state": "0 discipline overrides remaining on these 3 ids → baseline Welding."
+ },
+ "action_2_fire_wave3": {
+  "op": "INSERT INTO kb_curation (course_id,field,value,reviewer_email) VALUES ... ON CONFLICT (course_id,field) DO NOTHING RETURNING",
+  "gate": "D-9 MQ-tightening gate already applied upstream (kb/ccr_out/2026-07-12/d9_gate_wave3.json) — 6 tighteners held for faculty, not in this fire.",
+  "discipline_lane": {
+   "submitted": 137,
+   "landed": 137,
+   "skipped": 0
+  },
+  "title_lane": {
+   "submitted": 39,
+   "landed": 25,
+   "skipped_preexisting": 14
+  },
+  "total_rows_landed": 162,
+  "verification": {
+   "cohort_discipline": 137,
+   "cohort_unified_title": 25,
+   "weld_override_remaining": 0,
+   "preexisting_titles_preserved": 14
+  }
+ },
+ "discipline_fires": [
+  {
+   "course_id": "BUSI M1066",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "HUMA M1098",
+   "value": "Linguistics"
+  },
+  {
+   "course_id": "BUSI M1046",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "BUSI M1363",
+   "value": "Marketing"
+  },
+  {
+   "course_id": "HLTH M9036",
+   "value": "Art"
+  },
+  {
+   "course_id": "ANTH M1099",
+   "value": "Sociology"
+  },
+  {
+   "course_id": "BUSI M1068",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "BUSI M1357",
+   "value": "Office Technologies"
+  },
+  {
+   "course_id": "BUSI M1099",
+   "value": "Marketing"
+  },
+  {
+   "course_id": "ETHS M1232",
+   "value": "Kinesiology"
+  },
+  {
+   "course_id": "ETHS M1132",
+   "value": "Kinesiology"
+  },
+  {
+   "course_id": "ARTS M1306",
+   "value": "Graphic Arts"
+  },
+  {
+   "course_id": "BUSI M1079",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "BUSI M1111",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "BUSI M1139",
+   "value": "Marketing"
+  },
+  {
+   "course_id": "SOCS M1014",
+   "value": "Anthropology"
+  },
+  {
+   "course_id": "ARTS M1103",
+   "value": "Art History"
+  },
+  {
+   "course_id": "ARTS M1436",
+   "value": "Art"
+  },
+  {
+   "course_id": "ARTS M1172",
+   "value": "Humanities"
+  },
+  {
+   "course_id": "ARTS M1112",
+   "value": "Art History"
+  },
+  {
+   "course_id": "BUSI M1038",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "POLS M1002",
+   "value": "Administration of Justice"
+  },
+  {
+   "course_id": "BUSI M1069",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "PHSC M1002",
+   "value": "Astronomy"
+  },
+  {
+   "course_id": "BUSI M1376",
+   "value": "Banking and Finance"
+  },
+  {
+   "course_id": "ARTS M1114",
+   "value": "Art History"
+  },
+  {
+   "course_id": "ARTS M1139",
+   "value": "Art History"
+  },
+  {
+   "course_id": "BUSI M1337",
+   "value": "Office Technologies"
+  },
+  {
+   "course_id": "COUN M9021",
+   "value": "Parent Education: Noncredit"
+  },
+  {
+   "course_id": "BUSI M1006",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "BUSI M1026",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "BUSI M1008",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "AGRI M1062",
+   "value": "Ornamental Horticulture"
+  },
+  {
+   "course_id": "CULN M1054",
+   "value": "Restaurant Management"
+  },
+  {
+   "course_id": "COUN M1051",
+   "value": "Addiction Paraprofessional Training"
+  },
+  {
+   "course_id": "MUSI M1542",
+   "value": "Commercial Music"
+  },
+  {
+   "course_id": "BUSI M9154",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "THEA M1295",
+   "value": "Stagecraft"
+  },
+  {
+   "course_id": "MUSI M1512",
+   "value": "Commercial Music"
+  },
+  {
+   "course_id": "ENGL M1320",
+   "value": "Film and Media Studies"
+  },
+  {
+   "course_id": "ELET M1054",
+   "value": "Electricity"
+  },
+  {
+   "course_id": "HUMA M1109",
+   "value": "Journalism"
+  },
+  {
+   "course_id": "BIOL M1243",
+   "value": "Nutritional Science/Dietetics"
+  },
+  {
+   "course_id": "CSIS M1312",
+   "value": "Multimedia"
+  },
+  {
+   "course_id": "CULN M1140",
+   "value": "Hotel and Motel Services"
+  },
+  {
+   "course_id": "MANU M1008",
+   "value": "Drafting/CADD"
+  },
+  {
+   "course_id": "FIMS M1039",
+   "value": "Broadcasting Technology"
+  },
+  {
+   "course_id": "ETHS M1026",
+   "value": "Kinesiology"
+  },
+  {
+   "course_id": "ARTS M1151",
+   "value": "Art History"
+  },
+  {
+   "course_id": "CISC M1073",
+   "value": "Multimedia"
+  },
+  {
+   "course_id": "BIOL M1171",
+   "value": "Addiction Paraprofessional Training"
+  },
+  {
+   "course_id": "FIMS M1098",
+   "value": "Multimedia"
+  },
+  {
+   "course_id": "ARTS M1327",
+   "value": "Graphic Arts"
+  },
+  {
+   "course_id": "BUSI M1041",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "BUSI M1096",
+   "value": "Office Technologies"
+  },
+  {
+   "course_id": "BUSI M1056",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "LIBS M1001",
+   "value": "Library Science"
+  },
+  {
+   "course_id": "ARTS M1073",
+   "value": "Art History"
+  },
+  {
+   "course_id": "COMM M1069",
+   "value": "Multimedia"
+  },
+  {
+   "course_id": "BUSI M1342",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "ARCH M1106",
+   "value": "Construction Management"
+  },
+  {
+   "course_id": "PHIL M1095",
+   "value": "Religious Studies"
+  },
+  {
+   "course_id": "HUMA M1097",
+   "value": "Linguistics"
+  },
+  {
+   "course_id": "ETHS M1191",
+   "value": "Kinesiology"
+  },
+  {
+   "course_id": "ARTS M1065",
+   "value": "Art History"
+  },
+  {
+   "course_id": "ETHS M1024",
+   "value": "Kinesiology"
+  },
+  {
+   "course_id": "FCSH M9076",
+   "value": "Parent Education: Noncredit"
+  },
+  {
+   "course_id": "ETHS M1027",
+   "value": "Kinesiology"
+  },
+  {
+   "course_id": "ARCH M1020",
+   "value": "Drafting/CADD"
+  },
+  {
+   "course_id": "MATH M1194",
+   "value": "Interdisciplinary Studies"
+  },
+  {
+   "course_id": "BUSI M1030",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "FIMS M1031",
+   "value": "Media Production"
+  },
+  {
+   "course_id": "MANU M1063",
+   "value": "Drafting/CADD"
+  },
+  {
+   "course_id": "ARTD M1009",
+   "value": "Photography"
+  },
+  {
+   "course_id": "ENGL M1329",
+   "value": "Film and Media Studies"
+  },
+  {
+   "course_id": "SOCI M1069",
+   "value": "Women’s Studies"
+  },
+  {
+   "course_id": "COUN M1013",
+   "value": "Addiction Paraprofessional Training"
+  },
+  {
+   "course_id": "BUSI M1075",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "PSYC M1024",
+   "value": "Ethnic Studies"
+  },
+  {
+   "course_id": "ETHS M1028",
+   "value": "Kinesiology"
+  },
+  {
+   "course_id": "BUSI M9083",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "KINE M1040",
+   "value": "Learning Assistance or Learning Skills"
+  },
+  {
+   "course_id": "CRIM M1183",
+   "value": "Legal Assisting"
+  },
+  {
+   "course_id": "IDST M1060",
+   "value": "Counseling"
+  },
+  {
+   "course_id": "PHSC M1039",
+   "value": "Earth Science"
+  },
+  {
+   "course_id": "ARTS M9006",
+   "value": "Older Adults: Noncredit"
+  },
+  {
+   "course_id": "PHSC M1038",
+   "value": "Earth Science"
+  },
+  {
+   "course_id": "CISC M1020",
+   "value": "Computer Information Systems"
+  },
+  {
+   "course_id": "ARTS M1187",
+   "value": "Photography"
+  },
+  {
+   "course_id": "BUSI M1215",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "BUSI M1371",
+   "value": "Marketing"
+  },
+  {
+   "course_id": "COMM M1071",
+   "value": "Multimedia"
+  },
+  {
+   "course_id": "CSIS M1313",
+   "value": "Multimedia"
+  },
+  {
+   "course_id": "HUMA M1102",
+   "value": "Religious Studies"
+  },
+  {
+   "course_id": "MUSI M1081",
+   "value": "Commercial Music"
+  },
+  {
+   "course_id": "FCSH M1019",
+   "value": "Child Development/Early Childhood Education"
+  },
+  {
+   "course_id": "ARTS M1408",
+   "value": "Multimedia"
+  },
+  {
+   "course_id": "MANU M1009",
+   "value": "Drafting/CADD"
+  },
+  {
+   "course_id": "HLTH M1020",
+   "value": "Health Care Ancillaries"
+  },
+  {
+   "course_id": "ARCH M1120",
+   "value": "Interior Design"
+  },
+  {
+   "course_id": "BUSI M1017",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "ARTS M1208",
+   "value": "Photography"
+  },
+  {
+   "course_id": "SOCS M1050",
+   "value": "Film and Media Studies"
+  },
+  {
+   "course_id": "SOCS M1054",
+   "value": "Gerontology"
+  },
+  {
+   "course_id": "BIOL M1232",
+   "value": "Health Care Ancillaries"
+  },
+  {
+   "course_id": "BUSI M1354",
+   "value": "Insurance"
+  },
+  {
+   "course_id": "HUMA M1110",
+   "value": "Religious Studies"
+  },
+  {
+   "course_id": "BUSI M1074",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "FCSH M1034",
+   "value": "Hotel and Motel Services"
+  },
+  {
+   "course_id": "MANU M1017",
+   "value": "Drafting/CADD"
+  },
+  {
+   "course_id": "COUN M1014",
+   "value": "Addiction Paraprofessional Training"
+  },
+  {
+   "course_id": "SOCS M1009",
+   "value": "Religious Studies"
+  },
+  {
+   "course_id": "BUSI M1333",
+   "value": "Office Technologies"
+  },
+  {
+   "course_id": "IDST M9176",
+   "value": "Citizenship: Noncredit"
+  },
+  {
+   "course_id": "BUSI M1301",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "BUSI M1288",
+   "value": "Real Estate"
+  },
+  {
+   "course_id": "MATH M9005",
+   "value": "Mathematics-Basic Skills: Noncredit"
+  },
+  {
+   "course_id": "CSIS M1337",
+   "value": "Media Production"
+  },
+  {
+   "course_id": "MANU M1012",
+   "value": "Drafting/CADD"
+  },
+  {
+   "course_id": "FIMS M1032",
+   "value": "Media Production"
+  },
+  {
+   "course_id": "PHSC M1012",
+   "value": "Earth Science"
+  },
+  {
+   "course_id": "ETHS M1131",
+   "value": "Kinesiology"
+  },
+  {
+   "course_id": "BUSI M1013",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "LIBS M1003",
+   "value": "Library Science"
+  },
+  {
+   "course_id": "ARTS M1142",
+   "value": "Art History"
+  },
+  {
+   "course_id": "COUN M1059",
+   "value": "Addiction Paraprofessional Training"
+  },
+  {
+   "course_id": "ARTS M1102",
+   "value": "Art History"
+  },
+  {
+   "course_id": "COMM M1098",
+   "value": "Media Production"
+  },
+  {
+   "course_id": "ARTS M1471",
+   "value": "Graphic Arts"
+  },
+  {
+   "course_id": "MANU M1037",
+   "value": "Drafting/CADD"
+  },
+  {
+   "course_id": "COUN M1066",
+   "value": "Addiction Paraprofessional Training"
+  },
+  {
+   "course_id": "FCSH M1035",
+   "value": "Hotel and Motel Services"
+  },
+  {
+   "course_id": "BUSI M1128",
+   "value": "Accounting"
+  },
+  {
+   "course_id": "DANC M1388",
+   "value": "Kinesiology"
+  },
+  {
+   "course_id": "ETHS M1234",
+   "value": "Kinesiology"
+  },
+  {
+   "course_id": "IDST M9252",
+   "value": "Interdisciplinary-Basic Skills: Noncredit 53412"
+  },
+  {
+   "course_id": "ARTS M1329",
+   "value": "Graphic Arts"
+  }
+ ],
+ "title_fires_landed": [
+  {
+   "course_id": "ENGL M1129",
+   "value": "Chicana/o Literature"
+  },
+  {
+   "course_id": "KINE M1301",
+   "value": "Beginning Self Defense"
+  },
+  {
+   "course_id": "ANTH M1036",
+   "value": "Cultural Anthropology"
+  },
+  {
+   "course_id": "PSYC M1019",
+   "value": "Life-Span Psychology"
+  },
+  {
+   "course_id": "CSIS M1443",
+   "value": "Object-Oriented Programming with Java"
+  },
+  {
+   "course_id": "ETHS M1184",
+   "value": "Women of Color in the United States"
+  },
+  {
+   "course_id": "CISC M1063",
+   "value": "Foundations of Data Science"
+  },
+  {
+   "course_id": "KINE M1084",
+   "value": "Flag Football Advanced"
+  },
+  {
+   "course_id": "BIOL M1193",
+   "value": "Environmental Science Laboratory"
+  },
+  {
+   "course_id": "KINE M1329",
+   "value": "Karate Beginning"
+  },
+  {
+   "course_id": "ATHL M1040",
+   "value": "Intercollegiate Basketball Fitness and Skills Training"
+  },
+  {
+   "course_id": "COMM M1027",
+   "value": "Communication for Employment Preparation"
+  },
+  {
+   "course_id": "CSIS M1411",
+   "value": "Introduction to Java Programming"
+  },
+  {
+   "course_id": "FLSP M1069",
+   "value": "Spanish 4"
+  },
+  {
+   "course_id": "ETHN M1019",
+   "value": "Introduction to Chicana/o Studies"
+  },
+  {
+   "course_id": "FLSP M1071",
+   "value": "Spanish 3"
+  },
+  {
+   "course_id": "ATHL M1079",
+   "value": "Intercollegiate Sports Conditioning and Skills Training"
+  },
+  {
+   "course_id": "ATHL M1126",
+   "value": "Intercollegiate Football Fitness and Skills Training"
+  },
+  {
+   "course_id": "MATH M1190",
+   "value": "Support for Precalculus"
+  },
+  {
+   "course_id": "ETHS M1165",
+   "value": "Introduction to Chicana/o/x Studies"
+  },
+  {
+   "course_id": "ATHL M1130",
+   "value": "Intercollegiate Volleyball Fitness and Skills Training"
+  },
+  {
+   "course_id": "HIST M1066",
+   "value": "African American History 2"
+  },
+  {
+   "course_id": "CISC M1017",
+   "value": "Advanced Programming in Java"
+  },
+  {
+   "course_id": "CARP M1010",
+   "value": "Tool and Equipment Applications"
+  },
+  {
+   "course_id": "ETHS M1050",
+   "value": "The African American in the History of the U.S. 2"
+  }
+ ],
+ "title_fires_skipped_preexisting": [
+  {
+   "course_id": "ATHL M1178",
+   "proposed": "Intercollegiate Men's Volleyball",
+   "existing_owner": "MAP@rccd.edu"
+  },
+  {
+   "course_id": "MATH M1120",
+   "proposed": "Arithmetic and Pre-Algebra",
+   "existing_owner": "automerge-titlelane-v1@bot"
+  },
+  {
+   "course_id": "MATH M1121",
+   "proposed": "Mathematics for Liberal Arts",
+   "existing_owner": "automerge-v1@bot"
+  },
+  {
+   "course_id": "ENGL M9018",
+   "proposed": "High School English Fundamentals B",
+   "existing_owner": "automerge-titlelane-v1@bot"
+  },
+  {
+   "course_id": "DANC M1351",
+   "proposed": "Intermediate Hip-Hop Dance",
+   "existing_owner": "automerge-v1@bot"
+  },
+  {
+   "course_id": "ATHL M1107",
+   "proposed": "Intercollegiate Swimming and Diving",
+   "existing_owner": "automerge-v1@bot"
+  },
+  {
+   "course_id": "DANC M1107",
+   "proposed": "Beginning Hip-Hop Dance",
+   "existing_owner": "automerge-v1@bot"
+  },
+  {
+   "course_id": "CSIS M1147",
+   "proposed": "Visual Basic Programming",
+   "existing_owner": "automerge-v1@bot"
+  },
+  {
+   "course_id": "KINE M1638",
+   "proposed": "Futsal",
+   "existing_owner": "automerge-titlelane-v1@bot"
+  },
+  {
+   "course_id": "ATHL M1006",
+   "proposed": "Intercollegiate Basketball",
+   "existing_owner": "automerge-v1@bot"
+  },
+  {
+   "course_id": "ECED M1012",
+   "proposed": "Administration and Supervision of Early Childhood Programs 1",
+   "existing_owner": "automerge-v1@bot"
+  },
+  {
+   "course_id": "ATHL M1013",
+   "proposed": "Intercollegiate Soccer",
+   "existing_owner": "automerge-v1@bot"
+  },
+  {
+   "course_id": "NRSR M1140",
+   "proposed": "Medical Surgical Nursing 3",
+   "existing_owner": "automerge-v1@bot"
+  },
+  {
+   "course_id": "KINE M1644",
+   "proposed": "Golf Intermediate",
+   "existing_owner": "automerge-v1@bot"
+  }
+ ],
+ "undo": "Per-row undoable: DELETE the cohort row (reviewer_email='trailcrew-ccr3-s112@bot') for a given course_id+field to restore baseline. Skipped titles were never touched."
+}
