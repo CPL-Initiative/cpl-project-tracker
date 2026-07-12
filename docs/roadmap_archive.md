@@ -2404,3 +2404,16 @@ type +Discipline), and **⬇ Excel (CSV) / ⬇ JSON** live extracts. New **🗺 
 FullExhibitJSON (sample: `kb/reference/map_full_exhibit_sample.json`) for the MAP integration.
 Suite 147 (+`cer_v2_grid` 35 + `map_export`). Full story: `docs/cer_v2_redesign_lessons.md`;
 next: `docs/session_110_handoff.md`.
+
+### Session 110 — the carpentry close-out, the stale identities-map find, and the COCI Lookup tab (2026-07-09)
+
+Sam drove live (4 mid-session messages + the decisive MAP export). **252 SUBJ/Discipline
+fills** (CARP/Carpentry — 12 queue + 104 CNST-deriving CTCNC family + 10 trade programs;
+cohorts `carp-*-s110@bot`) + **18 titles** from Sam's MAP export (rule: Credit Rec minus
+"N hours in"; collision folds await his ✓ in the Merge-confirms lane; 707/710/713 + Work
+Experience still ambiguous). **Root cause of "CARP 1203"**: `coci_articulations.json`'s
+`identities` map was never re-keyed by the 2026-06-12 fold — 681/693 shared keys stale;
+CER exporter now prefers the minted catalogs (`docs/kb-notes/methodology-rekey-derived-identity-maps.md`).
+Plus the **CER SUBJ filter** and the **COCI Lookup tab** (`#coci-lookup` — 141,738 rows,
+M-ID/C-ID/CCN chips, sortable/filterable/resizable, desc shards; `kb/_build_coci_lookup.py`).
+Receipts `kb/carp_fill_out/2026-07-09/`; suite 152. Full story: `docs/cer_v2_redesign_lessons.md` (S110).

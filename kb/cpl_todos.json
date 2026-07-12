@@ -1,50 +1,26 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-10 · Session 111 (SkyMighty) close — the Everest day 🗻",
- "_session": 111,
- "_status": "The triple-R day: CER 103 renames LIVE · CSR pass done + POSC→POLS re-minted (293 ids) + seeder wired · CCR wave 1 adjudicated (600 ids) with 56 fixes LIVE · wave 2 (1,544 ids) launched in-flight — Session 112 assembles it. Doctrine v0.2 from your 7/3 voice notes; 52 fresh calibration groups pre-decided and waiting for YOUR sitting (the ≥90% gate for batch pass 2). MQ Handbook folded into all three stores — the CSR now shows 🎓/🔧 faculty-qual chips. Plus: CLAUDE.md pared + truth-audited across all three stores, Critical Rule 9 born. Undo anything: every write is a receipted trailcrew-*@bot cohort.",
+ "_as_of": "2026-07-12 · Session 112 (SkyEmpyrean) close — the vocational climb 🏔️",
+ "_session": 112,
+ "_status": "You asked whether we needed a NEW vocational identifier — turns out we already have it three ways (the CTE flag, the MQ faculty-qual list, and the noncredit-category), and the CSR already shows 🎓/🔧 chips; a V-prefix on SUBJ codes would've been a mistake (collides with real subjects, bakes a changeable label into a permanent key). Along the way your HUM/PE catch grew into a full MQ Handbook re-validation — 3 disciplines re-binned + 8 that the first parse had DROPPED entirely restored (incl. Accounting), 240→248. Then we wired that vocational signal into the CCR pipeline and ran wave 3: 2,000 corroborated multi-college identities adjudicated. The wire-up paid off on day one — the #1 discipline fix is 'Accounting,' a name that only existed again because of yesterday's restore. Nothing fired — the wave-3 title + discipline lanes are staged and waiting for your word.",
  "items": [
   {
-   "id": "wave2-assembly",
-   "for": "fable",
+   "id": "wave3-fire",
+   "for": "sam",
    "tab": "unified-courses",
-   "text": "CCR wave 2 (1,544 ids + 34 re-verifies) is in flight — assemble lanes, act on refuted-and-fired rows (delete cohort rows), receipts + PR. Firing awaits Sam."
+   "text": "🔥 Wave 3 lanes are fire-ready on your word: 39 title fixes + 143 discipline corrections (top: 'Accounting' ×23). Say go and I stage them as a receipted trailcrew-ccr3-s112@bot cohort (undoable per row). Splits/packages are evidence-only. See kb/ccr_out/2026-07-11/ccr_wave3_report.md."
   },
   {
    "id": "calibration-sitting",
    "for": "sam",
    "tab": "unified-courses",
-   "text": "🧠 Your next mind-meld sitting: 52 fresh calibration groups pre-decided under Doctrine v0.2 (kb/doctrine_out/2026-07-10/predecisions.json). Your reactions = the ≥90% gate for batch pass 2."
-  },
-  {
-   "id": "drafts-1820",
-   "for": "sam",
-   "tab": null,
-   "text": "Two drafts await your merge: cpl-knowledge-base #20 (CLAUDE.md truth-audit + MQ reference) and CPLBrain #18 (session note + vault fixes + MQ note)."
-  },
-  {
-   "id": "pipeline-tab-refresh",
-   "for": "fable",
-   "tab": null,
-   "text": "Rule-8 deferral: refresh the Pipeline tab (BOTH HTMLs) — S111 moved everything (CSR pass, POLS re-mint, CCR waves, Rule 9)."
-  },
-  {
-   "id": "cer-trail-lanes",
-   "for": "sam",
-   "tab": "credential-reference",
-   "text": "Trail Crew CER lanes await your ✓: 18+1 merge candidates (incl. the CLEP 'Spanish with Writing Level II' pre-flight pull) in the ⇒ lane · 7 issuer-canon clusters · 7 judgment calls (trail_report.md). The 103 clean renames are LIVE (cohort trailcrew-clean-s111@bot) and fold into credentials.json on the next cron."
-  },
-  {
-   "id": "csr-curator-3",
-   "for": "sam",
-   "tab": "canonical-subj4",
-   "text": "CSR curator queue (3): Furniture Making→CSTF (opaque; breaks your CNS* family) · Upholstering→THAR (single-row seed tied to a theater course) · the truncated 'Disabled Student Programs and' name — see kb/csr_out/2026-07-10/csr_report.md."
+   "text": "🧠 Your mind-meld sitting still pending: 52 fresh calibration groups pre-decided under Doctrine v0.2 (kb/doctrine_out/2026-07-10/predecisions.json). Your reactions = the ≥90% gate for batch pass 2."
   },
   {
    "id": "carp-merge-confirms",
    "for": "sam",
    "tab": "credential-reference",
-   "text": "Carpentry folds: the 3 Rigging rows + 3 Blueprint Reading-Residential + a few existing-key collisions sit in the ⇒ Merge confirms lane — ✓ Confirm merge (or rename apart) per row."
+   "text": "Carpentry folds still in the ⇒ Merge confirms lane: Rigging + Blueprint Reading-Residential rows + a few key collisions — ✓ Confirm merge (or rename apart) per row."
   },
   {
    "id": "carp-ambiguous-4",
@@ -53,28 +29,46 @@
    "text": "4 still-ambiguous CTCNC rows (CARP 707 / 710 / 713 + Work Experience): MAP carries TWO credit recs each — pick the right title in-cell when you know the answer."
   },
   {
-   "id": "carp-trade-programs",
+   "id": "cer-trail-lanes",
    "for": "sam",
    "tab": "credential-reference",
-   "text": "Spot-check the 10 trade-program rows filled CARP/Carpentry (Drywall Applicator, Pile Driver, …) — receipt flags them in kb/carp_fill_out/2026-07-09/plan.json."
+   "text": "Trail Crew CER lanes still await your ✓: 18+1 merge candidates in the ⇒ lane · 7 issuer-canon clusters · 7 judgment calls (kb/trail_crew_out/2026-07-10/trail_report.md)."
   },
   {
-   "id": "identities-rebuild",
+   "id": "csr-curator-3",
+   "for": "sam",
+   "tab": "canonical-subj4",
+   "text": "CSR curator queue (3): Furniture Making→CSTF · Upholstering→THAR · the truncated 'Disabled Student Programs and' name — kb/csr_out/2026-07-10/csr_report.md."
+  },
+  {
+   "id": "vocational-cue-tabs",
+   "for": "fable",
+   "tab": "credential-reference",
+   "text": "Extend the 🎓/🔧 vocational cue to CER, COCI Lookup + Unified Courses (the CSR already has it). All cheap client-side adds — runtime-fetch mq_sections.json, key by discipline; CTE derivable from top_code. Sam wants a chip wherever disciplines/subjects appear."
+  },
+  {
+   "id": "cte-parse-gaps",
+   "for": "fable",
+   "tab": "canonical-subj4",
+   "text": "Fix top_categories.json parse gaps — ~30 legit TOP codes dropped leave 6,495 rows at cte:null (Music 1004, Sociology 2208, Art 1002.1x). Re-parse, re-run _join_cte_from_top.py (heals them), and fold that join into the post-apply chain (nothing re-stamps cte today)."
+  },
+  {
+   "id": "doctrine-mq-amend",
    "for": "fable",
    "tab": "unified-courses",
-   "text": "Producer-side fix: add the coci_articulations identities-map rebuild to the re-mint post-apply chain (the consumer-side preference shipped S110)."
+   "text": "Doctrine amendment: merge_doctrine.md D-8 has no faculty-qual language despite the whole #746 rationale — add one line to cite mq_list when re-disciplining (a discipline change changes who's qualified to teach)."
   },
   {
-   "id": "issuer-lane",
-   "for": "sam",
-   "tab": "credential-reference",
-   "text": "The issuer lane continues: 233 rows, 200 prefilled — confirm/correct in-cell."
-  },
-  {
-   "id": "anchor-promote-rekey",
+   "id": "wave4",
    "for": "fable",
-   "tab": "credential-reference",
-   "text": "common_courses.json anchor: 221 dead-format 'M-ID SUBJ NNN' keys + 35 subject folds staged as a promote-time re-key plan (CSR0067) — apply per-entry at promote time, never bulk."
+   "tab": "unified-courses",
+   "text": "Wave 4 when ready: multi-college ranks 2,001–4,000 (kb/_ccr_trail.py 2000 40 <out> 2000 --stratum multi --wave 4). Re-run the auditor first; inject held decisions + pending merge-confirms. Heads-up: Fable's monthly spend cap was hit this session — a big fan-out may need Opus or a fresh cap window."
+  },
+  {
+   "id": "aviation-restage",
+   "for": "sam",
+   "tab": "unified-courses",
+   "text": "4 wave-2 discipline findings were proposing 'Aeronautics' (no canonical SUBJ4) — correct fill is 'Aviation' (WELD M10FF, FLGH M10AE/AF, AVIA M10AB). Ride into wave 4's re-verify; confirm the Aviation re-stage when you review discipline lanes."
   }
  ]
 }
