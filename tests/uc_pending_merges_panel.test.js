@@ -107,6 +107,19 @@ function panelBox(doc) {
   check("panel lists the absorbed member", /PHOT M1064-SA/.test(panel.textContent));
   check("panel offers an Undo control", Array.from(panel.querySelectorAll("a,button")).some((b) => /undo/i.test(txt(b))));
 
+  // Search bar filters the group list by title/id (Sam 2026-07-12 — ~200 groups
+  // are too many to eyeball). No focus loss: typing re-renders only the list.
+  const pmSearch = panel.querySelector("#uc-pm-search");
+  check("pending-merges panel has a search bar", !!pmSearch);
+  pmSearch.value = "weld"; pmSearch.dispatchEvent(new window.Event("input"));
+  check("a non-matching term hides the group + shows the empty note",
+    /No pending merges match/.test(panel.textContent) && !/PHOT M1064-SA/.test(panel.textContent));
+  pmSearch.value = "imaging"; pmSearch.dispatchEvent(new window.Event("input"));
+  check("a matching term (survivor title) shows the group again", /PHOT M1064-SA/.test(panel.textContent));
+  pmSearch.value = "m1064-sa"; pmSearch.dispatchEvent(new window.Event("input"));
+  check("a matching term (member id) shows the group", /PHOT M1064-SA/.test(panel.textContent));
+  pmSearch.value = ""; pmSearch.dispatchEvent(new window.Event("input")); // clear for the undo test
+
   // Undo the member → a DELETE to kb_curation for that member's merge_into row.
   reqs.length = 0;
   const undo = Array.from(panel.querySelectorAll("a")).find((b) => /✕ undo/.test(txt(b)))

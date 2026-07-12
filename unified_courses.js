@@ -3111,21 +3111,35 @@
       overlay.appendChild(box);
       function close() { if (overlay.parentNode) document.body.removeChild(overlay); }
       overlay.onclick = function (e) { if (e.target === overlay) close(); };
-      function rebuild() {
-        box.innerHTML = "";
-        var head = el("div", { style: "display:flex;align-items:center;gap:8px;margin:-18px -20px 12px;padding:9px 10px 9px 20px;border-bottom:1px solid #e5e7eb;border-radius:10px 10px 0 0;background:#f8fafc;" });
-        head.appendChild(el("strong", { style: "color:var(--text-strong);font-size:.9rem;" }, ["📋 Pending merges"]));
-        head.appendChild(el("span", { style: "flex:1;" }, []));
-        var closeX = el("button", { type: "button", "aria-label": "Close", title: "Close",
-          style: "border:none;background:none;cursor:pointer;font-size:1.05rem;line-height:1;color:#64748b;padding:2px 7px;" }, ["✕"]);
-        closeX.onclick = close; head.appendChild(closeX);
-        box.appendChild(head);
-        var g = liveMergeGroups(), ts = Object.keys(g).sort();
+      // Filter term lives in the open-modal closure (survives undo re-renders +
+      // keeps the search input focused): a group matches if the term appears in
+      // the survivor's OR any absorbed member's title or id. (Sam, 2026-07-12 —
+      // ~200 groups is too many to eyeball; find "weld", "ANTH", an id, etc.)
+      var filterQ = "", countSpan = null, listWrap = null;
+      function groupMatches(t, members) {
+        if (!filterQ) return true;
+        var hay = titleOf(t) + " " + t;
+        for (var i = 0; i < members.length; i++) hay += " " + titleOf(members[i]) + " " + members[i];
+        return hay.toLowerCase().indexOf(filterQ) >= 0;
+      }
+      function renderList() {
+        var g = liveMergeGroups();
+        var all = Object.keys(g).sort();
+        var ts = all.filter(function (t) { return groupMatches(t, g[t]); });
         var total = Object.keys(liveMergePending).length;
-        box.appendChild(el("p", { style: "margin:0 0 12px;color:#6b7280;" }, [ts.length
-          ? (total + " course" + (total === 1 ? "" : "s") + " merged into " + ts.length + " identit" + (ts.length === 1 ? "y" : "ies") + ", not yet folded into git. Undo any before the daily build syncs them — afterward, re-split is a re-mint."
-             + (session ? "" : " (Sign in to undo.)"))
-          : "No pending merges right now. Merges you confirm appear here until the daily build folds them in."]));
+        if (countSpan) {
+          countSpan.textContent = !all.length
+            ? "No pending merges right now. Merges you confirm appear here until the daily build folds them in."
+            : (filterQ
+                ? ("Showing " + ts.length + " of " + all.length + " identit" + (all.length === 1 ? "y" : "ies") + " matching “" + filterQ + "”.")
+                : (total + " course" + (total === 1 ? "" : "s") + " merged into " + all.length + " identit" + (all.length === 1 ? "y" : "ies") + ", not yet folded into git. Undo any before the daily build syncs them — afterward, re-split is a re-mint."))
+              + (all.length && !session ? " (Sign in to undo.)" : "");
+        }
+        if (!listWrap) return;
+        listWrap.innerHTML = "";
+        if (all.length && !ts.length) {
+          listWrap.appendChild(el("p", { style: "margin:8px 0;color:#94a3b8;font-style:italic;" }, ["No pending merges match “" + filterQ + "”."]));
+        }
         ts.forEach(function (t) {
           var members = g[t];
           var card = el("div", { style: "border:1px solid #e5e7eb;border-radius:8px;padding:9px 11px;margin:0 0 9px;" });
@@ -3136,7 +3150,7 @@
           if (session) {
             var undoAll = el("button", { style: "padding:4px 10px;border:1px solid #fecaca;border-radius:6px;background:#fef2f2;color:#b91c1c;cursor:pointer;font-size:.8rem;font-weight:600;white-space:nowrap;" },
               ["↶ Undo all (" + members.length + ")"]);
-            undoAll.onclick = function () { undoAll.disabled = true; undoMergeGroup(t, members.slice(), rebuild); };
+            undoAll.onclick = function () { undoAll.disabled = true; undoMergeGroup(t, members.slice(), renderList); };
             hd.appendChild(undoAll);
           }
           card.appendChild(hd);
@@ -3147,15 +3161,37 @@
                el("span", { style: "font-family:monospace;font-size:.76rem;color:#94a3b8;" }, ["[" + m + "]"])]));
             if (session) {
               var u = el("a", { href: "#", title: "Undo this one merge", style: "color:#b91c1c;text-decoration:none;font-weight:700;font-size:.82rem;white-space:nowrap;" }, ["✕ undo"]);
-              u.onclick = function (e) { e.preventDefault(); undoMergeGroup(t, [m], rebuild); };
+              u.onclick = function (e) { e.preventDefault(); undoMergeGroup(t, [m], renderList); };
               row.appendChild(u);
             }
             card.appendChild(row);
           });
-          box.appendChild(card);
+          listWrap.appendChild(card);
         });
+      }
+      function rebuild() {
+        box.innerHTML = "";
+        var head = el("div", { style: "display:flex;align-items:center;gap:8px;margin:-18px -20px 12px;padding:9px 10px 9px 20px;border-bottom:1px solid #e5e7eb;border-radius:10px 10px 0 0;background:#f8fafc;" });
+        head.appendChild(el("strong", { style: "color:var(--text-strong);font-size:.9rem;" }, ["📋 Pending merges"]));
+        head.appendChild(el("span", { style: "flex:1;" }, []));
+        var closeX = el("button", { type: "button", "aria-label": "Close", title: "Close",
+          style: "border:none;background:none;cursor:pointer;font-size:1.05rem;line-height:1;color:#64748b;padding:2px 7px;" }, ["✕"]);
+        closeX.onclick = close; head.appendChild(closeX);
+        box.appendChild(head);
+        // Search bar — filter the ~200 groups by course title or id.
+        var search = el("input", { id: "uc-pm-search", type: "search",
+          placeholder: "🔍 Filter by course title or ID (e.g. weld, ANTH, a course id)…",
+          style: "width:100%;box-sizing:border-box;padding:7px 10px;margin:0 0 10px;border:1px solid #cbd5e1;border-radius:6px;font-size:.85rem;" });
+        search.value = filterQ;
+        search.oninput = function () { filterQ = this.value.trim().toLowerCase(); renderList(); };
+        box.appendChild(search);
+        countSpan = el("p", { style: "margin:0 0 12px;color:#6b7280;" }, []);
+        box.appendChild(countSpan);
+        listWrap = el("div", {}); box.appendChild(listWrap);
         var done = el("button", { style: "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:#fff;font-weight:600;cursor:pointer;margin-top:4px;" }, ["Done"]);
         done.onclick = close; box.appendChild(done);
+        renderList();
+        if (search.focus) try { search.focus(); } catch (e) {}
       }
       rebuild();
       document.body.appendChild(overlay);
