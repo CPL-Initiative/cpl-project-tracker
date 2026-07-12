@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-07-10 (Session 111 — SkyMighty: Trail Crew firing receipt #726; the CLAUDE.md pare-down — three whales moved to docs/reference/. + SkyIron side-lane: the 🎓 CPL Pathways tab)
+updated: 2026-07-13 (Session 112 — SkyEmpyrean: Doctrine v0.6 — Sam's student-repeat test ratified as P-1, anchored to CA Title 5 §55050; wave 3 fired; CER multi-issuer + C-ID pre-seed. New KB note: the CPL merge lens)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -49,6 +49,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
+| [The CPL merge lens — the student-repeat test (would you make them repeat it? — anchored to Title 5 §55050's "similar" standard; learning-equivalence over subject-codes; the one test every merge/mint rule serves, ratified as Doctrine v0.6 P-1)](kb-notes/glossary-cpl-merge-lens-student-repeat-test.md) | glossary | published | 2026-07-13 | 2026-07-13 (Session 112 — SkyEmpyrean) |
 | [Methodology — parse PDF column grids positionally (x/y anchors), never from linearized text (the MQ Index: a lone X loses its column → HUM/PE mis-binned + 8 disciplines silently dropped behind artifact keys; validate the full row census against an authoritative count)](kb-notes/methodology-positional-pdf-column-grids.md) | methodology | published | 2026-07-11 | 2026-07-11 (Session 112 — SkyEmpyrean) |
 | [Playbook — resume a long multi-agent workflow across task death, model swaps, and spend caps (`resumeFromRunId` cache-replay; assemble from the journal not the task result; flag capped sub-findings)](kb-notes/playbook-resume-long-workflow-across-failures.md) | playbook | published | 2026-07-12 | 2026-07-12 (Session 112 — CCR wave 3) |
 | [Methodology — derive pathway check-offs from live articulation data, never bake them (the 🎓 CPL Pathways pattern: curated requirements + live-derived ✓ coverage, no_count alt-tracks, published-default-vs-view-override stages, the print-window token block)](kb-notes/methodology-live-derived-pathway-checkoffs.md) | methodology | published | 2026-07-10 | 2026-07-10 (SkyIron side-lane) |
