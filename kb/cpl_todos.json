@@ -1,6 +1,6 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-12 · Session 112 (SkyEmpyrean) — calibration pre-loaded + doctrine-gap harvest",
+ "_as_of": "2026-07-12 · Session 112 (SkyEmpyrean) — doctrine v0.5 (D-10) + CSR Fix-on-CCR + CER feedback",
  "_session": 112,
  "_status": "You asked whether we needed a NEW vocational identifier — turns out we already have it three ways (the CTE flag, the MQ faculty-qual list, and the noncredit-category), and the CSR already shows 🎓/🔧 chips; a V-prefix on SUBJ codes would've been a mistake (collides with real subjects, bakes a changeable label into a permanent key). Along the way your HUM/PE catch grew into a full MQ Handbook re-validation — 3 disciplines re-binned + 8 that the first parse had DROPPED entirely restored (incl. Accounting), 240→248. Then we wired that vocational signal into the CCR pipeline and ran wave 3: 2,000 corroborated multi-college identities adjudicated. The wire-up paid off on day one — the #1 discipline fix is 'Accounting,' a name that only existed again because of yesterday's restore. Nothing fired — the wave-3 title + discipline lanes are staged and waiting for your word.",
  "items": [
@@ -65,16 +65,22 @@
    "text": "Fix top_categories.json parse gaps — ~30 legit TOP codes dropped leave 6,495 rows at cte:null (Music 1004, Sociology 2208, Art 1002.1x). Re-parse, re-run _join_cte_from_top.py (heals them), and fold that join into the post-apply chain (nothing re-stamps cte today)."
   },
   {
-   "id": "doctrine-mq-amend",
-   "for": "fable",
-   "tab": "unified-courses",
-   "text": "Doctrine amendment: merge_doctrine.md D-8 has no faculty-qual language despite the whole #746 rationale — add one line to cite mq_list when re-disciplining (a discipline change changes who's qualified to teach)."
-  },
-  {
    "id": "wave4",
    "for": "fable",
    "tab": "unified-courses",
    "text": "Wave 4 when ready: multi-college ranks 2,001–4,000 (kb/_ccr_trail.py 2000 40 <out> 2000 --stratum multi --wave 4). Re-run the auditor first; inject held decisions + pending merge-confirms. Heads-up: Fable's monthly spend cap was hit this session — a big fan-out may need Opus or a fresh cap window."
+  },
+  {
+   "id": "weld-carp-revert",
+   "for": "sam",
+   "tab": "unified-courses",
+   "text": "🪵→🔥 Your WELD-in-Carpentry catch: 3 Welding courses (WELD M1066/M1092/M1121, 'Structural Welding A/B') were fired to Carpentry by wave 1 because they carry a Carpentry-program TOP + articulate to the Carpenters Apprenticeship. Per NEW rule D-10 (discipline = the FIELD, not the program), they're Welding — the carpentry link stays in the articulation. Say go and I revert the 3 overrides. Receipt: kb/ccr_out/2026-07-12/discipline_vs_program_revert.json."
+  },
+  {
+   "id": "cer-triage-fixes",
+   "for": "fable",
+   "tab": "credential-reference",
+   "text": "CER Unclassified-triage feedback (both confirmed SMALL fixes): (1) multi-issuer add — port the existing '＋ add issuing agency' widget from the missing-issuer lane into the triage row; (2) C-ID title pre-seed — fall the title pre-fill back to the top-ranked C-ID suggestion (already loaded, currently a click-only chip). Design note incl. the future assessment-pathway model: docs/cer_assessment_pathways_design.md."
   },
   {
    "id": "aviation-restage",

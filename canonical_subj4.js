@@ -614,6 +614,10 @@
       "#tab-canonical-subj4 .cs-check-jump{margin-left:8px;font-size:.74rem;padding:1px 8px;border:1px solid var(--border-strong);" +
         "border-radius:10px;background:var(--surface-subtle);cursor:pointer;color:var(--accent-link);white-space:nowrap;}" +
       "#tab-canonical-subj4 .cs-check-jump:hover{background:var(--surface-muted);}" +
+      "#tab-canonical-subj4 .cs-check-rec{margin:5px 0 2px 2px;font-size:.8rem;color:var(--text-muted);line-height:1.45;}" +
+      "#tab-canonical-subj4 .cs-check-fix{margin-left:6px;font-size:.76rem;font-weight:600;padding:2px 9px;border:1px solid var(--gold-accent);" +
+        "border-radius:10px;background:var(--surface-subtle);cursor:pointer;color:var(--navy-primary);white-space:nowrap;}" +
+      "#tab-canonical-subj4 .cs-check-fix:hover{background:var(--gold-accent);color:#fff;}" +
       "#tab-canonical-subj4 .cs-check-note{color:var(--text-muted);font-size:.78rem;margin:4px 0 10px;text-align:left;}" +
       "#tab-canonical-subj4 .cs-check-ok{color:var(--green-progress);font-size:.95rem;margin:10px 0;}"
     ]));
@@ -684,6 +688,29 @@
   function _jumpBtn(d) {
     var b = el("button", { type: "button", class: "cs-check-jump", title: "Show this discipline's row (clears other filters)" }, ["show " + d + " →"]);
     b.onclick = function () { jumpToDiscipline(d); };
+    return b;
+  }
+
+  // "Fix on CCR →" — deep-link the Common Course Reference tab, filtered to this
+  // discipline + the off-canonical code, so the curator lands on exactly the
+  // likely-mis-disciplined rows to re-discipline. Reuses the CPL_QS hint bus
+  // (unified_courses.js already listens for 'cpl-qs-hint') + the CPL_TABS
+  // router — no unified_courses.js change. The M-ID row id embeds the SUBJ4
+  // (e.g. "BUSI M1082"), and the CCR search matches title+id, so passing the
+  // code as the search isolates the off-canonical rows within the discipline.
+  function _fixOnCcrBtn(disc, code) {
+    var b = el("button", { type: "button", class: "cs-check-fix",
+      title: "Open the Common Course Reference filtered to " + disc + (code ? " · " + code : "") +
+             " so you can re-discipline these rows" }, ["Fix on CCR →"]);
+    b.onclick = function () {
+      var hint = { disc: disc };
+      if (code) hint.search = code;
+      try { sessionStorage.setItem("cpl_qs_hint_unified-courses", JSON.stringify(hint)); } catch (e) {}
+      try { window.dispatchEvent(new CustomEvent("cpl-qs-hint", { detail: { tab: "unified-courses", hint: hint } })); } catch (e) {}
+      if (window.CPL_TABS && window.CPL_TABS.activate) window.CPL_TABS.activate("unified-courses");
+      else location.hash = "unified-courses";
+      var bg = document.getElementById("cs-check-modal"); if (bg) bg.classList.remove("show");
+    };
     return b;
   }
 
@@ -786,7 +813,25 @@
               ["⚠ = " + x.ownedBy]));
           }
         });
-        li.appendChild(_jumpBtn(g.d));
+        // A code OWNED by another discipline (⚠) means those rows are likely
+        // mis-disciplined — give the curator a one-click route to the exact rows
+        // on the Common Course Reference, with a plain recommendation. Codes with
+        // no owner are just pre-fold drift (re-key at the next fold) → keep the
+        // in-CSR "show →".
+        var owned = g.off.filter(function (x) { return x.ownedBy; });
+        if (owned.length) {
+          owned.forEach(function (x) {
+            var rec = el("div", { class: "cs-check-rec" });
+            rec.appendChild(document.createTextNode(
+              "💡 " + x.n + " row" + (x.n === 1 ? "" : "s") + " tagged " + g.d + " carry " +
+              x.ownedBy + "’s Common SUBJ (" + x.code + ") — likely " + x.ownedBy +
+              " (or cross-listed). Review + re-discipline on the CCR:"));
+            rec.appendChild(_fixOnCcrBtn(g.d, x.code));
+            li.appendChild(rec);
+          });
+        } else {
+          li.appendChild(_jumpBtn(g.d));
+        }
         ulD.appendChild(li);
       });
       body.appendChild(ulD);

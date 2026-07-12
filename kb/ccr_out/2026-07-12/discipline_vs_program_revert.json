@@ -1,0 +1,29 @@
+{
+ "_about": "D-10 revert: 3 Welding courses fired to Carpentry by trailcrew-ccr1-s111@bot (CCR wave 1) because they carry a Carpentry-program TOP (0952.x) and articulate to the Carpenters Apprenticeship. Per D-10 (discipline is the field, not the program) + P-12 (TOP is weak), the discipline is Welding; the carpentry link is preserved in the articulation. Recommended: delete the discipline=Carpentry override so they revert to the Welding baseline. Awaits Sam.",
+ "_at": "2026-07-12",
+ "_awaiting": "Sam go (Rule 9)",
+ "_action": "DELETE kb_curation rows: field=discipline, value=Carpentry, reviewer_email=trailcrew-ccr1-s111@bot, course_id in the ids below",
+ "revert": [
+  {
+   "id": "WELD M1066",
+   "title": "Structural Welding B",
+   "baseline_discipline": "Welding",
+   "fired_override": "Carpentry",
+   "top": "0952.10"
+  },
+  {
+   "id": "WELD M1092",
+   "title": "Light Gage Welding LAC",
+   "baseline_discipline": "Welding",
+   "fired_override": "Carpentry",
+   "top": "0952.80"
+  },
+  {
+   "id": "WELD M1121",
+   "title": "Structural Welding A",
+   "baseline_discipline": "Welding",
+   "fired_override": "Carpentry",
+   "top": "0952.10"
+  }
+ ]
+}
