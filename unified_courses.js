@@ -2978,6 +2978,7 @@
       "3+ findings",
       "Title mismatch (likely misassigned)",
       "TOP mismatch",
+      "Subject-code outlier (likely mis-mint)",
       "Description mismatch",
       "Generic title (can't justify discipline)",
       "Unit anomaly (high member-unit variance)",
@@ -2994,6 +2995,7 @@
       "3+ findings":                          function (c) { return c.tags && c.tags.length >= 3; },
       "Title mismatch (likely misassigned)":  function (c) { return c.tags.indexOf("discipline_title_mismatch") >= 0; },
       "TOP mismatch":                         function (c) { return c.tags.indexOf("top_discipline_disagreement") >= 0; },
+      "Subject-code outlier (likely mis-mint)": function (c) { return c.tags.indexOf("subject_discipline_outlier") >= 0; },
       "Description mismatch":                 function (c) { return c.tags.indexOf("description_discipline_disagreement") >= 0; },
       "Generic title (can't justify discipline)": function (c) { return c.tags.indexOf("generic_title_concrete_discipline") >= 0; },
       "Unit anomaly (high member-unit variance)": function (c) { return c.tags.indexOf("unit_anomaly") >= 0; },
@@ -4237,6 +4239,7 @@
     var QS_TRIAGE = {
       "Any audit flag": 1, "3+ findings": 1,
       "Title mismatch (likely misassigned)": 1, "TOP mismatch": 1,
+      "Subject-code outlier (likely mis-mint)": 1,
       "Description mismatch": 1, "Generic title (can't justify discipline)": 1,
       "Cross-discipline over-merge (member TOP)": 1,
       "Subject collision (Phase 1e re-mint target)": 1,
