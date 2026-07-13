@@ -898,6 +898,19 @@
       return subj4Of(r);
     }
     function commonSubjPending(r) { return commonSubjOf(r) !== subj4Of(r); }
+    // A row "has a discipline" if a curated overlay OR a baked (generated or
+    // curated) discipline exists. Common SUBJ is a FUNCTION of discipline (§11),
+    // so a row with NO discipline has no canonical common subject — the column
+    // renders "—" rather than the PROVISIONAL local-derived SUBJ (Sam, S113).
+    // Showing a non-canonical local code there implied a canonical assignment
+    // that doesn't exist; blanking it makes "no discipline yet" honest and is
+    // the display half of the provisional-mint invariant (the ID prefix stays a
+    // provisional placeholder that re-keys once a discipline is assigned).
+    function hasDiscipline(r) {
+      var o = liveDiscOverlay[r.id];
+      if (o && o.value != null && String(o.value).trim() !== "") return true;
+      return r.disc != null && String(r.disc).trim() !== "";
+    }
     // Course level from a title — the Title-5-§55050 Common-Course LEVEL
     // convention (Sam, S72 #9). Three levels (internal keys stay beg/int/adv =
     // the UI's Level 1/2/3); precedence adv > int > beg; an UNQUALIFIED title is
@@ -4126,9 +4139,11 @@
         // Common SUBJ shows the forward-looking value (commonSubjOf): for a curated
         // re-discipline it's the discipline's canonical SUBJ4 even while the M-ID
         // letters still read the old prefix — a ⟲ pending marker flags that lag.
-        var csv = commonSubjOf(r), csPend = commonSubjPending(r);
+        var hasDisc = hasDiscipline(r);
+        var csv = hasDisc ? commonSubjOf(r) : "—", csPend = hasDisc && commonSubjPending(r);
         var csTitle = "Local SUBJ code(s): " + (localCodes || "—") + (subjTitle ? "\n" + subjTitle : "")
-          + (csPend ? "\nM-ID still keyed " + subj4Of(r) + " — re-keys to " + csv + " at the next canonical-SUBJ4 fold (discipline already set)." : "");
+          + (csPend ? "\nM-ID still keyed " + subj4Of(r) + " — re-keys to " + csv + " at the next canonical-SUBJ4 fold (discipline already set)." : "")
+          + (!hasDisc ? "\nNo discipline yet — Common SUBJ is a function of discipline, so it stays blank until one is assigned (provisional local prefix: " + (subj4Of(r) || "—") + ")." : "");
         var csTd = el("td", { title: csTitle }, [csv]);
         if (csPend) csTd.appendChild(el("span",
           { title: "Pending re-key: M-ID letters " + subj4Of(r) + " → " + csv + " at the next canonical-SUBJ4 fold (discipline already curated).",
