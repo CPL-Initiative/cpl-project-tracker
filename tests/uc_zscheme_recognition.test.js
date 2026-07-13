@@ -5,9 +5,13 @@
 // M-ID branches to the `else` and was mis-classified as **C-ID** (and then
 // title-firewalled as an official anchor — uncuratable). This test replays a
 // live merge into a Z target NOT present in the payload and asserts it renders
-// as a curatable Unified row, using the Subject cell as the discriminator:
-//   - id_system "Unified"  → subj4Of returns the MEMBER subjects ("ZOOL")
-//   - id_system "C-ID" (bug) → subj4Of returns the id PREFIX ("BIOL")
+// as a curatable Unified row. The discriminator is the KIND cell (which
+// directly reflects the id_system classification):
+//   - id_system "Unified"   → Kind cell shows "Unified"
+//   - id_system "C-ID" (bug) → Kind cell shows "Course" (mis-classified official)
+// (The Subject/Common-SUBJ cell was the original discriminator, but it now
+// renders "—" for these blank-discipline synthetic targets — Common SUBJ is a
+// FUNCTION of discipline, S113 — so it no longer distinguishes the branches.)
 // A C-ID control target (ENGL 110) confirms the Z regex doesn't over-match.
 //
 // Run from repo root: `npm test` (or `node tests/uc_zscheme_recognition.test.js`).
@@ -86,10 +90,13 @@ check("init does not throw", !threw);
   check("merge member ZOOL M1002 folds away on load", !rowFor("ZOOL M1002"));
   const z = rowFor("BIOL Z9001");
   check("Z merge target renders", !!z);
-  // THE failure-mode guard: a Unified row's Subject cell = member subjects;
-  // a C-ID misclassification would show the id prefix "BIOL".
-  check("Z target is Unified (Subject shows member 'ZOOL', not id-prefix 'BIOL')",
-    cell(z, 3) === "ZOOL");
+  // THE failure-mode guard: a correctly-recognized Z target's Kind cell reads
+  // "Unified"; a C-ID misclassification would read "Course". (Its Common SUBJ
+  // is "—" — blank-discipline synthetic target — so we key on Kind, not Subject.)
+  check("Z target is classified Unified (Kind cell 'Unified', not 'Course')",
+    cell(z, 0).indexOf("Unified") >= 0);
+  check("Z target's Common SUBJ is blank (no discipline → no canonical subject)",
+    cell(z, 3) === "—");
   // Unified targets are NOT title-firewalled → they take the live unified_title.
   check("Z target takes the live unified_title (not firewalled like an official)",
     cell(z, 2) === "Marine Biology (Unified)");
@@ -99,8 +106,8 @@ check("init does not throw", !threw);
   check("ENGW M1004 folds away on load", !rowFor("ENGW M1004"));
   const cid = rowFor("ENGL 110");
   check("C-ID control target renders", !!cid);
-  check("C-ID control stays official (Subject shows id-prefix 'ENGL', not member)",
-    cell(cid, 3) === "ENGL");
+  check("C-ID control stays official (Kind 'Course', not over-matched to 'Unified')",
+    cell(cid, 0).indexOf("Unified") < 0 && cell(cid, 0).indexOf("Course") >= 0);
 
   let pass = 0;
   for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
