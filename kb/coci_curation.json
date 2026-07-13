@@ -1,8 +1,8 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-07-13T12:18:47Z",
-  "count": 28766,
+  "_synced_at": "2026-07-13T15:16:42Z",
+  "count": 28769,
   "curations": {
     "AERO M10BA": {
       "merge_into": "AERO Z1001",
@@ -33,6 +33,16 @@
       "unified_title": "Evolution of the U.S. Air Force Air and Space Power",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "AG-AB 108 108": {
+      "discipline": "Agricultural Business and Related Services",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-13T14:05:24.387142+00:00"
+    },
+    "AG-AB 112": {
+      "discipline": "Agricultural Business and Related Services",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-13T14:05:18.358047+00:00"
     },
     "AGEQ M1003": {
       "unified_title": "Western Riding & Horsemanship",
@@ -14106,6 +14116,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-21T21:25:33.462587+00:00"
     },
+    "AUTB M1006": {
+      "discipline": "Agricultural Business and Related Services",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-13T14:03:10.34248+00:00"
+    },
     "AUTB M1008": {
       "merge_into": "AUTB M1036",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -14622,9 +14637,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "AUTB Z1025": {
-      "unified_title": "Import Body Customizing",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Agricultural Business and Related Services",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-13T14:03:13.128905+00:00",
+      "unified_title": "Import Body Customizing"
     },
     "AUTD M1003": {
       "merge_into": "AUTO M1145",

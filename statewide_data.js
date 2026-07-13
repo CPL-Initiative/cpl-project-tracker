@@ -178287,7 +178287,7 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPSAH-AS(O-1-001|MAPSAH-ASLA-1-001|MAPSAH-ASLL-1-001|MAPSAS-A-SL-1-001|MAPSAS-A-SL2-1-001|MAPSAS-A:SL-1-001|MAPSAS-A:SL1-1-001|MAPSAS-AE-S-1-001|MAPSAS-AESA-1-001|MAPSAS-AESL1-1-001|MAPSAS-AESL2-1-001|MAPSAS-AESL4-1-001|MAPSAS-AESL5-1-001|MAPSAS-AS-A-1-001|MAPSAS-ASL&-1-001|MAPSAS-ASL1-1-001|MAPSAS-ASL2-1-001|MAPSAS-ASL5-1-001|MAPSAS-ASL6-1-001|MAPSAS-ASLA-1-001|MAPSAS-ASLA1-1-001|MAPSAS-ASLA10-1-001|MAPSAS-ASLA11-1-001|MAPSAS-ASLA15-1-001|MAPSAS-ASLA17-1-001|MAPSAS-ASLA4-1-001|MAPSAS-ASLA6-1-001|MAPSAS-ASLA7-1-001|MAPSAS-ASLA9-1-001|MAPSAS-ASLC-1-001",
+      "exhibit_id": "MAPSAH-AS(O-1-001|MAPSAH-ASLA-1-001|MAPSAH-ASLL-1-001|MAPSAS-A-SL-1-001|MAPSAS-A-SL2-1-001|MAPSAS-A:SL-1-001|MAPSAS-A:SL1-1-001|MAPSAS-AE-S-1-001|MAPSAS-AESA-1-001|MAPSAS-AESL1-1-001|MAPSAS-AESL2-1-001|MAPSAS-AESL4-1-001|MAPSAS-AESL5-1-001|MAPSAS-AS-A-1-001|MAPSAS-ASL&-1-001|MAPSAS-ASL1-1-001|MAPSAS-ASL2-1-001|MAPSAS-ASL5-1-001|MAPSAS-ASL6-1-001|MAPSAS-ASLA-1-001|MAPSAS-ASLA1-1-001|MAPSAS-ASLA10-1-001|MAPSAS-ASLA11-1-001|MAPSAS-ASLA15-1-001|MAPSAS-ASLA17-1-001|MAPSAS-ASLA19-1-001|MAPSAS-ASLA4-1-001|MAPSAS-ASLA6-1-001|MAPSAS-ASLA7-1-001|MAPSAS-ASLA9-1-001|MAPSAS-ASLC-1-001",
       "exhibit_ids": [
         "MAPSAH-AS(O-1-001",
         "MAPSAH-ASLA-1-001",
@@ -178314,6 +178314,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-ASLA11-1-001",
         "MAPSAS-ASLA15-1-001",
         "MAPSAS-ASLA17-1-001",
+        "MAPSAS-ASLA19-1-001",
         "MAPSAS-ASLA4-1-001",
         "MAPSAS-ASLA6-1-001",
         "MAPSAS-ASLA7-1-001",
@@ -178617,6 +178618,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "SPAN 101A",
           "credit": "5 hours in Elementary Spanish"
+        },
+        {
+          "course": "AP Credit SLA",
+          "credit": "6 hours in AP Spanish Language (Score of 3, 4 or 5)"
         }
       ],
       "authoritative_recs": []
@@ -224757,6 +224762,391 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPSAS-AESL7-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AESL7-1-001"
+      ],
+      "title": "AP Exam Spanish Language (Score of 3, 4 or 5)",
+      "unified_title": "AP Exam Spanish Language (Score of 3, 4 or 5)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Exam Spanish Language (Score of 3, 4 or 5)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "AP Credit SLA",
+          "credit": "6 hours in AP Spanish Language (Score of 3, 4 or 5)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AESL8-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AESL8-1-001"
+      ],
+      "title": "AP Exam Spanish Literature (Score of 3, 4 or 5)",
+      "unified_title": "AP Exam Spanish Literature (Score of 3, 4 or 5)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Exam Spanish Literature (Score of 3, 4 or 5)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "AP Credit SLI",
+          "credit": "6 hours in AP Spanish Literature (Score of 3, 4 or 5)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AS(O-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AS(O-1-001"
+      ],
+      "title": "AP Statistics (Score of 3, 4 or 5)",
+      "unified_title": "AP Statistics (Score of 3, 4 or 5)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Statistics (Score of 3, 4 or 5)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "AP Credit STAT",
+          "credit": "3 hours in AP Statistics (Score of 3, 4 or 5)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AUH(-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AUH(-1-001"
+      ],
+      "title": "AP U.S. History (Score of 3, 4 or 5)",
+      "unified_title": "AP U.S. History (Score of 3, 4 or 5)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP U.S. History (Score of 3, 4 or 5)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "AP Credit UH",
+          "credit": "6 hours in AP U.S. History (Score of 3, 4 or 5)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AWHM8-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AWHM8-1-001"
+      ],
+      "title": "AP World History: Modern (Score of 3, 4 or 5)",
+      "unified_title": "AP World History: Modern (Score of 3, 4 or 5)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP World History: Modern (Score of 3, 4 or 5)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "AP Credit WH",
+          "credit": "3 hours in AP World History: Modern (Score of 3, 4 or 5)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CAG(1-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CAG(1-1-001"
+      ],
+      "title": "CLEP American Government (ACE Recommended Score of 50)",
+      "unified_title": "CLEP American Government (ACE Recommended Score of 50)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP American Government (ACE Recommended Score of 50)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CLEP AMGOV",
+          "credit": "3 hours in CLEP American Government (ACE Recommended Score of 50)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CAL(1-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CAL(1-1-001"
+      ],
+      "title": "CLEP American Literature (ACE Recommended Score of 50)",
+      "unified_title": "CLEP American Literature (ACE Recommended Score of 50)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP American Literature (ACE Recommended Score of 50)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CLEP AMLIT",
+          "credit": "3 hours in CLEP American Literature (ACE Recommended Score of 50)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CIBL8-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CIBL8-1-001"
+      ],
+      "title": "CLEP Introductory Business Law (ACE Recommended Score of 50)",
+      "unified_title": "CLEP Introductory Business Law (ACE Recommended Score of 50)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Introductory Business Law (ACE Recommended Score of 50)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CLEP BUSLW",
+          "credit": "3 hours in CLEP Introductory Business Law (ACE Recommended Score of 50)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CCA(1-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CCA(1-1-001"
+      ],
+      "title": "CLEP College Algebra (ACE Recommended Score of 50)",
+      "unified_title": "CLEP College Algebra (ACE Recommended Score of 50)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP College Algebra (ACE Recommended Score of 50)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CLEP ALGEB",
+          "credit": "3 hours in CLEP College Algebra"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CAAI32-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CAAI32-1-001"
+      ],
+      "title": "CLEP Analyzing and Interpreting Literature (ACE Recommended Score of 50)",
+      "unified_title": "CLEP Analyzing and Interpreting Literature (ACE Recommended Score of 50)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Analyzing and Interpreting Literature (ACE Recommended Score of 50)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CLEP ANLIT",
+          "credit": "3 hours in CLEP Analyzing and Interpreting Literature (ACE Recommended Score of 50)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CEC(2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CEC(2-1-001"
+      ],
+      "title": "CLEP Exam Calculus (ACE Recommended Score of 50)",
+      "unified_title": "CLEP Exam Calculus (ACE Recommended Score of 50)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Exam Calculus (ACE Recommended Score of 50)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CLEP CALC",
+          "credit": "3 hours in CLEP Calculus (ACE Recommended Score of 50)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPCBEN-PP-1-001",
       "exhibit_ids": [
         "MAPCBEN-PP-1-001"
@@ -228530,6 +228920,15 @@ window.CPL_STATEWIDE = {
         "pct": 3.5
       },
       {
+        "college": "Los Angeles Pierce College",
+        "credit_recs": 358,
+        "exhibits": 277,
+        "disciplines": 18,
+        "ccc_collaborative": 0,
+        "industry_certs": 15,
+        "pct": 2.8
+      },
+      {
         "college": "San Diego Miramar College",
         "credit_recs": 353,
         "exhibits": 139,
@@ -228554,15 +228953,6 @@ window.CPL_STATEWIDE = {
         "disciplines": 13,
         "ccc_collaborative": 126,
         "industry_certs": 194,
-        "pct": 2.7
-      },
-      {
-        "college": "Los Angeles Pierce College",
-        "credit_recs": 346,
-        "exhibits": 265,
-        "disciplines": 18,
-        "ccc_collaborative": 0,
-        "industry_certs": 15,
         "pct": 2.7
       },
       {
@@ -228851,7 +229241,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 6,
         "ccc_collaborative": 12,
         "industry_certs": 43,
-        "pct": 0.9
+        "pct": 0.8
       },
       {
         "college": "Reedley College",
@@ -228860,7 +229250,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 5,
         "ccc_collaborative": 7,
         "industry_certs": 41,
-        "pct": 0.9
+        "pct": 0.8
       },
       {
         "college": "College of the Canyons",
@@ -229415,12 +229805,12 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 5516,
-        "exhibits": 1801,
-        "courses": 245,
+        "credit_recs": 5528,
+        "exhibits": 1813,
+        "courses": 256,
         "colleges": 84,
         "ccc_collaborative": 25,
-        "pct": 43.0
+        "pct": 43.1
       },
       {
         "discipline": "Engineering and Industrial Technologies",
@@ -229624,8 +230014,8 @@ window.CPL_STATEWIDE = {
     "by_cpl_type": [
       {
         "cpl_type": "Standardized Assessment",
-        "credit_recs": 6788,
-        "exhibits": 2124,
+        "credit_recs": 6800,
+        "exhibits": 2136,
         "colleges": 85,
         "pct": 53.0
       },
@@ -229668,10 +230058,10 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 7902,
-        "exhibits": 2898,
+        "credit_recs": 7914,
+        "exhibits": 2910,
         "colleges": 91,
-        "pct": 61.6
+        "pct": 61.7
       },
       {
         "mode": "Industry training (I)",
@@ -229740,8 +230130,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11295,
-        "exhibits": 4824,
+        "credit_recs": 11307,
+        "exhibits": 4836,
         "colleges": 98,
         "disciplines": 23,
         "pct": 88.1
@@ -230166,6 +230556,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-07-13T12:17:57",
-  "total_credit_recs": 12818
+  "generated_at": "2026-07-13T15:15:51",
+  "total_credit_recs": 12830
 };
