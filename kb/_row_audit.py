@@ -197,6 +197,12 @@ TAG_PENALTY_ON_DISCIPLINE = {
     # with the other discipline signals (overlap is small — ~9% also fire
     # top_discipline_disagreement) so a doubly-flagged row drops further.
     "member_top_divergence":               0.15,
+    # subject_discipline_outlier requires TWO independent signals to agree
+    # (the row is a minority for its local-subject-code cohort AND TOP/lexicon
+    # corroborate a different discipline), so it's a strong misassignment
+    # flag — penalty parallels discipline_title_mismatch (0.20). Stacks with
+    # top_discipline_disagreement when both fire (deliberate: doubly-flagged).
+    "subject_discipline_outlier":          0.20,
     "seed_untouched_discipline":           0.00,  # already captured by state-score
     "blank_discipline":                    0.00,  # already captured by state-score
 }
@@ -539,7 +545,8 @@ def _compute_scores(faculty_fields, mc_fields, tags=None):
 # ─── tag generators ─────────────────────────────────────────────────────────
 
 def _tags_for_mid(rec, faculty_fields, disc_bag=None, subject_map=None, top_disc=None,
-                  disc_to_modal_subj4=None, mid_unit_modal=None, mid_top_div=None):
+                  disc_to_modal_subj4=None, mid_unit_modal=None, mid_top_div=None,
+                  subj_disc_dist=None, subj_lex=None):
     tags = []
     # Recognized cross-disciplinary shared-COR courses (Undergraduate Research,
     # Work Experience, …): ONE course outline of record cross-listed under many
@@ -599,6 +606,17 @@ def _tags_for_mid(rec, faculty_fields, disc_bag=None, subject_map=None, top_disc
     if top_disc is not None:
         if _classify_top_discipline_disagreement(rec, top_disc):
             tags.append("top_discipline_disagreement")
+    # subject_discipline_outlier — the row's assigned discipline is a small
+    # minority of its LOCAL SUBJECT CODE cohort AND TOP/lexicon corroborate a
+    # different discipline. Catches the "a title keyword overrode the real
+    # field" mis-mint (HVAC M10FR = a DIESLTK/Diesel course mislabeled HVAC).
+    # Uses the EFFECTIVE (curated-overlay) discipline and skips rows a curator
+    # already set (state 'curated'), so it never re-flags a completed fix.
+    if subj_disc_dist is not None and faculty_fields["discipline"].get("state") != "curated":
+        if _classify_subject_discipline_outlier(
+                rec, faculty_fields["discipline"].get("value"),
+                subj_disc_dist, top_disc or {}, subj_lex or {}):
+            tags.append("subject_discipline_outlier")
     # description_discipline_disagreement — description has ≥2 phrase matches
     # against a single discipline's SAFE_PHRASES list AND that discipline
     # differs from the assigned. Third cross-validation signal (after title
@@ -1026,6 +1044,81 @@ def _classify_top_discipline_disagreement(rec, top_disc):
     return top_disc[top]
 
 
+def _norm_subj_code(s):
+    """Normalize a local subject code the way the subject→discipline lexicon
+    keys are normalized: uppercase, alphanumerics only ('DIES-LTK' → 'DIESLTK',
+    'Auto Tech' → 'AUTOTECH')."""
+    return re.sub(r"[^A-Z0-9]", "", (s or "").upper())
+
+
+def _build_subject_disc_dist(courses, singletons, curation):
+    """Per-local-subject-code discipline distribution across ALL minted M-IDs
+    (clusters + singletons), using the EFFECTIVE discipline (a curator overlay
+    in kb_curation wins over the inferred value, so a just-corrected row can't
+    skew its own cohort). Powers subject_discipline_outlier.
+
+    Keyed by normalized subject code; only cohorts with ≥4 members are kept — a
+    subject needs a stable modal before an outlier is meaningful.
+    """
+    dist = defaultdict(Counter)
+    for src in (courses, singletons):
+        for cid, rec in src.items():
+            if rec.get("id_system", "M-ID") != "M-ID":
+                continue
+            s = _norm_subj_code(rec.get("subject"))
+            eff = (curation.get(cid) or {}).get("discipline") or rec.get("discipline")
+            if s and eff:
+                dist[s][eff] += 1
+    return {s: c for s, c in dist.items() if sum(c.values()) >= 4}
+
+
+def _classify_subject_discipline_outlier(rec, eff_disc, subj_dist, top_disc, subj_lex):
+    """Return the corrected discipline when a minted course is a clear OUTLIER
+    for its LOCAL SUBJECT CODE cohort AND an independent signal (TOP code or the
+    curated subject→discipline lexicon) corroborates that same correction.
+
+    The gap this fills: top_discipline_disagreement skips singletons
+    (corroboration_members < 2), yet the subject code — not the TOP code — is
+    often the trustworthy signal ('DIESLTK' is unambiguously Diesel even where
+    the TOP code drifts). Archetype: HVAC M10FR (LA Trade DIESLTK 122C) minted
+    SUBJ4=HVAC / disciplined 'Air Conditioning…' because the title word 'HVAC'
+    overrode the field, while its 28 DIESLTK cohort-mates are Diesel.
+
+    Fires when, for the row's normalized subject code:
+      * the cohort (≥4 rows) has a dominant discipline (≥40%) that ISN'T the
+        assigned one and isn't a SISTER_PAIRS synonym, AND
+      * the assigned discipline is a small minority (≤3 rows AND ≤15%), AND
+      * the TOP code OR the curated lexicon independently implies a DIFFERENT
+        (non-sister) discipline than the assigned one.
+    Returns the cohort-modal discipline (the suggested correction); None else.
+    """
+    disc = eff_disc
+    if not disc:
+        return None
+    s = _norm_subj_code(rec.get("subject"))
+    cnt = subj_dist.get(s)
+    if not cnt:
+        return None
+    total = sum(cnt.values())
+    modal, mcount = sorted(cnt.items(), key=lambda kv: (-kv[1], kv[0]))[0]
+    if modal == disc or frozenset({modal, disc}) in SISTER_PAIRS:
+        return None
+    a = cnt.get(disc, 0)
+    if not (mcount / total >= 0.40 and a <= 3 and a / total <= 0.15):
+        return None
+    # An independent signal must CORROBORATE the cohort modal (the suggested
+    # correction) — i.e. the TOP code or the curated lexicon must point at the
+    # SAME discipline the cohort does, not merely disagree with the assigned
+    # one. This two-signals-agree bar is what separates a real mis-mint from a
+    # noisy cohort built on an ambiguous local subject code (the 'OT' = Office
+    # Technologies vs Occupational Therapy trap).
+    top_imp = top_disc.get(_normalize_top(rec.get("top_code")))
+    lex_imp = subj_lex.get(s)
+    if modal not in (top_imp, lex_imp):
+        return None
+    return modal
+
+
 def _classify_generic_title_concrete_discipline(rec, subject_map):
     """Return True if the title is entirely composed of STRICT_GENERIC_TITLE
     tokens (course-format scaffolding with zero discipline signal) but the
@@ -1250,6 +1343,10 @@ def main():
         top_disc = {}
     # Per-discipline modal SUBJ4 for the subject_collision_signal rule (Phase 1e).
     disc_to_modal_subj4 = _build_disc_to_modal_subj4(courses)
+    # Per-local-subject-code discipline distribution + normalized subject lexicon
+    # for the subject_discipline_outlier rule (built over clusters + singletons).
+    subj_disc_dist = _build_subject_disc_dist(courses, singletons, curation)
+    subj_lex = {_norm_subj_code(k): v for k, v in subject_map.items() if v}
 
     # Per-M-ID modal member-unit value for the unit_anomaly rule. Loaded
     # from the memberships file; skips gracefully when the file is absent
@@ -1302,7 +1399,8 @@ def main():
         tags = _tags_for_mid(rec, faculty, disc_bag=disc_bag,
                              subject_map=subject_map, top_disc=top_disc,
                              disc_to_modal_subj4=disc_to_modal_subj4,
-                             mid_unit_modal=mid_unit_modal, mid_top_div=mid_top_div)
+                             mid_unit_modal=mid_unit_modal, mid_top_div=mid_top_div,
+                             subj_disc_dist=subj_disc_dist, subj_lex=subj_lex)
         tags += _curation_orphan_tags(cur, course_id, courses, singletons, anchor_ids)
         mc = {}
         f_score, m_score = _compute_scores(faculty, _virtual_mc(mc), tags=tags)
@@ -1334,6 +1432,13 @@ def main():
             _s4 = rec.get("subject_4letter") or ""
             if _ff and _s4 and not _ff.replace("M-ID ", "").startswith(_s4 + " "):
                 card["rekey"] = _ff
+        # subject_discipline_outlier: surface the cohort-implied correction so
+        # the Unified Courses tab can pre-fill it in the bulk re-discipline UI.
+        if "subject_discipline_outlier" in tags:
+            _alt = _classify_subject_discipline_outlier(
+                rec, faculty["discipline"].get("value"), subj_disc_dist, top_disc, subj_lex)
+            if _alt:
+                card["suggested_fix"] = {"discipline": _alt}
         if cur:
             card["reviewed_by"] = cur.get("reviewed_by")
             card["reviewed_at"] = cur.get("reviewed_at")
@@ -1406,6 +1511,55 @@ def main():
             card["mc_fields"] = mc
         cards.append(card)
 
+    # ── Singletons: the ONE cross-cutting mis-mint signal ─────────────
+    # Phase 1a is otherwise cluster-only (singletons are too noisy for the full
+    # rule set), but subject_discipline_outlier is worth surfacing for
+    # singletons — that's exactly where the HVAC M10FR class lives (single-
+    # member minted courses the cluster-only rules never see). Each flagged
+    # singleton gets a card carrying ONLY this tag.
+    for course_id, rec in singletons.items():
+        cur = curation.get(course_id)
+        faculty = {
+            "discipline":    _classify_mid_discipline(rec),
+            "credit_status": _classify_mid_credit(rec),
+            "typical_units": _classify_mid_units(rec),
+            "top_code":      _classify_mid_top(rec),
+            "confidence":    _classify_mid_conf(rec),
+            "description":   _classify_mid_description(rec),
+        }
+        _apply_curation_overlay(None, faculty, cur)
+        if faculty["discipline"].get("state") == "curated":
+            continue  # curator already set it — never re-flag a completed fix
+        alt = _classify_subject_discipline_outlier(
+            rec, faculty["discipline"].get("value"), subj_disc_dist, top_disc, subj_lex)
+        if not alt:
+            continue
+        tags = ["subject_discipline_outlier"]
+        f_score, m_score = _compute_scores(faculty, _virtual_mc({}), tags=tags)
+        card = {
+            "row_id": course_id,
+            "row_kind": "Singleton",
+            "id_system": rec.get("id_system", "M-ID"),
+            "title": rec.get("common_title"),
+            "subject": rec.get("subject"),
+            "leverage": {
+                "members": rec.get("corroboration_members") or 1,
+                "source_colleges": rec.get("source_college_count") or 1,
+                "subject_spread": rec.get("subject_spread") or 0,
+            },
+            "faculty_fields": faculty,
+            "faculty_trust_score": f_score,
+            "mc_ready_score":      m_score,
+            "faculty_readiness":   tier_of(f_score),
+            "mc_readiness":        tier_of(m_score),
+            "tags": tags,
+            "suggested_fix": {"discipline": alt},
+        }
+        if cur:
+            card["reviewed_by"] = cur.get("reviewed_by")
+            card["reviewed_at"] = cur.get("reviewed_at")
+        cards.append(card)
+
     # ── outputs ───────────────────────────────────────────────────────
     _write_outputs(cards)
 
@@ -1449,12 +1603,13 @@ def _write_outputs(cards):
     metadata = {
         "_generated_at": NOW_ISO,
         "_generated_by": "kb/_row_audit.py (Phase 1a — trust-card auditor)",
-        "_scope": "M-ID + Unified merge targets only (singletons excluded; C-ID/CCN reference anchors excluded)",
+        "_scope": "M-ID + Unified merge targets (full rule set); singletons carry ONLY the subject_discipline_outlier signal; C-ID/CCN reference anchors excluded",
         "_rules_active": [
             "seed_untouched_discipline", "blank_discipline", "blank_description",
             "subject_spread_high_low_confidence", "mid_id_off_scheme",
             "discipline_title_mismatch", "generic_title_concrete_discipline",
             "top_discipline_disagreement", "description_discipline_disagreement",
+            "subject_discipline_outlier",
             "subject_collision_signal", "unit_anomaly", "member_top_divergence",
             "merge_into_orphan",
             "cluster_blanks_when_aggregatable", "cluster_members_too_sparse",
@@ -1473,7 +1628,7 @@ def _write_outputs(cards):
         "_readiness_tiers": READINESS_TIERS,
         "_summary_schema": {
             "id":   "row_id",
-            "k":    "row_kind ('C'=Course, 'X'=Unified merge target)",
+            "k":    "row_kind ('C'=Course, 'X'=Unified merge target, 'S'=Singleton)",
             "lev":  "leverage.members",
             "fts":  "faculty_trust_score",
             "mcs":  "mc_ready_score (Model Curriculum readiness)",
@@ -1486,7 +1641,7 @@ def _write_outputs(cards):
     def _summary(c):
         s = {
             "id":   c["row_id"],
-            "k":    "C" if c["row_kind"] == "Course" else "X",
+            "k":    {"Course": "C", "Unified": "X", "Singleton": "S"}.get(c["row_kind"], "C"),
             "lev":  c["leverage"].get("members", 0),
             "fts":  c["faculty_trust_score"],
             "mcs":  c["mc_ready_score"],
@@ -1496,6 +1651,11 @@ def _write_outputs(cards):
         }
         if c.get("rekey"):
             s["rk"] = c["rekey"]   # prior cross-SUBJ4 identity (re-key provenance)
+        # Inline the suggested correction wherever we computed one (flagged
+        # subject_discipline_outlier rows on any kind) — small subset, high value
+        # for the tab's bulk re-discipline pre-fill.
+        if c.get("suggested_fix"):
+            s["suggested_fix"] = c["suggested_fix"]
         # Unified merge targets: also inline the full breakdown — there are only
         # a handful, and Phase 1b's "Repair from members" action needs the
         # suggested_fix payload and the per-field state.
@@ -1503,8 +1663,10 @@ def _write_outputs(cards):
             s["title"] = c.get("title")
             s["faculty_fields"] = c["faculty_fields"]
             s["members"] = c.get("members")
-            if c.get("suggested_fix"):
-                s["suggested_fix"] = c["suggested_fix"]
+        # Singletons: inline the title (small flagged population) so the tab can
+        # label the row without a second lookup.
+        elif c["row_kind"] == "Singleton":
+            s["title"] = c.get("title")
         return s
 
     summary_payload = {

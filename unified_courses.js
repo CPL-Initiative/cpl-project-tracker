@@ -641,6 +641,7 @@
     discipline_title_mismatch:        "Title doesn't match assigned discipline — likely misassigned",
     generic_title_concrete_discipline: "Title is course-format generic (Internship / Capstone / SkillsUSA…) — can't justify a specific discipline",
     top_discipline_disagreement:      "TOP code maps to a different discipline than the one assigned",
+    subject_discipline_outlier:       "Local subject code says a different discipline — the row is a minority for its subject cohort AND TOP/lexicon agree (e.g. a DIESLTK/Diesel course mislabeled HVAC). Includes singletons.",
     description_discipline_disagreement: "Course description's safe-phrase set points to a different discipline (≥2 mentions)",
     subject_collision_signal:         "SUBJ4 differs from the modal SUBJ4 for this discipline — Phase 1e re-mint will canonicalize",
     unit_anomaly:                     "typical_units represents <50% of member colleges — high unit variance, possible over-merge across different unit-load variants",
@@ -658,6 +659,7 @@
     "description_discipline_disagreement": 0.15,
     "generic_title_concrete_discipline":   0.20,
     "member_top_divergence":               0.15,
+    "subject_discipline_outlier":          0.20,
   };
   var TAG_PENALTY_ON_UNITS = {
     "unit_anomaly": 0.20,
