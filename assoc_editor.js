@@ -414,6 +414,17 @@
       return p.then(function (r) {
         if (!r.ok) {
           return r.text().then(function (t) {
+            // A 409 duplicate-key (Postgres 23505) on the association PK means
+            // this (project_id, activity_id) row ALREADY exists — which is the
+            // exact end-state an "add" wants. It fires when the cell's baked
+            // data-assoc snapshot is stale: e.g. a prior save landed the rows
+            // but reported failure (partial/transient), so the recomputed diff
+            // re-POSTs rows that are now present. Treat it as a success so the
+            // curator isn't trapped in a permanent duplicate-key loop. Only
+            // INSERTs raise 23505 here (DELETE/PATCH never do), so this can't
+            // mask a failed remove/primary change. RLS-denied INSERTs still
+            // fail loud (WITH CHECK → 403), untouched by this branch.
+            if (r.status === 409 && /23505|duplicate key/i.test(t)) return;
             var err = new Error("HTTP " + r.status + (t ? ": " + t.slice(0, 160) : ""));
             err.status = r.status;
             throw err;

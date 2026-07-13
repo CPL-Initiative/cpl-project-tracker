@@ -1301,8 +1301,8 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                         <th style="padding:0.5rem 0.4rem;text-align:center;width:55px;border:1px solid var(--navy-secondary);">Type</th>
 '''
     for yr in year_cols:
-        html += f'                        <th style="padding:0.5rem 0.4rem;text-align:right;white-space:nowrap;border:1px solid var(--navy-secondary);">{yr}</th>\n'
-    html += '                        <th style="padding:0.5rem 0.4rem;text-align:right;border:1px solid var(--navy-secondary);">TOTAL</th>\n'
+        html += f'                        <th style="padding:0.5rem 0.4rem;text-align:center;white-space:nowrap;border:1px solid var(--navy-secondary);">{yr}</th>\n'
+    html += '                        <th style="padding:0.5rem 0.4rem;text-align:center;border:1px solid var(--navy-secondary);">TOTAL</th>\n'
     html += '                    </tr>\n                </thead>\n                <tbody>\n'
 
     current_activity = ""
@@ -1405,7 +1405,7 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                             'title="Synced live from the MAP CPL Dashboard — matches the headline KPI card">'
                             'live' + (f' · as of {as_of}' if as_of else '') + '</span>'
                         )
-                        html += (f'                        <td style="padding:0.3rem 0.4rem;text-align:right;'
+                        html += (f'                        <td style="padding:0.3rem 0.4rem;text-align:center;'
                                  f'border:1px solid #ddd;font-weight:700;white-space:nowrap;">{live_disp}{badge}</td>\n')
                         continue
                     # Manual current — click-to-edit in the Annual Workplan tab.
@@ -1415,7 +1415,7 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                         f'data-val="{v if v else 0}"{pct_attr}'
                     )
                     hint = ' <span class="wpg-manual-hint" aria-hidden="true">✎</span>'
-                    html += (f'                        <td{cur_attrs} style="padding:0.3rem 0.4rem;text-align:right;'
+                    html += (f'                        <td{cur_attrs} style="padding:0.3rem 0.4rem;text-align:center;'
                              f'border:1px solid #ddd;{yr_style}white-space:nowrap;">{disp}{hint}</td>\n')
                     continue
                 data_attrs = ""
@@ -1426,7 +1426,7 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                         f' data-editable="1" data-aid="{row["id"]}" data-kind="project" data-rt="{rt_attr}" '
                         f'data-yr="{yr}" data-yr-key="{year_keys_map[yr]}" data-val="{v if v else 0}"'
                     )
-                html += (f'                        <td{data_attrs} style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;{yr_style}">'
+                html += (f'                        <td{data_attrs} style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;{yr_style}">'
                          f'{disp}</td>\n')
             total = vals.get("total", 0)
             if isinstance(total, float) and total == int(total):
@@ -1440,7 +1440,7 @@ def render_annual_goals_table_html(annual_goals, activities=None):
             elif is_current and cur_live:
                 # Live: TOTAL mirrors the verbatim headline string (read-only).
                 live_disp = html_escape(str(row.get("current_live_display", "")))
-                html += (f'                        <td style="padding:0.3rem 0.4rem;text-align:right;'
+                html += (f'                        <td style="padding:0.3rem 0.4rem;text-align:center;'
                          f'border:1px solid #ddd;font-weight:700;white-space:nowrap;">{live_disp}</td>\n')
                 html += '                    </tr>\n'
                 continue
@@ -1448,7 +1448,7 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                 # Manual: TOTAL mirrors the single Current value; data-current-total
                 # lets the editor repaint it optimistically on save.
                 total_attrs = f' data-current-total="1" data-aid="{html_escape(row["id"], quote=True)}"'
-            html += (f'                        <td{total_attrs} style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">'
+            html += (f'                        <td{total_attrs} style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-weight:700;">'
                      f'{fmt_number(total) if total else ""}</td>\n')
             html += '                    </tr>\n'
 
