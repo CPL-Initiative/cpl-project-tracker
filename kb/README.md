@@ -184,7 +184,7 @@ never mutates; suggested-fix payloads on aggregable Cluster fields are
 shaped for `_apply_curation.py` to consume in Phase 1b. Run from repo root:
 `python3 kb/_row_audit.py`.
 
-**Active rule set (Phase 1a + 1c, 12 rules):** `seed_untouched_discipline`,
+**Active rule set (Phase 1a + 1c, 13 rules):** `seed_untouched_discipline`,
 `blank_discipline`, `blank_description`, `subject_spread_high_low_confidence`,
 `mid_id_off_scheme`, `discipline_title_mismatch`,
 `generic_title_concrete_discipline`, `top_discipline_disagreement` (with
@@ -194,7 +194,12 @@ diagnostic — fires when an M-ID's SUBJ4 ≠ the modal SUBJ4 for its discipline
 7,203 flags pre-re-mint, target 0 post-re-mint), `unit_anomaly`, `merge_into_orphan`,
 **`member_top_divergence`** (Session 18 — the cross-discipline over-merge detector;
 M-ID members span ≥2 two-digit TOP divisions with ≥30% minority share; 1,299 flags,
-736 invisible to prior rules; drives the over-merge re-mint), `cluster_blanks_when_aggregatable`,
+736 invisible to prior rules; drives the over-merge re-mint),
+**`subject_discipline_outlier`** (Session 113 — the mis-mint detector; a row's
+assigned discipline is a small minority of its LOCAL subject-code cohort AND the
+TOP code OR curated lexicon corroborates the SAME correction (two-signals-agree);
+**covers singletons** the corroboration-gated rules skip; ~302 flags, each with a
+`suggested_fix`; penalty 0.20), `cluster_blanks_when_aggregatable`,
 `cluster_id_off_scheme`, `uc_cur_ripe_for_promotion`. The score incorporates
 per-tag penalties (`TAG_PENALTY_ON_DISCIPLINE`) on discipline-related tags so
 multi-signal misassignments score lower than single-signal ones.

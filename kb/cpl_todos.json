@@ -1,20 +1,32 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-13 · Session 112 (SkyEmpyrean) — Doctrine v0.6 shipped (student-repeat test = P-1, anchored to Title 5 §55050) · calibration sitting done · wave 3 fired",
- "_session": 112,
- "_status": "The capstone of a big session: you sat the calibration and it produced the doctrine's north star — 'If a student showed up with evidence they'd already done it, would you make them repeat your local course?' No → merge; Yes → keep separate. It's now P-1, anchored to CA Title 5 §55050's 'similar' (not identical) standard — the legal window to err on the student's side. 30 non-CR/NC calls agreed 100%; the CR/NC ones just needed the mirror rule straight (mirrors MERGE — the free noncredit twin is the Credit-by-Exam on-ramp). Also this session: wave 3 fired (137 discipline + 25 title fixes live), the WELD-in-Carpentry mis-discipline reverted (D-10), and the CER multi-issuer + C-ID pre-seed shipped. Next session re-seeds a fresh v0.6 calibration to graduate the doctrine and unlock batch-apply at scale.",
+ "_as_of": "2026-07-13 · Session 113 (SkyTeleo) — the HVAC mis-mint thread → a new auditor rule + blank-discipline cleanup, all merged (before wave 4)",
+ "_session": 113,
+ "_status": "Sam caught one course — HVAC M10FR (LA Trade DIESLTK 122C) minted 'HVAC' but really Diesel, because the title word 'HVAC' had overridden the field. That one catch became a new auditor rule (subject_discipline_outlier) that finds the whole class: a course whose assigned discipline is a small minority of what its LOCAL subject code usually means, AND the TOP code or lexicon agrees on the same fix. It even catches single-college courses the older rules skip. 41 of the clearest corrections fired live; ~302 more are now behind a new 'Subject-code outlier' filter in the Triage dropdown, each with a suggested discipline. We also cleaned up the display (blank courses no longer show a fake common subject) and pre-seeded ~77 blank-discipline courses from 5 safe subject codes. The ≥2-agree gate earned its keep — it dropped codes whose titles disagreed with the code (DANCFOLK is wellness, not dance). Next: CCR wave 4, with the new chip + shrinking blank set feeding in.",
  "items": [
+  {
+   "id": "subjdisc-flags",
+   "for": "sam",
+   "tab": "unified-courses",
+   "text": "🆕 302 'Subject-code outlier (likely mis-mint)' rows are now behind that new Triage-dropdown filter — each carries a suggested discipline (the local subject code's usual field). Review + bulk re-discipline the clear ones. The HVAC family (41) already fired; this is the rest, and it feeds wave 4."
+  },
+  {
+   "id": "wave4",
+   "for": "fable",
+   "tab": "unified-courses",
+   "text": "Wave 4 when ready: multi-college ranks 2,001–4,000 (kb/_ccr_trail.py 2000 40 <out> 2000 --stratum multi --wave 4). Re-run the auditor first; inject held decisions + pending merge-confirms. New inputs: the subject_discipline_outlier chip (302) + the shrinking blank-discipline set. Heads-up: Fable's monthly spend cap was hit last session — a big fan-out may need Opus or a fresh cap window."
+  },
   {
    "id": "v06-reseed",
    "for": "fable",
    "tab": "unified-courses",
-   "text": "🧠 v0.6 calibration RE-SEED (next session): the v0.2 calibration went stale (it pre-dated the CR/NC mirror rule + D-9/P-12/D-10). Draw a fresh 52-group sample (kb/_doctrine_calibration_sample.py + unified_courses_suggestions.js both present), re-adjudicate through Sam's student-repeat lens, and measure the ≥90% graduate gate against CURRENT doctrine. ≥90% = doctrine graduates, batch-apply unlocks. (Sam sat the v0.2 pass: 30 non-CR/NC calls agreed 100%.)"
+   "text": "🧠 v0.6 calibration RE-SEED (do before batch-apply): the v0.2 pass went stale. Draw a fresh ~52-group sample (kb/_doctrine_calibration_sample.py + unified_courses_suggestions.js), re-adjudicate through Sam's student-repeat lens, measure the ≥90% graduate gate. ≥90% = doctrine graduates, batch-apply unlocks."
   },
   {
-   "id": "homonym-recheck",
-   "for": "sam",
+   "id": "blankdisc-reseed",
+   "for": "fable",
    "tab": "unified-courses",
-   "text": "📋 ~100 TOP-driven homonym splits still need a re-check against title/description/aligned-exhibit (P-12: TOP only tips the scales when the other three are inconclusive) before they fire. Ride into a wave-4 re-verify pass."
+   "text": "🆕 The ~77 blank-discipline pre-seeds (#763, 5 codes → live lexicon) apply only at the next coci RESEED — the reseed/backfill isn't in any workflow, and _infer_disciplines.py writes a compact format that doesn't match the committed files. Wire it into a dispatch (+ pretty-print its dump) so lexicon edits apply cleanly. The ~480 ambiguous blanks (NC/ATC/IXD/HTT/DANCFOLK/MCOM/LIS…) → wave-4 human disposition."
   },
   {
    "id": "crnc-detector-wire",
@@ -23,16 +35,28 @@
    "text": "Wire kb/crnc_mirrors.json into the auditor (kb/_row_audit.py) + CCR scanner so the D-3 'credit_mixed' flag is SUPPRESSED for the 1,337 mirror identities (they're CPL Credit-by-Exam pairings, not over-merges) — stops wave 4+ from re-flagging them. Add kb/_detect_crnc_mirrors.py to the post-apply chain."
   },
   {
+   "id": "homonym-recheck",
+   "for": "sam",
+   "tab": "unified-courses",
+   "text": "📋 ~100 TOP-driven homonym splits still need a re-check against title/description/aligned-exhibit (P-12: TOP only tips the scales when the other three are inconclusive) before they fire. Ride into a wave-4 re-verify pass."
+  },
+  {
+   "id": "aviation-restage",
+   "for": "sam",
+   "tab": "unified-courses",
+   "text": "4 wave-2 discipline findings were proposing 'Aeronautics' (no canonical SUBJ4) — correct fill is 'Aviation' (WELD M10FF, FLGH M10AE/AF, AVIA M10AB). Ride into wave 4's re-verify; confirm the Aviation re-stage when you review discipline lanes."
+  },
+  {
+   "id": "cte-parse-gaps",
+   "for": "fable",
+   "tab": "canonical-subj4",
+   "text": "Fix top_categories.json parse gaps — ~30 legit TOP codes dropped leave 6,495 rows at cte:null (Music 1004, Sociology 2208, Art 1002.1x). Re-parse, re-run _join_cte_from_top.py (heals them), and fold that join into the post-apply chain (nothing re-stamps cte today)."
+  },
+  {
    "id": "carp-merge-confirms",
    "for": "sam",
    "tab": "credential-reference",
-   "text": "Carpentry folds still in the ⇒ Merge confirms lane: Rigging + Blueprint Reading-Residential rows + a few key collisions — ✓ Confirm merge (or rename apart) per row."
-  },
-  {
-   "id": "carp-ambiguous-4",
-   "for": "sam",
-   "tab": "credential-reference",
-   "text": "4 still-ambiguous CTCNC rows (CARP 707 / 710 / 713 + Work Experience): MAP carries TWO credit recs each — pick the right title in-cell when you know the answer."
+   "text": "Carpentry folds still in the ⇒ Merge confirms lane: Rigging + Blueprint Reading-Residential rows + a few key collisions — ✓ Confirm merge (or rename apart) per row. Plus 4 still-ambiguous CTCNC rows (CARP 707/710/713 + Work Experience) that carry TWO credit recs each — pick the right title in-cell."
   },
   {
    "id": "cer-trail-lanes",
@@ -47,34 +71,10 @@
    "text": "CSR curator queue (3): Furniture Making→CSTF · Upholstering→THAR · the truncated 'Disabled Student Programs and' name — kb/csr_out/2026-07-10/csr_report.md."
   },
   {
-   "id": "vocational-cue-tabs",
-   "for": "fable",
-   "tab": "credential-reference",
-   "text": "Extend the 🎓/🔧 vocational cue to CER, COCI Lookup + Unified Courses (the CSR already has it). All cheap client-side adds — runtime-fetch mq_sections.json, key by discipline; CTE derivable from top_code. Sam wants a chip wherever disciplines/subjects appear."
-  },
-  {
-   "id": "cte-parse-gaps",
-   "for": "fable",
-   "tab": "canonical-subj4",
-   "text": "Fix top_categories.json parse gaps — ~30 legit TOP codes dropped leave 6,495 rows at cte:null (Music 1004, Sociology 2208, Art 1002.1x). Re-parse, re-run _join_cte_from_top.py (heals them), and fold that join into the post-apply chain (nothing re-stamps cte today)."
-  },
-  {
-   "id": "wave4",
-   "for": "fable",
-   "tab": "unified-courses",
-   "text": "Wave 4 when ready: multi-college ranks 2,001–4,000 (kb/_ccr_trail.py 2000 40 <out> 2000 --stratum multi --wave 4). Re-run the auditor first; inject held decisions + pending merge-confirms. Heads-up: Fable's monthly spend cap was hit this session — a big fan-out may need Opus or a fresh cap window."
-  },
-  {
    "id": "cer-assessment-pathway",
    "for": "sam",
    "tab": "credential-reference",
-   "text": "📐 Future-phase (design staged, not built): course-based exhibits need a 'most-aligned certificate / assessment test name' field, separate from the issuing agency — e.g. FL courses accept local credit-by-exam OR an AP language score OR the DLI/DLPT exam (one exhibit, N pathways each with its own issuer + assessment). Model written up in docs/cer_assessment_pathways_design.md; flag when you want it built."
-  },
-  {
-   "id": "aviation-restage",
-   "for": "sam",
-   "tab": "unified-courses",
-   "text": "4 wave-2 discipline findings were proposing 'Aeronautics' (no canonical SUBJ4) — correct fill is 'Aviation' (WELD M10FF, FLGH M10AE/AF, AVIA M10AB). Ride into wave 4's re-verify; confirm the Aviation re-stage when you review discipline lanes."
+   "text": "📐 Future-phase (design staged, not built): course-based exhibits need a 'most-aligned certificate / assessment test name' field, separate from the issuing agency — one exhibit, N pathways each with its own issuer + assessment. Model in docs/cer_assessment_pathways_design.md; flag when you want it built."
   }
  ]
 }
