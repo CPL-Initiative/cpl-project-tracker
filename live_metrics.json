@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-12T14:31:36.900Z",
+  "scraped_at": "2026-07-13T09:50:26.807Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -473,17 +473,17 @@
         },
         {
           "college": "Cabrillo College",
-          "students": 212,
-          "units": 1193.5,
-          "avgUnits": 5.629716981132075,
-          "transcriptionRate": 21.7,
-          "avgTranscribed": 1.2193396226415094,
+          "students": 213,
+          "units": 1200.5,
+          "avgUnits": 5.636150234741784,
+          "transcriptionRate": 21.5,
+          "avgTranscribed": 1.2136150234741785,
           "criteriaMetCount": 1,
           "militaryStudents": 180,
-          "nonMilitaryStudents": 35,
+          "nonMilitaryStudents": 36,
           "apprenticeStudents": 6,
-          "savings": 2741402.5,
-          "yearImpact": 10089731,
+          "savings": 2748157.5,
+          "yearImpact": 10122869,
           "transcribedUnits": 258.5
         },
         {
@@ -1757,7 +1757,7 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "49,347",
+      "value": "49,348",
       "breakdowns": [
         {
           "label": "Military",
@@ -1765,7 +1765,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "23,671"
+          "value": "23,672"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 49347,
-    "Units": 233129.15000000002,
+    "Students": 49348,
+    "Units": 233136.15000000002,
     "TranscribedUnits": 101500.95,
-    "Savings": 322730935.25,
-    "YearImpact": 1306087713.3999999,
+    "Savings": 322737690.25,
+    "YearImpact": 1306120851.3999999,
     "MilitaryStudents": 25753,
-    "NonMilitaryStudents": 23671,
+    "NonMilitaryStudents": 23672,
     "AprenticeStudents": 755,
-    "AverageUnits": 4.724282124546579,
-    "TranscribedAverage": 2.05688187731777
+    "AverageUnits": 4.724328240252898,
+    "TranscribedAverage": 2.056840196157899
   }
 }

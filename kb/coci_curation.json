@@ -1,8 +1,8 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-07-12T14:31:43Z",
-  "count": 28653,
+  "_synced_at": "2026-07-13T09:50:40Z",
+  "count": 28766,
   "curations": {
     "AERO M10BA": {
       "merge_into": "AERO Z1001",
@@ -818,6 +818,11 @@
       "unified_title": "Equipment Operation, Configuration and Troubleshooting",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "AGRI M1062": {
+      "discipline": "Ornamental Horticulture",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "AGRI M1064": {
       "unified_title": "Wildland Trees and Shrubs (Dendrology)",
@@ -2377,6 +2382,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ANTH M1036": {
+      "unified_title": "Cultural Anthropology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "ANTH M1040": {
       "unified_title": "Medical Anthropology: Medicine, Healthcare, and Healing",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -2501,6 +2511,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00",
       "unified_title": "Magic, Religion, Witchcraft and Healing"
+    },
+    "ANTH M1099": {
+      "discipline": "Sociology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "ANTH M10AA": {
       "merge_into": "ANTH Z1005",
@@ -3492,6 +3507,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ARCH M1020": {
+      "discipline": "Drafting/CADD",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "ARCH M1021": {
       "unified_title": "Introduction to Computer Aided Design (CAD)",
       "reviewed_by": "automerge-v1@bot",
@@ -4167,6 +4187,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "ARCH M1106": {
+      "discipline": "Construction Management",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "ARCH M1107": {
       "unified_title": "Materials of Construction",
       "reviewed_by": "automerge-v1@bot",
@@ -4181,6 +4206,11 @@
       "merge_into": "ARCH M1108",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ARCH M1120": {
+      "discipline": "Interior Design",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "ARCH M1129": {
       "unified_title": "Revit Practice 1",
@@ -4556,6 +4586,11 @@
       "unified_title": "Graphic Design-Visual Communication: Typography",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTD M1009": {
+      "discipline": "Photography",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "ARTD M10AJ": {
       "merge_into": "ARTS Z1062",
@@ -5119,6 +5154,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ARTS M1065": {
+      "discipline": "Art History",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "ARTS M1067": {
       "merge_into": "ARTH M1002",
       "reviewed_by": "map@rccd.edu",
@@ -5138,6 +5178,11 @@
       "merge_into": "ARTS M1482",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M1073": {
+      "discipline": "Art History",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "ARTS M1074": {
       "unified_title": "The Arts of Latin America and the Caribbean: Colonial to the Present",
@@ -6244,6 +6289,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ARTS M1102": {
+      "discipline": "Art History",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
+    "ARTS M1103": {
+      "discipline": "Art History",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "ARTS M1104": {
       "unified_title": "Renaissance and Baroque Art",
       "reviewed_by": "map@rccd.edu",
@@ -6253,6 +6308,16 @@
       "unified_title": "Art and Children",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ARTS M1112": {
+      "discipline": "Art History",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
+    "ARTS M1114": {
+      "discipline": "Art History",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "ARTS M1127": {
       "unified_title": "Introduction to Fiber Art",
@@ -6285,14 +6350,21 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ARTS M1139": {
-      "unified_title": "Introduction to the History of Islamic Art",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Art History",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Introduction to the History of Islamic Art"
     },
     "ARTS M1142": {
-      "unified_title": "A History of Women in Art",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "discipline": "Art History",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "A History of Women in Art"
+    },
+    "ARTS M1151": {
+      "discipline": "Art History",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "ARTS M1156": {
       "unified_title": "Professional Practices and Portfolio Development for Visual Artists",
@@ -6339,6 +6411,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ARTS M1172": {
+      "discipline": "Humanities",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "ARTS M1174": {
       "unified_title": "Collage and Assemblage",
       "reviewed_by": "map@rccd.edu",
@@ -6370,6 +6447,11 @@
       "unified_title": "Beginning Clay Sculpture",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M1187": {
+      "discipline": "Photography",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "ARTS M1192": {
       "merge_into": "ARTS M1024",
@@ -7988,9 +8070,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ARTS M1208": {
-      "unified_title": "Black and White Darkroom Photography: Beginning",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Photography",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Black and White Darkroom Photography: Beginning"
     },
     "ARTS M1209": {
       "unified_title": "Advanced Black and White Darkroom Photography",
@@ -8577,6 +8660,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:43:38.697122+00:00"
     },
+    "ARTS M1306": {
+      "discipline": "Graphic Arts",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "ARTS M1309": {
       "merge_into": "MULT M1083",
       "reviewed_by": "automerge-v1@bot",
@@ -8618,9 +8706,10 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "ARTS M1327": {
-      "unified_title": "Three-Dimensional Package Design",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Graphic Arts",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Three-Dimensional Package Design"
     },
     "ARTS M1328": {
       "merge_into": "MULT M1087",
@@ -8628,9 +8717,10 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "ARTS M1329": {
-      "unified_title": "Design for Publication",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "discipline": "Graphic Arts",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Design for Publication"
     },
     "ARTS M1330": {
       "unified_title": "Sketching and Rendering for Design",
@@ -8743,6 +8833,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ARTS M1408": {
+      "discipline": "Multimedia",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "ARTS M1409": {
       "merge_into": "CISC M1087",
       "reviewed_by": "automerge-v1@bot",
@@ -8815,9 +8910,10 @@
       "unified_title": "Typography 2"
     },
     "ARTS M1436": {
-      "unified_title": "Watercolor 2",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "discipline": "Art",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Watercolor 2"
     },
     "ARTS M1442": {
       "unified_title": "Painting 3: Watercolor",
@@ -8891,9 +8987,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ARTS M1471": {
-      "merge_into": "ARTD M1008",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Graphic Arts",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "merge_into": "ARTD M1008"
     },
     "ARTS M1472": {
       "unified_title": "Furniture Design and Woodworking: Introduction",
@@ -8959,6 +9056,11 @@
       "unified_title": "Typography",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ARTS M9006": {
+      "discipline": "Older Adults: Noncredit",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "ARTS M9009": {
       "unified_title": "Music Appreciation-Oa",
@@ -10432,6 +10534,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "ATHL M1040": {
+      "unified_title": "Intercollegiate Basketball Fitness and Skills Training",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "ATHL M1041": {
       "merge_into": "ATHL M1042",
       "reviewed_by": "automerge-v1@bot",
@@ -10556,6 +10663,11 @@
       "unified_title": "Off-Season Conditioning for Track and Field",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ATHL M1079": {
+      "unified_title": "Intercollegiate Sports Conditioning and Skills Training",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "ATHL M1080": {
       "unified_title": "Conditioning for Intercollegiate Sports",
@@ -12001,6 +12113,16 @@
       "merge_into": "ATHL M1121",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1126": {
+      "unified_title": "Intercollegiate Football Fitness and Skills Training",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
+    "ATHL M1130": {
+      "unified_title": "Intercollegiate Volleyball Fitness and Skills Training",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "ATHL M1131": {
       "merge_into": "ETHS M1227",
@@ -22395,9 +22517,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "BIOL M1171": {
-      "merge_into": "COUN M1109",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "discipline": "Addiction Paraprofessional Training",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "merge_into": "COUN M1109"
     },
     "BIOL M1176": {
       "unified_title": "Tropical Ecology Field Studies",
@@ -22408,6 +22531,11 @@
       "merge_into": "BIOL M1259",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "BIOL M1193": {
+      "unified_title": "Environmental Science Laboratory",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "BIOL M1197": {
       "unified_title": "Introduction to Environmental Toxicology",
@@ -22529,6 +22657,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "BIOL M1232": {
+      "discipline": "Health Care Ancillaries",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "BIOL M1240": {
       "unified_title": "Introduction to the Life Sciences",
       "reviewed_by": "automerge-v1@bot",
@@ -22538,6 +22671,11 @@
       "merge_into": "BIOL M1252",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "BIOL M1243": {
+      "discipline": "Nutritional Science/Dietetics",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "BIOL M1244": {
       "unified_title": "Introduction to Ornithology A",
@@ -23400,15 +23538,35 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "BUSI M1006": {
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
+    "BUSI M1008": {
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "BUSI M1011": {
       "unified_title": "Computer Spreadsheet Applications for Accounting",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "BUSI M1013": {
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "BUSI M1014": {
       "merge_into": "BUSI M1019",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "BUSI M1017": {
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "BUSI M1019": {
       "unified_title": "Introduction to Accounting: Bookkeeping Concepts",
@@ -23431,15 +23589,21 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00",
       "unified_title": "Payroll and Business Tax Accounting"
     },
+    "BUSI M1026": {
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "BUSI M1028": {
       "merge_into": "BUSI M1082",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "BUSI M1030": {
-      "merge_into": "BUSI M1434",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "merge_into": "BUSI M1434"
     },
     "BUSI M1031": {
       "merge_into": "BUSI M1032",
@@ -23466,6 +23630,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "BUSI M1038": {
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
+    "BUSI M1041": {
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "BUSI M1043": {
       "merge_into": "VOCE M1002",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -23475,6 +23649,11 @@
       "merge_into": "BUSI M1301",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "BUSI M1046": {
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "BUSI M1051": {
       "unified_title": "Forensic Accounting, Introduction",
@@ -23493,9 +23672,10 @@
       "unified_title": "Accounting for Government & Not-For-Profit"
     },
     "BUSI M1056": {
-      "unified_title": "Accounting for Government and Nonprofit Entities",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Accounting for Government and Nonprofit Entities"
     },
     "BUSI M1057": {
       "unified_title": "Governmental and Non-Profit Accounting",
@@ -23522,15 +23702,41 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:59:59.107326+00:00"
     },
+    "BUSI M1066": {
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
+    "BUSI M1068": {
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
+    "BUSI M1069": {
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
+    "BUSI M1074": {
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "BUSI M1075": {
-      "unified_title": "Accounting Information Systems (SAP)",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-12T19:59:42.374388+00:00"
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Accounting Information Systems (SAP)"
     },
     "BUSI M1077": {
       "merge_into": "BSOT 127 X",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T20:00:03.217647+00:00"
+    },
+    "BUSI M1079": {
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "BUSI M1081": {
       "merge_into": "BUSI M1037",
@@ -23567,10 +23773,16 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "BUSI M1096": {
+      "discipline": "Office Technologies",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "BUSI M1099": {
-      "unified_title": "Introduction to Online Advertising",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Marketing",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Introduction to Online Advertising"
     },
     "BUSI M10AA": {
       "merge_into": "BUSI M1143",
@@ -24768,9 +24980,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "BUSI M1111": {
-      "unified_title": "Introduction to Financial Statement Analysis",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Introduction to Financial Statement Analysis"
     },
     "BUSI M1112": {
       "merge_into": "BUSI M1129",
@@ -24798,6 +25011,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "BUSI M1128": {
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "BUSI M1129": {
       "unified_title": "Analysis of Financial Statements",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -24814,9 +25032,10 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "BUSI M1139": {
-      "unified_title": "Consumer Behavior and Interpreting Marketing Dynamics",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Marketing",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Consumer Behavior and Interpreting Marketing Dynamics"
     },
     "BUSI M1140": {
       "unified_title": "Organizational Behavior",
@@ -25880,9 +26099,10 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "BUSI M1215": {
-      "unified_title": "Individual Income Taxation - Federal - Additional Topics",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Individual Income Taxation - Federal - Additional Topics"
     },
     "BUSI M1216": {
       "unified_title": "Topics in Business",
@@ -26021,9 +26241,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "BUSI M1288": {
-      "unified_title": "Introduction to Escrow Procedures",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Real Estate",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Introduction to Escrow Procedures"
     },
     "BUSI M1291": {
       "unified_title": "Essentials of Facilities Management",
@@ -26061,9 +26282,10 @@
       "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
     },
     "BUSI M1301": {
-      "unified_title": "Federal and California Individual Income Tax Preparation",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Federal and California Individual Income Tax Preparation"
     },
     "BUSI M1302": {
       "merge_into": "BUSI M1343",
@@ -26135,15 +26357,30 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "BUSI M1333": {
+      "discipline": "Office Technologies",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "BUSI M1334": {
       "merge_into": "BUSI M1088",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "BUSI M1337": {
+      "discipline": "Office Technologies",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "BUSI M1340": {
       "unified_title": "QuickBooks for Small Business Accounting",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "BUSI M1342": {
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "BUSI M1343": {
       "unified_title": "Federal and California Individual Income Taxation",
@@ -26185,6 +26422,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "BUSI M1354": {
+      "discipline": "Insurance",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "BUSI M1355": {
       "unified_title": "Intellectual Property for the Entrepreneur",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -26194,6 +26436,16 @@
       "merge_into": "BUSI M1355",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "BUSI M1357": {
+      "discipline": "Office Technologies",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
+    "BUSI M1363": {
+      "discipline": "Marketing",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "BUSI M1367": {
       "unified_title": "Contemporary Issues in Global Trade & Logistics",
@@ -26210,6 +26462,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "BUSI M1371": {
+      "discipline": "Marketing",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "BUSI M1374": {
       "unified_title": "Warehouse Management and Material Handling",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -26219,6 +26476,11 @@
       "merge_into": "BUSI M1374",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "BUSI M1376": {
+      "discipline": "Banking and Finance",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "BUSI M1377": {
       "unified_title": "Computer Keyboarding: 10 Key",
@@ -26475,6 +26737,11 @@
       "merge_into": "ENTR M9008",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "BUSI M9083": {
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "BUSI M9087": {
       "unified_title": "Introduction to Starting a New Business",
@@ -26850,6 +27117,11 @@
       "discipline": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSI M9154": {
+      "discipline": "Accounting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "BUSI Z1001": {
       "unified_title": "Bus 090 F",
@@ -27368,8 +27640,9 @@
     },
     "CARP M1010": {
       "merge_into": "CNST M1009",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Tool and Equipment Applications"
     },
     "CARP M1020": {
       "unified_title": "Basic Wall Framing",
@@ -28251,10 +28524,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "CISC M1017": {
+      "unified_title": "Advanced Programming in Java",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "CISC M1020": {
-      "unified_title": "Amazon Web Services (AWS) Academy: Introduction to the Cloud",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Computer Information Systems",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Amazon Web Services (AWS) Academy: Introduction to the Cloud"
     },
     "CISC M1021": {
       "merge_into": "POLS M1075",
@@ -28286,6 +28565,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "CISC M1063": {
+      "unified_title": "Foundations of Data Science",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "CISC M1065": {
       "unified_title": "Python Programming for Data Science and Machine Learning",
       "reviewed_by": "map@rccd.edu",
@@ -28305,6 +28589,11 @@
       "unified_title": "Introduction to iOS Application Security",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "CISC M1073": {
+      "discipline": "Multimedia",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "CISC M1077": {
       "unified_title": "PHP Dynamic Web Site Programming",
@@ -31574,6 +31863,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "COMM M1027": {
+      "unified_title": "Communication for Employment Preparation",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "COMM M1028": {
       "unified_title": "Communication Studies: Race and Ethnicity",
       "reviewed_by": "automerge-v1@bot",
@@ -31610,9 +31904,15 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "COMM M1069": {
-      "unified_title": "User Interface and User Experience for Games",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Multimedia",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "User Interface and User Experience for Games"
+    },
+    "COMM M1071": {
+      "discipline": "Multimedia",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "COMM M1072": {
       "unified_title": "Voice and Diction for Effective Communication",
@@ -31638,6 +31938,11 @@
       "unified_title": "Journalism Lab A",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "COMM M1098": {
+      "discipline": "Media Production",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "COMM M10AC": {
       "merge_into": "COMM Z1001",
@@ -33099,6 +33404,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "COUN M1013": {
+      "discipline": "Addiction Paraprofessional Training",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
+    "COUN M1014": {
+      "discipline": "Addiction Paraprofessional Training",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "COUN M1015": {
       "unified_title": "Introduction to Addiction Studies: Intervention, Treatment & Recovery",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -33159,6 +33474,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "COUN M1051": {
+      "discipline": "Addiction Paraprofessional Training",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "COUN M1052": {
       "unified_title": "Techniques for Interviewing and Case Management Services",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -33174,6 +33494,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "COUN M1059": {
+      "discipline": "Addiction Paraprofessional Training",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "COUN M1061": {
       "merge_into": "COUN M1063",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -33188,6 +33513,11 @@
       "merge_into": "COUN M1063",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "COUN M1066": {
+      "discipline": "Addiction Paraprofessional Training",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "COUN M1070": {
       "unified_title": "Introduction to College and Strategies for Success",
@@ -34348,6 +34678,11 @@
       "unified_title": "Addiction and Substance Abuse 2",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "COUN M9021": {
+      "discipline": "Parent Education: Noncredit",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "COUN M9023": {
       "unified_title": "Skills for Employability",
@@ -36623,9 +36958,10 @@
       "reviewed_at": "2026-06-12T21:42:09.683343+00:00"
     },
     "CRIM M1183": {
-      "unified_title": "Criminal Law and Procedure",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "discipline": "Legal Assisting",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Criminal Law and Procedure"
     },
     "CRIM M1188": {
       "merge_into": "CRIM M1265",
@@ -42814,14 +43150,16 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "CSIS M1312": {
-      "unified_title": "Web Design 1",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "discipline": "Multimedia",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Web Design 1"
     },
     "CSIS M1313": {
-      "unified_title": "Web Design 2",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "discipline": "Multimedia",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Web Design 2"
     },
     "CSIS M1314": {
       "unified_title": "Web Design 3",
@@ -42908,6 +43246,11 @@
       "merge_into": "CSIS M1231",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "CSIS M1337": {
+      "discipline": "Media Production",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "CSIS M1338": {
       "unified_title": "Disaster Response and Recovery",
@@ -43051,6 +43394,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "CSIS M1411": {
+      "unified_title": "Introduction to Java Programming",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "CSIS M1413": {
       "merge_into": "CSIS M1450",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -43108,8 +43456,9 @@
     },
     "CSIS M1443": {
       "merge_into": "CISC M1036",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Object-Oriented Programming with Java"
     },
     "CSIS M1445": {
       "unified_title": "Java Programming: Advanced Objects",
@@ -45055,6 +45404,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "CULN M1054": {
+      "discipline": "Restaurant Management",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "CULN M1055": {
       "unified_title": "Food & Beverage Production Management",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -46460,6 +46814,11 @@
       "unified_title": "Excellence in Guest Service",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "CULN M1140": {
+      "discipline": "Hotel and Motel Services",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "CULN M1141": {
       "unified_title": "Introduction to Viticulture, Winemaking, and Wines of the World",
@@ -49831,9 +50190,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "DANC M1388": {
-      "merge_into": "KINE M1808",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Kinesiology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "merge_into": "KINE M1808"
     },
     "DANC M1390": {
       "unified_title": "Movement for the Theatre",
@@ -57464,6 +57824,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ELET M1054": {
+      "discipline": "Electricity",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "ELET M1057": {
       "unified_title": "Electronics for Engineering Technologists 1",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -60679,6 +61044,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M1129": {
+      "unified_title": "Chicana/o Literature",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "ENGL M1131": {
       "merge_into": "ENGL M1337",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -61781,6 +62151,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M1320": {
+      "discipline": "Film and Media Studies",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "ENGL M1321": {
       "merge_into": "ENGL M1140",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -61820,6 +62195,11 @@
       "merge_into": "ENGL M1298",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ENGL M1329": {
+      "discipline": "Film and Media Studies",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "ENGL M1330": {
       "discipline": "English",
@@ -67383,6 +67763,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "ETHN M1019": {
+      "unified_title": "Introduction to Chicana/o Studies",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "ETHN M1023": {
       "unified_title": "Chicano Images in Film",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -67544,9 +67929,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ETHS M1024": {
-      "unified_title": "Advanced Golf",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "discipline": "Kinesiology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Advanced Golf"
     },
     "ETHS M1025": {
       "unified_title": "Advanced Cardio Fitness and Resistance Training",
@@ -67554,19 +67940,22 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ETHS M1026": {
-      "merge_into": "KINE M1098",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "discipline": "Kinesiology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "merge_into": "KINE M1098"
     },
     "ETHS M1027": {
-      "unified_title": "Softball - Advanced",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "discipline": "Kinesiology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Softball - Advanced"
     },
     "ETHS M1028": {
-      "unified_title": "Yoga - Advanced",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "discipline": "Kinesiology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Yoga - Advanced"
     },
     "ETHS M1031": {
       "unified_title": "Perceptions of the African American Male in America",
@@ -67624,6 +68013,11 @@
       "merge_into": "ETHS M1065",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-25T20:32:36.181218+00:00"
+    },
+    "ETHS M1050": {
+      "unified_title": "The African American in the History of the U.S. 2",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "ETHS M1051": {
       "merge_into": "ETHS M1052",
@@ -68948,14 +69342,16 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ETHS M1131": {
-      "unified_title": "Intercollegiate Basketball (M)",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "discipline": "Kinesiology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Intercollegiate Basketball (M)"
     },
     "ETHS M1132": {
-      "merge_into": "KINE M1278",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "discipline": "Kinesiology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "merge_into": "KINE M1278"
     },
     "ETHS M1133": {
       "unified_title": "Beginning Fitness Boot Camp",
@@ -69022,6 +69418,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ETHS M1165": {
+      "unified_title": "Introduction to Chicana/o/x Studies",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "ETHS M1166": {
       "unified_title": "La Chicana: Mexican-American Women in Contemporary Society",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -69078,6 +69479,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "ETHS M1184": {
+      "unified_title": "Women of Color in the United States",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "ETHS M1187": {
       "unified_title": "Peace, Nonviolence and Conflict Resolution",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -69099,9 +69505,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ETHS M1191": {
-      "unified_title": "Self Defense for Women",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "discipline": "Kinesiology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Self Defense for Women"
     },
     "ETHS M1193": {
       "merge_into": "SOCS M1059",
@@ -69194,14 +69601,16 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ETHS M1232": {
-      "unified_title": "Intercollegiate Tennis (W)",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "discipline": "Kinesiology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Intercollegiate Tennis (W)"
     },
     "ETHS M1234": {
-      "unified_title": "Softball - Intermediate",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "discipline": "Kinesiology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Softball - Intermediate"
     },
     "ETHS M1235": {
       "merge_into": "ENGL M1336",
@@ -70963,9 +71372,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "FCSH M1019": {
-      "unified_title": "Infant/Toddler Growth and Development (DS4)",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "discipline": "Child Development/Early Childhood Education",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Infant/Toddler Growth and Development (DS4)"
     },
     "FCSH M1020": {
       "unified_title": "Development of Infants and Toddlers",
@@ -71001,6 +71411,16 @@
       "unified_title": "Restaurant Operations: Front of House, Fine Dining",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FCSH M1034": {
+      "discipline": "Hotel and Motel Services",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
+    "FCSH M1035": {
+      "discipline": "Hotel and Motel Services",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "FCSH M10AI": {
       "merge_into": "ECED Z1009",
@@ -71391,6 +71811,11 @@
       "merge_into": "FCSH M9046",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FCSH M9076": {
+      "discipline": "Parent Education: Noncredit",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "FCSH M9077": {
       "merge_into": "FCSH M9061",
@@ -72207,6 +72632,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "FIMS M1031": {
+      "discipline": "Media Production",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
+    "FIMS M1032": {
+      "discipline": "Media Production",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "FIMS M1033": {
       "unified_title": "Avid Editing for Television and Film",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -72216,6 +72651,11 @@
       "unified_title": "Beginning Documentary Production Workshop",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FIMS M1039": {
+      "discipline": "Broadcasting Technology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "FIMS M1041": {
       "unified_title": "Film Production Management: Scheduling & Budgeting",
@@ -72347,6 +72787,11 @@
       "merge_into": "FIMS M1054",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FIMS M1098": {
+      "discipline": "Multimedia",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "FIMS M10AB": {
       "merge_into": "FIMS Z1001",
@@ -79551,10 +79996,20 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
+    "FLSP M1069": {
+      "unified_title": "Spanish 4",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "FLSP M1070": {
       "merge_into": "SPAN 110",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
+    },
+    "FLSP M1071": {
+      "unified_title": "Spanish 3",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "FLSP M1072": {
       "merge_into": "FLSP M1039",
@@ -83380,6 +83835,11 @@
       "reviewed_at": "2026-06-25T20:32:36.181218+00:00",
       "unified_title": "History of the African American"
     },
+    "HIST M1066": {
+      "unified_title": "African American History 2",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "HIST M1067": {
       "merge_into": "ETHS M1065",
       "reviewed_by": "map@rccd.edu",
@@ -85381,9 +85841,10 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "HLTH M1020": {
-      "unified_title": "Certified Home Health Aide (CHHA)",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-12T19:59:31.86527+00:00"
+      "discipline": "Health Care Ancillaries",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Certified Home Health Aide (CHHA)"
     },
     "HLTH M1024": {
       "unified_title": "Rehabilitation Aide Externship",
@@ -86921,6 +87382,11 @@
       "unified_title": "Brain Health and Conditioning for Older Adults (Ei)",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HLTH M9036": {
+      "discipline": "Art",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "HLTH M9041": {
       "merge_into": "HLTH M9012",
@@ -90134,6 +90600,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HUMA M1097": {
+      "discipline": "Linguistics",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
+    "HUMA M1098": {
+      "discipline": "Linguistics",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "HUMA M10AA": {
       "merge_into": "HUMA M1001",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -90675,9 +91151,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "HUMA M1102": {
-      "unified_title": "Introduction to the New Testament and Early Christian Literature",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Religious Studies",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Introduction to the New Testament and Early Christian Literature"
     },
     "HUMA M1103": {
       "unified_title": "The Bible as Literature - Old Testament",
@@ -90699,10 +91176,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HUMA M1109": {
+      "discipline": "Journalism",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "HUMA M1110": {
-      "unified_title": "World Religions (Honors)",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "discipline": "Religious Studies",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "World Religions (Honors)"
     },
     "HUMA M9004": {
       "merge_into": "ENGL M1258",
@@ -92148,6 +92631,11 @@
       "unified_title": "Experimental Offering in Human Career Development",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:58:15.819905+00:00"
+    },
+    "IDST M1060": {
+      "discipline": "Counseling",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "IDST M1061": {
       "unified_title": "Career/Life Planning and Personal Exploration",
@@ -94087,9 +94575,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "IDST M9176": {
-      "unified_title": "Citizenship",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-12T19:57:56.085857+00:00"
+      "discipline": "Citizenship: Noncredit",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Citizenship"
     },
     "IDST M9178": {
       "unified_title": "Citizenship for Naturalization",
@@ -94521,6 +95010,11 @@
       "unified_title": "Science for the GED/HiSET",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "IDST M9252": {
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit 53412",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "IDST M9260": {
       "unified_title": "High School US Government A",
@@ -97865,6 +98359,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M1040": {
+      "discipline": "Learning Assistance or Learning Skills",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "KINE M1047": {
       "unified_title": "Body Dynamics Activity",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -97945,8 +98444,9 @@
     },
     "KINE M1084": {
       "merge_into": "KINE M1028",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Flag Football Advanced"
     },
     "KINE M1087": {
       "merge_into": "KINE M1029",
@@ -102358,6 +102858,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M1301": {
+      "unified_title": "Beginning Self Defense",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "KINE M1304": {
       "unified_title": "Jogging for Fitness, Beginning",
       "reviewed_by": "automerge-v1@bot",
@@ -102449,8 +102954,9 @@
     },
     "KINE M1329": {
       "merge_into": "KINE M1328",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Karate Beginning"
     },
     "KINE M1332": {
       "merge_into": "KINE M1671",
@@ -107155,10 +107661,16 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "LIBS M1001": {
+      "discipline": "Library Science",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "LIBS M1003": {
-      "merge_into": "LIBR M1010",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Library Science",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "merge_into": "LIBR M1010"
     },
     "LIBS M10AC": {
       "merge_into": "LIBR Z1003",
@@ -108491,15 +109003,31 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "MANU M1008": {
+      "discipline": "Drafting/CADD",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
+    "MANU M1009": {
+      "discipline": "Drafting/CADD",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "MANU M1012": {
-      "merge_into": "DRAF M1027",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Drafting/CADD",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "merge_into": "DRAF M1027"
     },
     "MANU M1013": {
       "unified_title": "Introduction to Computer Aided Design Using Autodesk Inventor",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "MANU M1017": {
+      "discipline": "Drafting/CADD",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "MANU M1019": {
       "unified_title": "Quality Assurance of Precision Optics",
@@ -108543,9 +109071,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "MANU M1037": {
-      "merge_into": "MANU M1036",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Drafting/CADD",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "merge_into": "MANU M1036"
     },
     "MANU M1039": {
       "unified_title": "Fundamentals of Dimensional Metrology",
@@ -108566,6 +109095,11 @@
       "unified_title": "Manufacturing Processes and Materials",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "MANU M1063": {
+      "discipline": "Drafting/CADD",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "MANU M1064": {
       "unified_title": "Transmission Computer Systems",
@@ -110533,6 +111067,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "MATH M1190": {
+      "unified_title": "Support for Precalculus",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
+    "MATH M1194": {
+      "discipline": "Interdisciplinary Studies",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "MATH M11AF": {
       "merge_into": "MATH M1224",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -111123,6 +111667,11 @@
       "unified_title": "Trigonometry with Vectors with Supports",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "MATH M9005": {
+      "discipline": "Mathematics-Basic Skills: Noncredit",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "MATH M9006": {
       "unified_title": "Arithmetic of Rational Numbers-Module 2",
@@ -114415,6 +114964,11 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00",
       "unified_title": "Jazz Composition and Arranging"
     },
+    "MUSI M1081": {
+      "discipline": "Commercial Music",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "MUSI M1097": {
       "merge_into": "MUSI M1098",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -117336,6 +117890,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "MUSI M1512": {
+      "discipline": "Commercial Music",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "MUSI M1513": {
       "unified_title": "Advanced String Methods",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -117390,6 +117949,11 @@
       "merge_into": "MUSI M1437",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "MUSI M1542": {
+      "discipline": "Commercial Music",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "MUSI M9004": {
       "unified_title": "Beginning Adult Piano/Keyboard",
@@ -125703,9 +126267,10 @@
       "unified_title": "Introduction to the World Religions"
     },
     "PHIL M1095": {
-      "unified_title": "Introduction to Religious Studies",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Religious Studies",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Introduction to Religious Studies"
     },
     "PHIL M10AI": {
       "merge_into": "PHIL Z1001",
@@ -127445,6 +128010,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "PHSC M1002": {
+      "discipline": "Astronomy",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "PHSC M1003": {
       "unified_title": "Astronomy the Solar System",
       "reviewed_by": "automerge-v1@bot",
@@ -127459,6 +128029,11 @@
       "unified_title": "Coastal Environmental Monitoring; Field Studies in Oceanography",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "PHSC M1012": {
+      "discipline": "Earth Science",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "PHSC M1013": {
       "merge_into": "GEOL M1025",
@@ -127483,14 +128058,16 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "PHSC M1038": {
-      "unified_title": "Introductory Physical Oceanography Laboratory",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Earth Science",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Introductory Physical Oceanography Laboratory"
     },
     "PHSC M1039": {
+      "discipline": "Earth Science",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
       "merge_into": "PHSC M1038",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00",
       "unified_title": "Oceanography and Physical Laboratory"
     },
     "PHSC M1040": {
@@ -129261,6 +129838,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "POLS M1002": {
+      "discipline": "Administration of Justice",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "POLS M1003": {
       "merge_into": "BUSI M1092",
       "reviewed_by": "automerge-v1@bot",
@@ -129757,10 +130339,20 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-25T20:40:51.045344+00:00"
     },
+    "PSYC M1019": {
+      "unified_title": "Life-Span Psychology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "PSYC M1020": {
       "unified_title": "Psychological/Social Aspects of Aging,Death,and Dying",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "PSYC M1024": {
+      "discipline": "Ethnic Studies",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "PSYC M1029": {
       "unified_title": "Personality Dynamics and Effective Behavior",
@@ -135775,6 +136367,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "SOCI M1069": {
+      "discipline": "Women’s Studies",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "SOCI M1074": {
       "unified_title": "Psychology of Latinas and Latinos",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -135985,10 +136582,20 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-25T20:32:36.181218+00:00"
     },
+    "SOCS M1009": {
+      "discipline": "Religious Studies",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "SOCS M1010": {
       "merge_into": "ETHS M1239",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "SOCS M1014": {
+      "discipline": "Anthropology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "SOCS M1015": {
       "merge_into": "SOCS M1040",
@@ -136045,6 +136652,16 @@
       "unified_title": "La Mujer: Latina Lives and Experience",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "SOCS M1050": {
+      "discipline": "Film and Media Studies",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
+    "SOCS M1054": {
+      "discipline": "Gerontology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
     "SOCS M1059": {
       "unified_title": "Natural Disasters and Environmental Hazards",
@@ -139032,6 +139649,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "THEA M1295": {
+      "discipline": "Stagecraft",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
     "THEA M1296": {
       "merge_into": "THES M1010",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -140994,10 +141616,9 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "WELD M1054": {
-      "merge_into": "WELD M1052",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00",
-      "unified_title": "Intermediate Shielded Metal Arc Welding (Stick Welding)"
+      "unified_title": "Intermediate Shielded Metal Arc Welding (Stick Welding)",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "WELD M1056": {
       "merge_into": "WELD M1057",
@@ -141015,10 +141636,9 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "WELD M1061": {
-      "merge_into": "WELD M1052",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00",
-      "unified_title": "Shielded Metal Arc Welding (Stick Electrode)"
+      "unified_title": "Shielded Metal Arc Welding (Stick Electrode)",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "WELD M1062": {
       "unified_title": "Introduction to Robotics and Automated Systems",
@@ -141039,11 +141659,6 @@
       "merge_into": "WELD M1092",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "WELD M1066": {
-      "discipline": "Carpentry",
-      "reviewed_by": "trailcrew-ccr1-s111@bot",
-      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "WELD M1069": {
       "unified_title": "Beginning TIG, MIG, and Blueprint Reading",
@@ -141086,10 +141701,9 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "WELD M1092": {
-      "discipline": "Carpentry",
-      "reviewed_by": "trailcrew-ccr1-s111@bot",
-      "reviewed_at": "2026-07-10T19:23:34.208558+00:00",
-      "unified_title": "Light Gage Welding AWS (B)"
+      "unified_title": "Light Gage Welding AWS (B)",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "WELD M1093": {
       "unified_title": "Tungsten Inert Gas (TIG) Welding",
@@ -142730,11 +143344,6 @@
       "unified_title": "Heavy Plate, Structural Steel and Welding Certification",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "WELD M1121": {
-      "discipline": "Carpentry",
-      "reviewed_by": "trailcrew-ccr1-s111@bot",
-      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "WELD M1123": {
       "unified_title": "Welding (General)",

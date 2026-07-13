@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-07-10T09:55:50Z",
-  "count": 723,
+  "_synced_at": "2026-07-13T09:50:42Z",
+  "count": 769,
   "assignments": {
     "A S T 025 - Fundamentals of Auto Mechanics": {
       "unified_title": "Fundamentals of Auto Mechanics",
@@ -94,11 +94,29 @@
       "reviewed_at": "2026-07-07T17:24:33.786987+00:00",
       "unified_title": "AP 2-D Art and Design"
     },
+    "AP 2-D Art and Design (Score of 3, 4 or 5)": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:48:45.701316+00:00",
+      "unified_title": "AP 2-D Art and Design (Score of 3, 4 or 5)"
+    },
+    "AP 3-D Art and Design (Score of 3, 4 or 5)": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:50:03.460199+00:00",
+      "unified_title": "AP 3-D Art and Design (Score of 3, 4 or 5)"
+    },
     "AP Art History (Score of 3 or higher)": {
       "issuing_agency": "College Board",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T15:55:53.068991+00:00",
       "unified_title": "AP Art History"
+    },
+    "AP Art History (Score of 3, 4 or 5)": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:50:02.111207+00:00",
+      "unified_title": "AP Art History (Score of 3, 4 or 5)"
     },
     "AP Art Studio 2-D (Score 3-5)": {
       "issuing_agency": "College Board",
@@ -130,11 +148,23 @@
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
       "unified_title": "AP Biology"
     },
+    "AP Calculus BC/AB Subscore (Score of 3, 4 or 5)": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:50:01.666413+00:00",
+      "unified_title": "AP Calculus BC/AB (Score of 3, 4 or 5)"
+    },
     "AP Chemistry (Score 3-5)": {
       "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
       "unified_title": "AP Chemistry"
+    },
+    "AP Chemistry (Score of 3, 4 or 5)": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:50:09.735572+00:00",
+      "unified_title": "AP Chemistry (Score of 3, 4 or 5)"
     },
     "AP Chinese Language and Culture (Score 4-5)": {
       "issuing_agency": "College Board",
@@ -142,17 +172,41 @@
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
       "unified_title": "AP Chinese Language and Culture"
     },
+    "AP Chinese Language and Culture (Score of 3, 4 or 5)": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:50:14.365816+00:00",
+      "unified_title": "AP Chinese Language and Culture (Score of 3, 4 or 5)"
+    },
     "AP Computer Science A (Score 4-5)": {
       "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
       "unified_title": "AP Computer Science A"
     },
+    "AP Computer Science A (Score of 3, 4 or 5)": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:50:19.672129+00:00",
+      "unified_title": "AP Computer Science A (Score of 3, 4 or 5)"
+    },
+    "AP Computer Science AB (Score of 3, 4 or 5)": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:50:24.277747+00:00",
+      "unified_title": "AP Computer Science AB (Score of 3, 4 or 5)"
+    },
     "AP Computer Science Principles (Score 4-5)": {
       "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
       "unified_title": "AP Computer Science Principles"
+    },
+    "AP Drawing (Score of 3, 4 or 5)": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:50:30.491564+00:00",
+      "unified_title": "AP Drawing (Score of 3, 4 or 5)"
     },
     "AP English Language (Score 3-5)": {
       "issuing_agency": "College Board",
@@ -492,6 +546,30 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
+    "ARMEN 1: Beginning Armenian": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:50:53.721038+00:00",
+      "unified_title": "Armenian 1"
+    },
+    "ARMEN 2: High-Beginning Armenian": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:51:05.686391+00:00",
+      "unified_title": "Armenian 2"
+    },
+    "ASL 1: Beginning American Sign Language": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:51:26.456428+00:00",
+      "unified_title": "American Sign Language 1"
+    },
+    "ASL 2: High-Beginning American Sign Language": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:51:42.092367+00:00",
+      "unified_title": "American Sign Language 2"
+    },
     "AT 10: Technical Computer Applications": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
@@ -741,6 +819,12 @@
       "reviewed_at": "2026-07-07T23:44:36.130524+00:00",
       "unified_title": "Automotive Welding, Cutting, and Modification"
     },
+    "BIOL 55: Introduction to the Biology of Humans": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:51:53.578133+00:00",
+      "unified_title": "Introduction to the Biology of Humans"
+    },
     "BIOL-424 Anatomy and Physiology": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
@@ -782,6 +866,48 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T17:14:36.000417+00:00",
       "unified_title": "Biotechnology: Cell Culture"
+    },
+    "BT 104: Ten-Key Calculations": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:52:13.478266+00:00",
+      "unified_title": "Ten-Key Calculations"
+    },
+    "BT 106: Computer Keyboarding": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:52:21.834818+00:00",
+      "unified_title": "Computer Keyboarding"
+    },
+    "BT 112: Business English": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:52:28.501191+00:00",
+      "unified_title": "Business English"
+    },
+    "BT 115: Refresher Math": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:59:21.617672+00:00",
+      "unified_title": "Mathematics Preparation"
+    },
+    "BT 1: Computer Document Processing I": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:52:02.94616+00:00",
+      "unified_title": "Computer Document Processing I"
+    },
+    "BT 28: Microsoft Word I": {
+      "issuing_agency": "Microsoft",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:58:34.086951+00:00",
+      "unified_title": "Microsoft Word I"
+    },
+    "BT 29: Microsoft Word II": {
+      "issuing_agency": "Microsoft",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:58:45.073271+00:00",
+      "unified_title": "Microsoft Word II"
     },
     "BUS-10 Introduction to Business": {
       "issuing_agency": "California Community Colleges",
@@ -1045,6 +1171,18 @@
       "unified_title": "Business Management and Entrepreneurship — Cajon High School",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
+    },
+    "CHIN 1: Beginning Chinese": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:59:23.212902+00:00",
+      "unified_title": "Chinese 1"
+    },
+    "CHIN 2: High-Beginning Chinese": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:59:24.575284+00:00",
+      "unified_title": "Chinese 2"
     },
     "CIS-1/ITIS-10: Introduction to Computer Information Systems": {
       "issuing_agency": "California Community Colleges",
@@ -2516,6 +2654,24 @@
       "reviewed_at": "2026-07-07T20:44:38.757038+00:00",
       "unified_title": "Carpenters Apprenticeship — Drywall Applicator"
     },
+    "ECON 25: Introduction to Economics": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:59:25.220954+00:00",
+      "unified_title": "Introduction to Economics"
+    },
+    "ECON C2001: Principles of Microeconomics": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:59:25.877089+00:00",
+      "unified_title": "ECON C2001: Principles of Microeconomics"
+    },
+    "ECON C2002: Principles of Macroeconomics": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:59:26.60741+00:00",
+      "unified_title": "ECON C2002: Principles of Macroeconomics"
+    },
     "EGTECH-10 - High School: Introduction to Engineering Design/Graphics": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
@@ -2743,6 +2899,18 @@
       "reviewed_at": "2026-07-07T20:44:40.10299+00:00",
       "unified_title": "Fire Prevention"
     },
+    "FRENCH 1: Beginning French": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:59:27.399175+00:00",
+      "unified_title": "French 1"
+    },
+    "FRENCH 2: High-Beginning French": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:59:29.424775+00:00",
+      "unified_title": "French 2"
+    },
     "FSM 19: Work Experience": {
       "issuing_agency": "California State Fire Training (SFT)",
       "reviewed_by": "map@rccd.edu",
@@ -2894,6 +3062,18 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "GERMAN 1: Beginning German": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:59:30.016803+00:00",
+      "unified_title": "German 1"
+    },
+    "GERMAN 2: High-Beginning German": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:59:30.704872+00:00",
+      "unified_title": "German 2"
+    },
     "GIS 025 - Introduction to Geographic Information Systems and Laboratory": {
       "unified_title": "Introduction to Geographic Information Systems",
       "reviewed_by": "map@rccd.edu",
@@ -2910,6 +3090,18 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-09T23:38:18.44023+00:00",
       "unified_title": "Personal Training"
+    },
+    "HMONG 1: Beginning Hmong": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:57:05.396174+00:00",
+      "unified_title": "Hmong 1"
+    },
+    "HMONG 2: High-Beginning Hmong": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:56:58.053706+00:00",
+      "unified_title": "Hmong 2"
     },
     "HVAC 50: Principles of HVAC": {
       "issuing_agency": "California Community Colleges",
@@ -3211,6 +3403,18 @@
       "unified_title": "Introduction to the Linux Operating System",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
+    },
+    "JAPAN 1: Beginning Japanese": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:56:37.11705+00:00",
+      "unified_title": "Japanese 1"
+    },
+    "JAPAN 2: High-Beginning Japanese": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:56:48.23002+00:00",
+      "unified_title": "Japanese 2"
     },
     "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer, AS": {
       "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
@@ -3689,6 +3893,48 @@
       "reviewed_at": "2026-07-08T00:04:30.223476+00:00",
       "unified_title": "PC Troubleshooting"
     },
+    "PHIL 1A: Theories of Knowledge and Reality": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:56:24.932207+00:00",
+      "unified_title": "Introduction to Philosophy"
+    },
+    "PHIL 1B: Social and Political Philosophy": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:56:18.812274+00:00",
+      "unified_title": "Introduction to Political Theory and Thought"
+    },
+    "PHIL 1C: Ethics": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:56:13.426231+00:00",
+      "unified_title": "Introduction to Ethics"
+    },
+    "PHIL 2: Critical Reasoning and Analytical Writing": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:56:06.698698+00:00",
+      "unified_title": "Critical Reasoning and Analytic Writing"
+    },
+    "PHIL 3A: Ancient Philosophy": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:55:52.135081+00:00",
+      "unified_title": "History of Ancient Philosophy"
+    },
+    "PHIL 3B: Modern Philosophy": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:55:45.487722+00:00",
+      "unified_title": "History of Modern Philosophy"
+    },
+    "PHIL 6: Introduction to Logic": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:55:32.215175+00:00",
+      "unified_title": "Symbolic Logic"
+    },
     "PHOTO 6: Digital Imaging Fundamentals": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
@@ -3710,10 +3956,28 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "PORT 1: Beginning Portuguese": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:54:55.336402+00:00",
+      "unified_title": "Portuguese 1"
+    },
+    "PORT 2: High-Beginning Portuguese": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:55:06.437811+00:00",
+      "unified_title": "Portuguese 2"
+    },
     "POST - Peace Officer Standards and Training": {
       "unified_title": "POST Basic Academy",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T19:32:01.902138+00:00"
+    },
+    "PSYC C1000: Introduction to Psychology": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:55:11.206102+00:00",
+      "unified_title": "PSYC C1000: Introduction to Psychology"
     },
     "Paramedic NCTI (EMS-60/91)": {
       "unified_title": "Paramedic License",
@@ -3953,6 +4217,18 @@
       "unified_title": "Spanish 3",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
+    },
+    "SPAN 1: Beginning Spanish": {
+      "issuing_agency": "Defense Language Institute (DLI)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:53:32.095888+00:00",
+      "unified_title": "Elementary Spanish I"
+    },
+    "SPAN 2: High-Beginning Spanish": {
+      "issuing_agency": "Defense Language Institute (DLI)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-07-12T19:59:33.132809+00:00",
+      "unified_title": "Elementary Spanish II"
     },
     "San Bernardino High School - EGTECH-10: Introduction to Engineering Design/Graphics": {
       "issuing_agency": "California Community Colleges",
