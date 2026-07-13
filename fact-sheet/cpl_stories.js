@@ -2,8 +2,15 @@
 window.CPL_STORIES = {
  "_about": "My CPL Story cards sourced from https://map.rccd.edu/cplstories/ (headless, runner-as-proxy). The Fact Sheet #cpl-stories section picks 4 at random. Built by tools/source_cpl_stories.mjs.",
  "source": "https://map.rccd.edu/cplstories/",
- "count": 35,
+ "count": 36,
  "stories": [
+  {
+   "name": "Ismael M.",
+   "img": "https://staging2.map.rccd.edu/wp-content/uploads/2026/07/ismael.png",
+   "pathway": "Navy Veteran → College Student",
+   "quote": "Luis served in the U.S. Navy for 8 years. When he enrolled at Riverside City College, he received 14 credits from his Joint Service Transcript, including 5 for Basic Military Training.",
+   "meta": "Riverside City College"
+  },
   {
    "name": "Brody",
    "img": "https://staging2.map.rccd.edu/wp-content/uploads/2026/07/Brody_withBG.png",
