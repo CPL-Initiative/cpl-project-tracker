@@ -8,9 +8,9 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified (context, not a priority metric) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 41453,
-  "p2": 4775,
-  "p3": 16310
+  "pe": 41494,
+  "p2": 4776,
+  "p3": 16311
  },
  "colleges": {
   "Alameda": {
@@ -35,8 +35,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Bakersfield": {
    "pe": 574,
-   "p2": 48,
-   "p3": 49
+   "p2": 49,
+   "p3": 50
   },
   "Berkeley City": {
    "pe": 16,
@@ -79,7 +79,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Chaffey": {
-   "pe": 1473,
+   "pe": 1480,
    "p2": 14,
    "p3": 28
   },
@@ -89,7 +89,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Clovis": {
-   "pe": 183,
+   "pe": 185,
    "p2": 0,
    "p3": 0
   },
@@ -263,7 +263,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Long Beach": {
-   "pe": 803,
+   "pe": 805,
    "p2": 0,
    "p3": 0
   },
@@ -302,7 +302,7 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Modesto": {
-   "pe": 345,
+   "pe": 346,
    "p2": 73,
    "p3": 191
   },
@@ -383,7 +383,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 689
   },
   "Sacramento City": {
-   "pe": 35,
+   "pe": 36,
    "p2": 0,
    "p3": 0
   },
@@ -398,17 +398,17 @@ window.CPL_FUNDING_PERF = {
    "p3": 78
   },
   "San Diego City": {
-   "pe": 4203,
+   "pe": 4213,
    "p2": 121,
    "p3": 2837
   },
   "San Diego Mesa": {
-   "pe": 4564,
+   "pe": 4573,
    "p2": 117,
    "p3": 3095
   },
   "San Diego Miramar": {
-   "pe": 3041,
+   "pe": 3049,
    "p2": 85,
    "p3": 1502
   },
@@ -510,7 +510,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "West LA": {
-   "pe": 724,
+   "pe": 725,
    "p2": 485,
    "p3": 549
   },

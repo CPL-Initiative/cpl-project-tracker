@@ -1643,23 +1643,23 @@
   },
   {
     "date": "2026-07-13",
-    "students": 49348,
-    "students_military": 25753,
+    "students": 49385,
+    "students_military": 25790,
     "students_workforce": 23672,
     "students_apprentice": 755,
-    "eligible_units": 233136,
-    "transcribed_units": 101500,
-    "savings_m": 322.7,
+    "eligible_units": 233137,
+    "transcribed_units": 101518,
+    "savings_m": 322.8,
     "year_impact_b": 1.31,
     "active_colleges": 102,
     "leading_colleges": 15,
     "star_colleges": 54,
-    "credit_recs": 12830,
-    "common_titles": 2194,
+    "credit_recs": 12844,
+    "common_titles": 2210,
     "ccc_common_titles": 133,
-    "map_exhibits": 2506,
+    "map_exhibits": 2522,
     "ccc_exhibits": 133,
-    "ccc_collaborative": 61,
-    "articulating_colleges": 102
+    "ccc_collaborative": 60,
+    "articulating_colleges": 101
   }
 ]

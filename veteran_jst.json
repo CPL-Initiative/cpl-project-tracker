@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-13T15:16:29.487477+00:00",
+  "scraped_at": "2026-07-13T20:30:39.658719+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25753,
+    "jst": 25790,
     "star_colleges": 54
   },
   "computed_star_colleges": 54,
@@ -22,12 +22,12 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 306,
+      "jst": 312,
       "star": true
     },
     "San Diego Mesa College": {
       "vets": 1070,
-      "jst": 1474,
+      "jst": 1483,
       "star": true
     },
     "Santiago Canyon College": {
@@ -37,12 +37,12 @@
     },
     "San Diego City College": {
       "vets": 776,
-      "jst": 1370,
+      "jst": 1380,
       "star": true
     },
     "San Diego Miramar College": {
       "vets": 1181,
-      "jst": 1534,
+      "jst": 1542,
       "star": true
     },
     "Moreno Valley College": {
@@ -67,12 +67,12 @@
     },
     "West Los Angeles College": {
       "vets": 122,
-      "jst": 155,
+      "jst": 156,
       "star": true
     },
     "Long Beach City College": {
       "vets": 307,
-      "jst": 811,
+      "jst": 810,
       "star": true
     },
     "De Anza College": {
@@ -162,7 +162,7 @@
     },
     "Clovis Community College": {
       "vets": 117,
-      "jst": 187,
+      "jst": 190,
       "star": true
     },
     "Fresno City College": {
@@ -492,7 +492,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 66,
+      "jst": 67,
       "star": false
     },
     "Gavilan College": {

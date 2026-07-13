@@ -1,7 +1,7 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-07-11T08:17:46Z",
- "count": 57,
+ "_generated_at": "2026-07-13T20:31:59Z",
+ "count": 58,
  "suggestions": {
   "ARMEN 1: Beginning Armenian": [
    {
@@ -426,6 +426,16 @@
     "kind": "course",
     "title": "Brazing and Motor Technology",
     "code": "HVAC 54",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "IET-400 Inland Empire Electrical Training Center (Workplace Safety)": [
+   {
+    "kind": "course",
+    "title": "Introduction to Workplace Safety",
+    "code": "IET 400",
     "share": 1.0,
     "colleges": 1,
     "scoped": true

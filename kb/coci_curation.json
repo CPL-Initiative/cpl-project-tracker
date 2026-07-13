@@ -1,8 +1,8 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-07-13T15:16:42Z",
-  "count": 28769,
+  "_synced_at": "2026-07-13T20:30:45Z",
+  "count": 28797,
   "curations": {
     "AERO M10BA": {
       "merge_into": "AERO Z1001",
@@ -4221,6 +4221,11 @@
       "discipline": "Interior Design",
       "reviewed_by": "trailcrew-ccr3-s112@bot",
       "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
+    "ARCH M1123": {
+      "discipline": "Art",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
     },
     "ARCH M1129": {
       "unified_title": "Revit Practice 1",
@@ -9046,6 +9051,11 @@
       "unified_title": "Portfolio Photography",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ARTS M1498": {
+      "discipline": "Interior Design",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
     },
     "ARTS M1500": {
       "unified_title": "Printmaking: Screen Printing Fundamentals",
@@ -24986,9 +24996,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "BUSI M1108": {
-      "unified_title": "Mathematical Concepts and Structures for Teachers 1: Number Systems and Number Sense",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Mathematics",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00",
+      "unified_title": "Mathematical Concepts and Structures for Teachers 1: Number Systems and Number Sense"
     },
     "BUSI M1109": {
       "merge_into": "ENTR M1003",
@@ -28591,6 +28602,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:45:54.948406+00:00"
     },
+    "CISC M1066": {
+      "discipline": "Mathematics",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
+    },
     "CISC M1068": {
       "unified_title": "Essential Tools for Machine/Deep Learning in Python",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -28647,9 +28663,10 @@
       "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
     },
     "CISC M1092": {
-      "merge_into": "GRAF M1051",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Multimedia",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00",
+      "merge_into": "GRAF M1051"
     },
     "CISC M1093": {
       "unified_title": "Programming with Java",
@@ -31949,6 +31966,11 @@
       "merge_into": "COMM M1075",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "COMM M1089": {
+      "discipline": "Journalism",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
     },
     "COMM M1093": {
       "unified_title": "Journalism Lab A",
@@ -46760,6 +46782,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "CULN M1104": {
+      "discipline": "Mathematics",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
+    },
     "CULN M1108": {
       "unified_title": "Culinary Safety and Sanitation",
       "reviewed_by": "automerge-v1@bot",
@@ -48828,6 +48855,11 @@
       "unified_title": "Pilates - Reformer with Mat",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "DANC M1144": {
+      "discipline": "Music",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
     },
     "DANC M1153": {
       "unified_title": "Conditioning for Dance 2",
@@ -53063,6 +53095,11 @@
       "unified_title": "Fundamentals of Writing",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "DSPS M1007": {
+      "discipline": "English",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
     },
     "DSPS M10AF": {
       "merge_into": "DSPS Z1001",
@@ -59853,6 +59890,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M1085": {
+      "discipline": "Reading",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
+    },
     "ENGL M1088": {
       "unified_title": "Support for College Composition: Reading and Writing Analytically",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -61110,6 +61152,11 @@
       "unified_title": "Preparation for College Reading and Writing",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ENGL M1158": {
+      "discipline": "Reading",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
     },
     "ENGL M1159": {
       "unified_title": "Reading and Writing Skills for College",
@@ -67928,9 +67975,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ETHS M1020": {
+      "discipline": "Kinesiology",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00",
       "merge_into": "KINE M1277",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00",
       "unified_title": "Beach Volleyball - Advanced"
     },
     "ETHS M1021": {
@@ -68085,6 +68133,11 @@
       "unified_title": "Introduction to African History",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-25T20:32:36.181218+00:00"
+    },
+    "ETHS M1069": {
+      "discipline": "Political Science",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
     },
     "ETHS M1071": {
       "unified_title": "United States Relations with Mexico and Latin America",
@@ -85944,6 +85997,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HLTH M1061": {
+      "discipline": "Business",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
+    },
     "HLTH M1064": {
       "unified_title": "Intro to Therapy and Career Exploration of Rehabilitation",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -91359,14 +91417,16 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "HVAC M1009": {
-      "unified_title": "Automotive Heating, Ventilation, Air Conditioning, and Advanced Electronics",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Diesel Mechanics",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00",
+      "unified_title": "Automotive Heating, Ventilation, Air Conditioning, and Advanced Electronics"
     },
     "HVAC M1015": {
-      "unified_title": "Advanced Structural Analysis and Damage Repair Troubleshooting",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Automotive Technology",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00",
+      "unified_title": "Advanced Structural Analysis and Damage Repair Troubleshooting"
     },
     "HVAC M1017": {
       "unified_title": "Advanced Energy Auditing and Energy Modeling",
@@ -91394,9 +91454,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "HVAC M1032": {
-      "unified_title": "Climate Control System Diagnosis and Repair Assessment Test Out",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Automotive Technology",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00",
+      "unified_title": "Climate Control System Diagnosis and Repair Assessment Test Out"
     },
     "HVAC M1033": {
       "unified_title": "Transcritical CO2 Refrigeration Systems",
@@ -91429,9 +91490,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "HVAC M1056": {
-      "unified_title": "Contemporary Mathematics for Technical Fields",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Mathematics",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00",
+      "unified_title": "Contemporary Mathematics for Technical Fields"
     },
     "HVAC M1058": {
       "unified_title": "Electrical Fundamentals for HVAC/R",
@@ -91492,6 +91554,11 @@
       "merge_into": "HVAC Z1012",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HVAC M10BZ": {
+      "discipline": "Electricity",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
     },
     "HVAC M10CG": {
       "merge_into": "HVAC Z1033",
@@ -91618,10 +91685,26 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HVAC M10FQ": {
+      "discipline": "Diesel Mechanics",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
+    },
     "HVAC M10FR": {
-      "merge_into": "HVAC M1009",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Diesel Mechanics",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00",
+      "merge_into": "HVAC M1009"
+    },
+    "HVAC M10FU": {
+      "discipline": "Automotive Technology",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
+    },
+    "HVAC M10FV": {
+      "discipline": "Electricity",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
     },
     "HVAC M10FW": {
       "merge_into": "HVAC Z1001",
@@ -91658,15 +91741,21 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HVAC M10GJ": {
+      "discipline": "Automotive Technology",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
+    },
     "HVAC M10GK": {
       "merge_into": "AUTO M1035",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "HVAC M10GL": {
-      "merge_into": "HVAC M1009",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Diesel Mechanics",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00",
+      "merge_into": "HVAC M1009"
     },
     "HVAC M10GX": {
       "merge_into": "HVAC M1055",
@@ -91687,6 +91776,11 @@
       "merge_into": "HVAC M1009",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HVAC M10HH": {
+      "discipline": "Automotive Technology",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
     },
     "HVAC M10HL": {
       "merge_into": "HVAC M1058",
@@ -91712,6 +91806,11 @@
       "merge_into": "PLMB M1017",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HVAC M10IK": {
+      "discipline": "Electricity",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
     },
     "HVAC M10IO": {
       "merge_into": "HVAC Z1021",
@@ -91772,6 +91871,11 @@
       "merge_into": "HVAC Z1025",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HVAC M10JA": {
+      "discipline": "Diesel Mechanics",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
     },
     "HVAC M10JC": {
       "merge_into": "HVAC M1017",
@@ -91834,9 +91938,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "HVAC M10KO": {
-      "merge_into": "INTD M1007",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Interior Design",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00",
+      "merge_into": "INTD M1007"
     },
     "HVAC M10KY": {
       "merge_into": "MANU M1048",
@@ -91868,10 +91973,20 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HVAC M10LF": {
+      "discipline": "Environmental Technologies",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
+    },
     "HVAC M10LG": {
       "merge_into": "HVAC Z1028",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HVAC M10LH": {
+      "discipline": "Interior Design",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
     },
     "HVAC M10LI": {
       "merge_into": "HVAC Z1041",
@@ -91907,6 +92022,11 @@
       "merge_into": "HVAC Z1030",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HVAC M10MA": {
+      "discipline": "Computer Information Systems",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
     },
     "HVAC M10MB": {
       "merge_into": "HVAC Z1031",
@@ -92084,9 +92204,10 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "HVAC M10PR": {
-      "merge_into": "AUTD Z1012",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Diesel Mechanics",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00",
+      "merge_into": "AUTD Z1012"
     },
     "HVAC M10PW": {
       "merge_into": "HVAC Z1040",
@@ -92113,10 +92234,20 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HVAC M10QP": {
+      "discipline": "Electricity",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
+    },
     "HVAC M10QR": {
       "merge_into": "HVAC M1058",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HVAC M10QZ": {
+      "discipline": "Electricity",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
     },
     "HVAC M10RB": {
       "merge_into": "HVAC Z1043",
@@ -92128,6 +92259,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HVAC M10RO": {
+      "discipline": "Plumbing",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
+    },
     "HVAC M10RP": {
       "merge_into": "HVAC M1030",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -92137,6 +92273,11 @@
       "merge_into": "HVAC Z1044",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HVAC M10SB": {
+      "discipline": "Manufacturing Technology",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
     },
     "HVAC M10SF": {
       "merge_into": "HVAC Z1045",
@@ -92167,6 +92308,11 @@
       "merge_into": "HVAC Z1035",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HVAC M10SR": {
+      "discipline": "Construction Management",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
     },
     "HVAC M10SU": {
       "merge_into": "WELD Z1014",
@@ -92234,9 +92380,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "HVAC M10TY": {
-      "merge_into": "INDT M1100",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Manufacturing Technology",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00",
+      "merge_into": "INDT M1100"
     },
     "HVAC M10UA": {
       "merge_into": "HVAC Z1047",
@@ -126116,6 +126263,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "PEDS M10DM": {
+      "discipline": "Kinesiology",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00"
+    },
     "PEDS M10EG": {
       "merge_into": "PEDS Z1002",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -130959,9 +131111,10 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "PTAS M1002": {
-      "unified_title": "Clinical Education 2",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "discipline": "Radiological Technology",
+      "reviewed_by": "mismint-s113@bot",
+      "reviewed_at": "2026-07-13T20:02:39.232841+00:00",
+      "unified_title": "Clinical Education 2"
     },
     "PTAS M1003": {
       "unified_title": "Clinical Education 3",
