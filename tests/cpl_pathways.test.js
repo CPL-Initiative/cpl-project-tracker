@@ -494,8 +494,7 @@ const BACC_STUB = [
   const dir = T._buildDirectoryIndex(DIR_CER);
   const foot = T._resolveDirectory(BACC_STUB[0], dir, BACC_STUB);
   check("mine = the college's in-field CPL", foot.mineCreds === 1 && foot.mineCourses === 1 && foot.mine[0].creds[0] === "RCP License");
-  check("mineUnits sums the in-field CPL course units", foot.mineUnits === 24);
-  check("potentialUnits = current + fullest adoptable precedent (24+3)", foot.potentialUnits === 27);
+  check("potentialCourses = current courses + adoptable credentials (1+1)", foot.potentialCourses === 2);
   check("pool = peer CPL not yet at this college", foot.poolCreds === 1 && foot.pool[0].credential === "NBRC CRT");
   check("pool excludes the home college", foot.pool[0].lines.every(l => !/Foothill/.test(l.college)));
   check("cohort = same-field baccalaureates", foot.cohort.length === 2);
@@ -503,12 +502,12 @@ const BACC_STUB = [
 
   const rio = T._resolveDirectory(BACC_STUB[2], dir, BACC_STUB);
   check("Rio Hondo owns two in-field credentials", rio.mineCreds === 2);
-  check("mineUnits sums across both (3+3=6u)", rio.mineUnits === 6);
-  check("potentialUnits adds the fullest adoptable precedent (6+3)", rio.potentialUnits === 9);
+  check("Rio Hondo distinct courses = 2", rio.mineCourses === 2);
   check("a credential the college ALREADY has is not an adoption gap",
     rio.pool.length === 1 && rio.pool[0].credential === "ASE Engine" &&
     !rio.pool.some(p => p.credential === "ASE Electrical"));
   check("pool credential counts its peer colleges", rio.pool[0].colleges === 2);
+  check("potentialCourses = 2 courses + 1 adoptable credential", rio.potentialCourses === 3);
 
   const crafton = T._resolveDirectory(BACC_STUB[1], dir, BACC_STUB);
   check("frontier college (no CER match) → no own CPL", crafton.mineCreds === 0 && crafton.totalAtCollege === 0);
@@ -526,8 +525,8 @@ const BACC_STUB = [
     coci_college: "WEST L.A.", program: "Aviation", degree: "Bachelor of Science", degree_abbr: "B.S.",
     top: "0950.00", top4: "0950", field: "Aeronautical", units: 31, status: "Active" };
   const dup = T._resolveDirectory(dupProg, dupDir, [dupProg]);
-  check("one course, two credentials → 1 course / 2 creds / units counted once",
-    dup.mineCourses === 1 && dup.mineCreds === 2 && dup.mineUnits === 4);
+  check("one course, two credentials → 1 course / 2 creds (course counted once)",
+    dup.mineCourses === 1 && dup.mineCreds === 2);
 
   // null directory (CER unavailable) resolves to empty, no throw
   const none = T._resolveDirectory(BACC_STUB[0], null, BACC_STUB);
@@ -548,9 +547,9 @@ const BACC_STUB = [
     !!sel && sel.querySelectorAll("optgroup").length >= 2 &&
     /Featured/.test(sel.querySelectorAll("optgroup")[0].label));
   check("dropdown lists every baccalaureate + featured", sel.querySelectorAll("option").length === 1 + BACC_STUB.length);
-  check("directory option shows current/potential CPL units", (function () {
+  check("directory option shows current/potential CPL courses", (function () {
     var o = Array.from(sel.options).find(x => /Foothill College — Respiratory Care/.test(x.textContent));
-    return !!o && /24\/27u/.test(o.textContent);
+    return !!o && /1\/2 courses/.test(o.textContent);
   })());
   check("default view is the featured deep map", /Field Ironworker Supervisor/.test(root.textContent) && !!root.querySelector(".cplpw-stagebanner"));
   // switch to the Foothill Respiratory directory card (item index 1)

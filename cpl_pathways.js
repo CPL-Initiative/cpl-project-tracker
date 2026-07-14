@@ -555,8 +555,6 @@
     });
     var mine = Object.keys(byCourse).map(function (k) { return byCourse[k]; });
     mine.sort(function (a, b) { return a.code < b.code ? -1 : (a.code > b.code ? 1 : 0); });
-    var mineUnits = 0;
-    mine.forEach(function (c) { if (typeof c.units === "number") mineUnits += c.units; });
     var pool = [];
     if (dir && dir.byTop4[top4]) {
       Object.keys(dir.byTop4[top4]).forEach(function (ut) {
@@ -573,23 +571,21 @@
       pool.sort(function (a, b) { return b.colleges - a.colleges || (a.credential < b.credential ? -1 : 1); });
     }
     var cohort = (allPrograms || []).filter(function (p) { return p.top4 === top4; });
-    var poolColleges = {}, poolUnits = 0;
+    var poolColleges = {};
     pool.forEach(function (pc) {
-      var mx = 0;
-      pc.lines.forEach(function (l) {
-        poolColleges[normCollege(l.college)] = true;
-        if (typeof l.units === "number" && l.units > mx) mx = l.units; // fullest precedent = the adoptable units
-      });
-      poolUnits += mx;
+      pc.lines.forEach(function (l) { poolColleges[normCollege(l.college)] = true; });
     });
+    // Metric is COURSE COUNTS (not unit sums): a course articulated to several
+    // credentials is one course; unit totals over-count overlapping competencies
+    // (e.g. one ASE credential ↔ several courses), so they aren't shown.
+    //   current   = distinct courses articulated now
+    //   potential = current + adoptable credentials (each ≈ a course the college
+    //               could add by adopting a peer-proven articulation)
     return {
       mine: mine, pool: pool, cohort: cohort,
       mineCreds: Object.keys(mineUts).length,
       mineCourses: mine.length,
-      mineUnits: Math.round(mineUnits * 10) / 10,
-      // current = units articulated now; potential = current + the fullest
-      // adoptable precedent for each peer credential not yet held here.
-      potentialUnits: Math.round((mineUnits + poolUnits) * 10) / 10,
+      potentialCourses: mine.length + pool.length,
       poolCreds: pool.length,
       poolColleges: Object.keys(poolColleges).length,
       totalAtCollege: (nc && dir && dir.byCollegeCount[nc]) ? Object.keys(dir.byCollegeCount[nc]).length : 0,
@@ -987,10 +983,9 @@
       t.appendChild(el("div", "l", label));
       return t;
     }
-    var unitWord = prog.unit_system === "quarter" ? "qtr units" : "units";
-    tiles.appendChild(tile("cpl", "✓ " + m.mineCreds,
-      "credential" + (m.mineCreds === 1 ? "" : "s") + " " + (prog.college || "this college") + " already articulates for CPL in this field (" + m.mineCourses + " course" + (m.mineCourses === 1 ? "" : "s") + ")",
-      m.mineUnits ? "· " + fmtU(m.mineUnits) + " " + unitWord : null));
+    tiles.appendChild(tile("cpl", "✓ " + m.mineCourses,
+      (prog.college || "This college") + " already articulates these for CPL in this field",
+      "course" + (m.mineCourses === 1 ? "" : "s") + " · " + m.mineCreds + " credential" + (m.mineCreds === 1 ? "" : "s")));
     tiles.appendChild(tile(null, "⊕ " + m.poolCreds,
       "credential" + (m.poolCreds === 1 ? "" : "s") + " peers have articulated that this college could adopt — from " + m.poolColleges + " college" + (m.poolColleges === 1 ? "" : "s")));
     tiles.appendChild(tile(null, String(m.cohort.length),
@@ -1173,7 +1168,7 @@
           var bits = [];
           if (dir) {
             var r = resolveDirectory(it.prog, dir, directory);
-            bits.push(fmtU(r.mineUnits) + "/" + fmtU(r.potentialUnits) + "u");
+            bits.push(r.mineCourses + "/" + r.potentialCourses + " courses");
           }
           if (it.prog.status && it.prog.status !== "Active") bits.push(it.prog.status);
           var suffix = bits.length ? " (" + bits.join(" · ") + ")" : "";
@@ -1190,7 +1185,7 @@
     row.appendChild(sel);
     var nDir = directory.length, nFeat = items.length - nDir;
     var caption = nDir + " CCC baccalaureate degree" + (nDir === 1 ? "" : "s") + " + " + nFeat + " featured course map" + (nFeat === 1 ? "" : "s");
-    if (dir) caption += " · units = CPL now / potential with adoption";
+    if (dir) caption += " · courses = CPL articulated now / potential with adoption";
     row.appendChild(el("span", "cplpw-selcount", caption));
     return { row: row, select: sel };
   }
