@@ -123,8 +123,12 @@ create table if not exists public.team_access (
   updated_at  timestamptz not null default now()
 );
 alter table public.team_access enable row level security;   -- (no ANON policies on purpose)
-insert into public.team_access (id, secret)
-  values ('raci', 'cpl-team-2026')   -- TEMPORARY — rotate via the UPDATE above / the admin UI
+-- One row per COBI subsite cohort (Sam's org layer, 2026-07-14). Each holds
+-- that site's curation phrase; rotate a site independently via the UPDATE above
+-- (…where id = 'ci';). team_pass_check() (below) matches ANY row's secret.
+insert into public.team_access (id, secret) values
+  ('raci', 'cpl-team-2026'),   -- CPL cohort  — TEMPORARY, rotate via the UPDATE above / the admin UI
+  ('ci',   'ci-team-2026')     -- C&I subsite cohort (ci_team_phrase_add migration, 2026-07-14)
   on conflict (id) do nothing;
 
 -- Reviewer-only manage policies (StarNova, 2026-06-29 — team_access_reviewer_manage
@@ -140,7 +144,11 @@ create policy ta_update on public.team_access for update
 
 create or replace function public.team_pass_check(p text)
   returns boolean language sql security definer stable set search_path = public as $$
-  select exists (select 1 from public.team_access where id = 'raci' and secret = p);
+  -- Matches ANY subsite's secret, so every cohort phrase (cpl-team-2026,
+  -- ci-team-2026, …) validates + unlocks curation. This is cohort separation +
+  -- independent rotation — NOT per-table data isolation yet (future per-area
+  -- scope would parameterize this with the site and gate each table by it).
+  select exists (select 1 from public.team_access where secret = p);
 $$;
 revoke all on function public.team_pass_check(text) from public;
 
