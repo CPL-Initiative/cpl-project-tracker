@@ -1,7 +1,7 @@
 ---
 title: "CCR Merge/Mint Doctrine — the decision policy for course convergence"
 created: 2026-07-03
-version: "0.10 (2026-07-14 — P-10 level-descriptor convention: TEXT bands (Beginning/Intermediate/Advanced) everywhere EXCEPT Foreign Languages, which use NUMERIC rungs (Spanish 1/2/3, drop the redundant 'Beginning'). Refined the 3-rung cap: per-rung official-identity sequences (FL/Calc — a C-ID per rung) keep ALL rungs (D-1); ladders without a per-rung official ID (ESL, studio art) cap at 3. v0.9 was the ESL 3-comprehensive collapse; v0.8 P-7/Q-FLOOR/3-rung-cap; v0.7 graduation gate P-6+P-1b; v0.6 P-1 RATIFIED + P-1a/7a/9a/10a)"
+version: "0.11 (2026-07-14 — P-11 Q-TARGETCOUNT FULLY SETTLED: Dance styles all consolidate to ONE 'Dance Technique' B/I/A; Music applied study stays PER-INSTRUMENT (Piano/Guitar/Voice B/I/A); ensembles (Music+Dance) stay per-type like KINE athletics; Music Theory/History keep transfer rungs. v0.10 — P-10 level-descriptor convention: TEXT bands (Beginning/Intermediate/Advanced) everywhere EXCEPT Foreign Languages, which use NUMERIC rungs (Spanish 1/2/3, drop the redundant 'Beginning'). Refined the 3-rung cap: per-rung official-identity sequences (FL/Calc — a C-ID per rung) keep ALL rungs (D-1); ladders without a per-rung official ID (ESL, studio art) cap at 3. v0.9 was the ESL 3-comprehensive collapse; v0.8 P-7/Q-FLOOR/3-rung-cap; v0.7 graduation gate P-6+P-1b; v0.6 P-1 RATIFIED + P-1a/7a/9a/10a)"
 tags: [ccr, doctrine, merge, mint, m-id, mind-meld]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -509,7 +509,7 @@ strongly toward convergence so the credit recommendation lands on ONE common
 course. Transfer-sequence academic courses get the opposite bias: precision
 over concision (their identity work belongs to C-ID/CCN anyway).
 
-### P-11 · Kinesiology activity doctrine — PROPOSED (distilled from the 2026-07-03 mind-meld; settles Q-TARGETCOUNT for KINE)
+### P-11 · Activity doctrine (Kinesiology · Dance · Music) — Q-TARGETCOUNT FULLY SETTLED (KINE 2026-07-03; Dance/Music 2026-07-14)
 
 Sam's five KINE sittings draw one consistent line — **athletics vs general**:
 
@@ -535,8 +535,31 @@ Sam's five KINE sittings draw one consistent line — **athletics vs general**:
   family; letters A/B/C/D ↔ numbers; unified name "Sports Medicine
   Clinical N"). Add to the synonym map.
 
-Dance/Music activity ladders: presumed to follow the same shape but NOT yet
-sat — Q-TARGETCOUNT remains open for those two.
+**Dance — Q-TARGETCOUNT settled (Sam, 2026-07-14).** Dance did NOT follow the
+KINE per-sport shape. **All dance-technique STYLES consolidate into ONE "Dance
+Technique — Beginning / Intermediate / Advanced"** ladder (Hip Hop, Ballet, Jazz,
+Tap, Modern, Ballroom, Contemporary all fold in — the style is a modality, folded
+like KINE's venue/format marks). The exception is **ensembles/companies**, which
+stay per-type (below).
+
+**Music — Q-TARGETCOUNT settled (Sam, 2026-07-14).** Music DID follow the
+per-sport shape at the instrument level: **applied/instrument study stays
+PER-INSTRUMENT** — Piano B/I/A, Guitar B/I/A, Voice B/I/A, etc. (each instrument
+a distinct skill, like a distinct sport). Music **Theory** and Music **History**
+are transfer-academic sequences (a C-ID per rung) → keep their rungs per the
+per-rung-official-identity exception, NOT the 3-rung cap.
+
+**Ensembles/performance groups (Music AND Dance) — per-ensemble-type (Sam,
+2026-07-14).** Repeatable performance ensembles stay their own identities by
+type: Concert Choir, Chamber Singers, Orchestra, Symphonic/Concert Band, Jazz
+Ensemble, Concert Dance Ensemble, Dance Company — the direct analog of KINE
+keeping intercollegiate athletics per-sport. Do NOT consolidate ensembles into a
+generic "Vocal/Instrumental/Dance Ensemble."
+
+The through-line across all three activity disciplines: **a genuinely distinct
+performed skill stays its own target (per-sport, per-instrument, per-ensemble);
+general skill-building consolidates to a 3-band ladder** (Conditioning for KINE,
+Dance Technique for Dance) with modality/style/venue folded.
 
 ### P-12 · Homonym test — evidence over TOP — ESTABLISHED (Sam, 2026-07-12)
 
@@ -602,7 +625,7 @@ checkpoint. Current forks:
 | Q-HONORS | For CPL purposes, does an Honors variant fold under the base course (the credit rec ignores honors) or stay distinct? | D-4/P-3 |
 | Q-CREDITNC | ~~Credit + noncredit twins of one course: separate targets forever, or noncredit folds under the credit target with a band note?~~ **RESOLVED 2026-07-12 (Sam):** a same-college CR/NC *mirror* is the SAME course — a CPL mechanism (free NC section, voc-MQ instructor, Credit-by-Exam bridge). The NC mirror folds under the credit survivor with a band note; NOT a D-3 split. See the D-3 mirror carve-out. | D-3 |
 | Q-XDISC | Cross-discipline groups that are really one course tagged inconsistently: merge-and-pick-discipline, or hold for faculty? | D-8/P-9 |
-| Q-TARGETCOUNT | **Settled for KINE 2026-07-10 → P-11** (athletics-vs-general split; per-sport rows; modality-agnostic conditioning). Still open for Dance/Music ladders. | P-11 |
+| Q-TARGETCOUNT | **FULLY SETTLED → P-11.** KINE (2026-07-10): athletics-vs-general, per-sport rows, modality-agnostic conditioning. Dance/Music (2026-07-14): Dance styles → ONE 'Dance Technique' B/I/A; Music applied → per-instrument B/I/A; ensembles (both) → per-type; Music Theory/History keep transfer rungs. | P-11 |
 | Q-MINTNAME | Naming for packages: "Beginning ESL" clean, or "ESL — Beginning (Levels 1–2)" explicit? | P-10 |
 | Q-FLOOR | What is *never* a CPL credit target? Recreational PE? **Bounded 2026-07-14 (Sam):** enrichment/noncredit framing ALONE does not lower a course below the floor — if it teaches the SAME learning as a credit course it MERGES (learning-equivalence). The floor is for content with NO credit-equivalent learning. P-1b splits only when the skills/breadth genuinely differ (not merely the audience). | P-2 |
 
