@@ -448,6 +448,36 @@ one doesn't, keep them as **separate unified titles** — they may
 genuinely differ (one might be the official Outreach version, the
 other a local equivalent).
 
+### Rule 8c — Credential-merge doctrine: what folds vs what stays distinct (Sam, 2026-07-14)
+
+When collapsing a family of similar credential titles (the recurring case: the
+~87 automotive titles behind TOP 0948), four calls decide each pair. Ratified
+against the ASE automotive cluster; recorded in `merge_doctrine_notes`.
+
+1. **Mechanism / assessment-method qualifiers COLLAPSE.** A trailing
+   `(with Practical Assessment)`, `+ Residency Units`, or similar names HOW the
+   credit is verified, not a different competency → fold into the base
+   credential (Rule 2 applied to a suffix). The 10 ASE `X (with Practical
+   Assessment)` variants (A1–A8, G1, L1) fold into their base ASE certs.
+2. **Industry certification vs local course-Cx is a SPLIT, not a merge.** Rule 4
+   ("same competency, different issuer → unify") unifies the SAME credential
+   across issuers (Fire Inspector I via ICC/NFPA/SFT). It does NOT unify a
+   national industry certification (`ASE A5 — Brakes`) with a local course
+   credit-by-exam at the same topic (`Automotive Brake Systems`, issuer
+   California Community Colleges). The **CPL basis** — industry cert vs local
+   course credit — is the splitting axis. Consequence: a rich topic area
+   legitimately carries BOTH the ASE cert family AND local Cx course titles;
+   that count is not "redundant."
+3. **Narrower competency does not fold into a broader one.** `Automotive Brake
+   Inspection` ⊄ `ASE A5 — Brakes` (inspection ≠ full brake service).
+4. **Typos / mis-issuers get a hygiene pass, not a competency fold.** The
+   `Automative *` cluster (issuer wrongly = ASE on local `Auto NNN Completion`
+   Cx rows) is fixed per-row (spelling + issuer → CCC), keeping the local-Cx
+   identity — never force-folded into the ASE cert.
+
+Applied through the PR-5b confirm-merge machinery (`unified_title_override` +
+`unified_title_merge_confirm` under a cohort reviewer, Rule 9 pre-flight).
+
 ### Rule 9 — Never refuse, always classify
 
 Every raw title gets a mapping with a confidence score. Low confidence is the signal to reviewers — there is no "skip" or "needs review" status. If you have only weak signal, ship your best guess at low confidence and explain your reasoning in `_notes`.
