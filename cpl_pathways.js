@@ -537,17 +537,26 @@
   function resolveDirectory(prog, dir, allPrograms) {
     var nc = prog.cer_college ? normCollege(prog.cer_college) : null;
     var top4 = prog.top4 || "";
-    var mine = [];
+    var rawMine = [];
     if (nc && dir && dir.byCollegeTop4[nc] && dir.byCollegeTop4[nc][top4]) {
       var mm = dir.byCollegeTop4[nc][top4];
-      mine = Object.keys(mm).map(function (k) { return mm[k]; });
-      mine.sort(function (a, b) { return a.code < b.code ? -1 : (a.code > b.code ? 1 : 0); });
+      rawMine = Object.keys(mm).map(function (k) { return mm[k]; });
     }
-    var mineUts = {}, mineUnits = 0;
-    mine.forEach(function (m) {
+    // Collapse to DISTINCT courses: one course articulated to several credentials
+    // (e.g. AVIATEK 1 → FAA Airframe AND Powerplant) is ONE course, its units
+    // counted once — otherwise `current` double-counts. Each distinct course
+    // keeps the list of credentials that reach it.
+    var mineUts = {}, byCourse = {};
+    rawMine.forEach(function (m) {
       mineUts[m.ut.toLowerCase()] = true;
-      if (typeof m.units === "number") mineUnits += m.units;
+      var k = m.code;
+      if (!byCourse[k]) byCourse[k] = { code: m.code, title: m.title, units: (typeof m.units === "number") ? m.units : null, creds: [], cpl_types: m.cpl_types || [] };
+      if (m.ut && byCourse[k].creds.indexOf(m.ut) === -1) byCourse[k].creds.push(m.ut);
     });
+    var mine = Object.keys(byCourse).map(function (k) { return byCourse[k]; });
+    mine.sort(function (a, b) { return a.code < b.code ? -1 : (a.code > b.code ? 1 : 0); });
+    var mineUnits = 0;
+    mine.forEach(function (c) { if (typeof c.units === "number") mineUnits += c.units; });
     var pool = [];
     if (dir && dir.byTop4[top4]) {
       Object.keys(dir.byTop4[top4]).forEach(function (ut) {
@@ -564,13 +573,23 @@
       pool.sort(function (a, b) { return b.colleges - a.colleges || (a.credential < b.credential ? -1 : 1); });
     }
     var cohort = (allPrograms || []).filter(function (p) { return p.top4 === top4; });
-    var poolColleges = {};
-    pool.forEach(function (pc) { pc.lines.forEach(function (l) { poolColleges[normCollege(l.college)] = true; }); });
+    var poolColleges = {}, poolUnits = 0;
+    pool.forEach(function (pc) {
+      var mx = 0;
+      pc.lines.forEach(function (l) {
+        poolColleges[normCollege(l.college)] = true;
+        if (typeof l.units === "number" && l.units > mx) mx = l.units; // fullest precedent = the adoptable units
+      });
+      poolUnits += mx;
+    });
     return {
       mine: mine, pool: pool, cohort: cohort,
       mineCreds: Object.keys(mineUts).length,
       mineCourses: mine.length,
       mineUnits: Math.round(mineUnits * 10) / 10,
+      // current = units articulated now; potential = current + the fullest
+      // adoptable precedent for each peer credential not yet held here.
+      potentialUnits: Math.round((mineUnits + poolUnits) * 10) / 10,
       poolCreds: pool.length,
       poolColleges: Object.keys(poolColleges).length,
       totalAtCollege: (nc && dir && dir.byCollegeCount[nc]) ? Object.keys(dir.byCollegeCount[nc]).length : 0,
@@ -999,13 +1018,14 @@
       h1.appendChild(el("div", "s", "Prior-learning credit a student in this pathway can claim today — live from the MAP platform."));
       s1.appendChild(h1);
       m.mine.forEach(function (r) {
+        var credLabel = (r.creds || []).join(" · ");
         var row = el("div", "cplpw-course done");
         row.appendChild(el("span", "g cplpw-glyph cpl", "✓"));
         if (r.code) row.appendChild(el("span", "code", r.code));
-        var t = el("span", "t", r.title || r.ut);
-        t.title = "“" + r.ut + "” → " + (r.code || r.title) + (r.cpl_types && r.cpl_types.length ? " (" + r.cpl_types.join(", ") + ")" : "");
+        var t = el("span", "t", r.title || credLabel);
+        t.title = "“" + credLabel + "” → " + (r.code || r.title) + (r.cpl_types && r.cpl_types.length ? " (" + r.cpl_types.join(", ") + ")" : "");
         row.appendChild(t);
-        if (r.ut && r.ut !== r.title) row.appendChild(el("span", "cred", r.ut));
+        if (credLabel && credLabel !== r.title) row.appendChild(el("span", "cred", credLabel));
         if (r.units != null) row.appendChild(el("span", "u", fmtU(r.units) + "u"));
         s1.appendChild(row);
       });
@@ -1124,7 +1144,7 @@
   }
 
   // ── Dropdown selector (featured + field-grouped directory) ────────────────
-  function buildSelector(items, directory, onChange) {
+  function buildSelector(items, directory, dir, onChange) {
     var row = el("div", "cplpw-selrow");
     var sel = document.createElement("select");
     sel.className = "cplpw-select";
@@ -1150,8 +1170,14 @@
       og.label = f;
       items.forEach(function (it, i) {
         if (it.kind === "directory" && it.prog.field === f) {
-          var st = (it.prog.status && it.prog.status !== "Active") ? " (" + it.prog.status + ")" : "";
-          og.appendChild(option(i, (it.prog.college || "") + " — " + (it.prog.program || "") + st));
+          var bits = [];
+          if (dir) {
+            var r = resolveDirectory(it.prog, dir, directory);
+            bits.push(fmtU(r.mineUnits) + "/" + fmtU(r.potentialUnits) + "u");
+          }
+          if (it.prog.status && it.prog.status !== "Active") bits.push(it.prog.status);
+          var suffix = bits.length ? " (" + bits.join(" · ") + ")" : "";
+          og.appendChild(option(i, (it.prog.college || "") + " — " + (it.prog.program || "") + suffix));
         }
       });
       if (og.children.length) sel.appendChild(og);
@@ -1163,8 +1189,9 @@
     row.appendChild(el("label", "cplpw-sellabel", "Choose a pathway:"));
     row.appendChild(sel);
     var nDir = directory.length, nFeat = items.length - nDir;
-    row.appendChild(el("span", "cplpw-selcount",
-      nDir + " CCC baccalaureate degree" + (nDir === 1 ? "" : "s") + " + " + nFeat + " featured course map" + (nFeat === 1 ? "" : "s")));
+    var caption = nDir + " CCC baccalaureate degree" + (nDir === 1 ? "" : "s") + " + " + nFeat + " featured course map" + (nFeat === 1 ? "" : "s");
+    if (dir) caption += " · units = CPL now / potential with adoption";
+    row.appendChild(el("span", "cplpw-selcount", caption));
     return { row: row, select: sel };
   }
 
@@ -1188,7 +1215,7 @@
     }
     var selector = null;
     if (items.length > 1) {
-      selector = buildSelector(items, directory, function (i) { show(i); });
+      selector = buildSelector(items, directory, dir, function (i) { show(i); });
       container.appendChild(selector.row);
     }
     container.appendChild(body);
