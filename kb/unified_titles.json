@@ -10734,7 +10734,7 @@
     "_notes": "Numbered auto-trade completion certificate; specific topic unclear; flagged for review."
   },
   "Auto 611 Completion": {
-    "unified_title": "Automative Engine Repair",
+    "unified_title": "ASE A1 — Engine Repair",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10747,7 +10747,7 @@
     "_notes": "Numbered completion cert; topic unclear."
   },
   "Auto 612 Completion": {
-    "unified_title": "Automative Automatic Transmissions",
+    "unified_title": "ASE A2 — Automatic Transmission/Transaxle",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10760,7 +10760,7 @@
     "_notes": "Numbered completion cert; topic unclear."
   },
   "Auto 613 Completion": {
-    "unified_title": "Automative Manual Transmission",
+    "unified_title": "ASE A3 — Manual Drive Train and Axles",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10773,7 +10773,7 @@
     "_notes": "Numbered completion cert; topic unclear."
   },
   "Auto 614 Completion": {
-    "unified_title": "Automative Wheel Alignment",
+    "unified_title": "Automotive Wheel Alignment",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10786,7 +10786,7 @@
     "_notes": "Numbered completion cert; topic unclear."
   },
   "Auto 615 Completion": {
-    "unified_title": "Automative Brake System",
+    "unified_title": "ASE A5 — Brakes",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10799,7 +10799,7 @@
     "_notes": "Numbered completion cert; topic unclear."
   },
   "Auto 616": {
-    "unified_title": "Automative Electrical Systems",
+    "unified_title": "ASE A6 — Electrical/Electronic Systems",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10825,7 +10825,7 @@
     "_notes": "Numbered completion cert; topic unclear."
   },
   "Auto 618 Completion": {
-    "unified_title": "Automative Fuel Systems",
+    "unified_title": "Automotive Fuel Systems",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10838,7 +10838,7 @@
     "_notes": "Numbered completion cert; topic unclear."
   },
   "Auto 619 Completion": {
-    "unified_title": "Automotive Light Diesel Engines",
+    "unified_title": "ASE A9 — Light Vehicle Diesel Engines",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
