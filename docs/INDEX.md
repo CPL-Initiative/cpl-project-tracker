@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-07-14 (SkyFlyer side-lane — COBI org layer: the C&I subsite pilot — a masthead site-switcher + "Our Process" tab + ci-team-2026 phrase, #765–#768. New lessons doc + ADR: one platform, site as a view dimension)
+updated: 2026-07-14 (StarRunner side-lane — CPL Pathways directory tier for all 45 CCC baccalaureates + course-count metric, #774/#775/#777; and the CER credential-merge doctrine Rule 8c APPLIED, #778/#779 — scope: ase_practical_merge_scope.md)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker

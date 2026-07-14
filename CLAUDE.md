@@ -615,8 +615,24 @@ in-field CPL (✓), the peer **adoption pool** (⊕ + ⚡ Quick Adopt, e.g. Auto
 = 82 adoptable from 27 colleges), the same-field **cohort**, and GE-CLEP — with
 a mustard **"CPL frontier"** banner where nobody's articulated yet
 (Biomanufacturing, Respiratory). Chip picker → grouped `<select>` (★ Featured +
-per-field optgroups); pool caps at 20 with Show-all. Tests 97→**132**;
-real-Chromium verified. Story: `docs/cpl_pathways_lessons.md`.
+per-field optgroups); pool caps at 20 with Show-all. **Metric = COURSE COUNTS**
+(#777): dropdown shows `current/potential courses`, ✓ tile `courses ·
+credentials` — Sam flagged CPL *units* as "sus" (they double-count competencies:
+4 courses → 1 ASE area), course counts read as coverage not degree-credit.
+#774/#775/#777 MERGED; tests 97→**137**; real-Chromium verified.
+**Spin-off — CER credential-merge doctrine (Rule 8c), APPLIED #778/#779:** the
+"sus count" dig opened the CER exhibit-credential merge lane (NOT the CCR's M-ID
+course convergence — wave 4 skips it). Rule 8c (in `exhibit-canonicalization`
+SKILL.md): (1) `(with Practical Assessment)`-style qualifiers collapse into the
+base cert; (2) industry-cert vs local-Cx is a SPLIT not a merge (why the
+automotive count is legitimately large); (3) narrower competency doesn't fold;
+(4) read the curator's own issuer before assuming a mis-issue (Rule 9). Applied
+via `cred-rename-apply.yml`: 10 ASE `(with Practical)` folds + the Long Beach
+`Automative` cluster (6 folds + 2 spelling fixes; `issuer=ASE` was Sam's
+deliberate curation, so 8c-4 self-corrected). Receipts:
+`docs/ase_practical_merge_scope.md`, Supabase `merge_doctrine_notes`. Left
+`cpl_todos.json` + the numbered handoff untouched (CER mainline owns those).
+Story: `docs/cpl_pathways_lessons.md` · `docs/cpl_pathways_handoff.md`.
 
 ### Session 113 — SkyTeleo: the HVAC mis-mint thread → a new auditor rule + blank-discipline cleanup (2026-07-13)
 
