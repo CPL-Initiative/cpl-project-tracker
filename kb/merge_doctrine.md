@@ -1,7 +1,7 @@
 ---
 title: "CCR Merge/Mint Doctrine — the decision policy for course convergence"
 created: 2026-07-03
-version: "0.6 (2026-07-13 — P-1 RATIFIED as Sam's student-repeat test, anchored to CA Title 5 §55050's 'similar to' standard + learning-equivalence-beats-subject-code; folded the 2026-07-13 calibration refinements P-1a/P-7a/P-9a/P-10a. v0.5 was D-10; v0.4 was D-9 + P-12)"
+version: "0.7 (2026-07-14 — GRADUATION GATE PASSED: blind v0.6 re-decision reproduced Sam's ratified calls 92% fundamental / 94.7% fine after his two gate rulings. Ruling 1 RATIFIES P-6 for same-college variant pairs (title-drift → clean merge; low-unit ≤1u numbered sequences → parenthetical merge '(1 and 2)'; settles Q-SAMECOLL); Ruling 2 adds P-1b, breadth+program-context splits a homonym (settles part of Q-FLOOR). v0.6 was P-1 RATIFIED + P-1a/7a/9a/10a; v0.5 was D-10; v0.4 was D-9 + P-12)"
 tags: [ccr, doctrine, merge, mint, m-id, mind-meld]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -123,6 +123,49 @@ Each amends a named rule and is cited by its id in receipts:
   as the plain word (*Beginning / Intermediate / Advanced*) and record the
   original code in `merge_note`. (Case #39 *Intermediate Ballet 3A* → the "3A"
   drops.)
+
+#### Calibration rulings folded from the 2026-07-14 graduation gate
+
+The v0.6 gate re-decided a blind sample and surfaced two forks Sam settled
+(receipt: `kb/doctrine_out/2026-07-14/v06_gate_measurement.md`). Both are cited
+by id in receipts:
+
+- **P-6 RATIFIED (settles Q-SAMECOLL) — same-college variants converge; the FORM
+  depends on whether the pair is title-drift or a numbered sequence.** Two
+  same-college sub-cases (Sam, 2026-07-14, refined):
+  - **Title-drift / both-introductory pairs → clean MERGE.** When the two are the
+    same course under a drifted name — *Printing Skills Lab* + *Introductory
+    Printing Skills Lab* (**both read introductory**) — merge to ONE identity, no
+    rung notation. A student with the skill wouldn't repeat either.
+  - **Numbered sequences (1/2/3) → the per-rung UNIT LOAD decides (P-5 signal).**
+    A level split like *Custodial Report Writing 1 + 2* merges into one identity
+    whose unified title carries the rung span parenthetically — *"Custodial Report
+    Writing (1 and 2)"* — with the rungs in `merge_note`. **Low per-rung units
+    (≤ ~1u, e.g. 0.5u each) → MERGE** (parenthetical form): the rungs are
+    competency *pieces* of one course, not distinct credit targets. Substantial
+    per-rung units lean the other way. This is P-3-style packaging at the
+    same-college level: the merge **preserves** the rung composition
+    parenthetically, never silently collapses it. (Per P-10, the parenthetical
+    span is the ONE allowed rung notation in a unified title, and only for this
+    same-college numbered-package case.)
+  - **Boundary (unchanged):** a **degree-applicable** sequence where each rung is
+    its own credit target (Calculus I/II, the composition sequence) keeps its
+    rungs per P-3. (Sam, 2026-07-14: "Custodial courses could either be kept
+    separate 1 and 2 or merged with a parenthetical (1 and 2). Print courses
+    should be merged since both appear introductory… since Custodial is only .5u,
+    seems like merging would be best.")
+- **P-1b — breadth + program-context splits a homonym.** Same-word titles that
+  differ in **both breadth and program context** are different credit targets
+  and stay **separate**: a broad course embedded in a **degree program** vs. a
+  **narrow, specific** offering that reads as **enrichment / noncredit**. The
+  learning differs (so the student *would* repeat), and the enrichment side may
+  fall **below the CPL floor** entirely (→ Q-FLOOR). This sharpens the P-12
+  homonym guard with a breadth signal. (Worked case #14: *Management: People
+  Skills* — Business, part of a business program — vs. *People Skills for the
+  Freelancer* — Small Business Development, specific/enrichment — **keep
+  separate**. Sam, 2026-07-14: "People Skills in Management is broad and likely
+  part of a Business program, whereas the freelancer one is super specific and
+  sounds like a noncredit program for enrichment.")
 
 ### P-2 · The two-number goal — PROPOSED
 
@@ -351,12 +394,20 @@ units anyway. Store the modal `typical_units`, preserve the spread, flag
 `unit_anomaly` for faculty. A ≥4-unit spread on a *non*-standardized course
 is a genuine stop-and-look. (→ Q-UNITS)
 
-### P-6 · Same-college groups are variants, not duplicates — PROPOSED
+### P-6 · Same-college groups are variants, not duplicates — RATIFIED (Sam, 2026-07-14; see the 2026-07-14 gate ruling above)
 
 A group whose members all resolve to one college is a variant ladder
 (levels, formats, credit/noncredit twins) — never cross-college
-corroboration. Default: leave to the packaging pass (P-3) or keep as-is;
-do not merge as "duplicates." (→ Q-SAMECOLL)
+corroboration. **Ratified default (Q-SAMECOLL settled):** a same-college
+same-competency pair **converges**, and the FORM follows the 2026-07-14 gate
+ruling above — **title-drift / both-introductory pairs merge cleanly** (*Intro X*
++ *X* → Printing), while **numbered sequences merge with a parenthetical rung
+span when the per-rung unit load is low** (≤ ~1u; *Report Writing 1 + 2* at 0.5u
+→ *"…(1 and 2)"*), rungs recorded in `merge_note`. D-4's level-mark guard does
+*not* keep the low-unit competency-splits apart. The carve-out is a genuinely
+**degree-applicable sequence** (each rung its own credit target — Calculus I/II),
+which keeps its rungs per P-3. Longer level ladders still route to the packaging
+pass (P-3).
 
 ### P-7 · Generic-title families need a second signal — PROPOSED
 
@@ -449,14 +500,14 @@ checkpoint. Current forks:
 | Q-LADDER | **Partially settled 2026-07-10** (P-3 ratified with the ESL band mapping; sub-bands allowed). Remaining fork: the exact package-vs-rungs TEST WORDING (degree-applicability vs credit status vs transferability) for edge families. | P-3 |
 | Q-STRANDS | Do skill strands ever survive packaging (ESL Writing as its own target)? | P-4 |
 | Q-UNITS | How much unit spread stops a merge on a non-standardized course? | P-5 |
-| Q-SAMECOLL | Is there ANY same-college pair you'd merge outright (catalog editions? renumberings?) | P-6 |
+| Q-SAMECOLL | **RESOLVED 2026-07-14 (Sam):** same-college same-competency pairs converge (P-6 ratified) — title-drift/both-intro → clean merge; low-unit (≤1u) numbered sequences → parenthetical merge "(1 and 2)"; D-4's level guard yields. Degree-applicable sequences keep their rungs (P-3). | P-6 |
 | Q-GENERIC | Work Experience / Special Topics / Independent Study: umbrella-mint per discipline, or exclude from the CPL tier? | P-7 |
 | Q-HONORS | For CPL purposes, does an Honors variant fold under the base course (the credit rec ignores honors) or stay distinct? | D-4/P-3 |
 | Q-CREDITNC | ~~Credit + noncredit twins of one course: separate targets forever, or noncredit folds under the credit target with a band note?~~ **RESOLVED 2026-07-12 (Sam):** a same-college CR/NC *mirror* is the SAME course — a CPL mechanism (free NC section, voc-MQ instructor, Credit-by-Exam bridge). The NC mirror folds under the credit survivor with a band note; NOT a D-3 split. See the D-3 mirror carve-out. | D-3 |
 | Q-XDISC | Cross-discipline groups that are really one course tagged inconsistently: merge-and-pick-discipline, or hold for faculty? | D-8/P-9 |
 | Q-TARGETCOUNT | **Settled for KINE 2026-07-10 → P-11** (athletics-vs-general split; per-sport rows; modality-agnostic conditioning). Still open for Dance/Music ladders. | P-11 |
 | Q-MINTNAME | Naming for packages: "Beginning ESL" clean, or "ESL — Beginning (Levels 1–2)" explicit? | P-10 |
-| Q-FLOOR | What is *never* a CPL credit target (and can leave the CPL-facing tier entirely)? Recreational PE? Older-adult noncredit? | P-2 |
+| Q-FLOOR | What is *never* a CPL credit target (and can leave the CPL-facing tier entirely)? Recreational PE? Older-adult noncredit? **Partial (2026-07-14):** a narrow, enrichment/noncredit offering that shares a word with a broad program course does not merge into it and may sit below the floor (P-1b). | P-2 |
 
 ---
 
@@ -467,8 +518,15 @@ checkpoint. Current forks:
    (`kb/_doctrine_calibration_sample.py` → `kb/doctrine_out/<date>/`). Sam
    reviews — voice-first in the worklist's 🧠 Mind-meld panel — and every
    disagreement becomes a rule edit or a settled question.
-2. **Agreement gate.** When a *fresh* held-out sample agrees ≥90% with Sam's
-   calls, the doctrine graduates to v1 and the batch pass is authorized.
+2. **Agreement gate — PASSED 2026-07-14.** A blind v0.6 re-decision reproduced
+   Sam's ratified calls **92% fundamental / 94.7% fine** once his two gate
+   rulings (P-6, P-1b above) resolved the divergent groups; the CR/NC mirror
+   merge works blind. Every fine-miss was a case where v0.6 applied doctrine
+   that postdates the seed — the doctrine is ahead of the stale seed, not wrong.
+   The doctrine has **graduated (v0.7)** and the batch pass is authorized. A
+   fresh held-out sample (`kb/doctrine_out/2026-07-14/calibration_review_v06.md`)
+   is staged for Sam's optional confirm marks — the generalization check — but
+   the gate is cleared. Receipt: `kb/doctrine_out/2026-07-14/v06_gate_measurement.md`.
 3. **Batch pass (the pass-1 pattern, extended).** Dry-run planner over all
    lanes → committed plan + report → Sam skims → apply in one cron window,
    cohort-stamped, ON CONFLICT DO NOTHING. Level-band packaging runs as its
