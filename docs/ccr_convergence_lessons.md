@@ -386,3 +386,33 @@ art is degree-applicable yet caps at 3) — it's **per-rung OFFICIAL identity**.
 C-ID per rung, so the rungs are separate authoritative credit targets that
 **never collapse (D-1)** — exempt from the cap, numeric labels, keep every rung.
 Studio art has no per-rung C-ID → caps at 3. Doctrine → **v0.10**.
+
+### 2026-07-14 (batch 5) — Music & Dance activity doctrine → Q-TARGETCOUNT fully settled, v0.11
+
+Profiled Music (2,586) + Dance (1,639), brought 3 forks framed against KINE's
+P-11. Sam's calls — with an instructive asymmetry:
+- **Dance styles → ONE 'Dance Technique' B/I/A.** All styles (Hip Hop/Ballet/Jazz/
+  Tap/Modern/Ballroom/Contemporary) fold into a single 3-band technique ladder.
+  **Sam's reason (key):** *"the only reason I'm merging the dance is because they
+  have so many permutations vs. the others which are more standard."* Not
+  skill-equivalence (Ballet ≠ Hip Hop) — **permutation VOLUME**. This is a new,
+  distinct lever: when style×level×format explodes unmanageably, consolidate even
+  distinct sub-skills; when bounded/standard (piano/guitar/voice), keep
+  granularity. (Diverges from KINE per-sport for a volume reason, not a taxonomy
+  one.)
+- **Music applied → PER-INSTRUMENT B/I/A** (Piano/Guitar/Voice each own ladder) —
+  the instrument is a distinct skill, like a distinct sport. (Follows KINE.)
+- **Ensembles (Music + Dance) → per-type** (Concert Choir, Orchestra, Jazz
+  Ensemble, Concert Dance Ensemble …) — the analog of KINE intercollegiate
+  athletics. Do NOT consolidate to generic Vocal/Instrumental/Dance Ensemble.
+- Music Theory/History → transfer academic (C-ID per rung) → keep rungs.
+
+Through-line for all activity disciplines (P-11): **a genuinely distinct
+performed skill stays its own target (per-sport, per-instrument, per-ensemble);
+general skill-building consolidates to a 3-band ladder** (Conditioning / Dance
+Technique) with modality/style/venue folded. Q-TARGETCOUNT is now FULLY settled.
+Doctrine → **v0.11**.
+
+Session tally: ~6,600 identities across ESL/Music/Dance/KINE now have a packaging
+policy, plus the same-college/generic/homonym/floor rules — the doctrine went
+v0.6 → v0.11 in one sitting via small grounded scenario batches.
