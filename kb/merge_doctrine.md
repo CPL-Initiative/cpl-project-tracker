@@ -1,7 +1,7 @@
 ---
 title: "CCR Merge/Mint Doctrine — the decision policy for course convergence"
 created: 2026-07-03
-version: "0.9 (2026-07-14 — the ESL 3-comprehensive collapse: P-4 RATIFIED / Q-STRANDS settled — ALL of ESL (2,364 identities) collapses to Beginning/Intermediate/Advanced ESL, every strand + content-for-ESL course bundled in; carve-outs = transfer-level ESL, ESL Citizenship, VESL. v0.8 was P-7/Q-FLOOR/3-rung-cap; v0.7 was the graduation gate P-6+P-1b; v0.6 was P-1 RATIFIED + P-1a/7a/9a/10a)"
+version: "0.10 (2026-07-14 — P-10 level-descriptor convention: TEXT bands (Beginning/Intermediate/Advanced) everywhere EXCEPT Foreign Languages, which use NUMERIC rungs (Spanish 1/2/3, drop the redundant 'Beginning'). Refined the 3-rung cap: per-rung official-identity sequences (FL/Calc — a C-ID per rung) keep ALL rungs (D-1); ladders without a per-rung official ID (ESL, studio art) cap at 3. v0.9 was the ESL 3-comprehensive collapse; v0.8 P-7/Q-FLOOR/3-rung-cap; v0.7 graduation gate P-6+P-1b; v0.6 P-1 RATIFIED + P-1a/7a/9a/10a)"
 tags: [ccr, doctrine, merge, mint, m-id, mind-meld]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -193,17 +193,26 @@ the volume overwhelmed him). Three open questions settled:
   learning is the SAME and only the audience is enrichment (Nonfiction Writing —
   Humanities credit ≡ Older-Adults-Noncredit → merge). (Sam, 2026-07-14: "Merge —
   learning-equivalence.")
-- **P-3 refinement (Q-LADDER) — the 3-RUNG CAP.** No unified ladder exceeds
-  **three rungs**. A ladder with >3 rungs **consolidates by pairing**:
-  **(1,2) → rung 1 · (3,4) → rung 2 · (5,6+) → rung 3.** This applies even to
-  **degree-applicable creative/skill ladders** (studio art, etc.) — the earlier
-  P-3 boundary that "degree-applicable sequences keep their rungs" holds only for
-  classic academic sequences that are **already ≤3** (Calc I/II, Spanish 1/2/3);
-  longer ladders cap at 3. Naming follows the field (numbered "1/2/3" for studio;
-  Beginning/Intermediate/Advanced word-bands for ESL, per P-10); rungs recorded in
-  `merge_note`. (Worked case: Painting 2/3/4 + Advanced Painting 1/2 + "Painting -
-  Advanced" → 3 consolidated rungs. Sam, 2026-07-14: "changed to 1 of 3 numbered
-  rungs and those with more than 3 rungs consolidated: (1,2) (3,4) (5,=>6).")
+- **P-3 refinement (Q-LADDER) — the 3-RUNG CAP.** A ladder whose rungs are NOT
+  independently official/transfer credit targets caps at **three rungs**; a
+  ladder with >3 such rungs **consolidates by pairing**: **(1,2) → rung 1 ·
+  (3,4) → rung 2 · (5,6+) → rung 3.** This applies even to **degree-applicable
+  creative/skill ladders** (studio art) — CSU-transferable is not enough to
+  exempt. Naming follows the field: **numbered "1/2/3" for Foreign Languages**
+  (per P-10; drop the redundant "Beginning" — "Spanish 2", not "Beginning Spanish
+  2"), Beginning/Intermediate/Advanced **word-bands** for everything else (ESL,
+  studio); rungs recorded in `merge_note`. (Worked case: Painting 2/3/4 +
+  Advanced Painting 1/2 + "Painting - Advanced" → 3 consolidated rungs. Sam,
+  2026-07-14: "changed to 1 of 3 numbered rungs and those with more than 3 rungs
+  consolidated: (1,2) (3,4) (5,=>6).")
+  - **Exception — per-rung official-identity sequences keep ALL rungs (D-1).**
+    Where each rung maps to its own **official identity** (a distinct C-ID/CCN or
+    a per-rung transfer target) — **Foreign Language** (Spanish 1/2/3/4 → C-ID
+    SPAN 100/110/200/210), **Calculus I/II**, the composition sequence — the rungs
+    are separate authoritative credit targets and **never collapse**, however many
+    there are. These use numeric labels for FL, keep their count, and are exempt
+    from the 3-rung cap. (Studio art has no per-rung C-ID → it caps; FL does → it
+    doesn't. That, not mere transferability, is the line.)
 
 ### P-2 · The two-number goal — PROPOSED
 
@@ -559,6 +568,20 @@ Welding". (→ Q-MINTNAME) **Mind-meld addendum (2026-07-03/10): names are
 modality- and venue-agnostic for CPL** — "Volleyball Advanced" (not
 "Advanced Outdoor Volleyball"), "Conditioning Advanced" (not "Advanced
 Hydro HIIT"); Sam renamed both live.
+
+**Level-descriptor convention — TEXT bands everywhere EXCEPT Foreign Languages
+(Sam, 2026-07-14).** Leveled unified titles use spelled-out **text** rung words
+(*Beginning / Intermediate / Advanced X*) — the default. The **sole exception is
+Foreign Language courses, which use NUMERIC rungs** (*Spanish 1 / 2 / 3*,
+*French 1 / 2*) per the field's historical convention. And **drop the redundant
+level word** colleges historically prefix onto the numbered title: *"Beginning
+Spanish 2"* → **"Spanish 2"** (the number already carries the level). This holds
+because FL transfer sequences are the **degree-applicable keep-the-rungs case**
+(P-3 boundary already cites *Spanish 1/2/3*): each numeric rung is a distinct
+transfer credit target (typically its own C-ID, e.g. SPAN 100/110/200/210), so
+per D-1 the rungs never collapse — the 3-rung cap does NOT apply to them. (The
+3-rung cap governs ladders WITHOUT a per-rung official/transfer identity — ESL,
+studio art; FL keeps every numeric rung.)
 
 ---
 
