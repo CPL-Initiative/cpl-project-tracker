@@ -530,6 +530,44 @@
              clepByArea: clepByArea, generatedAt: payload._generated_at || null };
   }
 
+  // ── Current-course catalog (the directory ✓ retired-course filter) ─────────
+  // The MAP platform keeps historical/renumbered articulations alive (e.g. Santa
+  // Ana's retired `AT`-series next to the current `AUTO` numbers), which inflate
+  // a baccalaureate's ✓ course count with stale duplicates of the same
+  // competency. `cpl_coci_course_keys.js` (window.CPL_COCI_COURSE_KEYS, built by
+  // kb/_build_coci_lookup.py from the current MAP course list) lets us keep only
+  // courses that still exist in the college's catalog. Fail-open at every step:
+  // no catalog loaded, or a college absent from it → keep the course. So the
+  // filter can only ever DROP a course that is confirmably not in the catalog —
+  // it can never drop a genuinely active course.
+  var _cociKeyMap; // undefined = not built yet; null = no data; object otherwise
+  function getCociKeyMap() {
+    if (_cociKeyMap !== undefined) return _cociKeyMap;
+    var src = window.CPL_COCI_COURSE_KEYS;
+    if (!src || !Array.isArray(src.colleges) || !src.keys) { _cociKeyMap = null; return null; }
+    var map = {};
+    Object.keys(src.keys).forEach(function (idx) {
+      var name = src.colleges[parseInt(idx, 10)];
+      if (name == null) return;
+      var set = {};
+      (src.keys[idx] || []).forEach(function (k) { set[k] = true; });
+      map[normCollege(name)] = set;
+    });
+    _cociKeyMap = map;
+    return map;
+  }
+  // true  → confirmed retired (college IS in the catalog and the course is NOT)
+  // false → keep (in the catalog, OR no catalog / college unknown → fail-open)
+  function isRetiredCourse(collegeUpper, code) {
+    var map = getCociKeyMap();
+    if (!map) return false;
+    var set = map[collegeUpper];
+    if (!set) return false;
+    var p = splitCode(code);
+    if (!p) return false;
+    return !set[courseKey(p.subj, p.num)];
+  }
+
   // Resolve a directory program against the directory index: the college's own
   // in-field CPL (✓), the peer-college adoption pool (⊕, home-college excluded
   // and credentials the home college already has removed — those aren't gaps),
@@ -541,6 +579,16 @@
     if (nc && dir && dir.byCollegeTop4[nc] && dir.byCollegeTop4[nc][top4]) {
       var mm = dir.byCollegeTop4[nc][top4];
       rawMine = Object.keys(mm).map(function (k) { return mm[k]; });
+    }
+    // Drop retired/renumbered course numbers the MAP platform still carries but
+    // the college's current catalog no longer lists (fail-open — see
+    // isRetiredCourse). This keeps the ✓ count to courses a student can enroll
+    // in today, so stale twins (retired `AT 106` beside current `AUTO 118`)
+    // don't double-count the same competency. Only the home college's own ✓ list
+    // is filtered; the ⊕ adoption pool stays inclusive (a peer's recognized
+    // competency is still adoptable even if its local course number has rolled).
+    if (nc) {
+      rawMine = rawMine.filter(function (m) { return !isRetiredCourse(nc, m.code); });
     }
     // Collapse to DISTINCT courses: one course articulated to several credentials
     // (e.g. AVIATEK 1 → FAA Airframe AND Powerplant) is ONE course, its units
@@ -1120,6 +1168,11 @@
     foot.appendChild(el("div", null, "• ✓ = the credential is articulated for CPL by " + (prog.college || "this college") +
       " in the field's TOP code (" + (prog.top || prog.top4) + "). ⊕ = another California college articulates it — an adoption opportunity here. " +
       (prog.cer_college ? "" : "This college has no CPL articulations in the MAP platform yet, so only the field-wide adoption pool is shown.")));
+    if (getCociKeyMap()) {
+      foot.appendChild(el("div", null, "• The ✓ course count is limited to courses in the current MAP course catalog (snapshot " +
+        ((window.CPL_COCI_COURSE_KEYS && window.CPL_COCI_COURSE_KEYS._built_at) || "recent") +
+        "): retired or renumbered course numbers the MAP platform still carries as articulations are excluded, so the count reflects courses a student can enroll in today."));
+    }
     foot.appendChild(el("div", null, "• Why baccalaureate pathways: CCC baccalaureate degrees accept CPL that the community colleges transcribe with none of the restrictions CSU and UC place on incoming CPL — so a counselor can recommend a student accept eligible CPL with confidence it won't cost them transfer options."));
     var srcRow = el("div", null, "Sources: ");
     [{ label: "CCC Baccalaureate Degree Programs (CCCCO)", url: "https://www.cccco.edu/About-Us/Chancellors-Office/Divisions/Educational-Services-and-Support/What-we-do/Curriculum-and-Instruction-Unit/Curriculum/Baccalaureate-Degree-Program" },
@@ -1250,13 +1303,21 @@
         done(null);
       }
     }
-    // Directory tier: the per-baccalaureate cards (window.CPL_BACCALAUREATES).
-    // Lazy-load it once (static, ~40 KB), then resolve the CER payload.
-    if (window.CPL_BACCALAUREATES || !(window.CPL_TABS && window.CPL_TABS.loadScript)) {
-      withCer();
-    } else {
-      window.CPL_TABS.loadScript("cpl_baccalaureates_data.js", "CPL_BACCALAUREATES", function () { withCer(); });
+    function hasLoader() { return !!(window.CPL_TABS && window.CPL_TABS.loadScript); }
+    // Current-course catalog for the directory ✓ retired-course filter (static,
+    // ~1.9 MB — lazy so it costs nothing outside this tab; fail-soft, so a load
+    // failure just leaves the ✓ list unfiltered).
+    function withCociKeys(next) {
+      if (window.CPL_COCI_COURSE_KEYS || !hasLoader()) { next(); return; }
+      window.CPL_TABS.loadScript("cpl_coci_course_keys.js", "CPL_COCI_COURSE_KEYS", function () { next(); });
     }
+    // Directory tier: the per-baccalaureate cards (window.CPL_BACCALAUREATES,
+    // static ~40 KB), then the catalog, then the live CER payload.
+    function withDirectory(next) {
+      if (window.CPL_BACCALAUREATES || !hasLoader()) { withCociKeys(next); return; }
+      window.CPL_TABS.loadScript("cpl_baccalaureates_data.js", "CPL_BACCALAUREATES", function () { withCociKeys(next); });
+    }
+    withDirectory(withCer);
   }
 
   window.CPL_PATHWAYS_TAB = {

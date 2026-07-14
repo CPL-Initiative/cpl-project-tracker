@@ -533,6 +533,54 @@ const BACC_STUB = [
   check("null directory → empty landscape, cohort still computes", none.mineCreds === 0 && none.poolCreds === 0 && none.cohort.length === 2);
 }
 
+// (l2) current-course catalog filter — retired/renumbered course numbers drop
+// from the ✓ list (the source of Santa Ana's inflated automotive count: MAP
+// carries retired `AT 106` beside current `AUTO 118`, both mapping ASE A8).
+const SA_CER = { _generated_at: "2026-07-14T00:00:00+00:00", unified_titles: [
+  { ut: "ASE A8 — Engine Performance", cpl_types: ["Industry Certification"], articulations: [{ top: "0948.00", disc: "Automotive", local: [
+    { subj: "AUTO", num: "118", t: "Engine Performance", colleges: ["Santa Ana College"], u: 4 },
+    { subj: "AT", num: "106", t: "Engine Performance", colleges: ["Santa Ana College"], u: 4 }] }] },
+  { ut: "ASE A5 — Brakes", cpl_types: ["Industry Certification"], articulations: [{ top: "0948.00", disc: "Automotive", local: [
+    { subj: "AUTO", num: "115", t: "Brakes", colleges: ["Santa Ana College"], u: 3 },
+    { subj: "AUTO", num: "54", t: "Brakes (old number)", colleges: ["Santa Ana College"], u: 3 }] }] },
+]};
+const SA_PROG = { id: "0948-santa-ana", college: "Santa Ana College", cer_college: "Santa Ana College",
+  coci_college: "SANTA ANA", program: "Automotive Technology", degree: "Bachelor of Science",
+  degree_abbr: "B.S.", top: "0948.00", top4: "0948", field: "Automotive Technology", units: 40, status: "Active" };
+{
+  // no catalog loaded → fail-open: all 4 distinct courses kept
+  const T = freshWindow().CPL_PATHWAYS_TAB;
+  const open = T._resolveDirectory(SA_PROG, T._buildDirectoryIndex(SA_CER), [SA_PROG]);
+  check("no COCI catalog → fail-open (retired numbers kept, 4 courses)", open.mineCourses === 4);
+}
+{
+  // catalog lists only the CURRENT numbers → retired AT 106 + old AUTO 54 drop
+  const w = freshWindow();
+  w.CPL_COCI_COURSE_KEYS = { _built_at: "2026-07-14", colleges: ["Santa Ana College"], keys: { "0": ["AUTO 118.00", "AUTO 115.00"] } };
+  const T = w.CPL_PATHWAYS_TAB;
+  const filt = T._resolveDirectory(SA_PROG, T._buildDirectoryIndex(SA_CER), [SA_PROG]);
+  check("COCI catalog drops retired/renumbered courses from ✓ (4 → 2)",
+    filt.mineCourses === 2 && filt.mine.every(m => m.code === "AUTO 118" || m.code === "AUTO 115"));
+  check("credential coverage survives the course filter (both ASE areas kept)", filt.mineCreds === 2);
+}
+{
+  // number normalization: catalog "AUTO 118.00" matches CER "118" (and "40.5" ≡ "40.50")
+  const w = freshWindow();
+  w.CPL_COCI_COURSE_KEYS = { colleges: ["Santa Ana College"], keys: { "0": ["AUTO 118", "AUTO 115"] } }; // un-normalized keys → no match
+  const T = w.CPL_PATHWAYS_TAB;
+  const filt = T._resolveDirectory(SA_PROG, T._buildDirectoryIndex(SA_CER), [SA_PROG]);
+  check("catalog keys must be normalized (un-normalized 'AUTO 118' ≠ CER '118' → all drop)", filt.mineCourses === 0);
+}
+{
+  // college absent from catalog → fail-open (never wrongly drop a whole college)
+  const w = freshWindow();
+  w.CPL_COCI_COURSE_KEYS = { colleges: ["Some Other College"], keys: { "0": ["X 1.00"] } };
+  const T = w.CPL_PATHWAYS_TAB;
+  const fo = T._resolveDirectory(SA_PROG, T._buildDirectoryIndex(SA_CER), [SA_PROG]);
+  check("college not in catalog → fail-open (keeps all 4)", fo.mineCourses === 4);
+}
+check("boot lazy-loads the current-course catalog", /loadScript\("cpl_coci_course_keys\.js", "CPL_COCI_COURSE_KEYS"/.test(SRC));
+
 // (m) full render — dropdown + directory card switching
 {
   const w = freshWindow();

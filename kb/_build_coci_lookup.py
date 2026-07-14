@@ -21,6 +21,11 @@ COCI extract, like tmc_college_courses.js)
   coci_lookup_desc_<K>.js   window.CPL_COCI_DESC[K] = { ctrl: description }
       27 shards keyed by the SUBJECT's first character (A-Z, else '0') so
       the tab fetches one small file per expanded row instead of ~55 MB.
+  cpl_coci_course_keys.js   window.CPL_COCI_COURSE_KEYS
+      { colleges: [..], keys: { "<collegeIdx>": ["SUBJ NNN.NN", ..] } }
+      The compact current-course-catalog key set the CPL Pathways directory
+      tab uses to drop retired/renumbered course numbers (which the MAP
+      platform still carries as articulations) from a baccalaureate's ✓ count.
 
 Run from repo root:  python3 kb/_build_coci_lookup.py
 """
@@ -61,6 +66,23 @@ def credit_char(credit_type, units):
 def shard_key(subject):
     c = (subject or "0")[:1].upper()
     return c if "A" <= c <= "Z" else "0"
+
+
+def norm_num(num):
+    """Normalize a course number the SAME way cpl_pathways.js `normNum` does:
+    a pure numeric string (matching /^[\\d.]+$/) → float with 2 decimals
+    ("118" → "118.00", "40.5" → "40.50"); anything else → upper-cased trim
+    ("116A" → "116A", "3313E" → "3313E"). Both sides must agree or the
+    directory retired-course filter's key lookups miss (fail-open, never a
+    wrong drop). Real course numbers carry at most one dot, so `float()`
+    always parses when the regex matches."""
+    s = str("" if num is None else num).strip()
+    if re.fullmatch(r"[\d.]+", s):
+        try:
+            return "%.2f" % float(s)
+        except ValueError:
+            pass
+    return s.upper()
 
 
 def main():
@@ -150,12 +172,50 @@ def main():
             json.dump(d, f, ensure_ascii=False, separators=(",", ":"))
             f.write(";\n")
 
+    # Sidecar: the compact current-course-catalog key set for the CPL Pathways
+    # directory ✓ filter. The MAP platform retains historical/renumbered
+    # articulations (e.g. Santa Ana's retired `AT`-series alongside the current
+    # `AUTO` numbers) which inflate the per-baccalaureate course counts. This
+    # export ("Course List from MAP") is effectively the ACTIVE catalog (retired
+    # numbers are absent; only 0.04% of course codes carry a second control
+    # number), so a CER articulation whose (college, SUBJ, num) is absent here is
+    # treated as retired and dropped from the ✓ count. cpl_pathways.js consults
+    # this by college NAME → SUBJ+normalized-number; keys are grouped by the same
+    # college index as `colleges` above. Fail-open in the consumer: a college not
+    # present here is never filtered, so an active course can never be dropped.
+    course_keys = {}
+    for r in rows:
+        ci, subj, num = r[0], r[2], r[3]
+        su = str(subj or "").strip().upper()
+        if not su:
+            continue
+        course_keys.setdefault(ci, set()).add(su + " " + norm_num(num))
+    keys_payload = {
+        "_built_at": date.today().isoformat(),
+        "_built_by": "kb/_build_coci_lookup.py",
+        "_source": "kb/reference/coci_course_list.xlsx",
+        "_note": ("Current MAP course-catalog keys (SUBJ + normalized number) per "
+                  "college index, for the CPL Pathways retired-course filter. A CER "
+                  "articulation whose (college, subj, num) is absent here is a "
+                  "retired/renumbered course the MAP platform still carries; it is "
+                  "excluded from the directory ✓ count."),
+        "colleges": college_list,
+        "keys": {str(ci): sorted(v) for ci, v in sorted(course_keys.items())},
+    }
+    with open("cpl_coci_course_keys.js", "w", encoding="utf-8") as f:
+        f.write("window.CPL_COCI_COURSE_KEYS = ")
+        json.dump(keys_payload, f, ensure_ascii=False, separators=(",", ":"))
+        f.write(";\n")
+
     import os
     main_mb = os.path.getsize("coci_lookup_data.js") / 1e6
     shard_mb = sum(os.path.getsize(f"coci_lookup_desc_{k}.js") for k in shards) / 1e6
+    keys_mb = os.path.getsize("cpl_coci_course_keys.js") / 1e6
+    n_keys = sum(len(v) for v in course_keys.values())
     print(f"rows: {len(rows):,} | colleges: {len(college_list)} | "
           f"M-ID chips: {mid_hits:,} | shards: {len(shards)}")
     print(f"coci_lookup_data.js: {main_mb:.1f} MB | desc shards total: {shard_mb:.1f} MB")
+    print(f"cpl_coci_course_keys.js: {keys_mb:.2f} MB | course keys: {n_keys:,}")
 
 
 if __name__ == "__main__":
