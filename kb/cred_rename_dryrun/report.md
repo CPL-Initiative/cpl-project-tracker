@@ -1,6 +1,6 @@
 # Credential Rename Dry-Run — 2026-07-14
 
-Generated: `2026-07-14T14:19:50Z`
+Generated: `2026-07-14T19:13:32Z`
 
 **Mode B preview** — projects `unified_title_override` curator entries from `kb/credential_review_overlay.json` onto the post-rename state of the three credential-identity files (`unified_titles.json`, `credentials.json`, `coci_articulations.json`). Reports collisions + downstream impact. **Does NOT apply.** Apply is Cred-Ref PR-5b/1, manual workflow_dispatch.
 
@@ -18,6 +18,16 @@ Generated: `2026-07-14T14:19:50Z`
 
 | Old unified_title | ⇒ folds into | Records folding | Already on target | raw_titles | articulations |
 |---|---|---:|---:|---:|---:|
+| `ASE A1 — Engine Repair (with Practical Assessment)` | ⇒ `ASE A1 — Engine Repair` | 1 | 1 | 1 | 1 |
+| `ASE A2 — Automatic Transmission/Transaxle (with Practical Assessment)` | ⇒ `ASE A2 — Automatic Transmission/Transaxle` | 1 | 1 | 1 | 1 |
+| `ASE A3 — Manual Drive Train and Axles (with Practical Assessment)` | ⇒ `ASE A3 — Manual Drive Train and Axles` | 1 | 1 | 1 | 1 |
+| `ASE A4 — Suspension and Steering (with Practical Assessment)` | ⇒ `ASE A4 — Suspension and Steering` | 1 | 1 | 1 | 1 |
+| `ASE A5 — Brakes (with Practical Assessment)` | ⇒ `ASE A5 — Brakes` | 1 | 1 | 1 | 1 |
+| `ASE A6 — Electrical/Electronic Systems (with Practical Assessment)` | ⇒ `ASE A6 — Electrical/Electronic Systems` | 1 | 1 | 1 | 1 |
+| `ASE A7 — Heating and Air Conditioning (with Practical Assessment)` | ⇒ `ASE A7 — Heating and Air Conditioning` | 1 | 1 | 1 | 1 |
+| `ASE A8 — Engine Performance (with Practical Assessment)` | ⇒ `ASE A8 — Engine Performance` | 1 | 2 | 1 | 1 |
+| `ASE G1 — Auto Maintenance and Light Repair (with Practical Assessment)` | ⇒ `ASE G1 — Auto Maintenance and Light Repair` | 1 | 1 | 1 | 1 |
+| `ASE L1 — Advanced Engine Performance Specialist (with Practical Assessment)` | ⇒ `ASE L1 — Advanced Engine Performance Specialist` | 1 | 1 | 1 | 1 |
 | `Carpenters Apprenticeship — CARP 005` | ⇒ `Blueprint Reading-Residential` | 1 | 1 | 1 | 0 |
 | `Carpenters Apprenticeship — CARP 017` | ⇒ `Introduction to Welding and Cutting` | 1 | 1 | 1 | 0 |
 | `Carpenters Training Committee for Northern California Apprenticeship — CARP 310` | ⇒ `Layout/Leveling Construction Site Practice` | 1 | 1 | 1 | 0 |

@@ -79,7 +79,7 @@
     "_notes": "Local college portfolio competency in construction framing."
   },
   " PLNT SC 812 - Landscape Installation and Maintenance I": {
-    "unified_title": "Landscape Installation and Maintenance I",
+    "unified_title": "Landscape Installation and Maintenance 1",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8437,7 +8437,7 @@
     "_notes": "Local CBE for an architecture course; specific credential identity not derivable from title alone."
   },
   "ARC 172 - Architectural Drawing I": {
-    "unified_title": "Architectural Drawing I",
+    "unified_title": "Architectural Drawing 1",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8450,7 +8450,7 @@
     "_notes": "Local college CBE; mapped to course-name credential."
   },
   "ARC 172 CBE": {
-    "unified_title": "Architectural Drawing I",
+    "unified_title": "Architectural Drawing 1",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8463,7 +8463,7 @@
     "_notes": "Likely same as ARC 172 - Architectural Drawing I but lacks descriptive text; low confidence."
   },
   "ARC 291 - Strength of Architectural Materials I": {
-    "unified_title": "Strength of Architectural Materials I",
+    "unified_title": "Strength of Architectural Materials 1",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10302,7 +10302,7 @@
     "_notes": "Local college course."
   },
   "Apparel Construction I": {
-    "unified_title": "Apparel Construction I",
+    "unified_title": "Apparel Construction 1",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10315,7 +10315,7 @@
     "_notes": "Local college course."
   },
   "Apparel Construction I Lab": {
-    "unified_title": "Apparel Construction I Lab",
+    "unified_title": "Apparel Construction 1 Lab",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10341,7 +10341,7 @@
     "_notes": "Local college course."
   },
   "Applied Biotechnology I": {
-    "unified_title": "Applied Biotechnology I",
+    "unified_title": "Applied Biotechnology 1",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10617,7 +10617,7 @@
     "_merge_note": "merged from credential 'AP Art and Design: Drawing' (curator)"
   },
   "Art of Graphic Design I (UC) - Canyon High School": {
-    "unified_title": "Art of Graphic Design I",
+    "unified_title": "Art of Graphic Design 1",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10630,7 +10630,7 @@
     "_notes": "HS articulated course."
   },
   "Art of Graphic Design I (UC) - Orange High School": {
-    "unified_title": "Art of Graphic Design I",
+    "unified_title": "Art of Graphic Design 1",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11578,7 +11578,7 @@
     "_notes": null
   },
   "Automotive Services Excellence 1 (A1) Certificate + Practical Assessment": {
-    "unified_title": "ASE A1 — Engine Repair (with Practical Assessment)",
+    "unified_title": "ASE A1 — Engine Repair",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11604,7 +11604,7 @@
     "_notes": null
   },
   "Automotive Services Excellence 2 (A2) Certificate + Practical Assessment": {
-    "unified_title": "ASE A2 — Automatic Transmission/Transaxle (with Practical Assessment)",
+    "unified_title": "ASE A2 — Automatic Transmission/Transaxle",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11630,7 +11630,7 @@
     "_notes": null
   },
   "Automotive Services Excellence 3 (A3) Certificate + Practical Assessment": {
-    "unified_title": "ASE A3 — Manual Drive Train and Axles (with Practical Assessment)",
+    "unified_title": "ASE A3 — Manual Drive Train and Axles",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11656,7 +11656,7 @@
     "_notes": null
   },
   "Automotive Services Excellence 4 (A4) Certificate + Practical Assessment": {
-    "unified_title": "ASE A4 — Suspension and Steering (with Practical Assessment)",
+    "unified_title": "ASE A4 — Suspension and Steering",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11682,7 +11682,7 @@
     "_notes": null
   },
   "Automotive Services Excellence 5 (A5) Certificate + Practical Assessment": {
-    "unified_title": "ASE A5 — Brakes (with Practical Assessment)",
+    "unified_title": "ASE A5 — Brakes",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11708,7 +11708,7 @@
     "_notes": null
   },
   "Automotive Services Excellence 6 (A6) Certificate + Practical Assessment": {
-    "unified_title": "ASE A6 — Electrical/Electronic Systems (with Practical Assessment)",
+    "unified_title": "ASE A6 — Electrical/Electronic Systems",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11734,7 +11734,7 @@
     "_notes": null
   },
   "Automotive Services Excellence 7 (A7) Certificate + Practical Assessment": {
-    "unified_title": "ASE A7 — Heating and Air Conditioning (with Practical Assessment)",
+    "unified_title": "ASE A7 — Heating and Air Conditioning",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11760,7 +11760,7 @@
     "_notes": null
   },
   "Automotive Services Excellence 8 (A8) Certificate + Practical Assessment": {
-    "unified_title": "ASE A8 — Engine Performance (with Practical Assessment)",
+    "unified_title": "ASE A8 — Engine Performance",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11799,7 +11799,7 @@
     "_notes": null
   },
   "Automotive Services Excellence G1 Certificate + Practical Assessment": {
-    "unified_title": "ASE G1 — Auto Maintenance and Light Repair (with Practical Assessment)",
+    "unified_title": "ASE G1 — Auto Maintenance and Light Repair",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11825,7 +11825,7 @@
     "_notes": null
   },
   "Automotive Services Excellence L1 Certificate + Practical Assessment": {
-    "unified_title": "ASE L1 — Advanced Engine Performance Specialist (with Practical Assessment)",
+    "unified_title": "ASE L1 — Advanced Engine Performance Specialist",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11929,7 +11929,7 @@
     "_notes": "BAR = California Bureau of Automotive Repair; Smog Check Inspector/Repair tech licensing."
   },
   "BIM and Sustainable Design Strategies I": {
-    "unified_title": "BIM and Sustainable Design Strategies I",
+    "unified_title": "BIM and Sustainable Design Strategies 1",
     "confidence_title": 0.5,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -13586,7 +13586,7 @@
     "_notes": "Local CBE; ECE curriculum course."
   },
   "CLEP  French Level I (SAC Associate Degree Units)": {
-    "unified_title": "CLEP French Language Level I",
+    "unified_title": "CLEP French Language Level 1",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -13599,7 +13599,7 @@
     "_notes": null
   },
   "CLEP  German Level I (SAC Associate Degree Units)": {
-    "unified_title": "CLEP German Language Level I",
+    "unified_title": "CLEP German Language Level 1",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -13717,7 +13717,7 @@
     "_merge_note": "merged from credential 'CLEP College Algebra — Trigonometry' (curator)"
   },
   "CLEP : German Level II": {
-    "unified_title": "CLEP German Language Level II",
+    "unified_title": "CLEP German Language Level 2",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -13730,7 +13730,7 @@
     "_notes": null
   },
   "CLEP : History, United States I": {
-    "unified_title": "CLEP History of the United States I",
+    "unified_title": "CLEP History of the United States 1",
     "confidence_title": 0.98,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -13847,7 +13847,7 @@
     "_notes": null
   },
   "CLEP : Spanish Level II": {
-    "unified_title": "CLEP Spanish Language Level II",
+    "unified_title": "CLEP Spanish Language Level 2",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -13886,7 +13886,7 @@
     "_notes": "Legacy CLEP subject test."
   },
   "CLEP : Western Civilization I  Area 3": {
-    "unified_title": "CLEP Western Civilization I",
+    "unified_title": "CLEP Western Civilization 1",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -13899,7 +13899,7 @@
     "_notes": "Stripped Cal-GETC area suffix."
   },
   "CLEP : Western Civilization I  Area 4": {
-    "unified_title": "CLEP Western Civilization I",
+    "unified_title": "CLEP Western Civilization 1",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -13912,7 +13912,7 @@
     "_notes": "Stripped Cal-GETC area suffix."
   },
   "CLEP : Western Civilization II": {
-    "unified_title": "CLEP Western Civilization II",
+    "unified_title": "CLEP Western Civilization 2",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -14315,7 +14315,7 @@
     "_notes": null
   },
   "CLEP Exam French Language, Level I (Score of 50 or higher)": {
-    "unified_title": "CLEP French Language Level I",
+    "unified_title": "CLEP French Language Level 1",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -14328,7 +14328,7 @@
     "_notes": "Stripped score qualifier."
   },
   "CLEP Exam French Language, Level II (Score of 59 or higher)": {
-    "unified_title": "CLEP French Language Level II",
+    "unified_title": "CLEP French Language Level 2",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -14341,7 +14341,7 @@
     "_notes": "Stripped score qualifier."
   },
   "CLEP Exam German Language, Level I (Score of 50 or higher)": {
-    "unified_title": "CLEP German Language Level I",
+    "unified_title": "CLEP German Language Level 1",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -14354,7 +14354,7 @@
     "_notes": "Stripped score qualifier."
   },
   "CLEP Exam German Language, Level II (Score of 60 or higher)": {
-    "unified_title": "CLEP German Language Level II",
+    "unified_title": "CLEP German Language Level 2",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -14367,7 +14367,7 @@
     "_notes": "Stripped score qualifier."
   },
   "CLEP Exam History, United States I (Score of 50 or higher)": {
-    "unified_title": "CLEP History of the United States I",
+    "unified_title": "CLEP History of the United States 1",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -14380,7 +14380,7 @@
     "_notes": "Stripped score qualifier."
   },
   "CLEP Exam History, United States II (Score of 50 or higher)": {
-    "unified_title": "CLEP History of the United States II",
+    "unified_title": "CLEP History of the United States 2",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -14562,7 +14562,7 @@
     "_notes": null
   },
   "CLEP Exam Spanish Level I (Score of 50 or higher)": {
-    "unified_title": "CLEP Spanish Language Level I",
+    "unified_title": "CLEP Spanish Language Level 1",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -14575,7 +14575,7 @@
     "_notes": "Stripped score qualifier."
   },
   "CLEP Exam Spanish Level II (Score of 63 or higher)": {
-    "unified_title": "CLEP Spanish Language Level II",
+    "unified_title": "CLEP Spanish Language Level 2",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -14588,7 +14588,7 @@
     "_notes": "Stripped score qualifier."
   },
   "CLEP Exam Spanish with Writing I (Score of 50 or higher)": {
-    "unified_title": "CLEP Spanish with Writing Level I",
+    "unified_title": "CLEP Spanish with Writing Level 1",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -14614,7 +14614,7 @@
     "_notes": "Stripped score qualifier."
   },
   "CLEP Exam Western Civilization I (Score of 50 or higher)": {
-    "unified_title": "CLEP Western Civilization I",
+    "unified_title": "CLEP Western Civilization 1",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -14627,7 +14627,7 @@
     "_notes": "Stripped score qualifier."
   },
   "CLEP Exam Western Civilization Ii (Score of 50 or higher)": {
-    "unified_title": "CLEP Western Civilization II",
+    "unified_title": "CLEP Western Civilization 2",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -14761,7 +14761,7 @@
     "_notes": null
   },
   "CLEP Exam: History of the United States I": {
-    "unified_title": "CLEP History of the United States I",
+    "unified_title": "CLEP History of the United States 1",
     "confidence_title": 0.98,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -14774,7 +14774,7 @@
     "_notes": null
   },
   "CLEP Exam: History of the United States II": {
-    "unified_title": "CLEP History of the United States II",
+    "unified_title": "CLEP History of the United States 2",
     "confidence_title": 0.98,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -14943,7 +14943,7 @@
     "_notes": "Legacy CLEP exam."
   },
   "CLEP Exam: Spanish Language Level II": {
-    "unified_title": "CLEP Spanish Language Level II",
+    "unified_title": "CLEP Spanish Language Level 2",
     "confidence_title": 0.98,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -14956,7 +14956,7 @@
     "_notes": null
   },
   "CLEP Exam: Western Civilization I: Ancient Near East to 1648": {
-    "unified_title": "CLEP Western Civilization I",
+    "unified_title": "CLEP Western Civilization 1",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -14969,7 +14969,7 @@
     "_notes": "Stripped descriptive subtitle."
   },
   "CLEP Exam: Western Civilization II: 1648 to Present": {
-    "unified_title": "CLEP Western Civilization II",
+    "unified_title": "CLEP Western Civilization 2",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15022,7 +15022,7 @@
     "_notes": "Stripped college-specific articulation note."
   },
   "CLEP French Level I": {
-    "unified_title": "CLEP French Language Level I",
+    "unified_title": "CLEP French Language Level 1",
     "confidence_title": 0.96,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15036,7 +15036,7 @@
     "_notes": null
   },
   "CLEP French Level I (CSU Semester Units Earned Toward CSU Admission)": {
-    "unified_title": "CLEP French Language Level I",
+    "unified_title": "CLEP French Language Level 1",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15049,7 +15049,7 @@
     "_notes": "Stripped CSU articulation note."
   },
   "CLEP French Level II": {
-    "unified_title": "CLEP French Language Level II",
+    "unified_title": "CLEP French Language Level 2",
     "confidence_title": 0.96,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15065,7 +15065,7 @@
     "_notes": null
   },
   "CLEP French Level II (Required Score of 59)": {
-    "unified_title": "CLEP French Language Level II",
+    "unified_title": "CLEP French Language Level 2",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15078,7 +15078,7 @@
     "_notes": "Stripped score qualifier."
   },
   "CLEP German Level I": {
-    "unified_title": "CLEP German Language Level I",
+    "unified_title": "CLEP German Language Level 1",
     "confidence_title": 0.96,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15092,7 +15092,7 @@
     "_notes": null
   },
   "CLEP German Level I (CSU Semester Units Earned Toward CSU Admission)": {
-    "unified_title": "CLEP German Language Level I",
+    "unified_title": "CLEP German Language Level 1",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15105,7 +15105,7 @@
     "_notes": "Stripped CSU articulation note."
   },
   "CLEP German Level II": {
-    "unified_title": "CLEP German Language Level II",
+    "unified_title": "CLEP German Language Level 2",
     "confidence_title": 0.96,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15122,7 +15122,7 @@
     "_notes": null
   },
   "CLEP History, US I": {
-    "unified_title": "CLEP History of the United States I",
+    "unified_title": "CLEP History of the United States 1",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15135,7 +15135,7 @@
     "_notes": null
   },
   "CLEP History, US II": {
-    "unified_title": "CLEP History of the United States II",
+    "unified_title": "CLEP History of the United States 2",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15148,7 +15148,7 @@
     "_notes": null
   },
   "CLEP History, United States I": {
-    "unified_title": "CLEP History of the United States I",
+    "unified_title": "CLEP History of the United States 1",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15164,7 +15164,7 @@
     "_notes": null
   },
   "CLEP History, United States II": {
-    "unified_title": "CLEP History of the United States II",
+    "unified_title": "CLEP History of the United States 2",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15639,7 +15639,7 @@
     "_notes": "Trailing whitespace."
   },
   "CLEP Spanish Level I": {
-    "unified_title": "CLEP Spanish Language Level I",
+    "unified_title": "CLEP Spanish Language Level 1",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15652,7 +15652,7 @@
     "_notes": null
   },
   "CLEP Spanish Level I (CSU Semester Units Earned Toward CSU Admission)": {
-    "unified_title": "CLEP Spanish Language Level I",
+    "unified_title": "CLEP Spanish Language Level 1",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15665,7 +15665,7 @@
     "_notes": "CSU articulation suffix stripped."
   },
   "CLEP Spanish Level I (SAC Associate Degree Units)": {
-    "unified_title": "CLEP Spanish Language Level I",
+    "unified_title": "CLEP Spanish Language Level 1",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15678,7 +15678,7 @@
     "_notes": "SAC unit-type suffix stripped."
   },
   "CLEP Spanish Level II": {
-    "unified_title": "CLEP Spanish Language Level II",
+    "unified_title": "CLEP Spanish Language Level 2",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15693,7 +15693,7 @@
     "_notes": null
   },
   "CLEP Spanish Level II (required Score of 63)": {
-    "unified_title": "CLEP Spanish Language Level II",
+    "unified_title": "CLEP Spanish Language Level 2",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15706,7 +15706,7 @@
     "_notes": "Score qualifier stripped."
   },
   "CLEP Spanish With Writing I (CSU Semester Units Earned Toward CSU Admission)": {
-    "unified_title": "CLEP Spanish with Writing I",
+    "unified_title": "CLEP Spanish with Writing 1",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15719,7 +15719,7 @@
     "_notes": "CSU articulation suffix stripped."
   },
   "CLEP Spanish With Writing I (SAC Associate Degree Units)": {
-    "unified_title": "CLEP Spanish with Writing I",
+    "unified_title": "CLEP Spanish with Writing 1",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15732,7 +15732,7 @@
     "_notes": "SAC unit-type suffix stripped."
   },
   "CLEP Spanish With Writing II (required Score of 63)": {
-    "unified_title": "CLEP Spanish with Writing II",
+    "unified_title": "CLEP Spanish with Writing 2",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15745,7 +15745,7 @@
     "_notes": "Score qualifier stripped."
   },
   "CLEP Spanish with Writing II": {
-    "unified_title": "CLEP Spanish with Writing II",
+    "unified_title": "CLEP Spanish with Writing 2",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15786,7 +15786,7 @@
     "_notes": "Version qualifier stripped per Rule 3."
   },
   "CLEP Western Civilization I": {
-    "unified_title": "CLEP Western Civilization I",
+    "unified_title": "CLEP Western Civilization 1",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15800,7 +15800,7 @@
     "_notes": null
   },
   "CLEP Western Civilization I (Area 3)": {
-    "unified_title": "CLEP Western Civilization I",
+    "unified_title": "CLEP Western Civilization 1",
     "confidence_title": 0.93,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15813,7 +15813,7 @@
     "_notes": "GE area suffix stripped."
   },
   "CLEP Western Civilization I (Area 4)": {
-    "unified_title": "CLEP Western Civilization I",
+    "unified_title": "CLEP Western Civilization 1",
     "confidence_title": 0.93,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15826,7 +15826,7 @@
     "_notes": "GE area suffix stripped."
   },
   "CLEP Western Civilization I (Local GE Area 3B)": {
-    "unified_title": "CLEP Western Civilization I",
+    "unified_title": "CLEP Western Civilization 1",
     "confidence_title": 0.93,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15839,7 +15839,7 @@
     "_notes": "GE area suffix stripped."
   },
   "CLEP Western Civilization I (Local GE Area 4B)": {
-    "unified_title": "CLEP Western Civilization I",
+    "unified_title": "CLEP Western Civilization 1",
     "confidence_title": 0.93,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15852,7 +15852,7 @@
     "_notes": "GE area suffix stripped."
   },
   "CLEP Western Civilization II": {
-    "unified_title": "CLEP Western Civilization II",
+    "unified_title": "CLEP Western Civilization 2",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -15868,7 +15868,7 @@
     "_notes": null
   },
   "CLEP Western Civilizations II": {
-    "unified_title": "CLEP Western Civilization II",
+    "unified_title": "CLEP Western Civilization 2",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -16479,7 +16479,7 @@
     "_notes": "AP credit articulating to a programming course; likely AP CS A."
   },
   "CSCI 271\tProblem Solving and Programming 1 - Credit by Exam": {
-    "unified_title": "Programming Concepts and Methodology I",
+    "unified_title": "Programming Concepts and Methodology 1",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -16569,7 +16569,7 @@
     "_notes": "Curator triage superseded the unreviewed machine classification 'Generic Credit by Exam — San Bernardino Valley College Culinary' (conf 0.45)."
   },
   "CULART 011 CBE": {
-    "unified_title": "Restaurant Service and Catering II",
+    "unified_title": "Restaurant Service and Catering 2",
     "confidence_title": 0.45,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -16595,7 +16595,7 @@
     "_notes": "Local college course content via portfolio review."
   },
   "CULART 044 CBE": {
-    "unified_title": "Restaurant Service and Catering II",
+    "unified_title": "Restaurant Service and Catering 2",
     "confidence_title": 0.45,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -16608,7 +16608,7 @@
     "_notes": "Course code only; college-specific CBE bucket."
   },
   "CULART 240 CBE": {
-    "unified_title": "Restaurant Service and Catering II",
+    "unified_title": "Restaurant Service and Catering 2",
     "confidence_title": 0.45,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -16633,7 +16633,7 @@
     "_notes": "Curator triage superseded the unreviewed machine classification 'Generic Credit by Exam — San Bernardino Valley College Culinary' (conf 0.45)."
   },
   "CULART010": {
-    "unified_title": "Restaurant Service and Catering II",
+    "unified_title": "Restaurant Service and Catering 2",
     "confidence_title": 0.45,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17116,7 +17116,7 @@
     "_notes": null
   },
   "Cal-JAC Fire Inspector Certificate": {
-    "unified_title": "Fire Inspector I",
+    "unified_title": "Fire Inspector 1",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17316,7 +17316,7 @@
     "_merge_note": "merged from credential 'CDCR Correctional Officer Academy' (curator)"
   },
   "California Emergency Medical Technician 2": {
-    "unified_title": "EMT-II Certification",
+    "unified_title": "EMT-2 Certification",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17407,7 +17407,7 @@
     "_notes": "Module-level apprenticeship coursework."
   },
   "Carpenter’s Training Center CTCNC CARP 002": {
-    "unified_title": "Introduction to Apprenticeship II",
+    "unified_title": "Introduction to Apprenticeship 2",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17433,7 +17433,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 005": {
-    "unified_title": "Carpenters Apprenticeship — CARP 005",
+    "unified_title": "Blueprint Reading-Residential",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17589,7 +17589,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 017": {
-    "unified_title": "Carpenters Apprenticeship — CARP 017",
+    "unified_title": "Introduction to Welding and Cutting",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17641,7 +17641,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 101": {
-    "unified_title": "Introduction to Apprenticeship I",
+    "unified_title": "Introduction to Apprenticeship 1",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18265,7 +18265,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 310": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 310",
+    "unified_title": "Layout/Leveling Construction Site Practice",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18330,7 +18330,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 315": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 315",
+    "unified_title": "Blueprint Reading-Commercial",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18460,7 +18460,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 605": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 605",
+    "unified_title": "Blueprint Reading-Residential",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18486,7 +18486,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 701": {
-    "unified_title": "Introduction to Acoustical Apprenticeship II",
+    "unified_title": "Introduction to Acoustical Apprenticeship 2",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18499,7 +18499,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 702": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 702",
+    "unified_title": "Blueprint Reading-Residential",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18525,7 +18525,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 704": {
-    "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 704",
+    "unified_title": "Interior Systems",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19175,7 +19175,7 @@
     "_notes": "Local college trade-skill exhibit."
   },
   "Center for Financial Training CFTA-0015 Supervision": {
-    "unified_title": "Center for Financial Training (CFT) — Supervision (CFTA-0015)",
+    "unified_title": "Center for Financial Training (CFT) — Supervision",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19188,7 +19188,7 @@
     "_notes": "Course code preserved as part of CFT credential identity."
   },
   "Center for Financial Training CFTA-0019 Management": {
-    "unified_title": "Center for Financial Training (CFT) — Management (CFTA-0019)",
+    "unified_title": "Center for Financial Training (CFT) — Management",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19201,7 +19201,7 @@
     "_notes": "CFT module."
   },
   "Center for Financial Training: CFTA-0009 Human Relations": {
-    "unified_title": "Center for Financial Training (CFT) — Human Relations (CFTA-0009)",
+    "unified_title": "Center for Financial Training (CFT) — Human Relations",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19214,7 +19214,7 @@
     "_notes": "CFT module."
   },
   "Center for Financial Training: CFTA-0012 Marketing": {
-    "unified_title": "Center for Financial Training (CFT) — Marketing (CFTA-0012)",
+    "unified_title": "Center for Financial Training (CFT) — Marketing",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19227,7 +19227,7 @@
     "_notes": "CFT module."
   },
   "Center for Financial Training: CFTA-0025 Human Resources Management; ": {
-    "unified_title": "Center for Financial Training (CFT) — Human Resources Management (CFTA-0025)",
+    "unified_title": "Center for Financial Training (CFT) — Human Resources Management",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19391,7 +19391,7 @@
     "_notes": null
   },
   "Chaffey Joint Union - Rancho Cucamonga HS - Advanced Engineering Design II H 1&2\t": {
-    "unified_title": "Engineering Design II Honors Advanced",
+    "unified_title": "Engineering Design 2 Honors Advanced",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19597,7 +19597,7 @@
     "_notes": "Likely first Networking Academy course; mapped under generic Cisco Networking Academy curriculum."
   },
   "Class Piano - Beginning II": {
-    "unified_title": "Class Piano — Beginning II",
+    "unified_title": "Class Piano — Beginning 2",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19623,7 +19623,7 @@
     "_notes": "ASE A7 subtest code preserved per Rule 8b."
   },
   "Clinical Education IV (DMS 237 C)": {
-    "unified_title": "Diagnostic Medical Sonography — Clinical Education IV",
+    "unified_title": "Diagnostic Medical Sonography — Clinical Education 4",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21217,7 +21217,7 @@
     "_notes": "Same course content as PHTO 72 below; unified."
   },
   "Credit by Exam MATH 1 Calculus I": {
-    "unified_title": "Single Variable Calculus I Early Transcendentals",
+    "unified_title": "Single Variable Calculus 1 Early Transcendentals",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21230,7 +21230,7 @@
     "_notes": null
   },
   "Credit by Exam MATH 2 Calculus II": {
-    "unified_title": "Calculus II",
+    "unified_title": "Calculus 2",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21308,7 +21308,7 @@
     "_notes": "Same as JAMS 12 — unified."
   },
   "Credit by Exam SPAN 1B Elementary Spanish": {
-    "unified_title": "Elementary Spanish I",
+    "unified_title": "Elementary Spanish 1",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21646,7 +21646,7 @@
     "_notes": null
   },
   "Credit by Exam- Patient-Centered Care I and Family-Centered Care of Children": {
-    "unified_title": "Patient-Centered Care I and Family-Centered Care of Children",
+    "unified_title": "Patient-Centered Care 1 and Family-Centered Care of Children",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21659,7 +21659,7 @@
     "_notes": "Nursing program course."
   },
   "Credit by Exam- Patient-Centered Care II and Maternal Newborn and Mental Health Nursing": {
-    "unified_title": "Patient-Centered Care II and Maternal Newborn and Mental Health Nursing",
+    "unified_title": "Patient-Centered Care 2 and Maternal Newborn and Mental Health Nursing",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21672,7 +21672,7 @@
     "_notes": null
   },
   "Credit by Exam- Patient-Centered Care II and Maternal Newborn and Mental Health Nursing: 30-UO": {
-    "unified_title": "Patient-Centered Care II and Maternal Newborn and Mental Health Nursing",
+    "unified_title": "Patient-Centered Care 2 and Maternal Newborn and Mental Health Nursing",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21685,7 +21685,7 @@
     "_notes": "'30-UO' is a unit-option variant; same credential."
   },
   "Credit by Exam- Patient-Centered Care III and Transition to Professional Practice": {
-    "unified_title": "Patient-Centered Care III and Transition to Professional Practice",
+    "unified_title": "Patient-Centered Care 3 and Transition to Professional Practice",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21698,7 +21698,7 @@
     "_notes": null
   },
   "Credit by Exam- Patient-Centered Care III and Transition to Professional Practice: 30-UO": {
-    "unified_title": "Patient-Centered Care III and Transition to Professional Practice",
+    "unified_title": "Patient-Centered Care 3 and Transition to Professional Practice",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21724,7 +21724,7 @@
     "_notes": null
   },
   "Credit by Exam- Voice Development I": {
-    "unified_title": "Voice Development I",
+    "unified_title": "Voice Development 1",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21737,7 +21737,7 @@
     "_notes": null
   },
   "Credit by Exam- Voice Development II": {
-    "unified_title": "Voice Development II",
+    "unified_title": "Voice Development 2",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21750,7 +21750,7 @@
     "_notes": null
   },
   "Credit by Exam- Voice Technique I": {
-    "unified_title": "Voice Technique I",
+    "unified_title": "Voice Technique 1",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21763,7 +21763,7 @@
     "_notes": null
   },
   "Credit by Exam- Voice Technique II": {
-    "unified_title": "Voice Technique II",
+    "unified_title": "Voice Technique 2",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21841,7 +21841,7 @@
     "_notes": "Law enforcement course."
   },
   "Credit by Exam-Street Dance I": {
-    "unified_title": "Street Dance I",
+    "unified_title": "Street Dance 1",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21854,7 +21854,7 @@
     "_notes": null
   },
   "Credit by Exam-Street Dance II": {
-    "unified_title": "Street Dance II",
+    "unified_title": "Street Dance 2",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21867,7 +21867,7 @@
     "_notes": null
   },
   "Credit by Exam-Street Dance III": {
-    "unified_title": "Street Dance III",
+    "unified_title": "Street Dance 3",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21880,7 +21880,7 @@
     "_notes": null
   },
   "Credit by Exam-Street Dance IV": {
-    "unified_title": "Street Dance IV",
+    "unified_title": "Street Dance 4",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -22036,7 +22036,7 @@
     "_notes": "Generic title; likely automotive service/repair course but unclear."
   },
   "Credit by Exam: Spanish 1 (SPA-1)": {
-    "unified_title": "Elementary Spanish I",
+    "unified_title": "Elementary Spanish 1",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -22114,7 +22114,7 @@
     "_notes": "CPL Type is Industry Certification but no clear external issuer named; likely linked to ASE-related training."
   },
   "Credit by Industry Certification CNT 7401 Red Hat Linux Administration I": {
-    "unified_title": "Red Hat Linux Administration I",
+    "unified_title": "Red Hat Linux Administration 1",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -22127,7 +22127,7 @@
     "_notes": "References Red Hat Linux Admin curriculum; issuer likely Red Hat (RHCSA-related)."
   },
   "Credit by Industry Recognized Training CS 41 Red Hat Linux Administration I": {
-    "unified_title": "Red Hat Linux Administration I",
+    "unified_title": "Red Hat Linux Administration 1",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -23241,7 +23241,7 @@
     "_notes": "DANTES sponsors the DSST exam series; canonical name is DSST Principles of Finance."
   },
   "DANTES Principles of Physical Science 1": {
-    "unified_title": "DSST Principles of Physical Science I",
+    "unified_title": "DSST Principles of Physical Science 1",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -23501,7 +23501,7 @@
     "_notes": null
   },
   "DSST : Principles of Physical Science": {
-    "unified_title": "DSST Principles of Physical Science I",
+    "unified_title": "DSST Principles of Physical Science 1",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -23721,7 +23721,7 @@
     "_notes": "Local ART 031 course."
   },
   "Digital Video I": {
-    "unified_title": "Digital Video I",
+    "unified_title": "Digital Video 1",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -24905,7 +24905,7 @@
     "_notes": "Course-section variant; unified with general Elementary Japanese."
   },
   "Elementary Spanish I": {
-    "unified_title": "Elementary Spanish I",
+    "unified_title": "Elementary Spanish 1",
     "confidence_title": 0.88,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -24918,7 +24918,7 @@
     "_notes": "Local college language course."
   },
   "Elementary Spanish I SPAN 001 Cx": {
-    "unified_title": "Elementary Spanish I",
+    "unified_title": "Elementary Spanish 1",
     "confidence_title": 0.88,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -25598,7 +25598,7 @@
     "_notes": "Local college course (likely locksmithing/security)."
   },
   "Exploring Culture through Academic Discourse 1 (ESL 108 C)": {
-    "unified_title": "Exploring Culture through Academic Discourse I",
+    "unified_title": "Exploring Culture through Academic Discourse 1",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -25611,7 +25611,7 @@
     "_notes": "Local college ESL course; code stripped."
   },
   "Exploring Culture through Academic Discourse II (ESL 109C)": {
-    "unified_title": "Exploring Culture through Academic Discourse II",
+    "unified_title": "Exploring Culture through Academic Discourse 2",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -28466,7 +28466,7 @@
     "_notes": "Local college portfolio-review exhibit; specialized machining skill."
   },
   "French Level II": {
-    "unified_title": "French — Level II",
+    "unified_title": "French — Level 2",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -28635,7 +28635,7 @@
     "_notes": "Local CBE lab."
   },
   "Funeral Service Administration II (MORT 204 C)": {
-    "unified_title": "Funeral Service Administration II",
+    "unified_title": "Funeral Service Administration 2",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -28648,7 +28648,7 @@
     "_notes": "Cypress mortuary course CBE."
   },
   "Funeral Service Ethics Laws I (MORT 234 C)": {
-    "unified_title": "Funeral Service Ethics and Laws I",
+    "unified_title": "Funeral Service Ethics and Laws 1",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -28661,7 +28661,7 @@
     "_notes": "Cypress mortuary course CBE."
   },
   "Funeral Service Ethics/Laws II (MORT 236 C)": {
-    "unified_title": "Funeral Service Ethics and Laws II",
+    "unified_title": "Funeral Service Ethics and Laws 2",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -28857,7 +28857,7 @@
     "_notes": "Norco construction portfolio item; concrete formwork skill."
   },
   "Garde Manger II": {
-    "unified_title": "Garde Manger II",
+    "unified_title": "Garde Manger 2",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -29015,7 +29015,7 @@
     "_notes": "Same credential, slight wording variant."
   },
   "Graphic Design I (MAD 116 C)": {
-    "unified_title": "Graphic Design I",
+    "unified_title": "Graphic Design 1",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -29200,7 +29200,7 @@
     "_notes": "HS articulation; specific HS not named in this row."
   },
   "HIGH SCHOOL ARTICULATION -  BIRMINGHAM CCHS: ART 604 Graphic Design I": {
-    "unified_title": "Graphic Design I",
+    "unified_title": "Graphic Design 1",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -29304,7 +29304,7 @@
     "_notes": null
   },
   "HIGH SCHOOL ARTICULATION - CLEVELAND HS: ART 604 Graphic Design I": {
-    "unified_title": "Graphic Design I",
+    "unified_title": "Graphic Design 1",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -29525,7 +29525,7 @@
     "_notes": "Local CBE on web fundamentals."
   },
   "HUMSR-147\tField Studies & Seminar I - Industry Certificate": {
-    "unified_title": "Field Studies & Seminar I",
+    "unified_title": "Field Studies & Seminar 1",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -31508,7 +31508,7 @@
     "_notes": "German A1 is the older IB Language A1 (literature) classification; mapped to current Language A: German HL equivalent."
   },
   "ICC Fire Inspector 1 Certificate": {
-    "unified_title": "Fire Inspector I",
+    "unified_title": "Fire Inspector 1",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -31758,7 +31758,7 @@
     "_notes": "Course code stripped; local Cypress College course."
   },
   "IW- Architectural II": {
-    "unified_title": "Ironworker Architectural II",
+    "unified_title": "Ironworker Architectural 2",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -31770,7 +31770,7 @@
     "_notes": "IW likely refers to Ironworker apprenticeship coursework articulated through Cerritos."
   },
   "IW- Architectural III": {
-    "unified_title": "Ironworker Architectural III",
+    "unified_title": "Ironworker Architectural 3",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -31834,7 +31834,7 @@
     "_notes": "Ironworker apprenticeship module; topic ambiguous."
   },
   "IW- Post Tensioning I": {
-    "unified_title": "Ironworker Apprenticeship — Post Tensioning I",
+    "unified_title": "Ironworker Apprenticeship — Post Tensioning 1",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -31847,7 +31847,7 @@
     "_notes": "Ironworker apprenticeship module."
   },
   "IW- Post Tensioning II": {
-    "unified_title": "Ironworker Apprenticeship — Post Tensioning II",
+    "unified_title": "Ironworker Apprenticeship — Post Tensioning 2",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -31872,7 +31872,7 @@
     "_notes": "Ironworker apprenticeship coursework."
   },
   "IW- Structural Steel II": {
-    "unified_title": "Ironworker Structural Steel II",
+    "unified_title": "Ironworker Structural Steel 2",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -31884,7 +31884,7 @@
     "_notes": "Ironworker apprenticeship coursework."
   },
   "IW- Welding I": {
-    "unified_title": "Ironworker Apprenticeship — Welding I",
+    "unified_title": "Ironworker Apprenticeship — Welding 1",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -31897,7 +31897,7 @@
     "_notes": "Ironworker apprenticeship module."
   },
   "IW- Welding II": {
-    "unified_title": "Ironworker Apprenticeship — Welding II",
+    "unified_title": "Ironworker Apprenticeship — Welding 2",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -31910,7 +31910,7 @@
     "_notes": "Ironworker apprenticeship module."
   },
   "IW- Welding III": {
-    "unified_title": "Ironworker Welding III",
+    "unified_title": "Ironworker Welding 3",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -31948,7 +31948,7 @@
     "_notes": "Ironworker apprenticeship module."
   },
   "IW-Reinforcing II": {
-    "unified_title": "Ironworker Apprenticeship — Reinforcing II",
+    "unified_title": "Ironworker Apprenticeship — Reinforcing 2",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -34608,7 +34608,7 @@
     "_notes": null
   },
   "MATH 171\tCalculus: First Course - Advanced Placement": {
-    "unified_title": "Single Variable Calculus I Early Transcendentals",
+    "unified_title": "Single Variable Calculus 1 Early Transcendentals",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -34621,7 +34621,7 @@
     "_notes": "AP Calculus AB articulated to first calculus course."
   },
   "MATH 171\tCalculus: First Course - Credit by Exam": {
-    "unified_title": "Single Variable Calculus I Early Transcendentals",
+    "unified_title": "Single Variable Calculus 1 Early Transcendentals",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -34634,7 +34634,7 @@
     "_notes": null
   },
   "MATH 171\tCalculus: First Course - Industry Certificate": {
-    "unified_title": "Single Variable Calculus I Early Transcendentals",
+    "unified_title": "Single Variable Calculus 1 Early Transcendentals",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -34647,7 +34647,7 @@
     "_notes": "Industry cert mechanism unusual for Calc I."
   },
   "MATH 172\tCalculus: Second Course - Advanced Placement": {
-    "unified_title": "Calculus II",
+    "unified_title": "Calculus 2",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -34660,7 +34660,7 @@
     "_notes": "AP Calculus BC articulated to second calculus course."
   },
   "MATH 172\tCalculus: Second Course - Credit by Exam": {
-    "unified_title": "Calculus II",
+    "unified_title": "Calculus 2",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -35391,7 +35391,7 @@
     "_notes": "Local college course exhibit."
   },
   "McDonald's Corporation MCD-0051 Business Leadership Practices; ": {
-    "unified_title": "McDonald's MCD-0051 Business Leadership Practices",
+    "unified_title": "McDonald's Business Leadership Practices",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -35404,7 +35404,7 @@
     "_notes": "Preserve MCD course code per Rule 8b."
   },
   "McDonald's Corporation MCD-0056 Business Management": {
-    "unified_title": "McDonald's MCD-0056 Business Management",
+    "unified_title": "McDonald's Business Management",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -35417,7 +35417,7 @@
     "_notes": null
   },
   "McDonald's Corporation: MCD-0057 Operations Supervisor MDP": {
-    "unified_title": "McDonald's MCD-0057 Operations Supervisor MDP",
+    "unified_title": "McDonald's Operations Supervisor MDP",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -35430,7 +35430,7 @@
     "_notes": null
   },
   "McDonald's Corporation: MCD-0069 General Manager Business Leader Capstone": {
-    "unified_title": "McDonald's MCD-0069 General Manager Business Leader Capstone",
+    "unified_title": "McDonald's General Manager Business Leader Capstone",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -35443,7 +35443,7 @@
     "_notes": null
   },
   "McDonald's Corporation: MCD-0072 Mid-Management Development Advanced Curriculum: Transition to Role": {
-    "unified_title": "McDonald's MCD-0072 Mid-Management Development Advanced Curriculum",
+    "unified_title": "McDonald's Mid-Management Development Advanced Curriculum",
     "confidence_title": 0.88,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -35456,7 +35456,7 @@
     "_notes": null
   },
   "McDonald's Corporation: MCD-0074 Mid Management Foundations Curriculum: Getting Started & Transition to the Role; ": {
-    "unified_title": "McDonald's MCD-0074 Mid-Management Foundations Curriculum",
+    "unified_title": "McDonald's Mid-Management Foundations Curriculum",
     "confidence_title": 0.88,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -35495,7 +35495,7 @@
     "_notes": "High-school-to-college articulation; trained at the named HS, awarded by Santa Ana College."
   },
   "Medical Core - El Modena High School": {
-    "unified_title": "Medical Core (High School Articulation) — El Modena High School",
+    "unified_title": "Medical Core",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -35508,7 +35508,7 @@
     "_notes": "HS articulation pathway."
   },
   "Medical Core - Orange High School": {
-    "unified_title": "Medical Core (High School Articulation) — Orange High School",
+    "unified_title": "Medical Core",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -35521,7 +35521,7 @@
     "_notes": "HS articulation pathway."
   },
   "Medical Core - Santiago High School": {
-    "unified_title": "Medical Core (High School Articulation) — Santiago High School",
+    "unified_title": "Medical Core",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -35534,7 +35534,7 @@
     "_notes": "HS articulation pathway."
   },
   "Medical Core - Villa Park High School": {
-    "unified_title": "Medical Core (High School Articulation) — Villa Park High School",
+    "unified_title": "Medical Core",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -35612,7 +35612,7 @@
     "_notes": null
   },
   "Metal Building Erection I / Foreman Training": {
-    "unified_title": "Metal Building Erection I / Foreman Training",
+    "unified_title": "Metal Building Erection 1 / Foreman Training",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36103,7 +36103,7 @@
     "_notes": null
   },
   "NFPA Fire Inspector 1 Certification": {
-    "unified_title": "Fire Inspector I",
+    "unified_title": "Fire Inspector 1",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36116,7 +36116,7 @@
     "_notes": "Per Rule 4: unify Fire Inspector I across issuers; issuer field discriminates."
   },
   "NFPA Fire Inspector Certification": {
-    "unified_title": "Fire Inspector I",
+    "unified_title": "Fire Inspector 1",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36142,7 +36142,7 @@
     "_notes": null
   },
   "NFPA Fire Officer 2": {
-    "unified_title": "Fire Officer II",
+    "unified_title": "Fire Officer 2",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -36960,7 +36960,7 @@
     "_notes": "Local course CBE."
   },
   "OSHA 030 - Federal OSHA Outreach: Construction Industry Safety": {
-    "unified_title": "OSHA 030 — Construction Industry Outreach (30-hour)",
+    "unified_title": "OSHA 30 — Construction Industry Outreach (30-hour)",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -37352,7 +37352,7 @@
     "_notes": "Local photography course CBE."
   },
   "PHOTO 74A": {
-    "unified_title": "DSLR and Lighting for Professional Production I Beginning",
+    "unified_title": "DSLR and Lighting for Professional Production 1 Beginning",
     "confidence_title": 0.3,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -37469,7 +37469,7 @@
     "_notes": "Local course portfolio."
   },
   "PLNT SC 701 - Floral Design and Practices I": {
-    "unified_title": "Floral Design and Practices I",
+    "unified_title": "Floral Design and Practices 1",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -39676,7 +39676,7 @@
     "_notes": "Combined module bundle; work-experience alternative noted."
   },
   "SFT Fire Inspector 1 Certification": {
-    "unified_title": "Fire Inspector I",
+    "unified_title": "Fire Inspector 1",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -39757,7 +39757,7 @@
     "_notes": "Multi-credential OR bundle; left as composite."
   },
   "SFT Firefighter 2 + Work Experience": {
-    "unified_title": "SFT Firefighter II",
+    "unified_title": "SFT Firefighter 2",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -39783,7 +39783,7 @@
     "_notes": "Expanded the 'SFT' acronym into the unified title per Skill Rule 1 (titles should read cleanly without context); issuer captured separately."
   },
   "SFT Swiftwater, or Fire Service Training River and Flood Water Rescue, or Rescue 3 International Swiftwater Rescue Technician I Certification": {
-    "unified_title": "Swiftwater Rescue Technician I",
+    "unified_title": "Swiftwater Rescue Technician 1",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -39861,7 +39861,7 @@
     "_notes": null
   },
   "SPAN 1": {
-    "unified_title": "Elementary Spanish I",
+    "unified_title": "Elementary Spanish 1",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -39874,7 +39874,7 @@
     "_notes": "Elementary Spanish course CBE."
   },
   "SPAN 101\tSpanish 1 - Credit by Exam": {
-    "unified_title": "Elementary Spanish I",
+    "unified_title": "Elementary Spanish 1",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -39887,7 +39887,7 @@
     "_notes": null
   },
   "SPAN 101\tSpanish 1 - Industry Certification": {
-    "unified_title": "Elementary Spanish I",
+    "unified_title": "Elementary Spanish 1",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -39900,7 +39900,7 @@
     "_notes": "Likely awarded for an external language certification."
   },
   "SPAN 101\tSpanish 1 - Standardized Assessment": {
-    "unified_title": "Elementary Spanish I",
+    "unified_title": "Elementary Spanish 1",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -39965,7 +39965,7 @@
     "_notes": null
   },
   "SPAN 109\tSpanish for Spanish Speakers 1 - Industry Certification": {
-    "unified_title": "Spanish for Spanish Speakers 1",
+    "unified_title": "Spanish for Heritage Speakers 1",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -39978,7 +39978,7 @@
     "_notes": null
   },
   "SPAN 110\tSpanish for Spanish Speakers 2 - Credit by Exam": {
-    "unified_title": "Spanish for Spanish Speakers 2",
+    "unified_title": "Spanish for Heritage Speakers 2",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -39991,7 +39991,7 @@
     "_notes": null
   },
   "SPAN 110\tSpanish for Spanish Speakers 2 - Industry Certification": {
-    "unified_title": "Spanish for Spanish Speakers 2",
+    "unified_title": "Spanish for Heritage Speakers 2",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -40693,7 +40693,7 @@
     "_notes": "Cabinetmaking/countertop trade area."
   },
   "SolidWorks I": {
-    "unified_title": "SolidWorks I",
+    "unified_title": "SolidWorks 1",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -40811,7 +40811,7 @@
     "_notes": "Score-range variant."
   },
   "Spanish I ": {
-    "unified_title": "Spanish I",
+    "unified_title": "Spanish 1",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -40824,7 +40824,7 @@
     "_notes": "Local CBE for Spanish I."
   },
   "Spanish II ": {
-    "unified_title": "Spanish II",
+    "unified_title": "Spanish 2",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41058,7 +41058,7 @@
     "_notes": "CPL Type 'Military' implies JST credit recommendation."
   },
   "Structural Arch Orn I": {
-    "unified_title": "Ironworker Structural, Architectural and Ornamental I",
+    "unified_title": "Ironworker Structural, Architectural and Ornamental 1",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41070,7 +41070,7 @@
     "_notes": "Ironworker apprenticeship trade designation (Structural/Architectural/Ornamental)."
   },
   "Structural Steel I": {
-    "unified_title": "Ironworker Structural Steel I",
+    "unified_title": "Ironworker Structural Steel 1",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -42304,7 +42304,7 @@
     "_notes": "Local Chaffey course."
   },
   "Visual Basic Programming I CS 086 Cx": {
-    "unified_title": "Visual Basic Programming I",
+    "unified_title": "Visual Basic Programming 1",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -42473,7 +42473,7 @@
     "_notes": "Combined T3/D3 grades reflected in title."
   },
   "WST 081 - Wastewater 1 - CWEA Grade Level 1": {
-    "unified_title": "Wastewater Treatment Plant Operator Grade I",
+    "unified_title": "Wastewater Treatment Plant Operator Grade 1",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -42486,7 +42486,7 @@
     "_notes": null
   },
   "WST 082 - Wastewater 2 - CWEA Grade Level 2": {
-    "unified_title": "Wastewater Treatment Plant Operator Grade II",
+    "unified_title": "Wastewater Treatment Plant Operator Grade 2",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -42627,7 +42627,7 @@
     "_notes": "Local Chaffey course."
   },
   "Web Publishing I CIS 082C Cx": {
-    "unified_title": "Web Publishing I",
+    "unified_title": "Web Publishing 1",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -43165,7 +43165,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Spanish I": {
-    "unified_title": "Spanish I",
+    "unified_title": "Spanish 1",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
@@ -43173,7 +43173,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Spanish II": {
-    "unified_title": "Spanish II",
+    "unified_title": "Spanish 2",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
@@ -43365,7 +43365,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Center for Financial Training: CFTA-0025 Human Resources Management;": {
-    "unified_title": "Center for Financial Training (CFT) — Human Resources Management (CFTA-0025)",
+    "unified_title": "Center for Financial Training (CFT) — Human Resources Management",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
@@ -43542,7 +43542,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "McDonald's Corporation MCD-0051 Business Leadership Practices;": {
-    "unified_title": "McDonald's MCD-0051 Business Leadership Practices",
+    "unified_title": "McDonald's Business Leadership Practices",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
@@ -43550,7 +43550,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "McDonald's Corporation: MCD-0074 Mid Management Foundations Curriculum: Getting Started & Transition to the Role;": {
-    "unified_title": "McDonald's MCD-0074 Mid-Management Foundations Curriculum",
+    "unified_title": "McDonald's Mid-Management Foundations Curriculum",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
@@ -43574,7 +43574,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "PLNT SC 812 - Landscape Installation and Maintenance I": {
-    "unified_title": "Landscape Installation and Maintenance I",
+    "unified_title": "Landscape Installation and Maintenance 1",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
@@ -43878,7 +43878,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Chaffey Joint Union - Rancho Cucamonga HS - Advanced Engineering Design II H 1&2": {
-    "unified_title": "Engineering Design II Honors Advanced",
+    "unified_title": "Engineering Design 2 Honors Advanced",
     "confidence_title": 1.0,
     "classified_at": "2026-06-03",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45174,7 +45174,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP French (max of 10 units awarded) Level II": {
-    "unified_title": "CLEP French Language Level II",
+    "unified_title": "CLEP French Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45182,7 +45182,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP French Language, Level 2": {
-    "unified_title": "CLEP French Language Level II",
+    "unified_title": "CLEP French Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45190,7 +45190,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP French Language: 2": {
-    "unified_title": "CLEP French Language Level II",
+    "unified_title": "CLEP French Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45198,7 +45198,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP French Language: Level 1": {
-    "unified_title": "CLEP French Language Level I",
+    "unified_title": "CLEP French Language Level 1",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45206,7 +45206,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP French Language:  Level 1": {
-    "unified_title": "CLEP French Language Level I",
+    "unified_title": "CLEP French Language Level 1",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45214,7 +45214,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP French Language:  Level 2": {
-    "unified_title": "CLEP French Language Level II",
+    "unified_title": "CLEP French Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45222,7 +45222,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP French Level 2": {
-    "unified_title": "CLEP French Language Level II",
+    "unified_title": "CLEP French Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45230,7 +45230,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP French Level II (Score of \t59)": {
-    "unified_title": "CLEP French Language Level II",
+    "unified_title": "CLEP French Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45238,7 +45238,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP French Level II*": {
-    "unified_title": "CLEP French Language Level II",
+    "unified_title": "CLEP French Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45246,7 +45246,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP French [1] Level II": {
-    "unified_title": "CLEP French Language Level II",
+    "unified_title": "CLEP French Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45254,7 +45254,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP French – Level 2*": {
-    "unified_title": "CLEP French Language Level II",
+    "unified_title": "CLEP French Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45262,7 +45262,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP French** Level II": {
-    "unified_title": "CLEP French Language Level II",
+    "unified_title": "CLEP French Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45270,7 +45270,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP French, Level II": {
-    "unified_title": "CLEP French Language Level II",
+    "unified_title": "CLEP French Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45278,7 +45278,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP German (max of 10 units awarded) Level II": {
-    "unified_title": "CLEP German Language Level II",
+    "unified_title": "CLEP German Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45286,7 +45286,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP German II": {
-    "unified_title": "CLEP German Language Level II",
+    "unified_title": "CLEP German Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45294,7 +45294,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP German Language, Level 2": {
-    "unified_title": "CLEP German Language Level II",
+    "unified_title": "CLEP German Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45302,7 +45302,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP German Language: Level 1": {
-    "unified_title": "CLEP German Language Level I",
+    "unified_title": "CLEP German Language Level 1",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45310,7 +45310,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP German Language: Level 2": {
-    "unified_title": "CLEP German Language Level II",
+    "unified_title": "CLEP German Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45318,7 +45318,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP German Level 2": {
-    "unified_title": "CLEP German Language Level II",
+    "unified_title": "CLEP German Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45326,7 +45326,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP German Level II (Score of 60)": {
-    "unified_title": "CLEP German Language Level II",
+    "unified_title": "CLEP German Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45334,7 +45334,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP German Level II*": {
-    "unified_title": "CLEP German Language Level II",
+    "unified_title": "CLEP German Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45342,7 +45342,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP German – Level 2*": {
-    "unified_title": "CLEP German Language Level II",
+    "unified_title": "CLEP German Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45350,7 +45350,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP German** Level II": {
-    "unified_title": "CLEP German Language Level II",
+    "unified_title": "CLEP German Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45358,7 +45358,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP German, Level II": {
-    "unified_title": "CLEP German Language Level II",
+    "unified_title": "CLEP German Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45366,7 +45366,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP German1 Level II": {
-    "unified_title": "CLEP German Language Level II",
+    "unified_title": "CLEP German Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45374,7 +45374,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP HIstory of the US I: Early Colonization": {
-    "unified_title": "CLEP History of the United States I",
+    "unified_title": "CLEP History of the United States 1",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45382,7 +45382,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP HIstory of the US II: 1865 to the present": {
-    "unified_title": "CLEP History of the United States II",
+    "unified_title": "CLEP History of the United States 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45390,7 +45390,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP History United States I": {
-    "unified_title": "CLEP History of the United States I",
+    "unified_title": "CLEP History of the United States 1",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45398,7 +45398,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP History United States II": {
-    "unified_title": "CLEP History of the United States II",
+    "unified_title": "CLEP History of the United States 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45406,7 +45406,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP History of the United States I": {
-    "unified_title": "CLEP History of the United States I",
+    "unified_title": "CLEP History of the United States 1",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45414,7 +45414,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP History of the United States I: Early Colonization to 1877": {
-    "unified_title": "CLEP History of the United States I",
+    "unified_title": "CLEP History of the United States 1",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45422,7 +45422,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP History of the United States II": {
-    "unified_title": "CLEP History of the United States II",
+    "unified_title": "CLEP History of the United States 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45430,7 +45430,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP History of the United States II: 1865 to the Present": {
-    "unified_title": "CLEP History of the United States II",
+    "unified_title": "CLEP History of the United States 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45438,7 +45438,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP History, U.S. I": {
-    "unified_title": "CLEP History of the United States I",
+    "unified_title": "CLEP History of the United States 1",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45446,7 +45446,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP History, U.S. II": {
-    "unified_title": "CLEP History of the United States II",
+    "unified_title": "CLEP History of the United States 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45454,7 +45454,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP History, United States I (Score of 50)": {
-    "unified_title": "CLEP History of the United States I",
+    "unified_title": "CLEP History of the United States 1",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45462,7 +45462,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP History, United States II (Score of 50)": {
-    "unified_title": "CLEP History of the United States II",
+    "unified_title": "CLEP History of the United States 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45670,7 +45670,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Spanish (max of 10 units awarded) Level II": {
-    "unified_title": "CLEP Spanish Language Level II",
+    "unified_title": "CLEP Spanish Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45678,7 +45678,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Spanish - Level 2*": {
-    "unified_title": "CLEP Spanish Language Level II",
+    "unified_title": "CLEP Spanish Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45686,7 +45686,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Spanish Language, Level 2": {
-    "unified_title": "CLEP Spanish Language Level II",
+    "unified_title": "CLEP Spanish Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45694,7 +45694,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Spanish Language: Level 1": {
-    "unified_title": "CLEP Spanish Language Level I",
+    "unified_title": "CLEP Spanish Language Level 1",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45702,7 +45702,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Spanish Language: Level 2": {
-    "unified_title": "CLEP Spanish Language Level II",
+    "unified_title": "CLEP Spanish Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45710,7 +45710,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Spanish Level 2": {
-    "unified_title": "CLEP Spanish Language Level II",
+    "unified_title": "CLEP Spanish Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45718,7 +45718,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Spanish Level II (Score of 63)": {
-    "unified_title": "CLEP Spanish Language Level II",
+    "unified_title": "CLEP Spanish Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45726,7 +45726,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Spanish Level II (after FA15)": {
-    "unified_title": "CLEP Spanish Language Level II",
+    "unified_title": "CLEP Spanish Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45734,7 +45734,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Spanish Level II (until FA15)": {
-    "unified_title": "CLEP Spanish Language Level II",
+    "unified_title": "CLEP Spanish Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45742,7 +45742,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Spanish Level II*": {
-    "unified_title": "CLEP Spanish Language Level II",
+    "unified_title": "CLEP Spanish Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45750,7 +45750,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Spanish [1] Level II": {
-    "unified_title": "CLEP Spanish Language Level II",
+    "unified_title": "CLEP Spanish Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45766,7 +45766,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Spanish with Writing I": {
-    "unified_title": "CLEP Spanish with Writing I",
+    "unified_title": "CLEP Spanish with Writing 1",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45814,7 +45814,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Spanish** Level II": {
-    "unified_title": "CLEP Spanish Language Level II",
+    "unified_title": "CLEP Spanish Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45822,7 +45822,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Spanish** with Writing II": {
-    "unified_title": "CLEP Spanish with Writing II",
+    "unified_title": "CLEP Spanish with Writing 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45830,7 +45830,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Spanish, Level II": {
-    "unified_title": "CLEP Spanish Language Level II",
+    "unified_title": "CLEP Spanish Language Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45862,7 +45862,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP United States I": {
-    "unified_title": "CLEP History of the United States I",
+    "unified_title": "CLEP History of the United States 1",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45870,7 +45870,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP United States II": {
-    "unified_title": "CLEP History of the United States II",
+    "unified_title": "CLEP History of the United States 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45878,7 +45878,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Western Civ I": {
-    "unified_title": "CLEP Western Civilization I",
+    "unified_title": "CLEP Western Civilization 1",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45886,7 +45886,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Western Civ II": {
-    "unified_title": "CLEP Western Civilization II",
+    "unified_title": "CLEP Western Civilization 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45894,7 +45894,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Western Civilization I (Score of 50)": {
-    "unified_title": "CLEP Western Civilization I",
+    "unified_title": "CLEP Western Civilization 1",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45902,7 +45902,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Western Civilization I: Ancient Near East to 1648": {
-    "unified_title": "CLEP Western Civilization I",
+    "unified_title": "CLEP Western Civilization 1",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45910,7 +45910,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Western Civilization II (Score of 50)": {
-    "unified_title": "CLEP Western Civilization II",
+    "unified_title": "CLEP Western Civilization 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45918,7 +45918,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Western Civilization II: 1648 to Present": {
-    "unified_title": "CLEP Western Civilization II",
+    "unified_title": "CLEP Western Civilization 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45926,7 +45926,7 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Western Civilization II: 1648 to the Present": {
-    "unified_title": "CLEP Western Civilization II",
+    "unified_title": "CLEP Western Civilization 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -45998,7 +45998,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Credit by Exam - WATER 140": {
-    "unified_title": "Water Distribution Operator I",
+    "unified_title": "Water Distribution Operator 1",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -46126,7 +46126,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Credit by Exam MATH 071 Calculus I With Analytic Geometry": {
-    "unified_title": "Calculus I With Analytic Geometry",
+    "unified_title": "Calculus 1 With Analytic Geometry",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -46134,7 +46134,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Credit by Exam MATH 072 Calculus II With Analytic Geometry": {
-    "unified_title": "Calculus II With Analytic Geometry",
+    "unified_title": "Calculus 2 With Analytic Geometry",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -46262,7 +46262,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "DRAFT-50 Baldy View ROP - Civil Engineering & Architecture (CEA)": {
-    "unified_title": "Architectural Design I",
+    "unified_title": "Architectural Design 1",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -46270,7 +46270,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "DRAFT-50 and DRAFT-43 Baldy View ROP - Civil Engineering and Architecture": {
-    "unified_title": "Architectural Design I",
+    "unified_title": "Architectural Design 1",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -46278,7 +46278,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "DRAFT-50: Architectural Design I": {
-    "unified_title": "Architectural Design I",
+    "unified_title": "Architectural Design 1",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -46718,7 +46718,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "MUSIC 265-1 - Recording Arts Workshop I": {
-    "unified_title": "Recording Arts Workshop I",
+    "unified_title": "Recording Arts Workshop 1",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -46726,7 +46726,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "MUSIC 265-2 - Recording Arts Workshop II": {
-    "unified_title": "Recording Arts Workshop II",
+    "unified_title": "Recording Arts Workshop 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -46734,7 +46734,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "MUSIC 265-3 - Recording Arts Workshop III": {
-    "unified_title": "Recording Arts Workshop III",
+    "unified_title": "Recording Arts Workshop 3",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -46742,7 +46742,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "MUSIC 322  - Elementary Piano II": {
-    "unified_title": "Piano II",
+    "unified_title": "Piano 2",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -46754,7 +46754,7 @@
     }
   },
   "MUSIC 661 - Jazz and Popular Music Guitar I": {
-    "unified_title": "Jazz and Popular Music Guitar I",
+    "unified_title": "Jazz and Popular Music Guitar 1",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -47166,7 +47166,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "THEATER 280 - Musical Theater Workshop": {
-    "unified_title": "Musical Theater Workshop I",
+    "unified_title": "Musical Theater Workshop 1",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
