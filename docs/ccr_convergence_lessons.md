@@ -314,3 +314,32 @@ unsettled forks (Q-SAMECOLL, the homonym-breadth question). Surfacing the 3 hard
 misses as example-driven prompts turned a measurement into two new ratified rules
 in one exchange. When the gate says "87%," read WHERE it disagrees before
 concluding the doctrine failed — the misses are the interview questions.
+
+### 2026-07-14 (batch 2) — three more fresh-sample scenarios → Doctrine v0.8
+
+Sam confirmed the scenario-prompt loop is "very helpful to refine rules" and
+flagged the real UX problem: **he'd dropped off the 🧠 Suggested-Merges panel
+because the thousands of suggestions overwhelmed him.** That is the product
+insight — the calibration *sample* (52 stratified groups) and these even-smaller
+curated batches (3 at a time, one open-fork each) are the antidote: same signal,
+no firehose. A "decisions that need you" curated queue (top open-question hits,
+~10 at a time) beats the full worklist.
+
+Three open questions settled from one 3-scenario batch:
+- **Q-GENERIC → P-7 ratified.** Generic shells (Topics/Discussion/Work
+  Experience/Independent Study/Directed Study) → **one umbrella per
+  (generic-type × subject)** ("Topics in Business", "Work Experience in
+  Business"). The discipline+generic-type pairing IS the second signal.
+- **Q-FLOOR bounded.** Enrichment/noncredit framing ALONE doesn't drop a course
+  below the CPL floor — if it teaches the SAME learning as a credit course it
+  MERGES (learning-equivalence). Bounds P-1b: split only when skills/breadth
+  differ, not merely the audience. (Nonfiction Writing: Humanities credit ≡
+  Older-Adults-Noncredit → merge.)
+- **Q-LADDER → the 3-RUNG CAP.** No ladder exceeds 3 rungs; >3 consolidate by
+  pairing (1,2)(3,4)(5,6+), incl. degree-applicable creative ladders (studio
+  art). Academic sequences already ≤3 (Calc I/II) keep their rungs.
+
+Doctrine → **v0.8**. Lesson: **the smaller and more stratified the batch, the
+more rules per minute of Sam's time.** Three scenarios settled three open
+doctrine questions; the thousands-strong panel settled none (he bounced). Curate
+hard, present few, each a distinct fork.

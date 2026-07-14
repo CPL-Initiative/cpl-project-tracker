@@ -1,7 +1,7 @@
 ---
 title: "CCR Merge/Mint Doctrine — the decision policy for course convergence"
 created: 2026-07-03
-version: "0.7 (2026-07-14 — GRADUATION GATE PASSED: blind v0.6 re-decision reproduced Sam's ratified calls 92% fundamental / 94.7% fine after his two gate rulings. Ruling 1 RATIFIES P-6 for same-college variant pairs (title-drift → clean merge; low-unit ≤1u numbered sequences → parenthetical merge '(1 and 2)'; settles Q-SAMECOLL); Ruling 2 adds P-1b, breadth+program-context splits a homonym (settles part of Q-FLOOR). v0.6 was P-1 RATIFIED + P-1a/7a/9a/10a; v0.5 was D-10; v0.4 was D-9 + P-12)"
+version: "0.8 (2026-07-14 — batch-2 scenario rulings on top of the v0.7 graduation: P-7 RATIFIED (Q-GENERIC — one umbrella per generic-type × subject); Q-FLOOR bounded (enrichment-noncredit merges when learning matches a credit course; P-1b splits only on differing skills/breadth); P-3 refined with the 3-RUNG CAP (ladders >3 rungs consolidate by pairing (1,2)(3,4)(5,6+), incl. degree-applicable creative ladders). v0.7 was the graduation gate: P-6 ratified + P-1b. v0.6 was P-1 RATIFIED + P-1a/7a/9a/10a)"
 tags: [ccr, doctrine, merge, mint, m-id, mind-meld]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -166,6 +166,44 @@ by id in receipts:
   separate**. Sam, 2026-07-14: "People Skills in Management is broad and likely
   part of a Business program, whereas the freelancer one is super specific and
   sounds like a noncredit program for enrichment.")
+
+#### Calibration rulings — batch 2 (2026-07-14, three fresh-sample scenarios)
+
+A second small batch of stratified scenarios (the antidote to the thousands-
+strong worklist — Sam: he'd dropped off the 🧠 Suggested-Merges panel because
+the volume overwhelmed him). Three open questions settled:
+
+- **P-7 RATIFIED (settles Q-GENERIC) — one umbrella identity per generic-type ×
+  subject.** Generic variable-content shells (**Topics in X · Discussion in X ·
+  Special Topics · Work Experience · Independent Study · Directed Study**) are
+  **umbrella-minted ONE per (generic-type, subject)** — e.g. a single "Topics in
+  Business", a single "Work Experience in Business" — with "Advanced"/level
+  variants folded in as `merge_note`. They carry no per-section identity, so this
+  is the only convergent form that makes sense; the umbrella IS the CPL-facing
+  target. (Sam, 2026-07-14: "merge 1 for each 'Topics, Discussion in any Subject'
+  'Work Experience in any Subject'.") Reconciles P-7's prior "second signal"
+  bar: the *discipline+generic-type* pairing IS the second signal.
+- **Q-FLOOR bounded — enrichment framing alone does NOT lower a course below the
+  floor.** When an enrichment/older-adult **noncredit** course teaches the **same
+  learning** as a credit course, it **MERGES** under learning-equivalence (P-1) —
+  the noncredit-enrichment label is not disqualifying. The CPL floor is for
+  content with **no credit-equivalent learning** (recreational/avocational), not
+  for merely-noncredit delivery of real skills. This bounds **P-1b**: P-1b splits
+  when the *skills/breadth differ* (People Skills); it does **not** split when the
+  learning is the SAME and only the audience is enrichment (Nonfiction Writing —
+  Humanities credit ≡ Older-Adults-Noncredit → merge). (Sam, 2026-07-14: "Merge —
+  learning-equivalence.")
+- **P-3 refinement (Q-LADDER) — the 3-RUNG CAP.** No unified ladder exceeds
+  **three rungs**. A ladder with >3 rungs **consolidates by pairing**:
+  **(1,2) → rung 1 · (3,4) → rung 2 · (5,6+) → rung 3.** This applies even to
+  **degree-applicable creative/skill ladders** (studio art, etc.) — the earlier
+  P-3 boundary that "degree-applicable sequences keep their rungs" holds only for
+  classic academic sequences that are **already ≤3** (Calc I/II, Spanish 1/2/3);
+  longer ladders cap at 3. Naming follows the field (numbered "1/2/3" for studio;
+  Beginning/Intermediate/Advanced word-bands for ESL, per P-10); rungs recorded in
+  `merge_note`. (Worked case: Painting 2/3/4 + Advanced Painting 1/2 + "Painting -
+  Advanced" → 3 consolidated rungs. Sam, 2026-07-14: "changed to 1 of 3 numbered
+  rungs and those with more than 3 rungs consolidated: (1,2) (3,4) (5,=>6).")
 
 ### P-2 · The two-number goal — PROPOSED
 
@@ -409,13 +447,17 @@ span when the per-rung unit load is low** (≤ ~1u; *Report Writing 1 + 2* at 0.
 which keeps its rungs per P-3. Longer level ladders still route to the packaging
 pass (P-3).
 
-### P-7 · Generic-title families need a second signal — PROPOSED
+### P-7 · Generic-title families → one umbrella per generic-type × subject — RATIFIED (Sam, 2026-07-14; see the batch-2 ruling above)
 
 "Special Topics in X", "Independent Study", "Work Experience", "Directed
-Studies", "Selected Topics" never merge on title similarity alone — the title
-carries no course identity. Options under consideration: per-discipline
-umbrella mints (one "Occupational Work Experience — Automotive" statewide) vs
-leaving them standalone and out of the CPL-facing tier. (→ Q-GENERIC)
+Studies", "Selected Topics", "Topics in X", "Discussion in X" never merge on
+title similarity alone — the title carries no per-section identity. **Ratified
+(Q-GENERIC settled):** umbrella-mint **ONE identity per (generic-type, subject)**
+— a single "Topics in Business", a single "Work Experience in Business", a single
+"Independent Study in Art" — with "Advanced"/level variants folded in as
+`merge_note`. The **discipline + generic-type pairing IS the second signal** this
+rule always demanded; the umbrella is the CPL-facing target. Do NOT leave them as
+per-section standalones, and do NOT merge two *different* generic types together.
 
 ### P-8 · CTE / credential-aligned courses bias to merge — PROPOSED
 
@@ -497,17 +539,17 @@ checkpoint. Current forks:
 
 | id | Fork | Doctrine it settles |
 |---|---|---|
-| Q-LADDER | **Partially settled 2026-07-10** (P-3 ratified with the ESL band mapping; sub-bands allowed). Remaining fork: the exact package-vs-rungs TEST WORDING (degree-applicability vs credit status vs transferability) for edge families. | P-3 |
+| Q-LADDER | **Settled 2026-07-14 → the 3-RUNG CAP.** No unified ladder exceeds 3 rungs; >3 rungs consolidate by pairing (1,2)(3,4)(5,6+), incl. degree-applicable creative ladders. Academic sequences already ≤3 (Calc I/II) keep their rungs. (Earlier: P-3 ESL band mapping, 2026-07-10.) | P-3 |
 | Q-STRANDS | Do skill strands ever survive packaging (ESL Writing as its own target)? | P-4 |
 | Q-UNITS | How much unit spread stops a merge on a non-standardized course? | P-5 |
 | Q-SAMECOLL | **RESOLVED 2026-07-14 (Sam):** same-college same-competency pairs converge (P-6 ratified) — title-drift/both-intro → clean merge; low-unit (≤1u) numbered sequences → parenthetical merge "(1 and 2)"; D-4's level guard yields. Degree-applicable sequences keep their rungs (P-3). | P-6 |
-| Q-GENERIC | Work Experience / Special Topics / Independent Study: umbrella-mint per discipline, or exclude from the CPL tier? | P-7 |
+| Q-GENERIC | **RESOLVED 2026-07-14 (Sam):** umbrella-mint ONE identity per (generic-type × subject) — "Topics in Business", "Work Experience in Business", … — variants folded in (P-7 ratified). | P-7 |
 | Q-HONORS | For CPL purposes, does an Honors variant fold under the base course (the credit rec ignores honors) or stay distinct? | D-4/P-3 |
 | Q-CREDITNC | ~~Credit + noncredit twins of one course: separate targets forever, or noncredit folds under the credit target with a band note?~~ **RESOLVED 2026-07-12 (Sam):** a same-college CR/NC *mirror* is the SAME course — a CPL mechanism (free NC section, voc-MQ instructor, Credit-by-Exam bridge). The NC mirror folds under the credit survivor with a band note; NOT a D-3 split. See the D-3 mirror carve-out. | D-3 |
 | Q-XDISC | Cross-discipline groups that are really one course tagged inconsistently: merge-and-pick-discipline, or hold for faculty? | D-8/P-9 |
 | Q-TARGETCOUNT | **Settled for KINE 2026-07-10 → P-11** (athletics-vs-general split; per-sport rows; modality-agnostic conditioning). Still open for Dance/Music ladders. | P-11 |
 | Q-MINTNAME | Naming for packages: "Beginning ESL" clean, or "ESL — Beginning (Levels 1–2)" explicit? | P-10 |
-| Q-FLOOR | What is *never* a CPL credit target (and can leave the CPL-facing tier entirely)? Recreational PE? Older-adult noncredit? **Partial (2026-07-14):** a narrow, enrichment/noncredit offering that shares a word with a broad program course does not merge into it and may sit below the floor (P-1b). | P-2 |
+| Q-FLOOR | What is *never* a CPL credit target? Recreational PE? **Bounded 2026-07-14 (Sam):** enrichment/noncredit framing ALONE does not lower a course below the floor — if it teaches the SAME learning as a credit course it MERGES (learning-equivalence). The floor is for content with NO credit-equivalent learning. P-1b splits only when the skills/breadth genuinely differ (not merely the audience). | P-2 |
 
 ---
 
