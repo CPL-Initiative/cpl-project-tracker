@@ -207,3 +207,86 @@ rests in feedback-collection; continuation = `docs/cpl_pathways_handoff.md`.
 - Static-consumer pattern: no generator changes, no cron-owned files touched.
 - Design system: `var(--token)` only; glyph-paired status colors (✓ hunter /
   ◆ cobalt / ○ neutral); no raw hex; no innerHTML with data.
+
+---
+
+## 2026-07-14 — StarRunner: the DIRECTORY tier — every CCC baccalaureate
+
+Sam's ask: expand CPL Pathways to **all CCC baccalaureate degrees in the
+system**, so students/faculty see CPL along the whole associate→bachelor's
+pathway and colleges see where peers already approved CPL they could adopt.
+"Rather than a chip for each pathway, make a drop down." + "Push back or
+recommend a better strategy."
+
+### The strategy call (the pushback)
+
+Hand-curating 40+ full course-by-course maps like the 3 featured ones is
+**infeasible and unsourceable** — the per-college catalogs that carry the exact
+course lists are the same CourseLeaf/COCI pages that bot-block us, and there's
+no course→program join in our data. So the tab became **two-tier**:
+
+- **Featured** (`cpl_pathways_data.js`, unchanged) — the 3 deep hand-curated
+  maps (Cerritos Ironworker, Foothill DH / Respiratory). Full course lists,
+  stage banner, campaign, PDF.
+- **Directory** (`cpl_baccalaureates_data.js`, NEW) — one auto-generated card
+  per baccalaureate (45 today), **program metadata only**; the CPL picture is
+  **derived live** in `cpl_pathways.js` from the CER dataset.
+
+### The keystone: CER carries a TOP code on every articulation line
+
+`unified_titles[].articulations[].top` (+ `.local[].colleges/subj/num/u`) lets
+us join each baccalaureate to live MAP CPL data by **TOP-family + college** — no
+course list needed. Per card we derive:
+- ✓ **CPL this college already articulates in the field** (byCollegeTop4).
+- ⊕ **Adoption pool** — credentials peers articulate that this college does NOT
+  (byTop4 minus the home college's own), sorted by #colleges, ⚡ Quick Adopt on
+  each (reuses the featured `buildQuickAdopt` + `cpl_adoption_interest`).
+- 🏛 **field cohort** — the same-TOP baccalaureate colleges (the peer network an
+  adopted articulation travels; home chip green, non-Active status-tagged).
+- ◆ GE-by-CLEP count (systemwide, reused).
+
+The picture is honest at both extremes: **Automotive (0948)** = 5 own + **82
+adoptable from 27 colleges**; **Biomanufacturing (0430) / Respiratory (1210)** =
+the mustard **"CPL frontier — be first"** banner (0/0). Cards track MAP live —
+a new articulation lights up with no edit.
+
+### Build notes
+
+- Generator `kb/_build_baccalaureate_pathways.py` reads
+  `tmc/source_data/coci_program_export_2026-06-17.csv` (AWARD =
+  "Baccalaureate of Science/Arts"), filters non-Inactive (45 of 46 rows; drops
+  the superseded Rio Hondo Auto), and resolves the **COCI→CER college-name
+  bridge** ("FOOTHILL"→"Foothill College", "WEST L.A."→"West Los Angeles
+  College") to an exact `cer_college` key (7 have no CER CPL → frontier cards).
+  Re-run when a newer COCI export drops in.
+- Renderer: `buildDirectoryIndex` (global, over the same CER payload — the
+  featured `buildLiveIndexes` is single-college), `resolveDirectory`,
+  `renderDirectory`; the chip picker → a grouped `<select>` (★ Featured optgroup
+  + one optgroup per field). Adoption pool caps at `DIR_POOL_CAP=20` with a
+  "Show all N" toggle so the Automotive wall (82) stays digestible.
+- Boot: both HTMLs load `cpl_baccalaureates_data.js` (Rule 4); `activate()`
+  lazy-loads it too as a fallback.
+- Tests: `tests/cpl_pathways.test.js` **97 → 132** (directory index, resolver,
+  dropdown routing featured↔directory, frontier college, pool cap/toggle, data
+  file parses + join keys, boot in both HTMLs). Real-Chromium verified all four
+  card shapes (featured deep map, rich pool, frontier, capped) — 0 console
+  errors.
+
+### Open items / next steps
+
+1. **Feedback wave** — Sam to react to the directory shape; likely asks: card
+   density, whether to fold GE-CLEP detail in, per-field landing.
+2. **Deepen-on-request** — convert any directory program into a full featured
+   course map when Sam flags a priority (the hybrid loop).
+3. **Refresh cadence** — the COCI export is a 2026-06-17 snapshot missing newer
+   approvals (e.g. Cerritos Field Ironworker isn't in it — it's a featured map).
+   Drop a newer export + re-run the generator to add programs.
+4. **Cohort precision** — grouping is by TOP4; a couple of broad TOP families
+   (2199 "Other Public/Protective") mix arguably-distinct programs. Fine for v1.
+
+### Safety patterns honored (this pass)
+
+- Rule 4 (both HTMLs byte-identical — test enforces); static-consumer (no
+  generator/cron files touched); `var(--token)` only, no raw hex; createElement/
+  textContent only (XSS). `cpl_adoption_interest` RLS unchanged (no public
+  SELECT). `package.json` reverted after a local-only Playwright install.
