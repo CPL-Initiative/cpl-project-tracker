@@ -538,9 +538,13 @@ Sam's five KINE sittings draw one consistent line — **athletics vs general**:
 **Dance — Q-TARGETCOUNT settled (Sam, 2026-07-14).** Dance did NOT follow the
 KINE per-sport shape. **All dance-technique STYLES consolidate into ONE "Dance
 Technique — Beginning / Intermediate / Advanced"** ladder (Hip Hop, Ballet, Jazz,
-Tap, Modern, Ballroom, Contemporary all fold in — the style is a modality, folded
-like KINE's venue/format marks). The exception is **ensembles/companies**, which
-stay per-type (below).
+Tap, Modern, Ballroom, Contemporary all fold in). **The reason is PERMUTATION
+VOLUME, not skill-equivalence (Sam, 2026-07-14):** *"the only reason I'm merging
+the dance is because they have so many permutations vs. the others which are more
+standard."* Dance explodes across style × level × format, so granularity is
+unmanageable and low-value → consolidate. This is the **permutation-pressure
+lever** (below), NOT a claim that Ballet ≡ Hip Hop. The exception is
+**ensembles/companies**, which stay per-type (below).
 
 **Music — Q-TARGETCOUNT settled (Sam, 2026-07-14).** Music DID follow the
 per-sport shape at the instrument level: **applied/instrument study stays
@@ -559,7 +563,19 @@ generic "Vocal/Instrumental/Dance Ensemble."
 The through-line across all three activity disciplines: **a genuinely distinct
 performed skill stays its own target (per-sport, per-instrument, per-ensemble);
 general skill-building consolidates to a 3-band ladder** (Conditioning for KINE,
-Dance Technique for Dance) with modality/style/venue folded.
+Dance Technique for Dance) with modality/venue folded.
+
+**The permutation-pressure lever (Sam, 2026-07-14).** There is a *second* reason
+to consolidate beyond skill-equivalence: **when a sub-category's permutations
+explode unmanageably (style × level × format), collapse them even if the
+sub-skills are genuinely distinct** — the granularity is low-value for CPL and
+the count is the problem. Dance styles fold for THIS reason (Sam: too many
+permutations), while Music instruments stay per-instrument because they're "more
+standard" (bounded permutations). Use the lever sparingly and name it in the
+`merge_note`: a permutation-driven consolidation is an explicit curator call, not
+a claim the members teach the same thing. (Screening signal: a discipline sub-tree
+with dozens of style/modality crosses at every level is a candidate; a bounded set
+like piano/guitar/voice is not.)
 
 ### P-12 · Homonym test — evidence over TOP — ESTABLISHED (Sam, 2026-07-12)
 

@@ -392,9 +392,14 @@ Studio art has no per-rung C-ID → caps at 3. Doctrine → **v0.10**.
 Profiled Music (2,586) + Dance (1,639), brought 3 forks framed against KINE's
 P-11. Sam's calls — with an instructive asymmetry:
 - **Dance styles → ONE 'Dance Technique' B/I/A.** All styles (Hip Hop/Ballet/Jazz/
-  Tap/Modern/Ballroom/Contemporary) fold into a single 3-band technique ladder —
-  the STYLE is a modality, folded like KINE's venue/format. (Diverges from KINE
-  per-sport.)
+  Tap/Modern/Ballroom/Contemporary) fold into a single 3-band technique ladder.
+  **Sam's reason (key):** *"the only reason I'm merging the dance is because they
+  have so many permutations vs. the others which are more standard."* Not
+  skill-equivalence (Ballet ≠ Hip Hop) — **permutation VOLUME**. This is a new,
+  distinct lever: when style×level×format explodes unmanageably, consolidate even
+  distinct sub-skills; when bounded/standard (piano/guitar/voice), keep
+  granularity. (Diverges from KINE per-sport for a volume reason, not a taxonomy
+  one.)
 - **Music applied → PER-INSTRUMENT B/I/A** (Piano/Guitar/Voice each own ladder) —
   the instrument is a distinct skill, like a distinct sport. (Follows KINE.)
 - **Ensembles (Music + Dance) → per-type** (Concert Choir, Orchestra, Jazz
