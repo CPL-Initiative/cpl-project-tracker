@@ -543,8 +543,11 @@
       mine = Object.keys(mm).map(function (k) { return mm[k]; });
       mine.sort(function (a, b) { return a.code < b.code ? -1 : (a.code > b.code ? 1 : 0); });
     }
-    var mineUts = {};
-    mine.forEach(function (m) { mineUts[m.ut.toLowerCase()] = true; });
+    var mineUts = {}, mineUnits = 0;
+    mine.forEach(function (m) {
+      mineUts[m.ut.toLowerCase()] = true;
+      if (typeof m.units === "number") mineUnits += m.units;
+    });
     var pool = [];
     if (dir && dir.byTop4[top4]) {
       Object.keys(dir.byTop4[top4]).forEach(function (ut) {
@@ -567,6 +570,7 @@
       mine: mine, pool: pool, cohort: cohort,
       mineCreds: Object.keys(mineUts).length,
       mineCourses: mine.length,
+      mineUnits: Math.round(mineUnits * 10) / 10,
       poolCreds: pool.length,
       poolColleges: Object.keys(poolColleges).length,
       totalAtCollege: (nc && dir && dir.byCollegeCount[nc]) ? Object.keys(dir.byCollegeCount[nc]).length : 0,
@@ -956,14 +960,18 @@
 
     // Stat tiles
     var tiles = el("div", "cplpw-tiles");
-    function tile(cls, num, label) {
+    function tile(cls, num, label, sub) {
       var t = el("div", "cplpw-tile" + (cls ? " " + cls : ""));
-      t.appendChild(el("div", "n", num));
+      var n = el("div", "n", num);
+      if (sub) n.appendChild(el("span", "u", sub));
+      t.appendChild(n);
       t.appendChild(el("div", "l", label));
       return t;
     }
+    var unitWord = prog.unit_system === "quarter" ? "qtr units" : "units";
     tiles.appendChild(tile("cpl", "✓ " + m.mineCreds,
-      "credential" + (m.mineCreds === 1 ? "" : "s") + " " + (prog.college || "this college") + " already articulates for CPL in this field (" + m.mineCourses + " course" + (m.mineCourses === 1 ? "" : "s") + ")"));
+      "credential" + (m.mineCreds === 1 ? "" : "s") + " " + (prog.college || "this college") + " already articulates for CPL in this field (" + m.mineCourses + " course" + (m.mineCourses === 1 ? "" : "s") + ")",
+      m.mineUnits ? "· " + fmtU(m.mineUnits) + " " + unitWord : null));
     tiles.appendChild(tile(null, "⊕ " + m.poolCreds,
       "credential" + (m.poolCreds === 1 ? "" : "s") + " peers have articulated that this college could adopt — from " + m.poolColleges + " college" + (m.poolColleges === 1 ? "" : "s")));
     tiles.appendChild(tile(null, String(m.cohort.length),

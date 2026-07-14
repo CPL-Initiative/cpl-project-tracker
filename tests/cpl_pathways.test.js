@@ -494,6 +494,7 @@ const BACC_STUB = [
   const dir = T._buildDirectoryIndex(DIR_CER);
   const foot = T._resolveDirectory(BACC_STUB[0], dir, BACC_STUB);
   check("mine = the college's in-field CPL", foot.mineCreds === 1 && foot.mineCourses === 1 && foot.mine[0].ut === "RCP License");
+  check("mineUnits sums the in-field CPL course units", foot.mineUnits === 24);
   check("pool = peer CPL not yet at this college", foot.poolCreds === 1 && foot.pool[0].credential === "NBRC CRT");
   check("pool excludes the home college", foot.pool[0].lines.every(l => !/Foothill/.test(l.college)));
   check("cohort = same-field baccalaureates", foot.cohort.length === 2);
@@ -501,6 +502,7 @@ const BACC_STUB = [
 
   const rio = T._resolveDirectory(BACC_STUB[2], dir, BACC_STUB);
   check("Rio Hondo owns two in-field credentials", rio.mineCreds === 2);
+  check("mineUnits sums across both (3+3=6u)", rio.mineUnits === 6);
   check("a credential the college ALREADY has is not an adoption gap",
     rio.pool.length === 1 && rio.pool[0].credential === "ASE Engine" &&
     !rio.pool.some(p => p.credential === "ASE Electrical"));
