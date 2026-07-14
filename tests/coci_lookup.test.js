@@ -33,6 +33,19 @@ const payload = {
   ],
 };
 
+// programs: [collegeIdx, ctrl, title, top, cip, awardIdx, statusIdx, units, xfer]
+const progPayload = {
+  _built_at: "2026-06-17",
+  colleges: ["ALAMEDA", "RIO HONDO"],
+  awards: ["A.S. Degree", "A.A- T Degree"],
+  statuses: ["Active", "Inactive"],
+  rows: [
+    [0, "01136", "African-American Studies", "2203.00", "05.0200", 0, 0, "18.00", 0],
+    [1, "02001", "Business Administration for Transfer", "0505.00", "52.0201", 1, 0, "19.00", 1],
+    [0, "03050", "Welding Technology", "0956.00", "48.0508", 0, 1, "30.00", 0],
+  ],
+};
+
 function makeDom() {
   const dom = new JSDOM(`<!DOCTYPE html><html><body>
     <div id="tab-coci-lookup"><div id="coci-lookup-root">Loading…</div></div>
@@ -40,7 +53,7 @@ function makeDom() {
   const { window } = dom;
   const log = { lazyLoads: [], blobs: [] };
   window.CPL_COCI_LOOKUP = payload;
-  // Stub the tab harness: desc-shard loads register + resolve synchronously.
+  // Stub the tab harness: desc-shard + programs loads register + resolve synchronously.
   window.CPL_TABS = {
     loadScript: function (srcPath, globalName, cb) {
       log.lazyLoads.push(srcPath);
@@ -50,6 +63,7 @@ function makeDom() {
           CCC000646669: "Safety and health training for the carpenter.",
         };
       }
+      if (/coci_programs_data\.js$/.test(srcPath)) window.CPL_COCI_PROGRAMS = progPayload;
       cb();
     },
     onActivate: function () {},
@@ -85,7 +99,19 @@ const rowTitles = (doc) => visibleRows(doc).map((tr) => txt(tr.children[4]));
     && !!englRow.querySelector(".cplcoci-chip.ccn")
     && !!englRow.querySelector(".cplcoci-chip.mid"));
   const eslRow = visibleRows(doc).find((tr) => txt(tr.children[4]) === "English Fundamentals");
-  check("chips: identity-less row shows a dash", txt(eslRow.children[8]) === "—");
+  // columns: 0 caret,1 college,2 subj,3 num,4 title,5 units,6 credit,7 TRANSFER,8 top,9 ids,10 ctrl
+  check("chips: identity-less row shows a dash", txt(eslRow.children[9]) === "—");
+
+  // ── transfer column + filter (C-ID = transfer-model) ──
+  check("transfer col: C-ID course shows 🎓", txt(englRow.children[7]) === "🎓");
+  check("transfer col: non-C-ID course shows —", txt(eslRow.children[7]) === "—");
+  const xfSel = doc.getElementById("cplcoci-transfer");
+  xfSel.value = "xfer";
+  xfSel.dispatchEvent(new window.Event("change"));
+  check("transfer filter: 🎓 Transfer-model isolates the C-ID (ENGL) row",
+    rowTitles(doc).length === 1 && rowTitles(doc)[0] === "College Composition");
+  xfSel.value = "all";
+  xfSel.dispatchEvent(new window.Event("change"));
 
   // ── 2. filters ──
   const q = doc.getElementById("cplcoci-q");
@@ -178,6 +204,42 @@ const rowTitles = (doc) => visibleRows(doc).map((tr) => txt(tr.children[4]));
   check("csv: carries ONLY the filtered row (+ header)",
     csvText.split("\n").length === 2 && csvText.indexOf("College Composition") > 0
     && csvText.indexOf("Rigging") < 0);
+  subjIn2.value = "";  // clear the CSV-test filter before the view-toggle checks
+  subjIn2.dispatchEvent(new window.Event("input"));
+
+  // ── 8. Programs view (toggle → lazy-load → table + transfer/award filters) ──
+  const progBtn = Array.from(doc.querySelectorAll(".cplcoci-viewbtn")).find((b) => txt(b) === "Programs");
+  check("programs: a Programs view toggle exists", !!progBtn);
+  progBtn.click();
+  await sleep(10);
+  check("programs: lazy-loaded coci_programs_data.js", log.lazyLoads.some((s) => s === "coci_programs_data.js"));
+  check("programs: all 3 programs render", visibleRows(doc).length === 3);
+  check("programs: count reflects the set",
+    txt(doc.getElementById("cplcoci-pcount")).indexOf("3 of 3") === 0);
+  // transfer (ADT) column + filter
+  const adtRow = visibleRows(doc).find((tr) => txt(tr.children[2]).indexOf("Business Administration") === 0);
+  check("programs: ADT row shows the 🎓 ADT transfer marker", txt(adtRow.children[6]).indexOf("🎓") === 0);
+  const pxfSel = doc.getElementById("cplcoci-ptransfer");
+  pxfSel.value = "xfer";
+  pxfSel.dispatchEvent(new window.Event("change"));
+  check("programs: transfer filter isolates the ADT program",
+    visibleRows(doc).length === 1 && txt(visibleRows(doc)[0].children[2]).indexOf("Business Administration") === 0);
+  pxfSel.value = "all";
+  pxfSel.dispatchEvent(new window.Event("change"));
+  // award filter
+  const pawSel = doc.getElementById("cplcoci-paward");
+  pawSel.value = "A.A- T Degree";
+  pawSel.dispatchEvent(new window.Event("change"));
+  check("programs: award filter narrows to the A.A-T degree", visibleRows(doc).length === 1);
+  pawSel.value = "all";
+  pawSel.dispatchEvent(new window.Event("change"));
+  // CIP column present (programs carry CIP)
+  check("programs: CIP code renders in its column", txt(adtRow.children[5]) === "52.0201");
+  // back to Courses
+  const courseBtn = Array.from(doc.querySelectorAll(".cplcoci-viewbtn")).find((b) => txt(b) === "Courses");
+  courseBtn.click();
+  check("programs: toggling back to Courses restores the course table",
+    !!doc.getElementById("cplcoci-identity") && visibleRows(doc).length === 4);
 
   // ── report ──
   let fail = 0;

@@ -62,20 +62,40 @@
     ".cplcoci-desc .muted { color: var(--text-muted); font-style:italic; }",
     ".cplcoci-more { text-align:center; padding:10px; }",
     ".cplcoci-empty { padding:26px; text-align:center; color: var(--text-muted); }",
+    ".cplcoci-viewseg { display:inline-flex; border:1px solid var(--border-strong); border-radius:8px; overflow:hidden; margin:0 0 10px; }",
+    ".cplcoci-viewbtn { font-size:.82rem; font-weight:700; padding:6px 16px; background: var(--surface-opaque); color: var(--text-muted); border:0; cursor:pointer; }",
+    ".cplcoci-viewbtn + .cplcoci-viewbtn { border-left:1px solid var(--border); }",
+    ".cplcoci-viewbtn.on { background: var(--seal-blue); color:#fff; }",
+    ".cplcoci-xfer { text-align:center; white-space:nowrap; }",
   ].join("\n");
 
+  // Program rows (COCI Lookup > Programs view). Built by kb/_build_coci_programs.py.
+  var PROG = { COLLEGE: 0, CTRL: 1, TITLE: 2, TOP: 3, CIP: 4, AWARD: 5,
+               STATUS: 6, UNITS: 7, XFER: 8 };
+
   var state = {
+    view: "courses",     // courses | programs
     data: null,          // window.CPL_COCI_LOOKUP
     q: "",
     college: "all",
     subject: "all",
     identity: "all",     // all | cid | ccn | mid | any | none
     credit: "all",       // all | C | E | N
+    transfer: "all",     // all | xfer | noxfer  (courses: C-ID transfer-model)
     sort: { key: "default", dir: "asc" },
     limit: PAGE,
     expanded: {},        // row index (in data.rows) -> true
     colWidths: null,
     _filtered: null,     // cached filtered row-index list
+    // ── Programs view ──
+    programs: null,      // window.CPL_COCI_PROGRAMS (lazy-loaded on first open)
+    pcollege: "all",
+    paward: "all",
+    pstatus: "all",
+    ptransfer: "all",    // all | xfer | noxfer  (programs: ADT/transfer degrees)
+    psort: { key: "default", dir: "asc" },
+    plimit: PAGE,
+    _pfiltered: null,
   };
 
   function el(tag, attrs, kids) {
@@ -119,6 +139,11 @@
       if ((state.identity === "cid" || state.identity === "ccn" || state.identity === "mid")
           && !has[state.identity]) return false;
     }
+    if (state.transfer !== "all") {
+      var xf = !!r[ROW.CID];   // transfer-model = carries a C-ID (a floor, not full transferability)
+      if (state.transfer === "xfer" && !xf) return false;
+      if (state.transfer === "noxfer" && xf) return false;
+    }
     if (state.q) {
       var hay = (colleges[r[ROW.COLLEGE]] + " " + r[ROW.CTRL] + " " + r[ROW.SUBJ] + " "
         + r[ROW.SUBJ] + " " + r[ROW.NUM] + " " + r[ROW.TITLE] + " " + r[ROW.CID] + " "
@@ -141,12 +166,13 @@
     if (k !== "default") {
       var col = { college: ROW.COLLEGE, ctrl: ROW.CTRL, subj: ROW.SUBJ, num: ROW.NUM,
                   title: ROW.TITLE, units: ROW.UNITS, credit: ROW.CREDIT, top: ROW.TOP,
-                  ids: ROW.MID }[k];
+                  xfer: ROW.CID, ids: ROW.MID }[k];
       var colleges2 = colleges;
       out.sort(function (a, b) {
         var ra = rows[a], rb = rows[b], va, vb;
         if (k === "college") { va = colleges2[ra[col]]; vb = colleges2[rb[col]]; }
         else if (k === "units") { va = (ra[col] == null ? -1 : +ra[col]); vb = (rb[col] == null ? -1 : +rb[col]); }
+        else if (k === "xfer") { va = ra[ROW.CID] ? 0 : 1; vb = rb[ROW.CID] ? 0 : 1; }
         else if (k === "ids") {
           va = (ra[ROW.CCN] || ra[ROW.CID] || ra[ROW.MID] || "~");
           vb = (rb[ROW.CCN] || rb[ROW.CID] || rb[ROW.MID] || "~");
@@ -208,6 +234,7 @@
     { key: "title",   label: "Title" },
     { key: "units",   label: "Units" },
     { key: "credit",  label: "Credit" },
+    { key: "xfer",    label: "Transfer" },
     { key: "top",     label: "TOP" },
     { key: "ids",     label: "Identities (M-ID · C-ID · CCN)" },
     { key: "ctrl",    label: "Control #" },
@@ -310,6 +337,11 @@
     tr.appendChild(el("td", {}, [r[ROW.UNITS] == null ? "—" : String(r[ROW.UNITS])]));
     tr.appendChild(el("td", { title: CREDIT_LABEL[r[ROW.CREDIT]] || "" },
       [r[ROW.CREDIT] || "—"]));
+    var xfCell = el("td", { class: "cplcoci-xfer",
+      title: r[ROW.CID]
+        ? ("Transfer-model — carries C-ID " + r[ROW.CID] + " (a floor, not full CSU/UC transferability)")
+        : "No C-ID on record" }, [r[ROW.CID] ? "🎓" : "—"]);
+    tr.appendChild(xfCell);
     tr.appendChild(el("td", {}, [r[ROW.TOP] || "—"]));
     tr.appendChild(idChips(r));
     tr.appendChild(el("td", { title: "COCI CourseControlNumber" }, [r[ROW.CTRL]]));
@@ -339,11 +371,11 @@
       v = v == null ? "" : String(v);
       return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
     };
-    var out = ["College,ControlNumber,Subject,Number,Title,Units,Credit,TOP,CID,CCN,MID"];
+    var out = ["College,ControlNumber,Subject,Number,Title,Units,Credit,Transfer-model (C-ID),TOP,CID,CCN,MID"];
     idxs.forEach(function (i) {
       var r = rows[i];
       out.push([colleges[r[ROW.COLLEGE]], r[ROW.CTRL], r[ROW.SUBJ], r[ROW.NUM],
-        r[ROW.TITLE], r[ROW.UNITS], CREDIT_LABEL[r[ROW.CREDIT]] || "", r[ROW.TOP],
+        r[ROW.TITLE], r[ROW.UNITS], CREDIT_LABEL[r[ROW.CREDIT]] || "", r[ROW.CID] ? "Yes" : "No", r[ROW.TOP],
         r[ROW.CID], r[ROW.CCN], r[ROW.MID]].map(esc).join(","));
     });
     var blob = new Blob([out.join("\n")], { type: "text/csv" });
@@ -364,6 +396,7 @@
   }
 
   var _debounce = null;
+
   function renderShell() {
     var r = root();
     if (!r) return;
@@ -373,15 +406,41 @@
 
     r.appendChild(el("div", { class: "cplcoci-head" }, [
       el("span", { class: "h" }, ["COCI Lookup"]),
-      el("span", { class: "sub" },
-        ["the raw COCI course catalog · " + state.data.rows.length.toLocaleString()
-         + " records · " + state.data.colleges.length + " colleges · extract "
-         + (state.data._built_at || "—")]),
+      el("span", { class: "sub", id: "cplcoci-sub" }, [""]),
     ]));
 
-    var tb = el("div", { class: "cplcoci-toolbar" });
+    // Courses | Programs view toggle
+    var seg = el("div", { class: "cplcoci-viewseg" });
+    [["courses", "Courses"], ["programs", "Programs"]].forEach(function (v) {
+      var b = el("button", { class: "cplcoci-viewbtn" + (state.view === v[0] ? " on" : ""),
+        type: "button" }, [v[1]]);
+      b.onclick = function () { if (state.view !== v[0]) { state.view = v[0]; renderShell(); } };
+      seg.appendChild(b);
+    });
+    r.appendChild(seg);
+
+    r.appendChild(el("div", { class: "cplcoci-toolbar", id: "cplcoci-toolbar" }, []));
+    r.appendChild(el("div", { id: "cplcoci-table-wrap", class: "cplcoci-wrap" }, []));
+
+    if (state.view === "programs") renderProgramsView();
+    else renderCoursesView();
+  }
+
+  function setSub(text) {
+    var s = document.getElementById("cplcoci-sub");
+    if (s) { clearNode(s); s.appendChild(document.createTextNode(text)); }
+  }
+
+  // ── Courses view ──────────────────────────────────────────────────────────
+  function renderCoursesView() {
+    setSub("the raw COCI course catalog · " + state.data.rows.length.toLocaleString()
+      + " records · " + state.data.colleges.length + " colleges · extract "
+      + (state.data._built_at || "—"));
+    var tb = document.getElementById("cplcoci-toolbar");
+    clearNode(tb);
+
     var q = el("input", { class: "cplcoci-q", id: "cplcoci-q", type: "search",
-      placeholder: "Search college, subject, number, title, control #, C-ID, CCN, M-ID…",
+      placeholder: "Search college, subject, number, title, control #, C-ID, CCN, M-ID, TOP…",
       autocomplete: "off" });
     q.value = state.q;
     q.oninput = function () {
@@ -391,83 +450,247 @@
     };
     tb.appendChild(q);
 
-    // College — datalist input (120 options).
     var colDl = el("datalist", { id: "cplcoci-college-list" });
-    state.data.colleges.slice().sort().forEach(function (c) {
-      colDl.appendChild(el("option", { value: c }));
-    });
+    state.data.colleges.slice().sort().forEach(function (c) { colDl.appendChild(el("option", { value: c })); });
     tb.appendChild(colDl);
     var colIn = el("input", { id: "cplcoci-college", type: "search",
       placeholder: "College…", list: "cplcoci-college-list", autocomplete: "off" });
+    if (state.college !== "all") colIn.value = state.college;
     var collegeSet = {};
     state.data.colleges.forEach(function (c) { collegeSet[c] = true; });
-    colIn.oninput = function () {
-      var v = this.value.trim();
-      state.college = collegeSet[v] ? v : "all";
-      invalidate();
-    };
+    colIn.oninput = function () { state.college = collegeSet[this.value.trim()] ? this.value.trim() : "all"; invalidate(); };
     tb.appendChild(colIn);
 
-    // Subject — datalist input (~3k options).
     var subjSet = {};
     state.data.rows.forEach(function (row) { subjSet[row[ROW.SUBJ].toUpperCase()] = true; });
     var subjDl = el("datalist", { id: "cplcoci-subject-list" });
-    Object.keys(subjSet).sort().forEach(function (s) {
-      subjDl.appendChild(el("option", { value: s }));
-    });
+    Object.keys(subjSet).sort().forEach(function (s) { subjDl.appendChild(el("option", { value: s })); });
     tb.appendChild(subjDl);
     var subjIn = el("input", { id: "cplcoci-subject", type: "search",
-      placeholder: "Subject…", list: "cplcoci-subject-list", autocomplete: "off",
-      style: "max-width:9em" });
-    subjIn.oninput = function () {
-      var v = this.value.trim().toUpperCase();
-      state.subject = subjSet[v] ? v : "all";
-      invalidate();
-    };
+      placeholder: "Subject…", list: "cplcoci-subject-list", autocomplete: "off", style: "max-width:9em" });
+    if (state.subject !== "all") subjIn.value = state.subject;
+    subjIn.oninput = function () { state.subject = subjSet[this.value.trim().toUpperCase()] ? this.value.trim().toUpperCase() : "all"; invalidate(); };
     tb.appendChild(subjIn);
 
-    var idSel = el("select", { id: "cplcoci-identity", title: "Identity filter" });
-    [["all", "Identity: any"], ["mid", "has M-ID"], ["cid", "has C-ID"],
-     ["ccn", "has CCN"], ["any", "has any identity"], ["none", "no identity"]]
-      .forEach(function (o) {
-        var opt = el("option", { value: o[0] }, [o[1]]);
-        if (o[0] === state.identity) opt.setAttribute("selected", "selected");
-        idSel.appendChild(opt);
-      });
-    idSel.onchange = function () { state.identity = this.value; invalidate(); };
-    tb.appendChild(idSel);
+    tb.appendChild(mkSelect("cplcoci-transfer", "Transfer filter (C-ID transfer-model)",
+      [["all", "Transfer: any"], ["xfer", "🎓 Transfer-model (C-ID)"], ["noxfer", "No C-ID"]],
+      state.transfer, function (v) { state.transfer = v; invalidate(); }));
+    tb.appendChild(mkSelect("cplcoci-identity", "Identity filter",
+      [["all", "Identity: any"], ["mid", "has M-ID"], ["cid", "has C-ID"], ["ccn", "has CCN"], ["any", "has any identity"], ["none", "no identity"]],
+      state.identity, function (v) { state.identity = v; invalidate(); }));
+    tb.appendChild(mkSelect("cplcoci-credit", "Credit status (CreditType rule)",
+      [["all", "Credit: any"], ["C", "Credit"], ["E", "Noncredit Enhanced"], ["N", "Noncredit"]],
+      state.credit, function (v) { state.credit = v; invalidate(); }));
 
-    var crSel = el("select", { id: "cplcoci-credit", title: "Credit status (CreditType rule)" });
-    [["all", "Credit: any"], ["C", "Credit"], ["E", "Noncredit Enhanced"], ["N", "Noncredit"]]
-      .forEach(function (o) {
-        var opt = el("option", { value: o[0] }, [o[1]]);
-        if (o[0] === state.credit) opt.setAttribute("selected", "selected");
-        crSel.appendChild(opt);
-      });
-    crSel.onchange = function () { state.credit = this.value; invalidate(); };
-    tb.appendChild(crSel);
-
-    var csv = el("button", { class: "cplcoci-btn", id: "cplcoci-csv",
-      title: "Download the current filtered set as CSV" }, ["⬇ CSV"]);
+    var csv = el("button", { class: "cplcoci-btn", id: "cplcoci-csv", title: "Download the current filtered set as CSV" }, ["⬇ CSV"]);
     csv.onclick = exportCsv;
     tb.appendChild(csv);
-
     tb.appendChild(el("span", { class: "cplcoci-count", id: "cplcoci-count" }, [""]));
-    r.appendChild(tb);
-
-    r.appendChild(el("div", { id: "cplcoci-table-wrap", class: "cplcoci-wrap" }, []));
 
     // Cross-tab deep-link prefill (sessionStorage, the RACI focus pattern).
     try {
       var pre = sessionStorage.getItem("cpl_coci_focus");
-      if (pre) {
-        sessionStorage.removeItem("cpl_coci_focus");
-        q.value = pre;
-        state.q = pre.toLowerCase().trim();
-      }
+      if (pre) { sessionStorage.removeItem("cpl_coci_focus"); q.value = pre; state.q = pre.toLowerCase().trim(); }
     } catch (e) {}
 
     renderTable();
+  }
+
+  function mkSelect(id, title, opts, val, onchange) {
+    var s = el("select", { id: id, title: title });
+    opts.forEach(function (o) {
+      var opt = el("option", { value: o[0] }, [o[1]]);
+      if (o[0] === val) opt.setAttribute("selected", "selected");
+      s.appendChild(opt);
+    });
+    s.onchange = function () { onchange(this.value); };
+    return s;
+  }
+
+  // ── Programs view ─────────────────────────────────────────────────────────
+  var PROG_COLS = [
+    { key: "pcollege", label: "College", idx: PROG.COLLEGE, ref: "colleges" },
+    { key: "pctrl",    label: "Control #", idx: PROG.CTRL },
+    { key: "ptitle",   label: "Title", idx: PROG.TITLE },
+    { key: "paward",   label: "Award", idx: PROG.AWARD, ref: "awards" },
+    { key: "ptop",     label: "TOP", idx: PROG.TOP },
+    { key: "pcip",     label: "CIP", idx: PROG.CIP },
+    { key: "pxfer",    label: "Transfer", idx: PROG.XFER },
+    { key: "punits",   label: "Units", idx: PROG.UNITS },
+    { key: "pstatus",  label: "Status", idx: PROG.STATUS, ref: "statuses" },
+  ];
+
+  function renderProgramsView() {
+    var tb = document.getElementById("cplcoci-toolbar");
+    if (tb) clearNode(tb);
+    if (!state.programs) {
+      setSub("loading COCI programs…");
+      var wrap0 = document.getElementById("cplcoci-table-wrap");
+      if (wrap0) { clearNode(wrap0); wrap0.appendChild(el("div", { class: "cplcoci-empty" }, ["Loading COCI programs…"])); }
+      if (window.CPL_TABS && window.CPL_TABS.loadScript) {
+        window.CPL_TABS.loadScript("coci_programs_data.js", "CPL_COCI_PROGRAMS", function () {
+          state.programs = window.CPL_COCI_PROGRAMS || null;
+          if (state.view === "programs") renderProgramsView();
+        });
+      } else if (wrap0) {
+        clearNode(wrap0);
+        wrap0.appendChild(el("div", { class: "cplcoci-empty" }, ["COCI programs data unavailable."]));
+      }
+      return;
+    }
+    var P = state.programs;
+    setSub("the COCI program inventory · " + P.rows.length.toLocaleString() + " programs · "
+      + P.colleges.length + " colleges · " + (P._built_at || "—") + " · 🎓 ADT = Associate Degree for Transfer");
+
+    var q = el("input", { class: "cplcoci-q", id: "cplcoci-pq", type: "search",
+      placeholder: "Search title, control #, TOP, CIP, college, award…", autocomplete: "off" });
+    q.value = state.q;
+    q.oninput = function () {
+      var v = this.value.toLowerCase().trim();
+      clearTimeout(_debounce);
+      _debounce = setTimeout(function () { state.q = v; pInvalidate(); }, 160);
+    };
+    tb.appendChild(q);
+
+    var colDl = el("datalist", { id: "cplcoci-pcollege-list" });
+    P.colleges.slice().sort().forEach(function (c) { colDl.appendChild(el("option", { value: c })); });
+    tb.appendChild(colDl);
+    var colIn = el("input", { id: "cplcoci-pcollege", type: "search",
+      placeholder: "College…", list: "cplcoci-pcollege-list", autocomplete: "off" });
+    if (state.pcollege !== "all") colIn.value = state.pcollege;
+    var pcolSet = {}; P.colleges.forEach(function (c) { pcolSet[c] = true; });
+    colIn.oninput = function () { state.pcollege = pcolSet[this.value.trim()] ? this.value.trim() : "all"; pInvalidate(); };
+    tb.appendChild(colIn);
+
+    var awardOpts = [["all", "Award: any"]];
+    P.awards.slice().forEach(function (a) { if (a) awardOpts.push([a, a.length > 46 ? a.slice(0, 44) + "…" : a]); });
+    tb.appendChild(mkSelect("cplcoci-paward", "Award type", awardOpts, state.paward, function (v) { state.paward = v; pInvalidate(); }));
+
+    tb.appendChild(mkSelect("cplcoci-ptransfer", "Transfer (ADT) filter",
+      [["all", "Transfer: any"], ["xfer", "🎓 Transfer (ADT)"], ["noxfer", "Non-transfer"]],
+      state.ptransfer, function (v) { state.ptransfer = v; pInvalidate(); }));
+
+    var statusOpts = [["all", "Status: any"]];
+    P.statuses.slice().forEach(function (s) { if (s) statusOpts.push([s, s]); });
+    tb.appendChild(mkSelect("cplcoci-pstatus", "Program status", statusOpts, state.pstatus, function (v) { state.pstatus = v; pInvalidate(); }));
+
+    var csv = el("button", { class: "cplcoci-btn", title: "Download the current filtered programs as CSV" }, ["⬇ CSV"]);
+    csv.onclick = exportProgCsv;
+    tb.appendChild(csv);
+    tb.appendChild(el("span", { class: "cplcoci-count", id: "cplcoci-pcount" }, [""]));
+
+    renderProgTable();
+  }
+
+  function progMatches(r, P) {
+    if (state.pcollege !== "all" && P.colleges[r[PROG.COLLEGE]] !== state.pcollege) return false;
+    if (state.paward !== "all" && P.awards[r[PROG.AWARD]] !== state.paward) return false;
+    if (state.pstatus !== "all" && P.statuses[r[PROG.STATUS]] !== state.pstatus) return false;
+    if (state.ptransfer === "xfer" && !r[PROG.XFER]) return false;
+    if (state.ptransfer === "noxfer" && r[PROG.XFER]) return false;
+    if (state.q) {
+      var hay = (P.colleges[r[PROG.COLLEGE]] + " " + r[PROG.CTRL] + " " + r[PROG.TITLE] + " "
+        + r[PROG.TOP] + " " + r[PROG.CIP] + " " + P.awards[r[PROG.AWARD]]).toLowerCase();
+      var toks = state.q.split(/\s+/);
+      for (var i = 0; i < toks.length; i++) if (toks[i] && hay.indexOf(toks[i]) < 0) return false;
+    }
+    return true;
+  }
+
+  function progFilteredIdx() {
+    if (state._pfiltered) return state._pfiltered;
+    var P = state.programs, rows = P.rows, out = [];
+    for (var i = 0; i < rows.length; i++) if (progMatches(rows[i], P)) out.push(i);
+    var k = state.psort.key, dir = state.psort.dir === "asc" ? 1 : -1;
+    if (k !== "default") {
+      var cdef = null;
+      for (var c = 0; c < PROG_COLS.length; c++) if (PROG_COLS[c].key === k) cdef = PROG_COLS[c];
+      if (cdef) {
+        out.sort(function (a, b) {
+          var ra = rows[a], rb = rows[b], va, vb;
+          if (cdef.key === "pxfer") { va = ra[PROG.XFER] ? 0 : 1; vb = rb[PROG.XFER] ? 0 : 1; }
+          else if (cdef.ref) { va = P[cdef.ref][ra[cdef.idx]] || ""; vb = P[cdef.ref][rb[cdef.idx]] || ""; va = va.toLowerCase(); vb = vb.toLowerCase(); }
+          else { va = String(ra[cdef.idx] == null ? "" : ra[cdef.idx]).toLowerCase(); vb = String(rb[cdef.idx] == null ? "" : rb[cdef.idx]).toLowerCase(); }
+          if (va < vb) return -1 * dir;
+          if (va > vb) return 1 * dir;
+          return a - b;
+        });
+      }
+    }
+    state._pfiltered = out;
+    return out;
+  }
+
+  function renderProgTable() {
+    var wrap = document.getElementById("cplcoci-table-wrap");
+    if (!wrap) return;
+    clearNode(wrap);
+    var P = state.programs, rows = P.rows, idxs = progFilteredIdx();
+    var countEl = document.getElementById("cplcoci-pcount");
+    if (countEl) countEl.textContent = idxs.length.toLocaleString() + " of " + rows.length.toLocaleString() + " COCI programs";
+    if (!idxs.length) {
+      wrap.appendChild(el("div", { class: "cplcoci-empty" }, ["No COCI programs match — loosen the search or filters."]));
+      return;
+    }
+    var table = el("table", { class: "cplcoci-table" });
+    var thead = el("thead"), htr = el("tr");
+    PROG_COLS.forEach(function (c) {
+      var th = el("th", {}, [c.label]);
+      if (state.psort.key === c.key) th.appendChild(el("span", { class: "dir" }, [state.psort.dir === "asc" ? "▲" : "▼"]));
+      th.onclick = function () {
+        state.psort = { key: c.key, dir: (state.psort.key === c.key && state.psort.dir === "asc") ? "desc" : "asc" };
+        state._pfiltered = null; renderProgTable();
+      };
+      htr.appendChild(th);
+    });
+    thead.appendChild(htr); table.appendChild(thead);
+    var tbody = el("tbody");
+    var n = Math.min(idxs.length, state.plimit);
+    for (var i = 0; i < n; i++) tbody.appendChild(buildProgRow(rows[idxs[i]], P));
+    table.appendChild(tbody);
+    wrap.appendChild(table);
+    if (idxs.length > state.plimit) {
+      var more = el("button", { class: "cplcoci-btn ghost" },
+        ["Show " + Math.min(PAGE, idxs.length - state.plimit).toLocaleString() + " more ("
+         + (idxs.length - state.plimit).toLocaleString() + " remaining)"]);
+      more.onclick = function () { state.plimit += PAGE; renderProgTable(); };
+      wrap.appendChild(el("div", { class: "cplcoci-more" }, [more]));
+    }
+  }
+
+  function buildProgRow(r, P) {
+    var tr = el("tr", { class: "cplcoci-row" });
+    tr.appendChild(el("td", { title: P.colleges[r[PROG.COLLEGE]] }, [P.colleges[r[PROG.COLLEGE]]]));
+    tr.appendChild(el("td", { title: "COCI program control #" }, [r[PROG.CTRL] || "—"]));
+    tr.appendChild(el("td", { title: r[PROG.TITLE] }, [r[PROG.TITLE] || "—"]));
+    tr.appendChild(el("td", { title: P.awards[r[PROG.AWARD]] || "" }, [P.awards[r[PROG.AWARD]] || "—"]));
+    tr.appendChild(el("td", {}, [r[PROG.TOP] || "—"]));
+    tr.appendChild(el("td", {}, [r[PROG.CIP] || "—"]));
+    tr.appendChild(el("td", { class: "cplcoci-xfer",
+      title: r[PROG.XFER] ? "Associate Degree for Transfer (ADT / UC Transfer Pathway)" : "Not a transfer degree" },
+      [r[PROG.XFER] ? "🎓 ADT" : "—"]));
+    tr.appendChild(el("td", {}, [r[PROG.UNITS] || "—"]));
+    tr.appendChild(el("td", {}, [P.statuses[r[PROG.STATUS]] || "—"]));
+    return tr;
+  }
+
+  function pInvalidate() { state._pfiltered = null; state.plimit = PAGE; renderProgTable(); }
+
+  function exportProgCsv() {
+    var P = state.programs, rows = P.rows, idxs = progFilteredIdx();
+    var esc = function (v) { v = v == null ? "" : String(v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
+    var out = ["College,ControlNumber,Title,Award,TOP,CIP,Transfer (ADT),Units,Status"];
+    idxs.forEach(function (i) {
+      var r = rows[i];
+      out.push([P.colleges[r[PROG.COLLEGE]], r[PROG.CTRL], r[PROG.TITLE], P.awards[r[PROG.AWARD]],
+        r[PROG.TOP], r[PROG.CIP], r[PROG.XFER] ? "Yes" : "No", r[PROG.UNITS], P.statuses[r[PROG.STATUS]]].map(esc).join(","));
+    });
+    var blob = new Blob([out.join("\n")], { type: "text/csv" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "coci_programs_" + (P._built_at || "") + ".csv";
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 500);
   }
 
   function init() {
