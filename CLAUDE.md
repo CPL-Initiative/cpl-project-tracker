@@ -653,6 +653,23 @@ tightens EVERY count, reuses the all-college `CPL_COCI_COURSE_KEYS` set. Left
 `docs/cpl_pathways_lessons.md` · KB note
 `methodology-filter-live-counts-against-current-catalog.md`.
 
+### Session 115 — StarMagna: the doctrine graduation gate → a scenario-refinement cascade (v0.6 → v0.11) (2026-07-14)
+
+Picked up the CCR mainline (wave 4 staged, not run). Sam chose the **doctrine gate
+first**: ran the **v0.6 calibration re-seed** as two blind instruments (regression
+vs his ratified calls + a fresh held-out sample) → **92% fundamental / 94.7% fine
+after his rulings → the doctrine GRADUATED** (#784/#785). Then a **scenario cascade**
+via small AskUserQuestion batches took it to **v0.11** (#786–#789): P-6 same-college
+merge form, P-1b + Q-FLOOR bound, P-7 generic umbrellas, the 3-rung ladder cap, the
+**ESL 3-comprehensive collapse** (2,364→3 + transfer/Citizenship/VESL carve-outs),
+FL numeric rungs, the Music/Dance activity doctrine (**Q-TARGETCOUNT fully settled**)
++ the permutation-pressure lever. **7 of 11 open Qs closed; ~6,600 identities**
+(ESL/Music/Dance/KINE) now have a packaging policy; whole-worklist batch-apply
+authorized. Product insight: small curated scenario batches beat the thousands-strong
+🧠 panel (Sam had bounced off it). Full story: `docs/ccr_convergence_lessons.md`
+(batches 1–5); method: `docs/kb-notes/methodology-curated-scenario-batches-doctrine-elicitation.md`.
+Handoff: `docs/session_116_handoff.md`.
+
 ### Session 113 — SkyTeleo: the HVAC mis-mint thread → a new auditor rule + blank-discipline cleanup (2026-07-13)
 
 Sam caught `HVAC M10FR` (LA Trade `DIESLTK 122C`) minted **HVAC** but really
@@ -670,27 +687,6 @@ pre-seed** (**#763**): 5 homonym-checked codes → the live minter lexicon
 = wellness) / MCOM / LIS. Also fixed the Annual Goals association-editor 409
 dup-key loop + centered the goal numbers (**#760**). Full story:
 `docs/subject_discipline_cleanup_lessons.md`. Handoff: `docs/session_114_handoff.md`.
-
-### Session 112 — SkyEmpyrean: vocational wire-up · MQ re-validation · wave 3 FIRED · Doctrine v0.6 (2026-07-11→13)
-
-Sam asked whether the dataset needed a **new vocational identifier** — a 6-agent
-audit said no (the signal already exists 3 ways: `cte` · `mq_list` ·
-`noncredit_category` + CSR 🎓/🔧 chips; a `V`-prefix collides with VOCE/VETT/VIET
-and bakes a mutable attribute into an immutable key). His HUM/PE catch became a
-full **MQ 19th-ed re-validation** (**#746** — positional PDF re-parse; HUM/PE/PEDS
-→ master's + **8 dropped disciplines restored incl. Accounting**, 240→248). The
-signal wired into the CCR scanner (**#747**) and **wave 3 fired** — 137 discipline
-+ 25 title corrections live (`trailcrew-ccr3-s112@bot`; 14 pre-existing titles
-left intact, 6 MQ-tighteners held for faculty per D-9). **WELD-in-Carpentry
-reverted** (D-10 — discipline is the FIELD, not the program). **CER multi-issuer +
-C-ID pre-seed** shipped (**#757**). Capstone: a **calibration sitting** →
-**Doctrine v0.6** (**#758**) — Sam's **student-repeat test** ratified as P-1,
-anchored to **CA Title 5 §55050** ("similar," not identical), + learning-equivalence
-+ refinements P-1a/7a/9a/10a; 30 non-CR/NC calls agreed 100%. Full story:
-`docs/ccr_convergence_lessons.md`. **Next: the v0.6 calibration re-seed** (staged —
-sampler + payload present). Handoff: `docs/session_113_handoff.md`.
-
----
 
 ## Troubleshooting
 
