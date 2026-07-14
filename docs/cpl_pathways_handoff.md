@@ -18,9 +18,12 @@ numbered `session_<N>_handoff.md` lane belongs to the CSR/CER mainline; don't
 collide with it). Read `docs/cpl_pathways_lessons.md` first — it holds the full
 story, newest section last.
 
-## Current state (2026-07-14, StarRunner — #774 MERGED)
+## Current state (2026-07-14, StarMarathon — retired-course filter shipped)
 
-The tab is now **TWO-TIER**, behind one grouped **dropdown** (chips retired):
+Latest: the directory ✓ counts now filter out **retired/renumbered course
+numbers** MAP still carries (Santa Ana Automotive 31 → **12 courses · 18
+credentials**). See "✅ RESOLVED (display fix)" below. The tab is **TWO-TIER**,
+behind one grouped **dropdown** (chips retired):
 
 - **FEATURED** (`cpl_pathways_data.js`) — the 3 deep hand-curated course maps
   below. Unchanged; full course lists, stage banner, ⚡ Quick Adopt, ⬇ PDF.
@@ -58,42 +61,40 @@ promote a directory program into a featured map; **refresh** the COCI export
 generator); the credential lane could use a **calibration re-seed** now Rule 8c
 exists; generalize 8c-1 (`(with Practical)`-style suffixes) beyond automotive.
 
-### 🔑 PRIORITY next-session finding — retired course numbers inflate the counts (Sam, 2026-07-14)
+### ✅ RESOLVED (display fix) — retired course numbers inflated the counts (StarMarathon, 2026-07-14)
 
 Sam eyeballed Santa Ana's Automotive card and spotted "dups" — the SAME
-competency listed under two course numbers (AT 106 **and** AUTO 118 = Engine
-Performance; AT 112 / AUTO 117 = HVAC; AT 54 / AUTO 115 = Brakes). **Confirmed
-root cause:** the `AT`-prefix courses are **RETIRED** — Santa Ana's current COCI
-catalog has **72 `AUTO` courses and ZERO `AT`** (AT 106/112/54 are absent from
-COCI entirely), but the **MAP platform still carries the old `AT`-series
-articulations** alongside the current `AUTO` ones. So each competency is
-articulated twice (old number + new number).
+competency under two course numbers (AT 106 **and** AUTO 118 = Engine
+Performance; AT 112 / AUTO 117 = HVAC; AT 54 / AUTO 115 = Brakes). **Root cause:**
+the `AT`-prefix courses (and old `AUTO 53/54/A1/B33` numbers) are **RETIRED** —
+Santa Ana's catalog has **72 `AUTO`, 0 `AT`** — but MAP still carries the old
+articulations alongside the current ones, so each ASE competency is articulated
+2–3× and inflated the count to 31.
 
-**Sam's key connection: this is THE source of the "sus" counts.** The stale
-retired-number twins are why Santa Ana read "127 units" (abandoned unit metric)
-and why it reads "**31 courses · 18 credentials**" now — the 13-course gap is
-largely retired `AT` duplicates of current `AUTO` courses. Not a
-credential-mapping bug (the ASE mapping is correct); the **course link is
-stale**.
+**Fix #2 (PATHWAYS DISPLAY, our lane) — SHIPPED this session.** The directory ✓
+list now filters against the **current MAP course catalog**: a new sidecar
+`cpl_coci_course_keys.js` (emitted by `kb/_build_coci_lookup.py` from the same
+rows as `coci_lookup_data.js`) is consulted in `resolveDirectory` /
+`isRetiredCourse` — drop a course only when the college IS in the catalog and the
+course is NOT (**fail-open** otherwise, so an active course can never be dropped).
+Santa Ana now reads **✓ 12 courses · 18 credentials** (real-Chromium verified —
+all current `AUTO`, zero `AT`; dropdown "12/81"). Only the ✓ count is filtered;
+the ⊕ pool stays inclusive. Tests 137 → **143**. Sam confirmed proceeding on the
+status-less "Course List from MAP" export — the fail-open property means it can't
+mis-drop an active course regardless of the export's status purity. Full story:
+`cpl_pathways_lessons.md` (2026-07-14 StarMarathon) + KB note
+`methodology-filter-live-counts-against-current-catalog.md`.
 
-**Recommended fixes (next session):**
-1. **ROOT — a "stale articulation" data-quality signal (CER/CCR mainline):**
-   flag any CER articulation whose `(college, subj, num)` has **no matching row
-   in the current COCI course list** (`kb/reference/coci_course_list.xlsx`) —
-   a retired/renumbered course still live in MAP. Systemwide, not just Santa
-   Ana. This is the clean-at-the-source fix and tightens EVERY count.
-2. **PATHWAYS DISPLAY (our lane, easy):** in `renderDirectory`'s ✓ list, either
-   (a) drop courses absent from current COCI, or (b) group the list by ASE
-   competency (one row per credential, listing its course numbers) — collapses
-   the visible dups and makes the headline the ~18-credential truth. `mineCourses`
-   would then count COCI-current courses only.
-   The tile already exposes the gap (`courses · credentials`); #2 makes the ✓
-   list match it.
+**Fix #1 (ROOT) — STILL OPEN, a MAINLINE candidate.** A systemwide
+**stale-articulation data-quality signal** in the CER/CCR generator: flag any
+articulation whose `(college, subj, num)` is absent from the current course
+catalog. Tightens EVERY count (CSR, CER tab, everything), not just this tab; the
+all-college `CPL_COCI_COURSE_KEYS` set (or the same join) is reusable for it.
+**Flag this to the next numbered session** — it's out of the side-lane's scope.
 
 > **Side-lane discipline:** this workstream left `kb/cpl_todos.json` + the
-> numbered `session_<N>_handoff.md` untouched — the CER/CSR mainline owns those.
-> The stale-articulation detector (#1 above) is a mainline candidate — flag it
-> to the next numbered session.
+> numbered `session_<N>_handoff.md` untouched — the CER/CSR mainline owns those,
+> including the ROOT fix #1 above.
 
 ## The three FEATURED maps (unchanged)
 
@@ -154,6 +155,14 @@ link to colleagues 2026-07-10 for first-look feedback; expect iteration asks.
   Adoption pool caps at `DIR_POOL_CAP` (20). Verify a render in real Chromium
   against `python3 -m http.server` (executablePath
   `/opt/pw-browsers/chromium-1194/chrome-linux/chrome`).
+- **Retired-course filter** (added 2026-07-14): the ✓ list drops courses absent
+  from the current MAP course catalog. Sidecar `cpl_coci_course_keys.js`
+  (`window.CPL_COCI_COURSE_KEYS`, ~1.85 MB, emitted by `kb/_build_coci_lookup.py`
+  next to `coci_lookup_data.js` — rebuild both together on a fresh COCI extract).
+  `getCociKeyMap()` → `collegeUpper → Set("SUBJ NNN.NN")`; `isRetiredCourse()`
+  gates `resolveDirectory`'s `rawMine`. **Fail-open**: no catalog / college
+  absent → keep (never drops an active course). Lazy-loaded in `activate()`.
+  Only the ✓ count is filtered — the ⊕ pool stays inclusive.
 
 ## Open items, in priority order
 
@@ -203,4 +212,5 @@ link to colleagues 2026-07-10 for first-look feedback; expect iteration asks.
 - The uc_desc_lane red-X saga resolved 2026-07-10: the ECED fixture drift was
   fixed presence-conditionally on the mainline (#739); suite fully green.
 
-Moniker suggestion: **SkyGirder** — or claim your own.
+— StarRunner → **StarMarathon** (2026-07-14, retired-course filter). Moniker
+suggestion for the next hand: **StarRelay** — or claim your own.

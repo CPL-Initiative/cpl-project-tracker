@@ -362,3 +362,82 @@ program into a featured map on request; (c) refresh the COCI export to add newer
 baccalaureates; (d) the credential lane could use a **calibration re-seed** now
 that Rule 8c exists; (e) generalize 8c-1 (`(with Practical Assessment)`-style
 suffixes) beyond automotive.
+
+## 2026-07-14 — StarMarathon: the retired-course filter (the "sus count" root cause)
+
+Picked up StarRunner's **🔑 PRIORITY finding**: the directory ✓ counts are
+inflated by **retired/renumbered course numbers the MAP platform still carries
+as articulations**. Santa Ana Automotive read **31 courses** but the truth is
+**~18 credentials** — MAP holds the retired `AT`-series (`AT 106`, `AT 112`, …)
+*and* old `AUTO` numbers (`AUTO 53/54/A1/B33`) alongside the current
+`AUTO 111–119`, so each ASE competency is articulated two or three times.
+
+### What I verified before writing code (the join is the crux)
+
+- Reproduced `resolveDirectory`'s `mine` list in Python for Santa Ana (0948) and
+  joined it to the current MAP course catalog (`coci_course_list.xlsx` →
+  `coci_lookup_data.js`, keyed by **college + SUBJ + normalized number**).
+  Result: **31 distinct courses → 12 current** (19 dropped = 5 retired `AT` + 14
+  old `AUTO` numbers). The 12 survivors map cleanly to ASE A1–A9 + Master + G1.
+- **College-scoped is the right key, not subject-only.** All 19 stale courses
+  are `coci_subjonly=True` (the SUBJ exists *somewhere*) but
+  `coci_collegescoped=False`. A subject-only check would keep every stale one.
+- Confirmed Santa Ana's catalog = **72 `AUTO`, 0 `AT`** (matches the handoff).
+
+### Sam's data-quality question (mid-session) — and why the answer is safe
+
+Sam asked whether the course export includes inactive/historical/draft rows (he
+wants to count **only Active/Approved**). Findings:
+- The **program** export (`coci_program_export_*.csv`) has a `STATUS` column; the
+  **course** export ("Course List from MAP") has **no status column** — can't
+  filter by status *within* it.
+- But two independent tests show it's **already an active catalog**: retired
+  numbers are absent, and only **0.04%** of `(college, subj, num)` codes carry a
+  second control number (no historical versions retained).
+- **The safety property that settles it:** the filter can only ever *drop a
+  course absent from the catalog*. An active course is always in the catalog, so
+  **the filter can never drop a genuinely active course** — worst case (if some
+  inactive row leaked in) it's a no-op for that row. Sam chose **proceed with the
+  MAP course list**.
+
+### What shipped
+
+- **Generator** (`kb/_build_coci_lookup.py`) emits a new sidecar
+  **`cpl_coci_course_keys.js`** (`window.CPL_COCI_COURSE_KEYS`, ~1.85 MB /
+  0.36 MB gz): `{ colleges:[…], keys:{ "<idx>": ["SUBJ NNN.NN", …] } }`, built
+  from the same rows as `coci_lookup_data.js` so the two can never drift. Static
+  (not a cron artifact) → committed, like `coci_lookup_data.js`.
+- **Consumer** (`cpl_pathways.js`): `getCociKeyMap()` builds a
+  `collegeUpper → Set("SUBJ NNN.NN")` once; `isRetiredCourse()` returns *drop*
+  only when the college IS in the catalog and the course is NOT — **fail-open**
+  otherwise (no catalog loaded, or college absent). `resolveDirectory` filters
+  the ✓ `rawMine` list; a footnote names the catalog snapshot. Lazy-loads the
+  sidecar in `activate()` (fail-soft), so it costs nothing outside this tab.
+- **Scope decision:** filter **only the home college's ✓ list**, leave the ⊕
+  adoption pool **inclusive** — a peer's recognized competency is still adoptable
+  even if its local course number has rolled, and inclusiveness avoids ever
+  hiding a real opportunity against a slightly-stale snapshot. The pool count is
+  credential-based, so it wasn't inflated anyway.
+- **Tests** `cpl_pathways.test.js` **137 → 143**: fail-open with no catalog,
+  drop on catalog match (4 → 2), normalization guard, college-absent fail-open,
+  boot wiring. **Real-Chromium verified:** Santa Ana Automotive now reads
+  **✓ 12 courses · 18 credentials** (dropdown "12/81 courses"), list is all
+  current `AUTO`, zero `AT`, catalog footnote present, no console errors.
+
+### The reusable lesson (→ KB note)
+
+`docs/kb-notes/methodology-filter-live-counts-against-current-catalog.md`:
+live-derived counts inflate when the upstream keeps **retired identifiers**
+alive; filter against a **current-catalog snapshot**, keyed **precisely**
+(college-scoped, not subject-only), and **fail-open per entity** so you can only
+ever remove a confirmably-stale record — never a valid one.
+
+### Still open / flagged to the numbered mainline
+
+- **ROOT fix (#1) is a mainline candidate** — a systemwide **stale-articulation
+  data-quality signal** in the CER/CCR generator (flag any articulation whose
+  `(college, subj, num)` is absent from the current course catalog). That
+  tightens *every* count (CSR, CER tab, everything), not just this tab, and the
+  all-college `CPL_COCI_COURSE_KEYS` set (or the same join) is reusable for it.
+  Left for the next numbered session per side-lane discipline.
+- Untouched: `kb/cpl_todos.json` + numbered `session_<N>_handoff.md`.
