@@ -39,6 +39,8 @@
     { id: "cpl", label: "CPL", tag: "CPL", full: "CPL Initiative", tabs: null, home: "dashboard" },
     { id: "ci",  label: "C&I", tag: "C&I", full: "Curriculum & Instruction",
       tabs: ["our-process", "tmc-builder"], home: "our-process" },
+    { id: "cip", label: "CIP", tag: "CIP", full: "TOP-to-CIP Transition",
+      tabs: ["cip-crosswalk", "coci-lookup"], home: "cip-crosswalk" },
   ];
 
   function orgById(id) {

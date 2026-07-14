@@ -122,7 +122,7 @@
     if (state.q) {
       var hay = (colleges[r[ROW.COLLEGE]] + " " + r[ROW.CTRL] + " " + r[ROW.SUBJ] + " "
         + r[ROW.SUBJ] + " " + r[ROW.NUM] + " " + r[ROW.TITLE] + " " + r[ROW.CID] + " "
-        + r[ROW.CCN] + " " + r[ROW.MID]).toLowerCase();
+        + r[ROW.CCN] + " " + r[ROW.MID] + " " + r[ROW.TOP]).toLowerCase();
       var toks = state.q.split(/\s+/);
       for (var i = 0; i < toks.length; i++) {
         if (toks[i] && hay.indexOf(toks[i]) < 0) return false;

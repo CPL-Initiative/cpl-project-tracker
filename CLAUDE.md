@@ -540,6 +540,30 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### SkyNew side-lane — the CIP site: TOP↔CIP Crosswalk tab + suggest-to-curate (2026-07-14)
+
+The CO is transitioning course/program coding **TOP→CIP fall 2026** (ESS 26-06).
+ESS built a searchable Excel workbook to email to the field; Sam asked for a COBI
+tab that **replaces** it. Shipped a **third COBI area — CIP** (beside CPL/C&I in
+SkyFlyer's org layer: `cobi_orgs.js` `ORGS[]` +1, `?org=cip` → COBI ᶜᴵᴾ, tabs =
+CIP Crosswalk + COCI Lookup) + the top-level **CIP Crosswalk tab** (`#cip-crosswalk`,
+Reference & Curation group). `cip_crosswalk.js` (`window.CPL_CIP_CROSSWALK`, lazy,
+scoped `.cipx`) searches/filters the crosswalk (**420 TOP · 2,325 CIP · 5,353
+mappings**, normalized in `cip_crosswalk_data.js` from
+`kb/reference/cip_searchable_260708.xlsx` via `kb/_build_cip_crosswalk.py`),
+row-expands to CIP definition + 2020-CIP transition badges (New/Deleted/Moved) +
+SOC occupations + provenance + the colleges-with-pairing list + a **"COCI courses
+with TOP N"** deep-link (added TOP to the COCI search haystack). Faculty file
+**suggested changes/notes** open/anon (Quick-Adopt pattern) → Supabase
+`cip_crosswalk_suggestion` (anon INSERT-only, no public SELECT; queue read gated
+by `is_allowed_reviewer() OR team_pass_ok()`; `kb/supabase_cip_crosswalk_suggestion.sql`,
+MCP migration `cip_crosswalk_suggestion_intake` on Work Plan). Tests:
+`tests/cip_crosswalk.test.js` (36) + `cobi_orgs.test.js` extended (33); real-Chromium
+verified, 0 console errors; RLS verified live. Full story + continuation (a CO
+curator view for the queue is the top follow-up): `docs/cip_crosswalk_lessons.md`.
+Side-lane like SkyFlyer/SkyIron — left `cpl_todos.json` + the numbered handoff
+untouched.
+
 ### SkyFlyer side-lane — COBI org layer: the C&I subsite pilot + "Our Process" tab (2026-07-14, #765–#768 MERGED)
 
 Sam's Chancellor's Office talk → the CO **Curriculum & Instruction** team (Dean

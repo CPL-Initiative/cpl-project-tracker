@@ -39,6 +39,7 @@ const HEADER_NAV = `
     <button class="cpl-tab active" data-tab="dashboard">Dashboard</button>
     <button class="cpl-tab" data-tab="our-process">Our Process</button>
     <button class="cpl-tab" data-tab="tmc-builder">TMC Builder</button>
+    <button class="cpl-tab" data-tab="cip-crosswalk">CIP Crosswalk</button>
     <div class="cpl-nav-group" data-nav-group="funding">
       <button class="cpl-nav-group-head">Funding</button>
       <div class="cpl-nav-group-body">
@@ -69,8 +70,8 @@ function tagText(document) {
   check("init does not throw on default load", !threw);
   check("default site is CPL", window.CPL_ORGS.current().id === "cpl");
   check("switcher injected into the masthead", !!document.querySelector(".cobi-brand .cobi-orgswitch-sel"));
-  check("switcher lists both sites (CPL, C&I)",
-    document.querySelectorAll(".cobi-orgswitch-sel option").length === 2);
+  check("switcher lists all sites (CPL, C&I, CIP)",
+    document.querySelectorAll(".cobi-orgswitch-sel option").length === 3);
   check("REGRESSION GUARD: default CPL view shows Dashboard", shown(btn(document, "dashboard")));
   check("REGRESSION GUARD: default CPL view shows Budget (all tabs)", shown(btn(document, "budget")));
   check("REGRESSION GUARD: default CPL view shows the Funding group",
@@ -87,6 +88,13 @@ function tagText(document) {
     !shown(document.querySelector('.cpl-nav-group[data-nav-group="funding"]')));
   check("C&I: identity tag flips to C&I", tagText(document) === "C&I");
   check("C&I: switcher reflects the selection", document.querySelector(".cobi-orgswitch-sel").value === "ci");
+
+  // ── switch to CIP: only the crosswalk site's tabs show ──
+  window.CPL_ORGS.setOrg("cip");
+  check("CIP: CIP Crosswalk stays visible", shown(btn(document, "cip-crosswalk")));
+  check("CIP: Dashboard is hidden from the rail", !shown(btn(document, "dashboard")));
+  check("CIP: Budget is hidden from the rail", !shown(btn(document, "budget")));
+  check("CIP: identity tag flips to CIP", tagText(document) === "CIP");
 
   // ── back to CPL restores everything ──
   window.CPL_ORGS.setOrg("cpl");
