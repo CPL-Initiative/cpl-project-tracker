@@ -32,12 +32,34 @@ The tab is now **TWO-TIER**, behind one grouped **dropdown** (chips retired):
   program's **TOP code + college** to the CER dataset. Per card: ✓ the
   college's own in-field CPL · ⊕ the peer adoption pool (⚡ Quick Adopt, capped
   20 + Show-all) · 🏛 same-field cohort · ◆ GE-CLEP · a mustard **"CPL frontier"**
-  banner where nobody's articulated yet. Tests: 132 (was 97).
+  banner where nobody's articulated yet.
+- **Metric = COURSE COUNTS** (#777): the dropdown shows `current/potential
+  courses` per program and the ✓ tile shows `courses · credentials`. We tried
+  CPL *units* first; Sam flagged Automotive `127/357u` as "sus" — correctly:
+  unit sums count the course *catalog* and double-count competencies (4 courses
+  → 1 ASE area). Course counts read as coverage, not degree-credit. Tests: 137.
+- **PRs #774/#775/#777 MERGED.** Real-Chromium verified all card shapes.
 
-**Next likely asks (from Sam's feedback wave):** card density / GE-CLEP framing;
-**deepen-on-request** — promote any directory program into a full FEATURED map;
-**refresh** the COCI export (2026-06-17 snapshot; drop a newer CSV in
-`tmc/source_data/` + re-run the generator to add newly-approved baccalaureates).
+**Spin-off — the CER credential-merge doctrine (Rule 8c), APPLIED #778/#779.**
+The "sus count" dig became a new curation lane (CER exhibit credentials, NOT the
+CCR's M-ID course convergence — wave 4 skips it). Rule 8c now lives in
+`.claude/skills/exhibit-canonicalization/SKILL.md`: (1) mechanism qualifiers
+`(with Practical Assessment)` collapse into the base cert; (2) industry-cert vs
+local-Cx is a SPLIT not a merge (why the automotive count is legitimately
+large); (3) narrower competency doesn't fold; (4) read the curator's own issuer
+before assuming a mis-issue (Rule 9). Applied via `cred-rename-apply.yml`: the 10
+ASE `(with Practical)` folds (#778) + the Long Beach `Automative` cluster (6
+folds + 2 spelling fixes, #779). Scope: `docs/ase_practical_merge_scope.md`;
+doctrine rows in Supabase `merge_doctrine_notes`.
+
+**Next likely asks:** card density / GE-CLEP framing; **deepen-on-request** —
+promote a directory program into a featured map; **refresh** the COCI export
+(2026-06-17 snapshot; drop a newer CSV in `tmc/source_data/` + re-run the
+generator); the credential lane could use a **calibration re-seed** now Rule 8c
+exists; generalize 8c-1 (`(with Practical)`-style suffixes) beyond automotive.
+
+> **Side-lane discipline:** this workstream left `kb/cpl_todos.json` + the
+> numbered `session_<N>_handoff.md` untouched — the CER/CSR mainline owns those.
 
 ## The three FEATURED maps (unchanged)
 

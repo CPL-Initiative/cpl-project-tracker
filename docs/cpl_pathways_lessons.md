@@ -290,3 +290,75 @@ a new articulation lights up with no edit.
   generator/cron files touched); `var(--token)` only, no raw hex; createElement/
   textContent only (XSS). `cpl_adoption_interest` RLS unchanged (no public
   SELECT). `package.json` reverted after a local-only Playwright install.
+
+### Same-day iteration 5 — the metric: units → "sus" → COURSE COUNTS
+
+Sam poked the live tab and asked for two things: the **total on the ✓ tile**,
+and **current/potential per dropdown entry** ("e.g. 12/32"). First cut used CPL
+**units** — and Sam's instinct flagged Automotive's `127/357u` as "sus." He was
+right, and the dig became the valuable part:
+
+- **The unit totals were course-catalog footprints, not student-claimable CPL.**
+  Santa Ana articulates 31 automotive courses = 127u, but **4 different courses
+  all map to ASE A4**; a student holding A4 gets one course, not four. CPL is
+  granted **per credential**, so summing course-units double-counts competencies.
+  (Also caught a real double-count: a course articulated to several credentials
+  — `AVIATEK 1` → FAA Airframe AND Powerplant — counted twice.)
+- **Fix (Sam's call): course COUNTS, not unit sums.** `current` = distinct
+  courses articulated; `potential` = current + adoptable credentials. A count
+  reads as *coverage*, not degree-credit, so no "357 units" that makes a dean
+  wince. `resolveDirectory` dedups by distinct course; the ✓ list groups by
+  course listing its credential(s). #777. Tests 132 → **137**.
+- **Lesson (`methodology-verify-consumer-before-migrating` cousin):** when a
+  metric looks inflated, check whether you're counting the *catalog footprint*
+  vs *what a person actually holds*. The unit of account here is the credential,
+  not the course-unit.
+
+### The CER credential-merge doctrine (Rule 8c) — spun out of the "sus count"
+
+Chasing the inflation opened a **new curation lane**: merging redundant CER
+credential titles. This is the **CER exhibit-credential lane** (`_CREDENTIAL_
+REVIEW::` + confirm-merge), **NOT** the CCR's M-ID course convergence — wave 4
+(multi-college course ranks 2,001–4,000) would roll right past it. Ratified
+doctrine, now **Rule 8c** in `.claude/skills/exhibit-canonicalization/SKILL.md`:
+
+1. **Mechanism/assessment qualifiers collapse** — `(with Practical Assessment)`
+   is *how* credit is verified, not a competency → fold into the base cert.
+2. **Industry cert vs local course-Cx is a SPLIT, not a merge** — the CPL basis
+   is the axis. *This is why the automotive count is legitimately large, not
+   junk-redundant* (ASE certs + bundles + local Cx courses are all distinct).
+3. **Narrower competency doesn't fold** (Brake *Inspection* ≠ Brake *Service*).
+4. **Read the curator's own curation before assuming a mis-issue (Rule 9).**
+
+Two passes APPLIED via the `cred-rename-apply` workflow (Rule-9 pre-flight —
+fresh read, pending-merge cross-check, INSERT-only cohort rows, doctrine in
+Supabase `merge_doctrine_notes`):
+
+- **#778** — the **10 ASE `(with Practical Assessment)` → base-cert** folds
+  (A1–A8, G1, L1). Verified: `credentials.json` 2016 → 1993 keys, all 10 gone.
+- **#779** — the **Long Beach `Automative` cluster** (AUTO 611–619, catalogued
+  with LB's OWN "Automative" typo). Rule 8c-4 self-corrected mid-flight: the
+  Rule-9 read showed **Sam had deliberately set `issuer = ASE`** + CPL Type
+  Industry Certification, so these are ASE-competency exhibits, **not** local
+  Cx. **6 folded** into ASE certs where the competency matched exactly (611→A1,
+  612→A2, 613→A3, 615→A5, 616→A6, 619→A9); **2 spelling-only fixes** where the
+  competency is narrower per 8c-3 (614 alignment ⊊ A4, 618 fuel ⊊ A8, keeping
+  Sam's ASE issuer); 617 A/C left as-is. Scope: `docs/ase_practical_merge_scope.md`.
+
+**The big reframe for the pathways tab:** the adoption-pool counts are **mostly
+legitimate** — a rich field genuinely carries the ASE cert family AND distinct
+local Cx courses. The only true dupes were the mechanism variants + a college's
+catalog typos. So `/100` on Automotive isn't loose; it's real.
+
+### Checkpoint state (2026-07-14, StarRunner — session close)
+
+**Shipped + merged:** #774 directory tier · #775 handoff · #777 course-count
+metric · #778 practical-variant merge + Rule 8c · #779 Automative cluster +
+8c-4 correction. All on `main`, tree clean, Supabase migrations verified.
+**Side-lane discipline:** left `kb/cpl_todos.json` + the numbered
+`session_<N>_handoff.md` untouched (CER mainline owns those).
+**Open, non-urgent:** (a) directory feedback/polish; (b) deepen a directory
+program into a featured map on request; (c) refresh the COCI export to add newer
+baccalaureates; (d) the credential lane could use a **calibration re-seed** now
+that Rule 8c exists; (e) generalize 8c-1 (`(with Practical Assessment)`-style
+suffixes) beyond automotive.
