@@ -634,6 +634,25 @@ deliberate curation, so 8c-4 self-corrected). Receipts:
 `cpl_todos.json` + the numbered handoff untouched (CER mainline owns those).
 Story: `docs/cpl_pathways_lessons.md` · `docs/cpl_pathways_handoff.md`.
 
+### StarMarathon side-lane — CPL Pathways: the retired-course filter (2026-07-14, #782 MERGED)
+
+Cleared StarRunner's 🔑 priority finding: MAP keeps **retired/renumbered course
+numbers** alive as articulations (Santa Ana's retired `AT`-series + old
+`AUTO 53/A1/B33` beside current `AUTO 111–119`), inflating the directory ✓ count
+(31 → **12 courses · 18 credentials**). New sidecar `cpl_coci_course_keys.js`
+(emitted by `kb/_build_coci_lookup.py` from the same rows as `coci_lookup_data.js`)
+lets `cpl_pathways.js` filter the ✓ list to courses in the **current MAP course
+catalog** — **fail-open** (college absent / no catalog → keep), so it can *never*
+drop an active course (that property also resolved Sam's active-vs-inactive
+export question). Only ✓ is filtered; the ⊕ pool stays inclusive. Tests 137→143;
+real-Chromium verified. **Cross-lane flag → the numbered mainline:** the ROOT fix
+is a **systemwide stale-articulation signal** in the CER/CCR generator (flag any
+articulation whose `(college, subj, num)` is absent from the current catalog) —
+tightens EVERY count, reuses the all-college `CPL_COCI_COURSE_KEYS` set. Left
+`cpl_todos.json` + the numbered handoff core untouched. Story:
+`docs/cpl_pathways_lessons.md` · KB note
+`methodology-filter-live-counts-against-current-catalog.md`.
+
 ### Session 113 — SkyTeleo: the HVAC mis-mint thread → a new auditor rule + blank-discipline cleanup (2026-07-13)
 
 Sam caught `HVAC M10FR` (LA Trade `DIESLTK 122C`) minted **HVAC** but really

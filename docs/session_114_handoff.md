@@ -79,6 +79,16 @@ different one — the authoritative handoff is always the highest-numbered
 - **aviation-restage** — 4 wave-2 findings proposed "Aeronautics" (no canonical
   SUBJ4); correct fill is **Aviation**.
 - **cte-parse-gaps** — ~30 TOP codes dropped leave 6,495 rows `cte:null`.
+- **stale-articulation signal (NEW, cross-lane flag from StarMarathon, #782)** —
+  a mainline candidate: MAP keeps **retired/renumbered course numbers** alive as
+  articulations (Santa Ana's retired `AT`-series + old `AUTO` numbers beside the
+  current ones), inflating every course count. The CPL Pathways tab now filters
+  its ✓ list against the current MAP course catalog (new sidecar
+  `cpl_coci_course_keys.js`, all-college `SUBJ NNN.NN` keys). **Root fix for
+  CER/CCR:** flag any articulation whose `(college, subj, num)` is absent from
+  that catalog — systemwide, tightens the CER tab / CSR / every count. The
+  all-college key set is reusable. See KB note
+  `methodology-filter-live-counts-against-current-catalog.md`.
 - Sam's curation lanes: Carpentry merge-confirms, CER Trail-Crew lanes, CSR
   curator queue (3).
 
