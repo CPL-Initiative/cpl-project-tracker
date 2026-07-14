@@ -25,6 +25,9 @@ import re
 
 SD = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(SD)
+# Defaults reproduce the original Session-111 draw. A re-seed (Session 115,
+# 2026-07-14, the v0.6 gate) passes --seed/--date to draw a fresh held-out
+# sample under current doctrine without touching the committed 2026-07-10 draw.
 SEED = 20260710          # fixed — the sample must be reproducible (fresh sitting, Session 111)
 DATE = "2026-07-10"
 
@@ -128,6 +131,10 @@ STRATA = [
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--per-stratum", type=int, default=6)
+    ap.add_argument("--seed", type=int, default=SEED,
+                    help="RNG seed; a NEW seed draws a fresh held-out sample")
+    ap.add_argument("--date", default=DATE,
+                    help="output subdir under kb/doctrine_out/")
     args = ap.parse_args()
 
     raw = open(os.path.join(ROOT, "unified_courses_suggestions.js"),
@@ -152,7 +159,7 @@ def main():
                         x for x in f if isinstance(x, str))))
                     break
 
-    rng = random.Random(SEED)
+    rng = random.Random(args.seed)
     sample = []
     for name, _ in STRATA:
         pool = buckets[name]
@@ -167,11 +174,11 @@ def main():
                 "members": g.get("members"),
             })
 
-    odir = os.path.join(SD, "doctrine_out", DATE)
+    odir = os.path.join(SD, "doctrine_out", args.date)
     os.makedirs(odir, exist_ok=True)
     out = {
         "generated_from": data.get("generated_at"),
-        "seed": SEED, "per_stratum": args.per_stratum,
+        "seed": args.seed, "per_stratum": args.per_stratum,
         "universe_groups": n_groups,
         "stratum_sizes": {k: len(v) for k, v in buckets.items()},
         "sample": sample,
