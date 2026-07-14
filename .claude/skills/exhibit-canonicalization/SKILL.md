@@ -470,10 +470,19 @@ against the ASE automotive cluster; recorded in `merge_doctrine_notes`.
    that count is not "redundant."
 3. **Narrower competency does not fold into a broader one.** `Automotive Brake
    Inspection` ⊄ `ASE A5 — Brakes` (inspection ≠ full brake service).
-4. **Typos / mis-issuers get a hygiene pass, not a competency fold.** The
-   `Automative *` cluster (issuer wrongly = ASE on local `Auto NNN Completion`
-   Cx rows) is fixed per-row (spelling + issuer → CCC), keeping the local-Cx
-   identity — never force-folded into the ASE cert.
+4. **Before treating a cluster as a typo/mis-issue, READ the curator's own
+   curation first (Rule 9).** The `Automative *` cluster (Long Beach AUTO
+   611–619, carrying the college's OWN "Automative" catalog misspelling)
+   *looked* like local Cx to re-issue to CCC — but the fresh read showed the
+   **curator had deliberately set `issuing_agency = ASE`** and the CPL Type was
+   **Industry Certification**. So they are ASE-competency exhibits, not local
+   course-Cx, and the rule INVERTS: an ASE-attributed exhibit whose competency
+   **exactly matches** an ASE area folds into that base ASE cert (611→A1,
+   612→A2, 613→A3, 615→A5, 616→A6, 619→A9) — the catalog typo becomes moot on
+   fold. A **narrower** competency (Rule 8c-3) does NOT fold — it keeps the
+   curator's issuer and gets a **spelling-only** fix (614 Wheel Alignment ⊊ A4;
+   617 Air Conditioner ⊊ A7; 618 Fuel Systems ⊊ A8). The lesson: never override
+   a curator's issuer/type on a "hygiene" assumption — their rows win.
 
 Applied through the PR-5b confirm-merge machinery (`unified_title_override` +
 `unified_title_merge_confirm` under a cohort reviewer, Rule 9 pre-flight).
