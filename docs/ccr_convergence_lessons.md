@@ -372,3 +372,17 @@ VESL 67, content-not-language in the 702 no-level tail). Don't ask abstract poli
 questions; show the curator the real distribution and ask about the specific
 piles at the margins. Sam: "The scenarios make me squirm, but we need to squeeze
 the juice out" — so keep batches small, grounded, and clearly finite.
+
+### 2026-07-14 (batch 4) — Foreign Language numeric rungs → Doctrine v0.10
+
+Sam: text rung descriptors (Beginning/Intermediate/Advanced) everywhere **except
+Foreign Languages**, which use **numeric** rungs ("Spanish 1/2/3") per field
+convention — and **drop the redundant level word** colleges prefix ("Beginning
+Spanish 2" → "Spanish 2"). Captured as a P-10 addendum.
+
+Reconciled with the 3-rung cap: the real line isn't "degree-applicable" (studio
+art is degree-applicable yet caps at 3) — it's **per-rung OFFICIAL identity**. FL
+(Spanish 1/2/3/4 → C-ID SPAN 100/110/200/210) and Calc I/II have a distinct
+C-ID per rung, so the rungs are separate authoritative credit targets that
+**never collapse (D-1)** — exempt from the cap, numeric labels, keep every rung.
+Studio art has no per-rung C-ID → caps at 3. Doctrine → **v0.10**.
