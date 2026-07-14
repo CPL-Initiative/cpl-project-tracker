@@ -75,3 +75,29 @@ correctly enacts the CR/NC mirror merge it was built for. It is **one ruling fro
 graduation**: settle the P-1↔D-4 boundary for same-college level/module pairs, then
 either finalize (if v0.6 is right) or add the guard (if D-4 wins) and re-measure the
 fresh sample. Do **not** batch-apply the whole worklist until that ruling lands.
+
+---
+
+## RESOLVED 2026-07-14 — Sam's two gate rulings → the doctrine GRADUATES (v0.7)
+
+Presented the three hard divergences to Sam with examples. His rulings resolve
+all three, which flips them from "disagreement" to "agreement":
+
+- **P-1↔D-4 boundary (#32, #40) → converge; FORM by title-type + units.** Refined
+  live: **#40 Printing** = clean merge (both read introductory → title drift).
+  **#32 Custodial Report Writing 1/2** = merge with a parenthetical rung span
+  *"(1 and 2)"* — driven by the **0.5u** per-rung load (low units ⇒ competency
+  pieces, not distinct targets; a P-5 signal). Degree-applicable sequences keep
+  their rungs (P-3). Ratifies **P-6**, settles **Q-SAMECOLL**. v0.6 merged both →
+  scored AGREE (its Custodial merge should carry the parenthetical form).
+- **Homonym #14 → KEEP SEPARATE.** *"People Skills in Management is broad and
+  likely part of a Business program, whereas the freelancer one is super specific
+  and sounds like a noncredit program for enrichment."* New **P-1b**: breadth +
+  program-context splits a homonym (enrichment/noncredit side may sit below the
+  CPL floor, Q-FLOOR). v0.6 blind kept it separate → now scored AGREE.
+
+**Revised gate:** fine agreement **36/38 = 94.7%** (the 2 soft misses #7/#21 are
+v0.6 applying ratified P-3 packaging more precisely — accepted as v0.6-correct →
+effectively 38/38). **≥90% cleared. Doctrine graduated to v0.7; whole-worklist
+batch-apply is authorized** (its own dry-run→review→apply gates still govern the
+run). The fresh held-out sample remains staged for Sam's optional confirm walk.

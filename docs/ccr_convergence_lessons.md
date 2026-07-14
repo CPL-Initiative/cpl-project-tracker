@@ -282,3 +282,35 @@ existing M-IDs) were scored as different classes — but they're the SAME conver
 decision. Fold `mint_new` into the one-identity class; measure a `fundamental`
 (converge/separate) tier alongside the `fine` tier. And remember the seed goes stale:
 a divergence where v0.6 applies post-seed doctrine is the doctrine *improving*, not failing.
+
+### 2026-07-14 (same day) — Sam's two gate rulings → Doctrine v0.7 GRADUATES
+
+Presented the 3 hard divergences with examples (Sam invited edge-decision
+prompts). His rulings resolved all three — each flips to agreement:
+
+1. **P-1↔D-4 boundary (#32 Custodial 1/2, #40 Printing Lab) → converge; the FORM
+   depends on title-type + units** (refined live over 3 follow-ups). **#40
+   Printing** = clean merge (both introductory = title drift). **#32 Custodial**
+   = merge with a **parenthetical rung span** *"(1 and 2)"*, tipped by the **0.5u**
+   per-rung load (low units ⇒ competency pieces, not distinct targets — a P-5
+   signal). Degree-applicable sequences (Calc I/II) keep rungs (P-3). **Ratifies
+   P-6, settles Q-SAMECOLL.** Lesson: the same-college merge FORM isn't binary —
+   title-type (drift vs numbered) and per-rung units pick clean-merge vs
+   parenthetical-package vs keep-separate.
+2. **Homonym #14 People Skills → KEEP SEPARATE.** Sam's principle: breadth +
+   program-context distinguishes homonyms — a broad degree-program course vs. a
+   narrow enrichment/noncredit offering are different targets (the enrichment
+   side may sit below the CPL floor). **New P-1b; touches Q-FLOOR.**
+
+With the rulings, fine agreement = **36/38 = 94.7%** (the 2 soft misses are v0.6
+applying ratified P-3 packaging more precisely → effectively 38/38). **≥90%
+cleared — the doctrine GRADUATED to v0.7 and whole-worklist batch-apply is
+authorized** (its own dry-run→review→apply gates still govern the run). The fresh
+held-out sample stays staged for Sam's optional confirm walk.
+
+**Lesson — a graduation gate doubles as a doctrine interview.** The blind
+regression didn't just score the doctrine; its divergences were precisely the
+unsettled forks (Q-SAMECOLL, the homonym-breadth question). Surfacing the 3 hard
+misses as example-driven prompts turned a measurement into two new ratified rules
+in one exchange. When the gate says "87%," read WHERE it disagrees before
+concluding the doctrine failed — the misses are the interview questions.

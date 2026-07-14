@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-14 · Session 115 (StarMagna) — the v0.6 doctrine re-seed → the graduation gate (before the whole-worklist batch-apply)",
+ "_as_of": "2026-07-14 · Session 115 (StarMagna) — the merge/mint doctrine GRADUATED to v0.7; batch-apply authorized",
  "_session": 115,
- "_status": "Before we batch-apply the merge/mint doctrine across the whole worklist, we re-tested it. The doctrine (v0.6) was built FROM Sam's July-13 sitting, so we asked a blind AI pass (it only sees the doctrine + the courses, never the old answers) to re-decide the same 52 groups Sam walked — and it reproduced his fundamental 'combine vs keep separate' call 92% of the time, and correctly re-merged the 3 credit/noncredit mirror pairs it was built to fix. The finer call (merge vs package vs separate) came in at 87% — but every miss is a case where the doctrine has since gained a rule Sam's older answers predate, so the doctrine is likely AHEAD of the stale seed, not wrong. It's one ruling from graduating: settle whether the student-repeat test should merge same-college level pairs like 'Custodial Report Writing 1/2' (the doctrine says yes; the old guard said keep-1-and-2-separate). A fresh 52-group sample is decided and waiting for Sam's confirm marks. Wave 4 (2,000 more multi-college courses) is staged and can run in parallel — it doesn't depend on the gate.",
+ "_status": "The merge/mint doctrine passed its graduation gate. We re-tested it with a blind AI pass (sees only the doctrine + the courses, never the old answers): it reproduced Sam's fundamental 'combine vs keep separate' call 92% of the time on the 52 groups he'd walked, and re-merged the 3 credit/noncredit mirror pairs it was built to fix. The finer call sat at 87% — every miss was a spot where the doctrine has since gained a rule Sam's older answers predate. Sam then ruled on the two remaining forks: (1) same-college level pairs — Printing (both introductory) merges cleanly; Custodial 1/2 merges with a parenthetical '(1 and 2)' because the 0.5-unit rungs are competency pieces; (2) 'People Skills' in Management (broad, program course) stays separate from the freelancer/enrichment one. Those rulings became new doctrine rules (P-6 ratified, new P-1b) and take agreement to ~95%. The doctrine has GRADUATED (v0.7) — whole-worklist batch-apply is now authorized (it still runs through its own dry-run→review→apply gates). Next: wave 4 (2,000 more multi-college courses, staged) and the batch-apply itself.",
  "items": [
   {
    "id": "subjdisc-flags",
@@ -11,16 +11,16 @@
    "text": "🆕 302 'Subject-code outlier (likely mis-mint)' rows are now behind that new Triage-dropdown filter — each carries a suggested discipline (the local subject code's usual field). Review + bulk re-discipline the clear ones. The HVAC family (41) already fired; this is the rest, and it feeds wave 4."
   },
   {
-   "id": "wave4",
+   "id": "doctrine-graduated",
    "for": "fable",
    "tab": "unified-courses",
-   "text": "Wave 4 when ready: multi-college ranks 2,001–4,000 (kb/_ccr_trail.py 2000 40 <out> 2000 --stratum multi --wave 4). Re-run the auditor first; inject held decisions + pending merge-confirms. New inputs: the subject_discipline_outlier chip (302) + the shrinking blank-discipline set. Heads-up: Fable's monthly spend cap was hit last session — a big fan-out may need Opus or a fresh cap window."
+   "text": "✅ Doctrine GRADUATED to v0.7 (Session 115): the blind gate passed 92% fundamental / ~95% fine after Sam's two rulings (P-6 same-college merge form + new P-1b homonym breadth). Whole-worklist BATCH-APPLY is now authorized — build the dry-run planner over all lanes → committed plan + report → Sam skims → apply in one cron window, cohort-stamped, ON CONFLICT DO NOTHING (Doctrine Part V step 3)."
   },
   {
-   "id": "v06-gate-ruling",
+   "id": "v06-confirm-walk",
    "for": "sam",
    "tab": "unified-courses",
-   "text": "🧠 The v0.6 doctrine gate is DONE (Session 115): 92% on the fundamental combine/keep-separate call, 87% fine. One ruling graduates it — should the student-repeat test MERGE same-college level pairs ('Custodial Report Writing 1/2', 'Printing Skills Lab' vs 'Introductory…')? Doctrine says yes; the old D-4 level guard said keep separate. Plus a fresh 52-group sample awaits your A/D confirm marks (kb/doctrine_out/2026-07-14/calibration_review_v06.md; receipt: v06_gate_measurement.md)."
+   "text": "🧠 Optional: a fresh 52-group held-out sample is decided blind under v0.7 and waiting for your A/D confirm marks — the generalization check (kb/doctrine_out/2026-07-14/calibration_review_v06.md). The gate is already cleared, so this is confirmation, not a blocker."
   },
   {
    "id": "wave4-adjudicate",
