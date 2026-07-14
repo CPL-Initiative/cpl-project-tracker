@@ -540,6 +540,21 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### SkyFlyer side-lane — COBI org layer: the C&I subsite pilot + "Our Process" tab (2026-07-14, #765–#768 MERGED)
+
+Sam's Chancellor's Office talk → the CO **Curriculum & Instruction** team (Dean
+Arambula, D. Garcia) wanted their **own COBI (C&I) site**. Shipped the pilot org
+layer per `docs/co_platform_strategy.md` (**one platform, org as a view dimension —
+NOT a repo/site per org**): a masthead **site-switcher** (`cobi_orgs.js` — CPL / C&I,
+per-site ᶜᴾᴸ/ᶜ&ᴵ wordmark tag, nav-filtered, `?org=ci` shareable, **no gating**, #766)
++ the **"Our Process" viz tab** (`our_process.js`, #765) + masthead polish (#767 —
+search→right, Go button dropped/Enter submits, seal 46→60px) + the **C&I curation
+phrase `ci-team-2026`** (#768, live via Supabase; `team_pass_check` now matches any
+cohort). Per-area DATA isolation is deferred (Rule 9 — today both phrases unlock the
+same tables). Full story + the 4 open tuning calls: `docs/co_platform_orglayer_lessons.md`;
+decision: `docs/kb-notes/adr-cobi-org-layer.md`. Parallel track — the curation
+`cpl_todos.json` + numbered handoff were left untouched.
+
 ### SkyIron side-lane — 🎓 CPL Pathways: three course maps + Quick Adopt (2026-07-10, #732–#736 + #740 MERGED)
 
 New top-level **🎓 CPL Pathways tab** for the **California Apprenticeship Council (Aug 13)**
