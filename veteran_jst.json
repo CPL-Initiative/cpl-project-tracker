@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-13T20:30:39.658719+00:00",
+  "scraped_at": "2026-07-14T08:30:28.963790+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25790,
+    "jst": 25791,
     "star_colleges": 54
   },
   "computed_star_colleges": 54,
@@ -22,7 +22,7 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 312,
+      "jst": 311,
       "star": true
     },
     "San Diego Mesa College": {
@@ -72,7 +72,7 @@
     },
     "Long Beach City College": {
       "vets": 307,
-      "jst": 810,
+      "jst": 811,
       "star": true
     },
     "De Anza College": {
@@ -160,6 +160,11 @@
       "jst": 494,
       "star": true
     },
+    "Glendale Community College": {
+      "vets": 196,
+      "jst": 214,
+      "star": true
+    },
     "Clovis Community College": {
       "vets": 117,
       "jst": 190,
@@ -228,11 +233,6 @@
     "Evergreen Valley College": {
       "vets": 87,
       "jst": 112,
-      "star": true
-    },
-    "Glendale Community College": {
-      "vets": 196,
-      "jst": 214,
       "star": true
     },
     "San Jose City College": {
@@ -322,7 +322,7 @@
     },
     "Laney College": {
       "vets": 96,
-      "jst": 49,
+      "jst": 50,
       "star": false
     },
     "Copper Mountain College": {

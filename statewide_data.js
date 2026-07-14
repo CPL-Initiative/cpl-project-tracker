@@ -110955,6 +110955,10 @@ window.CPL_STATEWIDE = {
           "credit": "2 hours in Thermal Cutting Processes"
         },
         {
+          "course": "WELD B53A",
+          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
+        },
+        {
           "course": "WELD 51",
           "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         },
@@ -110963,8 +110967,8 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
         },
         {
-          "course": "WELD B53A",
-          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
+          "course": "WELD B53B",
+          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         },
         {
           "course": "WELD 101",
@@ -110981,10 +110985,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "WELD 244",
           "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
-        },
-        {
-          "course": "WELD B53B",
-          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         }
       ],
       "authoritative_recs": [
@@ -110993,11 +110993,11 @@ window.CPL_STATEWIDE = {
           "cid": ""
         },
         {
-          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)",
+          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)",
           "cid": ""
         },
         {
-          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)",
+          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)",
           "cid": ""
         }
       ]
@@ -111098,6 +111098,14 @@ window.CPL_STATEWIDE = {
           "credit": "2 hours in Thermal Cutting Processes"
         },
         {
+          "course": "WELD B1B",
+          "credit": "3-4 hours in Introduction to Welding"
+        },
+        {
+          "course": "WELD B53A",
+          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
+        },
+        {
           "course": "WELD 50A",
           "credit": "3-4 hours in Introduction to Welding"
         },
@@ -111126,12 +111134,20 @@ window.CPL_STATEWIDE = {
           "credit": "3 hours in Printreading and Welding Symbols Interpretation"
         },
         {
-          "course": "WELD B1B",
-          "credit": "3-4 hours in Introduction to Welding"
+          "course": "WELD B53B",
+          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         },
         {
-          "course": "WELD B53A",
-          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
+          "course": "WELD B54A",
+          "credit": "3 hours in Printreading and Welding Symbols Interpretation"
+        },
+        {
+          "course": "WELD B74A",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
+        },
+        {
+          "course": "WELD B74A",
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
         {
           "course": "WELD 125",
@@ -111156,22 +111172,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "WELD 244",
           "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B53B",
-          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
-        },
-        {
-          "course": "WELD B54A",
-          "credit": "3 hours in Printreading and Welding Symbols Interpretation"
-        },
-        {
-          "course": "WELD B74A",
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B74A",
-          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
         {
           "course": "WELD 132",
@@ -111315,19 +111315,19 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
         {
+          "course": "WELD B74A",
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
+        },
+        {
+          "course": "WELD B74A",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
+        },
+        {
           "course": "WELD 240",
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
         {
           "course": "WELD 244",
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B74A",
-          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B74A",
           "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
         }
       ],
@@ -111440,19 +111440,19 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
         {
+          "course": "WELD B74A",
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
+        },
+        {
+          "course": "WELD B74A",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
+        },
+        {
           "course": "WELD 240",
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
         {
           "course": "WELD 244",
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B74A",
-          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B74A",
           "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
         }
       ],
@@ -111561,6 +111561,10 @@ window.CPL_STATEWIDE = {
       "total_addressable": 63,
       "credit_recs": [
         {
+          "course": "WELD B53A",
+          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
+        },
+        {
           "course": "WELD 51",
           "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
         },
@@ -111569,8 +111573,8 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         },
         {
-          "course": "WELD B53A",
-          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
+          "course": "WELD B53B",
+          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         },
         {
           "course": "WELD 240",
@@ -111582,10 +111586,6 @@ window.CPL_STATEWIDE = {
         },
         {
           "course": "WELD 244",
-          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
-        },
-        {
-          "course": "WELD B53B",
           "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         }
       ],
@@ -111696,6 +111696,14 @@ window.CPL_STATEWIDE = {
           "credit": "2 hours in Thermal Cutting Processes"
         },
         {
+          "course": "WELD B1B",
+          "credit": "3-4 hours in Introduction to Welding"
+        },
+        {
+          "course": "WELD B53A",
+          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
+        },
+        {
           "course": "WELD 50A",
           "credit": "3-4 hours in Introduction to Welding"
         },
@@ -111740,12 +111748,20 @@ window.CPL_STATEWIDE = {
           "credit": "3 hours in Basic Pipe Gas Tungsten Arc Welding (GTAW)"
         },
         {
-          "course": "WELD B1B",
-          "credit": "3-4 hours in Introduction to Welding"
+          "course": "WELD B53B",
+          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         },
         {
-          "course": "WELD B53A",
-          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
+          "course": "WELD B54A",
+          "credit": "3 hours in Printreading and Welding Symbols Interpretation"
+        },
+        {
+          "course": "WELD B74A",
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
+        },
+        {
+          "course": "WELD B74A",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
         },
         {
           "course": "WELD 125",
@@ -111777,22 +111793,6 @@ window.CPL_STATEWIDE = {
         },
         {
           "course": "WELD 244",
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B53B",
-          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
-        },
-        {
-          "course": "WELD B54A",
-          "credit": "3 hours in Printreading and Welding Symbols Interpretation"
-        },
-        {
-          "course": "WELD B74A",
-          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B74A",
           "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
         },
         {
@@ -111850,11 +111850,11 @@ window.CPL_STATEWIDE = {
           "cid": ""
         },
         {
-          "credit": "3-4 hours in Advanced Gas Metal Arc Welding (GMAW)",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
           "cid": ""
         },
         {
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
+          "credit": "3-4 hours in Advanced Gas Metal Arc Welding (GMAW)",
           "cid": ""
         }
       ]
@@ -111955,6 +111955,14 @@ window.CPL_STATEWIDE = {
           "credit": "2 hours in Thermal Cutting Processes"
         },
         {
+          "course": "WELD B1B",
+          "credit": "3-4 hours in Introduction to Welding"
+        },
+        {
+          "course": "WELD B53A",
+          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
+        },
+        {
           "course": "WELD 50A",
           "credit": "3-4 hours in Introduction to Welding"
         },
@@ -111999,12 +112007,20 @@ window.CPL_STATEWIDE = {
           "credit": "3 hours in Basic Pipe Gas Tungsten Arc Welding (GTAW)"
         },
         {
-          "course": "WELD B1B",
-          "credit": "3-4 hours in Introduction to Welding"
+          "course": "WELD B53B",
+          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         },
         {
-          "course": "WELD B53A",
-          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
+          "course": "WELD B54A",
+          "credit": "3 hours in Printreading and Welding Symbols Interpretation"
+        },
+        {
+          "course": "WELD B74A",
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
+        },
+        {
+          "course": "WELD B74A",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
         },
         {
           "course": "WELD 125",
@@ -112036,22 +112052,6 @@ window.CPL_STATEWIDE = {
         },
         {
           "course": "WELD 244",
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B53B",
-          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
-        },
-        {
-          "course": "WELD B54A",
-          "credit": "3 hours in Printreading and Welding Symbols Interpretation"
-        },
-        {
-          "course": "WELD B74A",
-          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B74A",
           "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
         },
         {
@@ -112109,11 +112109,11 @@ window.CPL_STATEWIDE = {
           "cid": ""
         },
         {
-          "credit": "3-4 hours in Advanced Gas Metal Arc Welding (GMAW)",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
           "cid": ""
         },
         {
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
+          "credit": "3-4 hours in Advanced Gas Metal Arc Welding (GMAW)",
           "cid": ""
         }
       ]
@@ -112214,19 +112214,19 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
         {
+          "course": "WELD B74A",
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
+        },
+        {
+          "course": "WELD B74A",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
+        },
+        {
           "course": "WELD 240",
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
         {
           "course": "WELD 244",
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B74A",
-          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B74A",
           "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
         }
       ],
@@ -112337,19 +112337,19 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
         {
+          "course": "WELD B74A",
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
+        },
+        {
+          "course": "WELD B74A",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
+        },
+        {
           "course": "WELD 240",
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
         {
           "course": "WELD 244",
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B74A",
-          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B74A",
           "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
         }
       ],
@@ -112460,20 +112460,20 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
         {
+          "course": "WELD B74A",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
+        },
+        {
+          "course": "WELD B74A",
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
+        },
+        {
           "course": "WELD 240",
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
         {
           "course": "WELD 244",
           "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B74A",
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B74A",
-          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         }
       ],
       "authoritative_recs": []
@@ -113457,15 +113457,15 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
         {
+          "course": "WELD B74A",
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
+        },
+        {
           "course": "WELD 242",
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
         {
           "course": "WELD 240",
-          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B74A",
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         }
       ],
@@ -113570,6 +113570,10 @@ window.CPL_STATEWIDE = {
       "total_addressable": 63,
       "credit_recs": [
         {
+          "course": "WELD B53A",
+          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
+        },
+        {
           "course": "WELD 51",
           "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
         },
@@ -113578,8 +113582,8 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         },
         {
-          "course": "WELD B53A",
-          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
+          "course": "WELD B53B",
+          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         },
         {
           "course": "WELD 240",
@@ -113591,10 +113595,6 @@ window.CPL_STATEWIDE = {
         },
         {
           "course": "WELD 244",
-          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
-        },
-        {
-          "course": "WELD B53B",
           "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         },
         {
@@ -113723,6 +113723,10 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
         {
+          "course": "WELD B74A",
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
+        },
+        {
           "course": "WELD 101",
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
@@ -113733,10 +113737,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "WELD 244",
           "credit": "3-4 hours in Advance Flux Cored Arc Weliding (FCAW)"
-        },
-        {
-          "course": "WELD B74A",
-          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         }
       ],
       "authoritative_recs": [
@@ -113850,6 +113850,10 @@ window.CPL_STATEWIDE = {
       "total_addressable": 63,
       "credit_recs": [
         {
+          "course": "WELD B53A",
+          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
+        },
+        {
           "course": "WELD 51",
           "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
         },
@@ -113858,8 +113862,8 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         },
         {
-          "course": "WELD B53A",
-          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
+          "course": "WELD B53B",
+          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         },
         {
           "course": "WELD 240",
@@ -113871,10 +113875,6 @@ window.CPL_STATEWIDE = {
         },
         {
           "course": "WELD 244",
-          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
-        },
-        {
-          "course": "WELD B53B",
           "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         },
         {
@@ -115225,6 +115225,10 @@ window.CPL_STATEWIDE = {
           "credit": "3 hours in AWS/LA City Welding I"
         },
         {
+          "course": "WELD B53A",
+          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
+        },
+        {
           "course": "WELD 51",
           "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
         },
@@ -115233,8 +115237,8 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         },
         {
-          "course": "WELD B53A",
-          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
+          "course": "WELD B53B",
+          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         },
         {
           "course": "WELD 240",
@@ -115246,10 +115250,6 @@ window.CPL_STATEWIDE = {
         },
         {
           "course": "WELD 244",
-          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
-        },
-        {
-          "course": "WELD B53B",
           "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         },
         {
@@ -115362,6 +115362,10 @@ window.CPL_STATEWIDE = {
       "total_addressable": 63,
       "credit_recs": [
         {
+          "course": "WELD B53A",
+          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
+        },
+        {
           "course": "WELD 51",
           "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
         },
@@ -115370,8 +115374,8 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         },
         {
-          "course": "WELD B53A",
-          "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
+          "course": "WELD B53B",
+          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         },
         {
           "course": "WELD 240",
@@ -115383,10 +115387,6 @@ window.CPL_STATEWIDE = {
         },
         {
           "course": "WELD 244",
-          "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
-        },
-        {
-          "course": "WELD B53B",
           "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
         },
         {
@@ -120473,12 +120473,12 @@ window.CPL_STATEWIDE = {
           "credit": "2.5 hours in Hazardous Materials Technician/Specialist 1B: Applied Chemistry"
         },
         {
-          "course": "FIRE B70G",
-          "credit": "2.5 hours in Hazardous Materials Tech/Spec 1D: Tactical Field Operations"
-        },
-        {
           "course": "FIRE B70F",
           "credit": "2.5 hours in Hazardous Materials Tech/Spec 1C: Incident Considerations"
+        },
+        {
+          "course": "FIRE B70G",
+          "credit": "2.5 hours in Hazardous Materials Tech/Spec 1D: Tactical Field Operations"
         }
       ],
       "authoritative_recs": []
@@ -228810,6 +228810,34 @@ window.CPL_STATEWIDE = {
       "total_addressable": 0,
       "credit_recs": [],
       "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPPRA-B0-1-001",
+      "exhibit_ids": [
+        "MAPPRA-B0-1-001"
+      ],
+      "title": "Human Anatomy & Physiology III",
+      "unified_title": "Human Anatomy & Physiology III",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Human Anatomy & Physiology III"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
     }
   ],
   "analysis": {
@@ -229727,8 +229755,8 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 5577,
-        "exhibits": 1862,
+        "credit_recs": 5578,
+        "exhibits": 1863,
         "courses": 272,
         "colleges": 84,
         "ccc_collaborative": 25,
@@ -229957,8 +229985,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Portfolio Review",
-        "credit_recs": 395,
-        "exhibits": 315,
+        "credit_recs": 396,
+        "exhibits": 316,
         "colleges": 27,
         "pct": 3.1
       },
@@ -229994,10 +230022,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1496,
-        "exhibits": 588,
+        "credit_recs": 1497,
+        "exhibits": 589,
         "colleges": 41,
-        "pct": 11.6
+        "pct": 11.7
       },
       {
         "mode": "High school coursework (H)",
@@ -230052,8 +230080,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11322,
-        "exhibits": 4852,
+        "credit_recs": 11323,
+        "exhibits": 4853,
         "colleges": 98,
         "disciplines": 23,
         "pct": 88.2
@@ -230478,6 +230506,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-07-13T20:30:01",
-  "total_credit_recs": 12844
+  "generated_at": "2026-07-14T08:29:44",
+  "total_credit_recs": 12845
 };
