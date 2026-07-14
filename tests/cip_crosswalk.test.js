@@ -59,7 +59,7 @@ function makeDom() {
 }
 const FIXTURE = {
   sources: ["COCI", "CCCCO TOP-CIP", "Submitted by Field"],
-  top: { "0101.00": { t: "Agriculture Technology", div: "01", divt: "Agriculture and Natural Resources", sec: "Agriculture Sector", cte: 1 } },
+  top: { "0101.00": { t: "Agriculture Technology", div: "01", divt: "Agriculture and Natural Resources", sec: "Agriculture Sector", cte: 1, crs: 251, cid: 33 } },
   cip: {
     "01.0000": { t: "Agriculture, General", fam: "01", famt: "Agricultural Fields", cte: "CTE", act: "New", chg: "no", def: "A program about agriculture.", xref: "", ex: "Agroeconomics", soc: [["19-1011", "Animal Scientists"]] },
     "52.0201": { t: "Business Administration", fam: "52", famt: "Business", cte: "Not CTE", act: "", chg: "", def: "A business program.", xref: "", ex: "", soc: [] },
@@ -100,6 +100,11 @@ check("renders a NEW transition chip", root && root.querySelector(".cipx-chip.ne
 const passesAll = FIXTURE.pairs.length;
 window.CPL_CIP_CROSSWALK._buildIndex(JSON.parse(JSON.stringify(FIXTURE)));
 check("_filtered returns all rows with no query", window.CPL_CIP_CROSSWALK._filtered().length === passesAll);
+
+// transfer indicator (TOP 0101.00 has cid=33) + chip renders
+check("renders a transfer-model (C-ID) chip for a TOP with C-ID courses",
+  root && /C-ID/.test(root.textContent) && root.querySelector(".cipx-chip.xfer"));
+check("transfer filter control exists", root && root.querySelector("#cipx-transfer"));
 
 // expand a row → detail panel with the CIP definition
 const firstRow = root.querySelector("tbody tr.cipx-row");
