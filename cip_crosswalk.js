@@ -58,7 +58,7 @@
   var D = null;          // window.CIP_CROSSWALK
   var INDEX = [];        // per-pair search/display index
   var state = {
-    q: "", group: "top", credit: "all", cte: "all",
+    q: "", group: "top", credit: "all", cte: "all", transfer: "all",
     sources: {},         // srcIdx -> true (empty = all)
     sector: "", family: "",
     limit: PAGE,
@@ -106,6 +106,11 @@
       if (state.cte === "cte" && !isCte) return false;
       if (state.cte === "notcte" && isCte) return false;
     }
+    if (state.transfer !== "all") {
+      var hasX = !!(r.t && r.t.cid > 0);   // TOP has transfer-model (C-ID) courses
+      if (state.transfer === "xfer" && !hasX) return false;
+      if (state.transfer === "noxfer" && hasX) return false;
+    }
     var srcKeys = Object.keys(state.sources);
     if (srcKeys.length && !state.sources[r.src]) return false;
     if (state.sector && (!r.t || r.t.sec !== state.sector)) return false;
@@ -151,6 +156,14 @@
     return out;
   }
 
+  // transfer-model (C-ID) indicator for a TOP code — a floor, not full transferability
+  function xferChip(r) {
+    if (!r.t || !(r.t.cid > 0)) return null;
+    return chip("🎓 " + r.t.cid + " C-ID", "xfer",
+      r.t.cid + " of " + (r.t.crs || 0) + " COCI courses with this TOP carry a C-ID " +
+      "(transfer-model). A floor — not full CSU/UC transferability.");
+  }
+
   // ── code cell (TOP or CIP) with a quick-filter click ─────────────────────────
   function codeCell(code, title, kind) {
     var codeEl = el("button", {
@@ -181,6 +194,11 @@
           el("span", {}, ["Division " + r.t.div + " · " + r.t.divt]),
         ]),
         r.t.sec ? el("div", { class: "cipx-dmeta" }, ["Sector: " + r.t.sec]) : null,
+        (r.t.crs > 0) ? el("div", { class: "cipx-dmeta" }, [
+          el("b", {}, [(r.t.cid || 0) + " transfer-model (C-ID)"]),
+          " of " + r.t.crs + " COCI courses statewide carry this TOP",
+          el("span", { class: "cipx-xnote", title: "C-ID = the statewide transfer-model articulation system. A floor, not full CSU/UC transferability." }, [" ⓘ"]),
+        ]) : null,
         el("div", { class: "cipx-dlinks" }, [
           el("button", {
             class: "cipx-linkbtn", type: "button",
@@ -394,6 +412,10 @@
       var chipsHost = state.group === "cip" ? aCell : bCell;
       var chips = cteChips(r);
       if (chips.length) chipsHost.appendChild(el("div", { class: "cipx-chips" }, chips));
+      // transfer indicator rides under the (populated) TOP cell
+      var topCell = state.group === "cip" ? bCell : (same ? null : aCell);
+      var xc = topCell && xferChip(r);
+      if (xc) topCell.appendChild(el("div", { class: "cipx-chips" }, [xc]));
 
       var key = rowKey(r);
       var isOpen = !!state.open[key];
@@ -430,11 +452,12 @@
   }
 
   function exportCsv(rows) {
-    var out = ["TOP Code,TOP Title,CIP Code,CIP Title,Source,Noncredit,Colleges,Count"];
+    var out = ["TOP Code,TOP Title,CIP Code,CIP Title,Source,Noncredit,Colleges,Count,COCI Courses,Transfer-model (C-ID)"];
     rows.forEach(function (r) {
       function q(v) { return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; }
       out.push([q(r.topCode || ""), q(r.t ? r.t.t : ""), q(r.cipCode), q(r.c ? r.c.t : ""),
-                q(r.srcName), q(r.nc ? "Yes" : "No"), q(r.colleges), q(r.count)].join(","));
+                q(r.srcName), q(r.nc ? "Yes" : "No"), q(r.colleges), q(r.count),
+                q(r.t ? (r.t.crs || 0) : ""), q(r.t ? (r.t.cid || 0) : "")].join(","));
     });
     var blob = new Blob([out.join("\n")], { type: "text/csv" });
     var a = document.createElement("a");
@@ -478,6 +501,9 @@
       function (e) { state.credit = e.target.value; refresh(); }));
     row.appendChild(sel("cipx-cte", "CTE", [["all", "CTE & non-CTE"], ["cte", "CTE only"], ["notcte", "Non-CTE only"]],
       function (e) { state.cte = e.target.value; refresh(); }));
+    row.appendChild(sel("cipx-transfer", "Transfer",
+      [["all", "All"], ["xfer", "Transfer-model (C-ID)"], ["noxfer", "No C-ID courses"]],
+      function (e) { state.transfer = e.target.value; refresh(); }));
 
     // sector (TOP) + family (CIP) dropdowns
     var secs = [["", "All sectors"]];
@@ -644,6 +670,8 @@
       ".cipx-chip.new{background:#dbeafe;color:#1e40af;}",
       ".cipx-chip.del{background:#fee2e2;color:#991b1b;}",
       ".cipx-chip.moved{background:#fef3c7;color:#92400e;}",
+      ".cipx-chip.xfer{background:#e0e7ff;color:#3730a3;cursor:help;}",
+      ".cipx-xnote{cursor:help;color:var(--text-muted,#829ab1);}",
       ".cipx-src{font-size:.68rem;font-weight:800;padding:2px 8px;border-radius:20px;white-space:nowrap;}",
       ".cipx-src-official{background:#dcfce7;color:#14532d;}",
       ".cipx-src-field{background:#fef3c7;color:#854d0e;}",

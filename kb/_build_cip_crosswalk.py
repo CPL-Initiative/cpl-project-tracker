@@ -28,6 +28,12 @@ import openpyxl
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
 SRC = os.path.join(HERE, "reference", "cip_searchable_260708.xlsx")
+# COCI course inventory — used to roll a TRANSFER signal up to the TOP-code level.
+# The extract has no CSU/UC-transferable flag; C-ID (CIDNumber) presence is the
+# only transfer-adjacent field (C-ID = the statewide transfer-model articulation
+# system). It's a FLOOR, not full transferability — see docs/cip_crosswalk_lessons.md.
+# Drops in a true transferable flag later if a fuller export adds the column.
+COCI_SRC = os.path.join(HERE, "reference", "coci_course_list.xlsx")
 OUT = os.path.join(REPO, "cip_crosswalk_data.js")
 BUILT_AT = "2026-07-14"
 
@@ -50,6 +56,36 @@ def split_code_title(s):
 def split_div(s):
     """'01 - Agriculture and Natural Resources' -> ('01', 'Agriculture and Natural Resources')."""
     return split_code_title(s)
+
+
+def coci_transfer_by_top():
+    """Roll a per-TOP-code transfer signal up from the COCI course inventory.
+
+    Returns {top_code: {"crs": total courses statewide, "cid": courses carrying a
+    C-ID}}. The COCI TopCode is 'CODE: Title' (e.g. '0101.00: Agriculture...'),
+    so we split on ':' to match the crosswalk's clean '0101.00' TOP keys.
+    C-ID presence is the transfer-model proxy (a floor, not full transferability).
+    """
+    if not os.path.exists(COCI_SRC):
+        print(f"  (COCI source {COCI_SRC} absent — skipping transfer rollup)")
+        return {}
+    wb = openpyxl.load_workbook(COCI_SRC, read_only=True, data_only=True)
+    ws = wb.active
+    it = ws.iter_rows(values_only=True)
+    hdr = next(it)
+    idx = {h: i for i, h in enumerate(hdr)}
+    ti, ci = idx.get("TopCode"), idx.get("CIDNumber")
+    out = {}
+    for r in it:
+        raw = clean(r[ti]) if ti is not None else ""
+        if not raw:
+            continue
+        code = raw.split(":", 1)[0].strip() if ":" in raw else raw
+        rec = out.setdefault(code, {"crs": 0, "cid": 0})
+        rec["crs"] += 1
+        if ci is not None and clean(r[ci]):
+            rec["cid"] += 1
+    return out
 
 
 def main():
@@ -155,6 +191,16 @@ def main():
         if not c["famt"]:
             c["famt"] = fam_titles.get(c["fam"], "")
 
+    # ---- transfer signal: per-TOP course + C-ID (transfer-model) counts ----
+    xfer = coci_transfer_by_top()
+    matched = 0
+    for code, t in top.items():
+        rec = xfer.get(code)
+        t["crs"] = rec["crs"] if rec else 0    # COCI courses statewide with this TOP
+        t["cid"] = rec["cid"] if rec else 0    # of those, courses carrying a C-ID
+        if rec and rec["cid"]:
+            matched += 1
+
     payload = {
         "_built_at": BUILT_AT,
         "_built_by": "kb/_build_cip_crosswalk.py",
@@ -163,6 +209,10 @@ def main():
         "_note": "TOP-to-CIP transition crosswalk. The CO is transitioning from TOP "
                  "to CIP codes effective fall 2026 (ESS 26-06). This dataset replaces "
                  "the searchable spreadsheet the CO planned to email to the field.",
+        "_transfer": "top[code].cid = COCI courses with this TOP that carry a C-ID "
+                     "(the transfer-model proxy; a FLOOR, not full CSU/UC transferability). "
+                     "top[code].crs = total COCI courses with this TOP. Source: "
+                     "kb/reference/coci_course_list.xlsx.",
         "sources": sources,
         "top": top,
         "cip": cip,
@@ -178,6 +228,7 @@ def main():
         f.write(";\n")
 
     kb = sum(len(c["soc"]) for c in cip.values())
+    print(f"TOP codes w/ transfer-model (C-ID) courses: {matched} of {len(top)}")
     print(f"TOP codes:      {len(top)}")
     print(f"CIP codes:      {len(cip)}")
     print(f"Crosswalk pairs:{len(pairs)}")
