@@ -115,19 +115,67 @@ Curation nav group) + a new **CIP site** in the org switcher.
   expand + form work, **zero console errors**.
 - Supabase RLS verified live (anon insert OK, anon select denied).
 
+## 2026-07-14 (later) — transfer marker + the reference-manual pivot (#771, #772)
+
+Two follow-ups landed the same day, and a **strategic reframe from the CO** reshaped
+the tool's purpose.
+
+### Transfer (C-ID) marker — #771
+The CO CIP team is prioritizing **transfer courses first**. Examined the COCI course
+extract (`kb/reference/coci_course_list.xlsx`, 141,738 rows): **it has no explicit
+CSU/UC-transferable flag** — 12 columns, and the only transfer-adjacent signal is
+**C-ID (`CIDNumber`)** presence (C-ID = the statewide transfer-model articulation
+system). C-ID covers 16,067 courses (11.3%); 292/420 TOP codes have ≥1 C-ID course.
+Shipped it as a **clearly-labeled interim floor** (not full transferability), with a
+clean seam for a true flag if a fuller export adds one:
+`kb/_build_cip_crosswalk.py` rolls a per-TOP `crs` (total COCI courses) + `cid`
+(C-ID courses) up from COCI (TopCode `"CODE: Title"` split on `:` to match keys);
+`cip_crosswalk.js` adds a Transfer filter + a "🎓 N C-ID" chip. **Lesson: name a
+proxy as a proxy** — the chip/tooltip/filter all say "transfer-model (C-ID) … a
+floor, not full CSU/UC transferability" so it can't mislead prioritization.
+
+### The strategic reframe (Jenni Abbott, CO AA division) → the reference manual — #772
+Sam asked Jenni whether the CO could assume **1 TOP → 1 CIP** and infer it down to
+every COCI course (→ add a CIP column to COCI views). Grounded the question in the
+data: the crosswalk is strongly **many-to-many** — only **9%** of TOP codes are 1:1
+across all sources, **32%** credit-only, **38%** official-only (avg 8–11.6 CIP per
+TOP). Jenni confirmed: **it IS one-to-many**; the **Tech Center is building the COCI
+CIP-dropdown** where colleges actually pick; and **our tool is the "reference
+manual"** — the successor to the CCC **TOP Code Manual** — and should expose the
+**full federal CIP list (1,800+)** so colleges "can look at everything."
+
+That killed the planned **canonical-CIP-designation curator surface** (the 1:1
+premise is false) and pivoted the build to a **reference manual**:
+- **New "Browse all CIP codes" view** (toggle beside the crosswalk) surfacing **all
+  2,325** federal CIP codes — including the **181 that had no TOP mapping** and were
+  previously unreachable (the tool only showed crosswalk *pairs*). Filters: CIP
+  family, CTE, 2020-CIP status (New/Moved/Deleted/Unchanged). Each row expands to a
+  CIP reference card (definition, examples, cross-refs, transition note, SOC
+  occupations, and the TOP codes that map *from* it — each a jump into the crosswalk).
+- **Header repositioned** as the transition reference manual.
+- **Lesson: a pivot can be a small superset.** The existing tab already had the CIP
+  narrative data + detail machinery; the reference manual was a *view mode* over the
+  same normalized dataset, not a rebuild. Measuring the 181-orphan gap first pointed
+  straight at the missing capability.
+
+**Curator-surface status: dropped, not parked** — with one-to-many + COCI owning
+data entry, there's no "designate the canonical CIP" job here. The
+`cip_crosswalk_suggestion` lane (#770) still collects college feedback; a lightweight
+CO reader for it is the only remaining curator-ish follow-up.
+
 ## Continuation (next session on this track)
 
-Everything above is live. Natural follow-ups, none blocking:
-1. **A CO curator view** for the `cip_crosswalk_suggestion` queue (there's no
-   in-app reader yet — same state as `cpl_adoption_interest`; the CO queries
-   Supabase or we build a gated triage tab). A status-transition RPC
-   (`_set_status`) like `sierra_feedback_set_status()` when that lands.
-2. **Refresh the dataset** when ESS ships a newer workbook cut — drop it at
-   `kb/reference/cip_searchable_<date>.xlsx`, bump `SRC`/`BUILT_AT` in
-   `kb/_build_cip_crosswalk.py`, rerun.
-3. **`cip-team-2026`** cohort phrase if the CO wants a CIP-specific curator
-   cohort (one `team_access` row).
-4. **Program-level crosswalk** — the workbook is course/discipline TOP↔CIP; the
-   COCI *program* inventory could add a program lane later.
-5. Consider surfacing the **SOC→CIP** reverse and the **CIP-only (no TOP)** set
-   as explicit browse modes if faculty ask.
+Everything above is live (#770 tab, #771 transfer, #772 catalog). Natural follow-ups,
+none blocking:
+1. **True transfer flag** — if the CO provides a course export with CSU/UC-transferable
+   columns, swap the C-ID proxy for the real flag (the `top[code].cid`/`crs` seam +
+   the filter/chip are ready; just re-point the generator + relabel).
+2. **A lightweight CO reader** for the `cip_crosswalk_suggestion` queue (no in-app
+   reader yet — the CO queries Supabase; gate a read view behind
+   `is_allowed_reviewer() OR team_pass_ok()` if they want one).
+3. **Refresh the dataset** when ESS ships a newer workbook cut — drop it at
+   `kb/reference/cip_searchable_<date>.xlsx`, bump `SRC`/`BUILT_AT`, rerun.
+4. **Program-level crosswalk** — the workbook is course/discipline TOP↔CIP; the COCI
+   *program* inventory could add a program lane.
+5. Watch for the **Tech Center's COCI CIP-dropdown** shipping — if it exposes an API,
+   this reference could link out to it per TOP code.
