@@ -25,6 +25,8 @@
   "use strict";
 
   var ROOT_ID = "cpl-pathways-root";
+  // Directory adoption-pool: how many rows show before the "Show all N" toggle.
+  var DIR_POOL_CAP = 20;
 
   // ── Config (anon key is public + RLS-gated; mirrors map_export.js) ──────
   // Quick-Adopt intake: cpl_adoption_interest is anon INSERT-only (no public
@@ -265,8 +267,24 @@
     ".cplpw-foot { font-size:.74rem; color: var(--text-muted); margin: 12px 0 20px; line-height:1.55; }",
     ".cplpw-foot a { color: var(--accent-link); }",
     ".cplpw-note { font-size:.78rem; color: var(--mustard-text, var(--yellow-warning)); margin: 6px 0; }",
-    "@media (max-width: 720px) { .cplpw-course .code { flex-basis:74px; } .cplpw-hero h2 { font-size:1.2rem; } }",
-    "@media print { .cplpw-progrow { display:none; } .cplpw-sec { break-inside: avoid; } }",
+    /* Dropdown selector (replaces the per-pathway chip row once the directory lands) */
+    ".cplpw-selrow { display:flex; flex-wrap:wrap; gap:8px 12px; align-items:center; margin: 14px 0 4px; }",
+    ".cplpw-sellabel { font-size:.82rem; font-weight:700; color: var(--text-muted); }",
+    ".cplpw-select { font-family:inherit; font-size:.86rem; font-weight:600; color: var(--text-body); background: var(--surface-opaque); border:1px solid var(--border-strong); border-radius:8px; padding:7px 12px; max-width:100%; min-width:min(340px, 100%); cursor:pointer; }",
+    ".cplpw-selcount { font-size:.76rem; color: var(--text-muted); }",
+    /* Directory card (the auto-generated per-baccalaureate CPL landscape) */
+    ".cplpw-dirtag { display:flex; flex-wrap:wrap; align-items:center; gap:6px 10px; background: var(--surface-subtle); border:1px solid var(--border); border-radius:8px; padding:8px 14px; margin: 8px 0 10px; font-size:.78rem; color: var(--text-muted); }",
+    ".cplpw-dirtag b { color: var(--text-strong); }",
+    ".cplpw-dirintro { font-size:.86rem; color: var(--text-body); margin: 4px 0 8px; max-width: 900px; }",
+    ".cplpw-cohort { display:flex; flex-wrap:wrap; gap:6px; margin-top:4px; }",
+    ".cplpw-cohort .peer { font-size:.74rem; border:1px solid var(--border); border-radius:10px; padding:2px 8px; background: var(--surface-subtle); color: var(--text-body); }",
+    ".cplpw-cohort .peer.home { background: var(--hunter,var(--green-progress)); color: var(--surface-opaque); border-color:transparent; font-weight:700; }",
+    ".cplpw-cohort .peer.other-status { opacity:.72; }",
+    ".cplpw-frontier { background: var(--mustard-fill); color: var(--text-strong); border-radius:10px; padding:12px 16px; margin:4px 0 10px; font-size:.86rem; }",
+    ".cplpw-frontier b { font-weight:800; }",
+    ".cplpw-course .cred { flex:0 0 auto; font-size:.72rem; color: var(--text-muted); font-style:italic; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:40%; }",
+    "@media (max-width: 720px) { .cplpw-course .code { flex-basis:74px; } .cplpw-hero h2 { font-size:1.2rem; } .cplpw-course .cred { display:none; } }",
+    "@media print { .cplpw-progrow, .cplpw-selrow { display:none; } .cplpw-sec { break-inside: avoid; } }",
   ].join("\n");
 
   function ensureCss() {
@@ -452,6 +470,116 @@
       if (lines.length) out.push({ credential: cred.ut, lines: lines });
     });
     return out.length ? out : null;
+  }
+
+  // ── Directory tier (auto-generated per-baccalaureate cards) ───────────────
+  // The featured index (buildLiveIndexes) is scoped to ONE college; the
+  // directory needs every college's CPL keyed by TOP family, so it gets its
+  // own global index over the same CER payload. Two lookups:
+  //   byCollegeTop4: NORMCOLLEGE -> top4 -> {key -> {ut, code, title, units, cpl_types}}
+  //     — a college's own CPL articulations in a field (the ✓ list).
+  //   byTop4:        top4 -> {ut -> {ut, cpl_types, colleges:{key -> line}}}
+  //     — every college's CPL in a field, grouped by credential (the ⊕ pool).
+  //   byCollegeCount: NORMCOLLEGE -> {ut:true} (distinct CPL credentials, all fields).
+  //   clepByArea:    GE-area -> exams (systemwide CLEP chart; reused from featured).
+  function normCollege(c) { return String(c == null ? "" : c).trim().toUpperCase(); }
+  function buildDirectoryIndex(payload) {
+    if (!payload || !Array.isArray(payload.unified_titles)) return null;
+    var byCollegeTop4 = {}, byTop4 = {}, byCollegeCount = {}, clepByArea = {};
+    payload.unified_titles.forEach(function (u) {
+      var ut = u && u.ut != null ? String(u.ut) : "";
+      (u.articulations || []).forEach(function (a) {
+        var top4 = String((a && a.top) || "").slice(0, 4);
+        (a && a.local || []).forEach(function (loc) {
+          if (!loc) return;
+          var code = (loc.subj != null ? String(loc.subj) : "") + " " + (loc.num != null ? String(loc.num) : "");
+          var units = (typeof loc.u === "number") ? loc.u : null;
+          var title = loc.t != null ? String(loc.t) : "";
+          (loc.colleges || []).forEach(function (cn) {
+            var nc = normCollege(cn);
+            if (!nc) return;
+            if (!byCollegeCount[nc]) byCollegeCount[nc] = {};
+            byCollegeCount[nc][ut] = true;
+            if (!top4) return;
+            if (!byCollegeTop4[nc]) byCollegeTop4[nc] = {};
+            if (!byCollegeTop4[nc][top4]) byCollegeTop4[nc][top4] = {};
+            var mk = ut + "||" + code;
+            if (!byCollegeTop4[nc][top4][mk]) {
+              byCollegeTop4[nc][top4][mk] = { ut: ut, code: code, title: title, units: units, cpl_types: u.cpl_types || [] };
+            }
+            if (!byTop4[top4]) byTop4[top4] = {};
+            if (!byTop4[top4][ut]) byTop4[top4][ut] = { ut: ut, cpl_types: u.cpl_types || [], colleges: {} };
+            var ck = nc + "||" + code;
+            if (!byTop4[top4][ut].colleges[ck]) {
+              byTop4[top4][ut].colleges[ck] = { college: String(cn), code: code, title: title, units: units };
+            }
+          });
+        });
+      });
+      var ge = u.ge_credit;
+      if (ge && ge.program === "CLEP" && !ge.na && Array.isArray(ge.areas)) {
+        ge.areas.forEach(function (area) {
+          if (!clepByArea[area]) clepByArea[area] = [];
+          if (!clepByArea[area].some(function (e) { return e.exam === ge.exam; })) {
+            clepByArea[area].push({ exam: ge.exam, units: ge.units, ut: ut });
+          }
+        });
+      }
+    });
+    return { byCollegeTop4: byCollegeTop4, byTop4: byTop4, byCollegeCount: byCollegeCount,
+             clepByArea: clepByArea, generatedAt: payload._generated_at || null };
+  }
+
+  // Resolve a directory program against the directory index: the college's own
+  // in-field CPL (✓), the peer-college adoption pool (⊕, home-college excluded
+  // and credentials the home college already has removed — those aren't gaps),
+  // the same-field baccalaureate cohort, and the roll-up counts.
+  function resolveDirectory(prog, dir, allPrograms) {
+    var nc = prog.cer_college ? normCollege(prog.cer_college) : null;
+    var top4 = prog.top4 || "";
+    var mine = [];
+    if (nc && dir && dir.byCollegeTop4[nc] && dir.byCollegeTop4[nc][top4]) {
+      var mm = dir.byCollegeTop4[nc][top4];
+      mine = Object.keys(mm).map(function (k) { return mm[k]; });
+      mine.sort(function (a, b) { return a.code < b.code ? -1 : (a.code > b.code ? 1 : 0); });
+    }
+    var mineUts = {};
+    mine.forEach(function (m) { mineUts[m.ut.toLowerCase()] = true; });
+    var pool = [];
+    if (dir && dir.byTop4[top4]) {
+      Object.keys(dir.byTop4[top4]).forEach(function (ut) {
+        if (mineUts[ut.toLowerCase()]) return; // already at this college — not an adoption gap
+        var cred = dir.byTop4[top4][ut];
+        var lines = Object.keys(cred.colleges).map(function (k) { return cred.colleges[k]; })
+          .filter(function (l) { return !nc || normCollege(l.college) !== nc; });
+        if (!lines.length) return;
+        lines.sort(function (a, b) { return a.college < b.college ? -1 : 1; });
+        var cset = {};
+        lines.forEach(function (l) { cset[normCollege(l.college)] = true; });
+        pool.push({ credential: cred.ut, cpl_types: cred.cpl_types, lines: lines, colleges: Object.keys(cset).length });
+      });
+      pool.sort(function (a, b) { return b.colleges - a.colleges || (a.credential < b.credential ? -1 : 1); });
+    }
+    var cohort = (allPrograms || []).filter(function (p) { return p.top4 === top4; });
+    var poolColleges = {};
+    pool.forEach(function (pc) { pc.lines.forEach(function (l) { poolColleges[normCollege(l.college)] = true; }); });
+    return {
+      mine: mine, pool: pool, cohort: cohort,
+      mineCreds: Object.keys(mineUts).length,
+      mineCourses: mine.length,
+      poolCreds: pool.length,
+      poolColleges: Object.keys(poolColleges).length,
+      totalAtCollege: (nc && dir && dir.byCollegeCount[nc]) ? Object.keys(dir.byCollegeCount[nc]).length : 0,
+      clepExams: dir ? countClepExams(dir.clepByArea) : 0,
+      top4: top4,
+    };
+  }
+  function countClepExams(clepByArea) {
+    var seen = {};
+    Object.keys(clepByArea || {}).forEach(function (area) {
+      (clepByArea[area] || []).forEach(function (e) { seen[e.exam] = true; });
+    });
+    return Object.keys(seen).length;
   }
 
   // ── Pathway resolution ────────────────────────────────────────────────────
@@ -794,39 +922,273 @@
     root.appendChild(frag);
   }
 
-  function render(root, data, live, liveNote) {
-    var programs = (data && data.programs) || [];
-    if (!programs.length) {
+  // ── Directory card renderer ───────────────────────────────────────────────
+  // One auto-generated card per CCC baccalaureate: program metadata (from the
+  // COCI export) + a LIVE CPL landscape (the college's own in-field CPL, the
+  // peer-college adoption pool with ⚡ Quick Adopt, the same-field cohort, and
+  // GE-by-CLEP), all derived from the CER dataset by TOP + college.
+  function renderDirectory(root, prog, dir, allPrograms, liveNote) {
+    var m = resolveDirectory(prog, dir, allPrograms);
+    var frag = document.createDocumentFragment();
+
+    // Directory tag (this is a field-level view — not a course-by-course map)
+    var tag = el("div", "cplpw-dirtag");
+    tag.appendChild(el("span", null, [document.createTextNode("CPL LANDSCAPE — ")]));
+    tag.appendChild(el("b", null, "live from the MAP platform"));
+    tag.appendChild(el("span", null,
+      "· a field-level view of the prior-learning credit along the associate-to-bachelor's pathway. For a course-by-course map, pick a ★ Featured pathway above."));
+    frag.appendChild(tag);
+
+    // Hero
+    var hero = el("div", "cplpw-hero");
+    hero.appendChild(el("div", "college", prog.college || ""));
+    hero.appendChild(el("h2", null, (prog.program || "") + (prog.degree ? " — " + prog.degree : "")));
+    var meta = el("div", "meta");
+    var statusCls = prog.status === "Active" ? "stage-active" : "start";
+    meta.appendChild(el("span", "cplpw-chip " + statusCls, prog.status || "—"));
+    if (prog.field) meta.appendChild(el("span", "cplpw-chip", prog.field + (prog.top ? " (TOP " + prog.top + ")" : "")));
+    if (prog.units != null) meta.appendChild(el("span", "cplpw-chip", fmtU(prog.units) + " major units"));
+    if (prog.degree_abbr) meta.appendChild(el("span", "cplpw-chip", prog.degree_abbr));
+    hero.appendChild(meta);
+    frag.appendChild(hero);
+
+    if (liveNote) { frag.appendChild(el("div", "cplpw-note", liveNote)); }
+
+    // Stat tiles
+    var tiles = el("div", "cplpw-tiles");
+    function tile(cls, num, label) {
+      var t = el("div", "cplpw-tile" + (cls ? " " + cls : ""));
+      t.appendChild(el("div", "n", num));
+      t.appendChild(el("div", "l", label));
+      return t;
+    }
+    tiles.appendChild(tile("cpl", "✓ " + m.mineCreds,
+      "credential" + (m.mineCreds === 1 ? "" : "s") + " " + (prog.college || "this college") + " already articulates for CPL in this field (" + m.mineCourses + " course" + (m.mineCourses === 1 ? "" : "s") + ")"));
+    tiles.appendChild(tile(null, "⊕ " + m.poolCreds,
+      "credential" + (m.poolCreds === 1 ? "" : "s") + " peers have articulated that this college could adopt — from " + m.poolColleges + " college" + (m.poolColleges === 1 ? "" : "s")));
+    tiles.appendChild(tile(null, String(m.cohort.length),
+      "college" + (m.cohort.length === 1 ? "" : "s") + " statewide offer a baccalaureate in this field"));
+    tiles.appendChild(tile(null, "◆ " + m.clepExams,
+      "CLEP exams carry systemwide GE credit — test out of general education (ESLEI 24-35)"));
+    frag.appendChild(tiles);
+
+    // Frontier banner when there's nothing yet in the field
+    if (m.mineCreds === 0 && m.poolCreds === 0) {
+      frag.appendChild(el("div", "cplpw-frontier",
+        [el("b", null, "The CPL frontier. "),
+         document.createTextNode("No college has articulated CPL for this field in the MAP platform yet. "
+           + "That's the opportunity: this college could be first to recognize the licenses, certifications, "
+           + "and industry training its students already hold — and every ⊕ that appears here becomes an adoption "
+           + "menu for the other colleges offering this degree.")]));
+    }
+
+    // Section: the college's own CPL in the field (✓)
+    if (m.mine.length) {
+      var s1 = el("div", "cplpw-sec wide");
+      var h1 = el("div", "cplpw-sec-head");
+      h1.appendChild(el("span", "sum cpl", "✓ " + m.mine.length + " course" + (m.mine.length === 1 ? "" : "s")));
+      h1.appendChild(el("div", "t", "CPL " + (prog.college || "this college") + " already articulates in this field"));
+      h1.appendChild(el("div", "s", "Prior-learning credit a student in this pathway can claim today — live from the MAP platform."));
+      s1.appendChild(h1);
+      m.mine.forEach(function (r) {
+        var row = el("div", "cplpw-course done");
+        row.appendChild(el("span", "g cplpw-glyph cpl", "✓"));
+        if (r.code) row.appendChild(el("span", "code", r.code));
+        var t = el("span", "t", r.title || r.ut);
+        t.title = "“" + r.ut + "” → " + (r.code || r.title) + (r.cpl_types && r.cpl_types.length ? " (" + r.cpl_types.join(", ") + ")" : "");
+        row.appendChild(t);
+        if (r.ut && r.ut !== r.title) row.appendChild(el("span", "cred", r.ut));
+        if (r.units != null) row.appendChild(el("span", "u", fmtU(r.units) + "u"));
+        s1.appendChild(row);
+      });
+      frag.appendChild(s1);
+    }
+
+    // Section: adoption opportunities (⊕) — peers' CPL this college could adopt
+    if (m.pool.length) {
+      var s2 = el("div", "cplpw-sec wide");
+      var h2 = el("div", "cplpw-sec-head");
+      h2.appendChild(el("span", "sum", m.pool.length + " to adopt"));
+      h2.appendChild(el("div", "t", "Adoption opportunities — CPL other colleges have already proven in this field"));
+      var capNote = m.pool.length > DIR_POOL_CAP ? " Showing the " + DIR_POOL_CAP + " most widely-adopted first." : "";
+      h2.appendChild(el("div", "s", "Each credential below is articulated for CPL at another California college. This college could adopt it — and a student can request it. ⚡ Quick Adopt records the request for the CPL team." + capNote));
+      s2.appendChild(h2);
+      var moreWrap = el("div");
+      moreWrap.style.display = "none";
+      m.pool.forEach(function (pc, idx) {
+        var row = el("div", "cplpw-course");
+        row.appendChild(el("span", "g cplpw-glyph adopt", "⊕"));
+        var t = el("span", "t", pc.credential);
+        t.title = pc.credential + " — articulated at " + pc.colleges + " college" + (pc.colleges === 1 ? "" : "s");
+        row.appendChild(t);
+        if (pc.cpl_types && pc.cpl_types.length) row.appendChild(el("span", "cred", pc.cpl_types.join(", ")));
+        var abtn = document.createElement("button");
+        abtn.className = "how adopt";
+        abtn.type = "button";
+        abtn.textContent = "⊕ " + pc.colleges + " college" + (pc.colleges === 1 ? "" : "s");
+        abtn.setAttribute("aria-expanded", "false");
+        var panel = el("div", "cplpw-adoptopts");
+        panel.style.display = "none";
+        abtn.addEventListener("click", function () {
+          var open = panel.style.display !== "none";
+          panel.style.display = open ? "none" : "";
+          abtn.setAttribute("aria-expanded", open ? "false" : "true");
+        });
+        row.appendChild(abtn);
+        panel.appendChild(el("div", "h", "Already articulated for CPL at:"));
+        var ul = el("ul");
+        pc.lines.forEach(function (l) {
+          ul.appendChild(el("li", null, l.college + ": " + l.code + (l.title ? " — " + l.title : "") +
+            (l.units != null ? " (" + fmtU(l.units) + "u)" : "")));
+        });
+        panel.appendChild(ul);
+        panel.appendChild(buildQuickAdopt(prog, {
+          code: null, title: pc.credential,
+          adoptOptions: [{ credential: pc.credential, lines: pc.lines }],
+        }));
+        var host = (idx < DIR_POOL_CAP) ? s2 : moreWrap;
+        host.appendChild(row);
+        host.appendChild(panel);
+      });
+      if (m.pool.length > DIR_POOL_CAP) {
+        var moreBtn = document.createElement("button");
+        moreBtn.type = "button";
+        moreBtn.className = "cplpw-progbtn";
+        moreBtn.style.margin = "8px 14px";
+        var hidden = m.pool.length - DIR_POOL_CAP;
+        moreBtn.textContent = "＋ Show all " + m.pool.length + " (" + hidden + " more)";
+        moreBtn.addEventListener("click", function () {
+          var open = moreWrap.style.display !== "none";
+          moreWrap.style.display = open ? "none" : "";
+          moreBtn.textContent = open ? ("＋ Show all " + m.pool.length + " (" + hidden + " more)") : "− Show fewer";
+        });
+        s2.appendChild(moreBtn);
+        s2.appendChild(moreWrap);
+      }
+      frag.appendChild(s2);
+    }
+
+    // Section: the same-field baccalaureate cohort
+    if (m.cohort.length > 1) {
+      var s3 = el("div", "cplpw-sec wide");
+      var h3 = el("div", "cplpw-sec-head");
+      h3.appendChild(el("div", "t", "Colleges offering a baccalaureate in this field"));
+      h3.appendChild(el("div", "s", "The peer network — where an adopted articulation travels. CCC baccalaureates accept CCC-transcribed CPL without the transfer restrictions CSU and UC apply."));
+      s3.appendChild(h3);
+      var cohortWrap = el("div", "cplpw-cohort");
+      cohortWrap.style.padding = "10px 14px";
+      m.cohort.forEach(function (p) {
+        var isHome = prog.cer_college && p.cer_college && normCollege(p.cer_college) === normCollege(prog.cer_college);
+        if (!isHome && p.coci_college && prog.coci_college) isHome = p.coci_college === prog.coci_college;
+        var cls = "peer" + (isHome ? " home" : "") + (p.status !== "Active" ? " other-status" : "");
+        var chip = el("span", cls, p.college + (p.status !== "Active" ? " · " + p.status : ""));
+        chip.title = p.college + " — " + p.program + " (" + p.status + ")";
+        cohortWrap.appendChild(chip);
+      });
+      s3.appendChild(cohortWrap);
+      frag.appendChild(s3);
+    }
+
+    // Footnotes + sources
+    var foot = el("div", "cplpw-foot");
+    foot.appendChild(el("div", null, "• This card is auto-generated from the CCCCO COCI program export (baccalaureate degrees; snapshot " +
+      ((window.CPL_BACCALAUREATES && window.CPL_BACCALAUREATES._as_of) || prog._as_of || "recent") + "). The CPL ✓/⊕ marks derive live from this dashboard's CER dataset (the MAP platform's articulation data)" +
+      (dir && dir.generatedAt ? ", extracted " + String(dir.generatedAt).slice(0, 10) : "") + "."));
+    foot.appendChild(el("div", null, "• ✓ = the credential is articulated for CPL by " + (prog.college || "this college") +
+      " in the field's TOP code (" + (prog.top || prog.top4) + "). ⊕ = another California college articulates it — an adoption opportunity here. " +
+      (prog.cer_college ? "" : "This college has no CPL articulations in the MAP platform yet, so only the field-wide adoption pool is shown.")));
+    foot.appendChild(el("div", null, "• Why baccalaureate pathways: CCC baccalaureate degrees accept CPL that the community colleges transcribe with none of the restrictions CSU and UC place on incoming CPL — so a counselor can recommend a student accept eligible CPL with confidence it won't cost them transfer options."));
+    var srcRow = el("div", null, "Sources: ");
+    [{ label: "CCC Baccalaureate Degree Programs (CCCCO)", url: "https://www.cccco.edu/About-Us/Chancellors-Office/Divisions/Educational-Services-and-Support/What-we-do/Curriculum-and-Instruction-Unit/Curriculum/Baccalaureate-Degree-Program" },
+     { label: "Find a bachelor's degree (I Can Go To College)", url: "https://icangotocollege.com/bachelors-degree" },
+     { label: "MAP CPL Insights Dashboard", url: "https://cpldashboardcccco.azurewebsites.net/insights/dashboard" }].forEach(function (s, i) {
+      if (i) srcRow.appendChild(document.createTextNode(" · "));
+      var a = document.createElement("a");
+      a.href = s.url; a.target = "_blank"; a.rel = "noopener"; a.textContent = s.label;
+      srcRow.appendChild(a);
+    });
+    foot.appendChild(srcRow);
+    frag.appendChild(foot);
+
+    clearNode(root);
+    root.removeAttribute("style");
+    root.appendChild(frag);
+  }
+
+  // ── Dropdown selector (featured + field-grouped directory) ────────────────
+  function buildSelector(items, directory, onChange) {
+    var row = el("div", "cplpw-selrow");
+    var sel = document.createElement("select");
+    sel.className = "cplpw-select";
+    sel.setAttribute("aria-label", "Choose a pathway");
+    function option(val, text) {
+      var o = document.createElement("option");
+      o.value = String(val);
+      o.textContent = text;
+      return o;
+    }
+    // Featured group
+    var fg = document.createElement("optgroup");
+    fg.label = "★ Featured — full course maps";
+    items.forEach(function (it, i) {
+      if (it.kind === "featured") fg.appendChild(option(i, (it.prog.college ? it.prog.college + " — " : "") + (it.prog.program || ("Program " + (i + 1)))));
+    });
+    if (fg.children.length) sel.appendChild(fg);
+    // Directory groups, by field (preserve the data-file order)
+    var fields = [], seen = {};
+    directory.forEach(function (p) { if (!seen[p.field]) { seen[p.field] = true; fields.push(p.field); } });
+    fields.forEach(function (f) {
+      var og = document.createElement("optgroup");
+      og.label = f;
+      items.forEach(function (it, i) {
+        if (it.kind === "directory" && it.prog.field === f) {
+          var st = (it.prog.status && it.prog.status !== "Active") ? " (" + it.prog.status + ")" : "";
+          og.appendChild(option(i, (it.prog.college || "") + " — " + (it.prog.program || "") + st));
+        }
+      });
+      if (og.children.length) sel.appendChild(og);
+    });
+    sel.addEventListener("change", function () {
+      var i = parseInt(sel.value, 10);
+      onChange(isNaN(i) ? 0 : i);
+    });
+    row.appendChild(el("label", "cplpw-sellabel", "Choose a pathway:"));
+    row.appendChild(sel);
+    var nDir = directory.length, nFeat = items.length - nDir;
+    row.appendChild(el("span", "cplpw-selcount",
+      nDir + " CCC baccalaureate degree" + (nDir === 1 ? "" : "s") + " + " + nFeat + " featured course map" + (nFeat === 1 ? "" : "s")));
+    return { row: row, select: sel };
+  }
+
+  function render(root, data, live, dir, liveNote) {
+    var featured = (data && data.programs) || [];
+    var directory = (window.CPL_BACCALAUREATES && window.CPL_BACCALAUREATES.programs) || [];
+    var items = [];
+    featured.forEach(function (p) { items.push({ kind: "featured", prog: p }); });
+    directory.forEach(function (p) { items.push({ kind: "directory", prog: p }); });
+    if (!items.length) {
       clearNode(root);
       root.appendChild(el("div", "cplpw-empty", "No pathway definitions found (cpl_pathways_data.js)."));
       return;
     }
     var container = el("div", "cplpw");
-    var active = 0;
     var body = el("div");
-    if (programs.length > 1) {
-      var picker = el("div", "cplpw-progrow");
-      programs.forEach(function (p, i) {
-        var b = document.createElement("button");
-        b.type = "button";
-        b.className = "cplpw-progbtn" + (i === active ? " on" : "");
-        b.textContent = (p.college ? p.college + " — " : "") + (p.program || ("Program " + (i + 1)));
-        b.addEventListener("click", function () {
-          active = i;
-          Array.prototype.forEach.call(picker.children, function (c, j) {
-            c.className = "cplpw-progbtn" + (j === i ? " on" : "");
-          });
-          renderProgram(body, programs[i], live, liveNote);
-        });
-        picker.appendChild(b);
-      });
-      container.appendChild(picker);
+    function show(i) {
+      var it = items[i] || items[0];
+      if (it.kind === "directory") renderDirectory(body, it.prog, dir, directory, dir ? null : liveNote);
+      else renderProgram(body, it.prog, live, liveNote);
+    }
+    var selector = null;
+    if (items.length > 1) {
+      selector = buildSelector(items, directory, function (i) { show(i); });
+      container.appendChild(selector.row);
     }
     container.appendChild(body);
     clearNode(root);
     root.removeAttribute("style");
     root.appendChild(container);
-    renderProgram(body, programs[active], live, liveNote);
+    if (selector) selector.select.value = "0";
+    show(0);
   }
 
   // ── Boot ──────────────────────────────────────────────────────────────────
@@ -841,19 +1203,29 @@
     var college = (data.programs && data.programs[0] && data.programs[0].college) || "Cerritos";
 
     function done(payload, note) {
-      var live = null;
+      var live = null, dir = null;
       try { live = buildLiveIndexes(payload, college); } catch (e) { live = null; }
-      render(root, data, live, live ? null : (note || "Live MAP articulation data unavailable — showing the curated snapshot."));
+      try { dir = buildDirectoryIndex(payload); } catch (e) { dir = null; }
+      render(root, data, live, dir, (live || dir) ? null : (note || "Live MAP articulation data unavailable — showing the curated snapshot."));
     }
-    // Live CER payload (3 MB, lazy — the CER/MAP-Export tabs share the same file).
-    if (window.CPL_CREDENTIAL_REFERENCE) {
-      done(window.CPL_CREDENTIAL_REFERENCE);
-    } else if (window.CPL_TABS && window.CPL_TABS.loadScript) {
-      window.CPL_TABS.loadScript("credential_reference_data.js", "CPL_CREDENTIAL_REFERENCE", function () {
-        done(window.CPL_CREDENTIAL_REFERENCE || null);
-      });
+    function withCer() {
+      // Live CER payload (3 MB, lazy — the CER/MAP-Export tabs share the same file).
+      if (window.CPL_CREDENTIAL_REFERENCE) {
+        done(window.CPL_CREDENTIAL_REFERENCE);
+      } else if (window.CPL_TABS && window.CPL_TABS.loadScript) {
+        window.CPL_TABS.loadScript("credential_reference_data.js", "CPL_CREDENTIAL_REFERENCE", function () {
+          done(window.CPL_CREDENTIAL_REFERENCE || null);
+        });
+      } else {
+        done(null);
+      }
+    }
+    // Directory tier: the per-baccalaureate cards (window.CPL_BACCALAUREATES).
+    // Lazy-load it once (static, ~40 KB), then resolve the CER payload.
+    if (window.CPL_BACCALAUREATES || !(window.CPL_TABS && window.CPL_TABS.loadScript)) {
+      withCer();
     } else {
-      done(null);
+      window.CPL_TABS.loadScript("cpl_baccalaureates_data.js", "CPL_BACCALAUREATES", function () { withCer(); });
     }
   }
 
@@ -865,5 +1237,7 @@
     _courseKey: courseKey,
     _exportPdf: exportPdf,
     _stages: STAGES,
+    _buildDirectoryIndex: buildDirectoryIndex,
+    _resolveDirectory: resolveDirectory,
   };
 })();

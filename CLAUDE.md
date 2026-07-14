@@ -602,6 +602,22 @@ page title/og → "COBI ᶜᴾᴸ" (generator-owned) for Teams unfurls. Suite +`
 Sam's link out to colleagues. Full story + continuation: `docs/cpl_pathways_lessons.md` ·
 `docs/cpl_pathways_handoff.md`. Parked: the CCC catalog→Supabase harvest (todos).
 
+### StarRunner side-lane — CPL Pathways: the DIRECTORY tier, every CCC bacc (2026-07-14)
+
+Sam: expand CPL Pathways to **all CCC baccalaureates**; dropdown not chips; push
+back. Pushback taken — hand-curating 40+ full course maps is unsourceable
+(catalog bot-blocks, no course→program join), so the tab is now **two-tier**:
+the 3 deep **Featured** maps stay, plus an auto **Directory** card per
+baccalaureate (**45**, `cpl_baccalaureates_data.js` from the COCI program
+export via `kb/_build_baccalaureate_pathways.py`). Keystone: **CER carries a TOP
+code on every articulation** → each card **live-derives** the college's own
+in-field CPL (✓), the peer **adoption pool** (⊕ + ⚡ Quick Adopt, e.g. Automotive
+= 82 adoptable from 27 colleges), the same-field **cohort**, and GE-CLEP — with
+a mustard **"CPL frontier"** banner where nobody's articulated yet
+(Biomanufacturing, Respiratory). Chip picker → grouped `<select>` (★ Featured +
+per-field optgroups); pool caps at 20 with Show-all. Tests 97→**132**;
+real-Chromium verified. Story: `docs/cpl_pathways_lessons.md`.
+
 ### Session 113 — SkyTeleo: the HVAC mis-mint thread → a new auditor rule + blank-discipline cleanup (2026-07-13)
 
 Sam caught `HVAC M10FR` (LA Trade `DIESLTK 122C`) minted **HVAC** but really

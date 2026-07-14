@@ -424,6 +424,171 @@ const PROGRAM_STUB = {
   });
 }
 
+// ── Directory tier — per-baccalaureate CPL-landscape cards ──
+// CER stub with TOP-coded articulations across several colleges + a CLEP row.
+const DIR_CER = {
+  _generated_at: "2026-07-14T00:00:00+00:00",
+  unified_titles: [
+    // Respiratory (TOP 1210): Foothill's own → ✓ for Foothill
+    { ut: "RCP License", cpl_types: ["Industry Certification"],
+      articulations: [{ top: "1210.00", disc: "Respiratory Therapy", local: [
+        { subj: "RSPT", num: "90", t: "RCP Credit", colleges: ["Foothill College"], u: 24 }] }] },
+    // Respiratory (TOP 1210): El Camino peer → ⊕ pool for Foothill (Foothill lacks it)
+    { ut: "NBRC CRT", cpl_types: ["Standardized Assessment"],
+      articulations: [{ top: "1210.00", disc: "Respiratory Therapy", local: [
+        { subj: "RESP", num: "12", t: "CRT Credit", colleges: ["El Camino College"], u: 3 }] }] },
+    // Automotive (TOP 0948): Rio Hondo's own → ✓ for Rio Hondo
+    { ut: "ASE Brakes", cpl_types: ["Industry Certification"],
+      articulations: [{ top: "0948.00", disc: "Automotive Technology", local: [
+        { subj: "AUTO", num: "50", t: "Brakes", colleges: ["Rio Hondo College"], u: 3 }] }] },
+    // Automotive (TOP 0948): peers only → ⊕ pool for Rio Hondo (2 colleges)
+    { ut: "ASE Engine", cpl_types: ["Industry Certification"],
+      articulations: [{ top: "0948.00", disc: "Automotive Technology", local: [
+        { subj: "AUTO", num: "60", t: "Engine", colleges: ["Long Beach City College"], u: 3 },
+        { subj: "AT", num: "60", t: "Engine Perf", colleges: ["Cerritos College"], u: 3 }] }] },
+    // Automotive (TOP 0948): Rio Hondo AND a peer have it → NOT in Rio Hondo's pool
+    { ut: "ASE Electrical", cpl_types: ["Industry Certification"],
+      articulations: [{ top: "0948.00", disc: "Automotive Technology", local: [
+        { subj: "AUTO", num: "70", t: "Electrical", colleges: ["Rio Hondo College"], u: 3 },
+        { subj: "AT", num: "70", t: "Electrical", colleges: ["Cerritos College"], u: 3 }] }] },
+    { ut: "CLEP Bio", cpl_types: ["Standardized Assessment"],
+      ge_credit: { program: "CLEP", exam: "Biology", areas: ["Natural Sciences"], units: 6, na: false },
+      articulations: [] },
+  ],
+};
+const BACC_STUB = [
+  { id: "1210-foothill-resp", college: "Foothill College", cer_college: "Foothill College",
+    coci_college: "FOOTHILL", program: "Respiratory Care", degree: "Bachelor of Science",
+    degree_abbr: "B.S.", top: "1210.00", top4: "1210", field: "Respiratory Care/Therapy",
+    units: 68, status: "Active" },
+  { id: "1210-crafton-resp", college: "Crafton Hills", cer_college: null,
+    coci_college: "CRAFTON HILLS", program: "Respiratory Care", degree: "Bachelor of Science",
+    degree_abbr: "B.S.", top: "1210.00", top4: "1210", field: "Respiratory Care/Therapy",
+    units: 40, status: "Active" },
+  { id: "0948-rio-auto", college: "Rio Hondo College", cer_college: "Rio Hondo College",
+    coci_college: "RIO HONDO", program: "Automotive Technology", degree: "Bachelor of Science",
+    degree_abbr: "B.S.", top: "0948.00", top4: "0948", field: "Automotive Technology",
+    units: 45, status: "Active" },
+];
+
+// (k) buildDirectoryIndex
+{
+  const w = freshWindow();
+  const dir = w.CPL_PATHWAYS_TAB._buildDirectoryIndex(DIR_CER);
+  check("directory index built", !!dir && !!dir.byTop4 && !!dir.byCollegeTop4);
+  check("byCollegeTop4 buckets a college's in-field CPL",
+    !!dir.byCollegeTop4["FOOTHILL COLLEGE"] && !!dir.byCollegeTop4["FOOTHILL COLLEGE"]["1210"]);
+  check("byTop4 groups every college's CPL in a field",
+    !!dir.byTop4["1210"] && !!dir.byTop4["1210"]["RCP License"] && !!dir.byTop4["1210"]["NBRC CRT"]);
+  check("byTop4 credential carries per-college lines",
+    Object.keys(dir.byTop4["0948"]["ASE Engine"].colleges).length === 2);
+  check("byCollegeCount counts distinct credentials (all fields)",
+    Object.keys(dir.byCollegeCount["RIO HONDO COLLEGE"]).length === 2);
+  check("directory clepByArea populated", (dir.clepByArea["Natural Sciences"] || []).length === 1);
+}
+
+// (l) resolveDirectory — mine / pool / cohort / counts
+{
+  const w = freshWindow();
+  const T = w.CPL_PATHWAYS_TAB;
+  const dir = T._buildDirectoryIndex(DIR_CER);
+  const foot = T._resolveDirectory(BACC_STUB[0], dir, BACC_STUB);
+  check("mine = the college's in-field CPL", foot.mineCreds === 1 && foot.mineCourses === 1 && foot.mine[0].ut === "RCP License");
+  check("pool = peer CPL not yet at this college", foot.poolCreds === 1 && foot.pool[0].credential === "NBRC CRT");
+  check("pool excludes the home college", foot.pool[0].lines.every(l => !/Foothill/.test(l.college)));
+  check("cohort = same-field baccalaureates", foot.cohort.length === 2);
+  check("clepExams surfaced", foot.clepExams === 1);
+
+  const rio = T._resolveDirectory(BACC_STUB[2], dir, BACC_STUB);
+  check("Rio Hondo owns two in-field credentials", rio.mineCreds === 2);
+  check("a credential the college ALREADY has is not an adoption gap",
+    rio.pool.length === 1 && rio.pool[0].credential === "ASE Engine" &&
+    !rio.pool.some(p => p.credential === "ASE Electrical"));
+  check("pool credential counts its peer colleges", rio.pool[0].colleges === 2);
+
+  const crafton = T._resolveDirectory(BACC_STUB[1], dir, BACC_STUB);
+  check("frontier college (no CER match) → no own CPL", crafton.mineCreds === 0 && crafton.totalAtCollege === 0);
+  check("frontier college still sees the whole field pool", crafton.poolCreds === 2);
+
+  // null directory (CER unavailable) resolves to empty, no throw
+  const none = T._resolveDirectory(BACC_STUB[0], null, BACC_STUB);
+  check("null directory → empty landscape, cohort still computes", none.mineCreds === 0 && none.poolCreds === 0 && none.cohort.length === 2);
+}
+
+// (m) full render — dropdown + directory card switching
+{
+  const w = freshWindow();
+  w.CPL_PATHWAYS = { programs: [PROGRAM_STUB] };
+  w.CPL_BACCALAUREATES = { _as_of: "2026-06-17", programs: BACC_STUB };
+  w.CPL_TABS = { loadScript: function (s, g, cb) { w.CPL_CREDENTIAL_REFERENCE = DIR_CER; cb(); } };
+  w.CPL_PATHWAYS_TAB.activate();
+  const root = w.document.getElementById("cpl-pathways-root");
+  const sel = root.querySelector("select.cplpw-select");
+  check("dropdown selector renders (featured + directory > 1 item)", !!sel);
+  check("dropdown has a Featured optgroup + field optgroups",
+    !!sel && sel.querySelectorAll("optgroup").length >= 2 &&
+    /Featured/.test(sel.querySelectorAll("optgroup")[0].label));
+  check("dropdown lists every baccalaureate + featured", sel.querySelectorAll("option").length === 1 + BACC_STUB.length);
+  check("default view is the featured deep map", /Field Ironworker Supervisor/.test(root.textContent) && !!root.querySelector(".cplpw-stagebanner"));
+  // switch to the Foothill Respiratory directory card (item index 1)
+  sel.value = "1";
+  sel.dispatchEvent(new w.Event("change", { bubbles: true }));
+  const text = root.textContent;
+  check("directory card renders on select", !!root.querySelector(".cplpw-dirtag") && /Respiratory Care — Bachelor of Science/.test(text));
+  check("directory card shows the ✓ in-field CPL", /RCP License/.test(text) && root.querySelectorAll(".cplpw-course.done").length >= 1);
+  check("directory card shows the ⊕ adoption pool", /NBRC CRT/.test(text) && !!root.querySelector("button.how.adopt"));
+  check("directory card shows the field cohort", !!root.querySelector(".cplpw-cohort") && /Crafton Hills/.test(text));
+  // the adoption panel carries Quick Adopt
+  const adoptBtn = root.querySelector("button.how.adopt");
+  adoptBtn.dispatchEvent(new w.Event("click", { bubbles: true }));
+  check("adoption panel expands with peer lines + Quick Adopt",
+    /El Camino College: RESP 12/.test(root.textContent) && !!root.querySelector(".cplpw-adoptopts .cplpw-qa"));
+  // switch to the frontier college (Crafton, index 2) → frontier banner
+  sel.value = "2";
+  sel.dispatchEvent(new w.Event("change", { bubbles: true }));
+  check("frontier college shows the whole-field pool (no own CPL)",
+    root.querySelectorAll(".cplpw-course.done").length === 0 && /NBRC CRT/.test(root.textContent));
+}
+
+// (m2) committed directory data file parses + joins to the CER schema
+{
+  const dsrc = fs.readFileSync("cpl_baccalaureates_data.js", "utf8");
+  const dom = new JSDOM("<body></body>", { runScripts: "outside-only" });
+  dom.window.eval(dsrc);
+  const b = dom.window.CPL_BACCALAUREATES;
+  check("cpl_baccalaureates_data.js defines window.CPL_BACCALAUREATES", !!b && Array.isArray(b.programs));
+  check("directory carries many baccalaureates", !!b && b.programs.length >= 30);
+  check("every program has the join keys (top4 + degree + status)",
+    !!b && b.programs.every(p => p.top4 && p.degree && p.status && p.program));
+  check("directory boot present in BOTH HTMLs", /loadScript\('cpl_baccalaureates_data\.js', 'CPL_BACCALAUREATES'/.test(cpl) && /loadScript\('cpl_baccalaureates_data\.js', 'CPL_BACCALAUREATES'/.test(idx));
+}
+
+// (m3) large adoption pool caps to DIR_POOL_CAP with a Show-all toggle
+{
+  const w = freshWindow();
+  const big = { _generated_at: "2026-07-14T00:00:00+00:00", unified_titles: [] };
+  for (let i = 0; i < 25; i++) big.unified_titles.push({ ut: "Cred " + i, cpl_types: ["Industry Certification"],
+    articulations: [{ top: "0948.00", disc: "Automotive Technology", local: [
+      { subj: "AUTO", num: String(i), t: "c" + i, colleges: ["Peer College " + i], u: 3 }] }] });
+  const bacc = [{ id: "0948-home-auto", college: "Home College", cer_college: "Home College", coci_college: "HOME",
+    program: "Automotive Technology", degree: "Bachelor of Science", degree_abbr: "B.S.",
+    top: "0948.00", top4: "0948", field: "Automotive Technology", units: 60, status: "Active" }];
+  w.CPL_PATHWAYS = { programs: [PROGRAM_STUB] };
+  w.CPL_BACCALAUREATES = { _as_of: "2026-06-17", programs: bacc };
+  w.CPL_TABS = { loadScript: function (s, g, cb) { w.CPL_CREDENTIAL_REFERENCE = big; cb(); } };
+  w.CPL_PATHWAYS_TAB.activate();
+  const root = w.document.getElementById("cpl-pathways-root");
+  const sel = root.querySelector("select.cplpw-select");
+  sel.value = "1"; sel.dispatchEvent(new w.Event("change", { bubbles: true }));
+  const showAll = Array.from(root.querySelectorAll("button")).find(b => /Show all 25/.test(b.textContent));
+  check("large pool gets a Show-all toggle", !!showAll);
+  const moreWrap = showAll ? showAll.nextSibling : null;
+  check("overflow hidden initially", !!moreWrap && moreWrap.style.display === "none");
+  if (showAll) showAll.dispatchEvent(new w.Event("click", { bubbles: true }));
+  check("Show-all reveals the overflow", !!moreWrap && moreWrap.style.display !== "none" && /Show fewer/.test(showAll.textContent));
+  check("all 25 adoption rows present in the DOM", root.querySelectorAll("button.how.adopt").length === 25);
+}
+
 // ── Report (deferred one macrotask so the async intake checks land first) ──
 setTimeout(() => {
   let fail = 0;
