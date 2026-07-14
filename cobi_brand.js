@@ -32,11 +32,14 @@
       // positioned About popover (z-index:300, trapped inside that context)
       // rendered BEHIND the cards. 150 clears all page content but stays under
       // the mobile rail/hamburger (z 199-201) so they still cover the header.
-      ".header{display:grid;grid-template-columns:1fr minmax(300px,560px) 1fr;",
+      // Left brand | flexible spacer | right search | right utility. The search
+      // moved OFF-center to the right (Sam, 2026-07-14) so the site-switcher in
+      // the brand cluster can't overlap it at intermediate widths.
+      ".header{display:grid;grid-template-columns:auto 1fr auto auto;",
       "position:relative;z-index:150;",
-      "align-items:center;column-gap:1.25rem;row-gap:.5rem;padding:.6rem 1.5rem;}",
-      ".cobi-brand{justify-self:start;display:flex;align-items:center;gap:.65rem;min-width:0;}",
-      ".cobi-seal{flex:0 0 auto;width:46px;height:46px;object-fit:contain;display:block;}",
+      "align-items:center;column-gap:1.1rem;row-gap:.5rem;padding:.6rem 1.5rem;}",
+      ".cobi-brand{grid-column:1;justify-self:start;display:flex;align-items:center;gap:.7rem;min-width:0;}",
+      ".cobi-seal{flex:0 0 auto;width:60px;height:60px;object-fit:contain;display:block;}",
       ".cobi-brandtext{display:flex;flex-direction:column;line-height:1.12;min-width:0;}",
       ".header h1{font-family:'Playfair Display',Georgia,serif;font-size:1.6rem;font-weight:800;",
       "letter-spacing:.08em;color:var(--seal-blue,#00356B);margin:0;white-space:nowrap;}",
@@ -45,14 +48,14 @@
       ".cobi-tagline{font-family:'Source Sans 3',Arial,sans-serif;font-size:.8rem;font-weight:600;",
       "letter-spacing:.02em;color:var(--text-muted,#5C5C55);margin:.1rem 0 0;white-space:nowrap;}",
       // ── center search slot (quickstart mounts here) ──
-      ".cobi-qs-slot{justify-self:stretch;min-width:0;}",
+      ".cobi-qs-slot{grid-column:3;justify-self:end;width:min(360px,40vw);min-width:0;}",
       "#cobiQsSlot #qs-chat{margin:0;padding:0;background:none;border:none;box-shadow:none;position:static;}",
       "#cobiQsSlot .qs-label{display:inline-flex;align-items:center;gap:.3rem;margin:0;",
       "font-size:.85rem;font-weight:700;color:var(--text-strong,#1C1C1A);white-space:nowrap;}",
       "#cobiQsSlot .qs-row{display:flex;align-items:center;gap:.5rem;}",
       "#cobiQsSlot .qs-status{font-size:.72rem;margin:.15rem 0 0;min-height:0;}",
       // ── utility cluster (right) ──
-      ".cobi-utility{justify-self:end;display:flex;align-items:center;justify-content:flex-end;",
+      ".cobi-utility{grid-column:4;justify-self:end;display:flex;align-items:center;justify-content:flex-end;",
       "flex-wrap:wrap;gap:.1rem .55rem;}",
       ".cobi-util-link,.header #refreshBtn{font-family:'Source Sans 3',Arial,sans-serif!important;",
       "font-size:.74rem!important;font-weight:600!important;color:var(--text-faint,#87877F)!important;",
@@ -88,8 +91,9 @@
       ".cobi-about-panel .attach-btn:hover{text-decoration:underline!important;background:none!important;}",
       ".cobi-about-panel>div[style]{margin-top:.1rem!important;}",
       // ── responsive: search drops to its own row under ~1000px ──
-      "@media (max-width:1000px){.header{grid-template-columns:1fr auto;}",
-      ".cobi-brand{order:1;}.cobi-utility{order:2;}.cobi-qs-slot{grid-column:1 / -1;order:5;",
+      "@media (max-width:1180px){.header{grid-template-columns:1fr auto;}",
+      ".cobi-brand{grid-column:1;order:1;}.cobi-utility{grid-column:2;order:2;}",
+      ".cobi-qs-slot{grid-column:1 / -1;order:5;justify-self:stretch;width:auto;",
       "border-top:1px solid var(--border,rgba(28,28,26,.14));padding-top:.5rem;}}"
     ].join("");
     document.head.appendChild(s);

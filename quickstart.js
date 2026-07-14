@@ -347,13 +347,9 @@
     var suggestList = el('div', {id: 'qs-suggest-list', className: 'qs-suggest-list', role: 'listbox'});
     inputBox.appendChild(input);
     inputBox.appendChild(suggestList);
-    var btn = el('button', {
-      type: 'button',
-      className: 'qs-go',
-      'aria-label': 'Go',
-    }, 'Go →');
+    // No Go button — Enter submits (Sam, 2026-07-14: "don't folks know to hit
+    // enter"). The input-disable-during-lookup UX is kept on the input alone.
     row.appendChild(inputBox);
-    row.appendChild(btn);
     wrap.appendChild(row);
 
     var status = el('div', {className: 'qs-status', id: 'qs-status', 'aria-live': 'polite'});
@@ -438,7 +434,7 @@
       if (!q) { input.focus(); return; }
       try { sessionStorage.setItem(STORAGE_KEY, q); } catch (e) { /* ignore */ }
 
-      btn.disabled = true; input.disabled = true;
+      input.disabled = true;
       setStatus('Thinking…', 'pending');
       try {
         var routed = await askClaude(q);
@@ -451,12 +447,12 @@
           // (cold-load case after a refresh on a deep link).
           if (routed.filter_hint) stashAndDispatch(routed.tab, routed.filter_hint);
           navigateTo(routed.tab);
-          btn.disabled = false; input.disabled = false;
+          input.disabled = false;
           resetBox();
         }, 350);
       } catch (e) {
         setStatus(e.message || 'Sorry — could not route that. Try rephrasing.', 'error');
-        btn.disabled = false; input.disabled = false;
+        input.disabled = false;
       }
     }
 
@@ -467,7 +463,6 @@
       setTimeout(closeSuggest, 150);
     });
 
-    btn.addEventListener('click', submit);
     input.addEventListener('keydown', function (ev) {
       // Keyboard navigation through the suggestion dropdown.
       if (suggestList.classList.contains('qs-open') && activeSuggestions.length) {

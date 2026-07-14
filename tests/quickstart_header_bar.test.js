@@ -37,7 +37,8 @@ const bar = document.getElementById("qs-chat");
 check("quick-start bar mounts", !!bar);
 check("bar sits at the header level (immediately after .header)",
   bar && bar.previousElementSibling && bar.previousElementSibling.classList.contains("header"));
-check("the search input + Go button are present", bar && bar.querySelector(".qs-input") && bar.querySelector(".qs-go"));
+check("the search input is present; Go button removed (Enter submits)",
+  bar && bar.querySelector(".qs-input") && !bar.querySelector(".qs-go"));
 
 const css = document.getElementById("qs-chrome-css");
 check("sticky-chrome CSS injected once", !!css);
