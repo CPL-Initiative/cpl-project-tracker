@@ -557,12 +557,19 @@ with TOP N"** deep-link (added TOP to the COCI search haystack). Faculty file
 **suggested changes/notes** open/anon (Quick-Adopt pattern) → Supabase
 `cip_crosswalk_suggestion` (anon INSERT-only, no public SELECT; queue read gated
 by `is_allowed_reviewer() OR team_pass_ok()`; `kb/supabase_cip_crosswalk_suggestion.sql`,
-MCP migration `cip_crosswalk_suggestion_intake` on Work Plan). Tests:
-`tests/cip_crosswalk.test.js` (36) + `cobi_orgs.test.js` extended (33); real-Chromium
-verified, 0 console errors; RLS verified live. Full story + continuation (a CO
-curator view for the queue is the top follow-up): `docs/cip_crosswalk_lessons.md`.
-Side-lane like SkyFlyer/SkyIron — left `cpl_todos.json` + the numbered handoff
-untouched.
+MCP migration `cip_crosswalk_suggestion_intake` on Work Plan). **#771** added a
+**transfer (C-ID) marker + filter** (CO prioritizes transfer first; COCI has no
+CSU/UC-transferable flag, so C-ID presence is a labeled floor — `top[code].cid/crs`
+rolled up from `coci_course_list.xlsx`). **#772 = the reference-manual pivot:** Jenni
+Abbott (CO AA) confirmed TOP→CIP is **one-to-many** (data: only 9% of TOP are 1:1),
+the **Tech Center owns the COCI CIP-dropdown** data entry, and ours is the **reference
+manual** (successor to the TOP Code Manual) — so a **"Browse all CIP codes" view**
+now surfaces all **2,325** federal CIP codes (incl. 181 that had no TOP mapping) with
+narrative definitions. The planned canonical-CIP-designation curator surface was
+**dropped** (1:1 premise false). Tests: `tests/cip_crosswalk.test.js` (44) +
+`cobi_orgs.test.js` (33); real-Chromium verified, 0 console errors; RLS verified live.
+Full story + continuation: `docs/cip_crosswalk_lessons.md`. Side-lane like
+SkyFlyer/SkyIron — left `cpl_todos.json` + the numbered handoff untouched.
 
 ### SkyFlyer side-lane — COBI org layer: the C&I subsite pilot + "Our Process" tab (2026-07-14, #765–#768 MERGED)
 
