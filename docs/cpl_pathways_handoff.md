@@ -58,8 +58,42 @@ promote a directory program into a featured map; **refresh** the COCI export
 generator); the credential lane could use a **calibration re-seed** now Rule 8c
 exists; generalize 8c-1 (`(with Practical)`-style suffixes) beyond automotive.
 
+### 🔑 PRIORITY next-session finding — retired course numbers inflate the counts (Sam, 2026-07-14)
+
+Sam eyeballed Santa Ana's Automotive card and spotted "dups" — the SAME
+competency listed under two course numbers (AT 106 **and** AUTO 118 = Engine
+Performance; AT 112 / AUTO 117 = HVAC; AT 54 / AUTO 115 = Brakes). **Confirmed
+root cause:** the `AT`-prefix courses are **RETIRED** — Santa Ana's current COCI
+catalog has **72 `AUTO` courses and ZERO `AT`** (AT 106/112/54 are absent from
+COCI entirely), but the **MAP platform still carries the old `AT`-series
+articulations** alongside the current `AUTO` ones. So each competency is
+articulated twice (old number + new number).
+
+**Sam's key connection: this is THE source of the "sus" counts.** The stale
+retired-number twins are why Santa Ana read "127 units" (abandoned unit metric)
+and why it reads "**31 courses · 18 credentials**" now — the 13-course gap is
+largely retired `AT` duplicates of current `AUTO` courses. Not a
+credential-mapping bug (the ASE mapping is correct); the **course link is
+stale**.
+
+**Recommended fixes (next session):**
+1. **ROOT — a "stale articulation" data-quality signal (CER/CCR mainline):**
+   flag any CER articulation whose `(college, subj, num)` has **no matching row
+   in the current COCI course list** (`kb/reference/coci_course_list.xlsx`) —
+   a retired/renumbered course still live in MAP. Systemwide, not just Santa
+   Ana. This is the clean-at-the-source fix and tightens EVERY count.
+2. **PATHWAYS DISPLAY (our lane, easy):** in `renderDirectory`'s ✓ list, either
+   (a) drop courses absent from current COCI, or (b) group the list by ASE
+   competency (one row per credential, listing its course numbers) — collapses
+   the visible dups and makes the headline the ~18-credential truth. `mineCourses`
+   would then count COCI-current courses only.
+   The tile already exposes the gap (`courses · credentials`); #2 makes the ✓
+   list match it.
+
 > **Side-lane discipline:** this workstream left `kb/cpl_todos.json` + the
 > numbered `session_<N>_handoff.md` untouched — the CER/CSR mainline owns those.
+> The stale-articulation detector (#1 above) is a mainline candidate — flag it
+> to the next numbered session.
 
 ## The three FEATURED maps (unchanged)
 
