@@ -343,3 +343,32 @@ Doctrine → **v0.8**. Lesson: **the smaller and more stratified the batch, the
 more rules per minute of Sam's time.** Three scenarios settled three open
 doctrine questions; the thousands-strong panel settled none (he bounced). Curate
 hard, present few, each a distinct fork.
+
+### 2026-07-14 (batch 3) — the ESL 3-comprehensive collapse → Doctrine v0.9
+
+Sam's biggest packaging ruling yet, on the "ESL morass." Profiled the real data
+first (**2,364 ESL identities**; levels Beginning 697 / Intermediate 480 /
+Advanced 485 / no-level 702; strands reading 372 · writing 218 · listening 186 ·
+grammar 172 · academic-prep 100 · conversation 90 · pronunciation 81 · …) then
+brought the three genuine edges as a scenario batch.
+
+**Ruling — ESL collapses to exactly 3 comprehensive courses** (Beginning /
+Intermediate / Advanced ESL), with **every skill strand AND content-for-ESL
+course bundled in by level** — no strand survives (settles Q-STRANDS). No-level
+courses default to Beginning (CPL-safe under-claim). **Three carve-outs escape:**
+1. **Transfer-level ESL** (rare, e.g. "ESL 101 Reading and Writing" — degree-
+   applicable transfer credit → the rung IS the credit target, P-3 boundary).
+2. **ESL Citizenship** (naturalization purpose → distinct).
+3. **Vocational ESL / VESL** (workforce/CTE purpose → distinct).
+   (Content-for-ESL courses — culture/film/computer-for-multilingual — Sam ruled
+   IN the 3, not out: they're part of the ESL offering.)
+
+Impact: 2,364 → 3 + 3 small carve-out families. This is the flagship packaging
+pass (`package-esl@bot`). Doctrine → **v0.9**.
+
+**Lesson — profile the discipline BEFORE bringing the edges.** The 2,364-count +
+level/strand histogram is what made the 3 edge scenarios sharp (citizenship 33,
+VESL 67, content-not-language in the 702 no-level tail). Don't ask abstract policy
+questions; show the curator the real distribution and ask about the specific
+piles at the margins. Sam: "The scenarios make me squirm, but we need to squeeze
+the juice out" — so keep batches small, grounded, and clearly finite.

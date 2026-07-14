@@ -1,7 +1,7 @@
 ---
 title: "CCR Merge/Mint Doctrine — the decision policy for course convergence"
 created: 2026-07-03
-version: "0.8 (2026-07-14 — batch-2 scenario rulings on top of the v0.7 graduation: P-7 RATIFIED (Q-GENERIC — one umbrella per generic-type × subject); Q-FLOOR bounded (enrichment-noncredit merges when learning matches a credit course; P-1b splits only on differing skills/breadth); P-3 refined with the 3-RUNG CAP (ladders >3 rungs consolidate by pairing (1,2)(3,4)(5,6+), incl. degree-applicable creative ladders). v0.7 was the graduation gate: P-6 ratified + P-1b. v0.6 was P-1 RATIFIED + P-1a/7a/9a/10a)"
+version: "0.9 (2026-07-14 — the ESL 3-comprehensive collapse: P-4 RATIFIED / Q-STRANDS settled — ALL of ESL (2,364 identities) collapses to Beginning/Intermediate/Advanced ESL, every strand + content-for-ESL course bundled in; carve-outs = transfer-level ESL, ESL Citizenship, VESL. v0.8 was P-7/Q-FLOOR/3-rung-cap; v0.7 was the graduation gate P-6+P-1b; v0.6 was P-1 RATIFIED + P-1a/7a/9a/10a)"
 tags: [ccr, doctrine, merge, mint, m-id, mind-meld]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -415,13 +415,45 @@ rungs in with their original level recorded in `merge_note`.
   1/2/3, ENGL composition sequence) keep their rungs — CPL awards real
   course credit there and the rung *is* the credit target. (→ Q-LADDER)
 
-### P-4 · Skill strands fold into the band — PROPOSED
+### P-4 · Skill strands fold into the band — RATIFIED (Sam, 2026-07-14; the ESL 3-comprehensive collapse)
 
-Within a packaged family, parallel skill strands (ESL Reading / Writing /
-Grammar / Conversation at level N) fold into the band package too, unless a
-strand is independently a credit target (e.g. a credit "ESL Writing for
-College" that satisfies a requirement). Sam's instinct, verbatim: *"converge
-packages of these into Beginning, Intermediate, Advanced ESL."* (→ Q-STRANDS)
+Within a packaged family, parallel skill strands fold into the band package.
+**Q-STRANDS SETTLED — no strand survives as its own identity.**
+
+**The ESL 3-comprehensive collapse (Sam, 2026-07-14).** ALL of ESL (English as
+a Second Language, credit ⋃ noncredit per P-3) collapses to **exactly three
+comprehensive courses — Beginning · Intermediate · Advanced ESL** (the 3-rung
+cap applied to the discipline). **Every flavor bundles into the level-appropriate
+comprehensive:**
+
+- **Skill strands** — listening, speaking, reading, writing, grammar,
+  conversation, pronunciation, vocabulary, **academic prep / EAP** — all fold in.
+  None is a separate target. (Sam: *"bundle all the flavors into one of the 3
+  comprehensives."*)
+- **Content-for-ESL-students courses** — culture/film, "US Life & Culture for
+  Multilingual Students", "Desktop Apps for Multilingual Students", classroom
+  culture — **also bundle into the 3** (Sam ruled these IN: they're part of the
+  ESL offering, folded by level).
+- **Level assignment:** use the title/description level mark; a course with **no
+  explicit level defaults to Beginning** (the CPL-safe under-claim — award at the
+  entry band rather than over-claim), refined from the description where present.
+
+**Three carve-outs escape the collapse (kept as their own identities):**
+
+1. **Transfer-level / degree-applicable ESL** — the rare transferable courses
+   (e.g. *"ESL 101 Reading and Writing"*, a transfer composition course). CPL
+   awards real transferable credit here, so the rung IS the credit target — the
+   ESL analog of the P-3 degree-applicable boundary (Calc I/II keeps its rungs).
+   *"Some colleges have those but they are fairly rare."* (Sam, 2026-07-14.)
+2. **ESL Citizenship** — naturalization/civics-purpose ESL ("ESL for Citizenship",
+   "Citizenship Preparation") is its own identity, not general language (Sam kept
+   distinct).
+3. **Vocational ESL (VESL)** — workforce/CTE-purpose ESL ("Vocational English for
+   Culinary Arts", "ESL for the Workplace", "IT Workplace Language Support") is
+   its own identity/family, a distinct workforce-credit angle (Sam kept distinct).
+
+Impact on current data: **2,364 ESL identities → 3 comprehensives + the 3 small
+carve-out families.** This is the flagship packaging pass (`package-esl@bot`).
 
 ### P-5 · Units tolerance — PROPOSED
 
@@ -540,7 +572,7 @@ checkpoint. Current forks:
 | id | Fork | Doctrine it settles |
 |---|---|---|
 | Q-LADDER | **Settled 2026-07-14 → the 3-RUNG CAP.** No unified ladder exceeds 3 rungs; >3 rungs consolidate by pairing (1,2)(3,4)(5,6+), incl. degree-applicable creative ladders. Academic sequences already ≤3 (Calc I/II) keep their rungs. (Earlier: P-3 ESL band mapping, 2026-07-10.) | P-3 |
-| Q-STRANDS | Do skill strands ever survive packaging (ESL Writing as its own target)? | P-4 |
+| Q-STRANDS | **RESOLVED 2026-07-14 (Sam):** NO strand survives — ESL collapses to 3 comprehensives (Beginning/Intermediate/Advanced), all strands + content-for-ESL courses bundled in by level (P-4 ratified). Carve-outs: transfer-level ESL, ESL Citizenship, VESL. | P-4 |
 | Q-UNITS | How much unit spread stops a merge on a non-standardized course? | P-5 |
 | Q-SAMECOLL | **RESOLVED 2026-07-14 (Sam):** same-college same-competency pairs converge (P-6 ratified) — title-drift/both-intro → clean merge; low-unit (≤1u) numbered sequences → parenthetical merge "(1 and 2)"; D-4's level guard yields. Degree-applicable sequences keep their rungs (P-3). | P-6 |
 | Q-GENERIC | **RESOLVED 2026-07-14 (Sam):** umbrella-mint ONE identity per (generic-type × subject) — "Topics in Business", "Work Experience in Business", … — variants folded in (P-7 ratified). | P-7 |
