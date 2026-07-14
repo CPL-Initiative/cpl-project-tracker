@@ -106,6 +106,32 @@ check("renders a transfer-model (C-ID) chip for a TOP with C-ID courses",
   root && /C-ID/.test(root.textContent) && root.querySelector(".cipx-chip.xfer"));
 check("transfer filter control exists", root && root.querySelector("#cipx-transfer"));
 
+// ── CIP catalog (browse-all) view ──
+check("view toggle offers both crosswalk + catalog", root && root.querySelectorAll(".cipx-viewbtn").length === 2);
+// switch to catalog and confirm every CIP code is browsable (incl. an orphan CIP)
+const ORPHAN = { t: "Orphan Field, No TOP", fam: "99", famt: "Orphan Family", cte: "Not CTE", act: "New", chg: "", def: "A field with no TOP mapping at all.", xref: "", ex: "", soc: [] };
+window.CIP_CROSSWALK = JSON.parse(JSON.stringify(FIXTURE));
+window.CIP_CROSSWALK.cip["99.0001"] = ORPHAN;   // present in catalog, in NO pair
+// re-render fresh to pick up the orphan
+const domCat = makeDom();
+domCat.window.CIP_CROSSWALK = window.CIP_CROSSWALK;
+domCat.window.eval(src);
+domCat.window.CPL_CIP_CROSSWALK.activate();
+const catBtns = domCat.window.document.querySelectorAll(".cipx-viewbtn");
+catBtns[1].click(); // "Browse all CIP codes"
+const catRows = domCat.window.document.querySelectorAll("tbody tr.cipx-row");
+check("catalog view lists every CIP code (all 3 fixture CIPs incl. the orphan)", catRows.length === 3);
+check("catalog surfaces the orphan CIP (no TOP mapping)", /99\.0001/.test(domCat.window.document.body.textContent));
+// expand the orphan row → its narrative + 'no TOP' note render
+const catDoc = domCat.window.document;
+const orphanRow = Array.prototype.filter.call(catDoc.querySelectorAll("tbody tr.cipx-row"), function (tr) { return /99\.0001/.test(tr.textContent); })[0];
+orphanRow.click();
+const catDetail = catDoc.querySelector(".cipx-catdetail");
+check("catalog row expands to a CIP-centric detail", !!catDetail);
+check("orphan CIP detail shows its definition + 'no TOP' note",
+  catDetail && /no TOP mapping at all/.test(catDetail.textContent) && /full federal CIP list/.test(catDetail.textContent));
+check("catalog filter: 2020 CIP status control exists", catDoc.querySelector("#cipx-action"));
+
 // expand a row → detail panel with the CIP definition
 const firstRow = root.querySelector("tbody tr.cipx-row");
 let clickThrew = false;

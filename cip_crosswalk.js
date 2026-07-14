@@ -58,9 +58,11 @@
   var D = null;          // window.CIP_CROSSWALK
   var INDEX = [];        // per-pair search/display index
   var state = {
+    view: "crosswalk",   // "crosswalk" (TOP↔CIP pairs) | "catalog" (browse all CIP codes)
     q: "", group: "top", credit: "all", cte: "all", transfer: "all",
     sources: {},         // srcIdx -> true (empty = all)
     sector: "", family: "",
+    action: "all",       // catalog: 2020-CIP action filter (New/Deleted/Moved/Unchanged)
     limit: PAGE,
     open: {},            // rowKey -> true (expanded detail)
   };
@@ -76,7 +78,11 @@
     "COE TOP-CIP": "COE", "Submitted by Field": "Field", "CIP Code File (No TOP Relationship)": "CIP file",
   };
 
+  var CIP_TOPS = {};   // cipCode -> [{top, srcName}]  (for the CIP-catalog view)
+  var CIP_LIST = [];   // every CIP code, as catalog rows (all 2,325 incl. orphans)
+
   function buildIndex() {
+    CIP_TOPS = {};
     INDEX = D.pairs.map(function (p, i) {
       var topCode = p[0], cipCode = p[1];
       var t = topCode ? D.top[topCode] : null;
@@ -85,10 +91,22 @@
       var hay = ((topCode || "") + " " + (t ? t.t : "") + " " +
                  cipCode + " " + (c ? c.t : "") + " " + srcName + " " +
                  (c ? c.def : "")).toLowerCase();
+      if (topCode) {
+        (CIP_TOPS[cipCode] = CIP_TOPS[cipCode] || []).push({ top: topCode, srcName: srcName });
+      }
       return {
         i: i, topCode: topCode, cipCode: cipCode, t: t, c: c,
         src: p[2], srcName: srcName, nc: p[3] === 1,
         colleges: p[4] || "", count: p[5] || 0, hay: hay,
+      };
+    });
+    // The full federal CIP list — the reference-manual "look at everything" set.
+    CIP_LIST = Object.keys(D.cip).map(function (code) {
+      var c = D.cip[code];
+      return {
+        code: code, c: c,
+        tops: CIP_TOPS[code] || [],
+        hay: (code + " " + (c.t || "") + " " + (c.def || "") + " " + (c.ex || "")).toLowerCase(),
       };
     });
   }
@@ -135,6 +153,32 @@
       out.sort(function (a, b) { return cmp(a.topCode, b.topCode) || cmp(a.cipCode, b.cipCode); });
     }
     return out;
+  }
+
+  // ── CIP catalog (browse-all) filtering ───────────────────────────────────────
+  function catPasses(r) {
+    if (state.q) {
+      var toks = state.q.split(/\s+/);
+      for (var i = 0; i < toks.length; i++)
+        if (toks[i] && r.hay.indexOf(toks[i]) < 0) return false;
+    }
+    if (state.family && r.c.fam !== state.family) return false;
+    if (state.cte !== "all") {
+      var isCte = /CTE|Both/i.test(r.c.cte || "");
+      if (state.cte === "cte" && !isCte) return false;
+      if (state.cte === "notcte" && isCte) return false;
+    }
+    if (state.action !== "all") {
+      var a = r.c.act || "";
+      if (state.action === "new" && a !== "New") return false;
+      if (state.action === "deleted" && a !== "Deleted") return false;
+      if (state.action === "moved" && !(a === "Moved to" || a === "Moved from")) return false;
+      if (state.action === "unchanged" && a && a !== "No substantive changes") return false;
+    }
+    return true;
+  }
+  function catFiltered() {
+    return CIP_LIST.filter(catPasses).sort(function (a, b) { return cmp(a.code, b.code); });
   }
 
   // ── small UI atoms ──────────────────────────────────────────────────────────
@@ -448,7 +492,147 @@
 
   function toggleRow(host, key) {
     if (state.open[key]) delete state.open[key]; else state.open[key] = true;
-    renderResults(host);
+    renderActive(host);
+  }
+
+  // ── CIP catalog (browse-all) — the reference-manual view over the full list ───
+  function catCipChips(c) {
+    var out = [];
+    if (/CTE|Both/i.test(c.cte || "")) out.push(chip("CTE", "cte", "Career Technical Education"));
+    if (/Noncredit/i.test(c.cte || "")) out.push(chip("Noncredit", "nc", "Noncredit CIP"));
+    if (c.act === "New") out.push(chip("NEW", "new", "New in the 2020 CIP edition"));
+    if (c.act === "Deleted") out.push(chip("DELETED", "del", "Deleted from the CIP taxonomy"));
+    if (c.act === "Moved to" || c.act === "Moved from") out.push(chip("MOVED", "moved", c.act + " in the 2020 CIP edition"));
+    return out;
+  }
+
+  function renderCatalog(host) {
+    clear(host);
+    var rows = catFiltered();
+    var total = rows.length;
+    var shown = rows.slice(0, state.limit);
+
+    var count = el("div", { class: "cipx-count" }, [
+      total.toLocaleString() + " CIP code" + (total === 1 ? "" : "s") +
+      (total > state.limit ? "  ·  showing " + state.limit.toLocaleString() : ""),
+    ]);
+    var csv = el("button", { class: "cipx-csv", type: "button", title: "Download the filtered CIP list as CSV",
+      onclick: function () { exportCatalogCsv(rows); } }, ["⬇ CSV"]);
+    host.appendChild(el("div", { class: "cipx-resbar" }, [count, csv]));
+
+    if (!total) {
+      host.appendChild(el("div", { class: "cipx-empty" }, ["No CIP codes match — loosen the search or filters."]));
+      return;
+    }
+
+    var table = el("table", { class: "cipx-table" }, []);
+    table.appendChild(el("colgroup", {}, [
+      el("col", { style: "width:15%" }), el("col", { style: "width:60%" }),
+      el("col", { style: "width:13%" }), el("col", { style: "width:12%" }),
+    ]));
+    table.appendChild(el("thead", {}, [el("tr", {}, [
+      el("th", {}, ["CIP code"]),
+      el("th", {}, ["Title & family"]),
+      el("th", { class: "cipx-num" }, ["TOP codes"]),
+      el("th", {}, [""]),
+    ])]));
+    var tbody = el("tbody", {}, []);
+
+    shown.forEach(function (r) {
+      var key = "c:" + r.code;
+      var isOpen = !!state.open[key];
+      var codeBtn = el("button", { class: "cipx-code cipx-code-cip", type: "button",
+        title: "Filter to " + r.code, onclick: function (e) { e.stopPropagation(); setSearch(r.code); } }, [r.code]);
+      var titleWrap = el("div", { class: "cipx-codewrap" }, [el("span", { class: "cipx-catttl" }, [r.c.t])]);
+      if (r.c.fam) titleWrap.appendChild(el("div", { class: "cipx-catmeta" },
+        ["Family " + r.c.fam + (r.c.famt ? " · " + r.c.famt : "")]));
+      var chips = catCipChips(r.c);
+      if (chips.length) titleWrap.appendChild(el("div", { class: "cipx-chips" }, chips));
+
+      var tr = el("tr", { class: "cipx-row" + (isOpen ? " cipx-open" : ""),
+        onclick: function () { toggleRow(host, key); } }, [
+        el("td", {}, [el("div", { class: "cipx-codewrap" }, [codeBtn])]),
+        el("td", {}, [titleWrap]),
+        el("td", { class: "cipx-num" }, [r.tops.length ? String(r.tops.length) : "—"]),
+        el("td", { class: "cipx-caret" }, [el("span", {}, [isOpen ? "▾" : "▸"])]),
+      ]);
+      tbody.appendChild(tr);
+      if (isOpen) tbody.appendChild(el("tr", { class: "cipx-detailrow" }, [el("td", { colspan: "4" }, [catalogDetail(r)])]));
+    });
+    table.appendChild(tbody);
+    host.appendChild(table);
+
+    if (total > state.limit) {
+      host.appendChild(el("div", { class: "cipx-more" }, [
+        el("button", { class: "cipx-morebtn", type: "button",
+          onclick: function () { state.limit += PAGE; renderCatalog(host); } },
+          ["Show " + Math.min(PAGE, total - state.limit).toLocaleString() + " more"]),
+      ]));
+    }
+  }
+
+  function catalogDetail(r) {
+    var c = r.c;
+    var box = el("div", { class: "cipx-catdetail" }, []);
+    var left = el("div", { class: "cipx-dcol" }, [
+      el("div", { class: "cipx-dh" }, ["CIP  " + r.code]),
+      el("div", { class: "cipx-dttl" }, [c.t]),
+    ]);
+    if (c.fam) left.appendChild(el("div", { class: "cipx-dmeta" }, ["Family " + c.fam + (c.famt ? " · " + c.famt : "")]));
+    if (c.cte) left.appendChild(el("div", { class: "cipx-dmeta" }, ["CIP flag: " + c.cte]));
+    if (c.act && c.act !== "No substantive changes")
+      left.appendChild(el("div", { class: "cipx-dmeta cipx-dchange" }, ["2020 CIP change: " + c.act]));
+    if (c.def) left.appendChild(el("p", { class: "cipx-ddef" }, [c.def]));
+    if (c.ex) left.appendChild(el("p", { class: "cipx-dsub" }, [el("b", {}, ["Examples: "]), c.ex]));
+    if (c.xref) left.appendChild(el("p", { class: "cipx-dsub" }, [el("b", {}, ["See also: "]), c.xref]));
+    if (c.soc && c.soc.length) {
+      var socWrap = el("div", { class: "cipx-soc" }, [el("div", { class: "cipx-dsublbl" }, ["Related occupations (SOC)"])]);
+      var list = el("div", { class: "cipx-socchips" }, []);
+      c.soc.slice(0, 24).forEach(function (s) {
+        list.appendChild(el("a", { class: "cipx-socchip", target: "_blank", rel: "noopener",
+          href: "https://www.onetonline.org/link/summary/" + s[0] + ".00", title: "Open " + s[1] + " on O*NET" },
+          [s[0] + " · " + s[1]]));
+      });
+      socWrap.appendChild(list);
+      if (c.soc.length > 24) socWrap.appendChild(el("div", { class: "cipx-dsub" }, ["+" + (c.soc.length - 24) + " more"]));
+      left.appendChild(socWrap);
+    }
+    box.appendChild(left);
+
+    // mapped-from TOP codes (click → jump to the crosswalk view for that TOP)
+    var right = el("div", { class: "cipx-dcol cipx-dprov" }, [el("div", { class: "cipx-dh" }, ["Mapped from TOP code(s)"])]);
+    if (r.tops.length) {
+      var seen = {};
+      r.tops.forEach(function (tp) {
+        if (seen[tp.top]) return; seen[tp.top] = 1;
+        var t = D.top[tp.top];
+        right.appendChild(el("div", { class: "cipx-topmap" }, [
+          el("button", { class: "cipx-code cipx-code-top", type: "button", title: "See this TOP in the crosswalk",
+            onclick: (function (code) { return function () { switchView("crosswalk"); setSearch(code); }; })(tp.top) }, [tp.top]),
+          el("span", { class: "cipx-topmapt", title: t ? t.t : "" }, [t ? t.t : ""]),
+        ]));
+      });
+    } else {
+      right.appendChild(el("div", { class: "cipx-dnote" }, [
+        "No TOP code maps to this CIP in the current data — it's part of the full federal CIP list, shown here for reference.",
+      ]));
+    }
+    box.appendChild(right);
+    return box;
+  }
+
+  function exportCatalogCsv(rows) {
+    var out = ["CIP Code,CIP Title,Family,Family Title,CIP Flag,2020 Action,Mapped TOP Count,Definition"];
+    rows.forEach(function (r) {
+      function q(v) { return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; }
+      var c = r.c;
+      out.push([q(r.code), q(c.t), q(c.fam), q(c.famt), q(c.cte), q(c.act), q(r.tops.length), q(c.def)].join(","));
+    });
+    var blob = new Blob([out.join("\n")], { type: "text/csv" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "cip_catalog.csv";
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
   }
 
   function exportCsv(rows) {
@@ -466,20 +650,55 @@
     document.body.appendChild(a); a.click(); document.body.removeChild(a);
   }
 
-  // ── filter bar ───────────────────────────────────────────────────────────────
-  var resultsHost = null;
-  function refresh() { if (resultsHost) { state.limit = PAGE; renderResults(resultsHost); } }
+  // ── filter bar + view dispatch ───────────────────────────────────────────────
+  var bodyHost = null, resultsHost = null;
+  function renderActive(host) {
+    if (state.view === "catalog") renderCatalog(host); else renderResults(host);
+  }
+  function refresh() { if (resultsHost) { state.limit = PAGE; renderActive(resultsHost); } }
+  function renderBody() {
+    if (!bodyHost) return;
+    clear(bodyHost);
+    bodyHost.appendChild(filterBar());
+    resultsHost = el("div", { class: "cipx-results" }, []);
+    bodyHost.appendChild(resultsHost);
+    renderActive(resultsHost);
+  }
+  function switchView(v) {
+    if (state.view === v) return;
+    state.view = v; state.limit = PAGE; state.open = {};
+    renderBody();
+  }
   function setSearch(v) {
     state.q = (v || "").toLowerCase().trim();
     var box = document.getElementById("cipx-q"); if (box) box.value = v || "";
     refresh();
   }
 
+  function famOptions() {
+    var fams = [["", "All CIP families"]];
+    var famSet = {}; Object.keys(D.cip).forEach(function (k) { var c = D.cip[k]; if (c.fam && c.famt) famSet[c.fam] = c.famt; });
+    Object.keys(famSet).sort().forEach(function (f) { fams.push([f, f + " · " + famSet[f]]); });
+    return fams;
+  }
+
   function filterBar() {
     var bar = el("div", { class: "cipx-filters" }, []);
 
+    // view toggle: the crosswalk vs the full CIP reference list
+    var seg = el("div", { class: "cipx-viewseg" }, []);
+    [["crosswalk", "TOP ↔ CIP Crosswalk"], ["catalog", "Browse all CIP codes"]].forEach(function (v) {
+      seg.appendChild(el("button", { class: "cipx-viewbtn" + (state.view === v[0] ? " on" : ""),
+        type: "button", onclick: function () { switchView(v[0]); } }, [v[1]]));
+    });
+    bar.appendChild(seg);
+
+    var catalog = state.view === "catalog";
     var q = el("input", { class: "cipx-search", id: "cipx-q", type: "search",
-      placeholder: "Search TOP code, CIP code, title, or keyword (e.g. 0501, welding, nursing)…",
+      value: state.q ? state.q : "",
+      placeholder: catalog
+        ? "Search the full CIP list — code, title, or definition (e.g. 51.3801, welding, nursing)…"
+        : "Search TOP code, CIP code, title, or keyword (e.g. 0501, welding, nursing)…",
       autocomplete: "off" });
     var _t;
     q.oninput = function () {
@@ -488,39 +707,50 @@
     };
     bar.appendChild(el("div", { class: "cipx-searchrow" }, [q]));
 
-    function sel(id, label, opts, onchange) {
+    function sel(id, label, opts, value, onchange) {
       var s = el("select", { class: "cipx-fsel", id: id, "aria-label": label, onchange: onchange }, []);
       opts.forEach(function (o) { s.appendChild(el("option", { value: o[0] }, [o[1]])); });
+      if (value != null) s.value = value;
       return el("label", { class: "cipx-fsell" }, [el("span", {}, [label]), s]);
     }
 
     var row = el("div", { class: "cipx-frow2" }, []);
-    row.appendChild(sel("cipx-group", "Group by", [["top", "TOP → CIP"], ["cip", "CIP → TOP"]],
+    if (catalog) {
+      row.appendChild(sel("cipx-family", "CIP family", famOptions(), state.family,
+        function (e) { state.family = e.target.value; refresh(); }));
+      row.appendChild(sel("cipx-cte", "CTE", [["all", "CTE & non-CTE"], ["cte", "CTE only"], ["notcte", "Non-CTE only"]], state.cte,
+        function (e) { state.cte = e.target.value; refresh(); }));
+      row.appendChild(sel("cipx-action", "2020 CIP status",
+        [["all", "All statuses"], ["new", "New codes"], ["moved", "Moved"], ["deleted", "Deleted"], ["unchanged", "Unchanged"]], state.action,
+        function (e) { state.action = e.target.value; refresh(); }));
+      var creset = el("button", { class: "cipx-reset", type: "button", title: "Clear filters",
+        onclick: function () { state.q = ""; state.family = ""; state.cte = "all"; state.action = "all"; state.limit = PAGE; state.open = {}; renderBody(); } }, ["Reset"]);
+      row.appendChild(creset);
+      bar.appendChild(row);
+      return bar;
+    }
+
+    row.appendChild(sel("cipx-group", "Group by", [["top", "TOP → CIP"], ["cip", "CIP → TOP"]], state.group,
       function (e) { state.group = e.target.value; refresh(); }));
-    row.appendChild(sel("cipx-credit", "Credit", [["all", "All credit types"], ["credit", "Credit only"], ["noncredit", "Noncredit only"]],
+    row.appendChild(sel("cipx-credit", "Credit", [["all", "All credit types"], ["credit", "Credit only"], ["noncredit", "Noncredit only"]], state.credit,
       function (e) { state.credit = e.target.value; refresh(); }));
-    row.appendChild(sel("cipx-cte", "CTE", [["all", "CTE & non-CTE"], ["cte", "CTE only"], ["notcte", "Non-CTE only"]],
+    row.appendChild(sel("cipx-cte", "CTE", [["all", "CTE & non-CTE"], ["cte", "CTE only"], ["notcte", "Non-CTE only"]], state.cte,
       function (e) { state.cte = e.target.value; refresh(); }));
     row.appendChild(sel("cipx-transfer", "Transfer",
-      [["all", "All"], ["xfer", "Transfer-model (C-ID)"], ["noxfer", "No C-ID courses"]],
+      [["all", "All"], ["xfer", "Transfer-model (C-ID)"], ["noxfer", "No C-ID courses"]], state.transfer,
       function (e) { state.transfer = e.target.value; refresh(); }));
 
-    // sector (TOP) + family (CIP) dropdowns
     var secs = [["", "All sectors"]];
     var secSet = {}; Object.keys(D.top).forEach(function (k) { if (D.top[k].sec) secSet[D.top[k].sec] = 1; });
     Object.keys(secSet).sort().forEach(function (s) { secs.push([s, s]); });
-    row.appendChild(sel("cipx-sector", "TOP sector", secs, function (e) { state.sector = e.target.value; refresh(); }));
-
-    var fams = [["", "All CIP families"]];
-    var famSet = {}; Object.keys(D.cip).forEach(function (k) { var c = D.cip[k]; if (c.fam && c.famt) famSet[c.fam] = c.famt; });
-    Object.keys(famSet).sort().forEach(function (f) { fams.push([f, f + " · " + famSet[f]]); });
-    row.appendChild(sel("cipx-family", "CIP family", fams, function (e) { state.family = e.target.value; refresh(); }));
+    row.appendChild(sel("cipx-sector", "TOP sector", secs, state.sector, function (e) { state.sector = e.target.value; refresh(); }));
+    row.appendChild(sel("cipx-family", "CIP family", famOptions(), state.family, function (e) { state.family = e.target.value; refresh(); }));
     bar.appendChild(row);
 
     // source toggle chips
     var srcRow = el("div", { class: "cipx-srcrow" }, [el("span", { class: "cipx-srclbl" }, ["Source"])]);
     D.sources.forEach(function (name, idx) {
-      var b = el("button", { class: "cipx-srctog cipx-src-" + (SRC_TIER[name] || "none"), type: "button",
+      var b = el("button", { class: "cipx-srctog cipx-src-" + (SRC_TIER[name] || "none") + (state.sources[idx] ? " on" : ""), type: "button",
         "data-idx": idx, title: name,
         onclick: function () {
           if (state.sources[idx]) delete state.sources[idx]; else state.sources[idx] = true;
@@ -531,8 +761,9 @@
     });
     var reset = el("button", { class: "cipx-reset", type: "button", title: "Clear all filters",
       onclick: function () {
-        state = { q: "", group: "top", credit: "all", cte: "all", sources: {}, sector: "", family: "", limit: PAGE, open: {} };
-        rebuildShell();
+        state.q = ""; state.group = "top"; state.credit = "all"; state.cte = "all"; state.transfer = "all";
+        state.sources = {}; state.sector = ""; state.family = ""; state.limit = PAGE; state.open = {};
+        renderBody();
       } }, ["Reset"]);
     srcRow.appendChild(reset);
     bar.appendChild(srcRow);
@@ -558,8 +789,10 @@
       el("p", { class: "cipx-lede" }, [
         "The Chancellor's Office is transitioning course & program coding from ",
         el("b", {}, ["TOP"]), " to ", el("b", {}, ["CIP"]), " codes, effective fall 2026. ",
-        "Search the crosswalk, read the CIP definitions, see which colleges already use each pairing — and ",
-        el("b", {}, ["send the CO your suggested changes and notes"]), " as faculty in the field.",
+        "This is your ", el("b", {}, ["reference manual"]), " for the transition — the successor to the ",
+        "CCC TOP Code Manual. Look up a TOP code to see its CIP options, ",
+        el("b", {}, ["browse the full federal CIP list"]), " with definitions, and ",
+        "send the CO a note. (You'll enter your chosen CIP in COCI.)",
       ]),
       el("div", { class: "cipx-links" }, [
         el("a", { href: ESS_MEMO, target: "_blank", rel: "noopener" }, ["ESS 26-06 implementation guidance ↗"]),
@@ -600,11 +833,10 @@
     root.removeAttribute("style");
     var wrap = el("div", { class: "cipx" }, []);
     wrap.appendChild(header());
-    wrap.appendChild(filterBar());
-    resultsHost = el("div", { class: "cipx-results" }, []);
-    wrap.appendChild(resultsHost);
+    bodyHost = el("div", { class: "cipx-body" }, []);
+    wrap.appendChild(bodyHost);
     root.appendChild(wrap);
-    renderResults(resultsHost);
+    renderBody();
   }
 
   // ── CSS (scoped under .cipx) ─────────────────────────────────────────────────
@@ -644,6 +876,17 @@
       ".cipx-srctog.cipx-src-coe.on{background:#6b46c1;border-color:#6b46c1;}",
       ".cipx-srctog.cipx-src-none.on{background:#627d98;border-color:#627d98;}",
       ".cipx-reset{margin-left:auto;font-size:.76rem;font-weight:600;color:var(--link,#0b6bcb);background:none;border:0;cursor:pointer;text-decoration:underline;}",
+      // view toggle
+      ".cipx-viewseg{display:inline-flex;gap:0;border:1px solid var(--border-strong,#bcccdc);border-radius:8px;overflow:hidden;margin-bottom:9px;}",
+      ".cipx-viewbtn{font-size:.82rem;font-weight:700;padding:7px 15px;background:var(--surface,#fff);color:var(--text-muted,#627d98);border:0;cursor:pointer;}",
+      ".cipx-viewbtn+.cipx-viewbtn{border-left:1px solid var(--border,#d9e2ec);}",
+      ".cipx-viewbtn.on{background:var(--seal-blue,#00356B);color:#fff;}",
+      // catalog rows
+      ".cipx-catttl{font-weight:600;color:var(--text-strong,#102a43);}",
+      ".cipx-catmeta{font-size:.76rem;color:var(--text-muted,#627d98);margin-top:1px;}",
+      ".cipx-catdetail{display:grid;grid-template-columns:1.5fr 1fr;gap:18px;padding:16px 14px;}",
+      ".cipx-topmap{display:flex;gap:8px;align-items:baseline;margin:2px 0;font-size:.8rem;}",
+      ".cipx-topmapt{color:var(--text,#486581);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
       // results
       ".cipx-resbar{display:flex;align-items:center;justify-content:space-between;margin:6px 2px 6px;}",
       ".cipx-count{font-size:.82rem;color:var(--text-muted,#627d98);font-weight:600;}",
@@ -723,7 +966,7 @@
       ".cipx-modalh h3{margin:0;font-size:1.15rem;color:var(--text-strong,#102a43);}",
       ".cipx-modalx{background:none;border:0;font-size:1.2rem;cursor:pointer;color:var(--text-muted,#829ab1);}",
       ".cipx-modalsub{font-size:.84rem;color:var(--text,#486581);margin:6px 0 2px;line-height:1.45;}",
-      "@media (max-width:820px){.cipx-detail{grid-template-columns:1fr;}.cipx-codettl{white-space:normal;}}",
+      "@media (max-width:820px){.cipx-detail,.cipx-catdetail{grid-template-columns:1fr;}.cipx-codettl{white-space:normal;}}",
     ].join("");
     var st = el("style", { id: CSS_ID });
     st.textContent = css;
