@@ -239,3 +239,46 @@ draw and the sitting, so the CR/NC pre-decisions were stale *by design* — meas
 `unified_courses_suggestions.js` are both present; draw a fresh 52-group sample, run
 the magic-half adjudication through the student-repeat lens, measure the ≥90% gate.
 Then wave 4 (multi-college ranks 2,001–4,000).
+
+## 2026-07-14 — Session 115 (StarMagna): the v0.6 calibration re-seed → the graduation gate
+
+Sam chose the **doctrine gate before wave 4**. Ran the re-seed as **two blind
+instruments** (agents read only `kb/merge_doctrine.md` + the group members, never
+prior calls — blindness is what makes the number mean anything):
+
+1. **Regression** — re-decided the SAME 52-group sample Sam walked (seed 20260710)
+   and scored against his 2026-07-13 sitting calls (38 ratified groups).
+2. **Fresh held-out** — a NEW 52-group sample (seed 20260714, 2-group overlap),
+   decided blind, packaged as `calibration_review_v06.md` for Sam's confirm marks.
+   Added `--seed/--date` to `_doctrine_calibration_sample.py` so re-seeds don't
+   disturb the committed 2026-07-10 draw.
+
+**Gate result:** **92.1% fundamental** (converge / keep-separate / hold) ✅ ·
+**86.8% fine** (one-identity / package / separate / hold) ⚠️ <90%. The CR/NC mirror
+carve-out works blind — all 3 groups Sam flipped to merge (#28/#29/#38) return merge.
+
+**The key finding — the 87% understates v0.6.** All 5 fine-misses are stale-seed or
+single-fork cases (Sam's calls predate P-1/P-3):
+- #7 ESL Bridge (merge→package) & #21 arithmetic modules (package→merge): v0.6
+  applies *newly-ratified* packaging doctrine more precisely — likely more correct.
+- #32 Custodial Report Writing 1/2 & #40 Printing Skills Lab (keep_separate→merge):
+  the **P-1↔D-4 boundary** — the student-repeat lens (post-seed) vs D-4's level-mark
+  guard for **same-college level/module pairs**. v0.6 merges; the pre-P-1 seed kept
+  separate. This is the single resolvable fork (Q-SAMECOLL / Q-LADDER).
+- #14 People Skills (merge→keep_separate): the one genuine live judgment fork
+  (audience-split homonym).
+
+The fresh sample corroborates: Q-LADDER + Q-GENERIC are the top open-question triggers
+(4 each). Full receipt + the divergence table: `kb/doctrine_out/2026-07-14/v06_gate_measurement.md`.
+
+**Verdict:** the doctrine is **one ruling from graduation** — settle the P-1↔D-4
+boundary for same-college level/module pairs. Do NOT batch-apply the whole worklist
+until Sam rules. Wave 4 (multi-college ranks 2,001–4,000) is staged and independent —
+its per-wave lanes don't need the gate; the gate governs whole-worklist batch-apply.
+
+**Method lesson — score at the right altitude.** The raw first pass read 76% because
+`mint_new` (mint a new unified id from single-college matches) and `merge` (fold
+existing M-IDs) were scored as different classes — but they're the SAME convergence
+decision. Fold `mint_new` into the one-identity class; measure a `fundamental`
+(converge/separate) tier alongside the `fine` tier. And remember the seed goes stale:
+a divergence where v0.6 applies post-seed doctrine is the doctrine *improving*, not failing.

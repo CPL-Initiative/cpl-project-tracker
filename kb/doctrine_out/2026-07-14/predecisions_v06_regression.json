@@ -1,0 +1,771 @@
+{
+ "_at": "2026-07-14",
+ "_doctrine": "v0.6",
+ "_seed": 20260710,
+ "_purpose": "BLIND v0.6 re-adjudication of the 2026-07-10 calibration sample (the one Sam walked) — the regression leg of the graduation gate. Scored against his sitting calls in v06_gate_measurement.md.",
+ "decisions": [
+  {
+   "sig": "appl cond country cross theory",
+   "call": "package",
+   "survivor_title": "Cross Country Conditioning",
+   "reason": "Same-college 1/2/3 level ladder of a single sport-specific conditioning course. A student wouldn't be made to repeat the whole sport under its local name, but the rungs are real level bands; per P-11 sport conditioning stays per-sport and its levels package into Beginning/Intermediate/Advanced rather than folding into general Conditioning.",
+   "doctrine": [
+    "P-11",
+    "P-3",
+    "P-1",
+    "P-6"
+   ],
+   "confidence": 0.75,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "ballroom dance",
+   "call": "package",
+   "survivor_title": "Ballroom Dance",
+   "reason": "Cross-college, cross-discipline (Dance + Kinesiology) Ballroom Dance activity ladder — Intro/Beginning/2/3/4/Intermediate/Advanced/Basic. Learning is identical regardless of the owning department (P-1 beats subject code), and a student would only be sent to repeat a genuinely higher rung, so the levels package into Beginning/Intermediate/Advanced Ballroom Dance.",
+   "doctrine": [
+    "P-11",
+    "P-3",
+    "P-1",
+    "D-8",
+    "P-10a"
+   ],
+   "confidence": 0.72,
+   "open_question": "Q-TARGETCOUNT",
+   "exclusions": []
+  },
+  {
+   "sig": "cardiovascular core fitness train",
+   "call": "package",
+   "survivor_title": "Conditioning",
+   "reason": "Same-college Beginning/Intermediate/Advanced ladder of a fitness-first course (core training + cardiovascular fitness). Per P-11 general fitness/conditioning consolidates modality-agnostically into Conditioning bands; a student with the skills wouldn't repeat, and the level rungs fold into Conditioning Beginning/Intermediate/Advanced.",
+   "doctrine": [
+    "P-11",
+    "P-3",
+    "P-1",
+    "P-10"
+   ],
+   "confidence": 0.75,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "crew repertory workshop",
+   "call": "package",
+   "survivor_title": "Repertory Workshop: Crew",
+   "reason": "Same-college Crew 1-4 repertory-workshop participation ladder in Drama — a non-degree-critical activity ladder whose rungs are semesters of participation, not distinct credit targets. A qualified student wouldn't repeat lower rungs; the four levels package into Beginning/Intermediate/Advanced.",
+   "doctrine": [
+    "P-3",
+    "P-11",
+    "P-1",
+    "P-6"
+   ],
+   "confidence": 0.6,
+   "open_question": "Q-LADDER",
+   "exclusions": []
+  },
+  {
+   "sig": "Introduction to German Culture",
+   "call": "keep_separate",
+   "survivor_title": "Introduction to German Culture",
+   "reason": "A heterogeneous over-cluster of transfer-level German courses spanning distinct strands — Conversation, Culture/Cinema, and Literature. A student who completed German Literature WOULD be sent to repeat German Conversation (different learning), so these are separate credit targets; per P-8 transfer academic language courses take precision over concision (their identity work belongs to C-ID).",
+   "doctrine": [
+    "P-8",
+    "P-1",
+    "P-3"
+   ],
+   "confidence": 0.5,
+   "open_question": "Q-STRANDS",
+   "exclusions": []
+  },
+  {
+   "sig": "business english writ",
+   "call": "merge",
+   "survivor_title": "Business English and Writing",
+   "reason": "A noncredit 'Basic Business English Writing 1/2' on-ramp and a credit 'Business English and Writing' — near-identical business-writing content across the band. A competent business writer wouldn't be sent to repeat either, so they fold to one identity with the credit member as the face and the noncredit twins as the Credit-by-Exam pathway (staging default: merge with receipts).",
+   "doctrine": [
+    "P-1",
+    "P-9",
+    "D-3",
+    "P-8"
+   ],
+   "confidence": 0.6,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "conv high",
+   "call": "package",
+   "survivor_title": "ESL Conversation",
+   "reason": "ESL conversation-strand courses at Beginning-High / Intermediate-High / High-Intermediate levels spanning the credit/noncredit band. Per P-3/P-4 the ESL and ESL-Noncredit family packages into Beginning/Intermediate/Advanced with the conversation strand folded; a student with the level's skills wouldn't repeat, and D-3's explicit-package carve-out permits the band span.",
+   "doctrine": [
+    "P-3",
+    "P-4",
+    "P-1",
+    "D-3"
+   ],
+   "confidence": 0.62,
+   "open_question": "Q-STRANDS",
+   "exclusions": []
+  },
+  {
+   "sig": "edit grammar review",
+   "call": "package",
+   "survivor_title": "ESL Editing and Grammar",
+   "reason": "Clean same-college ESL grammar/editing strand at Intermediate and Advanced levels, each level carrying a full 3-unit version plus A/B/C 1-unit modules. Per P-3/P-4 the modules and strand fold into Intermediate/Advanced ESL bands (rung codes stripped per P-10a); a student wouldn't repeat lower modules of the same level.",
+   "doctrine": [
+    "P-3",
+    "P-4",
+    "P-1",
+    "P-6",
+    "P-10a"
+   ],
+   "confidence": 0.72,
+   "open_question": "Q-STRANDS",
+   "exclusions": []
+  },
+  {
+   "sig": "arithmet numb ration",
+   "call": "merge",
+   "survivor_title": "Arithmetic of Rational Numbers",
+   "reason": "Module 1 and Module 2 of one noncredit 'Arithmetic of Rational Numbers' course (both 0.0u, same band). The modules together constitute a single course; a student with the arithmetic skills wouldn't repeat either module, so they fold to one identity with the modules recorded in the merge note.",
+   "doctrine": [
+    "P-1",
+    "P-4",
+    "P-9",
+    "P-3"
+   ],
+   "confidence": 0.7,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "arts wellness",
+   "call": "merge",
+   "survivor_title": "Wellness Arts",
+   "reason": "This is the doctrine's own worked case: 'Wellness Arts' (Family & Consumer Sciences, credit) and 'Arts for Wellness' (Interdisciplinary Studies, noncredit) are the same learning — a student with one is never sent to repeat the other. Learning-equivalence beats the subject-code/discipline difference; credit member is the survivor face.",
+   "doctrine": [
+    "P-1",
+    "P-9",
+    "D-8"
+   ],
+   "confidence": 0.9,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "emergency medic respond",
+   "call": "merge",
+   "survivor_title": "Emergency Medical Responder",
+   "reason": "Emergency Medical Responder is a nationally standardized (NREMT) credential-aligned course; the two credit EMR courses and the noncredit 'EMR Introduction' all teach the same certification content. A student with EMR training wouldn't repeat any of them, so they converge to one identity (P-8 credential bias, P-5 standardized-unit tolerance); the Vocational-coded member is really the EMT field (D-10).",
+   "doctrine": [
+    "P-1",
+    "P-8",
+    "P-5",
+    "P-9",
+    "D-8"
+   ],
+   "confidence": 0.72,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "preserv scene search seizure",
+   "call": "merge",
+   "survivor_title": "Search, Seizure, and Preservation of the Scene",
+   "reason": "'Search, Seizure, and Preservation of the Scene' (credit) and 'Search, Seizure, Scene Preservation' (noncredit) are the same Administration of Justice course across the credit/noncredit band. A student wouldn't be sent to repeat the other, so they fold to one identity with the credit member as the face and the noncredit twin as the Credit-by-Exam bridge.",
+   "doctrine": [
+    "P-1",
+    "P-9",
+    "D-3"
+   ],
+   "confidence": 0.85,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "Asian & Pacific Music",
+   "call": "keep_separate",
+   "survivor_title": "Asian & Pacific Music",
+   "reason": "A region/theme-word collision on 'Asian & Pacific' across Music, Art, Dance, and Art History — genuinely different skills (music vs landscape painting vs dance vs art history). A student with Asian & Pacific Music WOULD be sent to repeat East Asian Landscape Painting. Per P-9a these stay separate absent co-articulation evidence (credential is null), and TOP/discipline divergence alone never merges (P-12).",
+   "doctrine": [
+    "P-9a",
+    "P-1",
+    "P-12"
+   ],
+   "confidence": 0.82,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "Healthy Aging",
+   "call": "merge_partial",
+   "survivor_title": "Healthy Living",
+   "reason": "This is doctrine case #30: a student with any of the Healthy-Living wellness courses (stress, nutrition, exercise, weight control) would not be sent to repeat the others, so they are ONE identity; but the substantive gerontology 'Healthy Aging'/'Introduction to Healthy Aging' teaches aging content a wellness student WOULD have to take, so it splits out. 'Exercise and Nutrition for Healthy Aging' stays in the core because its learning is exercise+nutrition (equivalent to 'for Healthy Living'), the aging framing is just the population.",
+   "doctrine": [
+    "P-1",
+    "P-1a",
+    "P-9",
+    "D-8"
+   ],
+   "confidence": 0.72,
+   "open_question": null,
+   "exclusions": [
+    "HLTH M1015",
+    "HLTH M10FP"
+   ]
+  },
+  {
+   "sig": "Musical Choreography",
+   "call": "merge_partial",
+   "survivor_title": "Choreography",
+   "reason": "Choreography is choreography whether housed in Dance or Theater (learning-equivalence beats subject code), so a student with 'Musical Choreography' would not repeat 'Choreography for Performance' — merge the level-1 core. The '2' courses are a genuine advanced rung a student WOULD be sent to repeat, so they split out (P-3: degree-applicable credit rungs stay separate). Dance/Music activity ladders are not yet formally sat.",
+   "doctrine": [
+    "P-1",
+    "P-3",
+    "D-8"
+   ],
+   "confidence": 0.5,
+   "open_question": "Q-TARGETCOUNT",
+   "exclusions": [
+    "DANC M10VV",
+    "THEA M10XY"
+   ]
+  },
+  {
+   "sig": "cinema world",
+   "call": "merge",
+   "survivor_title": "World Cinema",
+   "reason": "All four are the same World Cinema survey — 'Introduction to World Cinema' and the period-emphasis variants ('to 1945', '1900-1960') are title/scope drift, not distinct credit targets; a faculty workgroup would treat them as ONE common course and a student with one would not repeat another. Cross-discipline (Film vs Theater) resolves by learning-equivalence.",
+   "doctrine": [
+    "P-1",
+    "P-9",
+    "D-8"
+   ],
+   "confidence": 0.65,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "Experimental Offering in Automotive Mechanics Technology",
+   "call": "merge_partial",
+   "survivor_title": "Introduction to Automotive Mechanics",
+   "reason": "The seven AUTO courses ('Automotive Mechanics', 'Intro/Introduction/Fundamentals/Survey of Auto Mechanics', 'Automotive Science and Basic Mechanics') are pure title drift of one intro course — a student with any would not repeat the rest (P-1's own worked example). The two AVIA generic-title shells ('Experimental Offering', 'Topics in') carry no course identity and sit in Aviation at 0.5u, so they split out (P-7).",
+   "doctrine": [
+    "P-1",
+    "P-1a",
+    "P-7",
+    "P-9"
+   ],
+   "confidence": 0.82,
+   "open_question": null,
+   "exclusions": [
+    "AVIA M1025",
+    "AVIA M10JX"
+   ]
+  },
+  {
+   "sig": "Topics in Anthropology",
+   "call": "keep_separate",
+   "survivor_title": "Topics in Anthropology",
+   "reason": "These share only the generic word 'Topics' across entirely unrelated fields (Anthropology, Communication, Counseling, Spanish, Library Science); a student with 'Topics in Anthropology' would absolutely be sent to repeat 'Topics in Spanish' — different learning. Generic titles never merge on title similarity alone and there is no second signal.",
+   "doctrine": [
+    "P-1",
+    "P-7",
+    "P-6"
+   ],
+   "confidence": 0.9,
+   "open_question": "Q-GENERIC",
+   "exclusions": []
+  },
+  {
+   "sig": "Topics in Automotive Technology",
+   "call": "keep_separate",
+   "survivor_title": "Topics in Automotive Technology",
+   "reason": "A same-college 'Topics in Automotive Technology' and 'Topics in Electronics Technology' share only the generic 'Topics' word across different fields; a student with one would be sent to repeat the other. Generic titles carry no identity and need a second signal that isn't present.",
+   "doctrine": [
+    "P-1",
+    "P-7",
+    "P-6"
+   ],
+   "confidence": 0.9,
+   "open_question": "Q-GENERIC",
+   "exclusions": []
+  },
+  {
+   "sig": "honor math seminar",
+   "call": "merge",
+   "survivor_title": "Honors Seminar in Mathematics",
+   "reason": "'Honors Seminar in Math' and 'Honors Seminar in Mathematics' are the same fully-specified course (same discipline, same MATH subject, same Honors variant) differing only by Math/Mathematics spelling — a student with one would not repeat the other. The unit spread (0.5 vs 1.0) is tolerable (P-5).",
+   "doctrine": [
+    "P-1",
+    "P-5",
+    "D-4"
+   ],
+   "confidence": 0.75,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "BIOL 110 B",
+   "call": "keep_separate",
+   "survivor_title": "Human Anatomy with Lab",
+   "reason": "The C-ID 'Human Anatomy with Lab' and the dental M-ID 'Pharmacology' are genuinely different courses — a student with anatomy would certainly be sent to repeat pharmacology. The thin cross-evidence (weight 1, split across two unrelated C-IDs) is only a suggestion and fails the title-kinship check; it does not tie them.",
+   "doctrine": [
+    "P-1",
+    "D-1",
+    "D-2"
+   ],
+   "confidence": 0.9,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "GEOL 121",
+   "call": "merge",
+   "survivor_title": "Earth Science with Lab",
+   "reason": "'Introduction to Earth Science' (4u, Earth Science) is the same course as the C-ID 'Earth Science with Lab', backed by strong evidence (weight 7 to GEOL 121) — a student with one would not repeat the other. The M-ID folds into the authoritative C-ID (D-1).",
+   "doctrine": [
+    "P-1",
+    "D-1",
+    "D-2",
+    "P-8"
+   ],
+   "confidence": 0.8,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "PHYS 110",
+   "call": "merge_partial",
+   "survivor_title": "Algebra/Trigonometry-Based Physics B",
+   "reason": "'General Physics 2' (5u lecture+lab) is the same second-semester algebra-based physics as the C-ID PHYS 110, so it folds into the authoritative C-ID — a student would not repeat it. But 'General Physics Laboratory 2' (1u, lab-only) is a distinct smaller credit target: a student holding the lab-only has no lecture, so it splits out (D-4 lab-mark gate).",
+   "doctrine": [
+    "P-1",
+    "D-1",
+    "D-4",
+    "P-8"
+   ],
+   "confidence": 0.75,
+   "open_question": null,
+   "exclusions": [
+    "PHYS M1046"
+   ]
+  },
+  {
+   "sig": "chemistry major non science society",
+   "call": "keep_separate",
+   "survivor_title": "Chemistry and Society for Non-Science Majors",
+   "reason": "The same-college pair is a lecture (3u) and its separate lab (1u) of one course — distinct credit targets: a student who did only the lecture would still be sent to complete the lab (D-4 lab gate). Same-college members are variants, not cross-college duplicates, so default to keeping them as-is.",
+   "doctrine": [
+    "P-1",
+    "P-6",
+    "D-4"
+   ],
+   "confidence": 0.65,
+   "open_question": "Q-SAMECOLL",
+   "exclusions": []
+  },
+  {
+   "sig": "Intermediate Ballet 3A",
+   "call": "keep_separate",
+   "survivor_title": "Intermediate Ballet",
+   "reason": "'Intermediate Ballet' and 'Intermediate Contemporary Modern Dance' are different dance techniques — a ballet student would be sent to repeat modern dance (different skills), the dance analog of P-11's per-sport rule. The '3A' rung code drops from any unified title (P-10a).",
+   "doctrine": [
+    "P-1",
+    "P-6",
+    "P-11",
+    "P-10a"
+   ],
+   "confidence": 0.75,
+   "open_question": "Q-TARGETCOUNT",
+   "exclusions": []
+  },
+  {
+   "sig": "anim design graph motion",
+   "call": "keep_separate",
+   "survivor_title": "Motion Graphic Design and Animation",
+   "reason": "'Motion Graphic Design and Animation' and its '2' are a degree-applicable, credit-bearing two-course sequence — a student with level 1 WOULD be sent to repeat level 2, so the rungs are distinct credit targets and stay separate (P-3 boundary for degree-applicable sequences).",
+   "doctrine": [
+    "P-1",
+    "P-3",
+    "P-6"
+   ],
+   "confidence": 0.8,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "custodi report writ",
+   "call": "merge",
+   "survivor_title": "Custodial Report Writing",
+   "reason": "Two 0.5u modules of one narrow detention/custody report-writing skill at one college. A student who can already write custodial incident reports would not be made to repeat either '1' or '2' — the 1/2 split is local packaging of a single competency, not two distinct credit targets. Staging default merges with a receipt.",
+   "doctrine": [
+    "P-1",
+    "P-6",
+    "P-9"
+   ],
+   "confidence": 0.55,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "lab print skill",
+   "call": "merge",
+   "survivor_title": "Printing Skills Lab",
+   "reason": "'Introductory Printing Skills Lab' vs 'Printing Skills Lab' is pure title drift — same discipline (Industrial Technology), same 0.5u load. A student with the printing-lab skills would not be sent to repeat either; 'Introductory' is a soft qualifier, not a distinct rung.",
+   "doctrine": [
+    "P-1",
+    "P-6"
+   ],
+   "confidence": 0.6,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "Disaster Planning",
+   "call": "merge",
+   "survivor_title": "Disaster Planning",
+   "reason": "'Disaster Planning' (Fire Technology) and 'Disaster Planning and Control, Recovery in Emergency Management' (Public Safety) teach the same emergency-management planning content in two adjacent disciplines; learning-equivalence beats the subject code. A student with disaster-planning skills would not be sent to repeat either; the 1u spread is tolerable.",
+   "doctrine": [
+    "P-1",
+    "D-8",
+    "P-5",
+    "P-9"
+   ],
+   "confidence": 0.6,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "Management: People Skills",
+   "call": "keep_separate",
+   "survivor_title": "Management: People Skills",
+   "reason": "'People Skills' is a semi-generic soft-skill descriptor pointing at different targets: supervising/managing employees (Business) vs freelance client relations and self-employment (Small Business Development). With no credential or second signal (P-7), a student strong in one is not automatically granted the other's specific competencies, so a faculty could still send them to repeat.",
+   "doctrine": [
+    "P-1",
+    "P-7"
+   ],
+   "confidence": 0.5,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "assist certif medic review",
+   "call": "merge",
+   "survivor_title": "Medical Assisting Certification Review",
+   "reason": "Both are a review/prep course for the Medical Assistant certification exam (title reordering only), cross-discipline (Health Care Ancillaries vs Health) but the same learning. A student holding the MA cert would never be made to repeat a cert-review course; the 2u/4u spread reflects standardized-cert packaging (P-5).",
+   "doctrine": [
+    "P-1",
+    "P-5",
+    "P-8"
+   ],
+   "confidence": 0.8,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "digit sculpt",
+   "call": "keep_separate",
+   "survivor_title": "Advanced Digital Sculpting",
+   "reason": "These are genuine level rungs — 'Intermediate Digital Sculpting' vs 'Advanced Digital Sculpting' — both degree-applicable 3u credit courses. A student with the Intermediate skills WOULD be sent to repeat Advanced, and P-3's boundary keeps degree-applicable sequenced rungs as their own credit targets.",
+   "doctrine": [
+    "P-1",
+    "P-3"
+   ],
+   "confidence": 0.7,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "Hazardous Materials - ICS",
+   "call": "keep_separate",
+   "survivor_title": "Hazardous Materials Operations",
+   "reason": "The eight members conflate distinct fire-service HazMat certification tiers (Awareness → Operations → Technician → Incident Command/ICS), which are DOT/OSHA/NFPA-defined competency levels mapping to different certs. A student qualified at one tier would still be sent to repeat another, so this is not one identity; credential-mapped rungs also argue against ESL-style band packaging.",
+   "doctrine": [
+    "P-1",
+    "P-3",
+    "D-4"
+   ],
+   "confidence": 0.6,
+   "open_question": "Q-LADDER",
+   "exclusions": []
+  },
+  {
+   "sig": "care funda respiratory",
+   "call": "merge",
+   "survivor_title": "Fundamentals of Respiratory Care",
+   "reason": "One college teaches 'Fundamentals of Respiratory Care' as a single 6u course; another splits the same fundamentals into '1' and '2' (3.5u each). The single course is definitionally the 1+2 sequence combined, so a student with respiratory-care fundamentals is granted the whole family — one identity, with the standardized-program unit spread noted (P-5).",
+   "doctrine": [
+    "P-1",
+    "P-5"
+   ],
+   "confidence": 0.7,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "clin experi pharmacy",
+   "call": "merge",
+   "survivor_title": "Pharmacy Clinical Experience",
+   "reason": "Both are the pharmacy-technician clinical externship (same discipline), one numbered '1' (2.5u) and one full (5u) across two colleges; the discipline-specific title is a concrete second signal, not open-ended Work Experience. A pharmacy tech with documented clinical experience would not be made to repeat it; clinical-hour variation drives the unit spread (P-5).",
+   "doctrine": [
+    "P-1",
+    "P-5",
+    "P-7"
+   ],
+   "confidence": 0.6,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "design landscape principl",
+   "call": "merge_partial",
+   "survivor_title": "Principles of Landscape Design",
+   "reason": "'Principles of Landscape Design' and 'Landscape Design: Basic Principles' are the same base-level course (title drift, 2u spread tolerable) and merge; 'Advanced Principles of Landscape Design' is a genuine higher rung a student with the basics would be sent to repeat, so it splits out per the mergeable-core rule.",
+   "doctrine": [
+    "P-1",
+    "P-1a",
+    "P-5"
+   ],
+   "confidence": 0.65,
+   "open_question": null,
+   "exclusions": [
+    "HORT M10AW"
+   ]
+  },
+  {
+   "sig": "AJ 122",
+   "call": "hold",
+   "survivor_title": "Principles and Procedures of the Criminal Justice System",
+   "reason": "The M-ID 'Principles and Procedures of the Criminal Justice System' (an intro-CJ survey) carries split articulation evidence (AJ 122 weight 2, AJ 200 weight 1) and its title diverges from the C-ID AJ 122 'Criminal Court Process,' so the correct official fold is genuinely ambiguous — whether a student's skills equal court-process (AJ 122) or the broader survey is a curator/faculty call. Not a clean D-1 fold.",
+   "doctrine": [
+    "D-1",
+    "D-2"
+   ],
+   "confidence": 0.6,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "FIRE 232 X",
+   "call": "merge",
+   "survivor_title": "Hazardous Materials Incident Commander",
+   "reason": "Identical title ('Hazardous Materials Incident Commander'), same subject/discipline, and a single clean articulation to the official C-ID FIRE 232 X (weight 2, no competing target). The M-ID folds into the authoritative C-ID; a student with this course would never be made to repeat its exact equivalent.",
+   "doctrine": [
+    "D-1",
+    "D-2",
+    "P-8",
+    "P-1"
+   ],
+   "confidence": 0.9,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "FTVE 130",
+   "call": "hold",
+   "survivor_title": "Motion Picture Production",
+   "reason": "The broad M-ID 'Motion Picture Production' (Art) articulates evenly (1:1) to two different C-IDs, FTVE 130 'Beginning Single Camera Production' and FTVE 150, and its title/discipline diverge from either — there is no dominant fold. Which official identity (if any) it should collapse into is a genuine evidence fork for faculty, not a clean single-C-ID merge.",
+   "doctrine": [
+    "D-1",
+    "D-2"
+   ],
+   "confidence": 0.6,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "MATH 150",
+   "call": "merge_partial",
+   "survivor_title": "College Algebra for Liberal Arts",
+   "reason": "M-ID M1027 shares the C-ID's exact title and its evidence points to MATH 150, so it folds into the authoritative C-ID (D-1). M1036 'College Algebra' (4.0u) is a distinct transfer course a student would still be routed through — a Liberal-Arts-algebra completer isn't the same target — so it is excluded (P-8 precision over concision for transfer academic).",
+   "doctrine": [
+    "D-1",
+    "P-8",
+    "P-1a",
+    "P-1"
+   ],
+   "confidence": 0.68,
+   "open_question": null,
+   "exclusions": [
+    "MATH M1036"
+   ]
+  },
+  {
+   "sig": "administr network system",
+   "call": "keep_separate",
+   "survivor_title": "Advanced Network Systems Administration",
+   "reason": "Intermediate and Advanced are explicit level rungs of a degree-applicable credit CIS sequence — a student holding Intermediate WOULD still be sent to repeat Advanced, so they are distinct credit targets (P-1 rungs; P-3 boundary keeps degree-applicable rungs).",
+   "doctrine": [
+    "P-1",
+    "D-4",
+    "P-3"
+   ],
+   "confidence": 0.85,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "cook skill",
+   "call": "package",
+   "survivor_title": "Basic Cooking",
+   "reason": "Beginning and Advanced 'Basic Cooking' are a 0.0u non-degree-applicable noncredit ladder — the rungs don't change the credit a CPL student receives, so they fold into Beginning/Advanced band packages (P-3) rather than staying as separate targets.",
+   "doctrine": [
+    "P-3",
+    "P-1",
+    "D-3",
+    "P-10a"
+   ],
+   "confidence": 0.75,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "edit staff techniqu",
+   "call": "keep_separate",
+   "survivor_title": "Techniques for Staff Editors 1",
+   "reason": "Staff Editors 1 and 3 are numbered rungs of a degree-applicable credit journalism sequence — a student with rung 1 would still be sent through rung 3 (P-1 rungs; not a non-degree-applicable ladder so P-3 packaging doesn't apply). Genuine package-vs-rungs wording uncertainty on a low-unit repeatable ladder.",
+   "doctrine": [
+    "P-1",
+    "D-4",
+    "P-3"
+   ],
+   "confidence": 0.6,
+   "open_question": "Q-LADDER",
+   "exclusions": []
+  },
+  {
+   "sig": "individu problem sculpture",
+   "call": "keep_separate",
+   "survivor_title": "Sculpture Skills",
+   "reason": "This is P-7a's cited case: a nameable skills course wearing a generic 'Individual Problems in Sculpture' coat — reclassify/rename to 'Sculpture Skills 1/2' and keep it as a 2-rung sequence (a student with rung 1 would still take rung 2), not dismiss as a generic shell.",
+   "doctrine": [
+    "P-7a",
+    "P-7",
+    "P-1"
+   ],
+   "confidence": 0.75,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "adapt exercise fitness",
+   "call": "mint_new",
+   "survivor_title": "Adaptive Fitness and Exercise",
+   "reason": "'Exercise and Fitness-Adaptive' and 'Adapted Fitness Exercise' are the same adapted-PE course in word-order-variant form across two colleges — a student with one would never be sent to repeat the other, so the two standalone singletons converge to a new unified identity (unit spread 0.5/1.0 tolerated, P-5).",
+   "doctrine": [
+    "P-1",
+    "P-5",
+    "P-9"
+   ],
+   "confidence": 0.75,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "anatomy draw figure",
+   "call": "keep_separate",
+   "survivor_title": "Intermediate Figure Drawing and Anatomy",
+   "reason": "Beginning and Intermediate Figure Drawing are explicit level rungs of a degree-applicable credit art sequence — a Beginning completer would still be sent to Intermediate, so they are distinct credit targets (P-1 rungs; P-3 boundary keeps degree-applicable rungs).",
+   "doctrine": [
+    "P-1",
+    "D-4",
+    "P-3"
+   ],
+   "confidence": 0.8,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "automot mechan",
+   "call": "mint_new",
+   "survivor_title": "Automotive Mechanics",
+   "reason": "'Automotive Mechanics' and 'Intro to Automotive Mechanics' (both 3.0u) are P-1's own title-drift example — same intro-level learning, a student wouldn't repeat either — so the two CTE standalone singletons converge to one new unified identity (P-8 credential/CTE bias to merge).",
+   "doctrine": [
+    "P-1",
+    "P-8",
+    "P-5",
+    "P-9"
+   ],
+   "confidence": 0.8,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "lithography",
+   "call": "keep_separate",
+   "survivor_title": "Lithography",
+   "reason": "'Lithography' (level 1) and 'Lithography 2' are a digit-marked rung pair in a degree-applicable credit art sequence — a student with the first would still be sent to the second, so they are distinct credit targets (P-1 rungs; D-4 digit-level gate).",
+   "doctrine": [
+    "P-1",
+    "D-4",
+    "P-3"
+   ],
+   "confidence": 0.75,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "ESL Bridge to College",
+   "call": "package",
+   "survivor_title": "ESL Bridge to College",
+   "reason": "All four are 0.0u noncredit ESL bridge-to-college courses (the ESL packaging lane, P-3): three are word-order variants of one base course and one carries an '(Advanced)' level mark, so they fold into Beginning/Advanced band packages rather than staying separate — a certificate maps to 'Intermediate/Advanced ESL', never a rung.",
+   "doctrine": [
+    "P-3",
+    "P-4",
+    "D-3",
+    "P-1",
+    "P-9"
+   ],
+   "confidence": 0.6,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "Joyful Parent-Art/Music/Movemt",
+   "call": "mint_new",
+   "survivor_title": "Joyful Parenting: Art, Music and Movement",
+   "reason": "Both are the same noncredit parent-education course under one base title, one abbreviated and one carrying an age-range parenthetical that P-10 strips — a parent with one would never be sent to repeat the other — so the two standalone singletons converge to a new unified identity (over-merge default, P-9).",
+   "doctrine": [
+    "P-1",
+    "P-10",
+    "P-9"
+   ],
+   "confidence": 0.62,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "Principles of Pumps & Irrigation",
+   "call": "mint_new",
+   "survivor_title": "Irrigation and Pump Systems",
+   "reason": "'Principles of Pumps & Irrigation' and 'Irrigation Wells, Pumps, and Drive Systems' (both 3.0u Agriculture) teach the same agricultural irrigation/pump-system content — a student with one wouldn't be sent to repeat the other — so the two CTE standalone singletons converge to one new unified identity (P-8 CTE bias; P-5 units).",
+   "doctrine": [
+    "P-1",
+    "P-8",
+    "P-5",
+    "P-9"
+   ],
+   "confidence": 0.6,
+   "open_question": null,
+   "exclusions": []
+  },
+  {
+   "sig": "structural welding",
+   "call": "merge",
+   "survivor_title": "Structural Welding",
+   "reason": "'Structural Welding A' and 'B' both articulate to the Carpenters Apprenticeship credential, so P-8 biases strongly to converge them onto ONE common welding course — a credentialed welder wouldn't be sent to repeat either half. Discipline stays Welding, not the carpentry program (D-10 worked case); A/B module structure recorded for faculty.",
+   "doctrine": [
+    "P-8",
+    "P-1",
+    "D-10",
+    "P-9"
+   ],
+   "confidence": 0.62,
+   "open_question": null,
+   "exclusions": []
+  }
+ ]
+}

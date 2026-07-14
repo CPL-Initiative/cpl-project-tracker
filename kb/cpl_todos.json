@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-13 · Session 113 (SkyTeleo) — the HVAC mis-mint thread → a new auditor rule + blank-discipline cleanup, all merged (before wave 4)",
- "_session": 113,
- "_status": "Sam caught one course — HVAC M10FR (LA Trade DIESLTK 122C) minted 'HVAC' but really Diesel, because the title word 'HVAC' had overridden the field. That one catch became a new auditor rule (subject_discipline_outlier) that finds the whole class: a course whose assigned discipline is a small minority of what its LOCAL subject code usually means, AND the TOP code or lexicon agrees on the same fix. It even catches single-college courses the older rules skip. 41 of the clearest corrections fired live; ~302 more are now behind a new 'Subject-code outlier' filter in the Triage dropdown, each with a suggested discipline. We also cleaned up the display (blank courses no longer show a fake common subject) and pre-seeded ~77 blank-discipline courses from 5 safe subject codes. The ≥2-agree gate earned its keep — it dropped codes whose titles disagreed with the code (DANCFOLK is wellness, not dance). Next: CCR wave 4, with the new chip + shrinking blank set feeding in.",
+ "_as_of": "2026-07-14 · Session 115 (StarMagna) — the v0.6 doctrine re-seed → the graduation gate (before the whole-worklist batch-apply)",
+ "_session": 115,
+ "_status": "Before we batch-apply the merge/mint doctrine across the whole worklist, we re-tested it. The doctrine (v0.6) was built FROM Sam's July-13 sitting, so we asked a blind AI pass (it only sees the doctrine + the courses, never the old answers) to re-decide the same 52 groups Sam walked — and it reproduced his fundamental 'combine vs keep separate' call 92% of the time, and correctly re-merged the 3 credit/noncredit mirror pairs it was built to fix. The finer call (merge vs package vs separate) came in at 87% — but every miss is a case where the doctrine has since gained a rule Sam's older answers predate, so the doctrine is likely AHEAD of the stale seed, not wrong. It's one ruling from graduating: settle whether the student-repeat test should merge same-college level pairs like 'Custodial Report Writing 1/2' (the doctrine says yes; the old guard said keep-1-and-2-separate). A fresh 52-group sample is decided and waiting for Sam's confirm marks. Wave 4 (2,000 more multi-college courses) is staged and can run in parallel — it doesn't depend on the gate.",
  "items": [
   {
    "id": "subjdisc-flags",
@@ -17,10 +17,16 @@
    "text": "Wave 4 when ready: multi-college ranks 2,001–4,000 (kb/_ccr_trail.py 2000 40 <out> 2000 --stratum multi --wave 4). Re-run the auditor first; inject held decisions + pending merge-confirms. New inputs: the subject_discipline_outlier chip (302) + the shrinking blank-discipline set. Heads-up: Fable's monthly spend cap was hit last session — a big fan-out may need Opus or a fresh cap window."
   },
   {
-   "id": "v06-reseed",
+   "id": "v06-gate-ruling",
+   "for": "sam",
+   "tab": "unified-courses",
+   "text": "🧠 The v0.6 doctrine gate is DONE (Session 115): 92% on the fundamental combine/keep-separate call, 87% fine. One ruling graduates it — should the student-repeat test MERGE same-college level pairs ('Custodial Report Writing 1/2', 'Printing Skills Lab' vs 'Introductory…')? Doctrine says yes; the old D-4 level guard said keep separate. Plus a fresh 52-group sample awaits your A/D confirm marks (kb/doctrine_out/2026-07-14/calibration_review_v06.md; receipt: v06_gate_measurement.md)."
+  },
+  {
+   "id": "wave4-adjudicate",
    "for": "fable",
    "tab": "unified-courses",
-   "text": "🧠 v0.6 calibration RE-SEED (do before batch-apply): the v0.2 pass went stale. Draw a fresh ~52-group sample (kb/_doctrine_calibration_sample.py + unified_courses_suggestions.js), re-adjudicate through Sam's student-repeat lens, measure the ≥90% graduate gate. ≥90% = doctrine graduates, batch-apply unlocks."
+   "text": "Wave 4 is STAGED (kb/ccr_out/2026-07-14/wave4_manifest.json — 2,000 multi-college IDs, ranks 2,001-4,000, 50 batches). Run the adjudication fan-out (blind under v0.6) + skeptic pass → fire-ready lanes for Sam's approval, like wave 3. Independent of the gate."
   },
   {
    "id": "blankdisc-reseed",
