@@ -160,7 +160,11 @@ The whole ecosystem, end-to-end:
    (e.g. `1–1.5`) with a ⚠ alarm when the spread exceeds 2.0 — a likely
    over-merge signal. **Session 70 — the merge workspace:** the per-row ⚇ Merge
    dialog can now **re-discipline** the surviving course (its Common SUBJ shows
-   the new canonical immediately with a ⟲ "re-keys at the next fold" marker), and
+   the new canonical immediately with a ⟲ "re-keys at the next fold" marker; a
+   course with **no** discipline now shows a blank Common SUBJ instead of a
+   non-canonical local code, and the **Triage** worklist has a **"Subject-code
+   outlier"** lane that flags courses a title keyword likely mis-disciplined,
+   each with a suggested fix — Session 113), and
    the ✨ Suggested-merges worklist gained **Beg/Int/Adv/Lab/WkExp level filters**,
    a global **Conservative↔Aggressive** slider, **opt-in checkboxes** (only the ★
    target pre-checked), and a **morphological fold** so word-order/suffix variants

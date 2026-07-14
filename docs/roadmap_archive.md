@@ -2417,3 +2417,18 @@ CER exporter now prefers the minted catalogs (`docs/kb-notes/methodology-rekey-d
 Plus the **CER SUBJ filter** and the **COCI Lookup tab** (`#coci-lookup` — 141,738 rows,
 M-ID/C-ID/CCN chips, sortable/filterable/resizable, desc shards; `kb/_build_coci_lookup.py`).
 Receipts `kb/carp_fill_out/2026-07-09/`; suite 152. Full story: `docs/cer_v2_redesign_lessons.md` (S110).
+
+## Archived session narrative — Session 111 (moved from CLAUDE.md §11 at the Session-113 checkpoint, 2026-07-13)
+
+### Session 111 — SkyMighty: the triple-R day (renames · re-mint · the mountain) + the truth audits (2026-07-10)
+
+**Trail Crew fired across all three R's**: CER 103 clean renames live (#726,
+`trailcrew-clean-s111@bot`) · CSR pass end-to-end (#729 — zero official-CCN
+squats; **POSC→POLS re-mint APPLIED** #730, 293 ids, 3 pre-fold ghosts healed;
+seeder CSR-wired #731) · **CCR wave 1** (#739 — 600 top-leverage ids, 122
+agents; 56 fixes FIRED #742, `trailcrew-ccr1-s111@bot`; **wave 2 in flight**).
+**Doctrine v0.2** (Sam's 7/3 mind-meld distilled — P-3 ratified, NEW P-11;
+fresh calibration seed 20260710 awaits his sitting). **MQ Handbook folded into
+all 3 stores** (#737 + KB #20 + vault #18; CSR 🎓/🔧 chip). Same day:
+CLAUDE.md pared 2,514→~600 (#727) + 52-agent truth-audit (#728) + **NEW Rule 9**.
+Receipts: `kb/{trail_crew,csr,pols_remint,ccr}_out/2026-07-10/`. Handoff: `docs/session_112_handoff.md`.
