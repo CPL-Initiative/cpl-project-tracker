@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-15T08:38:13.296Z",
+  "scraped_at": "2026-07-15T11:03:46.928Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -154,17 +154,17 @@
         {
           "college": "San Diego Miramar College",
           "students": 3473,
-          "units": 11532.700000000003,
-          "avgUnits": 3.3206737690757278,
+          "units": 11532.7,
+          "avgUnits": 3.3206737690757273,
           "transcriptionRate": 46.7,
-          "avgTranscribed": 1.552173913043479,
+          "avgTranscribed": 1.5521739130434784,
           "criteriaMetCount": 3,
           "militaryStudents": 1555,
           "nonMilitaryStudents": 1922,
           "apprenticeStudents": 14,
           "savings": 16168008,
-          "yearImpact": 64641356.80000003,
-          "transcribedUnits": 5390.700000000003
+          "yearImpact": 64641356.80000001,
+          "transcribedUnits": 5390.700000000001
         },
         {
           "college": "De Anza College",
@@ -843,7 +843,7 @@
           "nonMilitaryStudents": 110,
           "apprenticeStudents": 7,
           "savings": 2935838.5,
-          "yearImpact": 10939521.600000001,
+          "yearImpact": 10939521.6,
           "transcribedUnits": 0
         },
         {
