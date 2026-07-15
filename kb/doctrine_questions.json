@@ -24,7 +24,8 @@
       "id": "Q-UNITS",
       "trigger": ["units_spread"],
       "doctrine": "P-5",
-      "question": "Unit loads differ across these members. At what spread would you stop merging — and does it matter whether the curriculum is externally standardized (BAR/POST/NCCER)?"
+      "resolved": "2026-07-15",
+      "question": "RESOLVED — a big unit spread on a non-standardized course is a WHOLE-vs-PART signal: a comprehensive course got lumped with its own labs/modules. Split whole from parts (each part merges with its true peers). Standardized academies (POST/Fire/EMT) still merge despite spread (P-5a)."
     },
     {
       "id": "Q-SAMECOLL",
@@ -36,7 +37,8 @@
       "id": "Q-XDISC",
       "trigger": ["cross_discipline"],
       "doctrine": "D-8/P-9",
-      "question": "This group spans disciplines. Same course tagged inconsistently, or a homonym? If you merge it, which discipline should the survivor carry, and why?"
+      "resolved": "2026-07-15",
+      "question": "RESOLVED — same subject code, disagreeing discipline labels = one course tagged inconsistently: merge to that SUBJ4's canonical discipline (pick in merge_note). Different subject codes + a colliding title = run the P-12 homonym check (title+desc+exhibit) BEFORE merging."
     },
     {
       "id": "Q-GENERIC",
@@ -47,8 +49,16 @@
     {
       "id": "Q-HONORS",
       "trigger": ["honors_variant"],
-      "doctrine": "D-4/P-3",
-      "question": "An Honors (or Lab/Refresher/Instructor) variant sits next to its base. For CPL purposes does the variant fold under the base course, or stay its own target?"
+      "doctrine": "D-4/P-13",
+      "resolved": "2026-07-15",
+      "question": "RESOLVED (Honors only) — an Honors variant of a base course FOLDS into the base (same competencies; honors is a GPA/enrollment mark). Standalone honors-program courses (Colloquium/Forum/Seminar — no base) keep their identity. See P-13."
+    },
+    {
+      "id": "Q-VARIANT",
+      "trigger": ["honors_variant"],
+      "doctrine": "D-4/P-13",
+      "resolved": "2026-07-15",
+      "question": "RESOLVED — the D-4 marks resolve on their own logic (P-13): LAB (Lecture/Lab/Lecture-Lab of one course → ONE identity; own-C-ID labs excepted) and HONORS fold; REFRESHER (own identity, distinct from the full base — whole-vs-part; refresher-variants merge with each other) and BRIDGE (distinct gap course; drift-variants merge) stay separate."
     },
     {
       "id": "Q-TARGETCOUNT",

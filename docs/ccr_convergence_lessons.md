@@ -416,3 +416,85 @@ Doctrine → **v0.11**.
 Session tally: ~6,600 identities across ESL/Music/Dance/KINE now have a packaging
 policy, plus the same-college/generic/homonym/floor rules — the doctrine went
 v0.6 → v0.11 in one sitting via small grounded scenario batches.
+
+### 2026-07-15 (batch 6, Session 117 StarMarcus) — the last carryover forks: Honors, units, cross-discipline → Doctrine v0.12
+
+StarMagna's handoff pointed at execution (the ESL dry-run); Sam instead wanted
+"back in the interrogation room" — more scenario refinement. Profiled the four
+carryover open forks against the live worklist (`unified_courses_suggestions.js`,
+7,605 multi-member groups) BEFORE bringing the edges, then brought a 3-fork batch.
+Sam ruled all three with the recommended calls — fast, clean agreement (the
+doctrine was already tracking his judgment here):
+
+- **Q-HONORS → P-13.** An **Honors variant of a base course FOLDS into the base**
+  (same competencies; honors is a GPA/enrollment mark, `merge_note`). **Standalone
+  honors-program courses with no base** (*Honors Colloquium / Forum / Seminar*)
+  **keep their identity** — there's nothing to fold into. Data: 128 unified courses
+  carry "Honors" in the title; only 8 currently sit in a suggested group mixing
+  honors with a non-honors sibling (the rest are already-separate). Honors is the
+  first D-4 variant-type mark to get a fold rule.
+- **Q-UNITS → P-5 refinement.** A big unit spread on a **non-standardized** course
+  is a **WHOLE-vs-PART signal**, not a merge threshold. The wide-spread groups are
+  almost all a comprehensive course lumped with its own pieces: *Introduction to
+  Medical Assisting* (15u) with *Intro to Medical Assisting 1/2* (3u each);
+  *Vocational Nursing 1* (9u) with *Supplementary Nursing Skills Practice* (0.5u).
+  Split the whole from its parts (each part merges with its true peers). The
+  standardized-academy carve-out (P-5a — POST/Fire/EMT merge despite huge spreads)
+  is unchanged. Data: 826 non-standardized groups carry ≥3u spread, 370 ≥4u — but
+  the raw wide-spread list is dominated by the *standardized* academies (already
+  handled), which is exactly why the non-standardized residue reads as whole/part.
+- **Q-XDISC → D-8 procedure.** The dominant cross-discipline pattern (2,050 groups
+  span ≥2 disciplines) is **one subject code tagged inconsistently** — *Income Tax
+  Accounting* as Accounting vs Business (both `ACCT`), *Ceramics Handbuilding* as
+  Art vs Ceramic Technology (both `ART`). Merge → survivor takes the **canonical
+  SUBJ4 discipline** (pick in `merge_note`). The smaller **different-subject-code +
+  colliding-title** pile (*Fire Fighter* as Fire Tech/`FIRE` vs EMT/`CALJA`) runs
+  the **P-12 homonym check** first — never auto-merge those.
+
+**New open fork surfaced: Q-VARIANT** — honors settled the first D-4 variant mark,
+but Lab / Refresher / Recertification / Bridge / Cross-listed are unsettled and
+must NOT be assumed to fold like honors (a lab may be a distinct credit component;
+a bridge is a distinct transition course; a refresher may fold or sit below the
+floor). This is the natural next interrogation batch. Q-MINTNAME is effectively
+closed by P-10 (clean band names).
+
+**Method reinforced:** the same profile-before-edges + one-example-per-option
+recipe that took v0.6→v0.11 also closes the residue cleanly — and a fork *answers
+itself* when profiling shows the "hard" pile is mostly an already-handled class
+(the unit-spread giants were standardized academies), leaving a sharp, small
+residue to rule on. Doctrine → **v0.12**.
+
+### 2026-07-15 (batch 7, Session 117) — Q-VARIANT: the rest of the D-4 family → Doctrine v0.13
+
+Honors (batch 6) settled only ONE of the D-4 variant-type marks. Profiled the
+others against the worklist and brought a 3-fork batch — deliberately NOT assuming
+they fold like honors. Sam again ruled all three with the recommended calls, and
+the shape is the instructive part: **the D-4 marks do not share one rule.**
+
+- **LAB → fold.** Lecture / Lab / Lecture-Lab of the SAME course = ONE identity
+  (the combined course is the face; lecture-only/lab-only in `merge_note`).
+  Exception: a lab with its own official C-ID stays separate (D-1). (21 groups mix
+  a lab with a lecture sibling; the science lecture/lab split is the archetype.)
+- **REFRESHER → keep separate.** A 2u "EMT Refresher" is not the 6–9u "EMT" course
+  — folding would over-grant. **This is Sam's own Q-UNITS whole-vs-part ruling
+  carrying straight over from a unit spread to a variant mark:** the refresher is a
+  *part*, so it stays its own identity; refresher-variants merge with each other.
+- **BRIDGE → keep separate (distinct course).** A bridge teaches the *gap*
+  (LVN→RN, Transition to Professional Practice) — its own real course, never folded
+  into a base or destination program; singular/plural drift of the same bridge
+  merges (P-1).
+
+**The through-line (the reusable insight):** every D-4 mark reduces to the P-1
+student-repeat test. Honors (GPA artifact) and Lab (delivery split of one course)
+→ the student wouldn't repeat → **fold**. Refresher (a shorter part) and Bridge (a
+distinct gap course) → different scope/learning → **keep**. The variant *word* is
+not the signal; what the word does to the *learning* is. Cross-listed had 0
+title-borne groups (handled by the identity layer).
+
+**Where this leaves the doctrine:** every named open fork in Part IV is now
+RESOLVED (Q-LADDER, Q-STRANDS, Q-SAMECOLL, Q-GENERIC, Q-CREDITNC, Q-TARGETCOUNT,
+Q-FLOOR, Q-HONORS, Q-UNITS, Q-XDISC, Q-VARIANT; Q-MINTNAME closed by P-10). The
+interrogation instrument has done its job — the next move is **showing the payoff**
+(the ESL dry-run + the general batch-apply), not more forks. Doctrine → **v0.13**.
+Two clean 3-fork batches in one sitting, ~all-Recommended: the doctrine has
+converged to Sam's judgment on the structural questions.

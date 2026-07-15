@@ -1,7 +1,7 @@
 ---
 title: "CCR Merge/Mint Doctrine — the decision policy for course convergence"
 created: 2026-07-03
-version: "0.11 (2026-07-14 — P-11 Q-TARGETCOUNT FULLY SETTLED: Dance styles all consolidate to ONE 'Dance Technique' B/I/A; Music applied study stays PER-INSTRUMENT (Piano/Guitar/Voice B/I/A); ensembles (Music+Dance) stay per-type like KINE athletics; Music Theory/History keep transfer rungs. v0.10 — P-10 level-descriptor convention: TEXT bands (Beginning/Intermediate/Advanced) everywhere EXCEPT Foreign Languages, which use NUMERIC rungs (Spanish 1/2/3, drop the redundant 'Beginning'). Refined the 3-rung cap: per-rung official-identity sequences (FL/Calc — a C-ID per rung) keep ALL rungs (D-1); ladders without a per-rung official ID (ESL, studio art) cap at 3. v0.9 was the ESL 3-comprehensive collapse; v0.8 P-7/Q-FLOOR/3-rung-cap; v0.7 graduation gate P-6+P-1b; v0.6 P-1 RATIFIED + P-1a/7a/9a/10a)"
+version: "0.13 (2026-07-15 — batch 7, Session 117 StarMarcus: Q-VARIANT settled — the rest of the D-4 variant family resolves on its own logic, NOT a blanket honors fold: LAB (Lecture/Lab/Lecture-Lab of one course → ONE identity, own-C-ID labs excepted); REFRESHER (own identity distinct from the full base course — the whole-vs-part logic; refresher-variants merge with each other); BRIDGE (distinct transition course, kept; drift-variants merge). Doctrine's named open-fork queue now exhausted. v0.12 — batch 6: P-13 Q-HONORS (honors variant folds into its base; standalone honors-program courses keep identity); P-5 refinement Q-UNITS (a big unit spread on a non-standardized course is a WHOLE-vs-PART split signal, not a merge cap — the standardized-academy carve-out P-5a is unchanged); Q-XDISC (same-subject-code cross-discipline groups merge to the canonical SUBJ4 discipline; different-subject-code title collisions run the P-12 homonym check first). New open fork Q-VARIANT = the rest of the D-4 variant family (Lab/Refresher/Bridge…). v0.11 — P-11 Q-TARGETCOUNT FULLY SETTLED: Dance styles all consolidate to ONE 'Dance Technique' B/I/A; Music applied study stays PER-INSTRUMENT (Piano/Guitar/Voice B/I/A); ensembles (Music+Dance) stay per-type like KINE athletics; Music Theory/History keep transfer rungs. v0.10 — P-10 level-descriptor convention: TEXT bands (Beginning/Intermediate/Advanced) everywhere EXCEPT Foreign Languages, which use NUMERIC rungs (Spanish 1/2/3, drop the redundant 'Beginning'). Refined the 3-rung cap: per-rung official-identity sequences (FL/Calc — a C-ID per rung) keep ALL rungs (D-1); ladders without a per-rung official ID (ESL, studio art) cap at 3. v0.9 was the ESL 3-comprehensive collapse; v0.8 P-7/Q-FLOOR/3-rung-cap; v0.7 graduation gate P-6+P-1b; v0.6 P-1 RATIFIED + P-1a/7a/9a/10a)"
 tags: [ccr, doctrine, merge, mint, m-id, mind-meld]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -214,6 +214,63 @@ the volume overwhelmed him). Three open questions settled:
     from the 3-rung cap. (Studio art has no per-rung C-ID → it caps; FL does → it
     doesn't. That, not mere transferability, is the line.)
 
+#### Calibration rulings — batch 6 (2026-07-15, Session 117 StarMarcus)
+
+A grounded 3-fork batch settled the last of the carryover open forks
+(Q-HONORS, Q-UNITS, Q-XDISC). Each is cited by id in receipts.
+
+- **P-13 — Honors variant folds under its base course; standalone honors-program
+  courses keep their identity — RATIFIED (Sam, 2026-07-15; settles Q-HONORS).**
+  An **Honors variant of a base academic course** (*Honors Financial Accounting*
+  ≡ *Financial Accounting*; *Honors General Chemistry* ≡ *General Chemistry 1*)
+  **merges INTO the base** — the competencies are the same course, so under the
+  student-repeat test a student with either would not repeat the other. The honors
+  designation is a GPA/enrollment mark (like the venue/format marks P-11 folds),
+  recorded in `merge_note`. **Carve-out:** a **standalone honors-program course
+  with no base** — *Honors Colloquium*, *Honors Forum – Humanities / Social
+  Sciences*, *Honors Seminar* — is its OWN identity (there is no base course to
+  fold into; it's a distinct interdisciplinary offering). Do NOT collapse the
+  standalone honors courses into a generic umbrella. (Data: 128 unified courses
+  carry "Honors" in the title.) This scopes only the **honors** slice of the D-4
+  variant-type family; the OTHER D-4 marks (Lab / Refresher / Recertification /
+  Bridge / Cross-listed) are the still-open **Q-VARIANT** fork.
+
+- **P-5 refinement — a large unit spread on a NON-standardized course is a
+  WHOLE-vs-PART signal, not a merge threshold — RATIFIED (Sam, 2026-07-15; bounds
+  Q-UNITS).** When members of a non-standardized group span a wide unit range
+  (≥ ~4u), the spread almost always means a **comprehensive course got lumped with
+  its own pieces**: *Introduction to Medical Assisting* (15u) sitting with *Intro
+  to Medical Assisting 1/2* (3u each); *Vocational Nursing 1* (9u) sitting with
+  *Supplementary Nursing Skills Practice* (0.5u). The correct move is to **split
+  the whole from its parts** — the comprehensive course is one identity, each part
+  (module, companion lab, skills-practice) merges with its true peers — NOT to
+  block the merge on a fixed unit cap, and NOT to over-merge whole+part into one
+  row. **The standardized-curriculum carve-out (P-5a) is unchanged:** POST / Fire /
+  EMT / NCCER / BAR academies merge despite huge spreads because colleges package
+  the same standardized training into different unit loads. So unit spread is a
+  **diagnostic**: on standardized curricula a big spread means *"packaged
+  differently, merge"*; on non-standardized curricula it means *"whole lumped with
+  parts, split them."* (Screening signal: a member < ~25% of the group's modal
+  units, or > ~2× the modal, is a whole/part outlier to separate; record the split
+  rationale in `merge_note`.) (Data: 826 non-standardized groups carry ≥3u spread;
+  370 are ≥4u.)
+
+- **Q-XDISC RESOLVED — same-subject-code cross-discipline groups merge to the
+  canonical SUBJ4 discipline; different-subject-code title collisions gate on the
+  homonym check — RATIFIED (Sam, 2026-07-15).** The dominant cross-discipline
+  pattern is **one subject code tagged with disagreeing discipline labels**:
+  *Income Tax Accounting* tagged both **Accounting** and **Business** (both subject
+  `ACCT`); *Ceramics Handbuilding* tagged both **Art** and **Ceramic Technology**
+  (both `ART`). These are one course tagged inconsistently → **merge; the survivor
+  takes the canonical discipline for that SUBJ4** (D-8), the pick recorded in
+  `merge_note`. The **smaller pile with DIFFERENT subject codes + a colliding
+  title** (*Fire Fighter* as Fire Technology/`FIRE` vs Emergency Medical
+  Technologies/`CALJA`) is a possible **homonym**: run the **P-12** check
+  (title + description + aligned exhibit) BEFORE merging — never auto-merge those.
+  This makes D-8's "cross-discipline merges pick the survivor's discipline
+  deliberately" a concrete two-branch procedure. (Data: 2,050 groups span ≥2
+  disciplines; 371 span 3+.)
+
 ### P-2 · The two-number goal — PROPOSED
 
 1. **CPL-facing tier: ≤ 2,500 named common courses** — the concise crosswalk
@@ -344,7 +401,12 @@ layer mirrors that latitude, the confirmation layer applies this doctrine.
 One discipline → one canonical SUBJ4 (umbrella exceptions: Foreign Languages,
 Kinesiology). A merge whose survivor changes discipline re-disciplines
 explicitly (never silently); cross-discipline merges pick the survivor's
-discipline deliberately.
+discipline deliberately. **Q-XDISC procedure (2026-07-15, batch 6): a group
+whose members share ONE subject code but carry disagreeing discipline labels
+(`ACCT` tagged Accounting vs Business) is one course tagged inconsistently →
+merge to that SUBJ4's canonical discipline, pick in `merge_note`. A group with
+DIFFERENT subject codes + a colliding title runs the P-12 homonym check
+(title + description + exhibit) BEFORE merging — never auto-merge those.**
 
 ### D-9 · MQ-tightening gate — ESTABLISHED (Sam, 2026-07-12)
 
@@ -471,7 +533,13 @@ externally standardized (BAR smog, POST, NCCER, NREMT — colleges package the
 same training differently), or (b) the credit recommendation will specify
 units anyway. Store the modal `typical_units`, preserve the spread, flag
 `unit_anomaly` for faculty. A ≥4-unit spread on a *non*-standardized course
-is a genuine stop-and-look. (→ Q-UNITS)
+is a genuine stop-and-look. **Refined 2026-07-15 (batch 6, Q-UNITS resolved):
+on a non-standardized course a ≥ ~4u spread is a WHOLE-vs-PART signal — the
+comprehensive course got lumped with its own component labs/modules/skills-
+practice. Split the whole from its parts (each part merges with its true peers)
+rather than blocking the merge or over-merging whole+part into one row; P-5a's
+standardized-academy carve-out is unchanged. See the batch-6 ruling above.**
+(→ Q-UNITS)
 
 ### P-6 · Same-college groups are variants, not duplicates — RATIFIED (Sam, 2026-07-14; see the 2026-07-14 gate ruling above)
 
@@ -596,6 +664,51 @@ divergence alone.** (Implication: the ~100 wave `split_candidate`s driven mainly
 by `member_top_divergence` must be re-checked against title/description/exhibit
 before they fire — TOP alone no longer justifies the split.)
 
+### P-13 · Variant-type folding (the D-4 family) — RATIFIED (Sam, 2026-07-15; Q-HONORS + Q-VARIANT settled)
+
+The D-4 guard suite gates the variant-type marks (Honors / Lab / Refresher /
+Recertification / Bridge / Instructor / Supervisor / Cross-listed) at strict
+equality — it filters what is *suggested*. This rule governs what a curator
+*confirms* for the CPL-facing identity.
+
+- **Honors — RATIFIED (settles Q-HONORS).** An **Honors variant of a base
+  course folds INTO the base** (same competencies; the honors mark is a
+  GPA/enrollment artifact, recorded in `merge_note`). A **standalone
+  honors-program course with no base** (*Honors Colloquium / Forum / Seminar*)
+  stays its own identity — there is no base to fold into. Never collapse the
+  standalone honors courses into a generic umbrella. (See the batch-6 ruling.)
+- **Lab / Refresher / Bridge — RATIFIED (Sam, 2026-07-15; settles Q-VARIANT).**
+  Each D-4 variant resolves on its OWN logic — there is no blanket honors-style
+  fold across the family:
+  - **Lab.** Lecture / Lab / Lecture-Lab of the SAME course are **ONE identity**
+    (the combined course is the face); lecture-only and lab-only are packaging
+    forms recorded in `merge_note`. A student with the competency wouldn't repeat
+    any form. **Exception:** a lab carrying its **own official C-ID/transfer
+    identity** stays separate (D-1). (Cases: *Introductory Biology* Lecture + Lab
+    (1u) + Lecture/Lab (4u) → one; *Marine Biology* Laboratory + Non-Laboratory +
+    Introduction → one.)
+  - **Refresher / Recertification / Renewal.** A refresher is **its own identity,
+    distinct from the full base course** — a 2u "EMT Refresher" is NOT the 6–9u
+    "EMT" course, so folding it in would over-grant credit (the **whole-vs-part**
+    logic of the P-5 refinement, applied to a variant mark instead of a unit
+    spread). Refresher-variants merge with **each other** → one "EMT Refresher",
+    kept separate from the base.
+  - **Bridge / Transition.** A bridge teaches the **gap** between two
+    levels/programs (LVN→RN; *Transition to Professional Practice*) — it is a
+    **distinct real course**, kept as its own identity, never folded into a base
+    or a destination program. Singular/plural or wording **drift of the SAME
+    bridge** (*Transition* ≡ *Transitions to Professional Practice*) merges as
+    ordinary title-drift (P-1).
+  - **Cross-listed.** Not a title-borne mark in the worklist (0 groups) —
+    handled by the identity layer, not this rule.
+
+  **Through-line:** the D-4 marks do NOT share one fold rule. Honors (a
+  GPA/enrollment artifact) and Lab (a delivery split of one course) **fold** to
+  the base/combined identity; Refresher (a shorter update — a *part*) and Bridge
+  (a distinct gap course) **stay separate**. The test is always P-1: would the
+  student repeat it? Honors/Lab — no (fold); Refresher/Bridge — the base and the
+  variant are different learning/scope (keep).
+
 ### P-10 · Unified-title naming — PROPOSED
 
 Student-facing plain names: Title Case; no college-isms, section letters,
@@ -635,12 +748,13 @@ checkpoint. Current forks:
 |---|---|---|
 | Q-LADDER | **Settled 2026-07-14 → the 3-RUNG CAP.** No unified ladder exceeds 3 rungs; >3 rungs consolidate by pairing (1,2)(3,4)(5,6+), incl. degree-applicable creative ladders. Academic sequences already ≤3 (Calc I/II) keep their rungs. (Earlier: P-3 ESL band mapping, 2026-07-10.) | P-3 |
 | Q-STRANDS | **RESOLVED 2026-07-14 (Sam):** NO strand survives — ESL collapses to 3 comprehensives (Beginning/Intermediate/Advanced), all strands + content-for-ESL courses bundled in by level (P-4 ratified). Carve-outs: transfer-level ESL, ESL Citizenship, VESL. | P-4 |
-| Q-UNITS | How much unit spread stops a merge on a non-standardized course? | P-5 |
+| Q-UNITS | **RESOLVED 2026-07-15 (Sam):** a large unit spread on a NON-standardized course is a WHOLE-vs-PART signal, not a merge threshold — split the comprehensive course from its parts (modules/labs/skills-practice); each part merges with its true peers. Standardized academies (POST/Fire/EMT) still merge despite spread (P-5a). | P-5 |
 | Q-SAMECOLL | **RESOLVED 2026-07-14 (Sam):** same-college same-competency pairs converge (P-6 ratified) — title-drift/both-intro → clean merge; low-unit (≤1u) numbered sequences → parenthetical merge "(1 and 2)"; D-4's level guard yields. Degree-applicable sequences keep their rungs (P-3). | P-6 |
 | Q-GENERIC | **RESOLVED 2026-07-14 (Sam):** umbrella-mint ONE identity per (generic-type × subject) — "Topics in Business", "Work Experience in Business", … — variants folded in (P-7 ratified). | P-7 |
-| Q-HONORS | For CPL purposes, does an Honors variant fold under the base course (the credit rec ignores honors) or stay distinct? | D-4/P-3 |
+| Q-HONORS | **RESOLVED 2026-07-15 (Sam):** an Honors variant of a base course FOLDS into the base (same competencies; honors = GPA/enrollment mark, `merge_note`); standalone honors-program courses (Colloquium/Forum/Seminar — no base) keep their identity (P-13). | D-4/P-13 |
+| Q-VARIANT | **RESOLVED 2026-07-15 (Sam):** the D-4 marks don't share one rule — **Lab** (Lecture/Lab/Lecture-Lab → ONE identity, own-C-ID labs excepted) and **Honors** FOLD; **Refresher** (own identity, distinct from the full base — whole-vs-part; refresher-variants merge with each other) and **Bridge** (distinct gap course; drift-variants merge) stay SEPARATE. (P-13.) | D-4/P-13 |
 | Q-CREDITNC | ~~Credit + noncredit twins of one course: separate targets forever, or noncredit folds under the credit target with a band note?~~ **RESOLVED 2026-07-12 (Sam):** a same-college CR/NC *mirror* is the SAME course — a CPL mechanism (free NC section, voc-MQ instructor, Credit-by-Exam bridge). The NC mirror folds under the credit survivor with a band note; NOT a D-3 split. See the D-3 mirror carve-out. | D-3 |
-| Q-XDISC | Cross-discipline groups that are really one course tagged inconsistently: merge-and-pick-discipline, or hold for faculty? | D-8/P-9 |
+| Q-XDISC | **RESOLVED 2026-07-15 (Sam):** same-subject-code cross-discipline groups merge to the canonical SUBJ4 discipline (D-8, pick in `merge_note`); different-subject-code title collisions run the P-12 homonym check first. | D-8/P-9 |
 | Q-TARGETCOUNT | **FULLY SETTLED → P-11.** KINE (2026-07-10): athletics-vs-general, per-sport rows, modality-agnostic conditioning. Dance/Music (2026-07-14): Dance styles → ONE 'Dance Technique' B/I/A; Music applied → per-instrument B/I/A; ensembles (both) → per-type; Music Theory/History keep transfer rungs. | P-11 |
 | Q-MINTNAME | Naming for packages: "Beginning ESL" clean, or "ESL — Beginning (Levels 1–2)" explicit? | P-10 |
 | Q-FLOOR | What is *never* a CPL credit target? Recreational PE? **Bounded 2026-07-14 (Sam):** enrichment/noncredit framing ALONE does not lower a course below the floor — if it teaches the SAME learning as a credit course it MERGES (learning-equivalence). The floor is for content with NO credit-equivalent learning. P-1b splits only when the skills/breadth genuinely differ (not merely the audience). | P-2 |
