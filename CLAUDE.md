@@ -571,6 +571,26 @@ narrative definitions. The planned canonical-CIP-designation curator surface was
 Full story + continuation: `docs/cip_crosswalk_lessons.md`. Side-lane like
 SkyFlyer/SkyIron — left `cpl_todos.json` + the numbered handoff untouched.
 
+### StarCIP side-lane — CIP Code Taxonomy: the "easy button" reference + finder (2026-07-15, PROTOTYPE)
+
+Jenni Abbott's email feedback pivoted the CIP tab: **don't recreate the crosswalk**
+(COE hosts it), the product is the **full CIP list as the authoritative reference**
+(successor to the TOP Code Manual) — **simple, an "easy button"** for faculty,
+replacing the 6-tab Excel workbook the CO would email out. Built as a **fast-feedback
+artifact** (prototype→lock→port; **not yet ported to `cip_crosswalk.js`**),
+refined live with Jenni: one search box + the full CIP list, the **category label
+(CTE/Non-CTE/Both/Noncredit) visible per row**, a **🎓 C-ID/CCN** toggle chip (course-
+level floor, not "Transfer"), a **plain-English finder** (Phase-0 no-backend
+keyword+stem ranker — zero hallucination; Phase-1 = wire Sierra `/functions/v1/cpl-chat`
+once CO OKs finder-not-decider), light/dark toggle. **Data crux (carries to the port):
+CTE label = the CO consultant's CERTIFIED designations, not either workbook tab** —
+the *Descriptions* and *crosswalk* tabs disagree on **244 codes in both directions**,
+neither reliable (Jenni's 45.0702 catch). Certified authority preserved
+`kb/reference/cip_cte_certified_260715.json`; refreshed to the **260715 cut**. Prototype
++ scripts: `docs/cip_prototype/`; KB note `methodology-conflicting-source-tabs-use-certified-value.md`.
+Full story: `docs/cip_crosswalk_lessons.md`. **Side-lane — left `cpl_todos.json` + the
+numbered handoff untouched** (CCR mainline owns those).
+
 ### SkyFlyer side-lane — COBI org layer: the C&I subsite pilot + "Our Process" tab (2026-07-14, #765–#768 MERGED)
 
 Sam's Chancellor's Office talk → the CO **Curriculum & Instruction** team (Dean
