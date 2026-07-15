@@ -162,6 +162,16 @@ jobs:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python excel_to_dashboard.py
 
+      # ── Step 4a1: CPL Pathways — Common Course Reference enrichment ─
+      # Rebuilds cpl_pathways_ccr_data.js from the CURRENT minted-identity +
+      # articulation + catalog sources, so every mint / re-mint / merge in the
+      # CCR pipeline ripples onto the CPL Pathways cards (student + college
+      # views) on the next daily run — no separate sync (Sam, 2026-07-15).
+      # Non-fatal: the pathways cards degrade gracefully (prior artifact kept)
+      # if the minted sources are momentarily unreadable.
+      - name: Build CPL Pathways CCR enrichment
+        run: python3 kb/_build_cpl_pathway_ccr.py || echo "CPL Pathways CCR build failed (non-fatal; prior artifact kept)"
+
       # ── Step 4a2: Funding priority-metric actuals (P2/P3) ─────────
       # Aggregates the transient CustomReport student grain into per-college
       # suppressed counts (docs/kb-notes/adr-funding-priority-metrics-privacy.md,
