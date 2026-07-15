@@ -498,3 +498,54 @@ interrogation instrument has done its job — the next move is **showing the pay
 (the ESL dry-run + the general batch-apply), not more forks. Doctrine → **v0.13**.
 Two clean 3-fork batches in one sitting, ~all-Recommended: the doctrine has
 converged to Sam's judgment on the structural questions.
+
+### 2026-07-15 (same session) — the ESL packaging DRY-RUN: showing the payoff (#792)
+
+Sam chose payoff over more forks. Built `kb/_esl_package_dryrun.py` — a
+measurement-only planner that runs the ratified ESL doctrine (P-3/P-4) over the
+**real 2,364 ESL identities** (650 M-IDs + 1,714 singletons; disciplines *English
+as a Second Language* ⋃ *…Noncredit 53412*) and maps each to its target. Writes
+nothing to `kb_curation` or the identity files. Receipts:
+`kb/esl_package_out/2026-07-15/` (`esl_package_plan.json` full mapping +
+`esl_package_report.md`), plus a visual artifact for Sam.
+
+**Result:** Beginning **1,305** · Intermediate **548** · Advanced **296**
+(2,149 fold) + carve-outs Citizenship **38** · VESL **155** · Transfer-review
+**22** (215 peel off).
+
+**Classifier lessons (reusable for the Music/Dance/KINE packaging passes next):**
+- **Reconcile the count first.** 2,364 = M-IDs (650) + singletons (1,714) — the
+  ESL identity space is NOT just the consolidated M-IDs. StarMagna's number only
+  reconciled after including the singletons file. Always find the exact population
+  before classifying.
+- **Carve-out detection is title-PRIMARY** (the KINE primary-frame logic): the
+  first-pass lexicons over-caught 4× (VESL 235, transfer 280) by matching
+  *incidental* workplace/college vocabulary. Tightening to "the theme is the
+  SUBJECT" landed VESL 155 / transfer 22 (Sam's "rare"). A word in the title ≠ the
+  course's frame.
+- **No authoritative flag → a REVIEW bucket, never an auto-fold.** There is no
+  CB05/transferable flag and no c_id on any ESL identity, so transfer-level (which
+  awards *real* transferable credit — the one place a mis-fold UNDER-serves badly)
+  is emitted for Sam's confirm, not forced. The safe default (no level → Beginning)
+  handles the low-risk direction; the high-risk direction gets a human gate.
+- **A rung code is not a transfer signal.** "English **1A**"/"**3A**" is a catalog
+  LEVEL mark (P-10a strips it), not transfer ENGL 1A — `\b1a\b` was a false-positive
+  generator; excluding it dropped 4 mis-bucketed rows back to Beginning.
+- **Combo rule reuse:** the KINE P-11 combo ruling ("Basic to Intermediate" →
+  Beginning; "Intermediate to Advanced" → Advanced) transferred directly to ESL
+  combos — a ratified activity-doctrine lever generalizing to a language ladder.
+- **Known residue for the apply pass:** letter-rung ladders ("English in the Lab
+  A/B/C/D") default to Beginning (CPL-safe under-claim) — map A/B/C/D→rungs when
+  the scheme is confirmed. Numeric ladders assume a 6–7 rung scheme, so a 3-level
+  "Level 1/2/3" ladder under-assigns its top rung (Advanced→Intermediate) — flagged
+  medium-confidence for spot-check.
+
+**Apply surface measured (for the gated apply step):** 2,149 `merge_into` pointers;
+downstream re-key surface = 6 promotions, 0 crosswalk rows (Rule 7). The apply is a
+separate Rule-9 write (fresh read, INSERT-only ON CONFLICT DO NOTHING, cohort
+`package-esl-s117@bot`) — NOT run this session; Sam eyeballs the plan first.
+
+**Method note (promoted to a KB note):** the packaging-dry-run classifier pattern —
+title-primary carve-outs, safe-default under-claim, review-bucket-when-no-hard-flag —
+is captured in `docs/kb-notes/methodology-packaging-dryrun-classification.md` as the
+template for the remaining discipline packaging passes.

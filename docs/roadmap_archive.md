@@ -26,6 +26,28 @@ Session-25 strategic queue, and the most-recent session narrative, see
 
 ---
 
+## Archived session narrative — Session 113 (SkyTeleo, moved out Session 117)
+
+### Session 113 — SkyTeleo: the HVAC mis-mint thread → a new auditor rule + blank-discipline cleanup (2026-07-13)
+
+Sam caught `HVAC M10FR` (LA Trade `DIESLTK 122C`) minted **HVAC** but really
+**Diesel** — the title word "HVAC" had overridden the field (`title_keyword`
+inference), and `top_discipline_disagreement` missed it (it skips singletons).
+New **`subject_discipline_outlier`** auditor rule (**#761**): assigned discipline
+is a small minority of its LOCAL SUBJECT CODE cohort AND TOP/lexicon corroborate
+the SAME correction (two-signals-agree; **covers singletons**). **41 discipline
+corrections FIRED** (`mismint-s113@bot`, Rule 9; `kb/mismint_out/2026-07-13/`);
+~302 live flags. Wired into the Unified Courses **Triage filter** + blanked
+**Common SUBJ** when no discipline (the provisional-mint invariant — 99.99% of
+disciplined M-IDs already carry canonical SUBJ4) (**#762**). **Blank-discipline
+pre-seed** (**#763**): 5 homonym-checked codes → the live minter lexicon
+(~77 blanks fill at the next reseed); the ≥2-agree gate dropped DANCFOLK (titles
+= wellness) / MCOM / LIS. Also fixed the Annual Goals association-editor 409
+dup-key loop + centered the goal numbers (**#760**). Full story:
+`docs/subject_discipline_cleanup_lessons.md`. Handoff: `docs/session_114_handoff.md`.
+
+---
+
 ## Archived session narrative — Session 62 (SkyLion, moved out Session 64)
 
 ### Session 62 — SkyLion: First Light reflections digest + CCR synonym pairings (2026-06-18)

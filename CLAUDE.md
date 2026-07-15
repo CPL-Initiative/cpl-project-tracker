@@ -653,6 +653,22 @@ tightens EVERY count, reuses the all-college `CPL_COCI_COURSE_KEYS` set. Left
 `docs/cpl_pathways_lessons.md` · KB note
 `methodology-filter-live-counts-against-current-catalog.md`.
 
+### Session 117 — StarMarcus: closed the doctrine's last open forks → v0.13 + the ESL dry-run payoff (2026-07-15)
+
+Sam wanted "back in the interrogation room." Two grounded 3-fork scenario batches
+(profile-before-edges) closed **every remaining named open fork** — Sam swept all
+6 with the recommended calls: **Q-HONORS→P-13** (honors folds to base; standalone
+honors-program courses keep identity), **Q-UNITS→P-5** (a big spread on a
+non-standardized course = whole-vs-part split signal, not a cap), **Q-XDISC→D-8**
+(same-subject-code → canonical SUBJ4; diff-code collisions → P-12 homonym gate),
+**Q-VARIANT→P-13** (Lab folds; Refresher & Bridge stay separate — the D-4 marks
+don't share one rule; each reduces to P-1). Doctrine **v0.12→v0.13** (#791). Then
+the payoff: the **ESL packaging dry-run** (#792) — the real 2,364 ESL identities →
+Beginning 1,305 / Intermediate 548 / Advanced 296 + carve-outs (Citizenship 38 ·
+VESL 155 · Transfer-review 22), measurement-only (`kb/esl_package_out/2026-07-15/`)
++ a visual artifact. Full story: `docs/ccr_convergence_lessons.md` (batches 6–7 +
+ESL dry-run). Handoff: `docs/session_118_handoff.md`.
+
 ### Session 115 — StarMagna: the doctrine graduation gate → a scenario-refinement cascade (v0.6 → v0.11) (2026-07-14)
 
 Picked up the CCR mainline (wave 4 staged, not run). Sam chose the **doctrine gate
@@ -669,24 +685,6 @@ authorized. Product insight: small curated scenario batches beat the thousands-s
 🧠 panel (Sam had bounced off it). Full story: `docs/ccr_convergence_lessons.md`
 (batches 1–5); method: `docs/kb-notes/methodology-curated-scenario-batches-doctrine-elicitation.md`.
 Handoff: `docs/session_116_handoff.md`.
-
-### Session 113 — SkyTeleo: the HVAC mis-mint thread → a new auditor rule + blank-discipline cleanup (2026-07-13)
-
-Sam caught `HVAC M10FR` (LA Trade `DIESLTK 122C`) minted **HVAC** but really
-**Diesel** — the title word "HVAC" had overridden the field (`title_keyword`
-inference), and `top_discipline_disagreement` missed it (it skips singletons).
-New **`subject_discipline_outlier`** auditor rule (**#761**): assigned discipline
-is a small minority of its LOCAL SUBJECT CODE cohort AND TOP/lexicon corroborate
-the SAME correction (two-signals-agree; **covers singletons**). **41 discipline
-corrections FIRED** (`mismint-s113@bot`, Rule 9; `kb/mismint_out/2026-07-13/`);
-~302 live flags. Wired into the Unified Courses **Triage filter** + blanked
-**Common SUBJ** when no discipline (the provisional-mint invariant — 99.99% of
-disciplined M-IDs already carry canonical SUBJ4) (**#762**). **Blank-discipline
-pre-seed** (**#763**): 5 homonym-checked codes → the live minter lexicon
-(~77 blanks fill at the next reseed); the ≥2-agree gate dropped DANCFOLK (titles
-= wellness) / MCOM / LIS. Also fixed the Annual Goals association-editor 409
-dup-key loop + centered the goal numbers (**#760**). Full story:
-`docs/subject_discipline_cleanup_lessons.md`. Handoff: `docs/session_114_handoff.md`.
 
 ## Troubleshooting
 
