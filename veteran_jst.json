@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-15T11:03:47.494807+00:00",
+  "scraped_at": "2026-07-15T14:15:40.221554+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25847,
+    "jst": 25848,
     "star_colleges": 54
   },
   "computed_star_colleges": 54,
@@ -47,7 +47,7 @@
     },
     "Moreno Valley College": {
       "vets": 916,
-      "jst": 958,
+      "jst": 959,
       "star": true
     },
     "Bakersfield College": {

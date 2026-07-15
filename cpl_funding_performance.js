@@ -8,8 +8,8 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified (context, not a priority metric) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 41550,
-  "p2": 4778,
+  "pe": 41554,
+  "p2": 4777,
   "p3": 16318
  },
  "colleges": {
@@ -318,7 +318,7 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Moreno Valley": {
-   "pe": 1570,
+   "pe": 1571,
    "p2": 420,
    "p3": 1466
   },
@@ -379,7 +379,7 @@ window.CPL_FUNDING_PERF = {
   },
   "Riverside": {
    "pe": 750,
-   "p2": 32,
+   "p2": 31,
    "p3": 691
   },
   "Sacramento City": {
@@ -449,7 +449,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Santa Rosa": {
-   "pe": 432,
+   "pe": 435,
    "p2": 0,
    "p3": 0
   },
