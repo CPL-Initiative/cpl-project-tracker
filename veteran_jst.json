@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-15T14:15:40.221554+00:00",
+  "scraped_at": "2026-07-15T18:25:29.174117+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25848,
+    "jst": 25864,
     "star_colleges": 54
   },
   "computed_star_colleges": 54,
@@ -17,7 +17,7 @@
     },
     "Merced College": {
       "vets": 142,
-      "jst": 269,
+      "jst": 271,
       "star": true
     },
     "Chaffey College": {
@@ -40,14 +40,14 @@
       "jst": 1388,
       "star": true
     },
-    "San Diego Miramar College": {
-      "vets": 1181,
-      "jst": 1555,
-      "star": true
-    },
     "Moreno Valley College": {
       "vets": 916,
       "jst": 959,
+      "star": true
+    },
+    "San Diego Miramar College": {
+      "vets": 1181,
+      "jst": 1555,
       "star": true
     },
     "Bakersfield College": {
@@ -62,7 +62,7 @@
     },
     "Norco College": {
       "vets": 831,
-      "jst": 491,
+      "jst": 492,
       "star": false
     },
     "West Los Angeles College": {
@@ -132,12 +132,12 @@
     },
     "Santa Ana College": {
       "vets": 334,
-      "jst": 358,
+      "jst": 360,
       "star": true
     },
     "Santa Rosa Junior College": {
       "vets": 523,
-      "jst": 433,
+      "jst": 436,
       "star": true
     },
     "Sierra College": {
@@ -212,7 +212,7 @@
     },
     "Citrus College": {
       "vets": 181,
-      "jst": 205,
+      "jst": 206,
       "star": true
     },
     "Ventura College": {
@@ -412,7 +412,7 @@
     },
     "Cuesta College": {
       "vets": 206,
-      "jst": 164,
+      "jst": 168,
       "star": true
     },
     "Los Medanos College": {
@@ -492,7 +492,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 67,
+      "jst": 70,
       "star": false
     },
     "Gavilan College": {
@@ -570,11 +570,6 @@
       "jst": 0,
       "star": false
     },
-    "College of the Siskiyous": {
-      "vets": 77,
-      "jst": 0,
-      "star": false
-    },
     "Folsom Lake College": {
       "vets": 65,
       "jst": 0,
@@ -582,6 +577,11 @@
     },
     "College of Marin": {
       "vets": 69,
+      "jst": 0,
+      "star": false
+    },
+    "College of the Siskiyous": {
+      "vets": 77,
       "jst": 0,
       "star": false
     }

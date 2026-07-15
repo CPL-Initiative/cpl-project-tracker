@@ -8,9 +8,9 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified (context, not a priority metric) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 41554,
-  "p2": 4777,
-  "p3": 16318
+  "pe": 42209,
+  "p2": 4784,
+  "p3": 16966
  },
  "colleges": {
   "Alameda": {
@@ -84,7 +84,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 31
   },
   "Citrus": {
-   "pe": 200,
+   "pe": 201,
    "p2": 0,
    "p3": 0
   },
@@ -125,7 +125,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Cuesta": {
-   "pe": 96,
+   "pe": 100,
    "p2": null,
    "p2_suppressed": true,
    "p3": null,
@@ -278,7 +278,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Merced": {
-   "pe": 3338,
+   "pe": 3341,
    "p2": 1781,
    "p3": 3303
   },
@@ -318,9 +318,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Moreno Valley": {
-   "pe": 1571,
-   "p2": 420,
-   "p3": 1466
+   "pe": 2211,
+   "p2": 422,
+   "p3": 2105
   },
   "Mt San Antonio": {
    "pe": 732,
@@ -338,7 +338,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Norco College": {
-   "pe": 707,
+   "pe": 708,
    "p2": 150,
    "p3": 438
   },
@@ -383,7 +383,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 691
   },
   "Sacramento City": {
-   "pe": 36,
+   "pe": 39,
    "p2": 0,
    "p3": 0
   },
@@ -394,8 +394,8 @@ window.CPL_FUNDING_PERF = {
   },
   "San Bernardino": {
    "pe": 305,
-   "p2": 54,
-   "p3": 78
+   "p2": 59,
+   "p3": 87
   },
   "San Diego City": {
    "pe": 4221,
@@ -433,7 +433,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Santa Ana": {
-   "pe": 412,
+   "pe": 414,
    "p2": 0,
    "p3": 0
   },
@@ -510,7 +510,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "West LA": {
-   "pe": 725,
+   "pe": 726,
    "p2": 485,
    "p3": 549
   },
