@@ -4973,6 +4973,163 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPPRA-F3FS-1-001|MAPPRA-F3FS1-1-001",
+      "exhibit_ids": [
+        "MAPPRA-F3FS-1-001",
+        "MAPPRA-F3FS1-1-001"
+      ],
+      "title": "Fire Service In-Service Training — Command & Control",
+      "unified_title": "Fire Service In-Service Training — Command & Control",
+      "is_classified": true,
+      "issuing_agency": "California State Fire Training (SFT)",
+      "training_agency": "",
+      "confidence_title": 0.7,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "FTECH 323B Fire Service In-Service Training/Command & Control - Internship/Apprenticeship",
+        "FTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 2,
+      "adopter_names": [
+        "CA MAP INITIATIVE COLLEGE",
+        "Modesto Junior College"
+      ],
+      "potential": 110,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 112,
+      "credit_recs": [
+        {
+          "course": "FTECH 323XABC",
+          "credit": "2 hours in Fire Service In-Service Training/Command & Control"
+        },
+        {
+          "course": "FTECH 323XABC",
+          "credit": "0.5 hours in Fire Service In-Service Training/Command & Control"
+        },
+        {
+          "course": "ACC 1B",
+          "credit": "0.5 hours in Fire Service In-Service Training/Command & Control"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPCXS-ITP(-1-001|MAPCxS-ITPP1-1-001",
       "exhibit_ids": [
         "MAPCXS-ITP(-1-001",
@@ -5861,6 +6018,208 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPSAS-CEPO1-1-001|MAPSAS-CEPO5-1-001|MAPSAS-CPOM1-1-001|MAPSAS-CPOM2-1-001|MAPSAS-CPOM57-1-001|MAPSAS-CPOM76-1-001|MAPSAS-CPOM8-1-001|MAPSAS-CPOM81-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CEPO1-1-001",
+        "MAPSAS-CEPO5-1-001",
+        "MAPSAS-CPOM1-1-001",
+        "MAPSAS-CPOM2-1-001",
+        "MAPSAS-CPOM57-1-001",
+        "MAPSAS-CPOM76-1-001",
+        "MAPSAS-CPOM8-1-001",
+        "MAPSAS-CPOM81-1-001"
+      ],
+      "title": "CLEP Principles of Management",
+      "unified_title": "CLEP Principles of Management",
+      "is_classified": true,
+      "issuing_agency": "College Board",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.98,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Exam Principles of Management (Score of 50 or higher)",
+        "CLEP Exam: Principles of Management",
+        "CLEP Principles of Management",
+        "CLEP Principles of Management (CSU Semester Units Earned Toward CSU Admission)",
+        "CLEP Principles of Management (SAC Associate Degree Units)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Humanities (Letters)",
+      "sector": "Business & Entrepreneurship",
+      "collaborative_type": "Local",
+      "adopters": 11,
+      "adopter_names": [
+        "CA MAP INITIATIVE COLLEGE",
+        "Clovis Community College",
+        "Coastline Community College",
+        "Los Angeles Pierce College",
+        "Merced College",
+        "Moreno Valley College",
+        "Norco College",
+        "Riverside City College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Shasta College"
+      ],
+      "potential": 109,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Calbright College Credit",
+        "Calbright College Non-Credit",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Coalinga College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 120,
+      "credit_recs": [
+        {
+          "course": "MAG 44",
+          "credit": "3 hours in Principles of Management"
+        },
+        {
+          "course": "Degree Units",
+          "credit": "3 hours in SAC Associate Degree Semester Units"
+        },
+        {
+          "course": "ACC 62",
+          "credit": "3 hours in CSU Semester Units Earned toward CSU Admission"
+        },
+        {
+          "course": "CSU Units",
+          "credit": "3 hours in CSU Semester Units Earned toward CSU Admission"
+        },
+        {
+          "course": "MGMT C100",
+          "credit": "3 hours in Principles of Management"
+        },
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "COMM 8",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "MGMT 31",
+          "credit": "3 hours in Principles of Management"
+        },
+        {
+          "course": "BUS 65",
+          "credit": "3 hours in Management Principles"
+        },
+        {
+          "course": "BUAD 91",
+          "credit": "3 hours in Principles of Management"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPCBEH-ITB2-1-001|MAPCXH-AMHS2-1-001|MAPCXH-BITB-1-001|MAPCXH-CHSB1-1-001|MAPCXH-SHSB2-1-001|MAPCXS-ITB1-1-001|MAPCxS-ITBB-1-001",
       "exhibit_ids": [
         "MAPCBEH-ITB2-1-001",
@@ -6374,8 +6733,8 @@ window.CPL_STATEWIDE = {
         "MAPCXS-CBEM-1-001",
         "MAPCXS-M1FC-1-001"
       ],
-      "title": "Single Variable Calculus I Early Transcendentals",
-      "unified_title": "Single Variable Calculus I Early Transcendentals",
+      "title": "Single Variable Calculus 1 Early Transcendentals",
+      "unified_title": "Single Variable Calculus 1 Early Transcendentals",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -7096,202 +7455,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "MATH 078",
           "credit": "4 hours in Differential Equations"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPSAS-CEPO1-1-001|MAPSAS-CEPO5-1-001|MAPSAS-CPOM1-1-001|MAPSAS-CPOM2-1-001|MAPSAS-CPOM57-1-001|MAPSAS-CPOM76-1-001|MAPSAS-CPOM8-1-001|MAPSAS-CPOM81-1-001",
-      "exhibit_ids": [
-        "MAPSAS-CEPO1-1-001",
-        "MAPSAS-CEPO5-1-001",
-        "MAPSAS-CPOM1-1-001",
-        "MAPSAS-CPOM2-1-001",
-        "MAPSAS-CPOM57-1-001",
-        "MAPSAS-CPOM76-1-001",
-        "MAPSAS-CPOM8-1-001",
-        "MAPSAS-CPOM81-1-001"
-      ],
-      "title": "CLEP Principles of Management",
-      "unified_title": "CLEP Principles of Management",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "CLEP Exam Principles of Management (Score of 50 or higher)",
-        "CLEP Exam: Principles of Management",
-        "CLEP Principles of Management",
-        "CLEP Principles of Management (CSU Semester Units Earned Toward CSU Admission)",
-        "CLEP Principles of Management (SAC Associate Degree Units)"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Humanities (Letters)",
-      "sector": "Business & Entrepreneurship",
-      "collaborative_type": "Local",
-      "adopters": 10,
-      "adopter_names": [
-        "Clovis Community College",
-        "Coastline Community College",
-        "Los Angeles Pierce College",
-        "Merced College",
-        "Moreno Valley College",
-        "Norco College",
-        "Riverside City College",
-        "Santa Ana College",
-        "Santa Monica College",
-        "Shasta College"
-      ],
-      "potential": 108,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Calbright College Credit",
-        "Calbright College Non-Credit",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Coalinga College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego City College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 118,
-      "credit_recs": [
-        {
-          "course": "MAG 44",
-          "credit": "3 hours in Principles of Management"
-        },
-        {
-          "course": "Degree Units",
-          "credit": "3 hours in SAC Associate Degree Semester Units"
-        },
-        {
-          "course": "CSU Units",
-          "credit": "3 hours in CSU Semester Units Earned toward CSU Admission"
-        },
-        {
-          "course": "MGMT C100",
-          "credit": "3 hours in Principles of Management"
-        },
-        {
-          "course": "CPL 1",
-          "credit": "3 hours in Elective Course Credits"
-        },
-        {
-          "course": "COMM 8",
-          "credit": "3 hours in Elective Course Credits"
-        },
-        {
-          "course": "MGMT 31",
-          "credit": "3 hours in Principles of Management"
-        },
-        {
-          "course": "BUS 65",
-          "credit": "3 hours in Management Principles"
-        },
-        {
-          "course": "BUAD 91",
-          "credit": "3 hours in Principles of Management"
         }
       ],
       "authoritative_recs": []
@@ -8066,8 +8229,8 @@ window.CPL_STATEWIDE = {
         "MAPCXS-CBEM1-1-001",
         "MAPCXS-M1SC-1-001"
       ],
-      "title": "Calculus II",
-      "unified_title": "Calculus II",
+      "title": "Calculus 2",
+      "unified_title": "Calculus 2",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -10594,8 +10757,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPSAP-M1FC-1-001"
       ],
-      "title": "Single Variable Calculus I Early Transcendentals",
-      "unified_title": "Single Variable Calculus I Early Transcendentals",
+      "title": "Single Variable Calculus 1 Early Transcendentals",
+      "unified_title": "Single Variable Calculus 1 Early Transcendentals",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -10737,8 +10900,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPSAP-M1SC-1-001"
       ],
-      "title": "Calculus II",
-      "unified_title": "Calculus II",
+      "title": "Calculus 2",
+      "unified_title": "Calculus 2",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -11023,8 +11186,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-M1FC-1-001"
       ],
-      "title": "Single Variable Calculus I Early Transcendentals",
-      "unified_title": "Single Variable Calculus I Early Transcendentals",
+      "title": "Single Variable Calculus 1 Early Transcendentals",
+      "unified_title": "Single Variable Calculus 1 Early Transcendentals",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -12314,8 +12477,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCxS-CBEM12-1-001"
       ],
-      "title": "Calculus I With Analytic Geometry",
-      "unified_title": "Calculus I With Analytic Geometry",
+      "title": "Calculus 1 With Analytic Geometry",
+      "unified_title": "Calculus 1 With Analytic Geometry",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -12457,8 +12620,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCxS-CBEM13-1-001"
       ],
-      "title": "Calculus II With Analytic Geometry",
-      "unified_title": "Calculus II With Analytic Geometry",
+      "title": "Calculus 2 With Analytic Geometry",
+      "unified_title": "Calculus 2 With Analytic Geometry",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -12897,6 +13060,153 @@ window.CPL_STATEWIDE = {
         {
           "course": "MATH 073",
           "credit": "5 hours in Multivariable Calculus"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPPRA-AMF-1-001",
+      "exhibit_ids": [
+        "MAPPRA-AMF-1-001"
+      ],
+      "title": "Metal Framing Advanced",
+      "unified_title": "Metal Framing Advanced",
+      "is_classified": true,
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "training_agency": "",
+      "confidence_title": 0.7,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Advanced Metal Framing"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Business & Entrepreneurship",
+      "collaborative_type": "Local",
+      "adopters": 2,
+      "adopter_names": [
+        "CA MAP INITIATIVE COLLEGE",
+        "Norco College"
+      ],
+      "potential": 106,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 108,
+      "credit_recs": [
+        {
+          "course": "CRP 478B",
+          "credit": "1.5 hours in Advanced Metal Framing"
+        },
+        {
+          "course": "ACC 200",
+          "credit": "1.5 hours in Advanced Metal Framing"
         }
       ],
       "authoritative_recs": []
@@ -24028,8 +24338,8 @@ window.CPL_STATEWIDE = {
         "MAPSAS-CFLL-1-001",
         "MAPSAS-CFLL1-1-001"
       ],
-      "title": "CLEP French Language Level I",
-      "unified_title": "CLEP French Language Level I",
+      "title": "CLEP French Language Level 1",
+      "unified_title": "CLEP French Language Level 1",
       "is_classified": true,
       "issuing_agency": "College Board",
       "training_agency": "",
@@ -24222,8 +24532,8 @@ window.CPL_STATEWIDE = {
         "MAPSAS-CGLL-1-001",
         "MAPSAS-CGLL2-1-001"
       ],
-      "title": "CLEP German Language Level I",
-      "unified_title": "CLEP German Language Level I",
+      "title": "CLEP German Language Level 1",
+      "unified_title": "CLEP German Language Level 1",
       "is_classified": true,
       "issuing_agency": "College Board",
       "training_agency": "",
@@ -30415,8 +30725,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXO-SI-1-001"
       ],
-      "title": "Spanish II",
-      "unified_title": "Spanish II",
+      "title": "Spanish 2",
+      "unified_title": "Spanish 2",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -35557,8 +35867,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-S11--1-001"
       ],
-      "title": "Elementary Spanish I",
-      "unified_title": "Elementary Spanish I",
+      "title": "Elementary Spanish 1",
+      "unified_title": "Elementary Spanish 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -35690,8 +36000,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPSAP-S1-S-1-001"
       ],
-      "title": "Elementary Spanish I",
-      "unified_title": "Elementary Spanish I",
+      "title": "Elementary Spanish 1",
+      "unified_title": "Elementary Spanish 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -36379,8 +36689,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXO-S1SI-1-001"
       ],
-      "title": "Spanish I",
-      "unified_title": "Spanish I",
+      "title": "Spanish 1",
+      "unified_title": "Spanish 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -36790,8 +37100,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRS-ECTA-1-001"
       ],
-      "title": "Exploring Culture through Academic Discourse I",
-      "unified_title": "Exploring Culture through Academic Discourse I",
+      "title": "Exploring Culture through Academic Discourse 1",
+      "unified_title": "Exploring Culture through Academic Discourse 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -36923,8 +37233,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRS-ARAW-1-001"
       ],
-      "title": "Exploring Culture through Academic Discourse II",
-      "unified_title": "Exploring Culture through Academic Discourse II",
+      "title": "Exploring Culture through Academic Discourse 2",
+      "unified_title": "Exploring Culture through Academic Discourse 2",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -38999,8 +39309,8 @@ window.CPL_STATEWIDE = {
         "MAPSAS-CSWW2-1-001",
         "MAPSAS-CSWW5-1-001"
       ],
-      "title": "CLEP Spanish with Writing I",
-      "unified_title": "CLEP Spanish with Writing I",
+      "title": "CLEP Spanish with Writing 1",
+      "unified_title": "CLEP Spanish with Writing 1",
       "is_classified": true,
       "issuing_agency": "College Board",
       "training_agency": "",
@@ -40697,8 +41007,8 @@ window.CPL_STATEWIDE = {
         "MAPSAS-CSLL-1-001",
         "MAPSAS-CSLL2-1-001"
       ],
-      "title": "CLEP Spanish Language Level I",
-      "unified_title": "CLEP Spanish Language Level I",
+      "title": "CLEP Spanish Language Level 1",
+      "unified_title": "CLEP Spanish Language Level 1",
       "is_classified": true,
       "issuing_agency": "College Board",
       "training_agency": "",
@@ -41365,8 +41675,8 @@ window.CPL_STATEWIDE = {
         "MAPSAS-CSWW7-1-001",
         "MAPSAS-CSWW9-1-001"
       ],
-      "title": "CLEP Spanish with Writing II",
-      "unified_title": "CLEP Spanish with Writing II",
+      "title": "CLEP Spanish with Writing 2",
+      "unified_title": "CLEP Spanish with Writing 2",
       "is_classified": true,
       "issuing_agency": "College Board",
       "training_agency": "",
@@ -43082,135 +43392,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPCBES-S1C2-1-001",
-      "exhibit_ids": [
-        "MAPCBES-S1C2-1-001"
-      ],
-      "title": "Spanish for Heritage Speakers 2",
-      "unified_title": "Spanish for Heritage Speakers 2",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.55,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "SPAN 158 CBE"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Foreign Languages",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "San Bernardino Valley College"
-      ],
-      "potential": 93,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Sequoias",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College"
-      ],
-      "total_addressable": 94,
-      "credit_recs": [
-        {
-          "course": "SPAN 158",
-          "credit": "4 hours in Spanish for Heritage Speakers II"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPCBES-S1-C-1-001|MAPCXS-S3-1-001",
       "exhibit_ids": [
         "MAPCBES-S1-C-1-001",
@@ -43346,8 +43527,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-S1FS-1-001"
       ],
-      "title": "Spanish for Spanish Speakers 1",
-      "unified_title": "Spanish for Spanish Speakers 1",
+      "title": "Spanish for Heritage Speakers 1",
+      "unified_title": "Spanish for Heritage Speakers 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -44625,6 +44806,141 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCBES-S1C2-1-001|MAPCXS-S1FS-1-001",
+      "exhibit_ids": [
+        "MAPCBES-S1C2-1-001",
+        "MAPCXS-S1FS-1-001"
+      ],
+      "title": "Spanish for Heritage Speakers 2",
+      "unified_title": "Spanish for Heritage Speakers 2",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.55,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "SPAN 110\tSpanish for Spanish Speakers 2 - Credit by Exam",
+        "SPAN 158 CBE"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 2,
+      "adopter_names": [
+        "Modesto Junior College",
+        "San Bernardino Valley College"
+      ],
+      "potential": 92,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 94,
+      "credit_recs": [
+        {
+          "course": "SPAN 158",
+          "credit": "4 hours in Spanish for Heritage Speakers II"
+        },
+        {
+          "course": "SPAN 110",
+          "credit": "5 hours in Spanish for Spanish Speakers 2"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPCXS-M1S1-1-001",
       "exhibit_ids": [
         "MAPCXS-M1S1-1-001"
@@ -45013,8 +45329,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-S1FS1-1-001"
       ],
-      "title": "Spanish for Spanish Speakers 2",
-      "unified_title": "Spanish for Spanish Speakers 2",
+      "title": "Spanish for Heritage Speakers 2",
+      "unified_title": "Spanish for Heritage Speakers 2",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -45025,134 +45341,6 @@ window.CPL_STATEWIDE = {
         "SPAN 110\tSpanish for Spanish Speakers 2 - Industry Certification"
       ],
       "cpl_type": "Industry Certification",
-      "discipline": "Foreign Languages",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Modesto Junior College"
-      ],
-      "potential": 92,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Sequoias",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College"
-      ],
-      "total_addressable": 93,
-      "credit_recs": [
-        {
-          "course": "SPAN 110",
-          "credit": "5 hours in Spanish for Spanish Speakers 2"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPCXS-S1FS-1-001",
-      "exhibit_ids": [
-        "MAPCXS-S1FS-1-001"
-      ],
-      "title": "Spanish for Spanish Speakers 2",
-      "unified_title": "Spanish for Spanish Speakers 2",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.85,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "SPAN 110\tSpanish for Spanish Speakers 2 - Credit by Exam"
-      ],
-      "cpl_type": "Credit By Exam",
       "discipline": "Foreign Languages",
       "sector": "Academic Transfer & General Education",
       "collaborative_type": "Local",
@@ -53813,8 +54001,8 @@ window.CPL_STATEWIDE = {
         "MAPCXS-S12-1-001",
         "MAPCxS-ESIS-1-001"
       ],
-      "title": "Elementary Spanish I",
-      "unified_title": "Elementary Spanish I",
+      "title": "Elementary Spanish 1",
+      "unified_title": "Elementary Spanish 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -56208,6 +56396,169 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPICA-MPC-1-001|MAPICA-MPE-1-001",
+      "exhibit_ids": [
+        "MAPICA-MPC-1-001",
+        "MAPICA-MPE-1-001"
+      ],
+      "title": "Multi-Craft Core Curriculum (MC3) Pre-Apprenticeship",
+      "unified_title": "Multi-Craft Core Curriculum (MC3) Pre-Apprenticeship",
+      "is_classified": true,
+      "issuing_agency": "North America's Building Trades Unions (NABTU)",
+      "training_agency": "",
+      "confidence_title": 0.92,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "MC3 Pre-Apprenticeship Core",
+        "MC3 Pre-Apprenticeship Essentials"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 5,
+      "adopter_names": [
+        "Bakersfield College",
+        "Cabrillo College",
+        "Fresno City College",
+        "Laney College",
+        "Merced College"
+      ],
+      "potential": 89,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cañada College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Fullerton College",
+        "Gavilan College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 94,
+      "credit_recs": [
+        {
+          "course": "CEM 151",
+          "credit": "3.5 hours in MC3 Pre-Apprenticeship Essentials"
+        },
+        {
+          "course": "CEM 151L",
+          "credit": "3.5 hours in MC3 Pre-Apprenticeship Core"
+        },
+        {
+          "course": "CARP 251A",
+          "credit": "3.5 hours in MC3 Pre-Apprenticeship Core"
+        },
+        {
+          "course": "PREAPP 120",
+          "credit": "3.5 hours in MC3 Pre-Apprenticeship Core"
+        },
+        {
+          "course": "PREAPP 121",
+          "credit": "3.5 hours in MC3 Pre-Apprenticeship Essentials"
+        },
+        {
+          "course": "INDT 66",
+          "credit": "3.5 hours in MC3 Pre-Apprenticeship Core"
+        },
+        {
+          "course": "CNST B1",
+          "credit": "3 hours in Introduction to Construction"
+        },
+        {
+          "course": "OSRM B50",
+          "credit": "1 hour in General Industrial Safety"
+        },
+        {
+          "course": "OSRM B56",
+          "credit": "0.5 hours in Forklift Training"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPICI-MOSW-1-001",
       "exhibit_ids": [
         "MAPICI-MOSW-1-001"
@@ -57608,8 +57959,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-CBEV-1-001"
       ],
-      "title": "Voice Technique I",
-      "unified_title": "Voice Technique I",
+      "title": "Voice Technique 1",
+      "unified_title": "Voice Technique 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -57733,8 +58084,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-CBEV1-1-001"
       ],
-      "title": "Voice Technique II",
-      "unified_title": "Voice Technique II",
+      "title": "Voice Technique 2",
+      "unified_title": "Voice Technique 2",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -57858,8 +58209,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-CBEV2-1-001"
       ],
-      "title": "Voice Development I",
-      "unified_title": "Voice Development I",
+      "title": "Voice Development 1",
+      "unified_title": "Voice Development 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -57983,8 +58334,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-CBEV3-1-001"
       ],
-      "title": "Voice Development II",
-      "unified_title": "Voice Development II",
+      "title": "Voice Development 2",
+      "unified_title": "Voice Development 2",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -59733,8 +60084,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-M3-E-1-001"
       ],
-      "title": "Piano II",
-      "unified_title": "Piano II",
+      "title": "Piano 2",
+      "unified_title": "Piano 2",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -60052,6 +60403,10 @@ window.CPL_STATEWIDE = {
           "credit": "3 hours in Information and Communication Technology Essentials"
         },
         {
+          "course": "CIS 71",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
           "course": "IS 62",
           "credit": "3 hours in Information and Communication Technology Essentials"
         },
@@ -60061,10 +60416,6 @@ window.CPL_STATEWIDE = {
         },
         {
           "course": "CIS 132",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "CIS 71",
           "credit": "3 hours in Information and Communication Technology Essentials"
         },
         {
@@ -60128,8 +60479,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-CEMT1-1-001"
       ],
-      "title": "EMT-II Certification",
-      "unified_title": "EMT-II Certification",
+      "title": "EMT-2 Certification",
+      "unified_title": "EMT-2 Certification",
       "is_classified": true,
       "issuing_agency": "California Emergency Medical Services Authority (EMSA)",
       "training_agency": "",
@@ -62735,8 +63086,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-MGMB-1-001"
       ],
-      "title": "McDonald's MCD-0069 General Manager Business Leader Capstone",
-      "unified_title": "McDonald's MCD-0069 General Manager Business Leader Capstone",
+      "title": "McDonald's General Manager Business Leader Capstone",
+      "unified_title": "McDonald's General Manager Business Leader Capstone",
       "is_classified": true,
       "issuing_agency": "McDonald's Corporation",
       "training_agency": "McDonald's Corporation",
@@ -65165,6 +65516,287 @@ window.CPL_STATEWIDE = {
         }
       ],
       "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "CPLICI-ASE5-1-001|MAPICI-A6C8-1-001|MAPICI-ABSA-1-001|MAPICI-AC(A4-1-001|MAPICI-ASE(20-1-001|MAPICI-ASE(32-1-001|MAPICI-ASE(6-1-001|MAPICI-ASE5-1-001",
+      "exhibit_ids": [
+        "CPLICI-ASE5-1-001",
+        "MAPICI-A6C8-1-001",
+        "MAPICI-ABSA-1-001",
+        "MAPICI-AC(A4-1-001",
+        "MAPICI-ASE(20-1-001",
+        "MAPICI-ASE(32-1-001",
+        "MAPICI-ASE(6-1-001",
+        "MAPICI-ASE5-1-001"
+      ],
+      "title": "ASE A5 — Brakes",
+      "unified_title": "ASE A5 — Brakes",
+      "is_classified": true,
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.98,
+      "quality_flag": "suspect_course_as_exhibit",
+      "raw_titles": [
+        "ASE CERTIFICATION (A5) A5 – BRAKES",
+        "Auto 615 Completion",
+        "Automotive Brake Systems ASE A5",
+        "Automotive Service Excellence (ASE) A5 Certificate",
+        "Automotive Service Excellence (ASE) A5 Certificate Brakes",
+        "Automotive Services Excellence (A5: Brakes) Certificate",
+        "Automotive Services Excellence 5 (A5) Certificate",
+        "Automotive Services Excellence 5 (A5) Certificate + Practical Assessment"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Business and Management",
+      "sector": "Advanced Transportation & Logistics",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 24,
+      "adopter_names": [
+        "Bakersfield College",
+        "Barstow Community College",
+        "CA MAP INITIATIVE COLLEGE",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "De Anza College",
+        "East Los Angeles College",
+        "Evergreen Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "Santa Ana College"
+      ],
+      "potential": 83,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Citrus College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Lemoore College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 107,
+      "credit_recs": [
+        {
+          "course": "AUTOTEC 417",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO B43",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 050",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 115",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO A5",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AT 54",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 33",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 63",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AT 105",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 210",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 050L",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTOMO 501",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 061B",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUT 142",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 54",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "ATEC 5",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUSER 111",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 176G",
+          "credit": "2 hours in Automotive Brake Systems"
+        },
+        {
+          "course": "AUT 50",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUT 5",
+          "credit": "4 hours in Automotive Brakes"
+        },
+        {
+          "course": "AUTO 004",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUTO 33",
+          "credit": "4 hours in Automotive Brakes"
+        },
+        {
+          "course": "AUTO 121",
+          "credit": "4 hours in Automotive Brakes"
+        },
+        {
+          "course": "AUTO 061A",
+          "credit": "4.5 hours in Automotive Brake Systems"
+        },
+        {
+          "course": "AUTO 061B",
+          "credit": "4.5 hours in Electronically Controlled Brake Systems"
+        },
+        {
+          "course": "ACC 55",
+          "credit": "4.5 hours in Automotive Brake Systems"
+        },
+        {
+          "course": "AUTO 121",
+          "credit": "4.5 hours in Automotive Brake Systems"
+        },
+        {
+          "course": "AUTO 121",
+          "credit": "4.5 hours in Electronically Controlled Brake Systems"
+        },
+        {
+          "course": "AUTO 106",
+          "credit": "2.5 hours in Automotive Brake Systems"
+        },
+        {
+          "course": "AUTO 013A",
+          "credit": "4 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 215",
+          "credit": "3 hours in Automotive Brake Systems"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Automotive Braking Systems",
+          "cid": "AUTO 150 X"
+        }
+      ]
     },
     {
       "exhibit_id": "MAPICA-PC-1-001|MAPICI-CP/P-1-001|MAPICI-CPL-1-001|MAPICI-KCET-1-001|MAPICI-PC1-1-001|MAPICI-PC2-1-001|MAPICI-PC3-1-001|MAPICI-PL1-1-001|MAPICI-PL2-1-001|MAPICI-PN(-1-001|MAPICI-PN2-1-001|MAPICI-SETP-1-001",
@@ -70334,8 +70966,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-T2-M-1-001"
       ],
-      "title": "Musical Theater Workshop I",
-      "unified_title": "Musical Theater Workshop I",
+      "title": "Musical Theater Workshop 1",
+      "unified_title": "Musical Theater Workshop 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -70763,8 +71395,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-C2SA1-1-001"
       ],
-      "title": "Programming Concepts and Methodology I",
-      "unified_title": "Programming Concepts and Methodology I",
+      "title": "Programming Concepts and Methodology 1",
+      "unified_title": "Programming Concepts and Methodology 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -75312,8 +75944,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-CBEP2-1-001"
       ],
-      "title": "Patient-Centered Care I and Family-Centered Care of Children",
-      "unified_title": "Patient-Centered Care I and Family-Centered Care of Children",
+      "title": "Patient-Centered Care 1 and Family-Centered Care of Children",
+      "unified_title": "Patient-Centered Care 1 and Family-Centered Care of Children",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -75426,8 +76058,8 @@ window.CPL_STATEWIDE = {
         "MAPCXS-CBEP3-1-001",
         "MAPCXS-CBEP4-1-001"
       ],
-      "title": "Patient-Centered Care II and Maternal Newborn and Mental Health Nursing",
-      "unified_title": "Patient-Centered Care II and Maternal Newborn and Mental Health Nursing",
+      "title": "Patient-Centered Care 2 and Maternal Newborn and Mental Health Nursing",
+      "unified_title": "Patient-Centered Care 2 and Maternal Newborn and Mental Health Nursing",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -75545,8 +76177,8 @@ window.CPL_STATEWIDE = {
         "MAPCXS-CBEP5-1-001",
         "MAPCXS-CBEP6-1-001"
       ],
-      "title": "Patient-Centered Care III and Transition to Professional Practice",
-      "unified_title": "Patient-Centered Care III and Transition to Professional Practice",
+      "title": "Patient-Centered Care 3 and Transition to Professional Practice",
+      "unified_title": "Patient-Centered Care 3 and Transition to Professional Practice",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -78998,8 +79630,8 @@ window.CPL_STATEWIDE = {
         "MAPICI-CBIC2-1-001",
         "MAPICI-CBIR1-1-001"
       ],
-      "title": "Red Hat Linux Administration I",
-      "unified_title": "Red Hat Linux Administration I",
+      "title": "Red Hat Linux Administration 1",
+      "unified_title": "Red Hat Linux Administration 1",
       "is_classified": true,
       "issuing_agency": "Red Hat",
       "training_agency": "",
@@ -82095,8 +82727,8 @@ window.CPL_STATEWIDE = {
         "MAPSAS-CHUS9-1-001",
         "MAPSAS-CUSI1-1-001"
       ],
-      "title": "CLEP History of the United States II",
-      "unified_title": "CLEP History of the United States II",
+      "title": "CLEP History of the United States 2",
+      "unified_title": "CLEP History of the United States 2",
       "is_classified": true,
       "issuing_agency": "College Board",
       "training_agency": "",
@@ -83321,11 +83953,11 @@ window.CPL_STATEWIDE = {
       "total_addressable": 72,
       "credit_recs": [
         {
-          "course": "Computer Information Systems (CIS) 157",
+          "course": "CIS 90",
           "credit": "3 hours in Introduction to Unix/Linux"
         },
         {
-          "course": "CIS 90",
+          "course": "Computer Information Systems (CIS) 157",
           "credit": "3 hours in Introduction to Unix/Linux"
         },
         {
@@ -83669,8 +84301,8 @@ window.CPL_STATEWIDE = {
         "MAPSAS-CHUS8-1-001",
         "MAPSAS-CUSI-1-001"
       ],
-      "title": "CLEP History of the United States I",
-      "unified_title": "CLEP History of the United States I",
+      "title": "CLEP History of the United States 1",
+      "unified_title": "CLEP History of the United States 1",
       "is_classified": true,
       "issuing_agency": "College Board",
       "training_agency": "",
@@ -83984,8 +84616,8 @@ window.CPL_STATEWIDE = {
         "MAPSAS-CWCI80-1-001",
         "MAPSAS-CWCI82-1-001"
       ],
-      "title": "CLEP Western Civilization I",
-      "unified_title": "CLEP Western Civilization I",
+      "title": "CLEP Western Civilization 1",
+      "unified_title": "CLEP Western Civilization 1",
       "is_classified": true,
       "issuing_agency": "College Board",
       "training_agency": "",
@@ -84323,8 +84955,8 @@ window.CPL_STATEWIDE = {
         "MAPSAS-CWCI83-1-001",
         "MAPSAS-CWCI9-1-001"
       ],
-      "title": "CLEP Western Civilization II",
-      "unified_title": "CLEP Western Civilization II",
+      "title": "CLEP Western Civilization 2",
+      "unified_title": "CLEP Western Civilization 2",
       "is_classified": true,
       "issuing_agency": "College Board",
       "training_agency": "",
@@ -88557,1056 +89189,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICI-ASEG-1-001",
-      "exhibit_ids": [
-        "MAPICI-ASEG-1-001"
-      ],
-      "title": "ASE G1 — Auto Maintenance and Light Repair (with Practical Assessment)",
-      "unified_title": "ASE G1 — Auto Maintenance and Light Repair (with Practical Assessment)",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.85,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "Automotive Services Excellence G1 Certificate + Practical Assessment"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Evergreen Valley College"
-      ],
-      "potential": 69,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTO 102",
-          "credit": "3.5 hours in Automotive Systems"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICI-ASE4-1-001",
-      "exhibit_ids": [
-        "MAPICI-ASE4-1-001"
-      ],
-      "title": "ASE A4 — Suspension and Steering (with Practical Assessment)",
-      "unified_title": "ASE A4 — Suspension and Steering (with Practical Assessment)",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.85,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "Automotive Services Excellence 4 (A4) Certificate + Practical Assessment"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Evergreen Valley College"
-      ],
-      "potential": 69,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTO 105",
-          "credit": "3 hours in Suspension, Steering, and Alignment"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICI-ASE5-1-001",
-      "exhibit_ids": [
-        "MAPICI-ASE5-1-001"
-      ],
-      "title": "ASE A5 — Brakes (with Practical Assessment)",
-      "unified_title": "ASE A5 — Brakes (with Practical Assessment)",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.85,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "Automotive Services Excellence 5 (A5) Certificate + Practical Assessment"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Evergreen Valley College"
-      ],
-      "potential": 69,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTO 106",
-          "credit": "2.5 hours in Automotive Brake Systems"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICI-ASEL1-1-001",
-      "exhibit_ids": [
-        "MAPICI-ASEL1-1-001"
-      ],
-      "title": "ASE L1 — Advanced Engine Performance Specialist (with Practical Assessment)",
-      "unified_title": "ASE L1 — Advanced Engine Performance Specialist (with Practical Assessment)",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.85,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "Automotive Services Excellence L1 Certificate + Practical Assessment"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Evergreen Valley College"
-      ],
-      "potential": 69,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTO 118",
-          "credit": "2.5 hours in Fuel Systems/Emission Controls"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICI-ASE8-1-001",
-      "exhibit_ids": [
-        "MAPICI-ASE8-1-001"
-      ],
-      "title": "ASE A8 — Engine Performance (with Practical Assessment)",
-      "unified_title": "ASE A8 — Engine Performance (with Practical Assessment)",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.85,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "Automotive Services Excellence 8 (A8) Certificate + Practical Assessment"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Evergreen Valley College"
-      ],
-      "potential": 69,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTO 119",
-          "credit": "2.5 hours in Introduction to Engine Performance"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICI-ASE2-1-001",
-      "exhibit_ids": [
-        "MAPICI-ASE2-1-001"
-      ],
-      "title": "ASE A2 — Automatic Transmission/Transaxle (with Practical Assessment)",
-      "unified_title": "ASE A2 — Automatic Transmission/Transaxle (with Practical Assessment)",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.85,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "Automotive Services Excellence 2 (A2) Certificate + Practical Assessment"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Evergreen Valley College"
-      ],
-      "potential": 69,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTO 120",
-          "credit": "2.5 hours in Automatic Transmission Systems"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICI-ASE3-1-001",
-      "exhibit_ids": [
-        "MAPICI-ASE3-1-001"
-      ],
-      "title": "ASE A3 — Manual Drive Train and Axles (with Practical Assessment)",
-      "unified_title": "ASE A3 — Manual Drive Train and Axles (with Practical Assessment)",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.85,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "Automotive Services Excellence 3 (A3) Certificate + Practical Assessment"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Evergreen Valley College"
-      ],
-      "potential": 69,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTO 121",
-          "credit": "2 hours in Manual Transmission and Drivetrain Systems"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICI-ASE7-1-001",
-      "exhibit_ids": [
-        "MAPICI-ASE7-1-001"
-      ],
-      "title": "ASE A7 — Heating and Air Conditioning (with Practical Assessment)",
-      "unified_title": "ASE A7 — Heating and Air Conditioning (with Practical Assessment)",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.85,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "Automotive Services Excellence 7 (A7) Certificate + Practical Assessment"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Evergreen Valley College"
-      ],
-      "potential": 69,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTO 135",
-          "credit": "2 hours in Air Conditioning Systems"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICI-ASE6-1-001",
-      "exhibit_ids": [
-        "MAPICI-ASE6-1-001"
-      ],
-      "title": "ASE A6 — Electrical/Electronic Systems (with Practical Assessment)",
-      "unified_title": "ASE A6 — Electrical/Electronic Systems (with Practical Assessment)",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.85,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "Automotive Services Excellence 6 (A6) Certificate + Practical Assessment"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Evergreen Valley College"
-      ],
-      "potential": 69,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTO 170",
-          "credit": "3 hours in Electrical Systems"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICI-ASE1-1-001",
-      "exhibit_ids": [
-        "MAPICI-ASE1-1-001"
-      ],
-      "title": "ASE A1 — Engine Repair (with Practical Assessment)",
-      "unified_title": "ASE A1 — Engine Repair (with Practical Assessment)",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.85,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "Automotive Services Excellence 1 (A1) Certificate + Practical Assessment"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Evergreen Valley College"
-      ],
-      "potential": 69,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTO 171",
-          "credit": "3 hours in Engine Systems"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPCXI-ACAT-1-001",
       "exhibit_ids": [
         "MAPCXI-ACAT-1-001"
@@ -92187,327 +91769,12 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICI-A6C4-1-001",
-      "exhibit_ids": [
-        "MAPICI-A6C4-1-001"
-      ],
-      "title": "Automative Engine Repair",
-      "unified_title": "Automative Engine Repair",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.5,
-      "confidence_issuer": 1.0,
-      "quality_flag": "suspect_course_as_exhibit",
-      "raw_titles": [
-        "Auto 611 Completion"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Long Beach City College"
-      ],
-      "potential": 69,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTO 211",
-          "credit": "3 hours in Automotive Engine Repair"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICI-A6C5-1-001",
-      "exhibit_ids": [
-        "MAPICI-A6C5-1-001"
-      ],
-      "title": "Automative Automatic Transmissions",
-      "unified_title": "Automative Automatic Transmissions",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.5,
-      "confidence_issuer": 1.0,
-      "quality_flag": "suspect_course_as_exhibit",
-      "raw_titles": [
-        "Auto 612 Completion"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Long Beach City College"
-      ],
-      "potential": 69,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTO 212",
-          "credit": "3 hours in Automotive Automatic Transmission"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICI-A6C6-1-001",
-      "exhibit_ids": [
-        "MAPICI-A6C6-1-001"
-      ],
-      "title": "Automative Manual Transmission",
-      "unified_title": "Automative Manual Transmission",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.5,
-      "confidence_issuer": 1.0,
-      "quality_flag": "suspect_course_as_exhibit",
-      "raw_titles": [
-        "Auto 613 Completion"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Long Beach City College"
-      ],
-      "potential": 69,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTO 213",
-          "credit": "3 hours in Automotive Manual Transmission"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPICI-A6C7-1-001",
       "exhibit_ids": [
         "MAPICI-A6C7-1-001"
       ],
-      "title": "Automative Wheel Alignment",
-      "unified_title": "Automative Wheel Alignment",
+      "title": "Automotive Wheel Alignment",
+      "unified_title": "Automotive Wheel Alignment",
       "is_classified": true,
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
@@ -92602,216 +91869,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "AUTO 214",
           "credit": "3 hours in Automotive Wheel Alignment"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICI-A6C8-1-001",
-      "exhibit_ids": [
-        "MAPICI-A6C8-1-001"
-      ],
-      "title": "Automative Brake System",
-      "unified_title": "Automative Brake System",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.5,
-      "confidence_issuer": 1.0,
-      "quality_flag": "suspect_course_as_exhibit",
-      "raw_titles": [
-        "Auto 615 Completion"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Long Beach City College"
-      ],
-      "potential": 69,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTO 215",
-          "credit": "3 hours in Automotive Brake Systems"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICI-A61-1-001",
-      "exhibit_ids": [
-        "MAPICI-A61-1-001"
-      ],
-      "title": "Automative Electrical Systems",
-      "unified_title": "Automative Electrical Systems",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.5,
-      "confidence_issuer": 1.0,
-      "quality_flag": "suspect_course_as_exhibit",
-      "raw_titles": [
-        "Auto 616"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Long Beach City College"
-      ],
-      "potential": 69,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTO 216",
-          "credit": "3 hours in Automotive Electrical Systems"
         }
       ],
       "authoritative_recs": []
@@ -92926,8 +91983,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-A6C10-1-001"
       ],
-      "title": "Automative Fuel Systems",
-      "unified_title": "Automative Fuel Systems",
+      "title": "Automotive Fuel Systems",
+      "unified_title": "Automotive Fuel Systems",
       "is_classified": true,
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
@@ -93022,111 +92079,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "AUTO 218",
           "credit": "3 hours in Automotive Fuel Systems"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICI-A6C11-1-001",
-      "exhibit_ids": [
-        "MAPICI-A6C11-1-001"
-      ],
-      "title": "Automotive Light Diesel Engines",
-      "unified_title": "Automotive Light Diesel Engines",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.5,
-      "confidence_issuer": 1.0,
-      "quality_flag": "suspect_course_as_exhibit",
-      "raw_titles": [
-        "Auto 619 Completion"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Long Beach City College"
-      ],
-      "potential": 69,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTO 219",
-          "credit": "3 hours in Automotive Light DIesel Engines"
         }
       ],
       "authoritative_recs": []
@@ -95945,8 +94897,8 @@ window.CPL_STATEWIDE = {
         "MAPSAS-CF[L-1-001",
         "MAPSAS-CF–L-1-001"
       ],
-      "title": "CLEP French Language Level II",
-      "unified_title": "CLEP French Language Level II",
+      "title": "CLEP French Language Level 2",
+      "unified_title": "CLEP French Language Level 2",
       "is_classified": true,
       "issuing_agency": "College Board",
       "training_agency": "",
@@ -97314,8 +96266,8 @@ window.CPL_STATEWIDE = {
         "MAPSAS-CGLL4-1-001",
         "MAPSAS-CG–L-1-001"
       ],
-      "title": "CLEP German Language Level II",
-      "unified_title": "CLEP German Language Level II",
+      "title": "CLEP German Language Level 2",
+      "unified_title": "CLEP German Language Level 2",
       "is_classified": true,
       "issuing_agency": "College Board",
       "training_agency": "",
@@ -99983,8 +98935,8 @@ window.CPL_STATEWIDE = {
         "MAPSAS-CSLL4-1-001",
         "MAPSAS-CS[L-1-001"
       ],
-      "title": "CLEP Spanish Language Level II",
-      "unified_title": "CLEP Spanish Language Level II",
+      "title": "CLEP Spanish Language Level 2",
+      "unified_title": "CLEP Spanish Language Level 2",
       "is_classified": true,
       "issuing_agency": "College Board",
       "training_agency": "",
@@ -102104,8 +101056,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-CFFT4-1-001"
       ],
-      "title": "Center for Financial Training (CFT) — Marketing (CFTA-0012)",
-      "unified_title": "Center for Financial Training (CFT) — Marketing (CFTA-0012)",
+      "title": "Center for Financial Training (CFT) — Marketing",
+      "unified_title": "Center for Financial Training (CFT) — Marketing",
       "is_classified": true,
       "issuing_agency": "Center for Financial Training (CFT)",
       "training_agency": "",
@@ -102602,8 +101554,9 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICI-AC(A8-1-001|MAPICI-ASE(1-1-001|MAPICI-ASE(26-1-001|MAPICI-ASE(36-1-001|MAPICI-ASE(8-1-001",
+      "exhibit_id": "MAPICI-A6C11-1-001|MAPICI-AC(A8-1-001|MAPICI-ASE(1-1-001|MAPICI-ASE(26-1-001|MAPICI-ASE(36-1-001|MAPICI-ASE(8-1-001",
       "exhibit_ids": [
+        "MAPICI-A6C11-1-001",
         "MAPICI-AC(A8-1-001",
         "MAPICI-ASE(1-1-001",
         "MAPICI-ASE(26-1-001",
@@ -102617,9 +101570,10 @@ window.CPL_STATEWIDE = {
       "training_agency": "",
       "confidence_title": 0.98,
       "confidence_issuer": 0.98,
-      "quality_flag": "",
+      "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
         "ASE CERTIFICATION (A9) A9 – LIGHT VEHICLE DIESEL ENGINES",
+        "Auto 619 Completion",
         "Automotive Service Excellence (A9)",
         "Automotive Service Excellence (ASE) A9",
         "Automotive Service Excellence (ASE) A9 Certificate",
@@ -104806,8 +103760,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-HS&S-1-001"
       ],
-      "title": "Field Studies & Seminar I",
-      "unified_title": "Field Studies & Seminar I",
+      "title": "Field Studies & Seminar 1",
+      "unified_title": "Field Studies & Seminar 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -105492,8 +104446,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXA-II-1-001"
       ],
-      "title": "Ironworker Apprenticeship — Reinforcing II",
-      "unified_title": "Ironworker Apprenticeship — Reinforcing II",
+      "title": "Ironworker Apprenticeship — Reinforcing 2",
+      "unified_title": "Ironworker Apprenticeship — Reinforcing 2",
       "is_classified": true,
       "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
       "training_agency": "Ironworker Joint Apprenticeship Training Committee",
@@ -105688,8 +104642,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXA-IWI-1-001"
       ],
-      "title": "Ironworker Apprenticeship — Welding I",
-      "unified_title": "Ironworker Apprenticeship — Welding I",
+      "title": "Ironworker Apprenticeship — Welding 1",
+      "unified_title": "Ironworker Apprenticeship — Welding 1",
       "is_classified": true,
       "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
       "training_agency": "Ironworker Joint Apprenticeship Training Committee",
@@ -105786,8 +104740,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXA-WI-1-001"
       ],
-      "title": "Ironworker Apprenticeship — Welding II",
-      "unified_title": "Ironworker Apprenticeship — Welding II",
+      "title": "Ironworker Apprenticeship — Welding 2",
+      "unified_title": "Ironworker Apprenticeship — Welding 2",
       "is_classified": true,
       "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
       "training_agency": "Ironworker Joint Apprenticeship Training Committee",
@@ -105982,8 +104936,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXA-IPTI-1-001"
       ],
-      "title": "Ironworker Apprenticeship — Post Tensioning I",
-      "unified_title": "Ironworker Apprenticeship — Post Tensioning I",
+      "title": "Ironworker Apprenticeship — Post Tensioning 1",
+      "unified_title": "Ironworker Apprenticeship — Post Tensioning 1",
       "is_classified": true,
       "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
       "training_agency": "Ironworker Joint Apprenticeship Training Committee",
@@ -106080,8 +105034,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXA-IPTI1-1-001"
       ],
-      "title": "Ironworker Apprenticeship — Post Tensioning II",
-      "unified_title": "Ironworker Apprenticeship — Post Tensioning II",
+      "title": "Ironworker Apprenticeship — Post Tensioning 2",
+      "unified_title": "Ironworker Apprenticeship — Post Tensioning 2",
       "is_classified": true,
       "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
       "training_agency": "Ironworker Joint Apprenticeship Training Committee",
@@ -106472,8 +105426,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXA-SSI-1-001"
       ],
-      "title": "Ironworker Structural Steel I",
-      "unified_title": "Ironworker Structural Steel I",
+      "title": "Ironworker Structural Steel 1",
+      "unified_title": "Ironworker Structural Steel 1",
       "is_classified": true,
       "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
       "training_agency": "Ironworkers Joint Apprenticeship and Training Committee",
@@ -106570,8 +105524,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXA-ISSI-1-001"
       ],
-      "title": "Ironworker Structural Steel II",
-      "unified_title": "Ironworker Structural Steel II",
+      "title": "Ironworker Structural Steel 2",
+      "unified_title": "Ironworker Structural Steel 2",
       "is_classified": true,
       "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
       "training_agency": "Ironworkers Joint Apprenticeship and Training Committee",
@@ -106668,8 +105622,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXA-IWI1-1-001"
       ],
-      "title": "Ironworker Welding III",
-      "unified_title": "Ironworker Welding III",
+      "title": "Ironworker Welding 3",
+      "unified_title": "Ironworker Welding 3",
       "is_classified": true,
       "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
       "training_agency": "Ironworkers Joint Apprenticeship and Training Committee",
@@ -106766,8 +105720,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXA-SAOI-1-001"
       ],
-      "title": "Ironworker Structural, Architectural and Ornamental I",
-      "unified_title": "Ironworker Structural, Architectural and Ornamental I",
+      "title": "Ironworker Structural, Architectural and Ornamental 1",
+      "unified_title": "Ironworker Structural, Architectural and Ornamental 1",
       "is_classified": true,
       "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
       "training_agency": "Ironworkers Joint Apprenticeship and Training Committee",
@@ -106864,8 +105818,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXA-IAI-1-001"
       ],
-      "title": "Ironworker Architectural II",
-      "unified_title": "Ironworker Architectural II",
+      "title": "Ironworker Architectural 2",
+      "unified_title": "Ironworker Architectural 2",
       "is_classified": true,
       "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
       "training_agency": "Ironworkers Joint Apprenticeship and Training Committee",
@@ -106962,8 +105916,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXA-IAI1-1-001"
       ],
-      "title": "Ironworker Architectural III",
-      "unified_title": "Ironworker Architectural III",
+      "title": "Ironworker Architectural 3",
+      "unified_title": "Ironworker Architectural 3",
       "is_classified": true,
       "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
       "training_agency": "Ironworkers Joint Apprenticeship and Training Committee",
@@ -108729,168 +107683,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "CPLICI-ASEL-1-001|MAPICI-AEPA-1-001|MAPICI-ASE(11-1-001|MAPICI-ASE(2-1-001|MAPICI-ASE(24-1-001",
-      "exhibit_ids": [
-        "CPLICI-ASEL-1-001",
-        "MAPICI-AEPA-1-001",
-        "MAPICI-ASE(11-1-001",
-        "MAPICI-ASE(2-1-001",
-        "MAPICI-ASE(24-1-001"
-      ],
-      "title": "ASE L1 — Advanced Engine Performance Specialist",
-      "unified_title": "ASE L1 — Advanced Engine Performance Specialist",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "Advanced Engine Performance ASE L1",
-        "Auto Service Excellence (ACE) L1",
-        "Automotive Service Excellence (ASE) L1 Certificate",
-        "Automotive Service Excellence (ASE) L1: Advanced Engine Performance Specialist Certification Test",
-        "Automotive Services Excellence L1 Certificate"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 9,
-      "adopter_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Chaffey College",
-        "College of the Desert",
-        "De Anza College",
-        "Las Positas College",
-        "Lassen College",
-        "Merced College",
-        "San Diego Miramar College"
-      ],
-      "potential": 61,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTOTEC 423",
-          "credit": "3-4 hours in Advanced Engine Performance"
-        },
-        {
-          "course": "AUTO B34",
-          "credit": "3-4 hours in Advanced Engine Performance"
-        },
-        {
-          "course": "AUTO L1",
-          "credit": "3-4 hours in Advanced Engine Performance"
-        },
-        {
-          "course": "AT 84",
-          "credit": "3-4 hours in Advanced Engine Performance"
-        },
-        {
-          "course": "AUTO 58",
-          "credit": "3-4 hours in Advanced Engine Performance"
-        },
-        {
-          "course": "AUTO 167G",
-          "credit": "2 hours in Advanced Engine Performance"
-        },
-        {
-          "course": "AUTO 060D",
-          "credit": "4.5 hours in Ignition Analysis and Oscilloscope Diagnosis"
-        },
-        {
-          "course": "AUTO 060E",
-          "credit": "4.5 hours in Automotive Fuel Injection"
-        },
-        {
-          "course": "ATEC 10",
-          "credit": "3 hours in Automotive Advanced Engine Performance"
-        },
-        {
-          "course": "ATEC 6A",
-          "credit": "4 hours in Automotive Electrical and Electronic Fundamentals"
-        },
-        {
-          "course": "ATEC 8",
-          "credit": "4 hours in Automotive Air and Fuel Delivery Systems"
-        },
-        {
-          "course": "AUTO 014B",
-          "credit": "4 hours in Advanced Engine Management"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3-4 hours in Advanced Engine Performance",
-          "cid": ""
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPICI-RESE-1-001",
       "exhibit_ids": [
         "MAPICI-RESE-1-001"
@@ -110466,8 +109258,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCxS-VBPI-1-001"
       ],
-      "title": "Visual Basic Programming I",
-      "unified_title": "Visual Basic Programming I",
+      "title": "Visual Basic Programming 1",
+      "unified_title": "Visual Basic Programming 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -110751,6 +109543,174 @@ window.CPL_STATEWIDE = {
         }
       ],
       "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "CPLICI-ASEL-1-001|MAPICI-AEPA-1-001|MAPICI-ASE(11-1-001|MAPICI-ASE(2-1-001|MAPICI-ASE(24-1-001|MAPICI-ASEL1-1-001",
+      "exhibit_ids": [
+        "CPLICI-ASEL-1-001",
+        "MAPICI-AEPA-1-001",
+        "MAPICI-ASE(11-1-001",
+        "MAPICI-ASE(2-1-001",
+        "MAPICI-ASE(24-1-001",
+        "MAPICI-ASEL1-1-001"
+      ],
+      "title": "ASE L1 — Advanced Engine Performance Specialist",
+      "unified_title": "ASE L1 — Advanced Engine Performance Specialist",
+      "is_classified": true,
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.98,
+      "quality_flag": "",
+      "raw_titles": [
+        "Advanced Engine Performance ASE L1",
+        "Auto Service Excellence (ACE) L1",
+        "Automotive Service Excellence (ASE) L1 Certificate",
+        "Automotive Service Excellence (ASE) L1: Advanced Engine Performance Specialist Certification Test",
+        "Automotive Services Excellence L1 Certificate",
+        "Automotive Services Excellence L1 Certificate + Practical Assessment"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 10,
+      "adopter_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "Chaffey College",
+        "College of the Desert",
+        "De Anza College",
+        "Evergreen Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Merced College",
+        "San Diego Miramar College"
+      ],
+      "potential": 60,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 70,
+      "credit_recs": [
+        {
+          "course": "AUTOTEC 423",
+          "credit": "3-4 hours in Advanced Engine Performance"
+        },
+        {
+          "course": "AUTO B34",
+          "credit": "3-4 hours in Advanced Engine Performance"
+        },
+        {
+          "course": "AUTO L1",
+          "credit": "3-4 hours in Advanced Engine Performance"
+        },
+        {
+          "course": "AT 84",
+          "credit": "3-4 hours in Advanced Engine Performance"
+        },
+        {
+          "course": "AUTO 58",
+          "credit": "3-4 hours in Advanced Engine Performance"
+        },
+        {
+          "course": "AUTO 167G",
+          "credit": "2 hours in Advanced Engine Performance"
+        },
+        {
+          "course": "AUTO 060D",
+          "credit": "4.5 hours in Ignition Analysis and Oscilloscope Diagnosis"
+        },
+        {
+          "course": "AUTO 060E",
+          "credit": "4.5 hours in Automotive Fuel Injection"
+        },
+        {
+          "course": "ATEC 10",
+          "credit": "3 hours in Automotive Advanced Engine Performance"
+        },
+        {
+          "course": "ATEC 6A",
+          "credit": "4 hours in Automotive Electrical and Electronic Fundamentals"
+        },
+        {
+          "course": "ATEC 8",
+          "credit": "4 hours in Automotive Air and Fuel Delivery Systems"
+        },
+        {
+          "course": "AUTO 118",
+          "credit": "2.5 hours in Fuel Systems/Emission Controls"
+        },
+        {
+          "course": "AUTO 014B",
+          "credit": "4 hours in Advanced Engine Management"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Advanced Engine Performance",
+          "cid": ""
+        }
+      ]
     },
     {
       "exhibit_id": "MAPICI-RESP-1-001",
@@ -113050,185 +112010,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "CPLICI-ASEG-1-001|MAPICI-AC(G-1-001|MAPICI-ASE(-1-001|MAPICI-ASE(38-1-001|MAPICI-ASE(39-1-001|MAPICI-ASE(5-1-001",
-      "exhibit_ids": [
-        "CPLICI-ASEG-1-001",
-        "MAPICI-AC(G-1-001",
-        "MAPICI-ASE(-1-001",
-        "MAPICI-ASE(38-1-001",
-        "MAPICI-ASE(39-1-001",
-        "MAPICI-ASE(5-1-001"
-      ],
-      "title": "ASE G1 — Auto Maintenance and Light Repair",
-      "unified_title": "ASE G1 — Auto Maintenance and Light Repair",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "ASE CERTIFICATION (G1) G1- AUTO MAINTENANCE AND LIGHT REPAIR",
-        "Automotive Service Excellence (ASE) G1 Certificate",
-        "Automotive Service Excellence (ASE) G1 Certificate - Auto Maintenance and Light Repair",
-        "Automotive Service Excellence (ASE) G1: Auto Maintenance and Light Repair",
-        "Automotive Services Excellence G1 Certificate"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 11,
-      "adopter_names": [
-        "Bakersfield College",
-        "Chaffey College",
-        "Copper Mountain College",
-        "De Anza College",
-        "East Los Angeles College",
-        "Lassen College",
-        "Long Beach City College",
-        "Mendocino College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "Santa Ana College"
-      ],
-      "potential": 59,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTOTEC 10",
-          "credit": "3 hours in Quick Service"
-        },
-        {
-          "course": "AUTO 065",
-          "credit": "3 hours in Quick Service"
-        },
-        {
-          "course": "AUTO 102",
-          "credit": "3 hours in Quick Service"
-        },
-        {
-          "course": "AT 50",
-          "credit": "3 hours in Quick Service"
-        },
-        {
-          "course": "AUTOMO 101",
-          "credit": "3 hours in Quick Service"
-        },
-        {
-          "course": "AUTO 050A",
-          "credit": "3 hours in Quick Service"
-        },
-        {
-          "course": "AUT 50",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUTO 004",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUTO B11",
-          "credit": "3 to 4 hours in Quick Service"
-        },
-        {
-          "course": "AUT 51",
-          "credit": "3 to 4 hours in Quick Service"
-        },
-        {
-          "course": "AUTO 050A",
-          "credit": "4 hours in Introduction to Automotive Principles"
-        },
-        {
-          "course": "AUTO 050B",
-          "credit": "2 hours in Applied Automotive Principles"
-        },
-        {
-          "course": "AUTO 200",
-          "credit": "3 hours in Introduction to Automotive Technology"
-        },
-        {
-          "course": "AUTO 201",
-          "credit": "1 hour in Automotive Lubrication Service"
-        },
-        {
-          "course": "AUTO 202",
-          "credit": "1 hour in Automotive Tire Service"
-        },
-        {
-          "course": "AUTO 102",
-          "credit": "3 hours in Introduction to Automotive"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 hours in Quick Service",
-          "cid": ""
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPCBES-REP-1-001|MAPCXS-REP-1-001|MAPCxS-PORE-1-001",
       "exhibit_ids": [
         "MAPCBES-REP-1-001",
@@ -114775,6 +113556,191 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "CPLICI-ASEG-1-001|MAPICI-AC(G-1-001|MAPICI-ASE(-1-001|MAPICI-ASE(38-1-001|MAPICI-ASE(39-1-001|MAPICI-ASE(5-1-001|MAPICI-ASEG-1-001",
+      "exhibit_ids": [
+        "CPLICI-ASEG-1-001",
+        "MAPICI-AC(G-1-001",
+        "MAPICI-ASE(-1-001",
+        "MAPICI-ASE(38-1-001",
+        "MAPICI-ASE(39-1-001",
+        "MAPICI-ASE(5-1-001",
+        "MAPICI-ASEG-1-001"
+      ],
+      "title": "ASE G1 — Auto Maintenance and Light Repair",
+      "unified_title": "ASE G1 — Auto Maintenance and Light Repair",
+      "is_classified": true,
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.98,
+      "quality_flag": "",
+      "raw_titles": [
+        "ASE CERTIFICATION (G1) G1- AUTO MAINTENANCE AND LIGHT REPAIR",
+        "Automotive Service Excellence (ASE) G1 Certificate",
+        "Automotive Service Excellence (ASE) G1 Certificate - Auto Maintenance and Light Repair",
+        "Automotive Service Excellence (ASE) G1: Auto Maintenance and Light Repair",
+        "Automotive Services Excellence G1 Certificate",
+        "Automotive Services Excellence G1 Certificate + Practical Assessment"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 12,
+      "adopter_names": [
+        "Bakersfield College",
+        "Chaffey College",
+        "Copper Mountain College",
+        "De Anza College",
+        "East Los Angeles College",
+        "Evergreen Valley College",
+        "Lassen College",
+        "Long Beach City College",
+        "Mendocino College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "Santa Ana College"
+      ],
+      "potential": 58,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Las Positas College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 70,
+      "credit_recs": [
+        {
+          "course": "AUTOTEC 10",
+          "credit": "3 hours in Quick Service"
+        },
+        {
+          "course": "AUTO 065",
+          "credit": "3 hours in Quick Service"
+        },
+        {
+          "course": "AUTO 102",
+          "credit": "3 hours in Quick Service"
+        },
+        {
+          "course": "AT 50",
+          "credit": "3 hours in Quick Service"
+        },
+        {
+          "course": "AUTOMO 101",
+          "credit": "3 hours in Quick Service"
+        },
+        {
+          "course": "AUTO 050A",
+          "credit": "3 hours in Quick Service"
+        },
+        {
+          "course": "AUT 50",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUTO 004",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUTO B11",
+          "credit": "3 to 4 hours in Quick Service"
+        },
+        {
+          "course": "AUT 51",
+          "credit": "3 to 4 hours in Quick Service"
+        },
+        {
+          "course": "AUTO 050A",
+          "credit": "4 hours in Introduction to Automotive Principles"
+        },
+        {
+          "course": "AUTO 050B",
+          "credit": "2 hours in Applied Automotive Principles"
+        },
+        {
+          "course": "AUTO 102",
+          "credit": "3.5 hours in Automotive Systems"
+        },
+        {
+          "course": "AUTO 200",
+          "credit": "3 hours in Introduction to Automotive Technology"
+        },
+        {
+          "course": "AUTO 201",
+          "credit": "1 hour in Automotive Lubrication Service"
+        },
+        {
+          "course": "AUTO 202",
+          "credit": "1 hour in Automotive Tire Service"
+        },
+        {
+          "course": "AUTO 102",
+          "credit": "3 hours in Introduction to Automotive"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Quick Service",
+          "cid": ""
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPICI-FTRE-1-001",
       "exhibit_ids": [
         "MAPICI-FTRE-1-001"
@@ -116005,8 +114971,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-SSOF-1-001"
       ],
-      "title": "Swiftwater Rescue Technician I",
-      "unified_title": "Swiftwater Rescue Technician I",
+      "title": "Swiftwater Rescue Technician 1",
+      "unified_title": "Swiftwater Rescue Technician 1",
       "is_classified": true,
       "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
@@ -117568,8 +116534,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-SF2+-1-001"
       ],
-      "title": "SFT Firefighter II",
-      "unified_title": "SFT Firefighter II",
+      "title": "SFT Firefighter 2",
+      "unified_title": "SFT Firefighter 2",
       "is_classified": true,
       "issuing_agency": "California State Fire Training (SFT)",
       "training_agency": "",
@@ -119804,106 +118770,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPPRA-F3FS-1-001|MAPPRA-F3FS1-1-001",
-      "exhibit_ids": [
-        "MAPPRA-F3FS-1-001",
-        "MAPPRA-F3FS1-1-001"
-      ],
-      "title": "Fire Service In-Service Training — Command & Control",
-      "unified_title": "Fire Service In-Service Training — Command & Control",
-      "is_classified": true,
-      "issuing_agency": "California State Fire Training (SFT)",
-      "training_agency": "",
-      "confidence_title": 0.65,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "FTECH 323B Fire Service In-Service Training/Command & Control - Internship/Apprenticeship",
-        "FTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship"
-      ],
-      "cpl_type": "Portfolio Review",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Modesto Junior College"
-      ],
-      "potential": 58,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Chabot College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Imperial Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Ohlone College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "San Diego Miramar College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Southwestern College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "Yuba College"
-      ],
-      "total_addressable": 59,
-      "credit_recs": [
-        {
-          "course": "FTECH 323XABC",
-          "credit": "2 hours in Fire Service In-Service Training/Command & Control"
-        },
-        {
-          "course": "FTECH 323XABC",
-          "credit": "0.5 hours in Fire Service In-Service Training/Command & Control"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPPRA-F3FI-1-001",
       "exhibit_ids": [
         "MAPPRA-F3FI-1-001"
@@ -120488,8 +119354,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-NFO2-1-001"
       ],
-      "title": "Fire Officer II",
-      "unified_title": "Fire Officer II",
+      "title": "Fire Officer 2",
+      "unified_title": "Fire Officer 2",
       "is_classified": true,
       "issuing_agency": "National Fire Protection Association (NFPA)",
       "training_agency": "",
@@ -129217,8 +128083,8 @@ window.CPL_STATEWIDE = {
         "MAPCXS-HSA-2-1-001",
         "MAPCXS-HSA-4-1-001"
       ],
-      "title": "Graphic Design I",
-      "unified_title": "Graphic Design I",
+      "title": "Graphic Design 1",
+      "unified_title": "Graphic Design 1",
       "is_classified": true,
       "issuing_agency": "Cleveland High School",
       "training_agency": "Cleveland High School",
@@ -129319,8 +128185,8 @@ window.CPL_STATEWIDE = {
         "MAPCBES-42-1-001",
         "MAPCBES-C-1-001"
       ],
-      "title": "Restaurant Service and Catering II",
-      "unified_title": "Restaurant Service and Catering II",
+      "title": "Restaurant Service and Catering 2",
+      "unified_title": "Restaurant Service and Catering 2",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -133540,8 +132406,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-M2-R-1-001"
       ],
-      "title": "Recording Arts Workshop I",
-      "unified_title": "Recording Arts Workshop I",
+      "title": "Recording Arts Workshop 1",
+      "unified_title": "Recording Arts Workshop 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -133630,8 +132496,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-M2-R1-1-001"
       ],
-      "title": "Recording Arts Workshop II",
-      "unified_title": "Recording Arts Workshop II",
+      "title": "Recording Arts Workshop 2",
+      "unified_title": "Recording Arts Workshop 2",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -133720,8 +132586,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-M2-R2-1-001"
       ],
-      "title": "Recording Arts Workshop III",
-      "unified_title": "Recording Arts Workshop III",
+      "title": "Recording Arts Workshop 3",
+      "unified_title": "Recording Arts Workshop 3",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -133810,8 +132676,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-M6-J-1-001"
       ],
-      "title": "Jazz and Popular Music Guitar I",
-      "unified_title": "Jazz and Popular Music Guitar I",
+      "title": "Jazz and Popular Music Guitar 1",
+      "unified_title": "Jazz and Popular Music Guitar 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -134823,200 +133689,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "CPLICI-ASE8-1-001|MAPICI-AC(A7-1-001|MAPICI-ASE(22-1-001|MAPICI-ASE(35-1-001|MAPICI-EPAA-1-001",
-      "exhibit_ids": [
-        "CPLICI-ASE8-1-001",
-        "MAPICI-AC(A7-1-001",
-        "MAPICI-ASE(22-1-001",
-        "MAPICI-ASE(35-1-001",
-        "MAPICI-EPAA-1-001"
-      ],
-      "title": "ASE A8 — Engine Performance",
-      "unified_title": "ASE A8 — Engine Performance",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "ASE CERTIFICATION (A8) A8 – ENGINE PERFORMANCE",
-        "Automotive Service Excellence (ASE) A8 Certificate",
-        "Automotive Service Excellence (ASE) A8 Certificate Engine Performance",
-        "Automotive Services Excellence 8 (A8) Certificate",
-        "Engine Performance ASE A8"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 18,
-      "adopter_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Chaffey College",
-        "College of the Desert",
-        "Columbia College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "De Anza College",
-        "East Los Angeles College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Mendocino College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "Santa Ana College"
-      ],
-      "potential": 52,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Compton College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTOTEC 422",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AUTO B33",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AUTO 118",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AUTO A8",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AT 82",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AT 106",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AUTO 150",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AUTO 062",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AUTO 062L",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AUTOMO 801",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AUTO 060C",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AUT 166",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "ATEC 8",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AUSER 203",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AUTO 165G",
-          "credit": "2 hours in Engine Performance"
-        },
-        {
-          "course": "AUT 50",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUT 8A",
-          "credit": "4 hours in Auto Engine Performance 1"
-        },
-        {
-          "course": "AUTO 004",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUTO 014A",
-          "credit": "4 hours in Automotive Engine Management"
-        },
-        {
-          "course": "AUTO 218",
-          "credit": "3 hours in Automotive Fuel Systems"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 or 4 hours in Engine Performance",
-          "cid": ""
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPICA-SSFO-1-001",
       "exhibit_ids": [
         "MAPICA-SSFO-1-001"
@@ -135449,8 +134121,8 @@ window.CPL_STATEWIDE = {
         "MAPICI-SFI1-1-001",
         "MAPICI-SFI11-1-001"
       ],
-      "title": "Fire Inspector I",
-      "unified_title": "Fire Inspector I",
+      "title": "Fire Inspector 1",
+      "unified_title": "Fire Inspector 1",
       "is_classified": true,
       "issuing_agency": "International Code Council (ICC)",
       "training_agency": "",
@@ -136436,8 +135108,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-CBED1-1-001"
       ],
-      "title": "Street Dance I",
-      "unified_title": "Street Dance I",
+      "title": "Street Dance 1",
+      "unified_title": "Street Dance 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -136524,8 +135196,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-CBED2-1-001"
       ],
-      "title": "Street Dance II",
-      "unified_title": "Street Dance II",
+      "title": "Street Dance 2",
+      "unified_title": "Street Dance 2",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -136612,8 +135284,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-CBED3-1-001"
       ],
-      "title": "Street Dance III",
-      "unified_title": "Street Dance III",
+      "title": "Street Dance 3",
+      "unified_title": "Street Dance 3",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -136700,8 +135372,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-CBED5-1-001"
       ],
-      "title": "Street Dance IV",
-      "unified_title": "Street Dance IV",
+      "title": "Street Dance 4",
+      "unified_title": "Street Dance 4",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -137404,28 +136076,30 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "CPLICI-ASE3-1-001|MAPICI-AC(A3-1-001|MAPICI-ASE(18-1-001|MAPICI-ASE(30-1-001|MAPICI-MDTA-1-001",
+      "exhibit_id": "CPLICI-ASE8-1-001|MAPICI-AC(A7-1-001|MAPICI-ASE(22-1-001|MAPICI-ASE(35-1-001|MAPICI-ASE8-1-001|MAPICI-EPAA-1-001",
       "exhibit_ids": [
-        "CPLICI-ASE3-1-001",
-        "MAPICI-AC(A3-1-001",
-        "MAPICI-ASE(18-1-001",
-        "MAPICI-ASE(30-1-001",
-        "MAPICI-MDTA-1-001"
+        "CPLICI-ASE8-1-001",
+        "MAPICI-AC(A7-1-001",
+        "MAPICI-ASE(22-1-001",
+        "MAPICI-ASE(35-1-001",
+        "MAPICI-ASE8-1-001",
+        "MAPICI-EPAA-1-001"
       ],
-      "title": "ASE A3 — Manual Drive Train and Axles",
-      "unified_title": "ASE A3 — Manual Drive Train and Axles",
+      "title": "ASE A8 — Engine Performance",
+      "unified_title": "ASE A8 — Engine Performance",
       "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 0.97,
-      "confidence_issuer": 0.98,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
-        "ASE CERTIFICATION (A3) A3 – MANUAL DRIVE TRAIN & AXLES",
-        "Automotive Service Excellence (ASE) A3 Certificate",
-        "Automotive Service Excellence (ASE) A3 Certificate Manual Drive Train & Axles",
-        "Automotive Services Excellence 3 (A3) Certificate",
-        "Manual Drive Train and Axles ASE A3"
+        "ASE CERTIFICATION (A8) A8 – ENGINE PERFORMANCE",
+        "Automotive Service Excellence (ASE) A8 Certificate",
+        "Automotive Service Excellence (ASE) A8 Certificate Engine Performance",
+        "Automotive Services Excellence 8 (A8) Certificate",
+        "Automotive Services Excellence 8 (A8) Certificate + Practical Assessment",
+        "Engine Performance ASE A8"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
@@ -137442,11 +136116,11 @@ window.CPL_STATEWIDE = {
         "Copper Mountain College",
         "De Anza College",
         "East Los Angeles College",
+        "Evergreen Valley College",
         "Las Positas College",
         "Lassen College",
         "Long Beach City College",
         "Mendocino College",
-        "Merced College",
         "Rio Hondo College",
         "Riverside City College",
         "San Bernardino Valley College",
@@ -137474,7 +136148,6 @@ window.CPL_STATEWIDE = {
         "Cuyamaca College",
         "Cypress College",
         "El Camino College",
-        "Evergreen Valley College",
         "Fresno City College",
         "Fullerton College",
         "Golden West College",
@@ -137483,6 +136156,7 @@ window.CPL_STATEWIDE = {
         "Los Angeles Pierce College",
         "Los Angeles Trade Technical College",
         "Los Medanos College",
+        "Merced College",
         "MiraCosta College",
         "Modesto Junior College",
         "Monterey Peninsula College",
@@ -137510,97 +136184,93 @@ window.CPL_STATEWIDE = {
       "total_addressable": 70,
       "credit_recs": [
         {
-          "course": "AUTOTEC 432",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AUTOTEC 422",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AUTO B48",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AUTO B33",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AUTO 077",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AUTO 118",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AUTO 113",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AUTO A8",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AUTO A3",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AT 82",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AT 66",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AT 106",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AUTO 36",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AUTO 150",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AT 122",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AUTO 062",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AUTO 220",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AUTO 062L",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AUTO 075L",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AUTOMO 801",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AUTO 077L",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AUTO 060C",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AUTOMO 301",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AUT 166",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AUTO 063A",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "ATEC 8",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AUT 144",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AUSER 203",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "ATEC 3",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUSER 117",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUTO 172G",
-          "credit": "2 hours in Manual Drive Train and Axles"
+          "course": "AUTO 165G",
+          "credit": "2 hours in Engine Performance"
         },
         {
           "course": "AUT 50",
           "credit": "4 hours in Automotive Principles"
         },
         {
-          "course": "AUT 3",
-          "credit": "4 hours in Man Drivetrain Systems"
+          "course": "AUT 8A",
+          "credit": "4 hours in Auto Engine Performance 1"
         },
         {
           "course": "AUTO 004",
           "credit": "4 hours in Automotive Principles"
         },
         {
-          "course": "AUTO 016",
-          "credit": "3 hours in Automotive Manual Transmissions & Drive Train Systems"
+          "course": "AUTO 119",
+          "credit": "2.5 hours in Introduction to Engine Performance"
         },
         {
-          "course": "AUTO 213",
-          "credit": "3 hours in Automotive Manual Transmission"
+          "course": "AUTO 014A",
+          "credit": "4 hours in Automotive Engine Management"
+        },
+        {
+          "course": "AUTO 218",
+          "credit": "3 hours in Automotive Fuel Systems"
         }
       ],
       "authoritative_recs": [
         {
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems",
+          "credit": "3 or 4 hours in Engine Performance",
           "cid": ""
         }
       ]
@@ -138857,8 +137527,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCBES-GMI-1-001"
       ],
-      "title": "Garde Manger II",
-      "unified_title": "Garde Manger II",
+      "title": "Garde Manger 2",
+      "unified_title": "Garde Manger 2",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -141121,6 +139791,216 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "CPLICI-ASE3-1-001|MAPICI-A6C6-1-001|MAPICI-AC(A3-1-001|MAPICI-ASE(18-1-001|MAPICI-ASE(30-1-001|MAPICI-ASE3-1-001|MAPICI-MDTA-1-001",
+      "exhibit_ids": [
+        "CPLICI-ASE3-1-001",
+        "MAPICI-A6C6-1-001",
+        "MAPICI-AC(A3-1-001",
+        "MAPICI-ASE(18-1-001",
+        "MAPICI-ASE(30-1-001",
+        "MAPICI-ASE3-1-001",
+        "MAPICI-MDTA-1-001"
+      ],
+      "title": "ASE A3 — Manual Drive Train and Axles",
+      "unified_title": "ASE A3 — Manual Drive Train and Axles",
+      "is_classified": true,
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.98,
+      "quality_flag": "suspect_course_as_exhibit",
+      "raw_titles": [
+        "ASE CERTIFICATION (A3) A3 – MANUAL DRIVE TRAIN & AXLES",
+        "Auto 613 Completion",
+        "Automotive Service Excellence (ASE) A3 Certificate",
+        "Automotive Service Excellence (ASE) A3 Certificate Manual Drive Train & Axles",
+        "Automotive Services Excellence 3 (A3) Certificate",
+        "Automotive Services Excellence 3 (A3) Certificate + Practical Assessment",
+        "Manual Drive Train and Axles ASE A3"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 20,
+      "adopter_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "Chaffey College",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "De Anza College",
+        "East Los Angeles College",
+        "Evergreen Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Mendocino College",
+        "Merced College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "Santa Ana College"
+      ],
+      "potential": 50,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 70,
+      "credit_recs": [
+        {
+          "course": "AUTOTEC 432",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUTO B48",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUTO 077",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUTO 113",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUTO A3",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AT 66",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUTO 36",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AT 122",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUTO 220",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUTO 075L",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUTO 077L",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUTOMO 301",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUTO 063A",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUT 144",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "ATEC 3",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUSER 117",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUTO 172G",
+          "credit": "2 hours in Manual Drive Train and Axles"
+        },
+        {
+          "course": "AUT 50",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUT 3",
+          "credit": "4 hours in Man Drivetrain Systems"
+        },
+        {
+          "course": "AUTO 004",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUTO 121",
+          "credit": "2 hours in Manual Transmission and Drivetrain Systems"
+        },
+        {
+          "course": "AUTO 016",
+          "credit": "3 hours in Automotive Manual Transmissions & Drive Train Systems"
+        },
+        {
+          "course": "AUTO 213",
+          "credit": "3 hours in Automotive Manual Transmission"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems",
+          "cid": ""
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPICA-CO2C-1-001",
       "exhibit_ids": [
         "MAPICA-CO2C-1-001"
@@ -143273,426 +142153,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "CPLICI-ASE2-1-001|MAPICI-AC(A1-1-001|MAPICI-ASE(17-1-001|MAPICI-ASE(28-1-001|MAPICI-ASE(29-1-001|MAPICI-ATAA-1-001",
-      "exhibit_ids": [
-        "CPLICI-ASE2-1-001",
-        "MAPICI-AC(A1-1-001",
-        "MAPICI-ASE(17-1-001",
-        "MAPICI-ASE(28-1-001",
-        "MAPICI-ASE(29-1-001",
-        "MAPICI-ATAA-1-001"
-      ],
-      "title": "ASE A2 — Automatic Transmission/Transaxle",
-      "unified_title": "ASE A2 — Automatic Transmission/Transaxle",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "ASE CERTIFICATION (A2) A2 – AUTOMATIC TRANSMISSION/TRANSAXLE",
-        "Automatic Transmissions/Axles ASE A2",
-        "Automotive Service Excellence (ASE) A2 Certificate",
-        "Automotive Service Excellence (ASE) A2 Certificate Automatic Transmission/Transaxle",
-        "Automotive Services Excellence (ASE) 2",
-        "Automotive Services Excellence 2 (A2) Certificate"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 21,
-      "adopter_names": [
-        "Bakersfield College",
-        "Barstow Community College",
-        "Chaffey College",
-        "College of the Desert",
-        "Columbia College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "De Anza College",
-        "East Los Angeles College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "Santa Ana College",
-        "Shasta College"
-      ],
-      "potential": 49,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Compton College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTOTEC 432",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUTO B46",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUTO 075",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUTO 112",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUTO A2",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AT 68",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AT 132",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUTO 230",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUTO 075L",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUTOMO 201",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUTO 063.",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUTO 64",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUT 145",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUTO 53",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUSER 117",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUTO 174G",
-          "credit": "2 hours in Automatic Transmissions/Axles"
-        },
-        {
-          "course": "AUT 50",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUT 2",
-          "credit": "4 hours in Auto Transmissions/Transaxles"
-        },
-        {
-          "course": "AUTO 004",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUTO 045",
-          "credit": "4 hours in Auto Transmissions/Transaxles"
-        },
-        {
-          "course": "AUTO 130",
-          "credit": "4 hours in Auto Transmissions/Transaxles"
-        },
-        {
-          "course": "AUTO 017",
-          "credit": "3 hours in Automatic Transmissions & Transaxles"
-        },
-        {
-          "course": "AUTO 212",
-          "credit": "3 hours in Automotive Automatic Transmission"
-        },
-        {
-          "course": "AUTO 162",
-          "credit": "3 hours in Auto Transmissions and Transaxles"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 hours in Automatic Transmissions and Transaxles",
-          "cid": "AUTO 120 X"
-        },
-        {
-          "credit": "3 hours in Auto Transmissions and Transaxles",
-          "cid": ""
-        }
-      ]
-    },
-    {
-      "exhibit_id": "CPLICI-ASE7-1-001|MAPICI-AAC-1-001|MAPICI-AC(A6-1-001|MAPICI-ASE(34-1-001|MAPICI-ASE(40-1-001|MAPICI-CCSA-1-001",
-      "exhibit_ids": [
-        "CPLICI-ASE7-1-001",
-        "MAPICI-AAC-1-001",
-        "MAPICI-AC(A6-1-001",
-        "MAPICI-ASE(34-1-001",
-        "MAPICI-ASE(40-1-001",
-        "MAPICI-CCSA-1-001"
-      ],
-      "title": "ASE A7 — Heating and Air Conditioning",
-      "unified_title": "ASE A7 — Heating and Air Conditioning",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "ASE A7 Certificate",
-        "ASE CERTIFICATION (A7) A7 – HEATING & AIR CONDITIONING",
-        "Auto Service Excellence (ASE) ASE A7 - Active Certification awarded in the past five years",
-        "Automotive Service Excellence (ASE) A7 Certificate Heating & Air Conditioning",
-        "Automotive Services Excellence 7 (A7) Certificate",
-        "Climate Control Systems ASE A7"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 21,
-      "adopter_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "College of the Desert",
-        "Columbia College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "De Anza College",
-        "East Los Angeles College",
-        "Las Positas College",
-        "Lassen College",
-        "Los Angeles Pierce College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "Santa Ana College"
-      ],
-      "potential": 49,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Citrus College",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Compton College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Long Beach City College",
-        "Los Angeles Trade Technical College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTOTEC 416",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO B49",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 056",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 117",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO A7",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AT 58",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 44",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 58",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AT 112",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 240",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTOMO 701",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 066.",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUT 146",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "ATEC 7",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUSER 238",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 169G",
-          "credit": "2 hours in Climate Control Systems"
-        },
-        {
-          "course": "AUT 50",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUT 7",
-          "credit": "4 hours in Auto Heat & Air"
-        },
-        {
-          "course": "AUTO 004",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUTO 113",
-          "credit": "4 hours in Auto Heat & Air"
-        },
-        {
-          "course": "AUTO 018",
-          "credit": "4 hours in Automotive Heating, Ventilation & Air Conditioning"
-        },
-        {
-          "course": "A S T 007",
-          "credit": "3 hours in Air Conditioning"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning",
-          "cid": ""
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPICA-CO2C2-1-001",
       "exhibit_ids": [
         "MAPICA-CO2C2-1-001"
@@ -143921,8 +142381,8 @@ window.CPL_STATEWIDE = {
         "MAPCXH-BVR-2-1-001",
         "MAPCXH-D1-1-001"
       ],
-      "title": "Architectural Design I",
-      "unified_title": "Architectural Design I",
+      "title": "Architectural Design 1",
+      "unified_title": "Architectural Design 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -144178,27 +142638,34 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "CPLICI-ASE1-1-001|MAPICI-AC(A-1-001|MAPICI-ASE(12-1-001|MAPICI-ASE(16-1-001|MAPICI-ASE(27-1-001",
+      "exhibit_id": "CPLICI-ASE2-1-001|MAPICI-A6C5-1-001|MAPICI-AC(A1-1-001|MAPICI-ASE(17-1-001|MAPICI-ASE(28-1-001|MAPICI-ASE(29-1-001|MAPICI-ASE2-1-001|MAPICI-ATAA-1-001",
       "exhibit_ids": [
-        "CPLICI-ASE1-1-001",
-        "MAPICI-AC(A-1-001",
-        "MAPICI-ASE(12-1-001",
-        "MAPICI-ASE(16-1-001",
-        "MAPICI-ASE(27-1-001"
+        "CPLICI-ASE2-1-001",
+        "MAPICI-A6C5-1-001",
+        "MAPICI-AC(A1-1-001",
+        "MAPICI-ASE(17-1-001",
+        "MAPICI-ASE(28-1-001",
+        "MAPICI-ASE(29-1-001",
+        "MAPICI-ASE2-1-001",
+        "MAPICI-ATAA-1-001"
       ],
-      "title": "ASE A1 — Engine Repair",
-      "unified_title": "ASE A1 — Engine Repair",
+      "title": "ASE A2 — Automatic Transmission/Transaxle",
+      "unified_title": "ASE A2 — Automatic Transmission/Transaxle",
       "is_classified": true,
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
       "confidence_title": 0.97,
-      "confidence_issuer": 0.95,
-      "quality_flag": "",
+      "confidence_issuer": 0.98,
+      "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
-        "ASE CERTIFICATION (A1) A1 – ENGINE REPAIR",
-        "Automotive Service Excellence (ASE) A1 Certificate",
-        "Automotive Service Excellence (ASE) A1 Certificate Engine Repair",
-        "Automotive Services Excellence 1 (A1) Certificate"
+        "ASE CERTIFICATION (A2) A2 – AUTOMATIC TRANSMISSION/TRANSAXLE",
+        "Auto 612 Completion",
+        "Automatic Transmissions/Axles ASE A2",
+        "Automotive Service Excellence (ASE) A2 Certificate",
+        "Automotive Service Excellence (ASE) A2 Certificate Automatic Transmission/Transaxle",
+        "Automotive Services Excellence (ASE) 2",
+        "Automotive Services Excellence 2 (A2) Certificate",
+        "Automotive Services Excellence 2 (A2) Certificate + Practical Assessment"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
@@ -144209,14 +142676,13 @@ window.CPL_STATEWIDE = {
         "Bakersfield College",
         "Barstow Community College",
         "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Marin",
         "College of the Desert",
+        "Columbia College",
         "Contra Costa College",
         "Copper Mountain College",
         "De Anza College",
         "East Los Angeles College",
+        "Evergreen Valley College",
         "Las Positas College",
         "Lassen College",
         "Long Beach City College",
@@ -144227,7 +142693,8 @@ window.CPL_STATEWIDE = {
         "Riverside City College",
         "San Bernardino Valley College",
         "San Diego Miramar College",
-        "Santa Ana College"
+        "Santa Ana College",
+        "Shasta College"
       ],
       "potential": 48,
       "potential_names": [
@@ -144237,18 +142704,19 @@ window.CPL_STATEWIDE = {
         "Butte College",
         "Cerritos College",
         "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
         "College of Alameda",
+        "College of Marin",
         "College of the Canyons",
         "College of the Redwoods",
         "College of the Sequoias",
-        "Columbia College",
         "Compton College",
         "Cosumnes River College",
         "Cuesta College",
         "Cuyamaca College",
         "Cypress College",
         "El Camino College",
-        "Evergreen Valley College",
         "Fresno City College",
         "Fullerton College",
         "Golden West College",
@@ -144271,7 +142739,6 @@ window.CPL_STATEWIDE = {
         "San Joaquin Delta College",
         "Santa Barbara City College",
         "Santa Rosa Junior College",
-        "Shasta College",
         "Sierra College",
         "Skyline College",
         "Solano Community College",
@@ -144283,359 +142750,130 @@ window.CPL_STATEWIDE = {
       "total_addressable": 70,
       "credit_recs": [
         {
-          "course": "AUTOTEC 10",
-          "credit": "3 hours in Engine Repair"
+          "course": "AUTOTEC 432",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AUTOTEC 427",
-          "credit": "3 hours in Engine Repair"
+          "course": "AUTO B46",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AUTO B20",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 018",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 090",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 111",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO A1",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AT 72",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 156G",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 54",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 160",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 090L",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTOMO 111",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 064.",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 61",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUT 140",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 53",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 110A",
-          "credit": "3 hours in Engine Repair"
+          "course": "AUTO 075",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
           "course": "AUTO 112",
-          "credit": "3 hours in Engine Repair"
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AUSER 115",
-          "credit": "3 hours in Engine Repair"
+          "course": "AUTO A2",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AUTO 010",
-          "credit": "3 hours in Engine Repair"
+          "course": "AT 68",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AUT 50",
-          "credit": "4 hours in Automotive Principles"
+          "course": "AT 132",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AUT 1A",
-          "credit": "4 hours in Auto Engine Repair Upper"
+          "course": "AUTO 230",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AUT 1B",
-          "credit": "4 hours in Auto Engine Repair Lower"
+          "course": "AUTO 075L",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AUTO 004",
-          "credit": "4 hours in Automotive Principles"
+          "course": "AUTOMO 201",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
+        },
+        {
+          "course": "AUTO 063.",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
+        },
+        {
+          "course": "AUTO 64",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
+        },
+        {
+          "course": "AUT 145",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
           "course": "AUTO 53",
-          "credit": "4 hours in Engine Repair"
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AUTO 015",
-          "credit": "4 hours in Automotive Engine Diagnosis & Repair"
+          "course": "AUSER 117",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AUTO 211",
-          "credit": "3 hours in Automotive Engine Repair"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 hours in Engine Repair",
-          "cid": ""
-        },
-        {
-          "credit": "4 hours in Engine Repair",
-          "cid": ""
-        }
-      ]
-    },
-    {
-      "exhibit_id": "CPLICI-ASE4-1-001|MAPICI-A0-A-1-001|MAPICI-A0-A1-1-001|MAPICI-AC(A2-1-001|MAPICI-ASE(19-1-001|MAPICI-ASE(31-1-001|MAPICI-SSAH-1-001",
-      "exhibit_ids": [
-        "CPLICI-ASE4-1-001",
-        "MAPICI-A0-A-1-001",
-        "MAPICI-A0-A1-1-001",
-        "MAPICI-AC(A2-1-001",
-        "MAPICI-ASE(19-1-001",
-        "MAPICI-ASE(31-1-001",
-        "MAPICI-SSAH-1-001"
-      ],
-      "title": "ASE A4 — Suspension and Steering",
-      "unified_title": "ASE A4 — Suspension and Steering",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.97,
-      "quality_flag": "",
-      "raw_titles": [
-        "ASE CERTIFICATION (A4) A4 – SUSPENSION & STEERING",
-        "AUTO 052 - Auto Suspension & Steering - ASE Certificate",
-        "AUTO 052L - Auto Suspension & Steering Laboratory - ASE Certification Automobile -Suspension and Steering",
-        "Automotive Service Excellence (ASE) A4 Certificate",
-        "Automotive Service Excellence (ASE) A4 Certificate Suspension & Steering",
-        "Automotive Services Excellence 4 (A4) Certificate",
-        "Suspension, Steering and Handling ASE A4"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 22,
-      "adopter_names": [
-        "Bakersfield College",
-        "Barstow Community College",
-        "Chabot College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "College of the Desert",
-        "Columbia College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "De Anza College",
-        "East Los Angeles College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "Santa Ana College"
-      ],
-      "potential": 48,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Butte College",
-        "Cerritos College",
-        "Citrus College",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Compton College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTOTEC 418",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTO B40",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTO 052",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTO 114",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTO A4",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AT 56",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTO 32",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTO 59",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AT 120",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTO 200",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTO 052L",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTOMO 401",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTO 062A",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUT 142",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTO 55",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "ATEC 4",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUSER 113",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTO 178G",
-          "credit": "2 hours in Suspension, Steering and Handling"
+          "course": "AUTO 174G",
+          "credit": "2 hours in Automatic Transmissions/Axles"
         },
         {
           "course": "AUT 50",
           "credit": "4 hours in Automotive Principles"
         },
         {
-          "course": "AUT 4A",
-          "credit": "4 hours in Auto Steering & Suspension"
+          "course": "AUT 2",
+          "credit": "4 hours in Auto Transmissions/Transaxles"
         },
         {
           "course": "AUTO 004",
           "credit": "4 hours in Automotive Principles"
         },
         {
+          "course": "AUTO 045",
+          "credit": "4 hours in Auto Transmissions/Transaxles"
+        },
+        {
+          "course": "AUTO 130",
+          "credit": "4 hours in Auto Transmissions/Transaxles"
+        },
+        {
           "course": "AUTO 120",
-          "credit": "4 hours in Auto Steering & Suspension"
+          "credit": "2.5 hours in Automatic Transmission Systems"
         },
         {
-          "course": "AUTO 052L",
-          "credit": "1 hour in Automotive Suspension and Steering - Laboratory"
+          "course": "AUTO 017",
+          "credit": "3 hours in Automatic Transmissions & Transaxles"
         },
         {
-          "course": "AUTO 012A",
-          "credit": "4 hours in Automotive Suspension & Steering Systems"
+          "course": "AUTO 212",
+          "credit": "3 hours in Automotive Automatic Transmission"
         },
         {
-          "course": "AUTO 214",
-          "credit": "3 hours in Automotive Wheel Alignment"
+          "course": "AUTO 162",
+          "credit": "3 hours in Auto Transmissions and Transaxles"
         }
       ],
       "authoritative_recs": [
         {
-          "credit": "3 hours in Automotive Suspension and Steering Systems",
-          "cid": "AUTO 140 X"
+          "credit": "3 hours in Automatic Transmissions and Transaxles",
+          "cid": "AUTO 120 X"
+        },
+        {
+          "credit": "3 hours in Auto Transmissions and Transaxles",
+          "cid": ""
         }
       ]
     },
     {
-      "exhibit_id": "CPLICI-ASE5-1-001|MAPICI-ABSA-1-001|MAPICI-AC(A4-1-001|MAPICI-ASE(20-1-001|MAPICI-ASE(32-1-001|MAPICI-ASE(6-1-001",
+      "exhibit_id": "CPLICI-ASE7-1-001|MAPICI-AAC-1-001|MAPICI-AC(A6-1-001|MAPICI-ASE(34-1-001|MAPICI-ASE(40-1-001|MAPICI-ASE7-1-001|MAPICI-CCSA-1-001",
       "exhibit_ids": [
-        "CPLICI-ASE5-1-001",
-        "MAPICI-ABSA-1-001",
-        "MAPICI-AC(A4-1-001",
-        "MAPICI-ASE(20-1-001",
-        "MAPICI-ASE(32-1-001",
-        "MAPICI-ASE(6-1-001"
+        "CPLICI-ASE7-1-001",
+        "MAPICI-AAC-1-001",
+        "MAPICI-AC(A6-1-001",
+        "MAPICI-ASE(34-1-001",
+        "MAPICI-ASE(40-1-001",
+        "MAPICI-ASE7-1-001",
+        "MAPICI-CCSA-1-001"
       ],
-      "title": "ASE A5 — Brakes",
-      "unified_title": "ASE A5 — Brakes",
+      "title": "ASE A7 — Heating and Air Conditioning",
+      "unified_title": "ASE A7 — Heating and Air Conditioning",
       "is_classified": true,
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
@@ -144643,12 +142881,13 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 0.98,
       "quality_flag": "",
       "raw_titles": [
-        "ASE CERTIFICATION (A5) A5 – BRAKES",
-        "Automotive Brake Systems ASE A5",
-        "Automotive Service Excellence (ASE) A5 Certificate",
-        "Automotive Service Excellence (ASE) A5 Certificate Brakes",
-        "Automotive Services Excellence (A5: Brakes) Certificate",
-        "Automotive Services Excellence 5 (A5) Certificate"
+        "ASE A7 Certificate",
+        "ASE CERTIFICATION (A7) A7 – HEATING & AIR CONDITIONING",
+        "Auto Service Excellence (ASE) ASE A7 - Active Certification awarded in the past five years",
+        "Automotive Service Excellence (ASE) A7 Certificate Heating & Air Conditioning",
+        "Automotive Services Excellence 7 (A7) Certificate",
+        "Automotive Services Excellence 7 (A7) Certificate + Practical Assessment",
+        "Climate Control Systems ASE A7"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
@@ -144657,7 +142896,6 @@ window.CPL_STATEWIDE = {
       "adopters": 22,
       "adopter_names": [
         "Bakersfield College",
-        "Barstow Community College",
         "Chabot College",
         "Chaffey College",
         "City College of San Francisco",
@@ -144667,9 +142905,10 @@ window.CPL_STATEWIDE = {
         "Copper Mountain College",
         "De Anza College",
         "East Los Angeles College",
+        "Evergreen Valley College",
         "Las Positas College",
         "Lassen College",
-        "Long Beach City College",
+        "Los Angeles Pierce College",
         "Los Medanos College",
         "Mendocino College",
         "Merced College",
@@ -144684,6 +142923,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College",
         "American River College",
         "Antelope Valley College",
+        "Barstow Community College",
         "Butte College",
         "Cerritos College",
         "Citrus College",
@@ -144698,13 +142938,12 @@ window.CPL_STATEWIDE = {
         "Cuyamaca College",
         "Cypress College",
         "El Camino College",
-        "Evergreen Valley College",
         "Fresno City College",
         "Fullerton College",
         "Golden West College",
         "Hartnell College",
         "Imperial Valley College",
-        "Los Angeles Pierce College",
+        "Long Beach City College",
         "Los Angeles Trade Technical College",
         "MiraCosta College",
         "Modesto Junior College",
@@ -144733,126 +142972,102 @@ window.CPL_STATEWIDE = {
       "total_addressable": 70,
       "credit_recs": [
         {
-          "course": "AUTOTEC 417",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUTOTEC 416",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUTO B43",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUTO B49",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUTO 050",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUTO 056",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUTO 115",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUTO 117",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUTO A5",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUTO A7",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AT 54",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AT 58",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUTO 33",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUTO 44",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUTO 63",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUTO 58",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AT 105",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AT 112",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUTO 210",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUTO 240",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUTO 050L",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUTOMO 701",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUTOMO 501",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUTO 066.",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUTO 061B",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUT 146",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUT 142",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "ATEC 7",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUTO 54",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUSER 238",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "ATEC 5",
-          "credit": "3 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "AUSER 111",
-          "credit": "3 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "AUTO 176G",
-          "credit": "2 hours in Automotive Brake Systems"
+          "course": "AUTO 169G",
+          "credit": "2 hours in Climate Control Systems"
         },
         {
           "course": "AUT 50",
           "credit": "4 hours in Automotive Principles"
         },
         {
-          "course": "AUT 5",
-          "credit": "4 hours in Automotive Brakes"
+          "course": "AUT 7",
+          "credit": "4 hours in Auto Heat & Air"
         },
         {
           "course": "AUTO 004",
           "credit": "4 hours in Automotive Principles"
         },
         {
-          "course": "AUTO 33",
-          "credit": "4 hours in Automotive Brakes"
+          "course": "AUTO 113",
+          "credit": "4 hours in Auto Heat & Air"
         },
         {
-          "course": "AUTO 121",
-          "credit": "4 hours in Automotive Brakes"
+          "course": "AUTO 135",
+          "credit": "2 hours in Air Conditioning Systems"
         },
         {
-          "course": "AUTO 061A",
-          "credit": "4.5 hours in Automotive Brake Systems"
+          "course": "AUTO 018",
+          "credit": "4 hours in Automotive Heating, Ventilation & Air Conditioning"
         },
         {
-          "course": "AUTO 061B",
-          "credit": "4.5 hours in Electronically Controlled Brake Systems"
-        },
-        {
-          "course": "AUTO 121",
-          "credit": "4.5 hours in Automotive Brake Systems"
-        },
-        {
-          "course": "AUTO 121",
-          "credit": "4.5 hours in Electronically Controlled Brake Systems"
-        },
-        {
-          "course": "AUTO 013A",
-          "credit": "4 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "AUTO 215",
-          "credit": "3 hours in Automotive Brake Systems"
+          "course": "A S T 007",
+          "credit": "3 hours in Air Conditioning"
         }
       ],
       "authoritative_recs": [
         {
-          "credit": "3 hours in Automotive Braking Systems",
-          "cid": "AUTO 150 X"
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning",
+          "cid": ""
         }
       ]
     },
@@ -145723,38 +143938,271 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "CPLICI-ASE6-1-001|MAPICI-AC(A5-1-001|MAPICI-ACA+-1-001|MAPICI-ASE(21-1-001|MAPICI-ASE(33-1-001|MAPICI-ASE61-1-001|MAPICI-ASEA3-1-001|MAPICI-ATEF-1-001|MAPICI-ATEF1-1-001|MAPICI-BEAE-1-001",
+      "exhibit_id": "CPLICI-ASE1-1-001|MAPICI-A6C4-1-001|MAPICI-AC(A-1-001|MAPICI-ASE(12-1-001|MAPICI-ASE(16-1-001|MAPICI-ASE(27-1-001|MAPICI-ASE1-1-001",
       "exhibit_ids": [
-        "CPLICI-ASE6-1-001",
-        "MAPICI-AC(A5-1-001",
-        "MAPICI-ACA+-1-001",
-        "MAPICI-ASE(21-1-001",
-        "MAPICI-ASE(33-1-001",
-        "MAPICI-ASE61-1-001",
-        "MAPICI-ASEA3-1-001",
-        "MAPICI-ATEF-1-001",
-        "MAPICI-ATEF1-1-001",
-        "MAPICI-BEAE-1-001"
+        "CPLICI-ASE1-1-001",
+        "MAPICI-A6C4-1-001",
+        "MAPICI-AC(A-1-001",
+        "MAPICI-ASE(12-1-001",
+        "MAPICI-ASE(16-1-001",
+        "MAPICI-ASE(27-1-001",
+        "MAPICI-ASE1-1-001"
       ],
-      "title": "ASE A6 — Electrical/Electronic Systems",
-      "unified_title": "ASE A6 — Electrical/Electronic Systems",
+      "title": "ASE A1 — Engine Repair",
+      "unified_title": "ASE A1 — Engine Repair",
       "is_classified": true,
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
       "confidence_title": 0.97,
-      "confidence_issuer": 0.98,
+      "confidence_issuer": 0.95,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
-        "ASE CERTIFICATION (A6) A6 – ELECTRICAL/ELECTRONIC SYSTEMS",
-        "ASE Certifications: A6 + Residency Units",
-        "Auto Service Excellence A6",
-        "Automotive Service Excellence (ASE) A6 Certificate",
-        "Automotive Service Excellence (ASE) A6 Certificate Electrical/Electronic Systems",
-        "Automotive Services Excellence  6 (A6) Certificate Electrical/Electronic Systems",
-        "Automotive Services Excellence 6 (A6) Certificate",
-        "Automotive Technology Electrical Fundamentals (116)",
-        "Automotive Technology Electrical Fundamentals (116A/B)",
-        "Basic Electricity and Electrical Systems Fundamentals ASE A6"
+        "ASE CERTIFICATION (A1) A1 – ENGINE REPAIR",
+        "Auto 611 Completion",
+        "Automotive Service Excellence (ASE) A1 Certificate",
+        "Automotive Service Excellence (ASE) A1 Certificate Engine Repair",
+        "Automotive Services Excellence 1 (A1) Certificate",
+        "Automotive Services Excellence 1 (A1) Certificate + Practical Assessment"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 23,
+      "adopter_names": [
+        "Bakersfield College",
+        "Barstow Community College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Marin",
+        "College of the Desert",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "De Anza College",
+        "East Los Angeles College",
+        "Evergreen Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "Santa Ana College"
+      ],
+      "potential": 47,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "College of Alameda",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 70,
+      "credit_recs": [
+        {
+          "course": "AUTOTEC 10",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTOTEC 427",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO B20",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 018",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 090",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 111",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO A1",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AT 72",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 156G",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 54",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 160",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 090L",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTOMO 111",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 064.",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 61",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUT 140",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 53",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 110A",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 112",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUSER 115",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 010",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUT 50",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUT 1A",
+          "credit": "4 hours in Auto Engine Repair Upper"
+        },
+        {
+          "course": "AUT 1B",
+          "credit": "4 hours in Auto Engine Repair Lower"
+        },
+        {
+          "course": "AUTO 004",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUTO 171",
+          "credit": "3 hours in Engine Systems"
+        },
+        {
+          "course": "AUTO 53",
+          "credit": "4 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 015",
+          "credit": "4 hours in Automotive Engine Diagnosis & Repair"
+        },
+        {
+          "course": "AUTO 211",
+          "credit": "3 hours in Automotive Engine Repair"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Engine Repair",
+          "cid": ""
+        },
+        {
+          "credit": "4 hours in Engine Repair",
+          "cid": ""
+        }
+      ]
+    },
+    {
+      "exhibit_id": "CPLICI-ASE4-1-001|MAPICI-A0-A-1-001|MAPICI-A0-A1-1-001|MAPICI-AC(A2-1-001|MAPICI-ASE(19-1-001|MAPICI-ASE(31-1-001|MAPICI-ASE4-1-001|MAPICI-SSAH-1-001",
+      "exhibit_ids": [
+        "CPLICI-ASE4-1-001",
+        "MAPICI-A0-A-1-001",
+        "MAPICI-A0-A1-1-001",
+        "MAPICI-AC(A2-1-001",
+        "MAPICI-ASE(19-1-001",
+        "MAPICI-ASE(31-1-001",
+        "MAPICI-ASE4-1-001",
+        "MAPICI-SSAH-1-001"
+      ],
+      "title": "ASE A4 — Suspension and Steering",
+      "unified_title": "ASE A4 — Suspension and Steering",
+      "is_classified": true,
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.97,
+      "quality_flag": "",
+      "raw_titles": [
+        "ASE CERTIFICATION (A4) A4 – SUSPENSION & STEERING",
+        "AUTO 052 - Auto Suspension & Steering - ASE Certificate",
+        "AUTO 052L - Auto Suspension & Steering Laboratory - ASE Certification Automobile -Suspension and Steering",
+        "Automotive Service Excellence (ASE) A4 Certificate",
+        "Automotive Service Excellence (ASE) A4 Certificate Suspension & Steering",
+        "Automotive Services Excellence 4 (A4) Certificate",
+        "Automotive Services Excellence 4 (A4) Certificate + Practical Assessment",
+        "Suspension, Steering and Handling ASE A4"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
@@ -145773,10 +144221,10 @@ window.CPL_STATEWIDE = {
         "Copper Mountain College",
         "De Anza College",
         "East Los Angeles College",
+        "Evergreen Valley College",
         "Las Positas College",
         "Lassen College",
         "Long Beach City College",
-        "Los Angeles Trade Technical College",
         "Los Medanos College",
         "Mendocino College",
         "Merced College",
@@ -145805,7 +144253,239 @@ window.CPL_STATEWIDE = {
         "Cuyamaca College",
         "Cypress College",
         "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 70,
+      "credit_recs": [
+        {
+          "course": "AUTOTEC 418",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO B40",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 052",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 114",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO A4",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AT 56",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 32",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 59",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AT 120",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 200",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 052L",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTOMO 401",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 062A",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUT 142",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 55",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "ATEC 4",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUSER 113",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 178G",
+          "credit": "2 hours in Suspension, Steering and Handling"
+        },
+        {
+          "course": "AUT 50",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUT 4A",
+          "credit": "4 hours in Auto Steering & Suspension"
+        },
+        {
+          "course": "AUTO 004",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUTO 120",
+          "credit": "4 hours in Auto Steering & Suspension"
+        },
+        {
+          "course": "AUTO 052L",
+          "credit": "1 hour in Automotive Suspension and Steering - Laboratory"
+        },
+        {
+          "course": "AUTO 105",
+          "credit": "3 hours in Suspension, Steering, and Alignment"
+        },
+        {
+          "course": "AUTO 012A",
+          "credit": "4 hours in Automotive Suspension & Steering Systems"
+        },
+        {
+          "course": "AUTO 214",
+          "credit": "3 hours in Automotive Wheel Alignment"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Automotive Suspension and Steering Systems",
+          "cid": "AUTO 140 X"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "CPLICI-ASE6-1-001|MAPICI-A61-1-001|MAPICI-AC(A5-1-001|MAPICI-ACA+-1-001|MAPICI-ASE(21-1-001|MAPICI-ASE(33-1-001|MAPICI-ASE6-1-001|MAPICI-ASE61-1-001|MAPICI-ASEA3-1-001|MAPICI-ATEF-1-001|MAPICI-ATEF1-1-001|MAPICI-BEAE-1-001",
+      "exhibit_ids": [
+        "CPLICI-ASE6-1-001",
+        "MAPICI-A61-1-001",
+        "MAPICI-AC(A5-1-001",
+        "MAPICI-ACA+-1-001",
+        "MAPICI-ASE(21-1-001",
+        "MAPICI-ASE(33-1-001",
+        "MAPICI-ASE6-1-001",
+        "MAPICI-ASE61-1-001",
+        "MAPICI-ASEA3-1-001",
+        "MAPICI-ATEF-1-001",
+        "MAPICI-ATEF1-1-001",
+        "MAPICI-BEAE-1-001"
+      ],
+      "title": "ASE A6 — Electrical/Electronic Systems",
+      "unified_title": "ASE A6 — Electrical/Electronic Systems",
+      "is_classified": true,
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.98,
+      "quality_flag": "suspect_course_as_exhibit",
+      "raw_titles": [
+        "ASE CERTIFICATION (A6) A6 – ELECTRICAL/ELECTRONIC SYSTEMS",
+        "ASE Certifications: A6 + Residency Units",
+        "Auto 616",
+        "Auto Service Excellence A6",
+        "Automotive Service Excellence (ASE) A6 Certificate",
+        "Automotive Service Excellence (ASE) A6 Certificate Electrical/Electronic Systems",
+        "Automotive Services Excellence  6 (A6) Certificate Electrical/Electronic Systems",
+        "Automotive Services Excellence 6 (A6) Certificate",
+        "Automotive Services Excellence 6 (A6) Certificate + Practical Assessment",
+        "Automotive Technology Electrical Fundamentals (116)",
+        "Automotive Technology Electrical Fundamentals (116A/B)",
+        "Basic Electricity and Electrical Systems Fundamentals ASE A6"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 24,
+      "adopter_names": [
+        "Bakersfield College",
+        "Barstow Community College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "De Anza College",
+        "East Los Angeles College",
         "Evergreen Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "Santa Ana College"
+      ],
+      "potential": 46,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Butte College",
+        "Cerritos College",
+        "Citrus College",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "El Camino College",
         "Fresno City College",
         "Fullerton College",
         "Golden West College",
@@ -145931,6 +144611,10 @@ window.CPL_STATEWIDE = {
           "credit": "4 hours in Auto Electrical Systems 1"
         },
         {
+          "course": "AUTO 170",
+          "credit": "3 hours in Electrical Systems"
+        },
+        {
           "course": "AUTORTK 122",
           "credit": "3 hours in ELECTRICAL/ELECTRONIC SYSTEMS THEORY, INSPECTION & REPAIR"
         },
@@ -145965,109 +144649,6 @@ window.CPL_STATEWIDE = {
           "cid": ""
         }
       ]
-    },
-    {
-      "exhibit_id": "MAPICA-MPC-1-001|MAPICA-MPE-1-001",
-      "exhibit_ids": [
-        "MAPICA-MPC-1-001",
-        "MAPICA-MPE-1-001"
-      ],
-      "title": "Multi-Craft Core Curriculum (MC3) Pre-Apprenticeship",
-      "unified_title": "Multi-Craft Core Curriculum (MC3) Pre-Apprenticeship",
-      "is_classified": true,
-      "issuing_agency": "North America's Building Trades Unions (NABTU)",
-      "training_agency": "",
-      "confidence_title": 0.92,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "MC3 Pre-Apprenticeship Core",
-        "MC3 Pre-Apprenticeship Essentials"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 3,
-      "adopter_names": [
-        "Cabrillo College",
-        "Fresno City College",
-        "Laney College"
-      ],
-      "potential": 47,
-      "potential_names": [
-        "American River College",
-        "Bakersfield College",
-        "Butte College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Fullerton College",
-        "Gavilan College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Norco College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "San Diego Mesa College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 50,
-      "credit_recs": [
-        {
-          "course": "CEM 151",
-          "credit": "3.5 hours in MC3 Pre-Apprenticeship Essentials"
-        },
-        {
-          "course": "CEM 151L",
-          "credit": "3.5 hours in MC3 Pre-Apprenticeship Core"
-        },
-        {
-          "course": "CARP 251A",
-          "credit": "3.5 hours in MC3 Pre-Apprenticeship Core"
-        },
-        {
-          "course": "PREAPP 120",
-          "credit": "3.5 hours in MC3 Pre-Apprenticeship Core"
-        },
-        {
-          "course": "PREAPP 121",
-          "credit": "3.5 hours in MC3 Pre-Apprenticeship Essentials"
-        }
-      ],
-      "authoritative_recs": []
     },
     {
       "exhibit_id": "MAPICI-PNLI-1-001",
@@ -146699,8 +145280,8 @@ window.CPL_STATEWIDE = {
         "MAPPRA-SI1-1-001",
         "MAPPRA-SI2-1-001"
       ],
-      "title": "SolidWorks I",
-      "unified_title": "SolidWorks I",
+      "title": "SolidWorks 1",
+      "unified_title": "SolidWorks 1",
       "is_classified": true,
       "issuing_agency": "Dassault Systèmes",
       "training_agency": "",
@@ -149374,8 +147955,8 @@ window.CPL_STATEWIDE = {
         "MAPCXH-AOGD-1-001",
         "MAPCXH-AOGD1-1-001"
       ],
-      "title": "Art of Graphic Design I",
-      "unified_title": "Art of Graphic Design I",
+      "title": "Art of Graphic Design 1",
+      "unified_title": "Art of Graphic Design 1",
       "is_classified": true,
       "issuing_agency": "Orange High School",
       "training_agency": "Orange High School",
@@ -149535,8 +148116,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCxS-WPIC-1-001"
       ],
-      "title": "Web Publishing I",
-      "unified_title": "Web Publishing I",
+      "title": "Web Publishing 1",
+      "unified_title": "Web Publishing 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -151339,8 +149920,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXA-MBEI-1-001"
       ],
-      "title": "Metal Building Erection I / Foreman Training",
-      "unified_title": "Metal Building Erection I / Foreman Training",
+      "title": "Metal Building Erection 1 / Foreman Training",
+      "unified_title": "Metal Building Erection 1 / Foreman Training",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "Ironworkers Joint Apprenticeship and Training Committee",
@@ -152205,8 +150786,8 @@ window.CPL_STATEWIDE = {
         "MAPCXS-A1-A-1-001",
         "MAPCXS-A1C1-1-001"
       ],
-      "title": "Architectural Drawing I",
-      "unified_title": "Architectural Drawing I",
+      "title": "Architectural Drawing 1",
+      "unified_title": "Architectural Drawing 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -152282,8 +150863,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-A2-S-1-001"
       ],
-      "title": "Strength of Architectural Materials I",
-      "unified_title": "Strength of Architectural Materials I",
+      "title": "Strength of Architectural Materials 1",
+      "unified_title": "Strength of Architectural Materials 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -158369,8 +156950,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCBEH-ABI-1-001"
       ],
-      "title": "Applied Biotechnology I",
-      "unified_title": "Applied Biotechnology I",
+      "title": "Applied Biotechnology 1",
+      "unified_title": "Applied Biotechnology 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -163152,706 +161733,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-ETCO-1-001",
-      "exhibit_ids": [
-        "MAPICA-ETCO-1-001"
-      ],
-      "title": "Elevator Constructor Apprenticeship — Orientation",
-      "unified_title": "Elevator Constructor Apprenticeship — Orientation",
-      "is_classified": true,
-      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
-      "training_agency": "Elevators Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.65,
-      "quality_flag": "",
-      "raw_titles": [
-        "Elevators Training Center Orientation"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 34,
-      "potential_names": [
-        "Bakersfield College",
-        "Butte College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Sequoias",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Imperial Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Pasadena City College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 35,
-      "credit_recs": [
-        {
-          "course": "ELEVA 100",
-          "credit": "4 hours in Elevator New Hire Program"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-ETCR-1-001",
-      "exhibit_ids": [
-        "MAPICA-ETCR-1-001"
-      ],
-      "title": "Elevator Constructor Apprenticeship — RC100",
-      "unified_title": "Elevator Constructor Apprenticeship — RC100",
-      "is_classified": true,
-      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
-      "training_agency": "Elevators Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.65,
-      "quality_flag": "",
-      "raw_titles": [
-        "Elevators Training Center RC100"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 34,
-      "potential_names": [
-        "Bakersfield College",
-        "Butte College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Sequoias",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Imperial Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Pasadena City College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 35,
-      "credit_recs": [
-        {
-          "course": "ELEVA 101",
-          "credit": "3 hours in Elevator Trade Skills"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-ETCR1-1-001",
-      "exhibit_ids": [
-        "MAPICA-ETCR1-1-001"
-      ],
-      "title": "Elevator Constructor Apprenticeship — RC200",
-      "unified_title": "Elevator Constructor Apprenticeship — RC200",
-      "is_classified": true,
-      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
-      "training_agency": "Elevators Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.65,
-      "quality_flag": "",
-      "raw_titles": [
-        "Elevators Training Center RC200"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 34,
-      "potential_names": [
-        "Bakersfield College",
-        "Butte College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Sequoias",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Imperial Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Pasadena City College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 35,
-      "credit_recs": [
-        {
-          "course": "ELEVA 102",
-          "credit": "3 hours in Elevator Hoistway Structures"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-ETCR2-1-001",
-      "exhibit_ids": [
-        "MAPICA-ETCR2-1-001"
-      ],
-      "title": "Elevator Constructor Apprenticeship — RC300",
-      "unified_title": "Elevator Constructor Apprenticeship — RC300",
-      "is_classified": true,
-      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
-      "training_agency": "Elevators Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.65,
-      "quality_flag": "",
-      "raw_titles": [
-        "Elevators Training Center RC300"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 34,
-      "potential_names": [
-        "Bakersfield College",
-        "Butte College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Sequoias",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Imperial Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Pasadena City College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 35,
-      "credit_recs": [
-        {
-          "course": "ELEVA 103",
-          "credit": "4 hours in Elevator Electrical Fundamentals"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-ETCR3-1-001",
-      "exhibit_ids": [
-        "MAPICA-ETCR3-1-001"
-      ],
-      "title": "Elevator Constructor Apprenticeship — RC400",
-      "unified_title": "Elevator Constructor Apprenticeship — RC400",
-      "is_classified": true,
-      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
-      "training_agency": "Elevators Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.65,
-      "quality_flag": "",
-      "raw_titles": [
-        "Elevators Training Center RC400"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 34,
-      "potential_names": [
-        "Bakersfield College",
-        "Butte College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Sequoias",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Imperial Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Pasadena City College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 35,
-      "credit_recs": [
-        {
-          "course": "ELEVA 104",
-          "credit": "3 hours in Elevator Electrical Theory and Application"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-ETCR4-1-001",
-      "exhibit_ids": [
-        "MAPICA-ETCR4-1-001"
-      ],
-      "title": "Elevator Constructor Apprenticeship — RC500",
-      "unified_title": "Elevator Constructor Apprenticeship — RC500",
-      "is_classified": true,
-      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
-      "training_agency": "Elevators Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.65,
-      "quality_flag": "",
-      "raw_titles": [
-        "Elevators Training Center RC500"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 34,
-      "potential_names": [
-        "Bakersfield College",
-        "Butte College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Sequoias",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Imperial Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Pasadena City College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 35,
-      "credit_recs": [
-        {
-          "course": "ELEVA 105",
-          "credit": "4 hours in Elevator Installation"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-ETCR5-1-001",
-      "exhibit_ids": [
-        "MAPICA-ETCR5-1-001"
-      ],
-      "title": "Elevator Constructor Apprenticeship — RC600",
-      "unified_title": "Elevator Constructor Apprenticeship — RC600",
-      "is_classified": true,
-      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
-      "training_agency": "Elevators Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.65,
-      "quality_flag": "",
-      "raw_titles": [
-        "Elevators Training Center RC600"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 34,
-      "potential_names": [
-        "Bakersfield College",
-        "Butte College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Sequoias",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Imperial Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Pasadena City College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 35,
-      "credit_recs": [
-        {
-          "course": "ELEVA 106",
-          "credit": "4 hours in Elevator Solid State Electronics"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-ETCR6-1-001",
-      "exhibit_ids": [
-        "MAPICA-ETCR6-1-001"
-      ],
-      "title": "Elevator Constructor Apprenticeship — RC700",
-      "unified_title": "Elevator Constructor Apprenticeship — RC700",
-      "is_classified": true,
-      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
-      "training_agency": "Elevators Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.65,
-      "quality_flag": "",
-      "raw_titles": [
-        "Elevators Training Center RC700"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 34,
-      "potential_names": [
-        "Bakersfield College",
-        "Butte College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Sequoias",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Imperial Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Pasadena City College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 35,
-      "credit_recs": [
-        {
-          "course": "ELEVA 107",
-          "credit": "3 hours in Elevator Power and Logic"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-ETCR7-1-001",
-      "exhibit_ids": [
-        "MAPICA-ETCR7-1-001"
-      ],
-      "title": "Elevator Constructor Apprenticeship — RC800",
-      "unified_title": "Elevator Constructor Apprenticeship — RC800",
-      "is_classified": true,
-      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
-      "training_agency": "Elevators Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.65,
-      "quality_flag": "",
-      "raw_titles": [
-        "Elevators Training Center RC800"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 34,
-      "potential_names": [
-        "Bakersfield College",
-        "Butte College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Sequoias",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Imperial Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Pasadena City College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 35,
-      "credit_recs": [
-        {
-          "course": "ELEVA 108",
-          "credit": "4 hours in Advanced Topics in Elevators"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-ETCW-1-001",
-      "exhibit_ids": [
-        "MAPICA-ETCW-1-001"
-      ],
-      "title": "Elevator Constructor Apprenticeship — Work Experience",
-      "unified_title": "Elevator Constructor Apprenticeship — Work Experience",
-      "is_classified": true,
-      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
-      "training_agency": "Elevators Training Center",
-      "confidence_title": 0.65,
-      "confidence_issuer": 0.6,
-      "quality_flag": "",
-      "raw_titles": [
-        "Elevators Training Center Work Experience"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 34,
-      "potential_names": [
-        "Bakersfield College",
-        "Butte College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Sequoias",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Imperial Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Pasadena City College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 35,
-      "credit_recs": [
-        {
-          "course": "ELEVA 298",
-          "credit": "0.5 hours in Work Experience in Elevator Apprenticeship"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPSAS-CFL(-1-001",
       "exhibit_ids": [
         "MAPSAS-CFL(-1-001"
@@ -167972,8 +165853,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-CFFT-1-001"
       ],
-      "title": "Center for Financial Training (CFT) — Management (CFTA-0019)",
-      "unified_title": "Center for Financial Training (CFT) — Management (CFTA-0019)",
+      "title": "Center for Financial Training (CFT) — Management",
+      "unified_title": "Center for Financial Training (CFT) — Management",
       "is_classified": true,
       "issuing_agency": "Center for Financial Training (CFT)",
       "training_agency": "",
@@ -168042,8 +165923,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-MCMM-1-001"
       ],
-      "title": "McDonald's MCD-0074 Mid-Management Foundations Curriculum",
-      "unified_title": "McDonald's MCD-0074 Mid-Management Foundations Curriculum",
+      "title": "McDonald's Mid-Management Foundations Curriculum",
+      "unified_title": "McDonald's Mid-Management Foundations Curriculum",
       "is_classified": true,
       "issuing_agency": "McDonald's Corporation",
       "training_agency": "McDonald's Corporation",
@@ -168252,8 +166133,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-CFFT1-1-001"
       ],
-      "title": "Center for Financial Training (CFT) — Supervision (CFTA-0015)",
-      "unified_title": "Center for Financial Training (CFT) — Supervision (CFTA-0015)",
+      "title": "Center for Financial Training (CFT) — Supervision",
+      "unified_title": "Center for Financial Training (CFT) — Supervision",
       "is_classified": true,
       "issuing_agency": "Center for Financial Training (CFT)",
       "training_agency": "",
@@ -168392,8 +166273,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-MCMM1-1-001"
       ],
-      "title": "McDonald's MCD-0072 Mid-Management Development Advanced Curriculum",
-      "unified_title": "McDonald's MCD-0072 Mid-Management Development Advanced Curriculum",
+      "title": "McDonald's Mid-Management Development Advanced Curriculum",
+      "unified_title": "McDonald's Mid-Management Development Advanced Curriculum",
       "is_classified": true,
       "issuing_agency": "McDonald's Corporation",
       "training_agency": "McDonald's Corporation",
@@ -168462,8 +166343,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-CFFT2-1-001"
       ],
-      "title": "Center for Financial Training (CFT) — Human Relations (CFTA-0009)",
-      "unified_title": "Center for Financial Training (CFT) — Human Relations (CFTA-0009)",
+      "title": "Center for Financial Training (CFT) — Human Relations",
+      "unified_title": "Center for Financial Training (CFT) — Human Relations",
       "is_classified": true,
       "issuing_agency": "Center for Financial Training (CFT)",
       "training_agency": "",
@@ -168532,8 +166413,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-CFFT3-1-001"
       ],
-      "title": "Center for Financial Training (CFT) — Human Resources Management (CFTA-0025)",
-      "unified_title": "Center for Financial Training (CFT) — Human Resources Management (CFTA-0025)",
+      "title": "Center for Financial Training (CFT) — Human Resources Management",
+      "unified_title": "Center for Financial Training (CFT) — Human Resources Management",
       "is_classified": true,
       "issuing_agency": "Center for Financial Training (CFT)",
       "training_agency": "",
@@ -168602,8 +166483,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-MCMB-1-001"
       ],
-      "title": "McDonald's MCD-0051 Business Leadership Practices",
-      "unified_title": "McDonald's MCD-0051 Business Leadership Practices",
+      "title": "McDonald's Business Leadership Practices",
+      "unified_title": "McDonald's Business Leadership Practices",
       "is_classified": true,
       "issuing_agency": "McDonald's Corporation",
       "training_agency": "McDonald's Corporation",
@@ -168672,8 +166553,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-MCMB1-1-001"
       ],
-      "title": "McDonald's MCD-0056 Business Management",
-      "unified_title": "McDonald's MCD-0056 Business Management",
+      "title": "McDonald's Business Management",
+      "unified_title": "McDonald's Business Management",
       "is_classified": true,
       "issuing_agency": "McDonald's Corporation",
       "training_agency": "McDonald's Corporation",
@@ -168742,8 +166623,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-MCMO-1-001"
       ],
-      "title": "McDonald's MCD-0057 Operations Supervisor MDP",
-      "unified_title": "McDonald's MCD-0057 Operations Supervisor MDP",
+      "title": "McDonald's Operations Supervisor MDP",
+      "unified_title": "McDonald's Operations Supervisor MDP",
       "is_classified": true,
       "issuing_agency": "McDonald's Corporation",
       "training_agency": "McDonald's Corporation",
@@ -169112,8 +166993,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCBEN-DVI-1-001"
       ],
-      "title": "Digital Video I",
-      "unified_title": "Digital Video I",
+      "title": "Digital Video 1",
+      "unified_title": "Digital Video 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -174810,141 +172691,13 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPCXH-MC-S-1-001",
+      "exhibit_id": "MAPCXH-MC-C-1-001|MAPCXH-MC-E-1-001|MAPCXH-MC-O-1-001|MAPCXH-MC-S-1-001|MAPCXH-MC-V-1-001",
       "exhibit_ids": [
-        "MAPCXH-MC-S-1-001"
-      ],
-      "title": "Medical Core (High School Articulation) — Santiago High School",
-      "unified_title": "Medical Core (High School Articulation) — Santiago High School",
-      "is_classified": true,
-      "issuing_agency": "Santiago High School",
-      "training_agency": "Santiago High School",
-      "confidence_title": 0.7,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Medical Core - Santiago High School"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Health",
-      "sector": "Health",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Santa Ana College"
-      ],
-      "potential": 30,
-      "potential_names": [
-        "Allan Hancock College",
-        "Cañada College",
-        "Cerro Coso Community College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "College of Marin",
-        "College of the Canyons",
-        "Cosumnes River College",
-        "De Anza College",
-        "East Los Angeles College",
-        "Glendale Community College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mt. San Jacinto College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "Santa Monica College",
-        "Santiago Canyon College",
-        "Southwestern College",
-        "West Los Angeles College",
-        "West Valley College"
-      ],
-      "total_addressable": 31,
-      "credit_recs": [
-        {
-          "course": "MA 051A",
-          "credit": "3 hours in Beginning Medical Terminology"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPCXH-MC-O-1-001",
-      "exhibit_ids": [
-        "MAPCXH-MC-O-1-001"
-      ],
-      "title": "Medical Core (High School Articulation) — Orange High School",
-      "unified_title": "Medical Core (High School Articulation) — Orange High School",
-      "is_classified": true,
-      "issuing_agency": "Orange High School",
-      "training_agency": "Orange High School",
-      "confidence_title": 0.7,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Medical Core - Orange High School"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Health",
-      "sector": "Health",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Santa Ana College"
-      ],
-      "potential": 30,
-      "potential_names": [
-        "Allan Hancock College",
-        "Cañada College",
-        "Cerro Coso Community College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "College of Marin",
-        "College of the Canyons",
-        "Cosumnes River College",
-        "De Anza College",
-        "East Los Angeles College",
-        "Glendale Community College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mt. San Jacinto College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "Santa Monica College",
-        "Santiago Canyon College",
-        "Southwestern College",
-        "West Los Angeles College",
-        "West Valley College"
-      ],
-      "total_addressable": 31,
-      "credit_recs": [
-        {
-          "course": "MA 051A",
-          "credit": "3 hours in Beginning Medical Terminology"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPCXH-MC-C-1-001",
-      "exhibit_ids": [
-        "MAPCXH-MC-C-1-001"
+        "MAPCXH-MC-C-1-001",
+        "MAPCXH-MC-E-1-001",
+        "MAPCXH-MC-O-1-001",
+        "MAPCXH-MC-S-1-001",
+        "MAPCXH-MC-V-1-001"
       ],
       "title": "Medical Core",
       "unified_title": "Medical Core",
@@ -174955,73 +172708,11 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
-        "Medical Core - Canyon High School"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Health",
-      "sector": "Health",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Santa Ana College"
-      ],
-      "potential": 30,
-      "potential_names": [
-        "Allan Hancock College",
-        "Cañada College",
-        "Cerro Coso Community College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "College of Marin",
-        "College of the Canyons",
-        "Cosumnes River College",
-        "De Anza College",
-        "East Los Angeles College",
-        "Glendale Community College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mt. San Jacinto College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "Santa Monica College",
-        "Santiago Canyon College",
-        "Southwestern College",
-        "West Los Angeles College",
-        "West Valley College"
-      ],
-      "total_addressable": 31,
-      "credit_recs": [
-        {
-          "course": "MA 051A",
-          "credit": "3 hours in Beginning Medical Terminology"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPCXH-MC-E-1-001",
-      "exhibit_ids": [
-        "MAPCXH-MC-E-1-001"
-      ],
-      "title": "Medical Core (High School Articulation) — El Modena High School",
-      "unified_title": "Medical Core (High School Articulation) — El Modena High School",
-      "is_classified": true,
-      "issuing_agency": "El Modena High School",
-      "training_agency": "El Modena High School",
-      "confidence_title": 0.7,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Medical Core - El Modena High School"
+        "Medical Core - Canyon High School",
+        "Medical Core - El Modena High School",
+        "Medical Core - Orange High School",
+        "Medical Core - Santiago High School",
+        "Medical Core - Villa Park High School"
       ],
       "cpl_type": "Credit By Exam",
       "discipline": "Health",
@@ -175099,72 +172790,6 @@ window.CPL_STATEWIDE = {
         "Intermediate Patient Care (Formerly Medical Core) - Santa Ana High School",
         "Intermediate Patient Care (Formerly Medical Core) - Segerstrom High School",
         "Intermediate Patient Care (Formerly Medical Core) - Valley High School"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Health",
-      "sector": "Health",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Santa Ana College"
-      ],
-      "potential": 30,
-      "potential_names": [
-        "Allan Hancock College",
-        "Cañada College",
-        "Cerro Coso Community College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "College of Marin",
-        "College of the Canyons",
-        "Cosumnes River College",
-        "De Anza College",
-        "East Los Angeles College",
-        "Glendale Community College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mt. San Jacinto College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "Santa Monica College",
-        "Santiago Canyon College",
-        "Southwestern College",
-        "West Los Angeles College",
-        "West Valley College"
-      ],
-      "total_addressable": 31,
-      "credit_recs": [
-        {
-          "course": "MA 051A",
-          "credit": "3 hours in Beginning Medical Terminology"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPCXH-MC-V-1-001",
-      "exhibit_ids": [
-        "MAPCXH-MC-V-1-001"
-      ],
-      "title": "Medical Core (High School Articulation) — Villa Park High School",
-      "unified_title": "Medical Core (High School Articulation) — Villa Park High School",
-      "is_classified": true,
-      "issuing_agency": "Villa Park High School",
-      "training_agency": "Villa Park High School",
-      "confidence_title": 0.7,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Medical Core - Villa Park High School"
       ],
       "cpl_type": "Credit By Exam",
       "discipline": "Health",
@@ -176839,8 +174464,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-LIAM-1-001"
       ],
-      "title": "Landscape Installation and Maintenance I",
-      "unified_title": "Landscape Installation and Maintenance I",
+      "title": "Landscape Installation and Maintenance 1",
+      "unified_title": "Landscape Installation and Maintenance 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -186564,677 +184189,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-SETC-1-001",
-      "exhibit_ids": [
-        "MAPICA-SETC-1-001"
-      ],
-      "title": "IBEW/NECA Electrical Apprenticeship — ELECT 110",
-      "unified_title": "IBEW/NECA Electrical Apprenticeship — ELECT 110",
-      "is_classified": true,
-      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
-      "training_agency": "Sacramento Electrical Training Center",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.75,
-      "quality_flag": "",
-      "raw_titles": [
-        "Sacramento Electrical Training Center ELECT 110"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Manufacturing",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 25,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cerritos College",
-        "Chabot College",
-        "College of San Mateo",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Cuesta College",
-        "Foothill College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Los Angeles Trade Technical College",
-        "Merced College",
-        "Modesto Junior College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Orange Coast College",
-        "Palomar College",
-        "San Joaquin Delta College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 26,
-      "credit_recs": [
-        {
-          "course": "ELECT 110",
-          "credit": "5 hours in Elect Apprenticeship I"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-SETC1-1-001",
-      "exhibit_ids": [
-        "MAPICA-SETC1-1-001"
-      ],
-      "title": "IBEW/NECA Electrical Apprenticeship — ELECT 111",
-      "unified_title": "IBEW/NECA Electrical Apprenticeship — ELECT 111",
-      "is_classified": true,
-      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
-      "training_agency": "Sacramento Electrical Training Center",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.75,
-      "quality_flag": "",
-      "raw_titles": [
-        "Sacramento Electrical Training Center ELECT 111"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Manufacturing",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 25,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cerritos College",
-        "Chabot College",
-        "College of San Mateo",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Cuesta College",
-        "Foothill College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Los Angeles Trade Technical College",
-        "Merced College",
-        "Modesto Junior College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Orange Coast College",
-        "Palomar College",
-        "San Joaquin Delta College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 26,
-      "credit_recs": [
-        {
-          "course": "ELECT 111",
-          "credit": "3 hours in Electrical Apprenticeship II"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-SETC2-1-001",
-      "exhibit_ids": [
-        "MAPICA-SETC2-1-001"
-      ],
-      "title": "IBEW/NECA Electrical Apprenticeship — ELECT 120",
-      "unified_title": "IBEW/NECA Electrical Apprenticeship — ELECT 120",
-      "is_classified": true,
-      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
-      "training_agency": "Sacramento Electrical Training Center",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.75,
-      "quality_flag": "",
-      "raw_titles": [
-        "Sacramento Electrical Training Center ELECT 120"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Manufacturing",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 25,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cerritos College",
-        "Chabot College",
-        "College of San Mateo",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Cuesta College",
-        "Foothill College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Los Angeles Trade Technical College",
-        "Merced College",
-        "Modesto Junior College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Orange Coast College",
-        "Palomar College",
-        "San Joaquin Delta College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 26,
-      "credit_recs": [
-        {
-          "course": "ELECT 120",
-          "credit": "3 hours in Elect Apprenticeship III"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-SETC3-1-001",
-      "exhibit_ids": [
-        "MAPICA-SETC3-1-001"
-      ],
-      "title": "IBEW/NECA Electrical Apprenticeship — ELECT 121",
-      "unified_title": "IBEW/NECA Electrical Apprenticeship — ELECT 121",
-      "is_classified": true,
-      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
-      "training_agency": "Sacramento Electrical Training Center",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.75,
-      "quality_flag": "",
-      "raw_titles": [
-        "Sacramento Electrical Training Center ELECT 121"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Manufacturing",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 25,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cerritos College",
-        "Chabot College",
-        "College of San Mateo",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Cuesta College",
-        "Foothill College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Los Angeles Trade Technical College",
-        "Merced College",
-        "Modesto Junior College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Orange Coast College",
-        "Palomar College",
-        "San Joaquin Delta College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 26,
-      "credit_recs": [
-        {
-          "course": "ELECT 121",
-          "credit": "3 hours in Electrical Apprenticeship IV"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-SETC4-1-001",
-      "exhibit_ids": [
-        "MAPICA-SETC4-1-001"
-      ],
-      "title": "IBEW/NECA Electrical Apprenticeship — ELECT 130",
-      "unified_title": "IBEW/NECA Electrical Apprenticeship — ELECT 130",
-      "is_classified": true,
-      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
-      "training_agency": "Sacramento Electrical Training Center",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.75,
-      "quality_flag": "",
-      "raw_titles": [
-        "Sacramento Electrical Training Center ELECT 130"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Manufacturing",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 25,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cerritos College",
-        "Chabot College",
-        "College of San Mateo",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Cuesta College",
-        "Foothill College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Los Angeles Trade Technical College",
-        "Merced College",
-        "Modesto Junior College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Orange Coast College",
-        "Palomar College",
-        "San Joaquin Delta College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 26,
-      "credit_recs": [
-        {
-          "course": "ELECT 130",
-          "credit": "3 hours in Electrical Apprenticeship V"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-SETC5-1-001",
-      "exhibit_ids": [
-        "MAPICA-SETC5-1-001"
-      ],
-      "title": "IBEW/NECA Electrical Apprenticeship — ELECT 131",
-      "unified_title": "IBEW/NECA Electrical Apprenticeship — ELECT 131",
-      "is_classified": true,
-      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
-      "training_agency": "Sacramento Electrical Training Center",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.75,
-      "quality_flag": "",
-      "raw_titles": [
-        "Sacramento Electrical Training Center ELECT 131"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Manufacturing",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 25,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cerritos College",
-        "Chabot College",
-        "College of San Mateo",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Cuesta College",
-        "Foothill College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Los Angeles Trade Technical College",
-        "Merced College",
-        "Modesto Junior College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Orange Coast College",
-        "Palomar College",
-        "San Joaquin Delta College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 26,
-      "credit_recs": [
-        {
-          "course": "ELECT 131",
-          "credit": "3 hours in Electrical Apprenticeship VI"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-SETC6-1-001",
-      "exhibit_ids": [
-        "MAPICA-SETC6-1-001"
-      ],
-      "title": "IBEW/NECA Electrical Apprenticeship — ELECT 140",
-      "unified_title": "IBEW/NECA Electrical Apprenticeship — ELECT 140",
-      "is_classified": true,
-      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
-      "training_agency": "Sacramento Electrical Training Center",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.75,
-      "quality_flag": "",
-      "raw_titles": [
-        "Sacramento Electrical Training Center ELECT 140"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Manufacturing",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 25,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cerritos College",
-        "Chabot College",
-        "College of San Mateo",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Cuesta College",
-        "Foothill College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Los Angeles Trade Technical College",
-        "Merced College",
-        "Modesto Junior College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Orange Coast College",
-        "Palomar College",
-        "San Joaquin Delta College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 26,
-      "credit_recs": [
-        {
-          "course": "ELECT 140",
-          "credit": "3 hours in Electrical Apprenticeship VII"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-SETC7-1-001",
-      "exhibit_ids": [
-        "MAPICA-SETC7-1-001"
-      ],
-      "title": "IBEW/NECA Electrical Apprenticeship — ELECT 141",
-      "unified_title": "IBEW/NECA Electrical Apprenticeship — ELECT 141",
-      "is_classified": true,
-      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
-      "training_agency": "Sacramento Electrical Training Center",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.75,
-      "quality_flag": "",
-      "raw_titles": [
-        "Sacramento Electrical Training Center ELECT 141"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Manufacturing",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 25,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cerritos College",
-        "Chabot College",
-        "College of San Mateo",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Cuesta College",
-        "Foothill College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Los Angeles Trade Technical College",
-        "Merced College",
-        "Modesto Junior College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Orange Coast College",
-        "Palomar College",
-        "San Joaquin Delta College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 26,
-      "credit_recs": [
-        {
-          "course": "ELECT 141",
-          "credit": "3 hours in Electrical Apprenticeship VIII"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-SETC8-1-001",
-      "exhibit_ids": [
-        "MAPICA-SETC8-1-001"
-      ],
-      "title": "IBEW/NECA Electrical Apprenticeship — ELECT 150",
-      "unified_title": "IBEW/NECA Electrical Apprenticeship — ELECT 150",
-      "is_classified": true,
-      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
-      "training_agency": "Sacramento Electrical Training Center",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.75,
-      "quality_flag": "",
-      "raw_titles": [
-        "Sacramento Electrical Training Center ELECT 150"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Manufacturing",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 25,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cerritos College",
-        "Chabot College",
-        "College of San Mateo",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Cuesta College",
-        "Foothill College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Los Angeles Trade Technical College",
-        "Merced College",
-        "Modesto Junior College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Orange Coast College",
-        "Palomar College",
-        "San Joaquin Delta College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 26,
-      "credit_recs": [
-        {
-          "course": "ELECT 150",
-          "credit": "3 hours in Electrical Apprenticeship IX"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-SETC9-1-001",
-      "exhibit_ids": [
-        "MAPICA-SETC9-1-001"
-      ],
-      "title": "IBEW/NECA Electrical Apprenticeship — ELECT 151",
-      "unified_title": "IBEW/NECA Electrical Apprenticeship — ELECT 151",
-      "is_classified": true,
-      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
-      "training_agency": "Sacramento Electrical Training Center",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.75,
-      "quality_flag": "",
-      "raw_titles": [
-        "Sacramento Electrical Training Center ELECT 151"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Manufacturing",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 25,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cerritos College",
-        "Chabot College",
-        "College of San Mateo",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Cuesta College",
-        "Foothill College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Los Angeles Trade Technical College",
-        "Merced College",
-        "Modesto Junior College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Orange Coast College",
-        "Palomar College",
-        "San Joaquin Delta College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 26,
-      "credit_recs": [
-        {
-          "course": "ELECT 151",
-          "credit": "3 hours in Electrical Apprenticeship X"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-SETC10-1-001",
-      "exhibit_ids": [
-        "MAPICA-SETC10-1-001"
-      ],
-      "title": "IBEW/NECA Electrical Apprenticeship — Work Experience",
-      "unified_title": "IBEW/NECA Electrical Apprenticeship — Work Experience",
-      "is_classified": true,
-      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
-      "training_agency": "Sacramento Electrical Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.75,
-      "quality_flag": "",
-      "raw_titles": [
-        "Sacramento Electrical Training Center Work Experience"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Manufacturing",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 25,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cerritos College",
-        "Chabot College",
-        "College of San Mateo",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Cuesta College",
-        "Foothill College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Los Angeles Trade Technical College",
-        "Merced College",
-        "Modesto Junior College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Orange Coast College",
-        "Palomar College",
-        "San Joaquin Delta College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 26,
-      "credit_recs": [
-        {
-          "course": "ELECT 298",
-          "credit": "0.5 hours in Work Experience in Electricians Apprenticeship"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPCXS-FSMS-1-001",
       "exhibit_ids": [
         "MAPCXS-FSMS-1-001"
@@ -187987,8 +184941,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-BASD-1-001"
       ],
-      "title": "BIM and Sustainable Design Strategies I",
-      "unified_title": "BIM and Sustainable Design Strategies I",
+      "title": "BIM and Sustainable Design Strategies 1",
+      "unified_title": "BIM and Sustainable Design Strategies 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -193385,8 +190339,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-W0-W-1-001"
       ],
-      "title": "Wastewater Treatment Plant Operator Grade I",
-      "unified_title": "Wastewater Treatment Plant Operator Grade I",
+      "title": "Wastewater Treatment Plant Operator Grade 1",
+      "unified_title": "Wastewater Treatment Plant Operator Grade 1",
       "is_classified": true,
       "issuing_agency": "California Water Environment Association (CWEA)",
       "training_agency": "",
@@ -193439,8 +190393,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-W0-W1-1-001"
       ],
-      "title": "Wastewater Treatment Plant Operator Grade II",
-      "unified_title": "Wastewater Treatment Plant Operator Grade II",
+      "title": "Wastewater Treatment Plant Operator Grade 2",
+      "unified_title": "Wastewater Treatment Plant Operator Grade 2",
       "is_classified": true,
       "issuing_agency": "California Water Environment Association (CWEA)",
       "training_agency": "",
@@ -195717,8 +192671,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-CBE-6-1-001"
       ],
-      "title": "Water Distribution Operator I",
-      "unified_title": "Water Distribution Operator I",
+      "title": "Water Distribution Operator 1",
+      "unified_title": "Water Distribution Operator 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -199165,8 +196119,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCBEN-ACI-1-001"
       ],
-      "title": "Apparel Construction I",
-      "unified_title": "Apparel Construction I",
+      "title": "Apparel Construction 1",
+      "unified_title": "Apparel Construction 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -199215,8 +196169,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCBEN-ACIL-1-001"
       ],
-      "title": "Apparel Construction I Lab",
-      "unified_title": "Apparel Construction I Lab",
+      "title": "Apparel Construction 1 Lab",
+      "unified_title": "Apparel Construction 1 Lab",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -206901,8 +203855,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-O0-F-1-001"
       ],
-      "title": "OSHA 030 — Construction Industry Outreach (30-hour)",
-      "unified_title": "OSHA 030 — Construction Industry Outreach (30-hour)",
+      "title": "OSHA 30 — Construction Industry Outreach (30-hour)",
+      "unified_title": "OSHA 30 — Construction Industry Outreach (30-hour)",
       "is_classified": true,
       "issuing_agency": "U.S. Occupational Safety and Health Administration (OSHA)",
       "training_agency": "",
@@ -211407,8 +208361,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-PS7--1-001"
       ],
-      "title": "Floral Design and Practices I",
-      "unified_title": "Floral Design and Practices I",
+      "title": "Floral Design and Practices 1",
+      "unified_title": "Floral Design and Practices 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -211991,8 +208945,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRS-CEI-1-001"
       ],
-      "title": "Diagnostic Medical Sonography — Clinical Education IV",
-      "unified_title": "Diagnostic Medical Sonography — Clinical Education IV",
+      "title": "Diagnostic Medical Sonography — Clinical Education 4",
+      "unified_title": "Diagnostic Medical Sonography — Clinical Education 4",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -212476,1646 +209430,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-IWTC-1-001",
-      "exhibit_ids": [
-        "MAPICA-IWTC-1-001"
-      ],
-      "title": "Iron Workers Apprenticeship — Saturday Classes",
-      "unified_title": "Iron Workers Apprenticeship — Saturday Classes",
-      "is_classified": true,
-      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-      "training_agency": "Iron Workers Training Center",
-      "confidence_title": 0.6,
-      "confidence_issuer": 0.7,
-      "quality_flag": "",
-      "raw_titles": [
-        "Iron Workers Training Center Saturday Classes"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "IW 100",
-          "credit": "2 hours in Orientation and History of the Trade"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-IWTC1-1-001",
-      "exhibit_ids": [
-        "MAPICA-IWTC1-1-001"
-      ],
-      "title": "Iron Workers Apprenticeship — H08/H97",
-      "unified_title": "Iron Workers Apprenticeship — H08/H97",
-      "is_classified": true,
-      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-      "training_agency": "Iron Workers Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
-      "quality_flag": "",
-      "raw_titles": [
-        "Iron Workers Training Center H08/H97"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "IW 101",
-          "credit": "2 hours in OSHA 30 for Ironworkers"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-IWTC2-1-001",
-      "exhibit_ids": [
-        "MAPICA-IWTC2-1-001"
-      ],
-      "title": "Iron Workers Apprenticeship — H01",
-      "unified_title": "Iron Workers Apprenticeship — H01",
-      "is_classified": true,
-      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-      "training_agency": "Iron Workers Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
-      "quality_flag": "",
-      "raw_titles": [
-        "Iron Workers Training Center H01"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "IW 110",
-          "credit": "1.5 hours in Mixed Base"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-IWTC3-1-001",
-      "exhibit_ids": [
-        "MAPICA-IWTC3-1-001"
-      ],
-      "title": "Iron Workers Apprenticeship — H15",
-      "unified_title": "Iron Workers Apprenticeship — H15",
-      "is_classified": true,
-      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-      "training_agency": "Iron Workers Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
-      "quality_flag": "",
-      "raw_titles": [
-        "Iron Workers Training Center H15"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "IW 120",
-          "credit": "1.5 hours in Rigging"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-IWTC4-1-001",
-      "exhibit_ids": [
-        "MAPICA-IWTC4-1-001"
-      ],
-      "title": "Iron Workers Apprenticeship — H30",
-      "unified_title": "Iron Workers Apprenticeship — H30",
-      "is_classified": true,
-      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-      "training_agency": "Iron Workers Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
-      "quality_flag": "",
-      "raw_titles": [
-        "Iron Workers Training Center H30"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "IW 130",
-          "credit": "1.5 hours in Reinforcing I"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-IWTC5-1-001",
-      "exhibit_ids": [
-        "MAPICA-IWTC5-1-001"
-      ],
-      "title": "Iron Workers Apprenticeship — H36",
-      "unified_title": "Iron Workers Apprenticeship — H36",
-      "is_classified": true,
-      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-      "training_agency": "Iron Workers Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
-      "quality_flag": "",
-      "raw_titles": [
-        "Iron Workers Training Center H36"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "IW 131",
-          "credit": "1.5 hours in Reinforcing II/Post Tension"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-IWTC6-1-001",
-      "exhibit_ids": [
-        "MAPICA-IWTC6-1-001"
-      ],
-      "title": "Iron Workers Apprenticeship — H65/H70",
-      "unified_title": "Iron Workers Apprenticeship — H65/H70",
-      "is_classified": true,
-      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-      "training_agency": "Iron Workers Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
-      "quality_flag": "",
-      "raw_titles": [
-        "Iron Workers Training Center H65/70"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "IW 140",
-          "credit": "1.5 hours in Precast Concrete and Metal Buildings"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-IWTC7-1-001",
-      "exhibit_ids": [
-        "MAPICA-IWTC7-1-001"
-      ],
-      "title": "Iron Workers Apprenticeship — H20",
-      "unified_title": "Iron Workers Apprenticeship — H20",
-      "is_classified": true,
-      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-      "training_agency": "Iron Workers Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
-      "quality_flag": "",
-      "raw_titles": [
-        "Iron Workers Training Center H20"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "IW 150",
-          "credit": "1.5 hours in Welding I"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-IWTC8-1-001",
-      "exhibit_ids": [
-        "MAPICA-IWTC8-1-001"
-      ],
-      "title": "Iron Workers Apprenticeship — H25",
-      "unified_title": "Iron Workers Apprenticeship — H25",
-      "is_classified": true,
-      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-      "training_agency": "Iron Workers Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
-      "quality_flag": "",
-      "raw_titles": [
-        "Iron Workers Training Center H25"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "IW 151",
-          "credit": "1.5 hours in Welding II"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-IWTC9-1-001",
-      "exhibit_ids": [
-        "MAPICA-IWTC9-1-001"
-      ],
-      "title": "Iron Workers Apprenticeship — H28",
-      "unified_title": "Iron Workers Apprenticeship — H28",
-      "is_classified": true,
-      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-      "training_agency": "Iron Workers Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
-      "quality_flag": "",
-      "raw_titles": [
-        "Iron Workers Training Center H28"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "IW 152",
-          "credit": "1.5 hours in Welding III"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-IWTC10-1-001",
-      "exhibit_ids": [
-        "MAPICA-IWTC10-1-001"
-      ],
-      "title": "Iron Workers Apprenticeship — H07/H47/H75/H77",
-      "unified_title": "Iron Workers Apprenticeship — H07/H47/H75/H77",
-      "is_classified": true,
-      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-      "training_agency": "Iron Workers Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
-      "quality_flag": "",
-      "raw_titles": [
-        "Iron Workers Training Center H07/H47/H75/77"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "IW 160",
-          "credit": "2 hours in Lead Hazard"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-IWTC11-1-001",
-      "exhibit_ids": [
-        "MAPICA-IWTC11-1-001"
-      ],
-      "title": "Iron Workers Apprenticeship — H40",
-      "unified_title": "Iron Workers Apprenticeship — H40",
-      "is_classified": true,
-      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-      "training_agency": "Iron Workers Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
-      "quality_flag": "",
-      "raw_titles": [
-        "Iron Workers Training Center H40"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "IW 170",
-          "credit": "1.5 hours in Structural I"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-IWTC12-1-001",
-      "exhibit_ids": [
-        "MAPICA-IWTC12-1-001"
-      ],
-      "title": "Iron Workers Apprenticeship — H45/B87",
-      "unified_title": "Iron Workers Apprenticeship — H45/B87",
-      "is_classified": true,
-      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-      "training_agency": "Iron Workers Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
-      "quality_flag": "",
-      "raw_titles": [
-        "Iron Workers Training Center H45/B87"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "IW 171",
-          "credit": "1.5 hours in Structural II"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-IWTC13-1-001",
-      "exhibit_ids": [
-        "MAPICA-IWTC13-1-001"
-      ],
-      "title": "Iron Workers Apprenticeship — H52",
-      "unified_title": "Iron Workers Apprenticeship — H52",
-      "is_classified": true,
-      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-      "training_agency": "Iron Workers Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
-      "quality_flag": "",
-      "raw_titles": [
-        "Iron Workers Training Center H52"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "IW 180",
-          "credit": "1.5 hours in Architectural/Ornamental I"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-IWTC14-1-001",
-      "exhibit_ids": [
-        "MAPICA-IWTC14-1-001"
-      ],
-      "title": "Iron Workers Apprenticeship — H62/H18/H95",
-      "unified_title": "Iron Workers Apprenticeship — H62/H18/H95",
-      "is_classified": true,
-      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-      "training_agency": "Iron Workers Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
-      "quality_flag": "",
-      "raw_titles": [
-        "Iron Workers Training Center H62/H18/H95"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "IW 183",
-          "credit": "3 hours in The History of Ironworkers"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-IWTC15-1-001",
-      "exhibit_ids": [
-        "MAPICA-IWTC15-1-001"
-      ],
-      "title": "Iron Workers Apprenticeship — H54",
-      "unified_title": "Iron Workers Apprenticeship — H54",
-      "is_classified": true,
-      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-      "training_agency": "Iron Workers Training Center",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
-      "quality_flag": "",
-      "raw_titles": [
-        "Iron Workers Training Center H54"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "IW 186",
-          "credit": "1.5 hours in Architectural/Ornamental II"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-IWTC16-1-001",
-      "exhibit_ids": [
-        "MAPICA-IWTC16-1-001"
-      ],
-      "title": "Iron Workers Apprenticeship — Work Experience",
-      "unified_title": "Iron Workers Apprenticeship — Work Experience",
-      "is_classified": true,
-      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-      "training_agency": "Iron Workers Training Center",
-      "confidence_title": 0.65,
-      "confidence_issuer": 0.7,
-      "quality_flag": "",
-      "raw_titles": [
-        "Iron Workers Training Center Work Experience"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "IW 298",
-          "credit": "0.5 hours in Work Experience in Ironworkers Apprenticeship"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 100",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 100",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters SHME 100"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SHME 100",
-          "credit": "3.5 hours in Sheet Metal Apprenticeship I"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P1-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P1-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 101",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 101",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters SHME 101"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SHME 101",
-          "credit": "3.5 hours in Sheet Metal Apprenticeship II"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P2-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P2-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 110",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 110",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters SHME 110"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SHME 110",
-          "credit": "3.5 hours in Sheet Metal Apprenticeship III"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P3-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P3-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 111",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 111",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters SHME 111"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SHME 111",
-          "credit": "3.5 hours in Sheet Metal Apprenticeship IV"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P4-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P4-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 120",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 120",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters SHME 120"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SHME 120",
-          "credit": "3.5 hours in Sheet Metal Apprenticeship V"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P5-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P5-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 121",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 121",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters SHME 121"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SHME 121",
-          "credit": "3.5 hours in Sheet Metal Apprenticeship VI"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P6-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P6-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 130",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 130",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters SHME 130"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SHME 130",
-          "credit": "3.5 hours in Sheet Metal Apprenticeship VII"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P7-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P7-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 131",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 131",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters SHME 131"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SHME 131",
-          "credit": "3.5 hours in Sheet Metal Apprenticeship VIII"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P8-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P8-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 140",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 140",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters SHME 140"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SHME 140",
-          "credit": "3.5 hours in Sheet Metal Apprenticeship IX"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P9-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P9-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 141",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 141",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters SHME 141"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SHME 141",
-          "credit": "3.5 hours in Sheet Metal Apprenticeship X"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P10-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P10-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 150",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 150",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters SHME 150"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SHME 150",
-          "credit": "3.5 hours in Sheet Metal Welding I"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P11-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P11-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 151",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 151",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters SHME 151"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SHME 151",
-          "credit": "3.5 hours in Sheet Metal Welding II"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P12-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P12-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 100",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 100",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters SMTEC 100"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SMTEC 100",
-          "credit": "2.5 hours in Sheet Metal Service Technician Apprenticeship I"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P13-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P13-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 101",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 101",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters SMTEC 101"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SMTEC 101",
-          "credit": "2.5 hours in Sheet Metal Service Technician Apprenticeship II"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P14-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P14-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 110",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 110",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters SMTEC 110"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SMTEC 110",
-          "credit": "2.5 hours in Sheet Metal Service Technician Apprenticeship III"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P15-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P15-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 111",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 111",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters SMTEC 111"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SMTEC 111",
-          "credit": "2.5 hours in Sheet Metal Service Technician Apprenticeship IV"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P16-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P16-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 120",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 120",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters SMTEC 120"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SMTEC 120",
-          "credit": "2.5 hours in Sheet Metal Service Technician Apprenticeship V"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P17-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P17-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 121",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 121",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters SMTEC 121"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SMTEC 121",
-          "credit": "2.5 hours in Sheet Metal Service Technician Apprenticeship VI"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P18-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P18-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 130",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 130",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters SMTEC 130"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SMTEC 130",
-          "credit": "2.5 hours in Sheet Metal Service Technician Apprenticeship VII"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P19-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P19-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 131",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 131",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters SMTEC 131"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SMTEC 131",
-          "credit": "2.5 hours in Sheet Metal Service Technician Apprenticeship VIII"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P20-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P20-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 140",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 140",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters SMTEC 140"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SMTEC 140",
-          "credit": "2.5 hours in Sheet Metal Service Technician Apprenticeship IX"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P21-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P21-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 141",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 141",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.78,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters SMTEC 141"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SMTEC 141",
-          "credit": "2.5 hours in Sheet Metal Serv Tech Appr X"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-UL3P22-1-001",
-      "exhibit_ids": [
-        "MAPICA-UL3P22-1-001"
-      ],
-      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship Work Experience",
-      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship Work Experience",
-      "is_classified": true,
-      "issuing_agency": "United Association (UA) Local 342",
-      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
-      "confidence_title": 0.8,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "UA Local 342 Plumbers/Pipefitters Work Experience"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Foothill College",
-        "Long Beach City College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "SHME 298",
-          "credit": "0.5 hours in Work Experience in Sheet Metal Apprenticeship"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPPRA-APR–-1-001",
       "exhibit_ids": [
         "MAPPRA-APR–-1-001"
@@ -214311,46 +209625,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "CRP 477C",
           "credit": "1.5 hours in Adv Automatic Finishing Tools"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPPRA-AMF-1-001",
-      "exhibit_ids": [
-        "MAPPRA-AMF-1-001"
-      ],
-      "title": "Metal Framing Advanced",
-      "unified_title": "Metal Framing Advanced",
-      "is_classified": true,
-      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
-      "training_agency": "",
-      "confidence_title": 0.7,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Advanced Metal Framing"
-      ],
-      "cpl_type": "Portfolio Review",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Norco College"
-      ],
-      "potential": 4,
-      "potential_names": [
-        "American River College",
-        "Los Angeles Southwest College",
-        "Palomar College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 5,
-      "credit_recs": [
-        {
-          "course": "CRP 478B",
-          "credit": "1.5 hours in Advanced Metal Framing"
         }
       ],
       "authoritative_recs": []
@@ -214573,726 +209847,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "BIOL 424",
           "credit": "3 hours in Anatomy and Physiology"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC3-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC3-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California (CTCNC) — Work Experience",
-      "unified_title": "Carpenters Training Committee for Northern California (CTCNC) — Work Experience",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC Work Experience"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 4,
-      "potential_names": [
-        "Los Angeles Southwest College",
-        "Norco College",
-        "Palomar College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 5,
-      "credit_recs": [
-        {
-          "course": "DRLTH 298",
-          "credit": "0.5 hours in Work Experience Drywall/Lathing Apprenticeship"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC118-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC118-1-001"
-      ],
-      "title": "Introduction to Apprenticeship I",
-      "unified_title": "Introduction to Apprenticeship I",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 101"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 4,
-      "potential_names": [
-        "Los Angeles Southwest College",
-        "Norco College",
-        "Palomar College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 5,
-      "credit_recs": [
-        {
-          "course": "DRLTH 100",
-          "credit": "1.5 hours in Introduction to Apprenticeship I"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC119-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC119-1-001"
-      ],
-      "title": "Basic Applications",
-      "unified_title": "Basic Applications",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 102"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 4,
-      "potential_names": [
-        "Los Angeles Southwest College",
-        "Norco College",
-        "Palomar College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 5,
-      "credit_recs": [
-        {
-          "course": "DRLTH 102",
-          "credit": "1.5 hours in Basic Applications"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC120-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC120-1-001"
-      ],
-      "title": "Drywall Lathing Trade Safety",
-      "unified_title": "Drywall Lathing Trade Safety",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 117"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 4,
-      "potential_names": [
-        "Los Angeles Southwest College",
-        "Norco College",
-        "Palomar College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 5,
-      "credit_recs": [
-        {
-          "course": "DRLTH 103",
-          "credit": "1.5 hours in Drywall Lathing Trade Safety"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC121-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC121-1-001"
-      ],
-      "title": "Mathematics for Drywall/Lathers",
-      "unified_title": "Mathematics for Drywall/Lathers",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 103"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 4,
-      "potential_names": [
-        "Los Angeles Southwest College",
-        "Norco College",
-        "Palomar College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 5,
-      "credit_recs": [
-        {
-          "course": "DRLTH 105",
-          "credit": "2 hours in Mathematics for Drywall/Lathers"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC122-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC122-1-001"
-      ],
-      "title": "Residential Metal Framing",
-      "unified_title": "Residential Metal Framing",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 111"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 4,
-      "potential_names": [
-        "Los Angeles Southwest College",
-        "Norco College",
-        "Palomar College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 5,
-      "credit_recs": [
-        {
-          "course": "DRLTH 110",
-          "credit": "1.5 hours in Residential Metal Framing"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC123-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC123-1-001"
-      ],
-      "title": "Doors, Windows, Exterior Systems/Building Documents",
-      "unified_title": "Doors, Windows, Exterior Systems/Building Documents",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 105"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 4,
-      "potential_names": [
-        "Los Angeles Southwest College",
-        "Norco College",
-        "Palomar College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 5,
-      "credit_recs": [
-        {
-          "course": "DRLTH 112",
-          "credit": "1.5 hours in Doors, Windows, Exterior Systems/Building Documents"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC124-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC124-1-001"
-      ],
-      "title": "Blueprint Reading 1",
-      "unified_title": "Blueprint Reading 1",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 106"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 4,
-      "potential_names": [
-        "Los Angeles Southwest College",
-        "Norco College",
-        "Palomar College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 5,
-      "credit_recs": [
-        {
-          "course": "DRLTH 120",
-          "credit": "1.5 hours in Blueprint Reading I"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC125-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC125-1-001"
-      ],
-      "title": "Blueprint Reading 2",
-      "unified_title": "Blueprint Reading 2",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 107"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 4,
-      "potential_names": [
-        "Los Angeles Southwest College",
-        "Norco College",
-        "Palomar College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 5,
-      "credit_recs": [
-        {
-          "course": "DRLTH 121",
-          "credit": "1.5 hours in Blueprint Reading II"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC126-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC126-1-001"
-      ],
-      "title": "Blueprint Reading 3",
-      "unified_title": "Blueprint Reading 3",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 108"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 4,
-      "potential_names": [
-        "Los Angeles Southwest College",
-        "Norco College",
-        "Palomar College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 5,
-      "credit_recs": [
-        {
-          "course": "DRLTH 122",
-          "credit": "1.5 hours in Blueprint Reading III"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC127-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC127-1-001"
-      ],
-      "title": "Welding 1",
-      "unified_title": "Welding 1",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 110"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 4,
-      "potential_names": [
-        "Los Angeles Southwest College",
-        "Norco College",
-        "Palomar College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 5,
-      "credit_recs": [
-        {
-          "course": "DRLTH 130",
-          "credit": "1.5 hours in Welding I"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC128-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC128-1-001"
-      ],
-      "title": "Welding II",
-      "unified_title": "Welding II",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 109"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 4,
-      "potential_names": [
-        "Los Angeles Southwest College",
-        "Norco College",
-        "Palomar College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 5,
-      "credit_recs": [
-        {
-          "course": "DRLTH 131",
-          "credit": "1.5 hours in Welding II"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC129-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC129-1-001"
-      ],
-      "title": "Exterior/Advanced Fire Control System and Partitions",
-      "unified_title": "Exterior/Advanced Fire Control System and Partitions",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 104"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 4,
-      "potential_names": [
-        "Los Angeles Southwest College",
-        "Norco College",
-        "Palomar College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 5,
-      "credit_recs": [
-        {
-          "course": "DRLTH 140",
-          "credit": "1.5 hours in Exterior/Advanced Fire Control System and Partitions"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC130-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC130-1-001"
-      ],
-      "title": "Exterior Systems and Trims",
-      "unified_title": "Exterior Systems and Trims",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 112"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 4,
-      "potential_names": [
-        "Los Angeles Southwest College",
-        "Norco College",
-        "Palomar College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 5,
-      "credit_recs": [
-        {
-          "course": "DRLTH 142",
-          "credit": "1.5 hours in Exterior Systems and Trims"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC131-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC131-1-001"
-      ],
-      "title": "Interior Metal Lathing System, Sound Control",
-      "unified_title": "Interior Metal Lathing System, Sound Control",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 113"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 4,
-      "potential_names": [
-        "Los Angeles Southwest College",
-        "Norco College",
-        "Palomar College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 5,
-      "credit_recs": [
-        {
-          "course": "DRLTH 150",
-          "credit": "1.5 hours in Interior Metal Lathing System, Sound Control"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC132-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC132-1-001"
-      ],
-      "title": "Ceilings, Shaft Protection and Demountable Partitions",
-      "unified_title": "Ceilings, Shaft Protection and Demountable Partitions",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 114"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 4,
-      "potential_names": [
-        "Los Angeles Southwest College",
-        "Norco College",
-        "Palomar College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 5,
-      "credit_recs": [
-        {
-          "course": "DRLTH 160",
-          "credit": "1.5 hours in Ceilings, Shaft Protection and Demountable Partitions"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC133-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC133-1-001"
-      ],
-      "title": "Arches, Furring and Advanced Systems",
-      "unified_title": "Arches, Furring and Advanced Systems",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 115"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 4,
-      "potential_names": [
-        "Los Angeles Southwest College",
-        "Norco College",
-        "Palomar College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 5,
-      "credit_recs": [
-        {
-          "course": "DRLTH 162",
-          "credit": "1.5 hours in Arches, Furring and Advanced Systems"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC134-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC134-1-001"
-      ],
-      "title": "Advanced Construction Techniques",
-      "unified_title": "Advanced Construction Techniques",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 116"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "American River College"
-      ],
-      "potential": 4,
-      "potential_names": [
-        "Los Angeles Southwest College",
-        "Norco College",
-        "Palomar College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 5,
-      "credit_recs": [
-        {
-          "course": "DRLTH 170",
-          "credit": "1.5 hours in Advanced Construction Techniques"
         }
       ],
       "authoritative_recs": []
@@ -215756,8 +210310,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-FSEI-1-001"
       ],
-      "title": "Funeral Service Ethics and Laws II",
-      "unified_title": "Funeral Service Ethics and Laws II",
+      "title": "Funeral Service Ethics and Laws 2",
+      "unified_title": "Funeral Service Ethics and Laws 2",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -215795,8 +210349,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-FSEL-1-001"
       ],
-      "title": "Funeral Service Ethics and Laws I",
-      "unified_title": "Funeral Service Ethics and Laws I",
+      "title": "Funeral Service Ethics and Laws 1",
+      "unified_title": "Funeral Service Ethics and Laws 1",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -215834,8 +210388,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-FSAI-1-001"
       ],
-      "title": "Funeral Service Administration II",
-      "unified_title": "Funeral Service Administration II",
+      "title": "Funeral Service Administration 2",
+      "unified_title": "Funeral Service Administration 2",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -218737,8 +213291,8 @@ window.CPL_STATEWIDE = {
         "MAPSAS-D:PO-1-001",
         "MAPSAS-DPOP-1-001"
       ],
-      "title": "DSST Principles of Physical Science I",
-      "unified_title": "DSST Principles of Physical Science I",
+      "title": "DSST Principles of Physical Science 1",
+      "unified_title": "DSST Principles of Physical Science 1",
       "is_classified": true,
       "issuing_agency": "Defense Activity for Non-Traditional Education Support (DANTES)",
       "training_agency": "",
@@ -219853,8 +214407,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-CWCI1-1-001"
       ],
-      "title": "CLEP Western Civilization II",
-      "unified_title": "CLEP Western Civilization II",
+      "title": "CLEP Western Civilization 2",
+      "unified_title": "CLEP Western Civilization 2",
       "is_classified": true,
       "issuing_agency": "College Board",
       "training_agency": "",
@@ -220868,8 +215422,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPSAS-CESW-1-001"
       ],
-      "title": "CLEP Spanish with Writing Level I",
-      "unified_title": "CLEP Spanish with Writing Level I",
+      "title": "CLEP Spanish with Writing Level 1",
+      "unified_title": "CLEP Spanish with Writing Level 1",
       "is_classified": true,
       "issuing_agency": "College Board",
       "training_agency": "",
@@ -224612,8 +219166,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-CP-B-1-001"
       ],
-      "title": "Class Piano — Beginning II",
-      "unified_title": "Class Piano — Beginning II",
+      "title": "Class Piano — Beginning 2",
+      "unified_title": "Class Piano — Beginning 2",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -224752,8 +219306,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPSAS-FLI-1-001"
       ],
-      "title": "French — Level II",
-      "unified_title": "French — Level II",
+      "title": "French — Level 2",
+      "unified_title": "French — Level 2",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -224892,8 +219446,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRS-P71-1-001"
       ],
-      "title": "DSLR and Lighting for Professional Production I Beginning",
-      "unified_title": "DSLR and Lighting for Professional Production I Beginning",
+      "title": "DSLR and Lighting for Professional Production 1 Beginning",
+      "unified_title": "DSLR and Lighting for Professional Production 1 Beginning",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
@@ -225364,12 +219918,40 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPICA-CTCC3-1-001",
+      "exhibit_ids": [
+        "MAPICA-CTCC3-1-001"
+      ],
+      "title": "Carpenters Training Committee for Northern California (CTCNC) — Work Experience",
+      "unified_title": "Carpenters Training Committee for Northern California (CTCNC) — Work Experience",
+      "is_classified": true,
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpenter’s Training Center CTCNC Work Experience"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPICA-CTCC4-1-001",
       "exhibit_ids": [
         "MAPICA-CTCC4-1-001"
       ],
-      "title": "Introduction to Apprenticeship II",
-      "unified_title": "Introduction to Apprenticeship II",
+      "title": "Introduction to Apprenticeship 2",
+      "unified_title": "Introduction to Apprenticeship 2",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -225788,9 +220370,10 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC21-1-001",
+      "exhibit_id": "MAPICA-CTCC21-1-001|MAPICA-CTCC22-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC21-1-001"
+        "MAPICA-CTCC21-1-001",
+        "MAPICA-CTCC22-1-001"
       ],
       "title": "Layout/Leveling Construction Site Practice",
       "unified_title": "Layout/Leveling Construction Site Practice",
@@ -225801,34 +220384,7 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 0.9,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 012"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "collaborative_type": "Local",
-      "adopters": 0,
-      "adopter_names": [],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 0,
-      "credit_recs": [],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC22-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC22-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 310",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 310",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 012",
         "Carpenter’s Training Center CTCNC CARP 310"
       ],
       "cpl_type": "Industry Certification",
@@ -226068,9 +220624,10 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC31-1-001",
+      "exhibit_id": "MAPICA-CTCC31-1-001|MAPICA-CTCC32-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC31-1-001"
+        "MAPICA-CTCC31-1-001",
+        "MAPICA-CTCC32-1-001"
       ],
       "title": "Interior Systems",
       "unified_title": "Interior Systems",
@@ -226081,34 +220638,7 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 0.9,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 014"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "collaborative_type": "Local",
-      "adopters": 0,
-      "adopter_names": [],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 0,
-      "credit_recs": [],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC32-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC32-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 704",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 704",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 014",
         "Carpenter’s Training Center CTCNC CARP 704"
       ],
       "cpl_type": "Industry Certification",
@@ -226376,103 +220906,25 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC42-1-001",
+      "exhibit_id": "MAPICA-CTCC42-1-001|MAPICA-CTCC43-1-001|MAPICA-CTCC44-1-001|MAPICA-CTCC45-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC42-1-001"
-      ],
-      "title": "Carpenters Apprenticeship — CARP 005",
-      "unified_title": "Carpenters Apprenticeship — CARP 005",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 005"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "collaborative_type": "Local",
-      "adopters": 0,
-      "adopter_names": [],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 0,
-      "credit_recs": [],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC43-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC43-1-001"
+        "MAPICA-CTCC42-1-001",
+        "MAPICA-CTCC43-1-001",
+        "MAPICA-CTCC44-1-001",
+        "MAPICA-CTCC45-1-001"
       ],
       "title": "Blueprint Reading-Residential",
       "unified_title": "Blueprint Reading-Residential",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "training_agency": "",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 0.9,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 306"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "collaborative_type": "Local",
-      "adopters": 0,
-      "adopter_names": [],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 0,
-      "credit_recs": [],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC44-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC44-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 605",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 605",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 605"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "collaborative_type": "Local",
-      "adopters": 0,
-      "adopter_names": [],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 0,
-      "credit_recs": [],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC45-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC45-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 702",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 702",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 005",
+        "Carpenter’s Training Center CTCNC CARP 306",
+        "Carpenter’s Training Center CTCNC CARP 605",
         "Carpenter’s Training Center CTCNC CARP 702"
       ],
       "cpl_type": "Industry Certification",
@@ -226488,9 +220940,10 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC46-1-001",
+      "exhibit_id": "MAPICA-CTCC46-1-001|MAPICA-CTCC47-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC46-1-001"
+        "MAPICA-CTCC46-1-001",
+        "MAPICA-CTCC47-1-001"
       ],
       "title": "Blueprint Reading-Commercial",
       "unified_title": "Blueprint Reading-Commercial",
@@ -226501,34 +220954,7 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 0.9,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 009"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "collaborative_type": "Local",
-      "adopters": 0,
-      "adopter_names": [],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 0,
-      "credit_recs": [],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC47-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC47-1-001"
-      ],
-      "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 315",
-      "unified_title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 315",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 009",
         "Carpenter’s Training Center CTCNC CARP 315"
       ],
       "cpl_type": "Industry Certification",
@@ -226712,12 +221138,13 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC54-1-001",
+      "exhibit_id": "MAPICA-CTCC54-1-001|MAPICA-CTCC55-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC54-1-001"
+        "MAPICA-CTCC54-1-001",
+        "MAPICA-CTCC55-1-001"
       ],
-      "title": "Carpenters Apprenticeship — CARP 017",
-      "unified_title": "Carpenters Apprenticeship — CARP 017",
+      "title": "Introduction to Welding and Cutting",
+      "unified_title": "Introduction to Welding and Cutting",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "",
@@ -226725,34 +221152,7 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 0.9,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 017"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "collaborative_type": "Local",
-      "adopters": 0,
-      "adopter_names": [],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 0,
-      "credit_recs": [],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICA-CTCC55-1-001",
-      "exhibit_ids": [
-        "MAPICA-CTCC55-1-001"
-      ],
-      "title": "Introduction to Welding and Cutting",
-      "unified_title": "Introduction to Welding and Cutting",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
+        "Carpenter’s Training Center CTCNC CARP 017",
         "Carpenter’s Training Center CTCNC CARP 313"
       ],
       "cpl_type": "Industry Certification",
@@ -226800,8 +221200,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-CTCC57-1-001"
       ],
-      "title": "Introduction to Acoustical Apprenticeship II",
-      "unified_title": "Introduction to Acoustical Apprenticeship II",
+      "title": "Introduction to Acoustical Apprenticeship 2",
+      "unified_title": "Introduction to Acoustical Apprenticeship 2",
       "is_classified": true,
       "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
       "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
@@ -227944,20 +222344,20 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC98-1-001",
+      "exhibit_id": "MAPICA-SETC9-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC98-1-001"
+        "MAPICA-SETC9-1-001"
       ],
-      "title": "Suspended Scaffolds and Shoring Systems",
-      "unified_title": "Suspended Scaffolds and Shoring Systems",
+      "title": "IBEW/NECA Electrical Apprenticeship — ELECT 151",
+      "unified_title": "IBEW/NECA Electrical Apprenticeship — ELECT 151",
       "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+      "training_agency": "Sacramento Electrical Training Center",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.75,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 308"
+        "Sacramento Electrical Training Center ELECT 151"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Not Mapped",
@@ -227972,20 +222372,20 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC99-1-001",
+      "exhibit_id": "MAPICA-SETC10-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC99-1-001"
+        "MAPICA-SETC10-1-001"
       ],
-      "title": "Tube and Clamp Scaffold",
-      "unified_title": "Tube and Clamp Scaffold",
+      "title": "IBEW/NECA Electrical Apprenticeship — Work Experience",
+      "unified_title": "IBEW/NECA Electrical Apprenticeship — Work Experience",
       "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+      "training_agency": "Sacramento Electrical Training Center",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 0.75,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 309"
+        "Sacramento Electrical Training Center Work Experience"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Not Mapped",
@@ -228000,20 +222400,20 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC100-1-001",
+      "exhibit_id": "MAPICA-ETCO-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC100-1-001"
+        "MAPICA-ETCO-1-001"
       ],
-      "title": "Blueprint Reading for Scaffold Erectors",
-      "unified_title": "Blueprint Reading for Scaffold Erectors",
+      "title": "Elevator Constructor Apprenticeship — Orientation",
+      "unified_title": "Elevator Constructor Apprenticeship — Orientation",
       "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
+      "training_agency": "Elevators Training Center",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 0.65,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 311"
+        "Elevators Training Center Orientation"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Not Mapped",
@@ -228028,20 +222428,20 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC101-1-001",
+      "exhibit_id": "MAPICA-ETCR-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC101-1-001"
+        "MAPICA-ETCR-1-001"
       ],
-      "title": "Welding 2",
-      "unified_title": "Welding 2",
+      "title": "Elevator Constructor Apprenticeship — RC100",
+      "unified_title": "Elevator Constructor Apprenticeship — RC100",
       "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
+      "training_agency": "Elevators Training Center",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 0.65,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 314"
+        "Elevators Training Center RC100"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Not Mapped",
@@ -228056,20 +222456,20 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC102-1-001",
+      "exhibit_id": "MAPICA-ETCR1-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC102-1-001"
+        "MAPICA-ETCR1-1-001"
       ],
-      "title": "Mill Cabinet Safety and Tool Skills",
-      "unified_title": "Mill Cabinet Safety and Tool Skills",
+      "title": "Elevator Constructor Apprenticeship — RC200",
+      "unified_title": "Elevator Constructor Apprenticeship — RC200",
       "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
+      "training_agency": "Elevators Training Center",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 0.65,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 901"
+        "Elevators Training Center RC200"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Not Mapped",
@@ -228084,20 +222484,20 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC103-1-001",
+      "exhibit_id": "MAPICA-ETCR2-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC103-1-001"
+        "MAPICA-ETCR2-1-001"
       ],
-      "title": "The Mill Cabinet Apprentice and the Trade",
-      "unified_title": "The Mill Cabinet Apprentice and the Trade",
+      "title": "Elevator Constructor Apprenticeship — RC300",
+      "unified_title": "Elevator Constructor Apprenticeship — RC300",
       "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
+      "training_agency": "Elevators Training Center",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 0.65,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 902"
+        "Elevators Training Center RC300"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Not Mapped",
@@ -228112,20 +222512,20 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC104-1-001",
+      "exhibit_id": "MAPICA-ETCR3-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC104-1-001"
+        "MAPICA-ETCR3-1-001"
       ],
-      "title": "Math for the Mill Cabinet Trade",
-      "unified_title": "Math for the Mill Cabinet Trade",
+      "title": "Elevator Constructor Apprenticeship — RC400",
+      "unified_title": "Elevator Constructor Apprenticeship — RC400",
       "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
+      "training_agency": "Elevators Training Center",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 0.65,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 903"
+        "Elevators Training Center RC400"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Not Mapped",
@@ -228140,20 +222540,20 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC105-1-001",
+      "exhibit_id": "MAPICA-ETCR4-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC105-1-001"
+        "MAPICA-ETCR4-1-001"
       ],
-      "title": "Basic Cabinet Making",
-      "unified_title": "Basic Cabinet Making",
+      "title": "Elevator Constructor Apprenticeship — RC500",
+      "unified_title": "Elevator Constructor Apprenticeship — RC500",
       "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
+      "training_agency": "Elevators Training Center",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 0.65,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 904"
+        "Elevators Training Center RC500"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Not Mapped",
@@ -228168,20 +222568,20 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC106-1-001",
+      "exhibit_id": "MAPICA-ETCR5-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC106-1-001"
+        "MAPICA-ETCR5-1-001"
       ],
-      "title": "Basic Blueprint Reading Mill Cabinet",
-      "unified_title": "Basic Blueprint Reading Mill Cabinet",
+      "title": "Elevator Constructor Apprenticeship — RC600",
+      "unified_title": "Elevator Constructor Apprenticeship — RC600",
       "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
+      "training_agency": "Elevators Training Center",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 0.65,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 905"
+        "Elevators Training Center RC600"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Not Mapped",
@@ -228196,20 +222596,20 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC107-1-001",
+      "exhibit_id": "MAPICA-ETCR6-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC107-1-001"
+        "MAPICA-ETCR6-1-001"
       ],
-      "title": "Machinery Maintenance for Mill Cabinet",
-      "unified_title": "Machinery Maintenance for Mill Cabinet",
+      "title": "Elevator Constructor Apprenticeship — RC700",
+      "unified_title": "Elevator Constructor Apprenticeship — RC700",
       "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
+      "training_agency": "Elevators Training Center",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 0.65,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 906"
+        "Elevators Training Center RC700"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Not Mapped",
@@ -228224,20 +222624,20 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC108-1-001",
+      "exhibit_id": "MAPICA-ETCR7-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC108-1-001"
+        "MAPICA-ETCR7-1-001"
       ],
-      "title": "Cabinet Hardware Installation",
-      "unified_title": "Cabinet Hardware Installation",
+      "title": "Elevator Constructor Apprenticeship — RC800",
+      "unified_title": "Elevator Constructor Apprenticeship — RC800",
       "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
+      "training_agency": "Elevators Training Center",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 0.65,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 907"
+        "Elevators Training Center RC800"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Not Mapped",
@@ -228252,20 +222652,20 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC109-1-001",
+      "exhibit_id": "MAPICA-ETCW-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC109-1-001"
+        "MAPICA-ETCW-1-001"
       ],
-      "title": "Sanding, Stains, and Finish Preparation",
-      "unified_title": "Sanding, Stains, and Finish Preparation",
+      "title": "Elevator Constructor Apprenticeship — Work Experience",
+      "unified_title": "Elevator Constructor Apprenticeship — Work Experience",
       "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
+      "training_agency": "Elevators Training Center",
+      "confidence_title": 0.65,
+      "confidence_issuer": 0.6,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 908"
+        "Elevators Training Center Work Experience"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Not Mapped",
@@ -228280,20 +222680,20 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC110-1-001",
+      "exhibit_id": "MAPICA-IWTC-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC110-1-001"
+        "MAPICA-IWTC-1-001"
       ],
-      "title": "Advanced Machinery Operation",
-      "unified_title": "Advanced Machinery Operation",
+      "title": "Iron Workers Apprenticeship — Saturday Classes",
+      "unified_title": "Iron Workers Apprenticeship — Saturday Classes",
       "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "training_agency": "Iron Workers Training Center",
+      "confidence_title": 0.6,
+      "confidence_issuer": 0.7,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 909"
+        "Iron Workers Training Center Saturday Classes"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Not Mapped",
@@ -228308,20 +222708,20 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC111-1-001",
+      "exhibit_id": "MAPICA-IWTC1-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC111-1-001"
+        "MAPICA-IWTC1-1-001"
       ],
-      "title": "Advanced Blueprint Reading for Mill Cabinet",
-      "unified_title": "Advanced Blueprint Reading for Mill Cabinet",
+      "title": "Iron Workers Apprenticeship — H08/H97",
+      "unified_title": "Iron Workers Apprenticeship — H08/H97",
       "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "training_agency": "Iron Workers Training Center",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 0.7,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 910"
+        "Iron Workers Training Center H08/H97"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Not Mapped",
@@ -228336,20 +222736,20 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC112-1-001",
+      "exhibit_id": "MAPICA-IWTC2-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC112-1-001"
+        "MAPICA-IWTC2-1-001"
       ],
-      "title": "Advanced Cabinet Making",
-      "unified_title": "Advanced Cabinet Making",
+      "title": "Iron Workers Apprenticeship — H01",
+      "unified_title": "Iron Workers Apprenticeship — H01",
       "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "training_agency": "Iron Workers Training Center",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 0.7,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 911"
+        "Iron Workers Training Center H01"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Not Mapped",
@@ -228364,20 +222764,20 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC113-1-001",
+      "exhibit_id": "MAPICA-IWTC3-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC113-1-001"
+        "MAPICA-IWTC3-1-001"
       ],
-      "title": "Veneers, Laminate, and Finishing",
-      "unified_title": "Veneers, Laminate, and Finishing",
+      "title": "Iron Workers Apprenticeship — H15",
+      "unified_title": "Iron Workers Apprenticeship — H15",
       "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "training_agency": "Iron Workers Training Center",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 0.7,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 912"
+        "Iron Workers Training Center H15"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Not Mapped",
@@ -228392,20 +222792,20 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC114-1-001",
+      "exhibit_id": "MAPICA-IWTC4-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC114-1-001"
+        "MAPICA-IWTC4-1-001"
       ],
-      "title": "CAD Basics for Mill Cabinetry",
-      "unified_title": "CAD Basics for Mill Cabinetry",
+      "title": "Iron Workers Apprenticeship — H30",
+      "unified_title": "Iron Workers Apprenticeship — H30",
       "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "training_agency": "Iron Workers Training Center",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 0.7,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 913"
+        "Iron Workers Training Center H30"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Not Mapped",
@@ -228420,20 +222820,20 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC115-1-001",
+      "exhibit_id": "MAPICA-IWTC5-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC115-1-001"
+        "MAPICA-IWTC5-1-001"
       ],
-      "title": "Introduction to CNC",
-      "unified_title": "Introduction to CNC",
+      "title": "Iron Workers Apprenticeship — H36",
+      "unified_title": "Iron Workers Apprenticeship — H36",
       "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "training_agency": "Iron Workers Training Center",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 0.7,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 914"
+        "Iron Workers Training Center H36"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Not Mapped",
@@ -228448,20 +222848,20 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC116-1-001",
+      "exhibit_id": "MAPICA-IWTC6-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC116-1-001"
+        "MAPICA-IWTC6-1-001"
       ],
-      "title": "Solid Surface Material, Fabrication, and Installation",
-      "unified_title": "Solid Surface Material, Fabrication, and Installation",
+      "title": "Iron Workers Apprenticeship — H65/H70",
+      "unified_title": "Iron Workers Apprenticeship — H65/H70",
       "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "training_agency": "Iron Workers Training Center",
       "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 0.7,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 915"
+        "Iron Workers Training Center H65/70"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Not Mapped",
@@ -228476,20 +222876,916 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPICA-CTCC117-1-001",
+      "exhibit_id": "MAPICA-IWTC7-1-001",
       "exhibit_ids": [
-        "MAPICA-CTCC117-1-001"
+        "MAPICA-IWTC7-1-001"
       ],
-      "title": "Advanced Project for Mill Cabinet",
-      "unified_title": "Advanced Project for Mill Cabinet",
+      "title": "Iron Workers Apprenticeship — H20",
+      "unified_title": "Iron Workers Apprenticeship — H20",
       "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
-      "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "training_agency": "Iron Workers Training Center",
       "confidence_title": 0.7,
+      "confidence_issuer": 0.7,
+      "quality_flag": "",
+      "raw_titles": [
+        "Iron Workers Training Center H20"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-IWTC8-1-001",
+      "exhibit_ids": [
+        "MAPICA-IWTC8-1-001"
+      ],
+      "title": "Iron Workers Apprenticeship — H25",
+      "unified_title": "Iron Workers Apprenticeship — H25",
+      "is_classified": true,
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "training_agency": "Iron Workers Training Center",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.7,
+      "quality_flag": "",
+      "raw_titles": [
+        "Iron Workers Training Center H25"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-IWTC9-1-001",
+      "exhibit_ids": [
+        "MAPICA-IWTC9-1-001"
+      ],
+      "title": "Iron Workers Apprenticeship — H28",
+      "unified_title": "Iron Workers Apprenticeship — H28",
+      "is_classified": true,
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "training_agency": "Iron Workers Training Center",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.7,
+      "quality_flag": "",
+      "raw_titles": [
+        "Iron Workers Training Center H28"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-IWTC10-1-001",
+      "exhibit_ids": [
+        "MAPICA-IWTC10-1-001"
+      ],
+      "title": "Iron Workers Apprenticeship — H07/H47/H75/H77",
+      "unified_title": "Iron Workers Apprenticeship — H07/H47/H75/H77",
+      "is_classified": true,
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "training_agency": "Iron Workers Training Center",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.7,
+      "quality_flag": "",
+      "raw_titles": [
+        "Iron Workers Training Center H07/H47/H75/77"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-IWTC11-1-001",
+      "exhibit_ids": [
+        "MAPICA-IWTC11-1-001"
+      ],
+      "title": "Iron Workers Apprenticeship — H40",
+      "unified_title": "Iron Workers Apprenticeship — H40",
+      "is_classified": true,
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "training_agency": "Iron Workers Training Center",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.7,
+      "quality_flag": "",
+      "raw_titles": [
+        "Iron Workers Training Center H40"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-IWTC12-1-001",
+      "exhibit_ids": [
+        "MAPICA-IWTC12-1-001"
+      ],
+      "title": "Iron Workers Apprenticeship — H45/B87",
+      "unified_title": "Iron Workers Apprenticeship — H45/B87",
+      "is_classified": true,
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "training_agency": "Iron Workers Training Center",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.7,
+      "quality_flag": "",
+      "raw_titles": [
+        "Iron Workers Training Center H45/B87"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-IWTC13-1-001",
+      "exhibit_ids": [
+        "MAPICA-IWTC13-1-001"
+      ],
+      "title": "Iron Workers Apprenticeship — H52",
+      "unified_title": "Iron Workers Apprenticeship — H52",
+      "is_classified": true,
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "training_agency": "Iron Workers Training Center",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.7,
+      "quality_flag": "",
+      "raw_titles": [
+        "Iron Workers Training Center H52"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-IWTC14-1-001",
+      "exhibit_ids": [
+        "MAPICA-IWTC14-1-001"
+      ],
+      "title": "Iron Workers Apprenticeship — H62/H18/H95",
+      "unified_title": "Iron Workers Apprenticeship — H62/H18/H95",
+      "is_classified": true,
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "training_agency": "Iron Workers Training Center",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.7,
+      "quality_flag": "",
+      "raw_titles": [
+        "Iron Workers Training Center H62/H18/H95"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-IWTC15-1-001",
+      "exhibit_ids": [
+        "MAPICA-IWTC15-1-001"
+      ],
+      "title": "Iron Workers Apprenticeship — H54",
+      "unified_title": "Iron Workers Apprenticeship — H54",
+      "is_classified": true,
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "training_agency": "Iron Workers Training Center",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.7,
+      "quality_flag": "",
+      "raw_titles": [
+        "Iron Workers Training Center H54"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-IWTC16-1-001",
+      "exhibit_ids": [
+        "MAPICA-IWTC16-1-001"
+      ],
+      "title": "Iron Workers Apprenticeship — Work Experience",
+      "unified_title": "Iron Workers Apprenticeship — Work Experience",
+      "is_classified": true,
+      "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "training_agency": "Iron Workers Training Center",
+      "confidence_title": 0.65,
+      "confidence_issuer": 0.7,
+      "quality_flag": "",
+      "raw_titles": [
+        "Iron Workers Training Center Work Experience"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 100",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 100",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.78,
       "confidence_issuer": 0.85,
       "quality_flag": "",
       "raw_titles": [
-        "Carpenter’s Training Center CTCNC CARP 916"
+        "UA Local 342 Plumbers/Pipefitters SHME 100"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P1-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P1-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 101",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 101",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.78,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "UA Local 342 Plumbers/Pipefitters SHME 101"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P2-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P2-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 110",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 110",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.78,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "UA Local 342 Plumbers/Pipefitters SHME 110"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P3-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P3-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 111",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 111",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.78,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "UA Local 342 Plumbers/Pipefitters SHME 111"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P4-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P4-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 120",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 120",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.78,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "UA Local 342 Plumbers/Pipefitters SHME 120"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P5-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P5-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 121",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 121",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.78,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "UA Local 342 Plumbers/Pipefitters SHME 121"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P6-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P6-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 130",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 130",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.78,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "UA Local 342 Plumbers/Pipefitters SHME 130"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P7-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P7-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 131",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 131",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.78,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "UA Local 342 Plumbers/Pipefitters SHME 131"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P8-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P8-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 140",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 140",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.78,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "UA Local 342 Plumbers/Pipefitters SHME 140"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P9-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P9-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 141",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 141",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.78,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "UA Local 342 Plumbers/Pipefitters SHME 141"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P10-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P10-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 150",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 150",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.78,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "UA Local 342 Plumbers/Pipefitters SHME 150"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P11-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P11-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 151",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 151",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.78,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "UA Local 342 Plumbers/Pipefitters SHME 151"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P12-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P12-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 100",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 100",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.78,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "UA Local 342 Plumbers/Pipefitters SMTEC 100"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P13-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P13-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 101",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 101",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.78,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "UA Local 342 Plumbers/Pipefitters SMTEC 101"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P14-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P14-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 110",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 110",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.78,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "UA Local 342 Plumbers/Pipefitters SMTEC 110"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P15-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P15-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 111",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 111",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.78,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "UA Local 342 Plumbers/Pipefitters SMTEC 111"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P16-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P16-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 120",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 120",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.78,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "UA Local 342 Plumbers/Pipefitters SMTEC 120"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P17-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P17-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 121",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 121",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.78,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "UA Local 342 Plumbers/Pipefitters SMTEC 121"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P18-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P18-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 130",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 130",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.78,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "UA Local 342 Plumbers/Pipefitters SMTEC 130"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P19-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P19-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 131",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 131",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.78,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "UA Local 342 Plumbers/Pipefitters SMTEC 131"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P20-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P20-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 140",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 140",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.78,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "UA Local 342 Plumbers/Pipefitters SMTEC 140"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P21-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P21-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 141",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 141",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.78,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "UA Local 342 Plumbers/Pipefitters SMTEC 141"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICA-UL3P22-1-001",
+      "exhibit_ids": [
+        "MAPICA-UL3P22-1-001"
+      ],
+      "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship Work Experience",
+      "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship Work Experience",
+      "is_classified": true,
+      "issuing_agency": "United Association (UA) Local 342",
+      "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+      "confidence_title": 0.8,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "UA Local 342 Plumbers/Pipefitters Work Experience"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Not Mapped",
@@ -228894,7 +224190,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 15,
         "ccc_collaborative": 87,
         "industry_certs": 202,
-        "pct": 2.7
+        "pct": 2.8
       },
       {
         "college": "Copper Mountain College",
@@ -228943,11 +224239,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Bakersfield College",
-        "credit_recs": 254,
-        "exhibits": 141,
+        "credit_recs": 257,
+        "exhibits": 142,
         "disciplines": 10,
         "ccc_collaborative": 90,
-        "industry_certs": 153,
+        "industry_certs": 156,
         "pct": 2.0
       },
       {
@@ -228961,11 +224257,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Merced College",
-        "credit_recs": 220,
-        "exhibits": 169,
+        "credit_recs": 221,
+        "exhibits": 170,
         "disciplines": 15,
         "ccc_collaborative": 16,
-        "industry_certs": 42,
+        "industry_certs": 43,
         "pct": 1.7
       },
       {
@@ -229039,15 +224335,6 @@ window.CPL_STATEWIDE = {
         "ccc_collaborative": 3,
         "industry_certs": 6,
         "pct": 1.3
-      },
-      {
-        "college": "American River College",
-        "credit_recs": 159,
-        "exhibits": 149,
-        "disciplines": 6,
-        "ccc_collaborative": 2,
-        "industry_certs": 81,
-        "pct": 1.2
       },
       {
         "college": "Los Angeles Valley College",
@@ -229200,7 +224487,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 6,
         "ccc_collaborative": 12,
         "industry_certs": 43,
-        "pct": 0.8
+        "pct": 0.9
       },
       {
         "college": "Reedley College",
@@ -229209,7 +224496,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 5,
         "ccc_collaborative": 7,
         "industry_certs": 41,
-        "pct": 0.8
+        "pct": 0.9
       },
       {
         "college": "College of the Canyons",
@@ -229407,6 +224694,15 @@ window.CPL_STATEWIDE = {
         "disciplines": 2,
         "ccc_collaborative": 0,
         "industry_certs": 0,
+        "pct": 0.6
+      },
+      {
+        "college": "American River College",
+        "credit_recs": 80,
+        "exhibits": 70,
+        "disciplines": 5,
+        "ccc_collaborative": 2,
+        "industry_certs": 2,
         "pct": 0.6
       },
       {
@@ -229734,6 +225030,15 @@ window.CPL_STATEWIDE = {
         "pct": 0.0
       },
       {
+        "college": "CA MAP INITIATIVE COLLEGE",
+        "credit_recs": 4,
+        "exhibits": 4,
+        "disciplines": 1,
+        "ccc_collaborative": 0,
+        "industry_certs": 1,
+        "pct": 0.0
+      },
+      {
         "college": "Santa Barbara City College",
         "credit_recs": 2,
         "exhibits": 2,
@@ -229755,21 +225060,21 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 5578,
-        "exhibits": 1863,
+        "credit_recs": 5610,
+        "exhibits": 1895,
         "courses": 272,
         "colleges": 84,
         "ccc_collaborative": 25,
-        "pct": 43.4
+        "pct": 43.8
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 2163,
-        "exhibits": 974,
-        "courses": 1090,
-        "colleges": 53,
+        "credit_recs": 2088,
+        "exhibits": 896,
+        "courses": 1015,
+        "colleges": 52,
         "ccc_collaborative": 499,
-        "pct": 16.8
+        "pct": 16.3
       },
       {
         "discipline": "Public and Protective Services",
@@ -229791,12 +225096,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Business and Management",
-        "credit_recs": 441,
-        "exhibits": 243,
-        "courses": 210,
-        "colleges": 41,
+        "credit_recs": 445,
+        "exhibits": 247,
+        "courses": 212,
+        "colleges": 42,
         "ccc_collaborative": 46,
-        "pct": 3.4
+        "pct": 3.5
       },
       {
         "discipline": "Health",
@@ -229814,7 +225119,7 @@ window.CPL_STATEWIDE = {
         "courses": 253,
         "colleges": 44,
         "ccc_collaborative": 106,
-        "pct": 2.8
+        "pct": 2.9
       },
       {
         "discipline": "Foreign Languages",
@@ -229964,17 +225269,17 @@ window.CPL_STATEWIDE = {
     "by_cpl_type": [
       {
         "cpl_type": "Standardized Assessment",
-        "credit_recs": 6815,
+        "credit_recs": 6816,
         "exhibits": 2151,
-        "colleges": 85,
-        "pct": 53.1
+        "colleges": 86,
+        "pct": 53.2
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3676,
-        "exhibits": 1226,
-        "colleges": 79,
-        "pct": 28.6
+        "credit_recs": 3634,
+        "exhibits": 1180,
+        "colleges": 80,
+        "pct": 28.4
       },
       {
         "cpl_type": "Credit By Exam",
@@ -229985,9 +225290,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Portfolio Review",
-        "credit_recs": 396,
+        "credit_recs": 398,
         "exhibits": 316,
-        "colleges": 27,
+        "colleges": 28,
         "pct": 3.1
       },
       {
@@ -230008,24 +225313,24 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 7929,
+        "credit_recs": 7930,
         "exhibits": 2925,
-        "colleges": 91,
-        "pct": 61.7
+        "colleges": 92,
+        "pct": 61.9
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2629,
+        "credit_recs": 2630,
         "exhibits": 977,
-        "colleges": 75,
+        "colleges": 76,
         "pct": 20.5
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1497,
-        "exhibits": 589,
+        "credit_recs": 1456,
+        "exhibits": 543,
         "colleges": 41,
-        "pct": 11.7
+        "pct": 11.4
       },
       {
         "mode": "High school coursework (H)",
@@ -230080,11 +225385,11 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11323,
-        "exhibits": 4853,
-        "colleges": 98,
+        "credit_recs": 11284,
+        "exhibits": 4807,
+        "colleges": 99,
         "disciplines": 23,
-        "pct": 88.2
+        "pct": 88.1
       },
       {
         "category": "CCC Collaborative",
@@ -230506,6 +225811,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-07-14T14:17:39",
-  "total_credit_recs": 12845
+  "generated_at": "2026-07-15T08:37:33",
+  "total_credit_recs": 12806
 };

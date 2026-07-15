@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-14T14:18:21.239728+00:00",
+  "scraped_at": "2026-07-15T08:38:13.645149+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25792,
+    "jst": 25847,
     "star_colleges": 54
   },
   "computed_star_colleges": 54,
@@ -27,7 +27,7 @@
     },
     "San Diego Mesa College": {
       "vets": 1070,
-      "jst": 1483,
+      "jst": 1495,
       "star": true
     },
     "Santiago Canyon College": {
@@ -37,12 +37,12 @@
     },
     "San Diego City College": {
       "vets": 776,
-      "jst": 1380,
+      "jst": 1388,
       "star": true
     },
     "San Diego Miramar College": {
       "vets": 1181,
-      "jst": 1542,
+      "jst": 1555,
       "star": true
     },
     "Moreno Valley College": {
@@ -57,7 +57,7 @@
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1078,
+      "jst": 1086,
       "star": true
     },
     "Norco College": {
@@ -112,7 +112,7 @@
     },
     "College of the Desert": {
       "vets": 235,
-      "jst": 358,
+      "jst": 360,
       "star": true
     },
     "Cypress College": {
@@ -132,7 +132,7 @@
     },
     "Santa Ana College": {
       "vets": 334,
-      "jst": 354,
+      "jst": 358,
       "star": true
     },
     "Santa Rosa Junior College": {
@@ -162,7 +162,7 @@
     },
     "Glendale Community College": {
       "vets": 196,
-      "jst": 214,
+      "jst": 215,
       "star": true
     },
     "Clovis Community College": {
@@ -172,7 +172,7 @@
     },
     "Fresno City College": {
       "vets": 724,
-      "jst": 556,
+      "jst": 557,
       "star": true
     },
     "Fullerton College": {
@@ -192,7 +192,7 @@
     },
     "Victor Valley College": {
       "vets": 97,
-      "jst": 332,
+      "jst": 336,
       "star": true
     },
     "Los Angeles Mission College": {
@@ -297,7 +297,7 @@
     },
     "Irvine Valley College": {
       "vets": 217,
-      "jst": 124,
+      "jst": 125,
       "star": false
     },
     "Saddleback College": {
@@ -427,7 +427,7 @@
     },
     "Napa Valley College": {
       "vets": 38,
-      "jst": 48,
+      "jst": 49,
       "star": true
     },
     "Santa Monica College": {
@@ -570,6 +570,11 @@
       "jst": 0,
       "star": false
     },
+    "College of the Siskiyous": {
+      "vets": 77,
+      "jst": 0,
+      "star": false
+    },
     "Folsom Lake College": {
       "vets": 65,
       "jst": 0,
@@ -577,11 +582,6 @@
     },
     "College of Marin": {
       "vets": 69,
-      "jst": 0,
-      "star": false
-    },
-    "College of the Siskiyous": {
-      "vets": 77,
       "jst": 0,
       "star": false
     }

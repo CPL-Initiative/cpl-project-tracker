@@ -4,13 +4,13 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-07-14",
+ "as_of": "2026-07-15",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified (context, not a priority metric) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 41494,
-  "p2": 4777,
-  "p3": 16314
+  "pe": 41550,
+  "p2": 4778,
+  "p3": 16318
  },
  "colleges": {
   "Alameda": {
@@ -149,7 +149,7 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Desert": {
-   "pe": 391,
+   "pe": 393,
    "p2": 37,
    "p3": 37
   },
@@ -186,7 +186,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Fresno City": {
-   "pe": 549,
+   "pe": 550,
    "p2": 0,
    "p3": 0
   },
@@ -203,7 +203,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Glendale": {
-   "pe": 214,
+   "pe": 215,
    "p2": 0,
    "p3": 0
   },
@@ -218,7 +218,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Irvine": {
-   "pe": 124,
+   "pe": 125,
    "p2": 0,
    "p3": 0
   },
@@ -250,7 +250,7 @@ window.CPL_FUNDING_PERF = {
   "LA Valley": {
    "pe": 358,
    "p2": 0,
-   "p3": 188
+   "p3": 189
   },
   "Laney": {
    "pe": 49,
@@ -278,9 +278,9 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Merced": {
-   "pe": 3337,
-   "p2": 1780,
-   "p3": 3302
+   "pe": 3338,
+   "p2": 1781,
+   "p3": 3303
   },
   "Merritt": {
    "pe": 13,
@@ -319,7 +319,7 @@ window.CPL_FUNDING_PERF = {
   },
   "Moreno Valley": {
    "pe": 1570,
-   "p2": 419,
+   "p2": 420,
    "p3": 1466
   },
   "Mt San Antonio": {
@@ -333,7 +333,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Napa": {
-   "pe": 48,
+   "pe": 49,
    "p2": 0,
    "p3": 0
   },
@@ -379,8 +379,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Riverside": {
    "pe": 750,
-   "p2": 33,
-   "p3": 689
+   "p2": 32,
+   "p3": 691
   },
   "Sacramento City": {
    "pe": 36,
@@ -398,22 +398,22 @@ window.CPL_FUNDING_PERF = {
    "p3": 78
   },
   "San Diego City": {
-   "pe": 4213,
+   "pe": 4221,
    "p2": 121,
    "p3": 2837
   },
   "San Diego Mesa": {
-   "pe": 4573,
+   "pe": 4585,
    "p2": 117,
    "p3": 3095
   },
   "San Diego Miramar": {
-   "pe": 3049,
+   "pe": 3062,
    "p2": 85,
    "p3": 1502
   },
   "San Francisco": {
-   "pe": 1088,
+   "pe": 1097,
    "p2": 8,
    "p3": 15
   },
@@ -433,7 +433,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Santa Ana": {
-   "pe": 409,
+   "pe": 412,
    "p2": 0,
    "p3": 0
   },
@@ -494,7 +494,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Victor Valley": {
-   "pe": 329,
+   "pe": 333,
    "p2": 0,
    "p3": 0
   },

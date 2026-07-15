@@ -1,22 +1,22 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-07-14T14:18:20.688Z",
+ "_as_of": "2026-07-15T08:38:13.296Z",
  "credit_recommendations": {
-  "total": "12,845",
+  "total": "12,806",
   "ccc": "1,297",
-  "local": "11,548",
+  "local": "11,509",
   "by_type": [
-   "Standardized Assessment: 6,815",
-   "Industry Certification: 3,676",
+   "Standardized Assessment: 6,816",
+   "Industry Certification: 3,634",
    "Credit By Exam: 1,754",
-   "Portfolio Review: 396",
+   "Portfolio Review: 398",
    "Military: 116"
   ]
  },
  "map_exhibits": {
-  "total": "2,211",
+  "total": "2,136",
   "ccc": "133",
-  "local": "2,078",
+  "local": "2,003",
   "originating_colleges": "88"
  },
  "statewide_exhibits": {
@@ -59,7 +59,7 @@
     "exhibits": 11,
     "credit_recs": 149,
     "adoptions": 149,
-    "could_adopt": 63
+    "could_adopt": 65
    },
    {
     "sector": "Fire Technology - Wildland",
@@ -124,7 +124,7 @@
   ]
  },
  "articulating_colleges": {
-  "total": "101",
+  "total": "102",
   "originating": "88",
   "adopting_ccc": "60"
  },
