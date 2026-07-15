@@ -179,3 +179,53 @@ none blocking:
    *program* inventory could add a program lane.
 5. Watch for the **Tech Center's COCI CIP-dropdown** shipping — if it exposes an API,
    this reference could link out to it per TOP code.
+
+## 2026-07-15 — StarCIP: the pivot to a simple "easy button" CIP reference (prototype)
+
+Sam relayed **Jenni Abbott's email feedback** and asked how to pivot to match her
+vision. The reframe: **stop recreating the crosswalk** (COE hosts it, needed only a
+couple years) — the product is the **full CIP code list as the authoritative
+reference** ("the new reference site when designing new programs and courses. Clear,
+comprehensive, user-friendly"), the **successor to the TOP Code Manual**. Her two
+suggest-lane notes (Supabase `cip_crosswalk_suggestion`, submitter Jenni) confirmed
+it: **remove the "source"/provenance column** (it implies the list is "still open for
+review") and **don't expose "Suggest a change" to the field**. Sam's operative word:
+**simple — faculty want an "easy button."** This replaces the **6-tab Excel workbook**
+the CO was going to email out (send a *link*, not a maintenance burden).
+
+**Method (repo practice): prototype in a fast-feedback canvas → lock → port.** Rather
+than rewrite the monolith, built a self-contained artifact
+(https://claude.ai/code/artifact/cf0085e0-7df8-46e4-87a3-b1eb34c2e880) with the real
+2,325-code dataset. Iterated live across several rounds with Jenni. **Nothing ported to
+the live dashboard yet** — that's the next step. Prototype + data preserved at
+[`docs/cip_prototype/`](cip_prototype/) (rebuild: `python build_proto.py`).
+
+**What the prototype is:** one search box + the full CIP list; each row shows the
+**category label (CTE / Non-CTE / Both / Noncredit)** immediately; click → plain-English
+definition, examples, CIP family, NCES link. Category pills + family filter + a **🎓
+C-ID/CCN** toggle chip (ANDs) + a **plain-English finder** ("describe your program" →
+top candidate codes) + a light/dark toggle. Retired/reserved hidden by default.
+
+**Two data findings that MUST carry to the port** (detail in
+[`docs/cip_prototype/README.md`](cip_prototype/README.md) + the KB note):
+1. **Certified CTE designations, not either workbook tab.** Jenni's 45.0702 catch
+   opened it: the workbook's *CIP Descriptions* and *TOP-CIP Data* tabs **disagree on
+   244 codes in BOTH directions** — neither is reliable. The CO consultant's certified
+   list is the authority (= live tool = searchable file; Descriptions lags since early
+   June). Preserved: [`kb/reference/cip_cte_certified_260715.json`](../kb/reference/cip_cte_certified_260715.json)
+   (244 codes; 243/244 matched my crosswalk-sourced guess, the 1 diff = a fresher
+   update; **0 uncertified conflicts**). Refreshed to the **2026-07-15 cut**
+   (`kb/reference/cip_searchable_260715.xlsx`, also fixes 32.0107).
+2. **C-ID/CCN = a course-level floor.** `x=1` if any mapped TOP has C-ID or CCN
+   coursework (COCI rollup) — 292 TOPs C-ID, 406 CCN → 1,299 CIPs. Name it by the
+   identifier, never "Transfer" (Sam's own correction; TOP→CIP is one-to-many).
+
+**Phased AI plan (Sam approved):** Sierra already exists as a grounded RAG edge
+function (`/functions/v1/cpl-chat`, SSE, reusable client). Phase 0 = the no-backend
+keyword+stem finder shipped here (zero hallucination risk — grounded to real records).
+Phase 1 = wire Sierra scoped to the CIP dataset once the CO confirms the
+**finder-not-decider** framing.
+
+**Next step:** lock the look with Jenni, then **port into `cip_crosswalk.js`** per the
+plan in the prototype README. **Side-lane discipline honored — `cpl_todos.json` + the
+numbered handoff left untouched** (the CCR mainline session owns those).
