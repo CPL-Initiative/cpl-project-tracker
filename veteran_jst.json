@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-15T18:25:29.174117+00:00",
+  "scraped_at": "2026-07-16T00:39:54.367487+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25864,
+    "jst": 25868,
     "star_colleges": 54
   },
   "computed_star_colleges": 54,
@@ -17,7 +17,7 @@
     },
     "Merced College": {
       "vets": 142,
-      "jst": 271,
+      "jst": 272,
       "star": true
     },
     "Chaffey College": {
@@ -57,7 +57,7 @@
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1086,
+      "jst": 1087,
       "star": true
     },
     "Norco College": {
@@ -230,6 +230,11 @@
       "jst": 227,
       "star": false
     },
+    "Lemoore College": {
+      "vets": 61,
+      "jst": 31,
+      "star": false
+    },
     "Evergreen Valley College": {
       "vets": 87,
       "jst": 112,
@@ -329,11 +334,6 @@
       "vets": 72,
       "jst": 78,
       "star": true
-    },
-    "Lemoore College": {
-      "vets": 61,
-      "jst": 31,
-      "star": false
     },
     "Pasadena City College": {
       "vets": 404,
@@ -447,7 +447,7 @@
     },
     "Moorpark College": {
       "vets": 179,
-      "jst": 126,
+      "jst": 128,
       "star": false
     },
     "Coalinga College": {

@@ -4,13 +4,13 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-07-15",
+ "as_of": "2026-07-16",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified (context, not a priority metric) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 42209,
-  "p2": 4784,
-  "p3": 16966
+  "pe": 42380,
+  "p2": 4789,
+  "p3": 16971
  },
  "colleges": {
   "Alameda": {
@@ -312,7 +312,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Moorpark": {
-   "pe": 128,
+   "pe": 130,
    "p2": 0,
    "p3": null,
    "p3_suppressed": true
@@ -413,7 +413,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 1502
   },
   "San Francisco": {
-   "pe": 1097,
+   "pe": 1098,
    "p2": 8,
    "p3": 15
   },
@@ -454,9 +454,9 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Santiago Canyon": {
-   "pe": 418,
-   "p2": 0,
-   "p3": 0
+   "pe": 422,
+   "p2": 5,
+   "p3": 5
   },
   "Sequoias": {
    "pe": 174,
@@ -505,7 +505,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "West Hills Lemoore": {
-   "pe": 116,
+   "pe": 280,
    "p2": 0,
    "p3": 0
   },
