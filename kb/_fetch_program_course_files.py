@@ -21,11 +21,24 @@ Outputs (repo-relative):
   kb/reference/coci_program_course_file.csv
   kb/reference/coci_program_file.csv
 
+PRIMARY PATH (2026-07-16): the CO can provide a **full multi-college export**.
+When it arrives, just drop it at kb/reference/coci_program_course_file.csv and run
+kb/_build_program_course_graph.py — no scraping needed. THIS SCRIPT IS THE
+FALLBACK for keeping the file fresh if no bulk export / API exists.
+
+FALLBACK STATUS — the site is **DevExpress ASPx**, not plain HTML. First-run
+diagnostics (Actions runs #1/#2) proved: 1 frame, **zero native `<select>`
+elements** (the College / File Type "dropdowns" are **ASPxComboBox** widgets), and
+DevExpress button ids `ASPxRoundPanel1_RunReportASPxButton_I` (View Report) +
+`buttonSaveAs_I` (Export To). To finish the fallback driver: enumerate the combos
+via `ASPxClientControl.GetControlCollection()` (the diagnostics block below dumps
+their names/item counts), then drive them with the DevExpress client API
+(`combo.SetSelectedIndex(i)` fires the AutoPostBack) → click View Report → CSV →
+click Export → capture the download. Do NOT expect `page.locator("select")` to work.
+
 NOTE: this CANNOT run from the Claude sandbox — its egress policy blocks
 datamart.cccco.edu. It runs on the GitHub Actions runner
 (.github/workflows/program-course-fetch.yml), whose network can reach the site.
-Selectors marked "VERIFY ON FIRST RUN" are the spots to adjust against the real
-page if the first Actions run trips.
 
 Run (on the runner): python3 kb/_fetch_program_course_files.py
 Env knobs: MCF_FILE_TYPES (comma list), MCF_LIMIT (int, for a smoke test),
@@ -33,6 +46,7 @@ Env knobs: MCF_FILE_TYPES (comma list), MCF_LIMIT (int, for a smoke test),
 """
 import csv
 import io
+import json
 import os
 import sys
 import time
@@ -73,31 +87,107 @@ def fetch_all(file_types=None, limit=None, delay_ms=1200):
         ctx = browser.new_context(accept_downloads=True)
         page = ctx.new_page()
         page.set_default_timeout(45000)
-        page.goto(URL, wait_until="networkidle")
+        page.goto(URL, wait_until="domcontentloaded")
+        try:
+            page.wait_for_selector("select", timeout=30000)
+        except Exception:
+            pass
 
-        # Enumerate the college dropdown options (skip the blank prompt).
-        college_select = page.locator("select").first  # VERIFY: first select = College
-        options = college_select.locator("option")
+        # ── Diagnostics: dump the real DOM shape so ONE run reveals it. ──
+        _log("page title: %r" % page.title())
+        _log("page url: %s" % page.url)
+        _log("frames: %d" % len(page.frames))
+        selects = page.locator("select")
+        sel_info = []
+        for i in range(selects.count()):
+            s = selects.nth(i)
+            opts = s.locator("option")
+            n = opts.count()
+            sample = [(opts.nth(j).inner_text() or "").strip() for j in range(min(n, 4))]
+            sid, sname = s.get_attribute("id"), s.get_attribute("name")
+            sel_info.append((i, sid, sname, n, sample))
+            _log("  select[%d] id=%r name=%r options=%d sample=%r" % (i, sid, sname, n, sample))
+        for tag in ("input[type=submit]", "input[type=button]", "button"):
+            loc = page.locator(tag)
+            for i in range(min(loc.count(), 8)):
+                el = loc.nth(i)
+                lab = el.get_attribute("value") or (el.inner_text() if tag == "button" else "") or ""
+                _log("  %s[%d] label=%r id=%r" % (tag, i, lab.strip()[:44], el.get_attribute("id")))
+        # DevExpress site: the "dropdowns" are ASPxComboBox widgets, not <select>.
+        # Enumerate the client controls to get their names + item counts.
+        try:
+            controls = page.evaluate("""() => {
+                try {
+                    const arr = ASPxClientControl.GetControlCollection().GetControlsArray();
+                    return arr.map(c => {
+                        const o = {name: c.name, type: c.constructor && c.constructor.name};
+                        try { if (typeof c.GetItemCount === 'function') o.items = c.GetItemCount(); } catch(e){}
+                        try { if (typeof c.GetText === 'function') o.text = c.GetText(); } catch(e){}
+                        return o;
+                    });
+                } catch(e) { return {error: String(e)}; }
+            }""")
+            _log("DevExpress client controls: %s" % json.dumps(controls)[:2500])
+        except Exception as e:
+            _log("DevExpress evaluate failed: %s" % e)
+        inp = page.locator("input")
+        for i in range(min(inp.count(), 24)):
+            el = inp.nth(i)
+            _log("  input[%d] id=%r type=%r class=%r" % (
+                i, el.get_attribute("id"), el.get_attribute("type"),
+                (el.get_attribute("class") or "")[:44]))
+
+        # ── Detect the College and File Type selects by CONTENT, not index. ──
+        def _find_college():
+            best = None
+            for (i, sid, sname, n, sample) in sel_info:
+                tag = ((sid or "") + " " + (sname or "")).lower()
+                if "college" in tag and n > 1:
+                    return i
+                if n > 1 and (best is None or n > sel_info[best][3]):
+                    best = i
+            return best
+
+        def _find_filetype():
+            for (i, sid, sname, n, sample) in sel_info:
+                if any("course file" in (s or "").lower() for s in sample):
+                    return i
+                tag = ((sid or "") + " " + (sname or "")).lower()
+                if ("file" in tag or "type" in tag) and n >= 2:
+                    return i
+            return None
+
+        college_idx = _find_college()
+        ft_idx = _find_filetype()
+        _log("chosen: college select=%s, file-type select=%s" % (college_idx, ft_idx))
+        if college_idx is None:
+            _log("NO COLLEGE SELECT FOUND — HTML snippet:")
+            _log(page.content()[:3000])
+            browser.close()
+            return 0, [("*", "*", "no college select found")]
+
+        copts = page.locator("select").nth(college_idx).locator("option")
         colleges = []
-        for i in range(options.count()):
-            val = options.nth(i).get_attribute("value")
-            txt = (options.nth(i).inner_text() or "").strip()
+        for i in range(copts.count()):
+            val = copts.nth(i).get_attribute("value")
+            txt = (copts.nth(i).inner_text() or "").strip()
             if val and txt and "select" not in txt.lower():
                 colleges.append((val, txt))
         _log("Found %d colleges." % len(colleges))
         if limit:
             colleges = colleges[:limit]
 
-        selects = page.locator("select")
         for ci, (cval, ctext) in enumerate(colleges, 1):
             for ft in file_types:
                 try:
-                    # Re-select college (a file-type/college postback may reset state).
-                    selects.nth(0).select_option(value=cval)     # College
+                    # Re-query selects fresh each time — an ASP.NET AutoPostBack
+                    # re-renders the DOM, so cached handles go stale.
+                    page.locator("select").nth(college_idx).select_option(value=cval)
                     page.wait_for_load_state("networkidle")
-                    page.locator("select").nth(1).select_option(label=ft)  # File Type
-                    page.wait_for_load_state("networkidle")
-                    page.get_by_role("button", name=BTN_VIEW).click()
+                    if ft_idx is not None:
+                        page.locator("select").nth(ft_idx).select_option(label=ft)
+                        page.wait_for_load_state("networkidle")
+                    page.get_by_role("button", name=BTN_VIEW, exact=False).click()
                     page.wait_for_load_state("networkidle")
                     # Choose CSV, then Export triggers a download.
                     try:
@@ -105,7 +195,7 @@ def fetch_all(file_types=None, limit=None, delay_ms=1200):
                     except Exception:
                         pass  # CSV is the default radio
                     with page.expect_download() as dl_info:
-                        page.get_by_role("button", name=BTN_EXPORT).click()
+                        page.get_by_role("button", name=BTN_EXPORT, exact=False).click()
                     download = dl_info.value
                     raw = _read_download(download)
                     rows = list(csv.DictReader(io.StringIO(raw)))
