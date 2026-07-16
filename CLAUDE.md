@@ -589,7 +589,7 @@ non-cron artifact). Nav "CIP Crosswalk"→**"CIP Codes"** (hash kept). Tests rew
 continuation: `docs/cip_crosswalk_lessons.md`. **Side-lane — left `cpl_todos.json` +
 the numbered handoff untouched** (CCR mainline owns those).
 
-### StarCIP side-lane — CIP Code Taxonomy: the "easy button" reference + finder (2026-07-15, PROTOTYPE → ported #<pending>)
+### StarCIP side-lane — CIP Code Taxonomy: the "easy button" reference + finder (2026-07-15, PROTOTYPE → ported #798)
 
 Jenni Abbott's email feedback pivoted the CIP tab: **don't recreate the crosswalk**
 (COE hosts it), the product is the **full CIP list as the authoritative reference**
