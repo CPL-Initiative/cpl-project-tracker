@@ -673,6 +673,35 @@ tightens EVERY count, reuses the all-college `CPL_COCI_COURSE_KEYS` set. Left
 `docs/cpl_pathways_lessons.md` · KB note
 `methodology-filter-live-counts-against-current-catalog.md`.
 
+### StarX side-lane — CPL Pathways: the Common Course Reference engine + two-view redesign + feeder fields (2026-07-15/16, #794/#796/#797 MERGED)
+
+Sam's "foundational" dig at the Auto CPL Pathway → a full redesign of the directory
+cards. **Doctrine landed (Rule 8c already had the credential-merge calls); this is a
+NEW course-identity join.** Three merged PRs: **#794 — the CCR engine**
+(`kb/_build_cpl_pathway_ccr.py` → `cpl_pathways_ccr_data.js`, keyed
+`<NORMCOLLEGE>|<top4>`): per course the **local (searchable) cert(s)**, its **Common
+Course Reference** (C-ID/CCN/minted M-ID via `coci_minted_memberships`), **units**,
+**peer field-agreement**, **course-grain adoption opportunities**, and a
+**cross-field over-merge flag**. Field comes from the **CATALOG** (4-digit TOP), not
+`coci_articulations`' 2-digit division stamp. Daily-fresh (workflow step). **#796 —
+feeder fields** (`kb/pathway_feeder_fields.json`): a multidisciplinary program
+aggregates CPL across lower-division feeder disciplines under OTHER TOP codes — fixed
+Miramar Public Safety Management (empty → **34 courses / 104u** of Fire/EMS/AJ CPL for
+the board deck with the Fire faculty workgroup); flag now compares each course's OWN
+field. **#797 — the two-view render** in `cpl_pathways.js` (`renderCcrViews`, fails
+open): **🎓 Explore CPL (student)** = course + local cert ("Qualify with X OR Y"), clean;
+**🏛️ Curate & validate (college)** = + CCR chip, field-agreement, opportunities, ⚠ flags.
+Mockup ([artifact](https://claude.ai/code/artifact/647293d9-57b4-498c-9e41-418e0545be01))
+locked live with Sam. Tests: `cpl_pathway_ccr` (21) + `cpl_pathways_ccr_render` (17);
+suite 164 files green. **Design seams for later:** the feeder JSON is the interim form
+of a Supabase **program-supplement** store (`in_coci:false` reserved for
+not-yet-in-COCI courses). **Deferred:** the per-college coordinator/landing contact
+block (`map_college_contacts` — Miramar coord = Suzanne Freeman); the **AUTO 116 →
+Construction (`CNST M1062`) split re-mint** for the CCR mainline queue; competency-spine
+adoption view (Sam parked, wants to explore later). Story + continuation:
+`docs/cpl_pathways_lessons.md` · `docs/cpl_pathways_handoff.md`. Side-lane — left the
+numbered handoff + `cpl_todos.json` untouched (CCR mainline owns those).
+
 ### Session 117 — StarMarcus: closed the doctrine's last open forks → v0.13 + the ESL dry-run payoff (2026-07-15)
 
 Sam wanted "back in the interrogation room." Two grounded 3-fork scenario batches
