@@ -72,6 +72,8 @@ function tagText(document) {
   check("switcher injected into the masthead", !!document.querySelector(".cobi-brand .cobi-orgswitch-sel"));
   check("switcher lists all sites (CPL, C&I, CIP)",
     document.querySelectorAll(".cobi-orgswitch-sel option").length === 3);
+  check("GR is unlisted — not shown in the default switcher",
+    document.querySelectorAll(".cobi-orgswitch-sel option[value='gr']").length === 0);
   check("REGRESSION GUARD: default CPL view shows Dashboard", shown(btn(document, "dashboard")));
   check("REGRESSION GUARD: default CPL view shows Budget (all tabs)", shown(btn(document, "budget")));
   check("REGRESSION GUARD: default CPL view shows the Funding group",
