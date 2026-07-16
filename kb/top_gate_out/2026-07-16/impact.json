@@ -1,0 +1,93 @@
+{
+  "as_of": "2026-07-16",
+  "ruling": "gate identity, keep display (Sam, 2026-07-16)",
+  "rows_total_disciplined": 71076,
+  "rows_held_from_vote_top_only": 17059,
+  "rows_voting_corroborated": 54017,
+  "disciplines_total": 146,
+  "disciplines_with_corroborated_anchor": 130,
+  "disciplines_top_only": 16,
+  "top_only_disciplines": [
+    {
+      "discipline": "Broadcasting Technology",
+      "rows": 294,
+      "corroborated_voters": 0
+    },
+    {
+      "discipline": "Construction Management",
+      "rows": 187,
+      "corroborated_voters": 0
+    },
+    {
+      "discipline": "Family and Consumer Studies/ Home Economics",
+      "rows": 493,
+      "corroborated_voters": 0
+    },
+    {
+      "discipline": "Gerontology",
+      "rows": 57,
+      "corroborated_voters": 0
+    },
+    {
+      "discipline": "Industrial Maintenance",
+      "rows": 132,
+      "corroborated_voters": 0
+    },
+    {
+      "discipline": "Industrial Relations",
+      "rows": 62,
+      "corroborated_voters": 0
+    },
+    {
+      "discipline": "Industrial Safety",
+      "rows": 76,
+      "corroborated_voters": 0
+    },
+    {
+      "discipline": "Industrial Technology",
+      "rows": 852,
+      "corroborated_voters": 0
+    },
+    {
+      "discipline": "Instructional Design/Technology",
+      "rows": 143,
+      "corroborated_voters": 0
+    },
+    {
+      "discipline": "Library Technology",
+      "rows": 49,
+      "corroborated_voters": 0
+    },
+    {
+      "discipline": "Physical Sciences",
+      "rows": 239,
+      "corroborated_voters": 0
+    },
+    {
+      "discipline": "Psychiatric Technician",
+      "rows": 49,
+      "corroborated_voters": 0
+    },
+    {
+      "discipline": "Restaurant Management",
+      "rows": 73,
+      "corroborated_voters": 0
+    },
+    {
+      "discipline": "Sign Language/ English Interpreting",
+      "rows": 61,
+      "corroborated_voters": 0
+    },
+    {
+      "discipline": "Social Science",
+      "rows": 296,
+      "corroborated_voters": 0
+    },
+    {
+      "discipline": "Stagecraft",
+      "rows": 106,
+      "corroborated_voters": 0
+    }
+  ],
+  "note": "TOP-only rows DISPLAY (⚙ badge) but do not vote on or fold into the canonical SUBJ4. Re-running kb/_seed_canonical_subj4.py with this gate changed 0 canonical VALUES — corroborated rows already carry every anchor, confirming TOP votes were redundant. The top_only disciplines' SUBJ4 must be a curator pick (all 16 currently are); their TOP-only rows are held from an automated fold until their discipline is corroborated."
+}
