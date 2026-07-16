@@ -293,3 +293,36 @@ crosswalk. No Supabase in the tab anymore (backend-free reference).
 Sierra finder; a gated CO reader for the suggestion queue; refresh the dataset when
 ESS ships a newer cut; a program-level lane. **Side-lane discipline honored —
 `cpl_todos.json` + the numbered handoff left untouched.**
+
+### 2026-07-16 (later) — SkyLoft: Sam's post-merge UX polish (6 tweaks)
+
+Sam reviewed the live tab and asked for six refinements, all landed in
+`cip_crosswalk.js` (JS-only — no data/HTML change):
+1. **Dark mode toggle restored.** The dashboard is light-only (only `our_process.js`
+   uses `prefers-color-scheme`), so the tab carries its **own** light/dark tokens
+   **on `.cipx`** (not `:root`) and a top-right toggle flips a scoped
+   `.cipx-theme-dark` class (persisted in `localStorage`). It themes **only this
+   tab** — the rest of the dashboard is untouched. (The prototype's toggle had been
+   dropped in the first port; Sam wanted it back.)
+2. **Wider intro.** `.cipx` cap 1000→**1200px** (the `.main-container` is 1400), and
+   the intro `.cipx-sub` widened to fill the container — it was leaving big right-side
+   whitespace, unbalanced against the full-width panel/list below.
+3. **All chips → rounded box, not oval.** Filter pills + the C-ID/CCN chip went from
+   `border-radius:999px` to **7px**, matching the category badges (one chip language).
+4. **One consolidated search.** Deleted the original keyword search box; the
+   plain-English finder ("AlmostSierra") input is now **the single search**, living in
+   ONE light rounded panel with the pills/chip/family/retired controls + the count/CSV.
+   The single input drives **both** the live list filter (substring) **and** the ranked
+   "closest matches" suggestions strip below the panel (shown only for descriptive
+   text, skipped for a bare code lookup) — so no capability was lost when the second
+   box went away.
+5. **Consistent edge margins.** Uniform panel padding (16×18) + a `.cipx` inset so
+   header/panel/list all align to one left edge.
+6. **Muted category badges.** CTE/Both/Non-CTE/Noncredit/Retired/NEW recolored to
+   low-chroma earthy/gray tones (via light+dark tokens) so they read as *additive*,
+   not attention-grabbing.
+
+Tests: `tests/cip_crosswalk.test.js` → 52 assertions (added: single-search-box guard,
+theme-toggle flip, scoped-dark-theme static check). Real-Chromium verified light +
+dark at 1400px: 0 console errors; "medical assisting" → 6 ranked suggestions + a
+2-row filtered list from the one input.
