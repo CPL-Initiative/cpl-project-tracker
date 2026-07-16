@@ -75,6 +75,21 @@ const a102 = byNum["AUTO 102"];
 check("AUTO 102 lists multiple local certs (incl. high-school pathways)",
   a102 && Array.isArray(a102.certs) && a102.certs.length >= 5);
 
+// (g) FEEDER FIELDS — a multidisciplinary program aggregates CPL across its
+// lower-division feeder disciplines (Miramar Public Safety Management → Fire /
+// EMS / AJ), and feeder courses legitimately in another TOP field are NOT
+// false-flagged as over-merges.
+const psm = paths["SAN DIEGO MIRAMAR COLLEGE|2199"];
+check("Public Safety Management pathway present", !!psm);
+check("PSM declares feeder fields (Fire/EMS/AJ)",
+  psm && Array.isArray(psm.feeders) && psm.feeders.indexOf("2133") !== -1);
+check("PSM pathway populated via feeders (was empty on program TOP alone)",
+  psm && psm.articulated.length >= 10);
+check("PSM surfaces Fire (FIPT) CPL courses",
+  psm && psm.articulated.some((r) => r.subj === "FIPT"));
+check("feeder courses are NOT false-flagged (flag uses each course's own field)",
+  psm && psm.articulated.filter((r) => r.flag).length === 0);
+
 // ── report ──
 const fail = results.filter(([, ok]) => !ok);
 results.forEach(([n, ok]) => { if (!ok) console.log("  ✗ " + n); });

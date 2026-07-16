@@ -184,17 +184,31 @@ def build():
 
     cat, by_college_top = _load_catalog()
 
+    # Feeder fields: a multidisciplinary program (e.g. a management BS) draws CPL
+    # from lower-division feeder disciplines coded under OTHER TOP codes than the
+    # program's own. Each program's pathway is assembled across its own field PLUS
+    # its declared feeders (kb/pathway_feeder_fields.json — the interim committed
+    # form of the planned Supabase program-supplement store). Keyed
+    # "<NORMCOLLEGE>|<top4>".
+    try:
+        feeder_cfg = (_load_json("pathway_feeder_fields.json") or {}).get("feeders", {})
+    except (IOError, ValueError):
+        feeder_cfg = {}
+
     # ---- assemble per-program payload, DRIVEN FROM THE CATALOG (current courses,
     # correct 4-digit field) ----
     out = OrderedDict()
     for (college, t4) in wanted:
+        pkey = "%s|%s" % (college, t4)
+        feeders = list((feeder_cfg.get(pkey) or {}).get("feeder_top4", []))
         courses = []
         seen = set()
-        for (subj, num) in by_college_top.get((college, t4), []):
-            if (subj, num) in seen:
-                continue
-            seen.add((subj, num))
-            courses.append((subj, num))
+        for f in [t4] + feeders:
+            for (subj, num) in by_college_top.get((college, f), []):
+                if (subj, num) in seen:
+                    continue
+                seen.add((subj, num))
+                courses.append((subj, num))
 
         # pass 1 — articulated rows + the set of refs the college already holds
         art_rows, art_refs, units_total = [], set(), 0.0
@@ -202,8 +216,12 @@ def build():
             if (college, subj, num) not in articulators:
                 continue
             kind, rid, rtitle, ref_top4, disc = ref_of(college, subj, num)
-            flag = merge_flag(ref_top4, disc, t4)
             meta = cat.get((college, subj, num), {})
+            # The over-merge flag compares the reference's field to the COURSE'S OWN
+            # catalog field (not the program's) — so a Fire course legitimately in
+            # TOP 2133 under a 2199 program is not flagged, but AUTO 116 → a
+            # Construction reference still is.
+            flag = merge_flag(ref_top4, disc, meta.get("top4") or t4)
             units = meta.get("units")
             if isinstance(units, (int, float)):
                 units_total += units
@@ -245,10 +263,11 @@ def build():
                 o["my_courses"].append(label)
         opps = sorted(opp_by_ref.values(), key=lambda o: -o["agree"])
 
-        out["%s|%s" % (college, t4)] = {
+        out[pkey] = {
             "articulated": art_rows,
             "units_total": round(units_total, 1),
             "opportunities": opps,
+            **({"feeders": feeders} if feeders else {}),
         }
 
     return out
