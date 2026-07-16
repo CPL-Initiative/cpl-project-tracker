@@ -69,14 +69,34 @@ into `docs/reference/` (pipeline_reference · kb_build_status · mid_lifecycle �
    renumbering." Until then, principled re-mints are part of the cleanup
    loop.
 
+   **TOP caveat — standing rule (2026-07-16).** TOP codes are faculty-entered
+   in COCI during local curriculum approval with **no data-entry gatekeeper**,
+   so they are notoriously unreliable (~52% of consolidated M-IDs are
+   TOP-mixed). **Never use TOP for gatekeeping or a primary determination**
+   (discipline / SUBJ4 / identity / membership / merge / split). TOP is a
+   **last-in-line corroborator** — usable only when a *second* independent
+   signal agrees (the two-signals-agree gate) — or a **fuzzy search/filter**
+   aid. A discipline inferred from TOP (`discipline_source` `top_code`/
+   `top_division`) **displays** (⚙ badge) but is **held out of the
+   canonical-SUBJ4 fold + its modal vote until corroborated** by `subject_map`
+   or a curator (Sam's "gate identity, keep display" ruling). The only places
+   TOP is authoritative by definition: the **CTE flag** (`_join_cte_from_top`)
+   and the **CIP↔TOP crosswalk** (TOP is the subject there). Full doctrine +
+   the 24%-of-rows blast radius:
+   [`docs/kb-notes/methodology-top-is-a-last-in-line-signal.md`](docs/kb-notes/methodology-top-is-a-last-in-line-signal.md).
+   The CO's **TOP→CIP** cutover (fall 2026) is the systemic exit from TOP —
+   apply the same "corroborate, don't gate" posture to CIP until it earns trust.
+
    **M-ID structural invariants** (enforced at every re-mint; deviations
    become audit findings):
    - SUBJ portion is exactly **4 letters**. The single-letter SUBJ
      artifacts (`A M1001`, `F M1001`, …) were folded by the 2026-06-12
      canonical fold; residue = **1** (`F M1002`, blank-discipline —
      unfoldable until disciplined; `mid_id_off_scheme` tracks it).
-   - Within `id_system == "M-ID"`, **all rows sharing a `discipline`
-     share a SUBJ4** — **ENFORCED 2026-06-12 (Session 50): the canonical
+   - Within `id_system == "M-ID"`, **all rows sharing a *corroborated*
+     `discipline` share a SUBJ4** (TOP-only-disciplined rows wait for
+     corroboration before folding/voting — see the TOP caveat above) —
+     **ENFORCED 2026-06-12 (Session 50): the canonical
      fold re-keyed every disciplined M-ID to its curator-confirmed
      canonical** (e.g. the 10 "Sign Language, American" variants → `SLNA`).
      `subject_collision_signal` is the steady-state watchdog (3 documented
@@ -700,8 +720,10 @@ NEW course-identity join.** Three merged PRs: **#794 — the CCR engine**
 `<NORMCOLLEGE>|<top4>`): per course the **local (searchable) cert(s)**, its **Common
 Course Reference** (C-ID/CCN/minted M-ID via `coci_minted_memberships`), **units**,
 **peer field-agreement**, **course-grain adoption opportunities**, and a
-**cross-field over-merge flag**. Field comes from the **CATALOG** (4-digit TOP), not
-`coci_articulations`' 2-digit division stamp. Daily-fresh (workflow step). **#796 —
+**cross-field over-merge flag**. Field is **grouped by** the CATALOG 4-digit TOP (a
+membership *proxy* — COCI has no course→program join — not an authoritative field key;
+see the TOP caveat), which is at least less-noisy than `coci_articulations`' 2-digit
+division stamp. Daily-fresh (workflow step). **#796 —
 feeder fields** (`kb/pathway_feeder_fields.json`): a multidisciplinary program
 aggregates CPL across lower-division feeder disciplines under OTHER TOP codes — fixed
 Miramar Public Safety Management (empty → **34 courses / 104u** of Fire/EMS/AJ CPL for

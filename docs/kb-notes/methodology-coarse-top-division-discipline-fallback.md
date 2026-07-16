@@ -37,12 +37,16 @@ impossible; a 6-digit "Other" code names no discipline).
 
 ## The lever: the 2-digit division is the granularity that *is* knowable
 
-Every MAP TOP code's first two digits is an authoritative **CCC division**
-(`TOP_Code_Lookup.xlsx` → `CCC Discipline Code`/`Title`). A division maps to a
+Every MAP TOP code's first two digits maps to a **CCC division** whose *label* is
+well-defined (`TOP_Code_Lookup.xlsx` → `CCC Discipline Code`/`Title`) — note it's
+the label that's stable, not the guarantee the course was assigned the right code
+(TOP is faculty-entered without a gatekeeper; see
+[[methodology-top-is-a-last-in-line-signal]]). A division maps to a
 broad-but-honest umbrella discipline: `49`→Interdisciplinary Studies, `12`→Health,
 `09`→Industrial Technology, `05`→Business, `15`→Humanities, … A division-level fill
-is **honest** (a 09xx course genuinely *is* an industrial technology) but **coarse**
-(welding and drafting both land in Industrial Technology).
+is **coarse-but-plausible** (a 09xx code *suggests* industrial technology) and
+still low-confidence (0.4, blanks-only, reviewer-verifiable) — welding and drafting
+both land in Industrial Technology.
 
 ## The rules that keep it honest
 

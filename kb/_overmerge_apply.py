@@ -241,7 +241,12 @@ def _build_piece_record(old_mid, parent_rec, piece, members):
         "subject": modal_subject,
         "subject_4letter": piece.get("subj4"),
         "discipline": discipline,
-        "discipline_source": "top_code" if discipline else None,
+        # Carry the ACTUAL source the dry-run cascade resolved (subj4 /
+        # subject_map / top_code / description / description_coherence /
+        # title_map), not a hardcoded "top_code" — mislabeling a subject-led
+        # discipline as TOP-sourced both understates its trust and wrongly holds
+        # it out of the SUBJ4 fold under the TOP-gating rule.
+        "discipline_source": (piece.get("disc_source") if discipline else None),
         "discipline_confidence": (parent_rec.get("discipline_confidence")
                                   if discipline else None),
         "discipline_inferred_at": (parent_rec.get("discipline_inferred_at")
