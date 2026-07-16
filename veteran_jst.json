@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-16T11:14:28.107932+00:00",
+  "scraped_at": "2026-07-16T14:28:05.371484+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25869,
+    "jst": 25880,
     "star_colleges": 54
   },
   "computed_star_colleges": 54,
@@ -42,7 +42,7 @@
     },
     "Moreno Valley College": {
       "vets": 916,
-      "jst": 960,
+      "jst": 971,
       "star": true
     },
     "San Diego Miramar College": {

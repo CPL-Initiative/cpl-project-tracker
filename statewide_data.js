@@ -39465,6 +39465,140 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPSAS-AECV-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AECV-1-001"
+      ],
+      "title": "AP Exam: Chemistry V2",
+      "unified_title": "AP Exam: Chemistry V2",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Exam: Chemistry V2"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Physical Sciences",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 3,
+      "adopter_names": [
+        "Moreno Valley College",
+        "Norco College",
+        "Riverside City College"
+      ],
+      "potential": 96,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 99,
+      "credit_recs": [
+        {
+          "course": "CHE 2A",
+          "credit": "4 hours in Introductory Chemistry, I"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPCXS-CBEC-1-001|MAPCxS-CAA0-1-001",
       "exhibit_ids": [
         "MAPCXS-CBEC-1-001",
@@ -221131,8 +221265,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Norco College",
-        "credit_recs": 336,
-        "exhibits": 265,
+        "credit_recs": 337,
+        "exhibits": 266,
         "disciplines": 17,
         "ccc_collaborative": 23,
         "industry_certs": 74,
@@ -221167,8 +221301,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Moreno Valley College",
-        "credit_recs": 255,
-        "exhibits": 174,
+        "credit_recs": 256,
+        "exhibits": 175,
         "disciplines": 16,
         "ccc_collaborative": 13,
         "industry_certs": 106,
@@ -221230,8 +221364,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Riverside City College",
-        "credit_recs": 172,
-        "exhibits": 119,
+        "credit_recs": 173,
+        "exhibits": 120,
         "disciplines": 18,
         "ccc_collaborative": 11,
         "industry_certs": 105,
@@ -222020,7 +222154,7 @@ window.CPL_STATEWIDE = {
         "courses": 212,
         "colleges": 42,
         "ccc_collaborative": 46,
-        "pct": 3.6
+        "pct": 3.5
       },
       {
         "discipline": "Health",
@@ -222096,9 +222230,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Physical Sciences",
-        "credit_recs": 110,
-        "exhibits": 82,
-        "courses": 71,
+        "credit_recs": 113,
+        "exhibits": 83,
+        "courses": 72,
         "colleges": 21,
         "ccc_collaborative": 0,
         "pct": 0.9
@@ -222188,8 +222322,8 @@ window.CPL_STATEWIDE = {
     "by_cpl_type": [
       {
         "cpl_type": "Standardized Assessment",
-        "credit_recs": 6816,
-        "exhibits": 2151,
+        "credit_recs": 6819,
+        "exhibits": 2152,
         "colleges": 86,
         "pct": 53.8
       },
@@ -222232,8 +222366,8 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 7935,
-        "exhibits": 2930,
+        "credit_recs": 7938,
+        "exhibits": 2931,
         "colleges": 92,
         "pct": 62.6
       },
@@ -222304,8 +222438,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11154,
-        "exhibits": 4670,
+        "credit_recs": 11157,
+        "exhibits": 4671,
         "colleges": 99,
         "disciplines": 23,
         "pct": 88.0
@@ -222730,6 +222864,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-07-16T11:13:46",
-  "total_credit_recs": 12676
+  "generated_at": "2026-07-16T14:27:27",
+  "total_credit_recs": 12679
 };
