@@ -484,3 +484,72 @@ with different names") opened a full redesign. Arc + learnings:
   before porting — the "prototype in a fast-feedback canvas, then port" practice
   paid off; the port was mechanical because the spec was locked.
 - Untouched: `kb/cpl_todos.json` + numbered `session_<N>_handoff.md` (side-lane).
+
+---
+
+## 2026-07-16 — StarBoard: the AS/BS reframe — CPL magnitude + the qualifying-associate-degree callout (#803)
+
+Sam asked for a comparison of the Miramar Public Safety Management BS pathway
+(StarX's feeder fix, #796) against the college's published courses. The dig
+produced a metric correction AND a cleaner mental model for the whole pathways
+tab.
+
+### The comparison (what I verified)
+
+- **The feeders are correct.** Fire (2133) + AJ (2105) + EMS (1250) map cleanly to
+  the degree's two tracks (Emergency Management + Law Enforcement) and its
+  qualifying associate degrees; the PSMA subject's own courses split across those
+  same TOPs (PSMA 460–470 EMS→1250, 475–485 Law→2105, 401–455 mgmt→2199). **PARA
+  is correctly EXCLUDED** — it's *Paralegal* (TOP 1402), not Paramedic. (Verify
+  before recommending: the "missing Paramedic feeder" hypothesis was wrong.)
+- **The degree = 121u: 60 lower-division + 61 upper-division.** CPL rightly
+  applies to the 60u lower-division *qualifying associate degree*; the 61u
+  PSMA upper-division core (PSMA 401–490) carries **no CPL** (new courses) — so
+  it's correctly invisible on the card. Sources: the college reqs page + SDCCD
+  news via WebSearch; the site + curriQunet catalog bot-block WebFetch (the
+  CourseLeaf/curriQunet block the SkyIron notes flagged — WebSearch server-reads
+  are the only channel).
+- **The "104.2 units" headline was inflated** — the same "sus" double-count Sam
+  flagged on Automotive: **64.5u** is five *mutually-exclusive* entry academies
+  (POST 24u OR SD Fire Academy 13u OR Corrections 11.5u OR Regional Fire 9u OR
+  EMT 7u — a student does ONE), and **7.2u** is fifteen sub-1u State Fire Training
+  CE modules (cert stackers, not degree-applicable units).
+
+### The reframe (Sam's model — the durable idea)
+
+Entry to a CCC BS **requires a qualifying associate degree**, so the feeder
+Fire/EMS/AJ CPL counts toward **that associate degree**, not the BS itself. That
+dissolves the inflation at the root: the AS CPL was never BS credit. Target model:
+
+- **BS pathway** = the BS's own course requirements + CPL eligible for *those*
+  (≈0 for a brand-new upper-division management degree) + a **one-line callout**:
+  "Entry requires a qualifying associate degree — CPL is available for those
+  (Fire, EMS, Administration of Justice)."
+- **AS/AA/certificate pathways become their own first-class entries** in the CPL
+  Pathways list — *later, when the program+course data to display them exists.*
+
+### What shipped now (#803, the interim)
+
+- **Course COUNTS, not the unit sum** — dropped the aggregate `units_total` from
+  the CCR ✓ header + the directory ✓ tile (`cpl_pathways.js`); featured
+  single-track maps (Ironworker) keep their unit billboard (no double-count there).
+- **The qualifying-associate-degree callout** (`.ccr-scope`) renders on feeder
+  programs (`ccr.feeders` present). Feeder ✓ courses stay **visible but relabeled**
+  as associate-degree CPL — preserving the Fire faculty workgroup's board-deck
+  story (#796) rather than emptying the card.
+- Tests `cpl_pathways_ccr_render` 21 → **23**. No CIP-tab files touched (SkyLoft's
+  lane).
+
+### Next concrete steps (the deferred full build)
+
+1. **BS-requirements-only cards** — wire the program's own required-course list
+   (COCI has PSMA 401–490) into the directory/CCR card as the checklist, instead
+   of deriving membership from articulations. Then the BS card shows its own
+   (near-zero) CPL + the callout, and the feeder ✓ list moves off it.
+2. **AS/AA/certificate pathways as their own entries** — needs the associate
+   program+course data (the parked "CCC catalog → Supabase harvest"). Each
+   qualifying AS (Fire, EMS, AJ …) becomes a pathway card where its rich CPL
+   actually lives.
+3. Then the BS callout can deep-link to those AS pathway cards.
+
+Side-lane: left `kb/cpl_todos.json` + the numbered handoff to the mainline.

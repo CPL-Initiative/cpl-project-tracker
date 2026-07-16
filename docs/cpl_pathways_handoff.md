@@ -40,6 +40,20 @@ Tests: `cpl_pathway_ccr` (21) + `cpl_pathways_ccr_render` (17); full suite 164 f
 
 ## Next steps (priority order)
 
+0. **The AS/BS reframe (Sam, 2026-07-16, StarBoard — #803 shipped the interim).**
+   Entry to a CCC BS requires a qualifying associate degree, so feeder CPL counts
+   toward THAT associate degree, not the BS. Target model: **BS cards show the
+   BS's own required courses + their (near-zero) CPL + a one-line
+   "CPL is available for the qualifying associate degrees" callout**; the
+   **AS/AA/certificate programs become their own pathway entries** once the
+   program+course data exists. #803 shipped the interim (course counts not the
+   inflated unit sum; the qualifying-AS callout on feeder programs; feeders kept
+   visible-but-relabeled to preserve the Fire-faculty board deck). Full build:
+   (a) wire the program's own required-course list (COCI has it) into the card as
+   the checklist instead of deriving membership from articulations; (b) add the
+   qualifying AS pathways as first-class list entries (needs the parked CCC
+   catalog→Supabase harvest); (c) deep-link the BS callout to them. Full story:
+   `docs/cpl_pathways_lessons.md` (2026-07-16 section).
 1. **Contact block (fast-follow).** Per-college **CPL coordinator + landing page** from
    Supabase `map_college_contacts` (`cpl_coordinator` / `cpl_coordinator_email` /
    `landing_page_url`; Miramar coord = Suzanne Freeman). Fetch client-side in
