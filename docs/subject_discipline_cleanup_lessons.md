@@ -28,7 +28,9 @@ HVAC CPL and caught `HVAC M10FR` — LA Trade local course `DIESLTK 122C`,
 `SUBJ4=HVAC` and disciplined **"Air Conditioning, Refrigeration, Heating."**
 But the local subject code `DIESLTK` **and** TOP `0947.00` both say **Diesel**.
 Root cause: `discipline_source: "title_keyword"` — the literal word "HVAC" in
-the title overrode the authoritative fields. The `top_discipline_disagreement`
+the title overrode the corroborating coded fields (the local subject code, with
+TOP as a *second* agreeing signal — the two-signals-agree pattern, not TOP as an
+authority on its own). The `top_discipline_disagreement`
 rule never fired because it **skips singletons** (`corroboration_members < 2`),
 and `M10FR` is single-member. Singletons are exactly where this class of error
 lives, and the auditor had a blind spot over them.

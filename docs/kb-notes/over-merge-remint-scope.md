@@ -47,8 +47,12 @@ Mechanically tiny: change the minting key from `(normalized_title)` to
 become **separate** identities instead of one. The re-mint applies this split to
 the existing flagged set rather than re-running the seed from the source xlsx.
 
-Per-M-ID procedure (the dry-run simulates, the apply executes):
-1. Partition the M-ID's members by 2-digit TOP division.
+Per-M-ID procedure (the dry-run simulates, the apply executes). Note the
+2-digit TOP division seeds only a **candidate** partition surfaced for curator
+review — it is corroborated by the description-coherence / title-keep-whole /
+sister-pair collapse guards below and never applied on TOP alone (see
+[[methodology-top-is-a-last-in-line-signal]]):
+1. Partition the M-ID's members by 2-digit TOP division (candidate split).
 2. Each division-group with **≥2 distinct colleges** → a corroborated M-ID
    (plurality group keeps the old id to minimise churn; others get fresh ids).
 3. Each division-group with **1 college** → singleton(s) (`coci_minted_singletons.json`).

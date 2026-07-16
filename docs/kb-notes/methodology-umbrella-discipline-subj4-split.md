@@ -47,10 +47,13 @@ parts make the split clean + safe:
    (`FLNG M1019 → FLSP M1019`). Collision-free (the new prefixes didn't exist; the
    numbers were already unique), and it dodges the whole deterministic-renumbering
    risk surface. No re-sequence needed.
-3. **Classify from the authoritative signal.** Prefer a self-describing official
-   code over heuristics: the CCC **TOP-11xx taxonomy labels the language**
-   (`"1105.00: Spanish"`), so TOP → language classified **99.5%** with title +
-   local-subject as fallbacks. Let the data's own taxonomy do the work.
+3. **Classify from a self-describing code where one genuinely exists (a rare
+   exception).** The CCC **TOP-11xx taxonomy labels the language** in the code
+   *title itself* (`"1105.00: Spanish"`) — an unusually self-describing
+   sub-taxonomy, so here TOP → language reached **99.5%**, *confirmed* by title +
+   local-subject (two corroborating signals, not TOP alone). This is a special
+   case, not license to classify from TOP generally — everywhere else TOP is a
+   last-in-line corroborator only (see [[methodology-top-is-a-last-in-line-signal]]).
 4. **Exempt the umbrella in the auditor.** `subject_collision_signal` (which flags a
    discipline spanning >1 SUBJ4) will fire ~N false findings post-split. Add an
    `UMBRELLA_DISCIPLINES` set and skip it in the per-discipline-modal-SUBJ4 builder,

@@ -15,9 +15,13 @@ artifacts:
 # Join loose institutional datasets on the coded key, not freehand text
 
 > **One-sentence summary** — When mapping one CCC dataset onto another, match on
-> the **authoritative coded key** (TOP code, CIP, C-ID, control number) and use
-> freehand titles only as corroboration; reconcile entity *names* with an
-> explicit **fail-loud** crosswalk, never a silent fuzzy guess.
+> a **stable coded key** and use freehand titles only as corroboration; reconcile
+> entity *names* with an explicit **fail-loud** crosswalk, never a silent fuzzy
+> guess. **Not all codes are equal:** C-ID / CCN / CIP / control number are
+> external authorities; **TOP is faculty-entered with no gatekeeper — a
+> corroborator, not an authority** (steadier at *program* grain than course
+> grain, but still corroborate — see
+> [[methodology-top-is-a-last-in-line-signal]]).
 
 ## Context
 
@@ -32,11 +36,17 @@ only 93/197 distinct titles.
 
 ### 1. Match on the coded key; corroborate (don't drive) with text
 
-Freehand titles drift, abbreviate, and typo. The **coded** companion fields
-don't: a TOP code maps to ~one discipline at ~100% consistency. Deriving the
-canonical TOP per target from the high-confidence title matches, then using TOP
-to validate the fuzzy ones, took coverage from 93/197 titles to **3,814/3,819
-rows (99.9%)**. The title is the *label*; the code is the *key*.
+Freehand titles drift, abbreviate, and typo. Stable coded companion fields drift
+less. **At *program* grain** a TOP code lines up with a single discipline
+*most* of the time — enough to *validate* fuzzy title matches, not enough to
+*drive* them. Here, deriving the canonical TOP per target from the
+high-confidence title matches, then using TOP to **corroborate** the fuzzy ones,
+took coverage from 93/197 titles to **3,814/3,819 rows (99.9%)**. Note this
+worked because a second signal (the high-confidence title matches) *led* and TOP
+only confirmed — the doctrine's two-signals-agree pattern. Do **not** generalize
+this to course grain, where TOP is far noisier (~52% TOP-mixed) and must never
+decide a field. The title is the *label*; a stable external code is the *key*;
+**TOP is a corroborator**.
 
 ### 2. Reconcile entity names with an explicit, fail-loud crosswalk
 

@@ -227,8 +227,8 @@ STATE_SCORE = {
     "curated":               1.00,  # human in kb_curation overlay
     "aggregated-unanimous":  1.00,  # members agree
     "aggregated-modal":      0.80,  # ≥⅔ members agree; surface modal+spread
-    "inferred-high":         0.80,  # subject_map / top_code (precise lexicon)
-    "inferred-low":          0.60,  # title_keyword / description (heuristic)
+    "inferred-high":         0.80,  # subject_map (curator-anchored subject code)
+    "inferred-low":          0.60,  # title_keyword / description / top_code / top_division (heuristic)
     "aggregated-varied":     0.40,  # members disagree; spread shown, no single value
     "seed-untouched":        0.30,  # original Phase B seed, never re-checked
     "off-scheme":            0.00,  # ID family doesn't follow CCN-aligned scheme
@@ -291,12 +291,16 @@ def _classify_mid_discipline(rec):
     src = rec.get("discipline_source")
     if not v:
         return {"state": "missing", "value": None}
-    if src == "subject_map" or src == "top_code":
+    if src == "subject_map":
         return {"state": "inferred-high", "value": v, "source": src,
                 "confidence": rec.get("discipline_confidence")}
-    if src == "title_keyword" or src == "description" or src == "top_division":
-        # top_division is the coarsest tier (2-digit TOP umbrella, conf 0.4);
-        # classified inferred-low so it is NOT mislabeled seed-untouched below.
+    if src in ("title_keyword", "description", "top_code", "top_division"):
+        # TOP is faculty-entered in COCI with no data-entry gatekeeper, so it is
+        # a last-in-line signal — never authoritative (see the TOP caveat in
+        # CLAUDE.md §7 / methodology-top-is-a-last-in-line-signal). A discipline
+        # inferred from TOP (top_code conf 0.5, top_division conf 0.4) is scored
+        # inferred-low so it never earns the same trust as the curator-anchored
+        # subject_map, and so it is NOT mislabeled seed-untouched below.
         return {"state": "inferred-low", "value": v, "source": src,
                 "confidence": rec.get("discipline_confidence")}
     # No source label + value set ≡ original Phase B "draft" classification

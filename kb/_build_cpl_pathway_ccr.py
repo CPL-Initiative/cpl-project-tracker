@@ -140,14 +140,24 @@ def build():
         return ("CCR", mid, title, ref_top4, disc)
 
     def merge_flag(ref_top4, disc, t4):
-        """A likely cross-field over-merge: the course's Common Course Reference
-        sits in a DIFFERENT TOP field than this program's (e.g. Santa Ana's
-        automotive AUTO 116 folded into a Construction reference at TOP 0957)."""
+        """A POSSIBLE cross-field over-merge: the course's Common Course Reference
+        sits in a DIFFERENT TOP field than the course (e.g. Santa Ana's automotive
+        AUTO 116 folded into a Construction reference at TOP 0957).
+
+        This is a TOP-only, single-signal hint — TOP is faculty-entered and
+        unreliable (see docs/kb-notes/methodology-top-is-a-last-in-line-signal),
+        so it is a low-confidence review nudge for the curation queue, NEVER a
+        determination: it only surfaces a ⚠ in the curator view and never excludes
+        a course, changes a count, or re-keys. Weight it accordingly and verify
+        against a second signal before acting."""
         if ref_top4 and t4 and ref_top4 != t4:
             return {
                 "kind": "cross_field_merge",
-                "detail": ("Reference sits in TOP %s%s, not this program's TOP %s — "
-                           "a likely over-merge for the curation queue."
+                "confidence": "low",
+                "single_signal": True,
+                "detail": ("Reference sits in TOP %s%s, not this course's TOP %s — "
+                           "a POSSIBLE over-merge worth a curator's eyes (TOP-only "
+                           "signal; verify before acting)."
                            % (ref_top4, (" (" + disc + ")") if disc else "", t4)),
             }
         return None
