@@ -42,6 +42,7 @@ check("cip_crosswalk.js exposes CPL_CIP_CROSSWALK.activate", /window\.CPL_CIP_CR
 check("cip_crosswalk.js is backend-free (no Supabase)", src.indexOf("supabase.co") === -1);
 check("cip_crosswalk.js carries no service key", src.indexOf("service_role") === -1);
 check("cip_crosswalk.js has no submit fetch (reference only)", src.indexOf("fetch(") === -1);
+check("cip_crosswalk.js carries a scoped dark theme", src.indexOf(".cipx-theme-dark") !== -1);
 
 // data file sanity — the lean reference shape {fams, rows}
 const dataSrc = fs.readFileSync("cip_crosswalk_data.js", "utf8");
@@ -95,8 +96,11 @@ check("activate() renders without throwing", !actThrew);
 const root = document.getElementById("cip-crosswalk-root");
 check("renders the .cipx container", root && root.querySelector(".cipx"));
 check("renders the 'CIP Code Taxonomy' header", root && /CIP Code Taxonomy/.test(root.querySelector(".cipx-h2").textContent));
-check("renders the plain-English finder input", root && root.querySelector(".cipx-fnd-in"));
-check("renders the search box", root && root.querySelector("#cipx-q"));
+check("renders the light/dark theme toggle", root && root.querySelector(".cipx-themetog"));
+check("renders the consolidated control panel", root && root.querySelector(".cipx-panel"));
+check("consolidated to a single search box (no separate finder input)",
+  root && root.querySelector("#cipx-q") && !root.querySelector(".cipx-fnd-in") && root.querySelectorAll("input[type=search]").length === 1);
+check("the search box lives inside the panel", root && root.querySelector(".cipx-panel #cipx-q"));
 check("renders 5 category pills", root && root.querySelectorAll(".cipx-pills .cipx-pill").length === 5);
 check("renders the C-ID/CCN toggle chip", root && root.querySelector(".cipx-pill-xfer"));
 check("renders the family select (All + 3 fams)", root && root.querySelector(".cipx-fsel") && root.querySelector(".cipx-fsel").querySelectorAll("option").length === 4);
@@ -156,6 +160,13 @@ const sel = domF.window.document.querySelector(".cipx-fsel");
 sel.value = "52"; sel.dispatchEvent(new domF.window.Event("change"));
 const fItems = domF.window.document.querySelectorAll(".cipx-item");
 check("family select '52' narrows to Business Administration", fItems.length === 1 && /Business Administration/.test(fItems[0].textContent));
+
+// ── interaction: theme toggle flips the scoped .cipx-theme-dark class ──
+const domT = fresh();
+const wrapT = domT.window.document.querySelector(".cipx");
+const preDark = wrapT.classList.contains("cipx-theme-dark");
+domT.window.document.querySelector(".cipx-themetog").click();
+check("theme toggle flips the scoped dark class (tab-local)", wrapT.classList.contains("cipx-theme-dark") !== preDark);
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Part C — failure-mode guards (fresh module instances)
