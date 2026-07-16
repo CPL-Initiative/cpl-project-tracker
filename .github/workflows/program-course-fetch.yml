@@ -1,0 +1,105 @@
+name: Fetch COCI Program-Course Files
+
+# Pulls the CCCCO Data Mart "College Master Course/Program File" for every college
+# (the Data Mart has no "Select All", so a headless browser loops each college),
+# then assembles the program -> courses graph with units + C-ID.
+#
+# This runs on the GitHub Actions runner — NOT the Claude sandbox, whose egress
+# policy blocks datamart.cccco.edu. The runner's network reaches the site fine.
+#
+# FIRST RUN: dispatch manually with limit=3 and commit=false — it uploads the CSVs
+# as run artifacts so you can eyeball them WITHOUT committing anything. Once the
+# selectors are confirmed good, dispatch with limit blank + commit=true (or just
+# let the weekly cron run, which always commits when the row-count sanity passes).
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Only fetch the first N colleges (blank = all). Use 3 for a smoke test.'
+        required: false
+        default: ''
+      commit:
+        description: 'Commit the results to main (true/false). First runs: leave false and inspect the artifact.'
+        required: false
+        default: 'false'
+  # Weekly cron — COMMENTED OUT until the first manual dispatch confirms the
+  # Playwright selectors against the live page. Uncomment (one line) once a
+  # dispatch run has succeeded, and it will keep the files fresh automatically.
+  # schedule:
+  #   - cron: '23 8 * * 0'   # weekly, Sunday ~08:23 UTC (well off the daily-dashboard crons)
+
+concurrency:
+  group: program-course-fetch
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install Playwright + deps
+        run: |
+          pip install --quiet playwright openpyxl
+          python -m playwright install --with-deps chromium
+
+      - name: Fetch Program-Course + Program files (all colleges)
+        env:
+          MCF_LIMIT: ${{ github.event.inputs.limit }}
+          MCF_DELAY_MS: '1200'
+        run: python3 kb/_fetch_program_course_files.py
+
+      - name: Assemble the program -> course graph
+        run: python3 kb/_build_program_course_graph.py
+
+      - name: Upload CSVs + graph as run artifacts (always, for inspection)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coci-program-course-files
+          path: |
+            kb/reference/coci_program_course_file.csv
+            kb/reference/coci_program_file.csv
+            kb/program_course_graph.json
+          if-no-files-found: warn
+
+      - name: Sanity check (fail-closed before any commit)
+        id: sanity
+        run: |
+          f=kb/reference/coci_program_course_file.csv
+          rows=$( [ -f "$f" ] && echo $(($(wc -l < "$f") - 1)) || echo 0 )
+          echo "rows=$rows" >> "$GITHUB_OUTPUT"
+          echo "Program-Course rows: $rows"
+          # A full run is hundreds of thousands of rows; a smoke test (limit=3) is a
+          # few thousand. Anything under 500 means the scrape broke — do NOT commit.
+          if [ "$rows" -lt 500 ]; then echo "ok=false" >> "$GITHUB_OUTPUT"; else echo "ok=true" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Commit results to main
+        if: >
+          steps.sanity.outputs.ok == 'true' &&
+          (github.event_name == 'schedule' || github.event.inputs.commit == 'true')
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add kb/reference/coci_program_course_file.csv \
+                  kb/reference/coci_program_file.csv \
+                  kb/program_course_graph.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "COCI program-course files refresh — $(date +%Y-%m-%d)"
+            for i in 1 2 3 4; do
+              if git push origin HEAD:main; then break; fi
+              git fetch origin main && git rebase origin/main || true
+              sleep $((2 ** i))
+            done
+          fi
