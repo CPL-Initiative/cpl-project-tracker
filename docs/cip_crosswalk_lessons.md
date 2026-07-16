@@ -326,3 +326,74 @@ Tests: `tests/cip_crosswalk.test.js` → 52 assertions (added: single-search-box
 theme-toggle flip, scoped-dark-theme static check). Real-Chromium verified light +
 dark at 1400px: 0 console errors; "medical assisting" → 6 ranked suggestions + a
 2-row filtered list from the one input.
+
+### 2026-07-16 (later) — SkyLoft: the "Check a course" confidence tool (Phase 0)
+
+Sam's ask: let a college pick/paste a **local course** they're assigning a CIP to,
+**score the pairing**, and **offer more confident alternatives** — analyzed against
+the course description (which lives in COCI). Approved Phase 0 (no backend), then:
+*"put it into prod"* (audience = Raul at CO + Jenni only; **Raul owns the process**
+once it goes to the field). Shipped as a **second mode inside the CIP Codes tab** —
+a segmented toggle **📖 Browse codes | 🎯 Check a course** — so it shares the engine +
+dataset and leaves the reference view as the default.
+
+**The engine (Phase 0, grounded, no backend).** Paste a course title + catalog
+description (+ optionally the CIP you're considering) → rank every active CIP by how
+well the description's vocabulary matches each CIP's **official definition**, and
+surface a confidence read + the closest codes. Two design decisions came straight out
+of a real-course calibration (12 COCI courses):
+1. **IDF weighting is the difference between credible and flaky.** Raw keyword overlap
+   confidently mis-ranked generic descriptions — "Financial Accounting" → *Financial
+   Forensics* #1; "Automotive Painting" → *Prepress/Desktop Publishing* at 99% (both
+   on ubiquitous words: design, prepare, technology). Weighting each match by
+   **inverse document frequency** over the 2,325 CIP definitions (computed once,
+   client-side) lets DISTINCTIVE terms dominate — "collision"/"gis"/"police" carry the
+   signal, "prepare"/"design" carry ~none. After IDF, Automotive Painting returns
+   *all four automotive CIPs* and honestly flags "several close — review."
+2. **The confidence signal is the MARGIN, not the top score.** GIS → #1 at 100% with
+   the next at 42% (huge gap → "clear front-runner"); Automotive Painting → top four
+   within 2% (tight cluster → "several fit — you decide"). So the tool's discrimination
+   headline keys off `margin = 1 − score₂/score₁`, turning the ranker's weakness
+   (can't split near-ties) into an honest feature. For a **chosen** CIP, the verdict
+   tier (Strong / Plausible / Weak) is its score **relative to the best match**, with
+   a severity stripe + pill + a labeled "vocabulary match" meter.
+   - Stemming guard: never stem down to a <4-char stub ("speed"→"spe" was
+     false-matching "specific"); keep the original there.
+
+**Finder-not-decider, everywhere.** Every surface says *review aid, not a
+determination — the CIP definition is the final word; your college enters the code in
+COCI.* The meter is labeled "vocabulary match (lexical) … not a determination." The
+6 one-click example courses deliberately mix clear-cut (GIS, Collision, Police) with
+honestly-ambiguous (Financial Accounting → Forensics) so Jenni sees the tool admit
+uncertainty.
+
+**Mobile (Sam's real use case — he's on his phone).** Strengthened the `≤640px`
+breakpoint: full-width mode toggle, a reserved header strip so the theme toggle can't
+collide, chips/badges/pills tightened, the confidence meter drops to its own line
+(never hidden), form inputs bumped to **16px** so iOS doesn't zoom-jump on focus.
+Real-Chromium at **390×844**: **0 horizontal overflow**, light + dark, 0 console
+errors; Collision Repair → `47.0603` "Strong fit", same course + `52.0201` → "Weak —
+reconsider" (correctly flags the mismatch).
+
+Tests: `tests/cip_crosswalk.test.js` → **65 assertions** (mode toggle, check-mode
+render, analyze → candidates, chosen-CIP verdict + tier, thin-description guard, the
+`_score`/`_resolve` engine seams, a mobile-breakpoint static check).
+
+**Open — the pre-field roadmap (nothing blocking Raul + Jenni now):**
+- 🔒 **Accessibility (WCAG) audit before field release — Sam's explicit gate.** Basics
+  are in (label-wrapped inputs, `role=tab`/`aria-selected` mode toggle, `aria-live`
+  results, `aria-label` meters, keyboard-operable rows, focus-visible). A full pass
+  still owed: muted-badge/stripe **contrast ratios**, tablist⇄tabpanel wiring, meter
+  `role`/value semantics, SR announcement copy, reduced-motion. Do this before it
+  leaves Raul/Jenni.
+- **Pick-from-COCI course selection** (vs paste) — wire the college→course picker to
+  the COCI dataset (the COCI Lookup tab already loads it) so faculty select an
+  existing course and its description auto-fills.
+- **Local TOP→CIP tables as a corroborating signal** — Sam is checking whether the CO
+  has local TOP→CIP mapping tables; if so, "your course's TOP also maps here" becomes
+  a second, independent signal (treat TOP as corroborator, not gate — repo doctrine).
+- **Phase 0.5 embeddings** (precomputed CIP-definition vectors → a real *semantic*
+  score) and **Phase 1 Sierra** (explained judgment) per the original ladder.
+- KB-note candidate: `methodology-idf-margin-confidence-finder-not-decider.md`.
+
+**Side-lane discipline honored — `cpl_todos.json` + the numbered handoff untouched.**
