@@ -31,16 +31,18 @@ course attributes**:
 | Piece | Grain | Have it? | Notes |
 |---|---|---|---|
 | `tmc/source_data/coci_program_export_2026-06-17.csv` | program | ✅ in repo | program → title / award / TOP / CIP / status. Stale-ish (fresher = the Data Mart **"Program File"**). |
-| **Program Course File** (Data Mart) | program→course | ⚠️ **only a 1-college sample** | `tests/fixtures/program_course_sample.csv` (Alameda). The MEMBERSHIP link: `Program Control Number → Course Control Number`. **THIS is the missing piece — need it for ALL colleges.** |
-| `kb/reference/cb_course_basic_fall2025.csv` | course | ✅ **NEW, committed 2026-07-16** | The MIS **Master Course File** (CB_* Course Basic elements), 109,898 courses · 118 colleges · Fall 2025. Richer than `coci_course_list.xlsx`. |
+| `kb/reference/coci_program_course_file.csv.gz` | program→course | ✅ **FULL EXPORT, committed 2026-07-16 (gzipped, 8.4 MB)** | The MEMBERSHIP join for ALL colleges — **401,163 rows · 23,996 programs · 121 colleges**. Compact headers (`ProgramControlNumber`, `CourseControlNumber`, `CrsId`, numeric `CollegeCode`). The assembler reads it directly. |
+| `kb/reference/cb_course_basic_fall2025.csv` | course | ✅ committed 2026-07-16 | The MIS **Master Course File** (CB_* Course Basic elements), 109,898 courses · 118 colleges · Fall 2025. Richer than `coci_course_list.xlsx`; the assembler uses it for the `CollegeCode → name` map. |
 
-### ⚠️ The file Sam grabbed on 2026-07-16 was the **Master COURSE File**, not the join
-`cb_course_basic_fall2025.csv` is course-level with **no program identifier**
-(`CB_CRCC_ID` == course id). It does NOT provide membership. The **Program Course
-File** (a *different* Data Mart dropdown option — "College Master Course/Program
-File" → File Type = **Program Course File**) is the join we still need for all
-colleges. Options to get it: (a) Sam exports "Program Course File" full; (b) the
-COMIS AIP; (c) finish the DevExpress fallback scraper (recipe below).
+### ✅ The join is LANDED and PROVEN (2026-07-16)
+`python3 kb/_build_program_course_graph.py` now runs on the full export in ~20s →
+**20,044 Active/Approved programs, 96% of courses resolved**. The loader handles
+BOTH schemas (compact full-export + spaced single-college) and resolves the numeric
+`CollegeCode` via the CB file. **Leading zeros preserved** (all strings — Sam's
+note; e.g. control `07200`). Proven end-to-end on **Miramar Public Safety
+Management BS** (control `44515`) → its real **22-course / 68-unit** list: the
+PSMA 401–490 core **plus** `ENGL 402`, `PADM 420` (Ethics in Public Service),
+`SOCO 410` — cross-subject upper-div courses the TOP-proxy could never have found.
 
 ### Why the CB master file is still a big win (use it!)
 It carries fields `coci_course_list.xlsx` lacks — most importantly for pathways:
@@ -65,23 +67,37 @@ It carries fields `coci_course_list.xlsx` lacks — most importantly for pathway
   (Export). To finish: drive combos via `ASPxClientControl.GetControlCollection()`
   → `SetSelectedIndex` → View Report → CSV → Export. Diagnostics dump is wired.
 
-## The plan (do in order)
-1. **Get the full Program Course File** (all colleges) → drop at
-   `kb/reference/coci_program_course_file.csv`.
-2. **Enrich the course side**: point `_build_program_course_graph.py`'s
-   `load_course_meta()` at `cb_course_basic_fall2025.csv` (or merge it with
-   `coci_course_list.xlsx`) so each course carries **upper-division status** +
-   transfer + SAM. Add those to the emitted course nodes.
-3. `python3 kb/_build_program_course_graph.py` → `kb/program_course_graph.json`;
-   verify counts + join rate (the Active/Approved filter should push it well past
-   the sample's 77%).
-4. **Wire into `cpl_pathways.js`**: the **official BS course list** (always shown;
-   mark the upper-division core via `CB_UPPDER_DIVISION_STATUS`; ⊕ adoptable-CPL
-   where a peer articulates the same course; "Request a review / faculty:
-   articulate" prompt where none) + the **AS/certificate chips** (per qualifying
-   feeder program: "Fire Technology AS — CPL for N certs", hover = exhibits).
-   Retire the CCR engine's TOP4 membership proxy in favor of the real join.
-5. Tests + real-Chromium verify; PR; done.
+## The plan — remaining work (step 1 DONE; do the rest in order)
+1. ~~Get the full Program Course File~~ ✅ **DONE** — committed gzipped; assembler
+   runs at 96%. Regenerate any time: `python3 kb/_build_program_course_graph.py`
+   (writes `kb/program_course_graph.json`, ~67 MB — NOT committed; regenerable).
+2. **Program title / award** (currently `title: null`). The join has
+   `ProgramControlNumber` but no program title; `coci_program_export` has titles
+   but its college NAMES differ from the CB long names
+   (`SAN DIEGO MIRAMAR COLLEGE REG CNTR` vs the export's forms). Reconcile with a
+   fail-loud college-name crosswalk (see `methodology-coded-key-over-freehand-text-join`)
+   keyed on `(college, ProgramControlNumber)` — OR pull the Data Mart **"Program
+   File"** option (program-grain: title/award/status by control), which sidesteps
+   the name reconciliation entirely. **Recommend the Program File.**
+3. **Enrich the course side** from `cb_course_basic_fall2025.csv`: add
+   **`CB_UPPDER_DIVISION_STATUS`** (marks the BS core), `CB_TRANSFER_STATUS`,
+   `CB_SAM_CODE` to each course node (join on control number). Prefer CB units
+   where present; keep `coci_course_list` (has C-ID) as the fallback.
+4. **Slim derivative for the browser.** The full graph is ~67 MB — too big to
+   ship to the page. Emit a **filtered artifact** (e.g. just the ~45 baccalaureate
+   programs from `cpl_baccalaureates_data.js` + their courses, or a lazy
+   per-program index) for `cpl_pathways.js` to load.
+5. **Wire into `cpl_pathways.js`**: the **official BS course list** (always shown;
+   mark upper-div via `CB_UPPDER_DIVISION_STATUS`; ⊕ adoptable-CPL where a peer
+   articulates the same course; "Request a review / faculty: articulate" prompt
+   where none) + the **AS/certificate chips** ("Fire Technology AS — CPL for N
+   certs", hover = exhibits). **Retire the CCR engine's TOP4 membership proxy** in
+   favor of this real join.
+6. Tests + real-Chromium verify; PR; done.
+
+**A weekly refresh** eventually needs the DevExpress fallback scraper finished (or
+the COMIS AIP / a standing CO export) — but the data is current as of 2026-07-16,
+so this is not blocking.
 
 ## Design context (from this session)
 - **The AS/BS reframe (Sam):** entry to a BS requires a qualifying associate

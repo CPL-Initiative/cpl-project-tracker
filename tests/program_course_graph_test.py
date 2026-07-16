@@ -12,6 +12,7 @@ Run: python3 tests/program_course_graph_test.py   (exit 0 = all pass)
 import importlib.util
 import os
 import sys
+import tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 spec = importlib.util.spec_from_file_location(
@@ -72,6 +73,25 @@ prog_meta = {("ALAMEDA", "01118"): {"title": "Art", "award": "A.A. Degree", "top
 g2 = pcg.assemble(rows, prog_meta, course_meta)
 check("fixture assembles the Art program", "ALAMEDA|01118" in g2 and g2["ALAMEDA|01118"]["title"] == "Art")
 check("Art program has its painting courses", g2["ALAMEDA|01118"]["n_courses"] >= 5)
+
+# ── (3) the FULL-export schema: compact headers + numeric CollegeCode ──
+# (vs the single-college download's spaced headers + college name). Both must
+# normalize onto the canonical keys, and zero-padded control numbers must survive.
+fd, tmp = tempfile.mkstemp(suffix=".csv")
+with os.fdopen(fd, "w", encoding="utf-8") as f:
+    f.write("ProgramProposalId,CourseProposalId,CollegeCode,ProgramControlNumber,"
+            "ProgramStatus,CourseControlNumber,CourseStatus,CrsId,Title,TopCode,"
+            "CourseClassificationCode\n")
+    f.write("1,2,073,07200,Active,CCC1,Active,PSMA401,Foundations,2199,Y\n")
+rows3 = pcg.load_pc_rows(tmp, college_map={"073": "San Diego Miramar College"})
+os.remove(tmp)
+check("full-export compact headers normalize to canonical keys",
+      bool(rows3) and rows3[0].get("Program Control Number") == "07200"
+      and rows3[0].get("Course Id") == "PSMA401" and rows3[0].get("Course Title") == "Foundations")
+check("numeric CollegeCode resolves to the college name",
+      rows3[0]["College"] == "San Diego Miramar College")
+check("leading zero on the control number is preserved (string, not int)",
+      rows3[0]["Program Control Number"] == "07200")
 
 passed = sum(1 for _, ok in results if ok)
 for name, ok in results:

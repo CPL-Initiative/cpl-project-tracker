@@ -30,6 +30,7 @@ NO-OPS gracefully when that file is absent, so it is safe to run any time.
 Run: python3 kb/_build_program_course_graph.py
 """
 import csv
+import gzip
 import json
 import os
 import re
@@ -38,10 +39,26 @@ from collections import OrderedDict
 SCRIPT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KB = os.path.join(SCRIPT_DIR, "kb")
 
-PC_FILE = os.path.join(KB, "reference", "coci_program_course_file.csv")
+PC_FILE = os.path.join(KB, "reference", "coci_program_course_file.csv")  # .csv or .csv.gz
 PROG_EXPORT = os.path.join(SCRIPT_DIR, "tmc", "source_data", "coci_program_export_2026-06-17.csv")
 COURSE_LIST = os.path.join(KB, "reference", "coci_course_list.xlsx")
+CB_MASTER = os.path.join(KB, "reference", "cb_course_basic_fall2025.csv")  # CB_COLLEGE_ID -> College_name_long
 OUT = os.path.join(KB, "program_course_graph.json")
+
+# The full-export Program Course File uses compact headers + a numeric CollegeCode;
+# the single-college Data Mart download uses spaced headers + a college NAME. Map
+# both onto one canonical schema. NOTE: all values stay STRINGS — control numbers
+# and college codes are zero-padded (e.g. "07200", "021"); never int() them.
+_PC_ALIASES = {
+    "Program Control Number": ("Program Control Number", "ProgramControlNumber"),
+    "Program Status":         ("Program Status", "ProgramStatus"),
+    "Course Control Number":  ("Course Control Number", "CourseControlNumber"),
+    "Course Status":          ("Course Status", "CourseStatus"),
+    "Course Id":              ("Course Id", "CrsId"),
+    "Course Title":           ("Course Title", "Title"),
+    "Course TOP Code":        ("Course TOP Code", "TopCode"),
+    "Course Classification Code": ("Course Classification Code", "CourseClassificationCode"),
+}
 
 # Which program / course lifecycle states count as "current". The Data Mart file
 # carries every state ever (Active / Approved / Inactive / Deleted / Draft /
@@ -180,16 +197,61 @@ def load_course_meta(path=COURSE_LIST):
     return meta
 
 
-def load_pc_rows(path=PC_FILE):
+def load_college_code_map(path=CB_MASTER):
+    """CB numeric college code (e.g. '073') -> college long name, from the CB
+    Master Course File. The full Program Course export keys colleges by code."""
+    m = {}
     if not os.path.exists(path):
-        return None
+        return m
     with open(path, encoding="utf-8-sig") as f:
-        return list(csv.DictReader(f))
+        for r in csv.DictReader(f):
+            code = (r.get("CB_COLLEGE_ID") or "").strip()
+            name = (r.get("College_name_long") or "").strip()
+            if code and name:
+                m.setdefault(code, name)
+    return m
+
+
+def _open_text(path):
+    """Open .csv or .csv.gz transparently (utf-8-sig to drop the BOM)."""
+    if path.endswith(".gz"):
+        return gzip.open(path, "rt", encoding="utf-8-sig")
+    return open(path, encoding="utf-8-sig")
+
+
+def load_pc_rows(path=PC_FILE, college_map=None):
+    """Load + normalize the Program Course File onto the canonical schema,
+    handling BOTH the full export (compact headers, numeric CollegeCode) and the
+    single-college download (spaced headers, college name). Values stay strings —
+    leading zeros on control numbers / college codes are preserved."""
+    real = path if os.path.exists(path) else (path + ".gz" if os.path.exists(path + ".gz") else None)
+    if real is None:
+        return None
+    college_map = college_map or {}
+    with _open_text(real) as f:
+        raw = list(csv.DictReader(f))
+    if not raw:
+        return []
+    cols = set(raw[0].keys())
+    # Resolve which source header supplies each canonical field.
+    picked = {canon: next((s for s in srcs if s in cols), None) for canon, srcs in _PC_ALIASES.items()}
+    has_name = "College" in cols
+    has_code = "CollegeCode" in cols
+    out = []
+    for r in raw:
+        rec = {canon: (r.get(src) or "") for canon, src in picked.items() if src}
+        if has_name:
+            rec["College"] = r.get("College") or ""
+        elif has_code:
+            code = (r.get("CollegeCode") or "").strip()
+            rec["College"] = college_map.get(code) or ("CC" + code)  # fall back to code, never int
+        out.append(rec)
+    return out
 
 
 def main():
     from datetime import datetime, timezone
-    pc_rows = load_pc_rows()
+    pc_rows = load_pc_rows(college_map=load_college_code_map())
     if pc_rows is None:
         print("NO-OP: %s not present yet — run kb/_fetch_program_course_files.py "
               "(or the program-course-fetch workflow) to produce it." % PC_FILE)
