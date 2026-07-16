@@ -41,7 +41,17 @@
       tabs: ["our-process", "tmc-builder"], home: "our-process" },
     { id: "cip", label: "CIP", tag: "CIP", full: "TOP-to-CIP Transition",
       tabs: ["cip-crosswalk", "coci-lookup"], home: "cip-crosswalk" },
+    // GR — Government Relations. Server-side gated (gr_priorities.js reads the
+    // MAP-team-only gr_content); the tab is EXCLUSIVE (below) so it appears only
+    // under ?org=gr, never in the default view.
+    { id: "gr", label: "GR", tag: "GR", full: "Government Relations",
+      tabs: ["gr-priorities"], home: "gr-priorities", unlisted: true },
   ];
+
+  // Tabs that must NOT appear in the default "show everything" view — they
+  // surface only when their own org is active (sensitive / gated areas). This
+  // keeps even the tab's existence out of the public/default nav.
+  var EXCLUSIVE = ["gr-priorities"];
 
   function orgById(id) {
     for (var i = 0; i < ORGS.length; i++) if (ORGS[i].id === id) return ORGS[i];
@@ -86,6 +96,9 @@
     sel.className = "cobi-orgswitch-sel";
     sel.setAttribute("aria-label", "Choose COBI site");
     ORGS.forEach(function (o) {
+      // Unlisted orgs (e.g. GR) are reachable via ?org= but kept OUT of the
+      // public switcher — shown only when they ARE the current selection.
+      if (o.unlisted && o.id !== current.id) return;
       var op = document.createElement("option");
       op.value = o.id;
       op.textContent = o.label;
@@ -120,7 +133,9 @@
     var btns = nav.querySelectorAll(".cpl-tab[data-tab]");
     Array.prototype.forEach.call(btns, function (b) {
       var t = b.getAttribute("data-tab");
-      var show = !allow || allow.indexOf(t) !== -1;
+      // Default view (allow=null): show everything EXCEPT EXCLUSIVE tabs.
+      // An org view: show only that org's tabs (which may include an EXCLUSIVE one).
+      var show = allow ? (allow.indexOf(t) !== -1) : (EXCLUSIVE.indexOf(t) === -1);
       b.style.display = show ? "" : "none";
       b.setAttribute("data-org-hidden", show ? "0" : "1");
     });
@@ -166,10 +181,18 @@
   var inited = false;
   function init() {
     ensureCss();
+    var fromParam = paramOrg();
     current = orgById(resolveInitial()) || ORGS[0];
     injectSwitcher();
     setTag(current);
     applyNav(current);
+    // A shared ?org=<area> link with no explicit #tab: land on that area's home
+    // (its default tab, e.g. Dashboard, is hidden in the org view, so don't strand
+    // the visitor on a blank pane). Skipped for the flagship CPL default.
+    if (fromParam && orgById(fromParam) && current.id !== ORGS[0].id && current.home &&
+        !location.hash && window.CPL_TABS && typeof window.CPL_TABS.navigate === "function") {
+      window.CPL_TABS.navigate(current.home);
+    }
     if (inited) return;
     inited = true;
     // Re-assert after nav_groups.js builds the groups + cobi_brand.js adds its
