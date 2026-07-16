@@ -90,7 +90,13 @@ def assemble(pc_rows, prog_meta, course_meta,
                    (College, Program Control Number, Program Status,
                    Course Control Number, Course Status, Course Id,
                    Course Title, Course TOP Code, Course Classification Code).
-    prog_meta    : {(NORMCOLLEGE, control): {"title","award","top","cip","status"}}
+    prog_meta    : {control: {"title","award","top","cip","status"}} — keyed by
+                   the Program Control Number, which is GLOBALLY UNIQUE across all
+                   colleges (20,044 distinct / 0 collisions in the full export), so
+                   the college-name reconciliation the CB-long-vs-export-short names
+                   would otherwise force is unnecessary. (Was (NORMCOLLEGE, control),
+                   which silently missed — CB "SAN DIEGO MIRAMAR COLLEGE REG CNTR" vs
+                   the export's "MIRAMAR" — leaving every title null.)
     course_meta  : {course_control_number: {"subj","num","title","units","cid","top"}}
 
     A course that doesn't resolve into course_meta (retired / not in the current
@@ -111,7 +117,7 @@ def assemble(pc_rows, prog_meta, course_meta,
         key = "%s|%s" % (college, control)
         node = graph.get(key)
         if node is None:
-            pm = prog_meta.get((college, control), {})
+            pm = prog_meta.get(control, {})
             node = graph[key] = {
                 "college": r.get("College", "").strip(),
                 "control": control,
@@ -153,21 +159,34 @@ def assemble(pc_rows, prog_meta, course_meta,
 
 # ── I/O loaders ──────────────────────────────────────────────────────────────
 
+_LIVE_STATUS = {"Active", "Approved"}
+
+
 def load_program_meta(path=PROG_EXPORT):
+    """control -> {title, award, top, cip, status}. Keyed by the globally-unique
+    Program Control Number (see assemble()'s docstring). On the rare control that
+    appears more than once in the export (a revision alongside its live row), a
+    live (Active/Approved) row wins over a non-live one; otherwise first-seen."""
     meta = {}
     if not os.path.exists(path):
         return meta
     with open(path, encoding="utf-8-sig") as f:
         for r in csv.DictReader(f):
-            key = (_norm(r.get("COLLEGE")), (r.get("CONTROL NUMBER") or "").strip())
-            if not key[0] or not key[1]:
+            control = (r.get("CONTROL NUMBER") or "").strip()
+            if not control:
                 continue
-            meta[key] = {
+            status = (r.get("STATUS") or "").strip()
+            prev = meta.get(control)
+            # keep the first row, unless a later Active/Approved row supersedes a
+            # non-live one already recorded.
+            if prev and not (status in _LIVE_STATUS and prev.get("status") not in _LIVE_STATUS):
+                continue
+            meta[control] = {
                 "title": (r.get("TITLE") or "").strip(),
                 "award": (r.get("AWARD") or "").strip(),
                 "top": (r.get("TOP CODE") or "").strip(),
                 "cip": (r.get("CIP CODE") or "").strip(),
-                "status": (r.get("STATUS") or "").strip(),
+                "status": status,
             }
     return meta
 

@@ -172,6 +172,21 @@ jobs:
       - name: Build CPL Pathways CCR enrichment
         run: python3 kb/_build_cpl_pathway_ccr.py || echo "CPL Pathways CCR build failed (non-fatal; prior artifact kept)"
 
+      # ── Step 4a1b: CPL Pathways — AUTHORITATIVE membership view ────
+      # Rebuilds the program→course graph (from the committed Program Course File
+      # + CB master + course list; ~67 MB, NOT committed — regenerable) and then
+      # cpl_pathways_membership_data.js: each baccalaureate's OWN course list +
+      # per-course potential CPL + its qualifying associate credentials (A.S./A.A./
+      # cert, same college + field) where the dense CPL lives. Supersedes the
+      # TOP-proxy CCR guess for the ~39 baccalaureates in the join (StarMora
+      # run-through, docs/cpl_pathways_lessons.md). Non-fatal: the cards fall back
+      # to the CCR view (prior artifact kept) if a source is momentarily unreadable.
+      - name: Build CPL Pathways membership view
+        run: |
+          python3 kb/_build_program_course_graph.py \
+            && python3 kb/_build_cpl_pathway_membership.py \
+            || echo "CPL Pathways membership build failed (non-fatal; prior artifact kept)"
+
       # ── Step 4a2: Funding priority-metric actuals (P2/P3) ─────────
       # Aggregates the transient CustomReport student grain into per-college
       # suppressed counts (docs/kb-notes/adr-funding-priority-metrics-privacy.md,
@@ -248,6 +263,9 @@ jobs:
                   credential_reference_data.js \
                   kb/row_audit/latest.json kb/row_audit/*.md \
                   exports/unified_courses.xlsx
+          # CPL Pathways AUTHORITATIVE membership view (StarMora) — the program→
+          # course join artifact the cards read; regenerated in Step 4a1b above.
+          git add cpl_pathways_membership_data.js 2>/dev/null || true
           # Phase 1e canonical SUBJ4 seed + curator-edit overlay (added 5a)
           git add kb/discipline_canonical_subj4.json 2>/dev/null || true
           # CSR rollup: per-discipline CPL opportunities (mirror of EACR/CCR)
