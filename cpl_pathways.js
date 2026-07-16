@@ -992,10 +992,145 @@
   // ── Directory card renderer ───────────────────────────────────────────────
   // One auto-generated card per CCC baccalaureate: program metadata (from the
   // COCI export) + a LIVE CPL landscape (the college's own in-field CPL, the
+  // ── Common Course Reference (CCR) enrichment — the two-view section ─────────
+  // Reads window.CPL_PATHWAY_CCR (built by kb/_build_cpl_pathway_ccr.py), keyed
+  // "<NORMCOLLEGE>|<top4>". When present for a program, the directory card renders
+  // a Student ("Explore CPL") / College ("Curate & validate") toggle instead of
+  // the legacy ✓/⊕ sections: student sees courses + the local cert to present;
+  // college also sees the CCR reference chip, the peer field-agreement, the
+  // course-grain adoption opportunities, and the over-merge flags. Fails open —
+  // renderDirectory falls back to the legacy sections if this throws or has no data.
+  function ccrKey(prog) {
+    return normCollege(prog.cer_college || prog.coci_college || prog.college) +
+      "|" + (prog.top4 || String(prog.top || "").slice(0, 4));
+  }
+  function lookupCcr(prog) {
+    var d = window.CPL_PATHWAY_CCR;
+    if (!d || !d.pathways) return null;
+    var p = d.pathways[ccrKey(prog)];
+    return (p && (p.articulated || []).length) ? p : null;
+  }
+  function ensureCcrCss() {
+    if (document.getElementById("cplccr-css")) return;
+    var s = document.createElement("style");
+    s.id = "cplccr-css";
+    s.textContent =
+      ".cplccr .ccr-toggle{display:inline-flex;border:1px solid var(--border);border-radius:9px;overflow:hidden;margin:2px 0 12px}" +
+      ".cplccr .ccr-vt{font:inherit;font-size:.8rem;font-weight:600;padding:6px 14px;border:0;background:none;color:var(--text-muted);cursor:pointer}" +
+      ".cplccr .ccr-vt+.ccr-vt{border-left:1px solid var(--border)}" +
+      ".cplccr .ccr-vt.on{background:var(--cpl-green-soft,#e7f2ea);color:var(--cpl-green,#2f6d3a)}" +
+      ".cplccr .ccr-vt:focus-visible{outline:2px solid var(--cpl-green,#2f6d3a);outline-offset:-2px}" +
+      ".cplccr.view-student .col-only{display:none}" +
+      ".cplccr .ccr-intro{font-size:.86rem;color:var(--text-muted);line-height:1.55;margin:0 0 6px}" +
+      ".cplccr .ccr-intro b{color:var(--text-body)}" +
+      ".cplccr .ccr-row{padding:10px 14px;border-top:1px solid var(--border)}" +
+      ".cplccr .ccr-top{display:flex;align-items:center;gap:9px;flex-wrap:wrap}" +
+      ".cplccr .ccr-chk{color:var(--cpl-green,#2f6d3a);font-weight:800;font-size:1.05rem;line-height:1}" +
+      ".cplccr .ccr-code{font-family:ui-monospace,Menlo,Consolas,monospace;font-weight:700;font-size:.8rem;color:var(--text-body)}" +
+      ".cplccr .ccr-name{font-weight:600}" +
+      ".cplccr .ccr-chip{font-size:.72rem;background:var(--cpl-cream,#f1ede2);border:1px solid var(--border);color:var(--text-muted);border-radius:6px;padding:2px 8px;font-family:ui-monospace,Menlo,monospace}" +
+      ".cplccr .ccr-agree{margin-left:auto;font-size:.75rem;background:var(--cpl-cream,#f1ede2);border:1px solid var(--border);color:var(--text-muted);border-radius:999px;padding:2px 10px;cursor:help}" +
+      ".cplccr .ccr-agree b{color:var(--text-body)}" +
+      ".cplccr .ccr-cert{padding-left:26px;font-size:.83rem;color:var(--text-body);margin-top:4px}" +
+      ".cplccr .ccr-cert .lbl{font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);font-weight:700;margin-right:7px}" +
+      ".cplccr .ccr-or{color:var(--text-muted);font-size:.74em;font-weight:700;margin:0 6px;opacity:.75}" +
+      ".cplccr .ccr-flag{margin-top:6px;margin-left:26px;font-size:.76rem;color:var(--cpl-amber,#9a6a12)}";
+    document.head.appendChild(s);
+  }
+  function ccrCertLine(certs) {
+    var w = el("div", "ccr-cert");
+    w.appendChild(el("span", "lbl", "Qualify with"));
+    certs.forEach(function (c, i) {
+      if (i) w.appendChild(el("span", "ccr-or", "OR"));
+      w.appendChild(el("span", "ccr-certname", c));
+    });
+    return w;
+  }
+  function ccrVtBtn(label, on) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "ccr-vt" + (on ? " on" : "");
+    b.textContent = label;
+    return b;
+  }
+  function renderCcrViews(prog, ccr) {
+    ensureCcrCss();
+    var box = el("div", "cplpw-sec wide cplccr view-student");
+    // Student / College toggle
+    var tog = el("div", "ccr-toggle");
+    var bS = ccrVtBtn("🎓 Explore CPL — student", true);
+    var bC = ccrVtBtn("🏛️ Curate & validate — college", false);
+    bS.addEventListener("click", function () {
+      box.classList.remove("view-college"); box.classList.add("view-student");
+      bS.classList.add("on"); bC.classList.remove("on");
+    });
+    bC.addEventListener("click", function () {
+      box.classList.remove("view-student"); box.classList.add("view-college");
+      bC.classList.add("on"); bS.classList.remove("on");
+    });
+    tog.appendChild(bS); tog.appendChild(bC); box.appendChild(tog);
+    // Student-facing CPL intro
+    box.appendChild(el("div", "ccr-intro", [
+      el("b", null, "Credit for Prior Learning (CPL)"),
+      document.createTextNode(" lets a student turn verified prior learning — an industry certification, military training, an apprenticeship, or a passed exam — into college credit toward this degree, instead of re-taking material they've already mastered. To claim it, a student submits their documentation through the college's CPL landing page, which creates a record in MAP so the review is tracked end-to-end.")]));
+    // ✓ header
+    var h = el("div", "cplpw-sec-head");
+    h.appendChild(el("span", "sum cpl", "✓ " + ccr.articulated.length + " course" +
+      (ccr.articulated.length === 1 ? "" : "s") +
+      (ccr.units_total ? " for " + fmtU(ccr.units_total) + " units" : "")));
+    h.appendChild(el("div", "t", "CPL opportunities for this pathway at " + (prog.college || "this college")));
+    box.appendChild(h);
+    // ✓ course rows
+    ccr.articulated.forEach(function (r) {
+      var row = el("div", "ccr-row");
+      var top = el("div", "ccr-top");
+      top.appendChild(el("span", "ccr-chk", "✓"));
+      top.appendChild(el("span", "ccr-code", r.subj + " " + r.num));
+      top.appendChild(el("span", "ccr-name", r.title || ""));
+      if (r.ref && r.ref.id) {
+        var chip = el("span", "ccr-chip col-only", r.ref.id);
+        chip.title = "Common Course Reference — the shared identifier that links this course to the same course at other colleges. An M-prefixed reference is a minted CPL crosswalk assigned when the course has no C-ID or Common Course Number.";
+        top.appendChild(chip);
+      }
+      if (r.agree) {
+        var ag = el("span", "ccr-agree col-only",
+          [el("b", null, String(r.agree)), document.createTextNode(" college" + (r.agree === 1 ? "" : "s") + " also articulate")]);
+        if (r.peers && r.peers.length) ag.title = "Also articulated by: " + r.peers.join(", ");
+        top.appendChild(ag);
+      }
+      row.appendChild(top);
+      if (r.certs && r.certs.length) row.appendChild(ccrCertLine(r.certs));
+      if (r.flag) row.appendChild(el("div", "ccr-flag col-only", "⚠ " + (r.flag.detail || "likely over-merge — flagged for the curation queue.")));
+      box.appendChild(row);
+    });
+    // ⊕ adoption opportunities (college view only)
+    if (ccr.opportunities && ccr.opportunities.length) {
+      var oh = el("div", "cplpw-sec-head col-only");
+      oh.appendChild(el("span", "sum", "⊕ " + ccr.opportunities.length + " to adopt"));
+      oh.appendChild(el("div", "t", "Adoption opportunities — your own courses a peer already gives CPL for"));
+      box.appendChild(oh);
+      ccr.opportunities.forEach(function (o) {
+        var row = el("div", "ccr-row col-only");
+        var top = el("div", "ccr-top");
+        top.appendChild(el("span", "ccr-code", (o.my_courses || []).join(", ")));
+        top.appendChild(el("span", "ccr-name", o.title || (o.ref && o.ref.title) || ""));
+        if (o.ref && o.ref.id) top.appendChild(el("span", "ccr-chip", o.ref.id));
+        var ag = el("span", "ccr-agree",
+          [el("b", null, String(o.agree)), document.createTextNode(" peer" + (o.agree === 1 ? "" : "s"))]);
+        if (o.peers && o.peers.length) ag.title = "Peers that articulate the same course: " + o.peers.join(", ");
+        top.appendChild(ag);
+        row.appendChild(top);
+        box.appendChild(row);
+      });
+    }
+    return box;
+  }
+
   // peer-college adoption pool with ⚡ Quick Adopt, the same-field cohort, and
   // GE-by-CLEP), all derived from the CER dataset by TOP + college.
   function renderDirectory(root, prog, dir, allPrograms, liveNote) {
     var m = resolveDirectory(prog, dir, allPrograms);
+    var ccr = lookupCcr(prog);
     var frag = document.createDocumentFragment();
 
     // Directory tag (this is a field-level view — not a course-by-course map)
@@ -1031,19 +1166,24 @@
       t.appendChild(el("div", "l", label));
       return t;
     }
-    tiles.appendChild(tile("cpl", "✓ " + m.mineCourses,
+    tiles.appendChild(tile("cpl", "✓ " + (ccr ? ccr.articulated.length : m.mineCourses),
       (prog.college || "This college") + " already articulates these for CPL in this field",
-      "course" + (m.mineCourses === 1 ? "" : "s") + " · " + m.mineCreds + " credential" + (m.mineCreds === 1 ? "" : "s")));
-    tiles.appendChild(tile(null, "⊕ " + m.poolCreds,
-      "credential" + (m.poolCreds === 1 ? "" : "s") + " peers have articulated that this college could adopt — from " + m.poolColleges + " college" + (m.poolColleges === 1 ? "" : "s")));
+      ccr
+        ? ("course" + (ccr.articulated.length === 1 ? "" : "s") + (ccr.units_total ? " · " + fmtU(ccr.units_total) + " units" : ""))
+        : ("course" + (m.mineCourses === 1 ? "" : "s") + " · " + m.mineCreds + " credential" + (m.mineCreds === 1 ? "" : "s"))));
+    tiles.appendChild(tile(null, "⊕ " + (ccr ? ccr.opportunities.length : m.poolCreds),
+      ccr
+        ? ("course" + (ccr.opportunities.length === 1 ? "" : "s") + " you teach that a peer already gives CPL for — adoptable now")
+        : ("credential" + (m.poolCreds === 1 ? "" : "s") + " peers have articulated that this college could adopt — from " + m.poolColleges + " college" + (m.poolColleges === 1 ? "" : "s"))));
     tiles.appendChild(tile(null, String(m.cohort.length),
       "college" + (m.cohort.length === 1 ? "" : "s") + " statewide offer a baccalaureate in this field"));
     tiles.appendChild(tile(null, "◆ " + m.clepExams,
       "CLEP exams carry systemwide GE credit — test out of general education (ESLEI 24-35)"));
     frag.appendChild(tiles);
 
-    // Frontier banner when there's nothing yet in the field
-    if (m.mineCreds === 0 && m.poolCreds === 0) {
+    // Frontier banner when there's nothing yet in the field (suppressed when the
+    // CCR two-view has content to show, e.g. via feeder disciplines).
+    if (!ccr && m.mineCreds === 0 && m.poolCreds === 0) {
       frag.appendChild(el("div", "cplpw-frontier",
         [el("b", null, "The CPL frontier. "),
          document.createTextNode("No college has articulated CPL for this field in the MAP platform yet. "
@@ -1052,6 +1192,14 @@
            + "menu for the other colleges offering this degree.")]));
     }
 
+    // CCR two-view (Student / College) when enrichment data exists for this
+    // program; else fall back to the legacy CER-derived ✓/⊕ sections. Fails open.
+    var ccrRendered = false;
+    if (ccr) {
+      try { frag.appendChild(renderCcrViews(prog, ccr)); ccrRendered = true; }
+      catch (e) { ccrRendered = false; }
+    }
+    if (!ccrRendered) {
     // Section: the college's own CPL in the field (✓)
     if (m.mine.length) {
       var s1 = el("div", "cplpw-sec wide");
@@ -1138,6 +1286,7 @@
       }
       frag.appendChild(s2);
     }
+    } // end !ccrRendered (legacy ✓/⊕ sections)
 
     // Section: the same-field baccalaureate cohort
     if (m.cohort.length > 1) {
@@ -1330,5 +1479,7 @@
     _stages: STAGES,
     _buildDirectoryIndex: buildDirectoryIndex,
     _resolveDirectory: resolveDirectory,
+    _lookupCcr: lookupCcr,
+    _renderCcrViews: renderCcrViews,
   };
 })();
