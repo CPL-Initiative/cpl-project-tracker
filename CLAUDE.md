@@ -571,7 +571,25 @@ narrative definitions. The planned canonical-CIP-designation curator surface was
 Full story + continuation: `docs/cip_crosswalk_lessons.md`. Side-lane like
 SkyFlyer/SkyIron — left `cpl_todos.json` + the numbered handoff untouched.
 
-### StarCIP side-lane — CIP Code Taxonomy: the "easy button" reference + finder (2026-07-15, PROTOTYPE)
+### SkyLoft side-lane — CIP Code Taxonomy: the mockup ported to production (2026-07-16)
+
+Sam: "get the mockup into production on COBI." Ported StarCIP's locked prototype
+(`docs/cip_prototype/`) into the live `#cip-crosswalk` tab — the tab **is** the
+reference now (search + plain-English finder + category pills + 🎓 C-ID/CCN chip +
+family select + retired toggle over all **2,325** CIP-2020 codes; row → definition/
+examples/family/NCES). The old **crosswalk table + suggest form are gone** (Jenni:
+COE hosts the crosswalk, don't expose suggest) → header links out to COE instead;
+tab is now **backend-free** (the `cip_crosswalk_suggestion` table stays in-repo,
+unsurfaced). `kb/_build_cip_crosswalk.py` rebuilt to the **lean `{fams, rows}`
+shape** off the **260715 cut**, folding the two data rules — **certified** CTE `cat`
+(`cip_cte_certified_260715.json`, 244/244, 0 conflicts) + **C-ID/CCN** floor `x`
+(1,300) — parity-exact with the prototype (data file 1.9→1.06 MB; still a committed,
+non-cron artifact). Nav "CIP Crosswalk"→**"CIP Codes"** (hash kept). Tests rewritten
+(48, backend-free guard incl.); real-Chromium 0 console errors. Full story +
+continuation: `docs/cip_crosswalk_lessons.md`. **Side-lane — left `cpl_todos.json` +
+the numbered handoff untouched** (CCR mainline owns those).
+
+### StarCIP side-lane — CIP Code Taxonomy: the "easy button" reference + finder (2026-07-15, PROTOTYPE → ported #<pending>)
 
 Jenni Abbott's email feedback pivoted the CIP tab: **don't recreate the crosswalk**
 (COE hosts it), the product is the **full CIP list as the authoritative reference**

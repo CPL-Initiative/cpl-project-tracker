@@ -229,3 +229,67 @@ Phase 1 = wire Sierra scoped to the CIP dataset once the CO confirms the
 **Next step:** lock the look with Jenni, then **port into `cip_crosswalk.js`** per the
 plan in the prototype README. **Side-lane discipline honored — `cpl_todos.json` + the
 numbered handoff left untouched** (the CCR mainline session owns those).
+
+## 2026-07-16 — SkyLoft: the port lands (mockup → production on COBI)
+
+Sam: "get the mockup into production on COBI." Ported the locked StarCIP prototype
+(`docs/cip_prototype/`) straight into the live `#cip-crosswalk` tab. The tab **is**
+the mockup now: the **CIP Code Taxonomy** reference — search + the plain-English
+finder + category pills + a 🎓 C-ID/CCN chip + family select + include-retired
+toggle, over the full 2,325-code CIP-2020 list, each row expanding to definition /
+examples / family / NCES link. The old TOP↔CIP **crosswalk table and the
+suggest-to-curate form are gone** (Jenni: COE hosts the crosswalk; don't expose
+"Suggest a change" to the field) — replaced by a header link out to COE's hosted
+crosswalk. No Supabase in the tab anymore (backend-free reference).
+
+**What shipped**
+- **`kb/_build_cip_crosswalk.py` rebuilt to emit the lean reference shape**
+  `{fams, rows:[{code,t,cat,fam,def,ex,act,x}]}` (was `{top,cip,pairs,sources}`).
+  Repointed to the **260715 cut**. Folds in the **two data rules from the prototype
+  README**: (1) `cat` = the CO consultant's **certified** CTE designation
+  (`kb/reference/cip_cte_certified_260715.json` is the authority for the 244 codes
+  where the workbook's two tabs disagree; agreed value elsewhere; single-tab for
+  orphans), (2) `x` = 1 if any mapped TOP has **C-ID or CCN** coursework (COCI
+  rollup — a course-level floor, never "transferable"). Rebuild parity is exact vs
+  the prototype: **2,325 codes**, cat dist `{CTE 943, Non-CTE 678, Noncredit 433,
+  Both 128, Retired 113, Reserved 30}`, **244/244 certified, 0 uncertified
+  conflicts, 1,300 C-ID/CCN-flagged, 50 families**. Data file shrank 1.9 MB → 1.06 MB
+  (dropped the now-unused top/pairs/SOC). Still a **committed artifact** (not a
+  daily-cron output — no cron path publishes it).
+- **`cip_crosswalk.js` fully rewritten** as the reference renderer (scoped `.cipx`
+  CSS, **no `:root`** — the dashboard owns the theme, so the prototype's standalone
+  light/dark toggle was dropped; the tab inherits dashboard tokens with fallbacks).
+  DOM via `createElement`/`textContent` (CodeQL-safe). Kept the
+  `window.CPL_CIP_CROSSWALK.activate()` lazy-boot contract, so **no HTML boot
+  change** was needed. Added a small **⬇ CSV** of the filtered list (directly
+  serves "replace the emailed workbook"). Finder is the same Phase-0 grounded
+  keyword+stem ranker (zero hallucination); Phase-1 Sierra wiring is still the
+  documented follow-up.
+- **HTML (both, Rule 4):** nav label **"CIP Crosswalk" → "CIP Codes"** (hash
+  `cip-crosswalk` kept stable, per the activities-projects precedent); pane +
+  boot comments refreshed. The org entry (`cobi_orgs.js` `id:"cip"`) is unchanged —
+  the CIP site's day-one tabs stay `[cip-crosswalk, coci-lookup]`.
+- **Tests:** `tests/cip_crosswalk.test.js` rewritten for the reference (48
+  assertions: wiring, backend-free guard, render, default-hide retired/reserved,
+  category-pill / C-ID-CCN / family filtering, the finder ranking real records
+  only, row expand, scoped-CSS, failure guards). `tests/cobi_orgs.test.js` label
+  fixture updated. Real-Chromium verified at 1100px: **0 console errors**, finder
+  "wildland firefighting" → `43.0206`, CTE pill → 943, families 50, 2,182 active
+  shown by default.
+
+**Decisions / judgement calls**
+- **Replace, don't augment.** "Get the mockup into production" + Jenni's "stop
+  recreating the crosswalk" + "don't expose suggest" = the tab becomes the
+  reference, full stop. The `cip_crosswalk_suggestion` Supabase table + its SQL stay
+  in the repo (unused by the tab) in case the CO later wants a **gated** reader —
+  not deleted, just not surfaced to the field.
+- **Kept the data file name + `window.CIP_CROSSWALK` var** (only the *shape*
+  changed) so the two-HTML lazy loader (`loadScript('cip_crosswalk_data.js',
+  'CIP_CROSSWALK', …)`) needed no edit. Slightly legacy name; not worth the churn.
+- **Naming:** nav "CIP Codes", header "CIP Code Taxonomy" (the mockup's title). Easy
+  to retune if Sam/Jenni prefer "CIP Reference" etc.
+
+**Open follow-ups (unchanged from the prototype README, none blocking):** Phase-1
+Sierra finder; a gated CO reader for the suggestion queue; refresh the dataset when
+ESS ships a newer cut; a program-level lane. **Side-lane discipline honored —
+`cpl_todos.json` + the numbered handoff left untouched.**

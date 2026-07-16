@@ -1,23 +1,39 @@
 #!/usr/bin/env python3
-"""Build cip_crosswalk_data.js — the TOP <-> CIP crosswalk dataset.
+"""Build cip_crosswalk_data.js — the CIP Code Taxonomy reference dataset.
 
-Source: kb/reference/cip_searchable_260708.xlsx — the Chancellor's Office
-"CIP Searchable" workbook (2026-07-08 cut) that ESS was going to email to the
-field for the TOP-to-CIP transition (ESS 26-06, effective fall 2026). The CIP
-Crosswalk tab (cip_crosswalk.js) replaces that spreadsheet with a searchable,
-filterable, suggest-to-curate web tool.
+Source: kb/reference/cip_searchable_260715.xlsx — the Chancellor's Office
+"CIP Searchable" workbook (2026-07-15 cut) for the TOP-to-CIP transition
+(ESS 26-06, effective fall 2026). The CIP Codes tab (cip_crosswalk.js) is the
+faculty-facing REFERENCE MANUAL — the successor to the CCC TOP Code Manual —
+that replaces the multi-tab spreadsheet ESS was going to email to the field.
 
-Emits window.CIP_CROSSWALK, a NORMALIZED model so long CIP definitions/SOC lists
-are stored ONCE (keyed by code) instead of repeated across the 5,353 crosswalk
-pairs:
+The tool used to also recreate the TOP↔CIP crosswalk, but the CO (Jenni Abbott,
+AA division) reframed it: the crosswalk is one-to-many and COE already hosts it,
+so ours is the AUTHORITATIVE CIP LIST — "clear, comprehensive, user-friendly,"
+an easy button. So this dataset is now LEAN: the full federal CIP-2020 list with
+each code's certified CTE category, definition, examples, family, 2020-CIP
+action, and a course-level C-ID/CCN floor flag. No TOP codes, no crosswalk pairs.
 
+Emits window.CIP_CROSSWALK:
   {
-    _built_at, _built_by, _source, _note,
-    sources: [<relationship-source strings>],   # pairs reference these by index
-    top: { "<TOP6>": {t,div,divt,sec,cte} },     # 424 TOP codes
-    cip: { "<CIP6>": {t,fam,famt,cte,act,def,xref,ex,soc:[[soc,title,onet]]} },
-    pairs: [ [top6|null, cip6, srcIdx, nc(0|1), collegesStr, count] ]  # 5,353
+    _built_at, _built_by, _source, _note, _category, _transfer,
+    fams: { "<fam2>": "<family title>" },
+    rows: [ {code, t, cat, fam, def, ex, act, x} ]   # 2,325 CIP-2020 codes
   }
+    cat = certified CTE category: CTE | Both | Non-CTE | Noncredit | Retired | Reserved
+    act = 2020-CIP action (New / Deleted / Moved from|to / No substantive changes)
+    x   = 1 if any TOP that maps to this CIP has C-ID or CCN coursework (a floor)
+
+Two data rules baked in here (full story: docs/cip_crosswalk_lessons.md):
+  1. CATEGORY comes from the CO consultant's CERTIFIED designations, not either
+     workbook tab. The *CIP Descriptions* and *TOP-CIP Data* tabs disagree on 244
+     codes in BOTH directions (Jenni's 45.0702 catch), so neither is reliable.
+     Authority: kb/reference/cip_cte_certified_260715.json (the 244 disagreements);
+     agreed value elsewhere; single-tab value for orphans.
+  2. C-ID/CCN is a course-level FLOOR, never "transferable." A CIP is flagged if
+     any TOP that maps to it has courses carrying a C-ID (transfer-model
+     articulation) or a CCN (AB 1111 common course number). TOP→CIP is
+     one-to-many, so it's an association, not a guarantee.
 
 Rebuild: python kb/_build_cip_crosswalk.py   (writes cip_crosswalk_data.js at repo root)
 """
@@ -27,21 +43,25 @@ import openpyxl
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
-SRC = os.path.join(HERE, "reference", "cip_searchable_260708.xlsx")
-# COCI course inventory — used to roll a TRANSFER signal up to the TOP-code level.
-# The extract has no CSU/UC-transferable flag; C-ID (CIDNumber) presence is the
-# only transfer-adjacent field (C-ID = the statewide transfer-model articulation
-# system). It's a FLOOR, not full transferability — see docs/cip_crosswalk_lessons.md.
-# Drops in a true transferable flag later if a fuller export adds the column.
+SRC = os.path.join(HERE, "reference", "cip_searchable_260715.xlsx")
+# The CO consultant's certified CTE designations — the authority for the 244
+# codes where the workbook's two tabs disagree (see rule 1 above).
+CERT = os.path.join(HERE, "reference", "cip_cte_certified_260715.json")
+# COCI course inventory — used for the C-ID/CCN course-level floor flag.
 COCI_SRC = os.path.join(HERE, "reference", "coci_course_list.xlsx")
 OUT = os.path.join(REPO, "cip_crosswalk_data.js")
-BUILT_AT = "2026-07-14"
+BUILT_AT = "2026-07-16"
+SRC_LABEL = "kb/reference/cip_searchable_260715.xlsx (CCCCO CIP Searchable Workbook, 2026-07-15 cut) + kb/reference/cip_cte_certified_260715.json"
+
+# raw workbook/certified flag -> the category shown in the reference
+CATMAP = {
+    "CTE": "CTE", "Both": "Both", "Not CTE": "Non-CTE", "Noncredit CIP": "Noncredit",
+    "Remove": "Retired", "Canadian CIP": "Reserved", "CIP No Longer in Use": "Retired", "": "",
+}
 
 
 def clean(v):
-    if v is None:
-        return ""
-    return str(v).strip()
+    return "" if v is None else str(v).strip()
 
 
 def split_code_title(s):
@@ -53,188 +73,175 @@ def split_code_title(s):
     return s, ""
 
 
-def split_div(s):
-    """'01 - Agriculture and Natural Resources' -> ('01', 'Agriculture and Natural Resources')."""
-    return split_code_title(s)
+def canon(code):
+    """Normalize a CIP code to LL.RRRR so it matches the certified-JSON keys."""
+    code = clean(code)
+    left, right = code.split(".", 1) if "." in code else (code, "")
+    return left.zfill(2) + "." + right.ljust(4, "0")[:4]
 
 
-def coci_transfer_by_top():
-    """Roll a per-TOP-code transfer signal up from the COCI course inventory.
+def coci_top_flags():
+    """Per-TOP-code {cid, ccn} presence from the COCI course inventory.
 
-    Returns {top_code: {"crs": total courses statewide, "cid": courses carrying a
-    C-ID}}. The COCI TopCode is 'CODE: Title' (e.g. '0101.00: Agriculture...'),
-    so we split on ':' to match the crosswalk's clean '0101.00' TOP keys.
-    C-ID presence is the transfer-model proxy (a floor, not full transferability).
+    Returns {top_code: {"cid": bool, "ccn": bool}}. The COCI TopCode is
+    'CODE: Title' (e.g. '0101.00: Agriculture...'), split on ':' to match the
+    clean '0101.00' TOP keys on the TOP-CIP Data sheet. C-ID = the statewide
+    transfer-model articulation system; CCN = AB 1111 common course numbering.
+    Presence is a FLOOR (a course-level identifier exists), not transferability.
     """
     if not os.path.exists(COCI_SRC):
-        print(f"  (COCI source {COCI_SRC} absent — skipping transfer rollup)")
+        print(f"  (COCI source {COCI_SRC} absent — C-ID/CCN flags will all be 0)")
         return {}
     wb = openpyxl.load_workbook(COCI_SRC, read_only=True, data_only=True)
-    ws = wb.active
-    it = ws.iter_rows(values_only=True)
-    hdr = next(it)
-    idx = {h: i for i, h in enumerate(hdr)}
-    ti, ci = idx.get("TopCode"), idx.get("CIDNumber")
+    it = wb.active.iter_rows(values_only=True)
+    idx = {h: i for i, h in enumerate(next(it))}
+    ti, ci, ni = idx.get("TopCode"), idx.get("CIDNumber"), idx.get("CommonCourseNumber")
     out = {}
     for r in it:
         raw = clean(r[ti]) if ti is not None else ""
         if not raw:
             continue
         code = raw.split(":", 1)[0].strip() if ":" in raw else raw
-        rec = out.setdefault(code, {"crs": 0, "cid": 0})
-        rec["crs"] += 1
+        rec = out.setdefault(code, {"cid": False, "ccn": False})
         if ci is not None and clean(r[ci]):
-            rec["cid"] += 1
+            rec["cid"] = True
+        if ni is not None and clean(r[ni]):
+            rec["ccn"] = True
     return out
 
 
 def main():
     wb = openpyxl.load_workbook(SRC, read_only=True, data_only=True)
 
-    # ---- CIP catalog: definitions / action / cross-refs / examples ----
-    cip = {}
-    ws = wb["CIP Descriptions"]
-    rows = list(ws.iter_rows(values_only=True))
-    # cols: 0 CIPFamily, 1 CIPCode(01.0000), 5 Action, 6 TextChange, 8 CIPTitle(clean),
-    #       9 code-title, 10 CTE Flag, 11 CIPDefinition, 12 CrossReferences, 13 Examples
-    for r in rows[1:]:
-        code = clean(r[1])
-        if not code:
+    # ---- CIP catalog: definitions / action / examples / CTE flag ----
+    # cols: 0 CIPFamily, 1 CIPCode(01.0000), 5 Action, 8 CIPTitle(clean),
+    #       9 code-title, 10 CTE Flag, 11 CIPDefinition, 13 Examples
+    desc = {}
+    for r in list(wb["CIP Descriptions"].iter_rows(values_only=True))[1:]:
+        raw = clean(r[1])
+        if not raw:
             continue
-        title = clean(r[8]).rstrip(".") or split_code_title(r[9])[1]
+        code = canon(raw)
         examples = clean(r[13])
         if examples.lower().startswith("examples:"):
             examples = examples[len("examples:"):].strip(" -")
-        cip[code] = {
-            "t": title,
+        desc[code] = {
+            "t": clean(r[8]).rstrip(".") or split_code_title(r[9])[1],
             "fam": clean(r[0]),
-            "famt": "",  # filled from the Data sheet's family-title column
-            "cte": clean(r[10]),
-            "act": clean(r[5]),      # New / Deleted / Moved from|to / No substantive changes
-            "chg": clean(r[6]),      # TextChange yes/no
+            "act": clean(r[5]),
             "def": clean(r[11]),
-            "xref": clean(r[12]),
             "ex": examples,
-            "soc": [],
+            "flag": clean(r[10]),   # this tab's CTE designation (one of two, may disagree)
         }
 
-    # ---- SOC / occupation links per CIP (CIP -> jobs) ----
-    # O*NET links are reconstructed client-side from the SOC code
-    # (onetonline.org/link/summary/<soc>.00), so we don't store the URL.
-    ws = wb["CIP-SOC Data"]
-    for r in list(ws.iter_rows(values_only=True))[1:]:
-        ccode, _ = split_code_title(r[0])
-        soc_code, soc_title = split_code_title(r[3])
-        if ccode in cip and soc_code:
-            cip[ccode]["soc"].append([soc_code, soc_title])
-
-    # ---- TOP catalog + crosswalk pairs (from the master TOP-CIP Data sheet) ----
-    top = {}
-    fam_titles = {}
-    pairs = []
-    sources = []
-
-    def src_idx(s):
-        if s not in sources:
-            sources.append(s)
-        return sources.index(s)
-
-    ws = wb["TOP-CIP Data"]
-    data = list(ws.iter_rows(values_only=True))[1:]
-    # cols: 2 TOP code-title, 5 TOP div, 6 sector, 7 TOP CTE,
-    #       11 CIP code-title, 14 CIP family code-title, 17 CIP def,
-    #       18 relationship source, 19 colleges, 20 count, 21 noncredit
-    for r in data:
-        top_code, top_title = split_code_title(r[2])
-        cip_code, cip_title = split_code_title(r[11])
-        no_top = (not top_code) or top_code.upper().startswith("XXXX")
-
-        if not no_top and top_code not in top:
-            div_code, div_title = split_div(r[5])
-            top[top_code] = {
-                "t": top_title,
-                "div": div_code,
-                "divt": div_title,
-                "sec": clean(r[6]),
-                "cte": 1 if clean(r[7]) == "CTE" else 0,
-            }
-
-        # family title backfill for the CIP catalog
-        fam_code, fam_title = split_div(r[14])
-        if fam_code and fam_title:
+    # ---- TOP-CIP Data: the OTHER CTE flag per CIP, family titles, TOP→CIP map ----
+    # cols: 2 TOP code-title, 11 CIP code-title, 14 CIP family code-title, 15 CIP CTE Flag
+    cross_flags = {}     # cip -> set of the crosswalk-tab CTE flags seen
+    fam_titles = {}      # fam2 -> title
+    cip_tops = {}        # cip -> set of clean TOP codes that map to it
+    for r in list(wb["TOP-CIP Data"].iter_rows(values_only=True))[1:]:
+        top_code, _ = split_code_title(r[2])
+        cip_raw, _ = split_code_title(r[11])
+        if not cip_raw:
+            continue
+        cip = canon(cip_raw)
+        cross_flags.setdefault(cip, set()).add(clean(r[15]))
+        fam_code, fam_title = split_code_title(r[14])
+        if len(fam_code) == 2 and fam_code.isdigit() and fam_title:
             fam_titles[fam_code] = fam_title
+        if top_code and not top_code.upper().startswith("XXXX"):
+            cip_tops.setdefault(cip, set()).add(top_code)
+    # a couple of reserved families carry no crosswalk title
+    fam_titles.setdefault("21", "Reserved (Canadian CIP)")
+    fam_titles.setdefault("55", "Reserved (Canadian CIP)")
 
-        # ensure a CIP catalog entry exists even if it was only in the Data sheet
-        if cip_code and cip_code not in cip:
-            cip[cip_code] = {
-                "t": cip_title, "fam": fam_code, "famt": "",
-                "cte": clean(r[15]), "act": "", "chg": "",
-                "def": clean(r[17]), "xref": "", "ex": "", "soc": [],
-            }
+    # ---- certified CTE designations (authority for the 244 disagreements) ----
+    certified = json.load(open(CERT, encoding="utf-8")).get("designations", {})
+    certified = {canon(k): v for k, v in certified.items()}
 
-        cnt = r[20]
-        try:
-            cnt = int(cnt) if cnt not in (None, "") else 0
-        except (ValueError, TypeError):
-            cnt = 0
-        pairs.append([
-            None if no_top else top_code,
-            cip_code,
-            src_idx(clean(r[18])),
-            1 if clean(r[21]) == "Yes" else 0,
-            clean(r[19]),
-            cnt,
-        ])
+    # ---- C-ID/CCN course-level floor, rolled TOP -> CIP ----
+    top_flag = coci_top_flags()
 
-    # backfill family titles
-    for c in cip.values():
-        if not c["famt"]:
-            c["famt"] = fam_titles.get(c["fam"], "")
+    # ---- resolve each reference row ----
+    rows = []
+    fams = {}
+    cert_hits = uncertified = 0
+    for code, d in sorted(desc.items()):
+        # category: certified > both-tabs-agree > single-tab > provisional
+        xs = cross_flags.get(code)
+        xflag = list(xs)[0] if (xs and len(xs) == 1) else ""
+        dflag = d["flag"]
+        if code in certified:
+            src = certified[code]; cert_hits += 1
+        elif xflag and dflag and xflag == dflag:
+            src = dflag
+        elif xflag and not dflag:
+            src = xflag
+        elif dflag and not xflag:
+            src = dflag
+        elif xflag and dflag and xflag != dflag:
+            uncertified += 1; src = xflag   # provisional; certified list should cover these
+        else:
+            src = dflag or xflag
+        cat = CATMAP.get(src, "")
 
-    # ---- transfer signal: per-TOP course + C-ID (transfer-model) counts ----
-    xfer = coci_transfer_by_top()
-    matched = 0
-    for code, t in top.items():
-        rec = xfer.get(code)
-        t["crs"] = rec["crs"] if rec else 0    # COCI courses statewide with this TOP
-        t["cid"] = rec["cid"] if rec else 0    # of those, courses carrying a C-ID
-        if rec and rec["cid"]:
-            matched += 1
+        # C-ID/CCN floor: any mapped TOP with a C-ID or CCN course
+        x = 0
+        for tc in cip_tops.get(code, ()):
+            f = top_flag.get(tc)
+            if f and (f["cid"] or f["ccn"]):
+                x = 1
+                break
+
+        famt = fam_titles.get(d["fam"], "")
+        if d["fam"] and famt:
+            fams[d["fam"]] = famt
+
+        row = {"code": code, "t": d["t"], "cat": cat, "fam": d["fam"],
+               "def": d["def"], "ex": d["ex"], "act": d["act"]}
+        if x:
+            row["x"] = 1
+        rows.append(row)
 
     payload = {
         "_built_at": BUILT_AT,
         "_built_by": "kb/_build_cip_crosswalk.py",
-        "_source": "kb/reference/cip_searchable_260708.xlsx "
-                   "(CCCCO CIP Searchable Workbook, 2026-07-08)",
-        "_note": "TOP-to-CIP transition crosswalk. The CO is transitioning from TOP "
-                 "to CIP codes effective fall 2026 (ESS 26-06). This dataset replaces "
-                 "the searchable spreadsheet the CO planned to email to the field.",
-        "_transfer": "top[code].cid = COCI courses with this TOP that carry a C-ID "
-                     "(the transfer-model proxy; a FLOOR, not full CSU/UC transferability). "
-                     "top[code].crs = total COCI courses with this TOP. Source: "
-                     "kb/reference/coci_course_list.xlsx.",
-        "sources": sources,
-        "top": top,
-        "cip": cip,
-        "pairs": pairs,
+        "_source": SRC_LABEL,
+        "_note": "CIP Code Taxonomy — the faculty-facing reference manual for the "
+                 "TOP-to-CIP transition (ESS 26-06, fall 2026). The successor to the "
+                 "CCC TOP Code Manual. Full federal CIP-2020 list; COE hosts the "
+                 "TOP↔CIP crosswalk.",
+        "_category": "rows[].cat = the Chancellor's Office CERTIFIED CIP CTE "
+                     "designation (CTE / Both / Non-CTE / Noncredit / Retired / "
+                     "Reserved). Authority = kb/reference/cip_cte_certified_260715.json "
+                     "for the 244 codes where the workbook tabs disagree.",
+        "_transfer": "rows[].x = 1 if any TOP that maps to this CIP has a course "
+                     "carrying a C-ID (transfer-model) or CCN (AB 1111). A FLOOR, not "
+                     "full CSU/UC transferability (TOP→CIP is one-to-many).",
+        "fams": fams,
+        "rows": rows,
     }
 
     body = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
     with open(OUT, "w", encoding="utf-8") as f:
         f.write("// cip_crosswalk_data.js — GENERATED by kb/_build_cip_crosswalk.py. Do not edit by hand.\n")
-        f.write("// Source: CCCCO CIP Searchable Workbook (2026-07-08). Rebuild: python kb/_build_cip_crosswalk.py\n")
+        f.write("// Source: CCCCO CIP Searchable Workbook (2026-07-15) + certified CTE designations.\n")
+        f.write("// Rebuild: python kb/_build_cip_crosswalk.py\n")
         f.write("window.CIP_CROSSWALK = ")
         f.write(body)
         f.write(";\n")
 
-    kb = sum(len(c["soc"]) for c in cip.values())
-    print(f"TOP codes w/ transfer-model (C-ID) courses: {matched} of {len(top)}")
-    print(f"TOP codes:      {len(top)}")
-    print(f"CIP codes:      {len(cip)}")
-    print(f"Crosswalk pairs:{len(pairs)}")
-    print(f"SOC links:      {kb}")
-    print(f"Sources:        {sources}")
-    print(f"Wrote {OUT}  ({os.path.getsize(OUT)/1024:.0f} KB)")
+    from collections import Counter
+    dist = Counter(r["cat"] for r in rows)
+    flagged = sum(1 for r in rows if r.get("x"))
+    goforward = sum(1 for r in rows if r["cat"] in ("CTE", "Both", "Non-CTE", "Noncredit"))
+    print(f"CIP codes:        {len(rows)}")
+    print(f"Categories:       {dict(dist)}")
+    print(f"Go-forward:       {goforward}  (Retired/Reserved hidden by default)")
+    print(f"Certified hits:   {cert_hits} of {len(certified)}  |  uncertified conflicts: {uncertified}")
+    print(f"C-ID/CCN flagged: {flagged}")
+    print(f"Families:         {len(fams)}")
+    print(f"Wrote {OUT}  ({os.path.getsize(OUT) / 1024:.0f} KB)")
 
 
 if __name__ == "__main__":

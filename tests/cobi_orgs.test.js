@@ -39,7 +39,7 @@ const HEADER_NAV = `
     <button class="cpl-tab active" data-tab="dashboard">Dashboard</button>
     <button class="cpl-tab" data-tab="our-process">Our Process</button>
     <button class="cpl-tab" data-tab="tmc-builder">TMC Builder</button>
-    <button class="cpl-tab" data-tab="cip-crosswalk">CIP Crosswalk</button>
+    <button class="cpl-tab" data-tab="cip-crosswalk">CIP Codes</button>
     <div class="cpl-nav-group" data-nav-group="funding">
       <button class="cpl-nav-group-head">Funding</button>
       <div class="cpl-nav-group-body">
@@ -91,7 +91,7 @@ function tagText(document) {
 
   // ── switch to CIP: only the crosswalk site's tabs show ──
   window.CPL_ORGS.setOrg("cip");
-  check("CIP: CIP Crosswalk stays visible", shown(btn(document, "cip-crosswalk")));
+  check("CIP: CIP Codes tab stays visible", shown(btn(document, "cip-crosswalk")));
   check("CIP: Dashboard is hidden from the rail", !shown(btn(document, "dashboard")));
   check("CIP: Budget is hidden from the rail", !shown(btn(document, "budget")));
   check("CIP: identity tag flips to CIP", tagText(document) === "CIP");
