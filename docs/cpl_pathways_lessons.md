@@ -441,3 +441,46 @@ ever remove a confirmably-stale record — never a valid one.
   all-college `CPL_COCI_COURSE_KEYS` set (or the same join) is reusable for it.
   Left for the next numbered session per side-lane discipline.
 - Untouched: `kb/cpl_todos.json` + numbered `session_<N>_handoff.md`.
+
+---
+
+## 2026-07-15/16 — StarX: the Common Course Reference redesign (engine + two views + feeder fields)
+
+Sam's "foundational" observation about the Auto CPL Pathway ("still duplicates
+with different names") opened a full redesign. Arc + learnings:
+
+- **The clutter wasn't naive duplication.** Across all 1,987 CER titles only 2
+  naive drift-dupe clusters remained; the apparent redundancy was *topic
+  fragmentation* (brakes across ASE A5 + local-Cx + inspection), legitimate under
+  Rule 8c. Stripping ASE codes would NOT merge the like-courses (issuer/CPL-basis
+  + differing names do the splitting) — so **don't strip; add structure**.
+- **The pivot to CCR-identity linkage (Sam's call).** Course-grain adoption via the
+  **minted M-ID / C-ID / CCN** join (`coci_minted_memberships`) — not fuzzy title
+  match. Payoff twofold: the **field-agreement chip** on articulated courses ("N
+  colleges also give CPL for this same course") is the DENSE, high-trust value;
+  the course-grain opportunity list is honestly short (0–few for comprehensive
+  colleges — a feature, per Sam's "pretty short").
+- **Field-from-catalog, not articulation TOP.** `coci_articulations` stamps the
+  2-digit TOP division ("58"); the program field is 4-digit ("0948"). Driving the
+  join from the CATALOG fixed the 0-rows bug. The over-merge flag is
+  **program/course-relative** (ref's canonical field vs the course's own) — precise
+  (3 flags / 45 programs), and it caught the AUTO 116 → Construction mis-mint live.
+- **Feeder fields = the multidisciplinary-program fix.** A management BS (Miramar
+  Public Safety Management, TOP 2199) draws CPL from lower-div feeders (Fire 2133,
+  EMS 1250, AJ 2105) under other TOP codes. `kb/pathway_feeder_fields.json` +
+  aggregation → 0 → 34 courses / 104u of Fire CPL. (Sam's "pending in COCI" hunch
+  was wrong — the courses were there; the single-TOP scope was the miss.) The
+  committed JSON is the interim form of a Supabase program-supplement store
+  (`in_coci:false` reserved for genuinely-pending courses).
+- **Two views resolve the chip tension.** Chips are noise to a student, gold to a
+  curator → **🎓 student** (course + local cert to present) vs **🏛️ college** (+ CCR
+  chip, field-agreement, opportunities, ⚠ flags). Local cert (searchable on the
+  college landing page) shown, canonical CER names held until curated (Sam).
+- **Shipped:** #794 (engine, daily-fresh) · #796 (feeder fields) · #797 (two-view
+  render, fails-open). Mockup iterated live in an artifact then ported. Deferred:
+  the `map_college_contacts` coordinator/landing block; AUTO 116 split (CCR
+  mainline); competency-spine adoption view (parked).
+- **Method note:** heavy multi-turn artifact iteration with Sam (10+ refinements)
+  before porting — the "prototype in a fast-feedback canvas, then port" practice
+  paid off; the port was mechanical because the spec was locked.
+- Untouched: `kb/cpl_todos.json` + numbered `session_<N>_handoff.md` (side-lane).
