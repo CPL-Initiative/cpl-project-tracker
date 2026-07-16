@@ -560,6 +560,29 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### StarBoard side-lane — dethroning TOP: from gatekeeper to last-in-line signal (2026-07-16, #799/#800 MERGED)
+
+Sam: *"unburden our schema from the tyranny of TOP … it should not be used for
+gatekeeping or primary determinations … a last-in-line signal that nudges edge
+cases … fuzzy for search/filter."* A 4-agent audit (all 3 repos) found the doctrine
+**~80% already built** (confidence/source ladder, TOP weighted 0.10, blanks-only
+fills) — the gap was **wording + two real leaks**. **Blast radius: 24%** (17,059 of
+71,076 disciplined rows reach `discipline` via a 0.4–0.5 TOP guess). **The leak:**
+`_seed_canonical_subj4.py` let a TOP guess vote on + fold into the M-ID SUBJ4
+identity, and `_row_audit.py` scored TOP-sourced `inferred-high` (= subject_map).
+**PR A #799** — doctrine anchor (`methodology-top-is-a-last-in-line-signal`), §7
+TOP caveat, ~8 prose passages softened, `_row_audit.py` TOP demoted →`inferred-low`,
+`merge_flag`/`_overmerge_apply` fixes. **PR B #800** (Sam's *"gate identity, keep
+display"* ruling) — shared predicate `kb/_top_gate.py`, seed excludes TOP rows from
+the canonical-SUBJ4 vote (+`top_only`/`corroborated_voters`), read-only dry-run
+`kb/top_gate_out/2026-07-16/`. **Headline: the gate changed 0 of 146 canonical
+values** — corroborated rows already carry every anchor, so it's provably
+non-disruptive. Deferred (Rule 7 dispatched): fold-apply enforcement; the tiny
+`excel_to_dashboard.py` fallback-label; a curation-gated public-KB caveat. CIP
+(fall-2026 cutover) is the systemic exit — same "corroborate, don't gate" posture.
+Full story: `docs/top_dethroning_lessons.md` · `docs/top_dethroning_handoff.md`.
+Side-lane — left `cpl_todos.json` + the numbered handoff to the CCR mainline.
+
 ### SkyNew side-lane — the CIP site: TOP↔CIP Crosswalk tab + suggest-to-curate (2026-07-14)
 
 The CO is transitioning course/program coding **TOP→CIP fall 2026** (ESS 26-06).
