@@ -14014,9 +14014,11 @@ AB 111 codifies new CPL funding and regulations. In 2025/26 Title 5 was updated 
             window.CPL_TABS.loadScript('cpl_pathways_data.js', 'CPL_PATHWAYS', function () {
               window.CPL_TABS.loadScript('cpl_baccalaureates_data.js', 'CPL_BACCALAUREATES', function () {
                 window.CPL_TABS.loadScript('cpl_pathways_ccr_data.js', 'CPL_PATHWAY_CCR', function () {
-                  if (window.CPL_PATHWAYS_TAB && typeof window.CPL_PATHWAYS_TAB.activate === 'function') {
-                    window.CPL_PATHWAYS_TAB.activate();
-                  }
+                  window.CPL_TABS.loadScript('cpl_pathways_membership_data.js', 'CPL_PATHWAY_MEMBERSHIP', function () {
+                    if (window.CPL_PATHWAYS_TAB && typeof window.CPL_PATHWAYS_TAB.activate === 'function') {
+                      window.CPL_PATHWAYS_TAB.activate();
+                    }
+                  });
                 });
               });
             });

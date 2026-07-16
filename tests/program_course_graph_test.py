@@ -45,7 +45,8 @@ PC = [
      "Course Control Number": "CCC1", "Course Status": "Active", "Course Id": "ART53",
      "Course Title": "Advanced Painting", "Course TOP Code": "100210", "Course Classification Code": "Y"},
 ]
-PROG = {("ALAMEDA", "01118"): {"title": "Art", "award": "A.A. Degree", "top": "1002.00", "cip": "50.0701", "status": "Active"}}
+# prog_meta is keyed by the globally-unique control number (not (college,control))
+PROG = {"01118": {"title": "Art", "award": "A.A. Degree", "top": "1002.00", "cip": "50.0701", "status": "Active"}}
 COURSE = {"CCC1": {"subj": "ART", "num": "53", "title": "Advanced Painting", "units": 3.0, "cid": "ARTS 200", "top": "1002.10"}}
 
 g = pcg.assemble(PC, PROG, COURSE)
@@ -69,7 +70,7 @@ check("fixture loads", rows and len(rows) >= 10)
 # minimal inline meta so we don't need the 25MB xlsx in the test
 course_meta = {r["Course Control Number"].strip(): {"subj": "ART", "num": "53", "title": r["Course Title"].strip(),
                "units": 3.0, "cid": "", "top": r["Course TOP Code"].strip()} for r in rows}
-prog_meta = {("ALAMEDA", "01118"): {"title": "Art", "award": "A.A. Degree", "top": "1002.00", "cip": "", "status": "Active"}}
+prog_meta = {"01118": {"title": "Art", "award": "A.A. Degree", "top": "1002.00", "cip": "", "status": "Active"}}
 g2 = pcg.assemble(rows, prog_meta, course_meta)
 check("fixture assembles the Art program", "ALAMEDA|01118" in g2 and g2["ALAMEDA|01118"]["title"] == "Art")
 check("Art program has its painting courses", g2["ALAMEDA|01118"]["n_courses"] >= 5)
@@ -92,6 +93,20 @@ check("numeric CollegeCode resolves to the college name",
       rows3[0]["College"] == "San Diego Miramar College")
 check("leading zero on the control number is preserved (string, not int)",
       rows3[0]["Program Control Number"] == "07200")
+
+# ── (4) load_program_meta keys by control; Active wins a control collision ──
+fd, tmpm = tempfile.mkstemp(suffix=".csv")
+with os.fdopen(fd, "w", encoding="utf-8") as f:
+    f.write("COLLEGE,CONTROL NUMBER,TITLE,AWARD,TOP CODE,CIP CODE,STATUS\n")
+    # same control 55500 appears twice: an Inactive revision first, then the live row
+    f.write("MIRAMAR,55500,Old Title,A.S. Degree,2199.00,43.9999,Inactive\n")
+    f.write("MIRAMAR,55500,Public Safety Management,Baccalaureate of Science (B.S.) Degree.,2199.00,43.0104,Active\n")
+    f.write("FOOTHILL,55501,Respiratory Care,Baccalaureate of Science (B.S.) Degree.,1210.00,51.0908,Active\n")
+pm4 = pcg.load_program_meta(tmpm)
+os.remove(tmpm)
+check("load_program_meta is keyed by control number (string)", "55500" in pm4 and "55501" in pm4)
+check("Active/Approved row wins a control collision over a non-live one",
+      pm4["55500"]["title"] == "Public Safety Management" and pm4["55500"]["status"] == "Active")
 
 passed = sum(1 for _, ok in results if ok)
 for name, ok in results:
