@@ -1,0 +1,11 @@
+{
+  "_note": "Per-baccalaureate FEEDER TOP fields for the CPL Pathways cards. A multidisciplinary program (e.g. a management BS) draws its prior-learning credit from lower-division feeder disciplines that are coded under DIFFERENT TOP codes than the program's own. kb/_build_cpl_pathway_ccr.py assembles each program's pathway across its own TOP field PLUS these feeders, so the CPL that actually matters to the degree shows up. Keyed '<NORMCOLLEGE>|<top4>' (matching the pathway keys in cpl_pathways_ccr_data.js). This committed file is the interim form of the planned Supabase program-supplement store; a future `supplemental_courses` list (with `in_coci: false` for courses not yet in the state catalog) slots alongside `feeder_top4`.",
+  "_source": "Curated per program; TOP fields verified against kb/reference/coci_course_list.xlsx.",
+  "feeders": {
+    "SAN DIEGO MIRAMAR COLLEGE|2199": {
+      "program": "Public Safety Management (B.S.)",
+      "feeder_top4": ["2133", "1250", "2105"],
+      "note": "The upper-division PSMA management core (TOP 2199) carries no CPL; the degree's prior-learning credit comes from the Fire (2133), Emergency Medical Services (1250), and Administration of Justice (2105) feeder disciplines — the statewide Fire exhibits the faculty workgroup documented."
+    }
+  }
+}
