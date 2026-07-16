@@ -98,8 +98,28 @@ TOP never determines the identity key.
   weighting. The `top_discipline_disagreement`, `subject_discipline_outlier`, and
   `member_top_divergence` flags **only surface or corroborate** — they never
   re-assign, and require a 2nd agreeing signal.
+- `kb/_top_gate.py` — the shared predicate `discipline_is_corroborated(rec)`
+  (a discipline that is present AND not `top_code`/`top_division`-sourced). This
+  is the one contract the vote and every fold/apply consult.
 - `kb/_seed_canonical_subj4.py` — TOP-sourced rows are excluded from the
-  canonical-SUBJ4 modal vote (identity boundary, above).
+  canonical-SUBJ4 modal vote; disciplines are still *enumerated* over all rows,
+  so a discipline resting entirely on TOP still appears with a **blank canonical**
+  held for a curator and a `top_only: true` / `corroborated_voters: 0` flag.
+  **Measured (dry-run, `kb/_top_fold_gate_dryrun.py`, receipt
+  `kb/top_gate_out/2026-07-16/`):** of 71,076 disciplined rows, **17,059 are
+  held from the vote**; **130 of 146 disciplines keep a corroborated anchor**;
+  **16 rest entirely on TOP** (all 16 currently carry a curator-picked SUBJ4, so
+  they're preserved). Re-running the seed with the gate changed **0 canonical
+  values** — corroborated rows already carry every anchor, proving TOP's votes
+  were redundant. The gate is therefore non-disruptive; its value is preventing
+  future TOP-vote pollution and making TOP-dependency visible.
+- **Fold / re-key enforcement (the second half of "gate identity"):** any script
+  that folds a row into its discipline's canonical SUBJ4 (`_subj4_apply.py`,
+  `_apply_canonical_subj4.py`, `_overmerge_apply.py`, the convergence applies)
+  must skip a row where `not discipline_is_corroborated(rec)` — a TOP-only row
+  waits, un-folded, until its discipline is corroborated. Enforced via
+  `kb/_top_gate.py`; run as a dry-run-first, dispatched apply per Rule 7 (never a
+  casual re-key).
 - `kb/_infer_disciplines_from_top*.py` — blanks-only, low-confidence, review-
   flagged fills; catch-all TOP codes (`4930.*`, `*99.*`) deliberately unmapped.
 - `kb/_build_cpl_pathway_ccr.py` — the `(college, TOP4)` program-membership join

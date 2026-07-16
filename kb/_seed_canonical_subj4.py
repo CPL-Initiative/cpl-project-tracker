@@ -30,6 +30,8 @@ import re
 from collections import Counter, defaultdict
 from datetime import date
 
+from _top_gate import discipline_is_corroborated
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 COURSES = os.path.join(HERE, "coci_minted_courses.json")
 SINGLETONS = os.path.join(HERE, "coci_minted_singletons.json")
@@ -103,6 +105,13 @@ def main():
     # "BI": 12, ...}) — i.e. what colleges actually call this discipline's
     # courses today.
     per_disc_local = defaultdict(Counter)
+    # Enumeration over ALL disciplined rows (incl. TOP-sourced) so a discipline
+    # that rests entirely on TOP still appears in the map — with a blank
+    # canonical held for a curator, rather than vanishing. The VOTE counters
+    # (per_disc_subj4 / per_disc_local) take corroborated rows only; TOP-only
+    # rows never vote on identity (see kb/_top_gate.py — the 2026-07-16
+    # "gate identity, keep display" ruling).
+    all_disc = Counter()
 
     def _norm_subject(s):
         """Normalize a raw college subject for grouping — strip + upper.
@@ -120,7 +129,9 @@ def main():
         s4 = rec.get("subject_4letter") or ""
         if not d:
             return
-        if s4:
+        all_disc[d] += 1                 # enumeration (all disciplined rows)
+        # TOP-only-disciplined rows DISPLAY but never vote on the canonical SUBJ4.
+        if s4 and discipline_is_corroborated(rec):
             per_disc_subj4[d][s4] += 1
         top = (rec.get("top_code") or "").strip()
         if top:
@@ -139,7 +150,9 @@ def main():
         # Aggregate each minted M-ID's member raw subject codes by the M-ID's
         # discipline. memberships[course_id] is the list of (college, subject,
         # course_number, ...) per member college.
-        if rec.get("id_system") == "M-ID":
+        # Only CORROBORATED M-IDs contribute their members' local subject codes
+        # to the canonical-SUBJ4 vote (TOP-only rows are held out).
+        if rec.get("id_system") == "M-ID" and discipline_is_corroborated(rec):
             d = rec.get("discipline")
             if d:
                 for m in memberships.get(course_id, []) or []:
@@ -149,9 +162,9 @@ def main():
     for rec in singletons.values():
         _ingest(rec, "singleton")
         # A singleton is single-college by construction; its `subject` IS the
-        # local college subject code.
-        d = rec.get("discipline")
-        if d:
+        # local college subject code. TOP-only singletons don't vote.
+        if discipline_is_corroborated(rec):
+            d = rec.get("discipline")
             s = _norm_subject(rec.get("subject"))
             if s:
                 per_disc_local[d][s] += 1
@@ -173,11 +186,18 @@ def main():
 
     today = date.today().isoformat()
     disciplines = {}
-    for d, cnt in per_disc_subj4.items():
+    for d, all_n in all_disc.items():
+        # cnt = the CORROBORATED subject_4letter distribution (TOP-only rows
+        # excluded in _ingest). Enumerate over all_disc so a discipline that
+        # rests entirely on TOP still gets an entry (blank canonical, flagged).
+        cnt = per_disc_subj4.get(d, Counter())
         # Build the LOCAL variant distribution + LOCAL data-modal first; that's
-        # what "Most-used locally" should reflect. Falls back to the MID-
-        # aggregated subj4 distribution if no memberships data is available.
+        # what "Most-used locally" should reflect. Falls back to the (also
+        # corroborated) MID-aggregated subj4 distribution if no memberships data
+        # is available. Both are corroborated-only, so a TOP-only discipline
+        # yields an empty local_cnt -> blank canonical held for a curator.
         local_cnt = per_disc_local.get(d) or cnt
+        corroborated_voters = sum(local_cnt.values())
         local_items = sorted(local_cnt.items(), key=lambda kv: (-kv[1], kv[0]))
         data_modal = local_items[0][0] if local_items else ""
         modal_share = (local_items[0][1] / sum(local_cnt.values())) if local_items else 0.0
@@ -241,6 +261,14 @@ def main():
             "local_subject_variants": local_variants,
             "local_subject_variants_truncated": local_variants_more,
             "local_subject_total": sum(local_cnt.values()),
+            # Identity gate (2026-07-16): rows whose discipline came SOLELY from
+            # TOP (top_code / top_division) don't vote on the canonical SUBJ4.
+            # corroborated_voters is the count that DID vote; top_only flags a
+            # discipline resting entirely on TOP — canonical held blank until a
+            # curator (or a stronger signal) corroborates it. See kb/_top_gate.py.
+            "rows_total": all_n,
+            "corroborated_voters": corroborated_voters,
+            "top_only": corroborated_voters == 0 and all_n > 0,
             # TOP / category aggregates (per the 2023 CCC Taxonomy of Programs Manual)
             "top_modal_6digit": top_modal_6d,
             "top_modal_4digit": top_modal_4d,
