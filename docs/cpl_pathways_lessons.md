@@ -553,3 +553,92 @@ dissolves the inflation at the root: the AS CPL was never BS credit. Target mode
 3. Then the BS callout can deep-link to those AS pathway cards.
 
 Side-lane: left `kb/cpl_todos.json` + the numbered handoff to the mainline.
+
+---
+
+## 2026-07-16 — StarMora: the AS/BS reframe SHIPPED — cards on the authoritative program→course master file (#810)
+
+Sam: *"let's do a run through of all the CPL Pathways on COBI to make sure the
+correct courses are listed based on our new Program/Course master file."* The
+run-through found the cards were listing the **wrong courses**, and the fix
+became StarBoard's deferred full reframe — now unblocked by the committed
+Program Course File.
+
+### The run-through (what the master file exposed)
+Joined every directory card to `program_course_graph.json` by **control number**
+(globally unique — 20,044 distinct, one college each — so NO college-name
+reconciliation needed for the join). Against the TOP-proxy the cards used:
+- **34%** of the proxy's course universe was actually in the program;
+- **8%** of the courses *rendered* on cards (✓ + ⊕) were in the BS;
+- **0 of 39** baccalaureates had CPL on their **own** courses.
+
+Every CPL ✓ shown sat on a lower-division **associate-degree** course. Santa Ana
+Automotive BS showed `AUTO 100–216`; its real courses are `AUTO 300–499` (new
+upper-division). Proof it's structural, not a join artifact: the articulated
+courses were the *qualifying associate degree's* courses (Santa Ana Automotive
+A.S. ctrl 04209 holds exactly `AUTO 102–119`). **CCC baccalaureates are
+upper-division programs whose new courses carry ~0 CPL** — the CPL lives in the
+qualifying associate degree, and (Sam) *that lower-division credit is accepted
+toward BS access with none of the CSU/UC transfer limits* (the real power; CSU/UC
+only take Cx for Cal-GETC GE).
+
+### The reframe (Sam's four live refinements, all shipped)
+1. **List the BS's own courses** (master file, not TOP) + **per-course potential
+   CPL where known** — resolve each course's Common Course Reference → any peer
+   that articulates it: `◍` potential / `✓` home-articulated.
+2. **A.S./A.A. AND certificates** as first-class qualifying-credential sub-cards
+   (same college, BS field + declared feeders) where the dense CPL lives.
+3. **Embedded certificates especially** — detect `cert.courses ⊆ AS/AA.courses`,
+   show the nesting (`⊂ N embedded certs` / `⊂ embedded`).
+4. **Method & magic — required-core first** (Sam: *"rock star of the ages"*):
+   COCI carries no required/elective flag (catalog-only), so infer it from
+   structure — a course inside an embedded Certificate of Achievement is
+   required-core, ranked by **field-family frequency** (foundational courses
+   recur across the family; niche electives don't). Labeled inferred, catalog
+   authoritative.
+Plus the **transfer-mobility callout** in Sam's framing.
+
+### What shipped (#810, MERGED, live)
+- **`kb/_build_program_course_graph.py`** — join program title/award by control
+  (fixes the `title:null` gap → 99% populated). Test +2 (16/16).
+- **`kb/_build_cpl_pathway_membership.py`** (new) → `cpl_pathways_membership_data.js`
+  (39 BS + **181 qualifying credentials**; 37 BS-course + 365 qualifying-course
+  CPL marks; 54 KB gzip). NO-OPs without the graph; daily-regenerated (graph →
+  membership) + committed so the page loads on merge.
+- **`cpl_pathways.js`** — `renderMembership` supersedes the TOP-proxy CCR view
+  when a program is in the join; fails open to CCR/legacy otherwise. Two-view
+  (student/college) reused; `.col-only` chrome = ref chips + `core` badges.
+- Tests: `cpl_pathway_membership_test.py` (15) + `cpl_pathways_membership_render.test.js`
+  (19). Full suite **165 files green**; real-Chromium verified (student /
+  expanded / college), 0 console errors.
+
+### Lessons
+- **Control number is the clean join key.** Globally unique across colleges, so
+  the CB-long-vs-export-short name mismatch (which had left `title:null`)
+  vanishes — join `prog_meta` by control, prefer Active on the rare collision.
+- **College names still bite the CPL join.** Articulations/memberships use CER
+  full names ("Santa Ana College"); the graph uses the CB upper form. `norm()`
+  (upper) bridges nearly all; the directory's pre-resolved `cer_college` is the
+  reliable per-family key.
+- **Embedded-cert structure is a real required-core signal.** Santa Ana's
+  Automotive A.S. → 7 embedded certs; every AS course sits in ≥1 cert, and
+  family-frequency (x8 → x2) gives a clean foundational-first ranking. Distilled
+  to a KB note (`methodology-embedded-cert-required-core-inference`).
+- **The honest BS card is more compelling, not less.** Showing ~0 BS-own CPL +
+  the dense qualifying-credential CPL + the transfer-mobility frame tells the
+  real value story (lower-end CPL flows up with no limits) better than the old
+  inflated ✓ count did.
+
+### Deferred / next (carryover)
+- **6 unmatched directory programs** (newest DH / Respiratory / Biomanufacturing,
+  Draft/Review) aren't in the June membership export — they keep the CCR/legacy
+  fallback until a fresher Program Course File / Data Mart Program File lands.
+- **Featured hand-curated maps** (Cerritos Ironworker, Foothill DH/Respiratory)
+  untouched — the Ironworker "BS" isn't in the export (only its A.S./cert), same
+  AS-under-BS pattern, arguably intentional for the apprenticeship pitch.
+- **AS/AA/cert as top-level dropdown entries** (not only in-page sub-cards), and
+  **BS→AS deep-links**, if Sam wants them navigable on their own.
+- Program **title/award** now populates from the export; the Data Mart **Program
+  File** option would sidestep even that (handoff step 2).
+
+Side-lane: left `kb/cpl_todos.json` + the numbered handoff to the CCR mainline.
