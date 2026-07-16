@@ -70,7 +70,11 @@ w.document.body.appendChild(box);
 check("container starts in student view", box.classList.contains("view-student") && box.classList.contains("cplccr"));
 check("Student/College toggle has two buttons", box.querySelectorAll(".ccr-toggle .ccr-vt").length === 2);
 check("CPL intro rendered", /Credit for Prior Learning/.test(box.querySelector(".ccr-intro").textContent));
-check("✓ header shows course count + units", /2 courses for 6 units/.test(box.querySelector(".cplpw-sec-head .sum.cpl").textContent));
+check("✓ header shows course COUNT, not a unit sum (#777 count-doctrine)", (function () {
+  const t = box.querySelector(".cplpw-sec-head .sum.cpl").textContent;
+  return /2 courses/.test(t) && !/unit/.test(t);
+})());
+check("no scope note when the program has no feeders", !box.querySelector(".ccr-scope"));
 check("✓ course row renders course code + name", /FIPT 105/.test(box.textContent) && /Fire Behavior and Combustion/.test(box.textContent));
 check("certs render as 'Qualify with … OR …'", (function () {
   const c = box.querySelector(".ccr-cert");
@@ -97,6 +101,23 @@ check("toggling to college view flips the container class", (function () {
   btns[0].dispatchEvent(new w.Event("click")); // back to student
   return ok && box.classList.contains("view-student");
 })());
+
+// Scope note appears ONLY for multidisciplinary (feeder) programs — it explains
+// that the CPL is toward the lower-division qualifying associate degree, not the
+// program's own upper-division core (the Miramar Public Safety Management case).
+const boxF = T._renderCcrViews({ college: "San Diego Miramar College" }, {
+  articulated: [{ subj: "FIPT", num: "105", title: "Fire Behavior", certs: [], ref: null, agree: 0, peers: [], flag: null }],
+  units_total: 3, opportunities: [], feeders: ["2133", "1250", "2105"],
+});
+check("feeder program shows the qualifying-associate-degree callout", (function () {
+  const s = boxF.querySelector(".ccr-scope");
+  return s && /qualifying associate degree/.test(s.textContent) && /Entry requires/.test(s.textContent);
+})());
+check("callout says the upper-division core is coursework, not CPL", (function () {
+  const s = boxF.querySelector(".ccr-scope");
+  return s && /upper-division core/.test(s.textContent) && /completed through coursework/.test(s.textContent);
+})());
+check("feeder ✓ header still carries no unit sum", !/unit/.test(boxF.querySelector(".cplpw-sec-head .sum.cpl").textContent));
 
 // ── report ──
 const fail = results.filter(([, ok]) => !ok);

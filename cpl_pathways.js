@@ -1023,6 +1023,7 @@
       ".cplccr.view-student .col-only{display:none}" +
       ".cplccr .ccr-intro{font-size:.86rem;color:var(--text-muted);line-height:1.55;margin:0 0 6px}" +
       ".cplccr .ccr-intro b{color:var(--text-body)}" +
+      ".cplccr .ccr-scope{font-size:.78rem;color:var(--text-muted);line-height:1.5;margin:4px 0 8px;padding:7px 11px;border-left:3px solid var(--border);background:var(--cpl-cream,#f1ede2)}" +
       ".cplccr .ccr-row{padding:10px 14px;border-top:1px solid var(--border)}" +
       ".cplccr .ccr-top{display:flex;align-items:center;gap:9px;flex-wrap:wrap}" +
       ".cplccr .ccr-chk{color:var(--cpl-green,#2f6d3a);font-weight:800;font-size:1.05rem;line-height:1}" +
@@ -1073,13 +1074,32 @@
     box.appendChild(el("div", "ccr-intro", [
       el("b", null, "Credit for Prior Learning (CPL)"),
       document.createTextNode(" lets a student turn verified prior learning — an industry certification, military training, an apprenticeship, or a passed exam — into college credit toward this degree, instead of re-taking material they've already mastered. To claim it, a student submits their documentation through the college's CPL landing page, which creates a record in MAP so the review is tracked end-to-end.")]));
-    // ✓ header
+    // ✓ header — COURSE COUNTS, not a unit sum. An aggregate unit total
+    // double-counts mutually-exclusive entry academies (a student completes ONE
+    // of POST / a fire academy / corrections, not all) and tiny cert-CE modules,
+    // so it overstates claimable credit (the #777 count-doctrine). Units stay on
+    // the featured single-track maps, where they don't double-count.
     var h = el("div", "cplpw-sec-head");
     h.appendChild(el("span", "sum cpl", "✓ " + ccr.articulated.length + " course" +
-      (ccr.articulated.length === 1 ? "" : "s") +
-      (ccr.units_total ? " for " + fmtU(ccr.units_total) + " units" : "")));
+      (ccr.articulated.length === 1 ? "" : "s")));
     h.appendChild(el("div", "t", "CPL opportunities for this pathway at " + (prog.college || "this college")));
     box.appendChild(h);
+    // Qualifying-associate-degree callout for multidisciplinary (feeder)
+    // programs. Entry to the bachelor's requires a qualifying associate degree,
+    // so the CPL below counts toward THAT associate degree (the program's feeder
+    // disciplines) — not the bachelor's own upper-division core, which is
+    // completed through coursework. Standalone CPL maps for the qualifying
+    // associate degrees will become their own entries in this list once the
+    // AA/AS/certificate program+course data is available.
+    if (ccr.feeders && ccr.feeders.length) {
+      box.appendChild(el("div", "ccr-scope", [
+        el("b", null, "Entry requires a qualifying associate degree. "),
+        document.createTextNode(
+          "The CPL below counts toward that associate degree (the program's "
+          + "feeder disciplines), not the bachelor's own upper-division core, "
+          + "which is completed through coursework. Standalone CPL maps for the "
+          + "qualifying associate degrees are coming to this list.")]));
+    }
     // ✓ course rows
     ccr.articulated.forEach(function (r) {
       var row = el("div", "ccr-row");
@@ -1169,7 +1189,7 @@
     tiles.appendChild(tile("cpl", "✓ " + (ccr ? ccr.articulated.length : m.mineCourses),
       (prog.college || "This college") + " already articulates these for CPL in this field",
       ccr
-        ? ("course" + (ccr.articulated.length === 1 ? "" : "s") + (ccr.units_total ? " · " + fmtU(ccr.units_total) + " units" : ""))
+        ? ("course" + (ccr.articulated.length === 1 ? "" : "s"))
         : ("course" + (m.mineCourses === 1 ? "" : "s") + " · " + m.mineCreds + " credential" + (m.mineCreds === 1 ? "" : "s"))));
     tiles.appendChild(tile(null, "⊕ " + (ccr ? ccr.opportunities.length : m.poolCreds),
       ccr
