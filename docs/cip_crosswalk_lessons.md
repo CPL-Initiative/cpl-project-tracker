@@ -918,3 +918,46 @@ field-consensus-first ordering, one-line rows, and the recommended-inline easy-b
 The tool went from a single-course fit-check to a statewide-corroborated, review-and-approve
 easy button. Next session is **SkyEasy** — priority #0 is the whole-catalog consensus
 pre-fill; full pointers in `docs/cip_crosswalk_handoff.md`.
+
+---
+
+## 2026-07-17 — SkyEasy: the Review-tab v2 (subject-scoped consensus + the two-box redesign)
+
+Sam live-tested the recommended-inline easy button and sent 7 observations. The headline
+was a **soundness catch** (his instinct, confirmed in the data):
+
+- **Subject-scoped consensus (his BIO 35 "Health Science" catch).** The title-only consensus
+  pooled a course across *every* department that reuses the words. "Health Science" is a
+  **Health** course at most colleges (TOP 0837 Health Education → CIP 51.0001) but a **Biology**
+  course at a few (TOP 0499 Other Bio Sci → 26.0101). The health majority (8 of 11) then wrongly
+  recommended switching Norco's *Biology* "Health Science" to a Health CIP. Fix: the consensus is
+  now **scoped to same-discipline peers** — a BIO course is compared only against other BIO/BIOL/…
+  peers (`subjMatch` = alpha-upper prefix-containment, min 3 chars, folds BIO≈BIOL≈BIOSC). Data
+  regen carries a per-(title,TOP) **subject list** (`kb/_build_course_top_consensus.py` → parallel
+  `[top,[cIdx…],[sIdx…]]` + interned `subjects[]`). Verified on real Norco data: BIO 35 → **Ready**
+  (3 of 3 BIO peers agree with Norco's 26.0101, no false switch); **BIO 4 Human Biology** stays a
+  correction (42 of 47 BIO peers use Biology-General 0401 → 30.2701; Norco alone uses Zoology 0407).
+  Falls back to the full-title consensus when <3 same-subject peers exist; legacy consensus data
+  without `subjects[]` degrades gracefully.
+
+- **The "Suggested change" two-box row.** An outlier no longer silently becomes *Ready*. When a
+  confident **discipline-scoped** consensus points at a DIFFERENT code than the crosswalk-from-TOP
+  pick, the row is a **`suggest`** status: two **aligned** CIP boxes (point 1) — the muted
+  "your TOP maps to X" over the emphasized "peers say Y N of M" — a calm **?** glyph (point 3, no
+  more ⚠⚑), a new **? Suggested** triage tile, an **Accept all N suggested changes** bulk button,
+  and **default-expanded** (point 6). Ready (crosswalk == peers) stays a one-box green-corroborated
+  row, bulk-confirmable.
+
+- **Other point fixes:** candidate **Select** button replaces the checkbox (point 4); every CIP box
+  is **clickable → a ▾ "change to any code" dropdown** (point 5, `cipBox()` + shared
+  `allCodeGroupsFor`); **Expand all / Collapse all** utility (point 6); one-click **accept** by
+  clicking a box.
+
+**State:** shipped as the SkyEasy v2. `course_top_consensus.json` regenerated (408→594KB, committed
+static — no workflow rebuilds it). Tests: `tests/cip_crosswalk.test.js` 167 assertions (added
+subject-scoping, two-box, Select button, change-dropdown, expand-all); full suite 166 files green.
+Real-Chromium verified on the actual Norco/BIO catalog, desktop + phone, light + dark, 0 overflow /
+0 console errors.
+
+**Next:** Sam re-tests v2 live. Carryover from SkyLiftoff still open — **Phase 2 whole-catalog
+review sheet** and the standing **WCAG pre-field gate**.

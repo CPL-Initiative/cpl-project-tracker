@@ -72,7 +72,9 @@
   var GOFORWARD = { "CTE": 1, "Both": 1, "Non-CTE": 1, "Noncredit": 1 };
   var st = { q: "", cat: "all", fam: "", xfer: false, showRetired: false, limit: PAGE, open: {}, college: null, mode: "browse" };
   var FIT_COLLEGES = null, FIT_CACHE = {}, FIT_LOADING = {};
-  var CONSENSUS = null, CONSENSUS_COLLEGES = null, CONSENSUS_LOADING = null;
+  var CONSENSUS = null, CONSENSUS_COLLEGES = null, CONSENSUS_SUBJECTS = null, CONSENSUS_LOADING = null;
+  // confident-consensus thresholds (see consensusPick): >= MIN_N colleges AND >= MAJORITY of them.
+  var CONSENSUS_MIN_N = 3, CONSENSUS_MAJORITY = 0.5;
   var wrapEl, inputRef, pillsRef, famRef, cbRef, xferRef, listHost, countHost, suggestHost, collegeSelEl;
 
   function ingest(data) {
@@ -374,7 +376,7 @@
   function loadConsensus() {
     if (CONSENSUS || CONSENSUS_LOADING || typeof fetch !== "function") return CONSENSUS_LOADING;
     CONSENSUS_LOADING = fetch("course_top_consensus.json").then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
-      if (d && d.titles) { CONSENSUS = d.titles; CONSENSUS_COLLEGES = d.colleges || []; }
+      if (d && d.titles) { CONSENSUS = d.titles; CONSENSUS_COLLEGES = d.colleges || []; CONSENSUS_SUBJECTS = d.subjects || []; }
       return CONSENSUS;
     }).catch(function () { return null; });
     return CONSENSUS_LOADING;
@@ -386,19 +388,55 @@
     var t = i >= 0 ? l.slice(i + 3) : l;
     return t.toLowerCase().replace(/[^a-z0-9]+/g, " ").replace(/\s+/g, " ").trim();
   }
-  // Peer-coding consensus for one course label: the modal TOP + honest strength metric
-  // + the full per-TOP college breakdown (for the "K differ" hover). null if unknown.
-  function consensusFor(label) {
+  // Subject-code matching across colleges (BIO ≈ BIOL ≈ BIOSC ≈ "Biology (BIOL)"). Normalize
+  // to alpha-upper, then prefix-containment (min 3 chars). Not perfect — a 3-letter code that
+  // prefixes a longer unrelated one can collide (ENG↔ENGR) — but far better than pooling every
+  // department, and a real collision would show up as a TOP disagreement anyway.
+  function normSubj(s) { return String(s == null ? "" : s).toUpperCase().replace(/[^A-Z]/g, ""); }
+  function subjMatch(aRaw, bRaw) {
+    var a = normSubj(aRaw), b = normSubj(bRaw); if (!a || !b) return false;
+    if (a === b) return true;
+    if (a.length >= 3 && b.indexOf(a) === 0) return true;
+    if (b.length >= 3 && a.indexOf(b) === 0) return true;
+    return false;
+  }
+  // Peer-coding consensus for one course label. When the course's own SUBJECT is known and
+  // enough same-subject peers exist, the consensus is SCOPED to that discipline — "how do
+  // peers teaching this title AS A BIOLOGY COURSE code it?" — rather than pooling every
+  // department that reuses the title (Sam's BIO 35 Health Science catch: it's a Health course
+  // at most colleges but a Biology course at a few; the Health majority must not override a
+  // Biology college's coding). Falls back to the full-title consensus when too few same-subject
+  // peers exist. Returns the modal TOP + strength metric + per-TOP breakdown; null if unknown.
+  function consensusFor(label, querySubj) {
     if (!CONSENSUS) return null;
     var key = consensusKey(label); if (!key) return null;
     var e = CONSENSUS[key]; if (!e || !e.t || !e.t.length) return null;
-    var names = CONSENSUS_COLLEGES || [];
+    var names = CONSENSUS_COLLEGES || [], subs = CONSENSUS_SUBJECTS || [];
+    var qn = querySubj ? normSubj(querySubj) : "";
+    // build each TOP group with BOTH the full college list and the same-subject subset
     var groups = e.t.map(function (row) {
-      return { top: row[0], topTitle: (TOPCIP[row[0]] || {}).t || "", n: row[1].length,
-        colleges: row[1].map(function (i) { return names[i] || ("#" + i); }) };
+      var cidxs = row[1] || [], sidxs = row[2] || [];   // parallel; sidxs absent in legacy data
+      var colleges = [], scoped = [];
+      for (var i = 0; i < cidxs.length; i++) {
+        var nm = names[cidxs[i]] || ("#" + cidxs[i]);
+        colleges.push(nm);
+        var si = i < sidxs.length ? sidxs[i] : -1;
+        if (qn && si >= 0 && subjMatch(qn, subs[si])) scoped.push(nm);
+      }
+      return { top: row[0], topTitle: (TOPCIP[row[0]] || {}).t || "", colleges: colleges, scopedColleges: scoped };
     });
-    var modal = groups[0];
-    return { key: key, n: e.n, modal: modal, groups: groups, differ: e.n - modal.n, others: groups.slice(1) };
+    var scopedTotal = groups.reduce(function (a, g) { return a + g.scopedColleges.length; }, 0);
+    var useScoped = !!qn && scopedTotal >= CONSENSUS_MIN_N;
+    var mapped = groups.map(function (g) {
+      var cols = useScoped ? g.scopedColleges : g.colleges;
+      return { top: g.top, topTitle: g.topTitle, n: cols.length, colleges: cols };
+    }).filter(function (g) { return g.n > 0; });
+    if (!mapped.length) return null;
+    mapped.sort(function (a, b) { return b.n - a.n || (a.top < b.top ? -1 : 1); });
+    var totalN = useScoped ? scopedTotal : e.n;
+    var modal = mapped[0];
+    return { key: key, n: totalN, modal: modal, groups: mapped, differ: totalN - modal.n,
+      others: mapped.slice(1), scoped: useScoped, subj: querySubj || "" };
   }
   // Among a TOP's crosswalk CIPs, the one that best fits THIS course's description
   // (peer TOP + description-fit = two signals agree). Falls back to the first official CIP.
@@ -413,6 +451,23 @@
       if (!best || rel > best.rel) best = { r: r, rel: rel };
     });
     return best;
+  }
+  // A CONFIDENT peer consensus for whole-catalog PRE-FILL: a clear majority of the colleges
+  // teaching this title agree on a field (>= CONSENSUS_MIN_N colleges AND >= CONSENSUS_MAJORITY
+  // of them), and that field's TOP maps to a crosswalk CIP. Statewide agreement is the
+  // strongest, most-corroborated signal — the two-signals-agree gate applied via the CROWD,
+  // stronger than any one college's TOP (§7). So it drives the review sheet's default
+  // suggestion + a Ready status: the "pre-fill the whole catalog" easy button (Sam's "kit and
+  // kaboodle"). For an OUTLIER course (its own TOP differs from the peers') this pre-fills the
+  // peer field's CIP, quietly correcting a mis-coded TOP. A weak/split consensus does NOT
+  // pre-fill — it's left to display-only (reviewRecommendation). null = no confident consensus.
+  // subj (the course's own subject code) scopes the consensus to same-discipline peers.
+  function consensusPick(m, label, ownTop, subj) {
+    var cons = consensusFor(label, subj); if (!cons) return null;
+    var modal = cons.modal;
+    if (modal.n < CONSENSUS_MIN_N || modal.n < cons.n * CONSENSUS_MAJORITY) return null;
+    var best = bestCipForTop(modal.top, m); if (!best) return null;
+    return { cons: cons, modal: modal, best: best, code: best.r.code, outlier: !!(ownTop && modal.top !== ownTop) };
   }
   function loadCollege(slug) {
     slug = String(slug || "").replace(/[^a-z0-9_]/g, "");
@@ -839,6 +894,11 @@
         : ["No TOP code is recorded for this course."]),
     ]));
 
+    // the corroborating "how do peers code this course?" signal (extended from review mode).
+    // Shown even for thin descriptions — it's the one signal that doesn't need the catalog text.
+    var pc = recommendConsensusBlock(m, c[0], c[2] || "", m.topTitle);
+    if (pc) host.appendChild(pc);
+
     if (m.thin) {
       host.appendChild(el("div", { class: "cipx-fitmsg" }, ["This course's description is too short to rank confidently — it doesn't carry enough distinctive wording. ", m.hasCross ? "Here are the crosswalk's CIP codes for this TOP; open each to check it against its definition." : "Try one with a fuller catalog description."]));
       if (m.hasCross && m.cands.length) host.appendChild(recCardStack(m.cands, null, true));
@@ -957,15 +1017,32 @@
     revSetCips(label, arr);
   }
 
-  // classify one course into the triage buckets using the easy-button engine
+  // classify one course into the triage buckets using the easy-button engine.
+  // A CONFIDENT statewide peer consensus is the strongest signal, so it wins: it drives the
+  // default suggestion + a Ready status (the whole-catalog pre-fill). Absent that we fall back
+  // to the course's own TOP crosswalk. sugKind records the provenance (consensus | crosswalk).
   function reviewRowOf(c) {
-    var m = computeRecommend(c), sug = null, status;
-    if (m.thin) status = "manual";
-    else if (m.recommended) { status = "clear"; sug = BYCODE[m.recommended]; }
-    else if (m.hasCross && m.cands.length) { status = "review"; sug = m.cands[0].r; }
-    else { status = "manual"; if (m.res.ranked.length) sug = m.res.ranked[0].r; }
-    return { c: c, label: c[0], subj: parseSubject(c[0]), top: c[2] || "", topTitle: m.topTitle,
-      sug: sug, status: status, nCand: m.cands.length, disagree: m.beyond.length > 0, m: m };
+    var m = computeRecommend(c), label = c[0] || "", ownTop = c[2] || "", subj = parseSubject(label);
+    var cp = consensusPick(m, label, ownTop, subj);   // consensus SCOPED to this course's discipline
+    // the naive "what your current TOP maps to" CIP — the from-own-TOP crosswalk winner. This is
+    // the box the college would land on with no help; when peers point elsewhere we show BOTH.
+    var crosswalk = m.recommended ? BYCODE[m.recommended]
+      : (m.cands && m.cands.length ? m.cands[0].r
+      : (m.res.ranked && m.res.ranked.length ? m.res.ranked[0].r : null));
+    var sug = null, status, sugKind = null, suggestChange = false;
+    if (cp) {
+      sug = cp.best.r; sugKind = "consensus";
+      // suggestChange = a confident peer field points at a DIFFERENT code than the from-TOP
+      // crosswalk winner → surface it as a two-box "peers suggest" prompt (calm, not alarmist).
+      suggestChange = !!(crosswalk && sug && crosswalk.code !== sug.code);
+      status = suggestChange ? "suggest" : "clear";
+    } else if (m.thin) { status = "manual"; sug = crosswalk; }
+    else if (m.recommended) { status = "clear"; sug = BYCODE[m.recommended]; sugKind = "crosswalk"; }
+    else if (m.hasCross && m.cands.length) { status = "review"; sug = m.cands[0].r; sugKind = "crosswalk"; }
+    else { status = "manual"; sug = crosswalk; }
+    return { c: c, label: label, subj: subj, top: ownTop, topTitle: m.topTitle,
+      sug: sug, sugKind: sugKind, status: status, suggestChange: suggestChange, crosswalk: crosswalk,
+      nCand: m.cands.length, disagree: m.beyond.length > 0, cons: cp, m: m };
   }
 
   function departments(courses) {
@@ -988,11 +1065,19 @@
     chunk();
   }
 
-  var REV_STATUS = { clear: { g: "✓", label: "Ready", cls: "ok" }, review: { g: "⚠", label: "Review", cls: "warn" }, manual: { g: "◻", label: "Manual", cls: "muted" } };
+  // Status glyphs kept calm + direct (Sam: the old ⚠⚑ read as alarming/busy). "suggest" = a peer
+  // field points at a different code than your TOP's crosswalk winner — a quiet "?" that says
+  // "worth a look," with the actual recommendation shown right in the row.
+  var REV_STATUS = {
+    clear: { g: "✓", label: "Ready", cls: "ok" },
+    suggest: { g: "?", label: "Suggested", cls: "suggest" },
+    review: { g: "·", label: "Review", cls: "warn" },
+    manual: { g: "◻", label: "Manual", cls: "muted" },
+  };
 
   function reviewView() {
     var v = el("div", { class: "cipx-rev" }, []);
-    v.appendChild(el("div", { class: "cipx-rev-banner" }, ["Each suggestion comes from the course's catalog description + the state TOP→CIP crosswalk. It's a ", el("b", {}, ["starting point you confirm"]), " — your college enters the final code in COCI. Nothing here is saved outside your browser."]));
+    v.appendChild(el("div", { class: "cipx-rev-banner" }, ["Each suggestion comes from the course's catalog description, the state TOP→CIP crosswalk, and how peer colleges code the same course. It's a ", el("b", {}, ["starting point you confirm"]), " — your college enters the final code in COCI. Nothing here is saved outside your browser."]));
     if (!st.college) {
       v.appendChild(el("div", { class: "cipx-fit-nudge" }, ["First, pick your college at the top of the tab — then choose a department to review."]));
       return v;
@@ -1036,18 +1121,29 @@
     var dept = { subj: rev.dept, courses: deptCourses() };
     clear(revListHost); clear(revSummaryHost);
     revProgHost.textContent = "Analyzing " + dept.courses.length.toLocaleString() + " courses…";
-    computeDept(dept, function (done, total) { revProgHost.textContent = "Analyzing… " + done + " / " + total; },
-      function (rows) { revProgHost.textContent = ""; renderReview(rows); });
+    // Wait for the cross-college consensus before classifying — the triage status + pre-fill
+    // depend on it, and computeDept caches its rows, so a pre-consensus compute would cache a
+    // consensus-blind result. (loadConsensus resolves instantly once loaded / in jsdom.)
+    Promise.resolve(loadConsensus()).then(function () {
+      if (rev.dept !== dept.subj) return;   // department changed while consensus loaded
+      computeDept(dept, function (done, total) { revProgHost.textContent = "Analyzing… " + done + " / " + total; },
+        function (rows) { revProgHost.textContent = ""; seedRevOpen(rows); renderReview(rows); });
+    });
   }
+
+  // Seed default expansion: rows where peers suggest a DIFFERENT code open by default so the
+  // college sees the recommendation without a click (Sam's point 6). Called once per department.
+  function seedRevOpen(rows) { rows.forEach(function (r) { if (r.suggestChange) revOpen[r.label] = true; }); }
 
   function renderReview(rows) {
     var dec = revDecisions();
-    var counts = { clear: 0, review: 0, manual: 0, confirmed: 0 };
-    rows.forEach(function (r) { counts[r.status]++; if (revCips(dec, r.label).length) counts.confirmed++; });
-    // summary tiles double as filters
+    var counts = { clear: 0, suggest: 0, review: 0, manual: 0, confirmed: 0, peer: 0 };
+    rows.forEach(function (r) { counts[r.status]++; if (revCips(dec, r.label).length) counts.confirmed++; if (r.sugKind === "consensus") counts.peer++; });
+    // summary tiles double as filters — calm glyphs, Suggested surfaced right after All
     clear(revSummaryHost);
     var tiles = el("div", { class: "cipx-rev-tiles" }, []);
-    [["all", "All", rows.length, ""], ["review", "⚠ To review", counts.review, "warn"], ["clear", "✓ Ready", counts.clear, "ok"], ["manual", "◻ Manual", counts.manual, "muted"]].forEach(function (t) {
+    [["all", "All", rows.length, ""], ["suggest", "? Suggested", counts.suggest, "suggest"], ["clear", "✓ Ready", counts.clear, "ok"], ["review", "· Review", counts.review, "warn"], ["manual", "◻ Manual", counts.manual, "muted"]].forEach(function (t) {
+      if (t[0] === "suggest" && !counts.suggest) return;   // hide the Suggested tile when there are none
       var on = rev.filter === t[0];
       var tile = el("button", { class: "cipx-rev-tile" + (on ? " on" : "") + (t[3] ? " cipx-rev-tile-" + t[3] : ""), type: "button", "aria-pressed": on ? "true" : "false" },
         [el("span", { class: "cipx-rev-tilen" }, [t[2].toLocaleString()]), el("span", { class: "cipx-rev-tilel" }, [t[1]])]);
@@ -1055,26 +1151,41 @@
       tiles.appendChild(tile);
     });
     revSummaryHost.appendChild(tiles);
-    var progline = el("div", { class: "cipx-rev-progline" }, [counts.confirmed.toLocaleString() + " of " + rows.length.toLocaleString() + " confirmed"]);
+    var progline = el("div", { class: "cipx-rev-progline" }, [counts.confirmed.toLocaleString() + " of " + rows.length.toLocaleString() + " confirmed",
+      counts.peer ? el("span", { class: "cipx-rev-peercount", title: "Suggestions corroborated by a clear majority of peer colleges teaching the same course in the same discipline — the strongest signal." }, ["  ·  " + counts.peer.toLocaleString() + " peer-corroborated"]) : null]);
     revSummaryHost.appendChild(progline);
-    // per-department bulk-confirm of the clear matches + CSV
+    // per-department actions: bulk-confirm ready + accept-all-suggested + expand-all + CSV
     var actions = el("div", { class: "cipx-rev-actions" }, []);
+    var deptTail = rev.dept !== "__all__" ? " in " + rev.dept : "";
     var unconfirmedClear = rows.filter(function (r) { return r.status === "clear" && r.sug && !revCips(dec, r.label).length; });
     if (unconfirmedClear.length) {
-      var bulk = el("button", { class: "cipx-rev-bulk", type: "button" }, ["✓ Confirm all " + unconfirmedClear.length + " ready match" + (unconfirmedClear.length === 1 ? "" : "es") + (rev.dept !== "__all__" ? " in " + rev.dept : "")]);
+      var bulk = el("button", { class: "cipx-rev-bulk", type: "button" }, ["✓ Confirm all " + unconfirmedClear.length + " ready match" + (unconfirmedClear.length === 1 ? "" : "es") + deptTail]);
       bulk.onclick = function () { unconfirmedClear.forEach(function (r) { revSetCips(r.label, [r.sug.code]); }); renderReview(rows); };
       actions.appendChild(bulk);
     }
-    actions.appendChild(el("button", { class: "cipx-rev-csv", type: "button", title: "Download this list as CSV" }, ["⬇ CSV"]));
-    actions.lastChild.onclick = function () { exportReviewCsv(rows, dec); };
+    var unconfirmedSuggest = rows.filter(function (r) { return r.status === "suggest" && r.sug && !revCips(dec, r.label).length; });
+    if (unconfirmedSuggest.length) {
+      var bulkS = el("button", { class: "cipx-rev-bulk cipx-rev-bulk-suggest", type: "button", title: "Accept the peer-suggested code for every course where peers point somewhere other than your current TOP. Review them first — they're expanded below." }, ["Accept all " + unconfirmedSuggest.length + " suggested change" + (unconfirmedSuggest.length === 1 ? "" : "s")]);
+      bulkS.onclick = function () { unconfirmedSuggest.forEach(function (r) { revSetCips(r.label, [r.sug.code]); }); renderReview(rows); };
+      actions.appendChild(bulkS);
+    }
     revSummaryHost.appendChild(actions);
-
-    // the rows
-    clear(revListHost);
+    // secondary row: expand/collapse all + CSV (kept apart from the confirm actions)
+    var utils = el("div", { class: "cipx-rev-utils" }, []);
     var shown = rows.filter(function (r) { return rev.filter === "all" || r.status === rev.filter; });
-    // ⚠ review first, and within review the fewest-candidate (easiest) decisions first
+    var anyClosed = shown.some(function (r) { return !revOpen[r.label]; });
+    var xall = el("button", { class: "cipx-rev-expand", type: "button" }, [anyClosed ? "⤢ Expand all" : "⤡ Collapse all"]);
+    xall.onclick = function () { shown.forEach(function (r) { revOpen[r.label] = anyClosed; }); renderReview(rows); };
+    utils.appendChild(xall);
+    var csv = el("button", { class: "cipx-rev-csv", type: "button", title: "Download this list as CSV" }, ["⬇ CSV"]);
+    csv.onclick = function () { exportReviewCsv(rows, dec); };
+    utils.appendChild(csv);
+    revSummaryHost.appendChild(utils);
+
+    // the rows — Suggested first (peers propose a change), then Review, Manual, Ready
+    clear(revListHost);
     shown.sort(function (a, b) {
-      var order = { review: 0, manual: 1, clear: 2 };
+      var order = { suggest: 0, review: 1, manual: 2, clear: 3 };
       if (rev.filter === "all" && order[a.status] !== order[b.status]) return order[a.status] - order[b.status];
       if (a.status === "review" && b.status === "review" && a.nCand !== b.nCand) return a.nCand - b.nCand;
       return a.label < b.label ? -1 : 1;
@@ -1084,58 +1195,130 @@
     if (shown.length > 300) revListHost.appendChild(el("div", { class: "cipx-rev-more" }, ["Showing 300 of " + shown.length.toLocaleString() + " — narrow by department or filter."]));
   }
 
-  // The single strongest recommendation for a course, for the at-a-glance "easy button"
-  // line beneath the current TOP/CIP: the peer FIELD CONSENSUS if it's confident, else the
-  // crosswalk winner. null when there's no confident pick.
-  function reviewRecommendation(r) {
-    var cons = consensusFor(r.label);
-    if (cons && cons.modal.n >= 3) {
-      var best = bestCipForTop(cons.modal.top, r.m);
-      if (best) return { code: best.r.code, title: best.r.t, tag: cons.modal.n + " of " + cons.n + " colleges", kind: "consensus" };
+  // groupsFor over ALL forward CIP codes — shared by the chip "change" dropdown and the
+  // expand panel's "+ Add another code" search (one definition, two call sites).
+  function allCodeGroupsFor(f) {
+    if (!f) return { groups: [], empty: "Type to search all codes." };
+    var hits = ROWS.filter(function (x) { return GOFORWARD[x.cat] && (x.code.indexOf(f) === 0 || (x.t || "").toLowerCase().indexOf(f) >= 0); }).slice(0, 30)
+      .map(function (x) { return [x.code + " — " + x.t, "", x.code]; });
+    return { groups: [[null, hits]], empty: "No code matches “" + f + "”." };
+  }
+
+  // An actionable CIP box: click the body to USE this code (opts.onAccept), click the ▾ to
+  // CHANGE to any code — even one not suggested (opts.onChange, Sam's point 5). Absorbs its own
+  // clicks so it never toggles the row's expand.
+  function cipBox(code, opts) {
+    opts = opts || {};
+    var row = code ? BYCODE[code] : null;
+    var chip = el("span", {
+      class: "cipx-rev-chip" + (opts.cls ? " " + opts.cls : "") + (opts.on ? " cipx-rev-chip-on" : ""),
+      role: "button", tabindex: "0",
+      title: opts.title || (opts.on ? "Confirmed — click ▾ to change" : (opts.onAccept ? "Click to use this code · ▾ to change to any code" : "Click ▾ to choose a code")),
+    }, []);
+    if (row) {
+      chip.appendChild(el("span", { class: "cipx-code" }, [row.code]));
+      chip.appendChild(el("span", { class: "cipx-rev-chipt" }, [row.t]));
+      if (opts.more) chip.appendChild(el("span", { class: "cipx-rev-chipmore", title: opts.moreTip }, ["+" + opts.more]));
+    } else {
+      chip.appendChild(el("span", { class: "cipx-rev-none" }, ["— pick a code —"]));
     }
-    if (r.m.recommended) { var rr = BYCODE[r.m.recommended]; if (rr) return { code: rr.code, title: rr.t, tag: "crosswalk match", kind: "crosswalk" }; }
-    return null;
+    var panel = null;
+    function closeP() { if (panel && panel.parentNode) panel.parentNode.removeChild(panel); panel = null; chip.classList.remove("cipx-rev-chip-open"); }
+    function openP() {
+      if (panel) { closeP(); return; }
+      chip.classList.add("cipx-rev-chip-open");
+      panel = el("div", { class: "cipx-rev-chgpanel" }, [
+        el("div", { class: "cipx-rev-chghint" }, ["Change to any CIP code:"]),
+        comboCore({ id: opts.id || ("cipx-chg-" + (code || "x")), label: "Change CIP code", placeholder: "Type a code or keyword…",
+          groupsFor: allCodeGroupsFor,
+          onPick: function (picked) { closeP(); if (opts.onChange) opts.onChange(picked[2]); } }),
+      ]);
+      chip.appendChild(panel);
+    }
+    var chg = el("span", { class: "cipx-rev-chipchg", role: "button", tabindex: "0", "aria-label": "Change CIP code", title: "Change to any CIP code" }, ["▾"]);
+    chg.onclick = function (e) { e.stopPropagation(); openP(); };
+    chg.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.stopPropagation(); e.preventDefault(); openP(); } };
+    chip.appendChild(chg);
+    chip.onclick = function (e) { e.stopPropagation(); if (opts.onAccept) opts.onAccept(); };
+    chip.onkeydown = function (e) {
+      if (e.key === "Escape") { closeP(); return; }
+      if ((e.key === "Enter" || e.key === " ") && opts.onAccept) { e.stopPropagation(); e.preventDefault(); opts.onAccept(); }
+    };
+    return chip;
+  }
+
+  // The current TOP, labeled, as the left side of the "your code → " transition.
+  function fromTopEl(r) {
+    return r.top
+      ? el("span", { class: "cipx-rev-fromtop", title: "Current TOP " + r.top + (r.topTitle ? " · " + r.topTitle : "") }, ["TOP ", el("span", { class: "cipx-code" }, [r.top]), r.topTitle ? el("span", { class: "cipx-rev-fromtt" }, [" · " + r.topTitle]) : null])
+      : el("span", { class: "cipx-rev-fromtop cipx-rev-fromtop-none" }, ["no TOP"]);
+  }
+  // "N of M [BIO] colleges" — the peer-agreement tag, subject-scoped label when applicable.
+  function peerTag(r) {
+    var c = r.cons; return c.modal.n + " of " + c.cons.n + (c.cons.scoped ? " " + r.subj + " colleges" : " colleges");
+  }
+  function peerTagTip(r) {
+    var c = r.cons;
+    return "Among peer colleges teaching “" + c.cons.key + "”" + (c.cons.scoped ? " as a " + r.subj + " course" : "") + ", most use TOP " + c.modal.top + (c.modal.topTitle ? " · " + c.modal.topTitle : "") + ", which the crosswalk maps here.\n\n" + differHover(c.cons);
   }
 
   function reviewRow(r, dec, allRows) {
     var cips = revCips(dec, r.label);
     var confirmed = cips.length > 0;
     var showCode = cips.length ? cips[0] : (r.sug ? r.sug.code : null);
-    var showRow = showCode ? BYCODE[showCode] : null;
     var stat = REV_STATUS[r.status];
+    var twoBox = r.suggestChange && !confirmed;
     var caret = el("span", { class: "cipx-caret" }, ["▸"]);
-    var chip = el("span", { class: "cipx-rev-chip" + (confirmed ? " cipx-rev-chip-on" : "") }, showRow
-      ? [el("span", { class: "cipx-code" }, [showRow.code]), el("span", { class: "cipx-rev-chipt" }, [showRow.t]),
-         cips.length > 1 ? el("span", { class: "cipx-rev-chipmore", title: cips.join(", ") }, ["+" + (cips.length - 1)]) : null]
-      : [el("span", { class: "cipx-rev-none" }, ["— pick a code —"])]);
-    // "where they are → where they're going": the current TOP sits next to the CIP box,
-    // labeled, so the transition reads at a glance (Sam, 2026-07-17).
-    var fromTop = r.top
-      ? el("span", { class: "cipx-rev-fromtop", title: "Current TOP " + r.top + (r.topTitle ? " · " + r.topTitle : "") }, ["TOP ", el("span", { class: "cipx-code" }, [r.top]), r.topTitle ? el("span", { class: "cipx-rev-fromtt" }, [" · " + r.topTitle]) : null])
-      : el("span", { class: "cipx-rev-fromtop cipx-rev-fromtop-none" }, ["no TOP"]);
-    var transitionLine = el("span", { class: "cipx-rev-tocipline" }, [
-      fromTop,
-      el("span", { class: "cipx-rev-arrow", "aria-hidden": "true" }, ["→"]),
-      el("span", { class: "cipx-rev-ciplabel" }, ["CIP"]),
-      chip,
-    ]);
-    // the "easy button" line beneath: the recommended CIP (consensus > crosswalk). When it
-    // matches what's shown it's a confirmation; when it differs it's the better answer.
-    var rec = reviewRecommendation(r);
-    var recLine = null;
-    if (rec && !confirmed) {
-      recLine = (rec.code === showCode)
-        ? el("span", { class: "cipx-rev-recline cipx-rev-recline-ok" }, ["✓ Recommended — ", el("span", { class: "cipx-rev-rectag" }, [rec.tag])])
-        : el("span", { class: "cipx-rev-recline" }, ["✓ Recommend ", el("span", { class: "cipx-code" }, [rec.code]), " · " + rec.title + " ", el("span", { class: "cipx-rev-rectag" }, [rec.tag])]);
+    function onChange(code) { revToggleCip(r.label, code); renderReview(allRows); }
+    function accept(code) { return function () { revSetCips(r.label, [code]); renderReview(allRows); }; }
+    var chgId = "cipx-chg-" + r.label.replace(/\W/g, "").slice(0, 20);
+
+    // The transition grid: [ current-code label ] → [ CIP box ]. Two aligned rows when peers
+    // suggest a different code (Sam's point 1); the CIP-box column is shared so the boxes line up.
+    var grid = el("div", { class: "cipx-rev-tocip" + (twoBox ? " cipx-rev-2box" : "") }, []);
+    function gline(labelEl, boxEl, cls) {
+      grid.appendChild(el("span", { class: "cipx-rev-glabel" + (cls ? " " + cls : "") }, [labelEl]));
+      grid.appendChild(el("span", { class: "cipx-rev-arrow" + (cls ? " " + cls : ""), "aria-hidden": "true" }, ["→"]));
+      grid.appendChild(el("span", { class: "cipx-rev-gbox" + (cls ? " " + cls : "") }, [boxEl]));
     }
-    var tocip = el("span", { class: "cipx-rev-tocip" }, [transitionLine, recLine]);
+    if (twoBox) {
+      // line 1 (muted): your current TOP → what it maps to via the crosswalk
+      gline(fromTopEl(r),
+        cipBox(r.crosswalk.code, { cls: "cipx-rev-chip-was", id: chgId + "a", onAccept: accept(r.crosswalk.code), onChange: onChange, title: "Use your TOP’s crosswalk code · ▾ to change" }),
+        "cipx-rev-l-was");
+      // line 2 (highlighted): what peers in this discipline point to
+      var recLabel = el("span", { class: "cipx-rev-reclabel", title: peerTagTip(r) }, [el("span", { class: "cipx-rev-recmark", "aria-hidden": "true" }, ["✓"]), "peers ", el("span", { class: "cipx-rev-rectag" }, [peerTag(r)])]);
+      gline(recLabel,
+        cipBox(r.sug.code, { cls: "cipx-rev-chip-rec", id: chgId + "b", onAccept: accept(r.sug.code), onChange: onChange, title: "Use the peer-suggested code · ▾ to change" }),
+        "cipx-rev-l-rec");
+    } else {
+      gline(fromTopEl(r),
+        cipBox(showCode, { on: confirmed, more: cips.length > 1 ? cips.length - 1 : 0, moreTip: cips.join(", "),
+          id: chgId, onAccept: confirmed ? null : (showCode ? accept(showCode) : null), onChange: onChange }));
+    }
+    // caption below the grid: green corroboration when peers agree with the crosswalk (Ready),
+    // or a crosswalk-recommend note. Never on two-box (the second row already says it) or confirmed.
+    var caption = null;
+    if (!confirmed && !twoBox) {
+      if (r.cons) caption = el("div", { class: "cipx-rev-cap cipx-rev-cap-ok", title: peerTagTip(r) }, [el("span", { class: "cipx-rev-recmark", "aria-hidden": "true" }, ["✓"]), el("span", { class: "cipx-rev-rectag" }, [peerTag(r)]), " agree"]);
+      else if (r.m.recommended && BYCODE[r.m.recommended] && r.m.recommended !== showCode) { var rr = BYCODE[r.m.recommended]; caption = el("div", { class: "cipx-rev-cap" }, ["✓ Recommend ", el("span", { class: "cipx-code" }, [rr.code]), " · " + rr.t]); }
+    }
+    var tocip = el("span", { class: "cipx-rev-tocipwrap" }, [grid, caption]);
+
+    function statusTip() {
+      if (confirmed) return "You confirmed this code";
+      if (r.status === "suggest") return "Peers teaching this course" + (r.cons && r.cons.cons.scoped ? " in " + r.subj : "") + " mostly use a different code than your current TOP’s — shown in the row. Worth a look.";
+      if (r.status === "clear") return "Ready — your TOP’s crosswalk and peer colleges point to the same code.";
+      if (r.status === "review") return "Review — no single clear match; open to choose.";
+      return "Manual — too little to suggest a code; open to search.";
+    }
     var head = el("div", { class: "cipx-rev-row", role: "button", tabindex: "0", "aria-expanded": "false" }, [
       caret,
       el("span", { class: "cipx-rev-course" }, [el("span", { class: "cipx-rev-cname", title: r.label }, [r.label])]),
       tocip,
-      el("span", { class: "cipx-rev-stat cipx-rev-stat-" + stat.cls, title: stat.label + (r.disagree ? " · a stronger match sits outside the crosswalk" : "") }, [confirmed ? "✓ you" : stat.g + (r.disagree && r.status !== "manual" ? "⚑" : "")]),
+      el("span", { class: "cipx-rev-stat cipx-rev-stat-" + stat.cls, title: statusTip() }, [confirmed ? "✓" : stat.g]),
     ]);
-    var card = el("div", { class: "cipx-rev-item" + (confirmed ? " cipx-rev-conf" : "") }, [head]);
+    var card = el("div", { class: "cipx-rev-item" + (confirmed ? " cipx-rev-conf" : "") + (twoBox ? " cipx-rev-item-suggest" : "") }, [head]);
     var body = null;
     function paint() {
       var open = !!revOpen[r.label];
@@ -1160,27 +1343,40 @@
     return "Colleges coding it differently:\n" + parts.join("\n");
   }
 
-  // The "how do peers code this course?" block — the corroborating consensus signal, with
-  // Sam's honest "(M use, K differ)" strength metric (hover K to see who/which TOPs), and
-  // the consensus CIP offered as a selectable, pickable candidate.
-  function peerConsensusBlock(r, candRow) {
-    var cons = consensusFor(r.label); if (!cons) return null;
-    var modal = cons.modal, best = bestCipForTop(modal.top, r.m);
-    var own = null; cons.groups.forEach(function (g) { if (g.top === r.top) own = g; });
-    var wrap = el("div", { class: "cipx-rev-peer" }, []);
-    wrap.appendChild(el("div", { class: "cipx-rev-peerlead" }, [svgIcon(COLLEGE_ICON), el("span", {}, ["Field consensus — how peers code this course"])]));
-    wrap.appendChild(el("div", { class: "cipx-rev-peerbody" }, [
-      "Across California, " + cons.n + " college" + (cons.n === 1 ? "" : "s") + " teach “" + cons.key + ".” Most use TOP ",
+  // The shared "how do peers code this course?" summary — the corroborating consensus signal,
+  // with Sam's honest "(M use, K differ)" strength metric (hover K to see who/which TOPs) and
+  // the modal peer field's CIP named inline. Returned as an element LIST + the computed
+  // {cons, modal, best} so BOTH the review expand and the recommend view render the same block
+  // (each then appends its own candidate affordance). ownTop = the course's own current TOP.
+  function consensusSummaryEls(m, label, ownTop, topTitle, subj) {
+    var cons = consensusFor(label, subj); if (!cons) return null;
+    var modal = cons.modal, best = bestCipForTop(modal.top, m);
+    var own = null; cons.groups.forEach(function (g) { if (g.top === ownTop) own = g; });
+    var scoped = cons.scoped && subj;   // consensus was narrowed to this course's discipline
+    var els = [];
+    els.push(el("div", { class: "cipx-rev-peerlead" }, [svgIcon(COLLEGE_ICON), el("span", {}, [scoped ? "Field consensus — how " + subj + " peers code this course" : "Field consensus — how peers code this course"])]));
+    els.push(el("div", { class: "cipx-rev-peerbody" }, [
+      scoped
+        ? ("Among the " + cons.n + " " + subj + " department" + (cons.n === 1 ? "" : "s") + " teaching “" + cons.key + ",” most use TOP ")
+        : ("Across California, " + cons.n + " college" + (cons.n === 1 ? "" : "s") + " teach “" + cons.key + ".” Most use TOP "),
       el("span", { class: "cipx-code" }, [modal.top]), modal.topTitle ? " · " + modal.topTitle : "", " ",
       el("span", { class: "cipx-rev-peermetric", title: differHover(cons) }, ["(" + modal.n + " use, " + cons.differ + " differ)"]),
       best ? el("span", {}, [" → CIP ", el("span", { class: "cipx-code" }, [best.r.code]), " · " + best.r.t + " (via the crosswalk)."]) : " (no crosswalk CIP for that TOP).",
     ]));
-    if (r.top && modal.top !== r.top) {
-      wrap.appendChild(el("div", { class: "cipx-rev-peernote" }, ["This course uses TOP ", el("span", { class: "cipx-code" }, [r.top]), r.topTitle ? " · " + r.topTitle : "", own ? " — " + own.n + " of " + cons.n + (own.n === 1 ? " (the outlier)" : " here") + "." : "."]));
+    if (scoped) els.push(el("div", { class: "cipx-rev-peerscope" }, ["Scoped to " + subj + " peers only — colleges that teach this title in another department (a different discipline) aren’t counted, so their coding can’t override yours."]));
+    if (ownTop && modal.top !== ownTop) {
+      els.push(el("div", { class: "cipx-rev-peernote" }, ["This course uses TOP ", el("span", { class: "cipx-code" }, [ownTop]), topTitle ? " · " + topTitle : "", own ? " — " + own.n + " of " + cons.n + (own.n === 1 ? " (the outlier)" : (scoped ? " " + subj + " peers" : " here")) + "." : "."]));
     }
-    // offer the consensus CIP as a selectable candidate ONLY when it's NEW — i.e. not
-    // already in this course's own TOP crosswalk (which is listed below). For a well-coded
-    // course the consensus just confirms the crosswalk pick; for an outlier it adds the code.
+    return { cons: cons, modal: modal, best: best, els: els };
+  }
+  // Review-expand consensus block: the shared summary + the consensus CIP offered as a
+  // SELECTABLE candidate ONLY when it's NEW — i.e. not already in this course's own TOP
+  // crosswalk (listed below). For a well-coded course the consensus just confirms the
+  // crosswalk pick; for an outlier it adds the code.
+  function peerConsensusBlock(r, candRow) {
+    var sum = consensusSummaryEls(r.m, r.label, r.top, r.topTitle, r.subj); if (!sum) return null;
+    var wrap = el("div", { class: "cipx-rev-peer" }, sum.els);
+    var best = sum.best, modal = sum.modal, cons = sum.cons;
     var inCrosswalk = best ? r.m.cands.some(function (c) { return c.r.code === best.r.code; }) : false;
     if (best && modal.n >= 3 && !inCrosswalk) {
       wrap.appendChild(candRow(best.r, (best.rel || 0),
@@ -1189,19 +1385,31 @@
     }
     return wrap;
   }
+  // Recommend-view consensus block: the shared summary + (when the consensus is CONFIDENT)
+  // the peer field's CIP as a flat, expandable card. Advisory — recommend mode doesn't
+  // persist a choice, so no selectable affordance (that lives in Review my catalog).
+  function recommendConsensusBlock(m, label, ownTop, topTitle) {
+    var subj = parseSubject(label);
+    var sum = consensusSummaryEls(m, label, ownTop, topTitle, subj); if (!sum) return null;
+    var wrap = el("div", { class: "cipx-rev-peer" }, sum.els);
+    if (consensusPick(m, label, ownTop, subj)) wrap.appendChild(recCardStack([{ r: sum.best.r, prov: "", rel: 0, matched: [] }], null, true));
+    return wrap;
+  }
 
   function reviewExpand(r, dec, allRows) {
     var box = el("div", { class: "cipx-rev-detail" }, []);
     var cips = revCips(dec, r.label);
     function toggle(code) { revToggleCip(r.label, code); renderReview(allRows); }   // revOpen keeps this row expanded
-    // one multi-select candidate row (checkbox — a course may carry more than one CIP)
+    // one multi-select candidate row — an explicit Select button (Sam: clearer than a checkbox);
+    // the whole row is still clickable. "✓ Selected" toggles back off. A course may carry >1 CIP.
     function candRow(cr, rel, extraTag, cls, matched) {
       var picked = cips.indexOf(cr.code) >= 0;
+      var btn = el("span", { class: "cipx-rev-selbtn" + (picked ? " on" : ""), role: "button", tabindex: "-1", "aria-hidden": "true" }, [picked ? "✓ Selected" : "Select"]);
       var row = el("div", { class: "cipx-rev-cand" + (cls ? " " + cls : "") + (picked ? " on" : ""), role: "button", tabindex: "0", "aria-pressed": picked ? "true" : "false" }, [
-        el("span", { class: "cipx-rev-check" + (picked ? " on" : "") }, [picked ? "✓" : ""]),
         el("span", { class: "cipx-code" }, [cr.code]),
         el("span", { class: "cipx-rev-candt" }, [cr.t, cr.cat ? el("span", { class: catClass(cr.cat), title: catTip(cr.cat) }, [cr.cat]) : null, extraTag || null]),
         el("span", { class: "cipx-rev-candrel" }, [meter(rel || 0, tierOf(rel || 0).key)]),
+        btn,
       ]);
       row.onclick = function () { toggle(cr.code); };
       row.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(cr.code); } };
@@ -1245,12 +1453,7 @@
       searchWrap.appendChild(comboCore({
         id: "cipx-revsearch-" + r.label.replace(/\W/g, "").slice(0, 20),
         label: "Search all CIP codes", placeholder: "Type a code or keyword…",
-        groupsFor: function (f) {
-          if (!f) return { groups: [], empty: "Type to search all codes." };
-          var hits = ROWS.filter(function (x) { return GOFORWARD[x.cat] && (x.code.indexOf(f) === 0 || (x.t || "").toLowerCase().indexOf(f) >= 0); }).slice(0, 30)
-            .map(function (x) { return [x.code + " — " + x.t, "", x.code]; });
-          return { groups: [[null, hits]], empty: "No code matches “" + f + "”." };
-        },
+        groupsFor: allCodeGroupsFor,
         onPick: function (picked) { toggle(picked[2]); clear(searchWrap); },
       }));
     };
@@ -1267,7 +1470,8 @@
     rows.forEach(function (r) {
       var picked = revCips(dec, r.label);                       // 0+ faculty-chosen CIPs
       var codes = picked.length ? picked : (r.sug ? [r.sug.code] : []);
-      var source = picked.length ? "faculty-confirmed" : (codes.length ? "auto-suggested" : "none");
+      var source = picked.length ? "faculty-confirmed"
+        : (codes.length ? ("auto-suggested (" + (r.sugKind === "consensus" ? "peer consensus" : "crosswalk") + ")") : "none");
       var titles = codes.map(function (c) { return (BYCODE[c] || {}).t || ""; });
       var cats = codes.map(function (c) { return (BYCODE[c] || {}).cat || ""; });
       out.push([q(r.label), q(r.subj), q(r.top), q(r.topTitle), q(codes.join("; ")), q(titles.join("; ")), q(cats.join("; ")), q(REV_STATUS[r.status].label), q(source)].join(","));
@@ -1574,10 +1778,15 @@
       ".cipx-rev-tile:hover{border-color:var(--cipx-accent);}.cipx-rev-tile[aria-pressed=\"true\"]{border-color:var(--cipx-accent);box-shadow:0 0 0 1px var(--cipx-accent);}",
       ".cipx-rev-tilen{font-size:1.15rem;font-weight:800;color:var(--cipx-text);font-variant-numeric:tabular-nums;}",
       ".cipx-rev-tilel{font-size:.72rem;font-weight:600;color:var(--cipx-muted);text-transform:uppercase;letter-spacing:.03em;white-space:nowrap;}",
-      ".cipx-rev-tile-warn .cipx-rev-tilen{color:var(--cipx-warn-fg);}.cipx-rev-tile-ok .cipx-rev-tilen{color:var(--cipx-ok-fg);}",
+      ".cipx-rev-tile-warn .cipx-rev-tilen{color:var(--cipx-muted);}.cipx-rev-tile-ok .cipx-rev-tilen{color:var(--cipx-ok-fg);}.cipx-rev-tile-suggest .cipx-rev-tilen{color:var(--cipx-accent);}",
       ".cipx-rev-progline{font-size:.8rem;color:var(--cipx-muted);font-weight:600;margin:2px 2px 8px;}",
-      ".cipx-rev-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 10px;}",
+      ".cipx-rev-peercount{color:var(--cipx-ok-fg);cursor:help;}",
+      ".cipx-rev-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 8px;}",
       ".cipx-rev-bulk{font-family:inherit;font-size:.82rem;font-weight:700;color:#fff;background:var(--cipx-ok-stripe);border:0;border-radius:8px;padding:8px 14px;cursor:pointer;}.cipx.cipx-theme-dark .cipx-rev-bulk{color:#0e1a2b;}.cipx-rev-bulk:hover{filter:brightness(1.06);}",
+      // accept-all-suggested is emphasized but distinct from the green ready-confirm (it changes codes)
+      ".cipx-rev-bulk-suggest{background:var(--cipx-accent);}",
+      ".cipx-rev-utils{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 12px;}",
+      ".cipx-rev-expand{font-family:inherit;font-size:.78rem;font-weight:700;color:var(--cipx-link);background:var(--cipx-surface);border:1px solid var(--cipx-border);border-radius:8px;padding:7px 12px;cursor:pointer;}.cipx-rev-expand:hover{border-color:var(--cipx-accent);}",
       ".cipx-rev-csv{font-family:inherit;font-size:.78rem;font-weight:700;color:var(--cipx-link);background:var(--cipx-surface);border:1px solid var(--cipx-border);border-radius:8px;padding:7px 12px;cursor:pointer;margin-left:auto;}",
       ".cipx-rev-list{display:flex;flex-direction:column;}",
       ".cipx-rev-item{border-bottom:1px solid var(--cipx-border);}.cipx-rev-conf{background:var(--cipx-ok-bg);}",
@@ -1587,37 +1796,56 @@
       ".cipx-rev-cname{font-weight:600;color:var(--cipx-text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
       ".cipx-rev-ctopline{font-size:.72rem;color:var(--cipx-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
       // the current-TOP → CIP transition beside the CIP box ("where they are → where they're going")
-      ".cipx-rev-tocip{display:flex;flex-direction:column;gap:3px;min-width:0;}",
-      ".cipx-rev-tocipline{display:flex;gap:8px;align-items:center;flex-wrap:nowrap;min-width:0;overflow:hidden;}",
-      ".cipx-rev-chip{flex:0 1 auto;}",
-      ".cipx-rev-recline{font-size:.76rem;font-weight:600;color:var(--cipx-accent);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;}",
-      ".cipx-rev-recline .cipx-code{font-size:.82rem;}",
-      ".cipx-rev-recline-ok{color:var(--cipx-ok-fg);}",
-      ".cipx-rev-rectag{font-size:.66rem;font-weight:600;color:var(--cipx-muted);}",
-      ".cipx-rev-fromtop{font-size:.72rem;color:var(--cipx-muted);white-space:nowrap;flex:none;max-width:100%;}",
+      // the current-code → CIP transition. A shared 3-column grid ([label] → [CIP box]) so that,
+      // when peers suggest a different code, the two CIP boxes line up vertically (Sam's point 1).
+      ".cipx-rev-tocipwrap{display:flex;flex-direction:column;gap:3px;min-width:0;}",
+      ".cipx-rev-tocip{display:grid;grid-template-columns:auto auto minmax(0,auto);gap:4px 8px;align-items:center;min-width:0;}",
+      ".cipx-rev-glabel{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
+      ".cipx-rev-gbox{min-width:0;}",
+      ".cipx-rev-l-was{opacity:.82;}",
+      ".cipx-rev-reclabel{display:inline-flex;align-items:center;gap:4px;font-size:.72rem;font-weight:700;color:var(--cipx-accent);white-space:nowrap;cursor:help;}",
+      ".cipx-rev-recmark{font-weight:800;}",
+      ".cipx-rev-rectag{font-weight:800;color:inherit;font-variant-numeric:tabular-nums;}",
+      ".cipx-rev-cap{font-size:.74rem;font-weight:600;color:var(--cipx-accent);display:flex;align-items:center;gap:4px;flex-wrap:wrap;}",
+      ".cipx-rev-cap-ok{color:var(--cipx-ok-fg);}",
+      ".cipx-rev-fromtop{font-size:.72rem;color:var(--cipx-muted);white-space:nowrap;max-width:100%;}",
       ".cipx-rev-fromtop .cipx-code{color:var(--cipx-text-soft);}",
       ".cipx-rev-fromtt{display:inline-block;max-width:13ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom;color:var(--cipx-muted);}",
       ".cipx-rev-fromtop-none{font-style:italic;}",
-      ".cipx-rev-arrow{color:var(--cipx-muted);flex:none;}",
-      ".cipx-rev-ciplabel{font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--cipx-accent);flex:none;}",
+      ".cipx-rev-arrow{color:var(--cipx-muted);}",
       ".cipx-rev-candtop{font-size:.62rem;font-weight:700;color:var(--cipx-muted);background:var(--cipx-surface-sub);padding:2px 6px;border-radius:6px;white-space:nowrap;}",
       ".cipx-rev-cand-out{border-color:var(--cipx-warn-stripe);}.cipx-rev-cand-out .cipx-code{color:var(--cipx-warn-fg);}",
       ".cipx-rev-outtag{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--cipx-warn-fg);background:var(--cipx-warn-bg);padding:2px 6px;border-radius:6px;}",
-      ".cipx-rev-chip{display:inline-flex;gap:7px;align-items:baseline;border:1px dashed var(--cipx-border-strong);border-radius:8px;padding:4px 9px;min-width:0;}",
+      ".cipx-rev-chip{position:relative;display:inline-flex;gap:7px;align-items:baseline;border:1px dashed var(--cipx-border-strong);border-radius:8px;padding:4px 9px;min-width:0;max-width:100%;cursor:pointer;}",
+      ".cipx-rev-chip:hover{border-color:var(--cipx-accent);}",
       ".cipx-rev-chip .cipx-code{font-size:1.05rem;font-weight:700;color:var(--cipx-text);}",
       ".cipx-rev-chip-on{border-style:solid;border-color:var(--cipx-ok-stripe);background:var(--cipx-ok-bg);}",
+      ".cipx-rev-chip-sug{border-color:var(--cipx-accent);}",
+      // "was" = what the current TOP maps to (muted, secondary); "rec" = the peer-suggested code (emphasized)
+      ".cipx-rev-chip-was{border-style:solid;border-color:var(--cipx-border);background:var(--cipx-surface-sub);}",
+      ".cipx-rev-chip-was .cipx-code{color:var(--cipx-text-soft);font-weight:600;}",
+      ".cipx-rev-chip-rec{border-style:solid;border-color:var(--cipx-accent);background:var(--cipx-accent-soft);box-shadow:0 0 0 1px var(--cipx-accent);}",
+      ".cipx-rev-chip-open{box-shadow:0 0 0 2px var(--cipx-accent);}",
       ".cipx-rev-chipt{font-size:.8rem;color:var(--cipx-text-soft);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
       ".cipx-rev-none{font-size:.8rem;color:var(--cipx-muted);font-style:italic;}",
-      ".cipx-rev-stat{font-size:.74rem;font-weight:700;text-align:right;white-space:nowrap;}",
-      ".cipx-rev-stat-ok{color:var(--cipx-ok-fg);}.cipx-rev-stat-warn{color:var(--cipx-warn-fg);}.cipx-rev-stat-muted{color:var(--cipx-muted);}",
+      ".cipx-rev-chipchg{align-self:center;font-size:.66rem;color:var(--cipx-muted);cursor:pointer;padding:1px 3px;border-radius:5px;line-height:1;}",
+      ".cipx-rev-chipchg:hover{color:var(--cipx-accent);background:var(--cipx-accent-soft);}",
+      ".cipx-rev-chgpanel{position:absolute;top:100%;left:0;z-index:40;margin-top:5px;min-width:270px;max-width:360px;text-align:left;background:var(--cipx-surface);border:1px solid var(--cipx-border-strong);border-radius:10px;padding:9px 10px;box-shadow:0 10px 26px rgba(0,0,0,.20);cursor:default;white-space:normal;}",
+      ".cipx-rev-chghint{font-size:.72rem;font-weight:600;color:var(--cipx-muted);margin-bottom:6px;}",
+      ".cipx-rev-stat{font-size:.9rem;font-weight:800;text-align:right;white-space:nowrap;}",
+      ".cipx-rev-stat-ok{color:var(--cipx-ok-fg);}.cipx-rev-stat-warn{color:var(--cipx-muted);}.cipx-rev-stat-muted{color:var(--cipx-muted);}",
+      // "suggest" status = a calm, direct question mark (Sam's point 3 — not the old busy ⚠⚑)
+      ".cipx-rev-stat-suggest{color:var(--cipx-accent);}",
+      ".cipx-rev-item-suggest{border-left:3px solid var(--cipx-accent);}",
       ".cipx-rev-detail{padding:2px 12px 16px 28px;}",
       ".cipx-rev-top{font-size:.82rem;color:var(--cipx-muted);margin:0 0 10px;}",
-      ".cipx-rev-cand{display:grid;grid-template-columns:18px 88px 1fr 132px;gap:10px;align-items:center;padding:9px 11px;border:1px solid var(--cipx-border);border-radius:9px;margin:6px 0;cursor:pointer;}",
+      ".cipx-rev-cand{display:grid;grid-template-columns:88px 1fr 132px auto;gap:10px;align-items:center;padding:9px 11px;border:1px solid var(--cipx-border);border-radius:9px;margin:6px 0;cursor:pointer;}",
       ".cipx-rev-cand:hover{background:var(--cipx-surface-sub);}.cipx-rev-cand.on{border-color:var(--cipx-accent);box-shadow:0 0 0 1px var(--cipx-accent);}",
       ".cipx-rev-candrel{min-width:0;}.cipx-rev-cand .cipx-meterwrap{min-width:0;max-width:none;}",
-      ".cipx-rev-radio{color:var(--cipx-accent);font-size:1rem;text-align:center;}",
-      ".cipx-rev-check{width:17px;height:17px;box-sizing:border-box;border:1.6px solid var(--cipx-border-strong);border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;color:#fff;line-height:1;}",
-      ".cipx-rev-cand.on .cipx-rev-check{background:var(--cipx-accent);border-color:var(--cipx-accent);}.cipx.cipx-theme-dark .cipx-rev-cand.on .cipx-rev-check{color:#0e1a2b;}",
+      // Select button (Sam's point 4 — clearer than a checkbox); flips to a filled "✓ Selected"
+      ".cipx-rev-selbtn{font-size:.74rem;font-weight:700;color:var(--cipx-link);background:var(--cipx-surface);border:1px solid var(--cipx-border-strong);border-radius:7px;padding:5px 13px;white-space:nowrap;text-align:center;}",
+      ".cipx-rev-cand:hover .cipx-rev-selbtn{border-color:var(--cipx-accent);color:var(--cipx-accent);}",
+      ".cipx-rev-selbtn.on{background:var(--cipx-accent);border-color:var(--cipx-accent);color:#fff;}.cipx.cipx-theme-dark .cipx-rev-selbtn.on{color:#0e1a2b;}",
       ".cipx-rev-pickhint{font-size:.76rem;color:var(--cipx-muted);line-height:1.5;margin:2px 2px 9px;}",
       ".cipx-rev-siglabel{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--cipx-text-soft);margin:12px 2px 4px;}",
       ".cipx-rev-chipmore{font-size:.62rem;font-weight:800;color:var(--cipx-accent);background:var(--cipx-accent-soft);padding:1px 5px;border-radius:5px;cursor:help;}",
@@ -1629,6 +1857,7 @@
       ".cipx-rev-peerbody{font-size:.82rem;color:var(--cipx-text-soft);line-height:1.55;}",
       ".cipx-rev-peermetric{font-weight:700;color:var(--cipx-text);cursor:help;border-bottom:1px dotted var(--cipx-border-strong);white-space:nowrap;}",
       ".cipx-rev-peernote{font-size:.78rem;color:var(--cipx-muted);margin-top:5px;}",
+      ".cipx-rev-peerscope{font-size:.74rem;color:var(--cipx-muted);font-style:italic;margin-top:5px;padding-left:9px;border-left:2px solid var(--cipx-border);}",
       ".cipx-rev-cand-peer{border-color:var(--cipx-accent);margin-top:8px;background:var(--cipx-surface);}",
       ".cipx-rev-peertag{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--cipx-accent);background:var(--cipx-accent-soft);padding:2px 6px;border-radius:6px;white-space:nowrap;}",
       ".cipx-rev-detactions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;}",
@@ -1656,8 +1885,8 @@
         ".cipx-rec-row{grid-template-columns:13px 58px 1fr;gap:8px;}.cipx-rec-meta{grid-column:2/-1;flex-direction:row;align-items:center;min-width:0;margin-top:4px;}.cipx-rec-row-flat{grid-template-columns:13px 58px 1fr;}" +
         ".cipx-rec-card .cipx-detail{padding-left:14px;}" +
         ".cipx-rev-deptinline{flex:1 1 100%;}.cipx-rev-deptsel{max-width:100%;flex:1 1 auto;}.cipx-rev-tiles{gap:6px;}.cipx-rev-tile{padding:6px 10px;min-width:60px;}" +
-        ".cipx-rev-row{grid-template-columns:14px 1fr auto;gap:6px 8px;}.cipx-rev-stat{grid-column:3;grid-row:1;}.cipx-rev-tocip{grid-column:1/-1;grid-row:2;margin-top:4px;}.cipx-rev-tocipline{flex-wrap:wrap;}" +
-        ".cipx-rev-cand{grid-template-columns:18px 64px 1fr;}.cipx-rev-candrel{grid-column:2/-1;margin-top:3px;}.cipx-rev-csv{margin-left:0;}.cipx-rev-detail{padding-left:12px;}" +
+        ".cipx-rev-row{grid-template-columns:14px 1fr auto;gap:6px 8px;}.cipx-rev-stat{grid-column:3;grid-row:1;}.cipx-rev-tocipwrap{grid-column:1/-1;grid-row:2;margin-top:4px;}.cipx-rev-tocip{grid-template-columns:auto auto minmax(0,1fr);}" +
+        ".cipx-rev-cand{grid-template-columns:64px 1fr auto;}.cipx-rev-candrel{grid-column:1/-1;margin-top:3px;}.cipx-rev-csv{margin-left:0;}.cipx-rev-detail{padding-left:12px;}.cipx-rev-chgpanel{min-width:220px;max-width:80vw;}" +
       "}",
     ].join("");
     var stEl = el("style", { id: CSS_ID });
@@ -1692,7 +1921,8 @@
     _passes: passes, _filtered: filtered, _score: scoreAgainst, _courseScore: scoreTokensVs, _courseToks: courseToks,
     _recommend: computeRecommend, _bestMatches: bestMatchCourses,
     _parseSubject: parseSubject, _reviewRows: function (courses) { return (courses || []).map(reviewRowOf); },
-    _setConsensus: function (d) { if (d && d.titles) { CONSENSUS = d.titles; CONSENSUS_COLLEGES = d.colleges || []; } },
-    _consensus: consensusFor, _consensusKey: consensusKey,
+    _reviewRowOf: reviewRowOf,
+    _setConsensus: function (d) { if (d && d.titles) { CONSENSUS = d.titles; CONSENSUS_COLLEGES = d.colleges || []; CONSENSUS_SUBJECTS = d.subjects || []; } },
+    _consensus: consensusFor, _consensusPick: consensusPick, _consensusKey: consensusKey, _subjMatch: subjMatch,
   };
 })();

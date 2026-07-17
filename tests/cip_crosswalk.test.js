@@ -378,6 +378,20 @@ function fresh(withCollege) {
   } catch (e) { recSelThrew = true; console.error(e); }
   check("recommend mode: changing the college rebuilds without throwing", !recSelThrew && rdoc.querySelector(".cipx-rec-combohost"));
 
+  // recommend mode surfaces the peer-consensus block too (extended from review mode). A fresh
+  // instance WITH the consensus fixture, so the block renders on pick.
+  const domRC = freshR("recommend");
+  domRC.window.CPL_CIP_CROSSWALK._setConsensus(RCONSENSUS);
+  const rcdoc = domRC.window.document;
+  await tick(); await tick();
+  const rcInput = rcdoc.querySelector(".cipx-rec-combohost .cipx-cbwrap .cipx-fit-cb");
+  rcInput.focus();
+  const rcNur = Array.prototype.filter.call(rcdoc.querySelector(".cipx-rec-combohost .cipx-fit-panel").querySelectorAll(".cipx-cb-opt"), (o) => /Nursing/.test(o.textContent))[0];
+  rcNur.dispatchEvent(new domRC.window.MouseEvent("mousedown"));
+  const rcHost = rcdoc.querySelector(".cipx-rec-host");
+  check("recommend mode: shows the peer-consensus block for a course", rcHost && rcHost.querySelector(".cipx-rev-peer") && /how peers code/i.test(rcHost.querySelector(".cipx-rev-peer").textContent));
+  check("recommend mode: the consensus block names the peer field's CIP", rcHost && /51\.3801/.test(rcHost.querySelector(".cipx-rev-peer").textContent));
+
   // ── Part B3 — "Review my catalog" (Phase 2 whole-catalog triage) ──
   check("cip_crosswalk.js has the review-catalog mode", /Review my catalog/.test(src) && /cipx-rev-list/.test(src));
   check("exposes the review seams", typeof rApi._reviewRows === "function" && typeof rApi._parseSubject === "function");
@@ -386,6 +400,45 @@ function fresh(withCollege) {
   check("review classifies a two-signals-agree course as ready/clear", revRows.find((r) => /Business Basics/.test(r.label)).status === "clear");
   check("review row carries the suggested CIP + parsed subject", (function () { var r = revRows.find((x) => /Business Basics/.test(x.label)); return r.sug && r.sug.code === "52.0201" && r.subj === "BUS"; })());
   check("review flags a no-crosswalk course as manual", revRows.find((r) => /Orphan/.test(r.label)).status === "manual");
+
+  // ── consensus PRE-FILL + the SUGGESTED-CHANGE two-box (Sam's points 1, 2, 6) ──
+  // NURS 101 is coded under a business TOP (0505.00), but 4 of 5 peer colleges teaching
+  // "Nursing" code it under a Registered Nursing TOP → the peer field points at a DIFFERENT
+  // code (51.3801) than the crosswalk-from-TOP pick (52.0201). That's a "Suggested change":
+  // both codes are kept + the row is surfaced for a glance, not silently marked Ready.
+  const revNurse = revRows.find((r) => /Nursing/.test(r.label));
+  check("consensus outlier → 'Suggested change' (peers point elsewhere than the TOP)", revNurse.status === "suggest" && revNurse.suggestChange === true);
+  check("suggested-change row keeps BOTH codes: crosswalk-from-TOP + the peer code", revNurse.crosswalk && /^52\./.test(revNurse.crosswalk.code) && revNurse.crosswalk.code !== "51.3801" && revNurse.sug && revNurse.sug.code === "51.3801");
+  check("the suggested CIP is the peer-consensus code (not the crosswalk pick)", revNurse.sug.code === "51.3801" && revNurse.sugKind === "consensus");
+  check("the row carries the consensus provenance + outlier flag", !!revNurse.cons && revNurse.cons.outlier === true);
+  // a WEAK / split consensus (no clear majority of peers) must NOT pre-fill — falls back to
+  // the crosswalk. Fresh instance so we don't disturb rApi's fixture: modal is 3 of 7 (43%).
+  const wApi = freshR().window.CPL_CIP_CROSSWALK;
+  wApi._setConsensus({ colleges: ["A", "B", "C", "D", "E", "F", "G"], titles: { "business basics": { n: 7, t: [["1230.00", [0, 1, 2]], ["0505.00", [3, 4]], ["1701.00", [5, 6]]] } } });
+  const wRow = wApi._reviewRows([RCOURSES[0]])[0];
+  check("weak consensus (no majority) does not pre-fill — falls back to the crosswalk", wRow.status === "clear" && wRow.sug.code === "52.0201" && wRow.sugKind === "crosswalk");
+
+  // ── SUBJECT-SCOPED consensus (Sam's BIO 35 "Health Science" catch) ──
+  // The same title can be a HEALTH course at most colleges and a BIOLOGY course at a few. A
+  // title-only consensus lets the health majority override a biology college's coding. Scoping
+  // to same-discipline peers fixes it: a BIO course is compared only against other BIO/BIOL peers.
+  const sApi = freshR().window.CPL_CIP_CROSSWALK;
+  sApi._setConsensus({
+    colleges: ["H1", "H2", "H3", "H4", "B1", "B2", "B3"], subjects: ["HED", "BIOL"],
+    titles: { "health science": { n: 7, t: [["1230.00", [0, 1, 2, 3], [0, 0, 0, 0]], ["0505.00", [4, 5, 6], [1, 1, 1]]] } },
+  });
+  const csFull = sApi._consensus("HED 1 — Health Science");
+  check("subject-scoping: unscoped consensus pools all departments (modal = the health-dept TOP)", csFull && csFull.modal.top === "1230.00" && csFull.n === 7 && !csFull.scoped);
+  const csBio = sApi._consensus("BIO 1 — Health Science", "BIO");
+  check("subject-scoping: scoped to BIO peers, the modal is the Biology TOP (health depts excluded)", csBio && csBio.modal.top === "0505.00" && csBio.n === 3 && csBio.scoped === true);
+  const csHed = sApi._consensus("HED 1 — Health Science", "HED");
+  check("subject-scoping: scoped to HED peers, the modal is the Health TOP", csHed && csHed.modal.top === "1230.00" && csHed.n === 4 && csHed.scoped === true);
+  check("subjMatch folds BIO/BIOL/BIOSC but keeps unrelated codes apart", sApi._subjMatch("BIO", "BIOL") && sApi._subjMatch("BIO", "BIOSC") && sApi._subjMatch("BIOL", "BIO") && !sApi._subjMatch("BIO", "HED") && !sApi._subjMatch("BIO", "BUS"));
+  // too few same-subject peers → fall back to the full-title consensus (never a scoped consensus of 1)
+  const csThin = sApi._consensus("ZOO 1 — Health Science", "ZOO");
+  check("subject-scoping: too few same-subject peers → falls back to the full-title consensus", csThin && csThin.scoped === false && csThin.n === 7);
+  // legacy consensus data (no subjects[]) still works — scoping simply never engages
+  check("subject-scoping: legacy data without subjects[] degrades to the full consensus", (function () { var c = rApi._consensus("NURS 101 — Nursing", "NURS"); return c && c.scoped === false && c.modal.top === "1230.00"; })());
 
   const domRev = freshR("review");
   domRev.window.CPL_CIP_CROSSWALK._setConsensus(RCONSENSUS);   // peer-consensus fixture (fetch is a no-op in jsdom)
@@ -416,18 +469,24 @@ function fresh(withCollege) {
   check("review mode: a course can carry more than one CIP (multi-select)", (function () { try { var v = JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["BUS 101 — Business Basics"]; return Array.isArray(v) && v.length >= 2; } catch (e) { return false; } })());
   if (bus2) { bus2.click(); await tick(); }
   check("review mode: toggling a picked CIP off removes it", (function () { try { var v = JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["BUS 101 — Business Basics"]; return Array.isArray(v) && v.length === 1; } catch (e) { return false; } })());
-  check("review row shows the TOP → CIP transition (TOP beside a labeled CIP box)", revRow.querySelector(".cipx-rev-tocip .cipx-rev-fromtop") && /0505\.00/.test(revRow.querySelector(".cipx-rev-tocip .cipx-rev-fromtop").textContent) && !!revRow.querySelector(".cipx-rev-tocip .cipx-rev-ciplabel"));
+  check("review row shows the TOP → CIP transition (current TOP beside the CIP box)", revRow.querySelector(".cipx-rev-tocip .cipx-rev-fromtop") && /0505\.00/.test(revRow.querySelector(".cipx-rev-tocip .cipx-rev-fromtop").textContent) && !!revRow.querySelector(".cipx-rev-tocip .cipx-rev-gbox .cipx-rev-chip"));
   // a stronger match OUTSIDE the crosswalk is a selectable candidate (assignable)
   deptSel.value = "NURS"; deptSel.dispatchEvent(new domRev.window.Event("change"));
   await tick(); await tick();
   const nurItem = revdoc.querySelector(".cipx-rev-list .cipx-rev-item");
-  // the collapsed row surfaces the recommended CIP beneath the current one (the easy button)
-  const nurRec = nurItem.querySelector(".cipx-rev-recline");
-  check("collapsed row shows the recommended CIP beneath the current TOP/CIP", nurRec && /51\.3801/.test(nurRec.textContent));
-  nurItem.querySelector(".cipx-rev-row").click();
-  await tick();
+  // NURS is a SUGGESTED-CHANGE row: two aligned CIP boxes (Sam's point 1) — the crosswalk-from-TOP
+  // pick (52.0201, muted "was") and the peer-suggested code (51.3801, emphasized) — a calm "?"
+  // glyph (point 3), and the detail EXPANDED by default (point 6).
+  check("suggested-change row shows TWO aligned CIP boxes", !!nurItem.querySelector(".cipx-rev-2box") && !!nurItem.querySelector(".cipx-rev-chip-was .cipx-code") && !!nurItem.querySelector(".cipx-rev-chip-rec .cipx-code"));
+  check("box A = the crosswalk-from-TOP code (a business 52.* code, muted 'was'), distinct from the peer code", (function () { var w = nurItem.querySelector(".cipx-rev-chip-was"); return w && /52\.\d{4}/.test(w.textContent) && !/51\.3801/.test(w.textContent); })());
+  check("box B = the peer-suggested code (emphasized 'rec')", /51\.3801/.test(nurItem.querySelector(".cipx-rev-chip-rec").textContent));
+  check("the peer line reports the agreement metric (4 of 5)", (function () { var l = nurItem.querySelector(".cipx-rev-reclabel"); return l && /4 of 5/.test(l.textContent); })());
+  check("the status glyph is a calm '?' (not the old ⚠⚑)", (function () { var s = nurItem.querySelector(".cipx-rev-stat-suggest"); return s && /\?/.test(s.textContent) && !/⚑|⚠/.test(nurItem.querySelector(".cipx-rev-row").textContent); })());
+  check("suggested-change rows land in the '? Suggested' triage bucket", (function () { var t = Array.prototype.filter.call(revdoc.querySelectorAll(".cipx-rev-tile"), (x) => /Suggested/.test(x.textContent))[0]; return t && /1/.test(t.querySelector(".cipx-rev-tilen").textContent); })());
+  check("progress line reports the peer-corroborated count", (function () { var p = revdoc.querySelector(".cipx-rev-peercount"); return p && /1 peer-corroborated/.test(p.textContent); })());
+  // default-expanded (point 6): the detail is already open — no click needed
   const outCand = nurItem.querySelector(".cipx-rev-cand-out");
-  check("review mode: a stronger outside-crosswalk match renders as a selectable candidate", !!outCand);
+  check("suggested-change row is EXPANDED by default (detail + outside-crosswalk candidate visible)", !!nurItem.querySelector(".cipx-rev-detail") && !!outCand);
   // peer-consensus block (before we click anything that re-renders)
   const peer = nurItem.querySelector(".cipx-rev-peer");
   check("peer-consensus block renders how other colleges code this course", !!peer && /how peers code/i.test(peer.textContent));
@@ -435,9 +494,31 @@ function fresh(withCollege) {
   check("peer differ-metric hover lists the differing colleges", (function () { var m = peer && peer.querySelector(".cipx-rev-peermetric"); return m && /Test College/.test(m.getAttribute("title") || ""); })());
   const peerCand = nurItem.querySelector(".cipx-rev-cand-peer");
   check("peer block offers the consensus CIP as a selectable candidate", !!peerCand && /51\.3801/.test(peerCand.textContent));
+  check("candidate rows use a Select button, not a checkbox (Sam's point 4)", !!peerCand.querySelector(".cipx-rev-selbtn") && !nurItem.querySelector(".cipx-rev-check"));
   outCand.click();
   await tick();
   check("review mode: assigning an outside-crosswalk code persists it", (function () { try { var v = JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["NURS 101 — Nursing"]; return Array.isArray(v) && v.indexOf("51.3801") >= 0; } catch (e) { return false; } })());
+
+  // ── new Review UI affordances on a FRESH, unmutated instance (Sam's points 1, 4, 5, 6) ──
+  const domU = freshR("review");
+  domU.window.CPL_CIP_CROSSWALK._setConsensus(RCONSENSUS);
+  const udoc = domU.window.document;
+  await tick(); await tick();
+  const uSel = udoc.querySelector(".cipx-rev-deptsel");
+  uSel.value = "__all__"; uSel.dispatchEvent(new domU.window.Event("change"));
+  await tick(); await tick();
+  const xall = udoc.querySelector(".cipx-rev-utils .cipx-rev-expand");
+  check("Expand-all control is present (point 6)", !!xall && /Expand all|Collapse all/.test(xall.textContent));
+  check("suggested-change rows are expanded by default, others collapsed", udoc.querySelectorAll(".cipx-rev-detail").length >= 1 && udoc.querySelectorAll(".cipx-rev-detail").length < udoc.querySelectorAll(".cipx-rev-item").length);
+  xall.click(); await tick();
+  check("Expand all opens every row", udoc.querySelectorAll(".cipx-rev-detail").length === udoc.querySelectorAll(".cipx-rev-item").length);
+  const uNur = Array.prototype.filter.call(udoc.querySelectorAll(".cipx-rev-item"), (it) => /Nursing/.test(it.textContent))[0];
+  const uChg = uNur.querySelector(".cipx-rev-chip-rec .cipx-rev-chipchg");
+  check("the CIP box carries a ▾ 'change to any code' affordance (point 5)", !!uChg);
+  uChg.click(); await tick();
+  check("clicking ▾ opens a change-to-any-code dropdown", !!uNur.querySelector(".cipx-rev-chgpanel .cipx-cbwrap"));
+  uNur.querySelector(".cipx-rev-chip-rec").click(); await tick();
+  check("clicking the emphasized peer box uses that code (one-click accept — point 1)", (function () { try { var v = JSON.parse(domU.window.localStorage.getItem("cipx_rev_test_college") || "{}")["NURS 101 — Nursing"]; return Array.isArray(v) && v.indexOf("51.3801") >= 0; } catch (e) { return false; } })());
 
   // ── Part C — failure guards ──
   const dom2 = makeDom(); dom2.window.eval(src);
