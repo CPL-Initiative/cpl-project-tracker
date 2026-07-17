@@ -926,7 +926,7 @@
   // Framing everywhere: a SUGGESTION you confirm; COCI is the record.
   // ═══════════════════════════════════════════════════════════════════════════
   var rev = { dept: null, filter: "all", q: "", byDept: {}, courses: null };
-  var revListHost, revSummaryHost, revDeptSel, revProgHost;
+  var revListHost, revSummaryHost, revDeptSel, revProgHost, revOpen = {};
 
   function parseSubject(label) {
     var l = label || "", i = l.indexOf(" — ");
@@ -939,11 +939,22 @@
     if (!st.college) return {};
     try { return JSON.parse(localStorage.getItem("cipx_rev_" + st.college) || "{}") || {}; } catch (e) { return {}; }
   }
-  function revSaveDecision(label, cip) {
+  // A course's chosen CIPs — an ARRAY (a course may carry more than one CIP; the field
+  // decides — interdisciplinary courses warrant it). Legacy single-string values migrate.
+  function revCips(dec, label) {
+    var v = (dec || {})[label];
+    return !v ? [] : (Array.isArray(v) ? v.slice() : [v]);
+  }
+  function revSetCips(label, arr) {
     if (!st.college) return;
     var d = revDecisions();
-    if (cip) d[label] = cip; else delete d[label];
+    if (arr && arr.length) d[label] = arr; else delete d[label];
     try { localStorage.setItem("cipx_rev_" + st.college, JSON.stringify(d)); } catch (e) {}
+  }
+  function revToggleCip(label, cip) {
+    var d = revDecisions(), arr = revCips(d, label), i = arr.indexOf(cip);
+    if (i >= 0) arr.splice(i, 1); else arr.push(cip);
+    revSetCips(label, arr);
   }
 
   // classify one course into the triage buckets using the easy-button engine
@@ -1021,6 +1032,7 @@
 
   function loadDept() {
     if (!rev.dept) { clear(revSummaryHost); clear(revListHost); clear(revProgHost); return; }
+    revOpen = {};   // fresh expansion state per department
     var dept = { subj: rev.dept, courses: deptCourses() };
     clear(revListHost); clear(revSummaryHost);
     revProgHost.textContent = "Analyzing " + dept.courses.length.toLocaleString() + " courses…";
@@ -1031,7 +1043,7 @@
   function renderReview(rows) {
     var dec = revDecisions();
     var counts = { clear: 0, review: 0, manual: 0, confirmed: 0 };
-    rows.forEach(function (r) { counts[r.status]++; if (dec[r.label]) counts.confirmed++; });
+    rows.forEach(function (r) { counts[r.status]++; if (revCips(dec, r.label).length) counts.confirmed++; });
     // summary tiles double as filters
     clear(revSummaryHost);
     var tiles = el("div", { class: "cipx-rev-tiles" }, []);
@@ -1047,10 +1059,10 @@
     revSummaryHost.appendChild(progline);
     // per-department bulk-confirm of the clear matches + CSV
     var actions = el("div", { class: "cipx-rev-actions" }, []);
-    var unconfirmedClear = rows.filter(function (r) { return r.status === "clear" && r.sug && !dec[r.label]; });
+    var unconfirmedClear = rows.filter(function (r) { return r.status === "clear" && r.sug && !revCips(dec, r.label).length; });
     if (unconfirmedClear.length) {
       var bulk = el("button", { class: "cipx-rev-bulk", type: "button" }, ["✓ Confirm all " + unconfirmedClear.length + " ready match" + (unconfirmedClear.length === 1 ? "" : "es") + (rev.dept !== "__all__" ? " in " + rev.dept : "")]);
-      bulk.onclick = function () { unconfirmedClear.forEach(function (r) { revSaveDecision(r.label, r.sug.code); }); renderReview(rows); };
+      bulk.onclick = function () { unconfirmedClear.forEach(function (r) { revSetCips(r.label, [r.sug.code]); }); renderReview(rows); };
       actions.appendChild(bulk);
     }
     actions.appendChild(el("button", { class: "cipx-rev-csv", type: "button", title: "Download this list as CSV" }, ["⬇ CSV"]));
@@ -1073,13 +1085,15 @@
   }
 
   function reviewRow(r, dec, allRows) {
-    var chosen = dec[r.label] || (r.sug ? r.sug.code : null);
-    var chosenRow = chosen ? BYCODE[chosen] : null;
-    var confirmed = !!dec[r.label];
+    var cips = revCips(dec, r.label);
+    var confirmed = cips.length > 0;
+    var showCode = cips.length ? cips[0] : (r.sug ? r.sug.code : null);
+    var showRow = showCode ? BYCODE[showCode] : null;
     var stat = REV_STATUS[r.status];
     var caret = el("span", { class: "cipx-caret" }, ["▸"]);
-    var chip = el("span", { class: "cipx-rev-chip" + (confirmed ? " cipx-rev-chip-on" : "") }, chosenRow
-      ? [el("span", { class: "cipx-code" }, [chosenRow.code]), el("span", { class: "cipx-rev-chipt" }, [chosenRow.t])]
+    var chip = el("span", { class: "cipx-rev-chip" + (confirmed ? " cipx-rev-chip-on" : "") }, showRow
+      ? [el("span", { class: "cipx-code" }, [showRow.code]), el("span", { class: "cipx-rev-chipt" }, [showRow.t]),
+         cips.length > 1 ? el("span", { class: "cipx-rev-chipmore", title: cips.join(", ") }, ["+" + (cips.length - 1)]) : null]
       : [el("span", { class: "cipx-rev-none" }, ["— pick a code —"])]);
     // "where they are → where they're going": the current TOP sits next to the CIP box,
     // labeled, so the transition reads at a glance (Sam, 2026-07-17).
@@ -1099,14 +1113,17 @@
       el("span", { class: "cipx-rev-stat cipx-rev-stat-" + stat.cls, title: stat.label + (r.disagree ? " · a stronger match sits outside the crosswalk" : "") }, [confirmed ? "✓ you" : stat.g + (r.disagree && r.status !== "manual" ? "⚑" : "")]),
     ]);
     var card = el("div", { class: "cipx-rev-item" + (confirmed ? " cipx-rev-conf" : "") }, [head]);
-    var open = false, body = null;
-    function tog() {
-      open = !open; caret.textContent = open ? "▾" : "▸"; head.setAttribute("aria-expanded", open ? "true" : "false");
-      if (open) { body = reviewExpand(r, dec, allRows); card.appendChild(body); }
-      else if (body) { card.removeChild(body); body = null; }
+    var body = null;
+    function paint() {
+      var open = !!revOpen[r.label];
+      caret.textContent = open ? "▾" : "▸"; head.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open && !body) { body = reviewExpand(r, dec, allRows); card.appendChild(body); }
+      else if (!open && body) { card.removeChild(body); body = null; }
     }
+    function tog() { revOpen[r.label] = !revOpen[r.label]; paint(); }
     head.onclick = tog;
     head.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); tog(); } };
+    paint();   // multi-select toggles re-render the list; revOpen restores this row's expansion
     return card;
   }
 
@@ -1123,90 +1140,82 @@
   // The "how do peers code this course?" block — the corroborating consensus signal, with
   // Sam's honest "(M use, K differ)" strength metric (hover K to see who/which TOPs), and
   // the consensus CIP offered as a selectable, pickable candidate.
-  function peerConsensusBlock(r, chosen, choose) {
+  function peerConsensusBlock(r, candRow) {
     var cons = consensusFor(r.label); if (!cons) return null;
     var modal = cons.modal, best = bestCipForTop(modal.top, r.m);
     var own = null; cons.groups.forEach(function (g) { if (g.top === r.top) own = g; });
     var wrap = el("div", { class: "cipx-rev-peer" }, []);
-    wrap.appendChild(el("div", { class: "cipx-rev-peerlead" }, [svgIcon(COLLEGE_ICON), el("span", {}, ["How peers code this course"])]));
-    var body = el("div", { class: "cipx-rev-peerbody" }, [
+    wrap.appendChild(el("div", { class: "cipx-rev-peerlead" }, [svgIcon(COLLEGE_ICON), el("span", {}, ["Field consensus — how peers code this course"])]));
+    wrap.appendChild(el("div", { class: "cipx-rev-peerbody" }, [
       "Across California, " + cons.n + " college" + (cons.n === 1 ? "" : "s") + " teach “" + cons.key + ".” Most use TOP ",
       el("span", { class: "cipx-code" }, [modal.top]), modal.topTitle ? " · " + modal.topTitle : "", " ",
       el("span", { class: "cipx-rev-peermetric", title: differHover(cons) }, ["(" + modal.n + " use, " + cons.differ + " differ)"]),
-      best ? el("span", {}, [" → CIP ", el("span", { class: "cipx-code" }, [best.r.code]), " · " + best.r.t + "."]) : " (no crosswalk CIP for that TOP).",
-    ]);
-    wrap.appendChild(body);
+      best ? el("span", {}, [" → CIP ", el("span", { class: "cipx-code" }, [best.r.code]), " · " + best.r.t + " (via the crosswalk)."]) : " (no crosswalk CIP for that TOP).",
+    ]));
     if (r.top && modal.top !== r.top) {
       wrap.appendChild(el("div", { class: "cipx-rev-peernote" }, ["This course uses TOP ", el("span", { class: "cipx-code" }, [r.top]), r.topTitle ? " · " + r.topTitle : "", own ? " — " + own.n + " of " + cons.n + (own.n === 1 ? " (the outlier)" : " here") + "." : "."]));
     }
-    // offer the consensus CIP as a selectable candidate (when a real consensus + a crosswalk CIP)
-    if (best && modal.n >= 3 && best.r.code !== chosen) {
-      var row = el("div", { class: "cipx-rev-cand cipx-rev-cand-peer", role: "button", tabindex: "0" }, [
-        el("span", { class: "cipx-rev-radio" }, ["○"]),
-        el("span", { class: "cipx-code" }, [best.r.code]),
-        el("span", { class: "cipx-rev-candt" }, [best.r.t, best.r.cat ? el("span", { class: catClass(best.r.cat), title: catTip(best.r.cat) }, [best.r.cat]) : null,
-          el("span", { class: "cipx-rev-peertag", title: "Where peer colleges' TOP codes point via the crosswalk" }, ["peer consensus · " + modal.n + " of " + cons.n])]),
-        el("span", { class: "cipx-rev-candrel" }, [meter(best.rel || 0, tierOf(best.rel || 0).key)]),
-      ]);
-      row.onclick = function () { choose(best.r.code); };
-      row.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); choose(best.r.code); } };
-      wrap.appendChild(row);
+    // offer the consensus CIP as a selectable candidate ONLY when it's NEW — i.e. not
+    // already in this course's own TOP crosswalk (which is listed below). For a well-coded
+    // course the consensus just confirms the crosswalk pick; for an outlier it adds the code.
+    var inCrosswalk = best ? r.m.cands.some(function (c) { return c.r.code === best.r.code; }) : false;
+    if (best && modal.n >= 3 && !inCrosswalk) {
+      wrap.appendChild(candRow(best.r, (best.rel || 0),
+        el("span", { class: "cipx-rev-peertag", title: "Where peer colleges' TOP codes point via the crosswalk" }, ["peer consensus · " + modal.n + " of " + cons.n]),
+        "cipx-rev-cand-peer"));
     }
     return wrap;
   }
 
   function reviewExpand(r, dec, allRows) {
     var box = el("div", { class: "cipx-rev-detail" }, []);
-    // (The current TOP is shown in the collapsed row's "TOP → CIP" line — no need to
-    // repeat it here.) Candidate picker: the crosswalk candidates (or closest-by-
-    // description), single-select. Crosswalk candidates carry a "from TOP N" tag so
-    // the crosswalk lineage is apparent (Sam); outside-crosswalk ones are tagged instead.
-    var opts = r.m.cands.length ? r.m.cands : nonBoiler(r.m.res.ranked).slice(0, 6);
-    if (!opts.length) box.appendChild(el("div", { class: "cipx-fitmsg" }, [r.m.thin ? "Too little catalog description to suggest a code — pick one below." : "No crosswalk match — search all codes to pick one."]));
-    var chosen = dec[r.label] || (r.sug ? r.sug.code : null);
-    var fromCrosswalk = r.m.cands.length > 0;   // opts are official crosswalk candidates (vs. description fallback)
-    function choose(code) { revSaveDecision(r.label, code); renderReview(allRows); }
-    opts.slice(0, 6).forEach(function (o) {
-      var cr = o.r, isPick = cr.code === chosen;
-      var row = el("div", { class: "cipx-rev-cand" + (isPick ? " on" : ""), role: "button", tabindex: "0" }, [
-        el("span", { class: "cipx-rev-radio" }, [isPick ? "◉" : "○"]),
+    var cips = revCips(dec, r.label);
+    function toggle(code) { revToggleCip(r.label, code); renderReview(allRows); }   // revOpen keeps this row expanded
+    // one multi-select candidate row (checkbox — a course may carry more than one CIP)
+    function candRow(cr, rel, extraTag, cls, matched) {
+      var picked = cips.indexOf(cr.code) >= 0;
+      var row = el("div", { class: "cipx-rev-cand" + (cls ? " " + cls : "") + (picked ? " on" : ""), role: "button", tabindex: "0", "aria-pressed": picked ? "true" : "false" }, [
+        el("span", { class: "cipx-rev-check" + (picked ? " on" : "") }, [picked ? "✓" : ""]),
         el("span", { class: "cipx-code" }, [cr.code]),
-        el("span", { class: "cipx-rev-candt" }, [cr.t, cr.cat ? el("span", { class: catClass(cr.cat), title: catTip(cr.cat) }, [cr.cat]) : null,
-          (fromCrosswalk && r.top) ? el("span", { class: "cipx-rev-candtop", title: "The official crosswalk maps this CIP from the course's TOP " + r.top }, ["← TOP ", r.top]) : null]),
-        el("span", { class: "cipx-rev-candrel" }, [(function () { var p = o.conf != null ? o.conf : (o.rel || 0); return meter(p, tierOf(p).key); })()]),
+        el("span", { class: "cipx-rev-candt" }, [cr.t, cr.cat ? el("span", { class: catClass(cr.cat), title: catTip(cr.cat) }, [cr.cat]) : null, extraTag || null]),
+        el("span", { class: "cipx-rev-candrel" }, [meter(rel || 0, tierOf(rel || 0).key)]),
       ]);
-      row.onclick = function () { choose(cr.code); };
-      row.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); choose(cr.code); } };
-      if (o.matched && o.matched.length) row.appendChild(el("div", { class: "cipx-rev-why" }, ["matched: " + o.matched.slice(0, 6).join(", ")]));
-      box.appendChild(row);
+      row.onclick = function () { toggle(cr.code); };
+      row.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(cr.code); } };
+      if (matched && matched.length) row.appendChild(el("div", { class: "cipx-rev-why" }, ["matched: " + matched.slice(0, 6).join(", ")]));
+      return row;
+    }
+    box.appendChild(el("div", { class: "cipx-rev-pickhint" }, ["Check one or more CIP codes — most courses take one; interdisciplinary courses may warrant more. Signals below are ordered strongest first."]));
+
+    // 1) FIELD CONSENSUS FIRST — the strongest, most-corroborated signal (Sam's ordering)
+    var peer = peerConsensusBlock(r, candRow); if (peer) box.appendChild(peer);
+
+    // 2) the course's own TOP crosswalk candidates (or closest-by-description fallback)
+    var opts = r.m.cands.length ? r.m.cands : nonBoiler(r.m.res.ranked).slice(0, 6);
+    var fromCrosswalk = r.m.cands.length > 0;
+    box.appendChild(el("div", { class: "cipx-rev-siglabel" }, [fromCrosswalk ? "From this course’s TOP crosswalk" + (r.top ? " (" + r.top + ")" : "") : "Closest CIP codes by description"]));
+    if (!opts.length) box.appendChild(el("div", { class: "cipx-fitmsg" }, [r.m.thin ? "Too little catalog description to suggest a code — search all codes below." : "No crosswalk match — search all codes below."]));
+    opts.slice(0, 6).forEach(function (o) {
+      var extraTag = (fromCrosswalk && r.top) ? el("span", { class: "cipx-rev-candtop", title: "The official crosswalk maps this CIP from the course's TOP " + r.top }, ["← TOP ", r.top]) : null;
+      box.appendChild(candRow(o.r, (o.conf != null ? o.conf : (o.rel || 0)), extraTag, null, o.matched));
     });
-    // Stronger matches OUTSIDE the crosswalk — the course's TOP may be off. Render
-    // them as SELECTABLE candidates too (Sam: let faculty assign one directly), not
-    // just a note, since the honest answer is sometimes to pick the outside code.
+
+    // 3) stronger description matches OUTSIDE the crosswalk (the lexical signal, weakest)
     if (r.disagree && r.m.beyond.length) {
-      box.appendChild(el("div", { class: "cipx-rev-flag" }, ["⚑ Stronger description match" + (r.m.beyond.length > 1 ? "es" : "") + " outside the crosswalk. This course is coded ", el("b", {}, ["TOP " + r.top + (r.topTitle ? " · " + r.topTitle : "")]), " — its TOP may be mis-coded, which would make the crosswalk recommendation misleading. Assign one of these only if it truly fits the course:"]));
+      box.appendChild(el("div", { class: "cipx-rev-flag" }, ["⚑ Stronger description match" + (r.m.beyond.length > 1 ? "es" : "") + " outside the crosswalk. This course is coded ", el("b", {}, ["TOP " + r.top + (r.topTitle ? " · " + r.topTitle : "")]), " — its TOP may be mis-coded, which would make the crosswalk recommendation misleading. Assign one only if it truly fits the course:"]));
       r.m.beyond.slice(0, 3).forEach(function (o) {
-        var cr = o.r, isPick = cr.code === chosen;
-        var row = el("div", { class: "cipx-rev-cand cipx-rev-cand-out" + (isPick ? " on" : ""), role: "button", tabindex: "0" }, [
-          el("span", { class: "cipx-rev-radio" }, [isPick ? "◉" : "○"]),
-          el("span", { class: "cipx-code" }, [cr.code]),
-          el("span", { class: "cipx-rev-candt" }, [cr.t, cr.cat ? el("span", { class: catClass(cr.cat), title: catTip(cr.cat) }, [cr.cat]) : null, el("span", { class: "cipx-rev-outtag" }, ["outside crosswalk"])]),
-          el("span", { class: "cipx-rev-candrel" }, [meter(o.rel || 0, tierOf(o.rel || 0).key)]),
-        ]);
-        row.onclick = function () { choose(cr.code); };
-        row.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); choose(cr.code); } };
-        if (o.matched && o.matched.length) row.appendChild(el("div", { class: "cipx-rev-why" }, ["matched: " + o.matched.slice(0, 6).join(", ")]));
-        box.appendChild(row);
+        box.appendChild(candRow(o.r, (o.rel || 0), el("span", { class: "cipx-rev-outtag" }, ["outside crosswalk"]), "cipx-rev-cand-out", o.matched));
       });
     }
-    // the corroborating peer-consensus signal (how other colleges code this same course)
-    var peer = peerConsensusBlock(r, chosen, choose); if (peer) box.appendChild(peer);
-    // actions: confirm + search-all escape hatch + clear
+
+    // actions: confirm-the-suggestion (when nothing checked yet) + search-all + clear-all
     var acts = el("div", { class: "cipx-rev-detactions" }, []);
-    var conf = el("button", { class: "cipx-rev-confirm", type: "button" }, [dec[r.label] ? "✓ Confirmed — change?" : "Confirm this code"]);
-    conf.onclick = function () { revSaveDecision(r.label, chosen); renderReview(allRows); };
-    if (chosen) acts.appendChild(conf);
-    var srch = el("button", { class: "cipx-rev-searchall", type: "button" }, ["Search all codes…"]);
+    if (!cips.length && r.sug) {
+      var conf = el("button", { class: "cipx-rev-confirm", type: "button" }, ["✓ Confirm " + r.sug.code]);
+      conf.onclick = function () { toggle(r.sug.code); };
+      acts.appendChild(conf);
+    }
+    var srch = el("button", { class: "cipx-rev-searchall", type: "button" }, ["+ Add another code…"]);
     var searchWrap = el("div", {}, []);
     srch.onclick = function () {
       if (searchWrap.firstChild) { clear(searchWrap); return; }
@@ -1219,12 +1228,12 @@
             .map(function (x) { return [x.code + " — " + x.t, "", x.code]; });
           return { groups: [[null, hits]], empty: "No code matches “" + f + "”." };
         },
-        onPick: function (picked) { choose(picked[2]); },
+        onPick: function (picked) { toggle(picked[2]); clear(searchWrap); },
       }));
     };
     acts.appendChild(srch);
     acts.appendChild(searchWrap);
-    if (dec[r.label]) { var clr = el("button", { class: "cipx-rev-clear", type: "button" }, ["Clear"]); clr.onclick = function () { revSaveDecision(r.label, null); renderReview(allRows); }; acts.appendChild(clr); }
+    if (cips.length) { var clr = el("button", { class: "cipx-rev-clear", type: "button" }, [cips.length > 1 ? "Clear all" : "Clear"]); clr.onclick = function () { revSetCips(r.label, []); renderReview(allRows); }; acts.appendChild(clr); }
     box.appendChild(acts);
     return box;
   }
@@ -1233,9 +1242,12 @@
     var out = ["Course,Subject,Current TOP,TOP Title,CIP Code,CIP Title,CIP Category,Status,Source"];
     function q(v) { return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; }
     rows.forEach(function (r) {
-      var chosen = dec[r.label] || (r.sug ? r.sug.code : ""), cr = chosen ? BYCODE[chosen] : null;
-      var source = dec[r.label] ? "faculty-confirmed" : (chosen ? "auto-suggested" : "none");
-      out.push([q(r.label), q(r.subj), q(r.top), q(r.topTitle), q(chosen), q(cr ? cr.t : ""), q(cr ? cr.cat : ""), q(REV_STATUS[r.status].label), q(source)].join(","));
+      var picked = revCips(dec, r.label);                       // 0+ faculty-chosen CIPs
+      var codes = picked.length ? picked : (r.sug ? [r.sug.code] : []);
+      var source = picked.length ? "faculty-confirmed" : (codes.length ? "auto-suggested" : "none");
+      var titles = codes.map(function (c) { return (BYCODE[c] || {}).t || ""; });
+      var cats = codes.map(function (c) { return (BYCODE[c] || {}).cat || ""; });
+      out.push([q(r.label), q(r.subj), q(r.top), q(r.topTitle), q(codes.join("; ")), q(titles.join("; ")), q(cats.join("; ")), q(REV_STATUS[r.status].label), q(source)].join(","));
     });
     var blob = new Blob([out.join("\n")], { type: "text/csv" });
     var a = document.createElement("a");
@@ -1575,6 +1587,11 @@
       ".cipx-rev-cand:hover{background:var(--cipx-surface-sub);}.cipx-rev-cand.on{border-color:var(--cipx-accent);box-shadow:0 0 0 1px var(--cipx-accent);}",
       ".cipx-rev-candrel{min-width:0;}.cipx-rev-cand .cipx-meterwrap{min-width:0;max-width:none;}",
       ".cipx-rev-radio{color:var(--cipx-accent);font-size:1rem;text-align:center;}",
+      ".cipx-rev-check{width:17px;height:17px;box-sizing:border-box;border:1.6px solid var(--cipx-border-strong);border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;color:#fff;line-height:1;}",
+      ".cipx-rev-cand.on .cipx-rev-check{background:var(--cipx-accent);border-color:var(--cipx-accent);}.cipx.cipx-theme-dark .cipx-rev-cand.on .cipx-rev-check{color:#0e1a2b;}",
+      ".cipx-rev-pickhint{font-size:.76rem;color:var(--cipx-muted);line-height:1.5;margin:2px 2px 9px;}",
+      ".cipx-rev-siglabel{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--cipx-text-soft);margin:12px 2px 4px;}",
+      ".cipx-rev-chipmore{font-size:.62rem;font-weight:800;color:var(--cipx-accent);background:var(--cipx-accent-soft);padding:1px 5px;border-radius:5px;cursor:help;}",
       ".cipx-rev-candt{font-weight:600;color:var(--cipx-text);min-width:0;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;}",
       ".cipx-rev-why{grid-column:2/-1;font-size:.72rem;color:var(--cipx-muted);}",
       ".cipx-rev-flag{font-size:.78rem;color:var(--cipx-warn-fg);background:var(--cipx-warn-bg);border-radius:8px;padding:8px 11px;margin:8px 0;line-height:1.5;}",

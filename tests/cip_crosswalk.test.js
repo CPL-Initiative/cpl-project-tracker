@@ -409,7 +409,13 @@ function fresh(withCollege) {
   check("crosswalk candidates carry a 'from TOP' tag so the lineage is apparent", cand.querySelector(".cipx-rev-candtop") && /0505\.00/.test(cand.querySelector(".cipx-rev-candtop").textContent));
   cand.click();
   await tick();
-  check("review mode: picking a candidate persists the decision (localStorage)", (function () { try { return JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["BUS 101 — Business Basics"] === "52.0201"; } catch (e) { return false; } })());
+  check("review mode: picking a candidate persists the decision (localStorage, as an array)", (function () { try { var v = JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["BUS 101 — Business Basics"]; return Array.isArray(v) && v.indexOf("52.0201") >= 0; } catch (e) { return false; } })());
+  // multi-CIP: a course can carry more than one code; toggling a second adds it, toggling again removes it
+  const bus2 = revRow.querySelectorAll(".cipx-rev-cand")[1];
+  if (bus2) { bus2.click(); await tick(); }
+  check("review mode: a course can carry more than one CIP (multi-select)", (function () { try { var v = JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["BUS 101 — Business Basics"]; return Array.isArray(v) && v.length >= 2; } catch (e) { return false; } })());
+  if (bus2) { bus2.click(); await tick(); }
+  check("review mode: toggling a picked CIP off removes it", (function () { try { var v = JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["BUS 101 — Business Basics"]; return Array.isArray(v) && v.length === 1; } catch (e) { return false; } })());
   check("review row shows the TOP → CIP transition (TOP beside a labeled CIP box)", revRow.querySelector(".cipx-rev-tocip .cipx-rev-fromtop") && /0505\.00/.test(revRow.querySelector(".cipx-rev-tocip .cipx-rev-fromtop").textContent) && !!revRow.querySelector(".cipx-rev-tocip .cipx-rev-ciplabel"));
   // a stronger match OUTSIDE the crosswalk is a selectable candidate (assignable)
   deptSel.value = "NURS"; deptSel.dispatchEvent(new domRev.window.Event("change"));
@@ -428,7 +434,7 @@ function fresh(withCollege) {
   check("peer block offers the consensus CIP as a selectable candidate", !!peerCand && /51\.3801/.test(peerCand.textContent));
   outCand.click();
   await tick();
-  check("review mode: assigning an outside-crosswalk code persists it", (function () { try { return JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["NURS 101 — Nursing"] === "51.3801"; } catch (e) { return false; } })());
+  check("review mode: assigning an outside-crosswalk code persists it", (function () { try { var v = JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["NURS 101 — Nursing"]; return Array.isArray(v) && v.indexOf("51.3801") >= 0; } catch (e) { return false; } })());
 
   // ── Part C — failure guards ──
   const dom2 = makeDom(); dom2.window.eval(src);
