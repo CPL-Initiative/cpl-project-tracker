@@ -608,3 +608,49 @@ spawned a **Fable consultant** on the IA/tri-state/tone fork; its calls shaped t
 - Phase-0.5 embeddings / Phase-1 Sierra remain the recall upgrade path.
 
 Side-lane discipline held — `cpl_todos.json` + the numbered handoff untouched.
+
+### 2026-07-17 (later) — SkyLiftoff: field-plunking fixes (prefix leak + crosswalk-anchored best matches)
+
+Sam stress-tested the live tool ("plunking for plinkers") and surfaced two real
+lexical-quality issues — both fixed on a follow-up PR (JS-only, no data change):
+
+1. **Subject-code prefix leaked into scoring (bug).** Course labels are
+   `"<SUBJ> <NUM> — <Title>"`. The scorer tokenized the WHOLE label, so
+   `BUS 103 — Advertising` → the token **`bus`** matched **49.0205 Truck and Bus
+   Driver** at 79%. Fix: `courseTitle()`/`courseText()` strip the `SUBJ NUM —`
+   prefix before tokenizing (in `courseToks`, `computeRecommend`, `renderFit`) —
+   score only the human title + catalog description. `_courseToks("BUS 103 —
+   Advertising")` → `[advertis, media, campaign, design]`; 49.0205 drops out; the
+   real Advertising code stays. Kills the `NC`/`ES`/`CHLD`/bare-number noise too.
+
+2. **The inline "★ Best matches" was lexically guessing (quality).** For a fixed
+   CIP it ranked the college's courses by raw keyword overlap, so generic words in
+   long CIP definitions pulled cross-domain courses to the top: **history** courses
+   topped *American Literature* (shared "american/united states"), a **childcare**
+   course sat in *Aesthetician* (shared "health/safety/nutrition"), **theater** in
+   *Drafting* (shared "design"). Fix: **anchor best-matches on the crosswalk** —
+   `bestMatchCourses()` prefers the college's courses whose CURRENT TOP maps to this
+   CIP (the inverse of the `topcip` map = the two-signals-agree anchor), ranked by
+   description-fit, then fills the rest with the closest-by-description courses;
+   falls back to pure lexical when the code has no mapped courses. American Lit →
+   all ENGL; Aesthetician → all ESTH/skin; Drafting → all DRAF. The CIP-first
+   inline check now thinks like the course-first recommend mode.
+
+**A fix I prototyped and REJECTED:** a naive "coverage" reweight of best-matches
+(down-weight courses that miss the CIP's high-IDF terms) — the prototype showed it
+drops the *real* Advertising course and lets `AUTO 168` in on the shared word
+"transmission" (**identity ≠ rarest term**). Crosswalk-anchoring is the principled
+fix; don't ship differently-odd for known-odd.
+
+**Honest limits (surfaced by plunking, not fixable — no data):** when a college
+doesn't teach a field, the crosswalk has nothing to anchor (Citrus has no theology
+→ Bible/Biblical Studies falls back to lexical noise, with "Literature of the Bible"
+—an *English* course—correctly NOT anchoring there; no welding → the anchored set is
+catch-all "independent study" courses). The tool degrades to "closest by description"
+rather than pretending — method+magic honestly runs out of clues, and says so.
+
+**Verification:** tests 84 → **89** (prefix-strip unit + `Truck and Bus` homonym
+guard + anchored-leads + non-anchored-below + lexical fallback). Real Chromium
+(Citrus): American Literature → all ENGL, Advertising pick → **no 49.0205**, recommend
+BUS 103 → 09.0903 Advertising #1; 0 overflow, 0 console errors. New seam
+`_bestMatches(cipRow, courses)`. Side-lane discipline held.

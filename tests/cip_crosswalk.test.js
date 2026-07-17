@@ -76,8 +76,9 @@ const COURSES = [
 // noncredit boilerplate codes, plus a nursing CIP reachable only by description
 // (never listed for the business TOP → the "outside the crosswalk" case).
 const RFIXTURE = {
-  fams: { "51": "Health Professions", "52": "Business", "32": "Basic Skills" },
+  fams: { "51": "Health Professions", "52": "Business", "32": "Basic Skills", "49": "Transportation" },
   rows: [
+    { code: "49.0205", t: "Truck and Bus Driver/Commercial Vehicle Operator and Instructor", cat: "CTE", fam: "49", def: "A program that prepares individuals to drive trucks and buses and other commercial motor vehicles.", ex: "", act: "" },
     { code: "52.0201", t: "Business Administration and Management", cat: "Non-CTE", fam: "52", def: "A general business administration program covering management and organization and accounting.", ex: "", act: "" },
     { code: "52.0301", t: "Accounting", cat: "CTE", fam: "52", def: "A program that prepares individuals to practice accounting and auditing and bookkeeping.", ex: "", act: "" },
     { code: "52.0302", t: "Accounting Technology", cat: "CTE", fam: "52", def: "A program in accounting technology and bookkeeping and payroll clerical work.", ex: "", act: "" },
@@ -233,6 +234,28 @@ function fresh(withCollege) {
   check("recommend handles a TOP absent from the crosswalk", mOrphan.hasCross === false && mOrphan.res.ranked.length >= 1);
   // too-thin description → flagged honestly
   check("recommend flags a too-thin description", rApi._recommend(RCOURSES[2]).thin === true);
+
+  // ── Fix A: the subject-code prefix no longer leaks into the lexical match ──
+  const busToks = rApi._courseToks(["BUS 103 — Advertising", "media campaign design"]);
+  check("Fix A: _courseToks drops the SUBJ + course-number prefix", busToks.indexOf("bus") < 0 && busToks.indexOf("103") < 0 && busToks.indexOf("advertis") >= 0);
+  const truckRow = rApi._score("truck bus driver commercial vehicle").ranked.find((o) => o.r.code === "49.0205").r;
+  check("Fix A: a 'BUS …' course no longer matches 'Truck and Bus Driver'", rApi._courseScore(rApi._courseToks(["BUS 103 — Advertising", "media campaign design"]), truckRow).score === 0);
+
+  // ── Fix B: the inline "best matches" anchor on the crosswalk (TOP→CIP) ──
+  const bizCip = rApi._score("business administration management organization").ranked.find((o) => o.r.code === "52.0201").r;
+  // TOP 0505.00 maps to 52.0201 in RFIXTURE, so a 0505.00 course is anchored; a
+  // lexically STRONGER course on a TOP that doesn't map here must NOT lead.
+  const bmCourses = [
+    ["MGMT 50 — Management", "A course covering organization.", "0505.00"],
+    ["ZZ 1 — Strong Lexical Match", "A general business administration program covering management and organization and accounting.", "9999.00"],
+  ];
+  const bm = rApi._bestMatches(bizCip, bmCourses);
+  check("Fix B: best-matches lead with a crosswalk-anchored course", bm.length && bm[0][2] === "0505.00" && /MGMT 50/.test(bm[0][0]));
+  check("Fix B: a lexically-stronger non-anchored course is ranked below the anchored one", bm.length === 2 && /ZZ 1/.test(bm[1][0]));
+  // 51.3801 is NOT in the crosswalk fixture → anchored empty → lexical fallback
+  const nurCip = rApi._score("registered nursing").ranked.find((o) => o.r.code === "51.3801").r;
+  const bmFallback = rApi._bestMatches(nurCip, [["NURS 1 — Nursing", "registered nurses practice nursing and patient care", "0505.00"]]);
+  check("Fix B: falls back to description-fit when a CIP has no anchored courses", bmFallback.length === 1 && /NURS 1/.test(bmFallback[0][0]));
 
   // DOM: recommend mode renders + picking a course produces a recommendation card
   const domR = freshR("recommend");
