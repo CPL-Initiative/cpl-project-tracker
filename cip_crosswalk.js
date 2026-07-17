@@ -187,6 +187,10 @@
     Object.keys(dfmap).forEach(function (t) { IDF[t] = Math.log(1 + IDF_N / (1 + dfmap[t])); });
   }
   function idf(t) { return IDF[t] != null ? IDF[t] : Math.log(1 + IDF_N); }
+  // The 2 boiler codes self-rank at rel 100 on ~275 TOPs; they must never appear in
+  // ANY ranked display (they live behind the boiler expander). Filter every fallback
+  // "closest by description" list through this.
+  function nonBoiler(list) { return list.filter(function (o) { return !BOILER[o.r.code]; }); }
 
   // weight of one query token against one CIP row (title > examples > definition)
   function tokWeight(s, r) { return r._tt && r._tt[s] ? 3.0 : (r._te && r._te[s] ? 1.5 : (r._td && r._td[s] ? 1.0 : 0)); }
@@ -248,7 +252,7 @@
     if (!suggestHost) return;
     clear(suggestHost);
     if (!/[a-z]/i.test(q || "")) return;
-    var hits = scoreAgainst(q).ranked.slice(0, 6);
+    var hits = nonBoiler(scoreAgainst(q).ranked).slice(0, 6);
     if (!hits.length) return;
     suggestHost.appendChild(el("div", { class: "cipx-sug-lead" }, ["Closest matches for “" + q.trim() + "” — open each to confirm against its definition:"]));
     hits.forEach(function (h) {
@@ -294,7 +298,7 @@
       var badges = el("div", { class: "cipx-tags" }, []);
       if (r.act === "New") badges.appendChild(el("span", { class: "cipx-new", title: "New in the 2020 CIP edition" }, ["NEW"]));
       if (r.cat) badges.appendChild(el("span", { class: catClass(r.cat), title: catTip(r.cat) }, [r.cat]));
-      var row = el("div", { class: "cipx-row", role: "button", tabindex: "0" }, [
+      var row = el("div", { class: "cipx-row", role: "button", tabindex: "0", "aria-expanded": isOpen ? "true" : "false" }, [
         el("span", { class: "cipx-caret" }, [isOpen ? "▾" : "▸"]),
         el("span", { class: "cipx-code" }, [r.code]),
         el("span", { class: "cipx-ttl" }, hl(r.t)),
@@ -423,9 +427,9 @@
     var opts = [], active = -1, isOpen = false, onDoc = null, picked = false;
     function pick(c) { picked = true; input.value = c[0]; closePanel(); cfg.onPick(c); }
     function setActive(i) {
-      if (active >= 0 && opts[active]) opts[active].classList.remove("on");
+      if (active >= 0 && opts[active]) { opts[active].classList.remove("on"); opts[active].removeAttribute("aria-selected"); }
       active = i;
-      if (active >= 0 && opts[active]) { opts[active].classList.add("on"); input.setAttribute("aria-activedescendant", opts[active].id); opts[active].scrollIntoView({ block: "nearest" }); }
+      if (active >= 0 && opts[active]) { opts[active].classList.add("on"); opts[active].setAttribute("aria-selected", "true"); input.setAttribute("aria-activedescendant", opts[active].id); opts[active].scrollIntoView({ block: "nearest" }); }
       else input.removeAttribute("aria-activedescendant");
     }
     function build(filter) {
@@ -444,7 +448,7 @@
       if (!opts.length) panel.appendChild(el("div", { class: "cipx-cb-none" }, [g.empty || "No courses to show."]));
       else if (g.hint) panel.appendChild(el("div", { class: "cipx-cb-hint" }, [g.hint]));
     }
-    function openPanel() { if (isOpen) return; isOpen = true; input.setAttribute("aria-expanded", "true"); panel.style.display = "block"; build(picked ? "" : input.value); onDoc = function (ev) { if (!box.contains(ev.target)) closePanel(); }; document.addEventListener("mousedown", onDoc, true); }
+    function openPanel() { if (isOpen) return; isOpen = true; input.setAttribute("aria-expanded", "true"); panel.style.display = "block"; build(picked ? "" : input.value); onDoc = function (ev) { if (!document.contains(box)) { closePanel(); return; } if (!box.contains(ev.target)) closePanel(); }; document.addEventListener("mousedown", onDoc, true); }
     function closePanel() { if (!isOpen) return; isOpen = false; input.setAttribute("aria-expanded", "false"); panel.style.display = "none"; setActive(-1); if (onDoc) { document.removeEventListener("mousedown", onDoc, true); onDoc = null; } }
     input.onfocus = openPanel;
     input.onclick = openPanel;
@@ -574,7 +578,7 @@
 
     host.appendChild(el("div", { class: "cipx-cand-h" }, [idxIn === 0 ? "This is the closest CIP for this course. Other near matches:" : "Codes that fit this course more closely — worth comparing:"]));
     var listWrap = el("div", { class: "cipx-cand-list" }, []);
-    res.ranked.slice(0, 5).forEach(function (h) {
+    nonBoiler(res.ranked).slice(0, 5).forEach(function (h) {
       var cr = h.r, isFocus = cr.code === r.code;
       var caret = el("span", { class: "cipx-caret" }, ["▸"]);
       var crow = el("div", { class: "cipx-cand-row", role: "button", tabindex: "0" }, [
@@ -681,13 +685,13 @@
       el("span", { class: "cipx-tierlbl cipx-tier-" + tier.key }, [tier.label]),
       meter(pct, tier.key),
     ]);
-    var row = el("div", { class: "cipx-rec-row" + (flat ? " cipx-rec-row-flat" : ""), role: "button", tabindex: "0" }, [
+    var row = el("div", { class: "cipx-rec-row" + (flat ? " cipx-rec-row-flat" : ""), role: "button", tabindex: "0", "aria-expanded": "false" }, [
       caret, el("span", { class: "cipx-code" }, [r.code]), main, meta,
     ]);
     var card = el("div", { class: "cipx-rec-card" + (isRec ? " cipx-rec-card-rec" : "") }, [row]);
     if (!flat) card.appendChild(el("div", { class: "cipx-sug-why" }, [rec.matched && rec.matched.length ? "matched: " + rec.matched.slice(0, 6).join(", ") : "no distinctive wording in common with this course"]));
     var open = false, det = null;
-    function tg() { open = !open; caret.textContent = open ? "▾" : "▸"; if (open) { det = detail(r, false); card.appendChild(det); } else if (det) { card.removeChild(det); det = null; } }
+    function tg() { open = !open; caret.textContent = open ? "▾" : "▸"; row.setAttribute("aria-expanded", open ? "true" : "false"); if (open) { det = detail(r, false); card.appendChild(det); } else if (det) { card.removeChild(det); det = null; } }
     row.onclick = tg;
     row.onkeydown = function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); tg(); } };
     return card;
@@ -767,7 +771,7 @@
 
     if (!m.hasCross) {
       host.appendChild(el("div", { class: "cipx-rec-note" }, ["The official crosswalk has no CIP mapping for TOP ", el("span", { class: "cipx-code" }, [m.top || "—"]), " yet. Here are the CIP codes whose definitions best match this course — check each against its definition:"]));
-      host.appendChild(recCardStack(m.res.ranked.slice(0, 6), null, false));
+      host.appendChild(recCardStack(nonBoiler(m.res.ranked).slice(0, 6), null, false));
       host.appendChild(recFoot());
       return;
     }
@@ -776,7 +780,7 @@
       // the crosswalk lists only generic noncredit codes for this TOP — fall back
       // to the best description matches (like the no-crosswalk case).
       host.appendChild(el("div", { class: "cipx-rec-note" }, ["The official crosswalk lists only generic noncredit codes for TOP ", el("span", { class: "cipx-code" }, [m.top]), " — nothing course-specific. The CIP codes whose definitions best match this course are below; check each against its definition:"]));
-      host.appendChild(recCardStack(m.res.ranked.slice(0, 6), null, false));
+      host.appendChild(recCardStack(nonBoiler(m.res.ranked).slice(0, 6), null, false));
       if (m.boiler.length) host.appendChild(boilerExpander(m.boiler));
       host.appendChild(recFoot());
       return;
@@ -809,7 +813,7 @@
     }
     var col = collegeBySlug(st.college);
     var comboHost = el("div", { class: "cipx-rec-combohost" }, [el("div", { class: "cipx-fit-loading" }, ["Loading " + (col ? col.name : "college") + " courses…"])]);
-    var resultHost = el("div", { class: "cipx-rec-host" }, []);
+    var resultHost = el("div", { class: "cipx-rec-host", "aria-live": "polite" }, []);
     panel.appendChild(comboHost);
     v.appendChild(panel);
     v.appendChild(resultHost);
@@ -998,7 +1002,7 @@
     var chip = el("span", { class: "cipx-rev-chip" + (confirmed ? " cipx-rev-chip-on" : "") }, chosenRow
       ? [el("span", { class: "cipx-code" }, [chosenRow.code]), el("span", { class: "cipx-rev-chipt" }, [chosenRow.t])]
       : [el("span", { class: "cipx-rev-none" }, ["— pick a code —"])]);
-    var head = el("div", { class: "cipx-rev-row", role: "button", tabindex: "0" }, [
+    var head = el("div", { class: "cipx-rev-row", role: "button", tabindex: "0", "aria-expanded": "false" }, [
       caret,
       el("span", { class: "cipx-rev-course" }, [
         el("span", { class: "cipx-rev-cname" }, [r.label]),
@@ -1012,7 +1016,7 @@
     var card = el("div", { class: "cipx-rev-item" + (confirmed ? " cipx-rev-conf" : "") }, [head]);
     var open = false, body = null;
     function tog() {
-      open = !open; caret.textContent = open ? "▾" : "▸";
+      open = !open; caret.textContent = open ? "▾" : "▸"; head.setAttribute("aria-expanded", open ? "true" : "false");
       if (open) { body = reviewExpand(r, dec, allRows); card.appendChild(body); }
       else if (body) { card.removeChild(body); body = null; }
     }
@@ -1027,7 +1031,7 @@
       ? ["Current TOP ", el("span", { class: "cipx-code" }, [r.top]), r.topTitle ? " · " + r.topTitle : ""]
       : ["No TOP code recorded."]));
     // candidate picker: the crosswalk candidates (or closest-by-description), single-select
-    var opts = r.m.cands.length ? r.m.cands : r.m.res.ranked.slice(0, 6);
+    var opts = r.m.cands.length ? r.m.cands : nonBoiler(r.m.res.ranked).slice(0, 6);
     if (!opts.length) box.appendChild(el("div", { class: "cipx-fitmsg" }, [r.m.thin ? "Too little catalog description to suggest a code — pick one below." : "No crosswalk match — search all codes to pick one."]));
     var chosen = dec[r.label] || (r.sug ? r.sug.code : null);
     function choose(code) { revSaveDecision(r.label, code); renderReview(allRows); }
@@ -1222,11 +1226,11 @@
     var css = [
       ".cipx{" +
         "--cipx-page:transparent;--cipx-surface:#ffffff;--cipx-surface-2:#eef3f9;--cipx-surface-sub:#f2f6fb;" +
-        "--cipx-text:#16283d;--cipx-text-soft:#3c526b;--cipx-muted:#6a7f96;--cipx-border:#dbe4ee;--cipx-border-strong:#c3d1e0;" +
+        "--cipx-text:#16283d;--cipx-text-soft:#3c526b;--cipx-muted:#566a80;--cipx-border:#dbe4ee;--cipx-border-strong:#c3d1e0;--cipx-recbadge-bg:#3f6b4e;" +
         "--cipx-accent:#00356b;--cipx-accent-soft:#e7eef6;--cipx-link:#0b5fa8;--cipx-focus:#1f7ae0;--cipx-mark:#ffe89c;--cipx-mark-fg:inherit;" +
         "--cipx-cte-bg:#e7ede7;--cipx-cte-fg:#4c6350;--cipx-both-bg:#e9eaf1;--cipx-both-fg:#565d78;" +
         "--cipx-non-bg:#eceef1;--cipx-non-fg:#59636f;--cipx-nc-bg:#e6edee;--cipx-nc-fg:#4f6a71;" +
-        "--cipx-ret-bg:#ececec;--cipx-ret-fg:#767b81;--cipx-new-bg:#efe9dd;--cipx-new-fg:#7a6a49;" +
+        "--cipx-ret-bg:#ececec;--cipx-ret-fg:#5f646b;--cipx-new-bg:#efe9dd;--cipx-new-fg:#6b5c3d;" +
         "--cipx-ok-bg:#e7ede7;--cipx-ok-fg:#3f5a45;--cipx-ok-stripe:#6f9079;--cipx-warn-bg:#f4ecd8;--cipx-warn-fg:#6f5d33;--cipx-warn-stripe:#c6a24a;--cipx-bad-bg:#efe1dd;--cipx-bad-fg:#7c5147;--cipx-bad-stripe:#b7796b;" +
         "max-width:1200px;margin:0 auto;padding:6px 22px 26px;background:var(--cipx-page);border-radius:14px;font-size:.95rem;color:var(--cipx-text);line-height:1.5;}",
       ".cipx.cipx-theme-dark{" +
@@ -1234,7 +1238,7 @@
         "--cipx-text:#e7eef6;--cipx-text-soft:#b8c7d8;--cipx-muted:#8397ab;--cipx-border:#274058;--cipx-border-strong:#33506e;" +
         "--cipx-accent:#7db3ec;--cipx-accent-soft:#1b3652;--cipx-link:#8fc0f2;--cipx-focus:#7db3ec;--cipx-mark:#5a4a1a;--cipx-mark-fg:#ffe89c;" +
         "--cipx-cte-bg:#233a2c;--cipx-cte-fg:#a4bda9;--cipx-both-bg:#272c45;--cipx-both-fg:#aeb4d2;--cipx-non-bg:#28323f;--cipx-non-fg:#9aa7b6;--cipx-nc-bg:#1f3841;--cipx-nc-fg:#93b6bf;--cipx-ret-bg:#2a2f36;--cipx-ret-fg:#929aa3;--cipx-new-bg:#34301f;--cipx-new-fg:#c6b78e;" +
-        "--cipx-ok-bg:#233a2c;--cipx-ok-fg:#a4bda9;--cipx-ok-stripe:#5f8f74;--cipx-warn-bg:#38321f;--cipx-warn-fg:#d8c48c;--cipx-warn-stripe:#b0913f;--cipx-bad-bg:#3a2723;--cipx-bad-fg:#d9a89c;--cipx-bad-stripe:#a86a5c;}",
+        "--cipx-ok-bg:#233a2c;--cipx-ok-fg:#a4bda9;--cipx-ok-stripe:#5f8f74;--cipx-warn-bg:#38321f;--cipx-warn-fg:#d8c48c;--cipx-warn-stripe:#b0913f;--cipx-bad-bg:#3a2723;--cipx-bad-fg:#d9a89c;--cipx-bad-stripe:#a86a5c;--cipx-recbadge-bg:#7cc79b;}",
       ".cipx-head{position:relative;padding:2px 0 6px;}",
       ".cipx-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--cipx-accent);}",
       ".cipx-h2{margin:.28em 0 .1em;font-size:1.6rem;line-height:1.15;color:var(--cipx-text);}",
@@ -1366,7 +1370,7 @@
       ".cipx-rec-card-rec .cipx-rec-row:hover{background:transparent;}",
       ".cipx-rec-main{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;min-width:0;}",
       ".cipx-rec-ttl{font-weight:600;color:var(--cipx-text);}",
-      ".cipx-recbadge{font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;background:var(--cipx-ok-stripe);color:#fff;padding:3px 8px;border-radius:6px;white-space:nowrap;}",
+      ".cipx-recbadge{font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;background:var(--cipx-recbadge-bg);color:#fff;padding:3px 8px;border-radius:6px;white-space:nowrap;}",
       ".cipx.cipx-theme-dark .cipx-recbadge{color:#0e1a2b;}",
       ".cipx-provlbl{font-size:.72rem;color:var(--cipx-muted);cursor:help;white-space:nowrap;}",
       ".cipx-rec-meta{display:flex;flex-direction:column;align-items:flex-end;gap:5px;min-width:158px;}",

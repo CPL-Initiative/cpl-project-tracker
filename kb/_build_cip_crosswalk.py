@@ -251,9 +251,14 @@ def main():
     # Only real CIP rows (present in `desc`) are kept so the tab's per-code lookup
     # always resolves. Candidates are ordered official > field > noncredit >
     # generic (a stable default; the tab re-ranks by description-fit).
+    import re as _re
     known = set(desc)
     topcip = {}
     for tc, slot in top_cips.items():
+        # skip non-TOP sentinel keys (the workbook carries a "No TOP Match in Records"
+        # bucket with ~1,331 pairs — 27% of the map — that no real course ever hits).
+        if not _re.match(r"^\d{4}\.\d{2}$", tc):
+            continue
         cand = sorted(((cip, tier) for cip, tier in slot.items() if cip in known),
                       key=lambda ct: (TIER_RANK[ct[1]], ct[0]))
         if cand:

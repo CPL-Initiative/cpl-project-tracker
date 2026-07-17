@@ -187,6 +187,13 @@ function fresh(withCollege) {
   const styleEl = document.getElementById("cip-crosswalk-css");
   check("scoped CSS injected once, no :root", styleEl && document.querySelectorAll("#cip-crosswalk-css").length === 1 && styleEl.textContent.indexOf(":root") === -1 && styleEl.textContent.indexOf(".cipx") !== -1);
 
+  // ── a11y (WCAG pass) ──
+  check("a11y: recommend result host is an aria-live region", /"cipx-rec-host", "aria-live": "polite"/.test(src));
+  check("a11y: expandable rows carry aria-expanded (browse + recommend + review)", /"cipx-row"[\s\S]{0,90}aria-expanded/.test(src) && /"cipx-rec-row"[\s\S]{0,110}aria-expanded/.test(src) && /"cipx-rev-row"[\s\S]{0,60}aria-expanded/.test(src));
+  check("a11y: the ✓ Recommended badge uses an accessible (darker) bg token", /--cipx-recbadge-bg:#3f6b4e/.test(src) && /cipx-recbadge\{[^}]*var\(--cipx-recbadge-bg\)/.test(src));
+  check("a11y: combobox options report aria-selected when active", /setAttribute\("aria-selected", "true"\)/.test(src) && /removeAttribute\("aria-selected"\)/.test(src));
+  check("a11y: no boiler code can appear in a fallback ranked display", /function nonBoiler/.test(src) && !/m\.res\.ranked\.slice\(0, 6\)/.test(src));
+
   // ── inline fit flow: college set + course pick → verdict ──
   const domF = fresh(true);
   const fdoc = domF.window.document;
