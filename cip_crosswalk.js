@@ -55,7 +55,7 @@
 
   // ── state ──────────────────────────────────────────────────────────────────
   var D = null, ROWS = [], BYCODE = {}, FAMS = {}, IDF = {}, IDF_N = 1;
-  var TOPCIP = {}, BOILER = {};
+  var TOPCIP = {}, BOILER = {}, CIP_TOPS = {};
   var GOFORWARD = { "CTE": 1, "Both": 1, "Non-CTE": 1, "Noncredit": 1 };
   var st = { q: "", cat: "all", fam: "", xfer: false, showRetired: false, limit: PAGE, open: {}, college: null, mode: "browse" };
   var FIT_COLLEGES = null, FIT_CACHE = {}, FIT_LOADING = {};
@@ -73,6 +73,13 @@
     ROWS.forEach(function (r) { BYCODE[r.code] = r; });
     TOPCIP = (D && D.topcip) || {};
     BOILER = {}; ((D && D.boiler) || []).forEach(function (c) { BOILER[c] = 1; });
+    // inverse crosswalk: CIP code -> {TOP: 1} — which TOPs map to each CIP. Lets the
+    // inline "best matches" anchor on the crosswalk (a course belongs to a CIP's
+    // best matches if its current TOP maps there) instead of guessing lexically.
+    CIP_TOPS = {};
+    Object.keys(TOPCIP).forEach(function (top) {
+      (TOPCIP[top].c || []).forEach(function (ct) { (CIP_TOPS[ct[0]] || (CIP_TOPS[ct[0]] = {}))[top] = 1; });
+    });
     buildEngine();
     try { st.college = localStorage.getItem(COLLEGE_KEY) || null; } catch (e) { st.college = null; }
     try { st.mode = localStorage.getItem(MODE_KEY) === "recommend" ? "recommend" : "browse"; } catch (e) { st.mode = "browse"; }
@@ -215,7 +222,14 @@
     out.forEach(function (o) { o.rel = max ? Math.round(o.score / max * 100) : 0; });
     return { ranked: out, max: max, margin: max ? 1 - top2 / max : 0, toks: qt.length };
   }
-  function courseToks(c) { if (!c[3]) c[3] = fitTokens((c[0] || "") + " " + (c[1] || "")); return c[3]; }
+  // A course label is "<SUBJ> <NUM> — <Title>" (e.g. "BUS 103 — Advertising").
+  // The subject code + number are ADMINISTRATIVE, not course vocabulary, and they
+  // pollute the lexical match — "BUS" was scoring against "Truck and Bus Driver",
+  // "NC"/"ES"/"CHLD" and bare numbers add noise. Score only the human title + the
+  // catalog description. (The full label is still shown in the UI.)
+  function courseTitle(label) { var l = label || "", i = l.indexOf(" — "); return i >= 0 ? l.slice(i + 3) : l; }
+  function courseText(c) { return courseTitle(c[0]) + " " + (c[1] || ""); }
+  function courseToks(c) { if (!c[3]) c[3] = fitTokens(courseText(c)); return c[3]; }
 
   // ═══════════════════════════════════════════════════════════════════════════
   // Browse: reference list + finder
@@ -436,9 +450,24 @@
 
   // Inline check (CIP-first): a "★ Best matches for <CIP>" head-start group + all
   // courses A–Z; picking one scores it against the CIP row it's expanded under.
-  function coursePicker(r, col, courses) {
+  // The inline "★ Best matches for <CIP>" head start. Anchor it on the CROSSWALK:
+  // the college's courses whose CURRENT TOP maps to this CIP (the two-signals-agree
+  // anchor), ranked by description-fit, then fill remaining slots with the closest-
+  // by-description courses. Anchoring kills the lexical false-matches a plain keyword
+  // sort produced (a childcare course topping "Aesthetician", history courses topping
+  // "American Literature", "BUS 103" matching "Truck and Bus Driver"). Falls back to
+  // pure description-fit when this code has no crosswalk-mapped courses at the college.
+  function bestMatchCourses(r, courses) {
     var scored = courses.map(function (c) { return { c: c, s: scoreTokensVs(courseToks(c), r).score }; });
-    var best = scored.slice().filter(function (x) { return x.s > 0; }).sort(function (a, b) { return b.s - a.s; }).slice(0, 8).map(function (x) { return x.c; });
+    var tops = CIP_TOPS[r.code] || null;
+    var anchored = tops ? scored.filter(function (x) { return x.c[2] && tops[x.c[2]]; }).sort(function (a, b) { return b.s - a.s; }) : [];
+    var seen = {}; anchored.forEach(function (x) { seen[x.c[0]] = 1; });
+    var lexical = scored.filter(function (x) { return x.s > 0 && !seen[x.c[0]]; }).sort(function (a, b) { return b.s - a.s; });
+    return anchored.concat(lexical).slice(0, 8).map(function (x) { return x.c; });
+  }
+
+  function coursePicker(r, col, courses) {
+    var best = bestMatchCourses(r, courses);
     var result = el("div", { class: "cipx-fit-result", "aria-live": "polite" }, []);
     var box = comboCore({
       id: "cipx-cbp-" + r.code.replace(/\W/g, ""),
@@ -495,7 +524,7 @@
   // The confidence read for one course against the CIP row it's expanded under.
   function renderFit(host, r, courseLabel, courseDesc) {
     clear(host);
-    var res = scoreAgainst((courseLabel || "") + " " + (courseDesc || ""));
+    var res = scoreAgainst(courseTitle(courseLabel) + " " + (courseDesc || ""));
     if (res.toks < 4 || !res.ranked.length) {
       host.appendChild(el("div", { class: "cipx-fitmsg" }, ["Not enough distinctive detail in that course to read confidently — a fuller catalog description works best."]));
       return;
@@ -564,7 +593,7 @@
   // Assemble the recommendation model for one course [label, desc, top].
   function computeRecommend(c) {
     var label = c[0] || "", desc = c[1] || "", top = c[2] || "";
-    var res = scoreAgainst(label + " " + desc);
+    var res = scoreAgainst(courseText(c));
     var byCode = {}; res.ranked.forEach(function (o) { byCode[o.r.code] = o; });
     var tc = TOPCIP[top] || null, inSet = {};
     var cands = [], boiler = [];
@@ -1081,6 +1110,6 @@
     _setCourses: function (slug, arr) { FIT_CACHE[slug] = arr; },
     _setMode: function (mode) { st.mode = mode === "recommend" ? "recommend" : "browse"; },
     _passes: passes, _filtered: filtered, _score: scoreAgainst, _courseScore: scoreTokensVs, _courseToks: courseToks,
-    _recommend: computeRecommend,
+    _recommend: computeRecommend, _bestMatches: bestMatchCourses,
   };
 })();
