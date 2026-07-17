@@ -1,7 +1,7 @@
 ---
 title: "CIP workstream handoff → next session"
 date: 2026-07-17
-tags: [handoff, cip, cobi, fit-check, top-cip, easy-button, review-sheet, side-lane]
+tags: [handoff, cip, cobi, fit-check, top-cip, easy-button, review-sheet, wcag, side-lane]
 artifacts:
   - cip_crosswalk.js
   - cip_crosswalk_data.js
@@ -17,10 +17,12 @@ related:
 # CIP workstream handoff → next session
 
 You are **Session N+1** on the **CIP side-lane** of COBI. SkyLoft carried it from a
-static mockup to a live fit-check tool; **SkyLiftoff shipped the TOP→CIP "easy
-button"** (course-first recommend mode). Carry it further — and carry the **banner
-of kindness** Sam named: this tool *suggests and supports*, it never decides.
-Faculty should lean into it, not brace against it.
+static mockup to a live fit-check tool; **SkyLiftoff shipped the TOP→CIP "easy button"**
+(course-first recommend mode), **Phase 2** (the whole-catalog review sheet), and a
+**field-testing cascade** with Sam that closed the confidence, TOP-visibility, and
+accessibility gaps. Carry it further — and carry the **banner of kindness** Sam named:
+this tool *suggests and supports*, it never decides. Faculty should lean into it, not
+brace against it.
 
 **Side-lane discipline (honor it):** this workstream does **NOT** touch
 `kb/cpl_todos.json` or the numbered `docs/session_<N>_handoff.md` — those are the
@@ -28,92 +30,96 @@ CCR curation mainline's memory. Your memory lives in `docs/cip_crosswalk_lessons
 (the full story) and this file.
 
 ## Read first, in order
-1. `docs/cip_crosswalk_lessons.md` — the whole saga; newest section (SkyLiftoff, the
-   easy button) at the bottom.
+1. `docs/cip_crosswalk_lessons.md` — the whole saga; the newest sections (Phase 2, then
+   the #822/#823/#824 field-testing cascade) are at the bottom.
 2. `docs/kb-notes/methodology-grounded-lexical-cip-confidence.md` — the fit engine +
    the crosswalk-corroboration extension.
 3. `CLAUDE.md` §7 TOP caveat + the §11 "SkyLoft"/"SkyLiftoff" side-lane entries.
 4. This file's **Priority** below.
 
-> **Update 2026-07-17 (SkyLiftoff):** three fix PRs merged (#818 easy button, #819
-> prefix+anchor, #820 the adversarial-audit + field fixes) **and Phase 2 shipped** —
-> the **📋 Review my catalog** whole-catalog review sheet (third mode). The tool now has
-> **three** modes. An inverted-index speedup landed with Phase 2 (28→12 ms/course, pure
-> speedup). Full story bottom of `docs/cip_crosswalk_lessons.md`. **Next priority: the
-> WCAG audit (standing pre-field gate)** + Phase 2 polish (cross-department progress /
-> saved-decisions summary).
-
 ## What's live (all merged to main)
 The **CIP Codes** tab (`#cip-crosswalk`, `cip_crosswalk.js`) — **three** modes, toggle at
-the top (remembered in `localStorage`, Browse is default). The third, **📋 Review my
-catalog**, is the department-scoped whole-catalog triage sheet: pick a department →
-per-course suggested CIP + ✓Ready/⚠Review/◻Manual triage → override, bulk-confirm, CSV
-(decisions persist in `localStorage`). The first two:
+the top (remembered in `localStorage`, Browse is default):
 
 **📖 Browse codes** — the faculty reference manual: search + plain-English finder +
-category pills + 🎓 C-ID/CCN chip + family filter over all 2,325 CIP-2020 codes; each
-row expands to definition / examples / family / NCES link, plus an **inline "Check
-one of your courses against this CIP"** (pick college once, pick a local course → a
-grounded confidence read).
+category pills + 🎓 C-ID/CCN chip + family filter over all 2,325 CIP-2020 codes; each row
+expands to definition / examples / family / NCES link, plus an **inline "Check one of
+your courses against this CIP"** (pick college once, pick a local course → a grounded
+confidence read).
 
-**🎯 Find my course's code** — *the easy button* (SkyLiftoff, 2026-07-17). Course-
-first: pick your college once, pick a course → the tool reads its COCI description,
-looks up its **current TOP**, and ranks the CIP codes the **official crosswalk** maps
-from that TOP by description-fit. The **two-signals-agree gate** from the §7 TOP
-doctrine, made visible:
-- top crosswalk candidate that's a strong match + clearly ahead → green ✓ **Recommended**;
-- weaker crosswalk candidates sit below with honest Strong/Plausible/Weak labels;
-- a strong description match the crosswalk *doesn't* list → a separate **⚠ "outside the
-  crosswalk"** drawer (auto-opens when there's no clear winner);
-- the two universal noncredit boilerplate codes collapse behind "+N generic noncredit codes";
-- matched-term chips per card (the trust lever), provenance as a muted label
-  (official / field-submitted / noncredit), non-imperative tone throughout.
+**🎯 Find my course's code** — *the easy button*. Course-first: pick your college once,
+pick a course → the tool reads its COCI description, looks up its **current TOP**, and
+ranks the CIP codes the **official crosswalk** maps from that TOP by description-fit. The
+**two-signals-agree gate** made visible (crosswalk PROPOSES · description-fit RANKS ·
+faculty CONFIRMS · TOP never decides): top strong+clear candidate → green ✓ **Recommended**;
+weaker crosswalk candidates below with honest tiers; a strong description match the
+crosswalk *doesn't* list → a separate **⚠ "outside the crosswalk"** drawer; the 2
+noncredit boilerplate codes collapse behind an expander; matched-term chips + muted
+provenance labels.
+
+**📋 Review my catalog** — the whole-catalog triage sheet (Sam's CO "wow"). Pick a
+department → per-course suggested CIP + ✓Ready/⚠Review/◻Manual triage → override,
+bulk-confirm, CSV. Decisions persist per college in `localStorage`. Every row shows the
+**current TOP subline** beside the suggested CIP ("where they are → where they're going").
+Outside-crosswalk matches are **selectable**, not just flagged.
+
+### The field-testing cascade (2026-07-17, all merged)
+- **#822 confidence fix** — confidence is now **crosswalk-relative** (normalized against
+  the course's own candidate set × a quality factor), not global-max. Clear winners read
+  ~100% (ACCT → 52.0301 Accounting 100% Strong), not ~77%. Catch-all Cooperative-Ed /
+  Work-Experience courses still read low — that's honest, not a bug.
+- **#823 TOP-in-every-view + assignable outside matches** — current TOP subline on review
+  rows; stronger outside-crosswalk matches render as selectable radios.
+- **#824 audit remediation + WCAG** — dropped the workbook's "No TOP Match" sentinel
+  bucket (27% of the map); `nonBoiler()` quarantines the 2 boilerplate codes out of every
+  ranked display; comboCore detached-listener guard; **WCAG pass** (aria-live host,
+  aria-expanded rows, aria-selected options, contrast token darkenings + accessible
+  ✓ Recommended badge). Tests **123**; real-Chromium clean desktop+phone, light+dark.
 
 **Data.** `kb/_build_cip_crosswalk.py` → `cip_crosswalk_data.js` (`window.CIP_CROSSWALK`,
-committed, no cron). Now carries `topcip[<TOP>]={t,c:[[cip,tier]]}` (420 TOPs, 4,865
-pairs) + `boiler[]` alongside the lean `{fams, rows}` reference. Per-college courses
-lazy-fetched from `cip_fitcheck/<slug>.json` (`kb/_build_cip_fitcheck.py`). Engine seams
-for tests/Phase-2: `_score`, `_courseScore`, `_courseToks`, **`_recommend([label,desc,top])`**
-(returns the full model: top/topTitle/cands/boiler/recommended/beyond), `_setMode`.
+committed, no cron). Carries `topcip[<TOP>]={t,c:[[cip,tier]]}` (**419 TOPs, 3,534 pairs**
+after the sentinel drop) + `boiler[]` alongside the lean `{fams, rows}` reference. Per-
+college courses lazy-fetched from `cip_fitcheck/<slug>.json` (`kb/_build_cip_fitcheck.py`).
+Engine seams: `_score`, `_courseScore`, `_courseToks`, `_recommend([label,desc,top])`,
+`_bestMatches`, `_parseSubject`, `_reviewRows`, `_setMode`.
 
-## 🎯 Priority — Phase 2: the whole-catalog review sheet (Sam's CO "wow")
-The easy button solves ONE course at a time. Phase 2 turns the 800–1,500-course slog
-into review-and-approve: a per-college sheet — **every course → current TOP → recommended
-CIP → confidence** — pre-filled for the clear ones (the ✓ Recommended cases), so faculty
-only adjudicate the ambiguous minority. `_recommend()` already returns everything a batch
-pass needs; run it over a college's whole `cip_fitcheck/<slug>.json` and render a table +
-**CSV export** (directly serves "replace the emailed workbook"). Keep the honest columns:
-mark the ⚠ signal-disagreements and the "no clear winner" rows so faculty know exactly
-where to look. Recommendation, never auto-assign; faculty enters the code in COCI.
+## 🎯 Priority — what's next (Sam's steer)
+1. **Unify "assign a CIP" across all three modes.** The recommend mode's inline check and
+   the review picker should share ONE assign+persist path (today the review mode persists
+   per-college in `localStorage`; the recommend/inline check doesn't persist a chosen
+   code). Make "I want THIS CIP for this course" a first-class, remembered action
+   everywhere it makes sense.
+2. **Phase 3 — port confirmed CIPs to COCI (batch/API).** Sam: *"later we can just port
+   the verified CIPs directly to COCI and spare the colleges from having to go into COCI
+   course by course … an API or batch upload process."* The review sheet's confirmed
+   decisions are the natural payload. Scope: where do confirmed decisions live (they're
+   `localStorage` today — needs a Supabase store to be a real submission queue), what's
+   the COCI ingest contract (ask Jenni / the Tech Center — they own the COCI CIP dropdown),
+   and the human-gated review before anything writes to COCI.
+3. **Remaining WCAG polish** (the focused pass shipped in #824; these round it out before
+   field release beyond Raul + Jenni): full `role=tablist`⇄`tabpanel` semantics on the
+   mode toggle, meter `role`/value semantics, `prefers-reduced-motion`, screen-reader
+   announcement copy on result changes. **Audience today = Raul (owns the field process) +
+   Jenni only.**
 
-Grounded scale check: median 5 CIPs/TOP, 32% ≤3, but a handful of TOPs map to 100+ CIPs
-(cap the display / rank + "show all N"). Boilerplate is already de-weighted by the engine.
-
-## 🔒 The standing gate: accessibility (WCAG) before field release
-Sam's explicit pre-field gate — **do this before it leaves Raul + Jenni.** The new
-recommend mode inherits the a11y hygiene (`role=tablist/tab` + `aria-selected` on the
-mode toggle, `aria-live` result host, keyboard-operable combobox + cards, expanders
-with `aria-expanded`, focus-visible rings). Still owed, whole tab: muted badge/stripe
-**contrast ratios** (the earthy category + tier tokens), listbox/option + tablist⇄
-tabpanel semantics polish, meter `role`/value semantics, reduced-motion, SR
-announcement copy. Audience today = **Raul (owns the process at field) + Jenni** only.
+Grounded scale check for any batch pass: median 5 CIPs/TOP, 32% ≤3, a handful map to 100+
+(cap the display / "show all N"). Boilerplate is de-weighted by the engine + quarantined.
 
 ## Patterns that worked (carry them)
-- **Prototype/consult → lock → build.** Fable consultant on the 50/50 design fork
-  (IA, tri-state, tone) — its calls (segmented toggle, one quarantined ⚠ section,
-  matched-term chips, non-imperative phrasing) shaped the final design. Opus builds,
-  Sam steers, Fable is the low-cost tie-breaker.
-- **Calibrate on REAL data.** Ran `_recommend` over real Allan Hancock courses BEFORE
-  writing formal tests — surfaced the honest Med-Surg-Nursing disagreement + the
-  Vacuum-Technology only-boilerplate edge, both now handled.
-- **Refactor under test cover.** Factored the shared `comboCore` while byte-preserving
-  the inline check's pinned DOM so its 60 tests stayed green.
+- **Sam's plunking + an adversarial audit Workflow, in tandem.** Sam finds the *specific*
+  plinker; the fleet's independent verifiers find its *scale* (the boilerplate-✓ bug fires
+  on the most common transfer subjects — no amount of single-course testing shows that).
+- **Verify the fix against Sam's exact case, post-merge.** After #822 merged, re-ran his
+  ACCT courses in real Chromium and confirmed 100% — report the concrete before/after, not
+  "should be fixed."
+- **Prototype/consult → lock → build.** Fable is the low-cost tie-breaker on design forks
+  (segmented toggle, one quarantined ⚠ section, matched-term chips, non-imperative tone).
 - **Verify in real Chromium over HTTP** (fetch needs a server): 0 overflow + 0 console
-  errors, desktop + phone, light + dark. **Commit the test** (jsdom, now 84 assertions).
+  errors, desktop + phone, light + dark. **Commit the test** (jsdom, now 123 assertions).
 - **Method + magic, light touch** — shape the score, don't gate the label; when unsure,
   give faculty the control (search / the ⚠ drawer) rather than a hard rule.
 
 ## Moniker
-SkyLiftoff shipped the liftoff. You might be **SkyOrbit** (Phase 2 = catalog-scale
-review, reaching orbit) — or coin your own; Sam blesses the lineage. Keep the banner:
-kind, honest, faculty-first. 🪁
+SkyLiftoff shipped liftoff → Phase 2 → the field-testing cascade. You might be **SkyOrbit**
+(Phase 3 = porting confirmed CIPs to COCI, reaching orbit) — or coin your own; Sam blesses
+the lineage. Keep the banner: kind, honest, faculty-first, student-firstest. 🪁
