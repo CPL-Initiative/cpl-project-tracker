@@ -82,6 +82,20 @@ Outside-crosswalk matches are **selectable**, not just flagged.
   — `isWorkExperience(label)` zeroes `beyond` in `computeRecommend`, so work-experience /
   cooperative-ed courses no longer get an "outside the crosswalk" nudge (they belong to
   their own discipline). Tests **128**.
+- **#829 college glyph + TOP titles inline** — hairline institution glyph; TOP titles
+  inline everywhere (makes a mis-coding self-evident). Dropped a lexical "check TOP"
+  indicator that fired on ~19/21 BIO rows — the lesson that motivated the consensus engine.
+- **#830 the cross-college CONSENSUS engine (the headline)** — `kb/_build_course_top_consensus.py`
+  → `course_top_consensus.json` (408 KB, committed, lazy). The review-row drawer's **"Field
+  consensus"** block: "(M use, K differ)" metric + differ-hover (who/which TOPs) + outlier
+  note + the consensus CIP as a one-click candidate (modal peer TOP's best-fit crosswalk
+  CIP). Norco "Human Biology" = 1 of 48 → surfaces 30.2701. Seams `_consensus`,
+  `_consensusKey`, `_setConsensus`. Method note: `methodology-crowd-consensus-beats-single-item-signal.md`.
+- **#831 multi-CIP + field-consensus-first ordering** — decisions are arrays (checkboxes,
+  toggle, "+N" chip, `revOpen` keep-expanded, "+ Add another code…"); `reviewExpand` renders
+  strongest-first (consensus → crosswalk → outside), shared `candRow()`.
+- **#832 one-line rows** — narrowed course col, nowrap transition, truncating titles.
+  Tests **140**.
 
 **Data.** `kb/_build_cip_crosswalk.py` → `cip_crosswalk_data.js` (`window.CIP_CROSSWALK`,
 committed, no cron). Carries `topcip[<TOP>]={t,c:[[cip,tier]]}` (**419 TOPs, 3,534 pairs**
@@ -91,6 +105,13 @@ Engine seams: `_score`, `_courseScore`, `_courseToks`, `_recommend([label,desc,t
 `_bestMatches`, `_parseSubject`, `_reviewRows`, `_setMode`.
 
 ## 🎯 Priority — what's next (Sam's steer)
+0. **Whole-catalog CONSENSUS pre-fill (Sam's "kit and kaboodle" — the true easy button).**
+   The consensus signal (#830) is statewide, so it can **pre-fill a confident CIP for every
+   course** in a college's catalog — turning the review sheet into pure review-and-approve.
+   Scope: for each course, if the peer consensus is strong (high modal fraction, decent n),
+   pre-populate its `revSetCips` suggestion (or a distinct "consensus-suggested" tier) so
+   ✓Ready reflects consensus, not just the single-course crosswalk. Extend the consensus
+   block to the **"Find my course's code"** mode too (today it's review-only).
 1. **Unify "assign a CIP" across all three modes.** The recommend mode's inline check and
    the review picker should share ONE assign+persist path (today the review mode persists
    per-college in `localStorage`; the recommend/inline check doesn't persist a chosen

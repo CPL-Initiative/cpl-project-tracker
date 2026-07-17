@@ -844,3 +844,54 @@ UI polish; one is a real doctrine call.
 Tests **123→128**; real Chromium (Norco/ACC, desktop + phone, light + dark), 0 overflow /
 0 console errors. Side-lane held. **Open/next unchanged:** unify "assign a CIP" across modes,
 Phase 3 batch/API port to COCI, the remaining WCAG polish (the standing pre-field gate).
+
+### 2026-07-17 — SkyLiftoff: the cross-college CONSENSUS engine + multi-CIP (#829–#832)
+
+The session's biggest arc — Sam live-designed a chain of features on the Review tab, each
+plunked and shipped. The headline is the **consensus engine**: the corroborating "how do
+peers code this course?" signal that turns the tool into a real easy button.
+
+**#829 — college glyph + TOP titles inline.** The `🏫` label became a hairline institution
+glyph (svgIcon). TOP titles now show inline everywhere a TOP code appears ("TOP 0407.00 ·
+Zoology, General"), which alone makes a mis-coding self-evident. **Lesson (the pivotal
+one):** a lexical "⚠ check TOP" mis-coding indicator I prototyped fired on ~19 of 21 BIO
+courses — including *correctly*-coded ones — because a single course's description
+lexically matches many CIPs. **Flagging a mis-coded TOP needs a CORROBORATING signal, not
+a single-course lexical guess.** Dropped it; that failure motivated the consensus engine.
+
+**#830 — the cross-college TOP consensus (Sam's idea).** One college's TOP is unreliable
+(§7), but the CROWD is rich: across ~114 colleges, how do peers teaching the *same course
+title* code it? `kb/_build_course_top_consensus.py` → `course_top_consensus.json` (408 KB,
+committed, lazy-fetched): normalized title → per-TOP **distinct-college lists** (names
+interned). 141,738 courses → 4,162 titles with ≥4 colleges. The review-row drawer shows a
+**"Field consensus"** block: Sam's honest **"(M use, K differ)"** metric (which also
+surfaces small-n — "2 use, 1 differ" reads thin), a **differ-hover** listing *which* TOPs
+and *which* colleges differ (Sam: "cut to the chase for the curious"), the **outlier note**
+("1 of 48"), and the **consensus CIP as a one-click candidate**. The consensus CIP = the
+modal peer TOP's *best description-fit* crosswalk CIP — **two signals agree**: peers pick
+the field, description-fit picks the specific CIP within it. Worked example: Norco's "BIO 4
+— Human Biology" (coded Zoology, crosswalk→Zoology) is **1 of 48**; 43/48 code it
+Biology-General; the block surfaces **30.2701 Human Biology**, which the lexical read missed.
+**We do NOT correct the (abandoned) TOP — we harvest the agreement to strengthen the CIP.**
+
+**#831 — multi-CIP + field-consensus-first ordering.** (a) A course can carry **>1 CIP**
+(interdisciplinary; field decides): decisions are arrays (legacy strings migrate),
+candidate rows are checkboxes (toggle, immediate-save), the chip shows "primary +N",
+toggling keeps the row expanded (`revOpen`), "+ Add another code…" reuses the search
+combobox, CSV joins with "; ". (b) Sam: "lead with the field consensus … then the other
+signals" → `reviewExpand` renders **strongest-first**: Field consensus → "From this course's
+TOP crosswalk" → outside-crosswalk lexical. A shared `candRow()` powers all three; the
+consensus CIP is only offered as a separate candidate when it's NOT already a crosswalk
+one (no duplicates).
+
+**#832 — one-line rows.** Narrowed the course column + widened the transition + nowrap +
+truncating TOP/CIP titles (full on hover), so all rows sit on one line.
+
+**Method note (durable):** `docs/kb-notes/methodology-crowd-consensus-beats-single-item-signal.md`
+(to author) — when a per-item signal is too noisy to gate on, aggregate the same decision
+across a large peer set and use the modal + an honest agreement metric; it's the
+two-signals-agree gate applied via the crowd. **Open/next (Sam's vision):** use the
+consensus to **pre-fill** confident CIPs across the whole catalog (the true easy button —
+"populate the whole kit and kaboodle"); extend the consensus block to "Find my course's
+code"; the standing WCAG pass. Tests 123→**140**; real-Chromium verified throughout.
+Side-lane held.
