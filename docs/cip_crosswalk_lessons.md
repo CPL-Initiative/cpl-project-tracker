@@ -802,3 +802,45 @@ decisions are the natural payload); (c) remaining WCAG polish (full tablist⇄ta
 semantics, meter `role`/value, reduced-motion, SR announcement copy) before the field
 release beyond Raul + Jenni. Side-lane held — `cpl_todos.json` + the numbered handoff
 untouched.
+
+### 2026-07-17 — SkyLiftoff: Review-tab polish batch, and a work-experience discipline rule (#826)
+
+Sam plunked the Review-my-catalog tab at Norco/ACC and sent a 6-item batch. Five are
+UI polish; one is a real doctrine call.
+
+1. **Mode-tab icons → hairline SVG.** The 📖🎯📋 emoji read "cliparty" (Sam). Sam left
+   the door open — *"if you had more elegant ones maybe I'd think differently."* Answer:
+   an `svgIcon(d)` helper (createElementNS, `stroke:currentColor`, fill:none, 1.6
+   hairline) → open-book / magnifier / clipboard-with-check glyphs that inherit the tab
+   color (muted idle, accent active). Elegant, cohesive, CodeQL-safe. **Lesson: "drop the
+   emoji" often means "give me a tasteful monochrome glyph," not "no icon" — offer the
+   elegant version.**
+2. **Department picker up in the college bar.** `reviewView` now appends the dept
+   `<select>` into `collegeSelEl.parentNode` (one control row); `collegeBar` holds back
+   its "check one course" hint in review mode.
+3. **Count chips one-line** (`.cipx-rev-tilel{white-space:nowrap}`).
+4. **TOP → CIP transition.** Each row reads `TOP NNNN.NN → CIP [code title]` (`.cipx-rev-tocip`)
+   with a "CIP" label + a bigger/bolder boxed code (the focal point); the redundant
+   expanded "Current TOP" line is gone; each crosswalk candidate carries a `← TOP NNNN.NN`
+   tag (`.cipx-rev-candtop`) so the lineage is apparent, while outside-crosswalk ones keep
+   their "outside crosswalk" tag — the two tags now *distinguish* crosswalk vs outside.
+5. **Work-experience discipline rule (the doctrine call).** Sam: work-experience /
+   cooperative-education courses "should always stay in the discipline based on the course
+   discipline. Colleges often offer a work experience class within their discipline so it
+   can be applied to their degree or cert. The fact that it's 'work experience' should not
+   be factored into the algo's decision that it might fit better elsewhere." → new
+   `isWorkExperience(label)` (matches "work experience", "cooperative (work) education",
+   "occupational work experience", "work-based learning"); in `computeRecommend`,
+   `if (isWorkExperience(label)) beyond = []`. This zeroes the outside-crosswalk drawer +
+   the ⚑ flag + the "your TOP may be off" note for them, in BOTH recommend and review
+   modes (single choke point). **Verified: ACC 200 Work Experience → no ⚑; ACC 62 Payroll
+   Accounting (not WE) → still flags.** This is the same family of "a generic wrapper
+   course's vocabulary lexically matches the wrong field" that the boiler quarantine and
+   the catch-all >0-overlap guard address — work-experience is the third such carve-out.
+6. **Meter % overflow** — `.cipx-rev-cand .cipx-meterwrap{min-width:0}` (the shared
+   meterwrap's 150px min exceeded the 132px review-candidate grid column, pushing the %
+   past the card edge).
+
+Tests **123→128**; real Chromium (Norco/ACC, desktop + phone, light + dark), 0 overflow /
+0 console errors. Side-lane held. **Open/next unchanged:** unify "assign a CIP" across modes,
+Phase 3 batch/API port to COCI, the remaining WCAG polish (the standing pre-field gate).
