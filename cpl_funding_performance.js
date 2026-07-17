@@ -4,13 +4,13 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-07-16",
+ "as_of": "2026-07-17",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified (context, not a priority metric) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 42361,
-  "p2": 4791,
-  "p3": 16941
+  "pe": 42627,
+  "p2": 4779,
+  "p3": 17008
  },
  "colleges": {
   "Alameda": {
@@ -29,7 +29,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Antelope Valley": {
-   "pe": 265,
+   "pe": 276,
    "p2": 0,
    "p3": 0
   },
@@ -312,15 +312,15 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Moorpark": {
-   "pe": 130,
+   "pe": 141,
    "p2": 0,
    "p3": null,
    "p3_suppressed": true
   },
   "Moreno Valley": {
-   "pe": 2192,
-   "p2": 424,
-   "p3": 2075
+   "pe": 2376,
+   "p2": 416,
+   "p3": 2146
   },
   "Mt San Antonio": {
    "pe": 732,
@@ -398,17 +398,17 @@ window.CPL_FUNDING_PERF = {
    "p3": 87
   },
   "San Diego City": {
-   "pe": 4221,
+   "pe": 4225,
    "p2": 121,
    "p3": 2837
   },
   "San Diego Mesa": {
-   "pe": 4585,
+   "pe": 4602,
    "p2": 117,
    "p3": 3095
   },
   "San Diego Miramar": {
-   "pe": 3062,
+   "pe": 3072,
    "p2": 85,
    "p3": 1502
   },
@@ -454,9 +454,11 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Santiago Canyon": {
-   "pe": 422,
-   "p2": 5,
-   "p3": 5
+   "pe": 418,
+   "p2": null,
+   "p2_suppressed": true,
+   "p3": null,
+   "p3_suppressed": true
   },
   "Sequoias": {
    "pe": 174,
@@ -505,7 +507,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "West Hills Lemoore": {
-   "pe": 280,
+   "pe": 313,
    "p2": 0,
    "p3": 0
   },

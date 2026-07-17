@@ -1,14 +1,14 @@
 {
-  "scraped_at": "2026-07-16T14:28:05.371484+00:00",
+  "scraped_at": "2026-07-17T08:30:40.444472+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25880,
-    "star_colleges": 54
+    "jst": 25932,
+    "star_colleges": 55
   },
-  "computed_star_colleges": 54,
+  "computed_star_colleges": 55,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 296,
@@ -27,7 +27,7 @@
     },
     "San Diego Mesa College": {
       "vets": 1070,
-      "jst": 1495,
+      "jst": 1513,
       "star": true
     },
     "Santiago Canyon College": {
@@ -37,17 +37,17 @@
     },
     "San Diego City College": {
       "vets": 776,
-      "jst": 1388,
+      "jst": 1392,
       "star": true
     },
     "Moreno Valley College": {
       "vets": 916,
-      "jst": 971,
+      "jst": 969,
       "star": true
     },
     "San Diego Miramar College": {
       "vets": 1181,
-      "jst": 1555,
+      "jst": 1565,
       "star": true
     },
     "Bakersfield College": {
@@ -165,6 +165,11 @@
       "jst": 215,
       "star": true
     },
+    "Antelope Valley College": {
+      "vets": 281,
+      "jst": 278,
+      "star": true
+    },
     "Clovis Community College": {
       "vets": 117,
       "jst": 190,
@@ -178,11 +183,6 @@
     "Fullerton College": {
       "vets": 291,
       "jst": 560,
-      "star": true
-    },
-    "Antelope Valley College": {
-      "vets": 281,
-      "jst": 267,
       "star": true
     },
     "Shasta College": {
@@ -215,6 +215,11 @@
       "jst": 206,
       "star": true
     },
+    "Lemoore College": {
+      "vets": 61,
+      "jst": 31,
+      "star": false
+    },
     "Ventura College": {
       "vets": 254,
       "jst": 164,
@@ -228,11 +233,6 @@
     "East Los Angeles College": {
       "vets": 637,
       "jst": 227,
-      "star": false
-    },
-    "Lemoore College": {
-      "vets": 61,
-      "jst": 31,
       "star": false
     },
     "Evergreen Valley College": {
@@ -447,8 +447,8 @@
     },
     "Moorpark College": {
       "vets": 179,
-      "jst": 128,
-      "star": false
+      "jst": 139,
+      "star": true
     },
     "Coalinga College": {
       "vets": 17,
