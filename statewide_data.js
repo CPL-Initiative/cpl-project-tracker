@@ -225183,6 +225183,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-07-17T10:59:05",
+  "generated_at": "2026-07-17T14:07:28",
   "total_credit_recs": 12694
 };
