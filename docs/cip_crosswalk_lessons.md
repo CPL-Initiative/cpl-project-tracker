@@ -542,3 +542,69 @@ Raul + Jenni only; Raul owns the process at field). Paste-able capsule for the n
 session: [`docs/cip_crosswalk_handoff.md`](cip_crosswalk_handoff.md). Method note:
 [`docs/kb-notes/methodology-grounded-lexical-cip-confidence.md`](kb-notes/methodology-grounded-lexical-cip-confidence.md).
 Side-lane discipline held throughout — `cpl_todos.json` + the numbered handoff untouched.
+
+## 2026-07-17 — SkyLiftoff: the TOP→CIP "easy button" ships (course-first recommend mode)
+
+Built the queued priority. The tab now has **two modes** (a segmented toggle, Browse
+default, remembered in `localStorage`): **📖 Browse codes** (the reference manual,
+unchanged) and **🎯 Find my course's code** (the easy button). Course-first: pick your
+college once, pick a course → the tool reads its COCI description, looks up its **current
+TOP**, and ranks the CIP codes the official crosswalk maps from that TOP by description-fit.
+This is the **two-signals-agree gate** from the §7 TOP doctrine made visible — the crosswalk
+PROPOSES, description-fit RANKS, faculty CONFIRMS; TOP corroborates, never decides.
+
+**What ships**
+- **Data (`kb/_build_cip_crosswalk.py`).** Re-emits a compact `topcip` map into
+  `cip_crosswalk_data.js` (embedded, no new fetch — data 1.06→1.16 MB): `topcip[<TOP>] =
+  {t:title, c:[[cip, tier], …]}` from the workbook's *TOP-CIP Data* sheet — **420 TOPs,
+  4,865 candidate pairs**. `tier` is a provenance letter (`o` official CCCCO/COCI/COE ·
+  `f` field-submitted · `n` noncredit · `g` generic). Plus `boiler` = the two universal
+  noncredit CIPs (`32.0107` Career Exploration, `32.0111` Workforce Dev) that map from
+  ~280 TOPs each — a clean natural break at ≥40 TOPs. Parity-exact on the reference rows
+  (2,325 codes, 244/244 certified, 1,300 C-ID/CCN).
+- **Engine (`cip_crosswalk.js`).** `computeRecommend([label,desc,top])` reuses the existing
+  IDF+margin+coverage scorer over ALL CIPs, then intersects with the TOP's crosswalk
+  candidates. **Recommendation gate:** the top crosswalk candidate reads ✓ **Recommended**
+  only when it's a globally-strong match (`rel≥85`) **and** clearly ahead of the next
+  crosswalk candidate (`cwMargin≥0.25`). Else "no clear front-runner — compare." The tri-state
+  Fable flagged: (a) in-crosswalk + strong = the green Recommended card; (b) in-crosswalk +
+  weak = sits lower with its honest Strong/Plausible/Weak label; (c) **strong match NOT in
+  the crosswalk → a separate ⚠ "outside the crosswalk" drawer** (never interleaved), which
+  **auto-opens when there's no clear winner** so the better answer isn't hidden. Boilerplate
+  collapses behind a "+N generic noncredit codes" expander.
+- **Trust levers (Fable's calls, all taken):** matched-term chips per card (evidence beats
+  badges), provenance as a **muted text label** not a colored axis, one badge max per card,
+  non-imperative tone ("looks like the strongest fit," never "the right code"; disagreement =
+  "the description points elsewhere," never "your TOP is wrong").
+- Refactored the combobox into a shared `comboCore` (the inline check + the new mode both use
+  it; the inline check's pinned DOM structure is byte-preserved so its 60 tests still pass).
+
+**Live behavior (real-Chromium, Allan Hancock):** Collision Repair → ✓ 47.0603 Autobody
+(Strong 100%); Accounting → ✓ 52.0301 Accounting (Strong) over Accounting-Tech/Auditing
+(Weak, Auditing labeled *field-submitted*) + ⚠ 52.0809 Credit Management outside; Med-Surg
+Nursing → **no false winner** (crosswalk's 51.3801 RN vs description's 51.3818 Nursing
+Practice in the ⚠ drawer — the honest "compare" the lexical limit demands); Real Estate →
+✓ 52.1501 over law/architecture real-estate variants outside. One TOP (Vacuum Technology,
+0943.30) maps only to boilerplate → falls back to best description matches.
+
+**Bug caught in verification:** changing the college **while in recommend mode** called the
+browse-only `render()` (which throws on the absent `countHost`). Fixed: the college-bar
+`onchange` rebuilds the right view per mode. Guarded by a jsdom test.
+
+**Verification:** `tests/cip_crosswalk.test.js` → **84 assertions** (60 existing all green +
+24 new: topcip/boiler data, mode toggle, `_recommend` model, two-signals winner, boiler
+split, outside-the-crosswalk, thin-desc, no-crosswalk TOP, college-change rebuild). Full
+suite **166 files green**. Real Chromium desktop 1280 + phone 390, light + dark: **0
+horizontal overflow, 0 console errors** (only the harness favicon 404). Model setup honored —
+spawned a **Fable consultant** on the IA/tri-state/tone fork; its calls shaped the final design.
+
+**Open — the pre-field roadmap (unchanged, nothing blocking Raul + Jenni):**
+- 🔒 **WCAG audit still the standing gate** — the new mode inherits the a11y hygiene
+  (`role=tablist/tab`, `aria-selected`, `aria-live` result host, keyboard combobox, focus
+  rings, expanders with `aria-expanded`) but the full contrast/semantics pass is still owed.
+- **Phase 2 — the whole-catalog review sheet** per college (every course → current TOP →
+  recommended CIP → confidence, CSV/table) is the CO "wow" and the natural next build. The
+  `computeRecommend` seam already returns everything a batch pass needs.
+- Phase-0.5 embeddings / Phase-1 Sierra remain the recall upgrade path.
+
+Side-lane discipline held — `cpl_todos.json` + the numbered handoff untouched.

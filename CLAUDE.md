@@ -614,6 +614,25 @@ narrative definitions. The planned canonical-CIP-designation curator surface was
 Full story + continuation: `docs/cip_crosswalk_lessons.md`. Side-lane like
 SkyFlyer/SkyIron — left `cpl_todos.json` + the numbered handoff untouched.
 
+### SkyLiftoff side-lane — the TOP→CIP "easy button" (course-first recommend mode) (2026-07-17)
+
+Shipped SkyLoft's queued priority. The `#cip-crosswalk` tab gains a **second mode**
+(segmented toggle, Browse default, remembered): **🎯 Find my course's code** — pick your
+college + a course → the tool reads its COCI description, looks up its **current TOP**, and
+ranks the CIP codes the **official crosswalk** maps from that TOP by description-fit. The
+**two-signals-agree gate** (§7 TOP caveat) made visible: crosswalk PROPOSES, description-fit
+RANKS, faculty CONFIRMS — TOP never decides. Top strong+clear candidate → ✓ **Recommended**;
+weaker ones sit below with honest tiers; a strong match the crosswalk misses → a separate
+**⚠ "outside the crosswalk"** drawer (auto-opens when no clear winner); the 2 universal
+noncredit boilerplate CIPs collapse away; matched-term chips + muted provenance labels
+(official/field-submitted). Data: `kb/_build_cip_crosswalk.py` re-emits a compact
+`topcip` map (420 TOPs · 4,865 pairs · `boiler`) into `cip_crosswalk_data.js` (embedded,
+parity-exact on the 2,325 reference rows). Tests 60→**84**; real-Chromium desktop+phone,
+light+dark, 0 overflow/0 errors; Fable consulted on the design fork. **Next: Phase 2 —
+the whole-catalog review sheet** (the `_recommend` seam returns everything a batch pass
+needs) + the standing **WCAG** gate. Full story: `docs/cip_crosswalk_lessons.md` ·
+`docs/cip_crosswalk_handoff.md`. Side-lane — left `cpl_todos.json` + the numbered handoff untouched.
+
 ### SkyLoft side-lane — CIP Code Taxonomy + the "Check a course" fit tool (2026-07-16/17, #798–#816 MERGED)
 
 Sam: "get the mockup into production on COBI," then a live-testing sprint. The

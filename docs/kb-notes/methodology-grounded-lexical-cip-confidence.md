@@ -57,9 +57,32 @@ record). Built as the CIP "Check a course" Phase-0 engine (`cip_crosswalk.js`).
   *review aid*; the definition is the final word; the human enters the final value. Never
   auto-assign.
 
+## Corroborating with a second signal — the two-signals-agree gate (2026-07-17)
+
+When a **second, independent** signal proposes a candidate *set* (here: the CO's official
+TOP→CIP crosswalk, reached via each course's current TOP), don't let it *decide* — let it
+**corroborate**. The pattern that shipped as the "Find my course's code" easy button:
+
+- **The set PROPOSES, the lexical rank RANKS, the human CONFIRMS.** Intersect the proposer's
+  candidates with the full lexical ranking. A candidate that is *both* proposed *and* a
+  globally-strong lexical match (`rel≥85`) *and* clearly ahead of the next proposed candidate
+  (`margin≥0.25`) earns the single **✓ Recommended** flag. Nothing else does.
+- **Render the tri-state, never mix it.** (a) proposed + strong = the recommendation;
+  (b) proposed + weak = sits lower with its honest tier; (c) **strong but NOT proposed** →
+  a *separate* "outside the set" section (auto-open it when there's no clear winner, so the
+  better answer is never hidden). Interleaving mixed-provenance candidates in one list is
+  what destroys trust.
+- **Carry provenance as a muted cue, not a visual axis** (official vs field-submitted), and
+  **collapse universal boilerplate** the set attaches to nearly every key (it's non-
+  discriminative — a natural frequency break finds it) rather than ranking it.
+- The unreliable signal (TOP) still **never gates**: a course whose lexical best sits
+  outside the crosswalk gets the ⚠, not a forced crosswalk answer. Straight from
+  `methodology-top-is-a-last-in-line-signal`.
+
 ## When to reach for this
 Any "rank a free-text blurb against a fixed catalog and say how confident" task where a
 backend/LLM is overkill or not yet sanctioned, and hallucination is unacceptable (the
-output is always a real catalog entry). Phase-1 upgrade path: swap the lexical score for
+output is always a real catalog entry). If a second signal narrows the candidate set, use
+the two-signals-agree gate above. Phase-1 upgrade path: swap the lexical score for
 semantic embeddings (precomputed catalog vectors + cosine) or a grounded RAG judge — same
 tiers, better recall. Calibrate any version on **real inputs** before shipping.
