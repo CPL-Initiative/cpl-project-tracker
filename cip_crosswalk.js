@@ -31,6 +31,7 @@
   var CSS_ID = "cip-crosswalk-css";
   var THEME_KEY = "cipx_theme";
   var COLLEGE_KEY = "cipx_college";
+  var MODE_KEY = "cipx_mode";
   var PAGE = 200;
 
   var COE_CROSSWALK = "https://datastudio.google.com/u/0/reporting/62925aaa-3c91-48ab-941b-2473c0e17cb7/page/iCRlF";
@@ -54,8 +55,9 @@
 
   // ── state ──────────────────────────────────────────────────────────────────
   var D = null, ROWS = [], BYCODE = {}, FAMS = {}, IDF = {}, IDF_N = 1;
+  var TOPCIP = {}, BOILER = {};
   var GOFORWARD = { "CTE": 1, "Both": 1, "Non-CTE": 1, "Noncredit": 1 };
-  var st = { q: "", cat: "all", fam: "", xfer: false, showRetired: false, limit: PAGE, open: {}, college: null };
+  var st = { q: "", cat: "all", fam: "", xfer: false, showRetired: false, limit: PAGE, open: {}, college: null, mode: "browse" };
   var FIT_COLLEGES = null, FIT_CACHE = {}, FIT_LOADING = {};
   var wrapEl, inputRef, pillsRef, famRef, cbRef, xferRef, listHost, countHost, suggestHost, collegeSelEl;
 
@@ -69,8 +71,11 @@
     });
     BYCODE = {};
     ROWS.forEach(function (r) { BYCODE[r.code] = r; });
+    TOPCIP = (D && D.topcip) || {};
+    BOILER = {}; ((D && D.boiler) || []).forEach(function (c) { BOILER[c] = 1; });
     buildEngine();
     try { st.college = localStorage.getItem(COLLEGE_KEY) || null; } catch (e) { st.college = null; }
+    try { st.mode = localStorage.getItem(MODE_KEY) === "recommend" ? "recommend" : "browse"; } catch (e) { st.mode = "browse"; }
   }
 
   // ── theme ────────────────────────────────────────────────────────────────────
@@ -341,7 +346,10 @@
       st.college = sel.value || null;
       try { if (st.college) localStorage.setItem(COLLEGE_KEY, st.college); else localStorage.removeItem(COLLEGE_KEY); } catch (e) {}
       if (st.college) loadCollege(st.college);
-      render(); // rebuild open rows with the new college
+      // browse: rebuild open rows with the new college; recommend: rebuild the
+      // course-first view (which is entirely college-scoped). render() is
+      // browse-only (it needs countHost/listHost), so never call it in recommend.
+      if (st.mode === "recommend") rebuildShell(); else render();
     };
     bar.appendChild(sel);
     bar.appendChild(el("span", { class: "cipx-college-hint" }, ["— set once to check a local course against any code"]));
@@ -377,22 +385,18 @@
   // A custom combobox (not a native <select>) so the list opens BELOW the input
   // instead of the browser popping it upward over the row, AND so faculty can
   // TYPE to search all courses (a native 1,800-option select forces scrolling).
-  // The best-fit-first group is a head start; search lets them pick anything —
-  // e.g. an Improv course that isn't a top "acting" match but reads Plausible.
-  function coursePicker(r, col, courses) {
+  // Shared by the inline per-CIP check and the course-first "Find my course's
+  // code" mode. cfg.groupsFor(filter) -> {groups:[[label|null,[course]], …], hint,
+  // empty}; cfg.onPick(course) fires on selection. Returns the .cipx-cbwrap box.
+  function comboCore(cfg) {
     var box = el("div", { class: "cipx-cbwrap" }, []);
-    var scored = courses.map(function (c, i) { return { i: i, c: c, s: scoreTokensVs(courseToks(c), r).score }; });
-    var best = scored.slice().filter(function (x) { return x.s > 0; }).sort(function (a, b) { return b.s - a.s; }).slice(0, 8);
-    var panelId = "cipx-cbp-" + r.code.replace(/\W/g, "");
     var input = el("input", { class: "cipx-fit-cb", type: "text", role: "combobox", autocomplete: "off",
-      "aria-expanded": "false", "aria-autocomplete": "list", "aria-controls": panelId, "aria-label": "Choose one of your courses (type to search)",
-      placeholder: "Choose one of your courses — type to search…" });
-    var panel = el("div", { class: "cipx-fit-panel", id: panelId, role: "listbox" }, []);
+      "aria-expanded": "false", "aria-autocomplete": "list", "aria-controls": cfg.id, "aria-label": cfg.label,
+      placeholder: cfg.placeholder });
+    var panel = el("div", { class: "cipx-fit-panel", id: cfg.id, role: "listbox" }, []);
     panel.style.display = "none";
-    var result = el("div", { class: "cipx-fit-result", "aria-live": "polite" }, []);
     var opts = [], active = -1, isOpen = false, onDoc = null, picked = false;
-
-    function pick(c) { picked = true; input.value = c[0]; closePanel(); renderFit(result, r, c[0], c[1]); }
+    function pick(c) { picked = true; input.value = c[0]; closePanel(); cfg.onPick(c); }
     function setActive(i) {
       if (active >= 0 && opts[active]) opts[active].classList.remove("on");
       active = i;
@@ -401,26 +405,22 @@
     }
     function build(filter) {
       clear(panel); opts = []; setActive(-1);
-      filter = (filter || "").toLowerCase().trim();
-      var groups = filter
-        ? [[null, scored.filter(function (x) { return x.c[0].toLowerCase().indexOf(filter) >= 0; }).slice(0, 40)]]
-        : [best.length ? ["★ Best matches for " + r.code, best] : null, ["All " + (col ? col.name : "") + " courses (A–Z)", scored.slice(0, 40)]].filter(Boolean);
-      groups.forEach(function (g) {
-        if (!g[1].length) return;
-        if (g[0]) panel.appendChild(el("div", { class: "cipx-cb-group" }, [g[0]]));
-        g[1].forEach(function (entry) {
-          var o = el("div", { class: "cipx-cb-opt", role: "option", id: panelId + "-o" + opts.length }, [entry.c[0]]);
-          o._c = entry.c;
-          o.onmousedown = function (e) { e.preventDefault(); pick(entry.c); };
+      var g = cfg.groupsFor((filter || "").toLowerCase().trim());
+      (g.groups || []).forEach(function (grp) {
+        if (!grp || !grp[1].length) return;
+        if (grp[0]) panel.appendChild(el("div", { class: "cipx-cb-group" }, [grp[0]]));
+        grp[1].forEach(function (c) {
+          var o = el("div", { class: "cipx-cb-opt", role: "option", id: cfg.id + "-o" + opts.length }, [c[0]]);
+          o._c = c;
+          o.onmousedown = function (e) { e.preventDefault(); pick(c); };
           opts.push(o); panel.appendChild(o);
         });
       });
-      if (!opts.length) panel.appendChild(el("div", { class: "cipx-cb-none" }, [filter ? "No course matches “" + filter + "”." : "No courses to show."]));
-      else if (!filter && courses.length > 40) panel.appendChild(el("div", { class: "cipx-cb-hint" }, ["Showing the best matches + first 40 — type to search all " + courses.length.toLocaleString() + " courses."]));
+      if (!opts.length) panel.appendChild(el("div", { class: "cipx-cb-none" }, [g.empty || "No courses to show."]));
+      else if (g.hint) panel.appendChild(el("div", { class: "cipx-cb-hint" }, [g.hint]));
     }
     function openPanel() { if (isOpen) return; isOpen = true; input.setAttribute("aria-expanded", "true"); panel.style.display = "block"; build(picked ? "" : input.value); onDoc = function (ev) { if (!box.contains(ev.target)) closePanel(); }; document.addEventListener("mousedown", onDoc, true); }
     function closePanel() { if (!isOpen) return; isOpen = false; input.setAttribute("aria-expanded", "false"); panel.style.display = "none"; setActive(-1); if (onDoc) { document.removeEventListener("mousedown", onDoc, true); onDoc = null; } }
-
     input.onfocus = openPanel;
     input.onclick = openPanel;
     input.oninput = function () { picked = false; if (!isOpen) openPanel(); build(input.value); };
@@ -430,7 +430,30 @@
       else if (e.key === "Enter") { if (isOpen && active >= 0 && opts[active]) { e.preventDefault(); pick(opts[active]._c); } }
       else if (e.key === "Escape") { closePanel(); }
     };
-    box.appendChild(input); box.appendChild(panel); box.appendChild(result);
+    box.appendChild(input); box.appendChild(panel);
+    return box;
+  }
+
+  // Inline check (CIP-first): a "★ Best matches for <CIP>" head-start group + all
+  // courses A–Z; picking one scores it against the CIP row it's expanded under.
+  function coursePicker(r, col, courses) {
+    var scored = courses.map(function (c) { return { c: c, s: scoreTokensVs(courseToks(c), r).score }; });
+    var best = scored.slice().filter(function (x) { return x.s > 0; }).sort(function (a, b) { return b.s - a.s; }).slice(0, 8).map(function (x) { return x.c; });
+    var result = el("div", { class: "cipx-fit-result", "aria-live": "polite" }, []);
+    var box = comboCore({
+      id: "cipx-cbp-" + r.code.replace(/\W/g, ""),
+      label: "Choose one of your courses (type to search)",
+      placeholder: "Choose one of your courses — type to search…",
+      groupsFor: function (filter) {
+        if (filter) return { groups: [[null, courses.filter(function (c) { return c[0].toLowerCase().indexOf(filter) >= 0; }).slice(0, 40)]], empty: "No course matches “" + filter + "”." };
+        return {
+          groups: [best.length ? ["★ Best matches for " + r.code, best] : null, ["All " + (col ? col.name : "") + " courses (A–Z)", courses.slice(0, 40)]].filter(Boolean),
+          hint: courses.length > 40 ? "Showing the best matches + first 40 — type to search all " + courses.length.toLocaleString() + " courses." : null
+        };
+      },
+      onPick: function (c) { renderFit(result, r, c[0], c[1]); }
+    });
+    box.appendChild(result);
     return box;
   }
 
@@ -522,13 +545,242 @@
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
+  // "Find my course's code" — the TOP→CIP easy button (course-first)
+  //
+  // Every COCI course carries a current TOP code; the CO's official TOP→CIP
+  // crosswalk lists candidate CIPs per TOP. We rank those candidates by the same
+  // grounded description-fit engine — the TWO-SIGNALS-AGREE gate from the repo's
+  // TOP doctrine: the crosswalk PROPOSES, description-fit RANKS, faculty CONFIRMS.
+  // TOP corroborates, never decides. A strong description match the crosswalk
+  // missed is surfaced separately ("outside the crosswalk") rather than mixed in.
+  // ═══════════════════════════════════════════════════════════════════════════
+  function provLabel(t) { return ({ o: "official crosswalk", f: "field-submitted", n: "noncredit" })[t] || ""; }
+  function provTip(t) {
+    return ({ o: "Mapped by the Chancellor's Office (CCCCO / COCI / COE) — an authoritative crosswalk pairing.",
+      f: "Submitted by a college in the field — a softer signal the CO hasn't ratified.",
+      n: "A noncredit crosswalk pairing." })[t] || "";
+  }
+
+  // Assemble the recommendation model for one course [label, desc, top].
+  function computeRecommend(c) {
+    var label = c[0] || "", desc = c[1] || "", top = c[2] || "";
+    var res = scoreAgainst(label + " " + desc);
+    var byCode = {}; res.ranked.forEach(function (o) { byCode[o.r.code] = o; });
+    var tc = TOPCIP[top] || null, inSet = {};
+    var cands = [], boiler = [];
+    if (tc) {
+      tc.c.forEach(function (ct) {
+        var r = BYCODE[ct[0]]; if (!r) return;
+        inSet[ct[0]] = 1;
+        var e = byCode[ct[0]];
+        var rec = { r: r, prov: ct[1], rel: e ? e.rel : 0, score: e ? e.score : 0, matched: e ? e.matched : [] };
+        (BOILER[ct[0]] ? boiler : cands).push(rec);
+      });
+      cands.sort(function (a, b) { return b.score - a.score || (a.r.t < b.r.t ? -1 : 1); });
+    }
+    // recommendation gate: the top crosswalk candidate is also a globally-strong
+    // description match (rel≥85) AND clearly ahead of the next crosswalk candidate.
+    var recommended = null;
+    if (cands.length && cands[0].score > 0 && cands[0].rel >= 85) {
+      var cwMargin = cands.length > 1 ? 1 - cands[1].score / cands[0].score : 1;
+      if (cwMargin >= 0.25) recommended = cands[0].r.code;
+    }
+    // strong (rel≥85) description matches the crosswalk doesn't list for this TOP
+    var beyond = res.ranked.filter(function (o) { return !inSet[o.r.code] && o.rel >= 85; }).slice(0, 5);
+    return { label: label, top: top, topTitle: tc ? tc.t : "", hasCross: !!tc, cands: cands,
+      boiler: boiler, recommended: recommended, beyond: beyond, res: res, thin: res.toks < 4 || !res.ranked.length };
+  }
+
+  // One candidate card: code, title, category, an honest tier + vocab-match meter,
+  // the matched terms (the trust lever), provenance, and an expand to its definition.
+  function recCandCard(rec, isRec, flat) {
+    var tier = tierOf(rec.rel), r = rec.r, prov = provLabel(rec.prov);
+    var caret = el("span", { class: "cipx-caret" }, ["▸"]);
+    var main = el("span", { class: "cipx-rec-main" }, [
+      el("span", { class: "cipx-rec-ttl" }, [r.t]),
+      r.cat ? el("span", { class: catClass(r.cat), title: catTip(r.cat) }, [r.cat]) : null,
+      isRec ? el("span", { class: "cipx-recbadge" }, ["✓ Recommended"]) : null,
+      prov ? el("span", { class: "cipx-provlbl", title: provTip(rec.prov) }, [prov]) : null,
+    ]);
+    var meta = flat ? null : el("span", { class: "cipx-rec-meta" }, [
+      el("span", { class: "cipx-tierlbl cipx-tier-" + tier.key }, [tier.label]),
+      meter(rec.rel, tier.key),
+    ]);
+    var row = el("div", { class: "cipx-rec-row" + (flat ? " cipx-rec-row-flat" : ""), role: "button", tabindex: "0" }, [
+      caret, el("span", { class: "cipx-code" }, [r.code]), main, meta,
+    ]);
+    var card = el("div", { class: "cipx-rec-card" + (isRec ? " cipx-rec-card-rec" : "") }, [row]);
+    if (!flat) card.appendChild(el("div", { class: "cipx-sug-why" }, [rec.matched && rec.matched.length ? "matched: " + rec.matched.slice(0, 6).join(", ") : "no distinctive wording in common with this course"]));
+    var open = false, det = null;
+    function tg() { open = !open; caret.textContent = open ? "▾" : "▸"; if (open) { det = detail(r, false); card.appendChild(det); } else if (det) { card.removeChild(det); det = null; } }
+    row.onclick = tg;
+    row.onkeydown = function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); tg(); } };
+    return card;
+  }
+  function recCardStack(items, recommendedCode, flat) {
+    var wrap = el("div", { class: "cipx-rec-list" }, []);
+    items.forEach(function (rec) {
+      // accept either a candidate rec {r,prov,rel,…} or a ranked entry {r,rel,matched}
+      var norm = rec.prov !== undefined ? rec : { r: rec.r, prov: "", rel: rec.rel, score: rec.score, matched: rec.matched };
+      wrap.appendChild(recCandCard(norm, norm.r.code === recommendedCode, flat));
+    });
+    return wrap;
+  }
+
+  function boilerExpander(list) {
+    var wrap = el("div", { class: "cipx-boiler" }, []);
+    var btn = el("button", { class: "cipx-boiler-btn", type: "button", "aria-expanded": "false" },
+      ["+ " + list.length + " generic noncredit code" + (list.length === 1 ? "" : "s") + " (Career Exploration, Workforce Development)"]);
+    var body = el("div", { class: "cipx-boiler-body" }, []); body.style.display = "none";
+    var built = false;
+    btn.onclick = function () {
+      var open = body.style.display !== "none";
+      if (!built) { built = true; list.forEach(function (rec) { body.appendChild(recCandCard(rec, false, false)); }); }
+      body.style.display = open ? "none" : "block";
+      btn.setAttribute("aria-expanded", open ? "false" : "true");
+    };
+    wrap.appendChild(btn);
+    wrap.appendChild(el("div", { class: "cipx-boiler-note" }, ["These map from nearly every TOP code, so they seldom describe a specific course — shown only for completeness."]));
+    wrap.appendChild(body);
+    return wrap;
+  }
+
+  function beyondSection(m) {
+    var wrap = el("div", { class: "cipx-beyond" }, []);
+    var auto = !m.recommended;   // no clear crosswalk winner → open the drawer
+    var caret = el("span", { class: "cipx-caret" }, [auto ? "▾" : "▸"]);
+    var btn = el("button", { class: "cipx-beyond-btn", type: "button", "aria-expanded": auto ? "true" : "false" }, [
+      caret, el("span", {}, ["⚠ " + m.beyond.length + " strong match" + (m.beyond.length === 1 ? "" : "es") + " outside the crosswalk"]),
+    ]);
+    var body = el("div", { class: "cipx-beyond-body" }, []);
+    var note = el("div", { class: "cipx-beyond-note" }, ["These CIP codes fit this course's wording well but aren't in the official crosswalk for TOP " + (m.top || "—") + ". The course's TOP code may be out of date, or the crosswalk may not cover it yet — worth checking against their definitions."]);
+    var built = false;
+    function build() { if (built) return; built = true; body.appendChild(note); body.appendChild(recCardStack(m.beyond, null, false)); }
+    body.style.display = auto ? "block" : "none";
+    if (auto) build();
+    btn.onclick = function () {
+      var open = body.style.display !== "none";
+      if (!open) build();
+      body.style.display = open ? "none" : "block";
+      caret.textContent = open ? "▸" : "▾";
+      btn.setAttribute("aria-expanded", open ? "false" : "true");
+    };
+    wrap.appendChild(btn); wrap.appendChild(body);
+    return wrap;
+  }
+
+  function recFoot() {
+    return el("div", { class: "cipx-fitfoot" }, ["A starting point, not a determination. The crosswalk suggests which CIP codes go with your course's TOP; the ranking reflects how the course's wording lines up with each code's official definition (lexical). The definition is the final word — your college enters the code in COCI."]);
+  }
+
+  function renderRecommend(host, c) {
+    clear(host);
+    var m = computeRecommend(c);
+    host.appendChild(el("div", { class: "cipx-rec-course" }, [
+      el("div", { class: "cipx-rec-clabel" }, [m.label]),
+      el("div", { class: "cipx-rec-ctop" }, m.top
+        ? ["Current TOP ", el("span", { class: "cipx-code" }, [m.top]), m.topTitle ? " · " + m.topTitle : ""]
+        : ["No TOP code is recorded for this course."]),
+    ]));
+
+    if (m.thin) {
+      host.appendChild(el("div", { class: "cipx-fitmsg" }, ["This course's description is too short to rank confidently — it doesn't carry enough distinctive wording. ", m.hasCross ? "Here are the crosswalk's CIP codes for this TOP; open each to check it against its definition." : "Try one with a fuller catalog description."]));
+      if (m.hasCross && m.cands.length) host.appendChild(recCardStack(m.cands, null, true));
+      host.appendChild(recFoot());
+      return;
+    }
+
+    if (!m.hasCross) {
+      host.appendChild(el("div", { class: "cipx-rec-note" }, ["The official crosswalk has no CIP mapping for TOP ", el("span", { class: "cipx-code" }, [m.top || "—"]), " yet. Here are the CIP codes whose definitions best match this course — check each against its definition:"]));
+      host.appendChild(recCardStack(m.res.ranked.slice(0, 6), null, false));
+      host.appendChild(recFoot());
+      return;
+    }
+
+    if (!m.cands.length) {
+      // the crosswalk lists only generic noncredit codes for this TOP — fall back
+      // to the best description matches (like the no-crosswalk case).
+      host.appendChild(el("div", { class: "cipx-rec-note" }, ["The official crosswalk lists only generic noncredit codes for TOP ", el("span", { class: "cipx-code" }, [m.top]), " — nothing course-specific. The CIP codes whose definitions best match this course are below; check each against its definition:"]));
+      host.appendChild(recCardStack(m.res.ranked.slice(0, 6), null, false));
+      if (m.boiler.length) host.appendChild(boilerExpander(m.boiler));
+      host.appendChild(recFoot());
+      return;
+    }
+
+    if (m.recommended) {
+      var topC = m.cands[0];
+      host.appendChild(el("div", { class: "cipx-rec-lead cipx-rec-lead-ok" }, [
+        el("b", {}, [topC.r.code + " " + topC.r.t]), " looks like the strongest fit — the official crosswalk lists it for TOP " + m.top + ", and the course description points to it too. Confirm it against the definition, then enter it in COCI.",
+      ]));
+    } else {
+      host.appendChild(el("div", { class: "cipx-rec-lead" }, ["Here are the CIP codes the official crosswalk maps from TOP ", el("span", { class: "cipx-code" }, [m.top]), ", ranked by how well each fits this course. No single clear front-runner — compare the top few against their definitions."]));
+    }
+    host.appendChild(recCardStack(m.cands, m.recommended, false));
+    if (m.boiler.length) host.appendChild(boilerExpander(m.boiler));
+    if (m.beyond.length) host.appendChild(beyondSection(m));
+    host.appendChild(recFoot());
+  }
+
+  function recommendView() {
+    var v = el("div", { class: "cipx-rec" }, []);
+    var panel = el("div", { class: "cipx-panel" }, [
+      el("div", { class: "cipx-panel-h" }, ["Find the CIP code for one of your courses"]),
+      el("div", { class: "cipx-panel-sub" }, ["Pick one of your courses — we read its catalog description, look up its current TOP code, and rank the CIP codes the official crosswalk maps from that TOP by how well each fits. A starting point you confirm; your college enters the code in COCI."]),
+    ]);
+    if (!st.college) {
+      panel.appendChild(el("div", { class: "cipx-fit-nudge" }, ["First, pick your college at the top of the tab — then choose a course here."]));
+      v.appendChild(panel);
+      return v;
+    }
+    var col = collegeBySlug(st.college);
+    var comboHost = el("div", { class: "cipx-rec-combohost" }, [el("div", { class: "cipx-fit-loading" }, ["Loading " + (col ? col.name : "college") + " courses…"])]);
+    var resultHost = el("div", { class: "cipx-rec-host" }, []);
+    panel.appendChild(comboHost);
+    v.appendChild(panel);
+    v.appendChild(resultHost);
+    loadCollege(st.college).then(function (courses) {
+      clear(comboHost);
+      if (!courses || !courses.length) { comboHost.appendChild(el("div", { class: "cipx-fit-nudge" }, ["Couldn't load courses for this college right now — try again shortly."])); return; }
+      comboHost.appendChild(comboCore({
+        id: "cipx-reccb",
+        label: "Choose one of your courses (type to search)",
+        placeholder: "Choose one of your courses — type to search…",
+        groupsFor: function (filter) {
+          var list = filter ? courses.filter(function (c) { return c[0].toLowerCase().indexOf(filter) >= 0; }) : courses;
+          return { groups: [[filter ? null : "All " + (col ? col.name : "") + " courses (A–Z)", list.slice(0, 40)]],
+            hint: list.length > 40 ? "Showing 40 of " + list.length.toLocaleString() + " — type to narrow." : null,
+            empty: "No course matches “" + filter + "”." };
+        },
+        onPick: function (c) { renderRecommend(resultHost, c); },
+      }));
+    }).catch(function () { clear(comboHost); comboHost.appendChild(el("div", { class: "cipx-fit-nudge" }, ["Couldn't load courses for this college right now — try again shortly."])); });
+    return v;
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
   // Shell
   // ═══════════════════════════════════════════════════════════════════════════
+  function modeBar() {
+    var bar = el("div", { class: "cipx-modebar", role: "tablist", "aria-label": "What do you want to do" }, []);
+    [["browse", "📖 Browse codes"], ["recommend", "🎯 Find my course’s code"]].forEach(function (m) {
+      var on = st.mode === m[0];
+      var b = el("button", { class: "cipx-modetab" + (on ? " on" : ""), type: "button", role: "tab", "aria-selected": on ? "true" : "false" }, [m[1]]);
+      b.onclick = function () {
+        if (st.mode === m[0]) return;
+        st.mode = m[0];
+        try { localStorage.setItem(MODE_KEY, m[0]); } catch (e) {}
+        rebuildShell();
+      };
+      bar.appendChild(b);
+    });
+    return bar;
+  }
+
   function header() {
     var head = el("div", { class: "cipx-head" }, [
       el("div", { class: "cipx-eyebrow" }, ["California Community Colleges · Chancellor's Office"]),
       el("h2", { class: "cipx-h2" }, ["CIP Code Taxonomy"]),
-      el("p", { class: "cipx-sub" }, ["The successor to the CCC TOP Code Manual. Course & program coding is moving from ", el("b", {}, ["TOP"]), " to ", el("b", {}, ["CIP"]), " for fall 2026 — browse the full federal CIP-2020 list, and check how well one of your local courses fits any code. (You'll enter your chosen code in COCI.)"]),
+      el("p", { class: "cipx-sub" }, ["The successor to the CCC TOP Code Manual. Course & program coding is moving from ", el("b", {}, ["TOP"]), " to ", el("b", {}, ["CIP"]), " for fall 2026 — browse the full federal CIP-2020 list, or start from one of your courses and let the tool suggest a code from its current TOP. (You confirm and enter it in COCI.)"]),
       el("div", { class: "cipx-hlinks" }, [
         el("a", { href: COE_CROSSWALK, target: "_blank", rel: "noopener" }, ["TOP ↔ CIP crosswalk (COE) ↗"]),
         el("a", { href: NCES, target: "_blank", rel: "noopener" }, ["NCES CIP-2020 taxonomy ↗"]),
@@ -595,15 +847,20 @@
     wrapEl = el("div", { class: "cipx" }, []);
     applyTheme(savedTheme() === "dark" ? "dark" : "light");
     wrapEl.appendChild(header());
-    wrapEl.appendChild(buildPanel());
+    wrapEl.appendChild(modeBar());
     wrapEl.appendChild(collegeBar());
-    suggestHost = el("div", { class: "cipx-suggest" }, []);
-    wrapEl.appendChild(suggestHost);
-    listHost = el("div", { class: "cipx-list" }, []);
-    wrapEl.appendChild(listHost);
+    if (st.mode === "recommend") {
+      wrapEl.appendChild(recommendView());
+    } else {
+      wrapEl.appendChild(buildPanel());
+      suggestHost = el("div", { class: "cipx-suggest" }, []);
+      wrapEl.appendChild(suggestHost);
+      listHost = el("div", { class: "cipx-list" }, []);
+      wrapEl.appendChild(listHost);
+      render();
+    }
     wrapEl.appendChild(footer());
     root.appendChild(wrapEl);
-    render();
     fetchColleges();
     if (st.college) loadCollege(st.college);
   }
@@ -738,6 +995,40 @@
       ".cipx-yourpick{font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;background:var(--cipx-accent-soft);color:var(--cipx-accent);padding:2px 7px;border-radius:6px;}",
       ".cipx-cand-card .cipx-detail{padding:0 14px 16px 122px;}",
       ".cipx-fitfoot{font-size:.76rem;color:var(--cipx-muted);margin:12px 2px 2px;font-style:italic;line-height:1.55;max-width:80ch;}",
+      // recommend mode — mode toggle + course-first result
+      ".cipx-modebar{display:inline-flex;gap:4px;background:var(--cipx-surface-2);border:1px solid var(--cipx-border);border-radius:10px;padding:4px;margin:14px 0 12px;}",
+      ".cipx-modetab{font-family:inherit;font-size:.86rem;font-weight:650;color:var(--cipx-text-soft);background:transparent;border:0;border-radius:7px;padding:8px 16px;cursor:pointer;}",
+      ".cipx-modetab:hover{color:var(--cipx-accent);}",
+      ".cipx-modetab.on{background:var(--cipx-surface);color:var(--cipx-accent);box-shadow:0 1px 3px rgba(16,42,67,.12);}",
+      ".cipx-modetab:focus-visible{outline:2px solid var(--cipx-focus);outline-offset:2px;}",
+      ".cipx-rec-course{background:var(--cipx-accent-soft);border:1px solid var(--cipx-border);border-radius:12px;padding:13px 16px;margin:2px 0 14px;}",
+      ".cipx-rec-clabel{font-weight:700;font-size:1.02rem;color:var(--cipx-text);}",
+      ".cipx-rec-ctop{font-size:.84rem;color:var(--cipx-text-soft);margin-top:3px;}",
+      ".cipx-rec-lead{font-size:.9rem;color:var(--cipx-text-soft);line-height:1.55;margin:4px 2px 12px;max-width:82ch;}",
+      ".cipx-rec-lead-ok{color:var(--cipx-text);}.cipx-rec-lead-ok b{color:var(--cipx-accent);}",
+      ".cipx-rec-note{font-size:.88rem;color:var(--cipx-text-soft);line-height:1.55;margin:4px 2px 12px;max-width:82ch;}",
+      ".cipx-rec-list{display:flex;flex-direction:column;gap:8px;}",
+      ".cipx-rec-card{background:var(--cipx-surface);border:1px solid var(--cipx-border);border-radius:11px;}",
+      ".cipx-rec-card-rec{border-color:var(--cipx-ok-stripe);box-shadow:0 0 0 1px var(--cipx-ok-stripe);background:var(--cipx-ok-bg);}",
+      ".cipx-rec-row{display:grid;grid-template-columns:16px 84px 1fr auto;gap:12px;align-items:center;padding:12px 15px;cursor:pointer;}",
+      ".cipx-rec-row:hover{background:var(--cipx-surface-sub);border-radius:11px;}",
+      ".cipx-rec-card-rec .cipx-rec-row:hover{background:transparent;}",
+      ".cipx-rec-main{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;min-width:0;}",
+      ".cipx-rec-ttl{font-weight:600;color:var(--cipx-text);}",
+      ".cipx-recbadge{font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;background:var(--cipx-ok-stripe);color:#fff;padding:3px 8px;border-radius:6px;white-space:nowrap;}",
+      ".cipx.cipx-theme-dark .cipx-recbadge{color:#0e1a2b;}",
+      ".cipx-provlbl{font-size:.72rem;color:var(--cipx-muted);cursor:help;white-space:nowrap;}",
+      ".cipx-rec-meta{display:flex;flex-direction:column;align-items:flex-end;gap:5px;min-width:158px;}",
+      ".cipx-tierlbl{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;}",
+      ".cipx-tier-ok{color:var(--cipx-ok-fg);}.cipx-tier-warn{color:var(--cipx-warn-fg);}.cipx-tier-bad{color:var(--cipx-bad-fg);}",
+      ".cipx-rec-row-flat{grid-template-columns:16px 84px 1fr;}",
+      ".cipx-rec-card .cipx-detail{padding:0 15px 16px 116px;}",
+      ".cipx-boiler,.cipx-beyond{margin-top:12px;}",
+      ".cipx-boiler-btn,.cipx-beyond-btn{font-family:inherit;font-size:.82rem;font-weight:650;color:var(--cipx-link);background:var(--cipx-surface);border:1px solid var(--cipx-border);border-radius:9px;padding:9px 14px;cursor:pointer;display:flex;gap:8px;align-items:center;width:100%;text-align:left;box-sizing:border-box;}",
+      ".cipx-boiler-btn:hover,.cipx-beyond-btn:hover{border-color:var(--cipx-accent);}",
+      ".cipx-beyond-btn{color:var(--cipx-warn-fg);border-color:var(--cipx-warn-stripe);}",
+      ".cipx-boiler-note,.cipx-beyond-note{font-size:.76rem;color:var(--cipx-muted);line-height:1.5;margin:8px 2px;max-width:82ch;}",
+      ".cipx-boiler-body,.cipx-beyond-body{margin-top:8px;display:flex;flex-direction:column;gap:8px;}",
       ".cipx-foot{margin-top:26px;font-size:.76rem;color:var(--cipx-muted);border-top:1px solid var(--cipx-border);padding-top:14px;line-height:1.6;}",
       // mobile
       "@media (max-width:640px){" +
@@ -755,6 +1046,9 @@
         ".cipx-cbwrap,.cipx-fitta{max-width:100%;}" +
         ".cipx-cand-row{grid-template-columns:13px 56px 1fr;gap:9px;}.cipx-cand-rel{grid-column:2/-1;margin-top:2px;}.cipx-meterwrap{max-width:none;min-width:0;}" +
         ".cipx-vbody{padding:12px 13px;}.cipx-vpill{font-size:.68rem;padding:3px 8px;}.cipx-vtext{font-size:.92rem;}.cipx-vmeterrow{flex-wrap:wrap;gap:6px;}.cipx-vmeterlbl{white-space:normal;}" +
+        ".cipx-modebar{width:100%;}.cipx-modetab{flex:1;padding:8px 6px;font-size:.8rem;text-align:center;}" +
+        ".cipx-rec-row{grid-template-columns:13px 58px 1fr;gap:8px;}.cipx-rec-meta{grid-column:2/-1;flex-direction:row;align-items:center;min-width:0;margin-top:4px;}.cipx-rec-row-flat{grid-template-columns:13px 58px 1fr;}" +
+        ".cipx-rec-card .cipx-detail{padding-left:14px;}" +
       "}",
     ].join("");
     var stEl = el("style", { id: CSS_ID });
@@ -785,6 +1079,8 @@
     _setData: function (d) { ingest(d); },
     _setColleges: function (m) { FIT_COLLEGES = m; },
     _setCourses: function (slug, arr) { FIT_CACHE[slug] = arr; },
+    _setMode: function (mode) { st.mode = mode === "recommend" ? "recommend" : "browse"; },
     _passes: passes, _filtered: filtered, _score: scoreAgainst, _courseScore: scoreTokensVs, _courseToks: courseToks,
+    _recommend: computeRecommend,
   };
 })();

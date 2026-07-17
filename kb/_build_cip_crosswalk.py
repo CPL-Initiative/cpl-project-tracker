@@ -16,13 +16,30 @@ action, and a course-level C-ID/CCN floor flag. No TOP codes, no crosswalk pairs
 
 Emits window.CIP_CROSSWALK:
   {
-    _built_at, _built_by, _source, _note, _category, _transfer,
-    fams: { "<fam2>": "<family title>" },
-    rows: [ {code, t, cat, fam, def, ex, act, x} ]   # 2,325 CIP-2020 codes
+    _built_at, _built_by, _source, _note, _category, _transfer, _topcip,
+    fams:   { "<fam2>": "<family title>" },
+    rows:   [ {code, t, cat, fam, def, ex, act, x} ]   # 2,325 CIP-2020 codes
+    topcip: { "<TOP NNNN.NN>": {t:"<TOP title>", c:[["<cip>","<tier>"], ...]} }
+    boiler: [ "<cip>", ... ]   # generic-noncredit CIPs mapped from nearly every TOP
   }
     cat = certified CTE category: CTE | Both | Non-CTE | Noncredit | Retired | Reserved
     act = 2020-CIP action (New / Deleted / Moved from|to / No substantive changes)
     x   = 1 if any TOP that maps to this CIP has C-ID or CCN coursework (a floor)
+
+The topcip map powers the "Find my course's code" easy button: every COCI course
+carries a current TOP code, and the CO's official TOP->CIP crosswalk lists the
+candidate CIPs for that TOP. The tab ranks those candidates by description-fit —
+the two-signals-agree gate from the repo's TOP doctrine (the crosswalk PROPOSES,
+description-fit RANKS, faculty CONFIRMS; TOP never decides). Each candidate carries
+a provenance tier so field-submitted mappings read softer than CO-authoritative
+ones:
+    o = official   (CCCCO TOP-CIP / COCI / COE TOP-CIP)
+    f = field-submitted
+    n = noncredit   (Noncredit TOP-CIP)
+    g = generic     (CIP Code File, no real TOP relationship)
+`boiler` lists the two universal noncredit CIPs (32.0107 Career Exploration,
+32.0111 Workforce Development) that map from ~280 TOPs each — pure boilerplate the
+tab collapses out of the way rather than ranking.
 
 Two data rules baked in here (full story: docs/cip_crosswalk_lessons.md):
   1. CATEGORY comes from the CO consultant's CERTIFIED designations, not either
@@ -135,12 +152,22 @@ def main():
         }
 
     # ---- TOP-CIP Data: the OTHER CTE flag per CIP, family titles, TOP→CIP map ----
-    # cols: 2 TOP code-title, 11 CIP code-title, 14 CIP family code-title, 15 CIP CTE Flag
+    # cols: 2 TOP code-title, 11 CIP code-title, 14 CIP family code-title,
+    #       15 CIP CTE Flag, 18 relationship source (provenance)
     cross_flags = {}     # cip -> set of the crosswalk-tab CTE flags seen
     fam_titles = {}      # fam2 -> title
     cip_tops = {}        # cip -> set of clean TOP codes that map to it
+    top_title = {}       # TOP code -> clean TOP title
+    top_cips = {}        # TOP code -> {cip -> strongest provenance tier}
+    # provenance -> tier letter (strongest wins per TOP+CIP pair)
+    PROV_TIER = {
+        "CCCCO TOP-CIP": "o", "COCI": "o", "COE TOP-CIP": "o",
+        "Submitted by Field": "f", "Noncredit TOP-CIP": "n",
+        "CIP Code File (No TOP Relationship)": "g",
+    }
+    TIER_RANK = {"o": 0, "f": 1, "n": 2, "g": 3}
     for r in list(wb["TOP-CIP Data"].iter_rows(values_only=True))[1:]:
-        top_code, _ = split_code_title(r[2])
+        top_code, top_ttl = split_code_title(r[2])
         cip_raw, _ = split_code_title(r[11])
         if not cip_raw:
             continue
@@ -151,9 +178,26 @@ def main():
             fam_titles[fam_code] = fam_title
         if top_code and not top_code.upper().startswith("XXXX"):
             cip_tops.setdefault(cip, set()).add(top_code)
+            if top_ttl:
+                top_title.setdefault(top_code, top_ttl)
+            tier = PROV_TIER.get(clean(r[18]), "g")
+            slot = top_cips.setdefault(top_code, {})
+            if cip not in slot or TIER_RANK[tier] < TIER_RANK[slot[cip]]:
+                slot[cip] = tier
     # a couple of reserved families carry no crosswalk title
     fam_titles.setdefault("21", "Reserved (Canadian CIP)")
     fam_titles.setdefault("55", "Reserved (Canadian CIP)")
+
+    # generic-noncredit boilerplate: CIPs mapped from a large share of ALL TOPs
+    # (32.0107 Career Exploration, 32.0111 Workforce Dev — ~280 TOPs each). The
+    # tab collapses these out of the ranked list rather than surfacing them.
+    from collections import Counter as _C
+    _cip_topfreq = _C()
+    for _tc, _slot in top_cips.items():
+        for _cip in _slot:
+            _cip_topfreq[_cip] += 1
+    BOILER_MIN_TOPS = 40   # natural break: 32.0107/32.0111 (275+) vs next (32 TOPs)
+    boiler = sorted(c for c, n in _cip_topfreq.items() if n >= BOILER_MIN_TOPS)
 
     # ---- certified CTE designations (authority for the 244 disagreements) ----
     certified = json.load(open(CERT, encoding="utf-8")).get("designations", {})
@@ -203,6 +247,18 @@ def main():
             row["x"] = 1
         rows.append(row)
 
+    # ---- topcip map: TOP -> {t: title, c: [[cip, tier], ...]} ----
+    # Only real CIP rows (present in `desc`) are kept so the tab's per-code lookup
+    # always resolves. Candidates are ordered official > field > noncredit >
+    # generic (a stable default; the tab re-ranks by description-fit).
+    known = set(desc)
+    topcip = {}
+    for tc, slot in top_cips.items():
+        cand = sorted(((cip, tier) for cip, tier in slot.items() if cip in known),
+                      key=lambda ct: (TIER_RANK[ct[1]], ct[0]))
+        if cand:
+            topcip[tc] = {"t": top_title.get(tc, ""), "c": [[c, t] for c, t in cand]}
+
     payload = {
         "_built_at": BUILT_AT,
         "_built_by": "kb/_build_cip_crosswalk.py",
@@ -218,8 +274,16 @@ def main():
         "_transfer": "rows[].x = 1 if any TOP that maps to this CIP has a course "
                      "carrying a C-ID (transfer-model) or CCN (AB 1111). A FLOOR, not "
                      "full CSU/UC transferability (TOP→CIP is one-to-many).",
+        "_topcip": "topcip[<TOP>] = {t:title, c:[[cip,tier]]} — the official TOP→CIP "
+                   "crosswalk candidates per TOP, ordered official>field>noncredit>"
+                   "generic. Powers the 'Find my course's code' easy button (the tab "
+                   "re-ranks candidates by description-fit — TOP corroborates, never "
+                   "decides). tier: o official, f field-submitted, n noncredit, g "
+                   "generic. boiler = universal noncredit CIPs the tab collapses.",
         "fams": fams,
         "rows": rows,
+        "topcip": topcip,
+        "boiler": boiler,
     }
 
     body = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
@@ -241,6 +305,8 @@ def main():
     print(f"Certified hits:   {cert_hits} of {len(certified)}  |  uncertified conflicts: {uncertified}")
     print(f"C-ID/CCN flagged: {flagged}")
     print(f"Families:         {len(fams)}")
+    npairs = sum(len(v["c"]) for v in topcip.values())
+    print(f"TOP→CIP map:      {len(topcip)} TOPs, {npairs} candidate pairs; boiler {boiler}")
     print(f"Wrote {OUT}  ({os.path.getsize(OUT) / 1024:.0f} KB)")
 
 

@@ -71,6 +71,43 @@ const COURSES = [
   ["AGRI 100 — Intro to Agriculture", "A course about general agriculture, farming, and crop cultivation.", "0101.00"],
 ];
 
+// A richer fixture for the "Find my course's code" (TOP→CIP easy button) mode:
+// a TOP (0505.00) whose crosswalk lists business/accounting CIPs + two universal
+// noncredit boilerplate codes, plus a nursing CIP reachable only by description
+// (never listed for the business TOP → the "outside the crosswalk" case).
+const RFIXTURE = {
+  fams: { "51": "Health Professions", "52": "Business", "32": "Basic Skills" },
+  rows: [
+    { code: "52.0201", t: "Business Administration and Management", cat: "Non-CTE", fam: "52", def: "A general business administration program covering management and organization and accounting.", ex: "", act: "" },
+    { code: "52.0301", t: "Accounting", cat: "CTE", fam: "52", def: "A program that prepares individuals to practice accounting and auditing and bookkeeping.", ex: "", act: "" },
+    { code: "52.0302", t: "Accounting Technology", cat: "CTE", fam: "52", def: "A program in accounting technology and bookkeeping and payroll clerical work.", ex: "", act: "" },
+    { code: "51.3801", t: "Registered Nursing", cat: "CTE", fam: "51", def: "A program that prepares registered nurses to practice nursing and patient care.", ex: "", act: "" },
+    { code: "32.0107", t: "Career Exploration", cat: "Noncredit", fam: "32", def: "A noncredit program in career exploration and awareness.", ex: "", act: "" },
+    { code: "32.0111", t: "Workforce Development", cat: "Noncredit", fam: "32", def: "A noncredit program in workforce development and training.", ex: "", act: "" },
+    { code: "01.0000", t: "Agriculture, General", cat: "Both", fam: "01", def: "A program about general agriculture and farming.", ex: "", act: "" },
+  ],
+  topcip: { "0505.00": { t: "Accounting", c: [["52.0201", "o"], ["52.0301", "o"], ["52.0302", "o"], ["32.0107", "n"], ["32.0111", "n"]] } },
+  boiler: ["32.0107", "32.0111"],
+};
+const RCOURSES = [
+  ["BUS 101 — Business Basics", "A general business administration program covering management and organization and accounting operations.", "0505.00"],
+  ["NURS 101 — Nursing", "A program that prepares registered nurses to practice nursing and patient care.", "0505.00"],
+  ["MYST 1 — Mystery", "Short.", "0505.00"],
+  ["ORPH 1 — Orphan Course", "A program that prepares registered nurses to practice nursing and patient care.", "7777.00"],
+];
+function freshR(mode) {
+  const dom = makeDom();
+  dom.window.CIP_CROSSWALK = JSON.parse(JSON.stringify(RFIXTURE));
+  try { dom.window.localStorage.setItem("cipx_college", "test_college"); } catch (e) {}
+  if (mode) { try { dom.window.localStorage.setItem("cipx_mode", mode); } catch (e) {} }
+  dom.window.eval(src);
+  const api = dom.window.CPL_CIP_CROSSWALK;
+  api._setColleges(JSON.parse(JSON.stringify(MANIFEST)));
+  api._setCourses("test_college", JSON.parse(JSON.stringify(RCOURSES)));
+  api.activate();
+  return dom;
+}
+
 function fresh(withCollege) {
   const dom = makeDom();
   dom.window.CIP_CROSSWALK = JSON.parse(JSON.stringify(FIXTURE));
@@ -172,6 +209,65 @@ function fresh(withCollege) {
   check("a well-aligned course reads as a Strong fit", fitResult && fitResult.querySelector(".cipx-vpill-ok"));
   check("the verdict lists closest CIP candidates", fitResult && fitResult.querySelectorAll(".cipx-cand-card").length >= 1);
   check("a paste-a-description fallback is offered", wrap.parentNode.parentNode.querySelector(".cipx-fit-pastelink"));
+
+  // ── Part B2 — "Find my course's code" (TOP→CIP easy button) ──
+  check("cip_crosswalk_data.js carries topcip{} + boiler[]", /"topcip":/.test(dataSrc) && /"boiler":/.test(dataSrc));
+  check("cip_crosswalk.js has the two-mode toggle", /cipx-modebar/.test(src) && /Find my course/.test(src));
+  check("cip_crosswalk.js exposes the recommend seam", /_recommend:/.test(src));
+
+  // logic (via the _recommend seam — no DOM)
+  const rApi = freshR().window.CPL_CIP_CROSSWALK;
+  const mBiz = rApi._recommend(RCOURSES[0]);
+  check("recommend resolves the course's TOP + title", mBiz.top === "0505.00" && /Accounting/.test(mBiz.topTitle) && mBiz.hasCross);
+  check("recommend ranks the crosswalk candidates by fit", mBiz.cands.length && mBiz.cands[0].r.code === "52.0201");
+  check("recommend flags a two-signals-agree winner (✓ Recommended)", mBiz.recommended === "52.0201");
+  check("recommend splits out the boiler candidates", mBiz.boiler.length === 2 && mBiz.boiler.every((b) => b.r.code.indexOf("32.01") === 0));
+  check("boiler codes never sit in the main ranked list", mBiz.cands.every((c) => c.r.code.indexOf("32.01") !== 0));
+  check("recommend carries a provenance tier per candidate", mBiz.cands[0].prov === "o");
+  // a nursing description under the business TOP → strong match OUTSIDE the crosswalk, no false winner
+  const mNur = rApi._recommend(RCOURSES[1]);
+  check("recommend surfaces a strong match outside the crosswalk (⚠)", mNur.beyond.some((o) => o.r.code === "51.3801"));
+  check("recommend withholds a winner when the signals disagree", mNur.recommended === null);
+  // a TOP absent from the crosswalk → falls back to description matches, no crash
+  const mOrphan = rApi._recommend(RCOURSES[3]);
+  check("recommend handles a TOP absent from the crosswalk", mOrphan.hasCross === false && mOrphan.res.ranked.length >= 1);
+  // too-thin description → flagged honestly
+  check("recommend flags a too-thin description", rApi._recommend(RCOURSES[2]).thin === true);
+
+  // DOM: recommend mode renders + picking a course produces a recommendation card
+  const domR = freshR("recommend");
+  const rdoc = domR.window.document;
+  check("recommend mode: the toggle shows both tabs", rdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 2);
+  check("recommend mode: the recommend tab is selected", rdoc.querySelector(".cipx-modetab.on") && /Find my course/.test(rdoc.querySelector(".cipx-modetab.on").textContent));
+  check("recommend mode: shows the course-first panel, not the browse list", rdoc.querySelector(".cipx-rec .cipx-panel") && !rdoc.querySelector(".cipx-list"));
+  await tick(); await tick();  // let loadCollege() resolve
+  const rInput = rdoc.querySelector(".cipx-rec-combohost .cipx-cbwrap .cipx-fit-cb");
+  check("recommend mode: the course combobox renders once courses load", !!rInput);
+  rInput.focus();
+  const rPanel = rdoc.querySelector(".cipx-rec-combohost .cipx-fit-panel");
+  const rBizOpt = Array.prototype.filter.call(rPanel.querySelectorAll(".cipx-cb-opt"), (o) => /Business Basics/.test(o.textContent))[0];
+  rBizOpt.dispatchEvent(new domR.window.MouseEvent("mousedown"));
+  const rHost = rdoc.querySelector(".cipx-rec-host");
+  check("recommend mode: picking a course shows its current TOP", rHost && /0505\.00/.test(rHost.querySelector(".cipx-rec-ctop").textContent));
+  check("recommend mode: a two-signals-agree winner gets a ✓ Recommended badge", rHost && rHost.querySelector(".cipx-recbadge"));
+  check("recommend mode: the winner is the highlighted recommended card", rHost && rHost.querySelector(".cipx-rec-card-rec"));
+  check("recommend mode: boiler codes are collapsed behind an expander", rHost && rHost.querySelector(".cipx-boiler-btn"));
+  check("recommend mode: a finder-not-decider footer is shown", rHost && /not a determination/.test(rHost.querySelector(".cipx-fitfoot").textContent));
+  // switching a course to a misfiled one opens the ⚠ outside-the-crosswalk drawer
+  rInput.focus();
+  const nurOpt = Array.prototype.filter.call(rdoc.querySelector(".cipx-rec-combohost .cipx-fit-panel").querySelectorAll(".cipx-cb-opt"), (o) => /Nursing/.test(o.textContent))[0];
+  nurOpt.dispatchEvent(new domR.window.MouseEvent("mousedown"));
+  check("recommend mode: a signal-disagreement opens the outside-the-crosswalk section", rHost.querySelector(".cipx-beyond-btn") && /outside the crosswalk/.test(rHost.querySelector(".cipx-beyond-btn").textContent));
+  // changing the college IN recommend mode must rebuild the course-first view —
+  // NOT call the browse render() (which throws on the absent countHost).
+  let recSelThrew = false;
+  try {
+    const csel = rdoc.querySelector(".cipx-college-sel");
+    csel.value = ""; csel.dispatchEvent(new domR.window.Event("change"));
+    csel.value = "test_college"; csel.dispatchEvent(new domR.window.Event("change"));
+    await tick(); await tick();
+  } catch (e) { recSelThrew = true; console.error(e); }
+  check("recommend mode: changing the college rebuilds without throwing", !recSelThrew && rdoc.querySelector(".cipx-rec-combohost"));
 
   // ── Part C — failure guards ──
   const dom2 = makeDom(); dom2.window.eval(src);
