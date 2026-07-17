@@ -636,13 +636,25 @@
         var an = a.r.cat === "Noncredit" ? 1 : 0, bn = b.r.cat === "Noncredit" ? 1 : 0;
         return an - bn || b.score - a.score || (a.r.t < b.r.t ? -1 : 1);
       });
+      // Confidence is CROSSWALK-RELATIVE: how clearly the description picks each
+      // candidate among the crosswalk's options for THIS TOP — normalized to the
+      // best-scoring option, not the global max. ("Accounting for Managers" shouldn't
+      // read 77% for Accounting just because "Managerial Economics" — which isn't even
+      // a valid option for this TOP — scores higher globally.) A quality factor (bestRel
+      // / 65) dampens the whole TOP when even its best option is a weak absolute match,
+      // so an all-weak TOP still reads honestly low rather than falsely 100%.
+      var bestScore = 0, bestRel = 0;
+      cands.forEach(function (c) { if (c.score > bestScore) bestScore = c.score; if (c.rel > bestRel) bestRel = c.rel; });
+      var qf = Math.min(1, bestRel / 65);
+      cands.forEach(function (c) { c.conf = bestScore > 0 ? Math.min(100, Math.round(c.score / bestScore * 100 * qf)) : 0; });
     }
-    // recommendation gate: the top crosswalk candidate is also a globally-strong
-    // description match (rel≥85) AND clearly ahead of the next crosswalk candidate.
+    // recommendation gate: the top (credit-first) candidate is also the best-SCORING
+    // one AND clearly ahead of the pack AND a confident (crosswalk-relative) match.
     var recommended = null;
-    if (cands.length && cands[0].score > 0 && cands[0].rel >= 85) {
-      var cwMargin = cands.length > 1 ? 1 - cands[1].score / cands[0].score : 1;
-      if (cwMargin >= 0.25) recommended = cands[0].r.code;
+    if (cands.length && cands[0].score > 0) {
+      var byScore = cands.slice().sort(function (a, b) { return b.score - a.score; });
+      var cwMargin = byScore.length > 1 ? 1 - byScore[1].score / byScore[0].score : 1;
+      if (cands[0].score === byScore[0].score && cwMargin >= 0.25 && cands[0].conf >= 85) recommended = cands[0].r.code;
     }
     // strong (rel≥85) description matches the crosswalk doesn't list for this TOP.
     // Exclude the boiler codes — they self-rank at rel 100 on ~275 TOPs and must
@@ -655,7 +667,9 @@
   // One candidate card: code, title, category, an honest tier + vocab-match meter,
   // the matched terms (the trust lever), provenance, and an expand to its definition.
   function recCandCard(rec, isRec, flat) {
-    var tier = tierOf(rec.rel), r = rec.r, prov = provLabel(rec.prov);
+    // crosswalk candidates carry `conf` (crosswalk-relative); beyond/other entries only rel
+    var pct = rec.conf != null ? rec.conf : rec.rel;
+    var tier = tierOf(pct), r = rec.r, prov = provLabel(rec.prov);
     var caret = el("span", { class: "cipx-caret" }, ["▸"]);
     var main = el("span", { class: "cipx-rec-main" }, [
       el("span", { class: "cipx-rec-ttl" }, [r.t]),
@@ -665,7 +679,7 @@
     ]);
     var meta = flat ? null : el("span", { class: "cipx-rec-meta" }, [
       el("span", { class: "cipx-tierlbl cipx-tier-" + tier.key }, [tier.label]),
-      meter(rec.rel, tier.key),
+      meter(pct, tier.key),
     ]);
     var row = el("div", { class: "cipx-rec-row" + (flat ? " cipx-rec-row-flat" : ""), role: "button", tabindex: "0" }, [
       caret, el("span", { class: "cipx-code" }, [r.code]), main, meta,
@@ -1018,7 +1032,7 @@
         el("span", { class: "cipx-rev-radio" }, [isPick ? "◉" : "○"]),
         el("span", { class: "cipx-code" }, [cr.code]),
         el("span", { class: "cipx-rev-candt" }, [cr.t, cr.cat ? el("span", { class: catClass(cr.cat), title: catTip(cr.cat) }, [cr.cat]) : null]),
-        el("span", { class: "cipx-rev-candrel" }, [meter(o.rel || 0, tierOf(o.rel || 0).key)]),
+        el("span", { class: "cipx-rev-candrel" }, [(function () { var p = o.conf != null ? o.conf : (o.rel || 0); return meter(p, tierOf(p).key); })()]),
       ]);
       row.onclick = function () { choose(cr.code); };
       row.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); choose(cr.code); } };

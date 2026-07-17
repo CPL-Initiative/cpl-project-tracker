@@ -86,6 +86,7 @@ const RFIXTURE = {
     { code: "52.0201", t: "Business Administration and Management", cat: "Non-CTE", fam: "52", def: "A general business administration program covering management and organization and accounting.", ex: "", act: "" },
     { code: "52.0301", t: "Accounting", cat: "CTE", fam: "52", def: "A program that prepares individuals to practice accounting and auditing and bookkeeping.", ex: "", act: "" },
     { code: "52.0302", t: "Accounting Technology", cat: "CTE", fam: "52", def: "A program in accounting technology and bookkeeping and payroll clerical work.", ex: "", act: "" },
+    { code: "52.9001", t: "Managerial Economics (outside the crosswalk)", cat: "Non-CTE", fam: "52", def: "A program in business administration and management and organization and accounting and economics and econometrics and quantitative analysis for managers.", ex: "", act: "" },
     { code: "51.3801", t: "Registered Nursing", cat: "CTE", fam: "51", def: "A program that prepares registered nurses to practice nursing and patient care.", ex: "", act: "" },
     { code: "32.0107", t: "Career Exploration", cat: "Noncredit", fam: "32", def: "A noncredit program in career exploration and awareness.", ex: "", act: "" },
     { code: "32.0111", t: "Workforce Development", cat: "Noncredit", fam: "32", def: "A noncredit program in workforce development and training.", ex: "", act: "" },
@@ -287,6 +288,21 @@ function fresh(withCollege) {
   const mMath = rApi._recommend(["MATH 3F — Differential Equations", "A course in differential equations, equivalent to advanced study.", "1701.00"]);
   check("Fix C: the credit candidate leads over a lexically-stronger Noncredit one", mMath.cands.length >= 2 && mMath.cands[0].r.code === "27.0101");
   check("Fix C: a Noncredit CIP is never the green ✓ recommendation when a credit one exists", mMath.recommended !== "32.0202");
+
+  // ── Crosswalk-relative confidence (Sam's "Accounting should read ~100%, not 77%") ──
+  const mBizConf = rApi._recommend(RCOURSES[0]);
+  check("recommend candidates carry a crosswalk-relative confidence (conf)", mBizConf.cands.length && typeof mBizConf.cands[0].conf === "number");
+  check("the top candidate's conf is never below its global rel (crosswalk-relative lifts)", mBizConf.cands[0].conf >= mBizConf.cands[0].rel);
+  // 52.9001 is NOT in TOP 0505.00's crosswalk but out-scores every candidate globally;
+  // the crosswalk winner (52.0201) must still read high (crosswalk-relative), not be
+  // dragged down by an option that isn't even valid for this TOP.
+  const mOut = rApi._recommend(["OUT 1 — Managerial Analysis", "business administration and management and organization and accounting and econometrics", "0505.00"]);
+  check("a clear crosswalk winner reads high conf even when the GLOBAL best is outside the crosswalk", mOut.cands[0].r.code === "52.0201" && mOut.cands[0].conf >= 85);
+  check("crosswalk-relative lifts the winner above its (depressed) global rel", mOut.cands[0].conf > mOut.cands[0].rel);
+  check("the outside global best surfaces in the ⚠ beyond drawer, not as a candidate", mOut.beyond.some((o) => o.r.code === "52.9001"));
+  // an all-weak TOP is NOT falsely inflated: a course matching none of its candidates' vocab
+  const mWeak = rApi._recommend(["ZZZ 1 — Unrelated", "quilting macrame origami calligraphy pottery", "0505.00"]);
+  check("an all-weak TOP is not falsely recommended", mWeak.recommended === null);
 
   // ── Fix D: the boiler codes never leak into the ⚠ "outside the crosswalk" drawer ──
   const mBoiler = rApi._recommend(["WKX 1 — Workplace Intro", "Career exploration and workforce development awareness training.", "1701.00"]);
