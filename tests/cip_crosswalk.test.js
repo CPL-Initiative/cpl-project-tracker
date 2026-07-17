@@ -315,6 +315,14 @@ function fresh(withCollege) {
   const mBoiler = rApi._recommend(["WKX 1 — Workplace Intro", "Career exploration and workforce development awareness training.", "1701.00"]);
   check("Fix D: boiler codes are excluded from the outside-the-crosswalk (beyond) list", mBoiler.beyond.every((o) => o.r.code !== "32.0107" && o.r.code !== "32.0111"));
 
+  // ── work-experience courses stay in their discipline (no outside-crosswalk nudge) ──
+  // Same description as mOut (which DOES surface 52.9001 in `beyond`), but a work-
+  // experience label suppresses the drawer — the units belong to the course's discipline.
+  const mWE = rApi._recommend(["ACCT 200 — Accounting Work Experience", "business administration and management and organization and accounting and econometrics", "0505.00"]);
+  check("work-experience courses stay in discipline — outside-crosswalk drawer suppressed", mWE.beyond.length === 0);
+  const mWEcoop = rApi._recommend(["BUS 90 — Cooperative Work Experience Education", "business administration and management and organization and accounting and econometrics", "0505.00"]);
+  check("cooperative work experience education is treated the same", mWEcoop.beyond.length === 0);
+
   // DOM: recommend mode renders + picking a course produces a recommendation card
   const domR = freshR("recommend");
   const rdoc = domR.window.document;
@@ -362,10 +370,12 @@ function fresh(withCollege) {
   const domRev = freshR("review");
   const revdoc = domRev.window.document;
   check("review mode: three tabs, review selected", revdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 3 && /Review my catalog/.test(revdoc.querySelector(".cipx-modetab.on").textContent));
+  check("mode tabs use hairline SVG glyphs, not cliparty emoji", revdoc.querySelectorAll(".cipx-modetab .cipx-tabico").length === 3 && !/📖|🎯|📋/.test(revdoc.querySelector(".cipx-modebar").textContent));
   check("review mode: shows the trust banner", revdoc.querySelector(".cipx-rev-banner") && /starting point you confirm/.test(revdoc.querySelector(".cipx-rev-banner").textContent));
   await tick(); await tick();  // dept picker populates from loadCollege
   const deptSel = revdoc.querySelector(".cipx-rev-deptsel");
   check("review mode: department picker populates from the catalog", deptSel && Array.prototype.some.call(deptSel.options, (o) => o.value === "BUS"));
+  check("review mode: the Department picker sits up in the college bar (beside college)", !!revdoc.querySelector(".cipx-collegebar .cipx-rev-deptsel"));
   deptSel.value = "BUS"; deptSel.dispatchEvent(new domRev.window.Event("change"));
   await tick(); await tick();
   check("review mode: selecting a department renders triage tiles", !!revdoc.querySelector(".cipx-rev-tiles .cipx-rev-tile"));
@@ -375,10 +385,11 @@ function fresh(withCollege) {
   await tick();
   const cand = revRow.querySelector(".cipx-rev-cand");
   check("review mode: a row expands to selectable candidate codes", !!cand);
+  check("crosswalk candidates carry a 'from TOP' tag so the lineage is apparent", cand.querySelector(".cipx-rev-candtop") && /0505\.00/.test(cand.querySelector(".cipx-rev-candtop").textContent));
   cand.click();
   await tick();
   check("review mode: picking a candidate persists the decision (localStorage)", (function () { try { return JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["BUS 101 — Business Basics"] === "52.0201"; } catch (e) { return false; } })());
-  check("review row shows the current TOP (where they are) beside the CIP (where they're going)", revRow.querySelector(".cipx-rev-ctopline") && /0505\.00/.test(revRow.querySelector(".cipx-rev-ctopline").textContent));
+  check("review row shows the TOP → CIP transition (TOP beside a labeled CIP box)", revRow.querySelector(".cipx-rev-tocip .cipx-rev-fromtop") && /0505\.00/.test(revRow.querySelector(".cipx-rev-tocip .cipx-rev-fromtop").textContent) && !!revRow.querySelector(".cipx-rev-tocip .cipx-rev-ciplabel"));
   // a stronger match OUTSIDE the crosswalk is a selectable candidate (assignable)
   deptSel.value = "NURS"; deptSel.dispatchEvent(new domRev.window.Event("change"));
   await tick(); await tick();
