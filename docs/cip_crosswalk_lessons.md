@@ -506,3 +506,39 @@ more closely."* Tests: `tests/cip_crosswalk.test.js` still green (58).
    ranking is right) + magic (search lets them override it). Tests → **60 green**;
    real-Chromium (desktop + phone): scroll kept, panel opens below, 0 overflow, 0
    console errors.
+
+## 2026-07-17 — checkpoint + handoff to SkyLiftoff: the TOP→CIP "easy button" (queued)
+
+Sam, feeling for faculty who must assign CIPs to **800–1,500 courses** each: every
+course already carries a **current TOP code**, and the CO's official **TOP→CIP
+crosswalk** is the "candidate CIPs for this discipline" table — combine them for an
+easy button. This is the **two-signals-agree** gate from our own §7 TOP doctrine
+(crosswalk *proposes*, description-fit *ranks*, faculty *confirms*) — TOP never decides.
+
+**Grounded in the workbook** (`kb/reference/cip_searchable_260715.xlsx`, TOP-CIP Data):
+420 TOPs → 4,865 pairs, **median 5 CIPs/TOP** (mean 11.6, max 1331), **32% map to ≤3**.
+Noise: every TOP carries noncredit boilerplate (`32.0107 Career Exploration`,
+`32.0111 Workforce Dev`) — de-emphasize (description-fit already ranks it ~0. Each pair
+has **provenance** (`CCCCO TOP-CIP` official / `Submitted by Field` softer) — a trust cue.
+The magic in examples: `0949.00`→3 CIPs (Autobody wins); `1007.00` Dramatic Arts →
+Acting/Theatre-General/Technical-Theatre (description places each — the elegant Improv
+answer); `0502.00` → Accounting/Accounting-Tech/**Auditing** (an audit course routes right).
+
+**Recommendation (SkyLoft → SkyLiftoff):**
+- **Phase 1 (easy button):** on a picked course, show its **current TOP** + the crosswalk
+  CIPs ranked by description-fit, top both-agree flagged **✓ Recommended**; a **"beyond the
+  crosswalk"** lens (all-CIP matches) with a ⚠ when the two signals disagree; a **course-first
+  entry**. Small data lift — re-emit a compact `TOP→[CIP+provenance]` map from
+  `kb/_build_cip_crosswalk.py` (the pairs were slimmed out of the lean reference but the
+  generator still reads them).
+- **Phase 2 (CO "wow"):** a whole-catalog **review sheet** per college — every course →
+  current TOP → recommended CIP → confidence, pre-filled for the clear ones; faculty
+  adjudicate only the ambiguous minority. Turns a 1,500-course slog into review-and-approve.
+- **Caveats:** recommendation not auto-assign; one-to-many is *why* we rank; TOP can be
+  wrong (hence "beyond crosswalk" + disagreement flag); faculty enters the code in COCI.
+
+**Standing gate:** the **WCAG accessibility pass** before field release (audience today =
+Raul + Jenni only; Raul owns the process at field). Paste-able capsule for the next
+session: [`docs/cip_crosswalk_handoff.md`](cip_crosswalk_handoff.md). Method note:
+[`docs/kb-notes/methodology-grounded-lexical-cip-confidence.md`](kb-notes/methodology-grounded-lexical-cip-confidence.md).
+Side-lane discipline held throughout — `cpl_todos.json` + the numbered handoff untouched.
