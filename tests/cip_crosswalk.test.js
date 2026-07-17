@@ -95,6 +95,7 @@ const RFIXTURE = {
   topcip: {
     "0505.00": { t: "Accounting", c: [["52.0201", "o"], ["52.0301", "o"], ["52.0302", "o"], ["32.0107", "n"], ["32.0111", "n"]] },
     "1701.00": { t: "Mathematics", c: [["27.0101", "o"], ["32.0202", "n"]] },
+    "1230.00": { t: "Registered Nursing", c: [["51.3801", "o"]] },
   },
   boiler: ["32.0107", "32.0111"],
 };
@@ -104,6 +105,15 @@ const RCOURSES = [
   ["MYST 1 — Mystery", "Short.", "0505.00"],
   ["ORPH 1 — Orphan Course", "A program that prepares registered nurses to practice nursing and patient care.", "7777.00"],
 ];
+// cross-college consensus fixture: peers overwhelmingly code "Nursing" under a Registered
+// Nursing TOP (1230.00); this college used 0505.00 (Accounting) — the lone outlier.
+const RCONSENSUS = {
+  colleges: ["Alpha College", "Beta College", "Gamma College", "Delta College", "Test College"],
+  titles: {
+    "nursing": { n: 5, t: [["1230.00", [0, 1, 2, 3]], ["0505.00", [4]]] },
+    "business basics": { n: 6, t: [["0505.00", [0, 1, 2, 3, 4]]] },
+  },
+};
 function freshR(mode) {
   const dom = makeDom();
   dom.window.CIP_CROSSWALK = JSON.parse(JSON.stringify(RFIXTURE));
@@ -246,6 +256,7 @@ function fresh(withCollege) {
 
   // logic (via the _recommend seam — no DOM)
   const rApi = freshR().window.CPL_CIP_CROSSWALK;
+  rApi._setConsensus(RCONSENSUS);
   const mBiz = rApi._recommend(RCOURSES[0]);
   check("recommend resolves the course's TOP + title", mBiz.top === "0505.00" && /Accounting/.test(mBiz.topTitle) && mBiz.hasCross);
   check("recommend ranks the crosswalk candidates by fit", mBiz.cands.length && mBiz.cands[0].r.code === "52.0201");
@@ -323,6 +334,15 @@ function fresh(withCollege) {
   const mWEcoop = rApi._recommend(["BUS 90 — Cooperative Work Experience Education", "business administration and management and organization and accounting and econometrics", "0505.00"]);
   check("cooperative work experience education is treated the same", mWEcoop.beyond.length === 0);
 
+  // ── cross-college TOP consensus (the corroborating "how do peers code this?" signal) ──
+  check("exposes the consensus seams", typeof rApi._consensus === "function" && typeof rApi._consensusKey === "function");
+  check("consensusKey normalizes a course label to its bare title", rApi._consensusKey("NURS 101 — Nursing") === "nursing");
+  const consN = rApi._consensus("NURS 101 — Nursing");
+  check("consensus finds the modal peer TOP", consN && consN.modal.top === "1230.00" && consN.n === 5);
+  check("consensus reports the honest (M use, K differ) split", consN.modal.n === 4 && consN.differ === 1);
+  check("consensus carries the college breakdown for the differ hover", consN.others.length === 1 && consN.others[0].colleges.indexOf("Test College") >= 0);
+  check("consensus is null for an unknown course title", rApi._consensus("XYZ 1 — Nonexistent Course Title") === null);
+
   // DOM: recommend mode renders + picking a course produces a recommendation card
   const domR = freshR("recommend");
   const rdoc = domR.window.document;
@@ -368,6 +388,7 @@ function fresh(withCollege) {
   check("review flags a no-crosswalk course as manual", revRows.find((r) => /Orphan/.test(r.label)).status === "manual");
 
   const domRev = freshR("review");
+  domRev.window.CPL_CIP_CROSSWALK._setConsensus(RCONSENSUS);   // peer-consensus fixture (fetch is a no-op in jsdom)
   const revdoc = domRev.window.document;
   check("review mode: three tabs, review selected", revdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 3 && /Review my catalog/.test(revdoc.querySelector(".cipx-modetab.on").textContent));
   check("mode tabs use hairline SVG glyphs, not cliparty emoji", revdoc.querySelectorAll(".cipx-modetab .cipx-tabico").length === 3 && !/📖|🎯|📋/.test(revdoc.querySelector(".cipx-modebar").textContent));
@@ -398,6 +419,13 @@ function fresh(withCollege) {
   await tick();
   const outCand = nurItem.querySelector(".cipx-rev-cand-out");
   check("review mode: a stronger outside-crosswalk match renders as a selectable candidate", !!outCand);
+  // peer-consensus block (before we click anything that re-renders)
+  const peer = nurItem.querySelector(".cipx-rev-peer");
+  check("peer-consensus block renders how other colleges code this course", !!peer && /how peers code/i.test(peer.textContent));
+  check("peer block shows the honest (M use, K differ) strength metric", peer && /\(4 use, 1 differ\)/.test(peer.textContent));
+  check("peer differ-metric hover lists the differing colleges", (function () { var m = peer && peer.querySelector(".cipx-rev-peermetric"); return m && /Test College/.test(m.getAttribute("title") || ""); })());
+  const peerCand = nurItem.querySelector(".cipx-rev-cand-peer");
+  check("peer block offers the consensus CIP as a selectable candidate", !!peerCand && /51\.3801/.test(peerCand.textContent));
   outCand.click();
   await tick();
   check("review mode: assigning an outside-crosswalk code persists it", (function () { try { return JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["NURS 101 — Nursing"] === "51.3801"; } catch (e) { return false; } })());

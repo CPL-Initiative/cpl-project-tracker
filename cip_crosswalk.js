@@ -72,6 +72,7 @@
   var GOFORWARD = { "CTE": 1, "Both": 1, "Non-CTE": 1, "Noncredit": 1 };
   var st = { q: "", cat: "all", fam: "", xfer: false, showRetired: false, limit: PAGE, open: {}, college: null, mode: "browse" };
   var FIT_COLLEGES = null, FIT_CACHE = {}, FIT_LOADING = {};
+  var CONSENSUS = null, CONSENSUS_COLLEGES = null, CONSENSUS_LOADING = null;
   var wrapEl, inputRef, pillsRef, famRef, cbRef, xferRef, listHost, countHost, suggestHost, collegeSelEl;
 
   function ingest(data) {
@@ -366,6 +367,52 @@
     fetch("cip_fitcheck_colleges.json").then(function (r) { return r.ok ? r.json() : null; }).then(function (m) {
       if (m && m.length) { FIT_COLLEGES = m; if (collegeSelEl) populateCollegeSel(); }
     }).catch(function () {});
+  }
+
+  // ── Cross-college TOP consensus (the corroborating "how do peers code this course?"
+  // signal). Lazy-fetched once; see kb/_build_course_top_consensus.py. ──
+  function loadConsensus() {
+    if (CONSENSUS || CONSENSUS_LOADING || typeof fetch !== "function") return CONSENSUS_LOADING;
+    CONSENSUS_LOADING = fetch("course_top_consensus.json").then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (d && d.titles) { CONSENSUS = d.titles; CONSENSUS_COLLEGES = d.colleges || []; }
+      return CONSENSUS;
+    }).catch(function () { return null; });
+    return CONSENSUS_LOADING;
+  }
+  // normalize a course label's title for consensus lookup — MUST match the generator's
+  // norm_title (drop the "SUBJ NUM — " prefix, lowercase, non-alphanumerics → spaces).
+  function consensusKey(label) {
+    var l = label || "", i = l.indexOf(" — ");
+    var t = i >= 0 ? l.slice(i + 3) : l;
+    return t.toLowerCase().replace(/[^a-z0-9]+/g, " ").replace(/\s+/g, " ").trim();
+  }
+  // Peer-coding consensus for one course label: the modal TOP + honest strength metric
+  // + the full per-TOP college breakdown (for the "K differ" hover). null if unknown.
+  function consensusFor(label) {
+    if (!CONSENSUS) return null;
+    var key = consensusKey(label); if (!key) return null;
+    var e = CONSENSUS[key]; if (!e || !e.t || !e.t.length) return null;
+    var names = CONSENSUS_COLLEGES || [];
+    var groups = e.t.map(function (row) {
+      return { top: row[0], topTitle: (TOPCIP[row[0]] || {}).t || "", n: row[1].length,
+        colleges: row[1].map(function (i) { return names[i] || ("#" + i); }) };
+    });
+    var modal = groups[0];
+    return { key: key, n: e.n, modal: modal, groups: groups, differ: e.n - modal.n, others: groups.slice(1) };
+  }
+  // Among a TOP's crosswalk CIPs, the one that best fits THIS course's description
+  // (peer TOP + description-fit = two signals agree). Falls back to the first official CIP.
+  function bestCipForTop(top, m) {
+    var e = TOPCIP[top]; if (!e || !e.c || !e.c.length) return null;
+    var byCode = {}; (m && m.res && m.res.ranked || []).forEach(function (o) { byCode[o.r.code] = o; });
+    var best = null;
+    e.c.forEach(function (ct) {
+      if (BOILER[ct[0]]) return;
+      var r = BYCODE[ct[0]]; if (!r) return;
+      var rel = byCode[ct[0]] ? byCode[ct[0]].rel : 0;
+      if (!best || rel > best.rel) best = { r: r, rel: rel };
+    });
+    return best;
   }
   function loadCollege(slug) {
     slug = String(slug || "").replace(/[^a-z0-9_]/g, "");
@@ -1063,6 +1110,51 @@
     return card;
   }
 
+  // tooltip for the "K differ" metric — which OTHER TOPs the minority colleges use, and who
+  function differHover(cons) {
+    if (cons.differ <= 0) return "Every college teaching this course codes it the same way.";
+    var parts = cons.others.filter(function (g) { return g.n > 0; }).map(function (g) {
+      var cols = g.colleges.slice(0, 10).join(", ") + (g.colleges.length > 10 ? ", +" + (g.colleges.length - 10) + " more" : "");
+      return "TOP " + g.top + (g.topTitle ? " · " + g.topTitle : "") + " — " + cols;
+    });
+    return "Colleges coding it differently:\n" + parts.join("\n");
+  }
+
+  // The "how do peers code this course?" block — the corroborating consensus signal, with
+  // Sam's honest "(M use, K differ)" strength metric (hover K to see who/which TOPs), and
+  // the consensus CIP offered as a selectable, pickable candidate.
+  function peerConsensusBlock(r, chosen, choose) {
+    var cons = consensusFor(r.label); if (!cons) return null;
+    var modal = cons.modal, best = bestCipForTop(modal.top, r.m);
+    var own = null; cons.groups.forEach(function (g) { if (g.top === r.top) own = g; });
+    var wrap = el("div", { class: "cipx-rev-peer" }, []);
+    wrap.appendChild(el("div", { class: "cipx-rev-peerlead" }, [svgIcon(COLLEGE_ICON), el("span", {}, ["How peers code this course"])]));
+    var body = el("div", { class: "cipx-rev-peerbody" }, [
+      "Across California, " + cons.n + " college" + (cons.n === 1 ? "" : "s") + " teach “" + cons.key + ".” Most use TOP ",
+      el("span", { class: "cipx-code" }, [modal.top]), modal.topTitle ? " · " + modal.topTitle : "", " ",
+      el("span", { class: "cipx-rev-peermetric", title: differHover(cons) }, ["(" + modal.n + " use, " + cons.differ + " differ)"]),
+      best ? el("span", {}, [" → CIP ", el("span", { class: "cipx-code" }, [best.r.code]), " · " + best.r.t + "."]) : " (no crosswalk CIP for that TOP).",
+    ]);
+    wrap.appendChild(body);
+    if (r.top && modal.top !== r.top) {
+      wrap.appendChild(el("div", { class: "cipx-rev-peernote" }, ["This course uses TOP ", el("span", { class: "cipx-code" }, [r.top]), r.topTitle ? " · " + r.topTitle : "", own ? " — " + own.n + " of " + cons.n + (own.n === 1 ? " (the outlier)" : " here") + "." : "."]));
+    }
+    // offer the consensus CIP as a selectable candidate (when a real consensus + a crosswalk CIP)
+    if (best && modal.n >= 3 && best.r.code !== chosen) {
+      var row = el("div", { class: "cipx-rev-cand cipx-rev-cand-peer", role: "button", tabindex: "0" }, [
+        el("span", { class: "cipx-rev-radio" }, ["○"]),
+        el("span", { class: "cipx-code" }, [best.r.code]),
+        el("span", { class: "cipx-rev-candt" }, [best.r.t, best.r.cat ? el("span", { class: catClass(best.r.cat), title: catTip(best.r.cat) }, [best.r.cat]) : null,
+          el("span", { class: "cipx-rev-peertag", title: "Where peer colleges' TOP codes point via the crosswalk" }, ["peer consensus · " + modal.n + " of " + cons.n])]),
+        el("span", { class: "cipx-rev-candrel" }, [meter(best.rel || 0, tierOf(best.rel || 0).key)]),
+      ]);
+      row.onclick = function () { choose(best.r.code); };
+      row.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); choose(best.r.code); } };
+      wrap.appendChild(row);
+    }
+    return wrap;
+  }
+
   function reviewExpand(r, dec, allRows) {
     var box = el("div", { class: "cipx-rev-detail" }, []);
     // (The current TOP is shown in the collapsed row's "TOP → CIP" line — no need to
@@ -1107,6 +1199,8 @@
         box.appendChild(row);
       });
     }
+    // the corroborating peer-consensus signal (how other colleges code this same course)
+    var peer = peerConsensusBlock(r, chosen, choose); if (peer) box.appendChild(peer);
     // actions: confirm + search-all escape hatch + clear
     var acts = el("div", { class: "cipx-rev-detactions" }, []);
     var conf = el("button", { class: "cipx-rev-confirm", type: "button" }, [dec[r.label] ? "✓ Confirmed — change?" : "Confirm this code"]);
@@ -1264,6 +1358,7 @@
     wrapEl.appendChild(footer());
     root.appendChild(wrapEl);
     fetchColleges();
+    if (st.mode === "review" || st.mode === "recommend") loadConsensus();
     if (st.college) loadCollege(st.college);
   }
 
@@ -1483,6 +1578,13 @@
       ".cipx-rev-candt{font-weight:600;color:var(--cipx-text);min-width:0;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;}",
       ".cipx-rev-why{grid-column:2/-1;font-size:.72rem;color:var(--cipx-muted);}",
       ".cipx-rev-flag{font-size:.78rem;color:var(--cipx-warn-fg);background:var(--cipx-warn-bg);border-radius:8px;padding:8px 11px;margin:8px 0;line-height:1.5;}",
+      ".cipx-rev-peer{margin:10px 0 2px;padding:11px 13px;background:var(--cipx-accent-soft);border:1px solid var(--cipx-border);border-radius:10px;}",
+      ".cipx-rev-peerlead{display:flex;align-items:center;gap:7px;font-weight:700;font-size:.82rem;color:var(--cipx-accent);margin-bottom:5px;}",
+      ".cipx-rev-peerbody{font-size:.82rem;color:var(--cipx-text-soft);line-height:1.55;}",
+      ".cipx-rev-peermetric{font-weight:700;color:var(--cipx-text);cursor:help;border-bottom:1px dotted var(--cipx-border-strong);white-space:nowrap;}",
+      ".cipx-rev-peernote{font-size:.78rem;color:var(--cipx-muted);margin-top:5px;}",
+      ".cipx-rev-cand-peer{border-color:var(--cipx-accent);margin-top:8px;background:var(--cipx-surface);}",
+      ".cipx-rev-peertag{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--cipx-accent);background:var(--cipx-accent-soft);padding:2px 6px;border-radius:6px;white-space:nowrap;}",
       ".cipx-rev-detactions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;}",
       ".cipx-rev-confirm{font-family:inherit;font-size:.82rem;font-weight:700;color:#fff;background:var(--cipx-accent);border:0;border-radius:8px;padding:8px 15px;cursor:pointer;}.cipx.cipx-theme-dark .cipx-rev-confirm{color:#0e1a2b;}",
       ".cipx-rev-searchall,.cipx-rev-clear{font-family:inherit;font-size:.8rem;font-weight:600;color:var(--cipx-link);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;}",
@@ -1544,5 +1646,7 @@
     _passes: passes, _filtered: filtered, _score: scoreAgainst, _courseScore: scoreTokensVs, _courseToks: courseToks,
     _recommend: computeRecommend, _bestMatches: bestMatchCourses,
     _parseSubject: parseSubject, _reviewRows: function (courses) { return (courses || []).map(reviewRowOf); },
+    _setConsensus: function (d) { if (d && d.titles) { CONSENSUS = d.titles; CONSENSUS_COLLEGES = d.colleges || []; } },
+    _consensus: consensusFor, _consensusKey: consensusKey,
   };
 })();
