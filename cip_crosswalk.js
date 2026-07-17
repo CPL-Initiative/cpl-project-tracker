@@ -180,15 +180,30 @@
     for (var i = 0; i < toks.length; i++) { var f = tokWeight(toks[i], r); if (f) { score += f * idf(toks[i]); matched.push(toks[i]); } }
     return { score: score, matched: matched };
   }
-  // rank every active CIP for a query; margin = gap between top and the pack
+  // rank every active CIP for a query; margin = gap between top and the pack.
+  // A COVERAGE factor dampens codes that match none of the course's DISTINCTIVE
+  // vocabulary: a street-maintenance course mentions "cost accounting" once, which
+  // lexically hits the Accounting CIP — but Accounting matches none of the course's
+  // identity terms (asphalt, pavement, drainage, concrete), so we down-weight it.
+  var COV_K = 8;        // how many of the query's most distinctive terms define "identity"
+  var COV_FLOOR = 0.25; // a code matching 0 distinctive terms keeps only this fraction of its score
   function scoreAgainst(query) {
     var qt = fitTokens(query);
     if (!qt.length) return { ranked: [], max: 0, margin: 0, toks: 0 };
+    // the query's distinctive terms = its highest-IDF tokens that exist in ≥1 CIP
+    var distinct = qt.filter(function (s) { return IDF[s] != null; })
+      .map(function (s) { return { s: s, w: IDF[s] }; })
+      .sort(function (a, b) { return b.w - a.w; }).slice(0, COV_K);
+    var distinctTotal = distinct.reduce(function (a, x) { return a + x.w; }, 0) || 1;
     var out = [];
     for (var i = 0; i < ROWS.length; i++) {
       var r = ROWS[i]; if (!GOFORWARD[r.cat]) continue;
       var sc = scoreTokensVs(qt, r);
-      if (sc.matched.length) out.push({ r: r, score: sc.score, matched: sc.matched });
+      if (!sc.matched.length) continue;
+      var covHit = 0;
+      for (var j = 0; j < distinct.length; j++) if (tokWeight(distinct[j].s, r) > 0) covHit += distinct[j].w;
+      var coverage = covHit / distinctTotal;
+      out.push({ r: r, base: sc.score, coverage: coverage, score: sc.score * (COV_FLOOR + (1 - COV_FLOOR) * coverage), matched: sc.matched });
     }
     out.sort(function (a, b) { return b.score - a.score || (a.r.t < b.r.t ? -1 : 1); });
     var max = out.length ? out[0].score : 0, top2 = out.length > 1 ? out[1].score : 0;
@@ -395,6 +410,12 @@
     wrap.appendChild(holder);
   }
 
+  // Tier from the relative match. The scoreAgainst() COVERAGE factor already
+  // shapes the score — a code matching only incidental/general wording (like
+  // Accounting for a street-maintenance course that mentions "cost accounting")
+  // is dampened down into the Plausible band rather than reading Strong. rel%
+  // then picks the label, so a course with genuine secondary callouts to a field
+  // still earns an honest "Plausible — compare" (Sam's calibration).
   function tierOf(rel) {
     if (rel >= 85) return { key: "ok", label: "Strong fit" };
     if (rel >= 50) return { key: "warn", label: "Plausible — compare" };
@@ -423,7 +444,7 @@
     var verdict;
     if (rel >= 85 && !isClear) verdict = "“" + courseLabel + "” lines up well with " + r.code + " — though several codes fit about equally, so compare their definitions.";
     else if (rel >= 85) verdict = "“" + courseLabel + "” " + (idxIn === 0 ? "is the closest match to " : "lines up strongly with ") + r.code + ".";
-    else if (rel >= 50) verdict = "“" + courseLabel + "” partly fits " + r.code + ", but " + top.r.code + " " + top.r.t + " matched it more closely — compare the two.";
+    else if (rel >= 50) verdict = "“" + courseLabel + "” partly fits " + r.code + " (mostly on secondary wording), but " + top.r.code + " " + top.r.t + " matches its core subject more closely — compare the two.";
     else if (entry) verdict = "“" + courseLabel + "” shares little vocabulary with " + r.code + ". " + top.r.code + " " + top.r.t + " fits it much better.";
     else verdict = "“" + courseLabel + "” doesn't share meaningful vocabulary with " + r.code + "'s definition. Its closest match is " + top.r.code + " " + top.r.t + ".";
 

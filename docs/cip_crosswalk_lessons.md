@@ -444,3 +444,39 @@ best-fit sort, inline verdict, no-college nudge, empty-college guard).
 roadmap (local TOP→CIP corroboration, Phase-0.5 embeddings, Phase-1 Sierra). The
 per-college data will need a **refresh path** when COCI updates (rerun the generator;
 a `workflow_dispatch` could publish it to avoid a big session commit next time).
+
+### 2026-07-17 — SkyLoft: the coverage factor (a course's *fundamental purpose* wins)
+
+Sam dinked around and found a sharp false positive: Citrus's **PUB 151 — Street
+Construction and Maintenance** read **"Strong fit, 92%"** against **52.0301
+Accounting**. Root cause (traced on real data): the catalog description literally
+says *"cost accounting systems … budget preparation … public,"* so `account` hit
+Accounting's **title** and a pile of generic admin words (`cost, budget, system,
+public, method`) hit its unusually long definition. The engine actually ranked
+Concrete Finishing (46.0402) #1 — the bug was the **tier**: 92%-of-#1 read Strong for
+a match built on incidental wording.
+
+Sam's framing nailed the fix: *"determine the most fundamental purpose of the course
+— the accounting aspect is trumped by the overall goal of street maintenance."* So
+`scoreAgainst()` now applies a **coverage factor**: identify the query's most
+**distinctive** terms (top-8 by IDF — for PUB 151 that's `asphalt, portland,
+pavement, drainage, cement, concrete`), and dampen any CIP that matches **none** of
+them down to a floor (×0.25). Accounting matches 0 identity terms → dampened from 92%
+→ **53%**; Concrete Finishing (matches cement/concrete) stays #1. Regression-clean:
+Collision→Autobody (cov 37%), GIS→45.0702 (cov 50%), Nursing→nursing codes (cov 73%)
+all still dominate.
+
+**Two calibration rulings from Sam that shaped the final touch:**
+1. *"Plausible is OK given the specific callouts to accounting and budgeting."* — So
+   the coverage factor only **shapes the score** (92%→53%); `rel%` still picks the
+   label. I'd briefly added a hard *coverage < 0.10 → force Weak* gate; **reverted
+   it** — a course with genuine secondary callouts earns an honest "Plausible."
+2. *"If we over-control we'll lose other more plausible possibilities for other
+   courses."* — Confirms the light touch: a floor (not a cutoff), K=8 distinctive
+   terms, no hard gate. Codes matching *some* identity terms keep their score, so
+   real alternatives survive (the nursing course still surfaces 5 nursing codes at
+   75–100%). The factor demotes only the *pure-incidental* matches.
+
+Live-verified (Citrus → 52.0301 → PUB 151): **Plausible, 53%**, verdict *"partly fits
+(mostly on secondary wording), but 46.0402 Concrete Finishing matches its core subject
+more closely."* Tests: `tests/cip_crosswalk.test.js` still green (58).
