@@ -371,6 +371,18 @@ function fresh(withCollege) {
   cand.click();
   await tick();
   check("review mode: picking a candidate persists the decision (localStorage)", (function () { try { return JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["BUS 101 — Business Basics"] === "52.0201"; } catch (e) { return false; } })());
+  check("review row shows the current TOP (where they are) beside the CIP (where they're going)", revRow.querySelector(".cipx-rev-ctopline") && /0505\.00/.test(revRow.querySelector(".cipx-rev-ctopline").textContent));
+  // a stronger match OUTSIDE the crosswalk is a selectable candidate (assignable)
+  deptSel.value = "NURS"; deptSel.dispatchEvent(new domRev.window.Event("change"));
+  await tick(); await tick();
+  const nurItem = revdoc.querySelector(".cipx-rev-list .cipx-rev-item");
+  nurItem.querySelector(".cipx-rev-row").click();
+  await tick();
+  const outCand = nurItem.querySelector(".cipx-rev-cand-out");
+  check("review mode: a stronger outside-crosswalk match renders as a selectable candidate", !!outCand);
+  outCand.click();
+  await tick();
+  check("review mode: assigning an outside-crosswalk code persists it", (function () { try { return JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["NURS 101 — Nursing"] === "51.3801"; } catch (e) { return false; } })());
 
   // ── Part C — failure guards ──
   const dom2 = makeDom(); dom2.window.eval(src);

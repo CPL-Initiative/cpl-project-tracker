@@ -1000,7 +1000,12 @@
       : [el("span", { class: "cipx-rev-none" }, ["— pick a code —"])]);
     var head = el("div", { class: "cipx-rev-row", role: "button", tabindex: "0" }, [
       caret,
-      el("span", { class: "cipx-rev-course" }, [r.label]),
+      el("span", { class: "cipx-rev-course" }, [
+        el("span", { class: "cipx-rev-cname" }, [r.label]),
+        // show the CURRENT TOP under the course — "where they are" beside the
+        // suggested CIP ("where they're going"), so a wrong-TOP note reads in context.
+        r.top ? el("span", { class: "cipx-rev-ctopline" }, ["TOP ", el("span", { class: "cipx-code" }, [r.top]), r.topTitle ? " · " + r.topTitle : ""]) : el("span", { class: "cipx-rev-ctopline" }, ["No TOP recorded"]),
+      ]),
       chip,
       el("span", { class: "cipx-rev-stat cipx-rev-stat-" + stat.cls, title: stat.label + (r.disagree ? " · a stronger match sits outside the crosswalk" : "") }, [confirmed ? "✓ you" : stat.g + (r.disagree && r.status !== "manual" ? "⚑" : "")]),
     ]);
@@ -1039,7 +1044,25 @@
       if (o.matched && o.matched.length) row.appendChild(el("div", { class: "cipx-rev-why" }, ["matched: " + o.matched.slice(0, 6).join(", ")]));
       box.appendChild(row);
     });
-    if (r.disagree && r.m.beyond.length) box.appendChild(el("div", { class: "cipx-rev-flag" }, ["⚑ A stronger description match sits outside the crosswalk (" + r.m.beyond[0].r.code + " " + r.m.beyond[0].r.t + ") — the course's TOP may be off. Compare before confirming."]));
+    // Stronger matches OUTSIDE the crosswalk — the course's TOP may be off. Render
+    // them as SELECTABLE candidates too (Sam: let faculty assign one directly), not
+    // just a note, since the honest answer is sometimes to pick the outside code.
+    if (r.disagree && r.m.beyond.length) {
+      box.appendChild(el("div", { class: "cipx-rev-flag" }, ["⚑ Stronger description match" + (r.m.beyond.length > 1 ? "es" : "") + " outside the crosswalk — the course's current TOP may be off. Assign one only if it truly fits the course:"]));
+      r.m.beyond.slice(0, 3).forEach(function (o) {
+        var cr = o.r, isPick = cr.code === chosen;
+        var row = el("div", { class: "cipx-rev-cand cipx-rev-cand-out" + (isPick ? " on" : ""), role: "button", tabindex: "0" }, [
+          el("span", { class: "cipx-rev-radio" }, [isPick ? "◉" : "○"]),
+          el("span", { class: "cipx-code" }, [cr.code]),
+          el("span", { class: "cipx-rev-candt" }, [cr.t, cr.cat ? el("span", { class: catClass(cr.cat), title: catTip(cr.cat) }, [cr.cat]) : null, el("span", { class: "cipx-rev-outtag" }, ["outside crosswalk"])]),
+          el("span", { class: "cipx-rev-candrel" }, [meter(o.rel || 0, tierOf(o.rel || 0).key)]),
+        ]);
+        row.onclick = function () { choose(cr.code); };
+        row.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); choose(cr.code); } };
+        if (o.matched && o.matched.length) row.appendChild(el("div", { class: "cipx-rev-why" }, ["matched: " + o.matched.slice(0, 6).join(", ")]));
+        box.appendChild(row);
+      });
+    }
     // actions: confirm + search-all escape hatch + clear
     var acts = el("div", { class: "cipx-rev-detactions" }, []);
     var conf = el("button", { class: "cipx-rev-confirm", type: "button" }, [dec[r.label] ? "✓ Confirmed — change?" : "Confirm this code"]);
@@ -1378,7 +1401,11 @@
       ".cipx-rev-item{border-bottom:1px solid var(--cipx-border);}.cipx-rev-conf{background:var(--cipx-ok-bg);}",
       ".cipx-rev-row{display:grid;grid-template-columns:16px 1fr minmax(180px,300px) 74px;gap:12px;align-items:center;padding:11px 10px;cursor:pointer;}",
       ".cipx-rev-row:hover{background:var(--cipx-surface-sub);}",
-      ".cipx-rev-course{font-weight:600;color:var(--cipx-text);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
+      ".cipx-rev-course{display:flex;flex-direction:column;gap:2px;min-width:0;}",
+      ".cipx-rev-cname{font-weight:600;color:var(--cipx-text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
+      ".cipx-rev-ctopline{font-size:.72rem;color:var(--cipx-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
+      ".cipx-rev-cand-out{border-color:var(--cipx-warn-stripe);}.cipx-rev-cand-out .cipx-code{color:var(--cipx-warn-fg);}",
+      ".cipx-rev-outtag{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--cipx-warn-fg);background:var(--cipx-warn-bg);padding:2px 6px;border-radius:6px;}",
       ".cipx-rev-chip{display:inline-flex;gap:7px;align-items:baseline;border:1px dashed var(--cipx-border-strong);border-radius:8px;padding:4px 9px;min-width:0;}",
       ".cipx-rev-chip-on{border-style:solid;border-color:var(--cipx-ok-stripe);background:var(--cipx-ok-bg);}",
       ".cipx-rev-chipt{font-size:.8rem;color:var(--cipx-text-soft);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
