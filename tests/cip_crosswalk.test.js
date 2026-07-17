@@ -421,6 +421,9 @@ function fresh(withCollege) {
   deptSel.value = "NURS"; deptSel.dispatchEvent(new domRev.window.Event("change"));
   await tick(); await tick();
   const nurItem = revdoc.querySelector(".cipx-rev-list .cipx-rev-item");
+  // the collapsed row surfaces the recommended CIP beneath the current one (the easy button)
+  const nurRec = nurItem.querySelector(".cipx-rev-recline");
+  check("collapsed row shows the recommended CIP beneath the current TOP/CIP", nurRec && /51\.3801/.test(nurRec.textContent));
   nurItem.querySelector(".cipx-rev-row").click();
   await tick();
   const outCand = nurItem.querySelector(".cipx-rev-cand-out");

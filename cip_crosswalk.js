@@ -1084,6 +1084,19 @@
     if (shown.length > 300) revListHost.appendChild(el("div", { class: "cipx-rev-more" }, ["Showing 300 of " + shown.length.toLocaleString() + " — narrow by department or filter."]));
   }
 
+  // The single strongest recommendation for a course, for the at-a-glance "easy button"
+  // line beneath the current TOP/CIP: the peer FIELD CONSENSUS if it's confident, else the
+  // crosswalk winner. null when there's no confident pick.
+  function reviewRecommendation(r) {
+    var cons = consensusFor(r.label);
+    if (cons && cons.modal.n >= 3) {
+      var best = bestCipForTop(cons.modal.top, r.m);
+      if (best) return { code: best.r.code, title: best.r.t, tag: cons.modal.n + " of " + cons.n + " colleges", kind: "consensus" };
+    }
+    if (r.m.recommended) { var rr = BYCODE[r.m.recommended]; if (rr) return { code: rr.code, title: rr.t, tag: "crosswalk match", kind: "crosswalk" }; }
+    return null;
+  }
+
   function reviewRow(r, dec, allRows) {
     var cips = revCips(dec, r.label);
     var confirmed = cips.length > 0;
@@ -1100,12 +1113,22 @@
     var fromTop = r.top
       ? el("span", { class: "cipx-rev-fromtop", title: "Current TOP " + r.top + (r.topTitle ? " · " + r.topTitle : "") }, ["TOP ", el("span", { class: "cipx-code" }, [r.top]), r.topTitle ? el("span", { class: "cipx-rev-fromtt" }, [" · " + r.topTitle]) : null])
       : el("span", { class: "cipx-rev-fromtop cipx-rev-fromtop-none" }, ["no TOP"]);
-    var tocip = el("span", { class: "cipx-rev-tocip" }, [
+    var transitionLine = el("span", { class: "cipx-rev-tocipline" }, [
       fromTop,
       el("span", { class: "cipx-rev-arrow", "aria-hidden": "true" }, ["→"]),
       el("span", { class: "cipx-rev-ciplabel" }, ["CIP"]),
       chip,
     ]);
+    // the "easy button" line beneath: the recommended CIP (consensus > crosswalk). When it
+    // matches what's shown it's a confirmation; when it differs it's the better answer.
+    var rec = reviewRecommendation(r);
+    var recLine = null;
+    if (rec && !confirmed) {
+      recLine = (rec.code === showCode)
+        ? el("span", { class: "cipx-rev-recline cipx-rev-recline-ok" }, ["✓ Recommended — ", el("span", { class: "cipx-rev-rectag" }, [rec.tag])])
+        : el("span", { class: "cipx-rev-recline" }, ["✓ Recommend ", el("span", { class: "cipx-code" }, [rec.code]), " · " + rec.title + " ", el("span", { class: "cipx-rev-rectag" }, [rec.tag])]);
+    }
+    var tocip = el("span", { class: "cipx-rev-tocip" }, [transitionLine, recLine]);
     var head = el("div", { class: "cipx-rev-row", role: "button", tabindex: "0", "aria-expanded": "false" }, [
       caret,
       el("span", { class: "cipx-rev-course" }, [el("span", { class: "cipx-rev-cname", title: r.label }, [r.label])]),
@@ -1564,8 +1587,13 @@
       ".cipx-rev-cname{font-weight:600;color:var(--cipx-text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
       ".cipx-rev-ctopline{font-size:.72rem;color:var(--cipx-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
       // the current-TOP → CIP transition beside the CIP box ("where they are → where they're going")
-      ".cipx-rev-tocip{display:flex;gap:8px;align-items:center;flex-wrap:nowrap;min-width:0;overflow:hidden;}",
+      ".cipx-rev-tocip{display:flex;flex-direction:column;gap:3px;min-width:0;}",
+      ".cipx-rev-tocipline{display:flex;gap:8px;align-items:center;flex-wrap:nowrap;min-width:0;overflow:hidden;}",
       ".cipx-rev-chip{flex:0 1 auto;}",
+      ".cipx-rev-recline{font-size:.76rem;font-weight:600;color:var(--cipx-accent);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;}",
+      ".cipx-rev-recline .cipx-code{font-size:.82rem;}",
+      ".cipx-rev-recline-ok{color:var(--cipx-ok-fg);}",
+      ".cipx-rev-rectag{font-size:.66rem;font-weight:600;color:var(--cipx-muted);}",
       ".cipx-rev-fromtop{font-size:.72rem;color:var(--cipx-muted);white-space:nowrap;flex:none;max-width:100%;}",
       ".cipx-rev-fromtop .cipx-code{color:var(--cipx-text-soft);}",
       ".cipx-rev-fromtt{display:inline-block;max-width:13ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom;color:var(--cipx-muted);}",
@@ -1628,7 +1656,7 @@
         ".cipx-rec-row{grid-template-columns:13px 58px 1fr;gap:8px;}.cipx-rec-meta{grid-column:2/-1;flex-direction:row;align-items:center;min-width:0;margin-top:4px;}.cipx-rec-row-flat{grid-template-columns:13px 58px 1fr;}" +
         ".cipx-rec-card .cipx-detail{padding-left:14px;}" +
         ".cipx-rev-deptinline{flex:1 1 100%;}.cipx-rev-deptsel{max-width:100%;flex:1 1 auto;}.cipx-rev-tiles{gap:6px;}.cipx-rev-tile{padding:6px 10px;min-width:60px;}" +
-        ".cipx-rev-row{grid-template-columns:14px 1fr auto;gap:6px 8px;}.cipx-rev-stat{grid-column:3;grid-row:1;}.cipx-rev-tocip{grid-column:1/-1;grid-row:2;margin-top:4px;flex-wrap:wrap;}" +
+        ".cipx-rev-row{grid-template-columns:14px 1fr auto;gap:6px 8px;}.cipx-rev-stat{grid-column:3;grid-row:1;}.cipx-rev-tocip{grid-column:1/-1;grid-row:2;margin-top:4px;}.cipx-rev-tocipline{flex-wrap:wrap;}" +
         ".cipx-rev-cand{grid-template-columns:18px 64px 1fr;}.cipx-rev-candrel{grid-column:2/-1;margin-top:3px;}.cipx-rev-csv{margin-left:0;}.cipx-rev-detail{padding-left:12px;}" +
       "}",
     ].join("");
