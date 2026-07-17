@@ -698,3 +698,45 @@ was again rejected (it drops real courses). Tests **89 → 96**. Full story of t
 lives in the workflow journal; the confirmed findings + fixes are here. (An inverted-index
 speedup for the scorer — the enabler for the Phase 2 whole-catalog review sheet — is
 staged on the Phase 2 branch, not this fix PR.)
+
+### 2026-07-17 — SkyLiftoff: Phase 2 — the whole-catalog review sheet
+
+The third mode, **📋 Review my catalog** — turns the 800–1,500-course CIP-assignment
+slog into review-and-approve. Design Fable-consulted, then verified end-to-end.
+
+- **Third top-level mode** (📖 Browse · 🎯 Find my course's code · 📋 Review my catalog),
+  stacks on phone; remembered in `localStorage`.
+- **Department-scoped** (Fable's key steer: nobody owns 1,500 courses, they own ACCT).
+  Pick a department → the tool computes suggestions for just those courses (**ACCT 19
+  courses = 274 ms**), not a 40 s whole-catalog freeze. `parseSubject` splits the label
+  prefix; the `★ All departments` option does the full pass for a whole-college CSV.
+- **Triage tiles double as filters** (All / ⚠ To review / ✓ Ready / ◻ Manual), sorted
+  review-first and fewest-candidate-decisions-first (a 2-way choice before a 7-way).
+- **Trust framing (Sam/Fable):** "**Suggested**" not "Recommended"; **dashed chips →
+  solid** on confirm (the unconfirmed state is visible without a word of nagging); one
+  honest banner; matched terms on expand; CSV stamps `auto-suggested` vs `faculty-confirmed`.
+- **Override + persist:** tap a row → the ranked candidates as single-select radios + a
+  "search all codes" escape hatch (reuses `comboCore`); picking confirms; decisions
+  persist in `localStorage` per college. **Bulk-confirm all ready matches in a department**
+  in one tap — the speed lever (turns 900 glances into ~15 decisions).
+- **CSV export** — the deliverable that replaces the emailed workbook, now course→CIP.
+
+**Perf enabler — the inverted index.** `buildEngine` builds `POSTINGS` (term→rows);
+`scoreAgainst` scores only CIPs that share a query token, not all 2,182 — a **pure
+speedup, 400/400 identical output**, 28→12 ms/course. Per-department lazy compute is
+chunked via `requestAnimationFrame` for big departments (progress line), and results
+cache per college+department. The review mode reuses the audit-fixed `computeRecommend`,
+so credit-first + no-boiler-beyond apply automatically — ACCT recommendations came out
+accurate (Tax→`52.1601`, Auditing→`52.0303`, Payroll→`52.0302 Accounting-Tech`,
+general→`52.0301`), review-first with ⚠⚑ flags where a stronger match sits outside the
+crosswalk.
+
+**Verified:** tests **96 → 109** (review seams, `parseSubject`, triage classification,
+mode render, department pick, tiles, row-expand, override→localStorage-persist). Real
+Chromium (Citrus, desktop + phone): ACCT 274 ms, bulk-confirm → "12 of 19 confirmed",
+0 overflow, 0 console errors. New seams `_parseSubject`, `_reviewRows`.
+
+**Open / next:** the deferred **WCAG audit** stays the standing pre-field gate; a
+resumable cross-department progress + a saved-decisions summary would round out v1;
+Phase-0.5 embeddings / Phase-1 Sierra remain the recall upgrade path. Side-lane held —
+`cpl_todos.json` + the numbered handoff untouched.

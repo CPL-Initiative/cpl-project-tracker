@@ -35,9 +35,20 @@ CCR curation mainline's memory. Your memory lives in `docs/cip_crosswalk_lessons
 3. `CLAUDE.md` §7 TOP caveat + the §11 "SkyLoft"/"SkyLiftoff" side-lane entries.
 4. This file's **Priority** below.
 
+> **Update 2026-07-17 (SkyLiftoff):** three fix PRs merged (#818 easy button, #819
+> prefix+anchor, #820 the adversarial-audit + field fixes) **and Phase 2 shipped** —
+> the **📋 Review my catalog** whole-catalog review sheet (third mode). The tool now has
+> **three** modes. An inverted-index speedup landed with Phase 2 (28→12 ms/course, pure
+> speedup). Full story bottom of `docs/cip_crosswalk_lessons.md`. **Next priority: the
+> WCAG audit (standing pre-field gate)** + Phase 2 polish (cross-department progress /
+> saved-decisions summary).
+
 ## What's live (all merged to main)
-The **CIP Codes** tab (`#cip-crosswalk`, `cip_crosswalk.js`) — two modes, toggle at
-the top (remembered in `localStorage`, Browse is default):
+The **CIP Codes** tab (`#cip-crosswalk`, `cip_crosswalk.js`) — **three** modes, toggle at
+the top (remembered in `localStorage`, Browse is default). The third, **📋 Review my
+catalog**, is the department-scoped whole-catalog triage sheet: pick a department →
+per-course suggested CIP + ✓Ready/⚠Review/◻Manual triage → override, bulk-confirm, CSV
+(decisions persist in `localStorage`). The first two:
 
 **📖 Browse codes** — the faculty reference manual: search + plain-English finder +
 category pills + 🎓 C-ID/CCN chip + family filter over all 2,325 CIP-2020 codes; each
