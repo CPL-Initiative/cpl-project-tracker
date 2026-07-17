@@ -654,3 +654,47 @@ guard + anchored-leads + non-anchored-below + lexical fallback). Real Chromium
 (Citrus): American Literature → all ENGL, Advertising pick → **no 49.0205**, recommend
 BUS 103 → 09.0903 Advertising #1; 0 overflow, 0 console errors. New seam
 `_bestMatches(cipRow, courses)`. Side-lane discipline held.
+
+### 2026-07-17 (later) — SkyLiftoff: adversarial audit + a 4-fix quality pass
+
+Ran a **5-agent adversarial audit fleet** (Workflow) over the merged easy button —
+data integrity, recommendation quality over ~28k real courses, interaction/regression,
+code correctness, a11y — each finding independently re-verified by a skeptic agent.
+It **confirmed two real bugs**; Sam's live "plunking" surfaced two more. All four
+fixed in one pass (`cip_crosswalk.js`, no data change):
+
+1. **Noncredit CIP won the green ✓ over the official credit code (audit, HIGH).** The
+   candidate sort keyed purely on lexical score, so a credit course spuriously
+   matching a noncredit code took the ✓: "MATH 003F — Differential Equations" →
+   ✓ `32.0202 High School Equivalent Exam Prep` on the word *"equivalent"*; Poli-Sci
+   → `33.0104 Community Involvement`; the official credit CIP sat discarded in the same
+   list. Fix: **credit-first candidate sort** (a `Noncredit`-category CIP never
+   out-ranks a credit one; within a class description-fit still decides, so Painting >
+   generic Art is preserved). Real impact: credit-course noncredit-✓ false positives
+   **Berkeley City 3→0, Marin 7→0**; MATH 184 Diff-Eq top candidate `53.0105 [Noncredit]`
+   → `27.0101 [credit]`.
+2. **Boilerplate leaked into the ⚠ "outside the crosswalk" drawer (audit, MEDIUM).**
+   The `beyond` filter had no boiler guard, so `32.0107 Career Exploration` self-ranked
+   at rel 100 and surfaced (auto-opening) on courses like Intro-to-Engineering. Fix:
+   `&& !BOILER[o.r.code]` in the beyond filter.
+3. **Catch-all courses polluted the best-matches (Sam).** `STEM 698 — Cooperative
+   Education` / `NC 686 — Workplace Skills` carry broad interdisciplinary TOPs that map
+   to dozens of CIPs, so they anchored to `52.0304 Accounting & Finance` sharing zero
+   accounting vocabulary. Fix: the anchored set now requires **description-fit > 0**
+   (the second signal) — a TOP mapping alone isn't enough.
+4. **The list "flailed" when a college has no course in the field (Sam).** For a CIP a
+   college doesn't teach (`01.0902 Agricultural Animal Breeding`, `05.0101 African
+   Studies` at Citrus), nothing anchors and the lexical fallback grasped at generic
+   words. Sam's call: **don't dress up word-overlap as a match** — show an honest
+   *"None of your courses map to <CIP> — pick from the full list if you like"* notice
+   + the whole A–Z list. `bestMatchCourses` now returns `{anchored, lexical}` so the
+   picker can be honest about which it's showing.
+
+**Method notes:** the audit's independent verifiers earned their keep — the noncredit-✓
+bug fires on the most common transfer subjects (Math/English/Health) and no amount of
+single-course plunking would have surfaced its *scale*. And Sam's plunking found what
+the fleet was still chewing on — the two work in tandem. A prototyped "coverage reweight"
+was again rejected (it drops real courses). Tests **89 → 96**. Full story of the audit
+lives in the workflow journal; the confirmed findings + fixes are here. (An inverted-index
+speedup for the scorer — the enabler for the Phase 2 whole-catalog review sheet — is
+staged on the Phase 2 branch, not this fix PR.)

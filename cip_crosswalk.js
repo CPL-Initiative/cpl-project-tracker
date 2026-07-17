@@ -448,26 +448,27 @@
     return box;
   }
 
-  // Inline check (CIP-first): a "★ Best matches for <CIP>" head-start group + all
-  // courses A–Z; picking one scores it against the CIP row it's expanded under.
-  // The inline "★ Best matches for <CIP>" head start. Anchor it on the CROSSWALK:
-  // the college's courses whose CURRENT TOP maps to this CIP (the two-signals-agree
-  // anchor), ranked by description-fit, then fill remaining slots with the closest-
-  // by-description courses. Anchoring kills the lexical false-matches a plain keyword
-  // sort produced (a childcare course topping "Aesthetician", history courses topping
-  // "American Literature", "BUS 103" matching "Truck and Bus Driver"). Falls back to
-  // pure description-fit when this code has no crosswalk-mapped courses at the college.
+  // The inline "★ Best matches for <CIP>" head start. ANCHOR on the crosswalk: the
+  // college's courses whose CURRENT TOP maps to this CIP (two-signals-agree) AND that
+  // share some description vocabulary — the >0 guard drops catch-all "Cooperative
+  // Education / Independent Study" courses whose broad interdisciplinary TOP maps to
+  // dozens of CIPs but share nothing (they were topping "Accounting & Finance").
+  // Anchoring kills the lexical false-matches a plain keyword sort produced (a
+  // childcare course topping "Aesthetician", history topping "American Literature",
+  // "BUS 103" matching "Truck and Bus Driver"). Returns anchored + lexical SEPARATELY
+  // so the picker can be honest: when nothing maps, the fallback is labelled a
+  // description guess, not presented as a real match.
   function bestMatchCourses(r, courses) {
     var scored = courses.map(function (c) { return { c: c, s: scoreTokensVs(courseToks(c), r).score }; });
     var tops = CIP_TOPS[r.code] || null;
-    var anchored = tops ? scored.filter(function (x) { return x.c[2] && tops[x.c[2]]; }).sort(function (a, b) { return b.s - a.s; }) : [];
+    var anchored = tops ? scored.filter(function (x) { return x.c[2] && tops[x.c[2]] && x.s > 0; }).sort(function (a, b) { return b.s - a.s; }) : [];
     var seen = {}; anchored.forEach(function (x) { seen[x.c[0]] = 1; });
     var lexical = scored.filter(function (x) { return x.s > 0 && !seen[x.c[0]]; }).sort(function (a, b) { return b.s - a.s; });
-    return anchored.concat(lexical).slice(0, 8).map(function (x) { return x.c; });
+    return { anchored: anchored.slice(0, 8).map(function (x) { return x.c; }), lexical: lexical.slice(0, 8).map(function (x) { return x.c; }) };
   }
 
   function coursePicker(r, col, courses) {
-    var best = bestMatchCourses(r, courses);
+    var bm = bestMatchCourses(r, courses);
     var result = el("div", { class: "cipx-fit-result", "aria-live": "polite" }, []);
     var box = comboCore({
       id: "cipx-cbp-" + r.code.replace(/\W/g, ""),
@@ -475,10 +476,19 @@
       placeholder: "Choose one of your courses — type to search…",
       groupsFor: function (filter) {
         if (filter) return { groups: [[null, courses.filter(function (c) { return c[0].toLowerCase().indexOf(filter) >= 0; }).slice(0, 40)]], empty: "No course matches “" + filter + "”." };
-        return {
-          groups: [best.length ? ["★ Best matches for " + r.code, best] : null, ["All " + (col ? col.name : "") + " courses (A–Z)", courses.slice(0, 40)]].filter(Boolean),
-          hint: courses.length > 40 ? "Showing the best matches + first 40 — type to search all " + courses.length.toLocaleString() + " courses." : null
-        };
+        // Crosswalk-anchored matches are real "best matches". When NONE of the
+        // college's courses map to this code (it doesn't teach the field), don't
+        // dress up generic word-overlap as a match — say so and just present the
+        // whole list in A–Z order for the faculty to pick from if they wish
+        // (Sam's call: "start the list with that notice, then the whole list").
+        var groups = [];
+        if (bm.anchored.length) {
+          groups.push(["★ Best matches for " + r.code, bm.anchored]);
+          groups.push(["All " + (col ? col.name : "") + " courses (A–Z)", courses.slice(0, 40)]);
+        } else {
+          groups.push(["None of your courses map to " + r.code + " — pick from the full list if you like", courses.slice(0, 40)]);
+        }
+        return { groups: groups, hint: courses.length > 40 ? "Type to search all " + courses.length.toLocaleString() + " courses." : null };
       },
       onPick: function (c) { renderFit(result, r, c[0], c[1]); }
     });
@@ -605,7 +615,16 @@
         var rec = { r: r, prov: ct[1], rel: e ? e.rel : 0, score: e ? e.score : 0, matched: e ? e.matched : [] };
         (BOILER[ct[0]] ? boiler : cands).push(rec);
       });
-      cands.sort(function (a, b) { return b.score - a.score || (a.r.t < b.r.t ? -1 : 1); });
+      // Credit-first: a Noncredit-category CIP must not out-rank a credit one. A
+      // credit course spuriously matching a noncredit boilerplate code (e.g.
+      // "Differential Equations" → "High School Equivalent Exam Prep" on the word
+      // "equivalent", or a Poli-Sci course → "Community Involvement") was winning the
+      // green ✓ over the official credit code, which sat discarded in the same list.
+      // Within a class, description-fit still decides (Painting over generic Art).
+      cands.sort(function (a, b) {
+        var an = a.r.cat === "Noncredit" ? 1 : 0, bn = b.r.cat === "Noncredit" ? 1 : 0;
+        return an - bn || b.score - a.score || (a.r.t < b.r.t ? -1 : 1);
+      });
     }
     // recommendation gate: the top crosswalk candidate is also a globally-strong
     // description match (rel≥85) AND clearly ahead of the next crosswalk candidate.
@@ -614,8 +633,10 @@
       var cwMargin = cands.length > 1 ? 1 - cands[1].score / cands[0].score : 1;
       if (cwMargin >= 0.25) recommended = cands[0].r.code;
     }
-    // strong (rel≥85) description matches the crosswalk doesn't list for this TOP
-    var beyond = res.ranked.filter(function (o) { return !inSet[o.r.code] && o.rel >= 85; }).slice(0, 5);
+    // strong (rel≥85) description matches the crosswalk doesn't list for this TOP.
+    // Exclude the boiler codes — they self-rank at rel 100 on ~275 TOPs and must
+    // never surface in a ranked list (they belong behind the boiler expander).
+    var beyond = res.ranked.filter(function (o) { return !inSet[o.r.code] && !BOILER[o.r.code] && o.rel >= 85; }).slice(0, 5);
     return { label: label, top: top, topTitle: tc ? tc.t : "", hasCross: !!tc, cands: cands,
       boiler: boiler, recommended: recommended, beyond: beyond, res: res, thin: res.toks < 4 || !res.ranked.length };
   }
