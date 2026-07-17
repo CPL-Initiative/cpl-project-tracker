@@ -486,8 +486,8 @@ safe: never auto-merges, skips repos with uncommitted work, logs to
 [`docs/kb-notes/playbook-vault-sync-setup.md`](docs/kb-notes/playbook-vault-sync-setup.md).
 
 Vault-side hygiene: heavy non-markdown paths (`kb/coci_*.json`,
-`unified_courses_*.js`, `kb/row_audit/`, etc.) are excluded in Obsidian's
-**Files & Links → Excluded files** so the graph stays clean.
+`unified_courses_*.js`, `kb/row_audit/`, `cip_fitcheck/`, etc.) are excluded in
+Obsidian's **Files & Links → Excluded files** so the graph stays clean.
 
 **Checkpoint scope — vault, never the public KB.** Rule 8 / `/checkpoint`
 refreshes *this* repo's docs (`docs/kb-notes/`, lessons, §11, the To-Do feed),
