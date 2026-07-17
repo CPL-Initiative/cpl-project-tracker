@@ -379,8 +379,10 @@
     return p;
   }
 
+  // hairline institution glyph (roof + pillars + base) — matches the tab glyphs
+  var COLLEGE_ICON = "M12 4.2L4.5 8.8H19.5L12 4.2M6 9.2V17.4M9.6 9.2V17.4M14.4 9.2V17.4M18 9.2V17.4M4 18.4H20";
   function collegeBar() {
-    var bar = el("div", { class: "cipx-collegebar" }, [el("span", { class: "cipx-college-l" }, ["🏫 Your college"])]);
+    var bar = el("div", { class: "cipx-collegebar" }, [el("span", { class: "cipx-college-l" }, [svgIcon(COLLEGE_ICON), el("span", {}, ["Your college"])])]);
     var sel = el("select", { class: "cipx-college-sel", "aria-label": "Your college" }, [el("option", { value: "" }, [FIT_COLLEGES ? "Choose your college…" : "Loading colleges…"])]);
     collegeSelEl = sel;
     sel.onchange = function () {
@@ -760,7 +762,7 @@
       caret, el("span", {}, ["⚠ " + m.beyond.length + " strong match" + (m.beyond.length === 1 ? "" : "es") + " outside the crosswalk"]),
     ]);
     var body = el("div", { class: "cipx-beyond-body" }, []);
-    var note = el("div", { class: "cipx-beyond-note" }, ["These CIP codes fit this course's wording well but aren't in the official crosswalk for TOP " + (m.top || "—") + ". The course's TOP code may be out of date, or the crosswalk may not cover it yet — worth checking against their definitions."]);
+    var note = el("div", { class: "cipx-beyond-note" }, ["These CIP codes fit this course's wording well but aren't in the official crosswalk for TOP " + (m.top || "—") + (m.topTitle ? " · " + m.topTitle : "") + ". The course's TOP code may be out of date, or the crosswalk may not cover it yet — worth checking against their definitions."]);
     var built = false;
     function build() { if (built) return; built = true; body.appendChild(note); body.appendChild(recCardStack(m.beyond, null, false)); }
     body.style.display = auto ? "block" : "none";
@@ -1035,7 +1037,7 @@
     // "where they are → where they're going": the current TOP sits next to the CIP box,
     // labeled, so the transition reads at a glance (Sam, 2026-07-17).
     var fromTop = r.top
-      ? el("span", { class: "cipx-rev-fromtop", title: "Current TOP " + r.top + (r.topTitle ? " · " + r.topTitle : "") }, ["TOP ", el("span", { class: "cipx-code" }, [r.top])])
+      ? el("span", { class: "cipx-rev-fromtop", title: "Current TOP " + r.top + (r.topTitle ? " · " + r.topTitle : "") }, ["TOP ", el("span", { class: "cipx-code" }, [r.top]), r.topTitle ? el("span", { class: "cipx-rev-fromtt" }, [" · " + r.topTitle]) : null])
       : el("span", { class: "cipx-rev-fromtop cipx-rev-fromtop-none" }, ["no TOP"]);
     var tocip = el("span", { class: "cipx-rev-tocip" }, [
       fromTop,
@@ -1090,7 +1092,7 @@
     // them as SELECTABLE candidates too (Sam: let faculty assign one directly), not
     // just a note, since the honest answer is sometimes to pick the outside code.
     if (r.disagree && r.m.beyond.length) {
-      box.appendChild(el("div", { class: "cipx-rev-flag" }, ["⚑ Stronger description match" + (r.m.beyond.length > 1 ? "es" : "") + " outside the crosswalk — the course's current TOP may be off. Assign one only if it truly fits the course:"]));
+      box.appendChild(el("div", { class: "cipx-rev-flag" }, ["⚑ Stronger description match" + (r.m.beyond.length > 1 ? "es" : "") + " outside the crosswalk. This course is coded ", el("b", {}, ["TOP " + r.top + (r.topTitle ? " · " + r.topTitle : "")]), " — its TOP may be mis-coded, which would make the crosswalk recommendation misleading. Assign one of these only if it truly fits the course:"]));
       r.m.beyond.slice(0, 3).forEach(function (o) {
         var cr = o.r, isPick = cr.code === chosen;
         var row = el("div", { class: "cipx-rev-cand cipx-rev-cand-out" + (isPick ? " on" : ""), role: "button", tabindex: "0" }, [
@@ -1309,7 +1311,7 @@
       ".cipx-csv{margin-left:auto;font-size:.76rem;font-weight:700;color:var(--cipx-link);background:var(--cipx-surface);border:1px solid var(--cipx-border);border-radius:7px;padding:3px 9px;cursor:pointer;}",
       // college bar
       ".cipx-collegebar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--cipx-surface);border:1px solid var(--cipx-border);border-radius:10px;padding:9px 14px;margin:0 0 12px;}",
-      ".cipx-college-l{font-weight:700;font-size:.86rem;color:var(--cipx-text);}",
+      ".cipx-college-l{font-weight:700;font-size:.86rem;color:var(--cipx-text);display:inline-flex;align-items:center;gap:6px;}",
       ".cipx-college-sel{font-family:inherit;font-size:.9rem;padding:7px 10px;border-radius:8px;border:1.5px solid var(--cipx-border-strong);background:var(--cipx-surface);color:var(--cipx-text);cursor:pointer;max-width:340px;flex:1;min-width:180px;}",
       ".cipx-college-sel:focus{outline:2px solid var(--cipx-focus);outline-offset:1px;}",
       ".cipx-college-hint{font-size:.78rem;color:var(--cipx-muted);}",
@@ -1455,9 +1457,10 @@
       ".cipx-rev-cname{font-weight:600;color:var(--cipx-text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
       ".cipx-rev-ctopline{font-size:.72rem;color:var(--cipx-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
       // the current-TOP → CIP transition beside the CIP box ("where they are → where they're going")
-      ".cipx-rev-tocip{display:flex;gap:8px;align-items:center;min-width:0;}",
-      ".cipx-rev-fromtop{font-size:.72rem;color:var(--cipx-muted);white-space:nowrap;flex:none;}",
+      ".cipx-rev-tocip{display:flex;gap:8px;align-items:center;flex-wrap:wrap;min-width:0;}",
+      ".cipx-rev-fromtop{font-size:.72rem;color:var(--cipx-muted);white-space:nowrap;flex:none;max-width:100%;}",
       ".cipx-rev-fromtop .cipx-code{color:var(--cipx-text-soft);}",
+      ".cipx-rev-fromtt{display:inline-block;max-width:17ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom;color:var(--cipx-muted);}",
       ".cipx-rev-fromtop-none{font-style:italic;}",
       ".cipx-rev-arrow{color:var(--cipx-muted);flex:none;}",
       ".cipx-rev-ciplabel{font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--cipx-accent);flex:none;}",
