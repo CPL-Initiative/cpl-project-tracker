@@ -149,21 +149,29 @@ function fresh(withCollege) {
   const bizItemRow = Array.prototype.filter.call(fdoc.querySelectorAll(".cipx-row"), (r) => /52\.0201/.test(r.textContent))[0];
   bizItemRow.click();
   await tick(); await tick();  // let loadCollege() resolve + populate the picker
-  const picker = Array.prototype.filter.call(fdoc.querySelectorAll(".cipx-item"), (it) => /52\.0201/.test(it.textContent))[0].querySelector(".cipx-fit-sel");
-  check("with a college set, the course picker renders", !!picker);
-  check("the picker has a 'Best matches' optgroup", picker && Array.prototype.some.call(picker.querySelectorAll("optgroup"), (g) => /Best matches/.test(g.label)));
-  check("the picker lists the college's courses", picker && picker.querySelectorAll("option").length >= 4);  // placeholder + best + A–Z
-  // the best-match top option for 52.0201 should be the business course
-  const bestGroup = Array.prototype.filter.call(picker.querySelectorAll("optgroup"), (g) => /Best matches/.test(g.label))[0];
-  check("best-fit-first: the business course tops the Best-matches group", bestGroup && /Business Basics/.test(bestGroup.querySelector("option").textContent));
-  // select the business course → a verdict card appears
-  picker.value = "0"; picker.dispatchEvent(new domF.window.Event("change"));
-  const fitResult = picker.parentNode.querySelector(".cipx-fit-result");
-  check("selecting a course renders a verdict card", fitResult && fitResult.querySelector(".cipx-verdict"));
+  const wrap = Array.prototype.filter.call(fdoc.querySelectorAll(".cipx-item"), (it) => /52\.0201/.test(it.textContent))[0].querySelector(".cipx-cbwrap");
+  const input = wrap && wrap.querySelector(".cipx-fit-cb");
+  check("with a college set, the course combobox renders (custom, not native select)", !!input && !wrap.querySelector("select"));
+  // open the panel + confirm it opens BELOW the input (absolute, top:100%) — the #3 fix
+  input.focus();
+  const panel = wrap.querySelector(".cipx-fit-panel");
+  check("focusing the combobox opens the options panel", panel && panel.style.display !== "none");
+  check("the panel has a 'Best matches' group", panel && Array.prototype.some.call(panel.querySelectorAll(".cipx-cb-group"), (g) => /Best matches/.test(g.textContent)));
+  check("best-fit-first: the business course is the first option", panel && /Business Basics/.test(panel.querySelector(".cipx-cb-opt").textContent));
+  // typing filters the full list (the #2 "leave it to faculty" search)
+  input.value = "welding"; input.dispatchEvent(new domF.window.Event("input"));
+  check("typing filters the course list", panel && /Welding/.test(panel.textContent) && !/Business Basics/.test(panel.textContent));
+  // pick the business course from the (rebuilt) best matches
+  input.value = ""; input.dispatchEvent(new domF.window.Event("input"));
+  const bizOpt = Array.prototype.filter.call(panel.querySelectorAll(".cipx-cb-opt"), (o) => /Business Basics/.test(o.textContent))[0];
+  bizOpt.dispatchEvent(new domF.window.MouseEvent("mousedown"));
+  const fitResult = wrap.querySelector(".cipx-fit-result");
+  check("picking a course closes the panel", panel.style.display === "none");
+  check("picking a course renders a verdict card", fitResult && fitResult.querySelector(".cipx-verdict"));
   check("the verdict shows a confidence tier pill", fitResult && fitResult.querySelector(".cipx-vpill"));
   check("a well-aligned course reads as a Strong fit", fitResult && fitResult.querySelector(".cipx-vpill-ok"));
   check("the verdict lists closest CIP candidates", fitResult && fitResult.querySelectorAll(".cipx-cand-card").length >= 1);
-  check("a paste-a-description fallback is offered", picker.parentNode.parentNode.querySelector(".cipx-fit-pastelink") || fitResult);
+  check("a paste-a-description fallback is offered", wrap.parentNode.parentNode.querySelector(".cipx-fit-pastelink"));
 
   // ── Part C — failure guards ──
   const dom2 = makeDom(); dom2.window.eval(src);

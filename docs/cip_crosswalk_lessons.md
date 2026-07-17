@@ -480,3 +480,29 @@ all still dominate.
 Live-verified (Citrus → 52.0301 → PUB 151): **Plausible, 53%**, verdict *"partly fits
 (mostly on secondary wording), but 46.0402 Concrete Finishing matches its core subject
 more closely."* Tests: `tests/cip_crosswalk.test.js` still green (58).
+
+### 2026-07-17 (cont.) — SkyLoft: three field-test polish items from Sam
+
+1. **Scroll-jump on expand (bug).** Clicking a CIP row far down the list zipped the
+   viewport to the top. Cause: `render()` does `clear(listHost)` then rebuilds — the
+   momentary zero-height list collapses page height, so the browser clamps scroll to
+   0. Fix: `render()` now captures `scrollingElement.scrollTop` before the clear and
+   restores it after the rebuild. Verified: expand at scrollTop 2600 → stays 2600.
+2. **Course dropdown opened upward, covering the row (bug).** The native `<select>`
+   (1,800 options) popped its list upward when the row sat low in the viewport —
+   browsers control that, CSS can't. Replaced it with a **custom combobox** (`.cipx-cbwrap`
+   / `.cipx-fit-cb` input + an absolutely-positioned `.cipx-fit-panel` that opens
+   **below**, `role=combobox`/`listbox`, arrow/enter/escape keys, outside-click close).
+   Bonus: it's **searchable** — type to filter all 1,800 courses instead of scrolling.
+3. **Improv-vs-Acting (not a bug — the tool being nuanced).** Sam noticed the Improv
+   courses weren't in the "best matches" for **50.0506 Acting**. Traced it: Improv's
+   description is general theatre technique (*"group expression, spontaneity, dramatic
+   text"*), so it ranks **#1 against 50.0501 Drama/Theatre Arts, General (100%)** and
+   only **#6 / 65% (Plausible) against 50.0506 Acting** — the college's *Stage Acting*
+   courses (cov 44%) are the legitimately stronger fits for the Acting CIP. Sam's call:
+   *"consider over-controlling… leave it to faculty."* So **no scoring change** — and
+   item 2's search **is** the "leave it to faculty" fix: a faculty member can type
+   "improv," pick it under Acting, and get the honest "Plausible" read. Method (the
+   ranking is right) + magic (search lets them override it). Tests → **60 green**;
+   real-Chromium (desktop + phone): scroll kept, panel opens below, 0 overflow, 0
+   console errors.
