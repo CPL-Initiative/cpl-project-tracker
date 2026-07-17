@@ -295,7 +295,7 @@ function fresh(withCollege) {
   // DOM: recommend mode renders + picking a course produces a recommendation card
   const domR = freshR("recommend");
   const rdoc = domR.window.document;
-  check("recommend mode: the toggle shows both tabs", rdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 2);
+  check("recommend mode: the toggle shows all three modes", rdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 3);
   check("recommend mode: the recommend tab is selected", rdoc.querySelector(".cipx-modetab.on") && /Find my course/.test(rdoc.querySelector(".cipx-modetab.on").textContent));
   check("recommend mode: shows the course-first panel, not the browse list", rdoc.querySelector(".cipx-rec .cipx-panel") && !rdoc.querySelector(".cipx-list"));
   await tick(); await tick();  // let loadCollege() resolve
@@ -326,6 +326,35 @@ function fresh(withCollege) {
     await tick(); await tick();
   } catch (e) { recSelThrew = true; console.error(e); }
   check("recommend mode: changing the college rebuilds without throwing", !recSelThrew && rdoc.querySelector(".cipx-rec-combohost"));
+
+  // ── Part B3 — "Review my catalog" (Phase 2 whole-catalog triage) ──
+  check("cip_crosswalk.js has the review-catalog mode", /Review my catalog/.test(src) && /cipx-rev-list/.test(src));
+  check("exposes the review seams", typeof rApi._reviewRows === "function" && typeof rApi._parseSubject === "function");
+  check("parseSubject strips the course number to the department", rApi._parseSubject("BUS 101 — Business Basics") === "BUS" && rApi._parseSubject("NC ES140 — Esthetician I") === "NC");
+  const revRows = rApi._reviewRows(RCOURSES);
+  check("review classifies a two-signals-agree course as ready/clear", revRows.find((r) => /Business Basics/.test(r.label)).status === "clear");
+  check("review row carries the suggested CIP + parsed subject", (function () { var r = revRows.find((x) => /Business Basics/.test(x.label)); return r.sug && r.sug.code === "52.0201" && r.subj === "BUS"; })());
+  check("review flags a no-crosswalk course as manual", revRows.find((r) => /Orphan/.test(r.label)).status === "manual");
+
+  const domRev = freshR("review");
+  const revdoc = domRev.window.document;
+  check("review mode: three tabs, review selected", revdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 3 && /Review my catalog/.test(revdoc.querySelector(".cipx-modetab.on").textContent));
+  check("review mode: shows the trust banner", revdoc.querySelector(".cipx-rev-banner") && /starting point you confirm/.test(revdoc.querySelector(".cipx-rev-banner").textContent));
+  await tick(); await tick();  // dept picker populates from loadCollege
+  const deptSel = revdoc.querySelector(".cipx-rev-deptsel");
+  check("review mode: department picker populates from the catalog", deptSel && Array.prototype.some.call(deptSel.options, (o) => o.value === "BUS"));
+  deptSel.value = "BUS"; deptSel.dispatchEvent(new domRev.window.Event("change"));
+  await tick(); await tick();
+  check("review mode: selecting a department renders triage tiles", !!revdoc.querySelector(".cipx-rev-tiles .cipx-rev-tile"));
+  const revRow = revdoc.querySelector(".cipx-rev-list .cipx-rev-item");
+  check("review mode: renders a course row with a suggested CIP chip", revRow && revRow.querySelector(".cipx-rev-chip .cipx-code"));
+  revRow.querySelector(".cipx-rev-row").click();
+  await tick();
+  const cand = revRow.querySelector(".cipx-rev-cand");
+  check("review mode: a row expands to selectable candidate codes", !!cand);
+  cand.click();
+  await tick();
+  check("review mode: picking a candidate persists the decision (localStorage)", (function () { try { return JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["BUS 101 — Business Basics"] === "52.0201"; } catch (e) { return false; } })());
 
   // ── Part C — failure guards ──
   const dom2 = makeDom(); dom2.window.eval(src);

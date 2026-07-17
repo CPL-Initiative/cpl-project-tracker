@@ -54,7 +54,7 @@
   function clear(n) { while (n && n.firstChild) n.removeChild(n.firstChild); }
 
   // ── state ──────────────────────────────────────────────────────────────────
-  var D = null, ROWS = [], BYCODE = {}, FAMS = {}, IDF = {}, IDF_N = 1;
+  var D = null, ROWS = [], BYCODE = {}, FAMS = {}, IDF = {}, IDF_N = 1, POSTINGS = {};
   var TOPCIP = {}, BOILER = {}, CIP_TOPS = {};
   var GOFORWARD = { "CTE": 1, "Both": 1, "Non-CTE": 1, "Noncredit": 1 };
   var st = { q: "", cat: "all", fam: "", xfer: false, showRetired: false, limit: PAGE, open: {}, college: null, mode: "browse" };
@@ -82,7 +82,7 @@
     });
     buildEngine();
     try { st.college = localStorage.getItem(COLLEGE_KEY) || null; } catch (e) { st.college = null; }
-    try { st.mode = localStorage.getItem(MODE_KEY) === "recommend" ? "recommend" : "browse"; } catch (e) { st.mode = "browse"; }
+    try { var _m = localStorage.getItem(MODE_KEY); st.mode = (_m === "recommend" || _m === "review") ? _m : "browse"; } catch (e) { st.mode = "browse"; }
   }
 
   // ── theme ────────────────────────────────────────────────────────────────────
@@ -168,6 +168,9 @@
   function setOf(arr) { var o = {}; arr.forEach(function (x) { o[x] = 1; }); return o; }
   function buildEngine() {
     var dfmap = {}, N = 0;
+    POSTINGS = {};   // term -> [rows containing it] — an inverted index so scoring a
+                     // query touches only the CIPs that share a token, not all 2,182
+                     // (whole-catalog review runs the scorer ~1,500× — see reviewCatalog).
     ROWS.forEach(function (r) {
       if (!GOFORWARD[r.cat]) { r._tt = r._te = r._td = null; return; }
       N++;
@@ -178,7 +181,7 @@
       Object.keys(r._tt).forEach(function (t) { seen[t] = 1; });
       Object.keys(r._te).forEach(function (t) { seen[t] = 1; });
       Object.keys(r._td).forEach(function (t) { seen[t] = 1; });
-      Object.keys(seen).forEach(function (t) { dfmap[t] = (dfmap[t] || 0) + 1; });
+      Object.keys(seen).forEach(function (t) { dfmap[t] = (dfmap[t] || 0) + 1; (POSTINGS[t] || (POSTINGS[t] = [])).push(r); });
     });
     IDF = {}; IDF_N = N || 1;
     Object.keys(dfmap).forEach(function (t) { IDF[t] = Math.log(1 + IDF_N / (1 + dfmap[t])); });
@@ -207,15 +210,22 @@
       .map(function (s) { return { s: s, w: IDF[s] }; })
       .sort(function (a, b) { return b.w - a.w; }).slice(0, COV_K);
     var distinctTotal = distinct.reduce(function (a, x) { return a + x.w; }, 0) || 1;
-    var out = [];
-    for (var i = 0; i < ROWS.length; i++) {
-      var r = ROWS[i]; if (!GOFORWARD[r.cat]) continue;
-      var sc = scoreTokensVs(qt, r);
-      if (!sc.matched.length) continue;
-      var covHit = 0;
-      for (var j = 0; j < distinct.length; j++) if (tokWeight(distinct[j].s, r) > 0) covHit += distinct[j].w;
-      var coverage = covHit / distinctTotal;
-      out.push({ r: r, base: sc.score, coverage: coverage, score: sc.score * (COV_FLOOR + (1 - COV_FLOOR) * coverage), matched: sc.matched });
+    var out = [], seenR = {};
+    // Only score CIPs that share at least one query token (via the inverted index).
+    // A CIP with no shared token scores 0 and was filtered out anyway, so this is a
+    // pure speedup — identical output, but touches ~hundreds of rows, not all 2,182.
+    for (var qi = 0; qi < qt.length; qi++) {
+      var post = POSTINGS[qt[qi]]; if (!post) continue;
+      for (var pi = 0; pi < post.length; pi++) {
+        var r = post[pi];
+        if (seenR[r.code]) continue; seenR[r.code] = 1;   // POSTINGS holds only go-forward rows
+        var sc = scoreTokensVs(qt, r);
+        if (!sc.matched.length) continue;
+        var covHit = 0;
+        for (var j = 0; j < distinct.length; j++) if (tokWeight(distinct[j].s, r) > 0) covHit += distinct[j].w;
+        var coverage = covHit / distinctTotal;
+        out.push({ r: r, base: sc.score, coverage: coverage, score: sc.score * (COV_FLOOR + (1 - COV_FLOOR) * coverage), matched: sc.matched });
+      }
     }
     out.sort(function (a, b) { return b.score - a.score || (a.r.t < b.r.t ? -1 : 1); });
     var max = out.length ? out[0].score : 0, top2 = out.length > 1 ? out[1].score : 0;
@@ -359,11 +369,12 @@
     sel.onchange = function () {
       st.college = sel.value || null;
       try { if (st.college) localStorage.setItem(COLLEGE_KEY, st.college); else localStorage.removeItem(COLLEGE_KEY); } catch (e) {}
+      rev.byDept = {}; rev.courses = null; rev.dept = null;   // the review cache is college-scoped
       if (st.college) loadCollege(st.college);
-      // browse: rebuild open rows with the new college; recommend: rebuild the
-      // course-first view (which is entirely college-scoped). render() is
-      // browse-only (it needs countHost/listHost), so never call it in recommend.
-      if (st.mode === "recommend") rebuildShell(); else render();
+      // browse: rebuild open rows with the new college. recommend/review are entirely
+      // college-scoped views, so they rebuild fully. render() is browse-only (it needs
+      // countHost/listHost), so never call it in those modes.
+      if (st.mode === "browse") render(); else rebuildShell();
     };
     bar.appendChild(sel);
     bar.appendChild(el("span", { class: "cipx-college-hint" }, ["— set once to check a local course against any code"]));
@@ -808,11 +819,262 @@
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
+  // "Review my catalog" — the whole-catalog triage sheet (Phase 2)
+  //
+  // A faculty member has 800–1,500 courses. Doing them one at a time is a slog, so
+  // this shows a whole DEPARTMENT at once: each course → its suggested CIP (the
+  // easy-button engine, run per course) → a triage status (✓ ready / ⚠ review /
+  // ◻ manual). Pre-filled clear ones need a glance; faculty focus on the ⚠ minority,
+  // can override a suggestion, bulk-confirm the clear ones, and export CSV. Decisions
+  // persist in localStorage (no backend). Work is DEPARTMENT-scoped (nobody owns 1,500
+  // courses — they own ACCT), which also keeps each compute to ~1–2s, not a 40s freeze.
+  // Framing everywhere: a SUGGESTION you confirm; COCI is the record.
+  // ═══════════════════════════════════════════════════════════════════════════
+  var rev = { dept: null, filter: "all", q: "", byDept: {}, courses: null };
+  var revListHost, revSummaryHost, revDeptSel, revProgHost;
+
+  function parseSubject(label) {
+    var l = label || "", i = l.indexOf(" — ");
+    if (i < 0) return "—";
+    var parts = l.slice(0, i).trim().split(/\s+/), subj = [];
+    for (var k = 0; k < parts.length; k++) { if (/\d/.test(parts[k])) break; subj.push(parts[k]); }
+    return subj.join(" ") || "—";
+  }
+  function revDecisions() {
+    if (!st.college) return {};
+    try { return JSON.parse(localStorage.getItem("cipx_rev_" + st.college) || "{}") || {}; } catch (e) { return {}; }
+  }
+  function revSaveDecision(label, cip) {
+    if (!st.college) return;
+    var d = revDecisions();
+    if (cip) d[label] = cip; else delete d[label];
+    try { localStorage.setItem("cipx_rev_" + st.college, JSON.stringify(d)); } catch (e) {}
+  }
+
+  // classify one course into the triage buckets using the easy-button engine
+  function reviewRowOf(c) {
+    var m = computeRecommend(c), sug = null, status;
+    if (m.thin) status = "manual";
+    else if (m.recommended) { status = "clear"; sug = BYCODE[m.recommended]; }
+    else if (m.hasCross && m.cands.length) { status = "review"; sug = m.cands[0].r; }
+    else { status = "manual"; if (m.res.ranked.length) sug = m.res.ranked[0].r; }
+    return { c: c, label: c[0], subj: parseSubject(c[0]), top: c[2] || "", topTitle: m.topTitle,
+      sug: sug, status: status, nCand: m.cands.length, disagree: m.beyond.length > 0, m: m };
+  }
+
+  function departments(courses) {
+    var byd = {};
+    courses.forEach(function (c) { var s = parseSubject(c[0]); (byd[s] || (byd[s] = [])).push(c); });
+    return Object.keys(byd).sort().map(function (s) { return { subj: s, n: byd[s].length, courses: byd[s] }; });
+  }
+
+  // compute a department's rows (chunked so a big department doesn't freeze the UI)
+  function computeDept(dept, onProgress, done) {
+    if (rev.byDept[dept.subj]) { done(rev.byDept[dept.subj]); return; }
+    var rows = [], i = 0, list = dept.courses;
+    function chunk() {
+      var end = Math.min(i + 40, list.length);
+      for (; i < end; i++) rows.push(reviewRowOf(list[i]));
+      if (onProgress) onProgress(i, list.length);
+      if (i < list.length) (window.requestAnimationFrame || setTimeout)(chunk, 0);
+      else { rev.byDept[dept.subj] = rows; done(rows); }
+    }
+    chunk();
+  }
+
+  var REV_STATUS = { clear: { g: "✓", label: "Ready", cls: "ok" }, review: { g: "⚠", label: "Review", cls: "warn" }, manual: { g: "◻", label: "Manual", cls: "muted" } };
+
+  function reviewView() {
+    var v = el("div", { class: "cipx-rev" }, []);
+    v.appendChild(el("div", { class: "cipx-rev-banner" }, ["Each suggestion comes from the course's catalog description + the state TOP→CIP crosswalk. It's a ", el("b", {}, ["starting point you confirm"]), " — your college enters the final code in COCI. Nothing here is saved outside your browser."]));
+    if (!st.college) {
+      v.appendChild(el("div", { class: "cipx-fit-nudge" }, ["First, pick your college at the top of the tab — then choose a department to review."]));
+      return v;
+    }
+    var col = collegeBySlug(st.college);
+    var controls = el("div", { class: "cipx-rev-controls" }, []);
+    revDeptSel = el("select", { class: "cipx-rev-deptsel", "aria-label": "Department to review" }, [el("option", { value: "" }, ["Loading " + (col ? col.name : "college") + " courses…"])]);
+    revDeptSel.onchange = function () { rev.dept = revDeptSel.value || null; rev.filter = "all"; loadDept(); };
+    controls.appendChild(el("label", { class: "cipx-rev-deptlabel" }, ["Department ", revDeptSel]));
+    v.appendChild(controls);
+    revProgHost = el("div", { class: "cipx-rev-prog", "aria-live": "polite" }, []);
+    v.appendChild(revProgHost);
+    revSummaryHost = el("div", { class: "cipx-rev-summary" }, []);
+    v.appendChild(revSummaryHost);
+    revListHost = el("div", { class: "cipx-rev-list" }, []);
+    v.appendChild(revListHost);
+    // populate departments once courses are loaded
+    loadCollege(st.college).then(function (courses) {
+      rev.courses = courses || [];
+      clear(revDeptSel);
+      if (!rev.courses.length) { revDeptSel.appendChild(el("option", { value: "" }, ["No courses for this college"])); return; }
+      revDeptSel.appendChild(el("option", { value: "" }, ["Choose a department…"]));
+      var depts = departments(rev.courses);
+      depts.forEach(function (d) { revDeptSel.appendChild(el("option", { value: d.subj }, [d.subj + " · " + d.n + " course" + (d.n === 1 ? "" : "s")])); });
+      revDeptSel.appendChild(el("option", { value: "__all__" }, ["★ All departments (" + rev.courses.length.toLocaleString() + " courses — slower)"]));
+      if (rev.dept) { revDeptSel.value = rev.dept; loadDept(); }
+    }).catch(function () { clear(revDeptSel); revDeptSel.appendChild(el("option", { value: "" }, ["Couldn't load courses — try again"])); });
+    return v;
+  }
+
+  function deptCourses() {
+    if (rev.dept === "__all__") return rev.courses || [];
+    return (rev.courses || []).filter(function (c) { return parseSubject(c[0]) === rev.dept; });
+  }
+
+  function loadDept() {
+    if (!rev.dept) { clear(revSummaryHost); clear(revListHost); clear(revProgHost); return; }
+    var dept = { subj: rev.dept, courses: deptCourses() };
+    clear(revListHost); clear(revSummaryHost);
+    revProgHost.textContent = "Analyzing " + dept.courses.length.toLocaleString() + " courses…";
+    computeDept(dept, function (done, total) { revProgHost.textContent = "Analyzing… " + done + " / " + total; },
+      function (rows) { revProgHost.textContent = ""; renderReview(rows); });
+  }
+
+  function renderReview(rows) {
+    var dec = revDecisions();
+    var counts = { clear: 0, review: 0, manual: 0, confirmed: 0 };
+    rows.forEach(function (r) { counts[r.status]++; if (dec[r.label]) counts.confirmed++; });
+    // summary tiles double as filters
+    clear(revSummaryHost);
+    var tiles = el("div", { class: "cipx-rev-tiles" }, []);
+    [["all", "All", rows.length, ""], ["review", "⚠ To review", counts.review, "warn"], ["clear", "✓ Ready", counts.clear, "ok"], ["manual", "◻ Manual", counts.manual, "muted"]].forEach(function (t) {
+      var on = rev.filter === t[0];
+      var tile = el("button", { class: "cipx-rev-tile" + (on ? " on" : "") + (t[3] ? " cipx-rev-tile-" + t[3] : ""), type: "button", "aria-pressed": on ? "true" : "false" },
+        [el("span", { class: "cipx-rev-tilen" }, [t[2].toLocaleString()]), el("span", { class: "cipx-rev-tilel" }, [t[1]])]);
+      tile.onclick = function () { rev.filter = t[0]; renderReview(rows); };
+      tiles.appendChild(tile);
+    });
+    revSummaryHost.appendChild(tiles);
+    var progline = el("div", { class: "cipx-rev-progline" }, [counts.confirmed.toLocaleString() + " of " + rows.length.toLocaleString() + " confirmed"]);
+    revSummaryHost.appendChild(progline);
+    // per-department bulk-confirm of the clear matches + CSV
+    var actions = el("div", { class: "cipx-rev-actions" }, []);
+    var unconfirmedClear = rows.filter(function (r) { return r.status === "clear" && r.sug && !dec[r.label]; });
+    if (unconfirmedClear.length) {
+      var bulk = el("button", { class: "cipx-rev-bulk", type: "button" }, ["✓ Confirm all " + unconfirmedClear.length + " ready match" + (unconfirmedClear.length === 1 ? "" : "es") + (rev.dept !== "__all__" ? " in " + rev.dept : "")]);
+      bulk.onclick = function () { unconfirmedClear.forEach(function (r) { revSaveDecision(r.label, r.sug.code); }); renderReview(rows); };
+      actions.appendChild(bulk);
+    }
+    actions.appendChild(el("button", { class: "cipx-rev-csv", type: "button", title: "Download this list as CSV" }, ["⬇ CSV"]));
+    actions.lastChild.onclick = function () { exportReviewCsv(rows, dec); };
+    revSummaryHost.appendChild(actions);
+
+    // the rows
+    clear(revListHost);
+    var shown = rows.filter(function (r) { return rev.filter === "all" || r.status === rev.filter; });
+    // ⚠ review first, and within review the fewest-candidate (easiest) decisions first
+    shown.sort(function (a, b) {
+      var order = { review: 0, manual: 1, clear: 2 };
+      if (rev.filter === "all" && order[a.status] !== order[b.status]) return order[a.status] - order[b.status];
+      if (a.status === "review" && b.status === "review" && a.nCand !== b.nCand) return a.nCand - b.nCand;
+      return a.label < b.label ? -1 : 1;
+    });
+    if (!shown.length) { revListHost.appendChild(el("div", { class: "cipx-empty" }, ["No courses in this view."])); return; }
+    shown.slice(0, 300).forEach(function (r) { revListHost.appendChild(reviewRow(r, dec, rows)); });
+    if (shown.length > 300) revListHost.appendChild(el("div", { class: "cipx-rev-more" }, ["Showing 300 of " + shown.length.toLocaleString() + " — narrow by department or filter."]));
+  }
+
+  function reviewRow(r, dec, allRows) {
+    var chosen = dec[r.label] || (r.sug ? r.sug.code : null);
+    var chosenRow = chosen ? BYCODE[chosen] : null;
+    var confirmed = !!dec[r.label];
+    var stat = REV_STATUS[r.status];
+    var caret = el("span", { class: "cipx-caret" }, ["▸"]);
+    var chip = el("span", { class: "cipx-rev-chip" + (confirmed ? " cipx-rev-chip-on" : "") }, chosenRow
+      ? [el("span", { class: "cipx-code" }, [chosenRow.code]), el("span", { class: "cipx-rev-chipt" }, [chosenRow.t])]
+      : [el("span", { class: "cipx-rev-none" }, ["— pick a code —"])]);
+    var head = el("div", { class: "cipx-rev-row", role: "button", tabindex: "0" }, [
+      caret,
+      el("span", { class: "cipx-rev-course" }, [r.label]),
+      chip,
+      el("span", { class: "cipx-rev-stat cipx-rev-stat-" + stat.cls, title: stat.label + (r.disagree ? " · a stronger match sits outside the crosswalk" : "") }, [confirmed ? "✓ you" : stat.g + (r.disagree && r.status !== "manual" ? "⚑" : "")]),
+    ]);
+    var card = el("div", { class: "cipx-rev-item" + (confirmed ? " cipx-rev-conf" : "") }, [head]);
+    var open = false, body = null;
+    function tog() {
+      open = !open; caret.textContent = open ? "▾" : "▸";
+      if (open) { body = reviewExpand(r, dec, allRows); card.appendChild(body); }
+      else if (body) { card.removeChild(body); body = null; }
+    }
+    head.onclick = tog;
+    head.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); tog(); } };
+    return card;
+  }
+
+  function reviewExpand(r, dec, allRows) {
+    var box = el("div", { class: "cipx-rev-detail" }, []);
+    box.appendChild(el("div", { class: "cipx-rev-top" }, r.top
+      ? ["Current TOP ", el("span", { class: "cipx-code" }, [r.top]), r.topTitle ? " · " + r.topTitle : ""]
+      : ["No TOP code recorded."]));
+    // candidate picker: the crosswalk candidates (or closest-by-description), single-select
+    var opts = r.m.cands.length ? r.m.cands : r.m.res.ranked.slice(0, 6);
+    if (!opts.length) box.appendChild(el("div", { class: "cipx-fitmsg" }, [r.m.thin ? "Too little catalog description to suggest a code — pick one below." : "No crosswalk match — search all codes to pick one."]));
+    var chosen = dec[r.label] || (r.sug ? r.sug.code : null);
+    function choose(code) { revSaveDecision(r.label, code); renderReview(allRows); }
+    opts.slice(0, 6).forEach(function (o) {
+      var cr = o.r, isPick = cr.code === chosen;
+      var row = el("div", { class: "cipx-rev-cand" + (isPick ? " on" : ""), role: "button", tabindex: "0" }, [
+        el("span", { class: "cipx-rev-radio" }, [isPick ? "◉" : "○"]),
+        el("span", { class: "cipx-code" }, [cr.code]),
+        el("span", { class: "cipx-rev-candt" }, [cr.t, cr.cat ? el("span", { class: catClass(cr.cat), title: catTip(cr.cat) }, [cr.cat]) : null]),
+        el("span", { class: "cipx-rev-candrel" }, [meter(o.rel || 0, tierOf(o.rel || 0).key)]),
+      ]);
+      row.onclick = function () { choose(cr.code); };
+      row.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); choose(cr.code); } };
+      if (o.matched && o.matched.length) row.appendChild(el("div", { class: "cipx-rev-why" }, ["matched: " + o.matched.slice(0, 6).join(", ")]));
+      box.appendChild(row);
+    });
+    if (r.disagree && r.m.beyond.length) box.appendChild(el("div", { class: "cipx-rev-flag" }, ["⚑ A stronger description match sits outside the crosswalk (" + r.m.beyond[0].r.code + " " + r.m.beyond[0].r.t + ") — the course's TOP may be off. Compare before confirming."]));
+    // actions: confirm + search-all escape hatch + clear
+    var acts = el("div", { class: "cipx-rev-detactions" }, []);
+    var conf = el("button", { class: "cipx-rev-confirm", type: "button" }, [dec[r.label] ? "✓ Confirmed — change?" : "Confirm this code"]);
+    conf.onclick = function () { revSaveDecision(r.label, chosen); renderReview(allRows); };
+    if (chosen) acts.appendChild(conf);
+    var srch = el("button", { class: "cipx-rev-searchall", type: "button" }, ["Search all codes…"]);
+    var searchWrap = el("div", {}, []);
+    srch.onclick = function () {
+      if (searchWrap.firstChild) { clear(searchWrap); return; }
+      searchWrap.appendChild(comboCore({
+        id: "cipx-revsearch-" + r.label.replace(/\W/g, "").slice(0, 20),
+        label: "Search all CIP codes", placeholder: "Type a code or keyword…",
+        groupsFor: function (f) {
+          if (!f) return { groups: [], empty: "Type to search all codes." };
+          var hits = ROWS.filter(function (x) { return GOFORWARD[x.cat] && (x.code.indexOf(f) === 0 || (x.t || "").toLowerCase().indexOf(f) >= 0); }).slice(0, 30)
+            .map(function (x) { return [x.code + " — " + x.t, "", x.code]; });
+          return { groups: [[null, hits]], empty: "No code matches “" + f + "”." };
+        },
+        onPick: function (picked) { choose(picked[2]); },
+      }));
+    };
+    acts.appendChild(srch);
+    acts.appendChild(searchWrap);
+    if (dec[r.label]) { var clr = el("button", { class: "cipx-rev-clear", type: "button" }, ["Clear"]); clr.onclick = function () { revSaveDecision(r.label, null); renderReview(allRows); }; acts.appendChild(clr); }
+    box.appendChild(acts);
+    return box;
+  }
+
+  function exportReviewCsv(rows, dec) {
+    var out = ["Course,Subject,Current TOP,TOP Title,CIP Code,CIP Title,CIP Category,Status,Source"];
+    function q(v) { return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; }
+    rows.forEach(function (r) {
+      var chosen = dec[r.label] || (r.sug ? r.sug.code : ""), cr = chosen ? BYCODE[chosen] : null;
+      var source = dec[r.label] ? "faculty-confirmed" : (chosen ? "auto-suggested" : "none");
+      out.push([q(r.label), q(r.subj), q(r.top), q(r.topTitle), q(chosen), q(cr ? cr.t : ""), q(cr ? cr.cat : ""), q(REV_STATUS[r.status].label), q(source)].join(","));
+    });
+    var blob = new Blob([out.join("\n")], { type: "text/csv" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "cip_review_" + (st.college || "college") + (rev.dept && rev.dept !== "__all__" ? "_" + rev.dept.replace(/\W/g, "") : "") + ".csv";
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
   // Shell
   // ═══════════════════════════════════════════════════════════════════════════
   function modeBar() {
     var bar = el("div", { class: "cipx-modebar", role: "tablist", "aria-label": "What do you want to do" }, []);
-    [["browse", "📖 Browse codes"], ["recommend", "🎯 Find my course’s code"]].forEach(function (m) {
+    [["browse", "📖 Browse codes"], ["recommend", "🎯 Find my course’s code"], ["review", "📋 Review my catalog"]].forEach(function (m) {
       var on = st.mode === m[0];
       var b = el("button", { class: "cipx-modetab" + (on ? " on" : ""), type: "button", role: "tab", "aria-selected": on ? "true" : "false" }, [m[1]]);
       b.onclick = function () {
@@ -901,6 +1163,8 @@
     wrapEl.appendChild(collegeBar());
     if (st.mode === "recommend") {
       wrapEl.appendChild(recommendView());
+    } else if (st.mode === "review") {
+      wrapEl.appendChild(reviewView());
     } else {
       wrapEl.appendChild(buildPanel());
       suggestHost = el("div", { class: "cipx-suggest" }, []);
@@ -1079,6 +1343,46 @@
       ".cipx-beyond-btn{color:var(--cipx-warn-fg);border-color:var(--cipx-warn-stripe);}",
       ".cipx-boiler-note,.cipx-beyond-note{font-size:.76rem;color:var(--cipx-muted);line-height:1.5;margin:8px 2px;max-width:82ch;}",
       ".cipx-boiler-body,.cipx-beyond-body{margin-top:8px;display:flex;flex-direction:column;gap:8px;}",
+      // review-my-catalog mode
+      ".cipx-rev-banner{background:var(--cipx-surface-2);border:1px solid var(--cipx-border);border-radius:10px;padding:10px 14px;font-size:.84rem;color:var(--cipx-text-soft);line-height:1.5;margin:2px 0 14px;}.cipx-rev-banner b{color:var(--cipx-text);}",
+      ".cipx-rev-controls{margin:0 0 12px;}",
+      ".cipx-rev-deptlabel{font-size:.86rem;font-weight:700;color:var(--cipx-text);display:flex;gap:10px;align-items:center;flex-wrap:wrap;}",
+      ".cipx-rev-deptsel{font-family:inherit;font-size:.92rem;padding:8px 11px;border-radius:8px;border:1.5px solid var(--cipx-border-strong);background:var(--cipx-surface);color:var(--cipx-text);cursor:pointer;max-width:420px;flex:1;min-width:200px;}",
+      ".cipx-rev-deptsel:focus{outline:2px solid var(--cipx-focus);outline-offset:1px;}",
+      ".cipx-rev-prog{font-size:.82rem;color:var(--cipx-muted);font-style:italic;min-height:0;margin:0 2px;}",
+      ".cipx-rev-tiles{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 8px;}",
+      ".cipx-rev-tile{display:flex;flex-direction:column;gap:1px;align-items:flex-start;font-family:inherit;background:var(--cipx-surface);border:1px solid var(--cipx-border-strong);border-radius:10px;padding:8px 14px;cursor:pointer;min-width:78px;}",
+      ".cipx-rev-tile:hover{border-color:var(--cipx-accent);}.cipx-rev-tile[aria-pressed=\"true\"]{border-color:var(--cipx-accent);box-shadow:0 0 0 1px var(--cipx-accent);}",
+      ".cipx-rev-tilen{font-size:1.15rem;font-weight:800;color:var(--cipx-text);font-variant-numeric:tabular-nums;}",
+      ".cipx-rev-tilel{font-size:.72rem;font-weight:600;color:var(--cipx-muted);text-transform:uppercase;letter-spacing:.03em;}",
+      ".cipx-rev-tile-warn .cipx-rev-tilen{color:var(--cipx-warn-fg);}.cipx-rev-tile-ok .cipx-rev-tilen{color:var(--cipx-ok-fg);}",
+      ".cipx-rev-progline{font-size:.8rem;color:var(--cipx-muted);font-weight:600;margin:2px 2px 8px;}",
+      ".cipx-rev-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 10px;}",
+      ".cipx-rev-bulk{font-family:inherit;font-size:.82rem;font-weight:700;color:#fff;background:var(--cipx-ok-stripe);border:0;border-radius:8px;padding:8px 14px;cursor:pointer;}.cipx.cipx-theme-dark .cipx-rev-bulk{color:#0e1a2b;}.cipx-rev-bulk:hover{filter:brightness(1.06);}",
+      ".cipx-rev-csv{font-family:inherit;font-size:.78rem;font-weight:700;color:var(--cipx-link);background:var(--cipx-surface);border:1px solid var(--cipx-border);border-radius:8px;padding:7px 12px;cursor:pointer;margin-left:auto;}",
+      ".cipx-rev-list{display:flex;flex-direction:column;}",
+      ".cipx-rev-item{border-bottom:1px solid var(--cipx-border);}.cipx-rev-conf{background:var(--cipx-ok-bg);}",
+      ".cipx-rev-row{display:grid;grid-template-columns:16px 1fr minmax(180px,300px) 74px;gap:12px;align-items:center;padding:11px 10px;cursor:pointer;}",
+      ".cipx-rev-row:hover{background:var(--cipx-surface-sub);}",
+      ".cipx-rev-course{font-weight:600;color:var(--cipx-text);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
+      ".cipx-rev-chip{display:inline-flex;gap:7px;align-items:baseline;border:1px dashed var(--cipx-border-strong);border-radius:8px;padding:4px 9px;min-width:0;}",
+      ".cipx-rev-chip-on{border-style:solid;border-color:var(--cipx-ok-stripe);background:var(--cipx-ok-bg);}",
+      ".cipx-rev-chipt{font-size:.8rem;color:var(--cipx-text-soft);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
+      ".cipx-rev-none{font-size:.8rem;color:var(--cipx-muted);font-style:italic;}",
+      ".cipx-rev-stat{font-size:.74rem;font-weight:700;text-align:right;white-space:nowrap;}",
+      ".cipx-rev-stat-ok{color:var(--cipx-ok-fg);}.cipx-rev-stat-warn{color:var(--cipx-warn-fg);}.cipx-rev-stat-muted{color:var(--cipx-muted);}",
+      ".cipx-rev-detail{padding:2px 12px 16px 28px;}",
+      ".cipx-rev-top{font-size:.82rem;color:var(--cipx-muted);margin:0 0 10px;}",
+      ".cipx-rev-cand{display:grid;grid-template-columns:18px 88px 1fr 130px;gap:10px;align-items:center;padding:9px 11px;border:1px solid var(--cipx-border);border-radius:9px;margin:6px 0;cursor:pointer;}",
+      ".cipx-rev-cand:hover{background:var(--cipx-surface-sub);}.cipx-rev-cand.on{border-color:var(--cipx-accent);box-shadow:0 0 0 1px var(--cipx-accent);}",
+      ".cipx-rev-radio{color:var(--cipx-accent);font-size:1rem;text-align:center;}",
+      ".cipx-rev-candt{font-weight:600;color:var(--cipx-text);min-width:0;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;}",
+      ".cipx-rev-why{grid-column:2/-1;font-size:.72rem;color:var(--cipx-muted);}",
+      ".cipx-rev-flag{font-size:.78rem;color:var(--cipx-warn-fg);background:var(--cipx-warn-bg);border-radius:8px;padding:8px 11px;margin:8px 0;line-height:1.5;}",
+      ".cipx-rev-detactions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;}",
+      ".cipx-rev-confirm{font-family:inherit;font-size:.82rem;font-weight:700;color:#fff;background:var(--cipx-accent);border:0;border-radius:8px;padding:8px 15px;cursor:pointer;}.cipx.cipx-theme-dark .cipx-rev-confirm{color:#0e1a2b;}",
+      ".cipx-rev-searchall,.cipx-rev-clear{font-family:inherit;font-size:.8rem;font-weight:600;color:var(--cipx-link);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;}",
+      ".cipx-rev-more{text-align:center;padding:14px;font-size:.82rem;color:var(--cipx-muted);}",
       ".cipx-foot{margin-top:26px;font-size:.76rem;color:var(--cipx-muted);border-top:1px solid var(--cipx-border);padding-top:14px;line-height:1.6;}",
       // mobile
       "@media (max-width:640px){" +
@@ -1099,6 +1403,9 @@
         ".cipx-modebar{width:100%;}.cipx-modetab{flex:1;padding:8px 6px;font-size:.8rem;text-align:center;}" +
         ".cipx-rec-row{grid-template-columns:13px 58px 1fr;gap:8px;}.cipx-rec-meta{grid-column:2/-1;flex-direction:row;align-items:center;min-width:0;margin-top:4px;}.cipx-rec-row-flat{grid-template-columns:13px 58px 1fr;}" +
         ".cipx-rec-card .cipx-detail{padding-left:14px;}" +
+        ".cipx-rev-deptsel{max-width:100%;flex:1 1 100%;}.cipx-rev-tiles{gap:6px;}.cipx-rev-tile{padding:6px 10px;min-width:60px;}" +
+        ".cipx-rev-row{grid-template-columns:14px 1fr auto;gap:8px;}.cipx-rev-chip{grid-column:2/-1;margin-top:5px;}" +
+        ".cipx-rev-cand{grid-template-columns:18px 64px 1fr;}.cipx-rev-candrel{grid-column:2/-1;margin-top:3px;}.cipx-rev-csv{margin-left:0;}.cipx-rev-detail{padding-left:12px;}" +
       "}",
     ].join("");
     var stEl = el("style", { id: CSS_ID });
@@ -1129,8 +1436,9 @@
     _setData: function (d) { ingest(d); },
     _setColleges: function (m) { FIT_COLLEGES = m; },
     _setCourses: function (slug, arr) { FIT_CACHE[slug] = arr; },
-    _setMode: function (mode) { st.mode = mode === "recommend" ? "recommend" : "browse"; },
+    _setMode: function (mode) { st.mode = (mode === "recommend" || mode === "review") ? mode : "browse"; },
     _passes: passes, _filtered: filtered, _score: scoreAgainst, _courseScore: scoreTokensVs, _courseToks: courseToks,
     _recommend: computeRecommend, _bestMatches: bestMatchCourses,
+    _parseSubject: parseSubject, _reviewRows: function (courses) { return (courses || []).map(reviewRowOf); },
   };
 })();
