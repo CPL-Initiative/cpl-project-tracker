@@ -63,6 +63,8 @@ const FIXTURE = {
     { code: "01.0309", t: "Old Retired Field", cat: "Retired", fam: "01", def: "A field moved or deleted in the 2020 CIP edition.", ex: "", act: "Deleted" },
     { code: "51.9999", t: "Reserved Placeholder", cat: "Reserved", fam: "51", def: "A reserved placeholder code.", ex: "", act: "" },
   ],
+  topcip: { "0505.00": { t: "Business", c: [["52.0201", "o"]] } },
+  boiler: [],
 };
 const MANIFEST = [{ name: "Test College", slug: "test_college", n: 3 }];
 const COURSES = [
@@ -76,9 +78,11 @@ const COURSES = [
 // noncredit boilerplate codes, plus a nursing CIP reachable only by description
 // (never listed for the business TOP → the "outside the crosswalk" case).
 const RFIXTURE = {
-  fams: { "51": "Health Professions", "52": "Business", "32": "Basic Skills", "49": "Transportation" },
+  fams: { "51": "Health Professions", "52": "Business", "32": "Basic Skills", "49": "Transportation", "27": "Mathematics" },
   rows: [
     { code: "49.0205", t: "Truck and Bus Driver/Commercial Vehicle Operator and Instructor", cat: "CTE", fam: "49", def: "A program that prepares individuals to drive trucks and buses and other commercial motor vehicles.", ex: "", act: "" },
+    { code: "27.0101", t: "Mathematics, General", cat: "Non-CTE", fam: "27", def: "A general program that focuses on mathematics and statistics.", ex: "", act: "" },
+    { code: "32.0202", t: "High School Equivalent Exam Preparation", cat: "Noncredit", fam: "32", def: "A noncredit program preparing students for high school equivalent examinations.", ex: "", act: "" },
     { code: "52.0201", t: "Business Administration and Management", cat: "Non-CTE", fam: "52", def: "A general business administration program covering management and organization and accounting.", ex: "", act: "" },
     { code: "52.0301", t: "Accounting", cat: "CTE", fam: "52", def: "A program that prepares individuals to practice accounting and auditing and bookkeeping.", ex: "", act: "" },
     { code: "52.0302", t: "Accounting Technology", cat: "CTE", fam: "52", def: "A program in accounting technology and bookkeeping and payroll clerical work.", ex: "", act: "" },
@@ -87,7 +91,10 @@ const RFIXTURE = {
     { code: "32.0111", t: "Workforce Development", cat: "Noncredit", fam: "32", def: "A noncredit program in workforce development and training.", ex: "", act: "" },
     { code: "01.0000", t: "Agriculture, General", cat: "Both", fam: "01", def: "A program about general agriculture and farming.", ex: "", act: "" },
   ],
-  topcip: { "0505.00": { t: "Accounting", c: [["52.0201", "o"], ["52.0301", "o"], ["52.0302", "o"], ["32.0107", "n"], ["32.0111", "n"]] } },
+  topcip: {
+    "0505.00": { t: "Accounting", c: [["52.0201", "o"], ["52.0301", "o"], ["52.0302", "o"], ["32.0107", "n"], ["32.0111", "n"]] },
+    "1701.00": { t: "Mathematics", c: [["27.0101", "o"], ["32.0202", "n"]] },
+  },
   boiler: ["32.0107", "32.0111"],
 };
 const RCOURSES = [
@@ -211,6 +218,19 @@ function fresh(withCollege) {
   check("the verdict lists closest CIP candidates", fitResult && fitResult.querySelectorAll(".cipx-cand-card").length >= 1);
   check("a paste-a-description fallback is offered", wrap.parentNode.parentNode.querySelector(".cipx-fit-pastelink"));
 
+  // no-anchor inline picker: 51.3801 has no crosswalk-mapped course at this college →
+  // an honest "none map" notice + the full A–Z list (Sam's call), NOT lexical guesses
+  const nurseItemRow = Array.prototype.filter.call(fdoc.querySelectorAll(".cipx-row"), (rr) => /51\.3801/.test(rr.textContent))[0];
+  nurseItemRow.click();
+  await tick(); await tick();
+  const nurseWrap = Array.prototype.filter.call(fdoc.querySelectorAll(".cipx-item"), (it) => /51\.3801/.test(it.textContent))[0].querySelector(".cipx-cbwrap");
+  const nurseInput = nurseWrap && nurseWrap.querySelector(".cipx-fit-cb");
+  nurseInput.focus();
+  const nursePanel = nurseWrap.querySelector(".cipx-fit-panel");
+  check("no-anchor picker shows the honest 'none of your courses map' notice", nursePanel && Array.prototype.some.call(nursePanel.querySelectorAll(".cipx-cb-group"), (g) => /None of your courses map/.test(g.textContent)));
+  check("no-anchor picker still offers the full course list to choose from", nursePanel && nursePanel.querySelectorAll(".cipx-cb-opt").length >= 1);
+  check("no-anchor picker does NOT present a 'Best matches' group", nursePanel && !Array.prototype.some.call(nursePanel.querySelectorAll(".cipx-cb-group"), (g) => /Best matches/.test(g.textContent)));
+
   // ── Part B2 — "Find my course's code" (TOP→CIP easy button) ──
   check("cip_crosswalk_data.js carries topcip{} + boiler[]", /"topcip":/.test(dataSrc) && /"boiler":/.test(dataSrc));
   check("cip_crosswalk.js has the two-mode toggle", /cipx-modebar/.test(src) && /Find my course/.test(src));
@@ -244,18 +264,33 @@ function fresh(withCollege) {
   // ── Fix B: the inline "best matches" anchor on the crosswalk (TOP→CIP) ──
   const bizCip = rApi._score("business administration management organization").ranked.find((o) => o.r.code === "52.0201").r;
   // TOP 0505.00 maps to 52.0201 in RFIXTURE, so a 0505.00 course is anchored; a
-  // lexically STRONGER course on a TOP that doesn't map here must NOT lead.
+  // lexically STRONGER course on a TOP that doesn't map here must NOT be anchored.
   const bmCourses = [
     ["MGMT 50 — Management", "A course covering organization.", "0505.00"],
     ["ZZ 1 — Strong Lexical Match", "A general business administration program covering management and organization and accounting.", "9999.00"],
   ];
   const bm = rApi._bestMatches(bizCip, bmCourses);
-  check("Fix B: best-matches lead with a crosswalk-anchored course", bm.length && bm[0][2] === "0505.00" && /MGMT 50/.test(bm[0][0]));
-  check("Fix B: a lexically-stronger non-anchored course is ranked below the anchored one", bm.length === 2 && /ZZ 1/.test(bm[1][0]));
+  check("Fix B: anchored group leads with a crosswalk-anchored course", bm.anchored.length === 1 && bm.anchored[0][2] === "0505.00" && /MGMT 50/.test(bm.anchored[0][0]));
+  check("Fix B: a lexically-stronger non-anchored course stays in the lexical (not anchored) group", bm.lexical.some((c) => /ZZ 1/.test(c[0])) && !bm.anchored.some((c) => /ZZ 1/.test(c[0])));
   // 51.3801 is NOT in the crosswalk fixture → anchored empty → lexical fallback
   const nurCip = rApi._score("registered nursing").ranked.find((o) => o.r.code === "51.3801").r;
   const bmFallback = rApi._bestMatches(nurCip, [["NURS 1 — Nursing", "registered nurses practice nursing and patient care", "0505.00"]]);
-  check("Fix B: falls back to description-fit when a CIP has no anchored courses", bmFallback.length === 1 && /NURS 1/.test(bmFallback[0][0]));
+  check("Fix B: no anchored courses → empty anchored, lexical fallback present", bmFallback.anchored.length === 0 && bmFallback.lexical.length === 1 && /NURS 1/.test(bmFallback.lexical[0][0]));
+
+  // ── Fix A: a crosswalk-anchored course that shares NO description vocabulary
+  // (a catch-all "Cooperative Education" course on a broad TOP) is not "best matched" ──
+  const bmCatchall = rApi._bestMatches(bizCip, [["COOP 1 — Cooperative Education", "independent study internship field placement hours", "0505.00"]]);
+  check("Fix A: a zero-overlap catch-all course is excluded from the anchored best matches", bmCatchall.anchored.length === 0);
+
+  // ── Fix C: a Noncredit CIP must not out-rank / be recommended over a credit one ──
+  // "equivalent" hits 32.0202 (Noncredit) lexically; 27.0101 (credit) is the official.
+  const mMath = rApi._recommend(["MATH 3F — Differential Equations", "A course in differential equations, equivalent to advanced study.", "1701.00"]);
+  check("Fix C: the credit candidate leads over a lexically-stronger Noncredit one", mMath.cands.length >= 2 && mMath.cands[0].r.code === "27.0101");
+  check("Fix C: a Noncredit CIP is never the green ✓ recommendation when a credit one exists", mMath.recommended !== "32.0202");
+
+  // ── Fix D: the boiler codes never leak into the ⚠ "outside the crosswalk" drawer ──
+  const mBoiler = rApi._recommend(["WKX 1 — Workplace Intro", "Career exploration and workforce development awareness training.", "1701.00"]);
+  check("Fix D: boiler codes are excluded from the outside-the-crosswalk (beyond) list", mBoiler.beyond.every((o) => o.r.code !== "32.0107" && o.r.code !== "32.0111"));
 
   // DOM: recommend mode renders + picking a course produces a recommendation card
   const domR = freshR("recommend");
