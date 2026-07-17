@@ -614,23 +614,38 @@ narrative definitions. The planned canonical-CIP-designation curator surface was
 Full story + continuation: `docs/cip_crosswalk_lessons.md`. Side-lane like
 SkyFlyer/SkyIron — left `cpl_todos.json` + the numbered handoff untouched.
 
-### SkyLoft side-lane — CIP Code Taxonomy: the mockup ported to production (2026-07-16)
+### SkyLoft side-lane — CIP Code Taxonomy + the "Check a course" fit tool (2026-07-16/17, #798–#816 MERGED)
 
-Sam: "get the mockup into production on COBI." Ported StarCIP's locked prototype
-(`docs/cip_prototype/`) into the live `#cip-crosswalk` tab — the tab **is** the
-reference now (search + plain-English finder + category pills + 🎓 C-ID/CCN chip +
-family select + retired toggle over all **2,325** CIP-2020 codes; row → definition/
-examples/family/NCES). The old **crosswalk table + suggest form are gone** (Jenni:
-COE hosts the crosswalk, don't expose suggest) → header links out to COE instead;
-tab is now **backend-free** (the `cip_crosswalk_suggestion` table stays in-repo,
-unsurfaced). `kb/_build_cip_crosswalk.py` rebuilt to the **lean `{fams, rows}`
-shape** off the **260715 cut**, folding the two data rules — **certified** CTE `cat`
-(`cip_cte_certified_260715.json`, 244/244, 0 conflicts) + **C-ID/CCN** floor `x`
-(1,300) — parity-exact with the prototype (data file 1.9→1.06 MB; still a committed,
-non-cron artifact). Nav "CIP Crosswalk"→**"CIP Codes"** (hash kept). Tests rewritten
-(48, backend-free guard incl.); real-Chromium 0 console errors. Full story +
-continuation: `docs/cip_crosswalk_lessons.md`. **Side-lane — left `cpl_todos.json` +
-the numbered handoff untouched** (CCR mainline owns those).
+Sam: "get the mockup into production on COBI," then a live-testing sprint. The
+`#cip-crosswalk` tab is the CIP-2020 **reference manual** (search + plain-English
+finder + category pills + 🎓 C-ID/CCN chip + family filter over all **2,325** codes;
+certified CTE `cat`) **plus** an inline **"Check a course against this CIP"** tool.
+Arc, all merged: **#798** port of StarCIP's locked mockup (nav "CIP Crosswalk"→"CIP
+Codes", backend-free, lean `{fams,rows}` off the 260715 cut, certified CTE 244/244);
+**#802** UX polish (self-contained dark toggle, wider intro, rounded chips, one
+consolidated search, muted badges); **#813** the Fit-Check Phase-0 engine
+(IDF-weighted lexical match of a course description vs each CIP's definition —
+Strong/Plausible/Weak + margin discrimination; grounded, no backend); **#814** the
+**inline redesign** — pick your **college** once (remembered), pick a **course** →
+its **COCI description** auto-scores against the code (per-college `cip_fitcheck/`
+lazy-fetched, ~50MB split so the browser pulls ≤1MB); **#815** the **coverage
+factor** (a course's *fundamental purpose* wins — an incidental "cost accounting"
+mention no longer reads Strong for Accounting; light touch, `rel%` picks the tier);
+**#816** scroll-preserve on expand + a **searchable custom combobox** (opens below,
+type to filter ~1,500 courses). Engine seams `_score`/`_courseScore`/`_courseToks`;
+tests 60; real-Chromium desktop+phone, 0 overflow/0 errors. **Method note:**
+`docs/kb-notes/methodology-grounded-lexical-cip-confidence.md`.
+
+**🎯 QUEUED for SkyLiftoff — the TOP→CIP "easy button" (Sam's priority):** every
+course has a current **TOP**; the CO's official **TOP→CIP crosswalk** (median 5
+CIPs/TOP, 32% ≤3; `cip_searchable_260715.xlsx` TOP-CIP Data) gives the candidate
+CIPs → **rank them by description-fit** = the two-signals-agree gate (§7 TOP caveat).
+Phase 1: show current TOP + ranked crosswalk CIPs (✓ Recommended when both agree, ⚠
+on disagreement) + course-first entry; small data lift (re-emit `TOP→[CIP+prov]`).
+Phase 2: whole-catalog review sheet per college (1,500 courses → recommended CIP →
+confidence). **🔒 WCAG audit is the standing pre-field gate.** Full story + the
+paste-able capsule: `docs/cip_crosswalk_lessons.md` · `docs/cip_crosswalk_handoff.md`.
+**Side-lane — left `cpl_todos.json` + the numbered handoff untouched** (CCR mainline owns those).
 
 ### StarCIP side-lane — CIP Code Taxonomy: the "easy button" reference + finder (2026-07-15, PROTOTYPE → ported #798)
 
