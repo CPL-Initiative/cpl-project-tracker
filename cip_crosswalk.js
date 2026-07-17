@@ -240,6 +240,12 @@
   }
 
   function render() {
+    // Preserve scroll: clearing the (tall) list collapses page height, so the
+    // browser clamps scroll to the top; we restore it after the rebuild so
+    // expanding a row far down the list doesn't zip the viewport to the top.
+    var scroller = document.scrollingElement || document.documentElement;
+    var _sy = scroller.scrollTop;
+    var _restore = function () { scroller.scrollTop = _sy; };
     var rows = filtered();
     clear(countHost);
     countHost.appendChild(el("span", { class: "cipx-cnum" }, [rows.length.toLocaleString() + " CIP code" + (rows.length === 1 ? "" : "s") + (rows.length > st.limit ? "  ·  showing " + st.limit.toLocaleString() : "")]));
@@ -253,7 +259,7 @@
     countHost.appendChild(el("button", { class: "cipx-csv", type: "button", title: "Download the current filtered list as CSV", onclick: function () { exportCsv(rows); } }, ["⬇ CSV"]));
 
     clear(listHost);
-    if (!rows.length) { listHost.appendChild(el("div", { class: "cipx-empty" }, ["No CIP codes match — try a different word or clear the filters."])); return; }
+    if (!rows.length) { listHost.appendChild(el("div", { class: "cipx-empty" }, ["No CIP codes match — try a different word or clear the filters."])); _restore(); return; }
     rows.slice(0, st.limit).forEach(function (r) {
       var isOpen = !!st.open[r.code];
       var badges = el("div", { class: "cipx-tags" }, []);
@@ -274,6 +280,7 @@
     if (rows.length > st.limit) {
       listHost.appendChild(el("div", { class: "cipx-more" }, [el("button", { class: "cipx-morebtn", type: "button", onclick: function () { st.limit += PAGE; render(); } }, ["Show " + Math.min(PAGE, rows.length - st.limit).toLocaleString() + " more"])]));
     }
+    _restore();
   }
 
   function detail(r, withFit) {
@@ -367,29 +374,63 @@
     return wrap;
   }
 
+  // A custom combobox (not a native <select>) so the list opens BELOW the input
+  // instead of the browser popping it upward over the row, AND so faculty can
+  // TYPE to search all courses (a native 1,800-option select forces scrolling).
+  // The best-fit-first group is a head start; search lets them pick anything —
+  // e.g. an Improv course that isn't a top "acting" match but reads Plausible.
   function coursePicker(r, col, courses) {
-    var box = el("div", {}, []);
-    // score every course against THIS cip; best-fit-first for the top group
+    var box = el("div", { class: "cipx-cbwrap" }, []);
     var scored = courses.map(function (c, i) { return { i: i, c: c, s: scoreTokensVs(courseToks(c), r).score }; });
     var best = scored.slice().filter(function (x) { return x.s > 0; }).sort(function (a, b) { return b.s - a.s; }).slice(0, 8);
-    var sel = el("select", { class: "cipx-fit-sel", "aria-label": "Choose one of your courses" }, [el("option", { value: "" }, ["Choose one of your courses…"])]);
-    if (best.length) {
-      var og1 = el("optgroup", { label: "★ Best matches for " + r.code }, []);
-      best.forEach(function (x) { og1.appendChild(el("option", { value: String(x.i) }, [x.c[0]])); });
-      sel.appendChild(og1);
-    }
-    var og2 = el("optgroup", { label: "All " + (col ? col.name : "") + " courses (A–Z)" }, []);
-    courses.forEach(function (c, i) { og2.appendChild(el("option", { value: String(i) }, [c[0]])); });
-    sel.appendChild(og2);
-    box.appendChild(sel);
+    var panelId = "cipx-cbp-" + r.code.replace(/\W/g, "");
+    var input = el("input", { class: "cipx-fit-cb", type: "text", role: "combobox", autocomplete: "off",
+      "aria-expanded": "false", "aria-autocomplete": "list", "aria-controls": panelId, "aria-label": "Choose one of your courses (type to search)",
+      placeholder: "Choose one of your courses — type to search…" });
+    var panel = el("div", { class: "cipx-fit-panel", id: panelId, role: "listbox" }, []);
+    panel.style.display = "none";
     var result = el("div", { class: "cipx-fit-result", "aria-live": "polite" }, []);
-    box.appendChild(result);
-    sel.onchange = function () {
-      var v = sel.value;
-      if (v === "") { clear(result); return; }
-      var c = courses[parseInt(v, 10)];
-      if (c) renderFit(result, r, c[0], c[1]);
+    var opts = [], active = -1, isOpen = false, onDoc = null, picked = false;
+
+    function pick(c) { picked = true; input.value = c[0]; closePanel(); renderFit(result, r, c[0], c[1]); }
+    function setActive(i) {
+      if (active >= 0 && opts[active]) opts[active].classList.remove("on");
+      active = i;
+      if (active >= 0 && opts[active]) { opts[active].classList.add("on"); input.setAttribute("aria-activedescendant", opts[active].id); opts[active].scrollIntoView({ block: "nearest" }); }
+      else input.removeAttribute("aria-activedescendant");
+    }
+    function build(filter) {
+      clear(panel); opts = []; setActive(-1);
+      filter = (filter || "").toLowerCase().trim();
+      var groups = filter
+        ? [[null, scored.filter(function (x) { return x.c[0].toLowerCase().indexOf(filter) >= 0; }).slice(0, 40)]]
+        : [best.length ? ["★ Best matches for " + r.code, best] : null, ["All " + (col ? col.name : "") + " courses (A–Z)", scored.slice(0, 40)]].filter(Boolean);
+      groups.forEach(function (g) {
+        if (!g[1].length) return;
+        if (g[0]) panel.appendChild(el("div", { class: "cipx-cb-group" }, [g[0]]));
+        g[1].forEach(function (entry) {
+          var o = el("div", { class: "cipx-cb-opt", role: "option", id: panelId + "-o" + opts.length }, [entry.c[0]]);
+          o._c = entry.c;
+          o.onmousedown = function (e) { e.preventDefault(); pick(entry.c); };
+          opts.push(o); panel.appendChild(o);
+        });
+      });
+      if (!opts.length) panel.appendChild(el("div", { class: "cipx-cb-none" }, [filter ? "No course matches “" + filter + "”." : "No courses to show."]));
+      else if (!filter && courses.length > 40) panel.appendChild(el("div", { class: "cipx-cb-hint" }, ["Showing the best matches + first 40 — type to search all " + courses.length.toLocaleString() + " courses."]));
+    }
+    function openPanel() { if (isOpen) return; isOpen = true; input.setAttribute("aria-expanded", "true"); panel.style.display = "block"; build(picked ? "" : input.value); onDoc = function (ev) { if (!box.contains(ev.target)) closePanel(); }; document.addEventListener("mousedown", onDoc, true); }
+    function closePanel() { if (!isOpen) return; isOpen = false; input.setAttribute("aria-expanded", "false"); panel.style.display = "none"; setActive(-1); if (onDoc) { document.removeEventListener("mousedown", onDoc, true); onDoc = null; } }
+
+    input.onfocus = openPanel;
+    input.onclick = openPanel;
+    input.oninput = function () { picked = false; if (!isOpen) openPanel(); build(input.value); };
+    input.onkeydown = function (e) {
+      if (e.key === "ArrowDown") { e.preventDefault(); if (!isOpen) openPanel(); setActive(Math.min(active + 1, opts.length - 1)); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); setActive(Math.max(active - 1, 0)); }
+      else if (e.key === "Enter") { if (isOpen && active >= 0 && opts[active]) { e.preventDefault(); pick(opts[active]._c); } }
+      else if (e.key === "Escape") { closePanel(); }
     };
+    box.appendChild(input); box.appendChild(panel); box.appendChild(result);
     return box;
   }
 
@@ -649,8 +690,16 @@
       ".cipx-fit-h{font-weight:700;font-size:.92rem;color:var(--cipx-text);margin-bottom:8px;}",
       ".cipx-fit-nudge{font-size:.85rem;color:var(--cipx-muted);line-height:1.5;}",
       ".cipx-fit-loading{font-size:.85rem;color:var(--cipx-muted);font-style:italic;}",
-      ".cipx-fit-sel{width:100%;max-width:560px;box-sizing:border-box;font-family:inherit;font-size:1rem;padding:10px 12px;border-radius:9px;border:1.5px solid var(--cipx-border-strong);background:var(--cipx-surface);color:var(--cipx-text);cursor:pointer;}",
-      ".cipx-fit-sel:focus{outline:2px solid var(--cipx-focus);outline-offset:1px;}",
+      // custom course combobox — opens BELOW, searchable
+      ".cipx-cbwrap{position:relative;max-width:560px;}",
+      ".cipx-fit-cb{width:100%;box-sizing:border-box;font-family:inherit;font-size:1rem;padding:10px 12px;border-radius:9px;border:1.5px solid var(--cipx-border-strong);background:var(--cipx-surface);color:var(--cipx-text);}",
+      ".cipx-fit-cb:focus{outline:2px solid var(--cipx-focus);outline-offset:1px;border-color:var(--cipx-focus);}",
+      ".cipx-fit-panel{position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:30;max-height:340px;overflow-y:auto;background:var(--cipx-surface);border:1px solid var(--cipx-border-strong);border-radius:10px;box-shadow:0 12px 34px rgba(16,42,67,.20);}",
+      ".cipx-cb-group{position:sticky;top:0;background:var(--cipx-surface-2);font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--cipx-muted);padding:7px 12px;border-bottom:1px solid var(--cipx-border);}",
+      ".cipx-cb-opt{padding:9px 12px;cursor:pointer;font-size:.92rem;color:var(--cipx-text);border-bottom:1px solid var(--cipx-border);}",
+      ".cipx-cb-opt:last-child{border-bottom:0;}",
+      ".cipx-cb-opt:hover,.cipx-cb-opt.on{background:var(--cipx-surface-sub);}",
+      ".cipx-cb-hint,.cipx-cb-none{padding:9px 12px;font-size:.78rem;color:var(--cipx-muted);font-style:italic;}",
       ".cipx-fit-result{margin-top:10px;}",
       ".cipx-fit-pastelink{display:inline-block;margin-top:12px;font-size:.8rem;font-weight:600;color:var(--cipx-link);background:none;border:0;padding:0;cursor:pointer;font-family:inherit;text-decoration:underline;}",
       ".cipx-fit-paste{margin-top:10px;}",
@@ -696,14 +745,14 @@
         ".cipx-themetog{padding:5px 10px;font-size:.7rem;border-radius:6px;}.cipx-h2{font-size:1.32rem;}.cipx-sub{font-size:.92rem;}" +
         ".cipx-hlinks{gap:10px 14px;font-size:.79rem;margin-top:10px;}" +
         ".cipx-panel{padding:13px 12px;border-radius:12px;}.cipx-panel-h{font-size:1rem;}.cipx-panel-sub{font-size:.85rem;}" +
-        ".cipx-search,.cipx-fitta,.cipx-fit-sel,.cipx-college-sel{font-size:16px;}" +
+        ".cipx-search,.cipx-fitta,.cipx-fit-cb,.cipx-college-sel{font-size:16px;}" +
         ".cipx-controls{gap:7px;}.cipx-pills{gap:5px;}.cipx-pill{padding:5px 10px;font-size:.78rem;}.cipx-chipsep{display:none;}" +
         ".cipx-cat{padding:2px 7px;font-size:.62rem;}.cipx-fsel{max-width:100%;flex:1 1 100%;}.cipx-retiredtog{margin-left:0;flex:1 1 100%;}" +
         ".cipx-count{margin-top:11px;}.cipx-csv{margin-left:0;}" +
         ".cipx-collegebar{padding:10px 12px;}.cipx-college-sel{max-width:100%;flex:1 1 100%;}.cipx-college-hint{flex:1 1 100%;}" +
         ".cipx-row,.cipx-sug-crow{grid-template-columns:13px 56px 1fr auto;gap:9px;}" +
         ".cipx-detail,.cipx-sug-why,.cipx-cand-card .cipx-detail{padding-left:14px;}" +
-        ".cipx-fit-sel,.cipx-fitta{max-width:100%;}" +
+        ".cipx-cbwrap,.cipx-fitta{max-width:100%;}" +
         ".cipx-cand-row{grid-template-columns:13px 56px 1fr;gap:9px;}.cipx-cand-rel{grid-column:2/-1;margin-top:2px;}.cipx-meterwrap{max-width:none;min-width:0;}" +
         ".cipx-vbody{padding:12px 13px;}.cipx-vpill{font-size:.68rem;padding:3px 8px;}.cipx-vtext{font-size:.92rem;}.cipx-vmeterrow{flex-wrap:wrap;gap:6px;}.cipx-vmeterlbl{white-space:normal;}" +
       "}",
