@@ -895,3 +895,26 @@ consensus to **pre-fill** confident CIPs across the whole catalog (the true easy
 "populate the whole kit and kaboodle"); extend the consensus block to "Find my course's
 code"; the standing WCAG pass. Tests 123→**140**; real-Chromium verified throughout.
 Side-lane held.
+
+### 2026-07-17 — SkyLiftoff → SkyEasy handoff: the recommended-CIP inline "easy button" (#834)
+
+Capping the consensus arc, Sam: *"shouldn't we show inline and beneath the current TOP/CIP,
+the recommended one — easy button?"* Each collapsed review row now shows a **second line**
+beneath the `TOP → CIP` transition with the strongest recommendation (`reviewRecommendation(r)`
+= peer field consensus when confident, else the crosswalk winner). Two forms: blue
+**"✓ Recommend `<code>` · `<title>` · N of M colleges"** when it differs from the shown
+code (the better answer), green **"✓ Recommended — N of M colleges"** when peers confirm.
+A curator scans a whole department and sees, per row, current-vs-recommended + confidence,
+without expanding. That's the easy button made visible. Tests 140→**141**; real Chromium
+(Norco/BIO) verified. **This is DISPLAY only** — the recommendation is not yet the default
+*assignment* (bulk-confirm / ✓Ready still use the crosswalk `r.sug`); making the
+recommendation drive the assignment across the whole catalog is **priority #0** (the
+"kit and kaboodle" pre-fill Sam named).
+
+**Session close (SkyLiftoff → SkyEasy).** 13 PRs on the CIP tool this session (#822–#834):
+confidence fix, TOP-in-view, audit remediation + WCAG, the 6-item polish batch, college
+glyph + TOP titles, the **cross-college consensus engine** (the headline), multi-CIP +
+field-consensus-first ordering, one-line rows, and the recommended-inline easy-button line.
+The tool went from a single-course fit-check to a statewide-corroborated, review-and-approve
+easy button. Next session is **SkyEasy** — priority #0 is the whole-catalog consensus
+pre-fill; full pointers in `docs/cip_crosswalk_handoff.md`.

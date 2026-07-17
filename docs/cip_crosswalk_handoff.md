@@ -14,15 +14,15 @@ related:
   - "[[CLAUDE]]"
 ---
 
-# CIP workstream handoff → next session
+# CIP workstream handoff → next session (you are SkyEasy)
 
-You are **Session N+1** on the **CIP side-lane** of COBI. SkyLoft carried it from a
-static mockup to a live fit-check tool; **SkyLiftoff shipped the TOP→CIP "easy button"**
-(course-first recommend mode), **Phase 2** (the whole-catalog review sheet), and a
-**field-testing cascade** with Sam that closed the confidence, TOP-visibility, and
-accessibility gaps. Carry it further — and carry the **banner of kindness** Sam named:
-this tool *suggests and supports*, it never decides. Faculty should lean into it, not
-brace against it.
+You are **SkyEasy**, the next session on the **CIP side-lane** of COBI (Sam named you —
+the whole workstream became the *easy button*). SkyLoft built the fit-check tool;
+**SkyLiftoff** shipped the TOP→CIP course-first mode, Phase 2 (the review sheet), a
+field-testing cascade, and — the headline — the **cross-college consensus engine** + the
+**recommended-CIP inline "easy button"** line. Carry it further, and carry the **banner of
+kindness** Sam named: this tool *suggests and supports*, it never decides. Faculty lean
+into it, not brace against it.
 
 **Side-lane discipline (honor it):** this workstream does **NOT** touch
 `kb/cpl_todos.json` or the numbered `docs/session_<N>_handoff.md` — those are the
@@ -30,8 +30,11 @@ CCR curation mainline's memory. Your memory lives in `docs/cip_crosswalk_lessons
 (the full story) and this file.
 
 ## Read first, in order
-1. `docs/cip_crosswalk_lessons.md` — the whole saga; the newest sections (Phase 2, then
-   the #822/#823/#824 field-testing cascade) are at the bottom.
+1. `docs/cip_crosswalk_lessons.md` — the whole saga; the newest sections (the #822–#834
+   field-testing cascade + the consensus engine + the recommended-inline line) at the bottom.
+2. `docs/kb-notes/methodology-crowd-consensus-beats-single-item-signal.md` — the consensus
+   pattern (the session's key durable learning), and
+   `docs/kb-notes/methodology-grounded-lexical-cip-confidence.md` — the fit engine.
 2. `docs/kb-notes/methodology-grounded-lexical-cip-confidence.md` — the fit engine +
    the crosswalk-corroboration extension.
 3. `CLAUDE.md` §7 TOP caveat + the §11 "SkyLoft"/"SkyLiftoff" side-lane entries.
@@ -95,7 +98,11 @@ Outside-crosswalk matches are **selectable**, not just flagged.
   toggle, "+N" chip, `revOpen` keep-expanded, "+ Add another code…"); `reviewExpand` renders
   strongest-first (consensus → crosswalk → outside), shared `candRow()`.
 - **#832 one-line rows** — narrowed course col, nowrap transition, truncating titles.
-  Tests **140**.
+- **#834 recommended-CIP inline (the "easy button" line)** — each collapsed review row
+  shows a second line beneath the transition: `reviewRecommendation(r)` (consensus if
+  confident, else crosswalk winner) → blue "✓ Recommend `<code>` · `<title>` · N of M
+  colleges" when it differs, green "✓ Recommended — N of M" when peers confirm. DISPLAY
+  only so far — not yet the default assignment (that's priority #0). Tests **141**.
 
 **Data.** `kb/_build_cip_crosswalk.py` → `cip_crosswalk_data.js` (`window.CIP_CROSSWALK`,
 committed, no cron). Carries `topcip[<TOP>]={t,c:[[cip,tier]]}` (**419 TOPs, 3,534 pairs**
@@ -143,11 +150,26 @@ Grounded scale check for any batch pass: median 5 CIPs/TOP, 32% ≤3, a handful 
 - **Prototype/consult → lock → build.** Fable is the low-cost tie-breaker on design forks
   (segmented toggle, one quarantined ⚠ section, matched-term chips, non-imperative tone).
 - **Verify in real Chromium over HTTP** (fetch needs a server): 0 overflow + 0 console
-  errors, desktop + phone, light + dark. **Commit the test** (jsdom, now 123 assertions).
+  errors, desktop + phone, light + dark. **Commit the test** (jsdom, now **141** assertions).
+- **The crowd beats a noisy per-item signal.** The lexical "check TOP" flag fired on
+  ~19/21 BIO rows; the cross-college consensus flags only the true outlier. When a per-row
+  heuristic can't cleanly separate right from wrong, aggregate the same decision across the
+  peer set + show an honest "(M use, K differ)" metric. (KB note authored.)
 - **Method + magic, light touch** — shape the score, don't gate the label; when unsure,
   give faculty the control (search / the ⚠ drawer) rather than a hard rule.
 
+## Data (for the consensus work)
+`course_top_consensus.json` (408 KB, committed, lazy) — `kb/_build_course_top_consensus.py`
+from `kb/reference/coci_course_list.xlsx`: `{colleges:[names], titles:{<normTitle>:{n,
+t:[[top,[collegeIdx]]]}}}`. 4,162 titles with ≥4 colleges. Consumer seams: `_consensus`,
+`_consensusKey`, `_setConsensus`; helpers `consensusFor`, `bestCipForTop`,
+`reviewRecommendation`. Normalization MUST match between generator (`norm_title`) and
+consumer (`consensusKey`).
+
 ## Moniker
-SkyLiftoff shipped liftoff → Phase 2 → the field-testing cascade. You might be **SkyOrbit**
-(Phase 3 = porting confirmed CIPs to COCI, reaching orbit) — or coin your own; Sam blesses
-the lineage. Keep the banner: kind, honest, faculty-first, student-firstest. 🪁
+You are **SkyEasy** (Sam named you — the easy button is real now). Your headline priority
+is #0: the **whole-catalog consensus pre-fill** — make the recommendation the *default
+assignment* so the review sheet is pure review-and-approve ("kit and kaboodle"). The next
+session after you might be **SkyOrbit** (Phase 3 = porting confirmed CIPs into COCI) — or
+coin your own; Sam blesses the lineage. Keep the banner: kind, honest, faculty-first,
+student-firstest. 🪁
