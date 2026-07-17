@@ -397,3 +397,50 @@ render, analyze → candidates, chosen-CIP verdict + tier, thin-description guar
 - KB-note candidate: `methodology-idf-margin-confidence-finder-not-decider.md`.
 
 **Side-lane discipline honored — `cpl_todos.json` + the numbered handoff untouched.**
+
+### 2026-07-16 (later still) — SkyLoft: the fit-check goes INLINE at the CIP level
+
+Sam tried the standalone Check-a-course mode and it was **too cumbersome for
+faculty** — you had to already know the CIP code, go find your local course
+somewhere, and copy-paste its description. His redesign: **wire it inline at the
+CIP level** — pick your college once, and while viewing a CIP, choose one of your
+local courses (sorted best-fit-first) and let the tool pull the **COCI description**
+automatically. Paste stays only as the not-yet-in-COCI edge case.
+
+Shipped exactly that. **Removed the standalone Check mode + its mode toggle.** Added:
+- A remembered **"🏫 Your college"** selector at the top (localStorage `cipx_college`).
+- Inside **every expanded CIP row**, a **"🎯 Check one of your courses against this
+  code"** block: a native `<select>` (great on mobile) with a **★ Best matches for
+  <CIP>** optgroup (top 8 by alignment) + an **All courses (A–Z)** optgroup. Pick a
+  course → an inline confidence verdict (Strong / Plausible / Weak for THIS code) +
+  the course's closest CIPs (the "more confident alternatives"). Paste fallback link
+  for courses not in COCI.
+
+**Data pipeline (`kb/_build_cip_fitcheck.py`).** The COCI course inventory (141,738
+rows, 120 colleges) with catalog descriptions is **~50 MB** — too big to ship whole.
+So it's split **per college**: `cip_fitcheck/<slug>.json` = `[[label, desc≤400, top], …]`
+(desc-bearing courses, deduped by label, title-sorted), plus a tiny
+`cip_fitcheck_colleges.json` manifest. The tab **lazy-`fetch()`es** only the selected
+college (~1 MB max, `allan_hancock_college.json` is the biggest at 940 KB) — the
+browser never loads more than one. Committed directly (precedent:
+`unified_courses_member_desc.js` is 46 MB; **no cron regenerates these, so zero
+conflict risk**); `cip_fitcheck/` added to the Obsidian vault-exclusion list. Slug is
+sanitized (`[^a-z0-9_]`) before the fetch URL (CodeQL).
+
+**Engine reuse + a speed refactor.** The IDF + margin scorer now precomputes a
+**token Set per CIP** (title/examples/definition) at ingest, so scoring a whole
+college's ~1,000 courses against the open CIP (for the best-fit sort) is Set-lookups,
+not regex — fast enough to run on every row expansion. Same IDF/margin behavior as
+Phase 0.
+
+**Verified (real Chromium over HTTP so `fetch` works), desktop + phone, light + dark:**
+Allan Hancock → expand `47.0603` (Autobody/Collision) → the Best-matches group tops
+with **"AB 360 — Collision Repair"** → **Strong fit, 100%** + 5 candidate CIPs; **0
+horizontal overflow**, **0 console errors** (only a harness favicon 404). Tests:
+`tests/cip_crosswalk.test.js` → **58 assertions** (college bar, lazy-course seams,
+best-fit sort, inline verdict, no-college nudge, empty-college guard).
+
+**Open (unchanged): the WCAG pre-field gate** (Sam's) still owed; plus the earlier
+roadmap (local TOP→CIP corroboration, Phase-0.5 embeddings, Phase-1 Sierra). The
+per-college data will need a **refresh path** when COCI updates (rerun the generator;
+a `workflow_dispatch` could publish it to avoid a big session commit next time).
