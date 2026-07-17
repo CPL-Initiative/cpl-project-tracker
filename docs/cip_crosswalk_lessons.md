@@ -740,3 +740,65 @@ Chromium (Citrus, desktop + phone): ACCT 274 ms, bulk-confirm → "12 of 19 conf
 resumable cross-department progress + a saved-decisions summary would round out v1;
 Phase-0.5 embeddings / Phase-1 Sierra remain the recall upgrade path. Side-lane held —
 `cpl_todos.json` + the numbered handoff untouched.
+
+### 2026-07-17 — SkyLiftoff: field-testing cascade → confidence, TOP-in-every-view, audit remediation + WCAG (#822/#823/#824)
+
+Sam plunked the live tool hard ("trust and verify, I always say") and the plinkers
+drove three merged PRs.
+
+**#822 — crosswalk-relative confidence (the global-max undersell).** Sam: *"Accounting
+is correct, but it only lists as plausible and should be 98-100, right? Is it a wrong TOP
+that's throwing everything off?"* It wasn't the TOP — it was the **normalizer**. Confidence
+had been the raw fit score against the *global* max across all 2,182 CIPs, so even a clear
+crosswalk winner read ~60-77%. Fix: normalize each candidate's confidence against **the
+best candidate in this course's own crosswalk set**, scaled by a `qf` quality factor
+(`min(1, bestRel/65)`) so a genuinely weak field can't inflate to 100%. The ✓ Recommended
+gate now also requires a real crosswalk margin (`cwMargin ≥ .25`) + `conf ≥ 85`. Verified
+post-merge: **ACCT 101 Financial + ACCT 102 Managerial → ✓ 52.0301 Accounting at 100%
+Strong** (was Plausible ~77%). The honest tail stays honest — Cooperative-Ed / Work-
+Experience catch-alls (broad TOP, no distinctive vocabulary) still read low, which is
+correct, not a bug.
+
+**#823 — the TOP in every view + outside-crosswalk matches assignable.** Two Sam asks:
+(1) *"it would be helpful to see the TOP next to the CIP in various views, so one could
+see where they are and where they are going"* — every review row now carries a **current-
+TOP subline** (`cipx-rev-ctopline`, "Current TOP NNNN.NN · title") beside the suggested
+CIP chip: where they are → where they're going, at a glance. (2) *"If they want to assign
+another CIP to the course, can you look in all areas of this tool to add that capability"*
+— the review candidate picker now renders a **stronger outside-crosswalk match as a
+selectable radio** (not just a ⚠ flag), so faculty can assign a code the crosswalk missed.
+The ⚠ still fires (honest signal) but no longer dead-ends.
+
+**#824 — audit follow-through (functional/data) + the WCAG gate.** A 5-dimension
+adversarial audit Workflow (28 agents, find→verify) plus Sam's continued plunking
+converged on a clean fix list:
+- **The TOP sentinel bucket.** The searchable workbook carries a `"No TOP Match in
+  Records"` bucket (~1,331 pairs, **27% of the emitted map**) that no real course's TOP
+  ever resolves to — pure noise in the candidate space. The generator now skips any
+  non-`NNNN.NN` key: **420→419 TOPs, 4,865→3,534 pairs**, 2,325 reference rows unchanged.
+- **Boilerplate quarantine.** The 2 universal noncredit codes (`32.0107`/`32.0111`)
+  self-rank rel~100 on ~275 TOPs and were surfacing atop fallback lists ("Accounting &
+  Finance" → STEM/noncredit catch-alls, the plinkers Sam kept hitting). A `nonBoiler()`
+  filter now guards **every** fallback ranked display (search suggest, inline candidates,
+  recommend no-crosswalk / only-generic fallbacks, review picker) so they only ever live
+  behind the boiler expander. **Method note:** the audit's independent verifiers matter —
+  this fires on the most common paths and single-course plunking can't reveal its *scale*.
+- **comboCore listener guard** — the document `mousedown` listener closes + bails on a
+  detached box (mode switches were orphaning a listener).
+- **WCAG pass (the standing pre-field gate).** `aria-live="polite"` on the recommend
+  result host; `aria-expanded` on every expandable row (browse / recommend / review),
+  set on create + updated on toggle; `aria-selected` on the active combobox option;
+  contrast darkenings (`--cipx-muted` #6a7f96→#566a80, `--cipx-ret-fg`, `--cipx-new-fg`)
+  + a new `--cipx-recbadge-bg` token (#3f6b4e light / #7cc79b dark, white-on-green now
+  passes) behind the ✓ Recommended badge. Tests **109 → 123**; real Chromium (desktop +
+  phone, light + dark): aria present everywhere, no boilerplate in any ranked display,
+  0 overflow, 0 console errors.
+
+**Still owed / roadmap (Sam's steer):** (a) *unify "assign a CIP"* across all three modes
+so the recommend mode's inline check and the review picker share one persistence path;
+(b) **Phase 3** — *"port the verified CIPs directly to COCI … an API or batch upload
+process"* to spare colleges course-by-course entry (the review sheet's confirmed
+decisions are the natural payload); (c) remaining WCAG polish (full tablist⇄tabpanel
+semantics, meter `role`/value, reduced-motion, SR announcement copy) before the field
+release beyond Raul + Jenni. Side-lane held — `cpl_todos.json` + the numbered handoff
+untouched.
