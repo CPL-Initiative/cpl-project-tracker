@@ -75,6 +75,13 @@ Outside-crosswalk matches are **selectable**, not just flagged.
   ranked display; comboCore detached-listener guard; **WCAG pass** (aria-live host,
   aria-expanded rows, aria-selected options, contrast token darkenings + accessible
   ✓ Recommended badge). Tests **123**; real-Chromium clean desktop+phone, light+dark.
+- **#826 Review-tab polish + work-experience rule** — hairline SVG mode-tab glyphs (the
+  `svgIcon()` helper — elegant, not emoji); Department picker moved up beside the college;
+  one-line count chips; the **TOP → CIP transition** on every row (`.cipx-rev-tocip`,
+  bigger boxed CIP + `← TOP` candidate tags); and the **work-experience discipline rule**
+  — `isWorkExperience(label)` zeroes `beyond` in `computeRecommend`, so work-experience /
+  cooperative-ed courses no longer get an "outside the crosswalk" nudge (they belong to
+  their own discipline). Tests **128**.
 
 **Data.** `kb/_build_cip_crosswalk.py` → `cip_crosswalk_data.js` (`window.CIP_CROSSWALK`,
 committed, no cron). Carries `topcip[<TOP>]={t,c:[[cip,tier]]}` (**419 TOPs, 3,534 pairs**
