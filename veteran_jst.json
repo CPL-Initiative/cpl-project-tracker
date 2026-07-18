@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-17T14:08:02.684170+00:00",
+  "scraped_at": "2026-07-18T08:11:52.968428+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25932,
+    "jst": 25934,
     "star_colleges": 55
   },
   "computed_star_colleges": 55,
@@ -232,7 +232,7 @@
     },
     "East Los Angeles College": {
       "vets": 637,
-      "jst": 227,
+      "jst": 229,
       "star": false
     },
     "Evergreen Valley College": {

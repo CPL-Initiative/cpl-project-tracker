@@ -1,6 +1,6 @@
 {
   "_about": "Daily-cached snapshot of public.workplan_goals + public.workplan_activity_associations. Written by kb/_load_workplan_goals.py after a successful Supabase fetch. Falls back to this file on Supabase outage so the dashboard regen continues without manual intervention.",
-  "_fetched_at": "2026-07-17",
+  "_fetched_at": "2026-07-18",
   "_source_table": "public.workplan_goals",
   "row_count": 64,
   "rows": [
@@ -1070,6 +1070,116 @@
     },
     {
       "project_id": "1.4",
+      "activity_id": "3",
+      "is_primary": false
+    },
+    {
+      "project_id": "2.1",
+      "activity_id": "5",
+      "is_primary": false
+    },
+    {
+      "project_id": "2.1",
+      "activity_id": "4",
+      "is_primary": false
+    },
+    {
+      "project_id": "2.2",
+      "activity_id": "4",
+      "is_primary": false
+    },
+    {
+      "project_id": "2.3",
+      "activity_id": "1",
+      "is_primary": false
+    },
+    {
+      "project_id": "2.3",
+      "activity_id": "3",
+      "is_primary": false
+    },
+    {
+      "project_id": "2.3",
+      "activity_id": "4",
+      "is_primary": false
+    },
+    {
+      "project_id": "2.4",
+      "activity_id": "1",
+      "is_primary": false
+    },
+    {
+      "project_id": "2.4",
+      "activity_id": "4",
+      "is_primary": false
+    },
+    {
+      "project_id": "2.4",
+      "activity_id": "3",
+      "is_primary": false
+    },
+    {
+      "project_id": "3.1.2",
+      "activity_id": "4",
+      "is_primary": false
+    },
+    {
+      "project_id": "3.1.1",
+      "activity_id": "4",
+      "is_primary": false
+    },
+    {
+      "project_id": "4.1",
+      "activity_id": "3",
+      "is_primary": false
+    },
+    {
+      "project_id": "4.1.1",
+      "activity_id": "1",
+      "is_primary": false
+    },
+    {
+      "project_id": "4.1",
+      "activity_id": "1",
+      "is_primary": false
+    },
+    {
+      "project_id": "4.1.2",
+      "activity_id": "1",
+      "is_primary": false
+    },
+    {
+      "project_id": "4.1.2",
+      "activity_id": "3",
+      "is_primary": false
+    },
+    {
+      "project_id": "4.1.2",
+      "activity_id": "2",
+      "is_primary": false
+    },
+    {
+      "project_id": "4.1.1",
+      "activity_id": "3",
+      "is_primary": false
+    },
+    {
+      "project_id": "4.1.4",
+      "activity_id": "3",
+      "is_primary": false
+    },
+    {
+      "project_id": "4.3",
+      "activity_id": "3",
+      "is_primary": false
+    },
+    {
+      "project_id": "4.4",
+      "activity_id": "3",
+      "is_primary": false
+    },
+    {
+      "project_id": "4.5",
       "activity_id": "3",
       "is_primary": false
     }

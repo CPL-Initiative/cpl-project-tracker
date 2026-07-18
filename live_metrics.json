@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-17T14:08:02.399Z",
+  "scraped_at": "2026-07-18T08:11:52.715Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -248,14 +248,14 @@
       "colleges": [
         {
           "college": "City College of San Francisco",
-          "students": 2047,
+          "students": 2048,
           "units": 6918.5,
-          "avgUnits": 3.3798241328773817,
+          "avgUnits": 3.378173828125,
           "transcriptionRate": 1.7,
-          "avgTranscribed": 0.05764533463605276,
+          "avgTranscribed": 0.0576171875,
           "criteriaMetCount": 2,
           "militaryStudents": 1087,
-          "nonMilitaryStudents": 961,
+          "nonMilitaryStudents": 962,
           "apprenticeStudents": 7,
           "savings": 11968667.5,
           "yearImpact": 42056369,
@@ -923,17 +923,17 @@
         },
         {
           "college": "East Los Angeles College",
-          "students": 228,
-          "units": 675,
-          "avgUnits": 2.960526315789474,
-          "transcriptionRate": 11.1,
-          "avgTranscribed": 0.32894736842105265,
+          "students": 230,
+          "units": 681,
+          "avgUnits": 2.9608695652173913,
+          "transcriptionRate": 11,
+          "avgTranscribed": 0.32608695652173914,
           "criteriaMetCount": 0,
-          "militaryStudents": 227,
+          "militaryStudents": 229,
           "nonMilitaryStudents": 1,
           "apprenticeStudents": 0,
-          "savings": 1178130,
-          "yearImpact": 4131627,
+          "savings": 1188510,
+          "yearImpact": 4168029,
           "transcribedUnits": 75
         },
         {
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "50,399",
+      "value": "50,402",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "25,932"
+          "value": "25,934"
         },
         {
           "label": "Workforce/Other",
-          "value": "24,545"
+          "value": "24,546"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 50399,
-    "Units": 236148.15000000002,
+    "Students": 50402,
+    "Units": 236154.15000000002,
     "TranscribedUnits": 103433.95,
-    "Savings": 326382562.75,
-    "YearImpact": 1322023264.8999999,
-    "MilitaryStudents": 25932,
-    "NonMilitaryStudents": 24545,
+    "Savings": 326392942.75,
+    "YearImpact": 1322059666.8999999,
+    "MilitaryStudents": 25934,
+    "NonMilitaryStudents": 24546,
     "AprenticeStudents": 755,
-    "AverageUnits": 4.685572134367746,
-    "TranscribedAverage": 2.052301632968908
+    "AverageUnits": 4.685412285226777,
+    "TranscribedAverage": 2.0521794770048807
   }
 }

@@ -1757,6 +1757,155 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCXS-ARAW-1-001",
+      "exhibit_ids": [
+        "MAPCXS-ARAW-1-001"
+      ],
+      "title": "Academic Reading and Writing ENGL C1000",
+      "unified_title": "Academic Reading and Writing ENGL C1000",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Academic Reading and Writing ENGL C1000"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Humanities (Letters)",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 113,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 114,
+      "credit_recs": [
+        {
+          "course": "ENGL C1000",
+          "credit": "3 hours in Academic Reading and Writing"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPSAS-CEIB-1-001|MAPSAS-CIBL-1-001|MAPSAS-CIBL1-1-001|MAPSAS-CIBL2-1-001|MAPSAS-CIBL3-1-001|MAPSAS-CIBL4-1-001|MAPSAS-CIBL5-1-001|MAPSAS-CIBL6-1-001|MAPSAS-CIBL7-1-001",
       "exhibit_ids": [
         "MAPSAS-CEIB-1-001",
@@ -4652,6 +4801,153 @@ window.CPL_STATEWIDE = {
         {
           "course": "PSYC C1000",
           "credit": "3 hours in Introduction to Psychology"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-BLH-1-001",
+      "exhibit_ids": [
+        "MAPCxH-BLH-1-001"
+      ],
+      "title": "Business Law HS-CNUSD",
+      "unified_title": "Business Law HS-CNUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Business Law HS-CNUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 111,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 112,
+      "credit_recs": [
+        {
+          "course": "BUS 18A",
+          "credit": "3 hours in Business Law I"
         }
       ],
       "authoritative_recs": []
@@ -31269,6 +31565,142 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCXS-ESI2-1-001|MAPCXS-S2-1-001",
+      "exhibit_ids": [
+        "MAPCXS-ESI2-1-001",
+        "MAPCXS-S2-1-001"
+      ],
+      "title": "Elementary Spanish II",
+      "unified_title": "Elementary Spanish II",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Elementary Spanish II"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 99,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Berkeley City College",
+        "Butte College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 100,
+      "credit_recs": [
+        {
+          "course": "SPAN 2",
+          "credit": "5 hours in Elementary Spanish II"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPICI-C2CC-1-001",
       "exhibit_ids": [
         "MAPICI-C2CC-1-001"
@@ -32614,6 +33046,141 @@ window.CPL_STATEWIDE = {
         {
           "course": "SPAN 2",
           "credit": "5 hours in HIGH-BEGINNING SPANISH"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-LEH-1-001",
+      "exhibit_ids": [
+        "MAPCxH-LEH-1-001"
+      ],
+      "title": "Law Enforcement HS-JUSD",
+      "unified_title": "Law Enforcement HS-JUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Law Enforcement HS-JUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 99,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 100,
+      "credit_recs": [
+        {
+          "course": "ADJ 19",
+          "credit": "3 hours in Introduction to Policing"
         }
       ],
       "authoritative_recs": []
@@ -43939,10 +44506,9 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPCBES-S1-C-1-001|MAPCXS-S3-1-001",
+      "exhibit_id": "MAPCBES-S1-C-1-001",
       "exhibit_ids": [
-        "MAPCBES-S1-C-1-001",
-        "MAPCXS-S3-1-001"
+        "MAPCBES-S1-C-1-001"
       ],
       "title": "Spanish 3",
       "unified_title": "Spanish 3",
@@ -43953,8 +44519,7 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
-        "SPAN 103 - CBE",
-        "SPAN 3"
+        "SPAN 103 - CBE"
       ],
       "cpl_type": "Credit By Exam",
       "discipline": "Foreign Languages",
@@ -55432,173 +55997,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPCXS-CBES-1-001|MAPCXS-CBES3-1-001|MAPCXS-ESI-1-001|MAPCXS-S11--1-001|MAPCXS-S12-1-001|MAPCxS-ESIS-1-001",
-      "exhibit_ids": [
-        "MAPCXS-CBES-1-001",
-        "MAPCXS-CBES3-1-001",
-        "MAPCXS-ESI-1-001",
-        "MAPCXS-S11--1-001",
-        "MAPCXS-S12-1-001",
-        "MAPCxS-ESIS-1-001"
-      ],
-      "title": "Elementary Spanish 1",
-      "unified_title": "Elementary Spanish 1",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.85,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Credit by Exam SPAN 1B Elementary Spanish",
-        "Credit by Exam: Spanish 1 (SPA-1)",
-        "Elementary Spanish I",
-        "Elementary Spanish I SPAN 001 Cx",
-        "SPAN 1",
-        "SPAN 101\tSpanish 1 - Credit by Exam"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Foreign Languages",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 8,
-      "adopter_names": [
-        "Copper Mountain College",
-        "Las Positas College",
-        "Merced College",
-        "Modesto Junior College",
-        "Moreno Valley College",
-        "Norco College",
-        "Riverside City College",
-        "Ventura College"
-      ],
-      "potential": 90,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College"
-      ],
-      "total_addressable": 98,
-      "credit_recs": [
-        {
-          "course": "SPAN 1A",
-          "credit": "5 hours in Elementary Spanish I"
-        },
-        {
-          "course": "SPAN 01",
-          "credit": "5 hours in Elementary Spanish I"
-        },
-        {
-          "course": "SPAN V01",
-          "credit": "5 hours in Elementary Spanish I"
-        },
-        {
-          "course": "SPA 1",
-          "credit": "5 hours in Spanish 1"
-        },
-        {
-          "course": "SPAN 101",
-          "credit": "5 hours in Spanish 1"
-        },
-        {
-          "course": "SPAN 1B",
-          "credit": "5 hours in Elementary Spanish"
-        },
-        {
-          "course": "SPAN 001",
-          "credit": "5 hours in Elementary Spanish I"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPCXS-M1T1-1-001|MAPCXS-MTI-1-001|MAPCXS-MTI-2-1-001|MAPCXS-MTI4-1-001",
       "exhibit_ids": [
         "MAPCXS-M1T1-1-001",
@@ -55751,11 +56149,10 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPCBES-S1C-1-001|MAPCXS-CBES1-1-001|MAPCXS-S2-1-001",
+      "exhibit_id": "MAPCBES-S1C-1-001|MAPCXS-CBES1-1-001",
       "exhibit_ids": [
         "MAPCBES-S1C-1-001",
-        "MAPCXS-CBES1-1-001",
-        "MAPCXS-S2-1-001"
+        "MAPCXS-CBES1-1-001"
       ],
       "title": "Elementary Spanish 2",
       "unified_title": "Elementary Spanish 2",
@@ -55767,8 +56164,7 @@ window.CPL_STATEWIDE = {
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam: Spanish 2 (SPA-2)",
-        "SPAN 102 CBE",
-        "SPAN 2"
+        "SPAN 102 CBE"
       ],
       "cpl_type": "Credit By Exam",
       "discipline": "Foreign Languages",
@@ -57831,6 +58227,177 @@ window.CPL_STATEWIDE = {
         {
           "course": "CS  087",
           "credit": "3 hours in Assembler Language Programming"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-CBES-1-001|MAPCXS-CBES3-1-001|MAPCXS-ESI-1-001|MAPCXS-ESI1-1-001|MAPCXS-S11--1-001|MAPCXS-S3-1-001|MAPCxS-ESIS-1-001",
+      "exhibit_ids": [
+        "MAPCXS-CBES-1-001",
+        "MAPCXS-CBES3-1-001",
+        "MAPCXS-ESI-1-001",
+        "MAPCXS-ESI1-1-001",
+        "MAPCXS-S11--1-001",
+        "MAPCXS-S3-1-001",
+        "MAPCxS-ESIS-1-001"
+      ],
+      "title": "Elementary Spanish 1",
+      "unified_title": "Elementary Spanish 1",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.88,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Credit by Exam SPAN 1B Elementary Spanish",
+        "Credit by Exam: Spanish 1 (SPA-1)",
+        "Elementary Spanish I",
+        "Elementary Spanish I SPAN 001 Cx",
+        "SPAN 101\tSpanish 1 - Credit by Exam"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 9,
+      "adopter_names": [
+        "Cabrillo College",
+        "Copper Mountain College",
+        "Las Positas College",
+        "Merced College",
+        "Modesto Junior College",
+        "Moreno Valley College",
+        "Norco College",
+        "Riverside City College",
+        "Ventura College"
+      ],
+      "potential": 89,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Berkeley City College",
+        "Butte College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 98,
+      "credit_recs": [
+        {
+          "course": "SPAN 1A",
+          "credit": "5 hours in Elementary Spanish I"
+        },
+        {
+          "course": "SPAN 01",
+          "credit": "5 hours in Elementary Spanish I"
+        },
+        {
+          "course": "SPAN V01",
+          "credit": "5 hours in Elementary Spanish I"
+        },
+        {
+          "course": "SPA 1",
+          "credit": "5 hours in Spanish 1"
+        },
+        {
+          "course": "SPAN 101",
+          "credit": "5 hours in Spanish 1"
+        },
+        {
+          "course": "SPAN 1B",
+          "credit": "5 hours in Elementary Spanish"
+        },
+        {
+          "course": "SPAN 001",
+          "credit": "5 hours in Elementary Spanish I"
+        },
+        {
+          "course": "SPAN 1",
+          "credit": "5 hours in Elementary Spanish I"
         }
       ],
       "authoritative_recs": []
@@ -64972,6 +65539,252 @@ window.CPL_STATEWIDE = {
         "Mt. San Jacinto College",
         "Napa Valley College",
         "Norco College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Ohlone College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 88,
+      "credit_recs": [
+        {
+          "course": "BUS 30",
+          "credit": "3 hours in Entrepreneurship: Foundations and Fundamentals"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-AH1-1-001",
+      "exhibit_ids": [
+        "MAPCxH-AH1-1-001"
+      ],
+      "title": "Anatomy/Physiology HS-AUSD",
+      "unified_title": "Anatomy/Physiology HS-AUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Anatomy/Physiology HS-AUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 87,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Golden West College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Ohlone College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 88,
+      "credit_recs": [
+        {
+          "course": "BUS 30",
+          "credit": "3 hours in Entrepreneurship: Foundations and Fundamentals"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-EASB-1-001",
+      "exhibit_ids": [
+        "MAPCxH-EASB-1-001"
+      ],
+      "title": "Entrepreneurship and Small Business HS-RUSD",
+      "unified_title": "Entrepreneurship and Small Business HS-RUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Entrepreneurship and Small Business HS-RUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 87,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Golden West College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
         "North Orange Continuing Education",
         "North Orange Continuing Education Credit",
         "Ohlone College",
@@ -112198,6 +113011,103 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCxH-ACSA-1-001",
+      "exhibit_ids": [
+        "MAPCxH-ACSA-1-001"
+      ],
+      "title": "AP Computer Science A HS-LEUSD",
+      "unified_title": "AP Computer Science A HS-LEUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Computer Science A HS-LEUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 61,
+      "potential_names": [
+        "American River College",
+        "Berkeley City College",
+        "Cerritos College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "College of San Mateo",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Hartnell College",
+        "Laney College",
+        "Lemoore College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Riverside City College",
+        "Sacramento City College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Valley College"
+      ],
+      "total_addressable": 62,
+      "credit_recs": [
+        {
+          "course": "CIS 18A",
+          "credit": "3 hours in Java Programming: Objects"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "CPLICI-ASEL-1-001|MAPICI-AEPA-1-001|MAPICI-ASE(11-1-001|MAPICI-ASE(2-1-001|MAPICI-ASE(24-1-001|MAPICI-ASEL1-1-001",
       "exhibit_ids": [
         "CPLICI-ASEL-1-001",
@@ -116204,6 +117114,196 @@ window.CPL_STATEWIDE = {
         {
           "course": "FOT 273C",
           "credit": "1 hour in Chief Fire Officer 3C: General Administration Functions"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-ITBH-1-001",
+      "exhibit_ids": [
+        "MAPCxH-ITBH-1-001"
+      ],
+      "title": "Introduction to Business HS-CJUSD",
+      "unified_title": "Introduction to Business HS-CJUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Introduction to Business HS-CJUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Cabrillo College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Diablo Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Madera College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palomar College",
+        "Porterville College",
+        "Reedley College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "BUS 10",
+          "credit": "3 hours in Introduction to Business"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-ITBH1-1-001",
+      "exhibit_ids": [
+        "MAPCxH-ITBH1-1-001"
+      ],
+      "title": "Introduction to Business HS-CNUSD",
+      "unified_title": "Introduction to Business HS-CNUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Introduction to Business HS-CNUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Cabrillo College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Diablo Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Madera College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palomar College",
+        "Porterville College",
+        "Reedley College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "BUS 10",
+          "credit": "3 hours in Introduction to Business"
         }
       ],
       "authoritative_recs": []
@@ -135505,6 +136605,96 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCxH-RATI-1-001",
+      "exhibit_ids": [
+        "MAPCxH-RATI-1-001"
+      ],
+      "title": "RCOE Audio Technology I HS",
+      "unified_title": "RCOE Audio Technology I HS",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "RCOE Audio Technology I HS"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Fine and Applied Arts",
+      "sector": "ICT/Digital Media",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 54,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "West Valley College"
+      ],
+      "total_addressable": 55,
+      "credit_recs": [
+        {
+          "course": "MIS 12",
+          "credit": "3 hours in Live Sound Reinforcement"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPICA-CJFO-1-001",
       "exhibit_ids": [
         "MAPICA-CJFO-1-001"
@@ -150051,6 +151241,253 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCxH-ITE&1-1-001",
+      "exhibit_ids": [
+        "MAPCxH-ITE&1-1-001"
+      ],
+      "title": "Intro to Engineering & Architectural Design 1A & 1B (2 courses) HS-CNUSD",
+      "unified_title": "Intro to Engineering & Architectural Design 1A & 1B (2 courses) HS-CNUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Intro to Engineering & Architectural Design 1A & 1B (2 courses) HS-CNUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 45,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cerritos College",
+        "Chaffey College",
+        "Citrus College",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "Copper Mountain College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Golden West College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Valley College",
+        "MiraCosta College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Valley College"
+      ],
+      "total_addressable": 46,
+      "credit_recs": [
+        {
+          "course": "ENE 21",
+          "credit": "3 hours in Drafting"
+        },
+        {
+          "course": "ENE 30",
+          "credit": "3 hours in Computer Aided Drafting (CAD)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-CAD2-1-001",
+      "exhibit_ids": [
+        "MAPCxH-CAD2-1-001"
+      ],
+      "title": "Computer Aided Drafting 2A & 2B HS-CNUSD",
+      "unified_title": "Computer Aided Drafting 2A & 2B HS-CNUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Computer Aided Drafting 2A & 2B HS-CNUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 45,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cerritos College",
+        "Chaffey College",
+        "Citrus College",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "Copper Mountain College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Golden West College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Valley College",
+        "MiraCosta College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Valley College"
+      ],
+      "total_addressable": 46,
+      "credit_recs": [
+        {
+          "course": "ENE 42",
+          "credit": "3 hours in SolidWorks I"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-ITED-1-001",
+      "exhibit_ids": [
+        "MAPCxH-ITED-1-001"
+      ],
+      "title": "Introduction to Engineering Design HS-LEUSD",
+      "unified_title": "Introduction to Engineering Design HS-LEUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Introduction to Engineering Design HS-LEUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 45,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cerritos College",
+        "Chaffey College",
+        "Citrus College",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "Copper Mountain College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Golden West College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Valley College",
+        "MiraCosta College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Valley College"
+      ],
+      "total_addressable": 46,
+      "credit_recs": [
+        {
+          "course": "ENE 42",
+          "credit": "3 hours in SolidWorks I"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPCBEN-SMS-1-001",
       "exhibit_ids": [
         "MAPCBEN-SMS-1-001"
@@ -153121,6 +154558,237 @@ window.CPL_STATEWIDE = {
         {
           "course": "AT 130",
           "credit": "3 hours in Precision Measurements"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-M2H-1-001",
+      "exhibit_ids": [
+        "MAPCxH-M2H-1-001"
+      ],
+      "title": "Mechatronics 2 HS-CRYROP",
+      "unified_title": "Mechatronics 2 HS-CRYROP",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Mechatronics 2 HS-CRYROP"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 41,
+      "potential_names": [
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Clovis Community College",
+        "College of Alameda",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Hartnell College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mission College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Porterville College",
+        "Reedley College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "Santa Ana College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 42,
+      "credit_recs": [
+        {
+          "course": "MAN 36",
+          "credit": "4 hours in General Machine Shop and Theory of Machining"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-M1H-1-001",
+      "exhibit_ids": [
+        "MAPCxH-M1H-1-001"
+      ],
+      "title": "Mechatronics 1 HS-CRYROP",
+      "unified_title": "Mechatronics 1 HS-CRYROP",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Mechatronics 1 HS-CRYROP"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 41,
+      "potential_names": [
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Clovis Community College",
+        "College of Alameda",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Hartnell College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mission College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Porterville College",
+        "Reedley College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "Santa Ana College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 42,
+      "credit_recs": [
+        {
+          "course": "MAN 56",
+          "credit": "4 hours in CNC Machine Set-up and Operation"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-ACEH-1-001",
+      "exhibit_ids": [
+        "MAPCxH-ACEH-1-001"
+      ],
+      "title": "Advanced CAD/CAM Engineering HS-LEUSD",
+      "unified_title": "Advanced CAD/CAM Engineering HS-LEUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Advanced CAD/CAM Engineering HS-LEUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 41,
+      "potential_names": [
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Clovis Community College",
+        "College of Alameda",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Hartnell College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mission College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Porterville College",
+        "Reedley College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "Santa Ana College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 42,
+      "credit_recs": [
+        {
+          "course": "MAN 56",
+          "credit": "4 hours in CNC Machine Set-up and Operation"
         }
       ],
       "authoritative_recs": []
@@ -159031,6 +160699,79 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCxH-DAI1-1-001",
+      "exhibit_ids": [
+        "MAPCxH-DAI1-1-001"
+      ],
+      "title": "Digital Arts I 1&2 HS-BVROP",
+      "unified_title": "Digital Arts I 1&2 HS-BVROP",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Digital Arts I 1&2 HS-BVROP"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 37,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Berkeley City College",
+        "Calbright College Non-Credit",
+        "Cerritos College",
+        "Chabot College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "College of the Canyons",
+        "College of the Desert",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Foothill College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "San Diego Mesa College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 38,
+      "credit_recs": [
+        {
+          "course": "ART 36A",
+          "credit": "3 hours in Computer Art-Introduction"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPSAH-AHE-1-001|MAPSAS-A-EH-1-001|MAPSAS-A-EH1-1-001|MAPSAS-A:EH-1-001|MAPSAS-A:EH1-1-001|MAPSAS-AEEH-1-001|MAPSAS-AEEH1-1-001|MAPSAS-AEH(-1-001|MAPSAS-AEH-1-001|MAPSAS-AEH1-1-001|MAPSAS-AEH10-1-001|MAPSAS-AEH2-1-001|MAPSAS-AEH3-1-001|MAPSAS-AEH4-1-001|MAPSAS-AEH5-1-001|MAPSAS-AEH6-1-001|MAPSAS-AEH9-1-001|MAPSAS-AH-E-1-001|MAPSAS-AHE-1-001|MAPSAS-AP(E1-1-001",
       "exhibit_ids": [
         "MAPSAH-AHE-1-001",
@@ -162855,6 +164596,645 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCxH-CT1&-1-001",
+      "exhibit_ids": [
+        "MAPCxH-CT1&-1-001"
+      ],
+      "title": "Construction Technology 1 & 2 HS-CRYROP",
+      "unified_title": "Construction Technology 1 & 2 HS-CRYROP",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Construction Technology 1 & 2 HS-CRYROP"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "CON 60",
+          "credit": "3 hours in Introduction to Construction"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-CT1H-1-001",
+      "exhibit_ids": [
+        "MAPCxH-CT1H-1-001"
+      ],
+      "title": "Construction Technology 1 HS-JUSD",
+      "unified_title": "Construction Technology 1 HS-JUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Construction Technology 1 HS-JUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "CON 60",
+          "credit": "3 hours in Introduction to Construction"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-RCTL-1-001",
+      "exhibit_ids": [
+        "MAPCxH-RCTL-1-001"
+      ],
+      "title": "RCOE Construction Technology- Level 1 HS",
+      "unified_title": "RCOE Construction Technology- Level 1 HS",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "RCOE Construction Technology- Level 1 HS"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "CON 60",
+          "credit": "3 hours in Introduction to Construction"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-BT&C-1-001",
+      "exhibit_ids": [
+        "MAPCxH-BT&C-1-001"
+      ],
+      "title": "Building Trades & Construction 2 HS-SBCUSD",
+      "unified_title": "Building Trades & Construction 2 HS-SBCUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Building Trades & Construction 2 HS-SBCUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "CON 60",
+          "credit": "3 hours in Introduction to Construction"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-DEH-1-001",
+      "exhibit_ids": [
+        "MAPCxH-DEH-1-001"
+      ],
+      "title": "Digital Electronics HS-CJUSD",
+      "unified_title": "Digital Electronics HS-CJUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Digital Electronics HS-CJUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Chabot College",
+        "City College of San Francisco",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Laney College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Merced College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Orange Coast College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Joaquin Delta College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "ELE 25",
+          "credit": "4 hours in Digital Techniques"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-DEH1-1-001",
+      "exhibit_ids": [
+        "MAPCxH-DEH1-1-001"
+      ],
+      "title": "Digital Electronics HS-MVUSD",
+      "unified_title": "Digital Electronics HS-MVUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Digital Electronics HS-MVUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Chabot College",
+        "City College of San Francisco",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Laney College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Merced College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Orange Coast College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Joaquin Delta College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "ELE 25",
+          "credit": "4 hours in Digital Techniques"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-DEH2-1-001",
+      "exhibit_ids": [
+        "MAPCxH-DEH2-1-001"
+      ],
+      "title": "Digital Electronics HS-RUSD",
+      "unified_title": "Digital Electronics HS-RUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Digital Electronics HS-RUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Chabot College",
+        "City College of San Francisco",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Laney College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Merced College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Orange Coast College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Joaquin Delta College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "ELE 25",
+          "credit": "4 hours in Digital Techniques"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-R1H-1-001",
+      "exhibit_ids": [
+        "MAPCxH-R1H-1-001"
+      ],
+      "title": "Robotics 1A/1B HS-CNUSD",
+      "unified_title": "Robotics 1A/1B HS-CNUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Robotics 1A/1B HS-CNUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Chabot College",
+        "City College of San Francisco",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Laney College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Merced College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Orange Coast College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Joaquin Delta College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "ELE 61",
+          "credit": "3 hours in Robotics for Manufacturing"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-CEH-1-001",
+      "exhibit_ids": [
+        "MAPCxH-CEH-1-001"
+      ],
+      "title": "CAD/CAM Engineering HS-LEUSD",
+      "unified_title": "CAD/CAM Engineering HS-LEUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CAD/CAM Engineering HS-LEUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Chabot College",
+        "City College of San Francisco",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Laney College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Merced College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Orange Coast College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Joaquin Delta College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "ELE 10",
+          "credit": "4 hours in Survey of Electronics"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPSAH-IPH1-1-001|MAPSAS-I:PH1-1-001|MAPSAS-IEPH1-1-001|MAPSAS-IEPH3-1-001|MAPSAS-IPH1-1-001|MAPSAS-IPH2-1-001|MAPSAS-IPH4-1-001|MAPSAS-IPH7-1-001",
       "exhibit_ids": [
         "MAPSAH-IPH1-1-001",
@@ -164969,6 +167349,76 @@ window.CPL_STATEWIDE = {
         {
           "course": "FRENCH 2",
           "credit": "5 hours in High-Beginning French"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-EFI-1-001",
+      "exhibit_ids": [
+        "MAPCXS-EFI-1-001"
+      ],
+      "title": "Elementray French I",
+      "unified_title": "Elementray French I",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Elementray French I"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 34,
+      "potential_names": [
+        "Allan Hancock College",
+        "Cerritos College",
+        "City College of San Francisco",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Valley College",
+        "Merced College",
+        "MiraCosta College",
+        "Monterey Peninsula College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Solano Community College",
+        "Southwestern College",
+        "West Valley College"
+      ],
+      "total_addressable": 35,
+      "credit_recs": [
+        {
+          "course": "FR 1",
+          "credit": "5 hours in Elementary French I"
         }
       ],
       "authoritative_recs": []
@@ -170228,6 +172678,74 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCxH-BMAL-1-001",
+      "exhibit_ids": [
+        "MAPCxH-BMAL-1-001"
+      ],
+      "title": "Business Management and Leadership HS-CNUSD",
+      "unified_title": "Business Management and Leadership HS-CNUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Business Management and Leadership HS-CNUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 32,
+      "potential_names": [
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Coastline Community College",
+        "College of San Mateo",
+        "College of the Desert",
+        "Cosumnes River College",
+        "Cypress College",
+        "Hartnell College",
+        "Irvine Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Merced College",
+        "Modesto Junior College",
+        "Ohlone College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Skyline College",
+        "Southwestern College",
+        "Taft College"
+      ],
+      "total_addressable": 33,
+      "credit_recs": [
+        {
+          "course": "MAG 44",
+          "credit": "3 hours in Principles of Management"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPSAH-AC1-1-001|MAPSAH-ACE-1-001|MAPSAS-A-C1-1-001|MAPSAS-A:C1-1-001|MAPSAS-AC(O-1-001|MAPSAS-AC(O1-1-001|MAPSAS-AC1-1-001|MAPSAS-AC12-1-001|MAPSAS-AC13-1-001|MAPSAS-AC2-1-001|MAPSAS-AC3-1-001|MAPSAS-AC4-1-001|MAPSAS-AC5-1-001|MAPSAS-AC6-1-001|MAPSAS-AC7-1-001|MAPSAS-AC8-1-001|MAPSAS-AC9-1-001|MAPSAS-AE-C-1-001|MAPSAS-AEC(-1-001|MAPSAS-AEC1-1-001",
       "exhibit_ids": [
         "MAPSAH-AC1-1-001",
@@ -174204,6 +176722,73 @@ window.CPL_STATEWIDE = {
         {
           "course": "DM 36",
           "credit": "4 hours in Motion Graphics"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXN-PFVP-1-001",
+      "exhibit_ids": [
+        "MAPCXN-PFVP-1-001"
+      ],
+      "title": "Preproduction for Video, Photography, and Media",
+      "unified_title": "Preproduction for Video, Photography, and Media",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Preproduction for Video, Photography, and Media"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Media and Communications",
+      "sector": "ICT/Digital Media",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 31,
+      "potential_names": [
+        "Allan Hancock College",
+        "Berkeley City College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "College of the Canyons",
+        "College of the Desert",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "Gavilan College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Valley College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 32,
+      "credit_recs": [
+        {
+          "course": "AP 54",
+          "credit": "3 hours in Preproduction for Video, Photography, and Media"
         }
       ],
       "authoritative_recs": []
@@ -178866,7 +181451,332 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPSAH-AS(O-1-001|MAPSAH-ASLA-1-001|MAPSAH-ASLL-1-001|MAPSAS-A-SL-1-001|MAPSAS-A-SL2-1-001|MAPSAS-A:SL-1-001|MAPSAS-A:SL1-1-001|MAPSAS-AE-S-1-001|MAPSAS-AESA-1-001|MAPSAS-AESL1-1-001|MAPSAS-AESL2-1-001|MAPSAS-AESL4-1-001|MAPSAS-AESL5-1-001|MAPSAS-AS-A-1-001|MAPSAS-ASL&-1-001|MAPSAS-ASL1-1-001|MAPSAS-ASL2-1-001|MAPSAS-ASL5-1-001|MAPSAS-ASL6-1-001|MAPSAS-ASLA-1-001|MAPSAS-ASLA1-1-001|MAPSAS-ASLA10-1-001|MAPSAS-ASLA11-1-001|MAPSAS-ASLA15-1-001|MAPSAS-ASLA17-1-001|MAPSAS-ASLA19-1-001|MAPSAS-ASLA4-1-001|MAPSAS-ASLA6-1-001|MAPSAS-ASLA7-1-001|MAPSAS-ASLA9-1-001|MAPSAS-ASLC-1-001",
+      "exhibit_id": "MAPCxH-GSH-1-001",
+      "exhibit_ids": [
+        "MAPCxH-GSH-1-001"
+      ],
+      "title": "Game Scripting HS-CNUSD",
+      "unified_title": "Game Scripting HS-CNUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Game Scripting HS-CNUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 29,
+      "potential_names": [
+        "Calbright College Non-Credit",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of San Mateo",
+        "Cosumnes River College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Golden West College",
+        "Grossmont College",
+        "Las Positas College",
+        "Lemoore College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Merritt College",
+        "Moreno Valley College",
+        "Palomar College",
+        "Reedley College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Diego Mesa College",
+        "Santa Monica College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 30,
+      "credit_recs": [
+        {
+          "course": "GAM 4A",
+          "credit": "3 hours in Game Scripting"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-VG2G-1-001",
+      "exhibit_ids": [
+        "MAPCxH-VG2G-1-001"
+      ],
+      "title": "Video Gaming 2 Game Design and Development HS-MVUSD",
+      "unified_title": "Video Gaming 2 Game Design and Development HS-MVUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Video Gaming 2 Game Design and Development HS-MVUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 29,
+      "potential_names": [
+        "Calbright College Non-Credit",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of San Mateo",
+        "Cosumnes River College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Golden West College",
+        "Grossmont College",
+        "Las Positas College",
+        "Lemoore College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Merritt College",
+        "Moreno Valley College",
+        "Palomar College",
+        "Reedley College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Diego Mesa College",
+        "Santa Monica College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 30,
+      "credit_recs": [
+        {
+          "course": "GAM 4A",
+          "credit": "3 hours in Game Scripting"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-RIGS-1-001",
+      "exhibit_ids": [
+        "MAPCxH-RIGS-1-001"
+      ],
+      "title": "RCOE Intermediate Game Scripting HS",
+      "unified_title": "RCOE Intermediate Game Scripting HS",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "RCOE Intermediate Game Scripting HS"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 29,
+      "potential_names": [
+        "Calbright College Non-Credit",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of San Mateo",
+        "Cosumnes River College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Golden West College",
+        "Grossmont College",
+        "Las Positas College",
+        "Lemoore College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Merritt College",
+        "Moreno Valley College",
+        "Palomar College",
+        "Reedley College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Diego Mesa College",
+        "Santa Monica College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 30,
+      "credit_recs": [
+        {
+          "course": "GAM 4A",
+          "credit": "3 hours in Game Scripting"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-DGDH-1-001",
+      "exhibit_ids": [
+        "MAPCxH-DGDH-1-001"
+      ],
+      "title": "Digital Game Design HS-RUSD",
+      "unified_title": "Digital Game Design HS-RUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Digital Game Design HS-RUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 29,
+      "potential_names": [
+        "Calbright College Non-Credit",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of San Mateo",
+        "Cosumnes River College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Golden West College",
+        "Grossmont College",
+        "Las Positas College",
+        "Lemoore College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Merritt College",
+        "Moreno Valley College",
+        "Palomar College",
+        "Reedley College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Diego Mesa College",
+        "Santa Monica College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 30,
+      "credit_recs": [
+        {
+          "course": "GAM 4A",
+          "credit": "3 hours in Game Scripting"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-HSAW-1-001",
+      "exhibit_ids": [
+        "MAPCxH-HSAW-1-001"
+      ],
+      "title": "Health Science and Workplace Safety HS-LEUSD",
+      "unified_title": "Health Science and Workplace Safety HS-LEUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Health Science and Workplace Safety HS-LEUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 29,
+      "potential_names": [
+        "Allan Hancock College",
+        "Cerritos College",
+        "Chabot College",
+        "College of Marin",
+        "College of the Canyons",
+        "Compton College",
+        "De Anza College",
+        "El Camino College",
+        "Glendale Community College",
+        "Laney College",
+        "Lassen College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Modesto Junior College",
+        "Napa Valley College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego College of Continuing Education",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Sierra College"
+      ],
+      "total_addressable": 30,
+      "credit_recs": [
+        {
+          "course": "MAN 55",
+          "credit": "1 hour in Occupational Safety and Health Administration (OSHA) Standards for General Industry"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAH-AS(O-1-001|MAPSAH-ASLA-1-001|MAPSAH-ASLL-1-001|MAPSAS-A-SL-1-001|MAPSAS-A-SL2-1-001|MAPSAS-A:SL-1-001|MAPSAS-A:SL1-1-001|MAPSAS-AE-S-1-001|MAPSAS-AESA-1-001|MAPSAS-AESL1-1-001|MAPSAS-AESL2-1-001|MAPSAS-AESL4-1-001|MAPSAS-AESL5-1-001|MAPSAS-AS-A-1-001|MAPSAS-ASL&-1-001|MAPSAS-ASL1-1-001|MAPSAS-ASL2-1-001|MAPSAS-ASL5-1-001|MAPSAS-ASL6-1-001|MAPSAS-ASLA-1-001|MAPSAS-ASLA1-1-001|MAPSAS-ASLA10-1-001|MAPSAS-ASLA11-1-001|MAPSAS-ASLA15-1-001|MAPSAS-ASLA17-1-001|MAPSAS-ASLA20-1-001|MAPSAS-ASLA21-1-001|MAPSAS-ASLA4-1-001|MAPSAS-ASLA6-1-001|MAPSAS-ASLA7-1-001|MAPSAS-ASLA9-1-001|MAPSAS-ASLC-1-001",
       "exhibit_ids": [
         "MAPSAH-AS(O-1-001",
         "MAPSAH-ASLA-1-001",
@@ -178893,7 +181803,8 @@ window.CPL_STATEWIDE = {
         "MAPSAS-ASLA11-1-001",
         "MAPSAS-ASLA15-1-001",
         "MAPSAS-ASLA17-1-001",
-        "MAPSAS-ASLA19-1-001",
+        "MAPSAS-ASLA20-1-001",
+        "MAPSAS-ASLA21-1-001",
         "MAPSAS-ASLA4-1-001",
         "MAPSAS-ASLA6-1-001",
         "MAPSAS-ASLA7-1-001",
@@ -179199,8 +182110,8 @@ window.CPL_STATEWIDE = {
           "credit": "5 hours in Elementary Spanish"
         },
         {
-          "course": "AP Credit SLA",
-          "credit": "6 hours in AP Spanish Language (Score of 3, 4 or 5)"
+          "course": "AP Credit SPL-4",
+          "credit": "6 hours in AP Spanish Language and Culture (Score of 4 or 5)"
         }
       ],
       "authoritative_recs": []
@@ -187209,6 +190120,67 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCxH-POEH-1-001",
+      "exhibit_ids": [
+        "MAPCxH-POEH-1-001"
+      ],
+      "title": "Principles of Engineering HS-RUSD",
+      "unified_title": "Principles of Engineering HS-RUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Principles of Engineering HS-RUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 25,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of Marin",
+        "Compton College",
+        "East Los Angeles College",
+        "Fullerton College",
+        "Long Beach City College",
+        "Merced College",
+        "MiraCosta College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Pasadena City College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College"
+      ],
+      "total_addressable": 26,
+      "credit_recs": [
+        {
+          "course": "ENE 60",
+          "credit": "3 hours in Math for Engineering Technology"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPCBEN-ITVC-1-001",
       "exhibit_ids": [
         "MAPCBEN-ITVC-1-001"
@@ -190155,6 +193127,714 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCxH-BOVG-1-001",
+      "exhibit_ids": [
+        "MAPCxH-BOVG-1-001"
+      ],
+      "title": "Business of Video Games HS-CNUSD",
+      "unified_title": "Business of Video Games HS-CNUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Business of Video Games HS-CNUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 23,
+      "potential_names": [
+        "Allan Hancock College",
+        "Berkeley City College",
+        "Cabrillo College",
+        "College of the Canyons",
+        "Diablo Valley College",
+        "Foothill College",
+        "Fullerton College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "San Diego Mesa College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 24,
+      "credit_recs": [
+        {
+          "course": "GAM 1",
+          "credit": "3 hours in Business of Video Games"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-VG1P-1-001",
+      "exhibit_ids": [
+        "MAPCxH-VG1P-1-001"
+      ],
+      "title": "Video Gaming 1/Computer Programming & Game Design HS-MVUSD",
+      "unified_title": "Video Gaming 1/Computer Programming & Game Design HS-MVUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Video Gaming 1/Computer Programming & Game Design HS-MVUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 23,
+      "potential_names": [
+        "Allan Hancock College",
+        "Berkeley City College",
+        "Cabrillo College",
+        "College of the Canyons",
+        "Diablo Valley College",
+        "Foothill College",
+        "Fullerton College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "San Diego Mesa College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 24,
+      "credit_recs": [
+        {
+          "course": "GAM 1",
+          "credit": "3 hours in Business of Video Games"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-VGDH-1-001",
+      "exhibit_ids": [
+        "MAPCxH-VGDH-1-001"
+      ],
+      "title": "Video Game Development HS-RUSD",
+      "unified_title": "Video Game Development HS-RUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Video Game Development HS-RUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 23,
+      "potential_names": [
+        "Allan Hancock College",
+        "Berkeley City College",
+        "Cabrillo College",
+        "College of the Canyons",
+        "Diablo Valley College",
+        "Foothill College",
+        "Fullerton College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "San Diego Mesa College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 24,
+      "credit_recs": [
+        {
+          "course": "GAM 2",
+          "credit": "3 hours in History of Video Games"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-HOVG-1-001",
+      "exhibit_ids": [
+        "MAPCxH-HOVG-1-001"
+      ],
+      "title": "History of Video Games HS-CNUSD",
+      "unified_title": "History of Video Games HS-CNUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "History of Video Games HS-CNUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 23,
+      "potential_names": [
+        "Allan Hancock College",
+        "Berkeley City College",
+        "Cabrillo College",
+        "College of the Canyons",
+        "Diablo Valley College",
+        "Foothill College",
+        "Fullerton College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "San Diego Mesa College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 24,
+      "credit_recs": [
+        {
+          "course": "GAM 2",
+          "credit": "3 hours in History of Video Games"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-GDH-1-001",
+      "exhibit_ids": [
+        "MAPCxH-GDH-1-001"
+      ],
+      "title": "Game Design HS-CNUSD",
+      "unified_title": "Game Design HS-CNUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Game Design HS-CNUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 23,
+      "potential_names": [
+        "Allan Hancock College",
+        "Berkeley City College",
+        "Cabrillo College",
+        "College of the Canyons",
+        "Diablo Valley College",
+        "Foothill College",
+        "Fullerton College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "San Diego Mesa College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 24,
+      "credit_recs": [
+        {
+          "course": "GAM 3A",
+          "credit": "3 hours in Game Design"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-VG1P1-1-001",
+      "exhibit_ids": [
+        "MAPCxH-VG1P1-1-001"
+      ],
+      "title": "Video Gaming 1/Computer Programming & Game Design HSCE-MVUSD",
+      "unified_title": "Video Gaming 1/Computer Programming & Game Design HSCE-MVUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Video Gaming 1/Computer Programming & Game Design HSCE-MVUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 23,
+      "potential_names": [
+        "Allan Hancock College",
+        "Berkeley City College",
+        "Cabrillo College",
+        "College of the Canyons",
+        "Diablo Valley College",
+        "Foothill College",
+        "Fullerton College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "San Diego Mesa College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 24,
+      "credit_recs": [
+        {
+          "course": "GAM 3A",
+          "credit": "3 hours in Game Design"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-GDPH-1-001",
+      "exhibit_ids": [
+        "MAPCxH-GDPH-1-001"
+      ],
+      "title": "Game Design Principles HS-RUSD",
+      "unified_title": "Game Design Principles HS-RUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Game Design Principles HS-RUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 23,
+      "potential_names": [
+        "Allan Hancock College",
+        "Berkeley City College",
+        "Cabrillo College",
+        "College of the Canyons",
+        "Diablo Valley College",
+        "Foothill College",
+        "Fullerton College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "San Diego Mesa College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 24,
+      "credit_recs": [
+        {
+          "course": "GAM 3A",
+          "credit": "3 hours in Game Design"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-VGD2-1-001",
+      "exhibit_ids": [
+        "MAPCxH-VGD2-1-001"
+      ],
+      "title": "Video Game Design 2- HS-CRYROP",
+      "unified_title": "Video Game Design 2- HS-CRYROP",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Video Game Design 2- HS-CRYROP"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 23,
+      "potential_names": [
+        "Allan Hancock College",
+        "Berkeley City College",
+        "Cabrillo College",
+        "College of the Canyons",
+        "Diablo Valley College",
+        "Foothill College",
+        "Fullerton College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "San Diego Mesa College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 24,
+      "credit_recs": [
+        {
+          "course": "GAM 3B",
+          "credit": "3 hours in Advanced Game Design"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-CAH-1-001",
+      "exhibit_ids": [
+        "MAPCxH-CAH-1-001"
+      ],
+      "title": "Concept Art HS-CNUSD",
+      "unified_title": "Concept Art HS-CNUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Concept Art HS-CNUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 23,
+      "potential_names": [
+        "Allan Hancock College",
+        "Berkeley City College",
+        "Cabrillo College",
+        "College of the Canyons",
+        "Diablo Valley College",
+        "Foothill College",
+        "Fullerton College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "San Diego Mesa College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 24,
+      "credit_recs": [
+        {
+          "course": "GAM 5A",
+          "credit": "3 hours in Concept Art"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-3DMH-1-001",
+      "exhibit_ids": [
+        "MAPCxH-3DMH-1-001"
+      ],
+      "title": "3D Digital Modeling HS-CNUSD",
+      "unified_title": "3D Digital Modeling HS-CNUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "3D Digital Modeling HS-CNUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 23,
+      "potential_names": [
+        "Allan Hancock College",
+        "Berkeley City College",
+        "Cabrillo College",
+        "College of the Canyons",
+        "Diablo Valley College",
+        "Foothill College",
+        "Fullerton College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "San Diego Mesa College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 24,
+      "credit_recs": [
+        {
+          "course": "GAM 6A",
+          "credit": "3 hours in 3D Digital Modeling"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-EJI-1-001",
+      "exhibit_ids": [
+        "MAPCXS-EJI-1-001"
+      ],
+      "title": "Elementary Japanese I",
+      "unified_title": "Elementary Japanese I",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Elementary Japanese I"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 23,
+      "potential_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "City College of San Francisco",
+        "Crafton Hills College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Foothill College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Irvine Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Pierce College",
+        "MiraCosta College",
+        "Monterey Peninsula College",
+        "Palomar College",
+        "Pasadena City College",
+        "Saddleback College",
+        "San Diego Mesa College",
+        "Southwestern College"
+      ],
+      "total_addressable": 24,
+      "credit_recs": [
+        {
+          "course": "JAPAN 1",
+          "credit": "5 hours in Elementary Japanese I"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-EJI1-1-001",
+      "exhibit_ids": [
+        "MAPCXS-EJI1-1-001"
+      ],
+      "title": "Elementary Japanese II",
+      "unified_title": "Elementary Japanese II",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Elementary Japanese II"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 23,
+      "potential_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "City College of San Francisco",
+        "Crafton Hills College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Foothill College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Irvine Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Pierce College",
+        "MiraCosta College",
+        "Monterey Peninsula College",
+        "Palomar College",
+        "Pasadena City College",
+        "Saddleback College",
+        "San Diego Mesa College",
+        "Southwestern College"
+      ],
+      "total_addressable": 24,
+      "credit_recs": [
+        {
+          "course": "JAPAN 2",
+          "credit": "5 hours in Elementary Japanese II"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPICI-AL-1-001|MAPICI-ASE(10-1-001|MAPICI-ASE(25-1-001|MAPICI-ASE(3-1-001|MAPICI-ITCA-1-001",
       "exhibit_ids": [
         "MAPICI-AL-1-001",
@@ -192515,6 +196195,177 @@ window.CPL_STATEWIDE = {
         {
           "course": "BUSMGT 430",
           "credit": "3 hours in Warehouse Management and Material Handling"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-TASH-1-001",
+      "exhibit_ids": [
+        "MAPCxH-TASH-1-001"
+      ],
+      "title": "Transport and Supply HS-BVROP",
+      "unified_title": "Transport and Supply HS-BVROP",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Transport and Supply HS-BVROP"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 21,
+      "potential_names": [
+        "Bakersfield College",
+        "Barstow Community College",
+        "Chaffey College",
+        "Coastline Community College",
+        "College of Alameda",
+        "East Los Angeles College",
+        "Fullerton College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Joaquin Delta College",
+        "Santa Monica College",
+        "Southwestern College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 22,
+      "credit_recs": [
+        {
+          "course": "BUS 80",
+          "credit": "3 hours in Principles of Logistics"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-ASL1-1-001",
+      "exhibit_ids": [
+        "MAPCXS-ASL1-1-001"
+      ],
+      "title": "Elementary American Sign Language 1",
+      "unified_title": "Elementary American Sign Language 1",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Elementary American Sign Language 1"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 21,
+      "potential_names": [
+        "American River College",
+        "Clovis Community College",
+        "College of Marin",
+        "Cypress College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Golden West College",
+        "Los Angeles Valley College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Orange Coast College",
+        "Palomar College",
+        "Reedley College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Santiago Canyon College",
+        "Solano Community College"
+      ],
+      "total_addressable": 22,
+      "credit_recs": [
+        {
+          "course": "ASL 1",
+          "credit": "5 hours in Elementary American Sign Language I"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-ASL2-1-001",
+      "exhibit_ids": [
+        "MAPCXS-ASL2-1-001"
+      ],
+      "title": "Elementary American Sign Language 2",
+      "unified_title": "Elementary American Sign Language 2",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Elementary American Sign Language 2"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 21,
+      "potential_names": [
+        "American River College",
+        "Clovis Community College",
+        "College of Marin",
+        "Cypress College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Golden West College",
+        "Los Angeles Valley College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Orange Coast College",
+        "Palomar College",
+        "Reedley College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Santiago Canyon College",
+        "Solano Community College"
+      ],
+      "total_addressable": 22,
+      "credit_recs": [
+        {
+          "course": "ASL 2",
+          "credit": "5 hours in Elementary American Sign Language II"
         }
       ],
       "authoritative_recs": []
@@ -199134,6 +202985,61 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCxH-AD1A-1-001",
+      "exhibit_ids": [
+        "MAPCxH-AD1A-1-001"
+      ],
+      "title": "Architectural Design 1A and 1B (2 courses) HS-CNUD",
+      "unified_title": "Architectural Design 1A and 1B (2 courses) HS-CNUD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Architectural Design 1A and 1B (2 courses) HS-CNUD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 15,
+      "potential_names": [
+        "Allan Hancock College",
+        "Cabrillo College",
+        "Chaffey College",
+        "Citrus College",
+        "College of the Canyons",
+        "Cuyamaca College",
+        "Evergreen Valley College",
+        "Fullerton College",
+        "Napa Valley College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Sierra College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 16,
+      "credit_recs": [
+        {
+          "course": "ARE 24",
+          "credit": "3 hours in Revit I-Architectural Drafting"
+        },
+        {
+          "course": "ARE 25",
+          "credit": "3 hours in Revit II-Advanced Architectural Drafting"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPCBEN-ACI-1-001",
       "exhibit_ids": [
         "MAPCBEN-ACI-1-001"
@@ -202532,6 +206438,104 @@ window.CPL_STATEWIDE = {
         {
           "course": "IET 400",
           "credit": "2 hours in Introduction to Workplace Safety"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-EII-1-001",
+      "exhibit_ids": [
+        "MAPCXS-EII-1-001"
+      ],
+      "title": "Elementary Italian I",
+      "unified_title": "Elementary Italian I",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Elementary Italian I"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 13,
+      "potential_names": [
+        "City College of San Francisco",
+        "College of Marin",
+        "De Anza College",
+        "Diablo Valley College",
+        "Glendale Community College",
+        "Los Angeles Pierce College",
+        "Los Angeles Valley College",
+        "MiraCosta College",
+        "Palomar College",
+        "Pasadena City College",
+        "San Diego City College",
+        "Southwestern College",
+        "West Valley College"
+      ],
+      "total_addressable": 14,
+      "credit_recs": [
+        {
+          "course": "ITAL 1",
+          "credit": "5 hours in Elementary Italian I"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-EII1-1-001",
+      "exhibit_ids": [
+        "MAPCXS-EII1-1-001"
+      ],
+      "title": "Elementray Italian II",
+      "unified_title": "Elementray Italian II",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Elementray Italian II"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 13,
+      "potential_names": [
+        "City College of San Francisco",
+        "College of Marin",
+        "De Anza College",
+        "Diablo Valley College",
+        "Glendale Community College",
+        "Los Angeles Pierce College",
+        "Los Angeles Valley College",
+        "MiraCosta College",
+        "Palomar College",
+        "Pasadena City College",
+        "San Diego City College",
+        "Southwestern College",
+        "West Valley College"
+      ],
+      "total_addressable": 14,
+      "credit_recs": [
+        {
+          "course": "ITAL 2",
+          "credit": "5 hours in Elementary Italian II"
         }
       ],
       "authoritative_recs": []
@@ -211691,6 +215695,94 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCXS-EGI-1-001",
+      "exhibit_ids": [
+        "MAPCXS-EGI-1-001"
+      ],
+      "title": "Elementary German I",
+      "unified_title": "Elementary German I",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Elementary German I"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 8,
+      "potential_names": [
+        "Cerritos College",
+        "Diablo Valley College",
+        "Grossmont College",
+        "Los Angeles Valley College",
+        "Merced College",
+        "Palomar College",
+        "Pasadena City College",
+        "Saddleback College"
+      ],
+      "total_addressable": 9,
+      "credit_recs": [
+        {
+          "course": "GRMN 1",
+          "credit": "5 hours in Elementary German I"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-EGI1-1-001",
+      "exhibit_ids": [
+        "MAPCXS-EGI1-1-001"
+      ],
+      "title": "Elementary German II",
+      "unified_title": "Elementary German II",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Elementary German II"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 8,
+      "potential_names": [
+        "Cerritos College",
+        "Diablo Valley College",
+        "Grossmont College",
+        "Los Angeles Valley College",
+        "Merced College",
+        "Palomar College",
+        "Pasadena City College",
+        "Saddleback College"
+      ],
+      "total_addressable": 9,
+      "credit_recs": [
+        {
+          "course": "GRMN 2",
+          "credit": "5 hours in Elementary German II"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPPRS-CTT3-1-001",
       "exhibit_ids": [
         "MAPPRS-CTT3-1-001"
@@ -213130,6 +217222,246 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCxH-A&P1-1-001",
+      "exhibit_ids": [
+        "MAPCxH-A&P1-1-001"
+      ],
+      "title": "Anatomy & Physiology 1A & 1B HS-CNUSD",
+      "unified_title": "Anatomy & Physiology 1A & 1B HS-CNUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Anatomy & Physiology 1A & 1B HS-CNUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Biological Sciences",
+      "sector": "Life Sciences/Biotechnology",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 4,
+      "potential_names": [
+        "Fresno City College",
+        "Glendale Community College",
+        "Golden West College",
+        "Mt. San Antonio College"
+      ],
+      "total_addressable": 5,
+      "credit_recs": [
+        {
+          "course": "BIO 45",
+          "credit": "3 hours in Survey of Human Anatomy and Physiology"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-MAAP-1-001",
+      "exhibit_ids": [
+        "MAPCxH-MAAP-1-001"
+      ],
+      "title": "Medical Anatomy and Physiology HS-CNUSD",
+      "unified_title": "Medical Anatomy and Physiology HS-CNUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Medical Anatomy and Physiology HS-CNUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Biological Sciences",
+      "sector": "Life Sciences/Biotechnology",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 4,
+      "potential_names": [
+        "Fresno City College",
+        "Glendale Community College",
+        "Golden West College",
+        "Mt. San Antonio College"
+      ],
+      "total_addressable": 5,
+      "credit_recs": [
+        {
+          "course": "BIO 45",
+          "credit": "3 hours in Survey of Human Anatomy and Physiology"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-RA&P-1-001",
+      "exhibit_ids": [
+        "MAPCxH-RA&P-1-001"
+      ],
+      "title": "RCOE Anatomy & Physiology for the Health Profession (Survey of Human Anatomy & Physiology) HS",
+      "unified_title": "RCOE Anatomy & Physiology for the Health Profession (Survey of Human Anatomy & Physiology) HS",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "RCOE Anatomy & Physiology for the Health Profession (Survey of Human Anatomy & Physiology) HS"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Biological Sciences",
+      "sector": "Life Sciences/Biotechnology",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 4,
+      "potential_names": [
+        "Fresno City College",
+        "Glendale Community College",
+        "Golden West College",
+        "Mt. San Antonio College"
+      ],
+      "total_addressable": 5,
+      "credit_recs": [
+        {
+          "course": "BIO 45",
+          "credit": "3 hours in Survey of Human Anatomy and Physiology"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-A&PH1-1-001",
+      "exhibit_ids": [
+        "MAPCxH-A&PH1-1-001"
+      ],
+      "title": "Anatomy & Physiology HS-RUSD",
+      "unified_title": "Anatomy & Physiology HS-RUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Anatomy & Physiology HS-RUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Biological Sciences",
+      "sector": "Life Sciences/Biotechnology",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 4,
+      "potential_names": [
+        "Fresno City College",
+        "Glendale Community College",
+        "Golden West College",
+        "Mt. San Antonio College"
+      ],
+      "total_addressable": 5,
+      "credit_recs": [
+        {
+          "course": "BIO 45",
+          "credit": "3 hours in Survey of Human Anatomy and Physiology"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-PHBS-1-001",
+      "exhibit_ids": [
+        "MAPCxH-PHBS-1-001"
+      ],
+      "title": "PLTW Human Body Systems HS-RUSD",
+      "unified_title": "PLTW Human Body Systems HS-RUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "PLTW Human Body Systems HS-RUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Biological Sciences",
+      "sector": "Life Sciences/Biotechnology",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 4,
+      "potential_names": [
+        "Fresno City College",
+        "Glendale Community College",
+        "Golden West College",
+        "Mt. San Antonio College"
+      ],
+      "total_addressable": 5,
+      "credit_recs": [
+        {
+          "course": "BIO 45",
+          "credit": "3 hours in Survey of Human Anatomy and Physiology"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-A&PH2-1-001",
+      "exhibit_ids": [
+        "MAPCxH-A&PH2-1-001"
+      ],
+      "title": "Anatomy & Physiology HS-VVUSD",
+      "unified_title": "Anatomy & Physiology HS-VVUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Anatomy & Physiology HS-VVUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Biological Sciences",
+      "sector": "Life Sciences/Biotechnology",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 4,
+      "potential_names": [
+        "Fresno City College",
+        "Glendale Community College",
+        "Golden West College",
+        "Mt. San Antonio College"
+      ],
+      "total_addressable": 5,
+      "credit_recs": [
+        {
+          "course": "BIO 45",
+          "credit": "3 hours in Survey of Human Anatomy and Physiology"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPSAH-AILA-1-001|MAPSAS-A-IL-1-001|MAPSAS-A:IL-1-001|MAPSAS-AEIL-1-001|MAPSAS-AI-L-1-001|MAPSAS-AIL&-1-001|MAPSAS-AILA-1-001|MAPSAS-AILA1-1-001|MAPSAS-AILA2-1-001|MAPSAS-AILA3-1-001|MAPSAS-AILA4-1-001|MAPSAS-AILA5-1-001|MAPSAS-AILA6-1-001|MAPSAS-AILC-1-001|MAPSAS-AILC1-1-001",
       "exhibit_ids": [
         "MAPSAH-AILA-1-001",
@@ -213772,6 +218104,45 @@ window.CPL_STATEWIDE = {
         {
           "course": "MORT 482 C",
           "credit": "4 hours in Clinical Embalming Externship"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-IRL-1-001",
+      "exhibit_ids": [
+        "MAPCXS-IRL-1-001"
+      ],
+      "title": "Information Research LIBR10",
+      "unified_title": "Information Research LIBR10",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Information Research LIBR10"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 3,
+      "potential_names": [
+        "Bakersfield College",
+        "College of Alameda",
+        "Long Beach City College"
+      ],
+      "total_addressable": 4,
+      "credit_recs": [
+        {
+          "course": "LIBR 10",
+          "credit": "1 hour in Information Research"
         }
       ],
       "authoritative_recs": []
@@ -221066,6 +225437,41 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPSAS-ASLA19-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ASLA19-1-001"
+      ],
+      "title": "AP Spanish Language (Score of 3, 4 or 5)",
+      "unified_title": "AP Spanish Language (Score of 3, 4 or 5)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Spanish Language (Score of 3, 4 or 5)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "AP Credit SLA",
+          "credit": "6 hours in AP Spanish Language (Score of 3, 4 or 5)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPSAS-AS(O-1-001",
       "exhibit_ids": [
         "MAPSAS-AS(O-1-001"
@@ -221901,6 +226307,461 @@ window.CPL_STATEWIDE = {
         {
           "course": "CLEP BY",
           "credit": "3 hours in CLEP Exam Biology (ACE Recommended Score of 50)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AEL(1-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AEL(1-1-001"
+      ],
+      "title": "AP English Language (Score of 3, 4 or 5)",
+      "unified_title": "AP English Language (Score of 3, 4 or 5)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP English Language (Score of 3, 4 or 5)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "AP Credit EN",
+          "credit": "6 hours in AP English Language (Score of 3, 4 or 5)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AP1A4-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AP1A4-1-001"
+      ],
+      "title": "AP Physics 1: Algebra-Based (Score of 3)",
+      "unified_title": "AP Physics 1: Algebra-Based (Score of 3)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Physics 1: Algebra-Based (Score of 3)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "AP Credit PHYS1-3",
+          "credit": "4 hours in AP Physics 1: Algebra-Based (Score of 3)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AP1A5-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AP1A5-1-001"
+      ],
+      "title": "AP Physics 1: Algebra-Based (Score of 4 or 5)",
+      "unified_title": "AP Physics 1: Algebra-Based (Score of 4 or 5)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Physics 1: Algebra-Based (Score of 4 or 5)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "AP Credit PHYS1-4",
+          "credit": "4 hours in AP Physics 1: Algebra-Based (Score of 4 or 5)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AP2A4-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AP2A4-1-001"
+      ],
+      "title": "AP Physics 2: Algebra-Based (Score of 3)",
+      "unified_title": "AP Physics 2: Algebra-Based (Score of 3)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Physics 2: Algebra-Based (Score of 3)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "AP Credit PHYS2-3",
+          "credit": "4 hours in AP Physics 2: Algebra-Based (Score of 3)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AP2A5-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AP2A5-1-001"
+      ],
+      "title": "AP Physics 2: Algebra-Based (Score of 4 or 5)",
+      "unified_title": "AP Physics 2: Algebra-Based (Score of 4 or 5)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Physics 2: Algebra-Based (Score of 4 or 5)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "AP Credit PHYS2-4",
+          "credit": "4 hours in AP Physics 2: Algebra-Based (Score of 4 or 5)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-APCE9-1-001",
+      "exhibit_ids": [
+        "MAPSAS-APCE9-1-001"
+      ],
+      "title": "AP Physics C: Electricity & Magnt (Score of 3)",
+      "unified_title": "AP Physics C: Electricity & Magnt (Score of 3)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Physics C: Electricity & Magnt (Score of 3)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "AP Credit PHCE-3",
+          "credit": "4 hours in AP Physics C: Electricity & Magnt (Score of 3)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-APCE8-1-001",
+      "exhibit_ids": [
+        "MAPSAS-APCE8-1-001"
+      ],
+      "title": "AP Physics C: Electricity & Magnt (Score of 4 or 5)",
+      "unified_title": "AP Physics C: Electricity & Magnt (Score of 4 or 5)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Physics C: Electricity & Magnt (Score of 4 or 5)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "AP Credit PHCE-4",
+          "credit": "4 hours in AP Physics C: Electricity & Magnt (Score of 4 or 5)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-APCM6-1-001",
+      "exhibit_ids": [
+        "MAPSAS-APCM6-1-001"
+      ],
+      "title": "AP Physics C: Mechanics (Score of 4 or 5)",
+      "unified_title": "AP Physics C: Mechanics (Score of 4 or 5)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Physics C: Mechanics (Score of 4 or 5)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "AP Credit PHCM-4",
+          "credit": "4 hours in AP Physics C: Mechanics (Score of 4 or 5)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-ASLA22-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ASLA22-1-001"
+      ],
+      "title": "AP Spanish Literature and Culture (Score of 3, 4 or 5)",
+      "unified_title": "AP Spanish Literature and Culture (Score of 3, 4 or 5)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Spanish Literature and Culture (Score of 3, 4 or 5)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "AP Credit SPLL",
+          "credit": "6 hours in AP Spanish Literature and Culture (Score of 3, 4 or 5)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-ASL(1-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ASL(1-1-001"
+      ],
+      "title": "AP Spanish Literature (Score 3, 4 or 5)",
+      "unified_title": "AP Spanish Literature (Score 3, 4 or 5)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Spanish Literature (Score 3, 4 or 5)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "AP Credit SLI",
+          "credit": "6 hours in AP Spanish Literature (Score of 3, 4 or 5)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-CGAD-1-001",
+      "exhibit_ids": [
+        "MAPCxH-CGAD-1-001"
+      ],
+      "title": "Computer Graphics and Design HS-JUSD",
+      "unified_title": "Computer Graphics and Design HS-JUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Computer Graphics and Design HS-JUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Fine and Applied Arts",
+      "sector": "ICT/Digital Media",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "ART 39",
+          "credit": "3 hours in Design and Graphics"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-CG&D-1-001",
+      "exhibit_ids": [
+        "MAPCxH-CG&D-1-001"
+      ],
+      "title": "CTE Graphics & Design Advanced HS-VVUSD",
+      "unified_title": "CTE Graphics & Design Advanced HS-VVUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CTE Graphics & Design Advanced HS-VVUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Fine and Applied Arts",
+      "sector": "ICT/Digital Media",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "ART 39",
+          "credit": "3 hours in Design and Graphics"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCxH-AAHH-1-001",
+      "exhibit_ids": [
+        "MAPCxH-AAHH-1-001"
+      ],
+      "title": "AP Art History HS-LEUSD",
+      "unified_title": "AP Art History HS-LEUSD",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Art History HS-LEUSD"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Fine and Applied Arts",
+      "sector": "ICT/Digital Media",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "ART 6",
+          "credit": "3 hours in Art Appreciation"
         }
       ],
       "authoritative_recs": []
@@ -222842,14 +227703,14 @@ window.CPL_STATEWIDE = {
       ],
       "title": "Sketchup for Landscape Designers",
       "unified_title": "Sketchup for Landscape Designers",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
+      "is_classified": false,
+      "issuing_agency": "",
       "training_agency": "",
-      "confidence_title": 0.3,
-      "confidence_issuer": 1.0,
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
       "quality_flag": "",
       "raw_titles": [
-        "HORT 60J"
+        "Sketchup for Landscape Designers"
       ],
       "cpl_type": "Portfolio Review",
       "discipline": "Not Mapped",
@@ -222870,14 +227731,14 @@ window.CPL_STATEWIDE = {
       ],
       "title": "Horticultural & Landscape Photography",
       "unified_title": "Horticultural & Landscape Photography",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
+      "is_classified": false,
+      "issuing_agency": "",
       "training_agency": "",
-      "confidence_title": 0.3,
-      "confidence_issuer": 1.0,
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
       "quality_flag": "",
       "raw_titles": [
-        "HORT 90E"
+        "Horticultural & Landscape Photography"
       ],
       "cpl_type": "Portfolio Review",
       "discipline": "Not Mapped",
@@ -222898,14 +227759,14 @@ window.CPL_STATEWIDE = {
       ],
       "title": "Landscaping with Edibles",
       "unified_title": "Landscaping with Edibles",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
+      "is_classified": false,
+      "issuing_agency": "",
       "training_agency": "",
-      "confidence_title": 0.3,
-      "confidence_issuer": 1.0,
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
       "quality_flag": "",
       "raw_titles": [
-        "HORT 90K"
+        "Landscaping with Edibles"
       ],
       "cpl_type": "Portfolio Review",
       "discipline": "Not Mapped",
@@ -222926,16 +227787,44 @@ window.CPL_STATEWIDE = {
       ],
       "title": "Landscape Design: Perspective Sketching",
       "unified_title": "Landscape Design: Perspective Sketching",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
+      "is_classified": false,
+      "issuing_agency": "",
       "training_agency": "",
-      "confidence_title": 0.3,
-      "confidence_issuer": 1.0,
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
       "quality_flag": "",
       "raw_titles": [
-        "HORT 90U"
+        "Landscape Design: Perspective Sketching"
       ],
       "cpl_type": "Portfolio Review",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-S12-1-001",
+      "exhibit_ids": [
+        "MAPCXS-S12-1-001"
+      ],
+      "title": "Elementary Spanish III",
+      "unified_title": "Elementary Spanish III",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Elementary Spanish III"
+      ],
+      "cpl_type": "Credit By Exam",
       "discipline": "Not Mapped",
       "sector": "",
       "collaborative_type": "Local",
@@ -223312,34 +228201,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPSAS-APCE8-1-001",
-      "exhibit_ids": [
-        "MAPSAS-APCE8-1-001"
-      ],
-      "title": "AP Physics C: Electricity & Magnt (Score of 3)",
-      "unified_title": "AP Physics C: Electricity & Magnt (Score of 3)",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP Physics C: Electricity & Magnt (Score of 3)"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "collaborative_type": "Local",
-      "adopters": 0,
-      "adopter_names": [],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 0,
-      "credit_recs": [],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPPRA-B0-1-001",
       "exhibit_ids": [
         "MAPPRA-B0-1-001"
@@ -223535,7 +228396,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 18,
         "ccc_collaborative": 59,
         "industry_certs": 93,
-        "pct": 3.6
+        "pct": 3.5
       },
       {
         "college": "Santiago Canyon College",
@@ -223547,13 +228408,31 @@ window.CPL_STATEWIDE = {
         "pct": 3.5
       },
       {
+        "college": "Norco College",
+        "credit_recs": 389,
+        "exhibits": 317,
+        "disciplines": 17,
+        "ccc_collaborative": 23,
+        "industry_certs": 74,
+        "pct": 3.0
+      },
+      {
         "college": "Los Angeles Pierce College",
-        "credit_recs": 373,
-        "exhibits": 292,
+        "credit_recs": 384,
+        "exhibits": 303,
         "disciplines": 18,
         "ccc_collaborative": 0,
         "industry_certs": 15,
-        "pct": 2.9
+        "pct": 3.0
+      },
+      {
+        "college": "Cabrillo College",
+        "credit_recs": 361,
+        "exhibits": 258,
+        "disciplines": 15,
+        "ccc_collaborative": 126,
+        "industry_certs": 194,
+        "pct": 2.8
       },
       {
         "college": "San Diego Miramar College",
@@ -223572,24 +228451,6 @@ window.CPL_STATEWIDE = {
         "ccc_collaborative": 48,
         "industry_certs": 72,
         "pct": 2.8
-      },
-      {
-        "college": "Cabrillo College",
-        "credit_recs": 347,
-        "exhibits": 244,
-        "disciplines": 13,
-        "ccc_collaborative": 126,
-        "industry_certs": 194,
-        "pct": 2.7
-      },
-      {
-        "college": "Norco College",
-        "credit_recs": 335,
-        "exhibits": 265,
-        "disciplines": 17,
-        "ccc_collaborative": 23,
-        "industry_certs": 74,
-        "pct": 2.6
       },
       {
         "college": "Moreno Valley College",
@@ -223715,7 +228576,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 3,
         "ccc_collaborative": 0,
         "industry_certs": 0,
-        "pct": 1.3
+        "pct": 1.2
       },
       {
         "college": "De Anza College",
@@ -224039,7 +228900,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 4,
         "ccc_collaborative": 0,
         "industry_certs": 2,
-        "pct": 0.7
+        "pct": 0.6
       },
       {
         "college": "Golden West College",
@@ -224432,26 +229293,26 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 5467,
-        "exhibits": 1752,
-        "courses": 274,
+        "credit_recs": 5492,
+        "exhibits": 1777,
+        "courses": 294,
         "colleges": 84,
         "ccc_collaborative": 25,
-        "pct": 43.1
+        "pct": 43.0
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 2088,
-        "exhibits": 896,
-        "courses": 1015,
+        "credit_recs": 2108,
+        "exhibits": 914,
+        "courses": 1023,
         "colleges": 52,
         "ccc_collaborative": 499,
-        "pct": 16.4
+        "pct": 16.5
       },
       {
         "discipline": "Public and Protective Services",
-        "credit_recs": 1376,
-        "exhibits": 438,
+        "credit_recs": 1377,
+        "exhibits": 439,
         "courses": 573,
         "colleges": 50,
         "ccc_collaborative": 541,
@@ -224464,13 +229325,13 @@ window.CPL_STATEWIDE = {
         "courses": 28,
         "colleges": 81,
         "ccc_collaborative": 1,
-        "pct": 5.1
+        "pct": 5.0
       },
       {
         "discipline": "Business and Management",
-        "credit_recs": 459,
-        "exhibits": 261,
-        "courses": 215,
+        "credit_recs": 466,
+        "exhibits": 268,
+        "courses": 216,
         "colleges": 42,
         "ccc_collaborative": 46,
         "pct": 3.6
@@ -224482,31 +229343,31 @@ window.CPL_STATEWIDE = {
         "courses": 288,
         "colleges": 45,
         "ccc_collaborative": 31,
-        "pct": 3.5
+        "pct": 3.4
       },
       {
         "discipline": "Information Technology",
-        "credit_recs": 369,
-        "exhibits": 211,
-        "courses": 255,
+        "credit_recs": 374,
+        "exhibits": 216,
+        "courses": 257,
         "colleges": 44,
         "ccc_collaborative": 106,
         "pct": 2.9
       },
       {
         "discipline": "Foreign Languages",
-        "credit_recs": 278,
-        "exhibits": 138,
-        "courses": 128,
-        "colleges": 30,
+        "credit_recs": 287,
+        "exhibits": 147,
+        "courses": 132,
+        "colleges": 31,
         "ccc_collaborative": 23,
         "pct": 2.2
       },
       {
         "discipline": "Fine and Applied Arts",
-        "credit_recs": 231,
-        "exhibits": 187,
-        "courses": 186,
+        "credit_recs": 235,
+        "exhibits": 191,
+        "courses": 189,
         "colleges": 33,
         "ccc_collaborative": 0,
         "pct": 1.8
@@ -224540,10 +229401,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Humanities (Letters)",
-        "credit_recs": 162,
-        "exhibits": 138,
+        "credit_recs": 163,
+        "exhibits": 139,
         "courses": 39,
-        "colleges": 26,
+        "colleges": 27,
         "ccc_collaborative": 0,
         "pct": 1.3
       },
@@ -224576,18 +229437,18 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Biological Sciences",
-        "credit_recs": 65,
-        "exhibits": 54,
+        "credit_recs": 71,
+        "exhibits": 60,
         "courses": 39,
         "colleges": 26,
         "ccc_collaborative": 0,
-        "pct": 0.5
+        "pct": 0.6
       },
       {
         "discipline": "Media and Communications",
-        "credit_recs": 65,
-        "exhibits": 54,
-        "courses": 44,
+        "credit_recs": 66,
+        "exhibits": 55,
+        "courses": 45,
         "colleges": 16,
         "ccc_collaborative": 0,
         "pct": 0.5
@@ -224641,24 +229502,24 @@ window.CPL_STATEWIDE = {
     "by_cpl_type": [
       {
         "cpl_type": "Standardized Assessment",
-        "credit_recs": 6822,
-        "exhibits": 2155,
+        "credit_recs": 6833,
+        "exhibits": 2166,
         "colleges": 86,
-        "pct": 53.7
+        "pct": 53.5
       },
       {
         "cpl_type": "Industry Certification",
         "credit_recs": 3485,
         "exhibits": 1031,
         "colleges": 80,
-        "pct": 27.5
+        "pct": 27.3
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 1777,
-        "exhibits": 1309,
+        "credit_recs": 1845,
+        "exhibits": 1375,
         "colleges": 58,
-        "pct": 14.0
+        "pct": 14.4
       },
       {
         "cpl_type": "Portfolio Review",
@@ -224685,36 +229546,36 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 7938,
-        "exhibits": 2931,
+        "credit_recs": 7962,
+        "exhibits": 2955,
         "colleges": 92,
-        "pct": 62.5
+        "pct": 62.3
       },
       {
         "mode": "Industry training (I)",
         "credit_recs": 2632,
         "exhibits": 979,
         "colleges": 76,
-        "pct": 20.7
+        "pct": 20.6
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
         "credit_recs": 1309,
         "exhibits": 396,
         "colleges": 41,
-        "pct": 10.3
+        "pct": 10.2
       },
       {
         "mode": "High school coursework (H)",
-        "credit_recs": 304,
-        "exhibits": 260,
-        "colleges": 18,
-        "pct": 2.4
+        "credit_recs": 358,
+        "exhibits": 312,
+        "colleges": 19,
+        "pct": 2.8
       },
       {
         "mode": "Noncredit, community education, and contract education coursework (N)",
-        "credit_recs": 210,
-        "exhibits": 175,
+        "credit_recs": 211,
+        "exhibits": 176,
         "colleges": 11,
         "pct": 1.7
       },
@@ -224723,7 +229584,7 @@ window.CPL_STATEWIDE = {
         "credit_recs": 159,
         "exhibits": 66,
         "colleges": 33,
-        "pct": 1.3
+        "pct": 1.2
       },
       {
         "mode": "Other (O)",
@@ -224757,11 +229618,11 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11172,
-        "exhibits": 4692,
+        "credit_recs": 11251,
+        "exhibits": 4769,
         "colleges": 99,
         "disciplines": 23,
-        "pct": 88.0
+        "pct": 88.1
       },
       {
         "category": "CCC Collaborative",
@@ -225183,6 +230044,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-07-17T14:07:28",
-  "total_credit_recs": 12694
+  "generated_at": "2026-07-18T08:11:18",
+  "total_credit_recs": 12773
 };
