@@ -29,8 +29,28 @@ COLLEGES_OUT = os.path.join(REPO, "cip_fitcheck_colleges.json")
 DESC_CAP = 400   # cap long catalog descriptions (median ~377; keeps most whole, trims outliers)
 
 
+# Text that was UTF-8 but got decoded as Latin-1 somewhere upstream shows up as mojibake
+# ("CaÃ±ada" for "Cañada"). Repair only strings carrying the tell-tale bytes, via a Latin-1 → UTF-8
+# round-trip; a clean round-trip that removes the marker wins (idempotent on already-correct text).
+_MOJIBAKE_RE = re.compile("[\u00c2\u00c3\u00e2][\u0080-\u00bf]")
+
+
+def _demojibake(s):
+    for _ in range(3):
+        if not s or not _MOJIBAKE_RE.search(s):
+            break
+        try:
+            fixed = s.encode("latin-1").decode("utf-8")
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            break
+        if fixed == s:
+            break
+        s = fixed
+    return s
+
+
 def clean(v):
-    return "" if v is None else str(v).strip()
+    return _demojibake("" if v is None else str(v).strip())
 
 
 def slugify(name):
