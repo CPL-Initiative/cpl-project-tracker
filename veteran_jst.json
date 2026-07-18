@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-18T08:11:52.968428+00:00",
+  "scraped_at": "2026-07-18T13:54:50.836868+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
@@ -155,9 +155,19 @@
       "jst": 535,
       "star": true
     },
+    "Fresno City College": {
+      "vets": 724,
+      "jst": 557,
+      "star": true
+    },
     "San Joaquin Delta College": {
       "vets": 248,
       "jst": 494,
+      "star": true
+    },
+    "College of the Canyons": {
+      "vets": 382,
+      "jst": 491,
       "star": true
     },
     "Glendale Community College": {
@@ -165,19 +175,14 @@
       "jst": 215,
       "star": true
     },
-    "Antelope Valley College": {
-      "vets": 281,
-      "jst": 278,
-      "star": true
-    },
     "Clovis Community College": {
       "vets": 117,
       "jst": 190,
       "star": true
     },
-    "Fresno City College": {
-      "vets": 724,
-      "jst": 557,
+    "Antelope Valley College": {
+      "vets": 281,
+      "jst": 278,
       "star": true
     },
     "Fullerton College": {
@@ -210,6 +215,11 @@
       "jst": 174,
       "star": false
     },
+    "Ventura College": {
+      "vets": 254,
+      "jst": 164,
+      "star": false
+    },
     "Citrus College": {
       "vets": 181,
       "jst": 206,
@@ -218,11 +228,6 @@
     "Lemoore College": {
       "vets": 61,
       "jst": 31,
-      "star": false
-    },
-    "Ventura College": {
-      "vets": 254,
-      "jst": 164,
       "star": false
     },
     "Cerro Coso Community College": {
@@ -245,15 +250,15 @@
       "jst": 122,
       "star": true
     },
-    "Golden West College": {
-      "vets": 219,
-      "jst": 99,
-      "star": false
-    },
     "Oxnard College": {
       "vets": 118,
       "jst": 151,
       "star": true
+    },
+    "Golden West College": {
+      "vets": 219,
+      "jst": 99,
+      "star": false
     },
     "Allan Hancock College": {
       "vets": 392,
@@ -320,14 +325,14 @@
       "jst": 105,
       "star": false
     },
-    "Foothill College": {
-      "vets": 915,
-      "jst": 76,
-      "star": false
-    },
     "Laney College": {
       "vets": 96,
       "jst": 50,
+      "star": false
+    },
+    "Foothill College": {
+      "vets": 915,
+      "jst": 76,
       "star": false
     },
     "Copper Mountain College": {
@@ -418,11 +423,6 @@
     "Los Medanos College": {
       "vets": 146,
       "jst": 229,
-      "star": true
-    },
-    "College of the Canyons": {
-      "vets": 382,
-      "jst": 491,
       "star": true
     },
     "Napa Valley College": {

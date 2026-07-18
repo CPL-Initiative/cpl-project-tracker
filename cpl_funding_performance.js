@@ -8,9 +8,9 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified (context, not a priority metric) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 42629,
-  "p2": 4779,
-  "p3": 17008
+  "pe": 42631,
+  "p2": 4778,
+  "p3": 16804
  },
  "colleges": {
   "Alameda": {
@@ -59,7 +59,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Canyons": {
-   "pe": 487,
+   "pe": 489,
    "p2": 0,
    "p3": 0
   },
@@ -89,7 +89,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Clovis": {
-   "pe": 185,
+   "pe": 186,
    "p2": 0,
    "p3": 0
   },
@@ -318,9 +318,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Moreno Valley": {
-   "pe": 2376,
-   "p2": 416,
-   "p3": 2146
+   "pe": 2375,
+   "p2": 415,
+   "p3": 1942
   },
   "Mt San Antonio": {
    "pe": 732,
