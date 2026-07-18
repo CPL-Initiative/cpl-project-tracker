@@ -1077,3 +1077,20 @@ decider posture, per the §7 TOP caveat). Not built yet — captured here + in t
 
 Tests 176 → **180** (tiles-row buttons, rail with Theme/Expand/CSV, Coco present, em-dash-free
 course name). Real-Chromium desktop + phone, light + dark, 0 overflow / 0 errors.
+
+### 2026-07-18 checkpoint — 4 open Review-tab items (Sam, reviewing Cerritos AB)
+
+Everything above merged (#836–#840). Sam checkpointed with four next-session items (full detail +
+root-cause notes in `docs/cip_crosswalk_handoff.md` → "Sam's checkpoint steer"):
+1. **Review rows show no visible mark** — the Review glyph "·" is near-invisible; give review
+   courses a clear (calm) "look here" prompt.
+2. **Triage counts read as arbitrary** — Cerritos AB: "8 Review" among rows that all show the same
+   `47.0603` (TOP 0949.00), some Ready some Review with no visible reason. Surface *why* a row is
+   Review, and make the count↔list relationship legible. (Root: the `conf ≥ 85` gate in
+   `computeRecommend` splits identical-looking rows.)
+3. **Review my catalog → first mode tab** + default.
+4. **"Confirm all N" needs reassuring subtext** — communicate it's not final, nothing breaks; the
+   real step is entering the code in COCI (decisions are editable `localStorage`).
+
+Side-lane discipline honored: `kb/cpl_todos.json` + the numbered `docs/session_<N>_handoff.md` left
+untouched (CCR mainline owns those); this checkpoint lives in the CIP handoff + this lessons doc.
