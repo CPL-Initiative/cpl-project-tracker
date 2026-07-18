@@ -1010,3 +1010,28 @@ tool faithfully reflects the college's own (arguably mis-coded) TOP. Truly pinni
 discipline needs a subject→discipline inference (e.g. the modal TOP of the college's same-subject
 sibling courses); Bakersfield codes ARCH work-experience under the discipline TOP 0201, so the
 common/correctly-coded case is fixed. Tests 169 → **172**.
+
+### 2026-07-18 (later) — the general rule: cross-discipline consensus can corroborate, never override
+
+Sam (American River CARPT): "CARPT 224 — Materials of Construction" (an obvious Carpentry course,
+subject CARPT + TOP 0952.10 Carpentry → `46.0201`) was recommending **`04.0901` Architectural
+Technology**. Same shape as the work-experience bug but not a work-experience title, so that guard
+didn't catch it: "Materials of Construction" is taught across many construction disciplines; the
+cross-title consensus pooled 15 colleges (8 under an Architecture TOP → 04.0901), and there were
+too few CARPT peers for subject-scoping to engage, so it fell back to the discipline-blind pool.
+
+This generalizes the doctrine (supersedes the narrow work-experience guard for this class): a peer
+consensus may **OVERRIDE** the course's own discipline **only when it is SUBJECT-SCOPED**
+(`cons.scoped` — drawn from same-discipline peers). A full-title fallback (`consensusFor`'s
+cross-discipline pool, used when <3 same-subject peers exist) may only **CORROBORATE** — if it
+agrees with the course's own crosswalk it confirms Ready; if it disagrees it's discarded, and the
+course keeps its own discipline's crosswalk CIP. `reviewRowOf` now starts from the own-TOP crosswalk
+baseline and lets only a trustworthy consensus refine it; `consensusSummaryEls` hides the field-
+consensus block unless it's scoped-or-agrees. Legit same-discipline corrections still fire (BIO 4
+Human Biology: 42/47 BIO peers → scoped → suggests 30.2701; a mis-coded Nursing course: many NURS
+peers → scoped → suggests the nursing CIP).
+
+On real American River data the CARPT department went 1 bogus suggested-change → 0; CARPT 224 →
+`46.0201 Carpentry`. Tests 172 → **174** (cross-discipline no-override + non-scoped-corroboration);
+the `RCONSENSUS` test fixture now carries subjects (real data always does), so the Nursing outlier
+stays a scoped override. Real-Chromium verified.

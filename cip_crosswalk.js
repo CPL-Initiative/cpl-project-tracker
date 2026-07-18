@@ -1040,23 +1040,35 @@
   // to the course's own TOP crosswalk. sugKind records the provenance (consensus | crosswalk).
   function reviewRowOf(c) {
     var m = computeRecommend(c), label = c[0] || "", ownTop = c[2] || "", subj = parseSubject(label);
-    var cp = consensusPick(m, label, ownTop, subj);   // consensus SCOPED to this course's discipline
+    var cp = consensusPick(m, label, ownTop, subj);
     // the naive "what your current TOP maps to" CIP — the from-own-TOP crosswalk winner. This is
     // the box the college would land on with no help; when peers point elsewhere we show BOTH.
     var crosswalk = m.recommended ? BYCODE[m.recommended]
       : (m.cands && m.cands.length ? m.cands[0].r
       : (m.res.ranked && m.res.ranked.length ? m.res.ranked[0].r : null));
-    var sug = null, status, sugKind = null, suggestChange = false;
-    if (cp) {
-      sug = cp.best.r; sugKind = "consensus";
-      // suggestChange = a confident peer field points at a DIFFERENT code than the from-TOP
-      // crosswalk winner → surface it as a two-box "peers suggest" prompt (calm, not alarmist).
-      suggestChange = !!(crosswalk && sug && crosswalk.code !== sug.code);
-      status = suggestChange ? "suggest" : "clear";
-    } else if (m.thin) { status = "manual"; sug = crosswalk; }
+    // BASELINE = the course's OWN discipline (its TOP crosswalk). We start here and only let a
+    // TRUSTWORTHY peer consensus refine it.
+    var sug, status, sugKind = null, suggestChange = false;
+    if (m.thin) { status = "manual"; sug = crosswalk; }
     else if (m.recommended) { status = "clear"; sug = BYCODE[m.recommended]; sugKind = "crosswalk"; }
     else if (m.hasCross && m.cands.length) { status = "review"; sug = m.cands[0].r; sugKind = "crosswalk"; }
     else { status = "manual"; sug = crosswalk; }
+    // A peer consensus may OVERRIDE the course's own discipline ONLY when it is SUBJECT-SCOPED
+    // (drawn from same-discipline peers). A cross-discipline title pool (consensusFor's full-title
+    // fallback, when too few same-subject peers exist) may only CORROBORATE — never override.
+    // Sam's CARPT 224 "Materials of Construction": 8/15 colleges file it under Architecture, but
+    // this is a Carpentry course (subject CARPT + TOP 0952.10 both agree) — the generic title
+    // pooled across construction disciplines must not push it out of Carpentry (→ keep 46.0201).
+    if (cp) {
+      var consAgrees = crosswalk && cp.code === crosswalk.code;
+      if (cp.cons.scoped || consAgrees) {
+        sug = cp.best.r; sugKind = "consensus";
+        suggestChange = !!(crosswalk && sug && crosswalk.code !== sug.code);
+        status = suggestChange ? "suggest" : "clear";
+      } else {
+        cp = null;   // cross-discipline pool that disagrees → discard, keep the course's discipline
+      }
+    }
     return { c: c, label: label, subj: subj, top: ownTop, topTitle: m.topTitle,
       sug: sug, sugKind: sugKind, status: status, suggestChange: suggestChange, crosswalk: crosswalk,
       nCand: m.cands.length, disagree: m.beyond.length > 0, cons: cp, m: m };
@@ -1369,6 +1381,13 @@
     if (isWorkExperience(label)) return null;   // cross-title consensus is discipline-blind noise here (see consensusPick)
     var cons = consensusFor(label, subj); if (!cons) return null;
     var modal = cons.modal, best = bestCipForTop(modal.top, m);
+    // Only surface "how peers code this" when it's SUBJECT-SCOPED (same-discipline peers), or when
+    // the full-title pool merely AGREES with the course's own crosswalk. A cross-discipline pool
+    // that disagrees is misleading here (CARPT 224 → "15 colleges, mostly Architecture") — hide it.
+    if (!cons.scoped) {
+      var cw = m.recommended || (m.cands && m.cands.length ? m.cands[0].r.code : null);
+      if (!(best && cw && best.r.code === cw)) return null;
+    }
     var own = null; cons.groups.forEach(function (g) { if (g.top === ownTop) own = g; });
     var scoped = cons.scoped && subj;   // consensus was narrowed to this course's discipline
     var els = [];
