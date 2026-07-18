@@ -1138,3 +1138,56 @@ driver that loads the *same* college/department is the tightest possible loop �
 number in the fix is the real rendered value on his data, so the before/after is concrete, not "should be
 fixed." Plus a 4-lens adversarial review of the diff (correctness · UX-honesty · WCAG · §7 doctrine) before
 merge. Side-lane discipline honored: `kb/cpl_todos.json` + the numbered handoff untouched.
+
+### 2026-07-18 (SkyCoco) — the program-coherence default + Cañada mojibake (#843)
+
+Live-testing the Review tab on Cerritos welding surfaced two things:
+
+1. **The "sus" recs → a program-coherence default (Sam's idea).** The Ironworker (**IWAP 40.xx**) courses
+   are coded under the broad **TOP 0956.00 "Manufacturing & Industrial Technology"**, whose *official CO
+   crosswalk* is a grab-bag with no ironworking CIP. On a "no clear winner" row the box surfaced a **weak**
+   lexical pick (Rigging → `15.0405` Robotics, conf **26** among 13 candidates) as if it were a
+   recommendation — a perfect §7 "TOP is unreliable" case in the wild. **Not our bug** (the crosswalk is
+   faithful); the fix is honest *presentation*. Sam: *"for no clear winner and there are a bunch of other
+   IWAP courses with the welding CIP, I'd default the rec to welding — still noting that it needs review."*
+   Implemented as `effectiveSug()` + `deptTop`: a Review row whose own pick is weak **and** uncorroborated
+   (its code is used by fewer than `REV_DOMINANT_MIN`=3 of its dept siblings) **defaults its box to the
+   department's dominant code** (`48.0511` Metal Fabricator, used by 13 IWAP courses) — **still Review**, with
+   an honest *"defaulted to … the code N of your IWAP courses use. Still needs review."* Display-only; never
+   changes a row's status (the corroborated Autobody rows are untouched). CSV: `program-default (N …)`.
+   *Adversarial-review catches (folded in before merge):* subject-scope the sibling count so the "★ All
+   departments" view doesn't over-count/mislabel; drop "likely right" (same-TOP siblings are correlated, not
+   independent evidence — §7); add an `aria-label` to the status cell.
+
+2. **Cañada College mojibake.** The manifest stored `CaÃ±ada College` (a UTF-8 `ñ` decoded as Latin-1
+   upstream). Repaired the committed name → `Cañada College` (+ slug + file rename), and hardened
+   `kb/_build_cip_fitcheck.py`'s `clean()` with a `_demojibake()` Latin-1→UTF-8 round-trip so a regen
+   self-heals. Method note: mojibake is repairable via `s.encode('latin-1').decode('utf-8')` gated on a
+   tell-tale-byte regex; leaves clean names + em-dashes untouched (unit-tested).
+
+### 2026-07-18 (SkyCoco) — inline multi-CIP add + apply-to-subject (#844)
+
+Sam co-designed (prototype → lock → port) a full multi-CIP capability. Prototype:
+https://claude.ai/code/artifact/114df6ab-184a-4b21-b0af-4ae62f241d09
+
+- **`+` beside the box** adds another CIP **inline** (tooltip); extras **stack under** the primary, each
+  removable (`×`); supports 3+.
+- **Anchor-OK (Sam point 1):** clicking `+` before the original is OK'd asks to confirm it *in the popup*
+  first ("OK — confirm 47.0603") — it becomes the anchor, changeable later without affecting added codes.
+- **Prompt** (Sam's words) → **Apply to other courses** → a checklist of **only the subject courses that
+  share this course's primary CIP** (Sam's scoping), pre-checked, Select-all/Clear, "has N extra" markers.
+- **Assigned vs Validated (Sam point 2) — the key model change.** `✓` now means *individually validated*
+  (accept a box / OK the anchor / select in the expand / Confirm-all), NOT merely "has a code." A course
+  that only received a **bulk-applied** code from a sibling has the code but **stays in Review (`?`)** so it
+  can be tuned individually, with an honest *"received N CIP codes applied from a sibling — review and
+  confirm it, or leave it for a later pass."* New store `cipx_revok_<college>` (validated set) is separate
+  from `cipx_rev_<college>` (assigned codes); the ✓ glyph, the "N confirmed" count, the Confirm-all filter,
+  and the CSV `Source` (`applied (not yet validated)`) all key off it. **Watch-out for the next session:**
+  every individual-confirm path must call `revSetValidated(label, true)`; the bulk-apply path must NOT — if
+  you add a new assignment action, wire its validation deliberately.
+
+Tests **190 → 207**. Verified in real Chromium on live Cerritos AB/IWAP (desktop + phone, light + dark, 0
+overflow / 0 console errors) throughout. Method that keeps paying off: **Sam's live screenshot + a
+headless-Chromium driver on the same college/department**, and (for the design-heavy multi-CIP) a
+**clickable prototype locked with Sam before porting**. Side-lane discipline honored across all three PRs:
+`kb/cpl_todos.json` + the numbered session handoff untouched.
