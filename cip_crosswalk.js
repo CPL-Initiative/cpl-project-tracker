@@ -71,6 +71,10 @@
   var GOFORWARD = { "CTE": 1, "Both": 1, "Non-CTE": 1, "Noncredit": 1 };
   var st = { q: "", cat: "all", fam: "", xfer: false, showRetired: false, limit: PAGE, open: {}, college: null, mode: "review" };
   var FIT_COLLEGES = null, FIT_CACHE = {}, FIT_LOADING = {};
+  // Precomputed engine-baseline status counts (per college + per subject + system-wide) — how the tool
+  // classifies each course (Ready/Review/Suggested/Manual), NOT human progress. Built by
+  // kb/build_cip_status_counts.js; fetched once so the tab can show progress boxes without a live classify.
+  var STATUS_COUNTS = null, STATUS_LOADING = null;
   var CONSENSUS = null, CONSENSUS_COLLEGES = null, CONSENSUS_SUBJECTS = null, CONSENSUS_LOADING = null;
   // confident-consensus thresholds (see consensusPick): >= MIN_N colleges AND >= MAJORITY of them.
   var CONSENSUS_MIN_N = 3, CONSENSUS_MAJORITY = 0.5;
@@ -375,6 +379,17 @@
       if (m && m.length) { FIT_COLLEGES = m; if (collegeSelEl) populateCollegeSel(); }
     }).catch(function () {});
   }
+  // Baseline status counts (Phase A) — deterministic engine classification, precomputed. Lazy-fetched once;
+  // on arrival, re-populate the college dropdown (adds each college's review count) + repaint the overview.
+  function loadStatusCounts() {
+    if (STATUS_COUNTS || STATUS_LOADING || typeof fetch !== "function") return STATUS_LOADING;
+    STATUS_LOADING = fetch("cip_status_counts.json").then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (d && d.colleges) { STATUS_COUNTS = d; if (collegeSelEl && FIT_COLLEGES) populateCollegeSel(); if (st.mode === "review") { renderSysBaseline(revSysHost); repaintReviewOverview(); } }
+      return STATUS_COUNTS;
+    }).catch(function () { return null; });
+    return STATUS_LOADING;
+  }
+  function collegeStatus(slug) { return (STATUS_COUNTS && STATUS_COUNTS.colleges && STATUS_COUNTS.colleges[slug]) || null; }
 
   // ── Cross-college TOP consensus (the corroborating "how do peers code this course?"
   // signal). Lazy-fetched once; see kb/_build_course_top_consensus.py. ──
@@ -525,9 +540,16 @@
   }
   function populateCollegeSel() {
     if (!collegeSelEl || !FIT_COLLEGES) return;
+    var keep = collegeSelEl.value || st.college;   // keep the pick across re-populate + rebuildShell
     clear(collegeSelEl);
     collegeSelEl.appendChild(el("option", { value: "" }, ["Choose your college…"]));
-    FIT_COLLEGES.forEach(function (c) { collegeSelEl.appendChild(el("option", { value: c.slug }, [c.name])); });
+    FIT_COLLEGES.forEach(function (c) {
+      // in review mode, append the baseline "N to review" once counts are loaded (Sam: dropdown counts)
+      var s = (st.mode === "review") ? collegeStatus(c.slug) : null;
+      var suffix = s ? "  ·  " + s.review.toLocaleString() + " to review" : "";
+      collegeSelEl.appendChild(el("option", { value: c.slug }, [c.name + suffix]));
+    });
+    if (keep) collegeSelEl.value = keep;
     if (st.college) collegeSelEl.value = st.college;
   }
 
@@ -1005,7 +1027,7 @@
   // Framing everywhere: a SUGGESTION you confirm; COCI is the record.
   // ═══════════════════════════════════════════════════════════════════════════
   var rev = { dept: null, filter: "all", q: "", byDept: {}, courses: null };
-  var revListHost, revSummaryHost, revDeptSel, revProgHost, revOpen = {}, revRailEl;
+  var revListHost, revSummaryHost, revDeptSel, revProgHost, revOpen = {}, revRailEl, revOverviewHost, revSysHost;
   // per-row inline-UI state for the multi-CIP flow (add-picker → prompt → apply-to-subject). Like
   // revOpen, it survives the list re-render so an in-progress add/apply stays put. Reset per department.
   var revInline = {};
@@ -1127,9 +1149,41 @@
     manual: { g: "◻", label: "Manual", cls: "muted" },
   };
 
+  // Statewide baseline (Sam #2) — the "size of the prize", once the precomputed counts arrive.
+  function renderSysBaseline(host) {
+    if (!host) return;
+    clear(host);
+    var sw = STATUS_COUNTS && STATUS_COUNTS.systemwide;
+    if (!sw) return;
+    host.appendChild(el("div", { class: "cipx-rev-sysbaseline" }, [
+      el("b", {}, [sw.n.toLocaleString()]), " courses across " + sw.colleges + " colleges · ",
+      el("b", {}, [sw.review.toLocaleString()]), " flagged for review · " + sw.ready.toLocaleString() + " a confident match.",
+      el("span", { class: "cipx-rev-sysnote" }, [" Statewide baseline — the tool's classifications (how much work exists), not confirmations."]),
+    ]));
+  }
+  // College-overview status boxes (Sam #1) — shown when a college is picked but no department yet.
+  function repaintReviewOverview() {
+    if (!revOverviewHost) return;
+    clear(revOverviewHost);
+    if (!st.college || rev.dept) return;
+    var s = collegeStatus(st.college), col = collegeBySlug(st.college);
+    if (!s) { revOverviewHost.appendChild(el("div", { class: "cipx-fit-nudge" }, ["Pick a department above to start — its courses load instantly."])); return; }
+    revOverviewHost.appendChild(el("div", { class: "cipx-rev-ovlead" }, [(col ? col.name : "This college") + " — where its CIP coding stands (tool baseline):"]));
+    var tiles = el("div", { class: "cipx-rev-tiles cipx-rev-ovtiles" }, []);
+    [["All", s.n, ""], ["⇄ Suggested", s.suggest, "suggest"], ["? Review", s.review, "warn"], ["✓ Ready", s.ready, "ok"], ["◻ Manual", s.manual, "muted"]].forEach(function (t) {
+      if (t[0] === "⇄ Suggested" && !t[1]) return;
+      tiles.appendChild(el("div", { class: "cipx-rev-tile cipx-rev-tile-static" + (t[2] ? " cipx-rev-tile-" + t[2] : "") },
+        [el("span", { class: "cipx-rev-tilen" }, [t[1].toLocaleString()]), el("span", { class: "cipx-rev-tilel" }, [t[0]])]));
+    });
+    revOverviewHost.appendChild(tiles);
+    revOverviewHost.appendChild(el("div", { class: "cipx-rev-ovnote" }, ["Pick a department above to start reviewing. These are the tool's classifications — your validated progress fills in as you confirm."]));
+  }
+
   function reviewView() {
+    loadStatusCounts();
     var v = el("div", { class: "cipx-rev" }, []);
     v.appendChild(el("div", { class: "cipx-rev-banner" }, ["Each suggestion comes from the course's catalog description, the state TOP→CIP crosswalk, and how peer colleges code the same course. It's a ", el("b", {}, ["starting point you confirm"]), " — your college enters the final code in COCI. Nothing here is saved outside your browser."]));
+    revSysHost = el("div", { class: "cipx-rev-syshost" }, []); v.appendChild(revSysHost); renderSysBaseline(revSysHost);
     if (!st.college) {
       v.appendChild(el("div", { class: "cipx-fit-nudge" }, ["First, pick your college at the top of the tab — then choose a department to review."]));
       return v;
@@ -1142,12 +1196,15 @@
     if (collegeSelEl && collegeSelEl.parentNode) {
       collegeSelEl.parentNode.appendChild(el("span", { class: "cipx-rev-deptinline" }, [el("span", { class: "cipx-rev-deptl" }, ["Department"]), revDeptSel]));
     }
+    revOverviewHost = el("div", { class: "cipx-rev-overviewhost" }, []);
+    v.appendChild(revOverviewHost);
     revProgHost = el("div", { class: "cipx-rev-prog", "aria-live": "polite" }, []);
     v.appendChild(revProgHost);
     revSummaryHost = el("div", { class: "cipx-rev-summary" }, []);
     v.appendChild(revSummaryHost);
     revListHost = el("div", { class: "cipx-rev-list" }, []);
     v.appendChild(revListHost);
+    repaintReviewOverview();
     // populate departments once courses are loaded
     loadCollege(st.college).then(function (courses) {
       rev.courses = courses || [];
@@ -1155,7 +1212,12 @@
       if (!rev.courses.length) { revDeptSel.appendChild(el("option", { value: "" }, ["No courses for this college"])); return; }
       revDeptSel.appendChild(el("option", { value: "" }, ["Choose a department…"]));
       var depts = departments(rev.courses);
-      depts.forEach(function (d) { revDeptSel.appendChild(el("option", { value: d.subj }, [d.subj + " · " + d.n + " course" + (d.n === 1 ? "" : "s")])); });
+      var cs = collegeStatus(st.college);
+      depts.forEach(function (d) {
+        var ds = cs && cs.subjects && cs.subjects[d.subj];   // baseline "N review" per subject (Sam #3)
+        var tail = ds && ds.review ? " · " + ds.review.toLocaleString() + " review" : "";
+        revDeptSel.appendChild(el("option", { value: d.subj }, [d.subj + " · " + d.n + " course" + (d.n === 1 ? "" : "s") + tail]));
+      });
       revDeptSel.appendChild(el("option", { value: "__all__" }, ["★ All departments (" + rev.courses.length.toLocaleString() + " courses — slower)"]));
       if (rev.dept) { revDeptSel.value = rev.dept; loadDept(); }
     }).catch(function () { clear(revDeptSel); revDeptSel.appendChild(el("option", { value: "" }, ["Couldn't load courses — try again"])); });
@@ -1168,6 +1230,7 @@
   }
 
   function loadDept() {
+    repaintReviewOverview();   // hide the college-overview once a department is chosen; show it when cleared
     if (!rev.dept) { clear(revSummaryHost); clear(revListHost); clear(revProgHost); return; }
     revOpen = {}; revInline = {};   // fresh expansion + inline-UI state per department
     var dept = { subj: rev.dept, courses: deptCourses() };
@@ -2133,6 +2196,16 @@
       ".cipx-rev-tile-warn .cipx-rev-tilen{color:var(--cipx-warn-fg);}.cipx-rev-tile-ok .cipx-rev-tilen{color:var(--cipx-ok-fg);}.cipx-rev-tile-suggest .cipx-rev-tilen{color:var(--cipx-accent);}",
       ".cipx-rev-progline{font-size:.8rem;color:var(--cipx-muted);font-weight:600;margin:2px 2px 8px;}",
       ".cipx-rev-peercount{color:var(--cipx-ok-fg);cursor:help;}",
+      // Phase-A baseline: statewide summary + the college-overview status boxes (before a department is picked)
+      ".cipx-rev-syshost:empty{display:none;}",
+      ".cipx-rev-sysbaseline{font-size:.84rem;color:var(--cipx-text-soft);background:var(--cipx-surface);border:1px solid var(--cipx-border);border-radius:10px;padding:9px 13px;margin:0 0 12px;line-height:1.5;}",
+      ".cipx-rev-sysbaseline b{color:var(--cipx-text);font-variant-numeric:tabular-nums;}",
+      ".cipx-rev-sysnote{color:var(--cipx-muted);}",
+      ".cipx-rev-overviewhost:empty{display:none;}",
+      ".cipx-rev-ovlead{font-size:.9rem;font-weight:700;color:var(--cipx-text);margin:6px 2px 8px;}",
+      ".cipx-rev-ovtiles{margin:0 0 8px;}",
+      ".cipx-rev-tile-static{cursor:default;}.cipx-rev-tile-static:hover{border-color:var(--cipx-border-strong);}",
+      ".cipx-rev-ovnote{font-size:.8rem;color:var(--cipx-muted);line-height:1.5;margin:2px 2px 4px;max-width:60rem;}",
       // reassurance under the bulk-confirm buttons (Sam's point 4): the "Confirm all" button is not irreversible.
       ".cipx-rev-reassure{font-size:.78rem;color:var(--cipx-muted);line-height:1.45;margin:0 2px 10px;max-width:62rem;}",
       // count↔list context line above the rows (Sam's point 2c)
@@ -2341,6 +2414,7 @@
     _parseSubject: parseSubject, _reviewRows: function (courses) { return (courses || []).map(reviewRowOf); },
     _reviewRowOf: reviewRowOf,
     _setConsensus: function (d) { if (d && d.titles) { CONSENSUS = d.titles; CONSENSUS_COLLEGES = d.colleges || []; CONSENSUS_SUBJECTS = d.subjects || []; } },
+    _setStatusCounts: function (d) { STATUS_COUNTS = d; },
     _consensus: consensusFor, _consensusPick: consensusPick, _consensusKey: consensusKey, _subjMatch: subjMatch,
     _bestCipForTop: bestCipForTop, _college: function () { return st.college; },
   };

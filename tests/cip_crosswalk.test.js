@@ -672,6 +672,30 @@ function fresh(withCollege) {
   check("multi-CIP: an applied target shows the 'received … from a sibling' reason", /applied from a sibling/.test(acct(201).querySelector(".cipx-rev-whyline-applied") ? acct(201).querySelector(".cipx-rev-whyline-applied").textContent : ""));
   check("multi-CIP: the source row IS validated (✓)", /✓/.test(acct(200).querySelector(".cipx-rev-stat").textContent));
 
+  // ── Phase A: precomputed baseline status counts — statewide line, college-overview boxes, dropdown counts ──
+  const STATUSFX = {
+    systemwide: { n: 152340, ready: 91000, review: 58000, suggest: 2100, manual: 1240, colleges: 116, subjects: 3400 },
+    colleges: { test_college: { name: "Test College", n: 8, ready: 3, review: 4, suggest: 1, manual: 0,
+      subjects: { BUS: { n: 1, ready: 1, review: 0, suggest: 0, manual: 0 }, ACCT: { n: 4, ready: 0, review: 4, suggest: 0, manual: 0 },
+        NURS: { n: 1, ready: 0, review: 0, suggest: 1, manual: 0 }, MYST: { n: 1, ready: 0, review: 0, suggest: 0, manual: 1 } } } },
+  };
+  const domB = freshR("review");
+  domB.window.CPL_CIP_CROSSWALK._setConsensus(RCONSENSUS);
+  domB.window.CPL_CIP_CROSSWALK._setStatusCounts(STATUSFX);
+  const bdoc = domB.window.document;
+  // re-render now that the baseline counts are present (freshR selected the college before they were set)
+  (function () { var cs = bdoc.querySelector(".cipx-college-sel"); cs.value = "test_college"; cs.dispatchEvent(new domB.window.Event("change")); })();
+  await tick(); await tick();
+  check("baseline: statewide summary line renders with the systemwide totals (Sam #2)", (function () { var s = bdoc.querySelector(".cipx-rev-sysbaseline"); return s && /152,340/.test(s.textContent) && /58,000/.test(s.textContent) && /116 colleges/.test(s.textContent); })());
+  check("baseline: a college-open overview shows the college's status boxes before a department is picked (Sam #1)", !!bdoc.querySelector(".cipx-rev-ovtiles .cipx-rev-tile"));
+  check("baseline: the overview '? Review' box shows the precomputed college review count", (function () { var t = Array.prototype.filter.call(bdoc.querySelectorAll(".cipx-rev-ovtiles .cipx-rev-tile"), (x) => /Review/.test(x.textContent))[0]; return t && /4/.test(t.querySelector(".cipx-rev-tilen").textContent); })());
+  check("baseline: the college dropdown option carries its 'N to review' count (Sam #3)", (function () { var o = Array.prototype.filter.call(bdoc.querySelectorAll(".cipx-college-sel option"), (x) => /Test College/.test(x.textContent))[0]; return o && /to review/.test(o.textContent); })());
+  check("baseline: the department dropdown option carries its per-subject review count (Sam #3)", (function () { var o = Array.prototype.filter.call(bdoc.querySelectorAll(".cipx-rev-deptsel option"), (x) => /^ACCT /.test(x.textContent))[0]; return o && /4 review/.test(o.textContent); })());
+  // overview hides once a department is selected
+  (function () { var d = bdoc.querySelector(".cipx-rev-deptsel"); d.value = "ACCT"; d.dispatchEvent(new domB.window.Event("change")); })();
+  await tick(); await tick();
+  check("baseline: the college-overview clears once a department is chosen", !bdoc.querySelector(".cipx-rev-ovtiles"));
+
   // ── Part C — failure guards ──
   const dom2 = makeDom(); dom2.window.eval(src);
   let missThrew = false;
