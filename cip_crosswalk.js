@@ -69,7 +69,7 @@
   var D = null, ROWS = [], BYCODE = {}, FAMS = {}, IDF = {}, IDF_N = 1, POSTINGS = {};
   var TOPCIP = {}, BOILER = {}, CIP_TOPS = {};
   var GOFORWARD = { "CTE": 1, "Both": 1, "Non-CTE": 1, "Noncredit": 1 };
-  var st = { q: "", cat: "all", fam: "", xfer: false, showRetired: false, limit: PAGE, open: {}, college: null, mode: "browse" };
+  var st = { q: "", cat: "all", fam: "", xfer: false, showRetired: false, limit: PAGE, open: {}, college: null, mode: "review" };
   var FIT_COLLEGES = null, FIT_CACHE = {}, FIT_LOADING = {};
   var CONSENSUS = null, CONSENSUS_COLLEGES = null, CONSENSUS_SUBJECTS = null, CONSENSUS_LOADING = null;
   // confident-consensus thresholds (see consensusPick): >= MIN_N colleges AND >= MAJORITY of them.
@@ -101,7 +101,9 @@
     // hard refresh starts with no college picked. (Per-college review decisions still persist
     // under cipx_rev_<college> — that's the user's work product, not the selection.)
     st.college = null;
-    try { var _m = localStorage.getItem(MODE_KEY); st.mode = (_m === "recommend" || _m === "review") ? _m : "browse"; } catch (e) { st.mode = "browse"; }
+    // Default mode = Review (Sam, 2026-07-18: the primary workflow). A returning user's explicit
+    // choice (they clicked a tab, which writes MODE_KEY) is honored; anything else lands on Review.
+    try { var _m = localStorage.getItem(MODE_KEY); st.mode = (_m === "browse" || _m === "recommend") ? _m : "review"; } catch (e) { st.mode = "review"; }
   }
 
   // ── theme ────────────────────────────────────────────────────────────────────
@@ -1094,13 +1096,16 @@
     chunk();
   }
 
-  // Status glyphs kept calm + direct (Sam: the old ⚠⚑ read as alarming/busy). "suggest" = a peer
-  // field points at a different code than your TOP's crosswalk winner — a quiet "?" that says
-  // "worth a look," with the actual recommendation shown right in the row.
+  // Status glyphs kept calm + direct (Sam: the old ⚠⚑ read as alarming/busy).
+  //  • "review"  = the crosswalk has candidates but none confidently wins → a visible amber "?"
+  //    that reads "your call" at a glance (Sam, 2026-07-18: the old muted "·" was invisible — "should
+  //    be a question mark for needing review"). Paired with an inline reason on the row (why it's a ?).
+  //  • "suggest" = a peer field points at a DIFFERENT code than your TOP's crosswalk winner → a "⇄"
+  //    (consider switching), kept DISTINCT from the review "?"; the two-box row shows the actual codes.
   var REV_STATUS = {
     clear: { g: "✓", label: "Ready", cls: "ok" },
-    suggest: { g: "?", label: "Suggested", cls: "suggest" },
-    review: { g: "·", label: "Review", cls: "warn" },
+    suggest: { g: "⇄", label: "Suggested", cls: "suggest" },
+    review: { g: "?", label: "Review", cls: "warn" },
     manual: { g: "◻", label: "Manual", cls: "muted" },
   };
 
@@ -1167,14 +1172,23 @@
   function renderReview(rows) {
     var dec = revDecisions();
     var counts = { clear: 0, suggest: 0, review: 0, manual: 0, confirmed: 0, peer: 0 };
-    rows.forEach(function (r) { counts[r.status]++; if (revCips(dec, r.label).length) counts.confirmed++; if (r.sugKind === "consensus") counts.peer++; });
+    // dept-wide tally of how many courses land on each suggested code — powers the Review row's
+    // "why" line ("same code as N other AB courses"), which makes the Ready/Review split legible
+    // (Sam's point 2: on Autobody, 37 Ready + 8 Review all showed 47.0603 with no visible reason).
+    var codeCount = {};
+    rows.forEach(function (r) {
+      counts[r.status]++;
+      if (revCips(dec, r.label).length) counts.confirmed++;
+      if (r.sugKind === "consensus") counts.peer++;
+      if (r.sug) codeCount[r.sug.code] = (codeCount[r.sug.code] || 0) + 1;
+    });
     // summary tiles double as filters — calm glyphs, Suggested surfaced right after All. The bulk
     // Confirm/Accept buttons ride on the SAME row as the tiles (Sam: "stack Confirm all + Accept all
     // on the same row as the number boxes — simple, simple, simple").
     clear(revSummaryHost);
     var tilesRow = el("div", { class: "cipx-rev-tilesrow" }, []);
     var tiles = el("div", { class: "cipx-rev-tiles" }, []);
-    [["all", "All", rows.length, ""], ["suggest", "? Suggested", counts.suggest, "suggest"], ["clear", "✓ Ready", counts.clear, "ok"], ["review", "· Review", counts.review, "warn"], ["manual", "◻ Manual", counts.manual, "muted"]].forEach(function (t) {
+    [["all", "All", rows.length, ""], ["suggest", "⇄ Suggested", counts.suggest, "suggest"], ["review", "? Review", counts.review, "warn"], ["clear", "✓ Ready", counts.clear, "ok"], ["manual", "◻ Manual", counts.manual, "muted"]].forEach(function (t) {
       if (t[0] === "suggest" && !counts.suggest) return;   // hide the Suggested tile when there are none
       var on = rev.filter === t[0];
       var tile = el("button", { class: "cipx-rev-tile" + (on ? " on" : "") + (t[3] ? " cipx-rev-tile-" + t[3] : ""), type: "button", "aria-pressed": on ? "true" : "false" },
@@ -1187,7 +1201,7 @@
     var deptTail = rev.dept !== "__all__" ? " in " + rev.dept : "";
     var unconfirmedClear = rows.filter(function (r) { return r.status === "clear" && r.sug && !revCips(dec, r.label).length; });
     if (unconfirmedClear.length) {
-      var bulk = el("button", { class: "cipx-rev-bulk", type: "button" }, ["✓ Confirm all " + unconfirmedClear.length + " ready match" + (unconfirmedClear.length === 1 ? "" : "es") + deptTail]);
+      var bulk = el("button", { class: "cipx-rev-bulk", type: "button", title: "Fills in " + unconfirmedClear.length + " starting-point code" + (unconfirmedClear.length === 1 ? "" : "s") + " here in your browser. It's never final — every code stays editable or clearable, and nothing reaches COCI until your college enters it there." }, ["✓ Confirm all " + unconfirmedClear.length + " ready match" + (unconfirmedClear.length === 1 ? "" : "es") + deptTail]);
       bulk.onclick = function () { unconfirmedClear.forEach(function (r) { revSetCips(r.label, [r.sug.code]); }); renderReview(rows); };
       actions.appendChild(bulk);
     }
@@ -1202,6 +1216,13 @@
     var progline = el("div", { class: "cipx-rev-progline" }, [counts.confirmed.toLocaleString() + " of " + rows.length.toLocaleString() + " confirmed",
       counts.peer ? el("span", { class: "cipx-rev-peercount", title: "Suggestions corroborated by a clear majority of peer colleges teaching the same course in the same discipline — the strongest signal." }, ["  ·  " + counts.peer.toLocaleString() + " peer-corroborated"]) : null]);
     revSummaryHost.appendChild(progline);
+    // Reassurance under the bulk buttons (Sam's point 4 — "Confirm all N" reads as scary/irreversible;
+    // it isn't). Shown exactly when a bulk-confirm/accept button is present.
+    if (unconfirmedClear.length || unconfirmedSuggest.length) {
+      revSummaryHost.appendChild(el("div", { class: "cipx-rev-reassure" }, [
+        "Confirming just fills in your starting point here in the browser — it's never final, every code stays editable, and nothing reaches COCI until your college enters it there.",
+      ]));
+    }
     var shown = rows.filter(function (r) { return rev.filter === "all" || r.status === rev.filter; });
     // Expand-all + CSV live in the top-right rail (under Theme), not a full-width row of their own.
     if (revRailEl) {
@@ -1224,7 +1245,20 @@
       return a.label < b.label ? -1 : 1;
     });
     if (!shown.length) { revListHost.appendChild(el("div", { class: "cipx-empty" }, ["No courses in this view."])); return; }
-    shown.slice(0, 300).forEach(function (r) { revListHost.appendChild(reviewRow(r, dec, rows)); });
+    // count↔list legibility (Sam's point 2c: "8 Review among 45 shown" confused him). Say exactly what's
+    // on screen vs the whole department, and — when a tile filter is active — a one-click way back to All.
+    var deptWord = rev.dept === "__all__" ? "course" : rev.dept + " course";
+    var showEl;
+    if (rev.filter === "all") {
+      showEl = el("div", { class: "cipx-rev-showing" }, ["Showing all " + shown.length.toLocaleString() + " " + deptWord + (shown.length === 1 ? "" : "s") + " — the ones needing a look are first."]);
+    } else {
+      showEl = el("div", { class: "cipx-rev-showing" }, ["Showing the " + shown.length.toLocaleString() + " " + REV_STATUS[rev.filter].label + " " + deptWord + (shown.length === 1 ? "" : "s") + " of " + rows.length.toLocaleString() + " total."]);
+      var back = el("button", { class: "cipx-rev-showall", type: "button" }, ["Show all " + rows.length.toLocaleString()]);
+      back.onclick = function () { rev.filter = "all"; renderReview(rows); };
+      showEl.appendChild(back);
+    }
+    revListHost.appendChild(showEl);
+    shown.slice(0, 300).forEach(function (r) { revListHost.appendChild(reviewRow(r, dec, rows, codeCount)); });
     if (shown.length > 300) revListHost.appendChild(el("div", { class: "cipx-rev-more" }, ["Showing 300 of " + shown.length.toLocaleString() + " — narrow by department or filter."]));
   }
 
@@ -1289,6 +1323,22 @@
       ? el("span", { class: "cipx-rev-fromtop", title: "Current TOP " + r.top + (r.topTitle ? " · " + r.topTitle : "") }, ["TOP ", el("span", { class: "cipx-code" }, [r.top])])
       : el("span", { class: "cipx-rev-fromtop cipx-rev-fromtop-none", title: "This course has no TOP code" }, ["no TOP"]);
   }
+  // The inline reason a row is "?" Review (or ◻ Manual) — Sam's point 2: make the Ready/Review split
+  // legible so identical-looking rows (all AB → 47.0603) don't read as arbitrary. Ready rows stay clean
+  // one-liners; only the attention rows earn a reason line. `codeCount` = dept-wide tally of sug codes.
+  function reviewWhy(r, codeCount) {
+    if (r.status === "review") {
+      var peers = (r.sug ? (codeCount[r.sug.code] || 0) : 0) - 1;   // other dept courses landing on the same code
+      if (r.sug && peers >= 2) {
+        return ["Same code as ", el("b", {}, [peers.toLocaleString()]), " other " + r.subj + " course" + (peers === 1 ? "" : "s") + " here — likely right, but this course's description doesn't confirm it on its own. Open to confirm or change."];
+      }
+      return ["No single clear winner from this course's description — open to pick from the crosswalk options or search."];
+    }
+    if (r.status === "manual") {
+      return ["Too little catalog description to suggest a code — open to search all codes."];
+    }
+    return null;
+  }
   // "N of M [BIO] colleges" — the peer-agreement tag, subject-scoped label when applicable.
   function peerTag(r) {
     var c = r.cons; return c.modal.n + " of " + c.cons.n + (c.cons.scoped ? " " + r.subj + " colleges" : " colleges");
@@ -1298,7 +1348,7 @@
     return "Among peer colleges teaching “" + c.cons.key + "”" + (c.cons.scoped ? " as a " + r.subj + " course" : "") + ", most use TOP " + c.modal.top + (c.modal.topTitle ? " · " + c.modal.topTitle : "") + ", which the crosswalk maps here.\n\n" + differHover(c.cons);
   }
 
-  function reviewRow(r, dec, allRows) {
+  function reviewRow(r, dec, allRows, codeCount) {
     var cips = revCips(dec, r.label);
     var confirmed = cips.length > 0;
     var showCode = cips.length ? cips[0] : (r.sug ? r.sug.code : null);
@@ -1362,6 +1412,10 @@
         [confirmed ? "✓" : stat.g, peerCorr ? el("span", { class: "cipx-rev-statdot", "aria-hidden": "true" }, ["·"]) : null]),
     ]);
     var card = el("div", { class: "cipx-rev-item" + (confirmed ? " cipx-rev-conf" : "") + (twoBox ? " cipx-rev-item-suggest" : "") }, [head]);
+    // inline "why this is a ?" reason (review/manual only — Ready rows stay clean one-liners). Sits
+    // between the head and the (lazy) expand body so the reason is visible without opening the row.
+    var whyKids = confirmed ? null : reviewWhy(r, codeCount || {});
+    if (whyKids) card.appendChild(el("div", { class: "cipx-rev-whyline cipx-rev-whyline-" + r.status }, whyKids));
     var body = null;
     function paint() {
       var open = !!revOpen[r.label];
@@ -1550,7 +1604,8 @@
   };
   function modeBar() {
     var bar = el("div", { class: "cipx-modebar", role: "tablist", "aria-label": "What do you want to do" }, []);
-    [["browse", "Browse codes"], ["recommend", "Find my course’s code"], ["review", "Review my catalog"]].forEach(function (m) {
+    // Review leads — it's the primary workflow now (Sam, 2026-07-18: "make Review the first tab + default").
+    [["review", "Review my catalog"], ["browse", "Browse codes"], ["recommend", "Find my course’s code"]].forEach(function (m) {
       var on = st.mode === m[0];
       var b = el("button", { class: "cipx-modetab" + (on ? " on" : ""), type: "button", role: "tab", "aria-selected": on ? "true" : "false" }, [svgIcon(MODE_ICON[m[0]]), el("span", {}, [m[1]])]);
       b.onclick = function () {
@@ -1860,9 +1915,18 @@
       ".cipx-rev-tile:hover{border-color:var(--cipx-accent);}.cipx-rev-tile[aria-pressed=\"true\"]{border-color:var(--cipx-accent);box-shadow:0 0 0 1px var(--cipx-accent);}",
       ".cipx-rev-tilen{font-size:1.15rem;font-weight:800;color:var(--cipx-text);font-variant-numeric:tabular-nums;}",
       ".cipx-rev-tilel{font-size:.72rem;font-weight:600;color:var(--cipx-muted);text-transform:uppercase;letter-spacing:.03em;white-space:nowrap;}",
-      ".cipx-rev-tile-warn .cipx-rev-tilen{color:var(--cipx-muted);}.cipx-rev-tile-ok .cipx-rev-tilen{color:var(--cipx-ok-fg);}.cipx-rev-tile-suggest .cipx-rev-tilen{color:var(--cipx-accent);}",
+      // Review = amber/warn (visible), not muted — Sam: the old muted count was invisible.
+      ".cipx-rev-tile-warn .cipx-rev-tilen{color:var(--cipx-warn-fg);}.cipx-rev-tile-ok .cipx-rev-tilen{color:var(--cipx-ok-fg);}.cipx-rev-tile-suggest .cipx-rev-tilen{color:var(--cipx-accent);}",
       ".cipx-rev-progline{font-size:.8rem;color:var(--cipx-muted);font-weight:600;margin:2px 2px 8px;}",
       ".cipx-rev-peercount{color:var(--cipx-ok-fg);cursor:help;}",
+      // reassurance under the bulk-confirm buttons (Sam's point 4): the "Confirm all" button is not irreversible.
+      ".cipx-rev-reassure{font-size:.78rem;color:var(--cipx-muted);line-height:1.45;margin:0 2px 10px;max-width:62rem;}",
+      // count↔list context line above the rows (Sam's point 2c)
+      ".cipx-rev-showing{font-size:.8rem;color:var(--cipx-muted);font-weight:600;padding:9px 10px 7px;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;}",
+      ".cipx-rev-showall{font-family:inherit;font-size:.78rem;font-weight:700;color:var(--cipx-link);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;}",
+      // inline reason on Review/Manual rows (Sam's point 2): why an identical-looking row needs a look.
+      ".cipx-rev-whyline{font-size:.75rem;line-height:1.4;color:var(--cipx-muted);padding:0 10px 10px 38px;margin-top:-3px;}",
+      ".cipx-rev-whyline-review{color:var(--cipx-warn-fg);}.cipx-rev-whyline b{font-weight:800;}",
       ".cipx-rev-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 0 auto;}",
       ".cipx-rev-bulk{font-family:inherit;font-size:.82rem;font-weight:700;color:#fff;background:var(--cipx-ok-stripe);border:0;border-radius:8px;padding:8px 14px;cursor:pointer;}.cipx.cipx-theme-dark .cipx-rev-bulk{color:#0e1a2b;}.cipx-rev-bulk:hover{filter:brightness(1.06);}",
       // accept-all-suggested is emphasized but distinct from the green ready-confirm (it changes codes)
@@ -1923,7 +1987,7 @@
       ".cipx-rev-stat{font-size:.9rem;font-weight:800;text-align:right;white-space:nowrap;}",
       // a faint accent dot beside the ✓ on Ready rows that peers corroborate — "hover for the count"
       ".cipx-rev-stat-peer{cursor:help;}.cipx-rev-statdot{color:var(--cipx-accent);font-weight:900;margin-left:2px;}",
-      ".cipx-rev-stat-ok{color:var(--cipx-ok-fg);}.cipx-rev-stat-warn{color:var(--cipx-muted);}.cipx-rev-stat-muted{color:var(--cipx-muted);}",
+      ".cipx-rev-stat-ok{color:var(--cipx-ok-fg);}.cipx-rev-stat-warn{color:var(--cipx-warn-fg);}.cipx-rev-stat-muted{color:var(--cipx-muted);}",
       // "suggest" status = a calm, direct question mark (Sam's point 3 — not the old busy ⚠⚑)
       ".cipx-rev-stat-suggest{color:var(--cipx-accent);}",
       ".cipx-rev-item-suggest{border-left:3px solid var(--cipx-accent);}",
@@ -1981,6 +2045,7 @@
         ".cipx-rev-deptinline{flex:1 1 100%;}.cipx-rev-deptsel{max-width:100%;flex:1 1 auto;}.cipx-rev-tiles{gap:6px;}.cipx-rev-tile{padding:6px 10px;min-width:60px;}" +
         ".cipx-rev-row{grid-template-columns:14px 1fr auto;gap:6px 8px;}.cipx-rev-stat{grid-column:3;grid-row:1;}.cipx-rev-tocipwrap{grid-column:1/-1;grid-row:2;margin-top:4px;}.cipx-rev-tocip{grid-template-columns:auto auto minmax(0,1fr);}" +
         ".cipx-rev-cand{grid-template-columns:64px 1fr auto;}.cipx-rev-candrel{grid-column:1/-1;margin-top:3px;}.cipx-rev-csv{margin-left:0;}.cipx-rev-detail{padding-left:12px;}.cipx-rev-chgpanel{min-width:220px;max-width:80vw;}" +
+        ".cipx-rev-whyline{padding-left:22px;}" +
       "}",
     ].join("");
     var stEl = el("style", { id: CSS_ID });
@@ -2011,7 +2076,7 @@
     _setData: function (d) { ingest(d); },
     _setColleges: function (m) { FIT_COLLEGES = m; },
     _setCourses: function (slug, arr) { FIT_CACHE[slug] = arr; },
-    _setMode: function (mode) { st.mode = (mode === "recommend" || mode === "review") ? mode : "browse"; },
+    _setMode: function (mode) { st.mode = (mode === "browse" || mode === "recommend") ? mode : "review"; },
     _passes: passes, _filtered: filtered, _score: scoreAgainst, _courseScore: scoreTokensVs, _courseToks: courseToks,
     _recommend: computeRecommend, _bestMatches: bestMatchCourses,
     _parseSubject: parseSubject, _reviewRows: function (courses) { return (courses || []).map(reviewRowOf); },
