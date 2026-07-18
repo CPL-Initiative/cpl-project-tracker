@@ -1759,12 +1759,12 @@
     "active_colleges": 102,
     "leading_colleges": 15,
     "star_colleges": 55,
-    "credit_recs": 12773,
-    "common_titles": 2102,
-    "ccc_common_titles": 133,
-    "map_exhibits": 2420,
-    "ccc_exhibits": 133,
-    "ccc_collaborative": 60,
-    "articulating_colleges": 102
+    "credit_recs": 0,
+    "common_titles": 0,
+    "ccc_common_titles": 0,
+    "map_exhibits": 0,
+    "ccc_exhibits": 0,
+    "ccc_collaborative": 0,
+    "articulating_colleges": 0
   }
 ]
