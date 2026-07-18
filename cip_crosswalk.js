@@ -1325,19 +1325,19 @@
         cipBox(showCode, { on: confirmed, more: cips.length > 1 ? cips.length - 1 : 0, moreTip: cips.join(", "),
           id: chgId, onAccept: confirmed ? null : (showCode ? accept(showCode) : null), onChange: onChange }));
     }
-    // caption below the grid: green corroboration when peers agree with the crosswalk (Ready),
-    // or a crosswalk-recommend note. Never on two-box (the second row already says it) or confirmed.
-    var caption = null;
-    if (!confirmed && !twoBox) {
-      if (r.cons) caption = el("div", { class: "cipx-rev-cap cipx-rev-cap-ok", title: peerTagTip(r) }, [el("span", { class: "cipx-rev-recmark", "aria-hidden": "true" }, ["✓"]), el("span", { class: "cipx-rev-rectag" }, [peerTag(r)]), " agree"]);
-      else if (r.m.recommended && BYCODE[r.m.recommended] && r.m.recommended !== showCode) { var rr = BYCODE[r.m.recommended]; caption = el("div", { class: "cipx-rev-cap" }, ["✓ Recommend ", el("span", { class: "cipx-code" }, [rr.code]), " · " + rr.t]); }
-    }
-    var tocip = el("span", { class: "cipx-rev-tocipwrap" }, [grid, caption]);
+    // Quiet by default (Sam, 2026-07-18 — "ship it"): a Ready row is a clean one-liner. The peer-
+    // corroboration metric that used to sit on a second line ("✓ N of M colleges agree") now lives
+    // on the ✓'s tooltip + a faint peer-corroborated dot, and in the expanded card — not repeated on
+    // every row. The two-box Suggested row keeps its full display (the rare row that earns the space).
+    var tocip = el("span", { class: "cipx-rev-tocipwrap" }, [grid]);
+    var peerCorr = !confirmed && !twoBox && !!r.cons;   // Ready + peer-corroborated → a quiet dot + hover detail
 
     function statusTip() {
       if (confirmed) return "You confirmed this code";
       if (r.status === "suggest") return "Peers teaching this course" + (r.cons && r.cons.cons.scoped ? " in " + r.subj : "") + " mostly use a different code than your current TOP’s — shown in the row. Worth a look.";
-      if (r.status === "clear") return "Ready — your TOP’s crosswalk and peer colleges point to the same code.";
+      if (r.status === "clear") return r.cons
+        ? (peerTag(r) + " teaching this course code it the same way — your crosswalk agrees.\n\n" + differHover(r.cons.cons))
+        : "Ready — your TOP’s crosswalk points here.";
       if (r.status === "review") return "Review — no single clear match; open to choose.";
       return "Manual — too little to suggest a code; open to search.";
     }
@@ -1345,7 +1345,8 @@
       caret,
       el("span", { class: "cipx-rev-course" }, [el("span", { class: "cipx-rev-cname", title: r.label }, [r.label])]),
       tocip,
-      el("span", { class: "cipx-rev-stat cipx-rev-stat-" + stat.cls, title: statusTip() }, [confirmed ? "✓" : stat.g]),
+      el("span", { class: "cipx-rev-stat cipx-rev-stat-" + stat.cls + (peerCorr ? " cipx-rev-stat-peer" : ""), title: statusTip() },
+        [confirmed ? "✓" : stat.g, peerCorr ? el("span", { class: "cipx-rev-statdot", "aria-hidden": "true" }, ["·"]) : null]),
     ]);
     var card = el("div", { class: "cipx-rev-item" + (confirmed ? " cipx-rev-conf" : "") + (twoBox ? " cipx-rev-item-suggest" : "") }, [head]);
     var body = null;
@@ -1847,8 +1848,6 @@
       ".cipx-rev-reclabel{display:inline-flex;align-items:center;gap:4px;font-size:.72rem;font-weight:700;color:var(--cipx-accent);white-space:nowrap;cursor:help;}",
       ".cipx-rev-recmark{font-weight:800;}",
       ".cipx-rev-rectag{font-weight:800;color:inherit;font-variant-numeric:tabular-nums;}",
-      ".cipx-rev-cap{font-size:.74rem;font-weight:600;color:var(--cipx-accent);display:flex;align-items:center;gap:4px;flex-wrap:wrap;}",
-      ".cipx-rev-cap-ok{color:var(--cipx-ok-fg);}",
       ".cipx-rev-fromtop{font-size:.72rem;color:var(--cipx-muted);white-space:nowrap;max-width:100%;}",
       ".cipx-rev-fromtop .cipx-code{color:var(--cipx-text-soft);}",
       ".cipx-rev-fromtt{display:inline-block;max-width:13ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom;color:var(--cipx-muted);}",
@@ -1874,6 +1873,8 @@
       ".cipx-rev-chgpanel{position:absolute;top:100%;left:0;z-index:40;margin-top:5px;min-width:270px;max-width:360px;text-align:left;background:var(--cipx-surface);border:1px solid var(--cipx-border-strong);border-radius:10px;padding:9px 10px;box-shadow:0 10px 26px rgba(0,0,0,.20);cursor:default;white-space:normal;}",
       ".cipx-rev-chghint{font-size:.72rem;font-weight:600;color:var(--cipx-muted);margin-bottom:6px;}",
       ".cipx-rev-stat{font-size:.9rem;font-weight:800;text-align:right;white-space:nowrap;}",
+      // a faint accent dot beside the ✓ on Ready rows that peers corroborate — "hover for the count"
+      ".cipx-rev-stat-peer{cursor:help;}.cipx-rev-statdot{color:var(--cipx-accent);font-weight:900;margin-left:2px;}",
       ".cipx-rev-stat-ok{color:var(--cipx-ok-fg);}.cipx-rev-stat-warn{color:var(--cipx-muted);}.cipx-rev-stat-muted{color:var(--cipx-muted);}",
       // "suggest" status = a calm, direct question mark (Sam's point 3 — not the old busy ⚠⚑)
       ".cipx-rev-stat-suggest{color:var(--cipx-accent);}",

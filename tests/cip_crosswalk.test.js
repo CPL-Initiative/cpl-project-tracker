@@ -517,6 +517,10 @@ function fresh(withCollege) {
   check("review mode: selecting a department renders triage tiles", !!revdoc.querySelector(".cipx-rev-tiles .cipx-rev-tile"));
   const revRow = revdoc.querySelector(".cipx-rev-list .cipx-rev-item");
   check("review mode: renders a course row with a suggested CIP chip", revRow && revRow.querySelector(".cipx-rev-chip .cipx-code"));
+  // "quiet by default" (2026-07-18): a peer-corroborated Ready row is a one-liner — no caption line;
+  // the peer count moves to a hover dot + the ✓ tooltip (BUS "Business Basics" is Ready + consensus).
+  check("Ready rows are quiet one-liners — no peer-corroboration caption on the row", !revRow.querySelector(".cipx-rev-cap"));
+  check("a peer-corroborated Ready row shows a hover dot + the count in the ✓ tooltip", (function () { var s = revRow.querySelector(".cipx-rev-stat-peer"); return s && !!s.querySelector(".cipx-rev-statdot") && /\d+ of \d+/.test(s.getAttribute("title") || ""); })());
   revRow.querySelector(".cipx-rev-row").click();
   await tick();
   const cand = revRow.querySelector(".cipx-rev-cand");
