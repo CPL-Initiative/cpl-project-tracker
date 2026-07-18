@@ -961,3 +961,29 @@ Real-Chromium verified on the actual Norco/BIO catalog, desktop + phone, light +
 
 **Next:** Sam re-tests v2 live. Carryover from SkyLiftoff still open — **Phase 2 whole-catalog
 review sheet** and the standing **WCAG pre-field gate**.
+
+### 2026-07-17 (later) — two live-test fixes: credit-first consensus + ephemeral college
+
+Sam re-tested v2 and caught two things:
+
+1. **Credit-first for the consensus pick (COMM 13 catch).** The CO crosswalk attaches the whole
+   **noncredit CIP family** (ESL / basic-skills / exam-prep `32.*`, provenance `n`) to nearly every
+   TOP. `bestCipForTop` — which drives the *consensus* recommendation — only skipped the 2 hardcoded
+   boiler codes and otherwise picked by raw lexical fit, so "Gender and Communication" (TOP 1506
+   Speech Communication) recommended `32.0203 Undergraduate Entrance/Placement Exam Prep` because
+   its description says "exam**ine**." `computeRecommend` already had a **credit-first gate** ("a
+   Noncredit-category CIP must not out-rank a credit one") — that's why the *crosswalk* box correctly
+   showed `09.0100`. The fix applies the SAME gate to `bestCipForTop` (credit-first, then by score),
+   so the consensus pick agrees with the crosswalk pick. Result on real Norco data: the whole COMM
+   department went **1 bogus suggested-change → 12 clean Ready rows**, COMM 13 → `09.0100
+   Communication, General` (11 of 11 peers). Falls back to noncredit only when a TOP has no credit CIP.
+
+2. **Ephemeral college selection.** The picked college was persisted in `localStorage`
+   (`cipx_college`) and restored on every load — it survived a hard refresh. Sam: "should clear on
+   close." Removed the restore + the write; the college now lives only in memory for the session
+   (`st.college`), so a fresh open / refresh starts blank. Per-college review decisions
+   (`cipx_rev_<college>`) still persist — that's the user's work product, not the selection. Tests
+   updated to pick the college via the dropdown (the real flow) instead of relying on the restore.
+
+Tests 167 → **169** (credit-first `bestCipForTop`, ephemeral-college). Real-Chromium: COMM 13 Ready,
+college blank on load despite a stale storage value, 0 overflow / 0 errors.
