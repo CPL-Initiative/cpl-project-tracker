@@ -1191,3 +1191,77 @@ overflow / 0 console errors) throughout. Method that keeps paying off: **Sam's l
 headless-Chromium driver on the same college/department**, and (for the design-heavy multi-CIP) a
 **clickable prototype locked with Sam before porting**. Side-lane discipline honored across all three PRs:
 `kb/cpl_todos.json` + the numbered session handoff untouched.
+
+### 2026-07-18 (SkyCoco) — Phase A: precomputed baseline status counts (#846)
+
+Sam's **next-steps** message opened the progress-dashboard workstream: when a college opens the tool it
+should see status-count boxes (like the per-subject counts, but for the whole college), plus system-level
+counts, plus counts in both selector dropdowns ("37 OK, 244 Review, Last Active 7-18-2026"). Then two
+strategic questions: **who may edit** (per-college team phrase vs open vs a COCI auth button vs magic
+links) and how validated CIPs reach COCI. Sam's calls: **"Phase A first"**, **"fold [the access analysis]
+into note."**
+
+**The distinction that shaped everything — two kinds of "counts."** Sam's example line blends two different
+data sources, and mixing them defeats the read:
+- **Engine baseline** — how many courses exist and how the *tool* classifies them (Ready/Review/Suggested/
+  Manual). Deterministic, identical for every viewer, **no human input → no backend**. This is "how much
+  work exists."
+- **Human progress** — how many faculty **validated** (`cipx_revok_`, #844) + Last Active. This is work
+  *product*; today it lives only in one browser's `localStorage`. To show it per college / statewide / to
+  anyone, it needs a **shared store → backend**.
+
+Phase A ships **only the engine baseline** — and keeps it visually distinct from progress ("engine says
+Review" ≠ "faculty validated"). Live progress + last-active are **Phase B**.
+
+**What shipped (backend-free):**
+1. **Statewide baseline line** (Sam #2) — "131,715 courses across 120 colleges · 59,340 flagged for review ·
+   70,187 a confident match", with a muted note that these are *classifications, not confirmations*.
+2. **College-open overview tiles** (Sam #1) — the whole college's Ready/Review/Suggested/Manual boxes,
+   rendered the moment a college is picked and **before** a department is chosen; **hides on dept-select**
+   (the per-dept review UI takes over). "Your validated progress fills in as you confirm" flags the Phase-B
+   seam.
+3. **Dropdown counts** (Sam #3, baseline half) — the college option carries "· N to review"; each department
+   option carries "· N review". The `populateCollegeSel()` restore-selected-college fix keeps the current
+   pick when the counts arrive and re-populate the list.
+
+**The build — single source of truth, no re-implementation.** A live classify is a multi-second freeze per
+college and infeasible statewide (~132k courses), so the counts are **precomputed** into a committed
+`cip_status_counts.json` the tab fetches once. The keystone: `kb/build_cip_status_counts.js` runs the
+**shipped classifier** (`cip_crosswalk.js` itself) over every college via its existing seams
+(`_setData`/`_setConsensus`/`_reviewRows`) — so the baseline can **never drift from what the tab shows**. Two
+build lessons worth carrying:
+- **Load the engine in a bare `vm` context, not jsdom.** The seams never touch the DOM, so a minimal
+  `window`/`document`/`localStorage` stub is enough — and it's dramatically faster than jsdom (jsdom made the
+  single-process build ~40 min and hit a resource ceiling).
+- **Split across short-lived worker processes.** A pool of `min(6, cpus−1)` `child_process.fork` workers,
+  each classifying a small batch of colleges then exiting, keeps any one process short/light. ~9 min total,
+  reproducible. Re-run when the crosswalk / course / consensus inputs change (documented in the script header).
+  `cip_status_counts.json` is a **static committed artifact**, exactly like the tab's other data
+  (`cip_crosswalk_data.js`, `cip_fitcheck/*`, `course_top_consensus.json`) — no workflow regenerates any of
+  them, so committing it keeps the whole tab's data model consistent.
+
+**Baseline numbers (2026-07-18):** 120 colleges, 131,715 courses; systemwide **70,187 ready / 59,340 review /
+2,016 suggest / 172 manual**. Cross-checks that gave confidence: Cerritos college-level 938 ready / 847 review
+matched a direct classify; the AB dept option "45 courses · 8 review" (⇒ 37 ready) matches Sam's original
+screenshot (37 OK, 8 Review) exactly.
+
+**The access analysis, folded into a note** (Sam: "Yes, fold into note") — `docs/cip_submission_access_plan.md`.
+The reframing that unlocks it: **the real risk isn't "edits" — it's *irreversible, unattributed, cross-college*
+edits.** Design **defense in depth**, not just a lock: (1) **scope** (RLS — a College-X session can't write
+College-Y rows, the way `team_pass_ok()`/`is_allowed_reviewer()` already gate `cip_crosswalk_suggestion`);
+(2) **attribution** (who + when on every change); (3) **reversibility** (append-only/versioned — the
+`kb_curation` INSERT-only + receipts doctrine, Rule 9). With those three, a leaked credential is *contained,
+traceable, undoable* — which makes the front-door choice low-stakes. Recommended layered model: **owner** =
+college CIP coordinator (bootstrapped by COCI auth or a CO grant, seed `map_college_contacts`); **contributors**
+= anyone the owner invites by **magic link** (college-scoped, light identity → attribution, individually
+revocable) — which resolves the faculty-access tension Sam named (the faculty whose input you need lack COCI).
+Ship the **team phrase as the MVP gate** (machinery exists), layer in magic links before wide release. The
+Tech-Center COCI push (Sam's commissioned plan) takes the **validated set** as payload — human-gated, batch/API.
+
+Tests **207 → 213** (statewide line · overview tiles · both dropdown counts · overview-hides-on-dept-select).
+Verified in real Chromium on live Cerritos (desktop + phone, light + dark, 0 overflow / 0 console errors).
+Side-lane discipline honored: `kb/cpl_todos.json` + the numbered session handoff untouched.
+
+**Sequencing from here:** A (shipped) → B-progress store → B-access (phrase MVP → magic links) → B-COCI push.
+A was independent and shippable today; B is the moment we commit to a shared backend — which we want anyway
+for COCI submission, so **access + progress + submission are one project, built once.**
