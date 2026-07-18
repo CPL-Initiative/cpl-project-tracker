@@ -1,16 +1,19 @@
 ---
 title: "CIP workstream handoff → next session"
 date: 2026-07-18
-tags: [handoff, cip, cobi, review-triage, glyphs, top-cip, easy-button, wcag, side-lane]
+tags: [handoff, cip, cobi, review-triage, progress-dashboard, baseline-counts, access-control, top-cip, wcag, side-lane]
 artifacts:
   - cip_crosswalk.js
   - cip_crosswalk_data.js
+  - cip_status_counts.json
+  - kb/build_cip_status_counts.js
   - kb/_build_cip_crosswalk.py
   - kb/_build_cip_fitcheck.py
   - course_top_consensus.json
   - cip_fitcheck/
 related:
   - "[[cip_crosswalk_lessons]]"
+  - "[[cip_submission_access_plan]]"
   - "[[CLAUDE]]"
 ---
 
@@ -18,8 +21,10 @@ related:
 
 You inherit the **CIP side-lane** of COBI and **Coco the pup** 🐾. SkyEasy built the whole-catalog
 consensus pre-fill + the two-box "Suggested change" redesign; **SkyCoco** cleared Sam's 4-item
-Review-tab checkpoint steer (#842). Carry the **banner of kindness** Sam named: this tool *suggests and
-supports*, it never decides. Faculty lean into it, not brace against it.
+Review-tab legibility steer (#842), added the program-coherence default + Cañada fix (#843), co-designed
+inline multi-CIP (#844), and opened the **progress-dashboard workstream** with **Phase A baseline status
+counts** (#846). Carry the **banner of kindness** Sam named: this tool *suggests and supports*, it never
+decides. Faculty lean into it, not brace against it.
 
 **Side-lane discipline (honor it):** this workstream does **NOT** touch `kb/cpl_todos.json` or the
 numbered `docs/session_<N>_handoff.md` — those are the CCR curation mainline's memory. Your memory lives
@@ -27,11 +32,15 @@ in `docs/cip_crosswalk_lessons.md` (the full story) and this file.
 
 ## Read first, in order
 1. `docs/cip_crosswalk_lessons.md` — the whole saga; newest section at the bottom is SkyCoco's
-   Review-tab legibility pass (#842).
-2. `docs/kb-notes/methodology-crowd-consensus-beats-single-item-signal.md` (the consensus engine) +
+   **Phase A baseline status counts** (#846), preceded by multi-CIP (#844), program-default (#843),
+   and the Review-tab legibility pass (#842).
+2. `docs/cip_submission_access_plan.md` — the **progress / access / COCI** design note. This is the map
+   for everything still open: the two-kinds-of-counts distinction, Phase A (done), Phase B (progress store
+   → editing-access model [phrase MVP → magic links] → Tech-Center COCI push).
+3. `docs/kb-notes/methodology-crowd-consensus-beats-single-item-signal.md` (the consensus engine) +
    `docs/kb-notes/methodology-grounded-lexical-cip-confidence.md` (the fit engine).
-3. `CLAUDE.md` §7 TOP caveat + the §11 "SkyLoft"/"SkyLiftoff"/"SkyNew" CIP side-lane entries.
-4. This file's **Priority** below.
+4. `CLAUDE.md` §7 TOP caveat + the §11 "SkyLoft"/"SkyLiftoff"/"SkyNew" CIP side-lane entries.
+5. This file's **Priority** below.
 
 ## What's live (all merged to main)
 The **CIP Codes** tab (`#cip-crosswalk`, `cip_crosswalk.js`) — **three** modes, toggle at the top
@@ -84,39 +93,88 @@ code but **stay in Review (`?`)** ("received N … from a sibling — review and
 pass"). Every individual-confirm path calls `revSetValidated(true)`; the bulk-apply path does NOT — **honor
 this when adding any new assignment action.** Tests → **207**.
 
+### Shipped 2026-07-18 (SkyCoco — #846) — Phase A: precomputed baseline status counts
+The first of Sam's **progress-dashboard** next-steps, all **backend-free**. The distinction that drives it:
+**engine baseline** (how the *tool* classifies — deterministic, no backend) vs **human progress** (what
+faculty *validated*, `cipx_revok_` — needs a shared store, Phase B). Phase A ships only the baseline, kept
+visually distinct from progress. What's live in Review mode:
+1. **Statewide baseline line** (Sam #2) — "131,715 courses across 120 colleges · 59,340 flagged for review ·
+   70,187 a confident match", with a muted *classifications-not-confirmations* note.
+2. **College-open overview tiles** (Sam #1) — the whole college's Ready/Review/Suggested/Manual boxes, shown
+   once a college is picked and **before** a department is chosen; **hides on dept-select**.
+3. **Dropdown counts** (Sam #3) — college option "· N to review"; each dept option "· N review". Plus a
+   `populateCollegeSel()` restore-selected-college fix (keep the pick when counts arrive).
+
+**Build:** `kb/build_cip_status_counts.js` runs the **shipped classifier** over every college via its seams
+(`_setData`/`_setConsensus`/`_reviewRows`) in a **bare `vm` context** (not jsdom — much faster, seams don't
+touch the DOM) across a **pool of short-lived `fork` workers** → committed `cip_status_counts.json` the tab
+fetches once. Single source of truth (never drifts from what the tab shows). ~9 min; **re-run when the
+crosswalk / course / consensus inputs change** (it's a static committed artifact like the tab's other data —
+no cron regenerates it). New globals: `STATUS_COUNTS`/`STATUS_LOADING`; funcs `loadStatusCounts`,
+`collegeStatus`, `renderSysBaseline`, `repaintReviewOverview`; seam `_setStatusCounts`. Tests **207 → 213**.
+
+**The access analysis → `docs/cip_submission_access_plan.md`** (Sam: "fold into note"). Key reframe: the risk
+isn't "edits" — it's *irreversible, unattributed, cross-college* edits → design **defense in depth** (RLS
+scope + attribution + append-only/versioned), which makes the front-door choice low-stakes. Recommended
+layered model: **owner** = college CIP coordinator (COCI-auth / CO-grant bootstrap); **contributors** = anyone
+the owner invites by **magic link** (college-scoped, carries light identity → attribution, revocable) —
+resolves the faculty-lack-COCI tension. Ship **team phrase as MVP gate** (built), layer magic links before
+wide release.
+
 **Data.** `kb/_build_cip_crosswalk.py` → `cip_crosswalk_data.js` (`window.CIP_CROSSWALK`, committed, no
 cron): `topcip[<TOP>]={t,c:[[cip,tier]]}` + `boiler[]` + the lean `{fams, rows}` reference. Per-college
 courses lazy-fetched from `cip_fitcheck/<slug>.json` (`kb/_build_cip_fitcheck.py`). Cross-college consensus
-`course_top_consensus.json` (`kb/_build_course_top_consensus.py`). Seams: `_score`, `_courseScore`,
-`_courseToks`, `_recommend`, `_bestMatches`, `_parseSubject`, `_reviewRows`, `_reviewRowOf`, `_setMode`.
-Review internals (not exported; grep them): `effectiveSug`/`deptTop` (program-default), `revCips`/`revSetCips`
-(assigned) vs `revIsValidated`/`revSetValidated` (`cipx_revok_`), `revAddCip`/`renderAddPicker`/
-`renderAddPrompt`/`renderApplyPanel` (multi-CIP flow), `revInline` (per-row inline-UI state).
+`course_top_consensus.json` (`kb/_build_course_top_consensus.py`). Baseline counts precomputed into
+`cip_status_counts.json` (`kb/build_cip_status_counts.js`). Seams: `_score`, `_courseScore`,
+`_courseToks`, `_recommend`, `_bestMatches`, `_parseSubject`, `_reviewRows`, `_reviewRowOf`, `_setMode`,
+`_setStatusCounts`. Review internals (not exported; grep them): `effectiveSug`/`deptTop` (program-default),
+`revCips`/`revSetCips` (assigned) vs `revIsValidated`/`revSetValidated` (`cipx_revok_`), `revAddCip`/
+`renderAddPicker`/`renderAddPrompt`/`renderApplyPanel` (multi-CIP flow), `revInline` (per-row inline-UI
+state), `renderSysBaseline`/`repaintReviewOverview`/`collegeStatus` (Phase A baseline).
 
 ## 🎯 Priority — the still-open items
+
+**Phase A (baseline status counts) shipped in #846.** The headline that remains is **Phase B — the shared
+backend** that turns baseline into live progress, gates editing, and pushes to COCI. Read
+`docs/cip_submission_access_plan.md` first — it's the map. **Sequencing:** B-progress store → B-access
+(phrase MVP → magic links) → B-COCI push. These are **one project built once** (you want the store for COCI
+anyway), so scope them together even if you ship in slices.
+
 0. **Tech Center API/batch plan (Sam commissioned, 2026-07-18 — "as this settles in").** A very short plan
    for the Tech Center (who runs COCI) for an **API or batch integration** to push *validated* CIPs into
    COCI on behalf of the colleges. Natural payload = the **validated set** (`cipx_revok_`, from #844) — the
-   codes faculty personally OK'd, not the merely-assigned ones. Not yet drafted; write it when Sam signals.
-   *(Also done 2026-07-18: a short "what the new version does" email to Jenni + Raul — see the session chat.)*
-1. **Unify "assign a CIP" across all three modes.** The recommend-mode inline check and the review picker
+   codes faculty personally OK'd, not the merely-assigned ones. **Not yet drafted; write it when Sam signals**
+   ("as this settles in"). §3c of the design note has the shape. *(Also done 2026-07-18: a short "what the
+   new version does" email to Jenni + Raul — see the session chat.)*
+1. **Phase B-progress store — make the counts LIVE.** Phase A shows the *engine baseline* (how much work
+   exists). The other half of Sam's ask is **human progress** ("48 validated of 281 · last active 7/18") +
+   **Last Active**, per college / subject / statewide. That needs a `cip_submission` Supabase table (the
+   validated CIP(s) + who + when) the tool writes to instead of / alongside `localStorage`. The Phase-A UI
+   already has the seam ("your validated progress fills in as you confirm") — wire the progress numbers in
+   beside the baseline, kept visually distinct. §3a of the design note.
+2. **Phase B-access — who may edit.** Ship the **team-phrase MVP gate** first (machinery exists:
+   `team_pass_ok()`), then layer **magic links** for per-person attribution + delegation before wide field
+   release. Backend enforces **scope (RLS) + attribution + append-only/versioned** (defense in depth — a
+   leaked credential stays contained/traceable/undoable). §3b of the design note has the full model + the
+   options table (open ❌ / COCI-auth for the owner / phrase MVP / magic links for contributors).
+3. **Unify "assign a CIP" across all three modes.** The recommend-mode inline check and the review picker
    should share ONE assign+persist path. Today review persists per-college in `localStorage`; the
    recommend/inline check doesn't persist a chosen code. Make "I want THIS CIP for this course" a
-   first-class, remembered action everywhere it makes sense.
-2. **Phase 3 — port VALIDATED CIPs to COCI (batch/API).** Sam: *"later we can just port the verified CIPs
-   directly to COCI and spare the colleges from going in course by course."* #844's **validated set**
-   (`cipx_revok_`) is exactly the human-gated payload. Scope: it lives in `localStorage` today — a real
-   submission queue needs a **Supabase store**; the COCI ingest contract (ask Jenni / the Tech Center — they
-   own the COCI CIP dropdown, per §7); and the human-gated review before anything writes to COCI. Pairs with
-   priority #0.
-3. **Remaining WCAG polish** (the focused pass shipped in #824; #842 added the visible `?` + reason text as
+   first-class, remembered action everywhere it makes sense — and route it through the Phase-B store once
+   that exists.
+4. **Remaining WCAG polish** (the focused pass shipped in #824; #842 added the visible `?` + reason text as
    non-color redundancy). Round out before wider field release: full `role=tablist ⇄ tabpanel` semantics on
    the mode toggle, meter `role`/value semantics, `prefers-reduced-motion`, screen-reader announcement copy
-   on result changes. **Audience today = Raul (owns the field process) + Jenni only.**
-4. **Coco → toolkit AI assistant** (Sam's seed, pairs with Raul's TOP→CIP Toolkit doc). Graduate Coco from
+   on result changes. **🔒 Standing pre-field gate.** Audience today = Raul (owns the field process) + Jenni only.
+5. **Coco → toolkit AI assistant** (Sam's seed, pairs with Raul's TOP→CIP Toolkit doc). Graduate Coco from
    mascot to an ask-a-question / jump-to-the-right-section assistant. Wiring target: the existing Sierra
    `/functions/v1/cpl-chat` edge function, in the **finder-not-decider** posture (§7 TOP caveat). Sam settles
    the toolkit-doc design with Raul first; build once that's locked.
+
+**Data-freshness note:** `cip_status_counts.json` is a static committed artifact — **regenerate it
+(`node kb/build_cip_status_counts.js`) whenever `cip_fitcheck/*`, `cip_crosswalk_data.js`, or
+`course_top_consensus.json` change**, or the baseline drifts from the live classifier. (Candidate future
+polish: a `workflow_dispatch` step to rebuild it, mirroring how the other CIP data is refreshed.)
 
 **A small open design pick from #842:** *Suggested* became `⇄` (since `?` is now Review's). If Sam wants a
 different Suggested mark, it's a one-line change in `REV_STATUS` + the tile label + one test.
