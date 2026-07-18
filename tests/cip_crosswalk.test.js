@@ -117,13 +117,18 @@ const RCONSENSUS = {
 function freshR(mode) {
   const dom = makeDom();
   dom.window.CIP_CROSSWALK = JSON.parse(JSON.stringify(RFIXTURE));
-  try { dom.window.localStorage.setItem("cipx_college", "test_college"); } catch (e) {}
   if (mode) { try { dom.window.localStorage.setItem("cipx_mode", mode); } catch (e) {} }
   dom.window.eval(src);
   const api = dom.window.CPL_CIP_CROSSWALK;
   api._setColleges(JSON.parse(JSON.stringify(MANIFEST)));
   api._setCourses("test_college", JSON.parse(JSON.stringify(RCOURSES)));
   api.activate();
+  // College is no longer restored from storage (ephemeral, Sam's fix) — pick it the way a user
+  // would, via the dropdown, so the college-scoped views render.
+  try {
+    const csel = dom.window.document.querySelector(".cipx-college-sel");
+    if (csel) { csel.value = "test_college"; csel.dispatchEvent(new dom.window.Event("change")); }
+  } catch (e) {}
   return dom;
 }
 
@@ -134,8 +139,11 @@ function fresh(withCollege) {
   const api = dom.window.CPL_CIP_CROSSWALK;
   api._setColleges(JSON.parse(JSON.stringify(MANIFEST)));
   api._setCourses && api._setCourses("test_college", JSON.parse(JSON.stringify(COURSES)));
-  if (withCollege) { try { dom.window.localStorage.setItem("cipx_college", "test_college"); } catch (e) {} }
   api.activate();
+  // College is ephemeral (Sam's fix — not restored from storage); pick it via the dropdown.
+  if (withCollege) {
+    try { const csel = dom.window.document.querySelector(".cipx-college-sel"); if (csel) { csel.value = "test_college"; csel.dispatchEvent(new dom.window.Event("change")); } } catch (e) {}
+  }
   return dom;
 }
 
@@ -207,7 +215,7 @@ function fresh(withCollege) {
   // ── inline fit flow: college set + course pick → verdict ──
   const domF = fresh(true);
   const fdoc = domF.window.document;
-  check("remembered college pre-selects in the bar", fdoc.querySelector(".cipx-college-sel").value === "test_college");
+  check("a selected college shows in the bar", fdoc.querySelector(".cipx-college-sel").value === "test_college");
   // expand the Business Administration row (52.0201)
   const bizItemRow = Array.prototype.filter.call(fdoc.querySelectorAll(".cipx-row"), (r) => /52\.0201/.test(r.textContent))[0];
   bizItemRow.click();
@@ -273,6 +281,13 @@ function fresh(withCollege) {
   check("recommend handles a TOP absent from the crosswalk", mOrphan.hasCross === false && mOrphan.res.ranked.length >= 1);
   // too-thin description → flagged honestly
   check("recommend flags a too-thin description", rApi._recommend(RCOURSES[2]).thin === true);
+  // bestCipForTop (drives the consensus pre-fill) is CREDIT-FIRST: the CO crosswalk attaches the
+  // noncredit family (32.* exam-prep/basic-skills) to nearly every TOP, so a credit course can
+  // lexically match one on an incidental word. It must never out-rank the TOP's credit CIP.
+  // Sam's COMM 13 catch: "Gender and Communication" (TOP 1506) → 32.0203 Exam Prep on "examine".
+  const mExam = rApi._recommend(["MATH 5 — Equivalency Review", "A course preparing students for the high school equivalent examination and equivalency exam.", "1701.00"]);
+  const bftMath = rApi._bestCipForTop("1701.00", mExam);
+  check("bestCipForTop is credit-first: a noncredit exam-prep CIP never out-ranks the TOP's credit CIP", bftMath && bftMath.r.code === "27.0101" && bftMath.r.cat !== "Noncredit");
 
   // ── Fix A: the subject-code prefix no longer leaks into the lexical match ──
   const busToks = rApi._courseToks(["BUS 103 — Advertising", "media campaign design"]);
@@ -440,6 +455,16 @@ function fresh(withCollege) {
   // legacy consensus data (no subjects[]) still works — scoping simply never engages
   check("subject-scoping: legacy data without subjects[] degrades to the full consensus", (function () { var c = rApi._consensus("NURS 101 — Nursing", "NURS"); return c && c.scoped === false && c.modal.top === "1230.00"; })());
 
+  // ── college selection is EPHEMERAL — never restored from storage (Sam: "clear on close") ──
+  const ephDom = makeDom();
+  ephDom.window.CIP_CROSSWALK = JSON.parse(JSON.stringify(RFIXTURE));
+  try { ephDom.window.localStorage.setItem("cipx_college", "test_college"); } catch (e) {}   // a stale prior selection
+  ephDom.window.eval(src);
+  const ephApi = ephDom.window.CPL_CIP_CROSSWALK;
+  ephApi._setColleges(JSON.parse(JSON.stringify(MANIFEST)));
+  ephApi.activate();
+  check("college is NOT restored from storage on load (clears on close/refresh)", ephApi._college() == null && (function () { var s = ephDom.window.document.querySelector(".cipx-college-sel"); return s && !s.value; })());
+
   const domRev = freshR("review");
   domRev.window.CPL_CIP_CROSSWALK._setConsensus(RCONSENSUS);   // peer-consensus fixture (fetch is a no-op in jsdom)
   const revdoc = domRev.window.document;
@@ -539,9 +564,12 @@ function fresh(withCollege) {
   dom4.window.eval(src);
   dom4.window.CPL_CIP_CROSSWALK._setColleges(JSON.parse(JSON.stringify(MANIFEST)));
   dom4.window.CPL_CIP_CROSSWALK._setCourses("test_college", []);
-  try { dom4.window.localStorage.setItem("cipx_college", "test_college"); } catch (e) {}
   let noCoursesThrew = false;
-  try { dom4.window.CPL_CIP_CROSSWALK.activate(); dom4.window.document.querySelector(".cipx-row").click(); await tick(); } catch (e) { noCoursesThrew = true; console.error(e); }
+  try {
+    dom4.window.CPL_CIP_CROSSWALK.activate();
+    var c4 = dom4.window.document.querySelector(".cipx-college-sel"); if (c4) { c4.value = "test_college"; c4.dispatchEvent(new dom4.window.Event("change")); }
+    dom4.window.document.querySelector(".cipx-row").click(); await tick();
+  } catch (e) { noCoursesThrew = true; console.error(e); }
   check("a college with no courses does not throw", !noCoursesThrew);
 
   let pass = 0;

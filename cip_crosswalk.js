@@ -30,7 +30,6 @@
   var ROOT_ID = "cip-crosswalk-root";
   var CSS_ID = "cip-crosswalk-css";
   var THEME_KEY = "cipx_theme";
-  var COLLEGE_KEY = "cipx_college";
   var MODE_KEY = "cipx_mode";
   var PAGE = 200;
 
@@ -97,7 +96,11 @@
       (TOPCIP[top].c || []).forEach(function (ct) { (CIP_TOPS[ct[0]] || (CIP_TOPS[ct[0]] = {}))[top] = 1; });
     });
     buildEngine();
-    try { st.college = localStorage.getItem(COLLEGE_KEY) || null; } catch (e) { st.college = null; }
+    // College is EPHEMERAL — never restored across page loads (Sam, 2026-07-17: "should clear
+    // on close"). It lives only in memory (st.college) for the current session; a fresh open /
+    // hard refresh starts with no college picked. (Per-college review decisions still persist
+    // under cipx_rev_<college> — that's the user's work product, not the selection.)
+    st.college = null;
     try { var _m = localStorage.getItem(MODE_KEY); st.mode = (_m === "recommend" || _m === "review") ? _m : "browse"; } catch (e) { st.mode = "browse"; }
   }
 
@@ -439,7 +442,12 @@
       others: mapped.slice(1), scoped: useScoped, subj: querySubj || "" };
   }
   // Among a TOP's crosswalk CIPs, the one that best fits THIS course's description
-  // (peer TOP + description-fit = two signals agree). Falls back to the first official CIP.
+  // (peer TOP + description-fit = two signals agree). CREDIT-FIRST: the CO crosswalk attaches the
+  // whole noncredit CIP family (ESL / basic-skills / exam-prep 32.* codes, provenance "n") to
+  // nearly every TOP, so a credit course can spuriously match one on an incidental word ("Gender
+  // and Communication" → 32.0203 Exam Prep on "examine"). A Noncredit-category CIP must never
+  // out-rank a credit one — same gate computeRecommend already applies, so the consensus pick
+  // agrees with the crosswalk pick. Falls back to noncredit only when the TOP has no credit CIP.
   function bestCipForTop(top, m) {
     var e = TOPCIP[top]; if (!e || !e.c || !e.c.length) return null;
     var byCode = {}; (m && m.res && m.res.ranked || []).forEach(function (o) { byCode[o.r.code] = o; });
@@ -447,8 +455,10 @@
     e.c.forEach(function (ct) {
       if (BOILER[ct[0]]) return;
       var r = BYCODE[ct[0]]; if (!r) return;
-      var rel = byCode[ct[0]] ? byCode[ct[0]].rel : 0;
-      if (!best || rel > best.rel) best = { r: r, rel: rel };
+      var o = byCode[ct[0]] || {};
+      var cand = { r: r, rel: o.rel || 0, score: o.score || 0, nc: r.cat === "Noncredit" ? 1 : 0 };
+      // credit-first, then description-fit (by score, matching computeRecommend's cands ordering)
+      if (!best || cand.nc < best.nc || (cand.nc === best.nc && cand.score > best.score)) best = cand;
     });
     return best;
   }
@@ -488,8 +498,7 @@
     var sel = el("select", { class: "cipx-college-sel", "aria-label": "Your college" }, [el("option", { value: "" }, [FIT_COLLEGES ? "Choose your college…" : "Loading colleges…"])]);
     collegeSelEl = sel;
     sel.onchange = function () {
-      st.college = sel.value || null;
-      try { if (st.college) localStorage.setItem(COLLEGE_KEY, st.college); else localStorage.removeItem(COLLEGE_KEY); } catch (e) {}
+      st.college = sel.value || null;   // in-memory only — intentionally NOT persisted (see activate())
       rev.byDept = {}; rev.courses = null; rev.dept = null;   // the review cache is college-scoped
       if (st.college) loadCollege(st.college);
       // browse: rebuild open rows with the new college. recommend/review are entirely
@@ -1924,5 +1933,6 @@
     _reviewRowOf: reviewRowOf,
     _setConsensus: function (d) { if (d && d.titles) { CONSENSUS = d.titles; CONSENSUS_COLLEGES = d.colleges || []; CONSENSUS_SUBJECTS = d.subjects || []; } },
     _consensus: consensusFor, _consensusPick: consensusPick, _consensusKey: consensusKey, _subjMatch: subjMatch,
+    _bestCipForTop: bestCipForTop, _college: function () { return st.college; },
   };
 })();
