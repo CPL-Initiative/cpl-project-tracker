@@ -104,6 +104,12 @@ const RCOURSES = [
   ["NURS 101 — Nursing", "A program that prepares registered nurses to practice nursing and patient care.", "0505.00"],
   ["MYST 1 — Mystery", "Short.", "0505.00"],
   ["ORPH 1 — Orphan Course", "A program that prepares registered nurses to practice nursing and patient care.", "7777.00"],
+  // Three ACCT courses whose generic descriptions match no crosswalk code distinctively → all land on
+  // the same crosswalk code with no confident winner → status "review" (mirrors Sam's Autobody case:
+  // identical-looking rows, split Ready/Review). Their why-lines exercise the "same code as N" branch.
+  ["ACCT 200 — Special Topics", "A survey course exploring assorted contemporary themes through selected readings, films, and class discussion.", "0505.00"],
+  ["ACCT 201 — Special Projects", "A survey course exploring assorted contemporary themes through selected readings, films, and class discussion.", "0505.00"],
+  ["ACCT 202 — Independent Study", "A survey course exploring assorted contemporary themes through selected readings, films, and class discussion.", "0505.00"],
 ];
 // cross-college consensus fixture: peers overwhelmingly code "Nursing" under a Registered
 // Nursing TOP (1230.00); this college used 0505.00 (Accounting) — the lone outlier.
@@ -138,6 +144,8 @@ function freshR(mode) {
 function fresh(withCollege) {
   const dom = makeDom();
   dom.window.CIP_CROSSWALK = JSON.parse(JSON.stringify(FIXTURE));
+  // Review is now the DEFAULT mode (Sam, 2026-07-18); pin browse-view tests to browse explicitly.
+  try { dom.window.localStorage.setItem("cipx_mode", "browse"); } catch (e) {}
   dom.window.eval(src);
   const api = dom.window.CPL_CIP_CROSSWALK;
   api._setColleges(JSON.parse(JSON.stringify(MANIFEST)));
@@ -155,6 +163,8 @@ function fresh(withCollege) {
   const { window } = dom;
   const document = window.document;
   window.CIP_CROSSWALK = JSON.parse(JSON.stringify(FIXTURE));
+  // Review is the default mode now (Sam, 2026-07-18); this block asserts the BROWSE view, so pin it.
+  try { window.localStorage.setItem("cipx_mode", "browse"); } catch (e) {}
 
   let threw = false;
   try { window.eval(src); } catch (e) { threw = true; console.error("eval threw:", e); }
@@ -506,6 +516,10 @@ function fresh(withCollege) {
   domRev.window.CPL_CIP_CROSSWALK._setConsensus(RCONSENSUS);   // peer-consensus fixture (fetch is a no-op in jsdom)
   const revdoc = domRev.window.document;
   check("review mode: three tabs, review selected", revdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 3 && /Review my catalog/.test(revdoc.querySelector(".cipx-modetab.on").textContent));
+  // Sam's point 3 (2026-07-18): Review is the FIRST tab and the default mode.
+  check("Review is the FIRST mode tab (Sam's point 3)", /Review my catalog/.test(revdoc.querySelectorAll(".cipx-modebar .cipx-modetab")[0].textContent));
+  check("Review is the DEFAULT mode when nothing is stored (point 3)", (function () { var d = freshR(); var doc = d.window.document; return !!doc.querySelector(".cipx-rev") && /Review my catalog/.test(doc.querySelector(".cipx-modetab.on").textContent); })());
+  check("source: review status glyph is a visible '?', suggested is a distinct '⇄'", /review:\s*\{\s*g:\s*"\?"/.test(src) && /suggest:\s*\{\s*g:\s*"⇄"/.test(src));
   check("mode tabs use hairline SVG glyphs, not cliparty emoji", revdoc.querySelectorAll(".cipx-modetab .cipx-tabico").length === 3 && !/📖|🎯|📋/.test(revdoc.querySelector(".cipx-modebar").textContent));
   check("review mode: shows the trust banner", revdoc.querySelector(".cipx-rev-banner") && /starting point you confirm/.test(revdoc.querySelector(".cipx-rev-banner").textContent));
   await tick(); await tick();  // dept picker populates from loadCollege
@@ -518,6 +532,10 @@ function fresh(withCollege) {
   // layout polish (2026-07-18): bulk Confirm/Accept ride on the tiles row; Expand + CSV live in the
   // top-right rail next to the Theme toggle; Coco the mascot rides in the rail.
   check("bulk Confirm/Accept sit on the tiles row (not their own strip)", !!revdoc.querySelector(".cipx-rev-tilesrow .cipx-rev-bulk"));
+  // count↔list legibility (point 2c) + Confirm-all reassurance (point 4)
+  check("a 'showing …' context line ties the tile counts to the visible list (point 2c)", (function () { var s = revdoc.querySelector(".cipx-rev-showing"); return s && /Showing/.test(s.textContent); })());
+  check("a reassurance line sits under the bulk-confirm buttons (point 4)", (function () { var r = revdoc.querySelector(".cipx-rev-reassure"); return r && /never final/.test(r.textContent) && /COCI/.test(r.textContent); })());
+  check("the 'Confirm all' button carries a reassuring, not-irreversible tooltip (point 4)", (function () { var b = revdoc.querySelector(".cipx-rev-bulk"); return b && /never final/.test(b.getAttribute("title") || ""); })());
   check("Theme + Expand + CSV live together in the top-right rail", !!revdoc.querySelector(".cipx-toprail .cipx-themetog") && !!revdoc.querySelector(".cipx-toprail-rev .cipx-rev-expand") && !!revdoc.querySelector(".cipx-toprail-rev .cipx-rev-csv"));
   check("Coco the emotional-support pup rides in the rail (muted outlined SVG + name)", (function () { var c = revdoc.querySelector(".cipx-toprail .cipx-coco"); return c && c.querySelector(".cipx-coco-svg") && /Coco/.test(c.textContent); })());
   const revRow = revdoc.querySelector(".cipx-rev-list .cipx-rev-item");
@@ -547,13 +565,13 @@ function fresh(withCollege) {
   await tick(); await tick();
   const nurItem = revdoc.querySelector(".cipx-rev-list .cipx-rev-item");
   // NURS is a SUGGESTED-CHANGE row: two aligned CIP boxes (Sam's point 1) — the crosswalk-from-TOP
-  // pick (52.0201, muted "was") and the peer-suggested code (51.3801, emphasized) — a calm "?"
-  // glyph (point 3), and the detail EXPANDED by default (point 6).
+  // pick (52.0201, muted "was") and the peer-suggested code (51.3801, emphasized) — a calm "⇄"
+  // glyph (distinct from the review "?", Sam 2026-07-18), and the detail EXPANDED by default (point 6).
   check("suggested-change row shows TWO aligned CIP boxes", !!nurItem.querySelector(".cipx-rev-2box") && !!nurItem.querySelector(".cipx-rev-chip-was .cipx-code") && !!nurItem.querySelector(".cipx-rev-chip-rec .cipx-code"));
   check("box A = the crosswalk-from-TOP code (a business 52.* code, muted 'was'), distinct from the peer code", (function () { var w = nurItem.querySelector(".cipx-rev-chip-was"); return w && /52\.\d{4}/.test(w.textContent) && !/51\.3801/.test(w.textContent); })());
   check("box B = the peer-suggested code (emphasized 'rec')", /51\.3801/.test(nurItem.querySelector(".cipx-rev-chip-rec").textContent));
   check("the peer line reports the agreement metric (4 of 5)", (function () { var l = nurItem.querySelector(".cipx-rev-reclabel"); return l && /4 of 5/.test(l.textContent); })());
-  check("the status glyph is a calm '?' (not the old ⚠⚑)", (function () { var s = nurItem.querySelector(".cipx-rev-stat-suggest"); return s && /\?/.test(s.textContent) && !/⚑|⚠/.test(nurItem.querySelector(".cipx-rev-row").textContent); })());
+  check("the Suggested status glyph is a calm '⇄' — distinct from the review '?' (not the old ⚠⚑)", (function () { var s = nurItem.querySelector(".cipx-rev-stat-suggest"); return s && /⇄/.test(s.textContent) && !/⚑|⚠|\?/.test(nurItem.querySelector(".cipx-rev-row").textContent); })());
   check("suggested-change rows land in the '? Suggested' triage bucket", (function () { var t = Array.prototype.filter.call(revdoc.querySelectorAll(".cipx-rev-tile"), (x) => /Suggested/.test(x.textContent))[0]; return t && /1/.test(t.querySelector(".cipx-rev-tilen").textContent); })());
   check("progress line reports the peer-corroborated count", (function () { var p = revdoc.querySelector(".cipx-rev-peercount"); return p && /1 peer-corroborated/.test(p.textContent); })());
   // default-expanded (point 6): the detail is already open — no click needed
@@ -584,6 +602,12 @@ function fresh(withCollege) {
   check("suggested-change rows are expanded by default, others collapsed", udoc.querySelectorAll(".cipx-rev-detail").length >= 1 && udoc.querySelectorAll(".cipx-rev-detail").length < udoc.querySelectorAll(".cipx-rev-item").length);
   xall.click(); await tick();
   check("Expand all opens every row", udoc.querySelectorAll(".cipx-rev-detail").length === udoc.querySelectorAll(".cipx-rev-item").length);
+  // subject-scoping regression (adversarial-review MAJOR): in "★ All departments" view the why-line
+  // must count only SAME-SUBJECT siblings. The 3 ACCT courses AND the MYST course all land on 52.0301,
+  // so an unscoped tally would wrongly read "3 other ACCT courses"; scoped it reads "2".
+  const uAcct = Array.prototype.filter.call(udoc.querySelectorAll(".cipx-rev-item"), (it) => /ACCT 20/.test(it.textContent))[0];
+  check("why-line is SUBJECT-scoped in the All-departments view (cross-subject same-code course excluded)", (function () { var w = uAcct && uAcct.querySelector(".cipx-rev-whyline-review"); return w && /2 other ACCT course/.test(w.textContent) && !/3 other ACCT/.test(w.textContent); })());
+  check("status cell carries an accessible name (aria-label), not just a glyph", (function () { var s = uAcct && uAcct.querySelector(".cipx-rev-stat"); return s && /status/.test(s.getAttribute("aria-label") || ""); })());
   const uNur = Array.prototype.filter.call(udoc.querySelectorAll(".cipx-rev-item"), (it) => /Nursing/.test(it.textContent))[0];
   const uChg = uNur.querySelector(".cipx-rev-chip-rec .cipx-rev-chipchg");
   check("the CIP box carries a ▾ 'change to any code' affordance (point 5)", !!uChg);
@@ -592,6 +616,15 @@ function fresh(withCollege) {
   uNur.querySelector(".cipx-rev-chip-rec").click(); await tick();
   check("clicking the emphasized peer box uses that code (one-click accept — point 1)", (function () { try { var v = JSON.parse(domU.window.localStorage.getItem("cipx_rev_test_college") || "{}")["NURS 101 — Nursing"]; return Array.isArray(v) && v.indexOf("51.3801") >= 0; } catch (e) { return false; } })());
 
+  // ── Review-status rows: the visible "?" glyph + the inline "why" reason (Sam's points 1 & 2) ──
+  deptSel.value = "ACCT"; deptSel.dispatchEvent(new domRev.window.Event("change"));
+  await tick(); await tick();
+  const acctItem = revdoc.querySelector(".cipx-rev-list .cipx-rev-item");
+  check("a Review row shows a VISIBLE '?' status glyph in the warn color (Sam's point 1)", (function () { var s = acctItem && acctItem.querySelector(".cipx-rev-stat-warn"); return s && /\?/.test(s.textContent); })());
+  check("a Review row carries an inline 'why it needs a look' reason line (Sam's point 2)", !!acctItem.querySelector(".cipx-rev-whyline-review"));
+  check("the Review 'why' line explains the same-code overlap (Sam's Autobody case)", (function () { var w = acctItem.querySelector(".cipx-rev-whyline-review"); return w && /Same code as/.test(w.textContent) && /other ACCT course/.test(w.textContent); })());
+  check("the '? Review' triage tile counts the review rows", (function () { var t = Array.prototype.filter.call(revdoc.querySelectorAll(".cipx-rev-tile"), (x) => /Review/.test(x.textContent))[0]; return t && /3/.test(t.querySelector(".cipx-rev-tilen").textContent); })());
+
   // ── Part C — failure guards ──
   const dom2 = makeDom(); dom2.window.eval(src);
   let missThrew = false;
@@ -599,7 +632,9 @@ function fresh(withCollege) {
   check("missing data → no throw", !missThrew);
   check("missing data → graceful message", /unavailable/.test(dom2.window.document.getElementById("cip-crosswalk-root").textContent));
 
-  const dom3 = makeDom(); dom3.window.CIP_CROSSWALK = { fams: {}, rows: [] }; dom3.window.eval(src);
+  const dom3 = makeDom(); dom3.window.CIP_CROSSWALK = { fams: {}, rows: [] };
+  try { dom3.window.localStorage.setItem("cipx_mode", "browse"); } catch (e) {}   // browse-view empty-state test (Review is now default)
+  dom3.window.eval(src);
   let emptyThrew = false;
   try { dom3.window.CPL_CIP_CROSSWALK.activate(); } catch (e) { emptyThrew = true; console.error(e); }
   check("empty rows[] → no throw", !emptyThrew);
@@ -608,6 +643,7 @@ function fresh(withCollege) {
   // college with no courses → nudge, no throw
   const dom4 = makeDom();
   dom4.window.CIP_CROSSWALK = JSON.parse(JSON.stringify(FIXTURE));
+  try { dom4.window.localStorage.setItem("cipx_mode", "browse"); } catch (e) {}   // browse inline-fit flow (Review is now default)
   dom4.window.eval(src);
   dom4.window.CPL_CIP_CROSSWALK._setColleges(JSON.parse(JSON.stringify(MANIFEST)));
   dom4.window.CPL_CIP_CROSSWALK._setCourses("test_college", []);

@@ -1094,3 +1094,47 @@ root-cause notes in `docs/cip_crosswalk_handoff.md` → "Sam's checkpoint steer"
 
 Side-lane discipline honored: `kb/cpl_todos.json` + the numbered `docs/session_<N>_handoff.md` left
 untouched (CCR mainline owns those); this checkpoint lives in the CIP handoff + this lessons doc.
+
+### 2026-07-18 (SkyCoco) — the Review-tab legibility pass (#842): the 4 checkpoint items
+
+Picked up SkyEasy's 4-item steer and shipped all four in one JS-only PR (`cip_crosswalk.js` +
+`tests/cip_crosswalk.test.js`; Rule 4 untouched, no artifacts). Sam confirmed item 1 live mid-session
+(*"should be a question mark for needing review"*) and sent his Cerritos AB screenshot as the ground truth.
+
+1. **Visible "look here" mark.** The muted `·` Review glyph — invisible against `--cipx-muted` — becomes
+   a **visible amber `?`** on the row *and* the tile. Recolored `.cipx-rev-stat-warn` / `.cipx-rev-tile-warn`
+   muted → `--cipx-warn-fg`. The **Suggested** glyph moved `?` → **`⇄`** so the two attention states stay
+   distinct (SkyEasy's "distinct from the Suggested ?" note honored). Full set now:
+   ✓ Ready (green) · **? Review (amber)** · ⇄ Suggested (blue) · ◻ Manual (grey).
+
+2. **The Ready/Review split made legible.** Root cause of Sam's confusion: on Autobody all 45 courses map
+   to `47.0603` (they share TOP 0949.00), and the 37/8 Ready/Review split is *purely* the `conf ≥ 85`
+   description-confidence gate in `computeRecommend` — invisible to the user. Fix (display-only, no
+   reclassification): a dept-wide `codeCount` tally powers an **inline "why" line** on each Review/Manual
+   row. For the Autobody case it reads *"Same code as 44 other AB courses here — likely right, but this
+   course's description doesn't confirm it on its own. Open to confirm or change."* — which turns an
+   arbitrary-looking split into an honest, reassuring one. A **"Showing all N …"** context line ties the
+   tile counts to the visible list (+ a one-click **Show all** from a filtered view) — resolving the
+   "8 Review among 45 shown" confusion. **Doctrine note:** the sibling-count is TOP-derived (same TOP →
+   same crosswalk CIP is definitional), so per the §7 TOP caveat it is used *only* to DISPLAY/explain —
+   never to gate or upgrade a row's bucket. A Review row stays Review; the copy says "likely," not "is."
+
+3. **Review-first + default.** `modeBar` reordered to `[Review · Browse · Find]`; `st.mode` defaults to
+   `review` (init, `ingest()` MODE_KEY read, `_setMode` all flipped). A returning user's explicit tab
+   click (which writes `cipx_mode`) is still honored — only new/unset users land on Review. Browse-view
+   jsdom tests were pinned to `cipx_mode=browse` since the default moved.
+
+4. **Confirm-all reassurance.** A muted line under the bulk buttons + the button's own tooltip: *"Confirming
+   just fills in your starting point here in the browser — it's never final, every code stays editable, and
+   nothing reaches COCI until your college enters it there."* Shown exactly when a bulk-confirm/accept
+   button is present.
+
+Ready rows stay clean one-liners (the quiet-by-default pass preserved) — only attention rows earn a reason
+line. Tests **180 → 190**. Verified in **real Chromium on live Cerritos AB data** (desktop + phone, light +
+dark, 0 overflow, 0 console errors) — the reported figures are the actual rendered ones, not fixtures.
+
+**Method that worked (carry it):** Sam's live screenshot of the *exact* broken case + a headless-Chromium
+driver that loads the *same* college/department is the tightest possible loop — the "44 other AB courses"
+number in the fix is the real rendered value on his data, so the before/after is concrete, not "should be
+fixed." Plus a 4-lens adversarial review of the diff (correctness · UX-honesty · WCAG · §7 doctrine) before
+merge. Side-lane discipline honored: `kb/cpl_todos.json` + the numbered handoff untouched.
