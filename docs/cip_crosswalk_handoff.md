@@ -64,24 +64,51 @@ The Review-tab **legibility pass** — Sam's 4-item steer from reviewing Cerrito
 3. **Review-first tab + default mode** (`st.mode` init / `ingest()` MODE_KEY read / `_setMode` / `modeBar`).
 4. **Confirm-all reassurance** line + button tooltip.
 Tests **180 → 190**; real-Chromium on live Cerritos AB (desktop + phone, light + dark, 0 overflow / 0 errors).
-Full story: `docs/cip_crosswalk_lessons.md` (bottom).
+
+### Shipped 2026-07-18 (SkyCoco — #843)
+1. **Program-coherence default** (Sam's idea): a "no clear winner" Review row whose own pick is weak +
+   uncorroborated (its code used by < `REV_DOMINANT_MIN`=3 dept siblings) **defaults its box to the
+   department's dominant code** — e.g. Ironworker IWAP 40.xx (broad TOP 0956.00 grab-bag → weak `15.0405`
+   Robotics) now default to `48.0511` Metal Fabricator (13 IWAP courses use it), **still Review**, with an
+   honest "defaulted to … N of your IWAP courses use" reason. `effectiveSug()` + `deptTop`, display-only,
+   never changes status (§7-safe). A textbook "TOP is unreliable" case for the CIP-transition messaging.
+2. **Cañada mojibake** fixed (`CaÃ±ada`→`Cañada`), generator hardened with a `_demojibake()` repair.
+
+### Shipped 2026-07-18 (SkyCoco — #844) — inline multi-CIP
+Full flow, prototype-locked ([artifact](https://claude.ai/code/artifact/114df6ab-184a-4b21-b0af-4ae62f241d09)):
+`+` beside the box adds a CIP inline; extras **stack** (3+), each removable; **anchor-OK** popup confirms the
+original first if needed (it stays the anchor); a prompt → **Apply to other courses** = a checklist of ONLY
+the subject courses sharing the primary CIP. **KEY MODEL:** `✓` = *individually validated* (new store
+`cipx_revok_<college>`), separate from *assigned* codes (`cipx_rev_<college>`). Bulk-applied siblings get the
+code but **stay in Review (`?`)** ("received N … from a sibling — review and confirm, or leave for a later
+pass"). Every individual-confirm path calls `revSetValidated(true)`; the bulk-apply path does NOT — **honor
+this when adding any new assignment action.** Tests → **207**.
 
 **Data.** `kb/_build_cip_crosswalk.py` → `cip_crosswalk_data.js` (`window.CIP_CROSSWALK`, committed, no
 cron): `topcip[<TOP>]={t,c:[[cip,tier]]}` + `boiler[]` + the lean `{fams, rows}` reference. Per-college
 courses lazy-fetched from `cip_fitcheck/<slug>.json` (`kb/_build_cip_fitcheck.py`). Cross-college consensus
-`course_top_consensus.json` (`kb/_build_course_top_consensus.py`). Engine seams: `_score`, `_courseScore`,
+`course_top_consensus.json` (`kb/_build_course_top_consensus.py`). Seams: `_score`, `_courseScore`,
 `_courseToks`, `_recommend`, `_bestMatches`, `_parseSubject`, `_reviewRows`, `_reviewRowOf`, `_setMode`.
+Review internals (not exported; grep them): `effectiveSug`/`deptTop` (program-default), `revCips`/`revSetCips`
+(assigned) vs `revIsValidated`/`revSetValidated` (`cipx_revok_`), `revAddCip`/`renderAddPicker`/
+`renderAddPrompt`/`renderApplyPanel` (multi-CIP flow), `revInline` (per-row inline-UI state).
 
-## 🎯 Priority — the still-open items (SkyEasy's list, minus what #842 closed)
+## 🎯 Priority — the still-open items
+0. **Tech Center API/batch plan (Sam commissioned, 2026-07-18 — "as this settles in").** A very short plan
+   for the Tech Center (who runs COCI) for an **API or batch integration** to push *validated* CIPs into
+   COCI on behalf of the colleges. Natural payload = the **validated set** (`cipx_revok_`, from #844) — the
+   codes faculty personally OK'd, not the merely-assigned ones. Not yet drafted; write it when Sam signals.
+   *(Also done 2026-07-18: a short "what the new version does" email to Jenni + Raul — see the session chat.)*
 1. **Unify "assign a CIP" across all three modes.** The recommend-mode inline check and the review picker
    should share ONE assign+persist path. Today review persists per-college in `localStorage`; the
    recommend/inline check doesn't persist a chosen code. Make "I want THIS CIP for this course" a
    first-class, remembered action everywhere it makes sense.
-2. **Phase 3 — port confirmed CIPs to COCI (batch/API).** Sam: *"later we can just port the verified CIPs
-   directly to COCI and spare the colleges from going in course by course."* The review sheet's confirmed
-   decisions are the payload. Scope: where confirmed decisions live (localStorage today — needs a Supabase
-   store to be a real submission queue), the COCI ingest contract (ask Jenni / the Tech Center — they own
-   the COCI CIP dropdown), and the human-gated review before anything writes to COCI.
+2. **Phase 3 — port VALIDATED CIPs to COCI (batch/API).** Sam: *"later we can just port the verified CIPs
+   directly to COCI and spare the colleges from going in course by course."* #844's **validated set**
+   (`cipx_revok_`) is exactly the human-gated payload. Scope: it lives in `localStorage` today — a real
+   submission queue needs a **Supabase store**; the COCI ingest contract (ask Jenni / the Tech Center — they
+   own the COCI CIP dropdown, per §7); and the human-gated review before anything writes to COCI. Pairs with
+   priority #0.
 3. **Remaining WCAG polish** (the focused pass shipped in #824; #842 added the visible `?` + reason text as
    non-color redundancy). Round out before wider field release: full `role=tablist ⇄ tabpanel` semantics on
    the mode toggle, meter `role`/value semantics, `prefers-reduced-motion`, screen-reader announcement copy
