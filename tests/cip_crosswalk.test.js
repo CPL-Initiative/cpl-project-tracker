@@ -639,6 +639,39 @@ function fresh(withCollege) {
   check("the defaulted row stays flagged Review (a '?' status), not silently 'Ready'", (function () { var s = acct300 && acct300.querySelector(".cipx-rev-stat-warn"); return s && /\?/.test(s.textContent); })());
   check("the defaulted row's 'why' line is honest about the default (defaulted to … N of your ACCT courses use)", (function () { var w = acct300 && acct300.querySelector(".cipx-rev-whyline-review"); return w && /defaulted to/.test(w.textContent) && /52\.0301/.test(w.textContent) && /of your ACCT courses use/.test(w.textContent); })());
 
+  // ── multi-CIP: inline "+" add (with anchor-OK) + apply-to-subject, targets stay in Review (Sam, 2026-07-18) ──
+  const domM = freshR("review");
+  domM.window.CPL_CIP_CROSSWALK._setConsensus(RCONSENSUS);
+  const mdoc = domM.window.document;
+  await tick(); await tick();
+  const mSel = mdoc.querySelector(".cipx-rev-deptsel");
+  mSel.value = "ACCT"; mSel.dispatchEvent(new domM.window.Event("change"));
+  await tick(); await tick();
+  const acct = (n) => Array.prototype.filter.call(mdoc.querySelectorAll(".cipx-rev-item"), (it) => new RegExp("ACCT " + n + "\\b").test(it.textContent))[0];
+  const mCips = (label) => { try { return JSON.parse(domM.window.localStorage.getItem("cipx_rev_test_college") || "{}")[label] || []; } catch (e) { return []; } };
+  const mOk = (label) => { try { return !!JSON.parse(domM.window.localStorage.getItem("cipx_revok_test_college") || "{}")[label]; } catch (e) { return false; } };
+  check("multi-CIP: a review row carries a '+' to add another CIP inline (no expand)", !!acct(200).querySelector(".cipx-rev-addcip"));
+  acct(200).querySelector(".cipx-rev-addcip").click(); await tick();
+  check("multi-CIP: '+' on an un-OK'd row first asks to confirm the original CIP inline (Sam point 1)", (function () { var b = acct(200).querySelector(".cipx-rev-anchorok"); return b && /52\.0301/.test(b.textContent); })());
+  acct(200).querySelector(".cipx-rev-anchorok").click(); await tick();
+  check("multi-CIP: OK-ing the anchor confirms it (validated) + opens the add-search", mCips("ACCT 200 — Special Topics")[0] === "52.0301" && mOk("ACCT 200 — Special Topics") && !!acct(200).querySelector(".cipx-rev-addpick .cipx-cbwrap"));
+  (function () { var inp = acct(200).querySelector(".cipx-rev-addpick input"); inp.value = "52.0302"; inp.dispatchEvent(new domM.window.Event("input")); })();
+  await tick();
+  (function () { var o = acct(200).querySelector(".cipx-rev-addpick .cipx-cb-opt"); if (o) o.dispatchEvent(new domM.window.MouseEvent("mousedown", { bubbles: true })); })();
+  await tick();
+  check("multi-CIP: adding a second code stacks it (course carries 2 CIPs)", (function () { var v = mCips("ACCT 200 — Special Topics"); return v.length === 2 && v.indexOf("52.0302") >= 0; })());
+  check("multi-CIP: both CIPs render as stacked boxes on the row", acct(200).querySelectorAll(".cipx-rev-cipstack .cipx-rev-chip").length >= 2);
+  check("multi-CIP: after adding, the row offers 'Apply to other courses'", !!acct(200).querySelector(".cipx-rev-applybtn"));
+  acct(200).querySelector(".cipx-rev-applybtn").click(); await tick();
+  const mApplyCands = acct(200).querySelectorAll(".cipx-rev-apply .cipx-rev-applycc input");
+  check("multi-CIP: the apply list is scoped to same-subject courses sharing the primary CIP (Sam's scoping)", mApplyCands.length >= 2 && !/MYST|NURS|BUS/.test(acct(200).querySelector(".cipx-rev-applylist").textContent));
+  acct(200).querySelector(".cipx-rev-applygo").click(); await tick();
+  check("multi-CIP: applied targets receive the added code", mCips("ACCT 201 — Special Projects").indexOf("52.0302") >= 0);
+  check("multi-CIP: applied targets STAY in Review — not auto-validated (Sam point 2)", !mOk("ACCT 201 — Special Projects"));
+  check("multi-CIP: an applied target's glyph is still '?' (Review), not '✓'", (function () { var s = acct(201).querySelector(".cipx-rev-stat"); return s && /\?/.test(s.textContent) && !/✓/.test(s.textContent); })());
+  check("multi-CIP: an applied target shows the 'received … from a sibling' reason", /applied from a sibling/.test(acct(201).querySelector(".cipx-rev-whyline-applied") ? acct(201).querySelector(".cipx-rev-whyline-applied").textContent : ""));
+  check("multi-CIP: the source row IS validated (✓)", /✓/.test(acct(200).querySelector(".cipx-rev-stat").textContent));
+
   // ── Part C — failure guards ──
   const dom2 = makeDom(); dom2.window.eval(src);
   let missThrew = false;

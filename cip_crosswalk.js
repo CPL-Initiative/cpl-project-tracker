@@ -1006,6 +1006,9 @@
   // ═══════════════════════════════════════════════════════════════════════════
   var rev = { dept: null, filter: "all", q: "", byDept: {}, courses: null };
   var revListHost, revSummaryHost, revDeptSel, revProgHost, revOpen = {}, revRailEl;
+  // per-row inline-UI state for the multi-CIP flow (add-picker → prompt → apply-to-subject). Like
+  // revOpen, it survives the list re-render so an in-progress add/apply stays put. Reset per department.
+  var revInline = {};
 
   function parseSubject(label) {
     var l = label || "", i = l.indexOf(" — ");
@@ -1034,6 +1037,21 @@
     var d = revDecisions(), arr = revCips(d, label), i = arr.indexOf(cip);
     if (i >= 0) arr.splice(i, 1); else arr.push(cip);
     revSetCips(label, arr);
+  }
+  // VALIDATED is separate from having a code ASSIGNED (Sam, 2026-07-18): a course validated (✓) is one the
+  // faculty individually OK'd (accept a box, OK the anchor in the + flow, or Validate-all). A course that
+  // only received a bulk-APPLIED code from a sibling has the code but stays in Review (?) so it can still
+  // be tuned individually. `cipx_rev_*` holds the assigned codes; `cipx_revok_*` holds the validated set.
+  function revValidatedSet() {
+    if (!st.college) return {};
+    try { return JSON.parse(localStorage.getItem("cipx_revok_" + st.college) || "{}") || {}; } catch (e) { return {}; }
+  }
+  function revIsValidated(label) { return !!revValidatedSet()[label]; }
+  function revSetValidated(label, on) {
+    if (!st.college) return;
+    var s = revValidatedSet();
+    if (on) s[label] = 1; else delete s[label];
+    try { localStorage.setItem("cipx_revok_" + st.college, JSON.stringify(s)); } catch (e) {}
   }
 
   // classify one course into the triage buckets using the easy-button engine.
@@ -1151,7 +1169,7 @@
 
   function loadDept() {
     if (!rev.dept) { clear(revSummaryHost); clear(revListHost); clear(revProgHost); return; }
-    revOpen = {};   // fresh expansion state per department
+    revOpen = {}; revInline = {};   // fresh expansion + inline-UI state per department
     var dept = { subj: rev.dept, courses: deptCourses() };
     clear(revListHost); clear(revSummaryHost);
     revProgHost.textContent = "Analyzing " + dept.courses.length.toLocaleString() + " courses…";
@@ -1180,7 +1198,7 @@
     var codeCount = {};
     rows.forEach(function (r) {
       counts[r.status]++;
-      if (revCips(dec, r.label).length) counts.confirmed++;
+      if (revIsValidated(r.label)) counts.confirmed++;   // ✓ = individually validated (not merely code-assigned)
       if (r.sugKind === "consensus") counts.peer++;
       if (r.sug) { var k = r.subj + "|" + r.sug.code; codeCount[k] = (codeCount[k] || 0) + 1; }
     });
@@ -1211,16 +1229,16 @@
     tilesRow.appendChild(tiles);
     var actions = el("div", { class: "cipx-rev-actions" }, []);
     var deptTail = rev.dept !== "__all__" ? " in " + rev.dept : "";
-    var unconfirmedClear = rows.filter(function (r) { return r.status === "clear" && r.sug && !revCips(dec, r.label).length; });
+    var unconfirmedClear = rows.filter(function (r) { return r.status === "clear" && r.sug && !revIsValidated(r.label); });
     if (unconfirmedClear.length) {
-      var bulk = el("button", { class: "cipx-rev-bulk", type: "button", title: "Fills in " + unconfirmedClear.length + " starting-point code" + (unconfirmedClear.length === 1 ? "" : "s") + " here in your browser. It's never final — every code stays editable or clearable, and nothing reaches COCI until your college enters it there." }, ["✓ Confirm all " + unconfirmedClear.length + " ready match" + (unconfirmedClear.length === 1 ? "" : "es") + deptTail]);
-      bulk.onclick = function () { unconfirmedClear.forEach(function (r) { revSetCips(r.label, [r.sug.code]); }); renderReview(rows); };
+      var bulk = el("button", { class: "cipx-rev-bulk", type: "button", title: "Confirms " + unconfirmedClear.length + " ready course" + (unconfirmedClear.length === 1 ? "" : "s") + " here in your browser. It's never final — every code stays editable or clearable, and nothing reaches COCI until your college enters it there." }, ["✓ Confirm all " + unconfirmedClear.length + " ready match" + (unconfirmedClear.length === 1 ? "" : "es") + deptTail]);
+      bulk.onclick = function () { unconfirmedClear.forEach(function (r) { if (!revCips(revDecisions(), r.label).length) revSetCips(r.label, [r.sug.code]); revSetValidated(r.label, true); }); renderReview(rows); };
       actions.appendChild(bulk);
     }
-    var unconfirmedSuggest = rows.filter(function (r) { return r.status === "suggest" && r.sug && !revCips(dec, r.label).length; });
+    var unconfirmedSuggest = rows.filter(function (r) { return r.status === "suggest" && r.sug && !revIsValidated(r.label); });
     if (unconfirmedSuggest.length) {
       var bulkS = el("button", { class: "cipx-rev-bulk cipx-rev-bulk-suggest", type: "button", title: "Accept the peer-suggested code for every course where peers point somewhere other than your current TOP. Review them first — they're expanded below." }, ["Accept all " + unconfirmedSuggest.length + " suggested change" + (unconfirmedSuggest.length === 1 ? "" : "s")]);
-      bulkS.onclick = function () { unconfirmedSuggest.forEach(function (r) { revSetCips(r.label, [r.sug.code]); }); renderReview(rows); };
+      bulkS.onclick = function () { unconfirmedSuggest.forEach(function (r) { revSetCips(r.label, [r.sug.code]); revSetValidated(r.label, true); }); renderReview(rows); };
       actions.appendChild(bulkS);
     }
     if (actions.firstChild) tilesRow.appendChild(actions);
@@ -1314,10 +1332,18 @@
       ]);
       chip.appendChild(panel);
     }
-    var chg = el("span", { class: "cipx-rev-chipchg", role: "button", tabindex: "0", "aria-label": "Change CIP code", title: "Change to any CIP code" }, ["▾"]);
-    chg.onclick = function (e) { e.stopPropagation(); openP(); };
-    chg.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.stopPropagation(); e.preventDefault(); openP(); } };
-    chip.appendChild(chg);
+    if (opts.onChange) {
+      var chg = el("span", { class: "cipx-rev-chipchg", role: "button", tabindex: "0", "aria-label": "Change CIP code", title: "Change to any CIP code" }, ["▾"]);
+      chg.onclick = function (e) { e.stopPropagation(); openP(); };
+      chg.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.stopPropagation(); e.preventDefault(); openP(); } };
+      chip.appendChild(chg);
+    }
+    if (opts.onRemove) {
+      var rm = el("span", { class: "cipx-rev-chiprm", role: "button", tabindex: "0", "aria-label": "Remove this CIP code", title: "Remove this CIP" }, ["×"]);
+      rm.onclick = function (e) { e.stopPropagation(); opts.onRemove(); };
+      rm.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.stopPropagation(); e.preventDefault(); opts.onRemove(); } };
+      chip.appendChild(rm);
+    }
     chip.onclick = function (e) { e.stopPropagation(); if (opts.onAccept) opts.onAccept(); };
     chip.onkeydown = function (e) {
       if (e.key === "Escape") { closeP(); return; }
@@ -1386,21 +1412,137 @@
     return "Among peer colleges teaching “" + c.cons.key + "”" + (c.cons.scoped ? " as a " + r.subj + " course" : "") + ", most use TOP " + c.modal.top + (c.modal.topTitle ? " · " + c.modal.topTitle : "") + ", which the crosswalk maps here.\n\n" + differHover(c.cons);
   }
 
+  // ── multi-CIP: add codes inline, then apply them to sibling courses (Sam, 2026-07-18) ──────────
+  // A course can carry more than one CIP. The "+" beside the box adds another inline (no row-expand);
+  // additional codes stack under the first. The course's "anchor" (its original/primary CIP) is
+  // cips[0] once confirmed, else its shown suggestion — adding a code confirms that anchor first, so
+  // the primary is never dropped. After adding, the row offers to apply the extra code(s) to the OTHER
+  // courses in the subject that share the same anchor (the coherent set — Sam's scoping).
+  function revAnchor(r, dec, ctx) {
+    var cips = revCips(dec, r.label);
+    return cips.length ? cips[0] : effectiveSug(r, ctx).code;
+  }
+  function coursePrimary(o, dec, ctx) {   // a sibling's primary CIP: its confirmed first, else its suggestion
+    var oc = revCips(dec, o.label);
+    return oc.length ? oc[0] : effectiveSug(o, ctx).code;
+  }
+  function revAddCip(r, dec, ctx, code) {
+    var cips = revCips(dec, r.label);
+    if (!cips.length) { var anchor = effectiveSug(r, ctx).code; cips = anchor ? [anchor] : []; }   // keep primary as the anchor
+    if (code && cips.indexOf(code) < 0) cips.push(code);
+    revSetCips(r.label, cips);
+    revSetValidated(r.label, true);   // adding a code yourself is an individual confirmation
+  }
+  function renderAddPicker(r, dec, ctx, host, allRows) {
+    var cips = revCips(dec, r.label), anchor = effectiveSug(r, ctx).code;
+    // Point 1 (Sam): if the original CIP hasn't been OK'd yet, ask them to confirm it right here (no need
+    // to exit) — it becomes the anchor, still changeable later without affecting anything they add.
+    if (!cips.length && anchor) {
+      var wrap = el("div", { class: "cipx-rev-addpick" }, [
+        el("div", { class: "cipx-rev-addhint" }, ["First, confirm this course's code — it stays the anchor (you can change it later without affecting anything you add):"]),
+      ]);
+      var boxrow = el("div", { class: "cipx-rev-anchorrow" }, [
+        cipBox(anchor, { id: "cipx-anch-" + r.label.replace(/\W/g, "").slice(0, 16),
+          onChange: function (code) { revSetCips(r.label, [code]); revSetValidated(r.label, true); renderReview(allRows); } }),
+      ]);
+      var ok = el("button", { class: "cipx-rev-anchorok", type: "button" }, ["OK — confirm " + anchor]);
+      ok.onclick = function (e) { e.stopPropagation(); revSetCips(r.label, [anchor]); revSetValidated(r.label, true); renderReview(allRows); };
+      boxrow.appendChild(ok);
+      wrap.appendChild(boxrow);
+      host.appendChild(wrap);
+      return;
+    }
+    var w = el("div", { class: "cipx-rev-addpick" }, [el("div", { class: "cipx-rev-addhint" }, ["Add another CIP code — a course can carry more than one:"])]);
+    w.appendChild(comboCore({
+      id: "cipx-addcip-" + r.label.replace(/\W/g, "").slice(0, 20),
+      label: "Add a CIP code", placeholder: "Type a code or keyword (e.g. welding)…",
+      groupsFor: allCodeGroupsFor,
+      onPick: function (picked) { revAddCip(r, dec, ctx, picked[2]); revInline[r.label] = "prompt"; renderReview(allRows); },
+    }));
+    host.appendChild(w);
+  }
+  function renderAddPrompt(r, dec, ctx, host, allRows) {
+    var pr = el("div", { class: "cipx-rev-addprompt" }, [
+      el("span", { class: "cipx-rev-addpaw", "aria-hidden": "true" }, ["🐾"]),
+      el("span", {}, ["Added. Add more if you need them — when you're ready, I can apply these to your other courses."]),
+    ]);
+    var more = el("button", { class: "cipx-rev-morebtn", type: "button" }, ["+ Add another"]);
+    more.onclick = function (e) { e.stopPropagation(); revInline[r.label] = "picker"; renderReview(allRows); };
+    var apply = el("button", { class: "cipx-rev-applybtn", type: "button" }, ["Apply to other courses"]);
+    apply.onclick = function (e) { e.stopPropagation(); revInline[r.label] = "apply"; renderReview(allRows); };
+    var done = el("button", { class: "cipx-rev-donebtn", type: "button" }, ["Done"]);
+    done.onclick = function (e) { e.stopPropagation(); revInline[r.label] = null; renderReview(allRows); };
+    pr.appendChild(more); pr.appendChild(apply); pr.appendChild(done);
+    host.appendChild(pr);
+  }
+  function renderApplyPanel(r, dec, ctx, host, allRows) {
+    var anchor = revAnchor(r, dec, ctx);
+    var extras = revCips(dec, r.label).filter(function (c) { return c !== anchor; });   // codes to propagate
+    if (!extras.length) { revInline[r.label] = null; renderReview(allRows); return; }
+    // candidates = OTHER courses in this subject whose PRIMARY CIP == this course's anchor (Sam's scoping)
+    var cands = allRows.filter(function (o) { return o.label !== r.label && o.subj === r.subj && coursePrimary(o, dec, ctx) === anchor; });
+    var panel = el("div", { class: "cipx-rev-apply" }, []);
+    panel.appendChild(el("div", { class: "cipx-rev-applyh" }, ["Apply to other " + r.subj + " courses"]));
+    panel.appendChild(el("div", { class: "cipx-rev-applylead" }, ["Add " + (extras.length > 1 ? "these codes" : "this code") + " to other " + r.subj + " courses that share this course's primary CIP ", el("b", {}, [anchor]), ". Uncheck any that shouldn't get " + (extras.length > 1 ? "them" : "it") + "."]));
+    panel.appendChild(el("div", { class: "cipx-rev-applychips" }, extras.map(function (c) { return el("span", { class: "cipx-rev-applychip" }, [c + "  " + ((BYCODE[c] || {}).t || "")]); })));
+    var checks = [], listBox = el("div", { class: "cipx-rev-applylist" }, []);
+    cands.forEach(function (o) {
+      var cb = el("input", { type: "checkbox" }); cb.checked = true;
+      var oExtras = revCips(dec, o.label).filter(function (c) { return c !== anchor; });
+      var mDash = o.label.indexOf(" — ");
+      listBox.appendChild(el("label", { class: "cipx-rev-applycc" }, [cb,
+        el("span", { class: "cipx-rev-applynm" }, [el("b", {}, [mDash >= 0 ? o.label.slice(0, mDash) : o.label]), mDash >= 0 ? " " + o.label.slice(mDash + 3) : ""]),
+        oExtras.length ? el("span", { class: "cipx-rev-applyhave", title: "already has: " + oExtras.join(", ") }, ["has " + oExtras.length + " extra"]) : null,
+      ]));
+      checks.push([cb, o]);
+    });
+    if (!cands.length) listBox.appendChild(el("div", { class: "cipx-rev-applyempty" }, ["No other " + r.subj + " courses share " + anchor + " yet."]));
+    var selAll = el("button", { class: "cipx-rev-applylink", type: "button" }, ["Select all"]);
+    selAll.onclick = function (e) { e.stopPropagation(); checks.forEach(function (p) { p[0].checked = true; }); };
+    var selNone = el("button", { class: "cipx-rev-applylink", type: "button" }, ["Clear"]);
+    selNone.onclick = function (e) { e.stopPropagation(); checks.forEach(function (p) { p[0].checked = false; }); };
+    panel.appendChild(el("div", { class: "cipx-rev-applytools" }, [
+      el("span", { class: "cipx-rev-applycount" }, [cands.length + " " + r.subj + " course" + (cands.length === 1 ? "" : "s") + " share " + anchor]),
+      el("span", {}, [selAll, document.createTextNode("  ·  "), selNone]),
+    ]));
+    panel.appendChild(listBox);
+    var applyBtn = el("button", { class: "cipx-rev-applygo", type: "button" }, ["Apply to selected"]);
+    applyBtn.onclick = function (e) {
+      e.stopPropagation();
+      checks.forEach(function (p) {
+        if (!p[0].checked) return;
+        var oc = revCips(dec, p[1].label);
+        if (!oc.length) oc = [anchor];   // confirm the target's shared primary so it isn't dropped
+        extras.forEach(function (c) { if (oc.indexOf(c) < 0) oc.push(c); });
+        revSetCips(p[1].label, oc);
+      });
+      revInline[r.label] = null; renderReview(allRows);
+    };
+    var cancel = el("button", { class: "cipx-rev-applycancel", type: "button" }, ["Cancel"]);
+    cancel.onclick = function (e) { e.stopPropagation(); revInline[r.label] = null; renderReview(allRows); };
+    panel.appendChild(el("div", { class: "cipx-rev-applyfoot" }, [applyBtn, cancel,
+      el("span", { class: "cipx-rev-applynote" }, ["Nothing is final — everything stays editable, and nothing reaches COCI until each college enters it there."])]));
+    host.appendChild(panel);
+  }
+
   function reviewRow(r, dec, allRows, ctx) {
     var cips = revCips(dec, r.label);
-    var confirmed = cips.length > 0;
+    var hasCips = cips.length > 0;                 // has code(s) assigned (individually OR bulk-applied)
+    var confirmed = revIsValidated(r.label);       // ✓ only when the faculty individually validated it
+    var applied = hasCips && !confirmed;           // codes assigned via a sibling's bulk-apply, not yet validated
     var eff = effectiveSug(r, ctx);   // may swap a weak review pick for the department's dominant code
-    var showCode = cips.length ? cips[0] : eff.code;
+    var showCode = hasCips ? cips[0] : eff.code;
     var stat = REV_STATUS[r.status];
-    var twoBox = r.suggestChange && !confirmed;
+    var twoBox = r.suggestChange && !hasCips;      // the two-box choice only until a code is assigned
     var caret = el("span", { class: "cipx-caret" }, ["▸"]);
-    function onChange(code) { revToggleCip(r.label, code); renderReview(allRows); }
-    function accept(code) { return function () { revSetCips(r.label, [code]); renderReview(allRows); }; }
+    function onChange(code) { revToggleCip(r.label, code); revSetValidated(r.label, true); renderReview(allRows); }
+    function accept(code) { return function () { revSetCips(r.label, [code]); revSetValidated(r.label, true); renderReview(allRows); }; }
+    function validateRow() { revSetValidated(r.label, true); renderReview(allRows); }   // OK an applied row as-is
     var chgId = "cipx-chg-" + r.label.replace(/\W/g, "").slice(0, 20);
 
     // The transition grid: [ current-code label ] → [ CIP box ]. Two aligned rows when peers
     // suggest a different code (Sam's point 1); the CIP-box column is shared so the boxes line up.
-    var grid = el("div", { class: "cipx-rev-tocip" + (twoBox ? " cipx-rev-2box" : "") }, []);
+    var grid = el("div", { class: "cipx-rev-tocip" + (twoBox ? " cipx-rev-2box" : "") + (!twoBox && cips.length > 1 ? " cipx-rev-tocip-stack" : "") }, []);
     function gline(labelEl, boxEl, cls) {
       grid.appendChild(el("span", { class: "cipx-rev-glabel" + (cls ? " " + cls : "") }, [labelEl]));
       grid.appendChild(el("span", { class: "cipx-rev-arrow" + (cls ? " " + cls : ""), "aria-hidden": "true" }, ["→"]));
@@ -1417,19 +1559,45 @@
         cipBox(r.sug.code, { cls: "cipx-rev-chip-rec", id: chgId + "b", onAccept: accept(r.sug.code), onChange: onChange, title: "Use the peer-suggested code · ▾ to change" }),
         "cipx-rev-l-rec");
     } else {
-      gline(fromTopEl(r),
-        cipBox(showCode, { on: confirmed, more: cips.length > 1 ? cips.length - 1 : 0, moreTip: cips.join(", "),
-          id: chgId, onAccept: confirmed ? null : (showCode ? accept(showCode) : null), onChange: onChange }));
+      // A vertical CIP STACK (Sam, 2026-07-18): the primary box + a "+" to add another inline, then any
+      // additional confirmed CIPs stacked directly under it (each removable). One CIP = one clean line.
+      var stack = el("div", { class: "cipx-rev-cipstack" }, []);
+      var primline = el("div", { class: "cipx-rev-primline" }, [
+        cipBox(showCode, { on: confirmed, id: chgId,
+          onAccept: confirmed ? null : (applied ? validateRow : (showCode ? accept(showCode) : null)),
+          title: applied ? "Codes applied from a sibling — click to confirm this course · ▾ to change" : null,
+          onChange: onChange }),
+      ]);
+      var addBtn = el("button", { class: "cipx-rev-addcip", type: "button", title: "Add another CIP code — a course can carry more than one", "aria-label": "Add another CIP to " + r.label }, ["+"]);
+      addBtn.onclick = function (e) { e.stopPropagation(); revInline[r.label] = (revInline[r.label] === "picker") ? null : "picker"; renderReview(allRows); };
+      primline.appendChild(addBtn);
+      stack.appendChild(primline);
+      cips.slice(1).forEach(function (code) {
+        stack.appendChild(el("div", { class: "cipx-rev-extraline" }, [
+          cipBox(code, { cls: "cipx-rev-chip-extra", id: chgId + "x" + code.replace(/\W/g, ""), onChange: onChange,
+            onRemove: function () { revToggleCip(r.label, code); renderReview(allRows); } }),
+        ]));
+      });
+      gline(fromTopEl(r), stack, "cipx-rev-l-stack");
     }
     // Quiet by default (Sam, 2026-07-18 — "ship it"): a Ready row is a clean one-liner. The peer-
     // corroboration metric that used to sit on a second line ("✓ N of M colleges agree") now lives
     // on the ✓'s tooltip + a faint peer-corroborated dot, and in the expanded card — not repeated on
     // every row. The two-box Suggested row keeps its full display (the rare row that earns the space).
     var tocip = el("span", { class: "cipx-rev-tocipwrap" }, [grid]);
+    // the inline multi-CIP flow host (add-picker → prompt → apply-to-subject), below the box stack.
+    if (!twoBox && revInline[r.label]) {
+      var ihost = el("div", { class: "cipx-rev-inline" }, []);
+      if (revInline[r.label] === "picker") renderAddPicker(r, dec, ctx, ihost, allRows);
+      else if (revInline[r.label] === "prompt") renderAddPrompt(r, dec, ctx, ihost, allRows);
+      else if (revInline[r.label] === "apply") renderApplyPanel(r, dec, ctx, ihost, allRows);
+      tocip.appendChild(ihost);
+    }
     var peerCorr = !confirmed && !twoBox && !!r.cons;   // Ready + peer-corroborated → a quiet dot + hover detail
 
     function statusTip() {
       if (confirmed) return "You confirmed this code";
+      if (applied) return cips.length + " code" + (cips.length === 1 ? "" : "s") + " applied here from a sibling course — click the box to confirm this course, or open to adjust.";
       if (r.status === "suggest") return "Peers teaching this course" + (r.cons && r.cons.cons.scoped ? " in " + r.subj : "") + " mostly use a different code than your current TOP’s — shown in the row. Worth a look.";
       if (r.status === "clear") return r.cons
         ? (peerTag(r) + " teaching this course code it the same way — your crosswalk agrees.\n\n" + differHover(r.cons.cons))
@@ -1450,11 +1618,13 @@
       el("span", { class: "cipx-rev-stat cipx-rev-stat-" + stat.cls + (peerCorr ? " cipx-rev-stat-peer" : ""), title: statusTip(), "aria-label": (confirmed ? "Confirmed" : stat.label) + " status" },
         [confirmed ? "✓" : stat.g, peerCorr ? el("span", { class: "cipx-rev-statdot", "aria-hidden": "true" }, ["·"]) : null]),
     ]);
-    var card = el("div", { class: "cipx-rev-item" + (confirmed ? " cipx-rev-conf" : "") + (twoBox ? " cipx-rev-item-suggest" : "") }, [head]);
+    var card = el("div", { class: "cipx-rev-item" + (confirmed ? " cipx-rev-conf" : "") + (applied ? " cipx-rev-item-applied" : "") + (twoBox ? " cipx-rev-item-suggest" : "") }, [head]);
     // inline "why this is a ?" reason (review/manual only — Ready rows stay clean one-liners). Sits
     // between the head and the (lazy) expand body so the reason is visible without opening the row.
-    var whyKids = confirmed ? null : reviewWhy(r, ctx || {}, eff);
-    if (whyKids) card.appendChild(el("div", { class: "cipx-rev-whyline cipx-rev-whyline-" + r.status }, whyKids));
+    var whyKids = confirmed ? null : (applied
+      ? ["This course received ", el("b", {}, [cips.length.toLocaleString()]), " CIP code" + (cips.length === 1 ? "" : "s") + " applied from a sibling course — review and confirm it (click the box), or leave it for a later pass."]
+      : reviewWhy(r, ctx || {}, eff));
+    if (whyKids) card.appendChild(el("div", { class: "cipx-rev-whyline cipx-rev-whyline-" + (applied ? "applied" : r.status) }, whyKids));
     var body = null;
     function paint() {
       var open = !!revOpen[r.label];
@@ -1543,7 +1713,8 @@
   function reviewExpand(r, dec, allRows) {
     var box = el("div", { class: "cipx-rev-detail" }, []);
     var cips = revCips(dec, r.label);
-    function toggle(code) { revToggleCip(r.label, code); renderReview(allRows); }   // revOpen keeps this row expanded
+    // selecting/deselecting a code in the expand is individual work → validate (or unvalidate when cleared)
+    function toggle(code) { revToggleCip(r.label, code); revSetValidated(r.label, revCips(revDecisions(), r.label).length > 0); renderReview(allRows); }   // revOpen keeps this row expanded
     // one multi-select candidate row — an explicit Select button (Sam: clearer than a checkbox);
     // the whole row is still clickable. "✓ Selected" toggles back off. A course may carry >1 CIP.
     function candRow(cr, rel, extraTag, cls, matched) {
@@ -1587,11 +1758,12 @@
       });
     }
 
-    // actions: confirm-the-suggestion (when nothing checked yet) + search-all + clear-all
+    // actions: confirm (the suggestion, or an applied-but-unvalidated course as-is) + search-all + clear-all
     var acts = el("div", { class: "cipx-rev-detactions" }, []);
-    if (!cips.length && r.sug) {
-      var conf = el("button", { class: "cipx-rev-confirm", type: "button" }, ["✓ Confirm " + r.sug.code]);
-      conf.onclick = function () { toggle(r.sug.code); };
+    var validated = revIsValidated(r.label);
+    if ((!cips.length && r.sug) || (cips.length && !validated)) {
+      var conf = el("button", { class: "cipx-rev-confirm", type: "button" }, [cips.length ? "✓ Confirm this course" : "✓ Confirm " + r.sug.code]);
+      conf.onclick = function () { if (!cips.length) { toggle(r.sug.code); } else { revSetValidated(r.label, true); renderReview(allRows); } };
       acts.appendChild(conf);
     }
     var srch = el("button", { class: "cipx-rev-searchall", type: "button" }, ["+ Add another code…"]);
@@ -1607,7 +1779,7 @@
     };
     acts.appendChild(srch);
     acts.appendChild(searchWrap);
-    if (cips.length) { var clr = el("button", { class: "cipx-rev-clear", type: "button" }, [cips.length > 1 ? "Clear all" : "Clear"]); clr.onclick = function () { revSetCips(r.label, []); renderReview(allRows); }; acts.appendChild(clr); }
+    if (cips.length) { var clr = el("button", { class: "cipx-rev-clear", type: "button" }, [cips.length > 1 ? "Clear all" : "Clear"]); clr.onclick = function () { revSetCips(r.label, []); revSetValidated(r.label, false); renderReview(allRows); }; acts.appendChild(clr); }
     box.appendChild(acts);
     return box;
   }
@@ -1616,10 +1788,11 @@
     var out = ["Course,Subject,Current TOP,TOP Title,CIP Code,CIP Title,CIP Category,Status,Source"];
     function q(v) { return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; }
     rows.forEach(function (r) {
-      var picked = revCips(dec, r.label);                       // 0+ faculty-chosen CIPs
+      var picked = revCips(dec, r.label);                       // 0+ assigned CIPs (validated OR bulk-applied)
       var eff = effectiveSug(r, ctx);                           // the shown code (may be a program-default)
       var codes = picked.length ? picked : (eff.code ? [eff.code] : []);
-      var source = picked.length ? "faculty-confirmed"
+      var source = picked.length
+        ? (revIsValidated(r.label) ? "faculty-confirmed" : "applied (not yet validated)")
         : (eff.defaulted ? ("program-default (" + eff.defaulted.n + " " + r.subj + " courses)")
         : (codes.length ? ("auto-suggested (" + (r.sugKind === "consensus" ? "peer consensus" : "crosswalk") + ")") : "none"));
       var titles = codes.map(function (c) { return (BYCODE[c] || {}).t || ""; });
@@ -2023,6 +2196,51 @@
       ".cipx-rev-none{font-size:.8rem;color:var(--cipx-muted);font-style:italic;}",
       ".cipx-rev-chipchg{align-self:center;font-size:.66rem;color:var(--cipx-muted);cursor:pointer;padding:1px 3px;border-radius:5px;line-height:1;}",
       ".cipx-rev-chipchg:hover{color:var(--cipx-accent);background:var(--cipx-accent-soft);}",
+      ".cipx-rev-chiprm{align-self:center;font-size:.95rem;color:var(--cipx-muted);cursor:pointer;padding:0 4px;border-radius:5px;line-height:1;}",
+      ".cipx-rev-chiprm:hover{color:var(--cipx-bad-stripe);background:var(--cipx-bad-bg);}",
+      ".cipx-rev-chiprm:focus-visible,.cipx-rev-addcip:focus-visible{outline:2px solid var(--cipx-focus);outline-offset:2px;}",
+      // multi-CIP stack: the primary box + a "+" (add) beside it, additional confirmed CIPs stacked under.
+      ".cipx-rev-tocip-stack{align-items:start;}",
+      ".cipx-rev-cipstack{display:flex;flex-direction:column;gap:5px;min-width:0;}",
+      ".cipx-rev-primline{display:flex;align-items:center;gap:6px;min-width:0;}",
+      ".cipx-rev-primline .cipx-rev-chip{flex:1 1 auto;width:auto;min-width:0;}",
+      ".cipx-rev-extraline{display:flex;min-width:0;}",
+      ".cipx-rev-extraline .cipx-rev-chip{flex:1 1 auto;width:100%;min-width:0;border-color:var(--cipx-accent);background:var(--cipx-accent-soft);}",
+      ".cipx-rev-extraline .cipx-rev-chip .cipx-code{color:var(--cipx-accent);}",
+      ".cipx-rev-addcip{flex:none;width:28px;height:28px;border-radius:8px;border:1px dashed var(--cipx-border-strong);background:var(--cipx-surface);color:var(--cipx-accent);font-size:1.15rem;line-height:1;cursor:pointer;display:grid;place-items:center;font-family:inherit;}",
+      ".cipx-rev-addcip:hover{border-style:solid;border-color:var(--cipx-accent);background:var(--cipx-accent-soft);}",
+      // inline flow host (picker / prompt / apply panel) under the box stack
+      ".cipx-rev-inline{margin-top:7px;}",
+      ".cipx-rev-addpick{background:var(--cipx-surface);border:1px solid var(--cipx-border-strong);border-radius:10px;padding:9px 10px;box-shadow:0 8px 22px rgba(0,0,0,.14);}",
+      ".cipx-rev-addhint{font-size:.72rem;font-weight:600;color:var(--cipx-muted);margin-bottom:6px;line-height:1.4;}",
+      ".cipx-rev-anchorrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}",
+      ".cipx-rev-anchorrow .cipx-rev-chip{flex:1 1 auto;min-width:0;}",
+      ".cipx-rev-anchorok{font-family:inherit;font-size:.8rem;font-weight:700;color:#fff;background:var(--cipx-ok-stripe);border:0;border-radius:8px;padding:7px 13px;cursor:pointer;white-space:nowrap;}.cipx.cipx-theme-dark .cipx-rev-anchorok{color:#0e1a2b;}",
+      // an applied-not-yet-validated row: a subtle accent rail so it reads as 'has codes, still needs a look'
+      ".cipx-rev-item-applied{border-left:3px solid var(--cipx-accent-soft);}",
+      ".cipx-rev-whyline-applied{color:var(--cipx-accent);}",
+      ".cipx-rev-addprompt{display:flex;align-items:center;gap:9px;flex-wrap:wrap;background:var(--cipx-accent-soft);border:1px solid var(--cipx-border);border-left:3px solid var(--cipx-accent);border-radius:10px;padding:9px 12px;font-size:.83rem;color:var(--cipx-text-soft);}",
+      ".cipx-rev-addpaw{font-size:1rem;}",
+      ".cipx-rev-morebtn,.cipx-rev-donebtn{font-family:inherit;font-size:.78rem;font-weight:600;color:var(--cipx-link);background:none;border:0;padding:4px 2px;cursor:pointer;text-decoration:underline;}",
+      ".cipx-rev-applybtn{font-family:inherit;font-size:.78rem;font-weight:700;color:#fff;background:var(--cipx-accent);border:0;border-radius:8px;padding:7px 13px;cursor:pointer;margin-left:auto;}.cipx.cipx-theme-dark .cipx-rev-applybtn{color:#0e1a2b;}",
+      ".cipx-rev-apply{background:var(--cipx-surface);border:1px solid var(--cipx-accent);border-radius:12px;padding:13px 15px;box-shadow:0 10px 26px rgba(0,0,0,.16);}",
+      ".cipx-rev-applyh{font-weight:700;font-size:.95rem;color:var(--cipx-text);}",
+      ".cipx-rev-applylead{font-size:.82rem;color:var(--cipx-text-soft);margin:3px 0 6px;line-height:1.5;}",
+      ".cipx-rev-applychips{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px;}",
+      ".cipx-rev-applychip{font-size:.72rem;font-weight:700;font-variant-numeric:tabular-nums;background:var(--cipx-accent-soft);color:var(--cipx-accent);border:1px solid var(--cipx-accent);border-radius:20px;padding:3px 10px;}",
+      ".cipx-rev-applytools{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 6px;font-size:.78rem;color:var(--cipx-muted);}",
+      ".cipx-rev-applylink{font-family:inherit;font-size:.78rem;font-weight:600;color:var(--cipx-link);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;}",
+      ".cipx-rev-applylist{display:flex;flex-direction:column;gap:1px;max-height:250px;overflow:auto;border:1px solid var(--cipx-border);border-radius:9px;padding:5px;}",
+      ".cipx-rev-applycc{display:flex;align-items:center;gap:11px;padding:7px 8px;border-radius:7px;cursor:pointer;}",
+      ".cipx-rev-applycc:hover{background:var(--cipx-surface-sub);}",
+      ".cipx-rev-applycc input{width:16px;height:16px;accent-color:var(--cipx-accent);cursor:pointer;flex:none;}",
+      ".cipx-rev-applynm{font-size:.88rem;color:var(--cipx-text);min-width:0;}.cipx-rev-applynm b{font-weight:700;}",
+      ".cipx-rev-applyhave{margin-left:auto;font-size:.68rem;font-weight:700;color:var(--cipx-muted);white-space:nowrap;}",
+      ".cipx-rev-applyempty{padding:9px;font-size:.82rem;color:var(--cipx-muted);}",
+      ".cipx-rev-applyfoot{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px;}",
+      ".cipx-rev-applygo{font-family:inherit;font-size:.82rem;font-weight:700;color:#fff;background:var(--cipx-accent);border:0;border-radius:8px;padding:8px 15px;cursor:pointer;}.cipx.cipx-theme-dark .cipx-rev-applygo{color:#0e1a2b;}",
+      ".cipx-rev-applycancel{font-family:inherit;font-size:.82rem;font-weight:600;color:var(--cipx-text-soft);background:var(--cipx-surface);border:1px solid var(--cipx-border-strong);border-radius:8px;padding:8px 14px;cursor:pointer;}.cipx-rev-applycancel:hover{border-color:var(--cipx-accent);color:var(--cipx-accent);}",
+      ".cipx-rev-applynote{font-size:.74rem;color:var(--cipx-muted);margin-left:auto;max-width:32rem;line-height:1.4;}",
       ".cipx-rev-chgpanel{position:absolute;top:100%;left:0;z-index:40;margin-top:5px;min-width:270px;max-width:360px;text-align:left;background:var(--cipx-surface);border:1px solid var(--cipx-border-strong);border-radius:10px;padding:9px 10px;box-shadow:0 10px 26px rgba(0,0,0,.20);cursor:default;white-space:normal;}",
       ".cipx-rev-chghint{font-size:.72rem;font-weight:600;color:var(--cipx-muted);margin-bottom:6px;}",
       ".cipx-rev-stat{font-size:.9rem;font-weight:800;text-align:right;white-space:nowrap;}",
