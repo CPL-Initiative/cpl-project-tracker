@@ -602,6 +602,12 @@ function fresh(withCollege) {
   check("suggested-change rows are expanded by default, others collapsed", udoc.querySelectorAll(".cipx-rev-detail").length >= 1 && udoc.querySelectorAll(".cipx-rev-detail").length < udoc.querySelectorAll(".cipx-rev-item").length);
   xall.click(); await tick();
   check("Expand all opens every row", udoc.querySelectorAll(".cipx-rev-detail").length === udoc.querySelectorAll(".cipx-rev-item").length);
+  // subject-scoping regression (adversarial-review MAJOR): in "★ All departments" view the why-line
+  // must count only SAME-SUBJECT siblings. The 3 ACCT courses AND the MYST course all land on 52.0301,
+  // so an unscoped tally would wrongly read "3 other ACCT courses"; scoped it reads "2".
+  const uAcct = Array.prototype.filter.call(udoc.querySelectorAll(".cipx-rev-item"), (it) => /ACCT 20/.test(it.textContent))[0];
+  check("why-line is SUBJECT-scoped in the All-departments view (cross-subject same-code course excluded)", (function () { var w = uAcct && uAcct.querySelector(".cipx-rev-whyline-review"); return w && /2 other ACCT course/.test(w.textContent) && !/3 other ACCT/.test(w.textContent); })());
+  check("status cell carries an accessible name (aria-label), not just a glyph", (function () { var s = uAcct && uAcct.querySelector(".cipx-rev-stat"); return s && /status/.test(s.getAttribute("aria-label") || ""); })());
   const uNur = Array.prototype.filter.call(udoc.querySelectorAll(".cipx-rev-item"), (it) => /Nursing/.test(it.textContent))[0];
   const uChg = uNur.querySelector(".cipx-rev-chip-rec .cipx-rev-chipchg");
   check("the CIP box carries a ▾ 'change to any code' affordance (point 5)", !!uChg);

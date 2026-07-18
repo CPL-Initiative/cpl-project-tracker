@@ -1172,15 +1172,17 @@
   function renderReview(rows) {
     var dec = revDecisions();
     var counts = { clear: 0, suggest: 0, review: 0, manual: 0, confirmed: 0, peer: 0 };
-    // dept-wide tally of how many courses land on each suggested code — powers the Review row's
-    // "why" line ("same code as N other AB courses"), which makes the Ready/Review split legible
-    // (Sam's point 2: on Autobody, 37 Ready + 8 Review all showed 47.0603 with no visible reason).
+    // tally of how many courses land on each suggested code — powers the Review row's "why" line
+    // ("same code as N other AB courses"), which makes the Ready/Review split legible (Sam's point 2:
+    // on Autobody, 37 Ready + 8 Review all showed 47.0603 with no visible reason). Keyed by SUBJECT +
+    // code so the "★ All departments" view (rows span many subjects) counts + labels only same-subject
+    // siblings — a cross-subject course sharing the code must not inflate "N other AB courses".
     var codeCount = {};
     rows.forEach(function (r) {
       counts[r.status]++;
       if (revCips(dec, r.label).length) counts.confirmed++;
       if (r.sugKind === "consensus") counts.peer++;
-      if (r.sug) codeCount[r.sug.code] = (codeCount[r.sug.code] || 0) + 1;
+      if (r.sug) { var k = r.subj + "|" + r.sug.code; codeCount[k] = (codeCount[k] || 0) + 1; }
     });
     // summary tiles double as filters — calm glyphs, Suggested surfaced right after All. The bulk
     // Confirm/Accept buttons ride on the SAME row as the tiles (Sam: "stack Confirm all + Accept all
@@ -1328,9 +1330,12 @@
   // one-liners; only the attention rows earn a reason line. `codeCount` = dept-wide tally of sug codes.
   function reviewWhy(r, codeCount) {
     if (r.status === "review") {
-      var peers = (r.sug ? (codeCount[r.sug.code] || 0) : 0) - 1;   // other dept courses landing on the same code
+      // other SAME-SUBJECT courses landing on the same code (they share this course's TOP → same
+      // crosswalk CIP). An honest DISPLAY of that fact — no "likely right" verdict, since same-TOP
+      // siblings are a correlated, TOP-derived signal, not independent corroboration (§7 caveat).
+      var peers = (r.sug ? (codeCount[r.subj + "|" + r.sug.code] || 0) : 0) - 1;
       if (r.sug && peers >= 2) {
-        return ["Same code as ", el("b", {}, [peers.toLocaleString()]), " other " + r.subj + " course" + (peers === 1 ? "" : "s") + " here — likely right, but this course's description doesn't confirm it on its own. Open to confirm or change."];
+        return ["Same code as ", el("b", {}, [peers.toLocaleString()]), " other " + r.subj + " course" + (peers === 1 ? "" : "s") + " here — they all map here from this TOP. Marked for review because the description alone doesn't confirm it; open to confirm or change."];
       }
       return ["No single clear winner from this course's description — open to pick from the crosswalk options or search."];
     }
@@ -1408,7 +1413,7 @@
       caret,
       el("span", { class: "cipx-rev-course" }, [el("span", { class: "cipx-rev-cname", title: r.label }, cnameKids)]),
       tocip,
-      el("span", { class: "cipx-rev-stat cipx-rev-stat-" + stat.cls + (peerCorr ? " cipx-rev-stat-peer" : ""), title: statusTip() },
+      el("span", { class: "cipx-rev-stat cipx-rev-stat-" + stat.cls + (peerCorr ? " cipx-rev-stat-peer" : ""), title: statusTip(), "aria-label": (confirmed ? "Confirmed" : stat.label) + " status" },
         [confirmed ? "✓" : stat.g, peerCorr ? el("span", { class: "cipx-rev-statdot", "aria-hidden": "true" }, ["·"]) : null]),
     ]);
     var card = el("div", { class: "cipx-rev-item" + (confirmed ? " cipx-rev-conf" : "") + (twoBox ? " cipx-rev-item-suggest" : "") }, [head]);
