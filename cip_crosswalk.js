@@ -1184,6 +1184,16 @@
       if (r.sugKind === "consensus") counts.peer++;
       if (r.sug) { var k = r.subj + "|" + r.sug.code; codeCount[k] = (codeCount[k] || 0) + 1; }
     });
+    // Program-coherence default (Sam, 2026-07-18): the CIP a "bunch" of a department's courses share
+    // (per subject). A "no clear winner" row whose own crosswalk pick is a weak, uncorroborated guess
+    // (e.g. Ironworker "Rigging" → 15.0405 Robotics, from a broad TOP's grab-bag crosswalk) defaults to
+    // this dominant code instead — the code most of its IWAP siblings land on — STILL flagged Review.
+    var deptTop = {};
+    Object.keys(codeCount).forEach(function (k) {
+      var i = k.indexOf("|"), subj = k.slice(0, i), n = codeCount[k];
+      if (n >= REV_DOMINANT_MIN && (!deptTop[subj] || n > deptTop[subj].n)) deptTop[subj] = { code: k.slice(i + 1), n: n };
+    });
+    var ctx = { codeCount: codeCount, deptTop: deptTop };
     // summary tiles double as filters — calm glyphs, Suggested surfaced right after All. The bulk
     // Confirm/Accept buttons ride on the SAME row as the tiles (Sam: "stack Confirm all + Accept all
     // on the same row as the number boxes — simple, simple, simple").
@@ -1234,7 +1244,7 @@
       xall.onclick = function () { shown.forEach(function (r) { revOpen[r.label] = anyClosed; }); renderReview(rows); };
       revRailEl.appendChild(xall);
       var csv = el("button", { class: "cipx-rev-csv", type: "button", title: "Download this list as CSV" }, ["⬇ CSV"]);
-      csv.onclick = function () { exportReviewCsv(rows, dec); };
+      csv.onclick = function () { exportReviewCsv(rows, dec, ctx); };
       revRailEl.appendChild(csv);
     }
 
@@ -1260,7 +1270,7 @@
       showEl.appendChild(back);
     }
     revListHost.appendChild(showEl);
-    shown.slice(0, 300).forEach(function (r) { revListHost.appendChild(reviewRow(r, dec, rows, codeCount)); });
+    shown.slice(0, 300).forEach(function (r) { revListHost.appendChild(reviewRow(r, dec, rows, ctx)); });
     if (shown.length > 300) revListHost.appendChild(el("div", { class: "cipx-rev-more" }, ["Showing 300 of " + shown.length.toLocaleString() + " — narrow by department or filter."]));
   }
 
@@ -1325,15 +1335,38 @@
       ? el("span", { class: "cipx-rev-fromtop", title: "Current TOP " + r.top + (r.topTitle ? " · " + r.topTitle : "") }, ["TOP ", el("span", { class: "cipx-code" }, [r.top])])
       : el("span", { class: "cipx-rev-fromtop cipx-rev-fromtop-none", title: "This course has no TOP code" }, ["no TOP"]);
   }
+  // "a bunch" of a department's courses share a code (Sam, 2026-07-18) — the threshold at which a
+  // dominant code becomes the program-coherence default for that department's no-clear-winner rows.
+  var REV_DOMINANT_MIN = 3;
+
+  // The CIP a Review row should DISPLAY. A weak, uncorroborated own-crosswalk pick (its own code is
+  // shared by fewer than "a bunch" of sibling courses) is replaced by the DEPARTMENT'S dominant code —
+  // "the welding CIP a bunch of the other IWAP courses use" (Sam) — still flagged Review, human-confirmed.
+  // Program coherence, display-only; it never changes the row's status. deptTop[subj] = {code, n}.
+  function effectiveSug(r, ctx) {
+    var code = r.sug ? r.sug.code : null, defaulted = null;
+    if (code && r.status === "review" && ctx && ctx.deptTop) {
+      var own = ctx.codeCount[r.subj + "|" + code] || 0, dt = ctx.deptTop[r.subj];
+      if (dt && own < REV_DOMINANT_MIN && dt.code !== code) { defaulted = dt; code = dt.code; }
+    }
+    return { code: code, defaulted: defaulted };
+  }
+
   // The inline reason a row is "?" Review (or ◻ Manual) — Sam's point 2: make the Ready/Review split
   // legible so identical-looking rows (all AB → 47.0603) don't read as arbitrary. Ready rows stay clean
-  // one-liners; only the attention rows earn a reason line. `codeCount` = dept-wide tally of sug codes.
-  function reviewWhy(r, codeCount) {
+  // one-liners; only the attention rows earn a reason line. `eff` = effectiveSug(r, ctx) (already computed).
+  function reviewWhy(r, ctx, eff) {
     if (r.status === "review") {
+      // Program-coherence default: this course had no clear winner of its own, so we defaulted the box to
+      // the code a bunch of its department siblings use — honest about both facts, still needs a look.
+      if (eff && eff.defaulted) {
+        var dt = eff.defaulted, dr = BYCODE[dt.code];
+        return ["No clear match from this course's own description or TOP — defaulted to ", el("b", {}, [dt.code]), (dr ? " " + dr.t : ""), ", the code " + dt.n.toLocaleString() + " of your " + r.subj + " courses use. Still needs review — confirm or change."];
+      }
       // other SAME-SUBJECT courses landing on the same code (they share this course's TOP → same
       // crosswalk CIP). An honest DISPLAY of that fact — no "likely right" verdict, since same-TOP
       // siblings are a correlated, TOP-derived signal, not independent corroboration (§7 caveat).
-      var peers = (r.sug ? (codeCount[r.subj + "|" + r.sug.code] || 0) : 0) - 1;
+      var peers = (r.sug ? ((ctx && ctx.codeCount[r.subj + "|" + r.sug.code]) || 0) : 0) - 1;
       if (r.sug && peers >= 2) {
         return ["Same code as ", el("b", {}, [peers.toLocaleString()]), " other " + r.subj + " course" + (peers === 1 ? "" : "s") + " here — they all map here from this TOP. Marked for review because the description alone doesn't confirm it; open to confirm or change."];
       }
@@ -1353,10 +1386,11 @@
     return "Among peer colleges teaching “" + c.cons.key + "”" + (c.cons.scoped ? " as a " + r.subj + " course" : "") + ", most use TOP " + c.modal.top + (c.modal.topTitle ? " · " + c.modal.topTitle : "") + ", which the crosswalk maps here.\n\n" + differHover(c.cons);
   }
 
-  function reviewRow(r, dec, allRows, codeCount) {
+  function reviewRow(r, dec, allRows, ctx) {
     var cips = revCips(dec, r.label);
     var confirmed = cips.length > 0;
-    var showCode = cips.length ? cips[0] : (r.sug ? r.sug.code : null);
+    var eff = effectiveSug(r, ctx);   // may swap a weak review pick for the department's dominant code
+    var showCode = cips.length ? cips[0] : eff.code;
     var stat = REV_STATUS[r.status];
     var twoBox = r.suggestChange && !confirmed;
     var caret = el("span", { class: "cipx-caret" }, ["▸"]);
@@ -1419,7 +1453,7 @@
     var card = el("div", { class: "cipx-rev-item" + (confirmed ? " cipx-rev-conf" : "") + (twoBox ? " cipx-rev-item-suggest" : "") }, [head]);
     // inline "why this is a ?" reason (review/manual only — Ready rows stay clean one-liners). Sits
     // between the head and the (lazy) expand body so the reason is visible without opening the row.
-    var whyKids = confirmed ? null : reviewWhy(r, codeCount || {});
+    var whyKids = confirmed ? null : reviewWhy(r, ctx || {}, eff);
     if (whyKids) card.appendChild(el("div", { class: "cipx-rev-whyline cipx-rev-whyline-" + r.status }, whyKids));
     var body = null;
     function paint() {
@@ -1578,14 +1612,16 @@
     return box;
   }
 
-  function exportReviewCsv(rows, dec) {
+  function exportReviewCsv(rows, dec, ctx) {
     var out = ["Course,Subject,Current TOP,TOP Title,CIP Code,CIP Title,CIP Category,Status,Source"];
     function q(v) { return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; }
     rows.forEach(function (r) {
       var picked = revCips(dec, r.label);                       // 0+ faculty-chosen CIPs
-      var codes = picked.length ? picked : (r.sug ? [r.sug.code] : []);
+      var eff = effectiveSug(r, ctx);                           // the shown code (may be a program-default)
+      var codes = picked.length ? picked : (eff.code ? [eff.code] : []);
       var source = picked.length ? "faculty-confirmed"
-        : (codes.length ? ("auto-suggested (" + (r.sugKind === "consensus" ? "peer consensus" : "crosswalk") + ")") : "none");
+        : (eff.defaulted ? ("program-default (" + eff.defaulted.n + " " + r.subj + " courses)")
+        : (codes.length ? ("auto-suggested (" + (r.sugKind === "consensus" ? "peer consensus" : "crosswalk") + ")") : "none"));
       var titles = codes.map(function (c) { return (BYCODE[c] || {}).t || ""; });
       var cats = codes.map(function (c) { return (BYCODE[c] || {}).cat || ""; });
       out.push([q(r.label), q(r.subj), q(r.top), q(r.topTitle), q(codes.join("; ")), q(titles.join("; ")), q(cats.join("; ")), q(REV_STATUS[r.status].label), q(source)].join(","));

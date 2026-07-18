@@ -96,6 +96,9 @@ const RFIXTURE = {
     "0505.00": { t: "Accounting", c: [["52.0201", "o"], ["52.0301", "o"], ["52.0302", "o"], ["32.0107", "n"], ["32.0111", "n"]] },
     "1701.00": { t: "Mathematics", c: [["27.0101", "o"], ["32.0202", "n"]] },
     "1230.00": { t: "Registered Nursing", c: [["51.3801", "o"]] },
+    // a broad "grab-bag" TOP with candidates unrelated to any course (mirrors real TOP 0956.00) — a
+    // course coded here gets only weak lexical picks, so it exercises the program-coherence default.
+    "9560.00": { t: "Manufacturing and Industrial Technology", c: [["49.0205", "o"], ["27.0101", "o"], ["01.0000", "o"]] },
   },
   boiler: ["32.0107", "32.0111"],
 };
@@ -110,6 +113,10 @@ const RCOURSES = [
   ["ACCT 200 — Special Topics", "A survey course exploring assorted contemporary themes through selected readings, films, and class discussion.", "0505.00"],
   ["ACCT 201 — Special Projects", "A survey course exploring assorted contemporary themes through selected readings, films, and class discussion.", "0505.00"],
   ["ACCT 202 — Independent Study", "A survey course exploring assorted contemporary themes through selected readings, films, and class discussion.", "0505.00"],
+  // ACCT 300 is coded under the grab-bag TOP 9560.00 → only weak lexical picks (none 52.030x). Its own
+  // pick is uncorroborated (count 1), so it should DEFAULT to the ACCT dominant 52.0301 (Sam's IWAP→welding
+  // program-coherence idea), still flagged Review — not left showing an unrelated weak code.
+  ["ACCT 300 — Field Study", "A survey course exploring assorted contemporary themes through selected readings, films, and class discussion.", "9560.00"],
 ];
 // cross-college consensus fixture: peers overwhelmingly code "Nursing" under a Registered
 // Nursing TOP (1230.00); this college used 0505.00 (Accounting) — the lone outlier.
@@ -623,7 +630,14 @@ function fresh(withCollege) {
   check("a Review row shows a VISIBLE '?' status glyph in the warn color (Sam's point 1)", (function () { var s = acctItem && acctItem.querySelector(".cipx-rev-stat-warn"); return s && /\?/.test(s.textContent); })());
   check("a Review row carries an inline 'why it needs a look' reason line (Sam's point 2)", !!acctItem.querySelector(".cipx-rev-whyline-review"));
   check("the Review 'why' line explains the same-code overlap (Sam's Autobody case)", (function () { var w = acctItem.querySelector(".cipx-rev-whyline-review"); return w && /Same code as/.test(w.textContent) && /other ACCT course/.test(w.textContent); })());
-  check("the '? Review' triage tile counts the review rows", (function () { var t = Array.prototype.filter.call(revdoc.querySelectorAll(".cipx-rev-tile"), (x) => /Review/.test(x.textContent))[0]; return t && /3/.test(t.querySelector(".cipx-rev-tilen").textContent); })());
+  check("the '? Review' triage tile counts the review rows", (function () { var t = Array.prototype.filter.call(revdoc.querySelectorAll(".cipx-rev-tile"), (x) => /Review/.test(x.textContent))[0]; return t && /4/.test(t.querySelector(".cipx-rev-tilen").textContent); })());
+  // program-coherence default (Sam, 2026-07-18): ACCT 300 (grab-bag TOP 9560.00, weak uncorroborated pick)
+  // should DEFAULT its box to the ACCT dominant 52.0301 — "the code a bunch of your ACCT courses use" —
+  // still flagged Review, with an honest "defaulted to …" reason.
+  const acct300 = Array.prototype.filter.call(revdoc.querySelectorAll(".cipx-rev-item"), (it) => /ACCT 300/.test(it.textContent))[0];
+  check("a weak 'no clear winner' row defaults its box to the department's dominant code (Sam's IWAP→welding idea)", (function () { var c = acct300 && acct300.querySelector(".cipx-rev-chip .cipx-code"); return c && /52\.0301/.test(c.textContent); })());
+  check("the defaulted row stays flagged Review (a '?' status), not silently 'Ready'", (function () { var s = acct300 && acct300.querySelector(".cipx-rev-stat-warn"); return s && /\?/.test(s.textContent); })());
+  check("the defaulted row's 'why' line is honest about the default (defaulted to … N of your ACCT courses use)", (function () { var w = acct300 && acct300.querySelector(".cipx-rev-whyline-review"); return w && /defaulted to/.test(w.textContent) && /52\.0301/.test(w.textContent) && /of your ACCT courses use/.test(w.textContent); })());
 
   // ── Part C — failure guards ──
   const dom2 = makeDom(); dom2.window.eval(src);
