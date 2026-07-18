@@ -109,9 +109,12 @@ const RCOURSES = [
 // Nursing TOP (1230.00); this college used 0505.00 (Accounting) — the lone outlier.
 const RCONSENSUS = {
   colleges: ["Alpha College", "Beta College", "Gamma College", "Delta College", "Test College"],
+  subjects: ["NURS", "BUS"],
   titles: {
-    "nursing": { n: 5, t: [["1230.00", [0, 1, 2, 3]], ["0505.00", [4]]] },
-    "business basics": { n: 6, t: [["0505.00", [0, 1, 2, 3, 4]]] },
+    // all 5 "Nursing" peers are NURS-subject → a NURS course gets a SUBJECT-SCOPED consensus that
+    // may override the outlier's business TOP (the legit correction). Parallel [collegeIdx],[subjIdx].
+    "nursing": { n: 5, t: [["1230.00", [0, 1, 2, 3], [0, 0, 0, 0]], ["0505.00", [4], [0]]] },
+    "business basics": { n: 6, t: [["0505.00", [0, 1, 2, 3, 4], [1, 1, 1, 1, 1]]] },
   },
 };
 function freshR(mode) {
@@ -404,7 +407,7 @@ function fresh(withCollege) {
   const rcNur = Array.prototype.filter.call(rcdoc.querySelector(".cipx-rec-combohost .cipx-fit-panel").querySelectorAll(".cipx-cb-opt"), (o) => /Nursing/.test(o.textContent))[0];
   rcNur.dispatchEvent(new domRC.window.MouseEvent("mousedown"));
   const rcHost = rcdoc.querySelector(".cipx-rec-host");
-  check("recommend mode: shows the peer-consensus block for a course", rcHost && rcHost.querySelector(".cipx-rev-peer") && /how peers code/i.test(rcHost.querySelector(".cipx-rev-peer").textContent));
+  check("recommend mode: shows the peer-consensus block for a course", rcHost && rcHost.querySelector(".cipx-rev-peer") && /peers code this course/i.test(rcHost.querySelector(".cipx-rev-peer").textContent));
   check("recommend mode: the consensus block names the peer field's CIP", rcHost && /51\.3801/.test(rcHost.querySelector(".cipx-rev-peer").textContent));
 
   // ── Part B3 — "Review my catalog" (Phase 2 whole-catalog triage) ──
@@ -453,7 +456,11 @@ function fresh(withCollege) {
   const csThin = sApi._consensus("ZOO 1 — Health Science", "ZOO");
   check("subject-scoping: too few same-subject peers → falls back to the full-title consensus", csThin && csThin.scoped === false && csThin.n === 7);
   // legacy consensus data (no subjects[]) still works — scoping simply never engages
-  check("subject-scoping: legacy data without subjects[] degrades to the full consensus", (function () { var c = rApi._consensus("NURS 101 — Nursing", "NURS"); return c && c.scoped === false && c.modal.top === "1230.00"; })());
+  check("subject-scoping: legacy data without subjects[] degrades to the full consensus", (function () {
+    var legApi = freshR().window.CPL_CIP_CROSSWALK;
+    legApi._setConsensus({ colleges: ["A", "B", "C", "D", "E"], titles: { "nursing": { n: 5, t: [["1230.00", [0, 1, 2, 3]], ["0505.00", [4]]] } } });
+    var c = legApi._consensus("NURS 101 — Nursing", "NURS"); return c && c.scoped === false && c.modal.top === "1230.00";
+  })());
 
   // ── WORK-EXPERIENCE courses stay in their own discipline (Sam's ARCH B48WE catch) ──
   // The title "Work Experience Education" is shared across ALL departments, so a cross-title peer
@@ -467,6 +474,23 @@ function fresh(withCollege) {
   const weRow = weApi._reviewRows([weCourse])[0];
   check("a work-experience row is never a peer-driven 'suggested change'", weRow.status !== "suggest" && weRow.suggestChange === false && !weRow.cons);
   check("a work-experience row keeps its own discipline's crosswalk CIP (not a generic admin code)", weRow.sug && /^52\./.test(weRow.sug.code));
+
+  // ── a CROSS-DISCIPLINE (non-subject-scoped) consensus must not OVERRIDE the discipline ──
+  // Sam's CARPT 224 "Materials of Construction": the generic title is taught across many
+  // construction disciplines; most peers file it under Architecture, but a Carpentry course must
+  // keep Carpentry. Here: a math course whose "materials of construction" title's peers are all
+  // ARCHITECTURE (different subject) → the consensus is a full-title fallback, NOT subject-scoped,
+  // so it may not push the course off its own discipline.
+  const xdApi = freshR().window.CPL_CIP_CROSSWALK;
+  xdApi._setConsensus({ colleges: ["A", "B", "C", "D", "E"], subjects: ["ARCH"], titles: { "materials of construction": { n: 5, t: [["0505.00", [0, 1, 2, 3, 4], [0, 0, 0, 0, 0]]] } } });
+  const xdCourse = ["MATH 10 — Materials of Construction", "general mathematics and statistics for construction estimating", "1701.00"];
+  const xdRow = xdApi._reviewRows([xdCourse])[0];
+  check("a cross-discipline (non-subject-scoped) consensus does NOT override the course's own discipline", xdRow.suggestChange === false && !xdRow.cons && xdRow.sug && /^27\./.test(xdRow.sug.code));
+  // but the SAME non-scoped pool, when it AGREES with the course's own crosswalk, still corroborates
+  const xaApi = freshR().window.CPL_CIP_CROSSWALK;
+  xaApi._setConsensus({ colleges: ["A", "B", "C", "D", "E"], subjects: ["ARCH"], titles: { "materials of construction": { n: 5, t: [["1701.00", [0, 1, 2, 3, 4], [0, 0, 0, 0, 0]]] } } });
+  const xaRow = xaApi._reviewRows([xdCourse])[0];
+  check("a non-scoped consensus that AGREES with the course's crosswalk still corroborates (no false switch)", xaRow.suggestChange === false && xaRow.sug && /^27\./.test(xaRow.sug.code) && !!xaRow.cons);
 
   // ── college selection is EPHEMERAL — never restored from storage (Sam: "clear on close") ──
   const ephDom = makeDom();
@@ -527,7 +551,7 @@ function fresh(withCollege) {
   check("suggested-change row is EXPANDED by default (detail + outside-crosswalk candidate visible)", !!nurItem.querySelector(".cipx-rev-detail") && !!outCand);
   // peer-consensus block (before we click anything that re-renders)
   const peer = nurItem.querySelector(".cipx-rev-peer");
-  check("peer-consensus block renders how other colleges code this course", !!peer && /how peers code/i.test(peer.textContent));
+  check("peer-consensus block renders how other colleges code this course", !!peer && /peers code this course/i.test(peer.textContent));
   check("peer block shows the honest (M use, K differ) strength metric", peer && /\(4 use, 1 differ\)/.test(peer.textContent));
   check("peer differ-metric hover lists the differing colleges", (function () { var m = peer && peer.querySelector(".cipx-rev-peermetric"); return m && /Test College/.test(m.getAttribute("title") || ""); })());
   const peerCand = nurItem.querySelector(".cipx-rev-cand-peer");
