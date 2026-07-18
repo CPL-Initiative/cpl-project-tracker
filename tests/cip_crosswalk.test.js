@@ -515,8 +515,18 @@ function fresh(withCollege) {
   deptSel.value = "BUS"; deptSel.dispatchEvent(new domRev.window.Event("change"));
   await tick(); await tick();
   check("review mode: selecting a department renders triage tiles", !!revdoc.querySelector(".cipx-rev-tiles .cipx-rev-tile"));
+  // layout polish (2026-07-18): bulk Confirm/Accept ride on the tiles row; Expand + CSV live in the
+  // top-right rail next to the Theme toggle; Coco the mascot rides in the rail.
+  check("bulk Confirm/Accept sit on the tiles row (not their own strip)", !!revdoc.querySelector(".cipx-rev-tilesrow .cipx-rev-bulk"));
+  check("Theme + Expand + CSV live together in the top-right rail", !!revdoc.querySelector(".cipx-toprail .cipx-themetog") && !!revdoc.querySelector(".cipx-toprail-rev .cipx-rev-expand") && !!revdoc.querySelector(".cipx-toprail-rev .cipx-rev-csv"));
+  check("Coco the emotional-support pup rides in the rail (muted outlined SVG + name)", (function () { var c = revdoc.querySelector(".cipx-toprail .cipx-coco"); return c && c.querySelector(".cipx-coco-svg") && /Coco/.test(c.textContent); })());
   const revRow = revdoc.querySelector(".cipx-rev-list .cipx-rev-item");
   check("review mode: renders a course row with a suggested CIP chip", revRow && revRow.querySelector(".cipx-rev-chip .cipx-code"));
+  check("course number shows without the em dash (bold number + plain-gap title)", (function () { var n = revRow.querySelector(".cipx-rev-cnum"), t = revRow.querySelector(".cipx-rev-ctitle"); return n && t && !/—/.test(revRow.querySelector(".cipx-rev-cname").textContent); })());
+  // "quiet by default" (2026-07-18): a peer-corroborated Ready row is a one-liner — no caption line;
+  // the peer count moves to a hover dot + the ✓ tooltip (BUS "Business Basics" is Ready + consensus).
+  check("Ready rows are quiet one-liners — no peer-corroboration caption on the row", !revRow.querySelector(".cipx-rev-cap"));
+  check("a peer-corroborated Ready row shows a hover dot + the count in the ✓ tooltip", (function () { var s = revRow.querySelector(".cipx-rev-stat-peer"); return s && !!s.querySelector(".cipx-rev-statdot") && /\d+ of \d+/.test(s.getAttribute("title") || ""); })());
   revRow.querySelector(".cipx-rev-row").click();
   await tick();
   const cand = revRow.querySelector(".cipx-rev-cand");
@@ -569,8 +579,8 @@ function fresh(withCollege) {
   const uSel = udoc.querySelector(".cipx-rev-deptsel");
   uSel.value = "__all__"; uSel.dispatchEvent(new domU.window.Event("change"));
   await tick(); await tick();
-  const xall = udoc.querySelector(".cipx-rev-utils .cipx-rev-expand");
-  check("Expand-all control is present (point 6)", !!xall && /Expand all|Collapse all/.test(xall.textContent));
+  const xall = udoc.querySelector(".cipx-toprail-rev .cipx-rev-expand");
+  check("Expand-all control is present in the top-right rail (point 6)", !!xall && /Expand all|Collapse all/.test(xall.textContent));
   check("suggested-change rows are expanded by default, others collapsed", udoc.querySelectorAll(".cipx-rev-detail").length >= 1 && udoc.querySelectorAll(".cipx-rev-detail").length < udoc.querySelectorAll(".cipx-rev-item").length);
   xall.click(); await tick();
   check("Expand all opens every row", udoc.querySelectorAll(".cipx-rev-detail").length === udoc.querySelectorAll(".cipx-rev-item").length);

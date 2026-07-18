@@ -1035,3 +1035,45 @@ On real American River data the CARPT department went 1 bogus suggested-change �
 `46.0201 Carpentry`. Tests 172 → **174** (cross-discipline no-override + non-scoped-corroboration);
 the `RCONSENSUS` test fixture now carries subjects (real data always does), so the Nursing outlier
 stays a scoped override. Real-Chromium verified.
+
+### 2026-07-18 (later still) — "quiet by default" row density (prototype → shipped)
+
+Sam noticed the CARPT screenshot's simplicity ("if we can get to a level of simplicity like that
+in our normal view, it might reinforce our easy-button approach") and asked me to think through the
+tradeoff. Diagnosis: CARPT looked clean because those rows carry no peer-consensus caption; COMM/BIO
+looked heavier because most Ready rows carried a second line — "✓ N of M colleges agree." That
+caption was ~all the visual weight.
+
+Prototyped the "quiet by default" density in a fast-feedback artifact (current ⇄ proposed toggle on
+8 real row types, both themes) → Sam: "ship it." Ported: a Ready row is now a clean one-liner. The
+peer-corroboration metric moved OFF the row to (a) the ✓'s tooltip + a faint accent **dot** ("hover
+for the count") and (b) the expanded card (unchanged). The two-box **Suggested** row keeps its full
+display — the rare row that earns the space, and quieting everything around it makes it pop. Aggregate
+trust still shows in the tiles + the "N peer-corroborated" progress line. On real Norco/COMM data the
+department went from a caption on every Ready row → 12 clean one-liners, 10 with the ✓· dot. Tests
+174 → **176** (no caption line; peer-corroborated Ready row carries the dot + count-in-tooltip).
+Method note: `docs/kb-notes/methodology-quiet-by-default-row-density.md` candidate.
+
+### 2026-07-18 (rapid live-polish) — "simpler, simpler, simpler" + Coco the mascot
+
+A fast back-and-forth on the Review row/summary layout, all shipped:
+- **CIP codes line up + boxes are uniform width.** The inline TOP *title* (variable length) was
+  what pushed the CIP boxes to ragged positions — dropped it to the TOP tooltip so every label is
+  "TOP NNNN.NN" (tabular, uniform width) → codes align. The box column is now `1fr` and the chip
+  fills it (title ellipsizes, ▾ anchors right) → every box the same width, one line each.
+- **Em dash → plain gap** on the course label ("BIO 4  Human Biology" — bold number + gap; full
+  label with the dash stays as the hover tooltip + the storage key).
+- **Bulk Confirm/Accept ride on the tiles row** (right-aligned) instead of their own strip.
+- **Top-right utility rail**: Theme + Expand-all + CSV stacked, one width "for harmony," reclaiming
+  the old full-width utils row. Horizontal on phones. The Theme toggle moved out of its lone
+  absolute corner into the rail.
+- **🐾 Coco** — a muted, outlined line-art puppy mascot rides at the top of the rail as the tab's
+  emotional-support pet (`cocoMascot()`, createElementNS SVG, currentColor so it themes).
+
+**Product seed (Sam, for Raul's TOP→CIP Toolkit doc):** Coco could graduate from mascot to the
+toolkit's **AI assistant** — ask-a-question / jump-to-section so faculty don't wade through the
+whole doc. Wiring target: the existing Sierra `/functions/v1/cpl-chat` edge function (finder-not-
+decider posture, per the §7 TOP caveat). Not built yet — captured here + in the handoff.
+
+Tests 176 → **180** (tiles-row buttons, rail with Theme/Expand/CSV, Coco present, em-dash-free
+course name). Real-Chromium desktop + phone, light + dark, 0 overflow / 0 errors.

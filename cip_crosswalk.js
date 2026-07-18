@@ -1003,7 +1003,7 @@
   // Framing everywhere: a SUGGESTION you confirm; COCI is the record.
   // ═══════════════════════════════════════════════════════════════════════════
   var rev = { dept: null, filter: "all", q: "", byDept: {}, courses: null };
-  var revListHost, revSummaryHost, revDeptSel, revProgHost, revOpen = {};
+  var revListHost, revSummaryHost, revDeptSel, revProgHost, revOpen = {}, revRailEl;
 
   function parseSubject(label) {
     var l = label || "", i = l.indexOf(" — ");
@@ -1168,8 +1168,11 @@
     var dec = revDecisions();
     var counts = { clear: 0, suggest: 0, review: 0, manual: 0, confirmed: 0, peer: 0 };
     rows.forEach(function (r) { counts[r.status]++; if (revCips(dec, r.label).length) counts.confirmed++; if (r.sugKind === "consensus") counts.peer++; });
-    // summary tiles double as filters — calm glyphs, Suggested surfaced right after All
+    // summary tiles double as filters — calm glyphs, Suggested surfaced right after All. The bulk
+    // Confirm/Accept buttons ride on the SAME row as the tiles (Sam: "stack Confirm all + Accept all
+    // on the same row as the number boxes — simple, simple, simple").
     clear(revSummaryHost);
+    var tilesRow = el("div", { class: "cipx-rev-tilesrow" }, []);
     var tiles = el("div", { class: "cipx-rev-tiles" }, []);
     [["all", "All", rows.length, ""], ["suggest", "? Suggested", counts.suggest, "suggest"], ["clear", "✓ Ready", counts.clear, "ok"], ["review", "· Review", counts.review, "warn"], ["manual", "◻ Manual", counts.manual, "muted"]].forEach(function (t) {
       if (t[0] === "suggest" && !counts.suggest) return;   // hide the Suggested tile when there are none
@@ -1179,11 +1182,7 @@
       tile.onclick = function () { rev.filter = t[0]; renderReview(rows); };
       tiles.appendChild(tile);
     });
-    revSummaryHost.appendChild(tiles);
-    var progline = el("div", { class: "cipx-rev-progline" }, [counts.confirmed.toLocaleString() + " of " + rows.length.toLocaleString() + " confirmed",
-      counts.peer ? el("span", { class: "cipx-rev-peercount", title: "Suggestions corroborated by a clear majority of peer colleges teaching the same course in the same discipline — the strongest signal." }, ["  ·  " + counts.peer.toLocaleString() + " peer-corroborated"]) : null]);
-    revSummaryHost.appendChild(progline);
-    // per-department actions: bulk-confirm ready + accept-all-suggested + expand-all + CSV
+    tilesRow.appendChild(tiles);
     var actions = el("div", { class: "cipx-rev-actions" }, []);
     var deptTail = rev.dept !== "__all__" ? " in " + rev.dept : "";
     var unconfirmedClear = rows.filter(function (r) { return r.status === "clear" && r.sug && !revCips(dec, r.label).length; });
@@ -1198,18 +1197,23 @@
       bulkS.onclick = function () { unconfirmedSuggest.forEach(function (r) { revSetCips(r.label, [r.sug.code]); }); renderReview(rows); };
       actions.appendChild(bulkS);
     }
-    revSummaryHost.appendChild(actions);
-    // secondary row: expand/collapse all + CSV (kept apart from the confirm actions)
-    var utils = el("div", { class: "cipx-rev-utils" }, []);
+    if (actions.firstChild) tilesRow.appendChild(actions);
+    revSummaryHost.appendChild(tilesRow);
+    var progline = el("div", { class: "cipx-rev-progline" }, [counts.confirmed.toLocaleString() + " of " + rows.length.toLocaleString() + " confirmed",
+      counts.peer ? el("span", { class: "cipx-rev-peercount", title: "Suggestions corroborated by a clear majority of peer colleges teaching the same course in the same discipline — the strongest signal." }, ["  ·  " + counts.peer.toLocaleString() + " peer-corroborated"]) : null]);
+    revSummaryHost.appendChild(progline);
     var shown = rows.filter(function (r) { return rev.filter === "all" || r.status === rev.filter; });
-    var anyClosed = shown.some(function (r) { return !revOpen[r.label]; });
-    var xall = el("button", { class: "cipx-rev-expand", type: "button" }, [anyClosed ? "⤢ Expand all" : "⤡ Collapse all"]);
-    xall.onclick = function () { shown.forEach(function (r) { revOpen[r.label] = anyClosed; }); renderReview(rows); };
-    utils.appendChild(xall);
-    var csv = el("button", { class: "cipx-rev-csv", type: "button", title: "Download this list as CSV" }, ["⬇ CSV"]);
-    csv.onclick = function () { exportReviewCsv(rows, dec); };
-    utils.appendChild(csv);
-    revSummaryHost.appendChild(utils);
+    // Expand-all + CSV live in the top-right rail (under Theme), not a full-width row of their own.
+    if (revRailEl) {
+      clear(revRailEl);
+      var anyClosed = shown.some(function (r) { return !revOpen[r.label]; });
+      var xall = el("button", { class: "cipx-rev-expand", type: "button" }, [anyClosed ? "⤢ Expand all" : "⤡ Collapse all"]);
+      xall.onclick = function () { shown.forEach(function (r) { revOpen[r.label] = anyClosed; }); renderReview(rows); };
+      revRailEl.appendChild(xall);
+      var csv = el("button", { class: "cipx-rev-csv", type: "button", title: "Download this list as CSV" }, ["⬇ CSV"]);
+      csv.onclick = function () { exportReviewCsv(rows, dec); };
+      revRailEl.appendChild(csv);
+    }
 
     // the rows — Suggested first (peers propose a change), then Review, Manual, Ready
     clear(revListHost);
@@ -1278,9 +1282,12 @@
 
   // The current TOP, labeled, as the left side of the "your code → " transition.
   function fromTopEl(r) {
+    // Just "TOP NNNN.NN" inline (uniform width, tabular) so the CIP boxes line up in a clean column
+    // (Sam, 2026-07-18). The TOP title varies in length + was already truncated to near-uselessness
+    // inline — it lives in the hover tooltip now.
     return r.top
-      ? el("span", { class: "cipx-rev-fromtop", title: "Current TOP " + r.top + (r.topTitle ? " · " + r.topTitle : "") }, ["TOP ", el("span", { class: "cipx-code" }, [r.top]), r.topTitle ? el("span", { class: "cipx-rev-fromtt" }, [" · " + r.topTitle]) : null])
-      : el("span", { class: "cipx-rev-fromtop cipx-rev-fromtop-none" }, ["no TOP"]);
+      ? el("span", { class: "cipx-rev-fromtop", title: "Current TOP " + r.top + (r.topTitle ? " · " + r.topTitle : "") }, ["TOP ", el("span", { class: "cipx-code" }, [r.top])])
+      : el("span", { class: "cipx-rev-fromtop cipx-rev-fromtop-none", title: "This course has no TOP code" }, ["no TOP"]);
   }
   // "N of M [BIO] colleges" — the peer-agreement tag, subject-scoped label when applicable.
   function peerTag(r) {
@@ -1325,27 +1332,34 @@
         cipBox(showCode, { on: confirmed, more: cips.length > 1 ? cips.length - 1 : 0, moreTip: cips.join(", "),
           id: chgId, onAccept: confirmed ? null : (showCode ? accept(showCode) : null), onChange: onChange }));
     }
-    // caption below the grid: green corroboration when peers agree with the crosswalk (Ready),
-    // or a crosswalk-recommend note. Never on two-box (the second row already says it) or confirmed.
-    var caption = null;
-    if (!confirmed && !twoBox) {
-      if (r.cons) caption = el("div", { class: "cipx-rev-cap cipx-rev-cap-ok", title: peerTagTip(r) }, [el("span", { class: "cipx-rev-recmark", "aria-hidden": "true" }, ["✓"]), el("span", { class: "cipx-rev-rectag" }, [peerTag(r)]), " agree"]);
-      else if (r.m.recommended && BYCODE[r.m.recommended] && r.m.recommended !== showCode) { var rr = BYCODE[r.m.recommended]; caption = el("div", { class: "cipx-rev-cap" }, ["✓ Recommend ", el("span", { class: "cipx-code" }, [rr.code]), " · " + rr.t]); }
-    }
-    var tocip = el("span", { class: "cipx-rev-tocipwrap" }, [grid, caption]);
+    // Quiet by default (Sam, 2026-07-18 — "ship it"): a Ready row is a clean one-liner. The peer-
+    // corroboration metric that used to sit on a second line ("✓ N of M colleges agree") now lives
+    // on the ✓'s tooltip + a faint peer-corroborated dot, and in the expanded card — not repeated on
+    // every row. The two-box Suggested row keeps its full display (the rare row that earns the space).
+    var tocip = el("span", { class: "cipx-rev-tocipwrap" }, [grid]);
+    var peerCorr = !confirmed && !twoBox && !!r.cons;   // Ready + peer-corroborated → a quiet dot + hover detail
 
     function statusTip() {
       if (confirmed) return "You confirmed this code";
       if (r.status === "suggest") return "Peers teaching this course" + (r.cons && r.cons.cons.scoped ? " in " + r.subj : "") + " mostly use a different code than your current TOP’s — shown in the row. Worth a look.";
-      if (r.status === "clear") return "Ready — your TOP’s crosswalk and peer colleges point to the same code.";
+      if (r.status === "clear") return r.cons
+        ? (peerTag(r) + " teaching this course code it the same way — your crosswalk agrees.\n\n" + differHover(r.cons.cons))
+        : "Ready — your TOP’s crosswalk points here.";
       if (r.status === "review") return "Review — no single clear match; open to choose.";
       return "Manual — too little to suggest a code; open to search.";
     }
+    // course number + title with the em-dash dropped for a plain gap (Sam: "ditch the em dash …
+    // just use maybe 2 spaces"). The full label (with the dash) stays as the hover tooltip + key.
+    var mDash = r.label.indexOf(" — ");
+    var cnameKids = mDash >= 0
+      ? [el("span", { class: "cipx-rev-cnum" }, [r.label.slice(0, mDash)]), " ", el("span", { class: "cipx-rev-ctitle" }, [r.label.slice(mDash + 3)])]
+      : [el("span", { class: "cipx-rev-cnum" }, [r.label])];
     var head = el("div", { class: "cipx-rev-row", role: "button", tabindex: "0", "aria-expanded": "false" }, [
       caret,
-      el("span", { class: "cipx-rev-course" }, [el("span", { class: "cipx-rev-cname", title: r.label }, [r.label])]),
+      el("span", { class: "cipx-rev-course" }, [el("span", { class: "cipx-rev-cname", title: r.label }, cnameKids)]),
       tocip,
-      el("span", { class: "cipx-rev-stat cipx-rev-stat-" + stat.cls, title: statusTip() }, [confirmed ? "✓" : stat.g]),
+      el("span", { class: "cipx-rev-stat cipx-rev-stat-" + stat.cls + (peerCorr ? " cipx-rev-stat-peer" : ""), title: statusTip() },
+        [confirmed ? "✓" : stat.g, peerCorr ? el("span", { class: "cipx-rev-statdot", "aria-hidden": "true" }, ["·"]) : null]),
     ]);
     var card = el("div", { class: "cipx-rev-item" + (confirmed ? " cipx-rev-conf" : "") + (twoBox ? " cipx-rev-item-suggest" : "") }, [head]);
     var body = null;
@@ -1565,8 +1579,27 @@
     function paint() { themeBtn.textContent = isDark() ? "☀ Light" : "🌙 Dark"; }
     themeBtn.onclick = function () { var next = isDark() ? "light" : "dark"; applyTheme(next); storeTheme(next); paint(); };
     paint();
-    head.appendChild(themeBtn);
+    // Top-right utility rail: Coco (the emotional-support pup) watches over the tab, then the Theme
+    // toggle, then the review-only chips (Expand / CSV) that renderReview drops in below — all one
+    // width for harmony (Sam, 2026-07-18). Reclaims the old full-width utils row.
+    revRailEl = el("div", { class: "cipx-toprail-rev" }, []);
+    head.appendChild(el("div", { class: "cipx-toprail" }, [cocoMascot(), themeBtn, revRailEl]));
     return head;
+  }
+  // Coco — a muted, outlined line-art pup along for the ride. Emotional support only; no opinions on CIP codes.
+  function cocoMascot() {
+    var NS = "http://www.w3.org/2000/svg";
+    function n(tag, attrs) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+    var svg = n("svg", { viewBox: "0 0 48 42", width: "32", height: "28", fill: "none", stroke: "currentColor", "stroke-width": "2", "stroke-linecap": "round", "stroke-linejoin": "round", "aria-hidden": "true", focusable: "false", class: "cipx-coco-svg" });
+    [{ tag: "path", d: "M16 14C9 9 6 23 12 28" },            // left floppy ear
+     { tag: "path", d: "M32 14C39 9 42 23 36 28" },           // right floppy ear
+     { tag: "path", d: "M16 14C16 7 32 7 32 14C35 18 34 30 24 33C14 30 13 18 16 14Z" }, // head
+     { tag: "path", d: "M24 25V28" },                          // muzzle bridge
+     { tag: "path", d: "M20 30C22 32 26 32 28 30" }            // smile
+    ].forEach(function (s) { svg.appendChild(n("path", { d: s.d })); });
+    [[19.5, 20], [28.5, 20]].forEach(function (e) { svg.appendChild(n("circle", { cx: e[0], cy: e[1], r: "1.5", fill: "currentColor", stroke: "none" })); });   // eyes
+    svg.appendChild(n("circle", { cx: "24", cy: "24.5", r: "1.9", fill: "currentColor", stroke: "none" }));   // nose
+    return el("div", { class: "cipx-coco", title: "Coco — your emotional-support pup, along for the ride 🐾" }, [svg, el("span", { class: "cipx-coco-name" }, ["Coco"])]);
   }
 
   function buildPanel() {
@@ -1661,13 +1694,20 @@
         "--cipx-accent:#7db3ec;--cipx-accent-soft:#1b3652;--cipx-link:#8fc0f2;--cipx-focus:#7db3ec;--cipx-mark:#5a4a1a;--cipx-mark-fg:#ffe89c;" +
         "--cipx-cte-bg:#233a2c;--cipx-cte-fg:#a4bda9;--cipx-both-bg:#272c45;--cipx-both-fg:#aeb4d2;--cipx-non-bg:#28323f;--cipx-non-fg:#9aa7b6;--cipx-nc-bg:#1f3841;--cipx-nc-fg:#93b6bf;--cipx-ret-bg:#2a2f36;--cipx-ret-fg:#929aa3;--cipx-new-bg:#34301f;--cipx-new-fg:#c6b78e;" +
         "--cipx-ok-bg:#233a2c;--cipx-ok-fg:#a4bda9;--cipx-ok-stripe:#5f8f74;--cipx-warn-bg:#38321f;--cipx-warn-fg:#d8c48c;--cipx-warn-stripe:#b0913f;--cipx-bad-bg:#3a2723;--cipx-bad-fg:#d9a89c;--cipx-bad-stripe:#a86a5c;--cipx-recbadge-bg:#7cc79b;}",
-      ".cipx-head{position:relative;padding:2px 0 6px;}",
+      ".cipx-head{position:relative;padding:2px 7.6rem 6px 0;}",
       ".cipx-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--cipx-accent);}",
       ".cipx-h2{margin:.28em 0 .1em;font-size:1.6rem;line-height:1.15;color:var(--cipx-text);}",
       ".cipx-sub{margin:.2em 0 0;color:var(--cipx-text-soft);max-width:72rem;font-size:.98rem;}",
       ".cipx-hlinks{display:flex;gap:18px;flex-wrap:wrap;margin:12px 0 2px;font-size:.82rem;}",
       ".cipx-hlinks a{color:var(--cipx-link);text-decoration:none;font-weight:600;}.cipx-hlinks a:hover{text-decoration:underline;}",
-      ".cipx-themetog{position:absolute;top:0;right:0;font-family:inherit;font-size:.76rem;font-weight:600;color:var(--cipx-text-soft);background:var(--cipx-surface);border:1px solid var(--cipx-border-strong);border-radius:7px;padding:6px 13px;cursor:pointer;line-height:1;}",
+      // Top-right utility rail: Coco + Theme + (review) Expand/CSV, one width for harmony.
+      ".cipx-toprail{position:absolute;top:2px;right:0;display:flex;flex-direction:column;align-items:stretch;gap:6px;width:6.9rem;z-index:4;}",
+      ".cipx-toprail-rev{display:flex;flex-direction:column;gap:6px;}",
+      ".cipx-toprail .cipx-themetog,.cipx-toprail .cipx-rev-expand,.cipx-toprail .cipx-rev-csv{width:100%;box-sizing:border-box;margin:0;font-family:inherit;font-size:.74rem;font-weight:600;line-height:1;text-align:center;padding:7px 8px;border-radius:7px;cursor:pointer;background:var(--cipx-surface);border:1px solid var(--cipx-border-strong);color:var(--cipx-text-soft);}",
+      ".cipx-toprail .cipx-themetog:hover,.cipx-toprail .cipx-rev-expand:hover,.cipx-toprail .cipx-rev-csv:hover{border-color:var(--cipx-accent);color:var(--cipx-accent);}",
+      ".cipx-coco{display:flex;flex-direction:column;align-items:center;gap:0;color:var(--cipx-muted);opacity:.85;margin-bottom:1px;-webkit-user-select:none;user-select:none;}",
+      ".cipx-coco-svg{display:block;}",
+      ".cipx-coco-name{font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cipx-muted);}",
       ".cipx-themetog:hover{border-color:var(--cipx-accent);color:var(--cipx-accent);}.cipx-themetog:focus-visible{outline:2px solid var(--cipx-focus);outline-offset:2px;}",
       ".cipx-panel{background:var(--cipx-surface-2);border:1px solid var(--cipx-border);border-radius:14px;padding:16px 18px;margin:14px 0 12px;}",
       ".cipx-panel-h{font-weight:700;color:var(--cipx-text);font-size:1.04rem;}.cipx-panel-sub{color:var(--cipx-text-soft);font-size:.88rem;margin:3px 0 12px;}",
@@ -1814,7 +1854,8 @@
       ".cipx-rev-deptsel{font-family:inherit;font-size:.92rem;padding:8px 11px;border-radius:8px;border:1.5px solid var(--cipx-border-strong);background:var(--cipx-surface);color:var(--cipx-text);cursor:pointer;max-width:420px;flex:1;min-width:200px;}",
       ".cipx-rev-deptsel:focus{outline:2px solid var(--cipx-focus);outline-offset:1px;}",
       ".cipx-rev-prog{font-size:.82rem;color:var(--cipx-muted);font-style:italic;min-height:0;margin:0 2px;}",
-      ".cipx-rev-tiles{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 8px;}",
+      ".cipx-rev-tilesrow{display:flex;align-items:center;gap:9px 14px;flex-wrap:wrap;margin:4px 0 7px;}",
+      ".cipx-rev-tiles{display:flex;gap:8px;flex-wrap:wrap;margin:0;}",
       ".cipx-rev-tile{display:flex;flex-direction:column;gap:1px;align-items:flex-start;font-family:inherit;background:var(--cipx-surface);border:1px solid var(--cipx-border-strong);border-radius:10px;padding:8px 14px;cursor:pointer;min-width:78px;}",
       ".cipx-rev-tile:hover{border-color:var(--cipx-accent);}.cipx-rev-tile[aria-pressed=\"true\"]{border-color:var(--cipx-accent);box-shadow:0 0 0 1px var(--cipx-accent);}",
       ".cipx-rev-tilen{font-size:1.15rem;font-weight:800;color:var(--cipx-text);font-variant-numeric:tabular-nums;}",
@@ -1822,7 +1863,7 @@
       ".cipx-rev-tile-warn .cipx-rev-tilen{color:var(--cipx-muted);}.cipx-rev-tile-ok .cipx-rev-tilen{color:var(--cipx-ok-fg);}.cipx-rev-tile-suggest .cipx-rev-tilen{color:var(--cipx-accent);}",
       ".cipx-rev-progline{font-size:.8rem;color:var(--cipx-muted);font-weight:600;margin:2px 2px 8px;}",
       ".cipx-rev-peercount{color:var(--cipx-ok-fg);cursor:help;}",
-      ".cipx-rev-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 8px;}",
+      ".cipx-rev-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 0 auto;}",
       ".cipx-rev-bulk{font-family:inherit;font-size:.82rem;font-weight:700;color:#fff;background:var(--cipx-ok-stripe);border:0;border-radius:8px;padding:8px 14px;cursor:pointer;}.cipx.cipx-theme-dark .cipx-rev-bulk{color:#0e1a2b;}.cipx-rev-bulk:hover{filter:brightness(1.06);}",
       // accept-all-suggested is emphasized but distinct from the green ready-confirm (it changes codes)
       ".cipx-rev-bulk-suggest{background:var(--cipx-accent);}",
@@ -1835,21 +1876,23 @@
       ".cipx-rev-row:hover{background:var(--cipx-surface-sub);}",
       ".cipx-rev-course{display:flex;flex-direction:column;gap:2px;min-width:0;}",
       ".cipx-rev-cname{font-weight:600;color:var(--cipx-text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
+      ".cipx-rev-cnum{font-weight:700;}.cipx-rev-ctitle{margin-left:.62em;font-weight:600;color:var(--cipx-text-soft);}",
       ".cipx-rev-ctopline{font-size:.72rem;color:var(--cipx-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
       // the current-TOP → CIP transition beside the CIP box ("where they are → where they're going")
       // the current-code → CIP transition. A shared 3-column grid ([label] → [CIP box]) so that,
       // when peers suggest a different code, the two CIP boxes line up vertically (Sam's point 1).
       ".cipx-rev-tocipwrap{display:flex;flex-direction:column;gap:3px;min-width:0;}",
-      ".cipx-rev-tocip{display:grid;grid-template-columns:auto auto minmax(0,auto);gap:4px 8px;align-items:center;min-width:0;}",
+      // box column = 1fr so every CIP box is the SAME width, filling to the cell's right edge (Sam:
+      // "all same width, max width possible, keep row height to 1"). Label column is uniform ("TOP
+      // NNNN.NN"), so the boxes — and the codes at their left — line up in a clean column.
+      ".cipx-rev-tocip{display:grid;grid-template-columns:auto auto minmax(0,1fr);gap:4px 8px;align-items:center;min-width:0;}",
       ".cipx-rev-glabel{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
       ".cipx-rev-gbox{min-width:0;}",
       ".cipx-rev-l-was{opacity:.82;}",
       ".cipx-rev-reclabel{display:inline-flex;align-items:center;gap:4px;font-size:.72rem;font-weight:700;color:var(--cipx-accent);white-space:nowrap;cursor:help;}",
       ".cipx-rev-recmark{font-weight:800;}",
       ".cipx-rev-rectag{font-weight:800;color:inherit;font-variant-numeric:tabular-nums;}",
-      ".cipx-rev-cap{font-size:.74rem;font-weight:600;color:var(--cipx-accent);display:flex;align-items:center;gap:4px;flex-wrap:wrap;}",
-      ".cipx-rev-cap-ok{color:var(--cipx-ok-fg);}",
-      ".cipx-rev-fromtop{font-size:.72rem;color:var(--cipx-muted);white-space:nowrap;max-width:100%;}",
+      ".cipx-rev-fromtop{font-size:.72rem;color:var(--cipx-muted);white-space:nowrap;max-width:100%;font-variant-numeric:tabular-nums;display:inline-block;min-width:5.4rem;}",
       ".cipx-rev-fromtop .cipx-code{color:var(--cipx-text-soft);}",
       ".cipx-rev-fromtt{display:inline-block;max-width:13ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom;color:var(--cipx-muted);}",
       ".cipx-rev-fromtop-none{font-style:italic;}",
@@ -1858,6 +1901,10 @@
       ".cipx-rev-cand-out{border-color:var(--cipx-warn-stripe);}.cipx-rev-cand-out .cipx-code{color:var(--cipx-warn-fg);}",
       ".cipx-rev-outtag{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--cipx-warn-fg);background:var(--cipx-warn-bg);padding:2px 6px;border-radius:6px;}",
       ".cipx-rev-chip{position:relative;display:inline-flex;gap:7px;align-items:baseline;border:1px dashed var(--cipx-border-strong);border-radius:8px;padding:4px 9px;min-width:0;max-width:100%;cursor:pointer;}",
+      // fill the (uniform 1fr) box cell so every box is the same width; title flexes + ellipsizes so
+      // the row stays one line, and the ▾ anchors at the right edge like a select's caret.
+      ".cipx-rev-gbox .cipx-rev-chip{display:flex;width:100%;}",
+      ".cipx-rev-gbox .cipx-rev-chipt{flex:1 1 auto;min-width:0;}",
       ".cipx-rev-chip:hover{border-color:var(--cipx-accent);}",
       ".cipx-rev-chip .cipx-code{font-size:1.05rem;font-weight:700;color:var(--cipx-text);}",
       ".cipx-rev-chip-on{border-style:solid;border-color:var(--cipx-ok-stripe);background:var(--cipx-ok-bg);}",
@@ -1874,6 +1921,8 @@
       ".cipx-rev-chgpanel{position:absolute;top:100%;left:0;z-index:40;margin-top:5px;min-width:270px;max-width:360px;text-align:left;background:var(--cipx-surface);border:1px solid var(--cipx-border-strong);border-radius:10px;padding:9px 10px;box-shadow:0 10px 26px rgba(0,0,0,.20);cursor:default;white-space:normal;}",
       ".cipx-rev-chghint{font-size:.72rem;font-weight:600;color:var(--cipx-muted);margin-bottom:6px;}",
       ".cipx-rev-stat{font-size:.9rem;font-weight:800;text-align:right;white-space:nowrap;}",
+      // a faint accent dot beside the ✓ on Ready rows that peers corroborate — "hover for the count"
+      ".cipx-rev-stat-peer{cursor:help;}.cipx-rev-statdot{color:var(--cipx-accent);font-weight:900;margin-left:2px;}",
       ".cipx-rev-stat-ok{color:var(--cipx-ok-fg);}.cipx-rev-stat-warn{color:var(--cipx-muted);}.cipx-rev-stat-muted{color:var(--cipx-muted);}",
       // "suggest" status = a calm, direct question mark (Sam's point 3 — not the old busy ⚠⚑)
       ".cipx-rev-stat-suggest{color:var(--cipx-accent);}",
@@ -1910,8 +1959,10 @@
       ".cipx-foot{margin-top:26px;font-size:.76rem;color:var(--cipx-muted);border-top:1px solid var(--cipx-border);padding-top:14px;line-height:1.6;}",
       // mobile
       "@media (max-width:640px){" +
-        ".cipx{padding:6px 13px 24px;font-size:.92rem;}.cipx-head{padding-top:36px;}" +
-        ".cipx-themetog{padding:5px 10px;font-size:.7rem;border-radius:6px;}.cipx-h2{font-size:1.32rem;}.cipx-sub{font-size:.92rem;}" +
+        ".cipx{padding:6px 13px 24px;font-size:.92rem;}.cipx-head{padding:30px 0 6px;}" +
+        // on phones the rail rides horizontally across the top instead of a fixed corner column
+        ".cipx-toprail{position:static;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:flex-end;width:auto;gap:6px;margin:0 0 8px;}.cipx-toprail-rev{flex-direction:row;gap:6px;}.cipx-coco{flex-direction:row;gap:4px;margin:0 auto 0 0;}.cipx-toprail .cipx-themetog,.cipx-toprail .cipx-rev-expand,.cipx-toprail .cipx-rev-csv{width:auto;font-size:.72rem;padding:5px 10px;}" +
+        ".cipx-h2{font-size:1.32rem;}.cipx-sub{font-size:.92rem;}" +
         ".cipx-hlinks{gap:10px 14px;font-size:.79rem;margin-top:10px;}" +
         ".cipx-panel{padding:13px 12px;border-radius:12px;}.cipx-panel-h{font-size:1rem;}.cipx-panel-sub{font-size:.85rem;}" +
         ".cipx-search,.cipx-fitta,.cipx-fit-cb,.cipx-college-sel{font-size:16px;}" +
