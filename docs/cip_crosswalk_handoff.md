@@ -1,7 +1,7 @@
 ---
 title: "CIP workstream handoff → next session"
-date: 2026-07-17
-tags: [handoff, cip, cobi, fit-check, top-cip, easy-button, review-sheet, wcag, side-lane]
+date: 2026-07-18
+tags: [handoff, cip, cobi, fit-check, top-cip, easy-button, review-sheet, consensus, coco, wcag, side-lane]
 artifacts:
   - cip_crosswalk.js
   - cip_crosswalk_data.js
@@ -111,14 +111,56 @@ college courses lazy-fetched from `cip_fitcheck/<slug>.json` (`kb/_build_cip_fit
 Engine seams: `_score`, `_courseScore`, `_courseToks`, `_recommend([label,desc,top])`,
 `_bestMatches`, `_parseSubject`, `_reviewRows`, `_setMode`.
 
-## 🎯 Priority — what's next (Sam's steer)
-0. **Whole-catalog CONSENSUS pre-fill (Sam's "kit and kaboodle" — the true easy button).**
-   The consensus signal (#830) is statewide, so it can **pre-fill a confident CIP for every
-   course** in a college's catalog — turning the review sheet into pure review-and-approve.
-   Scope: for each course, if the peer consensus is strong (high modal fraction, decent n),
-   pre-populate its `revSetCips` suggestion (or a distinct "consensus-suggested" tier) so
-   ✓Ready reflects consensus, not just the single-course crosswalk. Extend the consensus
-   block to the **"Find my course's code"** mode too (today it's review-only).
+### Shipped 2026-07-18 (SkyEasy live-testing arc — all merged: #836–#840)
+Sam live-tested on real college catalogs and drove a fast iteration. Priority #0 from the last
+handoff (whole-catalog consensus pre-fill) is **DONE** (#836). What landed:
+- **#836 — subject-scoped consensus + the two-box "Suggested change" redesign.** The headline
+  soundness fix (Sam's BIO 35 "Health Science" catch): consensus is scoped to same-discipline peers
+  (`subjMatch`, prefix-containment over `subjects[]` now carried per-(title,TOP) in
+  `course_top_consensus.json`), so a Health-dept majority can't override a Biology college. An
+  outlier renders as a **two aligned boxes** row (your TOP's crosswalk code vs the peer-suggested
+  code) with a calm **?** glyph + a **? Suggested** tile, default-expanded. Candidate rows got a
+  **Select** button; every CIP box is clickable → a "change to any code" dropdown; **Expand all**.
+- **#837 — credit-first consensus pick + ephemeral college.** COMM 13 "Gender & Communication" was
+  recommending `32.0203` Exam-Prep (a noncredit catch-all the CO crosswalk hangs on nearly every
+  TOP) because the description says "exam·ine." `bestCipForTop` now applies `computeRecommend`'s
+  credit-first gate. The picked college no longer persists (clears on close/refresh).
+- **#838 — work-experience courses stay in their discipline.** ARCH B48WE was pushed to `13.0407`
+  Community College Administration; peer consensus is now suppressed for work-experience titles.
+- **#839 — cross-discipline consensus can corroborate but never OVERRIDE.** CARPT 224 "Materials of
+  Construction" → Architecture. General rule (subsumes #838): a consensus may override the course's
+  own discipline **only when SUBJECT-SCOPED**; a full-title (cross-discipline) fallback may only
+  corroborate — if it agrees it confirms Ready, if it disagrees it's discarded.
+- **#840 — quiet-by-default density + simpler layout + 🐾 Coco.** Ready rows are clean one-liners
+  (peer count → ✓ tooltip + a faint accent dot + the expand). CIP codes/boxes **line up + uniform
+  width** (dropped the inline TOP title → tooltip so labels are uniform `TOP NNNN.NN`; box column =
+  `1fr` fill). Em dash → plain gap on the course number. Confirm/Accept ride the **tiles row**.
+  **Top-right rail**: Theme + Expand + CSV, one width "for harmony." **Coco** the outlined-puppy
+  mascot rides atop the rail. Tests now **180**. The prototype Sam greenlit:
+  https://claude.ai/code/artifact/00345aec-246e-45bf-9899-25d62173bef5
+
+## 🎯 Priority — Sam's checkpoint steer (2026-07-18, reviewing Cerritos AB / Autobody)
+1. **Review rows have no visible "look here" mark.** The Review status glyph is a near-invisible
+   "·" — Sam expected a **?**-style prompt on review courses (he circled it). Give review rows a
+   clear, calm prompt (distinct from the Suggested `?`, but actually visible), or rethink the glyph
+   set so "needs a look" reads at a glance. (`REV_STATUS.review.g`.)
+2. **The triage counts don't make intuitive sense.** Cerritos AB showed **"8 Review"** but the list
+   is full of near-identical rows (all `TOP 0949.00 → 47.0603` Autobody), some Ready, some Review,
+   with no visible reason why. Root cause: **Review** = the crosswalk has candidates but the
+   confidence gate (`conf ≥ 85` + margin, in `computeRecommend`) wasn't met AND there's no peer
+   consensus; **Ready** = a confident winner or a consensus. On a department where every row shows
+   the SAME code, that split looks arbitrary. Fix options: (a) show *why* a row is Review inline;
+   (b) reconsider whether same-code rows should share a bucket; (c) make the tile counts vs the
+   (All-filtered) visible list read clearly — "8 Review among 45 shown" confused Sam.
+3. **Make "Review my catalog" the FIRST mode tab** (and likely the default mode). It's the primary
+   workflow now — reorder `modeBar` to `[Review · Browse · Find]` and flip the default `st.mode`.
+4. **Reassure on the big "Confirm all N" button.** Add small subtext under it (or a tooltip)
+   communicating that confirming is **not final and nothing breaks** — it just fills in your
+   starting point here in the browser; the real step is entering the code in COCI, course-by-course
+   or later via a batch. The button currently reads as scary/irreversible; it isn't (decisions are
+   `localStorage`, fully editable/clearable).
+
+### Still open from before (lower priority)
 1. **Unify "assign a CIP" across all three modes.** The recommend mode's inline check and
    the review picker should share ONE assign+persist path (today the review mode persists
    per-college in `localStorage`; the recommend/inline check doesn't persist a chosen
@@ -136,6 +178,12 @@ Engine seams: `_score`, `_courseScore`, `_courseToks`, `_recommend([label,desc,t
    mode toggle, meter `role`/value semantics, `prefers-reduced-motion`, screen-reader
    announcement copy on result changes. **Audience today = Raul (owns the field process) +
    Jenni only.**
+4. **Coco → toolkit AI assistant (Sam's seed, 2026-07-18 — pairs with Raul's TOP→CIP Toolkit doc).**
+   Graduate Coco from mascot to an **ask-a-question / jump-to-the-right-section** assistant so
+   faculty don't have to wade through the whole toolkit doc. Wiring target: the existing Sierra
+   `/functions/v1/cpl-chat` edge function, in the **finder-not-decider** posture (§7 TOP caveat) —
+   surface answers + deep-links, never a determination. Sam will settle the toolkit-doc design with
+   Raul first; build once that's locked.
 
 Grounded scale check for any batch pass: median 5 CIPs/TOP, 32% ≤3, a handful map to 100+
 (cap the display / "show all N"). Boilerplate is de-weighted by the engine + quarantined.
@@ -167,9 +215,9 @@ t:[[top,[collegeIdx]]]}}}`. 4,162 titles with ≥4 colleges. Consumer seams: `_c
 consumer (`consensusKey`).
 
 ## Moniker
-You are **SkyEasy** (Sam named you — the easy button is real now). Your headline priority
-is #0: the **whole-catalog consensus pre-fill** — make the recommendation the *default
-assignment* so the review sheet is pure review-and-approve ("kit and kaboodle"). The next
-session after you might be **SkyOrbit** (Phase 3 = porting confirmed CIPs into COCI) — or
-coin your own; Sam blesses the lineage. Keep the banner: kind, honest, faculty-first,
-student-firstest. 🪁
+SkyEasy delivered the easy button (the whole-catalog consensus pre-fill + the soundness fixes +
+the "simpler" polish + Coco). **You are the next session** — your headline is Sam's 4-item
+checkpoint steer above (the Review-tab triage clarity: visible "look here" marks, sensible counts,
+Review-first, and the reassuring "Confirm all" subtext). Consider **SkyCoco** (you inherit the pup)
+or coin your own; Sam blesses the lineage. Keep the banner: kind, honest, faculty-first,
+student-firstest — this tool suggests and supports, it never decides. 🪁🐾
