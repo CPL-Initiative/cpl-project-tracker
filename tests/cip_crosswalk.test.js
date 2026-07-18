@@ -455,6 +455,19 @@ function fresh(withCollege) {
   // legacy consensus data (no subjects[]) still works — scoping simply never engages
   check("subject-scoping: legacy data without subjects[] degrades to the full consensus", (function () { var c = rApi._consensus("NURS 101 — Nursing", "NURS"); return c && c.scoped === false && c.modal.top === "1230.00"; })());
 
+  // ── WORK-EXPERIENCE courses stay in their own discipline (Sam's ARCH B48WE catch) ──
+  // The title "Work Experience Education" is shared across ALL departments, so a cross-title peer
+  // consensus is discipline-blind — it must never push a course out of its discipline. Here the
+  // consensus points "work experience education" at a Registered-Nursing TOP (→ 51.3801); the
+  // guard makes the BUSINESS work-experience course keep its own TOP's business crosswalk CIP.
+  const weApi = freshR().window.CPL_CIP_CROSSWALK;
+  weApi._setConsensus({ colleges: ["A", "B", "C", "D", "E"], titles: { "work experience education": { n: 5, t: [["1230.00", [0, 1, 2, 3]], ["0505.00", [4]]] } } });
+  const weCourse = ["BUS 48 — Work Experience Education", "Supervised on the job employment relating business class work to work experience in the field.", "0505.00"];
+  check("work-experience courses ignore the cross-title peer consensus (consensusPick → null)", weApi._consensusPick(weApi._recommend(weCourse), weCourse[0], weCourse[2], "BUS") === null);
+  const weRow = weApi._reviewRows([weCourse])[0];
+  check("a work-experience row is never a peer-driven 'suggested change'", weRow.status !== "suggest" && weRow.suggestChange === false && !weRow.cons);
+  check("a work-experience row keeps its own discipline's crosswalk CIP (not a generic admin code)", weRow.sug && /^52\./.test(weRow.sug.code));
+
   // ── college selection is EPHEMERAL — never restored from storage (Sam: "clear on close") ──
   const ephDom = makeDom();
   ephDom.window.CIP_CROSSWALK = JSON.parse(JSON.stringify(RFIXTURE));

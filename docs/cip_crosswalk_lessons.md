@@ -987,3 +987,26 @@ Sam re-tested v2 and caught two things:
 
 Tests 167 → **169** (credit-first `bestCipForTop`, ephemeral-college). Real-Chromium: COMM 13 Ready,
 college blank on load despite a stale storage value, 0 overflow / 0 errors.
+
+### 2026-07-18 — work-experience courses stay in their discipline (peer-consensus guard)
+
+Sam (Bakersfield ARCH): "ARCH B48WE — Work Experience Education" was recommending **`13.0407`
+Community College Administration**. Root cause: the title "Work Experience Education" is shared
+across **every** department, so the cross-title peer consensus pooled all disciplines' work-
+experience courses — most filed under the generic **TOP 4932 (General Work Experience) → CIP
+13.0407** — and that discipline-blind modal overrode the course's own Architecture TOP (0201 →
+`04.0201`). Subject-scoping didn't save it: too few *ARCH* peers share the generic title, so it
+fell back to the full-title pool. The codebase already had `isWorkExperience()` + a doctrine
+comment ("belongs to its own discipline's crosswalk CIP"), but the guard was only applied to the
+lexical *outside-crosswalk* nudge — **not** to the peer consensus. Fix: `consensusPick()` and
+`consensusSummaryEls()` now return null for work-experience courses, so they keep their own TOP's
+crosswalk CIP and the misleading field-consensus block is suppressed (+ a short in-expand note
+explaining why). On real Bakersfield data the ARCH department went 1 bogus suggested-change → 0,
+ARCH B48WE → `04.0201 Architecture`.
+
+**Deferred (a real edge case, worth a later look):** a work-experience course coded under the
+*generic* TOP 4932 (not its discipline TOP) still shows `13.0407` from its own crosswalk — the
+tool faithfully reflects the college's own (arguably mis-coded) TOP. Truly pinning those to the
+discipline needs a subject→discipline inference (e.g. the modal TOP of the college's same-subject
+sibling courses); Bakersfield codes ARCH work-experience under the discipline TOP 0201, so the
+common/correctly-coded case is fixed. Tests 169 → **172**.

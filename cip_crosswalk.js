@@ -473,6 +473,14 @@
   // pre-fill — it's left to display-only (reviewRecommendation). null = no confident consensus.
   // subj (the course's own subject code) scopes the consensus to same-discipline peers.
   function consensusPick(m, label, ownTop, subj) {
+    // Work-experience courses live WITHIN their discipline (every department runs one), but the
+    // TITLE "Work Experience Education" is shared across ALL disciplines, so a cross-title peer
+    // consensus just finds the modal GENERIC work-experience TOP (4932 → 13.0407 Community College
+    // Administration) and would wrongly push an Architecture work-experience course out of
+    // Architecture. Never let peer consensus override the discipline here (Sam, 2026-07-18) — the
+    // course keeps its own TOP's crosswalk CIP. (Subject-scoping alone doesn't save it: too few
+    // same-subject peers share the generic title, so it falls back to the cross-discipline pool.)
+    if (isWorkExperience(label)) return null;
     var cons = consensusFor(label, subj); if (!cons) return null;
     var modal = cons.modal;
     if (modal.n < CONSENSUS_MIN_N || modal.n < cons.n * CONSENSUS_MAJORITY) return null;
@@ -1358,6 +1366,7 @@
   // {cons, modal, best} so BOTH the review expand and the recommend view render the same block
   // (each then appends its own candidate affordance). ownTop = the course's own current TOP.
   function consensusSummaryEls(m, label, ownTop, topTitle, subj) {
+    if (isWorkExperience(label)) return null;   // cross-title consensus is discipline-blind noise here (see consensusPick)
     var cons = consensusFor(label, subj); if (!cons) return null;
     var modal = cons.modal, best = bestCipForTop(modal.top, m);
     var own = null; cons.groups.forEach(function (g) { if (g.top === ownTop) own = g; });
@@ -1427,6 +1436,10 @@
     }
     box.appendChild(el("div", { class: "cipx-rev-pickhint" }, ["Check one or more CIP codes — most courses take one; interdisciplinary courses may warrant more. Signals below are ordered strongest first."]));
 
+    // Work-experience courses: explain why there's no peer consensus (it would be discipline-blind)
+    if (isWorkExperience(r.label)) {
+      box.appendChild(el("div", { class: "cipx-rev-wenote" }, [svgIcon(COLLEGE_ICON), el("span", {}, ["Work-experience courses belong to their own discipline — every department runs one, so how other colleges code “work experience” across all fields doesn’t apply. Use this course’s own discipline code below."])]));
+    }
     // 1) FIELD CONSENSUS FIRST — the strongest, most-corroborated signal (Sam's ordering)
     var peer = peerConsensusBlock(r, candRow); if (peer) box.appendChild(peer);
 
@@ -1867,6 +1880,8 @@
       ".cipx-rev-peermetric{font-weight:700;color:var(--cipx-text);cursor:help;border-bottom:1px dotted var(--cipx-border-strong);white-space:nowrap;}",
       ".cipx-rev-peernote{font-size:.78rem;color:var(--cipx-muted);margin-top:5px;}",
       ".cipx-rev-peerscope{font-size:.74rem;color:var(--cipx-muted);font-style:italic;margin-top:5px;padding-left:9px;border-left:2px solid var(--cipx-border);}",
+      ".cipx-rev-wenote{display:flex;align-items:flex-start;gap:7px;font-size:.8rem;color:var(--cipx-text-soft);line-height:1.5;background:var(--cipx-surface-sub);border:1px solid var(--cipx-border);border-radius:9px;padding:9px 12px;margin:2px 0 8px;}",
+      ".cipx-rev-wenote svg{flex:none;margin-top:2px;color:var(--cipx-muted);}",
       ".cipx-rev-cand-peer{border-color:var(--cipx-accent);margin-top:8px;background:var(--cipx-surface);}",
       ".cipx-rev-peertag{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--cipx-accent);background:var(--cipx-accent-soft);padding:2px 6px;border-radius:6px;white-space:nowrap;}",
       ".cipx-rev-detactions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;}",
