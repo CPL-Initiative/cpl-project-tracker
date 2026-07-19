@@ -453,6 +453,24 @@ function fresh(withCollege) {
   const wRow = wApi._reviewRows([RCOURSES[0]])[0];
   check("weak consensus (no majority) does not pre-fill — falls back to the crosswalk", wRow.status === "clear" && wRow.sug.code === "52.0201" && wRow.sugKind === "crosswalk");
 
+  // ── outside-crosswalk TRUST + headline surface (SkyCoco live-test, 2026-07-19; Findings 3 + 5) ──
+  // A description match OUTSIDE the crosswalk is credible only when a SECOND field signal — the course's
+  // own field OR the peer consensus — shares its broad (2-digit) CIP family; else it's generic-word noise
+  // (Applied Engineering 14/15 for a Color-Theory course). Wrong-family matches drop from beyondOk.
+  const fxApi = freshR().window.CPL_CIP_CROSSWALK;
+  fxApi._setConsensus(RCONSENSUS);
+  const f3Course = ["NURS 90 — Accounting Practice", "A program that prepares individuals to practice accounting and auditing and bookkeeping.", "1230.00"];
+  const f3Row = fxApi._reviewRows([f3Course])[0];
+  check("F3: a wrong-family outside-crosswalk match is filtered from beyondOk (still present in m.beyond)",
+    f3Row.m.beyond.some((o) => /^52\./.test(o.r.code)) && !f3Row.beyondOk.some((o) => /^52\./.test(o.r.code)));
+  check("F3: with its only outside match filtered, the row flags no disagreement", f3Row.disagree === false);
+  // F5 (Sam): when the crosswalk default is a bare "review" and a CREDIBLE (same-family) outside match is
+  // strong, surface THAT code as the headline — still ? Review so faculty confirm (Ceramics I → Ceramic Arts).
+  const f5Course = ["BUS 90 — Econometrics", "Econometrics and econometric quantitative analysis for managers.", "0505.00"];
+  const f5Row = fxApi._reviewRows([f5Course])[0];
+  check("F5: a strong same-family outside-crosswalk match becomes the review headline (sugKind 'description')",
+    f5Row.status === "review" && f5Row.sugKind === "description" && f5Row.sug.code === "52.9001" && f5Row.beyondOk.some((o) => o.r.code === "52.9001"));
+
   // ── SUBJECT-SCOPED consensus (Sam's BIO 35 "Health Science" catch) ──
   // The same title can be a HEALTH course at most colleges and a BIOLOGY course at a few. A
   // title-only consensus lets the health majority override a biology college's coding. Scoping
@@ -671,6 +689,49 @@ function fresh(withCollege) {
   check("multi-CIP: an applied target's glyph is still '?' (Review), not '✓'", (function () { var s = acct(201).querySelector(".cipx-rev-stat"); return s && /\?/.test(s.textContent) && !/✓/.test(s.textContent); })());
   check("multi-CIP: an applied target shows the 'received … from a sibling' reason", /applied from a sibling/.test(acct(201).querySelector(".cipx-rev-whyline-applied") ? acct(201).querySelector(".cipx-rev-whyline-applied").textContent : ""));
   check("multi-CIP: the source row IS validated (✓)", /✓/.test(acct(200).querySelector(".cipx-rev-stat").textContent));
+
+  // ── box-click safety (Finding 1) + majority-honest consensus wording (Finding 4) — SkyCoco live-test 2026-07-19 ──
+  // F1 (Sam): a ✓ Ready row's box confirms in one click (fast path); a ? Review / ◻ Manual row's box OPENS the
+  // row instead — a weak/unreviewed default must never be validated by a stray click meant to expand.
+  const domFx = freshR("review");
+  domFx.window.CPL_CIP_CROSSWALK._setConsensus(RCONSENSUS);
+  const fxdoc = domFx.window.document;
+  await tick(); await tick();
+  const fxDept = fxdoc.querySelector(".cipx-rev-deptsel");
+  fxDept.value = "__all__"; fxDept.dispatchEvent(new domFx.window.Event("change"));
+  await tick(); await tick();
+  const fxByTitle = (frag) => Array.prototype.find.call(fxdoc.querySelectorAll(".cipx-rev-item"), (it) => { var c = it.querySelector(".cipx-rev-cname"); return c && c.getAttribute("title").indexOf(frag) >= 0; });
+  try { domFx.window.localStorage.removeItem("cipx_rev_test_college"); domFx.window.localStorage.removeItem("cipx_revok_test_college"); } catch (e) {}
+  const fxReview = fxByTitle("ACCT 200");
+  fxReview.querySelector(".cipx-rev-chip").click();
+  await tick();
+  check("F1: clicking a ? Review row's CIP box writes NO decision (Finding 1)", (function () { var v = domFx.window.localStorage.getItem("cipx_rev_test_college"); return !v || v === "{}"; })());
+  check("F1: clicking a ? Review row's CIP box OPENS the row to review (instead of validating)", !!fxReview.querySelector(".cipx-rev-detail"));
+  const fxReady = fxByTitle("Business Basics");
+  fxReady.querySelector(".cipx-rev-chip").click();
+  await tick();
+  check("F1: clicking a ✓ Ready row's CIP box still confirms it (fast path preserved)", (function () { try { return JSON.parse(domFx.window.localStorage.getItem("cipx_revok_test_college") || "{}")["BUS 101 — Business Basics"] === 1; } catch (e) { return false; } })());
+
+  // F4: a plurality/tie peer field reads "the most common is … no majority" — never "most use" (majority honesty).
+  const domTie = makeDom();
+  domTie.window.CIP_CROSSWALK = JSON.parse(JSON.stringify(RFIXTURE));
+  try { domTie.window.localStorage.setItem("cipx_mode", "review"); } catch (e) {}
+  domTie.window.eval(src);
+  const tieApi = domTie.window.CPL_CIP_CROSSWALK;
+  tieApi._setColleges(JSON.parse(JSON.stringify(MANIFEST)));
+  tieApi._setCourses("test_college", [["BUS 1 — Tie Course", "A general business administration program covering management and organization and accounting.", "0505.00"]]);
+  tieApi._setConsensus({ colleges: ["A", "B", "C", "D", "E", "F"], subjects: ["BUS"], titles: { "tie course": { n: 6, t: [["0505.00", [0, 1, 2], [0, 0, 0]], ["1701.00", [3, 4], [0, 0]], ["1230.00", [5], [0]]] } } });
+  tieApi.activate();
+  const tiedoc = domTie.window.document;
+  (function () { var cs = tiedoc.querySelector(".cipx-college-sel"); cs.value = "test_college"; cs.dispatchEvent(new domTie.window.Event("change")); })();
+  await tick(); await tick();
+  const tieDept = tiedoc.querySelector(".cipx-rev-deptsel");
+  tieDept.value = "BUS"; tieDept.dispatchEvent(new domTie.window.Event("change"));
+  await tick(); await tick();
+  const tieItem = tiedoc.querySelector(".cipx-rev-item");
+  if (tieItem && !tieItem.querySelector(".cipx-rev-detail")) { tieItem.querySelector(".cipx-rev-row").click(); await tick(); }
+  const tieBody = tieItem && tieItem.querySelector(".cipx-rev-peerbody");
+  check("F4: a 3-of-6 tie reads 'the most common is' + 'no majority', not 'most use'", (function () { var t = tieBody ? tieBody.textContent : ""; return /the most common is/.test(t) && /no majority/.test(t) && !/most use/.test(t); })());
 
   // ── Phase A: precomputed baseline status counts — statewide line, college-overview boxes, dropdown counts ──
   const STATUSFX = {

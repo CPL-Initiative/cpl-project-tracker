@@ -1111,9 +1111,28 @@
         cp = null;   // cross-discipline pool that disagrees → discard, keep the course's discipline
       }
     }
+    // F3/F5 (Sam, 2026-07-19): make the "stronger match outside the crosswalk" signal trustworthy. Per §7
+    // two-signals-agree, a description-only match is credible ONLY when a SECOND field signal — the course's
+    // own crosswalk field OR the peer consensus — shares its broad (2-digit) CIP family. Applied Engineering
+    // (14/15) for a Color-Theory course (field 50 + peer consensus 50) is contradicted by both → dropped;
+    // Ceramic Arts 50.0711 for a Ceramics course (field 50) is kept.
+    var famOf = function (code) { return String(code || "").slice(0, 2); };
+    var fieldFams = {};
+    (m.cands || []).forEach(function (o) { fieldFams[famOf(o.r.code)] = 1; });
+    if (crosswalk) fieldFams[famOf(crosswalk.code)] = 1;
+    var consCip = (cp && cp.best) ? cp.best.r : null;
+    if (!consCip) { var cf = consensusFor(label, subj); if (cf) { var bc = bestCipForTop(cf.modal.top, m); if (bc) consCip = bc.r; } }
+    if (consCip) fieldFams[famOf(consCip.code)] = 1;
+    var beyondOk = (m.beyond || []).filter(function (o) { return fieldFams[famOf(o.r.code)]; });
+    // F5: when the crosswalk default is a bare "review" (no confident winner, no consensus override) and a
+    // CREDIBLE outside-crosswalk match is strong, show THAT code as the headline box — still ? Review so the
+    // faculty confirm. sugKind "description" also shields it from the dept-default swap (effectiveSug).
+    if (status === "review" && !cp && beyondOk.length && (beyondOk[0].rel || 0) >= 85) {
+      sug = beyondOk[0].r; sugKind = "description";
+    }
     return { c: c, label: label, subj: subj, top: ownTop, topTitle: m.topTitle,
       sug: sug, sugKind: sugKind, status: status, suggestChange: suggestChange, crosswalk: crosswalk,
-      nCand: m.cands.length, disagree: m.beyond.length > 0, cons: cp, m: m };
+      nCand: m.cands.length, disagree: beyondOk.length > 0, beyondOk: beyondOk, cons: cp, m: m };
   }
 
   function departments(courses) {
@@ -1434,7 +1453,7 @@
   // Program coherence, display-only; it never changes the row's status. deptTop[subj] = {code, n}.
   function effectiveSug(r, ctx) {
     var code = r.sug ? r.sug.code : null, defaulted = null;
-    if (code && r.status === "review" && ctx && ctx.deptTop) {
+    if (code && r.status === "review" && r.sugKind !== "description" && ctx && ctx.deptTop) {
       var own = ctx.codeCount[r.subj + "|" + code] || 0, dt = ctx.deptTop[r.subj];
       if (dt && own < REV_DOMINANT_MIN && dt.code !== code) { defaulted = dt; code = dt.code; }
     }
@@ -1446,6 +1465,11 @@
   // one-liners; only the attention rows earn a reason line. `eff` = effectiveSug(r, ctx) (already computed).
   function reviewWhy(r, ctx, eff) {
     if (r.status === "review") {
+      // A credible strong description match outside the course's TOP crosswalk was surfaced as the headline
+      // (F5) — say so honestly: the TOP may be mis-coded; confirm only if it fits.
+      if (r.sugKind === "description" && r.sug) {
+        return ["This course's description strongly matches ", el("b", {}, [r.sug.code]), (r.sug.t ? " · " + r.sug.t : ""), ", which its TOP’s crosswalk doesn’t list — the TOP may be mis-coded. Confirm if it truly fits the course, or change."];
+      }
       // Program-coherence default: this course had no clear winner of its own, so we defaulted the box to
       // the code a bunch of its department siblings use — honest about both facts, still needs a look.
       if (eff && eff.defaulted) {
@@ -1625,10 +1649,17 @@
       // A vertical CIP STACK (Sam, 2026-07-18): the primary box + a "+" to add another inline, then any
       // additional confirmed CIPs stacked directly under it (each removable). One CIP = one clean line.
       var stack = el("div", { class: "cipx-rev-cipstack" }, []);
+      // Box-click (Sam, 2026-07-19): a high-confidence ✓ Ready row confirms in ONE click (fast path);
+      // a ? Review or ◻ Manual row OPENS instead — a weak/unreviewed default must never be validated by
+      // a stray click meant to expand the row (the box is the big central target). Applied rows keep their
+      // deliberate click-to-confirm (that code was placed by a sibling bulk-apply, not a bare default).
+      var readyConfirm = r.status === "clear";
       var primline = el("div", { class: "cipx-rev-primline" }, [
         cipBox(showCode, { on: confirmed, id: chgId,
-          onAccept: confirmed ? null : (applied ? validateRow : (showCode ? accept(showCode) : null)),
-          title: applied ? "Codes applied from a sibling — click to confirm this course · ▾ to change" : null,
+          onAccept: confirmed ? null : (applied ? validateRow : (showCode ? (readyConfirm ? accept(showCode) : openRow) : null)),
+          title: applied ? "Codes applied from a sibling — click to confirm this course · ▾ to change"
+            : (confirmed ? null : (readyConfirm ? "Click to confirm this ready match · ▾ to change to any code"
+            : "Open to review the options before confirming · ▾ to change to any code")),
           onChange: onChange }),
       ]);
       var addBtn = el("button", { class: "cipx-rev-addcip", type: "button", title: "Add another CIP code — a course can carry more than one", "aria-label": "Add another CIP to " + r.label }, ["+"]);
@@ -1696,6 +1727,7 @@
       else if (!open && body) { card.removeChild(body); body = null; }
     }
     function tog() { revOpen[r.label] = !revOpen[r.label]; paint(); }
+    function openRow() { if (!revOpen[r.label]) { revOpen[r.label] = true; paint(); } }
     head.onclick = tog;
     head.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); tog(); } };
     paint();   // multi-select toggles re-render the list; revOpen restores this row's expansion
@@ -1732,12 +1764,13 @@
     var scoped = cons.scoped && subj;   // consensus was narrowed to this course's discipline
     var els = [];
     els.push(el("div", { class: "cipx-rev-peerlead" }, [svgIcon(COLLEGE_ICON), el("span", {}, [scoped ? "Field consensus — how " + subj + " peers code this course" : "Field consensus — how peers code this course"])]));
+    var isMaj = modal.n * 2 > cons.n;   // a TRUE majority — else it's a plurality/tie ("most common", not "most use")
     els.push(el("div", { class: "cipx-rev-peerbody" }, [
       scoped
-        ? ("Among the " + cons.n + " " + subj + " department" + (cons.n === 1 ? "" : "s") + " teaching “" + cons.key + ",” most use TOP ")
-        : ("Across California, " + cons.n + " college" + (cons.n === 1 ? "" : "s") + " teach “" + cons.key + ".” Most use TOP "),
+        ? ("Among the " + cons.n + " " + subj + " department" + (cons.n === 1 ? "" : "s") + " teaching “" + cons.key + ",” " + (isMaj ? "most use TOP " : "the most common is TOP "))
+        : ("Across California, " + cons.n + " college" + (cons.n === 1 ? "" : "s") + " teach “" + cons.key + ".” " + (isMaj ? "Most use TOP " : "The most common is TOP ")),
       el("span", { class: "cipx-code" }, [modal.top]), modal.topTitle ? " · " + modal.topTitle : "", " ",
-      el("span", { class: "cipx-rev-peermetric", title: differHover(cons) }, ["(" + modal.n + " use, " + cons.differ + " differ)"]),
+      el("span", { class: "cipx-rev-peermetric", title: differHover(cons) }, ["(" + modal.n + " use, " + cons.differ + " differ" + (isMaj ? "" : " — no majority") + ")"]),
       best ? el("span", {}, [" → CIP ", el("span", { class: "cipx-code" }, [best.r.code]), " · " + best.r.t + " (via the crosswalk)."]) : " (no crosswalk CIP for that TOP).",
     ]));
     if (scoped) els.push(el("div", { class: "cipx-rev-peerscope" }, ["Scoped to " + subj + " peers only — colleges that teach this title in another department (a different discipline) aren’t counted, so their coding can’t override yours."]));
@@ -1756,8 +1789,9 @@
     var best = sum.best, modal = sum.modal, cons = sum.cons;
     var inCrosswalk = best ? r.m.cands.some(function (c) { return c.r.code === best.r.code; }) : false;
     if (best && modal.n >= 3 && !inCrosswalk) {
+      var isMaj = modal.n * 2 > cons.n;   // "peer consensus" only on a TRUE majority; a plurality/tie is "most common"
       wrap.appendChild(candRow(best.r, (best.rel || 0),
-        el("span", { class: "cipx-rev-peertag", title: "Where peer colleges' TOP codes point via the crosswalk" }, ["peer consensus · " + modal.n + " of " + cons.n]),
+        el("span", { class: "cipx-rev-peertag", title: "Where peer colleges' TOP codes point via the crosswalk" }, [(isMaj ? "peer consensus · " : "most common · ") + modal.n + " of " + cons.n]),
         "cipx-rev-cand-peer"));
     }
     return wrap;
@@ -1813,10 +1847,12 @@
       box.appendChild(candRow(o.r, (o.conf != null ? o.conf : (o.rel || 0)), extraTag, null, o.matched));
     });
 
-    // 3) stronger description matches OUTSIDE the crosswalk (the lexical signal, weakest)
-    if (r.disagree && r.m.beyond.length) {
-      box.appendChild(el("div", { class: "cipx-rev-flag" }, ["⚑ Stronger description match" + (r.m.beyond.length > 1 ? "es" : "") + " outside the crosswalk. This course is coded ", el("b", {}, ["TOP " + r.top + (r.topTitle ? " · " + r.topTitle : "")]), " — its TOP may be mis-coded, which would make the crosswalk recommendation misleading. Assign one only if it truly fits the course:"]));
-      r.m.beyond.slice(0, 3).forEach(function (o) {
+    // 3) stronger description matches OUTSIDE the crosswalk (the lexical signal, weakest) — filtered to
+    // field-credible candidates (F3/F5): only those sharing the course field's or peer consensus's CIP family.
+    var bo = r.beyondOk || r.m.beyond;
+    if (bo.length) {
+      box.appendChild(el("div", { class: "cipx-rev-flag" }, ["⚑ Stronger description match" + (bo.length > 1 ? "es" : "") + " outside the crosswalk. This course is coded ", el("b", {}, ["TOP " + r.top + (r.topTitle ? " · " + r.topTitle : "")]), " — its TOP may be mis-coded, which would make the crosswalk recommendation misleading. Assign one only if it truly fits the course:"]));
+      bo.slice(0, 3).forEach(function (o) {
         box.appendChild(candRow(o.r, (o.rel || 0), el("span", { class: "cipx-rev-outtag" }, ["outside crosswalk"]), "cipx-rev-cand-out", o.matched));
       });
     }
@@ -2389,6 +2425,7 @@
   var _rendered = false;
   function activate() {
     ensureCss();
+    try { localStorage.removeItem("cipx_college"); } catch (e) {}   // F6: drop a stale key from an older build (college is intentionally ephemeral)
     var root = document.getElementById(ROOT_ID);
     if (!root) return;
     if (_rendered) return;

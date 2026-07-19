@@ -121,6 +121,34 @@ the owner invites by **magic link** (college-scoped, carries light identity → 
 resolves the faculty-lack-COCI tension. Ship **team phrase as MVP gate** (built), layer magic links before
 wide release.
 
+### Shipped 2026-07-19 (SkyCoco) — six Review-tool fixes from a Claude-for-Chrome live-test
+Sam live-tested with **Claude for Chrome** (a browser diagnostician — no repo checkout; it hands findings back
+to a Code session). Each verified against source + reproduced headless before fixing (two of six were
+mechanism-wrong):
+- **F1 box-click safety (the linchpin):** a **✓ Ready** row's box confirms in one click; a **? Review / ◻ Manual**
+  row's box now **OPENS the row** instead of validating a weak default (`readyConfirm = r.status==="clear"` →
+  `onAccept: openRow`). A stray click meant to expand no longer silently confirms.
+- **F3 outside-crosswalk trust:** a `beyond` (outside-crosswalk) match is credible only if its **2-digit CIP
+  family** matches the course field OR the peer consensus (`beyondOk` filter in `reviewRowOf`) — the
+  two-signals-agree gate (§7) applied to the lexical engine. Kills the "Applied Engineering @100% for Color
+  Theory" noise.
+- **F5 headline surface (Sam's call):** a bare-review row with a **strong same-family** `beyondOk[0]` (rel≥85)
+  shows THAT code as the headline (`sug`, `sugKind:"description"`), still **? Review** — e.g. Ceramics I →
+  **50.0711 Ceramic Arts** instead of the generic 50.0401. Shielded from the dept-default swap; honest why-line.
+- **F4 majority honesty:** "most use" / the "peer consensus" badge now require a **strict majority**
+  (`modal.n*2 > cons.n`); a tie/plurality reads "the most common is … no majority" / "most common · N of M".
+  **Display only** — the pre-fill gate is untouched, so the Phase-A baseline counts don't move.
+- **F6 cleanup:** drop the stale `cipx_college` localStorage key (college is intentionally ephemeral).
+- **F2 non-bug:** confirmations persist across mode switches (verified); "N peer-corroborated" is a data
+  property, not progress.
+
+Seams touched: `reviewRowOf` (`beyondOk`/family guardrail + headline surface), `effectiveSug` (skip dept-default
+when `sugKind==="description"`), `reviewWhy` (description branch), `reviewExpand` (uses `r.beyondOk`),
+`consensusSummaryEls`/`peerConsensusBlock` (majority wording+badge), `reviewRow` (box `onAccept`/`openRow`).
+Tests **213 → 220**; real-Chromium (Chabot·ART) desktop+phone, light+dark, 0 overflow / 0 console errors.
+**Follow-up worth noting:** the same family guardrail could be applied to **Find-my-course** mode's outside-crosswalk
+list (left raw there — it's the exploratory description-fit view; F3 fixed the Review surface that drives a saved decision).
+
 **Data.** `kb/_build_cip_crosswalk.py` → `cip_crosswalk_data.js` (`window.CIP_CROSSWALK`, committed, no
 cron): `topcip[<TOP>]={t,c:[[cip,tier]]}` + `boiler[]` + the lean `{fams, rows}` reference. Per-college
 courses lazy-fetched from `cip_fitcheck/<slug>.json` (`kb/_build_cip_fitcheck.py`). Cross-college consensus

@@ -1265,3 +1265,40 @@ Side-lane discipline honored: `kb/cpl_todos.json` + the numbered session handoff
 **Sequencing from here:** A (shipped) → B-progress store → B-access (phrase MVP → magic links) → B-COCI push.
 A was independent and shippable today; B is the moment we commit to a shared backend — which we want anyway
 for COCI submission, so **access + progress + submission are one project, built once.**
+
+### 2026-07-18/19 (SkyCoco) — the Claude-for-Chrome live-test loop + six Review-tool fixes
+
+Sam wanted to troubleshoot the CIP tool with **Claude for Chrome** but couldn't attach the repo. Two takeaways
+that are worth carrying:
+
+1. **Claude for Chrome is a diagnostician, not an editor** — it acts inside the browser (opens the live tool,
+   reproduces, reads console/DOM/localStorage), but has no repo checkout or terminal. The productive division
+   of labor: **Chrome diagnoses on the live site → hand the findings back to a Code session to implement + ship.**
+   The self-contained prompt that worked is in the session chat (points at the live URL, gives the doctrine at
+   the right altitude, asks for repro + evidence + behavior-level fix, "observe not edit"). *(Aside: the
+   `cip_crosswalk_handoff.md` link Sam had was the `cpl-knowledge-base` copy, which 404s — the live handoff is
+   the `cpl-project-tracker/docs/` copy. The tracker repo is public, so a link works, but the tailored prompt
+   beats handing a Code-oriented handoff to a browser agent.)*
+
+2. **Verify a browser agent's findings against the source before fixing — mechanism, not just symptom.** Chrome's
+   report was excellent but two of six findings needed correction once I read the code + reproduced headless:
+
+| # | Reported | Verdict | Root cause (verified headless) | Fix |
+|---|---|---|---|---|
+| 1 | Expanding a row auto-confirms | ✅ real, wrong mechanism | Expanding writes nothing; the **CIP box** one-click *accepts+validates* the default — and it's the big central target, easy to hit when aiming to expand | **Ready confirms; Review/Manual box OPENS the row** (`readyConfirm = r.status==="clear"`; else `onAccept: openRow`). Applied rows keep click-to-confirm |
+| 2 | Counter diverges; mode-switch clears | ⚠️ misread | Confirmations **persist** across mode switch (verified); "N peer-corroborated" is a data property, not progress | none (non-bug) |
+| 3 | Engineering codes @100% outrank art codes | ✅ real | The "outside crosswalk" (`beyond`) list gates on raw `rel≥85`; generic-token matches (principle/design/system) surface wrong-family codes | **Family guardrail** (`beyondOk`): a beyond candidate is credible only if its 2-digit CIP family matches the course field OR the peer consensus — the two-signals-agree gate (§7) applied to the lexical signal |
+| 4 | "most use"/"PEER CONSENSUS" on a plurality | ✅ real | Wording unconditional; badge gates on `modal.n≥3` — neither requires a true majority | Require **strict majority** (`modal.n*2 > cons.n`) for "most use" + the "peer consensus" label; a tie/plurality reads "the most common is … no majority" / "most common · N of M" (display only — the pre-fill gate is untouched, so baseline counts don't move) |
+| 5 | Review & Find disagree; Review picks the weak code | ✅ real | Review's box shows the crosswalk default; the strong description match (Ceramics I → 50.0711 Ceramic Arts @100%) is buried in the drawer | **Surface the strong credible match as the headline** (Sam's call): a bare-review row with a strong same-family `beyondOk[0]` (rel≥85) becomes `sug` with `sugKind:"description"`, still **? Review**; shielded from the dept-default swap; honest why-line |
+| 6 | Stale `cipx_college`; no reload restore | ⚠️ mostly by-design | College is intentionally ephemeral; `cipx_college` is dead cruft from an old build | `localStorage.removeItem("cipx_college")` on activate (cleanup only) |
+
+**The linchpin insight (Chrome's, and it's right):** Finding 1 is what turns the ranking/wording problems
+(#3, #4, #5) into *silently recorded wrong answers* — one stray box-click validates a weak default. Fixing the
+box interaction is the highest-value change; the ranking fixes make the thing it would have recorded correct.
+
+**Method notes worth keeping:** the family guardrail is the §7 doctrine ("TOP/description alone never gates —
+needs a second signal") applied to the CIP fit engine, not just the M-ID schema. And two of six agent findings
+being mechanism-wrong is the argument for *always* reproducing headless on the same college/department before
+touching code — the fix's numbers (50.0711 @100%, 3-of-6 tie) are then the real rendered values, not guesses.
+Tests **213 → 220** (F1 box-behavior both ways, F3 family filter, F4 majority wording, F5 headline surface).
+Side-lane discipline honored: `kb/cpl_todos.json` + the numbered session handoff untouched.
