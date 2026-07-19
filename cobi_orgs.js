@@ -41,11 +41,15 @@
       tabs: ["our-process", "tmc-builder"], home: "our-process" },
     { id: "cip", label: "CIP", tag: "CIP", full: "TOP-to-CIP Transition",
       tabs: ["cip-crosswalk", "coci-lookup"], home: "cip-crosswalk" },
-    // GR — Government Relations. Server-side gated (gr_priorities.js reads the
-    // MAP-team-only gr_content); the tab is EXCLUSIVE (below) so it appears only
-    // under ?org=gr, never in the default view.
+    // GR — Government Relations. LISTED in the switcher like any other site
+    // (Sam, 2026-07-19: "GR should appear in the dropdown always"). Selecting
+    // the GR site is open; its CONTENT is what's gated. The gr-priorities tab is
+    // EXCLUSIVE (below) so it shows ONLY under the GR site, never in the default
+    // CPL nav — and gr_priorities.js renders a lock screen until the MAP-team GR
+    // phrase is entered (server-side RLS on gr_content; a wrong/rotated phrase
+    // gets zero rows back). So: pick GR freely; view/curate only with the phrase.
     { id: "gr", label: "GR", tag: "GR", full: "Government Relations",
-      tabs: ["gr-priorities"], home: "gr-priorities", unlisted: true },
+      tabs: ["gr-priorities"], home: "gr-priorities" },
   ];
 
   // Tabs that must NOT appear in the default "show everything" view — they
@@ -96,8 +100,9 @@
     sel.className = "cobi-orgswitch-sel";
     sel.setAttribute("aria-label", "Choose COBI site");
     ORGS.forEach(function (o) {
-      // Unlisted orgs (e.g. GR) are reachable via ?org= but kept OUT of the
-      // public switcher — shown only when they ARE the current selection.
+      // `unlisted` orgs are reachable via ?org= but kept OUT of the switcher —
+      // shown only when they ARE the current selection. (No org uses this today;
+      // GR is a normal listed site whose CONTENT is phrase-gated, not its entry.)
       if (o.unlisted && o.id !== current.id) return;
       var op = document.createElement("option");
       op.value = o.id;
