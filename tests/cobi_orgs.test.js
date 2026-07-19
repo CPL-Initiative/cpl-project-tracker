@@ -40,6 +40,7 @@ const HEADER_NAV = `
     <button class="cpl-tab" data-tab="our-process">Our Process</button>
     <button class="cpl-tab" data-tab="tmc-builder">TMC Builder</button>
     <button class="cpl-tab" data-tab="cip-crosswalk">CIP Codes</button>
+    <button class="cpl-tab" data-tab="gr-priorities">GR Priorities</button>
     <div class="cpl-nav-group" data-nav-group="funding">
       <button class="cpl-nav-group-head">Funding</button>
       <div class="cpl-nav-group-body">
@@ -70,10 +71,12 @@ function tagText(document) {
   check("init does not throw on default load", !threw);
   check("default site is CPL", window.CPL_ORGS.current().id === "cpl");
   check("switcher injected into the masthead", !!document.querySelector(".cobi-brand .cobi-orgswitch-sel"));
-  check("switcher lists all sites (CPL, C&I, CIP)",
-    document.querySelectorAll(".cobi-orgswitch-sel option").length === 3);
-  check("GR is unlisted — not shown in the default switcher",
-    document.querySelectorAll(".cobi-orgswitch-sel option[value='gr']").length === 0);
+  check("switcher lists all sites (CPL, C&I, CIP, GR)",
+    document.querySelectorAll(".cobi-orgswitch-sel option").length === 4);
+  check("GR is listed in the switcher (selecting it is open; content is phrase-gated)",
+    document.querySelectorAll(".cobi-orgswitch-sel option[value='gr']").length === 1);
+  check("default view HIDES the EXCLUSIVE gr-priorities tab (content gated, tab off the flagship nav)",
+    !shown(btn(document, "gr-priorities")));
   check("REGRESSION GUARD: default CPL view shows Dashboard", shown(btn(document, "dashboard")));
   check("REGRESSION GUARD: default CPL view shows Budget (all tabs)", shown(btn(document, "budget")));
   check("REGRESSION GUARD: default CPL view shows the Funding group",
@@ -98,11 +101,19 @@ function tagText(document) {
   check("CIP: Budget is hidden from the rail", !shown(btn(document, "budget")));
   check("CIP: identity tag flips to CIP", tagText(document) === "CIP");
 
+  // ── switch to GR: the EXCLUSIVE GR Priorities tab shows only under its site ──
+  window.CPL_ORGS.setOrg("gr");
+  check("GR: GR Priorities tab is visible under the GR site", shown(btn(document, "gr-priorities")));
+  check("GR: Dashboard is hidden from the rail", !shown(btn(document, "dashboard")));
+  check("GR: Budget is hidden from the rail", !shown(btn(document, "budget")));
+  check("GR: identity tag flips to GR", tagText(document) === "GR");
+
   // ── back to CPL restores everything ──
   window.CPL_ORGS.setOrg("cpl");
   check("back to CPL: Budget visible again", shown(btn(document, "budget")));
   check("back to CPL: Funding group visible again",
     shown(document.querySelector('.cpl-nav-group[data-nav-group="funding"]')));
+  check("back to CPL: EXCLUSIVE gr-priorities hidden again", !shown(btn(document, "gr-priorities")));
   check("back to CPL: tag reads CPL again", tagText(document) === "CPL");
 
   // ── idempotent init: no duplicate switcher ──
