@@ -149,6 +149,28 @@ Tests **213 → 220**; real-Chromium (Chabot·ART) desktop+phone, light+dark, 0 
 **Follow-up worth noting:** the same family guardrail could be applied to **Find-my-course** mode's outside-crosswalk
 list (left raw there — it's the exploratory description-fit view; F3 fixed the Review surface that drives a saved decision).
 
+### Shipped 2026-07-19 (SkyCoco) — the confidence-scoring rework (Chaffey BIOL live-test)
+The confidence numbers were the story. All in `computeRecommend`; diagnosed with a `vm`-context kb diagnostic on
+BIOL 2/3/10/42L/63/98C before touching code:
+- **Title-match signal** (Sam's key insight): a dedicated course-title↔CIP-title score (`titleHit`, IDF-weighted;
+  `TITLE_BOOST` in the ranking) + a **generic-qualifier stoplist** (`_titleStop`) so the same-title code wins
+  (BIOL 2 → 03.0104 Environmental Science, not Climate Science; verbose titles match on substantive terms).
+- **De-inflated ABSOLUTE confidence:** `confOf = min(0.95, 0.80·titleSim + 0.60·coverage)` — obvious pick = 80%,
+  capped 95 (no false 100%). `tierOf` recalibrated (≥75 Strong / ≥45 Plausible).
+- **Crosswalk stays primary (F5 reverted):** the outside match is a **"worth a look"** hint (`beyondOk`), never
+  the headline. A **beat-the-crosswalk gate** (`o.conf > bestCandConf`) kills the generic-title flood.
+- **Ready/Review gate kept RELATIVE** (`relConf`) so the display de-inflation didn't collapse the baseline — held
+  the swing to ~15% (Chaffey Ready 594→508), not 47%. **`cip_status_counts.json` regenerated** (a real baseline
+  shift — Ready down / Review up one notch — flagged to Sam).
+- **College glyph deleted** (Sam) — the institution icon by "Your college".
+Constants: `TITLE_BOOST` / `CONF_TITLE_W` / `CONF_COV_W` / `BEYOND_CONF_MIN` (top of the file, next to `COV_K`).
+**Still queued — the UI batch** (Sam, prototype-then-port): relocate the statewide line under the intro, rename
+Department→**Subject**, widen the Subject dropdown, center the tile contents, tuck the "N confirmed / never final"
+text beside the tiles, and a **compact sticky header** (a slim `College · Subject · N?/N✓` strip on scroll, not
+the whole header — mobile-safe). Plus the earlier box-interaction items (change ≠ confirm; click ✓ to undo;
+Select + % on the headline box). **Method:** the `vm` diagnostic dumping cands (conf/boosted/score)+beyond for the
+curator's own courses is the tightest calibration loop — every constant tuned against real rankings, not guessed.
+
 **Data.** `kb/_build_cip_crosswalk.py` → `cip_crosswalk_data.js` (`window.CIP_CROSSWALK`, committed, no
 cron): `topcip[<TOP>]={t,c:[[cip,tier]]}` + `boiler[]` + the lean `{fams, rows}` reference. Per-college
 courses lazy-fetched from `cip_fitcheck/<slug>.json` (`kb/_build_cip_fitcheck.py`). Cross-college consensus

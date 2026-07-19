@@ -231,6 +231,16 @@
   // identity terms (asphalt, pavement, drainage, concrete), so we down-weight it.
   var COV_K = 8;        // how many of the query's most distinctive terms define "identity"
   var COV_FLOOR = 0.25; // a code matching 0 distinctive terms keeps only this fraction of its score
+  // Title-match + de-inflated confidence (Sam, 2026-07-19). A CIP whose TITLE matches the COURSE TITLE is
+  // a strong signal it's the right code — stronger than description-word volume (which let "Climate
+  // Science" out-vote the identically-titled "Environmental Science"). TITLE_BOOST folds the IDF-weighted
+  // course-title↔CIP-title overlap into the ranking score; the displayed confidence is ABSOLUTE (title-fit
+  // + description-coverage), never forced to 100% just by topping the per-course ranking.
+  var TITLE_BOOST = 6;              // weight of course-title↔CIP-title overlap in the ranking score
+  var CONF_TITLE_W = 0.80, CONF_COV_W = 0.60;   // confidence = TITLE_W·titleSim + COV_W·coverage, bounded [0,1] (Sam: read a bit higher)
+  var BEYOND_CONF_MIN = 45;         // an outside-crosswalk code is "worth a look" only at this absolute confidence
+  var _titleStop = null;            // generic academic-qualifier title tokens, stripped from the course-title match
+  var SUG_STRONG = 70;              // a suggestion at/above this confidence is a strong pick — not overridden by the dept-default
   function scoreAgainst(query) {
     var qt = fitTokens(query);
     if (!qt.length) return { ranked: [], max: 0, margin: 0, toks: 0 };
@@ -519,7 +529,7 @@
   // hairline institution glyph (roof + pillars + base) — matches the tab glyphs
   var COLLEGE_ICON = "M12 4.2L4.5 8.8H19.5L12 4.2M6 9.2V17.4M9.6 9.2V17.4M14.4 9.2V17.4M18 9.2V17.4M4 18.4H20";
   function collegeBar() {
-    var bar = el("div", { class: "cipx-collegebar" }, [el("span", { class: "cipx-college-l" }, [svgIcon(COLLEGE_ICON), el("span", {}, ["Your college"])])]);
+    var bar = el("div", { class: "cipx-collegebar" }, [el("span", { class: "cipx-college-l" }, [el("span", {}, ["Your college"])])]);   // glyph dropped (Sam, 2026-07-19)
     var sel = el("select", { class: "cipx-college-sel", "aria-label": "Your college" }, [el("option", { value: "" }, [FIT_COLLEGES ? "Choose your college…" : "Loading colleges…"])]);
     collegeSelEl = sel;
     sel.onchange = function () {
@@ -694,9 +704,11 @@
   // is dampened down into the Plausible band rather than reading Strong. rel%
   // then picks the label, so a course with genuine secondary callouts to a field
   // still earns an honest "Plausible — compare" (Sam's calibration).
+  // Tiers on the de-inflated absolute confidence (Sam, 2026-07-19): a full title match (the obvious pick)
+  // reads 80% and should show Strong; capped at 95, so ≥75 = Strong, ≥45 = Plausible, else Weak.
   function tierOf(rel) {
-    if (rel >= 85) return { key: "ok", label: "Strong fit" };
-    if (rel >= 50) return { key: "warn", label: "Plausible — compare" };
+    if (rel >= 75) return { key: "ok", label: "Strong fit" };
+    if (rel >= 45) return { key: "warn", label: "Plausible — compare" };
     return { key: "bad", label: "Weak — reconsider" };
   }
   function meter(rel, key) {
@@ -791,6 +803,22 @@
     var label = c[0] || "", desc = c[1] || "", top = c[2] || "";
     var res = scoreAgainst(courseText(c));
     var byCode = {}; res.ranked.forEach(function (o) { byCode[o.r.code] = o; });
+    // Title-match signal (Sam): IDF-weighted overlap of the COURSE's own title tokens with a CIP's TITLE.
+    // Drop generic academic qualifiers (Introduction/Concepts/Research Methods/…) + geographic words so a
+    // verbose title ("Research Methods in Evolutionary Ecology") matches on its SUBSTANTIVE terms
+    // ("Evolutionary Ecology") the same way a terse sibling ("Evolutionary Ecology") does.
+    if (!_titleStop) _titleStop = setOf(fitTokens("introduction introductory concepts principles fundamentals survey topics seminar independent study studies research methods method advanced beginning intermediate applied laboratory lab practicum workshop special selected contemporary issues perspectives overview honors california general course"));
+    var ctAll = fitTokens(courseTitle(label));
+    var ctToks = ctAll.filter(function (t) { return !_titleStop[t]; });
+    if (!ctToks.length) ctToks = ctAll;   // fall back if the qualifier strip left nothing
+    var ctTotal = 0; for (var ti = 0; ti < ctToks.length; ti++) ctTotal += idf(ctToks[ti]);
+    if (ctTotal <= 0) ctTotal = 1;
+    function titleHit(r) { var h = 0; for (var i = 0; i < ctToks.length; i++) if (r._tt && r._tt[ctToks[i]]) h += idf(ctToks[i]); return h; }
+    function boosted(o) { return (o.score || 0) + TITLE_BOOST * titleHit(o.r); }
+    // Absolute, de-inflated confidence: high only when the CIP TITLE matches the course title OR the
+    // description covers the course's distinctive vocabulary — never forced to 100% by relative ranking.
+    // capped below 100 (Sam: nothing should read a false-certain 100%); a full title match alone = 80%.
+    function confOf(o) { return Math.round(100 * Math.min(0.95, CONF_TITLE_W * (titleHit(o.r) / ctTotal) + CONF_COV_W * (o.coverage || 0))); }
     var tc = TOPCIP[top] || null, inSet = {};
     var cands = [], boiler = [];
     if (tc) {
@@ -798,43 +826,40 @@
         var r = BYCODE[ct[0]]; if (!r) return;
         inSet[ct[0]] = 1;
         var e = byCode[ct[0]];
-        var rec = { r: r, prov: ct[1], rel: e ? e.rel : 0, score: e ? e.score : 0, matched: e ? e.matched : [] };
+        var rec = { r: r, prov: ct[1], rel: e ? e.rel : 0, score: e ? e.score : 0, coverage: e ? e.coverage : 0, matched: e ? e.matched : [] };
+        rec.boosted = boosted(rec); rec.conf = confOf(rec);
         (BOILER[ct[0]] ? boiler : cands).push(rec);
       });
-      // Credit-first: a Noncredit-category CIP must not out-rank a credit one. A
-      // credit course spuriously matching a noncredit boilerplate code (e.g.
-      // "Differential Equations" → "High School Equivalent Exam Prep" on the word
-      // "equivalent", or a Poli-Sci course → "Community Involvement") was winning the
-      // green ✓ over the official credit code, which sat discarded in the same list.
-      // Within a class, description-fit still decides (Painting over generic Art).
+      // Credit-first (a Noncredit CIP must not out-rank a credit one), then TITLE-BOOSTED description-fit,
+      // so the code whose TITLE matches the course leads its TOP (Sam: "Environmental Science" → 03.0104).
       cands.sort(function (a, b) {
         var an = a.r.cat === "Noncredit" ? 1 : 0, bn = b.r.cat === "Noncredit" ? 1 : 0;
-        return an - bn || b.score - a.score || (a.r.t < b.r.t ? -1 : 1);
+        return an - bn || b.boosted - a.boosted || (a.r.t < b.r.t ? -1 : 1);
       });
-      // Confidence is CROSSWALK-RELATIVE: how clearly the description picks each
-      // candidate among the crosswalk's options for THIS TOP — normalized to the
-      // best-scoring option, not the global max. ("Accounting for Managers" shouldn't
-      // read 77% for Accounting just because "Managerial Economics" — which isn't even
-      // a valid option for this TOP — scores higher globally.) A quality factor (bestRel
-      // / 65) dampens the whole TOP when even its best option is a weak absolute match,
-      // so an all-weak TOP still reads honestly low rather than falsely 100%.
-      var bestScore = 0, bestRel = 0;
-      cands.forEach(function (c) { if (c.score > bestScore) bestScore = c.score; if (c.rel > bestRel) bestRel = c.rel; });
-      var qf = Math.min(1, bestRel / 65);
-      cands.forEach(function (c) { c.conf = bestScore > 0 ? Math.min(100, Math.round(c.score / bestScore * 100 * qf)) : 0; });
     }
-    // recommendation gate: the top (credit-first) candidate is also the best-SCORING
-    // one AND clearly ahead of the pack AND a confident (crosswalk-relative) match.
+    // Recommendation (Ready) gate stays RELATIVE — a clear crosswalk winner with a decent match — so the
+    // Ready/Review split doesn't swing just because the DISPLAY confidence was de-inflated. The title boost
+    // only re-orders which crosswalk code is the winner (03.0104 over Climate Science); a course where the
+    // boosted winner isn't the plain-score winner is genuinely ambiguous → left "review".
     var recommended = null;
     if (cands.length && cands[0].score > 0) {
-      var byScore = cands.slice().sort(function (a, b) { return b.score - a.score; });
-      var cwMargin = byScore.length > 1 ? 1 - byScore[1].score / byScore[0].score : 1;
-      if (cands[0].score === byScore[0].score && cwMargin >= 0.25 && cands[0].conf >= 85) recommended = cands[0].r.code;
+      var bestCandScore = 0, bestCandRel = 0;
+      cands.forEach(function (x) { if (x.score > bestCandScore) bestCandScore = x.score; if (x.rel > bestCandRel) bestCandRel = x.rel; });
+      var relConf = bestCandScore > 0 ? Math.round(cands[0].score / bestCandScore * 100 * Math.min(1, bestCandRel / 65)) : 0;
+      var byB = cands.slice().sort(function (a, b) { return b.boosted - a.boosted; });
+      var margin = byB.length > 1 ? 1 - byB[1].boosted / byB[0].boosted : 1;
+      if (cands[0].boosted === byB[0].boosted && margin >= 0.25 && relConf >= 85) recommended = cands[0].r.code;
     }
-    // strong (rel≥85) description matches the crosswalk doesn't list for this TOP.
-    // Exclude the boiler codes — they self-rank at rel 100 on ~275 TOPs and must
-    // never surface in a ranked list (they belong behind the boiler expander).
-    var beyond = res.ranked.filter(function (o) { return !inSet[o.r.code] && !BOILER[o.r.code] && o.rel >= 85; }).slice(0, 5);
+    // Description/title matches OUTSIDE the crosswalk — "worth a look" hints (Sam: crosswalk stays primary).
+    // Ranked by the same boosted score, gated on the ABSOLUTE confidence AND on beating the best crosswalk
+    // code (an outside code is only "worth a look" if it fits BETTER than the official options — this also
+    // kills the generic-title flood: for "Independent Study: Biology" every "X Biology" code ties 26.0101,
+    // so none surfaces). Boiler codes never surface (boiler expander).
+    var bestCandConf = 0; cands.forEach(function (x) { if (x.conf > bestCandConf) bestCandConf = x.conf; });
+    var beyond = res.ranked.filter(function (o) { return !inSet[o.r.code] && !BOILER[o.r.code]; })
+      .map(function (o) { o.boosted = boosted(o); o.conf = confOf(o); return o; })
+      .filter(function (o) { return o.conf >= BEYOND_CONF_MIN && o.conf > bestCandConf; })
+      .sort(function (a, b) { return b.boosted - a.boosted; }).slice(0, 3);
     // Work-experience courses stay in their discipline — don't nudge them elsewhere.
     if (isWorkExperience(label)) beyond = [];
     return { label: label, top: top, topTitle: tc ? tc.t : "", hasCross: !!tc, cands: cands,
@@ -1124,14 +1149,13 @@
     if (!consCip) { var cf = consensusFor(label, subj); if (cf) { var bc = bestCipForTop(cf.modal.top, m); if (bc) consCip = bc.r; } }
     if (consCip) fieldFams[famOf(consCip.code)] = 1;
     var beyondOk = (m.beyond || []).filter(function (o) { return fieldFams[famOf(o.r.code)]; });
-    // F5: when the crosswalk default is a bare "review" (no confident winner, no consensus override) and a
-    // CREDIBLE outside-crosswalk match is strong, show THAT code as the headline box — still ? Review so the
-    // faculty confirm. sugKind "description" also shields it from the dept-default swap (effectiveSug).
-    if (status === "review" && !cp && beyondOk.length && (beyondOk[0].rel || 0) >= 85) {
-      sug = beyondOk[0].r; sugKind = "description";
-    }
+    // The official crosswalk stays PRIMARY (Sam, 2026-07-19): a strong outside-crosswalk match is a
+    // "worth a look" hint shown below (beyondOk), NEVER auto-promoted to the headline box — even when it
+    // out-scores the crosswalk pick lexically (BIOL 10's Ecology must not displace 26.0101 Biology). The
+    // headline is always the crosswalk/consensus suggestion; the faculty pick the outside code if it fits.
+    var sugCand = sug ? m.cands.filter(function (x) { return x.r.code === sug.code; })[0] : null;
     return { c: c, label: label, subj: subj, top: ownTop, topTitle: m.topTitle,
-      sug: sug, sugKind: sugKind, status: status, suggestChange: suggestChange, crosswalk: crosswalk,
+      sug: sug, sugKind: sugKind, sugConf: sugCand ? sugCand.conf : 0, status: status, suggestChange: suggestChange, crosswalk: crosswalk,
       nCand: m.cands.length, disagree: beyondOk.length > 0, beyondOk: beyondOk, cons: cp, m: m };
   }
 
@@ -1453,7 +1477,10 @@
   // Program coherence, display-only; it never changes the row's status. deptTop[subj] = {code, n}.
   function effectiveSug(r, ctx) {
     var code = r.sug ? r.sug.code : null, defaulted = null;
-    if (code && r.status === "review" && r.sugKind !== "description" && ctx && ctx.deptTop) {
+    // A weak, uncorroborated pick defaults to the department's dominant code (#843) — but NOT a confident
+    // title-match pick (Sam, 2026-07-19): "Environmental Science" → 03.0104 must not be swapped to the BIOL
+    // dept-dominant 26.0101 just because few BIOL courses use 03.0104.
+    if (code && r.status === "review" && (r.sugConf || 0) < SUG_STRONG && ctx && ctx.deptTop) {
       var own = ctx.codeCount[r.subj + "|" + code] || 0, dt = ctx.deptTop[r.subj];
       if (dt && own < REV_DOMINANT_MIN && dt.code !== code) { defaulted = dt; code = dt.code; }
     }
@@ -1853,7 +1880,7 @@
     if (bo.length) {
       box.appendChild(el("div", { class: "cipx-rev-flag" }, ["⚑ Stronger description match" + (bo.length > 1 ? "es" : "") + " outside the crosswalk. This course is coded ", el("b", {}, ["TOP " + r.top + (r.topTitle ? " · " + r.topTitle : "")]), " — its TOP may be mis-coded, which would make the crosswalk recommendation misleading. Assign one only if it truly fits the course:"]));
       bo.slice(0, 3).forEach(function (o) {
-        box.appendChild(candRow(o.r, (o.rel || 0), el("span", { class: "cipx-rev-outtag" }, ["outside crosswalk"]), "cipx-rev-cand-out", o.matched));
+        box.appendChild(candRow(o.r, (o.conf != null ? o.conf : (o.rel || 0)), el("span", { class: "cipx-rev-outtag" }, ["outside crosswalk"]), "cipx-rev-cand-out", o.matched));
       });
     }
 
