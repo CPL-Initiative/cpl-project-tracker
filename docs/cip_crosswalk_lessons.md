@@ -1302,3 +1302,44 @@ being mechanism-wrong is the argument for *always* reproducing headless on the s
 touching code — the fix's numbers (50.0711 @100%, 3-of-6 tie) are then the real rendered values, not guesses.
 Tests **213 → 220** (F1 box-behavior both ways, F3 family filter, F4 majority wording, F5 headline surface).
 Side-lane discipline honored: `kb/cpl_todos.json` + the numbered session handoff untouched.
+
+### 2026-07-19 (SkyCoco) — the confidence-scoring rework (Chaffey BIOL live-test)
+
+Sam live-tested Chaffey BIOL and the confidence numbers were the story. Root cause + the fixes (all in
+`computeRecommend`, diagnosed with a `vm`-context kb diagnostic on BIOL 2/3/10/42L/63/98C before touching code):
+
+- **The scale mismatch.** Crosswalk candidates showed a *crosswalk-relative* `conf`; outside-crosswalk
+  matches showed *global-relative* `rel` — and the outside match is always the global top, so it read
+  **100%** while the official codes read 14–29%. Two different rulers side by side.
+- **Title-match signal (Sam's key insight — "why wouldn't the CIP with the same title as the course get
+  high confidence?").** CIP-title tokens already weigh 3× a definition word, but a long course description
+  out-*volumes* a title match (Climate Science beat the identically-titled Environmental Science for BIOL 2).
+  Fix: a dedicated **course-title ↔ CIP-title** signal (`titleHit`, IDF-weighted; `TITLE_BOOST` folds it into
+  the ranking score) so the same-title code wins its TOP. A **generic-academic-qualifier stoplist**
+  (Introduction/Concepts/Research Methods/California/…) strips filler so a verbose title
+  ("Research Methods in Evolutionary Ecology") matches on its SUBSTANTIVE terms the same way a terse sibling
+  ("Evolutionary Ecology") does — fixing the 42L-vs-63 inconsistency at the source.
+- **De-inflated ABSOLUTE confidence** (Sam: "nothing should auto-read 100%", then "obvious pick ≥ 80%").
+  `confOf = min(0.95, 0.80·titleSim + 0.60·coverage)` — a full title match alone = **80%**, capped at 95 so
+  nothing reads a false-certain 100. `tierOf` recalibrated to the new scale (≥75 Strong / ≥45 Plausible).
+- **Crosswalk stays primary (F5 reverted).** Sam's earlier "surface the strong outside match as the headline"
+  (F5, #849) over-fired on BIOL 10 (Ecology stole the headline from the obvious 26.0101 Biology). Per his call,
+  the outside match is now a **"worth a look" hint only** (`beyondOk`), never the headline — the box is always
+  a crosswalk/consensus code. A **beat-the-crosswalk gate** (an outside code shows only if its confidence
+  exceeds the best crosswalk code's) kills the generic-title flood (for "Independent Study: Biology" every
+  "X Biology" code ties 26.0101, so none surfaces).
+- **Kept the Ready/Review classification RELATIVE** so the de-inflated *display* confidence didn't collapse the
+  baseline: tying the "Ready" gate to the new absolute conf swung Chaffey Ready 594→**314** (a 47% drop). The
+  fix — gate Ready on a crosswalk-*relative* clarity (a clear winner with a decent match), as before — held the
+  swing to a moderate, defensible ~15% (Chaffey 594→508; the title-boost only re-orders the winner, so a course
+  whose boosted winner isn't the plain-score winner is genuinely ambiguous → "review"). **`cip_status_counts.json`
+  regenerated** (statewide Ready down / Review up ~one notch — flagged to Sam as a real baseline shift).
+
+**Method that keeps paying:** the `vm`-context diagnostic dumping cands (conf/boosted/score) + beyond for a
+handful of the curator's own courses is the tightest calibration loop — every constant (`TITLE_BOOST`,
+`CONF_TITLE_W`, the cap, the beat-crosswalk gate) was tuned against the real rendered rankings on BIOL 2/3/10/
+42L/63/98C, not guessed. Also: **a browser agent's screenshot can be stale** — BIOL 98C's "ESL @100%" was
+already fixed by #849 (family guardrail); confirmed by reproducing on the current engine before "fixing" a
+non-bug. UI batch (relocate baseline line, Subject rename, centered tiles, consolidated text, a compact sticky
+header) is queued to **prototype-then-port**; the college glyph delete rode along in this PR. Side-lane
+discipline honored: `kb/cpl_todos.json` + the numbered session handoff untouched.

@@ -342,17 +342,18 @@ function fresh(withCollege) {
   check("Fix C: the credit candidate leads over a lexically-stronger Noncredit one", mMath.cands.length >= 2 && mMath.cands[0].r.code === "27.0101");
   check("Fix C: a Noncredit CIP is never the green ✓ recommendation when a credit one exists", mMath.recommended !== "32.0202");
 
-  // ── Crosswalk-relative confidence (Sam's "Accounting should read ~100%, not 77%") ──
-  const mBizConf = rApi._recommend(RCOURSES[0]);
-  check("recommend candidates carry a crosswalk-relative confidence (conf)", mBizConf.cands.length && typeof mBizConf.cands[0].conf === "number");
-  check("the top candidate's conf is never below its global rel (crosswalk-relative lifts)", mBizConf.cands[0].conf >= mBizConf.cands[0].rel);
-  // 52.9001 is NOT in TOP 0505.00's crosswalk but out-scores every candidate globally;
-  // the crosswalk winner (52.0201) must still read high (crosswalk-relative), not be
-  // dragged down by an option that isn't even valid for this TOP.
-  const mOut = rApi._recommend(["OUT 1 — Managerial Analysis", "business administration and management and organization and accounting and econometrics", "0505.00"]);
-  check("a clear crosswalk winner reads high conf even when the GLOBAL best is outside the crosswalk", mOut.cands[0].r.code === "52.0201" && mOut.cands[0].conf >= 85);
-  check("crosswalk-relative lifts the winner above its (depressed) global rel", mOut.cands[0].conf > mOut.cands[0].rel);
-  check("the outside global best surfaces in the ⚠ beyond drawer, not as a candidate", mOut.beyond.some((o) => o.r.code === "52.9001"));
+  // ── Title-match ranking + de-inflated ABSOLUTE confidence + crosswalk-primary (SkyCoco live-test, 2026-07-19) ──
+  // A CIP whose TITLE matches the COURSE title wins its TOP (Sam: "Environmental Science" course → the CIP
+  // titled Environmental Science, not Climate Science). Here a course titled "Accounting" → 52.0301 Accounting.
+  const mTitle = rApi._recommend(["BUS 5 — Accounting", "A program that prepares individuals to practice accounting and auditing and bookkeeping.", "0505.00"]);
+  check("title-match: the CIP whose TITLE matches the course title ranks first among the crosswalk options", mTitle.cands[0].r.code === "52.0301");
+  check("title-match: the same-title code reads high — the obvious pick is ≥ 80%", mTitle.cands[0].conf >= 80);
+  check("confidence is de-inflated — capped below a false-certain 100% everywhere", mTitle.cands.every((x) => x.conf <= 95) && (mTitle.beyond || []).every((x) => x.conf <= 95));
+  // Crosswalk stays PRIMARY: an outside-crosswalk code that out-scores globally is a "worth a look" hint,
+  // never the review headline (Sam: BIOL 10's Ecology must not displace 26.0101 Biology).
+  const outCourse = ["OUT 1 — Accounting", "practice accounting and auditing and bookkeeping and econometrics.", "0505.00"];
+  const outRow = rApi._reviewRowOf(outCourse);
+  check("crosswalk stays primary: the review headline is a crosswalk code, never an outside one", outRow.sug && /^52\.03/.test(outRow.sug.code) && outRow.sug.code !== "52.9001");
   // an all-weak TOP is NOT falsely inflated: a course matching none of its candidates' vocab
   const mWeak = rApi._recommend(["ZZZ 1 — Unrelated", "quilting macrame origami calligraphy pottery", "0505.00"]);
   check("an all-weak TOP is not falsely recommended", mWeak.recommended === null);
@@ -464,12 +465,12 @@ function fresh(withCollege) {
   check("F3: a wrong-family outside-crosswalk match is filtered from beyondOk (still present in m.beyond)",
     f3Row.m.beyond.some((o) => /^52\./.test(o.r.code)) && !f3Row.beyondOk.some((o) => /^52\./.test(o.r.code)));
   check("F3: with its only outside match filtered, the row flags no disagreement", f3Row.disagree === false);
-  // F5 (Sam): when the crosswalk default is a bare "review" and a CREDIBLE (same-family) outside match is
-  // strong, surface THAT code as the headline — still ? Review so faculty confirm (Ceramics I → Ceramic Arts).
-  const f5Course = ["BUS 90 — Econometrics", "Econometrics and econometric quantitative analysis for managers.", "0505.00"];
+  // Crosswalk-primary (Sam, 2026-07-19): a strong same-family outside-crosswalk match is a "worth a look"
+  // hint (beyondOk), but the headline stays a CROSSWALK code — the outside code never auto-wins the box.
+  const f5Course = ["BUS 90 — Econometrics", "Econometrics and econometric quantitative analysis for managers and economics.", "0505.00"];
   const f5Row = fxApi._reviewRows([f5Course])[0];
-  check("F5: a strong same-family outside-crosswalk match becomes the review headline (sugKind 'description')",
-    f5Row.status === "review" && f5Row.sugKind === "description" && f5Row.sug.code === "52.9001" && f5Row.beyondOk.some((o) => o.r.code === "52.9001"));
+  check("crosswalk-primary: a strong outside match (52.9001) surfaces as 'worth a look', not the headline",
+    f5Row.sug && /^52\.0[23]/.test(f5Row.sug.code) && f5Row.sug.code !== "52.9001" && f5Row.beyondOk.some((o) => o.r.code === "52.9001"));
 
   // ── SUBJECT-SCOPED consensus (Sam's BIO 35 "Health Science" catch) ──
   // The same title can be a HEALTH course at most colleges and a BIOLOGY course at a few. A
