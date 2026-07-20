@@ -219,13 +219,18 @@ floor. `vm`-diagnostic proof it's surgical: 3/44 ART, 1/78 MUS, 1/28 BIOL vetoed
 (good peer corrections untouched). Tests 226→**229**; real-Chromium CCSF MUS 10C verified. Full story:
 `cip_crosswalk_lessons.md` (2026-07-20).
 
-**🎯 Remaining CfC list (the next PR — clear fixes, no doctrine call):** **F6** Browse "closest
-matches" duplicates its top-6 (header count N but N+6 rows render); **F10** Manual rows say "too little
-to suggest a code" yet show a filled code; **F7** Finder "no clear front-runner" copy fires even when
-one candidate is ≥95%; **F9** no glyph legend + the peer-corroborated ✓· has a generic "Ready status"
-aria (screen-reader can't tell the dot); **F8** the ▾ change-code hit-target is tiny → clicking the box
-body confirms instead. **F11** measure the mobile sticky height at true phone width + trim. **F12**
-(two-box display) is BY DESIGN — no change.
+**CfC list — batch 2 SHIPPED (F6–F10, clear fixes):** **F6** the Browse "Closest matches" finder now
+only fires for multi-word phrases (a single keyword is a list filter) → no more duplicate rows / count
+mismatch; **F10** Manual why-line names the crosswalk code as a starting point instead of claiming "no
+code"; **F7** the Finder lead names a strong top candidate ("close call") instead of "no front-runner"
+at 95%; **F9** the peer-corroborated ✓· now carries ", peer-corroborated" in its aria-label; **F8** the
+▾ change hit-target enlarged so aiming for it no longer lands on the box body (= confirm). **F12**
+(two-box display) BY DESIGN — no change. **CfC list now fully triaged.**
+
+**🎯 The one CfC follow-up left — F11 (Responsive):** measure the review sticky region at TRUE phone
+width (< 480px, where CfC couldn't shrink the viewport) — college bar + tiles host stack to ~204px on
+desktop and likely grow when they wrap; trim if it "eats the screen." Use the real-Chromium phone
+viewport (390px) in the harness.
 
 ## 🎯 Priority — the still-open items
 

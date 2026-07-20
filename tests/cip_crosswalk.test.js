@@ -451,6 +451,16 @@ function fresh(withCollege) {
   check("review classifies a two-signals-agree course as ready/clear", revRows.find((r) => /Business Basics/.test(r.label)).status === "clear");
   check("review row carries the suggested CIP + parsed subject", (function () { var r = revRows.find((x) => /Business Basics/.test(x.label)); return r.sug && r.sug.code === "52.0201" && r.subj === "BUS"; })());
   check("review flags a no-crosswalk course as manual", revRows.find((r) => /Orphan/.test(r.label)).status === "manual");
+  // CfC F10: a thin-description course whose TOP HAS a crosswalk is manual but still carries the crosswalk
+  // code as a starting point (the why-line must name it, not claim "no code" — DOM-checked below).
+  check("F10: a manual row on a TOP with a crosswalk keeps the code as a starting point", (function () { var r = revRows.find((x) => /Mystery/.test(x.label)); return r && r.status === "manual" && r.sug && /^52\./.test(r.sug.code); })());
+  // CfC F7: recommend-mode won't say "no single clear front-runner" when the top candidate is a strong fit.
+  check("F7: recommend lead branches on a strong top candidate", /\(m\.cands\[0\]\.conf \|\| 0\) >= 75/.test(src) && /fits this course's description best of the codes/.test(src));
+  // CfC F9: the peer-corroborated ✓· conveys itself to screen readers, not just a hover dot.
+  check("F9: peer-corroborated status carries an aria label", /peer-corroborated/.test(src));
+  // CfC F6: the browse "Closest matches" helper is gated to multi-word phrases (a single keyword is a
+  // list filter), so it no longer duplicates the code list + breaks the "N codes" count.
+  check("F6: the finder helper is gated to multi-word queries", /\.trim\(\)\.split\(\/\\s\+\/\)\.length < 2\) return/.test(src));
 
   // ── consensus PRE-FILL + the SUGGESTED-CHANGE two-box (Sam's points 1, 2, 6) ──
   // NURS 101 is coded under a business TOP (0505.00), but 4 of 5 peer colleges teaching
