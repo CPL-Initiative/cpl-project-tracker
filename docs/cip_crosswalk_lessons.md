@@ -1455,3 +1455,32 @@ CCSF MUS 10C (Review, box 50.0908, honest whyline, 0 overflow/0 errors).
 "no clear front-runner" copy when one's ≥95%, F9 glyph legend + peer-corroborated ✓· aria, F10 Manual
 rows showing a code, F8 tiny ▾ hit-target. F12 (two-box display) is by design. Side-lane discipline
 held: `cpl_todos.json` + the numbered handoff untouched.
+
+### 2026-07-20 (SkyCIP) — CfC list, batch 2: the clear fixes (F6–F10)
+
+The rest of the Claude-for-Chrome list — no doctrine calls, verified before fixing:
+
+- **F6 Browse "Closest matches" duplicated rows** (header "13 codes" rendered 19). Root cause: the
+  plain-English finder (`renderFinder` → `suggestHost`) fired for ANY text, so a single keyword's
+  top-6 showed above AND inside the full code list. Fix: gate the finder to **multi-word phrases**
+  (a single keyword is a browse/filter the code list already serves). Real-Chromium: "biology" → 0
+  finder cards, count "124 CIP codes" == 124 rows; a phrase still shows the finder.
+- **F10 Manual rows claimed "no code" while showing one.** A thin-description course still rides its
+  TOP's crosswalk code as a starting point (`sug = crosswalk`), but the why-line said "Too little
+  … to suggest a code." Fix: branch the manual why-line on `r.sug` — name the crosswalk code as a
+  starting point when there is one; keep the "nothing to show" copy only when there's no crosswalk.
+- **F7 Finder "no single clear front-runner" fired even at 95% STRONG FIT.** The `m.recommended`
+  gate is RELATIVE (margin/relConf), so a strong-but-close top candidate wasn't "recommended" → the
+  lead read "no front-runner" while the card read STRONG. Fix: a middle branch — when `cands[0].conf
+  ≥ 75`, name it as the best fit "though it's a close call," instead of denying a front-runner.
+- **F9 peer-corroborated ✓· was invisible to screen readers** (aria was a generic "Ready status").
+  Fix: append ", peer-corroborated" to the aria-label when the dot shows. (The ✓/⇄/?/◻ glyphs are
+  already labeled by the count tiles, so no separate visible legend was needed.)
+- **F8 tiny ▾ change hit-target** → aiming for it hit the box body (= confirm). Fix: enlarge the
+  `.cipx-rev-chipchg` hit-area (padding + stretch + negative margin) so it's a comfortable target.
+
+**F12** (the two-box "peers vs your TOP" display) is BY DESIGN — no change. Tests 229→**233** (source
++ data guards for F6/F7/F9/F10; the veto fixture from batch 1 stays). Side-lane discipline held:
+`cpl_todos.json` + the numbered handoff untouched. **CfC list now fully triaged** — F1–F5 (batch 1,
+the veto) + F6–F10 (this batch) shipped; F11 (mobile sticky height) is the one measure-and-trim
+follow-up left.

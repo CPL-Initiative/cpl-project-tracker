@@ -289,6 +289,10 @@
     if (!suggestHost) return;
     clear(suggestHost);
     if (!/[a-z]/i.test(q || "")) return;
+    // Only the plain-English DESCRIBE case (a multi-word phrase) gets the "Closest matches" helper — a
+    // single keyword is a browse/filter the code list below already handles, so surfacing the top-6 here
+    // too duplicated those rows and broke the "N CIP codes" count (CfC F6: "13 codes" rendered 19 rows).
+    if ((q || "").trim().split(/\s+/).length < 2) return;
     var hits = nonBoiler(scoreAgainst(q).ranked).slice(0, 6);
     if (!hits.length) return;
     suggestHost.appendChild(el("div", { class: "cipx-sug-lead" }, ["Closest matches for “" + q.trim() + "” — open each to confirm against its definition:"]));
@@ -997,6 +1001,13 @@
       host.appendChild(el("div", { class: "cipx-rec-lead cipx-rec-lead-ok" }, [
         el("b", {}, [topC.r.code + " " + topC.r.t]), " looks like the strongest fit — the official crosswalk lists it for TOP " + m.top + ", and the course description points to it too. Confirm it against the definition, then enter it in COCI.",
       ]));
+    } else if (m.cands[0] && (m.cands[0].conf || 0) >= 75) {
+      // A strong top candidate that just isn't a runaway winner (close margin / relative gate) — don't
+      // call it "no front-runner" while its card reads STRONG FIT (CfC F7). Name it, note it's close.
+      var topS = m.cands[0];
+      host.appendChild(el("div", { class: "cipx-rec-lead" }, [
+        el("b", {}, [topS.r.code + " " + topS.r.t]), " fits this course's description best of the codes the crosswalk maps from TOP " + m.top + " — though it's a close call with the next few. Confirm it against the definition, or compare the options below.",
+      ]));
     } else {
       host.appendChild(el("div", { class: "cipx-rec-lead" }, ["Here are the CIP codes the official crosswalk maps from TOP ", el("span", { class: "cipx-code" }, [m.top]), ", ranked by how well each fits this course. No single clear front-runner — compare the top few against their definitions."]));
     }
@@ -1582,6 +1593,11 @@
       return ["No single clear winner from this course's description — open to pick from the crosswalk options or search."];
     }
     if (r.status === "manual") {
+      // Don't claim "no code" while the box shows one (CfC F10): a thin description can still ride its
+      // TOP's crosswalk code as a starting point — say so — but with no crosswalk there's nothing to show.
+      if (r.sug) {
+        return ["Too little description to score a match — but this course's TOP crosswalk points to ", el("b", {}, [r.sug.code]), (r.sug.t ? " · " + r.sug.t : ""), ". Confirm if it fits, or open to search all codes."];
+      }
       return ["Too little catalog description to suggest a code — open to search all codes."];
     }
     return null;
@@ -1805,7 +1821,7 @@
       caret,
       el("span", { class: "cipx-rev-course" }, [el("span", { class: "cipx-rev-cname", title: r.label }, cnameKids)]),
       tocip,
-      el("span", { class: "cipx-rev-stat cipx-rev-stat-" + stat.cls + (peerCorr ? " cipx-rev-stat-peer" : ""), title: statusTip(), "aria-label": (confirmed ? "Confirmed" : stat.label) + " status" },
+      el("span", { class: "cipx-rev-stat cipx-rev-stat-" + stat.cls + (peerCorr ? " cipx-rev-stat-peer" : ""), title: statusTip(), "aria-label": (confirmed ? "Confirmed" : stat.label) + " status" + (peerCorr ? ", peer-corroborated" : "") },
         [confirmed ? "✓" : stat.g, peerCorr ? el("span", { class: "cipx-rev-statdot", "aria-hidden": "true" }, ["·"]) : null]),
     ]);
     var card = el("div", { class: "cipx-rev-item" + (confirmed ? " cipx-rev-conf" : "") + (applied ? " cipx-rev-item-applied" : "") + (twoBox ? " cipx-rev-item-suggest" : "") }, [head]);
@@ -2416,7 +2432,8 @@
       ".cipx-rev-chip-open{box-shadow:0 0 0 2px var(--cipx-accent);}",
       ".cipx-rev-chipt{font-size:.8rem;color:var(--cipx-text-soft);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
       ".cipx-rev-none{font-size:.8rem;color:var(--cipx-muted);font-style:italic;}",
-      ".cipx-rev-chipchg{align-self:center;font-size:.66rem;color:var(--cipx-muted);cursor:pointer;padding:1px 3px;border-radius:5px;line-height:1;}",
+      // bigger hit-target so aiming for ▾ (change) doesn't land on the box body (= confirm) — CfC F8
+      ".cipx-rev-chipchg{align-self:stretch;display:inline-flex;align-items:center;font-size:.72rem;color:var(--cipx-muted);cursor:pointer;padding:2px 7px;margin:-4px -6px -4px 0;border-radius:5px;line-height:1;}",
       ".cipx-rev-chipchg:hover{color:var(--cipx-accent);background:var(--cipx-accent-soft);}",
       ".cipx-rev-chiprm{align-self:center;font-size:.95rem;color:var(--cipx-muted);cursor:pointer;padding:0 4px;border-radius:5px;line-height:1;}",
       ".cipx-rev-chiprm:hover{color:var(--cipx-bad-stripe);background:var(--cipx-bad-bg);}",
