@@ -2021,6 +2021,17 @@
       var conf = el("button", { class: "cipx-rev-confirm", type: "button" }, [cips.length ? "✓ Confirm this course" : "✓ Confirm " + r.sug.code]);
       conf.onclick = function () { if (!cips.length) { toggle(r.sug.code); } else { revSetValidated(r.label, true); renderReview(allRows); } };
       acts.appendChild(conf);
+      // A Suggested (⇄) row nudges OFF the course's own TOP crosswalk toward the peer pick, so the lone
+      // "Confirm <peer>" left no obvious way to keep the crosswalk code if the curator decides it's right
+      // (Sam, 2026-07-20 — "I'm not sure how to keep 13.1210"). Offer a matched "Keep <crosswalk>" beside
+      // it: peer pick stays the filled primary (the tool's suggestion), Keep is the secondary outline.
+      // Placed here, after the full signal list, so the curator scans the options before deciding (Sam's
+      // pedagogy — bottom over top). Any OTHER code is still Select-able in the list above.
+      if (!cips.length && r.suggestChange && r.crosswalk && r.sug && r.crosswalk.code !== r.sug.code) {
+        var keep = el("button", { class: "cipx-rev-keep", type: "button", title: "Keep your TOP’s crosswalk code (" + r.crosswalk.code + " · " + r.crosswalk.t + ") instead of the peers’ suggestion" }, ["Keep " + r.crosswalk.code]);
+        keep.onclick = function () { revSetCips(r.label, [r.crosswalk.code]); revSetValidated(r.label, true); renderReview(allRows); };
+        acts.appendChild(keep);
+      }
     }
     var srch = el("button", { class: "cipx-rev-searchall", type: "button" }, ["+ Add another code…"]);
     var searchWrap = el("div", {}, []);
@@ -2562,6 +2573,8 @@
       ".cipx-rev-peertag{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--cipx-accent);background:var(--cipx-accent-soft);padding:2px 6px;border-radius:6px;white-space:nowrap;}",
       ".cipx-rev-detactions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;}",
       ".cipx-rev-confirm{font-family:inherit;font-size:.82rem;font-weight:700;color:#fff;background:var(--cipx-accent);border:0;border-radius:8px;padding:8px 15px;cursor:pointer;}.cipx.cipx-theme-dark .cipx-rev-confirm{color:#0e1a2b;}",
+      ".cipx-rev-keep{font-family:inherit;font-size:.82rem;font-weight:600;color:var(--cipx-text);background:var(--cipx-surface);border:1.5px solid var(--cipx-border-strong);border-radius:8px;padding:6.5px 14px;cursor:pointer;}",
+      ".cipx-rev-keep:hover{border-color:var(--cipx-accent);color:var(--cipx-accent);}",
       ".cipx-rev-searchall,.cipx-rev-clear{font-family:inherit;font-size:.8rem;font-weight:600;color:var(--cipx-link);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;}",
       ".cipx-rev-more{text-align:center;padding:14px;font-size:.82rem;color:var(--cipx-muted);}",
       ".cipx-foot{margin-top:26px;font-size:.76rem;color:var(--cipx-muted);border-top:1px solid var(--cipx-border);padding-top:14px;line-height:1.6;}",

@@ -703,6 +703,13 @@ function fresh(withCollege) {
   const uNur = Array.prototype.filter.call(udoc.querySelectorAll(".cipx-rev-item"), (it) => /Nursing/.test(it.textContent))[0];
   const uChg = uNur.querySelector(".cipx-rev-chip-rec .cipx-rev-chipchg");
   check("the CIP box carries a ▾ 'change to any code' affordance (point 5)", !!uChg);
+  // Suggested-change row: the action bar offers a MATCHED PAIR — "✓ Confirm <peer>" (primary) AND
+  // "Keep <crosswalk>" (secondary) — so keeping the course's own crosswalk code is one obvious click,
+  // not a hunt for its Select button in the list (Sam, 2026-07-20 — "not sure how to keep 13.1210").
+  const uNurActs = uNur.querySelector(".cipx-rev-detactions");
+  const uWasCode = (function () { var c = uNur.querySelector(".cipx-rev-chip-was .cipx-code"); return c && c.textContent.trim(); })();
+  check("suggested row action bar has a '✓ Confirm <peer>' button", (function () { var b = uNurActs && uNurActs.querySelector(".cipx-rev-confirm"); return b && /Confirm 51\.3801/.test(b.textContent); })());
+  check("suggested row action bar ALSO offers 'Keep <crosswalk>' (the fix for 'how do I keep the crosswalk?')", (function () { var b = uNurActs && uNurActs.querySelector(".cipx-rev-keep"); return b && uWasCode && b.textContent.indexOf("Keep " + uWasCode) >= 0 && !/51\.3801/.test(b.textContent); })());
   uChg.click(); await tick();
   check("clicking ▾ opens a change-to-any-code dropdown", !!uNur.querySelector(".cipx-rev-chgpanel .cipx-cbwrap"));
   // Sam's recurring bug: the change-panel is a CHILD of the chip, so a click in its search field
@@ -718,6 +725,23 @@ function fresh(withCollege) {
   uChg.click(); await tick();   // re-open (chip + ▾ still present after closeP)
   uNur.querySelector(".cipx-rev-chip-rec").click(); await tick();
   check("clicking the emphasized peer box uses that code (one-click accept — point 1)", (function () { try { var v = JSON.parse(domU.window.localStorage.getItem("cipx_rev_test_college") || "{}")["NURS 101 — Nursing"]; return Array.isArray(v) && v.indexOf("51.3801") >= 0; } catch (e) { return false; } })());
+
+  // Keep-button click on a FRESH suggested row: clicking "Keep <crosswalk>" assigns the crosswalk code
+  // (52.0201) AND validates it (✓) — the counterpart to "✓ Confirm <peer>", so either decision is one
+  // click (Sam, 2026-07-20). Fresh instance so it doesn't disturb the mutation order above.
+  const domK = freshR("review");
+  domK.window.CPL_CIP_CROSSWALK._setConsensus(RCONSENSUS);
+  const kdoc = domK.window.document; await tick(); await tick();
+  const kSel = kdoc.querySelector(".cipx-rev-deptsel");
+  kSel.value = "NURS"; kSel.dispatchEvent(new domK.window.Event("change"));
+  await tick(); await tick();
+  const kItem = kdoc.querySelector(".cipx-rev-list .cipx-rev-item");
+  const kCross = (function () { var c = kItem && kItem.querySelector(".cipx-rev-chip-was .cipx-code"); return c && c.textContent.trim(); })();
+  const kKeep = kItem && kItem.querySelector(".cipx-rev-detactions .cipx-rev-keep");
+  check("Keep button is present on the fresh suggested row (its crosswalk code)", !!kKeep && !!kCross && kKeep.textContent.indexOf("Keep " + kCross) >= 0);
+  kKeep.click(); await tick();
+  check("clicking 'Keep <crosswalk>' assigns the crosswalk code, not the peer 51.3801", (function () { try { var v = JSON.parse(domK.window.localStorage.getItem("cipx_rev_test_college") || "{}")["NURS 101 — Nursing"]; return Array.isArray(v) && v.indexOf(kCross) >= 0 && v.indexOf("51.3801") < 0; } catch (e) { return false; } })());
+  check("clicking 'Keep <crosswalk>' validates the row (a confirmed ✓)", (function () { var it = kdoc.querySelector(".cipx-rev-list .cipx-rev-item"); return it && it.classList.contains("cipx-rev-conf") && !it.querySelector(".cipx-rev-2box"); })());
 
   // ── Review-status rows: the visible "?" glyph + the inline "why" reason (Sam's points 1 & 2) ──
   deptSel.value = "ACCT"; deptSel.dispatchEvent(new domRev.window.Event("change"));
