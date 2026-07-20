@@ -154,6 +154,9 @@
     ".cplfund-reqdel:hover { border-color: var(--red-alert); color: var(--red-alert); }",
     ".cplfund-reqadd { margin-top: 10px; margin-left: 20px; }",
     ".cplfund-reqadd .dk { margin-left: 8px; font-size: .8rem; }",
+    ".cplfund-reqrestore { margin: 8px 0 0 20px; font-size: .82rem; }",
+    ".cplfund-reqactions { margin: 10px 0 0 20px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }",
+    ".cplfund-copymsg { color: var(--green-progress); font-size: .8rem; font-weight: 600; }",
     ".cplfund-optbtn { background: var(--surface-opaque); color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 8px; cursor: pointer; font-size: .75rem; font-family: inherit; margin-left: 6px; }",
     ".cplfund-optbtn:hover { border-color: var(--gold-accent); }",
     ".cplfund-notewrap { grid-column: 1 / -1; }",
@@ -379,6 +382,11 @@
     var v = firstDefined(SCENARIO.partLabel, SHARED.partLabel, base().participation_req_label);
     return v == null ? "Participation request by" : v;
   }
+  // The two data-backed built-ins can be hidden (✕) like the extras — reversibly,
+  // via the config layers. Hiding also drops the requirement from the Elig badge
+  // so the table stays consistent with the box.
+  function coordShown() { return !firstDefined(SCENARIO.coordHidden, SHARED.coordHidden, base().coord_req_hidden); }
+  function partShown() { return !firstDefined(SCENARIO.partHidden, SHARED.partHidden, base().participation_req_hidden); }
   // "2027-28" → "2028-29" (the close-out year one past the window).
   function nextFy(fy) {
     var m = String(fy || "").match(/^(\d{4})-(\d{2})$/);
@@ -423,6 +431,8 @@
   function setExtraReqs(list) { activeOverride().extraReqs = (list || []).slice(); persistActive(); }
   function setCoordLabel(v) { activeOverride().coordLabel = v; persistActive(); }
   function setPartLabel(v) { activeOverride().partLabel = v; persistActive(); }
+  function setCoordHidden(v) { activeOverride().coordHidden = !!v; persistActive(); }
+  function setPartHidden(v) { activeOverride().partHidden = !!v; persistActive(); }
   function setRuralOverride(college, flag) {
     var ov = activeOverride();
     ov.ruralOverrides = ov.ruralOverrides || {};
@@ -540,20 +550,30 @@
       render();
     });
   }
+  // Score over only the SHOWN data-backed built-ins (hiding one drops it here too).
+  function eligParts(college) {
+    var shown = 0, met = 0;
+    if (coordShown()) { shown++; if (ELIG.coord[college]) met++; }
+    if (partShown()) { shown++; if (ELIG.optin[college]) met++; }
+    return { shown: shown, met: met };
+  }
   function eligScore(college) {
     if (!ELIG.coordOk) return null;
-    return (ELIG.coord[college] ? 1 : 0) + (ELIG.optin[college] ? 1 : 0);
+    return eligParts(college).met;
   }
   function eligGlyph(college) {
-    var s = eligScore(college);
-    if (s == null) return '<span class="dk">—</span>';
-    return s === 2 ? "✓" : s === 1 ? "◐" : '<span class="dk">○</span>';
+    if (!ELIG.coordOk) return '<span class="dk">—</span>';
+    var p = eligParts(college);
+    if (!p.shown) return '<span class="dk">—</span>';
+    return p.met >= p.shown ? "✓" : p.met > 0 ? "◐" : '<span class="dk">○</span>';
   }
   function eligTitle(college) {
     if (!ELIG.coordOk) return "eligibility status pending (MAP coordinator data not loaded)";
-    return "CPL Coordinator in MAP: " + (ELIG.coord[college] ? "yes" : "not on file") +
-      " · participation request by " + participationDeadline() + ": " +
-      (ELIG.optin[college] ? "opted in" : "not yet") + " — informational only in this draft";
+    var parts = [];
+    if (coordShown()) parts.push("CPL Coordinator in MAP: " + (ELIG.coord[college] ? "yes" : "not on file"));
+    if (partShown()) parts.push("participation request by " + participationDeadline() + ": " +
+      (ELIG.optin[college] ? "opted in" : "not yet"));
+    return (parts.join(" · ") || "no tracked requirements") + " — informational only in this draft";
   }
   // Opt-in writes (team-phrase / reviewer). Re-fetch after every write — a
   // DELETE filtered out by RLS returns 2xx with nothing deleted, so the
@@ -645,8 +665,8 @@
     var s = eligScore(college);
     if (s == null) return "";
     var parts = [];
-    parts.push(ELIG.coord[college] ? "coordinator: yes" : "coordinator: no");
-    parts.push(ELIG.optin[college] ? "opted in: yes" : "opted in: no");
+    if (coordShown()) parts.push(ELIG.coord[college] ? "coordinator: yes" : "coordinator: no");
+    if (partShown()) parts.push(ELIG.optin[college] ? "opted in: yes" : "opted in: no");
     return parts.join("; ");
   }
   // The CSV carries MORE than the screen: the hidden County + working-adults
@@ -1094,7 +1114,7 @@
       { key: "p3a", label: "Transcribed†", cls: "",
         title: "distinct students with any TRANSCRIBED CPL per MAP (the Year-1 Priority-1 metric)" },
       { key: "elig", label: "Elig", cls: "",
-        title: "Proposed baseline eligibility: ✓ both, ◐ one, ○ neither of — CPL Coordinator listed in MAP · participation request by " + participationDeadline() + ". Informational only in this draft." }
+        title: "Proposed baseline eligibility (informational in this draft): ✓ all tracked requirements met, ◐ some, ○ none." }
     ].concat(yearColDefs(), [
       { key: "total", label: "Total " + windowLabel(), cls: "" },
       { key: "working_adults", label: "Working adults*", cls: "" }
@@ -1371,10 +1391,13 @@
         '<button type="button" class="cplfund-optbtn" data-ruralflag="' + esc(c.college) + '" data-on="' +
         (c.rural ? "0" : "1") + '">' + (c.rural ? "Remove rural flag" : "Mark rural") + "</button>";
     }
-    var eligLine = '<div><span class="dk">Eligibility (proposed):</span> CPL Coordinator in MAP &mdash; ' +
-      (!ELIG.coordOk ? '<span class="dk">pending</span>' : ELIG.coord[c.college] ? "✓" : '<span class="cplfund-warn-text">not on file</span>') +
-      " &middot; opted in by " + esc(participationDeadline()) + " &mdash; " +
-      (ELIG.optin[c.college] ? "✓" : '<span class="dk">not yet</span>') + eligBtns + "</div>";
+    var eligBits = [];
+    if (coordShown()) eligBits.push("CPL Coordinator in MAP &mdash; " +
+      (!ELIG.coordOk ? '<span class="dk">pending</span>' : ELIG.coord[c.college] ? "✓" : '<span class="cplfund-warn-text">not on file</span>'));
+    if (partShown()) eligBits.push("opted in by " + esc(participationDeadline()) + " &mdash; " +
+      (ELIG.optin[c.college] ? "✓" : '<span class="dk">not yet</span>'));
+    var eligLine = '<div><span class="dk">Eligibility (proposed):</span> ' +
+      (eligBits.join(" &middot; ") || '<span class="dk">no tracked requirements</span>') + eligBtns + "</div>";
     // CO Monitor's note — internal (gated read+write); editable when unlocked,
     // read-only for phrase-holders who haven't flipped team-editing on.
     var noteRec = NOTES[c.college];
@@ -1474,7 +1497,7 @@
         (pf && pf.statewide && pf.statewide.pe != null ? fmtInt(pf.statewide.pe) : "—") + "</td>" +
         '<td title="statewide distinct students — deduplicated across colleges, not the column sum">' +
         (pf && pf.statewide && pf.statewide.p3 != null ? fmtInt(pf.statewide.p3) : "—") + "</td>" +
-        "<td>" + (ELIG.coordOk ? ELIG.coordN + "/" + base().colleges.length : "—") + "</td>" +
+        "<td>" + (ELIG.coordOk && coordShown() ? ELIG.coordN + "/" + base().colleges.length : "—") + "</td>" +
         sysYearCells +
         "<td>" + fmtMoney(sys.total) + "</td>" +
         "<td>" + (base().system.working_adults == null ? "—" : fmtInt(base().system.working_adults)) + "</td></tr>";
@@ -1549,6 +1572,13 @@
       return '<div class="cplfund-reqrow"><span class="cplfund-bullet">&bull;</span>' +
         input + (delBtn || "") + "</div>";
     }
+    // Extra requirements: a ✕ deletes them. The two built-ins get a ✕ too, but it
+    // HIDES the row (reversibly, via the config layers) rather than deleting data;
+    // a restore chip below brings it back, and the Elig badge follows suit.
+    function hideBtn(kind, label) {
+      return '<button type="button" class="cplfund-reqdel" data-reqhide="' + kind +
+        '" title="Hide this requirement (restore it below)" aria-label="Hide ' + esc(label) + '">✕</button>';
+    }
     var extras = extraReqs();
     var extraHtml = extras.map(function (txt, i) {
       return '<div class="cplfund-reqitem">' + bullet(
@@ -1563,19 +1593,29 @@
       " &middot; <strong>" + optN + "</strong> opted in so far" +
       (unlocked() ? ' <span class="dk">(mark a college opted-in from its row drill-in)</span>'
                   : ' <span class="dk">(team members record opt-ins after unlocking)</span>');
+    var coordItem = coordShown()
+      ? '<div class="cplfund-reqitem">' +
+        bullet(edText("coord-label", coordLabel(), { label: "Coordinator requirement text",
+          placeholder: "Describe the requirement…" }), hideBtn("coord", coordLabel())) +
+        '<div class="cplfund-reqstatus">' + coordLine + "</div></div>"
+      : "";
+    var partItem = partShown()
+      ? '<div class="cplfund-reqitem">' +
+        bullet(edText("part-label", partLabel(), { label: "Participation requirement text",
+          placeholder: "Describe the requirement…" }), hideBtn("part", partLabel())) +
+        '<div class="cplfund-reqstatus">' + partStatus + "</div></div>"
+      : "";
+    var chips = [];
+    if (!coordShown()) chips.push('<button type="button" class="cplfund-optbtn" data-reqshow="coord">&#8617; ' + esc(coordLabel()) + "</button>");
+    if (!partShown()) chips.push('<button type="button" class="cplfund-optbtn" data-reqshow="part">&#8617; ' + esc(partLabel()) + "</button>");
+    var restoreRow = chips.length
+      ? '<div class="cplfund-reqrestore"><span class="dk">Hidden:</span> ' + chips.join(" ") + "</div>"
+      : "";
     return '<div class="cplfund-elig">' +
       '<div class="cplfund-elig-intro"><strong>Proposed baseline requirements</strong> to qualify for ' +
       'implementation funding <span class="dk">(badges are informational in this draft &mdash; ' +
       "no dollar figure changes yet)</span>:</div>" +
-      '<div class="cplfund-reqitem">' +
-      bullet(edText("coord-label", coordLabel(), { label: "Coordinator requirement text",
-        placeholder: "Describe the requirement…" })) +
-      '<div class="cplfund-reqstatus">' + coordLine + "</div></div>" +
-      '<div class="cplfund-reqitem">' +
-      bullet(edText("part-label", partLabel(), { label: "Participation requirement text",
-        placeholder: "Describe the requirement…" })) +
-      '<div class="cplfund-reqstatus">' + partStatus + "</div></div>" +
-      extraHtml +
+      coordItem + partItem + extraHtml +
       '<div class="cplfund-reqadd">' +
       '<button type="button" class="cplfund-optbtn" id="cplFundReqAdd" ' +
       'title="Add another proposed baseline requirement">＋ Add requirement</button>' +
@@ -1583,7 +1623,125 @@
         ? "saved for the whole team"
         : "explored on this browser &mdash; unlock team editing to save for everyone") + "</span>" +
       "</div>" +
+      restoreRow +
+      '<div class="cplfund-reqactions">' +
+      '<button type="button" class="cplfund-optbtn" id="cplFundReqCopy" ' +
+      'title="Copy the requirements as formatted text for a memo or email">📋 Copy requirements</button>' +
+      '<button type="button" class="cplfund-optbtn" id="cplFundReqBrief" ' +
+      'title="Open a formatted brief (reflects the current requirements + funding) to send to CBOs and field staff">📄 Generate brief</button>' +
+      '<span id="cplFundReqCopyMsg" class="cplfund-copymsg"></span>' +
+      "</div>" +
       "</div>";
+  }
+
+  // ── requirements → memo text + a field brief (generated live from the model,
+  // so both reflect the latest edits) ──────────────────────────────────────
+  function requirementsList() {
+    var list = [];
+    if (coordShown()) {
+      list.push({ text: coordLabel(),
+        note: ELIG.coordOk ? (ELIG.coordN + " of " + base().colleges.length + " colleges currently have one on file in MAP") : "" });
+    }
+    if (partShown()) list.push({ text: (partLabel() + " " + participationDeadline()).trim() });
+    extraReqs().forEach(function (t) { if (String(t).trim()) list.push({ text: String(t).trim() }); });
+    return list;
+  }
+  function buildRequirementsText() {
+    var lines = ["Proposed baseline requirements to qualify for CPL implementation funding",
+      "(Draft — informational; figures are potential allocations, not awards)", ""];
+    var reqs = requirementsList();
+    if (!reqs.length) lines.push("  (no requirements defined)");
+    reqs.forEach(function (r, i) {
+      lines.push("  " + (i + 1) + ". " + r.text);
+      if (r.note) lines.push("       (" + r.note + ")");
+    });
+    lines.push("");
+    lines.push("Funding window: " + windowLabel() + " (" + nYears() + " year" + (nYears() > 1 ? "s" : "") +
+      ") · up to " + fmtMoney(netCollege()) + " in college implementation funding.");
+    lines.push("CPL Initiative · Mapping Articulated Pathways (MAP) platform");
+    return lines.join("\n");
+  }
+  // Standalone styled brief (literal colors are fine — a transient print window,
+  // like buildPrintHtml). Its toolbar (Copy / Print) is hidden on print.
+  function buildBriefHtml() {
+    var reqs = requirementsList();
+    var reqLis = reqs.length
+      ? reqs.map(function (r) {
+          return "<li><strong>" + esc(r.text) + "</strong>" +
+            (r.note ? ' <span class="note">&mdash; ' + esc(r.note) + "</span>" : "") + "</li>";
+        }).join("")
+      : "<li><em>No requirements defined.</em></li>";
+    var steps = [];
+    if (coordShown()) steps.push("Confirm your college has a <strong>CPL Coordinator listed in MAP</strong> (update via the MAP platform&#39;s College Contacts).");
+    if (partShown()) steps.push("Submit your college&#39;s <strong>participation request by " + esc(participationDeadline()) + "</strong>.");
+    extraReqs().forEach(function (t) { if (String(t).trim()) steps.push(esc(String(t).trim()) + "."); });
+    var stepLis = steps.length ? steps.map(function (s) { return "<li>" + s + "</li>"; }).join("") : "<li><em>&mdash;</em></li>";
+    var css = "body{font-family:'Segoe UI',Arial,sans-serif;color:#1C1C1A;margin:0;background:#f4f2ee;}" +
+      ".wrap{max-width:760px;margin:0 auto;padding:28px 30px 40px;background:#fff;}" +
+      ".bar{background:#002F6D;padding:10px 14px;text-align:right;}" +
+      ".bar button{font:inherit;font-size:13px;background:#C9A227;color:#1C1C1A;border:none;border-radius:5px;padding:6px 12px;margin-left:8px;cursor:pointer;}" +
+      ".eyebrow{color:#0f7b3f;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;}" +
+      "h1{color:#002F6D;font-size:22px;margin:6px 0 2px;}" +
+      ".sub{color:#555;font-size:13px;margin:0 0 16px;}" +
+      "h2{color:#002F6D;font-size:15px;margin:20px 0 6px;border-bottom:2px solid #C9A227;padding-bottom:3px;}" +
+      "p{font-size:14px;line-height:1.55;}ol{font-size:14px;line-height:1.5;padding-left:22px;}li{margin:5px 0;}" +
+      ".note{color:#555;font-weight:400;}" +
+      ".draft{background:#fbf6e6;border-left:4px solid #C9A227;padding:8px 12px;font-size:12.5px;color:#5b5223;margin:18px 0 0;}" +
+      ".foot{margin-top:22px;border-top:1px solid #ccc;padding-top:10px;font-size:11.5px;color:#666;}" +
+      "@media print{.bar{display:none;}.wrap{max-width:none;padding:0;}body{background:#fff;}}";
+    return "<!doctype html><html><head><meta charset='utf-8'><title>CPL Implementation Funding — Baseline Eligibility Brief</title>" +
+      "<style>" + css + "</style></head><body>" +
+      "<div class='bar'><button onclick='cpCopy(this)'>Copy text</button>" +
+      "<button onclick='window.print()'>Print / Save as PDF</button></div>" +
+      "<div class='wrap' id='brief'>" +
+      "<div class='eyebrow'>CPL Initiative &middot; Academic Affairs</div>" +
+      "<h1>Credit for Prior Learning &mdash; Implementation Funding</h1>" +
+      "<div class='sub'>Proposed baseline eligibility &middot; DRAFT for field review</div>" +
+      "<p>The <strong>CPL Initiative</strong> of the California Community Colleges Chancellor&#39;s Office is proposing to " +
+      "distribute up to <strong>" + esc(fmtMoney(netCollege())) + "</strong> in one-time implementation funding to colleges " +
+      "across the <strong>" + esc(windowLabel()) + "</strong> window (" + nYears() + " year" + (nYears() > 1 ? "s" : "") +
+      ") to scale Credit for Prior Learning through the Mapping Articulated Pathways (MAP) platform. To qualify, colleges " +
+      "would meet a short set of baseline requirements.</p>" +
+      "<h2>Proposed baseline requirements</h2><ol>" + reqLis + "</ol>" +
+      "<h2>What your college should do</h2><ol>" + stepLis + "</ol>" +
+      "<div class='draft'>This is a working draft shared for field input. Badges and figures are <strong>informational</strong> " +
+      "&mdash; potential allocations, not awards &mdash; and no funding changes based on these requirements yet.</div>" +
+      "<div class='foot'>CPL Initiative &middot; Mapping Articulated Pathways (MAP) platform &middot; " +
+      "Live model &amp; dashboard: https://cpl-initiative.github.io/cpl-project-tracker/</div>" +
+      "</div>" +
+      "<script>function cpCopy(b){var t=document.getElementById('brief').innerText;function d(){b.textContent='Copied!';" +
+      "setTimeout(function(){b.textContent='Copy text';},1500);}if(navigator.clipboard&&navigator.clipboard.writeText){" +
+      "navigator.clipboard.writeText(t).then(d,d);}else{try{var a=document.createElement('textarea');a.value=t;" +
+      "document.body.appendChild(a);a.select();document.execCommand('copy');a.remove();}catch(e){}d();}}<\/script>" +
+      "</body></html>";
+  }
+  function openBrief() {
+    var w = window.open("", "_blank");
+    if (!w) return;
+    w.document.write(buildBriefHtml());
+    w.document.close();
+    w.focus();
+  }
+  function flashCopyMsg(text) {
+    var el = document.getElementById("cplFundReqCopyMsg");
+    if (!el) return;
+    el.textContent = text;
+    setTimeout(function () { var e = document.getElementById("cplFundReqCopyMsg"); if (e) e.textContent = ""; }, 1800);
+  }
+  function fallbackCopy(text) {
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.focus(); ta.select();
+      document.execCommand("copy"); ta.remove();
+    } catch (e) { /* clipboard unavailable — the brief window offers a manual copy */ }
+  }
+  function copyReqs() {
+    var text = buildRequirementsText();
+    var done = function () { flashCopyMsg("✓ Copied — paste into your memo or email"); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
+    } else { fallbackCopy(text); done(); }
   }
 
   // ── noncredit feeder section ──────────────────────────────────────────
@@ -1722,7 +1880,7 @@
             ? " and close out by " + esc(nextFy(selectedYears()[selectedYears().length - 1])) : "") + ". "
         : "The Yr columns are each funding year&#39;s potential allocation &mdash; identical " +
           "while both years&#39; priority shares sum to 100%; Total is the full " + esc(windowLabel()) + " window. ") +
-      "Elig = the proposed baseline requirements above (✓ both · ◐ one · ○ neither — informational only). " +
+      "Elig = the proposed baseline requirements above (✓ all tracked · ◐ some · ○ none — informational only). " +
       "🌲 = rural-flagged (allowance below); ⬆ = minimum-viable floor applied. " +
       "&ldquo;Working adults&rdquo; = 2022 estimated working adults with some college, no degree, in the college&#39;s county.</div>" +
       headcountSourceHtml() +
@@ -1916,6 +2074,24 @@
         if (ri >= 0 && ri < reqs.length) { reqs.splice(ri, 1); setExtraReqs(reqs); }
       });
     });
+    // Built-in ✕ hides the row; the restore chip un-hides it.
+    document.querySelectorAll("#cplFundingMount [data-reqhide]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        savingState = "";
+        if (b.getAttribute("data-reqhide") === "coord") setCoordHidden(true); else setPartHidden(true);
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-reqshow]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        savingState = "";
+        if (b.getAttribute("data-reqshow") === "coord") setCoordHidden(false); else setPartHidden(false);
+      });
+    });
+    // Copy requirements (memo/email) + generate a sendable brief — both live.
+    var reqCopy = document.getElementById("cplFundReqCopy");
+    if (reqCopy) reqCopy.addEventListener("click", copyReqs);
+    var reqBrief = document.getElementById("cplFundReqBrief");
+    if (reqBrief) reqBrief.addEventListener("click", openBrief);
 
     var rst = document.getElementById("cplFundReset");
     if (rst) rst.addEventListener("click", function () { savingState = ""; resetActive(); });
@@ -1998,6 +2174,8 @@
     _netCollege: netCollege,
     _csv: csvText,
     _printHtml: buildPrintHtml,
+    _requirementsText: buildRequirementsText,
+    _briefHtml: buildBriefHtml,
     _scenario: function () { return { name: scenarioName, store: scenarioStore }; },
     _setNotes: function (o) { NOTES = o || {}; },
     _setElig: function (o) {

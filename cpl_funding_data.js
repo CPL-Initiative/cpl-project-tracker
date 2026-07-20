@@ -146,6 +146,8 @@ window.CPL_FUNDING = {
  "extra_reqs": [],
  "coord_req_label": "CPL Coordinator listed in MAP",
  "participation_req_label": "Participation request by",
+ "coord_req_hidden": false,
+ "participation_req_hidden": false,
  "system": {
   "order": 0,
   "college": "SYSTEM",
