@@ -816,38 +816,53 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   check("badges never move dollars", Math.abs(T._alloc("Alameda").total - before) < 0.01);
 }
 
-// D4b — every requirement is editable (Sam, 2026-07-20: "make all the text
-// editable … take out the number glyphs"). Built-in labels editable, glyphs
-// gone; extras are free text with add/edit/remove; all three-layer.
+// D4b — every requirement is a full-width, bulleted, left-aligned editable line
+// (Sam, 2026-07-20: "add bullets … left justify … the whole row of text should
+// be editable"). Built-in labels editable, live data on a status sub-line;
+// extras are free text with add/edit/remove; all three-layer.
 {
   const { window } = freshDom();
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
+  const nExtra = () => doc.querySelectorAll('.cplfund-elig [data-edit="extra-req"]').length;
   check("data: extra_reqs default is an empty list", Array.isArray(D.extra_reqs) && D.extra_reqs.length === 0);
   check("data: built-in requirement labels have defaults",
     D.coord_req_label === "CPL Coordinator listed in MAP" && D.participation_req_label === "Participation request by");
-  check("no extra-requirement rows by default", doc.querySelectorAll(".cplfund-elig .cplfund-reqrow").length === 0);
+  check("no extra-requirement rows by default", nExtra() === 0);
   check("number glyphs are removed (curators number them by hand)",
     doc.querySelector(".cplfund-elig").textContent.indexOf("①") === -1 &&
     doc.querySelector(".cplfund-elig").textContent.indexOf("②") === -1);
-  check("both built-in requirement labels are editable inputs",
-    !!doc.querySelector('input[data-edit="coord-label"]') && !!doc.querySelector('input[data-edit="part-label"]'));
+  // Layout: each requirement is a bulleted, left-aligned row; the box is left-justified.
+  check("the eligibility box is left-aligned",
+    /cplfund-elig \{[^}]*text-align: left/.test(doc.getElementById("cpl-funding-css").textContent));
+  check("each requirement line carries a bullet (2 built-ins, 0 extras)",
+    doc.querySelectorAll(".cplfund-elig .cplfund-bullet").length === 2);
+  check("both built-in requirement labels are full-width editable inputs",
+    !!doc.querySelector('input[data-edit="coord-label"]') && !!doc.querySelector('input[data-edit="part-label"]') &&
+    !doc.querySelector('input[data-edit="coord-label"]').getAttribute("size"));
+  // The live data lives on a status sub-line under each built-in (so the
+  // requirement text itself is the whole editable row).
+  check("coordinator live status renders on a sub-line",
+    !!doc.querySelector(".cplfund-reqstatus") &&
+    doc.querySelector(".cplfund-elig").textContent.indexOf("checking MAP") !== -1);
+  check("the deadline field lives on the participation status sub-line",
+    !!doc.querySelector('.cplfund-reqstatus input[data-edit="deadline"]'));
   check("an ＋ Add requirement button renders", !!doc.getElementById("cplFundReqAdd"));
 
-  // Built-in label edits persist (and keep their live-data suffix intact).
+  // Built-in label edits persist (and keep their live-data sub-line intact).
   commit(window, doc.querySelector('input[data-edit="coord-label"]'), "1. Coordinator on file in MAP");
   check("editing a built-in requirement label persists to the scenario",
     scenSlot(window).coordLabel === "1. Coordinator on file in MAP");
   check("the edited built-in label re-renders",
     doc.querySelector('input[data-edit="coord-label"]').value === "1. Coordinator on file in MAP");
-  check("the coordinator live count survives the label edit",
+  check("the coordinator live status survives the label edit",
     doc.querySelector(".cplfund-elig").textContent.indexOf("checking MAP") !== -1 ||
     /\d+ of \d+/.test(doc.querySelector(".cplfund-elig").textContent));
 
-  // Add a qual → a blank row appears (no glyph); edit it → persists.
+  // Add a qual → a blank bulleted row appears; edit it → persists.
   click(window, doc.getElementById("cplFundReqAdd"));
-  check("Add appends a blank additional-requirement row",
-    doc.querySelectorAll(".cplfund-elig .cplfund-reqrow").length === 1);
+  check("Add appends a blank additional-requirement row (bullet count 3)",
+    nExtra() === 1 && doc.querySelectorAll(".cplfund-elig .cplfund-bullet").length === 3);
   const req0 = doc.querySelector('[data-edit="extra-req"]');
   check("the new requirement box carries a placeholder hint", !!req0.getAttribute("placeholder"));
   commit(window, req0, "Signed MOU on file");
@@ -860,13 +875,13 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   click(window, doc.getElementById("cplFundReqAdd"));
   commit(window, doc.querySelectorAll('[data-edit="extra-req"]')[1], "Local CPL policy adopted");
   check("a second qual renders and both persist",
-    doc.querySelectorAll(".cplfund-elig .cplfund-reqrow").length === 2 &&
+    nExtra() === 2 &&
     scenSlot(window).extraReqs.length === 2 && scenSlot(window).extraReqs[1] === "Local CPL policy adopted");
 
   // Remove the first → the remaining qual stays.
   click(window, doc.querySelector(".cplfund-reqdel"));
   check("✕ removes an additional requirement",
-    doc.querySelectorAll(".cplfund-elig .cplfund-reqrow").length === 1 &&
+    nExtra() === 1 &&
     scenSlot(window).extraReqs.length === 1 && scenSlot(window).extraReqs[0] === "Local CPL policy adopted" &&
     doc.querySelector('[data-edit="extra-req"][data-idx="0"]').value === "Local CPL policy adopted");
 
@@ -885,8 +900,7 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
     doc.querySelector('[data-edit="extra-req"][data-idx="0"]').value === "Shared qual");
   T._setScenario({ extraReqs: [] });
   T.render();
-  check("an empty scenario list shadows the shared quals (box shows none)",
-    doc.querySelectorAll(".cplfund-elig .cplfund-reqrow").length === 0);
+  check("an empty scenario list shadows the shared quals (box shows none)", nExtra() === 0);
 }
 
 // D5 — noncredit student counts are included in the totals (Sam, 2026-07-06):
