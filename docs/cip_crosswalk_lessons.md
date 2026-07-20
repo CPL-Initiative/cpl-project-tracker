@@ -1395,3 +1395,29 @@ scroll model (not just the tab) — the sticky-parent gotcha (a sticky element u
 short parent scrolls past) is exactly why the tiles needed their own list-sibling host, not the
 summary host. Side-lane discipline honored: `kb/cpl_todos.json` + the numbered session handoff
 untouched.
+
+### 2026-07-20 (SkyCIP) — checkpoint addendum: the deploy-outage fix + the sticky-parent method
+
+Sam christened the session **SkyCIP** on the ship. Two learnings from getting #851 actually
+live (the merge is not the finish line — the deploy is):
+
+- **The sticky-parent gotcha (the crux of the sticky bar).** A CSS `position:sticky` element
+  only stays stuck while its **parent box** is in view — it un-sticks the instant the parent's
+  bottom scrolls past the stuck position. The first instinct was to put the tiles in the
+  existing `revSummaryHost`, but that host is short (just tiles + progline + reassure), so the
+  tiles would have un-stuck almost immediately. Fix: give the sticky tiles their **own host**
+  (`.cipx-rev-tileshost`) that is a **sibling of the list** under the tall review view, so its
+  parent spans the whole list and it stays pinned through it. The college bar was already fine
+  (its parent is `wrapEl`, the whole tab). Read the *dashboard's* scroll model too — body-scroll
+  with a non-sticky masthead → `sticky;top:0` pins to the viewport; had it been an overflow
+  container the offsets would differ.
+- **GitHub Pages deploy outage → dispatch fresh, never rerun the job.** A post-merge Pages **503**
+  (deploy-step only; assembly + served-path assert passed) left the site stale — the merge was on
+  `main` but Pages never published. `rerun_failed_jobs` made it WORSE (re-ran the upload step →
+  two `github-pages` artifacts → `deploy-pages` "Multiple artifacts" error). Fix: a fresh
+  `workflow_dispatch` of `pages.yml` on `main` (own run, single artifact) → green. New playbook
+  `docs/kb-notes/playbook-github-pages-manual-redeploy.md` + a CLAUDE.md Troubleshooting entry.
+  Lesson: a green merge with a stale site means look at the **deploy workflow**, not the code.
+
+Side-lane discipline honored throughout: `kb/cpl_todos.json` + the numbered session handoff left
+untouched (CCR mainline owns them); CIP-lane memory is this doc + `docs/cip_crosswalk_handoff.md`.
