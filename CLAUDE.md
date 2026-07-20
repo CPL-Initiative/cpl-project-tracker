@@ -560,6 +560,24 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### StarBOG side-lane — CPL exec decks: BOG update + CBO budget-workshop slides (2026-07-20)
+
+Sam needed two presentation deliverables. **(1) Board of Governors update deck** — 12 slides for his
+15-min segment (theme: the 2026–27 CPL funding win, **$7M ongoing + $35M one-time**, supporting Vision
+2030): cover · positioning · statewide KPIs (50,154 students · $326M saved · 102 active colleges) · the
+funding win · **COBI 3 priorities** · CPL Portal soft-launch · My CPL Story · EMT video · Moreno Valley
+EM B.S. pathway (illustrative) · partnerships · Fire/CSTI hand-off to Miramar · close, **speaker script
+in every slide's notes** (`presentations/build_bog_deck.py`; also a private draft artifact; PR #808
+opened → **Sam closed it**, took the file). **(2) CBO budget-workshop slides** — 3 slides on the $35M
+one-time → COBI 3 priorities + guiding principles (amounts held per Sam), **filled natively into the CO
+"2026 Annual Budget Workshop" template's CPL section** (slides 17–19): read `theme1.xml` for the CCC
+brand (Source Sans Pro; navy `002F6D`/blue `0066BA`/gold `FFB600`), reused the content layout, set the
+native title, drew shapes in the body band, reordered `sldId`s; validated + QA-rendered
+(`build_cbo_slides.py`, `fill_template.py`). **Tooling:** installed `libreoffice-impress` + `poppler`
+(not preinstalled); fallback = pptx→HTML + Chromium. New KB note
+`playbook-building-cpl-executive-presentations.md`; lessons `docs/cpl_presentations_lessons.md`.
+Side-lane — **left `cpl_todos.json` + the numbered handoff untouched**; **did not** write to the public KB.
+
 ### StarEmber side-lane — Fire & EMS CPL eligibility: statewide vs local (2026-07-20, read-only)
 
 Sam's data ask: how many MAP students have eligible credit + how many credits for
