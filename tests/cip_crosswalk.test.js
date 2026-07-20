@@ -687,6 +687,12 @@ function fresh(withCollege) {
   // search input) must NOT persist a decision — you should be able to type a keyword freely.
   (function () { var inp = uNur.querySelector(".cipx-rev-chgpanel input"); if (inp) inp.click(); })(); await tick();
   check("clicking inside the change-panel does NOT confirm the code (Sam's ▾-OKs-the-CIP bug)", (function () { try { var v = JSON.parse(domU.window.localStorage.getItem("cipx_rev_test_college") || "{}")["NURS 101 — Nursing"]; return !v || (Array.isArray(v) && v.length === 0); } catch (e) { return true; } })());
+  // close-on-click-away (Sam, 2026-07-20): a pointer-down outside the chip dismisses the open search box
+  // so it doesn't hog the screen; then re-open for the accept test below.
+  udoc.dispatchEvent(new domU.window.MouseEvent("mousedown", { bubbles: true }));
+  await tick();
+  check("the change-panel closes on a click outside it (Sam — don't hog the screen)", !uNur.querySelector(".cipx-rev-chgpanel"));
+  uChg.click(); await tick();   // re-open (chip + ▾ still present after closeP)
   uNur.querySelector(".cipx-rev-chip-rec").click(); await tick();
   check("clicking the emphasized peer box uses that code (one-click accept — point 1)", (function () { try { var v = JSON.parse(domU.window.localStorage.getItem("cipx_rev_test_college") || "{}")["NURS 101 — Nursing"]; return Array.isArray(v) && v.indexOf("51.3801") >= 0; } catch (e) { return false; } })());
 

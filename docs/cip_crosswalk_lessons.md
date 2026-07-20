@@ -1531,3 +1531,30 @@ Live phone testing (Riverside · AUT), same session:
 Tests → **234**. Lesson worth keeping: **a popover that's a DOM child of a clickable element inherits
 that element's click handler** — either stop propagation on the popover or gate the parent handler by
 target (done here); this bug recurs because the panel-in-chip structure invites it.
+
+### 2026-07-20 (SkyCIP) — change-panel closes on click-away + the export feature is QUEUED (scope pending)
+
+Two items late in the session:
+
+- **The ▾ change-panel now closes on click-away / lost focus** (Sam: the open search box "shouldn't hog
+  the screen when not needed"). In `cipBox.openP`, a capture-phase `mousedown` + `focusin` listener on
+  `document` dismisses the panel when the pointer/focus lands OUTSIDE the chip; interactions inside
+  (typing, picking) keep it open; `closeP` tears the listeners down. The search field is also focused on
+  open so you can type immediately. Guarded by a jsdom test (open → outside mousedown → closed). Tests → **235**.
+
+- **REQUESTED, NOT BUILT — bulk CSV export ("Select All" + CSV-on-open).** Sam wants: an **"All colleges"**
+  option on the college dropdown (Subject already has "★ All subjects"), the **CSV button visible when the
+  tab opens**, and the ability to **export a big dataset**. I flagged the architectural fork and Sam
+  **dismissed the question** (deferred, not decided): the crux is that **all colleges × all subjects ≈
+  131,715 courses**, whose suggested CIP is computed LIVE in-browser (+ ~50MB of per-college fitcheck to
+  download) — computing that many rows live would freeze/crash the tab (esp. mobile). The three options I
+  put to him (pick one next time):
+  1. **Live, up to one college** — CSV exports the current selection live; a single college's full catalog
+     (~2,500 courses) is the practical max; "All colleges" prompts to narrow. Ships fast, no pipeline.
+  2. **Precomputed statewide file (recommended for "everything")** — a server-side build (like
+     `kb/build_cip_status_counts.js` / the daily baseline counts) emits the complete all-colleges dataset;
+     the button offers "Download full statewide (~131,715)" as an instant file. Needs a workflow + daily refresh.
+  3. **Live, all colleges too** — compute live for any subject scope with a progress bar + warning; cap
+     all×all (risky on mobile).
+  **Unambiguous parts I can ship regardless of his pick:** make the CSV button always visible on tab open,
+  and add the "All colleges" dropdown option. The scope/architecture (live vs precomputed) is the open call.
