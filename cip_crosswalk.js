@@ -1499,7 +1499,10 @@
       chip.appendChild(el("span", { class: "cipx-rev-none" }, ["— pick a code —"]));
     }
     var panel = null;
-    function closeP() { if (panel && panel.parentNode) panel.parentNode.removeChild(panel); panel = null; chip.classList.remove("cipx-rev-chip-open"); }
+    function closeP() {
+      if (panel && panel._away) { document.removeEventListener("mousedown", panel._away, true); document.removeEventListener("focusin", panel._away, true); }
+      if (panel && panel.parentNode) panel.parentNode.removeChild(panel); panel = null; chip.classList.remove("cipx-rev-chip-open");
+    }
     function openP() {
       if (panel) { closeP(); return; }
       chip.classList.add("cipx-rev-chip-open");
@@ -1510,6 +1513,14 @@
           onPick: function (picked) { closeP(); if (opts.onChange) opts.onChange(picked[2]); } }),
       ]);
       chip.appendChild(panel);
+      // Close on click-away / focus leaving the chip so the open search box doesn't hog the screen
+      // when it's not being used (Sam, 2026-07-20). A pointer-down or a focus landing OUTSIDE the chip
+      // dismisses it; interactions INSIDE (typing, picking) keep it open.
+      var away = function (e) { if (panel && !chip.contains(e.target)) closeP(); };
+      panel._away = away;
+      document.addEventListener("mousedown", away, true);
+      document.addEventListener("focusin", away, true);
+      var inp = panel.querySelector("input"); if (inp && inp.focus) { try { inp.focus(); } catch (e) {} }
     }
     if (opts.onChange) {
       var chg = el("span", { class: "cipx-rev-chipchg", role: "button", tabindex: "0", "aria-label": "Change CIP code", title: "Change to any CIP code" }, ["▾"]);

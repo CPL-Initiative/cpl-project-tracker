@@ -227,10 +227,23 @@ at 95%; **F9** the peer-corroborated ✓· now carries ", peer-corroborated" in 
 ▾ change hit-target enlarged so aiming for it no longer lands on the box body (= confirm). **F12**
 (two-box display) BY DESIGN — no change. **CfC list now fully triaged.**
 
-**🎯 The one CfC follow-up left — F11 (Responsive):** measure the review sticky region at TRUE phone
-width (< 480px, where CfC couldn't shrink the viewport) — college bar + tiles host stack to ~204px on
-desktop and likely grow when they wrap; trim if it "eats the screen." Use the real-Chromium phone
-viewport (390px) in the harness.
+**CfC list — FULLY SHIPPED.** F1–F5 (veto #856), F6–F10 (#857), F11 mobile real estate + the ▾-OKs-CIP
+bug (#858), and the ▾ change-panel now closes on click-away (this session). Live-tested clean on phone
+(Riverside/Allan Hancock) — Sam: "clean baby."
+
+**🎯 TOP QUEUED — bulk CSV export ("Select All" + CSV-on-open) — Sam requested, scope decision OPEN.**
+He wants an **"All colleges"** option (Subject already has "★ All subjects"), the **CSV button visible on
+tab open**, and to **export a big dataset**. I raised the architectural fork; Sam **dismissed the question**
+(deferred). Crux: **all colleges × all subjects ≈ 131,715 courses** computed LIVE in-browser (+~50MB
+fitcheck) would freeze/crash the tab. **Unambiguous — just build:** CSV button always visible on open +
+add the "All colleges" dropdown option. **Needs Sam's pick (the open call):**
+1. **Live, up to one college** — export the current selection live; one college's full catalog (~2,500) is
+   the max; "All colleges" prompts to narrow. Fast, no pipeline.
+2. **Precomputed statewide file (rec. for "everything")** — server-side build (like the daily baseline
+   counts) emits the full all-colleges dataset → "Download full statewide (~131,715)" instant file. Needs a
+   workflow + daily refresh.
+3. **Live, all colleges** — live compute for any subject scope + progress bar + warning; cap all×all.
+   Full story: `cip_crosswalk_lessons.md` (2026-07-20, last section).
 
 ## 🎯 Priority — the still-open items
 
