@@ -373,6 +373,29 @@ function fresh(withCollege) {
   const mWeak = rApi._recommend(["ZZZ 1 — Unrelated", "quilting macrame origami calligraphy pottery", "0505.00"]);
   check("an all-weak TOP is not falsely recommended", mWeak.recommended === null);
 
+  // ── Discipline-fit lift on the DISPLAYED confidence (Sam, 2026-07-20 — carpentry courses read 8%) ──
+  // A specialized course in a discipline that maps 1:1 to its CIP (Carpentry TOP → 46.0201) barely
+  // overlaps the generic CIP definition, so its raw description-fit reads a misleading single digit.
+  // The DISPLAY confidence `dconf` lifts a crosswalk cand by how cleanly the course's TOP title maps
+  // to that CIP's title. §7-clean (reads the authoritative TOP↔CIP crosswalk's own pairing quality)
+  // and DISPLAY-ONLY — gates keep the raw `conf`. Here TOP 0505.00 title "Accounting": 52.0301
+  // "Accounting" is a clean match (lifted); 52.0201 "Business Administration and Management" is not.
+  const mDisc = rApi._recommend(["ACCT 250 — Payroll Systems", "A hands-on course in employer payroll tax deposits, quarterly filings, and wage garnishment processing.", "0505.00"]);
+  const acctCand = mDisc.cands.filter((o) => o.r.code === "52.0301")[0];   // CIP title matches the TOP title
+  const bizCand = mDisc.cands.filter((o) => o.r.code === "52.0201")[0];    // CIP title does NOT match the TOP title
+  check("discipline-fit: crosswalk cands carry a display dconf", acctCand && typeof acctCand.dconf === "number");
+  check("discipline-fit: a CIP whose title matches the TOP title is lifted (dconf > raw conf)", acctCand && acctCand.dconf > acctCand.conf);
+  check("discipline-fit: the clean-mapping code no longer reads a misleading single digit", acctCand && acctCand.dconf >= 45);
+  check("discipline-fit: a CIP whose title does NOT match the TOP title is not lifted", bizCand && bizCand.dconf === bizCand.conf);
+  check("discipline-fit: dconf never exceeds the 95 de-inflation cap", mDisc.cands.every((o) => o.dconf <= 95));
+  check("discipline-fit: dconf never drops below the raw conf", mDisc.cands.every((o) => o.dconf >= o.conf));
+  // DISPLAY-ONLY: the lift must not move the raw gates. The raw `conf` (used by the Ready/Review split,
+  // the strong-own-fit veto, and the outside-crosswalk mis-code flag) is untouched, and `recommended`
+  // (relative-score gated) is unchanged — an all-weak TOP is still not recommended even though its
+  // display would lift where a candidate's title happens to match.
+  check("discipline-fit: raw conf is preserved alongside dconf (gates read raw)", acctCand && acctCand.conf < acctCand.dconf && typeof acctCand.conf === "number");
+  check("discipline-fit: the lift does not fabricate a recommendation (gate stays on raw signal)", rApi._recommend(["ZZZ 2 — Unrelated", "quilting macrame origami calligraphy pottery basket weaving", "0505.00"]).recommended === null);
+
   // ── Fix D: the boiler codes never leak into the ⚠ "outside the crosswalk" drawer ──
   const mBoiler = rApi._recommend(["WKX 1 — Workplace Intro", "Career exploration and workforce development awareness training.", "1701.00"]);
   check("Fix D: boiler codes are excluded from the outside-the-crosswalk (beyond) list", mBoiler.beyond.every((o) => o.r.code !== "32.0107" && o.r.code !== "32.0111"));
