@@ -878,8 +878,9 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
     nExtra() === 2 &&
     scenSlot(window).extraReqs.length === 2 && scenSlot(window).extraReqs[1] === "Local CPL policy adopted");
 
-  // Remove the first → the remaining qual stays.
-  click(window, doc.querySelector(".cplfund-reqdel"));
+  // Remove the first → the remaining qual stays. (Target the extra's delete
+  // explicitly — the built-ins now carry a .cplfund-reqdel hide button too.)
+  click(window, doc.querySelector("[data-reqdel]"));
   check("✕ removes an additional requirement",
     nExtra() === 1 &&
     scenSlot(window).extraReqs.length === 1 && scenSlot(window).extraReqs[0] === "Local CPL policy adopted" &&
@@ -901,6 +902,78 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   T._setScenario({ extraReqs: [] });
   T.render();
   check("an empty scenario list shadows the shared quals (box shows none)", nExtra() === 0);
+}
+
+// D4c — the two built-ins get a ✕ too (hide, reversibly), + Copy-requirements
+// and Generate-brief actions (Sam, 2026-07-20). Hiding follows through to the
+// Elig badge so the table stays consistent.
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  // Seed eligibility so the badge has data to reflect.
+  T._setElig({ coordOk: true, coord: { "Alameda": true }, optin: {}, asOf: "2026-07-20T06:00:00Z" });
+  T.render();
+  const alamedaEligCell = () => {
+    const tr = Array.from(doc.querySelectorAll("#cplFundTable tbody tr")).find(t => t.textContent.indexOf("Alameda") !== -1);
+    // Elig column = the td whose title is the eligTitle string ("… informational only in this draft").
+    return Array.from(tr.querySelectorAll("td")).find(td => (td.getAttribute("title") || "").indexOf("informational only in this draft") !== -1);
+  };
+  check("each built-in requirement has a ✕ (hide) control",
+    doc.querySelectorAll('[data-reqhide="coord"]').length === 1 && doc.querySelectorAll('[data-reqhide="part"]').length === 1);
+  check("Alameda meets 1 of 2 tracked requirements → ◐ before hiding",
+    alamedaEligCell() && alamedaEligCell().textContent.indexOf("◐") !== -1);
+
+  // Hide the participation requirement → its row disappears, a restore chip
+  // appears, and Alameda (coordinator only) now meets ALL shown → ✓.
+  click(window, doc.querySelector('[data-reqhide="part"]'));
+  check("hiding a built-in removes its row from the box",
+    !doc.querySelector('input[data-edit="part-label"]') && !!doc.querySelector('input[data-edit="coord-label"]'));
+  check("a restore chip appears for the hidden requirement", !!doc.querySelector('[data-reqshow="part"]'));
+  check("hide persists to the scenario", scenSlot(window).partHidden === true);
+  check("badge follows: with only coordinator tracked, Alameda now reads ✓",
+    alamedaEligCell().textContent.indexOf("✓") !== -1);
+  check("SYSTEM tfoot still shows the coordinator fraction (coord not hidden)",
+    doc.querySelector("#cplFundTable tfoot").textContent.indexOf("1/" + D.colleges.length) !== -1);
+
+  // Restore it.
+  click(window, doc.querySelector('[data-reqshow="part"]'));
+  check("restore brings the built-in row back",
+    !!doc.querySelector('input[data-edit="part-label"]') && !doc.querySelector('[data-reqshow="part"]') &&
+    scenSlot(window).partHidden === false);
+
+  // Copy requirements → formatted memo text via the builder.
+  check("Copy-requirements button renders", !!doc.getElementById("cplFundReqCopy"));
+  const txt = T._requirementsText();
+  check("requirements text is a numbered list with both built-ins + funding line",
+    /1\. CPL Coordinator listed in MAP/.test(txt) &&
+    /2\. Participation request by 2026-09-01/.test(txt) &&
+    /1 of \d+ colleges currently have one on file/.test(txt) &&
+    /Mapping Articulated Pathways \(MAP\) platform/.test(txt));
+  // Clicking Copy must not throw even without a clipboard API (jsdom).
+  let copyThrew = false;
+  try { click(window, doc.getElementById("cplFundReqCopy")); } catch (e) { copyThrew = true; }
+  check("clicking Copy does not throw when no clipboard API is present", !copyThrew);
+
+  // Generate brief → a standalone, sendable HTML doc (reflects the model).
+  check("Generate-brief button renders", !!doc.getElementById("cplFundReqBrief"));
+  const brief = T._briefHtml();
+  check("brief is a standalone doc naming the CPL Initiative + MAP platform",
+    brief.indexOf("<!doctype html>") === 0 &&
+    brief.indexOf("CPL Initiative") !== -1 &&
+    brief.indexOf("Mapping Articulated Pathways (MAP) platform") !== -1 &&
+    brief.indexOf("MAP Initiative") === -1);
+  check("brief lists the current requirements + a what-to-do section",
+    brief.indexOf("Proposed baseline requirements") !== -1 &&
+    brief.indexOf("CPL Coordinator listed in MAP") !== -1 &&
+    brief.indexOf("What your college should do") !== -1 &&
+    brief.indexOf("participation request by 2026-09-01") !== -1);
+  check("brief reflects an edited requirement (regenerable after revisions)", (function () {
+    T._setScenario({ extraReqs: ["75% of veteran JSTs uploaded in MAP"] });
+    T.render();
+    return T._briefHtml().indexOf("75% of veteran JSTs uploaded in MAP") !== -1 &&
+           T._requirementsText().indexOf("75% of veteran JSTs uploaded in MAP") !== -1;
+  })());
 }
 
 // D5 — noncredit student counts are included in the totals (Sam, 2026-07-06):
