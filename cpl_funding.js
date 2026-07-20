@@ -364,9 +364,15 @@
     var r = firstDefined(SCENARIO.extraReqs, SHARED.extraReqs, base().extra_reqs);
     return Array.isArray(r) ? r.slice() : [];
   }
-  // ①..⑳ for a 1-based index; the two built-ins are ①②, so extras start at ③.
-  function circledNum(n) {
-    return (n >= 1 && n <= 20) ? String.fromCharCode(0x2460 + n - 1) : "(" + n + ")";
+  // Editable label text for the two data-backed built-in requirements (their
+  // live coordinator / opt-in counts stay wired; only the wording is editable).
+  function coordLabel() {
+    var v = firstDefined(SCENARIO.coordLabel, SHARED.coordLabel, base().coord_req_label);
+    return v == null ? "CPL Coordinator listed in MAP" : v;
+  }
+  function partLabel() {
+    var v = firstDefined(SCENARIO.partLabel, SHARED.partLabel, base().participation_req_label);
+    return v == null ? "Participation request by" : v;
   }
   // "2027-28" → "2028-29" (the close-out year one past the window).
   function nextFy(fy) {
@@ -410,6 +416,8 @@
   function setRuralThreshold(v) { activeOverride().ruralThreshold = v; persistActive(); }
   function setDeadline(v) { activeOverride().participationDeadline = String(v || "").trim(); persistActive(); }
   function setExtraReqs(list) { activeOverride().extraReqs = (list || []).slice(); persistActive(); }
+  function setCoordLabel(v) { activeOverride().coordLabel = v; persistActive(); }
+  function setPartLabel(v) { activeOverride().partLabel = v; persistActive(); }
   function setRuralOverride(college, flag) {
     var ov = activeOverride();
     ov.ruralOverrides = ov.ruralOverrides || {};
@@ -782,7 +790,12 @@
     var attrs = ' data-edit="' + esc(edit) + '"';
     if (opts.slot != null) attrs += ' data-slot="' + esc(opts.slot) + '"';
     if (opts.idx != null) attrs += ' data-idx="' + esc(opts.idx) + '"';
-    if (opts.small) attrs += ' style="width:110px;display:inline-block;"';
+    if (opts.size != null) attrs += ' size="' + esc(opts.size) + '"';
+    var style = "";
+    if (opts.small) style += "width:110px;display:inline-block;";
+    if (opts.autoWidth) style += "width:auto;display:inline-block;vertical-align:baseline;";
+    if (opts.bold) style += "font-weight:600;";
+    if (style) attrs += ' style="' + style + '"';
     return '<input type="text" class="cplfund-ed-t"' + attrs +
       (opts.placeholder ? ' placeholder="' + esc(opts.placeholder) + '"' : "") +
       ' value="' + esc(value) + '" aria-label="' + esc(opts.label || edit) + '">';
@@ -1527,23 +1540,30 @@
     } else {
       coordLine = '<span class="dk">checking MAP&hellip;</span>';
     }
-    // Extra, curator-added requirements (free text) render below the two
-    // data-backed built-ins as ③, ④, … — each editable, with a ✕ to remove.
+    // Every requirement's TEXT is editable (Sam, 2026-07-20). Number glyphs are
+    // dropped — curators number by hand in the text if they want. The two
+    // built-ins keep their live-data suffix (coordinator count · opt-in count);
+    // extras are free text with a ✕ to remove.
+    function labelSize(s) { return Math.max(12, String(s).length + 2); }
     var extras = extraReqs();
     var extraHtml = extras.map(function (txt, i) {
       return '<div class="cplfund-reqrow">' +
-        "<span>" + circledNum(i + 3) + "</span>" +
-        edText("extra-req", txt, { idx: i, label: "Baseline requirement " + (i + 3),
+        edText("extra-req", txt, { idx: i, label: "Additional baseline requirement " + (i + 1),
           placeholder: "Describe the requirement…" }) +
         '<button type="button" class="cplfund-reqdel" data-reqdel="' + i +
-        '" title="Remove this requirement" aria-label="Remove requirement ' + (i + 3) + '">✕</button>' +
+        '" title="Remove this requirement" aria-label="Remove additional requirement ' + (i + 1) + '">✕</button>' +
         "</div>";
     }).join("");
     return '<div class="cplfund-elig">' +
       "<strong>Proposed baseline requirements</strong> to qualify for implementation funding " +
       '<span class="dk">(badges are informational in this draft &mdash; no dollar figure changes yet)</span>:' +
-      '<div class="req">① <strong>CPL Coordinator listed in MAP</strong> &mdash; ' + coordLine + "</div>" +
-      '<div class="req">② <strong>Participation request by</strong> ' +
+      '<div class="req">' +
+      edText("coord-label", coordLabel(), { autoWidth: true, bold: true, size: labelSize(coordLabel()),
+        label: "Coordinator requirement text" }) +
+      " &mdash; " + coordLine + "</div>" +
+      '<div class="req">' +
+      edText("part-label", partLabel(), { autoWidth: true, bold: true, size: labelSize(partLabel()),
+        label: "Participation requirement text" }) + " " +
       edText("deadline", participationDeadline(), { label: "participation deadline", small: true }) +
       " &mdash; <strong>" + optN + "</strong> opted in so far" +
       (unlocked() ? ' <span class="dk">(mark a college opted-in from its row drill-in)</span>'
@@ -1827,6 +1847,8 @@
       if (ri >= 0 && ri < reqs.length) { reqs[ri] = raw; setExtraReqs(reqs); }
       return;
     }
+    if (edit === "coord-label") { setCoordLabel(raw); return; }
+    if (edit === "part-label") { setPartLabel(raw); return; }
   }
 
   function wire() {
