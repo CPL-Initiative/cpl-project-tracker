@@ -772,10 +772,11 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   const { window } = freshDom();
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
-  check("eligibility block renders the two proposed requirements",
+  check("eligibility block renders the two built-in requirements as editable text",
     doc.querySelector(".cplfund-elig") &&
-    /CPL Coordinator listed in MAP/.test(doc.querySelector(".cplfund-elig").textContent) &&
-    /Participation request by/.test(doc.querySelector(".cplfund-elig").textContent));
+    doc.querySelector('input[data-edit="coord-label"]') &&
+    doc.querySelector('input[data-edit="coord-label"]').value === "CPL Coordinator listed in MAP" &&
+    doc.querySelector('input[data-edit="part-label"]').value === "Participation request by");
   check("deadline is editable and defaults to 2026-09-01",
     doc.querySelector('input[data-edit="deadline"]').value === "2026-09-01");
   check("Elig column renders with pending dashes before data loads",
@@ -815,23 +816,38 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   check("badges never move dollars", Math.abs(T._alloc("Alameda").total - before) < 0.01);
 }
 
-// D4b — editable extra baseline requirements (Sam, 2026-07-20: "make the box
-// editable … add a couple more quals"). Free text, add/edit/remove, three-layer.
+// D4b — every requirement is editable (Sam, 2026-07-20: "make all the text
+// editable … take out the number glyphs"). Built-in labels editable, glyphs
+// gone; extras are free text with add/edit/remove; all three-layer.
 {
   const { window } = freshDom();
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
   check("data: extra_reqs default is an empty list", Array.isArray(D.extra_reqs) && D.extra_reqs.length === 0);
+  check("data: built-in requirement labels have defaults",
+    D.coord_req_label === "CPL Coordinator listed in MAP" && D.participation_req_label === "Participation request by");
   check("no extra-requirement rows by default", doc.querySelectorAll(".cplfund-elig .cplfund-reqrow").length === 0);
-  check("the two built-in requirements are untouched (① coordinator · ② participation)",
-    /①/.test(doc.querySelector(".cplfund-elig").textContent) && /②/.test(doc.querySelector(".cplfund-elig").textContent));
+  check("number glyphs are removed (curators number them by hand)",
+    doc.querySelector(".cplfund-elig").textContent.indexOf("①") === -1 &&
+    doc.querySelector(".cplfund-elig").textContent.indexOf("②") === -1);
+  check("both built-in requirement labels are editable inputs",
+    !!doc.querySelector('input[data-edit="coord-label"]') && !!doc.querySelector('input[data-edit="part-label"]'));
   check("an ＋ Add requirement button renders", !!doc.getElementById("cplFundReqAdd"));
 
-  // Add a qual → a blank ③ row appears; edit it → persists to the scenario.
+  // Built-in label edits persist (and keep their live-data suffix intact).
+  commit(window, doc.querySelector('input[data-edit="coord-label"]'), "1. Coordinator on file in MAP");
+  check("editing a built-in requirement label persists to the scenario",
+    scenSlot(window).coordLabel === "1. Coordinator on file in MAP");
+  check("the edited built-in label re-renders",
+    doc.querySelector('input[data-edit="coord-label"]').value === "1. Coordinator on file in MAP");
+  check("the coordinator live count survives the label edit",
+    doc.querySelector(".cplfund-elig").textContent.indexOf("checking MAP") !== -1 ||
+    /\d+ of \d+/.test(doc.querySelector(".cplfund-elig").textContent));
+
+  // Add a qual → a blank row appears (no glyph); edit it → persists.
   click(window, doc.getElementById("cplFundReqAdd"));
-  check("Add appends a blank requirement row numbered ③",
-    doc.querySelectorAll(".cplfund-elig .cplfund-reqrow").length === 1 &&
-    doc.querySelector(".cplfund-elig .cplfund-reqrow").textContent.indexOf("③") !== -1);
+  check("Add appends a blank additional-requirement row",
+    doc.querySelectorAll(".cplfund-elig .cplfund-reqrow").length === 1);
   const req0 = doc.querySelector('[data-edit="extra-req"]');
   check("the new requirement box carries a placeholder hint", !!req0.getAttribute("placeholder"));
   commit(window, req0, "Signed MOU on file");
@@ -840,17 +856,16 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   check("the edited requirement re-renders",
     doc.querySelector('[data-edit="extra-req"][data-idx="0"]').value === "Signed MOU on file");
 
-  // A second qual renders as ④.
+  // A second qual.
   click(window, doc.getElementById("cplFundReqAdd"));
   commit(window, doc.querySelectorAll('[data-edit="extra-req"]')[1], "Local CPL policy adopted");
-  check("a second qual renders as ④ and both persist",
+  check("a second qual renders and both persist",
     doc.querySelectorAll(".cplfund-elig .cplfund-reqrow").length === 2 &&
-    doc.querySelector(".cplfund-elig").textContent.indexOf("④") !== -1 &&
     scenSlot(window).extraReqs.length === 2 && scenSlot(window).extraReqs[1] === "Local CPL policy adopted");
 
-  // Remove the first → the remaining qual renumbers back to ③.
+  // Remove the first → the remaining qual stays.
   click(window, doc.querySelector(".cplfund-reqdel"));
-  check("✕ removes a requirement and the list renumbers",
+  check("✕ removes an additional requirement",
     doc.querySelectorAll(".cplfund-elig .cplfund-reqrow").length === 1 &&
     scenSlot(window).extraReqs.length === 1 && scenSlot(window).extraReqs[0] === "Local CPL policy adopted" &&
     doc.querySelector('[data-edit="extra-req"][data-idx="0"]').value === "Local CPL policy adopted");

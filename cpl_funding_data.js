@@ -144,6 +144,8 @@ window.CPL_FUNDING = {
  "rural_source": "DRAFT roster \u2014 seeded from the CCCCO Rural College Transfer Collaborative cohort (10 colleges); edit the per-college rural flags here (or via the in-tab override when unlocked) to true up",
  "participation_deadline": "2026-09-01",
  "extra_reqs": [],
+ "coord_req_label": "CPL Coordinator listed in MAP",
+ "participation_req_label": "Participation request by",
  "system": {
   "order": 0,
   "college": "SYSTEM",
