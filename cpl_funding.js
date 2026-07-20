@@ -140,14 +140,19 @@
     ".cplfund-est { font-size: .72rem; color: var(--mustard-fill); font-weight: 600; }",
     ".cplfund-chip { display: inline-block; font-size: .72rem; margin-left: 4px; font-weight: 400; cursor: help; }",
     ".cplfund-carry { color: var(--text-faint); font-size: .75rem; font-weight: 400; }",
-    ".cplfund-elig { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--gold-accent); border-radius: 8px; padding: 12px 16px; font-size: .88rem; line-height: 1.55; }",
-    ".cplfund-elig .req { margin: 4px 0; }",
-    // Editable extra-requirement rows: marker + inline text box + ✕ remove.
-    ".cplfund-elig .cplfund-reqrow { display: flex; align-items: center; gap: 6px; margin: 4px 0; }",
-    ".cplfund-elig .cplfund-reqrow .cplfund-ed-t { flex: 1 1 auto; width: auto; max-width: 560px; }",
+    ".cplfund-elig { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--gold-accent); border-radius: 8px; padding: 12px 16px; font-size: .88rem; line-height: 1.55; text-align: left; }",
+    ".cplfund-elig-intro { margin-bottom: 8px; }",
+    // Requirement list: a bullet + one full-width editable line per item, all
+    // left-aligned so they line up; the two built-ins carry a muted status
+    // sub-line (live coordinator coverage · deadline + opt-in count).
+    ".cplfund-reqitem { margin: 6px 0; }",
+    ".cplfund-elig .cplfund-reqrow { display: flex; align-items: center; gap: 8px; margin: 0; }",
+    ".cplfund-elig .cplfund-bullet { flex: 0 0 auto; color: var(--navy-primary); font-weight: 700; }",
+    ".cplfund-elig .cplfund-reqrow .cplfund-ed-t { flex: 1 1 auto; max-width: 640px; }",
+    ".cplfund-reqstatus { margin: 3px 0 0 20px; font-size: .82rem; color: var(--text-muted); }",
     ".cplfund-reqdel { flex: 0 0 auto; background: var(--surface-opaque); color: var(--text-muted); border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 9px; cursor: pointer; font-size: .8rem; line-height: 1.2; font-family: inherit; }",
     ".cplfund-reqdel:hover { border-color: var(--red-alert); color: var(--red-alert); }",
-    ".cplfund-reqadd { margin-top: 8px; }",
+    ".cplfund-reqadd { margin-top: 10px; margin-left: 20px; }",
     ".cplfund-reqadd .dk { margin-left: 8px; font-size: .8rem; }",
     ".cplfund-optbtn { background: var(--surface-opaque); color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 8px; cursor: pointer; font-size: .75rem; font-family: inherit; margin-left: 6px; }",
     ".cplfund-optbtn:hover { border-color: var(--gold-accent); }",
@@ -790,12 +795,7 @@
     var attrs = ' data-edit="' + esc(edit) + '"';
     if (opts.slot != null) attrs += ' data-slot="' + esc(opts.slot) + '"';
     if (opts.idx != null) attrs += ' data-idx="' + esc(opts.idx) + '"';
-    if (opts.size != null) attrs += ' size="' + esc(opts.size) + '"';
-    var style = "";
-    if (opts.small) style += "width:110px;display:inline-block;";
-    if (opts.autoWidth) style += "width:auto;display:inline-block;vertical-align:baseline;";
-    if (opts.bold) style += "font-weight:600;";
-    if (style) attrs += ' style="' + style + '"';
+    if (opts.small) attrs += ' style="width:110px;display:inline-block;"';
     return '<input type="text" class="cplfund-ed-t"' + attrs +
       (opts.placeholder ? ' placeholder="' + esc(opts.placeholder) + '"' : "") +
       ' value="' + esc(value) + '" aria-label="' + esc(opts.label || edit) + '">';
@@ -1540,34 +1540,41 @@
     } else {
       coordLine = '<span class="dk">checking MAP&hellip;</span>';
     }
-    // Every requirement's TEXT is editable (Sam, 2026-07-20). Number glyphs are
-    // dropped — curators number by hand in the text if they want. The two
-    // built-ins keep their live-data suffix (coordinator count · opt-in count);
-    // extras are free text with a ✕ to remove.
-    function labelSize(s) { return Math.max(12, String(s).length + 2); }
+    // Every requirement is one full-width, editable, bullet-prefixed line, all
+    // left-aligned so they line up (Sam, 2026-07-20: "add bullets … left justify
+    // … the whole row of text should be editable"). The two built-ins keep their
+    // live data on a muted STATUS sub-line (so the requirement text itself is
+    // fully editable); extras carry a ✕ to remove. `bullet()` wraps one line.
+    function bullet(input, delBtn) {
+      return '<div class="cplfund-reqrow"><span class="cplfund-bullet">&bull;</span>' +
+        input + (delBtn || "") + "</div>";
+    }
     var extras = extraReqs();
     var extraHtml = extras.map(function (txt, i) {
-      return '<div class="cplfund-reqrow">' +
-        edText("extra-req", txt, { idx: i, label: "Additional baseline requirement " + (i + 1),
-          placeholder: "Describe the requirement…" }) +
+      return '<div class="cplfund-reqitem">' + bullet(
+        edText("extra-req", txt, { idx: i, label: "Baseline requirement",
+          placeholder: "Describe the requirement…" }),
         '<button type="button" class="cplfund-reqdel" data-reqdel="' + i +
-        '" title="Remove this requirement" aria-label="Remove additional requirement ' + (i + 1) + '">✕</button>' +
-        "</div>";
+        '" title="Remove this requirement" aria-label="Remove requirement ' + (i + 1) + '">✕</button>'
+      ) + "</div>";
     }).join("");
-    return '<div class="cplfund-elig">' +
-      "<strong>Proposed baseline requirements</strong> to qualify for implementation funding " +
-      '<span class="dk">(badges are informational in this draft &mdash; no dollar figure changes yet)</span>:' +
-      '<div class="req">' +
-      edText("coord-label", coordLabel(), { autoWidth: true, bold: true, size: labelSize(coordLabel()),
-        label: "Coordinator requirement text" }) +
-      " &mdash; " + coordLine + "</div>" +
-      '<div class="req">' +
-      edText("part-label", partLabel(), { autoWidth: true, bold: true, size: labelSize(partLabel()),
-        label: "Participation requirement text" }) + " " +
+    var partStatus = "deadline " +
       edText("deadline", participationDeadline(), { label: "participation deadline", small: true }) +
-      " &mdash; <strong>" + optN + "</strong> opted in so far" +
+      " &middot; <strong>" + optN + "</strong> opted in so far" +
       (unlocked() ? ' <span class="dk">(mark a college opted-in from its row drill-in)</span>'
-                  : ' <span class="dk">(team members record opt-ins after unlocking)</span>') + "</div>" +
+                  : ' <span class="dk">(team members record opt-ins after unlocking)</span>');
+    return '<div class="cplfund-elig">' +
+      '<div class="cplfund-elig-intro"><strong>Proposed baseline requirements</strong> to qualify for ' +
+      'implementation funding <span class="dk">(badges are informational in this draft &mdash; ' +
+      "no dollar figure changes yet)</span>:</div>" +
+      '<div class="cplfund-reqitem">' +
+      bullet(edText("coord-label", coordLabel(), { label: "Coordinator requirement text",
+        placeholder: "Describe the requirement…" })) +
+      '<div class="cplfund-reqstatus">' + coordLine + "</div></div>" +
+      '<div class="cplfund-reqitem">' +
+      bullet(edText("part-label", partLabel(), { label: "Participation requirement text",
+        placeholder: "Describe the requirement…" })) +
+      '<div class="cplfund-reqstatus">' + partStatus + "</div></div>" +
       extraHtml +
       '<div class="cplfund-reqadd">' +
       '<button type="button" class="cplfund-optbtn" id="cplFundReqAdd" ' +
