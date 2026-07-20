@@ -560,6 +560,26 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### StarEmber side-lane — Fire & EMS CPL eligibility: statewide vs local (2026-07-20, read-only)
+
+Sam's data ask: how many MAP students have eligible credit + how many credits for
+**statewide** credit recommendations in **Fire / EMT / EMS / Wildlands / Paramedic**,
+then the **local** ones too, then "drop into a filtered view." All answerable from the
+committed CER rollup (`credential_reference_data.js`: `students_served` +
+`eligible_credits` per credential; `statewide` flag = tier) joined to the statewide
+category map — **no pipeline/code change, no live MAP fetch.** Answer (2026-07-20 pull):
+statewide **27 creds · ~238 students · ~1,946 credits**; local **142 · ~251 · ~2,567**.
+Two findings: (1) the locals visibly **mirror the statewide series** (colleges built on
+them — local Fire out-counts statewide Fire); (2) **"statewide" has two divergent
+definitions** — the CER flag = `has_ccc` (has a CCC-Collaborative *articulation*,
+`export_credential_reference()` ~L6890/6909), which is **not** "on the statewide CPL
+page," so **Paramedic License** (18 stu / 721.5 cr) reads *local* and swings the paramedic
+split. Deliverable: a private **filtered-view artifact**
+([link](https://claude.ai/code/artifact/36e7fb36-10a7-44a3-a631-d0ec591ccc4c)). Docs:
+`docs/fire_ems_eligibility_lessons.md` · `docs/fire_ems_eligibility_handoff.md` · KB note
+`methodology-area-eligibility-rollup-from-cer`. Side-lane — left `cpl_todos.json` + the
+numbered handoff to the CCR mainline.
+
 ### SkyCIP side-lane — CIP Coder (Beta): the Review-tab UI redesign (2026-07-20, #850/#851 MERGED)
 
 Sam co-designed the Review-tab look in a fast-feedback artifact
