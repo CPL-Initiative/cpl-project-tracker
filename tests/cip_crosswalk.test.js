@@ -78,8 +78,10 @@ const COURSES = [
 // noncredit boilerplate codes, plus a nursing CIP reachable only by description
 // (never listed for the business TOP → the "outside the crosswalk" case).
 const RFIXTURE = {
-  fams: { "51": "Health Professions", "52": "Business", "32": "Basic Skills", "49": "Transportation", "27": "Mathematics" },
+  fams: { "51": "Health Professions", "52": "Business", "32": "Basic Skills", "49": "Transportation", "27": "Mathematics", "50": "Visual and Performing Arts" },
   rows: [
+    { code: "50.0908", t: "Voice and Opera", cat: "CTE", fam: "50", def: "A program that prepares individuals to master the human voice and its use in operatic and vocal performance and singing.", ex: "", act: "" },
+    { code: "50.0509", t: "Musical Theatre", cat: "CTE", fam: "50", def: "A program that prepares individuals for musical theatre and stage acting and dance performance.", ex: "", act: "" },
     { code: "49.0205", t: "Truck and Bus Driver/Commercial Vehicle Operator and Instructor", cat: "CTE", fam: "49", def: "A program that prepares individuals to drive trucks and buses and other commercial motor vehicles.", ex: "", act: "" },
     { code: "27.0101", t: "Mathematics, General", cat: "Non-CTE", fam: "27", def: "A general program that focuses on mathematics and statistics.", ex: "", act: "" },
     { code: "32.0202", t: "High School Equivalent Exam Preparation", cat: "Noncredit", fam: "32", def: "A noncredit program preparing students for high school equivalent examinations.", ex: "", act: "" },
@@ -96,6 +98,11 @@ const RFIXTURE = {
     "0505.00": { t: "Accounting", c: [["52.0201", "o"], ["52.0301", "o"], ["52.0302", "o"], ["32.0107", "n"], ["32.0111", "n"]] },
     "1701.00": { t: "Mathematics", c: [["27.0101", "o"], ["32.0202", "n"]] },
     "1230.00": { t: "Registered Nursing", c: [["51.3801", "o"]] },
+    // Music: this college's TOP lists BOTH Voice and Musical Theatre (title-boost → Voice leads for a
+    // "Voice" course); peers file voice courses under 1005.00, whose only credit CIP is Musical Theatre —
+    // a weak fit. Exercises the strong-own-fit veto (F1: "Intermediate Voice" must not become Musical Theatre).
+    "1004.00": { t: "Music", c: [["50.0509", "o"], ["50.0908", "o"]] },
+    "1005.00": { t: "Applied Music", c: [["50.0509", "o"]] },
     // a broad "grab-bag" TOP with candidates unrelated to any course (mirrors real TOP 0956.00) — a
     // course coded here gets only weak lexical picks, so it exercises the program-coherence default.
     "9560.00": { t: "Manufacturing and Industrial Technology", c: [["49.0205", "o"], ["27.0101", "o"], ["01.0000", "o"]] },
@@ -117,17 +124,24 @@ const RCOURSES = [
   // pick is uncorroborated (count 1), so it should DEFAULT to the ACCT dominant 52.0301 (Sam's IWAP→welding
   // program-coherence idea), still flagged Review — not left showing an unrelated weak code.
   ["ACCT 300 — Field Study", "A survey course exploring assorted contemporary themes through selected readings, films, and class discussion.", "9560.00"],
+  // MUS 10 "Voice" (appended so the numeric RCOURSES[] indices above stay stable): own title strongly
+  // matches 50.0908 Voice and Opera; MUS peers file voice under 1005.00 → 50.0509 Musical Theatre (weak
+  // fit) → the strong-own-fit veto must keep Voice and Opera as the headline (Review, not a peer change).
+  ["MUS 10 — Voice", "A course in vocal performance and singing and the human voice and solo voice technique and operatic repertoire.", "1004.00"],
 ];
 // cross-college consensus fixture: peers overwhelmingly code "Nursing" under a Registered
 // Nursing TOP (1230.00); this college used 0505.00 (Accounting) — the lone outlier.
 const RCONSENSUS = {
   colleges: ["Alpha College", "Beta College", "Gamma College", "Delta College", "Test College"],
-  subjects: ["NURS", "BUS"],
+  subjects: ["NURS", "BUS", "MUS"],
   titles: {
     // all 5 "Nursing" peers are NURS-subject → a NURS course gets a SUBJECT-SCOPED consensus that
     // may override the outlier's business TOP (the legit correction). Parallel [collegeIdx],[subjIdx].
     "nursing": { n: 5, t: [["1230.00", [0, 1, 2, 3], [0, 0, 0, 0]], ["0505.00", [4], [0]]] },
     "business basics": { n: 6, t: [["0505.00", [0, 1, 2, 3, 4], [1, 1, 1, 1, 1]]] },
+    // 5 MUS peers file "voice" under 1005.00 (→ Musical Theatre, a weak fit) — a confident scoped
+    // consensus that the strong-own-fit veto must NOT let override Voice and Opera.
+    "voice": { n: 5, t: [["1005.00", [0, 1, 2, 3, 4], [2, 2, 2, 2, 2]]] },
   },
 };
 function freshR(mode) {
@@ -622,6 +636,17 @@ function fresh(withCollege) {
   outCand.click();
   await tick();
   check("review mode: assigning an outside-crosswalk code persists it", (function () { try { var v = JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["NURS 101 — Nursing"]; return Array.isArray(v) && v.indexOf("51.3801") >= 0; } catch (e) { return false; } })());
+
+  // Strong-own-fit veto (CfC F1–F5, 2026-07-20): MUS 10 "Voice" — own title strongly matches 50.0908
+  // Voice and Opera, but MUS peers file voice under 1005.00 → 50.0509 Musical Theatre (weak fit). The veto
+  // must keep Voice and Opera as the headline, flag Review (not a peer-suggested change), and demote the
+  // peer code to the why-line. (Guards the exact F1 failure mode without regressing the NURS override above.)
+  deptSel.value = "MUS"; deptSel.dispatchEvent(new domRev.window.Event("change"));
+  await tick(); await tick();
+  const musItem = revdoc.querySelector(".cipx-rev-list .cipx-rev-item");
+  check("veto: MUS 10 keeps the strong own-fit (50.0908 Voice and Opera) as the box, NOT peers' Musical Theatre", (function () { var box = musItem && musItem.querySelector(".cipx-rev-chip .cipx-code"); return box && /50\.0908/.test(box.textContent) && !/50\.0509/.test(box.textContent); })());
+  check("veto: the row is flagged Review ('?'), not a peer-Suggested change (⇄) or two-box", !!musItem.querySelector(".cipx-rev-stat-warn") && !musItem.querySelector(".cipx-rev-stat-suggest") && !musItem.querySelector(".cipx-rev-2box"));
+  check("veto: the why-line names BOTH the own-fit code and the weaker peer code (demoted to a note)", (function () { var w = musItem && musItem.querySelector(".cipx-rev-whyline"); return w && /50\.0908/.test(w.textContent) && /50\.0509/.test(w.textContent) && /peers/i.test(w.textContent); })());
 
   // ── new Review UI affordances on a FRESH, unmutated instance (Sam's points 1, 4, 5, 6) ──
   const domU = freshR("review");

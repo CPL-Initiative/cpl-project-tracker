@@ -1421,3 +1421,37 @@ live (the merge is not the finish line — the deploy is):
 
 Side-lane discipline honored throughout: `kb/cpl_todos.json` + the numbered session handoff left
 untouched (CCR mainline owns them); CIP-lane memory is this doc + `docs/cip_crosswalk_handoff.md`.
+
+### 2026-07-20 (SkyCIP) — the CfC live-test laundry list → the strong-own-fit veto (F1–F5)
+
+Claude for Chrome ran a fresh autonomous pass over CIP Coder (Beta) and returned a ranked
+laundry list; its dominant theme (5 of the High findings, F1–F5) was **one root cause**, confirmed
+in the code before any fix: a confident **peer consensus** (`consensusPick` → `bestCipForTop`)
+overrides the headline **with no check on whether the course's own description/title fits a
+different code far better**. CCSF "Intermediate Voice" → peers' *Musical Theatre* (13%) over own-fit
+*Voice and Opera* (95%); ARC "Drawing and Composition" → peers' *Fine/Studio Arts* (0%) over
+*Drawing* (41%); ARC A&P → peers' *Cell Biology* (7%). Sam's call (AskUserQuestion): **strong own-fit
+wins, margin-gated.**
+
+**Fix** (`reviewRowOf`, nested INSIDE the override branch so a discarded cross-discipline pool is
+unaffected): when a consensus would override, compute the strongest surfaced own-fit
+(`ownBest` = max `.conf` across `m.cands ∪ m.beyond`) and the peer pick's own fit (`peerConf`); if
+`ownBest.conf ≥ OWN_FIT_MIN (40)` AND it's a different code AND it beats the peer pick by
+`≥ OWN_VETO_MARGIN (30)`, keep the own-fit as the headline, flag **Review** (not a peer-Suggested
+change), set `ownFitVeto`/`peerAlt`, and keep `cp` so the expand still notes how peers code it — the
+peer consensus is **demoted to a note, not deciding**. `sugConf` now spans cands+beyond so the
+description-headline isn't dept-default-swapped away. New `reviewWhy` branch names BOTH codes.
+
+**Calibration crux:** the de-inflated confidence makes even a correct own-fit read moderate (Drawing
+= 41%), so "strong in absolute terms (≥75)" was too strict — the real signal is **own-fit clearly
+beats a near-zero peer pick**. So the **margin** does the work; the floor (40) just requires the
+own-fit to be plausible. Verified on real data via a `vm`-context diagnostic (the tightest loop): the
+veto is **surgical** — 3/44 ART, 1/78 MUS, 1/28 BIOL vetoed, and **0** NURS / **0** AUTO (the
+confirmed-working peer corrections, where the peer pick IS a decent fit, are untouched). Tests
+226→**229** (a Voice→Musical Theatre fixture guards the exact F1 failure mode); real-Chromium on
+CCSF MUS 10C (Review, box 50.0908, honest whyline, 0 overflow/0 errors).
+
+**Still on the CfC list (next PR):** F6 Browse "closest matches" duplicate rows, F7 Finder
+"no clear front-runner" copy when one's ≥95%, F9 glyph legend + peer-corroborated ✓· aria, F10 Manual
+rows showing a code, F8 tiny ▾ hit-target. F12 (two-box display) is by design. Side-lane discipline
+held: `cpl_todos.json` + the numbered handoff untouched.

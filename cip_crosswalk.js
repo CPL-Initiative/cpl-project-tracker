@@ -241,6 +241,8 @@
   var BEYOND_CONF_MIN = 45;         // an outside-crosswalk code is "worth a look" only at this absolute confidence
   var _titleStop = null;            // generic academic-qualifier title tokens, stripped from the course-title match
   var SUG_STRONG = 70;              // a suggestion at/above this confidence is a strong pick — not overridden by the dept-default
+  var OWN_FIT_MIN = 40;            // a course's own description/title fit must be at least this plausible to veto (Sam, 2026-07-20)…
+  var OWN_VETO_MARGIN = 30;        // …and beat the peer-consensus pick's own fit by this much → it VETOES the peer override (the peer pick is a near-zero fit)
   function scoreAgainst(query) {
     var qt = fitTokens(query);
     if (!qt.length) return { ranked: [], max: 0, margin: 0, toks: 0 };
@@ -1127,12 +1129,35 @@
     // Sam's CARPT 224 "Materials of Construction": 8/15 colleges file it under Architecture, but
     // this is a Carpentry course (subject CARPT + TOP 0952.10 both agree) — the generic title
     // pooled across construction disciplines must not push it out of Carpentry (→ keep 46.0201).
+    // Strongest own description/title fit the engine surfaced (crosswalk candidates + outside "worth a
+    // look" matches), by absolute confidence — the lever for the strong-own-fit veto below.
+    var confBy = {};
+    (m.cands || []).forEach(function (o) { confBy[o.r.code] = o.conf || 0; });
+    (m.beyond || []).forEach(function (o) { if ((o.conf || 0) > (confBy[o.r.code] || 0)) confBy[o.r.code] = o.conf || 0; });
+    var ownBest = null;
+    (m.cands || []).concat(m.beyond || []).forEach(function (o) { if (!ownBest || (o.conf || 0) > (ownBest.conf || 0)) ownBest = o; });
+    var ownFitVeto = false, peerAlt = null;
     if (cp) {
       var consAgrees = crosswalk && cp.code === crosswalk.code;
       if (cp.cons.scoped || consAgrees) {
-        sug = cp.best.r; sugKind = "consensus";
-        suggestChange = !!(crosswalk && sug && crosswalk.code !== sug.code);
-        status = suggestChange ? "suggest" : "clear";
+        // This consensus WOULD override the course's own discipline. Strong-own-fit veto (Sam, 2026-07-20,
+        // from the CfC live-test F1–F5): don't let it steamroll a plausible own description/title fit
+        // (≥ OWN_FIT_MIN) that points to a DIFFERENT code and clearly beats the peer pick's own fit
+        // (by ≥ OWN_VETO_MARGIN — the peer pick is a near-zero fit). CCSF "Intermediate Voice" → own-fit
+        // Voice & Opera must not be overridden to peers' Musical Theatre; ART "Drawing" not to Fine/Studio
+        // Arts. Margin-gated, so solid peer corrections (NURS→51.3801, ESL→16.1701 — where peers AND
+        // description agree) are untouched. Keep Review + keep cp so the expand still notes how peers code
+        // it — the peer consensus is demoted to a note, not deciding.
+        var peerConf = confBy[cp.best.r.code] || 0;
+        if (!consAgrees && ownBest && (ownBest.conf || 0) >= OWN_FIT_MIN && ownBest.r.code !== cp.best.r.code
+            && ((ownBest.conf || 0) - peerConf) >= OWN_VETO_MARGIN) {
+          sug = ownBest.r; sugKind = "description"; status = "review"; suggestChange = false;
+          ownFitVeto = true; peerAlt = cp.best.r;
+        } else {
+          sug = cp.best.r; sugKind = "consensus";
+          suggestChange = !!(crosswalk && sug && crosswalk.code !== sug.code);
+          status = suggestChange ? "suggest" : "clear";
+        }
       } else {
         cp = null;   // cross-discipline pool that disagrees → discard, keep the course's discipline
       }
@@ -1154,9 +1179,11 @@
     // "worth a look" hint shown below (beyondOk), NEVER auto-promoted to the headline box — even when it
     // out-scores the crosswalk pick lexically (BIOL 10's Ecology must not displace 26.0101 Biology). The
     // headline is always the crosswalk/consensus suggestion; the faculty pick the outside code if it fits.
-    var sugCand = sug ? m.cands.filter(function (x) { return x.r.code === sug.code; })[0] : null;
+    // sugConf spans crosswalk candidates AND outside "worth a look" matches, so a description-headline
+    // (the veto case) keeps its real confidence and effectiveSug won't dept-default-swap it away.
     return { c: c, label: label, subj: subj, top: ownTop, topTitle: m.topTitle,
-      sug: sug, sugKind: sugKind, sugConf: sugCand ? sugCand.conf : 0, status: status, suggestChange: suggestChange, crosswalk: crosswalk,
+      sug: sug, sugKind: sugKind, sugConf: (sug ? confBy[sug.code] : 0) || 0, status: status, suggestChange: suggestChange, crosswalk: crosswalk,
+      ownFitVeto: ownFitVeto, peerAlt: peerAlt,
       nCand: m.cands.length, disagree: beyondOk.length > 0, beyondOk: beyondOk, cons: cp, m: m };
   }
 
@@ -1525,6 +1552,15 @@
   // one-liners; only the attention rows earn a reason line. `eff` = effectiveSug(r, ctx) (already computed).
   function reviewWhy(r, ctx, eff) {
     if (r.status === "review") {
+      // Strong-own-fit veto (CfC F1–F5): the course's own description strongly matches one code while
+      // most peers file it under a weaker-fitting one — say BOTH honestly; the peer code is a note, not the pick.
+      if (r.ownFitVeto && r.sug) {
+        var pa = r.peerAlt;
+        return ["Your description best matches ", el("b", {}, [r.sug.code]), (r.sug.t ? " · " + r.sug.t : ""),
+          " (" + (r.sugConf || 0) + "%). Most " + r.subj + " peers file this course under ",
+          el("b", {}, [pa ? pa.code : "another code"]), (pa && pa.t ? " · " + pa.t : ""),
+          " — a weaker fit here. Confirm the description match, or switch to the peer code."];
+      }
       // A credible strong description match outside the course's TOP crosswalk was surfaced as the headline
       // (F5) — say so honestly: the TOP may be mis-coded; confirm only if it fits.
       if (r.sugKind === "description" && r.sug) {

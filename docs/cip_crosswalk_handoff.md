@@ -205,6 +205,28 @@ courses lazy-fetched from `cip_fitcheck/<slug>.json` (`kb/_build_cip_fitcheck.py
 `renderAddPicker`/`renderAddPrompt`/`renderApplyPanel` (multi-CIP flow), `revInline` (per-row inline-UI
 state), `renderSysBaseline`/`repaintReviewOverview`/`collegeStatus` (Phase A baseline).
 
+### Shipped 2026-07-20 (SkyCIP) — CfC round 2: the strong-own-fit veto (F1–F5)
+A fresh Claude-for-Chrome autonomous pass returned a ranked laundry list; its dominant theme (F1–F5)
+was one root cause: a confident **peer consensus** overrode the headline even when the course's own
+description/title fit a different code far better (CCSF "Intermediate Voice" → peers' Musical Theatre
+13% over own-fit Voice & Opera 95%; ARC "Drawing" → Fine/Studio Arts 0% over Drawing 41%). Sam's call:
+**strong own-fit wins, margin-gated.** Fix in `reviewRowOf` (nested inside the override branch):
+`ownBest` (max `.conf` over cands+beyond) vs `peerConf`; veto when `ownBest.conf ≥ OWN_FIT_MIN(40)` &&
+different code && margin `≥ OWN_VETO_MARGIN(30)` → keep own-fit as headline, flag **Review**, set
+`ownFitVeto`/`peerAlt`, keep `cp` as a demoted note. Calibration crux: de-inflated conf reads Drawing
+at 41%, so the **margin** (own-fit beats a near-zero peer pick) does the work, not an absolute-strong
+floor. `vm`-diagnostic proof it's surgical: 3/44 ART, 1/78 MUS, 1/28 BIOL vetoed, **0 NURS / 0 AUTO**
+(good peer corrections untouched). Tests 226→**229**; real-Chromium CCSF MUS 10C verified. Full story:
+`cip_crosswalk_lessons.md` (2026-07-20).
+
+**🎯 Remaining CfC list (the next PR — clear fixes, no doctrine call):** **F6** Browse "closest
+matches" duplicates its top-6 (header count N but N+6 rows render); **F10** Manual rows say "too little
+to suggest a code" yet show a filled code; **F7** Finder "no clear front-runner" copy fires even when
+one candidate is ≥95%; **F9** no glyph legend + the peer-corroborated ✓· has a generic "Ready status"
+aria (screen-reader can't tell the dot); **F8** the ▾ change-code hit-target is tiny → clicking the box
+body confirms instead. **F11** measure the mobile sticky height at true phone width + trim. **F12**
+(two-box display) is BY DESIGN — no change.
+
 ## 🎯 Priority — the still-open items
 
 **Phase A (baseline status counts) shipped in #846.** The headline that remains is **Phase B — the shared
