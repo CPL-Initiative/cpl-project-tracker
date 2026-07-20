@@ -593,7 +593,7 @@ function fresh(withCollege) {
   check("a 'showing …' context line ties the tile counts to the visible list (point 2c)", (function () { var s = revdoc.querySelector(".cipx-rev-showing"); return s && /Showing/.test(s.textContent); })());
   check("a reassurance line sits under the bulk-confirm buttons (point 4)", (function () { var r = revdoc.querySelector(".cipx-rev-reassure"); return r && /never final/.test(r.textContent) && /COCI/.test(r.textContent); })());
   check("the 'Confirm all' button carries a reassuring, not-irreversible tooltip (point 4)", (function () { var b = revdoc.querySelector(".cipx-rev-bulk"); return b && /never final/.test(b.getAttribute("title") || ""); })());
-  check("Theme + Expand + CSV live together in the top-right rail", !!revdoc.querySelector(".cipx-toprail .cipx-themetog") && !!revdoc.querySelector(".cipx-toprail-rev .cipx-rev-expand") && !!revdoc.querySelector(".cipx-toprail-rev .cipx-rev-csv"));
+  check("Theme + CSV in the rail; Expand moved to the sticky tiles row (Sam, 2026-07-20)", !!revdoc.querySelector(".cipx-toprail .cipx-themetog") && !!revdoc.querySelector(".cipx-toprail-rev .cipx-rev-csv") && !revdoc.querySelector(".cipx-toprail-rev .cipx-rev-expand") && !!revdoc.querySelector(".cipx-rev-tilesrow .cipx-rev-actions .cipx-rev-expand"));
   check("Coco the emotional-support pup rides in the rail (muted outlined SVG + name)", (function () { var c = revdoc.querySelector(".cipx-toprail .cipx-coco"); return c && c.querySelector(".cipx-coco-svg") && /Coco/.test(c.textContent); })());
   const revRow = revdoc.querySelector(".cipx-rev-list .cipx-rev-item");
   check("review mode: renders a course row with a suggested CIP chip", revRow && revRow.querySelector(".cipx-rev-chip .cipx-code"));
@@ -666,8 +666,8 @@ function fresh(withCollege) {
   const uSel = udoc.querySelector(".cipx-rev-deptsel");
   uSel.value = "__all__"; uSel.dispatchEvent(new domU.window.Event("change"));
   await tick(); await tick();
-  const xall = udoc.querySelector(".cipx-toprail-rev .cipx-rev-expand");
-  check("Expand-all control is present in the top-right rail (point 6)", !!xall && /Expand all|Collapse all/.test(xall.textContent));
+  const xall = udoc.querySelector(".cipx-rev-tilesrow .cipx-rev-expand");
+  check("Expand-all control rides in the sticky tiles row (point 6; Sam 2026-07-20)", !!xall && /Expand all|Collapse all/.test(xall.textContent));
   check("suggested-change rows are expanded by default, others collapsed", udoc.querySelectorAll(".cipx-rev-detail").length >= 1 && udoc.querySelectorAll(".cipx-rev-detail").length < udoc.querySelectorAll(".cipx-rev-item").length);
   xall.click(); await tick();
   check("Expand all opens every row", udoc.querySelectorAll(".cipx-rev-detail").length === udoc.querySelectorAll(".cipx-rev-item").length);
@@ -682,6 +682,11 @@ function fresh(withCollege) {
   check("the CIP box carries a ▾ 'change to any code' affordance (point 5)", !!uChg);
   uChg.click(); await tick();
   check("clicking ▾ opens a change-to-any-code dropdown", !!uNur.querySelector(".cipx-rev-chgpanel .cipx-cbwrap"));
+  // Sam's recurring bug: the change-panel is a CHILD of the chip, so a click in its search field
+  // bubbled to the chip's onAccept and OK'd the CIP. Guard: clicking inside the OPEN panel (e.g. the
+  // search input) must NOT persist a decision — you should be able to type a keyword freely.
+  (function () { var inp = uNur.querySelector(".cipx-rev-chgpanel input"); if (inp) inp.click(); })(); await tick();
+  check("clicking inside the change-panel does NOT confirm the code (Sam's ▾-OKs-the-CIP bug)", (function () { try { var v = JSON.parse(domU.window.localStorage.getItem("cipx_rev_test_college") || "{}")["NURS 101 — Nursing"]; return !v || (Array.isArray(v) && v.length === 0); } catch (e) { return true; } })());
   uNur.querySelector(".cipx-rev-chip-rec").click(); await tick();
   check("clicking the emphasized peer box uses that code (one-click accept — point 1)", (function () { try { var v = JSON.parse(domU.window.localStorage.getItem("cipx_rev_test_college") || "{}")["NURS 101 — Nursing"]; return Array.isArray(v) && v.indexOf("51.3801") >= 0; } catch (e) { return false; } })());
 

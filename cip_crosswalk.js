@@ -1404,11 +1404,18 @@
     });
     tiles.appendChild(cociSyncTile());   // the destination tile (In Development)
     tilesRow.appendChild(tiles);
+    var shown = rows.filter(function (r) { return rev.filter === "all" || r.status === rev.filter; });
     var actions = el("div", { class: "cipx-rev-actions" }, []);
+    // Expand/Collapse-all rides in the STICKY tiles row (Sam, 2026-07-20 — mobile) so it's reachable
+    // while scrolling; only CSV stays in the top-right rail (which scrolls away on phones).
+    var anyClosed = shown.some(function (r) { return !revOpen[r.label]; });
+    var xall = el("button", { class: "cipx-rev-expand", type: "button" }, [anyClosed ? "⤢ Expand all" : "⤡ Collapse all"]);
+    xall.onclick = function () { shown.forEach(function (r) { revOpen[r.label] = anyClosed; }); renderReview(rows); };
+    actions.appendChild(xall);
     var deptTail = rev.dept !== "__all__" ? " in " + rev.dept : "";
     var unconfirmedClear = rows.filter(function (r) { return r.status === "clear" && r.sug && !revIsValidated(r.label); });
     if (unconfirmedClear.length) {
-      var bulk = el("button", { class: "cipx-rev-bulk", type: "button", title: "Confirms " + unconfirmedClear.length + " ready course" + (unconfirmedClear.length === 1 ? "" : "s") + " here in your browser. It's never final — every code stays editable or clearable, and nothing reaches COCI until your college enters it there." }, ["✓ Confirm all " + unconfirmedClear.length + " ready match" + (unconfirmedClear.length === 1 ? "" : "es") + deptTail]);
+      var bulk = el("button", { class: "cipx-rev-bulk", type: "button", title: "Confirms " + unconfirmedClear.length + " ready course" + (unconfirmedClear.length === 1 ? "" : "s") + " here in your browser. It's never final — every code stays editable or clearable, and nothing reaches COCI until your college enters it there." }, ["✓ Confirm all " + unconfirmedClear.length + (rev.dept !== "__all__" ? " " + rev.dept : "") + " match" + (unconfirmedClear.length === 1 ? "" : "es")]);
       bulk.onclick = function () { unconfirmedClear.forEach(function (r) { if (!revCips(revDecisions(), r.label).length) revSetCips(r.label, [r.sug.code]); revSetValidated(r.label, true); }); renderReview(rows); };
       actions.appendChild(bulk);
     }
@@ -1418,7 +1425,7 @@
       bulkS.onclick = function () { unconfirmedSuggest.forEach(function (r) { revSetCips(r.label, [r.sug.code]); revSetValidated(r.label, true); }); renderReview(rows); };
       actions.appendChild(bulkS);
     }
-    if (actions.firstChild) tilesRow.appendChild(actions);
+    tilesRow.appendChild(actions);   // always (Expand is always present)
     revTilesHost.appendChild(tilesRow);   // sticky bar (college + subject pin above it); progress copy scrolls away below
     var progline = el("div", { class: "cipx-rev-progline" }, [counts.confirmed.toLocaleString() + " of " + rows.length.toLocaleString() + " confirmed",
       counts.peer ? el("span", { class: "cipx-rev-peercount", title: "Suggestions corroborated by a clear majority of peer colleges teaching the same course in the same discipline — the strongest signal." }, ["  ·  " + counts.peer.toLocaleString() + " peer-corroborated"]) : null]);
@@ -1430,14 +1437,9 @@
         "Confirming just fills in your starting point here in the browser — it's never final, every code stays editable, and nothing reaches COCI until your college enters it there.",
       ]));
     }
-    var shown = rows.filter(function (r) { return rev.filter === "all" || r.status === rev.filter; });
-    // Expand-all + CSV live in the top-right rail (under Theme), not a full-width row of their own.
+    // CSV lives in the top-right rail (Expand moved into the sticky tiles row above).
     if (revRailEl) {
       clear(revRailEl);
-      var anyClosed = shown.some(function (r) { return !revOpen[r.label]; });
-      var xall = el("button", { class: "cipx-rev-expand", type: "button" }, [anyClosed ? "⤢ Expand all" : "⤡ Collapse all"]);
-      xall.onclick = function () { shown.forEach(function (r) { revOpen[r.label] = anyClosed; }); renderReview(rows); };
-      revRailEl.appendChild(xall);
       var csv = el("button", { class: "cipx-rev-csv", type: "button", title: "Download this list as CSV" }, ["⬇ CSV"]);
       csv.onclick = function () { exportReviewCsv(rows, dec, ctx); };
       revRailEl.appendChild(csv);
@@ -1521,7 +1523,16 @@
       rm.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.stopPropagation(); e.preventDefault(); opts.onRemove(); } };
       chip.appendChild(rm);
     }
-    chip.onclick = function (e) { e.stopPropagation(); if (opts.onAccept) opts.onAccept(); };
+    chip.onclick = function (e) {
+      e.stopPropagation();   // a click on the chip never toggles the row's expand
+      // …but a click that landed on the ▾ change, the × remove, or the OPEN change-panel (all children
+      // of the chip) must NOT count as "use this code" — they have their own actions. This is the fix
+      // for Sam's recurring "clicking the dropdown OKs the CIP": the panel is a child of the chip, so a
+      // click in its search field bubbled here and fired onAccept. (Belt + suspenders with their own
+      // stopPropagation, in case a target resolves to the chip.)
+      if (e.target && e.target.closest && e.target.closest(".cipx-rev-chipchg, .cipx-rev-chiprm, .cipx-rev-chgpanel")) return;
+      if (opts.onAccept) opts.onAccept();
+    };
     chip.onkeydown = function (e) {
       if (e.key === "Escape") { closeP(); return; }
       if ((e.key === "Enter" || e.key === " ") && opts.onAccept) { e.stopPropagation(); e.preventDefault(); opts.onAccept(); }
@@ -2432,8 +2443,10 @@
       ".cipx-rev-chip-open{box-shadow:0 0 0 2px var(--cipx-accent);}",
       ".cipx-rev-chipt{font-size:.8rem;color:var(--cipx-text-soft);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
       ".cipx-rev-none{font-size:.8rem;color:var(--cipx-muted);font-style:italic;}",
-      // bigger hit-target so aiming for ▾ (change) doesn't land on the box body (= confirm) — CfC F8
-      ".cipx-rev-chipchg{align-self:stretch;display:inline-flex;align-items:center;font-size:.72rem;color:var(--cipx-muted);cursor:pointer;padding:2px 7px;margin:-4px -6px -4px 0;border-radius:5px;line-height:1;}",
+      // bigger hit-target so aiming for ▾ (change) doesn't land on the box body (= confirm) — CfC F8.
+      // Full chip height (align-self:stretch) + roomy padding, NO negative margins (those let the ▾
+      // overflow the chip and a click could resolve to the body → accept — Sam's ▾-OKs-the-CIP bug).
+      ".cipx-rev-chipchg{align-self:stretch;display:inline-flex;align-items:center;font-size:.72rem;color:var(--cipx-muted);cursor:pointer;padding:0 8px;border-radius:5px;line-height:1;}",
       ".cipx-rev-chipchg:hover{color:var(--cipx-accent);background:var(--cipx-accent-soft);}",
       ".cipx-rev-chiprm{align-self:center;font-size:.95rem;color:var(--cipx-muted);cursor:pointer;padding:0 4px;border-radius:5px;line-height:1;}",
       ".cipx-rev-chiprm:hover{color:var(--cipx-bad-stripe);background:var(--cipx-bad-bg);}",
@@ -2540,7 +2553,14 @@
         ".cipx-modebar{width:100%;}.cipx-modetab{flex:1;padding:8px 6px;font-size:.8rem;text-align:center;}" +
         ".cipx-rec-row{grid-template-columns:13px 58px 1fr;gap:8px;}.cipx-rec-meta{grid-column:2/-1;flex-direction:row;align-items:center;min-width:0;margin-top:4px;}.cipx-rec-row-flat{grid-template-columns:13px 58px 1fr;}" +
         ".cipx-rec-card .cipx-detail{padding-left:14px;}" +
-        ".cipx-rev-deptinline{flex:1 1 100%;}.cipx-rev-deptsel{max-width:100%;flex:1 1 auto;}.cipx-rev-tiles{gap:6px;}.cipx-rev-tile{padding:6px 10px;min-width:60px;}" +
+        ".cipx-rev-deptinline{flex:1 1 100%;}.cipx-rev-deptsel{max-width:100%;flex:1 1 auto;}" +
+        // phone: all count tiles share ONE row (equal widths, no wrap) + drop the COCI "In Development"
+        // badge so it's the same 2-line height as the others (Sam, 2026-07-20 — save real estate).
+        ".cipx-rev-tiles{gap:5px;flex:1 1 100%;flex-wrap:nowrap;}.cipx-rev-tile{flex:1 1 0;min-width:0;padding:6px 4px;}" +
+        ".cipx-rev-tilen{font-size:1rem;}.cipx-rev-tilel{font-size:.6rem;letter-spacing:0;}.cipx-rev-tilesoon{display:none;}" +
+        // Expand + Confirm share ONE row (Sam, 2026-07-20): a nowrap flex — Expand keeps its natural
+        // width, the bulk button(s) flex to fill (shortened label helps it fit).
+        ".cipx-rev-actions{flex:1 1 100%;flex-wrap:nowrap;gap:6px;margin:4px 0 0;}.cipx-rev-actions .cipx-rev-expand{flex:0 0 auto;}.cipx-rev-bulk{flex:1 1 auto;min-width:0;font-size:.74rem;padding:8px 8px;}" +
         ".cipx-rev-row{grid-template-columns:14px 1fr auto;gap:6px 8px;}.cipx-rev-stat{grid-column:3;grid-row:1;}.cipx-rev-tocipwrap{grid-column:1/-1;grid-row:2;margin-top:4px;}.cipx-rev-tocip{grid-template-columns:auto auto minmax(0,1fr);}" +
         ".cipx-rev-cand{grid-template-columns:64px 1fr auto;}.cipx-rev-candrel{grid-column:1/-1;margin-top:3px;}.cipx-rev-csv{margin-left:0;}.cipx-rev-detail{padding-left:12px;}.cipx-rev-chgpanel{min-width:220px;max-width:80vw;}" +
         ".cipx-rev-whyline{padding-left:22px;}" +
