@@ -1484,3 +1484,50 @@ The rest of the Claude-for-Chrome list — no doctrine calls, verified before fi
 `cpl_todos.json` + the numbered handoff untouched. **CfC list now fully triaged** — F1–F5 (batch 1,
 the veto) + F6–F10 (this batch) shipped; F11 (mobile sticky height) is the one measure-and-trim
 follow-up left.
+
+### 2026-07-20 (SkyCIP) — mobile polish: Expand into the sticky row + tiles on one line (Sam, live phone test)
+
+Sam hammered CIP Coder on his phone (Allan Hancock · AG), reported the suggestions "clean baby" and
+the UI great, and asked for two mobile real-estate tweaks (the F11 lane):
+
+- **Expand moved into the sticky tiles row.** It lived in the top-right utility rail (which scrolls
+  away on phones), so Expand/Collapse-all wasn't reachable mid-scroll. Now built into
+  `.cipx-rev-actions` inside the sticky `revTilesHost` (next to Confirm-all); only **CSV** stays in the
+  rail. Reachable while scrolling on every viewport.
+- **All four count tiles on one row (phone).** The COCI Sync'd tile wrapped to a 2nd row (its "In
+  Development" badge made it taller + wider). Mobile CSS now: `.cipx-rev-tiles{flex-wrap:nowrap;flex:1
+  1 100%}` + `.cipx-rev-tile{flex:1 1 0;min-width:0}` (four equal tiles fill the row), smaller tile
+  fonts, and `.cipx-rev-tilesoon{display:none}` on phones so COCI Sync'd is the same 2-line height as
+  the others (the dashed border still signals "not live"). Verified at 390px: 1 tile row, badge hidden,
+  Expand in the sticky row, 0 overflow / 0 errors.
+
+**Real-estate note (F11 lever still open):** the pinned sticky stack on a 390×820 phone is ~**287px**
+(college bar ~134 + tiles host ~153) ≈ 35% of the screen. The tiles change trimmed a row; the biggest
+remaining lever is the **college bar** (its "Your college"/"Subject" labels stack above full-width
+dropdowns → ~4 lines). Trimming/inlining those labels on mobile is the next real-estate save if Sam
+wants it — flagged, not done unprompted (it's the shared bar across all modes). CfC list: F1–F10
+shipped; F11 partially addressed here.
+
+### 2026-07-20 (SkyCIP) — the ▾-OKs-the-CIP bug (recurring) + Expand/Confirm one row + shorter label
+
+Live phone testing (Riverside · AUT), same session:
+
+- **The recurring "clicking the dropdown OKs the CIP" bug — root-caused and killed.** The change
+  panel (`openP`) is appended as a **child of the chip**, and the chip's `onclick` = `onAccept`. So
+  after ▾ opened the panel, clicking into its search field to type a keyword **bubbled up to the chip
+  and confirmed the code**. Fix in `cipBox`: the chip's onclick now `stopPropagation()`s (still no row
+  toggle) **and returns early when the click's target is inside `.cipx-rev-chipchg`, `.cipx-rev-chiprm`,
+  or `.cipx-rev-chgpanel`** — those affordances own their clicks; the chip body alone means "use this
+  code." Belt + suspenders with their existing stopPropagation. Also **de-risked the F8 ▾ hit-target**:
+  dropped the negative margins (they let the ▾ overflow the chip so a click could resolve to the body →
+  accept); now `align-self:stretch` + padding gives a big target within bounds. Real-Chromium on
+  Riverside AUT 5: ▾ opens the panel, click+type "account" → panel stays open, **nothing confirmed**
+  (both stores empty). Committed jsdom guard: clicking inside the open panel persists no decision.
+- **Expand + Confirm on one row (mobile)** — `.cipx-rev-actions` on phones is now a `flex-wrap:nowrap`
+  row (Expand `flex:0 0 auto`, the bulk button flexes) so they sit side by side instead of stacking.
+- **Shorter Confirm label** (Sam): "✓ Confirm all 11 ready matches in AG" → **"✓ Confirm all 11 AG
+  matches"** (drops "ready"/"in", folds the subject in) — reads cleaner and helps the one-row fit.
+
+Tests → **234**. Lesson worth keeping: **a popover that's a DOM child of a clickable element inherits
+that element's click handler** — either stop propagation on the popover or gate the parent handler by
+target (done here); this bug recurs because the panel-in-chip structure invites it.
