@@ -1558,3 +1558,58 @@ Two items late in the session:
      all×all (risky on mobile).
   **Unambiguous parts I can ship regardless of his pick:** make the CSV button always visible on tab open,
   and add the "All colleges" dropdown option. The scope/architecture (live vs precomputed) is the open call.
+
+### 2026-07-20 (SkyQB) — the discipline-fit confidence lift (carpentry read 8% → ~60%) (#860)
+
+Sam's steer: a screenshot of American River College's **CARPT** catalog — every course on
+`TOP 0952.10 → 46.0201 Carpentry/Carpenter` reading **7–9% confidence**. *"I would expect carpentry
+courses and carpentry CIPs to have higher than 8% … cure it without hurting our other considerations."*
+
+**Root cause (found with the `vm`-context kb diagnostic on the real ARC CARPT rows — the tightest loop):**
+the displayed confidence (`confOf`) only measures how well a **single course's own title + description**
+overlaps the CIP's *definition*. Carpentry is a coherent vocational program whose courses are *specialized
+slices* — "Rigging", "Welding II", "Structural Framing", "CAD Basics for Mill Cabinetry" — and none of them
+individually overlap the *generic* "Carpentry/Carpenter" definition, so each reads a misleading single
+digit. Yet `rel` was **95–100%** (it *is* the crosswalk winner) and the whole discipline maps 1:1 to the
+CIP. The score was answering *"do this course's exact words appear in the CIP definition?"* when the
+faculty's real question is *"how sure are we 46.0201 is right for this course?"* — and the discipline
+clearly maps there.
+
+**The cure — a discipline-fit lift on the DISPLAYED confidence (`dconf`).** In `computeRecommend`, per
+crosswalk candidate, `fieldSim(r)` = the IDF-weighted overlap of the course's **TOP title** with the
+**CIP's title** (`topTtToks`, generic-stripped like the course-title match; constant across the TOP →
+lifts every course in a clean-mapping discipline uniformly). Then
+`dconfOf(o) = round(100·min(0.95, raw + DISC_W·fieldSim·(1−raw)))` with `DISC_W = 0.60` — a big lift when
+the course's own wording is thin but its discipline maps cleanly, a small lift when raw is already high,
+capped below a false-certain 100%. Stored as `rec.dconf`; the two DISPLAY sites (`recCandCard` in
+recommend mode, the review-expand `candRow`) read `dconf ?? conf ?? rel`.
+
+**Numbers (real ARC data):** CARPT 8% → **60–73%** (Plausible amber, *not* a false green "Strong" — honest
+to the de-inflation doctrine); ACCT 44→78, MATH 7→63, WELD-clean 46→78. **Self-limiting:** disciplines
+whose TOP title doesn't match a CIP title get **no lift** — ART `1012.00` (14→14), ENGWR (63→63). The lift
+is exactly proportional to how cleanly the field maps.
+
+**Why it doesn't hurt the other considerations (the crux of Sam's ask):**
+- **DISPLAY-ONLY.** Every *gate* keeps the raw description-fit `conf`: the Ready/Review split
+  (`recommended`, relative-score gated), the strong-own-fit veto (`ownBest`/`peerConf`, verified still
+  firing on ART 300 / ADMJ 300), the outside-crosswalk mis-code ⚑ flag (`bestCandConf`/`beyond`, raw), and
+  `sugConf`. **Status is provably unchanged** → the precomputed `cip_status_counts.json` baseline does NOT
+  move (it reads `r.status`, not conf) → no regeneration needed. Beyond (outside-crosswalk) cands are never
+  lifted, which *reinforces* the crosswalk-primary contrast (the in-field CIP reads 60%, an outside lexical
+  match reads its honest low %).
+- **§7-clean.** The TOP↔CIP crosswalk is the one place TOP is authoritative by repo doctrine; `fieldSim`
+  reads only that pairing's *own* quality (TOP-title ↔ CIP-title). It never infers discipline from TOP for
+  any gate — the two-signals-agree posture, applied to the display.
+
+**Seams / constants:** `DISC_W` (top of the file, next to `OWN_FIT_MIN`/`OWN_VETO_MARGIN`); `fieldSim` +
+`dconfOf` + `topTtToks` inside `computeRecommend`; `rec.dconf` on each crosswalk cand. Tests **235 → 243**
+(+8 guarding: cands carry `dconf`; a title-matching CIP is lifted while a non-matching one isn't; `dconf`
+never exceeds 95 nor drops below raw `conf`; the lift doesn't fabricate a `recommended`). Full suite 166
+green; real-Chromium ARC/CARPT verified (desktop light+dark 0 overflow / 0 JS errors; the phone's 50px
+overflow is a pre-existing `cipx-rev-ctitle` issue, unrelated).
+
+**Method note that paid off:** the `vm` diagnostic dumping `conf`/`rel`/`coverage`/`matched` per candidate
+for the curator's *own* courses (here ARC CARPT) is the same tight calibration loop SkyCoco/SkyCIP used —
+before/after numbers are the real rendered values on Sam's data, so "8% → 60%" is concrete, not "should be
+fixed." And the display-vs-gate separation is the reusable pattern: when a number reads wrong but the
+classification is right, lift the DISPLAY and leave every gate on the raw signal.

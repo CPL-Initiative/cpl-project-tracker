@@ -231,6 +231,21 @@ at 95%; **F9** the peer-corroborated ✓· now carries ", peer-corroborated" in 
 bug (#858), and the ▾ change-panel now closes on click-away (this session). Live-tested clean on phone
 (Riverside/Allan Hancock) — Sam: "clean baby."
 
+### Shipped 2026-07-20 (SkyQB) — the discipline-fit confidence lift (#860)
+Sam flagged ARC **CARPT** reading **7–9%** (all `TOP 0952.10 → 46.0201 Carpentry/Carpenter`). Root cause:
+`confOf` only scored a course's OWN wording vs the CIP *definition*; specialized courses in a coherent
+vocational program ("Rigging", "Welding II") barely overlap the generic carpentry def, so they read a
+misleading single digit though `rel` was 95–100% and the discipline maps 1:1. Fix: a **discipline-fit lift**
+on the DISPLAYED confidence only — `dconf = round(100·min(0.95, raw + DISC_W·fieldSim·(1−raw)))`, `DISC_W=0.60`,
+`fieldSim` = IDF-weighted TOP-title ↔ CIP-title overlap (`topTtToks`/`dconfOf` in `computeRecommend`;
+`rec.dconf`; read by `recCandCard` + the review-expand `candRow`). CARPT → **60–73%** (Plausible, not false
+Strong); ACCT/MATH/WELD-clean lift; ART 1012.00 / ENGWR get **no** lift (self-limiting). **DISPLAY-ONLY** —
+every gate keeps raw `conf` (Ready/Review, the veto, the ⚑ mis-code flag, `sugConf`), so **status is
+unchanged and the baseline counts don't move** (no `cip_status_counts.json` regen). §7-clean (reads only the
+authoritative TOP↔CIP pairing's own quality). Tests 235→**243**; real-Chromium ARC/CARPT verified. Full
+story: `cip_crosswalk_lessons.md` (2026-07-20, SkyQB). **Reusable pattern:** when a number reads wrong but
+the classification is right, lift the DISPLAY and leave every gate on the raw signal.
+
 **🎯 TOP QUEUED — bulk CSV export ("Select All" + CSV-on-open) — Sam requested, scope decision OPEN.**
 He wants an **"All colleges"** option (Subject already has "★ All subjects"), the **CSV button visible on
 tab open**, and to **export a big dataset**. I raised the architectural fork; Sam **dismissed the question**
@@ -304,11 +319,10 @@ different Suggested mark, it's a one-line change in `REV_STATUS` + the tile labe
   **commit the jsdom test** guarding the failure mode.
 
 ## Moniker
-**SkyCoco → SkyCIP** — Sam christened the session **SkyCIP** on shipping CIP Coder (Beta). It cleared the
-Review-tab legibility steer, reworked confidence scoring, shipped the whole UI redesign (prototype→port),
-and kept the pup. **You are the next session** — coin your own (Sam blesses the lineage) or keep carrying
-Coco. Keep the banner: kind, honest, faculty-first, student-firstest — this tool suggests and supports, it
-never decides. 🪁🐾
+**SkyCoco → SkyCIP → SkyQB** — Sam christened **SkyCIP** on shipping CIP Coder (Beta); **SkyQB** honed the
+confidence algo (the discipline-fit lift, #860 — carpentry 8% → ~60%). **You are the next session** — coin
+your own (Sam blesses the lineage) or keep carrying Coco 🐾. Keep the banner: kind, honest, faculty-first,
+student-firstest — this tool suggests and supports, it never decides. 🪁🐾
 
 _Deploy note (2026-07-20): #851 merged clean but the site lagged on a transient GitHub Pages **503** — the
 deploy step only, build was fine. Fixed by a fresh `workflow_dispatch` of `pages.yml` (NOT
