@@ -243,6 +243,15 @@
   var SUG_STRONG = 70;              // a suggestion at/above this confidence is a strong pick — not overridden by the dept-default
   var OWN_FIT_MIN = 40;            // a course's own description/title fit must be at least this plausible to veto (Sam, 2026-07-20)…
   var OWN_VETO_MARGIN = 30;        // …and beat the peer-consensus pick's own fit by this much → it VETOES the peer override (the peer pick is a near-zero fit)
+  // Discipline-fit lift (Sam, 2026-07-20). The DISPLAYED confidence of a crosswalk candidate also reflects
+  // how cleanly the course's discipline maps to that CIP — measured as the TOP-title ↔ CIP-title overlap.
+  // A specialized course in a discipline that maps 1:1 to its CIP (Carpentry TOP 0952.10 → 46.0201
+  // Carpentry/Carpenter) is confidently in-field even when its own wording (Rigging, Welding II, CNC)
+  // barely overlaps the generic CIP definition — so it should not read a misleading 8%. §7-clean: the
+  // TOP↔CIP crosswalk is the ONE place TOP is authoritative (repo doctrine), and this reads that
+  // pairing's OWN quality; it lifts only the DISPLAY (`dconf`), never a gate (Ready/Review, the veto,
+  // the outside-crosswalk mis-code flag, the baseline counts all keep the raw description-fit `conf`).
+  var DISC_W = 0.60;               // weight of the discipline-fit lift on the displayed confidence
   function scoreAgainst(query) {
     var qt = fitTokens(query);
     if (!qt.length) return { ranked: [], max: 0, margin: 0, toks: 0 };
@@ -827,6 +836,18 @@
     // capped below 100 (Sam: nothing should read a false-certain 100%); a full title match alone = 80%.
     function confOf(o) { return Math.round(100 * Math.min(0.95, CONF_TITLE_W * (titleHit(o.r) / ctTotal) + CONF_COV_W * (o.coverage || 0))); }
     var tc = TOPCIP[top] || null, inSet = {};
+    // Discipline-fit: how cleanly this course's TOP (its discipline) maps to a candidate CIP's field,
+    // as the IDF-weighted overlap of the TOP's title with the CIP's TITLE. Constant across the TOP, so
+    // it lifts EVERY course in a clean-mapping discipline uniformly (the Carpentry case). Display-only.
+    var topTtToks = tc ? fitTokens(tc.t || "").filter(function (t) { return !_titleStop[t]; }) : [];
+    if (tc && !topTtToks.length) topTtToks = fitTokens(tc.t || "");   // fall back if the strip left nothing
+    var topTtTotal = 0; for (var tt = 0; tt < topTtToks.length; tt++) topTtTotal += idf(topTtToks[tt]);
+    if (topTtTotal <= 0) topTtTotal = 1;
+    function fieldSim(r) { var h = 0; for (var i = 0; i < topTtToks.length; i++) if (r._tt && r._tt[topTtToks[i]]) h += idf(topTtToks[i]); return h / topTtTotal; }
+    // The DISPLAYED confidence: the raw description/title fit lifted toward certainty by the discipline
+    // fit. raw + DISC_W·fieldSim·(1−raw) — a big lift when the course's own wording is thin but its
+    // discipline maps cleanly, a small lift when raw is already high. Gates keep raw `conf`.
+    function dconfOf(o) { var raw = (o.conf || 0) / 100; return Math.round(100 * Math.min(0.95, raw + DISC_W * fieldSim(o.r) * (1 - raw))); }
     var cands = [], boiler = [];
     if (tc) {
       tc.c.forEach(function (ct) {
@@ -834,7 +855,7 @@
         inSet[ct[0]] = 1;
         var e = byCode[ct[0]];
         var rec = { r: r, prov: ct[1], rel: e ? e.rel : 0, score: e ? e.score : 0, coverage: e ? e.coverage : 0, matched: e ? e.matched : [] };
-        rec.boosted = boosted(rec); rec.conf = confOf(rec);
+        rec.boosted = boosted(rec); rec.conf = confOf(rec); rec.dconf = dconfOf(rec);
         (BOILER[ct[0]] ? boiler : cands).push(rec);
       });
       // Credit-first (a Noncredit CIP must not out-rank a credit one), then TITLE-BOOSTED description-fit,
@@ -876,8 +897,9 @@
   // One candidate card: code, title, category, an honest tier + vocab-match meter,
   // the matched terms (the trust lever), provenance, and an expand to its definition.
   function recCandCard(rec, isRec, flat) {
-    // crosswalk candidates carry `conf` (crosswalk-relative); beyond/other entries only rel
-    var pct = rec.conf != null ? rec.conf : rec.rel;
+    // crosswalk candidates carry `dconf` (description-fit lifted by discipline-fit) then `conf`;
+    // beyond/other entries only rel
+    var pct = rec.dconf != null ? rec.dconf : (rec.conf != null ? rec.conf : rec.rel);
     var tier = tierOf(pct), r = rec.r, prov = provLabel(rec.prov);
     var caret = el("span", { class: "cipx-caret" }, ["▸"]);
     var main = el("span", { class: "cipx-rec-main" }, [
@@ -1979,7 +2001,7 @@
     if (!opts.length) box.appendChild(el("div", { class: "cipx-fitmsg" }, [r.m.thin ? "Too little catalog description to suggest a code — search all codes below." : "No crosswalk match — search all codes below."]));
     opts.slice(0, 6).forEach(function (o) {
       var extraTag = (fromCrosswalk && r.top) ? el("span", { class: "cipx-rev-candtop", title: "The official crosswalk maps this CIP from the course's TOP " + r.top }, ["← TOP ", r.top]) : null;
-      box.appendChild(candRow(o.r, (o.conf != null ? o.conf : (o.rel || 0)), extraTag, null, o.matched));
+      box.appendChild(candRow(o.r, (o.dconf != null ? o.dconf : (o.conf != null ? o.conf : (o.rel || 0))), extraTag, null, o.matched));
     });
 
     // 3) stronger description matches OUTSIDE the crosswalk (the lexical signal, weakest) — filtered to
