@@ -560,6 +560,32 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### SkyCIP side-lane — CIP Coder (Beta): the Review-tab UI redesign (2026-07-20, #850/#851 MERGED)
+
+Sam co-designed the Review-tab look in a fast-feedback artifact
+([final](https://claude.ai/code/artifact/4369b106-abe8-4149-abf6-571d325bf508)),
+locked it ("obsessed with this new version"), then "get this into prod." Two merges:
+**#850** the confidence-scoring rework (a title-match signal makes the same-title CIP
+win its TOP; de-inflated ABSOLUTE confidence — obvious pick 80%, capped 95; crosswalk
+stays primary, outside match a "worth a look" hint) and **#851 — the UI redesign PORT**:
+the tool is now titled **"CIP Coder (Beta)"** (eyebrow +Academic Affairs, trimmed intro).
+**Sticky College + Subject + count-tiles** — the college bar pins `top:0`; the tiles ride
+their OWN list-sibling host (NOT the short summary host, or a sticky element unsticks the
+moment its parent scrolls past) pinned at the college bar's **measured** height
+(`syncStickyOffsets`, rAF+resize) → switch subjects/colleges without scrolling up. **White
+row gutters over a faint list field** (`--cipx-row-sep`/`--cipx-rev-field`) so each inline
+"why" note brackets with the course above; **expanded course = a "package"** (accent spine +
+framed top + tint); a non-functional **"COCI Sync'd" destination tile** (dashed, count 0,
+"In Development") so the tiles read as the pipeline **All → Review → Ready → COCI Sync'd**;
+glyph-free mode tabs; Department → **Subject**; tiles centered; Manual tile hidden at 0.
+226 CIP jsdom assertions / 166 files; real-Chromium Chaffey BIOL (light/dark/phone, 0
+overflow/0 errors). **Held for a follow-up:** the prototype's %-in-box (the real `cipBox`
+has more states). A post-merge GitHub Pages **503 outage** (not the code) left the site
+stale — fixed by a fresh `workflow_dispatch` of `pages.yml` (NOT `rerun_failed_jobs`, which
+duplicates the `github-pages` artifact → "Multiple artifacts" error; new playbook +
+Troubleshooting entry). Full story: `docs/cip_crosswalk_lessons.md` ·
+`docs/cip_crosswalk_handoff.md`. Side-lane — left `cpl_todos.json` + the numbered handoff untouched.
+
 ### StarBoard side-lane — dethroning TOP: from gatekeeper to last-in-line signal (2026-07-16, #799/#800 MERGED)
 
 Sam: *"unburden our schema from the tyranny of TOP … it should not be used for
@@ -839,6 +865,18 @@ Handoff: `docs/session_116_handoff.md`.
 2. Check `live_metrics.json` → `scraped_at` timestamp
 3. Check if commit was pushed (`git log origin/main -5`)
 4. If browser shows stale content, hard-refresh (Ctrl/Cmd+Shift+R)
+
+### Pages deploy failed / site still stale after a merge
+1. The merge landed on `main` but Pages didn't publish → check the **"Deploy
+   Pages (lean)"** (`pages.yml`) run for that commit (Actions tab).
+2. A transient Pages **503** (`No server is currently available` / `is
+   githubstatus.com reporting a Pages outage`) fails ONLY the final deploy step —
+   the lean-site assembly + served-path assertion passed, so the build is fine.
+3. Fix = re-deploy by **dispatching a FRESH run**:
+   `mcp__github__actions_run_trigger run_workflow pages.yml ref main`. Do **NOT**
+   `rerun_failed_jobs` — re-running the job re-runs the upload step, leaving TWO
+   `github-pages` artifacts → `deploy-pages` fails with *"Multiple artifacts named
+   github-pages"*. Playbook: [`docs/kb-notes/playbook-github-pages-manual-redeploy.md`](docs/kb-notes/playbook-github-pages-manual-redeploy.md).
 
 ### Scrape returning errors
 1. Test: `https://cpl-proxy.slee-548.workers.dev/scrape?secret=CPL_SCRAPE_2026`

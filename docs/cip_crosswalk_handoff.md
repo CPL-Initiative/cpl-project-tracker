@@ -264,6 +264,13 @@ different Suggested mark, it's a one-line change in `REV_STATUS` + the tile labe
   **commit the jsdom test** guarding the failure mode.
 
 ## Moniker
-SkyCoco cleared the Review-tab legibility steer and keeps the pup. **You are the next session** — coin your
-own (Sam blesses the lineage) or keep carrying Coco. Keep the banner: kind, honest, faculty-first,
-student-firstest — this tool suggests and supports, it never decides. 🪁🐾
+**SkyCoco → SkyCIP** — Sam christened the session **SkyCIP** on shipping CIP Coder (Beta). It cleared the
+Review-tab legibility steer, reworked confidence scoring, shipped the whole UI redesign (prototype→port),
+and kept the pup. **You are the next session** — coin your own (Sam blesses the lineage) or keep carrying
+Coco. Keep the banner: kind, honest, faculty-first, student-firstest — this tool suggests and supports, it
+never decides. 🪁🐾
+
+_Deploy note (2026-07-20): #851 merged clean but the site lagged on a transient GitHub Pages **503** — the
+deploy step only, build was fine. Fixed by a fresh `workflow_dispatch` of `pages.yml` (NOT
+`rerun_failed_jobs` — that dupes the `github-pages` artifact). If a merge ever looks live-but-stale, check
+the "Deploy Pages (lean)" run first: `docs/kb-notes/playbook-github-pages-manual-redeploy.md`._
