@@ -1343,3 +1343,55 @@ already fixed by #849 (family guardrail); confirmed by reproducing on the curren
 non-bug. UI batch (relocate baseline line, Subject rename, centered tiles, consolidated text, a compact sticky
 header) is queued to **prototype-then-port**; the college glyph delete rode along in this PR. Side-lane
 discipline honored: `kb/cpl_todos.json` + the numbered session handoff untouched.
+
+### 2026-07-20 (SkyCoco) — the Review-tab UI redesign: prototype → port (#TBD)
+
+Sam co-designed the whole Review-tab look in a **fast-feedback Claude artifact** (the
+`prototype-then-port` practice) across ~8 tight iterations, locked it ("obsessed with this new
+version"), then said "get this into prod." Ported into `cip_crosswalk.js`; verified with the jsdom
+suite (226 CIP assertions, 166 files) + a real-Chromium pass on Chaffey BIOL (light/dark/phone,
+0 overflow, 0 console errors). What shipped:
+
+- **Sticky College + Subject + count-tiles bar.** The shared `.cipx-collegebar` pins `top:0`; the
+  tiles ride in their OWN host (`.cipx-rev-tileshost`, sibling of the list — NOT the short summary
+  host, so a sticky element's parent is tall enough to keep it stuck through the whole list) and pin
+  flush beneath it at `top:var(--cipx-cbh)`. `--cipx-cbh` = the college bar's **measured** height,
+  published on `wrapEl` by `syncStickyOffsets()` (rAF after `rebuildShell` + on resize; jsdom's
+  layout-less height 0 is guarded → CSS fallback). Verified: desktop tiles pin at 56 = college-bar
+  height. Lets a curriculum specialist zip through **subjects** — and a CO reviewer through
+  **colleges** — without scrolling up (Sam's exact ask). The dashboard is body-scroll with a
+  **non-sticky masthead**, so `position:sticky;top:0` pins cleanly to the viewport (confirmed by
+  reading `index.html`: `.cpl-layout` grid, `.cpl-main` no overflow, only `.filter-bar`/sidebar are
+  sticky and neither is on this tab).
+- **White row gutters + a subtle list field.** The prototype's white gutter popped because its rows
+  sat on a bluish field; prod rows sit on cream (`--paper #F4F2ED`) where white would wash out — so
+  the list got a faint cool-gray field (`--cipx-rev-field`) and the item separator became
+  `2px var(--cipx-row-sep)` (**white** light / **slate** dark). Reproduces the prototype look:
+  each brown "why" note now clearly brackets with the course **above** it.
+- **Expanded course = one "package."** `paint()` toggles `.cipx-rev-item-open` → accent spine
+  (`inset 3px` shadow) + framed top edge + tint bind the row to its detail, walling it off from
+  neighbors.
+- **"COCI Sync'd" destination tile** — a non-functional preview (dashed, muted, count 0, an "In
+  Development" badge, non-clickable DIV) appended to both the per-subject tiles and the college
+  overview, so the tiles read as the full pipeline **All → Review → Ready → COCI Sync'd**. Signals
+  the coming Tech-Center sync without overpromising.
+- **Header + copy.** Title **"CIP Coder"** + a `.cipx-beta` badge; eyebrow gains **Academic Affairs**;
+  intro trimmed to *"A simplified process supporting the Fall 2026 TOP → CIP transition… soon, sync
+  your settled codes straight to COCI."* (Sam picked "transition" over "switch".)
+- **Smaller locks:** mode-tab **glyphs deleted** (labels only; `MODE_ICON` removed, `svgIcon` kept
+  for the peer-consensus/work-experience leads), **Department → Subject** rename (picker label +
+  nudges + "★ All subjects"; peer-consensus prose about *colleges'* departments left intact —
+  different meaning), **tile contents centered**, **Subject dropdown widened**, **Manual tile hidden
+  when 0** (both tile rows).
+
+**Held back for a follow-up (flagged to Sam):** the prototype's **confidence % inside the box**.
+The real box (`cipBox`) has more states than the prototype's (two-box "Suggested" layout, multi-CIP
+stacks) and deliberately keeps confidence in the expanded candidate meters; jamming a % into every
+box risks clutter + fights the "clean one-liner" Ready row. Easy to add as a scoped follow-up if Sam
+wants it. Prototype artifact: `https://claude.ai/code/artifact/4369b106-abe8-4149-abf6-571d325bf508`.
+
+**Method note that keeps paying:** before committing to the sticky design, I read the *dashboard's*
+scroll model (not just the tab) — the sticky-parent gotcha (a sticky element unsticks when its
+short parent scrolls past) is exactly why the tiles needed their own list-sibling host, not the
+summary host. Side-lane discipline honored: `kb/cpl_todos.json` + the numbered session handoff
+untouched.

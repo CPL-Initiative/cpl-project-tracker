@@ -1,6 +1,6 @@
 ---
 title: "CIP workstream handoff → next session"
-date: 2026-07-18
+date: 2026-07-20
 tags: [handoff, cip, cobi, review-triage, progress-dashboard, baseline-counts, access-control, top-cip, wcag, side-lane]
 artifacts:
   - cip_crosswalk.js
@@ -22,9 +22,12 @@ related:
 You inherit the **CIP side-lane** of COBI and **Coco the pup** 🐾. SkyEasy built the whole-catalog
 consensus pre-fill + the two-box "Suggested change" redesign; **SkyCoco** cleared Sam's 4-item
 Review-tab legibility steer (#842), added the program-coherence default + Cañada fix (#843), co-designed
-inline multi-CIP (#844), and opened the **progress-dashboard workstream** with **Phase A baseline status
-counts** (#846). Carry the **banner of kindness** Sam named: this tool *suggests and supports*, it never
-decides. Faculty lean into it, not brace against it.
+inline multi-CIP (#844), opened the **progress-dashboard workstream** with **Phase A baseline status
+counts** (#846), reworked confidence scoring (title-match + de-inflation), and — the big one — **renamed the
+tool "CIP Coder (Beta)" and shipped the full Review-tab UI redesign** (sticky College+Subject+tiles, white
+row gutters, expanded-course "package," the "COCI Sync'd" destination tile) via prototype→port. Carry the
+**banner of kindness** Sam named: this tool *suggests and supports*, it never decides. Faculty lean into it,
+not brace against it.
 
 **Side-lane discipline (honor it):** this workstream does **NOT** touch `kb/cpl_todos.json` or the
 numbered `docs/session_<N>_handoff.md` — those are the CCR curation mainline's memory. Your memory lives
@@ -164,12 +167,32 @@ BIOL 2/3/10/42L/63/98C before touching code:
   shift — Ready down / Review up one notch — flagged to Sam).
 - **College glyph deleted** (Sam) — the institution icon by "Your college".
 Constants: `TITLE_BOOST` / `CONF_TITLE_W` / `CONF_COV_W` / `BEYOND_CONF_MIN` (top of the file, next to `COV_K`).
-**Still queued — the UI batch** (Sam, prototype-then-port): relocate the statewide line under the intro, rename
-Department→**Subject**, widen the Subject dropdown, center the tile contents, tuck the "N confirmed / never final"
-text beside the tiles, and a **compact sticky header** (a slim `College · Subject · N?/N✓` strip on scroll, not
-the whole header — mobile-safe). Plus the earlier box-interaction items (change ≠ confirm; click ✓ to undo;
-Select + % on the headline box). **Method:** the `vm` diagnostic dumping cands (conf/boosted/score)+beyond for the
-curator's own courses is the tightest calibration loop — every constant tuned against real rankings, not guessed.
+
+### Shipped 2026-07-20 (SkyCoco) — the Review-tab UI redesign (prototype → port)
+Sam co-designed the whole look in a fast-feedback artifact
+([final](https://claude.ai/code/artifact/4369b106-abe8-4149-abf6-571d325bf508)), locked it, and said "get
+this into prod." Ported into `cip_crosswalk.js`; jsdom **226** CIP assertions / 166 files + real-Chromium
+(Chaffey BIOL, light/dark/phone, 0 overflow / 0 errors):
+- **Sticky College + Subject + count-tiles.** `.cipx-collegebar` pins `top:0`; the tiles ride in their own
+  list-sibling host `.cipx-rev-tileshost` (NOT the short summary host — a sticky element unsticks when its
+  parent scrolls past) pinned at `top:var(--cipx-cbh)` = the college bar's **measured** height
+  (`syncStickyOffsets()`, rAF+resize; jsdom height-0 guarded). Switch subjects/colleges without scrolling up.
+  Prod is body-scroll + non-sticky masthead → `sticky;top:0` pins to the viewport (verified in `index.html`).
+- **White row gutters + faint list field** (`--cipx-row-sep` white/slate, `--cipx-rev-field`) — the prototype's
+  white gutter washed out on cream, so the list got a subtle field to make it pop; each brown note now brackets
+  with the course **above**. **Expanded course = "package"** (`.cipx-rev-item-open`: accent spine + framed top + tint).
+- **"COCI Sync'd" destination tile** — non-functional preview (dashed, count 0, "In Development") on both tile
+  rows, so tiles read as the pipeline **All → Review → Ready → COCI Sync'd**.
+- **Header:** title **"CIP Coder"** + `.cipx-beta` badge; eyebrow gains **Academic Affairs**; intro trimmed to
+  "A simplified process supporting the Fall 2026 TOP → CIP transition… soon, sync your settled codes straight to
+  COCI." Mode-tab **glyphs removed**; **Department → Subject**; tiles centered; Subject dropdown widened; **Manual
+  tile hidden when 0**.
+- **Held for a scoped follow-up (flagged to Sam):** the prototype's **% inside the box** — the real `cipBox` has
+  more states (two-box Suggested, multi-CIP stacks) and keeps confidence in the expanded meters; adding it risks
+  clutter. Easy add if Sam wants it.
+
+**Method:** the `vm` diagnostic dumping cands (conf/boosted/score)+beyond for the curator's own courses is the
+tightest calibration loop; and read the *dashboard's* scroll model (not just the tab) before committing to sticky.
 
 **Data.** `kb/_build_cip_crosswalk.py` → `cip_crosswalk_data.js` (`window.CIP_CROSSWALK`, committed, no
 cron): `topcip[<TOP>]={t,c:[[cip,tier]]}` + `boiler[]` + the lean `{fams, rows}` reference. Per-college

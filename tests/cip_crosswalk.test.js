@@ -187,7 +187,8 @@ function fresh(withCollege) {
 
   const root = document.getElementById("cip-crosswalk-root");
   check("renders the .cipx container", root && root.querySelector(".cipx"));
-  check("renders the 'CIP Code Taxonomy' header", root && /CIP Code Taxonomy/.test(root.querySelector(".cipx-h2").textContent));
+  check("renders the 'CIP Coder' header with a Beta badge", root && /CIP Coder/.test(root.querySelector(".cipx-h2").textContent) && !!root.querySelector(".cipx-h2 .cipx-beta"));
+  check("eyebrow names Academic Affairs", root && /Academic Affairs/.test(root.querySelector(".cipx-eyebrow").textContent));
   check("renders the theme toggle", root && root.querySelector(".cipx-themetog"));
   check("renders the search box", root && root.querySelector(".cipx-panel #cipx-q"));
   check("renders 5 category pills", root && root.querySelectorAll(".cipx-pills .cipx-pill").length === 5);
@@ -546,7 +547,7 @@ function fresh(withCollege) {
   check("Review is the FIRST mode tab (Sam's point 3)", /Review my catalog/.test(revdoc.querySelectorAll(".cipx-modebar .cipx-modetab")[0].textContent));
   check("Review is the DEFAULT mode when nothing is stored (point 3)", (function () { var d = freshR(); var doc = d.window.document; return !!doc.querySelector(".cipx-rev") && /Review my catalog/.test(doc.querySelector(".cipx-modetab.on").textContent); })());
   check("source: review status glyph is a visible '?', suggested is a distinct '⇄'", /review:\s*\{\s*g:\s*"\?"/.test(src) && /suggest:\s*\{\s*g:\s*"⇄"/.test(src));
-  check("mode tabs use hairline SVG glyphs, not cliparty emoji", revdoc.querySelectorAll(".cipx-modetab .cipx-tabico").length === 3 && !/📖|🎯|📋/.test(revdoc.querySelector(".cipx-modebar").textContent));
+  check("mode tabs are label-only — no glyphs (Sam, 2026-07-20)", revdoc.querySelectorAll(".cipx-modetab .cipx-tabico").length === 0 && !/📖|🎯|📋/.test(revdoc.querySelector(".cipx-modebar").textContent));
   check("review mode: shows the trust banner", revdoc.querySelector(".cipx-rev-banner") && /starting point you confirm/.test(revdoc.querySelector(".cipx-rev-banner").textContent));
   await tick(); await tick();  // dept picker populates from loadCollege
   const deptSel = revdoc.querySelector(".cipx-rev-deptsel");
@@ -555,6 +556,12 @@ function fresh(withCollege) {
   deptSel.value = "BUS"; deptSel.dispatchEvent(new domRev.window.Event("change"));
   await tick(); await tick();
   check("review mode: selecting a department renders triage tiles", !!revdoc.querySelector(".cipx-rev-tiles .cipx-rev-tile"));
+  // Port 2026-07-20 (SkyCoco): sticky College+Subject+tiles bar, Subject rename, COCI Sync'd destination tile.
+  check("tiles ride in the sticky bar host (pins with college + subject)", !!revdoc.querySelector(".cipx-rev-tileshost .cipx-rev-tilesrow .cipx-rev-tiles"));
+  check("the Subject picker is labeled 'Subject' (renamed from Department)", (function () { var l = revdoc.querySelector(".cipx-rev-deptl"); return l && /^Subject$/.test((l.textContent || "").trim()); })());
+  check("a 'COCI Sync'd' destination tile shows — non-clickable DIV, count 0, In Development badge", (function () { var f = revdoc.querySelector(".cipx-rev-tile-future"); return f && f.tagName === "DIV" && /COCI Sync/.test(f.textContent) && /^0$/.test((f.querySelector(".cipx-rev-tilen").textContent || "").trim()) && !!f.querySelector(".cipx-rev-tilesoon") && /In Development/.test(f.textContent); })());
+  check("source: college bar + tiles bar are sticky (Sam, 2026-07-20)", /cipx-collegebar\{[^}]*position:sticky/.test(src) && /cipx-rev-tileshost\{position:sticky/.test(src));
+  check("source: a white row-gutter token drives the course separator", /--cipx-row-sep:#ffffff/.test(src) && /cipx-rev-item\{border-bottom:2px solid var\(--cipx-row-sep\)/.test(src));
   // layout polish (2026-07-18): bulk Confirm/Accept ride on the tiles row; Expand + CSV live in the
   // top-right rail next to the Theme toggle; Coco the mascot rides in the rail.
   check("bulk Confirm/Accept sit on the tiles row (not their own strip)", !!revdoc.querySelector(".cipx-rev-tilesrow .cipx-rev-bulk"));
@@ -575,6 +582,7 @@ function fresh(withCollege) {
   await tick();
   const cand = revRow.querySelector(".cipx-rev-cand");
   check("review mode: a row expands to selectable candidate codes", !!cand);
+  check("an expanded course gets the 'package' class (spine + framed top + tint)", revRow.classList.contains("cipx-rev-item-open"));
   check("crosswalk candidates carry a 'from TOP' tag so the lineage is apparent", cand.querySelector(".cipx-rev-candtop") && /0505\.00/.test(cand.querySelector(".cipx-rev-candtop").textContent));
   cand.click();
   await tick();
