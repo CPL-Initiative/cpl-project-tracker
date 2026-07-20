@@ -132,6 +132,9 @@
     ".cplfund-ed-t { width: 100%; font-size: inherit; color: inherit; border: 1px solid transparent; border-radius: 4px; padding: 2px 4px; background: var(--surface-opaque); font-family: inherit; }",
     ".cplfund-ed-t:hover { border-color: var(--border); }",
     ".cplfund-ed-t:focus { outline: none; border-color: var(--gold-accent); background: var(--surface-subtle); }",
+    // Multi-line variant: priority description + metric wrap to 2 rows so long
+    // text stays readable (and every card's boxes line up the same height).
+    ".cplfund-ed-area { display: block; width: 100%; resize: vertical; line-height: 1.35; margin-top: 2px; }",
     ".cplfund-warn-text { color: var(--red-alert); font-weight: 600; }",
     ".cplfund .dk { color: var(--text-muted); font-weight: 400; }",
     ".cplfund-est { font-size: .72rem; color: var(--mustard-fill); font-weight: 600; }",
@@ -139,6 +142,13 @@
     ".cplfund-carry { color: var(--text-faint); font-size: .75rem; font-weight: 400; }",
     ".cplfund-elig { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--gold-accent); border-radius: 8px; padding: 12px 16px; font-size: .88rem; line-height: 1.55; }",
     ".cplfund-elig .req { margin: 4px 0; }",
+    // Editable extra-requirement rows: marker + inline text box + ✕ remove.
+    ".cplfund-elig .cplfund-reqrow { display: flex; align-items: center; gap: 6px; margin: 4px 0; }",
+    ".cplfund-elig .cplfund-reqrow .cplfund-ed-t { flex: 1 1 auto; width: auto; max-width: 560px; }",
+    ".cplfund-reqdel { flex: 0 0 auto; background: var(--surface-opaque); color: var(--text-muted); border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 9px; cursor: pointer; font-size: .8rem; line-height: 1.2; font-family: inherit; }",
+    ".cplfund-reqdel:hover { border-color: var(--red-alert); color: var(--red-alert); }",
+    ".cplfund-reqadd { margin-top: 8px; }",
+    ".cplfund-reqadd .dk { margin-left: 8px; font-size: .8rem; }",
     ".cplfund-optbtn { background: var(--surface-opaque); color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 8px; cursor: pointer; font-size: .75rem; font-family: inherit; margin-left: 6px; }",
     ".cplfund-optbtn:hover { border-color: var(--gold-accent); }",
     ".cplfund-notewrap { grid-column: 1 / -1; }",
@@ -347,6 +357,17 @@
     return firstDefined(SCENARIO.participationDeadline, SHARED.participationDeadline,
       base().participation_deadline) || "2026-09-01";
   }
+  // Extra baseline-eligibility requirements — free-text quals beyond the two
+  // data-backed built-ins (① coordinator, ② participation). Editable in-tab;
+  // resolves through the same BASE ⊕ SHARED ⊕ SCENARIO layers as everything else.
+  function extraReqs() {
+    var r = firstDefined(SCENARIO.extraReqs, SHARED.extraReqs, base().extra_reqs);
+    return Array.isArray(r) ? r.slice() : [];
+  }
+  // ①..⑳ for a 1-based index; the two built-ins are ①②, so extras start at ③.
+  function circledNum(n) {
+    return (n >= 1 && n <= 20) ? String.fromCharCode(0x2460 + n - 1) : "(" + n + ")";
+  }
   // "2027-28" → "2028-29" (the close-out year one past the window).
   function nextFy(fy) {
     var m = String(fy || "").match(/^(\d{4})-(\d{2})$/);
@@ -388,6 +409,7 @@
   function setDisbursement(v) { activeOverride().disbursement = v === "frontload" ? "frontload" : "even"; persistActive(); }
   function setRuralThreshold(v) { activeOverride().ruralThreshold = v; persistActive(); }
   function setDeadline(v) { activeOverride().participationDeadline = String(v || "").trim(); persistActive(); }
+  function setExtraReqs(list) { activeOverride().extraReqs = (list || []).slice(); persistActive(); }
   function setRuralOverride(college, flag) {
     var ov = activeOverride();
     ov.ruralOverrides = ov.ruralOverrides || {};
@@ -687,6 +709,13 @@
       span.textContent = el.getAttribute("value") || "";
       el.parentNode.replaceChild(span, el);
     });
+    // Editable textareas (priority description/metric) flatten to their text;
+    // the remaining textareas (internal monitor notes) + buttons + auth bar drop.
+    clone.querySelectorAll("textarea[data-edit]").forEach(function (el) {
+      var span = el.ownerDocument.createElement("strong");
+      span.textContent = el.value || el.textContent || "";
+      el.parentNode.replaceChild(span, el);
+    });
     clone.querySelectorAll("textarea, button, .cplfund-authbar").forEach(function (el) {
       if (el.parentNode) el.parentNode.removeChild(el);
     });
@@ -755,7 +784,19 @@
     if (opts.idx != null) attrs += ' data-idx="' + esc(opts.idx) + '"';
     if (opts.small) attrs += ' style="width:110px;display:inline-block;"';
     return '<input type="text" class="cplfund-ed-t"' + attrs +
+      (opts.placeholder ? ' placeholder="' + esc(opts.placeholder) + '"' : "") +
       ' value="' + esc(value) + '" aria-label="' + esc(opts.label || edit) + '">';
+  }
+  // Multi-line editable field (a 2-row textarea by default). Same data-* contract
+  // as edText, so applyEdit + the change wiring handle it unchanged.
+  function edArea(edit, value, opts) {
+    opts = opts || {};
+    var attrs = ' data-edit="' + esc(edit) + '"';
+    if (opts.slot != null) attrs += ' data-slot="' + esc(opts.slot) + '"';
+    if (opts.idx != null) attrs += ' data-idx="' + esc(opts.idx) + '"';
+    return '<textarea class="cplfund-ed-t cplfund-ed-area" rows="' + (opts.rows || 2) + '"' + attrs +
+      (opts.placeholder ? ' placeholder="' + esc(opts.placeholder) + '"' : "") +
+      ' aria-label="' + esc(opts.label || edit) + '">' + esc(value) + "</textarea>";
   }
 
   // ── auth / config bar ─────────────────────────────────────────────────
@@ -892,14 +933,14 @@
       var sysHeads = heads * p.target_rate;
       return '<div class="p">' +
         "<h4>" + esc(p.label) + '<span class="share">' + fmtPctTrim(p.share) + " of each tranche</span></h4>" +
-        '<p class="desc">' + edText("description", p.description, { slot: slot, idx: i, label: p.label + " description" }) + "</p>" +
+        '<p class="desc">' + edArea("description", p.description, { slot: slot, idx: i, rows: 2, label: p.label + " description" }) + "</p>" +
         '<p class="nums">Allocation share ' + edNum("share", fmtRatePct(p.share), { small: true, slot: slot, idx: i, label: p.label + " allocation share percent" }) +
         "% of each tranche &mdash; statewide " + fmtMoney(sysDollars) + "</p>" +
         '<p class="nums">Projection target ' + edNum("target", fmtRatePct(p.target_rate), { small: true, slot: slot, idx: i, label: p.label + " projection target percent" }) +
         "% of headcount &rarr; " + fmtInt(sysHeads) + " students " +
         '<span class="dk">(target only &mdash; doesn&#39;t move dollars)</span></p>' +
         actualLineHtml(p, i, sysHeads) +
-        '<div class="metric">METRIC (Year ' + slot + "): " + edText("metric", p.metric, { slot: slot, idx: i, label: p.label + " metric" }) + "</div></div>";
+        '<div class="metric">METRIC (Year ' + slot + "): " + edArea("metric", p.metric, { slot: slot, idx: i, rows: 2, label: p.label + " metric" }) + "</div></div>";
     }).join("") + "</div>";
   }
 
@@ -1486,6 +1527,18 @@
     } else {
       coordLine = '<span class="dk">checking MAP&hellip;</span>';
     }
+    // Extra, curator-added requirements (free text) render below the two
+    // data-backed built-ins as ③, ④, … — each editable, with a ✕ to remove.
+    var extras = extraReqs();
+    var extraHtml = extras.map(function (txt, i) {
+      return '<div class="cplfund-reqrow">' +
+        "<span>" + circledNum(i + 3) + "</span>" +
+        edText("extra-req", txt, { idx: i, label: "Baseline requirement " + (i + 3),
+          placeholder: "Describe the requirement…" }) +
+        '<button type="button" class="cplfund-reqdel" data-reqdel="' + i +
+        '" title="Remove this requirement" aria-label="Remove requirement ' + (i + 3) + '">✕</button>' +
+        "</div>";
+    }).join("");
     return '<div class="cplfund-elig">' +
       "<strong>Proposed baseline requirements</strong> to qualify for implementation funding " +
       '<span class="dk">(badges are informational in this draft &mdash; no dollar figure changes yet)</span>:' +
@@ -1495,6 +1548,14 @@
       " &mdash; <strong>" + optN + "</strong> opted in so far" +
       (unlocked() ? ' <span class="dk">(mark a college opted-in from its row drill-in)</span>'
                   : ' <span class="dk">(team members record opt-ins after unlocking)</span>') + "</div>" +
+      extraHtml +
+      '<div class="cplfund-reqadd">' +
+      '<button type="button" class="cplfund-optbtn" id="cplFundReqAdd" ' +
+      'title="Add another proposed baseline requirement">＋ Add requirement</button>' +
+      '<span class="dk">' + (unlocked()
+        ? "saved for the whole team"
+        : "explored on this browser &mdash; unlock team editing to save for everyone") + "</span>" +
+      "</div>" +
       "</div>";
   }
 
@@ -1760,6 +1821,12 @@
       return;
     }
     if (edit === "deadline") { setDeadline(raw); return; }
+    if (edit === "extra-req") {
+      var reqs = extraReqs();
+      var ri = Number(idx);
+      if (ri >= 0 && ri < reqs.length) { reqs[ri] = raw; setExtraReqs(reqs); }
+      return;
+    }
   }
 
   function wire() {
@@ -1804,6 +1871,21 @@
     document.querySelectorAll("#cplFundingMount [data-edit]").forEach(function (el) {
       var ev = el.tagName === "SELECT" ? "change" : "change";
       el.addEventListener(ev, function () { savingState = ""; applyEdit(el); });
+    });
+
+    // Baseline-eligibility extra requirements: add a blank row / remove a row.
+    var reqAdd = document.getElementById("cplFundReqAdd");
+    if (reqAdd) reqAdd.addEventListener("click", function () {
+      savingState = "";
+      setExtraReqs(extraReqs().concat([""]));
+    });
+    document.querySelectorAll("#cplFundingMount [data-reqdel]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        savingState = "";
+        var reqs = extraReqs();
+        var ri = Number(b.getAttribute("data-reqdel"));
+        if (ri >= 0 && ri < reqs.length) { reqs.splice(ri, 1); setExtraReqs(reqs); }
+      });
     });
 
     var rst = document.getElementById("cplFundReset");

@@ -289,11 +289,11 @@ function footText(doc) {
   const { window } = freshDom();
   const doc = boot(window);
   check("year filter has one button per selected year", doc.querySelectorAll("#cplFundYear button").length === 2);
-  const m1 = doc.querySelector('input[data-edit="metric"][data-slot="1"][data-idx="0"]');
+  const m1 = doc.querySelector('[data-edit="metric"][data-slot="1"][data-idx="0"]');
   check("year 1 shows the year-1 P1 metric", m1 && m1.value === "Headcount with any transcribed CPL");
   // switch to Year 2.
   click(window, doc.querySelector('#cplFundYear button[data-val="2"]'));
-  const m2 = doc.querySelector('input[data-edit="metric"][data-slot="2"][data-idx="0"]');
+  const m2 = doc.querySelector('[data-edit="metric"][data-slot="2"][data-idx="0"]');
   check("year 2 shows the year-2 P1 metric", m2 && m2.value === "Units of Transcribed CPL");
   check("metric label names the active year", doc.querySelector(".cplfund-prio .p .metric").textContent.indexOf("Year 2") !== -1);
   // default shares equal both years → the college TOTAL column is unchanged.
@@ -301,6 +301,32 @@ function footText(doc) {
   click(window, doc.querySelector('#cplFundYear button[data-val="1"]'));
   const totalY1 = doc.querySelector("#cplFundTable tbody tr td.tot").textContent;
   check("college TOTAL is stable across years at default shares", totalY1 === totalY2);
+}
+
+// C3b — priority description + metric are 2-row textareas so long text wraps
+// (Sam, 2026-07-20: "2 rows high … keep it visually consistent").
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const desc = doc.querySelector('textarea[data-edit="description"][data-slot="1"][data-idx="0"]');
+  const metric = doc.querySelector('textarea[data-edit="metric"][data-slot="1"][data-idx="0"]');
+  check("priority description is a 2-row textarea",
+    desc && desc.tagName === "TEXTAREA" && desc.getAttribute("rows") === "2");
+  check("priority metric is a 2-row textarea",
+    metric && metric.tagName === "TEXTAREA" && metric.getAttribute("rows") === "2");
+  check("priority textareas carry the multi-line style class",
+    desc.className.indexOf("cplfund-ed-area") !== -1 && metric.className.indexOf("cplfund-ed-area") !== -1);
+  check("the textarea shows the baked value (from its text content, not a value attr)",
+    metric.value === "Headcount with any transcribed CPL");
+  // Editing the textarea still commits on change, exactly like the old input.
+  commit(window, metric, "Wrapped metric text");
+  check("editing a metric textarea persists to the scenario",
+    scenSlot(window).yearPriorities["1"][0].metric === "Wrapped metric text");
+  check("the edited textarea re-renders with the new value",
+    doc.querySelector('textarea[data-edit="metric"][data-slot="1"][data-idx="0"]').value === "Wrapped metric text");
+  const css = doc.getElementById("cpl-funding-css").textContent;
+  check("ed-area CSS is a block textarea that wraps (display:block + line-height)",
+    /cplfund-ed-area \{[^}]*display: block/.test(css) && /cplfund-ed-area \{[^}]*line-height/.test(css));
 }
 
 // C4 — noncredit feeder carve-out: pool split + editable headcounts + carve-out
@@ -346,12 +372,12 @@ function footText(doc) {
   const { window } = freshDom();
   const doc = boot(window);
   // Edit P1 metric text.
-  const metric = doc.querySelector('input[data-edit="metric"][data-slot="1"][data-idx="0"]');
+  const metric = doc.querySelector('[data-edit="metric"][data-slot="1"][data-idx="0"]');
   commit(window, metric, "Custom metric text");
   const scen = scenSlot(window);
   check("editing a metric persists to the scenario", scen.yearPriorities["1"][0].metric === "Custom metric text");
   check("the edited metric re-renders",
-    doc.querySelector('input[data-edit="metric"][data-slot="1"][data-idx="0"]').value === "Custom metric text");
+    doc.querySelector('[data-edit="metric"][data-slot="1"][data-idx="0"]').value === "Custom metric text");
 
   // Edit P1 share 30% → 60% ⇒ shares sum 130% ⇒ formula warns.
   commit(window, doc.querySelector('input[data-edit="share"][data-slot="1"][data-idx="0"]'), "60");
@@ -373,7 +399,7 @@ function footText(doc) {
   click(window, doc.getElementById("cplFundReset"));
   check("reset clears the scenario (localStorage slot gone)", !scenSlot(window));
   check("reset restores the baked P1 metric",
-    doc.querySelector('input[data-edit="metric"][data-slot="1"][data-idx="0"]').value === "Headcount with any transcribed CPL");
+    doc.querySelector('[data-edit="metric"][data-slot="1"][data-idx="0"]').value === "Headcount with any transcribed CPL");
 }
 
 // C6 — config layers: baked ⊕ shared ⊕ scenario resolution.
@@ -384,11 +410,11 @@ function footText(doc) {
   window.CPL_FUNDING_TAB._setShared({ yearPriorities: { "1": { "0": { metric: "SHARED metric" } } } });
   window.CPL_FUNDING_TAB.render();
   check("shared config overrides the baked default",
-    doc.querySelector('input[data-edit="metric"][data-slot="1"][data-idx="0"]').value === "SHARED metric");
+    doc.querySelector('[data-edit="metric"][data-slot="1"][data-idx="0"]').value === "SHARED metric");
   // A local scenario shadows the shared value.
-  commit(window, doc.querySelector('input[data-edit="metric"][data-slot="1"][data-idx="0"]'), "SCENARIO metric");
+  commit(window, doc.querySelector('[data-edit="metric"][data-slot="1"][data-idx="0"]'), "SCENARIO metric");
   check("scenario shadows shared",
-    doc.querySelector('input[data-edit="metric"][data-slot="1"][data-idx="0"]').value === "SCENARIO metric");
+    doc.querySelector('[data-edit="metric"][data-slot="1"][data-idx="0"]').value === "SCENARIO metric");
   check("scenario edit did NOT touch the shared config",
     window.CPL_FUNDING_TAB._getShared().yearPriorities["1"]["0"].metric === "SHARED metric");
 }
@@ -411,7 +437,7 @@ function footText(doc) {
     doc.querySelector(".cplfund-authbar .mode.shared") &&
     doc.querySelector(".cplfund-authbar .mode.shared").textContent.indexOf("Team editing on") !== -1);
   // Edit the visible (Year-1) P1 metric → it lands in SHARED (not the scenario).
-  commit(window, doc.querySelector('input[data-edit="metric"][data-slot="1"][data-idx="0"]'), "TEAM edit");
+  commit(window, doc.querySelector('[data-edit="metric"][data-slot="1"][data-idx="0"]'), "TEAM edit");
   check("unlocked edit writes to the SHARED store",
     window.CPL_FUNDING_TAB._getShared().yearPriorities["1"]["0"].metric === "TEAM edit");
   check("unlocked edit did NOT write a local scenario", !scenSlot(window));
@@ -446,7 +472,7 @@ function footText(doc) {
   };
   window.CPL_TEAM_PHRASE = mock;
   const doc = boot(window);   // locked (no pass) → scenario mode
-  commit(window, doc.querySelector('input[data-edit="metric"][data-slot="1"][data-idx="0"]'), "explored metric");
+  commit(window, doc.querySelector('[data-edit="metric"][data-slot="1"][data-idx="0"]'), "explored metric");
   check("locked edit is a local scenario", !!scenSlot(window));
   // Unlock → the scenario promotes into SHARED and clears.
   click(window, doc.querySelector(".mock-unlock"));
@@ -454,7 +480,7 @@ function footText(doc) {
     window.CPL_FUNDING_TAB._getShared().yearPriorities["1"]["0"].metric === "explored metric");
   check("unlock clears the local scenario after promotion", !scenSlot(window));
   check("promoted model still renders the edited value",
-    doc.querySelector('input[data-edit="metric"][data-slot="1"][data-idx="0"]').value === "explored metric");
+    doc.querySelector('[data-edit="metric"][data-slot="1"][data-idx="0"]').value === "explored metric");
   delete window.CPL_TEAM_PHRASE;
 }
 
@@ -789,6 +815,65 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   check("badges never move dollars", Math.abs(T._alloc("Alameda").total - before) < 0.01);
 }
 
+// D4b — editable extra baseline requirements (Sam, 2026-07-20: "make the box
+// editable … add a couple more quals"). Free text, add/edit/remove, three-layer.
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  check("data: extra_reqs default is an empty list", Array.isArray(D.extra_reqs) && D.extra_reqs.length === 0);
+  check("no extra-requirement rows by default", doc.querySelectorAll(".cplfund-elig .cplfund-reqrow").length === 0);
+  check("the two built-in requirements are untouched (① coordinator · ② participation)",
+    /①/.test(doc.querySelector(".cplfund-elig").textContent) && /②/.test(doc.querySelector(".cplfund-elig").textContent));
+  check("an ＋ Add requirement button renders", !!doc.getElementById("cplFundReqAdd"));
+
+  // Add a qual → a blank ③ row appears; edit it → persists to the scenario.
+  click(window, doc.getElementById("cplFundReqAdd"));
+  check("Add appends a blank requirement row numbered ③",
+    doc.querySelectorAll(".cplfund-elig .cplfund-reqrow").length === 1 &&
+    doc.querySelector(".cplfund-elig .cplfund-reqrow").textContent.indexOf("③") !== -1);
+  const req0 = doc.querySelector('[data-edit="extra-req"]');
+  check("the new requirement box carries a placeholder hint", !!req0.getAttribute("placeholder"));
+  commit(window, req0, "Signed MOU on file");
+  check("editing the requirement persists to the scenario",
+    scenSlot(window).extraReqs && scenSlot(window).extraReqs[0] === "Signed MOU on file");
+  check("the edited requirement re-renders",
+    doc.querySelector('[data-edit="extra-req"][data-idx="0"]').value === "Signed MOU on file");
+
+  // A second qual renders as ④.
+  click(window, doc.getElementById("cplFundReqAdd"));
+  commit(window, doc.querySelectorAll('[data-edit="extra-req"]')[1], "Local CPL policy adopted");
+  check("a second qual renders as ④ and both persist",
+    doc.querySelectorAll(".cplfund-elig .cplfund-reqrow").length === 2 &&
+    doc.querySelector(".cplfund-elig").textContent.indexOf("④") !== -1 &&
+    scenSlot(window).extraReqs.length === 2 && scenSlot(window).extraReqs[1] === "Local CPL policy adopted");
+
+  // Remove the first → the remaining qual renumbers back to ③.
+  click(window, doc.querySelector(".cplfund-reqdel"));
+  check("✕ removes a requirement and the list renumbers",
+    doc.querySelectorAll(".cplfund-elig .cplfund-reqrow").length === 1 &&
+    scenSlot(window).extraReqs.length === 1 && scenSlot(window).extraReqs[0] === "Local CPL policy adopted" &&
+    doc.querySelector('[data-edit="extra-req"][data-idx="0"]').value === "Local CPL policy adopted");
+
+  // Informational only: quals never enter the allocation model.
+  const dollarsBefore = T._alloc("Alameda").total;
+  T._setScenario({ extraReqs: ["a", "b", "c"] });
+  T.render();
+  check("extra requirements never move dollars", Math.abs(T._alloc("Alameda").total - dollarsBefore) < 0.01);
+
+  // Three-layer resolution: SHARED quals show for anonymous viewers; a SCENARIO
+  // (empty list) shadows them → the box shows none.
+  T._setScenario({});
+  T._setShared({ extraReqs: ["Shared qual"] });
+  T.render();
+  check("shared-config quals render for anonymous viewers",
+    doc.querySelector('[data-edit="extra-req"][data-idx="0"]').value === "Shared qual");
+  T._setScenario({ extraReqs: [] });
+  T.render();
+  check("an empty scenario list shadows the shared quals (box shows none)",
+    doc.querySelectorAll(".cplfund-elig .cplfund-reqrow").length === 0);
+}
+
 // D5 — noncredit student counts are included in the totals (Sam, 2026-07-06):
 // the SYSTEM headcount total shows allocation basis + feeders = CCC total in
 // BOTH table views (the pool card already showed it).
@@ -936,7 +1021,10 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   check("print HTML: standalone doc with the seal-blue header style",
     ph.indexOf("<!doctype html>") === 0 && ph.indexOf("#002F6D") !== -1);
   check("print HTML: inputs flattened to text (no form controls)",
-    ph.indexOf("<input") === -1 && ph.indexOf("<select") === -1 && ph.indexOf("<button") === -1);
+    ph.indexOf("<input") === -1 && ph.indexOf("<select") === -1 && ph.indexOf("<button") === -1 &&
+    ph.indexOf("<textarea") === -1);
+  check("print HTML: priority metric textarea flattens to its text (survives print)",
+    ph.indexOf("Headcount with any transcribed CPL") !== -1);
   check("print HTML: the college table content survives",
     ph.indexOf("SYSTEM (statewide)") !== -1);
 }
