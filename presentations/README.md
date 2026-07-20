@@ -34,3 +34,28 @@ pip install python-pptx
 python3 presentations/build_bog_deck.py
 ```
 Edit `build_bog_deck.py` and re-run to change content/branding. The `NOTES` list holds the speaker scripts.
+
+---
+
+# CBO budget-workshop CPL slides (2026-07-20, StarBOG)
+
+Three high-level slides on how the **$35M one-time** funds support local CPL implementation — the
+**COBI 3 priorities** (Completion / Access / Capacity & Mobility) + guiding principles — with the
+in-discussion **amounts held off** per Sam. Two forms:
+
+- `build_cbo_slides.py` → `20260720_CPL_CBO_Implementation_Funding.pptx` — standalone, brand-navy
+  template (same style as the BOG deck), speaker script per slide.
+- `fill_cbo_into_template.py` — drops the same 3 slides **natively into an existing CCC brand
+  template** (the CO "2026 Annual Budget Workshop" deck): reads `ppt/theme/theme1.xml` for the exact
+  palette (`002F6D` / `0066BA` / `FFB600`) + font (Source Sans Pro), reuses the template's content
+  layout, sets the native title, deletes the empty body placeholder, draws shapes in the body band,
+  and reorders `sldId`s. Run it from a dir containing `template.pptx`; outputs the full filled deck.
+  (The filled workshop deck itself is delivered to Sam directly, not committed — it's his broader deck.)
+
+Reusable how-to (data map, tooling, template-fill mechanics):
+[`../docs/kb-notes/playbook-building-cpl-executive-presentations.md`](../docs/kb-notes/playbook-building-cpl-executive-presentations.md)
+· lessons: [`../docs/cpl_presentations_lessons.md`](../docs/cpl_presentations_lessons.md).
+
+**Tooling note:** QA-rendering `.pptx` needs LibreOffice Impress + poppler, which are **not**
+preinstalled in the sandbox — `apt-get install -y --no-install-recommends libreoffice-impress
+poppler-utils` first (or fall back to the pptx→HTML + Chromium renderer).
