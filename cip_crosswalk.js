@@ -78,7 +78,7 @@
   var CONSENSUS = null, CONSENSUS_COLLEGES = null, CONSENSUS_SUBJECTS = null, CONSENSUS_LOADING = null;
   // confident-consensus thresholds (see consensusPick): >= MIN_N colleges AND >= MAJORITY of them.
   var CONSENSUS_MIN_N = 3, CONSENSUS_MAJORITY = 0.5;
-  var wrapEl, inputRef, pillsRef, famRef, cbRef, xferRef, listHost, countHost, suggestHost, collegeSelEl;
+  var wrapEl, inputRef, pillsRef, famRef, cbRef, xferRef, listHost, countHost, suggestHost, collegeSelEl, collegeBarEl, _cipxStickyBound;
 
   function ingest(data) {
     D = data;
@@ -530,6 +530,7 @@
   var COLLEGE_ICON = "M12 4.2L4.5 8.8H19.5L12 4.2M6 9.2V17.4M9.6 9.2V17.4M14.4 9.2V17.4M18 9.2V17.4M4 18.4H20";
   function collegeBar() {
     var bar = el("div", { class: "cipx-collegebar" }, [el("span", { class: "cipx-college-l" }, [el("span", {}, ["Your college"])])]);   // glyph dropped (Sam, 2026-07-19)
+    collegeBarEl = bar;   // measured so the sticky tiles bar can pin flush beneath it (syncStickyOffsets)
     var sel = el("select", { class: "cipx-college-sel", "aria-label": "Your college" }, [el("option", { value: "" }, [FIT_COLLEGES ? "Choose your college…" : "Loading colleges…"])]);
     collegeSelEl = sel;
     sel.onchange = function () {
@@ -1052,7 +1053,7 @@
   // Framing everywhere: a SUGGESTION you confirm; COCI is the record.
   // ═══════════════════════════════════════════════════════════════════════════
   var rev = { dept: null, filter: "all", q: "", byDept: {}, courses: null };
-  var revListHost, revSummaryHost, revDeptSel, revProgHost, revOpen = {}, revRailEl, revOverviewHost, revSysHost;
+  var revListHost, revSummaryHost, revTilesHost, revDeptSel, revProgHost, revOpen = {}, revRailEl, revOverviewHost, revSysHost;
   // per-row inline-UI state for the multi-CIP flow (add-picker → prompt → apply-to-subject). Like
   // revOpen, it survives the list re-render so an in-progress add/apply stays put. Reset per department.
   var revInline = {};
@@ -1192,6 +1193,31 @@
     manual: { g: "◻", label: "Manual", cls: "muted" },
   };
 
+  // Forward-looking destination tile (Sam, 2026-07-20): the eventual COCI sync. Non-functional
+  // preview — dashed, muted, count 0, an "In Development" badge — so the tiles read as the full
+  // pipeline (All → Review → Ready → COCI Sync'd). It's the destination, not yet a live count.
+  function cociSyncTile() {
+    return el("div", { class: "cipx-rev-tile cipx-rev-tile-future", title: "Coming soon — once your college settles its codes, sync the confirmed decisions straight to COCI. Not yet live." }, [
+      el("span", { class: "cipx-rev-tilen" }, ["0"]),
+      el("span", { class: "cipx-rev-tilel" }, ["COCI Sync'd"]),
+      el("span", { class: "cipx-rev-tilesoon" }, ["In Development"]),
+    ]);
+  }
+
+  // Sticky stack (Sam, 2026-07-20): the college bar pins at top:0; the tiles bar pins flush
+  // beneath it. The tiles bar's `top` = the college bar's measured height, published as a CSS var
+  // on wrapEl so a curriculum specialist can switch subjects — and a CO reviewer switch colleges —
+  // without scrolling back up. jsdom has no layout (height 0) → the guard leaves the CSS fallback.
+  function syncStickyOffsets() {
+    if (!wrapEl || !collegeBarEl) return;
+    var h = Math.round(collegeBarEl.getBoundingClientRect().height || 0);
+    if (h > 0) wrapEl.style.setProperty("--cipx-cbh", h + "px");
+  }
+  function bindStickyResize() {
+    if (_cipxStickyBound) return; _cipxStickyBound = true;
+    window.addEventListener("resize", function () { syncStickyOffsets(); }, { passive: true });
+  }
+
   // Statewide baseline (Sam #2) — the "size of the prize", once the precomputed counts arrive.
   function renderSysBaseline(host) {
     if (!host) return;
@@ -1210,16 +1236,17 @@
     clear(revOverviewHost);
     if (!st.college || rev.dept) return;
     var s = collegeStatus(st.college), col = collegeBySlug(st.college);
-    if (!s) { revOverviewHost.appendChild(el("div", { class: "cipx-fit-nudge" }, ["Pick a department above to start — its courses load instantly."])); return; }
+    if (!s) { revOverviewHost.appendChild(el("div", { class: "cipx-fit-nudge" }, ["Pick a subject above to start — its courses load instantly."])); return; }
     revOverviewHost.appendChild(el("div", { class: "cipx-rev-ovlead" }, [(col ? col.name : "This college") + " — where its CIP coding stands (tool baseline):"]));
     var tiles = el("div", { class: "cipx-rev-tiles cipx-rev-ovtiles" }, []);
     [["All", s.n, ""], ["⇄ Suggested", s.suggest, "suggest"], ["? Review", s.review, "warn"], ["✓ Ready", s.ready, "ok"], ["◻ Manual", s.manual, "muted"]].forEach(function (t) {
-      if (t[0] === "⇄ Suggested" && !t[1]) return;
+      if ((t[0] === "⇄ Suggested" || t[0] === "◻ Manual") && !t[1]) return;   // hide Suggested/Manual when 0 (Sam)
       tiles.appendChild(el("div", { class: "cipx-rev-tile cipx-rev-tile-static" + (t[2] ? " cipx-rev-tile-" + t[2] : "") },
         [el("span", { class: "cipx-rev-tilen" }, [t[1].toLocaleString()]), el("span", { class: "cipx-rev-tilel" }, [t[0]])]));
     });
+    tiles.appendChild(cociSyncTile());   // the destination tile (In Development)
     revOverviewHost.appendChild(tiles);
-    revOverviewHost.appendChild(el("div", { class: "cipx-rev-ovnote" }, ["Pick a department above to start reviewing. These are the tool's classifications — your validated progress fills in as you confirm."]));
+    revOverviewHost.appendChild(el("div", { class: "cipx-rev-ovnote" }, ["Pick a subject above to start reviewing. These are the tool's classifications — your validated progress fills in as you confirm."]));
   }
 
   function reviewView() {
@@ -1228,21 +1255,26 @@
     v.appendChild(el("div", { class: "cipx-rev-banner" }, ["Each suggestion comes from the course's catalog description, the state TOP→CIP crosswalk, and how peer colleges code the same course. It's a ", el("b", {}, ["starting point you confirm"]), " — your college enters the final code in COCI. Nothing here is saved outside your browser."]));
     revSysHost = el("div", { class: "cipx-rev-syshost" }, []); v.appendChild(revSysHost); renderSysBaseline(revSysHost);
     if (!st.college) {
-      v.appendChild(el("div", { class: "cipx-fit-nudge" }, ["First, pick your college at the top of the tab — then choose a department to review."]));
+      v.appendChild(el("div", { class: "cipx-fit-nudge" }, ["First, pick your college at the top of the tab — then choose a subject to review."]));
       return v;
     }
     var col = collegeBySlug(st.college);
     // The Department picker lives UP in the college bar, right beside the college
     // dropdown (Sam: "move Dept selector up next to College") — one control row.
-    revDeptSel = el("select", { class: "cipx-rev-deptsel", "aria-label": "Department to review" }, [el("option", { value: "" }, ["Loading " + (col ? col.name : "college") + " courses…"])]);
+    revDeptSel = el("select", { class: "cipx-rev-deptsel", "aria-label": "Subject to review" }, [el("option", { value: "" }, ["Loading " + (col ? col.name : "college") + " courses…"])]);
     revDeptSel.onchange = function () { rev.dept = revDeptSel.value || null; rev.filter = "all"; loadDept(); };
     if (collegeSelEl && collegeSelEl.parentNode) {
-      collegeSelEl.parentNode.appendChild(el("span", { class: "cipx-rev-deptinline" }, [el("span", { class: "cipx-rev-deptl" }, ["Department"]), revDeptSel]));
+      collegeSelEl.parentNode.appendChild(el("span", { class: "cipx-rev-deptinline" }, [el("span", { class: "cipx-rev-deptl" }, ["Subject"]), revDeptSel]));
     }
     revOverviewHost = el("div", { class: "cipx-rev-overviewhost" }, []);
     v.appendChild(revOverviewHost);
     revProgHost = el("div", { class: "cipx-rev-prog", "aria-live": "polite" }, []);
     v.appendChild(revProgHost);
+    // The tiles ride in their OWN host (sibling of the list, child of the tall review view) so the
+    // sticky bar stays pinned through the whole list — a sticky element only sticks while its PARENT
+    // is on screen, and the short summary host would unstick it immediately.
+    revTilesHost = el("div", { class: "cipx-rev-tileshost" }, []);
+    v.appendChild(revTilesHost);
     revSummaryHost = el("div", { class: "cipx-rev-summary" }, []);
     v.appendChild(revSummaryHost);
     revListHost = el("div", { class: "cipx-rev-list" }, []);
@@ -1253,7 +1285,7 @@
       rev.courses = courses || [];
       clear(revDeptSel);
       if (!rev.courses.length) { revDeptSel.appendChild(el("option", { value: "" }, ["No courses for this college"])); return; }
-      revDeptSel.appendChild(el("option", { value: "" }, ["Choose a department…"]));
+      revDeptSel.appendChild(el("option", { value: "" }, ["Choose a subject…"]));
       var depts = departments(rev.courses);
       var cs = collegeStatus(st.college);
       depts.forEach(function (d) {
@@ -1261,7 +1293,7 @@
         var tail = ds && ds.review ? " · " + ds.review.toLocaleString() + " review" : "";
         revDeptSel.appendChild(el("option", { value: d.subj }, [d.subj + " · " + d.n + " course" + (d.n === 1 ? "" : "s") + tail]));
       });
-      revDeptSel.appendChild(el("option", { value: "__all__" }, ["★ All departments (" + rev.courses.length.toLocaleString() + " courses — slower)"]));
+      revDeptSel.appendChild(el("option", { value: "__all__" }, ["★ All subjects (" + rev.courses.length.toLocaleString() + " courses — slower)"]));
       if (rev.dept) { revDeptSel.value = rev.dept; loadDept(); }
     }).catch(function () { clear(revDeptSel); revDeptSel.appendChild(el("option", { value: "" }, ["Couldn't load courses — try again"])); });
     return v;
@@ -1321,17 +1353,18 @@
     // summary tiles double as filters — calm glyphs, Suggested surfaced right after All. The bulk
     // Confirm/Accept buttons ride on the SAME row as the tiles (Sam: "stack Confirm all + Accept all
     // on the same row as the number boxes — simple, simple, simple").
-    clear(revSummaryHost);
+    clear(revSummaryHost); clear(revTilesHost);
     var tilesRow = el("div", { class: "cipx-rev-tilesrow" }, []);
     var tiles = el("div", { class: "cipx-rev-tiles" }, []);
     [["all", "All", rows.length, ""], ["suggest", "⇄ Suggested", counts.suggest, "suggest"], ["review", "? Review", counts.review, "warn"], ["clear", "✓ Ready", counts.clear, "ok"], ["manual", "◻ Manual", counts.manual, "muted"]].forEach(function (t) {
-      if (t[0] === "suggest" && !counts.suggest) return;   // hide the Suggested tile when there are none
+      if ((t[0] === "suggest" && !counts.suggest) || (t[0] === "manual" && !counts.manual)) return;   // hide Suggested/Manual when 0 (Sam)
       var on = rev.filter === t[0];
       var tile = el("button", { class: "cipx-rev-tile" + (on ? " on" : "") + (t[3] ? " cipx-rev-tile-" + t[3] : ""), type: "button", "aria-pressed": on ? "true" : "false" },
         [el("span", { class: "cipx-rev-tilen" }, [t[2].toLocaleString()]), el("span", { class: "cipx-rev-tilel" }, [t[1]])]);
       tile.onclick = function () { rev.filter = t[0]; renderReview(rows); };
       tiles.appendChild(tile);
     });
+    tiles.appendChild(cociSyncTile());   // the destination tile (In Development)
     tilesRow.appendChild(tiles);
     var actions = el("div", { class: "cipx-rev-actions" }, []);
     var deptTail = rev.dept !== "__all__" ? " in " + rev.dept : "";
@@ -1348,7 +1381,7 @@
       actions.appendChild(bulkS);
     }
     if (actions.firstChild) tilesRow.appendChild(actions);
-    revSummaryHost.appendChild(tilesRow);
+    revTilesHost.appendChild(tilesRow);   // sticky bar (college + subject pin above it); progress copy scrolls away below
     var progline = el("div", { class: "cipx-rev-progline" }, [counts.confirmed.toLocaleString() + " of " + rows.length.toLocaleString() + " confirmed",
       counts.peer ? el("span", { class: "cipx-rev-peercount", title: "Suggestions corroborated by a clear majority of peer colleges teaching the same course in the same discipline — the strongest signal." }, ["  ·  " + counts.peer.toLocaleString() + " peer-corroborated"]) : null]);
     revSummaryHost.appendChild(progline);
@@ -1395,7 +1428,7 @@
     }
     revListHost.appendChild(showEl);
     shown.slice(0, 300).forEach(function (r) { revListHost.appendChild(reviewRow(r, dec, rows, ctx)); });
-    if (shown.length > 300) revListHost.appendChild(el("div", { class: "cipx-rev-more" }, ["Showing 300 of " + shown.length.toLocaleString() + " — narrow by department or filter."]));
+    if (shown.length > 300) revListHost.appendChild(el("div", { class: "cipx-rev-more" }, ["Showing 300 of " + shown.length.toLocaleString() + " — narrow by subject or filter."]));
   }
 
   // groupsFor over ALL forward CIP codes — shared by the chip "change" dropdown and the
@@ -1750,6 +1783,7 @@
     function paint() {
       var open = !!revOpen[r.label];
       caret.textContent = open ? "▾" : "▸"; head.setAttribute("aria-expanded", open ? "true" : "false");
+      card.classList.toggle("cipx-rev-item-open", open);   // package treatment: spine + framed top + tint bind row to detail (Sam)
       if (open && !body) { body = reviewExpand(r, dec, allRows); card.appendChild(body); }
       else if (!open && body) { card.removeChild(body); body = null; }
     }
@@ -1937,17 +1971,12 @@
   // ═══════════════════════════════════════════════════════════════════════════
   // Hairline tab glyphs (24-viewBox paths): an open book (browse the list), a
   // magnifier (find one course), a clipboard-with-check (review + confirm a catalog).
-  var MODE_ICON = {
-    browse: "M12 6.6C10 5.4 7.9 5 5.5 5V16.6C7.9 16.6 10 17 12 18.2M12 6.6C14 5.4 16.1 5 18.5 5V16.6C16.1 16.6 14 17 12 18.2M12 6.6V18.2",
-    recommend: "M15.5 10.5a5 5 0 1 1-10 0a5 5 0 1 1 10 0M18.8 18.8l-4.2-4.2",
-    review: "M8.5 5H6.8A1.8 1.8 0 0 0 5 6.8V18.2A1.8 1.8 0 0 0 6.8 20H17.2A1.8 1.8 0 0 0 19 18.2V6.8A1.8 1.8 0 0 0 17.2 5H15.5M9 5.4A1 1 0 0 1 10 4.5H14A1 1 0 0 1 15 5.4V6.7H9V5.4M9 12.6L11 14.6L15 10.6",
-  };
   function modeBar() {
     var bar = el("div", { class: "cipx-modebar", role: "tablist", "aria-label": "What do you want to do" }, []);
     // Review leads — it's the primary workflow now (Sam, 2026-07-18: "make Review the first tab + default").
     [["review", "Review my catalog"], ["browse", "Browse codes"], ["recommend", "Find my course’s code"]].forEach(function (m) {
       var on = st.mode === m[0];
-      var b = el("button", { class: "cipx-modetab" + (on ? " on" : ""), type: "button", role: "tab", "aria-selected": on ? "true" : "false" }, [svgIcon(MODE_ICON[m[0]]), el("span", {}, [m[1]])]);
+      var b = el("button", { class: "cipx-modetab" + (on ? " on" : ""), type: "button", role: "tab", "aria-selected": on ? "true" : "false" }, [el("span", {}, [m[1]])]);   // tab glyphs dropped (Sam, 2026-07-20) — labels only
       b.onclick = function () {
         if (st.mode === m[0]) return;
         st.mode = m[0];
@@ -1961,9 +1990,9 @@
 
   function header() {
     var head = el("div", { class: "cipx-head" }, [
-      el("div", { class: "cipx-eyebrow" }, ["California Community Colleges · Chancellor's Office"]),
-      el("h2", { class: "cipx-h2" }, ["CIP Code Taxonomy"]),
-      el("p", { class: "cipx-sub" }, ["The successor to the CCC TOP Code Manual. Course & program coding is moving from ", el("b", {}, ["TOP"]), " to ", el("b", {}, ["CIP"]), " for fall 2026 — browse the full federal CIP-2020 list, or start from one of your courses and let the tool suggest a code from its current TOP. (You confirm and enter it in COCI.)"]),
+      el("div", { class: "cipx-eyebrow" }, ["California Community Colleges · Chancellor's Office · Academic Affairs"]),
+      el("h2", { class: "cipx-h2" }, ["CIP Coder", el("span", { class: "cipx-beta" }, ["Beta"])]),
+      el("p", { class: "cipx-sub" }, ["A simplified process supporting the Fall 2026 ", el("b", {}, ["TOP → CIP"]), " transition. Start from one of your courses, get a CIP code suggested from its current TOP and description, and confirm the fit — soon, sync your settled codes straight to COCI."]),
       el("div", { class: "cipx-hlinks" }, [
         el("a", { href: COE_CROSSWALK, target: "_blank", rel: "noopener" }, ["TOP ↔ CIP crosswalk (COE) ↗"]),
         el("a", { href: NCES, target: "_blank", rel: "noopener" }, ["NCES CIP-2020 taxonomy ↗"]),
@@ -2068,6 +2097,8 @@
     fetchColleges();
     if (st.mode === "review" || st.mode === "recommend") loadConsensus();
     if (st.college) loadCollege(st.college);
+    bindStickyResize();
+    (window.requestAnimationFrame || setTimeout)(syncStickyOffsets, 0);   // publish the college-bar height for the sticky tiles offset
   }
 
   // ── CSS ────────────────────────────────────────────────────────────────────
@@ -2076,7 +2107,7 @@
     var css = [
       ".cipx{" +
         "--cipx-page:transparent;--cipx-surface:#ffffff;--cipx-surface-2:#eef3f9;--cipx-surface-sub:#f2f6fb;" +
-        "--cipx-text:#16283d;--cipx-text-soft:#3c526b;--cipx-muted:#566a80;--cipx-border:#dbe4ee;--cipx-border-strong:#c3d1e0;--cipx-recbadge-bg:#3f6b4e;" +
+        "--cipx-text:#16283d;--cipx-text-soft:#3c526b;--cipx-muted:#566a80;--cipx-border:#dbe4ee;--cipx-border-strong:#c3d1e0;--cipx-recbadge-bg:#3f6b4e;--cipx-row-sep:#ffffff;--cipx-rev-field:#e7edf4;" +
         "--cipx-accent:#00356b;--cipx-accent-soft:#e7eef6;--cipx-link:#0b5fa8;--cipx-focus:#1f7ae0;--cipx-mark:#ffe89c;--cipx-mark-fg:inherit;" +
         "--cipx-cte-bg:#e7ede7;--cipx-cte-fg:#4c6350;--cipx-both-bg:#e9eaf1;--cipx-both-fg:#565d78;" +
         "--cipx-non-bg:#eceef1;--cipx-non-fg:#59636f;--cipx-nc-bg:#e6edee;--cipx-nc-fg:#4f6a71;" +
@@ -2085,13 +2116,14 @@
         "max-width:1200px;margin:0 auto;padding:6px 22px 26px;background:var(--cipx-page);border-radius:14px;font-size:.95rem;color:var(--cipx-text);line-height:1.5;}",
       ".cipx.cipx-theme-dark{" +
         "--cipx-page:#0e1a2b;--cipx-surface:#16263b;--cipx-surface-2:#1b3150;--cipx-surface-sub:#132338;" +
-        "--cipx-text:#e7eef6;--cipx-text-soft:#b8c7d8;--cipx-muted:#8397ab;--cipx-border:#274058;--cipx-border-strong:#33506e;" +
+        "--cipx-text:#e7eef6;--cipx-text-soft:#b8c7d8;--cipx-muted:#8397ab;--cipx-border:#274058;--cipx-border-strong:#33506e;--cipx-row-sep:#33506e;--cipx-rev-field:#101f33;" +
         "--cipx-accent:#7db3ec;--cipx-accent-soft:#1b3652;--cipx-link:#8fc0f2;--cipx-focus:#7db3ec;--cipx-mark:#5a4a1a;--cipx-mark-fg:#ffe89c;" +
         "--cipx-cte-bg:#233a2c;--cipx-cte-fg:#a4bda9;--cipx-both-bg:#272c45;--cipx-both-fg:#aeb4d2;--cipx-non-bg:#28323f;--cipx-non-fg:#9aa7b6;--cipx-nc-bg:#1f3841;--cipx-nc-fg:#93b6bf;--cipx-ret-bg:#2a2f36;--cipx-ret-fg:#929aa3;--cipx-new-bg:#34301f;--cipx-new-fg:#c6b78e;" +
         "--cipx-ok-bg:#233a2c;--cipx-ok-fg:#a4bda9;--cipx-ok-stripe:#5f8f74;--cipx-warn-bg:#38321f;--cipx-warn-fg:#d8c48c;--cipx-warn-stripe:#b0913f;--cipx-bad-bg:#3a2723;--cipx-bad-fg:#d9a89c;--cipx-bad-stripe:#a86a5c;--cipx-recbadge-bg:#7cc79b;}",
       ".cipx-head{position:relative;padding:2px 7.6rem 6px 0;}",
       ".cipx-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--cipx-accent);}",
       ".cipx-h2{margin:.28em 0 .1em;font-size:1.6rem;line-height:1.15;color:var(--cipx-text);}",
+      ".cipx-beta{font-size:.5em;font-weight:800;letter-spacing:.05em;text-transform:uppercase;vertical-align:middle;color:var(--cipx-accent);background:var(--cipx-accent-soft);border:1px solid var(--cipx-border);border-radius:7px;padding:2px 8px;margin-left:11px;position:relative;top:-4px;}",
       ".cipx-sub{margin:.2em 0 0;color:var(--cipx-text-soft);max-width:72rem;font-size:.98rem;}",
       ".cipx-hlinks{display:flex;gap:18px;flex-wrap:wrap;margin:12px 0 2px;font-size:.82rem;}",
       ".cipx-hlinks a{color:var(--cipx-link);text-decoration:none;font-weight:600;}.cipx-hlinks a:hover{text-decoration:underline;}",
@@ -2120,7 +2152,8 @@
       ".cipx-cfilters{color:var(--cipx-accent);font-weight:650;}.cipx-clearbtn{margin-left:10px;font-size:.78rem;font-weight:600;color:var(--cipx-link);background:none;border:0;cursor:pointer;padding:0;font-family:inherit;}.cipx-clearbtn:hover{text-decoration:underline;}",
       ".cipx-csv{margin-left:auto;font-size:.76rem;font-weight:700;color:var(--cipx-link);background:var(--cipx-surface);border:1px solid var(--cipx-border);border-radius:7px;padding:3px 9px;cursor:pointer;}",
       // college bar
-      ".cipx-collegebar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--cipx-surface);border:1px solid var(--cipx-border);border-radius:10px;padding:9px 14px;margin:0 0 12px;}",
+      // College + Subject pin to the top on scroll (Sam, 2026-07-20) — switch subjects/colleges without scrolling up.
+      ".cipx-collegebar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--cipx-surface);border:1px solid var(--cipx-border-strong);border-radius:10px;padding:9px 14px;margin:0 0 12px;position:sticky;top:0;z-index:26;box-shadow:0 2px 8px rgba(9,19,32,.06);}",
       ".cipx-college-l{font-weight:700;font-size:.86rem;color:var(--cipx-text);display:inline-flex;align-items:center;gap:6px;}",
       ".cipx-college-sel{font-family:inherit;font-size:.9rem;padding:7px 10px;border-radius:8px;border:1.5px solid var(--cipx-border-strong);background:var(--cipx-surface);color:var(--cipx-text);cursor:pointer;max-width:340px;flex:1;min-width:180px;}",
       ".cipx-college-sel:focus{outline:2px solid var(--cipx-focus);outline-offset:1px;}",
@@ -2246,15 +2279,25 @@
       ".cipx-rev-banner{background:var(--cipx-surface-2);border:1px solid var(--cipx-border);border-radius:10px;padding:10px 14px;font-size:.84rem;color:var(--cipx-text-soft);line-height:1.5;margin:2px 0 14px;}.cipx-rev-banner b{color:var(--cipx-text);}",
       ".cipx-rev-deptinline{display:flex;gap:8px;align-items:center;flex:1 1 auto;min-width:220px;}",
       ".cipx-rev-deptl{font-size:.84rem;font-weight:700;color:var(--cipx-text-soft);white-space:nowrap;}",
-      ".cipx-rev-deptsel{font-family:inherit;font-size:.92rem;padding:8px 11px;border-radius:8px;border:1.5px solid var(--cipx-border-strong);background:var(--cipx-surface);color:var(--cipx-text);cursor:pointer;max-width:420px;flex:1;min-width:200px;}",
+      ".cipx-rev-deptsel{font-family:inherit;font-size:.92rem;padding:8px 11px;border-radius:8px;border:1.5px solid var(--cipx-border-strong);background:var(--cipx-surface);color:var(--cipx-text);cursor:pointer;max-width:none;flex:1 1 auto;min-width:240px;}",
       ".cipx-rev-deptsel:focus{outline:2px solid var(--cipx-focus);outline-offset:1px;}",
       ".cipx-rev-prog{font-size:.82rem;color:var(--cipx-muted);font-style:italic;min-height:0;margin:0 2px;}",
-      ".cipx-rev-tilesrow{display:flex;align-items:center;gap:9px 14px;flex-wrap:wrap;margin:4px 0 7px;}",
+      // The tiles bar pins flush beneath the sticky college bar (top = its measured height). Its own
+      // host (sibling of the list) so it stays stuck through the whole list; progress copy scrolls away.
+      ".cipx-rev-tileshost{position:sticky;top:var(--cipx-cbh,56px);z-index:24;background:var(--cipx-surface-2);border:1px solid var(--cipx-border-strong);border-radius:10px;padding:8px 12px;margin:2px 0 10px;box-shadow:0 3px 10px rgba(9,19,32,.07);}",
+      ".cipx-rev-tileshost:empty{display:none;}",
+      ".cipx-rev-tilesrow{display:flex;align-items:center;gap:9px 14px;flex-wrap:wrap;margin:0;}",
       ".cipx-rev-tiles{display:flex;gap:8px;flex-wrap:wrap;margin:0;}",
-      ".cipx-rev-tile{display:flex;flex-direction:column;gap:1px;align-items:flex-start;font-family:inherit;background:var(--cipx-surface);border:1px solid var(--cipx-border-strong);border-radius:10px;padding:8px 14px;cursor:pointer;min-width:78px;}",
+      // tile contents centered (Sam, 2026-07-20)
+      ".cipx-rev-tile{display:flex;flex-direction:column;gap:1px;align-items:center;justify-content:center;text-align:center;font-family:inherit;background:var(--cipx-surface);border:1px solid var(--cipx-border-strong);border-radius:10px;padding:7px 16px;cursor:pointer;min-width:82px;}",
       ".cipx-rev-tile:hover{border-color:var(--cipx-accent);}.cipx-rev-tile[aria-pressed=\"true\"]{border-color:var(--cipx-accent);box-shadow:0 0 0 1px var(--cipx-accent);}",
       ".cipx-rev-tilen{font-size:1.15rem;font-weight:800;color:var(--cipx-text);font-variant-numeric:tabular-nums;}",
       ".cipx-rev-tilel{font-size:.72rem;font-weight:600;color:var(--cipx-muted);text-transform:uppercase;letter-spacing:.03em;white-space:nowrap;}",
+      // forward-looking destination tile: the eventual COCI sync (non-functional preview)
+      ".cipx-rev-tile-future{border-style:dashed;background:var(--cipx-surface-sub);cursor:default;}",
+      ".cipx-rev-tile-future:hover{border-color:var(--cipx-border-strong);}",
+      ".cipx-rev-tile-future .cipx-rev-tilen{color:var(--cipx-muted);}",
+      ".cipx-rev-tilesoon{font-size:.55rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--cipx-accent);background:var(--cipx-accent-soft);border-radius:6px;padding:1px 6px;margin-top:3px;white-space:nowrap;}",
       // Review = amber/warn (visible), not muted — Sam: the old muted count was invisible.
       ".cipx-rev-tile-warn .cipx-rev-tilen{color:var(--cipx-warn-fg);}.cipx-rev-tile-ok .cipx-rev-tilen{color:var(--cipx-ok-fg);}.cipx-rev-tile-suggest .cipx-rev-tilen{color:var(--cipx-accent);}",
       ".cipx-rev-progline{font-size:.8rem;color:var(--cipx-muted);font-weight:600;margin:2px 2px 8px;}",
@@ -2284,8 +2327,15 @@
       ".cipx-rev-utils{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 12px;}",
       ".cipx-rev-expand{font-family:inherit;font-size:.78rem;font-weight:700;color:var(--cipx-link);background:var(--cipx-surface);border:1px solid var(--cipx-border);border-radius:8px;padding:7px 12px;cursor:pointer;}.cipx-rev-expand:hover{border-color:var(--cipx-accent);}",
       ".cipx-rev-csv{font-family:inherit;font-size:.78rem;font-weight:700;color:var(--cipx-link);background:var(--cipx-surface);border:1px solid var(--cipx-border);border-radius:8px;padding:7px 12px;cursor:pointer;margin-left:auto;}",
-      ".cipx-rev-list{display:flex;flex-direction:column;}",
-      ".cipx-rev-item{border-bottom:1px solid var(--cipx-border);}.cipx-rev-conf{background:var(--cipx-ok-bg);}",
+      // a subtle field behind the rows so the WHITE gutter lines pop (Sam) — reproducing the prototype
+      ".cipx-rev-list{display:flex;flex-direction:column;background:var(--cipx-rev-field);border:1px solid var(--cipx-border);border-radius:10px;}",
+      // distinctive white gutter between rows so each brown note brackets with the course ABOVE it (Sam, 2026-07-20)
+      ".cipx-rev-item{border-bottom:2px solid var(--cipx-row-sep);}.cipx-rev-conf{background:var(--cipx-ok-bg);}",
+      ".cipx-rev-item:last-child{border-bottom:0;}",
+      // an expanded course reads as ONE package: accent spine ties row → detail, framed top + tint wall it off
+      ".cipx-rev-item-open{background:var(--cipx-surface-sub);border-top:1.5px solid var(--cipx-border-strong);box-shadow:inset 3px 0 0 var(--cipx-accent);}",
+      ".cipx-rev-item-open.cipx-rev-conf{background:var(--cipx-ok-bg);}",
+      ".cipx-rev-item-open .cipx-rev-row:hover{background:var(--cipx-surface-sub);}",
       ".cipx-rev-row{display:grid;grid-template-columns:16px minmax(150px,0.8fr) minmax(330px,1.2fr) 74px;gap:12px;align-items:center;padding:11px 10px;cursor:pointer;}",
       ".cipx-rev-row:hover{background:var(--cipx-surface-sub);}",
       ".cipx-rev-course{display:flex;flex-direction:column;gap:2px;min-width:0;}",
