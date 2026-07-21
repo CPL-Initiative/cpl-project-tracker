@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-21T11:20:28.127897+00:00",
+  "scraped_at": "2026-07-21T14:28:49.826282+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26017,
+    "jst": 26020,
     "star_colleges": 55
   },
   "computed_star_colleges": 55,
@@ -52,7 +52,7 @@
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 545,
+      "jst": 547,
       "star": true
     },
     "City College of San Francisco": {
@@ -62,7 +62,7 @@
     },
     "Norco College": {
       "vets": 831,
-      "jst": 492,
+      "jst": 493,
       "star": false
     },
     "West Los Angeles College": {
