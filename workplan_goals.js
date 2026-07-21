@@ -341,7 +341,7 @@
     var isPct = cell.getAttribute("data-pct") === "1";
     // PR-B: optional kind discriminator. When absent (pre-PR-B cells), the
     // save path falls through to the unscoped PATCH, which is still safe
-    // because Activity ids ("1"-"5") and project ids ("1.1", "1.2", …) are
+    // because Activity ids ("1"-"4") and project ids ("1.1", "1.2", …) are
     // disjoint.
     var kind = cell.getAttribute("data-kind") || "";
     if (!activity_id || !row_type || !year_key) return;

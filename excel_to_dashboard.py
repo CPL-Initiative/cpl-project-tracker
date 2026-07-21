@@ -1604,26 +1604,22 @@ def build_activity_kpis(projects, activities=None):
     survives as a fallback (now including Activity 5 — previously the
     dict was missing it, which silently dropped the Activity 5 KPI group).
     """
-    # Core sub-activity IDs, AUTO-DERIVED from the live Project List (A+ rule:
-    # every project with a non-zero KPI ladder, excl D.* metric rows and the
-    # sprint children that fold into the 4.1 composite). Replaces a hardcoded
-    # list that had drifted out of sync (missing Activity 5; referencing the
-    # non-existent 4.1a-4.1d instead of the real 4.1.1-4.1.4 sprint children).
-    core_ids = derive_core_activity_ids(projects)
+    # Option-B (Activities reorg 2026-07-21): EVERY active project nests under
+    # its parent Activity — there is no separate "Projects" grid anymore, so the
+    # activity-kpi section is the single home for the whole work-item tree. We no
+    # longer gate on a KPI ladder (the old `core_ids` rule) or fold the 4.1.x
+    # sprint children into a synthetic "4.1" composite (post-reorg 4.1 = the
+    # Veteran Sprint node, 4.2 = Apprenticeship — real rows, not a composite).
+    # Grouping is by each project's `workplan_activity` spine, which folds legacy
+    # 5.x ids into their true Activity 1-4; no phantom "Activity 5" is made.
 
-    # Real sub-IDs that compose the 4.1 sprint composite
-    sprint_ids = SPRINT_IDS
-
-    # Defensive fallback labels. Used when the Supabase Activity row for the
-    # given activity_id is missing. Now covers Activity 5 (previously absent
-    # — caused Activity 5 KPI cards to render with the literal "Activity 5"
-    # label instead of the proper name).
+    # Defensive fallback labels — used only when the Supabase Activity row is
+    # missing. Activity 5 is dissolved, so it is intentionally absent here.
     activity_labels_fallback = {
         "1": "Activity 1: Build AI-Enhanced CPL Infrastructure",
         "2": "Activity 2: Faculty Workgroups & Credit Recommendations",
         "3": "Activity 3: Scale CPL Access, Awards, and Procedures",
-        "4": "Activity 4: Sprints, Projects, Partnerships & Scale",
-        "5": "Activity 5: Strategic Initiatives & Special Projects",
+        "4": "Activity 4: Sprints, Projects & Partnerships",
     }
     # Live labels from Supabase Activity rows when available
     sb_activity_labels = {a["id"]: a["name"] for a in (activities or [])}
@@ -1635,65 +1631,16 @@ def build_activity_kpis(projects, activities=None):
             or f"Activity {act_num}"
         )
 
-    # Build a lookup by project ID
-    proj_map = {p["id"]: p for p in projects}
+    # All active work-item projects (D.* helper rows excluded; tabled/archived
+    # are already filtered out by the caller before build_activity_kpis).
+    active = [p for p in projects if not str(p.get("id", "")).startswith("D.")]
 
-    # Build composite entry for 4.1 (Sprints) from 4.1a-4.1d
-    sprint_projects = [proj_map[sid] for sid in sprint_ids if sid in proj_map]
-    if sprint_projects:
-        sprint_details = "; ".join(
-            f"{sp['id']} {sp['name']}: {sp['kpi_metric'] or 'N/A'} {sp['kpi_unit']}"
-            for sp in sprint_projects
-        )
-        # Use the first sprint with a workplan note, or compose one
-        wp_note = next((sp["workplan_notes"] for sp in sprint_projects if sp["workplan_notes"]), "")
-        composite_41 = {
-            "id": "4.1",
-            "name": "Sprints (Veteran, Apprenticeship, Adoption, 29 Palms)",
-            # Inherit the REAL 4.1 row's goal — without it the composite fell
-            # into the goal-less "Other" bucket, which renders as its own grid
-            # and pushed the Sprints card onto a phantom new row (Sam,
-            # 2026-07-02: "1 activity is pushing to a new row").
-            "goal": (proj_map.get("4.1") or {}).get("goal", ""),
-            "kpi_metric": str(len(sprint_projects)),
-            "kpi_unit": "active sprints",
-            "kpi_goal_2526": "",
-            "kpi_stretch_2526": "",
-            "kpi_goal_2627": "",
-            "kpi_stretch_2627": "",
-            "kpi_goal_2728": "",
-            "kpi_stretch_2728": "",
-            "kpi_goal_2829": "",
-            "kpi_stretch_2829": "",
-            "kpi_goal_2930": "",
-            "kpi_stretch_2930": "",
-            "workplan_notes": wp_note or f"Components: {sprint_details}",
-            "status": "In Progress",
-            "pct": sum(sp["pct"] for sp in sprint_projects) // len(sprint_projects),
-            "sprint_components": [
-                {
-                    "id": sp["id"],
-                    "name": sp["name"],
-                    "metric": sp["kpi_metric"],
-                    "unit": sp["kpi_unit"],
-                    "status": sp["status"],
-                    "pct": sp["pct"],
-                }
-                for sp in sprint_projects
-            ],
-        }
-        proj_map["4.1"] = composite_41
-
-    groups = {}  # key = "1","2","3","4"
-    for pid in core_ids:
-        p = proj_map.get(pid)
-        if not p:
-            continue
+    groups = {}  # key = "1".."4"
+    for p in active:
+        pid = str(p["id"])
         # Group by the project's workplan_activity (the authoritative spine),
         # NOT the id prefix — so legacy `5.x` ids land in their true Activity
-        # (e.g. `5.1` → Activity 4) and no phantom "Activity 5" is manufactured.
-        # The synthetic 4.1 sprint composite carries no `activity`, so it falls
-        # back to its id prefix ("4").
+        # (e.g. `5.6` → Activity 1) and no phantom "Activity 5" is manufactured.
         act_num = _activity_num_from_workplan(p.get("activity")) or pid.split(".")[0]
         if act_num not in groups:
             groups[act_num] = {
@@ -1722,13 +1669,20 @@ def build_activity_kpis(projects, activities=None):
             "update_date":   p.get("update_date", ""),
             "status":        p.get("status", ""),
             "pct":           p.get("pct", 0),
+            # Activities reorg: the cross-cutting Sprint campaign tag (nullable);
+            # drives the ◆ badge + the sprint filter chip. `depth` (dotted-id
+            # nesting level: 1.1→0, 1.1.1→1) drives the nested indentation.
+            "sprint_tag":    p.get("sprint_tag", "") or "",
+            "depth":         max(0, pid.count(".") - 1),
         }
-        # Include sprint components for 4.1
-        if pid == "4.1" and "sprint_components" in p:
-            entry["sprint_components"] = p["sprint_components"]
         groups[act_num]["kpis"].append(entry)
 
-    # Return as ordered list
+    # Sort each Activity's sub-activities by natural dotted id so parents sit
+    # directly above their children (1.1, 1.1.1, 1.1.2, 1.2, …).
+    for g in groups.values():
+        g["kpis"].sort(key=lambda e: _natural_activity_sort_key(e["id"]))
+
+    # Return as an ordered list (Activity 1..4)
     return [groups[k] for k in sorted(groups.keys()) if k in groups]
 
 
@@ -2037,23 +1991,15 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
         html += (f'            <div class="cpl-live-update" data-update-key="activity:{act_num}" '
                  f'style="display:none;margin:0 0.5rem 0.4rem 0.5rem;border-top:1px solid #e8e8e8;padding-top:0.4rem;"></div>\n')
 
-        # Group KPIs by their primary Goal
-        goal_groups = {}
-        for kpi in group["kpis"]:
-            goal_raw = kpi.get("goal", "")
-            # Extract first goal (e.g., "Goal 1" from "Goal 1; Goal 2")
-            primary_goal = ""
-            if goal_raw:
-                gm = re.match(r'(Goal\s*\d+)', goal_raw)
-                if gm:
-                    primary_goal = gm.group(1)
-            if not primary_goal:
-                primary_goal = "Other"
-            goal_groups.setdefault(primary_goal, []).append(kpi)
-
-        # Sort goal groups: Goal 1, Goal 2, Goal 3, then Other
-        sorted_goals = sorted(goal_groups.keys(),
-                              key=lambda g: (0, int(re.search(r'\d+', g).group())) if re.search(r'\d+', g) else (1, 0))
+        # Option-B (Activities reorg 2026-07-21): render ALL sub-activities in a
+        # single grid per Activity, ordered by dotted id (build_activity_kpis
+        # already sorted them; nesting is shown via a per-card depth accent). The
+        # per-Goal sub-grouping ("Goal 1/2/3" banners) is dropped — Path A: the 3
+        # CPL Goals were a redundant Vision-2030 overlay. `cpl_goal` stays in the
+        # data (the annual report's Vision-2030 section still reads it); it is
+        # just no longer rendered as a card sub-header here.
+        goal_groups = {"_all": list(group["kpis"])}
+        sorted_goals = ["_all"]
 
         for goal_key in sorted_goals:
             goal_kpis = goal_groups[goal_key]
@@ -2080,11 +2026,34 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                 status_raw = kpi.get("status", "")
                 status_class = status_raw.lower().replace(" ", "-")
 
-                html += f'            <div class="activity-kpi-card {card_class}">\n'
+                # Activities reorg: filter data-attrs + the ◆ sprint badge + a
+                # child-depth accent so nesting reads at a glance and the sprint
+                # filter chip can show/hide the campaign's pieces across cards.
+                _depth = kpi.get("depth", 0)
+                _sprint = kpi.get("sprint_tag", "") or ""
+                _goal_m = re.match(r'(Goal\s*\d+)', kpi.get("goal", "") or "")
+                _goal_num = _goal_m.group(1) if _goal_m else ""
+                _child_accent = (' style="border-left:3px solid var(--cobalt);"'
+                                 if _depth else '')
+                _sprint_badge = (
+                    f'<span class="akpi-sprint-badge" data-sprint="{html_escape(_sprint, quote=True)}" '
+                    f'title="{html_escape(_sprint, quote=True)} — cross-cutting sprint campaign" '
+                    f'style="font-size:0.6rem;font-weight:700;color:var(--mustard-text);'
+                    f'background:var(--gold-accent);border-radius:10px;padding:1px 7px;margin-left:auto;'
+                    f'white-space:nowrap;">&#9670; {html_escape(_sprint)}</span>'
+                    if _sprint else '')
+
+                html += (f'            <div class="activity-kpi-card {card_class}" '
+                         f'data-pid="{html_escape(str(kpi["id"]), quote=True)}" '
+                         f'data-activity="Activity {act_num}" '
+                         f'data-goal="{html_escape(_goal_num, quote=True)}" '
+                         f'data-sprint="{html_escape(_sprint, quote=True)}" '
+                         f'data-depth="{_depth}"{_child_accent}>\n')
                 html += (f'                <div class="akpi-header">\n'
                          f'                    <span class="akpi-id">{html_escape(str(kpi["id"]))}</span>\n'
                          f'                    <span class="akpi-status status-badge status-{html_escape(status_class, quote=True)}" '
                          f'style="margin:0;font-size:0.7rem;padding:0.15rem 0.5rem;">{html_escape(status_raw)}</span>\n'
+                         f'                    {_sprint_badge}\n'
                          f'                </div>\n')
                 html += f'                <div class="akpi-name">{html_escape(str(kpi["name"]))}</div>\n'
 
@@ -2363,8 +2332,7 @@ def render_workplan_goals_html(
         "1": "Activity 1: Build AI-Enhanced CPL Infrastructure",
         "2": "Activity 2: Faculty Workgroups & Credit Recommendations",
         "3": "Activity 3: Scale CPL Access, Awards, and Procedures",
-        "4": "Activity 4: Sprints, Projects, Partnerships & Scale",
-        "5": "Activity 5: Strategic Initiatives & Special Projects",
+        "4": "Activity 4: Sprints, Projects & Partnerships",
     }
     # Live labels from Supabase
     sb_activity_labels = {a["id"]: a["name"] for a in activities}
@@ -10217,13 +10185,12 @@ def build_workplan_goals_from_supabase(
     ]
 
     # Hardcoded fallback labels (used only when the Activity row is missing
-    # from Supabase — defensive after PR-A pre-seeded all 5).
+    # from Supabase). Activity 5 is dissolved (Activities reorg 2026-07-21).
     activity_labels = {
         "1": "Activity 1: Build AI-Enhanced CPL Infrastructure",
         "2": "Activity 2: Faculty Workgroups & Credit Recommendations",
         "3": "Activity 3: Scale CPL Access, Awards, and Procedures",
-        "4": "Activity 4: Sprints, Projects, Partnerships & Scale",
-        "5": "Activity 5: Strategic Initiatives & Special Projects",
+        "4": "Activity 4: Sprints, Projects & Partnerships",
     }
 
     proj_map = {p["id"]: p for p in projects}
@@ -12012,53 +11979,28 @@ def main():
                 proj_grid_end = html.find('<!-- Budget Section -->')
                 proj_grid_end_consumes = proj_grid_end
             if proj_grid_start != -1 and proj_grid_end != -1:
-                # Activity ⇄ Project card dedup (Session 95, Sam 2026-07-02:
-                # "no redundant activity or project cards"). The activity-layer
-                # ids (which render Activity-metrics KPI cards) are NOT repeated
-                # as Projects-Grid cards — the grid holds only the real work-item
-                # projects (the 4.1.x sprint children + the 5.x initiatives). The
-                # Activity card carries the same affordances (Latest Update /
-                # Workplan Note / Report / Attach / RACI / Update / Nudge), so
-                # nothing is lost by dropping the duplicate.
-                grid_projects = [
-                    p for p in projects if p["id"] not in activity_layer_ids
-                ]
-                proj_cards_html = render_projects_grid_html(
-                    grid_projects, update_log, attachments=attachments,
-                    data_source_stamp=projects_fetched_at,
-                    assoc_records_by_project=assoc_records_by_project,
-                    activities=activities, lifecycle=project_lifecycle,
-                )
-                # Active project count excludes D.* helper rows AND tabled/archived.
-                project_count = len([
-                    p for p in grid_projects
-                    if not p["id"].startswith("D.") and p["id"] not in inactive_pids
-                ])
-                # Collapsed "Tabled & Archived" section (sibling of #projectsGrid so
-                # the filters/count ignore it). Built from the soft-deleted project
-                # dicts + their lifecycle metadata.
+                # Activities reorg (2026-07-21, Option B): the separate "Projects
+                # (N)" grid is DISSOLVED — every active project now nests under
+                # its parent Activity in the activity-kpi section above. This
+                # region keeps only the collapsed "Tabled & Archived" ledger
+                # (held-out/tabled records like 5.1 AI-Ready California), a
+                # sibling the Activities filters ignore. The markers are kept so
+                # re-injection stays idempotent.
                 inactive_projects = [
-                    p for p in grid_projects
+                    p for p in projects
                     if p["id"] in inactive_pids and not p["id"].startswith("D.")
                 ]
                 tabled_archived_html = render_tabled_archived_section(
                     inactive_projects, project_lifecycle
                 )
-                # The Workplan Progress charts moved to the CPL Analytics body
-                # on the Dashboard tab (2026-07-02). The Projects Grid is just
-                # the project cards now.
                 new_proj_section = (
                     '<!-- Projects Grid -->\n'
-                    '        <h2 style="margin-bottom:1.5rem;">Projects <span id="projectCount" style="font-size:0.9rem;color:#888;">(' + str(project_count) + ')</span></h2>\n'
-                    '        <div id="projectsGrid">\n'
-                    + proj_cards_html +
-                    '        </div>\n'
                     + tabled_archived_html +
                     '        <!-- End Projects Grid -->\n'
                 )
                 html = html[:proj_grid_start] + new_proj_section + html[proj_grid_end_consumes:]
-                print(f"  Rendered static project cards ({project_count} projects, grouped by Goal; "
-                      f"{len(activity_layer_ids)} sub-activities render as Activity cards only)")
+                print(f"  Projects grid dissolved into Activities (Option B); kept "
+                      f"{len(inactive_projects)} tabled/archived record(s).")
 
             # ── Teaser cards on the Dashboard tab linking to the other tabs ──
             # Replace the static placeholder; idempotent because the placeholder
@@ -12227,35 +12169,20 @@ def main():
                         html = html[:v2030_insert] + wrapped + html[v2030_insert:]
                         print(f"  Rendered Annual Workplan Goals table ({len(annual_goals)} rows, first-run insert)")
 
-            # ── AWG "Projects" section (Session 95, Sam 2026-07-02) ──
-            # The real work-item projects (non-activity-layer, active) listed at
-            # the bottom of the Annual Workplan Goals tab — the official
-            # sub-activities stay in the ladder table above. Own paired markers
-            # placed AFTER the End-AWG marker (everything BETWEEN the AWG
-            # markers is overwritten by the annual-goals injection every run),
-            # replaced in place for idempotency.
-            awg_projects_html = render_awg_projects_section_html([
-                p for p in projects
-                if p["id"] not in activity_layer_ids
-                and not p["id"].startswith("D.")
-                and p["id"] not in inactive_pids
-            ])
+            # ── AWG "Projects" section — REMOVED (Activities reorg 2026-07-21,
+            # Option B). The Annual Workplan Goals tab no longer carries a
+            # separate "Projects" table; the official sub-activities stay in the
+            # ladder table above and the full work-item tree nests under the
+            # Activities tab. If a prior template still has the section, collapse
+            # it in place (keep the paired markers, empty, so any future
+            # re-injection stays idempotent).
             _AWGP_S = '<!-- AWG Projects Section -->'
             _AWGP_E = '<!-- End AWG Projects Section -->'
-            if awg_projects_html:
-                wrapped_awgp = _AWGP_S + '\n        ' + awg_projects_html + '        ' + _AWGP_E
-                aps = html.find(_AWGP_S)
-                ape = html.find(_AWGP_E)
-                _n_awgp = awg_projects_html.count('data-awgp-pid=')
-                if aps != -1 and ape != -1:
-                    html = html[:aps] + wrapped_awgp + html[ape + len(_AWGP_E):]
-                    print(f"  Rendered AWG Projects section ({_n_awgp} work-item projects, replaced in place)")
-                else:
-                    _awgp_anchor = html.find('<!-- End Annual Workplan Goals -->')
-                    if _awgp_anchor != -1:
-                        _ins = _awgp_anchor + len('<!-- End Annual Workplan Goals -->')
-                        html = html[:_ins] + '\n\n        ' + wrapped_awgp + html[_ins:]
-                        print(f"  Rendered AWG Projects section ({_n_awgp} work-item projects, first-run insert)")
+            aps = html.find(_AWGP_S)
+            ape = html.find(_AWGP_E)
+            if aps != -1 and ape != -1:
+                html = html[:aps + len(_AWGP_S)] + '\n        ' + html[ape:]
+                print("  AWG Projects section removed (Option B — dissolved into the Activities tab).")
 
             # ── Rebuild the Vision 2030 section with updated goal data ──
             # End boundary is <!-- End Vision 2030 Section --> (added Phase D)

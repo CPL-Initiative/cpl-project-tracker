@@ -290,8 +290,10 @@
   // hide an Activity card or its goals-ladder rows. (Pre-Session-95 the
   // overlay deliberately hid the Activity card too — the 2026-07-02 mixup
   // where tabling "redundant" project cards erased 22 Activity cards.) The
-  // legacy `5.x` "Strategic Initiatives" ids are REAL projects even when a
-  // KPI ladder puts them in activity_kpis (e.g. 5.1) — never immune. Keep in
+  // `5.x` family is gone after the Activities-tab reorg — the single held-out
+  // `5.1` (AI-Ready California, tabled) is the only `5.` id left, and the guard
+  // below (indexOf("5.") !== 0) keeps it NON-immune so its tabled state sticks
+  // even if a KPI ladder puts it in activity_kpis. Keep in
   // sync with the generator's activity_layer_ids. Empty map when CPL_DATA is
   // absent (e.g. tests) → nothing is immune.
   function activityLayerIds() {
