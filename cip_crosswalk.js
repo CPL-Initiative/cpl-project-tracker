@@ -843,7 +843,17 @@
     if (tc && !topTtToks.length) topTtToks = fitTokens(tc.t || "");   // fall back if the strip left nothing
     var topTtTotal = 0; for (var tt = 0; tt < topTtToks.length; tt++) topTtTotal += idf(topTtToks[tt]);
     if (topTtTotal <= 0) topTtTotal = 1;
-    function fieldSim(r) { var h = 0; for (var i = 0; i < topTtToks.length; i++) if (r._tt && r._tt[topTtToks[i]]) h += idf(topTtToks[i]); return h / topTtTotal; }
+    // A TOP that maps to a SINGLE credit CIP is the crosswalk's own unambiguous "this IS the field's code"
+    // (Sam, 2026-07-20: BUSL 10 → the sole 22.0000 Legal Studies for TOP 1401.00 "Law"). Credit it as a
+    // full discipline-fit even when the titles don't lexically overlap ("Law" vs "Legal") — the approved
+    // TOP→CIP crosswalk is the one place TOP is authoritative (§7), so a 1:1 mapping is the strongest
+    // possible field signal. Display-only (dconf); the ⚑ outside-crosswalk flag still surfaces alternates.
+    var creditCrossCodes = tc ? tc.c.filter(function (ct) { var rr = BYCODE[ct[0]]; return rr && !BOILER[ct[0]] && rr.cat !== "Noncredit"; }).map(function (ct) { return ct[0]; }) : [];
+    var soleCreditCode = creditCrossCodes.length === 1 ? creditCrossCodes[0] : null;
+    function fieldSim(r) {
+      if (soleCreditCode && r.code === soleCreditCode) return 1;   // the sole credit crosswalk CIP = the direct field code
+      var h = 0; for (var i = 0; i < topTtToks.length; i++) if (r._tt && r._tt[topTtToks[i]]) h += idf(topTtToks[i]); return h / topTtTotal;
+    }
     // The DISPLAYED confidence: the raw description/title fit lifted toward certainty by the discipline
     // fit. raw + DISC_W·fieldSim·(1−raw) — a big lift when the course's own wording is thin but its
     // discipline maps cleanly, a small lift when raw is already high. Gates keep raw `conf`.
@@ -1594,8 +1604,15 @@
     var code = r.sug ? r.sug.code : null, defaulted = null;
     // A weak, uncorroborated pick defaults to the department's dominant code (#843) — but NOT a confident
     // title-match pick (Sam, 2026-07-19): "Environmental Science" → 03.0104 must not be swapped to the BIOL
-    // dept-dominant 26.0101 just because few BIOL courses use 03.0104.
-    if (code && r.status === "review" && (r.sugConf || 0) < SUG_STRONG && ctx && ctx.deptTop) {
+    // dept-dominant 26.0101 just because few BIOL courses use 03.0104. Nor a DELIBERATE, direct pick (Sam,
+    // 2026-07-20): (a) the SOLE credit crosswalk CIP for the TOP — the approved crosswalk's unambiguous
+    // field code (BUSL 10 → 22.0000 Legal Studies must not become the dept's 22.0302, which isn't even in
+    // its crosswalk); (b) a strong-own-fit DESCRIPTION headline (the veto / F5 case) whose code IS the point
+    // of the row. Only weak grab-bag guesses (Ironworker "Rigging" → Robotics) fall through to the default.
+    var creditCands = (r.m && r.m.cands || []).filter(function (o) { return o.r.cat !== "Noncredit"; });
+    var soleCross = creditCands.length === 1 && r.sugKind === "crosswalk" && code === creditCands[0].r.code;
+    var directPick = soleCross || r.sugKind === "description";
+    if (!directPick && code && r.status === "review" && (r.sugConf || 0) < SUG_STRONG && ctx && ctx.deptTop) {
       var own = ctx.codeCount[r.subj + "|" + code] || 0, dt = ctx.deptTop[r.subj];
       if (dt && own < REV_DOMINANT_MIN && dt.code !== code) { defaulted = dt; code = dt.code; }
     }
@@ -1880,7 +1897,7 @@
       var open = !!revOpen[r.label];
       caret.textContent = open ? "▾" : "▸"; head.setAttribute("aria-expanded", open ? "true" : "false");
       card.classList.toggle("cipx-rev-item-open", open);   // package treatment: spine + framed top + tint bind row to detail (Sam)
-      if (open && !body) { body = reviewExpand(r, dec, allRows); card.appendChild(body); }
+      if (open && !body) { body = reviewExpand(r, dec, allRows, ctx); card.appendChild(body); }
       else if (!open && body) { card.removeChild(body); body = null; }
     }
     function tog() { revOpen[r.label] = !revOpen[r.label]; paint(); }
@@ -1964,9 +1981,13 @@
     return wrap;
   }
 
-  function reviewExpand(r, dec, allRows) {
+  function reviewExpand(r, dec, allRows, ctx) {
     var box = el("div", { class: "cipx-rev-detail" }, []);
     var cips = revCips(dec, r.label);
+    // The code the BOX shows (may be a dept-default) — the Confirm button must commit THIS, not the raw
+    // crosswalk sug, so the box and the button never disagree (Sam, 2026-07-20: BUSL 10 showed 22.0302 but
+    // "Confirm 22.0000"). effectiveSug is display-only and idempotent, so recomputing it here is safe.
+    var effCode = (effectiveSug(r, ctx || {}).code) || (r.sug && r.sug.code) || null;
     // selecting/deselecting a code in the expand is individual work → validate (or unvalidate when cleared)
     function toggle(code) { revToggleCip(r.label, code); revSetValidated(r.label, revCips(revDecisions(), r.label).length > 0); renderReview(allRows); }   // revOpen keeps this row expanded
     // one multi-select candidate row — an explicit Select button (Sam: clearer than a checkbox);
@@ -2014,27 +2035,16 @@
       });
     }
 
-    // actions: confirm (the suggestion, or an applied-but-unvalidated course as-is) + search-all + clear-all
+    // actions: utility links (add / clear) on the LEFT; the decision buttons (Keep + Confirm) on the RIGHT
+    // — aligned with the per-candidate "Select" column so the primary action sits where the eye already is
+    // (Sam, 2026-07-20: "it should be on the right side with all the other confirms"). Confirm is rightmost.
     var acts = el("div", { class: "cipx-rev-detactions" }, []);
+    var utils = el("div", { class: "cipx-rev-actutils" }, []);
+    var decide = el("div", { class: "cipx-rev-actdecide" }, []);
     var validated = revIsValidated(r.label);
-    if ((!cips.length && r.sug) || (cips.length && !validated)) {
-      var conf = el("button", { class: "cipx-rev-confirm", type: "button" }, [cips.length ? "✓ Confirm this course" : "✓ Confirm " + r.sug.code]);
-      conf.onclick = function () { if (!cips.length) { toggle(r.sug.code); } else { revSetValidated(r.label, true); renderReview(allRows); } };
-      acts.appendChild(conf);
-      // A Suggested (⇄) row nudges OFF the course's own TOP crosswalk toward the peer pick, so the lone
-      // "Confirm <peer>" left no obvious way to keep the crosswalk code if the curator decides it's right
-      // (Sam, 2026-07-20 — "I'm not sure how to keep 13.1210"). Offer a matched "Keep <crosswalk>" beside
-      // it: peer pick stays the filled primary (the tool's suggestion), Keep is the secondary outline.
-      // Placed here, after the full signal list, so the curator scans the options before deciding (Sam's
-      // pedagogy — bottom over top). Any OTHER code is still Select-able in the list above.
-      if (!cips.length && r.suggestChange && r.crosswalk && r.sug && r.crosswalk.code !== r.sug.code) {
-        var keep = el("button", { class: "cipx-rev-keep", type: "button", title: "Keep your TOP’s crosswalk code (" + r.crosswalk.code + " · " + r.crosswalk.t + ") instead of the peers’ suggestion" }, ["Keep " + r.crosswalk.code]);
-        keep.onclick = function () { revSetCips(r.label, [r.crosswalk.code]); revSetValidated(r.label, true); renderReview(allRows); };
-        acts.appendChild(keep);
-      }
-    }
+    // "+ Add another code…" opens a full-width search combo BELOW the action row (not inline in the flex row)
     var srch = el("button", { class: "cipx-rev-searchall", type: "button" }, ["+ Add another code…"]);
-    var searchWrap = el("div", {}, []);
+    var searchWrap = el("div", { class: "cipx-rev-searchwrap" }, []);
     srch.onclick = function () {
       if (searchWrap.firstChild) { clear(searchWrap); return; }
       searchWrap.appendChild(comboCore({
@@ -2044,10 +2054,29 @@
         onPick: function (picked) { toggle(picked[2]); clear(searchWrap); },
       }));
     };
-    acts.appendChild(srch);
-    acts.appendChild(searchWrap);
-    if (cips.length) { var clr = el("button", { class: "cipx-rev-clear", type: "button" }, [cips.length > 1 ? "Clear all" : "Clear"]); clr.onclick = function () { revSetCips(r.label, []); revSetValidated(r.label, false); renderReview(allRows); }; acts.appendChild(clr); }
+    utils.appendChild(srch);
+    if (cips.length) { var clr = el("button", { class: "cipx-rev-clear", type: "button" }, [cips.length > 1 ? "Clear all" : "Clear"]); clr.onclick = function () { revSetCips(r.label, []); revSetValidated(r.label, false); renderReview(allRows); }; utils.appendChild(clr); }
+    if ((!cips.length && r.sug) || (cips.length && !validated)) {
+      // A Suggested (⇄) row nudges OFF the course's own TOP crosswalk toward the peer pick, so the lone
+      // "Confirm <peer>" left no obvious way to keep the crosswalk code if the curator decides it's right
+      // (Sam, 2026-07-20 — "I'm not sure how to keep 13.1210"). Offer a matched "Keep <crosswalk>" beside
+      // it: peer pick stays the filled primary (the tool's suggestion), Keep is the secondary outline.
+      // Any OTHER code is still Select-able in the list above. Keep sits LEFT of Confirm (Confirm rightmost).
+      if (!cips.length && r.suggestChange && r.crosswalk && r.sug && r.crosswalk.code !== r.sug.code) {
+        var keep = el("button", { class: "cipx-rev-keep", type: "button", title: "Keep your TOP’s crosswalk code (" + r.crosswalk.code + " · " + r.crosswalk.t + ") instead of the peers’ suggestion" }, ["Keep " + r.crosswalk.code]);
+        keep.onclick = function () { revSetCips(r.label, [r.crosswalk.code]); revSetValidated(r.label, true); renderReview(allRows); };
+        decide.appendChild(keep);
+      }
+      // Confirm commits what the BOX shows (effCode), never a different code (Fix C).
+      var confCode = cips.length ? null : effCode;
+      var conf = el("button", { class: "cipx-rev-confirm", type: "button" }, [cips.length ? "✓ Confirm this course" : "✓ Confirm " + confCode]);
+      conf.onclick = function () { if (!cips.length) { toggle(confCode); } else { revSetValidated(r.label, true); renderReview(allRows); } };
+      decide.appendChild(conf);
+    }
+    acts.appendChild(utils);
+    acts.appendChild(decide);
     box.appendChild(acts);
+    box.appendChild(searchWrap);
     return box;
   }
 
@@ -2571,7 +2600,10 @@
       ".cipx-rev-wenote svg{flex:none;margin-top:2px;color:var(--cipx-muted);}",
       ".cipx-rev-cand-peer{border-color:var(--cipx-accent);margin-top:8px;background:var(--cipx-surface);}",
       ".cipx-rev-peertag{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--cipx-accent);background:var(--cipx-accent-soft);padding:2px 6px;border-radius:6px;white-space:nowrap;}",
-      ".cipx-rev-detactions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;}",
+      ".cipx-rev-detactions{display:flex;gap:12px 16px;flex-wrap:wrap;align-items:center;margin-top:12px;}",
+      ".cipx-rev-actutils{display:flex;gap:16px;align-items:center;flex-wrap:wrap;}",
+      ".cipx-rev-actdecide{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-left:auto;}",
+      ".cipx-rev-searchwrap:not(:empty){margin-top:10px;}",
       ".cipx-rev-confirm{font-family:inherit;font-size:.82rem;font-weight:700;color:#fff;background:var(--cipx-accent);border:0;border-radius:8px;padding:8px 15px;cursor:pointer;}.cipx.cipx-theme-dark .cipx-rev-confirm{color:#0e1a2b;}",
       ".cipx-rev-keep{font-family:inherit;font-size:.82rem;font-weight:600;color:var(--cipx-text);background:var(--cipx-surface);border:1.5px solid var(--cipx-border-strong);border-radius:8px;padding:6.5px 14px;cursor:pointer;}",
       ".cipx-rev-keep:hover{border-color:var(--cipx-accent);color:var(--cipx-accent);}",
@@ -2650,5 +2682,6 @@
     _setStatusCounts: function (d) { STATUS_COUNTS = d; },
     _consensus: consensusFor, _consensusPick: consensusPick, _consensusKey: consensusKey, _subjMatch: subjMatch,
     _bestCipForTop: bestCipForTop, _college: function () { return st.college; },
+    _effectiveSug: effectiveSug,
   };
 })();

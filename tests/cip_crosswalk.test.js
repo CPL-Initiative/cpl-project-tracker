@@ -396,6 +396,22 @@ function fresh(withCollege) {
   check("discipline-fit: raw conf is preserved alongside dconf (gates read raw)", acctCand && acctCand.conf < acctCand.dconf && typeof acctCand.conf === "number");
   check("discipline-fit: the lift does not fabricate a recommendation (gate stays on raw signal)", rApi._recommend(["ZZZ 2 — Unrelated", "quilting macrame origami calligraphy pottery basket weaving", "0505.00"]).recommended === null);
 
+  // ── Fix A — a SOLE-credit-crosswalk mapping reads confident, even without a title match (Sam, 2026-07-20) ──
+  // BUSL 10 → the sole 22.0000 Legal Studies for TOP "Law": the lexical lift missed law≠legal, so the direct
+  // crosswalk pick read 28%. When a TOP maps to ONE credit CIP, that CIP is the approved crosswalk's field
+  // code (§7-authoritative) → full discipline-fit. TOP 1230.00 → the sole credit 51.3801; a thin-fit course
+  // still reads it confidently, while a MULTI-credit TOP (0505.00, 3 credit CIPs) gets no blanket lift.
+  const mSole = rApi._recommend(["ZZ 1 — Clinical Practicum", "supervised hours in a clinical facility setting.", "1230.00"]);
+  const soleCand = mSole.cands.filter((o) => o.r.code === "51.3801")[0];
+  check("Fix A: a sole-credit-crosswalk CIP carries a lifted display dconf (≥60)", soleCand && soleCand.dconf >= 60 && soleCand.dconf > soleCand.conf);
+  check("Fix A: the sole-credit lift is display-only — raw conf is untouched", soleCand && soleCand.conf < 60 && typeof soleCand.conf === "number");
+  // A MULTI-credit TOP gets no BLANKET sole-credit lift: a cand whose title doesn't match the TOP title
+  // reads dconf == conf (52.0201 "Business Administration" ≠ TOP 0505.00 "Accounting"). Its sibling 52.0301
+  // "Accounting" DOES lift, but only via the #860 title match — proving the exemption is scoped, not blanket.
+  const mMulti = rApi._recommend(["ZZ 2 — Thing", "quilting basket weaving pottery macrame origami.", "0505.00"]);
+  const bizC = mMulti.cands.filter((o) => o.r.code === "52.0201")[0];
+  check("Fix A: a multi-credit-crosswalk TOP is NOT blanket-lifted (a non-title-matching cand gets no lift)", bizC && bizC.dconf === bizC.conf);
+
   // ── Fix D: the boiler codes never leak into the ⚠ "outside the crosswalk" drawer ──
   const mBoiler = rApi._recommend(["WKX 1 — Workplace Intro", "Career exploration and workforce development awareness training.", "1701.00"]);
   check("Fix D: boiler codes are excluded from the outside-the-crosswalk (beyond) list", mBoiler.beyond.every((o) => o.r.code !== "32.0107" && o.r.code !== "32.0111"));
@@ -758,6 +774,40 @@ function fresh(withCollege) {
   check("a weak 'no clear winner' row defaults its box to the department's dominant code (Sam's IWAP→welding idea)", (function () { var c = acct300 && acct300.querySelector(".cipx-rev-chip .cipx-code"); return c && /52\.0301/.test(c.textContent); })());
   check("the defaulted row stays flagged Review (a '?' status), not silently 'Ready'", (function () { var s = acct300 && acct300.querySelector(".cipx-rev-stat-warn"); return s && /\?/.test(s.textContent); })());
   check("the defaulted row's 'why' line is honest about the default (defaulted to … N of your ACCT courses use)", (function () { var w = acct300 && acct300.querySelector(".cipx-rev-whyline-review"); return w && /defaulted to/.test(w.textContent) && /52\.0301/.test(w.textContent) && /of your ACCT courses use/.test(w.textContent); })());
+
+  // ── Fix C — the Confirm button commits what the BOX shows, never a different code (Sam, 2026-07-20) ──
+  // ACCT 300's box is dept-defaulted to 52.0301, so Confirm must read "Confirm 52.0301" — not the raw weak
+  // crosswalk sug (BUSL 10 showed 22.0302 in the box but "Confirm 22.0000"). Also guards the right-aligned
+  // decision cluster (buttons on the right, with the Select column).
+  acct300.querySelector(".cipx-rev-row").click(); await tick();
+  const acct300b = Array.prototype.filter.call(revdoc.querySelectorAll(".cipx-rev-item"), (it) => /ACCT 300/.test(it.textContent))[0];
+  check("Fix C: Confirm targets the code the box shows (dept-default 52.0301), not the raw sug", (function () { var b = acct300b && acct300b.querySelector(".cipx-rev-confirm"); return b && /Confirm 52\.0301/.test(b.textContent); })());
+  check("Fix C: the decision buttons live in the right-aligned cluster (with the Select column)", !!(acct300b && acct300b.querySelector(".cipx-rev-actdecide .cipx-rev-confirm")) && !!(acct300b && acct300b.querySelector(".cipx-rev-actutils .cipx-rev-searchall")));
+
+  // ── Fix B — a SOLE-credit-crosswalk Review row is NOT overridden by the dept-default (Sam, 2026-07-20) ──
+  // The approved crosswalk's single mapping is the direct field code (BUSL 10 → 22.0000, not the dept's
+  // 22.0302). Set up subject ACX: three courses land on 52.0301 (→ dept dominant) plus one on the SOLE-credit
+  // TOP 1230.00 (→ 51.3801). The sole-crosswalk row keeps 51.3801 in its box; the grab-bag control above
+  // (ACCT 300) still defaults — proving the exemption is narrow, not a blanket disabling of the default.
+  const domSC = makeDom(); domSC.window.CIP_CROSSWALK = JSON.parse(JSON.stringify(RFIXTURE));
+  try { domSC.window.localStorage.setItem("cipx_mode", "review"); } catch (e) {}
+  domSC.window.eval(src);
+  const scApi = domSC.window.CPL_CIP_CROSSWALK, scDoc = domSC.window.document;
+  scApi._setColleges([{ name: "B College", slug: "b_college", n: 4 }]);
+  scApi._setCourses("b_college", [
+    ["ACX 1 — Accounting A", "practice accounting and auditing and bookkeeping.", "0505.00"],
+    ["ACX 2 — Accounting B", "practice accounting and auditing and bookkeeping.", "0505.00"],
+    ["ACX 3 — Accounting C", "practice accounting and auditing and bookkeeping.", "0505.00"],
+    ["ACX 9 — Clinical Practicum", "supervised hours in a clinical facility setting.", "1230.00"],
+  ]);
+  scApi.activate();
+  await tick(); await tick();
+  const scCs = scDoc.querySelector(".cipx-college-sel"); if (scCs) { scCs.value = "b_college"; scCs.dispatchEvent(new domSC.window.Event("change")); }
+  await tick(); await tick();
+  const scSel = scDoc.querySelector(".cipx-rev-deptsel"); scSel.value = "ACX"; scSel.dispatchEvent(new domSC.window.Event("change"));
+  await tick(); await tick();
+  const acx9 = Array.prototype.filter.call(scDoc.querySelectorAll(".cipx-rev-item"), (it) => /ACX 9/.test(it.textContent))[0];
+  check("Fix B: a sole-credit-crosswalk Review row keeps the crosswalk code (51.3801) in its box, not the dept-default", (function () { var c = acx9 && acx9.querySelector(".cipx-rev-chip .cipx-code"); return c && /51\.3801/.test(c.textContent) && !/52\.0301/.test(c.textContent); })());
 
   // ── multi-CIP: inline "+" add (with anchor-OK) + apply-to-subject, targets stay in Review (Sam, 2026-07-18) ──
   const domM = freshR("review");
