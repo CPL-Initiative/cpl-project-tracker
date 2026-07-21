@@ -1621,7 +1621,7 @@ def build_activity_kpis(projects, activities=None):
     activity_labels_fallback = {
         "1": "Activity 1: Build AI-Enhanced CPL Infrastructure",
         "2": "Activity 2: Faculty Workgroups & Credit Recommendations",
-        "3": "Activity 3: Build CPL Data Infrastructure",
+        "3": "Activity 3: Scale CPL Access, Awards, and Procedures",
         "4": "Activity 4: Sprints, Projects, Partnerships & Scale",
         "5": "Activity 5: Strategic Initiatives & Special Projects",
     }
@@ -2362,7 +2362,7 @@ def render_workplan_goals_html(
     activity_group_labels_fallback = {
         "1": "Activity 1: Build AI-Enhanced CPL Infrastructure",
         "2": "Activity 2: Faculty Workgroups & Credit Recommendations",
-        "3": "Activity 3: Build CPL Data Infrastructure",
+        "3": "Activity 3: Scale CPL Access, Awards, and Procedures",
         "4": "Activity 4: Sprints, Projects, Partnerships & Scale",
         "5": "Activity 5: Strategic Initiatives & Special Projects",
     }
@@ -10221,7 +10221,7 @@ def build_workplan_goals_from_supabase(
     activity_labels = {
         "1": "Activity 1: Build AI-Enhanced CPL Infrastructure",
         "2": "Activity 2: Faculty Workgroups & Credit Recommendations",
-        "3": "Activity 3: Build CPL Data Infrastructure",
+        "3": "Activity 3: Scale CPL Access, Awards, and Procedures",
         "4": "Activity 4: Sprints, Projects, Partnerships & Scale",
         "5": "Activity 5: Strategic Initiatives & Special Projects",
     }
