@@ -120,7 +120,7 @@ are unchanged; `4.1.1`→`veteran_sprint` becomes **`4.1`** and
 `PID_TO_KPI_BREAKDOWN` `3.1.2a`→`3.1.3` — both must be updated in lockstep).
 
 ## Open items
-- **`3.1.4` lead** — assign an owner (currently TBD).
+- ~~**`3.1.4` lead**~~ — **Terence Nelson** (Sam, 2026-07-21).
 - **KPI-map lockstep** — `PID_TO_KPI_KEY` (`4.1.1`→`4.1`) + `PID_TO_KPI_BREAKDOWN`
   (`3.1.2a`→`3.1.3`) MUST move with the re-key or the Veteran-Sprint / apprentice
   breakdown cards mis-resolve.
