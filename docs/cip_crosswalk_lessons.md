@@ -1613,3 +1613,66 @@ for the curator's *own* courses (here ARC CARPT) is the same tight calibration l
 before/after numbers are the real rendered values on Sam's data, so "8% → 60%" is concrete, not "should be
 fixed." And the display-vs-gate separation is the reusable pattern: when a number reads wrong but the
 classification is right, lift the DISPLAY and leave every gate on the raw signal.
+
+### 2026-07-20/21 (SkyQB) — the "Keep <crosswalk>" button (#868), then the sole-crosswalk cascade fix (#869)
+
+Two rounds with Sam live-testing the Review tab.
+
+**#868 — the matched "Keep" button (Suggested rows).** A ⇄ Suggested row shows two boxes (the course's own
+TOP-crosswalk pick + the peer-suggested code) but the only explicit button was "✓ Confirm <peer>" — keeping
+the crosswalk meant hunting for its Select in the list (Sam: "not sure how to keep 13.1210"). Added a matched
+**Keep <crosswalk>** beside Confirm: peer pick stays the filled primary, Keep is the secondary outline, both
+one click, both validate (✓). Only on the two-box case (`r.suggestChange && crosswalk ≠ sug`). Placement =
+Sam's pedagogy call: **at the bottom, after the full signal list**, so the curator scans the options before
+deciding (buttons at the top invite a snap decision). Guard: `.cipx-rev-keep` (var-token outline, both themes).
+
+**#869 — Sam's BUSL 10 catch → the sole-crosswalk cascade fix.** Chaffey BUSL 10 "Introduction to Law"
+defaulted its box to **22.0302 Legal Assistant/Paralegal** (not even in its crosswalk!) while **Legal Studies
+22.0000** — the sole, direct crosswalk code for TOP 1401.00 "Law" — read a misleading **28%**. Sam's worry
+was the real insight: *"are we in a recursive loop where our rules subvert each other… chasing our tail by
+adding considerations that work for some and not others?"*
+
+**The diagnostic that unlocked it — a visual decision-trace** ([artifact](https://claude.ai/code/artifact/dc65cc80-54e0-4790-a2e4-ed99c5a5b77a),
+built by tracing the LIVE engine `_recommend`/`_reviewRowOf` over BUSL 10 + a working carpentry control + a
+suggest control). It showed it was **NOT a loop but a CASCADE** — the rules run once, in a fixed order, and
+one miscalibration at the top knocked over two dominoes:
+1. **Confidence (root)** — the #860 discipline-fit lift keys on TOP-title↔CIP-title *stem* overlap. "Law"
+   (TOP title) and "Legal" (CIP title) are the same field but stem differently → fieldSim 0 → the direct
+   crosswalk pick read 28%.
+2. **Dept-default (`effectiveSug`)** — a "weak Review pick" (conf 28 < 70, few siblings) → the box swapped to
+   the dept's most-used code 22.0302. Meant for grab-bag TOPs (Ironworker "Rigging" → Robotics); wrong for a
+   clean 1:1 mapping.
+3. **Confirm ≠ box** — the Confirm button still targeted the raw sug (22.0000) while the box showed 22.0302.
+
+**The fix — fix the ROOT, not add a counter-rule (the anti-tail-chasing discipline).** The trap Sam named
+would be to add a downstream rule ("don't dept-default law courses"). Instead:
+- **Fix A** — `fieldSim` credits a **sole credit crosswalk mapping** as a full discipline-fit (dconf → 1.0
+  contribution): when a TOP maps to exactly ONE credit CIP, that CIP *is* the field's code by the approved
+  crosswalk's own definition — the one place TOP is §7-authoritative. BUSL 10 → **71%**. `soleCreditCode` +
+  `fieldSim`/`dconfOf` in `computeRecommend`. Display-only.
+- **Fix B** — `effectiveSug` skips the dept-default for a **direct pick** (`directPick` = sole crosswalk +
+  `sugKind==="crosswalk"`, OR `sugKind==="description"` — the veto/F5 headline). Grab-bag TOPs still default.
+- **Fix C** — the Confirm button commits `effCode = effectiveSug(r,ctx).code` (what the box shows), never a
+  different code. `reviewExpand` now takes `ctx`; exported `_effectiveSug`.
+- **UI (Sam)** — action bar split: `.cipx-rev-actutils` (Add/Clear) left, `.cipx-rev-actdecide` (Keep +
+  Confirm, **Confirm rightmost**, `margin-left:auto`) right — under the Select column. Sam: "on the right side
+  with all the other confirms."
+- The ⚑ outside-crosswalk mis-code flag is **untouched** — alternates stay a glance away (Sam: "TOPs are
+  unreliable but the options are there if needed").
+
+**Empirical soundness proof (Sam's call: skip a Fable design pass, let the regression sweep prove it).** A
+**before/after diff vs the pre-fix engine** (`git show origin/main:cip_crosswalk.js`) over real college data:
+- **status_changed = 0** (6 colleges / 2,136 courses) — provably display-only; no Ready/Review/Suggested/
+  Manual moved → `cip_status_counts.json` unaffected, **no regen**.
+- **0 UNEXPECTED box changes** (4 colleges) — every box change is a sole-crosswalk or description exemption.
+- **0 mis-code ⚑ flags changed**; 307 dconf lifts; 325 confirm→box alignments.
+- Tests 235 → **254** (+19 across #868/#869); full suite 166 files green; real-Chromium Chaffey BUSL 10
+  (box 22.0000 · 71% · Confirm 22.0000 · right-aligned · 0 overflow / 0 JS errors).
+
+**Two durable methods worth carrying:**
+- **When a number reads wrong but the classification is right, lift the DISPLAY and leave every gate on the
+  raw signal** (the display-vs-gate separation — #860's dconf, extended here). Provably can't move baseline
+  counts, the veto, or the mis-code flag.
+- **Fix the root, not a counter-rule.** When rules seem to fight, a visual decision-trace over the live engine
+  reveals whether it's a *loop* (add a rule = tail-chasing) or a *cascade* (fix the top domino, the rest stop).
+  A deterministic before/after sweep across real data — status/box/confirm/flag diffed — is the soundness proof.
