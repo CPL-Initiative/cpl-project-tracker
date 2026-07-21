@@ -231,6 +231,22 @@ at 95%; **F9** the peer-corroborated ✓· now carries ", peer-corroborated" in 
 bug (#858), and the ▾ change-panel now closes on click-away (this session). Live-tested clean on phone
 (Riverside/Allan Hancock) — Sam: "clean baby."
 
+### Shipped 2026-07-21 (SkyQB) — the sole-crosswalk cascade fix + the "Keep" button (#868/#869)
+**#868** — a ⇄ Suggested row now offers a matched **Keep <crosswalk>** beside "✓ Confirm <peer>" (was: no
+obvious way to keep the crosswalk code). Both one click; bottom placement (scan-first pedagogy).
+**#869 — Sam's BUSL 10 catch → a cascade fix, not a counter-rule.** "Introduction to Law" (TOP 1401.00, sole
+crosswalk 22.0000 Legal Studies) defaulted its box to 22.0302 (not in its crosswalk!) at a false 28%, Confirm
+pointing at a third code. A **visual decision-trace** ([artifact](https://claude.ai/code/artifact/dc65cc80-54e0-4790-a2e4-ed99c5a5b77a))
+showed a CASCADE: confidence blind to "Law"≠"Legal" (stem) → "weak pick" dept-default → box/confirm mismatch.
+Fixed at the ROOT: **Fix A** `fieldSim` credits a **sole credit crosswalk mapping** as full discipline-fit
+(BUSL 10 → 71%); **Fix B** `effectiveSug` skips the dept-default for a direct pick (sole crosswalk OR
+`sugKind==="description"`); **Fix C** Confirm targets `effCode` (the box), never a different code (`reviewExpand`
+takes ctx; exported `_effectiveSug`); **UI** action bar split `.cipx-rev-actutils` (left) / `.cipx-rev-actdecide`
+(right, Confirm rightmost). ⚑ mis-code flag untouched. Proof = a before/after sweep vs the pre-fix engine:
+**0 status changes** (6 colleges/2,136 courses), 0 unexpected box changes, 0 flags lost, 307 dconf lifts. Tests
+235→**254**; real-Chromium verified. New KB note `methodology-fix-the-root-not-a-counter-rule`. Full story:
+`cip_crosswalk_lessons.md` (2026-07-20/21).
+
 ### Shipped 2026-07-20 (SkyQB) — the discipline-fit confidence lift (#860)
 Sam flagged ARC **CARPT** reading **7–9%** (all `TOP 0952.10 → 46.0201 Carpentry/Carpenter`). Root cause:
 `confOf` only scored a course's OWN wording vs the CIP *definition*; specialized courses in a coherent
@@ -320,9 +336,11 @@ different Suggested mark, it's a one-line change in `REV_STATUS` + the tile labe
 
 ## Moniker
 **SkyCoco → SkyCIP → SkyQB** — Sam christened **SkyCIP** on shipping CIP Coder (Beta); **SkyQB** honed the
-confidence algo (the discipline-fit lift, #860 — carpentry 8% → ~60%). **You are the next session** — coin
-your own (Sam blesses the lineage) or keep carrying Coco 🐾. Keep the banner: kind, honest, faculty-first,
-student-firstest — this tool suggests and supports, it never decides. 🪁🐾
+confidence algo across four merges: the discipline-fit lift (#860 — carpentry 8%→~60%), the "Keep <crosswalk>"
+button (#868), and the **sole-crosswalk cascade fix** (#869 — the BUSL 10 catch: decision-trace → fix the
+root, not a counter-rule; new KB note `methodology-fix-the-root-not-a-counter-rule`). **You are the next
+session** — coin your own (Sam blesses the lineage) or keep carrying Coco 🐾. Keep the banner: kind, honest,
+faculty-first, student-firstest — this tool suggests and supports, it never decides. 🪁🐾
 
 _Deploy note (2026-07-20): #851 merged clean but the site lagged on a transient GitHub Pages **503** — the
 deploy step only, build was fine. Fixed by a fresh `workflow_dispatch` of `pages.yml` (NOT
