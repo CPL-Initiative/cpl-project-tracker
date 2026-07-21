@@ -1,0 +1,129 @@
+{
+  "_meta": {
+    "title": "COBI Activities Tab reorg — old→new crosswalk (alias map)",
+    "date": "2026-07-21",
+    "session": "SkyPlan",
+    "decisions": [
+      "Workplan model — 4 Activities, CPL Goals stay cross-cutting tags",
+      "Blend + keep a cross-cutting Sprint tag",
+      "Clean renumber (re-key PKs; RACI + update-log history carried across)"
+    ],
+    "verified_by": "verify-activity-reorg-crosswalk workflow (live Supabase ground-truth + adversarial validation of the permutation, 2026-07-21)",
+    "blueprint": "https://claude.ai/code/artifact/c8b5eae3-2ccd-4724-9916-8dee1085138a",
+    "source_of_truth": "Supabase project hvuwhnbuahrtptokpqfh, table public.projects (34 rows at plan time)",
+    "notes": "Hierarchy is encoded in the dotted id (raci.js buildItems parses id-prefix parenting), so re-parenting = the new dotted id; no parent_id column needed. Apply the rekey as a two-phase permutation (see apply_order) because of slot reuse on 4.1 and 4.2."
+  },
+
+  "activity_titles_canonical": {
+    "Activity 1": "Build AI-Enhanced CPL Infrastructure",
+    "Activity 2": "Faculty Workgroups & Credit Recommendations",
+    "Activity 3": "Scale CPL Access, Awards, and Procedures",
+    "Activity 4": "Sprints, Projects & Partnerships"
+  },
+  "activity_title_changes": {
+    "Activity 3": { "from": "CPL Data Infrastructure", "to": "Scale CPL Access, Awards, and Procedures",
+      "note": "Retitled per Sam 2026-07-21 (was redundant with Activity 1's '...Infrastructure'). Diverges from the July-2025 workplan PDF title 'Build Robust CPL Data Infrastructure' — deliberate." }
+  },
+
+  "unchanged": [
+    "1.1", "1.2", "1.3", "1.4",
+    "2.1", "2.2", "2.3", "2.4",
+    "3.1", "3.1.1", "3.1.2", "3.2", "3.3", "3.4", "3.5", "3.6"
+  ],
+
+  "rekey": {
+    "3.1.2a": "3.1.3",
+    "4.1.1":  "4.1",
+    "4.1.4":  "4.1.1",
+    "4.1.2":  "4.2",
+    "4.2":    "4.3",
+    "4.3":    "4.4",
+    "4.4":    "4.5",
+    "4.5":    "4.6",
+    "5.2":    "1.1.1",
+    "5.3":    "1.1.2",
+    "5.6":    "1.1.3",
+    "5.4":    "3.7",
+    "5.7":    "3.8",
+    "5.5":    "4.4.1",
+    "5.8":    "4.7"
+  },
+
+  "renames": {
+    "3.1.3": { "from": "CPL Offers & Awards Tracking — Apprentice Cohort", "to": "CPL Offers & Awards Tracking — Apprentices and Journey Workers" },
+    "3.3":   { "from": "Institutional Participation", "to": "Statewide Adoption & Participation" }
+  },
+
+  "workplan_activity_moves": {
+    "1.1.1": "Activity 1", "1.1.2": "Activity 1", "1.1.3": "Activity 1",
+    "3.7": "Activity 3", "3.8": "Activity 3",
+    "4.4.1": "Activity 4", "4.7": "Activity 4"
+  },
+
+  "dissolve": [
+    {
+      "old": "4.1", "name": "Sprints and Projects", "action": "delete_container",
+      "raci": "drop (redundant — the two surviving sprint nodes 4.1/4.2 carry their own RACI)",
+      "updates": { "count": 2, "route": "by content — the Veteran-text update → 4.1 (Veteran Sprint node); the Apprenticeship-text update → 4.2 (Apprenticeship Sprint node)" }
+    },
+    {
+      "old": "4.1.3", "name": "Statewide Adoption Sprint", "merge_into": "3.3",
+      "raci": "merge into 3.3 (union; keep 3.3's existing assignment, add any 4.1.3 assignee not already present)",
+      "updates": "none (0 update rows)"
+    }
+  ],
+
+  "new_items": [
+    {
+      "id": "3.1.4", "name": "CPL Offers & Awards Tracking — Other Populations",
+      "parent": "3.1", "workplan_activity": "Activity 3", "cpl_goal": "Goal 2",
+      "lead": "TBD — confirm with Sam", "status": "Not Started",
+      "note": "Net-new sub-activity; empty RACI/update history at creation."
+    }
+  ],
+
+  "held_out": [
+    {
+      "id": "5.1", "name": "AI-Ready California Demonstration", "reason": "tabled (project_lifecycle state=tabled)",
+      "action": "leave as-is; NOT renumbered into the active tree; remains in the Tabled & Archived ledger under its own record",
+      "note": "Because it stays tabled/hidden it never renders in the active grid even though its id keeps the retired 5.x prefix. If ever un-tabled it should be re-keyed to the next free Activity-4 id at that time."
+    }
+  ],
+
+  "sprint_tags": {
+    "3.1.2": "Veteran Sprint",
+    "4.1":   "Veteran Sprint",
+    "4.1.1": "Veteran Sprint",
+    "3.1.3": "Apprenticeship Sprint",
+    "4.2":   "Apprenticeship Sprint",
+    "1.1.2": "Apprenticeship Sprint",
+    "3.3":   "Statewide Adoption Sprint"
+  },
+
+  "rekey_targets_for_history": {
+    "_comment": "Where item_raci.item_id and item_updates.item_id rows re-key to. Merges (dissolve targets) union onto the target's existing rows.",
+    "3.1.2a": "3.1.3", "4.1.1": "4.1", "4.1.4": "4.1.1", "4.1.2": "4.2",
+    "4.2": "4.3", "4.3": "4.4", "4.4": "4.5", "4.5": "4.6",
+    "5.2": "1.1.1", "5.3": "1.1.2", "5.6": "1.1.3", "5.4": "3.7", "5.7": "3.8", "5.5": "4.4.1", "5.8": "4.7",
+    "4.1.3": "3.3"
+  },
+
+  "preserve_non_project_rows": {
+    "_comment": "item_raci carries activity-header rows 1/2/3/4; item_updates carries header rows 1/3. These are Activity-level, NOT projects — the retained 1-4 activity numbering keeps them valid. Do NOT touch them in the project re-key.",
+    "raci_headers": ["1", "2", "3", "4"],
+    "update_headers": ["1", "3"]
+  },
+
+  "apply_order": "TWO-PHASE PERMUTATION. Phase A: for every rekey source, set id = 'TMP__' || <new_id>. Phase B: set id = <new_id> (strip TMP__). Run projects, item_raci, item_updates, project_lifecycle, and workplan_goals associations under the same two-phase map inside ONE transaction. Slot reuse (old 4.1 deleted → 4.1.1→4.1; old 4.2→4.3 frees 4.2 for 4.1.2) makes a naive single-pass UPDATE collide; the temp prefix avoids the transient PK clash.",
+
+  "counts": {
+    "current_projects": 34,
+    "final_active_items": 32,
+    "per_activity_final": { "1": 7, "2": 4, "3": 12, "4": 9 },
+    "retired": 2,
+    "tabled_held_out": 1,
+    "new_subactivities": 1,
+    "rehomed_from_activity5": 7,
+    "renumbered": 8
+  }
+}
