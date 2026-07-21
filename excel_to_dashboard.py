@@ -1480,7 +1480,7 @@ PID_TO_KPI_KEY = {
     "3.2": "transcripted_units",
     "2.1": "credit_recommendations",
     "3.3": "active_colleges",
-    "4.1.1": "veteran_sprint",
+    "4.1": "veteran_sprint",   # Activities reorg 2026-07-21: Veteran Sprint node re-keyed 4.1.1 -> 4.1
 }
 
 # Sub-activity cards/rows whose authoritative live value is a BREAKDOWN row
@@ -1497,7 +1497,7 @@ PID_TO_KPI_KEY = {
 PID_TO_KPI_BREAKDOWN = {
     "3.1.1":  ("cumulative_students", "workforce"),    # Working Adults → Workforce/Other (non-military)
     "3.1.2":  ("cumulative_students", "military"),      # Veterans & Service Members → Military
-    "3.1.2a": ("cumulative_students", "apprentice"),    # Apprentice Cohort → Apprentice
+    "3.1.3":  ("cumulative_students", "apprentice"),    # Apprentices and Journey Workers → Apprentice (was 3.1.2a; Activities reorg 2026-07-21)
 }
 
 
