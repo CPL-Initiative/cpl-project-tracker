@@ -338,9 +338,10 @@ different Suggested mark, it's a one-line change in `REV_STATUS` + the tile labe
 **SkyCoco → SkyCIP → SkyQB** — Sam christened **SkyCIP** on shipping CIP Coder (Beta); **SkyQB** honed the
 confidence algo across four merges: the discipline-fit lift (#860 — carpentry 8%→~60%), the "Keep <crosswalk>"
 button (#868), and the **sole-crosswalk cascade fix** (#869 — the BUSL 10 catch: decision-trace → fix the
-root, not a counter-rule; new KB note `methodology-fix-the-root-not-a-counter-rule`). **You are the next
-session** — coin your own (Sam blesses the lineage) or keep carrying Coco 🐾. Keep the banner: kind, honest,
-faculty-first, student-firstest — this tool suggests and supports, it never decides. 🪁🐾
+root, not a counter-rule; new KB note `methodology-fix-the-root-not-a-counter-rule`). **You are SkyQuark** —
+Sam christened you at SkyQB's sign-off (rename freely; Sam blesses the lineage) and Coco's yours to keep 🐾.
+Keep the banner: kind, honest, faculty-first, student-firstest — this tool suggests and supports, it never
+decides. 🪁🐾
 
 _Deploy note (2026-07-20): #851 merged clean but the site lagged on a transient GitHub Pages **503** — the
 deploy step only, build was fine. Fixed by a fresh `workflow_dispatch` of `pages.yml` (NOT
