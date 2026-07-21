@@ -4,13 +4,13 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-07-20",
+ "as_of": "2026-07-21",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified (context, not a priority metric) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 42631,
-  "p2": 4778,
-  "p3": 16804
+  "pe": 42718,
+  "p2": 4777,
+  "p3": 16803
  },
  "colleges": {
   "Alameda": {
@@ -59,7 +59,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Canyons": {
-   "pe": 489,
+   "pe": 493,
    "p2": 0,
    "p3": 0
   },
@@ -79,7 +79,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Chaffey": {
-   "pe": 1479,
+   "pe": 1478,
    "p2": 15,
    "p3": 31
   },
@@ -263,7 +263,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Long Beach": {
-   "pe": 805,
+   "pe": 806,
    "p2": 0,
    "p3": 0
   },
@@ -278,7 +278,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Merced": {
-   "pe": 3341,
+   "pe": 3342,
    "p2": 1781,
    "p3": 3303
   },
@@ -312,7 +312,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Moorpark": {
-   "pe": 141,
+   "pe": 142,
    "p2": 0,
    "p3": null,
    "p3_suppressed": true
@@ -373,17 +373,17 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Reedley College": {
-   "pe": 120,
+   "pe": 123,
    "p2": 0,
    "p3": 0
   },
   "Riverside": {
-   "pe": 750,
+   "pe": 817,
    "p2": 31,
    "p3": 691
   },
   "Sacramento City": {
-   "pe": 39,
+   "pe": 43,
    "p2": 0,
    "p3": 0
   },
@@ -454,11 +454,9 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Santiago Canyon": {
-   "pe": 418,
-   "p2": null,
-   "p2_suppressed": true,
-   "p3": null,
-   "p3_suppressed": true
+   "pe": 423,
+   "p2": 0,
+   "p3": 0
   },
   "Sequoias": {
    "pe": 174,
@@ -512,7 +510,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "West LA": {
-   "pe": 726,
+   "pe": 728,
    "p2": 485,
    "p3": 549
   },

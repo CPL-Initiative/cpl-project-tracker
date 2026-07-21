@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-20T14:37:21.349699+00:00",
+  "scraped_at": "2026-07-21T08:48:27.003959+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 25935,
+    "jst": 26017,
     "star_colleges": 55
   },
   "computed_star_colleges": 55,
@@ -17,12 +17,12 @@
     },
     "Merced College": {
       "vets": 142,
-      "jst": 272,
+      "jst": 273,
       "star": true
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 311,
+      "jst": 310,
       "star": true
     },
     "San Diego Mesa College": {
@@ -42,7 +42,7 @@
     },
     "Moreno Valley College": {
       "vets": 916,
-      "jst": 969,
+      "jst": 970,
       "star": true
     },
     "San Diego Miramar College": {
@@ -72,18 +72,18 @@
     },
     "Long Beach City College": {
       "vets": 307,
-      "jst": 811,
+      "jst": 812,
       "star": true
+    },
+    "Riverside City College": {
+      "vets": 1508,
+      "jst": 800,
+      "star": false
     },
     "De Anza College": {
       "vets": 903,
       "jst": 979,
       "star": true
-    },
-    "Riverside City College": {
-      "vets": 1508,
-      "jst": 733,
-      "star": false
     },
     "El Camino College": {
       "vets": 327,
@@ -160,14 +160,14 @@
       "jst": 557,
       "star": true
     },
+    "College of the Canyons": {
+      "vets": 382,
+      "jst": 495,
+      "star": true
+    },
     "San Joaquin Delta College": {
       "vets": 248,
       "jst": 494,
-      "star": true
-    },
-    "College of the Canyons": {
-      "vets": 382,
-      "jst": 491,
       "star": true
     },
     "Glendale Community College": {
@@ -287,7 +287,7 @@
     },
     "Reedley College": {
       "vets": 82,
-      "jst": 117,
+      "jst": 120,
       "star": true
     },
     "Lassen College": {
@@ -447,7 +447,7 @@
     },
     "Moorpark College": {
       "vets": 179,
-      "jst": 139,
+      "jst": 140,
       "star": true
     },
     "Coalinga College": {
@@ -492,7 +492,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 70,
+      "jst": 75,
       "star": false
     },
     "Gavilan College": {
