@@ -46,6 +46,19 @@ Visual blueprint (approved): the artifact linked in the front-matter.
    untouched**.
 3. **Clean renumber.** PKs are re-keyed to sequential dotted ids; `item_raci` +
    `item_updates` history is carried across (merged onto the target for dissolves).
+4. **Render = Option B.** Keep the 4 Activity metric cards + their KPI/RACI/Update/
+   Nudge affordances *exactly as they are*; render every project **under its parent
+   Activity** as a nested sub-activity; **delete** the separate "Projects (N)" grid
+   (Activities tab) and the "Projects" table (Annual Workplan Goals tab). Not the
+   blueprint-tree port (which would mean re-wiring every card's affordances).
+5. **Goals = Path A** (Sam confirmed 2026-07-21, *"I like your recommendation"*).
+   **KEEP the "Activities" label; DROP the 3 CPL-Goal chips from the cards.** The
+   3 CPL Goals were Vision-2030 overlay, redundant with the 4 Activities on a
+   tracker. Do **not** rename Activities → "Goals": the linked workplan PDF uses
+   "Activity 1-4" *and* its own "CPL Goal 1-3" (Access/Unified/Sustainable), so the
+   rename would collide with the authority sitting right next to the link. Keep
+   `projects.cpl_goal` in the data (the annual report's Vision-2030 section reads it),
+   just stop rendering it as a card chip.
 
 Verified before any live write by the `verify-activity-reorg-crosswalk` workflow
 (live Supabase ground-truth + adversarial validation of the permutation) — it
@@ -100,9 +113,13 @@ across every Activity-3 row's `workplan_activity` string. Committed receipt.
 - `excel_to_dashboard.py`: delete the 3 "Activity 5" fallback dicts; stop
   rendering "Projects" as a separate category (`render_projects_grid_html`,
   `render_awg_projects_section_html`, the `activity_layer_ids` `5.`-carve-out) —
-  regroup projects **under their Activity**; retitle Activity 3 label; emit
-  `sprint_tag` onto cards + a filter chip; add the **📄 CPL Workplan ↗** anchor to
-  the Activities tab header.
+  regroup projects **under their Activity** (Option B — keep the metric cards +
+  affordances); retitle Activity 3 label; emit `sprint_tag` onto cards + a filter
+  chip; **stop rendering the 3 CPL-Goal chips** (Path A — keep `cpl_goal` in data);
+  add the **📄 CPL Workplan ↗** anchor to the Activities tab header.
+  **Already shipped on the branch:** the 📄 Workplan link (both HTMLs), the
+  `PID_TO_KPI_KEY`/`PID_TO_KPI_BREAKDOWN` lockstep edits (`4.1`/`3.1.3`), and the
+  Activity-3 fallback-label retitle.
 - Consumers: `project_add.js` mints `N.x` under a chosen Activity (not `5.N`);
   `project_lifecycle.js` + `raci.js` drop the `5.`-prefix carve-out; reconcile the
   drifted Activity-title dicts in `report_generator.js` / `master_report.js` /
