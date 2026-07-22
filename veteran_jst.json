@@ -1,18 +1,18 @@
 {
-  "scraped_at": "2026-07-21T14:28:49.826282+00:00",
+  "scraped_at": "2026-07-22T08:48:14.405543+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26020,
+    "jst": 26039,
     "star_colleges": 55
   },
   "computed_star_colleges": 55,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 121,
+      "jst": 122,
       "star": false
     },
     "Merced College": {
@@ -52,7 +52,7 @@
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 547,
+      "jst": 548,
       "star": true
     },
     "City College of San Francisco": {
@@ -122,17 +122,17 @@
     },
     "Modesto Junior College": {
       "vets": 80,
-      "jst": 144,
-      "star": true
-    },
-    "Los Angeles Valley College": {
-      "vets": 247,
-      "jst": 358,
+      "jst": 145,
       "star": true
     },
     "Santa Ana College": {
       "vets": 334,
       "jst": 360,
+      "star": true
+    },
+    "Los Angeles Valley College": {
+      "vets": 247,
+      "jst": 358,
       "star": true
     },
     "Santa Rosa Junior College": {
@@ -147,7 +147,7 @@
     },
     "Cabrillo College": {
       "vets": 102,
-      "jst": 180,
+      "jst": 181,
       "star": true
     },
     "Mt. San Jacinto College": {
@@ -157,7 +157,7 @@
     },
     "Fresno City College": {
       "vets": 724,
-      "jst": 557,
+      "jst": 567,
       "star": true
     },
     "College of the Canyons": {
@@ -168,6 +168,11 @@
     "San Joaquin Delta College": {
       "vets": 248,
       "jst": 494,
+      "star": true
+    },
+    "Barstow Community College": {
+      "vets": 106,
+      "jst": 129,
       "star": true
     },
     "Glendale Community College": {
@@ -185,15 +190,15 @@
       "jst": 278,
       "star": true
     },
+    "Shasta College": {
+      "vets": 343,
+      "jst": 180,
+      "star": false
+    },
     "Fullerton College": {
       "vets": 291,
       "jst": 560,
       "star": true
-    },
-    "Shasta College": {
-      "vets": 343,
-      "jst": 176,
-      "star": false
     },
     "Victor Valley College": {
       "vets": 97,
@@ -232,7 +237,7 @@
     },
     "Cerro Coso Community College": {
       "vets": 115,
-      "jst": 156,
+      "jst": 157,
       "star": true
     },
     "East Los Angeles College": {
@@ -298,11 +303,6 @@
     "Los Angeles Harbor College": {
       "vets": 109,
       "jst": 135,
-      "star": true
-    },
-    "Barstow Community College": {
-      "vets": 106,
-      "jst": 129,
       "star": true
     },
     "Irvine Valley College": {

@@ -4,13 +4,13 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-07-21",
+ "as_of": "2026-07-22",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified (context, not a priority metric) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 42720,
-  "p2": 4777,
-  "p3": 16803
+  "pe": 42763,
+  "p2": 4778,
+  "p3": 16804
  },
  "colleges": {
   "Alameda": {
@@ -34,7 +34,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Bakersfield": {
-   "pe": 575,
+   "pe": 576,
    "p2": 49,
    "p3": 50
   },
@@ -49,7 +49,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Cabrillo": {
-   "pe": 209,
+   "pe": 210,
    "p2": 17,
    "p3": 44
   },
@@ -69,7 +69,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Cerro Coso": {
-   "pe": 155,
+   "pe": 156,
    "p2": 0,
    "p3": 0
   },
@@ -186,7 +186,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Fresno City": {
-   "pe": 550,
+   "pe": 559,
    "p2": 0,
    "p3": 0
   },
@@ -238,7 +238,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "LA Pierce": {
-   "pe": 1858,
+   "pe": 1859,
    "p2": 1309,
    "p3": 1736
   },
@@ -318,9 +318,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Moreno Valley": {
-   "pe": 2375,
-   "p2": 415,
-   "p3": 1942
+   "pe": 2376,
+   "p2": 416,
+   "p3": 1943
   },
   "Mt San Antonio": {
    "pe": 732,
@@ -433,7 +433,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Santa Ana": {
-   "pe": 414,
+   "pe": 439,
    "p2": 0,
    "p3": 0
   },
@@ -464,7 +464,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Shasta": {
-   "pe": 175,
+   "pe": 179,
    "p2": 0,
    "p3": 0
   },
