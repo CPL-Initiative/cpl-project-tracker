@@ -60,14 +60,17 @@ numbered handoff + `cpl_todos.json` untouched.
   dry-run against live Supabase = CLEAN (all 34 ids covered once); `rekey.sql` ready. Also
   already on-branch from SkyPlan: 📄 Workplan link + the `PID_TO_KPI_KEY`/`_BREAKDOWN` lockstep.
 
-## Open decisions for Sam (sent with the preview screenshots)
-1. **Visual lock** of the new Activities tab (rich cards nested, no Goal banners, ◆ badges).
-2. **Report titles** — align the `ACTIVITY_DESC` editorial titles in `master_report.js` +
-   `generate_reports.js` (A3 "CPL Students & College Success" / A4 "Partnerships, Policy &
-   Scale") to the new canonical, or leave them? Left untouched pending his call.
-3. **Dropped affordances** — the assoc-editor is now obsolete (nesting = intrinsic
-   association) and the grid-only inline 🗄 table/archive isn't on the nested cards. OK, or
-   keep tabling somewhere?
+## Sam's decisions — RESOLVED (2026-07-22)
+1. **Visual** ✅ LOCKED — "Looks great!" on the preview.
+2. **Report titles** ✅ ALIGNED — `master_report.js` + `generate_reports.js` A3 title/shortTitle
+   → "Scale CPL Access, Awards, and Procedures" / "CPL Access, Awards & Procedures"; A4 →
+   "Sprints, Projects & Partnerships" (descriptions already fit, left as-is). Commit `21625b3`.
+3. **Tabling** ✅ KEPT — Sam: "keep tabling function somewhere." The 🗄 control now mounts on the
+   nested `.activity-kpi-card`s (was grid-only); the `activityLayerIds()` immune gate is dropped
+   from mount + reconcile (post-reorg it marked everything immune). Every active sub-activity is
+   now tableable (reviewer-gated + reversible). `project_lifecycle.js` + its test (53 assertions).
+   Commit `268d6bc`. (The assoc-editor being obsolete was accepted implicitly — nesting is the
+   association now.)
 
 ## The remaining build (order matters)
 

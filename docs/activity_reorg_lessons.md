@@ -153,11 +153,17 @@ never run it as a "does it compile" check next to a file-editing subagent; use t
 render-function harness (zero repo writes) instead. Integration ran clean on its own (exit 0,
 grid dissolved, all projects nested) — just isolate it.
 
-### Remaining (next session / Sam's hold)
-- **Sam's 3 open calls** (sent with the preview): visual lock; whether to align the report
-  `ACTIVITY_DESC` editorial titles (A3 "CPL Students & College Success" / A4 "Partnerships,
-  Policy & Scale") to the new canonical; and OK-to-drop the now-obsolete assoc-editor + the
-  grid-only inline table/archive control.
+### Sam's 3 calls — RESOLVED (2026-07-22)
+- **Visual** ✅ locked ("Looks great!").
+- **Report titles** ✅ aligned to canonical (A3 "Scale CPL Access, Awards, and Procedures",
+  A4 "Sprints, Projects & Partnerships") in `master_report.js` + `generate_reports.js`
+  (title + shortTitle; descriptions already fit). `21625b3`.
+- **Tabling** ✅ kept — rewired the 🗄 control onto the nested `.activity-kpi-card`s (was
+  grid-only) + dropped the now-everything `activityLayerIds()` immune gate; every active
+  sub-activity is tableable again (gated + reversible). `project_lifecycle.js` + test (53).
+  `268d6bc`. The assoc-editor being obsolete (nesting IS the association) was accepted.
+
+### Remaining (Sam's hold)
 - **Execute the live re-key** (`rekey.sql`) within Sam's hold (fresh read first, Rule 9),
   then `workflow_dispatch daily-dashboard.yml` → inspect the regenerated Activities tab →
   mark #872 ready → squash-merge on green.
