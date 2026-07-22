@@ -575,7 +575,10 @@ was dropped — it marked everything immune post-reorg; all sub-activities are n
 The **live Supabase re-key** ran in Sam's hold — two-phase permutation + inline verification
 gate, receipt/SQL `kb/activity_reorg_out/2026-07-21/` — then merged + regen-dispatched. Full
 story: `docs/activity_reorg_lessons.md` · `docs/activity_reorg_handoff.md`; KB note
-`methodology-adversarial-verify-crosswalk-before-live-rekey.md`. Side-lane — left
+`methodology-adversarial-verify-crosswalk-before-live-rekey.md`. **⚠ One documented
+follow-up:** the re-key missed the N-to-N `workplan_activity_associations` table (still holds
+old ids + Activity-5 rows → stale "Activity 5" on the Workplan-Goals tab; main Activities tab
+unaffected) — ready-to-run fix (both approaches) in the handoff. Side-lane — left
 `cpl_todos.json` + the numbered handoff to the CCR mainline.
 
 ### StarBOG side-lane — CPL exec decks: BOG update + CBO budget-workshop slides (2026-07-20)
