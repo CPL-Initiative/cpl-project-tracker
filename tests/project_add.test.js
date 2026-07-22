@@ -2,7 +2,8 @@
 //
 // Guards:
 //  (a) Rule 4 (both HTMLs identical) + the script is included in both;
-//  (b) suggestId picks the next free 5.N numerically (5.9 → 5.10, not 5.1);
+//  (b) suggestId picks the next free N.x under the chosen Activity, numerically
+//      (3.9 → 3.10, not lexical 3.1x; falsy/invalid Activity → "");
 //  (c) the "+ Add project" button mounts next to #projectCount AND in the AWG
 //      #awgProjectsAddSlot — and mounting is idempotent (no duplicates);
 //  (d) signed out → the modal offers the team-phrase unlock, no form fields;
@@ -44,15 +45,15 @@ function makeDom(opts) {
   const w = dom.window;
   dom._writes = [];
   w.CPL_DATA = { projects: [
+    { id: "3.6", activity: "Activity 3: Scale CPL Access, Awards, and Procedures" },
     { id: "4.1.1", activity: "Activity 4: Sprints, Projects & Partnerships" },
-    { id: "5.2", activity: "Activity 1: Build AI-Enhanced CPL Infrastructure" },
   ] };
   w.fetch = function (url, fopts) {
     fopts = fopts || {};
     if (/rest\/v1\/projects\?select=id/.test(url)) {
-      // live id list INCLUDES the tabled 5.1 + up through 5.9 (CPL_DATA lacks them)
+      // live id list INCLUDES a tabled 3.9 + up through 3.10 (CPL_DATA lacks them)
       return Promise.resolve({ ok: true, status: 200, json: function () {
-        return Promise.resolve([{ id: "4.1.1" }, { id: "5.1" }, { id: "5.2" }, { id: "5.9" }]); } });
+        return Promise.resolve([{ id: "3.1" }, { id: "3.6" }, { id: "3.9" }, { id: "3.10" }, { id: "4.1.1" }]); } });
     }
     if (/rpc\/team_pass_ok/.test(url)) {
       return Promise.resolve({ ok: true, status: 200, json: function () { return Promise.resolve(true); } });
@@ -71,9 +72,10 @@ function makeDom(opts) {
   const probe = makeDom({});
   const API = probe.window.CPL_PROJECT_ADD;
   check("module exposes CPL_PROJECT_ADD", !!API && typeof API.openModal === "function");
-  check("suggestId: 5.8 max → 5.9", API.suggestId(["5.1", "5.8", "4.1.1"]) === "5.9");
-  check("suggestId: numeric, 5.9 → 5.10", API.suggestId(["5.9", "5.10"]) === "5.11");
-  check("suggestId: empty → 5.1", API.suggestId([]) === "5.1");
+  check("suggestId: max 3.6 under Activity 3 → 3.7", API.suggestId(["3.1", "3.6", "4.1"], "3") === "3.7");
+  check("suggestId: numeric, 3.10 → 3.11 (not lexical)", API.suggestId(["3.9", "3.10"], "3") === "3.11");
+  check("suggestId: empty list under Activity 4 → 4.1", API.suggestId([], "4") === "4.1");
+  check("suggestId: no activity → no suggestion", API.suggestId(["3.1"], "") === "");
 
   // (c) mounts in both slots, idempotent
   API.mountButtons();
@@ -96,7 +98,14 @@ function makeDom(opts) {
   const fields = d2.querySelectorAll(".padd-field");
   check("authed: form fields render", fields.length >= 7);
   const idInput = d2.querySelector(".padd-field input");
-  check("ID prefills 5.10 from the LIVE list (5.9 exists, tabled 5.1 counted)", idInput && idInput.value === "5.10");
+  // No Activity chosen yet → no suggestion (the N.x contract needs an Activity).
+  check("ID is empty until an Activity is picked", idInput && idInput.value === "");
+  // Pick Activity 3 → the id auto-suggests the next free 3.x from the LIVE list
+  // (3.10 is the max direct child; the tabled 3.9 is counted) → 3.11.
+  const actSelect = d2.querySelectorAll(".padd-field select")[0];
+  actSelect.value = "Activity 3: Scale CPL Access, Awards, and Procedures";
+  actSelect.dispatchEvent(new w2.Event("change"));
+  check("ID auto-suggests 3.11 under Activity 3 (numeric max; tabled 3.9 counted)", idInput.value === "3.11");
 
   // (h) inner click doesn't dismiss; fill + save
   idInput.click();
@@ -108,13 +117,13 @@ function makeDom(opts) {
   const post = dom2._writes.find(function (x) { return /rest\/v1\/projects$/.test(x.url) && x.opts.method === "POST"; });
   check("Save POSTs to /rest/v1/projects", !!post);
   const body = post ? JSON.parse(post.opts.body) : {};
-  check("POST carries the id + name", body.id === "5.10" && /^New Pilot/.test(body.name));
+  check("POST carries the id + name", body.id === "3.11" && /^New Pilot/.test(body.name));
   check("POST sends x-team-pass header", post && post.opts.headers["x-team-pass"] === "cpl-team-2026");
   check("empty optionals land as null", body.description === null && body.lead === null && body.start_date === null);
   check("percent_complete starts at 0", body.percent_complete === 0);
 
   // (g) optimistic card, escaped
-  const newCard = d2.querySelector('.project-card.padd-new[data-pid="5.10"]');
+  const newCard = d2.querySelector('.project-card.padd-new[data-pid="3.11"]');
   check("optimistic card added with data-pid", !!newCard);
   check("optimistic card escapes the name (no raw <img>)",
     newCard && newCard.innerHTML.indexOf("<img") === -1 && newCard.innerHTML.indexOf("&lt;img") !== -1);
@@ -123,7 +132,7 @@ function makeDom(opts) {
   w2.CPL_PROJECT_ADD.openModal();
   await new Promise((r) => setTimeout(r, 20));
   const idIn2 = d2.querySelector(".padd-field input");
-  idIn2.value = "5.9";  // exists in the live list
+  idIn2.value = "3.9";  // exists in the live list
   d2.querySelectorAll(".padd-field input")[1].value = "Dup";
   const writesBefore = dom2._writes.length;
   d2.querySelector(".padd-save").click();

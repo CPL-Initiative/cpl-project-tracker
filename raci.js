@@ -28,9 +28,9 @@
   ];
   var ACTIVITIES = [
     { id: "1", name: "Build AI-Enhanced CPL Infrastructure" },
-    { id: "2", name: "Convene Faculty-Industry Workgroups" },
-    { id: "3", name: "Build Robust CPL Data Infrastructure" },
-    { id: "4", name: "Coordinate Sprints, Projects & Partnerships" }
+    { id: "2", name: "Faculty Workgroups & Credit Recommendations" },
+    { id: "3", name: "Scale CPL Access, Awards, and Procedures" },
+    { id: "4", name: "Sprints, Projects & Partnerships" }
   ];
 
   var state = { members: [], raci: {}, items: [], sess: null, view: "matrix", loaded: false,
@@ -237,8 +237,8 @@
   // The workplan is a 3-tier tree: Activity → sub-activity → project/work item.
   // `activity_kpis` gives the official sub-activity ids (drive the filter +
   // styling); `projects` is the full 34-item set whose DOTTED ids encode the
-  // nesting (4.1 → 4.1.1; 3.1 → 3.1.2a). A project with no numbered sub-activity
-  // parent (the 5.x items) nests directly under its Activity. Every node is its
+  // nesting (4.1 → 4.1.1; 3.1 → 3.1.3). A project with no numbered sub-activity
+  // parent (e.g. 3.7, or the held-out 5.1) nests directly under its Activity. Every node is its
   // own RACI row; non-Activity rows keep item_type "project" so existing
   // assignments survive (the sub-activity vs project distinction is visual).
   function buildItems() {
@@ -270,7 +270,7 @@
     var projIds = projs.map(function (p) { return p.id; });
 
     // Parent = the longest OTHER project id that is a non-digit-boundary prefix
-    // (so "4.1" parents "4.1.1" but not "4.10"; "3.1.2" parents "3.1.2a").
+    // (so "4.1" parents "4.1.1" but not "4.10"; "3.1" parents "3.1.3").
     function idParent(pid) {
       var best = "";
       projIds.forEach(function (cand) {

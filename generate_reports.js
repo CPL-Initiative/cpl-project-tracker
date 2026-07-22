@@ -245,13 +245,13 @@ const ACTIVITY_DESC = {
     desc: "Faculty-led discipline workgroups develop and adopt statewide credit recommendations that translate industry certifications, military training, and professional experience into validated college credit, ensuring academic integrity and workforce alignment.",
   },
   "Activity 3": {
-    title: "Activity 3: CPL Students & College Success",
-    shortTitle: "CPL Students & College Success",
+    title: "Activity 3: Scale CPL Access, Awards, and Procedures",
+    shortTitle: "CPL Access, Awards & Procedures",
     desc: "Build the data infrastructure and student engagement pathways that track CPL offers, awards, transcription, and student outcomes, ensuring equitable access and measurable impact for all learners across the system.",
   },
   "Activity 4": {
-    title: "Activity 4: Partnerships, Policy & Scale",
-    shortTitle: "Partnerships, Policy & Scale",
+    title: "Activity 4: Sprints, Projects & Partnerships",
+    shortTitle: "Sprints, Projects & Partnerships",
     desc: "Launch targeted CPL sprints, demonstration projects, and cross-sector partnerships to accelerate adoption, advance sustainable policy and funding, and build professional capacity across all 116 colleges.",
   },
 };

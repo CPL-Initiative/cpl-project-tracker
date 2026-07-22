@@ -76,6 +76,7 @@ function applyFilters() {
     var goalVal = selVal('filterGoal');
     var statusVal = selVal('filterStatus');
     var leadVal = selVal('filterLead');
+    var sprintVal = selVal('filterSprint');
     var searchBox = document.getElementById('searchBox');
     var searchVal = searchBox ? searchBox.value.toLowerCase() : '';
 
@@ -135,6 +136,10 @@ function applyFilters() {
                 var showKc = true;
                 if (statusVal && kcStatusText !== statusVal) showKc = false;
                 if (searchVal && kcText.indexOf(searchVal) === -1) showKc = false;
+                // Sprint filter (activity-reorg): each card carries data-sprint
+                // ("Veteran Sprint" / "Apprenticeship Sprint" / "Statewide
+                // Adoption Sprint", empty when none). AND-combined with the above.
+                if (sprintVal && (kc.getAttribute('data-sprint') || '') !== sprintVal) showKc = false;
 
                 // Goal filter: check if card's parent grid is after a matching goal header
                 if (goalNum) {
@@ -169,6 +174,11 @@ function applyFilters() {
                     grid.style.display = '';
                 }
             }
+
+            // Collapse an entire activity group when no sub-activity card in it
+            // survives the active filters (Sprint/Search/Status). Otherwise show it.
+            var visibleInGroup = group.querySelectorAll('.activity-kpi-card:not([style*="display: none"])');
+            group.style.display = visibleInGroup.length === 0 ? 'none' : '';
         }
     }
 
@@ -221,7 +231,7 @@ function applyFilters() {
 }
 
 function resetFilters() {
-    var ids = ['filterActivity', 'filterVision', 'filterGoal', 'filterStatus', 'filterLead'];
+    var ids = ['filterActivity', 'filterVision', 'filterGoal', 'filterStatus', 'filterLead', 'filterSprint'];
     for (var i = 0; i < ids.length; i++) {
         var el = document.getElementById(ids[i]);
         if (el) el.value = '';
@@ -234,7 +244,7 @@ function resetFilters() {
 // Attach event listeners immediately
 // (filter elements already exist above this script tag in the HTML)
 (function() {
-    var selects = ['filterActivity', 'filterVision', 'filterGoal', 'filterStatus', 'filterLead'];
+    var selects = ['filterActivity', 'filterVision', 'filterGoal', 'filterStatus', 'filterLead', 'filterSprint'];
     for (var i = 0; i < selects.length; i++) {
         var el = document.getElementById(selects[i]);
         if (el) el.addEventListener('change', applyFilters);
@@ -304,6 +314,7 @@ function resetFilters() {
         if (hint.goal)     setSelectByContains('filterGoal',     hint.goal);
         if (hint.status)   setSelectByContains('filterStatus',   hint.status);
         if (hint.lead)     setSelectByContains('filterLead',     hint.lead);
+        if (hint.sprint)   setSelectByContains('filterSprint',   hint.sprint);
         if (changed) applyFilters();
     }
     // Cold-load path — a hint stashed in sessionStorage from a previous
