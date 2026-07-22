@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-07-21 (SkyPlan side-lane — COBI Activities tab reorg: spec + alias map shipped (PR #872), generator Option-B render + live re-key pending; new lessons/handoff/scope docs + a verify-crosswalk-before-live-rekey KB note)
+updated: 2026-07-22 (StarTeam/SkyPlan-II — COBI Activities tab reorg COMPLETE + MERGED (#872, live): Option-B render + ◆ sprint filter + tabling rewire + aligned report titles + the live Supabase re-key; lessons/handoff finalized)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker

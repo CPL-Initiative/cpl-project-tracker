@@ -560,27 +560,21 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyPlan side-lane — COBI Activities tab reorg (2026-07-21, spec shipped, generator+re-key PENDING)
+### SkyPlan + StarTeam side-lane — COBI Activities tab reorg (2026-07-22, ✅ MERGED #872, LIVE)
 
-Sam: realign the Activities tab to the CPL Workplan, fold the separate **Projects**
-category into the Activities, and blend the duplicative **Veteran/Apprenticeship
-Sprints** in. Keystone: the [authoritative workplan](https://map.rccd.edu/wp-content/uploads/2025/07/credit-for-prior-learning-workplan.pdf)
-(read from the KB copy — `map.rccd.edu` is egress-blocked) has **4 Activities, not 5**
-— the tracker's "Activity 5" is an invented fallback label; every `5.x` already
-declares its real parent in `workplan_activity`. **Locked (all Sam):** 4 Activities;
-**drop the 3 CPL-Goal chips, keep the "Activities" label** (Path A — renaming to
-"Goals" collides with the workplan's own CPL Goals 1-3); render = **Option B** (keep
-the metric cards + affordances, nest projects under each Activity, delete the separate
-Projects grid + Workplan-Goals Projects table); Veteran `4.1`(+`4.1.1` 29 Palms) &
-Apprenticeship `4.2` kept as slim Activity-4 nodes with a cross-cutting `sprint_tag`,
-Statewide Adoption folds into `3.3`; **clean renumber** (32 items; A1:7 A2:4 A3:12
-A4:9). Crosswalk **verified by a 3-lens workflow before any write** (caught 2 real
-defects). **Shipped (PR #872, draft):** spec (`kb/activity_reorg_alias_map.json` +
-`docs/activity_reorg_scope.md`), 📄 Workplan link, KPI-map lockstep, Activity-3
-retitle. **Pending:** generator Option-B render + consumers + tests, then the **live
-re-key** (Sam's ~15-min hold; re-run the dry-run — the map was edited after the
-verify). Full story + paste-able capsule: `docs/activity_reorg_lessons.md` ·
-`docs/activity_reorg_handoff.md`; KB note
+Realigned the Activities tab to the CPL Workplan: **4 Activities** (phantom "Activity 5"
+dissolved), every project nested under its parent Activity, the separate Projects grid +
+Workplan-Goals Projects table gone, Goal banners dropped (Path A), a cross-cutting
+**◆ sprint** tag/filter; Veteran `4.1`(+`4.1.1` 29 Palms) & Apprenticeship `4.2` as slim
+Activity-4 nodes, Statewide Adoption → `3.3`; clean renumber (A1:7 A2:4 A3:12 A4:9 + held-out
+5.1). **SkyPlan** locked the taxonomy + shipped the spec; **StarTeam (SkyPlan-II)** built the
+generator Option-B render (verified offline via a snapshot + local-rekey → render → Chromium
+harness, locked by Sam), the consumers + ◆ sprint filter, aligned the report `ACTIVITY_DESC`
+titles, and rewired **tabling** onto the nested cards (the `activityLayerIds()` immune gate
+was dropped — it marked everything immune post-reorg; all sub-activities are now tableable).
+The **live Supabase re-key** ran in Sam's hold — two-phase permutation + inline verification
+gate, receipt/SQL `kb/activity_reorg_out/2026-07-21/` — then merged + regen-dispatched. Full
+story: `docs/activity_reorg_lessons.md` · `docs/activity_reorg_handoff.md`; KB note
 `methodology-adversarial-verify-crosswalk-before-live-rekey.md`. Side-lane — left
 `cpl_todos.json` + the numbered handoff to the CCR mainline.
 
