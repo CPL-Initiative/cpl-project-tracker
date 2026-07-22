@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-22T08:48:13.841Z",
+  "scraped_at": "2026-07-22T11:21:58.157Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -199,16 +199,16 @@
         {
           "college": "Bakersfield College",
           "students": 594,
-          "units": 8444.5,
-          "avgUnits": 14.216329966329967,
+          "units": 8449.5,
+          "avgUnits": 14.224747474747474,
           "transcriptionRate": 11.4,
           "avgTranscribed": 1.6203703703703705,
           "criteriaMetCount": 3,
           "militaryStudents": 548,
           "nonMilitaryStudents": 55,
           "apprenticeStudents": 0,
-          "savings": 15449480,
-          "yearImpact": 55215645.5,
+          "savings": 15458130,
+          "yearImpact": 55245980.5,
           "transcribedUnits": 962.5
         },
         {
@@ -1878,14 +1878,14 @@
   ],
   "raw": {
     "Students": 50518,
-    "Units": 239605.65000000002,
+    "Units": 239610.65000000002,
     "TranscribedUnits": 102775.95,
-    "Savings": 332839327.75,
-    "YearImpact": 1344473706.8999999,
+    "Savings": 332847977.75,
+    "YearImpact": 1344504041.8999999,
     "MilitaryStudents": 26039,
     "NonMilitaryStudents": 24557,
     "AprenticeStudents": 760,
-    "AverageUnits": 4.742975771012313,
+    "AverageUnits": 4.743074745635219,
     "TranscribedAverage": 2.034442179025298
   }
 }
