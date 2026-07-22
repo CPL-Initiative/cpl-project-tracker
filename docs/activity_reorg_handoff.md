@@ -38,53 +38,49 @@ numbered handoff + `cpl_todos.json` untouched.
   `5.1` AI-Ready CA is **held out** (tabled, not renumbered); Activity 3 retitled
   "Scale CPL Access, Awards, and Procedures".
 
-## Already shipped (PR #872, draft)
-📄 Workplan link (both HTMLs) · `PID_TO_KPI_KEY`/`PID_TO_KPI_BREAKDOWN` lockstep
-(`4.1`/`3.1.3`) · Activity-3 fallback-label retitle · the spec (alias map + scope).
+## Already shipped (PR #872, draft) — Steps 1-3 DONE + verified, Step 4 STAGED
+
+**SkyPlan-II built Steps 1-3 and staged Step 4** (2026-07-22, all on the branch;
+`npm test` green, 167 files). Full story: `docs/activity_reorg_lessons.md` (2026-07-22).
+
+- ✅ **Step 1 — Generator Option-B render** (`excel_to_dashboard.py`): `build_activity_kpis`
+  nests every active project under its Activity (dropped `core_ids` gate + the 4.1
+  composite; carries `sprint_tag` + `depth`); `render_activity_kpis_html` = one grid per
+  Activity, no Goal banners (Path A), child-depth accent, filter data-attrs, ◆ sprint badge;
+  the standalone Projects grid + AWG Projects table injections dissolved (kept Tabled &
+  Archived); phantom "Activity 5" fallbacks removed. **Verified offline** (snapshot + local
+  re-key → render → Chromium screenshots; full generator regen exit 0).
+- ✅ **Step 2 — Static HTML** (both, Rule 4, identical): dropped the "projects" scroll-spy
+  entry; added `#filterSprint` to the static actions bar.
+- ✅ **Step 3 — Consumers + tests**: `raci.js` titles canonical; `project_add.js`
+  `suggestId(ids, activityNum)`; `dashboard_filters.js` ◆ Sprint filter (+ collapse empty
+  groups); new `tests/activities_sprint_filter.test.js`. (Report `ACTIVITY_DESC` titles
+  left UNCHANGED — see the open decision below.)
+- ✅ **Step 4 — re-key STAGED** (`kb/activity_reorg_out/2026-07-21/`): fresh **read-only**
+  dry-run against live Supabase = CLEAN (all 34 ids covered once); `rekey.sql` ready. Also
+  already on-branch from SkyPlan: 📄 Workplan link + the `PID_TO_KPI_KEY`/`_BREAKDOWN` lockstep.
+
+## Open decisions for Sam (sent with the preview screenshots)
+1. **Visual lock** of the new Activities tab (rich cards nested, no Goal banners, ◆ badges).
+2. **Report titles** — align the `ACTIVITY_DESC` editorial titles in `master_report.js` +
+   `generate_reports.js` (A3 "CPL Students & College Success" / A4 "Partnerships, Policy &
+   Scale") to the new canonical, or leave them? Left untouched pending his call.
+3. **Dropped affordances** — the assoc-editor is now obsolete (nesting = intrinsic
+   association) and the grid-only inline 🗄 table/archive isn't on the nested cards. OK, or
+   keep tabling somewhere?
 
 ## The remaining build (order matters)
 
-**Step 1 — Generator (Option B render).** In `excel_to_dashboard.py`:
-- `render_activity_kpis_html` (~L1924): render each Activity group's **projects
-  nested under it** (they already carry `workplan_activity`; nest deeper by dotted-id
-  depth). Preserve the per-card KPI + `👥 RACI`/`📝 Update`/`📣 Nudge` affordances.
-- **Delete** the separate-category injections: `render_projects_grid_html` (~L2911,
-  the `<h2>Projects (N)</h2>` grid grouped by Goal) + `render_awg_projects_section_html`
-  (~L3124, the Workplan-Goals Projects table) + the `activity_layer_ids` `"5."`
-  carve-out (~L11208) + the injection blocks (~L11994, ~L12230).
-- Unwind the **sprint-composite** (`SPRINT_IDS` L1460 = the old 4.1.x list;
-  `build_activity_kpis` 4.1 composite L1641-1685) — 4.1/4.2 are now real nodes.
-- Remove the `"5"` key from the 3 fallback dicts (L1626/L2367/L10226) + the
-  id-prefix→"5" backfills (L10320, L10036).
-- **Drop the Goal chips** (Path A) + **emit `sprint_tag`** onto cards + a filter chip.
-- ⚠ The generator reads Supabase, so it **won't fully run in the sandbox** — `py_compile`
-  + reason carefully; the true verification is the regen on the runner (Step 5).
-
-**Step 2 — Static HTML (both, Rule 4).** Remove the `data-sections` "Projects"
-scroll-spy entry (~L4231) + the `#projectsGrid`/`#awgProjectsSection` shells if they
-don't regenerate away. Keep `CPL_Dashboard.html` == `index.html` (diff to confirm).
-
-**Step 3 — Consumers + tests.** `project_add.js` suggestId → `N.x` under the chosen
-Activity (not `5.N`, L44-52); drop the `5.`-carve-out in `project_lifecycle.js`
-(L303) + `raci.js`; reconcile the drifted `ACTIVITY_DESC` dicts (`master_report.js`
-L43, `report_generator.js`/`generate_reports.js` L236, `annual_report.js` L237).
-Update `raci.test.js`, `project_lifecycle.test.js`, `assoc_editor.test.js`,
-`master_report.test.js`; add a "no Activity 5 / `sprint_tag` filters" guard.
-`npm test` green.
-
-**Step 4 — LIVE RE-KEY (Phase 2 — gate on Sam's hold).** Rule 9: fresh live read
-at write-time. **Re-run a dry-run first** (the committed map was validated against an
-earlier draft — see the lessons caveat). Then, in ONE transaction, the **two-phase
-permutation** (`TMP__` prefix → final) across `projects.id`, `item_raci.item_id`,
-`item_updates.item_id`, `project_lifecycle.project_id`, `workplan_goals` assoc; plus
-`alter table projects add column sprint_tag text` + populate; insert `3.1.4`; merge
-dissolves (union RACI; re-key updates); retitle Activity 3 across every Activity-3
-`workplan_activity`. Preserve the non-project header rows (`item_raci` 1-4;
-`item_updates` 1/3). Commit a receipt.
+**Step 4 EXECUTION — LIVE RE-KEY (gate on Sam's ~15-min hold).** Rule 9: fresh live read
+at write-time (re-run the dry-run coverage query in `dry_run_receipt.md` first — confirm the
+live id set is unchanged + no FK on the history tables). Then run
+`kb/activity_reorg_out/2026-07-21/rekey.sql` as ONE transaction via the Supabase MCP; inspect
+its VERIFICATION block; COMMIT only if every value matches (the alias map is the rollback map).
+Confirm the id-61 wrapper-update routing with Sam (general note → 4.1 vs Activity-4 level).
 
 **Step 5 — Regen + verify + merge.** `workflow_dispatch` `daily-dashboard.yml`,
 **inspect the regenerated HTML** (Activities tab: 4 Activities, projects nested, no
-Projects grid, no Goal chips, sprint filter works; KPI cards resolve), then mark #872
+Projects grid, no Goal banners, sprint filter works; KPI cards resolve), then mark #872
 ready + squash-merge on green.
 
 ## Safety patterns to honor

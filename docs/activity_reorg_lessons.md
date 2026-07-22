@@ -112,3 +112,52 @@ nesting edits post-date it → **re-run a dry-run before the live re-key.** (KB 
   chip, expensive to change a live re-key.
 - **Adversarial verify before a live PK renumber** — caught 2 real defects.
 - **Small AskUserQuestion batches** for the taxonomy forks (levels / sprints / IDs).
+
+## 2026-07-22 — SkyPlan-II (Phase 3 built + verified; Phase 2 staged; render locked-pending)
+
+Picked up SkyPlan's draft PR #872 and built the remaining phases on the same branch.
+
+### Shipped this session (all on `claude/cobi-activity-reorg-az2o2y`, #872 still draft)
+- **Generator Option-B render** (`excel_to_dashboard.py`): `build_activity_kpis` now
+  nests EVERY active project under its Activity (dropped the `core_ids` ladder gate +
+  the 4.1 sprint composite); `render_activity_kpis_html` renders one grid per Activity
+  (no Goal banners — Path A), child-depth accent, filter data-attrs, ◆ sprint badge.
+  Dissolved the standalone Projects grid + the AWG Projects table (kept the Tabled &
+  Archived ledger for the held-out 5.1). Removed the phantom "Activity 5" fallbacks.
+- **Consumers**: `raci.js` ACTIVITIES titles canonicalized; `project_add.js`
+  `suggestId(ids, activityNum)` mints `N.x` under the chosen Activity; `dashboard_filters.js`
+  gains a **◆ Sprint filter** (filters `.activity-kpi-card[data-sprint]`, collapses empty
+  groups); static actions bar gains `#filterSprint` (both HTMLs, Rule 4); dead "projects"
+  scroll-spy entry removed. Tests green (167 files) + a new `activities_sprint_filter.test.js`.
+- **Phase 2 re-key STAGED** (`kb/activity_reorg_out/2026-07-21/`): a fresh **read-only**
+  dry-run against live Supabase confirmed the crosswalk is CLEAN (all 34 ids covered once;
+  RACI/updates counts match; the 2 content-judgment steps resolved from live data), plus
+  the two-phase `rekey.sql` ready to run at Sam's hold. **Not executed.**
+
+### The method win — offline render verification (no Supabase, no runner)
+The generator's three-tier loader falls back to the committed `kb/projects_snapshot.json`
+when `SUPABASE_SERVICE_KEY` is unset. So I built a scratch harness that (a) loads the real
+34 projects, (b) applies the alias map **locally** to produce the 4-activity target, (c)
+calls the render functions, and (d) Chromium-screenshots the result wrapped in the real
+dashboard CSS. This turned "only verifies at regen on the runner" into a same-session
+visual lock — the faithful preview I sent Sam. Reproduces the alias map's exact
+`A1:7 · A2:4 · A3:12 · A4:9`.
+
+### Caveat that bit me (don't repeat)
+Running the **full** offline generator (`python excel_to_dashboard.py`) for an integration
+check while a subagent was concurrently editing the same HTML **regenerated ~100 MB of
+artifacts** (CPL_Data.js, unified_courses_*, both HTMLs) and raced the subagent's edits.
+Recovery: `git checkout` the pure-regen artifacts, revert the HTMLs to the committed base,
+and re-apply ONLY the 2 static edits by hand. Lesson: the full generator is a **writer** —
+never run it as a "does it compile" check next to a file-editing subagent; use the isolated
+render-function harness (zero repo writes) instead. Integration ran clean on its own (exit 0,
+grid dissolved, all projects nested) — just isolate it.
+
+### Remaining (next session / Sam's hold)
+- **Sam's 3 open calls** (sent with the preview): visual lock; whether to align the report
+  `ACTIVITY_DESC` editorial titles (A3 "CPL Students & College Success" / A4 "Partnerships,
+  Policy & Scale") to the new canonical; and OK-to-drop the now-obsolete assoc-editor + the
+  grid-only inline table/archive control.
+- **Execute the live re-key** (`rekey.sql`) within Sam's hold (fresh read first, Rule 9),
+  then `workflow_dispatch daily-dashboard.yml` → inspect the regenerated Activities tab →
+  mark #872 ready → squash-merge on green.
