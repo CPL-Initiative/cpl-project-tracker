@@ -72,14 +72,39 @@ numbered handoff + `cpl_todos.json` untouched.
    Commit `268d6bc`. (The assoc-editor being obsolete was accepted implicitly — nesting is the
    association now.)
 
-## The remaining build (order matters)
+## Re-key EXECUTED + MERGED (2026-07-22)
+The live re-key ran in Sam's hold — a fresh read confirmed the 34-id set unchanged + no FK on
+the history tables; the inline verification gate passed → committed. #872 squash-merged
+(`89e6de1`); regen dispatched (`701c06a`) → the Activities tab is **live** (33 projects, sprint
+tags, Activity-3 retitle, 3.1.4, RACI/updates carried across). Regenerated HTML verified: 0
+`#projectsGrid`, 0 goal-subheaders, 32 nested `data-sprint` cards, `#filterSprint` present,
+`CPL_Dashboard.html == index.html`.
 
-**Step 4 EXECUTION — LIVE RE-KEY (gate on Sam's ~15-min hold).** Rule 9: fresh live read
-at write-time (re-run the dry-run coverage query in `dry_run_receipt.md` first — confirm the
-live id set is unchanged + no FK on the history tables). Then run
-`kb/activity_reorg_out/2026-07-21/rekey.sql` as ONE transaction via the Supabase MCP; inspect
-its VERIFICATION block; COMMIT only if every value matches (the alias map is the rollback map).
-Confirm the id-61 wrapper-update routing with Sam (general note → 4.1 vs Activity-4 level).
+## ⚠ KNOWN FOLLOW-UP — re-key the `workplan_activity_associations` table (NOT yet done)
+The live re-key covered `projects` / `item_raci` / `item_updates` but **missed the N-to-N
+`workplan_activity_associations` table** (the alias map's apply-order listed it; `rekey.sql`
+didn't). It still holds OLD project ids (`5.2`, `4.1.1`, `3.1.2a`…) + rows pointing at the
+dissolved **Activity 5** → the Workplan-Goals tab's "Contributes to" chips + editor show a
+stale "Activity 5". **The main Activities tab is unaffected.** (Supabase MCP disconnected at
+wrap-time, so this is staged, not run.)
+
+**Recommended fix** — reorg-aligned: one primary per project = its nesting Activity; cleanly
+drops Activity 5 + the now-obsolete N-to-N secondaries. Check the table's columns/NOT-NULL
+defaults first, then:
+```sql
+BEGIN;
+DELETE FROM public.workplan_activity_associations;
+INSERT INTO public.workplan_activity_associations (project_id, activity_id, is_primary)
+SELECT id, substring(workplan_activity from 'Activity[[:space:]]*([0-9]+)'), true
+  FROM public.projects
+ WHERE workplan_activity ~ 'Activity[[:space:]]*[0-9]';
+COMMIT;
+```
+**Alternative** (preserve Sam's curated secondaries): two-phase re-key `project_id` old→new
+like the main re-key, `UPDATE` the `activity_id='5'` rows to each project's real Activity,
+dedup, drop the dissolved-project rows (old `4.1` wrapper, `4.1.3`). Either way, then dispatch
+`daily-dashboard.yml` to republish. Sam declined to pick the approach at wrap-time — confirm
+with him first.
 
 **Step 5 — Regen + verify + merge.** `workflow_dispatch` `daily-dashboard.yml`,
 **inspect the regenerated HTML** (Activities tab: 4 Activities, projects nested, no
