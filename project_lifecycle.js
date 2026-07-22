@@ -199,11 +199,18 @@
   }
   function gridEl() { return document.getElementById("projectsGrid"); }
   function cardFor(pid) {
-    var g = gridEl();
-    return g ? g.querySelector('.project-card[data-pid="' + (window.CSS && CSS.escape ? CSS.escape(pid) : pid) + '"]') : null;
+    var q = (window.CSS && CSS.escape ? CSS.escape(pid) : pid);
+    // Post-reorg every project renders as a nested .activity-kpi-card[data-pid]
+    // under its Activity (CPL_DATA.activity_kpis); the old separate #projectsGrid
+    // .project-card is dissolved. Resolve the nested card first, then fall back to
+    // the legacy grid card so pre-regen HTML still resolves during the transition.
+    return document.querySelector('.activity-kpi-card[data-pid="' + q + '"]') ||
+      (gridEl() ? gridEl().querySelector('.project-card[data-pid="' + q + '"]') : null);
   }
   function cardName(card) {
-    var n = card && card.querySelector(".project-name");
+    // The nested card names its project in .akpi-name; the legacy grid card used
+    // .project-name. Read the new shape first, fall back to the old.
+    var n = card && (card.querySelector(".akpi-name") || card.querySelector(".project-name"));
     return n ? (n.textContent || "").trim() : "";
   }
 
@@ -283,19 +290,23 @@
     });
   }
 
-  // The OFFICIAL WORKPLAN layer — the 1.x–4.x sub-activity ids that render
-  // Activity-metrics KPI cards (read from CPL_DATA.activity_kpis). These are
-  // IMMUNE to table/archive (Session 95): the generator ignores overlay rows
-  // on them, and this mirrors that rule client-side so a stale row can never
-  // hide an Activity card or its goals-ladder rows. (Pre-Session-95 the
-  // overlay deliberately hid the Activity card too — the 2026-07-02 mixup
-  // where tabling "redundant" project cards erased 22 Activity cards.) The
-  // `5.x` family is gone after the Activities-tab reorg — the single held-out
-  // `5.1` (AI-Ready California, tabled) is the only `5.` id left, and the guard
-  // below (indexOf("5.") !== 0) keeps it NON-immune so its tabled state sticks
-  // even if a KPI ladder puts it in activity_kpis. Keep in
-  // sync with the generator's activity_layer_ids. Empty map when CPL_DATA is
-  // absent (e.g. tests) → nothing is immune.
+  // The OFFICIAL WORKPLAN layer — the sub-activity ids that render
+  // Activity-metrics KPI cards (read from CPL_DATA.activity_kpis); mirrors the
+  // generator's activity_layer_ids.
+  //
+  // RETAINED FOR REFERENCE ONLY — it NO LONGER GATES TABLING. Pre-Session-95
+  // this marked Activity-layer ids IMMUNE so a stale overlay row couldn't hide
+  // an Activity card (the 2026-07-02 mixup where tabling "redundant" duplicate
+  // project cards erased 22 Activity cards). The Activities-tab reorg folded
+  // EVERY project into activity_kpis — each now renders as a nested
+  // .activity-kpi-card[data-pid] and is itself tableable — so using this as a
+  // gate would mark *everything* immune and nothing would be tableable. Tabling
+  // a sub-activity card hides only that one card, never an Activity group header
+  // (.activity-group-header is not .activity-kpi-card). mountControls() and
+  // reconcile() therefore no longer consult it. Kept because it documents the
+  // generator mirror and its shape is asserted by tests. The `indexOf("5.")`
+  // guard is left intact (the single held-out `5.1` stays out of the map).
+  // Empty map when CPL_DATA is absent (e.g. tests).
   function activityLayerIds() {
     var out = {};
     try {
@@ -312,11 +323,12 @@
   // ── Reconcile drift between the baked HTML and the live overlay ───────────────
   var _overlay = {};
   function reconcile() {
-    var immune = activityLayerIds();
-    // 1. Anything in the overlay but visible in the grid → hide + add an entry.
-    //    Activity-layer ids are skipped entirely (immune — Session 95).
+    // The `immune` gate (activityLayerIds()) is intentionally GONE here: the
+    // Activities-tab reorg folded every project into activity_kpis, so it would
+    // now mark *everything* immune and no overlay-tabled project would ever hide.
+    // All sub-activity cards are tableable (see activityLayerIds()'s doc comment).
+    // 1. Anything in the overlay but visible → hide + add an entry.
     Object.keys(_overlay).forEach(function (pid) {
-      if (immune[pid]) return;
       var meta = _overlay[pid];
       var card = cardFor(pid);
       var name = (card && cardName(card)) || (entryFor(pid) && entryNameOf(entryFor(pid))) || pid;
@@ -327,14 +339,17 @@
       setGoalsRowsHidden(pid, true);                  // also drop it from the Annual Goals table
     });
     // 2. Anything baked as tabled but NO LONGER in the overlay → restore it.
+    //    gridEl() may be null post-reorg → [] (already handled); harmless because
+    //    the generator excludes tabled projects from activity_kpis, so none
+    //    render as baked-tabled cards.
     var baked = gridEl() ? gridEl().querySelectorAll(".project-card[data-lifecycle]") : [];
     Array.prototype.forEach.call(baked, function (card) {
       var pid = card.getAttribute("data-pid");
-      if (pid && (!_overlay[pid] || immune[pid])) { showCard(pid); setGoalsRowsHidden(pid, false); }
+      if (pid && !_overlay[pid]) { showCard(pid); setGoalsRowsHidden(pid, false); }
     });
     Array.prototype.forEach.call(document.querySelectorAll(".tabled-card[data-pid]"), function (e) {
       var pid = e.getAttribute("data-pid");
-      if (pid && (!_overlay[pid] || immune[pid])) e.remove();
+      if (pid && !_overlay[pid]) e.remove();
     });
     refreshCount();
     mountControls();
@@ -353,29 +368,36 @@
     Array.prototype.forEach.call(document.querySelectorAll(".tabled-restore"), function (b) {
       b.style.display = authed ? "" : "none";
     });
-    // A 🗄 control on each ACTIVE (visible) card. Activity-layer ids never get
-    // one (immune — Session 95; also covers pre-regen HTML that still carries
-    // duplicate sub-activity grid cards).
-    var grid = gridEl();
-    if (!grid) return;
-    var immune = activityLayerIds();
-    Array.prototype.forEach.call(grid.querySelectorAll(".project-card"), function (card) {
-      var has = card.querySelector(".plc-ctl-row");
-      if (immune[card.getAttribute("data-pid")]) { if (has) has.remove(); return; }
-      if (card.getAttribute("data-lifecycle")) { if (has) has.remove(); return; }
-      // The 🗄 control shows for EVERYONE (affordance-visibility vs action-
-      // eligibility) so the team-phrase / reviewer unlock is reachable from the
-      // card — a not-signed-in click opens the unlock in the popup. (Fixes the
-      // chicken-and-egg where the unlock was buried behind an authed-only button.)
-      if (has) return;
-      var row = el("div", { "class": "plc-ctl-row" });
-      var btn = el("button", { "class": "plc-table-btn", "type": "button",
-        "data-pid": card.getAttribute("data-pid"),
-        "title": "Table or archive this project — moves it out of active priorities (reversible)" },
-        ["🗄 Table / Archive"]);
-      row.appendChild(btn);
-      card.appendChild(row);
-    });
+    // A 🗄 control on each ACTIVE (visible) sub-activity card. Post-reorg every
+    // project renders as a nested .activity-kpi-card[data-pid] under its Activity
+    // (the old separate #projectsGrid .project-card is dissolved), and EACH one
+    // is tableable. The Session-95 `immune` gate is intentionally DROPPED: it
+    // existed to stop duplicate grid cards from hiding an Activity card, but the
+    // reorg folded every project into activity_kpis, so activityLayerIds() would
+    // now mark *everything* immune — keeping the gate would make nothing
+    // tableable. Tabling a sub-activity card only hides that one card, never an
+    // Activity group header (.activity-group-header is not .activity-kpi-card, so
+    // the selector below never matches a header). The legacy `#projectsGrid
+    // .project-card` selector is retained for pre-regen HTML during the
+    // transition; there is no gridEl()-null early-out (there may be no grid now).
+    Array.prototype.forEach.call(
+      document.querySelectorAll('.activity-kpi-card[data-pid], #projectsGrid .project-card[data-pid]'),
+      function (card) {
+        var has = card.querySelector(".plc-ctl-row");
+        if (card.getAttribute("data-lifecycle")) { if (has) has.remove(); return; }
+        // The 🗄 control shows for EVERYONE (affordance-visibility vs action-
+        // eligibility) so the team-phrase / reviewer unlock is reachable from the
+        // card — a not-signed-in click opens the unlock in the popup. (Fixes the
+        // chicken-and-egg where the unlock was buried behind an authed-only button.)
+        if (has) return;
+        var row = el("div", { "class": "plc-ctl-row" });
+        var btn = el("button", { "class": "plc-table-btn", "type": "button",
+          "data-pid": card.getAttribute("data-pid"),
+          "title": "Table or archive this project — moves it out of active priorities (reversible)" },
+          ["🗄 Table / Archive"]);
+        row.appendChild(btn);
+        card.appendChild(row);
+      });
   }
 
   // ── Modal: Table / Archive ───────────────────────────────────────────────────
@@ -566,9 +588,23 @@
   }
 
   // ── Load + boot ──────────────────────────────────────────────────────────────
+  // Is the Activities surface present in the DOM? Pre-reorg the marker was
+  // #projectsGrid; the Activities-tab reorg dissolved that grid (the generator
+  // now emits ONLY the "Tabled & Archived" ledger between the Projects-Grid
+  // markers), so gridEl() is null on the live dashboard. Treat a nested
+  // .activity-kpi-card[data-pid] or the baked ledger as "on the Activities view"
+  // too — without this, run() would early-out on the real page and the overlay
+  // would never load, so a card tabled since the last daily regen would never
+  // reconcile (hide) on load. Still early-outs on other pages/tabs that render
+  // none of these.
+  function activitiesSurfacePresent() {
+    return !!(gridEl() ||
+      document.querySelector('.activity-kpi-card[data-pid]') ||
+      document.querySelector('.tabled-archived-wrap'));
+  }
   var _loading = false, _again = false;
   function run() {
-    if (!gridEl()) { mountControls(); return; }  // not on the Activities & Projects view yet
+    if (!activitiesSurfacePresent()) { mountControls(); return; }  // not on the Activities view yet
     if (_loading) { _again = true; return; }
     _loading = true; _again = false;
     sbGet("project_lifecycle?select=project_id,state,reason,updated_by,updated_at").then(function (rows) {
