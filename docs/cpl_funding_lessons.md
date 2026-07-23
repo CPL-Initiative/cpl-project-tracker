@@ -770,3 +770,64 @@ Two more rounds of curator asks after the initial reorg (#878–#880), both JS-o
 (the "reduce-to-old-form + assert conservation" pattern). Tests 292 → **325**; real-Chromium
 verified each round (0 console errors, no horizontal scroll). Side-lane — left `cpl_todos.json`
 + the numbered handoff to the CCR mainline.
+
+## 2026-07-23 (SkyFriend) — uniform box fonts · metric-keyed actuals · the allocation-balance box
+
+Three more curator asks, one JS-only PR in `cpl_funding.js` (+ its test).
+
+**(a) Learned.**
+- **A position-indexed lookup silently breaks the moment the curator reorders the
+  things it indexes.** The `MEASURABILITY` map was keyed `[slot][idx]`, so when Sam
+  swapped Access ⇄ Success the "any transcribed" ACTUAL (16,807) stayed pinned to
+  slot 0 while the metric there was now statewide-eligibility — the number showed
+  under the wrong priority. The durable fix is to key the lookup to the **content
+  that identifies the situation** (the metric text), not the ordinal. New `MEASURES`
+  array = ordered `test(metric)` predicates, most-specific first (portal → eligible/
+  statewide → matched-MIS → completion → units → any-transcribed), first match wins.
+  The measure now *travels with the metric* wherever the curator drops it, and the
+  default order still resolves identically (all prior assertions green). **General
+  rule: when a curator can reorder N things, don't index them by position — resolve
+  by an intrinsic key.**
+- **"Confirm this for me" is a real deliverable — answer it, don't just build.** Sam
+  believed the Projection % *both* sizes the affected population *and* caps funding.
+  That was true of the ORIGINAL (pre-#360) model where `share = factor × rate` so the
+  projection rate moved dollars — but the 2026-06-11 shares-first redesign (which Sam
+  approved) **decoupled them on purpose** precisely because the projection % "looked
+  like a forecast but moved money." Today: **Allocation share = the money lever;
+  Projection % = a performance target only, moves/caps nothing.** So the honest
+  "are the percentages within budget?" check is about the SHARES, not the projection —
+  which is exactly what the new balance box measures. Confirmed in the reply + a
+  clarified in-box line; did **not** silently re-couple them on a mistaken premise.
+
+**(b) State.** Shipped (one PR):
+1. **Uniform fonts** — `.cplfund-prio .p` desc/nums/metric + `.cplfund-strat` +
+   `.cplfund-timing` + `.cplfund-ed-s` all → `.8rem` (the smaller size already in use);
+   only the priority **title** (h4 + `.cplfund-prio-title-input`) stays 1rem. The strat
+   & timing rows previously inherited the page base (~1rem) because their containers set
+   no size — setting the container size makes the `font-size:inherit` ed-t inputs fall
+   in line, so the whole box reads as one block.
+2. **Metric-keyed measurability** (`MEASURES` + `measurability(metric)`), call sites in
+   `actualLineHtml` / `collegeDetailHtml` / `ruralAttainment` now pass `p.metric`; the two
+   hardcoded "Year-1 Priority-1 metric" column titles de-positioned.
+3. **Allocation-balance box** in the Funding Pool area: `perYear() − perYear()×Σshare =
+   remainder`, using the viewed year's shares. `$0` (fully apportioned) at 100%; a red
+   `.balance.over` **Over-allocated** state naming the overage when shares exceed 100%;
+   an unallocated-surplus state under 100%. It's the modern N3-BALANCE cell — recomputes
+   live with every pool/share/year edit. Projection-% line reworded to "performance
+   target only … does not move or cap the funding, which is set by the Allocation share."
+
+Tests 325 → **337** (reorder-follows-metric with a perf artifact, balance $0/over-allocated,
+projection clarify text, font-uniformity CSS guards). Full suite **168 files green**. No
+Chromium module in this sandbox, but the new entities all live in innerHTML (not input
+`value`s — the Round-3 gotcha doesn't apply); verified via a jsdom render dump.
+
+**(c) Roadmap / advice for Sam.** If he ever *wants* the Projection % to also cap funding
+(his original mental model), that's a deliberate re-coupling — I'd advise against it (it
+reintroduces the exact confusion the shares-first redesign removed); keep shares = money,
+projection = target, and read over-allocation off the balance box. The `MEASURES` predicates
+are the one thing to touch if a metric's wording changes enough to miss its matcher — they
+match distinctive phrases (`portal`, `credit recommendation`, `completion`, …), fail safe to
+"no measure mapped" (never a wrong number).
+
+**(d) Next concrete step.** Hand to Sam for live testing. Side-lane — left `cpl_todos.json`
++ the numbered handoff to the CCR mainline (per the SkyFunder precedent).

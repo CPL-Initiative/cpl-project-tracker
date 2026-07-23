@@ -560,6 +560,27 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### SkyFriend side-lane — COBI Implementation Funding: uniform fonts · metric-keyed actuals · allocation-balance box (2026-07-23)
+
+Three curator asks on the Implementation Funding tab, one JS-only PR in `cpl_funding.js`
+(continuing SkyFunder). **(1) Uniform fonts** — the whole priority box (desc/nums/metric/
+strategies) + Timing rows → `.8rem` (the smaller size already in use); only the priority
+**title** stays 1rem (strat/timing rows had been inheriting the page base). **(2) Actuals
+follow the METRIC, not the slot** — Sam reordered priorities (Access ⇄ Success) and the
+position-indexed `MEASURABILITY[slot][idx]` map left the "any transcribed" ACTUAL (16,807)
+pinned under the statewide-eligibility priority. Replaced with `MEASURES` = ordered
+`test(metric)` predicates (portal → eligible/statewide → matched-MIS → completion → units →
+any-transcribed), first match wins; the measure now travels with the metric wherever the
+curator drops it (default order resolves identically — all prior assertions green). Call
+sites `actualLineHtml`/`collegeDetailHtml`/`ruralAttainment` pass `p.metric`. **(3)
+Allocation-balance box** in the Funding Pool area (`perYear − perYear×Σshare`, viewed-year
+shares): `$0` at 100%, red **Over-allocated** > 100% (the modern N3-BALANCE cell), surplus
+< 100%; Projection-% line reworded. **Confirmation Sam asked for:** the **Allocation share**
+moves money; the **Projection %** is a performance target only — it does NOT cap funding
+(that coupling was the pre-2026-06-11 model, removed on purpose). Tests 325 → **337**; suite
+168 files green. Story: `docs/cpl_funding_lessons.md` (SkyFriend) · `docs/cpl_funding_handoff.md`.
+Side-lane — left `cpl_todos.json` + the numbered handoff to the CCR mainline.
+
 ### SkyVid side-lane — CPL Student Portal "Credit for Being You" intro video: audio restoration + accessibility (2026-07-23)
 
 Sam's "work some magic" on the new CPL Student Portal (creditforbeingyou.org) 1:51

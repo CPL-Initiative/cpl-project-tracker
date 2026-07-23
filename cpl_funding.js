@@ -73,6 +73,10 @@
     ".cplfund-card.total { background: var(--surface-muted); border-left: 4px solid var(--gold-accent); }",
     ".cplfund-card.total .v { color: var(--navy-primary); }",
     ".cplfund-card.award { border-left: 4px solid var(--navy-secondary); }",
+    // Allocation-balance box (Sam, 2026-07-23): available tranche − Σ priority
+    // shares; the border goes red when the shares over-allocate the pool.
+    ".cplfund-card.balance { border-left: 4px solid var(--navy-secondary); }",
+    ".cplfund-card.balance.over { border-left-color: var(--red-alert); }",
     // Editable/add/delete pool boxes (Sam, 2026-07-23).
     ".cplfund-card.custom-rev { border-left: 4px solid var(--green-progress); }",
     ".cplfund-card.custom-ded { border-left: 4px solid var(--red-alert); }",
@@ -87,9 +91,13 @@
     ".cplfund-prio { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }",
     ".cplfund-prio .p { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--gold-accent); border-radius: 8px; padding: 14px 16px; }",
     ".cplfund-prio .p h4 { margin: 0 0 6px; color: var(--navy-primary); font-size: 1rem; text-align: left; }",
-    ".cplfund-prio .p .desc { font-size: .9rem; margin: 0 0 8px; }",
-    ".cplfund-prio .p .metric { font-size: .78rem; color: var(--text-muted); border-top: 1px dashed var(--border-strong); padding-top: 6px; }",
-    ".cplfund-prio .p .nums { font-size: .85rem; color: var(--text-body); margin: 0 0 6px; }",
+    // Uniform body-copy size across the whole priority box + the timing rows
+    // (Sam, 2026-07-23) — desc / nums / metric / strategies / timing all sit at
+    // .8rem so the box reads as one block; only the priority TITLE (h4 below)
+    // stays larger.
+    ".cplfund-prio .p .desc { font-size: .8rem; margin: 0 0 8px; }",
+    ".cplfund-prio .p .metric { font-size: .8rem; color: var(--text-muted); border-top: 1px dashed var(--border-strong); padding-top: 6px; }",
+    ".cplfund-prio .p .nums { font-size: .8rem; color: var(--text-body); margin: 0 0 6px; }",
     ".cplfund-prio .p .nums, .cplfund-prio .p .metric { text-align: left; }",
     // Editable priority TITLE inline in the h4 (Sam, 2026-07-23) — heading-weight,
     // dashed underline, sized to content (overrides the ed-t width:100%).
@@ -97,13 +105,13 @@
     ".cplfund-prio-title-input { display: inline-block; width: auto; min-width: 100px; max-width: 210px; font-weight: 700; color: var(--navy-primary); border: none; border-bottom: 1px dashed var(--border-strong); background: transparent; font-size: 1rem; padding: 0 2px; }",
     ".cplfund-prio-title-input:focus { outline: none; border-bottom-color: var(--gold-accent); background: var(--surface-subtle); }",
     // Recommended-strategies list per priority box.
-    ".cplfund-strat { margin-top: 8px; border-top: 1px dashed var(--border-strong); padding-top: 6px; }",
-    ".cplfund-strat-h { font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); font-weight: 700; margin-bottom: 4px; }",
+    ".cplfund-strat { margin-top: 8px; border-top: 1px dashed var(--border-strong); padding-top: 6px; font-size: .8rem; }",
+    ".cplfund-strat-h { font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); font-weight: 700; margin-bottom: 4px; }",
     ".cplfund-strat .cplfund-reqrow { display: flex; align-items: center; gap: 6px; margin: 3px 0; }",
     ".cplfund-strat .cplfund-reqrow .cplfund-ed-t { flex: 1 1 auto; min-width: 0; }",
     ".cplfund-stratadd { margin-top: 4px; }",
     // Timing milestone list (below the priority boxes).
-    ".cplfund-timing { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--navy-secondary); border-radius: 8px; padding: 12px 16px; }",
+    ".cplfund-timing { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--navy-secondary); border-radius: 8px; padding: 12px 16px; font-size: .8rem; }",
     ".cplfund-timing-row { display: flex; align-items: center; gap: 8px; margin: 4px 0; }",
     ".cplfund-timing-label { flex: 1 1 auto; min-width: 0; }",
     ".cplfund-timing-date { flex: 0 0 100px; width: 100px; text-align: right; }",
@@ -197,7 +205,7 @@
     ".cplfund-ed { font-size: 1.25rem; font-weight: 700; color: var(--navy-primary); border: none; border-bottom: 2px dashed var(--border-strong); background: transparent; width: 100%; padding: 0 0 2px; font-family: inherit; text-align: center; }",
     ".cplfund-ed:focus { outline: none; border-bottom-color: var(--gold-accent); background: var(--surface-subtle); }",
     ".cplfund-ed.neg { color: var(--red-alert); }",
-    ".cplfund-ed-s { width: 68px; font-size: .85rem; font-weight: 700; color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 4px; padding: 2px 6px; text-align: center; background: var(--surface-opaque); font-family: inherit; }",
+    ".cplfund-ed-s { width: 68px; font-size: .8rem; font-weight: 700; color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 4px; padding: 2px 6px; text-align: center; background: var(--surface-opaque); font-family: inherit; }",
     ".cplfund-ed-s:focus { outline: none; border-color: var(--gold-accent); }",
     ".cplfund-ed-t { width: 100%; font-size: inherit; color: inherit; border: 1px solid transparent; border-radius: 4px; padding: 2px 4px; background: var(--surface-opaque); font-family: inherit; }",
     ".cplfund-ed-t:hover { border-color: var(--border); }",
@@ -1298,6 +1306,36 @@
         ? "Available college funding " + windowLabel() + " &mdash; disbursed up front in " + esc(y[0]) + " (front-loaded; unspent rolls forward)"
         : "Available college funding " + windowLabel() + " &mdash; " + nYears() + " annual tranches of " + fmtMoney(per) + " (" + esc(y[0]) + " &rarr; " + esc(y[y.length - 1]) + ")" }));
 
+    // Allocation balance (Sam, 2026-07-23): available annual tranche − the
+    // dollars the priority SHARES apportion = remainder. The allocation SHARE is
+    // what moves money (the Projection % is a performance target only), so this
+    // is the "are the percentages within the available funding?" check Sam had
+    // in the original workbook (N3 BALANCE). Shares total 100% → $0 (fully
+    // apportioned); > 100% → over-allocated (red, exceeding the pool); < 100% →
+    // an unallocated surplus. Uses the currently-viewed year's shares.
+    var vslot = state.viewSlot;
+    var ssum = shareSum(vslot);
+    var apportioned = per * ssum;
+    var remainder = per - apportioned;   // = per × (1 − Σshare)
+    var balOver = remainder < -0.5;
+    var balLbl;
+    if (Math.abs(remainder) < 0.5) {
+      balLbl = "Allocation balance &mdash; the Year " + esc(vslot) + " priority shares total " +
+        fmtPctTrim(ssum) + ", so each " + fmtMoney(per) + " annual tranche is fully apportioned with $0 left over";
+    } else if (balOver) {
+      balLbl = "&#9888; Over-allocated &mdash; the Year " + esc(vslot) + " priority shares total " +
+        fmtPctTrim(ssum) + " (&gt;100%): the priorities claim " + fmtMoney(apportioned) + " of the " +
+        fmtMoney(per) + " annual tranche &mdash; <strong>" + fmtMoney(-remainder) +
+        " over</strong>. Lower a share to bring it back within the pool.";
+    } else {
+      balLbl = "Allocation balance &mdash; the Year " + esc(vslot) + " priority shares total " +
+        fmtPctTrim(ssum) + " (&lt;100%): " + fmtMoney(remainder) + " of the " + fmtMoney(per) +
+        " annual tranche is unallocated (spare within the pool)";
+    }
+    out.push(card({ cls: " balance" + (balOver ? " over" : ""), neg: balOver,
+      v: (Math.abs(remainder) < 0.5 ? "$0" : (remainder < 0 ? "&minus;" : "") + fmtMoney(Math.abs(remainder))),
+      l: balLbl }));
+
     // Minimum-viable floor — editable value + label, not deletable; live top-up note.
     out.push(card({ cls: " floor", v: valueEd("floor_window", false),
       l: labelEd("floor_window", "Minimum viable allocation (floor)"),
@@ -1423,44 +1461,63 @@
         "% of each tranche &mdash; statewide " + fmtMoney(sysDollars) + "</p>" +
         '<p class="nums">Projection target ' + edNum("target", fmtRatePct(p.target_rate), { small: true, slot: slot, idx: i, label: p.label + " projection target percent" }) +
         "% of headcount &rarr; " + fmtInt(sysHeads) + " students " +
-        '<span class="dk">(target only &mdash; doesn&#39;t move dollars)</span></p>' +
+        '<span class="dk">(performance target only &mdash; the students this priority aims to reach; it does ' +
+        "<strong>not</strong> move or cap the funding, which is set by the Allocation share above)</span></p>" +
         actualLineHtml(p, i, sysHeads) +
         '<div class="metric">METRIC (Year ' + slot + "): " + edArea("metric", p.metric, { slot: slot, idx: i, rows: 2, label: p.label + " metric" }) + "</div>" +
         strategiesHtml(slot, i) + "</div>";
     }).join("") + "</div>";
   }
 
-  // ── metric measurability (2026-07-03 analysis) ────────────────────────
-  // Which of the six year-specific metrics today's daily MAP feed
-  // (View_StudentAggregatedValues) can actually measure. src = a key in the
-  // perf artifact; gap = the honest reason there's no feed yet + what closes
-  // it. Full analysis: docs/kb-notes/reference-funding-metrics-measurability.md.
-  var MEASURABILITY = {
-    "1": [
-      { src: "p3", basis: "distinct students with any transcribed CPL, per MAP" },
-      { gap: "the Custom Report carries eligible units per student but NO exhibit linkage &mdash; " +
-             "can&#39;t yet tell which eligibility traces to a STATEWIDE credit recommendation " +
-             "(needs an exhibit/collaborative-type field on the eligibility rows)",
-        gap_short: "needs exhibit linkage in the Custom Report" },
-      { gap: "origin (CPL Portal / CPL Landing Page) isn&#39;t captured anywhere yet &mdash; provenance " +
-             "should be stamped at the source when the Student Portal ships (production in ~2 weeks); " +
-             "retrofitting later loses history",
-        gap_short: "needs origin tracking &mdash; bake into the Portal launch" }
-    ],
-    "2": [
-      { gap: "total transcribed units IS derivable from the same MAP dataset &mdash; a small extension " +
-             "to the daily actuals builder away",
-        gap_short: "builder extension queued" },
-      { gap: "the 3+-transcribed-units half is derivable from MAP; the COMPLETION half needs the " +
-             "CO MIS match-back (completions live in college SIS/MIS, not MAP)",
-        gap_short: "needs the CO MIS match-back" },
-      { gap: "needs the MAP &harr; MIS student match (CO match-back) &mdash; the same build that " +
-             "unlocks Year-2 P2&#39;s completion half",
-        gap_short: "needs the CO MIS match-back" }
-    ]
-  };
-  function measurability(slot, idx) {
-    return (MEASURABILITY[slot] || MEASURABILITY["2"])[idx] || {};
+  // ── metric measurability (2026-07-03 analysis; metric-keyed 2026-07-23) ───
+  // Which of the year-specific metrics today's daily MAP feed
+  // (View_StudentAggregatedValues) can actually measure. Keyed to the METRIC
+  // CONTENT, not the priority's slot position: Sam reorders priorities, so a
+  // position-indexed map silently MISALIGNED the actual/data-gap the moment
+  // "Access" and "Success" swapped slots (2026-07-23) — the "any transcribed"
+  // count showed under a priority whose metric was actually about statewide
+  // eligibility. Now each entry's test(metric) runs against the lower-cased
+  // metric text, most-specific first, first match wins; the measure follows the
+  // metric wherever the curator puts it. src = a key in the perf artifact; gap =
+  // the honest reason there's no feed yet + what closes it. Full analysis:
+  // docs/kb-notes/reference-funding-metrics-measurability.md.
+  function has(m, s) { return m.indexOf(s) !== -1; }
+  var MEASURES = [
+    // Origin (CPL Student Portal / CPL Landing Page) — provenance isn't stamped yet.
+    { test: function (m) { return has(m, "portal") || has(m, "landing page"); },
+      gap: "origin (CPL Portal / CPL Landing Page) isn&#39;t captured anywhere yet &mdash; provenance " +
+           "should be stamped at the source when the Student Portal ships (production in ~2 weeks); " +
+           "retrofitting later loses history",
+      gap_short: "needs origin tracking &mdash; bake into the Portal launch" },
+    // Eligible CPL tied to a STATEWIDE credit recommendation — needs exhibit linkage.
+    { test: function (m) { return has(m, "credit recommendation") || (has(m, "eligible") && has(m, "statewide")); },
+      gap: "the Custom Report carries eligible units per student but NO exhibit linkage &mdash; " +
+           "can&#39;t yet tell which eligibility traces to a STATEWIDE credit recommendation " +
+           "(needs an exhibit/collaborative-type field on the eligibility rows)",
+      gap_short: "needs exhibit linkage in the Custom Report" },
+    // MAP ↔ MIS student match (Year-2 P3) — the CO match-back build.
+    { test: function (m) { return has(m, "matched in map and mis") || (has(m, "match") && /\bmis\b/.test(m)); },
+      gap: "needs the MAP &harr; MIS student match (CO match-back) &mdash; the same build that " +
+           "unlocks Year-2 P2&#39;s completion half",
+      gap_short: "needs the CO MIS match-back" },
+    // Completion (Year-2 P2) — the completion half lives in college SIS/MIS.
+    { test: function (m) { return has(m, "completion"); },
+      gap: "the 3+-transcribed-units half is derivable from MAP; the COMPLETION half needs the " +
+           "CO MIS match-back (completions live in college SIS/MIS, not MAP)",
+      gap_short: "needs the CO MIS match-back" },
+    // Units of transcribed CPL (Year-2 P1) — a small daily-actuals builder extension.
+    { test: function (m) { return has(m, "units of transcribed") || (has(m, "units") && has(m, "transcribed")); },
+      gap: "total transcribed units IS derivable from the same MAP dataset &mdash; a small extension " +
+           "to the daily actuals builder away",
+      gap_short: "builder extension queued" },
+    // Any transcribed CPL — MEASURABLE NOW (distinct-student count in the daily feed).
+    { test: function (m) { return has(m, "transcribed"); },
+      src: "p3", basis: "distinct students with any transcribed CPL, per MAP" }
+  ];
+  function measurability(metric) {
+    var m = String(metric || "").toLowerCase();
+    for (var i = 0; i < MEASURES.length; i++) { if (MEASURES[i].test(m)) return MEASURES[i]; }
+    return {};
   }
 
   // ── rural performance attainment ──────────────────────────────────────
@@ -1472,8 +1529,8 @@
     var rec = perfFor(c.college);
     if (!rec) return null;
     var fracs = [];
-    priorities("1").forEach(function (p, i) {
-      var meas = measurability("1", i);
+    priorities("1").forEach(function (p) {
+      var meas = measurability(p.metric);
       if (!meas.src) return;
       if (rec[meas.src] == null) return;   // absent or suppressed → not measurable
       var target = (c.headcount || 0) * p.target_rate;
@@ -1484,7 +1541,7 @@
   }
 
   function actualLineHtml(p, idx, targetHeads) {
-    var meas = measurability(state.viewSlot, idx);
+    var meas = measurability(p.metric);
     if (meas.gap) {
       return '<p class="nums dk">&#9203; Actual: <strong>data gap</strong> &mdash; ' + meas.gap + ".</p>";
     }
@@ -1565,7 +1622,7 @@
       { key: "pea", label: "Eligible†", cls: "",
         title: "distinct students with any ELIGIBLE CPL units identified in MAP (credit available, not yet transcribed)" },
       { key: "p3a", label: "Transcribed†", cls: "",
-        title: "distinct students with any TRANSCRIBED CPL per MAP (the Year-1 Priority-1 metric)" },
+        title: "distinct students with any TRANSCRIBED CPL per MAP (the one Year-1 priority metric the daily feed can measure today)" },
       { key: "elig", label: "Elig", cls: "",
         title: "Proposed baseline eligibility (informational in this draft): ✓ all tracked requirements met, ◐ some, ○ none." }
     ].concat(yearColDefs(), [
@@ -1780,7 +1837,7 @@
       '<td class="t trunc" title="' + esc(c.district || "") + '">' + esc(districtShort(c.district) || "—") + "</td>" +
       '<td title="' + fmtPct(c.headcount_pct, 2) + ' of statewide headcount">' + fmtInt(c.headcount) + "</td>" +
       '<td title="distinct students with any eligible CPL units identified in MAP (credit available, not yet transcribed)">' + fmtActual(perfFor(c.college), "pe") + "</td>" +
-      '<td title="distinct students with any transcribed CPL, per MAP (the Year-1 Priority-1 metric)">' + fmtActual(perfFor(c.college), "p3") + "</td>" +
+      '<td title="distinct students with any transcribed CPL, per MAP (the one Year-1 priority metric measurable from today\'s feed)">' + fmtActual(perfFor(c.college), "p3") + "</td>" +
       '<td title="' + esc(eligTitle(c.college)) + '">' + eligGlyph(c.college) + "</td>" +
       yearCellsHtml(c) +
       '<td class="tot">' + fmtMoney(c.total) + "</td>" +
@@ -1796,7 +1853,7 @@
     var m = allocModel();
     var floorActive = m.floor > 0 && m.floorCount > 0;
     var prio = ps.map(function (p, i) {
-      var meas = measurability(state.viewSlot, i);
+      var meas = measurability(p.metric);
       var actual = "";
       if (meas.src && rec) {
         actual = " &middot; actual <strong>" + fmtActual(rec, meas.src) + "</strong>";

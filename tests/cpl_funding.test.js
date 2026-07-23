@@ -739,6 +739,80 @@ function footText(doc) {
     doc.querySelectorAll(".cplfund-prio .p")[1].textContent.indexOf("match-back") !== -1);
 }
 
+// C9b — measurability follows the METRIC, not the slot position (Sam, 2026-07-23).
+// When priorities are REORDERED (Access ⇄ Success), the actual/data-gap must
+// travel with the metric — a position-keyed map showed the "any transcribed"
+// count under the statewide-eligibility priority.
+{
+  const { window } = freshDom();
+  window.CPL_FUNDING_PERF = {
+    as_of: "2026-07-23", suppress_below: 5,
+    statewide: { p2: 5000, p3: 16807 },
+    colleges: { "Alameda": { p2: 100, p3: 250 } }, unmatched: {}
+  };
+  const doc = boot(window);
+  // Reorder: slot-0 = statewide-eligibility (Access), slot-1 = any-transcribed
+  // (Success), slot-2 = origin/Portal (Capacity) — Sam's live arrangement.
+  window.CPL_FUNDING_TAB._setShared({ yearPriorities: { "1": {
+    "0": { title: "Access", metric: "Headcount with Eligible CPL Based on Statewide Credit Recommendations, Joint Services Transcripts, or High School Credit" },
+    "1": { title: "Success", metric: "Headcount with any transcribed CPL" },
+    "2": { title: "Capacity", metric: "Headcount with Transcribed Credit from either CPL Student Portal or CPL Landing Page" }
+  } } });
+  window.CPL_FUNDING_TAB.render();
+  const cards = doc.querySelectorAll(".cplfund-prio .p");
+  check("reordered slot-0 (statewide eligibility) shows the exhibit-linkage data gap, not a number",
+    cards[0].textContent.indexOf("data gap") !== -1 &&
+    cards[0].textContent.indexOf("STATEWIDE credit recommendation") !== -1 &&
+    cards[0].textContent.indexOf("16,807") === -1);
+  check("reordered slot-1 (any transcribed) now carries the measurable actual (16,807 of target)",
+    cards[1].textContent.indexOf("16,807") !== -1 && cards[1].textContent.indexOf("of target") !== -1);
+  check("reordered slot-2 (Portal/Landing) still carries the origin data gap",
+    cards[2].textContent.indexOf("data gap") !== -1 && cards[2].textContent.indexOf("Portal") !== -1);
+}
+
+// C9c — Projection % row is clarified as a target that does NOT move/cap dollars.
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const box = doc.querySelector(".cplfund-prio .p").textContent;
+  check("projection line clarifies it does not cap funding + points at the Allocation share",
+    box.indexOf("cap the funding") !== -1 && box.indexOf("Allocation share above") !== -1);
+}
+
+// C9d — Allocation-balance box in the Funding Pool area (Sam, 2026-07-23).
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const bal = doc.querySelector(".cplfund-card.balance");
+  check("a balance box renders in the pool area", !!bal);
+  check("at 100% shares the balance is $0 (fully apportioned)",
+    bal && bal.querySelector(".v").textContent.trim() === "$0" &&
+    bal.textContent.indexOf("fully apportioned") !== -1 && bal.textContent.indexOf("100%") !== -1);
+  check("balance box is not flagged over-allocated at 100%", bal && !bal.classList.contains("over"));
+  // Push the shares past 100% → over-allocated, red, and quantified.
+  commit(window, doc.querySelector('input[data-edit="share"][data-slot="1"][data-idx="0"]'), "60");
+  const over = doc.querySelector(".cplfund-card.balance");
+  check("shares over 100% flag the balance box as over-allocated (red border class)",
+    over && over.classList.contains("over"));
+  check("over-allocated balance names the overage + the >100% share sum",
+    over && over.textContent.indexOf("Over-allocated") !== -1 &&
+    over.textContent.indexOf("130%") !== -1 && over.querySelector(".v.neg"));
+}
+
+// C9e — the priority box + timing rows share one body-copy size (Sam, 2026-07-23).
+{
+  check("priority .nums / .desc / .metric all use the unified .8rem size",
+    /\.cplfund-prio \.p \.nums \{[^}]*font-size:\s*\.8rem/.test(consumerSrc) &&
+    /\.cplfund-prio \.p \.desc \{[^}]*font-size:\s*\.8rem/.test(consumerSrc) &&
+    /\.cplfund-prio \.p \.metric \{[^}]*font-size:\s*\.8rem/.test(consumerSrc));
+  check("strategies list + timing rows also carry the unified size",
+    /\.cplfund-strat \{[^}]*font-size:\s*\.8rem/.test(consumerSrc) &&
+    /\.cplfund-timing \{[^}]*font-size:\s*\.8rem/.test(consumerSrc));
+  check("the priority TITLE stays larger than the body copy (1rem)",
+    /\.cplfund-prio-title-input \{[^}]*font-size:\s*1rem/.test(consumerSrc) &&
+    /\.cplfund-prio \.p h4 \{[^}]*font-size:\s*1rem/.test(consumerSrc));
+}
+
 // C10 — failure mode: data never arrives (404 → loadScript fails soft).
 {
   const { window } = freshDom();
