@@ -23,6 +23,10 @@ const SRC = fs.readFileSync("fact-sheet/factsheet_word.js", "utf8");
 // ── Part A — static wiring on the shipped page ──
 check("index.html includes factsheet_word.js", /<script src="\.\/factsheet_word\.js"><\/script>/.test(HTML));
 check("index.html has the #btn-word button", /id="btn-word"/.test(HTML));
+// Funding is temporarily withheld (Implementation Funding scenarios in flux) —
+// both the section and its Contents link carry fs-withheld.
+check("Funding section is marked fs-withheld on the page", /<section id="funding" class="fs-withheld">/.test(HTML));
+check("Funding TOC link is marked fs-withheld", /<a href="#funding" class="fs-withheld">/.test(HTML));
 
 // ── Part B — behavior in jsdom ──
 const dom = new JSDOM(HTML, { runScripts: "outside-only",
@@ -50,6 +54,9 @@ check("strips the Curate button", !/id="btn-curate"/.test(h));
 check("strips the table of contents", !/class="toc"/.test(h));
 check("strips the live-data chip", !/id="live-chip"/.test(h));
 check("strips .no-print controls", !/btn-print/.test(h));
+// (c2) withheld sections (.fs-withheld) are stripped from the report, NOT revealed
+//      by the [hidden] un-hide step — the shipped Funding section must be absent.
+check("excludes the withheld Funding section", !/id="funding"/.test(h) && !/Funding history/.test(h));
 
 // (d) statewide grid → real table; images absolute
 check("statewide grid is rebuilt as a real <table>", /<table class="data sw-tbl">/.test(h) && /Welding/.test(h));
@@ -65,9 +72,14 @@ check("images are rewritten to absolute URLs", /<img[^>]+src="https?:\/\//.test(
   const exec = w2.document.querySelector("#exec-summary p");
   exec.textContent = "HIDDENMARKER12345";
   exec.classList.add("fs-ov-hidden");
+  // A section marked fs-withheld is stripped even though it is not `[hidden]`
+  // (guards the mechanism generically, independent of which section uses it).
+  const sec = w2.document.querySelector("#tech") || w2.document.querySelector("main > section:last-of-type");
+  if (sec) { sec.classList.add("fs-withheld"); sec.insertAdjacentHTML("afterbegin", "<p>WITHHELDMARKER999</p>"); }
   const out2 = w2.CPL_FACTSHEET_WORD.buildDoc();
   check("doc reflects a Curate edit (current innerHTML)", /MARKER-EDIT/.test(out2.html));
   check("doc excludes a reviewer-hidden (.fs-ov-hidden) box", !/HIDDENMARKER12345/.test(out2.html));
+  check("doc excludes an fs-withheld section", sec ? !/WITHHELDMARKER999/.test(out2.html) : true);
 }
 
 // (f) clone-not-mutate

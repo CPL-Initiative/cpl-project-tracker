@@ -91,6 +91,14 @@ a:hover { text-decoration: underline; }
   overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
 }
 
+/* A section (and its TOC link) temporarily withheld from the public page —
+   content is kept in the source for later revision, just not shown. Hidden on
+   the live page and stripped from the Word export (see factsheet_word.js).
+   NOTE: use this instead of the plain `hidden` attribute — the Word export
+   deliberately un-hides `[hidden]` to expand collapsibles. To restore, remove
+   the `fs-withheld` class from the section and its Contents link. */
+.fs-withheld { display: none !important; }
+
 .btn {
   font: inherit; font-weight: 600; cursor: pointer;
   border: 1px solid var(--border-strong); background: var(--surface);
