@@ -290,6 +290,68 @@ function footText(doc) {
     doc.querySelector("#cplFundTable tbody").textContent.indexOf("No colleges match") !== -1);
 }
 
+// C1b — PR-A editable content (Sam, 2026-07-23): priority TITLE + STRATEGIES
+// (both YEAR-SPECIFIC), the TIMING milestone list, and the editable eligibility
+// INTRO. Locked mode → edits land in the active per-browser scenario override.
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+
+  // #1 — priority titles default Access / Success / Capacity (Year 1 shown).
+  const titleInputs = doc.querySelectorAll('.cplfund-prio .p input[data-edit="prio-title"]');
+  check("each priority box has an editable title input", titleInputs.length === 3);
+  check("priority titles default to Access / Success / Capacity",
+    titleInputs[0].value === "Access" && titleInputs[1].value === "Success" && titleInputs[2].value === "Capacity");
+  commit(window, titleInputs[0], "Access & Onboarding");
+  check("editing a priority title persists to the active Year-1 slot",
+    !!(T._getScenario().yearPriorities && T._getScenario().yearPriorities["1"] &&
+       T._getScenario().yearPriorities["1"]["0"] &&
+       T._getScenario().yearPriorities["1"]["0"].title === "Access & Onboarding"));
+
+  // #2 — recommended strategies: empty by default; add, edit, delete (Year 1).
+  check("Recommended strategies header + Add button per priority box",
+    doc.querySelectorAll(".cplfund-strat-h").length === 3 && doc.querySelectorAll("[data-stratadd]").length === 3);
+  check("no strategies by default", doc.querySelectorAll('.cplfund-strat input[data-edit="strategy"]').length === 0);
+  click(window, doc.querySelector('[data-stratadd="1:0"]'));
+  const stratInput = doc.querySelector('.cplfund-strat input[data-edit="strategy"]');
+  check("＋ Add strategy adds an editable strategy row", !!stratInput);
+  commit(window, stratInput, "Embed CPL in onboarding");
+  check("editing a strategy persists to the active Year-1 slot",
+    !!(T._getScenario().yearPriorities["1"]["0"].strategies &&
+       T._getScenario().yearPriorities["1"]["0"].strategies[0] === "Embed CPL in onboarding"));
+  click(window, doc.querySelector('[data-stratdel="1:0:0"]'));
+  check("✕ deletes the strategy row", doc.querySelectorAll('.cplfund-strat input[data-edit="strategy"]').length === 0);
+
+  // #3 — timing: 9 seeded milestones, last undated (italic), add/delete.
+  const timingRows = doc.querySelectorAll(".cplfund-timing-row");
+  check("Timing renders the 9 seeded milestones", timingRows.length === 9);
+  check("first milestone = Funding Model Finalized · Aug 2026",
+    doc.querySelector('.cplfund-timing-row input[data-edit="timing-label"]').value === "Funding Model Finalized" &&
+    doc.querySelector('.cplfund-timing-row input[data-edit="timing-date"]').value === "Aug 2026");
+  check("Potential Year 3 milestone is undated (italic .nodate)",
+    timingRows[8].classList.contains("nodate") &&
+    timingRows[8].querySelector('input[data-edit="timing-label"]').value.indexOf("Potential Year 3") !== -1);
+  commit(window, doc.querySelectorAll('.cplfund-timing-row input[data-edit="timing-date"]')[0], "Sep 2026");
+  check("editing a timing date persists", T._getScenario().timing && T._getScenario().timing[0].date === "Sep 2026");
+  click(window, doc.getElementById("cplFundTimingAdd"));
+  check("＋ Add item appends a timing row", doc.querySelectorAll(".cplfund-timing-row").length === 10);
+  click(window, doc.querySelector('[data-timingdel="0"]'));
+  check("✕ removes a timing row", doc.querySelectorAll(".cplfund-timing-row").length === 9);
+
+  // #4 — baseline eligibility intro is editable.
+  const introEl = doc.querySelector('.cplfund-elig-intro [data-edit="elig-intro"]');
+  check("eligibility intro is an editable field with the default sentence",
+    !!introEl && introEl.value.indexOf("Proposed baseline requirements to qualify") !== -1);
+  commit(window, introEl, "Colleges must meet these to receive funding:");
+  check("editing the eligibility intro persists", T._getScenario().eligIntro === "Colleges must meet these to receive funding:");
+
+  // Year-specific: Year 2's P1 title is independent of the Year-1 edit above.
+  click(window, doc.querySelector('#cplFundYear button[data-val="2"]'));
+  check("Year-2 priority title is independent (still the default)",
+    doc.querySelectorAll('.cplfund-prio .p input[data-edit="prio-title"]')[0].value === "Access");
+}
+
 // C2 — 2-year window + year selector + the tranche math.
 {
   const { window } = freshDom();
