@@ -124,6 +124,15 @@
     ".cplfund-authbar .mode.scenario { color: var(--navy-secondary); }",
     ".cplfund-authbar button.rst, .cplfund-authbar button.lock { background: var(--seal-blue); color: var(--white); border: none; border-radius: 6px; padding: 4px 10px; cursor: pointer; font-size: .8rem; font-family: inherit; }",
     ".cplfund-authbar button.rst.warn { background: var(--red-alert); }",
+    // ── top control strip: project + area + scenario (Sam, 2026-07-23) ──
+    ".cplfund-strip { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin: 0 0 10px; padding: 10px 14px; background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--gold-accent); border-radius: 8px; }",
+    ".cplfund-ctl { display: inline-flex; align-items: center; gap: 7px; }",
+    ".cplfund-ctl-lbl { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }",
+    ".cplfund-ctl-hint { font-size: .78rem; }",
+    ".cplfund-area { font-size: .72rem; font-weight: 700; color: var(--navy-primary); background: var(--surface-opaque); border: 1px solid var(--gold-accent); border-radius: 10px; padding: 1px 8px; }",
+    ".cplfund-strip select, .cplfund-addproj select, .cplfund-addproj input { padding: 4px 8px; border: 1px solid var(--border-strong); border-radius: 6px; font-size: .85rem; font-family: inherit; background: var(--surface-opaque); color: var(--text-body); }",
+    ".cplfund-strip button.rst, .cplfund-addproj button.rst { background: var(--seal-blue); color: var(--white); border: none; border-radius: 6px; padding: 4px 10px; cursor: pointer; font-size: .8rem; font-family: inherit; }",
+    ".cplfund-addproj { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 12px; padding: 10px 14px; background: var(--surface-muted); border: 1px dashed var(--border-strong); border-radius: 8px; }",
     ".cplfund-saving { font-size: .78rem; color: var(--text-faint); }",
     ".cplfund-saving.err { color: var(--red-alert); font-weight: 600; }",
     // ── year controls ──
@@ -213,77 +222,182 @@
     return undefined;
   }
 
-  // ── config layers: baked defaults ⊕ SHARED (Supabase) ⊕ SCENARIO (local) ──
-  // SHARED = the team-phrase-persisted model everyone sees; SCENARIO = an
-  // anonymous per-browser what-if. An edit writes to SHARED when unlocked,
-  // else to SCENARIO. Effective value per field = SCENARIO ?? SHARED ?? BASE.
-  var SCENARIO_KEY = "cpl_funding_scenario_v1";        // legacy single-slot key (migrated → v2)
-  var SCENARIOS_KEY = "cpl_funding_scenarios_v2";      // {active, scenarios:{name → override}}
-  var SHARED = {};          // fetched from Supabase (or {})
-  var SHARED_SAVED = {};    // last server-confirmed copy (for rollback)
-  var SCENARIO = {};        // the ACTIVE scenario's override (localStorage-backed)
-  var scenarioName = "Scenario 1";
-  var scenarioStore = { active: "Scenario 1", scenarios: {} };
+  // ── config layers: baked defaults ⊕ SHARED scenario (Supabase) ⊕ local what-if ──
+  // The shared model is MULTI-PROJECT, MULTI-SCENARIO (Sam, 2026-07-23):
+  //   SUPA_CONFIG = { projects: { <pid>: { label, area, scenarios: { <name>: <override> } } } }
+  // persisted as the single cpl_funding_config row (team-phrase write, anon read).
+  // The active project + scenario are a PER-BROWSER selection (localStorage). Per
+  // field the resolution is UNCHANGED — SCENARIO ?? SHARED ?? BASE — where:
+  //   SHARED   = SUPA_CONFIG.projects[activeProject].scenarios[activeScenario]
+  //              (the team-curated model everyone sees; edited when unlocked)
+  //   SCENARIO = the anonymous per-browser what-if overlay for THIS project+scenario
+  //              (edited when locked; the Chancellor explores without the phrase)
+  // Creating / renaming / deleting projects + scenarios is a curator (unlocked)
+  // action; an anonymous viewer selects among the shared ones + overlays a what-if.
+  var WHATIF_KEY = "cpl_funding_whatif_v3";        // { "<pid>::<scenario>": override }
+  var SELECTION_KEY = "cpl_funding_selection_v1";  // { project, scenario }
+  var LEGACY_SCEN_KEYS = ["cpl_funding_scenario_v1", "cpl_funding_scenarios_v2"];
+  var DEFAULT_PID = "cpl-implementation";
+  var DEFAULT_PROJECT_LABEL = "CPL Implementation and Project Funding";
+
+  var SUPA_CONFIG = { projects: {} };   // the whole shared blob (Supabase-persisted)
+  var CONFIG_SAVED = { projects: {} };  // last server-confirmed copy (rollback)
+  var WHATIF = {};                      // per-browser what-if overlays (localStorage)
+  var activeProject = DEFAULT_PID;
+  var activeScenario = "Scenario 1";
+  var SHARED = {};      // → SUPA_CONFIG.projects[activeProject].scenarios[activeScenario]
+  var SCENARIO = {};    // → WHATIF[activeProject + "::" + activeScenario]
   var remoteLoaded = false; // whether the shared fetch has resolved
 
   function tp() { return window.CPL_TEAM_PHRASE || null; }
   function unlocked() { var t = tp(); return !!(t && t.session()); }
   function activeOverride() { return unlocked() ? SHARED : SCENARIO; }
 
-  // Named per-browser scenario slots (Sam, 2026-07-06). The v1 single slot
-  // migrates into "Scenario 1"; each slot is a full override object, so
-  // switching scenarios swaps the whole what-if layer at once. Per-browser
-  // by design — a scenario stays a personal exploration until the team
-  // phrase promotes it into the shared config (unchanged promotion flow).
-  function loadScenario() {
-    try {
-      var v2 = JSON.parse(localStorage.getItem(SCENARIOS_KEY) || "null");
-      if (v2 && v2.scenarios && typeof v2.scenarios === "object") {
-        scenarioStore = v2;
-      } else {
-        var v1 = JSON.parse(localStorage.getItem(SCENARIO_KEY) || "{}") || {};
-        scenarioStore = { active: "Scenario 1", scenarios: {} };
-        if (v1 && typeof v1 === "object" && Object.keys(v1).length) scenarioStore.scenarios["Scenario 1"] = v1;
-      }
-    } catch (e) { scenarioStore = { active: "Scenario 1", scenarios: {} }; }
-    scenarioName = scenarioStore.active || "Scenario 1";
-    SCENARIO = scenarioStore.scenarios[scenarioName] || {};
-    if (!SCENARIO || typeof SCENARIO !== "object") SCENARIO = {};
+  function defaultProject() { return { label: DEFAULT_PROJECT_LABEL, area: "cpl", scenarios: { "Scenario 1": {} } }; }
+  // Coerce any stored/loaded config into the {projects:{…}} shape. An OLD flat
+  // override blob (or {}) becomes the CPL project's Scenario 1 — no team edits lost.
+  function normalizeConfig(raw) {
+    if (isPlainObj(raw) && isPlainObj(raw.projects) && Object.keys(raw.projects).length) {
+      var out = { projects: {} };
+      Object.keys(raw.projects).forEach(function (pid) {
+        var p = raw.projects[pid] || {};
+        var scen = isPlainObj(p.scenarios) ? p.scenarios : {};
+        if (!Object.keys(scen).length) scen = { "Scenario 1": {} };
+        out.projects[pid] = { label: p.label || pid, area: p.area || "cpl", scenarios: scen };
+      });
+      return out;
+    }
+    var flat = isPlainObj(raw) ? raw : {};   // legacy flat override (or empty)
+    var cfg = { projects: {} };
+    cfg.projects[DEFAULT_PID] = { label: DEFAULT_PROJECT_LABEL, area: "cpl", scenarios: { "Scenario 1": flat } };
+    return cfg;
   }
-  function saveScenario() {
-    try {
-      if (SCENARIO && Object.keys(SCENARIO).length) scenarioStore.scenarios[scenarioName] = SCENARIO;
-      else delete scenarioStore.scenarios[scenarioName];
-      scenarioStore.active = scenarioName;
-      if (Object.keys(scenarioStore.scenarios).length || scenarioName !== "Scenario 1") {
-        localStorage.setItem(SCENARIOS_KEY, JSON.stringify(scenarioStore));
-      } else {
-        localStorage.removeItem(SCENARIOS_KEY);
-      }
-      localStorage.removeItem(SCENARIO_KEY);   // v1 retired once v2 owns the state
-    } catch (e) { /* storage unavailable — still works this session */ }
+  function projectIds() {
+    return Object.keys(SUPA_CONFIG.projects).sort(function (a, b) {
+      if (a === DEFAULT_PID) return -1;      // the flagship CPL project sorts first
+      if (b === DEFAULT_PID) return 1;
+      return (SUPA_CONFIG.projects[a].label || a).localeCompare(SUPA_CONFIG.projects[b].label || b);
+    });
+  }
+  function activeProjectObj() {
+    if (!isPlainObj(SUPA_CONFIG) || !isPlainObj(SUPA_CONFIG.projects)) SUPA_CONFIG = { projects: {} };
+    if (!SUPA_CONFIG.projects[activeProject]) {
+      var ids = projectIds();
+      activeProject = ids.length ? ids[0] : DEFAULT_PID;
+      if (!SUPA_CONFIG.projects[activeProject]) SUPA_CONFIG.projects[activeProject] = defaultProject();
+    }
+    return SUPA_CONFIG.projects[activeProject];
   }
   function scenarioNames() {
-    var names = Object.keys(scenarioStore.scenarios);
-    if (names.indexOf(scenarioName) === -1) names.push(scenarioName);
-    return names.sort(function (a, b) { return a.localeCompare(b, undefined, { numeric: true }); });
+    var p = activeProjectObj();
+    return Object.keys(p.scenarios).sort(function (a, b) { return a.localeCompare(b, undefined, { numeric: true }); });
+  }
+  // Re-point SHARED + SCENARIO at the active project/scenario. Call after any
+  // selection change, config load, or structural edit.
+  function syncActive() {
+    var p = activeProjectObj();
+    if (!isPlainObj(p.scenarios) || !Object.keys(p.scenarios).length) p.scenarios = { "Scenario 1": {} };
+    if (!p.scenarios[activeScenario]) activeScenario = scenarioNames()[0];
+    if (!isPlainObj(p.scenarios[activeScenario])) p.scenarios[activeScenario] = {};
+    SHARED = p.scenarios[activeScenario];
+    var key = activeProject + "::" + activeScenario;
+    if (!isPlainObj(WHATIF[key])) WHATIF[key] = {};
+    SCENARIO = WHATIF[key];
+  }
+  // Area metadata (label / full) from the COBI org layer (window.CPL_ORGS.ORGS).
+  function orgAreas() {
+    var o = window.CPL_ORGS;
+    return (o && Array.isArray(o.ORGS) && o.ORGS.length) ? o.ORGS : [{ id: "cpl", label: "CPL", full: "CPL Initiative" }];
+  }
+  function areaMeta(id) {
+    var hit = null;
+    orgAreas().forEach(function (a) { if (a.id === id) hit = a; });
+    return hit || { id: id || "cpl", label: String(id || "cpl").toUpperCase(), full: id || "CPL" };
+  }
+
+  // ── per-browser selection + what-if overlay (localStorage) ────────────
+  function loadSelection() {
+    try {
+      var sel = JSON.parse(localStorage.getItem(SELECTION_KEY) || "null");
+      if (sel && typeof sel === "object") {
+        if (sel.project) activeProject = sel.project;
+        if (sel.scenario) activeScenario = sel.scenario;
+      }
+      var wf = JSON.parse(localStorage.getItem(WHATIF_KEY) || "null");
+      if (isPlainObj(wf)) WHATIF = wf;
+      // One-time migration of the OLD per-browser named scenarios: fold the old
+      // ACTIVE slot's override into this browser's CPL / Scenario-1 what-if overlay.
+      var v2 = JSON.parse(localStorage.getItem("cpl_funding_scenarios_v2") || "null");
+      if (v2 && isPlainObj(v2.scenarios)) {
+        var ov = v2.scenarios[v2.active || "Scenario 1"];
+        var key = DEFAULT_PID + "::Scenario 1";
+        if (isPlainObj(ov) && Object.keys(ov).length && !WHATIF[key]) WHATIF[key] = ov;
+      }
+    } catch (e) { /* storage unavailable — defaults are fine */ }
+    LEGACY_SCEN_KEYS.forEach(function (k) { try { localStorage.removeItem(k); } catch (e) {} });
+  }
+  function saveSelection() {
+    try { localStorage.setItem(SELECTION_KEY, JSON.stringify({ project: activeProject, scenario: activeScenario })); }
+    catch (e) { /* ignore */ }
+  }
+  function saveScenario() {   // persist the per-browser what-if overlays
+    try {
+      Object.keys(WHATIF).forEach(function (k) {
+        if (!WHATIF[k] || !Object.keys(WHATIF[k]).length) delete WHATIF[k];
+      });
+      if (Object.keys(WHATIF).length) localStorage.setItem(WHATIF_KEY, JSON.stringify(WHATIF));
+      else localStorage.removeItem(WHATIF_KEY);
+    } catch (e) { /* ignore */ }
+  }
+  // boot() calls loadScenario(); keep it as the combined loader.
+  function loadScenario() { loadSelection(); syncActive(); }
+
+  // ── project + scenario management ─────────────────────────────────────
+  function switchProject(pid) {
+    if (!SUPA_CONFIG.projects[pid]) return;
+    activeProject = pid;
+    activeScenario = scenarioNames()[0];
+    syncActive(); saveSelection(); render();
   }
   function switchScenario(name) {
-    scenarioName = name;
-    scenarioStore.active = name;
-    SCENARIO = scenarioStore.scenarios[name] || {};
-    saveScenario();
-    render();
+    activeScenario = name;
+    syncActive(); saveSelection(); render();
   }
+  // New scenario CLONES the current one (Sam, 2026-07-23: "copy all the previous
+  // scenario details … ready for any changes"). Curator (unlocked) action.
   function newScenario() {
+    if (!unlocked()) return;
+    var p = activeProjectObj();
     var i = 1;
-    while (scenarioStore.scenarios["Scenario " + i] || scenarioName === "Scenario " + i) i++;
-    switchScenario("Scenario " + i);
+    while (p.scenarios["Scenario " + i]) i++;
+    var name = "Scenario " + i;
+    p.scenarios[name] = clone(SHARED);   // clone the CURRENT scenario's overrides
+    activeScenario = name;
+    syncActive(); saveSelection(); saveShared();
   }
   function deleteScenario() {
-    delete scenarioStore.scenarios[scenarioName];
-    var rest = Object.keys(scenarioStore.scenarios);
-    switchScenario(rest.length ? rest.sort()[0] : "Scenario 1");
+    if (!unlocked()) return;
+    var p = activeProjectObj();
+    if (Object.keys(p.scenarios).length <= 1) return;   // always keep at least one
+    delete p.scenarios[activeScenario];
+    activeScenario = scenarioNames()[0];
+    syncActive(); saveSelection(); saveShared();
+  }
+  // Add a project — clone the CPL template (the CURRENT active scenario) as the
+  // new project's Scenario 1, tag it with a COBI area (CPL / C&I / CIP / GR).
+  function slugPid(label) {
+    var b = String(label).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 40) || "project";
+    var pid = b, n = 2;
+    while (SUPA_CONFIG.projects[pid]) pid = b + "-" + (n++);
+    return pid;
+  }
+  function addProject(label, area) {
+    if (!unlocked()) return;
+    label = String(label || "").trim() || "New Project";
+    var pid = slugPid(label);
+    SUPA_CONFIG.projects[pid] = { label: label, area: area || "cpl", scenarios: { "Scenario 1": clone(SHARED) } };
+    activeProject = pid; activeScenario = "Scenario 1";
+    syncActive(); saveSelection(); saveShared();
   }
 
   // ── effective-config accessors ────────────────────────────────────────
@@ -448,8 +562,16 @@
   }
 
   function resetActive() {
-    if (unlocked()) { SHARED = {}; saveShared(); }
-    else { SCENARIO = {}; saveScenario(); render(); }
+    if (unlocked()) {
+      var p = activeProjectObj();
+      p.scenarios[activeScenario] = {};   // clear THIS scenario's overrides
+      SHARED = p.scenarios[activeScenario];
+      saveShared();
+    } else {
+      var key = activeProject + "::" + activeScenario;
+      WHATIF[key] = {}; SCENARIO = WHATIF[key];
+      saveScenario(); render();
+    }
   }
 
   // ── Supabase shared config I/O ────────────────────────────────────────
@@ -463,22 +585,28 @@
     }).then(function (r) { return r.ok ? r.json() : []; })
       .then(function (rows) {
         var cfg = rows && rows[0] && rows[0].config;
-        SHARED = (cfg && typeof cfg === "object" && !Array.isArray(cfg)) ? cfg : {};
-        SHARED_SAVED = clone(SHARED);
+        SUPA_CONFIG = normalizeConfig(cfg);
+        CONFIG_SAVED = clone(SUPA_CONFIG);
+        syncActive();
         remoteLoaded = true;
         render();
-      }).catch(function () { remoteLoaded = true; /* keep SHARED = {} */ });
+      }).catch(function () { remoteLoaded = true; /* keep the default config */ });
   }
   var savingState = "";      // "", "saving", "saved", "err"
-  var pendingPromotion = false;  // a scenario is being promoted into SHARED on unlock
+  var pendingPromotion = false;  // a local what-if is being promoted into SHARED on unlock
   function clearPromotedScenario() {
-    if (pendingPromotion) { SCENARIO = {}; saveScenario(); pendingPromotion = false; }
+    if (pendingPromotion) {
+      var key = activeProject + "::" + activeScenario;
+      WHATIF[key] = {}; SCENARIO = WHATIF[key];
+      saveScenario();
+      pendingPromotion = false;
+    }
   }
   function saveShared() {
     if (!remoteEnabled()) {
       // Offline / tests behave like a successful save.
       clearPromotedScenario();
-      SHARED_SAVED = clone(SHARED);
+      CONFIG_SAVED = clone(SUPA_CONFIG);
       render();
       return;
     }
@@ -492,19 +620,19 @@
     if (t) t.decorateHeaders(headers, t.session());
     fetch(CONFIG_URL + "?id=eq.default", {
       method: "PATCH", headers: headers,
-      body: JSON.stringify({ config: SHARED, updated_by: "(team)" })
+      body: JSON.stringify({ config: SUPA_CONFIG, updated_by: "(team)" })
     }).then(function (r) { return t ? t.checkWrite(r) : { ok: r.ok, status: r.status }; })
       .then(function (res) {
-        if (res.ok) { clearPromotedScenario(); SHARED_SAVED = clone(SHARED); savingState = "saved"; render(); return; }
-        // RLS/auth failure — roll back SHARED, KEEP the scenario (nothing lost),
-        // drop a stale phrase, surface it.
+        if (res.ok) { clearPromotedScenario(); CONFIG_SAVED = clone(SUPA_CONFIG); savingState = "saved"; render(); return; }
+        // RLS/auth failure — roll back the WHOLE config, KEEP the what-if (nothing
+        // lost), drop a stale phrase, surface it.
         if (t) t.handleWriteFailure(t.session(), res.status);
-        SHARED = clone(SHARED_SAVED);
+        SUPA_CONFIG = clone(CONFIG_SAVED); syncActive();
         pendingPromotion = false;
         savingState = "err";
         render();
       }).catch(function () {
-        SHARED = clone(SHARED_SAVED);
+        SUPA_CONFIG = clone(CONFIG_SAVED); syncActive();
         pendingPromotion = false;
         savingState = "err";
         render();
@@ -715,7 +843,7 @@
     }
     var meta = ["CPL Implementation Funding (DRAFT model " + base().model_version + ") — " + windowLabel() +
       (fl ? " · front-loaded disbursement" : "") +
-      (isDirty() && !unlocked() ? " · local what-if: " + scenarioName : "")];
+      (isDirty() && !unlocked() ? " · local what-if: " + activeScenario : "")];
     return [meta].concat(lines).map(function (r) { return r.map(csvEscape).join(","); }).join("\r\n");
   }
   function downloadCsv() {
@@ -781,7 +909,7 @@
     return "<!doctype html><html><head><meta charset='utf-8'><title>CPL Implementation Funding — " +
       esc(windowLabel()) + "</title><style>" + css + "</style></head><body>" +
       "<h2>CPL Implementation Funding <small style='font-weight:400;'>(DRAFT scenario tool" +
-      (isDirty() && !unlocked() ? " · " + esc(scenarioName) : "") + ")</small></h2>" +
+      (isDirty() && !unlocked() ? " · " + esc(activeScenario) : "") + ")</small></h2>" +
       clone.innerHTML + "</body></html>";
   }
   function openPdf() {
@@ -848,36 +976,62 @@
     var e = last[1] ? (s.slice(0, 2) + last[1]) : last[0];
     return s + "–" + e;
   }
+  // Top control strip — Project (+ area badge + Add) to the LEFT of Scenario
+  // (+ New clones current + Delete). Selecting is open to everyone; creating /
+  // deleting projects + scenarios is a curator (unlocked) action.
+  function controlStripHtml() {
+    var proj = activeProjectObj();
+    var am = areaMeta(proj.area);
+    var curator = unlocked();
+    var projOpts = projectIds().map(function (pid) {
+      var p = SUPA_CONFIG.projects[pid];
+      return '<option value="' + esc(pid) + '"' + (pid === activeProject ? " selected" : "") + ">" + esc(p.label || pid) + "</option>";
+    }).join("");
+    var projBlock = '<div class="cplfund-ctl"><span class="cplfund-ctl-lbl">Project</span>' +
+      '<select id="cplFundProjSel" class="cplfund-ed-sel" aria-label="Funding project">' + projOpts + "</select>" +
+      '<span class="cplfund-area" title="COBI area: ' + esc(am.full) + '">' + esc(am.label) + "</span>" +
+      (curator ? '<button type="button" class="rst" id="cplFundProjAdd" title="Add a new funding project (clones the current model as its starting point)">＋ Project</button>' : "") +
+      "</div>";
+    var scNames = scenarioNames();
+    var scOpts = scNames.map(function (n) {
+      var hasEdits = proj.scenarios[n] && Object.keys(proj.scenarios[n]).length;
+      return '<option value="' + esc(n) + '"' + (n === activeScenario ? " selected" : "") + ">" + esc(n) + (hasEdits ? " ●" : "") + "</option>";
+    }).join("");
+    var scBlock = '<div class="cplfund-ctl"><span class="cplfund-ctl-lbl">Scenario</span>' +
+      '<select id="cplFundScenSel" class="cplfund-ed-sel" aria-label="Active scenario">' + scOpts + "</select>" +
+      (curator
+        ? '<button type="button" class="rst" id="cplFundScenNew" title="New scenario — copies the current scenario so you can tweak from it">＋ New</button>' +
+          (scNames.length > 1 ? '<button type="button" class="rst" id="cplFundScenDel" title="Delete this scenario">✕</button>' : "")
+        : '<span class="dk cplfund-ctl-hint">unlock team editing to add scenarios</span>') +
+      "</div>";
+    var addForm = "";
+    if (curator && state.addingProject) {
+      var areaOpts = orgAreas().map(function (a) {
+        return '<option value="' + esc(a.id) + '"' + (a.id === "cpl" ? " selected" : "") + ">" + esc(a.label) + " — " + esc(a.full) + "</option>";
+      }).join("");
+      addForm = '<div class="cplfund-addproj">' +
+        '<input type="text" id="cplFundProjName" placeholder="New project name…" aria-label="New project name" style="min-width:220px;">' +
+        '<label class="cplfund-ctl-lbl">Area</label><select id="cplFundProjArea" aria-label="Project area">' + areaOpts + "</select>" +
+        '<button type="button" class="rst" id="cplFundProjCreate">Create</button>' +
+        '<button type="button" class="rst" id="cplFundProjCancel" style="background:var(--surface-opaque);color:var(--text-body);border:1px solid var(--border-strong);">Cancel</button>' +
+        '<span class="dk" style="font-size:.8rem;">clones the current model (' + esc(proj.label) + ") as the new project&#39;s Scenario 1</span></div>";
+    }
+    return '<div class="cplfund-strip">' + projBlock + scBlock + "</div>" + addForm;
+  }
   function authbarHtml() {
-    var lockedMode = !unlocked();
     var dirty = isDirty();
     var status, resetBtn = "", rightBtn = "";
     if (unlocked()) {
       status = '<span class="mode shared">✎ Team editing on — changes save for everyone</span> ' +
-        '<span class="dk">' + (dirty ? "team-configured model" : "using baked defaults") + "</span>";
-      if (dirty) resetBtn = '<button type="button" class="rst warn" id="cplFundReset">Reset to defaults</button>';
+        '<span class="dk">' + (dirty ? "team-configured scenario" : "using baked defaults") + "</span>";
+      if (dirty) resetBtn = '<button type="button" class="rst warn" id="cplFundReset">Reset scenario to defaults</button>';
       rightBtn = '<button type="button" class="lock" id="cplFundLock">Lock</button>';
     } else {
-      status = '<span class="mode scenario">' + (dirty ? "🧪 " + esc(scenarioName) + " (this browser only)" :
+      status = '<span class="mode scenario">' + (dirty ? "🧪 Exploring — " + esc(activeScenario) + " (this browser only)" :
         "Viewing the shared model") + "</span> " +
-        '<span class="dk">' + (dirty ? "edits are yours alone" :
+        '<span class="dk">' + (dirty ? "your edits overlay the shared scenario; nobody else sees them" :
           "just start editing to explore — or unlock to save for the team") + "</span>";
-      if (dirty) resetBtn = '<button type="button" class="rst" id="cplFundReset">Reset scenario</button>';
-    }
-    // Scenario slots (locked mode only — unlocked edits go to the shared model).
-    var scenSel = "";
-    if (lockedMode) {
-      var opts = scenarioNames().map(function (n) {
-        var hasEdits = scenarioStore.scenarios[n] && Object.keys(scenarioStore.scenarios[n]).length;
-        return '<option value="' + esc(n) + '"' + (n === scenarioName ? " selected" : "") + ">" +
-          esc(n) + (hasEdits ? " ●" : "") + "</option>";
-      }).join("");
-      scenSel = '<label class="dk" style="font-size:.85rem;">Scenario ' +
-        '<select id="cplFundScenSel" class="cplfund-ed-sel" aria-label="Active scenario">' + opts + "</select></label>" +
-        '<button type="button" class="rst" id="cplFundScenNew" title="Start a new blank scenario (the shared model, unedited)">＋ New</button>' +
-        (scenarioNames().length > 1
-          ? '<button type="button" class="rst" id="cplFundScenDel" title="Delete this scenario — its local edits are discarded">✕</button>'
-          : "");
+      if (dirty) resetBtn = '<button type="button" class="rst" id="cplFundReset">Reset exploration</button>';
     }
     var saveLine = "";
     if (unlocked() && savingState) {
@@ -885,7 +1039,7 @@
         (savingState === "saving" ? "saving…" : savingState === "saved" ? "✓ saved" :
           "⚠ couldn’t save — phrase may have changed") + "</span>";
     }
-    return '<div class="cplfund-authbar">' + scenSel + '<span class="grow">' + status + " " + saveLine + "</span>" +
+    return '<div class="cplfund-authbar"><span class="grow">' + status + " " + saveLine + "</span>" +
       resetBtn + '<span id="cplFundUnlockSlot"></span>' + rightBtn + "</div>";
   }
 
@@ -975,14 +1129,15 @@
   function awardStats() {
     var cols = base().colleges;
     if (!cols.length) return null;
-    var sum = 0, min = Infinity, max = -Infinity, minC = null, maxC = null;
+    var sum = 0, min = Infinity, max = -Infinity, minC = null, maxC = null, minCount = 0;
     cols.forEach(function (c) {
       var t = collegeAlloc(c).total;
       sum += t;
-      if (t < min) { min = t; minC = c.college; }
       if (t > max) { max = t; maxC = c.college; }
+      if (t < min - 0.5) { min = t; minC = c.college; minCount = 1; }
+      else if (Math.abs(t - min) <= 0.5) { minCount++; }
     });
-    return { avg: sum / cols.length, min: min, max: max, minC: minC, maxC: maxC, n: cols.length };
+    return { avg: sum / cols.length, min: min, max: max, minC: minC, maxC: maxC, minCount: minCount, n: cols.length };
   }
   function awardStatsHtml() {
     var s = awardStats();
@@ -990,8 +1145,10 @@
     var basis = "per college, window total (" + esc(windowLabel()) + ")";
     var cards = [
       { v: fmtMoney(s.avg), l: "Average award &mdash; " + basis + " across " + s.n + " colleges" },
-      { v: fmtMoney(s.min), l: "Minimum award &mdash; " + esc(s.minC || "&mdash;") +
-          (floorWindow() > 0 && allocModel().floorCount ? " (at the " + fmtMoney(floorWindow()) + " minimum-viable floor)" : "") },
+      { v: fmtMoney(s.min), l: "Minimum award &mdash; " +
+          ((floorWindow() > 0 && allocModel().floorCount && s.minCount > 1)
+            ? s.minCount + " colleges at the " + fmtMoney(floorWindow()) + " minimum-viable floor"
+            : esc(s.minC || "&mdash;")) },
       { v: fmtMoney(s.max), l: "Maximum award &mdash; " + esc(s.maxC || "&mdash;") }
     ];
     return "<h3>Award range " +
@@ -1182,7 +1339,7 @@
 
   var state = {
     q: "", view: "college", viewSlot: "1",
-    sortKey: "order", sortDir: 1, open: {}
+    sortKey: "order", sortDir: 1, open: {}, addingProject: false
   };
 
   // ── allocation model: proportional split + minimum-viable floor ────────
@@ -1901,6 +2058,7 @@
     // Clamp the view slot to the number of selected years.
     if (Number(state.viewSlot) > nYears()) state.viewSlot = "1";
     mount.innerHTML = '<div class="cplfund">' +
+      controlStripHtml() +
       '<div class="cplfund-src">Model version ' + esc(d.model_version) + " &middot; " + esc(d.source) + "</div>" +
       authbarHtml() +
       "<h3>Funding window</h3>" + yearControlsHtml() +
@@ -2091,12 +2249,26 @@
       savingState = "";
       setDisbursement(v);
     });
+    var projSel = document.getElementById("cplFundProjSel");
+    if (projSel) projSel.addEventListener("change", function () { switchProject(projSel.value); });
+    var projAdd = document.getElementById("cplFundProjAdd");
+    if (projAdd) projAdd.addEventListener("click", function () { state.addingProject = true; render(); });
+    var projCancel = document.getElementById("cplFundProjCancel");
+    if (projCancel) projCancel.addEventListener("click", function () { state.addingProject = false; render(); });
+    var projCreate = document.getElementById("cplFundProjCreate");
+    if (projCreate) projCreate.addEventListener("click", function () {
+      var nameEl = document.getElementById("cplFundProjName");
+      var areaEl = document.getElementById("cplFundProjArea");
+      state.addingProject = false;
+      savingState = "";
+      addProject(nameEl ? nameEl.value : "", areaEl ? areaEl.value : "cpl");
+    });
     var scenSel = document.getElementById("cplFundScenSel");
     if (scenSel) scenSel.addEventListener("change", function () { switchScenario(scenSel.value); });
     var scenNew = document.getElementById("cplFundScenNew");
-    if (scenNew) scenNew.addEventListener("click", newScenario);
+    if (scenNew) scenNew.addEventListener("click", function () { savingState = ""; newScenario(); });
     var scenDel = document.getElementById("cplFundScenDel");
-    if (scenDel) scenDel.addEventListener("click", deleteScenario);
+    if (scenDel) scenDel.addEventListener("click", function () { savingState = ""; deleteScenario(); });
     var csvBtn = document.getElementById("cplFundCsv");
     if (csvBtn) csvBtn.addEventListener("click", downloadCsv);
     var pdfBtn = document.getElementById("cplFundPdf");
@@ -2162,11 +2334,14 @@
           blurb: "",
           onUnlocked: function () {
             savingState = "";
-            // Promote any local scenario the user built into the shared model —
-            // "what you were exploring becomes the team's model" (kept if the
-            // save fails). No scenario → just re-render in shared mode.
+            // Promote this browser's local what-if into the shared ACTIVE scenario —
+            // "what you were exploring becomes the team's model" (kept if the save
+            // fails). Write the merge back INTO the config so SHARED stays a live
+            // pointer. No what-if → just re-render in shared mode.
             if (SCENARIO && Object.keys(SCENARIO).length) {
-              SHARED = deepMerge(clone(SHARED), SCENARIO);
+              var p = activeProjectObj();
+              p.scenarios[activeScenario] = deepMerge(clone(SHARED), SCENARIO);
+              SHARED = p.scenarios[activeScenario];
               pendingPromotion = true;
               saveShared();
             } else {
@@ -2214,8 +2389,24 @@
   window.CPL_FUNDING_TAB = {
     boot: boot, render: render, _state: state,
     // test hooks
-    _setShared: function (o) { SHARED = o || {}; SHARED_SAVED = clone(SHARED); },
-    _setScenario: function (o) { SCENARIO = o || {}; },
+    // _setShared writes the ACTIVE scenario's overrides; _setScenario the active
+    // per-browser what-if overlay (keeps the SCENARIO ?? SHARED ?? BASE contract).
+    _setShared: function (o) {
+      var p = activeProjectObj();
+      p.scenarios[activeScenario] = o || {};
+      SHARED = p.scenarios[activeScenario];
+      CONFIG_SAVED = clone(SUPA_CONFIG);
+    },
+    _setScenario: function (o) {
+      var key = activeProject + "::" + activeScenario;
+      WHATIF[key] = o || {};
+      SCENARIO = WHATIF[key];
+    },
+    _setConfig: function (cfg) { SUPA_CONFIG = normalizeConfig(cfg); CONFIG_SAVED = clone(SUPA_CONFIG); syncActive(); },
+    _config: function () { return SUPA_CONFIG; },
+    _normalizeConfig: normalizeConfig,
+    _addProject: addProject,
+    _newScenario: newScenario,
     _getScenario: function () { return SCENARIO; },
     _getShared: function () { return SHARED; },
     _model: function () { _allocCache = null; return allocModel(); },
@@ -2225,7 +2416,7 @@
     _printHtml: buildPrintHtml,
     _requirementsText: buildRequirementsText,
     _briefHtml: buildBriefHtml,
-    _scenario: function () { return { name: scenarioName, store: scenarioStore }; },
+    _scenario: function () { return { name: activeScenario, project: activeProject, projects: projectIds(), config: SUPA_CONFIG }; },
     _setNotes: function (o) { NOTES = o || {}; },
     _setElig: function (o) {
       o = o || {};

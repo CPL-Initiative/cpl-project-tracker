@@ -165,11 +165,13 @@ function boot(window) {
 }
 function click(window, el) { el.dispatchEvent(new window.Event("click", { bubbles: true })); }
 function commit(window, el, v) { el.value = v; el.dispatchEvent(new window.Event("change")); }
-// Named-scenario store (v2): return the "Scenario 1" slot's override (or null).
+// Per-browser what-if overlay (v3): the local override for the CPL project's
+// given scenario (default "Scenario 1"), read straight from localStorage.
 function scenSlot(window, name) {
-  const raw = window.localStorage.getItem("cpl_funding_scenarios_v2");
+  const raw = window.localStorage.getItem("cpl_funding_whatif_v3");
   if (!raw) return null;
-  return JSON.parse(raw).scenarios[name || "Scenario 1"] || null;
+  const wf = JSON.parse(raw);
+  return wf["cpl-implementation::" + (name || "Scenario 1")] || null;
 }
 // There can be >1 .cplfund-foot (the feeder note + the main footer); scan all.
 function footText(doc) {
@@ -224,6 +226,10 @@ function footText(doc) {
       return s + window.CPL_FUNDING_TAB._alloc(c.college).total; }, 0) / D.colleges.length;
     check("Average award card = Σ college window totals ÷ N",
       awardCards[0].querySelector(".v").textContent.indexOf("$" + Math.round(avgAward).toLocaleString("en-US")) !== -1);
+    // With the default floor active, many colleges share the minimum — the Min
+    // card names the floor count, not one arbitrary college.
+    check("Minimum award card reports the floored-college count (not one college)",
+      awardCards[1].textContent.indexOf("floor") !== -1);
   }
   check("scoped CSS injected once", doc.querySelectorAll("#cpl-funding-css").length === 1);
   window.CPL_FUNDING_TAB.render();
@@ -1085,41 +1091,103 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   check("priority-box inputs are centered", /cplfund-ed-s \{[^}]*text-align: center/.test(css));
 }
 
-// E3 — named scenario slots.
+// E3 — the shared project + scenario layer (Sam, 2026-07-23): selectors render
+// for everyone; ＋New / ＋Project are curator-gated; a locked edit is a per-browser
+// what-if overlay on the selected shared scenario.
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  check("project + scenario selectors render at the top",
+    !!doc.getElementById("cplFundProjSel") && !!doc.getElementById("cplFundScenSel"));
+  check("default project is the CPL Implementation project, tagged CPL",
+    doc.getElementById("cplFundProjSel").textContent.indexOf("CPL Implementation and Project Funding") !== -1 &&
+    doc.querySelector(".cplfund-area").textContent.indexOf("CPL") !== -1);
+  check("locked mode hides ＋New / ＋Project (curator-only) + shows the unlock hint",
+    !doc.getElementById("cplFundScenNew") && !doc.getElementById("cplFundProjAdd") &&
+    !!doc.querySelector(".cplfund-ctl-hint"));
+  commit(window, doc.querySelector('input[data-edit="pool"][data-field="feeder_carveout"]'), "2,000,000");
+  check("locked edit lands in the CPL / Scenario-1 what-if overlay",
+    scenSlot(window, "Scenario 1").pool.feeder_carveout === 2000000);
+}
+
+// E3b — curator (unlocked): ＋New CLONES the current scenario; ＋Project clones the
+// CPL template into a new project tagged with a COBI area.
+{
+  const { window } = freshDom();
+  window.CPL_ORGS = { ORGS: [
+    { id: "cpl", label: "CPL", full: "CPL Initiative" },
+    { id: "ci",  label: "C&I", full: "Curriculum & Instruction" },
+    { id: "cip", label: "CIP", full: "TOP-to-CIP Transition" },
+    { id: "gr",  label: "GR",  full: "Government Relations" }
+  ] };
+  window.CPL_TEAM_PHRASE = {
+    _pass: "x",
+    session: function () { return this._pass ? { teamPass: this._pass, email: "(team)" } : null; },
+    clear: function () { this._pass = null; },
+    decorateHeaders: function (h) { return h; },
+    checkWrite: function () { return Promise.resolve({ ok: true, status: 200 }); },
+    handleWriteFailure: function () { return false; },
+    unlockRow: function () { return window.document.createElement("span"); }
+  };
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  check("curator sees ＋New + ＋Project", !!doc.getElementById("cplFundScenNew") && !!doc.getElementById("cplFundProjAdd"));
+  // Edit Scenario 1 (unlocked → shared), then ＋New clones it.
+  commit(window, doc.querySelector('input[data-edit="pool"][data-field="feeder_carveout"]'), "2,000,000");
+  click(window, doc.getElementById("cplFundScenNew"));
+  check("＋New creates Scenario 2 that CLONES the current scenario (not blank)",
+    T._scenario().name === "Scenario 2" && T._getShared().pool.feeder_carveout === 2000000);
+  // The clone is independent.
+  commit(window, doc.querySelector('input[data-edit="pool"][data-field="feeder_carveout"]'), "3,000,000");
+  const cfg = T._config();
+  check("cloned scenarios are independent",
+    cfg.projects["cpl-implementation"].scenarios["Scenario 2"].pool.feeder_carveout === 3000000 &&
+    cfg.projects["cpl-implementation"].scenarios["Scenario 1"].pool.feeder_carveout === 2000000);
+  const scenSel = doc.getElementById("cplFundScenSel");
+  scenSel.value = "Scenario 1"; scenSel.dispatchEvent(new window.Event("change"));
+  check("switching scenario restores its model", T._getShared().pool.feeder_carveout === 2000000);
+  // ＋Project → the add form → create a C&I project cloning the current (CPL) model.
+  click(window, doc.getElementById("cplFundProjAdd"));
+  const nameEl = doc.getElementById("cplFundProjName");
+  const areaEl = doc.getElementById("cplFundProjArea");
+  check("add-project form renders with a name input + area <select> of the COBI areas",
+    !!nameEl && !!areaEl && areaEl.querySelectorAll("option").length === 4);
+  nameEl.value = "C&I Faculty Support"; areaEl.value = "ci";
+  click(window, doc.getElementById("cplFundProjCreate"));
+  const cfg2 = T._config();
+  const newPid = T._scenario().project;
+  check("＋Project creates a new project tagged with the chosen area, cloning the CPL template",
+    newPid !== "cpl-implementation" &&
+    cfg2.projects[newPid].area === "ci" &&
+    cfg2.projects[newPid].label === "C&I Faculty Support" &&
+    cfg2.projects[newPid].scenarios["Scenario 1"].pool.feeder_carveout === 2000000);
+  check("the area badge reflects the active project's area",
+    doc.querySelector(".cplfund-area").textContent.indexOf("C&I") !== -1);
+  delete window.CPL_ORGS;
+}
+
+// E3c — normalizeConfig migration: an OLD flat override becomes CPL / Scenario 1.
 {
   const { window } = freshDom();
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
-  check("scenario selector renders in locked mode",
-    !!doc.getElementById("cplFundScenSel") && !!doc.getElementById("cplFundScenNew"));
-  // Edit in Scenario 1, then create Scenario 2 — a blank slate.
-  commit(window, doc.querySelector('input[data-edit="pool"][data-field="feeder_carveout"]'), "2,000,000");
-  check("edit lands in the active slot", scenSlot(window, "Scenario 1").pool.feeder_carveout === 2000000);
-  click(window, doc.getElementById("cplFundScenNew"));
-  check("new scenario is active + blank (back to the shared/baked model)",
-    T._scenario().name === "Scenario 2" && Object.keys(T._getScenario()).length === 0);
-  check("hero pool shows baked value again in Scenario 2",
-    doc.querySelector(".cplfund-card.hero .v").textContent.indexOf(
-      (D.pool.college_funding_before_feeder - D.pool.feeder_carveout - D.pool.rural_carveout).toLocaleString("en-US")) !== -1);
-  // Give Scenario 2 its own edit so both slots persist in the store.
-  commit(window, doc.querySelector('input[data-edit="pool"][data-field="feeder_carveout"]'), "3,000,000");
-  check("Scenario 2 keeps its own edit", scenSlot(window, "Scenario 2").pool.feeder_carveout === 3000000);
-  // Switch back — Scenario 1's edits return.
-  const sel = doc.getElementById("cplFundScenSel");
-  sel.value = "Scenario 1";
-  sel.dispatchEvent(new window.Event("change"));
-  check("switching back restores Scenario 1's edits",
-    T._getScenario().pool.feeder_carveout === 2000000);
-  // Delete Scenario 1 → falls back to the remaining slot.
-  click(window, doc.getElementById("cplFundScenDel"));
-  check("delete removes the slot and switches away",
-    T._scenario().name === "Scenario 2" && !scenSlot(window, "Scenario 1") &&
-    T._getScenario().pool.feeder_carveout === 3000000);
-  // Legacy v1 migration.
+  const migrated = T._normalizeConfig({ disbursement: "frontload", pool: { feeder_carveout: 500000 } });
+  check("normalizeConfig wraps a flat override as the CPL project's Scenario 1",
+    migrated.projects["cpl-implementation"].area === "cpl" &&
+    migrated.projects["cpl-implementation"].scenarios["Scenario 1"].disbursement === "frontload");
+  T._setConfig({ disbursement: "frontload", pool: { feeder_carveout: 500000 } });
+  T.render();
+  check("a migrated flat config drives the model (frontload applied)",
+    doc.querySelector('#cplFundDisb button[data-val="frontload"]').className === "on");
+}
+
+// E3d — a legacy per-browser scenario store migrates into the what-if overlay.
+{
   const dom2 = freshDom();
-  dom2.window.localStorage.setItem("cpl_funding_scenario_v1", JSON.stringify({ disbursement: "frontload" }));
+  dom2.window.localStorage.setItem("cpl_funding_scenarios_v2",
+    JSON.stringify({ active: "Scenario 1", scenarios: { "Scenario 1": { disbursement: "frontload" } } }));
   const doc2 = boot(dom2.window);
-  check("legacy v1 scenario migrates into Scenario 1",
+  check("legacy per-browser scenario migrates into the CPL / Scenario-1 what-if overlay",
     dom2.window.CPL_FUNDING_TAB._getScenario().disbursement === "frontload" &&
     doc2.querySelector('#cplFundDisb button[data-val="frontload"]').className === "on");
 }
