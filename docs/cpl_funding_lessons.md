@@ -714,3 +714,59 @@ no Rule-4 mirror and zero collision with a parallel Fact Sheet session.
 **(d) Next concrete step.** Nothing blocked on us — hand the tab to Sam for live
 testing. If he wants the memo's masthead to carry the real CO seal image or a
 per-area masthead (C&I/CIP/GR), that's a focused follow-up in `memoMasthead()`.
+
+---
+
+## 2026-07-23 (SkyFunder rounds 2 & 3) — editable narrative fields + generalized pool boxes
+
+Two more rounds of curator asks after the initial reorg (#878–#880), both JS-only in
+`cpl_funding.js`.
+
+### Round 2 — #883: editable priority titles + strategies + timing + eligibility intro
+
+- **Priority titles** (default Access / Success / Capacity) and **Recommended Strategies**
+  (editable bulleted list per priority) are **year-specific** — Sam's call: *"the next year
+  priorities may shift depending on how colleges do in Year 1 … strategies will also change
+  each year as colleges mature."* So both ride the existing per-slot `prioField`/`setPrio`
+  path (same layers as metric/share/target); no new config path, and they re-render when the
+  Year 1/Year 2 filter flips. Default title falls back to a JS `DEFAULT_PRIORITY_TITLES`
+  constant when the per-slot value is null.
+- **Timing** is a new top-level `timing` config key (array of `{label, date}`), seeded from a
+  `DEFAULT_TIMING` constant (Sam's 9 milestones); editable label + optional right-aligned date
+  with add/delete, undated rows render italic (`.nodate`). **Eligibility intro** became a
+  single editable `eligIntro` field (lost the inline bold, gained full editability — Sam OK'd).
+- Reused the eligibility-requirement **bullet/✕/＋ list pattern** verbatim for strategies and
+  timing — that pattern is now the template for the future *variable-count priority boxes*
+  (Sam flagged wanting 2/4/5 priorities later; the title/strategies keying by `slot:idx`
+  already extends to any count).
+
+### Round 3 — #884: editable / add / delete funding pool boxes + header trim
+
+- **The pool model generalized.** Core boxes stay named (`CORE_REVENUE` / `CORE_DEDUCTION`),
+  but now: editable **labels** (`poolLabels[field]`), **hide/restore** core boxes
+  (`hiddenPool[field]`), and **custom boxes** (`customPool[]` = `{label, amount, kind}`) added
+  as revenue or deduction with a per-box kind toggle. Net generalized to
+  `Σrevenue − Σdeduction − feeder − rural`.
+- **Conservation is the keystone.** With no custom boxes and nothing hidden, `grossRevenue() −
+  grossDeduction()` is *identical* to the old `remaining+one_time−admin−scaling`, so every
+  existing allocation number is unchanged — guarded by an explicit test
+  (`net == remaining+one_time−admin−scaling−feeder−rural`). This is the pattern for
+  generalizing any hardcoded calc: **make the general form reduce to the old form, then assert
+  it.** Custom revenue also flows into the Total Available Funds card.
+- **Scope boundary (Sam-approved pushback):** carve-outs (feeder/rural/floor) + computed cards
+  (Total Available, net hero, headcount, per-student) are **non-deletable** — structural or
+  derived; you disable a carve-out by zeroing it. Delete/hide are behind a `confirm()` warning
+  (*"changes the funding calculations"*); a "Hidden boxes" strip restores core boxes.
+- **Bug caught in Chromium, not jsdom:** `&mdash;` in an editable label DEFAULT rendered
+  literally ("&mda…") because an `<input value>` is plain text, not HTML — jsdom doesn't
+  surface it, real Chromium did. **Lesson: any string that lands in an input `value` must use
+  real characters (—), never HTML entities.** Fixed + added a hover-`title` so clipped labels
+  stay readable.
+- Dropped the duplicate **"% of each tranche"** chip from the priority header (Sam: *"save real
+  estate"*) — the share stays editable in the Allocation-share line below; removed the dead
+  `.share` CSS + its test clause too.
+
+**Method note landed:** `docs/kb-notes/methodology-generalize-a-calc-conserve-the-baseline.md`
+(the "reduce-to-old-form + assert conservation" pattern). Tests 292 → **325**; real-Chromium
+verified each round (0 console errors, no horizontal scroll). Side-lane — left `cpl_todos.json`
++ the numbered handoff to the CCR mainline.

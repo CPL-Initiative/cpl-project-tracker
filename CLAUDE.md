@@ -606,11 +606,11 @@ Sam can test the toggle himself (he did — *"Hide function works great"*). New
 `methodology-hide-must-suppress-the-export.md`. Side-lane — left `cpl_todos.json`
 + the numbered handoff to the CCR mainline.
 
-### SkyFunder side-lane — COBI Implementation Funding tab reorg (2026-07-23, #878–#880 MERGED)
+### SkyFunder side-lane — COBI Implementation Funding tab reorg (2026-07-23, #878–#884 MERGED)
 
-Six curator-facing asks on the Implementation Funding tab, three JS-only PRs (all in
-`cpl_funding.js` — **0 HTML touched**, no Rule-4 mirror, clean of a parallel Fact Sheet
-session). **#878:** Total Available Funds card ($44,040,307 = remaining + one-time, live)
+Curator-facing asks on the Implementation Funding tab across three rounds, five JS-only
+PRs (all in `cpl_funding.js` — **0 HTML touched**, no Rule-4 mirror, clean of a parallel
+Fact Sheet session). **#878:** Total Available Funds card ($44,040,307 = remaining + one-time, live)
 · Award-range Avg/Min/Max cards · SYSTEM total row `<tfoot>`→pinned first `<tbody>` row.
 **#879 — the architecture:** the 3-layer config (`SCENARIO ?? SHARED ?? BASE`) generalized
 to a **shared multi-project / multi-scenario** model in the SAME `cpl_funding_config` row
@@ -622,9 +622,18 @@ tags a COBI area (CPL/C&I/CIP/GR via `CPL_ORGS`); backward-safe `normalizeConfig
 model (masthead·TO/FROM/RE·Funding Overview·Priority Outcomes·Allowable Use·Allocation
 table·Reporting·Conclusion·cc), doc-type toggle Memo/Letter/Report/Brief, exports Copy/PDF/
 **Word** (DOM→docx walker over the repo's `docx.min.js`). Pushback taken: the Letters tab is
-a cross-repo iframe (KB Supabase), so the memo lives native + reuses the docx stack. Tests
-266→**292**; real-Chromium verified (memo layout + a valid 10.8 KB .docx export). Full story:
-`docs/cpl_funding_lessons.md`. Side-lane — left `cpl_todos.json` + the numbered handoff to the CCR mainline.
+a cross-repo iframe (KB Supabase), so the memo lives native + reuses the docx stack.
+**#883 (round 2):** editable priority **titles** (Access/Success/Capacity, **year-specific** —
+ride the per-slot `prioField`/`setPrio` path) · **Recommended Strategies** editable list per
+priority · a **Timing** milestone list (label + optional date, add/delete, 9 seeded) · editable
+Baseline-eligibility intro. **#884 (round 3):** **editable/add/delete Funding Pool boxes** —
+editable labels (hover-title), ＋Add revenue/deduction + per-box kind toggle, delete-custom /
+hide-core behind a `confirm()` warning + restore strip; net generalized to
+Σrevenue−Σdeduction−carve-outs (**conserved** — identical to the old formula when no custom/
+hidden, test-guarded); carve-outs + computed cards non-deletable; also dropped the duplicate
+"% of each tranche" priority header. Tests 266→**325**; all three rounds real-Chromium verified
+(0 console errors, no horizontal scroll). Full story: `docs/cpl_funding_lessons.md`. Side-lane —
+left `cpl_todos.json` + the numbered handoff to the CCR mainline.
 
 ### SkyPlan + StarTeam side-lane — COBI Activities tab reorg (2026-07-22, ✅ MERGED #872, LIVE)
 
