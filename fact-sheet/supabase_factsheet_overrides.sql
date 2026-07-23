@@ -22,6 +22,11 @@
 --   "<sectionId>|add|<kind>|<token>"  a reviewer-ADDED box (html = its inner HTML;
 --                                     materialized into the DOM on load; ✕ deletes it)
 --   "<sectionId>|__order"             a section's drag order (html = JSON array of keys)
+--   "<sectionId>|__hidden"            a whole-section hide (hidden=true|false; html
+--                                     unused) — the section + its Contents link go
+--                                     .fs-ov-hidden, so it's suppressed on the page
+--                                     AND in the Print / Word reports
+--   "__section_order__"               the page-level top-level section drag order
 -- Both are still public-read / reviewer-write under the policies below; the html
 -- of an added box is sanitized (allowlist) before render, the __order html is
 -- parsed as JSON (never injected). A baked box's ✕ just sets hidden=true (it lives
