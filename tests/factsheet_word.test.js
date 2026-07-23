@@ -76,10 +76,15 @@ check("images are rewritten to absolute URLs", /<img[^>]+src="https?:\/\//.test(
   // (guards the mechanism generically, independent of which section uses it).
   const sec = w2.document.querySelector("#tech") || w2.document.querySelector("main > section:last-of-type");
   if (sec) { sec.classList.add("fs-withheld"); sec.insertAdjacentHTML("afterbegin", "<p>WITHHELDMARKER999</p>"); }
+  // A whole section hidden by the curate "Hide section" toggle carries .fs-ov-hidden
+  // (like a hidden box) — it must be suppressed from the report too.
+  const secOv = w2.document.querySelector("#partnerships") || w2.document.querySelector("main > section:nth-of-type(3)");
+  if (secOv) { secOv.classList.add("fs-ov-hidden"); secOv.insertAdjacentHTML("afterbegin", "<p>SECTIONOVHIDDEN888</p>"); }
   const out2 = w2.CPL_FACTSHEET_WORD.buildDoc();
   check("doc reflects a Curate edit (current innerHTML)", /MARKER-EDIT/.test(out2.html));
   check("doc excludes a reviewer-hidden (.fs-ov-hidden) box", !/HIDDENMARKER12345/.test(out2.html));
   check("doc excludes an fs-withheld section", sec ? !/WITHHELDMARKER999/.test(out2.html) : true);
+  check("doc excludes an fs-ov-hidden (curate Hide section) section", secOv ? !/SECTIONOVHIDDEN888/.test(out2.html) : true);
 }
 
 // (f) clone-not-mutate
