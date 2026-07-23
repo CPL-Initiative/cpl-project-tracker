@@ -11,8 +11,10 @@ related:
 
 ## Latest state — 2026-07-23 (SkyFunder), READ THIS FIRST
 
-The tab now has a **shared multi-project / multi-scenario** model and an editable
-**Report** sub-tab. Three merged PRs (all JS-only in `cpl_funding.js`; **0 HTML**):
+The tab now has a **shared multi-project / multi-scenario** model, an editable
+**Report** sub-tab, and a fully **editable Model view** (priority titles/strategies/
+timing, eligibility intro, and add/delete/relabel funding-pool boxes). Five merged
+PRs (all JS-only in `cpl_funding.js`; **0 HTML**):
 - **#878** — Total Available Funds card ($44,040,307, live) · Award-range Avg/Min/Max
   cards · SYSTEM total row moved from `<tfoot>` to a pinned first `<tbody>` row.
 - **#879** — the config layer is now `SUPA_CONFIG = { projects: { <pid>: { label, area,
@@ -30,8 +32,20 @@ The tab now has a **shared multi-project / multi-scenario** model and an editabl
   the live model; `contenteditable` page; exports Copy / PDF (print) / **Word** (docx via
   `memoDocxBlocks` DOM→docx walker over `window.docx`). All memo content is
   model-derived — no LLM/backend.
+- **#883** — editable priority **titles** (default Access/Success/Capacity) +
+  **Recommended Strategies** list per priority, both **year-specific** (per-slot
+  `prioField`/`setPrio`, fallback `DEFAULT_PRIORITY_TITLES`); a **Timing** milestone
+  list (`timing` config key, `DEFAULT_TIMING` seed, editable label+date, `.nodate`
+  italic); editable **eligibility intro** (`eligIntro`). Reused the eligibility
+  bullet/✕/＋ list pattern — that's the template for future *variable-count* priorities.
+- **#884** — **editable/add/delete funding-pool boxes**: `CORE_REVENUE`/`CORE_DEDUCTION`
+  descriptors, `poolLabels[field]` (editable labels), `hiddenPool[field]` (hide/restore
+  core boxes), `customPool[]={label,amount,kind}` (＋Add revenue/deduction + kind
+  toggle). Net generalized `grossRevenue()−grossDeduction()−feeder−rural`, **conserved**
+  (test-guarded). Delete/hide behind `confirmPoolDelete()`. Carve-outs + computed cards
+  non-deletable. Also dropped the duplicate "% of each tranche" priority header.
 
-**Test harness for UI work:** jsdom is `tests/cpl_funding.test.js` (**292 assertions**).
+**Test harness for UI work:** jsdom is `tests/cpl_funding.test.js` (**325 assertions**).
 For real render + the docx export, a Chromium harness pattern is in
 `docs/cpl_funding_lessons.md` (load `docx.min.js` + data + consumer, stub `CPL_ORGS` +
 `CPL_TEAM_PHRASE`, click `[data-subview="report"]`, capture the ⬇ Word download).
