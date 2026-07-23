@@ -81,6 +81,24 @@
     ".cplfund-prio .p .metric { font-size: .78rem; color: var(--text-muted); border-top: 1px dashed var(--border-strong); padding-top: 6px; }",
     ".cplfund-prio .p .nums { font-size: .85rem; color: var(--text-body); margin: 0 0 6px; }",
     ".cplfund-prio .p .nums, .cplfund-prio .p .metric { text-align: left; }",
+    // Editable priority TITLE inline in the h4 (Sam, 2026-07-23) — heading-weight,
+    // dashed underline, sized to content (overrides the ed-t width:100%).
+    ".cplfund-prio .p h4 .cplfund-prio-num { color: var(--navy-primary); }",
+    ".cplfund-prio-title-input { display: inline-block; width: auto; min-width: 100px; max-width: 210px; font-weight: 700; color: var(--navy-primary); border: none; border-bottom: 1px dashed var(--border-strong); background: transparent; font-size: 1rem; padding: 0 2px; }",
+    ".cplfund-prio-title-input:focus { outline: none; border-bottom-color: var(--gold-accent); background: var(--surface-subtle); }",
+    // Recommended-strategies list per priority box.
+    ".cplfund-strat { margin-top: 8px; border-top: 1px dashed var(--border-strong); padding-top: 6px; }",
+    ".cplfund-strat-h { font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); font-weight: 700; margin-bottom: 4px; }",
+    ".cplfund-strat .cplfund-reqrow { display: flex; align-items: center; gap: 6px; margin: 3px 0; }",
+    ".cplfund-strat .cplfund-reqrow .cplfund-ed-t { flex: 1 1 auto; min-width: 0; }",
+    ".cplfund-stratadd { margin-top: 4px; }",
+    // Timing milestone list (below the priority boxes).
+    ".cplfund-timing { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--navy-secondary); border-radius: 8px; padding: 12px 16px; }",
+    ".cplfund-timing-row { display: flex; align-items: center; gap: 8px; margin: 4px 0; }",
+    ".cplfund-timing-label { flex: 1 1 auto; min-width: 0; }",
+    ".cplfund-timing-date { flex: 0 0 100px; width: 100px; text-align: right; }",
+    ".cplfund-timing-row.nodate .cplfund-timing-label { font-style: italic; color: var(--text-muted); }",
+    ".cplfund-timingadd { margin-top: 8px; }",
     ".cplfund-formula { background: var(--surface-muted); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: .9rem; line-height: 1.55; }",
     ".cplfund-formula code { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; white-space: nowrap; }",
     ".cplfund-toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 0 0 10px; }",
@@ -464,8 +482,10 @@
     return base().year_priorities[slot].map(function (p, i) {
       return {
         key: p.key, label: p.label,
+        title: prioTitle(slot, i),
         description: prioField(slot, i, "description"),
         metric: prioField(slot, i, "metric"),
+        strategies: prioStrategies(slot, i),
         share: prioField(slot, i, "share"),
         target_rate: prioField(slot, i, "target_rate")
       };
@@ -599,6 +619,47 @@
       saveScenario(); render();
     }
   }
+
+  // ── editable priority TITLE + RECOMMENDED STRATEGIES (year-specific, Sam
+  //    2026-07-23: titles + strategies shift each year as colleges mature), the
+  //    editable TIMING list, and the editable eligibility INTRO. Title +
+  //    strategies ride the per-slot prioField/setPrio path (same layers as the
+  //    metric/share); timing + intro are their own top-level config keys. ──
+  var DEFAULT_PRIORITY_TITLES = ["Access", "Success", "Capacity"];
+  function prioTitle(slot, i) {
+    var v = prioField(slot, i, "title");
+    return v == null ? (DEFAULT_PRIORITY_TITLES[i] || "") : v;
+  }
+  function prioStrategies(slot, i) {
+    var v = prioField(slot, i, "strategies");
+    return Array.isArray(v) ? v.slice() : [];
+  }
+  function setPrioStrategies(slot, i, list) { setPrio(slot, i, "strategies", (list || []).slice()); }
+
+  var DEFAULT_TIMING = [
+    { label: "Funding Model Finalized", date: "Aug 2026" },
+    { label: "Guidance Memo and Funding Model Release", date: "Sep 2026" },
+    { label: "Participation Request", date: "Oct 2026" },
+    { label: "First Disbursement based on cumulative CPL in MAP", date: "Feb 2027" },
+    { label: "Second Disbursement based on cumulative CPL in MAP", date: "Jul 2027" },
+    { label: "Undispersed Funds Rolled to Year 2 and Releveled", date: "Aug 2027" },
+    { label: "First Disbursement based on cumulative CPL in MAP", date: "Dec 2027" },
+    { label: "Second Disbursement based on cumulative CPL in MAP", date: "Jun 2028" },
+    { label: "Potential Year 3 Depending on Funding Availability", date: "" }
+  ];
+  function timingItems() {
+    var v = firstDefined(SCENARIO.timing, SHARED.timing, base().timing);
+    return Array.isArray(v) ? clone(v) : clone(DEFAULT_TIMING);
+  }
+  function setTiming(list) { activeOverride().timing = (list || []).slice(); persistActive(); }
+
+  var DEFAULT_ELIG_INTRO = "Proposed baseline requirements to qualify for implementation funding " +
+    "(badges are informational in this draft — no dollar figure changes yet):";
+  function eligIntro() {
+    var v = firstDefined(SCENARIO.eligIntro, SHARED.eligIntro, base().elig_intro);
+    return v == null ? DEFAULT_ELIG_INTRO : v;
+  }
+  function setEligIntro(v) { activeOverride().eligIntro = v; persistActive(); }
 
   // ── Supabase shared config I/O ────────────────────────────────────────
   function remoteEnabled() {
@@ -976,8 +1037,9 @@
     var attrs = ' data-edit="' + esc(edit) + '"';
     if (opts.slot != null) attrs += ' data-slot="' + esc(opts.slot) + '"';
     if (opts.idx != null) attrs += ' data-idx="' + esc(opts.idx) + '"';
+    if (opts.sidx != null) attrs += ' data-sidx="' + esc(opts.sidx) + '"';
     if (opts.small) attrs += ' style="width:110px;display:inline-block;"';
-    return '<input type="text" class="cplfund-ed-t"' + attrs +
+    return '<input type="text" class="cplfund-ed-t' + (opts.cls ? " " + esc(opts.cls) : "") + '"' + attrs +
       (opts.placeholder ? ' placeholder="' + esc(opts.placeholder) + '"' : "") +
       ' value="' + esc(value) + '" aria-label="' + esc(opts.label || edit) + '">';
   }
@@ -1184,6 +1246,43 @@
       }).join("") + "</div>";
   }
 
+  // Recommended strategies — an editable bulleted list per priority, per year
+  // (Sam, 2026-07-23). Reuses the eligibility-requirement bullet/✕/＋ pattern;
+  // add/delete are keyed by "slot:priorityIdx[:strategyIdx]".
+  function strategiesHtml(slot, i) {
+    var list = prioStrategies(slot, i);
+    var rows = list.map(function (s, j) {
+      return '<div class="cplfund-reqrow"><span class="cplfund-bullet">&bull;</span>' +
+        edText("strategy", s, { slot: slot, idx: i, sidx: j, label: "Recommended strategy", placeholder: "Add a strategy…" }) +
+        '<button type="button" class="cplfund-reqdel" data-stratdel="' + esc(slot + ":" + i + ":" + j) +
+        '" title="Remove this strategy" aria-label="Remove strategy ' + (j + 1) + '">✕</button></div>';
+    }).join("");
+    return '<div class="cplfund-strat"><div class="cplfund-strat-h">Recommended strategies (Year ' + esc(slot) + ")</div>" +
+      rows +
+      '<button type="button" class="cplfund-optbtn cplfund-stratadd" data-stratadd="' + esc(slot + ":" + i) +
+      '" title="Add a recommended strategy">＋ Add strategy</button></div>';
+  }
+
+  // Timing — an editable milestone list below the priority boxes (Sam,
+  // 2026-07-23). Each row is an editable label + optional right-aligned date;
+  // a blank date renders the milestone italic (e.g. "Potential Year 3…").
+  function timingSectionHtml() {
+    var items = timingItems();
+    var rows = items.map(function (it, i) {
+      var noDate = !String(it.date || "").trim();
+      return '<div class="cplfund-timing-row' + (noDate ? " nodate" : "") + '">' +
+        '<span class="cplfund-bullet">&bull;</span>' +
+        edText("timing-label", it.label || "", { idx: i, cls: "cplfund-timing-label", label: "Timing milestone", placeholder: "Milestone…" }) +
+        edText("timing-date", it.date || "", { idx: i, cls: "cplfund-timing-date", label: "Timing date", placeholder: "Date" }) +
+        '<button type="button" class="cplfund-reqdel" data-timingdel="' + i +
+        '" title="Remove this item" aria-label="Remove timing item ' + (i + 1) + '">✕</button></div>';
+    }).join("");
+    return "<h3>Timing</h3>" +
+      '<div class="cplfund-timing">' + rows +
+      '<button type="button" class="cplfund-optbtn cplfund-timingadd" id="cplFundTimingAdd" ' +
+      'title="Add a timing item">＋ Add item</button></div>';
+  }
+
   // ── priority cards (for the active view year) ─────────────────────────
   function prioritiesHtml() {
     var slot = state.viewSlot;
@@ -1194,7 +1293,9 @@
       var sysDollars = p.share * per;
       var sysHeads = heads * p.target_rate;
       return '<div class="p">' +
-        "<h4>" + esc(p.label) + '<span class="share">' + fmtPctTrim(p.share) + " of each tranche</span></h4>" +
+        '<h4><span class="cplfund-prio-num">' + esc(p.label) + ":</span> " +
+        edText("prio-title", p.title, { slot: slot, idx: i, cls: "cplfund-prio-title-input", label: p.label + " title", placeholder: "Title (e.g. Access)" }) +
+        '<span class="share">' + fmtPctTrim(p.share) + " of each tranche</span></h4>" +
         '<p class="desc">' + edArea("description", p.description, { slot: slot, idx: i, rows: 2, label: p.label + " description" }) + "</p>" +
         '<p class="nums">Allocation share ' + edNum("share", fmtRatePct(p.share), { small: true, slot: slot, idx: i, label: p.label + " allocation share percent" }) +
         "% of each tranche &mdash; statewide " + fmtMoney(sysDollars) + "</p>" +
@@ -1202,7 +1303,8 @@
         "% of headcount &rarr; " + fmtInt(sysHeads) + " students " +
         '<span class="dk">(target only &mdash; doesn&#39;t move dollars)</span></p>' +
         actualLineHtml(p, i, sysHeads) +
-        '<div class="metric">METRIC (Year ' + slot + "): " + edArea("metric", p.metric, { slot: slot, idx: i, rows: 2, label: p.label + " metric" }) + "</div></div>";
+        '<div class="metric">METRIC (Year ' + slot + "): " + edArea("metric", p.metric, { slot: slot, idx: i, rows: 2, label: p.label + " metric" }) + "</div>" +
+        strategiesHtml(slot, i) + "</div>";
     }).join("") + "</div>";
   }
 
@@ -1845,9 +1947,8 @@
       ? '<div class="cplfund-reqrestore"><span class="dk">Hidden:</span> ' + chips.join(" ") + "</div>"
       : "";
     return '<div class="cplfund-elig">' +
-      '<div class="cplfund-elig-intro"><strong>Proposed baseline requirements</strong> to qualify for ' +
-      'implementation funding <span class="dk">(badges are informational in this draft &mdash; ' +
-      "no dollar figure changes yet)</span>:</div>" +
+      '<div class="cplfund-elig-intro">' +
+      edArea("elig-intro", eligIntro(), { rows: 2, label: "Baseline eligibility introduction" }) + "</div>" +
       coordItem + partItem + extraHtml +
       '<div class="cplfund-reqadd">' +
       '<button type="button" class="cplfund-optbtn" id="cplFundReqAdd" ' +
@@ -2362,6 +2463,7 @@
       awardStatsHtml() +
       "<h3>Baseline eligibility</h3>" + eligibilityHtml() +
       "<h3>The three funding priorities</h3>" + yearFilterHtml() + prioritiesHtml() +
+      timingSectionHtml() +
       "<h3>How an allocation is computed</h3>" + formulaHtml() +
       "<h3>Potential allocation by college</h3>" +
       '<div class="cplfund-toolbar">' +
@@ -2517,6 +2619,23 @@
     }
     if (edit === "coord-label") { setCoordLabel(raw); return; }
     if (edit === "part-label") { setPartLabel(raw); return; }
+    if (edit === "prio-title") { setPrio(slot, Number(idx), "title", raw); return; }
+    if (edit === "strategy") {
+      var sj = Number(el.getAttribute("data-sidx"));
+      var slist = prioStrategies(slot, Number(idx));
+      if (sj >= 0 && sj < slist.length) { slist[sj] = raw; setPrioStrategies(slot, Number(idx), slist); }
+      return;
+    }
+    if (edit === "timing-label" || edit === "timing-date") {
+      var ti = Number(idx);
+      var tlist = timingItems();
+      if (ti >= 0 && ti < tlist.length) {
+        if (edit === "timing-label") tlist[ti].label = raw; else tlist[ti].date = raw;
+        setTiming(tlist);
+      }
+      return;
+    }
+    if (edit === "elig-intro") { setEligIntro(raw); return; }
   }
 
   function wire() {
@@ -2619,6 +2738,38 @@
       b.addEventListener("click", function () {
         savingState = "";
         if (b.getAttribute("data-reqshow") === "coord") setCoordHidden(false); else setPartHidden(false);
+      });
+    });
+    // Recommended strategies (per priority, per year): add a blank / remove one.
+    document.querySelectorAll("#cplFundingMount [data-stratadd]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        savingState = "";
+        var parts = b.getAttribute("data-stratadd").split(":");
+        var pslot = parts[0], pi = Number(parts[1]);
+        setPrioStrategies(pslot, pi, prioStrategies(pslot, pi).concat([""]));
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-stratdel]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        savingState = "";
+        var parts = b.getAttribute("data-stratdel").split(":");
+        var pslot = parts[0], pi = Number(parts[1]), sj = Number(parts[2]);
+        var slist = prioStrategies(pslot, pi);
+        if (sj >= 0 && sj < slist.length) { slist.splice(sj, 1); setPrioStrategies(pslot, pi, slist); }
+      });
+    });
+    // Timing list: add a blank / remove one.
+    var timingAdd = document.getElementById("cplFundTimingAdd");
+    if (timingAdd) timingAdd.addEventListener("click", function () {
+      savingState = "";
+      setTiming(timingItems().concat([{ label: "", date: "" }]));
+    });
+    document.querySelectorAll("#cplFundingMount [data-timingdel]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        savingState = "";
+        var ti = Number(b.getAttribute("data-timingdel"));
+        var tlist = timingItems();
+        if (ti >= 0 && ti < tlist.length) { tlist.splice(ti, 1); setTiming(tlist); }
       });
     });
     // Copy requirements (memo/email) + generate a sendable brief — both live.
