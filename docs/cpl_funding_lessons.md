@@ -649,3 +649,68 @@ One more batch, same session, all shipped together:
 
 Tests 184 → **218**. Post-merge: dispatch `daily-dashboard.yml` so the perf
 artifact picks up PE same-day.
+
+## 2026-07-23 — Session (SkyFunder): the COBI funding-tab reorg — 6 asks, 3 PRs
+
+Sam wanted six modifications to the Implementation Funding tab, delivered as three
+merged PRs — **all JS-only in `cpl_funding.js` (+ its test), zero HTML touched**, so
+no Rule-4 mirror and zero collision with a parallel Fact Sheet session.
+
+**(a) Learned.**
+- The 3-layer config (`SCENARIO ?? SHARED ?? BASE`) generalizes cleanly to a
+  **multi-project / multi-scenario** model *without* touching the accessor layer:
+  keep `SHARED` and `SCENARIO` as the two override objects, just change what fills
+  them — `SHARED` = a **pointer into** `SUPA_CONFIG.projects[pid].scenarios[sid]`,
+  `SCENARIO` = the per-browser what-if for that `(project, scenario)`. Every existing
+  `firstDefined(SCENARIO.x, SHARED.x, base().x)` accessor kept working unchanged. The
+  only real refactor was load/save/reset/promote (snapshot the WHOLE config for
+  rollback, re-point `SHARED` after any structural edit) + the UI + migration.
+- **No schema change was needed** for shared projects/scenarios — the existing
+  single-row `cpl_funding_config` JSONB just holds a richer blob. `normalizeConfig()`
+  wraps a legacy flat override as the CPL project's Scenario 1 (no team edits lost),
+  and only persists the new shape on the first curator save.
+- A **structured template document generator beats an LLM** for a memo that must
+  match a house format exactly (ESS 25-82): the numbers are the model's, the sections
+  are fixed, editing is a `contenteditable` page, and **Word export is a small
+  DOM→docx walker** over the edited content using the repo's already-loaded
+  `docx.min.js` (`window.docx`; `ensureDocx` lazy-loads if absent). Verified in real
+  Chromium — the ⬇ Word button produced a valid 10.8 KB `.docx`.
+- **The Letters tab is not a document engine** — it's an iframe into the *separate*
+  `cpl-knowledge-base` repo/Supabase (a legislative-campaign tool), unreachable from a
+  tracker session. Reusing it for the memo would have meant cross-repo edits; the
+  native sub-tab + the repo's docx stack was the right call (Sam agreed via the fork).
+
+**(b) State.** Shipped + merged:
+- **PR-1 (#878):** Total Available Funds card (`remaining_2025_26 + one_time_2026_27`
+  = $44,040,307, live) · Award range cards (Avg / Min / Max per-college window total;
+  Min names the floored-college count) · SYSTEM total row moved `<tfoot>` → pinned
+  first `<tbody>` row.
+- **PR-2 (#879):** the shared project + scenario layer. Top control strip
+  `[Project ▾ +Add | area badge] [Scenario ▾ +New(clone) ✕]`; projects/scenarios
+  persist in `cpl_funding_config` (curator/team-phrase to create/delete; anonymous
+  what-if still overlays); `+New` **clones the current scenario**; `+Project` clones
+  the CPL template + tags a COBI **area** (CPL/C&I/CIP/GR from `window.CPL_ORGS`);
+  backward-safe migration + legacy per-browser-scenario fold-in.
+- **PR-3 (#880):** the 📄 **Report** sub-tab — an editable **ESS-25-82 memo** generated
+  from the active project/scenario (masthead · MEMORANDUM · TO/FROM/RE · Funding
+  Overview · Priority Outcomes · Allowable Use · Allocation table · Reporting ·
+  Conclusion · cc), doc-type toggle **Memo/Letter/Report/Brief**, exports 📋 Copy /
+  ⬇ PDF (print) / ⬇ Word (docx). Tests 266 → **292**; full suite 168 files green.
+
+**(c) Roadmap / follow-ups (all optional).**
+- The memo's FROM/contact default to generic role titles (not names) and ESS number
+  is a `ESS __-__` placeholder — deliberately editable; Sam fills the specifics.
+- Per-project **data isolation** is still deferred (Rule 9) — a non-CPL project reuses
+  the CPL 115-college engine as a template; "add project" is a labeled container +
+  clone, not a distinct allocation model. Defining a real non-CPL funding model is the
+  next architectural step *if* a second project needs different mechanics.
+- Inline memo edits are export-only (reset on Regenerate / doc-type switch). If Sam
+  wants persistent memo drafts, store the edited HTML per (project, scenario) in the
+  config — small extension.
+- Word/docx: the DOM→docx walker handles h1/h2/p/ul/li/table/strong + recurses
+  containers; a fancier memo (page numbers, real letterhead image) would need the
+  docx section/header API.
+
+**(d) Next concrete step.** Nothing blocked on us — hand the tab to Sam for live
+testing. If he wants the memo's masthead to carry the real CO seal image or a
+per-area masthead (C&I/CIP/GR), that's a focused follow-up in `memoMasthead()`.

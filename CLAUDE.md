@@ -580,6 +580,26 @@ Sam can test the toggle himself (he did — *"Hide function works great"*). New
 `methodology-hide-must-suppress-the-export.md`. Side-lane — left `cpl_todos.json`
 + the numbered handoff to the CCR mainline.
 
+### SkyFunder side-lane — COBI Implementation Funding tab reorg (2026-07-23, #878–#880 MERGED)
+
+Six curator-facing asks on the Implementation Funding tab, three JS-only PRs (all in
+`cpl_funding.js` — **0 HTML touched**, no Rule-4 mirror, clean of a parallel Fact Sheet
+session). **#878:** Total Available Funds card ($44,040,307 = remaining + one-time, live)
+· Award-range Avg/Min/Max cards · SYSTEM total row `<tfoot>`→pinned first `<tbody>` row.
+**#879 — the architecture:** the 3-layer config (`SCENARIO ?? SHARED ?? BASE`) generalized
+to a **shared multi-project / multi-scenario** model in the SAME `cpl_funding_config` row
+(no schema change — `SHARED` became a pointer into `projects[pid].scenarios[sid]`; every
+accessor unchanged). Top strip `[Project ▾ +Add · area badge][Scenario ▾ +New(clone) ✕]`;
+curator-gated create/delete; `+New` clones current; `+Project` clones the CPL template +
+tags a COBI area (CPL/C&I/CIP/GR via `CPL_ORGS`); backward-safe `normalizeConfig` migration.
+**#880:** the 📄 **Report** sub-tab — an editable **ESS-25-82 memo** generated from the live
+model (masthead·TO/FROM/RE·Funding Overview·Priority Outcomes·Allowable Use·Allocation
+table·Reporting·Conclusion·cc), doc-type toggle Memo/Letter/Report/Brief, exports Copy/PDF/
+**Word** (DOM→docx walker over the repo's `docx.min.js`). Pushback taken: the Letters tab is
+a cross-repo iframe (KB Supabase), so the memo lives native + reuses the docx stack. Tests
+266→**292**; real-Chromium verified (memo layout + a valid 10.8 KB .docx export). Full story:
+`docs/cpl_funding_lessons.md`. Side-lane — left `cpl_todos.json` + the numbered handoff to the CCR mainline.
+
 ### SkyPlan + StarTeam side-lane — COBI Activities tab reorg (2026-07-22, ✅ MERGED #872, LIVE)
 
 Realigned the Activities tab to the CPL Workplan: **4 Activities** (phantom "Activity 5"

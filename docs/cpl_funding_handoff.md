@@ -1,13 +1,46 @@
 ---
 title: CPL Implementation Funding — next-session handoff
 created: 2026-06-11
-updated: 2026-06-11
+updated: 2026-07-23
 tags: [handoff, funding, implementation-funding]
 related:
   - "[[docs/cpl_funding_lessons]]"
 ---
 
 # You are the next Implementation-Funding session
+
+## Latest state — 2026-07-23 (SkyFunder), READ THIS FIRST
+
+The tab now has a **shared multi-project / multi-scenario** model and an editable
+**Report** sub-tab. Three merged PRs (all JS-only in `cpl_funding.js`; **0 HTML**):
+- **#878** — Total Available Funds card ($44,040,307, live) · Award-range Avg/Min/Max
+  cards · SYSTEM total row moved from `<tfoot>` to a pinned first `<tbody>` row.
+- **#879** — the config layer is now `SUPA_CONFIG = { projects: { <pid>: { label, area,
+  scenarios: { <name>: <override> } } } }` in the SAME `cpl_funding_config` row (no
+  schema change). `SHARED` is a **pointer** into the active project/scenario; every
+  `firstDefined(SCENARIO.x, SHARED.x, base().x)` accessor is unchanged. Top control
+  strip `[Project ▾ +Add · area badge][Scenario ▾ +New(clone) ✕]`; create/delete are
+  curator (team-phrase) actions; anonymous what-if overlays per (project, scenario)
+  in `cpl_funding_whatif_v3`. `+New` clones current; `+Project` clones the CPL template
+  + tags a COBI area from `window.CPL_ORGS`. `normalizeConfig()` migrates an old flat
+  override → CPL/Scenario 1 (no edits lost). Selection persists in
+  `cpl_funding_selection_v1`.
+- **#880** — the 📄 **Report** sub-tab (`state.subview` model|report; `state.docType`
+  memo|letter|report|brief). `buildMemo(docType)` assembles an **ESS-25-82 memo** from
+  the live model; `contenteditable` page; exports Copy / PDF (print) / **Word** (docx via
+  `memoDocxBlocks` DOM→docx walker over `window.docx`). All memo content is
+  model-derived — no LLM/backend.
+
+**Test harness for UI work:** jsdom is `tests/cpl_funding.test.js` (**292 assertions**).
+For real render + the docx export, a Chromium harness pattern is in
+`docs/cpl_funding_lessons.md` (load `docx.min.js` + data + consumer, stub `CPL_ORGS` +
+`CPL_TEAM_PHRASE`, click `[data-subview="report"]`, capture the ⬇ Word download).
+
+**Open (all optional):** per-area memo masthead / real CO seal image (`memoMasthead()`);
+persistent memo drafts (store edited HTML per project/scenario); a real non-CPL funding
+model if "add project" ever needs different mechanics than the CPL 115-college engine.
+
+---
 
 You're resuming the **CPL Implementation Funding** tab workstream
 (`#implementation-funding`), built 2026-06-11 across **13 merged PRs
