@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-22T15:23:44.883588+00:00",
+  "scraped_at": "2026-07-23T08:47:06.994088+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26039,
+    "jst": 26086,
     "star_colleges": 55
   },
   "computed_star_colleges": 55,
@@ -42,7 +42,7 @@
     },
     "Moreno Valley College": {
       "vets": 916,
-      "jst": 970,
+      "jst": 971,
       "star": true
     },
     "San Diego Miramar College": {
@@ -57,7 +57,7 @@
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1087,
+      "jst": 1121,
       "star": true
     },
     "Norco College": {
@@ -127,7 +127,12 @@
     },
     "Santa Ana College": {
       "vets": 334,
-      "jst": 360,
+      "jst": 361,
+      "star": true
+    },
+    "Barstow Community College": {
+      "vets": 106,
+      "jst": 129,
       "star": true
     },
     "Los Angeles Valley College": {
@@ -162,17 +167,12 @@
     },
     "College of the Canyons": {
       "vets": 382,
-      "jst": 495,
+      "jst": 496,
       "star": true
     },
     "San Joaquin Delta College": {
       "vets": 248,
       "jst": 494,
-      "star": true
-    },
-    "Barstow Community College": {
-      "vets": 106,
-      "jst": 129,
       "star": true
     },
     "Glendale Community College": {
@@ -230,15 +230,15 @@
       "jst": 206,
       "star": true
     },
+    "Cerro Coso Community College": {
+      "vets": 115,
+      "jst": 166,
+      "star": true
+    },
     "Lemoore College": {
       "vets": 61,
       "jst": 31,
       "star": false
-    },
-    "Cerro Coso Community College": {
-      "vets": 115,
-      "jst": 157,
-      "star": true
     },
     "East Los Angeles College": {
       "vets": 637,
@@ -447,7 +447,7 @@
     },
     "Moorpark College": {
       "vets": 179,
-      "jst": 140,
+      "jst": 141,
       "star": true
     },
     "Coalinga College": {
