@@ -560,6 +560,26 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### SkyVeil side-lane — Fact Sheet: per-section "Hide section" toggle (2026-07-23, #874–#876 MERGED, LIVE)
+
+Sam is modeling Implementation Funding scenarios (they change the Fact Sheet's
+current-allocations figures + budget table), so he wanted the **Funding** section
+hidden "for now," then a **general** control: *"add a hide button to each section
+in the curation view; if hidden, suppress it in the reporting functions."* Shipped:
+**#874** hid Funding via a new `.fs-withheld` class (page + TOC link + Word-export
+strip) — **key gotcha: `factsheet_word.js` un-hides `[hidden]` to flatten
+collapsibles, so a `hidden` attribute would REAPPEAR in the export → use a stripped
+class**; **#875** the general **🙈 Hide section** toggle (Curate mode, per
+reorderable section) — reuses the box-hide plumbing: reserved `<sid>|__hidden`
+override + marks the section **+ its TOC link** `.fs-ov-hidden` (the box-hide class
+the Word export already strips + `@media print` already hides), so **report
+suppression came for free**; **#876** un-hid Funding (byte-identical restore) so
+Sam can test the toggle himself (he did — *"Hide function works great"*). New
+`tests/factsheet_edit_section_hide.test.js` (24); suite **168 green**. Story:
+`docs/fact_sheet_lessons.md` (SkyVeil); KB note
+`methodology-hide-must-suppress-the-export.md`. Side-lane — left `cpl_todos.json`
++ the numbered handoff to the CCR mainline.
+
 ### SkyPlan + StarTeam side-lane — COBI Activities tab reorg (2026-07-22, ✅ MERGED #872, LIVE)
 
 Realigned the Activities tab to the CPL Workplan: **4 Activities** (phantom "Activity 5"

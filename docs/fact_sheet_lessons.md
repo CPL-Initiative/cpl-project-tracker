@@ -1,17 +1,20 @@
 ---
 title: CPL Fact Sheet — lessons
 created: 2026-06-25
-updated: 2026-06-25
-tags: [lessons, fact-sheet, public-page, live-data, print-to-pdf, sky-blaster]
+updated: 2026-07-23
+tags: [lessons, fact-sheet, public-page, live-data, print-to-pdf, sky-blaster, sky-veil]
 obsidian-folder: cpl-project-tracker
 artifacts:
   - fact-sheet/index.html
   - fact-sheet/factsheet.css
   - fact-sheet/factsheet.js
+  - fact-sheet/factsheet_edit.js
+  - fact-sheet/factsheet_word.js
   - fact-sheet/img/
 related:
   - "[[CLAUDE]]"
   - "[[docs/kb-notes/playbook-standalone-public-page]]"
+  - "[[docs/kb-notes/methodology-hide-must-suppress-the-export]]"
 ---
 
 # CPL Fact Sheet — lessons
@@ -449,3 +452,59 @@ the owner — don't silently "fix" figures you didn't author.**
 Tests: `tests/factsheet_edit.test.js` (35, updated for the new policy — #progress now collected,
 data-bind boxes now keyed), `tests/factsheet_edit_sections.test.js` (19, new — the three lanes +
 per-grid add), `tests/factsheet_word.test.js` (19, new). Full suite **102 files green**.
+
+---
+
+## 2026-07-23 — SkyVeil: the per-section "Hide section" toggle (+ Funding hide/un-hide)
+
+**Context.** Sam is modeling Implementation Funding scenarios that change the
+Fact Sheet's current-allocations figures + budget table, so he wanted the
+**Funding** section hidden "for now," then asked for a **general** hide control:
+*"add a hide button to each section in the curation view. If hidden, it should be
+suppressed in reporting functions for the tab."* Then, once the toggle was live,
+*"unhide the budget section now and I'll test the new function by hiding it
+myself."*
+
+**What shipped (3 PRs, all merged + deployed):**
+- **#874 — Funding hide (stopgap).** Marked the `#funding` section + its TOC link
+  with a new `.fs-withheld` class (display:none) and added it to the Word export's
+  strip list. **Key gotcha:** `factsheet_word.js` *un-hides* every `[hidden]`
+  element on its DOM clone (to flatten collapsibles for the flat doc), so a plain
+  `hidden` attribute would have made the funding table **reappear in the Word
+  export** — had to use a *stripped class*, not `[hidden]`.
+- **#875 — the general toggle.** A **🙈 Hide section** button on every reorderable
+  section in Curate mode (top-right, beside the ⠿ Move handle). Reuses the existing
+  box-hide plumbing: a reserved `<sid>|__hidden` override key (parallel to
+  `<sid>|__order`, inert to all the add/order/img machinery), and marks the section
+  **+ its TOC link** with `.fs-ov-hidden` — the *same class the box-hide uses*. That
+  class is already `display:none` publicly, ghosted+un-hideable in Curate mode, and
+  **already stripped by the Word export + hidden under `@media print`** — so
+  reporting suppression came for **free**, no new report code. `applySectionHidden()`
+  applies saved hides for every visitor on load; the button is reviewer-only.
+- **#876 — un-hide Funding.** Removed `.fs-withheld` from the section + TOC link
+  (section blob restored byte-identical to pre-hide); flipped the Word test's
+  Funding check from "excluded" to "included." Kept the `.fs-withheld` utility (CSS
+  + strip + a *generic* mechanism test) so it stays available + honest.
+
+**Design calls.**
+- **Reuse, don't parallel.** The whole feature is ~1 class + 1 reserved key
+  because the report generators already respected `.fs-ov-hidden`. Distilled into
+  KB note `methodology-hide-must-suppress-the-export.md`.
+- **Two coexisting hide triggers, one outcome.** `.fs-withheld` = source-level
+  always-hidden (dev/one-off); the toggle = curator DB-driven per-section hide via
+  `.fs-ov-hidden`. Both resolve to display:none + report suppression; they don't
+  fight in code.
+- **Funding stays independent.** After #876 Funding is visible; Sam now hides it
+  himself via the toggle (he confirmed: *"Hide function works great"*).
+
+**Tests.** New `tests/factsheet_edit_section_hide.test.js` (24 checks: public-load
+apply on section **+** TOC link, one Hide button per reorderable section, label/
+`aria-pressed`/`.is-hidden` state, toggle POSTs the reserved key + hides, un-hide,
+reserved-key inertness). `factsheet_word.test.js` also guards that an
+`.fs-ov-hidden` **section** (not just a box) is excluded from the export. Full
+suite **168 files green** across the run.
+
+**State / next.** Feature is live and Sam-verified. No carryover. Open door: if
+Sam wants, migrate the (now-removed) Funding stopgap onto the toggle so there's a
+single mechanism — but there's nothing pending since Funding is visible again.
+Side-lane — left `kb/cpl_todos.json` + the numbered handoff to the CCR mainline.
