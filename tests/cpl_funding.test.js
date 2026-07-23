@@ -199,10 +199,32 @@ function footText(doc) {
   check("renders 3 priority cards", doc.querySelectorAll(".cplfund-prio .p").length === 3);
   const tables = doc.querySelectorAll(".cplfund-table");
   check("three tables: college + feeder + rural allowance", tables.length === 3);
-  check("renders one row per college", tables[0].querySelectorAll("tbody tr").length === D.colleges.length);
+  check("renders one row per college", tables[0].querySelectorAll("tbody tr.cplfund-row").length === D.colleges.length);
   check("renders one row per feeder (4)", tables[1].querySelectorAll("tbody tr").length === 4);
-  check("SYSTEM pinned as tfoot total row (not a body row)",
-    tables[0].querySelector("tfoot").textContent.indexOf("SYSTEM") !== -1);
+  // SYSTEM total moved from <tfoot> to the FIRST body row (Sam, 2026-07-23).
+  check("SYSTEM pinned as the FIRST body row (moved from tfoot)",
+    !tables[0].querySelector("tfoot") &&
+    tables[0].querySelector("tbody tr").classList.contains("cplfund-systemrow") &&
+    tables[0].querySelector("tbody tr.cplfund-systemrow").textContent.indexOf("SYSTEM") !== -1);
+  // PR-1 (Sam, 2026-07-23): Total Available Funds + Award range boxes.
+  {
+    const totalAvail = D.pool.remaining_2025_26 + D.pool.one_time_2026_27;
+    const totalCard = doc.querySelector(".cplfund-card.total");
+    check("Total Available Funds card = remaining + one-time",
+      !!totalCard &&
+      totalCard.querySelector(".v").textContent.indexOf("$" + Math.round(totalAvail).toLocaleString("en-US")) !== -1 &&
+      totalCard.textContent.toLowerCase().indexOf("total available funds") !== -1);
+    const awardCards = Array.from(doc.querySelectorAll(".cplfund-card.award"));
+    check("Award range shows Average / Minimum / Maximum (3 cards)",
+      awardCards.length === 3 &&
+      awardCards.some(function (c) { return c.textContent.indexOf("Average award") !== -1; }) &&
+      awardCards.some(function (c) { return c.textContent.indexOf("Minimum award") !== -1; }) &&
+      awardCards.some(function (c) { return c.textContent.indexOf("Maximum award") !== -1; }));
+    const avgAward = D.colleges.reduce(function (s, c) {
+      return s + window.CPL_FUNDING_TAB._alloc(c.college).total; }, 0) / D.colleges.length;
+    check("Average award card = Σ college window totals ÷ N",
+      awardCards[0].querySelector(".v").textContent.indexOf("$" + Math.round(avgAward).toLocaleString("en-US")) !== -1);
+  }
   check("scoped CSS injected once", doc.querySelectorAll("#cpl-funding-css").length === 1);
   window.CPL_FUNDING_TAB.render();
   check("DRAFT chip renders in the pane header, once",
@@ -239,7 +261,9 @@ function footText(doc) {
   // Sort by Total desc.
   const totalTh = doc.querySelector('#cplFundTable th[data-sort="total"]');
   click(window, totalTh);
-  const firstRow = doc.querySelector("#cplFundTable tbody tr");
+  // First SORTABLE college row — the pinned SYSTEM total row is tbody's first
+  // child now, so skip it via .cplfund-row.
+  const firstRow = doc.querySelector("#cplFundTable tbody tr.cplfund-row");
   // largest headcount college = largest total (default balanced shares).
   const maxHc = Math.max.apply(null, D.colleges.map(function (c) { return c.headcount; }));
   const maxCollege = D.colleges.filter(function (c) { return c.headcount === maxHc; })[0].college;
@@ -501,14 +525,14 @@ function footText(doc) {
   const net = D.pool.college_funding_before_feeder - D.pool.feeder_carveout - D.pool.rural_carveout;
   const tranche = net / 2;
   check("SYSTEM tfoot Total = the college pool ($" + net.toLocaleString() + ")",
-    doc.querySelector("#cplFundTable tfoot").textContent.indexOf("$" + net.toLocaleString("en-US")) !== -1);
+    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("$" + net.toLocaleString("en-US")) !== -1);
   check("SYSTEM tfoot year cells carry the per-year tranche ($" + Math.round(tranche).toLocaleString() + ")",
-    doc.querySelector("#cplFundTable tfoot").textContent.indexOf("$" + Math.round(tranche).toLocaleString("en-US")) !== -1);
+    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("$" + Math.round(tranche).toLocaleString("en-US")) !== -1);
 
   // District rollup: one row per district; headcount conserves.
   const distinct = new Set(D.colleges.map(function (c) { return c.district || "(no district)"; })).size;
   click(window, doc.querySelector('#cplFundView button[data-val="district"]'));
-  const dRows = doc.querySelectorAll("#cplFundTable tbody tr");
+  const dRows = doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row");
   check("district view renders one row per district (" + distinct + ")", dRows.length === distinct);
   const listHeads = D.colleges.reduce(function (s, c) { return s + (c.headcount || 0); }, 0);
   const dHead = Array.from(dRows).reduce(function (s, tr) {
@@ -525,7 +549,7 @@ function footText(doc) {
   click(window, doc.querySelector('#cplFundTable th[data-sort="college"]'));
   click(window, doc.querySelector('#cplFundView button[data-val="district"]'));
   check("view switch resets a college-only sort key without crashing",
-    doc.querySelectorAll("#cplFundTable tbody tr").length === distinct);
+    doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row").length === distinct);
 }
 
 // C9 — metric-measurability actuals: Year-1 P1 (any transcribed) IS measurable
@@ -559,7 +583,7 @@ function footText(doc) {
   check("Y1-P1 card shows the any-transcribed statewide actual vs target",
     p1card.textContent.indexOf("20,000") !== -1 && p1card.textContent.indexOf("of target") !== -1);
   check("tfoot carries the deduplicated statewide any-transcribed actual (20,000)",
-    doc.querySelector("#cplFundTable tfoot").textContent.indexOf("20,000") !== -1);
+    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("20,000") !== -1);
   check("footer explains the actuals basis + suppression",
     footText(doc).indexOf("deduplicate across colleges") !== -1 &&
     footText(doc).indexOf("ELIGIBLE") !== -1 && footText(doc).indexOf("TRANSCRIBED") !== -1);
@@ -572,7 +596,7 @@ function footText(doc) {
   // Sort by the actuals column.
   click(window, doc.querySelector('#cplFundTable th[data-sort="p3a"]'));
   check("sort by CPL students puts the highest actual first",
-    doc.querySelector("#cplFundTable tbody tr").textContent.indexOf("Alameda") !== -1);
+    doc.querySelector("#cplFundTable tbody tr.cplfund-row").textContent.indexOf("Alameda") !== -1);
   // Year 2: all three metrics are gaps today (units builder / MIS match-back).
   click(window, doc.querySelector('#cplFundYear button[data-val="2"]'));
   check("Y2 cards carry data-gap labels (MIS match-back)",
@@ -682,7 +706,7 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   const row = doc.querySelector("#cplFundTable tbody tr");
   check("front-load: later year cells render ↻ carryover", row.textContent.indexOf("↻ carryover") !== -1);
   check("front-load: SYSTEM tfoot Y2 is carryover too",
-    doc.querySelector("#cplFundTable tfoot").textContent.indexOf("↻ carryover") !== -1);
+    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("↻ carryover") !== -1);
   check("front-load: window note explains roll-forward + the close-out year",
     doc.querySelector(".cplfund-years").textContent.indexOf("close out by 2028-29") !== -1);
   check("front-load: footer explains the Yr-1 column + carryover",
@@ -804,7 +828,7 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   check("both requirements met → ✓", alamedaRow.textContent.indexOf("✓") !== -1);
   check("one requirement met → ◐", butteRow.textContent.indexOf("◐") !== -1);
   check("SYSTEM tfoot shows the coordinator coverage fraction",
-    doc.querySelector("#cplFundTable tfoot").textContent.indexOf("2/" + D.colleges.length) !== -1);
+    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("2/" + D.colleges.length) !== -1);
   check("deadline edit writes to the scenario", (function () {
     commit(window, doc.querySelector('input[data-edit="deadline"]'), "2026-10-01");
     return T._getScenario().participationDeadline === "2026-10-01";
@@ -934,7 +958,7 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   check("badge follows: with only coordinator tracked, Alameda now reads ✓",
     alamedaEligCell().textContent.indexOf("✓") !== -1);
   check("SYSTEM tfoot still shows the coordinator fraction (coord not hidden)",
-    doc.querySelector("#cplFundTable tfoot").textContent.indexOf("1/" + D.colleges.length) !== -1);
+    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("1/" + D.colleges.length) !== -1);
 
   // Restore it.
   click(window, doc.querySelector('[data-reqshow="part"]'));
@@ -985,11 +1009,11 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   const feederSum = D.feeders.reduce(function (s, f) { return s + f.headcount; }, 0);
   const combined = (D.system.headcount + feederSum).toLocaleString("en-US");
   check("college-view SYSTEM row includes the noncredit feeders in the CCC total",
-    doc.querySelector("#cplFundTable tfoot").textContent.indexOf(combined) !== -1 &&
-    doc.querySelector("#cplFundTable tfoot").textContent.indexOf("noncredit") !== -1);
+    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf(combined) !== -1 &&
+    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("noncredit") !== -1);
   click(window, doc.querySelector('#cplFundView button[data-val="district"]'));
   check("district-view SYSTEM row includes the noncredit feeders in the CCC total",
-    doc.querySelector("#cplFundTable tfoot").textContent.indexOf(combined) !== -1);
+    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf(combined) !== -1);
 }
 
 // D6 — consumer wiring for the eligibility reads (static greps).
@@ -1038,7 +1062,7 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   });
   check("Eligible cell shows the pe actual", alamedaRow.textContent.indexOf("777") !== -1);
   check("SYSTEM row shows the statewide eligible figure",
-    doc.querySelector("#cplFundTable tfoot").textContent.indexOf("50,000") !== -1);
+    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("50,000") !== -1);
   delete window.CPL_FUNDING_PERF;
 }
 

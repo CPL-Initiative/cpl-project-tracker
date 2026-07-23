@@ -70,6 +70,9 @@
     ".cplfund-card.feeder { border-left: 4px solid var(--green-progress); }",
     ".cplfund-card.rural { border-left: 4px solid var(--gold-accent); }",
     ".cplfund-card.floor { border-left: 4px solid var(--navy-secondary); }",
+    ".cplfund-card.total { background: var(--surface-muted); border-left: 4px solid var(--gold-accent); }",
+    ".cplfund-card.total .v { color: var(--navy-primary); }",
+    ".cplfund-card.award { border-left: 4px solid var(--navy-secondary); }",
     ".cplfund-prio { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }",
     ".cplfund-prio .p { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--gold-accent); border-radius: 8px; padding: 14px 16px; }",
     ".cplfund-prio .p h4 { margin: 0 0 6px; color: var(--navy-primary); font-size: 1rem; text-align: left; }",
@@ -100,6 +103,10 @@
     ".cplfund-table tbody tr:hover { background: var(--surface-muted); }",
     ".cplfund-table td.tot, .cplfund-table tfoot td { font-weight: 700; color: var(--navy-primary); }",
     ".cplfund-table tfoot td { border-top: 2px solid var(--seal-blue); background: var(--surface-muted); }",
+    // SYSTEM (statewide) total pinned as the FIRST body row (Sam, 2026-07-23) —
+    // bold, muted-fill, a heavy rule under it, and immune to the zebra + hover.
+    ".cplfund-table tbody tr.cplfund-systemrow td { font-weight: 700; color: var(--navy-primary); background: var(--surface-muted); border-top: none; border-bottom: 2px solid var(--seal-blue); }",
+    ".cplfund-table tbody tr.cplfund-systemrow:hover td { background: var(--surface-muted); }",
     ".cplfund-table td .sub { display: block; font-weight: 400; font-size: .75rem; color: var(--text-faint); }",
     ".cplfund-caret { display: inline-block; width: 1em; color: var(--text-faint); transition: transform .12s; }",
     "tr.cplfund-open .cplfund-caret { transform: rotate(90deg); }",
@@ -926,6 +933,10 @@
     var cards = [
       { v: edNum("pool", fmtInt(poolField("remaining_2025_26")), { field: "remaining_2025_26", label: "2025-26 remaining one-time funding" }), l: "2025-26 CPL remaining one-time funding" },
       { v: edNum("pool", fmtInt(poolField("one_time_2026_27")), { field: "one_time_2026_27", label: "2026-27 one-time funding" }), l: "2026-27 CPL one-time funding" },
+      { v: fmtMoney((Number(poolField("remaining_2025_26")) || 0) + (Number(poolField("one_time_2026_27")) || 0)),
+        l: "Total available funds &mdash; " + fmtMoney(poolField("one_time_2026_27")) + " one-time (2026-27) + " +
+           fmtMoney(poolField("remaining_2025_26")) + " remaining (2025-26); deductions + carve-outs below net down to the college pool",
+        total: true },
       { v: edNum("pool", fmtInt(poolField("admin_cost")), { field: "admin_cost", neg: true, label: "Admin cost (deducted)" }), l: esc(base().pool.admin_cost_label) + " &mdash; deducted" },
       { v: edNum("pool", fmtInt(poolField("scaling_projects_tech")), { field: "scaling_projects_tech", neg: true, label: "Scaling projects and tech (deducted)" }), l: "Scaling projects &amp; tech &mdash; deducted" },
       { v: edNum("pool", fmtInt(feederCarveout()), { field: "feeder_carveout", neg: true, label: "Noncredit feeder carve-out (deducted)" }), l: "Noncredit feeder support &mdash; carve-out (deducted)", feeder: true },
@@ -949,10 +960,45 @@
     // Data attributes: the pool edNum builder needs the field name — patch it in.
     return '<div class="cplfund-cards">' + cards.map(function (c, i) {
       return '<div class="cplfund-card' + (c.hero ? " hero" : "") + (c.feeder ? " feeder" : "") +
-        (c.rural ? " rural" : "") + (c.floor ? " floor" : "") + '">' +
+        (c.rural ? " rural" : "") + (c.floor ? " floor" : "") + (c.total ? " total" : "") +
+        (c.award ? " award" : "") + '">' +
         '<div class="v' + (c.neg ? " neg" : "") + '">' + c.v + "</div>" +
         '<div class="l">' + c.l + "</div></div>";
     }).join("") + "</div>";
+  }
+
+  // ── award distribution (per college, window total) ────────────────────
+  // Sam, 2026-07-23: a box showing Average / Minimum / Maximum award. Computed
+  // over each college's window Total (floor-aware; timing-independent), so it
+  // tracks every pool / priority / floor edit live. When the floor is active it
+  // is the minimum by construction.
+  function awardStats() {
+    var cols = base().colleges;
+    if (!cols.length) return null;
+    var sum = 0, min = Infinity, max = -Infinity, minC = null, maxC = null;
+    cols.forEach(function (c) {
+      var t = collegeAlloc(c).total;
+      sum += t;
+      if (t < min) { min = t; minC = c.college; }
+      if (t > max) { max = t; maxC = c.college; }
+    });
+    return { avg: sum / cols.length, min: min, max: max, minC: minC, maxC: maxC, n: cols.length };
+  }
+  function awardStatsHtml() {
+    var s = awardStats();
+    if (!s) return "";
+    var basis = "per college, window total (" + esc(windowLabel()) + ")";
+    var cards = [
+      { v: fmtMoney(s.avg), l: "Average award &mdash; " + basis + " across " + s.n + " colleges" },
+      { v: fmtMoney(s.min), l: "Minimum award &mdash; " + esc(s.minC || "&mdash;") +
+          (floorWindow() > 0 && allocModel().floorCount ? " (at the " + fmtMoney(floorWindow()) + " minimum-viable floor)" : "") },
+      { v: fmtMoney(s.max), l: "Maximum award &mdash; " + esc(s.maxC || "&mdash;") }
+    ];
+    return "<h3>Award range " +
+      '<span class="dk" style="font-size:.8rem;font-weight:400;">(per college &middot; ' + esc(windowLabel()) + " window total)</span></h3>" +
+      '<div class="cplfund-cards">' + cards.map(function (c) {
+        return '<div class="cplfund-card award"><div class="v">' + c.v + '</div><div class="l">' + c.l + "</div></div>";
+      }).join("") + "</div>";
   }
 
   // ── priority cards (for the active view year) ─────────────────────────
@@ -1481,7 +1527,7 @@
       '<span class="sub">+ ' + fmtInt(fh) + " noncredit = " + fmtInt(sys.headcount + fh) + " CCC total</span></td>";
     var foot;
     if (state.view === "district") {
-      foot = "<tr>" +
+      foot = '<tr class="cplfund-systemrow">' +
         '<td class="t">SYSTEM (statewide)</td>' +
         "<td>" + districts().reduce(function (s, g) { return s + g.n; }, 0) + "</td>" +
         '<td class="t"></td>' +
@@ -1490,7 +1536,7 @@
         "<td>" + fmtMoney(sys.total) + "</td></tr>";
     } else {
       var pf = perf();
-      foot = "<tr>" +
+      foot = '<tr class="cplfund-systemrow">' +
         '<td></td><td class="t">SYSTEM (statewide)</td><td class="t">' + esc(base().system.district || "") + "</td>" +
         sysHeadCell +
         '<td title="statewide distinct students with eligible CPL — deduplicated across colleges, not the column sum">' +
@@ -1502,10 +1548,12 @@
         "<td>" + fmtMoney(sys.total) + "</td>" +
         "<td>" + (base().system.working_adults == null ? "—" : fmtInt(base().system.working_adults)) + "</td></tr>";
     }
+    // SYSTEM (statewide) total pinned as the FIRST body row (Sam, 2026-07-23:
+    // "Move the Total row from the bottom … to the top"). It sits above the
+    // sorted rows and is not itself a sortable/clickable .cplfund-row.
     return '<div class="cplfund-tablewrap"><table class="cplfund-table">' +
       "<thead><tr>" + head + "</tr></thead>" +
-      "<tbody>" + body + "</tbody>" +
-      "<tfoot>" + foot + "</tfoot>" +
+      "<tbody>" + foot + body + "</tbody>" +
       "</table></div>";
   }
 
@@ -1857,6 +1905,7 @@
       authbarHtml() +
       "<h3>Funding window</h3>" + yearControlsHtml() +
       "<h3>Funding pools</h3>" + poolCardsHtml() +
+      awardStatsHtml() +
       "<h3>Baseline eligibility</h3>" + eligibilityHtml() +
       "<h3>The three funding priorities</h3>" + yearFilterHtml() + prioritiesHtml() +
       "<h3>How an allocation is computed</h3>" + formulaHtml() +
