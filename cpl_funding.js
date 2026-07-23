@@ -60,7 +60,7 @@
     ".cplfund-src a { color: var(--accent-link); }",
     ".cplfund h3 { color: var(--navy-primary); margin: 22px 0 10px; font-size: 1.15rem; }",
     ".cplfund-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }",
-    ".cplfund-card { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }",
+    ".cplfund-card { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; position: relative; }",
     ".cplfund-card .v { font-size: 1.35rem; font-weight: 700; color: var(--navy-primary); text-align: center; }",
     ".cplfund-card .v.neg { color: var(--red-alert); }",
     ".cplfund-card .l { font-size: .8rem; color: var(--text-muted); margin-top: 2px; line-height: 1.35; }",
@@ -73,10 +73,20 @@
     ".cplfund-card.total { background: var(--surface-muted); border-left: 4px solid var(--gold-accent); }",
     ".cplfund-card.total .v { color: var(--navy-primary); }",
     ".cplfund-card.award { border-left: 4px solid var(--navy-secondary); }",
+    // Editable/add/delete pool boxes (Sam, 2026-07-23).
+    ".cplfund-card.custom-rev { border-left: 4px solid var(--green-progress); }",
+    ".cplfund-card.custom-ded { border-left: 4px solid var(--red-alert); }",
+    ".cplfund-card-x { position: absolute; top: 5px; right: 6px; background: transparent; color: var(--text-faint); border: 1px solid transparent; border-radius: 5px; width: 20px; height: 20px; line-height: 1; padding: 0; cursor: pointer; font-size: .8rem; font-family: inherit; }",
+    ".cplfund-card-x:hover { border-color: var(--red-alert); color: var(--red-alert); background: var(--surface-opaque); }",
+    ".cplfund-card .l .cplfund-pool-label-input { font-size: .8rem; color: var(--text-muted); text-align: center; }",
+    ".cplfund-card-note { font-size: .72rem; color: var(--text-faint); margin-top: 3px; line-height: 1.3; }",
+    ".cplfund-kindtoggle { display: inline-block; margin-top: 3px; background: var(--surface-opaque); color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 5px; padding: 1px 7px; cursor: pointer; font-size: .72rem; font-family: inherit; }",
+    ".cplfund-kindtoggle:hover { border-color: var(--gold-accent); }",
+    ".cplfund-addbox { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 10px 0 2px; }",
+    ".cplfund-addbox .dk { font-size: .8rem; }",
     ".cplfund-prio { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }",
     ".cplfund-prio .p { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--gold-accent); border-radius: 8px; padding: 14px 16px; }",
     ".cplfund-prio .p h4 { margin: 0 0 6px; color: var(--navy-primary); font-size: 1rem; text-align: left; }",
-    ".cplfund-prio .p .share { float: right; font-weight: 700; color: var(--green-progress); }",
     ".cplfund-prio .p .desc { font-size: .9rem; margin: 0 0 8px; }",
     ".cplfund-prio .p .metric { font-size: .78rem; color: var(--text-muted); border-top: 1px dashed var(--border-strong); padding-top: 6px; }",
     ".cplfund-prio .p .nums { font-size: .85rem; color: var(--text-body); margin: 0 0 6px; }",
@@ -462,10 +472,47 @@
   function feederCarveout() { return Math.max(0, Number(poolField("feeder_carveout")) || 0); }
   function ruralCarve() { return Math.max(0, Number(poolField("rural_carveout")) || 0); }
   function floorWindow() { return Math.max(0, Number(poolField("floor_window")) || 0); }
-  function netBeforeFeeder() {
-    return poolField("remaining_2025_26") + poolField("one_time_2026_27") -
-      poolField("admin_cost") - poolField("scaling_projects_tech");
+  // ── generalized pool line-items (Sam, 2026-07-23): editable labels, add/delete
+  //    custom boxes, hide/restore core boxes. Net = Σrevenue − Σdeduction −
+  //    carve-outs; with NO custom boxes and nothing hidden this equals the old
+  //    remaining+one_time−admin−scaling formula (conservation is guarded by test). ──
+  var CORE_REVENUE = [
+    { field: "remaining_2025_26", def: "2025-26 CPL remaining one-time funding" },
+    { field: "one_time_2026_27", def: "2026-27 CPL one-time funding" }
+  ];
+  var CORE_DEDUCTION = [
+    { field: "admin_cost", def: null },   // default label = base().pool.admin_cost_label
+    { field: "scaling_projects_tech", def: "Scaling projects & tech" }
+  ];
+  function poolLabel(field, def) {
+    var v = firstDefined(
+      SCENARIO.poolLabels && SCENARIO.poolLabels[field],
+      SHARED.poolLabels && SHARED.poolLabels[field],
+      base().pool_labels && base().pool_labels[field]);
+    return v == null ? def : v;
   }
+  function poolHidden(field) {
+    return !!firstDefined(
+      SCENARIO.hiddenPool && SCENARIO.hiddenPool[field],
+      SHARED.hiddenPool && SHARED.hiddenPool[field]);
+  }
+  function customPool() {
+    var v = firstDefined(SCENARIO.customPool, SHARED.customPool, base().custom_pool);
+    return Array.isArray(v) ? clone(v) : [];
+  }
+  function grossRevenue() {
+    var s = 0;
+    CORE_REVENUE.forEach(function (b) { if (!poolHidden(b.field)) s += Number(poolField(b.field)) || 0; });
+    customPool().forEach(function (it) { if (it.kind === "revenue") s += Number(it.amount) || 0; });
+    return s;
+  }
+  function grossDeduction() {
+    var s = 0;
+    CORE_DEDUCTION.forEach(function (b) { if (!poolHidden(b.field)) s += Number(poolField(b.field)) || 0; });
+    customPool().forEach(function (it) { if (it.kind === "deduction") s += Number(it.amount) || 0; });
+    return s;
+  }
+  function netBeforeFeeder() { return grossRevenue() - grossDeduction(); }
   function netCollege() { return netBeforeFeeder() - feederCarveout() - ruralCarve(); }
   function perYear() { return netCollege() / nYears(); }
   function totalHeads() { return base().system.headcount; }
@@ -581,6 +628,20 @@
     ov.pool = ov.pool || {};
     ov.pool[field] = value;
     persistActive();
+  }
+  function setPoolLabel(field, v) { var ov = activeOverride(); ov.poolLabels = ov.poolLabels || {}; ov.poolLabels[field] = v; persistActive(); }
+  function setPoolHidden(field, on) {
+    var ov = activeOverride(); ov.hiddenPool = ov.hiddenPool || {};
+    if (on) ov.hiddenPool[field] = true; else delete ov.hiddenPool[field];
+    persistActive();
+  }
+  function setCustomPool(list) { activeOverride().customPool = (list || []).slice(); persistActive(); }
+  // Deleting/hiding a pool box changes the college-pool math — confirm first.
+  function confirmPoolDelete() {
+    try {
+      return window.confirm("Deleting or hiding this box changes the funding calculations " +
+        "(the net college pool and every college's allocation update). Continue?");
+    } catch (e) { return true; }
   }
   function setPrio(slot, idx, field, value) {
     var ov = activeOverride();
@@ -1038,6 +1099,8 @@
     if (opts.slot != null) attrs += ' data-slot="' + esc(opts.slot) + '"';
     if (opts.idx != null) attrs += ' data-idx="' + esc(opts.idx) + '"';
     if (opts.sidx != null) attrs += ' data-sidx="' + esc(opts.sidx) + '"';
+    if (opts.field != null) attrs += ' data-field="' + esc(opts.field) + '"';
+    if (opts.title != null) attrs += ' title="' + esc(opts.title) + '"';
     if (opts.small) attrs += ' style="width:110px;display:inline-block;"';
     return '<input type="text" class="cplfund-ed-t' + (opts.cls ? " " + esc(opts.cls) : "") + '"' + attrs +
       (opts.placeholder ? ' placeholder="' + esc(opts.placeholder) + '"' : "") +
@@ -1169,44 +1232,103 @@
 
   // ── pool cards ────────────────────────────────────────────────────────
   function poolCardsHtml() {
-    var netCol = netCollege();
     var per = perYear();
     var y = selectedYears();
-    var cards = [
-      { v: edNum("pool", fmtInt(poolField("remaining_2025_26")), { field: "remaining_2025_26", label: "2025-26 remaining one-time funding" }), l: "2025-26 CPL remaining one-time funding" },
-      { v: edNum("pool", fmtInt(poolField("one_time_2026_27")), { field: "one_time_2026_27", label: "2026-27 one-time funding" }), l: "2026-27 CPL one-time funding" },
-      { v: fmtMoney((Number(poolField("remaining_2025_26")) || 0) + (Number(poolField("one_time_2026_27")) || 0)),
-        l: "Total available funds &mdash; " + fmtMoney(poolField("one_time_2026_27")) + " one-time (2026-27) + " +
-           fmtMoney(poolField("remaining_2025_26")) + " remaining (2025-26); deductions + carve-outs below net down to the college pool",
-        total: true },
-      { v: edNum("pool", fmtInt(poolField("admin_cost")), { field: "admin_cost", neg: true, label: "Admin cost (deducted)" }), l: esc(base().pool.admin_cost_label) + " &mdash; deducted" },
-      { v: edNum("pool", fmtInt(poolField("scaling_projects_tech")), { field: "scaling_projects_tech", neg: true, label: "Scaling projects and tech (deducted)" }), l: "Scaling projects &amp; tech &mdash; deducted" },
-      { v: edNum("pool", fmtInt(feederCarveout()), { field: "feeder_carveout", neg: true, label: "Noncredit feeder carve-out (deducted)" }), l: "Noncredit feeder support &mdash; carve-out (deducted)", feeder: true },
-      { v: edNum("pool", fmtInt(ruralCarve()), { field: "rural_carveout", neg: true, label: "Rural college allowance carve-out (deducted)" }), l: "Rural college allowance &mdash; performance carve-out (deducted; earned at &ge;" + fmtPctTrim(ruralThreshold()) + " of Year-1 targets)", rural: true },
-      { v: fmtMoney(netCol),
-        l: frontloaded()
-          ? "Available college funding " + windowLabel() + " &mdash; disbursed up front in " + esc(y[0]) + " (front-loaded; unspent rolls forward)"
-          : "Available college funding " + windowLabel() + " &mdash; " + nYears() + " annual tranches of " + fmtMoney(per) + " (" + esc(y[0]) + " &rarr; " + esc(y[y.length - 1]) + ")",
-        hero: true },
-      { v: edNum("pool", fmtInt(floorWindow()), { field: "floor_window", label: "Minimum viable allocation per college (window floor)" }),
-        l: "Minimum viable allocation (floor) &mdash; no college below this for the " + windowLabel() + " window; " +
-           (allocModel().floorCount
-             ? "<strong>" + allocModel().floorCount + " colleges topped up</strong> (&asymp;" + fmtMoney(allocModel().floorCost) + ", funded within the pool)"
-             : "no top-ups needed at current settings"),
-        floor: true },
-      { v: fmtInt(totalHeads()), l: "College headcount (allocation basis) &mdash; &Sigma; of the " + base().colleges.length +
-          " college rows &middot; plus " + fmtInt(feederHeads()) + " noncredit-feeder students = <strong>" +
-          fmtInt(totalHeads() + feederHeads()) + " CCC total</strong>" },
-      { v: fmtRate(perStudent()), l: "Per-student rate &mdash; " + fmtMoney(per) + " &divide; " + fmtInt(totalHeads()) + " headcount (informational)" }
-    ];
-    // Data attributes: the pool edNum builder needs the field name — patch it in.
-    return '<div class="cplfund-cards">' + cards.map(function (c, i) {
-      return '<div class="cplfund-card' + (c.hero ? " hero" : "") + (c.feeder ? " feeder" : "") +
-        (c.rural ? " rural" : "") + (c.floor ? " floor" : "") + (c.total ? " total" : "") +
-        (c.award ? " award" : "") + '">' +
-        '<div class="v' + (c.neg ? " neg" : "") + '">' + c.v + "</div>" +
-        '<div class="l">' + c.l + "</div></div>";
-    }).join("") + "</div>";
+
+    // One pool box: (editable) value + (editable) label + optional live note +
+    // optional hide/delete affordance in the top-right corner.
+    function card(o) {
+      return '<div class="cplfund-card' + (o.cls || "") + '">' + (o.x || "") +
+        '<div class="v' + (o.neg ? " neg" : "") + '">' + o.v + "</div>" +
+        '<div class="l">' + o.l + (o.note ? '<div class="cplfund-card-note">' + o.note + "</div>" : "") + "</div></div>";
+    }
+    function valueEd(field, neg) {
+      return edNum("pool", fmtInt(poolField(field)), { field: field, neg: neg, label: (neg ? "Deduction" : "Funding") + " amount" });
+    }
+    function labelEd(field, def) {
+      var v = poolLabel(field, def);
+      return edText("pool-label", v, { field: field, cls: "cplfund-pool-label-input", label: "Box label", title: v });
+    }
+    function hideX(field, label) {
+      return '<button type="button" class="cplfund-card-x" data-poolhide="' + esc(field) +
+        '" title="Hide this box — it changes the funding math (restore it below)" aria-label="Hide ' + esc(label) + '">✕</button>';
+    }
+
+    var out = [];
+    // Revenue sources (skip hidden) → then Total available funds (computed gross).
+    CORE_REVENUE.forEach(function (b) {
+      if (poolHidden(b.field)) return;
+      out.push(card({ v: valueEd(b.field, false), l: labelEd(b.field, b.def), x: hideX(b.field, poolLabel(b.field, b.def)) }));
+    });
+    out.push(card({ cls: " total", v: fmtMoney(grossRevenue()),
+      l: "Total available funds &mdash; sum of all funding sources; the deductions + carve-outs below net down to the college pool" }));
+
+    // Deductions (skip hidden).
+    CORE_DEDUCTION.forEach(function (b) {
+      var def = b.def || base().pool.admin_cost_label;
+      if (poolHidden(b.field)) return;
+      out.push(card({ neg: true, v: valueEd(b.field, true),
+        l: labelEd(b.field, def) + ' <span class="dk">&mdash; deducted</span>', x: hideX(b.field, poolLabel(b.field, def)) }));
+    });
+
+    // Custom boxes — editable label + amount + a kind toggle (+ revenue / − deduction) + delete.
+    customPool().forEach(function (it, i) {
+      var ded = it.kind === "deduction";
+      out.push(card({
+        cls: ded ? " custom custom-ded" : " custom custom-rev", neg: ded,
+        v: edNum("pool-custom-amt", fmtInt(it.amount), { idx: i, neg: ded, label: "Custom box amount" }),
+        l: edText("pool-custom-label", it.label, { idx: i, cls: "cplfund-pool-label-input", label: "Custom box label", placeholder: "Label this box…" }) +
+           ' <button type="button" class="cplfund-kindtoggle" data-poolkind="' + i +
+           '" title="Flip between a revenue source (+) and a deduction (−)">' + (ded ? "&minus; deduction" : "&plus; revenue") + "</button>",
+        x: '<button type="button" class="cplfund-card-x" data-pooldel="' + i +
+           '" title="Delete this box — it changes the funding math" aria-label="Delete custom box">✕</button>'
+      }));
+    });
+
+    // Carve-outs — editable value + label, NOT deletable (they drive their own sections below).
+    out.push(card({ cls: " feeder", neg: true, v: valueEd("feeder_carveout", true),
+      l: labelEd("feeder_carveout", "Noncredit feeder support — carve-out") + ' <span class="dk">&mdash; deducted</span>' }));
+    out.push(card({ cls: " rural", neg: true, v: valueEd("rural_carveout", true),
+      l: labelEd("rural_carveout", "Rural college allowance — performance carve-out") + ' <span class="dk">&mdash; deducted</span>',
+      note: "earned at &ge;" + fmtPctTrim(ruralThreshold()) + " of Year-1 targets" }));
+
+    // Available college funding (computed hero).
+    out.push(card({ cls: " hero", v: fmtMoney(netCollege()),
+      l: frontloaded()
+        ? "Available college funding " + windowLabel() + " &mdash; disbursed up front in " + esc(y[0]) + " (front-loaded; unspent rolls forward)"
+        : "Available college funding " + windowLabel() + " &mdash; " + nYears() + " annual tranches of " + fmtMoney(per) + " (" + esc(y[0]) + " &rarr; " + esc(y[y.length - 1]) + ")" }));
+
+    // Minimum-viable floor — editable value + label, not deletable; live top-up note.
+    out.push(card({ cls: " floor", v: valueEd("floor_window", false),
+      l: labelEd("floor_window", "Minimum viable allocation (floor)"),
+      note: "no college below this for the " + windowLabel() + " window; " +
+        (allocModel().floorCount
+          ? "<strong>" + allocModel().floorCount + " colleges topped up</strong> (&asymp;" + fmtMoney(allocModel().floorCost) + ", funded within the pool)"
+          : "no top-ups needed at current settings") }));
+
+    // Computed context cards.
+    out.push(card({ v: fmtInt(totalHeads()), l: "College headcount (allocation basis) &mdash; &Sigma; of the " + base().colleges.length +
+      " college rows &middot; plus " + fmtInt(feederHeads()) + " noncredit-feeder students = <strong>" +
+      fmtInt(totalHeads() + feederHeads()) + " CCC total</strong>" }));
+    out.push(card({ v: fmtRate(perStudent()), l: "Per-student rate &mdash; " + fmtMoney(per) + " &divide; " + fmtInt(totalHeads()) + " headcount (informational)" }));
+
+    // Restore chips for any hidden core boxes.
+    var hidden = CORE_REVENUE.concat(CORE_DEDUCTION).filter(function (b) { return poolHidden(b.field); });
+    var restore = hidden.length
+      ? '<div class="cplfund-reqrestore"><span class="dk">Hidden boxes:</span> ' +
+        hidden.map(function (b) {
+          var def = b.def || base().pool.admin_cost_label;
+          return '<button type="button" class="cplfund-optbtn" data-poolshow="' + esc(b.field) + '">&#8617; ' + esc(poolLabel(b.field, def)) + "</button>";
+        }).join(" ") + "</div>"
+      : "";
+
+    // Add-box controls.
+    var add = '<div class="cplfund-addbox">' +
+      '<button type="button" class="cplfund-optbtn" data-pooladd="revenue">&plus; Add revenue source</button>' +
+      '<button type="button" class="cplfund-optbtn" data-pooladd="deduction">&plus; Add deduction / carve-out</button>' +
+      '<span class="dk">new boxes flow into the college-pool math &mdash; revenue adds, deduction subtracts</span></div>';
+
+    return '<div class="cplfund-cards">' + out.join("") + "</div>" + restore + add;
   }
 
   // ── award distribution (per college, window total) ────────────────────
@@ -1295,7 +1417,7 @@
       return '<div class="p">' +
         '<h4><span class="cplfund-prio-num">' + esc(p.label) + ":</span> " +
         edText("prio-title", p.title, { slot: slot, idx: i, cls: "cplfund-prio-title-input", label: p.label + " title", placeholder: "Title (e.g. Access)" }) +
-        '<span class="share">' + fmtPctTrim(p.share) + " of each tranche</span></h4>" +
+        "</h4>" +
         '<p class="desc">' + edArea("description", p.description, { slot: slot, idx: i, rows: 2, label: p.label + " description" }) + "</p>" +
         '<p class="nums">Allocation share ' + edNum("share", fmtRatePct(p.share), { small: true, slot: slot, idx: i, label: p.label + " allocation share percent" }) +
         "% of each tranche &mdash; statewide " + fmtMoney(sysDollars) + "</p>" +
@@ -2585,6 +2707,21 @@
       setPool(field, Math.max(0, n));
       return;
     }
+    if (edit === "pool-label") { setPoolLabel(el.getAttribute("data-field"), raw); return; }
+    if (edit === "pool-custom-amt") {
+      var ci = Number(idx), clist = customPool();
+      if (ci >= 0 && ci < clist.length) {
+        var cn = parseNum(raw);
+        clist[ci].amount = cn == null ? 0 : Math.max(0, cn);
+        setCustomPool(clist);
+      } else { render(); }
+      return;
+    }
+    if (edit === "pool-custom-label") {
+      var li = Number(idx), llist = customPool();
+      if (li >= 0 && li < llist.length) { llist[li].label = raw; setCustomPool(llist); }
+      return;
+    }
     if (edit === "share" || edit === "target") {
       var pn = parseNum(raw);
       if (pn == null) { render(); return; }
@@ -2770,6 +2907,40 @@
         var ti = Number(b.getAttribute("data-timingdel"));
         var tlist = timingItems();
         if (ti >= 0 && ti < tlist.length) { tlist.splice(ti, 1); setTiming(tlist); }
+      });
+    });
+    // Funding-pool boxes: add revenue/deduction, delete a custom box, hide/restore
+    // a core box, flip a custom box's kind. Deletes/hides confirm first.
+    document.querySelectorAll("#cplFundingMount [data-pooladd]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        savingState = "";
+        var kind = b.getAttribute("data-pooladd") === "revenue" ? "revenue" : "deduction";
+        setCustomPool(customPool().concat([{ label: "", amount: 0, kind: kind }]));
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-pooldel]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        if (!confirmPoolDelete()) return;
+        savingState = "";
+        var di = Number(b.getAttribute("data-pooldel")), list = customPool();
+        if (di >= 0 && di < list.length) { list.splice(di, 1); setCustomPool(list); }
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-poolhide]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        if (!confirmPoolDelete()) return;
+        savingState = "";
+        setPoolHidden(b.getAttribute("data-poolhide"), true);
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-poolshow]").forEach(function (b) {
+      b.addEventListener("click", function () { savingState = ""; setPoolHidden(b.getAttribute("data-poolshow"), false); });
+    });
+    document.querySelectorAll("#cplFundingMount [data-poolkind]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        savingState = "";
+        var ki = Number(b.getAttribute("data-poolkind")), list = customPool();
+        if (ki >= 0 && ki < list.length) { list[ki].kind = list[ki].kind === "revenue" ? "deduction" : "revenue"; setCustomPool(list); }
       });
     });
     // Copy requirements (memo/email) + generate a sendable brief — both live.
