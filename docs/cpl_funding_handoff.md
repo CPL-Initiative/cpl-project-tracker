@@ -9,7 +9,30 @@ related:
 
 # You are the next Implementation-Funding session
 
-## Latest state — 2026-07-23 (SkyFunder), READ THIS FIRST
+## Latest state — 2026-07-23 (SkyFriend), READ THIS FIRST
+
+Three more curator asks landed on top of SkyFunder, one JS-only PR in `cpl_funding.js`:
+1. **Uniform fonts** — the whole priority box (desc/nums/metric/strategies) + the Timing
+   rows now sit at `.8rem`; only the priority **title** stays 1rem. (The strat/timing rows
+   used to inherit the page base because their containers set no `font-size`.)
+2. **Actuals follow the METRIC, not the slot.** The old `MEASURABILITY[slot][idx]` map
+   misaligned once Sam reordered priorities (the "any transcribed" count showed under the
+   statewide-eligibility priority). Replaced by `MEASURES` — ordered `test(metric)`
+   predicates, first match wins; the actual/data-gap travels with the metric. Call sites
+   (`actualLineHtml`, `collegeDetailHtml`, `ruralAttainment`) pass `p.metric`.
+3. **Allocation-balance box** in the Funding Pool area + a clarified Projection-% line.
+   The box = `perYear() − perYear()×Σshare` for the viewed year: `$0` at 100% (fully
+   apportioned), red **Over-allocated** when shares exceed 100%, surplus under 100%. It's
+   the modern N3-BALANCE cell. **Confirmation for Sam:** the **Allocation share** moves the
+   money; the **Projection %** is a performance target only (does NOT cap funding — that
+   coupling existed in the pre-2026-06-11 model and was deliberately removed). Don't re-couple
+   them; read over-allocation off the balance box. `MEASURES` predicates are the only thing to
+   revisit if a metric's wording drifts past its matcher (they fail safe to "no measure").
+
+Tests 325 → **337**; full suite **168 files green**. Story: `docs/cpl_funding_lessons.md`
+(SkyFriend section). Side-lane — left `cpl_todos.json` + the numbered handoff to the CCR mainline.
+
+## Prior state — 2026-07-23 (SkyFunder)
 
 The tab now has a **shared multi-project / multi-scenario** model, an editable
 **Report** sub-tab, and a fully **editable Model view** (priority titles/strategies/
