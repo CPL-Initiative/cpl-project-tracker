@@ -1192,6 +1192,45 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     doc2.querySelector('#cplFundDisb button[data-val="frontload"]').className === "on");
 }
 
+// E-Report — the editable ESS-25-82 memo Report sub-view (Sam, 2026-07-23).
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  check("Report sub-tab renders alongside the Funding-model tab",
+    doc.querySelectorAll('#cplFundingMount [data-subview]').length === 2 &&
+    !!doc.querySelector('[data-subview="report"]'));
+  T._setSubview("report");
+  check("Report view renders an editable memo + doc-type toolbar + Copy/PDF/Word exports",
+    !!doc.getElementById("cplFundMemo") &&
+    doc.getElementById("cplFundMemo").getAttribute("contenteditable") === "true" &&
+    !!doc.getElementById("cplFundDocType") &&
+    !!doc.getElementById("cplFundMemoPdf") && !!doc.getElementById("cplFundMemoDocx") && !!doc.getElementById("cplFundMemoCopy"));
+  // The default memo carries the ESS-25-82 skeleton.
+  const memo = T._buildMemo("memo");
+  ["MEMORANDUM", "TO:", "FROM:", "RE:", "Funding Overview", "Priority Outcomes",
+   "Allowable Use of Funds", "Outcomes Reporting", "Conclusion", "cc:"].forEach(function (sec) {
+    check("memo includes the ESS section — " + sec, memo.indexOf(sec) !== -1);
+  });
+  // The memo reflects the live model numbers + priorities + allocation.
+  const totalAvail = "$" + Math.round(D.pool.remaining_2025_26 + D.pool.one_time_2026_27).toLocaleString("en-US");
+  check("memo Funding Overview carries the Total Available Funds figure", memo.indexOf(totalAvail) !== -1);
+  check("memo lists the three priorities",
+    D.year_priorities["1"].every(function (p) { return memo.indexOf(p.label) !== -1; }));
+  check("memo allocation table carries the SYSTEM statewide total", memo.indexOf("SYSTEM (statewide)") !== -1);
+  // Doc-type variants share the body but differ in framing.
+  const letter = T._buildMemo("letter");
+  const brief = T._buildMemo("brief");
+  const report = T._buildMemo("report");
+  check("Letter uses a Dear Colleague greeting (no MEMORANDUM header)",
+    letter.indexOf("Dear Colleague") !== -1 && letter.indexOf("MEMORANDUM") === -1);
+  check("Brief is condensed (no cc / TO block)", brief.indexOf("cc:") === -1 && brief.indexOf("TO:") === -1);
+  check("Report is titled (no MEMORANDUM / TO block) but keeps the body",
+    report.indexOf("MEMORANDUM") === -1 && report.indexOf("Funding Overview") !== -1);
+  // The memo tracks the active project's AREA framing.
+  check("memo RE line reflects the project area (CPL Initiative)", memo.indexOf("CPL Initiative") !== -1);
+}
+
 // E4 — exports.
 {
   const { window } = freshDom();
