@@ -560,6 +560,32 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### SkyVid side-lane — CPL Student Portal "Credit for Being You" intro video: audio restoration + accessibility (2026-07-23)
+
+Sam's "work some magic" on the new CPL Student Portal (creditforbeingyou.org) 1:51
+intro video — accessibility, warmth, music, "cool & inviting, not salesy," + advise
+CC-vs-Claude-Design. All done in-session with `ffmpeg`/`numpy`; **no repo code
+touched**, deliverables handed to Sam directly (video binaries not committed).
+**(1) Captions** — the auto-`.vtt` had real errors (CLAP→CLEP, CDL→CPL,
+credit4Beingu→creditforbeingyou.org) + 11 run-on cues → rebuilt to **22 WCAG-clean
+cues** (+`.srt` +transcript). **(2) Voice de-tinny** — *measured band energy +
+spectrogram first* (Zoom HPF + 84 kbps AAC, hard 12 kHz brick-wall); restored
+80–320 Hz body, tamed the presence edge, two-pass loudnorm to −16 LUFS; Sam picked
+"Broadcast," then "warmer still." **(3) Music** — the exported cut had **NO music**
+(silence-scan proved it: ~12 true-silent gaps); Sam's YouTube link **and** Demucs
+model hosts were both proxy-blocked (403), so the bed was recovered from his
+separate mixed export by **subtracting the clean VO stem** (`music = mix − 1.30·voice`,
+lag-0, g from least-squares → 15–20 dB voice cancel), warm voice re-laid on top,
+rebalanced **+7 dB with ducking**, + a 2 s end-card freeze & music **fade-out**.
+Tool advice: CC = audio/caption/encode engine, Claude app = visual/motion
+concepting, DaVinci Resolve = timeline. Story: `docs/cpl_portal_video_lessons.md`;
+handoff `docs/cpl_portal_video_handoff.md`; KB notes
+`methodology-recover-music-bed-by-voice-stem-subtraction`,
+`methodology-warm-a-tinny-voiceover-measured-eq`; polish-plan artifact
+(https://claude.ai/code/artifact/2222f015-6251-4e3a-87f5-9ebd950f1889). Side-lane —
+left `cpl_todos.json` + the numbered handoff to the CCR mainline; did not write the
+public KB.
+
 ### SkyVeil side-lane — Fact Sheet: per-section "Hide section" toggle (2026-07-23, #874–#876 MERGED, LIVE)
 
 Sam is modeling Implementation Funding scenarios (they change the Fact Sheet's
