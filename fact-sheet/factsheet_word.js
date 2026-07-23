@@ -136,6 +136,8 @@
     strip(clone, '.fs-del, .fs-add, .fs-add-img, .fs-imgbar, .fs-dock, #btn-curate, #live-chip, .actionbar');
     strip(clone, '.sw-rec-tg');                 // the rec-wedge toggle buttons (lists stay, shown)
     strip(clone, '.fs-ov-hidden');              // reviewer-hidden boxes don't belong in the doc
+    strip(clone, '.fs-withheld');               // sections withheld from the public page (e.g. Funding)
+                                                //   — remove BEFORE the [hidden] un-hide below, else they'd reappear
 
     // Expand everything for a flat printed document.
     var col = clone.querySelectorAll('.collapsed');
