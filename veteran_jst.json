@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-23T11:22:04.920934+00:00",
+  "scraped_at": "2026-07-23T14:38:02.742341+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26086,
+    "jst": 26087,
     "star_colleges": 55
   },
   "computed_star_colleges": 55,
@@ -62,7 +62,7 @@
     },
     "Norco College": {
       "vets": 831,
-      "jst": 493,
+      "jst": 494,
       "star": false
     },
     "West Los Angeles College": {
