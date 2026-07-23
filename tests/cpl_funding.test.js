@@ -352,6 +352,72 @@ function footText(doc) {
     doc.querySelectorAll('.cplfund-prio .p input[data-edit="prio-title"]')[0].value === "Access");
 }
 
+// C1c — PR-B editable / add / delete funding pool boxes (Sam, 2026-07-23). Net =
+// Σrevenue − Σdeduction − carve-outs; add/hide/delete are guarded by confirm().
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  const P = D.pool;
+
+  // Conservation: with NO custom boxes and nothing hidden, netCollege equals the
+  // baked remaining + one_time − admin − scaling − feeder − rural formula.
+  const bakedNet = P.remaining_2025_26 + P.one_time_2026_27 - P.admin_cost -
+    P.scaling_projects_tech - P.feeder_carveout - P.rural_carveout;
+  check("net college funding matches the baked formula (conservation)", Math.round(T._netCollege()) === Math.round(bakedNet));
+  const gross = P.remaining_2025_26 + P.one_time_2026_27;
+  check("Total Available Funds = Σ revenue sources",
+    doc.querySelector(".cplfund-card.total .v").textContent.indexOf("$" + Math.round(gross).toLocaleString("en-US")) !== -1);
+
+  // Editable label persists.
+  const remLabel = doc.querySelector('.cplfund-card input[data-edit="pool-label"][data-field="remaining_2025_26"]');
+  check("each core pool box has an editable label", !!remLabel);
+  commit(window, remLabel, "AB 123 rollover funds");
+  check("editing a pool label persists",
+    !!(T._getScenario().poolLabels && T._getScenario().poolLabels.remaining_2025_26 === "AB 123 rollover funds"));
+
+  // Add a revenue box → net rises by its amount; it flows into Total Available too.
+  const netBefore = T._netCollege();
+  click(window, doc.querySelector('[data-pooladd="revenue"]'));
+  const custAmt = doc.querySelector('.cplfund-card.custom input[data-edit="pool-custom-amt"]');
+  check("＋ Add revenue source adds a custom box", !!custAmt);
+  commit(window, custAmt, "500000");
+  check("custom revenue raises net college funding by its amount",
+    Math.round(T._netCollege()) === Math.round(netBefore + 500000));
+  check("custom revenue is included in Total Available Funds",
+    doc.querySelector(".cplfund-card.total .v").textContent.indexOf("$" + Math.round(gross + 500000).toLocaleString("en-US")) !== -1);
+
+  // Flip the custom box to a deduction → it now SUBTRACTS.
+  click(window, doc.querySelector('[data-poolkind="0"]'));
+  check("flipping a custom box to a deduction subtracts it", Math.round(T._netCollege()) === Math.round(netBefore - 500000));
+
+  // Delete the custom box (confirm stubbed true) → back to baseline.
+  window.confirm = function () { return true; };
+  click(window, doc.querySelector('[data-pooldel="0"]'));
+  check("deleting a custom box restores the net", Math.round(T._netCollege()) === Math.round(netBefore));
+  check("delete removed the custom box", !doc.querySelector(".cplfund-card.custom"));
+
+  // Delete is guarded by confirm() — declining keeps the box.
+  click(window, doc.querySelector('[data-pooladd="deduction"]'));
+  window.confirm = function () { return false; };
+  click(window, doc.querySelector('[data-pooldel="0"]'));
+  check("declining the delete confirmation keeps the box", !!doc.querySelector(".cplfund-card.custom"));
+  window.confirm = function () { return true; };
+  click(window, doc.querySelector('[data-pooldel="0"]'));   // clean up
+
+  // Hide a core deduction → excluded from the math; restore chip brings it back.
+  const netBaseline = T._netCollege();
+  click(window, doc.querySelector('[data-poolhide="admin_cost"]'));
+  check("hiding the admin deduction raises net by admin_cost", Math.round(T._netCollege()) === Math.round(netBaseline + P.admin_cost));
+  check("hidden box shows a restore chip", !!doc.querySelector('[data-poolshow="admin_cost"]'));
+  click(window, doc.querySelector('[data-poolshow="admin_cost"]'));
+  check("restoring the box returns the net", Math.round(T._netCollege()) === Math.round(netBaseline));
+
+  // Carve-outs + computed boxes are NOT deletable.
+  check("feeder carve-out has no delete ✕ (structural)", !doc.querySelector(".cplfund-card.feeder .cplfund-card-x"));
+  check("net hero has no delete ✕ (computed)", !doc.querySelector(".cplfund-card.hero .cplfund-card-x"));
+}
+
 // C2 — 2-year window + year selector + the tranche math.
 {
   const { window } = freshDom();
@@ -471,10 +537,12 @@ function footText(doc) {
   check("the edited metric re-renders",
     doc.querySelector('[data-edit="metric"][data-slot="1"][data-idx="0"]').value === "Custom metric text");
 
-  // Edit P1 share 30% → 60% ⇒ shares sum 130% ⇒ formula warns.
+  // Edit P1 share 30% → 60% ⇒ shares sum 130% ⇒ formula warns. (The duplicate
+  // "% of each tranche" header chip was dropped Sam 2026-07-23; the editable
+  // Allocation-share input carries the value now.)
   commit(window, doc.querySelector('input[data-edit="share"][data-slot="1"][data-idx="0"]'), "60");
-  check("priority share chip recomputes (60% of each tranche)",
-    doc.querySelector(".cplfund-prio .p .share").textContent.indexOf("60%") !== -1);
+  check("priority allocation-share input recomputes to 60% after the edit",
+    doc.querySelector('input[data-edit="share"][data-slot="1"][data-idx="0"]').value === "60");
   check("formula warns when the year's shares no longer sum to 100%",
     (doc.querySelector(".cplfund-formula .cplfund-warn-text") || { textContent: "" }).textContent.indexOf("130") !== -1);
 
@@ -803,7 +871,9 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
   const ruralCard = doc.querySelector(".cplfund-card.rural");
-  check("rural carve-out pool card renders as a deduction", ruralCard && /carve-out/.test(ruralCard.textContent));
+  // The label is now an editable input, so "carve-out" lives in its value, not textContent.
+  check("rural carve-out pool card renders as a deduction", !!(ruralCard && ruralCard.querySelector(".v.neg") &&
+    /carve-out/.test((ruralCard.querySelector('input[data-edit="pool-label"]') || {}).value || "")));
   const ruralTable = doc.querySelectorAll(".cplfund-table")[2];
   check("rural section lists the 10 rural-flagged colleges",
     ruralTable && ruralTable.querySelectorAll("tbody tr").length === 10);
@@ -1148,8 +1218,8 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   // Alignment polish (Sam's screenshot): pool values centered, priority labels
   // left, small numeric inputs centered.
   check("pool-card values are centered", /cplfund-card \.v \{[^}]*text-align: center/.test(css));
-  check("priority labels are left-aligned (share stays floated right)",
-    /cplfund-prio \.p h4 \{[^}]*text-align: left/.test(css) && /\.share \{ float: right/.test(css));
+  check("priority labels are left-aligned",
+    /cplfund-prio \.p h4 \{[^}]*text-align: left/.test(css));
   check("priority-box inputs are centered", /cplfund-ed-s \{[^}]*text-align: center/.test(css));
 }
 
