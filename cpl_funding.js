@@ -133,6 +133,32 @@
     ".cplfund-strip select, .cplfund-addproj select, .cplfund-addproj input { padding: 4px 8px; border: 1px solid var(--border-strong); border-radius: 6px; font-size: .85rem; font-family: inherit; background: var(--surface-opaque); color: var(--text-body); }",
     ".cplfund-strip button.rst, .cplfund-addproj button.rst { background: var(--seal-blue); color: var(--white); border: none; border-radius: 6px; padding: 4px 10px; cursor: pointer; font-size: .8rem; font-family: inherit; }",
     ".cplfund-addproj { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 12px; padding: 10px 14px; background: var(--surface-muted); border: 1px dashed var(--border-strong); border-radius: 8px; }",
+    // ── Report sub-view: doc-type toolbar + editable memo (Sam, 2026-07-23) ──
+    ".cplfund-subtabs { display: inline-flex; gap: 4px; margin: 0 0 12px; }",
+    ".cplfund-subtabs button { background: var(--surface-opaque); color: var(--text-body); border: 1px solid var(--border-strong); border-bottom: none; border-radius: 8px 8px 0 0; padding: 8px 16px; font-size: .9rem; cursor: pointer; font-family: inherit; font-weight: 600; }",
+    ".cplfund-subtabs button.on { background: var(--seal-blue); color: var(--white); border-color: var(--seal-blue); }",
+    ".cplfund-reptoolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 12px; }",
+    ".cplfund-reptoolbar .dk { font-size: .82rem; }",
+    ".cplfund-repnote { font-size: .82rem; color: var(--text-faint); margin: 0 0 10px; }",
+    // The editable memo surface — a print-faithful page the curator edits inline.
+    ".cplfund-memo { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; padding: 40px 48px; max-width: 820px; margin: 0 auto; color: var(--text-strong); line-height: 1.5; font-size: .95rem; box-shadow: 0 1px 4px rgba(0,0,0,.06); }",
+    ".cplfund-memo:focus { outline: 2px solid var(--gold-accent); outline-offset: 4px; }",
+    ".cplfund-memo h1 { font-size: 1.15rem; color: var(--navy-primary); margin: 0 0 2px; text-align: center; letter-spacing: .04em; }",
+    ".cplfund-memo h2 { font-size: 1rem; color: var(--navy-primary); margin: 18px 0 6px; border-bottom: 1px solid var(--border-strong); padding-bottom: 3px; }",
+    ".cplfund-memo .masthead { text-align: center; font-size: .8rem; color: var(--text-muted); border-bottom: 2px solid var(--seal-blue); padding-bottom: 8px; margin-bottom: 12px; }",
+    ".cplfund-memo .masthead strong { color: var(--navy-primary); font-size: .92rem; }",
+    ".cplfund-memo .fields { margin: 10px 0; font-size: .9rem; }",
+    ".cplfund-memo .fields .fld { margin: 3px 0; }",
+    ".cplfund-memo .fields .lab { font-weight: 700; color: var(--navy-primary); display: inline-block; min-width: 52px; vertical-align: top; }",
+    ".cplfund-memo p { margin: 8px 0; }",
+    ".cplfund-memo ul { margin: 8px 0; padding-left: 22px; }",
+    ".cplfund-memo li { margin: 5px 0; }",
+    ".cplfund-memo table { border-collapse: collapse; width: 100%; font-size: .8rem; margin: 8px 0; }",
+    ".cplfund-memo th { background: var(--seal-blue); color: var(--white); padding: 4px 6px; text-align: right; }",
+    ".cplfund-memo th.t, .cplfund-memo td.t { text-align: left; }",
+    ".cplfund-memo td { border-top: 1px solid var(--border); padding: 3px 6px; text-align: right; }",
+    ".cplfund-memo .sig { margin-top: 18px; }",
+    ".cplfund-memo .cc { margin-top: 16px; font-size: .85rem; color: var(--text-muted); }",
     ".cplfund-saving { font-size: .78rem; color: var(--text-faint); }",
     ".cplfund-saving.err { color: var(--red-alert); font-weight: 600; }",
     // ── year controls ──
@@ -1339,7 +1365,9 @@
 
   var state = {
     q: "", view: "college", viewSlot: "1",
-    sortKey: "order", sortDir: 1, open: {}, addingProject: false
+    sortKey: "order", sortDir: 1, open: {}, addingProject: false,
+    subview: "model",   // "model" | "report"
+    docType: "memo"     // memo | letter | report | brief
   };
 
   // ── allocation model: proportional split + minimum-viable floor ────────
@@ -2030,6 +2058,266 @@
     }).join("") + "</span>";
   }
 
+  // ══ Report sub-view (Sam, 2026-07-23) — an editable guidance memo in the ESS
+  //    25-82 format, generated from the live model (active project + scenario).
+  //    Doc-type toggle Memo / Letter / Report / Brief; exports to Word (docx) +
+  //    PDF (print window). No backend, no LLM — the numbers are the model's; the
+  //    curator edits inline before exporting.
+  function todayLong() {
+    try { return new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }); }
+    catch (e) { return ""; }
+  }
+  function memoModel() {
+    var y = selectedYears();
+    var endYr = y.length ? String(y[y.length - 1]).split("-") : ["", ""];
+    var expendYear = endYr[1] ? (endYr[0].slice(0, 2) + endYr[1]) : (endYr[0] || "");
+    var s = awardStats() || { avg: 0, min: 0, max: 0, minCount: 0 };
+    var proj = activeProjectObj();
+    return {
+      area: areaMeta(proj.area), projectLabel: proj.label, window: windowLabel(), years: y,
+      totalAvailable: (Number(poolField("remaining_2025_26")) || 0) + (Number(poolField("one_time_2026_27")) || 0),
+      remaining: Number(poolField("remaining_2025_26")) || 0, oneTime: Number(poolField("one_time_2026_27")) || 0,
+      collegePool: netCollege(), nColleges: base().colleges.length,
+      avg: s.avg, min: s.min, max: s.max, minCount: s.minCount,
+      deadline: participationDeadline(), expendBy: expendYear ? "June 30, " + expendYear : "the end of the window",
+      priorities: priorities("1")
+    };
+  }
+  function memoMasthead() {
+    return '<div class="masthead"><strong>California Community Colleges Chancellor&#39;s Office</strong><br>' +
+      "Educational Services and Support Division<br>" +
+      "1102 Q Street, Sacramento, CA 95811 &middot; (916) 445-8752 &middot; www.cccco.edu</div>";
+  }
+  function memoOverview(m) {
+    return "<h2>Funding Overview</h2><p>Each California Community College and each noncredit institution may receive " +
+      "implementation funding to support local " + esc(m.area.full) + " efforts in accordance with AB 123 and Vision 2030 " +
+      "goals. A total of <strong>" + fmtMoney(m.totalAvailable) + "</strong> is available (" + fmtMoney(m.oneTime) +
+      " one-time 2026-27 funding plus " + fmtMoney(m.remaining) + " remaining from 2025-26), of which <strong>" +
+      fmtMoney(m.collegePool) + "</strong> is distributed to the " + m.nColleges + " colleges across the <strong>" +
+      esc(m.window) + "</strong> window. To receive these funds, each institution&#39;s Chief Instructional Officer must " +
+      "submit the required participation request by <strong>" + esc(m.deadline) + "</strong>, confirming the institution&#39;s " +
+      "commitment to advancing the three systemwide priority outcomes below. Funds are expected to be fully expended by <strong>" +
+      esc(m.expendBy) + "</strong>.</p>";
+  }
+  function memoPriorities(m) {
+    var lis = m.priorities.map(function (p) {
+      return "<li><strong>" + esc(p.label) + ".</strong> " + esc(p.description || "") +
+        (p.metric ? " <em>Metric: " + esc(p.metric) + ".</em>" : "") + "</li>";
+    }).join("");
+    return "<h2>Priority Outcomes</h2><p>This funding prioritizes measurable progress on systemwide outcomes that " +
+      "support working learners and advance Vision 2030 goals:</p><ul>" + lis + "</ul>";
+  }
+  function memoAllowable() {
+    return "<h2>Allowable Use of Funds</h2><p>Funds must be used to advance the priority outcomes above and Vision 2030 " +
+      "systemwide objectives. Allowable uses include developing or enhancing processes to identify and notify students who " +
+      "may qualify during exploration, admissions, onboarding, and education planning; increased coordination, student " +
+      "engagement, and counseling; improving local procedures to award credit for industry certifications, military " +
+      "service, workplace training, foreign credentials, and other prior learning; and establishing or updating academic " +
+      "senate-driven policies that honor statewide credit recommendations.</p>";
+  }
+  function memoAllocation(m, full) {
+    var summary = "<h2>" + esc(m.area.label) + " Allocation (" + esc(m.window) + ")</h2>" +
+      '<table><tbody>' +
+      "<tr><td class='t'>Total available funds</td><td>" + fmtMoney(m.totalAvailable) + "</td></tr>" +
+      "<tr><td class='t'>Distributed to colleges</td><td>" + fmtMoney(m.collegePool) + "</td></tr>" +
+      "<tr><td class='t'>Colleges</td><td>" + m.nColleges + "</td></tr>" +
+      "<tr><td class='t'>Average award (window)</td><td>" + fmtMoney(m.avg) + "</td></tr>" +
+      "<tr><td class='t'>Minimum &middot; Maximum award</td><td>" + fmtMoney(m.min) + " &middot; " + fmtMoney(m.max) + "</td></tr>" +
+      "</tbody></table>";
+    if (!full) return summary;
+    var rows = base().colleges.map(function (c) {
+      return { college: c.college, total: collegeAlloc(c).total };
+    }).sort(function (a, b) { return b.total - a.total; });
+    var body = rows.map(function (r) {
+      return "<tr><td class='t'>" + esc(r.college) + "</td><td>" + fmtMoney(r.total) + "</td></tr>";
+    }).join("");
+    return summary + "<p>Per-college allocation for the " + esc(m.window) + " window:</p>" +
+      "<table><thead><tr><th class='t'>College</th><th>Window allocation</th></tr></thead><tbody>" + body +
+      "<tr><td class='t'><strong>SYSTEM (statewide)</strong></td><td><strong>" + fmtMoney(systemAlloc().total) +
+      "</strong></td></tr></tbody></table>";
+  }
+  function memoReporting(m) {
+    return "<h2>Outcomes Reporting</h2><p>Outcome tracking will occur primarily through the Mapping Articulated Pathways " +
+      "(MAP) platform, with colleges continuing to ensure accurate data via MIS reporting. This data will be used to " +
+      "monitor systemwide progress toward the priority outcomes and to assess the return on this investment in support of " +
+      "working learners.</p><h2>Conclusion</h2><p>As districts utilize these funds, additional implementation guidance and " +
+      "optional technical assistance will continue to be made available through the Chancellor&#39;s Office and the MAP " +
+      "team. The intentional distribution of these funds reflects the state&#39;s expectation that colleges strengthen " +
+      "structures, processes, and student supports to demonstrate clear progress and a strong return on investment.</p>";
+  }
+  function memoIntro(m) {
+    return "<p>Assembly Bill 123 appropriates funding to advance the statewide " + esc(m.area.full) + " effort. This " +
+      "investment supports shared technology, coordinated professional development and technical assistance, and " +
+      "student-centered policies and procedures &mdash; aligned with Vision 2030, the Chancellor&#39;s Office Workplan, " +
+      "and the California Master Plan for Career Education. To maximize impact, the distribution of funds is aligned with " +
+      "systemwide expectations for progress, transparency, and return on investment.</p>";
+  }
+  // Assemble the document for the chosen type. Body sections are shared; only the
+  // header/greeting/closing framing differs.
+  function buildMemo(docType) {
+    var m = memoModel();
+    var toList = ["Chief Executive Officers", "Chief Instructional Officers", "Chief Student Services Officers",
+      "Chief Business Officers", "Academic Senate Presidents"];
+    var re = esc(m.area.full) + " Implementation Funding (" + esc(m.window) + ")";
+    var body = memoIntro(m) + memoOverview(m) + memoPriorities(m) + memoAllowable(m);
+    if (docType === "memo") {
+      return memoMasthead() +
+        '<h1>MEMORANDUM</h1>' +
+        '<div class="fields">' +
+        '<div class="fld">' + esc(todayLong()) + " &middot; ESS __-__ &middot; Via Email</div>" +
+        '<div class="fld"><span class="lab">TO:</span> ' + toList.map(esc).join("; ") + "</div>" +
+        '<div class="fld"><span class="lab">FROM:</span> Office of the Vice Chancellor, Academic Affairs</div>' +
+        '<div class="fld"><span class="lab">RE:</span> ' + re + "</div></div>" +
+        body + memoAllocation(m, true) + memoReporting(m) +
+        '<p>For questions regarding this memorandum, please contact the CPL Initiative team.</p>' +
+        '<div class="cc"><span class="lab">cc:</span> Chancellor; Deputy Chancellor; Executive Vice Chancellor of Finance ' +
+        "and Strategic Initiatives; Vice Chancellors</div>";
+    }
+    if (docType === "letter") {
+      return memoMasthead() + "<p>" + esc(todayLong()) + "</p><p>Dear Colleague,</p>" +
+        body + memoAllocation(m, false) + memoReporting(m) +
+        '<div class="sig"><p>Sincerely,</p><p><strong>Office of the Vice Chancellor, Academic Affairs</strong><br>' +
+        "California Community Colleges Chancellor&#39;s Office</p></div>";
+    }
+    if (docType === "brief") {
+      return '<h1>' + esc(m.area.full) + " Implementation Funding</h1>" +
+        '<p style="text-align:center;color:#5C5C55;">' + esc(m.window) + " &middot; DRAFT for field review</p>" +
+        memoOverview(m) + memoPriorities(m) + memoAllocation(m, false);
+    }
+    // report
+    return '<h1>' + esc(m.area.full) + " Implementation Funding</h1>" +
+      '<p style="text-align:center;color:#5C5C55;">' + esc(m.projectLabel) + " &middot; " + esc(m.window) +
+      " &middot; " + esc(todayLong()) + "</p>" +
+      body + memoAllocation(m, true) + memoReporting(m);
+  }
+
+  // ── report sub-view + doc-type toolbar ────────────────────────────────
+  function reportViewHtml() {
+    var types = [{ val: "memo", label: "Memo" }, { val: "letter", label: "Letter" },
+      { val: "report", label: "Report" }, { val: "brief", label: "Brief" }];
+    return '<div class="cplfund-reptoolbar">' +
+      '<span class="cplfund-ctl-lbl">Document type</span>' + segHtml("cplFundDocType", types, state.docType) +
+      '<button type="button" class="cplfund-optbtn" id="cplFundMemoRegen" title="Regenerate from the current model (discards inline edits)">↻ Regenerate</button>' +
+      '<span style="flex:1 1 auto;"></span>' +
+      '<button type="button" class="cplfund-optbtn" id="cplFundMemoCopy" title="Copy the document text">📋 Copy</button>' +
+      '<button type="button" class="cplfund-optbtn" id="cplFundMemoPdf" title="Open a print-ready view — use Print → Save as PDF">⬇ PDF</button>' +
+      '<button type="button" class="cplfund-optbtn" id="cplFundMemoDocx" title="Download as an editable Word (.docx) file">⬇ Word</button>' +
+      "</div>" +
+      '<div class="cplfund-repnote">Generated from <strong>' + esc(activeProjectObj().label) + " &middot; " +
+      esc(activeScenario) + "</strong>. Edit any text directly below, then export. Inline edits are for the export only " +
+      "&mdash; they reset when you regenerate or switch document type.</div>" +
+      '<div class="cplfund-memo" id="cplFundMemo" contenteditable="true" spellcheck="true" aria-label="Editable ' +
+      esc(state.docType) + '">' + buildMemo(state.docType) + "</div>";
+  }
+  function subviewTabsHtml() {
+    return '<div class="cplfund-subtabs">' +
+      '<button type="button" data-subview="model"' + (state.subview === "model" ? ' class="on"' : "") + ">Funding model</button>" +
+      '<button type="button" data-subview="report"' + (state.subview === "report" ? ' class="on"' : "") + ">📄 Report</button></div>";
+  }
+
+  // ── memo exports: Copy · PDF (print) · Word (docx) ────────────────────
+  function memoFilename() {
+    return "CPL_" + state.docType + "_" + (windowLabel() || "").replace(/[^0-9A-Za-z]+/g, "_");
+  }
+  function memoInnerHtml() { var m = document.getElementById("cplFundMemo"); return m ? m.innerHTML : ""; }
+  function memoPrintHtml() {
+    var css = "body{font-family:'Segoe UI',Arial,sans-serif;color:#1C1C1A;margin:0;background:#f4f2ee;}" +
+      ".wrap{max-width:780px;margin:0 auto;padding:40px 48px;background:#fff;line-height:1.5;}" +
+      "h1{color:#002F6D;font-size:19px;text-align:center;letter-spacing:.04em;margin:0 0 4px;}" +
+      "h2{color:#002F6D;font-size:15px;border-bottom:1px solid #999;padding-bottom:3px;margin:18px 0 6px;}" +
+      ".masthead{text-align:center;font-size:12px;color:#555;border-bottom:2px solid #002F6D;padding-bottom:8px;margin-bottom:12px;}" +
+      ".masthead strong{color:#002F6D;}.fields{font-size:13px;margin:10px 0;}.fields .lab,.cc .lab{font-weight:700;color:#002F6D;}" +
+      "p{font-size:14px;margin:8px 0;}ul{font-size:14px;}li{margin:5px 0;}" +
+      "table{border-collapse:collapse;width:100%;font-size:11px;margin:8px 0;}" +
+      "th{background:#002F6D;color:#fff;padding:4px 6px;text-align:right;}th.t,td.t{text-align:left;}" +
+      "td{border-top:1px solid #ccc;padding:3px 6px;text-align:right;}.cc{margin-top:16px;font-size:12px;color:#555;}" +
+      "@media print{.wrap{max-width:none;padding:0;}body{background:#fff;}}";
+    return "<!doctype html><html><head><meta charset='utf-8'><title>" + esc(memoFilename()) +
+      "</title><style>" + css + "</style></head><body><div class='wrap'>" + memoInnerHtml() + "</div></body></html>";
+  }
+  function exportMemoPdf() {
+    var w = window.open("", "_blank");
+    if (!w) return;
+    w.document.write(memoPrintHtml());
+    w.document.close(); w.focus();
+    setTimeout(function () { try { w.print(); } catch (e) { /* user closes */ } }, 300);
+  }
+  function copyMemo() {
+    var el = document.getElementById("cplFundMemo");
+    var text = el ? (el.innerText || el.textContent || "") : "";
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function () {}, function () { fallbackCopy(text); });
+    else fallbackCopy(text);
+  }
+  function ensureDocx(cb) {
+    if (window.docx) { cb(); return; }
+    var s = document.createElement("script");
+    s.src = "docx.min.js";
+    s.onload = cb; s.onerror = function () { cb(); };
+    document.head.appendChild(s);
+  }
+  function memoInlineRuns(node) {
+    var d = window.docx, runs = [];
+    (function walk(n, bold) {
+      Array.prototype.forEach.call(n.childNodes, function (c) {
+        if (c.nodeType === 3) { if (c.textContent) runs.push(new d.TextRun({ text: c.textContent, bold: bold })); }
+        else if (c.nodeType === 1) {
+          if (c.tagName === "BR") runs.push(new d.TextRun({ text: "", break: 1 }));
+          else walk(c, bold || c.tagName === "STRONG" || c.tagName === "B");
+        }
+      });
+    })(node, false);
+    if (!runs.length) runs.push(new d.TextRun(""));
+    return runs;
+  }
+  function memoTableToDocx(tableEl) {
+    var d = window.docx, rows = [];
+    Array.prototype.forEach.call(tableEl.querySelectorAll("tr"), function (tr) {
+      var cells = [];
+      Array.prototype.forEach.call(tr.children, function (cell) {
+        cells.push(new d.TableCell({ children: [new d.Paragraph({ children: memoInlineRuns(cell) })] }));
+      });
+      if (cells.length) rows.push(new d.TableRow({ children: cells }));
+    });
+    return rows.length ? new d.Table({ rows: rows, width: { size: 100, type: d.WidthType.PERCENTAGE } }) : null;
+  }
+  function memoDocxBlocks(root) {
+    var d = window.docx, out = [];
+    Array.prototype.forEach.call(root.childNodes, function (node) {
+      if (node.nodeType === 3) {
+        var t = node.textContent.replace(/\s+/g, " ").trim();
+        if (t) out.push(new d.Paragraph({ children: [new d.TextRun(t)] }));
+        return;
+      }
+      if (node.nodeType !== 1) return;
+      var tag = node.tagName.toLowerCase();
+      if (tag === "h1") out.push(new d.Paragraph({ heading: d.HeadingLevel.HEADING_1, alignment: d.AlignmentType.CENTER, children: memoInlineRuns(node) }));
+      else if (tag === "h2") out.push(new d.Paragraph({ heading: d.HeadingLevel.HEADING_2, children: memoInlineRuns(node) }));
+      else if (tag === "p") out.push(new d.Paragraph({ children: memoInlineRuns(node) }));
+      else if (tag === "li") out.push(new d.Paragraph({ bullet: { level: 0 }, children: memoInlineRuns(node) }));
+      else if (tag === "ul" || tag === "ol") Array.prototype.forEach.call(node.children, function (li) { out.push(new d.Paragraph({ bullet: { level: 0 }, children: memoInlineRuns(li) })); });
+      else if (tag === "table") { var tb = memoTableToDocx(node); if (tb) out.push(tb); }
+      else if (tag === "br") { /* skip */ }
+      else out = out.concat(memoDocxBlocks(node));   // div/span containers → recurse
+    });
+    return out;
+  }
+  function exportMemoDocx() {
+    var memo = document.getElementById("cplFundMemo");
+    if (!memo) return;
+    ensureDocx(function () {
+      var d = window.docx;
+      if (!d || !d.Document) return;
+      var doc = new d.Document({ sections: [{ children: memoDocxBlocks(memo) }] });
+      d.Packer.toBlob(doc).then(function (blob) {
+        var a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = memoFilename() + ".docx";
+        document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(function () { URL.revokeObjectURL(a.href); }, 500);
+      }).catch(function () { /* export failed silently — PDF path still works */ });
+    });
+  }
+
   function ensureDraftChip() {
     if (document.getElementById("cplFundingDraftChip")) return;
     var pane = document.getElementById("tab-implementation-funding");
@@ -2057,8 +2345,16 @@
     }
     // Clamp the view slot to the number of selected years.
     if (Number(state.viewSlot) > nYears()) state.viewSlot = "1";
+    // Report sub-view (Sam, 2026-07-23) — the editable memo replaces the model body;
+    // the control strip + sub-tabs stay so project/scenario/report all switch together.
+    if (state.subview === "report") {
+      mount.innerHTML = '<div class="cplfund">' + controlStripHtml() + subviewTabsHtml() + reportViewHtml() + "</div>";
+      wire();
+      return;
+    }
     mount.innerHTML = '<div class="cplfund">' +
       controlStripHtml() +
+      subviewTabsHtml() +
       '<div class="cplfund-src">Model version ' + esc(d.model_version) + " &middot; " + esc(d.source) + "</div>" +
       authbarHtml() +
       "<h3>Funding window</h3>" + yearControlsHtml() +
@@ -2269,6 +2565,23 @@
     if (scenNew) scenNew.addEventListener("click", function () { savingState = ""; newScenario(); });
     var scenDel = document.getElementById("cplFundScenDel");
     if (scenDel) scenDel.addEventListener("click", function () { savingState = ""; deleteScenario(); });
+    // Report sub-view: sub-tabs + doc-type toggle + exports.
+    document.querySelectorAll("#cplFundingMount [data-subview]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var v = b.getAttribute("data-subview");
+        if (v === state.subview) return;
+        state.subview = v; render();
+      });
+    });
+    wireSeg("cplFundDocType", function (v) { if (v !== state.docType) { state.docType = v; render(); } });
+    var memoRegen = document.getElementById("cplFundMemoRegen");
+    if (memoRegen) memoRegen.addEventListener("click", render);
+    var memoCopy = document.getElementById("cplFundMemoCopy");
+    if (memoCopy) memoCopy.addEventListener("click", copyMemo);
+    var memoPdf = document.getElementById("cplFundMemoPdf");
+    if (memoPdf) memoPdf.addEventListener("click", exportMemoPdf);
+    var memoDocx = document.getElementById("cplFundMemoDocx");
+    if (memoDocx) memoDocx.addEventListener("click", exportMemoDocx);
     var csvBtn = document.getElementById("cplFundCsv");
     if (csvBtn) csvBtn.addEventListener("click", downloadCsv);
     var pdfBtn = document.getElementById("cplFundPdf");
@@ -2416,6 +2729,13 @@
     _printHtml: buildPrintHtml,
     _requirementsText: buildRequirementsText,
     _briefHtml: buildBriefHtml,
+    _buildMemo: function (docType) {
+      var prev = state.docType;
+      if (docType) state.docType = docType;
+      var h = buildMemo(state.docType); state.docType = prev; return h;
+    },
+    _memoModel: memoModel,
+    _setSubview: function (v) { state.subview = v; render(); },
     _scenario: function () { return { name: activeScenario, project: activeProject, projects: projectIds(), config: SUPA_CONFIG }; },
     _setNotes: function (o) { NOTES = o || {}; },
     _setElig: function (o) {
