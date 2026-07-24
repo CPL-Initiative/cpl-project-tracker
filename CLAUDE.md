@@ -603,6 +603,13 @@ rows; identity column never hideable) + reframed the Elig tooltip/drill-in as th
 per-priority P1/P2/P3 columns with **stacked target/actual cells** (recommended over 2 physical
 rows), column resize, and per-column multi-select filters — see the lessons doc.
 
+**Cont. 3 — per-priority P1/P2/P3 columns + numbered Elig pie:** shipped #5+#6 — Eligible†/
+Transcribed† → **three P1/P2/P3 columns**, each cell **stacks target over actual** (`target·cap`
+top, `actual·earned·%` bottom, `earnFraction`-driven), header hover = goal+metric; compact
+`fmtCountK`/`fmtMoneyK` keep it narrow. The Elig ✓/◐/○ glyph → a **numbered SVG pie** (one green
+slice per met requirement; N-slice not forced-4 — 2 today, grows as more per-college-checkable
+reqs are wired). Tests → **376**. Deferred (Sam OK'd): column resize + per-column filters.
+
 ### SkyVid side-lane — CPL Student Portal "Credit for Being You" intro video: audio restoration + accessibility (2026-07-23)
 
 Sam's "work some magic" on the new CPL Student Portal (creditforbeingyou.org) 1:51

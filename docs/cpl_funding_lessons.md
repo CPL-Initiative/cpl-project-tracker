@@ -921,3 +921,35 @@ no-horizontal-scroll rule) and Sam's dream of **per-column multi-select dropdown
 build: a filter row under the header, each column a multi-select of its distinct values,
 AND/OR across columns, replacing the separate view/year toggles. Both are the next
 session's build; the column model (`activeCols()` + the nth-child hook) is the seam.
+
+## 2026-07-24 (SkyFriend cont. 3) — per-priority P1/P2/P3 columns (target/actual stacked) + the numbered Elig pie
+
+Sam blessed the stacked-cell recommendation ("love your direction"), so **#5 + #6 shipped**.
+The two context columns (Eligible†/Transcribed†) are **replaced by three per-priority
+P1/P2/P3 columns** built from `priorities(state.viewSlot)` (so they follow the Year 1/Year 2
+filter; stable keys `prio0/1/2`). Each cell **stacks target over actual** (`prioCellHtml`):
+top = `{target students} · {cap}` (muted), bottom = `{actual students} · {earned} · {%}`
+(bold) — a college sees its standing **inline, no drill-in**. Header hover = the priority
+**goal + metric** (#5). Reuses the achievement engine: `earnFraction` drives the actual line
+(`earned` → number+%, `gap`/`pending` → advance, `none` → 0, `suppressed` → <5), so the
+columns light up as feeds land. Sort by a priority column = the posted actual. CSV swaps
+Eligible/Transcribed for per-priority `Pn target`/`Pn actual`. **Width guard:** a compact
+`fmtCountK` (797 · 16.8K · 113K) + `fmtMoneyK` ($33.4K · $4.9M) keep the dense cells narrow
+(full precision stays in the cell hover) so the extra column doesn't force horizontal scroll
+— and everything's hideable now anyway.
+
+**The Elig pie (Sam's bonus ask):** the ✓/◐/○ glyph → a **numbered SVG pie** (`eligGlyph`
+rewritten): one slice per tracked requirement, numbered 1..N, **filled green when the college
+satisfies it** (muted otherwise), ~22px. Built **N-slice, not a forced 4** — the honest
+version of Sam's "4 slices" idea: today there are **2** data-backed requirements (coordinator
++ participation), so 2 slices; it grows toward 4 automatically as more *per-college-checkable*
+requirements are wired (extra free-text requirements aren't per-college tracked, so they're
+not sliced). `eligReqList()` is the new seam (the ordered, met-stamped requirement list);
+`eligParts`/`eligScore` now derive from it. Recommendation delivered: **want a fixed 4 slices?**
+we'd first need to define + wire the data for 2 more per-college criteria — otherwise 2 slices
+would always sit gray and read as "failing" criteria that don't exist.
+
+Tests 368 → **376** (Part G: 3 columns, target/actual stacked, %, gap, funding, header hover;
+pie is an SVG with N numbered green-when-met slices). Full suite green. Real-DOM dump verified
+(Laney P1 200/$8.4K of 797/$33.4K = 25.1%; pie 2/2 green "12"). **Deferred, unchanged:** column
+resize + per-column multi-select filters (Sam: "no problem holding … not a big priority now").
