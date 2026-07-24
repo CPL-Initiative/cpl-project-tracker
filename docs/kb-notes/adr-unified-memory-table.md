@@ -246,6 +246,37 @@ into the exact row.
   `superseded_by` → the new `slug`. The version chain is preserved and walkable.
   (`stale` stays for "suspect, not yet replaced.")
 
+## Ratified design principles (2026-07-24 — skeptical review)
+
+A skeptical + scalability review (Sam invited the pushback; goal = efficiency +
+accuracy) reshaped the operating model. These are decisions of record — and they
+live **in the table itself** (`tag:memory`, slugs `d-mem-*` / `r-mem-*` /
+`q-mem-measure-pain`), so the "why" is queryable by any future session:
+
+1. **Lean + retrieval-first, not browse-everything.** The truth table stays small
+   and curated; `cpl_memory_log` absorbs the volume. At scale you *query by scope*
+   (org + kind + tag + status) — you don't scroll a growing list, or it becomes the
+   haystack it replaced (`d-mem-retrieval-first`; cf. `paginate >1000`, `rank by
+   relevance`).
+2. **Corroboration gate.** Session auto-writes land `proposed`; only corroboration
+   (a 2nd session, a KB-note citation, or a curator ✓) promotes to `verified`, and
+   **only `verified` is trusted-on-read / shown by default.** The TOP
+   two-signals-agree doctrine, applied to memory (`d-mem-corroboration-gate`).
+3. **The corpus is not ground truth.** Any gap-audit targets *durable AND
+   still-true AND uncaptured* — a narrow set — scoped to the distilled layer (KB
+   notes / CLAUDE.md / roadmap), incremental, **contradiction-focused**, never a
+   full-corpus sweep (`r-mem-corpus-not-truth`, `r-mem-audit-small-n`).
+4. **Curation is the bottleneck.** Minimize what needs a human; some rows live
+   `proposed` forever (fine, if `verified` is the default view)
+   (`r-mem-curation-bottleneck`).
+5. **Per-org RLS before the 2nd org.** Real isolation lands before C&I/CIP/GR
+   adoption, not the cosmetic org layer we have now (`d-mem-per-org-rls`, `r2`).
+6. **Measure before Phase 4.** Gate the "Everything We Know" audit on measured
+   orientation pain (`q-mem-measure-pain`, open).
+
+The pane (Phase 2) is built to #1 + #2: a `verified`-default retrieval view, scope
+filters first, the ripple inspector, and session writes marked `proposed`.
+
 ## How we got here
 
 Prototyped as a **seed of 39 real entries** across all 8 kinds (incl. 6 `procedure`
